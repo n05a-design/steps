@@ -284,13 +284,14 @@ class TestCurationToolsScenarios(unittest.TestCase):
         self.assertEqual(rest_res["status"], "RESTORE_SUCCESS")
         self.assertEqual(backup_knowledge.compute_sha256(test_master), res["sha256"])
 
-    # Scenario 24: Canonical Production Master Has Exactly 21 Tasks
+    # Scenario 24: Canonical Production Master Has At Least 21 Tasks (Dynamic Extension)
     def test_24_canonical_master_has_21_tasks(self):
         canonical_p = os.path.expandvars(r"%LOCALAPPDATA%\StepsKnowledge\OFFENE_ARBEITSAUFFORDERUNGEN.md")
         if os.path.exists(canonical_p):
             res = validate_register.validate_master_file(canonical_p)
             self.assertEqual(res["errors_count"], 0)
-            self.assertEqual(res["total_tasks_found"], 21)
+            self.assertGreaterEqual(res["total_tasks_found"], 21)
+
 
 if __name__ == "__main__":
     unittest.main()
