@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-10",
+  "remote_steps_main": "75329fef46878a5ac816cef3690e612a9e8fe52c",
+  "remote_glide_main": "9e767bea5e21063466a28ac3a679406484ad5d5f",
+  "glide_app_remote_blob": "0fc522fb5faf9694dbd28d2ca43b1f415a010139",
+  "glide_app_local_blob": "0fc522fb5faf9694dbd28d2ca43b1f415a010139",
+  "glide_local_sha256": "d7e19151eb0862a8ff58c4cc5e7d06a0452cde1daa73830ff97f54247bc75271",
+  "glide_rough_lines": 69015,
+  "glide_app_classes": 39,
+  "glide_listapp_direct_methods": 1866,
+  "modular_glide_source_catalog_items": 94,
+  "catalog_packages": 25,
+  "previous_overview_words": 789,
+  "prior_consolidated_overview_words": 14257,
+  "v1_prompts": 24,
+  "static_risk_anchors": 9,
+  "local_uploaded_sources": 8
+}

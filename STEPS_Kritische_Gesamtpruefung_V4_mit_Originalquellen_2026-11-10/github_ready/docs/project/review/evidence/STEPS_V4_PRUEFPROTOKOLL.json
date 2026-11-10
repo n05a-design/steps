@@ -1,0 +1,36 @@
+{
+  "datum": "2026-11-10",
+  "steps_main_sha": "75329fef46878a5ac816cef3690e612a9e8fe52c",
+  "glide_main_sha": "9e767bea5e21063466a28ac3a679406484ad5d5f",
+  "quellen": {
+    "originale": 6,
+    "zeilen": 2612,
+    "bereiche": 89,
+    "fenced_blocks": 39,
+    "distinct_fenced_blocks": 39,
+    "appendix_matches": 39
+  },
+  "historie": {
+    "entries": 100,
+    "description_anchor_matches": 100,
+    "status": "nur textuell/ID, nicht fachlich abgeschlossen"
+  },
+  "v3_tools": {
+    "nine_unittests_passed": true,
+    "unrelated_repo_dry_run_accepted": true,
+    "self_rehashed_modified_bundle_accepted": true,
+    "meaning": "begrenzte externe Auditgegenproben"
+  },
+  "github": {
+    "steps_blobs": 1931,
+    "steps_research_blobs": 1810,
+    "v6_6_blobs": 1000,
+    "steps_branch_protected": false,
+    "glide_branch_protected": true,
+    "rulesets_api_count": 0,
+    "skill_discovery_claude_count": 0,
+    "skill_discovery_codex_count": 0,
+    "steps_src_app_ci_paths_included": false
+  },
+  "limitation": "Kein vollständiger Steps-Clonelauf, keine 60-PDF-Fachlektüre, kein 112-MIDI-Parsing, keine Rechtsfreigabe; Github-Zahlen aus verbundenem API-Snapshot."
+}

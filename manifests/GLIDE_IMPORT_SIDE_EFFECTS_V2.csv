@@ -1,0 +1,10 @@
+risk,source_anchor,line_in_uploaded_app_3_53,why_it_matters
+Global Tk Menu patch,defer_window_menu_commands(),47,affects all Menu instances in importing interpreter
+Global IO streams patch,_ensure_streams(),207,process-level sys.stdout/sys.stderr modifications
+Default Glide data root at import,BASE_DIR = get_app_data_dir(),418,touches platform user configuration and filesystem
+Glide data directories at import,os.makedirs(BACKUP_DIR,431,creates application-specific directories
+Glide identity constant,"APP_BUNDLE_ID = ""de.shaye.glide""",242,new platform identity essential
+Glide user model ID,"APP_USER_MODEL_ID = ""Shaye.Glide""",243,must not be shared with Steps
+Glide lock-file path,"LOCK_FILE = os.path.join(BASE_DIR, ""glide.lock"")",425,must have own path/session namespace
+Glide data override,GLIDE_DATA_DIR,390,wrong environment contract
+Tk global root cache,_APP_FONT_CACHE = weakref.WeakKeyDictionary(),288,interpreter and theme lifetime tied

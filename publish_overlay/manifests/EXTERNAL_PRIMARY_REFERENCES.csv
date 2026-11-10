@@ -1,0 +1,9 @@
+﻿id,publisher,url,verified_scope_of_claim,type,limitations
+EXT-01,MIDI Association,https://midi.org/file-formats,Standard MIDI Files are official interoperability file specification,manufacturer/standards body,SMF design; implementation test still missing
+EXT-02,W3C MusicXML 4.0,https://www.w3.org/2021/06/musicxml40/musicxml-reference/elements/harmony/,"harmony element can represent chord symbols, function, alternate harmony; function element deprecated",published standard,MusicXML export mapping only proposed
+EXT-03,Python Tkinter Docs,https://docs.python.org/3/library/tkinter.html,Tk root and interpreter/event queue; long-running handlers block UI,official language documentation,Shell lifecycle/spikes not executed
+EXT-04,Mozilla MPL 2.0 FAQ,https://www.mozilla.org/en-US/MPL/2.0/FAQ/,file-level copyleft; license scope distinct from non-code assets,publisher/license,no per-file legal determination
+EXT-05,Mozilla MPL 2.0 Text,https://www.mozilla.org/en-US/MPL/2.0/,license rights and conditions,license text,not direct approval of copyrighted PDF books
+EXT-06,GitHub Docs,https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository,"history rewrite can affect PRs, forks and clones",platform documentation,copyright case requires separate judgment
+EXT-07,Hooktheory Hookpad User Guide,https://www.hooktheory.com/support/hookpad,"maker says chord suggestions, playback including drums and MIDI export are supported",manufacturer documentation,hands-on feature/price comparison not executed
+EXT-08,Hooktheory Hookpad Product,https://www.hooktheory.com/hookpad,maker markets music theory chord and melody tools,manufacturer documentation,marketing claim not independent proof
