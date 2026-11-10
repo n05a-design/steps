@@ -1,0 +1,108 @@
+# SPDX-License-Identifier: MPL-2.0
+"""Unveränderte Vorversion für Altleser-Proben finden – mit Blick auf die Aufbewahrung.
+
+Mehrere Suiten prüfen einen Formattor mit der unveränderten Vorversion aus
+`07_Python-Versionen` (oder deren `Archiv`). Die Aufbewahrung hält dort nur die
+sieben neuesten Hauptdateien (`scripts/pflege/ablage_kuerzen.py`). Fällt eine
+Vorversion planmäßig heraus, entfällt die Probe ausdrücklich; sie war mit der
+Version belegt, die den Formattor einführte. Fehlt eine Vorversion, die noch
+vorgehalten werden müsste, bleibt das ein Fehler.
+"""
+from pathlib import Path
+import json
+import re
+
+
+def einstellungsprobe_format25(path):
+    """Nur künstliche Altleser-Fixtures ohne neue Serien auf Format 25 setzen.
+
+    Die Probe betrifft den obersten Einstellungs-Namespace von FP-03/04.
+    Format-26-Bestände müssen separat schreibgeschützt bleiben (FP-02).
+    Keine allgemeine Rückmigration: neue Serien werden ausdrücklich abgelehnt.
+    Aufruf erst nach Schließen des aktuellen Testlesers.
+    """
+    path = Path(path)
+    data = json.loads(path.read_text(encoding='utf-8'))
+    pending = [data]
+    while pending:
+        value = pending.pop()
+        if isinstance(value, list):
+            pending.extend(value)
+        elif isinstance(value, dict):
+            assert not (isinstance(value.get('repeat'), dict) and (value['repeat'].get('art') == 'serie' or any(k in value['repeat'] for k in ('bezug','pausiert','rest'))))
+            pending.extend(v for v in value.values() if isinstance(v, (dict, list)))
+    assert data['version'] in (25, 26)
+    data['version'] = 25
+    path.write_text(json.dumps(data, ensure_ascii=False), encoding='utf-8')
+    # Der rein künstliche Datenrücksatz darf nicht die echte Rückstufungswarnung auslösen.
+    settings = path.parent / 'settings.json'
+    if settings.exists():
+        value = json.loads(settings.read_text(encoding='utf-8'))
+        value['data_format_written'] = 25
+        settings.write_text(json.dumps(value, ensure_ascii=False), encoding='utf-8')
+
+AUFBEWAHRUNG = 7
+
+
+def versionen(changelog):
+    """Versionen aus den Überschriften des Änderungsverlaufs, neueste zuerst."""
+    text = Path(changelog).read_text(encoding="utf-8")
+    return re.findall(r"^## (\d+\.\d+\.\d+)\b", text, flags=re.M)
+
+
+def vorgehalten(version, changelog):
+    """Gehört `version` zu den sieben neuesten Versionen?"""
+    liste = versionen(changelog)
+    return version in liste[:AUFBEWAHRUNG]
+
+
+def aus_git(ablage, version, name):
+    """Gepinnte Altleser-Hauptdatei bytegleich aus der Git-Historie (31.10.2026).
+
+    Nach der Aufbewahrungsregel verschwindet eine alte Hauptdatei aus
+    07_Python-Versionen; Vorfassungen trägt Git. Für die in
+    `historical_runtime.SNAPSHOTS` gepinnten Altleser wird sie aus dem
+    gepinnten Liefercommit in einen kurzlebigen Ordner gelegt; sonst None.
+    """
+    import atexit
+    import shutil
+    import tempfile
+    from historical_runtime import DELIVERY, SNAPSHOTS, _git
+    if version not in SNAPSHOTS:
+        return None
+    daten = _git(Path(ablage), "show", f"{SNAPSHOTS[version]}:{DELIVERY}/{name}")
+    ordner = Path(tempfile.mkdtemp(prefix="glide-altleser-git-"))
+    atexit.register(shutil.rmtree, ordner, True)
+    pfad = ordner / name
+    pfad.write_bytes(daten)
+    return pfad
+
+
+def finden(ablage, version, changelog, ausdruecklich=None):
+    """Pfad der Vorversion oder None, wenn sie außerhalb der Aufbewahrung liegt.
+
+    `ausdruecklich` ist ein über die Befehlszeile gesetzter Pfad; er muss
+    existieren. Sonst wird zuerst `07_Python-Versionen`, dann `Archiv`, zuletzt
+    für gepinnte Altleser die Git-Historie gesucht (`aus_git`).
+    """
+    if ausdruecklich is not None:
+        pfad = Path(ausdruecklich)
+        assert pfad.exists(), pfad
+        return pfad
+    name = f"Glide-Aufgaben-und-Listen_v{version}.pyw"
+    ordner = Path(ablage) / "07_Python-Versionen"
+    for pfad in (ordner / name, ordner / "Archiv" / name):
+        if pfad.exists():
+            return pfad
+    pfad = aus_git(ablage, version, name)
+    if pfad is not None:
+        return pfad
+    if vorgehalten(version, changelog):
+        raise AssertionError(f"Vorversion {version} fehlt in 07_Python-Versionen, obwohl sie vorgehalten wird")
+    return None
+
+
+def hinweis(version):
+    return (f"Altleser-Probe mit {version} entfällt: Die Hauptdatei liegt nach der Aufbewahrungsregel "
+            f"(sieben neueste Versionen) nicht mehr in 07_Python-Versionen; belegt mit der Version, "
+            f"die den Formattor einführte")

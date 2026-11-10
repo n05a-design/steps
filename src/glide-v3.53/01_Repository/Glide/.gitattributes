@@ -1,0 +1,25 @@
+* text=auto
+*.py text eol=lf
+*.pyw text eol=lf
+*.md text eol=lf
+*.ps1 text eol=crlf
+*.png binary
+*.ico binary
+*.icns binary
+*.docx binary
+# Mitgelieferte Drittdateien unverändert speichern: Ihr SHA-256 wird gegen
+# 07_Python-Versionen und das Bundle abgeglichen (CRLF in tkdnd/Windows, Lizenztexte).
+**/vendor/** -text
+**/resources/fonts/** -text
+# Paketlizenzbelege bleiben bytegleich zu ihren gehashten Originalquellen.
+packaging/paket/lizenzen/** -text
+# Diff-Kontext trägt führende Leerzeichen vor Originaltabs und leere Zeilen.
+# Unverändert anwenden; unter Windows dieselben gehashten LF-Bytes erhalten.
+packaging/runtime/patches/*.patch text eol=lf -whitespace
+# Glide-Daten tragen Prüfsummen (Showcase-Manifest, Fixtures): Bytes bleiben,
+# wie sie erzeugt wurden (W03, 08.10.2026).
+*.glidebackup -text
+*.glidetemplates -text
+*.glideapp -text
+*.glidepage -text
+*.glideexchange -text

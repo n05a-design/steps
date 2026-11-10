@@ -1,0 +1,165 @@
+{
+  "description": "Eigene V2-Dateien mit SHA256; Manifest selbst ausgeschlossen",
+  "summary": {
+    "status": "PASS",
+    "scope": "Paketintegrität, CSV-ID-Konsistenz, interne Markdown-Links, Prompt-Inhaltseindeutigkeit; KEINE App- oder Fachvalidierung",
+    "files_without_manifest": 37,
+    "documents_md": 14,
+    "prompts_md_including_contract": 15,
+    "requirements": 60,
+    "issues": 30,
+    "sources": 22,
+    "local_md_links_checked": 16,
+    "v1_zip_sha256": "fdd73bf56dbd95e0ebc32cbfb3fc006d135f38ad57cf07a8fec91b9af73367aa"
+  },
+  "files": {
+    "README.md": {
+      "sha256": "0894629d66f87394317efe367380f79c4aad4262d5fe3d4f342eb8e33ab754f5",
+      "bytes": 4241
+    },
+    "audit/ISSUES.csv": {
+      "sha256": "6246219ecdb161e81c369f696641977b2a55a855215da2f095ec006c0406cfe0",
+      "bytes": 6152
+    },
+    "audit/REQUIREMENTS.csv": {
+      "sha256": "d0aa465f3c6c56c5bfe2f56778c8be7e0585b3b5166144aeb3557ed15d635303",
+      "bytes": 7702
+    },
+    "audit/SOURCES.csv": {
+      "sha256": "8a9dc85f48f07e1ce12e4f261a4c85a3a92388ed900e0ef05537aac06dd861e3",
+      "bytes": 4043
+    },
+    "audit/V1_PACKAGE_CHECK.json": {
+      "sha256": "75d35c3dd193bc89e81b044af62dea54cc7fd31e7b6797e70357e0b827ca6bf6",
+      "bytes": 301
+    },
+    "docs/01_GESAMTURTEIL_UND_KORREKTUREN.md": {
+      "sha256": "3004531ae19380b94bc0c8552f00687389f8427c56131562681ad6284d96ddea",
+      "bytes": 8406
+    },
+    "docs/02_METHODIK_QUELLEN_NACHWEISE.md": {
+      "sha256": "51c3e4b40c1bfb70888a8de50b2df412deb3cda8f2444bbcd2f6fa86e9fce35b",
+      "bytes": 8524
+    },
+    "docs/03_V1_QUALITAETSAUDIT.md": {
+      "sha256": "567b90da89454a21e2be865597ee73968ec8b483b948c1dc498af89d68de90e0",
+      "bytes": 6319
+    },
+    "docs/04_ANFORDERUNGEN_SCOPE_PRODUKTMODELL.md": {
+      "sha256": "e80bba55033234e6337d26e7b2de1432425f4312865e0c5ea462ca2db49bd16c",
+      "bytes": 8657
+    },
+    "docs/05_ARCHITEKTURALTERNATIVEN_SHARED_CORE.md": {
+      "sha256": "bda5b5b75482e2e80edca81f37a50b9c37418be86e2c230f26ea582fca18b74e",
+      "bytes": 8807
+    },
+    "docs/06_SHELL_UI_ZWEI_FENSTER.md": {
+      "sha256": "fd77bbecbf91d0f0f73281f869483086505f9d5b6ecc6b451344d224b4323678",
+      "bytes": 8406
+    },
+    "docs/07_MODULKOPPLUNG_MIGRATION.md": {
+      "sha256": "c8fa2bd7102c441c3106e441244da8fa415f04fa81eda2b1b97b0a62e267bf8c",
+      "bytes": 8962
+    },
+    "docs/08_STEPS_DOMAENE_DATENMODELLE.md": {
+      "sha256": "5caed8ee215e125f2e69ab40de2c5e3a96c0e2f848902e8a5028197b8a31a743",
+      "bytes": 8476
+    },
+    "docs/09_KNOWLEDGE_SKILL_RECHTE.md": {
+      "sha256": "e2fe1f3620258afaae7af38e103b838e0e41fd232435a218db63c4d2874a7d02",
+      "bytes": 8571
+    },
+    "docs/10_QUALITAET_SICHERHEIT_RELEASE.md": {
+      "sha256": "839cda1871eddc2172304111c591cde25d1a2fe28f45eb0dc4f2a98a77ada63d",
+      "bytes": 7209
+    },
+    "docs/11_ROADMAP_AGENTEN_UND_GOVERNANCE.md": {
+      "sha256": "f23ae76bf9b86195a8be3a13c9be2d1c19c2d37226edbad50fce090d05815697",
+      "bytes": 6819
+    },
+    "docs/12_WIDERSPRUECHE_RISIKEN_OFFENE_FRAGEN.md": {
+      "sha256": "9749d8004bf3c8d215edde8dcf418f57d436e4280086c5834b40da913e9351fe",
+      "bytes": 8853
+    },
+    "docs/13_ABGLEICH_V1_V2_RESTUNSICHERHEIT.md": {
+      "sha256": "e789c2375e43812285e08642522d45e200bdcfa4734754e5fd76f487d0ddbd89",
+      "bytes": 6032
+    },
+    "docs/14_GITHUB_INTEGRATION_UND_REDAKTION.md": {
+      "sha256": "daaa0ac5c39ec6b8143badbb647e435467956cdb480fdcf774e2e50e1f3cf5a1",
+      "bytes": 4640
+    },
+    "history/V1_originalpaket_unveraendert.zip": {
+      "sha256": "fdd73bf56dbd95e0ebc32cbfb3fc006d135f38ad57cf07a8fec91b9af73367aa",
+      "bytes": 249902
+    },
+    "prompts/00_AGENTENVERTRAG.md": {
+      "sha256": "a85efd531a6bff21927fe478f4b6ac8481dca75670397ff88b93bd513514d26a",
+      "bytes": 4341
+    },
+    "prompts/01_GLIDE_353_BASELINE_QA.md": {
+      "sha256": "b4ed56edf64e0de6feae059d1ce274b7378a129d97a4e363073993bbc5131351",
+      "bytes": 2831
+    },
+    "prompts/02_GLIDE_MONOLITH_DEPENDENCY_AUDIT.md": {
+      "sha256": "2366c72f19daf9e45330f8648f2f017f68fc8bf21413dff819b735489fa1b55e",
+      "bytes": 2798
+    },
+    "prompts/03_SHELL_TWO_WINDOWS_UX_RFC.md": {
+      "sha256": "b2952881815b5730d76eab54a19ec397dcd1c5e092ce9a1f8465102dfd216123",
+      "bytes": 2768
+    },
+    "prompts/04_SHARED_CORE_STRANGLER_SPIKE.md": {
+      "sha256": "f5aee83662c6a657a40dba2727105be08ee6c79c21f2c198190e0e3d37b8f710",
+      "bytes": 2645
+    },
+    "prompts/05_STEPS_MUSIC_SCHEMAS_THEORY.md": {
+      "sha256": "bfcdd99ae1632b64c9f9b5fa445440ae3214a78b208ac4cc37b927ac18d9e658",
+      "bytes": 2700
+    },
+    "prompts/06_STEPS_PUBLIC_LIBRARY_RIGHTS_DEDUP.md": {
+      "sha256": "67d16bbab6fe68a6a320c158fe7bb63715eb8c43950a55bd86361cc77801de49",
+      "bytes": 2731
+    },
+    "prompts/07_KNOWLEDGE_INGEST_SKILL_EVAL.md": {
+      "sha256": "35176decefb638b7aa3a01170851759de0986388ac21aadea7134e12879c0cb5",
+      "bytes": 2787
+    },
+    "prompts/08_STEPS_DESIGN_ACCESSIBILITY.md": {
+      "sha256": "574e46860054cc68e79da4d44d5d2b82ed8bebeb8b1b89089b6d7bd4d2f826c6",
+      "bytes": 2676
+    },
+    "prompts/09_STEPS_STORAGE_RECOVERY_UNDO.md": {
+      "sha256": "20cfe350134d07b2af4f1c0159fd21a1f29e62d3a53087aba8a9e3b1db9d3932",
+      "bytes": 2494
+    },
+    "prompts/10_CROSS_PLATFORM_RELEASE_CI.md": {
+      "sha256": "5738c8d73050ed0f4325a0b660c1ddac09cea34ad5214eeb873e4caf053e9074",
+      "bytes": 2535
+    },
+    "prompts/11_ADVERSARIAL_ARCHITECTURE_REVIEW.md": {
+      "sha256": "2468873e8b04d1b067b91710be222d4fecf0638e25e2dc93d6b2e90acc87ee1c",
+      "bytes": 2561
+    },
+    "prompts/12_GITHUB_DOCS_SOURCE_OF_TRUTH.md": {
+      "sha256": "67eecf770b78dfbfb6fcfcd7626baebb2b7d78d881e57f251b1702e5f4f30c9d",
+      "bytes": 2638
+    },
+    "prompts/13_STEPS_PRODUCT_SCOPE_RESEARCH.md": {
+      "sha256": "b479e5d86587faaab43ce56a6d9d5983cb25c1ab063a3a7663fda723444987e0",
+      "bytes": 2658
+    },
+    "prompts/14_DRUM_GROOVE_MIDI_VERTICAL.md": {
+      "sha256": "d2bb71c4f7391123bcc6291b8d0e0ac2aa78627259f715077a9a0ca32f8f2bf2",
+      "bytes": 2609
+    },
+    "prompts/README.md": {
+      "sha256": "5d67241dc504be3f41ab3f1cef06a47755edcd684559f13338fe10d213db8d0d",
+      "bytes": 1714
+    },
+    "tools/verify_package.py": {
+      "sha256": "d6776dc0b05a7479ae5eac7a5229fb2c8082b66f5f8a544329b49d48e5e7cb7e",
+      "bytes": 4677
+    }
+  }
+}

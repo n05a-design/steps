@@ -1,0 +1,34 @@
+# Glide: Laufzeit ohne pip-Abhängigkeiten; feste Bauabhängigkeiten
+# und GitHub Actions werden getrennt geprüft. Dependabot
+# schlägt deren Aktualisierungen wöchentlich als ein gebündelter Pull Request vor.
+# Der mitgelieferte Fremdcode (src/glide/vendor) wird nicht automatisch
+# aktualisiert: Eine neue Fassung braucht eine Entscheidung und eine geprüfte
+# Prüfsumme in vendor/provenance.json (CI-Schritt „Fremdcode“).
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Europe/Berlin"
+    commit-message:
+      prefix: "CI"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+
+  - package-ecosystem: "pip"
+    directory: "/01_Repository/Glide/requirements"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:15"
+      timezone: "Europe/Berlin"
+    commit-message:
+      prefix: "Build"
+    groups:
+      build-tools:
+        patterns: ["*"]

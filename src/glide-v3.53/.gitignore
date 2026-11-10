@@ -1,0 +1,145 @@
+# Glide-Projektablage – was nie ins Repository gehört
+#
+# Wurzel = Projektordner (00_Arbeitsvorbereitung, 01_Repository/Glide,
+# 05_Probelisten_Testdaten, 07_Python-Versionen, 20_Grafik_Master). Regeln des
+# Quellbaums stehen zusätzlich in 01_Repository/Glide/.gitignore.
+#
+# .gitignore verhindert nur das versehentliche Hinzufügen neuer Dateien. Bereits
+# versionierte Dateien, `git add -f` und Uploads über die GitHub-Weboberfläche
+# umgeht sie. Durchgesetzt werden die Regeln deshalb zusätzlich von der
+# CI-Grundstufe (Schritte Datenschutz und Ablagegröße) und vom Secret Scanning
+# auf GitHub. Stand der Regeln: 02.11.2026 · Glide 3.50.0.
+
+# --- Sicherheit: Schlüssel, Zertifikate, Zugangsdaten ------------------------
+# Signierung und Notarisierung laufen nur lokal (docs/10_VEROEFFENTLICHUNG.md).
+.env
+.env.*
+.envrc
+.netrc
+.pypirc
+*.pem
+*.key
+*.p8
+*.p12
+*.pfx
+*.cer
+*.crt
+*.keychain
+*.keychain-db
+*.mobileprovision
+*.provisionprofile
+*credentials*.json
+*secret*.json
+*token*.txt
+
+# --- Nutzerdaten: nie echte Bestände einchecken ------------------------------
+# Tests arbeiten mit GLIDE_DATA_DIR; Beispieldaten entstehen über die Erzeuger
+# unter tests/tools und liegen nur in tests/fixtures.
+fehlerprotokoll.txt
+glide.lock
+liste_speicher.json
+liste_backup_*.json
+liste_vor_*.json
+liste_unlesbar_*.json
+datenordner.json
+window.conf
+05_Probelisten_Testdaten/Showcase/Arbeitsstand/
+*.glidebackup
+!01_Repository/Glide/tests/fixtures/beispiele/*.glidebackup
+!01_Repository/Glide/tests/fixtures/showcase/*.glidebackup
+!05_Probelisten_Testdaten/Showcase/*.glidebackup
+
+# --- Protokolle: Rohprotokolle bleiben lokal ---------------------------------
+# Öffentliches Repository (Entscheidung des Inhabers, 01.10.2026): versioniert
+# werden Zusammenfassungen (ergebnis.json, README) ohne Benutzerpfade.
+*.log
+*.tmp
+.glide-json-*.tmp
+# Von GitHub heruntergeladene Prüfartefakte (Protokolle, Fensterbilder) bleiben
+# lokal; ausgewertet wird im Nachweis (16.10.2026).
+.claude/Tests/
+
+# --- Prüfreste ---------------------------------------------------------------
+# Zwischenablagen von Logo-/Rasterprüfungen (05.11.2026: 206 MB im Grafikmaster).
+_verification_temp*
+**/_verification_temp*
+
+# --- Archive und Kopien ------------------------------------------------------
+# Vorfassungen trägt Git. Einziges Archiv ist 07_Python-Versionen/Archiv mit
+# den Hauptdateien der sieben neuesten Versionen (Regel „Archivalter“ der
+# Ablageprüfung, Kürzung mit scripts/pflege/ablage_kuerzen.py).
+**/[Aa]rchiv/
+!07_Python-Versionen/Archiv/
+# Expliziter Benutzerauftrag 05.11.2026: bisherige Logo-Dateien aufbewahren.
+!20_Grafik_Master/01_Logo/Archiv/
+!20_Grafik_Master/01_Logo/Archiv/**
+*_Z/
+*.fetch
+*.orig
+*.bak
+*~
+# OneDrive-Konfliktkopien des Mac (Gerätename im Dateinamen) nie einchecken;
+# Inhalte zuerst in die Hauptdatei zusammenführen.
+*-MacBook Pro Max Ultra.*
+
+# --- Werkzeuge, Builds, Betriebssystem ---------------------------------------
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+env/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+release-artifacts/
+*.egg-info/
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+
+# Nutzerreferenzen UI/UX: unveränderte Screenshots enthalten Kontoangaben.
+# Lokal für Agentenübergaben erhalten; nicht unverändert veröffentlichen.
+00_Arbeitsvorbereitung/Featurepaket_UI_UX/bilder/
+
+# Lokale Kopie des Fremdrepositorys emilkowalski/skills (MIT). Kein aktiver
+# Skill und keine Projektquelle: Übernommene Grundsätze stehen übersetzt in
+# docs/DESIGN_RICHTLINIEN.md, der genutzte Fremdtext mit Lizenz unter
+# .claude/skills/design-richtlinien/referenzen/ (B20, 15.10.2026).
+skills-main/
+.idea/
+.vscode/
+
+# Mitgelieferte tkdnd-Bibliotheken gehören zum Laufzeitstand (SHA-256-Abgleich).
+!**/vendor/tkinterdnd2/**/*.so
+
+# Lokale native Tk-Prüfumgebung; keine Projektquelle oder Lieferressource.
+13_TK-Test-Umgebung/
+# Neue QA-Fensterbilder bleiben nach D09 lokal; bestehende Git-Belege bleiben.
+01_Repository/Glide/tests/qa-*/**/screenshots*/
+
+# Lokale Agenten-Arbeitskopien und Sitzungsdateien sind keine Projektquelle.
+.claude/worktrees/
+.claude/fortsetzung_*.md
+*.dmp
+*.core
+*.prof
+
+# Portable Nutzerbestände; nur ausdrücklich künstliche Liefer-/Fixturedateien erlauben.
+*.glideapp
+*.glidepage
+*.glideexchange
+*.glidetemplates
+!01_Repository/Glide/tests/fixtures/**/*.glideapp
+!01_Repository/Glide/tests/fixtures/**/*.glidepage
+!01_Repository/Glide/tests/fixtures/**/*.glideexchange
+!01_Repository/Glide/tests/fixtures/**/*.glidetemplates
+!01_Repository/Glide/src/glide/resources/templates/*.glidetemplates
+!07_Python-Versionen/resources/templates/*.glidetemplates
+!05_Probelisten_Testdaten/Showcase/*.glideapp
+!05_Probelisten_Testdaten/Showcase/*.glidetemplates

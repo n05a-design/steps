@@ -1,0 +1,23 @@
+ID,Quelle,URL_oder_Pfad,Auswertung,Status
+G-CODE,Glide src/glide/README.md,https://github.com/n05a-design/glide-to-do/blob/9e767bea5e21063466a28ac3a679406484ad5d5f/01_Repository/Glide/src/glide/README.md,"System 1.15, 94/147/25/311",VERIFIED_REPO
+G-ARCH,Glide docs/02_ARCHITECTURE.md,https://github.com/n05a-design/glide-to-do/blob/9e767bea5e21063466a28ac3a679406484ad5d5f/01_Repository/Glide/docs/02_ARCHITECTURE.md,Monolith/WA49/Importgrenzen,VERIFIED_REPO
+G-DESIGN,Glide docs/DESIGN_RICHTLINIEN.md,https://github.com/n05a-design/glide-to-do/blob/9e767bea5e21063466a28ac3a679406484ad5d5f/01_Repository/Glide/docs/DESIGN_RICHTLINIEN.md,D66-77 font/layout/symbols,VERIFIED_REPO
+G-QA,Glide docs/07_QA_BERICHT.md,https://github.com/n05a-design/glide-to-do/blob/9e767bea5e21063466a28ac3a679406484ad5d5f/01_Repository/Glide/docs/07_QA_BERICHT.md,"3.53 documented test, release_ready=false",DOCUMENTED_QA
+G-PLAN,Glide Glide_Entwicklungsplan.md,https://github.com/n05a-design/glide-to-do/blob/9e767bea5e21063466a28ac3a679406484ad5d5f/00_Arbeitsvorbereitung/Glide_Entwicklungsplan.md,"WA, decisions, tasks",VERIFIED_REPO
+G-HANDOVER,Glide Glide_Uebergabe.md,https://github.com/n05a-design/glide-to-do/blob/9e767bea5e21063466a28ac3a679406484ad5d5f/00_Arbeitsvorbereitung/Glide_Uebergabe.md,historical status and release risk,VERIFIED_REPO
+G-RULES,Glide AGENTS.md,https://github.com/n05a-design/glide-to-do/blob/9e767bea5e21063466a28ac3a679406484ad5d5f/01_Repository/Glide/AGENTS.md,privacy/branch/data contracts,VERIFIED_REPO
+S-OVERVIEW,Steps consolidated overview,https://github.com/n05a-design/steps/blob/75329fef46878a5ac816cef3690e612a9e8fe52c/docs/project/overview/Steps_Projekt_Overview_konsolidiert_2026-11-09.md,historical six-source consolidation,VERIFIED_REPO
+S-ORIG,Steps originals under docs/project/Archiv,https://github.com/n05a-design/steps/tree/75329fef46878a5ac816cef3690e612a9e8fe52c/docs/project/Archiv,five historical documents,VERIFIED_REPO
+S-ARCH,Steps architecture,https://github.com/n05a-design/steps/blob/75329fef46878a5ac816cef3690e612a9e8fe52c/docs/architecture/architecture.md,src/steps vs app boundary,VERIFIED_REPO
+S-SCHEMA,Steps schemas,https://github.com/n05a-design/steps/tree/75329fef46878a5ac816cef3690e612a9e8fe52c/schemas,five schemas reviewed,VERIFIED_REPO
+S-REG,Steps registry.yaml,https://github.com/n05a-design/steps/blob/75329fef46878a5ac816cef3690e612a9e8fe52c/knowledge/sources/registry.yaml,sources empty,VERIFIED_REPO
+S-CI,Steps check_structure.py,https://github.com/n05a-design/steps/blob/75329fef46878a5ac816cef3690e612a9e8fe52c/tools/validation/check_structure.py,structure and JSON parse checks only,VERIFIED_REPO
+S-SKILL,Steps Skill,https://github.com/n05a-design/steps/blob/75329fef46878a5ac816cef3690e612a9e8fe52c/SKILL.md,workflow router,VERIFIED_REPO
+S-ARCHIVE,Steps research archive,https://github.com/n05a-design/steps/tree/75329fef46878a5ac816cef3690e612a9e8fe52c/research/STEPS_Bibliothek,"~1.8k research files, rights unknown",VERIFIED_REPO
+L-XLSX,Historical Glide module workbook,history/V1_originalpaket_unveraendert.zip,"07.11/10 sheets, historic",VERIFIED_ARTIFACT
+L-RESEARCH,Steps two research foundations,history/V1_originalpaket_unveraendert.zip,"81 KB text research, literature not separately verified",VERIFIED_ARTIFACT
+EXT-MPL,Mozilla MPL 2.0,https://www.mozilla.org/en-US/MPL/2.0/FAQ/,"file-level license, not blanket asset rights",EXTERNAL_PRIMARY
+EXT-TK,Python tkinter threading,https://docs.python.org/3.14/library/tkinter.html#threading-model,event loop and Tcl interpreter,EXTERNAL_PRIMARY
+EXT-GIT,GitHub history removal,https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository,history rewrite limitations,EXTERNAL_PRIMARY
+EXT-PYPA,PyPA pyproject,https://packaging.python.org/en/latest/guides/writing-pyproject-toml/,packaging and deps,EXTERNAL_PRIMARY
+EXT-FABLE,Anthropic Fable 5.2 release,https://www.anthropic.com/claude-fable-and-mythos-5-2,model announced 2026-11-09,EXTERNAL_PRIMARY

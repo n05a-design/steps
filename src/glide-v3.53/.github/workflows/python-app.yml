@@ -1,0 +1,436 @@
+# Glide-Prüfung (D09, CI-Grundstufe)
+#
+# Ersetzt die GitHub-Vorlage „Python application“. Deren `pytest` sammelte das
+# ganze Repository ein: Archivkopien mit Punkten im Dateinamen, Altstände
+# und die Integrationssuiten, die schon beim Import ein Tk-Fenster
+# öffnen. Glides Prüfungen laufen über die eigenen Werkzeuge in
+# 01_Repository/Glide/tests/tools; sie brauchen nur die Standardbibliothek.
+#
+# Grundstufe (jeder Push und Pull Request auf main): ci_grundstufe.py –
+# Syntax, Versionen, Dokumentationsindex, Fixtures, Werkzeug- und Unit-Tests,
+# fünf Analysen, Startprobe unter Xvfb, Lieferstand als Hinweis.
+#
+# Sicherheit: Checkout ohne gespeichertes Token, nur Leserechte, keine
+# Geheimnisse. Der Schritt „Fremdcode“ lädt das in vendor/provenance.json
+# genannte Originalpaket von PyPI und vergleicht jede Datei.
+#
+# Native Prüfstände laufen nacheinander. Linux/Xvfb prüft jede sachlich
+# ausführbare Suite verpflichtend; Windows verwendet denselben Vollprüfstand.
+# Eine grüne Automatik ersetzt keine menschliche Sichtprüfung.
+# Screenreader-Gesamtabnahme ist nach D58 bis Bedarf zurückgestellt.
+
+name: Glide-Prüfung
+
+on:
+  push:
+    branches: ["main", "claude/**", "codex/**"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+    inputs:
+      bereich:
+        description: "Vollmatrix, nativer UI-Nachlauf, Windows-Diagnose, Paket oder Zugangs-Vorprüfung"
+        type: choice
+        default: voll
+        options: [voll, ui-nachlauf, aufgaben-layout, tagesdialoge, windows-paket, zugang400]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: glide-pruefung-${{ github.ref }}-${{ github.event.inputs.bereich || 'voll' }}
+  cancel-in-progress: true
+
+env:
+  PYTHONDONTWRITEBYTECODE: "1"
+  PYTHONUTF8: "1"
+
+jobs:
+  grundstufe:
+    if: github.event_name != 'workflow_dispatch' || (github.event.inputs.bereich == '' || github.event.inputs.bereich == 'voll')
+    name: Grundstufe (Linux, Python 3.14, Tk 8.6)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: 01_Repository/Glide
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: "3.14"
+
+      - name: Xvfb und Tk für die Startprobe
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq xvfb libtk8.6
+
+      - name: CI-Grundstufe
+        run: python -B tests/tools/ci_grundstufe.py --protokoll "$RUNNER_TEMP/grundstufe"
+
+      - name: Protokolle sichern
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: grundstufe-protokolle
+          path: ${{ runner.temp }}/grundstufe
+          retention-days: 14
+          if-no-files-found: ignore
+
+  integrationssuiten-linux:
+    name: ${{ github.event.inputs.bereich == 'ui-nachlauf' && 'UI-Nachlauf (Linux/Xvfb, eigene Tk 9.1)' || 'Vollprüfung (Linux/Xvfb, eigene Tk 9.1)' }}
+    needs: grundstufe
+    if: always() && !cancelled() && (github.event.inputs.bereich == '' || github.event.inputs.bereich == 'voll' || github.event.inputs.bereich == 'ui-nachlauf')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    defaults:
+      run:
+        working-directory: 01_Repository/Glide
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: "3.14.8"
+
+      - name: Native Tk-9.1-Bauvoraussetzungen, Xvfb und ImageMagick
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq build-essential pkg-config libx11-dev libxext-dev libxft-dev libxss-dev libharfbuzz-dev libatk1.0-dev libatk-bridge2.0-dev at-spi2-core dbus-x11 xvfb imagemagick
+      - name: Eigene geprüfte Tk-9.1-Laufzeit für alle Suiten
+        run: |
+          python -B packaging/runtime/hole_runtimequellen.py --ziel "$RUNNER_TEMP/voll-quellen"
+          python -B packaging/runtime/baue_runtime.py --tcl-quelle "$RUNNER_TEMP/voll-quellen/tcl" --tk-quelle "$RUNNER_TEMP/voll-quellen/tk" --python-quelle "$RUNNER_TEMP/voll-quellen/python" --ziel "$RUNNER_TEMP/voll-runtime"
+          echo "PYTHONPATH=$RUNNER_TEMP/voll-runtime/python-extension" >> "$GITHUB_ENV"
+
+      - name: Vollprüfstand Linux
+        if: github.event.inputs.bereich != 'ui-nachlauf'
+        run: dbus-run-session -- python -B tests/tools/pruefen.py --zugang-nativ --modus voll --protokoll "$RUNNER_TEMP/integration" --timeout 900
+
+      - name: UI-/UX-Verträge vollständig nativ prüfen
+        if: github.event.inputs.bereich == 'ui-nachlauf'
+        run: dbus-run-session -- xvfb-run -a --server-args="-screen 0 1400x1100x24" python -B tests/integration/test_uiux_paket.py --fall alle --report "$RUNNER_TEMP/integration/uiux.json"
+
+      - name: Arbeitsmodi vollständig nativ prüfen
+        if: github.event.inputs.bereich == 'ui-nachlauf'
+        run: dbus-run-session -- xvfb-run -a --server-args="-screen 0 1400x1100x24" python -B tests/integration/test_arbeitsmodi.py --fall alle --report "$RUNNER_TEMP/integration/arbeitsmodi.json"
+
+      - name: Kalibrierte Erwartungen gegen Defekte prüfen
+        if: always() && !cancelled() && github.event.inputs.bereich != 'ui-nachlauf'
+        run: dbus-run-session -- python -B tests/tools/linux_gegenproben.py --protokoll "$RUNNER_TEMP/integration/defektgegenproben" --basis-ergebnis "$RUNNER_TEMP/integration/ergebnis.json"
+
+      - name: Protokolle sichern
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: integrationssuiten-linux
+          path: |
+            ${{ runner.temp }}/integration
+            ${{ runner.temp }}/voll-runtime/runtime-bau.json
+            ${{ runner.temp }}/voll-runtime/protokolle
+          retention-days: 14
+          if-no-files-found: ignore
+
+  vollpruefung-windows:
+    name: ${{ github.event.inputs.bereich == 'ui-nachlauf' && 'UI-Nachlauf (Windows x64, eigene Tk 9.1)' || 'Vollprüfung (Windows x64, eigene Tk 9.1)' }}
+    needs: integrationssuiten-linux
+    if: always() && !cancelled() && (github.event.inputs.bereich == '' || github.event.inputs.bereich == 'voll' || github.event.inputs.bereich == 'ui-nachlauf')
+    runs-on: windows-2025
+    timeout-minutes: 180
+    defaults:
+      run:
+        working-directory: 01_Repository/Glide
+    steps:
+      - name: Lange Git-Pfade zulassen
+        working-directory: ${{ github.workspace }}
+        run: git config --global core.longpaths true
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: "3.14.7"
+          architecture: x64
+      - name: Native Zeitzone mit Sommerzeit
+        run: |
+          Remove-Item Env:TZ -ErrorAction SilentlyContinue
+          tzutil /s "W. Europe Standard Time"
+      - name: Originalquellen der eigenen Tk-9.1-Laufzeit
+        run: python -B packaging/runtime/hole_runtimequellen.py --ziel "$env:RUNNER_TEMP/voll-quellen"
+      - name: Eigene geprüfte Tk-9.1-Laufzeit für alle Suiten
+        run: |
+          $vswhere = "${env:ProgramFiles(x86)}/Microsoft Visual Studio/Installer/vswhere.exe"
+          $vs = & $vswhere -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+          if (-not $vs) { throw "Native x64-MSVC-Bauumgebung fehlt" }
+          $devcmd = Join-Path $vs "Common7/Tools/VsDevCmd.bat"
+          cmd /s /c "`"$devcmd`" -arch=x64 -host_arch=x64 >nul && set" | ForEach-Object {
+            if ($_ -match '^([^=]+)=(.*)$') { Set-Item "Env:$($matches[1])" $matches[2] }
+          }
+          python -B packaging/runtime/baue_runtime.py --tcl-quelle "$env:RUNNER_TEMP/voll-quellen/tcl" --tk-quelle "$env:RUNNER_TEMP/voll-quellen/tk" --python-quelle "$env:RUNNER_TEMP/voll-quellen/python" --ziel "$env:RUNNER_TEMP/voll-runtime"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Add-Content -Path $env:GITHUB_ENV -Value "PYTHONPATH=$env:RUNNER_TEMP/voll-runtime/python-extension"
+      - name: Referenzdesktop für Geometrieprüfungen
+        run: python -B tests/tools/windows_desktop.py --breite 1920 --hoehe 1080 --protokoll "$env:RUNNER_TEMP/integration/windows-desktop.json"
+      - name: Vollprüfstand Windows
+        if: github.event.inputs.bereich != 'ui-nachlauf'
+        run: python -B tests/tools/pruefen.py --zugang-nativ --modus voll --protokoll "$env:RUNNER_TEMP/integration" --timeout 900
+      - name: UI-/UX-Verträge vollständig nativ prüfen
+        if: github.event.inputs.bereich == 'ui-nachlauf'
+        run: python -B tests/integration/test_uiux_paket.py --fall alle --report "$env:RUNNER_TEMP/integration/uiux.json"
+      - name: Arbeitsmodi vollständig nativ prüfen
+        if: github.event.inputs.bereich == 'ui-nachlauf'
+        run: python -B tests/integration/test_arbeitsmodi.py --fall alle --report "$env:RUNNER_TEMP/integration/arbeitsmodi.json"
+      - name: Protokolle sichern
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: integrationssuiten-windows
+          path: |
+            ${{ runner.temp }}/integration
+            ${{ runner.temp }}/voll-runtime/runtime-bau.json
+            ${{ runner.temp }}/voll-runtime/protokolle
+          retention-days: 14
+          if-no-files-found: ignore
+
+  paket-windows:
+    # Pakete 7/8 (D27/D36): eigenständiges Entwicklungspaket ohne installiertes Python.
+    # Bau und isolierte Startprobe in windows-paket.yml (auch von release.yml genutzt).
+    # windows-paket wiederholt nur den Bau-/Startnachweis. Es ersetzt keine Vollmatrix.
+    name: Eigenständiges Paket (Windows x64, PyInstaller 6.22.3)
+    needs: vollpruefung-windows
+    if: always() && !cancelled() && ((needs.vollpruefung-windows.result == 'success' && github.event.inputs.bereich != 'ui-nachlauf') || (github.event_name == 'workflow_dispatch' && github.event.inputs.bereich == 'windows-paket'))
+    uses: ./.github/workflows/windows-paket.yml
+
+  aufgaben-layout-windows:
+    name: UI-Diagnose (Windows x64, Python 3.14)
+    if: github.event_name == 'workflow_dispatch' && (github.event.inputs.bereich == 'aufgaben-layout' || github.event.inputs.bereich == 'tagesdialoge')
+    runs-on: windows-2025
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: 01_Repository/Glide
+    steps:
+      - name: Lange Git-Pfade zulassen
+        working-directory: ${{ github.workspace }}
+        run: git config --global core.longpaths true
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: "3.14"
+          architecture: x64
+      - name: Native Zeitzone und Referenzdesktop
+        run: |
+          tzutil /s "W. Europe Standard Time"
+          python -B tests/tools/windows_desktop.py --breite 1920 --hoehe 1080 --protokoll "$env:RUNNER_TEMP/layout/windows-desktop.json"
+      - name: Unveränderte Flächenkriterien mit Einzelmessungen
+        if: github.event.inputs.bereich == 'aufgaben-layout'
+        run: |
+          New-Item -ItemType Directory -Force "$env:RUNNER_TEMP/layout" | Out-Null
+          python -B tests/integration/test_aufgaben3380.py --fall flaeche *> "$env:RUNNER_TEMP/layout/aufgabenlayout.log"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          foreach ($suite in @("test_mindestgroesse330", "test_titel33312", "test_planen33313")) {
+            python -B "tests/integration/$suite.py" *> "$env:RUNNER_TEMP/layout/$suite.log"
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+          exit $LASTEXITCODE
+      - name: Tagesdialoge mit unveränderten Geometriekriterien
+        if: github.event.inputs.bereich == 'tagesdialoge'
+        run: |
+          New-Item -ItemType Directory -Force "$env:RUNNER_TEMP/layout" | Out-Null
+          python -B tests/integration/test_tag3390.py --fall dialoge --report "$env:RUNNER_TEMP/layout/tagesdialoge.json" *> "$env:RUNNER_TEMP/layout/tagesdialoge.log"
+          exit $LASTEXITCODE
+      - name: Diagnosen sichern
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: aufgaben-layout-windows
+          path: ${{ runner.temp }}/layout
+          retention-days: 14
+          if-no-files-found: ignore
+
+  runtime-linux:
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.bereich == 'zugang400'
+    name: Tk 9.1, AT-SPI und Orca (Linux x64)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: 01_Repository/Glide
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: "3.14.8"
+      - name: Native Bau- und AT-SPI-Voraussetzungen
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq build-essential pkg-config libx11-dev libxext-dev libxft-dev libxss-dev libharfbuzz-dev libatk1.0-dev libatk-bridge2.0-dev at-spi2-core python3-gi gir1.2-atspi-2.0 dbus-x11 xvfb orca speech-dispatcher speech-dispatcher-espeak-ng espeak-ng python3-speechd python3-setproctitle pulseaudio pulseaudio-utils xdotool openbox libxres1
+      - name: Originalquellen mit festen Pins
+        run: python -B packaging/runtime/hole_runtimequellen.py --ziel "$RUNNER_TEMP/zugang-quellen"
+      - name: Eigene native Runtime bauen
+        id: runtime
+        run: python -B packaging/runtime/baue_runtime.py --tcl-quelle "$RUNNER_TEMP/zugang-quellen/tcl" --tk-quelle "$RUNNER_TEMP/zugang-quellen/tk" --python-quelle "$RUNNER_TEMP/zugang-quellen/python" --ziel "$RUNNER_TEMP/zugang-runtime"
+      - name: Native installierte Tcl-Klassenbindungen
+        if: always() && !cancelled() && steps.runtime.outcome == 'success'
+        run: dbus-run-session -- xvfb-run -a env PYTHONPATH="$RUNNER_TEMP/zugang-runtime/python-extension" python -B tests/tools/pruefe_native_accessibility_skript.py --bericht "$RUNNER_TEMP/zugang-skript.json"
+      - name: Echte native AT-SPI-Textschnittstelle
+        if: always() && !cancelled() && steps.runtime.outcome == 'success'
+        run: dbus-run-session -- xvfb-run -a python -B tests/tools/pruefe_linux_runtime.py --runtime "$RUNNER_TEMP/zugang-runtime" --ziel "$RUNNER_TEMP/zugang-native"
+      - name: Aufgaben-Kernablauf auf eigener Runtime
+        if: always() && !cancelled() && steps.runtime.outcome == 'success'
+        run: dbus-run-session -- xvfb-run -a env PYTHONPATH="$RUNNER_TEMP/zugang-runtime/python-extension" python -B tests/integration/test_zugang400.py --nativ --report "$RUNNER_TEMP/zugang-gui.json"
+      - name: Tatsächliche Orca-Sprachausgabe im isolierten Testprofil
+        if: always() && !cancelled() && steps.runtime.outcome == 'success'
+        run: |
+          dbus-run-session -- xvfb-run -a -s "-screen 0 1920x1080x24" bash -c '
+            openbox >"$RUNNER_TEMP/zugang-orca-windowmanager.log" 2>&1 &
+            wm_pid=$!
+            trap "kill $wm_pid 2>/dev/null || true" EXIT
+            PYTHONPATH="$RUNNER_TEMP/zugang-runtime/python-extension" python -B tests/tools/pruefe_reader_orca.py --ziel "$RUNNER_TEMP/zugang-orca"
+          '
+      - name: Native Belege sichern
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: zugang400-linux
+          path: |
+            ${{ runner.temp }}/zugang-runtime/runtime-bau.json
+            ${{ runner.temp }}/zugang-runtime/protokolle
+            ${{ runner.temp }}/zugang-native
+            ${{ runner.temp }}/zugang-orca/*.json
+            ${{ runner.temp }}/zugang-orca/*.log
+            ${{ runner.temp }}/zugang-orca/glide-diagnose/*.json
+            ${{ runner.temp }}/zugang-orca-windowmanager.log
+            ${{ runner.temp }}/zugang-gui.json
+            ${{ runner.temp }}/zugang-skript.json
+          retention-days: 14
+          if-no-files-found: ignore
+
+  runtime-windows:
+    name: Tk 9.1 und NVDA (Windows x64)
+    needs: runtime-linux
+    if: always() && !cancelled() && github.event_name == 'workflow_dispatch' && github.event.inputs.bereich == 'zugang400'
+    runs-on: windows-2025
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: 01_Repository/Glide
+    steps:
+      - name: Lange Git-Pfade zulassen
+        working-directory: ${{ github.workspace }}
+        run: git config --global core.longpaths true
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        id: python
+        with:
+          python-version: "3.14.7"
+          architecture: x64
+      - name: Native Zeitzone und Referenzdesktop
+        run: |
+          tzutil /s "W. Europe Standard Time"
+          python -B tests/tools/windows_desktop.py --breite 1920 --hoehe 1080 --protokoll "$env:RUNNER_TEMP/zugang-desktop.json"
+      - name: Originalquellen mit festen Pins
+        run: python -B packaging/runtime/hole_runtimequellen.py --ziel "$env:RUNNER_TEMP/zugang-quellen"
+      - name: Eigene native Runtime mit MSVC bauen
+        id: runtime
+        run: |
+          $vswhere = "${env:ProgramFiles(x86)}/Microsoft Visual Studio/Installer/vswhere.exe"
+          $vs = & $vswhere -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+          if (-not $vs) { throw "Native x64-MSVC-Bauumgebung fehlt" }
+          $devcmd = Join-Path $vs "Common7/Tools/VsDevCmd.bat"
+          cmd /s /c "`"$devcmd`" -arch=x64 -host_arch=x64 >nul && set" | ForEach-Object {
+            if ($_ -match '^([^=]+)=(.*)$') { Set-Item "Env:$($matches[1])" $matches[2] }
+          }
+          python -B packaging/runtime/baue_runtime.py --tcl-quelle "$env:RUNNER_TEMP/zugang-quellen/tcl" --tk-quelle "$env:RUNNER_TEMP/zugang-quellen/tk" --python-quelle "$env:RUNNER_TEMP/zugang-quellen/python" --ziel "$env:RUNNER_TEMP/zugang-runtime"
+          exit $LASTEXITCODE
+      - name: Native installierte Tcl-Klassenbindungen
+        if: always() && !cancelled() && steps.runtime.outcome == 'success'
+        run: |
+          $env:PYTHONPATH = "$env:RUNNER_TEMP/zugang-runtime/python-extension"
+          python -B tests/tools/pruefe_native_accessibility_skript.py --bericht "$env:RUNNER_TEMP/zugang-skript.json"
+          exit $LASTEXITCODE
+      - name: Aufgaben-Kernablauf auf eigener Runtime
+        if: always() && !cancelled() && steps.runtime.outcome == 'success'
+        run: |
+          $env:PYTHONPATH = "$env:RUNNER_TEMP/zugang-runtime/python-extension"
+          python -B tests/integration/test_zugang400.py --nativ --report "$env:RUNNER_TEMP/zugang-gui.json"
+          exit $LASTEXITCODE
+      - name: Tatsächliche NVDA-Sprachausgabe im isolierten Testprofil
+        if: always() && !cancelled() && steps.runtime.outcome == 'success'
+        run: |
+          $env:PYTHONPATH = "$env:RUNNER_TEMP/zugang-runtime/python-extension"
+          python -B tests/tools/pruefe_reader_nvda.py --ziel "$env:RUNNER_TEMP/zugang-nvda"
+          exit $LASTEXITCODE
+      - name: Native MSAA-Kennungen über Layout, Ersatz und Destroy
+        if: always() && !cancelled() && steps.runtime.outcome == 'success'
+        run: |
+          $env:PYTHONPATH = "$env:RUNNER_TEMP/zugang-runtime/python-extension"
+          python -B tests/tools/pruefe_windows_msaa.py --ziel "$env:RUNNER_TEMP/zugang-msaa"
+          exit $LASTEXITCODE
+      - name: Native Systemsignatur und manipulierte Kopie (ohne Netzwerk)
+        if: always() && !cancelled() && steps.runtime.outcome == 'success'
+        run: |
+          python -B tests/tools/pruefe_windows_signatur.py --bericht "$env:RUNNER_TEMP/zugang-signatur.json"
+          exit $LASTEXITCODE
+      - name: Gepinnte Paketwerkzeuge für eigenen Tk-9.1-Prototyp
+        id: paket_werkzeuge
+        if: always() && !cancelled() && steps.runtime.outcome == 'success'
+        run: |
+          python -m venv "$env:RUNNER_TEMP/zugang-bau-venv"
+          & "$env:RUNNER_TEMP/zugang-bau-venv/Scripts/python.exe" -m pip install --disable-pip-version-check -r requirements/build-windows.txt
+          exit $LASTEXITCODE
+      - name: Original-Lizenzbelege der eigenen Tk-9.1-Laufzeit
+        id: paket_lizenzen
+        if: always() && !cancelled() && steps.paket_werkzeuge.outcome == 'success'
+        run: |
+          $env:PYTHONPATH = "$env:RUNNER_TEMP/zugang-runtime/python-extension"
+          & "$env:RUNNER_TEMP/zugang-bau-venv/Scripts/python.exe" -B packaging/paket/lizenzen_vorbereiten_windows.py --quelle src/glide --repo . --ziel "$env:RUNNER_TEMP/zugang-paket/lizenzen" --runtime-bau "$env:RUNNER_TEMP/zugang-runtime/runtime-bau.json"
+          exit $LASTEXITCODE
+      - name: Eigenständiger Windows-Tk-9.1-Paketprototyp (keine Lieferung)
+        id: paket_bau
+        if: always() && !cancelled() && steps.paket_lizenzen.outcome == 'success'
+        run: |
+          $env:PYTHONPATH = "$env:RUNNER_TEMP/zugang-runtime/python-extension"
+          $version = (Get-Content VERSION -Raw).Trim()
+          & "$env:RUNNER_TEMP/zugang-bau-venv/Scripts/python.exe" -B packaging/paket/baue_paket.py --quelle src/glide --version $version --ziel "$env:RUNNER_TEMP/zugang-paket/bau" --plattform windows-x64 --lizenzen "$env:RUNNER_TEMP/zugang-paket/lizenzen" --runtime-bau "$env:RUNNER_TEMP/zugang-runtime/runtime-bau.json"
+          exit $LASTEXITCODE
+      - name: Tatsächlicher isolierter Prototypstart mit gesperrter externer Tk-9.1-Laufzeit
+        if: always() && !cancelled() && steps.paket_bau.outcome == 'success'
+        run: |
+          $python = Split-Path -Parent "${{ steps.python.outputs.python-path }}"
+          python -B packaging/paket/pruefe_start_windows.py --paket "$env:RUNNER_TEMP/zugang-paket/bau/dist/Glide" --bericht "$env:RUNNER_TEMP/zugang-paket/startprobe.json" --sperren $python --sperren "$env:RUNNER_TEMP/zugang-bau-venv" --sperren "$env:RUNNER_TEMP/zugang-runtime" --sperren "$env:RUNNER_TEMP/zugang-paket/bau/quelle" --sperren "$env:GITHUB_WORKSPACE"
+          exit $LASTEXITCODE
+      - name: Native Belege sichern
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: zugang400-windows
+          path: |
+            ${{ runner.temp }}/zugang-runtime/runtime-bau.json
+            ${{ runner.temp }}/zugang-runtime/protokolle
+            ${{ runner.temp }}/zugang-desktop.json
+            ${{ runner.temp }}/zugang-signatur.json
+            ${{ runner.temp }}/zugang-msaa/*.json
+            ${{ runner.temp }}/zugang-msaa/*.log
+            ${{ runner.temp }}/zugang-gui.json
+            ${{ runner.temp }}/zugang-skript.json
+            ${{ runner.temp }}/zugang-nvda/*.json
+            ${{ runner.temp }}/zugang-nvda/*.log
+            ${{ runner.temp }}/zugang-nvda/glide-diagnose/*.json
+            ${{ runner.temp }}/zugang-paket/*.json
+            ${{ runner.temp }}/zugang-paket/lizenzen/manifest.json
+            ${{ runner.temp }}/zugang-paket/bau/*.json
+            ${{ runner.temp }}/zugang-paket/bau/bau.log
+          retention-days: 14
+          if-no-files-found: ignore

@@ -1,0 +1,93 @@
+# SPDX-License-Identifier: MPL-2.0
+"""Erscheinungsbild „Automatisch (hell/dunkel)“ (N01) ohne Oberfläche."""
+from pathlib import Path
+import sys
+import unittest
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src/glide"))
+import appearance as a
+
+DESIGNS = {
+    "light": {"base": "light", "partner": "dark"},
+    "dark": {"base": "dark", "partner": "light"},
+    "glass_light": {"base": "light", "partner": "glass_dark"},
+    "glass_dark": {"base": "dark", "partner": "glass_light"},
+    "pixel": {"base": "dark", "partner": "pixel"},
+    "dopamine": {"base": "dark", "partner": "dopamine"},
+}
+
+
+class Paare(unittest.TestCase):
+    def test_pair_from_either_side(self):
+        self.assertEqual(a.pair_for("glass_dark", DESIGNS), {"light": "glass_light", "dark": "glass_dark"})
+        self.assertEqual(a.pair_for("glass_light", DESIGNS), {"light": "glass_light", "dark": "glass_dark"})
+        self.assertEqual(a.pair_for("light", DESIGNS), {"light": "light", "dark": "dark"})
+
+    def test_dark_only_design_uses_light_by_day(self):
+        self.assertEqual(a.pair_for("pixel", DESIGNS), {"light": "light", "dark": "pixel"})
+        self.assertEqual(a.pair_for("dopamine", DESIGNS), {"light": "light", "dark": "dopamine"})
+        self.assertIsNone(a.pair_for("unbekannt", DESIGNS))
+
+    def test_normalize(self):
+        self.assertEqual(a.normalize_auto({"light": "light", "dark": "pixel", "x": 1}, DESIGNS),
+                         {"light": "light", "dark": "pixel"})
+        for kaputt in (None, True, [], {"light": "light"}, {"light": "weg", "dark": "dark"}):
+            self.assertIsNone(a.normalize_auto(kaputt, DESIGNS), kaputt)
+
+    def test_resolve(self):
+        paar = {"light": "light", "dark": "pixel"}
+        self.assertEqual(a.resolve(paar, True, "light"), "pixel")
+        self.assertEqual(a.resolve(paar, False, "pixel"), "light")
+        self.assertEqual(a.resolve(paar, None, "pixel"), "pixel")  # Erkennung gescheitert
+        self.assertEqual(a.resolve(None, True, "glass_light"), "glass_light")  # aus
+
+
+class Erkennung(unittest.TestCase):
+    def test_windows(self):
+        self.assertTrue(a.windows_is_dark(lambda: 0))
+        self.assertFalse(a.windows_is_dark(lambda: 1))
+
+        def fehlt():
+            raise OSError("kein Schlüssel")
+        self.assertIsNone(a.windows_is_dark(fehlt))
+        self.assertIsNone(a.windows_is_dark(lambda: "0"))
+        self.assertIsNone(a.windows_is_dark(lambda: True))
+
+    def test_linux(self):
+        self.assertTrue(a.linux_is_dark("'prefer-dark'"))
+        self.assertFalse(a.linux_is_dark("'default'"))
+        self.assertTrue(a.linux_is_dark("'default'", "'Adwaita-dark'"))
+        self.assertFalse(a.linux_is_dark(None, "'Adwaita'"))
+        self.assertIsNone(a.linux_is_dark(None, None))
+
+    def test_tk(self):
+        self.assertTrue(a.tk_is_dark(1))
+        self.assertFalse(a.tk_is_dark("0"))
+        self.assertIsNone(a.tk_is_dark("vielleicht"))
+
+
+class BackgroundTests(unittest.TestCase):
+    def test_fixed_palette_can_color_a_monochrome_design(self):
+        theme = {'bg': '#FFFFFF', 'card': '#FFFFFF', 'clear': '#444444'}
+        result = a.with_background(theme, 'clear', {'clear': '#0077CC'})
+        self.assertGreater(int(result['bg'][5:7], 16), int(result['bg'][1:3], 16))
+        self.assertEqual(result['card'], '#FFFFFF')
+
+    def test_background_selection_and_flat_surfaces(self):
+        self.assertEqual(a.background_choice({}), 'default')
+        self.assertEqual(a.background_choice('unknown'), 'default')
+        for base, card in (('#F7F6FA', '#FFFFFF'), ('#15171C', '#202226')):
+            theme = {'bg': base, 'card': card, 'accent': '#8C60CD'}
+            before = dict(theme)
+            flat = a.with_background(theme, 'surface')
+            self.assertEqual(flat['bg'], card)
+            self.assertEqual(flat['glass_shadow'], card)
+            self.assertEqual(flat['glass_gradient'], '')
+            color = a.with_background(theme, 'accent')
+            self.assertNotEqual(color['bg'], base)
+            self.assertEqual(color['card'], card)
+            self.assertEqual(theme, before)
+
+
+if __name__ == "__main__":
+    unittest.main()
