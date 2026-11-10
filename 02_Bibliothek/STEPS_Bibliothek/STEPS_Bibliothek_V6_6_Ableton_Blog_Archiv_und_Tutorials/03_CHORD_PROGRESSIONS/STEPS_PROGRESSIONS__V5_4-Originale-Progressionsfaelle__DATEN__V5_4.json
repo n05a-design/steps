@@ -1,0 +1,2741 @@
+[
+  {
+    "id": "STEPS-V54-P01",
+    "original_educational_sketch": true,
+    "genre_lens": "common_practice",
+    "tonal_hypothesis": "C major",
+    "tempo_bpm": 108,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "C",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "F",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "",
+        "pcs": [
+          0,
+          5,
+          9
+        ],
+        "bass": "F",
+        "bass_pc": 5
+      },
+      {
+        "symbol": "G7",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "7",
+        "pcs": [
+          2,
+          5,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      },
+      {
+        "symbol": "C",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      }
+    ],
+    "roman_hypothesis": "I–IV–V7–I",
+    "interpretation": "Clear syntactic close; ending may be weakened by looping",
+    "exercise": "Bass C–F–G–C and B→C guide tone",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P02",
+    "original_educational_sketch": true,
+    "genre_lens": "jazz",
+    "tonal_hypothesis": "C major",
+    "tempo_bpm": 126,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Dm7",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "m7",
+        "pcs": [
+          0,
+          2,
+          5,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      },
+      {
+        "symbol": "G7",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "7",
+        "pcs": [
+          2,
+          5,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      },
+      {
+        "symbol": "Cmaj7",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "Cmaj7",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      }
+    ],
+    "roman_hypothesis": "ii7–V7–Imaj7–Imaj7",
+    "interpretation": "ii–V–I with a tonic prolongation",
+    "exercise": "Keep F→E and B→C as counterpoint targets",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P03",
+    "original_educational_sketch": true,
+    "genre_lens": "popular_loop",
+    "tonal_hypothesis": "C major / A minor",
+    "tempo_bpm": 98,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Am",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "A",
+        "root_pc": 9,
+        "quality": "m",
+        "pcs": [
+          0,
+          4,
+          9
+        ],
+        "bass": "A",
+        "bass_pc": 9
+      },
+      {
+        "symbol": "F",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "",
+        "pcs": [
+          0,
+          5,
+          9
+        ],
+        "bass": "F",
+        "bass_pc": 5
+      },
+      {
+        "symbol": "C",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "G",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "",
+        "pcs": [
+          2,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      }
+    ],
+    "roman_hypothesis": "vi–IV–I–V or i–bVI–bIII–bVII",
+    "interpretation": "Ambiguous centre; melodic ending can bias reading",
+    "exercise": "Compose A-ending and C-ending toplines",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P04",
+    "original_educational_sketch": true,
+    "genre_lens": "rock_modal",
+    "tonal_hypothesis": "C mixolydian",
+    "tempo_bpm": 132,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "C",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "Bb",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "Bb",
+        "root_pc": 10,
+        "quality": "",
+        "pcs": [
+          2,
+          5,
+          10
+        ],
+        "bass": "Bb",
+        "bass_pc": 10
+      },
+      {
+        "symbol": "F",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "",
+        "pcs": [
+          0,
+          5,
+          9
+        ],
+        "bass": "F",
+        "bass_pc": 5
+      },
+      {
+        "symbol": "C",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      }
+    ],
+    "roman_hypothesis": "I–bVII–IV–I",
+    "interpretation": "Modal/rock reading, avoid automatic classical dominant function",
+    "exercise": "Sustain C pedal and compare changed bass",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P05",
+    "original_educational_sketch": true,
+    "genre_lens": "mixture",
+    "tonal_hypothesis": "C major",
+    "tempo_bpm": 96,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "C",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "F",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "",
+        "pcs": [
+          0,
+          5,
+          9
+        ],
+        "bass": "F",
+        "bass_pc": 5
+      },
+      {
+        "symbol": "Fm",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "m",
+        "pcs": [
+          0,
+          5,
+          8
+        ],
+        "bass": "F",
+        "bass_pc": 5
+      },
+      {
+        "symbol": "C",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      }
+    ],
+    "roman_hypothesis": "I–IV–iv–I",
+    "interpretation": "Borrowed subdominant coloured by Ab",
+    "exercise": "Voice-lead A→Ab→G in an inner voice",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P06",
+    "original_educational_sketch": true,
+    "genre_lens": "applied_dominant",
+    "tonal_hypothesis": "C major",
+    "tempo_bpm": 104,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "C",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "E7",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "E",
+        "root_pc": 4,
+        "quality": "7",
+        "pcs": [
+          2,
+          4,
+          8,
+          11
+        ],
+        "bass": "E",
+        "bass_pc": 4
+      },
+      {
+        "symbol": "Am",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "A",
+        "root_pc": 9,
+        "quality": "m",
+        "pcs": [
+          0,
+          4,
+          9
+        ],
+        "bass": "A",
+        "bass_pc": 9
+      },
+      {
+        "symbol": "G7",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "7",
+        "pcs": [
+          2,
+          5,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      }
+    ],
+    "roman_hypothesis": "I–V7/vi–vi–V7",
+    "interpretation": "Applied dominant destabilizes home key temporarily",
+    "exercise": "Track G# resolution to A in second half",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P07",
+    "original_educational_sketch": true,
+    "genre_lens": "chromatic_mediant",
+    "tonal_hypothesis": "C major",
+    "tempo_bpm": 84,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "C",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "Ab",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "Ab",
+        "root_pc": 8,
+        "quality": "",
+        "pcs": [
+          0,
+          3,
+          8
+        ],
+        "bass": "Ab",
+        "bass_pc": 8
+      },
+      {
+        "symbol": "E",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "E",
+        "root_pc": 4,
+        "quality": "",
+        "pcs": [
+          4,
+          8,
+          11
+        ],
+        "bass": "E",
+        "bass_pc": 4
+      },
+      {
+        "symbol": "C",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      }
+    ],
+    "roman_hypothesis": "I–bVI–III–I (descriptive)",
+    "interpretation": "Transformational colour more than diatonic function",
+    "exercise": "Constrain each voice to nearest pitch class",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P08",
+    "original_educational_sketch": true,
+    "genre_lens": "minor_cadential",
+    "tonal_hypothesis": "A minor",
+    "tempo_bpm": 110,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Am",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "A",
+        "root_pc": 9,
+        "quality": "m",
+        "pcs": [
+          0,
+          4,
+          9
+        ],
+        "bass": "A",
+        "bass_pc": 9
+      },
+      {
+        "symbol": "Dm",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "m",
+        "pcs": [
+          2,
+          5,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      },
+      {
+        "symbol": "E7",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "E",
+        "root_pc": 4,
+        "quality": "7",
+        "pcs": [
+          2,
+          4,
+          8,
+          11
+        ],
+        "bass": "E",
+        "bass_pc": 4
+      },
+      {
+        "symbol": "Am",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "A",
+        "root_pc": 9,
+        "quality": "m",
+        "pcs": [
+          0,
+          4,
+          9
+        ],
+        "bass": "A",
+        "bass_pc": 9
+      }
+    ],
+    "roman_hypothesis": "i–iv–V7–i",
+    "interpretation": "Harmonic-minor raised leading tone",
+    "exercise": "Use G# only where E7 demands it",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P09",
+    "original_educational_sketch": true,
+    "genre_lens": "minor_modal",
+    "tonal_hypothesis": "A minor",
+    "tempo_bpm": 94,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Am",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "A",
+        "root_pc": 9,
+        "quality": "m",
+        "pcs": [
+          0,
+          4,
+          9
+        ],
+        "bass": "A",
+        "bass_pc": 9
+      },
+      {
+        "symbol": "G",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "",
+        "pcs": [
+          2,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      },
+      {
+        "symbol": "F",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "",
+        "pcs": [
+          0,
+          5,
+          9
+        ],
+        "bass": "F",
+        "bass_pc": 5
+      },
+      {
+        "symbol": "Em",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "E",
+        "root_pc": 4,
+        "quality": "m",
+        "pcs": [
+          4,
+          7,
+          11
+        ],
+        "bass": "E",
+        "bass_pc": 4
+      }
+    ],
+    "roman_hypothesis": "i–bVII–bVI–v",
+    "interpretation": "Natural minor / Aeolian loop",
+    "exercise": "Compare E minor with E major",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P10",
+    "original_educational_sketch": true,
+    "genre_lens": "dorian",
+    "tonal_hypothesis": "D dorian",
+    "tempo_bpm": 112,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Dm7",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "m7",
+        "pcs": [
+          0,
+          2,
+          5,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      },
+      {
+        "symbol": "G",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "",
+        "pcs": [
+          2,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      },
+      {
+        "symbol": "C",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "Dm7",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "m7",
+        "pcs": [
+          0,
+          2,
+          5,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      }
+    ],
+    "roman_hypothesis": "i7–IV–bVII–i7",
+    "interpretation": "Dorian centre depends on D focus",
+    "exercise": "Emphasize B natural and a D pedal",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P11",
+    "original_educational_sketch": true,
+    "genre_lens": "lydian_colour",
+    "tonal_hypothesis": "C lydian",
+    "tempo_bpm": 88,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Cmaj7",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "D",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "",
+        "pcs": [
+          2,
+          6,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      },
+      {
+        "symbol": "Cmaj7",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "D",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "",
+        "pcs": [
+          2,
+          6,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      }
+    ],
+    "roman_hypothesis": "Imaj7–II–Imaj7–II",
+    "interpretation": "Lydian #4 coloration (F#) depends on context",
+    "exercise": "Put F# in melody over D then return E",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P12",
+    "original_educational_sketch": true,
+    "genre_lens": "blues",
+    "tonal_hypothesis": "C blues",
+    "tempo_bpm": 116,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "C7",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "7",
+        "pcs": [
+          0,
+          4,
+          7,
+          10
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "F7",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "7",
+        "pcs": [
+          0,
+          3,
+          5,
+          9
+        ],
+        "bass": "F",
+        "bass_pc": 5
+      },
+      {
+        "symbol": "C7",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "7",
+        "pcs": [
+          0,
+          4,
+          7,
+          10
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "G7",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "7",
+        "pcs": [
+          2,
+          5,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      }
+    ],
+    "roman_hypothesis": "I7–IV7–I7–V7",
+    "interpretation": "Four-bar blues fragment, not full 12-bar form",
+    "exercise": "Explain dominant seventh without tonicization",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P13",
+    "original_educational_sketch": true,
+    "genre_lens": "neo_soul",
+    "tonal_hypothesis": "C major",
+    "tempo_bpm": 82,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Cmaj7",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "Am7",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "A",
+        "root_pc": 9,
+        "quality": "m7",
+        "pcs": [
+          0,
+          4,
+          7,
+          9
+        ],
+        "bass": "A",
+        "bass_pc": 9
+      },
+      {
+        "symbol": "Dm7",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "m7",
+        "pcs": [
+          0,
+          2,
+          5,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      },
+      {
+        "symbol": "G7",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "7",
+        "pcs": [
+          2,
+          5,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      }
+    ],
+    "roman_hypothesis": "Imaj7–vi7–ii7–V7",
+    "interpretation": "Extensions and register do more than chord labels",
+    "exercise": "Use upper voice E→E→F→F",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P14",
+    "original_educational_sketch": true,
+    "genre_lens": "gospel",
+    "tonal_hypothesis": "C major",
+    "tempo_bpm": 104,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "C",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "G/B",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "",
+        "pcs": [
+          2,
+          7,
+          11
+        ],
+        "bass": "B",
+        "bass_pc": 11
+      },
+      {
+        "symbol": "Am7",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "A",
+        "root_pc": 9,
+        "quality": "m7",
+        "pcs": [
+          0,
+          4,
+          7,
+          9
+        ],
+        "bass": "A",
+        "bass_pc": 9
+      },
+      {
+        "symbol": "F",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "",
+        "pcs": [
+          0,
+          5,
+          9
+        ],
+        "bass": "F",
+        "bass_pc": 5
+      }
+    ],
+    "roman_hypothesis": "I–V6–vi7–IV",
+    "interpretation": "Descending C–B–A and eventual F",
+    "exercise": "Keep bass contour separate from root",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P15",
+    "original_educational_sketch": true,
+    "genre_lens": "pedal",
+    "tonal_hypothesis": "C major",
+    "tempo_bpm": 72,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "C",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "F/C",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "",
+        "pcs": [
+          0,
+          5,
+          9
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "G/C",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "",
+        "pcs": [
+          2,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "C",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      }
+    ],
+    "roman_hypothesis": "I–IV/C–V/C–I",
+    "interpretation": "Harmonic roots change while C bass stays",
+    "exercise": "Contrast static C pedal with moving roots",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P16",
+    "original_educational_sketch": true,
+    "genre_lens": "slash_voicing",
+    "tonal_hypothesis": "C major",
+    "tempo_bpm": 108,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "C",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "G/B",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "",
+        "pcs": [
+          2,
+          7,
+          11
+        ],
+        "bass": "B",
+        "bass_pc": 11
+      },
+      {
+        "symbol": "Am",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "A",
+        "root_pc": 9,
+        "quality": "m",
+        "pcs": [
+          0,
+          4,
+          9
+        ],
+        "bass": "A",
+        "bass_pc": 9
+      },
+      {
+        "symbol": "F/A",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "",
+        "pcs": [
+          0,
+          5,
+          9
+        ],
+        "bass": "A",
+        "bass_pc": 9
+      }
+    ],
+    "roman_hypothesis": "I–V6–vi–IV6",
+    "interpretation": "Voice-leading bass line has independent logic",
+    "exercise": "Notate bass C3–B2–A2–A2",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P17",
+    "original_educational_sketch": true,
+    "genre_lens": "backdoor_jazz",
+    "tonal_hypothesis": "C major",
+    "tempo_bpm": 124,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Dm7",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "m7",
+        "pcs": [
+          0,
+          2,
+          5,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      },
+      {
+        "symbol": "Bb7",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "Bb",
+        "root_pc": 10,
+        "quality": "7",
+        "pcs": [
+          2,
+          5,
+          8,
+          10
+        ],
+        "bass": "Bb",
+        "bass_pc": 10
+      },
+      {
+        "symbol": "Cmaj7",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "Cmaj7",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      }
+    ],
+    "roman_hypothesis": "ii–bVII7–Imaj7",
+    "interpretation": "Backdoor cadential suggestion, stylistic dependent",
+    "exercise": "Compare Bb7 with G7 over same top melody",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P18",
+    "original_educational_sketch": true,
+    "genre_lens": "tritone_sub",
+    "tonal_hypothesis": "C major",
+    "tempo_bpm": 138,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Dm7",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "m7",
+        "pcs": [
+          0,
+          2,
+          5,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      },
+      {
+        "symbol": "Db7",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "Db",
+        "root_pc": 1,
+        "quality": "7",
+        "pcs": [
+          1,
+          5,
+          8,
+          11
+        ],
+        "bass": "Db",
+        "bass_pc": 1
+      },
+      {
+        "symbol": "Cmaj7",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "Cmaj7",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      }
+    ],
+    "roman_hypothesis": "ii–bII7–Imaj7",
+    "interpretation": "Semitone bass from substitute dominant",
+    "exercise": "Avoid treating Db7 as simple Neapolitan",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P19",
+    "original_educational_sketch": true,
+    "genre_lens": "minor_jazz",
+    "tonal_hypothesis": "A minor",
+    "tempo_bpm": 112,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Bm7b5",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "B",
+        "root_pc": 11,
+        "quality": "m7b5",
+        "pcs": [
+          2,
+          5,
+          9,
+          11
+        ],
+        "bass": "B",
+        "bass_pc": 11
+      },
+      {
+        "symbol": "E7",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "E",
+        "root_pc": 4,
+        "quality": "7",
+        "pcs": [
+          2,
+          4,
+          8,
+          11
+        ],
+        "bass": "E",
+        "bass_pc": 4
+      },
+      {
+        "symbol": "Am7",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "A",
+        "root_pc": 9,
+        "quality": "m7",
+        "pcs": [
+          0,
+          4,
+          7,
+          9
+        ],
+        "bass": "A",
+        "bass_pc": 9
+      },
+      {
+        "symbol": "Am7",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "A",
+        "root_pc": 9,
+        "quality": "m7",
+        "pcs": [
+          0,
+          4,
+          7,
+          9
+        ],
+        "bass": "A",
+        "bass_pc": 9
+      }
+    ],
+    "roman_hypothesis": "iiø7–V7–i7",
+    "interpretation": "Minor ii–V–i with E7 tendency",
+    "exercise": "Show G#→A in melody if desired",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P20",
+    "original_educational_sketch": true,
+    "genre_lens": "descending_minor",
+    "tonal_hypothesis": "A minor",
+    "tempo_bpm": 90,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Am",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "A",
+        "root_pc": 9,
+        "quality": "m",
+        "pcs": [
+          0,
+          4,
+          9
+        ],
+        "bass": "A",
+        "bass_pc": 9
+      },
+      {
+        "symbol": "Am/G",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "A",
+        "root_pc": 9,
+        "quality": "m",
+        "pcs": [
+          0,
+          4,
+          9
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      },
+      {
+        "symbol": "F",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "",
+        "pcs": [
+          0,
+          5,
+          9
+        ],
+        "bass": "F",
+        "bass_pc": 5
+      },
+      {
+        "symbol": "E7",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "E",
+        "root_pc": 4,
+        "quality": "7",
+        "pcs": [
+          2,
+          4,
+          8,
+          11
+        ],
+        "bass": "E",
+        "bass_pc": 4
+      }
+    ],
+    "roman_hypothesis": "i–i7/b7–bVI–V7",
+    "interpretation": "Stepwise moving bass creates arc",
+    "exercise": "Distinct slash bass G not chord root A",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P21",
+    "original_educational_sketch": true,
+    "genre_lens": "static_harmony",
+    "tonal_hypothesis": "C major",
+    "tempo_bpm": 100,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Cmaj7",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "Cmaj7",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "Fmaj7",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          5,
+          9
+        ],
+        "bass": "F",
+        "bass_pc": 5
+      },
+      {
+        "symbol": "Cmaj7",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      }
+    ],
+    "roman_hypothesis": "Imaj7 prolongation–IVmaj7–I",
+    "interpretation": "Melody and timbre supply change",
+    "exercise": "Prohibit more than two distinct roots",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P22",
+    "original_educational_sketch": true,
+    "genre_lens": "posttonal_triadic",
+    "tonal_hypothesis": "none",
+    "tempo_bpm": 120,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "C",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "Db",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "Db",
+        "root_pc": 1,
+        "quality": "",
+        "pcs": [
+          1,
+          5,
+          8
+        ],
+        "bass": "Db",
+        "bass_pc": 1
+      },
+      {
+        "symbol": "D",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "",
+        "pcs": [
+          2,
+          6,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      },
+      {
+        "symbol": "Eb",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "Eb",
+        "root_pc": 3,
+        "quality": "",
+        "pcs": [
+          3,
+          7,
+          10
+        ],
+        "bass": "Eb",
+        "bass_pc": 3
+      }
+    ],
+    "roman_hypothesis": "parallel triads",
+    "interpretation": "Chromatic planing without asserted tonic",
+    "exercise": "Do not invent Roman numerals",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P23",
+    "original_educational_sketch": true,
+    "genre_lens": "minimalist",
+    "tonal_hypothesis": "D dorian",
+    "tempo_bpm": 126,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Dm",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "m",
+        "pcs": [
+          2,
+          5,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      },
+      {
+        "symbol": "Dm",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "m",
+        "pcs": [
+          2,
+          5,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      },
+      {
+        "symbol": "G",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "",
+        "pcs": [
+          2,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      },
+      {
+        "symbol": "Dm",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "m",
+        "pcs": [
+          2,
+          5,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      }
+    ],
+    "roman_hypothesis": "i–i–IV–i",
+    "interpretation": "Repetition/microvariation is principal change",
+    "exercise": "Distribute rhythmic accents across repeated bars",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P24",
+    "original_educational_sketch": true,
+    "genre_lens": "cinematic_ostinato",
+    "tonal_hypothesis": "A minor",
+    "tempo_bpm": 92,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Am",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "A",
+        "root_pc": 9,
+        "quality": "m",
+        "pcs": [
+          0,
+          4,
+          9
+        ],
+        "bass": "A",
+        "bass_pc": 9
+      },
+      {
+        "symbol": "F",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "",
+        "pcs": [
+          0,
+          5,
+          9
+        ],
+        "bass": "F",
+        "bass_pc": 5
+      },
+      {
+        "symbol": "Dm",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "m",
+        "pcs": [
+          2,
+          5,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      },
+      {
+        "symbol": "E7",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "E",
+        "root_pc": 4,
+        "quality": "7",
+        "pcs": [
+          2,
+          4,
+          8,
+          11
+        ],
+        "bass": "E",
+        "bass_pc": 4
+      }
+    ],
+    "roman_hypothesis": "i–bVI–iv–V7",
+    "interpretation": "Bass ostinato and upper-voice tensions",
+    "exercise": "Reharmonize with static A pedal",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P25",
+    "original_educational_sketch": true,
+    "genre_lens": "two_chord",
+    "tonal_hypothesis": "G major",
+    "tempo_bpm": 112,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "G",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "",
+        "pcs": [
+          2,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      },
+      {
+        "symbol": "C",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "G",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "",
+        "pcs": [
+          2,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      },
+      {
+        "symbol": "C",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      }
+    ],
+    "roman_hypothesis": "I–IV–I–IV",
+    "interpretation": "No compulsory cadence; duet between two areas",
+    "exercise": "Use registral hook and answer phrase",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P26",
+    "original_educational_sketch": true,
+    "genre_lens": "mixolydian_rock",
+    "tonal_hypothesis": "G mixolydian",
+    "tempo_bpm": 124,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "G",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "",
+        "pcs": [
+          2,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      },
+      {
+        "symbol": "F",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "",
+        "pcs": [
+          0,
+          5,
+          9
+        ],
+        "bass": "F",
+        "bass_pc": 5
+      },
+      {
+        "symbol": "C",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "G",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "",
+        "pcs": [
+          2,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      }
+    ],
+    "roman_hypothesis": "I–bVII–IV–I",
+    "interpretation": "No leading-tone dominant requirement",
+    "exercise": "Compare F natural vs F# melody",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P27",
+    "original_educational_sketch": true,
+    "genre_lens": "bridge",
+    "tonal_hypothesis": "G major",
+    "tempo_bpm": 106,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "G",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "",
+        "pcs": [
+          2,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      },
+      {
+        "symbol": "Em",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "E",
+        "root_pc": 4,
+        "quality": "m",
+        "pcs": [
+          4,
+          7,
+          11
+        ],
+        "bass": "E",
+        "bass_pc": 4
+      },
+      {
+        "symbol": "Am7",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "A",
+        "root_pc": 9,
+        "quality": "m7",
+        "pcs": [
+          0,
+          4,
+          7,
+          9
+        ],
+        "bass": "A",
+        "bass_pc": 9
+      },
+      {
+        "symbol": "D7",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "7",
+        "pcs": [
+          0,
+          2,
+          6,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      }
+    ],
+    "roman_hypothesis": "I–vi–ii7–V7",
+    "interpretation": "Functional circle as section transition",
+    "exercise": "Compose a deceptive Em continuation",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P28",
+    "original_educational_sketch": true,
+    "genre_lens": "plagal_minor",
+    "tonal_hypothesis": "C major",
+    "tempo_bpm": 84,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Cmaj7",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "Fm",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "m",
+        "pcs": [
+          0,
+          5,
+          8
+        ],
+        "bass": "F",
+        "bass_pc": 5
+      },
+      {
+        "symbol": "Cmaj7",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "Cmaj7",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      }
+    ],
+    "roman_hypothesis": "Imaj7–iv–Imaj7",
+    "interpretation": "Mode-mixture plagal colour",
+    "exercise": "Upper line G→Ab→G",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P29",
+    "original_educational_sketch": true,
+    "genre_lens": "suspended",
+    "tonal_hypothesis": "C major",
+    "tempo_bpm": 100,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Csus4",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "sus4",
+        "pcs": [
+          0,
+          5,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "C",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "Fsus4",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "sus4",
+        "pcs": [
+          0,
+          5,
+          10
+        ],
+        "bass": "F",
+        "bass_pc": 5
+      },
+      {
+        "symbol": "F",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "",
+        "pcs": [
+          0,
+          5,
+          9
+        ],
+        "bass": "F",
+        "bass_pc": 5
+      }
+    ],
+    "roman_hypothesis": "Isus4–I–IVsus4–IV",
+    "interpretation": "Suspensions are vertical colours without forced classical status",
+    "exercise": "Resolve F→E and Bb→A selectively",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P30",
+    "original_educational_sketch": true,
+    "genre_lens": "cycle",
+    "tonal_hypothesis": "C major",
+    "tempo_bpm": 114,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "Am7",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "A",
+        "root_pc": 9,
+        "quality": "m7",
+        "pcs": [
+          0,
+          4,
+          7,
+          9
+        ],
+        "bass": "A",
+        "bass_pc": 9
+      },
+      {
+        "symbol": "Dm7",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "m7",
+        "pcs": [
+          0,
+          2,
+          5,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      },
+      {
+        "symbol": "G7",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "7",
+        "pcs": [
+          2,
+          5,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      },
+      {
+        "symbol": "Cmaj7",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "maj7",
+        "pcs": [
+          0,
+          4,
+          7,
+          11
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      }
+    ],
+    "roman_hypothesis": "vi7–ii7–V7–Imaj7",
+    "interpretation": "Ascending-fourth root cycle",
+    "exercise": "Compare root motion vs upper-voice smoothness",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P31",
+    "original_educational_sketch": true,
+    "genre_lens": "bass_recontext",
+    "tonal_hypothesis": "C major",
+    "tempo_bpm": 100,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "C",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "C",
+        "bass_pc": 0
+      },
+      {
+        "symbol": "C/E",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "C",
+        "root_pc": 0,
+        "quality": "",
+        "pcs": [
+          0,
+          4,
+          7
+        ],
+        "bass": "E",
+        "bass_pc": 4
+      },
+      {
+        "symbol": "F",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "F",
+        "root_pc": 5,
+        "quality": "",
+        "pcs": [
+          0,
+          5,
+          9
+        ],
+        "bass": "F",
+        "bass_pc": 5
+      },
+      {
+        "symbol": "G",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "",
+        "pcs": [
+          2,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      }
+    ],
+    "roman_hypothesis": "I–I6–IV–V",
+    "interpretation": "Same root with changed inversion delays turnover",
+    "exercise": "Record bass C–E–F–G",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  },
+  {
+    "id": "STEPS-V54-P32",
+    "original_educational_sketch": true,
+    "genre_lens": "sus_dominant",
+    "tonal_hypothesis": "G major",
+    "tempo_bpm": 98,
+    "meter": "4/4",
+    "bars": 4,
+    "chord_events": [
+      {
+        "symbol": "G",
+        "bar": 1,
+        "start_beats": 0,
+        "duration_beats": 4,
+        "root": "G",
+        "root_pc": 7,
+        "quality": "",
+        "pcs": [
+          2,
+          7,
+          11
+        ],
+        "bass": "G",
+        "bass_pc": 7
+      },
+      {
+        "symbol": "Am7",
+        "bar": 2,
+        "start_beats": 4,
+        "duration_beats": 4,
+        "root": "A",
+        "root_pc": 9,
+        "quality": "m7",
+        "pcs": [
+          0,
+          4,
+          7,
+          9
+        ],
+        "bass": "A",
+        "bass_pc": 9
+      },
+      {
+        "symbol": "D7sus4",
+        "bar": 3,
+        "start_beats": 8,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "7sus4",
+        "pcs": [
+          0,
+          2,
+          7,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      },
+      {
+        "symbol": "D7",
+        "bar": 4,
+        "start_beats": 12,
+        "duration_beats": 4,
+        "root": "D",
+        "root_pc": 2,
+        "quality": "7",
+        "pcs": [
+          0,
+          2,
+          6,
+          9
+        ],
+        "bass": "D",
+        "bass_pc": 2
+      }
+    ],
+    "roman_hypothesis": "I–ii7–V7sus4–V7",
+    "interpretation": "Dominant delay leaves resolution for next loop",
+    "exercise": "Play suspended 4→3 in D7",
+    "source_anchors": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "review_status": "pitch_class_parsed_only; stylistic_and_spelling_review_open"
+  }
+]

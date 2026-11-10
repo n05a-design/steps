@@ -1,0 +1,96 @@
+{
+  "version": "5.1.0",
+  "cases": [
+    {
+      "id": "DR-TEST-001",
+      "type": "numeric",
+      "description": "At 132 BPM, 4/4 bar is about 1.81818 s",
+      "expected_seconds": 1.8181818181818181,
+      "test_result": "passed"
+    },
+    {
+      "id": "DR-TEST-002",
+      "type": "numeric",
+      "description": "At 130 BPM, a sixteenth lasts about 115.38 ms",
+      "expected_ms": 115.38461538461539,
+      "test_result": "passed"
+    },
+    {
+      "id": "DR-TEST-003",
+      "type": "numeric",
+      "description": "At 174 BPM, a sixteenth lasts about 86.21 ms",
+      "expected_ms": 86.20689655172414,
+      "test_result": "passed"
+    },
+    {
+      "id": "DR-TEST-004",
+      "type": "numeric",
+      "description": "At 154 BPM, the half-time perception can be counted at 77 BPM",
+      "expected_bpm": 77,
+      "test_result": "passed"
+    },
+    {
+      "id": "DR-TEST-005",
+      "type": "numeric",
+      "description": "A 0.292-step shift of a sixteenth at 132 BPM is about 33.18 ms",
+      "expected_ms": 33.18181818181818,
+      "test_result": "passed"
+    },
+    {
+      "id": "DR-TEST-006",
+      "type": "numeric",
+      "description": "MIDI note 27 standard pitch frequency is about 38.89 Hz at A4=440 Hz",
+      "expected_hz": 38.890872965260115,
+      "test_result": "passed"
+    },
+    {
+      "id": "DR-TEST-007",
+      "type": "source",
+      "description": "Six uploaded HTMLs have five unique lesson bodies; DnB pair identical",
+      "expected_unique": 5,
+      "test_result": "passed"
+    },
+    {
+      "id": "DR-TEST-008",
+      "type": "midi_pending",
+      "description": "Compare Techno 130 BPM track onset times, track/kit names and rim displacement",
+      "test_result": "not_run_midi_not_provided"
+    },
+    {
+      "id": "DR-TEST-009",
+      "type": "midi_pending",
+      "description": "Compare UK Garage 132 BPM Straight and Swung MIDI event timing",
+      "test_result": "not_run_midi_not_provided"
+    },
+    {
+      "id": "DR-TEST-010",
+      "type": "midi_pending",
+      "description": "Compare 174 BPM DnB sub note 27, note timing and CC7 arrangement",
+      "test_result": "not_run_midi_not_provided"
+    },
+    {
+      "id": "DR-TEST-011",
+      "type": "midi_pending",
+      "description": "Compare Rage 154 BPM four-bar 808 gate times and FX note triggers",
+      "test_result": "not_run_midi_not_provided"
+    },
+    {
+      "id": "DR-TEST-012",
+      "type": "audio_pending",
+      "description": "Audio listen and original recording comparisons require authorized audio access",
+      "test_result": "not_run_no_audio_or_licenses"
+    },
+    {
+      "id": "DR-TEST-013",
+      "type": "scientific_review",
+      "description": "Compare EQ claims to linear-systems literature, including nonlinear EQ plugin exceptions",
+      "test_result": "pending_independent_review"
+    },
+    {
+      "id": "DR-TEST-014",
+      "type": "rights_review",
+      "description": "Verify copyright, MIDI derivative licenses and public redistribution permissions",
+      "test_result": "pending_legal_review"
+    }
+  ]
+}

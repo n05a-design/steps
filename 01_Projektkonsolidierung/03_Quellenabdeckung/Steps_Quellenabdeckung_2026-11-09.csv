@@ -1,0 +1,90 @@
+﻿Originaldatei,Zeile_von,Zeile_bis,Originalabschnitt,In_Overview_Abschnitt,Art_der_Behandlung,Quellenstatus
+STEPS Project Export.md,1,10,Executive Summary,1;4;5;14,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+STEPS Project Export.md,11,23,Scope and Collected Materials,4;5;10,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+STEPS Project Export.md,24,87,Current Status and Coverage,5;14,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+STEPS Project Export.md,88,104,Key Gaps and Prioritized Next Steps,9;15,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+STEPS Project Export.md,105,162,Implementation Plan for Codex Integration,8;9;11;16;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+STEPS Project Export.md,163,183,Archive Structure and Naming Conventions,11,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+STEPS Project Export.md,184,202,Quality Assurance & Validation Checklist,9,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+STEPS Project Export.md,203,226,Project Timeline,12;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+STEPS Project Export.md,227,260,Scripts and Reproducibility,9;11;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+STEPS Project Export.md,261,282,MIDI Parsing Example,9;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+STEPS Project Export.md,283,291,Assumptions and Constraints,1;9;11;14,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+STEPS Project Export.md,292,297,References,3;4;17,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projekt Overview.md,1,4,Summary,1;4;5;14,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projekt Overview.md,5,8,Project Overview and Goals,1;2,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projekt Overview.md,9,24,Collected Materials,3;4;5;11,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projekt Overview.md,25,34,Completeness & Gaps,5;9;15,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projekt Overview.md,35,48,Artifact Production Steps,9;11,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projekt Overview.md,49,61,Deliverables Table,11,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projekt Overview.md,62,93,Project Plan & Timeline,12;14;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projekt Overview.md,94,103,Legal & Licensing Checklist,10;14,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projekt Overview.md,104,125,Verification Procedures,9;11;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projekt Overview.md,126,136,Alternative Delivery Methods,11,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projekt Overview.md,137,146,Deliverables Comparison,11,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projekt Overview.md,147,159,Conversation Decisions & Key Inputs,1;4;5;9;14,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Glide Kontext für Fable(2).md,1,13,Glide reuse assignment,1;7,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Glide Kontext für Fable(2).md,14,100,Early callbacks/layout and reuse inventory,7;9,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Glide Kontext für Fable(2).md,101,129,First PR #71 evidence and benchmark,7,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Glide Kontext für Fable(2).md,130,208,Mac geometry; docs; SBOM; #967f84f,7;9,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Glide Kontext für Fable(2).md,209,277,Local-vs-GitHub drift; archive instructions,7;14,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Glide Kontext für Fable(2).md,278,354,Inventory and preservation evidence,7,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Glide Kontext für Fable(2).md,355,383,New PR #71 failure and retries,7;9,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Glide Kontext für Fable(2).md,384,402,Windows timeout and Gelesen defect,7;9,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Glide Kontext für Fable(2).md,403,435,Archive and local regression results,7;9,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Glide Kontext für Fable(2).md,436,454,Git recovery; audio moves; Mac issues,7;9,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Glide Kontext für Fable(2).md,455,527,UI failures and targeted repair,7;9,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Glide Kontext für Fable(2).md,528,560,Commit f3408de platform checks,7;9,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Glide Kontext für Fable(2).md,561,615,Mac animation and testing,7;9,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Glide Kontext für Fable(2).md,616,659,Last evidenced status,7;9;14,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Project Definition & Positioning.md,1,3,Executive Summary,1;2;6,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Project Definition & Positioning.md,4,8,Project Definition & Positioning,1;2,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Project Definition & Positioning.md,9,37,Competitor Landscape,6,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Project Definition & Positioning.md,38,51,Market Analysis,6,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Project Definition & Positioning.md,52,67,Technical Landscape,7;8,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Project Definition & Positioning.md,68,75,Legal/IP Considerations,10;14,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Project Definition & Positioning.md,76,109,MVP Features & Roadmap,2;12;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Project Definition & Positioning.md,110,147,README/GitHub Repo Structure,8;10;16;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Project Definition & Positioning.md,148,193,Actionable Next Steps,8;12;16;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Project Definition & Positioning.md,194,221,German Summary – duplicate and unique details,1;2;6;8;10;11;12,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,1,30,Executive Summary,1;2;3;8,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,31,59,Project Definition / Scope,1;2,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,60,88,20 Source Inventory,3,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,89,149,Theory Architecture and Research,2;3,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,150,184,Chord Progression Model,2;8;9,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,185,207,Voice Leading,2;3,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,208,219,Stylistic Perspective,2;3,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,220,233,Computational Theory,2,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,234,252,Competitor and Inspiration,6,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,253,286,Steps Product Differentiation,2;6,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,287,363,Knowledge Base and Repository,8;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,364,408,Source Metadata Schema,3;8;16;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,409,457,Concept Schema,8;16;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,458,485,Progression Object,2;8;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,486,502,Provenance,8,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,503,526,Codex Workflow,8;16;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,527,555,Gaps and Risks,9;14;15,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,556,620,Decision Register,13;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,621,660,Roadmap,12;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,661,701,Minimal Deliverables & Tests,9;12,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,702,749,Source Intake Template,16;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,750,783,Concept Document Template,16;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,784,812,Codex Ingestion Prompt,16;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,813,834,Concept Review Prompt,16;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,835,891,Research Handover ZIP,11;Technischer Anhang,Konsolidiert; originale Codeblöcke zusätzlich im technischen Anhang,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Forschungs- und Projektgrundlage.md,892,900,Next Research Tasks,3;15,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projektstatus- und Projektstartbericht.md,1,35,Report Scope/Management Summary,1;4,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projektstatus- und Projektstartbericht.md,36,61,Steps definition limitation,1;14,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projektstatus- und Projektstartbericht.md,62,95,Chronology and user decisions,1;4;13,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projektstatus- und Projektstartbericht.md,96,113,Materials and sources,4,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projektstatus- und Projektstartbericht.md,114,127,Research size,4,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projektstatus- und Projektstartbericht.md,128,137,Example URLs,4,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projektstatus- und Projektstartbericht.md,138,178,Legal/IP,4;10,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projektstatus- und Projektstartbericht.md,179,209,Technical Status,4;8,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projektstatus- und Projektstartbericht.md,210,228,Project Status,1;4;15,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projektstatus- und Projektstartbericht.md,229,243,Risks and Dependencies,14;15,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projektstatus- und Projektstartbericht.md,244,311,Next Steps to Start,12;15,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projektstatus- und Projektstartbericht.md,312,324,Four-Week Plan,12,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projektstatus- und Projektstartbericht.md,325,338,Open Decisions,13;15,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projektstatus- und Projektstartbericht.md,339,352,Conclusion,1;18,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert
+Projektstatus- und Projektstartbericht.md,353,376,Sources and limits,17,Konsolidiert in den angegebenen Kapiteln,Inhalt aus hochgeladenem Dokument; Aussagen nicht extern verifiziert

@@ -1,0 +1,452 @@
+[
+  {
+    "id": "CAND-V3-0001",
+    "author": "Jean-Philippe Rameau",
+    "work": "Traité de l’harmonie",
+    "theme": "historical harmony",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0002",
+    "author": "Hugo Riemann",
+    "work": "Vereinfachte Harmonielehre / Funktionstheorie",
+    "theme": "German harmonic function theory",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0003",
+    "author": "Heinrich Schenker",
+    "work": "Der freie Satz",
+    "theme": "Schenkerian analysis",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0004",
+    "author": "Arnold Schoenberg",
+    "work": "Fundamentals of Musical Composition",
+    "theme": "theme,motive,sentence,period",
+    "pillar": "COMPOSE",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0005",
+    "author": "Arnold Schoenberg",
+    "work": "Structural Functions of Harmony",
+    "theme": "tonal function",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0006",
+    "author": "Johann Joseph Fux",
+    "work": "Gradus ad Parnassum",
+    "theme": "species counterpoint",
+    "pillar": "COMPOSE",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0007",
+    "author": "Samuel Adler",
+    "work": "The Study of Orchestration",
+    "theme": "instrumentation",
+    "pillar": "COMPOSE",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0008",
+    "author": "Elaine Gould",
+    "work": "Behind Bars",
+    "theme": "notation,score preparation",
+    "pillar": "MUSIC",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0009",
+    "author": "Vincent Persichetti",
+    "work": "Twentieth-Century Harmony",
+    "theme": "post-tonal harmony",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0010",
+    "author": "Allen Forte",
+    "work": "The Structure of Atonal Music",
+    "theme": "pitch-class set theory",
+    "pillar": "MUSIC",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0011",
+    "author": "Joseph N. Straus",
+    "work": "Introduction to Post-Tonal Theory",
+    "theme": "pitch-class sets and serialism",
+    "pillar": "MUSIC",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0012",
+    "author": "David Lewin",
+    "work": "Generalized Musical Intervals and Transformations",
+    "theme": "transformation theory",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0013",
+    "author": "James Hepokoski; Warren Darcy",
+    "work": "Elements of Sonata Theory",
+    "theme": "sonata-form rhetoric",
+    "pillar": "COMPOSE",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0014",
+    "author": "Mark Spicer",
+    "work": "Accumulative Form in Pop-Rock Music",
+    "theme": "popular form",
+    "pillar": "COMPOSE",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0015",
+    "author": "Allan F. Moore",
+    "work": "Analyzing Popular Music",
+    "theme": "popular music methods",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0016",
+    "author": "Philip Tagg",
+    "work": "Everyday Tonality",
+    "theme": "popular harmony",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0017",
+    "author": "Christopher Doll",
+    "work": "Hearing Harmony: Toward a Tonal Theory for the Rock Era",
+    "theme": "popular tonal analysis",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0018",
+    "author": "Nicole Biamonte",
+    "work": "Triadic Modal and Pentatonic Patterns in Rock Music",
+    "theme": "modal patterns",
+    "pillar": "PROGRESSIONS",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0019",
+    "author": "Dariusz Terefenko",
+    "work": "Jazz Theory: From Basic to Advanced Study",
+    "theme": "jazz theory",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0020",
+    "author": "Mark Levine",
+    "work": "The Jazz Theory Book",
+    "theme": "jazz conventions",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0021",
+    "author": "Bert Ligon",
+    "work": "Connecting Chords with Linear Harmony",
+    "theme": "melodic line in jazz",
+    "pillar": "COMPOSE",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0022",
+    "author": "Jerry Coker",
+    "work": "Elements of the Jazz Language",
+    "theme": "jazz vocabulary",
+    "pillar": "PROGRESSIONS",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0023",
+    "author": "Robert Rawlins; Nor Eddine Bahha",
+    "work": "Jazzology",
+    "theme": "jazz theory",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0024",
+    "author": "George Russell",
+    "work": "Lydian Chromatic Concept of Tonal Organization",
+    "theme": "jazz-modal theoretical system",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0025",
+    "author": "Randy Felts",
+    "work": "Reharmonization Techniques",
+    "theme": "jazz reharmonization",
+    "pillar": "PROGRESSIONS",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0026",
+    "author": "Steven Strunk",
+    "work": "The Harmony of Early Bop",
+    "theme": "bebop harmonic syntax",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0027",
+    "author": "Carol L. Krumhansl",
+    "work": "Cognitive Foundations of Musical Pitch",
+    "theme": "tonal cognition",
+    "pillar": "MUSIC",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0028",
+    "author": "Eugene Narmour",
+    "work": "The Analysis and Cognition of Basic Melodic Structures",
+    "theme": "melodic expectation",
+    "pillar": "COMPOSE",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0029",
+    "author": "Justin London",
+    "work": "Hearing in Time",
+    "theme": "meter perception",
+    "pillar": "MUSIC",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0030",
+    "author": "Aniruddh D. Patel",
+    "work": "Music, Language, and the Brain",
+    "theme": "music cognition",
+    "pillar": "MUSIC",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0031",
+    "author": "Elizabeth Hellmuth Margulis",
+    "work": "On Repeat",
+    "theme": "repetition and perception",
+    "pillar": "COGNITION",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0032",
+    "author": "Kofi Agawu",
+    "work": "Representing African Music",
+    "theme": "cultural and analytical lenses",
+    "pillar": "MUSIC",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0033",
+    "author": "Bruno Nettl",
+    "work": "The Study of Ethnomusicology",
+    "theme": "cross-cultural caution",
+    "pillar": "MUSIC",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0034",
+    "author": "Alain Daniélou",
+    "work": "The Ragas of Northern Indian Music",
+    "theme": "historical raga theory,contextual",
+    "pillar": "MUSIC",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0035",
+    "author": "Owen Wright",
+    "work": "Tour of maqam theoretical frameworks",
+    "theme": "maqam subject candidate; identify exact title",
+    "pillar": "MUSIC",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0036",
+    "author": "Benjamin Brinner",
+    "work": "Knowing Music, Making Music",
+    "theme": "gamelan practice",
+    "pillar": "COMPOSE",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0037",
+    "author": "Anne Danielsen",
+    "work": "Presence and Pleasure",
+    "theme": "rhythmic groove analysis",
+    "pillar": "COMPOSE",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0038",
+    "author": "Robert Rowe",
+    "work": "Machine Musicianship",
+    "theme": "computer music generation",
+    "pillar": "COMPUTATIONAL",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0039",
+    "author": "Gerhard Nierhaus",
+    "work": "Algorithmic Composition",
+    "theme": "algorithmic music",
+    "pillar": "COMPUTATIONAL",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0040",
+    "author": "David Cope",
+    "work": "Experiments in Musical Intelligence",
+    "theme": "algorithmic composition",
+    "pillar": "COMPUTATIONAL",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0041",
+    "author": "Ian Bent; Anthony Pople",
+    "work": "Analysis",
+    "theme": "analysis methodology",
+    "pillar": "MUSIC",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0042",
+    "author": "André Hodeir",
+    "work": "Jazz: Its Evolution and Essence",
+    "theme": "jazz history and theory",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0043",
+    "author": "Henry Martin",
+    "work": "Charlie Parker and Thematic Improvisation",
+    "theme": "bebop improvisation",
+    "pillar": "COMPOSE",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0044",
+    "author": "Peter Schubert",
+    "work": "Modal Counterpoint",
+    "theme": "polyphonic composition",
+    "pillar": "COMPOSE",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0045",
+    "author": "Kent Kennan",
+    "work": "Counterpoint",
+    "theme": "counterpoint",
+    "pillar": "COMPOSE",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0046",
+    "author": "Edward Aldwell; Carl Schachter",
+    "work": "Harmony and Voice Leading",
+    "theme": "voice leading",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0047",
+    "author": "Stefan Kostka; Dorothy Payne",
+    "work": "Tonal Harmony",
+    "theme": "tonal harmony",
+    "pillar": "HARMONY",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0048",
+    "author": "William Russo",
+    "work": "Composing Music",
+    "theme": "composing techniques",
+    "pillar": "COMPOSE",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0049",
+    "author": "Paul Hindemith",
+    "work": "The Craft of Musical Composition",
+    "theme": "historical composition method",
+    "pillar": "COMPOSE",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  },
+  {
+    "id": "CAND-V3-0050",
+    "author": "Nicolas Slonimsky",
+    "work": "Thesaurus of Scales and Melodic Patterns",
+    "theme": "scale patterns",
+    "pillar": "MUSIC",
+    "verification_status": "UNVERIFIED_CANDIDATE",
+    "instruction": "Publisher/catalog/edition and license must be verified before source/claim promotion."
+  }
+]

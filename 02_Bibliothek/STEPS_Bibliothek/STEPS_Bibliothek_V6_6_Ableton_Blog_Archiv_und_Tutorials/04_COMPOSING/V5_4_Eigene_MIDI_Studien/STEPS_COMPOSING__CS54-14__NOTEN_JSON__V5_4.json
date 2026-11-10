@@ -1,0 +1,2539 @@
+{
+  "id": "CS54-14",
+  "source_case": "STEPS-V54-P14",
+  "tempo_bpm": 104,
+  "ticks_per_beat": 480,
+  "meter": "4/4",
+  "bars": 16,
+  "tracks": [
+    "Chords",
+    "Bass",
+    "Melody",
+    "Drums"
+  ],
+  "notes": [
+    {
+      "track": "Chords",
+      "midi": 60,
+      "onset_ticks": 0,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 64,
+      "onset_ticks": 0,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 67,
+      "onset_ticks": 0,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Bass",
+      "midi": 36,
+      "onset_ticks": 0,
+      "duration_ticks": 960,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 36,
+      "onset_ticks": 960,
+      "duration_ticks": 816,
+      "velocity": 85
+    },
+    {
+      "track": "Melody",
+      "midi": 67,
+      "onset_ticks": 0,
+      "duration_ticks": 398,
+      "velocity": 86
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 480,
+      "duration_ticks": 398,
+      "velocity": 80
+    },
+    {
+      "track": "Melody",
+      "midi": 76,
+      "onset_ticks": 960,
+      "duration_ticks": 398,
+      "velocity": 74
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 1440,
+      "duration_ticks": 398,
+      "velocity": 68
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 0,
+      "duration_ticks": 77,
+      "velocity": 92
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 960,
+      "duration_ticks": 77,
+      "velocity": 81
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 480,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 1440,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 0,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 240,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 480,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 720,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 960,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 1200,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 1440,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 1680,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Chords",
+      "midi": 62,
+      "onset_ticks": 1920,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 67,
+      "onset_ticks": 1920,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 71,
+      "onset_ticks": 1920,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Bass",
+      "midi": 47,
+      "onset_ticks": 1920,
+      "duration_ticks": 960,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 47,
+      "onset_ticks": 2880,
+      "duration_ticks": 816,
+      "velocity": 85
+    },
+    {
+      "track": "Melody",
+      "midi": 67,
+      "onset_ticks": 1920,
+      "duration_ticks": 398,
+      "velocity": 86
+    },
+    {
+      "track": "Melody",
+      "midi": 71,
+      "onset_ticks": 2400,
+      "duration_ticks": 398,
+      "velocity": 80
+    },
+    {
+      "track": "Melody",
+      "midi": 74,
+      "onset_ticks": 2880,
+      "duration_ticks": 398,
+      "velocity": 74
+    },
+    {
+      "track": "Melody",
+      "midi": 71,
+      "onset_ticks": 3360,
+      "duration_ticks": 398,
+      "velocity": 68
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 1920,
+      "duration_ticks": 77,
+      "velocity": 92
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 2880,
+      "duration_ticks": 77,
+      "velocity": 81
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 2400,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 3360,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 1920,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 2160,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 2400,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 2640,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 2880,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 3120,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 3360,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 3600,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Chords",
+      "midi": 60,
+      "onset_ticks": 3840,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 64,
+      "onset_ticks": 3840,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 67,
+      "onset_ticks": 3840,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 69,
+      "onset_ticks": 3840,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Bass",
+      "midi": 45,
+      "onset_ticks": 3840,
+      "duration_ticks": 960,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 45,
+      "onset_ticks": 4800,
+      "duration_ticks": 816,
+      "velocity": 85
+    },
+    {
+      "track": "Melody",
+      "midi": 67,
+      "onset_ticks": 3840,
+      "duration_ticks": 398,
+      "velocity": 86
+    },
+    {
+      "track": "Melody",
+      "midi": 69,
+      "onset_ticks": 4320,
+      "duration_ticks": 398,
+      "velocity": 80
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 4800,
+      "duration_ticks": 398,
+      "velocity": 74
+    },
+    {
+      "track": "Melody",
+      "midi": 69,
+      "onset_ticks": 5280,
+      "duration_ticks": 398,
+      "velocity": 68
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 3840,
+      "duration_ticks": 77,
+      "velocity": 92
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 4800,
+      "duration_ticks": 77,
+      "velocity": 81
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 4320,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 5280,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 3840,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 4080,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 4320,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 4560,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 4800,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 5040,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 5280,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 5520,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Chords",
+      "midi": 60,
+      "onset_ticks": 5760,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 65,
+      "onset_ticks": 5760,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 69,
+      "onset_ticks": 5760,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Bass",
+      "midi": 41,
+      "onset_ticks": 5760,
+      "duration_ticks": 960,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 41,
+      "onset_ticks": 6720,
+      "duration_ticks": 816,
+      "velocity": 85
+    },
+    {
+      "track": "Melody",
+      "midi": 65,
+      "onset_ticks": 5760,
+      "duration_ticks": 398,
+      "velocity": 86
+    },
+    {
+      "track": "Melody",
+      "midi": 69,
+      "onset_ticks": 6240,
+      "duration_ticks": 398,
+      "velocity": 80
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 6720,
+      "duration_ticks": 398,
+      "velocity": 74
+    },
+    {
+      "track": "Melody",
+      "midi": 69,
+      "onset_ticks": 7200,
+      "duration_ticks": 398,
+      "velocity": 68
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 5760,
+      "duration_ticks": 77,
+      "velocity": 92
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 6720,
+      "duration_ticks": 77,
+      "velocity": 81
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 6240,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 7200,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 5760,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 6000,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 6240,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 6480,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 6720,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 6960,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 7200,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 7440,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 7320,
+      "duration_ticks": 77,
+      "velocity": 35
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 7440,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 7560,
+      "duration_ticks": 77,
+      "velocity": 70
+    },
+    {
+      "track": "Chords",
+      "midi": 60,
+      "onset_ticks": 7680,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 64,
+      "onset_ticks": 7680,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 67,
+      "onset_ticks": 7680,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Bass",
+      "midi": 36,
+      "onset_ticks": 7680,
+      "duration_ticks": 960,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 36,
+      "onset_ticks": 8640,
+      "duration_ticks": 816,
+      "velocity": 85
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 7680,
+      "duration_ticks": 398,
+      "velocity": 86
+    },
+    {
+      "track": "Melody",
+      "midi": 76,
+      "onset_ticks": 8160,
+      "duration_ticks": 398,
+      "velocity": 80
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 8640,
+      "duration_ticks": 398,
+      "velocity": 74
+    },
+    {
+      "track": "Melody",
+      "midi": 67,
+      "onset_ticks": 9120,
+      "duration_ticks": 398,
+      "velocity": 68
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 7680,
+      "duration_ticks": 77,
+      "velocity": 92
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 8640,
+      "duration_ticks": 77,
+      "velocity": 81
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 8160,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 9120,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 7680,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 7920,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 8160,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 8400,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 8640,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 8880,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 9120,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 9360,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Chords",
+      "midi": 62,
+      "onset_ticks": 9600,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 67,
+      "onset_ticks": 9600,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 71,
+      "onset_ticks": 9600,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Bass",
+      "midi": 47,
+      "onset_ticks": 9600,
+      "duration_ticks": 960,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 47,
+      "onset_ticks": 10560,
+      "duration_ticks": 816,
+      "velocity": 85
+    },
+    {
+      "track": "Melody",
+      "midi": 71,
+      "onset_ticks": 9600,
+      "duration_ticks": 398,
+      "velocity": 86
+    },
+    {
+      "track": "Melody",
+      "midi": 74,
+      "onset_ticks": 10080,
+      "duration_ticks": 398,
+      "velocity": 80
+    },
+    {
+      "track": "Melody",
+      "midi": 71,
+      "onset_ticks": 10560,
+      "duration_ticks": 398,
+      "velocity": 74
+    },
+    {
+      "track": "Melody",
+      "midi": 67,
+      "onset_ticks": 11040,
+      "duration_ticks": 398,
+      "velocity": 68
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 9600,
+      "duration_ticks": 77,
+      "velocity": 92
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 10560,
+      "duration_ticks": 77,
+      "velocity": 81
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 10080,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 11040,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 9600,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 9840,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 10080,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 10320,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 10560,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 10800,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 11040,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 11280,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Chords",
+      "midi": 60,
+      "onset_ticks": 11520,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 64,
+      "onset_ticks": 11520,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 67,
+      "onset_ticks": 11520,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 69,
+      "onset_ticks": 11520,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Bass",
+      "midi": 45,
+      "onset_ticks": 11520,
+      "duration_ticks": 960,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 45,
+      "onset_ticks": 12480,
+      "duration_ticks": 816,
+      "velocity": 85
+    },
+    {
+      "track": "Melody",
+      "midi": 69,
+      "onset_ticks": 11520,
+      "duration_ticks": 398,
+      "velocity": 86
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 12000,
+      "duration_ticks": 398,
+      "velocity": 80
+    },
+    {
+      "track": "Melody",
+      "midi": 69,
+      "onset_ticks": 12480,
+      "duration_ticks": 398,
+      "velocity": 74
+    },
+    {
+      "track": "Melody",
+      "midi": 67,
+      "onset_ticks": 12960,
+      "duration_ticks": 398,
+      "velocity": 68
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 11520,
+      "duration_ticks": 77,
+      "velocity": 92
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 12480,
+      "duration_ticks": 77,
+      "velocity": 81
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 12000,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 12960,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 11520,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 11760,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 12000,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 12240,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 12480,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 12720,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 12960,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 13200,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Chords",
+      "midi": 60,
+      "onset_ticks": 13440,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 65,
+      "onset_ticks": 13440,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 69,
+      "onset_ticks": 13440,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Bass",
+      "midi": 41,
+      "onset_ticks": 13440,
+      "duration_ticks": 960,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 41,
+      "onset_ticks": 14400,
+      "duration_ticks": 816,
+      "velocity": 85
+    },
+    {
+      "track": "Melody",
+      "midi": 69,
+      "onset_ticks": 13440,
+      "duration_ticks": 398,
+      "velocity": 86
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 13920,
+      "duration_ticks": 398,
+      "velocity": 80
+    },
+    {
+      "track": "Melody",
+      "midi": 69,
+      "onset_ticks": 14400,
+      "duration_ticks": 398,
+      "velocity": 74
+    },
+    {
+      "track": "Melody",
+      "midi": 65,
+      "onset_ticks": 14880,
+      "duration_ticks": 398,
+      "velocity": 68
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 13440,
+      "duration_ticks": 77,
+      "velocity": 92
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 14400,
+      "duration_ticks": 77,
+      "velocity": 81
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 13920,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 14880,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 13440,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 13680,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 13920,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 14160,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 14400,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 14640,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 14880,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 15120,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 15000,
+      "duration_ticks": 77,
+      "velocity": 35
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 15120,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 15240,
+      "duration_ticks": 77,
+      "velocity": 70
+    },
+    {
+      "track": "Chords",
+      "midi": 60,
+      "onset_ticks": 15360,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 64,
+      "onset_ticks": 15360,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 67,
+      "onset_ticks": 15360,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Bass",
+      "midi": 36,
+      "onset_ticks": 15360,
+      "duration_ticks": 720,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 36,
+      "onset_ticks": 16320,
+      "duration_ticks": 720,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 36,
+      "onset_ticks": 17040,
+      "duration_ticks": 192,
+      "velocity": 85
+    },
+    {
+      "track": "Melody",
+      "midi": 76,
+      "onset_ticks": 15360,
+      "duration_ticks": 398,
+      "velocity": 86
+    },
+    {
+      "track": "Melody",
+      "midi": 67,
+      "onset_ticks": 15840,
+      "duration_ticks": 398,
+      "velocity": 80
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 16320,
+      "duration_ticks": 398,
+      "velocity": 74
+    },
+    {
+      "track": "Melody",
+      "midi": 76,
+      "onset_ticks": 16800,
+      "duration_ticks": 398,
+      "velocity": 68
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 15360,
+      "duration_ticks": 77,
+      "velocity": 92
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 16320,
+      "duration_ticks": 77,
+      "velocity": 81
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 15840,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 16800,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 15360,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 15600,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 15840,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 16080,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 16320,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 16560,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 16800,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 17040,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Chords",
+      "midi": 62,
+      "onset_ticks": 17280,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 67,
+      "onset_ticks": 17280,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 71,
+      "onset_ticks": 17280,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Bass",
+      "midi": 47,
+      "onset_ticks": 17280,
+      "duration_ticks": 720,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 47,
+      "onset_ticks": 18240,
+      "duration_ticks": 720,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 47,
+      "onset_ticks": 18960,
+      "duration_ticks": 192,
+      "velocity": 85
+    },
+    {
+      "track": "Melody",
+      "midi": 74,
+      "onset_ticks": 17280,
+      "duration_ticks": 398,
+      "velocity": 86
+    },
+    {
+      "track": "Melody",
+      "midi": 67,
+      "onset_ticks": 17760,
+      "duration_ticks": 398,
+      "velocity": 80
+    },
+    {
+      "track": "Melody",
+      "midi": 71,
+      "onset_ticks": 18240,
+      "duration_ticks": 398,
+      "velocity": 74
+    },
+    {
+      "track": "Melody",
+      "midi": 74,
+      "onset_ticks": 18720,
+      "duration_ticks": 398,
+      "velocity": 68
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 17280,
+      "duration_ticks": 77,
+      "velocity": 92
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 18240,
+      "duration_ticks": 77,
+      "velocity": 81
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 17760,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 18720,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 17280,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 17520,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 17760,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 18000,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 18240,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 18480,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 18720,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 18960,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Chords",
+      "midi": 60,
+      "onset_ticks": 19200,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 64,
+      "onset_ticks": 19200,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 67,
+      "onset_ticks": 19200,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 69,
+      "onset_ticks": 19200,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Bass",
+      "midi": 45,
+      "onset_ticks": 19200,
+      "duration_ticks": 720,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 45,
+      "onset_ticks": 20160,
+      "duration_ticks": 720,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 45,
+      "onset_ticks": 20880,
+      "duration_ticks": 192,
+      "velocity": 85
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 19200,
+      "duration_ticks": 398,
+      "velocity": 86
+    },
+    {
+      "track": "Melody",
+      "midi": 67,
+      "onset_ticks": 19680,
+      "duration_ticks": 398,
+      "velocity": 80
+    },
+    {
+      "track": "Melody",
+      "midi": 69,
+      "onset_ticks": 20160,
+      "duration_ticks": 398,
+      "velocity": 74
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 20640,
+      "duration_ticks": 398,
+      "velocity": 68
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 19200,
+      "duration_ticks": 77,
+      "velocity": 92
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 20160,
+      "duration_ticks": 77,
+      "velocity": 81
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 19680,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 20640,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 19200,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 19440,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 19680,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 19920,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 20160,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 20400,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 20640,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 20880,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Chords",
+      "midi": 60,
+      "onset_ticks": 21120,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 65,
+      "onset_ticks": 21120,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 69,
+      "onset_ticks": 21120,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Bass",
+      "midi": 41,
+      "onset_ticks": 21120,
+      "duration_ticks": 720,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 41,
+      "onset_ticks": 22080,
+      "duration_ticks": 720,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 41,
+      "onset_ticks": 22800,
+      "duration_ticks": 192,
+      "velocity": 85
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 21120,
+      "duration_ticks": 398,
+      "velocity": 86
+    },
+    {
+      "track": "Melody",
+      "midi": 65,
+      "onset_ticks": 21600,
+      "duration_ticks": 398,
+      "velocity": 80
+    },
+    {
+      "track": "Melody",
+      "midi": 69,
+      "onset_ticks": 22080,
+      "duration_ticks": 398,
+      "velocity": 74
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 22560,
+      "duration_ticks": 398,
+      "velocity": 68
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 21120,
+      "duration_ticks": 77,
+      "velocity": 92
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 22080,
+      "duration_ticks": 77,
+      "velocity": 81
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 21600,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 22560,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 21120,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 21360,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 21600,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 21840,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 22080,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 22320,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 22560,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 22800,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 22680,
+      "duration_ticks": 77,
+      "velocity": 35
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 22800,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 22920,
+      "duration_ticks": 77,
+      "velocity": 70
+    },
+    {
+      "track": "Chords",
+      "midi": 60,
+      "onset_ticks": 23040,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 64,
+      "onset_ticks": 23040,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 67,
+      "onset_ticks": 23040,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Bass",
+      "midi": 36,
+      "onset_ticks": 23040,
+      "duration_ticks": 720,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 36,
+      "onset_ticks": 24000,
+      "duration_ticks": 720,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 36,
+      "onset_ticks": 24720,
+      "duration_ticks": 192,
+      "velocity": 85
+    },
+    {
+      "track": "Melody",
+      "midi": 76,
+      "onset_ticks": 23040,
+      "duration_ticks": 398,
+      "velocity": 86
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 23520,
+      "duration_ticks": 398,
+      "velocity": 80
+    },
+    {
+      "track": "Melody",
+      "midi": 67,
+      "onset_ticks": 24000,
+      "duration_ticks": 398,
+      "velocity": 74
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 24480,
+      "duration_ticks": 398,
+      "velocity": 68
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 23040,
+      "duration_ticks": 77,
+      "velocity": 92
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 24000,
+      "duration_ticks": 77,
+      "velocity": 81
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 23520,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 24480,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 23040,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 23280,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 23520,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 23760,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 24000,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 24240,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 24480,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 24720,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Chords",
+      "midi": 62,
+      "onset_ticks": 24960,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 67,
+      "onset_ticks": 24960,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 71,
+      "onset_ticks": 24960,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Bass",
+      "midi": 47,
+      "onset_ticks": 24960,
+      "duration_ticks": 720,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 47,
+      "onset_ticks": 25920,
+      "duration_ticks": 720,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 47,
+      "onset_ticks": 26640,
+      "duration_ticks": 192,
+      "velocity": 85
+    },
+    {
+      "track": "Melody",
+      "midi": 74,
+      "onset_ticks": 24960,
+      "duration_ticks": 398,
+      "velocity": 86
+    },
+    {
+      "track": "Melody",
+      "midi": 71,
+      "onset_ticks": 25440,
+      "duration_ticks": 398,
+      "velocity": 80
+    },
+    {
+      "track": "Melody",
+      "midi": 67,
+      "onset_ticks": 25920,
+      "duration_ticks": 398,
+      "velocity": 74
+    },
+    {
+      "track": "Melody",
+      "midi": 71,
+      "onset_ticks": 26400,
+      "duration_ticks": 398,
+      "velocity": 68
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 24960,
+      "duration_ticks": 77,
+      "velocity": 92
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 25920,
+      "duration_ticks": 77,
+      "velocity": 81
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 25440,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 26400,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 24960,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 25200,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 25440,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 25680,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 25920,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 26160,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 26400,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 26640,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Chords",
+      "midi": 60,
+      "onset_ticks": 26880,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 64,
+      "onset_ticks": 26880,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 67,
+      "onset_ticks": 26880,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 69,
+      "onset_ticks": 26880,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Bass",
+      "midi": 45,
+      "onset_ticks": 26880,
+      "duration_ticks": 720,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 45,
+      "onset_ticks": 27840,
+      "duration_ticks": 720,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 45,
+      "onset_ticks": 28560,
+      "duration_ticks": 192,
+      "velocity": 85
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 26880,
+      "duration_ticks": 398,
+      "velocity": 86
+    },
+    {
+      "track": "Melody",
+      "midi": 69,
+      "onset_ticks": 27360,
+      "duration_ticks": 398,
+      "velocity": 80
+    },
+    {
+      "track": "Melody",
+      "midi": 67,
+      "onset_ticks": 27840,
+      "duration_ticks": 398,
+      "velocity": 74
+    },
+    {
+      "track": "Melody",
+      "midi": 69,
+      "onset_ticks": 28320,
+      "duration_ticks": 398,
+      "velocity": 68
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 26880,
+      "duration_ticks": 77,
+      "velocity": 92
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 27840,
+      "duration_ticks": 77,
+      "velocity": 81
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 27360,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 28320,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 26880,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 27120,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 27360,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 27600,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 27840,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 28080,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 28320,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 28560,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Chords",
+      "midi": 60,
+      "onset_ticks": 28800,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 65,
+      "onset_ticks": 28800,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Chords",
+      "midi": 69,
+      "onset_ticks": 28800,
+      "duration_ticks": 1824,
+      "velocity": 68
+    },
+    {
+      "track": "Bass",
+      "midi": 41,
+      "onset_ticks": 28800,
+      "duration_ticks": 720,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 41,
+      "onset_ticks": 29760,
+      "duration_ticks": 720,
+      "velocity": 85
+    },
+    {
+      "track": "Bass",
+      "midi": 41,
+      "onset_ticks": 30480,
+      "duration_ticks": 192,
+      "velocity": 85
+    },
+    {
+      "track": "Melody",
+      "midi": 72,
+      "onset_ticks": 28800,
+      "duration_ticks": 398,
+      "velocity": 86
+    },
+    {
+      "track": "Melody",
+      "midi": 69,
+      "onset_ticks": 29280,
+      "duration_ticks": 398,
+      "velocity": 80
+    },
+    {
+      "track": "Melody",
+      "midi": 65,
+      "onset_ticks": 29760,
+      "duration_ticks": 398,
+      "velocity": 74
+    },
+    {
+      "track": "Melody",
+      "midi": 69,
+      "onset_ticks": 30240,
+      "duration_ticks": 398,
+      "velocity": 68
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 28800,
+      "duration_ticks": 77,
+      "velocity": 92
+    },
+    {
+      "track": "Drums",
+      "midi": 36,
+      "onset_ticks": 29760,
+      "duration_ticks": 77,
+      "velocity": 81
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 29280,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 30240,
+      "duration_ticks": 77,
+      "velocity": 99
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 28800,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 29040,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 29280,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 29520,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 29760,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 30000,
+      "duration_ticks": 77,
+      "velocity": 62
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 30240,
+      "duration_ticks": 77,
+      "velocity": 48
+    },
+    {
+      "track": "Drums",
+      "midi": 42,
+      "onset_ticks": 30480,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 30360,
+      "duration_ticks": 77,
+      "velocity": 35
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 30480,
+      "duration_ticks": 77,
+      "velocity": 55
+    },
+    {
+      "track": "Drums",
+      "midi": 38,
+      "onset_ticks": 30600,
+      "duration_ticks": 77,
+      "velocity": 70
+    }
+  ],
+  "source_kind": "STEPS original didactic composition, no recording transcription",
+  "generated_plan": "bars1-4 motif, 5-8 variation, 9-12 development, 13-16 return, generic rhythm study",
+  "review_status": "MIDI technical parse only; musical/style review pending"
+}

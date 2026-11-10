@@ -1,0 +1,24 @@
+{
+  "version": "5.4.0",
+  "date": "2026-11-08",
+  "source_version": "5.3.0",
+  "preserved_v53_file_count": 349,
+  "new_files_prior_to_manifest": 199,
+  "source_records_new": 22,
+  "chapters_new": 43,
+  "original_progression_cases_new": 32,
+  "original_midi_studies_new": 16,
+  "workflows_new": 12,
+  "rules_specs_new": 32,
+  "research_digests_new": 18,
+  "codex_work_packages": 39,
+  "explicit_nonclaims": [
+    "no original PPR MIDI used",
+    "no user GitHub repository mutated",
+    "no complete copyrighted books reviewed",
+    "no music/auditory peer review",
+    "no audio renders",
+    "not all source licenses independently checked"
+  ],
+  "integrity_note": "V5.3 hashes recorded in BASE_HASHES. Current V5.4 index and SHA include V5.3 files."
+}

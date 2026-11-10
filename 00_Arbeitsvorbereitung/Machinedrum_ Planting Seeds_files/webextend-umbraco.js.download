@@ -1,0 +1,67 @@
+var webExtendOptions = {};
+
+if (window.location.pathname.includes('blog')) {
+    webExtendOptions.categories = 'blog';
+}
+
+if (window.location.pathname.includes('push')) {
+    webExtendOptions.categories = 'push';
+}
+
+if (window.location.pathname.includes('live')) {
+    webExtendOptions.categories = 'live';
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    var subCategoryElements = document.getElementsByClassName('cat-tag');
+    
+    for (let item of subCategoryElements) {
+        var subCategory = item.innerHTML.toLowerCase();
+        
+        webExtendOptions.categories += ' \u003E ' + subCategory;
+    }
+});
+
+document.addEventListener('abletonSessionEvent', (event) => {
+
+    if (event.detail.userEmail != null && event.detail.userEmail != '' && typeof event.detail.userEmail != 'undefined') {
+        webExtendOptions.email = event.detail.userEmail;
+    }
+
+    const webExtendDefaultOptions = {
+        ...webExtendOptions
+    };
+
+    window.biscuits.when('scarab', () => {
+        const script = document.createElement('script');
+        script.src = 'https://recommender.scarabresearch.com/js/18E53F1E59A0193A/scarab-v2.js';
+        script.async = true;              // don't block rendering
+        script.onload = () => onLoad && onLoad();
+        script.onerror = () => onError && onError();
+        document.head.appendChild(script); // or document.body
+    });
+
+    onLoad = function() {
+        // tracking code goes here
+        if (webExtendDefaultOptions.email != null) {
+            ScarabQueue.push(['setEmail', webExtendDefaultOptions.email]);
+        }
+
+        ScarabQueue.push([
+            'tag',
+            'custom_page_view',
+            {
+                category: webExtendDefaultOptions.categories,
+                title: document.title,
+                url: window.location.toString(),
+                view_date: Date.now()
+            }
+        ]);
+            
+        ScarabQueue.push(['go']);
+    };
+    
+    onError = function() {
+        console.log('error')
+    }
+});

@@ -1,0 +1,1013 @@
+{
+  "id": "ETUDE-V4-004",
+  "title": "Mixolydischer Riff",
+  "tonal_center": "G mixolydian",
+  "style_context": "rock",
+  "tempo_bpm": 116,
+  "meter": "4/4",
+  "bars_count": 16,
+  "duration_beats": 64,
+  "form": "A (1–4) / A-Variation (5–8) / B-Contrast (9–12) / A-Return (13–16)",
+  "harmonic_plan": [
+    "G",
+    "F",
+    "C",
+    "G",
+    "Bb",
+    "C",
+    "F",
+    "G"
+  ],
+  "motivic_method": "Wiederholung eines 8er-Konturfeldes mit phrasaler Umgruppierung und Kontrast in B",
+  "composer_intent": "bVII und bIII als Rockfarbe ohne Pflichtdominante",
+  "voices": [
+    "original MIDI melody",
+    "root-led bass",
+    "chord pad"
+  ],
+  "bars": [
+    {
+      "bar": 1,
+      "chord": "G",
+      "harmonic_slot": 1,
+      "phrase_label": "A",
+      "melody": [
+        {
+          "pitch": "B4",
+          "midi": 71,
+          "start_beat": 0.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "D4",
+          "midi": 62,
+          "start_beat": 1.0,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "G4",
+          "midi": 67,
+          "start_beat": 1.5,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "B4",
+          "midi": 71,
+          "start_beat": 2.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "G4",
+          "midi": 67,
+          "start_beat": 3.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        }
+      ],
+      "bass": [
+        {
+          "pitch": "G2",
+          "midi": 43,
+          "start_beat": 0,
+          "duration_beats": 2
+        },
+        {
+          "pitch": "G2",
+          "midi": 43,
+          "start_beat": 2,
+          "duration_beats": 2
+        }
+      ],
+      "accompaniment_midi": [
+        55,
+        59,
+        62
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 2,
+      "chord": "G",
+      "harmonic_slot": 1,
+      "phrase_label": "A",
+      "melody": [
+        {
+          "pitch": "D5",
+          "midi": 74,
+          "start_beat": 0.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "G4",
+          "midi": 67,
+          "start_beat": 1.0,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "B4",
+          "midi": 71,
+          "start_beat": 1.5,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "D4",
+          "midi": 62,
+          "start_beat": 2.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "G4",
+          "midi": 67,
+          "start_beat": 3.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        }
+      ],
+      "bass": [
+        {
+          "pitch": "G2",
+          "midi": 43,
+          "start_beat": 0,
+          "duration_beats": 2
+        },
+        {
+          "pitch": "G2",
+          "midi": 43,
+          "start_beat": 2,
+          "duration_beats": 2
+        }
+      ],
+      "accompaniment_midi": [
+        55,
+        59,
+        62
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 3,
+      "chord": "F",
+      "harmonic_slot": 2,
+      "phrase_label": "A",
+      "melody": [
+        {
+          "pitch": "C5",
+          "midi": 72,
+          "start_beat": 0.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "F4",
+          "midi": 65,
+          "start_beat": 1.0,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "C5",
+          "midi": 72,
+          "start_beat": 1.5,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "F4",
+          "midi": 65,
+          "start_beat": 2.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "A4",
+          "midi": 69,
+          "start_beat": 3.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        }
+      ],
+      "bass": [
+        {
+          "pitch": "F2",
+          "midi": 41,
+          "start_beat": 0,
+          "duration_beats": 2
+        },
+        {
+          "pitch": "C2",
+          "midi": 36,
+          "start_beat": 2,
+          "duration_beats": 2
+        }
+      ],
+      "accompaniment_midi": [
+        53,
+        57,
+        60
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 4,
+      "chord": "F",
+      "harmonic_slot": 2,
+      "phrase_label": "A",
+      "melody": [
+        {
+          "pitch": "F4",
+          "midi": 65,
+          "start_beat": 0.0,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "A4",
+          "midi": 69,
+          "start_beat": 0.5,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "C4",
+          "midi": 60,
+          "start_beat": 1.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "F4",
+          "midi": 65,
+          "start_beat": 2.0,
+          "duration_beats": 2.0,
+          "chord_tone": true
+        }
+      ],
+      "bass": [
+        {
+          "pitch": "F2",
+          "midi": 41,
+          "start_beat": 0,
+          "duration_beats": 2
+        },
+        {
+          "pitch": "F2",
+          "midi": 41,
+          "start_beat": 2,
+          "duration_beats": 2
+        }
+      ],
+      "accompaniment_midi": [
+        53,
+        57,
+        60
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 5,
+      "chord": "C",
+      "harmonic_slot": 3,
+      "phrase_label": "A-Variation",
+      "melody": [
+        {
+          "pitch": "C5",
+          "midi": 72,
+          "start_beat": 0.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "E4",
+          "midi": 64,
+          "start_beat": 1.0,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "G4",
+          "midi": 67,
+          "start_beat": 1.5,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "C5",
+          "midi": 72,
+          "start_beat": 2.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "G4",
+          "midi": 67,
+          "start_beat": 3.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        }
+      ],
+      "bass": [
+        {
+          "pitch": "C2",
+          "midi": 36,
+          "start_beat": 0,
+          "duration_beats": 2
+        },
+        {
+          "pitch": "C2",
+          "midi": 36,
+          "start_beat": 2,
+          "duration_beats": 2
+        }
+      ],
+      "accompaniment_midi": [
+        48,
+        52,
+        55
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 6,
+      "chord": "C",
+      "harmonic_slot": 3,
+      "phrase_label": "A-Variation",
+      "melody": [
+        {
+          "pitch": "E4",
+          "midi": 64,
+          "start_beat": 0.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "G4",
+          "midi": 67,
+          "start_beat": 1.0,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "C5",
+          "midi": 72,
+          "start_beat": 1.5,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "E4",
+          "midi": 64,
+          "start_beat": 2.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "G4",
+          "midi": 67,
+          "start_beat": 3.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        }
+      ],
+      "bass": [
+        {
+          "pitch": "C2",
+          "midi": 36,
+          "start_beat": 0,
+          "duration_beats": 2
+        },
+        {
+          "pitch": "C2",
+          "midi": 36,
+          "start_beat": 2,
+          "duration_beats": 2
+        }
+      ],
+      "accompaniment_midi": [
+        48,
+        52,
+        55
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 7,
+      "chord": "G",
+      "harmonic_slot": 4,
+      "phrase_label": "A-Variation",
+      "melody": [
+        {
+          "pitch": "B4",
+          "midi": 71,
+          "start_beat": 0.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "D4",
+          "midi": 62,
+          "start_beat": 1.0,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "B4",
+          "midi": 71,
+          "start_beat": 1.5,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "D5",
+          "midi": 74,
+          "start_beat": 2.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "G4",
+          "midi": 67,
+          "start_beat": 3.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        }
+      ],
+      "bass": [
+        {
+          "pitch": "G2",
+          "midi": 43,
+          "start_beat": 0,
+          "duration_beats": 2
+        },
+        {
+          "pitch": "D2",
+          "midi": 38,
+          "start_beat": 2,
+          "duration_beats": 2
+        }
+      ],
+      "accompaniment_midi": [
+        55,
+        59,
+        62
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 8,
+      "chord": "G",
+      "harmonic_slot": 4,
+      "phrase_label": "A-Variation",
+      "melody": [
+        {
+          "pitch": "D5",
+          "midi": 74,
+          "start_beat": 0.0,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "G4",
+          "midi": 67,
+          "start_beat": 0.5,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "B4",
+          "midi": 71,
+          "start_beat": 1.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "D5",
+          "midi": 74,
+          "start_beat": 2.0,
+          "duration_beats": 2.0,
+          "chord_tone": true
+        }
+      ],
+      "bass": [
+        {
+          "pitch": "G2",
+          "midi": 43,
+          "start_beat": 0,
+          "duration_beats": 2
+        },
+        {
+          "pitch": "G2",
+          "midi": 43,
+          "start_beat": 2,
+          "duration_beats": 2
+        }
+      ],
+      "accompaniment_midi": [
+        55,
+        59,
+        62
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 9,
+      "chord": "Bb",
+      "harmonic_slot": 5,
+      "phrase_label": "B-Contrast",
+      "melody": [
+        {
+          "pitch": "F4",
+          "midi": 65,
+          "start_beat": 0.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "Bb4",
+          "midi": 70,
+          "start_beat": 1.0,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "D5",
+          "midi": 74,
+          "start_beat": 1.5,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "F4",
+          "midi": 65,
+          "start_beat": 2.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "D5",
+          "midi": 74,
+          "start_beat": 3.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        }
+      ],
+      "bass": [
+        {
+          "pitch": "Bb2",
+          "midi": 46,
+          "start_beat": 0,
+          "duration_beats": 2
+        },
+        {
+          "pitch": "Bb2",
+          "midi": 46,
+          "start_beat": 2,
+          "duration_beats": 2
+        }
+      ],
+      "accompaniment_midi": [
+        58,
+        62,
+        65
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 10,
+      "chord": "Bb",
+      "harmonic_slot": 5,
+      "phrase_label": "B-Contrast",
+      "melody": [
+        {
+          "pitch": "Bb4",
+          "midi": 70,
+          "start_beat": 0.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "D5",
+          "midi": 74,
+          "start_beat": 1.0,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "F5",
+          "midi": 77,
+          "start_beat": 1.5,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "Bb4",
+          "midi": 70,
+          "start_beat": 2.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "D4",
+          "midi": 62,
+          "start_beat": 3.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        }
+      ],
+      "bass": [
+        {
+          "pitch": "Bb2",
+          "midi": 46,
+          "start_beat": 0,
+          "duration_beats": 2
+        },
+        {
+          "pitch": "Bb2",
+          "midi": 46,
+          "start_beat": 2,
+          "duration_beats": 2
+        }
+      ],
+      "accompaniment_midi": [
+        58,
+        62,
+        65
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 11,
+      "chord": "C",
+      "harmonic_slot": 6,
+      "phrase_label": "B-Contrast",
+      "melody": [
+        {
+          "pitch": "C5",
+          "midi": 72,
+          "start_beat": 0.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "E4",
+          "midi": 64,
+          "start_beat": 1.0,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "C5",
+          "midi": 72,
+          "start_beat": 1.5,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "E5",
+          "midi": 76,
+          "start_beat": 2.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "G5",
+          "midi": 79,
+          "start_beat": 3.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        }
+      ],
+      "bass": [
+        {
+          "pitch": "C2",
+          "midi": 36,
+          "start_beat": 0,
+          "duration_beats": 2
+        },
+        {
+          "pitch": "G2",
+          "midi": 43,
+          "start_beat": 2,
+          "duration_beats": 2
+        }
+      ],
+      "accompaniment_midi": [
+        48,
+        52,
+        55
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 12,
+      "chord": "C",
+      "harmonic_slot": 6,
+      "phrase_label": "B-Contrast",
+      "melody": [
+        {
+          "pitch": "E4",
+          "midi": 64,
+          "start_beat": 0.0,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "G4",
+          "midi": 67,
+          "start_beat": 0.5,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "C5",
+          "midi": 72,
+          "start_beat": 1.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "E5",
+          "midi": 76,
+          "start_beat": 2.0,
+          "duration_beats": 2.0,
+          "chord_tone": true
+        }
+      ],
+      "bass": [
+        {
+          "pitch": "C2",
+          "midi": 36,
+          "start_beat": 0,
+          "duration_beats": 2
+        },
+        {
+          "pitch": "C2",
+          "midi": 36,
+          "start_beat": 2,
+          "duration_beats": 2
+        }
+      ],
+      "accompaniment_midi": [
+        48,
+        52,
+        55
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 13,
+      "chord": "F",
+      "harmonic_slot": 7,
+      "phrase_label": "A-Return",
+      "melody": [
+        {
+          "pitch": "A4",
+          "midi": 69,
+          "start_beat": 0.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "C4",
+          "midi": 60,
+          "start_beat": 1.0,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "F4",
+          "midi": 65,
+          "start_beat": 1.5,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "A4",
+          "midi": 69,
+          "start_beat": 2.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "F4",
+          "midi": 65,
+          "start_beat": 3.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        }
+      ],
+      "bass": [
+        {
+          "pitch": "F2",
+          "midi": 41,
+          "start_beat": 0,
+          "duration_beats": 2
+        },
+        {
+          "pitch": "F2",
+          "midi": 41,
+          "start_beat": 2,
+          "duration_beats": 2
+        }
+      ],
+      "accompaniment_midi": [
+        53,
+        57,
+        60
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 14,
+      "chord": "F",
+      "harmonic_slot": 7,
+      "phrase_label": "A-Return",
+      "melody": [
+        {
+          "pitch": "C5",
+          "midi": 72,
+          "start_beat": 0.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "F4",
+          "midi": 65,
+          "start_beat": 1.0,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "A4",
+          "midi": 69,
+          "start_beat": 1.5,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "C5",
+          "midi": 72,
+          "start_beat": 2.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "F4",
+          "midi": 65,
+          "start_beat": 3.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        }
+      ],
+      "bass": [
+        {
+          "pitch": "F2",
+          "midi": 41,
+          "start_beat": 0,
+          "duration_beats": 2
+        },
+        {
+          "pitch": "F2",
+          "midi": 41,
+          "start_beat": 2,
+          "duration_beats": 2
+        }
+      ],
+      "accompaniment_midi": [
+        53,
+        57,
+        60
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 15,
+      "chord": "G",
+      "harmonic_slot": 8,
+      "phrase_label": "A-Return",
+      "melody": [
+        {
+          "pitch": "D5",
+          "midi": 74,
+          "start_beat": 0.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "G4",
+          "midi": 67,
+          "start_beat": 1.0,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "D4",
+          "midi": 62,
+          "start_beat": 1.5,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "G4",
+          "midi": 67,
+          "start_beat": 2.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "B4",
+          "midi": 71,
+          "start_beat": 3.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        }
+      ],
+      "bass": [
+        {
+          "pitch": "G2",
+          "midi": 43,
+          "start_beat": 0,
+          "duration_beats": 2
+        },
+        {
+          "pitch": "D2",
+          "midi": 38,
+          "start_beat": 2,
+          "duration_beats": 2
+        }
+      ],
+      "accompaniment_midi": [
+        55,
+        59,
+        62
+      ],
+      "beats": 4
+    },
+    {
+      "bar": 16,
+      "chord": "G",
+      "harmonic_slot": 8,
+      "phrase_label": "A-Return",
+      "melody": [
+        {
+          "pitch": "G4",
+          "midi": 67,
+          "start_beat": 0.0,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "B4",
+          "midi": 71,
+          "start_beat": 0.5,
+          "duration_beats": 0.5,
+          "chord_tone": true
+        },
+        {
+          "pitch": "D4",
+          "midi": 62,
+          "start_beat": 1.0,
+          "duration_beats": 1.0,
+          "chord_tone": true
+        },
+        {
+          "pitch": "G4",
+          "midi": 67,
+          "start_beat": 2.0,
+          "duration_beats": 2.0,
+          "chord_tone": true
+        }
+      ],
+      "bass": [
+        {
+          "pitch": "G2",
+          "midi": 43,
+          "start_beat": 0,
+          "duration_beats": 2
+        },
+        {
+          "pitch": "G2",
+          "midi": 43,
+          "start_beat": 2,
+          "duration_beats": 2
+        }
+      ],
+      "accompaniment_midi": [
+        55,
+        59,
+        62
+      ],
+      "beats": 4
+    }
+  ],
+  "origin": "original_generated_exercise_not_existing_song",
+  "validation_status": "duration_pitch_chord_structure_mechanical_qa_human_composition_review_pending",
+  "suitability": "playable_16_bar_material_not_polished_original_score"
+}

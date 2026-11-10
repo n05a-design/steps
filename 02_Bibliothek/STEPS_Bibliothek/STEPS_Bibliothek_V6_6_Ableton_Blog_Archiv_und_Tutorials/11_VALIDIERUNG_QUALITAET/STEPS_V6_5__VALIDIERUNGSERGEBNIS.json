@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-09",
+  "base_physical_files": 1004,
+  "base_articles": 156,
+  "candidates": 72,
+  "already_in_base": 29,
+  "added_articles": 43,
+  "total_articles": 199,
+  "new_areas": {
+    "22_SYNTHESIS_SAMPLING_SOUND_DESIGN": 5,
+    "25_FX_DSP_PROCESSING": 3,
+    "17_DAW_SESSION_MIDI_AUTOMATION": 1,
+    "06_PRODUCER_TOOLS": 1,
+    "41_LIVE_INSTRUMENTS_PERFORMANCE": 2,
+    "08_COMPUTATIONAL_MUSIC": 4,
+    "35_GENRES_SCENES_STYLES": 2,
+    "04_COMPOSING": 7,
+    "29_LIVE_PERFORMANCE_DJ": 2,
+    "09_PRODUKT_DIDAKTIK_SKILL": 1,
+    "16_CREATIVE_DIRECTION_PREPRODUCTION": 3,
+    "34_REFERENCE_ANALYSIS_LISTENING": 1,
+    "30_COLLABORATION_VERSIONING": 5,
+    "39_INTEROPERABILITY_FORMATS": 1,
+    "05_DRUMS_RHYTHM_GROOVE": 1,
+    "23_BEATMAKING_BASS_808": 3,
+    "02_HARMONIE": 1
+  },
+  "asset_review_queue": 13,
+  "checks_passed": 1426,
+  "checks_failed": 0,
+  "scope": "mechanical file hash, row uniqueness, IDs, simple path references; no audio-science review",
+  "all_base_files_preserved": true
+}

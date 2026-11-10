@@ -1,0 +1,18 @@
+{
+  "base_file_byte_identity": 551,
+  "base_file_count": 551,
+  "all_json_parseable": 130,
+  "total_topic_ids": 878,
+  "unique_topic_ids": 878,
+  "major_new_domains": 29,
+  "original_workshop_designs": 16,
+  "genre_profiles": 40,
+  "planned_quality_test_cases": 20,
+  "qa_claim": "structural_integrity_only_not_audio_render_not_musicology_review",
+  "physical_total_files": 809,
+  "physical_new_files": 258,
+  "all_physical_files_indexed_in_csv": true,
+  "self_index_hash_note": "self row intentionally un-hashed to avoid circular dependency; ZIP integrity validates bytes",
+  "external_audio_or_daW_tests": "not_executed",
+  "scientific_peer_review": "not_executed"
+}

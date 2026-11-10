@@ -1,0 +1,406 @@
+{
+  "version": "6.0",
+  "reliability_caveat": "genre features are creative prompts; not historical proof or universal conditions",
+  "genres": [
+    {
+      "id": "GR-V6-001",
+      "name": "HipHop BoomBap",
+      "descriptive_features_not_rules": "sample chops, swung drums, break layering",
+      "research_note": "loop development, rapper space",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-002",
+      "name": "Trap Rage",
+      "descriptive_features_not_rules": "808 pitch/glide, snare and hat articulation",
+      "research_note": "distorted synth focus, rests",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-003",
+      "name": "UK Drill",
+      "descriptive_features_not_rules": "sliding bass, clipped percussion, asymmetric accents",
+      "research_note": "bass-rhythm cross-check",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-004",
+      "name": "Jersey Club",
+      "descriptive_features_not_rules": "short kick bursts, rhythmic edits, call-response",
+      "research_note": "dance-culture context",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-005",
+      "name": "House",
+      "descriptive_features_not_rules": "4 on the floor with bass and offbeats",
+      "research_note": "energy evolving with filter, not just loudness",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-006",
+      "name": "Tech House",
+      "descriptive_features_not_rules": "sparse hook and percussive bass",
+      "research_note": "groove timing vs sound selection",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-007",
+      "name": "Techno",
+      "descriptive_features_not_rules": "pulse, timbre evolution and polyrhythmic layers",
+      "research_note": "long-form arrangement without forced harmony",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-008",
+      "name": "Hard Techno",
+      "descriptive_features_not_rules": "transient power, dense texture and dynamics",
+      "research_note": "hearing safety and clipping budget",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-009",
+      "name": "Trance",
+      "descriptive_features_not_rules": "motif, evolving arpeggio and harmonic arc",
+      "research_note": "build-break-drop narrative",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-010",
+      "name": "UK Garage 2Step",
+      "descriptive_features_not_rules": "kick omissions, backbeat, detailed shuffle",
+      "research_note": "straight vs swung export",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-011",
+      "name": "Jungle",
+      "descriptive_features_not_rules": "edited breaks, sub and polyrhythmic details",
+      "research_note": "breakbeat provenance",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-012",
+      "name": "Drum And Bass",
+      "descriptive_features_not_rules": "fast-grid pulse with half-time backbeat perception",
+      "research_note": "sub/hat microdynamics",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-013",
+      "name": "Dubstep",
+      "descriptive_features_not_rules": "half-time framework and bass timbre articulation",
+      "research_note": "sound-design resampling",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-014",
+      "name": "Afrobeats",
+      "descriptive_features_not_rules": "interlocking rhythms and pop song forms",
+      "research_note": "do not reduce continental styles to one meter",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-015",
+      "name": "Amapiano",
+      "descriptive_features_not_rules": "log-drum signatures and layered groove",
+      "research_note": "historical/local sources required",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-016",
+      "name": "Reggaeton",
+      "descriptive_features_not_rules": "dembow-oriented rhythmic framework",
+      "research_note": "song arrangement, distinct regional contexts",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-017",
+      "name": "Dancehall",
+      "descriptive_features_not_rules": "riddim, vocal phrasing and cultural context",
+      "research_note": "source attribution",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-018",
+      "name": "Neo Soul",
+      "descriptive_features_not_rules": "voicing color, push-pull groove and harmonic flexibility",
+      "research_note": "melody-harmony interaction",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-019",
+      "name": "RnB",
+      "descriptive_features_not_rules": "vocal layers, syncopated bass, chromatic color",
+      "research_note": "avoid essentializing genre",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-020",
+      "name": "Pop",
+      "descriptive_features_not_rules": "hook, lyrics, contrast and production clarity",
+      "research_note": "varied song forms",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-021",
+      "name": "Hyperpop",
+      "descriptive_features_not_rules": "exaggerated timbre, edits and vocal transforms",
+      "research_note": "vocal consent and aesthetics",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-022",
+      "name": "Indie Rock",
+      "descriptive_features_not_rules": "performance, guitars, room and arrangement",
+      "research_note": "preserve human timing",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-023",
+      "name": "Metal",
+      "descriptive_features_not_rules": "double-tracking, transient definition and low-end",
+      "research_note": "guitar/bass phase and mix",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-024",
+      "name": "Jazz Production",
+      "descriptive_features_not_rules": "performance space, improvisation, microphone realism",
+      "research_note": "notation vs lived practice",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-025",
+      "name": "Blues",
+      "descriptive_features_not_rules": "blues grammar, groove and call-response",
+      "research_note": "do not reduce blues to 12-bar template",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-026",
+      "name": "Ambient",
+      "descriptive_features_not_rules": "time-scale, spectral development and space",
+      "research_note": "silence and loudness not confused",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-027",
+      "name": "IDM Glitch",
+      "descriptive_features_not_rules": "unusual rhythm grammar and microsound",
+      "research_note": "intentional variation rather than random notes",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-028",
+      "name": "Cinematic Hybrid",
+      "descriptive_features_not_rules": "acoustic/electronic layers and dramatic cues",
+      "research_note": "stems, hitpoints, rights",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-029",
+      "name": "LoFi HipHop",
+      "descriptive_features_not_rules": "texture and rhythm imperfection",
+      "research_note": "vinyl noise not license exempt",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-030",
+      "name": "Synthwave",
+      "descriptive_features_not_rules": "synthetic palette, arpeggios and retro aesthetics",
+      "research_note": "not one fixed synth preset",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-031",
+      "name": "K Pop",
+      "descriptive_features_not_rules": "multiple sections, vocal production and hybrid arrangements",
+      "research_note": "varied creators and influences",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-032",
+      "name": "Latin Pop",
+      "descriptive_features_not_rules": "regional rhythmic mixtures and vocals",
+      "research_note": "country/style distinctions",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-033",
+      "name": "Experimental Electroacoustic",
+      "descriptive_features_not_rules": "sound sources, process score and form",
+      "research_note": "document choices rather than imposing tonality",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-034",
+      "name": "Orchestral",
+      "descriptive_features_not_rules": "instrumentation and acoustic space",
+      "research_note": "instrument ranges and notation review",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-035",
+      "name": "Acoustic SingerSongwriter",
+      "descriptive_features_not_rules": "voice, words and instrument intimacy",
+      "research_note": "room/comping ethics",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-036",
+      "name": "Psytrance",
+      "descriptive_features_not_rules": "sequenced low end and evolving synth layers",
+      "research_note": "tempo convention not binding",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-037",
+      "name": "Breakcore",
+      "descriptive_features_not_rules": "extreme break editing, high rhythmic density",
+      "research_note": "sample rights and ear safety",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-038",
+      "name": "Funk",
+      "descriptive_features_not_rules": "interlocked rhythmic parts and call-response",
+      "research_note": "performance over quantization",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-039",
+      "name": "Gospel",
+      "descriptive_features_not_rules": "voicing, call-response, voice layering",
+      "research_note": "historical and community context",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    },
+    {
+      "id": "GR-V6-040",
+      "name": "Future Bass",
+      "descriptive_features_not_rules": "modulated chords and contrasting dynamics",
+      "research_note": "sound envelope vs chord identity",
+      "bpm_constraints": null,
+      "status": "style_workshop_seed_unreviewed",
+      "source_evidence": "not yet sourced individually",
+      "license": "original textual synthesis"
+    }
+  ]
+}

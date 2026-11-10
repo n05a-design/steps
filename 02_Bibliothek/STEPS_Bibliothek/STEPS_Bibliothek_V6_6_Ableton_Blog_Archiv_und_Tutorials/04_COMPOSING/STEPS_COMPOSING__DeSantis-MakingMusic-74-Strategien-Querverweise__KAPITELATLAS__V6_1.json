@@ -1,0 +1,1721 @@
+[
+  {
+    "strategy_id": "STEPS-DESANTIS-001",
+    "title_original": "Three Ways to Start",
+    "phase": "Beginning",
+    "page_start_pdf": 13,
+    "page_start_printed": 13,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 15,
+    "primary_domain": "16_CREATIVE_DIRECTION_PREPRODUCTION",
+    "related_domains": [
+      "04_COMPOSING",
+      "40_LEARNING_WORKSHOPS_TESTS"
+    ],
+    "stepts_keywords": [
+      "Startimpulse / Ideengewinnung",
+      "creative direction preproduction"
+    ],
+    "stepts_use_case": "Startimpulse / Ideengewinnung",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-002",
+    "title_original": "Catalog of Attributes",
+    "phase": "Beginning",
+    "page_start_pdf": 16,
+    "page_start_printed": 16,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 18,
+    "primary_domain": "34_REFERENCE_ANALYSIS_LISTENING",
+    "related_domains": [
+      "04_COMPOSING",
+      "44_PRODUCTION_ETHICS_CULTURE"
+    ],
+    "stepts_keywords": [
+      "Referenzanalyse ohne Kopieren",
+      "reference analysis listening"
+    ],
+    "stepts_use_case": "Referenzanalyse ohne Kopieren",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-003",
+    "title_original": "Avoidance List",
+    "phase": "Beginning",
+    "page_start_pdf": 19,
+    "page_start_printed": 19,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 21,
+    "primary_domain": "16_CREATIVE_DIRECTION_PREPRODUCTION",
+    "related_domains": [
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Kreative Begrenzungen",
+      "creative direction preproduction"
+    ],
+    "stepts_use_case": "Kreative Begrenzungen",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-004",
+    "title_original": "Active Listening",
+    "phase": "Beginning",
+    "page_start_pdf": 22,
+    "page_start_printed": 22,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 25,
+    "primary_domain": "34_REFERENCE_ANALYSIS_LISTENING",
+    "related_domains": [
+      "01_MUSIKTHEORIE",
+      "40_LEARNING_WORKSHOPS_TESTS"
+    ],
+    "stepts_keywords": [
+      "Aktives analytisches Hören",
+      "reference analysis listening"
+    ],
+    "stepts_use_case": "Aktives analytisches Hören",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-005",
+    "title_original": "Listening to Music You Hate",
+    "phase": "Beginning",
+    "page_start_pdf": 26,
+    "page_start_printed": 26,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 28,
+    "primary_domain": "34_REFERENCE_ANALYSIS_LISTENING",
+    "related_domains": [
+      "35_GENRES_SCENES_STYLES",
+      "07_KOGNITION_STIL_KULTUR"
+    ],
+    "stepts_keywords": [
+      "Hören außerhalb eigener Gewohnheiten",
+      "reference analysis listening"
+    ],
+    "stepts_use_case": "Hören außerhalb eigener Gewohnheiten",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-006",
+    "title_original": "Mise en Place",
+    "phase": "Beginning",
+    "page_start_pdf": 29,
+    "page_start_printed": 29,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 32,
+    "primary_domain": "17_DAW_SESSION_MIDI_AUTOMATION",
+    "related_domains": [
+      "16_CREATIVE_DIRECTION_PREPRODUCTION",
+      "43_PRESERVATION_BACKUP_PROVENANCE"
+    ],
+    "stepts_keywords": [
+      "Studio- und Projektvorbereitung",
+      "daw session midi automation"
+    ],
+    "stepts_use_case": "Studio- und Projektvorbereitung",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-007",
+    "title_original": "Arbitrary Constraints",
+    "phase": "Beginning",
+    "page_start_pdf": 33,
+    "page_start_printed": 33,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 36,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "16_CREATIVE_DIRECTION_PREPRODUCTION",
+      "40_LEARNING_WORKSHOPS_TESTS"
+    ],
+    "stepts_keywords": [
+      "Komponieren mit Constraints",
+      "composing"
+    ],
+    "stepts_use_case": "Komponieren mit Constraints",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-008",
+    "title_original": "“Write drunk; edit sober”",
+    "phase": "Beginning",
+    "page_start_pdf": 37,
+    "page_start_printed": 37,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 40,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "21_AUDIO_EDITING_RESTORATION",
+      "16_CREATIVE_DIRECTION_PREPRODUCTION"
+    ],
+    "stepts_keywords": [
+      "Generieren vs. Redigieren",
+      "composing"
+    ],
+    "stepts_use_case": "Generieren vs. Redigieren",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-009",
+    "title_original": "Choosing a Tempo",
+    "phase": "Beginning",
+    "page_start_pdf": 41,
+    "page_start_printed": 41,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 43,
+    "primary_domain": "05_DRUMS_RHYTHM_GROOVE",
+    "related_domains": [
+      "35_GENRES_SCENES_STYLES",
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Tempo und Stilkontext",
+      "drums rhythm groove"
+    ],
+    "stepts_use_case": "Tempo und Stilkontext",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-010",
+    "title_original": "One Part at a Time",
+    "phase": "Beginning",
+    "page_start_pdf": 44,
+    "page_start_printed": 44,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 46,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "17_DAW_SESSION_MIDI_AUTOMATION"
+    ],
+    "stepts_keywords": [
+      "Komposition als inkrementeller Aufbau",
+      "composing"
+    ],
+    "stepts_use_case": "Komposition als inkrementeller Aufbau",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-011",
+    "title_original": "Different Tools",
+    "phase": "Beginning",
+    "page_start_pdf": 47,
+    "page_start_printed": 47,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 49,
+    "primary_domain": "17_DAW_SESSION_MIDI_AUTOMATION",
+    "related_domains": [
+      "36_GEAR_SOFTWARE_HARDWARE"
+    ],
+    "stepts_keywords": [
+      "Toolwechsel als Kreativoption",
+      "daw session midi automation"
+    ],
+    "stepts_use_case": "Toolwechsel als Kreativoption",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-012",
+    "title_original": "Presets as Starting Points",
+    "phase": "Beginning",
+    "page_start_pdf": 50,
+    "page_start_printed": 50,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 52,
+    "primary_domain": "22_SYNTHESIS_SAMPLING_SOUND_DESIGN",
+    "related_domains": [
+      "06_PRODUCER_TOOLS"
+    ],
+    "stepts_keywords": [
+      "Presets als Ausgangspunkt",
+      "synthesis sampling sound design"
+    ],
+    "stepts_use_case": "Presets als Ausgangspunkt",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-013",
+    "title_original": "The Tyranny of the Default",
+    "phase": "Beginning",
+    "page_start_pdf": 53,
+    "page_start_printed": 53,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 55,
+    "primary_domain": "17_DAW_SESSION_MIDI_AUTOMATION",
+    "related_domains": [
+      "22_SYNTHESIS_SAMPLING_SOUND_DESIGN"
+    ],
+    "stepts_keywords": [
+      "Default-Einstellungen hinterfragen",
+      "daw session midi automation"
+    ],
+    "stepts_use_case": "Default-Einstellungen hinterfragen",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-014",
+    "title_original": "Simple Sounds",
+    "phase": "Beginning",
+    "page_start_pdf": 56,
+    "page_start_printed": 56,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 58,
+    "primary_domain": "22_SYNTHESIS_SAMPLING_SOUND_DESIGN",
+    "related_domains": [
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Klangkomplexität dosieren",
+      "synthesis sampling sound design"
+    ],
+    "stepts_use_case": "Klangkomplexität dosieren",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-015",
+    "title_original": "Extended Techniques",
+    "phase": "Beginning",
+    "page_start_pdf": 59,
+    "page_start_printed": 59,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 61,
+    "primary_domain": "22_SYNTHESIS_SAMPLING_SOUND_DESIGN",
+    "related_domains": [
+      "41_LIVE_INSTRUMENTS_PERFORMANCE"
+    ],
+    "stepts_keywords": [
+      "Erweiterte Spiel- und Klangerzeugung",
+      "synthesis sampling sound design"
+    ],
+    "stepts_use_case": "Erweiterte Spiel- und Klangerzeugung",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-016",
+    "title_original": "Goal-less Exploration",
+    "phase": "Beginning",
+    "page_start_pdf": 62,
+    "page_start_printed": 62,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 64,
+    "primary_domain": "16_CREATIVE_DIRECTION_PREPRODUCTION",
+    "related_domains": [
+      "22_SYNTHESIS_SAMPLING_SOUND_DESIGN"
+    ],
+    "stepts_keywords": [
+      "Offene Klangexperimente",
+      "creative direction preproduction"
+    ],
+    "stepts_use_case": "Offene Klangexperimente",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-017",
+    "title_original": "Procrastination and Timeboxing",
+    "phase": "Beginning",
+    "page_start_pdf": 65,
+    "page_start_printed": 65,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 67,
+    "primary_domain": "16_CREATIVE_DIRECTION_PREPRODUCTION",
+    "related_domains": [
+      "30_COLLABORATION_VERSIONING"
+    ],
+    "stepts_keywords": [
+      "Zeitfenster und Fokus",
+      "creative direction preproduction"
+    ],
+    "stepts_use_case": "Zeitfenster und Fokus",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-018",
+    "title_original": "Collaboration",
+    "phase": "Beginning",
+    "page_start_pdf": 68,
+    "page_start_printed": 68,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 70,
+    "primary_domain": "30_COLLABORATION_VERSIONING",
+    "related_domains": [
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Kollaboration",
+      "collaboration versioning"
+    ],
+    "stepts_use_case": "Kollaboration",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-019",
+    "title_original": "Thinking Like an Amateur",
+    "phase": "Beginning",
+    "page_start_pdf": 71,
+    "page_start_printed": 71,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 73,
+    "primary_domain": "16_CREATIVE_DIRECTION_PREPRODUCTION",
+    "related_domains": [
+      "40_LEARNING_WORKSHOPS_TESTS"
+    ],
+    "stepts_keywords": [
+      "Unvoreingenommene Exploration",
+      "creative direction preproduction"
+    ],
+    "stepts_use_case": "Unvoreingenommene Exploration",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-020",
+    "title_original": "Scraps and Sketches",
+    "phase": "Beginning",
+    "page_start_pdf": 74,
+    "page_start_printed": 74,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 75,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "17_DAW_SESSION_MIDI_AUTOMATION",
+      "43_PRESERVATION_BACKUP_PROVENANCE"
+    ],
+    "stepts_keywords": [
+      "Ideen- und Skizzenarchiv",
+      "composing"
+    ],
+    "stepts_use_case": "Ideen- und Skizzenarchiv",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-021",
+    "title_original": "Problem-Solving as Distraction",
+    "phase": "Beginning",
+    "page_start_pdf": 76,
+    "page_start_printed": 76,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 78,
+    "primary_domain": "16_CREATIVE_DIRECTION_PREPRODUCTION",
+    "related_domains": [
+      "09_PRODUKT_DIDAKTIK_SKILL"
+    ],
+    "stepts_keywords": [
+      "Kreativfokus statt Technikverzettelung",
+      "creative direction preproduction"
+    ],
+    "stepts_use_case": "Kreativfokus statt Technikverzettelung",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-022",
+    "title_original": "Personal Workflow",
+    "phase": "Beginning",
+    "page_start_pdf": 79,
+    "page_start_printed": 79,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 81,
+    "primary_domain": "17_DAW_SESSION_MIDI_AUTOMATION",
+    "related_domains": [
+      "16_CREATIVE_DIRECTION_PREPRODUCTION"
+    ],
+    "stepts_keywords": [
+      "Persönlicher Workflow",
+      "daw session midi automation"
+    ],
+    "stepts_use_case": "Persönlicher Workflow",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-023",
+    "title_original": "Originality vs. Quality",
+    "phase": "Beginning",
+    "page_start_pdf": 82,
+    "page_start_printed": 82,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 84,
+    "primary_domain": "44_PRODUCTION_ETHICS_CULTURE",
+    "related_domains": [
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Originalität und Qualität unterscheiden",
+      "production ethics culture"
+    ],
+    "stepts_use_case": "Originalität und Qualität unterscheiden",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-024",
+    "title_original": "Process vs. Product",
+    "phase": "Beginning",
+    "page_start_pdf": 85,
+    "page_start_printed": 85,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 88,
+    "primary_domain": "16_CREATIVE_DIRECTION_PREPRODUCTION",
+    "related_domains": [
+      "07_KOGNITION_STIL_KULTUR"
+    ],
+    "stepts_keywords": [
+      "Prozess- und Ergebnisdenken",
+      "creative direction preproduction"
+    ],
+    "stepts_use_case": "Prozess- und Ergebnisdenken",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-025",
+    "title_original": "On Work",
+    "phase": "Beginning",
+    "page_start_pdf": 89,
+    "page_start_printed": 89,
+    "toc_pdf_page": 9,
+    "page_end_pdf_approx": 91,
+    "primary_domain": "16_CREATIVE_DIRECTION_PREPRODUCTION",
+    "related_domains": [
+      "07_KOGNITION_STIL_KULTUR"
+    ],
+    "stepts_keywords": [
+      "Kreative Arbeit und Disziplin",
+      "creative direction preproduction"
+    ],
+    "stepts_use_case": "Kreative Arbeit und Disziplin",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-026",
+    "title_original": "Breadth Before Depth",
+    "phase": "Progressing",
+    "page_start_pdf": 92,
+    "page_start_printed": 92,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 94,
+    "primary_domain": "16_CREATIVE_DIRECTION_PREPRODUCTION",
+    "related_domains": [
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Erst Struktur, dann Details",
+      "creative direction preproduction"
+    ],
+    "stepts_use_case": "Erst Struktur, dann Details",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-027",
+    "title_original": "Foreground, Middle Ground, and Background",
+    "phase": "Progressing",
+    "page_start_pdf": 95,
+    "page_start_printed": 95,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 98,
+    "primary_domain": "24_ARRANGEMENT_TRANSITIONS",
+    "related_domains": [
+      "26_MIXING",
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Musikalische Vorder- und Hintergrundebenen",
+      "arrangement transitions"
+    ],
+    "stepts_use_case": "Musikalische Vorder- und Hintergrundebenen",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-028",
+    "title_original": "Fuzzy Boundaries",
+    "phase": "Progressing",
+    "page_start_pdf": 99,
+    "page_start_printed": 99,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 103,
+    "primary_domain": "24_ARRANGEMENT_TRANSITIONS",
+    "related_domains": [
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Fließende Formübergänge",
+      "arrangement transitions"
+    ],
+    "stepts_use_case": "Fließende Formübergänge",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-029",
+    "title_original": "Creating Variation 1: Mutation of Clones",
+    "phase": "Progressing",
+    "page_start_pdf": 104,
+    "page_start_printed": 104,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 105,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "08_COMPUTATIONAL_MUSIC"
+    ],
+    "stepts_keywords": [
+      "Materialvariation",
+      "composing"
+    ],
+    "stepts_use_case": "Materialvariation",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-030",
+    "title_original": "Creating Variation 2: Mutation Over Generations",
+    "phase": "Progressing",
+    "page_start_pdf": 106,
+    "page_start_printed": 106,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 107,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "08_COMPUTATIONAL_MUSIC"
+    ],
+    "stepts_keywords": [
+      "Generationenbasierte Variation",
+      "composing"
+    ],
+    "stepts_use_case": "Generationenbasierte Variation",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-031",
+    "title_original": "Creating Variation 3: Note Transformations",
+    "phase": "Progressing",
+    "page_start_pdf": 108,
+    "page_start_printed": 108,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 119,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "01_MUSIKTHEORIE",
+      "08_COMPUTATIONAL_MUSIC"
+    ],
+    "stepts_keywords": [
+      "Transformation von Notenmaterial",
+      "composing"
+    ],
+    "stepts_use_case": "Transformation von Notenmaterial",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-032",
+    "title_original": "Implied Rhythm in Short Loops",
+    "phase": "Progressing",
+    "page_start_pdf": 120,
+    "page_start_printed": 120,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 123,
+    "primary_domain": "05_DRUMS_RHYTHM_GROOVE",
+    "related_domains": [
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Rhythmische Wahrnehmung kurzer Loops",
+      "drums rhythm groove"
+    ],
+    "stepts_use_case": "Rhythmische Wahrnehmung kurzer Loops",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-033",
+    "title_original": "Asynchronous or Polyrhythmic Loops",
+    "phase": "Progressing",
+    "page_start_pdf": 124,
+    "page_start_printed": 124,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 128,
+    "primary_domain": "05_DRUMS_RHYTHM_GROOVE",
+    "related_domains": [
+      "08_COMPUTATIONAL_MUSIC"
+    ],
+    "stepts_keywords": [
+      "Gegeneinander laufende Schleifen",
+      "drums rhythm groove"
+    ],
+    "stepts_use_case": "Gegeneinander laufende Schleifen",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-034",
+    "title_original": "Misusing Rhythmic Tools",
+    "phase": "Progressing",
+    "page_start_pdf": 129,
+    "page_start_printed": 129,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 132,
+    "primary_domain": "05_DRUMS_RHYTHM_GROOVE",
+    "related_domains": [
+      "17_DAW_SESSION_MIDI_AUTOMATION"
+    ],
+    "stepts_keywords": [
+      "Unkonventionelle Rhythmuswerkzeuge",
+      "drums rhythm groove"
+    ],
+    "stepts_use_case": "Unkonventionelle Rhythmuswerkzeuge",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-035",
+    "title_original": "3+3+2 Rhythm",
+    "phase": "Progressing",
+    "page_start_pdf": 133,
+    "page_start_printed": 133,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 137,
+    "primary_domain": "05_DRUMS_RHYTHM_GROOVE",
+    "related_domains": [
+      "35_GENRES_SCENES_STYLES"
+    ],
+    "stepts_keywords": [
+      "Asymmetrische Akzentgruppen",
+      "drums rhythm groove"
+    ],
+    "stepts_use_case": "Asymmetrische Akzentgruppen",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-036",
+    "title_original": "Programming Beats 1: On Looseness",
+    "phase": "Progressing",
+    "page_start_pdf": 138,
+    "page_start_printed": 138,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 143,
+    "primary_domain": "05_DRUMS_RHYTHM_GROOVE",
+    "related_domains": [
+      "23_BEATMAKING_BASS_808"
+    ],
+    "stepts_keywords": [
+      "Microtiming und Feel",
+      "drums rhythm groove"
+    ],
+    "stepts_use_case": "Microtiming und Feel",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-037",
+    "title_original": "Programming Beats 2: Linear Drumming",
+    "phase": "Progressing",
+    "page_start_pdf": 144,
+    "page_start_printed": 144,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 148,
+    "primary_domain": "05_DRUMS_RHYTHM_GROOVE",
+    "related_domains": [
+      "23_BEATMAKING_BASS_808"
+    ],
+    "stepts_keywords": [
+      "Lineare Drum-Programmierung",
+      "drums rhythm groove"
+    ],
+    "stepts_use_case": "Lineare Drum-Programmierung",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-038",
+    "title_original": "Programming Beats 3: Ghost Notes",
+    "phase": "Progressing",
+    "page_start_pdf": 149,
+    "page_start_printed": 149,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 152,
+    "primary_domain": "05_DRUMS_RHYTHM_GROOVE",
+    "related_domains": [
+      "23_BEATMAKING_BASS_808"
+    ],
+    "stepts_keywords": [
+      "Ghost Notes und Akzente",
+      "drums rhythm groove"
+    ],
+    "stepts_use_case": "Ghost Notes und Akzente",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-039",
+    "title_original": "Programming Beats 4: Top, Bottom, Left, Right",
+    "phase": "Progressing",
+    "page_start_pdf": 153,
+    "page_start_printed": 153,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 157,
+    "primary_domain": "05_DRUMS_RHYTHM_GROOVE",
+    "related_domains": [
+      "23_BEATMAKING_BASS_808"
+    ],
+    "stepts_keywords": [
+      "Drumregister und funktionale Rollen",
+      "drums rhythm groove"
+    ],
+    "stepts_use_case": "Drumregister und funktionale Rollen",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-040",
+    "title_original": "Bass Lines and Kick Drums as a Single Composite",
+    "phase": "Progressing",
+    "page_start_pdf": 158,
+    "page_start_printed": 158,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 162,
+    "primary_domain": "23_BEATMAKING_BASS_808",
+    "related_domains": [
+      "05_DRUMS_RHYTHM_GROOVE",
+      "26_MIXING"
+    ],
+    "stepts_keywords": [
+      "Kick-Bass-Komplementarität",
+      "beatmaking bass 808"
+    ],
+    "stepts_use_case": "Kick-Bass-Komplementarität",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-041",
+    "title_original": "Drums to Pitches and Vice Versa",
+    "phase": "Progressing",
+    "page_start_pdf": 163,
+    "page_start_printed": 163,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 166,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "05_DRUMS_RHYTHM_GROOVE"
+    ],
+    "stepts_keywords": [
+      "Übersetzung von Rhythmus und Tonhöhen",
+      "composing"
+    ],
+    "stepts_use_case": "Übersetzung von Rhythmus und Tonhöhen",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-042",
+    "title_original": "Tuning Everything",
+    "phase": "Progressing",
+    "page_start_pdf": 167,
+    "page_start_printed": 167,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 169,
+    "primary_domain": "22_SYNTHESIS_SAMPLING_SOUND_DESIGN",
+    "related_domains": [
+      "01_MUSIKTHEORIE",
+      "23_BEATMAKING_BASS_808"
+    ],
+    "stepts_keywords": [
+      "Tuning von Klangquellen",
+      "synthesis sampling sound design"
+    ],
+    "stepts_use_case": "Tuning von Klangquellen",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-043",
+    "title_original": "Silence and Noise",
+    "phase": "Progressing",
+    "page_start_pdf": 170,
+    "page_start_printed": 170,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 172,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "22_SYNTHESIS_SAMPLING_SOUND_DESIGN"
+    ],
+    "stepts_keywords": [
+      "Pausen, Stille und Rauschen",
+      "composing"
+    ],
+    "stepts_use_case": "Pausen, Stille und Rauschen",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-044",
+    "title_original": "Sampling the Old-Fashioned Way",
+    "phase": "Progressing",
+    "page_start_pdf": 173,
+    "page_start_printed": 173,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 177,
+    "primary_domain": "22_SYNTHESIS_SAMPLING_SOUND_DESIGN",
+    "related_domains": [
+      "31_RIGHTS_BUSINESS_DISTRIBUTION"
+    ],
+    "stepts_keywords": [
+      "Sampling als kreative Praxis",
+      "synthesis sampling sound design"
+    ],
+    "stepts_use_case": "Sampling als kreative Praxis",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-045",
+    "title_original": "Creating Melodies 1: Contour",
+    "phase": "Progressing",
+    "page_start_pdf": 178,
+    "page_start_printed": 178,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 181,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "01_MUSIKTHEORIE"
+    ],
+    "stepts_keywords": [
+      "Melodische Kontur",
+      "composing"
+    ],
+    "stepts_use_case": "Melodische Kontur",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-046",
+    "title_original": "Creating Melodies 2: Using Motives",
+    "phase": "Progressing",
+    "page_start_pdf": 182,
+    "page_start_printed": 182,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 185,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "01_MUSIKTHEORIE"
+    ],
+    "stepts_keywords": [
+      "Motivische Melodiearbeit",
+      "composing"
+    ],
+    "stepts_use_case": "Motivische Melodiearbeit",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-047",
+    "title_original": "Multiple Simultaneous Melodies",
+    "phase": "Progressing",
+    "page_start_pdf": 186,
+    "page_start_printed": 186,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 189,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "02_HARMONIE"
+    ],
+    "stepts_keywords": [
+      "Mehrstimmigkeit",
+      "composing"
+    ],
+    "stepts_use_case": "Mehrstimmigkeit",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-048",
+    "title_original": "Linear Rhythm in Melodies",
+    "phase": "Progressing",
+    "page_start_pdf": 190,
+    "page_start_printed": 190,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 194,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "05_DRUMS_RHYTHM_GROOVE"
+    ],
+    "stepts_keywords": [
+      "Rhythmische Melodieführung",
+      "composing"
+    ],
+    "stepts_use_case": "Rhythmische Melodieführung",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-049",
+    "title_original": "Sound-Color Melody",
+    "phase": "Progressing",
+    "page_start_pdf": 195,
+    "page_start_printed": 195,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 198,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "22_SYNTHESIS_SAMPLING_SOUND_DESIGN"
+    ],
+    "stepts_keywords": [
+      "Klangfarbenmelodie",
+      "composing"
+    ],
+    "stepts_use_case": "Klangfarbenmelodie",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-050",
+    "title_original": "The Rhythm of Lyrics",
+    "phase": "Progressing",
+    "page_start_pdf": 199,
+    "page_start_printed": 199,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 202,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "20_VOCAL_PRODUCTION"
+    ],
+    "stepts_keywords": [
+      "Textprosodie und Rhythmus",
+      "composing"
+    ],
+    "stepts_use_case": "Textprosodie und Rhythmus",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-051",
+    "title_original": "Creating Harmony 1: The Basics",
+    "phase": "Progressing",
+    "page_start_pdf": 203,
+    "page_start_printed": 203,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 210,
+    "primary_domain": "02_HARMONIE",
+    "related_domains": [
+      "03_CHORD_PROGRESSIONS",
+      "01_MUSIKTHEORIE"
+    ],
+    "stepts_keywords": [
+      "Grundlagen harmonischer Verbindungen",
+      "harmonie"
+    ],
+    "stepts_use_case": "Grundlagen harmonischer Verbindungen",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-052",
+    "title_original": "Creating Harmony 2: Beyond Triads",
+    "phase": "Progressing",
+    "page_start_pdf": 211,
+    "page_start_printed": 211,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 224,
+    "primary_domain": "02_HARMONIE",
+    "related_domains": [
+      "03_CHORD_PROGRESSIONS"
+    ],
+    "stepts_keywords": [
+      "Erweiterte Akkordfarben",
+      "harmonie"
+    ],
+    "stepts_use_case": "Erweiterte Akkordfarben",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-053",
+    "title_original": "Voice Leading and Inversions",
+    "phase": "Progressing",
+    "page_start_pdf": 225,
+    "page_start_printed": 225,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 228,
+    "primary_domain": "02_HARMONIE",
+    "related_domains": [
+      "03_CHORD_PROGRESSIONS",
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Stimmführung und Umkehrungen",
+      "harmonie"
+    ],
+    "stepts_use_case": "Stimmführung und Umkehrungen",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-054",
+    "title_original": "Parallel Harmony",
+    "phase": "Progressing",
+    "page_start_pdf": 229,
+    "page_start_printed": 229,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 232,
+    "primary_domain": "02_HARMONIE",
+    "related_domains": [
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Parallele Harmonik",
+      "harmonie"
+    ],
+    "stepts_use_case": "Parallele Harmonik",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-055",
+    "title_original": "Harmonic Rhythm",
+    "phase": "Progressing",
+    "page_start_pdf": 233,
+    "page_start_printed": 233,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 235,
+    "primary_domain": "03_CHORD_PROGRESSIONS",
+    "related_domains": [
+      "05_DRUMS_RHYTHM_GROOVE",
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Zeitliche Akkordwechsel",
+      "chord progressions"
+    ],
+    "stepts_use_case": "Zeitliche Akkordwechsel",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-056",
+    "title_original": "Repetition and Insistence",
+    "phase": "Progressing",
+    "page_start_pdf": 236,
+    "page_start_printed": 236,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 237,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "24_ARRANGEMENT_TRANSITIONS"
+    ],
+    "stepts_keywords": [
+      "Wiederholung und Nachdruck",
+      "composing"
+    ],
+    "stepts_use_case": "Wiederholung und Nachdruck",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-057",
+    "title_original": "The Rhythm of Automation",
+    "phase": "Progressing",
+    "page_start_pdf": 238,
+    "page_start_printed": 238,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 240,
+    "primary_domain": "17_DAW_SESSION_MIDI_AUTOMATION",
+    "related_domains": [
+      "05_DRUMS_RHYTHM_GROOVE"
+    ],
+    "stepts_keywords": [
+      "Automationsrhythmik",
+      "daw session midi automation"
+    ],
+    "stepts_use_case": "Automationsrhythmik",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-058",
+    "title_original": "Humanizing With Automation Envelopes",
+    "phase": "Progressing",
+    "page_start_pdf": 241,
+    "page_start_printed": 241,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 243,
+    "primary_domain": "17_DAW_SESSION_MIDI_AUTOMATION",
+    "related_domains": [
+      "06_PRODUCER_TOOLS"
+    ],
+    "stepts_keywords": [
+      "Automation und Phrasierung",
+      "daw session midi automation"
+    ],
+    "stepts_use_case": "Automation und Phrasierung",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-059",
+    "title_original": "Maximal Density",
+    "phase": "Progressing",
+    "page_start_pdf": 244,
+    "page_start_printed": 244,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 246,
+    "primary_domain": "24_ARRANGEMENT_TRANSITIONS",
+    "related_domains": [
+      "26_MIXING"
+    ],
+    "stepts_keywords": [
+      "Dichte und Klangschichtung",
+      "arrangement transitions"
+    ],
+    "stepts_use_case": "Dichte und Klangschichtung",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-060",
+    "title_original": "Deliberately Bad Listening",
+    "phase": "Progressing",
+    "page_start_pdf": 247,
+    "page_start_printed": 247,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 249,
+    "primary_domain": "34_REFERENCE_ANALYSIS_LISTENING",
+    "related_domains": [
+      "26_MIXING"
+    ],
+    "stepts_keywords": [
+      "Perspektivwechsel beim Hören",
+      "reference analysis listening"
+    ],
+    "stepts_use_case": "Perspektivwechsel beim Hören",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-061",
+    "title_original": "Randomness and Responsibility",
+    "phase": "Progressing",
+    "page_start_pdf": 250,
+    "page_start_printed": 250,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 253,
+    "primary_domain": "08_COMPUTATIONAL_MUSIC",
+    "related_domains": [
+      "04_COMPOSING",
+      "32_AI_ASSISTED_GENERATION"
+    ],
+    "stepts_keywords": [
+      "Zufall und kreative Steuerung",
+      "computational music"
+    ],
+    "stepts_use_case": "Zufall und kreative Steuerung",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-062",
+    "title_original": "Dramatic Arc",
+    "phase": "Progressing",
+    "page_start_pdf": 254,
+    "page_start_printed": 254,
+    "toc_pdf_page": 10,
+    "page_end_pdf_approx": 257,
+    "primary_domain": "24_ARRANGEMENT_TRANSITIONS",
+    "related_domains": [
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Dramaturgische Spannungsentwicklung",
+      "arrangement transitions"
+    ],
+    "stepts_use_case": "Dramaturgische Spannungsentwicklung",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-063",
+    "title_original": "Arranging as a Subtractive Process",
+    "phase": "Finishing",
+    "page_start_pdf": 259,
+    "page_start_printed": 259,
+    "toc_pdf_page": 11,
+    "page_end_pdf_approx": 262,
+    "primary_domain": "24_ARRANGEMENT_TRANSITIONS",
+    "related_domains": [
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Subtraktives Arrangement",
+      "arrangement transitions"
+    ],
+    "stepts_use_case": "Subtraktives Arrangement",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-064",
+    "title_original": "The Power of Erasing",
+    "phase": "Finishing",
+    "page_start_pdf": 263,
+    "page_start_printed": 263,
+    "toc_pdf_page": 11,
+    "page_end_pdf_approx": 265,
+    "primary_domain": "21_AUDIO_EDITING_RESTORATION",
+    "related_domains": [
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Reduktion durch Entfernen",
+      "audio editing restoration"
+    ],
+    "stepts_use_case": "Reduktion durch Entfernen",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-065",
+    "title_original": "Formal Skeletons",
+    "phase": "Finishing",
+    "page_start_pdf": 266,
+    "page_start_printed": 266,
+    "toc_pdf_page": 11,
+    "page_end_pdf_approx": 268,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "24_ARRANGEMENT_TRANSITIONS"
+    ],
+    "stepts_keywords": [
+      "Formskizzen und Zeitachsen",
+      "composing"
+    ],
+    "stepts_use_case": "Formskizzen und Zeitachsen",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-066",
+    "title_original": "Common Forms 1: Elements of Song Form",
+    "phase": "Finishing",
+    "page_start_pdf": 269,
+    "page_start_printed": 269,
+    "toc_pdf_page": 11,
+    "page_end_pdf_approx": 271,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "24_ARRANGEMENT_TRANSITIONS"
+    ],
+    "stepts_keywords": [
+      "Songform",
+      "composing"
+    ],
+    "stepts_use_case": "Songform",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-067",
+    "title_original": "Common Forms 2: Layering as Form",
+    "phase": "Finishing",
+    "page_start_pdf": 272,
+    "page_start_printed": 272,
+    "toc_pdf_page": 11,
+    "page_end_pdf_approx": 274,
+    "primary_domain": "24_ARRANGEMENT_TRANSITIONS",
+    "related_domains": [
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Schichtungen als Form",
+      "arrangement transitions"
+    ],
+    "stepts_use_case": "Schichtungen als Form",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-068",
+    "title_original": "Short Loops as Endings",
+    "phase": "Finishing",
+    "page_start_pdf": 275,
+    "page_start_printed": 275,
+    "toc_pdf_page": 11,
+    "page_end_pdf_approx": 276,
+    "primary_domain": "24_ARRANGEMENT_TRANSITIONS",
+    "related_domains": [
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Loop-basierte Schlussgestaltung",
+      "arrangement transitions"
+    ],
+    "stepts_use_case": "Loop-basierte Schlussgestaltung",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-069",
+    "title_original": "Unique Events",
+    "phase": "Finishing",
+    "page_start_pdf": 277,
+    "page_start_printed": 277,
+    "toc_pdf_page": 11,
+    "page_end_pdf_approx": 279,
+    "primary_domain": "24_ARRANGEMENT_TRANSITIONS",
+    "related_domains": [
+      "04_COMPOSING"
+    ],
+    "stepts_keywords": [
+      "Einmalige Ereignisse als Akzente",
+      "arrangement transitions"
+    ],
+    "stepts_use_case": "Einmalige Ereignisse als Akzente",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-070",
+    "title_original": "Three Ways to End",
+    "phase": "Finishing",
+    "page_start_pdf": 280,
+    "page_start_printed": 280,
+    "toc_pdf_page": 11,
+    "page_end_pdf_approx": 282,
+    "primary_domain": "04_COMPOSING",
+    "related_domains": [
+      "24_ARRANGEMENT_TRANSITIONS"
+    ],
+    "stepts_keywords": [
+      "Schlussgestaltung",
+      "composing"
+    ],
+    "stepts_use_case": "Schlussgestaltung",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-071",
+    "title_original": "Rendering as Commitment",
+    "phase": "Finishing",
+    "page_start_pdf": 283,
+    "page_start_printed": 283,
+    "toc_pdf_page": 11,
+    "page_end_pdf_approx": 285,
+    "primary_domain": "27_MASTERING_RELEASE_AUDIO",
+    "related_domains": [
+      "17_DAW_SESSION_MIDI_AUTOMATION"
+    ],
+    "stepts_keywords": [
+      "Verbindlicher Render-Entscheid",
+      "mastering release audio"
+    ],
+    "stepts_use_case": "Verbindlicher Render-Entscheid",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-072",
+    "title_original": "Getting Feedback",
+    "phase": "Finishing",
+    "page_start_pdf": 286,
+    "page_start_printed": 286,
+    "toc_pdf_page": 11,
+    "page_end_pdf_approx": 288,
+    "primary_domain": "30_COLLABORATION_VERSIONING",
+    "related_domains": [
+      "40_LEARNING_WORKSHOPS_TESTS"
+    ],
+    "stepts_keywords": [
+      "Feedback-Prozess",
+      "collaboration versioning"
+    ],
+    "stepts_use_case": "Feedback-Prozess",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-073",
+    "title_original": "Diminishing Returns",
+    "phase": "Finishing",
+    "page_start_pdf": 289,
+    "page_start_printed": 289,
+    "toc_pdf_page": 11,
+    "page_end_pdf_approx": 290,
+    "primary_domain": "16_CREATIVE_DIRECTION_PREPRODUCTION",
+    "related_domains": [
+      "11_VALIDIERUNG_QUALITAET"
+    ],
+    "stepts_keywords": [
+      "Abschlusskriterien und Aufwand",
+      "creative direction preproduction"
+    ],
+    "stepts_use_case": "Abschlusskriterien und Aufwand",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  },
+  {
+    "strategy_id": "STEPS-DESANTIS-074",
+    "title_original": "Fail Better",
+    "phase": "Finishing",
+    "page_start_pdf": 291,
+    "page_start_printed": 291,
+    "toc_pdf_page": 11,
+    "page_end_pdf_approx": 293,
+    "primary_domain": "40_LEARNING_WORKSHOPS_TESTS",
+    "related_domains": [
+      "16_CREATIVE_DIRECTION_PREPRODUCTION"
+    ],
+    "stepts_keywords": [
+      "Iterative Lernschleifen",
+      "learning workshops tests"
+    ],
+    "stepts_use_case": "Iterative Lernschleifen",
+    "toc_verified": true,
+    "opening_section_located": true,
+    "research_depth": "catalogued; opening page reviewed in PDF; individual chapter not fully peer-reviewed",
+    "source_id": "STEPS-SRC-BOOK-DESANTIS-2015-001",
+    "reuse": "bibliographic_metadata_and_original_STEPS_mapping_only"
+  }
+]

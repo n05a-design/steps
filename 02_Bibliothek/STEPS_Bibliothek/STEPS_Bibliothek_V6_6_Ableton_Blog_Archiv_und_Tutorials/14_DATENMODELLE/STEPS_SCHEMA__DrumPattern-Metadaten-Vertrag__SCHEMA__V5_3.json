@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:steps:schema:drum-pattern:5.3.0",
+  "title": "STEPS v5.3 DrumPattern educational schema",
+  "type": "object",
+  "required": [
+    "id",
+    "bpm",
+    "meter",
+    "bars",
+    "steps_per_bar",
+    "ppq",
+    "events",
+    "provenance",
+    "review_status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^DR53-[0-9]{2}$"
+    },
+    "bpm": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "meter": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "integer",
+          "enum": [
+            2,
+            4,
+            8,
+            16
+          ]
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "bars": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "steps_per_bar": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "ppq": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "tick",
+          "duration_ticks",
+          "note",
+          "velocity",
+          "role",
+          "step0",
+          "bar"
+        ],
+        "properties": {
+          "tick": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "duration_ticks": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "note": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 127
+          },
+          "velocity": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 127
+          },
+          "bar": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "step0": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "role": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "string"
+    },
+    "review_status": {
+      "type": "string"
+    }
+  }
+}

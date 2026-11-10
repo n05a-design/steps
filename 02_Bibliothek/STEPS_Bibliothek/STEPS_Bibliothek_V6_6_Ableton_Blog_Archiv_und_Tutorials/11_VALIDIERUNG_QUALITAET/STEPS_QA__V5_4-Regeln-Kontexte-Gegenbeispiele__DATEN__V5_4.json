@@ -1,0 +1,290 @@
+[
+  {
+    "id": "STEPS-R54-T01",
+    "name": "midi_pitch_range",
+    "kind": "hard",
+    "acceptance": "MIDI note 0..127",
+    "anti_example": "note=-1",
+    "source_anchor": "R12",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T02",
+    "name": "midi_velocity_range",
+    "kind": "hard",
+    "acceptance": "positive note_on velocity 1..127; velocity 0 = off semantic",
+    "anti_example": "note_on=130",
+    "source_anchor": "R12",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T03",
+    "name": "beat_duration",
+    "kind": "hard",
+    "acceptance": "duration beats >=0, note durations >0",
+    "anti_example": "negative duration",
+    "source_anchor": "R12",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T04",
+    "name": "frequency_A4",
+    "kind": "hard",
+    "acceptance": "12TET A440 MIDI69=440Hz",
+    "anti_example": "midi69=432 without a changed reference",
+    "source_anchor": "R12",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T05",
+    "name": "octave_difference",
+    "kind": "hard",
+    "acceptance": "12TET MIDI81/MIDI69=2",
+    "anti_example": "midi81=660Hz",
+    "source_anchor": "R12",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T06",
+    "name": "enharmonic_id",
+    "kind": "interpretation",
+    "acceptance": "C# and Db may share pitch class but different spellings",
+    "anti_example": "force single spelling",
+    "source_anchor": "R01",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T07",
+    "name": "interval_spelling",
+    "kind": "interpretation",
+    "acceptance": "d5 vs A4 differs by diatonic letters",
+    "anti_example": "infer interval only from semitones",
+    "source_anchor": "R01",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T08",
+    "name": "roman_context",
+    "kind": "interpretation",
+    "acceptance": "ii/V depends on key & context",
+    "anti_example": "roman numeral without tonic lens",
+    "source_anchor": "R06",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T09",
+    "name": "mode_evidence",
+    "kind": "interpretation",
+    "acceptance": "mode assignment needs centering/context",
+    "anti_example": "scale set alone implies mode",
+    "source_anchor": "R01",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T10",
+    "name": "bar_duration",
+    "kind": "hard",
+    "acceptance": "meter 4/4=4 quarter beats per bar",
+    "anti_example": "5 quarter beats in fixed 4/4 bar",
+    "source_anchor": "R10",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T11",
+    "name": "tempo_positive",
+    "kind": "hard",
+    "acceptance": "BPM must be >0",
+    "anti_example": "BPM=0",
+    "source_anchor": "R12",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T12",
+    "name": "swing_no_double_apply",
+    "kind": "hard",
+    "acceptance": "when committed=True no second base groove applied",
+    "anti_example": "duplicate groove twice",
+    "source_anchor": "R13",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T13",
+    "name": "swing_label",
+    "kind": "interpretation",
+    "acceptance": "numeric swing timing has definition, no universal label",
+    "anti_example": "infer MPC preset from percent only",
+    "source_anchor": "R13",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T14",
+    "name": "velocity_vs_loudness",
+    "kind": "interpretation",
+    "acceptance": "velocity not equal acoustical dB across sample patches",
+    "anti_example": "convert velocity110 to fixed dB",
+    "source_anchor": "R12",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T15",
+    "name": "note_off_vs_audio_end",
+    "kind": "interpretation",
+    "acceptance": "MIDI gate is not sampler audible tail",
+    "anti_example": "equal note-off and end-of-audio",
+    "source_anchor": "R12",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T16",
+    "name": "true_peak_vs_sample_peak",
+    "kind": "hard",
+    "acceptance": "true peak and sample peak are distinct metrics",
+    "anti_example": "always assert equality",
+    "source_anchor": "R16",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T17",
+    "name": "ebu_scope",
+    "kind": "interpretation",
+    "acceptance": "EBU R128 -23LUFS is broadcast target not every music genre",
+    "anti_example": "force -23 for club masters",
+    "source_anchor": "R15",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T18",
+    "name": "source_reuse",
+    "kind": "hard",
+    "acceptance": "license status required before copying protected data",
+    "anti_example": "private PPR MIDI redistributed by default",
+    "source_anchor": "R19",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T19",
+    "name": "corpus_group_split",
+    "kind": "hard",
+    "acceptance": "same work_id must not appear in train and test",
+    "anti_example": "duplicate work in both",
+    "source_anchor": "R17",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T20",
+    "name": "v5_archive_preserved",
+    "kind": "hard",
+    "acceptance": "all V5.3 old file SHA256 bytes unchanged",
+    "anti_example": "old file overwritten",
+    "source_anchor": "R12",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T21",
+    "name": "voice_leading_lens",
+    "kind": "heuristic",
+    "acceptance": "parallel octaves flagged only when style scope warrants",
+    "anti_example": "universal prohibition",
+    "source_anchor": "R09",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T22",
+    "name": "blues_dominant",
+    "kind": "interpretation",
+    "acceptance": "blues I7 not automatically V7/IV",
+    "anti_example": "all sevenths dominant function",
+    "source_anchor": "R05",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T23",
+    "name": "progression_quality",
+    "kind": "heuristic",
+    "acceptance": "ranking weights transparent to user",
+    "anti_example": "rank=absolute aesthetic truth",
+    "source_anchor": "R05",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T24",
+    "name": "analysis_multilens",
+    "kind": "hard",
+    "acceptance": "ambiguous loop may store >1 analysis",
+    "anti_example": "discard alternate parse",
+    "source_anchor": "R04",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T25",
+    "name": "source_read_status",
+    "kind": "hard",
+    "acceptance": "abstract-only access is not full-text review",
+    "anti_example": "mark book as read",
+    "source_anchor": "R03",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T26",
+    "name": "pitch_class_math",
+    "kind": "hard",
+    "acceptance": "pitch class = midi %12",
+    "anti_example": "midi60 mapped to pitch class 1",
+    "source_anchor": "R12",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T27",
+    "name": "bar_16_step",
+    "kind": "hard",
+    "acceptance": "4/4 with 16th grid has 16 steps",
+    "anti_example": "12 steps with 4/4/16th mapping",
+    "source_anchor": "R12",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T28",
+    "name": "mixed_meter",
+    "kind": "hard",
+    "acceptance": "use explicit beats/quarter conversion for 6/8",
+    "anti_example": "6/8 always six quarter beats",
+    "source_anchor": "R01",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T29",
+    "name": "chord_root_bass",
+    "kind": "hard",
+    "acceptance": "slash bass separate from chord root",
+    "anti_example": "G/B root changed to B",
+    "source_anchor": "R08",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T30",
+    "name": "mei_musicxml_scope",
+    "kind": "interpretation",
+    "acceptance": "MusicXML and MEI exchange different semantic metadata",
+    "anti_example": "lossless guarantee across both",
+    "source_anchor": "R10",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T31",
+    "name": "song_form_lens",
+    "kind": "interpretation",
+    "acceptance": "rock/pop form model not identical to Caplin classical",
+    "anti_example": "map all chorus to classical cadence",
+    "source_anchor": "R03",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  },
+  {
+    "id": "STEPS-R54-T32",
+    "name": "copyright_aggregator",
+    "kind": "hard",
+    "acceptance": "ChoCo licenses evaluated per source subset",
+    "anti_example": "blanket CC claim",
+    "source_anchor": "R18",
+    "review_status": "codex_contract_proposed_not_verified_against_repository"
+  }
+]

@@ -1,0 +1,145 @@
+{
+  "version": "6.0",
+  "test_cases": [
+    {
+      "test_id": "AUD-001",
+      "slug": "sample_rate_roundtrip",
+      "expected_behavior": "Import/Export 48 kHz 24-bit WAV and compare metadata; distinguish resampling from mere filename change",
+      "execution_status": "not_run",
+      "review_required": "requires external decoder, not executed"
+    },
+    {
+      "test_id": "AUD-002",
+      "slug": "true_peak_vs_sample_peak",
+      "expected_behavior": "Synthetic intersample-peak case: sample peak can be below reconstructed true peak",
+      "execution_status": "not_run",
+      "review_required": "test specification only"
+    },
+    {
+      "test_id": "AUD-003",
+      "slug": "loudness_context",
+      "expected_behavior": "EBU R128 target vs Spotify platform guidance must remain separate metadata",
+      "execution_status": "not_run",
+      "review_required": "manual source check"
+    },
+    {
+      "test_id": "MIDI-001",
+      "slug": "c_octave",
+      "expected_behavior": "MIDI note 60 remains same numeric note when DAW shows C3 vs C4",
+      "execution_status": "not_run",
+      "review_required": "schema test"
+    },
+    {
+      "test_id": "MIDI-002",
+      "slug": "note_off",
+      "expected_behavior": "One-shot sampler can ignore note-off; distinguish gate parameter from rendered tail",
+      "execution_status": "not_run",
+      "review_required": "requires audio renderer"
+    },
+    {
+      "test_id": "MIDI-003",
+      "slug": "tempo_map",
+      "expected_behavior": "Two tempo sections preserve beat/tick meaning after export",
+      "execution_status": "not_run",
+      "review_required": "schema test"
+    },
+    {
+      "test_id": "MIDI-004",
+      "slug": "swing_vs_velocity",
+      "expected_behavior": "Changing event time does not silently rewrite MIDI velocity",
+      "execution_status": "not_run",
+      "review_required": "schema test"
+    },
+    {
+      "test_id": "MIDI-005",
+      "slug": "pitch_bend_mpe",
+      "expected_behavior": "Per-note expression cannot be roundtripped through basic monophonic pitch bend without loss",
+      "execution_status": "not_run",
+      "review_required": "schema-design review"
+    },
+    {
+      "test_id": "MIX-001",
+      "slug": "level_match",
+      "expected_behavior": "A/B listening report stores loudness-matching method and remaining difference",
+      "execution_status": "not_run",
+      "review_required": "manual listening"
+    },
+    {
+      "test_id": "MIX-002",
+      "slug": "mono_collapse",
+      "expected_behavior": "Stereo widening reviewed under mono sum; detect cancellation",
+      "execution_status": "not_run",
+      "review_required": "requires audio render"
+    },
+    {
+      "test_id": "MIX-003",
+      "slug": "sidechain_latency",
+      "expected_behavior": "Timing of delayed sidechain trigger measured rather than assumed",
+      "execution_status": "not_run",
+      "review_required": "requires plugin test"
+    },
+    {
+      "test_id": "VOC-001",
+      "slug": "performer_consent",
+      "expected_behavior": "Voice datasets cannot be treated as releasable without consent",
+      "execution_status": "not_run",
+      "review_required": "manual rights review"
+    },
+    {
+      "test_id": "RIGHT-001",
+      "slug": "isrc_vs_iswc",
+      "expected_behavior": "Recording and work identities are different fields",
+      "execution_status": "not_run",
+      "review_required": "schema test"
+    },
+    {
+      "test_id": "RIGHT-002",
+      "slug": "sample_clearance",
+      "expected_behavior": "Unknown license => release_blocked, not approved",
+      "execution_status": "not_run",
+      "review_required": "schema test"
+    },
+    {
+      "test_id": "AI-001",
+      "slug": "model_provenance",
+      "expected_behavior": "AI suggestions store model/version, provider, prompt privacy status",
+      "execution_status": "not_run",
+      "review_required": "schema test"
+    },
+    {
+      "test_id": "DAW-001",
+      "slug": "stems_origin",
+      "expected_behavior": "Consolidated stems have shared start and effective duration",
+      "execution_status": "not_run",
+      "review_required": "requires audio-file inspection"
+    },
+    {
+      "test_id": "DAW-002",
+      "slug": "plugin_dependencies",
+      "expected_behavior": "Missing plugin yields explicit dependency error, not silent patch substitution",
+      "execution_status": "not_run",
+      "review_required": "requires DAW integration"
+    },
+    {
+      "test_id": "SPAT-001",
+      "slug": "downmix_review",
+      "expected_behavior": "Spatial delivery requires explicit render target and downmix check",
+      "execution_status": "not_run",
+      "review_required": "requires renderer"
+    },
+    {
+      "test_id": "GAME-001",
+      "slug": "transition_matrix",
+      "expected_behavior": "All defined states have intended transitions or explicit blocked states",
+      "execution_status": "not_run",
+      "review_required": "schema test"
+    },
+    {
+      "test_id": "A11Y-001",
+      "slug": "keyboard_only",
+      "expected_behavior": "Core learning exercise must be operable without pointer input",
+      "execution_status": "not_run",
+      "review_required": "requires UI test"
+    }
+  ]
+}

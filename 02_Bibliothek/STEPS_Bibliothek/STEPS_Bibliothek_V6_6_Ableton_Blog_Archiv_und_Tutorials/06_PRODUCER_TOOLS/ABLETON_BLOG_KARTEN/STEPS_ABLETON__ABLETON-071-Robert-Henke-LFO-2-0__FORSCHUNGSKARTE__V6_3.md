@@ -1,0 +1,29 @@
+# Robert Henke LFO 2.0
+
+**STEPS-Quell-ID:** `ABLETON-071` · **Version:** V6.3 · **Status:** bibliografischer Forschungseintrag, noch kein wissenschaftlich validierter Leitfaden
+
+**Original:** https://www.ableton.com/de/blog/lfo-20-free-max-live-device-robert-henke/
+
+**Art:** Download · **Hauptordner:** `06_PRODUCER_TOOLS` · **Querbezüge:** `17_DAW_WORKFLOWS`, `08_COMPUTATIONAL_MUSIC`
+
+**Stichwörter:** Modulation, LFO, Max for Live.
+
+## Warum in der Bibliothek?
+
+Der im offiziellen Ableton-Blog gelistete Beitrag behandelt das Themenfeld **Modulation, LFO, Max for Live**. Er dient als Ausgangspunkt für stilistische, didaktische und/oder praktische STEPS-Untersuchungen. Seine Präsenz im Register ist kein Beleg dafür, dass ein Video, ein kostenloses Pack oder ein Live-Set bereits vollständig geprüft wurde.
+
+## Verifikationsgrenze
+
+einzelne Artikelseite aufgerufen; nicht vollständig fachlich begutachtet. Kein vollständiger Artikeltext, keine Video- oder Podcast-Transkription und keine von Ableton stammenden Assets in STEPS übernommen. Die Quellen- und Urheberrechtslage muss vor jeder Einbettung gesondert bewertet werden.
+
+## Eigenständige STEPS-Transferaufgabe (neu verfasst)
+
+Baue ein eigenes A/B-Preset oder eine Signalkette, miss Pegel und vergleiche bei angenäherter Lautheit; keine Hersteller-Presets kopieren.
+
+## Für Codex
+
+1. Link und Titel bei erneuter Recherche prüfen; Metadaten wie Datum und Autor nur aus tatsächlich belegten Stellen ergänzen.
+2. Relevanz zur STEPS-Taxonomie bestätigen und bei Bedarf zusätzliche Fachlabels vergeben.
+3. Eine eigene Lehrstudie mit Noten-/MIDI-/Parameterdaten erstellen statt den Originalartikel zu kopieren.
+4. Tests und musikalischen Review getrennt dokumentieren; keinen Quellenstatus automatisch erhöhen.
+5. Fremde Downloads zunächst nur als URL mit Lizenzstatus `PENDING` verzeichnen.

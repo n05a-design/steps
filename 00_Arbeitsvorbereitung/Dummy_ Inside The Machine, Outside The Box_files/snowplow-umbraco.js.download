@@ -1,0 +1,143 @@
+document.addEventListener('abletonSessionEvent', (event) => {
+    // setting anonymous identifier for snowplow
+    if (options.anonymousIdentifier == '') {
+        options.anonymousIdentifier = event.detail.trackingIdentifier;
+    }
+
+    window.biscuits.when('snowplow', setupTracking, setupAnonymousTracking);
+
+    snowplow('enableActivityTracking', {
+        minimumVisitLength: 30,
+        heartbeatDelay: 5
+    });
+      
+    snowplow('enableLinkClickTracking');
+    snowplow('enableButtonClickTracking');
+    snowplow('enableFormTracking', {
+        options: {
+            forms: {
+                filter: element => {
+                        return element.dataset.snowplowIgnore === undefined;
+                }
+            },
+            fields: {
+                denylist: ['password', 'csrfmiddlewaretoken', 'token']
+            }
+        }
+    });
+    snowplow('trackPageView');
+
+    // Youtube tracking
+
+    window.youTubeUidIds = new Array();
+
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            mutation.addedNodes.forEach((node) => {
+                let iframeNode = null;
+
+                // Check if it's a Youtube embed or a button that launches a pop up
+                if (node.nodeType === 1 && node.tagName === "IFRAME") {
+                    iframeNode = node;
+                } else if (node.querySelector != null && typeof(node.querySelector) != undefined) {
+                    iframeNode = node.querySelector('iframe');
+                }
+
+                if (iframeNode != null && iframeNode.nodeType === 1 && iframeNode.tagName === "IFRAME" && iframeNode.src.includes('youtube')) {
+                    var youTubeVidId = iframeNode.id;
+
+                    if (youTubeVidId == null || youTubeVidId == '') {
+                        var iframeUrl = new URL(iframeNode.src);
+                        youTubeVidId = iframeUrl.pathname.replace('/embed/','');
+                    }
+
+                    var uiud = crypto.randomUUID();
+
+                    window.youTubeUidIds.push(uiud);
+                    window.snowplow('startYouTubeTracking', {
+                        id: uiud,
+                        video: youTubeVidId,
+                        options: {
+                            captureEvents: ["play", "pause", "ended", "percentprogress"],
+                            boundaries: [10, 25, 50, 75],
+                            updateRate: 200
+                        }
+                    });
+
+                   
+                }
+            });
+        });
+    });
+
+    // Watch the whole document for new children
+    observer.observe(document, {
+        childList: true,
+        subtree: true
+    });
+
+    window.addEventListener('beforeunload', () => {
+        window.youTubeUidIds.forEach(function(youTubeUidId) {
+            window.snowplow('endYouTubeTracking', youTubeUidId);
+
+        });
+    });
+});
+
+
+(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[]; p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments) };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1; n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","https://www.ableton.com/delta.js","snowplow"));
+
+const defaultOptions = {
+    trackerUrl: 'https://ableton.com/delta.js',
+    appId: 'com.ableton.www',
+    collectorUrl: 'https://delta.ableton.com',
+    postPath: '/ableton/yw9',
+    trackerId: 'sp',
+    anonymousIdentifier: ''
+};
+
+const options = {
+    ...defaultOptions
+};
+
+
+function createTracker(trackerOptions) {
+    const defaultTrackerOptions = {
+        appId: options.appId,
+        postPath: options.postPath
+    };
+    snowplow('newTracker', options.trackerId, options.collectorUrl, {
+      ...defaultTrackerOptions,
+      ...trackerOptions
+    });
+}
+
+function setupTracking() {
+    createTracker();
+}
+
+function setupAnonymousTracking() {
+    // When the use did not consent to full on tracking we still want to collect
+    // anonymous data per session. For that we generate a short-lived identifier
+    // in the backend that cannot be traced back to the Django session.
+    const setAnonymousSIDPlugin = {
+        setSID: () => {
+            return {
+                beforeTrack: payloadBuilder => {
+                    // Intercept payload sent to Snowplow and replace session ID with our own.
+                    const payload = payloadBuilder.getPayload();
+                    payload.sid = options.anonymousIdentifier;
+                    payloadBuilder.build(payload);
+                }
+            };
+        }
+    };
+
+    createTracker({
+        anonymousTracking: { withServerAnonymisation: true },
+        stateStorageStrategy: 'none',
+        eventMethod: 'post'
+    });
+    
+    snowplow('addPlugin:' + options.trackerId, setAnonymousSIDPlugin, 'setSID');
+}

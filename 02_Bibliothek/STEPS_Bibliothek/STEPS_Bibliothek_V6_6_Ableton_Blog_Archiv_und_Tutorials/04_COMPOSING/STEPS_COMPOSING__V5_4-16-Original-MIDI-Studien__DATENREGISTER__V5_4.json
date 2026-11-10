@@ -1,0 +1,98 @@
+[
+  {
+    "id": "CS54-01",
+    "source_case": "STEPS-V54-P01",
+    "bars": 16,
+    "note_count": 360
+  },
+  {
+    "id": "CS54-02",
+    "source_case": "STEPS-V54-P02",
+    "bars": 16,
+    "note_count": 372
+  },
+  {
+    "id": "CS54-03",
+    "source_case": "STEPS-V54-P03",
+    "bars": 16,
+    "note_count": 356
+  },
+  {
+    "id": "CS54-04",
+    "source_case": "STEPS-V54-P04",
+    "bars": 16,
+    "note_count": 356
+  },
+  {
+    "id": "CS54-05",
+    "source_case": "STEPS-V54-P05",
+    "bars": 16,
+    "note_count": 356
+  },
+  {
+    "id": "CS54-06",
+    "source_case": "STEPS-V54-P06",
+    "bars": 16,
+    "note_count": 364
+  },
+  {
+    "id": "CS54-07",
+    "source_case": "STEPS-V54-P07",
+    "bars": 16,
+    "note_count": 356
+  },
+  {
+    "id": "CS54-08",
+    "source_case": "STEPS-V54-P08",
+    "bars": 16,
+    "note_count": 360
+  },
+  {
+    "id": "CS54-09",
+    "source_case": "STEPS-V54-P09",
+    "bars": 16,
+    "note_count": 356
+  },
+  {
+    "id": "CS54-10",
+    "source_case": "STEPS-V54-P10",
+    "bars": 16,
+    "note_count": 364
+  },
+  {
+    "id": "CS54-11",
+    "source_case": "STEPS-V54-P11",
+    "bars": 16,
+    "note_count": 364
+  },
+  {
+    "id": "CS54-12",
+    "source_case": "STEPS-V54-P12",
+    "bars": 16,
+    "note_count": 372
+  },
+  {
+    "id": "CS54-13",
+    "source_case": "STEPS-V54-P13",
+    "bars": 16,
+    "note_count": 372
+  },
+  {
+    "id": "CS54-14",
+    "source_case": "STEPS-V54-P14",
+    "bars": 16,
+    "note_count": 360
+  },
+  {
+    "id": "CS54-15",
+    "source_case": "STEPS-V54-P15",
+    "bars": 16,
+    "note_count": 356
+  },
+  {
+    "id": "CS54-16",
+    "source_case": "STEPS-V54-P16",
+    "bars": 16,
+    "note_count": 356
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "format": "STEPS-mechanical-validation-v5",
+  "generated": "2026-11-08",
+  "checks_executed": 53967,
+  "failures": [],
+  "failures_count": 0,
+  "source_records": 27,
+  "curated_progression_families": 53,
+  "algorithmic_progression_variants": 1378,
+  "original_study_scores": 16,
+  "score_bars_generated": 512,
+  "scientific_peer_review": "NOT_PERFORMED",
+  "musical_quality_review": "NOT_PERFORMED",
+  "external_source_full_text_audit": "NOT_PERFORMED",
+  "result": "PASSED"
+}

@@ -1,0 +1,731 @@
+[
+  {
+    "id": "RESEARCH-V4-001",
+    "pillar": "Music Theory",
+    "title": "Tonhöhen, Oktaven und Schreibung",
+    "explanation": "Die wahrgenommene Tonhöhe ist nicht mit der Frequenz einer einzelnen Sinuskomponente gleichzusetzen. In gleichstufiger Stimmung teilen oktavverwandte Töne dieselbe Pitch Class, während ihre Registerlage für Wahrnehmung, Stimmführung und Orchestration wesentlich bleibt. Schreibung ist ein zusätzlicher semantischer Layer: F# und Gb können im 12-TET denselben MIDI-Pitch repräsentieren, aber unterschiedliche Skalenstufen und Auflösungsrichtungen bedeuten.",
+    "original_worked_example": "C#4 und Db4 sind 12-TET-äquivalent; als Leitton nach D ist C# analytisch plausibler.",
+    "limits": "Nicht auf mikrotonale Stimmungen oder bloße Audiofrequenzen als universellen Schlüssel abbilden.",
+    "codex_implementation": "Speichere sounding_pitch, spelled_pitch, tuning_system und tonal_context getrennt; baue Kollisionstests für Enharmonik.",
+    "source_family_ids": [
+      "EXT-V4-001",
+      "EXT-V4-026"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-002",
+    "pillar": "Music Theory",
+    "title": "Intervallqualität und Vorzeichen",
+    "explanation": "Intervallzahlen ergeben sich aus den Buchstabenabständen inklusive beider Endpunkte; die Qualität hängt von chromatischer Halbtonzahl und diatonischer Referenz ab. Deshalb ist C–F# eine übermäßige Quarte und C–Gb eine verminderte Quinte, obwohl beide im 12-TET sechs Halbtöne umfassen. Für korrekte musiktheoretische Rückmeldung müssen generische und chromatische Distanz gleichzeitig erhalten bleiben.",
+    "original_worked_example": "C→F# = A4, C→Gb = d5; die Stimmführung in unterschiedlicher Satzumgebung trennt ihre Aufgaben.",
+    "limits": "Pitch-Class-Distanz allein kann Intervallnamen nicht bestimmen.",
+    "codex_implementation": "Implementiere spelled_interval als eigenes Objekt mit diatonic_number, chromatic_semitones, quality.",
+    "source_family_ids": [
+      "EXT-V4-001",
+      "EXT-V4-030"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-003",
+    "pillar": "Music Theory",
+    "title": "Temperamente und Mikrotonalität",
+    "explanation": "Zwölfstufige Gleichstufigkeit ermöglicht einfaches Transponieren und enharmonische Gleichsetzung in Standard-MIDI, ist aber weder geschichtliche Norm für alle Epochen noch universelles Hör- oder Kompositionssystem. Reine Stimmung orientiert Teilintervalle an Frequenzverhältnissen und kann je nach Tonzentrum andere Werte liefern. Mikrotonale Musik erfordert explizite Skalen- und Intonationsmodelle statt heimlicher Rundung auf zwölf Pitch Classes.",
+    "original_worked_example": "Reine große Terz 5:4 unterscheidet sich von der 12-TET-Terz mit vier gleichstufigen Halbtönen.",
+    "limits": "Aus einfachen Zahlenverhältnissen folgt keine universelle ästhetische Rangordnung.",
+    "codex_implementation": "Versioniere tuning_id, cent_offset, reference_frequency, temperament_metadata und render_policy getrennt.",
+    "source_family_ids": [
+      "EXT-V4-001"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-004",
+    "pillar": "Music Theory",
+    "title": "Rhythmus versus Metrum",
+    "explanation": "Rhythmus beschreibt konkrete Ereignisabstände und Dauern; Metrum ist eine hierarchische, wahrnehmungsabhängige Erwartungsordnung über die Zeit. Eine Betonung auf einer schwachen Zählzeit kann dieselbe notierte Note in einer anderen metrischen Umgebung anders wirken lassen. Rubato verändert Zeitabstände, ohne notwendigerweise die Identität des wahrgenommenen Takts zu beseitigen.",
+    "original_worked_example": "Notiere vier Viertel gleichmäßig; verschiebe den zweiten Akzent auf die Und von 2 und vergleiche wahrgenommene Synkope.",
+    "limits": "Akkorddauer und musikalische Betonung dürfen nicht allein aus der Taktstrichposition abgeleitet werden.",
+    "codex_implementation": "Speichere event_onset, notated_duration, beat_strength, meter_hypothesis und expressive_timing separat.",
+    "source_family_ids": [
+      "EXT-V4-015",
+      "EXT-V4-029"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-005",
+    "pillar": "Music Theory",
+    "title": "Skalen als geordnete Stufenstruktur",
+    "explanation": "Ein Modus ist mehr als die unsortierte Menge von Pitch Classes: Grundtonbezug, Stufenfunktionen, charakteristische Töne und melodische Bewegung sind für den Höreindruck relevant. A-Dorisch und G-Dur besitzen dieselben Töne, aber nicht denselben modalen Schwerpunkt. Bei der Generierung ist entscheidend, welche Tonstufen als Ruhepunkt, Reibung oder Leitbewegung inszeniert werden.",
+    "original_worked_example": "A-Dorian = A B C D E F# G; ein A-moll-Zentrum mit F# als charakteristische großer Sexte.",
+    "limits": "Gleiche Tonmenge beweist keine gleiche Tonalität oder Funktion.",
+    "codex_implementation": "Trenne pitch_collection, mode_final, melodic_emphasis und cadence_strategy.",
+    "source_family_ids": [
+      "EXT-V4-001",
+      "EXT-V4-030"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-006",
+    "pillar": "Music Theory",
+    "title": "Tonleitern und diatonische Schreibweise",
+    "explanation": "Eine diatonische Durtonleiter benutzt jeden der sieben Stammtonbuchstaben genau einmal und ordnet Ganztöne und Halbtöne nach einem definierten Muster an. Eine rechnerisch korrekte Pitch-Class-Ausgabe kann in der Notation unbrauchbar sein, wenn sie enharmonisch falsch geschrieben wird. Bei komplexeren Tonarten sind auch Doppelvorzeichen möglich; eine Anwendung darf sie nicht willkürlich durch bequemere Buchstaben ersetzen.",
+    "original_worked_example": "F#-Dur: F# G# A# B C# D# E# F#; E# nicht F.",
+    "limits": "Andere Notationssysteme brauchen eigene Konventionen; 12-TET-Audiogleichheit ersetzt keine theoretische Schreibweise.",
+    "codex_implementation": "Implementiere diatonic_letter_cycle und accidentals als getrennte Operationen.",
+    "source_family_ids": [
+      "EXT-V4-001"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-007",
+    "pillar": "Music Theory",
+    "title": "Akkordsymbole als Mehrdeutigkeitsschnittstelle",
+    "explanation": "Ein Akkordsymbol beschreibt in der Regel einen Tonvorrat oder Voicing-Zielraum, aber nicht automatisch Akkordfunktion, Lage, Instrumentation oder rhythmische Umsetzung. Cmaj9, Cadd9, C9 und C7b9 unterscheiden sich in ihrer Septime und in ihrer Bedeutung. Slash-Akkorde beschreiben oft einen Bass, nicht zwingend eine Inversion eines klassischen tertiären Akkords.",
+    "original_worked_example": "Cadd9: C E G D; Cmaj9: C E G B D; C9: C E G Bb D.",
+    "limits": "Hersteller-Chord-Syntax kann Akkordsuffixe anders interpretieren; Parser benötigen Dialektangabe.",
+    "codex_implementation": "Erzeuge ChordSymbol AST mit root, quality, seventh, extensions, alterations, bass und spelling.",
+    "source_family_ids": [
+      "EXT-V4-026",
+      "EXT-V4-021"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-008",
+    "pillar": "Music Theory",
+    "title": "Konsonanz, Funktion und Kultur",
+    "explanation": "Akustische Rauigkeit, Satzdissonanz und harmonisch-rhetorische Spannung sind nicht identisch. Eine Septime kann als auflösungsbedürftig behandelt, als stiltypischer stabiler Bluesklang genutzt oder in Jazz-Voicings zur Klangfarbe werden. Historische Normen müssen als Stilkonvention modelliert sein, damit eine Software experimentelle oder andere kulturelle Praxis nicht als Fehler klassifiziert.",
+    "original_worked_example": "C7 in C-Blues kann Tonikaqualität tragen; G7 in C-Dur kann vor C eine dominante Funktion ausbilden.",
+    "limits": "Vermeide die binäre Systemmeldung 'dissonant = verboten'.",
+    "codex_implementation": "Definiere getrennte Felder acoustic_roughness, style_dissonance_role und local_function.",
+    "source_family_ids": [
+      "EXT-V4-001",
+      "EXT-V4-009"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-009",
+    "pillar": "Harmony",
+    "title": "Funktion, Stufe und Bass unterscheiden",
+    "explanation": "Die Stufenbezeichnung benennt einen Akkord relativ zu einem tonalen Kontext, während Funktion eine interpretierte Rolle im Satzverlauf darstellt. Ein IV-Akkord kann prädominant auftreten, einen eigenen Ruhepunkt stützen oder in Pop-Loops metrisch tonikal wirken. Grundton, notierter Bass und harmonische Funktion sind daher drei voneinander zu trennende Dimensionen.",
+    "original_worked_example": "F–G7–C in C kann IV–V7–I sein; ein wiederholtes F–C über F-Pedal kann andere Zentrierung nahelegen.",
+    "limits": "Aus isolierten Akkordsymbolen lässt sich Funktion nicht eindeutig beweisen.",
+    "codex_implementation": "Gib roman_candidates[], function_candidates[], bass_line[] und confidence_rationale aus.",
+    "source_family_ids": [
+      "EXT-V4-001",
+      "EXT-V4-009",
+      "EXT-V4-019"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-010",
+    "pillar": "Harmony",
+    "title": "Kadenz und formale Schlusswirkung",
+    "explanation": "Eine Kadenz ist nicht einfach die aufeinanderfolgende Nennung zweier Akkordsymbole, sondern ein musikalisch formulierter Schluss mit metrischer, melodischer, stimmführungstechnischer und formaler Einbindung. Eine Dominante-Tonika-Verbindung mitten im Takt ohne phrasalen Abschluss ist nicht zwingend eine authentische Kadenz. In klassischem Instrumentalsatz beeinflussen Sopran- und Basslage die Klassifikation.",
+    "original_worked_example": "G7→C auf starker Zählzeit mit Sopran D→C und Bass G→C kann ein starkes Schlussmodell bilden.",
+    "limits": "Nicht jede V–I-Folge PAC nennen; Inversion, Melodie, Metrum und Kontext prüfen.",
+    "codex_implementation": "Erzeuge CadenceEvent als Kontextobjekt statt Regex auf zwei Chord Labels.",
+    "source_family_ids": [
+      "EXT-V4-008",
+      "EXT-V4-003"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-011",
+    "pillar": "Harmony",
+    "title": "Sekundärdominante als gerichtete Tonikalisierung",
+    "explanation": "Eine Zwischendominante ist funktional relativ zu einem zeitweiligen Ziel zu verstehen, nicht bloß als chromatischer Nicht-Diatonik-Akkord. Die Schreibweise V7/ii bezeichnet einen Akkord, der die ii-Stufe anvisiert; seine übliche Auflösung ist eine Tendenz, keine notwendige Vorbedingung. Wiederholte oder strukturelle Verschiebung kann eine echte Modulation begünstigen, aber die Grenze hängt vom Satzkontext ab.",
+    "original_worked_example": "In C-Dur: A7→Dm, zu deuten als V7/ii→ii; die chromatische Terz C# zielt nach D.",
+    "limits": "Ein unaufgelöstes A7 in einem Pop-Loop ist nicht zwangsläufig funktional V/ii.",
+    "codex_implementation": "RuleType=tendency, target_degree=ii, observed_resolution separat.",
+    "source_family_ids": [
+      "EXT-V4-001",
+      "EXT-V4-021"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-012",
+    "pillar": "Harmony",
+    "title": "Zwischenleittonakkord und chromatische Annäherung",
+    "explanation": "Ein verminderter Septakkord kann die Leittonfunktion eines lokalen Ziels verstärken und verschiedene enharmonische Deutungen erlauben. Der gleiche gleichstufige Tonvorrat kann vor mehreren Zielen auftreten; seine Schreibweise und tatsächlichen Stimmenbewegungen müssen deshalb dokumentiert werden. Die klangliche Symmetrie ersetzt nicht die Analyse von Leitbewegungen.",
+    "original_worked_example": "In C-Dur: C#°7→Dm als vii°7/ii→ii; die konkrete enharmonische Notation muss vier Akkordtöne korrekt angeben.",
+    "limits": "Vier gleichabständige Pitch Classes begründen nicht automatisch die gelesene Funktion.",
+    "codex_implementation": "Stelle enhanced_diminished_spellings als Kandidaten mit lokalem Ziel bereit.",
+    "source_family_ids": [
+      "EXT-V4-001",
+      "EXT-V4-021"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-013",
+    "pillar": "Harmony",
+    "title": "Modal Interchange mit expliziter Herkunft",
+    "explanation": "Ein geborgter Akkord stammt aus einem auf denselben tonalen Mittelpunkt bezogenen anderen Modus oder Tongeschlecht, sofern diese Interpretation im Kontext sinnvoll ist. Das verwechselt sich leicht mit chromatischer Mediantenbeziehung, tonicization oder fremdem modalen Schwerpunkt. Die Herkunft einer Borrowed-Chord-Deutung sollte als Hypothese und nicht als ontologischer Wahrheitsstempel gespeichert werden.",
+    "original_worked_example": "C–Fm–C: Fm als iv aus C-Moll, mit Ab als charakteristischer Farbe; Ab→G mögliche Halbtontendenz.",
+    "limits": "Der gleiche Akkord kann auch als reine Stimmführungsfarbe ohne modale Herkunft verstanden werden.",
+    "codex_implementation": "Speichere donor_mode_candidate und voiceleading_evidence, nicht nur borrowed=true.",
+    "source_family_ids": [
+      "EXT-V4-001"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-014",
+    "pillar": "Harmony",
+    "title": "Blues und das tonikale Dominantseptimmodell",
+    "explanation": "In vielen Bluesformen erscheint der I7-Akkord als Grundklang; er muss nicht als angewandte Dominante zum IV-Akkord aufgelöst werden. Die Bluesharmonik verbindet Formschema, melodische Blue-Note-Praxis, rhythmische Phrasierung und Klangfarbe, die ein ausschließlich klassisch-funktionaler Parser nicht abbilden kann. Varianten von acht, zwölf oder sechzehn Takten benötigen separate Formkontexte.",
+    "original_worked_example": "C7–F7–C7–G7–F7–C7 als schematische Bluesfunktion; Details ergeben erst die Taktstruktur.",
+    "limits": "Blues-Praxis ist keine homogene Liste starrer 'klassischer' Kadenzen.",
+    "codex_implementation": "Führe blues_form, tonic_seventh_role und performance_features als getrennte Entitäten.",
+    "source_family_ids": [
+      "EXT-V4-001",
+      "EXT-V4-002"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-015",
+    "pillar": "Harmony",
+    "title": "Jazz II–V–I und Guide Tones",
+    "explanation": "Im tonalen Jazz bildet ii–V–I eine häufige zielgerichtete Folge, die durch Sekundärdominantenketten, tritonische Substitutionen, Backdoor-Bewegungen und Alterationen erweitert werden kann. Stimmführung zwischen Terzen und Septimen liefert ein anderes Erklärungsmodell als reine Grundtonabstände. Extensions können melodisch oder harmonisch gezielt eingesetzt werden, aber sind nicht per se zwingender Bestandteil jedes Voicings.",
+    "original_worked_example": "Dm7–G7–Cmaj7: F und C in Dm7, B und F in G7, E und B in Cmaj7 als ausgewählte Stimmführungsziele.",
+    "limits": "'Jeder jazzige Akkord muss eine 9 haben' ist kein musiktheoretisches Gesetz.",
+    "codex_implementation": "Modelliere chord_function und guide_tone_voiceleading getrennt von optionalen voicing choices.",
+    "source_family_ids": [
+      "EXT-V4-001",
+      "EXT-V4-026"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-016",
+    "pillar": "Harmony",
+    "title": "Tritonussubstitution als mehrere Linsen",
+    "explanation": "Eine dominante Tritonusverwandtschaft kann über gleiche Guide-Tone-Pitch-Classes erklärt werden, obwohl die Bassbewegung und der konkrete akkordische Tonvorrat anders wirken. Bei G7→C kann Db7→C als chromatische Annäherung fungieren; die Gleichsetzung ist nicht vollständig, denn Grundton, Skalenoptionen und Stimmführung unterscheiden sich. Eine Harmoniebibliothek muss daher 'verwandt' und 'identisch' trennen.",
+    "original_worked_example": "G7: G B D F; Db7: Db F Ab Cb, mit Cb enharmonisch B; beide teilen F/B als Pitch Classes.",
+    "limits": "Die Auswechslung braucht stilistischen und melodischen Kontext, nicht nur den Tritonus-Abstand.",
+    "codex_implementation": "Expose shared_guide_tone_classes und semitone_bass_approach als Begründungsachsen.",
+    "source_family_ids": [
+      "EXT-V4-001"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-017",
+    "pillar": "Harmony",
+    "title": "Chromatische Medianten und Stimmführung",
+    "explanation": "Große oder kleine Dreiklänge mit mediantischer Grundtonrelation können bei unterschiedlichem diatonischem Bezug durch gemeinsame Töne und kleine Stimmenbewegungen verbunden sein. Diese Beziehungen sind oft analytisch ergiebiger als eine erzwungene dominantische Funktion. Ein Transformationsmodell sollte aber die genaue Relation je Paar benennen und nicht sämtliche chromatischen Akkorde in eine Familie werfen.",
+    "original_worked_example": "C-Dur C–E–G und Ab-Dur Ab–C–Eb teilen C; E→Eb und G→Ab sind Halbtonbewegungen.",
+    "limits": "Nicht jeder Terzschritt ist chromatisch und nicht jede ähnliche Stimmführung erfordert Neo-Riemannian Interpretation.",
+    "codex_implementation": "Speichere common_tones, semitone_moves und referential_key separat.",
+    "source_family_ids": [
+      "EXT-V4-016",
+      "EXT-V4-017"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-018",
+    "pillar": "Harmony",
+    "title": "Neo-Riemannsche P/L/R Transformationen",
+    "explanation": "P, L und R sind wohldefinierte Beziehungen zwischen Dur- und Molldreiklängen unter einer gemeinsamen Transformationskonvention. P verändert die Terz chromatisch bei festem Grundton und Quinte; L bewahrt zwei Töne und bewegt einen Ton halbtonweise; R verbindet relative Dur- und Molldreiklänge über zwei gemeinsame Töne. In einer kompositorischen Umgebung sind diese Funktionen Beziehungskarten, keine automatische Erklärung für metrische Form oder Tonika.",
+    "original_worked_example": "C major→C minor (P), C major→E minor (L), C major→A minor (R).",
+    "limits": "Die Operationen auf Septakkorde oder mikrotonale Pitch Sets sind nicht automatisch definiert.",
+    "codex_implementation": "Representiere triad_quality und reversible_operation statt universeller Chord Regex.",
+    "source_family_ids": [
+      "EXT-V4-016",
+      "EXT-V4-018"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-019",
+    "pillar": "Harmony",
+    "title": "Pop-Axis und Tonikamehrdeutigkeit",
+    "explanation": "Eine vi–IV–I–V-Folge in C-Dur ist klanglich identisch mit i–bVI–bIII–bVII bei A-äolischem Zentrum; die Stufenbezeichnung ist an eine interpretierte Tonika gekoppelt. Melodie, Beginnposition, Phrasenende und formale Wiederholung beeinflussen die Tonikazuschreibung. Für STEPS sollte deshalb eine Progression Kandidaten mitsamt Begründung tragen und beim Anhören des gleichen Materials unterschiedliche Analysesichten erlauben.",
+    "original_worked_example": "Am–F–C–G: C-Ionisch vi–IV–I–V; A-Äolisch i–bVI–bIII–bVII.",
+    "limits": "Keine Tonikawahl allein aus dem ersten Akkord erzwingen.",
+    "codex_implementation": "Gib alternative_tonal_centers[] und evidentiary_factors[] aus.",
+    "source_family_ids": [
+      "EXT-V4-019"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-020",
+    "pillar": "Harmony",
+    "title": "Plateau-Loops und rhetorische Tonika",
+    "explanation": "Bestimmte IV–V–vi-Loops erzeugen funktionale Räume, in denen Tonika nicht immer als harmonisches I tatsächlich erscheint. In den untersuchten Popkontexten kann eine rhetorische Tonikafunktion auf IV oder vi liegen; melodische Tonstufen, metrische Platzierung und größere Form sind dafür entscheidend. Das widerspricht der Vereinfachung, die harmonische Stufe alleine bestimme ihre Funktion.",
+    "original_worked_example": "F–G–Am bei angenommenem C-Dur kann als IV–V–vi fungieren, ohne C-Dur als Akkord zu präsentieren.",
+    "limits": "Ein Plateau-Loop ist keine unstrittige Funktionsetikette für jedes Vorkommen dieser drei Akkorde.",
+    "codex_implementation": "Stelle global_tonic, actual_tonic_presence und rhetorical_tonic_candidate nebeneinander.",
+    "source_family_ids": [
+      "EXT-V4-020",
+      "EXT-V4-005"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-021",
+    "pillar": "Harmony",
+    "title": "Posttonale Set-Theory und Klangorganisation",
+    "explanation": "Ein Pitch-Class-Set fasst Töne modulo Oktavlage zusammen und kann Transpositions- und Inversionsverwandtschaften aufdecken. Damit sind weder ein realer Akkordklang noch eine Voicing-Lösung vollständig repräsentiert: Register, Reihenfolge, Dauer und klangliche Ausgestaltung fehlen. In einem Kompositionstool kann die Set-Ebene Materialfamilien erzeugen, muss aber mit Event- und Registerebene verbunden werden.",
+    "original_worked_example": "{0,1,4} und seine Transpositionen teilen die gleiche Intervallstruktur, können aber in anderen Lagen verschieden klingen.",
+    "limits": "Pitch-Class-Set-Gleichheit ist nicht Gleichheit von Klang, Form oder Bedeutung.",
+    "codex_implementation": "Implementiere pc_set_family getrennt von ordered_pitch_events.",
+    "source_family_ids": [
+      "EXT-V4-018"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-022",
+    "pillar": "Chord Progressions",
+    "title": "Zeitliche Akkordereignisse statt bloßer Strings",
+    "explanation": "Eine Akkordfolge ist ein Zeitobjekt. Wenn Cmaj7 für zwei Takte und G7 für einen halben Takt erklingt, ist dies kompositorisch etwas anderes als eine gleichgewichtige Liste [Cmaj7,G7]. Metrische Position, Phrasenfunktion, Tonzentrum, Melodiepassung, Bass und Voicing müssen als eigenständige Felder modelliert werden. Dadurch können Analyse und Komposition aus derselben Quelle verschiedene Ansichten gewinnen.",
+    "original_worked_example": "Cmaj7 (8 Viertel) – Dm7 (2 Viertel) – G7 (2 Viertel) – Cmaj7 (4 Viertel).",
+    "limits": "Ohne Takt und Tempo darf STEPS keine vermeintlich exakten Spannungsverläufe ausgeben.",
+    "codex_implementation": "JSON Events mit offset, duration, meter, local_context, analysis_candidates, source_claims.",
+    "source_family_ids": [
+      "EXT-V4-021",
+      "EXT-V4-022"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-023",
+    "pillar": "Chord Progressions",
+    "title": "Harmonischer Rhythmus als Gestaltungsparameter",
+    "explanation": "Die Dichte der Akkordwechsel kann formale Energie erzeugen, ohne dass neue Akkorde benötigt werden. Eine Verdichtung von ganzen Takten zu Halbtakten im Prechorus kann einen Chorus rhetorisch vorbereiten; eine Rückkehr zu längeren Liegezeiten kann Entspannung signalisieren. In Jazz und klassischer Satztechnik sind harmonischer Rhythmus und Phrasenposition auch für Funktionsdeutung wichtig.",
+    "original_worked_example": "Verse: C je 4 Beats, Am je 4 Beats; Prechorus: Dm 2, G 2, C 4 Beats.",
+    "limits": "Ein schneller Wechsel ist nicht automatisch mehr akustische Dissonanz.",
+    "codex_implementation": "Expose harmonic_change_density getrennt von chordal_tension und instrumentation_density.",
+    "source_family_ids": [
+      "EXT-V4-009",
+      "EXT-V4-015"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-024",
+    "pillar": "Chord Progressions",
+    "title": "Progressionsfamilie und Rotation",
+    "explanation": "Progressions können im loopbasierten Repertoire als zyklische Familien untersucht werden. Eine Rotation der Akkordreihenfolge erhält zwar denselben gerichteten Kreis der Beziehungen, verändert aber Beginn, Schwerpunkt, Kadenzwirkung und möglicherweise die gehörte Tonika. Das ist wichtig für Composition DNA: eine mathematisch einfache Äquivalenz muss nicht musikalisch neutral sein.",
+    "original_worked_example": "C–G–Am–F versus Am–F–C–G enthalten verwandte Zyklusübergänge, setzen aber andere Auftakte.",
+    "limits": "Rotation ≠ identisches Hörerlebnis oder gleiche Funktion.",
+    "codex_implementation": "Representiere loop_class, rotation_index und perceptual_tonic_hypothesis unabhängig.",
+    "source_family_ids": [
+      "EXT-V4-019",
+      "EXT-V4-002"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-025",
+    "pillar": "Chord Progressions",
+    "title": "Reharmonisierung mit Invarianzvertrag",
+    "explanation": "Eine Reharmonisierung ändert Akkorde unter bestimmten Erhaltungsbedingungen: Melodie, harmonischer Rhythmus, Bass, Tonzentrum oder Kadenzziel können fixiert oder freigegeben sein. Nur unter solchen Grenzen lässt sich eine Transformation sinnvoll vergleichen. STEPS sollte mehrere Antworten erzeugen und für jede angeben, welche Voraussetzung erhalten blieb und welcher Parameter verändert wurde.",
+    "original_worked_example": "Festes Melodie-E: Cmaj7→Am9→Fmaj7 verändern den harmonischen Kontext, E bleibt Akkordton bzw. farbige große Septime.",
+    "limits": "Melodieton als Akkordton ist nicht zwingend; Non-Chord Tones müssen differenziert geprüft werden.",
+    "codex_implementation": "Input contract: lock_melody, lock_bass, lock_meter, difficulty, tonal_scope.",
+    "source_family_ids": [
+      "EXT-V4-001",
+      "EXT-V4-007"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-026",
+    "pillar": "Chord Progressions",
+    "title": "Stimmführungsdistanz und musikalische Wahl",
+    "explanation": "Die minimale Summe von Halbtonbewegungen kann eine nützliche Vergleichsmetrik für Voicings sein, aber sie erfasst nicht automatisch Stil, Stimmenführungsgesetze, Klangbalance oder melodische Zielwirkung. Ein großer Sprung in der Oberstimme kann bewusst hervorgehoben werden, auch wenn die Summe aller Stimmen dadurch wächst. Analysetools sollten metrische Scores in nachvollziehbare Teilwerte zerlegen statt sie als ästhetische Autorität anzugeben.",
+    "original_worked_example": "Cmaj7 E4–G4–B4–C5 → Am7 E4–G4–A4–C5 hat kleine Bewegungen; ein anderes Register kann effektvoller sein.",
+    "limits": "Oktav-/Stimmzuordnung muss festgelegt sein; Set-Abstand ist nicht Stimmenführungsabstand.",
+    "codex_implementation": "Offer cost_min, voicecross_penalty, melody_priority und explicit_user_weights.",
+    "source_family_ids": [
+      "EXT-V4-016",
+      "EXT-V4-017"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-027",
+    "pillar": "Chord Progressions",
+    "title": "Korpusvergleich und statistische Evidenz",
+    "explanation": "Korpus-Häufigkeiten sind nur sinnvoll mit klarer Repertoireauswahl, Zeitspanne, Annotationstyp und Zählweise. Ein 20.000-Dateien-Korpus ist kein repräsentativer Querschnitt aller Musik, und mehrere Konvertierungen derselben Aufnahme können Datengewichtung verzerren. Anders als Theorieregeln müssen statistische Aussagen mit Datensatzversion, Filter und Nenner verbunden werden, sonst erscheinen Präferenzen als objektive Wahrheit.",
+    "original_worked_example": "'IV→I in Pop-Korpus X' benötigt Anzahl, Gesamtfälle, Tonartheuristik und Subset-Lizenz.",
+    "limits": "Keine Prozentwerte schätzen und keine Rangfolge aus allgemeinem Modellwissen als Korpusdaten ausgeben.",
+    "codex_implementation": "Data object includes dataset_id, version, query, numerator, denominator, annotation_confidence.",
+    "source_family_ids": [
+      "EXT-V4-022",
+      "EXT-V4-023"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-028",
+    "pillar": "Composing",
+    "title": "Kompositionsbrief und bewusste Constraints",
+    "explanation": "Komponieren beginnt mit einer Entscheidung über Ziel und Material, nicht zwangsläufig mit Akkorden. Eine kurze Szenenmusik, ein achtaktiges Klavierstück und ein Pop-Refrain besitzen verschiedene Anforderungen an Dauer, Energie, Instrumentation, formalen Kontrast und Wiedererkennbarkeit. Ein dokumentierter Brief erleichtert das spätere Revidieren: Welche Eigenschaft soll wiederkehren? Was darf sich verändern? Woran wird ein Entwurf hörend überprüft?",
+    "original_worked_example": "Brief: 16 Takte, C-Dorisch, zwei kontrastierende Vierviertelphrasen, nur drei harmonische Zentren, Flöte und Klavier.",
+    "limits": "Ein Brief ist kreatives Werkzeug, nicht eine wissenschaftliche Formel für gute Musik.",
+    "codex_implementation": "Objekt CompositionBrief mit goal, duration, audience, ensemble, motifs, invariants, review_criteria.",
+    "source_family_ids": [
+      "EXT-V4-006",
+      "EXT-V4-007"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-029",
+    "pillar": "Composing",
+    "title": "Motiv als wiedererkennbare Gestalt",
+    "explanation": "Ein Motiv kann durch Intervallkontur, Rhythmus, metrische Position, Artikulation oder Klangfarbe charakterisiert sein. Es ist nicht notwendig, dass alle Eigenschaften bei einer Wiederkehr identisch bleiben. Entscheidend ist vielmehr, welche Dimensionen als Identitätsträger dienen und durch Variation bewusst in den Vordergrund treten. Das erlaubt gezielte Entwicklung statt bloß neuer Tonfolgen.",
+    "original_worked_example": "Motiv A: C4 Viertel, D4 Achtel, E4 Achtel, G4 Halbe; Variation: G4 Viertel, A4 Achtel, B4 Achtel, D5 Halbe.",
+    "limits": "Beliebige Transposition erhält Kontur, kann Register und Spannung aber verändern.",
+    "codex_implementation": "Speichere rhythm_signature, interval_vector, accent_map, transformations und source_object.",
+    "source_family_ids": [
+      "EXT-V4-006",
+      "EXT-V4-007"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-030",
+    "pillar": "Composing",
+    "title": "Variation, Wiederholung und Kontrast",
+    "explanation": "Wiederholung stabilisiert musikalische Erwartung, Variation erzeugt Fortgang und Kontrast erlaubt größere formale Unterscheidung. Ein kontinuierlicher Wechsel sämtlicher Parameter erschwert die Wiedererkennbarkeit; eine endlose identische Wiederholung ohne Textur- oder Harmoniebewegung kann Stillstand erzeugen, sofern dies nicht bewusst gewollt ist. Praktisch sollte pro Wiederkehr ein Hauptparameter geändert und dessen Wirkung angehört werden.",
+    "original_worked_example": "Takten 1–2 Motiv A; 3–4 transponiertes A; 5–6 fragmentiertes A mit Verdichtung; 7–8 cadenzielle Abrundung.",
+    "limits": "Kein starres Verhältnis 'zwei Wiederholungen sind richtig'; Stil und Form zählen.",
+    "codex_implementation": "Dokumentiere transformation lineage und phrase_position.",
+    "source_family_ids": [
+      "EXT-V4-007",
+      "EXT-V4-008"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-031",
+    "pillar": "Composing",
+    "title": "Satzmodell und Fortsetzung",
+    "explanation": "In der klassisch orientierten Formtheorie ist die Satzstruktur häufig als Präsentation, Fortsetzung und Abschluss beschreibbar. Eine Präsentation stellt und bestätigt eine Grundidee, während die Fortsetzung durch Fragmentierung, Sequenz und rhythmische Verdichtung auf einen Schluss hinwirken kann. Das ist ein historisch und repertorial begrenztes Analyse- und Kompositionsschema, keine generische Formel für alle Pop-Songs.",
+    "original_worked_example": "Takte 1–2 Grundidee; 3–4 Wiederholung; 5–6 Fragment/Sequenz; 7–8 Dominantvorbereitung und Zielton.",
+    "limits": "Acht Takte allein beweisen keine Satzstruktur; harmonische und motivische Aufgaben prüfen.",
+    "codex_implementation": "CompositionGraph nodes presentation, continuation, cadence with evidence notes.",
+    "source_family_ids": [
+      "EXT-V4-008",
+      "EXT-V4-004"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-032",
+    "pillar": "Composing",
+    "title": "Periode und Kadenzhierarchie",
+    "explanation": "Eine klassische Periode kontrastiert eine eröffnende mit einer beantwortenden Phrase, wobei die zweite typischerweise stärker schließt. Die melodische Ähnlichkeit der Phrasen und unterschiedliche Kadenzstärke sind diagnostisch wichtig; zwei gleichlange Blöcke sind nicht automatisch eine Periode. In der Praxis kann ein Komponist dieses Modell variieren, indem er den melodischen Beginn wiedererkennen lässt und den Schluss verändert.",
+    "original_worked_example": "Antezedens: C–F–G (Halbschluss); Konsequens: C–Dm–G7–C mit deutlicherer Tonikawirkung.",
+    "limits": "Ein Akkordschema ohne realisierte Melodie und Metrik belegt keine perfekte authentische Kadenz.",
+    "codex_implementation": "Speichere phrase_pairs, shared_motif, cadence_strength_annotation und metrical_boundary.",
+    "source_family_ids": [
+      "EXT-V4-004",
+      "EXT-V4-008"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-033",
+    "pillar": "Composing",
+    "title": "Melodie vom Akkord lösen",
+    "explanation": "Eine Melodie ist nicht bloß die nacheinander abgefragte Folge von Akkordtönen. Durchgänge, Vorhalte, Wechselnoten und expressive Spannung brauchen metrische Lage und Auflösung; ihre Wirkung ergibt sich aus einer zeitlichen Linie. Ein motivischer Entwurf sollte zuerst gesungen oder gespielt und dann in mehreren harmonischen Umgebungen getestet werden, statt für jeden Ton einen neuen Akkord zu erzwingen.",
+    "original_worked_example": "C4–D4–E4 über Cmaj7: D als neunte Farbe oder Durchgang; E als Zielton der Bewegung.",
+    "limits": "Eine 'falsche Note' kann ein gewollter Vorhalt sein; UI benötigt Kontext statt roter Fehlermeldung.",
+    "codex_implementation": "Separate MelodyEvent von HarmonyEvent; add non_chord_tone_analysis_candidates.",
+    "source_family_ids": [
+      "EXT-V4-001",
+      "EXT-V4-007"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-034",
+    "pillar": "Composing",
+    "title": "Bass als zweite Kompositionsachse",
+    "explanation": "Der Bass kann Harmonie stabilisieren, eine gemeinsame Pedaltonbasis bilden oder durch chromatische Linie einen Zusammenhang schaffen, der in Akkordsymbolen wenig sichtbar ist. Ein Bass-first-Entwurf hilft, große Formbewegungen zu planen, bevor Voicing und Melodie konkretisiert werden. Slash-Chords müssen dabei als tatsächliche Klangereignisse und nicht nur als Symboltricks behandelt werden.",
+    "original_worked_example": "Bass C–B–A–G unter C–G/B–Am–C/G; absteigende Linie trägt die Phrase.",
+    "limits": "Ein gewollter Pedalton muss nicht Grundton jedes darüber klingenden Akkords sein.",
+    "codex_implementation": "Create BassLineEvent with bass_pitch, register, rhythmic_position and harmonic_interpretation.",
+    "source_family_ids": [
+      "EXT-V4-007",
+      "EXT-V4-026"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-035",
+    "pillar": "Composing",
+    "title": "Kontrapunkt als eigenständige Stimmenlogik",
+    "explanation": "Zweistimmiger Kontrapunkt ist mehr als die Verteilung eines Akkords auf zwei Melodien. Jede Stimme soll eine nachvollziehbare eigene Kontur besitzen, während die gemeinsamen Intervalle stilistisch kontrolliert werden. In einer Species-Übung gelten strengere Regeln als im freien Film-/Pop-Arrangement. Eine App muss zwischen Übungssystem und allgemeinem Kompositionswerkzeug wählen können.",
+    "original_worked_example": "Cantus C4–D4–E4–D4–C4; Kontrapunkt verlangt gezielte Konsonanzprüfung an den strukturellen Zählzeiten.",
+    "limits": "Keine Species-Parallelverbot-Regeln als universelles Gesetz für Pop-Pads anwenden.",
+    "codex_implementation": "Separate contrapuntal_style_contract, independence_features und dissonance_treatment.",
+    "source_family_ids": [
+      "EXT-V4-030",
+      "EXT-V4-001"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-036",
+    "pillar": "Composing",
+    "title": "Instrumentation und Arrangement",
+    "explanation": "Instrumentierung betrifft nicht nur die Auswahl von Timbres, sondern Register, Spielbarkeit, Dichte, Artikulation und die Rollenverteilung. Wenn Flöte und Klavier eine Melodie verdoppeln, kann dies die Hörbarkeit ändern, ohne Akkordfunktion zu verändern. Ein Arrangement sollte mehrere Zustände derselben Komposition erlauben: Solo, Duo, kleines Ensemble, Pad/Textur. Konkrete Besetzungsregeln brauchen instrumentenspezifische Quellen und realistische Tonumfänge.",
+    "original_worked_example": "Eine Linie E4–G4–A4 in Flöte und Violine kann in anderem Register anders projiziert werden.",
+    "limits": "Keine pauschalen Registergrenzen ohne Instrument, Technikstand und Transposition fest behaupten.",
+    "codex_implementation": "Define voice_role, playable_range_ref, transposition, articulation, density and balance.",
+    "source_family_ids": [
+      "EXT-V4-007",
+      "EXT-V4-006"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-037",
+    "pillar": "Composing",
+    "title": "Form als Entwicklung von Erwartung",
+    "explanation": "Form entsteht durch Wiedererkennung, Variation, Kontrast und Schlusserwartung auf mehreren Zeitskalen. Ein Chorus kann durch stärkere melodische Höhe und dichtere Instrumentation hervortreten, auch wenn seine vier Akkorde bereits in der Strophe verwendet wurden. Klassische Themenform und populäre Songform benötigen jedoch verschiedene Begriffssysteme und Prüfkriterien.",
+    "original_worked_example": "Verse auf zurückgenommenem Register über Am–F–C–G; Chorus gleiche Schleife, aber größere Tonlage, längere Zielnoten und andere Instrumentierung.",
+    "limits": "Ein bloßes SectionLabel 'Chorus' beweist noch keine hörbare Formfunktion.",
+    "codex_implementation": "Expose formal_intent, observed_parameters and listener_test_questions.",
+    "source_family_ids": [
+      "EXT-V4-009",
+      "EXT-V4-007"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-038",
+    "pillar": "Composing",
+    "title": "Pop-Songwriting und Textprosodie",
+    "explanation": "Eine Textzeile besitzt Sprachakzente, Silbendauer, semantische Schwerpunkte und Phrasenlänge, die mit Melodierhythmus harmonieren oder bewusst dagegen arbeiten können. Die Refrain-Hook kann sich durch kleine wiedererkennbare rhythmische Motive stärker einprägen als durch große harmonische Vielfalt. Für STEPS sollten Lyrics nicht als reiner Textblock, sondern mit gesungenen Silben-Ereignissen verknüpfbar sein.",
+    "original_worked_example": "Vier Silben auf einer rhythmischen Zelle können durch Dehnung der letzten Silbe einen Zeilenschluss bilden.",
+    "limits": "Akzentmuster sind sprach- und kontextabhängig; nicht jede Abweichung ist ein Fehler.",
+    "codex_implementation": "LyricSyllable onset, stress, note_link, language, phonetic_duration as optional module.",
+    "source_family_ids": [
+      "EXT-V4-009"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-039",
+    "pillar": "Composing",
+    "title": "Leitmotiv und adaptive Medienmusik",
+    "explanation": "Ein Leitmotiv kann bei einer Figur oder Idee wiederkehren, aber seine Registerlage, Instrumentation, Tempo und Harmonik kontextabhängig wechseln. In interaktiver Medienmusik müssen Übergänge zudem auf Spielzustände reagieren; eine lineare achtaktige Komposition reicht dafür oft nicht. Formale Zustandsgraphen, synchronisierte Transitionen und Stinger sind daher andere Objekte als ein Film-Cue.",
+    "original_worked_example": "Das Intervallmotiv C–Eb–G erklingt in ruhiger C-Moll-Fassung und später schneller über Ab–Bb–Cm.",
+    "limits": "Ähnlichkeit zu bekannten Filmscores vermeiden; Stiletikett belegt keine Urheberschaft.",
+    "codex_implementation": "Map motif_id to scene_state, transition_rule and tempo/beat alignment, ohne sofort Game Engine zu bauen.",
+    "source_family_ids": [
+      "EXT-V4-027",
+      "EXT-V4-007"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-040",
+    "pillar": "Composing",
+    "title": "Minimalismus und Prozessmusik",
+    "explanation": "Eine Komposition kann eine klare Transformationsregel über längere Zeit hörbar machen, etwa additive Rhythmen, graduelle Tonverschiebungen oder streng begrenzte Pattern-Reihen. Die Regel allein ist noch nicht das fertige Stück; Tempo, Register, Dichte, Dauer und Wahrnehmbarkeit des Prozesses bestimmen die musikalische Form. STEPS sollte kompositorische Prozesse als ausführbare Vorschriften plus dramaturgischen Bogen beschreiben können.",
+    "original_worked_example": "Start C–D–E Achtelpattern; füge in jeder zweiten Wiederholung einen Ton G an und reduziere später wieder.",
+    "limits": "Nicht jede ostinate Wiederholung ist automatisch Minimal Music im historischen Sinn.",
+    "codex_implementation": "CompositionProcess: rule, iterations, tempo, transformation_history, termination_condition.",
+    "source_family_ids": [
+      "EXT-V4-006"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-041",
+    "pillar": "Composing",
+    "title": "Algorithmische Komposition und Validierung",
+    "explanation": "Ein Algorithmus kann harmonische Constraint-Kandidaten erzeugen, aber nicht ohne weiteres Stilverständnis, expressives Timing oder ästhetische Absicht garantieren. Eine robuste Pipeline trennt Hard Constraints von weichen Prioritäten, formale Strukturplanung von konkretem Voicing und nachvollziehbare menschliche Auswahl von statistischer Rangfolge. Jeder Lauf benötigt einen Seed und versionierte Regelparameter, damit Ergebnisse reproduzierbar sind.",
+    "original_worked_example": "Erzeuge vier Akkorde unter Constraints: tonales Zentrum C, höchstens ein Borrowed Chord, Schluss auf C, Bass ohne Sprung größer als Quinte.",
+    "limits": "Ein technisch gültiger Output ist nicht automatisch interessant oder abwechslungsreich.",
+    "codex_implementation": "Protokolliere random_seed, satisfied_constraints, violated_preferences und user_selection.",
+    "source_family_ids": [
+      "EXT-V4-021",
+      "EXT-V4-022"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-042",
+    "pillar": "Composing",
+    "title": "Revision durch gezielte Diagnose",
+    "explanation": "Komposition lässt sich mit Diagnosefragen verbessern: Ist das Motiv erkennbar? Kommt die stärkste Änderung zum gewünschten Zeitpunkt? Unterstützt der Bass die Kadenz? Ist die Melodie spielbar und singbar? Gibt es ungewollte Wiederholungen oder übermäßig gleichmäßige Klangdichte? Eine Revision sollte Änderungen einzeln protokollieren, um hörbare Auswirkungen vergleichen zu können.",
+    "original_worked_example": "Version A: acht Takte mit jedem Akkord einen Takt; Version B: letzte zwei Takte G7 zwei Beats, C sechs Beats und motivische Verlangsamung.",
+    "limits": "Keine automatische Schönheitsnote aus einer Summe algorithmischer Teilwerte.",
+    "codex_implementation": "Versionierte CompositionRevision mit rationale, before/after und listener_notes.",
+    "source_family_ids": [
+      "EXT-V4-006",
+      "EXT-V4-007"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-043",
+    "pillar": "Querschnitt",
+    "title": "Stilsensitives Wissen statt Universalgrammatik",
+    "explanation": "Ein einzelner Stilbegriff deckt meist heterogene Repertoires und kulturelle Traditionen ab. In klassisch-tonalem Satz sind Stimmführungs- und Kadenznormen anders verankert als in Jazz, Rock, Gospel oder elektronischen Formen. STEPS muss Regeln anhand von Geltungsbereich, Entstehungskontext und Beleglage beschränken; die generische Antwort 'dieser Akkord ist falsch' ist methodisch unangemessen.",
+    "original_worked_example": "Eine offene Quinte kann im klassischen Kontrapunkt unter bestimmten Übungsregeln kritisiert, im Rock-Power-Chord aber intentional sein.",
+    "limits": "Genre-Labels sind keine formal ausreichenden musiktheoretischen Definitionen.",
+    "codex_implementation": "Jede Rule hat scope, provenance, exceptions, review_policy und genre_coercion_warning.",
+    "source_family_ids": [
+      "EXT-V4-001",
+      "EXT-V4-009"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-044",
+    "pillar": "Querschnitt",
+    "title": "Raga, Maqam und nichtwestliche Systeme",
+    "explanation": "Viele musikalische Traditionen organisieren Tonmaterial, modale Praxis und Zeitbeziehungen anders als die westliche dur-molltonale Harmonielehre. Ein Raga ist nicht bloß eine siebenstufige Skala, sondern wird durch charakteristische melodische Wege, performative Konventionen und kulturelle Überlieferung mitbestimmt. Für Maqam und weitere Systeme gilt ebenfalls: tonaler Inhalt allein modelliert die Praxis nicht. Diese Domänen sollten mit Fachberatung ergänzt werden statt Pseudo-ROMAN-Analysen zu erzwingen.",
+    "original_worked_example": "Sichere zunächst die Datenfelder tradition, tonal_reference, typical_motion, ornaments, phrase_grammar; lasse Akkordfunktionen unbekannt.",
+    "limits": "Keine Behauptung, alle Ragas oder Maqamat ließen sich als diatonische Modi abbilden.",
+    "codex_implementation": "Introduce theory_system_id, tradition_authority and cultural_review_required.",
+    "source_family_ids": [
+      "EXT-V4-028"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-045",
+    "pillar": "Querschnitt",
+    "title": "Musikalische Erwartung und Psychologie",
+    "explanation": "Wiederholung, metrische Muster, stilistische Erfahrung und lokale Tonstabilität beeinflussen musikalische Erwartungen; sie dürfen aber nicht als universelle emotionale Formel verstanden werden. Ein harmonischer Trugschluss kann erwartungsbezogen diskutiert werden, wobei Lernhintergrund und Aufführungskontext die Wirkung verändern. Die App sollte 'emotionale Labels' und 'theoretisch begründete Spannung' getrennt dokumentieren.",
+    "original_worked_example": "V7→vi nach mehreren I–IV–V–I-Zyklen kann in einem passenden Tonalstil als Erwartungsabweichung dienen.",
+    "limits": "Aus diesem Akkordweg folgt nicht bei allen Hörenden dieselbe Emotion.",
+    "codex_implementation": "Store expectation_model_id, listener_assumption, intended_effect und explicit_uncertainty.",
+    "source_family_ids": [
+      "EXT-V4-013",
+      "EXT-V4-014"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-046",
+    "pillar": "Querschnitt",
+    "title": "Annotationen und Harmoniekorpora",
+    "explanation": "Maschinenlesbare Harmonieanalysen unterscheiden sich in Akkorddialekt, tonalem Kontext, Timing, Annotationstiefe und Lizenz. ChoCo vereinheitlicht Harte-/Roman-Familien, DCML spezifiziert funktionale Details und When in Rome sammelt unterschiedliche Analyseherkünfte. Um ihre Ergebnisse zu verknüpfen, müssen Quellschema, mögliche Konvertierungsverluste und ursprüngliche Annotatorentscheidungen erhalten bleiben.",
+    "original_worked_example": "Ein RomanText V7/ii kann als Geltungsangabe mit lokaler Tonart notiert und in Harte ChordSymbol umgerechnet werden.",
+    "limits": "Konvertierter ChordString ist kein Ersatz für historische Analyseintention.",
+    "codex_implementation": "Map source_format, converter_version, loss_flags, original_source_license and provenance_ids.",
+    "source_family_ids": [
+      "EXT-V4-021",
+      "EXT-V4-022",
+      "EXT-V4-023"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-047",
+    "pillar": "Querschnitt",
+    "title": "Offene Standards und formatgebundene Unterschiede",
+    "explanation": "MusicXML eignet sich für Noten- und harmonischen Austausch, MEI für reiche Dokument- und Forschungsrepräsentationen, JAMS für zeitliche Annotationen und MIDI für ausführbare Notenereignisse. Keine dieser Sprachen löst allein alle Anforderungen einer harmonischen Ontologie, analytischen Mehrdeutigkeit und menschlichen Quellenannotation. Import und Export müssen deshalb round-trip-Verlustgrenzen offenlegen statt 'verlustfrei' pauschal zu versprechen.",
+    "original_worked_example": "Eine Viertelnotenmelodie lässt sich als MIDI exportieren; eine alternatives Formfunktionsanalyse braucht zusätzliche Daten.",
+    "limits": "MIDI-Pitch allein enthält keine Schreibweise F# oder Gb; die Rückkonversion erfordert Kontext.",
+    "codex_implementation": "Prepare per-format capability matrix and loss_reports in export metadata.",
+    "source_family_ids": [
+      "EXT-V4-024",
+      "EXT-V4-025",
+      "EXT-V4-026"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-048",
+    "pillar": "Querschnitt",
+    "title": "Quellenprüfung und Rechteketten",
+    "explanation": "Wissenschaftliche Qualität beginnt mit der Unterscheidung zwischen einer Quelle, ihrer Metadaten-Seite, einem tatsächlich gelesenen Abschnitt und einer aus ihr hergeleiteten Aussage. Ein offen sichtbarer Verlagsabstract ist nicht die Erlaubnis, urheberrechtlich geschützte Textseiten oder Noten zu kopieren. Aggregatoren können unterschiedliche Teilkorpus-Lizenzen besitzen, sodass die Gesamt-Lizenz nicht ausreicht. Ein öffentliches Open-Source-Repository braucht klare Rechtepfade für jeden Inhalt.",
+    "original_worked_example": "ChoCo nennt CC BY- und CC BY-NC-SA-Bestandteile; ein globales 'frei verwendbar'-Flag wäre falsch.",
+    "limits": "Bibliografische Verifikation ≠ Volltextstudium ≠ freie Wiederverwendung.",
+    "codex_implementation": "Record claim_locator, read_status, license_for_annotations, license_for_scores and publication_gate.",
+    "source_family_ids": [
+      "EXT-V4-022",
+      "EXT-V4-023"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  },
+  {
+    "id": "RESEARCH-V4-049",
+    "pillar": "Querschnitt",
+    "title": "Forschungs- und Codex-Validierung",
+    "explanation": "Ein ausführlicher Research Text ist keine validierte Wissensdatenbank. Zuerst müssen Begriffe, Beispiele, Regeltypen, Quellen und Testfälle formal unterscheidbar werden; danach folgt musikfachliche Begutachtung. Automatische Tests können Halbtonabstände, Taktlängen, MIDI-Struktur und ID-Eindeutigkeit prüfen. Sie können die Angemessenheit einer stilistischen Interpretation oder kulturellen Einordnung jedoch nur begrenzt entscheiden.",
+    "original_worked_example": "Validator prüft alle 16 Takte einer Etüde auf Dauer 4 Viertel; ein Fachreview prüft zusätzlich melodische Plausibilität.",
+    "limits": "Ein maschinell gültiger Datensatz bleibt 'draft' bis Nachweise und Review vorliegen.",
+    "codex_implementation": "Use status transitions draft→source_checked→music_checked→approved with separate gates.",
+    "source_family_ids": [
+      "EXT-V4-021",
+      "EXT-V4-026"
+    ],
+    "source_evidence_status": "selected_open_source_or_metadata_guide_not_exact_claim_review",
+    "review_status": "editorial_research_draft"
+  }
+]

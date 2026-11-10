@@ -1,0 +1,215 @@
+{
+  "version": "6.0",
+  "disclaimer": "Metadata and official-page review only; no claim full legal/research text review; external copyrighted texts NOT packaged",
+  "sources": [
+    {
+      "source_id": "SRC-BERKLEE-01",
+      "issuer": "Berklee College of Music",
+      "title": "Independent Recording and Production — Major curriculum",
+      "url": "https://college.berklee.edu/mpe/bachelor-of-music-in-independent-recording-and-production",
+      "type": "official-curriculum",
+      "verification_status": "web-page-reviewed",
+      "supported_scope": "Recording/Vocals/Mixing/Mastering/Business as distinct areas",
+      "limitations": "curriculum is not a complete review of course material",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-BERKLEE-02",
+      "issuer": "Berklee College of Music",
+      "title": "Music Production & Engineering — courses",
+      "url": "https://college.berklee.edu/mpe/music-production-engineering-courses",
+      "type": "official-curriculum",
+      "verification_status": "web-page-reviewed",
+      "supported_scope": "Recording, signal flow, remote collaboration, project deliverables",
+      "limitations": "not an endorsed STEPS product roadmap",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-MIDI-01",
+      "issuer": "The MIDI Association",
+      "title": "MIDI specifications and backward compatibility",
+      "url": "https://midi.org/specs",
+      "type": "official-standards",
+      "verification_status": "web-page-reviewed",
+      "supported_scope": "MIDI1 vs MIDI2 terminology / compatibility",
+      "limitations": "full specs not necessarily reviewed",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-MIDI-02",
+      "issuer": "The MIDI Association",
+      "title": "MIDI 2.0 Core Specification Collection",
+      "url": "https://midi.org/midi-2-0-core-specification-collection",
+      "type": "official-standards",
+      "verification_status": "web-page-reviewed",
+      "supported_scope": "MIDI-CI, UMP and core format versions",
+      "limitations": "download gated; no full-text inspection claimed",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-ABLETON-01",
+      "issuer": "Ableton",
+      "title": "Live 12 manual — Audio Clips, Tempo and Warping",
+      "url": "https://www.ableton.com/en/live-manual/12/audio-clips-tempo-and-warping/",
+      "type": "official-manual",
+      "verification_status": "web-page-reviewed",
+      "supported_scope": "DAW warping and stretching example",
+      "limitations": "Ableton-specific behavior",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-ABLETON-02",
+      "issuer": "Ableton",
+      "title": "Live 12 manual — Using Grooves",
+      "url": "https://www.ableton.com/en/manual/using-grooves/",
+      "type": "official-manual",
+      "verification_status": "web-page-reviewed",
+      "supported_scope": "Groove as timing feel, applicable to audio/MIDI with conditions",
+      "limitations": "Ableton-specific behavior",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-ITU-01",
+      "issuer": "ITU-R",
+      "title": "BS.1770-5: Algorithms to measure audio programme loudness and true-peak audio level (2023)",
+      "url": "https://www.itu.int/rec/R-REC-BS.1770-5-202311-I/en",
+      "type": "official-standard",
+      "verification_status": "official-summary-reviewed",
+      "supported_scope": "Algorithmic metering",
+      "limitations": "standard full text not reviewed here",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-EBU-01",
+      "issuer": "European Broadcasting Union",
+      "title": "EBU R 128 v5.0 (2023)",
+      "url": "https://tech.ebu.ch/publications/r128",
+      "type": "official-recommendation",
+      "verification_status": "official-summary-reviewed",
+      "supported_scope": "broadcast loudness recommendation -23 LUFS",
+      "limitations": "not the universal target for music streaming",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-EBU-02",
+      "issuer": "European Broadcasting Union",
+      "title": "EBU Tech 3343 v4.0 (2023)",
+      "url": "https://tech.ebu.ch/publications/tech3343",
+      "type": "official-guidance",
+      "verification_status": "official-summary-reviewed",
+      "supported_scope": "practical loudness guidelines",
+      "limitations": "not all sections reviewed",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-SPOTIFY-01",
+      "issuer": "Spotify for Artists",
+      "title": "Loudness Normalization — platform guidance",
+      "url": "https://support.spotify.com/li/artists/article/loudness-normalization/",
+      "type": "platform-guidance",
+      "verification_status": "web-page-reviewed",
+      "supported_scope": "normalization at playback, platform-specific advice",
+      "limitations": "may change; not a universal artistic target",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-DOLBY-01",
+      "issuer": "Dolby Professional Support",
+      "title": "Getting Started with Dolby Atmos Music (2025)",
+      "url": "https://professionalsupport.dolby.com/s/article/Getting-Started-with-Dolby-Atmos-Music",
+      "type": "official-technical",
+      "verification_status": "web-page-reviewed",
+      "supported_scope": "DAW/Renderer/Monitoring introduction",
+      "limitations": "not a complete Atmos mastering manual",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-DOLBY-02",
+      "issuer": "Dolby Professional Support",
+      "title": "Atmos Music Master Delivery Specification notice (2026)",
+      "url": "https://professionalsupport.dolby.com/s/article/Dolby-Atmos-Music-Master-Delivery-Specification",
+      "type": "official-technical",
+      "verification_status": "summary-reviewed",
+      "supported_scope": "delivery specification exists and updated",
+      "limitations": "actual specification pdf not inspected",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-DOLBY-03",
+      "issuer": "Dolby Professional Support",
+      "title": "What are Beds and Objects in Dolby Atmos (2025)",
+      "url": "https://professionalsupport.dolby.com/s/article/What-are-Beds-and-Objects-in-Dolby-Atmos",
+      "type": "official-technical",
+      "verification_status": "web-page-reviewed",
+      "supported_scope": "beds vs objects distinction",
+      "limitations": "format specific",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-DDEX-01",
+      "issuer": "DDEX",
+      "title": "Release Delivery — Electronic Release Notification (ERN)",
+      "url": "https://ddex.ddex.net/standards/release-delivery/",
+      "type": "official-standards",
+      "verification_status": "web-page-reviewed",
+      "supported_scope": "release metadata/availability messages",
+      "limitations": "license needed for implementation, check current terms",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-ISRC-01",
+      "issuer": "IFPI",
+      "title": "International Standard Recording Code overview / ISO 3901:2019",
+      "url": "https://isrc.ifpi.org/isrc-standard",
+      "type": "official-identifier",
+      "verification_status": "web-page-reviewed",
+      "supported_scope": "unique recording ID vs musical work ID",
+      "limitations": "not legal advice",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-GEMA-01",
+      "issuer": "GEMA",
+      "title": "Das Urheberrecht in der Musik",
+      "url": "https://www.gema.de/de/die-gema/das-urheberrecht-in-der-musik",
+      "type": "official-rights-guidance",
+      "verification_status": "web-page-reviewed",
+      "supported_scope": "composition/lyrics vs master and performers",
+      "limitations": "jurisdiction-specific; not legal advice",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-VST3-01",
+      "issuer": "Steinberg",
+      "title": "VST 3 SDK / Licensing from 3.8",
+      "url": "https://steinbergmedia.github.io/vst3_dev_portal/pages/VST%2B3%2BLicensing/VST3%2BLicense",
+      "type": "official-technical",
+      "verification_status": "web-page-reviewed",
+      "supported_scope": "VST3 SDK under MIT; trademark separately",
+      "limitations": "does not license third-party plugins or presets",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-AES-01",
+      "issuer": "Audio Engineering Society",
+      "title": "AES Loudness Project — Resources and References",
+      "url": "https://aes.org/resources/audio-topics/loudness-project/resources-and-references/",
+      "type": "industry-standards-index",
+      "verification_status": "web-page-reviewed",
+      "supported_scope": "loudness guidance and hearing safety standard references",
+      "limitations": "index only, not full individual standard texts",
+      "republication": "reference link and original paraphrase only"
+    },
+    {
+      "source_id": "SRC-PPR-01",
+      "issuer": "PausePlayRepeat",
+      "title": "User-provided course excerpt corpus, music theory, drum programming, sound design and rhythm as code",
+      "url": "https://www.pauseplayrepeat.com/ppr/courses/drum-programming-in-every-genre",
+      "type": "licensed-course-reference",
+      "verification_status": "user-excerpt-only",
+      "supported_scope": "four user-provided genre examples plus EQ / publicly described course topics",
+      "limitations": "no permission to redistribute original copyrighted complete lessons or assets",
+      "republication": "reference link and original paraphrase only"
+    }
+  ]
+}

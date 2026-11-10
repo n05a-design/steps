@@ -1,0 +1,1847 @@
+[
+  {
+    "id": "TEST-V3-0001",
+    "name": "Interval C4-E4",
+    "domain": "pitch",
+    "input": {
+      "from": "C4",
+      "to": "E4"
+    },
+    "expected": {
+      "semitones": 4,
+      "name": "major third"
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "12-TET pitch-naming unit test"
+  },
+  {
+    "id": "TEST-V3-0002",
+    "name": "Interval C4-Eb4",
+    "domain": "pitch",
+    "input": {
+      "from": "C4",
+      "to": "Eb4"
+    },
+    "expected": {
+      "semitones": 3,
+      "name": "minor third"
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "12-TET pitch-naming unit test"
+  },
+  {
+    "id": "TEST-V3-0003",
+    "name": "Interval B3-C4",
+    "domain": "pitch",
+    "input": {
+      "from": "B3",
+      "to": "C4"
+    },
+    "expected": {
+      "semitones": 1,
+      "name": "leading-tone semitone"
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "12-TET pitch-naming unit test"
+  },
+  {
+    "id": "TEST-V3-0004",
+    "name": "Interval C4-G4",
+    "domain": "pitch",
+    "input": {
+      "from": "C4",
+      "to": "G4"
+    },
+    "expected": {
+      "semitones": 7,
+      "name": "perfect fifth"
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "12-TET pitch-naming unit test"
+  },
+  {
+    "id": "TEST-V3-0005",
+    "name": "Interval C4-F#4",
+    "domain": "pitch",
+    "input": {
+      "from": "C4",
+      "to": "F#4"
+    },
+    "expected": {
+      "semitones": 6,
+      "name": "tritone"
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "12-TET pitch-naming unit test"
+  },
+  {
+    "id": "TEST-V3-0006",
+    "name": "Interval G3-D4",
+    "domain": "pitch",
+    "input": {
+      "from": "G3",
+      "to": "D4"
+    },
+    "expected": {
+      "semitones": 7,
+      "name": "perfect fifth"
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "12-TET pitch-naming unit test"
+  },
+  {
+    "id": "TEST-V3-0007",
+    "name": "Interval A3-C4",
+    "domain": "pitch",
+    "input": {
+      "from": "A3",
+      "to": "C4"
+    },
+    "expected": {
+      "semitones": 3,
+      "name": "minor third"
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "12-TET pitch-naming unit test"
+  },
+  {
+    "id": "TEST-V3-0008",
+    "name": "Interval D4-F4",
+    "domain": "pitch",
+    "input": {
+      "from": "D4",
+      "to": "F4"
+    },
+    "expected": {
+      "semitones": 3,
+      "name": "minor third"
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "12-TET pitch-naming unit test"
+  },
+  {
+    "id": "TEST-V3-0009",
+    "name": "Interval G4-F5",
+    "domain": "pitch",
+    "input": {
+      "from": "G4",
+      "to": "F5"
+    },
+    "expected": {
+      "semitones": 10,
+      "name": "minor seventh"
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "12-TET pitch-naming unit test"
+  },
+  {
+    "id": "TEST-V3-0010",
+    "name": "Interval C4-B4",
+    "domain": "pitch",
+    "input": {
+      "from": "C4",
+      "to": "B4"
+    },
+    "expected": {
+      "semitones": 11,
+      "name": "major seventh"
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "12-TET pitch-naming unit test"
+  },
+  {
+    "id": "TEST-V3-0011",
+    "name": "C major",
+    "domain": "chord",
+    "input": {
+      "root": "C",
+      "quality": "major"
+    },
+    "expected": {
+      "notes_spelled": [
+        "C",
+        "E",
+        "G"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Spelling and chord quality under international notation"
+  },
+  {
+    "id": "TEST-V3-0012",
+    "name": "F major",
+    "domain": "chord",
+    "input": {
+      "root": "F",
+      "quality": "major"
+    },
+    "expected": {
+      "notes_spelled": [
+        "F",
+        "A",
+        "C"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Spelling and chord quality under international notation"
+  },
+  {
+    "id": "TEST-V3-0013",
+    "name": "G major",
+    "domain": "chord",
+    "input": {
+      "root": "G",
+      "quality": "major"
+    },
+    "expected": {
+      "notes_spelled": [
+        "G",
+        "B",
+        "D"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Spelling and chord quality under international notation"
+  },
+  {
+    "id": "TEST-V3-0014",
+    "name": "A minor",
+    "domain": "chord",
+    "input": {
+      "root": "A",
+      "quality": "minor"
+    },
+    "expected": {
+      "notes_spelled": [
+        "A",
+        "C",
+        "E"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Spelling and chord quality under international notation"
+  },
+  {
+    "id": "TEST-V3-0015",
+    "name": "D minor",
+    "domain": "chord",
+    "input": {
+      "root": "D",
+      "quality": "minor"
+    },
+    "expected": {
+      "notes_spelled": [
+        "D",
+        "F",
+        "A"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Spelling and chord quality under international notation"
+  },
+  {
+    "id": "TEST-V3-0016",
+    "name": "E minor",
+    "domain": "chord",
+    "input": {
+      "root": "E",
+      "quality": "minor"
+    },
+    "expected": {
+      "notes_spelled": [
+        "E",
+        "G",
+        "B"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Spelling and chord quality under international notation"
+  },
+  {
+    "id": "TEST-V3-0017",
+    "name": "B diminished",
+    "domain": "chord",
+    "input": {
+      "root": "B",
+      "quality": "diminished"
+    },
+    "expected": {
+      "notes_spelled": [
+        "B",
+        "D",
+        "F"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Spelling and chord quality under international notation"
+  },
+  {
+    "id": "TEST-V3-0018",
+    "name": "C augmented",
+    "domain": "chord",
+    "input": {
+      "root": "C",
+      "quality": "augmented"
+    },
+    "expected": {
+      "notes_spelled": [
+        "C",
+        "E",
+        "G#"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Spelling and chord quality under international notation"
+  },
+  {
+    "id": "TEST-V3-0019",
+    "name": "C major_seventh",
+    "domain": "chord",
+    "input": {
+      "root": "C",
+      "quality": "major_seventh"
+    },
+    "expected": {
+      "notes_spelled": [
+        "C",
+        "E",
+        "G",
+        "B"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Spelling and chord quality under international notation"
+  },
+  {
+    "id": "TEST-V3-0020",
+    "name": "G dominant_seventh",
+    "domain": "chord",
+    "input": {
+      "root": "G",
+      "quality": "dominant_seventh"
+    },
+    "expected": {
+      "notes_spelled": [
+        "G",
+        "B",
+        "D",
+        "F"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Spelling and chord quality under international notation"
+  },
+  {
+    "id": "TEST-V3-0021",
+    "name": "D minor_seventh",
+    "domain": "chord",
+    "input": {
+      "root": "D",
+      "quality": "minor_seventh"
+    },
+    "expected": {
+      "notes_spelled": [
+        "D",
+        "F",
+        "A",
+        "C"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Spelling and chord quality under international notation"
+  },
+  {
+    "id": "TEST-V3-0022",
+    "name": "B half_diminished",
+    "domain": "chord",
+    "input": {
+      "root": "B",
+      "quality": "half_diminished"
+    },
+    "expected": {
+      "notes_spelled": [
+        "B",
+        "D",
+        "F",
+        "A"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Spelling and chord quality under international notation"
+  },
+  {
+    "id": "TEST-V3-0023",
+    "name": "B fully_diminished",
+    "domain": "chord",
+    "input": {
+      "root": "B",
+      "quality": "fully_diminished"
+    },
+    "expected": {
+      "notes_spelled": [
+        "B",
+        "D",
+        "F",
+        "Ab"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Spelling and chord quality under international notation"
+  },
+  {
+    "id": "TEST-V3-0024",
+    "name": "C major",
+    "domain": "scales",
+    "input": {
+      "tonic": "C",
+      "mode": "major"
+    },
+    "expected": {
+      "notes": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "A",
+        "B"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Diatonic enharmonic spelling test"
+  },
+  {
+    "id": "TEST-V3-0025",
+    "name": "A natural_minor",
+    "domain": "scales",
+    "input": {
+      "tonic": "A",
+      "mode": "natural_minor"
+    },
+    "expected": {
+      "notes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Diatonic enharmonic spelling test"
+  },
+  {
+    "id": "TEST-V3-0026",
+    "name": "A harmonic_minor",
+    "domain": "scales",
+    "input": {
+      "tonic": "A",
+      "mode": "harmonic_minor"
+    },
+    "expected": {
+      "notes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G#"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Diatonic enharmonic spelling test"
+  },
+  {
+    "id": "TEST-V3-0027",
+    "name": "D dorian",
+    "domain": "scales",
+    "input": {
+      "tonic": "D",
+      "mode": "dorian"
+    },
+    "expected": {
+      "notes": [
+        "D",
+        "E",
+        "F",
+        "G",
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Diatonic enharmonic spelling test"
+  },
+  {
+    "id": "TEST-V3-0028",
+    "name": "F lydian",
+    "domain": "scales",
+    "input": {
+      "tonic": "F",
+      "mode": "lydian"
+    },
+    "expected": {
+      "notes": [
+        "F",
+        "G",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Diatonic enharmonic spelling test"
+  },
+  {
+    "id": "TEST-V3-0029",
+    "name": "G mixolydian",
+    "domain": "scales",
+    "input": {
+      "tonic": "G",
+      "mode": "mixolydian"
+    },
+    "expected": {
+      "notes": [
+        "G",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Diatonic enharmonic spelling test"
+  },
+  {
+    "id": "TEST-V3-0030",
+    "name": "E phrygian",
+    "domain": "scales",
+    "input": {
+      "tonic": "E",
+      "mode": "phrygian"
+    },
+    "expected": {
+      "notes": [
+        "E",
+        "F",
+        "G",
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Diatonic enharmonic spelling test"
+  },
+  {
+    "id": "TEST-V3-0031",
+    "name": "B locrian",
+    "domain": "scales",
+    "input": {
+      "tonic": "B",
+      "mode": "locrian"
+    },
+    "expected": {
+      "notes": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "A"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Diatonic enharmonic spelling test"
+  },
+  {
+    "id": "TEST-V3-0032",
+    "name": "C whole_tone",
+    "domain": "scales",
+    "input": {
+      "tonic": "C",
+      "mode": "whole_tone"
+    },
+    "expected": {
+      "notes": [
+        "C",
+        "D",
+        "E",
+        "F#",
+        "G#",
+        "A#"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Diatonic enharmonic spelling test"
+  },
+  {
+    "id": "TEST-V3-0033",
+    "name": "C major_pentatonic",
+    "domain": "scales",
+    "input": {
+      "tonic": "C",
+      "mode": "major_pentatonic"
+    },
+    "expected": {
+      "notes": [
+        "C",
+        "D",
+        "E",
+        "G",
+        "A"
+      ]
+    },
+    "test_kind": "mechanical_candidate",
+    "status": "specified_not_executed",
+    "why": "Diatonic enharmonic spelling test"
+  },
+  {
+    "id": "TEST-V3-0034",
+    "name": "Functional analysis C major C,Dm,G7,C",
+    "domain": "harmony",
+    "input": {
+      "key": "C major",
+      "chords": [
+        "C",
+        "Dm",
+        "G7",
+        "C"
+      ]
+    },
+    "expected": {
+      "roman": [
+        "I",
+        "ii",
+        "V7",
+        "I"
+      ]
+    },
+    "test_kind": "requires_theory_engine",
+    "status": "specified_not_executed",
+    "why": "Multiple analyses may also be valid in a larger context"
+  },
+  {
+    "id": "TEST-V3-0035",
+    "name": "Functional analysis A minor Am,Dm,E7,Am",
+    "domain": "harmony",
+    "input": {
+      "key": "A minor",
+      "chords": [
+        "Am",
+        "Dm",
+        "E7",
+        "Am"
+      ]
+    },
+    "expected": {
+      "roman": [
+        "i",
+        "iv",
+        "V7",
+        "i"
+      ]
+    },
+    "test_kind": "requires_theory_engine",
+    "status": "specified_not_executed",
+    "why": "Multiple analyses may also be valid in a larger context"
+  },
+  {
+    "id": "TEST-V3-0036",
+    "name": "Functional analysis C major C,A7,Dm,G7",
+    "domain": "harmony",
+    "input": {
+      "key": "C major",
+      "chords": [
+        "C",
+        "A7",
+        "Dm",
+        "G7"
+      ]
+    },
+    "expected": {
+      "roman": [
+        "I",
+        "V7/ii",
+        "ii",
+        "V7"
+      ]
+    },
+    "test_kind": "requires_theory_engine",
+    "status": "specified_not_executed",
+    "why": "Multiple analyses may also be valid in a larger context"
+  },
+  {
+    "id": "TEST-V3-0037",
+    "name": "Functional analysis C major C,D7,G7,C",
+    "domain": "harmony",
+    "input": {
+      "key": "C major",
+      "chords": [
+        "C",
+        "D7",
+        "G7",
+        "C"
+      ]
+    },
+    "expected": {
+      "roman": [
+        "I",
+        "V7/V",
+        "V7",
+        "I"
+      ]
+    },
+    "test_kind": "requires_theory_engine",
+    "status": "specified_not_executed",
+    "why": "Multiple analyses may also be valid in a larger context"
+  },
+  {
+    "id": "TEST-V3-0038",
+    "name": "Functional analysis C major C,F,Fm,C",
+    "domain": "harmony",
+    "input": {
+      "key": "C major",
+      "chords": [
+        "C",
+        "F",
+        "Fm",
+        "C"
+      ]
+    },
+    "expected": {
+      "roman": [
+        "I",
+        "IV",
+        "iv",
+        "I"
+      ]
+    },
+    "test_kind": "requires_theory_engine",
+    "status": "specified_not_executed",
+    "why": "Multiple analyses may also be valid in a larger context"
+  },
+  {
+    "id": "TEST-V3-0039",
+    "name": "Functional analysis G major G,B7,Em,D7",
+    "domain": "harmony",
+    "input": {
+      "key": "G major",
+      "chords": [
+        "G",
+        "B7",
+        "Em",
+        "D7"
+      ]
+    },
+    "expected": {
+      "roman": [
+        "I",
+        "V7/vi",
+        "vi",
+        "V7"
+      ]
+    },
+    "test_kind": "requires_theory_engine",
+    "status": "specified_not_executed",
+    "why": "Multiple analyses may also be valid in a larger context"
+  },
+  {
+    "id": "TEST-V3-0040",
+    "name": "Functional analysis C major C,G7,Am",
+    "domain": "harmony",
+    "input": {
+      "key": "C major",
+      "chords": [
+        "C",
+        "G7",
+        "Am"
+      ]
+    },
+    "expected": {
+      "roman": [
+        "I",
+        "V7",
+        "vi"
+      ]
+    },
+    "test_kind": "requires_theory_engine",
+    "status": "specified_not_executed",
+    "why": "Multiple analyses may also be valid in a larger context"
+  },
+  {
+    "id": "TEST-V3-0041",
+    "name": "Interpretive counterexample C,F,G,C",
+    "domain": "counterexamples",
+    "input": {
+      "key": "C major",
+      "chords": [
+        "C",
+        "F",
+        "G",
+        "C"
+      ]
+    },
+    "expected": {
+      "required_behavior": "No automatic cadence in every bar regardless of context"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": "Guard against overgeneralization"
+  },
+  {
+    "id": "TEST-V3-0042",
+    "name": "Interpretive counterexample Am,F,C,G",
+    "domain": "counterexamples",
+    "input": {
+      "key": "C major",
+      "chords": [
+        "Am",
+        "F",
+        "C",
+        "G"
+      ]
+    },
+    "expected": {
+      "required_behavior": "Tonical center C or A requires melodic and metric context"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": "Guard against overgeneralization"
+  },
+  {
+    "id": "TEST-V3-0043",
+    "name": "Interpretive counterexample C7,F7,C7",
+    "domain": "counterexamples",
+    "input": {
+      "key": "C blues",
+      "chords": [
+        "C7",
+        "F7",
+        "C7"
+      ]
+    },
+    "expected": {
+      "required_behavior": "C7 can be tonic and F7 subdominant"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": "Guard against overgeneralization"
+  },
+  {
+    "id": "TEST-V3-0044",
+    "name": "Interpretive counterexample Dm7,G",
+    "domain": "counterexamples",
+    "input": {
+      "key": "D Dorian",
+      "chords": [
+        "Dm7",
+        "G"
+      ]
+    },
+    "expected": {
+      "required_behavior": "Do not require A7→Dm"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": "Guard against overgeneralization"
+  },
+  {
+    "id": "TEST-V3-0045",
+    "name": "Interpretive counterexample C,Fm,G7",
+    "domain": "counterexamples",
+    "input": {
+      "key": "C major",
+      "chords": [
+        "C",
+        "Fm",
+        "G7"
+      ]
+    },
+    "expected": {
+      "required_behavior": "Borrowed Fm not a diatonic IV"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": "Guard against overgeneralization"
+  },
+  {
+    "id": "TEST-V3-0046",
+    "name": "Interpretive counterexample Am,Dm,E7,Am",
+    "domain": "counterexamples",
+    "input": {
+      "key": "A minor",
+      "chords": [
+        "Am",
+        "Dm",
+        "E7",
+        "Am"
+      ]
+    },
+    "expected": {
+      "required_behavior": "E7 has G# despite A natural minor"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": "Guard against overgeneralization"
+  },
+  {
+    "id": "TEST-V3-0047",
+    "name": "Interpretive counterexample C/E,F,G",
+    "domain": "counterexamples",
+    "input": {
+      "key": "C major",
+      "chords": [
+        "C/E",
+        "F",
+        "G"
+      ]
+    },
+    "expected": {
+      "required_behavior": "Slash bass is not Roman secondary syntax"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": "Guard against overgeneralization"
+  },
+  {
+    "id": "TEST-V3-0048",
+    "name": "Interpretive counterexample C,Ab,C",
+    "domain": "counterexamples",
+    "input": {
+      "key": "C major",
+      "chords": [
+        "C",
+        "Ab",
+        "C"
+      ]
+    },
+    "expected": {
+      "required_behavior": "Chromatic mediant context does not prove modulation"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": "Guard against overgeneralization"
+  },
+  {
+    "id": "TEST-V3-0049",
+    "name": "Interpretive counterexample Dm7,Db7,Cmaj7",
+    "domain": "counterexamples",
+    "input": {
+      "key": "C major",
+      "chords": [
+        "Dm7",
+        "Db7",
+        "Cmaj7"
+      ]
+    },
+    "expected": {
+      "required_behavior": "Db7 is substitute dominant in jazz lens"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": "Guard against overgeneralization"
+  },
+  {
+    "id": "TEST-V3-0050",
+    "name": "Interpretive counterexample C,Ab,Eb,Bb",
+    "domain": "counterexamples",
+    "input": {
+      "key": "C major",
+      "chords": [
+        "C",
+        "Ab",
+        "Eb",
+        "Bb"
+      ]
+    },
+    "expected": {
+      "required_behavior": "Do not claim universal dominant grammar"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": "Guard against overgeneralization"
+  },
+  {
+    "id": "TEST-V3-0051",
+    "name": "Governance no invented pages",
+    "domain": "governance",
+    "input": {
+      "check": "exact_locator_not_verified"
+    },
+    "expected": {
+      "required_behavior": "Claims with page locator must declare read access"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0052",
+    "name": "Governance source availability",
+    "domain": "governance",
+    "input": {
+      "check": "metadata_status"
+    },
+    "expected": {
+      "required_behavior": "Bibliographic candidate cannot imply full text reviewed"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0053",
+    "name": "Governance citation migration",
+    "domain": "governance",
+    "input": {
+      "check": "citation_status"
+    },
+    "expected": {
+      "required_behavior": "All turnNsearch/turnNfile references excluded from canonical evidence"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0054",
+    "name": "Governance copyright",
+    "domain": "governance",
+    "input": {
+      "check": "distribution_gate"
+    },
+    "expected": {
+      "required_behavior": "No original full copyrighted PDF under publicly committed content"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0055",
+    "name": "Governance schema IDs",
+    "domain": "governance",
+    "input": {
+      "check": "id_unique"
+    },
+    "expected": {
+      "required_behavior": "Every source concept progression rule and test has unique stable ID"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0056",
+    "name": "Governance referential integrity",
+    "domain": "governance",
+    "input": {
+      "check": "source_id"
+    },
+    "expected": {
+      "required_behavior": "All nonempty source IDs resolve to registered records"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0057",
+    "name": "Governance review gate",
+    "domain": "governance",
+    "input": {
+      "check": "review_status"
+    },
+    "expected": {
+      "required_behavior": "draft cannot be reclassified reviewed without reviewer evidence"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0058",
+    "name": "Governance music notation",
+    "domain": "governance",
+    "input": {
+      "check": "notation_convention"
+    },
+    "expected": {
+      "required_behavior": "H and B conversion requires locale"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0059",
+    "name": "Governance style scope",
+    "domain": "governance",
+    "input": {
+      "check": "scope_limit"
+    },
+    "expected": {
+      "required_behavior": "Every formal harmony tendency declares style scope or limitation"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0060",
+    "name": "Governance chord duration",
+    "domain": "governance",
+    "input": {
+      "check": "duration"
+    },
+    "expected": {
+      "required_behavior": "All progression data must support per-event duration and meter or explicit default"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0061",
+    "name": "Governance composer identity",
+    "domain": "governance",
+    "input": {
+      "check": "origin"
+    },
+    "expected": {
+      "required_behavior": "Composing study source generated original not copied song"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0062",
+    "name": "Governance scoring uncertainty",
+    "domain": "governance",
+    "input": {
+      "check": "corpus"
+    },
+    "expected": {
+      "required_behavior": "Corpus frequencies never presented without corpus/version/denominator"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0063",
+    "name": "Governance music psychology",
+    "domain": "governance",
+    "input": {
+      "check": "emotion"
+    },
+    "expected": {
+      "required_behavior": "Mood label is not proof of emotional effect"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0064",
+    "name": "Governance cross-cultural",
+    "domain": "governance",
+    "input": {
+      "check": "culture"
+    },
+    "expected": {
+      "required_behavior": "Nonwestern theory needs tradition-specific source and non-12TET representation"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0065",
+    "name": "Governance no repo claims",
+    "domain": "governance",
+    "input": {
+      "check": "repo_state"
+    },
+    "expected": {
+      "required_behavior": "Unseen repository state remains unknown"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0066",
+    "name": "Governance versioning",
+    "domain": "governance",
+    "input": {
+      "check": "history"
+    },
+    "expected": {
+      "required_behavior": "Handover addendum must not erase V1 decisions"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0067",
+    "name": "Governance gaps",
+    "domain": "governance",
+    "input": {
+      "check": "gap"
+    },
+    "expected": {
+      "required_behavior": "Every P0 scientific gap has owner or next verification"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0068",
+    "name": "Governance negative examples",
+    "domain": "governance",
+    "input": {
+      "check": "test_negative"
+    },
+    "expected": {
+      "required_behavior": "Counterexamples survive consolidation"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0069",
+    "name": "Governance key ambiguity",
+    "domain": "governance",
+    "input": {
+      "check": "analysis_multi"
+    },
+    "expected": {
+      "required_behavior": "Alternative plausible tonic centers allowed"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0070",
+    "name": "Governance correct MIDI",
+    "domain": "governance",
+    "input": {
+      "check": "midi_status"
+    },
+    "expected": {
+      "required_behavior": "MIDI export claims require actual executed tests"
+    },
+    "test_kind": "policy_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0071",
+    "name": "Composition structure ORIGINAL-STUDY-V3-001",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-001"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0072",
+    "name": "Composition structure ORIGINAL-STUDY-V3-002",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-002"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0073",
+    "name": "Composition structure ORIGINAL-STUDY-V3-003",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-003"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0074",
+    "name": "Composition structure ORIGINAL-STUDY-V3-004",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-004"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0075",
+    "name": "Composition structure ORIGINAL-STUDY-V3-005",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-005"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0076",
+    "name": "Composition structure ORIGINAL-STUDY-V3-006",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-006"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0077",
+    "name": "Composition structure ORIGINAL-STUDY-V3-007",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-007"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0078",
+    "name": "Composition structure ORIGINAL-STUDY-V3-008",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-008"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0079",
+    "name": "Composition structure ORIGINAL-STUDY-V3-009",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-009"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0080",
+    "name": "Composition structure ORIGINAL-STUDY-V3-010",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-010"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0081",
+    "name": "Composition structure ORIGINAL-STUDY-V3-011",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-011"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0082",
+    "name": "Composition structure ORIGINAL-STUDY-V3-012",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-012"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0083",
+    "name": "Composition structure ORIGINAL-STUDY-V3-013",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-013"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0084",
+    "name": "Composition structure ORIGINAL-STUDY-V3-014",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-014"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0085",
+    "name": "Composition structure ORIGINAL-STUDY-V3-015",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-015"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0086",
+    "name": "Composition structure ORIGINAL-STUDY-V3-016",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-016"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0087",
+    "name": "Composition structure ORIGINAL-STUDY-V3-017",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-017"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0088",
+    "name": "Composition structure ORIGINAL-STUDY-V3-018",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-018"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0089",
+    "name": "Composition structure ORIGINAL-STUDY-V3-019",
+    "domain": "composing",
+    "input": {
+      "composition_id": "ORIGINAL-STUDY-V3-019"
+    },
+    "expected": {
+      "required": "motif, harmonic plan, form plan, development, bass/voice leading, scope boundary present"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0090",
+    "name": "Rule type validation: constraint",
+    "domain": "rules",
+    "input": {
+      "type": "constraint"
+    },
+    "expected": {
+      "required": "bounded typed statement, example and limitations"
+    },
+    "test_kind": "structural",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0091",
+    "name": "Rule type validation: tendency",
+    "domain": "rules",
+    "input": {
+      "type": "tendency"
+    },
+    "expected": {
+      "required": "bounded typed statement, example and limitations"
+    },
+    "test_kind": "structural",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0092",
+    "name": "Rule type validation: transformation",
+    "domain": "rules",
+    "input": {
+      "type": "transformation"
+    },
+    "expected": {
+      "required": "bounded typed statement, example and limitations"
+    },
+    "test_kind": "structural",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0093",
+    "name": "Rule type validation: interpretation",
+    "domain": "rules",
+    "input": {
+      "type": "interpretation"
+    },
+    "expected": {
+      "required": "bounded typed statement, example and limitations"
+    },
+    "test_kind": "structural",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0094",
+    "name": "Rule type validation: heuristic",
+    "domain": "rules",
+    "input": {
+      "type": "heuristic"
+    },
+    "expected": {
+      "required": "bounded typed statement, example and limitations"
+    },
+    "test_kind": "structural",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0095",
+    "name": "Rule type validation: empirical_observation",
+    "domain": "rules",
+    "input": {
+      "type": "empirical_observation"
+    },
+    "expected": {
+      "required": "bounded typed statement, example and limitations"
+    },
+    "test_kind": "structural",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0096",
+    "name": "Specialized QA: pitch-spelling German",
+    "domain": "integration",
+    "input": {
+      "topic": "pitch-spelling German"
+    },
+    "expected": {
+      "required": "fixture plus specialist review; exact answer depends on case"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0097",
+    "name": "Specialized QA: pitch-spelling English",
+    "domain": "integration",
+    "input": {
+      "topic": "pitch-spelling English"
+    },
+    "expected": {
+      "required": "fixture plus specialist review; exact answer depends on case"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0098",
+    "name": "Specialized QA: enharmonic contrast",
+    "domain": "integration",
+    "input": {
+      "topic": "enharmonic contrast"
+    },
+    "expected": {
+      "required": "fixture plus specialist review; exact answer depends on case"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0099",
+    "name": "Specialized QA: minor mode variant",
+    "domain": "integration",
+    "input": {
+      "topic": "minor mode variant"
+    },
+    "expected": {
+      "required": "fixture plus specialist review; exact answer depends on case"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0100",
+    "name": "Specialized QA: modal tonic ambiguity",
+    "domain": "integration",
+    "input": {
+      "topic": "modal tonic ambiguity"
+    },
+    "expected": {
+      "required": "fixture plus specialist review; exact answer depends on case"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0101",
+    "name": "Specialized QA: cadence vs chord movement",
+    "domain": "integration",
+    "input": {
+      "topic": "cadence vs chord movement"
+    },
+    "expected": {
+      "required": "fixture plus specialist review; exact answer depends on case"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0102",
+    "name": "Specialized QA: instrument register",
+    "domain": "integration",
+    "input": {
+      "topic": "instrument register"
+    },
+    "expected": {
+      "required": "fixture plus specialist review; exact answer depends on case"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0103",
+    "name": "Specialized QA: counterpoint style",
+    "domain": "integration",
+    "input": {
+      "topic": "counterpoint style"
+    },
+    "expected": {
+      "required": "fixture plus specialist review; exact answer depends on case"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0104",
+    "name": "Specialized QA: syncopated phrasing",
+    "domain": "integration",
+    "input": {
+      "topic": "syncopated phrasing"
+    },
+    "expected": {
+      "required": "fixture plus specialist review; exact answer depends on case"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0105",
+    "name": "Specialized QA: motif transformation",
+    "domain": "integration",
+    "input": {
+      "topic": "motif transformation"
+    },
+    "expected": {
+      "required": "fixture plus specialist review; exact answer depends on case"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0106",
+    "name": "Specialized QA: relative-major minor axis",
+    "domain": "integration",
+    "input": {
+      "topic": "relative-major minor axis"
+    },
+    "expected": {
+      "required": "fixture plus specialist review; exact answer depends on case"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0107",
+    "name": "Specialized QA: non-Western theory scope",
+    "domain": "integration",
+    "input": {
+      "topic": "non-Western theory scope"
+    },
+    "expected": {
+      "required": "fixture plus specialist review; exact answer depends on case"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0108",
+    "name": "Specialized QA: dataset license gate",
+    "domain": "integration",
+    "input": {
+      "topic": "dataset license gate"
+    },
+    "expected": {
+      "required": "fixture plus specialist review; exact answer depends on case"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0109",
+    "name": "Specialized QA: source quote verification",
+    "domain": "integration",
+    "input": {
+      "topic": "source quote verification"
+    },
+    "expected": {
+      "required": "fixture plus specialist review; exact answer depends on case"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  },
+  {
+    "id": "TEST-V3-0110",
+    "name": "Specialized QA: chord rhythm vs melody rhythm",
+    "domain": "integration",
+    "input": {
+      "topic": "chord rhythm vs melody rhythm"
+    },
+    "expected": {
+      "required": "fixture plus specialist review; exact answer depends on case"
+    },
+    "test_kind": "human_or_multi_lens_review",
+    "status": "specified_not_executed",
+    "why": ""
+  }
+]

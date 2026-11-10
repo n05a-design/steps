@@ -1,0 +1,255 @@
+{
+  "id": "DR53-11",
+  "title": "Reggaeton Inspired",
+  "bpm": 96,
+  "meter": [
+    4,
+    4
+  ],
+  "bars": 2,
+  "steps_per_bar": 16,
+  "step_unit": "1/16",
+  "ppq": 480,
+  "ticks_per_bar": 1920,
+  "time_signature": [
+    4,
+    4
+  ],
+  "groove_policy": "straight",
+  "provenance": "original_educational_composition",
+  "copyright": "original_STEPS_study_no_samples",
+  "review_status": "technical_pending_musical_and_cultural_review",
+  "genre_note": "generic syncopation; culture and genre authenticity not reviewed",
+  "instrument_map": {
+    "kick": 36,
+    "snare": 38,
+    "clap": 39,
+    "rim": 37,
+    "closed_hat": 42,
+    "open_hat": 46,
+    "ride": 51,
+    "perc": 54
+  },
+  "events": [
+    {
+      "bar": 1,
+      "step0": 0,
+      "role": "kick",
+      "note": 36,
+      "velocity": 110,
+      "tick": 0,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 1,
+      "step0": 2,
+      "role": "closed_hat",
+      "note": 42,
+      "velocity": 88,
+      "tick": 240,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 1,
+      "step0": 3,
+      "role": "perc",
+      "note": 54,
+      "velocity": 63,
+      "tick": 360,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 1,
+      "step0": 4,
+      "role": "clap",
+      "note": 39,
+      "velocity": 106,
+      "tick": 480,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 1,
+      "step0": 6,
+      "role": "closed_hat",
+      "note": 42,
+      "velocity": 64,
+      "tick": 720,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 1,
+      "step0": 7,
+      "role": "kick",
+      "note": 36,
+      "velocity": 103,
+      "tick": 840,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 1,
+      "step0": 10,
+      "role": "kick",
+      "note": 36,
+      "velocity": 103,
+      "tick": 1200,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 1,
+      "step0": 10,
+      "role": "closed_hat",
+      "note": 42,
+      "velocity": 88,
+      "tick": 1200,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 1,
+      "step0": 11,
+      "role": "perc",
+      "note": 54,
+      "velocity": 63,
+      "tick": 1320,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 1,
+      "step0": 12,
+      "role": "clap",
+      "note": 39,
+      "velocity": 106,
+      "tick": 1440,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 1,
+      "step0": 14,
+      "role": "closed_hat",
+      "note": 42,
+      "velocity": 64,
+      "tick": 1680,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 2,
+      "step0": 0,
+      "role": "kick",
+      "note": 36,
+      "velocity": 110,
+      "tick": 1920,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 2,
+      "step0": 2,
+      "role": "closed_hat",
+      "note": 42,
+      "velocity": 88,
+      "tick": 2160,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 2,
+      "step0": 4,
+      "role": "clap",
+      "note": 39,
+      "velocity": 106,
+      "tick": 2400,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 2,
+      "step0": 6,
+      "role": "closed_hat",
+      "note": 42,
+      "velocity": 64,
+      "tick": 2640,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 2,
+      "step0": 7,
+      "role": "kick",
+      "note": 36,
+      "velocity": 103,
+      "tick": 2760,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 2,
+      "step0": 7,
+      "role": "perc",
+      "note": 54,
+      "velocity": 63,
+      "tick": 2760,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 2,
+      "step0": 10,
+      "role": "kick",
+      "note": 36,
+      "velocity": 103,
+      "tick": 3120,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 2,
+      "step0": 10,
+      "role": "closed_hat",
+      "note": 42,
+      "velocity": 88,
+      "tick": 3120,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 2,
+      "step0": 12,
+      "role": "clap",
+      "note": 39,
+      "velocity": 106,
+      "tick": 3360,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 2,
+      "step0": 14,
+      "role": "closed_hat",
+      "note": 42,
+      "velocity": 64,
+      "tick": 3600,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    },
+    {
+      "bar": 2,
+      "step0": 15,
+      "role": "perc",
+      "note": 54,
+      "velocity": 63,
+      "tick": 3720,
+      "duration_ticks": 60,
+      "offset_ticks": 0
+    }
+  ]
+}

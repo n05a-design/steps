@@ -1,0 +1,2027 @@
+[
+  {
+    "id": "PROG-V3-0001",
+    "style_context": "Classical tonal",
+    "key_or_center": "C major",
+    "roman_analysis": "I IV V7 I",
+    "chord_sequence": [
+      "C",
+      "F",
+      "G7",
+      "C"
+    ],
+    "explanation": "Grundkadenz: Vorfeld und Dominante vor I; Schluss erfordert formale Position.",
+    "limits": "Kein zwingender Satzschluss ohne Melodie/Metermodell.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0002",
+    "style_context": "Classical tonal",
+    "key_or_center": "C major",
+    "roman_analysis": "I ii6 V7 I",
+    "chord_sequence": [
+      "C",
+      "Dm/F",
+      "G7",
+      "C"
+    ],
+    "explanation": "Prädominante ii-Umkehrung und Dominante.",
+    "limits": "Basseinsatz und Oberstimmen fehlen.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0003",
+    "style_context": "Classical tonal",
+    "key_or_center": "C major",
+    "roman_analysis": "I vi ii V7 I",
+    "chord_sequence": [
+      "C",
+      "Am",
+      "Dm",
+      "G7",
+      "C"
+    ],
+    "explanation": "Tonic expansion und Quintfall-/ii–V-Kontext.",
+    "limits": "Nicht alle Stufen bewegen sich im Quart-/Quintfall.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0004",
+    "style_context": "Classical tonal",
+    "key_or_center": "C major",
+    "roman_analysis": "I6 IV V I",
+    "chord_sequence": [
+      "C/E",
+      "F",
+      "G",
+      "C"
+    ],
+    "explanation": "Stufenweise Basshebung E–F–G zum Schluss.",
+    "limits": "I6 ist Tonikaumkehrung, nicht Modulation.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0005",
+    "style_context": "Classical tonal",
+    "key_or_center": "C major",
+    "roman_analysis": "I V6 vi IV V I",
+    "chord_sequence": [
+      "C",
+      "G/B",
+      "Am",
+      "F",
+      "G",
+      "C"
+    ],
+    "explanation": "Bassabstieg C–H–A und funktionale Schlusswendung.",
+    "limits": "Sechs Akkorde brauchen zeitliche Phrasierung.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0006",
+    "style_context": "Classical tonal",
+    "key_or_center": "C major",
+    "roman_analysis": "I V7/vi vi ii V7 I",
+    "chord_sequence": [
+      "C",
+      "E7",
+      "Am",
+      "Dm",
+      "G7",
+      "C"
+    ],
+    "explanation": "Sekundärdominante zielt auf vi.",
+    "limits": "E7 nicht als Dominante der globalen C-Tonika ausgeben.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0007",
+    "style_context": "Classical tonal",
+    "key_or_center": "C major",
+    "roman_analysis": "I V7/ii ii V7 I",
+    "chord_sequence": [
+      "C",
+      "A7",
+      "Dm",
+      "G7",
+      "C"
+    ],
+    "explanation": "Tonicization des ii; Rückkehr über V7.",
+    "limits": "Lokale Tonisierung ≠ etablierte Modulation.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0008",
+    "style_context": "Classical tonal",
+    "key_or_center": "C major",
+    "roman_analysis": "I V7/V V7 I",
+    "chord_sequence": [
+      "C",
+      "D7",
+      "G7",
+      "C"
+    ],
+    "explanation": "Aufeinander gerichtete Dominantbeziehungen.",
+    "limits": "D7 kann auch andere chromatische Lesarten haben.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0009",
+    "style_context": "Classical tonal",
+    "key_or_center": "C major",
+    "roman_analysis": "I IV iv I",
+    "chord_sequence": [
+      "C",
+      "F",
+      "Fm",
+      "C"
+    ],
+    "explanation": "Parallelmoll-Entlehnung mit A→As→G Farbwechsel.",
+    "limits": "A→As ist nur eine mögliche realisierte Stimme.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0010",
+    "style_context": "Classical tonal",
+    "key_or_center": "C major",
+    "roman_analysis": "I bVI bVII I",
+    "chord_sequence": [
+      "C",
+      "Ab",
+      "Bb",
+      "C"
+    ],
+    "explanation": "Chromatische Stufen, populärer/filmischer Kontext möglich.",
+    "limits": "In klassischer Funktionstheorie keine Standarddiatonik.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0011",
+    "style_context": "Classical tonal",
+    "key_or_center": "C major",
+    "roman_analysis": "I bII6 V I",
+    "chord_sequence": [
+      "C",
+      "Db/F",
+      "G",
+      "C"
+    ],
+    "explanation": "Neapolitaner im prädominanten Kontext.",
+    "limits": "Db/F statt Db Grundstellung für klassische bII6-Lesart.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0012",
+    "style_context": "Classical tonal",
+    "key_or_center": "C major",
+    "roman_analysis": "I Ger+6 V I",
+    "chord_sequence": [
+      "C",
+      "[Ab-C-Eb-F#]",
+      "G",
+      "C"
+    ],
+    "explanation": "Übermäßiger Sextakkord leitet in dominante Region.",
+    "limits": "Akkord muss als Tonmenge mit enharmonischer Absicht modelliert werden.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0013",
+    "style_context": "Classical tonal",
+    "key_or_center": "C major",
+    "roman_analysis": "I viio7/V V I",
+    "chord_sequence": [
+      "C",
+      "F#dim7",
+      "G",
+      "C"
+    ],
+    "explanation": "Leittonseptakkord zu G.",
+    "limits": "F#dim7 enthält F# A C Eb; Spellings prüfen.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0014",
+    "style_context": "Classical tonal",
+    "key_or_center": "C major",
+    "roman_analysis": "I V7 vi IV",
+    "chord_sequence": [
+      "C",
+      "G7",
+      "Am",
+      "F"
+    ],
+    "explanation": "Dominante weicht auf vi aus, später IV.",
+    "limits": "Trugschluss nur bei vorbereitetem Funktionskontext.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0015",
+    "style_context": "Classical tonal",
+    "key_or_center": "A minor",
+    "roman_analysis": "i iv V7 i",
+    "chord_sequence": [
+      "Am",
+      "Dm",
+      "E7",
+      "Am"
+    ],
+    "explanation": "Leitton Gis im E7 stabilisiert klassisches Mollzentrum.",
+    "limits": "V7 benötigt erhöhtes Gis.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0016",
+    "style_context": "Classical tonal",
+    "key_or_center": "A minor",
+    "roman_analysis": "i bVI iiø7 V7 i",
+    "chord_sequence": [
+      "Am",
+      "F",
+      "Bm7b5",
+      "E7",
+      "Am"
+    ],
+    "explanation": "Klassische Mollprädominante und Dominante.",
+    "limits": "Bm7b5 hat B D F A in internationaler Notation.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0017",
+    "style_context": "Classical tonal",
+    "key_or_center": "A minor",
+    "roman_analysis": "i bIII bVI V7 i",
+    "chord_sequence": [
+      "Am",
+      "C",
+      "F",
+      "E7",
+      "Am"
+    ],
+    "explanation": "Mollharmonik mit Zwischenschritt in verwandter Durregion.",
+    "limits": "Funktion von bIII hängt Phrasierung ab.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0018",
+    "style_context": "Classical tonal",
+    "key_or_center": "D minor",
+    "roman_analysis": "i iv6 V7 i",
+    "chord_sequence": [
+      "Dm",
+      "Gm/Bb",
+      "A7",
+      "Dm"
+    ],
+    "explanation": "iv-Umkehrung und dominanter Leitton C#.",
+    "limits": "Lokales D-Moll nicht mit F-Dur austauschen.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0019",
+    "style_context": "Classical tonal",
+    "key_or_center": "E minor",
+    "roman_analysis": "i iv V7 i",
+    "chord_sequence": [
+      "Em",
+      "Am",
+      "B7",
+      "Em"
+    ],
+    "explanation": "Klassische Mollkadenz.",
+    "limits": "B7 hat D# und dadurch vom Aeolian-Vamp verschieden.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0020",
+    "style_context": "Classical tonal",
+    "key_or_center": "G major",
+    "roman_analysis": "I V/vi vi IV V I",
+    "chord_sequence": [
+      "G",
+      "B7",
+      "Em",
+      "C",
+      "D",
+      "G"
+    ],
+    "explanation": "Angewandte Dominante zu Em.",
+    "limits": "Die Tonart muss durch Schluss bestätigt werden.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0021",
+    "style_context": "Modal",
+    "key_or_center": "D Dorian",
+    "roman_analysis": "i7 IV i7 IV",
+    "chord_sequence": [
+      "Dm7",
+      "G",
+      "Dm7",
+      "G"
+    ],
+    "explanation": "Dorian-Typik durch große sechste H im G-Dur.",
+    "limits": "Kein klassischer V–i-Zwang.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0022",
+    "style_context": "Modal",
+    "key_or_center": "D Dorian",
+    "roman_analysis": "i7 ii7 i7 bVII",
+    "chord_sequence": [
+      "Dm7",
+      "Em7",
+      "Dm7",
+      "C"
+    ],
+    "explanation": "Dorian-Gegenfarben ohne tonalen Leitton.",
+    "limits": "Dm7/Em7 können als Impressions-Vamp dienen, nicht zwingend.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0023",
+    "style_context": "Modal",
+    "key_or_center": "G Mixolydian",
+    "roman_analysis": "I bVII IV I",
+    "chord_sequence": [
+      "G",
+      "F",
+      "C",
+      "G"
+    ],
+    "explanation": "Typischer mixolydischer, plagal geprägter Loop.",
+    "limits": "F enthält b7; die Kadenz ist nicht klassisch V7–I.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0024",
+    "style_context": "Modal",
+    "key_or_center": "A Aeolian",
+    "roman_analysis": "i bVI bVII i",
+    "chord_sequence": [
+      "Am",
+      "F",
+      "G",
+      "Am"
+    ],
+    "explanation": "Mollmodaler Kreis ohne erhöhte 7.",
+    "limits": "E7 wäre funktional andere Alternative.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0025",
+    "style_context": "Modal",
+    "key_or_center": "E Phrygian",
+    "roman_analysis": "i bII i bVII",
+    "chord_sequence": [
+      "Em",
+      "F",
+      "Em",
+      "Dm"
+    ],
+    "explanation": "bII-Färbung um E mit möglicher modaler Stabilität.",
+    "limits": "D-Moll enthält F und C; lokale Modusmischung explizit.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0026",
+    "style_context": "Modal",
+    "key_or_center": "F Lydian",
+    "roman_analysis": "I II I II",
+    "chord_sequence": [
+      "F",
+      "G",
+      "F",
+      "G"
+    ],
+    "explanation": "Lydische #4 = H im G-Dur-Klang.",
+    "limits": "Moduszentrum F benötigt Melodie/Basskontext.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0027",
+    "style_context": "Modal",
+    "key_or_center": "C Lydian",
+    "roman_analysis": "I IImaj I",
+    "chord_sequence": [
+      "C",
+      "D",
+      "C"
+    ],
+    "explanation": "Fis im D-Dur signalisiert lydische #4.",
+    "limits": "IImaj kann anders gedeutet werden, wenn G als Zentrum gehört wird.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0028",
+    "style_context": "Modal",
+    "key_or_center": "A Mixolydian",
+    "roman_analysis": "I bVII IV I",
+    "chord_sequence": [
+      "A",
+      "G",
+      "D",
+      "A"
+    ],
+    "explanation": "Rock-/modaler Quintfallkontext.",
+    "limits": "A-Dur-Großterz C#; mixolydische Septime G.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0029",
+    "style_context": "Modal",
+    "key_or_center": "B Locrian (hypothetical)",
+    "roman_analysis": "i° bII i°",
+    "chord_sequence": [
+      "Bdim",
+      "C",
+      "Bdim"
+    ],
+    "explanation": "Reines lokrisches Lehrmodell mit verminderter Tonika.",
+    "limits": "Didaktische Konstruktion, nicht als übliche reale Progression bewerben.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0030",
+    "style_context": "Modal",
+    "key_or_center": "D harmonic minor",
+    "roman_analysis": "i iv V7 i",
+    "chord_sequence": [
+      "Dm",
+      "Gm",
+      "A7",
+      "Dm"
+    ],
+    "explanation": "Harmonisch-Moll-Stufen mit C#.",
+    "limits": "Tonales i–V unterscheidet sich von modalem Zentrum.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0031",
+    "style_context": "Jazz",
+    "key_or_center": "C major",
+    "roman_analysis": "ii7 V7 Imaj7",
+    "chord_sequence": [
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "explanation": "Grund-ii–V–I mit Guide-Tone-Zielen.",
+    "limits": "Voicings nicht mit Chordsymbolen verwechseln.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0032",
+    "style_context": "Jazz",
+    "key_or_center": "C major",
+    "roman_analysis": "ii9 V13 Imaj9",
+    "chord_sequence": [
+      "Dm9",
+      "G13",
+      "Cmaj9"
+    ],
+    "explanation": "Extension-Palette ohne Funktionswechsel.",
+    "limits": "Spelling/Availability instrumentenspezifisch.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0033",
+    "style_context": "Jazz",
+    "key_or_center": "C major",
+    "roman_analysis": "ii7 bII7 Imaj7",
+    "chord_sequence": [
+      "Dm7",
+      "Db7",
+      "Cmaj7"
+    ],
+    "explanation": "Tritonussubstitution für G7.",
+    "limits": "Db7 enthält F und Cb (enharm. H) als Tritonus.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0034",
+    "style_context": "Jazz",
+    "key_or_center": "C major",
+    "roman_analysis": "ii7 V7alt Imaj7",
+    "chord_sequence": [
+      "Dm7",
+      "G7alt",
+      "Cmaj7"
+    ],
+    "explanation": "Alterierte Spannung am Dominantbereich.",
+    "limits": "alt ist keine einzelne fixierte Pitch-Class-Menge.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0035",
+    "style_context": "Jazz",
+    "key_or_center": "C major",
+    "roman_analysis": "Imaj7 VI7 ii7 V7",
+    "chord_sequence": [
+      "Cmaj7",
+      "A7",
+      "Dm7",
+      "G7"
+    ],
+    "explanation": "Jazz-Turnaround mit V7/ii.",
+    "limits": "Formale Wiederholung oder Auflösung ausweisen.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0036",
+    "style_context": "Jazz",
+    "key_or_center": "C major",
+    "roman_analysis": "iii7 VI7 ii7 V7",
+    "chord_sequence": [
+      "Em7",
+      "A7",
+      "Dm7",
+      "G7"
+    ],
+    "explanation": "Aufgelöster Quintfall zur Rückkehr in C.",
+    "limits": "Erfordert C als Folge oder implizite Rückkehr.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0037",
+    "style_context": "Jazz",
+    "key_or_center": "F major",
+    "roman_analysis": "ii7 V7 Imaj7",
+    "chord_sequence": [
+      "Gm7",
+      "C7",
+      "Fmaj7"
+    ],
+    "explanation": "ii–V–I im anderen lokalen Tonzentrum.",
+    "limits": "Nicht als bloße Transposition einer neuen Theoriefamilie zählen.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0038",
+    "style_context": "Jazz",
+    "key_or_center": "Bb minor",
+    "roman_analysis": "iiø7 V7 i",
+    "chord_sequence": [
+      "Cm7b5",
+      "F7",
+      "Bbm"
+    ],
+    "explanation": "Minor iiø–V–i, trotz Kontextvariable Bb minor.",
+    "limits": "Tonalitätslabel korrigieren auf Bb minor.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0039",
+    "style_context": "Jazz",
+    "key_or_center": "A minor",
+    "roman_analysis": "iiø7 V7 iMaj7",
+    "chord_sequence": [
+      "Bm7b5",
+      "E7",
+      "Am(maj7)"
+    ],
+    "explanation": "Kleinerterz-/Leitton-Farbe im Minor-Tonic.",
+    "limits": "Am(maj7) enthält Gis, nicht G.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0040",
+    "style_context": "Jazz",
+    "key_or_center": "C major",
+    "roman_analysis": "ivm7 bVII7 Imaj7",
+    "chord_sequence": [
+      "Fm7",
+      "Bb7",
+      "Cmaj7"
+    ],
+    "explanation": "Backdoor-Subdominant/Dominantbewegung.",
+    "limits": "Erlaubt mehrere funktionale Lesarten.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0041",
+    "style_context": "Jazz",
+    "key_or_center": "C major",
+    "roman_analysis": "Imaj7 #Idim7 ii7 V7",
+    "chord_sequence": [
+      "Cmaj7",
+      "C#dim7",
+      "Dm7",
+      "G7"
+    ],
+    "explanation": "Chromatisch vermittelter Übergang zum ii.",
+    "limits": "#Idim7 ist symmetrisch; konkrete Schreibweise braucht Review.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0042",
+    "style_context": "Jazz",
+    "key_or_center": "C major",
+    "roman_analysis": "Imaj7 bIII7 ii7 V7",
+    "chord_sequence": [
+      "Cmaj7",
+      "Eb7",
+      "Dm7",
+      "G7"
+    ],
+    "explanation": "Chromatischer Dominant-Anriss als Farbe.",
+    "limits": "Eb7 nicht ohne Kontext als Standard-Sekundärdominante behaupten.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0043",
+    "style_context": "Jazz",
+    "key_or_center": "G major",
+    "roman_analysis": "Imaj7 VI7 ii7 V7",
+    "chord_sequence": [
+      "Gmaj7",
+      "E7",
+      "Am7",
+      "D7"
+    ],
+    "explanation": "Turnaround in G.",
+    "limits": "E7 V/ii.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0044",
+    "style_context": "Jazz",
+    "key_or_center": "D major",
+    "roman_analysis": "ii7 V7 Imaj7",
+    "chord_sequence": [
+      "Em7",
+      "A7",
+      "Dmaj7"
+    ],
+    "explanation": "Tonales Jazz-ii–V–I.",
+    "limits": "Transponierte Übung, eigener Kontext.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0045",
+    "style_context": "Jazz",
+    "key_or_center": "C minor",
+    "roman_analysis": "i7 iv7 bVII7 bIIImaj7",
+    "chord_sequence": [
+      "Cm7",
+      "Fm7",
+      "Bb7",
+      "Ebmaj7"
+    ],
+    "explanation": "Moll-Ausgangspunkt mit temporärer bIII-Region.",
+    "limits": "Keine zwingende eindeutige Tonika innerhalb Ausschnitts.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0046",
+    "style_context": "Blues",
+    "key_or_center": "C blues",
+    "roman_analysis": "I7 IV7 I7 V7",
+    "chord_sequence": [
+      "C7",
+      "F7",
+      "C7",
+      "G7"
+    ],
+    "explanation": "Blues-funktional: I7 und IV7 können stabile Rollen haben.",
+    "limits": "Nicht alle Dominantseptakkorde als Sekundärdominanten labeln.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0047",
+    "style_context": "Blues",
+    "key_or_center": "C blues",
+    "roman_analysis": "I7 IV7 I7 I7",
+    "chord_sequence": [
+      "C7",
+      "F7",
+      "C7",
+      "C7"
+    ],
+    "explanation": "Vier-Takte-Eröffnung einer 12-bar-Blues-Variante.",
+    "limits": "Benötigt volle Form zur Bestätigung.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0048",
+    "style_context": "Blues",
+    "key_or_center": "C blues",
+    "roman_analysis": "IV7 IV7 I7 I7",
+    "chord_sequence": [
+      "F7",
+      "F7",
+      "C7",
+      "C7"
+    ],
+    "explanation": "Mittlerer Viertakter im 12-Bar-Blueprint.",
+    "limits": "Timing 1 bar pro Eintrag annehmen.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0049",
+    "style_context": "Blues",
+    "key_or_center": "C blues",
+    "roman_analysis": "V7 IV7 I7 V7",
+    "chord_sequence": [
+      "G7",
+      "F7",
+      "C7",
+      "G7"
+    ],
+    "explanation": "Blues-Rückführung mit Turnaround.",
+    "limits": "Weitere Bluesvarianten zulässig.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0050",
+    "style_context": "Blues",
+    "key_or_center": "F blues",
+    "roman_analysis": "I7 IV7 I7 V7",
+    "chord_sequence": [
+      "F7",
+      "Bb7",
+      "F7",
+      "C7"
+    ],
+    "explanation": "Blues in F, tonikale Septime Eb.",
+    "limits": "Eb als Ton des F7 ist keine zwingende Auflösungsnote.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0051",
+    "style_context": "Blues",
+    "key_or_center": "A minor blues",
+    "roman_analysis": "i7 iv7 i7 V7",
+    "chord_sequence": [
+      "Am7",
+      "Dm7",
+      "Am7",
+      "E7"
+    ],
+    "explanation": "Eine Moll-Blues-Variante mit Durdominante.",
+    "limits": "Moll-Blues-Kanon stark variantenreich.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0052",
+    "style_context": "Pop/Rock",
+    "key_or_center": "C major/A minor ambiguous",
+    "roman_analysis": "vi IV I V",
+    "chord_sequence": [
+      "Am",
+      "F",
+      "C",
+      "G"
+    ],
+    "explanation": "Axis-a; mögliche relative-Tonika-Mehrdeutigkeit.",
+    "limits": "Melodie/Metrik entscheiden über Zentren.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0053",
+    "style_context": "Pop/Rock",
+    "key_or_center": "C major",
+    "roman_analysis": "I V vi IV",
+    "chord_sequence": [
+      "C",
+      "G",
+      "Am",
+      "F"
+    ],
+    "explanation": "Axis-C als rotierbare diatonische Loop-Familie.",
+    "limits": "Keine automatische eindeutige Kadenz.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0054",
+    "style_context": "Pop/Rock",
+    "key_or_center": "C major",
+    "roman_analysis": "IV I V vi",
+    "chord_sequence": [
+      "F",
+      "C",
+      "G",
+      "Am"
+    ],
+    "explanation": "Axis-F; beginnender IV kann rhetorisch stabil sein.",
+    "limits": "Fehlende Melodie/Beatposition dokumentieren.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0055",
+    "style_context": "Pop/Rock",
+    "key_or_center": "C major",
+    "roman_analysis": "V vi IV I",
+    "chord_sequence": [
+      "G",
+      "Am",
+      "F",
+      "C"
+    ],
+    "explanation": "Axis-G, ungewöhnliche Startposition.",
+    "limits": "Harmonische Rotation ändert Gewichte.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0056",
+    "style_context": "Pop/Rock",
+    "key_or_center": "C major",
+    "roman_analysis": "I bVII IV I",
+    "chord_sequence": [
+      "C",
+      "Bb",
+      "F",
+      "C"
+    ],
+    "explanation": "Mixolydischer/plagaler Rocktyp.",
+    "limits": "Akkord bVII nicht automatisch Dominante.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0057",
+    "style_context": "Pop/Rock",
+    "key_or_center": "G major",
+    "roman_analysis": "I bVII IV I",
+    "chord_sequence": [
+      "G",
+      "F",
+      "C",
+      "G"
+    ],
+    "explanation": "Mixolydischer Rock in G.",
+    "limits": "F ist bVII.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0058",
+    "style_context": "Pop/Rock",
+    "key_or_center": "A minor",
+    "roman_analysis": "i bVI bIII bVII",
+    "chord_sequence": [
+      "Am",
+      "F",
+      "C",
+      "G"
+    ],
+    "explanation": "Relativmoll-Lesart derselben Akkordfolge.",
+    "limits": "Mit C-Dur-Lesart bewusst verknüpfen.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0059",
+    "style_context": "Pop/Rock",
+    "key_or_center": "E minor",
+    "roman_analysis": "i bVI bIII bVII",
+    "chord_sequence": [
+      "Em",
+      "C",
+      "G",
+      "D"
+    ],
+    "explanation": "Aeolischer vierstufiger Loop.",
+    "limits": "D ist bVII in E-Moll.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0060",
+    "style_context": "Pop/Rock",
+    "key_or_center": "A minor",
+    "roman_analysis": "i bVII bVI bVII",
+    "chord_sequence": [
+      "Am",
+      "G",
+      "F",
+      "G"
+    ],
+    "explanation": "Andalusian-ähnlicher absteigender Ansatz ohne Dominantakkord.",
+    "limits": "Nicht als klassische andalusische Kadenz ausgeben.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0061",
+    "style_context": "Pop/Rock",
+    "key_or_center": "A minor",
+    "roman_analysis": "i bVII bVI V",
+    "chord_sequence": [
+      "Am",
+      "G",
+      "F",
+      "E"
+    ],
+    "explanation": "Andalusian cadence mit Durdominante E.",
+    "limits": "Harmonisch-minor Einfluss am Ende.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0062",
+    "style_context": "Pop/Rock",
+    "key_or_center": "C major",
+    "roman_analysis": "I iii IV iv",
+    "chord_sequence": [
+      "C",
+      "Em",
+      "F",
+      "Fm"
+    ],
+    "explanation": "Chromatischer minor iv hebt letzte Passage hervor.",
+    "limits": "Em kann als stufenbezogener Übergang gelesen werden.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0063",
+    "style_context": "Pop/Rock",
+    "key_or_center": "C major",
+    "roman_analysis": "I IV vi V",
+    "chord_sequence": [
+      "C",
+      "F",
+      "Am",
+      "G"
+    ],
+    "explanation": "Pop-Loop mit Plagal- und Dominantpotenzial.",
+    "limits": "Kontextabhängige Schließung.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0064",
+    "style_context": "Pop/Rock",
+    "key_or_center": "D major",
+    "roman_analysis": "I V vi IV",
+    "chord_sequence": [
+      "D",
+      "A",
+      "Bm",
+      "G"
+    ],
+    "explanation": "Transponierbare Songwriting-Familie in D.",
+    "limits": "Transposition allein zählt nicht als neue Familie.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0065",
+    "style_context": "Pop/Rock",
+    "key_or_center": "E minor",
+    "roman_analysis": "i bVI bVII i",
+    "chord_sequence": [
+      "Em",
+      "C",
+      "D",
+      "Em"
+    ],
+    "explanation": "Aeolian, ohne Leitton D#.",
+    "limits": "Modalkontext prüfen.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0066",
+    "style_context": "Pop/Rock",
+    "key_or_center": "C major",
+    "roman_analysis": "IV V vi",
+    "chord_sequence": [
+      "F",
+      "G",
+      "Am"
+    ],
+    "explanation": "Plateau-loop-artige Harmonien ohne expliziten I.",
+    "limits": "Tonales Zentrum nicht eindeutig.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0067",
+    "style_context": "Pop/Rock",
+    "key_or_center": "C major",
+    "roman_analysis": "vi IV V",
+    "chord_sequence": [
+      "Am",
+      "F",
+      "G"
+    ],
+    "explanation": "Vi-gestützter Loop; Mix relativ-Moll/Dur möglich.",
+    "limits": "Nicht automatisch i–bVI–bVII.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0068",
+    "style_context": "Pop/Rock",
+    "key_or_center": "D major",
+    "roman_analysis": "I bVII IV I",
+    "chord_sequence": [
+      "D",
+      "C",
+      "G",
+      "D"
+    ],
+    "explanation": "Rockharmony mit bVII/IV.",
+    "limits": "Nicht klassisches Tonika-/Dominantprofil.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001",
+      "SRC-V3-0017",
+      "SRC-V3-0019"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0069",
+    "style_context": "Neo-Soul/R&B",
+    "key_or_center": "C major",
+    "roman_analysis": "Imaj9 vi9 ii9 V13",
+    "chord_sequence": [
+      "Cmaj9",
+      "Am9",
+      "Dm9",
+      "G13"
+    ],
+    "explanation": "Extended diatonic turnaround mit ruhiger Stimmführung.",
+    "limits": "Voicing/Voice-leading ergänzen.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0070",
+    "style_context": "Neo-Soul/R&B",
+    "key_or_center": "C major",
+    "roman_analysis": "Imaj9 III7 vi9 V13",
+    "chord_sequence": [
+      "Cmaj9",
+      "E7",
+      "Am9",
+      "G13"
+    ],
+    "explanation": "E7 als V/vi, erweitertes Color-Konzept.",
+    "limits": "G13 ohne explizites Dm7 ist keine komplette ii–V.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0071",
+    "style_context": "Neo-Soul/R&B",
+    "key_or_center": "C major",
+    "roman_analysis": "Imaj7 ivm9 Imaj7",
+    "chord_sequence": [
+      "Cmaj7",
+      "Fm9",
+      "Cmaj7"
+    ],
+    "explanation": "Borrowed minor iv für chromatische Farbe.",
+    "limits": "Fm9 enthält As; melodischen Fit prüfen.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0072",
+    "style_context": "Neo-Soul/R&B",
+    "key_or_center": "E minor",
+    "roman_analysis": "i9 bVImaj9 iv9 V7alt",
+    "chord_sequence": [
+      "Em9",
+      "Cmaj9",
+      "Am9",
+      "B7alt"
+    ],
+    "explanation": "Moll-Center mit extended chords.",
+    "limits": "Alterierte Dominante ist optionale ästhetische Wahl.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0073",
+    "style_context": "Neo-Soul/R&B",
+    "key_or_center": "F major",
+    "roman_analysis": "Imaj9 VI7 ii9 V13",
+    "chord_sequence": [
+      "Fmaj9",
+      "D7",
+      "Gm9",
+      "C13"
+    ],
+    "explanation": "II–V-gerichtete Turnaround-Färbung.",
+    "limits": "D7 V/ii.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0074",
+    "style_context": "Neo-Soul/R&B",
+    "key_or_center": "Bb major",
+    "roman_analysis": "Imaj9 ii9 bVII13 Imaj9",
+    "chord_sequence": [
+      "Bbmaj9",
+      "Cm9",
+      "Ab13",
+      "Bbmaj9"
+    ],
+    "explanation": "Backdoor/alterative Prädominant-Beziehungen möglich.",
+    "limits": "Ab13 nicht automatisch klassischer V.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0075",
+    "style_context": "Gospel",
+    "key_or_center": "C major",
+    "roman_analysis": "I #Idim7 ii7 V7",
+    "chord_sequence": [
+      "C",
+      "C#dim7",
+      "Dm7",
+      "G7"
+    ],
+    "explanation": "Chromatischer Passing-Diminished verbindet Stufen.",
+    "limits": "Kulturelle Praxis nicht nur an einem Akkord festmachen.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0076",
+    "style_context": "Gospel",
+    "key_or_center": "C major",
+    "roman_analysis": "I6 IV iv I",
+    "chord_sequence": [
+      "C/E",
+      "F",
+      "Fm",
+      "C"
+    ],
+    "explanation": "Bassschritt und minor plagal color.",
+    "limits": "Gospel-inspiriertes Lehrmodell, kein universelles Idiom.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0077",
+    "style_context": "Gospel",
+    "key_or_center": "C major",
+    "roman_analysis": "I vi ii V7 I",
+    "chord_sequence": [
+      "C",
+      "Am",
+      "Dm",
+      "G7",
+      "C"
+    ],
+    "explanation": "Häufig als Amen-/Turnaround-Struktur verwendbar.",
+    "limits": "Einfaches Stufenmuster ist nicht genre-eindeutig.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0078",
+    "style_context": "Film/Contemporary",
+    "key_or_center": "C major",
+    "roman_analysis": "I bVI bIII bVII",
+    "chord_sequence": [
+      "C",
+      "Ab",
+      "Eb",
+      "Bb"
+    ],
+    "explanation": "Chromatische und mixolydische Großakkorde.",
+    "limits": "Cinematic-Stimmung ist interpretativ.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0079",
+    "style_context": "Film/Contemporary",
+    "key_or_center": "D minor",
+    "roman_analysis": "i bVI bIII bVII",
+    "chord_sequence": [
+      "Dm",
+      "Bb",
+      "F",
+      "C"
+    ],
+    "explanation": "Breiter diatonischer minor chord-loop.",
+    "limits": "Kein zwingender dramatischer Effekt.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0080",
+    "style_context": "Film/Contemporary",
+    "key_or_center": "C major",
+    "roman_analysis": "I bIII bVI bII",
+    "chord_sequence": [
+      "C",
+      "Eb",
+      "Ab",
+      "Db"
+    ],
+    "explanation": "Chromatische Medianten und bII-Weg.",
+    "limits": "Stimmführung und Timing frei modellieren.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0081",
+    "style_context": "Film/Contemporary",
+    "key_or_center": "E minor",
+    "roman_analysis": "i bVII bVI V",
+    "chord_sequence": [
+      "Em",
+      "D",
+      "C",
+      "B"
+    ],
+    "explanation": "Absteigender Bass und Rückführung.",
+    "limits": "B-Dur-Funktion durch D#.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0082",
+    "style_context": "Film/Contemporary",
+    "key_or_center": "C major",
+    "roman_analysis": "Imaj7 bVImaj7 IVmaj7 ivm",
+    "chord_sequence": [
+      "Cmaj7",
+      "Abmaj7",
+      "Fmaj7",
+      "Fm"
+    ],
+    "explanation": "Farbwechsel zwischen Fern- und Näheklang.",
+    "limits": "Register/Voicing bestimmen tatsächliche Distanz.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0083",
+    "style_context": "Electronic/Ambient",
+    "key_or_center": "C major",
+    "roman_analysis": "I bVII/ I IV/I I",
+    "chord_sequence": [
+      "C",
+      "Bb/C",
+      "F/C",
+      "C"
+    ],
+    "explanation": "C-Pedal unter Oberharmonien.",
+    "limits": "Bb/C als symbolischer Basskomplex, nicht II-Notation.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0084",
+    "style_context": "Electronic/Ambient",
+    "key_or_center": "A minor",
+    "roman_analysis": "i bVI bVII i",
+    "chord_sequence": [
+      "Am",
+      "F",
+      "G",
+      "Am"
+    ],
+    "explanation": "Schleife als Texturträger statt kadenzorientiert.",
+    "limits": "Entwicklung kann über Filter/Arrangement erfolgen.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0085",
+    "style_context": "Electronic/Ambient",
+    "key_or_center": "D Dorian",
+    "roman_analysis": "i IV i IV",
+    "chord_sequence": [
+      "Dm",
+      "G",
+      "Dm",
+      "G"
+    ],
+    "explanation": "Zwei Akkorde über langem modalem Bass D.",
+    "limits": "Keine universelle EDM-Klassifikation.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0086",
+    "style_context": "Electronic/Ambient",
+    "key_or_center": "F Lydian",
+    "roman_analysis": "I II I II",
+    "chord_sequence": [
+      "F",
+      "G",
+      "F",
+      "G"
+    ],
+    "explanation": "Lydischer Wechsel mit F als explizitem Pedal.",
+    "limits": "F-Pedal als eigenes Ereignis modellieren.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0087",
+    "style_context": "Electronic/Ambient",
+    "key_or_center": "C major",
+    "roman_analysis": "Imaj7 vi7 IVmaj7 V7",
+    "chord_sequence": [
+      "Cmaj7",
+      "Am7",
+      "Fmaj7",
+      "G7"
+    ],
+    "explanation": "Langsam periodischer Loop mit optioneller Closure.",
+    "limits": "Genre wird erst durch Produktion/Timing sichtbar.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0088",
+    "style_context": "Latin-influenced (generic)",
+    "key_or_center": "D minor",
+    "roman_analysis": "i iv V7 i",
+    "chord_sequence": [
+      "Dm",
+      "Gm",
+      "A7",
+      "Dm"
+    ],
+    "explanation": "Tonalität für eigenständiges Latin-basiertes Arrangement möglich.",
+    "limits": "Keine Behauptung einer einheitlichen 'Latin harmony'.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0089",
+    "style_context": "Latin-influenced (generic)",
+    "key_or_center": "C major",
+    "roman_analysis": "I V7/vi vi V7 I",
+    "chord_sequence": [
+      "C",
+      "E7",
+      "Am",
+      "G7",
+      "C"
+    ],
+    "explanation": "Sekundärdominante und Tonikarückkehr.",
+    "limits": "Clave/Idiomatiken kultur- und genrespezifisch gesondert erfassen.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0090",
+    "style_context": "Minimalist/process",
+    "key_or_center": "C major",
+    "roman_analysis": "I IV I IV",
+    "chord_sequence": [
+      "C",
+      "F",
+      "C",
+      "F"
+    ],
+    "explanation": "Geringe harmonische Bewegung, Entwicklung durch Prozesse.",
+    "limits": "Minimalismus ist nicht allein diese Progression.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0091",
+    "style_context": "Minimalist/process",
+    "key_or_center": "E minor",
+    "roman_analysis": "i bVI i bVI",
+    "chord_sequence": [
+      "Em",
+      "C",
+      "Em",
+      "C"
+    ],
+    "explanation": "Ostinato plus schrittweise Erweiterung.",
+    "limits": "Dauer/Form sind primärer Prozessparameter.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0092",
+    "style_context": "Transformational",
+    "key_or_center": "C centered",
+    "roman_analysis": "I chromatic-mediant I",
+    "chord_sequence": [
+      "C",
+      "Ab",
+      "C"
+    ],
+    "explanation": "Tertian chromatic shift mit Rückkehr.",
+    "limits": "Alternative Tonika-Lesarten möglich.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0093",
+    "style_context": "Transformational",
+    "key_or_center": "C centered",
+    "roman_analysis": "I bIII bVI I",
+    "chord_sequence": [
+      "C",
+      "Eb",
+      "Ab",
+      "C"
+    ],
+    "explanation": "Chromatic-third/hexatonic neighborhood exploration.",
+    "limits": "Nicht zwingend eine Riemannsche Funktionskette.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0094",
+    "style_context": "Transformational",
+    "key_or_center": "C centered",
+    "roman_analysis": "I i bVI I",
+    "chord_sequence": [
+      "C",
+      "Cm",
+      "Ab",
+      "C"
+    ],
+    "explanation": "Parallelwechsel mit neuer chromatischer Route.",
+    "limits": "Metrik und Melodie nicht ausgebildet.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  },
+  {
+    "id": "PROG-V3-0095",
+    "style_context": "Transformational",
+    "key_or_center": "C centered",
+    "roman_analysis": "I vi I",
+    "chord_sequence": [
+      "C",
+      "Am",
+      "C"
+    ],
+    "explanation": "Relative Triad Transformation mit gemeinsamen Tönen.",
+    "limits": "Keine eigene Tonart zwingend.",
+    "example_origin": "original_illustrative_progression_not_song_transcription",
+    "analysis_status": "draft_requires_human_musical_review",
+    "duration_default": "one_chord_per_bar_unless_explicitly_extended",
+    "source_candidate_ids": [
+      "SRC-V3-0001"
+    ],
+    "version": "0.3.0"
+  }
+]

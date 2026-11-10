@@ -1,0 +1,1326 @@
+{
+  "package": "STEPS Research Library V5 (Grossausbau)",
+  "version": "5.0.0-research-draft",
+  "date": "2026-11-08",
+  "root": "STEPS_Research_Library_V5",
+  "file_count_excluding_manifest_and_hashlist": 260,
+  "total_bytes_excluding_manifest": 7009228,
+  "contains_unmodified_v4_archive": true,
+  "four_core_pillars": [
+    "music_theory",
+    "harmony",
+    "chord_progressions",
+    "composing"
+  ],
+  "new_external_source_records": 27,
+  "progression_families": 53,
+  "algorithmically_derived_progression_variants": 1378,
+  "new_original_composition_studies": 16,
+  "bars_per_study": 32,
+  "conceptual_test_requirements_not_executed": 60,
+  "mechanical_assertions_last_run": 53967,
+  "scientific_peer_review": "not_performed",
+  "steps_repository_audited": false,
+  "files": [
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/00_Archiv_V1/00_README_V1.md",
+      "size_bytes": 2165,
+      "sha256": "fd2463510218ebe950b72f075b4d5a987bb92f2a9db83b876f546b00db6a3970"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/00_Archiv_V1/01_STEPS_Research_Foundation.md",
+      "size_bytes": 51295,
+      "sha256": "8440e04de6018cbf941df5245c4b844062131cb3ac3fc5a7c1ae49c17ce32c15"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/00_Archiv_V1/02_STEPS_Knowledge_Base_Product_Blueprint.md",
+      "size_bytes": 26927,
+      "sha256": "4b7cddaa04a7ff1668c75a65d80edf8b4c6540330df387090ec7f18d016a10a6"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/00_Archiv_V1/03_PROJECT_CONTEXT_HANDOVER_PROMPT.md",
+      "size_bytes": 13801,
+      "sha256": "bebad79989c5d0baa86188d91d65b59680e0051436747ec31064fa8bcb0a3855"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/00_Archiv_V1/04_CODEX_KNOWLEDGE_BASE_FOUNDATION_PROMPT.md",
+      "size_bytes": 20014,
+      "sha256": "8b4fe3479bd19a2c3d04f05c23ba818c4317b28c9c0f5884d9d036fe4bd453f1"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/00_Archiv_V1/Master-Research-Prompt.md",
+      "size_bytes": 15439,
+      "sha256": "62a07e6b321c823aab15c34b942164a498b490198e50d9f51baa2c0f25a951f4"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/00_Archiv_V1/PROJECT_CONTEXT_HANDOVER_V1.md",
+      "size_bytes": 84470,
+      "sha256": "0e46a030c3235a1a32dc1779a068aaecb9e61c1377bca35d11483c4f18257293"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/00_START_HERE.md",
+      "size_bytes": 5193,
+      "sha256": "18e6d4c81a6bec0f960d802d6605293ca178626b0c0d4989a3886a62bd62f799"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/01_Forschung/00_RESEARCH_MONOGRAPH_V3.md",
+      "size_bytes": 34778,
+      "sha256": "495430a9864d991e2232f4d4f30b5101428f55f2cb6765e526854f1dba8aa032"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/01_Forschung/01_MUSIC_THEORY_CONCEPT_LIBRARY_V3.md",
+      "size_bytes": 56248,
+      "sha256": "d2e883201d26949023ee85656a8f07d4c880fc343091ae3a25816be5991a8b30"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/01_Forschung/02_CHORD_PROGRESSION_ATLAS_V3.md",
+      "size_bytes": 35689,
+      "sha256": "cfb55d61430636db3e94697a71c271a65ea0f950b2499a79ded7f07ede395175"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/01_Forschung/03_COMPOSING_TECHNIQUES_V3.md",
+      "size_bytes": 16941,
+      "sha256": "ea66c531b209ccf6dab8d5e9b0a66c4e914274ba6eb09c2008dcdfdf0f5af205"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/01_Forschung/04_ORIGINAL_COMPOSITION_STUDIES_V3.md",
+      "size_bytes": 10641,
+      "sha256": "0dede95db622c7c4e62cecbd6476c5244040fa10dcf02818889e75a7837f30ff"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/01_Forschung/05_FORMAL_RULES_AND_ANALYTICAL_LENSES_V3.md",
+      "size_bytes": 22310,
+      "sha256": "92bb8bc9cc764b61ba4ae66ad1ae989da372b963b2fe0e85bb33e44178e1d4d5"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/01_Forschung/06_ANALYSIS_LENSES_AND_CULTURAL_LIMITS.md",
+      "size_bytes": 4948,
+      "sha256": "7f194e15b8fb0eae8e8bf3ba2ab7c422da15b740d94dee1b11804fb3c47fac4b"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/01_Forschung/07_DATA_MODEL_AND_COMPUTATIONAL_SPEC.md",
+      "size_bytes": 5262,
+      "sha256": "9ce055c3848d926421b65506859846fbf2501cd9df45a2b34c2d6710b4944f51"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/01_Forschung/08_PRODUCT_UX_AND_RESEARCH_CROSSWALK.md",
+      "size_bytes": 3663,
+      "sha256": "dfecf548c8decd0b63654adc29da311ff87cf28b28b995cb6452140655f63448"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/02_Wissensdaten/COMPOSITION_TECHNIQUES_V3.json",
+      "size_bytes": 39254,
+      "sha256": "7887e17a8984b9ac025f579103bc0e9533509586af482a386818aa0bd11189c7"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/02_Wissensdaten/ORIGINAL_COMPOSITION_STUDIES_V3.json",
+      "size_bytes": 13226,
+      "sha256": "f5c57c3950f5cbe456f855948477a6d7e8134e5828a61b0e9f1d1adc81fc93f7"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/02_Wissensdaten/PROGRESSION_ATLAS_V3.json",
+      "size_bytes": 61797,
+      "sha256": "9c3ed5c1921bd2dfcb96b56c3d03f9fca496949dd70de1dabaa3749bf228ea04"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/02_Wissensdaten/THEORY_CONCEPTS_V3.json",
+      "size_bytes": 84936,
+      "sha256": "89df923a24d744a8323e1b809b042f176497e9a0a075aecb1440b64a4d9c2597"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/02_Wissensdaten/TYPED_RULES_V3.json",
+      "size_bytes": 35606,
+      "sha256": "c6040c4077818c95ff20aef45a0eb4e55c811604515f0e7e011edafc3fe80ac8"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/03_Codex/CODEX_MASTER_EXECUTION_PROMPT_V3.md",
+      "size_bytes": 15821,
+      "sha256": "a89aa01c7edce4059448e8a21eb2c79d8c32a2793182498c865b07dde711eb52"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/03_Codex/PROJECT_CONTEXT_HANDOVER_V3.md",
+      "size_bytes": 6119,
+      "sha256": "c49a9fc170059216f1de495e05bd3953012e545893286de25c70a613996fdec8"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/04_Qualitaet/SCIENTIFIC_REVIEW_AND_GAP_REGISTER_V3.md",
+      "size_bytes": 5254,
+      "sha256": "aeef759154228ec4137f1d8baa4a2ffdcd5885fe7669e99d314388a859e783d0"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/04_Qualitaet/STRUCTURAL_AUDIT_EXECUTED_V3.md",
+      "size_bytes": 880,
+      "sha256": "b3ff51023ba64a8b099b1b0f31513935ce661a408531ec5b5aa15db79e28d374"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/04_Qualitaet/VALIDATION_CASES_V3.json",
+      "size_bytes": 44059,
+      "sha256": "ec7be8cb07e018d0cbd3872918e449fa56b2514ce7fff382dc98bc709ee94649"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/04_Qualitaet/validate_v3.py",
+      "size_bytes": 6263,
+      "sha256": "ba127043f4e6c6d3a6a2b0248f7ce27236980ce0e466e7f9ce5cf291a9ccd87f"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/05_Quellen/BIBLIOGRAPHY_ACQUISITION_QUEUE.json",
+      "size_bytes": 16667,
+      "sha256": "fc18f391db4b53cd2edb914c954552ef91c3dfa0f1be493bd6dc9f84bddf001f"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/05_Quellen/SOURCE_REGISTRY_VERIFIED_METADATA.csv",
+      "size_bytes": 17776,
+      "sha256": "87f9e10680b2c37742acf12c4d05e8f94fccb4696ab0c956828985c088692ced"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/05_Quellen/SOURCE_REGISTRY_VERIFIED_METADATA.json",
+      "size_bytes": 33499,
+      "sha256": "515d0182617708897cbe6b7a3a1c5ae9d999ba05e8d5b42694bbb3c3652ff8fd"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/05_Quellen/SOURCE_REVIEW_AND_BIBLIOGRAPHY_V3.md",
+      "size_bytes": 28611,
+      "sha256": "8884a4ecf041029b00b0483075938e2afd1295bf9335a3e642fc26607f8fd9ca"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/CHANGELOG.md",
+      "size_bytes": 793,
+      "sha256": "bcbb7c2bcd5609a5f3419230fbaea7acea24e77c4d5f8ac09fbb4a6249231545"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/PACKAGE_MANIFEST.json",
+      "size_bytes": 6939,
+      "sha256": "4586828c0b698f884d815f2b9636fe53ef34ee8b973c5381d59da6db3b86f1c4"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_HISTORISCH_V3/VERSION.md",
+      "size_bytes": 329,
+      "sha256": "9e38dbc99d9dcd4c76c99bfee440cf4936222b6ccd3a36653c141db52dc82506"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/00_START_HERE.md",
+      "size_bytes": 6826,
+      "sha256": "dc27abe3606c84b5824f1689fe15a8ff8f59e0be10a5f0d9747277f43b083e45"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/01_Studienbaende/01_MUSIC_THEORY_V4.md",
+      "size_bytes": 8276,
+      "sha256": "f8bc97b3175442e8f19dec49a73d15838d7c0de9503832c9331aeb4820df055f"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/01_Studienbaende/02_HARMONY_V4.md",
+      "size_bytes": 13100,
+      "sha256": "83c5f4692929ee55bdabb2377ece9a654e4e1d8b12a1727899146bc2d059f735"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/01_Studienbaende/03_CHORD_PROGRESSIONS_V4.md",
+      "size_bytes": 6435,
+      "sha256": "7422c11a4f73eeb93aaf5e313b6b4da7247af650886a5788d8937f32e94de2d5"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/01_Studienbaende/04_COMPOSING_V4.md",
+      "size_bytes": 15459,
+      "sha256": "bceebc57f113f0f3bf650e58ca3bc318b891a5f8df84c11e0aa176229d3ed16d"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/01_Studienbaende/05_KONTEKSTE_KOGNITION_STANDARDS_V4.md",
+      "size_bytes": 7822,
+      "sha256": "9031338d3f1473e28704c61c0e07d4117d0a096a1f247e263633cb7c38f8eccb"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/01_Studienbaende/06_VERTIEFENDE_WERKSTATTANALYSEN_V4.md",
+      "size_bytes": 18534,
+      "sha256": "1aaaee4ee1c3a4b1f5cc796cc4a7412ac5d3a2c7d782b38d6a3fa54a4b983f9c"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/01_Studienbaende/RESEARCH_MODULES_V4.json",
+      "size_bytes": 55713,
+      "sha256": "72355daa5a6c4c036f2fed2ffcb5cc72738cae8dbdb12bdd71194a889ebfce78"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/02_Fachlexikon/FORMALREGELN_V4.md",
+      "size_bytes": 13837,
+      "sha256": "070a603c74837df178a394b72c4e346551275f9659eb102a8de8a61a70626f58"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/02_Fachlexikon/GESAMTREGELREGISTER_V3_UND_V4.json",
+      "size_bytes": 65705,
+      "sha256": "eb4fd2ecab19fe49002f47fe4e23a3587322436412e97b9ad476bf0474ace076"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/02_Fachlexikon/NEUE_REGELENTWUERFE_V4.json",
+      "size_bytes": 30102,
+      "sha256": "184a38625dd2c8c8b09ffcca14c1afc86362a2ad1abb0f47c8c51f71f42eb70e"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/02_Fachlexikon/TAXONOMIE_V4.json",
+      "size_bytes": 6209,
+      "sha256": "eef5fb5e7cbd3558609ca1cb94237e859e649abcdf6a694f4c85111adff1cade"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/03_Progressionsatlas/GESAMTREGISTER_V3_UND_V4.json",
+      "size_bytes": 131369,
+      "sha256": "e6bdf0fa5f92c5af78997ff5cd71752e26c8f649aece3ae91e2dfa41b708cb38"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/03_Progressionsatlas/NEUE_PROGRESSIONSFAMILIEN_V4.json",
+      "size_bytes": 69575,
+      "sha256": "1895a0cde20f909ff36dad7bf313a00a7c3fd887b12e237cbc9dd94209426a7f"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/03_Progressionsatlas/PROGRESSIONEN_V4.md",
+      "size_bytes": 17437,
+      "sha256": "84ccefbf5df04667e4026b1fa418ee09b359e31f30c98587bc019276c4e2c84a"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/ETUEDEN_REGISTER_V4.json",
+      "size_bytes": 28672,
+      "sha256": "cf905468617291ec2e60c5f4db5a5052f2c5c6ed365dbd5fe312309c63f8a1de"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-001.mid",
+      "size_bytes": 1512,
+      "sha256": "89a7b66e76cd5303401c9e0ea0b07b9948511cb21c44efca5650c238233edb17"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-002.mid",
+      "size_bytes": 1512,
+      "sha256": "55e5b77a771e58fe334d81569a837f6ad838e7b0ad00a35f243abc37a8fadcb4"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-003.mid",
+      "size_bytes": 1480,
+      "sha256": "f3530b6abb6509f2c18eed204a71398adaf64d0247bc5b3f1224f312f36e1c8d"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-004.mid",
+      "size_bytes": 1480,
+      "sha256": "868f5a5124b6dec6bc560b6e5f6f7bf1492f822ebf9d9794e768ead2f6a37d95"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-005.mid",
+      "size_bytes": 1480,
+      "sha256": "4d04249d8aab597ae13fc198d98b4cfa72a8448e440a1687ec3643a3e445767a"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-006.mid",
+      "size_bytes": 1480,
+      "sha256": "86a95be08bbc73ca312be9e576018d5ab35bf02b72e6e96bc61be83f28167902"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-007.mid",
+      "size_bytes": 1480,
+      "sha256": "9273ece696571da1d7e71b50829144c7da9131a398532db32e377ebe3bc0798d"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-008.mid",
+      "size_bytes": 1608,
+      "sha256": "c74e3b12e418e52abd7011d1a3e0855ebd0b1beab992494b5999c246689d87e0"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-009.mid",
+      "size_bytes": 1608,
+      "sha256": "a78efeb6692a8dff3e3b7573192aa8fd6b29e4c244ebda465d40725b084e7260"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-010.mid",
+      "size_bytes": 1608,
+      "sha256": "d0963420c213271863d6914c0710219d6a830b6fa61fb49ed4c192f39ed8ae10"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-011.mid",
+      "size_bytes": 1608,
+      "sha256": "58891fbacc18af80aba240543a8b369255c80d38a6e9aeb56ac04f45b3e21e37"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-012.mid",
+      "size_bytes": 1608,
+      "sha256": "d60f2a9dc9633d4d3c2d562bb62b703b38f46d56a7e3c4a4a269a91e134ba4f0"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-013.mid",
+      "size_bytes": 1480,
+      "sha256": "c2503be8d3e6f727b39d7d53f89287727ec46196aeb8dfd5fc8e394dad8cf6bc"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-014.mid",
+      "size_bytes": 1480,
+      "sha256": "cee9571730aa5aa03cfd85383b5a424e738d834c1d107815396074c3e9593a55"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-015.mid",
+      "size_bytes": 1480,
+      "sha256": "9bfb9a4c8edcc511ee27209ddd4a1f8a36a99decb491fcabd7dff2e3d45d42ac"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-016.mid",
+      "size_bytes": 1480,
+      "sha256": "f2f36062a2820d985915a6660b1dc2af99a568854db0c4dd5e8ac90083b3b090"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-017.mid",
+      "size_bytes": 1496,
+      "sha256": "7d8d5f1965bb3ef70b977e10584e2e53fd3091466414b53a7396a0192884af29"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-018.mid",
+      "size_bytes": 1496,
+      "sha256": "17fdf318a1fba4c41330a799df2dd3463bad871bda86c1b0fbe02a1c9291dfa5"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-019.mid",
+      "size_bytes": 1496,
+      "sha256": "a39af80bfcb5997545d6d3dc2c9dba41fee5cba002b69eaf38fa839fa824f0a3"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-020.mid",
+      "size_bytes": 1480,
+      "sha256": "aeb0243c91637fa5ab2de54d5e21d2d2719b19963377b774b565e2283810ee89"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-021.mid",
+      "size_bytes": 1480,
+      "sha256": "c56e679257b3c0eefbe84d15cdc7fe3c866c06aa8b660cda06daf27bba0c1f63"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-022.mid",
+      "size_bytes": 1512,
+      "sha256": "dc0493994ae7f3693adb06e53624f65d8b1b8c65fb17a6c03ec265ac50265ce4"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-023.mid",
+      "size_bytes": 1608,
+      "sha256": "7282b50740a716e84bfc8c741bdb5d6d5c23063a95c908344597f9be2dff37f3"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-024.mid",
+      "size_bytes": 1560,
+      "sha256": "8f9d90859216db508705efb88703a67f3ef955cad9db5e533bd5a34da9f5036d"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-025.mid",
+      "size_bytes": 1496,
+      "sha256": "9a17970f3094f8a66533b49f4a4c85a5b38b736b5da40484c3d05ec6041a45fd"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-026.mid",
+      "size_bytes": 1480,
+      "sha256": "a4aa2d851e3b07804d7ebbf811373b4bf34bef9b3d94eb0320a33fd9365b984e"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-027.mid",
+      "size_bytes": 1480,
+      "sha256": "9cffabc682d432c9229e82db8e09bf737d841f303f606b271b27faa4250d489a"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-028.mid",
+      "size_bytes": 1480,
+      "sha256": "7f997d502e214e87e8bda16b1467c41bb4a67bee8dda09fc81976cad649af5a9"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-029.mid",
+      "size_bytes": 1496,
+      "sha256": "eaccd80821c304a478324d5c6fa65f18e992832dde1c76d1db97d2ee7e328c23"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/MIDI/ETUDE-V4-030.mid",
+      "size_bytes": 1480,
+      "sha256": "34f960bf70b147f8d5ae306bd2f959e40b890dcb8ef87716bbf1bd207fcd3ce6"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-001.json",
+      "size_bytes": 21057,
+      "sha256": "e97be0468ef09ea670249429c61454d941ebc1cde54c4f8a02d9faa3d72699b4"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-001.md",
+      "size_bytes": 2775,
+      "sha256": "08a1fffe88c2eb407617a5d30bf310b2a48ddb8456626556ea332e54c7375bd9"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-002.json",
+      "size_bytes": 21054,
+      "sha256": "5ccd63b4db74d056598adfc771a778ca495bf7829a4c3bf8edd25fdc14536333"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-002.md",
+      "size_bytes": 2770,
+      "sha256": "180168f2770850625f414b710a00cc84268c417e763a0e625ab3e83e7ccf2afc"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-003.json",
+      "size_bytes": 20996,
+      "sha256": "ec44725ec978cd68aee4ae99e84ce86ca16fc2ea63651e1efb8f0b6266e92815"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-003.md",
+      "size_bytes": 2762,
+      "sha256": "1d78475ddaa0434cc950d4d7eaa75b389468e2ff0635f42bd208d80873a2ce5a"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-004.json",
+      "size_bytes": 20998,
+      "sha256": "33065c2f22e0849fe2f893cf852e9b3b3d844fe0c5e5a3f10e4e3752927859bb"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-004.md",
+      "size_bytes": 2768,
+      "sha256": "d41985b9f5e4c50d94f9af732e448d779e062dc34ff0d4c7b5133f66fe2bde68"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-005.json",
+      "size_bytes": 20973,
+      "sha256": "6016df3e7ec80dd75666b4863d267303b2d51df61c3eaf1341c542201d6eda35"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-005.md",
+      "size_bytes": 2743,
+      "sha256": "0bfd86a6c641a8d906e7d4e42f826e8ab867611a7aa3977fca23803ea6b12894"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-006.json",
+      "size_bytes": 20984,
+      "sha256": "ae74839216c70fa9c03f552a893057226fba3c288eaafedc2c8039171eb0d102"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-006.md",
+      "size_bytes": 2750,
+      "sha256": "6dd1ff14cda76598e03b54eeeb2a774bc06e8208589aba916ea8d070bd5470b3"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-007.json",
+      "size_bytes": 21026,
+      "sha256": "947dcf538eade081af4f6b49a4b18605af94eab809331d47829946fa5bc1650b"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-007.md",
+      "size_bytes": 2786,
+      "sha256": "e22e0b90cf78eba969e3a28886f01227b956cbf4428c7b627d67de3278ea3486"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-008.json",
+      "size_bytes": 21272,
+      "sha256": "2bafac887b4f382780d2a91f6a4518312656efc56a9ff73172b826976815c1d2"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-008.md",
+      "size_bytes": 2831,
+      "sha256": "94544e581c5e29f7424bed423f44c0aae65faf339995fffaa0916ceed68d0702"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-009.json",
+      "size_bytes": 21241,
+      "sha256": "7bbf71463f9d0079f00c4b7478d574f07981399491cb6c7ba07c4da786c3cd58"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-009.md",
+      "size_bytes": 2800,
+      "sha256": "dfb9cde385c4bca9237509f05b632228eb254c5d1e182ecf66d9acb0660120df"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-010.json",
+      "size_bytes": 21312,
+      "sha256": "e8b4aa64f87510c10d373e70e6ebbd7d955f2498c6ef2574240c537c1b59855d"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-010.md",
+      "size_bytes": 2863,
+      "sha256": "e428e54837a732ae86c674bdc850274c22e13e150230508784b1f800a4314c4b"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-011.json",
+      "size_bytes": 21206,
+      "sha256": "2397bb9db617c73a4c903292245627255ee88620d9d20dd34a4ab3fc4c010d18"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-011.md",
+      "size_bytes": 2777,
+      "sha256": "0efe07f98267dfee20b10cd2e0d5153a827547806776504d1ddb24594007a901"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-012.json",
+      "size_bytes": 21207,
+      "sha256": "282411b468a0f185e45ba64a64ac9df9936b94a793160195d2988966c1444746"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-012.md",
+      "size_bytes": 2778,
+      "sha256": "db9ee51153df184c243bf82e6644522bcd17e61451b9f8178e83146e2e452135"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-013.json",
+      "size_bytes": 21002,
+      "sha256": "3ab3c5f53e29d5b828dde151377e28ca9fa51a6aaf0b5be0ee36e4133ad13103"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-013.md",
+      "size_bytes": 2771,
+      "sha256": "d5f4b8eb50868e079b52334c962fe859ab02d4a158e84ab5eac3ba4e80f2a87f"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-014.json",
+      "size_bytes": 21007,
+      "sha256": "67b13468f314fbcbd184c8425c898c6da9d8c2721b3d2380c03e5d6b4b8e8bdf"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-014.md",
+      "size_bytes": 2775,
+      "sha256": "aa793614875be385bbfa18b9331407e00cc25b539dbb2e2dc7e0f4510ec00ced"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-015.json",
+      "size_bytes": 20985,
+      "sha256": "c4d8be84c835c2076b0fd23c044e64eb834157870e03006f686b8246472cae96"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-015.md",
+      "size_bytes": 2755,
+      "sha256": "96f1adae0796786c58c07864aaaa2d70923bfeb35e22656481ab7228e91baa3c"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-016.json",
+      "size_bytes": 20986,
+      "sha256": "5b2fb8c48c67bcdb808b4d18bbde458a1f0de205cf4b515c0bf5ab79ea89e715"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-016.md",
+      "size_bytes": 2756,
+      "sha256": "b7e59144828df03c021e7d7fe94fac48bb699a47ed763b094d212aff8a1a0db0"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-017.json",
+      "size_bytes": 21043,
+      "sha256": "07ea55b73e8f6ae5fa13bf289671abc5f6c54e01f12c969291353e39f9cf0a8e"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-017.md",
+      "size_bytes": 2785,
+      "sha256": "0196c42da969a8c78fd6e9c28072a04770c6122eccc757ff73cbb4f998be160f"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-018.json",
+      "size_bytes": 21089,
+      "sha256": "53b3fb663693294b5181d8f62e3cfa424564934bfdf83dc07273e7f610c30637"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-018.md",
+      "size_bytes": 2827,
+      "sha256": "0a53a0c23807fb45eafa0ef1beff92d4cd832597dbc2e6f39d3009335f3eed85"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-019.json",
+      "size_bytes": 21071,
+      "sha256": "a3c414729d322a0237c05805ff96ea882a4391b458246d30f5114aeb6de4f0f2"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-019.md",
+      "size_bytes": 2813,
+      "sha256": "44a49ef7344eb78310862a169656eedae50a7a938227841c2ac590fbc4af1080"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-020.json",
+      "size_bytes": 21017,
+      "sha256": "31057d1d878936175a54c9f744d370c8c07e2452ee124bca76f3753ec0b8c8ce"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-020.md",
+      "size_bytes": 2785,
+      "sha256": "5f13fd15c22e3251ee8d137389d80fc42f81a62b04aed759b3c6e2dc38fb63a4"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-021.json",
+      "size_bytes": 21005,
+      "sha256": "259de540acbd2d17cc48f19ee79094c050a651d8496640e251246bfa611666e6"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-021.md",
+      "size_bytes": 2774,
+      "sha256": "cb27a5b034e56ccd72cddfaa0288953ff040e72d8f394dfa09ff1024152cd5d6"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-022.json",
+      "size_bytes": 21075,
+      "sha256": "bead17ac15f3272fc5349b9bb62848f1047f6c9adc1ec36c0a89babf99c44af0"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-022.md",
+      "size_bytes": 2794,
+      "sha256": "1c60f63650e3e40faef19176c312efc9b5c182a65fa96c92a3acb1a8e3337615"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-023.json",
+      "size_bytes": 21269,
+      "sha256": "7767046025dcc938eba0c8a428806d53f63e6ac2400a8a6d2544de3687c90487"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-023.md",
+      "size_bytes": 2828,
+      "sha256": "2f78dbfa75f1c01ced1527ae08e669f50e45cb55c1efa16e2bc4067f72849df3"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-024.json",
+      "size_bytes": 21183,
+      "sha256": "33060c0cee8f6777104e7b20bb79d99390cb0c3be9b353f6c7f624f2ec220e04"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-024.md",
+      "size_bytes": 2820,
+      "sha256": "830f4d2e4f32420a13a9f5a1ad2927fcbb105a1ff6a2e0cc8f121231c2db15ef"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-025.json",
+      "size_bytes": 21093,
+      "sha256": "3113f46c12683215ca38079252c7318b03874875bc859860aeb3b549d3fb4bca"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-025.md",
+      "size_bytes": 2831,
+      "sha256": "ed1e6b5ee9c2293cb4b99efe6ce6b0dbf1e23f12b2c71fce2c42c04887aeba09"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-026.json",
+      "size_bytes": 21012,
+      "sha256": "7c6643afe4fb0347deebf5c4c5194967617a0820ae957c692e9491498df414ab"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-026.md",
+      "size_bytes": 2783,
+      "sha256": "bc4db800f0f49058c63844bf4dc65b901cd6d7cb57c8dd37d0caee1c0e0f1a7d"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-027.json",
+      "size_bytes": 21034,
+      "sha256": "f14c27bc35d563a182a31b918f28d88c46f6a8500fdf78aadfdac02cbfe65944"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-027.md",
+      "size_bytes": 2797,
+      "sha256": "f3a607acd6190c5b15d25e87de075cb7438f2a727bfc6154dafba81cda23697d"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-028.json",
+      "size_bytes": 21030,
+      "sha256": "a1e3fc9611a09b44010996b3b0b241556d3b324d9f61cc69acf02cb8e3bf2e88"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-028.md",
+      "size_bytes": 2796,
+      "sha256": "730464869ad9dfb552af1c81b9f0ba1d6f07bb1ff5ba66867517eb329e6817de"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-029.json",
+      "size_bytes": 21018,
+      "sha256": "e68af2bfa662a8326bb899dc7cd236ee3ef66979fffe908e56f738700e44ef25"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-029.md",
+      "size_bytes": 2760,
+      "sha256": "e8e7872781dc4c566d506f93f8162bc7ae1ce1306c5f93efbfb166e9ebba3912"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-030.json",
+      "size_bytes": 21002,
+      "sha256": "70c5f6a4ce134fd3685e5332b84452deee64359f086686f5c890c7ea7ac41c77"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/Partituren/ETUDE-V4-030.md",
+      "size_bytes": 2771,
+      "sha256": "95dbb4b6f528ead76541db40b40d5a1d8c1fd409552f6bf29edae24099fabe2a"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/README.md",
+      "size_bytes": 4953,
+      "sha256": "7ea27a058ade79ddb6f256aca3d84b006c3b4fdac2d89ed4c3cd546b30c25f40"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/TECHNIKEN_V4.md",
+      "size_bytes": 27135,
+      "sha256": "7da9a8e973121e84af7ff9aac9c1adaa5792857fdce2b57016b2b69fbc3d1df9"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/04_Kompositionslabor/TECHNIKREGISTER_V4.json",
+      "size_bytes": 76718,
+      "sha256": "7fb592d88161844f37d94679d6919f87cb7fecdd974d418b282f82c93f887af7"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/05_Quellen/NEUE_RECHERCHIERTE_QUELLEN_V4.csv",
+      "size_bytes": 7448,
+      "sha256": "179c60e8cab5fd9974eab019a29672237a5ae6357542eab12e07b9bf59e03c54"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/05_Quellen/QUELLENKOMMENTAR_V4.md",
+      "size_bytes": 19181,
+      "sha256": "a64a577c5c068cbedaf1ef071529f03e0f1fd808e5fb7d7c1c88ad430ef7e43e"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/05_Quellen/QUELLENREGISTER_V4.json",
+      "size_bytes": 52091,
+      "sha256": "9ff7f32a5bd8b809503038e1070148b59ed7213be9f2a96d8b880585318a0b8d"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/06_Datenmodelle/rule.v4.schema.json",
+      "size_bytes": 859,
+      "sha256": "494e5a91748a260c6d683897eb7b697e3232a1c61ae1c5c651219cc2d1906cfc"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/06_Datenmodelle/source.v4.schema.json",
+      "size_bytes": 592,
+      "sha256": "7fb2038defb76e88bbe8d4dc0766fc4d1298272de51b65cfb8bd91a3d564ecac"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/06_Datenmodelle/study.v4.schema.json",
+      "size_bytes": 2279,
+      "sha256": "eb7796309f6301783c8c28afd6908907c4a12d30650da3ee25440963c1bf0b2b"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/07_Codex/CODEX_MASTER_EXECUTION_V4.md",
+      "size_bytes": 21057,
+      "sha256": "8c05c230b28bf26e26bea5cb8cefe09ac24698cca21ee5974d67e73da316d728"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/07_Codex/PROJECT_CONTEXT_HANDOVER_V4.md",
+      "size_bytes": 5936,
+      "sha256": "fe311d269566370bf126436f35e381c69e39be9c33950714162c77ba8a8a8c46"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/08_Validierung/MECHANISCHER_PRUEFBERICHT_V4.json",
+      "size_bytes": 859,
+      "sha256": "fdcdaab86edb39631035f3ca06ef952bcc40fbfed7a689b5fc353b13a5fad151"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/08_Validierung/STATUS_UND_OFFENE_LUECKEN.md",
+      "size_bytes": 6019,
+      "sha256": "366764c6ac323fd184a87ca3984f147703b54d992b46a8c8a338be46145df11e"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/08_Validierung/TESTFALLKATALOG_V4.json",
+      "size_bytes": 37655,
+      "sha256": "14667c3bff70391b129f4561f7e4b135711245d42327c8c45bec9eee1d45650e"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/08_Validierung/validate_v4.py",
+      "size_bytes": 7974,
+      "sha256": "5643a1a80e1d5a2c3f4f160610d724f0a559801c1d765aab194cecd70f8fdfe4"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/09_Governance/CLAIM_PROVENANCE_AND_LEGAL_GATE.md",
+      "size_bytes": 2542,
+      "sha256": "184a815d27fcd2038d0b0ef287b96c5ccc2626f6172cf18fbd2b17c36881b59b"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/CHANGELOG.md",
+      "size_bytes": 2135,
+      "sha256": "ce56ee87aa98730baf4e882253c801c9d7cb5dfaad18f6e5d9a1d97f88f7680e"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/RELEASE_MANIFEST.json",
+      "size_bytes": 29621,
+      "sha256": "c01b14ee7b78a66e78df70eb16b9924e00ac632e089b181514b2d68180febff5"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/RESEARCH_SYNTHESIS_V4.md",
+      "size_bytes": 10791,
+      "sha256": "87123df08616aada760010ad258292a30ad63707cdb40710eb5bbf8aa618d426"
+    },
+    {
+      "path": "00_ARCHIV_V4_Unveraendert/VERSION.md",
+      "size_bytes": 1004,
+      "sha256": "5a2b96917941223a6fa53088e1764b1d43f949a932cbb19f99c3765258133173"
+    },
+    {
+      "path": "00_START_HERE.md",
+      "size_bytes": 6040,
+      "sha256": "b68b7bb145d5f13582cf46cd676e523703743b7bff836630ea1b73b8b64fe879"
+    },
+    {
+      "path": "01_Neuforschung/00_FORSCHUNGSSTAND_V5.md",
+      "size_bytes": 7962,
+      "sha256": "f564a76c8deef97be7eb4a4b961d767f61875c6f44f48986a52481b1764463bd"
+    },
+    {
+      "path": "02_Fachbaende/01_MUSIKTHEORIE_V5.md",
+      "size_bytes": 12719,
+      "sha256": "59f55f3181a1922b4fa01e06a1a7e33e087fe99135267745b5482fd2f61ff6cd"
+    },
+    {
+      "path": "02_Fachbaende/02_HARMONIE_V5.md",
+      "size_bytes": 12910,
+      "sha256": "a187509c9c96ffd6a15e7f6ddb57b5ed15eb4cea3917baa285600b15e47f7f02"
+    },
+    {
+      "path": "02_Fachbaende/03_CHORD_PROGRESSIONS_V5.md",
+      "size_bytes": 11703,
+      "sha256": "edb45c89a9771c4990de3b45b37d3663a1f7ce106a69c14c642166839dd33a5a"
+    },
+    {
+      "path": "02_Fachbaende/04_COMPOSING_V5.md",
+      "size_bytes": 18777,
+      "sha256": "090d7257659fb6b02225253f07aa6331c02061d07ad2e948ac4863d255b0a9ba"
+    },
+    {
+      "path": "02_Fachbaende/05_KOGNITION_KULTUR_STIL_V5.md",
+      "size_bytes": 8241,
+      "sha256": "2d178881b36fb19e3ab10c2c5c7aa28dd2bcfac65c73f82ad2ac9a86585b4e77"
+    },
+    {
+      "path": "02_Fachbaende/06_COMPUTATIONAL_MUSIC_V5.md",
+      "size_bytes": 9723,
+      "sha256": "6642e09721018b5c90956fb0847f09c36ae638a86a4e29d6f28b707fa6ff9f19"
+    },
+    {
+      "path": "02_Fachbaende/07_PRODUKT_DIDAKTIK_SKILL_V5.md",
+      "size_bytes": 8416,
+      "sha256": "6a821a7583de3f858a7948e5ee77f2910bc80ab41a756a9debb084a43bee4e1b"
+    },
+    {
+      "path": "03_Analysewerkstatt/01_ZWOELF_VERTIEFTE_WERKSTATTFAELLE.md",
+      "size_bytes": 8373,
+      "sha256": "c192a54c560f2a50cc49ff8a88a3aada41970197d15e5d74a222a0ba990567f3"
+    },
+    {
+      "path": "04_Kompositionslabor/MIDI/STEPS-V5-STUDY-001.mid",
+      "size_bytes": 2803,
+      "sha256": "31430868be5f5845218b5d466f3833ce2d5bda81cfc4782fbf7f6f1b846177c3"
+    },
+    {
+      "path": "04_Kompositionslabor/MIDI/STEPS-V5-STUDY-002.mid",
+      "size_bytes": 2803,
+      "sha256": "fadd54d95b46557b4512b0e3adad86fe3eee1b3112be9648940dbd53fbc3ebc0"
+    },
+    {
+      "path": "04_Kompositionslabor/MIDI/STEPS-V5-STUDY-003.mid",
+      "size_bytes": 2803,
+      "sha256": "5830e7f497b5d3e1a473df3a90e64c1968a429228b565087860b895b3eb5d8f9"
+    },
+    {
+      "path": "04_Kompositionslabor/MIDI/STEPS-V5-STUDY-004.mid",
+      "size_bytes": 2803,
+      "sha256": "22d6b6ca6d19ed1b4af391a00da77d1a8d6b7f739784bb034e72d7cc6f0da578"
+    },
+    {
+      "path": "04_Kompositionslabor/MIDI/STEPS-V5-STUDY-005.mid",
+      "size_bytes": 2803,
+      "sha256": "87aba776096a4a9b24e3974c0f7bdd16bbaa0ccb7f6b3139c867352be615d94a"
+    },
+    {
+      "path": "04_Kompositionslabor/MIDI/STEPS-V5-STUDY-006.mid",
+      "size_bytes": 2803,
+      "sha256": "72175799ef8abcf2d5f8f89b7679c477d0280dfbdc222e1c34ff91b130f5d083"
+    },
+    {
+      "path": "04_Kompositionslabor/MIDI/STEPS-V5-STUDY-007.mid",
+      "size_bytes": 2803,
+      "sha256": "4d73c761645c27840e0bdd7792bf056e0dc3878020524568cb3f52eedb4fe880"
+    },
+    {
+      "path": "04_Kompositionslabor/MIDI/STEPS-V5-STUDY-008.mid",
+      "size_bytes": 2803,
+      "sha256": "de23b62e7bf3a547cac052293e7306d147ad4d1edc29b3879a41e6bb089cdbab"
+    },
+    {
+      "path": "04_Kompositionslabor/MIDI/STEPS-V5-STUDY-009.mid",
+      "size_bytes": 2803,
+      "sha256": "10d503364538c73bcd660769ac6a9d2bce93251d3415946c767b15e0fe59836e"
+    },
+    {
+      "path": "04_Kompositionslabor/MIDI/STEPS-V5-STUDY-010.mid",
+      "size_bytes": 2803,
+      "sha256": "23b73405526cd30c6b45a6491629201038d737ffd94f31b0858814dc2d8b5325"
+    },
+    {
+      "path": "04_Kompositionslabor/MIDI/STEPS-V5-STUDY-011.mid",
+      "size_bytes": 2515,
+      "sha256": "5e43c2facaa279f147a2b2811f73490cad2672bee9463c3c7bd08f99ae474fb7"
+    },
+    {
+      "path": "04_Kompositionslabor/MIDI/STEPS-V5-STUDY-012.mid",
+      "size_bytes": 2803,
+      "sha256": "548d5baf070b118471eb6b54c13ac792fa1feb1c09ab03bdc03bfbaca00f254c"
+    },
+    {
+      "path": "04_Kompositionslabor/MIDI/STEPS-V5-STUDY-013.mid",
+      "size_bytes": 2803,
+      "sha256": "7ae6dcd7ccae4864a6317f96e022880c355ecd7d6a01531ff9b2eb2bcd40c28a"
+    },
+    {
+      "path": "04_Kompositionslabor/MIDI/STEPS-V5-STUDY-014.mid",
+      "size_bytes": 2803,
+      "sha256": "1cce9a2887438bb2a533cc3a6c99e3068d09264af93162be3ecec24346da963a"
+    },
+    {
+      "path": "04_Kompositionslabor/MIDI/STEPS-V5-STUDY-015.mid",
+      "size_bytes": 2803,
+      "sha256": "8b6e312aca0cae3910d8bf2ab45e954e30ee69eb03e59749e4915fa5432460f7"
+    },
+    {
+      "path": "04_Kompositionslabor/MIDI/STEPS-V5-STUDY-016.mid",
+      "size_bytes": 2803,
+      "sha256": "8ebad73cb42edfb0919d7f79a6c36da226c2ab9a42d1407a3555e7459becf72e"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-001.json",
+      "size_bytes": 53207,
+      "sha256": "b629f5a201c9455551c3fc3b5d4c9b883c5c14aab7ced364fe0baa2137af01f8"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-001.md",
+      "size_bytes": 1687,
+      "sha256": "aca2338a09f1ee91cc97fa81aa84b32f255ebb373b72beb644b5acb7415972c7"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-001.musicxml",
+      "size_bytes": 40939,
+      "sha256": "e56320753c9b81cfeff85254d77bb75984d774b860de0039098459ceea65ffb2"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-002.json",
+      "size_bytes": 53434,
+      "sha256": "e3c4b26c3e02bdfb6ef706fffe3b8aeed7957cb7eeb9e1280fb1f87199fd3d0f"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-002.md",
+      "size_bytes": 1703,
+      "sha256": "577118a6c392541031022943168df4e866a2e41f145f1f5eba612ecb6e5093ac"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-002.musicxml",
+      "size_bytes": 41996,
+      "sha256": "b354a6cd34bf8f836b11bbf36de0da862ff1a9eb4070eb20f9d6b5b97f8c2469"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-003.json",
+      "size_bytes": 54308,
+      "sha256": "f9ea122dfd5cc16a22a3d914df1c684bf41703591efd1e8d651fef6f83e483a6"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-003.md",
+      "size_bytes": 1674,
+      "sha256": "83d64560dd748e318937924040bbeff219dc301065f35334fdbdbb06ff08e202"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-003.musicxml",
+      "size_bytes": 40867,
+      "sha256": "9ef82fc2bc114c5fceb66ac9ec9ee4ae26cb0043bbe6c7b7e43fe93b16a7546d"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-004.json",
+      "size_bytes": 52661,
+      "sha256": "9aee1858598c5307af6ca10fb8ce8e07b434ce3f099a991f11404795e5535013"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-004.md",
+      "size_bytes": 1692,
+      "sha256": "c9488a5728654385f38b0afd1bf3f470248e787fa6d6123d0d693e60d16f348b"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-004.musicxml",
+      "size_bytes": 40907,
+      "sha256": "e4fa30a2df8a46b2b5cea84f6444c669b796f8324a220555e32218f98eb010f1"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-005.json",
+      "size_bytes": 53641,
+      "sha256": "2a47d72844e9d5474c3511483540523687ad2eec0ceedfbe771ef77d59c13d21"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-005.md",
+      "size_bytes": 1681,
+      "sha256": "3fd026f36651bef541005a67f52c3609c4022f0ed88a30c4a04964d19f1efb45"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-005.musicxml",
+      "size_bytes": 40864,
+      "sha256": "217bba945a9a9c7e47a71c359a3877508a2197bba641e6903a3782f0385458ce"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-006.json",
+      "size_bytes": 53351,
+      "sha256": "139f4ea0a7cafcf1a6206e2f7f56975dad54ee20c6bcbb741d50a841d318b80e"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-006.md",
+      "size_bytes": 1675,
+      "sha256": "e7c3db2c65450666786bec12a62bc899eb8518dab4c736ab4c2201c3a5717ac7"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-006.musicxml",
+      "size_bytes": 40944,
+      "sha256": "d4a94c33742fe83a276118c79b25b4804084ef9ba3676db48d0c7b15b427f9cf"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-007.json",
+      "size_bytes": 52714,
+      "sha256": "b13beff79419f1e918264cf25b4f7e4e4046f1ceee32838b082f0fe49d7ea52f"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-007.md",
+      "size_bytes": 1705,
+      "sha256": "b5951f51be6c0819ba98d98b71a29b8cdb5f9adacaa486581931edebd6deb92d"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-007.musicxml",
+      "size_bytes": 41196,
+      "sha256": "9db71ed9245c6c2a1b3cbc55b3acdfe0694a5ba2edf9244a30dd06b5cd867e27"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-008.json",
+      "size_bytes": 54026,
+      "sha256": "201aacbf0de62707922748990bc5e7014885c6ce6d03318f9adb5b7ac486c4d9"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-008.md",
+      "size_bytes": 1690,
+      "sha256": "dd337071282ee78e086d30069a5342476dca38d1c839890ce2de784ab1ab95f5"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-008.musicxml",
+      "size_bytes": 42365,
+      "sha256": "b15c3ccdba07b9367be4fa886da179cb78213d529a24f359e401d2ec5f01d7a4"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-009.json",
+      "size_bytes": 52808,
+      "sha256": "9f0dd316ecd83b66b79ed39e87df0fac6df25454e2ae497ed765d7a0e9f89204"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-009.md",
+      "size_bytes": 1715,
+      "sha256": "380a8b44cc4df359946b053e142087caa6f89d4cd0375762bbabf47b090b9c09"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-009.musicxml",
+      "size_bytes": 41061,
+      "sha256": "eff09ae88c6e6cfa82222a36f0d7898e90940a53261ba9def5a94c3642df008a"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-010.json",
+      "size_bytes": 53043,
+      "sha256": "66205c380b0eccde86842e6600afb2962df986b84e7cfebce9e478266248f281"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-010.md",
+      "size_bytes": 1700,
+      "sha256": "420bab8f3efb5f881d697d0bdaa65109e9bd3de4bd952215898c1ab523ee9fbe"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-010.musicxml",
+      "size_bytes": 42993,
+      "sha256": "99f47670fb7b42692441efb08d6a592a7e1fa26363a28a533ede12d75333093b"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-011.json",
+      "size_bytes": 49047,
+      "sha256": "105f221902034d21cc94dff718f67610a4dfb91160676569573e801cfe264a5c"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-011.md",
+      "size_bytes": 1664,
+      "sha256": "680e4ea240879993cc09c9f4027ce96d2ca3413000268e805b785218a646e17c"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-011.musicxml",
+      "size_bytes": 38560,
+      "sha256": "1ea72a9a6bc226573eaee1895138b62ab7d263b1b2b22d5a1c004c71ad8efe34"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-012.json",
+      "size_bytes": 53895,
+      "sha256": "c574dc6d54097dd3266a71770344cb830ee0be3f5f13fab0d5df9df85e8c0127"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-012.md",
+      "size_bytes": 1727,
+      "sha256": "bc1f0cfcf985ef0f1dd426919d7884391bc1fd44542109ea1733f4ea76a99751"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-012.musicxml",
+      "size_bytes": 40922,
+      "sha256": "b2a9a1e05b34c476251929d7e513a260d580154f9e287247b597df8bb8050f27"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-013.json",
+      "size_bytes": 53672,
+      "sha256": "f84cd1c08e10ac9bcffafc02cb466b2001841eeb5cff381d6c134467c6fc0508"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-013.md",
+      "size_bytes": 1690,
+      "sha256": "8e2b333b2df0d69317ad3d25387316cb1a6cd948c9746e04acd570a69c0097c0"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-013.musicxml",
+      "size_bytes": 41619,
+      "sha256": "8209596a41ba13ee2d9ee98a04f157884b261d0f3cfeac3c3c136ce3a5b80a7a"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-014.json",
+      "size_bytes": 53446,
+      "sha256": "30fbb279314fe4ed25ffc8d98e5d6c75e0ef3cef00cd452d1a699a6253c99a0d"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-014.md",
+      "size_bytes": 1684,
+      "sha256": "961678458259ac838df7be5a3f29bba39e0dc2286fab2b26eb84b9f5ded62753"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-014.musicxml",
+      "size_bytes": 43157,
+      "sha256": "a4e660bc3860933c87380f98002b00aa26e4f56825ce9701044706ac9fbb4ce9"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-015.json",
+      "size_bytes": 53328,
+      "sha256": "001c85ffe0e3a9b7f0bb588cdc6274c801c43025d231aa91348a29d1ef694b93"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-015.md",
+      "size_bytes": 1684,
+      "sha256": "d0a222d279c170269e9a856e08cff5fbe92d7510d6d9273ff924cca40fd8bf8a"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-015.musicxml",
+      "size_bytes": 41288,
+      "sha256": "7782fc2b0b2c51f9f99fd771dbd5589568f7173c6af27e1e8b068fb79161e30d"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-016.json",
+      "size_bytes": 52321,
+      "sha256": "1624a42ee7376d35e838b75bf7ba14cd156e9264f3cbb1cfb05353aa0996ec81"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-016.md",
+      "size_bytes": 1690,
+      "sha256": "0bcde0d640d6991937ebf0acb25bb6a884afabfb0035692208fc0505853c10e7"
+    },
+    {
+      "path": "04_Kompositionslabor/Partituren/STEPS-V5-STUDY-016.musicxml",
+      "size_bytes": 40881,
+      "sha256": "1923970d4a193f7d2764b4b6e9e58b72d6e12d821cd71cedc44ce8321f2ac8d3"
+    },
+    {
+      "path": "04_Kompositionslabor/README.md",
+      "size_bytes": 475,
+      "sha256": "8d3f211ff0a1c238cf1d23f51298231d1c19b719045ad08e16c90ad2fb32396a"
+    },
+    {
+      "path": "04_Kompositionslabor/STUDIENREGISTER_V5.json",
+      "size_bytes": 3946,
+      "sha256": "d8df1c1cc5670e09ad869612f6e1f63a615ac4be2acdc8e5d413181fdadaceb4"
+    },
+    {
+      "path": "04_Kompositionslabor/build_scores_v5.py",
+      "size_bytes": 13857,
+      "sha256": "06b2c7efa480b498407bc1653fe3838cd7e7531716049afd1078f9223be06e6c"
+    },
+    {
+      "path": "05_Wissensobjekte/ATLAS_V5.md",
+      "size_bytes": 24164,
+      "sha256": "84f836461b237f70f0f5539a0448d5a194e6b6036af64bff3161285128720cb2"
+    },
+    {
+      "path": "05_Wissensobjekte/KURATIERTE_PROGRESSIONSFAMILIEN_V5.json",
+      "size_bytes": 20853,
+      "sha256": "52fc5fc0c437490978c4aeb098b9c38061ebd73212f847124a3413359453e80d"
+    },
+    {
+      "path": "05_Wissensobjekte/TRANSPONIERTE_PROGRESSIONSVARIANTEN_V5.json",
+      "size_bytes": 2668638,
+      "sha256": "c97ba7575f8b8006b515e76455ed015a7d8b29ae70bab17319ba39d950e66874"
+    },
+    {
+      "path": "05_Wissensobjekte/build_progressions_v5.py",
+      "size_bytes": 10948,
+      "sha256": "ff33ec6bd86dcc83e7dec407e85dce8e3ad2fd183fd50a145c075f529b855d9e"
+    },
+    {
+      "path": "06_Quellen_und_Rechte/LESEROUTE_UND_PRIORITAET.md",
+      "size_bytes": 9525,
+      "sha256": "8885ff6c3cbf38aa7b7ee50c65f230f34ea73cbb072cd245a28bad3c469b75dc"
+    },
+    {
+      "path": "06_Quellen_und_Rechte/V5_EXTERN_RECHERCHIERTE_QUELLEN.csv",
+      "size_bytes": 11220,
+      "sha256": "e1611bf71821c95f553a08cd2133169e8118f7443ab52d53ea9d959a0c2fc253"
+    },
+    {
+      "path": "06_Quellen_und_Rechte/V5_EXTERN_RECHERCHIERTE_QUELLEN.json",
+      "size_bytes": 19042,
+      "sha256": "8105bde0620121b0afb2b74fee9cd66aad2a7240cf874a959607d7b5e494480f"
+    },
+    {
+      "path": "07_Codex/CODEX_MASTER_EXECUTION_V5.md",
+      "size_bytes": 28172,
+      "sha256": "cdc9a4e39fb7af977e01715f10a7628d6edbb4bba5108c6037815849e5f2429f"
+    },
+    {
+      "path": "07_Codex/PROJECT_CONTEXT_HANDOVER_V5.md",
+      "size_bytes": 8493,
+      "sha256": "5b0d1e21f65e376708a94479b38d8ff873dfe170800867407c1a95485175cd99"
+    },
+    {
+      "path": "07_Codex/build_codex_prompt.py",
+      "size_bytes": 13590,
+      "sha256": "acedb14b5391078c1a07d37903d2b1533feef83520c633fb0f3b45af1b8d73c8"
+    },
+    {
+      "path": "08_Validierung/CONCEPTUAL_GOLDEN_AND_NEGATIVE_CASES_V5.json",
+      "size_bytes": 23608,
+      "sha256": "07f555e517bc3c2bb3305581e55b4ab67cb59099791d691c96ae8ce9c522de5c"
+    },
+    {
+      "path": "08_Validierung/CONCEPTUAL_GOLDEN_AND_NEGATIVE_CASES_V5.md",
+      "size_bytes": 14812,
+      "sha256": "02edf79b7851d5ce3132cc435f1074cfa8206b07282ad4753da2e1863dcbcc3f"
+    },
+    {
+      "path": "08_Validierung/FINAL_QA_REPORT_V5.md",
+      "size_bytes": 2725,
+      "sha256": "4e75bdf902e4c7cb12ea62d7bc1d029ee9f692f5992c1f544b3efaca6711b1be"
+    },
+    {
+      "path": "08_Validierung/PRUEFBERICHT_V5.json",
+      "size_bytes": 480,
+      "sha256": "d53c04ec51fcba723e8a5ad70a9a647d59995b1dc4dfb1e275b6799fd6f3dcc8"
+    },
+    {
+      "path": "08_Validierung/build_reference_tests.py",
+      "size_bytes": 8133,
+      "sha256": "51259529f38610e9303d5dbda7f25c5e6d1d5c6c320b4054bee3f76f16927cf7"
+    },
+    {
+      "path": "08_Validierung/validate_v5.py",
+      "size_bytes": 5354,
+      "sha256": "82d9de6759d278ea8a75da1ff99a086db58861b8a7f6d250a2b8088b5fb9c8ef"
+    },
+    {
+      "path": "09_Governance/GAP_RISK_DECISIONS_V5.md",
+      "size_bytes": 8532,
+      "sha256": "26954245054cc45f4cab12761924228532d7b2367d44b37c4f0dd99ff4a67a6d"
+    },
+    {
+      "path": "09_Governance/TRACEABILITY_MATRIX_V5.md",
+      "size_bytes": 4642,
+      "sha256": "948fcab3ee491ddff9fd5e0511e2ec5fd339f55915f63267f3ae50dbbd7d19f2"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "size_bytes": 1574,
+      "sha256": "51418dd475d9b66ed1b1cb85552792bec2c6ea2d27f91190e390b82ad5104336"
+    },
+    {
+      "path": "RESEARCH_SYNTHESIS_V5.md",
+      "size_bytes": 9117,
+      "sha256": "d4e35b2e312bdf9ee7c64c7d4b92aebd308cb53b4022af65f2417b0f3c19d723"
+    },
+    {
+      "path": "VERSION.md",
+      "size_bytes": 855,
+      "sha256": "dc7f14e245bfb53a13bd58f318add594e8a47fd9aecb0970e9e534f92ca5577f"
+    },
+    {
+      "path": "build_sources_v5.py",
+      "size_bytes": 9699,
+      "sha256": "cdbbcd930c457cb160537dd108715d01464e76cb9f0249596acfe0c75a91ebfc"
+    }
+  ]
+}

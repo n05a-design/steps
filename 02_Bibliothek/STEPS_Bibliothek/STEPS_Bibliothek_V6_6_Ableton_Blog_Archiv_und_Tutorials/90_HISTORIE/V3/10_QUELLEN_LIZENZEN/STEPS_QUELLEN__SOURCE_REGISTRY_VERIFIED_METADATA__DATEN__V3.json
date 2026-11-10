@@ -1,0 +1,1060 @@
+[
+  {
+    "id": "SRC-V3-0001",
+    "title": "Open Music Theory V2",
+    "authors": "Mark Gotham et al.",
+    "year": "2023",
+    "kind": "open_textbook",
+    "canonical_url": "https://viva.pressbooks.pub/openmusictheory/about/",
+    "topics": [
+      "music theory",
+      "voice leading",
+      "jazz",
+      "pop",
+      "form"
+    ],
+    "pillars": [
+      "MUSIC",
+      "COMPOSE"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "CC BY-SA 4.0 text; individual media separate",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0002",
+    "title": "Open Music Theory, alternative interactive edition",
+    "authors": "Kris Shaffer; Bryn Hughes; Brian Moseley",
+    "year": "n.d.",
+    "kind": "open_textbook",
+    "canonical_url": "https://openmusictheory.github.io/",
+    "topics": [
+      "notation",
+      "melody",
+      "harmony",
+      "form"
+    ],
+    "pillars": [
+      "MUSIC",
+      "COMPOSE"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "CC BY-SA 4.0 text",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0003",
+    "title": "Music Composition & Theory",
+    "authors": "Justin Henry Rubin",
+    "year": "2024",
+    "kind": "open_textbook",
+    "canonical_url": "https://open.umn.edu/opentextbooks/textbooks/music-composition-theory",
+    "topics": [
+      "composition",
+      "formal models",
+      "orchestration"
+    ],
+    "pillars": [
+      "COMPOSE"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "CC BY for book text; embedded artifacts verify",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0004",
+    "title": "Musical Composition: Craft and Art",
+    "authors": "Alan Belkin",
+    "year": "2018",
+    "kind": "book",
+    "canonical_url": "https://yalebooks.yale.edu/book/9780300218992/musical-composition/",
+    "topics": [
+      "musical composition",
+      "development",
+      "climax",
+      "form"
+    ],
+    "pillars": [
+      "COMPOSE"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0005",
+    "title": "Classical Form",
+    "authors": "William E. Caplin",
+    "year": "1998",
+    "kind": "book",
+    "canonical_url": "https://academic.oup.com/book/49159",
+    "topics": [
+      "sentence",
+      "period",
+      "formal functions",
+      "cadence"
+    ],
+    "pillars": [
+      "COMPOSE",
+      "HARMONY"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0006",
+    "title": "Cadence: A Study of Closure in Tonal Music",
+    "authors": "William E. Caplin",
+    "year": "2024",
+    "kind": "book",
+    "canonical_url": "https://academic.oup.com/book/59030",
+    "topics": [
+      "cadence",
+      "formal closure",
+      "tonal syntax"
+    ],
+    "pillars": [
+      "HARMONY",
+      "COMPOSE"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0007",
+    "title": "Music in the Galant Style",
+    "authors": "Robert O. Gjerdingen",
+    "year": "2007",
+    "kind": "book",
+    "canonical_url": "https://academic.oup.com/book/49369",
+    "topics": [
+      "galant schemata",
+      "partimento",
+      "composition pedagogy"
+    ],
+    "pillars": [
+      "COMPOSE",
+      "HARMONY"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0008",
+    "title": "The Art of Partimento: History Theory and Practice",
+    "authors": "Giorgio Sanguinetti",
+    "year": "2012",
+    "kind": "book",
+    "canonical_url": "https://www.gmth.de/zeitschrift/artikel/683.aspx",
+    "topics": [
+      "partimento",
+      "rule of octave",
+      "composition"
+    ],
+    "pillars": [
+      "COMPOSE",
+      "HARMONY"
+    ],
+    "metadata_status": "review_page_checked_not_publisher_record",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, bibliographic book review",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0009",
+    "title": "Form as Harmony in Rock Music",
+    "authors": "Drew Nobile",
+    "year": "2020",
+    "kind": "book",
+    "canonical_url": "https://academic.oup.com/book/33667",
+    "topics": [
+      "pop rock form",
+      "harmonic form",
+      "verse chorus"
+    ],
+    "pillars": [
+      "COMPOSE",
+      "PROGRESSIONS"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0010",
+    "title": "The Foundations of Rock",
+    "authors": "Walter Everett",
+    "year": "2008",
+    "kind": "book",
+    "canonical_url": "https://academic.oup.com/book/49249",
+    "topics": [
+      "rock harmony",
+      "melody",
+      "production",
+      "form"
+    ],
+    "pillars": [
+      "MUSIC",
+      "COMPOSE",
+      "PROGRESSIONS"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0011",
+    "title": "A Generative Theory of Tonal Music",
+    "authors": "Fred Lerdahl; Ray Jackendoff",
+    "year": "1983/1996",
+    "kind": "book",
+    "canonical_url": "https://mitpress.mit.edu/9780262621076/a-generative-theory-of-tonal-music/",
+    "topics": [
+      "grouping",
+      "meter",
+      "hierarchy",
+      "cognition"
+    ],
+    "pillars": [
+      "MUSIC",
+      "COMPOSE"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0012",
+    "title": "Tonal Pitch Space",
+    "authors": "Fred Lerdahl",
+    "year": "2005",
+    "kind": "book",
+    "canonical_url": "https://academic.oup.com/book/32497",
+    "topics": [
+      "tonal hierarchy",
+      "tension",
+      "distance"
+    ],
+    "pillars": [
+      "HARMONY",
+      "PROGRESSIONS"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0013",
+    "title": "Tonality: An Owner’s Manual",
+    "authors": "Dmitri Tymoczko",
+    "year": "2023",
+    "kind": "book",
+    "canonical_url": "https://academic.oup.com/book/57582",
+    "topics": [
+      "voice leading",
+      "rock logic",
+      "modulation",
+      "geometry"
+    ],
+    "pillars": [
+      "HARMONY",
+      "MUSIC"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0014",
+    "title": "Audacious Euphony",
+    "authors": "Richard Cohn",
+    "year": "2012",
+    "kind": "book",
+    "canonical_url": "https://academic.oup.com/book/12064",
+    "topics": [
+      "neo-Riemannian",
+      "chromatic triads"
+    ],
+    "pillars": [
+      "HARMONY"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0015",
+    "title": "Tonality and Transformation",
+    "authors": "Steven Rings",
+    "year": "2011",
+    "kind": "book",
+    "canonical_url": "https://academic.oup.com/book/12397",
+    "topics": [
+      "transformational networks",
+      "tonal intention"
+    ],
+    "pillars": [
+      "HARMONY"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0016",
+    "title": "Towards a generative syntax of tonal harmony",
+    "authors": "Martin Rohrmeier",
+    "year": "2011",
+    "kind": "paper",
+    "canonical_url": "https://www.tandfonline.com/doi/full/10.1080/17459737.2011.573676",
+    "topics": [
+      "generative syntax",
+      "harmonic structure"
+    ],
+    "pillars": [
+      "HARMONY",
+      "COMPUTATIONAL"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "publisher rights, verify OA status",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0017",
+    "title": "A corpus analysis of rock harmony",
+    "authors": "Trevor de Clercq; David Temperley",
+    "year": "2011",
+    "kind": "paper",
+    "canonical_url": "https://www.cambridge.org/core/journals/popular-music/article/abs/corpus-analysis-of-rock-harmony/C5210A8EC985DDF170B53124F4464DA4",
+    "topics": [
+      "rock chord progressions",
+      "corpus statistics"
+    ],
+    "pillars": [
+      "PROGRESSIONS"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted article, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0018",
+    "title": "The Cadential IV in Rock",
+    "authors": "David Temperley",
+    "year": "2011",
+    "kind": "paper",
+    "canonical_url": "https://www.mtosmt.org/issues/mto.11.17.1/mto.11.17.1.temperley.html",
+    "topics": [
+      "cadence",
+      "rock",
+      "plagal relations"
+    ],
+    "pillars": [
+      "HARMONY",
+      "PROGRESSIONS"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "online available, rights verify",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0019",
+    "title": "Tonal Ambiguity in Popular Music’s Axis Progressions",
+    "authors": "Mark Richards",
+    "year": "2017",
+    "kind": "paper",
+    "canonical_url": "https://www.mtosmt.org/issues/mto.17.23.3/mto.17.23.3.richards.php",
+    "topics": [
+      "axis loop",
+      "relative tonic ambiguity"
+    ],
+    "pillars": [
+      "PROGRESSIONS",
+      "COMPOSE"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "online available, rights verify",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0020",
+    "title": "Plateau Loops and Hybrid Tonics",
+    "authors": "Ben Duinker",
+    "year": "2019",
+    "kind": "paper",
+    "canonical_url": "https://mtosmt.org/issues/mto.19.25.4/mto.19.25.4.duinker.html",
+    "topics": [
+      "pop loops",
+      "hybrid tonic"
+    ],
+    "pillars": [
+      "PROGRESSIONS",
+      "HARMONY"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "online available, rights verify",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0021",
+    "title": "The Logic of Six-Based Minor for Harmonic Analyses of Popular Music",
+    "authors": "Trevor de Clercq",
+    "year": "2021",
+    "kind": "paper",
+    "canonical_url": "https://mtosmt.org/ojs/index.php/mto/article/view/759",
+    "topics": [
+      "six based minor",
+      "notation",
+      "tonal fusion"
+    ],
+    "pillars": [
+      "HARMONY",
+      "PROGRESSIONS"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "online available, rights verify",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0022",
+    "title": "Chord Tone or Harmonic-Bass Divorce?",
+    "authors": "Hudson; Wang",
+    "year": "2025",
+    "kind": "paper",
+    "canonical_url": "https://www.mtosmt.org/issues/mto.25.31.4/mto.25.31.4.hudson_wang.html",
+    "topics": [
+      "pop pedal ambiguity",
+      "bass interpretation"
+    ],
+    "pillars": [
+      "HARMONY",
+      "PROGRESSIONS"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "online available, rights verify",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0023",
+    "title": "The Cognition of Basic Musical Structures",
+    "authors": "David Temperley",
+    "year": "2001/2004",
+    "kind": "book",
+    "canonical_url": "https://mitpress.mit.edu/9780262701051/the-cognition-of-basic-musical-structures/",
+    "topics": [
+      "meter",
+      "pitch spelling",
+      "structure",
+      "preference rules"
+    ],
+    "pillars": [
+      "MUSIC",
+      "COMPUTATIONAL"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0024",
+    "title": "Sweet Anticipation: Music and Psychology of Expectation",
+    "authors": "David Huron",
+    "year": "2006/2008",
+    "kind": "book",
+    "canonical_url": "https://mitpress.mit.edu/9780262582780/sweet-anticipation/",
+    "topics": [
+      "musical expectation",
+      "emotion"
+    ],
+    "pillars": [
+      "COGNITION",
+      "COMPOSE"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0025",
+    "title": "Emotion and Meaning in Music",
+    "authors": "Leonard B. Meyer",
+    "year": "1956/1961",
+    "kind": "book",
+    "canonical_url": "https://press.uchicago.edu/ucp/books/book/chicago/E/bo28551887.html",
+    "topics": [
+      "emotion",
+      "expectation",
+      "closure"
+    ],
+    "pillars": [
+      "COGNITION",
+      "COMPOSE"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0026",
+    "title": "A Guide to Musical Analysis",
+    "authors": "Nicholas Cook",
+    "year": "1987/1994",
+    "kind": "book",
+    "canonical_url": "https://books.google.com/books/about/A_Guide_to_Musical_Analysis.html?id=wwKreRHGoVUC",
+    "topics": [
+      "analytical schools and comparison"
+    ],
+    "pillars": [
+      "MUSIC",
+      "HARMONY"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0027",
+    "title": "Symbolic Representation of Musical Chords",
+    "authors": "Christopher Harte; Mark Sandler; Samer Abdallah; Emilia Gómez",
+    "year": "2005",
+    "kind": "paper",
+    "canonical_url": "https://ismir2005.ismir.net/proceedings/1080.pdf",
+    "topics": [
+      "chord syntax",
+      "symbolic annotation"
+    ],
+    "pillars": [
+      "COMPUTATIONAL"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "paper available, reuse verify",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0028",
+    "title": "ChoCo: a Chord Corpus and a Data Transformation Workflow for Musical Harmony Knowledge Graphs",
+    "authors": "Jacopo de Berardinis et al.",
+    "year": "2023",
+    "kind": "paper",
+    "canonical_url": "https://www.nature.com/articles/s41597-023-02410-w",
+    "topics": [
+      "chord corpus",
+      "linked data",
+      "provenance"
+    ],
+    "pillars": [
+      "COMPUTATIONAL",
+      "PROGRESSIONS"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "article OA; dataset components distinct",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0029",
+    "title": "ChoCo: the Chord Corpus",
+    "authors": "Jacopo de Berardinis et al.",
+    "year": "2023",
+    "kind": "dataset",
+    "canonical_url": "https://zenodo.org/records/7706751",
+    "topics": [
+      "harmonic annotations",
+      "corpus"
+    ],
+    "pillars": [
+      "COMPUTATIONAL",
+      "PROGRESSIONS"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "check version and subdataset licenses",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0030",
+    "title": "When in Rome: A Meta-Corpus of Functional Harmony",
+    "authors": "Mark Gotham; Gianluca Micchi; Néstor Nápoles López; Malcolm Sailor",
+    "year": "2023",
+    "kind": "dataset_paper",
+    "canonical_url": "https://doi.org/10.5334/tismir.165",
+    "topics": [
+      "roman numeral corpus",
+      "harmony analysis"
+    ],
+    "pillars": [
+      "COMPUTATIONAL",
+      "HARMONY"
+    ],
+    "metadata_status": "publisher_article_and_repository_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "Paper CC BY 4.0; dataset contents/licenses separately review",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0031",
+    "title": "DCML harmony annotation standard",
+    "authors": "Digital and Cognitive Musicology Lab",
+    "year": "current",
+    "kind": "standard",
+    "canonical_url": "https://github.com/DCMLab/standards",
+    "topics": [
+      "roman analysis",
+      "modulation",
+      "corpus annotation"
+    ],
+    "pillars": [
+      "COMPUTATIONAL",
+      "HARMONY"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "repository license check",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0032",
+    "title": "Distant Listening Corpus",
+    "authors": "DCMLab",
+    "year": "current",
+    "kind": "dataset",
+    "canonical_url": "https://github.com/DCMLab/distant_listening_corpus",
+    "topics": [
+      "annotated scores",
+      "comparative corpus"
+    ],
+    "pillars": [
+      "COMPUTATIONAL"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "corpus-by-corpus licenses",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0033",
+    "title": "Annotated Beethoven Corpus",
+    "authors": "DCMLab",
+    "year": "current",
+    "kind": "dataset",
+    "canonical_url": "https://github.com/DCMLab/ABC",
+    "topics": [
+      "Beethoven harmony",
+      "expert annotations"
+    ],
+    "pillars": [
+      "HARMONY",
+      "COMPUTATIONAL"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "license and composition rights check",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0034",
+    "title": "music21 RomanNumeral API",
+    "authors": "music21 developers",
+    "year": "current",
+    "kind": "software_docs",
+    "canonical_url": "https://music21.org/music21docs/moduleReference/moduleRoman.html",
+    "topics": [
+      "roman numeral parsing",
+      "harmony"
+    ],
+    "pillars": [
+      "COMPUTATIONAL"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "software license separate from score license",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0035",
+    "title": "MusicXML 4.0",
+    "authors": "W3C Music Notation Community Group",
+    "year": "2021",
+    "kind": "standard",
+    "canonical_url": "https://www.w3.org/2021/06/musicxml40/",
+    "topics": [
+      "digital score interchange"
+    ],
+    "pillars": [
+      "COMPUTATIONAL"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "W3C FSA, not blanket score license",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0036",
+    "title": "MEI 5.1 Guidelines",
+    "authors": "Music Encoding Initiative",
+    "year": "2025",
+    "kind": "standard",
+    "canonical_url": "https://music-encoding.org/guidelines/",
+    "topics": [
+      "music notation",
+      "editorial and analysis"
+    ],
+    "pillars": [
+      "COMPUTATIONAL"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "MEI 5.1 is current stable reference (not 6-dev); actual rights per encoding separate",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0037",
+    "title": "Explorations in Music Theory",
+    "authors": "Dariusz Terefenko; Benjamin Wadsworth",
+    "year": "2025",
+    "kind": "textbook",
+    "canonical_url": "https://www.routledge.com/Explorations-in-Music-Theory-Harmony-Musicianship-Improvisation/Terefenko-Wadsworth/p/book/9781003042976",
+    "topics": [
+      "improvisation",
+      "history",
+      "composition",
+      "musicianship"
+    ],
+    "pillars": [
+      "MUSIC",
+      "COMPOSE"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "copyrighted, reference only",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0038",
+    "title": "Music Theory & Composition (open)",
+    "authors": "Justin Henry Rubin",
+    "year": "2024",
+    "kind": "open_textbook",
+    "canonical_url": "https://open.umn.edu/opentextbooks/textbooks/music-composition-theory",
+    "topics": [
+      "composition",
+      "musical form",
+      "modern techniques"
+    ],
+    "pillars": [
+      "COMPOSE"
+    ],
+    "metadata_status": "duplicate_edition_reference",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "CC BY; separate assets check",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review",
+    "notes": "Same original book as SRC-V3-0003; retain alias but deduplicate on import."
+  },
+  {
+    "id": "SRC-V3-0039",
+    "title": "Open Music Theory: About the Book",
+    "authors": "Gotham et al.",
+    "year": "2023",
+    "kind": "open_textbook_metadata",
+    "canonical_url": "https://viva.pressbooks.pub/openmusictheory/about/",
+    "topics": [
+      "inclusive pedagogy",
+      "form",
+      "orchestration"
+    ],
+    "pillars": [
+      "MUSIC",
+      "COMPOSE"
+    ],
+    "metadata_status": "duplicate_edition_reference",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "CC BY-SA text; per media separate",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review",
+    "notes": "About page for SRC-V3-0001; not independent scholarly source."
+  },
+  {
+    "id": "SRC-V3-0040",
+    "title": "Working in Harmony",
+    "authors": "Gabriel Fankhauser",
+    "year": "n.d.",
+    "kind": "open_textbook",
+    "canonical_url": "https://faculty.ung.edu/gfankhauser/",
+    "topics": [
+      "diatonic",
+      "chromatic",
+      "20th century harmony"
+    ],
+    "pillars": [
+      "HARMONY",
+      "MUSIC"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "free to read; reuse license unknown",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0041",
+    "title": "Harmony and Musicianship with Solfège",
+    "authors": "Laszlo J. Cser; Daniel Wanner",
+    "year": "n.d.",
+    "kind": "open_textbook",
+    "canonical_url": "https://www.lacc.edu/academics/pathways/pae/music-dept/resources",
+    "topics": [
+      "harmonic theory",
+      "ear training"
+    ],
+    "pillars": [
+      "MUSIC",
+      "HARMONY"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "free online; reuse license unknown",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0042",
+    "title": "Integrated Musicianship: Theory",
+    "authors": "Sean Butterfield",
+    "year": "2025/2026",
+    "kind": "open_textbook",
+    "canonical_url": "https://intmus.github.io/inttheory/",
+    "topics": [
+      "aural skills",
+      "music theory",
+      "interactive notation"
+    ],
+    "pillars": [
+      "MUSIC"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "open-source claim; license verify",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0043",
+    "title": "Multimodal Musicianship",
+    "authors": "Victoria Malawey",
+    "year": "2024",
+    "kind": "open_textbook",
+    "canonical_url": "https://digitalcommons.macalester.edu/books/7/",
+    "topics": [
+      "tonal harmony",
+      "aural pedagogy"
+    ],
+    "pillars": [
+      "MUSIC"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "CC BY-NC-SA 4.0",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0044",
+    "title": "Fundamentals Function and Form",
+    "authors": "Andre Mount",
+    "year": "2020",
+    "kind": "open_textbook",
+    "canonical_url": "https://asccc-oeri.org/open-educational-resources-and-music/",
+    "topics": [
+      "tonal forms",
+      "voice leading",
+      "ear training"
+    ],
+    "pillars": [
+      "MUSIC",
+      "HARMONY",
+      "COMPOSE"
+    ],
+    "metadata_status": "secondary_OER_directory_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "CC BY-NC according to guide",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0045",
+    "title": "Math and Music (OpenStax)",
+    "authors": "OpenStax",
+    "year": "2023",
+    "kind": "open_textbook_chapter",
+    "canonical_url": "https://openstax.org/books/contemporary-mathematics/pages/13-4-math-and-music",
+    "topics": [
+      "frequency",
+      "intervals",
+      "mathematics"
+    ],
+    "pillars": [
+      "MUSIC"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "OpenStax license verify",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0046",
+    "title": "Theory of Harmony, centennial edition",
+    "authors": "Arnold Schoenberg",
+    "year": "1911 / modern edition",
+    "kind": "historical_book",
+    "canonical_url": "https://www.ucpress.edu/books/theory-of-harmony/paper",
+    "topics": [
+      "historical harmony",
+      "contemporary criticism"
+    ],
+    "pillars": [
+      "HARMONY"
+    ],
+    "metadata_status": "web_landing_page_or_abstract_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "edition copyrighted; original rights jurisdiction-specific",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  },
+  {
+    "id": "SRC-V3-0047",
+    "title": "Scalar Shift in Popular Music",
+    "authors": "David Temperley",
+    "year": "2011",
+    "kind": "article",
+    "canonical_url": "https://www.mtosmt.org/issues/mto.11.17.4/mto.11.17.4.temperley.php",
+    "topics": [
+      "rock scales",
+      "modal mixtures",
+      "phrase boundaries"
+    ],
+    "pillars": [
+      "HARMONY",
+      "PROGRESSIONS"
+    ],
+    "metadata_status": "journal_full_text_page_checked",
+    "reading_status": "landing_page_or_excerpt_only",
+    "full_text_verified": false,
+    "license_note": "online available, rights verify",
+    "repository_redistribution_allowed": "UNVERIFIED",
+    "source_claim_status": "candidate_for_claim_level_review"
+  }
+]

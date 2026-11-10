@@ -1,0 +1,2377 @@
+[
+  {
+    "id": "PROG-V4-0001",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "F",
+      "G7",
+      "C"
+    ],
+    "roman_label_candidates": "I–IV–V7–I",
+    "composition_intent": "prädominante Hinführung und authentische Rückkehr",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0002",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "Dm",
+      "G7",
+      "C"
+    ],
+    "roman_label_candidates": "I–ii–V7–I",
+    "composition_intent": "ii als prädominante Vorbereitung",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0003",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "Am",
+      "Dm",
+      "G7",
+      "C"
+    ],
+    "roman_label_candidates": "I–vi–ii–V7–I",
+    "composition_intent": "fallende Quintbeziehung im Mittelteil",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0004",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "Em",
+      "F",
+      "G7",
+      "C"
+    ],
+    "roman_label_candidates": "I–iii–IV–V7–I",
+    "composition_intent": "schrittweise Stufenfärbung vor Dominante",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0005",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "F",
+      "Dm",
+      "G7",
+      "C"
+    ],
+    "roman_label_candidates": "I–IV–ii–V7–I",
+    "composition_intent": "zwei prädominante Möglichkeiten verbinden",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0006",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "G/B",
+      "Am",
+      "G",
+      "F",
+      "G",
+      "C"
+    ],
+    "roman_label_candidates": "I–V6–vi–V–IV–V–I",
+    "composition_intent": "absteigende Basskontur mit Inversion",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0007",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "C/E",
+      "F",
+      "G7",
+      "C"
+    ],
+    "roman_label_candidates": "I–I6–IV–V7–I",
+    "composition_intent": "Bassbewegung erzeugt Vorwärtsdrang",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0008",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "Am",
+      "F",
+      "G7",
+      "C"
+    ],
+    "roman_label_candidates": "I–vi–IV–V7–I",
+    "composition_intent": "klassische Doo-wop-nahe Schleifenidee",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0009",
+    "family": "classical",
+    "tonal_context": "G major",
+    "chord_symbols": [
+      "G",
+      "C",
+      "D7",
+      "G"
+    ],
+    "roman_label_candidates": "I–IV–V7–I",
+    "composition_intent": "funktionale Transposition mit klarer Dominante",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0010",
+    "family": "classical",
+    "tonal_context": "G major",
+    "chord_symbols": [
+      "G",
+      "Am",
+      "D7",
+      "G"
+    ],
+    "roman_label_candidates": "I–ii–V7–I",
+    "composition_intent": "Sekundärstufe als Vorfeld",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0011",
+    "family": "classical",
+    "tonal_context": "D major",
+    "chord_symbols": [
+      "D",
+      "Em",
+      "A7",
+      "D"
+    ],
+    "roman_label_candidates": "I–ii–V7–I",
+    "composition_intent": "funktionaler Vierklang in D",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0012",
+    "family": "classical",
+    "tonal_context": "F major",
+    "chord_symbols": [
+      "F",
+      "Bb",
+      "C7",
+      "F"
+    ],
+    "roman_label_candidates": "I–IV–V7–I",
+    "composition_intent": "F-Dur mit einfachem Schluss",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0013",
+    "family": "classical",
+    "tonal_context": "Bb major",
+    "chord_symbols": [
+      "Bb",
+      "Eb",
+      "F7",
+      "Bb"
+    ],
+    "roman_label_candidates": "I–IV–V7–I",
+    "composition_intent": "Kadenz in B-Dur mit international Bb",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0014",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "D7",
+      "G7",
+      "C"
+    ],
+    "roman_label_candidates": "I–V7/V–V7–I",
+    "composition_intent": "angewandte Dominante zur Dominante",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0015",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "A7",
+      "Dm",
+      "G7",
+      "C"
+    ],
+    "roman_label_candidates": "I–V7/ii–ii–V7–I",
+    "composition_intent": "applied dominant zur Prädominante",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0016",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "E7",
+      "Am",
+      "Dm",
+      "G7",
+      "C"
+    ],
+    "roman_label_candidates": "I–V7/vi–vi–ii–V7–I",
+    "composition_intent": "lokale Tonikalisierung der vi",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0017",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "C7",
+      "F",
+      "G7",
+      "C"
+    ],
+    "roman_label_candidates": "I–V7/IV–IV–V7–I",
+    "composition_intent": "Durtonika mit chromatischer Septime als Funktion",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0018",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "B7",
+      "Em",
+      "A7",
+      "Dm",
+      "G7",
+      "C"
+    ],
+    "roman_label_candidates": "I–V7/iii–iii–V7/ii–ii–V7–I",
+    "composition_intent": "Kette angewandter Dominanten",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0019",
+    "family": "classical",
+    "tonal_context": "A minor",
+    "chord_symbols": [
+      "Am",
+      "Dm",
+      "E7",
+      "Am"
+    ],
+    "roman_label_candidates": "i–iv–V7–i",
+    "composition_intent": "stärkere Mollkadenz durch G# im E7",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0020",
+    "family": "classical",
+    "tonal_context": "A minor",
+    "chord_symbols": [
+      "Am",
+      "Bdim",
+      "E7",
+      "Am"
+    ],
+    "roman_label_candidates": "i–ii°–V7–i",
+    "composition_intent": "verminderte ii als Vorfeld",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0021",
+    "family": "classical",
+    "tonal_context": "A minor",
+    "chord_symbols": [
+      "Am",
+      "F",
+      "Dm",
+      "E7",
+      "Am"
+    ],
+    "roman_label_candidates": "i–VI–iv–V7–i",
+    "composition_intent": "Molltonalität mit Dur-V",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0022",
+    "family": "classical",
+    "tonal_context": "A minor",
+    "chord_symbols": [
+      "Am",
+      "C",
+      "Dm",
+      "E7",
+      "Am"
+    ],
+    "roman_label_candidates": "i–III–iv–V7–i",
+    "composition_intent": "mediantischer Aufstieg in Moll",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0023",
+    "family": "classical",
+    "tonal_context": "A minor",
+    "chord_symbols": [
+      "Am",
+      "Dm",
+      "G",
+      "C",
+      "F",
+      "Bdim",
+      "E7",
+      "Am"
+    ],
+    "roman_label_candidates": "i–iv–VII–III–VI–ii°–V7–i",
+    "composition_intent": "Quintfallschema in Moll",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0024",
+    "family": "classical",
+    "tonal_context": "E minor",
+    "chord_symbols": [
+      "Em",
+      "Am",
+      "B7",
+      "Em"
+    ],
+    "roman_label_candidates": "i–iv–V7–i",
+    "composition_intent": "D# als Leitton in E-Moll",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0025",
+    "family": "classical",
+    "tonal_context": "D minor",
+    "chord_symbols": [
+      "Dm",
+      "Gm",
+      "A7",
+      "Dm"
+    ],
+    "roman_label_candidates": "i–iv–V7–i",
+    "composition_intent": "Mollkadenz in D",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0026",
+    "family": "classical",
+    "tonal_context": "G minor",
+    "chord_symbols": [
+      "Gm",
+      "Cm",
+      "D7",
+      "Gm"
+    ],
+    "roman_label_candidates": "i–iv–V7–i",
+    "composition_intent": "Mollkadenz in G",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0027",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "Fm",
+      "C"
+    ],
+    "roman_label_candidates": "I–iv–I",
+    "composition_intent": "Mollsubdominante als Borrowed Chord",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0028",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "Bb",
+      "F",
+      "C"
+    ],
+    "roman_label_candidates": "I–bVII–IV–I",
+    "composition_intent": "modal gefärbte Abweichung von klassischer Funktion",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0029",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "Ab",
+      "Fm",
+      "G7",
+      "C"
+    ],
+    "roman_label_candidates": "I–bVI–iv–V7–I",
+    "composition_intent": "Entlehnung aus parallelem Moll",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0030",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "Db",
+      "G7",
+      "C"
+    ],
+    "roman_label_candidates": "I–bII–V7–I",
+    "composition_intent": "neapolitanische Klangidee ohne Umkehrungsgarantie",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0031",
+    "family": "classical",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "Fm",
+      "G7",
+      "C"
+    ],
+    "roman_label_candidates": "I–iv–V7–I",
+    "composition_intent": "Mollprädominante vor klassischer Dominante",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0032",
+    "family": "modal",
+    "tonal_context": "D dorian",
+    "chord_symbols": [
+      "Dm",
+      "G",
+      "Dm"
+    ],
+    "roman_label_candidates": "i–IV–i",
+    "composition_intent": "Dorisches Zentrum mit Dur-IV",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0033",
+    "family": "modal",
+    "tonal_context": "D dorian",
+    "chord_symbols": [
+      "Dm",
+      "C",
+      "G",
+      "Dm"
+    ],
+    "roman_label_candidates": "i–bVII–IV–i",
+    "composition_intent": "B als mögliche Modalfarbe",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0034",
+    "family": "modal",
+    "tonal_context": "D dorian",
+    "chord_symbols": [
+      "Dm",
+      "G",
+      "Am",
+      "Dm"
+    ],
+    "roman_label_candidates": "i–IV–v–i",
+    "composition_intent": "Moll-v ohne funktionalen Leitton",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0035",
+    "family": "modal",
+    "tonal_context": "E phrygian",
+    "chord_symbols": [
+      "Em",
+      "F",
+      "Em"
+    ],
+    "roman_label_candidates": "i–bII–i",
+    "composition_intent": "phrygischer Halbtonnachbar",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0036",
+    "family": "modal",
+    "tonal_context": "E phrygian",
+    "chord_symbols": [
+      "Em",
+      "F",
+      "Dm",
+      "Em"
+    ],
+    "roman_label_candidates": "i–bII–bVII–i",
+    "composition_intent": "phrygische Bewegung, Kontext entscheidend",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0037",
+    "family": "modal",
+    "tonal_context": "A aeolian",
+    "chord_symbols": [
+      "Am",
+      "G",
+      "F",
+      "Am"
+    ],
+    "roman_label_candidates": "i–bVII–bVI–i",
+    "composition_intent": "äolische Abstiegsbewegung",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0038",
+    "family": "modal",
+    "tonal_context": "A aeolian",
+    "chord_symbols": [
+      "Am",
+      "F",
+      "G",
+      "Am"
+    ],
+    "roman_label_candidates": "i–bVI–bVII–i",
+    "composition_intent": "äolische Schlussfärbung",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0039",
+    "family": "modal",
+    "tonal_context": "G mixolydian",
+    "chord_symbols": [
+      "G",
+      "F",
+      "C",
+      "G"
+    ],
+    "roman_label_candidates": "I–bVII–IV–I",
+    "composition_intent": "Mixolydian-Plagal-Nachbarschaft",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0040",
+    "family": "modal",
+    "tonal_context": "G mixolydian",
+    "chord_symbols": [
+      "G",
+      "C",
+      "F",
+      "G"
+    ],
+    "roman_label_candidates": "I–IV–bVII–I",
+    "composition_intent": "Durzentrum ohne Leittondominante",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0041",
+    "family": "modal",
+    "tonal_context": "F mixolydian",
+    "chord_symbols": [
+      "F",
+      "Eb",
+      "Bb",
+      "F"
+    ],
+    "roman_label_candidates": "I–bVII–IV–I",
+    "composition_intent": "Mixolydisch in F",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0042",
+    "family": "modal",
+    "tonal_context": "C lydian",
+    "chord_symbols": [
+      "C",
+      "D",
+      "C"
+    ],
+    "roman_label_candidates": "I–II–I",
+    "composition_intent": "Dur-II als lydische Farbe",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0043",
+    "family": "modal",
+    "tonal_context": "C lydian",
+    "chord_symbols": [
+      "C",
+      "D",
+      "Em",
+      "C"
+    ],
+    "roman_label_candidates": "I–II–iii–I",
+    "composition_intent": "Lydischer Fokus, Melodie muss den Modus stützen",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0044",
+    "family": "modal",
+    "tonal_context": "D lydian",
+    "chord_symbols": [
+      "D",
+      "E",
+      "D"
+    ],
+    "roman_label_candidates": "I–II–I",
+    "composition_intent": "Lydische Variante in D",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0045",
+    "family": "modal",
+    "tonal_context": "B locrian",
+    "chord_symbols": [
+      "Bdim",
+      "C",
+      "Bdim"
+    ],
+    "roman_label_candidates": "i°–bII–i°",
+    "composition_intent": "Instabiler Modus ohne etablierte Kadenznorm",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0046",
+    "family": "modal",
+    "tonal_context": "E dorian",
+    "chord_symbols": [
+      "Em",
+      "A",
+      "Em"
+    ],
+    "roman_label_candidates": "i–IV–i",
+    "composition_intent": "Dorian in E",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0047",
+    "family": "modal",
+    "tonal_context": "C minor aeolian",
+    "chord_symbols": [
+      "Cm",
+      "Bb",
+      "Ab",
+      "Cm"
+    ],
+    "roman_label_candidates": "i–bVII–bVI–i",
+    "composition_intent": "äolischer Grundklang",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0048",
+    "family": "modal",
+    "tonal_context": "D phrygian",
+    "chord_symbols": [
+      "Dm",
+      "Eb",
+      "Dm"
+    ],
+    "roman_label_candidates": "i–bII–i",
+    "composition_intent": "Halbton-Obernachbar",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0049",
+    "family": "modal",
+    "tonal_context": "A dorian",
+    "chord_symbols": [
+      "Am",
+      "D",
+      "Am"
+    ],
+    "roman_label_candidates": "i–IV–i",
+    "composition_intent": "F# durch D-Dur im A-Dorischen",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0050",
+    "family": "modal",
+    "tonal_context": "G aeolian",
+    "chord_symbols": [
+      "Gm",
+      "F",
+      "Eb",
+      "Gm"
+    ],
+    "roman_label_candidates": "i–bVII–bVI–i",
+    "composition_intent": "a-Moll-unabhängige Äolisch-Übung",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0051",
+    "family": "modal",
+    "tonal_context": "C mixolydian",
+    "chord_symbols": [
+      "C",
+      "Bb",
+      "F",
+      "C"
+    ],
+    "roman_label_candidates": "I–bVII–IV–I",
+    "composition_intent": "C-Mixolydisch ohne Dominant-Notwendigkeit",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0052",
+    "family": "pop_rock",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "G",
+      "Am",
+      "F"
+    ],
+    "roman_label_candidates": "I–V–vi–IV",
+    "composition_intent": "klassischer Axis-Loop als Pop-Schema",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0053",
+    "family": "pop_rock",
+    "tonal_context": "C major / A minor",
+    "chord_symbols": [
+      "Am",
+      "F",
+      "C",
+      "G"
+    ],
+    "roman_label_candidates": "vi–IV–I–V oder i–bVI–bIII–bVII",
+    "composition_intent": "Tonalität durch Melodie und Metrik offen",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0054",
+    "family": "pop_rock",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "F",
+      "C",
+      "G",
+      "Am"
+    ],
+    "roman_label_candidates": "IV–I–V–vi",
+    "composition_intent": "Rotation verschiebt Auftaktfokus",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0055",
+    "family": "pop_rock",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "G",
+      "Am",
+      "F",
+      "C"
+    ],
+    "roman_label_candidates": "V–vi–IV–I",
+    "composition_intent": "Rotation mit anderer Formwirkung",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0056",
+    "family": "pop_rock",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "F",
+      "G",
+      "Am"
+    ],
+    "roman_label_candidates": "IV–V–vi",
+    "composition_intent": "Plateau-Idee ohne erklingendes I",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0057",
+    "family": "pop_rock",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "F",
+      "G",
+      "Am",
+      "G"
+    ],
+    "roman_label_candidates": "IV–V–vi–V",
+    "composition_intent": "Plateau und Rückbewegung",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0058",
+    "family": "pop_rock",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "Bb",
+      "F",
+      "C"
+    ],
+    "roman_label_candidates": "I–bVII–IV–I",
+    "composition_intent": "Rock-mixolydische Akkordfolge",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0059",
+    "family": "pop_rock",
+    "tonal_context": "A minor",
+    "chord_symbols": [
+      "Am",
+      "G",
+      "F",
+      "G"
+    ],
+    "roman_label_candidates": "i–bVII–bVI–bVII",
+    "composition_intent": "äolischer Loop",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0060",
+    "family": "pop_rock",
+    "tonal_context": "A minor",
+    "chord_symbols": [
+      "Am",
+      "F",
+      "C",
+      "G"
+    ],
+    "roman_label_candidates": "i–bVI–bIII–bVII",
+    "composition_intent": "äolischer Axis-Zugang",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0061",
+    "family": "pop_rock",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "Em",
+      "F",
+      "Fm",
+      "C"
+    ],
+    "roman_label_candidates": "I–iii–IV–iv–I",
+    "composition_intent": "Mollsubdominante als Songfarbenwechsel",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0062",
+    "family": "pop_rock",
+    "tonal_context": "G major",
+    "chord_symbols": [
+      "G",
+      "D",
+      "Em",
+      "C"
+    ],
+    "roman_label_candidates": "I–V–vi–IV",
+    "composition_intent": "Axis-Familie in G",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0063",
+    "family": "pop_rock",
+    "tonal_context": "D major",
+    "chord_symbols": [
+      "D",
+      "A",
+      "Bm",
+      "G"
+    ],
+    "roman_label_candidates": "I–V–vi–IV",
+    "composition_intent": "Axis-Familie in D",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0064",
+    "family": "pop_rock",
+    "tonal_context": "F major",
+    "chord_symbols": [
+      "F",
+      "C",
+      "Dm",
+      "Bb"
+    ],
+    "roman_label_candidates": "I–V–vi–IV",
+    "composition_intent": "Axis-Familie in F",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0065",
+    "family": "pop_rock",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "Am",
+      "F",
+      "G"
+    ],
+    "roman_label_candidates": "I–vi–IV–V",
+    "composition_intent": "Doo-wop-nahes Ausgangsschema",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0066",
+    "family": "pop_rock",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "G",
+      "F",
+      "C"
+    ],
+    "roman_label_candidates": "I–V–IV–I",
+    "composition_intent": "plagale und dominante Referenz",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0067",
+    "family": "pop_rock",
+    "tonal_context": "G major",
+    "chord_symbols": [
+      "G",
+      "C",
+      "D",
+      "C"
+    ],
+    "roman_label_candidates": "I–IV–V–IV",
+    "composition_intent": "Rock-Kreislauf ohne Schluss",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0068",
+    "family": "pop_rock",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "F",
+      "Am",
+      "G"
+    ],
+    "roman_label_candidates": "I–IV–vi–V",
+    "composition_intent": "V am Loop-Ende mit Vorwärtsbewegung",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0069",
+    "family": "pop_rock",
+    "tonal_context": "A minor",
+    "chord_symbols": [
+      "Am",
+      "Dm",
+      "G",
+      "Am"
+    ],
+    "roman_label_candidates": "i–iv–bVII–i",
+    "composition_intent": "modale, prädominant gefärbte Schleife",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0070",
+    "family": "pop_rock",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "F",
+      "G",
+      "F"
+    ],
+    "roman_label_candidates": "I–IV–V–IV",
+    "composition_intent": "keine notwendige Kadenz trotz V",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0071",
+    "family": "pop_rock",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "G/B",
+      "Am",
+      "F"
+    ],
+    "roman_label_candidates": "I–V6–vi–IV",
+    "composition_intent": "Bass C–B–A als Formsignal",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": [
+      "EXT-V4-002"
+    ]
+  },
+  {
+    "id": "PROG-V4-0072",
+    "family": "jazz",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "roman_label_candidates": "ii7–V7–Imaj7",
+    "composition_intent": "klassisches Jazz-II-V-I",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0073",
+    "family": "jazz",
+    "tonal_context": "F major",
+    "chord_symbols": [
+      "Gm7",
+      "C7",
+      "Fmaj7"
+    ],
+    "roman_label_candidates": "ii7–V7–Imaj7",
+    "composition_intent": "Jazzkadenz nach F",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0074",
+    "family": "jazz",
+    "tonal_context": "Bb major",
+    "chord_symbols": [
+      "Cm7",
+      "F7",
+      "Bbmaj7"
+    ],
+    "roman_label_candidates": "ii7–V7–Imaj7",
+    "composition_intent": "Jazzkadenz nach Bb",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0075",
+    "family": "jazz",
+    "tonal_context": "G major",
+    "chord_symbols": [
+      "Am7",
+      "D7",
+      "Gmaj7"
+    ],
+    "roman_label_candidates": "ii7–V7–Imaj7",
+    "composition_intent": "Jazzkadenz nach G",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0076",
+    "family": "jazz",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "Dm7",
+      "Db7",
+      "Cmaj7"
+    ],
+    "roman_label_candidates": "ii7–subV7–Imaj7",
+    "composition_intent": "Tritonus-Substitution mit Halbtonbass",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0077",
+    "family": "jazz",
+    "tonal_context": "F major",
+    "chord_symbols": [
+      "Gm7",
+      "Gb7",
+      "Fmaj7"
+    ],
+    "roman_label_candidates": "ii7–subV7–Imaj7",
+    "composition_intent": "Tritonische Variante nach F",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0078",
+    "family": "jazz",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "Am7",
+      "D7",
+      "G7",
+      "Cmaj7"
+    ],
+    "roman_label_candidates": "vi7–V7/V–V7–Imaj7",
+    "composition_intent": "dominantische Quintkette",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0079",
+    "family": "jazz",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "Cmaj7",
+      "E7",
+      "Am7",
+      "G7",
+      "Cmaj7"
+    ],
+    "roman_label_candidates": "Imaj7–V7/vi–vi7–V7–Imaj7",
+    "composition_intent": "kurze Ausweichbewegung",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0080",
+    "family": "jazz",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "Cmaj7",
+      "A7",
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "roman_label_candidates": "Imaj7–V7/ii–ii7–V7–Imaj7",
+    "composition_intent": "angewandter Auftakt zu ii",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0081",
+    "family": "jazz",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "Fm7",
+      "Bb7",
+      "Cmaj7"
+    ],
+    "roman_label_candidates": "ivm7–bVII7–Imaj7",
+    "composition_intent": "Backdoor-Idee mit modaler Herkunft",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0082",
+    "family": "jazz",
+    "tonal_context": "A minor",
+    "chord_symbols": [
+      "Bm7b5",
+      "E7",
+      "Am"
+    ],
+    "roman_label_candidates": "iiø7–V7–i",
+    "composition_intent": "Moll-II-V-I mit Leitton",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0083",
+    "family": "jazz",
+    "tonal_context": "D minor",
+    "chord_symbols": [
+      "Em7b5",
+      "A7",
+      "Dm"
+    ],
+    "roman_label_candidates": "iiø7–V7–i",
+    "composition_intent": "Moll-II-V-I in D",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0084",
+    "family": "jazz",
+    "tonal_context": "G minor",
+    "chord_symbols": [
+      "Am7b5",
+      "D7",
+      "Gm"
+    ],
+    "roman_label_candidates": "iiø7–V7–i",
+    "composition_intent": "Moll-II-V-I in G",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0085",
+    "family": "jazz",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "Dm7",
+      "G7",
+      "Cmaj7",
+      "Cmaj7"
+    ],
+    "roman_label_candidates": "ii7–V7–Imaj7–Imaj7",
+    "composition_intent": "Auflösung mit verlängerter Tonika",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0086",
+    "family": "jazz",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "Dm7",
+      "G7",
+      "Em7",
+      "Am7",
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "roman_label_candidates": "ii7–V7–iii7–vi7–ii7–V7–Imaj7",
+    "composition_intent": "Turnaround und vermiedener Frühschluss",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0087",
+    "family": "jazz",
+    "tonal_context": "Eb major",
+    "chord_symbols": [
+      "Fm7",
+      "Bb7",
+      "Ebmaj7"
+    ],
+    "roman_label_candidates": "ii7–V7–Imaj7",
+    "composition_intent": "Jazzkadenz nach Eb",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0088",
+    "family": "jazz",
+    "tonal_context": "E major",
+    "chord_symbols": [
+      "F#m7",
+      "B7",
+      "Emaj7"
+    ],
+    "roman_label_candidates": "ii7–V7–Imaj7",
+    "composition_intent": "Jazzkadenz nach E",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0089",
+    "family": "jazz",
+    "tonal_context": "A major",
+    "chord_symbols": [
+      "Bm7",
+      "E7",
+      "Amaj7"
+    ],
+    "roman_label_candidates": "ii7–V7–Imaj7",
+    "composition_intent": "Jazzkadenz nach A",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0090",
+    "family": "jazz",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "Em7",
+      "A7",
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "roman_label_candidates": "iii7–V7/ii–ii7–V7–Imaj7",
+    "composition_intent": "diatonischer Start zur Zwischendominante",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0091",
+    "family": "jazz",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "Am7",
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "roman_label_candidates": "vi7–ii7–V7–Imaj7",
+    "composition_intent": "jazzige Quintfallfamilie",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0092",
+    "family": "blues",
+    "tonal_context": "C blues",
+    "chord_symbols": [
+      "C7",
+      "F7",
+      "C7",
+      "G7",
+      "F7",
+      "C7"
+    ],
+    "roman_label_candidates": "I7–IV7–I7–V7–IV7–I7",
+    "composition_intent": "kurze illustrative Bluesfunktionsfolge",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0093",
+    "family": "blues",
+    "tonal_context": "F blues",
+    "chord_symbols": [
+      "F7",
+      "Bb7",
+      "F7",
+      "C7",
+      "Bb7",
+      "F7"
+    ],
+    "roman_label_candidates": "I7–IV7–I7–V7–IV7–I7",
+    "composition_intent": "Bluesform in F",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0094",
+    "family": "blues",
+    "tonal_context": "Bb blues",
+    "chord_symbols": [
+      "Bb7",
+      "Eb7",
+      "Bb7",
+      "F7",
+      "Eb7",
+      "Bb7"
+    ],
+    "roman_label_candidates": "I7–IV7–I7–V7–IV7–I7",
+    "composition_intent": "Bluesform in Bb",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0095",
+    "family": "blues",
+    "tonal_context": "A blues",
+    "chord_symbols": [
+      "A7",
+      "D7",
+      "A7",
+      "E7",
+      "D7",
+      "A7"
+    ],
+    "roman_label_candidates": "I7–IV7–I7–V7–IV7–I7",
+    "composition_intent": "Bluesform in A",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0096",
+    "family": "blues",
+    "tonal_context": "D blues",
+    "chord_symbols": [
+      "D7",
+      "G7",
+      "D7",
+      "A7",
+      "G7",
+      "D7"
+    ],
+    "roman_label_candidates": "I7–IV7–I7–V7–IV7–I7",
+    "composition_intent": "Bluesform in D",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0097",
+    "family": "blues",
+    "tonal_context": "G blues",
+    "chord_symbols": [
+      "G7",
+      "C7",
+      "G7",
+      "D7",
+      "C7",
+      "G7"
+    ],
+    "roman_label_candidates": "I7–IV7–I7–V7–IV7–I7",
+    "composition_intent": "Bluesform in G",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0098",
+    "family": "blues",
+    "tonal_context": "C blues",
+    "chord_symbols": [
+      "C7",
+      "C7",
+      "F7",
+      "C7",
+      "G7",
+      "F7",
+      "C7",
+      "C7"
+    ],
+    "roman_label_candidates": "I7–I7–IV7–I7–V7–IV7–I7–I7",
+    "composition_intent": "8er-Bluesverwandte Miniatur, kein Zwölftakter",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0099",
+    "family": "blues",
+    "tonal_context": "A minor blues",
+    "chord_symbols": [
+      "Am7",
+      "Dm7",
+      "Am7",
+      "Em7",
+      "Dm7",
+      "Am7"
+    ],
+    "roman_label_candidates": "i7–iv7–i7–v7–iv7–i7",
+    "composition_intent": "Mollblues-Idee ohne Pflichtdominante",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0100",
+    "family": "blues",
+    "tonal_context": "E blues",
+    "chord_symbols": [
+      "E7",
+      "A7",
+      "E7",
+      "B7",
+      "A7",
+      "E7"
+    ],
+    "roman_label_candidates": "I7–IV7–I7–V7–IV7–I7",
+    "composition_intent": "Bluesform in E",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0101",
+    "family": "blues",
+    "tonal_context": "G minor blues",
+    "chord_symbols": [
+      "Gm7",
+      "Cm7",
+      "Gm7",
+      "D7",
+      "Cm7",
+      "Gm7"
+    ],
+    "roman_label_candidates": "i7–iv7–i7–V7–iv7–i7",
+    "composition_intent": "Mollblues mit alterierter Dominante",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0102",
+    "family": "soul_gospel",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "Cmaj7",
+      "Am7",
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "roman_label_candidates": "Imaj7–vi7–ii7–V7–Imaj7",
+    "composition_intent": "offene Septimfarben für Soul-Arrangement",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0103",
+    "family": "soul_gospel",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "F",
+      "Fm",
+      "C"
+    ],
+    "roman_label_candidates": "I–IV–iv–I",
+    "composition_intent": "Minor-IV als expressive Plagalbewegung",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0104",
+    "family": "soul_gospel",
+    "tonal_context": "Eb major",
+    "chord_symbols": [
+      "Eb",
+      "Ab",
+      "Fm",
+      "Bb7",
+      "Eb"
+    ],
+    "roman_label_candidates": "I–IV–ii–V7–I",
+    "composition_intent": "Vorbereitung mit plagaler Farbe",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0105",
+    "family": "soul_gospel",
+    "tonal_context": "F major",
+    "chord_symbols": [
+      "F",
+      "Bb",
+      "Bbm",
+      "F"
+    ],
+    "roman_label_candidates": "I–IV–iv–I",
+    "composition_intent": "Mollsubdominante nach F",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0106",
+    "family": "soul_gospel",
+    "tonal_context": "E major",
+    "chord_symbols": [
+      "E",
+      "G#m7",
+      "C#m7",
+      "Amaj7"
+    ],
+    "roman_label_candidates": "I–iii7–vi7–IVmaj7",
+    "composition_intent": "geschmeidige, wiederholbare Klangfolge",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0107",
+    "family": "soul_gospel",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "Cmaj7",
+      "B7",
+      "Em7",
+      "A7",
+      "Dm7",
+      "G7",
+      "Cmaj7"
+    ],
+    "roman_label_candidates": "Imaj7–V7/iii–iii7–V7/ii–ii7–V7–Imaj7",
+    "composition_intent": "dominantische Erweiterung als soulartige Studie",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0108",
+    "family": "soul_gospel",
+    "tonal_context": "Ab major",
+    "chord_symbols": [
+      "Ab",
+      "Db",
+      "Dbm",
+      "Ab"
+    ],
+    "roman_label_candidates": "I–IV–iv–I",
+    "composition_intent": "Mollsubdominante als klanglicher Wechsel",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0109",
+    "family": "soul_gospel",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "C/E",
+      "F",
+      "Fm",
+      "C/G",
+      "G7",
+      "C"
+    ],
+    "roman_label_candidates": "I–I6–IV–iv–I64–V7–I",
+    "composition_intent": "Bass, Plagal- und Dominantbewegung",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0110",
+    "family": "soul_gospel",
+    "tonal_context": "D major",
+    "chord_symbols": [
+      "D",
+      "G",
+      "Gm",
+      "D"
+    ],
+    "roman_label_candidates": "I–IV–iv–I",
+    "composition_intent": "Mollsubdominante in D",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0111",
+    "family": "soul_gospel",
+    "tonal_context": "G major",
+    "chord_symbols": [
+      "G",
+      "C",
+      "Cm",
+      "G"
+    ],
+    "roman_label_candidates": "I–IV–iv–I",
+    "composition_intent": "Mollsubdominante in G",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0112",
+    "family": "cinematic",
+    "tonal_context": "C major mixed",
+    "chord_symbols": [
+      "C",
+      "Ab",
+      "E",
+      "C"
+    ],
+    "roman_label_candidates": "I–bVI–III–I (deskriptiv)",
+    "composition_intent": "chromatische mediantische Farbfolge",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0113",
+    "family": "cinematic",
+    "tonal_context": "C minor mixed",
+    "chord_symbols": [
+      "Cm",
+      "Ab",
+      "Db",
+      "Cm"
+    ],
+    "roman_label_candidates": "i–bVI–bII–i (deskriptiv)",
+    "composition_intent": "Farbe vor formale Norm",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0114",
+    "family": "cinematic",
+    "tonal_context": "A minor",
+    "chord_symbols": [
+      "Am",
+      "F",
+      "Dm",
+      "E7",
+      "Am"
+    ],
+    "roman_label_candidates": "i–VI–iv–V7–i",
+    "composition_intent": "dramaturgische Mollspannung",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0115",
+    "family": "cinematic",
+    "tonal_context": "F minor",
+    "chord_symbols": [
+      "Fm",
+      "Db",
+      "Ab",
+      "Eb",
+      "Fm"
+    ],
+    "roman_label_candidates": "i–VI–III–VII–i",
+    "composition_intent": "äolische filmische Schleife",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0116",
+    "family": "cinematic",
+    "tonal_context": "D minor",
+    "chord_symbols": [
+      "Dm",
+      "Bb",
+      "F",
+      "C",
+      "Dm"
+    ],
+    "roman_label_candidates": "i–VI–III–VII–i",
+    "composition_intent": "Moll-Achse mit zurückgewonnener Mitte",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0117",
+    "family": "cinematic",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "Fm",
+      "Ab",
+      "C"
+    ],
+    "roman_label_candidates": "I–iv–bVI–I (deskriptiv)",
+    "composition_intent": "modal-koloristische Nachbarschaften",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0118",
+    "family": "cinematic",
+    "tonal_context": "E minor",
+    "chord_symbols": [
+      "Em",
+      "C",
+      "G",
+      "B7",
+      "Em"
+    ],
+    "roman_label_candidates": "i–VI–III–V7–i",
+    "composition_intent": "tonale Mollspannung als Szenenbogen",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0119",
+    "family": "cinematic",
+    "tonal_context": "D major",
+    "chord_symbols": [
+      "D",
+      "Bb",
+      "F",
+      "C",
+      "D"
+    ],
+    "roman_label_candidates": "I–bVI–bIII–bVII–I (deskriptiv)",
+    "composition_intent": "Chromatik ohne erzwungene Funktion",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0120",
+    "family": "cinematic",
+    "tonal_context": "G minor",
+    "chord_symbols": [
+      "Gm",
+      "Eb",
+      "Bb",
+      "F",
+      "Gm"
+    ],
+    "roman_label_candidates": "i–VI–III–VII–i",
+    "composition_intent": "äolischer Filmmusik-Kontext",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0121",
+    "family": "cinematic",
+    "tonal_context": "C minor",
+    "chord_symbols": [
+      "Cm",
+      "Ab",
+      "Eb",
+      "Bb",
+      "Cm"
+    ],
+    "roman_label_candidates": "i–VI–III–VII–i",
+    "composition_intent": "Mollkreis im tiefen Register",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0122",
+    "family": "experiment",
+    "tonal_context": "C major nonfunctional",
+    "chord_symbols": [
+      "C",
+      "Eb",
+      "Gb",
+      "A",
+      "C"
+    ],
+    "roman_label_candidates": "I–bIII–bV–VI–I (deskriptiv)",
+    "composition_intent": "Medianten/Farbkreise mit offener Tonika",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0123",
+    "family": "experiment",
+    "tonal_context": "C major nonfunctional",
+    "chord_symbols": [
+      "C",
+      "Ab",
+      "E",
+      "G",
+      "C"
+    ],
+    "roman_label_candidates": "I–bVI–III–V–I (deskriptiv)",
+    "composition_intent": "transformatorische Triadenverbindung",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0124",
+    "family": "experiment",
+    "tonal_context": "D minor mixed",
+    "chord_symbols": [
+      "Dm",
+      "F#",
+      "A",
+      "Dm"
+    ],
+    "roman_label_candidates": "i–#iii–V–i (deskriptiv)",
+    "composition_intent": "chromatische Dreiklangsschichtung",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0125",
+    "family": "experiment",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "D",
+      "C",
+      "E",
+      "C"
+    ],
+    "roman_label_candidates": "I–II–I–III–I (deskriptiv)",
+    "composition_intent": "Lydik und Chromatik als Kompositionsbausteine",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0126",
+    "family": "experiment",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "Db",
+      "C"
+    ],
+    "roman_label_candidates": "I–bII–I",
+    "composition_intent": "chromatischer Nachbar ohne klassisches Funktionsurteil",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0127",
+    "family": "experiment",
+    "tonal_context": "A minor",
+    "chord_symbols": [
+      "Am",
+      "Bb",
+      "Am"
+    ],
+    "roman_label_candidates": "i–bII–i",
+    "composition_intent": "phrygischer Halbtonnachbar",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0128",
+    "family": "experiment",
+    "tonal_context": "C major",
+    "chord_symbols": [
+      "C",
+      "Ab",
+      "C",
+      "Fm",
+      "C"
+    ],
+    "roman_label_candidates": "I–bVI–I–iv–I",
+    "composition_intent": "Medianten und modale Entlehnung",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0129",
+    "family": "experiment",
+    "tonal_context": "D dorian",
+    "chord_symbols": [
+      "Dm",
+      "G",
+      "Dm",
+      "G",
+      "Dm"
+    ],
+    "roman_label_candidates": "i–IV–i–IV–i",
+    "composition_intent": "oszillierende Modalklangfamilie",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0130",
+    "family": "experiment",
+    "tonal_context": "C minor",
+    "chord_symbols": [
+      "Cm",
+      "Fm",
+      "Ab",
+      "Cm"
+    ],
+    "roman_label_candidates": "i–iv–VI–i",
+    "composition_intent": "mehrere Wege zurück zum Mollzentrum",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  },
+  {
+    "id": "PROG-V4-0131",
+    "family": "experiment",
+    "tonal_context": "F major mixed",
+    "chord_symbols": [
+      "F",
+      "Ab",
+      "Db",
+      "F"
+    ],
+    "roman_label_candidates": "I–bIII–bVI–I (deskriptiv)",
+    "composition_intent": "chromatisch-medianter harmonischer Raum",
+    "source_type": "original_STEPS_illustration",
+    "notes": "Chord-symbol sequence alone cannot certify key, cadence class, or stylistic prevalence.",
+    "status": "editorial_example_pending_musical_review",
+    "references": []
+  }
+]

@@ -1,0 +1,29 @@
+# ABLETON-233 — Drop It: The Kick in Electronic Music
+
+**Dauerhafte Originalquelle:** https://www.ableton.com/en/blog/drop-it-kick-electronic-music/  
+**Quellentyp:** Article/Download  
+**Hauptzuordnung:** `05_DRUMS_RHYTHM_GROOVE`  
+**Verwandte STEPS-Bereiche:** `23_BEATMAKING_BASS_808`, `04_COMPOSING`, `26_MIXING`  
+**Stichwörter:** Kick Drum;Acoustics;Techno;Sample Download  
+**Nachweis:** turn882745view8 (Recherche-Sitzungsnachweis; nur Original-URL ist dauerhaft)  
+**Prüfstatus:** Originalartikel einzeln im Web geöffnet oder direkt als Originalseite bei Ableton recherchiert. Eingebettete Videos, Audioinhalte und Projektdateien nicht unabhängig vollständig geprüft.  
+**Nutzungsstatus:** Weitergabe von Volltext, Samples, Videos, Presets oder Projektdateien nicht genehmigt.  
+**Downloads:** Angekündigtes Download-Asset; Lizenz, Ziel und Kompatibilität noch einzeln prüfen.
+
+## Eigene, für STEPS abgeleitete Forschungsaufgabe
+
+Kickfundamental, Decay, transientenbedingte Maskierung und Headroom anhand eigener Kickvarianten vergleichen.
+
+## Abgrenzung und Qualität
+
+* Dies ist eine STEPS-Forschungskarte, keine Kopie oder Transkription des Artikels.
+* Autorensicht, künstlerische Einzelfälle und DAW-spezifische Technik sind keine universellen Musikgesetze.
+* Produktfeatures bleiben **Kandidaten**; technische Realisierbarkeit, Lizenz und Repository müssen vor Implementierung separat geprüft werden.
+* Vor Freigabe ein eigenes reproduzierbares Beispiel anfertigen, die Parameter dokumentieren und Hör-/Musikfachreview ergänzen.
+
+## Verifikation für Codex
+
+1. Link erneut öffnen; Publikationsdatum, Autoren und spezifische Assets nachtragen.
+2. Prüfen, ob der Videoinhalt dem Artikeltext entspricht; fehlende Videoanalyse explizit markieren.
+3. Originäres STEPS-Experiment mit eigener Musik und Herkunftsmetadaten erstellen.
+4. Gegenprobe und fachliche/technische Abnahme dokumentieren; Rechte für **jede** wiederverwendete externe Datei separat erfassen.

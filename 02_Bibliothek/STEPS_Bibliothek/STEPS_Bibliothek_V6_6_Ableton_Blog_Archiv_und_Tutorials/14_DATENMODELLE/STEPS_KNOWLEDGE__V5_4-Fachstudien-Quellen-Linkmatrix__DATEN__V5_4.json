@@ -1,0 +1,528 @@
+[
+  {
+    "id": "MUSIKTHEORIE-54-01",
+    "folder": "01_MUSIKTHEORIE",
+    "kind": "fachstudie",
+    "title": "Tonhöhe, Schreibweise und Enharmonik",
+    "file": "01_MUSIKTHEORIE/V5_4_Vertiefung/STEPS_MUSIKTHEORIE__Tonhoehen-Enharmonik-Spelling__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R01",
+      "R02",
+      "R10"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "MUSIKTHEORIE-54-02",
+    "folder": "01_MUSIKTHEORIE",
+    "kind": "fachstudie",
+    "title": "Intervalle nach Buchstaben und Halbtönen",
+    "file": "01_MUSIKTHEORIE/V5_4_Vertiefung/STEPS_MUSIKTHEORIE__Intervalle-Diatonik-Chromatik__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R01",
+      "R02"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "MUSIKTHEORIE-54-03",
+    "folder": "01_MUSIKTHEORIE",
+    "kind": "fachstudie",
+    "title": "Skalen, Modi und hörbare Zentren",
+    "file": "01_MUSIKTHEORIE/V5_4_Vertiefung/STEPS_MUSIKTHEORIE__Skalen-Modi-Modalzentren__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R01",
+      "R02"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "MUSIKTHEORIE-54-04",
+    "folder": "01_MUSIKTHEORIE",
+    "kind": "fachstudie",
+    "title": "Stimmungssysteme und Mikrotonalität",
+    "file": "01_MUSIKTHEORIE/V5_4_Vertiefung/STEPS_MUSIKTHEORIE__Temperamente-Stimmung-Mikrotoene__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R01",
+      "R12"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "MUSIKTHEORIE-54-05",
+    "folder": "01_MUSIKTHEORIE",
+    "kind": "fachstudie",
+    "title": "Puls, Takt, Metrum und Hypermetrik",
+    "file": "01_MUSIKTHEORIE/V5_4_Vertiefung/STEPS_MUSIKTHEORIE__Metrum-Puls-Hypermetrik__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R01",
+      "R12",
+      "R21"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "MUSIKTHEORIE-54-06",
+    "folder": "01_MUSIKTHEORIE",
+    "kind": "fachstudie",
+    "title": "Melodische Struktur und motivische Identität",
+    "file": "01_MUSIKTHEORIE/V5_4_Vertiefung/STEPS_MUSIKTHEORIE__Melodie-Motiv-Kontur__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R03",
+      "R19"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "MUSIKTHEORIE-54-07",
+    "folder": "01_MUSIKTHEORIE",
+    "kind": "fachstudie",
+    "title": "Aktive Gehörbildung und diagnostische Aufgaben",
+    "file": "01_MUSIKTHEORIE/V5_4_Vertiefung/STEPS_MUSIKTHEORIE__Gehorbildung-Aktives-Lernen__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R01",
+      "R02"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "HARMONIE-54-01",
+    "folder": "02_HARMONIE",
+    "kind": "fachstudie",
+    "title": "Funktion, Stufe und Satzkontext",
+    "file": "02_HARMONIE/V5_4_Vertiefung/STEPS_HARMONIE__Funktional-Stufenanalyse__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R01",
+      "R06",
+      "R08"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "HARMONIE-54-02",
+    "folder": "02_HARMONIE",
+    "kind": "fachstudie",
+    "title": "Leittöne, Septimen und kontextabhängige Auflösung",
+    "file": "02_HARMONIE/V5_4_Vertiefung/STEPS_HARMONIE__Leitton-Dominantaufloesung__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R01",
+      "R09"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "HARMONIE-54-03",
+    "folder": "02_HARMONIE",
+    "kind": "fachstudie",
+    "title": "Zwischendominanten, Tonikalisierung und Modulation",
+    "file": "02_HARMONIE/V5_4_Vertiefung/STEPS_HARMONIE__Chromatik-Sekundaerdominante__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R06",
+      "R07",
+      "R08"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "HARMONIE-54-04",
+    "folder": "02_HARMONIE",
+    "kind": "fachstudie",
+    "title": "Modal Interchange, Mixture und bVI/bVII/iv",
+    "file": "02_HARMONIE/V5_4_Vertiefung/STEPS_HARMONIE__Modale-Mischung-Borrowing__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R04",
+      "R05",
+      "R08"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "HARMONIE-54-05",
+    "folder": "02_HARMONIE",
+    "kind": "fachstudie",
+    "title": "Blues ist mehr als Dominante-Tonika-Syntax",
+    "file": "02_HARMONIE/V5_4_Vertiefung/STEPS_HARMONIE__Blues-Spezifisches-System__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R05",
+      "R17"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "HARMONIE-54-06",
+    "folder": "02_HARMONIE",
+    "kind": "fachstudie",
+    "title": "Jazz-Voicings, Extensions und Spannung",
+    "file": "02_HARMONIE/V5_4_Vertiefung/STEPS_HARMONIE__Jazz-Voicing-Drop2-Extensions__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R08",
+      "R09"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "HARMONIE-54-07",
+    "folder": "02_HARMONIE",
+    "kind": "fachstudie",
+    "title": "Neo-Riemannian, Transformation und Tonnetz",
+    "file": "02_HARMONIE/V5_4_Vertiefung/STEPS_HARMONIE__Transformationsharmonik-PLR__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R08"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "PROGRESSIONS-54-01",
+    "folder": "03_CHORD_PROGRESSIONS",
+    "kind": "fachstudie",
+    "title": "Harmonischer Rhythmus und Formfunktion",
+    "file": "03_CHORD_PROGRESSIONS/V5_4_Vertiefung/STEPS_PROGRESSIONS__Harmonic-Rhythm-Form__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R06",
+      "R10",
+      "R04"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "PROGRESSIONS-54-02",
+    "folder": "03_CHORD_PROGRESSIONS",
+    "kind": "fachstudie",
+    "title": "Pop-Loops und doppelte Tonalität",
+    "file": "03_CHORD_PROGRESSIONS/V5_4_Vertiefung/STEPS_PROGRESSIONS__Progression-Loop-Multianalyse__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R04",
+      "R05"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "PROGRESSIONS-54-03",
+    "folder": "03_CHORD_PROGRESSIONS",
+    "kind": "fachstudie",
+    "title": "Reharmonisieren unter einer gegebenen Melodie",
+    "file": "03_CHORD_PROGRESSIONS/V5_4_Vertiefung/STEPS_PROGRESSIONS__Reharmonisierung-Melodiekompatibilitaet__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R08",
+      "R09"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "PROGRESSIONS-54-04",
+    "folder": "03_CHORD_PROGRESSIONS",
+    "kind": "fachstudie",
+    "title": "Bassführung, Inversionen und Pedaltöne",
+    "file": "03_CHORD_PROGRESSIONS/V5_4_Vertiefung/STEPS_PROGRESSIONS__Bass-Line-and-Root__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R08",
+      "R12"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "PROGRESSIONS-54-05",
+    "folder": "03_CHORD_PROGRESSIONS",
+    "kind": "fachstudie",
+    "title": "Übergänge, Pivot-Akkorde und Key-Change",
+    "file": "03_CHORD_PROGRESSIONS/V5_4_Vertiefung/STEPS_PROGRESSIONS__Transition-and-Pivot__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R03",
+      "R06"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "PROGRESSIONS-54-06",
+    "folder": "03_CHORD_PROGRESSIONS",
+    "kind": "fachstudie",
+    "title": "Regelbasierte Generierung und Nutzerkontrolle",
+    "file": "03_CHORD_PROGRESSIONS/V5_4_Vertiefung/STEPS_PROGRESSIONS__Progression-Generation-Constraints__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R05",
+      "R17",
+      "R18"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "PROGRESSIONS-54-07",
+    "folder": "03_CHORD_PROGRESSIONS",
+    "kind": "fachstudie",
+    "title": "Korpusstatistik, Duplikate und Leakage",
+    "file": "03_CHORD_PROGRESSIONS/V5_4_Vertiefung/STEPS_PROGRESSIONS__Corpus-Sampling-Leakage__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R05",
+      "R17",
+      "R18"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "COMPOSING-54-01",
+    "folder": "04_COMPOSING",
+    "kind": "fachstudie",
+    "title": "Von der Idee zur überprüfbaren Kompositionsaufgabe",
+    "file": "04_COMPOSING/V5_4_Vertiefung/STEPS_COMPOSING__Brief-Constraint-Cycle__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R19",
+      "R03",
+      "R04"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "COMPOSING-54-02",
+    "folder": "04_COMPOSING",
+    "kind": "fachstudie",
+    "title": "Motivkern und entwickelnde Variation",
+    "file": "04_COMPOSING/V5_4_Vertiefung/STEPS_COMPOSING__Motivic-Transformation-Identity__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R19",
+      "R03"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "COMPOSING-54-03",
+    "folder": "04_COMPOSING",
+    "kind": "fachstudie",
+    "title": "Satz, Periode, Phrase und formale Funktionen",
+    "file": "04_COMPOSING/V5_4_Vertiefung/STEPS_COMPOSING__Sentence-Period-Phrase__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R03",
+      "R19"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "COMPOSING-54-04",
+    "folder": "04_COMPOSING",
+    "kind": "fachstudie",
+    "title": "Verse, Prechorus, Chorus und Energieverlauf",
+    "file": "04_COMPOSING/V5_4_Vertiefung/STEPS_COMPOSING__Pop-Section-Functional-Arc__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R04",
+      "R19"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "COMPOSING-54-05",
+    "folder": "04_COMPOSING",
+    "kind": "fachstudie",
+    "title": "Kontrapunkt, Register und Instrumentenrolle",
+    "file": "04_COMPOSING/V5_4_Vertiefung/STEPS_COMPOSING__Counterpoint-Texture-Range__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R09",
+      "R19"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "COMPOSING-54-06",
+    "folder": "04_COMPOSING",
+    "kind": "fachstudie",
+    "title": "Adaptive Form und Übergangszustände",
+    "file": "04_COMPOSING/V5_4_Vertiefung/STEPS_COMPOSING__Film-Adaptive-Interactive__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R19",
+      "R12"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "COMPOSING-54-07",
+    "folder": "04_COMPOSING",
+    "kind": "fachstudie",
+    "title": "Kompositionsrevision mit Hörprotokoll",
+    "file": "04_COMPOSING/V5_4_Vertiefung/STEPS_COMPOSING__Revision-and-Listening-Protocol__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R19",
+      "R20",
+      "R21"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "DRUMS-54-01",
+    "folder": "05_DRUMS_RHYTHM_GROOVE",
+    "kind": "fachstudie",
+    "title": "16-Step-Grid, Tempo und mathematische Zeit",
+    "file": "05_DRUMS_RHYTHM_GROOVE/V5_4_Vertiefung/STEPS_DRUMS__Step-Grid-PolyTiming__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R12",
+      "R13"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "DRUMS-54-02",
+    "folder": "05_DRUMS_RHYTHM_GROOVE",
+    "kind": "fachstudie",
+    "title": "Swing-Deskriptor statt starrer Stilregel",
+    "file": "05_DRUMS_RHYTHM_GROOVE/V5_4_Vertiefung/STEPS_DRUMS__Swing-Apply-Commit__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R13",
+      "R12"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "DRUMS-54-03",
+    "folder": "05_DRUMS_RHYTHM_GROOVE",
+    "kind": "fachstudie",
+    "title": "Kick–Sub-Bass, Transienten und Hüllkurven",
+    "file": "05_DRUMS_RHYTHM_GROOVE/V5_4_Vertiefung/STEPS_DRUMS__Kick-Sub-Phase-Envelope__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R12",
+      "R14"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "DRUMS-54-04",
+    "folder": "05_DRUMS_RHYTHM_GROOVE",
+    "kind": "fachstudie",
+    "title": "Velocity, Ghost Notes und Sampling-Mappings",
+    "file": "05_DRUMS_RHYTHM_GROOVE/V5_4_Vertiefung/STEPS_DRUMS__Ghost-Notes-Velocity__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R12",
+      "R20",
+      "R21"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "DRUMS-54-05",
+    "folder": "05_DRUMS_RHYTHM_GROOVE",
+    "kind": "fachstudie",
+    "title": "Genres als Vergleichsrahmen statt hartes Klassensystem",
+    "file": "05_DRUMS_RHYTHM_GROOVE/V5_4_Vertiefung/STEPS_DRUMS__Genre-as-Comparison__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R13",
+      "R20",
+      "R21"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "DRUMS-54-06",
+    "folder": "05_DRUMS_RHYTHM_GROOVE",
+    "kind": "fachstudie",
+    "title": "Polyrhythmik, polymetrische Akzente und zyklische Phasen",
+    "file": "05_DRUMS_RHYTHM_GROOVE/V5_4_Vertiefung/STEPS_DRUMS__Polymeter-CrossRhythm__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R12",
+      "R21"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "DRUMS-54-07",
+    "folder": "05_DRUMS_RHYTHM_GROOVE",
+    "kind": "fachstudie",
+    "title": "Drum-Progression als mehrtaktiger Formverlauf",
+    "file": "05_DRUMS_RHYTHM_GROOVE/V5_4_Vertiefung/STEPS_DRUMS__Arrangement-Drum-Progression__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R13",
+      "R20"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "PRODUCER-54-01",
+    "folder": "06_PRODUCER_TOOLS",
+    "kind": "fachstudie",
+    "title": "Oszillator, Filter, Hüllkurve und Signalfluss",
+    "file": "06_PRODUCER_TOOLS/V5_4_Vertiefung/STEPS_PRODUCER__Subtraktive-Synthese-Signalpfad__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R14"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "PRODUCER-54-02",
+    "folder": "06_PRODUCER_TOOLS",
+    "kind": "fachstudie",
+    "title": "Sampling, One-Shot und 808-Artikulation",
+    "file": "06_PRODUCER_TOOLS/V5_4_Vertiefung/STEPS_PRODUCER__Sampling-OneShot-NoteOff__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R12",
+      "R14"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "PRODUCER-54-03",
+    "folder": "06_PRODUCER_TOOLS",
+    "kind": "fachstudie",
+    "title": "EQ als frequenzabhängiger Pegel plus Phase",
+    "file": "06_PRODUCER_TOOLS/V5_4_Vertiefung/STEPS_PRODUCER__Equalizer-Level-Phase__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R16",
+      "R14"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "PRODUCER-54-04",
+    "folder": "06_PRODUCER_TOOLS",
+    "kind": "fachstudie",
+    "title": "Kompression, Attack, Release und Gain Reduction",
+    "file": "06_PRODUCER_TOOLS/V5_4_Vertiefung/STEPS_PRODUCER__Compression-Envelope-Dynamics__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R13",
+      "R16"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "PRODUCER-54-05",
+    "folder": "06_PRODUCER_TOOLS",
+    "kind": "fachstudie",
+    "title": "Sidechain als zeitliche Maskierungssteuerung",
+    "file": "06_PRODUCER_TOOLS/V5_4_Vertiefung/STEPS_PRODUCER__Sidechain-Duck-LowEnd__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R13",
+      "R16"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "PRODUCER-54-06",
+    "folder": "06_PRODUCER_TOOLS",
+    "kind": "fachstudie",
+    "title": "Stereoabbildung, Mono-Foldown und Phasenkorrelation",
+    "file": "06_PRODUCER_TOOLS/V5_4_Vertiefung/STEPS_PRODUCER__Stereo-Mono-Phase-Korrelation__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R16"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "PRODUCER-54-07",
+    "folder": "06_PRODUCER_TOOLS",
+    "kind": "fachstudie",
+    "title": "LUFS, True Peak, Delivery und Mastering",
+    "file": "06_PRODUCER_TOOLS/V5_4_Vertiefung/STEPS_PRODUCER__Loudness-TruePeak-Delivery__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R15",
+      "R16"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  },
+  {
+    "id": "PRODUCER-54-08",
+    "folder": "06_PRODUCER_TOOLS",
+    "kind": "fachstudie",
+    "title": "DAW-Sessions, Routing und reproduzierbarer Export",
+    "file": "06_PRODUCER_TOOLS/V5_4_Vertiefung/STEPS_PRODUCER__Session-Reproducibility-Bounces__FACHSTUDIE__V5_4.md",
+    "source_ids": [
+      "R12",
+      "R13",
+      "R10"
+    ],
+    "status": "technical_study_not_peer_reviewed"
+  }
+]

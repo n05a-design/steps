@@ -1,0 +1,288 @@
+{
+  "version": "5.1.0",
+  "object_count": 20,
+  "objects": [
+    {
+      "id": "GROOVE-001",
+      "label": "metrical grid",
+      "domain": "music_theory",
+      "original_explanation": "16-step grid in 4/4 with one-based beat origins",
+      "linked_source": "PPR-DRUM-004",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Harmony",
+        "Chord Progressions",
+        "Composing"
+      ]
+    },
+    {
+      "id": "GROOVE-002",
+      "label": "swing timing transform",
+      "domain": "rhythm",
+      "original_explanation": "Timing shifts explicitly scoped to specific subdivisions, not global tempo change",
+      "linked_source": "PPR-DRUM-004",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Harmony",
+        "Chord Progressions",
+        "Composing"
+      ]
+    },
+    {
+      "id": "GROOVE-003",
+      "label": "accent and velocity profile",
+      "domain": "rhythm",
+      "original_explanation": "Velocity and timing are independent audible groove parameters",
+      "linked_source": "PPR-DRUM-004",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Harmony",
+        "Chord Progressions",
+        "Composing"
+      ]
+    },
+    {
+      "id": "GROOVE-004",
+      "label": "backbeat and syncopation",
+      "domain": "rhythm",
+      "original_explanation": "Backbeat anchors may coexist with displaced kick accents",
+      "linked_source": "PPR-DRUM-004",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Harmony",
+        "Chord Progressions",
+        "Composing"
+      ]
+    },
+    {
+      "id": "GROOVE-005",
+      "label": "choke behavior",
+      "domain": "sound_production",
+      "original_explanation": "A later closed-hat event may end the open-hat voice, kit-dependent",
+      "linked_source": "PPR-DRUM-002",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Harmony",
+        "Chord Progressions",
+        "Composing"
+      ]
+    },
+    {
+      "id": "GROOVE-006",
+      "label": "cross-cycle rhythmic displacement",
+      "domain": "rhythm",
+      "original_explanation": "A repeated non-quarter-step cycle shifts against 4-step pulse",
+      "linked_source": "PPR-DRUM-002",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Harmony",
+        "Chord Progressions",
+        "Composing"
+      ]
+    },
+    {
+      "id": "GROOVE-007",
+      "label": "section variation",
+      "domain": "composing",
+      "original_explanation": "Layer additions/removals articulate build versus peak",
+      "linked_source": "PPR-DRUM-002",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Harmony",
+        "Chord Progressions",
+        "Composing"
+      ]
+    },
+    {
+      "id": "GROOVE-008",
+      "label": "low-end pulse and bass note articulation",
+      "domain": "drum_bass",
+      "original_explanation": "Audible amplitude pulses need not imply separate MIDI notes",
+      "linked_source": "PPR-DRUM-003",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Harmony",
+        "Chord Progressions",
+        "Composing"
+      ]
+    },
+    {
+      "id": "GROOVE-009",
+      "label": "remake vs original provenance",
+      "domain": "research_governance",
+      "original_explanation": "Fan reconstructions cannot be attributed to original sessions",
+      "linked_source": "PPR-DRUM-001",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Harmony",
+        "Chord Progressions",
+        "Composing"
+      ]
+    },
+    {
+      "id": "GROOVE-010",
+      "label": "808 note-off policy",
+      "domain": "sampler",
+      "original_explanation": "A one-shot sampler may ignore a short MIDI note-off",
+      "linked_source": "PPR-DRUM-001",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Harmony",
+        "Chord Progressions",
+        "Composing"
+      ]
+    },
+    {
+      "id": "GROOVE-011",
+      "label": "half-time perception",
+      "domain": "rhythm",
+      "original_explanation": "Perceived metric level can differ from BPM grid",
+      "linked_source": "PPR-DRUM-001",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Harmony",
+        "Chord Progressions",
+        "Composing"
+      ]
+    },
+    {
+      "id": "EQ-001",
+      "label": "frequency-selective linear gain",
+      "domain": "signal_processing",
+      "original_explanation": "Linear EQ applies a frequency-dependent transfer function",
+      "linked_source": "PPR-PROD-001",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Composing"
+      ]
+    },
+    {
+      "id": "EQ-002",
+      "label": "nonlinear harmonic creation",
+      "domain": "signal_processing",
+      "original_explanation": "Saturation and nonlinear processing may create new partials",
+      "linked_source": "PPR-PROD-001",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Composing"
+      ]
+    },
+    {
+      "id": "EQ-003",
+      "label": "spectral masking",
+      "domain": "psychoacoustics",
+      "original_explanation": "Relative balances in a full mix differ from solo listening",
+      "linked_source": "PPR-PROD-001",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Composing"
+      ]
+    },
+    {
+      "id": "EQ-004",
+      "label": "source limitations",
+      "domain": "production_workflow",
+      "original_explanation": "EQ does not replace source repair, arrangement or instrument selection",
+      "linked_source": "PPR-PROD-001",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Composing"
+      ]
+    },
+    {
+      "id": "EQ-005",
+      "label": "level-matched A/B",
+      "domain": "production_quality",
+      "original_explanation": "Compare equal perceived/output levels when judging processing",
+      "linked_source": "PPR-PROD-001",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Composing"
+      ]
+    },
+    {
+      "id": "EQ-006",
+      "label": "phase and transient effects",
+      "domain": "signal_processing",
+      "original_explanation": "Linear filter design can change phase and transient response",
+      "linked_source": "PPR-PROD-001",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Composing"
+      ]
+    },
+    {
+      "id": "PROD-001",
+      "label": "MIDI vs audio provenance",
+      "domain": "research_governance",
+      "original_explanation": "Separate MIDI observations, audible observations, hypotheses and original session confirmation",
+      "linked_source": "PPR-DRUM-003",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Composing"
+      ]
+    },
+    {
+      "id": "PROD-002",
+      "label": "tempo/subdivision arithmetic",
+      "domain": "music_theory",
+      "original_explanation": "Grid step timing calculated from tempo and metric assumptions",
+      "linked_source": "PPR-DRUM-002",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Composing"
+      ]
+    },
+    {
+      "id": "PROD-003",
+      "label": "style bounded evidence",
+      "domain": "research_governance",
+      "original_explanation": "An instructional genre example is not a universal genre rule",
+      "linked_source": "PPR-DRUM-004",
+      "status": "EXTRACTED_WORKING_CLAIM_NOT_PEER_REVIEWED",
+      "review_required": true,
+      "linked_main_pillars": [
+        "Music Theory",
+        "Composing"
+      ]
+    }
+  ]
+}

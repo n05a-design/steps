@@ -1,0 +1,42 @@
+Hello musicians. I’m Jaka, and today we’ll 
+take a look at chord_files - innovative and easy-to-use tools that 
+guide you to discover new musical ideas. This nifty product is made 
+for all you music enthusiasts, especially those who find themselves 
+stuck in a musical rut and need a dose of inspiration to find interesting 
+chord progressions and melodies. Now, let's zoom in on the chord_files 
+Progressions, guitar edition. Starting with the front side … We can see a bunch of chord names. At the bottom, we've got two knobs 
+allowing you to set the Tonality. Flip it over, and on the back side, you'll find chord 
+diagrams with corresponding scale tones, arranged in the same order as the front. Currently, we are holding the guitar version, 
+but we've got versions for piano and ukulele too. Looking again at the front side, you can see 
+the chords organized into three sections: Main Chords, Secondary 
+Dominants, and Modal Interchange. The middle section, Main Chords, contains diatonic 
+chords that naturally occur within a key, we set. You may start with any chord and create 
+progressions freely within this section. The main chord degrees of the 
+Key are highlighted in white: Tonic I Subdominant IV Dominant V If you want to add some extra color to the 
+diatonic chords, you can jump to the top section, where you will find Secondary Dominant for 
+each of the chord from the middle section. You can jump from any of the Main Chords to any of the chords above. Arrows will 
+guide you to the resolution. For example: E7 wants to resolve to A minor, C7 to F Major, A7 to D minor, and so on. If we want to add even more 
+“color” to our chord progression, we could jump to any chord in the BOTTOM section. You will find here chords from the parallel minor 
+key - we call this concept Modal Interchange. To return to the Main Chord section, 
+you are once again guided by arrows. We should also explain the chord 
+symbols that are used here. Capital M means Major chord, Lowercase m means minor chord, 7 means Dominant 7 chord. Let’s now flip the file to 
+see how to read diagrams. Black dots are chords tones. Golden dots are scale tones. Empty dots are open strings. And the bold line is the Barre grip. The strings are sorted from Low E on 
+the bottom to the High E on the top. Great! You are now familiar with the chord_files 
+and we are ready to check out some examples. Let’s kick off with a simple one 
+and use just the chords from the Middle section which are all from the same Key. Let’s select the Key. I like E Major. And here we can see the 
+options, you can choose freely. Let’s try E Major C# minor A Major B Major (example) Ok, not bad but we can do better. Let’s try to add a Secondary Dominant chord. We will start again with the E Major, but this time we will jump up to C#7, and if we follow the arrow, 
+the next chord is F# minor and then I will choose B Major. (example) Better, but not quite there. Let’s try with G#7. E Major, G#7 which leads to C# minor and then we will choose A Major. (example) Great! We just created our first chord 
+progression with a Secondary Dominant chord. Let’s now explore the Modal Interchange. We know the procedure. We will choose a Key - D Major. I will select a couple of chords from the 
+Middle section to establish the main Tonality. D Major and A Major. To add Modal Interchange, simply move down 
+and select any chord from this section. I will choose Bb Major and C Major. Our progression now sounds like this. (example) And just because we can, let’s 
+complicate our lives even more and add a Secondary Dominant and a 
+Modal Interchange to our progression. You know the drill by now. Once again, I’ll start setting the Key, this time to C. And start with C Major, move UP to Secondary Dominant, 
+C7, resolve it to F Major, move DOWN to Modal Interchange, Ab Major, and finally back to C Major. (example) But that’s not all. If you flip the chord_files, you’ll find diagrams of all the 
+chords with appropriate scale tones, depicted by golden dots, which can be used 
+to compose a melody or embellish the chords. Let's first try to embellish 
+the chords using a sustained tone in the highest voice, over all of the chords. Let's use a progression with Modal Interchange: C Major Ab Major F minor and C Major. For the sustained tone, I will use the tone C, 
+which is common to all of the selected chords. (example) Now, let's make it more interesting 
+and try a different scale tone. For example, a D. Let's see what happens. (example) Pretty cool! For the last example, let's try to create a 
+simple melody using the ascending scale tones. We'll use a tone C. (example) Great. I'll do one more. But this time with a descending scale 
+tone – starting from the tone D. (example) Awesome! It’s your turn now to try it out. I 
+am sure it will spark your creativity. Take care.

@@ -1,0 +1,78 @@
+{
+  "version": "5.2.0",
+  "date": "2026-11-08",
+  "source_archive_name": "STEPS_Research_Library_V5_1_Drums_Producer.zip",
+  "source_archive_sha256": "ba3f19348b64e0e08efe17b42c2fcd44d3716d9cce65ec620ec742a9857b8557",
+  "source_files_migrated": 278,
+  "historic_files": 163,
+  "current_files": 115,
+  "coverage_topics": 53,
+  "domains": {
+    "MUSIKTHEORIE": {
+      "folder": "01_MUSIKTHEORIE",
+      "current_files": 1
+    },
+    "HARMONIE": {
+      "folder": "02_HARMONIE",
+      "current_files": 1
+    },
+    "PROGRESSIONEN": {
+      "folder": "03_CHORD_PROGRESSIONS",
+      "current_files": 1
+    },
+    "COMPOSING": {
+      "folder": "04_COMPOSING",
+      "current_files": 67
+    },
+    "DRUMS": {
+      "folder": "05_DRUMS_RHYTHM_GROOVE",
+      "current_files": 1
+    },
+    "PRODUCER": {
+      "folder": "06_PRODUCER_TOOLS",
+      "current_files": 1
+    },
+    "KULTUR": {
+      "folder": "07_KOGNITION_STIL_KULTUR",
+      "current_files": 1
+    },
+    "COMPUTATIONAL": {
+      "folder": "08_COMPUTATIONAL_MUSIC",
+      "current_files": 1
+    },
+    "PRODUKT": {
+      "folder": "09_PRODUKT_DIDAKTIK_SKILL",
+      "current_files": 1
+    },
+    "QUELLEN": {
+      "folder": "10_QUELLEN_LIZENZEN",
+      "current_files": 6
+    },
+    "QA": {
+      "folder": "11_VALIDIERUNG_QUALITAET",
+      "current_files": 6
+    },
+    "CODEX": {
+      "folder": "12_CODEX_AUFTRAEGE",
+      "current_files": 3
+    },
+    "GOVERNANCE": {
+      "folder": "13_GOVERNANCE",
+      "current_files": 2
+    },
+    "SCHEMA": {
+      "folder": "14_DATENMODELLE",
+      "current_files": 4
+    },
+    "TOOLS": {
+      "folder": "15_TOOLS_SKRIPTE",
+      "current_files": 6
+    },
+    "NAV": {
+      "folder": "00_NAVIGATION",
+      "current_files": 13
+    }
+  },
+  "file_index": "00_NAVIGATION/STEPS_DATEIENINDEX_ALLE_278.json",
+  "coverage_index": "00_NAVIGATION/STEPS_ABDECKUNG_ALLE_BEREICHE.csv"
+}

@@ -1,0 +1,634 @@
+[
+  {
+    "id": "TC53-001",
+    "domain": "music-theory",
+    "method": "midi_to_frequency",
+    "input": {
+      "n": 69,
+      "ref": 440
+    },
+    "expected": 440.0,
+    "evidence_kind": "exact_or_numeric",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-002",
+    "domain": "music-theory",
+    "method": "midi_to_frequency",
+    "input": {
+      "n": 81,
+      "ref": 440
+    },
+    "expected": 880.0,
+    "evidence_kind": "exact_or_numeric",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-003",
+    "domain": "music-theory",
+    "method": "midi_to_frequency",
+    "input": {
+      "n": 27,
+      "ref": 440
+    },
+    "expected": 38.891,
+    "evidence_kind": "tolerance_0.02Hz",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-004",
+    "domain": "music-theory",
+    "method": "octave_display",
+    "input": {
+      "midi": 60,
+      "locale": "live"
+    },
+    "expected": "varies_by_DAW",
+    "evidence_kind": "must_not_claim_universal",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-005",
+    "domain": "music-theory",
+    "method": "enharmonic_spelling",
+    "input": {
+      "note1": "F#4",
+      "note2": "Gb4",
+      "tuning": "12TET"
+    },
+    "expected": "equal_frequencies_distinct_spellings",
+    "evidence_kind": "conceptual",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-006",
+    "domain": "harmony",
+    "method": "roman",
+    "input": {
+      "key": "C major",
+      "progression": [
+        "C",
+        "A7",
+        "Dm",
+        "G7",
+        "C"
+      ]
+    },
+    "expected": [
+      "I",
+      "V7/ii",
+      "ii",
+      "V7",
+      "I"
+    ],
+    "evidence_kind": "contextual",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-007",
+    "domain": "harmony",
+    "method": "blues_lens",
+    "input": {
+      "progression": [
+        "C7",
+        "F7",
+        "C7"
+      ]
+    },
+    "expected": "do_not_force_secondary_dominants",
+    "evidence_kind": "qualitative",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-008",
+    "domain": "harmony",
+    "method": "modal_ambiguity",
+    "input": {
+      "progression": [
+        "G",
+        "F",
+        "C",
+        "G"
+      ]
+    },
+    "expected": "at_least_two_plausible_centers_without_melody",
+    "evidence_kind": "qualitative",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-009",
+    "domain": "harmony",
+    "method": "secondary_dominant",
+    "input": {
+      "chord": "A7",
+      "target": "Dm",
+      "key": "C"
+    },
+    "expected": "V7/ii_is_tendency",
+    "evidence_kind": "qualitative",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-010",
+    "domain": "progression",
+    "method": "harmonic_event_duration",
+    "input": {
+      "duration_beats": 0
+    },
+    "expected": "reject",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-011",
+    "domain": "progression",
+    "method": "melody_fit",
+    "input": {
+      "melody": "A4",
+      "chord": "Cmaj7",
+      "context": "Cmajor"
+    },
+    "expected": "13th_tension_or_color",
+    "evidence_kind": "contextual",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-012",
+    "domain": "progression",
+    "method": "slash_bass",
+    "input": {
+      "symbol": "C/E"
+    },
+    "expected": "bass_E_chordroot_C",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-013",
+    "domain": "composing",
+    "method": "prosoody",
+    "input": {
+      "lyric": "not_provided",
+      "syllable_map": null
+    },
+    "expected": "unknown_not_error",
+    "evidence_kind": "qualitative",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-014",
+    "domain": "composing",
+    "method": "form_differentiation",
+    "input": {
+      "verse_chords": [
+        "Am",
+        "F",
+        "C",
+        "G"
+      ],
+      "chorus_chords": [
+        "Am",
+        "F",
+        "C",
+        "G"
+      ]
+    },
+    "expected": "same_harmony_different_arrangement_allowed",
+    "evidence_kind": "qualitative",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-015",
+    "domain": "drums",
+    "method": "sixteenth_ms",
+    "input": {
+      "bpm": 132
+    },
+    "expected": 113.636,
+    "evidence_kind": "tolerance_0.01ms",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-016",
+    "domain": "drums",
+    "method": "bar_ms",
+    "input": {
+      "bpm": 174,
+      "meter": "4/4"
+    },
+    "expected": 1379.31,
+    "evidence_kind": "tolerance_0.02ms",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-017",
+    "domain": "drums",
+    "method": "swing_offset_ms",
+    "input": {
+      "bpm": 132,
+      "fraction": 0.292
+    },
+    "expected": 33.1818,
+    "evidence_kind": "tolerance_0.02ms",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-018",
+    "domain": "drums",
+    "method": "midi_note_velocity",
+    "input": {
+      "note": 36,
+      "velocity": 128
+    },
+    "expected": "reject",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-019",
+    "domain": "drums",
+    "method": "midi_channel",
+    "input": {
+      "channel0": 9
+    },
+    "expected": "human_channel_10",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-020",
+    "domain": "drums",
+    "method": "midi_noteoff",
+    "input": {
+      "note_on": 36,
+      "note_off": null
+    },
+    "expected": "flag_unclosed",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-021",
+    "domain": "drums",
+    "method": "odd_meter",
+    "input": {
+      "meter": "7/8",
+      "eighth_steps_per_bar": 7
+    },
+    "expected": "duration_1680_ticks_ppq480",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-022",
+    "domain": "drums",
+    "method": "choke_is_sampler_state",
+    "input": {
+      "gm_notes": [
+        42,
+        46
+      ]
+    },
+    "expected": "choke_group_unknown_without_instrument",
+    "evidence_kind": "qualitative",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-023",
+    "domain": "producer",
+    "method": "sidechain",
+    "input": {
+      "kick_midi": true,
+      "plugin_state": null
+    },
+    "expected": "audible_pumping_unknown",
+    "evidence_kind": "qualitative",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-024",
+    "domain": "producer",
+    "method": "sample_off",
+    "input": {
+      "noteoff_ticks": 100,
+      "sampler_mode": "one_shot"
+    },
+    "expected": "audible_end_unknown",
+    "evidence_kind": "qualitative",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-025",
+    "domain": "producer",
+    "method": "nyquist",
+    "input": {
+      "sample_rate_hz": 48000
+    },
+    "expected": 24000,
+    "evidence_kind": "exact",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-026",
+    "domain": "producer",
+    "method": "eq_q",
+    "input": {
+      "filter_type": "bell",
+      "frequency_hz": 300,
+      "gain_db": -2
+    },
+    "expected": "contextual_not_automatic_fix",
+    "evidence_kind": "qualitative",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-027",
+    "domain": "producer",
+    "method": "compressor_static",
+    "input": {
+      "threshold_db": -12,
+      "input_db": -4,
+      "ratio": 4
+    },
+    "expected": -10.0,
+    "evidence_kind": "static_ideal_model",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-028",
+    "domain": "producer",
+    "method": "eighth_delay_ms",
+    "input": {
+      "bpm": 120
+    },
+    "expected": 250.0,
+    "evidence_kind": "exact",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-029",
+    "domain": "producer",
+    "method": "dotted_eighth_delay_ms",
+    "input": {
+      "bpm": 120
+    },
+    "expected": 375.0,
+    "evidence_kind": "exact",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-030",
+    "domain": "producer",
+    "method": "broadcast_loudness",
+    "input": {
+      "standard": "EBU R128 2023"
+    },
+    "expected": "-23 LUFS broadcast recommendation",
+    "evidence_kind": "normative_context",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-031",
+    "domain": "producer",
+    "method": "genre_loudness",
+    "input": {
+      "genre": "EDM"
+    },
+    "expected": "do_not_auto_apply_-23_LUFS",
+    "evidence_kind": "qualitative",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-032",
+    "domain": "producer",
+    "method": "true_peak",
+    "input": {
+      "sample_peak_dbfs": -1.0,
+      "waveform": null
+    },
+    "expected": "not_derivable_from_sample_peak_only",
+    "evidence_kind": "qualitative",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-033",
+    "domain": "computational",
+    "method": "midi_note_name",
+    "input": {
+      "midi": 27
+    },
+    "expected": "independent_of_octave_display",
+    "evidence_kind": "conceptual",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-034",
+    "domain": "computational",
+    "method": "musicxml_midi_difference",
+    "input": {
+      "task": "roundtrip_DAW_effects"
+    },
+    "expected": "cannot_assume_lossless",
+    "evidence_kind": "qualitative",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-035",
+    "domain": "sources",
+    "method": "protected_course_midi",
+    "input": {
+      "license": "unknown"
+    },
+    "expected": "do_not_republish",
+    "evidence_kind": "legal_gate",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-036",
+    "domain": "sources",
+    "method": "source_page_read",
+    "input": {
+      "status": "official_page_checked"
+    },
+    "expected": "not_equal_full_book_review",
+    "evidence_kind": "governance",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-037",
+    "domain": "sources",
+    "method": "private_html_link",
+    "input": {
+      "authenticated": false
+    },
+    "expected": "do_not_claim_retrieved_full_content",
+    "evidence_kind": "governance",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-038",
+    "domain": "qa",
+    "method": "numeric_tests",
+    "input": {
+      "passed": 300
+    },
+    "expected": "not_equivalent_to_musical_review",
+    "evidence_kind": "governance",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-039",
+    "domain": "qa",
+    "method": "reference_citations",
+    "input": {
+      "doi": "missing",
+      "url": "only"
+    },
+    "expected": "record_unresolved_locator",
+    "evidence_kind": "governance",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-040",
+    "domain": "governance",
+    "method": "historical_count",
+    "input": {
+      "v5_2_content_files": 278
+    },
+    "expected": "do_not_confuse_with_zip_member_count",
+    "evidence_kind": "governance",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-MIDI-DR53-01",
+    "domain": "drums",
+    "method": "json_midi_event_equivalence",
+    "input": {
+      "pattern_id": "DR53-01"
+    },
+    "expected": "same_note_vel_start_duration",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-MIDI-DR53-02",
+    "domain": "drums",
+    "method": "json_midi_event_equivalence",
+    "input": {
+      "pattern_id": "DR53-02"
+    },
+    "expected": "same_note_vel_start_duration",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-MIDI-DR53-03",
+    "domain": "drums",
+    "method": "json_midi_event_equivalence",
+    "input": {
+      "pattern_id": "DR53-03"
+    },
+    "expected": "same_note_vel_start_duration",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-MIDI-DR53-04",
+    "domain": "drums",
+    "method": "json_midi_event_equivalence",
+    "input": {
+      "pattern_id": "DR53-04"
+    },
+    "expected": "same_note_vel_start_duration",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-MIDI-DR53-05",
+    "domain": "drums",
+    "method": "json_midi_event_equivalence",
+    "input": {
+      "pattern_id": "DR53-05"
+    },
+    "expected": "same_note_vel_start_duration",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-MIDI-DR53-06",
+    "domain": "drums",
+    "method": "json_midi_event_equivalence",
+    "input": {
+      "pattern_id": "DR53-06"
+    },
+    "expected": "same_note_vel_start_duration",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-MIDI-DR53-07",
+    "domain": "drums",
+    "method": "json_midi_event_equivalence",
+    "input": {
+      "pattern_id": "DR53-07"
+    },
+    "expected": "same_note_vel_start_duration",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-MIDI-DR53-08",
+    "domain": "drums",
+    "method": "json_midi_event_equivalence",
+    "input": {
+      "pattern_id": "DR53-08"
+    },
+    "expected": "same_note_vel_start_duration",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-MIDI-DR53-09",
+    "domain": "drums",
+    "method": "json_midi_event_equivalence",
+    "input": {
+      "pattern_id": "DR53-09"
+    },
+    "expected": "same_note_vel_start_duration",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-MIDI-DR53-10",
+    "domain": "drums",
+    "method": "json_midi_event_equivalence",
+    "input": {
+      "pattern_id": "DR53-10"
+    },
+    "expected": "same_note_vel_start_duration",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-MIDI-DR53-11",
+    "domain": "drums",
+    "method": "json_midi_event_equivalence",
+    "input": {
+      "pattern_id": "DR53-11"
+    },
+    "expected": "same_note_vel_start_duration",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  },
+  {
+    "id": "TC53-MIDI-DR53-12",
+    "domain": "drums",
+    "method": "json_midi_event_equivalence",
+    "input": {
+      "pattern_id": "DR53-12"
+    },
+    "expected": "same_note_vel_start_duration",
+    "evidence_kind": "mechanical",
+    "status": "case_specification_not_run_against_steps_app"
+  }
+]

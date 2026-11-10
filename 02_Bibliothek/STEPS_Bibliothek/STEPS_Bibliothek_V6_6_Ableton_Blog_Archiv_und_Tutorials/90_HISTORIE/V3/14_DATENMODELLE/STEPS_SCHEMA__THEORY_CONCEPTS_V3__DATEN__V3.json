@@ -1,0 +1,2210 @@
+[
+  {
+    "id": "THEORY-V3-0001",
+    "title": "Tonhöhe",
+    "domain": "Fundamentals",
+    "definition": "Eine wahrgenommene Tonhöhenkategorie, die nicht mit einer einzelnen Frequenz verwechselt werden sollte.",
+    "original_illustration": "A4 = 440 Hz ist eine Stimmreferenz, kein universelles Tonhöhengesetz.",
+    "limits_and_misconceptions": "Das Spektrum komplexer Töne erzeugt weitere Wahrnehmungseffekte.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0002",
+    "title": "Pitch Class",
+    "domain": "Fundamentals",
+    "definition": "Oktaväquivalente Tonhöhenklasse in einem expliziten Stimmungssystem.",
+    "original_illustration": "In 12-TET besitzen C3 und C5 die Pitch Class 0.",
+    "limits_and_misconceptions": "Pitch Classes allein verlieren Register, Schreibweise und reale Intonation.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0003",
+    "title": "Oktave",
+    "domain": "Fundamentals",
+    "definition": "Intervall mit Frequenzverhältnis 2:1 in einer physikalischen Idealisierung.",
+    "original_illustration": "220 Hz zu 440 Hz.",
+    "limits_and_misconceptions": "Oktaväquivalenz ist eine kultur- und wahrnehmungsspezifische Annahme.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0004",
+    "title": "Intervallqualität",
+    "domain": "Fundamentals",
+    "definition": "Benennung eines diatonischen Zahlenabstands samt chromatischer Qualität.",
+    "original_illustration": "C–E = große Terz, C–Es = kleine Terz.",
+    "limits_and_misconceptions": "Gleiche Halbtonzahl kann enharmonisch anders heißen.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0005",
+    "title": "Enharmonische Schreibweise",
+    "domain": "Fundamentals",
+    "definition": "Gleicher Pitch Class können mehrere Notennamen mit verschiedenen Funktionen zugeordnet werden.",
+    "original_illustration": "Fis und Ges in 12-TET klanggleich, aber unterschiedliche Leitton- und Stufenfunktion.",
+    "limits_and_misconceptions": "Gleichheit gilt nicht automatisch außerhalb 12-TET.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0006",
+    "title": "Deutsche H/B-Notation",
+    "domain": "Fundamentals",
+    "definition": "Deutsch H entspricht international B, deutsch B entspricht international B♭.",
+    "original_illustration": "H–Dis–Fis ist H-Dur, international B major.",
+    "limits_and_misconceptions": "Einstellungen der Benennung explizit speichern.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0007",
+    "title": "Quintenzirkel",
+    "domain": "Fundamentals",
+    "definition": "Ordnet Tonarten nach steigenden/absteigenden Quinten und Vorzeichen.",
+    "original_illustration": "C–G–D–A auf der Kreuzseite.",
+    "limits_and_misconceptions": "Quintennähe ist nicht die einzige relevante Harmoniebeziehung.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0008",
+    "title": "Schwebung",
+    "domain": "Fundamentals",
+    "definition": "Interferenz nahe beieinanderliegender Frequenzen als akustische Erfahrung.",
+    "original_illustration": "Zwei Töne 440/442 Hz erzeugen etwa 2 Schläge pro Sekunde.",
+    "limits_and_misconceptions": "Auf komplexe Spektren nur mit Vorsicht übertragen.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0009",
+    "title": "Gleichstufige Stimmung",
+    "domain": "Fundamentals",
+    "definition": "Oktave wird in zwölf gleich große logarithmische Schritte geteilt.",
+    "original_illustration": "Jedes 12-TET-Semiton hat Verhältnis 2^(1/12).",
+    "limits_and_misconceptions": "Reine Terzen sind darin nicht exakt 5:4.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0010",
+    "title": "Reine Stimmung",
+    "domain": "Fundamentals",
+    "definition": "Intervallabstimmungen auf einfachen Frequenzverhältnissen für einen definierten Kontext.",
+    "original_illustration": "Reine große Terz 5:4.",
+    "limits_and_misconceptions": "Kann in modulierender Harmonik Kompromisse erfordern.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0011",
+    "title": "Mikrotonalität",
+    "domain": "Fundamentals",
+    "definition": "Tonhöhenorganisation jenseits eines ausschließlich 12-stufigen Chromatikmodells.",
+    "original_illustration": "19-TET benötigt von 12-TET unabhängige Schreib- und Intervallmodelle.",
+    "limits_and_misconceptions": "Nichtwestern Praktiken nicht auf universelle Vierteltöne reduzieren.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0012",
+    "title": "Tonleiter",
+    "domain": "Fundamentals",
+    "definition": "Ordnung von Tonhöhen relativ zu einem Grundton und definiertem Intervallsystem.",
+    "original_illustration": "C-Dur: C D E F G A H [deutsche Notation].",
+    "limits_and_misconceptions": "Tonleiter allein bestimmt nicht Akkordfunktion oder Stil.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0013",
+    "title": "Skalenfamilie",
+    "domain": "Fundamentals",
+    "definition": "Sammlung strukturell verwandter Skalen mit definiertem Rotations-/Ableitungsbezug.",
+    "original_illustration": "Modi der melodischen Moll-Skala.",
+    "limits_and_misconceptions": "Modusrotation setzt eine konsistente Tonikabeziehung voraus.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0014",
+    "title": "Kirchentonarten",
+    "domain": "Fundamentals",
+    "definition": "Historisch und modern unterschiedlich verstandene modale Kategorien.",
+    "original_illustration": "D-Dorisch auf weißen Tasten ist ein Demonstrationsbeispiel.",
+    "limits_and_misconceptions": "Historische Gregorianik ≠ moderner Jazz-Dorian-Modus.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0015",
+    "title": "Ionisch",
+    "domain": "Fundamentals",
+    "definition": "Heutiger siebentöniger Modus mit Dur-Intervallstruktur.",
+    "original_illustration": "C D E F G A H.",
+    "limits_and_misconceptions": "Tonale Funktionalität nicht allein aus Modusname ableiten.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0016",
+    "title": "Dorisch",
+    "domain": "Fundamentals",
+    "definition": "Mollartiger Modus mit großer Sexte relativ zum Grundton.",
+    "original_illustration": "D E F G A H C.",
+    "limits_and_misconceptions": "Dorian-Vamps brauchen keine klassische V–i-Kadenz.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0017",
+    "title": "Phrygisch",
+    "domain": "Fundamentals",
+    "definition": "Mollartiger Modus mit kleiner Sekunde.",
+    "original_illustration": "E F G A H C D.",
+    "limits_and_misconceptions": "b2 kann zum lokalen Klangzentrum beitragen, aber nicht überall gleich wirken.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0018",
+    "title": "Lydisch",
+    "domain": "Fundamentals",
+    "definition": "Durartiger Modus mit übermäßiger Quarte.",
+    "original_illustration": "F G A H C D E.",
+    "limits_and_misconceptions": "#4 ist im Kontext nicht beliebig ein Leitton zur Quinte.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0019",
+    "title": "Mixolydisch",
+    "domain": "Fundamentals",
+    "definition": "Durartiger Modus mit kleiner Septime.",
+    "original_illustration": "G A H C D E F.",
+    "limits_and_misconceptions": "Dominantseptakkord auf I ist nicht zwangsläufig eine klassische Dominante.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0020",
+    "title": "Äolisch",
+    "domain": "Fundamentals",
+    "definition": "Natürlicher Mollmodus mit kleiner Sexte und Septime.",
+    "original_illustration": "A H C D E F G.",
+    "limits_and_misconceptions": "Mollharmonik nutzt oft auch erhöhte Stufen.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0021",
+    "title": "Lokrisch",
+    "domain": "Fundamentals",
+    "definition": "Modus mit vermindertem Dreiklang über dem Grundton.",
+    "original_illustration": "H C D E F G A.",
+    "limits_and_misconceptions": "Ein globales lokrisches Zentrum ist von einfacher Modusbenennung zu unterscheiden.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0022",
+    "title": "Harmonisch Moll",
+    "domain": "Fundamentals",
+    "definition": "Natürliche Mollskala mit erhöhter siebter Stufe.",
+    "original_illustration": "A H C D E F Gis.",
+    "limits_and_misconceptions": "In Praxis häufig flexible Stufen 6/7 statt eine starre melodische Skala.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0023",
+    "title": "Melodisch Moll",
+    "domain": "Fundamentals",
+    "definition": "In Jazz-Kontext oft aufwärts melodisches Moll in beiden Richtungen genutzt.",
+    "original_illustration": "A H C D E Fis Gis.",
+    "limits_and_misconceptions": "Klassische melodische Moll-Regeln haben anderen Kontext.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0024",
+    "title": "Harmonisch Dur",
+    "domain": "Fundamentals",
+    "definition": "Durleiter mit erniedrigter sechster Stufe.",
+    "original_illustration": "C D E F G As H.",
+    "limits_and_misconceptions": "Familienfunktion stilabhängig.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0025",
+    "title": "Pentatonik",
+    "domain": "Fundamentals",
+    "definition": "Tonvorrat mit fünf Stufen; mehrere Formen existieren.",
+    "original_illustration": "C-Dur-Pentatonik C D E G A.",
+    "limits_and_misconceptions": "Nicht jede pentatonische Kulturpraxis ist eine reduzierte europäische Durleiter.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0026",
+    "title": "Blues-Skala",
+    "domain": "Fundamentals",
+    "definition": "Unterrichtsmodell oft Mollpentatonik plus Tritonus/Blue Note.",
+    "original_illustration": "C Es F Ges G B (B=deutsch B♭).",
+    "limits_and_misconceptions": "Intonation/Artikulation von Blue Notes ist nicht auf feste Halbtonschritte begrenzt.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0027",
+    "title": "Ganztonleiter",
+    "domain": "Fundamentals",
+    "definition": "Sechstöniges symmetrisches System in Ganztonschritten.",
+    "original_illustration": "C D E Fis Gis Ais.",
+    "limits_and_misconceptions": "Funktionale Stufenhierarchie ist begrenzt.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0028",
+    "title": "Oktatonik",
+    "domain": "Fundamentals",
+    "definition": "Achttönige abwechselnde Halb-/Ganztonstruktur.",
+    "original_illustration": "C Des Es E Fis G A B.",
+    "limits_and_misconceptions": "Mehrere rotationsäquivalente Sammlungen und Schreibkonventionen.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0029",
+    "title": "Musikalische Textur",
+    "domain": "Fundamentals",
+    "definition": "Organisation gleichzeitiger Stimmen und ihrer Beziehungen.",
+    "original_illustration": "Homophoner Song mit Melodie und Akkordbegleitung.",
+    "limits_and_misconceptions": "Anzahl der Spuren ist nicht gleich Anzahl unabhängiger musikalischer Stimmen.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0033"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0030",
+    "title": "Dreiklang",
+    "domain": "Chord Theory",
+    "definition": "Drei verschiedene Tonhöhenklassen in bestimmter Schichtung, typischerweise als Terzkonstruktion.",
+    "original_illustration": "C-E-G = Dur; C-Es-G = Moll.",
+    "limits_and_misconceptions": "Ein arpeggierter Dreiklang bleibt harmonisch ein Dreiklang.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0031",
+    "title": "Verminderter Dreiklang",
+    "domain": "Chord Theory",
+    "definition": "Dreiklang mit kleiner Terz und verminderter Quinte.",
+    "original_illustration": "H-D-F als vii° in C-Dur.",
+    "limits_and_misconceptions": "Kontext/Umkehrung bestimmen den funktionalen Status.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0032",
+    "title": "Übermäßiger Dreiklang",
+    "domain": "Chord Theory",
+    "definition": "Dreiklang aus zwei großen Terzen.",
+    "original_illustration": "C-E-Gis.",
+    "limits_and_misconceptions": "Symmetrie ermöglicht mehrere enharmonische Grundtonlesarten.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0033",
+    "title": "Septakkord",
+    "domain": "Chord Theory",
+    "definition": "Terzgeschichtete Vierklangklasse mit einer siebten Stufe relativ zum Grundton.",
+    "original_illustration": "G-H-D-F = G7.",
+    "limits_and_misconceptions": "Symbol 7 meint in Jazz-Notation üblicherweise kleine Septime.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0034",
+    "title": "Major-Seventh",
+    "domain": "Chord Theory",
+    "definition": "Dur-Dreiklang mit großer Septime.",
+    "original_illustration": "C-E-G-H = Cmaj7.",
+    "limits_and_misconceptions": "Darf nicht mit C7 gleichgesetzt werden.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0035",
+    "title": "Minor-Seventh",
+    "domain": "Chord Theory",
+    "definition": "Moll-Dreiklang mit kleiner Septime.",
+    "original_illustration": "D-F-A-C = Dm7.",
+    "limits_and_misconceptions": "Kontext kann ii7, iv7 oder i7 sein.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0036",
+    "title": "Half-Diminished",
+    "domain": "Chord Theory",
+    "definition": "Verminderter Dreiklang mit kleiner Septime.",
+    "original_illustration": "H-D-F-A = Hø7.",
+    "limits_and_misconceptions": "Nicht gleich vollständig verminderter Septakkord.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0037",
+    "title": "Fully-Diminished Seventh",
+    "domain": "Chord Theory",
+    "definition": "Vierklang aus geschichteten kleinen Terzen.",
+    "original_illustration": "H-D-F-As.",
+    "limits_and_misconceptions": "Enharmonische Symmetrie und modulatorische Mehrdeutigkeit beachten.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0038",
+    "title": "Alterierter Dominantakkord",
+    "domain": "Chord Theory",
+    "definition": "Dominantakkord mit veränderten Quinte-/Neunte-Optionen.",
+    "original_illustration": "G7(b9,#5) in C.",
+    "limits_and_misconceptions": "Zusammenklang/Voicing und Skalenassoziation sind nicht eine einzige Pflichtform.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0039",
+    "title": "Add-Chord",
+    "domain": "Chord Theory",
+    "definition": "Zusätzlicher Ton ohne die implied Terzschichtung einer Erweiterung.",
+    "original_illustration": "Cadd9 = C E G D, nicht automatisch C9.",
+    "limits_and_misconceptions": "Chord-Symbol-Konventionen können variieren.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0040",
+    "title": "Sus-Chord",
+    "domain": "Chord Theory",
+    "definition": "Akkord mit ersetzter Terz oder klanglicher Suspensionsstruktur.",
+    "original_illustration": "Gsus4 enthält C statt H als typische dritte Stimme.",
+    "limits_and_misconceptions": "Sus4 muss nicht tatsächlich klassisch aufgelöst werden.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0041",
+    "title": "Slash Chord",
+    "domain": "Chord Theory",
+    "definition": "Akkordsymbol mit explizitem Basston.",
+    "original_illustration": "C/E = C-Dur über E im Bass.",
+    "limits_and_misconceptions": "Slash bezeichnet nicht automatisch eine sekundäre Dominante.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0042",
+    "title": "Umkehrung",
+    "domain": "Chord Theory",
+    "definition": "Ein Akkordton statt des Grundtons ist Bass.",
+    "original_illustration": "C/E erste Umkehrung von C-Dur.",
+    "limits_and_misconceptions": "Basslage und tatsächliches Voicing separat beschreiben.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0043",
+    "title": "Voicing",
+    "domain": "Chord Theory",
+    "definition": "Konkrete Verteilung von Akkordtönen über Register, Dopplungen und Stimmen.",
+    "original_illustration": "Cmaj7 kann eng oder weit gesetzt werden.",
+    "limits_and_misconceptions": "Identisches Chordsymbol garantiert keine identische Stimmführung.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0044",
+    "title": "Guide Tones",
+    "domain": "Chord Theory",
+    "definition": "In Jazzharmonik besonders charakteristische Terz/Septime eines Septakkords.",
+    "original_illustration": "G7 H/F → Cmaj7 H/E.",
+    "limits_and_misconceptions": "Ohne Register und Satzlage ist kein Voice Leading festgelegt.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0045",
+    "title": "Upper Structure",
+    "domain": "Chord Theory",
+    "definition": "Oberer Akkordteil, der als Erweiterungs-/Alterationsstruktur über einem Fundament dient.",
+    "original_illustration": "D-Dur-Dreiklang über C7 kann 9/#11/13 implizieren je nach Bass-/Kontext.",
+    "limits_and_misconceptions": "Transponierte Beispiele nicht ohne Pitch-Check verwenden.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0046",
+    "title": "Chord Symbol Grammar",
+    "domain": "Chord Theory",
+    "definition": "Maschinenlesbare, konventionsgebundene Akkordbeschreibung.",
+    "original_illustration": "C:maj7 gegenüber Cmaj7/#11.",
+    "limits_and_misconceptions": "Unterschiedliche Harte-, Jazz- und MusicXML-Notation braucht Konverter.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0027"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0047",
+    "title": "Tonika",
+    "domain": "Functional Harmony",
+    "definition": "Lokales oder globales harmonisches Zentrum, funktional und metrisch kontextbestimmt.",
+    "original_illustration": "C am Ende einer G7–C-Kadenz.",
+    "limits_and_misconceptions": "Nicht automatisch der erste Akkord eines Loops.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0048",
+    "title": "Dominantfunktion",
+    "domain": "Functional Harmony",
+    "definition": "Harmonisches Verhalten, das auf eine Tonika hin orientiert ist.",
+    "original_illustration": "G7→C in C-Dur.",
+    "limits_and_misconceptions": "Mixolydische I7- oder Blues-I7-Klänge müssen anders gelesen werden können.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0049",
+    "title": "Prädominante Funktion",
+    "domain": "Functional Harmony",
+    "definition": "Vorbereitung oder Ausrichtung auf dominanten Bereich.",
+    "original_illustration": "Dm7→G7 in C-Dur.",
+    "limits_and_misconceptions": "IV kann in Pop/Rock auch schließende Funktion haben.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0050",
+    "title": "Stufenharmonik",
+    "domain": "Functional Harmony",
+    "definition": "Akkorde nach ihrer Position zur Tonleiter analysieren.",
+    "original_illustration": "Dm = ii in C-Dur.",
+    "limits_and_misconceptions": "Römische Zahl beschreibt nicht automatisch Riemannsche Funktion.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0051",
+    "title": "Riemannsche Funktion",
+    "domain": "Functional Harmony",
+    "definition": "Funktionstheoretisches Beschreibungssystem mit T, S, D und Varianten.",
+    "original_illustration": "G-Dur als D in C-Dur.",
+    "limits_and_misconceptions": "Nicht mit römischer Ziffer oder Jazzfunktion eins zu eins gleichsetzen.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0052",
+    "title": "Kadenz",
+    "domain": "Functional Harmony",
+    "definition": "Harmonisch-melodisch-formaler Schlussvorgang.",
+    "original_illustration": "V7–I mit geeigneter metrischer/phrastischer Position.",
+    "limits_and_misconceptions": "V–I mitten in Phrase ist nicht zwingend eine Kadenz.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0053",
+    "title": "Halbschluss",
+    "domain": "Functional Harmony",
+    "definition": "Phrase endet im dominanten Bereich als formale Öffnung.",
+    "original_illustration": "Phrase mit ... ii–V, Pause.",
+    "limits_and_misconceptions": "In modalem Vamp nicht als universell gültig anwenden.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0054",
+    "title": "Trugschluss",
+    "domain": "Functional Harmony",
+    "definition": "Erwartete Dominantauflösung auf Alternative umgelenkt.",
+    "original_illustration": "G7→Am in C-Dur.",
+    "limits_and_misconceptions": "Erfordert vorausgehenden kontextuellen Erwartungsaufbau.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0055",
+    "title": "Sekundärdominante",
+    "domain": "Functional Harmony",
+    "definition": "Dominante bezogen auf zeitweiliges anderes Ziel als globale Tonika.",
+    "original_illustration": "A7→Dm in C als V7/ii.",
+    "limits_and_misconceptions": "Keine Auflösungspflicht und kein automatischer Modulationsbeweis.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0056",
+    "title": "Zwischentonika",
+    "domain": "Functional Harmony",
+    "definition": "Lokale Tonisierung eines harmonischen Zieltons.",
+    "original_illustration": "Dm wird durch A7 kurz hervorgehoben.",
+    "limits_and_misconceptions": "Tonicization und etablierte Modulation sind Abstufungen mit Kontext.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0057",
+    "title": "Modulation",
+    "domain": "Functional Harmony",
+    "definition": "Etablierung eines neuen tonalen Zentrums über einen strukturellen Zeitraum.",
+    "original_illustration": "C→G-Dur mit D7–G und anschließender Bestätigung.",
+    "limits_and_misconceptions": "Einzelne Chromatik ist nicht ausreichender Beweis.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0058",
+    "title": "Dreh-/Pivotakkord",
+    "domain": "Functional Harmony",
+    "definition": "Akkord mit sinnvoller Rolle in alter und neuer Tonart.",
+    "original_illustration": "Am als vi in C / ii in G.",
+    "limits_and_misconceptions": "Harmonische Beschriftungen müssen Schlüsselzeitpunkt ausweisen.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0059",
+    "title": "Modal Mixture",
+    "domain": "Functional Harmony",
+    "definition": "Entlehnung harmonischer Materialien aus einem parallelen Modus.",
+    "original_illustration": "Fm als iv in C-Dur.",
+    "limits_and_misconceptions": "Quelle und Funktion sollten nicht ohne melodischen Kontext überbestimmt werden.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0060",
+    "title": "Neapolitaner",
+    "domain": "Functional Harmony",
+    "definition": "Chromatischer Durakkord auf erniedrigter zweiter Stufe, im klassischen Satz oft erste Umkehrung.",
+    "original_illustration": "Des/F → G7 in C.",
+    "limits_and_misconceptions": "bII im Pop kann andere Erklärung verlangen.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0061",
+    "title": "Übermäßiger Sextakkord",
+    "domain": "Functional Harmony",
+    "definition": "Chromatischer Prädominantklang mit charakteristischer Außenstimmenbewegung zur Dominante.",
+    "original_illustration": "As–C–Fis → G in C.",
+    "limits_and_misconceptions": "Enharmonische Identität genügt nicht für Funktionsklassifikation.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0062",
+    "title": "Chromatische Mediante",
+    "domain": "Functional Harmony",
+    "definition": "Terzverwandter Akkord außerhalb strenger Diatonik.",
+    "original_illustration": "C→As-Dur.",
+    "limits_and_misconceptions": "Nicht jede Terzbewegung impliziert dieselbe Transformation.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0063",
+    "title": "Tritonussubstitution",
+    "domain": "Functional Harmony",
+    "definition": "Dominantischer Ersatz mit Tritonus-Bezug im jazztypischen Kontext.",
+    "original_illustration": "Des7→C statt G7→C.",
+    "limits_and_misconceptions": "Die konkreten Guide-Tones müssen korrekt buchstabiert sein.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0064",
+    "title": "Backdoor Dominant",
+    "domain": "Functional Harmony",
+    "definition": "Jazz-/Soul-typischer bVII7-Zugang zur Tonika.",
+    "original_illustration": "Bb7 (deutsch B7)→Cmaj7.",
+    "limits_and_misconceptions": "Nicht mit klassischer V7-Funktion identisch.",
+    "source_candidates": [
+      "SRC-V3-0001",
+      "SRC-V3-0005"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0065",
+    "title": "Jazz ii–V–I",
+    "domain": "Popular Jazz Modal",
+    "definition": "Quintfall-/funktionsbezogenes Jazzschema mit häufigen Septakkorden.",
+    "original_illustration": "Dm7–G7–Cmaj7.",
+    "limits_and_misconceptions": "Varianten können Tonic Substitution, Extensions und Turnaround enthalten.",
+    "source_candidates": [
+      "SRC-V3-0017",
+      "SRC-V3-0019",
+      "SRC-V3-0020"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0066",
+    "title": "Rhythm Changes",
+    "domain": "Popular Jazz Modal",
+    "definition": "Jazzschema als AABA-Form-/Harmonie-Familie.",
+    "original_illustration": "I–vi–ii–V als vereinfachter A-Sektionskern.",
+    "limits_and_misconceptions": "Songmaterial/Originalmelodien nicht übernehmen.",
+    "source_candidates": [
+      "SRC-V3-0017",
+      "SRC-V3-0019",
+      "SRC-V3-0020"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0067",
+    "title": "Blues I7",
+    "domain": "Popular Jazz Modal",
+    "definition": "In vielen Bluespraktiken kann Dominantseptimklang tonikal sein.",
+    "original_illustration": "C7 am Beginn eines C-Blues.",
+    "limits_and_misconceptions": "Nicht als V7/IV zwangszwingen.",
+    "source_candidates": [
+      "SRC-V3-0017",
+      "SRC-V3-0019",
+      "SRC-V3-0020"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0068",
+    "title": "Blues Turnaround",
+    "domain": "Popular Jazz Modal",
+    "definition": "Zyklisches harmonisches Rückführungsmodell zum Beginn einer Form.",
+    "original_illustration": "C7–A7–Dm7–G7 am Ende einer Variante.",
+    "limits_and_misconceptions": "12-Bar-Blues weist viele Formvarianten auf.",
+    "source_candidates": [
+      "SRC-V3-0017",
+      "SRC-V3-0019",
+      "SRC-V3-0020"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0069",
+    "title": "Modal Vamp",
+    "domain": "Popular Jazz Modal",
+    "definition": "Wiederkehrende Harmonie zur Stützung eines Moduszentrums.",
+    "original_illustration": "Dm7–G/D in D-Dorisch.",
+    "limits_and_misconceptions": "Kein verpflichtender V–I-Abschluss.",
+    "source_candidates": [
+      "SRC-V3-0017",
+      "SRC-V3-0019",
+      "SRC-V3-0020"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0070",
+    "title": "Pop Axis Loop",
+    "domain": "Popular Jazz Modal",
+    "definition": "Vier-Akkord-Familie mit möglichen relativen Tonikazentren.",
+    "original_illustration": "Am–F–C–G.",
+    "limits_and_misconceptions": "Melodie, Metrik und Nachbarschnitte beeinflussen Zentrierung.",
+    "source_candidates": [
+      "SRC-V3-0017",
+      "SRC-V3-0019",
+      "SRC-V3-0020"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0071",
+    "title": "Hybrid Tonic",
+    "domain": "Popular Jazz Modal",
+    "definition": "Verschiedene Tonika-Indizien verteilen sich auf unterschiedliche musikalische Schichten.",
+    "original_illustration": "Pop IV–V–vi mit Tonikaton in der Melodie.",
+    "limits_and_misconceptions": "Nicht jede V–vi-Folge ist echte hybride Tonika.",
+    "source_candidates": [
+      "SRC-V3-0017",
+      "SRC-V3-0019",
+      "SRC-V3-0020"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0072",
+    "title": "Six-Based Minor",
+    "domain": "Popular Jazz Modal",
+    "definition": "Alternative römische Stufen-Konvention für Pop mit relativer-Moll-Kopplung.",
+    "original_illustration": "Am in C-Dur-Diatonik als vi statt i bei entsprechender Konvention.",
+    "limits_and_misconceptions": "Analysesystem/tonales Zentrum ausdrücklich labeln.",
+    "source_candidates": [
+      "SRC-V3-0017",
+      "SRC-V3-0019",
+      "SRC-V3-0020"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0073",
+    "title": "Neo-Soul Extended Harmony",
+    "domain": "Popular Jazz Modal",
+    "definition": "Stilassoziierte Klangpalette erweiterter Akkorde und enger Guide-Tone-Beziehungen.",
+    "original_illustration": "Cmaj9–A7alt–Dm9–G13 als originales Demonstrationsschema.",
+    "limits_and_misconceptions": "Genre ist keine formal einheitliche Akkordgrammatik.",
+    "source_candidates": [
+      "SRC-V3-0017",
+      "SRC-V3-0019",
+      "SRC-V3-0020"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0074",
+    "title": "Gospel Passing Chord",
+    "domain": "Popular Jazz Modal",
+    "definition": "Zwischenakkorde verstärken Bass-/Stimmführung, häufig chromatisch.",
+    "original_illustration": "C–C#dim7–Dm7.",
+    "limits_and_misconceptions": "Einzelne Wendung beweist keine Genrezugehörigkeit.",
+    "source_candidates": [
+      "SRC-V3-0017",
+      "SRC-V3-0019",
+      "SRC-V3-0020"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0075",
+    "title": "EDM Pedal Harmony",
+    "domain": "Popular Jazz Modal",
+    "definition": "Stationärer Basston kann Harmonien umdeuten.",
+    "original_illustration": "C–Bb/C–F/C–G/C.",
+    "limits_and_misconceptions": "Klangfarben/Timing sind stilistisch entscheidend.",
+    "source_candidates": [
+      "SRC-V3-0017",
+      "SRC-V3-0019",
+      "SRC-V3-0020"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0076",
+    "title": "Cinematic Ostinato",
+    "domain": "Popular Jazz Modal",
+    "definition": "Repetitive Zelle als harmonisch-formaler Unterbau.",
+    "original_illustration": "3+3+2-Akzentmuster unter langsam wechselnden Akkorden.",
+    "limits_and_misconceptions": "Stimmungsetiketten sind keine messbaren Regeln.",
+    "source_candidates": [
+      "SRC-V3-0017",
+      "SRC-V3-0019",
+      "SRC-V3-0020"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0077",
+    "title": "Voice Leading",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Bewegung einzelner musikalischer Stimmen zwischen vertikalen Klängen.",
+    "original_illustration": "G7 F→E, H→C beim Übergang zu C.",
+    "limits_and_misconceptions": "Root Motion allein misst keine Satzbewegung.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0078",
+    "title": "Gemeinsamer Ton",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Gleiche konkrete Tonhöhe oder Pitch Class zwischen Klängen.",
+    "original_illustration": "C-E-G und Am A-C-E teilen C,E.",
+    "limits_and_misconceptions": "Identische Pitch Class in anderer Oktave ist nicht identische Stimme.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0079",
+    "title": "Gegenbewegung",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Stimmen bewegen sich gleichzeitig in entgegengesetzte Richtungen.",
+    "original_illustration": "Bass C→D, Oberstimme G→F.",
+    "limits_and_misconceptions": "Stimmabhängig und nicht per se besser.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0080",
+    "title": "Parallelbewegung",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Zwei Stimmen bewegen sich im gleichen Intervallabstand.",
+    "original_illustration": "Parallele Quinten im strengen Vierstimmensatz vermeiden.",
+    "limits_and_misconceptions": "In Rock-Power-Chords sind parallele Quinten typisch.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0081",
+    "title": "Leittonauflösung",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Tendenz von Tonleiterstufe 7 zur Tonika in bestimmter tonaler Syntax.",
+    "original_illustration": "H→C in C-Dur.",
+    "limits_and_misconceptions": "In Pop/Blues/Modal/Satzwechsel nicht ausnahmslos.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0082",
+    "title": "Tritonus-Auflösung",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Außen-/Innenstimmen des Dominanttritonus bewegen sich kontextbedingt weiter.",
+    "original_illustration": "H-F → C-E oder C-Es.",
+    "limits_and_misconceptions": "Satzlage und Tritonusträger beachten.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0083",
+    "title": "Stimmkreuzung",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Vertikale Stimmordnung ändert sich in der realisierten Satzlage.",
+    "original_illustration": "Alto oberhalb Sopran.",
+    "limits_and_misconceptions": "Klassische Satzübungen und zeitgenössische Komposition bewerten verschieden.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0084",
+    "title": "Voice-Leading-Distanz",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Festgelegte Kostenmetrik für Tonbewegung unter konkreten Matching-Regeln.",
+    "original_illustration": "C-E-G → C-E-As braucht nur G→As für passend gewählte Stimmen.",
+    "limits_and_misconceptions": "Eine einzelne minimale Distanz ist kein ästhetischer Gütewert.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0085",
+    "title": "Neo-Riemannian P",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Parallel-Transformation tauscht Dur und Moll bei gleichem Grundton mit minimaler Terzbewegung.",
+    "original_illustration": "C-Dur→c-Moll: E→Es.",
+    "limits_and_misconceptions": "Nur wohldefinierte Triaden, Schreib-/Klasse berücksichtigen.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0086",
+    "title": "Neo-Riemannian L",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Leittonwechsel zwischen Dur-/Moll-Dreiklängen mit zwei gemeinsamen Tönen.",
+    "original_illustration": "C-Dur→e-Moll: C→H, E/G bleiben.",
+    "limits_and_misconceptions": "P/L/R bei Nicht-Dreiklängen nicht unbesehen anwenden.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0087",
+    "title": "Neo-Riemannian R",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Relative Transformation zwischen parallel-terzverwandten Dreiklängen.",
+    "original_illustration": "C-Dur→a-Moll: G→A, C/E bleiben.",
+    "limits_and_misconceptions": "Begriff relative nicht mit relativer Tonart als globaler Tonika vermischen.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0088",
+    "title": "Tonnetz",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Räumliches Modell bestimmter Tonbeziehungen, Varianten mit verschiedenen Geometrien.",
+    "original_illustration": "Dreiklangnachbarschaften über P/L/R.",
+    "limits_and_misconceptions": "Graphische Nähe bedeutet nicht zwingend gleiche Wahrnehmungsdistanz.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0089",
+    "title": "Pitch-Class Set",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Mengenmodell ohne feste Reihenfolge und Oktavlage.",
+    "original_illustration": "{0,4,7} als C-Dur-Pitch-Class Set in 12-TET.",
+    "limits_and_misconceptions": "Stimmführung und Schreibweise gehen dabei verloren.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0090",
+    "title": "Transposition Tn",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Addition mod 12 auf Pitch Classes.",
+    "original_illustration": "T2 {0,4,7}→{2,6,9}.",
+    "limits_and_misconceptions": "Notenschreibweise muss separat rekonstruiert werden.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0091",
+    "title": "Inversion TnI",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Inversion der Pitch Classes um eine Achse modulo 12.",
+    "original_illustration": "T0I {0,4,7}→{0,8,5}.",
+    "limits_and_misconceptions": "Nicht mit kontrapunktischer motivischer Umkehrung gleichsetzen.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0092",
+    "title": "Zwölftontechnik",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Organisierung aller zwölf Pitch Classes über eine Reihenstruktur als historisch bestimmte Kompositionstechnik.",
+    "original_illustration": "Eine selbst erfundene Reihe kann P/I/R/RI-Formen haben.",
+    "limits_and_misconceptions": "Atonalität ist nicht gleich Zwölftontechnik.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0093",
+    "title": "Non-Chord Tone",
+    "domain": "Voice Leading and Advanced",
+    "definition": "Melodische Note außerhalb der gewählten Akkordbeschreibung.",
+    "original_illustration": "D über C-Dur als 9 oder Durchgang.",
+    "limits_and_misconceptions": "'Nichtakkordton' hängt von Voicing-/Extensions- und Analyseentscheidung ab.",
+    "source_candidates": [
+      "SRC-V3-0014",
+      "SRC-V3-0015",
+      "SRC-V3-0034"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0094",
+    "title": "Motiv",
+    "domain": "Composing Form Melody",
+    "definition": "Kleine, wiedererkennbare rhythmisch-melodische oder klangliche Gestalt.",
+    "original_illustration": "Viertel C–Achtel D E als eigener Dreitonkern.",
+    "limits_and_misconceptions": "Ein Motiv ist nicht zwingend eine Melodie voller Takte.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0095",
+    "title": "Motiventwicklung",
+    "domain": "Composing Form Melody",
+    "definition": "Systematische Veränderung und Kombination von Motiveigenschaften.",
+    "original_illustration": "Aus C–D–E wird sequenziert D–E–Fis.",
+    "limits_and_misconceptions": "Zusammenhang soll hörbar oder analytisch begründbar bleiben.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0096",
+    "title": "Sequenzierung",
+    "domain": "Composing Form Melody",
+    "definition": "Wiederholung eines Musters auf neuer Tonhöhe oder harmonischem Grad.",
+    "original_illustration": "Motiv C-D-E → D-E-F.",
+    "limits_and_misconceptions": "Tonale Anpassung vs exakte chromatische Transposition unterscheiden.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0097",
+    "title": "Fragmentierung",
+    "domain": "Composing Form Melody",
+    "definition": "Motiv wird in kürzere charakteristische Bestandteile zerlegt.",
+    "original_illustration": "C-D-E wird als D-E mehrfach isoliert.",
+    "limits_and_misconceptions": "Verlust der Hörbarkeit kann kompositorisch beabsichtigt sein.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0098",
+    "title": "Augmentation",
+    "domain": "Composing Form Melody",
+    "definition": "Verlängerung rhythmischer Notenwerte eines Motivs.",
+    "original_illustration": "Achtel-Achtel-Viertel→Viertel-Viertel-Halbe.",
+    "limits_and_misconceptions": "Globales Tempo bleibt bei motivischer Augmentation oft unverändert.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0099",
+    "title": "Diminution",
+    "domain": "Composing Form Melody",
+    "definition": "Verkürzung rhythmischer Werte.",
+    "original_illustration": "Viertel-Viertel-Halbe→Achtel-Achtel-Viertel.",
+    "limits_and_misconceptions": "Nicht mit diminuendo als Dynamik verwechseln.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0100",
+    "title": "Motivische Inversion",
+    "domain": "Composing Form Melody",
+    "definition": "Intervallrichtungen eines Motives werden umgekehrt.",
+    "original_illustration": "+2,+1 → -2,-1 diatonisch bezogen auf Achsennote.",
+    "limits_and_misconceptions": "Diatonische vs chromatische Inversion explizit definieren.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0101",
+    "title": "Retrograd",
+    "domain": "Composing Form Melody",
+    "definition": "Reihenfolge von Ereignissen wird umgekehrt.",
+    "original_illustration": "C-D-E→E-D-C.",
+    "limits_and_misconceptions": "Retrograd der Dauern ist eine zusätzliche Entscheidung.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0102",
+    "title": "Rhythmische Verschiebung",
+    "domain": "Composing Form Melody",
+    "definition": "Wiederkehrende Zelle beginnt auf anderer metrischer Position.",
+    "original_illustration": "Motiv von Zählzeit 1 zu 'und' von 2.",
+    "limits_and_misconceptions": "Notenfolge allein erfasst den Effekt nicht.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0103",
+    "title": "Intervallic Expansion",
+    "domain": "Composing Form Melody",
+    "definition": "Motivintervall wird erweitert, während Kontur erhalten bleibt.",
+    "original_illustration": "Sekundenanstieg zu Terzsprung.",
+    "limits_and_misconceptions": "Diatonische Qualität überprüfen.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0104",
+    "title": "Intervallic Compression",
+    "domain": "Composing Form Melody",
+    "definition": "Intervallabstände werden verkleinert.",
+    "original_illustration": "Quartsprung zu Sekunde.",
+    "limits_and_misconceptions": "Register-/Melodieprofil danach anders.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0105",
+    "title": "Kontur",
+    "domain": "Composing Form Melody",
+    "definition": "Abstrakte Auf-/Ab-Bewegungsform einer Melodie.",
+    "original_illustration": "auf-auf-ab trotz veränderter exakter Töne.",
+    "limits_and_misconceptions": "Kontur allein erklärt Harmonisierung nicht.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0106",
+    "title": "Melodische Zielnote",
+    "domain": "Composing Form Melody",
+    "definition": "Phrasen- oder Abschnittsziel als kompositorische Orientierung.",
+    "original_illustration": "Ziel E über Cmaj7 in Takt 8.",
+    "limits_and_misconceptions": "Stärke hängt von Position/Rhythmus/Dynamik ab.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0107",
+    "title": "Metrischer Akzent",
+    "domain": "Composing Form Melody",
+    "definition": "Ereignisgewichtung durch Takt-/Gruppierungsposition und musikalische Gestaltung.",
+    "original_illustration": "Zielton auf erster Zählzeit.",
+    "limits_and_misconceptions": "Synkopische Hervorhebung kann dagegenwirken.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0108",
+    "title": "Satzmodell (Sentence)",
+    "domain": "Composing Form Melody",
+    "definition": "Klassischer Thementyp mit Presentation, Continuation und Cadential Function.",
+    "original_illustration": "2+2+4 Takte als typische Struktur.",
+    "limits_and_misconceptions": "Nicht jedes achttaktige Thema ist ein Satz im Caplin-Sinn.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0109",
+    "title": "Periode (Period)",
+    "domain": "Composing Form Melody",
+    "definition": "Thema mit Antecedent/Consequent und relativ stärkerem zweiten Schluss.",
+    "original_illustration": "V-Halbschluss in T4, V–I in T8.",
+    "limits_and_misconceptions": "Melodische Wiederaufnahme und Kadenzfunktion prüfen.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0110",
+    "title": "Phrase",
+    "domain": "Composing Form Melody",
+    "definition": "Relativ kohärente musikalische Einheit mit möglicher Abschlusswirkung.",
+    "original_illustration": "Vier Takte mit Vorhalt und abschließender Kadenz.",
+    "limits_and_misconceptions": "Maßzahl allein bestimmt Phrasierung nicht.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0111",
+    "title": "Hypermeter",
+    "domain": "Composing Form Melody",
+    "definition": "Gruppierung von Takten in höhere metrische Einheiten.",
+    "original_illustration": "Vier Takte als übergeordneter 'Großtakt'.",
+    "limits_and_misconceptions": "Hypermetrik kann verschoben oder mehrdeutig sein.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0112",
+    "title": "Call and Response",
+    "domain": "Composing Form Melody",
+    "definition": "Dialogische Gestaltung zwischen Motiven/Stimmen/Registern.",
+    "original_illustration": "Klavierphrase antwortet einer Gitarrenphrase.",
+    "limits_and_misconceptions": "Ursprung und kulturelle Praxis nicht auf ein Genre festnageln.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0113",
+    "title": "Strophenform",
+    "domain": "Composing Form Melody",
+    "definition": "Wiederholte musikalische Form für wechselnde Textstrophen.",
+    "original_illustration": "A-A-A mit neuer Strophe.",
+    "limits_and_misconceptions": "Variable Verse-Produktionen differenziert betrachten.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0114",
+    "title": "Verse–Chorus Form",
+    "domain": "Composing Form Melody",
+    "definition": "Pop-/Rock-Abschnitte mit kontrastierender rhetorischer und textlicher Funktion.",
+    "original_illustration": "Verse–Prechorus–Chorus.",
+    "limits_and_misconceptions": "Harmonische Identität von Verse/Chorus ist möglich, Kontrast kann Timbre sein.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0115",
+    "title": "AABA Form",
+    "domain": "Composing Form Melody",
+    "definition": "Formalplan aus drei verwandten A-Teilen und kontrastierendem B.",
+    "original_illustration": "A–A–B–A 32-Bar als jazzbezogene Variante.",
+    "limits_and_misconceptions": "Buchstaben sind keine Akkordnamen.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0116",
+    "title": "Rondo",
+    "domain": "Composing Form Melody",
+    "definition": "Wiederkehrender Refrainabschnitt alterniert mit Episoden.",
+    "original_illustration": "A–B–A–C–A.",
+    "limits_and_misconceptions": "Formtypen historisch/stilistisch kontextgebunden.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0117",
+    "title": "Sonatenform",
+    "domain": "Composing Form Melody",
+    "definition": "Historische Instrumentalform mit Exposition, Durchführung, Reprise und Tonart-/Formfunktionen.",
+    "original_illustration": "Hauptthemenbereich, Übergang, Seitensatz, Durchführung.",
+    "limits_and_misconceptions": "Nicht als universelles Pop-Song-Formmodell ausgeben.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0118",
+    "title": "Stimmungsdramaturgie",
+    "domain": "Composing Form Melody",
+    "definition": "Kompositorische Steuerung von Dichte, Dynamik, Harmonie, Register und Form.",
+    "original_illustration": "Erst dünne Textur, dann Steigerung zum Tutti.",
+    "limits_and_misconceptions": "Emotionale Wirkung hängt von Hörenden und Kultur ab.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0119",
+    "title": "Kompositorische Constraint",
+    "domain": "Composing Form Melody",
+    "definition": "Bewusste Selbstbeschränkung zur Strukturierung des kreativen Suchraums.",
+    "original_illustration": "Komponiere aus drei Pitch Classes und zwei Rhythmen.",
+    "limits_and_misconceptions": "Constraint garantiert kein ästhetisches Ergebnis.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0120",
+    "title": "Instrumentation",
+    "domain": "Composing Form Melody",
+    "definition": "Wahl und Verteilung von Material auf Instrumente unter ihren Möglichkeiten.",
+    "original_illustration": "Melodiebogen für Oboe anders als für Klavier.",
+    "limits_and_misconceptions": "MIDI-Instrument-Preset ersetzt keine idiomatische Kenntnis.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0121",
+    "title": "Arrangement",
+    "domain": "Composing Form Melody",
+    "definition": "Konkrete Anordnung von Musik für Besetzung, Register, Textur und Form.",
+    "original_illustration": "Gleiche Akkordfolge als Piano Solo vs Streicherquartett.",
+    "limits_and_misconceptions": "Kann Urheber-/Bearbeitungsrechte berühren.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0122",
+    "title": "Kontrapunkt",
+    "domain": "Composing Form Melody",
+    "definition": "Beziehung unabhängiger gleichzeitiger melodischer Linien.",
+    "original_illustration": "C-Gegenstimme bewegt sich gegen aufsteigenden Bass.",
+    "limits_and_misconceptions": "Species-Regeln sind stilistisch bestimmte Übungsmodelle.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0123",
+    "title": "Partimento",
+    "domain": "Composing Form Melody",
+    "definition": "Historische Generalbass-/Improvisationspraxis für das Aussetzen musikalischer Sätze.",
+    "original_illustration": "Unbezifferte Basslinie als Grundlage der improvisierten Oberstimmen.",
+    "limits_and_misconceptions": "Lehrmethode nicht auf isolierte 'Chord Symbols' reduzieren.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0124",
+    "title": "Galante Schemata",
+    "domain": "Composing Form Melody",
+    "definition": "Kontextgebundene Satzmodelle europäischer Musik des 18. Jahrhunderts.",
+    "original_illustration": "Prinner-/Fonte-Bewegungen als historische Struktursprache.",
+    "limits_and_misconceptions": "Keine stiluniversellen Akkord-Prognoseregeln.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0125",
+    "title": "Topline",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Melodisch-textliche Leitidee moderner Songproduktion.",
+    "original_illustration": "Hook mit rhythmischer Kennzelle über vier Akkorden.",
+    "limits_and_misconceptions": "Hookwriting ist nicht nur pitch sequence.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0126",
+    "title": "Hook",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Prägnantes wiedererkennbares Element, harmonisch, melodisch, rhythmisch oder timbral.",
+    "original_illustration": "Zweinotengeste mit Pausenprofil.",
+    "limits_and_misconceptions": "Eingängigkeit ist keine objektive theoretische Invariante.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0127",
+    "title": "Textprosodie",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Abstimmung musikalischer Betonungen auf Betonung und Bedeutung der Sprache.",
+    "original_illustration": "Wortakzent fällt auf längere/hohe Note.",
+    "limits_and_misconceptions": "Absichtliche Konflikte sind kreative Mittel.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0128",
+    "title": "Bass Pedal",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Gehaltener Bass während sich Oberharmonien ändern.",
+    "original_illustration": "C unter F/C–G/C–Am/C.",
+    "limits_and_misconceptions": "Umdeutung von Akkordfundament ist möglich.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0129",
+    "title": "Ostinato",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Wiederholte musikalische Figur, die Form/Spannung tragen kann.",
+    "original_illustration": "Achtelpattern C-G-E-G.",
+    "limits_and_misconceptions": "Ein Ostinato definiert nicht notwendigerweise eine Tonart.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0130",
+    "title": "Minimalistische Prozesskomposition",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Veränderungen aus klaren Wiederholungsprozessen.",
+    "original_illustration": "Sukzessive hinzugefügte Note in einem kurzen Zyklus.",
+    "limits_and_misconceptions": "Minimalismus ist vielfältig, nicht nur 'wenige Noten'.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0131",
+    "title": "Aleatorik",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Komposition über zugelassene oder gesteuerte Zufallsentscheidungen.",
+    "original_illustration": "Drei Materialkarten werden in zufälliger Reihenfolge kombiniert.",
+    "limits_and_misconceptions": "Grad von Unbestimmtheit dokumentieren.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0132",
+    "title": "Algorithmische Komposition",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Kompositorischer Prozess durch explizite Regeln/Verfahren.",
+    "original_illustration": "Akkorde aus Stimmführungsbedingungen filtern.",
+    "limits_and_misconceptions": "Verfahren ersetzt nicht automatisch kompositorisches Urteil.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0133",
+    "title": "Generative Harmonik",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Verfahren erzeugt mehrere harmonische Möglichkeiten aus Kontext und Regeln.",
+    "original_illustration": "Dm7→G7 oder Dm7→B7? je nach gewählter Funktion.",
+    "limits_and_misconceptions": "Vorschläge brauchen Scoping und Evidenz.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0134",
+    "title": "Musikalische Erwartung",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Prognosen Hörender durch erlernte Muster und aktuelle Ereignisse.",
+    "original_illustration": "Dominant–Tonic Erwartung in passendem Stil.",
+    "limits_and_misconceptions": "Individuelle/kulturelle Variabilität beachten.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0135",
+    "title": "Tension and Release",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Kontextabhängige Beschreibung von Spannungsverläufen.",
+    "original_illustration": "Leitton und Dissonanz können Erwartung steigern.",
+    "limits_and_misconceptions": "Eine universelle numerische Tensionskala ist wissenschaftlich nicht abgesichert.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0136",
+    "title": "Musikalische Mehrdeutigkeit",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Mehr als eine plausible Interpretation derselben Ereignisfolge.",
+    "original_illustration": "Am–F–C–G kann relativ-moll- und durzentriert sein.",
+    "limits_and_misconceptions": "Alternative Analysen brauchen Kontextverweise und Confidence-Evidenz.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0137",
+    "title": "Musikalische Wiederholung",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Form-/Aufmerksamkeitswirkung durch wiederkehrende Ereignisse.",
+    "original_illustration": "Zweifache Motivwiederkehr im Refrain.",
+    "limits_and_misconceptions": "Gewöhnung und Erwartung sind keine deterministischen Effekte.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0138",
+    "title": "Adaptive Game Music",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Musik wird in Echtzeit an Spielzustand oder Szenen angepasst.",
+    "original_illustration": "Zwei kompatible Harmonieflächen bei gleicher Taktlänge crossfaden.",
+    "limits_and_misconceptions": "Produktions-/Loop-Seams und Rechte separat berücksichtigen.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0139",
+    "title": "Maqam",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Familie historisch vielfältiger modaler Praktiken mit melodischen Wegen und Intonation.",
+    "original_illustration": "Ein Maqam ist nicht bloß eine 12-TET-Leiter.",
+    "limits_and_misconceptions": "Ohne traditionsspezifische Quelle keine automatische Umrechnung in Kirchentonart.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0140",
+    "title": "Raga",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Traditionsgebundene melodische Organisation mit Bewegung, Betonung und Kontext.",
+    "original_illustration": "Aufstieg/Abstieg und charakteristische Phrasen sind wichtig.",
+    "limits_and_misconceptions": "Nicht als westliche Tonleiter mit festen Akkordregeln behandeln.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0141",
+    "title": "Gamelan Tuning Systems",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Indonesische Ensembles verwenden vielfältige lokale Stimmungssysteme, u.a. sléndro/pélog.",
+    "original_illustration": "Ensemble-spezifische Stimmung muss dokumentiert werden.",
+    "limits_and_misconceptions": "Keine pauschale Gleichsetzung mit 5-/7-TET.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  },
+  {
+    "id": "THEORY-V3-0142",
+    "title": "Westafrikanische Rhythmusmodelle",
+    "domain": "Composing Contemporary and Science",
+    "definition": "Unterschiedliche musikalische Praktiken mit komplexen Zeitbeziehungen.",
+    "original_illustration": "Cross-rhythm und timeline patterns nur kontext- und kulturspezifisch vergleichen.",
+    "limits_and_misconceptions": "'Afrikanischer Rhythmus' ist keine homogene Theorie.",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0024",
+      "SRC-V3-0010"
+    ],
+    "source_status": "source_family_associated_not_claim_verified",
+    "review_status": "editorial_draft_pending_specialist_review",
+    "version": "0.3.0"
+  }
+]

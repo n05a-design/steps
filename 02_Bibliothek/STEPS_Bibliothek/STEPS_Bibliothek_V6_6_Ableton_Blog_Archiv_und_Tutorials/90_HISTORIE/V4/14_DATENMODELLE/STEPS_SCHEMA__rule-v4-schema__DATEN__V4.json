@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://steps.local/schema/rule.v4.json",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "applicability_conditions",
+    "assertion_or_proposal",
+    "non_applicability_or_counterexample",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "pattern": "^RULE-V4-[0-9]{3}$",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "constraint",
+        "tendency",
+        "interpretation",
+        "heuristic",
+        "transformation",
+        "convention",
+        "empirical_observation"
+      ]
+    },
+    "applicability_conditions": {
+      "type": "string"
+    },
+    "assertion_or_proposal": {
+      "type": "string"
+    },
+    "non_applicability_or_counterexample": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  }
+}

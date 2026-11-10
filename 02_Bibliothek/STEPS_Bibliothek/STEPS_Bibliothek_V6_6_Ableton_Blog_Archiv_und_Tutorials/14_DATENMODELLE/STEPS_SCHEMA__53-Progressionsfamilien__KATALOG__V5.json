@@ -1,0 +1,797 @@
+[
+  {
+    "id": "V5-FAM-001",
+    "category": "functional",
+    "degree_tokens": [
+      "I",
+      "ii",
+      "V7",
+      "I"
+    ],
+    "design_mechanism": "preparatory and dominant return",
+    "primary_lens": "common_practice",
+    "uncertainty_or_counterexample": "Cadence requires phrase boundary",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-002",
+    "category": "functional",
+    "degree_tokens": [
+      "I",
+      "vi",
+      "ii",
+      "V7"
+    ],
+    "design_mechanism": "tonic prolongation and pre-dominant preparation",
+    "primary_lens": "common_practice",
+    "uncertainty_or_counterexample": "No formal cadence until return",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-003",
+    "category": "functional",
+    "degree_tokens": [
+      "I",
+      "IV",
+      "V7",
+      "I"
+    ],
+    "design_mechanism": "two dominant-region preparations",
+    "primary_lens": "common_practice",
+    "uncertainty_or_counterexample": "Not all IV-V-I turns are phrase closure",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-004",
+    "category": "functional",
+    "degree_tokens": [
+      "I",
+      "IV",
+      "I",
+      "V7"
+    ],
+    "design_mechanism": "open ending on dominant",
+    "primary_lens": "common_practice",
+    "uncertainty_or_counterexample": "Cadential context uncertain",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-005",
+    "category": "functional",
+    "degree_tokens": [
+      "I",
+      "iii",
+      "vi",
+      "V7"
+    ],
+    "design_mechanism": "mediant and relative-minor motion",
+    "primary_lens": "common_practice",
+    "uncertainty_or_counterexample": "iii may be linear prolongation",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-006",
+    "category": "functional",
+    "degree_tokens": [
+      "IV",
+      "I",
+      "V7",
+      "I"
+    ],
+    "design_mechanism": "plagal-colored preface to authentic goal",
+    "primary_lens": "common_practice",
+    "uncertainty_or_counterexample": "Not a universal cadence schema",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-007",
+    "category": "functional",
+    "degree_tokens": [
+      "I",
+      "V7",
+      "vi",
+      "IV"
+    ],
+    "design_mechanism": "deceptive target followed by IV",
+    "primary_lens": "common_practice",
+    "uncertainty_or_counterexample": "vi is not always deceptive in a loop",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-008",
+    "category": "functional",
+    "degree_tokens": [
+      "I",
+      "ii",
+      "V7",
+      "vi"
+    ],
+    "design_mechanism": "deceptive cadence attempt",
+    "primary_lens": "common_practice",
+    "uncertainty_or_counterexample": "Requires phrase context",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-009",
+    "category": "functional",
+    "degree_tokens": [
+      "vi",
+      "ii",
+      "V7",
+      "I"
+    ],
+    "design_mechanism": "departure from relative minor toward tonic",
+    "primary_lens": "common_practice",
+    "uncertainty_or_counterexample": "vi opening may imply another center",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-010",
+    "category": "functional",
+    "degree_tokens": [
+      "I",
+      "V7/V",
+      "V7",
+      "I"
+    ],
+    "design_mechanism": "applied dominant chain",
+    "primary_lens": "common_practice",
+    "uncertainty_or_counterexample": "Tonicization is not sustained modulation",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-011",
+    "category": "functional",
+    "degree_tokens": [
+      "I",
+      "V7/ii",
+      "ii",
+      "V7"
+    ],
+    "design_mechanism": "dominant to pre-dominant preparation",
+    "primary_lens": "common_practice",
+    "uncertainty_or_counterexample": "Next I not guaranteed",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-012",
+    "category": "functional",
+    "degree_tokens": [
+      "I",
+      "V7/vi",
+      "vi",
+      "IV"
+    ],
+    "design_mechanism": "temporary tonicization of relative minor",
+    "primary_lens": "common_practice",
+    "uncertainty_or_counterexample": "May be genre loop",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-013",
+    "category": "functional",
+    "degree_tokens": [
+      "I",
+      "IV",
+      "V7/vi",
+      "vi"
+    ],
+    "design_mechanism": "applied dominant to submediant",
+    "primary_lens": "common_practice",
+    "uncertainty_or_counterexample": "One applied chord is not modulation",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-014",
+    "category": "functional",
+    "degree_tokens": [
+      "I",
+      "I7",
+      "IV",
+      "iv"
+    ],
+    "design_mechanism": "pivot to IV then borrowed minor IV",
+    "primary_lens": "common_practice",
+    "uncertainty_or_counterexample": "I7 can be V/IV, but may also be blues",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-015",
+    "category": "functional",
+    "degree_tokens": [
+      "I",
+      "IV",
+      "iv",
+      "I"
+    ],
+    "design_mechanism": "minor subdominant and return",
+    "primary_lens": "common_practice",
+    "uncertainty_or_counterexample": "Mood not determined",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-016",
+    "category": "functional",
+    "degree_tokens": [
+      "I",
+      "IVmaj7",
+      "iv6",
+      "I"
+    ],
+    "design_mechanism": "chromatic voice-leading on parallel subdominant",
+    "primary_lens": "common_practice",
+    "uncertainty_or_counterexample": "Voicing and tone spelling matter",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-017",
+    "category": "pop_rock",
+    "degree_tokens": [
+      "I",
+      "V",
+      "vi",
+      "IV"
+    ],
+    "design_mechanism": "four-chord loop axis family",
+    "primary_lens": "pop_rock",
+    "uncertainty_or_counterexample": "Rotation changes formal salience",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-018",
+    "category": "pop_rock",
+    "degree_tokens": [
+      "vi",
+      "IV",
+      "I",
+      "V"
+    ],
+    "design_mechanism": "rotation with vi first",
+    "primary_lens": "pop_rock",
+    "uncertainty_or_counterexample": "Tonal center ambiguous",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-019",
+    "category": "pop_rock",
+    "degree_tokens": [
+      "IV",
+      "I",
+      "V",
+      "vi"
+    ],
+    "design_mechanism": "rotation with IV first",
+    "primary_lens": "pop_rock",
+    "uncertainty_or_counterexample": "I not necessarily strongest chord",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-020",
+    "category": "pop_rock",
+    "degree_tokens": [
+      "I",
+      "bVII",
+      "IV",
+      "I"
+    ],
+    "design_mechanism": "mixolydian-adjacent loop",
+    "primary_lens": "pop_rock",
+    "uncertainty_or_counterexample": "Modal center requires more than chord roots",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-021",
+    "category": "pop_rock",
+    "degree_tokens": [
+      "I",
+      "bVI",
+      "bVII",
+      "I"
+    ],
+    "design_mechanism": "chromatic pop turnaround",
+    "primary_lens": "pop_rock",
+    "uncertainty_or_counterexample": "bVI and bVII not universal functions",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-022",
+    "category": "pop_rock",
+    "degree_tokens": [
+      "vi",
+      "bVII",
+      "I",
+      "IV"
+    ],
+    "design_mechanism": "stepwise/root-chain color",
+    "primary_lens": "pop_rock",
+    "uncertainty_or_counterexample": "Root naming relative to major key",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-023",
+    "category": "pop_rock",
+    "degree_tokens": [
+      "vi",
+      "IV",
+      "V",
+      "V"
+    ],
+    "design_mechanism": "tonic may be emergent rather than present",
+    "primary_lens": "pop_rock",
+    "uncertainty_or_counterexample": "Do not invent I",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-024",
+    "category": "pop_rock",
+    "degree_tokens": [
+      "ii",
+      "IV",
+      "V",
+      "V"
+    ],
+    "design_mechanism": "prechorus rising function",
+    "primary_lens": "pop_rock",
+    "uncertainty_or_counterexample": "Only form context supports prechorus claim",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-025",
+    "category": "pop_rock",
+    "degree_tokens": [
+      "I",
+      "bIII",
+      "IV",
+      "I"
+    ],
+    "design_mechanism": "rock major-third mixture",
+    "primary_lens": "pop_rock",
+    "uncertainty_or_counterexample": "Melody may imply another tonic",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-026",
+    "category": "pop_rock",
+    "degree_tokens": [
+      "I",
+      "iv",
+      "bVII",
+      "IV"
+    ],
+    "design_mechanism": "mixed major-minor modal palette",
+    "primary_lens": "pop_rock",
+    "uncertainty_or_counterexample": "No fixed classical functional path",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-027",
+    "category": "blues",
+    "degree_tokens": [
+      "I7",
+      "IV7",
+      "I7",
+      "V7"
+    ],
+    "design_mechanism": "blues-root chord family",
+    "primary_lens": "blues",
+    "uncertainty_or_counterexample": "One-takt compression of blues color, not full 12-bar form",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-028",
+    "category": "blues",
+    "degree_tokens": [
+      "I7",
+      "I7",
+      "IV7",
+      "I7"
+    ],
+    "design_mechanism": "blues tonic and IV color",
+    "primary_lens": "blues",
+    "uncertainty_or_counterexample": "I7 is not automatically secondary dominant",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-029",
+    "category": "blues",
+    "degree_tokens": [
+      "IV7",
+      "I7",
+      "V7",
+      "IV7"
+    ],
+    "design_mechanism": "blues approach to turnaround",
+    "primary_lens": "blues",
+    "uncertainty_or_counterexample": "Needs actual 12-bar context to label form",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-030",
+    "category": "jazz",
+    "degree_tokens": [
+      "ii7",
+      "V7",
+      "Imaj7",
+      "Imaj7"
+    ],
+    "design_mechanism": "jazz ii-V-I tonic extension",
+    "primary_lens": "jazz",
+    "uncertainty_or_counterexample": "Voicing not specified",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-031",
+    "category": "jazz",
+    "degree_tokens": [
+      "Imaj7",
+      "VI7",
+      "ii7",
+      "V7"
+    ],
+    "design_mechanism": "extended jazz turnaround",
+    "primary_lens": "jazz",
+    "uncertainty_or_counterexample": "VI7 functions applied to ii under conditions",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-032",
+    "category": "jazz",
+    "degree_tokens": [
+      "iii7",
+      "VI7",
+      "ii7",
+      "V7"
+    ],
+    "design_mechanism": "cycle of applied dominants",
+    "primary_lens": "jazz",
+    "uncertainty_or_counterexample": "iii may have modal reinterpretation",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-033",
+    "category": "jazz",
+    "degree_tokens": [
+      "ii7",
+      "bII7",
+      "Imaj7",
+      "Imaj7"
+    ],
+    "design_mechanism": "tritone substitution into I",
+    "primary_lens": "jazz",
+    "uncertainty_or_counterexample": "Guide tones not identical in spelling",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-034",
+    "category": "jazz",
+    "degree_tokens": [
+      "iv7",
+      "bVII7",
+      "Imaj7",
+      "Imaj7"
+    ],
+    "design_mechanism": "backdoor approach to I",
+    "primary_lens": "jazz",
+    "uncertainty_or_counterexample": "Borrowed iv and bVII7 are style-lensed",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-035",
+    "category": "jazz",
+    "degree_tokens": [
+      "Imaj7",
+      "V7/vi",
+      "vi7",
+      "V7/V"
+    ],
+    "design_mechanism": "chain of local goals",
+    "primary_lens": "jazz",
+    "uncertainty_or_counterexample": "Local tonicization does not equal modulation",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-036",
+    "category": "jazz",
+    "degree_tokens": [
+      "Imaj9",
+      "VI7",
+      "ii9",
+      "V13"
+    ],
+    "design_mechanism": "extended ninth/thirteenth cycle",
+    "primary_lens": "jazz",
+    "uncertainty_or_counterexample": "Voicings and omission semantics essential",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-037",
+    "category": "jazz",
+    "degree_tokens": [
+      "IVmaj7",
+      "bVII7",
+      "Imaj7",
+      "V7"
+    ],
+    "design_mechanism": "modal/jazz coloration",
+    "primary_lens": "jazz",
+    "uncertainty_or_counterexample": "bVII7 can be backdoor; context needed",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-038",
+    "category": "jazz",
+    "degree_tokens": [
+      "vi7",
+      "V7/ii",
+      "ii7",
+      "V7"
+    ],
+    "design_mechanism": "minor-start turnaround",
+    "primary_lens": "jazz",
+    "uncertainty_or_counterexample": "Functional claim is style-dependent",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-039",
+    "category": "jazz",
+    "degree_tokens": [
+      "ii7",
+      "V7/vi",
+      "vi7",
+      "V7"
+    ],
+    "design_mechanism": "off-tonic arrival",
+    "primary_lens": "jazz",
+    "uncertainty_or_counterexample": "Additional form needed to establish vi",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-040",
+    "category": "chromatic",
+    "degree_tokens": [
+      "I",
+      "bVI",
+      "bIII",
+      "bVII"
+    ],
+    "design_mechanism": "chromatic roots and modal mixture",
+    "primary_lens": "transformational",
+    "uncertainty_or_counterexample": "Avoid forcing tonic-dominant hierarchy",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-041",
+    "category": "chromatic",
+    "degree_tokens": [
+      "I",
+      "bIII",
+      "bVI",
+      "I"
+    ],
+    "design_mechanism": "chromatic mediant sequence",
+    "primary_lens": "transformational",
+    "uncertainty_or_counterexample": "Common tone motion needs voicing",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-042",
+    "category": "chromatic",
+    "degree_tokens": [
+      "I",
+      "bVI",
+      "IV",
+      "iv"
+    ],
+    "design_mechanism": "two-color contrasting mixture",
+    "primary_lens": "transformational",
+    "uncertainty_or_counterexample": "May be interpreted multiple ways",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-043",
+    "category": "chromatic",
+    "degree_tokens": [
+      "I",
+      "III7",
+      "vi",
+      "iv"
+    ],
+    "design_mechanism": "applied triadic color and borrowed iv",
+    "primary_lens": "transformational",
+    "uncertainty_or_counterexample": "III7 may act V7/vi",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-044",
+    "category": "chromatic",
+    "degree_tokens": [
+      "I",
+      "bII7",
+      "Imaj7",
+      "I"
+    ],
+    "design_mechanism": "bII dominant color resolves to tonic",
+    "primary_lens": "transformational",
+    "uncertainty_or_counterexample": "bII7 not universally tritone sub",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-045",
+    "category": "chromatic",
+    "degree_tokens": [
+      "I",
+      "iv",
+      "bVI",
+      "V7"
+    ],
+    "design_mechanism": "chromatic predominant coloration",
+    "primary_lens": "transformational",
+    "uncertainty_or_counterexample": "Voicing crucial for functional reading",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-046",
+    "category": "chromatic",
+    "degree_tokens": [
+      "I",
+      "bIII",
+      "bVII",
+      "IV"
+    ],
+    "design_mechanism": "chromatic-mediant and modal descent",
+    "primary_lens": "transformational",
+    "uncertainty_or_counterexample": "No universal genre/quality claim",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-047",
+    "category": "chromatic",
+    "degree_tokens": [
+      "I",
+      "bVI",
+      "I",
+      "bVII"
+    ],
+    "design_mechanism": "back-and-forth remote color",
+    "primary_lens": "transformational",
+    "uncertainty_or_counterexample": "Tempo and context can dominate perception",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-048",
+    "category": "composing",
+    "degree_tokens": [
+      "I",
+      "Imaj7",
+      "IVmaj7",
+      "iv"
+    ],
+    "design_mechanism": "textural color before cadence",
+    "primary_lens": "composition",
+    "uncertainty_or_counterexample": "Need phrase finish to call closure",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-049",
+    "category": "composing",
+    "degree_tokens": [
+      "I",
+      "vi",
+      "ii",
+      "V7"
+    ],
+    "design_mechanism": "presentation with consequent option",
+    "primary_lens": "composition",
+    "uncertainty_or_counterexample": "Takt count alone not sentence",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-050",
+    "category": "composing",
+    "degree_tokens": [
+      "I",
+      "V7/vi",
+      "vi",
+      "IV"
+    ],
+    "design_mechanism": "foreground relative minor contrast",
+    "primary_lens": "composition",
+    "uncertainty_or_counterexample": "Part writing must be evaluated",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-051",
+    "category": "composing",
+    "degree_tokens": [
+      "I",
+      "bVII",
+      "IV",
+      "I"
+    ],
+    "design_mechanism": "ostinato with held melody tonic",
+    "primary_lens": "composition",
+    "uncertainty_or_counterexample": "Mode claims require bass/melody",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-052",
+    "category": "composing",
+    "degree_tokens": [
+      "Imaj7",
+      "IVmaj7",
+      "ii7",
+      "V7"
+    ],
+    "design_mechanism": "lyrical four-bar melodic setting",
+    "primary_lens": "composition",
+    "uncertainty_or_counterexample": "Strong melody notes may be tensions",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  },
+  {
+    "id": "V5-FAM-053",
+    "category": "composing",
+    "degree_tokens": [
+      "vi7",
+      "ii7",
+      "V7",
+      "Imaj7"
+    ],
+    "design_mechanism": "melody goal delayed to fourth harmony",
+    "primary_lens": "composition",
+    "uncertainty_or_counterexample": "Goal must be heard, not assumed",
+    "provenance": "original_pedagogical_design",
+    "expert_review_status": "pending"
+  }
+]

@@ -1,0 +1,1458 @@
+[
+  {
+    "id": "TEST-V4-0001",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-001",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0002",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-001",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0003",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-001",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0004",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-001",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0005",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-001",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0006",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-002",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0007",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-002",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0008",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-002",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0009",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-002",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0010",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-002",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0011",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-003",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0012",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-003",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0013",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-003",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0014",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-003",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0015",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-003",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0016",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-004",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0017",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-004",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0018",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-004",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0019",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-004",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0020",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-004",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0021",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-005",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0022",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-005",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0023",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-005",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0024",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-005",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0025",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-005",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0026",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-006",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0027",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-006",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0028",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-006",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0029",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-006",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0030",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-006",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0031",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-007",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0032",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-007",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0033",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-007",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0034",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-007",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0035",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-007",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0036",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-008",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0037",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-008",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0038",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-008",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0039",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-008",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0040",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-008",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0041",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-009",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0042",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-009",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0043",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-009",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0044",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-009",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0045",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-009",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0046",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-010",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0047",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-010",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0048",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-010",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0049",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-010",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0050",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-010",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0051",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-011",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0052",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-011",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0053",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-011",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0054",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-011",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0055",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-011",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0056",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-012",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0057",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-012",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0058",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-012",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0059",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-012",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0060",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-012",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0061",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-013",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0062",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-013",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0063",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-013",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0064",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-013",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0065",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-013",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0066",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-014",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0067",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-014",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0068",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-014",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0069",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-014",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0070",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-014",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0071",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-015",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0072",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-015",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0073",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-015",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0074",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-015",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0075",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-015",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0076",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-016",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0077",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-016",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0078",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-016",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0079",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-016",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0080",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-016",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0081",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-017",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0082",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-017",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0083",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-017",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0084",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-017",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0085",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-017",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0086",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-018",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0087",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-018",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0088",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-018",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0089",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-018",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0090",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-018",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0091",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-019",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0092",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-019",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0093",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-019",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0094",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-019",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0095",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-019",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0096",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-020",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0097",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-020",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0098",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-020",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0099",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-020",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0100",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-020",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0101",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-021",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0102",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-021",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0103",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-021",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0104",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-021",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0105",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-021",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0106",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-022",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0107",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-022",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0108",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-022",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0109",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-022",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0110",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-022",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0111",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-023",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0112",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-023",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0113",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-023",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0114",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-023",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0115",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-023",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0116",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-024",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0117",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-024",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0118",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-024",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0119",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-024",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0120",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-024",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0121",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-025",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0122",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-025",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0123",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-025",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0124",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-025",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0125",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-025",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0126",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-026",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0127",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-026",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0128",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-026",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0129",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-026",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0130",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-026",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0131",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-027",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0132",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-027",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0133",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-027",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0134",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-027",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0135",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-027",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0136",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-028",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0137",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-028",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0138",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-028",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0139",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-028",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0140",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-028",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0141",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-029",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0142",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-029",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0143",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-029",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0144",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-029",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0145",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-029",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0146",
+    "test_type": "bar_count",
+    "target": "ETUDE-V4-030",
+    "expected": 16,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0147",
+    "test_type": "beats_per_bar",
+    "target": "ETUDE-V4-030",
+    "expected": 4,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0148",
+    "test_type": "midi_parseable",
+    "target": "ETUDE-V4-030",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0149",
+    "test_type": "bass_root_present",
+    "target": "ETUDE-V4-030",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0150",
+    "test_type": "melody_pitches_in_chord",
+    "target": "ETUDE-V4-030",
+    "expected": true,
+    "execution": "automated_in_validate_v4.py",
+    "result": "pending_script_run"
+  },
+  {
+    "id": "TEST-V4-0151",
+    "test_type": "theory_reference_case",
+    "target": "f_sharp_major",
+    "expected": "F# G# A# B C# D# E#",
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0152",
+    "test_type": "theory_reference_case",
+    "target": "c_to_f_sharp",
+    "expected": "A4",
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0153",
+    "test_type": "theory_reference_case",
+    "target": "c_to_g_flat",
+    "expected": "d5",
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0154",
+    "test_type": "theory_reference_case",
+    "target": "interval_c_e",
+    "expected": "M3",
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0155",
+    "test_type": "theory_reference_case",
+    "target": "triad_c",
+    "expected": "C E G",
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0156",
+    "test_type": "theory_reference_case",
+    "target": "triad_a_minor",
+    "expected": "A C E",
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0157",
+    "test_type": "theory_reference_case",
+    "target": "chord_cmaj7",
+    "expected": "C E G B",
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0158",
+    "test_type": "theory_reference_case",
+    "target": "chord_c7",
+    "expected": "C E G Bb",
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0159",
+    "test_type": "theory_reference_case",
+    "target": "chord_cadd9",
+    "expected": "C E G D",
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0160",
+    "test_type": "theory_reference_case",
+    "target": "chord_g7",
+    "expected": "G B D F",
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0161",
+    "test_type": "theory_reference_case",
+    "target": "dorian_d",
+    "expected": "D E F G A B C",
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0162",
+    "test_type": "theory_reference_case",
+    "target": "phrygian_e",
+    "expected": "E F G A B C D",
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0163",
+    "test_type": "theory_reference_case",
+    "target": "mixolydian_g",
+    "expected": "G A B C D E F",
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0164",
+    "test_type": "theory_reference_case",
+    "target": "lydian_c",
+    "expected": "C D E F# G A B",
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0165",
+    "test_type": "theory_reference_case",
+    "target": "natural_minor_a",
+    "expected": "A B C D E F G",
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0166",
+    "test_type": "theory_reference_case",
+    "target": "enharmonic_fsharp_gflat",
+    "expected": "same_pc_12tet",
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0167",
+    "test_type": "theory_reference_case",
+    "target": "classical_A7_in_C",
+    "expected": "V7/ii_candidate",
+    "execution": "reference_or_expert_review_required",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0168",
+    "test_type": "theory_reference_case",
+    "target": "axis_ambiguous",
+    "expected": "C_major_and_A_aeolian_candidates",
+    "execution": "reference_or_expert_review_required",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0169",
+    "test_type": "theory_reference_case",
+    "target": "blue_tonic",
+    "expected": "I7_possible",
+    "execution": "reference_or_expert_review_required",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0170",
+    "test_type": "theory_reference_case",
+    "target": "g7_to_c_cadence",
+    "expected": "requires_phrase",
+    "execution": "reference_or_expert_review_required",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0171",
+    "test_type": "theory_reference_case",
+    "target": "midi_pitch_min",
+    "expected": 0,
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0172",
+    "test_type": "theory_reference_case",
+    "target": "midi_pitch_max",
+    "expected": 127,
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0173",
+    "test_type": "theory_reference_case",
+    "target": "major_scale_intervals",
+    "expected": [
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      1
+    ],
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0174",
+    "test_type": "theory_reference_case",
+    "target": "natural_minor_intervals",
+    "expected": [
+      2,
+      1,
+      2,
+      2,
+      1,
+      2,
+      2
+    ],
+    "execution": "automatable_if_parser_implemented",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0175",
+    "test_type": "theory_reference_case",
+    "target": "semitone_motion",
+    "expected": "context_dependent",
+    "execution": "reference_or_expert_review_required",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0176",
+    "test_type": "theory_reference_case",
+    "target": "tritone_substitution",
+    "expected": "not_universally_identical",
+    "execution": "reference_or_expert_review_required",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0177",
+    "test_type": "theory_reference_case",
+    "target": "skill_knowledge_separation",
+    "expected": "knowledge_in_references",
+    "execution": "reference_or_expert_review_required",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0178",
+    "test_type": "theory_reference_case",
+    "target": "provenance_exact_locator",
+    "expected": "mandatory_for_verified",
+    "execution": "reference_or_expert_review_required",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0179",
+    "test_type": "theory_reference_case",
+    "target": "dataset_license_is_per_partition",
+    "expected": "must_check",
+    "execution": "reference_or_expert_review_required",
+    "result": "not_executed"
+  },
+  {
+    "id": "TEST-V4-0180",
+    "test_type": "theory_reference_case",
+    "target": "nonwestern_raga",
+    "expected": "not_equivalent_to_scale",
+    "execution": "reference_or_expert_review_required",
+    "result": "not_executed"
+  }
+]

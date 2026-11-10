@@ -1,0 +1,1825 @@
+[
+  {
+    "id": "COMP-TECH-V3-0001",
+    "title": "Motif Seed",
+    "group": "motivisch",
+    "method": "Wähle eine kurze Zelle mit unterscheidbarer Rhythmik und Kontur.",
+    "original_example": "q C4, e D4, e E4",
+    "review_check": "Prüfe, ob die Zelle mit anderer Harmonie wiedererkennbar bleibt.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0002",
+    "title": "Rhythm First",
+    "group": "melodisch",
+    "method": "Entwickle zuerst Akzente und Pausen, dann Pitch.",
+    "original_example": "q Rest, e C4, e D4, q E4",
+    "review_check": "Ein neuer Pitch darf den ursprünglichen Akzent nicht verschleiern.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0003",
+    "title": "Contour First",
+    "group": "melodisch",
+    "method": "Definiere Auf-/Ab-Gesten vor genauen Tonhöhen.",
+    "original_example": "up-up-down-flat",
+    "review_check": "Vertone sie in Dur, Moll und Dorisch und vergleiche.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0004",
+    "title": "Target Tone",
+    "group": "melodisch",
+    "method": "Lege Zielnoten an Phrasenenden fest.",
+    "original_example": "E4 über Cmaj7 am Ende",
+    "review_check": "Zielton als Akkordton oder vorbereitete Dissonanz nachweisen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0005",
+    "title": "Motivic Sequence",
+    "group": "motivisch",
+    "method": "Wiederhole Motiv auf neuer diatonischer Stufe.",
+    "original_example": "C-D-E; D-E-F; E-F-G",
+    "review_check": "Chromatische/diatonische Exaktheit separat prüfen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0006",
+    "title": "Chromatic Sequence",
+    "group": "motivisch",
+    "method": "Verschiebe Motive um festgelegte Anzahl Halbtonschritte.",
+    "original_example": "C-D-E → D-E-F#",
+    "review_check": "Notenschreibweise und Tonartwechsel prüfen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0007",
+    "title": "Inversion",
+    "group": "motivisch",
+    "method": "Umkehre Intervallrichtungen um einen Referenzton.",
+    "original_example": "C-D-E → C-Bb-Ab in chromatic inversion around C",
+    "review_check": "Intervallqualitäten konsistent definieren.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0008",
+    "title": "Retrograde",
+    "group": "motivisch",
+    "method": "Spiele Ereignisse in umgekehrter Reihenfolge.",
+    "original_example": "C D E → E D C",
+    "review_check": "Notenlängen- und Pausen-Retrograd gesondert definieren.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0009",
+    "title": "Augmentation",
+    "group": "motivisch",
+    "method": "Multipliziere rhythmische Werte mit festem Faktor.",
+    "original_example": "e e q → q q h",
+    "review_check": "Takt-/Formdauern bewusst anpassen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0010",
+    "title": "Diminution",
+    "group": "motivisch",
+    "method": "Halbiere Dauern, ohne Motivkontur zu ändern.",
+    "original_example": "q q h → e e q",
+    "review_check": "Phrasierung und Spielbarkeit prüfen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0011",
+    "title": "Fragmentation",
+    "group": "motivisch",
+    "method": "Isoliere prägnante Teilzelle.",
+    "original_example": "C-D-E → D-E → D-E",
+    "review_check": "Erhalte einen Gestaltbezug durch Rhythmik.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0012",
+    "title": "Liquidation",
+    "group": "formal",
+    "method": "Reduziere motivische Merkmale zum kadenzvorbereitenden Material.",
+    "original_example": "4-note-cell → repeating pair → scalar notes",
+    "review_check": "Nicht jedes Fragment ist ein formaler Continuation-Prozess.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0013",
+    "title": "Interval Expansion",
+    "group": "melodisch",
+    "method": "Erweitere Sprung bei gleicher grober Kontur.",
+    "original_example": "C-D-E → C-E-G",
+    "review_check": "Register/Leittonwirkung neu beurteilen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0014",
+    "title": "Interval Compression",
+    "group": "melodisch",
+    "method": "Verkleinere Intervalle und behalte Richtung.",
+    "original_example": "C-G-A → C-E-F",
+    "review_check": "Motividentität trotz neuer Intervallgröße prüfen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0015",
+    "title": "Register Displacement",
+    "group": "melodisch",
+    "method": "Verlege charakteristischen Ton in andere Oktave.",
+    "original_example": "C4-D4-E4 → C4-D5-E4",
+    "review_check": "Sprünge auf Instrument spielbar?",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0016",
+    "title": "Metric Displacement",
+    "group": "rhythmisch",
+    "method": "Verschiebe Auftakt oder Motivakzent.",
+    "original_example": "Beginne C-D-E auf Beat 2& statt 1",
+    "review_check": "Harmonieakzent und Synkope prüfen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0017",
+    "title": "Rhythmic Recomposition",
+    "group": "rhythmisch",
+    "method": "Bewahre Pitch-Linie und ändere Rhythmus.",
+    "original_example": "C D E mit q q h vs e e q",
+    "review_check": "Vergleiche Phrase bei gleichem Tempo.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0018",
+    "title": "Phrase Extension",
+    "group": "formal",
+    "method": "Vergrößere Phrase durch Sequenz/Nachklang.",
+    "original_example": "4 bars → 6 bars",
+    "review_check": "Hypermetrik und Formfunktion dokumentieren.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0019",
+    "title": "Phrase Elision",
+    "group": "formal",
+    "method": "Nutze einen Schluss zugleich als neuen Beginn.",
+    "original_example": "Takt 4 Schluss=Auftakt Takt 5",
+    "review_check": "Phasengrenzen als alternativ interpretierbar speichern.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0020",
+    "title": "Antecedent/Consequent",
+    "group": "formal",
+    "method": "Erstelle erst schwach, dann stark schließende Phrase.",
+    "original_example": "4 Takte → Halbschluss; 4 Takte → V–I",
+    "review_check": "Motivverwandtschaft und Kadenzposition prüfen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0021",
+    "title": "Presentation/Continuation",
+    "group": "formal",
+    "method": "Erstelle 2+2 Anfangsmuster und 4 Takte Entwicklung/Kadenz.",
+    "original_example": "2+2+4",
+    "review_check": "Caplin-Satztyp nicht nur nach Taktzahl labeln.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0022",
+    "title": "Binary Form",
+    "group": "formal",
+    "method": "Zwei kontrastierende/zusammenhängende Großabschnitte planen.",
+    "original_example": "A–B mit Reprisevarianten",
+    "review_check": "Harmonische Schlussstellen in jedem Abschnitt.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0023",
+    "title": "Ternary Form",
+    "group": "formal",
+    "method": "Einführung, kontrastierende Mitte und Rückkehr.",
+    "original_example": "A–B–A'",
+    "review_check": "A' kann transformierte Reprise sein.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0024",
+    "title": "Rondo",
+    "group": "formal",
+    "method": "Refrain mit kontrastierenden Episoden alternieren.",
+    "original_example": "A–B–A–C–A",
+    "review_check": "Wiederkehr muss hörbar/funktional sein.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0025",
+    "title": "Theme and Variations",
+    "group": "formal",
+    "method": "Behalte identifizierbare Struktur bei variierter Oberfläche.",
+    "original_example": "Theme, var1 rhythm, var2 reharm, var3 counterpoint",
+    "review_check": "Identitätsmaß gesondert beschreiben.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0026",
+    "title": "Strophic",
+    "group": "songwriting",
+    "method": "Schreibe musikalische Strophe mit Textvariationen.",
+    "original_example": "Verse A für 3 Strophen",
+    "review_check": "Prosodie jeder neuen Textfassung prüfen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0027",
+    "title": "Verse Chorus Contrast",
+    "group": "songwriting",
+    "method": "Trenne narrative Entwicklung von Hook-Abschnitt.",
+    "original_example": "Verse 8b → Chorus 8b",
+    "review_check": "Kontrast kann Timbre statt Harmonik sein.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0028",
+    "title": "Prechorus Build",
+    "group": "songwriting",
+    "method": "Steigere Richtung Chorus durch Rhythmus/Register.",
+    "original_example": "Neue Bassrhythmik plus häufigere Akkordwechsel",
+    "review_check": "Dichte und Zielharmonie explizit planen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0029",
+    "title": "Bridge Contrast",
+    "group": "songwriting",
+    "method": "Führe abweichendes Motiv/Key/Texture zur Wiederkehr.",
+    "original_example": "8b Bridge mit bVI-region",
+    "review_check": "Nicht nur 'anderes Akkordschema' sondern neue Dramaturgie.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0030",
+    "title": "Hook Economy",
+    "group": "songwriting",
+    "method": "Schreibe 1–4 markante Töne und präzise Rhythmik.",
+    "original_example": "G4 G4 E4 (synkopiert)",
+    "review_check": "Text-/Sprachakzente und Register beachten.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0031",
+    "title": "Lyric Prosody",
+    "group": "songwriting",
+    "method": "Verknüpfe Wortbetonungen mit metrischer Stärke.",
+    "original_example": "Betonte Silbe auf Beat 1 oder Zielton",
+    "review_check": "Absichtliche Off-beat Wortstellung erlauben.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0032",
+    "title": "Topline Reharmonization",
+    "group": "songwriting",
+    "method": "Behalte Melodie bei und ändere darunter die Akkorde.",
+    "original_example": "E4 über Cmaj7 → Am9 → Fmaj7",
+    "review_check": "Melodietonrolle pro Akkord: chord/extension/nonchord.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0033",
+    "title": "Pedal Point",
+    "group": "harmony",
+    "method": "Halte Bass während Oberakkorde wechseln.",
+    "original_example": "C bass; C Bb/C F/C",
+    "review_check": "Mehrdeutige Chord-Symbol-Parser testen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0034",
+    "title": "Bass-Line First",
+    "group": "harmony",
+    "method": "Erstelle Bassweg, dann Harmonik/Voicing.",
+    "original_example": "C–B–A–G bass",
+    "review_check": "Prüfe Bassrolle und Akkordumkehrungen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0035",
+    "title": "Guide-Tone Line",
+    "group": "harmony",
+    "method": "Entwickle chromatisch/schrittweise 3/7-Stimme.",
+    "original_example": "F(G7)→E(Cmaj7)",
+    "review_check": "Guide-Tones im globalen Tonraum buchstabieren.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0036",
+    "title": "Circle-of-Fifths Plan",
+    "group": "harmony",
+    "method": "Plane funktionale Rückführung durch Quintbeziehungen.",
+    "original_example": "E7–A7–Dm7–G7–C",
+    "review_check": "Sekundärfunktionen individuell analysieren.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0037",
+    "title": "Modal Vamp",
+    "group": "harmony",
+    "method": "Wähle Moduszentrum und 1–2 charakteristische Akkorde.",
+    "original_example": "D-Dorian Dm7–G",
+    "review_check": "Modusidentität im Lead/Bass beweisen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0038",
+    "title": "Chromatic Mediants",
+    "group": "harmony",
+    "method": "Terzverwandte Klangflächen mit Stimmführungsstrategie.",
+    "original_example": "C–Ab–E–C",
+    "review_check": "Keine universelle romantische Klangwirkung behaupten.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0039",
+    "title": "Tritone Substitution",
+    "group": "harmony",
+    "method": "Ersetze V7 durch bII7 im lokalen Zielkontext.",
+    "original_example": "Dm7–Db7–Cmaj7",
+    "review_check": "Guide-Tones F/Cb und H/F enharmonisch prüfen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0040",
+    "title": "Secondary Dominant Chain",
+    "group": "harmony",
+    "method": "Tonisiere Zwischenstationen.",
+    "original_example": "C–E7–Am–D7–G7–C",
+    "review_check": "Angenommene Tonartwechsel nicht überinterpretieren.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0041",
+    "title": "Plagal Color",
+    "group": "harmony",
+    "method": "Experimentiere mit IV/iv/bVII-Kontext.",
+    "original_example": "C–F–Fm–C",
+    "review_check": "Art der Entlehnung/Modalität dokumentieren.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0042",
+    "title": "Open Voicing",
+    "group": "arrangement",
+    "method": "Setze tiefe Stimmen mit größeren Abständen als obere.",
+    "original_example": "Bass C2, G3, E4, H4",
+    "review_check": "Timbre/Spielbarkeit instrumentenspezifisch.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0043",
+    "title": "Close Voicing",
+    "group": "arrangement",
+    "method": "Ordne Akkordtöne im engen oberen Register.",
+    "original_example": "C4-E4-G4-H4",
+    "review_check": "Intervallabhängige Klangdichte beachten.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0044",
+    "title": "Drop-2 Voicing",
+    "group": "arrangement",
+    "method": "Versetze zweithöchste Stimme eine Oktave abwärts.",
+    "original_example": "Vierklang von enger Lage aus umsetzen",
+    "review_check": "Tonhöhen, Doppeltöne und Reichweite prüfen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0045",
+    "title": "Instrument Doubling",
+    "group": "arrangement",
+    "method": "Verstärke Linie im Oktav-/Unisonodoubling.",
+    "original_example": "Melody flute + violin octave",
+    "review_check": "Balance und Register nicht numerisch blind setzen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0046",
+    "title": "Countermelody",
+    "group": "arrangement",
+    "method": "Schreibe unabhängige Antwortstimme mit Pausen.",
+    "original_example": "Main melody beat1–2, countermelody beat3–4",
+    "review_check": "Keine ständige Stimmenkonkurrenz.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0047",
+    "title": "Imitative Counterpoint",
+    "group": "counterpoint",
+    "method": "Wiederhole Motiv in anderer Stimme zeitversetzt.",
+    "original_example": "Viola folgt Violine um 1 Takt",
+    "review_check": "Konsonanz-/Dissonanzmodell stilabhängig.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0048",
+    "title": "Canon",
+    "group": "counterpoint",
+    "method": "Überführe ganze Linie mit festem Zeitversatz.",
+    "original_example": "Canon at 2 bars",
+    "review_check": "Kontrapunktische Intervalle über harmonischen Zeitverlauf prüfen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0049",
+    "title": "Species Counterpoint",
+    "group": "counterpoint",
+    "method": "Arbeite mit kontrollierten Notenverhältnissen als Übung.",
+    "original_example": "1:1 → 2:1 note ratios",
+    "review_check": "Historisch spezielles Lehrsystem, nicht universelles Composing-Gesetz.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0050",
+    "title": "Contrary Motion Plan",
+    "group": "counterpoint",
+    "method": "Plane Bass und Oberstimme gegenläufig.",
+    "original_example": "Bass C→D, melody G→F",
+    "review_check": "Nicht jede entgegenlaufende Bewegung ist Satzqualität.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0051",
+    "title": "Ostinato Build",
+    "group": "process",
+    "method": "Wiederhole Zelle und variiere Obermaterial.",
+    "original_example": "1-bar ostinato 16 bars",
+    "review_check": "Formwachstum durch Dichte/Variation bewusst steuern.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0052",
+    "title": "Additive Process",
+    "group": "process",
+    "method": "Füge pro Wiederholung ein Ereignis hinzu.",
+    "original_example": "1 2 → 1 2 3 → 1 2 3 4",
+    "review_check": "Prozess und Zyklen musikalisch hörbar?",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0053",
+    "title": "Subtractive Process",
+    "group": "process",
+    "method": "Entferne schrittweise Elemente.",
+    "original_example": "Vier Stimmen → drei → zwei",
+    "review_check": "Wiedereinstieg und Bassfunktion planen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0054",
+    "title": "Permutation",
+    "group": "process",
+    "method": "Verändere Materialreihenfolge nach dokumentierter Regel.",
+    "original_example": "C D E → D E C → E C D",
+    "review_check": "Nicht alle Permutationen ergeben neue funktionale Melodien.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0055",
+    "title": "Aleatory Branch",
+    "group": "process",
+    "method": "Markiere kontrollierte Wahlstellen in Form.",
+    "original_example": "Section A then choose B/C",
+    "review_check": "Übergänge in Tonhöhe/Timing kompatibel halten.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0056",
+    "title": "Generative Rule Filter",
+    "group": "computational",
+    "method": "Erzeuge Kandidaten unter überprüfbaren Constraints.",
+    "original_example": "Chord candidate contains melody pitch / voice lead <= 4",
+    "review_check": "Eignungswert nicht als objektive musikalische Wahrheit darstellen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0057",
+    "title": "Question and Answer",
+    "group": "melodisch",
+    "method": "Entwickle melodische Frage mit Antwort auf anderer Stufe.",
+    "original_example": "2-bar asc phrase → 2-bar desc response",
+    "review_check": "Gleichgewicht von Wiedererkennung/Neuheit.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0058",
+    "title": "Developmental Variation",
+    "group": "motivisch",
+    "method": "Erhalte Motivkern bei kontinuierlicher Veränderung.",
+    "original_example": "Rhythm stable, interval shifts by step",
+    "review_check": "Veränderungsparameter in Verlauf dokumentieren.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0059",
+    "title": "Tension Curve Sketch",
+    "group": "formal",
+    "method": "Plane Spannungs-/Dichteverlauf als formale Hypothese.",
+    "original_example": "low→medium→high→release",
+    "review_check": "Hypothese durch Hörerfeedback, nicht allein per Zahl prüfen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0060",
+    "title": "Key-Area Roadmap",
+    "group": "harmony",
+    "method": "Plane lokale Tonzentren je Abschnitt.",
+    "original_example": "A C major → B G major → A C major",
+    "review_check": "Modulation muss musikalisch etabliert sein.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0061",
+    "title": "Reharmonization Ladder",
+    "group": "harmony",
+    "method": "Stufenweise höhere Harmoniefärbung bei gleicher Melodie.",
+    "original_example": "C→Cmaj7→Am9→F#m7b5–B7→Em",
+    "review_check": "Nicht alle Reharmonisierungen für jeden Melodieton tauglich.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0062",
+    "title": "Ear-Driven Revision",
+    "group": "evaluation",
+    "method": "Höre Renderings, notiere Fehler, passe gezielt an.",
+    "original_example": "Zielnote wird verdeckt → Oberregister öffnen",
+    "review_check": "Interpretation/Gehörabhängigkeit dokumentieren.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0063",
+    "title": "Blind A/B Study",
+    "group": "evaluation",
+    "method": "Vergleiche Kompositionsvarianten ohne Vorablabel.",
+    "original_example": "Version 1/2 mit gleicher Lautheit",
+    "review_check": "A/B-Präferenz ist keine universelle Qualitätsvalidierung.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0064",
+    "title": "Contextual Transposition",
+    "group": "evaluation",
+    "method": "Übertrage ein Muster funktional in andere Tonart.",
+    "original_example": "Dm7–G7–Cmaj7 zu Gm7–C7–Fmaj7",
+    "review_check": "Korrekte Note Spelling und Instrument Range prüfen.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0065",
+    "title": "Originality/License Check",
+    "group": "governance",
+    "method": "Nutze eigene Motive oder lizenzklare Materialien.",
+    "original_example": "Selbst erfundene 4-Ton-Motive im Tutorial",
+    "review_check": "Keine Volltext-/Songkopien in öffentliche Beispieldaten.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0066",
+    "title": "Dataset Provenance Review",
+    "group": "governance",
+    "method": "Kennzeichne Herkunft jeder Beispieldatei und ihre Rechte.",
+    "original_example": "Corpus label ≠ underlying composition rights",
+    "review_check": "Freie Lesbarkeit ist keine öffentliche Redistributierbarkeit.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0067",
+    "title": "Analysis-Lens Switching",
+    "group": "evaluation",
+    "method": "Analysiere denselben Loop funktional, modal und voice-leading-basiert.",
+    "original_example": "Am F C G als vi-IV-I-V / i-bVI-bIII-bVII",
+    "review_check": "Alternative Tonikazentren mit Indizien speichern.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0068",
+    "title": "Uncertainty Annotation",
+    "group": "evaluation",
+    "method": "Trenne plausible Deutung und sicheren Fakt.",
+    "original_example": "key ambiguous: C or Am",
+    "review_check": "Kein künstlich exakter Confidence-Score.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V3-0069",
+    "title": "Cross-Cultural Scope Gate",
+    "group": "governance",
+    "method": "Überprüfe kulturspezifische Begriffe mit Primär-/Fachquellen.",
+    "original_example": "Raga nicht auf Western seven-note modes abbilden",
+    "review_check": "Tradition, Notation, Autorenschaft und Rechte explizit.",
+    "content_origin": "original_STEPS_editors_synthesis",
+    "evidence_status": "research_connected_not_exact_section_verified",
+    "review_status": "draft",
+    "source_candidates": [
+      "SRC-V3-0004",
+      "SRC-V3-0005",
+      "SRC-V3-0007",
+      "SRC-V3-0009"
+    ]
+  },
+  {
+    "id": "COMP-TECH-V4-001",
+    "title": "Motiv aus Intervallkette",
+    "method": "Lege eine Intervallfolge vor der Tonhöhe fest und singe sie in zwei Registern.",
+    "original_illustration": "[+2,+2,+3,-3] in C: C–D–E–G–E",
+    "contraindication_or_risk": "Falsche Tonartschreibung bei Transposition prüfen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Motiv aus Intervallkette“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-002",
+    "title": "Motiv aus Rhythmus",
+    "method": "Fixiere Dauern und ändere alle Töne, ohne den Akzentplan zu verlieren.",
+    "original_illustration": "Viertel–Achtel–Achtel–Halbe auf C–D–E–G",
+    "contraindication_or_risk": "Rhythmische Identität hängt von Metrum und Akzent ab.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Motiv aus Rhythmus“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-003",
+    "title": "Motiv aus Kontur",
+    "method": "Halte die Richtungsfolge gleich, ändere die Intervallgrößen gezielt.",
+    "original_illustration": "C–D–F–E vs C–Eb–Ab–G",
+    "contraindication_or_risk": "Kontur allein garantiert keine gleich starke Erkennung.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Motiv aus Kontur“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-004",
+    "title": "Sequenz diatonisch",
+    "method": "Versetze eine Zelle auf aufeinanderfolgende diatonische Stufen und wahre den Stilkontext.",
+    "original_illustration": "C–D–E, D–E–F, E–F–G",
+    "contraindication_or_risk": "Diatonische und reale Transposition unterscheiden.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Sequenz diatonisch“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-005",
+    "title": "Sequenz chromatisch",
+    "method": "Transponiere jeden Ton um dieselbe Chromatik und protokolliere Modusverschiebungen.",
+    "original_illustration": "C–E–G → Db–F–Ab",
+    "contraindication_or_risk": "Enharmonik darf nicht blind konvertiert werden.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Sequenz chromatisch“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-006",
+    "title": "Inversionsachse definieren",
+    "method": "Spiegle Melodieintervalle um eine feste Tonhöhe, teste neue Akkordbezüge.",
+    "original_illustration": "C–D–E→C–Bb–Ab",
+    "contraindication_or_risk": "Inversion kann neue Stufen außerhalb der Tonart erzeugen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Inversionsachse definieren“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-007",
+    "title": "Retrograde Melodie",
+    "method": "Kehre Tonreihenfolge um und prüfe Auftakt/Akzentwirkung.",
+    "original_illustration": "C–E–D–G → G–D–E–C",
+    "contraindication_or_risk": "Gleiche Töne bedeuten nicht gleiches rhythmisches Gewicht.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Retrograde Melodie“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-008",
+    "title": "Rhythmische Retrograde",
+    "method": "Kehre die Dauernfolge um, nicht unbedingt die Tonfolge.",
+    "original_illustration": "[1,0.5,0.5,2] → [2,0.5,0.5,1]",
+    "contraindication_or_risk": "Metrische Form kann stark kippen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Rhythmische Retrograde“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-009",
+    "title": "Augmentation 2x",
+    "method": "Verdopple alle Notenwerte unter Beibehaltung der Tonfolge.",
+    "original_illustration": "Achtel–Achtel–Viertel → Viertel–Viertel–Halbe",
+    "contraindication_or_risk": "Taktgrenzen und Phrasendauer müssen angepasst werden.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Augmentation 2x“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-010",
+    "title": "Diminution 1/2",
+    "method": "Halbiere alle Notenwerte und entscheide über die neue metrische Einbettung.",
+    "original_illustration": "Viertel–Viertel–Halbe → Achtel–Achtel–Viertel",
+    "contraindication_or_risk": "Halbierung ist nicht automatisch musikalisch sinnvoll.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Diminution 1/2“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-011",
+    "title": "Fragmentierung",
+    "method": "Wähle zwei Töne aus einer größeren Idee und wiederhole sie mit variierter Phrasierung.",
+    "original_illustration": "C–D–E–G → E–G | E–G",
+    "contraindication_or_risk": "Ohne erkennbare Herkunft entsteht ein neues Motiv.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Fragmentierung“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-012",
+    "title": "Fortspinnung",
+    "method": "Reihe verwandte kleine Gestalten aneinander und steuere auf eine Zielnote.",
+    "original_illustration": "C–D–E | D–E–F | E–F–G",
+    "contraindication_or_risk": "Füge nicht bloß endlose Sequenzen ohne formalen Zielpunkt an.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Fortspinnung“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-013",
+    "title": "Motivische Verdichtung",
+    "method": "Verkürze Abstände zwischen verwandten Motiveinsätzen.",
+    "original_illustration": "A im Takt 1, dann Takt 3, dann nach halbem Takt",
+    "contraindication_or_risk": "Hohe Dichte kann ohne Kontrast überfordern.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Motivische Verdichtung“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-014",
+    "title": "Rhythmisches Dehnen",
+    "method": "Verlängere den Zielton einer Phrase und verkürze die Vorbereitung.",
+    "original_illustration": "[C:1 D:1 E:1 G:1] → [C:.5 D:.5 E:1 G:2]",
+    "contraindication_or_risk": "Zu langer Zielton kann die Phrase früh erschöpfen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Rhythmisches Dehnen“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-015",
+    "title": "Sequenz mit Abbruch",
+    "method": "Lasse eine erwartete dritte Wiederholung aus und setze einen Kontrast.",
+    "original_illustration": "A, A+2, Pause, Zielmotiv B",
+    "contraindication_or_risk": "Abbruch muss als gestalterische Absicht hörbar sein.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Sequenz mit Abbruch“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-016",
+    "title": "Motiv zwischen Stimmen",
+    "method": "Übergebe ein Motiv von Oberstimme an Bass mit angepasstem Register.",
+    "original_illustration": "Flöte C–D–E; Bass später C2–D2–E2",
+    "contraindication_or_risk": "Registerwechsel verändert Artikulierbarkeit.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Motiv zwischen Stimmen“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-017",
+    "title": "Doppelte Wiederholung mit Kontrast",
+    "method": "Wiederhole A genau und variiere danach nur einen Parameter.",
+    "original_illustration": "A (C–D–E), A, A' (C–D–Eb)",
+    "contraindication_or_risk": "Mangelnder Kontrast ist nicht immer schlecht; Kontext zählt.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Doppelte Wiederholung mit Kontrast“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-018",
+    "title": "Frage und Antwort",
+    "method": "Schreibe eine Phrase, die offen endet, und eine zweite mit klarerem Schluss.",
+    "original_illustration": "1–4 endet auf G7; 5–8 endet auf C",
+    "contraindication_or_risk": "Harmoniesymbole allein belegen keine Periode.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Frage und Antwort“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-019",
+    "title": "Klassischer Satzentwurf",
+    "method": "Präsentation 2+2, Fortsetzung 2, Schluss 2 Takte gestalten.",
+    "original_illustration": "Grundidee 1–2, Wiederholung 3–4, Sequenz 5–6, Kadenz 7–8",
+    "contraindication_or_risk": "Caplin-Modell nicht unbesehen auf andere Genres übertragen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Klassischer Satzentwurf“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-020",
+    "title": "Hybride Phrase",
+    "method": "Kombiniere einen periodischen Beginn mit fortsetzender Sequenz.",
+    "original_illustration": "Grundidee A, Kontrast, Sequenz, Kadenz",
+    "contraindication_or_risk": "Nur als analytische Hypothese ohne ausnotierte Struktur.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Hybride Phrase“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-021",
+    "title": "Antecendens mit Halbschluss",
+    "method": "Ziele zunächst auf die Dominante und spare die volle Rückkehr für später.",
+    "original_illustration": "C F Dm G7 | C ...",
+    "contraindication_or_risk": "Kadenzklassifikation benötigt Melodie und Metrik.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Antecendens mit Halbschluss“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-022",
+    "title": "Konsequens mit stärkerem Schluss",
+    "method": "Erhalte den Motivbeginn, ändere die letzte Harmonie und Zielnote.",
+    "original_illustration": "Wiederholung der ersten 2 Takte, dann Dm G7 C",
+    "contraindication_or_risk": "Ein V–I auf schwacher Zeit muss nicht authentische Kadenz sein.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Konsequens mit stärkerem Schluss“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-023",
+    "title": "Kleine ABA-Form",
+    "method": "Gestalte einen Mittelteil durch Register oder Modalität kontrastiv.",
+    "original_illustration": "A in C, B in a-Moll, A wieder C",
+    "contraindication_or_risk": "Kontrast und Rückkehr müssen hörbar sein.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Kleine ABA-Form“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-024",
+    "title": "Rondo-Refrain",
+    "method": "Baue einen stabilen wiederkehrenden Abschnitt, zwischen dem Episoden variieren.",
+    "original_illustration": "A–B–A–C–A",
+    "contraindication_or_risk": "Buchstabenschema ist erst ein Formplan.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Rondo-Refrain“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-025",
+    "title": "Strophischer Song",
+    "method": "Nutze dieselbe Melodie mit mehreren Textstrophen und differenziere Textakzente.",
+    "original_illustration": "Verse 1 und Verse 2 gleiche 8-Takt-Melodie",
+    "contraindication_or_risk": "Nur bei geeigneter Prosodie übertragen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Strophischer Song“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-026",
+    "title": "Refrain-Höhepunkt",
+    "method": "Verlege melodische Spitzen in den Refrain, ohne zwingend neue Akkorde zu benötigen.",
+    "original_illustration": "Strophe E4–G4; Refrain erreicht C5",
+    "contraindication_or_risk": "Registerhöhe ist nicht automatisch emotionaler Wert.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Refrain-Höhepunkt“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-027",
+    "title": "Prechorus mit Harmonic-Rhythm",
+    "method": "Erhöhe Wechselfrequenz und setze einen offenen harmonischen Schluss.",
+    "original_illustration": "Am (4 Beats) → Dm (2) G7 (2)",
+    "contraindication_or_risk": "Nicht automatisch mit 'mehr Spannung' gleichsetzen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Prechorus mit Harmonic-Rhythm“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-028",
+    "title": "Bridge durch Perspektivwechsel",
+    "method": "Ändere Motivkontur, harmonisches Zentrum oder Textur, aber behalte ein Verknüpfungselement.",
+    "original_illustration": "Strophe C–G–Am–F; Bridge Dm–G–Em–Am",
+    "contraindication_or_risk": "Beliebige neue Akkorde erzeugen noch keine Bridge.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Bridge durch Perspektivwechsel“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-029",
+    "title": "Textakzent zuerst",
+    "method": "Spreche eine Zeile rhythmisch, notiere starke Silben vor der Melodie.",
+    "original_illustration": "'HEu-te' auf betontes Viertel, unbetontes Achtel",
+    "contraindication_or_risk": "Sprachliche Betonung idiomsensibel prüfen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Textakzent zuerst“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-030",
+    "title": "Lyrik-Call-and-Response",
+    "method": "Lasse Instrumente den Gesang rhythmisch beantworten.",
+    "original_illustration": "Vokalphrase Takt 1, instrumentale Antwort Takt 2",
+    "contraindication_or_risk": "Überlagerung kann bei dichtem Arrangement undeutlich sein.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Lyrik-Call-and-Response“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-031",
+    "title": "Bassabstieg als Plan",
+    "method": "Entwirf eine Schrittlinie und harmonisiere jede Stufe passend.",
+    "original_illustration": "C–B–A–G mit C–G/B–Am–C/G",
+    "contraindication_or_risk": "Slash-Bässe nicht ausschließlich als klassische Inversion erzwingen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Bassabstieg als Plan“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-032",
+    "title": "Pedalton-Komposition",
+    "method": "Halte einen Bass über mehrere Akkorde und registriere echte Spannungen.",
+    "original_illustration": "C im Bass über C–F/C–G/C",
+    "contraindication_or_risk": "Nicht jeder Klang muss eigenständige harmonische Funktion erhalten.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Pedalton-Komposition“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-033",
+    "title": "Choralharmonisierung",
+    "method": "Setze eine Melodie harmonisch zuerst einfach und prüfe Tendenztöne.",
+    "original_illustration": "E4–F4–G4–E4 über C–Dm–G–C",
+    "contraindication_or_risk": "Satzstilregeln benötigen eine explizite Schule.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Choralharmonisierung“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-034",
+    "title": "Reharmonisierung Stufe 1",
+    "method": "Ändere Umkehrung und Register, erhalte die Akkordfunktionen.",
+    "original_illustration": "C–F–G–C → C/E–F/A–G/B–C",
+    "contraindication_or_risk": "Wende Voicing-Regeln nicht blind auf Bassführung an.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Reharmonisierung Stufe 1“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-035",
+    "title": "Reharmonisierung Stufe 2",
+    "method": "Füge Septimen und Nonen ein und kontrolliere Melodietöne.",
+    "original_illustration": "C→Cmaj7; Dm→Dm9",
+    "contraindication_or_risk": "Extensions sind Farben, nicht allgemeine Verbesserungen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Reharmonisierung Stufe 2“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-036",
+    "title": "Reharmonisierung Stufe 3",
+    "method": "Füge eine angewandte Dominante vor einem Ziel ein.",
+    "original_illustration": "C–Dm → C–A7–Dm",
+    "contraindication_or_risk": "Halte zeitliche Dauer und Melodie als explizite Constraints.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Reharmonisierung Stufe 3“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-037",
+    "title": "Reharmonisierung Stufe 4",
+    "method": "Ersetze IV durch geborgtes iv und prüfe Stimmenbewegung.",
+    "original_illustration": "C–F–C → C–Fm–C",
+    "contraindication_or_risk": "Modal-Interchange-Lesart braucht Tonzentrum.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Reharmonisierung Stufe 4“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-038",
+    "title": "Reharmonisierung Stufe 5",
+    "method": "Erprobe dominantische Tritonusverwandtschaft bei passend geführten Guide Tones.",
+    "original_illustration": "Dm7–G7–Cmaj7 → Dm7–Db7–Cmaj7",
+    "contraindication_or_risk": "C/D♭-Enhar­monik und Grundtonführung prüfen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Reharmonisierung Stufe 5“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-039",
+    "title": "Reharmonisierung Stufe 6",
+    "method": "Kontrastiere chromatische Medianten und bewerte die resultierenden gemeinsamen Töne.",
+    "original_illustration": "C–Am → C–Ab–Am",
+    "contraindication_or_risk": "Eine neue Farbfolge ersetzt nicht formale Zielplanung.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Reharmonisierung Stufe 6“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-040",
+    "title": "Reharmonisierung Stufe 7",
+    "method": "Erlaube größere Tonikaregion-Änderung bei erhaltener Melodiekontur.",
+    "original_illustration": "Melodie E–G–A über Cmaj7, dann Am9, dann Fmaj7",
+    "contraindication_or_risk": "Definiere klar, welche Invariante erhalten bleibt.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Reharmonisierung Stufe 7“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-041",
+    "title": "Guide-Tone-Kette",
+    "method": "Schreibe Terz und Septime durch ii–V–I als eigenständige Zweistimmen.",
+    "original_illustration": "Dm7: F/C, G7: F/B, Cmaj7: E/B",
+    "contraindication_or_risk": "Voicing-Ebenen und korrekte Stimmzuordnung unterscheiden.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Guide-Tone-Kette“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-042",
+    "title": "Innere Gegenstimme",
+    "method": "Erzeuge eine mittlere Linie, die dem Sopran bevorzugt gegenläufig antwortet.",
+    "original_illustration": "Sopran E–F–G, Innenstimme C–B–A",
+    "contraindication_or_risk": "Gegenbewegung ist Tendenz, kein absolutes Gesetz.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Innere Gegenstimme“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-043",
+    "title": "Leitton-Auflösung prüfen",
+    "method": "Markiere halbtönig gerichtete Tonstufen und untersuche Alternativen.",
+    "original_illustration": "G7 enthält B mit möglicher Richtung C",
+    "contraindication_or_risk": "Nicht alle Leittonbewegungen müssen strikt aufgelöst werden.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Leitton-Auflösung prüfen“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-044",
+    "title": "Parallelen im Species-Contract",
+    "method": "Prüfe auf parallele perfekte Konsonanzen nur innerhalb geeigneter Gegenpunktaufgabe.",
+    "original_illustration": "Zwei Stimmen bewegen C–G nach D–A",
+    "contraindication_or_risk": "Für Rock-Riff nicht global 'unzulässig' markieren.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Parallelen im Species-Contract“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-045",
+    "title": "Kontrapunkt imitation",
+    "method": "Lass eine zweite Stimme ein Motiv zeitversetzt einsetzen.",
+    "original_illustration": "Stimme 1 C–D–E; Stimme 2 nach 1 Takt G–A–B",
+    "contraindication_or_risk": "Imitation allein ist kein vollständiger Kanon.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Kontrapunkt imitation“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-046",
+    "title": "Inversionskontrapunkt",
+    "method": "Tausche Stimmen ober-/unterhalb und prüfe neue Intervalle.",
+    "original_illustration": "Oben E4, unten C4 → oben C5, unten E3",
+    "contraindication_or_risk": "Doppelter Kontrapunkt braucht spezifizierten Abstand.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Inversionskontrapunkt“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-047",
+    "title": "Kanon auf Oktave",
+    "method": "Konstruiere eine verzögerte identische Linie in Oktavtransposition.",
+    "original_illustration": "Stimme B folgt A nach 2 Takten in tiefer Oktave",
+    "contraindication_or_risk": "Harmonische Reibungen an jeder Überlagerung prüfen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Kanon auf Oktave“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-048",
+    "title": "Klangfarbenschichtung",
+    "method": "Füge Textur pro Phrase statt ständig neue Akkorde hinzu.",
+    "original_illustration": "A solo Piano, A' Piano+Streicher, B Holzbläser",
+    "contraindication_or_risk": "Orchestration ersetzt keine motivische Idee, kann aber Form tragen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Klangfarbenschichtung“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-049",
+    "title": "Registrale Expansion",
+    "method": "Steigere Wirkung durch Registeröffnung bei gleicher Akkordfolge.",
+    "original_illustration": "Cmaj7 zunächst C3–B3, später C2–G4",
+    "contraindication_or_risk": "Instrumentenspezifische Spielbarkeit berücksichtigen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Registrale Expansion“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-050",
+    "title": "Texturverdünnung",
+    "method": "Entferne Begleitschichten vor einem Höhepunkt, statt immer lauter zu werden.",
+    "original_illustration": "Vier Stimmen → Melodie solo → Tutti-Schluss",
+    "contraindication_or_risk": "Lautstärke und Dichte getrennt wahrnehmen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Texturverdünnung“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-051",
+    "title": "Unisono-Entscheidung",
+    "method": "Verdopple oder bündele zwei Linien zur Betonung; teste Balance.",
+    "original_illustration": "Flöte und Klavier rechte Hand gemeinsam C5–D5–E5",
+    "contraindication_or_risk": "Unisono kann Timbre ändern, keine neue Harmonie.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Unisono-Entscheidung“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-052",
+    "title": "Orgelpunkt im Arrangement",
+    "method": "Halte tiefen Ton bei wechselnden upper structures.",
+    "original_illustration": "Bass C, Akkorde C–F/C–G/C",
+    "contraindication_or_risk": "Dissonanz gegen Pedal kann bewusst sein.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Orgelpunkt im Arrangement“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-053",
+    "title": "Klaviersatz reduzieren",
+    "method": "Verwandle volle Akkorde in Bass + Dreitonoberstimme.",
+    "original_illustration": "Cmaj7 als C2 links und E4–G4–B4 rechts",
+    "contraindication_or_risk": "Spielbarkeit und Handweite prüfen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Klaviersatz reduzieren“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-054",
+    "title": "Gitarrenvoicing adaptieren",
+    "method": "Beschränke Stimmen auf spielbare Griffbrettlagen und ändere Umkehrung.",
+    "original_illustration": "Cmaj7 zunächst ohne Quinte in geeigneter Lage",
+    "contraindication_or_risk": "Keine MIDI-Piano-Voicings direkt als Gitarrengriff ausgeben.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Gitarrenvoicing adaptieren“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-055",
+    "title": "Streicherlage staffeln",
+    "method": "Verteile Stimmen nach Register und Bewegung, ohne unnötige Kreuzungen.",
+    "original_illustration": "Bass C2, Cello G3, Viola E4, Violine B4",
+    "contraindication_or_risk": "Instrumentations- und Transpositionswissen für reale Besetzung nötig.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Streicherlage staffeln“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-056",
+    "title": "Holzbläserfarbe variieren",
+    "method": "Wiederhole Motiv in anderer Kombination und vergleiche Artikulation.",
+    "original_illustration": "Flöte alleine, dann Klarinette mit Flöte im Oktavabstand",
+    "contraindication_or_risk": "Keine universelle 'Instrument X klingt immer dunkel'-Regel.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Holzbläserfarbe variieren“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-057",
+    "title": "Cinematic Leitmotiv Variation",
+    "method": "Erhalte Intervallzelle, ändere harmonische Unterlage und Orchestration.",
+    "original_illustration": "C–Eb–G zunächst Cm, später Abmaj7",
+    "contraindication_or_risk": "Leitmotiv ist keine unmittelbare Wirkungsgarantie.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Cinematic Leitmotiv Variation“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-058",
+    "title": "Game-Musik Übergang",
+    "method": "Entwickle zwei Zustände mit gemeinsamer harmonischer Schnittstelle.",
+    "original_illustration": "Exploration Am–F; Combat Am–G, Übergang auf Am",
+    "contraindication_or_risk": "Synchronisationsraster und Latenz später implementieren.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Game-Musik Übergang“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-059",
+    "title": "Musikprozess additiv",
+    "method": "Füge bei jeder Wiederholung eine Ereigniseinheit hinzu.",
+    "original_illustration": "C–D, C–D–E, C–D–E–G",
+    "contraindication_or_risk": "Dauer und Hördifferenz als Prozessparameter prüfen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Musikprozess additiv“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-060",
+    "title": "Zufalls-Constraint",
+    "method": "Wähle Material aus erlaubten Mengen, dokumentiere Seed und Auswahl.",
+    "original_illustration": "Nur C-Dorisch, maximal eine Septime, 8 Takte",
+    "contraindication_or_risk": "Reproduzierbarkeit ≠ künstlerische Qualität.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Zufalls-Constraint“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-061",
+    "title": "Hörvergleich A/B",
+    "method": "Vergleiche zwei Varianten bei gleicher Lautheit und Tempo, schreibe konkrete Wahrnehmung auf.",
+    "original_illustration": "Version A G7–C, Version B Db7–C",
+    "contraindication_or_risk": "Keine scheinpräzisen Prozentwerte über musikalischen Gefallen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Hörvergleich A/B“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-062",
+    "title": "Musikalische Fehlerdiagnose",
+    "method": "Isoliere eine problematische Schicht und ändere genau einen Parameter.",
+    "original_illustration": "Bass klingt sprunghaft: behalte Akkorde, teste G/B",
+    "contraindication_or_risk": "Ohne Hörkontext ist 'Fehler' möglicherweise Stilmittel.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Musikalische Fehlerdiagnose“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-063",
+    "title": "Korpus-informierte Variation",
+    "method": "Nutze Corpusstatistik nur mit Datensatzversion, Genre und Nenner.",
+    "original_illustration": "Suche in erlaubtem Datensatz nach IV→I statt Häufigkeiten zu erfinden",
+    "contraindication_or_risk": "Training-/Annotation-Bias explizit ausweisen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Korpus-informierte Variation“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-064",
+    "title": "Theorie-Lens wechseln",
+    "method": "Beschreibe dieselbe Folge erst funktional, dann modal, dann per Voice-Leading.",
+    "original_illustration": "Am–F–C–G mit C- und A-Zentrum",
+    "contraindication_or_risk": "Mehrere plausible Erklärungen nicht zu einer Zahl zwingen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Theorie-Lens wechseln“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  },
+  {
+    "id": "COMP-TECH-V4-065",
+    "title": "Kreative Rechteprüfung",
+    "method": "Dokumentiere Vorbild und erfinde eine eigene Ausgestaltung der abstrakten Idee.",
+    "original_illustration": "Nutze 'Rad für Tonbeziehungen' als Idee, zeichne eigene STEPS-Karte",
+    "contraindication_or_risk": "Keine fremden markanten UI-Layouts oder lange Musikbeispiele übernehmen.",
+    "review_question": "Ist der intendierte Zusammenhang bei „Kreative Rechteprüfung“ musikalisch hörbar und stilkontextuell vertretbar?",
+    "review_status": "editorial_draft_not_peer_reviewed",
+    "sources": "module_family_not_exact_excerpt"
+  }
+]

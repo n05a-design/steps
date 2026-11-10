@@ -1,0 +1,162 @@
+[
+  {
+    "id": "STEPS-V5-STUDY-001",
+    "title": "Satz und Fortsetzung",
+    "meter": "4/4",
+    "bars": 32,
+    "mode": "major",
+    "lens": "common_practice",
+    "melody_not_chord_tone_count": 14,
+    "status": "mechanical_review_pending"
+  },
+  {
+    "id": "STEPS-V5-STUDY-002",
+    "title": "Periodenmodell und Halbschluss",
+    "meter": "4/4",
+    "bars": 32,
+    "mode": "major",
+    "lens": "classical_period",
+    "melody_not_chord_tone_count": 15,
+    "status": "mechanical_review_pending"
+  },
+  {
+    "id": "STEPS-V5-STUDY-003",
+    "title": "Emergente Songtonika",
+    "meter": "4/4",
+    "bars": 32,
+    "mode": "major",
+    "lens": "pop_form",
+    "melody_not_chord_tone_count": 21,
+    "status": "mechanical_review_pending"
+  },
+  {
+    "id": "STEPS-V5-STUDY-004",
+    "title": "Dorischer Zentralton",
+    "meter": "4/4",
+    "bars": 32,
+    "mode": "dorian",
+    "lens": "modal_dorian",
+    "melody_not_chord_tone_count": 9,
+    "status": "mechanical_review_pending"
+  },
+  {
+    "id": "STEPS-V5-STUDY-005",
+    "title": "Mixolydische Rockschleife",
+    "meter": "4/4",
+    "bars": 32,
+    "mode": "mixolydian",
+    "lens": "pop_rock",
+    "melody_not_chord_tone_count": 17,
+    "status": "mechanical_review_pending"
+  },
+  {
+    "id": "STEPS-V5-STUDY-006",
+    "title": "Aeolische Ballade",
+    "meter": "4/4",
+    "bars": 32,
+    "mode": "minor",
+    "lens": "minor_harmony",
+    "melody_not_chord_tone_count": 15,
+    "status": "mechanical_review_pending"
+  },
+  {
+    "id": "STEPS-V5-STUDY-007",
+    "title": "Jazz Turnaround und Guide Tones",
+    "meter": "4/4",
+    "bars": 32,
+    "mode": "major",
+    "lens": "jazz",
+    "melody_not_chord_tone_count": 9,
+    "status": "mechanical_review_pending"
+  },
+  {
+    "id": "STEPS-V5-STUDY-008",
+    "title": "Blues mit Dominant-Tonika",
+    "meter": "4/4",
+    "bars": 32,
+    "mode": "blues",
+    "lens": "blues",
+    "melody_not_chord_tone_count": 17,
+    "status": "mechanical_review_pending"
+  },
+  {
+    "id": "STEPS-V5-STUDY-009",
+    "title": "Soul mit chromatischen Innentönen",
+    "meter": "4/4",
+    "bars": 32,
+    "mode": "major",
+    "lens": "neo_soul",
+    "melody_not_chord_tone_count": 8,
+    "status": "mechanical_review_pending"
+  },
+  {
+    "id": "STEPS-V5-STUDY-010",
+    "title": "Cinematic color fields",
+    "meter": "4/4",
+    "bars": 32,
+    "mode": "minor",
+    "lens": "cinematic",
+    "melody_not_chord_tone_count": 13,
+    "status": "mechanical_review_pending"
+  },
+  {
+    "id": "STEPS-V5-STUDY-011",
+    "title": "Walzer mit Phrasenrückkehr",
+    "meter": "3/4",
+    "bars": 32,
+    "mode": "major",
+    "lens": "waltz",
+    "melody_not_chord_tone_count": 16,
+    "status": "mechanical_review_pending"
+  },
+  {
+    "id": "STEPS-V5-STUDY-012",
+    "title": "Minimalistischer Pedalprozess",
+    "meter": "4/4",
+    "bars": 32,
+    "mode": "dorian",
+    "lens": "minimalism",
+    "melody_not_chord_tone_count": 16,
+    "status": "mechanical_review_pending"
+  },
+  {
+    "id": "STEPS-V5-STUDY-013",
+    "title": "Chromatic mediants",
+    "meter": "4/4",
+    "bars": 32,
+    "mode": "major",
+    "lens": "chromatic",
+    "melody_not_chord_tone_count": 17,
+    "status": "mechanical_review_pending"
+  },
+  {
+    "id": "STEPS-V5-STUDY-014",
+    "title": "Gospel harmonic arrival",
+    "meter": "4/4",
+    "bars": 32,
+    "mode": "major",
+    "lens": "gospel",
+    "melody_not_chord_tone_count": 15,
+    "status": "mechanical_review_pending"
+  },
+  {
+    "id": "STEPS-V5-STUDY-015",
+    "title": "Triadische Transformationen",
+    "meter": "4/4",
+    "bars": 32,
+    "mode": "major",
+    "lens": "neo_riemannian",
+    "melody_not_chord_tone_count": 15,
+    "status": "mechanical_review_pending"
+  },
+  {
+    "id": "STEPS-V5-STUDY-016",
+    "title": "Phrygische Grenzfälle",
+    "meter": "4/4",
+    "bars": 32,
+    "mode": "phrygian",
+    "lens": "modal_phrygian",
+    "melody_not_chord_tone_count": 9,
+    "status": "mechanical_review_pending"
+  }
+]

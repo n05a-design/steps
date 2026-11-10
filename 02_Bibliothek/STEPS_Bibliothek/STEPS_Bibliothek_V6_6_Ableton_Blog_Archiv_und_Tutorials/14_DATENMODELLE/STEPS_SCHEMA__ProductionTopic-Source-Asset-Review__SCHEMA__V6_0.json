@@ -1,0 +1,96 @@
+{
+  "schema_version": "6.0",
+  "objects": {
+    "ProductionTopic": {
+      "required": [
+        "id",
+        "domain",
+        "name",
+        "status",
+        "claim_type"
+      ],
+      "optional": [
+        "source_ids",
+        "aliases",
+        "technique",
+        "test_ids",
+        "producer_workflow",
+        "legal_flags"
+      ]
+    },
+    "Claim": {
+      "required": [
+        "id",
+        "text",
+        "kind",
+        "verification_status",
+        "source_ids"
+      ],
+      "kind_enum": [
+        "scientific",
+        "technical_standard",
+        "manufacturer_feature",
+        "style_interpretation",
+        "educational_convention",
+        "design_proposal",
+        "verified_user_decision"
+      ]
+    },
+    "AudioOrMidiAsset": {
+      "required": [
+        "asset_id",
+        "origin",
+        "license_status",
+        "private",
+        "hash",
+        "format"
+      ],
+      "note": "do not auto-publish private source assets"
+    },
+    "Review": {
+      "required": [
+        "object_id",
+        "reviewer_role",
+        "review_type",
+        "decision",
+        "date"
+      ],
+      "decision_enum": [
+        "pass",
+        "changes_requested",
+        "blocked",
+        "not_reviewed"
+      ]
+    },
+    "StyleProfile": {
+      "required": [
+        "style_id",
+        "context",
+        "observed_patterns",
+        "status"
+      ],
+      "note": "no universal tempo/rhythm constraint unless sourced and scoped"
+    },
+    "SessionArtifact": {
+      "required": [
+        "project_id",
+        "format",
+        "sample_rate_or_timebase",
+        "dependencies",
+        "export_status"
+      ],
+      "note": "DAW interop differences explicitly modeled"
+    }
+  },
+  "example": {
+    "id": "STEPS-PRD-27-001",
+    "domain": "27_MASTERING_RELEASE_AUDIO",
+    "name": "Mastering Intent",
+    "status": "catalogued_not_individually_validated",
+    "claim_type": "editorial_taxonomy",
+    "source_ids": [
+      "SRC-EBU-01",
+      "SRC-SPOTIFY-01"
+    ]
+  }
+}

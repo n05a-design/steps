@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://steps.local/schema/source.v4.json",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "url",
+    "verification_status",
+    "reuse_status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^EXT-V4-[0-9]{3}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "url": {
+      "type": "string",
+      "pattern": "^https://"
+    },
+    "verification_status": {
+      "type": "string"
+    },
+    "reuse_status": {
+      "type": "string"
+    }
+  }
+}

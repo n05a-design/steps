@@ -1,0 +1,53 @@
+# STEPS – Research Synthesis V4: Vier gleichberechtigte musikalische Wissensdomänen
+
+**Charakter:** Eigenständiger redaktioneller Synthesebericht, der V1/V3 bewahrt und V4-Fachbände, neue Quellen, eine Composing-Arbeitsbibliothek und ein technisches Abnahmesystem verbindet. Es handelt sich **nicht** um die behördliche, verlegerische oder peer-reviewte Begutachtung des gesamten Wissenschaftsstands. Externe Titel sind im Quellenregister einschließlich Zugriffsgrad dokumentiert; Quellenlisten allein sind keine genaue Belegung jedes Satzes.
+
+## 1. Das wissenschaftliche Problem hinter STEPS
+
+Eine harmonische Anwendung, die nur drei Dinge speichert – Akkordname, Grundton und nachfolgender Akkord –, verwechselt musikalischen Klang mit musikalischer Funktion und Komposition mit statistischer Akkordkombination. Die Bezeichnung `C7` verrät noch nicht, ob der Akkord blues-tonikal ist oder als Zwischendominante nach F zielt. `Am–F–C–G` lässt ohne Timing, Phrasenbetonung und Melodietöne sowohl eine C-Dur- als auch eine a-Moll-/äolische Auslegung zu. Schon diese Beispiele machen ein domänenübergreifendes Datenmodell nötig: Ton- und Klangrepräsentation, harmonische Interpretationslenses, zeitliche Progressionsstruktur und die vom Komponisten gewählte musikalische Form müssen getrennt, jedoch verknüpfbar sein.
+
+Ein tragfähiges STEPS-System sollte daher weder klassische Funktionsharmonik universalisieren noch Musiktheorie auf einen grenzenlosen Generator reduzieren. Es muss die *musikalische Begründung* neben die *musikalische Möglichkeit* stellen. Ein deterministischer Akkordkonstruktor kann Toneigenschaften verifizieren; die kulturelle, historische oder emotionale Angemessenheit einer Komposition bedarf anderer Evidenz. Corpus-Statistik kann Präferenzen in konkret definierten Stichproben beschreiben, aber sie ist keine universale Kompositionsanweisung.
+
+## 2. Music Theory – Erkenntnisse und neue Verantwortung
+
+Die Tonhöhe hat mindestens drei verschiedene Repräsentationsrollen: physikalisches Schallereignis, klingende Tonhöhe im gegebenen Temperament und notierte Tonklasse samt enharmonischer Schreibweise. 12-TET löst nicht alle musiktheoretischen Unterscheidungen. Beim Modell F♯-Dur braucht STEPS ein E♯ und darf es nicht ungefragt F nennen. Bei `C–F♯` liegt in konventioneller Notation eine übermäßige Quarte, bei `C–G♭` eine verminderte Quinte vor, auch wenn die klangliche 12-TET-Intervallklasse gleich sein kann. Ein Schema sollte `SoundingPitch`, `SpelledPitch`, `TuningSystem`, `IntervalNumber`, `IntervalQuality` und `KeyContext` unterscheiden.
+
+Die neue V4 behandelt außerdem Skalen und modale Zentren, Takt und Betonungsgewicht, rhythmische Figuren, Akustik, Form, Kontrapunkt und Ensemblekontext. Ein Modus entsteht nicht dadurch, dass sieben Tonklassen umetikettiert werden; beispielsweise nutzt D-Dorisch das Material C-Dur, aber die Tonika D und die charakteristische große Sexte B erhalten eine andere Rolle. Die korrekte Basisliste kann automatisch ausgerechnet werden, die tatsächliche tonale Zentrierung aber nicht stets aus einer Akkordliste.
+
+## 3. Harmony – mehrere, zum Teil inkompatible Erklärungsmodelle
+
+Ein funktionaler Analyst kann `Dm7–G7–Cmaj7` als ii–V–I mit typischer Prädominante–Dominante–Tonikabeziehung lesen. Ein Voice-Leading-Analyst kann dazu die F/E- und C/B-Bewegung in Oberstimmen untersuchen. Eine Transformationstheorie wird bei chromatischen Dreiklängen eher gemeinsame Töne und kleine Stimmschritte betonen; ein Korpusanalyst statistische Verteilung in bestimmtem Repertoire. Alle können nützlich sein, aber keines dieser Modelle ist schlicht eine Übersetzung des anderen. Eine Datenbank muss `analysis_lens`, `style_scope`, `counterexample`, `evidence_source` und `certainty` speichern.
+
+Besonderen Wert legt die neue Synthese auf die Unterscheidung von chromatischen, modal, jazz- und bluesorientierten Harmonien: Der als I7 wirkende Blues-Akkord ist nicht mechanisch die gleiche Funktion wie V7/IV in klassisch-tonalem Kontext; Neo-Riemannian-Transformationen bezeichnen Tonmengenbeziehungen und beweisen noch keine konkrete registrierte Stimmführung. Die 59 neuen Regelentwürfe werden daher nach `constraint`, `tendency`, `interpretation` und `heuristic` klassifiziert; sie sind nicht ohne Quellen- und Gegenbeispielprüfung für eine harte Engine freigegeben.
+
+## 4. Chord Progressions – vom Akkord-String zur Zeitstruktur
+
+Eine Progression braucht harmonische Ereignisse mit Position und Dauer, Phrase und Formkontext, Tonart/Modus und gegebenenfalls lokalem Tonikabereich sowie Melody-/Bass-Zuordnung. Eine Vier-Akkord-Schleife kann als Hook, Ostinato, Einleitung oder Schlussstrecke funktionieren; ihre gleiche Notenfolge definiert die formale Rolle nicht automatisch. Für stilbezogene Suggestionen sollten Funktionsnähe, gemeinsame Töne, Stimmführung, melodische Passung, Überraschung und empirische Vorkommenshäufigkeit getrennte Kriterien sein. Der Atlas mit 226 Fällen ist ein Rohkorpus zur Untersuchung, **keine behauptete Sammlung von 226 kanonisch oft verwendeten Stilen**.
+
+Der Harmonic-Explorer-Ansatz erlaubt verschiedene Beziehungskategorien: diatonisch, applied dominant, modal mixture, blues, backdoor, Chromatic Mediant, planing, bass passing und transformed triad. Empfehlungen sollen einen ausdrücklichen Grund erhalten. Bei einer konkreten Kandidatenliste kann STEPS auch begründete Alternativen zeigen, einschließlich Aussetzung, Täuschung oder modalem Wechsel. Das spätere Scoring bleibt als erklärbare Kompositionshilfe und nicht als universales Schönheitsmaß verstanden.
+
+## 5. Composing – eigenständiges musikalisches Handwerk
+
+Komponieren ist die organisationale Entwicklung von musikalischer Zeit. Neben Harmonie umfasst es den Entwurf einer wiedererkennbaren Idee, ihre Veränderung, thematische Kontinuität und Kontrast, Artikulation der Form, Melodie–Bass-Beziehungen, kontrapunktische Eigenständigkeit, Register, Besetzung und Dramaturgie. Eine Kadenzfolge kann harmonisch korrekt, aber als musikalische Passage langweilig sein; umgekehrt kann ein Loop mit unverändertem Akkordvorrat durch Melodie, Rhythmus, Klangfarbe und Dichte eine eindrucksvolle formale Richtung erzeugen.
+
+In der V4 bilden 134 Composing-Methoden (inkl. V3) die Bausteine. Motivische Transformationen wie Transposition, Fragmentierung, Inversion, Augmentation oder rhythmische Umgruppierung sind als **Operationen mit definierten musikalischen Folgen** zu beschreiben. In Lehrfällen muss man zwischen reiner mechanischer Umkehrung von Intervallrichtungen und einem sinnvoll komponierten kontrapunktischen Gegenmotiv unterscheiden. Formmodelle bleiben repertoiregebunden: Caplins Satz-/Perioden-Funktionslehre gilt nicht automatisch für Pop-Refrains; Nobile untersucht eine andere Beziehung zwischen Rock-Harmonie und Form. Beide Fachansätze werden im Quellenregister als nachzuprüfende, nicht voll gelesene Bücher geführt.
+
+Die 30 neuen 16-taktigen Etüden enthalten echte, nachspielbare Melodie-, Bass- und Harmonieereignisse. Ihre musikalische Gestaltung ist bewusst **didaktischer Entwurf**: Die Formetiketten und Genrebezeichnungen sind Arbeitskontexte, keine durch Fachpersonen abgenommene authentische Stilrepräsentation. Die Etüden müssen auf Prosodie, Plausibilität, Idiomatik, lebendiges Voice Leading, durchgehende Motivlogik, Arrangementqualität und Hörwirkung geprüft werden. Eine MIDI-Datei kann musikalisch schwach sein, obwohl sie strukturell vollständig korrekt ist.
+
+## 6. Interkulturelle Grenzen und Musikwissenschaft
+
+Ein westlicher Akkordgraph darf nicht andere Traditionen unter seine Stufenharmonik subsumieren. Bei Rāga und Maqam etwa können spezifische melodische Bewegungen, Ornamentik, Stimmungen, Aufführungspraktiken und historische Begriffsnetze wichtiger sein als abstrakte westliche Dreiklangsetiketten. Eine ehrliche STEPS-Knowledge-Base erhält das System-/Repertoirelabel, Primärquellen und eventuell ein `unsupported`-Ergebnis, bis kompetente Facharbeit vorliegt. Forschungsbreite bedeutet auch, die Grenze der aktuellen Formalisierung offen zu benennen.
+
+## 7. Computational Music Theory – nicht die Ontologie mit einem Score verwechseln
+
+Als Kernobjekte sollen `Concept`, `AtomicClaim`, `Source`, `Rule`, `Chord`, `ChordEvent`, `Progression`, `FormSection`, `Motif`, `MelodyEvent`, `BassEvent`, `CompositionStudy`, `AnalysisCandidate`, `ValidationCase` und `Decision` voneinander trennbar bleiben. Ein `verified`-Claim braucht konkrete Ausgabe, Kapitel/Seite oder stabile Passage; ein `proposed`-Regelentwurf darf die App nicht autoritativ einschränken. Etwaige `music21`-, DCML-, ChoCo-, When-in-Rome-, JAMS-, MusicXML- und MIDI-Integrationen erfordern jeweils explizites Formatmapping, Provenienz, Lizenzprüfung und Loss Reports. MIDI kennt keine garantierte enharmonische Schreibweise und ersetzt kein vollwertiges Notationsformat.
+
+Die neue technische Validierung prüft Struktur, Referenzen, maschinenlesbare Schemas, Eventtaktung und MIDI-Parsability. Sie bescheinigt **nicht** die stilhistorische Wahrheit jedes Labels, die musikalische Qualität aller Etüden oder die Wiederverwendbarkeit fremder Quellen. Manuelle Fachprüfung, Seitenstellenvalidierung und gegebenenfalls musikalische Hör-/Nutzerstudien bilden eigenständige Prüfgates.
+
+## 8. Transfer zur produktiven Entwicklung
+
+Codex erhält den vollständigen historischen Kontext und die V4 als Rohfundament. Der erste reale Schritt bleibt das read-only Repository-Audit; anschließend ist ein versionssicherer, lizenzbewusster Import geboten. Die 20 Arbeitspakete sind nach tatsächlicher Verfügbarkeit und nach Fachmehrwert priorisiert: Zuerst Quellen- und Konzeptbelege sichern, dann Harmony/Progressions/Composing in echte geprüfte Objekte überführen, mit Golden Cases und Gegenbeispielen testen, schließlich Skill-Zugriffe und dokumentierte Produktfunktionen anbinden. Ohne Repository-Zugriff darf Codex keine CI-, Merge- oder Bestandsaussage erfinden.
+
+## 9. Ergebnis und Grenzen
+
+Der Umfang ist gegenüber V3 erheblich gestiegen: ein neues, in Fachmodule gegliedertes Lehr- und Forschungswerk, mehr typisierte Regeln, mehr Kontextprogressionen, eigene abspielbare 16-Takt-Stücke, mehr Literaturmetadaten und laufbare Prüfcodes. Dennoch sind die nächsten **entscheidenden Qualitätsschritte** nicht weitere bloße Zählungen, sondern exakte Claim-Locators, quellenkritische Vergleichsarbeit, echte Testfälle mit erklärtem Erwartungswert, fachliche Einzelreview von Regeln und Etüden sowie die Integration in den tatsächlich bestehenden STEPS-Code. Das Paket ist damit eine **umfangreiche Arbeitsgrundlage, kein endgültig abgeschlossener wissenschaftlicher Kanon**.

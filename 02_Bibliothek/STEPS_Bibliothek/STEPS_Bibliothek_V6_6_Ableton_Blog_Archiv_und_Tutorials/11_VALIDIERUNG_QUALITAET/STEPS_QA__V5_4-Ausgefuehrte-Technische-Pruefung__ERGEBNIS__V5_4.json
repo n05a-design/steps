@@ -1,0 +1,13 @@
+{
+  "version": "5.4.0",
+  "checks": 36538,
+  "errors": [],
+  "old_v53_files_checked": 349,
+  "new_chapters_checked": 43,
+  "new_progressions_checked": 32,
+  "new_midi_checked": 16,
+  "status": "passed",
+  "warnings": [
+    "Does not validate aesthetics, exact notation, copyright permissions or audio rendering."
+  ]
+}
