@@ -1,0 +1,35 @@
+﻿id,original_source_line,historical_status_or_priority,original_issue,historical_resolution_or_needed_action,historical_owner_optional,audit_status
+G-01,861,P0,Freigegebener Steps-Produktsteckbrief; Trennung P1–P5,"Zielgruppe, Kernnutzen, Nicht-Ziele, Produktname, Releaseumfang schriftlich beschließen",Product Owner,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-02,862,P0,Vollständige Originale der sechs Dokumente allein reichen nicht für echtes Dateirepo,"tatsächliche Repos, V6.6-ZIPs, CSVs, 20 PDFs/TXTs, Audio/MIDI, Screenshots und Artefaktlisten sicher bereitstellen",Project Owner / Archiv,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-03,863,P0,finaler Status/Commit/Merge von PR #71,GitHub-PR/Merge-SHA und letzte Windows/Linux/Mac-Pflichtmatrix prüfen,Engineering/QA,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-04,864,P0,"archivierter C:-/E:-Stand, Git-Objekte, Stashes/Restore abschließend bestätigt","Quell-/Zielhashs, separate Git-FSCK-/Merge-/Restore-Probe und Bereinigungsfreigabe",Engineering/Archiv,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-05,865,P0,Steps-Softwarelizenz und Glide-Code-Übernahmerechte,"Codeherkunft und Lizenzen inkl. File Notices, neue LICENSE-Policy",Recht/Owner,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-06,866,P0,"Publikationsrechte für PDFs, Blogartikel, MIDI/Samples/Artwork","rights manifest für alle Release-Assets, `UNKNOWN` bleibt ausgeschlossen",Recht/Content,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-07,867,P1,eindeutige V6.6-Dateizählung und fehlende 07–15-Ordner,"Dateisystemscan mit Pfaden, Größen, Hashes, Filter-/Archivvarianten und Summenkontrolle",Daten/QA,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-08,868,P1,echte Snapshots der 199/262/462 Ableton-Kataloge,"CSV-Import, URL-Normalisierung, Quellen-/Sprachen-/Versionsabgleich mit Diffbericht",Research/Data,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-09,869,P1,echte Daten der 28/143/609/123-Artist-Auswertung,"Kategorisierung, Language-Pairs und Validierung jeder URL",Research/Data,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-10,870,P1,169 „verified pages“ technisch definieren,"Status/HTTP, Content Hash, Aktualität, manuelle Inhaltsprüfung getrennt ausweisen",Research/QA,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-11,871,P1,20 lokale Ausgangsquellen nur referenziert,"Scan mit SHA-256, Bibliografie, Verlag/Ausgabe, Parse-/OCR-/Review-Status",Research/Archiv,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-12,872,P1,erster `SKILL.md`-Entwurf nicht selbst einsehbar,Original sichten und auf KB/Source-Policy prüfen; Regeln erhalten,Skill/Research,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-13,873,P1,Theory Taxonomy und fachlicher Canonical Core nicht gebaut/nachgewiesen,"definierte IDs, Spelling-/Pitch-/Roman-Logik, public API und Schematests",Theory Engineering,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-14,874,P1,"fehlendes Golden Corpus, keine prüfbaren Entscheidungen zur Mehrdeutigkeit",≥100 deterministische Cases inkl. Gegenbeispiele und Frameworks,Theory/QA,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-15,875,P1,"fehlende Relation Schema/API, unkalibrierte Confidence","typed edges, style scope, provenance, Testoracle, klare Anzeige",Theory/Research,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-16,876,P1,unvollständige wissenschaftliche Abdeckung,"Voice Leading, Jazz, Popular Harmony, Tonnetz, Notation und Corpora nach Primärbelegen ergänzen",Research,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-17,877,P1,reale Glide-Modul-/Featureübersicht mit 20 Systemfähigkeiten fehlt,"Modulmatrix mit Pfad, API, Abhängigkeit, Stand, Tests und Steps-Adapter",Engineering,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-18,878,P1,Last-/Performancebaseline für Steps fehlt,deterministische Benchmarks für 1k/10k Progressions/Nodes; Ziele/Quantile,Engineering/QA,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-19,879,P1,"Mac-Geometrie-, Toast- und Callback-Regressionen erst teilweise geschlossen","native Pflichtmatrix auf genau einem SHA, rote Fälle sichtbar",UI/QA,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-20,880,P1,aktueller vollständiger SBOM-Dependency-Graph fehlt,transitive Dependencies und Lizenzen/Hashes aus Build reproduzierbar,Build/Security,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-21,881,P1,MIDI-/MusicXML-Formate nicht spezifiziert,"Events, Tempo/Ticks, Meta/Controller, Round-trip, Schemas, Rechte prüfen",Audio/Data,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-22,882,P1,keine echte Cross-Platform-Audio- und UX-Abnahme,Latenz/Metronom/Soundbank/Barrierefreiheit pro OS testen,Audio/UI QA,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-23,883,P1,keinerlei bestätigter Release-/ZIP-Endbestand und sichere öffentliche Links,manuell und automatisiert prüfbarer Release-Lauf mit Manifest/Hashes/Restore,Release/Archiv,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-24,884,P1,"Reports enthalten Platzhalter, unrenderte Mermaid-Gantts, widersprüchliche Dateinamen",Master Markdown → bei Bedarf PDF/DOCX visuell geprüft; eindeutige Release-IDs,Documentation,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-25,885,P1,"konkrete Zuständigkeiten, Budget und offizielle Startfreigabe fehlen","RACI, Ressourcen-/Risiko- und Abnahmeprotokoll",Product Owner,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-26,886,P1,externe Marktdaten/Preise/Ratings teils fehlerhaft bzw. veraltet,neue Primärquellen/Zeitstempel/vergleichbare Preisangaben,Product Research,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-27,887,P1,"gesicherte Provenienz des Grafik-Masters, Screenshots und Inspirationsmaterial","Copyright und Verwendungsstatus je Datei, interne vs öffentliche Nutzung",Design/Legal,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-28,888,P1,Datenmigrations-/Dateischema-Versionierung offen,"lokale Save/Load Round-trip-Fixtures, Backups und negative Migrationstests",Engineering/Data,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-29,889,P2,Option Mobil/Web und alternative UI-Stacks nicht evaluiert,Nutzer-/UX-/Packaging-Anforderungen vor Framework-Wechsel,Product/Tech,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-30,890,P2,kulturell/geografisch diverse bzw. non-Western Referenzen fehlen,kuratierten Source-Plan zur Diversifizierung erstellen,Research,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-31,891,P2,"Vollständigkeit Ableton-Archiv inkl. „One Thing“, älterer Sprachseiten, Podcasts/Videos",nach legalem Crawl und definierter Scope-Policy inkrementell erweitern,Research,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-32,892,P2,"umfangreiche Drum-/Genre-, Recording-, Spatial- und Distribution-Module",als separate Roadmap oder eigene Archivedition priorisieren,Product/Research,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-33,893,P2,"Community-/Finanzierungsmodell, GitHub Pages, PyPI/Installer-Kanal offen",nach MVP-Validierung externe Release- und Contribution-Strategie festlegen,Product/Community,RETAINED_NEEDS_INDEPENDENT_REVALIDATION
+G-34,894,P2,semantische Suche in der Ableton-Research-KB fehlt,"realen Suchbedarf nach Artist/Topic/Source validieren, erst dann DB-/RAG-Ausbau",Research/Engineering,RETAINED_NEEDS_INDEPENDENT_REVALIDATION

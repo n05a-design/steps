@@ -1,0 +1,29 @@
+﻿id,prioritaet,evidenz,befund,nachweis,abnahmemassnahme,bereich
+V4-01,P1,V,V3-Installer akzeptiert fremdes Git-Repo ohne Remote,isolierte Dry-Run-Gegenprobe mit beliebigem lokalem HEAD,Keine V3-Autoinstallation als Standard; PR und Repo-Identität durch Maintainer,Sicherer Dokumentationsübergang
+V4-02,P1,V,V3-Selbstmanifest kann mit verändertem Inhalt rehashed werden,isolierte Paketmanipulation; Verifier Exitcode 0,Paket-Authentizität nur anhand externem Referenzhash/Signatur verifizieren,Paketvertrauen
+V4-03,P2,V,V3-Testname suggeriert Idempotenz ohne zweite Apply-Probe,Quelltext test_apply_and_idempotence... mit einem Apply,Testbezeichnung korrigieren; zweiter Lauf als eigener Vertrag,Tool-Testschärfe
+V4-04,P1,V,V3-Review fehlt Verlinkung im Root-/Agent-Index,"GitHub Root README, AGENTS, SKILL und V3-Zielpfade",README/AGENTS/Docs-Index im eigenen PR ändern,Dokumentations-Governance
+V4-05,P1,V,Harmony Skill nicht an Hersteller-Autodiscovery-Pfaden,STEPS Git Tree und Claude/Codex-Dokumentation,"Discovery-Pfade definieren, Skill-Aufruf in beiden Tools real ausführen",AI-Skills
+V4-06,P1,V,"Steps main unprotected, Glide main protected",GitHub API main.protected und Rulesets [],"Owner-Regeln, CI-Gates und Reviews aktivieren, UI verifizieren",GitHub-Integrität
+V4-07,P1,V,CI-Pfadfilter lässt src/app unberücksichtigt,structure-check.yml GitHub-Abruf,"unbedingte PR-Checks, Domain- und Save/MIDI-Tests",Qualitätssicherung
+V4-08,P1,V,CI prüft nur Verzeichnisse und rudimentäre JSON-Felder,tools/validation/check_structure.py,"JSON Schema v2, Negativtests, fachliche Testmatrix",Qualitätssicherung
+V4-09,P1,V,Historische aktive README_SETUP-Anweisungen und Archivpfade veraltet,"README_SETUP.md, ARCHIVE_README.md versus Git Tree","Historisch kennzeichnen, aktuelle Einstiegspfade setzen",Dokumentations-Governance
+V4-10,P1,V,Root README nennt Drums nicht und zeigt HTML-Entity,README.md vs GitHub Repositorybeschreibung,aktuelles Produktziel plus Entwicklungsstatus im Root README,Produktkommunikation
+V4-11,P1,V,100 Historien-IDs belegen keine 100 fachlichen Abschlüsse,V3-Crosswalk versus historische Masterzeilen,jeder Eintrag mit Evidence/Owner/Status; kein Autoabschluss,Traceability
+V4-12,P1,V,source.schema.json lässt approved ohne Rechtebeleg zu,Schemasource required Felder,"Review-/Rights-Gate unabhängig vom Schema, versionierte Migration",Knowledge/Rechte
+V4-13,P1,V,progression.schema.json bildet keine Event-/Zeit-/Drum-Objekte ab,Schema GitHub-Abgleich,zeitbasierten kanonischen Project/Track/Event-Schnitt definieren,Musik-Core
+V4-14,P1,V/O,öffentliches Rohmaterial mit unklaren Einzelrechten,"60 PDFs, Web-/Download-/Media-Dateien und leeres Registry","file-level Rechte-Triage, Veröffentlichungsentscheid, History-Plan",Rechte/Provenienz
+V4-15,P2,V,49 reale V6.6-Hauptordner; drei abgeschnittene Namen dokumentiert,Live Tree und Legacy-README,konkrete Ordnernamen in README berichtigen,Bibliotheksordnung
+V4-16,P1,V,"Glide-Katalog 25 Kandidaten, 0 für Steps isoliert freigegeben",Glide-Systemregister 1.15,ein pure Modul und ein Widget isoliert als Reuse-Spikes prüfen,Glide-Abzweigung
+V4-17,P1,V,Historisches Quellenregister enthält 0 freigegebene Primärnachweise,registry.yaml: sources [],3–5 Quellpilot mit Werk/Edition/Claim/Review/Permission,Quellenqualität
+V4-18,P1,V,Blueprint statt lauffähigem Steps-App-Build,"pyproject.toml, app-/src-Scaffold, Strukturtest",M0 startet aus frischem Clone; M1 Chord→MIDI; M2 Drums,Engineering
+V4-19,P2,V,39 einzigartige fenced Originalvorlagen vollständig im Appendix erhalten,eigener parse-based Codeblock-Vergleich,historische Vorlagen schützen; alte Shell-Snippets nicht blind ausführen,Originaltreue
+V4-20,P1,V,Keine neuen Steps-Issues sichtbar; gemergter PR-Body hat offene Checklist,"GitHub Suchergebnis Issues, PR #1 Body",priorisierte Issues und verpflichtende PR-Template-Abnahme,Governance
+V4-21,P1,V/O,"MIDI-/MusicXML-Dateien vorhanden, semantisch nicht überprüft",Git-Tree counts 112 mid 16 musicxml,lokale Parser-/Rights-/DAW-Interoperabilitätsmatrix,Musik/Interoperabilität
+V4-22,P1,V/O,Große Forschungs-PDFs erhöhen Git-/Lizenz-/History-Risiko,"Git Blobgrößen bis 52,9 MB",Git-Historie/Rechte/Git-LFS-Eignung kontrollieren; kein blindes Rewrite,Repository-Betrieb
+V4-23,P2,D/V,Historische Versions- und Ableton-Zahlen sind unterschiedliche Populationen,A/B/F und Live Repo-Tree,"Kennzahlen nach Werk, Datei, Version, Sprache, Zeitraum und Review definieren",Forschungsqualität
+V4-24,P1,A,Projektdatenformat ohne explizite Verlust-/Restore-Invarianten,kein Steps-Save-End-to-End-Test vorhanden,"atomischer Save, Backup, Reload, Migration, Undo, Negativfälle",Datenintegrität
+V4-25,P1,A,KI-Arbeitsanweisungen ohne sichtbare autonome Skill-/Injection-Tests,"V3-Skillentwürfe, aktuelle Discovery-Lücke",Source-Trust-Boundary und Agent-Regressionstests,Agentensicherheit
+V4-26,P2,E,Produktuser- und Konkurrenz-Recherche fehlt als aktuelle Messung,historische Desk Research ohne aktuelle Nutzertests,zwei beobachtete Aufgaben; gleiche Task-Benchmark pro Wettbewerber,Produktstrategie
+V4-27,P1,V,V3-Dokumente haben keine relativen internen Markdown-Links,lokaler Scan aller sieben V3 Markdown-Dokumente,Root- und Projektindex schaffen; dokumentierte Kanonizität,Dokumentauffindbarkeit
+V4-28,P1,V/O,Glide-Releases und Steps-Reuse sind nicht zeitlich gleichzusetzen,"Glide App 3.53.0 System 1.15, historischer QA SHA","ein festen, getesteten Glide-SHA pinnen; Release-Gate Steps separat",Abhängigkeitsmanagement
