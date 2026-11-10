@@ -1,0 +1,7 @@
+# Unabhängige Gegenprüfung des Master-Prompts V6
+
+Du bist unabhängiger Auditor, nicht ausführender Entwickler. Lies `prompts/32_STEPS_ANTIGRAVITY_MASTER_AUDIT_V6.md`, alle neu angelegten `docs/project/antigravity-handover/`-Dateien und `docs/operations/AI_CONTINUITY_PROTOCOL_V6.md`. Vergleiche sie mit den Originalaufträgen, der Antigravity-Glide-Bestandsaufnahme, dem DOCX-V5-Audit, dem MD-V5-Audit, dem V5-Meta-Prompt, dem vorherigen ZIP-Paket und dem tatsächlichen STEPS-Git-HEAD. Prüfe den gesamten Bedarf anhand `REQUIREMENTS_COVERAGE_V6.csv`.
+
+Gesuchte Fehler: jede User-Anforderung nur teilweise erfüllt oder falsch interpretiert; aktueller STEPS-Pfad vs. Glide-Quellpfad; historisch falsche SHAs/Zählungen; 3.53 „grün“ vs. optionalen Skips vs. Steps rot; komplette Historien-/Ergebnisdokumentation; fehlende KI-Anbieter-/Toolübergaben; 2 Fenster vs. 2 Bereiche; Produkt-/Sicherheits-/Lizenz-/Datenisolation; Output- und Source-Register; manuelle Befunde vs. automatisierte Tests; redundante parallele Master-Readmes; Rechte-/Archivrisiken. Keine abstrakte Pauschalbewertung, sondern Zeilen/Abschnitte, konkreter Vorschlag, Rückwärtskompatibilitäts-/Testfolgen.
+
+Ausgaben: (1) `V6_REVIEW_MATRIX.csv`, (2) `UNMET_REQUIREMENTS.md`, (3) eindeutig markierte fertige Patchvorschläge ohne Änderung produktiver Dateien, (4) Status `PASS/PARTIAL/BLOCKED` pro R-ID. Nicht behaupten, alle Rohdateien gelesen zu haben, wenn das Coverage-Register fehlt.

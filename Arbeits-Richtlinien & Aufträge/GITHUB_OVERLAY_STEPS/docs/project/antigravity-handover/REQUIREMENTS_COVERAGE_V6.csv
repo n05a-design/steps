@@ -1,0 +1,37 @@
+requirement_id,requirement,v6_mapping,documentation_status,execution_or_evidence_gap
+U01,STEPS ist das aktive Projekt; Glide nur als eingebettete Referenz,"README;00_START;V6 §§0A,12A",Auftrag dokumentiert,Local Git/Steps-Workspace noch nicht durch diese Umgebung geprüft
+U02,"Glide v3.53 ist neueste bestätigte, grün geprüfte Upstream-Baseline",README;MASTER §0A;QA,Remote-CI bestätigt,Optionale Skips/Steps-Freigabe getrennt
+U03,Exakter lokaler Quellpfad src/glide-v3.53 im STEPS-Repository,README;00_START;SHELL,Pfad dokumentiert,lokale Byte-Abweichungen noch offen
+U04,Bereits vorhandene Antigravity-Glide-Analyse auswerten und fortschreiben,README;MASTER §0A;CONFLICTS,Analyse gelesen und registriert als Quelle,Behauptungen gegen eingebettete Kopie prüfen
+U05,V5-Master-Audit und DOCX sowie Meta-Prompt berücksichtigen,README;MASTER;REFERENZEN,Vier Anhänge inventarisiert und als Baseline gelesen,nicht mit GitHub-Artefakten verwechselt
+U06,Alle Quellen lesen und indexieren; Coverage pro Quelle,MASTER Phasen A/B;COVERAGE,Workflow spezifiziert,3.768 Inhalte noch nicht vollständig semantisch gelesen
+U07,Vollständige Projekt-Overview ohne Informationsverlust,README;MASTER Phasen B/C/I/J,Kanonische Doku + Crosswalk statt neue Ersatzwahrheit,laufender Audit muss Übernahme verifizieren
+U08,"Widersprüche, Lücken, historische Register komplett abgleichen",MASTER Phase F/J;CONFLICTS,Delta-Register und Pflichtregeln,historische 100+ Einträge noch nicht neu lokal geprüft
+U09,"Exakte und semantische Duplikate prüfen, nichts blind löschen",MASTER A/F;CONTINUITY,Regel übernommen,Deduplikation erst nach lokalem Hash-/Rights-Audit
+U10,Alle Ergebnisse und allgemeinen Ausgaben dauerhaft dokumentieren,CONTINUITY;HISTORY;MASTER §2A/J,Verbindlich aufgenommen,Rückstand muss lokal indexiert werden
+U11,"Frühere KI-Ausgaben, Analysen, Prompts, Tests und Entscheidungen bewahren",CONTINUITY;HISTORY;MASTER §12A,Explizites Retrospektivregister,nicht verfügbare alte Chatlogs markieren
+U12,Alle KI-Modelle/Programme auf gleichen Kontext ausrichten,CONTINUITY;STATE;00_START,Modellunabhängiger Handover,Zugangsberechtigung/automatische Einlesung je Tool prüfen
+U13,"ChatGPT, Claude/Fable, Gemini/Antigravity, Copilot-Aufgaben koordinieren",CONTINUITY;README,Rollenkonzept dokumentiert,Quoten/Entitlements nicht als Fakten bestätigt
+U14,Projektinternes README mit gesamtem Chatauftrag,README;SOURCE;REQUIREMENTS,Additives Steps-README,erst nach Owner Review ins Git übernehmen
+U15,Verbindliche Roadmap/Entwicklungsphasen und Risiken,QA_AND_NEXT_WORKPACKAGES;MASTER I,Gates priorisiert,noch keine implementierte Steps-Roadmapfreigabe
+U16,Getrennte Prompts für alle Projektbereiche,MASTER;PROMPTS/33-35;bestehende 01-29,V6 ergänzt vorhandene 29 Arbeitsaufträge,vollständiges lokales 29-Prompt-Review ist Ausführungsaufgabe
+U17,Glide auf neutrales Grundgerüst zurückbauen statt umbenennen,SHELL;MASTER D/J;PROMPT34,Technischer Vertrag festgelegt,Codearbeit noch nicht autorisiert
+U18,Zwei Fenster/Bereiche und visuelle Referenz korrekt definieren,SHELL;MASTER D,Scope und klärungspflichtiger ADR,Tk-Topologie/Owner-Entscheid noch offen
+U19,Seitenliste nur neutrale Punkte und Funktionen neu verteilen,SHELL;PROMPT34,No-op-/Action-Matrix spezifiziert,Implementierung offen
+U20,Seitenliste ausblenden und Seitenleiste einklappen erhalten,SHELL;PROMPT34,Explizit Erhaltungscontract,native Layouttests offen
+U21,"Logo, Header, Titel, Symbolbuttons, Suche/Eingabe behalten",SHELL;PROMPT34,Explizit Erhaltungscontract,Asset-/UI-Paritätsprüfung offen
+U22,"Einstellungen, Schriften, Designtokens und Designrichtlinien behalten",SHELL;PROMPT34,Explizit Erhaltungscontract,D77-Fontlizenzen/OS-Tests offen
+U23,"Prozesse, Backups, Tests, Decision History und CI wiederverwenden",SHELL;QA;CONTINUITY,Explizit Erhaltungscontract,neu an Steps DataRoot anpassen
+U24,Gemeinsamen Kern für Updates in mehreren Projekten versionieren,SHELL;MASTER J;QA,Component-ID/Consumer-Vertrag,"kein stabiles SDK, 2-Consumer-Pilot offen"
+U25,94 Module / 25 Reuse-Pakete / 147 Features prüfen,SHELL;MASTER D,Registerbasis und Messplan,kein unabhängiger Code-Graph hier ausgeführt
+U26,Eigene Steps-Datenmodelle und Daten-Isolation,SHELL;MASTER D/E;PROMPT34,No-Glide-Touch und Stepseigene IDs,Ausführung und negative Tests offen
+U27,Harmonik/Akkorde/Progressionen/Transposition als musikfachliche Basis,MASTER C/G;QA,Domänenmodell-Gates,kein ausführbares Fachmodell
+U28,"Drums, MIDI, Timeline, Playback getrennt scope-gaten",MASTER C/G;QA,MVP-/Playback-ADR,Owner-Reihenfolge offen
+U29,Forschungsbibliothek und Musik-Knowledge-Skill nutzen,MASTER B/G;README,Rechte-/Claims-/Skill-Eval-Pipeline,nicht jedes Drittwerk ausgewertet
+U30,MPL-2.0 und fremde Rechte sauber trennen,CONTINUITY;MASTER G/H;QA,Rechte-Gate,kein Einzelfreigabenachweis
+U31,Steps-CI-/Paketpfadfehler src/steps-0.00 behandeln,CONFLICTS;QA;MASTER E,rot historisch dokumentiert,kein aktueller grüner Steps-Strukturcheck
+U32,GitHub direkt aktualisieren oder importierbares Paket liefern,ANLEITUNG;ZIP;MANIFEST,Prüfbares Overlay erstellt,GitHub-Connector hier nur lesend
+U33,Keine vom KI-Wechsel verursachten Datenverluste/Konflikte,CONTINUITY;STATE;MASTER §2A,Worktree-/Ownership-/Handover-Gates,tatsächliche Parallelagenten lokal prüfen
+U34,"Originale/alte Analysen/Einzelfunde dedupliziert, aber erhalten",HISTORY;CONTINUITY;MASTER F/J,Rückverfolgbarer Crosswalk spezifiziert,vollständige Altindexierung noch offen
+U35,Interoperabler exakter Resume-Zustand bei Tokenlimit,STATE;CONTINUITY;MASTER §14,STATE und Handover Vorlagen,lokale Session muss Dateien ausfüllen
+U36,Antigravity soll bisherige Glide-Analyse nicht als Endabnahme ausgeben,CONFLICTS;MASTER §0A,Vorbefund vs. verifiziert getrennt,V5 vollständiges Lokal-Audit steht aus
