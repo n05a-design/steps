@@ -14,7 +14,8 @@ def validate_master_file(path: str) -> dict[str, int | list[str]]:
     with open(path, "r", encoding="utf-8") as f:
         content = f.read()
     oa_matches = re.findall(r"### (OA-\d{4}):\s*(.*)", content)
-    status_matches = re.findall(r"\* \*\*Kategorie:\*\*.*?\* \*\*Status:\*\* `(.*?)`", content)
+    # Match any status inside backticks following **Status:**
+    status_matches = re.findall(r"\*\*Status:\*\*\s*`([A-Za-z0-9_]+)`", content)
     
     errors = []
     seen_ids = set()
