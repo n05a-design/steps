@@ -1,0 +1,6 @@
+# Configuration scaffold only; no build-system / installable STEPS app has been verified.
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100

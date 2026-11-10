@@ -1,0 +1,3 @@
+# Source registry: add entries only after verifying actual file/source + rights.
+schema_version: 1
+sources: []

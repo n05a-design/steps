@@ -1,0 +1,16 @@
+name: Fehlerbericht
+description: Reproduzierbaren Fehler dokumentieren
+labels: ['bug']
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Fehler und erwartetes Verhalten
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduktionsschritte, Umgebung und Versionsstand
+    validations:
+      required: true

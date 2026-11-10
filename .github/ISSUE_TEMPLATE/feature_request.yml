@@ -1,0 +1,13 @@
+name: Funktionsanfrage
+description: Neue STEPS-Funktion mit Scope und Evidenz vorschlagen
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Problem und Nutzerziel
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Abgrenzung, Abhängigkeiten und Evidenz

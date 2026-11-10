@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/n05a-design/steps/blob/main/schemas/chord.schema.json",
+  "title": "STEPS chord v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "root",
+    "quality"
+  ],
+  "properties": {
+    "root": {
+      "type": "string",
+      "minLength": 1
+    },
+    "quality": {
+      "type": "string",
+      "minLength": 1
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "bass": {
+      "type": "string"
+    },
+    "spelling_system": {
+      "enum": [
+        "german",
+        "international"
+      ]
+    },
+    "intervals_semitones": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 23
+      }
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "alterations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "inversion": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
