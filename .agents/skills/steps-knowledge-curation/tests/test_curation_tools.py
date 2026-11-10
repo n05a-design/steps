@@ -256,5 +256,41 @@ class TestCurationToolsScenarios(unittest.TestCase):
         items = extract_instructions.extract_from_file(bin_f)
         self.assertEqual(len(items), 0)
 
+    # Scenario 23: Backup and Recovery Lifecycle
+    def test_23_backup_and_recovery(self):
+        import backup_knowledge
+        test_master = os.path.join(self.dir_path, "master_to_backup.md")
+        with open(test_master, "w", encoding="utf-8") as fp:
+            fp.write("# Backup Test Master\n### OA-0001: Task One\n* **Kategorie:** Test · **Status:** `OPEN`\n")
+        b_dir = os.path.join(self.dir_path, "backups")
+        
+        # Test backup
+        res = backup_knowledge.backup_master(test_master, b_dir)
+        self.assertEqual(res["status"], "BACKUP_SUCCESS")
+        self.assertTrue(os.path.exists(res["backup"]))
+        
+        # Test listing
+        b_list = backup_knowledge.list_backups(b_dir)
+        self.assertEqual(len(b_list), 1)
+        self.assertEqual(b_list[0]["sha256"], res["sha256"])
+        
+        # Mutate master
+        with open(test_master, "w", encoding="utf-8") as fp:
+            fp.write("# Corrupted Master\n")
+        self.assertNotEqual(backup_knowledge.compute_sha256(test_master), res["sha256"])
+        
+        # Test restore
+        rest_res = backup_knowledge.restore_master(res["backup"], test_master)
+        self.assertEqual(rest_res["status"], "RESTORE_SUCCESS")
+        self.assertEqual(backup_knowledge.compute_sha256(test_master), res["sha256"])
+
+    # Scenario 24: Canonical Production Master Has Exactly 21 Tasks
+    def test_24_canonical_master_has_21_tasks(self):
+        canonical_p = os.path.expandvars(r"%LOCALAPPDATA%\StepsKnowledge\OFFENE_ARBEITSAUFFORDERUNGEN.md")
+        if os.path.exists(canonical_p):
+            res = validate_register.validate_master_file(canonical_p)
+            self.assertEqual(res["errors_count"], 0)
+            self.assertEqual(res["total_tasks_found"], 21)
+
 if __name__ == "__main__":
     unittest.main()
