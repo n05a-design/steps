@@ -1,0 +1,177 @@
+#!/usr/bin/env python3
+# SPDX-License-Identifier: MPL-2.0
+"""Kalibrierte UI-Erwartungen gegen echte Defekte in isolierten App-Kopien.
+
+Keine Produktionsdatei wird verändert. Jede Mutation muss an ihrer passenden
+Beobachtung scheitern, ein Importfehler oder Timeout gilt nicht als Gegenprobe.
+"""
+from __future__ import annotations
+import argparse
+import ast
+import json
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+import tempfile
+
+REPO = Path(__file__).resolve().parents[2]
+CASES = (
+    ("erkennungschips", "test_eingabe3333.py",
+     'zeile = ButtonFlow(leiste, bg=leiste.cget("bg"), gap=6)',
+     'zeile = ButtonFlow(leiste, bg=leiste.cget("bg"), gap=6); zeile.reflow = lambda *_: None',
+     'Erkennungschips abgeschnitten'),
+    ("dialogbildlauf", "test_glide.py",
+     'self._make_checklist_editor(checklist_block, dialog, checklist)',
+     'tk.Frame(checklist_block)', 'assert scrollbar_counts.get("long") == 5'),
+    ("tagesfortschritt", "test_features315.py",
+     'text = f"{done} von {len(due_entries)} erledigt"',
+     'text = f"{done + 1} von {len(due_entries)} erledigt"', 'assert "1 von 5 erledigt" in zeile'),
+    ("eingabe-suche-reihenfolge", "test_rueckmeldung330.py",
+     '"side": "top" if stacked else "left", "fill": "both", "expand": True',
+     '"side": "bottom" if stacked else "right", "fill": "both", "expand": True',
+     'assert (eingabe.winfo_rootx() + eingabe.winfo_width() <= suche.winfo_rootx() + 1'),
+    ("langtext-mehrfachauswahl", "test_aufraeumen330.py",
+     'tree.selection_set([row for row in selection if tree.exists(row)])',
+     'tree.selection_set([row for row in selection[:1] if tree.exists(row)])',
+     'Umbruch verliert Mehrfachauswahl', ('--auswahlumbruch',)),
+    ("ansichtswechsel-werkzeugzeile", "test_aufraeumen330.py",
+     '"side": "top" if stacked else "left", "fill": "both", "expand": True',
+     '"side": "bottom" if stacked else "right", "fill": "both", "expand": True',
+     'assert (eingabe.winfo_rootx() + eingabe.winfo_width() <= suche.winfo_rootx() + 1', ('--werkzeugzeile',)),
+    # Seit D55 (23.10.2026) prüft die Nebenansicht dieselbe Mindestbreite; die
+    # Vorzeile beschränkt die Mutation auf den Aufgabeninspektor.
+    ("inspektor-mindestgroesse", "test_aufgaben3380.py",
+     'parent = self.content_frame\n        narrow = self.root.winfo_width() < self.DETAIL_PANE_MIN_WINDOW',
+     'parent = self.content_frame\n        narrow = False','assert pane.winfo_ismapped() and app._inspector_narrow', ('--fall', 'inspektor')),
+    ("feldtreffer", "test_aufgaben3380.py",
+     'field={"due":"due","planned_date":"planned","importance":"importance","labels":"labels"}.get(key)',
+     'field={"due":"planned","planned_date":"planned","importance":"importance","labels":"labels"}.get(key)',
+     'assert calls[before:] == [(tid, field)]', ('--fall', 'klicks')),
+    ("pinnwand-feldtreffer", "test_aufgaben3380.py",
+     'if block.get("field") and app.is_schedulable_item(item):',
+     'if False and app.is_schedulable_item(item):',
+     'Feld fehlt', ('--fall', 'klicks')),
+    ("bedienflaeche", "test_aufgaben3380.py",
+     'row_height = max([40] + [widget.winfo_reqheight() for widget in rows])',
+     'row_height = max([80] + [widget.winfo_reqheight() for widget in rows])',
+     '15 Prozent überschritten', ('--fall', 'flaeche')),
+    ("checklisten-speicherfehler", "test_aufgaben3380.py",
+     'if change.saved is False:\n            self._detail_commit_error = "Die Checkliste konnte nicht gespeichert werden. Aktion erneut ausführen."',
+     'if False:\n            self._detail_commit_error = "Die Checkliste konnte nicht gespeichert werden. Aktion erneut ausführen."',
+     'assert action() is False and app._detail_commit_error', ('--fall', 'inspektor')),
+    ("ueberlauf", "test_mindestgroesse330.py",
+     '("header_overflow_button", minimal and not pending, (0, 0))',
+     '("header_overflow_button", False, (0, 0))', 'assert app.header_overflow_button.winfo_ismapped()'),
+    ("reihenfolge", "test_rueckmeldung330.py",
+     'for knopf, rand in soll:',
+     'for knopf, rand in reversed(soll):',
+     'assert reihenfolge() == erwartet'),
+    ("svg-fähigkeit", "test_befunde330.py",
+     'if not self.previews.reads_svg(self.root):\n                raise glide_drawing.DrawingFormatError("SVG braucht Tk 9 (Python 3.14).")',
+     'if True:\n                return path', 'SVG ohne SVG-Leser muss verständlich abgelehnt werden'),
+    ("scrollen", "test_tempo330.py",
+     'def _on_mousewheel(self, event, widget, precise=False):\n        self.note_scrolling()',
+     'def _on_mousewheel(self, event, widget, precise=False):\n        return "break"\n        self.note_scrolling()',
+     'Scrollereignisse bewegen die lange Prüfansicht nicht'),
+    ("bildscrollen", "test_uiux_paket.py",
+     'if delta and self._scroll_text_like_class(widget, delta):',
+     'if False:', 'Sprung über Bild', ('--fall', 'b16')),
+    ("bildscrollen-ohne-wirkung", "test_uiux_paket.py",
+     'def _scroll_text_like_class(self, widget, delta, precise=False):\n        """',
+     'def _scroll_text_like_class(self, widget, delta, precise=False):\n        return True\n        """',
+     'Sprung über Bild', ('--fall', 'b16')),
+    ("datum", "test_planen33313.py",
+     # Kontext bis „if review:“: dieselbe Zeile steht seit 3.47.0 auch im Startseiten-Einplanen.
+     'day = value[0]\n        else:\n            day = shown_day or glide_planning.target_day(choice, date.today(), '
+     'self.settings.get("week_start"))\n        if review:',
+     'day = self.plan_day()\n        else:\n            day = shown_day or glide_planning.target_day(choice, date.today(), '
+     'self.settings.get("week_start"))\n        if review:',
+     'assert fresh(a["id"])["planned_date"] == chosen'),
+    ("hintergrundvorschau", "test_hintergrund330.py",
+     'def hintergrund_sichtbar(*_args):\n            if not backdrop_dirty[0]',
+     'def hintergrund_sichtbar(*_args):\n            return\n            if not backdrop_dirty[0]',
+     'assert gesehen.get("kacheln") == 6'),
+    ("dialogabschluss", "test_fenster330.py",
+     'dialog._glide_chrome_jobs = set()\n            dialog.withdraw()\n            dialog._glide_modal_finished.set(True)',
+     'dialog._glide_chrome_jobs = set()\n            dialog._glide_modal_finished.set(True)',
+     'Esc schließt nicht'),
+)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--protokoll", type=Path, required=True)
+    parser.add_argument("--fall", choices=[case[0] for case in CASES])
+    parser.add_argument("--basis-ergebnis", type=Path,
+                        help="Vollprüfung derselben unveränderten Prüfkandidatenkopie")
+    args = parser.parse_args()
+    args.protokoll.mkdir(parents=True, exist_ok=True)
+    results = []
+    basis = (json.loads(args.basis_ergebnis.read_text(encoding="utf-8"))
+             if args.basis_ergebnis else None)
+    # Die SVG-Gegenprobe gilt gezielt für einen Prüfstand ohne SVG-Leser.
+    # Unter Tk 9 wird stattdessen die positive Konvertierungsanforderung rot.
+    for case in CASES:
+        name, suite, old, new, observation, *options = case
+        suite_args = list(options[0]) if options else []
+        if args.fall and name != args.fall:
+            continue
+        if basis is not None and not any(step["schritt"] == Path(suite).stem and step["status"] == "ausgeführt"
+                                         for step in basis["schritte"]):
+            results.append({"fall": name, "suite": suite, "gegenprobe_rot": False,
+                            "grund": "Positive Basis dieser Suite nicht grün; keine Defekt-Gegenprobe behaupten"})
+            print(f"{name}: NICHT BELEGT (Basissuite {Path(suite).stem} nicht grün oder nicht ausgeführt)", flush=True)
+            continue
+        with tempfile.TemporaryDirectory(prefix="glide-linux-defekt-") as folder:
+            clone = Path(folder) / "Glide"
+            for directory in ("src/glide", "tests/fixtures"):
+                shutil.copytree(REPO / directory, clone / directory,
+                                ignore=shutil.ignore_patterns("__pycache__", "archiv"))
+            for filename in ("VERSION", "CHANGELOG.md"):
+                shutil.copy2(REPO / filename, clone / filename)
+            target = clone / "tests/integration" / suite
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(REPO / "tests/integration" / suite, target)
+            # Einzelne Suiten verwenden weitere Prüfhelfer relativ zum Repo.
+            shutil.copytree(REPO / "tests/tools", clone / "tests/tools",
+                            ignore=shutil.ignore_patterns("__pycache__"))
+            app = clone / "src/glide/app.pyw"
+            source = app.read_text(encoding="utf-8")
+            if source.count(old) != 1:
+                raise ValueError(f"Mutation {name} ist nicht mehr eindeutig")
+            source = source.replace(old, new)
+            ast.parse(source)
+            env = dict(os.environ, PYTHONUTF8="1", PYTHONDONTWRITEBYTECODE="1")
+            command = [sys.executable, "-B", str(target), *suite_args]
+            if sys.platform.startswith("linux") and not env.get("DISPLAY"):
+                command = ["xvfb-run", "-a", "--server-args=-screen 0 1400x1100x24", *command]
+            if basis is None:
+                positive = subprocess.run(command, cwd=clone, env=env, capture_output=True,
+                                          text=True, encoding="utf-8", errors="replace", timeout=900)
+                (args.protokoll / f"{name}-positiv.log").write_text(positive.stdout + positive.stderr, encoding="utf-8")
+                if positive.returncode:
+                    results.append({"fall": name, "suite": suite, "gegenprobe_rot": False,
+                                    "grund": "Positive Basis dieser Suite nicht grün"})
+                    print(f"{name}: NICHT BELEGT (positive Basis dieser Suite nicht grün)", flush=True)
+                    continue
+            app.write_text(source, encoding="utf-8")
+            run = subprocess.run(command, cwd=clone, env=env, capture_output=True,
+                                 text=True, encoding="utf-8", errors="replace", timeout=900)
+            output = run.stdout + run.stderr
+            (args.protokoll / f"{name}.log").write_text(output, encoding="utf-8")
+            matched = observation in output
+            if name == "svg-fähigkeit" and 'assert svg.endswith(".png")' in output:
+                matched = True
+            ok = run.returncode != 0 and 'AssertionError' in output and matched
+            results.append({"fall": name, "suite": suite, "exitcode": run.returncode,
+                            "erwartete_beobachtung": observation, "gegenprobe_rot": ok})
+            print(f"{name}: {'passend rot' if ok else 'NICHT BELEGT'}", flush=True)
+    (args.protokoll / "ergebnis.json").write_text(json.dumps(
+        {"plattform": sys.platform, "gegenproben": results}, ensure_ascii=False, indent=2) + "\n")
+    return 0 if all(result["gegenprobe_rot"] for result in results) else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

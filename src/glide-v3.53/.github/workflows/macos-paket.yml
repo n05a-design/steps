@@ -1,0 +1,287 @@
+# Glide: nativer Mac-Bau mit eigener Tcl/Tk 9.1; Prüfung vor der Bereitstellung.
+# Verifiziert am 26.10.2026:
+# https://docs.github.com/en/actions/how-tos/write-workflows/choose-where-workflows-run/choose-the-runner-for-a-job
+# macos-15 ist der Standard-arm64-Runner; macos-15-intel wäre eine andere Architektur.
+# https://www.python.org/downloads/release/python-3145/
+# Originalinstaller samt veröffentlichter SHA-256; enthält Tcl/Tk 9.0.3.
+# 06.11.2026: zusätzlich DMG aus dem geprüften TAR (Inhalt gegen das Archiv
+# abgeglichen) und Aufruf durch release.yml (workflow_call). Weiterhin nur
+# Ad-hoc-Signatur; Developer-ID/Notarisierung bleiben Tor I3 (D43).
+name: Glide-Paket macOS arm64
+
+on:
+  workflow_dispatch:
+    inputs:
+      vollpruefung:
+        description: 'Vor dem Paketbau die vollständige native QA ausführen'
+        type: boolean
+        default: false
+      nachtest:
+        description: 'Gezielte native Nachprüfung vor Paketbau; keine Vollabnahme'
+        type: choice
+        default: keiner
+        options: [keiner, kompakt_fokus, seitenkarten_arbeitsmodi]
+  workflow_call:
+  push:
+    branches: ["main", "codex/**"]
+    paths:
+      - "01_Repository/Glide/src/**"
+      - "01_Repository/Glide/packaging/**"
+      - "01_Repository/Glide/requirements/**"
+      - ".github/workflows/macos-paket.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: glide-macos-paket-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  PYTHONDONTWRITEBYTECODE: "1"
+  PYTHONUTF8: "1"
+  MAC_PYTHON: /Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14
+  MAC_PYTHON_PKG_URL: https://www.python.org/ftp/python/3.14.5/python-3.14.5-macos11.pkg
+  MAC_PYTHON_PKG_SHA256: b28a8dc33c456dd06c97024697d63ca916cfb494594c06fa3e4ef4d41fa82335
+
+jobs:
+  paket-macos:
+    name: Nativer Bau und isolierter Start (macOS arm64)
+    runs-on: macos-15
+    timeout-minutes: 120
+    defaults:
+      run:
+        shell: bash
+        working-directory: 01_Repository/Glide
+    steps:
+      - name: Unveränderten Commit auschecken
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Offiziellen Python-Installer prüfen und im vergänglichen Runner installieren
+        run: |
+          test "$(uname -m)" = arm64
+          mkdir "$RUNNER_TEMP/glide-macos-runtime"
+          pkg="$RUNNER_TEMP/glide-macos-runtime/python-3.14.5-macos11.pkg"
+          curl --fail --show-error --location --retry 3 --proto '=https' --tlsv1.2 \
+            "$MAC_PYTHON_PKG_URL" --output "$pkg"
+          printf '%s  %s\n' "$MAC_PYTHON_PKG_SHA256" "$pkg" | shasum -a 256 -c -
+          printf '%s  %s\n' "$MAC_PYTHON_PKG_SHA256" "python-3.14.5-macos11.pkg" \
+            > "$RUNNER_TEMP/glide-macos-runtime/installer.sha256"
+          pkgutil --check-signature "$pkg" > "$RUNNER_TEMP/glide-macos-runtime/installer-signatur.txt"
+          sudo installer -pkg "$pkg" -target / > "$RUNNER_TEMP/glide-macos-runtime/installation.log" 2>&1
+          "$MAC_PYTHON" -B -c 'import platform,sys; assert sys.version_info[:3] == (3,14,5); assert platform.machine() == "arm64"'
+
+      - name: Originalruntime und konkrete Bauquellen einfrieren
+        env:
+          GLIDE_VOLLPRUEFUNG: ${{ github.event_name == 'workflow_dispatch' && inputs.vollpruefung }}
+        run: |
+          "$MAC_PYTHON" -B - <<'PY'
+          import json, os, subprocess, sys
+          from pathlib import Path
+          repo = Path.cwd()
+          outer = repo.parents[1]
+          if os.environ.get("GLIDE_VOLLPRUEFUNG") == "true":
+              sys.path.insert(0, str(repo / "tests/integration"))
+              from historical_runtime import SNAPSHOTS, DELIVERY
+              for version, historical_commit in SNAPSHOTS.items():
+                  filename = f"Glide-Aufgaben-und-Listen_v{version}.pyw"
+                  subprocess.run(["git", "cat-file", "-e", f"{historical_commit}:{DELIVERY}/{filename}"],
+                                 cwd=outer, check=True)
+          sys.path.insert(0, str(repo / "packaging/paket"))
+          import macos_build_run as runner
+          runtime = runner.native_runtime()
+          basis = json.loads((repo / "packaging/paket/lizenzen/macos/manifest.json").read_text(encoding="utf-8"))
+          runner.validate_runtime(basis["runtime"], runtime)
+          runner.native_tools()
+          commit = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+          if commit != os.environ["GITHUB_SHA"]:
+              raise SystemExit("Checkout und angeforderter Commit unterscheiden sich")
+          prefix = repo.relative_to(outer).as_posix() + "/"
+          hashes = {prefix + name: digest for name, digest in runner.source_inventory(repo).items()}
+          workflow = ".github/workflows/macos-paket.yml"
+          hashes[workflow] = runner.sha(outer / workflow)
+          proof = dict(commit=commit, runtime=runtime, sha256=hashes,
+                       installer_url=os.environ["MAC_PYTHON_PKG_URL"],
+                       installer_sha256=os.environ["MAC_PYTHON_PKG_SHA256"],
+                       image_os=os.environ.get("ImageOS"), image_version=os.environ.get("ImageVersion"))
+          runner.write(Path(os.environ["RUNNER_TEMP"]) / "glide-macos-runtime/quellstand.json", proof)
+          print("Eingefroren:", commit, len(hashes), "Bauquellen;", runtime)
+          PY
+
+      - name: Eigene Tcl/Tk 9.1 und Original-Lizenzbasis bauen
+        id: runtime_bau
+        run: |
+          "$MAC_PYTHON" -B packaging/runtime/hole_runtimequellen.py --ziel "$RUNNER_TEMP/tk91-quellen"
+          "$MAC_PYTHON" -B packaging/runtime/baue_runtime.py \
+            --tcl-quelle "$RUNNER_TEMP/tk91-quellen/tcl" \
+            --tk-quelle "$RUNNER_TEMP/tk91-quellen/tk" \
+            --python-quelle "$RUNNER_TEMP/tk91-quellen/python" --ziel "$RUNNER_TEMP/tk91-runtime"
+          "$MAC_PYTHON" -B packaging/runtime/lizenzen_tk91_macos.py \
+            --basis packaging/paket/lizenzen/macos --quellen "$RUNNER_TEMP/tk91-quellen" \
+            --ziel "$RUNNER_TEMP/tk91-lizenzen"
+          printf 'PYTHONPATH=%s\n' "$RUNNER_TEMP/tk91-runtime/python-extension" >> "$GITHUB_ENV"
+
+      - name: Externen Kompaktfokus gezielt nachprüfen
+        id: kompakt_pruefung
+        if: github.event_name == 'workflow_dispatch' && (inputs.vollpruefung || inputs.nachtest != 'keiner')
+        run: |
+          "$MAC_PYTHON" -B tests/tools/macos_desktop.py --breite 1920 --hoehe 1080 \
+            --protokoll "$RUNNER_TEMP/glide-macos-kompakt-desktop.json" -- \
+            "$MAC_PYTHON" -B tests/integration/test_arbeitsmodi.py --fall kompakt_verlorenes_loslassen \
+            --report "$RUNNER_TEMP/glide-macos-kompakt.json" > "$RUNNER_TEMP/glide-macos-kompakt.log" 2>&1
+
+      - name: Seitenkarten und verbleibende Mac-Arbeitsmodi gezielt nachprüfen
+        id: ui_nachlauf
+        if: github.event_name == 'workflow_dispatch' && (inputs.vollpruefung || inputs.nachtest == 'seitenkarten_arbeitsmodi')
+        env:
+          GLIDE_MAC_VOLLMODUS: ${{ inputs.vollpruefung }}
+        run: |
+          "$MAC_PYTHON" -B tests/tools/macos_desktop.py --breite 1920 --hoehe 1080 \
+            --protokoll "$RUNNER_TEMP/glide-macos-tempo-desktop.json" -- \
+            "$MAC_PYTHON" -B tests/integration/test_seitenkarten.py --fall druck_tempo \
+            --report "$RUNNER_TEMP/glide-macos-tempo.json" > "$RUNNER_TEMP/glide-macos-tempo.log" 2>&1
+          # Im Vollmodus folgen alle fünf Gruppen bereits verpflichtend in pruefen.py.
+          # Der gezielte Nachlauf prüft sie hier ohne die 108 vorgelagerten Suiten.
+          if [ "$GLIDE_MAC_VOLLMODUS" != "true" ]; then
+            for gruppe in bedienung planung navigation geometrie abschluss; do
+              "$MAC_PYTHON" -B tests/tools/macos_desktop.py --breite 1920 --hoehe 1080 \
+                --protokoll "$RUNNER_TEMP/glide-macos-arbeitsmodi-$gruppe-desktop.json" -- \
+                "$MAC_PYTHON" -B tests/integration/test_arbeitsmodi.py --gruppe "$gruppe" \
+                --report "$RUNNER_TEMP/glide-macos-arbeitsmodi-$gruppe.json" > "$RUNNER_TEMP/glide-macos-arbeitsmodi-$gruppe.log" 2>&1
+            done
+          fi
+
+      - name: Bekannten Mac-Bedienbefund gezielt nachprüfen
+        id: gezielte_pruefung
+        if: github.event_name == 'workflow_dispatch' && (inputs.vollpruefung || inputs.nachtest == 'seitenkarten_arbeitsmodi')
+        run: |
+          "$MAC_PYTHON" -B tests/tools/macos_desktop.py --breite 1920 --hoehe 1080 \
+            --protokoll "$RUNNER_TEMP/glide-macos-bedienung-desktop.json" -- \
+            "$MAC_PYTHON" -B tests/integration/test_bedienung33316.py > "$RUNNER_TEMP/glide-macos-bedienung.log" 2>&1
+          "$MAC_PYTHON" -B tests/tools/macos_desktop.py --breite 1920 --hoehe 1080 \
+            --protokoll "$RUNNER_TEMP/glide-macos-startseite-desktop.json" -- \
+            "$MAC_PYTHON" -B tests/integration/test_startseite3332.py > "$RUNNER_TEMP/glide-macos-startseite.log" 2>&1
+          "$MAC_PYTHON" -B tests/tools/macos_desktop.py --breite 1920 --hoehe 1080 \
+            --protokoll "$RUNNER_TEMP/glide-macos-import-desktop.json" -- \
+            "$MAC_PYTHON" -B tests/integration/test_import3410.py > "$RUNNER_TEMP/glide-macos-import.log" 2>&1
+
+      - name: Vollständige native macOS-Prüfung
+        if: success() && steps.runtime_bau.outcome == 'success' && steps.kompakt_pruefung.outcome == 'success' && steps.ui_nachlauf.outcome == 'success' && steps.gezielte_pruefung.outcome == 'success' && github.event_name == 'workflow_dispatch' && inputs.vollpruefung
+        run: |
+          "$MAC_PYTHON" -B tests/tools/macos_desktop.py --breite 1920 --hoehe 1080 \
+            --protokoll "$RUNNER_TEMP/glide-macos-desktop.json" -- \
+            "$MAC_PYTHON" -B tests/tools/pruefen.py --zugang-nativ --modus voll --vordergrund \
+            --protokoll "$RUNNER_TEMP/glide-macos-voll" --timeout 900
+
+      - name: Nativen Paketbau und Prozesssandbox-Startprüfung ausführen
+        run: |
+          sh packaging/paket/baue_und_pruefe_macos.sh \
+            --python "$MAC_PYTHON" --ziel "$RUNNER_TEMP/glide-macos-bau" \
+            --basis "$RUNNER_TEMP/tk91-lizenzen" --runtime-bau "$RUNNER_TEMP/tk91-runtime/runtime-bau.json"
+
+      - name: Eingefrorenen Stand nach Archiv- und Startprüfung erneut abgleichen
+        run: |
+          "$MAC_PYTHON" -B - <<'PY'
+          import json, os, sys
+          from pathlib import Path
+          repo = Path.cwd()
+          sys.path.insert(0, str(repo / "packaging/paket"))
+          import macos_build_run as runner
+          proof = json.loads((Path(os.environ["RUNNER_TEMP"]) / "glide-macos-runtime/quellstand.json").read_text(encoding="utf-8"))
+          changed = [name for name, digest in proof["sha256"].items()
+                     if runner.sha(repo.parents[1] / name) != digest]
+          if changed:
+              raise SystemExit("Bauquellen wurden verändert: " + ", ".join(changed))
+          completion = json.loads((Path(os.environ["RUNNER_TEMP"]) / "glide-macos-bau/abschluss.json").read_text(encoding="utf-8"))
+          if completion.get("exitcode") != 0:
+              raise SystemExit("Kein grüner nativer Paketabschluss")
+          print("Paket, Archiv und eingefrorene Quellen bestätigt:", completion["version"], proof["commit"])
+          PY
+
+      - name: Geprüftes Archiv als DMG verpacken und Inhalt gegenprüfen
+        run: |
+          set -eu
+          bau="$RUNNER_TEMP/glide-macos-bau"
+          version=$("$MAC_PYTHON" -B -c 'import json,sys; print(json.load(open(sys.argv[1]))["version"])' "$bau/abschluss.json")
+          archiv="$bau/Glide-$version-macos-arm64.tar.gz"
+          dmg="$bau/Glide-$version-macos-arm64.dmg"
+          inhalt="$RUNNER_TEMP/glide-dmg-inhalt"
+          mnt="$RUNNER_TEMP/glide-dmg-mount"
+          mkdir "$inhalt" "$mnt"
+          # Inhalt ausschließlich aus dem geprüften TAR, nicht aus dem Bauordner.
+          /usr/bin/tar -xzf "$archiv" -C "$inhalt"
+          ln -s /Applications "$inhalt/Applications"
+          # hdiutil meldet auf Runnern gelegentlich „Resource busy“; begrenzt wiederholen.
+          versuch=1
+          until hdiutil create -volname "Glide $version" -srcfolder "$inhalt" -fs HFS+ -format UDZO -ov "$dmg" > "$bau/08-dmg.log" 2>&1; do
+            cat "$bau/08-dmg.log" >&2
+            if [ "$versuch" -ge 3 ]; then exit 1; fi
+            versuch=$((versuch + 1))
+            sleep 10
+          done
+          hdiutil verify "$dmg" >> "$bau/08-dmg.log" 2>&1
+          hdiutil attach -readonly -nobrowse -noautoopen -mountpoint "$mnt" "$dmg" >> "$bau/08-dmg.log" 2>&1
+          trap 'hdiutil detach "$mnt" -force > /dev/null 2>&1 || true' EXIT
+          bestand() {
+            (cd "$1" && find . -type f | LC_ALL=C sort | while IFS= read -r datei; do shasum -a 256 "$datei"; done
+             find . -type l | LC_ALL=C sort | while IFS= read -r link; do printf '%s -> %s\n' "$link" "$(readlink "$link")"; done)
+          }
+          bestand "$inhalt/Glide.app" > "$bau/dmg-soll.txt"
+          bestand "$mnt/Glide.app" > "$bau/dmg-ist.txt"
+          cmp "$bau/dmg-soll.txt" "$bau/dmg-ist.txt"
+          test "$(readlink "$mnt/Applications")" = /Applications
+          codesign --verify --deep --strict "$mnt/Glide.app"
+          (cd "$bau" && shasum -a 256 "$(basename "$dmg")" > "$(basename "$dmg").sha256")
+          printf 'DMG geprüft: %s Dateien/Links gleich dem Archiv; %s\n' "$(wc -l < "$bau/dmg-soll.txt" | tr -d ' ')" "$(cat "$dmg.sha256")"
+
+      - name: Bau- und Startbelege sichern
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: paket-macos-arm64-belege
+          path: |
+            ${{ runner.temp }}/glide-macos-voll
+            ${{ runner.temp }}/glide-macos-desktop.json
+            ${{ runner.temp }}/glide-macos-bedienung-desktop.json
+            ${{ runner.temp }}/glide-macos-bedienung.log
+            ${{ runner.temp }}/glide-macos-kompakt-desktop.json
+            ${{ runner.temp }}/glide-macos-kompakt.json
+            ${{ runner.temp }}/glide-macos-kompakt.log
+            ${{ runner.temp }}/glide-macos-tempo*
+            ${{ runner.temp }}/glide-macos-arbeitsmodi-*
+            ${{ runner.temp }}/glide-macos-startseite-desktop.json
+            ${{ runner.temp }}/glide-macos-startseite.log
+            ${{ runner.temp }}/glide-macos-import-desktop.json
+            ${{ runner.temp }}/glide-macos-import.log
+            ${{ runner.temp }}/tk91-runtime/runtime-bau.json
+            ${{ runner.temp }}/glide-macos-runtime/*.json
+            ${{ runner.temp }}/glide-macos-runtime/*.sha256
+            ${{ runner.temp }}/glide-macos-runtime/*.txt
+            ${{ runner.temp }}/glide-macos-runtime/*.log
+            ${{ runner.temp }}/glide-macos-bau/*.json
+            ${{ runner.temp }}/glide-macos-bau/*.log
+            ${{ runner.temp }}/glide-macos-bau/*.sha256
+            ${{ runner.temp }}/glide-macos-bau/dmg-*.txt
+            ${{ runner.temp }}/glide-macos-bau/lizenzen/manifest.json
+            ${{ runner.temp }}/glide-macos-bau/bau/*.json
+            ${{ runner.temp }}/glide-macos-bau/bau/bau.log
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Geprüftes Mac-Archiv mit erhaltenen Dateimodi und Symlinks sichern
+        if: success()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: paket-macos-arm64-glide
+          path: |
+            ${{ runner.temp }}/glide-macos-bau/Glide-*-macos-arm64.tar.gz
+            ${{ runner.temp }}/glide-macos-bau/Glide-*-macos-arm64.tar.gz.sha256
+            ${{ runner.temp }}/glide-macos-bau/Glide-*-macos-arm64.dmg
+            ${{ runner.temp }}/glide-macos-bau/Glide-*-macos-arm64.dmg.sha256
+            ${{ runner.temp }}/glide-macos-bau/abschluss.json
+          compression-level: 0
+          retention-days: 14
+          if-no-files-found: error

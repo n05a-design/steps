@@ -1,0 +1,63 @@
+#!/usr/bin/env python3
+# SPDX-License-Identifier: MPL-2.0
+"""Prüft und liefert den Showcase nach 05; verändert keinen Arbeitsstand.
+
+Überschreibt die Lieferkopie ohne Archivkopie: Vorfassungen trägt Git. Bis
+3.33.6 legte jeder Lauf rund 73 MB unter 05_Probelisten_Testdaten/Showcase/archiv ab.
+"""
+import argparse
+import hashlib
+import json
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+import tempfile
+
+REPO = Path(__file__).resolve().parents[2]
+BASE = REPO.parents[1]
+SOURCE = REPO/"tests/fixtures/showcase"
+TARGET = BASE/"05_Probelisten_Testdaten/Showcase"
+
+
+def copy_atomic(source, target):
+    """Lieferdatei erst nach vollständiger Kopie ersetzen (auch bei Windows-Mapping)."""
+    fd, temporary = tempfile.mkstemp(prefix=f".{target.name}.", suffix=".tmp", dir=target.parent)
+    os.close(fd)
+    try:
+        shutil.copy2(source, temporary)
+        os.replace(temporary, target)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--vordergrund", action="store_true",
+                        help="macOS: echter Fensterfokus für die Tastaturprüfung des Showcase")
+    args = parser.parse_args()
+    env = dict(os.environ)
+    if args.vordergrund:
+        env.pop("GLIDE_QA_HINTERGRUND", None)
+    elif sys.platform == "darwin":
+        env["GLIDE_QA_HINTERGRUND"] = "1"
+        env["PYTHONPATH"] = os.pathsep.join(filter(None, (str(REPO/"tests/tools/hintergrund"), env.get("PYTHONPATH"))))
+    subprocess.run([sys.executable,"-B",str(REPO/"tests/tools/pruefe_showcase.py")],cwd=REPO,env=env,check=True)
+    TARGET.mkdir(parents=True,exist_ok=True)
+    names = ["Glide-Showcase.glidebackup","Glide-Showcase_App.glideapp","Glide-Showcase.glidetemplates",
+             "manifest.json","Showcase_starten.pyw","README.md"]
+    records = {}
+    for name in names:
+        source, target = SOURCE/name, TARGET/name
+        assert source.is_file(), source
+        copy_atomic(source,target)
+        sha = hashlib.sha256(source.read_bytes()).hexdigest()
+        assert hashlib.sha256(target.read_bytes()).hexdigest() == sha
+        records[name] = sha
+    print(json.dumps({"ziel":str(TARGET),"sha256":records},ensure_ascii=False,indent=2))
+
+
+if __name__ == "__main__":
+    main()

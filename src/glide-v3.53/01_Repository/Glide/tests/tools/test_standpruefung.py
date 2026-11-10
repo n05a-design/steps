@@ -1,0 +1,221 @@
+# SPDX-License-Identifier: MPL-2.0
+"""Regressionen für gepflegte Einstiege; kein App-Import, keine Nutzerdaten."""
+
+import unittest
+from pathlib import Path
+import tempfile
+import subprocess
+
+import standpruefung as stand
+
+
+class Einstiegspruefung(unittest.TestCase):
+    def test_public_readme_uses_dated_authoritative_version_link_without_allowing_stale_or_missing_stands(self):
+        for path,target in (("README.md","01_Repository/Glide/VERSION"),
+                            ("01_Repository/Glide/README.md","VERSION")):
+            link=f"[Technischer Quellstand]({target})\n"
+            with self.subTest(path=path):
+                current=self.check(path,"# Glide\nStand 08.11.2026\n"+link)
+                self.assertEqual(current.fehler,[])
+                for text in ("# Glide\n"+link, "# Glide\nStand 08.11.2026\n",
+                             "# Glide\nStand 08.11.2026\n[Quelle](other/VERSION)\n",
+                             "# Glide\nStand 08.11.2026 · Glide 3.32.2\n"+link):
+                    self.assertTrue(any('(R1)' in error for error in self.check(path,text).fehler))
+        other=self.check("docs/README.md","# Intern\nStand 08.11.2026\n[Version](VERSION)\n")
+        self.assertTrue(any('(R1)' in error for error in other.fehler))
+
+    def check(self, path, text):
+        result = stand.Befund("3.32.3", {"DATA_SCHEMA_VERSION": 20}, suiten=58)
+        stand.datei_pruefen(result, path, text)
+        return result
+
+    def test_live_documents_require_current_version(self):
+        for path in stand.GEPFLEGT + ("00_Arbeitsvorbereitung/Glide_Uebergabe.md",
+                                      "00_Arbeitsvorbereitung/Glide_Entwicklungsplan.md"):
+            with self.subTest(path=path):
+                old = self.check(path, "# Arbeitsgrundlage\n\nStand 30.09.2026 · Glide 3.32.2\n")
+                self.assertTrue(old.fehler)
+                self.assertEqual(old.festgeschrieben, 0)
+                current = self.check(path, "# Arbeitsgrundlage\n\nStand 01.10.2026 · Glide 3.32.3\n")
+                self.assertEqual(current.fehler, [])
+
+    def test_dated_research_and_old_contract_remain_historical(self):
+        for path in ("Recherche_2026-09-30.md", "docs/70_DRAG_UND_PERFORMANCE_3.32.2.md"):
+            with self.subTest(path=path):
+                result = self.check(path, "# Vertrag 3.32.2\nStand 30.09.2026 · Glide 3.32.2\n"
+                                    "`python3 tests/tools/pruefen.py --modus voll --protokoll tests/qa-3.32.2/a`\n")
+                self.assertEqual(result.fehler, [])
+                self.assertEqual(result.festgeschrieben, 1)
+
+    def test_package_license_original_is_fixed_but_packaging_docs_are_live(self):
+        for prefix in ("", "01_Repository/Glide/"):
+            result = self.check(prefix + "packaging/paket/lizenzen/macos/Glide-Lizenzstatus.md",
+                                "# Lizenzstatus\nKeine öffentliche Softwarelizenz festgelegt.\n")
+            self.assertEqual(result.fehler, [])
+            self.assertEqual(result.festgeschrieben, 1)
+        current = self.check("packaging/README.md", "# Paketierung\n")
+        self.assertTrue(any("(R1)" in error for error in current.fehler))
+
+    def test_current_banner_does_not_hide_stale_title(self):
+        result = self.check("docs/05_QA_TESTPLAN.md",
+                            "# Prüfplan – Glide 3.30.0\n\nStand 01.10.2026 · Glide 3.32.3\n")
+        self.assertTrue(any("(R12)" in f for f in result.fehler))
+
+    def test_old_first_command_inside_code_is_rejected(self):
+        result = self.check("README.md", "# Glide\nStand 01.10.2026 · Glide 3.32.3\n\n"
+                            "```sh\npython3 -B tests/tools/pruefen.py --modus voll --protokoll\n"
+                            "tests/qa-3.30.0/abschluss\n```\n")
+        self.assertTrue(any("(R13)" in f for f in result.fehler))
+
+    def test_current_first_command_allows_later_historical_example(self):
+        result = self.check("README.md", "# Glide\nStand 01.10.2026 · Glide 3.32.3\n"
+                            "`python3 tests/tools/pruefen.py --modus voll --protokoll tests/qa-3.32.3/a`\n"
+                            "Historisch: `python3 tests/tools/pruefen.py --modus voll --protokoll tests/qa-3.30.0/a`\n")
+        self.assertEqual(result.fehler, [])
+
+    def test_placeholders_and_windows_paths(self):
+        for path in ("tests/qa-<Version>/a", "tests\\qa-3.32.3\\a"):
+            with self.subTest(path=path):
+                result = self.check("README.md", "# Glide\nStand 01.10.2026 · Glide 3.32.3\n"
+                                    f"`python3 tests/tools/pruefen.py --modus voll --protokoll {path}`\n")
+                self.assertEqual(result.fehler, [])
+        old = self.check("README.md", "# Glide\nStand 01.10.2026 · Glide 3.32.3\n"
+                         "`python3 tests/tools/pruefen.py --modus voll --protokoll tests\\qa-3.30.0\\a`\n")
+        self.assertTrue(any("(R13)" in f for f in old.fehler))
+
+    def test_skill_files_need_no_stand_line_but_keep_r3(self):
+        path = ".claude/skills/design-richtlinien/SKILL.md"
+        skill = self.check(path, "---\nname: design-richtlinien\ndescription: Gestaltung\n---\n\n"
+                                 "# Design Richtlinien\n\nWWDC 2018, Tabelle 1.0 / 0.4\n")
+        self.assertEqual(skill.fehler, [])
+        self.assertEqual(skill.ohne_stand, 1)
+        stale = self.check(path, "# Skill\n\nAktueller Entwicklungsstand: Glide 3.32.2\n")
+        self.assertTrue(any("(R3)" in f for f in stale.fehler))
+        other = self.check(".claude/skills/design-richtlinien/NOTES.md", "# Notizen\n")
+        self.assertTrue(any("(R1)" in f for f in other.fehler))
+
+    def test_historical_banner_still_cannot_claim_current_old_version(self):
+        result = self.check("Recherche_2026-09-30.md",
+                            "# Recherche\nStand 30.09.2026 · Glide 3.32.2\n"
+                            "Aktueller Entwicklungsstand: Glide 3.32.2\n")
+        self.assertTrue(any("(R3)" in f for f in result.fehler))
+
+    def test_inventory_keeps_active_documents_and_excludes_dated_snapshots(self):
+        with tempfile.TemporaryDirectory(prefix="glide-standregeln-") as folder:
+            root = Path(folder)
+            active = root / "00_Arbeitsvorbereitung/Glide_Uebergabe.md"
+            snapshot = root / "Glide_3.32.3_Zwischenstand_2026-10-01/README.md"
+            archived = root / "docs/archiv/README.md"
+            for file in (active, snapshot, archived):
+                file.parent.mkdir(parents=True, exist_ok=True)
+                file.write_text("# Prüfdokument\n", encoding="utf-8")
+            self.assertEqual(list(stand.dokumente(root)), [active])
+
+    def test_built_packages_are_not_active_docs_but_packaging_sources_are(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            active = root / "packaging/README.md"
+            for file in (active, root / "build/macos/Glide.app/Contents/Resources/licenses/Glide-Lizenzstatus.md",
+                         root / "01_Repository/Glide/build/windows/Glide/licenses/Glide-Lizenzstatus.md"):
+                file.parent.mkdir(parents=True, exist_ok=True)
+                file.write_text("# Lizenzoriginal\n")
+            self.assertEqual(list(stand.dokumente(root)), [active])
+
+    def test_python_archive_overview_is_current_but_old_evidence_stays_excluded(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            overview = root / '07_Python-Versionen/Archiv/README.md'
+            old = overview.parent / '3.32.2/README.md'
+            for file in (overview, old):
+                file.parent.mkdir(parents=True, exist_ok=True)
+                file.write_text('# Archiv\n\nStand 30.09.2026 · Glide 3.32.2\n', encoding='utf-8')
+            self.assertEqual(list(stand.dokumente(root)), [overview])
+            self.assertEqual(list(stand.dokumente(root / '07_Python-Versionen')), [overview])
+            result = self.check(overview.relative_to(root).as_posix(), overview.read_text(encoding='utf-8'))
+            self.assertTrue(any('(R1)' in error for error in result.fehler))
+
+    def test_git_inventory_includes_staged_project_docs_and_preserves_untracked_user_files(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            subprocess.run(['git', 'init', '-q', str(root)], check=True)
+            active = root/'docs/current.md';active.parent.mkdir()
+            active.write_text('# Aktuelles Projektdokument')
+            imported = root/'personal-skills/REFERENCE.md';imported.parent.mkdir()
+            imported.write_text('# Unverändertes Nutzermaterial')
+            note = root/'Personal design notes.md';note.write_text('# Eigene Notizen')
+            before = {path:path.read_bytes() for path in (imported,note)}
+            subprocess.run(['git','-C',str(root),'add','docs/current.md'],check=True)
+            self.assertEqual(list(stand.dokumente(root)),[active])
+            self.assertEqual({path:path.read_bytes() for path in before},before)
+
+    def test_git_inventory_skips_document_deleted_from_working_tree(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            subprocess.run(['git', 'init', '-q', str(root)], check=True)
+            deleted = root / 'alter_beleg.md'
+            deleted.write_text('# Historisch', encoding='utf-8')
+            subprocess.run(['git', '-C', str(root), 'add', deleted.name], check=True)
+            deleted.unlink()
+            self.assertEqual(list(stand.dokumente(root)), [])
+
+    def test_git_inventory_respects_requested_subdirectory_and_staged_new_document(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            subprocess.run(['git','init','-q',str(root)],check=True)
+            top = root/'README.md';top.write_text('# Projekt')
+            nested = root/'packaging/README.md';nested.parent.mkdir();nested.write_text('# Paketierung')
+            subprocess.run(['git','-C',str(root),'add','README.md','packaging/README.md'],check=True)
+            self.assertEqual(list(stand.dokumente(nested.parent)),[nested])
+            # Dieser Vertrag prüft den vollständigen Bestand, nicht die
+            # plattformabhängige Sortierung von WindowsPath und PosixPath.
+            self.assertCountEqual(list(stand.dokumente(root)),[top,nested])
+
+    def test_nested_git_worktrees_have_their_own_documentation_scope(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            active = root / 'docs/current.md'
+            active.parent.mkdir();active.write_text('# Aktuell')
+            for name, directory in [('worktree', False), ('checkout', True)]:
+                nested = root / name;nested.mkdir()
+                if directory:
+                    (nested / '.git').mkdir()
+                else:
+                    (nested / '.git').write_text('gitdir: elsewhere')
+                (nested / 'README.md').write_text('# Eigener Stand')
+            self.assertEqual(list(stand.dokumente(root)), [active])
+
+    def test_module_lists_follow_their_own_folder(self):
+        with tempfile.TemporaryDirectory() as ordner:
+            wurzel = Path(ordner)
+            for name in ("a.py", "b.py", "drawing_prototype.py", "app.pyw"):
+                (wurzel / name).write_text("", encoding="utf-8")
+            self.assertEqual(stand.modulnamen(wurzel), ["a.py", "b.py"])
+        self.assertEqual(stand.fehlende_module("`a.py`", ["a.py", "b.py"]), ["b.py"])
+        self.assertEqual(stand.fehlende_module("`Schnellstart.pyw`", ["glide_start.py"]), [])
+
+    def test_current_paragraph_names_current_source(self):
+        kopf = "# Glide\nStand 01.10.2026 · Glide 3.32.3\n"
+        for zeile in ("**Aktuell 29.09.2026:** Quelle 3.32.2, Python 3.31.0.",
+                      "> **Projektstatus:** lokaler Prüfkandidat **3.32.2**, Format 20.",
+                      "- **Aktueller Quellkandidat 3.32.2:** neue Funktionen."):
+            with self.subTest(zeile=zeile):
+                self.assertTrue(any("(R15)" in f for f in self.check("README.md", kopf + zeile + "\n").fehler))
+        gut = self.check("README.md", kopf + "**Aktuell 01.10.2026:** Quelle 3.32.3, Python/Showcase 3.32.2. "
+                                             "Damals Quelle 3.32.2.\n**Stand 29.09.2026:** Quelle 3.32.2.\n")
+        self.assertEqual(gut.fehler, [])
+        beleg = self.check("tests/qa-3.32.2/lauf/README.md", "# Lauf\n**Aktuell:** Quelle 3.32.2.\n")
+        self.assertFalse(any("(R15)" in f for f in beleg.fehler))
+
+    def test_current_stand_line_uses_actual_suite_count(self):
+        old = self.check("tests/README.md",
+                         "# Prüfungen\nStand 01.10.2026 · Glide 3.32.3 · 55 Suiten\n")
+        self.assertTrue(any("(R14)" in f for f in old.fehler))
+        current = self.check("tests/README.md",
+                             "# Prüfungen\nStand 01.10.2026 · Glide 3.32.3 · 58 Integrationssuiten\n"
+                             "Historischer Lauf 3.32.2: 57 Suiten.\n")
+        self.assertEqual(current.fehler, [])
+        self.assertGreater(stand.suite_anzahl(), 0)
+
+
+if __name__ == "__main__":
+    unittest.main()

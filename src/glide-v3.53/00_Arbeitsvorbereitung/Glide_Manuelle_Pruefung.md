@@ -1,0 +1,550 @@
+# Manuelle Prüfung – Glide
+
+Stand 10.11.2026 · Glide 3.53.0 · Aufgabenformat 26
+
+## Menschliche Prüfung des ersten öffentlichen Stands 3.50
+
+Nach dem technischen Abschluss mit den tatsächlich gelieferten Paketen prüfen: Hintergrundfarben und Fensterfläche in Hell/Dunkel, Schatten aus, Kopf-/Inhaltsflucht, volle/schmale/ausgeblendete Seitenleiste, Mindestgröße und große Schrift; Blöcke einschließlich Bild, Aufgabe, Tabelle, Code und Aufklappkindern ziehen, abbrechen, rückgängig machen und nach Neustart vergleichen. Danach bisherige Kernabläufe, DPI und mehrere Monitore prüfen. Ergebnisse mit Paket-/Apphash und Plattform festhalten.
+
+**Bis Bedarf zurückgestellt:** Screenreader-Abnahme einschließlich VoiceOver, NVDA und Orca ist kein aktiver offener 3.50-Punkt. Die unten erhaltenen Readeranleitungen sind optionale spätere Prüfhilfe; reine Tastaturbedienung bleibt Teil der normalen menschlichen Prüfung.
+
+<a id="aktuelle-abschlussrunde"></a>
+
+## Offene Sichtabnahme 3.52.0 (D76, 09.11.2026)
+
+Der lokale, nicht commitete Kandidat 3.52.0 hat noch keine menschliche oder native Paketfreigabe. Die automatisierte Windows-Vollprüfung dieses Stands endete mit Exitcode 0 (130/131 Schritte; die menschliche Sichtprüfung wurde übersprungen). Die folgenden D76-Punkte sind weiterhin separat am selben Quellstand zu prüfen. Frühere Haken oder Prüfungen auf 3.50.x/3.51.0 übertragen sich nicht automatisch. Die D76-Aktionsfarben ergänzen die ältere D68-Prüfung der Ansichtstitelfarbe; sie ersetzen sie nicht.
+
+**Teilrückmeldung des Inhabers, 10.11.2026:** Schriftgewicht und Schriftgröße wirken passend; für Kreativ und Klassisch wurde zusätzlicher Zeichenabstand von 0,2 px angeregt. Der Zeichenabstand ist keine vorhandene D76-Anforderung und wurde nicht geändert. Ohne Plattformvergleich und Prüfung von Umbruch, Ausrichtung und Textmessung bleibt die vollständige Schriftabnahme offen.
+
+- [ ] **Schriftgewicht:** Gewicht unabhängig von Schriftgröße für Modern, Technisch, Kreativ und Klassisch wählen, speichern und nach Neustart prüfen. Kreativ und Klassisch müssen automatisch kräftiger erscheinen; große Schrift darf weder abgeschnitten noch unleserlich werden.
+- [ ] **Kopflogo:** Die neue Verschiebung um 2 px nach rechts und proportionale Vergrößerung nach oben prüfen. Unterkante bleibt an der Unterzeile, der Titel an seiner bisherigen Position. Ansichten mit und ohne Kennzahlenchips, Hell/Dunkel und große Schrift einbeziehen.
+- [ ] **Themenfarbe:** Alle Themenfarben und Kontrastgrau prüfen. Hinzufügen und die bisher lila Aktionsakzente folgen der Auswahl; Löschen bleibt rot, Bestätigen grün. Ruhezustand, Hover, Tastaturfokus und Neustart kontrollieren.
+
+<a id="abschlussrunde-31102026--noch-menschlich-zu-bestätigen"></a>
+<a id="aktuelle-abschlussrunde-3502"></a>
+
+## Weiterführende Prüfliste aus 3.50.5 (keine 3.52.0-Abnahme)
+
+**Mac-Sitzung 07.11.2026 (D66–D69, D71, Plan §21.76):** Eingefrorene Python-Prüffassung 3.50.5 mit Tk 9.1 und eigener synthetischer Showcase-Kopie. Inhaberbefunde: Systemscrollleiste in der Live-Liste, zu lange Neuerungenkarte, fehlende Unterzeile neben dem Logo; dazu Auftrag zu strikten Maximallängen mit Restzähler und zu langen Anhangsnamen. In der Quelle korrigiert und automatisch geprüft; die folgenden Punkte sind in der neuen Prüffassung menschlich zu bestätigen.
+
+- [ ] **Keine Systemelemente im Altstil:** Seite „Parkquartier · Briefing und Freigabe“ › Live-Liste unten sowie Datei › Sicherung › „Speicherstatus …“ und „Sicherungsübersicht …“: Scrollleisten erscheinen als schmale gerundete Glide-Leiste in Kartenfarbe, nicht im Systemstil; Hell/Dunkel. Unter Windows zusätzlich prüfen. Restbestand klassischer Kontrollkästchen/Listenfelder ist bekannt und nicht Teil dieses Hakens.
+- [ ] **Neuerungen:** Karte „Neu in Glide“ zeigt höchstens drei Versionen; „Gelesen“ ist bei 1280 × 800 ohne Scrollen erreichbar. Hilfe › Über Glide › „Neuerungen …“ zeigt weiterhin den ganzen Verlauf.
+- [x] **Pinnwandleiste (D69)** (Anordnungsknopf vom Inhaber 07.11.2026 bestätigt: „deutlich moderner“; einzeilige Leiste in `abn1107d` bestätigt: „passt“): Ordner „Showcase · Parkquartier“ › Pinnwand bei voller Fensterbreite und schmaler: eine einzige Leistenzeile, auch in „Spalten“ mit geöffneten Reitern („Gruppieren ▾“, „Reiter (n)“); „Frei anordnen ▾“ steht vollständig als Knopf wie „Raster“/„Finden“, das Menü wechselt zu „Geordnete Karten“ und „Spalten“ (✓ am aktuellen Wert). In „Spalten“ öffnet „Gruppieren ▾“ das Menü mit ✓ am aktuellen Feld; der Tooltip nennt es. Einstellungen und andere Auswahlfelder: Der Pfeil steht neben dem Text, nichts wird verdeckt.
+- [x] **Restflächen (Befund 07.11., dritte Rückmeldung; „Erwähnt ohne Verweis“ in `abn1107f`, Live-Liste lösen und Titelbild in `abn1107g` bestätigt):** Seite „Parkquartier · Briefing und Freigabe“: „Erwähnt ohne Verweis“ auf- und zuklappen, Live-Liste unten › Rechtsklick › „Verknüpfung lösen“, Mehr › Titelbild setzen und entfernen: danach füllt der Seitentext wieder die ganze Karte, keine weiße Fläche bleibt. Ebenso Inspektor und Nebenansicht schließen.
+- [ ] **Textkante Erledigt/Offen (Befund 07.11.):** Seite „Parkquartier · Briefing und Freigabe“ › Live-Liste: erledigte (✓) und offene (□) Punkte beginnen an derselben Textkante; ebenso Checklistenzeilen in einer Liste und die Checkliste einer Karte.
+- [ ] **Seitentitel nur im Kopf (D71; festes Pixelsymbol links vom Griff in `abn1107f` bestätigt):** Seite „Parkquartier · Briefing und Freigabe“ und eine eigene Seite: Der Titel steht nur oben im Kopf (Themenfarbe), der Text beginnt direkt unter Titelbild bzw. Kartenrand. Doppelklick auf den Kopftitel benennt um; Mehr › Pixelsymbol … und Mehr › Titelbild wirken. Mit Symbol (Mehr › Pixelsymbol …, nicht Titelbild): es steht fest oben im linken Rand vor dem Griff ⋮⋮ und bleibt beim Scrollen stehen; der Griff überdeckt es nie. Ein Titelbild steht dagegen über dem Text. Titel im Kopf vom Inhaber in `abn1107d` gesehen; Symbol noch offen. Mit Labels: Chips oben rechts, Text darunter frei.
+- [x] **Rücktaste im Feld (Befund 07.11., in `abn1107d` bestätigt: „passt“):** Pinnwand › Karte markieren › Doppelklick › im Titel der Seitenansicht Buchstaben löschen: kein Hinweis „Zuerst einen Punkt auswählen.“, nichts landet im Papierkorb, danach Wechsel zu anderen Listen möglich. In der Liste mit markiertem Punkt dasselbe im Inspektor.
+- [ ] **Themenfarbe (D68)** (Titel im Kopf vom Inhaber 07.11.2026 in `abn1107c` bestätigt: „funktionieren oben sehr gut“; offen: Frage zu aktiven Umschaltern): Einstellungen › Themenfarbe nacheinander Lila, Grün, Gelb, Blau und Kontrastgrau: Der Titel der aktuellen Ansicht (Liste, Ordner, Seite, Heute, Startseite …) steht in dieser Farbe, gut lesbar in Hell, Dunkel und eigener Hintergrundfarbe; Kontrastgrau lässt ihn neutral. Wirkt das Zusammenspiel mit Logo und Seitenleistenauswahl ruhig? Sollen aktive Umschalter (Liste/Tabelle/Pinnwand, Werkzeuge) ebenfalls die Themenfarbe tragen?
+- [ ] **Maximallängen (D67):** Liste umbenennen (Doppelklick in der Seitenleiste), neue Liste/Seite, Aufgabe in der Maske und in der Eingabezeile: Der Zähler zählt von „noch 40“ herunter; bei der Grenze steht „max. 40“ in Warnfarbe, langes Einfügen nennt „N gekürzt“. Eingabezeile mit Datum/Labels: gezählt wird nur der Titel; über 40 erscheint „N zu viel“ und Enter legt nichts an. Mehrere lange Zeilen einfügen: Rückfrage vor dem Anlegen.
+- [ ] **Anhangsnamen (D67):** Bild und Dokument mit über 40 Zeichen langem Dateinamen in Galerie, Seite und Aufgabe anhängen: Umbenennen-Dialog mit Vorschlag und Zähler, Endung bleibt, Abbrechen übernimmt nichts. Anschließend Datei öffnen, extern ändern und speichern (Windows/OneDrive besonders prüfen).
+- [x] **Unterzeile neben dem Logo** (Inhaber 07.11.2026 in `abn1107c`: „passt sehr gut“): Startseite, Heute, Labels, Vorlagen, Papierkorb, Seiten, Listen und Ordner, Notizen, Zeichnungen sowie Liste/Seite/Zeichnung/Buch: direkt unter dem Titel und bündig mit ihm steht eine Unterzeile; kein Datum im Kopf (B06). Rechts unter den Knöpfen steht nichts mehr. Inhalt verständlich? Hinweise an/aus, Hell/Dunkel, große Schrift.
+
+- [ ] **Titel/Buttons:** Seitenübersicht bei schmalem Fenster und großer Schrift: Beschriftungen enden mit `...`, voller Titel im Tooltip. Neue/geänderte Aufgabentitel maximal 40 Zeichen; bestehende längere Titel bei Metadatenänderung erhalten. Original importierter längerer Titel in Beschreibung prüfen.
+- [ ] **Notiz/Zeichnung:** eine Werkzeugzeile; Favorit, Stimmung, Ort und Schreibimpuls über „Mehr“ erreichbar. Keine eigene umgebrochene Journal-Knopfzeile vor dem Text.
+- [ ] **Heute:** schmal, breit, schmal sowie Seitenleiste ein/aus: Suchfeld vollständig verborgen oder gut nutzbar, erster Pfeil ohne Lücke links, Aktionen erreichbar.
+- [ ] **Abschnitte:** Seiten/Listen/Notizen/Zeichnungen: Überschrift mit enger Zugehörigkeit zum ersten Eintrag, auch nach Einklappen und großer Schrift.
+- [ ] **Suchfelder:** Startseite mit Anfrage + Enter in globale Suche, Treffer öffnen. Vorlagenfilter nach Titel/Inhalt, keine Treffer, Escape und Wechsel zwischen beiden Ansichten prüfen.
+
+Gesamtnachweis der damaligen 3.50.5-Fassung: [3.50.5](../01_Repository/Glide/tests/qa-3.50.5/abnahme_2026-11-05/README.md). Die folgenden Rückmeldungen und Teilfreigaben bleiben an ihre ursprünglichen Quell-/Pakethashes gebunden; kein neuer Haken aus automatischen Prüfungen und keine automatische Freigabe für 3.52.0.
+
+- [ ] **Suchzeilenbreite, erneuter Befund 05.11.:** Aktuelle Python-Prüffassung `1c48a095…`: im Buch ohne Suchanfrage endet das Suchfeld bündig mit der rechten Außenkante der Inhaltskarte. Mindestbreite/breit und volle/schmale/ausgeblendete Seitenleiste samt Rückwechsel prüfen. Suchwort eingeben: „Suche löschen“ bleibt vollständig sichtbar und mit Abstand erreichbar; nach Löschen reicht das Feld wieder bis zur Inhaltskante. Labels/Liste nach Ansichtswechsel mitprüfen. Keine Freigabe aus der automatischen Prüfung. [Aktueller Nachweis](../01_Repository/Glide/tests/qa-3.50.4/suchbreite_2026-11-05/README.md).
+
+- [ ] **Seitenleistenabstand, Befund 05.11.:** In der aktuellen Python-Prüffassung `e984ba99…` über „Startseite“ hovern: der farbige Zeilenhintergrund hat oben denselben Abstand zur Karte wie links/rechts (10 px). Hell/Dunkel und Rückkehr nach Ein-/Ausblenden prüfen. Automatische Geometrieprüfung ersetzt diese menschliche Bestätigung nicht. [Aktueller Nachweis](../01_Repository/Glide/tests/qa-3.50.4/seitenleistenabstand_2026-11-05/README.md).
+
+**Fortsetzung auf Benutzerauftrag 05.11.:** Neuer eindeutig bezeichneter Python-Nachteststand 3.50.4 mit neuer G-Kontur, Darkmode-Gelb und korrigierter Buchbreite. Punkte 1–5 bleiben als menschliche Teilfreigaben des vorherigen nativen Kandidaten erhalten. Als Nächstes Punkt 6 (Buchbreite) erneut bestätigen, danach Seiten-/Zeichenwerkzeuge und übrige Blöcke. Native Neubauten heute Abend auf 3.50.4 ausrichten.
+
+- [ ] **D62 – neue Logos und Darkmode-Gelb:** Aktuelle Quellfassung 3.50.5 `e984ba99…` und anschließend die heute Abend neu gebauten nativen Pakete getrennt prüfen: neue G-Kontur in Kopf/Start/Über Glide, Fenster-/Dialog-/Tray-Symbole; Gelb `#FFDC0B` in farbigen dunklen Designs. Taskleiste/Dock, Alt-Tab/Vorschauen, Explorer/Finder, Menüanzeige und vorhandene Verknüpfungen nach echtem Paketstart kontrollieren. Dateitypsymbole benötigen vorhandene Zuordnung; keine automatische Registrierung behaupten. [Vollständige Verwendungs-/Neubaucheckliste](../20_Grafik_Master/README.md). Automatische Logo-/ICO-/Farbtests sind keine menschliche Shell-/DPI-Abnahme.
+
+Prüfgrundlage ist ausschließlich der im [aktuellen Nachweis](../01_Repository/Glide/tests/qa-3.50.5/abnahme_2026-11-05/README.md) anhand von SHA-256 bezeichnete Stand; lokale synthetische Testablage verwenden. Erst nach erfolgreicher Lieferung deren Starter nutzen. Für jeden Punkt Prüfername, Datum, Gerät/OS, Runtime/Reader-Version, Paket-/Apphash, Ergebnis und etwaige Befundkennung eintragen. Ein automatischer Attribut-/Tastaturtest trägt keine Menschenfreigabe ein.
+
+Die ersten Rückmeldungen (Briefing/Scrollen, Ansichtswechsel und funktionierender Hell-/Dunkelwechsel) gehören zur eingefrorenen 3.50.2-Prüfung. Die gemeldeten Abweichungen sind in 3.50.3 korrigiert; ihr menschlicher Nachtest bleibt offen. Dies bestätigt keine weiteren Blöcke oder Plattformen.
+
+**Menschlicher Teilnachtest 05.11.2026, Windows-Kandidat 3.50.3 / EXE `e05aaa4f…`, frischer isolierter Showcase:** Benutzer bestätigt die folgenden drei Anleitungspunkte jeweils mit „passt“. Nur dieser Umfang ist bestanden; die weiter gefassten Sammelkriterien darunter bleiben bis zur vollständigen Prüfung offen.
+
+- [x] Kopf bei schmaler/breiter Darstellung: Symbolgruppe wechselt neben die Eingabe und zurück, Titel/Windows-Menüs bleiben lesbar.
+- [x] Eingabe/Suche/Plus erreichbar, Abstand bei schmalem Fenster passend.
+- [x] Dauerhafte Aufgabenaktionen beim Scrollen und Auf-/Zuklappen von Unterpunkten ohne störende Überdeckung.
+
+- [x] Tabelle: Fristen vollständig oder als ganze Spalte ausgeblendet, keine Überdeckung von Titel und Aktionen – Benutzer: „ist sehr gut“.
+- [x] Labels: verfügbare Breite ohne ungenutzte rechte Aktionsreserve – Benutzer: „ist sehr gut“.
+- [ ] **Buchbreite erneut prüfen (erneuter menschlicher Befund, noch offen):** Benutzer meldet bei Punkt 6 ungenutzte Innenbreite, auch mit schmaler/ausgeblendeter Seitenleiste. Quelle/Python aktuell `e984ba99…`: zusätzlicher linker/rechter 14-px-Packabstand entfernt, erweiterte 64 Fälle prüfen nun die Karteninnenfläche; im geöffneten Python-Nachtest Mindestbreite/breit und volle/schmale/ausgeblendete Seitenleiste samt Rückwechsel menschlich bestätigen. Äußere Kartenabstände bleiben erhalten. Kein Haken aus der automatischen Prüfung.
+
+- [ ] **3.50.3 – Kopf und Werkzeuge:** Fenster schmal/breit ziehen, volle/schmale/ausgeblendete Seitenleiste sowie große Schrift: Titel und Datei/Bearbeiten/Ansicht/Hilfe bleiben oben; globale Symbolaktionen wechseln neben die Eingabe und bei mehr Platz zurück. Plus bleibt erreichbar. Seiten-/Zeichenleisten bleiben einzeilig; Mehr enthält die weiteren Befehle. Gleiche Außenknöpfe haben konsistente Form/Höhe in Hell/Dunkel und bei eigener Fensterfarbe.
+- [ ] **3.50.3 – Breite und Abstände:** Fälligkeit in Tabelle vollständig einschließlich Jahr/Uhrzeit oder als ganze Spalte ausgeblendet. Eine dauerhafte Aufgabenaktion pro sichtbarer Zeile, keine Überdeckung am Scrollrand. Labels und Buch nutzen ihre Breite ohne ungenutzte Aktionsreserve; Buchtitel lesbar, leere Beschreibung belegt keine Spalte. Abstand Eingabe/Suche sowie kompakter Seitenfuß „Erwähnt ohne Verweis“ prüfen.
+- [ ] **3.50.3 – Zeichenbedienung:** Werkzeug und Optionen im Menü wählen; Auswahl über „Auswahl aufheben“ lösen. Farbe am Farbfeld, Raster/Referenz/Bildfolgenexport unter Mehr. Ohne Tastaturaktion keine Zellmarkierung durch bloßen Fokuswechsel; Pfeiltasten/Leertaste zeigen den Tastaturcursor, Mausbedienung nimmt ihn zurück. Pinsel, echte Auswahl und Undo erhalten.
+
+- [ ] **Themenflächen und Kopf 3.50.2:** Fensterfläche → Braun/Blau wechseln, Hell/Dunkel und Neustart: Seitenleiste und Inhalt bleiben weiß bzw. dunkelgrau, Hintergrundfarbe dahinter. Zwischen Liste, Heute, Seite, Ordner und Pinnwand wechseln: Kopf bleibt stehen, Werkzeugabstand erhalten.
+- [ ] **Anlegen/Undo:** Schnelleingabe, erweiterte Maske, Kalender, Unter-/Geschwisterpunkt und mehrzeiliges Einfügen bedienen; jeweils genau ein Undo/Redo, Abbruch ohne Änderung. Ziel während offener Maske wechseln/entfernen und Schreibbesitzwechsel in einer separaten Testablage prüfen.
+- [ ] **Labels/Sortierung:** Labelmanager umbenennen/färben/entfernen; direkte Punkt-/Seitenlabels; bereits sortierte Liste bleibt ohne zusätzlichen Undo-Schritt. In Schreibschutz keine Änderung.
+- [ ] **Labels in der Kartenecke (02.11.2026):** Seite, Liste und Ordner mit ein, zwei und vielen Labels öffnen: Chips oben rechts in der Inhaltskarte, Rest als „+n“, keine Überdeckung von Titel, erster Zeile, Tabellenkopf oder Pinnwandleiste. Ohne Labels kein Freiraum. Hell/Dunkel, 860/1280 px, volle Lesebreite und Fenstergröße ändern.
+- [ ] **Hinweise bei schmaler Breite (02.11.2026):** Mit eingeschalteten Bedienhinweisen das Fenster langsam schmaler ziehen: Sobald das Logo verschwindet, verschwinden Kartenfußhinweis, Werkzeugleistenhinweis der Seite, Pinnwand-Tastenzeile und Untertitel; der Inhalt rückt nach. Breiter ziehen und Kompaktmodus ein/aus prüfen; Auswahlzahl der Pinnwand bleibt.
+- [ ] **Werkzeugzeile und Pinnwand (02.11.2026):** Abstand zwischen Eingabe-/Suchzeile und Inhaltskarte in Liste, Tabelle, Pinnwand, Ordner, Heute und Seite wirkt gleichmäßig; Pinnwandfläche in Kartenfarbe auch mit eigener Hintergrundfarbe; ☷/⊞/▨ ganz rechts, „≡“ und „Spalten“ links davon.
+- [ ] **Schriftstile und Symbole D77 / 3.53.0:** Frischer Start zeigt Rubik. In den Einstellungen Modern: Rubik, Technisch: DM Mono, Kreativ: DM Serif Display und Klassisch: Charis SIL wählen, speichern und neu starten. Schriftgröße und Gewicht getrennt prüfen; Kreativ/Klassisch automatisch kräftig sowie alle vier Stile in Standard/Kräftig und kursiv ansehen. Deutsche Zeichen, Symbole, Hell/Dunkel, 100/150/200 % DPI sowie 860 × 700 prüfen. DejaVu bleibt intern für fehlende UI-Symbole, ist aber keine Auswahl. Automatisierte Änderungszuordnung und direkte Testfälle stehen im [Prüfplan](../01_Repository/Glide/docs/05_QA_TESTPLAN.md#schrift--und-symboländerungen--d77-10112026).
+
+**Sichtabnahme D77, 10.11.2026:** Der Inhaber hat die befüllte lokale Windows-Prüffassung 3.53.0 mit dem fiktiven Parkquartier-Showcase durchgesehen und zurückgemeldet: „passt alles“. Die gezeigte Darstellung ist damit visuell akzeptiert; einzelne Schrift-, Gewicht-, Modus-, DPI- und Fenstergrößenkombinationen wurden nicht separat protokolliert. Deshalb bleibt die obige vollständige Matrix offen.
+- [ ] **Pixelgrund (03.11.2026):** Neues Pixelsymbol zeichnen und einer Seite/Liste zuweisen: in Seitenleiste, Angeheftet und Seitenkopf kein weißer Kasten, auch im Dunkelmodus. Mit „Weiß“ gefüllte Fläche bleibt weiß, karierter Grund bleibt durchsichtig.
+- [ ] **Import:** CSV/ICS neu und an vorhandene Liste, TXT und Austauschformat importieren, Inhalt/Labels prüfen und vollständig rücknehmen. Die automatischen Schreib-/Nachlauffehlerbelege ergänzen diese reale Bedienprüfung.
+- [ ] **Pinnwand:** Bildvorschau und Titelbild bei 100/125/150/200 % sowie Präsentation prüfen; Auswahl, Drag, Zoomposition, Text-/Bildschärfe, Druckvorschau und Rückweg kontrollieren. Der historische macOS-Laufzeitbefund ist durch eine schnelle Einzelmessung nicht ursächlich geklärt.
+- [ ] **Native Betriebsabnahme:** Bestehende Abschnitte A–C einschließlich kleiner Fenster/großer Schrift, Hell/Dunkel, Kompaktmodus, DPI 100/150/200 %, zwei Monitoren, Schlafen/Aufwachen und Wiederanlauf abschließen. Clean-Machine-/Signatur-/Installerfreigaben bleiben separat.
+
+- [ ] **3.50.0 Nachschlagen/Fokusdauer:** In einer Seite einen Begriff markieren, „Markierung in Nebenansicht suchen“ (Kontextmenü und Blockaktionen) bei offener Nebenansicht; erster Treffer markiert, Haupttext unverändert. „Treffer …“ zeigt Abschnitt und Ausschnitt, Wahl springt; „Abschnitte …“ nennt die Trefferzahl je Abschnitt; bei großer Schrift und 860 × 700 lesbar. Mehr-Menü einer Tagesaufgabe › „Fokus für“ 15 Minuten: Restzeit, Pause/Fortsetzen nach Intervallende (+15), Vorgabe für „Fokus starten“; Aufgabe mit Aufwand 30 Minuten: „Aufwand · 30 Minuten“ und im Kontextmenü „Beziehungen und Zeit“ › „Fokus nach Aufwand“. Fokusfeld „+5 Minuten“ am Intervallende und mitten im Intervall; bei großer Schrift und 860 × 700 bricht die Knopfreihe um.
+- [ ] **3.50.0 Wechseln/letzte Suchen:** Fokus starten, im Fokusfeld „Wechseln zu …“ öffnen (Maus und Tastatur): Reihenfolge wie „Nächste Aufgabe“, keine blockierten/erledigten/anderen Tage, bei mehr als fünf gesperrt „… und N weitere für heute“; Wahl bucht die Zeit und fokussiert die gewählte Aufgabe; „Als Nächstes: …“ unter der Uhr nennt vorher dieselbe Aufgabe wie „Nächste Aufgabe“ samt „· danach noch N Aufgaben“ und folgt Erledigen/Undo. Dieselben Fokusbefehle über „Ansicht › Ansichten“ und die Aktionsauswahl („> Fokus“) auslösen; ohne Sitzung erscheint ein Hinweis. Mit sichtbarer Kachel „Nächste Aufgabe“ und laufendem Fokus: „Läuft gerade im Fokus.“, Knopf „Fokus anzeigen“ öffnet Heute ohne neue Sitzung. Eintrag nach zwischenzeitlichem Erledigen wählen: Hinweis, Sitzung bleibt. In der Nebenansicht suchen, mit Weiter/Zurück und Trefferübersicht nutzen, „Letzte Suchen …“ öffnen: höchstens acht Begriffe, ✓ am aktuellen, Wahl sucht erneut; Pfeil hoch/runter im Suchfeld blättert; „Liste leeren“ verwirft die Begriffe; Tippen allein merkt nichts. Knöpfe bei 280 px Nebenansicht, großer Schrift und Kompaktmodus nicht abgeschnitten. In einer langen Seite und einer gegliederten Liste in der Nebenansicht Alt+Pfeil runter/hoch (macOS: Wahltaste) drücken: Sprung von Abschnitt zu Abschnitt, Überschrift sichtbar, am Rand „Kein weiterer/vorheriger Abschnitt.“, „Abschnitte …“ zeigt ✓ am aktuellen Abschnitt, Hauptseite unverändert.
+
+**Rückmeldungsvorlage:** `Prüfer | Datum | Gerät/OS | App-/Pakethash | Runtime/Reader | Punkte | bestanden / Befund | Einschränkungen`. Ungeprüft bleibt offen; keine pauschale Gesamtabnahme aus einem Teilgerät.
+
+**Neue Bediengegenproben der lokalen Fortsetzung, Menschenabnahme offen:** „Liste leeren“ über Liste und Seitenleistenkontextmenü mit Bestätigung, Schreibschutz, Editorübernahme und Undo/Redo prüfen; nach zwischenzeitlicher Änderung keine unbestätigten Punkte löschen. Label-Farbauswahl abbrechen, Label normal anlegen und rücknehmen/wiederholen; Listen-/Ordnernamen inline ändern. Erledigte Eltern/Kinder mit offenen Geschwistern entfernen und aus dem Papierkorb wiederherstellen; bei großem Umfang den Retentionshinweis lesen. Schreibschutz/Schreibfehler, kleine Fenster/große Schrift und native DPI-Grenzen getrennt prüfen. Automatisierter Stand im QA-Bericht, keine bereits behauptete Menschenabnahme.
+
+**Zusätzliche Menschenabnahme für 3.49.0, offen:** Wochen-Schnellwahl mit Tastatur/Filter, Tageswechsel und Heute-Markierung bedienen; gemeinsame Fälligkeit mit individuellen Uhrzeiten, Entfernen und Aufwand je Aufgabe einschließlich Undo/Redo prüfen. Verweise kopieren, bewusst im Hauptbereich öffnen und nach Dialog gezielt verknüpfen; Hauptentwurf erhalten. Wiederanlauf nach echtem Abbruch, lesender Schutz, bewusste Freigabe mit Originalvorsicherung, Restorefehler und Diagnoseanzeige getrennt am nativen Gerät abnehmen. Kleine Fenster/große Schrift, Hell/Dunkel, Kompaktmodus, DPI berücksichtigen. Automatische Belege und verbleibende Grenzen im [QA-Bericht](../01_Repository/Glide/docs/07_QA_BERICHT.md).
+
+**Prüfgrenze 29.10.2026 (fortgeschrieben in Plan §21.37–§21.40):** Quellkandidat 3.49.0/Format 26 hat eine frühere grüne WA-09-CI; die neuere Intel-CI am Mutationsstand ist nativ rot abgebrochen. Kein neuer grüner Gesamtstatus und keine Gesamtabnahme. A01-Pflichtfolge inzwischen nach dokumentierter Adapterkorrektur in 13 Bereichssuiten/136 Fällen grün; WA-09 lokal umgesetzt und gezielt geprüft. Dies ersetzt keine menschliche/native Gesamtabnahme. WA-41A/B bleiben offen. B1 unten ist ein historischer automatischer Erfolg. Python/Showcase 3.47.0, native Pakete 3.45.0. Der zwischenzeitliche Fortsetzungsnachlauf ist im QA-Bericht belegt; BIOS/CPU vorerst unverändert. [Abnahmebericht](https://github.com/n05a-design/glide-to-do/blob/f1a5b5b6e0f97f2b5eab1ac552999c33c6416e69/01_Repository/Glide/tests/qa-3.49.0/abnahme_2026-10-28/README.md).
+
+**3.48.0 – drei neue Featurepakete, Menschenabnahme offen:** Tagesnavigation samt Datumdialog und Rückkehr zu Heute bei kleiner Größe/großer Schrift bedienen; Datum, Kapazität und Fälligkeit vergleichen. Mehrere Aufgaben aus verschiedenen Listen priorisieren und mit unterschiedlichen Labels versehen, Undo/Redo und Schreiben unter Fehlerbedingungen gegenprüfen. Interne Links und Rückverweise in der Nebenansicht mit Tastatur/Maus verfolgen, Verlauf und offenen Hauptentwurf erhalten. Datumsspalte ganz sichtbar oder ausgeblendet; Hell/Dunkel/Verlauf, Kompaktmodus und native DPI-/Macfälle getrennt abnehmen. [Automatische Belege](https://github.com/n05a-design/glide-to-do/blob/40c20fd62db6ec31b4e3668dfc9e7f1550f67974/01_Repository/Glide/tests/qa-3.48.0/dreierpaket_2026-10-27/README.md).
+
+Einzige Prüfliste für alles, was nur am echten Gerät geht. Zusammengeführt am 03.10.2026 aus der fortgeschriebenen Prüfliste (Ursprung 3.30.0, enthielt die Listen 3.28 und 3.29) und der Windows-Anleitung; die Zuordnung der 201 Ausgangspunkte trägt Git. Automatisch geprüft ist die Logik ([Prüfplan](../01_Repository/Glide/docs/05_QA_TESTPLAN.md), [QA-Bericht](../01_Repository/Glide/docs/07_QA_BERICHT.md)); offen bleiben Handgefühl, Plattformen und fremde Programme.
+
+**Sitzungen:** A am Mac (etwa 60 Minuten), B am Windows-PC nach der Vollprüfung, C Bildschirmleser und Tastatur, D Linux (falls vorhanden), E nur durch den Inhaber.
+
+**Verweisvorschau D55/WA-11 – Menschenabnahme offen:** Strg/Cmd+Umschalt+Klick und Textkontext auf einen lokalen Link, Haupteditor/offenen Absatz erhalten, Taskziel in Liste und Seite markieren, Esc/Schließen und normales Öffnen prüfen. Archiv/Schreibschutz, fehlendes Ziel und Kompaktmodus gegenprüfen. Native Fokus-/Inspektor- und Tastaturversuche waren nicht durchgehend grün; diese Grenzen ausdrücklich nachprüfen, kein Freigabehaken aus den zwei grünen Funktionsfällen ableiten.
+
+**WA-12 – direkte Freigaben, Menschenabnahme offen:** In „Was passt heute?“ eine Voraussetzung mit mehreren offenen Folgeaufgaben ansehen; Zahl und Grund nachvollziehen, eine weitere offene Voraussetzung sowie archivierte/erledigte Folgen gegenprüfen. Übernehmen plant ausschließlich die gewählte Aufgabe; ein Undo/Redo erhält Fälligkeit, Aufwand und Beziehungen. Mit großer Schrift und Tastatur am echten Gerät prüfen.
+
+**3.45.0 – Sicherungen und Anhänge, Menschenabnahme offen:** Datei › Sicherung › Sicherungsübersicht bei kleiner Fenstergröße und großer Schrift öffnen, filtern, Sicherung lesen und gegen aktuellen Bestand vergleichen; Wiederherstellung abbrechen und unveränderten Bestand kontrollieren. Vor einem aktiven Anhangstyp Dateityp/Ablageort sowie „Nein“ als Vorgabe per Eingabetaste prüfen; normaler Dokumentanhang öffnet ohne zusätzliche Rückfrage. Windows/Mac, Hell/Dunkel, Tastatur/Reader und DPI getrennt vermerken. Automatisch sind sieben echte Tk-Fälle einschließlich Geometrie und Vorgabe geprüft ([Nachweis](https://github.com/n05a-design/glide-to-do/blob/1ba516a8acfb6ef73b807131f8365bfae8f64816/01_Repository/Glide/tests/qa-3.45.0/weiterentwicklung_2026-10-25/README.md)); D55-Abnahmepunkte unten bleiben separat.
+
+**3.44.0 – gesammelte Menschenabnahme der ersten D51-Phase, offen:** Die eingefrorene Windows-Vollprüfung ist automatisch; am echten Gerät bleiben je Plattform (Mac, Windows, Linux) mit echter Maus/Tastatur, 860 × 700/großer Schrift und Hell/Dunkel: (1) **Format 26 mit einer Kopie eines echten Bestands** starten, Vorsicherung `liste_vor_format26_*.json` und unveränderte Inhalte kontrollieren, danach keine ältere Fassung mit dem umgestellten Bestand starten; (2) FP-02 Stufe 2: Erledigungsbezug, Pause/Wiederaufnahme, Restanzahl, Chips in der Eingabezeile und ICS-Export/-Import mit einem fremden Kalender; (3) FP-03 Stufe 2: Liste/Tabelle/Spaltenboard je Ansicht, Gruppieren/Sortieren, Spaltenbreiten ziehen, „Als Ansicht speichern …“ und Gruppenwechsel per Ziehen/Alt+Pfeil; (4) FP-04 Seiten-/Notizkarten anheften, ziehen, öffnen, drucken/präsentieren; (5) FP-05 „Erwähnt ohne Verweis“ aufklappen und verknüpfen; (6) FP-06 „Vorschau …“ mit langer Anweisung und großem Kontext, Kopieren in ein KI-Werkzeug und Rückimport; (7) FP-07 Markdown-Ordner in einem fremden Markdown-Programm öffnen; (8) WA-26 große Bilder in Galerie/Seiten mit echtem Konverter je Plattform; (9) zwei Glide-Instanzen auf demselben Datenordner (lokaler Schreibbesitz WA-31). [Phasennachweis](https://github.com/n05a-design/glide-to-do/blob/1ba516a8acfb6ef73b807131f8365bfae8f64816/01_Repository/Glide/tests/qa-3.44.0/phasenabschluss_2026-10-22/README.md).
+
+**FP-03 Stufe 1, manuelle Abnahme offen:** In 3.44.0 gespeicherte Filter bearbeiten, „Weitere Bedingungen“ öffnen und bei 860 × 700 mit großer Schrift sämtliche Felder per Tastatur und Mausrad erreichen; Speichern/Abbrechen bleiben am festen Fuß. Alle/Oder einschließlich Listenwahl und ausgeschlossener Labels anhand weniger sichtbarer Aufgaben nachvollziehen; „Warum?“ muss dieselbe Auswahl erklären. Auf Mac/Linux und bei physischer DPI-/Mehrmonitoränderung Fokus, Menüs und Schriftwechsel prüfen. Die automatisierte Windows-Probe mit mittlerer/großer Schrift bei 780 × 570 ist keine menschliche Abnahme. Eine ältere Fassung erhält die Definition, wendet aber nur ihre früheren Bedingungen an und kann mehr Treffer anzeigen. [Prüfnachweis](https://github.com/n05a-design/glide-to-do/blob/2b1ee0fedc32acb3ae1feff26d8848c26a457be6/01_Repository/Glide/tests/qa-3.43.1/ansichten_2026-10-21/README.md).
+
+**Sprintnachlauf 3.36.0, getrennt offen:** Auf Mac, Windows und Linux jeweils Startseite öffnen → Liste → zurück, auch bei 860 × 700/großer Schrift und Hell/Dunkel: Scrollleiste sichtbar und mit Maus/Trackpad bedienbar. Bibliothek weit scrollen, Aufgabe in einer Karte ändern/Undo, Titel/Vorschautext ändern und Karten umordnen: Fokus/Scrollposition und Inhalte bleiben nachvollziehbar. Einstellungen öffnen, Kapazität ändern/Abbrechen, erneut öffnen (alter gespeicherter Wert); danach Design/Schrift ändern und erneut öffnen. Alle Vorschauen beim Scrollen erreichbar, Escape/Fenster-X beendet den Dialog. Windows zusätzlich vorhandene Fälle W01/W06–W08 (Titelkürzung, Dialogbreiten und Tabellenfeldabstände), Linux N08 (native Bildvorschau) nach der jeweiligen automatischen Vollprüfung durchführen. Diese Punkte sind durch Screenshots und CI noch nicht menschlich abgenommen.
+
+**Automatischer Stand 3.42.0:** Eingefrorene Mac-Vollprüfung 107/2, native Linux-/Windows-Vollmatrix je 108/1, beide eigenständigen Paketbauten und tatsächlichen isolierten Starts grün. Root-07 und Mac-Bundle abgeglichen, isolierter Start direkt aus dem gelieferten Mac-Bundle grün; Windows-Paket mit 102 Dateihashes bereitgestellt. Die folgenden Sitzungen einschließlich Clean-Machine-/Gatekeeper-/SmartScreen-/DPI-/Readerfällen bleiben ausdrücklich menschliche Abnahmen.
+
+**Sprintnachlauf 3.38.0, getrennt offen:** Auf Mac, Windows und Linux alle sechs Aufgaben-Kontexte mit echter Maus und Tastatur bedienen: gleiche Felder, direktes Datum/Labels/Wichtigkeit, Speichern/Verwerfen, Kontextmenü und Palette. Bei 860 × 700/großer Schrift Inspektor öffnen, alle Felder scrollen, Navigation und Zurückweg prüfen. Auf zwei Monitoren mit negativer Anordnung Popoverposition/Fokus; DPI 100/150/200 %. Unter Windows alle vier beschrifteten Menüs in der gemeinsamen Titelzeile, Alt-D/B/A/H und Popups prüfen; keine abgeschnittenen Knöpfe. Zeilenaktionen bei Hover und Tastaturauswahl, schnelle Ansichts-/Klapp-/Erledigtfolgen und Animationen aus prüfen. Eigene Agentenaufnahmen und grüne Automatiken ersetzen diese Sitzung nicht.
+
+**FP-02 Stufe 1 – offene Menschenabnahme:** Bei 860 × 700 und großer Schrift die sechs neuen Rhythmusformen in Anlegen-Maske und Inspektor prüfen, Intervall/Position/Serienende ändern und Vorschau kontrollieren. Monatsintervall ab 31.01. gegenüber „letzter Tag“ bewusst vergleichen. Vor Nutzung eines echten Bestands die Format-26-Vorsicherung beachten; ältere Fassungen (3.43.1 und die Pakete 3.42.0) öffnen ihn nur schreibgeschützt. Automatische Prüfungen ersetzen diese Bedien-, DPI- und Plattformabnahme nicht. [Nachweis](https://github.com/n05a-design/glide-to-do/blob/2b1ee0fedc32acb3ae1feff26d8848c26a457be6/01_Repository/Glide/tests/qa-3.43.1/wiederholungsregeln_2026-10-21/README.md).
+
+## Rahmen
+
+- Immer mit getrennter Ablage prüfen: `GLIDE_DATA_DIR` auf einen Testordner
+  setzen. Beispielinhalt: den [Showcase](../05_Probelisten_Testdaten/Showcase/README.md)
+  über seinen eigenen Starter oder den Rundgang
+  (`01_Repository/Glide/tests/fixtures/beispiele/glide_rundgang.glidebackup`)
+  über Datei › Listen/Ordner hinzufügen … einlesen. B2 nutzt eine
+  unveränderte Kopie des eigenen Windows-Bestands; keine Prüfung verändert
+  das Original.
+- Befunde mit einem Bildschirmfoto nur des Glide-Fensters festhalten und im
+  QA-Bericht der Version eintragen.
+
+## A. Mac (etwa 60 Minuten)
+
+- [ ] **A1 Programmsymbol:** Beide bereits abgeglichenen Startfassungen mit
+      geerbtem `GLIDE_DATA_DIR` auf einen Testordner starten: Python-Fassung
+      über `07_Python-Versionen/Schnellstart.pyw`, Bundle über
+      `build/macos/Glide.app/Contents/MacOS/Glide` direkt aus derselben
+      Terminalumgebung. Ein Finder-Start übernimmt diese Terminalvariable
+      nicht. Im Dock stehen Glide-Name und Glide-Symbol. Für diese Sichtprüfung
+      keinen ungeprüften Neubau über den ausgelieferten Stand schreiben.
+- [ ] **A2 Logo:** Bei breitem Fenster steht das Logo links neben Titel und
+      Unterzeile, auf der Flucht der Seitenleiste. Fenster schmal ziehen: Das
+      Logo weicht, der Titel rückt an den Rand. Akzentfarbe wechseln
+      (Einstellungen, ganz oben): Das Logo folgt. Auf dem Retina-Bildschirm
+      ist es scharf. Klick auf das Logo öffnet „Über Glide“ mit Logo.
+- [ ] **A3 Lupe:** ⌕ öffnet die gemeinsame Palette für Inhalte und Aktionen; sie wirkt so schwer wie die übrigen höchstens vier Kopfsymbole.
+- [ ] **A4 Arbeitsfläche:** Pinnwand (Spalten), Liste, Tabelle, Seite und
+      Zeichnung reichen bis zur Unterkante der Seitenleiste. Der Hinweis
+      unten in der Liste ist gut lesbar. Einen Punkt markieren: Die
+      Auswahlleiste ersetzt den Hinweis, nichts springt.
+- [ ] **A5 Pixel-Werkstatt mit Maus und Trackpad:**
+  - Strg+Mausrad zoomt um den Zeiger, die mittlere Maustaste verschiebt.
+  - Linie, Rechteck und Ellipse mit Umschalt und Alt ziehen.
+  - Rechtsklick malt mit der zweiten Farbe.
+  - Schnelle diagonale und kreisförmige Züge haben keine Lücken.
+- [ ] **A6 Ziehen mit Maus und Trackpad:**
+  - Pinnwandkarten zwischen Spalten ziehen;
+  - Bereiche am Kopf ziehen und in der Größe ändern;
+  - Zeitblöcke im Stundenraster ziehen;
+  - in Seiten Bilder an der Ecke ziehen und in eine andere Spaltenhälfte
+    ziehen;
+  - Bilder aus dem Finder in Seite und Galerie ziehen;
+  - Punkte auf „Heute“ in der Seitenleiste ziehen;
+  - den Detailbereich in der Breite ziehen;
+  - bestehende Seiten-, Listen- und Notizbereiche umordnen und in passende
+    Ordner ziehen: korrekte Vorschau/Zielposition, Arten/IDs erhalten, Undo;
+    neutrales Umordnen verändert keine Termine.
+- [ ] **A7 Gedrücktes Mausrad:** oben, unten, links und rechts außerhalb der
+      Totzone halten; die Fläche läuft selbst und stoppt beim Loslassen.
+- [ ] **A8 Systemmitteilungen:**
+  - Ansicht › Systemmitteilung testen: macOS fragt einmal nach der
+    Erlaubnis, danach erscheint die Probe.
+  - Einschalten und eine Erinnerung in zwei Minuten setzen: genau eine
+    Mitteilung.
+  - Drei zur selben Zeit: eine Sammelmeldung.
+  - Aus `Glide.app` gestartet erscheint sie unter „Glide“.
+- [ ] **A9 Druck und PDF im Browser:** „Präsentation als PDF …“, „Folien als
+      PDF …“ und „Drucken und PDF …“ öffnen, als PDF sichern und lesen. Eine
+      Zeichnungskarte ist scharf.
+- [ ] **A10 Fremde Programme:**
+  - eine Palette `.gpl` in Aseprite oder Pixelorama öffnen und zurück
+    importieren;
+  - ein Zeichnungs-SVG im Browser und in Affinity oder Illustrator öffnen;
+  - nach dem Speichern dort in Glide importieren: verlustfrei oder mit
+    verständlicher Ablehnung;
+  - eine Seite „Als Markdown speichern …“ und in einem Markdown-Programm
+    mit Bildern öffnen.
+- [ ] **A11 Tempo, gefühlt:**
+  - Pinnwand mit 500 Karten und Galerie mit 100 Bildern: scrollen und ziehen
+    bleiben flüssig.
+  - Eine lange Seite scrollt endlos und ruhig.
+  - Schnell hintereinander abhaken und umbenennen: keine Verzögerung.
+  - `Schnellstart.pyw` zweimal starten: kalten/warmen Start vergleichen;
+    keine allgemeine Zeitgarantie.
+  - Bibliothek unverändert aktualisieren, Status ändern und umordnen:
+    Verhalten mit den Performance-Regeln der Architektur vergleichen. Ansichtswechsel, Speichern und
+    viele tatsächlich dargestellte Karten separat beobachten.
+- [ ] **A12 Zwangsbeenden:** Einen Punkt ändern und Glide sofort hart beenden
+      (Aktivitätsanzeige › Sofort beenden). Nach dem Neustart ist die
+      Änderung da.
+- [ ] **A13 Sichtprüfung der Designs:**
+  - Hell, Dunkel, Liquid Glass hell und dunkel, Pixel und Kontrast, je mit
+    und ohne Hintergrundverlauf.
+  - Fenster vergrößern, verkleinern und die Seitenleiste umschalten: keine
+    Kanten, Versätze oder Bildreste; Titel und Hinweise gut lesbar.
+  - Gismo im Dopamin-Design zehnmal füttern, spielen, ruhen: nichts wird
+    weiß.
+- [ ] **A14 Kalender im kleinen Fenster:** Monatsansicht bei 860 × 700;
+      Einträge enden mit „…“, volle Tage zeigen „+N“. Diese Texte liegen
+      auf einer Zeichenfläche und werden nicht automatisch gemessen.
+- [ ] **A15 Globale Suche** (seit 29.09.2026 ohne Schatten): in allen Designs
+      über Startseite, Liste, Pinnwand und Seite öffnen. Rahmen in der
+      Akzentfarbe, die Fläche hebt sich ab; ein Klick daneben schließt sie.
+- [ ] **A16 Seitenleiste mit Seiten, Listen und Notizen** (29.09.2026):
+  - Reihenfolge Seiten, Listen, Notizen. Der Pfeil klappt seinen Bereich
+    ein, der Titel öffnet die Übersicht, „+“ legt an.
+  - Den Ordner mit der geöffneten Liste zuklappen, dann einen Punkt abhaken,
+    umbenennen und die Ansicht wechseln: Der Ordner bleibt zu.
+  - Über einer Bibliothek und einem Notizbuch erscheinen beim Überfahren „+“
+    und „…“; „+ › Neuer Unterordner …“ legt einen Unterordner derselben Art
+    an.
+  - Bei 860 × 700 bleibt die Überschrift „Notizen“ sichtbar, und eine
+    geöffnete Notiz zeigt mehrere Zeilen Text.
+- [ ] **A17 Rückmeldung vom Abend** (29.09.2026, echte Maus und Trackpad):
+  - Notizbereich zuklappen: kein stehengebliebenes „Tagebuch“.
+  - Pinnwand mit zwei Fingern quer scrollen.
+  - Jeden Dialogbefehl der Menüleiste einmal wählen, auch ohne „…“: Jedes Fenster
+    erscheint vorn, auch „Referenzbild laden …“ und der Knopf „Referenz“ der
+    Zeichnungsseite (PNG, JPEG, HEIC, SVG).
+  - Seite und Notiz: Rechtsklick, Formatleiste über einer Markierung,
+    „Umwandeln in“, Zeile nach oben und unten; Aufklappliste zu- und
+    aufklappen, Glide neu starten: der Zustand bleibt; „Mehr › Gliederung“.
+  - Bild in einer Seite an der Ecke größer ziehen: der Rahmen folgt flüssig.
+  - Knopffarben: Rot nur bei Löschen, Grün nur bei Bestätigen, Lila bei
+    Hinzufügen, die Glocke gelb.
+  - Scrollen auf Startseite und „Listen und Ordner“ mit Verlauf: spürbar
+    flüssiger als vorher; kurz versetzte Flächen während des Scrollens sind
+    bekannt.
+- [ ] **A18 Ausbau Etappe 1** (3.32.0, 30.09.2026):
+  - Eine 16×16-Zeichnung als Symbol (ICO, Grund durchsichtig) exportieren und
+    im Finder bzw. Explorer ansehen; als favicon.ico im Browser öffnen.
+  - Eine echte Aseprite-Datei und Adobe-Farbfelder (.ase) als Palette
+    importieren.
+  - Eine eigene Vorlage mit „{{Wochentag}} KW {{KW}} – {{Projekt}}“ verwenden:
+    Nur „Projekt“ wird gefragt.
+  - Abends „Tagesabschluss …“: Offenes auf morgen legen, Rückblick in die
+    Tagesnotiz übernehmen.
+  - **Hänger:** Über die Menüleiste „Hilfe › Über Glide“ öffnen und mit OK
+    schließen, ebenso „Tastenkürzel anzeigen“, „Datei › Neu anlegen › Neue Liste“
+    und Cmd+Q mit Rückfrage – Glide reagiert danach sofort weiter.
+  - **Seite mit Bildern:** Eine Seite mit mehreren Bildern öffnen, zu einer
+    anderen Liste und zurück wechseln, das Fenster größer und kleiner ziehen
+    und scrollen – kein Hänger, keine Fehlermeldung.
+
+- [ ] **A19 Klappmechanismen (D08):** einzelne Labels einschließlich „Ohne
+      Label“, Aufgaben-/Gruppenfächer, verschachtelte Bibliotheken, Seiten/Listen/
+      Notizen und Angeheftet per Pfeil und Tastatur auf/zu. Suche, Refresh,
+      Bearbeiten, Undo, Ansichtswechsel und Neustart: Zustände bleiben erhalten.
+      Globale Auf-/Zuklappaktion prüfen; keine versehentliche Navigation/Drag.
+- [ ] **A20 Drag-Ziele (D04/D02):** Bereichswechsel mit Maus/Trackpad bei
+      gescrollter Seitenleiste, gültigem/ungültigem Ziel und Abbruch. Vorschau
+      entspricht dem tatsächlichen Ziel; ein Undo-Schritt stellt den Bestand
+      wieder her. Neutrales Umordnen erhält Bearbeitungstag und Fälligkeit.
+- [ ] **A21 Karten/Aktionsleisten:** Tk-/OS-Fokus und Scrollposition beim
+      wiederholten Refresh mit physischer Tastatur prüfen; Status/Titel/Label/
+      Notiz/Bild ändern, Undo, Tageswechsel, Schrift/Design/Breite wechseln.
+      Öffnen wirkt auf das aktuelle Objekt; Entfernen/Archiv/Rückkehr zeigen
+      keine veralteten Vorschauen. Hintergrundtests belegen keinen OS-Fokus.
+
+- [ ] **A22 Vier Bereiche (3.33.1):** Seiten, Listen, Notizen, Zeichnungen
+      ein- und ausblenden; Inhalte nur im passenden Bereich anlegen und
+      hineinziehen; im Notizbuch eine datierte Zeichnung anlegen; gemischte
+      Altordner erscheinen vollständig unter Listen. Neustart erhält die
+      Sichtbarkeit. Dialog „Neu anlegen“ bei niedrigem Bildschirm zweispaltig.
+- [ ] **A23 Startseite „Ruhig“ (D12, ergänzt durch B04/D50 in 3.43.0):** acht Standardkacheln; in „Heute“ stehen
+      Tagesziel und nächste Aufgabe genau einmal. Begrüßung oder Uhr über „+“
+      einblenden, Glide neu starten: Auswahl bleibt. „Standard
+      wiederherstellen“; Hover der Knöpfe.
+- [ ] **A24 Schnelleingabe (3.33.3/3.33.4):** „Angebot schicken morgen bis
+      Freitag !hoch #Label 45 min“ tippen: Chips erscheinen beim Tippen, × nimmt
+      einzeln zurück, Return legt an, Rückgängig. „Sport jeden Montag 18 Uhr“:
+      Wiederholung mit Fälligkeit, steht im Kalender, Abhaken erzeugt den
+      Folgetermin. Chipleiste bei großer Schrift und schmalem Fenster.
+- [ ] **A25 Eisenhower (3.33.5):** Board „Gruppieren: Dringlichkeit ×
+      Wichtigkeit“; Karten mit echter Maus zwischen den vier Spalten ziehen;
+      eine Karte mit Fälligkeit in zwei Tagen nach „Einplanen“ ziehen: Glide
+      lehnt ab und sagt warum; Rückgängig.
+- [ ] **A26 Heute und Demnächst (3.33.6):** Abschnitte in fester Reihenfolge,
+      keine Aufgabe doppelt; Verweis „Demnächst“ mit Doppelklick und Return;
+      „Tag …“ startet Tagesbeginn und Tagesabschluss; ◀/▶ zu anderen Tagen;
+      Abschnitte zuklappen und neu starten.
+
+- [ ] **A27 Sprint 3.33.19–3.35.0** (mit getrennter Testablage, echte Maus, Trackpad und Tastatur):
+  - **Komfort (3.33.20):** Wiederkehrende Aufgabe über das Kontextmenü „Diesen Termin überspringen“; „erinnere 9 Uhr“ in der Eingabezeile ergibt einen Chip; mehrere Zeilen einfügen fragt nach; „+“ und Umschalt+Enter; nach einem Update erscheint einmal die Karte „Neu in Glide“; Routinen in „Heute“ abhaken.
+  - **Ruhige Oberfläche (3.33.21):** Einstellungen › „Automatisch hell/dunkel“ einschalten und das Erscheinungsbild in den Systemeinstellungen wechseln – Glide folgt ohne Neustart; Ansicht › „Seitenleiste schmal“; Gismo-Pflegeknöpfe erscheinen beim Überfahren; Pinnwand mit einer Werkzeugzeile und Menü „…“; Seitentitel nur im Kopf (seit D71).
+  - **Wissen und Seiten (3.34.0):** zwei Bilder auf aufeinanderfolgenden Absätzen überlappen nicht; Mehr › „Drucken und PDF …“ zeigt die Bilder; „Als Markdown speichern …“ und „Markdown als Seite öffnen“ bringen die Bilder zurück; ein Suchtreffer öffnet die Seite mit markierten Fundstellen, Esc hebt auf; im gespeicherten Filter „Warum steht das hier?“; Alt+Pfeile im Seitenbaum.
+  - **Pixel und Austausch (3.35.0):** Doppelklick auf eine Farbe der Farbleiste zeigt die Umfärbung vor der Rückfrage; Symbolexport zeigt 16/32/48 px hell und dunkel; „Für KI bereitstellen …“ mit Zweck „überarbeiten“ und einen von Hand geänderten Vorschlag importieren (Konflikt nach einer Zwischenänderung sichtbar); Datei › Sicherung › „Sicherungen vergleichen …“.
+
+- [ ] **A28 Fundament/Tempo 3.36.0:** Wege des Sprintnachlaufs am Anfang dieses Dokuments mit echter Maus/Trackpad/Tastatur prüfen; besonders Kartenänderung/Undo bei weit gescrollter Bibliothek und Einstellungen nach Abbrechen/Design-/Schriftwechsel.
+
+- [ ] **A29 Logo/Symbole 3.37.0:** B5 auf dem Mac durchführen, Hell/Dunkel/Pixel, große Schrift und Mindestfenster. Suchknopf und zugehöriges Kürzel öffnen dieselbe Suche; Symbole in Kachelköpfen bleiben lesbar.
+
+## B. Windows-PC (nach der Vollprüfung)
+
+**Last-/Absturzdiagnose, Nachtrag 27.10.2026:** Für längere Reproduktionen eine eingefrorene lokale Prüfkopie und künstliche Daten außerhalb von OneDrive und System-Temp verwenden, beispielsweise unter `%USERPROFILE%\GlidePruefung\<Lauf>`. Quell-/Fixturemanifest vor und nach jedem Prozess abgleichen; fehlt eine Datei, Folge stoppen und den Prüfaufbau klären. `GLIDE_DATA_DIR` bleibt je Prozess getrennt; `TMP`/`TEMP` dürfen ausschließlich für die eigenen Prüfkinder in diese Ablage zeigen, keine globale Windows-Umstellung. Pythonpfad, Build, Tk und Binärhashes erfassen. Bei CPU-Vergleichen gleiche Versionen und tatsächlich bytegleiche Eingänge von selbstgenerierenden Vollsuiten unterscheiden. Keine abgeschwächten Datenkriterien oder CPU-Affinitätsbindung als Reparatur. Im [AMD-Nachlauf](https://github.com/n05a-design/glide-to-do/blob/40c20fd62db6ec31b4e3668dfc9e7f1550f67974/01_Repository/Glide/tests/qa-3.48.0/amd_vergleich_2026-10-27/README.md) umgesetzt; die allgemeinen Starter sind noch nicht vollständig vereinheitlicht. [Verbindliche Prüfkriterien](../01_Repository/Glide/docs/05_QA_TESTPLAN.md#vorbeugung-und-wiederanlauf-geplante-abnahme), [Roadmap](Glide_Entwicklungsplan.md#2127-vorbeugung-absturzdiagnose-und-abgesicherter-wiederanlauf).
+
+- [ ] **B0 Windows-Vollprüfung – Anleitung**
+
+Dieselbe Vollprüfung wie am Mac (`tests/tools/pruefen.py --modus voll`), gestartet über `windows_vollpruefung.cmd`. Sie umfasst alle Integrationssuiten aus `SUITEN` (lokale Lieferbasis 3.42.0: 90), Unit-Tests, Showcase, fünf Analysen und die Reproduktion von Beispiel- und Releasedaten. Seit 05.10.2026 legt sie wie am Mac von jedem geprüften Fenster ein Foto ab. Dauer am Arbeitsrechner: 15–20 Minuten.
+
+**Vorbereitung (einmalig je Rechner):**
+
+1. **Prüflaufzeit Python 3.14 mit Tk 9:** Der Starter nimmt der Reihe nach:
+   - `-PythonExecutable <Pfad>`;
+   - die separate Laufzeit `$env:USERPROFILE\.cache\glide-qa\python-3.14.8\runtime\python.exe`;
+   - `py -3.14`;
+   - zuletzt `python`.
+
+   Er gibt Python- und Tk-Version aus (`package provide Tk`, nicht die Tcl-Version). Ist Python älter als 3.14 oder Tk älter als 9, endet er mit Exitcode 3, bevor eine Suite läuft. Historisch wurde am 05.10.2026 eine separate 3.14.8-Laufzeit geprüft; am aktuellen Arbeitsrechner läuft die installierte Python-Fassung 3.14.7/Tk 9.0.4 über `py -3.14`, die separate Laufzeit ist hier nicht vorhanden ([Herkunft und Herstellerhash](https://github.com/n05a-design/glide-to-do/blob/254541aeae4577c0529d1ef768846a5c4546e59f/01_Repository/Glide/tests/qa-3.33.8/windows_2026-10-05/prueflaufzeit.json)). Auf einem anderen Rechner entweder Python 3.14 von [python.org](https://www.python.org/downloads/windows/) installieren (Option „tcl/tk and IDLE“, Python-Starter `py`) oder die separate Laufzeit anlegen. Diese ändert weder PATH noch Standardinstallation:
+
+   ```powershell
+   $ziel = "$env:USERPROFILE\.cache\glide-qa\python-3.14.8"
+   New-Item -ItemType Directory -Force $ziel | Out-Null
+   Invoke-WebRequest https://www.python.org/ftp/python/3.14.8/python-3.14.8-amd64.zip -OutFile "$ziel\paket.zip"
+   (Get-FileHash "$ziel\paket.zip" -Algorithm SHA256).Hash  # 4873947A8AFC037846B180312B83C744A4146A851CFD316A75C3125A4D8299DA
+   Expand-Archive "$ziel\paket.zip" "$ziel\runtime"
+   ```
+
+   Der Hash ist der des Herstellers (Paketindex `python.org/ftp/python/index-windows.json`, Eintrag `pythoncore-3.14-64`, 3.14.8). Weicht er ab, nicht entpacken. In PowerShell heißt der Benutzerordner `$env:USERPROFILE`. `%USERPROFILE%` ersetzt nur die Eingabeaufforderung (`cmd`); PowerShell nimmt es wörtlich und legt etwa mit `New-Item` einen Ordner dieses Namens an.
+2. **Projektordner:** die Git-Arbeitskopie `glide-to-do` aktuell ziehen (`git pull`). Liegt sie in OneDrive:
+   - Den Ordner per Rechtsklick auf „Immer auf diesem Gerät behalten“ stellen und warten, bis alle Dateien heruntergeladen sind. Nur online verfügbare Platzhalter ließen den Lauf 3.28 scheitern; das Skript bricht dann mit Exitcode 4 ab.
+   - `git status` muss sauber sein. OneDrive-Konfliktkopien (`<Name>-<Gerätename>.md`) vorher löschen; sie sind keine Projektdateien.
+3. Glide schließen.
+
+**Prüfung starten:**
+
+- **Doppelklick:**
+  `01_Repository\Glide\tests\tools\windows_vollpruefung.cmd`;
+- **oder in PowerShell** aus `01_Repository\Glide`:
+  `powershell -NoProfile -ExecutionPolicy Bypass -File tests\tools\windows_vollpruefung.ps1`.
+
+Während des Laufs öffnen und schließen sich Glide-Fenster im Vordergrund. Den Hintergrundmodus des Mac gibt es unter Windows nicht. Deshalb Maus und Tastatur nicht benutzen, den Rechner nicht sperren und keine rechenintensiven Programme starten: Einige Oberflächentests messen Layouts und reagieren auf Last.
+
+**Nebenher arbeiten – Lauf in der Windows-Sandbox (seit 23.10.2026):** Ein zweiter Bildschirm allein genügt nicht, weil Fokus, Tastatur und Zwischenablage zur ganzen Sitzung gehören. `windows_sandbox.cmd` (Doppelklick) bzw. `py -3.14 -B tests\tools\windows_sandbox.py --warten` friert das Projekt unter `%USERPROFILE%\GlidePruefung\lauf_<Zeit>` ein (außerhalb von OneDrive), startet die Windows-Sandbox mit der Prüflaufzeit (schreibgeschützt eingebunden), ohne Netz und ohne geteilte Zwischenablage, und legt ihr Fenster auf den zweiten Bildschirm. Dort läuft dieselbe Vollprüfung mit `--timeout 900`; gearbeitet wird auf dem ersten Bildschirm.
+  - Voraussetzung: Windows Pro, Enterprise oder Education; einmalig in PowerShell als Administrator `Enable-WindowsOptionalFeature -Online -FeatureName Containers-DisposableClientVM -All`, danach Neustart. Nur eine Sandbox zugleich.
+  - Das Sandbox-Fenster offen lassen und nicht minimieren; nicht hineinklicken oder darin tippen.
+  - Optionen: `--bildschirm 1` (Hauptbildschirm), `--speicher 8192`, `--schliessen` (Sandbox fährt nach der Prüfung herunter), `--python <Ordner>`.
+  - Ergebnis im Ordner `ergebnis`: `FERTIG.txt` (Exitcode wie oben), `konsole.txt`, `protokoll\ergebnis.json`, Fotos, `quellstand.json` (SHA-256 aller eingefrorenen Dateien) und `sandbox.json` (Python/Tk, Bildschirm, Speicher). Die Sandbox ist ein Windows-Lauf derselben Windows-Fassung; physische DPI-, Screenreader- und Menschenabnahme ersetzt sie nicht. Am echten Rechner noch nicht erprobt – beim ersten Lauf Startverhalten, Fensterlage und Fotos zurückmelden.
+
+**Ergebnis:**
+
+- Am Ende stehen **Exitcode** und Protokollordner, zum Beispiel
+  `tests\qa-<Version>\windows_<Datum>_<Uhrzeit>`:
+  - `0`: alle automatischen Schritte bestanden;
+  - `1`: mindestens ein Schritt gescheitert, die Logdatei im Ordner nennt ihn;
+  - `2`: unvollständig, weil Tk oder die Zeitzonenmessung fehlte;
+  - `3`: Python/Tk ungeeignet;
+  - `4`: OneDrive-Platzhalter.
+- **Sichtprüfung der Aufnahmen** (nur lokal, nicht hochladen):
+  - `screenshots\release_hell.png` und `release_hell_dunkel.png`: Releaseplanung im hellen und im dunklen Gegenstück des Standarddesigns. Die beiden Bilder müssen sich unterscheiden; der Erzeuger bricht sonst ab.
+  - `fenster\*.png`: jedes geprüfte Fenster einzeln.
+
+  Auf Schärfe, Logo mit glatten Kanten und abgeschnittene Texte ansehen. Seitenleistentitel ohne „…“ müssen vollständig sein (Vorbefund W01, siehe B1a). Das Design „Pixel“ prüfst du von Hand (B3).
+- **Zurückmelden:** Exitcode, Name des Protokollordners und Befunde der Sichtprüfung. Der Agent liest `ergebnis.json` über den verknüpften Rechner oder als Anhang. Er legt den Nachweis unter `tests/qa-<Version>/` an und überträgt das Ergebnis in den [QA-Bericht](../01_Repository/Glide/docs/07_QA_BERICHT.md). Rohprotokolle (`*.log`) und Bilder bleiben lokal.
+
+**Ohne Starter:** Bei Bedarf die Vollprüfung mit ausdrücklicher Laufzeit starten. Die Ausgabe der ersten Zeile prüfen, weil dieser Weg Tk 9 nicht erzwingt:
+
+```powershell
+$py = "$env:USERPROFILE\.cache\glide-qa\python-3.14.8\runtime\python.exe"
+& $py -B tests\tools\pruefe_tk.py   # erwartet: Tk 9.0.x
+& $py -B tests\tools\pruefen.py --modus voll --protokoll tests\qa-<Version>\windows_manuell --timeout 900
+```
+
+Ergebnis und tatsächlich verwendete Python-/Tk-Version dokumentieren; kein Windows-Nachweis wird aus dem Mac-Lauf abgeleitet.
+
+- [x] **B1 Vollprüfung (automatisch):** Stand 3.36.0, 10.10.2026: Mac Exit 0, 100 ausgeführt; native Linux-/Windows-Vollprüfung je Exit 0, 101 ausgeführt; je 83 Integrationssuiten/264 Unit-Tests. Windows Python 3.14.7/Tk 9.0.4, bestätigter Desktop 1920 × 1080. Die früheren Sprintlieferungen sind mitgeprüft. [Nachweis](https://github.com/n05a-design/glide-to-do/blob/3f75265429410ed186109626d4e0776d5dcc3438/01_Repository/Glide/tests/qa-3.36.0/fundament_2026-10-10/README.md). Die menschliche Sichtprüfung ist jeweils übersprungen; B1a–B1j bleiben offen.
+- [ ] **B1a Sichtprüfung der Aufnahmen am Gerät:** Die Fotos des nächsten Windows-Laufs (B0) unter `tests\qa-<Version>\<Lauf>\…\fenster` und `screenshots` durchsehen (sie bleiben lokal). Die Vorbefunde mit Testablage in Glide nachstellen:
+  - **W01** Seitenleiste: Lange Listentitel enden mit „…“, kürzere stehen vollständig da („Unterlagen & Assets“).
+  - **W05** (auf dem Mac behoben in 3.33.21) Datei › Datenaustausch › „Für KI bereitstellen …“ und Ansicht › Liste › „Tabellenspalten …“: Ist die Fensterbreite angemessen, stehen die Knöpfe rechts wie in den übrigen Dialogen?
+  - **W06** „Neue Liste“ mit der Art Aufgaben bzw. Pinnwand und „Neuer Ordner“ mit Ordner, Buch und Notizbuch: Sind Überschrift und Feldbeschriftungen sichtbar? Mehrmals hintereinander öffnen.
+  - **W07** Zeichnung › Referenz mit einem PNG › „Ganzes Bild zeigen“: Steht der Hinweistext genau einmal da?
+  - **W08** Rechtsklick auf eine Liste › „Pixelsymbol …“: Ist das Raster groß genug zum Zeichnen?
+
+  B2–B13 bleiben physische Inhaberprüfungen.
+- [ ] **B1b Gestaltungsabnahme U10/U19/OB01 (3.33.12, OB06):** Die Vorher-Fotos von 3.33.12 liegen außerhalb der Aufbewahrung; die Gestaltung am laufenden Stand beurteilen: Liste und Heute, 1280 × 800 und 860 × 700, hell und dunkel, mit getrennter Testablage auch große Schrift. Titel hat Vorrang vor Kennzahlen, Herkunft rechts ist lesbar, Kopf und Zeilen wirken ruhig. Lange Kennzahlen mit Auslassung und vollständigem Tooltip prüfen; Aufgaben ohne Fälligkeit zeigen kein Datum. Die automatisierte Geometrie- und Bedienprüfung ersetzt diese Bewertung nicht. Entscheidung im [QA-Bericht](../01_Repository/Glide/docs/07_QA_BERICHT.md) festhalten; Fotos bleiben lokal/unversioniert.
+- [ ] **B1c KO01/AU02 (3.33.13):** am laufenden Stand bei
+      860 × 700 und 1280 × 800, hell/dunkel bewerten. Zwei Aufgaben aus verschiedenen
+      Quelllisten in Heute markieren, Rechtsklick → Einplanen → Morgen:
+      Fälligkeit/Uhrzeit/Aufwand bleiben; ein Strg+Z nimmt beide zurück.
+      Strg+Umschalt+P, Kalenderaktion beim Überfahren einer Zeile und Datum …
+      mit Abbruch prüfen. Freie Zeit/Überplanung vor Übernahme mit dem Profil
+      des Zieltags vergleichen, Aufgaben ohne Schätzung getrennt. Tagesbeginn:
+      dieselben sechs Ziele; Ohne Tag erhält die Uhrzeit. Nach Neustart prüfen.
+      Automatische Nachweise ersetzen diese physische Gestaltungsabnahme nicht.
+
+- [ ] **B1d Tagespaket (3.33.14):** mit getrennter Testablage Rückblick → „Was passt heute?“ → Raster bedienen. Gründe/Auswahlbudget einschließlich unbekannter Kapazität und fehlender Schätzung prüfen; Übernahme am festen Kartenfuß auch bei 860 × 700/großer Schrift erreichbar. Mehrfachauswahl mit Strg+Umschalt+T planen, Raster mit Tab/Enter/Alt+Pfeilen/Entf/Esc bedienen und rücknehmen. Fokus mit Strg+Umschalt+F, Pause/Fortsetzen, Beenden & Buchen und Erledigt & weiter; Pausenzeit zählt nicht, Abschluss und Zeit gemeinsam rücknehmbar. Hell/dunkel, echte Tastatur/DPI und Wiederaufnahme nach Neustart prüfen; automatische Nachweise ersetzen diese Bewertung nicht.
+
+- [ ] **B1e Aufgaben im Wissen (3.33.15):** Mit separater Testablage eine Aufgabe im Notiztext erzeugen und denselben Punkt in der Notizliste abhaken/umbenennen. Vorhandene Aufgabe über „Mehr › Aufgabe verknüpfen …“ zweimal einsetzen, einen Verweis löschen und den anderen bearbeiten. Auch einen Verweis auf einen Punkt derselben Notiz löschen: Punkt bleibt. Heimatzeile trotz zweitem Verweis löschen: Punkt im Papierkorb; Undo/Redo ohne Duplikat. Seitenaufgabe mit Unterpunkten „In Liste übernehmen …“; gleiche IDs und Verweiszeile erhalten, globales Undo prüfen. Ansicht › Aus Seiten und Textquelle öffnen; Archiv, Papierkorb, endgültig fehlendes Ziel, Text-Undo/Redo, Import und Neustart. Mehrzeiliger Klartext darf keine Verweiskennung in neue Absätze tragen. Bei Mindestfenster/großer Schrift/hell/dunkel Ziele und fehlende Ziele gut lesbar; echte Tastatur/DPI prüfen. Format-21-Vorsicherung und Hinweis verstehen; ältere Fassungen nur auf separaten Kopien prüfen. Automatische Prüfung ersetzt diese Bedienabnahme nicht.
+
+- [ ] **B1f Bedienkomfort (3.33.16):** Strg+O und Befehlsfilter `>` mit echtem Editorfokus, Escape und Rückkehr prüfen; Kopfaktionen und Kontextmenüs erreichbar. Hinweise über `?` ein-/ausblenden, Neustart; Bibliothekskacheln mit Maus/Return/Leertaste öffnen, Fußaktionen und Archivkontext. Bearbeitungstag und Fälligkeit nebeneinander lesbar, mindestens 860 × 700, große Schrift und hell/dunkel; native DPI/Mehrmonitor prüfen.
+
+- [ ] **B1g Wissen und Woche (3.33.17):** Strg+K, Woche/Monat und Wochenrückblick ohne Modalität. Mehrfachauswahl per Tastatur einplanen, Maus/Trackpad auf sichtbare Tagesziele ziehen, Randscrollen und Abbruch außerhalb; Fälligkeit unverändert, je ein Undo. Kapazität/fehlende Schätzung verstehen, vorgeschlagenes Zeitfenster ausdrücklich bestätigen oder abbrechen. Seiten-/Listen-/Aufgabenverweise über @ und Kontextmenü; Rückverweise nach Umbenennen, Archiv, Papierkorb, Undo und Neustart prüfen. Kleine Fenster/große Schrift scrollen den Inhalt, Datum und Planungsaktionen im Fuß erreichbar. Vorsicherungs-/Schreibschutzhinweise mit separaten Testkopien verstehen; Linux-, DPI-/Tastatur- und menschliche Abnahme offen.
+
+- [ ] **B1h Seiten im Alltag (3.33.18):** In separater Testablage Live-Liste einbetten; Originalaufgabe per Leertaste abhaken, Details öffnen, Quelle umbenennen/archivieren/löschen, Undo und Verknüpfung lösen. Mehrere und leere Quellen, lange Titel sowie Mindestfenster/große Schrift/hell-dunkel prüfen. Lokales Titelbild und Pixelzeichnung wählen, Bibliothekskarte ansehen, Kopie/Backup/Import/Papierkorb/Neustart. Vorlagen aus dem Anlegen-Menü ausfüllen und Vorschau einschließlich Termine/Titelbild lesen; Escape erhält den Bestand, Return legt an. Native DPI und menschliche Gestaltung prüfen; automatische Nachweise ersetzen diese Abnahme nicht.
+
+- [ ] **B1i Sprint 3.33.19–3.35.0 unter Windows:** dieselben Wege wie A27; zusätzlich „Automatisch hell/dunkel“ mit dem Windows-Farbmodus (Registrierung), Drucken und PDF im Standardbrowser, Markdown-Bildverweise mit Laufwerksbuchstaben, Kontextpaket und Vorschlag mit Umlauten im Dateinamen, Doppelklick-Geschwindigkeit der Farbleiste nach Windows-Einstellung.
+
+- [ ] **B1j Fundament/Tempo 3.36.0:** A28 und Sprintnachlauf am Anfang dieses Dokuments unter Windows prüfen; zusätzlich vorhandene W01/W06–W08 sichtbar nachstellen. Grüner CI-Lauf ersetzt die Bedienabnahme nicht.
+
+- [ ] **B1k Logo/Symbole 3.37.0:** B5 nach grünem nativem Volllauf durchführen; DPI-/Mehrmonitorprobe B4 bleibt getrennt erforderlich.
+
+- [ ] **B2 Windows-Bestand (Format 17, Inhaberprobe):** Eine unveränderte
+      Kopie des eigenen Bestands in einer getrennten Testablage mit
+      `GLIDE_DATA_DIR` und aktueller Fassung aus `07_Python-Versionen` öffnen.
+      Original erhalten; die folgenden Umstellungshinweise gelten beim ersten
+      tatsächlichen Wechsel von Format 17 auf 20.
+  - Der Hinweis „Bestand umgestellt“ erscheint.
+  - Im Backup-Ordner liegen `liste_vor_format20_*.json`, gegebenenfalls
+    `liste_vor_titelkuerzung_*.json`, und die Meldung „Titel gekürzt“.
+  - Listen, Notizen, Papierkorb und Pinnwände sind vollständig.
+- [ ] **B3 Design „Pixel“:** Seitentitel und Kachelköpfe in Pixelify Sans,
+      Umlaute und ß korrekt.
+- [ ] **B4 Skalierung:** 100, 150 und 200 % sowie zwei Monitore. Logo,
+      Pixelsymbole und Zeichnungen sind scharf.
+- [ ] **B5 Logo und Oberflächenzeichen (3.37.0):**
+  - Tk 9 nutzt SVG, Tk 8.6 geglättete transparente Bilder. Logo bei 100/150/200 % und mit anderer Akzentfarbe beurteilen; Innenraum bleibt offen. Taskleisten-/Fenstersymbol in 16/32 px mit Kleinmaster, größere Symbole mit Normalmaster prüfen.
+  - Gesamte Symboltabelle, insbesondere Suche, Design und Drucken, in der eingestellten UI-Schrift beurteilen. Fehlende Zeichen erscheinen als kurze lesbare Beschriftung. `tests/tools/symbolpruefung.py` meldet die tatsächlich aufgelöste Tabelle in normalem/fettem Schnitt; Größe/Ausrichtung zusätzlich am Gerät prüfen.
+- [ ] **B6 Startmenü-Verknüpfung:**
+  `powershell -ExecutionPolicy Bypass -File packaging\windows\verknuepfung_anlegen.ps1`.
+  - „Glide“ mit Glide-Symbol erscheint im Startmenü.
+  - Glide startet ohne Konsolenfenster.
+  - Das Fenster gruppiert sich in der Taskleiste unter der Verknüpfung.
+- [ ] **B7 Hintergrundverläufe:** wie A13, besonders Größenänderung und
+      Scrollen ohne Bildreste.
+- [ ] **B8 Vorschauen:** JPEG, TIFF, BMP und SVG in der Galerie; HEIC und
+      WebP nur mit den Microsoft-Erweiterungen.
+- [ ] **B9 Ziehen aus dem Explorer** in Seite und Galerie.
+- [ ] **B10 Systemmitteilung:** Mit der ersten Mitteilung erscheint das
+      Glide-Symbol im Infobereich; ein Klick holt Glide nach vorn.
+- [ ] **B11 Druck und PDF** wie A9.
+- [ ] **B12 Beenden mit Alt+F4:** Der nächste Start öffnet in derselben
+      Größe und Lage.
+- [ ] **B13 Anhänge an Aufgaben:** Eine Datei mit Umlaut und Leerzeichen im
+      Namen, auch eine nur online verfügbare OneDrive-Datei, über den
+      Detailbereich anhängen.
+  - Glide kopiert sie in die Testablage (`attachments`); Doppelklick öffnet
+    sie im zugeordneten Programm (`os.startfile`).
+  - Die Listenanzeige „Anhänge“ zeigt Name und Größe.
+  - Komplettbackup in einer zweiten Testablage einlesen: Der Anhang ist da und
+    öffnet sich.
+
+## C. Optionale spätere Bildschirmleserprüfung (bis Bedarf zurückgestellt)
+
+**Späterer Prüfumfang:** Mit tatsächlichem VoiceOver, NVDA bzw. Orca eine Aufgabe anlegen, Baumzeile auswählen, Status vorlesen und ändern, Inspektor öffnen; Titel/Beschreibung, Bearbeitungstag und Fälligkeit getrennt lesen/bearbeiten. Wichtigkeit, Labelmenü, Anhang, Tagesplanung und Dialogabbruch/Rückfokus bedienen. Namen/Rollen/Werte, Auswahl-/Fokusmeldungen, deaktivierte Elemente und deutsche Ansagen protokollieren. Native Getter ohne hör-/protokollierbare Readerausgabe reichen nicht.
+
+
+Verfügbarkeit am 13.10.2026: Zusätzlich zu Mac/VoiceOver stehen dem Inhaber keine Windows-/NVDA- oder Linux-/Orca-Prüfplätze zur Verfügung (Antwort: „Keiner der beiden Prüfplätze“). Automatisierte native Plattformprüfungen können weiterlaufen; die tatsächliche Readerabnahme bleibt bis Bedarf zurückgestellt.
+
+- [ ] **C1** Seitenleiste, Suche, Detailbereich und Anpassen-Modus der
+      Startseite sind erreichbar und werden sinnvoll angesagt.
+- [ ] **C2 Zeichenfläche:**
+  - Mit Tab bis zur Fläche; der gestrichelte Zellcursor ist sichtbar.
+  - Die Statuszeile wird angesagt.
+  - Pfeiltasten, Leertaste und die Werkzeugtasten wirken.
+- [ ] **C3** Bilder in Seiten sind als Fläche erreichbar; der Text liest sich
+      ohne Ankerzeichen.
+
+## D. Linux (falls vorhanden)
+
+- [ ] **D1** Design „Pixel“ zeigt die Pixelschrift, ohne dass sie installiert
+      ist (Fontconfig).
+- [ ] **D2** Vorschauen PNG, GIF und SVG; Logo und Lupe erscheinen.
+- [ ] **D3 JPEG-Vorschau (N08, 3.34.0):** mit installiertem `gdk-pixbuf-thumbnailer` bzw. `djpeg` erscheinen JPEG-Bilder in Galerie und Seite, ohne Werkzeug der Platzhalter mit Endung; Referenzbild aus JPEG in der Zeichnung.
+- [ ] **D4 Automatisch hell/dunkel (3.33.21)** über `gsettings` bzw. Portal.
+- [ ] **D5 Strg-Kürzel in Listen (3.43.1, mit Tk 9.1):** In „Heute“ und einer Liste zwei Aufgaben wählen; Strg+Umschalt+P öffnet „Einplanen“ für genau diese beiden, die Auswahl bleibt stehen. Ebenso führen Strg+N, Strg+P, Strg+E und Strg+F nur ihre Glide-Aktion aus, ohne die Listenauswahl vorher zu verschieben; Strg+A wählt alle, Pfeiltasten und Umschalt+Pfeil wählen wie bisher. In Eingabefeldern bleiben die Emacs-Kürzel des Systems. Seit 31.10.2026 auch am Mac mit Tk-9.1-Laufzeit (P8) prüfen: Strg+Umschalt+P und Befehlstaste+Umschalt+P öffnen „Einplanen“ für dieselbe Auswahl.
+
+## E. Nur durch den Inhaber
+
+- Signatur, Notarisierung und Installer.
+- Markenprüfung.
+- Store-Freigabe.
+
+**Release-Entwurf prüfen (D64), vor jedem Veröffentlichen:**
+
+- [ ] Prüfstandskasten oben in den Versionshinweisen: Vollmatrix für denselben Commit grün. Bei „rot“ oder „nicht gefunden“ nicht veröffentlichen.
+- [ ] MPL-2.0-Original, Drittanbieterhinweise und der zum Paket passende, erreichbare Quellcodebezug geprüft (I2 ist als Lizenzentscheidung getroffen).
+- [ ] Windows: `Glide-<v>-windows-x64.zip` aus dem Entwurf laden, Prüfsumme mit der `.sha256`-Datei vergleichen (`certutil -hashfile <Datei> SHA256`), entpacken, `Glide\Glide.exe` starten. SmartScreen-Weg „Weitere Informationen“ › „Trotzdem ausführen“ wie in den Versionshinweisen beschrieben.
+- [ ] Mac: `Glide-<v>-macos-arm64.dmg` laden, Prüfsumme vergleichen (`shasum -a 256 <Datei>`), öffnen, Glide nach „Programme“ ziehen, starten. Gatekeeper-Weg über „Systemeinstellungen“ › „Datenschutz & Sicherheit“ › „Dennoch öffnen“ bestätigen.
+- [ ] Beide Pakete starten mit leeren synthetischen Daten; die angezeigte Version stimmt mit dem Tag überein.
+- [ ] Prüfstandskasten aus den Versionshinweisen entfernen, „Set as a pre-release“ eingeschaltet lassen, dann „Publish release“.
+
+## Sprintnachlauf Tagesplanung 3.39.0
+
+Mac-Vollprüfung, native Linux-/Windows-Vollmatrix und Lieferabgleich für 3.39.0 grün; menschliche Abnahme weiterhin getrennt offen.
+
+- [ ] Mac/Windows/Linux: Tageshinweise aktivieren, freie Zeiten/Wochentage ändern; Glocke, Später, Hinweistag überspringen und ausdrücklich Tagesbeginn öffnen prüfen. Beim laufenden Modal keine unaufgeforderte Anzeige, nach Neustart keine doppelte Zustellung.
+- [ ] Lokale ICS-Datei ausdrücklich wählen; Zeitzone, Sommerzeit, Serienausnahme, ganztägiger/stornierter/transparenter Termin; Fehler/Verlustbericht und unbekannte freie Zeit sichtbar. Quelle bleibt unverändert.
+- [ ] Heute/Woche/Tagesvorschlag: Aufgaben wählen, Zieltag/Vorrat vergleichen/übernehmen; Fälligkeit bleibt, ein Undo stellt die ganze Auswahl her. Vergleich und Abbruch ändern nichts.
+- [ ] Bei 860 × 700, großer Schrift und plattformspezifischem DPI: vier neue Dialoge vollständig scrollen, horizontale Tabellenwerte lesen, Fußaktionen und Tastaturfokus erreichen.
+
+## UI-/UX-Paket 15.10.2026 (B01–B19)
+
+Automatisch belegt mit `test_uiux_paket.py` (17 Fälle, Windows 11/Tk 9.0.4, künstliche Showcase-Daten); die Sicht- und Bedienabnahme bleibt hier. Jeweils hell/dunkel, ein Design mit Hintergrundverlauf, 860 × 700 und 1280 × 800, große Schrift; Windows zusätzlich 100/125/150/200 % DPI.
+
+- [ ] Startseite nach unten scrollen, Karte „Neu in …“ mit „Gelesen“ bestätigen: steht sofort oben; nochmals öffnen/Neustart ohne Karte; Hilfe › Über Glide › „Neuerungen …“ zeigt die Einträge nach Version.
+- [ ] „Startseite anpassen“ beginnt an der linken Kante der Kacheln; Gismo heißt „Gismo“, Füttern/Spielen/Ruhen wirken, kein „Benennen“/„Spielereien“; Kachel ausblenden → Gismo auch neben leeren Listen weg; „Bewegte Rückmeldung“ aus → Pflege wirkt ohne Hüpfen.
+- [ ] Kachel „Galeriebilder“: Vorschauen erscheinen nach kurzer Zeit, Hoch-/Querformat unverzerrt, Klick öffnet die Galerie beim Bild; Galerie ohne Bilder und gelöschte Bilddatei verständlich.
+- [ ] Kopfzeile: Logo endet auf Höhe der Grundlinie von „2 offen · 1 überfällig“; kein Datum, kein „?“; Windows-Menüs und Symbolknöpfe auf einer Linie (auch Hover, Fokus, gedrückt); Lupe ⌕ gut erkennbar (macOS/Linux: Lupe oder „Su“ notieren), Tooltip „Suchen …“, Strg/Cmd+O.
+- [ ] Einstellungen › Darstellung und Bedienung › „Ergänzende Bedienhinweise …“: aus → Papierkorb nur „Der Papierkorb ist leer.“, an → zusätzlicher Satz; Fenster verkleinern: „Zur Startseite“ wird nie überdeckt; Wahl bleibt nach Neustart. Spaltenboard bei 860 × 700: „Nur offene“ vollständig lesbar, die Zeile bricht um; der Hinweis „Ziehen setzt das Feld …“ nur bei eingeschalteten Bedienhinweisen.
+- [ ] Hilfe › Fehlerprotokoll (leer): Überschrift und Text beginnen an derselben Kante; „OK“ erreichbar.
+- [ ] Seitenleiste: Aufklapppfeile von Seiten/Listen/Notizen/Zeichnungen und das Papierkorbsymbol wirken mittig zum Text (auch ausgewählt/Hover); Startseitenkachel „Pinnwände“: „›“ in „Showcase · Parkquartier › …“ steht auf der Mitte der Großbuchstaben, auch beim Überfahren.
+- [ ] Labels/Heute: Titel deutlich länger lesbar, Datum mit Uhrzeit vollständig; „Nächste Aufgabe“ und „Verspätet“ ohne zweites Dreieck, nur der Titel der nächsten Aufgabe fett in normaler Größe.
+- [ ] Seite mit großem Bild: einzelne Mausrad-Rasten und Trackpad über dem Bild scrollen gleichmäßig, die erste Zeile nach dem Bild bleibt erreichbar; Blockleiste „Aufgabe“ ohne Kästchen.
+- [ ] Notiz-/Notizbuchaktionen (Favorit, Stimmung, Ort, Schreibimpuls) und Punktbearbeitung (Datum, Bearbeitungstag, Erinnerung, Labels): keine abweichenden Kästen in allen Designs und Verläufen; Fokus, Hover, deaktiviert weiter erkennbar.
+
+## Wiederholen nach Rückgängig (FP-01, 3.44.0)
+
+Automatisch belegt mit `test_wiederholen.py` (neun Fälle über echte Tastenwege, Bytevergleich des Bestands; Windows 11/Tk 9.0.4, künstliche Daten). Hier bleibt die Bedienung am echten Gerät, je Plattform mit echter Tastatur.
+
+- [ ] Mac: Cmd+Z, dann Cmd+Umschalt+Z nach Anlegen, Löschen, Verschieben, Einrücken und Gruppieren; Bearbeiten › Wiederholen zeigt „Cmd+Shift+Z“. Windows: zusätzlich Strg+Y. Linux: Strg+Umschalt+Z, Strg+Y bleibt ohne globale Wirkung.
+- [ ] Mit eingerasteter Feststelltaste wirkt Strg/Cmd+Umschalt+Z ebenso; in Schnelleingabe, Seiten- und Notiztext sowie auf der Zeichenfläche wiederholen die Kürzel nur dort.
+- [ ] Löschen → im Hinweis „Rückgängig“ → derselbe Hinweis zeigt „Wiederholen“ und holt die Löschung zurück; nach einer neuen Änderung gibt es nichts mehr zu wiederholen (Meldung „Wiederholen“).
+- [ ] Pinnwand: „Aufräumen“ und einen Bereich verschieben, beides zurücknehmen und in richtiger Folge wiederholen; eine Karte zwischendurch verschoben → kein stilles Überschreiben.
+- [ ] Änderungsverlauf als Seite und als Fenster: „Sicherungen vergleichen …“ öffnet den Vergleich, beim Fenster erst nach dessen Schließen.
+
+<a id="arbeitsmodi-und-seitenbedienung-d55-lokaler-kandidat-auf-3440"></a>
+
+## Arbeitsmodi und Seitenbedienung (D55, seit 3.45.0 geliefert)
+
+Historischer D55-Nachweis: `test_arbeitsmodi.py` mit 13 echten Tk-Fällen und Knopfschutz B15 unter Linux/Xvfb/Tk 8.6. D55 ist inzwischen seit 3.45.0 geliefert; die datierte 3.48.0-Erweiterung zählte 26 automatisch geprüfte Fälle ([Nachweis](https://github.com/n05a-design/glide-to-do/blob/40c20fd62db6ec31b4e3668dfc9e7f1550f67974/01_Repository/Glide/tests/qa-3.48.0/dreierpaket_2026-10-27/README.md)). Hier bleibt die Sicht- und Bedienabnahme am echten Gerät, je Plattform hell/dunkel, ein Verlaufsdesign, mittlere/große Schrift und Windows 100/150 % DPI. Der Showcase-Starter verwendet die Python-Lieferung 3.50.2 einschließlich D55. `01_Repository/Glide/tests/tools/kandidat_starten.pyw` verwendet die Quelle 3.50.2 mit separatem künstlichem Showcase unter `GlidePruefung/kandidat_showcase`; deren Bytegleichheit zur Python-Lieferung und die älteren nativen Pakete sind im [aktuellen Audit](https://github.com/n05a-design/glide-to-do/blob/61a2f3ac2f0e1880e7fd8c0f3cfd9da0d0c9f16d/01_Repository/Glide/tests/qa-3.50.2/ablageabgleich_2026-11-03/README.md) getrennt erfasst. Start nur im jeweils beauftragten Prüfumfang.
+
+- [ ] Seite: „Mehr“ öffnet die Auswahl „Seitenaktionen“ direkt unter dem Knopf; „volle breite“ oder „druck“ tippen filtert sofort, Enter führt den ersten Treffer aus, Esc schließt und die Schreibmarke steht wieder im Text; ein gesperrter Eintrag nennt seinen Grund (Schreibmarke in normalem Text: „In Liste übernehmen …“ – „Nur für eine Aufgabe dieser Seite an der Schreibmarke“). „Mehr“ enthält kein „Kopieren“: „Seite kopieren“ kopiert die ganze Seite (Hinweis „Seite kopiert“), und Enter auf „Seite aus Zwischenablage einfügen“ fügt die Zwischenablage sofort in die Seite ein. Nirgends steht „Markdown“ außer bei „Als Markdown speichern …“ und in Formatlisten (Datei › Exportieren, Dateidialoge). Notiz: dieselbe Auswahl heißt „Notizaktionen“. **Windows 25.10.2026: abgenommen** (Mac offen).
+- [ ] Strg/Cmd+/ in einer Aufzählung: Kopf „Blockaktionen · Aufzählung“, Häkchen an „Aufzählung“; ohne Markierung sind „Ausschneiden“ und „Kopieren“ gesperrt mit „Zuerst Text markieren“; „Überschrift 2“ wählen, ein Strg/Cmd+Z nimmt es zurück. Griff ⠿ links der Zeile beim Überfahren und an der Schreibmarke, auf Höhe der ersten Zeile eines umbrochenen Absatzes; verschwindet beim Tippen; keine Überdeckung des Texts, auch bei großer Schrift und nach Scrollen. **Windows 25.10.2026: abgenommen**, große Schrift offen (Mac offen).
+- Entfallen seit D71 (07.11.2026): Prüfung „+ Symbol“/„+ Titelbild“ in der Titelzeile (Windows am 25.10.2026 abgenommen); Ersatz im Block „Mac-Sitzung 07.11.2026“.
+- [ ] Nebenansicht: Rechtsklick auf eine Liste › „In Nebenansicht öffnen“ neben einer Seite; der Rechtsklick selbst lässt den Hauptinhalt stehen. Kästchen abhaken, Strg/Cmd+Z/Umschalt+Z wirken nebenan; Breite am Trenner ziehen, Neustart behält die Breite (nicht die Nebenansicht). Suche: Umschalt+Enter auf einer Seite. Aufgabe im Hauptbereich per Rechtsklick › „Bearbeiten“ öffnen (Inspektor; Doppelklick hakt ab) → Nebenansicht tritt zurück und kommt danach wieder. Fenster unter 980 px: Nebenansicht und Inspektor liegen über der Inhaltsfläche, Ansichtsumschalter und „☰“ bleiben frei. **Windows 25.10.2026: abgenommen, einschließlich der Gegenprobe zur lokalen Rechtsklick-Korrektur: Rechtsklick zeigt nur das Kontextmenü, „In Nebenansicht öffnen“ erhält den Hauptinhalt, anschließender Linksklick öffnet weiterhin.** Mac offen.
+- [ ] „Kompaktmodus“ steht als erster direkter Eintrag im Menü „Ansicht“, ohne Untergruppe und ohne „ein/aus“. Per Menü oder Strg/Cmd+Umschalt+K (drücken und loslassen) neben einer anderen Anwendung öffnen: Kopf in einer Zeile, Titel gekürzt, Seitenleiste weg; auf 480 × 560 verkleinern und Liste, Heute, Seite und Startseite bedienen; Menüknopf findet jeden Menübefehl. „Normalansicht“ stellt die vorige Fensterlage her; nach erneutem Eintritt die gemerkte Kompaktlage; im Kompaktmodus beenden → Neustart normal und an der normalen Lage. **Windows 25.10.2026: ursprünglicher Menüweg vom Inhaber bestätigt; Kürzel-Ausfall gemeldet und lokal korrigiert. Gegenprobe des Kürzels und der neuen Menüposition sowie die übrigen Teilprüfungen von Punkt 5 offen.**
+- Zurückgestellt bis Bedarf: Screenreader (VoiceOver/NVDA/Orca): Auswahlfeld „Aktionen durchsuchen“, Trefferliste, Nebenansicht und Kompaktkopf werden mit Namen angesagt; Fokus ist nach Esc/Schließen wieder im Ausgangsfeld.
+- [ ] Windows mit zwei Bildschirmen: Glide auf den zweiten Bildschirm legen (rechts und, falls möglich, links vom Hauptbildschirm), beenden und neu starten → dieselbe Lage; dort den Kompaktmodus ein- und ausschalten → das Fenster bleibt auf diesem Bildschirm. Zweiten Bildschirm abziehen und starten → Glide erscheint sichtbar auf dem Hauptbildschirm.
+
+## Speicherstatus und Sicherungsreserve (WA-40/WA-47, seit 3.45.0 geliefert)
+
+Nur mit dem Kandidatenstarter und künstlichen Daten prüfen. Fehler- und Grenzfälle einschließlich Retry, Dateierhalt und Importabbruch sind automatisch mit `test_speicherstatus.py` geprüft; für diese manuelle Sichtprüfung keine echten Dateien beschädigen oder vergrößern. Native Menschenabnahme offen.
+
+- [ ] Datei › Sicherung › „Speicherstatus …“ öffnen: ohne offene Fehler klarer Status, Größen für Aufgaben/Einstellungen/Vorlagen, gemeinsames JSON-Budget und „Erneut speichern“/„Schließen“. Schließen bzw. Esc geben den Fokus zurück. Im normalen Hauptfenster entsteht bei gesundem Speicherstand keine zusätzliche Dauerzeile.
+- [ ] Im Kompaktmodus, mit großer Schrift sowie hell/dunkel den Dialog öffnen und verkleinern: Bericht scrollt, Fußknöpfe bleiben frei und erreichbar. Automatisch geprüft: Dialog 480 × 360 und Reservehinweis im Kompaktmodus 480 × 560; echte DPI-/Mac-Abnahme bleibt offen.

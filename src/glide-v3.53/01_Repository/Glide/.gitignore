@@ -1,0 +1,6 @@
+# Regeln nur für den Quellbaum. Sicherheit, Nutzerdaten, Protokolle, Archive
+# und Werkzeugreste regelt die .gitignore in der Wurzel der Ablage.
+
+# Bildschirmfotos der Vollprüfung bleiben lokal (seit 02.10.2026); versioniert
+# werden ergebnis.json und README. Messwerkzeuge schreiben ihre Fotos in fenster/.
+tests/qa-*/**/fenster/

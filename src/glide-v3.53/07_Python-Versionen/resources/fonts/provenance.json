@@ -1,0 +1,121 @@
+{
+  "source": "https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/dejavu-fonts-ttf-2.37.zip",
+  "archive_sha256": "7576310b219e04159d35ff61dd4a4ec4cdba4f35c00e002a136f00e96a908b0a",
+  "files": {
+    "LICENSE": "7a083b136e64d064794c3419751e5c7dd10d2f64c108fe5ba161eae5e5958a93",
+    "DejaVuSans-Bold.ttf": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+    "DejaVuSans-Oblique.ttf": "4af75fa16ee6d3ad43e1ecec41862c24954af26a55c6bb1ebb27bd486a50f5f4",
+    "DejaVuSans.ttf": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+    "DejaVuSans-BoldOblique.ttf": "eb436dca0c2594b73d8b603b892e374fdfd8d885d25ffb4f18df4c4c0b49e50f"
+  },
+  "additional_sources": [
+    {
+      "name": "Pixelify Sans",
+      "use": "Überschriften im Design „Pixel“ (seit 3.30)",
+      "license": "SIL Open Font License 1.1",
+      "source": "https://github.com/eifetx/Pixelify-Sans",
+      "commit": "39df74aba80df8157546034b878e8be1eb565ced",
+      "retrieved": "2026-09-25",
+      "files": {
+        "PixelifySans-Regular.ttf": "5436d485d1713afa376e1744911cbbcc0849eae1eb55ec9bc34c0753993ffef9",
+        "PixelifySans-Bold.ttf": "3c3c203a3f3b862b944e836e4ec0fce201eddc1952cbca0d682e382d668b293c",
+        "OFL-PixelifySans.txt": "b66ba46f511a851ab09998b5a5a9fdbb102545a3864cb993095e1745996873a7"
+      },
+      "upstream_paths": {
+        "PixelifySans-Regular.ttf": "fonts/ttf/PixelifySans-Regular.ttf",
+        "PixelifySans-Bold.ttf": "fonts/ttf/PixelifySans-Bold.ttf",
+        "OFL-PixelifySans.txt": "OFL.txt"
+      }
+    },
+    {
+      "name": "DM Mono",
+      "use": "Technisch: DM Mono; Medium 500 für Kräftig, Regular und Medium kursiv",
+      "license": "SIL Open Font License 1.1",
+      "copyright": "Copyright 2020 The DM Mono Project Authors",
+      "source": "https://github.com/google/fonts/tree/main/ofl/dmmono",
+      "version": "1.000",
+      "verified": "2026-11-10",
+      "project_copy": "20_Grafik_Master/07_Fonts/07_DM_Mono (unveränderte statische Schnitte des Inhabers)",
+      "files": {
+        "DMMono-Regular.ttf": "f98ada968dc3b6b2c08d3f5caaf266977df0bfe0929372b93df5a06cf2ace450",
+        "DMMono-Medium.ttf": "8055df2253a84993c7f16586fac775f2f7fcf1bfd191fa23bc1058a58969782a",
+        "DMMono-Italic.ttf": "a15c5f16fbfc45b97168f8cedd959149298639bc93e95c0f7be44f7de7508d5b",
+        "DMMono-MediumItalic.ttf": "f6b7a415ecfb6ab07c148fe53c9b03409ca1969c1d49758122a9515b93fdfe91",
+        "OFL-DMMono.txt": "0f2c192cfa63e591f680392d1792ff06e52a76ef81f70841ccb0b36c11b61826"
+      },
+      "upstream_paths": {
+        "DMMono-Regular.ttf": "static/DMMono-Regular.ttf",
+        "DMMono-Medium.ttf": "static/DMMono-Medium.ttf",
+        "DMMono-Italic.ttf": "static/DMMono-Italic.ttf",
+        "DMMono-MediumItalic.ttf": "static/DMMono-MediumItalic.ttf",
+        "OFL-DMMono.txt": "OFL.txt"
+      }
+    },
+    {
+      "name": "Rubik",
+      "use": "Modern: Rubik",
+      "classification": "Modern",
+      "license": "SIL Open Font License 1.1",
+      "reserved_font_name": null,
+      "source": "https://github.com/googlefonts/rubik",
+      "version": "2.300",
+      "retrieved": "2026-11-03",
+      "project_copy": "20_Grafik_Master/07_Fonts/01_Rubik",
+      "files": {
+        "Rubik-Regular.ttf": "6b94e23adedab4522e1b65d21158e83c75f377fc99f916c58f8ec40ecc7dd035",
+        "Rubik-Bold.ttf": "2fb105e3a66c3540e2308321e7c5bd786ce98a232930cd31c62e20d47747ad20",
+        "Rubik-Italic.ttf": "7285aaf13fc4af595d1175ecd6e6cb475725e3152589d921fdea21df3efba6de",
+        "Rubik-BoldItalic.ttf": "98422936ea4ebb427eacefa7f463c62832d5ec86f345538d02c00b4508f45bea",
+        "OFL-Rubik.txt": "fbf425c49bf998fb9cc1b52f8ca27d5f84dec079b60c40f654f242b52474d536"
+      },
+      "upstream_paths": {
+        "Rubik-Regular.ttf": "static/Rubik-Regular.ttf",
+        "Rubik-Bold.ttf": "static/Rubik-Bold.ttf",
+        "Rubik-Italic.ttf": "static/Rubik-Italic.ttf",
+        "Rubik-BoldItalic.ttf": "static/Rubik-BoldItalic.ttf",
+        "OFL-Rubik.txt": "OFL.txt"
+      }
+    },
+    {
+      "name": "DM Serif Display",
+      "use": "Kreativ: DM Serif Display; Regular/Italic, Bold über Tk-Gewicht",
+      "classification": "Kreativ",
+      "license": "SIL Open Font License 1.1",
+      "copyright": "Copyright 2014-2018 Adobe; Copyright 2019 Google LLC",
+      "reserved_font_name": "Source",
+      "source": "https://github.com/google/fonts/tree/main/ofl/dmserifdisplay",
+      "version": "5.200",
+      "verified": "2026-11-10",
+      "project_copy": "20_Grafik_Master/07_Fonts/06_DM_Serif_Display (unveränderte statische Schnitte des Inhabers)",
+      "files": {
+        "DMSerifDisplay-Regular.ttf": "3722299d62af9b61d36c7834c0845269462de7dce47e810cac3be4c683b8e8b2",
+        "DMSerifDisplay-Italic.ttf": "586b6df8de9ade079b25e0308910f2e86d0f060b1f5c8c1cd8e803c14d89f4d3",
+        "OFL-DMSerifDisplay.txt": "3eb3b9a4caffd436819224822c59aec7f39080338ff981a28590e74aad422d5d"
+      },
+      "upstream_paths": {
+        "DMSerifDisplay-Regular.ttf": "static/DMSerifDisplay-Regular.ttf",
+        "DMSerifDisplay-Italic.ttf": "static/DMSerifDisplay-Italic.ttf",
+        "OFL-DMSerifDisplay.txt": "OFL.txt"
+      }
+    },
+    {
+      "name": "Charis SIL",
+      "use": "Klassisch: Charis SIL; Regular, Bold und beide Italic-Schnitte",
+      "classification": "Klassisch",
+      "license": "SIL Open Font License 1.1",
+      "copyright": "Copyright (c) 1997-2022 SIL International",
+      "reserved_font_name": "Charis, SIL",
+      "source": "https://github.com/silnrsi/font-charis-sil",
+      "version": "6.101",
+      "verified": "2026-11-10",
+      "project_copy": "20_Grafik_Master/07_Fonts/05_Charis_SIL (unveränderte statische Schnitte des Inhabers)",
+      "files": {
+        "CharisSIL-Regular.ttf": "6e006f4d80139119c2be9250ccfa19d423cdc48d5185a9ed1a9cbbc380719537",
+        "CharisSIL-Bold.ttf": "deab36e7cfa694c2c4f5d7921eef7060af7b997475f833b0f58e56c39524f640",
+        "CharisSIL-Italic.ttf": "95e4eda1f44c164350a9b7d908d6a443a1848145cb009809ab64be4578b9d956",
+        "CharisSIL-BoldItalic.ttf": "c899862d99112b93d26e50057c46f5841853c0eaef801d7711040ac45a4a7e1f",
+        "OFL-CharisSIL.txt": "c4a20f23e692c70f10c6e0136e683497be4e72e8122d01ee2b644fe2b33eb7fd"
+      }
+    }
+  ]
+}

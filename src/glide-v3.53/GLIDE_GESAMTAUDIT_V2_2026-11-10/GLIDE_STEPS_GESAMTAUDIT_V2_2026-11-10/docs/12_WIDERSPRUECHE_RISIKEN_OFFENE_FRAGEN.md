@@ -1,0 +1,48 @@
+# 12 — Widerspruchs-, Ursachen-, Risiken- und Nachweisregister
+
+**Legende:** `CONFLICT` = Aussagen passen ohne Datierung/Definition nicht zusammen; `STATUS_DRIFT` = historischer Stand ist nicht aktuell; `ASSUMPTION` = Interpretation ohne Bestätigung; `EVIDENCE_GAP` = technischer oder rechtlicher Beweis fehlt; `DESIGN_DEBT` = zukünftige Wartungs- oder Sicherheitslast. 'Blocker' meint den jeweiligen Integrations-/Veröffentlichungsschritt, nicht jede unabhängige Forschungsarbeit.
+
+| ID | Art/Prio | Befund und Ursache | Auswirkung | Prüfschritt / Empfehlung |
+|---|---|---|---|---|
+| R01 | STATUS_DRIFT hoch | Frühere Glide-Übergabe benennt noch `main=3.50.7`, aktueller Git-HEAD trägt 3.53.0 | Alte Teststände werden aktuellen Bits zugeschrieben | Commit-/Branch-/QA-Tabelle je Lauf; datierte Überlieferung behalten |
+| R02 | EVIDENCE_GAP hoch | Glide-3.53-Release-Gates laut QA noch nicht vollständig; Live-Action bei Abfrage teilweise aktiv | falscher Freeze-/Release-Claim | vollständige Build-/CI-/Native-/Humanmatrix zum identischen SHA |
+| R03 | CONFLICT mittel | Historische XLSX 22 Pakete/127 Features vs aktueller Glide-Katalog 25/147 | falsche Modulauswahl | XLSX historisch, Katalog 1.15 führend; Differenz B23–B25 u. 20 Systemfeatures |
+| R04 | STATUS_DRIFT mittel | In alten Glide-Texten Steps 'nicht angelegt'; Steps-Repo existiert inklusive Scaffold | Doppelanlagen und überschreiben von README/Schemas | aktuelle Steps-Pfade als Bestand, alte Texte als Geschichte |
+| R05 | ASSUMPTION **Entscheid** | 'zwei Fenster' im Nutzersatz nicht technisch eindeutig | falsche UI, höheres Tk-/Focus-Risiko | W1/W2/W3 mit Beispiel-/Akzeptanzzuständen entscheiden |
+| R06 | DESIGN_DEBT hoch | 88/94 direkte Tk-Importfreiheit ist keine Framework-Unabhängigkeit; `app.pyw` monolithisch | Deep Imports, Side Effects, Produktidentitätslecks | echter AST-/Call-/Runtime-Graph, WA-49, neutrale Importgrenze |
+| R07 | DESIGN_DEBT hoch | B01–B25 sind Kandidaten, keine API/Package-Version | künftige Upgrades fragmentiert | bilateraler Core-Consumer-Test, semantisches API-/Changelog-/Pin-Konzept |
+| R08 | CONFLICT hoch | V6.x-Produktionsarchiv beschreibt STEPS als gesamte Production Chain; aktuelle Appbeschreibung nennt Chord+Drum+MIDI+Lernen | Scope-Explosion, Fehlinvestition | Archiv-/Produkt-/MVP-Scope formell trennen, keinen Einheitsnamen als Beweis |
+| R09 | CONFLICT mittel | Historische Handovers verschieben Drums in früher Forschungsphase; aktuelle Produktaussage enthält Drum-Progressions | erneute Auslassung aus Planung | Ziele erhalten, Reihenfolge und MVP ausdrücklich beschließen |
+| R10 | EVIDENCE_GAP hoch | Steps-Domain/App fehlen ausführbar, `pyproject.toml` nur Tool-Scaffold | scheinbar produktionsfähige Struktur | musikalischer Vertical Slice mit echtem save/load, Unit- und UI-Tests |
+| R11 | EVIDENCE_GAP hoch | Source Registry `sources: []`, Concepts meist Platzhalter | Skill kann Quellen nicht reproduzierbar belegen | Rights-/Metadata-Gate, erste geprüfte SourceRecords/Claims |
+| R12 | DESIGN_DEBT hoch | Chord/Progression-Schemas ohne musikalische Eventzeit/Drumstruktur | MIDI-Fehler, Datenverlust beim Edit/Export | neue schema-revision mit rationaler Beatzeit, Migrations-/Roundtrip-Tests |
+| R13 | EVIDENCE_GAP **Recht** | 60 PDFs/~452 MB bereits im öffentlichen Steps-Git-Baum | mögliche fremde Rechte, Redistribution/History | Rechtefallmatrix und sicherer Isolationsplan mit juristischem Review |
+| R14 | EVIDENCE_GAP hoch | Mehrfachblobs (160 Gruppen/426 Pfade) vs historische Versionen | Löschen könnte Provenienz/Links zerstören | Hashgruppen/Referenzgraph+Rights, keine automatische History-Rewrite |
+| R15 | CONFLICT mittel | 6 Originalquellen im älteren Konsolidierungsbericht, fünfte echte Originale, `Glide Kontext für Fable(2).md` fehlte | Quellenkette nicht vollständig | Original oder klaren `UNAVAILABLE`-Eintrag nachführen |
+| R16 | STATUS_DRIFT mittel | Älterer Steps-Audit 1.827 Dateien/alte Pfade vs aktueller HEAD 1.931 Dateien | Umfang und Rechte-/Hash-KPIs falsch | snapshot-spezifische Inventare mit Datum/HEAD |
+| R17 | EVIDENCE_GAP hoch | Steps-CI Structure Green, aber keine Fach-/MIDI-/native UI-Suites | irreführende Qualitätsbeschreibung | Scope je Workflow dokumentieren, Testpyramide ergänzen |
+| R18 | EVIDENCE_GAP hoch | `app.pyw` bei dieser Sitzung nicht vollständig über API gelesen; kein lokaler Tk-Start | Behauptete abtrennbare Shell nicht bewiesen | dedizierter lokaler Agent-AST-/Runtime-Test vor Umsetzung |
+| R19 | ASSUMPTION hoch | Shell in V1 mit zwei internen Slots als Standard behandelt | UX-Entscheidung präjudiziert | als **Referenzentwurf** markieren, andere Varianten vergleichen |
+| R20 | DESIGN_DEBT mittel | Absolute persönliche Windows-Pfade in öffentlichem `README_SETUP.md` von Steps | Vertraulichkeits-/Portabilitätsproblem | relative Platzhalter/`${HOME}` in redaktionellem PR, alte Belege nicht falsch umdeuten |
+| R21 | EVIDENCE_GAP mittel | Root Steps README nur zwei Zeilen und HTML-escaped `&amp;` | unzureichendes OSS-Onboarding | README als Projekt-Navigator unter Dokumentautorität überarbeiten |
+| R22 | EVIDENCE_GAP hoch | Unterschiedliche `MPL-2.0`-Header und externe PDFs/Fonts/Samples | LGPL/GPL?/OFL/Third-party Lizenzfolgen ungeprüft | Per-Datei- und Bundle-BOM, Freigabe nur erlaubter Assets |
+| R23 | DESIGN_DEBT hoch | Zwei mutierende Modelle für dieselbe Aufgabe denkbar (kopierter Glide-Undo und Steps-Undo) | stale IDs und Datenverlust | eine Mutation-/Undo-/Save-Transaktion je Produkt, Adaptergrenzen |
+| R24 | EVIDENCE_GAP hoch | Keine Core-Compatibility-Matrix, Version/Backward-API-Policy, Produktpaket-Pins | geteilte Upgrades brechen Glide | minimaler stabiler API-Vertrag, Cross-Consumer CI, Pins |
+| R25 | EVIDENCE_GAP mittel | Graph-/Deduplikation bisher nur Dateiebene, keine Begriff-/Beweiskette | wissenschaftliche Widersprüche gelöscht | Claim-/Concept-/SourceIDs und alternative Lenses |
+| R26 | EVIDENCE_GAP mittel | Market-Claims/Pricing/Competitor-Funktionsstände aus älteren Berichten | überholte Positionierung | separat datierte heutige Produkt-/Nutzerresearch-Spikes vor Marketingentscheidung |
+| R27 | ASSUMPTION mittel | Fable-5.2-Release bestätigt, aber Nutzerquota und eigenes Donnerstag-Reset nicht prüfbar | Agent-Ressourcenplan kann scheitern | an Task-Outputs statt fixe Kontingente koppeln |
+| R28 | DESIGN_DEBT hoch | Docs/Prompts kopieren Governance in jedes Repo | Divergierende 'Source of Truth' | 1 Hauptquelle je Thema, nur verlinkte Snapshots/ADRs |
+| R29 | EVIDENCE_GAP mittel | Kein unabhängiger CI-/Hardwaretest in V2-Audit | keine eigene Tests-Freigabe | Status `DOCUMENTED_QA`, tatsächliche Reruns gesondert |
+| R30 | EVIDENCE_GAP mittel | Unklarer Rechte-/Privacy-Status beim öffentlichen Upload privater KI-Planung | versehentliche Privatdaten in Git | Readme-/ZIP-Redaktionsprüfung, `private/internal/public` je Datei |
+
+## Risiko-Systematik statt Schwere-Scheinpräzision
+
+Die Priorität ist nach **möglichem Schaden und nächster betroffener Entscheidung** bestimmt, nicht als numerische FMEA ohne Messdaten. `R13` hat hohe externe Dringlichkeit, unabhängig davon, ob ein neues Feature gebaut wird. `R05` blockiert produktive Fensterstruktur, nicht Source-Registry-Dokumentation. `R18` blockiert freigegebenen Core-Extraktionscode, nicht einen gebundenen Design-Spike. Ein Widerspruch, der nur durch ein altes Datum entstanden ist (`R01/R04/R16`), kann mit korrekter historischer Kennzeichnung gelöst werden; er erfordert keine Entfernung der damaligen Aussage.
+
+## Offene Entscheidungen (Owner)
+
+**O1:** technische Definition von „zwei Fenstern“ mit sichtbaren Zuständen. **O2:** Steps-MVP unter Wahrung der Gesamtziele Chord/Drum/MIDI/Lernen. **O3:** App-/Paket-/Bundle-Identity samt Datenpfade. **O4:** Core-Distribution (lokales Package, versionierter Dependency-Pin, bewusstes Vendoring); Zeitpunkt der Herauslösung. **O5:** Initiale Steps-Theorie-/Notation-/Timing-Schemaversionen. **O6:** Juristisch geprüfter Umgang mit öffentlichen Fremdmaterialien. **O7:** Lizenz-/Markenstrategie für eigene Inhalte/Assets, OSS-Contributions. **O8:** Explizite Freigabedefinition für Glide-3.53-Ausgangsbaseline und davon unabhängig Steps-Release. **O9:** Skill-Fachreview/Eval-Freigabe. **O10:** Ressourcen-/AI-Agentenrechte und Veröffentlichungsumfang der Projektkontexte.
+
+## Bewertungsstatus
+
+Dieses Register enthält **Risiko- und Widerspruchs-Hypothesen**, nicht 30 nachgewiesene Programmfehler. `R13` ist **nachweisbarer Fremdmaterialbestand mit offenem Rechtsstatus**, nicht die Tatsachenbehauptung, jede dieser Dateien verletze Urheberrecht. `R18` ist Nachweisgrenze, keine Behauptung über einen konkreten Bug. Bei Umsetzung muss jeder `R`-Eintrag eine Test-/Beleg- oder Owner-Entscheidung bekommen.

@@ -1,0 +1,9 @@
+{
+  "zip_sha256": "fdd73bf56dbd95e0ebc32cbfb3fc006d135f38ad57cf07a8fec91b9af73367aa",
+  "zip_entries": 48,
+  "zip_valid": true,
+  "md_count": 36,
+  "csv_count": 10,
+  "original_data_preserved": true,
+  "audit_scope": "container bytes and plain-markdown links, not content or runtime implementation"
+}

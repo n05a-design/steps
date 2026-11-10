@@ -1,0 +1,556 @@
+# SPDX-License-Identifier: MPL-2.0
+"""Lesende Nebenansicht im Inspektorbereich ohne Tk (E-U2 A, D55, 23.10.2026).
+
+Die Nebenansicht zeigt einen zweiten Inhalt – Liste, Seite oder Notiz – neben
+der eigentlichen Arbeit. Bearbeitet wird weiter im Hauptbereich; nebenan gibt
+es nur gezielte Originalaktionen (Aufgabe abhaken über den bestehenden Weg,
+„Öffnen“). Dieses Modul bestimmt, ob ein Ziel lesbar ist, und bereitet seinen
+Inhalt als Zeilen auf. Es kennt keine Widgets und ändert keine Daten.
+
+Ziel ist immer eine stabile Listen-ID. Undo kann Objekte ersetzen; die
+Oberfläche löst die ID deshalb bei jedem Abgleich neu auf.
+"""
+
+import bisect
+import hashlib
+import re
+from dataclasses import dataclass, replace
+import object_references as objects
+
+IMAGE_ANCHOR = "￼"
+LINE_STYLES = ("h1", "h2", "h3", "h4", "codeblock", "quote", "callout", "table", "divider",
+               "bullet", "number", "task", "toggle", "toggle_closed")
+INLINE_STYLES = ("bold", "italic", "underline", "strike", "code", "highlight")
+INDENT_TAGS = {"indent1": 1, "indent2": 2, "indent3": 3}
+TASK_TAG = re.compile(r"^(item|taskref):(.+)$")
+MAX_ROWS = 2000
+MAX_LINES = 5000
+MAX_MATCHES = 500
+
+
+def page_links(document, text_length):
+    """Nur gültige interne Verweise im tatsächlich sichtbaren Originaltext."""
+    if not isinstance(document, dict):
+        return ()
+    links = document.get('links') or {}
+    if not isinstance(links, dict):
+        return ()
+    result = []
+    for span in document.get('spans') or ():
+        if not isinstance(span, dict):
+            continue
+        tag, start, end = span.get('tag'), span.get('start'), span.get('end')
+        if not isinstance(tag, str) or not tag.startswith('link:'):
+            continue
+        value = links.get(tag)
+        if objects.parse(value) is None or type(start) is not int or type(end) is not int:
+            continue
+        if 0 <= start < end and start < text_length:
+            result.append((start, min(end, text_length), value))
+    return tuple(result)
+
+
+def reference_groups(list_id, item_id, index, outgoing, incoming):
+    """Aktuelle Verweise/Rückverweise als lesende, sortierte Navigation.
+
+    Fehlende/gelöschte Ziele bleiben benannt. Die aufrufende Oberfläche darf
+    nur erreichbare Heimatcontainer öffnen, ohne Hauptkontextwechsel.
+    """
+    sources = [(('list', list_id), 'Inhalt')]
+    selected = index.get(('item', item_id))
+    if selected and selected[2] and selected[2].get('id') == list_id:
+        sources.append((('item', item_id), 'Ausgewählte Aufgabe'))
+    groups = []
+    for source, label in sources:
+        for direction, graph in (('Verweise', outgoing), ('Rückverweise', incoming)):
+            rows = []
+            for target in graph.get(source, ()):
+                state, title = objects.caption(target, index)
+                destination = reference_target(target, index)
+                reason = ('Im Papierkorb' if state == 'trash' else 'Ziel fehlt' if state == 'missing'
+                          else 'Nur im Hauptbereich darstellbar' if destination is None else '')
+                rows.append(dict(source=source, value=objects.uri(*target), title=title,
+                                 reason=reason, enabled=destination is not None, state=state))
+            rows.sort(key=lambda row: (row['title'].casefold(), row['value']))
+            groups.append((label + ' · ' + direction, tuple(rows)))
+    return tuple(groups)
+
+
+def reference_actions(row):
+    """Gezielte Originalaktionen; eine fehlende Beziehung darf noch kopierbar bleiben."""
+    valid = objects.parse(row.get('value')) is not None
+    available = valid and row.get('state') not in ('trash', 'missing')
+    return (('side', 'In Nebenansicht öffnen', valid and bool(row.get('enabled'))),
+            ('main', 'Im Hauptbereich öffnen', available),
+            ('copy', 'Verweis kopieren', valid))
+
+
+@dataclass(frozen=True, slots=True)
+class Location:
+    list_id: str
+    item_id: str | None = None
+    query: str = ''
+    search_open: bool = False
+    match_index: int = -1
+    scroll: float = 0.0
+
+
+@dataclass(frozen=True, slots=True)
+class History:
+    entries: tuple = ()
+    index: int = -1
+
+
+def remember_location(history, location):
+    """Nur die aktuelle Position aktualisieren, keine zusätzliche Station."""
+    if 0 <= history.index < len(history.entries) and history.entries[history.index].list_id == location.list_id:
+        entries = list(history.entries)
+        entries[history.index] = location
+        return replace(history, entries=tuple(entries))
+    return history
+
+
+def visit_location(history, location, limit=30):
+    """Sitzungsverlauf: Duplikat ersetzen, Vorwärtszweig abschneiden, begrenzen."""
+    if 0 <= history.index < len(history.entries):
+        current = history.entries[history.index]
+        if (current.list_id, current.item_id) == (location.list_id, location.item_id):
+            return remember_location(history, location)
+    entries = history.entries[:history.index + 1] + (location,)
+    entries = entries[-max(1, limit):]
+    return History(entries, len(entries) - 1)
+
+
+def history_step(history, step, available):
+    """Gelöschte/nicht lesbare Stationen überspringen, ohne Historie umzuschreiben."""
+    if not step:
+        return history
+    step = 1 if step > 0 else -1
+    allowed = set(available)
+    position = history.index + step
+    while 0 <= position < len(history.entries):
+        if history.entries[position].list_id in allowed:
+            return replace(history, index=position)
+        position += step
+    return history
+
+UNSUPPORTED_KINDS = {"drawing": "Zeichnungen", "gallery": "Galerien"}
+
+STATE_TEXT = {
+    "missing": "Dieser Inhalt ist nicht mehr vorhanden.",
+    "trash": "Dieser Inhalt liegt im Papierkorb. Über den Papierkorb lässt er sich wiederherstellen.",
+}
+
+
+def literal_matches(text, query, limit=MAX_MATCHES):
+    """Lesende Unicode-Suche mit Originalversätzen, auch bei ß -> ss.
+
+    Keine regulären Ausdrücke; Sonderzeichen bleiben wörtlich. Die Oberfläche
+    markiert ausschließlich den bereits sichtbaren Text. Das Budget begrenzt
+    Ergebnislisten; der weitere Treffer wird als solcher ausgewiesen.
+    """
+    if not isinstance(text, str) or not isinstance(query, str) or not query or limit <= 0:
+        return [], False
+    offsets, folded = [], []
+    for position, char in enumerate(text):
+        part = char.casefold()
+        folded.append(part)
+        offsets.extend([position] * len(part))
+    haystack, needle = ''.join(folded), query.casefold()
+    matches, position = [], 0
+    while needle:
+        found = haystack.find(needle, position)
+        if found < 0:
+            break
+        match = (offsets[found], offsets[found + len(needle) - 1] + 1)
+        position = found + len(needle)
+        if matches and match == matches[-1]:
+            continue
+        if len(matches) >= limit:
+            return matches, True
+        matches.append(match)
+    return matches, False
+
+
+def matching_rows(rows, query, limit=MAX_MATCHES):
+    """Eine Trefferzeile je ID; keine Filterung oder Änderung des Originals."""
+    if not isinstance(query, str) or not query:
+        return [], False
+    needle = query.casefold()
+    found = []
+    for identity, text in rows:
+        if needle in str(text).casefold():
+            if len(found) >= limit:
+                return found, True
+            found.append(identity)
+    return found, False
+
+
+def match_index(current, count, step=1):
+    if count <= 0:
+        return -1
+    if current < 0:
+        return count - 1 if step < 0 else 0
+    return (current + step) % count
+
+
+OVERVIEW_LIMIT = 50
+
+
+def match_snippet(text, start, end, width=36):
+    """Fundstelle als einzeiliger Ausschnitt samt Zeilennummer (ab 1), lesend.
+
+    Zeilenumbrüche und Bild-/Kästchenplatzhalter werden zu Leerzeichen; ein
+    abgeschnittener Rand trägt „…“. Ungültige Versätze liefern (0, "").
+    """
+    if not isinstance(text, str) or not 0 <= start <= end <= len(text):
+        return 0, ''
+    line = text.count('\n', 0, start) + 1
+    left, right = max(0, start - width), min(len(text), end + width)
+    snippet = ' '.join(text[left:right].replace(IMAGE_ANCHOR, ' ').split())
+    return line, ('…' if left else '') + snippet + ('…' if right < len(text) else '')
+
+
+def section_at(sections_, position, order=None):
+    """Titel des Abschnitts, in dem eine Fundstelle steht; davor leer.
+
+    Seiten: `position` ist die Zeilennummer, Abschnittsschlüssel sind Zeilen.
+    Listen: `order` ist die Zeilen-ID-Folge der Anzeige; eine Fundstelle auf
+    einer Überschrift oder Gruppe gehört zu dieser selbst.
+    """
+    if order is None:
+        rang, schluessel = position, (lambda key: key)
+    else:
+        index = {identity: n for n, identity in enumerate(order)}
+        if position not in index:
+            return ''
+        rang, schluessel = index[position], (lambda key: index.get(key, -1))
+    title = ''
+    for section in sections_ or ():
+        stelle = schluessel(section.get('key'))
+        if isinstance(stelle, int) and 0 <= stelle <= rang:
+            title = section.get('title') or ''
+    return title
+
+
+LOOKUP_LIMIT = 80
+
+
+def lookup_query(text, limit=LOOKUP_LIMIT):
+    """Markierten Text als Suchbegriff für die Nebenansicht, sonst "".
+
+    Leerraum und Zeilenumbrüche werden zu einem Leerzeichen, Bild-/Kästchen-
+    platzhalter entfallen. Längere Markierungen werden an einer Wortgrenze
+    gekürzt; der Begriff bleibt wörtlich wie in der Suche.
+    """
+    if not isinstance(text, str):
+        return ''
+    query = ' '.join(text.replace(IMAGE_ANCHOR, ' ').split())
+    if len(query) > limit:
+        cut = query[:limit]
+        query = cut.rsplit(' ', 1)[0] if ' ' in cut else cut
+    return query
+
+
+# Letzte Suchen (D57, 01.11.2026): flüchtig je Sitzung und Datenordner.
+RECENT_LIMIT = 8
+RECENT_LABEL_LIMIT = 60
+
+
+def remember_query(history, query, limit=RECENT_LIMIT):
+    """Letzte Suchbegriffe mit dem genutzten vorn, ohne Doppelte.
+
+    Der Begriff bleibt wörtlich, weil die Suche wörtlich ist; reiner
+    Leerraum ändert nichts.
+    """
+    history = [value for value in (history or ()) if isinstance(value, str)]
+    if not isinstance(query, str) or not query.strip():
+        return history[:limit]
+    return ([query] + [value for value in history if value != query])[:limit]
+
+
+def recent_step(history, current, step):
+    """Begriff beim Blättern mit Pfeil hoch (`step` 1, älter) und runter (-1, neuer); None ändert nichts.
+
+    Steht der aktuelle Text nicht in der Liste, führt Pfeil hoch zum neuesten Begriff.
+    """
+    history = [value for value in (history or ()) if isinstance(value, str)]
+    if not history:
+        return None
+    if current in history:
+        index = history.index(current) + step
+    elif step > 0:
+        index = 0
+    else:
+        return None
+    return history[index] if 0 <= index < len(history) else None
+
+
+def recent_label(query, limit=RECENT_LABEL_LIMIT):
+    """Einzeiliger Menütitel eines Suchbegriffs; lange Begriffe enden mit „…“."""
+    clean = ' '.join(str(query or '').split())
+    return clean if len(clean) <= limit else clean[:limit - 1].rstrip() + '…'
+
+
+def section_counts(sections_, positions, order=None):
+    """Treffer je Abschnitt, in Abschnittsreihenfolge; Treffer davor zählen nicht.
+
+    Dieselbe Zuordnung wie `section_at`: Seiten über Zeilennummern, Listen
+    über die Zeilen-ID-Folge der Anzeige.
+    """
+    sections_ = list(sections_ or ())
+    if order is None:
+        stellen = [section.get('key') for section in sections_]
+        rang = lambda position: position
+    else:
+        index = {identity: n for n, identity in enumerate(order)}
+        stellen = [index.get(section.get('key'), -1) for section in sections_]
+        rang = lambda position: index.get(position, -1)
+    counts = [0] * len(sections_)
+    for position in positions or ():
+        ziel = rang(position)
+        treffer = [n for n, stelle in enumerate(stellen) if isinstance(stelle, int) and 0 <= stelle <= ziel]
+        if treffer and isinstance(ziel, int) and ziel >= 0:
+            counts[treffer[-1]] += 1
+    return counts
+
+
+def section_step(sections_, position, step, order=None):
+    """Nächster (`step` 1) oder vorheriger (-1) Abschnitt ab einer Stelle; None am Rand.
+
+    Seiten: `position` ist die aktuelle Zeile. Listen: `order` ist die
+    Zeilen-ID-Folge der Anzeige; ohne bekannte Stelle führt „weiter“ zum
+    ersten Abschnitt. Ein Abschnitt auf der Stelle selbst zählt in keine
+    Richtung, damit wiederholtes Drücken weiterspringt.
+    """
+    sections_ = list(sections_ or ())
+    if order is None:
+        rang = position if isinstance(position, int) else 0
+        stellen = [section.get('key') for section in sections_]
+    else:
+        index = {identity: n for n, identity in enumerate(order)}
+        rang = index.get(position, -1)
+        stellen = [index.get(section.get('key'), -1) for section in sections_]
+    gueltig = [(stelle, section) for stelle, section in zip(stellen, sections_)
+               if isinstance(stelle, int) and stelle >= 0]
+    if step > 0:
+        return next((section for stelle, section in gueltig if stelle > rang), None)
+    vorher = [section for stelle, section in gueltig if stelle < rang]
+    return vorher[-1] if vorher else None
+
+
+def overview_label(section, snippet, limit=90):
+    """Menüzeile der Trefferübersicht: „Abschnitt · Ausschnitt“, gekürzt."""
+    text = f'{section} · {snippet}' if section else (snippet or '')
+    return text if len(text) <= limit else text[:limit - 1].rstrip() + '…'
+
+
+def sections(entry, limit=200):
+    """Überschriften bzw. Gruppen als lesende Sprungziele, ohne zweite Ablage."""
+    if not isinstance(entry, dict):
+        return []
+    if content_kind(entry) == 'tasks':
+        return [dict(key=row['id'], title=row['text'] or 'Ohne Titel', depth=row['depth'])
+                for row in list_rows(entry.get('items', [])) if row['kind'] in ('heading', 'group')][:limit]
+    projection = page_projection(entry.get('rich_note') or {})
+    lines = projection['text'].split('\n')
+    return [dict(key=row['line'], title=lines[row['line']-1].strip() or 'Ohne Titel',
+                 depth=int(row['style'][1:])-1)
+            for row in projection['lines'] if row['style'] in ('h1', 'h2', 'h3', 'h4')][:limit]
+
+
+def target_for(entry):
+    """Normalisiertes Ziel einer Liste/Seite/Notiz oder None."""
+    if isinstance(entry, dict) and isinstance(entry.get("id"), str) and entry.get("id"):
+        return {"kind": "list", "id": entry["id"]}
+    return None
+
+
+def normalize_target(value):
+    if (isinstance(value, dict) and value.get("kind") == "list" and isinstance(value.get("id"), str)
+            and 0 < len(value["id"]) <= 200):
+        return {"kind": "list", "id": value["id"]}
+    return None
+
+
+def _trash_contains(trash, identity):
+    """Liegt die Liste (einzeln oder mit ihrem Ordner) im Papierkorb?"""
+    for value in trash or ():
+        if not isinstance(value, dict):
+            continue
+        holder = value.get("list")
+        if isinstance(holder, dict) and holder.get("id") == identity:
+            return True
+        folder = value.get("folder")
+        if isinstance(folder, dict) and any(isinstance(entry, dict) and entry.get("id") == identity
+                                            for entry in folder.get("lists", ()) or ()):
+            return True
+    return False
+
+
+def availability(entry, identity=None, trash=()):
+    """(Zustand, Hinweis) eines Ziels.
+
+    ``ok`` – lesbar; ``archived`` – lesbar, im Archiv; ``unsupported`` –
+    Zeichnung/Galerie, nur über „Öffnen“; ``trash``/``missing`` – nicht mehr da.
+    """
+    if not isinstance(entry, dict):
+        return ("trash", STATE_TEXT["trash"]) if identity and _trash_contains(trash, identity) else (
+            "missing", STATE_TEXT["missing"])
+    kind = entry.get("list_kind") or "tasks"
+    if kind in UNSUPPORTED_KINDS:
+        return ("unsupported", f"{UNSUPPORTED_KINDS[kind]} zeigt die Nebenansicht nicht. "
+                               "„Öffnen“ zeigt den Inhalt im Hauptbereich.")
+    if entry.get("archived"):
+        return "archived", "Im Archiv · nur lesen"
+    return "ok", ""
+
+
+def content_kind(entry):
+    """'page', 'note' oder 'tasks' für die Darstellung."""
+    kind = entry.get("list_kind") if isinstance(entry, dict) else None
+    return kind if kind in ("page", "note") else "tasks"
+
+
+def reference_target(key, index):
+    """Aktuelles, lesbares Verweisziel samt Heimatcontainer; keine gespeicherte Kopie."""
+    if not isinstance(key, tuple) or len(key) != 2 or key[0] not in ("list", "item"):
+        return None
+    found = index.get(key)
+    if found is None:
+        return None
+    state, _holder, entry = found
+    if state not in ("active", "archived") or not isinstance(entry, dict):
+        return None
+    if availability(entry)[0] == "unsupported":
+        return None
+    return {"list_id": entry["id"], "item_id": key[1] if key[0] == "item" else None}
+
+
+def list_rows(items, limit=MAX_ROWS):
+    """Punkte einer Liste als flache Zeilen in Anzeigereihenfolge.
+
+    Jede Zeile: ``{"id", "text", "done", "depth", "kind", "due", "toggle"}``.
+    ``toggle`` ist True für echte Aufgaben (Aufgabe, Langtext); Gruppen und
+    Zwischenüberschriften lassen sich nicht abhaken.
+    """
+    rows = []
+
+    def visit(values, depth):
+        for item in values or ():
+            if len(rows) >= limit:
+                return
+            if not isinstance(item, dict):
+                continue
+            kind = item.get("kind") if item.get("kind") in ("task", "group", "long", "heading") else "task"
+            text = " ".join(str(item.get("text") or "").split())
+            rows.append({"id": item.get("id"), "text": text, "done": bool(item.get("done")), "depth": depth,
+                         "kind": kind, "due": item.get("due") or "", "toggle": kind in ("task", "long")})
+            visit(item.get("children"), depth + 1)
+
+    visit(items, 0)
+    return rows
+
+
+def list_summary(rows):
+    """Kurze Zeile „3 offen · 2 erledigt“ für den Kopf."""
+    tasks = [row for row in rows if row["toggle"]]
+    if not tasks:
+        return "Keine Aufgaben"
+    done = sum(1 for row in tasks if row["done"])
+    open_count = len(tasks) - done
+    parts = [f"{open_count} offen"] if open_count else []
+    if done:
+        parts.append(f"{done} erledigt")
+    return " · ".join(parts)
+
+
+def page_projection(document, limit=MAX_LINES):
+    """Lesbare Projektion eines Seiten-/Notizdokuments.
+
+    Liefert ``{"text", "lines", "inline", "images", "truncated"}``:
+
+    - ``text``: Dokumenttext bis zur Zeilengrenze, unverändert (Versätze bleiben gültig),
+    - ``lines``: je Zeile ``{"line", "style", "indent", "task", "reference"}``,
+    - ``inline``: ``(start, ende, format)`` für Fett, Kursiv usw. innerhalb des Texts,
+    - ``images``: Versätze der unsichtbaren Bildanker.
+    """
+    text = document.get("text", "") if isinstance(document, dict) else ""
+    spans = document.get("spans", []) if isinstance(document, dict) else []
+    text = text if isinstance(text, str) else ""
+    raw_lines = text.split("\n")
+    truncated = len(raw_lines) > limit
+    if truncated:
+        raw_lines = raw_lines[:limit]
+        text = "\n".join(raw_lines)
+    starts = []
+    offset = 0
+    for line in raw_lines:
+        starts.append(offset)
+        offset += len(line) + 1
+    tags = [set() for _ in raw_lines]
+    inline = []
+    for span in spans if isinstance(spans, list) else ():
+        if not isinstance(span, dict):
+            continue
+        tag, start, end = span.get("tag"), span.get("start"), span.get("end")
+        if not isinstance(tag, str) or type(start) is not int or type(end) is not int or not 0 <= start < end:
+            continue
+        if tag in INLINE_STYLES:
+            if start < len(text):
+                inline.append((start, min(end, len(text)), tag))
+            continue
+        if tag not in LINE_STYLES and tag not in INDENT_TAGS and not TASK_TAG.match(tag):
+            continue
+        if TASK_TAG.match(tag):
+            # Eine Aufgabe gehört zu jeder Zeile, die ihr Bereich berührt.
+            index = max(0, bisect.bisect_right(starts, start) - 1)
+        else:
+            # Zeilenformate beginnen am Zeilenanfang und reichen über den Umbruch.
+            index = bisect.bisect_left(starts, start)
+        while index < len(starts) and starts[index] < end:
+            tags[index].add(tag)
+            index += 1
+    lines = []
+    for number, values in enumerate(tags, start=1):
+        style = next((name for name in LINE_STYLES if name in values), "body")
+        if style == "toggle_closed":
+            style = "toggle"
+        indent = max((INDENT_TAGS[name] for name in values if name in INDENT_TAGS), default=0)
+        task = reference = None
+        for name in sorted(values):
+            match = TASK_TAG.match(name)
+            if match:
+                task, reference = match.group(2), match.group(1) == "taskref"
+                break
+        if task:
+            style = "task" if style in ("body", "task", "bullet", "number") else style
+        line_text = raw_lines[number - 1]
+        if IMAGE_ANCHOR in line_text:
+            style = "image"
+        lines.append({"line": number, "style": style, "indent": indent, "task": task, "reference": bool(reference)})
+    images = [position for position, char in enumerate(text) if char == IMAGE_ANCHOR]
+    return {"text": text, "lines": lines, "inline": sorted(inline), "images": images, "truncated": truncated}
+
+
+def page_tasks(projection):
+    """IDs der Aufgabenzeilen einer Projektion in Reihenfolge, ohne Doppelte."""
+    return list(dict.fromkeys(line["task"] for line in projection["lines"] if line["task"]))
+
+
+def signature(entry, done_states=(), extra=()):
+    """Vergleichswert für den Abgleich: ändert sich, sobald sich Sichtbares ändert.
+
+    Bewusst ohne vollständige JSON-Kopie großer Dokumente; der Text geht als
+    Prüfsumme ein.
+    """
+    if not isinstance(entry, dict):
+        return ("none",) + tuple(extra)
+    document = entry.get("rich_note") if isinstance(entry.get("rich_note"), dict) else {}
+    text = document.get("text", "") if isinstance(document.get("text", ""), str) else ""
+    digest = hashlib.sha1(text.encode("utf-8", "replace")).hexdigest()
+    span_digest = hashlib.sha1(repr(document.get("spans", [])).encode("utf-8", "replace")).hexdigest()
+    rows = tuple((row["id"], row["text"], row["done"], row["depth"], row["kind"], row["due"])
+                 for row in list_rows(entry.get("items", [])))
+    return (entry.get("id"), str(entry.get("title") or ""), entry.get("list_kind"), bool(entry.get("archived")),
+            entry.get("folder_id"), digest, span_digest, rows, tuple(done_states)) + tuple(extra)

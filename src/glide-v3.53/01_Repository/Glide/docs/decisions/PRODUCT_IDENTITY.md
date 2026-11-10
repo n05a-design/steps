@@ -1,0 +1,91 @@
+# Produkt- und Identitätsregister
+
+Stand 10.11.2026 · App-Version 3.53.0 · Datenformat 26
+
+Der obere Block ist durch den Quellcode belegt und muss nicht mehr entschieden
+werden. Der untere Block enthält Geschäfts- und Rechtsentscheidungen. Offene
+Werte dürfen nicht durch Vermutungen in Build- oder Store-Konfigurationen
+ersetzt werden.
+
+## Technisch belegt
+
+| Feld | Stand | Beleg im Code |
+|---|---|---|
+| Produktname | Glide | `APP_NAME` |
+| Technischer Langname | Glide – Aufgaben und Listen; vorhandene Fenster-/Export-/Paketbezeichnung | `APP_PRODUCT_NAME`, unverändert |
+| Öffentliche Beschreibung | Glide – Desktop-Planer für Projekte, Aufgaben, Tagesplanung, Pinnwände und Pixel-Zeichnungen | D72/D74, `brand.DESCRIPTION`; Textvarianten in [Veröffentlichung](../10_VEROEFFENTLICHUNG.md#produktkommunikation) |
+| Softwarelizenz | Mozilla Public License 2.0 (`MPL-2.0`), kommerzielle Nutzung nach Bedingungen zulässig | [kanonischer Lizenztext](../../../../LICENSE), D72 |
+| App-Version | 3.53.0 | `APP_VERSION`, `VERSION` |
+| Datenformat | 26 | `DATA_SCHEMA_VERSION` |
+| Unterstützte Backup-Formate | 4 bis 26 | `MIN_PORTABLE_BACKUP_SCHEMA_VERSION`, `DATA_SCHEMA_VERSION` |
+| Laufzeit | Python 3.14 mit Tk 9 als Grundlage (27.09.2026); Tk 8.6 bleibt lauffähig, ohne Systemmitteilung und SVG-Vorschau. Sonst nur Standardbibliothek | Importliste in `app.pyw` |
+| Mitgelieferte Bibliothek | tkinterdnd2 0.6.3 (MIT) mit tkDnD für das Ziehen aus Finder/Explorer; optional, lädt beim ersten Gebrauch | `src/glide/vendor`, [Entscheidung](ABHAENGIGKEIT_TKDND.md) |
+| Prüflaufzeit | Nach Commit und Plattform getrennt; neue Windows-Grundstufe auf PR #69, Mac-Originalnachweise und spätere Quellkorrekturen separat | [Aktueller QA-Bericht](../07_QA_BERICHT.md) |
+| Netzwerkzugriff | kein automatischer Datentransfer; bewusst angeklickte Links öffnen den Browser | lokale Datenhaltung, `webbrowser` |
+| Benutzerkonto | keines | keine Auth-Pfade |
+| Automatischer Nutzungsdatentransfer | keiner im geprüften Quellstand | keine Analytics-Aufrufe |
+| Nutzerdaten Windows | `%APPDATA%\\Glide\\` bzw. gewählter Datenordner | `get_app_data_dir()`, `change_data_folder()` |
+| Nutzerdaten macOS | `~/Library/Application Support/Glide/` bzw. gewählter Datenordner | `get_app_data_dir()` |
+| Nutzerdaten Linux | `$XDG_DATA_HOME/Glide/` bzw. `~/.local/share/Glide/` | `get_app_data_dir()` |
+| Testisolierung | `GLIDE_DATA_DIR` überschreibt den Datenordner | `get_app_data_dir()` |
+| Dateiendung Backup | `.glidebackup` (ZIP mit `data.json` + `attachments/`) | `write_complete_backup()` |
+| Austauschformate | TXT, Markdown, CSV (Semikolon, UTF-8-BOM) | Exportfunktionen |
+| Größenlimit je Anhang | 512 MiB je Datei | `MAX_BACKUP_ATTACHMENT_BYTES` |
+| Entpackte Backup-Grenzen | 2 GiB gesamt, 32 MiB Daten-JSON | `MAX_BACKUP_TOTAL_BYTES`, `MAX_BACKUP_DATA_BYTES` |
+| Technisches Validierungslimit | 200.000 Punkte; keine Performancezusage | `MAX_BACKUP_ITEMS` |
+| Lade-/Mutationsgrenze der Punkttiefe | 100; vor tiefenerhöhenden UI-Mutationen geprüft | `MAX_ITEM_DEPTH`, `make_subitem` |
+| Automatische Sicherungen | unter `backups/`, nur bei geändertem Inhalt: die zehn neuesten, jüngere als 30 Minuten, höchstens 40; dazu je Tag der letzte Stand für 14 Tage (29.09.2026) | `MIN_BACKUPS`, `BACKUP_MAX_AGE_MINUTES`, `MAX_BACKUPS`, `BACKUP_DAILY_DAYS`, `write_backup_copy` |
+| Oberflächensprache | Deutsch, einsprachig | Beschriftungen im Code |
+| Oberflächensymbole | zentrale Textzeichen-Tabelle; Legacy-Emoji nur beim Parsen alter Eingaben | `ICONS`, Symbolprüfung |
+| Logo und Programmsymbol | D62, 05.11.2026: unveränderte neue SVG-G-Kontur aus `20_Grafik_Master/01_Logo/2026-Glide-Logo-in-App.svg`; App-/Favicons aus `2026-Glide-Logo-App-und-Fav-Icon.svg`, Lila `#9E4AC8` auf Gelb `#FFDC0B`. Individuelle Oberflächenakzente bleiben erhalten; Darkmode-Gelb zentral `#FFDC0B` | `brand.py`, `logo.py`, `resources/logo`, `scripts/pflege/logo_abgleich.py`; vollständige Verwendungs-/Neubaucheckliste in `20_Grafik_Master/README.md` |
+| Übernahme aus Altordnern | keine – der Datenordner ist der Datenordner | `get_app_data_dir()` |
+| Rückgängig-Tiefe | 20 Schritte | `MAX_UNDO_STEPS` |
+| Max. Papierkorbeinträge | 200 | `MAX_TRASH_ENTRIES` |
+| Max. Ordnerverschachtelung | 5 Ebenen | `MAX_FOLDER_DEPTH` |
+| Materialoptik | abschaltbare getönte Flächen, Kanten und optionaler DWM-Aufruf | `active_theme`, `RoundedContainer` |
+| Mitgelieferte Schriften | Rubik, Roboto Mono, Playfair Display, Fraunces und Pixelify Sans (OFL); DejaVu als interner Symbolbegleiter (eigene Lizenz) | `font_catalog.py`, `resources/fonts/provenance.json` |
+| macOS Bundle Identifier | `de.shaye.glide` (Inhaberentscheidung 26.09.2026) | `APP_BUNDLE_ID`, `packaging/macos/baue_app.py` |
+| Windows AppUserModelID | `Shaye.Glide` (Inhaberentscheidung 26.09.2026) | `APP_USER_MODEL_ID`, `set_windows_app_user_model_id`, `packaging/windows/verknuepfung_anlegen.ps1` |
+| Beispielbestand zum Einlesen | Beispiel-, Rundgang- und Releasebackups unter `tests/fixtures/beispiele/` werden je Versionswechsel neu erzeugt und tragen seit 3.44.0 Format 26; ältere Releaseplanungen behalten ihr Format. Feste Format-26-Referenz `current_v26`, ältere `current_v*` einschließlich `current_v25` bleiben Migrationsbelege | `pruefen.py`, `test_seiten33318.py`, [Fixture-Register](../../tests/fixtures/README.md) |
+
+## Offen – Entscheidung oder Plattformabnahme erforderlich
+
+| Feld | Stand | Wer entscheidet |
+|---|---|---|
+| Publisher / Herausgebername | Tim von Trostorff | Entwicklungsauftrag 3.26.0 |
+| Copyright-Zeile | offen | Inhaber |
+| Support-E-Mail | mailme@shaye.de | Inhaber |
+| Website | Shaye.de | Inhaber |
+| Datenschutz-URL | offen | Inhaber, für beide Stores Pflicht |
+| Preis / Monetarisierung | Angebote für Vertrieb oder Services offen; keine Einschränkung der durch MPL-2.0 eingeräumten Nutzungsrechte | Inhaber |
+| Vertriebsweg | zuerst Direktvertrieb (Website, Developer-ID-Signatur und Notarisierung, Windows-Installer); Stores später – entschieden 27.09.2026 | Inhaber |
+| Windows-Zielarchitektur | x64 – entschieden 27.09.2026 | Inhaber |
+| Inno Setup AppId | offen, einmalige GUID | einmalig erzeugen, danach nie ändern |
+| macOS Mindestversion | offen | folgt aus Build-Laufzeit und Tests auf Zielgeräten |
+| macOS Architektur | arm64 (Apple Silicon) – entschieden 27.09.2026; Universal 2 nur, wenn Intel-Macs gebraucht werden | Inhaber |
+| Sicherheitskontakt | offen | Inhaber |
+| Markenprüfung „Glide“ | offen | Fachanwalt, nicht durch Recherche ersetzbar |
+
+Für Copyright, Datenschutz-URL, Sicherheitskontakt, Inno-AppId und
+macOS-Mindestversion liegen seit dem 27.09.2026 Vorschläge bereit
+([Inhaberangaben](../10_VEROEFFENTLICHUNG.md#inhaberangaben)). Sie gelten erst
+nach der Bestätigung durch den Inhaber.
+
+Der Name „Glide“ wird von mehreren Anbietern in der Software genutzt. Vor einer
+öffentlichen Veröffentlichung ist eine professionelle Marken- und
+Namensrecherche erforderlich; eine eigene Suche ersetzt sie nicht.
+
+Eine Systembenachrichtigung mit Glide-Namen verlangt eine feste AppUserModelID
+beziehungsweise einen festen Bundle-Identifikator. Beide sind seit dem
+26.09.2026 festgelegt und ändern sich nie mehr. Siehe
+[Entscheidung](SYSTEMBENACHRICHTIGUNGEN.md) und
+[Paketierung](../../packaging/README.md).
+
+## Pflege dieser Datei
+
+`AGENTS.md` nennt dieses Register als verbindliche Quelle für Build- und
+Store-Konfigurationen. Bei jeder Versionserhöhung sind Version, Datenformat,
+Backupgrenzen, Pfade und Plattformnachweise gegen den Quelltext und den
+aktuellen QA-Lauf zu prüfen. Was welche Formatstufe ergänzt hat, steht in
+[Daten und Migration](../06_DATA_BACKUP_MIGRATION.md#formatstufen); frühere
+Fassungen dieser Datei trägt Git.

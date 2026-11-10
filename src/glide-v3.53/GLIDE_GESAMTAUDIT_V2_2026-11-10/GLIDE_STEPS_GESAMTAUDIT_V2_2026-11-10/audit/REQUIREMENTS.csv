@@ -1,0 +1,61 @@
+ID,Domain,Anforderung,Evidenzstatus,Prioritaet,Pruefbarer_Vertrag,Noetige_Pruefung
+R001,Glide,Offline lokale Datenkontrolle,USER_REQUIREMENT,P0,Keine Netzverbindung/Account; eigene persistente Daten im Benutzerordner,Daten-/Netzwerksentinel und Restore-Prüfung
+R002,Glide,Quellbaseline 3.53 nachvollziehbar,VERIFIED_REPO,P0,Tag/SHA/QA-Status separat,"Git SHA, VERSION, QA, Actions"
+R003,Core,94 Hauptmodule und 25 B-Pakete auf Quellstand prüfen,VERIFIED_REPO,P0,Import- und Runtimegraph je Paket,"AST, Dynamic Import, Ressourcenmanifest"
+R004,Core,"Theme, Designrollen, vier Fontstile und Iconfallback erhalten",USER_REQUIREMENT,P0,Keine Layout-/Kontrastregression,OS/Font/Scale-Matrix
+R005,Core,Logo/Titel/Unterzeile produktneutral,USER_REQUIREMENT,P0,Product identity per Adapter,Window header and package icon check
+R006,Core,"Sidebar vollständig sichtbar, einklappbar, unsichtbar",USER_REQUIREMENT,P0,Vollständiger State-Machine-Contract,Maus/Keyboard/Restart/Screenreader
+R007,Core,Seitenliste enthält Punkte ohne alte Glide-Fachaktionen,USER_REQUIREMENT,P0,Nur Selektions-/Navigationsfunktion oder erklärtes Disabled,Task Command Negative Spy
+R008,Core,Such-/Bearbeitungsflächen als visuelle und aktive Widgets,USER_REQUIREMENT,P0,Keine alten Datenquellen,Empty-/Long-/Focus-/Error-Tests
+R009,Core,Einstellungen mit isoliertem Settings-Store,USER_REQUIREMENT,P0,"Styles und Verhalten bleiben, keine Cross-Dateien","Neustart, Schema, unknown fields"
+R010,Core,Prozess-/Fehlerzustände und Dialogsystem,USER_REQUIREMENT,P0,keine UI-Blockade oder unnötigen Dauerflächen,Cancel/Timeout/Shutdown
+R011,Core,Zwei Fenster technisch definieren,OPEN,P0,W1/W2/W3 explizit entschieden,UI-Wireflow und Owner-Akzeptanz
+R012,Core,Kopierbare Core-Updates für mehrere Apps,USER_REQUIREMENT,P0,Versionierter API-/Upgradevertrag,"Zwei Consumer, separate PRs"
+R013,Core,Shared Core darf keine Glide-Domain importieren,PROPOSAL,P0,One-way Dependency,Importblocker mit Negativgegenprobe
+R014,Core,Importzeit ohne Nutzerdaten-Seiteneffekt,VERIFIED_REPO,P0,WA-49 als offener Kopplungspunkt,Cold import mit Path Spy
+R015,Core,"Event Loop, after, Fokus und Worker thread safe",USER_REQUIREMENT,P0,keine toten Callbacks,100 View-Wechsel und Root-TearDown
+R016,Core,Ressourcen/Assets/Fonts/Branding pro App isoliert,PROPOSAL,P0,separate Rechte und Build-BOM,Plattform-Installer-Inventar
+R017,Glide,"Verhalten mit Undo, Import, Restore bleibt unverändert",USER_REQUIREMENT,P0,keine neuen direkten Mutationspfade,Vorher/Nachher samt Negativfällen
+R018,Glide,Datenformatänderungen mit Migration,USER_REQUIREMENT,P0,Version/Backup/Schreibschutzregeln,Alt/Neu-ReadWrite und Crash
+R019,Steps,Eigenständiges Open-Source-Projekt,USER_REQUIREMENT,P0,eigene App/Paket/Bundle-ID,Git/OS/Pfadprüfung
+R020,Steps,Chord-Progressions erstellen und bearbeiten,USER_REQUIREMENT,P0,Eventmodell und Persistenz,"Golden Cases, Save/Load"
+R021,Steps,Drum-Progressions planen und bearbeiten,USER_REQUIREMENT,P0,Pattern+Steps/Velocity/Kit,Rhythmus-Tests
+R022,Steps,Harmonie erkunden/erklären,USER_REQUIREMENT,P0,Kontext und alternative Analyse,Mehrdeutigkeits-Evals
+R023,Steps,MIDI-Dateien exportieren,USER_REQUIREMENT,P0,SMF/PPQ/Tempo/Metaevents,Roundtrip mit unabh. Parser
+R024,Steps,Musiktheorie lernen,USER_REQUIREMENT,P1,Erklärungen mit Theorie- und Quellenbeleg,Anfänger-Fachreview
+R025,Steps,Tonnotation H/B/Bb,VERIFIED_REPO,P0,Parser/Serializer eindeutig,"DE vs international, enharmonic"
+R026,Steps,"Chordqualität, Voicing, Tonart getrennt",PROPOSAL,P0,Canonical Domain Object Contracts,"Cmaj7/C7/Cm7, inversion"
+R027,Steps,Musikalische Zeit und Takt rational,PROPOSAL,P0,Event start/duration repeat,"3/4,5/8,tuplet,"
+R028,Steps,Drum/MIDI gemeinsame Zeitbasis,PROPOSAL,P1,Traces einer Timeline,Tick/Roundtrip/Stop
+R029,Steps,Domain unabhängig von Tk und Dateisystem,VERIFIED_REPO,P0,src/steps Konzept wird implementiert,Import ohne DISPLAY
+R030,Steps,Project Save/Undo/Backup isoliert,USER_REQUIREMENT,P0,kein Glide-Datenimport,Fault Injection/Restart
+R031,Steps,Schemas haben Migration und Version,PROPOSAL,P0,keine stillen v1-Overwrite,Schema RFC/Fixtures
+R032,Steps,App Runtime nicht als Scaffold freigeben,VERIFIED_REPO,P0,realer lauffähiger End-to-end Slice,UI + Domain + Tests
+R033,Knowledge,Alle Quellen inventarisieren und deduplizieren,USER_REQUIREMENT,P0,"SHA, Provenienz und Versionslinien",vollständiger source index
+R034,Knowledge,Fremdmaterial Rechte pro Datei prüfen,VERIFIED_REPO,P0,keine unzulässige Redistribution,Rights Register mit Approval
+R035,Knowledge,V6.6/V6.7 historische Divergenzen erhalten,VERIFIED_REPO,P1,keine stillen Versionsdrops,Link/Hash/ID Abgleich
+R036,Knowledge,Ingestion-Registry befüllen,VERIFIED_REPO,P0,0 → validierte Quellen,Source schema/domain review
+R037,Knowledge,Claims mit Fundstellen und Kontext,PROPOSAL,P0,fachliche Gegensichten erhalten,Citation/Contradiction Evals
+R038,Knowledge,Root SKILL als Workflow-Router,VERIFIED_REPO,P1,keine redundanten Lehrtexte,Skill Routing Test
+R039,Knowledge,Harmony Skill mit Relevanz- und Halluzinationstests,PROPOSAL,P1,nur belegte Quellen,Negativ-Evals
+R040,QA,Glide CI/Wintergrün korrekt darstellen,DOCUMENTED_QA,P0,Source-SHA und native Skips,Actions Runner and QA Sheet
+R041,QA,Steps structure CI nicht als Musiktest ausgeben,VERIFIED_REPO,P0,separate Testsuites,Verify test_structure source
+R042,QA,Real UI-Tests auf Win/macOS/Linux,PROPOSAL,P0,gleiches source/core/asset snapshot,Native Matrix
+R043,QA,DPI/Font/Text/Keyboard/Contrast,USER_REQUIREMENT,P0,echte Bedienzustände,Pairwise + Pflichtfälle
+R044,QA,Performance auf identischen synthetischen Daten,USER_REQUIREMENT,P1,Median/p95 und Fehlerkosten,baseline perf artifacts
+R045,Security,Import ZIP/MIDI/Media gegen bösartige Eingänge,PROPOSAL,P0,"kein Traversal, Größenbudget",Fuzz- und Grenzenfälle
+R046,Security,Keine echten Nutzerdaten in Tests,USER_REQUIREMENT,P0,isolated test roots,Path Spy
+R047,Governance,Getrennte Worktrees und Branches je Agent,USER_REQUIREMENT,P0,keine parallele Schreibüberlagerung,Git Status/Scope Diff
+R048,Governance,Keine ungefragten Merges/Pushes/Löschungen,USER_REQUIREMENT,P0,Human Approval,Agent Report
+R049,Governance,Projekt-Overview inkl. Widerspruch und Lücken,USER_REQUIREMENT,P0,Traceability Audit,Read/Link/Manifest
+R050,Governance,Prompts pro Arbeitsthema mit negativen Tests,USER_REQUIREMENT,P0,Spezifische Inputs/Outputs,Prompt Review
+R051,Governance,V1 Originalnachweise bewahren,PROPOSAL,P0,keine historischen Artefakte überschreiben,sha256/ZIP Manifest
+R052,Governance,Vollständiger Public-Privacy-Review,PROPOSAL,P0,kein Account-/Home-Pfad-Leak,Redaction check
+R053,Product,MVP vs Gesamtprodukt explizit entscheiden,OPEN,P0,Chords/Drums/MIDI/Lernen repräsentiert,Owner ADR
+R054,Product,Wettbewerberdaten aktuell verifizieren,OPEN,P2,nur zeitgestempelte Produktclaims,fresh competitor research
+R055,Distribution,Shared Core nur mit zwei Consumer verifizieren,PROPOSAL,P1,"stable API, pins and CI",bilateral tests
+R056,Distribution,App-/Core-/Schema-/Knowledge-Version trennen,PROPOSAL,P0,kein falscher Versionssynonym,release manifest
+R057,Distribution,Offline Package ohne nicht erlaubte Assets,USER_REQUIREMENT,P0,SBOM + License gates,native bundle inventory
+R058,Governance,AGENTS und Dokumentationsautoritäten respektieren,VERIFIED_REPO,P0,keine parallelen kanonischen Modullisten,doc link check
+R059,Design,Steps eigenständige Markenidentität,USER_REQUIREMENT,P0,kein Glide Branding im Steps UI,Resource/OS icon check
+R060,Community,CONTRIBUTING/Lizenzstruktur und IP sauber,PROPOSAL,P2,publizierbare Richtlinien,Human legal review
