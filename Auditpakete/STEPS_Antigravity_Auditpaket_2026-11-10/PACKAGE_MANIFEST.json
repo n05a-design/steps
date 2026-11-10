@@ -1,0 +1,70 @@
+{
+  "package": "STEPS Antigravity Audit V5",
+  "created_date": "2026-11-10",
+  "steps_ref": "1fc07e230dc6a2fe92fd6662da43e332d596b376",
+  "glide_ref": "9e767bea5e21063466a28ac3a679406484ad5d5f",
+  "github_write_permitted": false,
+  "documents_created_not_repository_mutated": true,
+  "files": [
+    {
+      "path": "PAKET_README.md",
+      "bytes": 2437,
+      "sha256": "24baf38fe598b40c1a14df6f3df0ea8a0c82ad69521676e0256dd626f4ca8a20"
+    },
+    {
+      "path": "STEPS_Antigravity_Masterprompt_und_Befunde.docx",
+      "bytes": 64782,
+      "sha256": "afc8461667d4e9e4699e69763efca46eb4e6dc8ead27c43a4211d0214a0dfa0d"
+    },
+    {
+      "path": "changes.patch",
+      "bytes": 71737,
+      "sha256": "e9856baf71e8ef8eddac7b5dd0679974f10bbd177a3d2e6108035ce156f88937"
+    },
+    {
+      "path": "docs/architecture/GLIDE_3_53_STEPS_BASELINE_DECISION.md",
+      "bytes": 2949,
+      "sha256": "06404fa045cd770dde6dfc0ae2d719e59206586c3ee73fc3230efc2877393a4f"
+    },
+    {
+      "path": "docs/operations/PAKET_EINSPIELUNG_UND_ABNAHME.md",
+      "bytes": 4835,
+      "sha256": "897e738979fee6d4cef8f1811d7102588b9023ba52997a2e5a7e501ab6c591d6"
+    },
+    {
+      "path": "docs/project/review/ABNAHME_CHECKLISTE_V5.md",
+      "bytes": 2778,
+      "sha256": "84af6bf291a5726b48b0a67f5e760f1083cf9ab9346b6f09ef8b56d478f76049"
+    },
+    {
+      "path": "docs/project/review/REPO_SNAPSHOT_UND_BEWERTUNG_2026-11-10.md",
+      "bytes": 9041,
+      "sha256": "9213bc285e31e92d18a57efd6c01f4678469b50c0fe918ebb9f711994f11bb42"
+    },
+    {
+      "path": "docs/project/review/SOURCE_SCOPE_AND_EVIDENCE.md",
+      "bytes": 3551,
+      "sha256": "88490b40ebdad51c9ee0e7ac3e09635d41aef6410a21249962822fb80fc74917"
+    },
+    {
+      "path": "optional_fix/src/steps/README.md",
+      "bytes": 1072,
+      "sha256": "e1eadbd62193b97f1ebf2667239fba56cb709bb7ad5556c6516fa674eea4ed2d"
+    },
+    {
+      "path": "prompts/30_ANTIGRAVITY_MASTER_AUDIT_2026-11-10.md",
+      "bytes": 34713,
+      "sha256": "2010e045d67dc68cb806514e4d993ac828877b1821efea5eb3739fa5d8d87cd0"
+    },
+    {
+      "path": "prompts/31_META_PROMPT_ANTIGRAVITY_2026-11-10.md",
+      "bytes": 3840,
+      "sha256": "f0c6e22da24608d53cf5e8fbb61f5b84bc173d7ac010032068fa368c7dda7fb7"
+    },
+    {
+      "path": "src/steps-0.00/README.md",
+      "bytes": 7354,
+      "sha256": "fecf095a2f25c92a32c07b6a7d7410ea5f4e3c0585a67687c59299573e451607"
+    }
+  ]
+}
