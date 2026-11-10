@@ -1,4 +1,4 @@
-"""Automated unit test suite for steps-knowledge-curation skill scripts covering 18 validation scenarios."""
+"""Automated unit test suite for steps-knowledge-curation skill scripts covering 22 validation scenarios."""
 from __future__ import annotations
 import unittest
 import tempfile
@@ -16,7 +16,7 @@ import detect_duplicates
 import extract_instructions
 import validate_register
 
-class TestCurationTools18Scenarios(unittest.TestCase):
+class TestCurationToolsScenarios(unittest.TestCase):
     def setUp(self):
         self.test_dir = tempfile.TemporaryDirectory()
         self.dir_path = self.test_dir.name
@@ -33,6 +33,7 @@ class TestCurationTools18Scenarios(unittest.TestCase):
         self.assertEqual(res["extension"], ".md")
         self.assertEqual(len(res["sha256"]), 64)
         self.assertTrue(res["size_bytes"] > 0)
+        self.assertTrue(res["within_bounds"])
 
     # Scenario 2: Modified Source Detection (hash changes)
     def test_02_modified_source_detection(self):
@@ -211,6 +212,49 @@ class TestCurationTools18Scenarios(unittest.TestCase):
             res = validate_register.validate_master_file(canonical_p)
             self.assertEqual(res["errors_count"], 0)
             self.assertGreaterEqual(res["total_tasks_found"], 19)
+
+    # Scenario 19: Directory Boundary Check (within vs outside bounds)
+    def test_19_directory_boundary_check(self):
+        inside = os.path.join(self.dir_path, "inside.txt")
+        with open(inside, "w", encoding="utf-8") as fp:
+            fp.write("Inside file")
+        res_in = check_source.check_file(inside, base_dir=self.dir_path)
+        self.assertTrue(res_in["within_bounds"])
+        
+        # Test file outside bounds
+        other_dir = tempfile.TemporaryDirectory()
+        outside = os.path.join(other_dir.name, "outside.txt")
+        with open(outside, "w", encoding="utf-8") as fp:
+            fp.write("Outside file")
+        res_out = check_source.check_file(outside, base_dir=self.dir_path)
+        self.assertFalse(res_out["within_bounds"])
+        other_dir.cleanup()
+
+    # Scenario 20: Non-File / Directory Rejection
+    def test_20_non_file_rejection(self):
+        sub = os.path.join(self.dir_path, "subdir")
+        os.makedirs(sub, exist_ok=True)
+        with self.assertRaises(ValueError):
+            check_source.check_file(sub)
+
+    # Scenario 21: Non-Directory Search Path Rejection
+    def test_21_non_dir_search_rejection(self):
+        f = os.path.join(self.dir_path, "file.txt")
+        with open(f, "w", encoding="utf-8") as fp:
+            fp.write("content")
+        with self.assertRaises(NotADirectoryError):
+            detect_duplicates.is_duplicate(f, f)
+
+    # Scenario 22: Binary File Hashing & Extraction Resilience
+    def test_22_binary_file_resilience(self):
+        bin_f = os.path.join(self.dir_path, "data.bin")
+        with open(bin_f, "wb") as fp:
+            fp.write(b"\x00\xff\xfe\x00\x01\x02\x03\x7f")
+        res = check_source.check_file(bin_f)
+        self.assertEqual(res["size_bytes"], 8)
+        self.assertEqual(len(res["sha256"]), 64)
+        items = extract_instructions.extract_from_file(bin_f)
+        self.assertEqual(len(items), 0)
 
 if __name__ == "__main__":
     unittest.main()
