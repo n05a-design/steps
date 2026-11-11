@@ -1,11 +1,11 @@
 # STEPS – Real Automated Golden Test Execution Report (Phase 4.16 Hardened)
 
-**Timestamp:** `2026-11-11T19:32:54+0100`  
+**Timestamp:** `2026-11-11T19:35:26+0100`  
 **Testsuite:** `tests/test_golden_reference_cases.py`  
 **Datengrundlage (Single Source of Truth):** `knowledge/research/golden_cases/golden_reference_cases.json`  
 **Spiegel (Test-Fixture):** `tests/golden_cases/golden_reference_cases.json`  
 **Testumgebung:** Python `3.15.1` on `Windows-11-10.0.26300-SP0`  
-**Git Commit:** `e32ce8b569182091cfa0ab3eb5cd389d01e14714` (Branch: `fix/steps-phase4-16-evidence-integrity-and-secret-baseline`)  
+**Git Commit:** `c4313baf16eed0e3e7d06c88e9534f6df210b962` (Branch: `fix/steps-phase4-16-evidence-integrity-and-secret-baseline`)  
 **Gate Status:** `GATE_PASSED`
 
 ---
@@ -19,7 +19,7 @@
 | **Spezifikations-Dokumentationsbeispiele (`SPECIFICATION_EXAMPLE`)** | **131** | **131 Dokumentiert (100.0 %)** |
 | **Fehlgeschlagene Tests (FAIL)** | **0** | Null Fehlertoleranz |
 | **Übersprungene Tests (SKIPPED)** | **0** | Keine Auslassungen |
-| **Gemessene Gesamtlaufzeit** | **1.42 ms (0.0014 s)** | Real gemessen |
+| **Gemessene Gesamtlaufzeit** | **1.48 ms (0.0015 s)** | Real gemessen |
 
 ---
 
