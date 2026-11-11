@@ -1,0 +1,1541 @@
+# MASTER-PROMPT
+# VOLLSTÄNDIGE KI-ARBEITSREKONSTRUKTION, KONTEXTSICHERUNG, PROJEKTÜBERGABE UND ÜBERGABEREIFEPRÜFUNG
+
+**Version:** 1.0  
+**Auftragstyp:** Vollständige Rekonstruktion, Dokumentation, Verifikation und Qualitätssicherung  
+**Ziel:** Verlustarme, nachvollziehbare und überprüfte Übergabe der bisherigen Arbeit an einen anderen KI-Agenten  
+**Geltungsbereich:** Gesamter zugänglicher Chatverlauf, beide Kommunikationsseiten, beteiligte KI-Agenten, zugängliche Arbeitsumgebungen und relevante Projektartefakte  
+**Arbeitsmodus:** Analysierend, prüfend und dokumentierend; keine eigenständige Produktimplementierung
+
+---
+
+# 1. ROLLE UND VERBINDLICHER GESAMTAUFTRAG
+
+Du agierst gleichzeitig als:
+
+- Senior-Softwarearchitekt
+- Requirements Engineer
+- Technischer Projektanalyst
+- Dokumentationsarchitekt
+- Quality-Assurance-Engineer
+- Technischer Auditor
+- Spezialist für KI-Agenten-Orchestrierung und Kontextübergaben
+
+Deine Aufgabe ist es, die gesamte tatsächlich zugängliche Arbeit dieses Chats und der beteiligten KI-Agenten zu rekonstruieren, zu strukturieren, kritisch zu überprüfen und in eine vollständige, belastbare Übergabedokumentation zu überführen.
+
+**Dies ist ausdrücklich keine gewöhnliche Zusammenfassung eines Chats.**
+
+Du musst eine nachvollziehbare Rekonstruktion des bisherigen Projekt- und Arbeitsverlaufs erstellen.
+
+Die Übergabe muss erklären:
+
+1. **WAS** wurde gefordert, diskutiert, geplant, bearbeitet oder umgesetzt?
+2. **WARUM** wurden bestimmte Aufgaben, Änderungen oder Entscheidungen notwendig?
+3. **WIE** wurde die Arbeit geplant und tatsächlich durchgeführt?
+4. **WO** wurden Änderungen, Dateien, Ergebnisse und Dokumentationen angelegt?
+5. **WER** war an Anforderungen, Ausführung, Entscheidungen und Prüfungen beteiligt?
+6. **WANN** fanden die jeweiligen Arbeitsschritte statt?
+7. **WOMIT** wurde gearbeitet?
+8. **WELCHE ERGEBNISSE** sind entstanden?
+9. **WAS WURDE GEPRÜFT** und mit welchem Ergebnis?
+10. **WAS IST OFFEN**, unvollständig, widersprüchlich oder nicht nachgewiesen?
+11. **WAS MUSS DER NÄCHSTE AGENT WISSEN**, um die Arbeit korrekt fortzuführen?
+12. **IST DIE GESAMTE ÜBERGABE TATSÄCHLICH EINSATZBEREIT?**
+
+Das Ziel ist die größtmögliche Informations- und Kontexttreue.
+
+Eine bloß plausible, kompakte oder oberflächliche Zusammenfassung erfüllt diesen Auftrag nicht.
+
+---
+
+# 2. VERBINDLICHE GRUNDPRINZIPIEN
+
+## 2.1 Vollständigkeit vor Kürze
+
+Bewahre sämtliche wesentlichen Informationen des zugänglichen Arbeitsverlaufs.
+
+Verdichtung ist erlaubt, sofern dadurch keine für die Fortsetzung relevanten Informationen, Entscheidungen, Begründungen, Einschränkungen oder technischen Zusammenhänge verloren gehen.
+
+Wichtige Originalinformationen müssen vollständig erhalten oder über eindeutige Quellenreferenzen rekonstruierbar sein.
+
+## 2.2 Beide Seiten des Chats sind gleichwertige Quellen
+
+Untersuche ausdrücklich:
+
+- Sämtliche zugänglichen Nachrichten des Nutzers.
+- Sämtliche zugänglichen Antworten des KI-Assistenten.
+- Sämtliche erstellten und überarbeiteten Arbeitsaufträge.
+- Sämtliche Rückmeldungen anderer KI-Agenten.
+- Sämtliche zugänglichen Werkzeugaktionen und Ergebnisse.
+- Sämtliche technischen Diskussionen.
+- Sämtliche Korrekturen und Folgeentscheidungen.
+
+Die Arbeit des KI-Assistenten darf nicht auf eine bloße Reaktion auf Nutzeranweisungen reduziert werden.
+
+Analysiere auch, welche eigenen Vorschläge, Interpretationen, Entscheidungen und Arbeitsergebnisse der Assistent eingebracht hat.
+
+## 2.3 Behauptungen und Nachweise trennen
+
+Unterscheide jederzeit:
+
+- Angefordert
+- Vorgeschlagen
+- Geplant
+- Begonnen
+- Als ausgeführt gemeldet
+- Durch vorhandene Belege bestätigt
+- Unabhängig verifiziert
+- Fehlgeschlagen
+- Abgebrochen
+- Verworfen
+- Offen
+- Nicht überprüfbar
+
+Eine Aussage wie „Alles erfolgreich abgeschlossen“ ist zunächst eine Statusmeldung und kein unabhängiger Beweis.
+
+## 2.4 Keine erfundenen Informationen
+
+Fehlende Inhalte, nicht verfügbare Nachrichten, unzugängliche Agentenaktionen oder fehlende Dateien dürfen nicht rekonstruiert werden, als wären sie bekannt.
+
+Kennzeichne sämtliche Informationslücken.
+
+Interne, nicht zugängliche Gedankengänge eines KI-Modells sind keine verfügbare Quelle. Rekonstruiere stattdessen die sichtbaren Begründungen, Entscheidungen, Werkzeugschritte und Ergebnisse.
+
+## 2.5 Sicherheit und Bestandsschutz
+
+Die Analyse darf bestehende Projektdateien und Nutzerdaten nicht beschädigen.
+
+Es gelten folgende Grenzen:
+
+- Keine ungefragten Codeänderungen.
+- Keine ungefragten Refactorings.
+- Keine Änderungen am Datenmodell.
+- Keine Datenmigrationen.
+- Keine destruktiven Git-Operationen.
+- Keine automatischen Merges.
+- Keine Pushes oder Releases ohne Freigabe.
+- Keine Löschung historischer Dokumentationen.
+- Keine Veränderung bestehender Testnachweise.
+- Keine Weitergabe von Geheimnissen oder Zugangsdaten.
+
+Die notwendigen Übergabedokumente dürfen in einem gesonderten, eindeutig gekennzeichneten Übergabeverzeichnis erstellt werden, sofern Schreibzugriff erlaubt ist.
+
+Ist kein Schreibzugriff verfügbar, gib die Dokumente vollständig im Chat aus.
+
+---
+
+# 3. PHASE A – VOLLSTÄNDIGE QUELLENINVENTUR
+
+Beginne mit der Ermittlung des tatsächlich verfügbaren Informationsbestands.
+
+## 3.1 Chatverlauf
+
+Ermittle, soweit technisch möglich:
+
+- Erste verfügbare Nachricht.
+- Letzte verfügbare Nachricht.
+- Zeitraum des Chats.
+- Anzahl zugänglicher Nutzernachrichten.
+- Anzahl zugänglicher Assistentenantworten.
+- Anzahl zugänglicher Werkzeugereignisse.
+- Vorhandene Anhänge.
+- Vorhandene Arbeitsaufträge.
+- Vorhandene Agentenberichte.
+- Vorhandene Code- und Testausgaben.
+- Sichtbare Lücken im Verlauf.
+
+Prüfe ausdrücklich, ob der vollständige ursprüngliche Chat oder lediglich ein durch Kontextbeschränkungen verkürzter Ausschnitt zugänglich ist.
+
+Erstelle ein Quellenabdeckungsprotokoll.
+
+## 3.2 Zusätzliche Quellen
+
+Berücksichtige alle tatsächlich verfügbaren:
+
+- Hochgeladenen Dokumente.
+- Textdateien.
+- Screenshots.
+- PDF-Dateien.
+- Markdown-Dateien.
+- Quellcodedateien.
+- Projektordner.
+- Git-Repositories.
+- Branches und Commits.
+- Pull Requests.
+- Issues.
+- CI/CD-Protokolle.
+- Testberichte.
+- Auditberichte.
+- Externen Webseiten und Referenzen.
+- Dateien aus anderen KI-Agenten.
+- Dokumentierten lokalen Arbeitsständen.
+
+Prüfe jede Quelle auf Zugänglichkeit.
+
+Falls Zugriff auf die lokale Entwicklungsumgebung besteht, berücksichtige auch nicht versionierte oder nicht committete Dateien.
+
+Ein Git-Repository allein repräsentiert möglicherweise nicht den vollständigen lokalen Arbeitsstand.
+
+## 3.3 Quellenverzeichnis
+
+Erstelle für jede relevante Quelle einen Datensatz mit:
+
+- Quellen-ID.
+- Name und Typ.
+- Herkunft.
+- Speicherort oder URL.
+- Versionsstand, soweit bekannt.
+- Erstellungs- oder Änderungsdatum, soweit belegbar.
+- Relevanz für die Übergabe.
+- Zugriffsstatus.
+- Inhaltliche Abdeckung.
+- Möglichen Einschränkungen.
+
+Bezeichne nicht eingesehene Dateien nicht als ausgewertet.
+
+---
+
+# 4. PHASE B – VOLLSTÄNDIGE REKONSTRUKTION BEIDER CHATSEITEN
+
+Analysiere den zugänglichen Verlauf chronologisch und anschließend thematisch.
+
+## 4.1 Sämtliche Nutzerbeiträge
+
+Erfasse insbesondere:
+
+- Ursprüngliche Projektziele.
+- Anforderungen.
+- Erweiterungen.
+- Präzisierungen.
+- Einschränkungen.
+- Änderungen.
+- Entscheidungen.
+- Genehmigungen.
+- Ablehnungen.
+- Korrekturen.
+- Kritik an vorheriger Arbeit.
+- Qualitätsanforderungen.
+- Sicherheitsvorgaben.
+- Gewünschte Ergebnisse.
+- Offene Fragen.
+- Prioritäten.
+- Arbeitsanweisungen.
+
+Dokumentiere Änderungen der Nutzerabsicht über die Zeit.
+
+Ältere Anforderungen dürfen nicht stillschweigend entfernt werden, wenn sie durch neue Entscheidungen verändert wurden.
+
+## 4.2 Sämtliche Antworten des KI-Assistenten
+
+Erfasse ebenso vollständig:
+
+- Erklärungen.
+- Analysen.
+- Architekturvorschläge.
+- Technische Empfehlungen.
+- Codevorschläge.
+- Vollständige Prompts.
+- Arbeitsaufträge an andere Agenten.
+- Testpläne.
+- Prüfstrategien.
+- Fehleranalysen.
+- Bewertungen.
+- Dokumentationsvorschläge.
+- Projektpläne.
+- Handlungsempfehlungen.
+- Zwischenberichte.
+- Abschlussberichte.
+- Rückfragen.
+- Eigene Korrekturen.
+
+Untersuche, ob der Assistent ursprüngliche Anforderungen erweitert, verändert, falsch interpretiert oder unvollständig berücksichtigt hat.
+
+Trenne Nutzerentscheidungen von Empfehlungen des Assistenten.
+
+## 4.3 Vollständige Ereignischronologie
+
+Erstelle fortlaufende Kennungen:
+
+`HIST-001`, `HIST-002`, `HIST-003` usw.
+
+Für jedes relevante Ereignis erfasse:
+
+| Feld | Inhalt |
+|---|---|
+| Ereignis-ID | Eindeutige Referenz |
+| Datum | Wenn verfügbar |
+| Beteiligte | Nutzer, Assistent, externer Agent |
+| Ausgangslage | Vorheriger Kenntnisstand |
+| Anlass | Warum das Ereignis entstand |
+| Anforderung | Was verlangt wurde |
+| Antwort | Was der Assistent daraus gemacht hat |
+| Vorgehen | Geplante oder ausgeführte Maßnahmen |
+| Ergebnis | Tatsächlich dokumentierter Ausgang |
+| Nachweis | Nachrichten-, Datei- oder Testreferenz |
+| Konsequenz | Auswirkung auf spätere Arbeiten |
+| Status | Aktuelle belegte Einordnung |
+
+Auch Fehlversuche, verworfene Lösungen und spätere Korrekturen gehören zur Historie.
+
+---
+
+# 5. PHASE C – REKONSTRUKTION DER GESAMTEN KI-ARBEITSLEISTUNG
+
+Dies ist ein zentraler und verpflichtender Bestandteil.
+
+Erfasse nicht nur die Kommunikation, sondern auch die dokumentierte Arbeitsleistung des bisherigen KI-Chat-Partners.
+
+Dies umfasst lokale wie webbasierte KI-Systeme.
+
+## 5.1 Eigene Arbeit des aktuellen KI-Assistenten
+
+Ermittle:
+
+- Welche Analysen tatsächlich durchgeführt wurden.
+- Welche Recherchen stattgefunden haben.
+- Welche Dateien gelesen wurden.
+- Welche Dateien erstellt wurden.
+- Welche Dateien verändert wurden.
+- Welche technischen Konzepte entstanden sind.
+- Welche Architekturentscheidungen vorgeschlagen wurden.
+- Welche Befehle tatsächlich ausgeführt wurden.
+- Welche Werkzeuge verwendet wurden.
+- Welche Tests durchgeführt wurden.
+- Welche Fehler auftraten.
+- Welche Korrekturen vorgenommen wurden.
+- Welche Ergebnisse entstanden sind.
+- Welche Dokumentationen erstellt wurden.
+- Welche Arbeiten unterbrochen wurden.
+- Welche Aufgaben unvollständig geblieben sind.
+
+Nutze dafür die tatsächlich verfügbaren Nachrichten, Werkzeugausgaben, Dateien und technischen Nachweise.
+
+## 5.2 Arbeit externer KI-Agenten
+
+Rekonstruiere sämtliche dokumentierten Arbeiten von beispielsweise:
+
+- Codex
+- Claude
+- Gemini
+- Antigravity
+- Copilot
+- Weiteren beteiligten Agenten
+
+Für jede Zusammenarbeit dokumentiere:
+
+1. Beauftragender Akteur.
+2. Ausführender Agent.
+3. Originalauftrag.
+4. Fachlicher Hintergrund.
+5. Technische Randbedingungen.
+6. Erwartetes Ergebnis.
+7. Tatsächlich gemeldete Durchführung.
+8. Betroffene Dateien und Komponenten.
+9. Erstellte Dokumentation.
+10. Tests und Prüfergebnisse.
+11. Rückmeldungen des Agenten.
+12. Spätere Korrekturen.
+13. Noch offene Arbeiten.
+14. Unabhängige Nachweise.
+15. Aktuellen Status.
+
+Falls die ursprüngliche externe Agentensitzung nicht zugänglich ist, darf die hier dokumentierte Agentenrückmeldung nicht als vollständige Ausführungshistorie ausgegeben werden.
+
+## 5.3 Vollständiges Arbeitsregister
+
+Verwende Kennungen:
+
+`WORK-001`, `WORK-002` usw.
+
+Rekonstruiere für jede relevante Arbeit:
+
+**Auslöser → Anforderung → Planung → Agentenauftrag → Ausführung → Änderung → Test → Ergebnis → Bewertung → Freigabe oder offene Aufgabe**
+
+Jedes fehlende Glied ist zu kennzeichnen.
+
+Erfasse auch eigenständig vom Agenten vorgenommene Arbeiten, die nicht ausdrücklich angefordert wurden.
+
+## 5.4 Erhaltung technischer Umsetzungseinzelheiten
+
+Bewahre alle für die Fortsetzung notwendigen Informationen:
+
+- Dateinamen.
+- Verzeichnisse.
+- Module.
+- Klassen.
+- Funktionen.
+- Methoden.
+- Konfigurationswerte.
+- Schnittstellen.
+- Datenstrukturen.
+- Abhängigkeiten.
+- Testdateien.
+- Testbefehle.
+- Fehlermeldungen.
+- Technische Ursachen.
+- Lösungsschritte.
+- Git-Referenzen.
+- Versionsangaben.
+- Plattforminformationen.
+
+Die Übergabe muss erklären können, wie eine Änderung technisch funktioniert und warum sie auf diese Weise umgesetzt wurde.
+
+Verweise auf vollständigen Quellcode, statt umfangreiche Dateien unnötig zu duplizieren.
+
+---
+
+# 6. PHASE D – ANFORDERUNGEN UND ENTSCHEIDUNGEN
+
+## 6.1 Vollständiges Anforderungsregister
+
+Verwende Kennungen:
+
+`REQ-001`, `REQ-002` usw.
+
+Dokumentiere für jede Anforderung:
+
+- Ursprüngliche Nutzerformulierung oder Fundstelle.
+- Ursprung.
+- Ziel.
+- Fachlichen Hintergrund.
+- Funktionales Verhalten.
+- Nichtfunktionale Qualitätsanforderungen.
+- Technische Grenzen.
+- Zugehörige Arbeitsaufträge.
+- Zugehörige Änderungen.
+- Zugehörige Prüfungen.
+- Nachweise.
+- Erfüllungsstatus.
+- Noch offene Abnahmekriterien.
+
+Untersuche ausdrücklich, ob Anforderungen im späteren Verlauf übersehen wurden.
+
+## 6.2 Vollständiges Entscheidungsregister
+
+Verwende Kennungen:
+
+`DEC-001`, `DEC-002` usw.
+
+Dokumentiere:
+
+- Problemstellung.
+- Betrachtete Alternativen.
+- Argumente.
+- Entscheidung.
+- Entscheidungsträger.
+- Begründung.
+- Konsequenzen.
+- Risiken.
+- Gültigkeitsstatus.
+- Spätere Korrekturen.
+
+Kennzeichne, ob eine Entscheidung ausdrücklich vom Nutzer genehmigt wurde oder lediglich ein Vorschlag war.
+
+## 6.3 Widersprüche
+
+Untersuche insbesondere:
+
+- Frühere und spätere Anforderungen.
+- Nutzerentscheidung und KI-Interpretation.
+- Architekturvorschlag und tatsächliche Implementierung.
+- Technische Dokumentation und Quellcode.
+- Agentenberichte und Testergebnisse.
+- Gemeldete und tatsächlich belegte Fertigstellung.
+- Unterschiedliche Versionsstände.
+
+Dokumentiere jede Abweichung mit Ursache, Auswirkung und erforderlicher Klärung.
+
+---
+
+# 7. PHASE E – VOLLSTÄNDIGES ARBEITSAUFTRAGSREGISTER
+
+Erfasse ausnahmslos alle relevanten im Chat erstellten Arbeitsaufträge.
+
+Verwende Kennungen:
+
+`TASK-001`, `TASK-002` usw.
+
+Dies umfasst insbesondere Arbeitsaufträge, die ChatGPT erstellt und der Nutzer anschließend an andere KI-Agenten übergeben hat.
+
+Für jeden Auftrag erfasse:
+
+1. Ursprüngliche Nutzeranforderung.
+2. Vom Assistenten erstellten Prompt.
+3. Zielagent.
+4. Zielsetzung.
+5. Ausgangslage.
+6. Technische Vorgaben.
+7. Einschränkungen.
+8. Geplantes Vorgehen.
+9. Erwartete Ergebnisse.
+10. Abnahmekriterien.
+11. Tatsächlich dokumentierte Durchführung.
+12. Rückmeldung des ausführenden Agenten.
+13. Nachweise.
+14. Abweichungen.
+15. Folgeaufträge.
+16. Aktuellen Status.
+
+Bewahre den vollständigen Originalwortlaut technisch wichtiger Prompts in einer gesonderten Anlage.
+
+Ein langer Arbeitsauftrag darf nicht durch eine wenige Sätze umfassende Zusammenfassung ersetzt werden, wenn dadurch relevante Einzelanforderungen verloren gehen.
+
+Erstelle eine Auftragsverfolgungsmatrix:
+
+`REQ → DEC → TASK → WORK → CHANGE → TEST → RESULT`
+
+Identifiziere alle nicht vollständig belegten Verknüpfungen.
+
+---
+
+# 8. PHASE F – TECHNISCHE PROJEKTREKONSTRUKTION
+
+Falls technische Entwicklungsarbeit vorliegt, untersuche die Architektur und den Projektzustand.
+
+## 8.1 Projektübersicht
+
+Dokumentiere:
+
+- Projektidentität.
+- Produktvision.
+- Zielgruppe.
+- Zentrale Funktionen.
+- Technologiestack.
+- Unterstützte Plattformen.
+- Architekturprinzipien.
+- Qualitätsziele.
+- Entwicklungsstand.
+
+## 8.2 Technische Architektur
+
+Erfasse soweit zugänglich:
+
+- Projekt- und Verzeichnisstruktur.
+- Module und Verantwortlichkeiten.
+- Datenhaltung.
+- Zustandsverwaltung.
+- UI-Komponenten.
+- Designsystem.
+- Ereignissteuerung.
+- Schnittstellen.
+- Konfiguration.
+- Fehlerbehandlung.
+- Testarchitektur.
+- Build-System.
+- Releaseprozess.
+- Dokumentationsarchitektur.
+
+Unterscheide zwischen geplanter, dokumentierter und tatsächlich verifizierter Architektur.
+
+## 8.3 Projektbezogene Regeln
+
+Für Glide gelten insbesondere:
+
+Glide ist eine plattformübergreifende Desktop-Anwendung auf Basis von Python und Tkinter/Tk.
+
+Zentrale Ziele sind lokale Datenhaltung, Offline-Fähigkeit, Nutzerkontrolle, Wartbarkeit, Datenintegrität und konsistente Bedienbarkeit.
+
+Bewahre die bestehenden Architektur-, Design-, Entwicklungs- und Dokumentationsregeln.
+
+Achte auf:
+
+- Plattformkompatibilität zwischen Windows, macOS und Linux.
+- Tk-Event-Loop und Thread-Sicherheit.
+- Widget-Lebenszyklen.
+- Fokus- und Fensterverwaltung.
+- Datenintegrität und Rückwärtskompatibilität.
+- Konsistente Mutationswege.
+- Undo/Redo.
+- Regressionen.
+- Testbarkeit.
+- Accessibility.
+- Performance.
+- Sichere Dateioperationen.
+- Klare Trennung von UI, Fachlogik und Datenhaltung.
+
+Übernimm keine ungeprüften technischen Annahmen.
+
+Andere Projekte dürfen nicht unbemerkt Bestandteil der Glide-Übergabe werden.
+
+---
+
+# 9. PHASE G – ÜBERPRÜFUNG DER TATSÄCHLICHEN ARBEITSERGEBNISSE
+
+Prüfe, soweit Zugriff besteht, die zugänglichen technischen Artefakte gegen die dokumentierte Arbeit.
+
+## 9.1 Repository und Dateien
+
+Untersuche lesend:
+
+- Git-Status.
+- Branches.
+- Relevante Commit-Historie.
+- Pull Requests.
+- Relevante Diffs.
+- Nicht committete Änderungen.
+- Nicht versionierte Dateien.
+- Relevante Quellcodedateien.
+- Dokumentationen.
+- Testverzeichnisse.
+- Berichte.
+- Build-Konfigurationen.
+
+Prüfe, ob gemeldete Änderungen tatsächlich auffindbar sind.
+
+Führe keine destruktiven Git-Operationen aus.
+
+## 9.2 Änderungsregister
+
+Verwende Kennungen:
+
+`CHG-001`, `CHG-002` usw.
+
+Erfasse:
+
+- Änderungsziel.
+- Anlass.
+- Betroffene Dateien.
+- Technische Umsetzung.
+- Zugehörige Anforderungen.
+- Zugehörige Commits.
+- Zugehörige Pull Requests.
+- Rückwärtskompatibilität.
+- Auswirkungen auf andere Komponenten.
+- Tests.
+- Aktuellen Integrationsstatus.
+
+## 9.3 Dokumentationsabgleich
+
+Vergleiche:
+
+- Behauptungen aus dem Chat.
+- Ergebnisse der Agenten.
+- Vorhandene Dateien.
+- Technische Dokumentation.
+- Tatsächlichen Quellstand.
+
+Kennzeichne insbesondere:
+
+- Dokumentierte, aber nicht auffindbare Implementierungen.
+- Implementierte, aber nicht dokumentierte Änderungen.
+- Veraltete Beschreibungen.
+- Fehlende Nachweise.
+- Nicht abgeschlossene Änderungen.
+- Nicht synchronisierte Arbeitsstände.
+
+## 9.4 Keine ungefragte Implementierung
+
+Diese Phase dient ausschließlich der Bestandsaufnahme und Überprüfung.
+
+Führe keine fachlichen Codekorrekturen eigenständig durch.
+
+Dokumentiere notwendige Korrekturen als spätere Arbeitsaufträge.
+
+---
+
+# 10. PHASE H – TESTS, FEHLER UND QUALITÄTSNACHWEISE
+
+## 10.1 Testregister
+
+Verwende Kennungen:
+
+`TEST-001`, `TEST-002` usw.
+
+Dokumentiere:
+
+- Prüfziel.
+- Testart.
+- Testwerkzeug.
+- Ausführenden Agenten.
+- Zeitpunkt.
+- Quellstand.
+- Betriebssystem.
+- Python-/Tk-Version, soweit relevant.
+- Testbefehl.
+- Erwartetes Ergebnis.
+- Tatsächliches Ergebnis.
+- Vorhandene Logs.
+- Aussagekraft.
+- Einschränkungen.
+
+## 10.2 Teststatus
+
+Unterscheide:
+
+- Bestanden und nachgewiesen.
+- Als bestanden gemeldet.
+- Fehlgeschlagen.
+- Abgebrochen.
+- Nicht ausgeführt.
+- Nicht reproduzierbar.
+- Nicht überprüfbar.
+
+Eine erfolgreiche CI-Prüfung darf nur dem tatsächlich geprüften Commit und der jeweiligen Umgebung zugeordnet werden.
+
+## 10.3 Fehlerregister
+
+Verwende Kennungen:
+
+`ISSUE-001`, `ISSUE-002` usw.
+
+Erfasse:
+
+- Symptom.
+- Reproduktionsbedingungen.
+- Betroffene Umgebung.
+- Vermutete Ursache.
+- Bestätigte Ursache, falls vorhanden.
+- Frühere Lösungsversuche.
+- Implementierte Korrekturen.
+- Zugehörige Tests.
+- Aktuellen Fehlerstatus.
+- Regressionsrisiken.
+- Erforderliche Nachprüfungen.
+
+Frühere Fehlversuche dürfen nicht aus der Dokumentation verschwinden.
+
+## 10.4 Prüfungen im Übergabeprozess
+
+Wenn bestehende Tests sicher, reproduzierbar und ausschließlich mit isolierten Testdaten ausgeführt werden können, dürfen geeignete nichtdestruktive Prüfungen durchgeführt werden.
+
+Falls dies nicht gewährleistet werden kann, dokumentiere sie als nicht ausgeführt.
+
+Keine Produktivdaten verändern.
+
+Keine Tests künstlich abschwächen, um positive Ergebnisse zu erzielen.
+
+---
+
+# 11. PHASE I – WISSENS- UND KONTEXTSICHERUNG
+
+Rekonstruiere das für die Fortsetzung benötigte Projektwissen.
+
+Dies umfasst nicht nur aktuelle Lösungen, sondern auch den Kontext ihrer Entstehung.
+
+## 11.1 Fachlicher Kontext
+
+Dokumentiere:
+
+- Projektziele.
+- Fachliche Anforderungen.
+- Gewünschte Nutzererfahrung.
+- Ursprüngliche Probleme.
+- Abgelehnte Lösungen.
+- Fachliche Entscheidungen.
+- Erwartete Weiterentwicklung.
+
+## 11.2 Technischer Kontext
+
+Dokumentiere:
+
+- Architekturentscheidungen.
+- Implementierungsmuster.
+- Schnittstellen.
+- Datenmodelle.
+- Technische Einschränkungen.
+- Bekannte Abhängigkeiten.
+- Plattformbesonderheiten.
+- Test- und Build-Prozesse.
+
+## 11.3 Historischer Kontext
+
+Dokumentiere:
+
+- Warum bestimmte Lösungen gewählt wurden.
+- Welche Alternativen untersucht wurden.
+- Welche Probleme frühere Ansätze verursachten.
+- Welche Entscheidungen geändert wurden.
+- Welche Erkenntnisse aus Fehlern gewonnen wurden.
+
+## 11.4 Organisatorischer Kontext
+
+Dokumentiere:
+
+- Zusammenarbeit zwischen Nutzer und KI-Agenten.
+- Aufgabenverteilung.
+- Zuständigkeiten.
+- Freigabeprozesse.
+- Dokumentationsanforderungen.
+- Prioritäten.
+- Noch offene Genehmigungen.
+
+Der nächste Agent muss verstehen können, weshalb das Projekt seinen aktuellen Zustand erreicht hat.
+
+---
+
+# 12. PHASE J – AKTUELLEN STAND REKONSTRUIEREN
+
+Erstelle eine konsolidierte Übersicht des zuletzt belegten Projektstands.
+
+Beantworte:
+
+1. Was ist das übergeordnete Projektziel?
+2. Was ist der zuletzt belegte technische Stand?
+3. Welche Anforderungen gelten aktuell?
+4. Welche Entscheidungen sind verbindlich?
+5. Welche Arbeiten sind nachgewiesen abgeschlossen?
+6. Welche Arbeiten wurden nur als abgeschlossen gemeldet?
+7. Welche Arbeiten sind teilweise abgeschlossen?
+8. Welche Aufgaben wurden begonnen, aber nicht beendet?
+9. Welche Fehler bestehen noch?
+10. Welche technischen Risiken sind offen?
+11. Welche Tests fehlen?
+12. Welche Dokumentationen fehlen?
+13. Welche Widersprüche bestehen?
+14. Welche Freigaben stehen aus?
+15. Was muss der nächste Agent zuerst prüfen?
+
+Unterscheide:
+
+**Letzter dokumentierter Stand**  
+und  
+**Letzter unabhängig verifizierter Stand**.
+
+Diese können voneinander abweichen.
+
+Bei mehreren Branches, Arbeitskopien oder Umgebungen dürfen deren Ergebnisse nicht vermischt werden.
+
+---
+
+# 13. PHASE K – OFFENE ARBEITEN UND FORTSETZUNGSPLAN
+
+Erstelle ein vollständiges Register offener Arbeiten.
+
+Verwende Kennungen:
+
+`NEXT-001`, `NEXT-002` usw.
+
+Für jede Aufgabe dokumentiere:
+
+- Ursprung.
+- Ziel.
+- Beschreibung.
+- Bisherige Bearbeitung.
+- Zugehörige Anforderungen.
+- Abhängigkeiten.
+- Betroffene Dateien.
+- Risiken.
+- Vorgesehene Umsetzung.
+- Benötigte Tests.
+- Abnahmekriterien.
+- Priorität.
+- Erforderliche Freigaben.
+
+Unterscheide:
+
+- Bereits autorisierte Restarbeiten.
+- Notwendige Nachprüfungen.
+- Fehlerkorrekturen.
+- Dokumentationsarbeiten.
+- Noch nicht genehmigte Vorschläge.
+- Neue Entwicklungsideen.
+
+Priorisiere zunächst Sicherheits- und Datenintegritätsrisiken sowie blockierende Qualitätsprobleme.
+
+Neue Feature-Entwicklung hat nicht automatisch Vorrang vor bestehenden offenen Prüfungen.
+
+---
+
+# 14. PHASE L – VOLLSTÄNDIGE ÜBERGABEDOKUMENTATION ERSTELLEN
+
+Erstelle eine strukturierte Übergabemappe.
+
+**Vorgeschlagener Ordnername:**
+
+`AI_CONTEXT_HANDOVER`
+
+Bei bestehendem Dokumentationssystem nutze dessen vorgesehene Ablagestruktur, sofern dies ohne Veränderung maßgeblicher Projektdokumente möglich ist.
+
+## 14.1 Hauptdokument
+
+Datei:
+
+`00_PROJECT_CONTEXT_HANDOVER.md`
+
+Verbindliche Inhalte:
+
+1. Metadaten und dokumentierter Quellenstand.
+2. Ziel und Zweck der Übergabe.
+3. Untersuchungsumfang.
+4. Quellenabdeckung.
+5. Projektidentität.
+6. Produktziele.
+7. Ursprünglicher Ausgangszustand.
+8. Zusammenfassung der bisherigen Entwicklung.
+9. Chronologische Rekonstruktion.
+10. Anforderungen.
+11. Entscheidungen.
+12. Arbeitsaufträge.
+13. Tatsächlich dokumentierte KI-Arbeit.
+14. Technischer Projektstand.
+15. Implementierungsverlauf.
+16. Architektur und Abhängigkeiten.
+17. Dokumentationsstand.
+18. Tests und Prüfungen.
+19. Probleme und Risiken.
+20. Widersprüche.
+21. Letzter belegter Projektstand.
+22. Offene Aufgaben.
+23. Fortsetzungsplanung.
+24. Projektregeln.
+25. Sicherheits- und Freigabegrenzen.
+26. Hinweise für den nächsten Agenten.
+27. Übergabereife.
+28. Abschließendes Prüfergebnis.
+
+## 14.2 Zusätzliche Dateien
+
+Erstelle soweit erforderlich:
+
+`01_COMPLETE_CHAT_CHRONOLOGY.md`  
+Chronologische Rekonstruktion der gesamten zugänglichen Unterhaltung.
+
+`02_REQUIREMENTS_REGISTER.md`  
+Sämtliche Anforderungen, Änderungen und Erfüllungsstände.
+
+`03_DECISION_REGISTER.md`  
+Entscheidungen, Alternativen, Begründungen und Gültigkeitsstände.
+
+`04_AGENT_WORK_REGISTER.md`  
+Gesamte dokumentierte Arbeitsleistung des bisherigen KI-Agenten und aller externen Agenten.
+
+`05_PROMPTS_AND_TASKS.md`  
+Vollständige Arbeitsaufträge einschließlich ihrer ursprünglichen Anforderungen und Ergebnisse.
+
+`06_TECHNICAL_PROJECT_STATE.md`  
+Projektarchitektur, Quellstände, Module, Dateien, Implementierungen und Abhängigkeiten.
+
+`07_CHANGES_AND_IMPLEMENTATIONS.md`  
+Rekonstruierter technischer Änderungsverlauf.
+
+`08_TESTS_AND_VERIFICATION.md`  
+Prüfungen, Tests, CI-Ergebnisse, Nachweise und Einschränkungen.
+
+`09_ISSUES_RISKS_AND_CONTRADICTIONS.md`  
+Probleme, Widersprüche, technische Risiken und Informationslücken.
+
+`10_OPEN_WORK_AND_ROADMAP.md`  
+Offene Aufgaben, Abhängigkeiten, Prioritäten und Fortsetzungsplanung.
+
+`11_SOURCE_AND_ARTIFACT_INDEX.md`  
+Vollständiges Verzeichnis der untersuchten Quellen und technischen Artefakte.
+
+`12_HANDOVER_READINESS_REPORT.md`  
+Ergebnis der verbindlichen Übergabereifeprüfung.
+
+`13_NEXT_AGENT_STARTPROMPT.md`  
+Eigenständig verwendbarer Startprompt für den nachfolgenden KI-Agenten.
+
+`14_ORIGINAL_CHAT_TRANSCRIPT.md`  
+Unverändertes Originaltranskript, falls vollständig zugänglich und exportierbar.
+
+Für besonders umfangreiche Originalprompts dürfen zusätzliche Anlagen angelegt werden.
+
+Vermeide redundante Textkopien. Nutze eindeutige Referenzen und eine verbindliche Quelle pro Information.
+
+## 14.3 Dokumentenqualität
+
+Alle Dateien müssen:
+
+- Lesbar sein.
+- Vollständige Überschriften besitzen.
+- Klar strukturiert sein.
+- Eindeutige Referenzen enthalten.
+- Untereinander konsistent sein.
+- Auf aktuelle, verifizierte Quellen verweisen.
+- Nachweise und Annahmen trennen.
+- Ihren jeweiligen Bearbeitungsstand erkennen lassen.
+- Ohne Kenntnis des ursprünglichen Chats verständlich sein.
+
+Jede Anlage muss im Hauptdokument referenziert werden.
+
+---
+
+# 15. PHASE M – VERBINDLICHE ÜBERGABEREIFEPRÜFUNG
+
+**Diese Phase ist zwingend.**
+
+Eine bloße Erstellung der Übergabedokumente gilt nicht als erfolgreiche Übergabe.
+
+Du musst nach der Erstellung überprüfen, ob die gesamte Übergabemappe tatsächlich für einen anderen KI-Agenten verwendbar ist.
+
+Prüfe jeden nachfolgenden Qualitätsbereich.
+
+## GATE 1 – Quellenabdeckung
+
+Prüfe:
+
+- Sind alle zugänglichen Nutzernachrichten berücksichtigt?
+- Sind alle zugänglichen Assistentenantworten berücksichtigt?
+- Sind Werkzeugereignisse und Agentenberichte erfasst?
+- Sind alle relevanten Anhänge untersucht?
+- Sind erkennbare Kontextlücken dokumentiert?
+- Ist der Zeitraum der Untersuchung angegeben?
+- Ist zwischen vollständigem und eingeschränktem Quellenzugriff unterschieden?
+
+**Erfolgskriterium:** Der Umfang der tatsächlich ausgewerteten Quellen ist nachvollziehbar und vollständig dokumentiert.
+
+## GATE 2 – Vollständigkeit der Arbeitsrekonstruktion
+
+Prüfe:
+
+- Sind alle identifizierten Aufträge erfasst?
+- Sind die Arbeiten des ursprünglichen KI-Assistenten enthalten?
+- Sind delegierte Arbeiten berücksichtigt?
+- Sind Arbeitsergebnisse und Änderungen dokumentiert?
+- Sind Fehlversuche und Korrekturen enthalten?
+- Sind eigenständige Agentenaktionen erfasst?
+- Sind offene Aufgaben dokumentiert?
+
+**Erfolgskriterium:** Jede identifizierte relevante Arbeit ist im Arbeitsregister nachverfolgbar oder als Informationslücke gekennzeichnet.
+
+## GATE 3 – Anforderungen und Entscheidungen
+
+Prüfe:
+
+- Sind sämtliche identifizierten Anforderungen erfasst?
+- Sind Anforderungen ihren Quellen zugeordnet?
+- Sind Entscheidungen und Begründungen dokumentiert?
+- Sind spätere Änderungen nachvollziehbar?
+- Sind offene Entscheidungen gekennzeichnet?
+- Sind nicht genehmigte Vorschläge erkennbar?
+
+**Erfolgskriterium:** Der nächste Agent kann verbindliche Anforderungen eindeutig von Vorschlägen und Annahmen unterscheiden.
+
+## GATE 4 – Technische Nachvollziehbarkeit
+
+Prüfe:
+
+- Sind die technischen Projektinformationen vorhanden?
+- Sind relevante Dateien und Module identifiziert?
+- Sind gemeldete Implementierungen ihrem Nachweis zugeordnet?
+- Sind Versionen und Arbeitsstände unterscheidbar?
+- Sind Abhängigkeiten und Risiken dokumentiert?
+- Sind die Grenzen der technischen Verifikation sichtbar?
+
+**Erfolgskriterium:** Der nächste Agent kann den dokumentierten Projektstand anhand der angegebenen Quellen überprüfen.
+
+## GATE 5 – Nachweisqualität
+
+Prüfe:
+
+- Haben relevante Aussagen eindeutige Quellen?
+- Sind Abschlussmeldungen ausreichend belegt?
+- Sind Testresultate bestimmten Quellständen zugeordnet?
+- Sind ungeprüfte Aussagen erkennbar?
+- Sind Widersprüche dokumentiert?
+- Sind Quellenlücken offen ausgewiesen?
+
+**Erfolgskriterium:** Keine wesentliche ungeprüfte Behauptung wird als verifizierte Tatsache dargestellt.
+
+## GATE 6 – Dokumentationsvollständigkeit
+
+Prüfe:
+
+- Existieren alle erforderlichen Dateien?
+- Sind die Dateien vollständig geschrieben?
+- Gibt es leere Abschnitte?
+- Gibt es Platzhalter ohne Erläuterung?
+- Sind relevante Inhalte versehentlich abgeschnitten?
+- Sind alle Anlagen im Hauptdokument referenziert?
+- Sind interne Verweise gültig?
+- Sind alle Register konsistent?
+- Gibt es unbeabsichtigte Dopplungen?
+- Fehlen wichtige Originalprompts?
+- Sind die Dokumente lesbar und korrekt formatiert?
+
+**Erfolgskriterium:** Die Übergabemappe ist vollständig, zugänglich und intern konsistent.
+
+## GATE 7 – Tatsächliche Nutzbarkeit durch einen anderen Agenten
+
+Simuliere einen kritischen Empfänger, der keinerlei Kenntnis des ursprünglichen Chats besitzt.
+
+Prüfe, ob dieser anhand der Übergabe zuverlässig beantworten könnte:
+
+1. Was ist das Projekt?
+2. Was möchte der Nutzer erreichen?
+3. Welche Anforderungen gelten?
+4. Was wurde bisher gemacht?
+5. Warum wurde es so gemacht?
+6. Wer hat die Arbeiten ausgeführt?
+7. Was wurde tatsächlich verifiziert?
+8. Welche Dateien und Systeme sind betroffen?
+9. Welche Probleme existieren?
+10. Welche Aufgaben sind offen?
+11. Welche Regeln müssen eingehalten werden?
+12. Welche Aufgabe sollte als Nächstes bearbeitet werden?
+13. Welche vorherigen Aussagen müssen zunächst überprüft werden?
+14. Welche Aktionen erfordern eine neue Freigabe?
+
+**Erfolgskriterium:** Die Übergabe ermöglicht eine nachvollziehbare Fortsetzung ohne unbegründete Annahmen über frühere Arbeiten.
+
+## GATE 8 – Sicherheit und Datenintegrität
+
+Prüfe:
+
+- Enthalten die Dokumente Geheimnisse?
+- Werden private Daten unnötig übernommen?
+- Werden Zugangsdaten oder API-Schlüssel offengelegt?
+- Sind Sicherheitshinweise erhalten?
+- Sind erforderliche Freigaben dokumentiert?
+- Wurde das bestehende Projekt unverändert gelassen?
+- Sind sicherheitsrelevante offene Aufgaben erfasst?
+
+**Erfolgskriterium:** Die Übergabe führt keine neuen erkennbaren Sicherheits- oder Datenintegritätsrisiken ein.
+
+## GATE 9 – Wiederauffindbarkeit und Transportfähigkeit
+
+Prüfe:
+
+- Sind alle notwendigen Dateien eindeutig benannt?
+- Sind alle Anlagen vorhanden und zugänglich?
+- Sind relative Verweise innerhalb der Übergabemappe funktionsfähig?
+- Sind externe Dateien eindeutig referenziert?
+- Ist erkennbar, welche Quellen zusätzlich benötigt werden?
+- Sind nicht transportable lokale Pfade gekennzeichnet?
+- Kann die Übergabe in einer anderen Arbeitsumgebung gelesen werden?
+
+**Erfolgskriterium:** Der nächste Agent erhält entweder die benötigten Inhalte direkt oder nachvollziehbare Zugriffsinformationen und Hinweise auf fehlende Quellen.
+
+## GATE 10 – Konsistenter Gesamtabschluss
+
+Prüfe:
+
+- Stimmen Hauptdokument und Anlagen überein?
+- Stimmen Aufgabenregister und Statusübersichten überein?
+- Stimmen technische Aussagen mit ihrer Evidenzklasse überein?
+- Sind bekannte Widersprüche dokumentiert?
+- Sind offene Aufgaben aus allen Teilregistern übernommen?
+- Enthält der Startprompt alle notwendigen Sicherheits- und Arbeitsgrenzen?
+- Ist der zuletzt belegte Projektstand eindeutig identifizierbar?
+
+**Erfolgskriterium:** Die gesamte Übergabe bildet einen konsistenten, nachvollziehbaren Arbeits- und Informationsstand.
+
+---
+
+# 16. PHASE N – FEHLERBEHEBUNG DER ÜBERGABEDOKUMENTATION
+
+Falls ein Qualitätsgate fehlschlägt, darfst du die Übergabe nicht einfach als erfolgreich bezeichnen.
+
+Gehe folgendermaßen vor:
+
+1. Erfasse den Mangel.
+2. Ermittle seine Ursache.
+3. Bestimme betroffene Dokumente.
+4. Korrigiere die Übergabedokumentation, soweit die erforderlichen Informationen tatsächlich verfügbar sind.
+5. Prüfe die Korrektur.
+6. Wiederhole betroffene Qualitätsgates.
+7. Aktualisiere den Gesamtstatus.
+
+Behebe dokumentarische Probleme selbstständig, soweit dies innerhalb des Auftrags möglich ist.
+
+Beispiele:
+
+- Fehlender Querverweis: ergänzen.
+- Nicht aufgenommenes Arbeitsergebnis: ergänzen.
+- Falsche Reihenfolge: korrigieren.
+- Unbelegte Behauptung: umklassifizieren.
+- Fehlende Originalreferenz: nachtragen, soweit vorhanden.
+- Widersprüchliche Statusangaben: anhand der Quellen klären.
+- Nicht verfügbare Quelle: als offene Quellenlücke dokumentieren.
+- Fehlende Freigabe: als Freigabebedarf kennzeichnen.
+
+**Wichtig:** Fehlende Nachweise dürfen niemals durch erfundene Inhalte ersetzt werden.
+
+Nicht behebbare Mängel bleiben offen und beeinflussen die Übergabereife.
+
+---
+
+# 17. VERBINDLICHE STATUSBEWERTUNG
+
+Bewerte jedes Qualitätsgate einzeln.
+
+Erlaubte Status:
+
+- **BESTANDEN:** Anforderung vollständig nachgewiesen erfüllt.
+- **TEILWEISE BESTANDEN:** Wesentliche Teile erfüllt, klar abgegrenzte Mängel bestehen.
+- **NICHT BESTANDEN:** Wesentliche Anforderungen fehlen oder widersprechen den Nachweisen.
+- **NICHT PRÜFBAR:** Benötigte Informationen oder Zugriffe fehlen.
+- **NICHT ANWENDBAR:** Gate ist für diesen konkreten Übergabefall sachlich nicht relevant; begründen.
+
+Erstelle daraus eine Gesamtbewertung.
+
+## Gesamtstatus A – ÜBERGABEBEREIT
+
+Nur zulässig, wenn:
+
+- Alle anwendbaren Qualitätsgates bestanden sind.
+- Die erforderlichen Dokumente vorhanden sind.
+- Keine kritischen Informationslücken bestehen.
+- Keine ungeklärten blockierenden Widersprüche bestehen.
+- Der nächste Agent den belegten Arbeitsstand nachvollziehen kann.
+- Der Startprompt vollständig verwendbar ist.
+- Relevante Quellen und Arbeitsartefakte zugänglich oder eindeutig referenziert sind.
+
+Die Übergabebereitschaft bezieht sich auf die Dokumentation und den rekonstruierbaren Arbeitsstand, nicht automatisch auf die technische Freigabe des Produkts.
+
+## Gesamtstatus B – BEDINGT ÜBERGABEBEREIT
+
+Zulässig, wenn:
+
+- Die vorhandenen Inhalte grundsätzlich eine sichere Fortsetzung ermöglichen.
+- Verbleibende Lücken eindeutig dokumentiert sind.
+- Der nächste Agent klare Anweisungen zur Nachprüfung erhält.
+- Keine unerkannte kritische Unsicherheit besteht.
+
+Nenne sämtliche Bedingungen, die vor weiteren Implementierungen erfüllt werden müssen.
+
+## Gesamtstatus C – NICHT ÜBERGABEBEREIT
+
+Zwingend, wenn:
+
+- Wesentliche Teile des Arbeitskontexts fehlen.
+- Relevante Arbeitsergebnisse nicht nachvollziehbar sind.
+- Kritische Widersprüche bestehen.
+- Erforderliche Dokumente fehlen.
+- Die Quellenlage eine sichere Fortsetzung nicht erlaubt.
+- Die Vollständigkeit nicht ausreichend beurteilt werden kann.
+- Sicherheitsrisiken eine Weitergabe verhindern.
+
+Nenne konkrete Maßnahmen zur Herstellung der Übergabereife.
+
+**Der Abschlussstatus darf niemals durch eine rein subjektive Einschätzung ersetzt werden.**
+
+---
+
+# 18. ÜBERGABEREIFE-BERICHT
+
+Erstelle:
+
+`12_HANDOVER_READINESS_REPORT.md`
+
+Der Bericht muss enthalten:
+
+## A. Prüfgegenstand
+
+- Projekt.
+- Untersuchter Chat.
+- Zugänglicher Zeitraum.
+- Quellenstand.
+- Geprüfte Arbeitsumgebung.
+- Relevante Versionsstände.
+- Verwendete Prüfmethoden.
+
+## B. Abdeckungskennzahlen
+
+Ermittle, soweit verfügbar:
+
+- Anzahl untersuchter Nutzernachrichten.
+- Anzahl untersuchter Assistentenantworten.
+- Anzahl erfasster Arbeitsaufträge.
+- Anzahl erfasster Agentenarbeiten.
+- Anzahl erfasster Anforderungen.
+- Anzahl erfasster Entscheidungen.
+- Anzahl dokumentierter Änderungen.
+- Anzahl technischer Prüfungen.
+- Anzahl offener Aufgaben.
+- Anzahl erkannter Informationslücken.
+- Anzahl offener Widersprüche.
+
+Keine erfundenen Zahlen oder unbelegten Vollständigkeitsquoten.
+
+## C. Gate-Ergebnisse
+
+| Gate | Status | Nachweis | Offener Mangel |
+|---|---|---|---|
+| Quellenabdeckung | | | |
+| Arbeitsrekonstruktion | | | |
+| Anforderungen | | | |
+| Technische Nachvollziehbarkeit | | | |
+| Nachweisqualität | | | |
+| Dokumentationsvollständigkeit | | | |
+| Nutzbarkeit | | | |
+| Sicherheit | | | |
+| Transportfähigkeit | | | |
+| Gesamtabschluss | | | |
+
+## D. Offene Mängel
+
+Für jeden Mangel:
+
+- Kennung.
+- Beschreibung.
+- Ursache.
+- Auswirkungen.
+- Kritikalität.
+- Erforderliche Maßnahme.
+- Zuständigkeit.
+- Status.
+
+## E. Ergebnis
+
+Dokumentiere:
+
+**GESAMTSTATUS:** ÜBERGABEBEREIT / BEDINGT ÜBERGABEBEREIT / NICHT ÜBERGABEBEREIT
+
+Begründe die Einstufung anhand der Ergebnisse.
+
+---
+
+# 19. EIGENSTÄNDIGER STARTPROMPT FÜR DEN NÄCHSTEN AGENTEN
+
+Erstelle:
+
+`13_NEXT_AGENT_STARTPROMPT.md`
+
+Dieser Prompt muss unmittelbar bei einem anderen KI-Agenten verwendbar sein.
+
+Er darf nicht voraussetzen, dass dieser Zugriff auf die ursprüngliche Unterhaltung hat.
+
+Er enthält:
+
+1. Rolle des neuen Agenten.
+2. Projektbeschreibung.
+3. Gesamtziel.
+4. Verbindliche Nutzeranforderungen.
+5. Maßgebliche Dokumentationsquellen.
+6. Aufbau der Übergabemappe.
+7. Zuletzt belegten Projektstand.
+8. Wesentliche technische Entscheidungen.
+9. Bekannte Implementierungen.
+10. Bekannte Fehler und Risiken.
+11. Offene Arbeiten.
+12. Prioritäten.
+13. Sicherheits- und Freigabegrenzen.
+14. Prüfpflichten vor Änderungen.
+15. Anweisungen zur Verifikation.
+16. Konkreten ersten Arbeitsauftrag.
+17. Erwartete Ergebnis- und Berichtsform.
+
+Der Startprompt muss den nächsten Agenten ausdrücklich verpflichten:
+
+- Zuerst die Übergabedokumentation zu lesen.
+- Die verfügbaren Quellen zu inventarisieren.
+- Die technische Ausgangslage zu verifizieren.
+- Dokumentierte Entscheidungen zu berücksichtigen.
+- Kritische offene Probleme zu überprüfen.
+- Nicht belegte Erfolgsmeldungen nicht ungeprüft zu übernehmen.
+- Keine ungefragten Änderungen vorzunehmen.
+- Vor Entwicklungsarbeiten den tatsächlichen Quellstand zu ermitteln.
+
+Wenn der Übergabestatus nicht „ÜBERGABEBEREIT“ lautet, muss der erste Arbeitsauftrag vorrangig die offenen Übergabeblocker behandeln.
+
+---
+
+# 20. GESONDERTE ÜBERPRÜFUNG AUF INFORMATIONSVERLUST
+
+Führe abschließend einen gezielten Vergleich zwischen Ausgangsmaterial und Übergabemappe durch.
+
+## 20.1 Prüfung ausgehend vom Originalverlauf
+
+Überprüfe für jede relevante identifizierte Nachricht:
+
+- Wurde ihr Inhalt berücksichtigt?
+- Wo ist er dokumentiert?
+- Wurde der ursprüngliche Sinn bewahrt?
+- Wurden Einschränkungen beibehalten?
+- Wurden Entscheidungen korrekt übernommen?
+- Sind technische Details erhalten?
+- Sind Folgeaufgaben erfasst?
+
+## 20.2 Prüfung ausgehend von den Ergebnissen
+
+Überprüfe für jedes relevante Arbeitsergebnis:
+
+- Wo wurde es beauftragt?
+- Welcher Agent hat es erzeugt?
+- Wo befindet es sich?
+- Ist es im Übergabedokument aufgeführt?
+- Sind Zweck und Bedeutung erklärt?
+- Sind seine Abhängigkeiten dokumentiert?
+- Ist sein Prüfstatus bekannt?
+
+## 20.3 Prüfung ausgehend von offenen Aufgaben
+
+Überprüfe:
+
+- Hat jede offene Aufgabe einen Ursprung?
+- Ist ihre Priorität nachvollziehbar?
+- Ist ihr Bearbeitungsstand bekannt?
+- Sind notwendige Voraussetzungen dokumentiert?
+- Sind Abnahmekriterien vorhanden?
+
+## 20.4 Ergebnis
+
+Erstelle einen Informationsverlustbericht mit:
+
+- Vollständig übernommenen Informationsbereichen.
+- Nur teilweise übernommenen Bereichen.
+- Nicht zugänglichen Originalinformationen.
+- Nicht rekonstruierbaren Arbeitsschritten.
+- Fehlenden Artefakten.
+- Erforderlichen Nachlieferungen.
+
+Es darf keine pauschale Aussage „100 % vollständig“ geben, wenn dafür keine ausreichende Grundlage besteht.
+
+---
+
+# 21. ABSCHLIESSENDE ÜBERGABEKONTROLLE
+
+Führe nach Erstellung und Prüfung aller Dokumente eine abschließende Gesamtkontrolle durch.
+
+Bestätige nicht lediglich, dass Dateien geschrieben wurden.
+
+Prüfe deren tatsächliche Inhalte.
+
+Kontrolliere insbesondere:
+
+- Alle vorgesehenen Dokumente existieren oder ihre begründete Nichtanwendbarkeit ist dokumentiert.
+- Alle erforderlichen Abschnitte sind vorhanden.
+- Alle wesentlichen Informationen sind eingetragen.
+- Alle Register sind konsistent.
+- Alle relevanten Querverweise funktionieren.
+- Alle relevanten Originalaufträge sind enthalten oder referenziert.
+- Alle offenen Arbeiten sind dokumentiert.
+- Alle bekannten Risiken sind aufgeführt.
+- Alle kritischen Aussagen haben angemessene Nachweise.
+- Alle Einschränkungen der Quellenabdeckung sind sichtbar.
+- Alle notwendigen Übergabeinformationen sind für den nächsten Agenten zugänglich.
+- Der Startprompt stimmt mit dem verifizierten beziehungsweise dokumentierten Projektstand überein.
+- Der Übergabereifebericht ist vollständig.
+- Der Gesamtstatus wird durch die Ergebnisse gestützt.
+
+Falls ein ZIP-Export der Übergabemappe in deiner Arbeitsumgebung möglich ist, erstelle zusätzlich:
+
+`AI_CONTEXT_HANDOVER.zip`
+
+Prüfe, dass das Archiv die vorgesehenen Dokumente enthält und lesbar ist.
+
+Ist dies technisch nicht möglich, gib die vorhandenen Dateien beziehungsweise ihren Inhalt direkt aus und kennzeichne fehlende Exportmöglichkeiten.
+
+---
+
+# 22. VERBINDLICHER ABSCHLUSSBERICHT
+
+Gib nach Abschluss eine verständliche Zusammenfassung aus.
+
+Verwende folgende Struktur:
+
+## 1. Untersuchter Umfang
+
+Welche Chatabschnitte, Quellen, Agentenarbeiten und Projektdateien wurden tatsächlich untersucht?
+
+## 2. Rekonstruierte Arbeit
+
+Welche Anforderungen, Entscheidungen, Arbeitsaufträge und Implementierungen wurden erfasst?
+
+## 3. Erstellte Übergabedokumente
+
+Welche Dateien wurden tatsächlich erstellt?
+
+Wo befinden sie sich?
+
+## 4. Verifikationsumfang
+
+Welche Aussagen, Dateien, Implementierungen und Tests wurden überprüft?
+
+Welche nicht?
+
+## 5. Informationslücken
+
+Welche Informationen konnten nicht rekonstruiert werden?
+
+## 6. Dokumentationsqualität
+
+Welche Fehler wurden entdeckt und behoben?
+
+Welche sind offen?
+
+## 7. Übergabereife
+
+Welchen Status hat die Übergabe?
+
+Welche Qualitätsgates wurden bestanden?
+
+Welche nicht?
+
+## 8. Offene Voraussetzungen
+
+Was muss vor einer sicheren Weiterentwicklung noch geschehen?
+
+## 9. Anweisung für den nächsten Agenten
+
+Welches Dokument soll dieser zuerst lesen?
+
+Welche Quellen benötigt er?
+
+Was muss er zuerst prüfen?
+
+## 10. Abschlussstatus
+
+Gib abschließend genau eine der folgenden Bewertungen aus:
+
+**ÜBERGABEBEREIT**
+
+**BEDINGT ÜBERGABEBEREIT**
+
+**NICHT ÜBERGABEBEREIT**
+
+Begründe deine Bewertung.
+
+---
+
+# 23. VERBINDLICHE ARBEITSANWEISUNG
+
+Beginne unmittelbar mit der Quelleninventur.
+
+Arbeite systematisch in dieser Reihenfolge:
+
+1. Quellen erfassen.
+2. Zugänglichkeit und Abdeckung prüfen.
+3. Gesamten verfügbaren Chatverlauf auswerten.
+4. Beide Kommunikationsseiten rekonstruieren.
+5. Die Arbeit des bisherigen KI-Chat-Partners erfassen.
+6. Delegierte KI-Arbeiten erfassen.
+7. Anforderungen und Entscheidungen extrahieren.
+8. Sämtliche Arbeitsaufträge rekonstruieren.
+9. Vorhandene technische Ergebnisse untersuchen.
+10. Tests und Nachweise auswerten.
+11. Widersprüche und Informationslücken ermitteln.
+12. Zuletzt belegten Projektstand rekonstruieren.
+13. Offene Arbeiten identifizieren.
+14. Vollständige Übergabemappe erstellen.
+15. Alle Dokumente auf Vollständigkeit prüfen.
+16. Qualitätsgates durchführen.
+17. Festgestellte Dokumentationsfehler korrigieren.
+18. Erforderliche Prüfungen wiederholen.
+19. Übergabereifebericht erstellen.
+20. Eigenständig verwendbaren Startprompt erstellen.
+21. Abschlussbericht mit begründetem Gesamtstatus ausgeben.
+
+Arbeite so vollständig, wie es die verfügbaren Quellen und Werkzeuge ermöglichen.
+
+Unterlasse keine wesentlichen Prüfungen nur zugunsten einer kürzeren Antwort.
+
+Wenn technische Kontext- oder Ausgabelimits eine vollständige Bearbeitung verhindern, priorisiere die Sicherung bereits ausgewerteter Informationen in überprüfbaren Dokumenten und dokumentiere den nicht bearbeiteten Rest.
+
+Kennzeichne Einschränkungen transparent.
+
+Stelle keine unnötigen Rückfragen und erfinde keine fehlenden Informationen.
+
+**Wichtig:**
+
+Diese Aufgabe gilt nicht bereits durch die Erstellung einer Zusammenfassung oder einiger Markdown-Dateien als abgeschlossen.
+
+Sie ist erst dann fachlich abgeschlossen, wenn:
+
+- Der zugängliche Informationsbestand systematisch ausgewertet wurde.
+- Die gesamte identifizierte relevante Arbeit dokumentiert wurde.
+- Die vorhandenen Ergebnisse und Nachweise angemessen bewertet wurden.
+- Die Übergabedokumentation inhaltlich überprüft wurde.
+- Die Übergabereife anhand der Qualitätsgates bewertet wurde.
+- Alle offenen Mängel transparent dokumentiert wurden.
+- Ein unmittelbar verwendbarer Startprompt für den nachfolgenden KI-Agenten vorliegt.
+
+**OBERSTES LEITPRINZIP:**
+
+Die Übergabe muss nicht nur den bisherigen Gesprächsverlauf beschreiben, sondern die gesamte zugängliche Projektarbeit, ihre Entstehung, Umsetzung, Begründung, Ergebnisse, Qualitätsnachweise, Probleme und Abhängigkeiten in einer nachvollziehbaren Gesamtstruktur erhalten.
+
+Der nächste KI-Agent soll die Arbeit fortsetzen können, ohne wichtige Hintergründe neu erraten, bereits bekannte Probleme erneut entdecken oder unbelegte Erfolgsmeldungen übernehmen zu müssen.
+
+**Beginne jetzt mit Phase A und führe sämtliche Phasen bis zur abschließenden Übergabereifeprüfung durch.**

@@ -1,0 +1,13 @@
+evidence_id,claim,class,source,status,observed_date
+EV-001,github_repo_public,G,GitHub get_repo,public,11.11.2026
+EV-002,main_merge_pr9,G,"GitHub commit 02f3776, PR9",merged,11.11.2026
+EV-003,phase51_commit_exists,G,"GitHub fe66637 commit, parent bb14fce",exists,11.11.2026
+EV-004,python_matrix_config,G,GitHub python-tests.yml,3.11+3.12,11.11.2026
+EV-005,python_matrix_success,G,GitHub actions 43097534590,NOT_CONFIRMED_QUEUED,11.11.2026
+EV-006,phase51_115_local_tests,U/G report,PHASE5_1_COMPLETION_REPORT.md,REPORTED_NOT_REEXECUTED,11.11.2026
+EV-007,knowledge_97_relations,U/G diff,"bb14fce diff, +3",REPORTED_BASELINE,11.11.2026
+EV-008,historic_33_security_hits,U,Phase4.17 report,OPEN_OWNER_GATE,11.11.2026
+EV-009,inventoried_3947,U/G report,14_ABSCHLUSSBERICHT.md,NOT_RECOUNTED,11.11.2026
+EV-010,sources_1895,U/G report,MUSIC_SOURCE_REVIEW_PROGRESS.csv claim in report,344_FULL_26_PARTIAL_1525_METADATA,11.11.2026
+EV-011,golden_198,U/G report,4.17/4.18 report,67_EXECUTABLE_131_SPEC,11.11.2026
+EV-012,phase51_merged_current,G,GitHub main ref + merge sha,main_02f3776,11.11.2026

@@ -1,0 +1,21 @@
+item,status,evidence_class,finding,limitation
+Git Integration PR #9,confirmed,G,02f3776 main merged fe66637 via PR #9,not a code correctness proof
+Local active branch,compatible_not_same_point,U/G,V2 fe66637 local; main 02f3776,worktrees not independently read
+File inventory 4025,requires_reconciliation,U,V2 local 4025; earlier local 3947; Git tracked 3975,scope and original inventory missing
+Glide legacy 1580,verified_git_tracked,G,1580 tracked blobs under src/glide-v3.53,local file count may differ
+STEPS product code 25,unresolved,U/G,V2 25 vs Git tracked src/steps 14 total,different definition or local files possible
+No Tk/Glide imports,verified_static_limited,G,13 .py files static import checks,not dynamic/transitive proof
+M01-M12 GATE PASSED,reported,U,V2 gate declaration,gate logs unavailable
+Progressions 28,consistent_reported,U/G,canonical/engine reports and code paths,no independent exhaustive theory test
+Golden 198 split,consistent_reported,U/G,67 calculations + 131 specifications,not 198 test methods
+115 tests,reported_no_independent_run,U/G,31+12+28+15+4+25=115; workflow exists,queued CI on queried runs
+66 claims verified,reported,U/G,claim register exists,original sources not exhaustively read
+37 fixed errors,reported,U,ERR-001..037,full independent regression not run
+12 ADR proposed,verified_repo,G,12 entries in decisions/DECISION_REGISTER.md,owner may have private signatures not accessible
+OA 33 statuses,requires_reconciliation,U/G,V2 2/1/6/24; repo snapshot 1/1/5/26,noncanonical snapshot older than local V2
+Root README drift,verified_repo,G,README date 2026-11-10; omits Phase 5.1 headless progress,lack of GUI may make old no-app statement still true
+Public repo,verified_repo,G,repository visibility=public,history remediation unresolved
+Secrets quarantine,incomplete_remediation,U/G,33 reported historical findings; guardrails,cannot assert history cleaned
+Rights OA-0001,open_owner_gate,U,copyrighted archives/blob risks,no remediation logs
+ISO 25010 percentages,not_auditable,U/W,"V2 7 percentages, 2023 norm 9 characteristics","method, weights, measurement missing"
+Phase 5.2 approval,conditional,U/D,headless can continue with technical entry gates,does not allow GUI or public release
