@@ -1,0 +1,162 @@
+{
+  "title": "OpenAI Steps Bericht",
+  "created": "2026-11-11",
+  "updated": "2026-11-11 Master-Audit V2 Vergleich",
+  "scope": "STEPS through Phase 5.1 and Antigravity Master-Audit V2 reported 2026-11-11",
+  "readiness": "BEDINGT ÜBERGABEBEREIT",
+  "git_snapshot_main": "02f3776b24be52e3f00a973b3ad50f82d95e4abd",
+  "git_snapshot_phase51": "fe6663747250bf73ff28f4b7c591e8cf42f799d0",
+  "source_limitations": "Original Antigravity MasterAuditV2 ZIP / 17 audit files, full old chats, local Windows audit folders, independent full test execution not available",
+  "files": [
+    {
+      "path": "AI_CONTEXT_HANDOVER/00_PROJECT_CONTEXT_HANDOVER.md",
+      "size_bytes": 4609,
+      "sha256": "6d9578f44343fd540c005a9b0d33cacdd0746f468b5af4fd60d549a9211e93bc"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/01_COMPLETE_CHAT_CHRONOLOGY.md",
+      "size_bytes": 5873,
+      "sha256": "295b338ccbf3bc82616092ca21ae36a2adde85c1972804d103869b181f155e95"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/02_REQUIREMENTS_REGISTER.md",
+      "size_bytes": 4621,
+      "sha256": "3bfaac0c598a0924559ff4eb523847c7fcd462fb89cbe8ea186c5c2ab4bec27e"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/03_DECISION_REGISTER.md",
+      "size_bytes": 3325,
+      "sha256": "1b8174bc4fd3852e69b524d2631c69cce7903436aa312af79a0aff9da35aa444"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/04_AGENT_WORK_REGISTER.md",
+      "size_bytes": 3627,
+      "sha256": "cb38bd97c5a203a7287507aae6c8eac3674d0545e150d3c3dd5ec107270e9056"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/05_PROMPTS_AND_TASKS.md",
+      "size_bytes": 4887,
+      "sha256": "b4ecf00de0833c22d941a7a648424612edcf43b8ddb3115a874b83929bdc669a"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/06_TECHNICAL_PROJECT_STATE.md",
+      "size_bytes": 4090,
+      "sha256": "f396e09729aaf45fdbc3e088a3f2bd569feea56a0fa556cdf17eb787195cedc3"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/07_CHANGES_AND_IMPLEMENTATIONS.md",
+      "size_bytes": 2269,
+      "sha256": "78afe685bb10552de1a15ccbad53842d4947591bb1a31a76cbd205b6c203f3fc"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/08_TESTS_AND_VERIFICATION.md",
+      "size_bytes": 4679,
+      "sha256": "800b70383feb697b65b0013e2cdaabb669d96b871c88b4e691ee5a9512b98e3a"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/09_ISSUES_RISKS_AND_CONTRADICTIONS.md",
+      "size_bytes": 4250,
+      "sha256": "f3b2fd5f337fdd92ef8d6de25df488ad8a5f2f13f26bd85ea6d05540ad294cf0"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/10_OPEN_WORK_AND_ROADMAP.md",
+      "size_bytes": 3536,
+      "sha256": "431fe304752261312b9c40dfc0aa76518d4c474aad88cca370380c97048db18b"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/11_SOURCE_AND_ARTIFACT_INDEX.md",
+      "size_bytes": 6910,
+      "sha256": "ab60b49340bd3e6c65dda510592b0aa8a463868028a77658cf7374d04ef0598e"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/12_HANDOVER_READINESS_REPORT.md",
+      "size_bytes": 4384,
+      "sha256": "aa22c9d1694b2b523c4df20f2ec0d179b366a342a95a58b669fdf39e51f78f7b"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/13_NEXT_AGENT_STARTPROMPT.md",
+      "size_bytes": 4550,
+      "sha256": "b60e13342e2c5f0b77f893111f6f13f3a5228a554e0394311b540870117f0674"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/14_ORIGINAL_CHAT_TRANSCRIPT_STATUS.md",
+      "size_bytes": 1887,
+      "sha256": "933c4431c67e2162189df78e6a4623192a5c8bccf5c0a9276e0b9d0d6983aac9"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/15_KNOWLEDGE_ONTOLOGY_AND_CURATION.md",
+      "size_bytes": 2749,
+      "sha256": "a431aec74630ee59d78bf742e070e7b73abd0f48e5dc6bdf4214d81d8d85dc0d"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/16_SECURITY_RIGHTS_AND_RELEASE_GATES.md",
+      "size_bytes": 2323,
+      "sha256": "ff2a1c2ebeb395720b8b4d01ea067ac41f3c996ba007db35037c6b81934aa9f1"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/17_GITHUB_VERIFICATION_SNAPSHOT.md",
+      "size_bytes": 2582,
+      "sha256": "eb596645b9bbfdd5a832b2321eb49a83376c3dc2d8e647a2ef793170202e769f"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/18_ASSISTANT_CONTRIBUTIONS_AND_METHOD.md",
+      "size_bytes": 2877,
+      "sha256": "83dd8fb3f4586f513b52d06d7f65afead0ff89d647fb5b87ab0b59596532a67d"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/19_QUALITY_ASSURANCE_CHECKLIST.md",
+      "size_bytes": 2171,
+      "sha256": "8b03cb1787b1d1445ad968133c32bc77fa74ed01a08d4185f8f24fde5516e089"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/20_EVIDENCE_MATRIX.csv",
+      "size_bytes": 1097,
+      "sha256": "16e660d22733c60309e15a7a1db7ff85f6ae01b40d3f723d87a06702fb9335fe"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/21_PHASE_REPORTS_DETAILED.md",
+      "size_bytes": 9886,
+      "sha256": "b67f8cb8d5a93623724b79636343848298446f960af479f08a27b08d4c757b74"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/22_OWNER_DECISION_BRIEF.md",
+      "size_bytes": 2452,
+      "sha256": "4f365cd9023c3fb64efc015e8240d41318a5666435f1229c50748ecc2bcf714d"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/23_ANTIGRAVITY_MASTERAUDIT_V2_ABGLEICH.md",
+      "size_bytes": 14605,
+      "sha256": "323b0ac3e573610d56f3716a3982e0191cefa683b13ded7e78f1548eaff595ed"
+    },
+    {
+      "path": "AI_CONTEXT_HANDOVER/24_MASTER_AUDIT_V2_EVIDENCE_MATRIX.csv",
+      "size_bytes": 2256,
+      "sha256": "c93f4b35d7f609b5dc76cae5ab6396e04cc611bef07d6b5b17e884ac29424a2a"
+    },
+    {
+      "path": "OpenAI Steps Bericht.md",
+      "size_bytes": 16129,
+      "sha256": "3d71640277ac4f0c3e2a564f8c0d82ae2e7884146432ea24ebcfdd39d4e4b102"
+    },
+    {
+      "path": "OpenAI%20Steps%20Bericht.md",
+      "size_bytes": 16129,
+      "sha256": "3d71640277ac4f0c3e2a564f8c0d82ae2e7884146432ea24ebcfdd39d4e4b102"
+    },
+    {
+      "path": "QUELLEN/MASTER_PROMPT_ORIGINAL_UPLOAD.txt",
+      "size_bytes": 47858,
+      "sha256": "ab767405bf678058c81890d6e5cdc97c1341650c50a59500c6db7382a02c84c4"
+    },
+    {
+      "path": "QUELLEN/README.md",
+      "size_bytes": 542,
+      "sha256": "ca0d8b6c8b5059be65043115eb584f40092fd6c205b15ab75411e703d278a32f"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 3737,
+      "sha256": "d74fbf5dcd01fb1855492a3696c6ed428d74731ec8571f44569246df2456028f"
+    }
+  ]
+}

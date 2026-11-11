@@ -1,8 +1,18 @@
-# Historisches Projektpaket und Ursprungsbewertungen
+# STEPS – Historisches Projekt- und Dokumentenarchiv
 
-- `ORIGINAL_V1_Projektpaket_2026-11-10.zip`: **unveränderte** ZIP-Datei der früheren 66-Dateien-Fassung; sie bleibt für direkten Diff/Erhalt der früheren Behauptungen verfügbar. **Nicht automatisch in einen öffentlichen Repository-Branch einspielen**; darin sind hochgeladene Nutzertexte/Code enthalten.
-- `v1_prompts/`: 24 unveränderte damalige Markdown-Prompts, als schnell vergleichbare Einzeldateien.
-- `v1_docs/`: ausgewählte V1-Kerndokumente als direkte historische Kopien.
-- `../source_archive/`: sämtliche sieben ursprünglichen Upload-Dateien plus Screenshot in unveränderter Ausführung.
+Dieses Verzeichnis enthält alle historisch gewordenen, durch neuere Versionen ersetzten oder abgeschlossenen Dokumentationen, Forschungsunterlagen, Auditpakete und Agentenberichte des STEPS-Projekts.
 
-Die aktiven Dokumente verwenden den später überprüften Glide-`main`-Stand `9e767bea`; die archivierten Texte können frühere `main=3.50.7`-Aussagen enthalten. Sie dürfen nicht stillschweigend als aktueller Produkt-/Release-/QA-Status behandelt werden.
+## 1. Verzeichnisstruktur
+
+* **`manifests/`:** Lückenlose Nachweise aller Archivierungen (`ARCHIVE_MANIFEST.csv`, `ARCHIVE_PLAN.csv`, `ARCHIVE_ACTION_LOG.md`, `ARCHIVE_RESTORE_GUIDE.md`).
+* **`project-history/`:** Frühere Planungsunterlagen, Arbeitsrichtlinien, Bootstrapskripte und Architekturkonzepte.
+* **`documentation-history/`:** Frühere Dokumentversionen (z.B. historische `README_v1`) und abgelöste Spezifikationen.
+* **`audit-history/`:** Frühere Gesamtrevisionen, Auditpakete (Phase 1, Phase 2, V4-Prüfungen) und Testberichte.
+* **`agent-history/`:** Vollständige Berichte und Übergabedossiers beteiligter KI-Agenten (`antigravity/`, `openai/`, `handovers/`).
+* **`legacy/`:** Frühe unveränderte Originalstrukturen (`v1_docs/`, `v1_prompts/`).
+
+## 2. Nutzungsregeln
+
+1. **Preservation-First:** Dateien in diesem Verzeichnis dienen ausschließlich der Dokumentation, Revision und Nachvollziehbarkeit. Sie werden nicht gelöscht.
+2. **Keine aktive Verwendung:** Inhalte im Archiv stellen **nicht** den aktuellen Produkt-, Release- oder Architekturstand dar. Verbindliche aktive Spezifikationen befinden sich in `docs/` und `src/steps/`.
+3. **Reversibilität:** Alle Verschiebungen sind in `manifests/ARCHIVE_MANIFEST.csv` protokolliert und können bei Bedarf anhand von `manifests/ARCHIVE_RESTORE_GUIDE.md` exakt an ihren ursprünglichen Pfad zurückgeführt werden.
