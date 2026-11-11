@@ -36,7 +36,7 @@ TEST_FIXTURE_FILES = {
 }
 
 def normalize_path(path_str):
-    p = path_str.replace('\\\\', '/').replace('\\', '/')
+    p = path_str.replace(chr(92), '/')
     while p.startswith('./') or p.startswith('/'):
         if p.startswith('./'):
             p = p[2:]
