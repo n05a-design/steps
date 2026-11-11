@@ -7,7 +7,7 @@
 
 ---
 
-## 1. Systematische Übersicht aller 29 Grooves
+## 1. Systematische Übersicht aller 31 Grooves
 
 | ID | Genre / Stil | Typisches Tempo | Metrum & Feel | Kick-Charakteristik | Snare / Backbeat | Hi-Hat / Becken |
 |---|---|---|---|---|---|---|

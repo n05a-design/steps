@@ -26,12 +26,12 @@
 | `PROG-013` | Tritone Substitution Cadence | `ii^7 - bII^7 - I^maj7` | `Dm7 - Db7 - Cmaj7` | Modern Jazz, Bebop | Levine (1995) |
 | `PROG-014` | Backdoor Resolution (IV) | `IV - bVII^7 - I` | `F - Bb7 - C` | R&B, Pop, Soul | Terefenko (2014) |
 | `PROG-015` | Royal Road (Ōdō shinkō) | `IV^maj7 - V^7 - iii^7 - vi` | `Fmaj7 - G7 - Em7 - Am` | J-Pop, Anime, Fusion | Jaffe (1996) |
-| `PROG-016` | Coltrane Changes (3-Tonic Cycle) | `B - D7 - G - Bb7 - Eb` (Var: `C - Eb7 - Ab - B7 - E - G7 - C`) | Modern Jazz Matrix (Großterzteilung in Z12) | Cohn (2012), Tymoczko (2011) |
+| `PROG-016` | Coltrane Changes (3-Tonic Cycle) | `I^maj7 - V^7/bVI - bVI^maj7 - V^7/III - III^maj7` | `B - D7 - G - Bb7 - Eb` (Var: `C - Eb7 - Ab - B7 - E - G7 - C`) | Modern Jazz Matrix (Großterzteilung in Z12) | Cohn (2012), Tymoczko (2011) |
 | `PROG-017` | Classical Jazz Backdoor ii–V | `iv^7 - bVII^7 - I^maj7` | `Fm7 - Bb7 - Cmaj7` | Jazz-Standards (*Lady Bird*, *Yardbird*) | Levine (1995), Terefenko (2014) |
 | `PROG-018` | Substitute Backdoor ii–V | `ii^7 - bVII^7 - I^maj7` | `Dm7 - Bb7 - Cmaj7` | Cool Jazz, West Coast | Rawlins/Bahha (2005) |
 | `PROG-019` | Minor Line Cliché | `i - i^(maj7) - i^7 - i^6` | `Am - Am(maj7) - Am7 - Am6` | Bossa Nova, Spy Film, Ballade | Levine (1995) |
 | `PROG-020` | Extended Tritone Sub (Altered) | `ii^9 - bII^7(alt) - I^maj9` | `Dm9 - Db7(#9,#11) - Cmaj9` | Contemporary Jazz | Levine (1995), Pease (2003) |
-| `PROG-021` | Neo-Soul Rootless Minor Cycle | `i^9 - iv^9 - bVII^9 - III^maj9` | `Em9 - Am9 - D9 - Gmaj9` | Neo-Soul, R&B, Lo-Fi | Mulholland (2013) |
+| `PROG-021` | Neo-Soul Rootless Minor Cycle | `i^9 - iv^9 - bVI^maj9 - V^7(b9)` | `Dm9 - Gm9 - Bbmaj9 - A7(b9)` | Neo-Soul, R&B, Lo-Fi | Mulholland (2013) |
 | `PROG-022` | Picardy Third Resolution | `i - iv - bVII - I` | `Dm - Gm - C - D` | Barock, Renaissance, Folk | Aldwell/Schachter (1989) |
 | `PROG-023` | Liquid D&B Sub-Pulse Cadence | `i^7 - bVI^maj7 - bVII - i` | `Fm7 - Dbmaj7 - Eb - Fm` | Drum & Bass, UK Bass | Butterfield (2010) |
 | `PROG-024` | Bossa Nova Applied Dominant | `I^maj7 - V^7/V - ii^7 - V^7 - I^maj7` | `Cmaj7 - D7 - Dm7 - G7 - Cmaj7` | Bossa Nova (*Girl from Ipanema*) | Mauleón (1993), Jobim (1962) |

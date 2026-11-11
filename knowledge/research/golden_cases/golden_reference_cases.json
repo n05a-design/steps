@@ -2,6 +2,1605 @@
   {
     "case_id": "REF-0001",
     "domain": "M01",
+    "category": "PITCH_CLASS",
+    "test_class": "UNIT_TEST",
+    "title": "Pitch-Class C4 (MIDI 60)",
+    "input_params": {
+      "midi_note": 60
+    },
+    "expected_output": 0,
+    "tolerance": 0.0,
+    "theoretical_rule": "60 mod 12 == 0 (C) / 69 mod 12 == 9 (A)",
+    "source_citation": "M01-06; MIDI 1.0 Spec"
+  },
+  {
+    "case_id": "REF-0002",
+    "domain": "M01",
+    "category": "PITCH_CLASS",
+    "test_class": "UNIT_TEST",
+    "title": "Pitch-Class A4 (MIDI 69)",
+    "input_params": {
+      "midi_note": 69
+    },
+    "expected_output": 9,
+    "tolerance": 0.0,
+    "theoretical_rule": "60 mod 12 == 0 (C) / 69 mod 12 == 9 (A)",
+    "source_citation": "M01-02; ISO 16"
+  },
+  {
+    "case_id": "REF-0003",
+    "domain": "M02",
+    "category": "ENHARMONICS",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Enharmonik C# vs Db (12-TET)",
+    "input_params": {
+      "concept": "Enharmonik C# vs Db (12-TET)",
+      "input_case": "Enharmonik C# vs Db (12-TET)"
+    },
+    "expected_output": "Pitch-Class 1",
+    "tolerance": 0.0,
+    "theoretical_rule": "12-TET Enharmonik vs Diatonische Orthographie",
+    "source_citation": "M01-04; 12-TET Standard"
+  },
+  {
+    "case_id": "REF-0004",
+    "domain": "M02",
+    "category": "ENHARMONICS",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Diatonische Identität C# in D-Dur",
+    "input_params": {
+      "concept": "Diatonische Identität C# in D-Dur",
+      "input_case": "Diatonische Identität C# in D-Dur"
+    },
+    "expected_output": "7. Stufe (Leitton)",
+    "tolerance": 0.0,
+    "theoretical_rule": "12-TET Enharmonik vs Diatonische Orthographie",
+    "source_citation": "M02-05; Aldwell & Schachter"
+  },
+  {
+    "case_id": "REF-0005",
+    "domain": "M02",
+    "category": "ENHARMONICS",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Diatonische Identität Db in D-Dur (Skala)",
+    "input_params": {
+      "concept": "Diatonische Identität Db in D-Dur (Skala)",
+      "input_case": "Diatonische Identität Db in D-Dur (Skala)"
+    },
+    "expected_output": "Semantische Warnung (Nicht-Diatonisch)",
+    "tolerance": 0.0,
+    "theoretical_rule": "12-TET Enharmonik vs Diatonische Orthographie",
+    "source_citation": "ERR-004; Kostka & Payne"
+  },
+  {
+    "case_id": "REF-0006",
+    "domain": "M02",
+    "category": "NOTE_NAMING",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Notenbezeichnung H (Deutsch)",
+    "input_params": {
+      "concept": "Notenbezeichnung H (Deutsch)",
+      "input_case": "Notenbezeichnung H (Deutsch)"
+    },
+    "expected_output": "Pitch-Class 11 (MIDI 71)",
+    "tolerance": 0.0,
+    "theoretical_rule": "12-TET Enharmonik vs Diatonische Orthographie",
+    "source_citation": "ERR-001; DIN 1317-1"
+  },
+  {
+    "case_id": "REF-0007",
+    "domain": "M02",
+    "category": "NOTE_NAMING",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Notenbezeichnung B (Deutsch)",
+    "input_params": {
+      "concept": "Notenbezeichnung B (Deutsch)",
+      "input_case": "Notenbezeichnung B (Deutsch)"
+    },
+    "expected_output": "Pitch-Class 10 (MIDI 70)",
+    "tolerance": 0.0,
+    "theoretical_rule": "12-TET Enharmonik vs Diatonische Orthographie",
+    "source_citation": "ERR-001; DIN 1317-1"
+  },
+  {
+    "case_id": "REF-0008",
+    "domain": "M02",
+    "category": "NOTE_NAMING",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Notenbezeichnung B (International)",
+    "input_params": {
+      "concept": "Notenbezeichnung B (International)",
+      "input_case": "Notenbezeichnung B (International)"
+    },
+    "expected_output": "Pitch-Class 11 (MIDI 71)",
+    "tolerance": 0.0,
+    "theoretical_rule": "12-TET Enharmonik vs Diatonische Orthographie",
+    "source_citation": "ERR-001; MusicXML 4.0 DTD"
+  },
+  {
+    "case_id": "REF-0009",
+    "domain": "M02",
+    "category": "NOTE_NAMING",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Notenbezeichnung Bb (International)",
+    "input_params": {
+      "concept": "Notenbezeichnung Bb (International)",
+      "input_case": "Notenbezeichnung Bb (International)"
+    },
+    "expected_output": "Pitch-Class 10 (MIDI 70)",
+    "tolerance": 0.0,
+    "theoretical_rule": "12-TET Enharmonik vs Diatonische Orthographie",
+    "source_citation": "ERR-001; MusicXML 4.0 DTD"
+  },
+  {
+    "case_id": "REF-0010",
+    "domain": "M03",
+    "category": "INTERVALS",
+    "test_class": "UNIT_TEST",
+    "title": "Intervall C4 bis E4",
+    "input_params": {
+      "note1": 60,
+      "note2": 64
+    },
+    "expected_output": 4,
+    "tolerance": 0.0,
+    "theoretical_rule": "Intervallabstand in Halbtönen (64-60=4 / 63-60=3)",
+    "source_citation": "M03-01; Open Music Theory 2"
+  },
+  {
+    "case_id": "REF-0011",
+    "domain": "M03",
+    "category": "INTERVALS",
+    "test_class": "UNIT_TEST",
+    "title": "Intervall C4 bis Eb4",
+    "input_params": {
+      "note1": 60,
+      "note2": 63
+    },
+    "expected_output": 3,
+    "tolerance": 0.0,
+    "theoretical_rule": "Intervallabstand in Halbtönen (64-60=4 / 63-60=3)",
+    "source_citation": "M03-01; Open Music Theory 2"
+  },
+  {
+    "case_id": "REF-0012",
+    "domain": "M04",
+    "category": "CHORDS",
+    "test_class": "UNIT_TEST",
+    "title": "Dreiklang C-Dur [C, E, G]",
+    "input_params": {
+      "root": "C",
+      "quality": "Major"
+    },
+    "expected_output": [
+      0,
+      4,
+      7
+    ],
+    "tolerance": 0.0,
+    "theoretical_rule": "Dreiklangskonstruktion und Inversion",
+    "source_citation": "M04-01; Spencer Practice of Harmony"
+  },
+  {
+    "case_id": "REF-0013",
+    "domain": "M04",
+    "category": "CHORDS",
+    "test_class": "UNIT_TEST",
+    "title": "Dreiklang C-Moll [C, Eb, G]",
+    "input_params": {
+      "root": "C",
+      "quality": "Minor"
+    },
+    "expected_output": [
+      0,
+      3,
+      7
+    ],
+    "tolerance": 0.0,
+    "theoretical_rule": "Dreiklangskonstruktion und Inversion",
+    "source_citation": "M04-01; Spencer Practice of Harmony"
+  },
+  {
+    "case_id": "REF-0014",
+    "domain": "M04",
+    "category": "CHORDS",
+    "test_class": "UNIT_TEST",
+    "title": "Akkord C/E (1. Umkehrung)",
+    "input_params": {
+      "root": "C",
+      "quality": "Minor"
+    },
+    "expected_output": "Bass E, Töne [E, G, C]",
+    "tolerance": 0.0,
+    "theoretical_rule": "Dreiklangskonstruktion und Inversion",
+    "source_citation": "M04-02; Aldwell & Schachter"
+  },
+  {
+    "case_id": "REF-0015",
+    "domain": "M04",
+    "category": "CHORDS",
+    "test_class": "UNIT_TEST",
+    "title": "Akkord C/G (2. Umkehrung)",
+    "input_params": {
+      "root": "C",
+      "quality": "Minor"
+    },
+    "expected_output": "Bass G, Töne [G, C, E]",
+    "tolerance": 0.0,
+    "theoretical_rule": "Dreiklangskonstruktion und Inversion",
+    "source_citation": "M04-02; Aldwell & Schachter"
+  },
+  {
+    "case_id": "REF-0016",
+    "domain": "M04",
+    "category": "CHORDS",
+    "test_class": "UNIT_TEST",
+    "title": "Polychord D/C",
+    "input_params": {
+      "root": "C",
+      "quality": "Minor"
+    },
+    "expected_output": "Dreiklang D über Dreiklang C [C, E, G, D, F#, A]",
+    "tolerance": 0.0,
+    "theoretical_rule": "Dreiklangskonstruktion und Inversion",
+    "source_citation": "M04-09; Persichetti 20th Century Harmony"
+  },
+  {
+    "case_id": "REF-0017",
+    "domain": "M05",
+    "category": "CADENCE",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Authentische Kadenz V -> I in C",
+    "input_params": {
+      "key": "C",
+      "progression": "V -> I"
+    },
+    "expected_output": "G7 -> C",
+    "tolerance": 0.0,
+    "theoretical_rule": "Klassische Kadenzstufen Aldwell/Schachter",
+    "source_citation": "M05-03; Riemann Funktionstheorie"
+  },
+  {
+    "case_id": "REF-0018",
+    "domain": "M05",
+    "category": "CADENCE",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Trugschluss V -> vi in C",
+    "input_params": {
+      "key": "C",
+      "progression": "V -> vi"
+    },
+    "expected_output": "G -> Am",
+    "tolerance": 0.0,
+    "theoretical_rule": "Klassische Kadenzstufen Aldwell/Schachter",
+    "source_citation": "M05-03; Hindemith Traditional Harmony"
+  },
+  {
+    "case_id": "REF-0019",
+    "domain": "M06",
+    "category": "VOICE_LEADING",
+    "test_class": "UNIT_TEST",
+    "title": "Voice-Leading C-Dur nach G-Dur (eng)",
+    "input_params": {
+      "chord1": [
+        7,
+        0,
+        4
+      ],
+      "chord2": [
+        7,
+        11,
+        2
+      ]
+    },
+    "expected_output": 3,
+    "tolerance": 0.0,
+    "theoretical_rule": "L1 minimale Stimmführungsdistanz C->G in Z12",
+    "source_citation": "M06-04; Tymoczko Geometry of Music"
+  },
+  {
+    "case_id": "REF-0020",
+    "domain": "M07",
+    "category": "RHYTHM_SWING",
+    "test_class": "UNIT_TEST",
+    "title": "Straight 8tel Swing-Ratio",
+    "input_params": {
+      "swing_type": "Straight"
+    },
+    "expected_output": 1.0,
+    "tolerance": 0.05,
+    "theoretical_rule": "Swing Ratio nach Friberg & Sundström",
+    "source_citation": "M07-04; SMF 1.0 Spec"
+  },
+  {
+    "case_id": "REF-0021",
+    "domain": "M07",
+    "category": "RHYTHM_SWING",
+    "test_class": "UNIT_TEST",
+    "title": "Triolen-Swing Ratio",
+    "input_params": {
+      "swing_type": "Triplet"
+    },
+    "expected_output": 2.0,
+    "tolerance": 0.05,
+    "theoretical_rule": "Swing Ratio nach Friberg & Sundström",
+    "source_citation": "M07-04; SMF 1.0 Spec"
+  },
+  {
+    "case_id": "REF-0022",
+    "domain": "M08",
+    "category": "DRUM_MAPPING",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "General MIDI Kick Drum",
+    "input_params": {
+      "instrument": "General MIDI Kick Drum"
+    },
+    "expected_output": 36,
+    "tolerance": 0.0,
+    "theoretical_rule": "General MIDI 1.0 Standard Percussion Key Map",
+    "source_citation": "M08-02; MIDI Association GM 1.0"
+  },
+  {
+    "case_id": "REF-0023",
+    "domain": "M08",
+    "category": "DRUM_MAPPING",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "General MIDI Snare Drum",
+    "input_params": {
+      "instrument": "General MIDI Snare Drum"
+    },
+    "expected_output": 38,
+    "tolerance": 0.0,
+    "theoretical_rule": "General MIDI 1.0 Standard Percussion Key Map",
+    "source_citation": "M08-02; MIDI Association GM 1.0"
+  },
+  {
+    "case_id": "REF-0024",
+    "domain": "M08",
+    "category": "DRUM_MAPPING",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "General MIDI Closed Hi-Hat",
+    "input_params": {
+      "instrument": "General MIDI Closed Hi-Hat"
+    },
+    "expected_output": 42,
+    "tolerance": 0.0,
+    "theoretical_rule": "General MIDI 1.0 Standard Percussion Key Map",
+    "source_citation": "M08-02; MIDI Association GM 1.0"
+  },
+  {
+    "case_id": "REF-0025",
+    "domain": "M08",
+    "category": "DRUM_MAPPING",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "General MIDI Open Hi-Hat",
+    "input_params": {
+      "instrument": "General MIDI Open Hi-Hat"
+    },
+    "expected_output": 46,
+    "tolerance": 0.0,
+    "theoretical_rule": "General MIDI 1.0 Standard Percussion Key Map",
+    "source_citation": "M08-02; MIDI Association GM 1.0"
+  },
+  {
+    "case_id": "REF-0026",
+    "domain": "M09",
+    "category": "STYLE_TIMING",
+    "test_class": "UNIT_TEST",
+    "title": "Pop Backbeat Zählzeiten",
+    "input_params": {
+      "style_event": "Pop Backbeat Zählzeiten",
+      "ppq": 480
+    },
+    "expected_output": "2 und 4 im 4/4-Takt (Ticks 480 & 1440)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Metrische Platzierung im 480 PPQ Grid",
+    "source_citation": "M09-01; Popular Music Analysis"
+  },
+  {
+    "case_id": "REF-0027",
+    "domain": "M09",
+    "category": "STYLE_TIMING",
+    "test_class": "UNIT_TEST",
+    "title": "House Four-on-the-Floor",
+    "input_params": {
+      "style_event": "House Four-on-the-Floor",
+      "ppq": 480
+    },
+    "expected_output": "Kick auf Ticks 0, 480, 960, 1440",
+    "tolerance": 0.0,
+    "theoretical_rule": "Metrische Platzierung im 480 PPQ Grid",
+    "source_citation": "M09-02; Electronic Music Handbook"
+  },
+  {
+    "case_id": "REF-0028",
+    "domain": "M09",
+    "category": "STYLE_TIMING",
+    "test_class": "UNIT_TEST",
+    "title": "House Offbeat Hi-Hat",
+    "input_params": {
+      "style_event": "House Offbeat Hi-Hat",
+      "ppq": 480
+    },
+    "expected_output": "Open Hi-Hat auf Ticks 240, 720, 1200, 1680",
+    "tolerance": 0.0,
+    "theoretical_rule": "Metrische Platzierung im 480 PPQ Grid",
+    "source_citation": "M09-02; Electronic Music Handbook"
+  },
+  {
+    "case_id": "REF-0029",
+    "domain": "M07",
+    "category": "STYLE_TIMING",
+    "test_class": "UNIT_TEST",
+    "title": "8tel-Offbeat nach Schlag 3 (3+)",
+    "input_params": {
+      "style_event": "8tel-Offbeat nach Schlag 3 (3+)",
+      "ppq": 480
+    },
+    "expected_output": "Tick 1200 bei 480 PPQ",
+    "tolerance": 0.0,
+    "theoretical_rule": "Metrische Platzierung im 480 PPQ Grid",
+    "source_citation": "VAL-M07-PPQ; SMF Standard"
+  },
+  {
+    "case_id": "REF-0030",
+    "domain": "M07",
+    "category": "STYLE_TIMING",
+    "test_class": "UNIT_TEST",
+    "title": "16tel-Synkope vor Schlag 4 (3e+)",
+    "input_params": {
+      "style_event": "16tel-Synkope vor Schlag 4 (3e+)",
+      "ppq": 480
+    },
+    "expected_output": "Tick 1320 bei 480 PPQ",
+    "tolerance": 0.0,
+    "theoretical_rule": "Metrische Platzierung im 480 PPQ Grid",
+    "source_citation": "VAL-M07-PPQ; SMF Standard"
+  },
+  {
+    "case_id": "REF-0031",
+    "domain": "M04",
+    "category": "CHORDS",
+    "test_class": "UNIT_TEST",
+    "title": "A-Moll Dreiklang [A3, C4, E4]",
+    "input_params": {
+      "notes": [
+        57,
+        60,
+        64
+      ]
+    },
+    "expected_output": "Grundstellung (5/3)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Akkordumkehrung nach tiefstem Ton (Bass)",
+    "source_citation": "Aldwell & Schachter Kap. 4"
+  },
+  {
+    "case_id": "REF-0032",
+    "domain": "M04",
+    "category": "CHORDS",
+    "test_class": "UNIT_TEST",
+    "title": "F-Dur Dreiklang [A3, C4, F4]",
+    "input_params": {
+      "notes": [
+        57,
+        60,
+        65
+      ]
+    },
+    "expected_output": "1. Umkehrung (Sextakkord 6)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Akkordumkehrung nach tiefstem Ton (Bass)",
+    "source_citation": "Aldwell & Schachter Kap. 5"
+  },
+  {
+    "case_id": "REF-0033",
+    "domain": "M08",
+    "category": "DRUM_MAPPING",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "General MIDI Side Stick",
+    "input_params": {
+      "instrument": "Side Stick"
+    },
+    "expected_output": 37,
+    "tolerance": 0.0,
+    "theoretical_rule": "General MIDI 1.0 Note 37 Definition",
+    "source_citation": "MIDI Association GM 1.0"
+  },
+  {
+    "case_id": "REF-0034",
+    "domain": "M06",
+    "category": "VOICE_LEADING",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Geltungsbereich Parallele Quinten",
+    "input_params": {
+      "rule": "Parallele Quinten"
+    },
+    "expected_output": "Historischer klassischer Kontrapunkt",
+    "tolerance": 0.0,
+    "theoretical_rule": "Geltungsbereich historischer Stimmführungsverbote",
+    "source_citation": "Everett Foundations of Rock"
+  },
+  {
+    "case_id": "REF-0035",
+    "domain": "M05",
+    "category": "CADENCE",
+    "test_class": "UNIT_TEST",
+    "title": "Tritonsubstitution Dominante G7",
+    "input_params": {
+      "chord": "G7"
+    },
+    "expected_output": [
+      1,
+      5,
+      8,
+      11
+    ],
+    "tolerance": 0.0,
+    "theoretical_rule": "Tritonussubstitution und Backdoor-Kadenz",
+    "source_citation": "PROG-013; Levine Jazz Theory Book"
+  },
+  {
+    "case_id": "REF-0036",
+    "domain": "M05",
+    "category": "CADENCE",
+    "test_class": "UNIT_TEST",
+    "title": "Backdoor Kadenz Bb7 nach C",
+    "input_params": {
+      "chord": "Bb7"
+    },
+    "expected_output": "Auflösung bVII7 nach I",
+    "tolerance": 0.0,
+    "theoretical_rule": "Tritonussubstitution und Backdoor-Kadenz",
+    "source_citation": "PROG-014/017; WEB-4.6-02; Jazz Theory Foundations"
+  },
+  {
+    "case_id": "REF-0037",
+    "domain": "M07",
+    "category": "RHYTHM_STYLE",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Reggae One Drop Zählzeit 1",
+    "input_params": {
+      "style": "Reggae"
+    },
+    "expected_output": "Kick schweigt auf Schlag 1",
+    "tolerance": 0.0,
+    "theoretical_rule": "Genretypische Akzente (One Drop / Motown Stomp)",
+    "source_citation": "PAT-010; WEB-4.6-03; Drummerworld Reggae Drumming History"
+  },
+  {
+    "case_id": "REF-0038",
+    "domain": "M07",
+    "category": "RHYTHM_STYLE",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Motown Snare Stomp",
+    "input_params": {
+      "style": "Motown"
+    },
+    "expected_output": "Snare auf allen 4 Schlägen (1, 2, 3, 4)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Genretypische Akzente (One Drop / Motown Stomp)",
+    "source_citation": "PAT-009; WEB-4.6-07; Motown Hitsville Sound Analysis"
+  },
+  {
+    "case_id": "REF-0039",
+    "domain": "M04",
+    "category": "CHORDS",
+    "test_class": "UNIT_TEST",
+    "title": "Csus4 Akkord [C, F, G]",
+    "input_params": {
+      "chord": "Csus4"
+    },
+    "expected_output": [
+      0,
+      5,
+      7
+    ],
+    "tolerance": 0.0,
+    "theoretical_rule": "Sus- und Add-Akkord Intervallkonstruktion",
+    "source_citation": "P06; Spencer Practice of Harmony"
+  },
+  {
+    "case_id": "REF-0040",
+    "domain": "M04",
+    "category": "CHORDS",
+    "test_class": "UNIT_TEST",
+    "title": "Cadd9 Akkord [C, D, E, G]",
+    "input_params": {
+      "chord": "Cadd9"
+    },
+    "expected_output": [
+      0,
+      2,
+      4,
+      7
+    ],
+    "tolerance": 0.0,
+    "theoretical_rule": "Sus- und Add-Akkord Intervallkonstruktion",
+    "source_citation": "P06; Contemporary Harmony"
+  },
+  {
+    "case_id": "REF-0041",
+    "domain": "M05",
+    "category": "PROGRESSION",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Klassische Jazz Backdoor Kadenz Fm7 -> Bb7 -> Cmaj7",
+    "input_params": {
+      "progression": "Backdoor Jazz"
+    },
+    "expected_output": "iv7 -> bVII7 -> Imaj7",
+    "tolerance": 0.0,
+    "theoretical_rule": "Kanonische Kadenzen und Archetypen",
+    "source_citation": "PROG-017; WEB-4.6-02; Levine Jazz Theory Book (Kap. 14)"
+  },
+  {
+    "case_id": "REF-0042",
+    "domain": "M05",
+    "category": "PROGRESSION",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Royal Road Progression (Oudou shinkou) in C-Dur",
+    "input_params": {
+      "progression": "Royal Road"
+    },
+    "expected_output": "IVmaj7 -> V7 -> iii7 -> vi",
+    "tolerance": 0.0,
+    "theoretical_rule": "Kanonische Kadenzen und Archetypen",
+    "source_citation": "PROG-015; WEB-4.6-05; J-Pop Harmonic Analyses"
+  },
+  {
+    "case_id": "REF-0043",
+    "domain": "M10",
+    "category": "VOICING",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Drop-2 Voicing Dm7 aus Grundstellung",
+    "input_params": {
+      "chord": "Dm7",
+      "type": "Drop-2"
+    },
+    "expected_output": "LH [D3, A3], RH [F4, C5]",
+    "tolerance": 0.0,
+    "theoretical_rule": "Drop-2 Zweihand-Verteilung Mark Levine",
+    "source_citation": "Modul P08; PIANO_PRACTICE_VALIDATION.md"
+  },
+  {
+    "case_id": "REF-0044",
+    "domain": "M07",
+    "category": "RHYTHM_SWING",
+    "test_class": "PROPERTY_TEST",
+    "title": "Swing-Ratio Dynamik nach Friberg & Sundström",
+    "input_params": {
+      "bpm_low": 80,
+      "bpm_high": 240
+    },
+    "expected_output": "rho(BPM) fällt linear",
+    "tolerance": 0.0,
+    "theoretical_rule": "Friberg & Sundström empirische Swing-Dynamik",
+    "source_citation": "GENRE_RESEARCH_JAZZ_RHYTHM.md; WEB-4.6-04; Friberg & Sundström (2002)"
+  },
+  {
+    "case_id": "REF-0045",
+    "domain": "M08",
+    "category": "DRUM_MAPPING",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "General MIDI 1.0 Note 44 Definition",
+    "input_params": {
+      "instrument": "Pedal Hi-Hat"
+    },
+    "expected_output": 44,
+    "tolerance": 0.0,
+    "theoretical_rule": "GM 1.0 Note 44 Pedal Hi-Hat",
+    "source_citation": "WEB-4.6-01; MIDI Manufacturers Association GM 1.0 Spec"
+  },
+  {
+    "case_id": "REF-0046",
+    "domain": "M08",
+    "category": "DRUM_PATTERN",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Reggae Steppers Kick-Pattern",
+    "input_params": {
+      "style": "Reggae Steppers"
+    },
+    "expected_output": [
+      0,
+      480,
+      960,
+      1440
+    ],
+    "tolerance": 0.0,
+    "theoretical_rule": "Steppers Four-on-the-Floor Kick Zählzeiten",
+    "source_citation": "PAT-015; GENRE_RESEARCH_REGGAE.md; WEB-4.6-03"
+  },
+  {
+    "case_id": "REF-0047",
+    "domain": "M11",
+    "category": "TUPLETS",
+    "test_class": "UNIT_TEST",
+    "title": "Absolute Tuplet-Quantisierung Septole bei 480 PPQ",
+    "input_params": {
+      "tuplets": 7,
+      "ppq": 480
+    },
+    "expected_output": [
+      0,
+      69,
+      137,
+      206,
+      274,
+      343,
+      411,
+      480
+    ],
+    "tolerance": 0.0,
+    "theoretical_rule": "Septolen-Quantisierung bei 480 PPQ",
+    "source_citation": "ERR-012; tuplet_reference.py; MMA SMF 1.0 Spec"
+  },
+  {
+    "case_id": "REF-0048",
+    "domain": "M08",
+    "category": "DRUM_LAYERING",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Motown Drum Layering (PAT-009)",
+    "input_params": {
+      "layer": "Motown PAT-009"
+    },
+    "expected_output": [
+      38,
+      54
+    ],
+    "tolerance": 0.0,
+    "theoretical_rule": "Snare (38) + Tambourin (54) Layering",
+    "source_citation": "PAT-009; GENRE_RESEARCH_FUNK_SOUL.md; WEB-4.6-07"
+  },
+  {
+    "case_id": "REF-0049",
+    "domain": "M04",
+    "category": "CHORDS",
+    "test_class": "UNIT_TEST",
+    "title": "Cadd2 vs Cadd9 Tonklassen-Vergleich",
+    "input_params": {
+      "chords": [
+        "Cadd2",
+        "Cadd9"
+      ]
+    },
+    "expected_output": true,
+    "tolerance": 0.0,
+    "theoretical_rule": "Tonklassenäquivalenz {0, 2, 4, 7}",
+    "source_citation": "PROGRESSION_ID_CONSISTENCY.md; WEB-4.7-04; Contemporary Keyboard Harmony"
+  },
+  {
+    "case_id": "REF-0050",
+    "domain": "M04",
+    "category": "CHORDS",
+    "test_class": "UNIT_TEST",
+    "title": "Lydisch-dominanter Tritonusakkord Db7(#11)",
+    "input_params": {
+      "chord": "Db7(#11)"
+    },
+    "expected_output": [
+      1,
+      5,
+      7,
+      11
+    ],
+    "tolerance": 0.0,
+    "theoretical_rule": "Lydisch-dominante Akkordtöne",
+    "source_citation": "PROG-020; Levine Jazz Theory Book (Kap. 15)"
+  },
+  {
+    "case_id": "REF-0051",
+    "domain": "M05",
+    "category": "PROGRESSION",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Minor Line Cliché Am -> Am(maj7) -> Am7 -> Am6",
+    "input_params": {
+      "progression": "Minor Line Cliché"
+    },
+    "expected_output": "A -> G",
+    "tolerance": 0.0,
+    "theoretical_rule": "Chromatisch absteigende Innenstimme",
+    "source_citation": "PROG-019; Jazz & Film Noir Analysis"
+  },
+  {
+    "case_id": "REF-0052",
+    "domain": "M05",
+    "category": "PROGRESSION",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Neo-Soul Kadenz Fm7 -> Bb7 -> Cmaj7 -> Abmaj7",
+    "input_params": {
+      "progression": "Andalusische Kadenz"
+    },
+    "expected_output": "Am -> G -> F -> E7",
+    "tolerance": 0.0,
+    "theoretical_rule": "Phrygische Halbtonauflösung",
+    "source_citation": "Fallstudie 1 (Midnight Solace); INTEGRATED_MUSICAL_CASE_STUDIES.md"
+  },
+  {
+    "case_id": "REF-0053",
+    "domain": "M07",
+    "category": "RHYTHM_SWING",
+    "test_class": "UNIT_TEST",
+    "title": "UK Garage 58% MPC-Swing 16tel-Quantisierung",
+    "input_params": {
+      "ratio": 0.58,
+      "ppq": 480,
+      "bpm": 132
+    },
+    "expected_output": 139,
+    "tolerance": 0.0,
+    "theoretical_rule": "UK Garage 58% Swing-Offset (+19 Ticks)",
+    "source_citation": "MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-024); GENRE_RESEARCH_UK_GARAGE.md"
+  },
+  {
+    "case_id": "REF-0054",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Drum & Bass Two-Step Kick-Platzierung (174 BPM)",
+    "input_params": {
+      "concept": "Drum & Bass Two-Step Kick-Platzierung (174 BPM)",
+      "input_case": "Drum & Bass Two-Step Kick-Platzierung (174 BPM)"
+    },
+    "expected_output": "Kicks auf Zählzeit 1 (Tick 0) und Zählzeit 3+ (Tick 1200)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "PAT-018; GENRE_RESEARCH_DNB.md; WEB-4.7-01"
+  },
+  {
+    "case_id": "REF-0055",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "UK Garage 2-Step Kick-Omission",
+    "input_params": {
+      "concept": "UK Garage 2-Step Kick-Omission",
+      "input_case": "UK Garage 2-Step Kick-Omission"
+    },
+    "expected_output": "Kick schweigt auf Zählzeit 2 und 3 (Hits nur auf 1 und 3+)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "PAT-020; GENRE_RESEARCH_UK_GARAGE.md"
+  },
+  {
+    "case_id": "REF-0056",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Metrische Dualität im Liquid Drum & Bass",
+    "input_params": {
+      "concept": "Metrische Dualität im Liquid Drum & Bass",
+      "input_case": "Metrische Dualität im Liquid Drum & Bass"
+    },
+    "expected_output": "Drums auf 174 BPM, Bass/Pads phrasierend im 87 BPM Halftime-Modus",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "Fallstudie 2 (Horizon Drift); INTEGRATED_MUSICAL_CASE_STUDIES.md"
+  },
+  {
+    "case_id": "REF-0057",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Charleston Begleitmuster am Klavier (Modul P09)",
+    "input_params": {
+      "concept": "Charleston Begleitmuster am Klavier (Modul P09)",
+      "input_case": "Charleston Begleitmuster am Klavier (Modul P09)"
+    },
+    "expected_output": "Akkordschläge der rechten Hand auf 1 (Tick 0) und 2+ (Tick 720)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "Modul P09; PIANO_LEARNING_MODULES.md"
+  },
+  {
+    "case_id": "REF-0058",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Bass-First Gehörerkennung (Modul P10)",
+    "input_params": {
+      "concept": "Bass-First Gehörerkennung (Modul P10)",
+      "input_case": "Bass-First Gehörerkennung (Modul P10)"
+    },
+    "expected_output": "Basslinie als akustischer Anker; Funktions- und Geschlechtsbestimmung erfordert Terz/Oberstimmenprüfung wegen Umkehrungen",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-026); PIANO_LEARNING_MODULES.md (P10)"
+  },
+  {
+    "case_id": "REF-0059",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Mathematische Swing-Berechnung bei 480 PPQ (58% vs 60%)",
+    "input_params": {
+      "concept": "Mathematische Swing-Berechnung bei 480 PPQ (58% vs 60%)",
+      "input_case": "Mathematische Swing-Berechnung bei 480 PPQ (58% vs 60%)"
+    },
+    "expected_output": "58% -> Tick 139 (Delta +19, rho ~ 1,38:1); 60% -> Tick 144 (Delta +24, rho = 1,50:1)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-024); Roger Linn MPC Specifications"
+  },
+  {
+    "case_id": "REF-0060",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Horizon Drift Modale Klassifikation (Dm9 - Bbmaj7 - Gm7 - C(add9))",
+    "input_params": {
+      "concept": "Horizon Drift Modale Klassifikation (Dm9 - Bbmaj7 - Gm7 - C(add9))",
+      "input_case": "Horizon Drift Modale Klassifikation (Dm9 - Bbmaj7 - Gm7 - C(add9))"
+    },
+    "expected_output": "Rein D-Aeolisch (Tonvorrat {D, E, F, G, A, Bb, C}; Ausschluss von D-Dorisch)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-025); Kostka/Payne Tonal Harmony"
+  },
+  {
+    "case_id": "REF-0061",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Dreiklangsumkehrungen Gehör & Stimmführung (Modul P11)",
+    "input_params": {
+      "concept": "Dreiklangsumkehrungen Gehör & Stimmführung (Modul P11)",
+      "input_case": "Dreiklangsumkehrungen Gehör & Stimmführung (Modul P11)"
+    },
+    "expected_output": "Grundstellung (5/3, stabil) vs. 1. Umkehrung (6/3, melodischer Stufenbass) vs. 2. Umkehrung (6/4, kadenzieller Vorhalt)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "PIANO_LEARNING_MODULES.md (P11); Aldwell & Schachter Harmony and Voice Leading"
+  },
+  {
+    "case_id": "REF-0062",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Jungle / Amen Chopped Breakbeat Rhythmik (PAT-021)",
+    "input_params": {
+      "concept": "Jungle / Amen Chopped Breakbeat Rhythmik (PAT-021)",
+      "input_case": "Jungle / Amen Chopped Breakbeat Rhythmik (PAT-021)"
+    },
+    "expected_output": "168 BPM Breakbeat mit synkopierten Kicks (0, 600, 1200, 1560) und Snare-Ghost Rolls (360, 840, 1080)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "DRUM_GROOVE_REFERENCE_LIBRARY.md (PAT-021); GENRE_RESEARCH_DNB.md"
+  },
+  {
+    "case_id": "REF-0063",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Jump-Up Minimal Bouncer Two-Step (PAT-022)",
+    "input_params": {
+      "concept": "Jump-Up Minimal Bouncer Two-Step (PAT-022)",
+      "input_case": "Jump-Up Minimal Bouncer Two-Step (PAT-022)"
+    },
+    "expected_output": "175 BPM reduzierter Two-Step mit Kick 1 (0) und Kick 2 (1200) und 8tel Closed Hats",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "DRUM_GROOVE_REFERENCE_LIBRARY.md (PAT-022); GENRE_RESEARCH_DNB.md"
+  },
+  {
+    "case_id": "REF-0064",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "UK Garage 4-Bar Shuffle & Vocal-Chop Pattern (PAT-023)",
+    "input_params": {
+      "concept": "UK Garage 4-Bar Shuffle & Vocal-Chop Pattern (PAT-023)",
+      "input_case": "UK Garage 4-Bar Shuffle & Vocal-Chop Pattern (PAT-023)"
+    },
+    "expected_output": "134 BPM, 58% MPC-Swing (Tick 139), 4-taktige dynamische Phrasierung mit Takt-4 Snare-Roll",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "DRUM_GROOVE_REFERENCE_LIBRARY.md (PAT-023); GENRE_RESEARCH_UK_GARAGE.md"
+  },
+  {
+    "case_id": "REF-0065",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "L1-Stimmfuehrungsdistanz bei Dreiklangsumkehrungen",
+    "input_params": {
+      "concept": "L1-Stimmfuehrungsdistanz bei Dreiklangsumkehrungen",
+      "input_case": "L1-Stimmfuehrungsdistanz bei Dreiklangsumkehrungen"
+    },
+    "expected_output": "L1-Distanz von C-Dur (C-E-G) zu G/B (B-D-G) betraegt 3 Halbtöne (C->B = 1, E->D = 2, G liegt)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "PIANO_LEARNING_MODULES.md (P11); Tymoczko Geometry of Music"
+  },
+  {
+    "case_id": "REF-0066",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Cross-Domain Metrische Schichtung im Drum & Bass",
+    "input_params": {
+      "concept": "Cross-Domain Metrische Schichtung im Drum & Bass",
+      "input_case": "Cross-Domain Metrische Schichtung im Drum & Bass"
+    },
+    "expected_output": "Schlagzeug kinetisch auf 174 BPM, Reese-Bass harmonisch phrasierend im 87 BPM Halftime-Modus",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "INTEGRATED_MUSICAL_CASE_STUDIES.md (Horizon Drift); GENRE_RESEARCH_DNB.md"
+  },
+  {
+    "case_id": "REF-0067",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Heptatonik 28-Skalen-System (Prehn-Klassifikation)",
+    "input_params": {
+      "concept": "Heptatonik 28-Skalen-System (Prehn-Klassifikation)",
+      "input_case": "Heptatonik 28-Skalen-System (Prehn-Klassifikation)"
+    },
+    "expected_output": "Exakt 4 disjunkte Familien a 7 Modi (Major, Melodic Minor, Harmonic Minor, Harmonic Major)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "Scales with 4 smart tools.txt; MUSIC_THEORY_FOUNDATION.md"
+  },
+  {
+    "case_id": "REF-0068",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Akkordidentitaet vs. Voicing-Ebene (Schichten-Architektur)",
+    "input_params": {
+      "concept": "Akkordidentitaet vs. Voicing-Ebene (Schichten-Architektur)",
+      "input_case": "Akkordidentitaet vs. Voicing-Ebene (Schichten-Architektur)"
+    },
+    "expected_output": "Akkordumkehrung wird ausschliesslich durch tiefsten Gesamtklingelton (akustischer Bass) bestimmt",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "MUSIC_THEORY_FOUNDATION.md; Kostka/Payne Tonal Harmony"
+  },
+  {
+    "case_id": "REF-0069",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Neo-Soul Rootless Minor Cycle (PROG-021)",
+    "input_params": {
+      "concept": "Neo-Soul Rootless Minor Cycle (PROG-021)",
+      "input_case": "Neo-Soul Rootless Minor Cycle (PROG-021)"
+    },
+    "expected_output": "Stufenfolge i9 - iv9 - bVImaj9 - V7(b9) mit Terz-Septimen-Guide-Tones",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "PPR Boom Bap Lesson 1.1; CHORD_PROGRESSION_REFERENCE_LIBRARY.md"
+  },
+  {
+    "case_id": "REF-0070",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Picardische Terz Aufloesung (PROG-022)",
+    "input_params": {
+      "concept": "Picardische Terz Aufloesung (PROG-022)",
+      "input_case": "Picardische Terz Aufloesung (PROG-022)"
+    },
+    "expected_output": "Abschluss einer Moll-Passage mit der Dur-Tonika (gr. Terz)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "7 levels of reharmonising Eleanor Rigby.txt; CHORD_PROGRESSION_REFERENCE_LIBRARY.md"
+  },
+  {
+    "case_id": "REF-0071",
+    "domain": "M07",
+    "category": "RHYTHM_SWING",
+    "test_class": "UNIT_TEST",
+    "title": "PPR Boom-Bap 61% MPC 3000 Swing-Mathematik (90 BPM)",
+    "input_params": {
+      "ratio": 0.61,
+      "ppq": 480,
+      "bpm": 90
+    },
+    "expected_output": 146,
+    "tolerance": 0.0,
+    "theoretical_rule": "MPC 61% Swing: 240 * 0.61 = 146.4 -> round = 146 Ticks (+26 Ticks Offset, 36.11 ms @ 90 BPM; ERR-034)",
+    "source_citation": "PPR Boom Bap README.txt; DRUM_GROOVE_REFERENCE_LIBRARY.md"
+  },
+  {
+    "case_id": "REF-0072",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Berlin Peak Techno Polyrhythmischer Rimshot (PAT-025)",
+    "input_params": {
+      "concept": "Berlin Peak Techno Polyrhythmischer Rimshot (PAT-025)",
+      "input_case": "Berlin Peak Techno Polyrhythmischer Rimshot (PAT-025)"
+    },
+    "expected_output": "Rimshot schlaegt alle 3 Sechzehntelnoten gegen 4/4 Four-on-the-Floor Kick",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "PPR Techno 130 BPM Drums.mid; DRUM_GROOVE_REFERENCE_LIBRARY.md"
+  },
+  {
+    "case_id": "REF-0073",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Zweihaendige Rootless Voicings (Modul P12)",
+    "input_params": {
+      "concept": "Zweihaendige Rootless Voicings (Modul P12)",
+      "input_case": "Zweihaendige Rootless Voicings (Modul P12)"
+    },
+    "expected_output": "LH spielt Grundton; RH greift Vierklang ab der Terz (3-5-7-9)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "PIANO_LEARNING_MODULES.md (P12)"
+  },
+  {
+    "case_id": "REF-0074",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "General MIDI 1.0 Percussion Channel 10 Standard",
+    "input_params": {
+      "concept": "General MIDI 1.0 Percussion Channel 10 Standard",
+      "input_case": "General MIDI 1.0 Percussion Channel 10 Standard"
+    },
+    "expected_output": "Kanal 10 ausschliesslich fuer Percussion; feste Notennummern (36 Kick, 38 Snare, 42 Hat)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "MMA GM 1.0 Standard; PPR Drum Programming Library"
+  },
+  {
+    "case_id": "REF-0075",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Afro-Kubanische 3:2 Son Clave Rhythmik (480 PPQ)",
+    "input_params": {
+      "concept": "Afro-Kubanische 3:2 Son Clave Rhythmik (480 PPQ)",
+      "input_case": "Afro-Kubanische 3:2 Son Clave Rhythmik (480 PPQ)"
+    },
+    "expected_output": "Schlaege auf Ticks 0 (1), 720 (2+), 1440 (4) in Takt 1; Ticks 480 (2), 960 (3) in Takt 2",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "GENRE_RESEARCH_LATIN.md; Mauleon Salsa Guidebook"
+  },
+  {
+    "case_id": "REF-0076",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Brasilianische Bossa Nova Clave (PAT-027)",
+    "input_params": {
+      "concept": "Brasilianische Bossa Nova Clave (PAT-027)",
+      "input_case": "Brasilianische Bossa Nova Clave (PAT-027)"
+    },
+    "expected_output": "Verzoegerung des letzten 2er-Schlags auf Zaehlzeit 3+ (Tick 1200) in Takt 2",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "GENRE_RESEARCH_LATIN.md; Jobim / Gilberto Transkriptionen"
+  },
+  {
+    "case_id": "REF-0077",
+    "domain": "M06",
+    "category": "CADENCE",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Bossa Nova Doppeldominanten-Gleitung (PROG-024)",
+    "input_params": {
+      "progression": "PROG-024"
+    },
+    "expected_output": "V7/V -> ii7",
+    "tolerance": 0.0,
+    "theoretical_rule": "Doppeldominante mit modalem Wechsel (ERR-033)",
+    "source_citation": "GENRE_RESEARCH_LATIN.md; Girl from Ipanema Harmonische Analyse"
+  },
+  {
+    "case_id": "REF-0078",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Bossa Nova Surdo-Bass Pendel am Klavier (Modul P14)",
+    "input_params": {
+      "concept": "Bossa Nova Surdo-Bass Pendel am Klavier (Modul P14)",
+      "input_case": "Bossa Nova Surdo-Bass Pendel am Klavier (Modul P14)"
+    },
+    "expected_output": "LH pendelt kontinuierlich zwischen Grundton (Schlaege 1 & 3) und Quinte (Schlaege 2 & 4)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "PIANO_LEARNING_MODULE_P14.md"
+  },
+  {
+    "case_id": "REF-0079",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "MusicXML 4.0 Enharmonische Repraesentation vs. MIDI",
+    "input_params": {
+      "concept": "MusicXML 4.0 Enharmonische Repraesentation vs. MIDI",
+      "input_case": "MusicXML 4.0 Enharmonische Repraesentation vs. MIDI"
+    },
+    "expected_output": "MusicXML erhaelt Step/Alter (C# vs Db); MIDI speichert ausschliesslich Notennummer 61",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "MUSICXML_AND_DATA_MODELS.md; W3C MusicXML 4.0 Spezifikation"
+  },
+  {
+    "case_id": "REF-0080",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Deterministische Vorzeichenfolge im Quintenzirkel",
+    "input_params": {
+      "concept": "Deterministische Vorzeichenfolge im Quintenzirkel",
+      "input_case": "Deterministische Vorzeichenfolge im Quintenzirkel"
+    },
+    "expected_output": "Kreuz: F#-C#-G#-D#-A#-E#-B#; Be: Bb-Eb-Ab-Db-Gb-Cb-Fb",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "MUSICXML_AND_DATA_MODELS.md; Hindemith Traditional Harmony"
+  },
+  {
+    "case_id": "REF-0081",
+    "domain": "M01",
+    "category": "GENERAL",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Afro-Cuban Cha-Cha-Cha Conga Tumbao (PAT-028)",
+    "input_params": {
+      "concept": "Afro-Cuban Cha-Cha-Cha Conga Tumbao (PAT-028)",
+      "input_case": "Afro-Cuban Cha-Cha-Cha Conga Tumbao (PAT-028)"
+    },
+    "expected_output": "Zwei offene Conga-Schlaege exakt auf Schlaegen 4 und 4+ (Ticks 1440 und 1680)",
+    "tolerance": 0.0,
+    "theoretical_rule": "Formale musiktheoretische Spezifikation",
+    "source_citation": "GENRE_RESEARCH_LATIN.md; Mauleon Latin Percussion"
+  },
+  {
+    "case_id": "REF-0082",
+    "domain": "M09",
+    "category": "STYLE_TIMING",
+    "test_class": "SPECIFICATION_EXAMPLE",
+    "title": "Latin Jazz Montuno Piano-Synkopierung (PROG-025)",
+    "input_params": {
+      "style": "Latin Jazz Montuno"
+    },
+    "expected_output": "Synkopierte Terzen und Oktaven über 2:3 Clave",
+    "tolerance": 0.0,
+    "theoretical_rule": "Montuno Piano-Synkopierung",
+    "source_citation": "GENRE_RESEARCH_LATIN.md; Mauleon Salsa Guidebook"
+  },
+  {
+    "case_id": "REF-0083",
+    "domain": "M07",
+    "category": "RHYTHM_SWING",
+    "test_class": "UNIT_TEST",
+    "title": "16tel-Straight-Quantisierung 50% bei 480 PPQ",
+    "input_params": {
+      "ratio": 0.5,
+      "ppq": 480,
+      "bpm": 90
+    },
+    "expected_output": 120,
+    "tolerance": 0.0,
+    "theoretical_rule": "Quantisierter Tick 120 bei 50% Swing und 480 PPQ",
+    "source_citation": "SRC-032"
+  },
+  {
+    "case_id": "REF-0084",
+    "domain": "M07",
+    "category": "RHYTHM_SWING",
+    "test_class": "UNIT_TEST",
+    "title": "16tel-Light-Swing 55% bei 480 PPQ und 90 BPM",
+    "input_params": {
+      "ratio": 0.55,
+      "ppq": 480,
+      "bpm": 90
+    },
+    "expected_output": 132,
+    "tolerance": 0.0,
+    "theoretical_rule": "Quantisierter Tick 132 bei 55% Swing und 480 PPQ",
+    "source_citation": "SRC-032"
+  },
+  {
+    "case_id": "REF-0085",
+    "domain": "M07",
+    "category": "RHYTHM_SWING",
+    "test_class": "UNIT_TEST",
+    "title": "16tel-Medium-Swing 60% bei 480 PPQ und 90 BPM",
+    "input_params": {
+      "ratio": 0.6,
+      "ppq": 480,
+      "bpm": 90
+    },
+    "expected_output": 144,
+    "tolerance": 0.0,
+    "theoretical_rule": "Quantisierter Tick 144 bei 60% Swing und 480 PPQ",
+    "source_citation": "SRC-032"
+  },
+  {
+    "case_id": "REF-0086",
+    "domain": "M07",
+    "category": "RHYTHM_SWING",
+    "test_class": "UNIT_TEST",
+    "title": "16tel-Heavy-Swing 62% bei 480 PPQ und 90 BPM",
+    "input_params": {
+      "ratio": 0.62,
+      "ppq": 480,
+      "bpm": 90
+    },
+    "expected_output": 149,
+    "tolerance": 0.0,
+    "theoretical_rule": "Quantisierter Tick 149 bei 62% Swing und 480 PPQ",
+    "source_citation": "SRC-032"
+  },
+  {
+    "case_id": "REF-0087",
+    "domain": "M07",
+    "category": "RHYTHM_SWING",
+    "test_class": "UNIT_TEST",
+    "title": "16tel-Swing 61% bei 960 PPQ High-Resolution Grid",
+    "input_params": {
+      "ratio": 0.61,
+      "ppq": 960,
+      "bpm": 90
+    },
+    "expected_output": 293,
+    "tolerance": 0.0,
+    "theoretical_rule": "Quantisierter Tick 293 bei 61% Swing und 960 PPQ",
+    "source_citation": "SRC-032"
+  },
+  {
+    "case_id": "REF-0088",
+    "domain": "M07",
+    "category": "RHYTHM_SWING",
+    "test_class": "UNIT_TEST",
+    "title": "16tel-Swing 61% bei 240 PPQ Low-Resolution Grid",
+    "input_params": {
+      "ratio": 0.61,
+      "ppq": 240,
+      "bpm": 90
+    },
+    "expected_output": 73,
+    "tolerance": 0.0,
+    "theoretical_rule": "Quantisierter Tick 73 bei 61% Swing und 240 PPQ",
+    "source_citation": "SRC-032"
+  },
+  {
+    "case_id": "REF-0089",
+    "domain": "M01",
+    "category": "ACOUSTICS",
+    "test_class": "UNIT_TEST",
+    "title": "Pythagoreisches Komma mathematische Ableitung (12 reine Quinten vs. 7 Oktaven)",
+    "input_params": {
+      "fifths": 12,
+      "octaves": 7
+    },
+    "expected_output": 23.46,
+    "tolerance": 0.05,
+    "theoretical_rule": "Pythagoreisches Komma: 1200 * log2((3/2)^12 / 2^7) = 23.46 Cents",
+    "source_citation": "SRC-033"
+  },
+  {
+    "case_id": "REF-0090",
+    "domain": "M01",
+    "category": "ACOUSTICS",
+    "test_class": "UNIT_TEST",
+    "title": "Reine Große Terz (5:4) Cent-Abweichung von 12-TET",
+    "input_params": {
+      "ratio": 1.25
+    },
+    "expected_output": 386.31,
+    "tolerance": 0.05,
+    "theoretical_rule": "Reine große Terz (5:4) Centwert = 386.31 Cents (-13.69 Cent Abweichung zu 12-TET)",
+    "source_citation": "SRC-033"
+  },
+  {
+    "case_id": "REF-0091",
+    "domain": "M07",
+    "category": "RHYTHM_METER",
+    "test_class": "UNIT_TEST",
+    "title": "Additives ungerades Metrum 5/8 (3+2 Subdivision) bei 480 PPQ",
+    "input_params": {
+      "meter": "5/8",
+      "subdivision": [
+        3,
+        2
+      ],
+      "ppq": 480
+    },
+    "expected_output": 1200,
+    "tolerance": 0.0,
+    "theoretical_rule": "Additives ungerades Metrum Taktdauer = 1200 Ticks",
+    "source_citation": "SRC-034"
+  },
+  {
+    "case_id": "REF-0092",
+    "domain": "M07",
+    "category": "RHYTHM_METER",
+    "test_class": "UNIT_TEST",
+    "title": "Additives ungerades Metrum 7/8 (2+2+3 Subdivision) bei 480 PPQ",
+    "input_params": {
+      "meter": "7/8",
+      "subdivision": [
+        2,
+        2,
+        3
+      ],
+      "ppq": 480
+    },
+    "expected_output": 1680,
+    "tolerance": 0.0,
+    "theoretical_rule": "Additives ungerades Metrum Taktdauer = 1680 Ticks",
+    "source_citation": "SRC-034"
+  },
+  {
+    "case_id": "REF-0093",
+    "domain": "M10",
+    "category": "VOICING",
+    "test_class": "UNIT_TEST",
+    "title": "Zweihändiges Rootless Voicing Typ A für Cmaj9 (Mark Levine)",
+    "input_params": {
+      "chord": "Cmaj9",
+      "type": "Typ A",
+      "bass": 36
+    },
+    "expected_output": [
+      52,
+      55,
+      59,
+      62
+    ],
+    "tolerance": 0.0,
+    "theoretical_rule": "Mark Levine Rootless Voicing Typ A für Cmaj9",
+    "source_citation": "SRC-020"
+  },
+  {
+    "case_id": "REF-0094",
+    "domain": "M10",
+    "category": "VOICING",
+    "test_class": "UNIT_TEST",
+    "title": "Zweihändiges Rootless Voicing Typ B für Cmaj9 (Mark Levine)",
+    "input_params": {
+      "chord": "Cmaj9",
+      "type": "Typ B",
+      "bass": 36
+    },
+    "expected_output": [
+      59,
+      62,
+      64,
+      67
+    ],
+    "tolerance": 0.0,
+    "theoretical_rule": "Mark Levine Rootless Voicing Typ B für Cmaj9",
+    "source_citation": "SRC-020"
+  },
+  {
+    "case_id": "REF-0095",
+    "domain": "M05",
+    "category": "HARMONY",
+    "test_class": "UNIT_TEST",
+    "title": "Backdoor Cadence Modal Interchange Resolution (iv7 - bVII7 -> Imaj7)",
+    "input_params": {
+      "cadence": "iv7 - bVII7 -> Imaj7",
+      "borrowed_from": "Parallel Minor"
+    },
+    "expected_output": 7,
+    "tolerance": 0.0,
+    "theoretical_rule": "Backdoor Kadenz Modal Interchange Leittonauflösung Ab (8) -> G (7)",
+    "source_citation": "SRC-020 (Levine 1995), Terefenko (2014)"
+  },
+  {
+    "case_id": "REF-0096",
+    "domain": "M10",
+    "category": "VOICING",
+    "test_class": "UNIT_TEST",
+    "title": "Secondary Dominant 1st Inversion Chromatic Bass Line (A7/C# -> Am/C)",
+    "input_params": {
+      "progression": "PROG-026",
+      "bass": [
+        7,
+        1,
+        0,
+        11,
+        9,
+        7
+      ]
+    },
+    "expected_output": [
+      7,
+      1,
+      0,
+      11,
+      9,
+      7
+    ],
+    "tolerance": 0.0,
+    "theoretical_rule": "Sekundärdominante mit chromatisch fallendem Bass G -> C# -> C -> B -> A -> G",
+    "source_citation": "SRC-001 (Kostka/Payne 2013), Aldwell (1989)"
+  },
+  {
+    "case_id": "REF-0097",
+    "domain": "M03",
+    "category": "INTERVALS",
+    "test_class": "PROPERTY_TEST",
+    "title": "Coltrane Changes Symmetric Major Thirds Cycle (3 x 4 semitones = 12)",
+    "input_params": {
+      "roots": [
+        0,
+        4,
+        8
+      ]
+    },
+    "expected_output": [
+      4,
+      4,
+      4
+    ],
+    "tolerance": 0.0,
+    "theoretical_rule": "Coltrane Changes Großterz-Zyklus Z12 symmetrische Dreiteilung der Oktave",
+    "source_citation": "SRC-005 (Tymoczko 2011), Cohn (2012)"
+  },
+  {
+    "case_id": "REF-0098",
+    "domain": "M07",
+    "category": "RHYTHM_SWING",
+    "test_class": "UNIT_TEST",
+    "title": "Neo-Soul 57% Swing Quantization (480 PPQ -> 137 ticks, +17 offset)",
+    "input_params": {
+      "ratio": 0.57,
+      "ppq": 480,
+      "bpm": 84
+    },
+    "expected_output": 137,
+    "tolerance": 0.0,
+    "theoretical_rule": "Neo-Soul 57% Swing: 240 * 0.57 = 136.8 -> round = 137 Ticks (+17 Ticks Offset)",
+    "source_citation": "SRC-032 (Friberg & Sundström 2002)"
+  },
+  {
+    "case_id": "REF-0099",
+    "domain": "M08",
+    "category": "DRUM_PATTERN",
+    "test_class": "PROPERTY_TEST",
+    "title": "Afro-Cuban Bembe Bell Metric Invariant (7 onsets in 12 pulses)",
+    "input_params": {
+      "pattern": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    "expected_output": 7,
+    "tolerance": 0.0,
+    "theoretical_rule": "Afro-Cuban Bembé 12/8 Bell Invariante (7 Schläge auf 12 Pulse)",
+    "source_citation": "SRC-031 (Peñalosa 2009)"
+  },
+  {
+    "case_id": "REF-0100",
+    "domain": "M12",
+    "category": "INTEGRATION",
+    "test_class": "INTEGRATION_TEST",
+    "title": "Integrated Multi-Domain Consistency (Harmony M05 + Drums M08 + Piano M10)",
+    "input_params": {
+      "components": [
+        "PROG-021",
+        "PAT-024",
+        "P12"
+      ]
+    },
+    "expected_output": true,
+    "tolerance": 0.0,
+    "theoretical_rule": "Cross-Domain Synthese Konsistenz (Harmonik M05 + Drums M08 + Piano M10)",
+    "source_citation": "STEPS Architectural Cross-Domain Specification"
+  },
+  {
+    "case_id": "REF-0101",
+    "domain": "M01",
     "category": "ACOUSTICS",
     "title": "Kammerton A4 Frequenzstandard",
     "input_params": {
@@ -10,10 +1609,12 @@
     "expected_output": 440.0,
     "tolerance": 0.0,
     "theoretical_rule": "ISO 16 Normstimmton A4 = 440 Hz",
-    "source_citation": "SRC-001 (Kostka/Payne 2013)"
+    "source_citation": "SRC-001 (Kostka/Payne 2013)",
+    "original_phase414_id": "REF-0001",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0002",
+    "case_id": "REF-0102",
     "domain": "M01",
     "category": "ACOUSTICS",
     "title": "Oktave Frequenzverhältnis",
@@ -24,10 +1625,12 @@
     "expected_output": 2.0,
     "tolerance": 0.0,
     "theoretical_rule": "2:1 Frequenzverhältnis der reinen Oktave",
-    "source_citation": "SRC-003 (Zarlino 1558)"
+    "source_citation": "SRC-003 (Zarlino 1558)",
+    "original_phase414_id": "REF-0002",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0003",
+    "case_id": "REF-0103",
     "domain": "M01",
     "category": "ACOUSTICS",
     "title": "12-TET Halbton-Frequenzfaktor",
@@ -37,10 +1640,12 @@
     "expected_output": 1.059463,
     "tolerance": 1e-05,
     "theoretical_rule": "Faktor 2^(1/12) fuer gleichstufigen Halbton",
-    "source_citation": "SRC-001 (Piston 1987)"
+    "source_citation": "SRC-001 (Piston 1987)",
+    "original_phase414_id": "REF-0003",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0004",
+    "case_id": "REF-0104",
     "domain": "M01",
     "category": "ACOUSTICS",
     "title": "Centwert der gleichstufigen Oktave",
@@ -50,10 +1655,12 @@
     "expected_output": 1200.0,
     "tolerance": 0.0,
     "theoretical_rule": "1200 * log2(2/1) = 1200 Cent",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0004",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0005",
+    "case_id": "REF-0105",
     "domain": "M01",
     "category": "ACOUSTICS",
     "title": "Centwert der reinen großen Terz 5/4",
@@ -63,10 +1670,12 @@
     "expected_output": 386.31,
     "tolerance": 0.05,
     "theoretical_rule": "Reine Terz (5:4) = 386.31 Cent vs 12-TET 400 Cent",
-    "source_citation": "SRC-003 (Zarlino 1558)"
+    "source_citation": "SRC-003 (Zarlino 1558)",
+    "original_phase414_id": "REF-0005",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0006",
+    "case_id": "REF-0106",
     "domain": "M01",
     "category": "ACOUSTICS",
     "title": "Cent-Differenz Reine vs Gleichstufige Terz",
@@ -77,10 +1686,12 @@
     "expected_output": 13.69,
     "tolerance": 0.05,
     "theoretical_rule": "Syntonisches Terz-Defizit der gleichstufigen Terz (+13.69 Cent)",
-    "source_citation": "SRC-003"
+    "source_citation": "SRC-003",
+    "original_phase414_id": "REF-0006",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0007",
+    "case_id": "REF-0107",
     "domain": "M01",
     "category": "PITCH_CLASS",
     "title": "Tonklasse C4 im Z12-System",
@@ -90,10 +1701,12 @@
     "expected_output": 0,
     "tolerance": 0.0,
     "theoretical_rule": "C = 0 in mod 12 Tonklassen-Arithmetik",
-    "source_citation": "SRC-005 (Tymoczko 2011)"
+    "source_citation": "SRC-005 (Tymoczko 2011)",
+    "original_phase414_id": "REF-0007",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0008",
+    "case_id": "REF-0108",
     "domain": "M01",
     "category": "PITCH_CLASS",
     "title": "Tonklasse A4 im Z12-System",
@@ -103,10 +1716,12 @@
     "expected_output": 9,
     "tolerance": 0.0,
     "theoretical_rule": "A = 9 in mod 12 Tonklassen-Arithmetik",
-    "source_citation": "SRC-005 (Tymoczko 2011)"
+    "source_citation": "SRC-005 (Tymoczko 2011)",
+    "original_phase414_id": "REF-0008",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0009",
+    "case_id": "REF-0109",
     "domain": "M01",
     "category": "MIDI_MAPPING",
     "title": "MIDI Note Number von C4",
@@ -116,10 +1731,12 @@
     "expected_output": 60,
     "tolerance": 0.0,
     "theoretical_rule": "MIDI 1.0 Spezifikation: Middle C = 60",
-    "source_citation": "MIDI Manufacturers Association"
+    "source_citation": "MIDI Manufacturers Association",
+    "original_phase414_id": "REF-0009",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0010",
+    "case_id": "REF-0110",
     "domain": "M01",
     "category": "MIDI_MAPPING",
     "title": "MIDI Note Number von A4",
@@ -129,10 +1746,12 @@
     "expected_output": 69,
     "tolerance": 0.0,
     "theoretical_rule": "MIDI A440 = 69",
-    "source_citation": "MIDI Manufacturers Association"
+    "source_citation": "MIDI Manufacturers Association",
+    "original_phase414_id": "REF-0010",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0011",
+    "case_id": "REF-0111",
     "domain": "M01",
     "category": "ACOUSTICS",
     "title": "Frequenz aus MIDI Note 69 (A4)",
@@ -142,10 +1761,12 @@
     "expected_output": 440.0,
     "tolerance": 0.0,
     "theoretical_rule": "f = 440 * 2^((69-69)/12) = 440 Hz",
-    "source_citation": "MIDI Manufacturers Association"
+    "source_citation": "MIDI Manufacturers Association",
+    "original_phase414_id": "REF-0011",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0012",
+    "case_id": "REF-0112",
     "domain": "M01",
     "category": "ACOUSTICS",
     "title": "Frequenz aus MIDI Note 60 (C4)",
@@ -155,10 +1776,12 @@
     "expected_output": 261.63,
     "tolerance": 0.05,
     "theoretical_rule": "C4 = 261.63 Hz",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0012",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0013",
+    "case_id": "REF-0113",
     "domain": "M01",
     "category": "PITCH_CLASS",
     "title": "Zyklische Gruppe Z12 Transposition (C + 7)",
@@ -169,10 +1792,12 @@
     "expected_output": 7,
     "tolerance": 0.0,
     "theoretical_rule": "(0 + 7) mod 12 = 7 (Quinte G)",
-    "source_citation": "SRC-005 (Tymoczko 2011)"
+    "source_citation": "SRC-005 (Tymoczko 2011)",
+    "original_phase414_id": "REF-0013",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0014",
+    "case_id": "REF-0114",
     "domain": "M01",
     "category": "PITCH_CLASS",
     "title": "Zyklische Gruppe Z12 Überlauf (B + 2)",
@@ -183,10 +1808,12 @@
     "expected_output": 1,
     "tolerance": 0.0,
     "theoretical_rule": "(11 + 2) mod 12 = 1 (C#)",
-    "source_citation": "SRC-005 (Tymoczko 2011)"
+    "source_citation": "SRC-005 (Tymoczko 2011)",
+    "original_phase414_id": "REF-0014",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0015",
+    "case_id": "REF-0115",
     "domain": "M02",
     "category": "ENHARMONICS",
     "title": "Enharmonische Äquivalenz C# und Db",
@@ -197,10 +1824,12 @@
     "expected_output": true,
     "tolerance": 0.0,
     "theoretical_rule": "C# und Db teilen dieselbe Tonklasse 1 in 12-TET",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0015",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0016",
+    "case_id": "REF-0116",
     "domain": "M02",
     "category": "ENHARMONICS",
     "title": "Enharmonische Äquivalenz F# und Gb",
@@ -211,10 +1840,12 @@
     "expected_output": true,
     "tolerance": 0.0,
     "theoretical_rule": "F# und Gb teilen dieselbe Tonklasse 6 in 12-TET",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0016",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0017",
+    "case_id": "REF-0117",
     "domain": "M02",
     "category": "INTERVALS",
     "title": "Intervallabstand Reine Quinte in Halbtönen",
@@ -224,10 +1855,12 @@
     "expected_output": 7,
     "tolerance": 0.0,
     "theoretical_rule": "Reine Quinte = 7 Halbtöne",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0017",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0018",
+    "case_id": "REF-0118",
     "domain": "M02",
     "category": "INTERVALS",
     "title": "Intervallinversion der Quinte modulo 12",
@@ -237,10 +1870,12 @@
     "expected_output": 5,
     "tolerance": 0.0,
     "theoretical_rule": "(12 - 7) mod 12 = 5 (Reine Quarte)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0018",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0019",
+    "case_id": "REF-0119",
     "domain": "M02",
     "category": "INTERVALS",
     "title": "Intervallabstand Große Terz in Halbtönen",
@@ -250,10 +1885,12 @@
     "expected_output": 4,
     "tolerance": 0.0,
     "theoretical_rule": "Große Terz = 4 Halbtöne",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0019",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0020",
+    "case_id": "REF-0120",
     "domain": "M02",
     "category": "INTERVALS",
     "title": "Intervallinversion der großen Terz modulo 12",
@@ -263,10 +1900,12 @@
     "expected_output": 8,
     "tolerance": 0.0,
     "theoretical_rule": "(12 - 4) mod 12 = 8 (Kleine Sexte)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0020",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0021",
+    "case_id": "REF-0121",
     "domain": "M02",
     "category": "INTERVALS",
     "title": "Intervallabstand Tritonus in Halbtönen",
@@ -276,10 +1915,12 @@
     "expected_output": 6,
     "tolerance": 0.0,
     "theoretical_rule": "Tritonus = 6 Halbtöne",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0021",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0022",
+    "case_id": "REF-0122",
     "domain": "M02",
     "category": "INTERVALS",
     "title": "Selbstinversion des Tritonus modulo 12",
@@ -289,10 +1930,12 @@
     "expected_output": 6,
     "tolerance": 0.0,
     "theoretical_rule": "(12 - 6) mod 12 = 6 (Symmetrisches Intervall)",
-    "source_citation": "SRC-005"
+    "source_citation": "SRC-005",
+    "original_phase414_id": "REF-0022",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0023",
+    "case_id": "REF-0123",
     "domain": "M02",
     "category": "CIRCLE_OF_FIFTHS",
     "title": "Quintenzirkel 1. Quinte aufwärts von C",
@@ -303,10 +1946,12 @@
     "expected_output": 7,
     "tolerance": 0.0,
     "theoretical_rule": "(0 + 1*7) mod 12 = 7 (G-Dur, 1 Kreuz)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0023",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0024",
+    "case_id": "REF-0124",
     "domain": "M02",
     "category": "CIRCLE_OF_FIFTHS",
     "title": "Quintenzirkel 2. Quinte aufwärts von C",
@@ -317,10 +1962,12 @@
     "expected_output": 2,
     "tolerance": 0.0,
     "theoretical_rule": "(0 + 2*7) mod 12 = 2 (D-Dur, 2 Kreuze)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0024",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0025",
+    "case_id": "REF-0125",
     "domain": "M02",
     "category": "CIRCLE_OF_FIFTHS",
     "title": "Quintenzirkel 1. Quarte aufwärts (1. Quinte abwärts) von C",
@@ -331,10 +1978,12 @@
     "expected_output": 5,
     "tolerance": 0.0,
     "theoretical_rule": "(0 - 7) mod 12 = 5 (F-Dur, 1 B)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0025",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0026",
+    "case_id": "REF-0126",
     "domain": "M03",
     "category": "SCALES",
     "title": "Dur-Tonleiter Halbtonschrittfolge",
@@ -352,10 +2001,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Ionisch: G-G-H-G-G-G-H Schrittmuster",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0026",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0027",
+    "case_id": "REF-0127",
     "domain": "M03",
     "category": "SCALES",
     "title": "Natürlich Moll (Äolisch) Halbtonschrittfolge",
@@ -373,10 +2024,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Äolisch: G-H-G-G-H-G-G Schrittmuster",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0027",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0028",
+    "case_id": "REF-0128",
     "domain": "M03",
     "category": "SCALES",
     "title": "Harmonisch Moll übermäßige Sekunde Stufe 6-7",
@@ -394,10 +2047,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Hiatus (3 Halbtöne) zwischen Stufe 6 und 7",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0028",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0029",
+    "case_id": "REF-0129",
     "domain": "M03",
     "category": "SCALES",
     "title": "Melodisch Moll aufwärts Schrittmuster",
@@ -415,10 +2070,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Erhöhte 6. und 7. Stufe",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0029",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0030",
+    "case_id": "REF-0130",
     "domain": "M03",
     "category": "MODES",
     "title": "Dorischer Modus Schrittmuster (2. Modus)",
@@ -436,10 +2093,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Dorian = Moll mit großer Sexte (Stufe 6 = 9 Halbtöne)",
-    "source_citation": "SRC-002 (Levine 1995)"
+    "source_citation": "SRC-002 (Levine 1995)",
+    "original_phase414_id": "REF-0030",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0031",
+    "case_id": "REF-0131",
     "domain": "M03",
     "category": "MODES",
     "title": "Phrygischer Modus Schrittmuster (3. Modus)",
@@ -457,10 +2116,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Phrygisch = Moll mit kleiner Sekunde (Stufe 2 = 1 Halbton)",
-    "source_citation": "SRC-002"
+    "source_citation": "SRC-002",
+    "original_phase414_id": "REF-0031",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0032",
+    "case_id": "REF-0132",
     "domain": "M03",
     "category": "MODES",
     "title": "Lydischer Modus Schrittmuster (4. Modus)",
@@ -478,10 +2139,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Lydisch = Dur mit übermäßiger Quarte (Stufe 4 = 6 Halbtöne)",
-    "source_citation": "SRC-002"
+    "source_citation": "SRC-002",
+    "original_phase414_id": "REF-0032",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0033",
+    "case_id": "REF-0133",
     "domain": "M03",
     "category": "MODES",
     "title": "Mixolydischer Modus Schrittmuster (5. Modus)",
@@ -499,10 +2162,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Mixolydisch = Dur mit kleiner Septime (Stufe 7 = 10 Halbtöne)",
-    "source_citation": "SRC-002"
+    "source_citation": "SRC-002",
+    "original_phase414_id": "REF-0033",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0034",
+    "case_id": "REF-0134",
     "domain": "M03",
     "category": "MODES",
     "title": "Lokrischer Modus Schrittmuster (7. Modus)",
@@ -520,10 +2185,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Lokrisch = verminderte Quinte (Stufe 5 = 6 Halbtöne)",
-    "source_citation": "SRC-002"
+    "source_citation": "SRC-002",
+    "original_phase414_id": "REF-0034",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0035",
+    "case_id": "REF-0135",
     "domain": "M03",
     "category": "SCALES",
     "title": "Dur-Pentatonik Schrittmuster",
@@ -539,10 +2206,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "5-Ton-Skala ohne Halbtöne: 1, 2, 3, 5, 6",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0035",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0036",
+    "case_id": "REF-0136",
     "domain": "M03",
     "category": "SCALES",
     "title": "Moll-Pentatonik Schrittmuster",
@@ -558,10 +2227,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "5-Ton-Skala: 1, b3, 4, 5, b7",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0036",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0037",
+    "case_id": "REF-0137",
     "domain": "M03",
     "category": "SCALES",
     "title": "Ganztonskala Symmetrie",
@@ -578,10 +2249,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "6 gleichmäßige Ganztonschritte = 12 Halbtöne",
-    "source_citation": "SRC-005"
+    "source_citation": "SRC-005",
+    "original_phase414_id": "REF-0037",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0038",
+    "case_id": "REF-0138",
     "domain": "M04",
     "category": "CHORDS",
     "title": "Dur-Dreiklang Tonklassen-Intervallfolge",
@@ -595,10 +2268,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Grundton, große Terz (4), reine Quinte (7)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0038",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0039",
+    "case_id": "REF-0139",
     "domain": "M04",
     "category": "CHORDS",
     "title": "Moll-Dreiklang Tonklassen-Intervallfolge",
@@ -612,10 +2287,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Grundton, kleine Terz (3), reine Quinte (7)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0039",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0040",
+    "case_id": "REF-0140",
     "domain": "M04",
     "category": "CHORDS",
     "title": "Verminderter Dreiklang Tonklassen-Intervallfolge",
@@ -629,10 +2306,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Grundton, kleine Terz (3), verminderte Quinte (6)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0040",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0041",
+    "case_id": "REF-0141",
     "domain": "M04",
     "category": "CHORDS",
     "title": "Übermäßiger Dreiklang Tonklassen-Intervallfolge",
@@ -646,10 +2325,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Grundton, große Terz (4), übermäßige Quinte (8)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0041",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0042",
+    "case_id": "REF-0142",
     "domain": "M04",
     "category": "CHORDS",
     "title": "Dominantseptakkord Tonklassen-Intervallfolge",
@@ -664,10 +2345,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Dur-Dreiklang + kleine Septime (10)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0042",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0043",
+    "case_id": "REF-0143",
     "domain": "M04",
     "category": "CHORDS",
     "title": "Major-7th Akkord Tonklassen-Intervallfolge",
@@ -682,10 +2365,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Dur-Dreiklang + große Septime (11)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0043",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0044",
+    "case_id": "REF-0144",
     "domain": "M04",
     "category": "CHORDS",
     "title": "Moll-7th Akkord Tonklassen-Intervallfolge",
@@ -700,10 +2385,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Moll-Dreiklang + kleine Septime (10)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0044",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0045",
+    "case_id": "REF-0145",
     "domain": "M04",
     "category": "CHORDS",
     "title": "Halbverminderter Septakkord Tonklassen",
@@ -718,10 +2405,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Verminderter Dreiklang + kleine Septime (m7b5)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0045",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0046",
+    "case_id": "REF-0146",
     "domain": "M04",
     "category": "CHORDS",
     "title": "Ganzverminderter Septakkord Tonklassen",
@@ -736,10 +2425,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Symmetrische Schichtung kleiner Terzen (3-3-3)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0046",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0047",
+    "case_id": "REF-0147",
     "domain": "M04",
     "category": "INVERSIONS",
     "title": "Dreiklang 1. Umkehrung (Sextakkord) Basston",
@@ -749,10 +2440,12 @@
     "expected_output": "Third",
     "tolerance": 0.0,
     "theoretical_rule": "Terz im Bass (3)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0047",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0048",
+    "case_id": "REF-0148",
     "domain": "M04",
     "category": "INVERSIONS",
     "title": "Dreiklang 2. Umkehrung (Quartsextakkord) Basston",
@@ -762,10 +2455,12 @@
     "expected_output": "Fifth",
     "tolerance": 0.0,
     "theoretical_rule": "Quinte im Bass (5)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0048",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0049",
+    "case_id": "REF-0149",
     "domain": "M04",
     "category": "VOICING",
     "title": "Drop-2 Transformation Cmaj7 Close Voicing",
@@ -785,10 +2480,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "2. Stimme von oben (67/G4) fällt eine Oktave nach unten (55/G3)",
-    "source_citation": "SRC-002 (Levine 1995)"
+    "source_citation": "SRC-002 (Levine 1995)",
+    "original_phase414_id": "REF-0049",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0050",
+    "case_id": "REF-0150",
     "domain": "M04",
     "category": "VOICING",
     "title": "Rootless Voicing A-Typ Dm9",
@@ -804,10 +2501,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Struktur 3-5-7-9 ab F: F(5), A(9), C(0), E(4)",
-    "source_citation": "SRC-002"
+    "source_citation": "SRC-002",
+    "original_phase414_id": "REF-0050",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0051",
+    "case_id": "REF-0151",
     "domain": "M04",
     "category": "VOICING",
     "title": "Rootless Voicing B-Typ Dm9",
@@ -823,10 +2522,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Struktur 7-9-3-5 ab C: C(0), E(4), F(5), A(9)",
-    "source_citation": "SRC-002"
+    "source_citation": "SRC-002",
+    "original_phase414_id": "REF-0051",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0052",
+    "case_id": "REF-0152",
     "domain": "M04",
     "category": "VOICING",
     "title": "Upper Structure Triad D-Dur über C7",
@@ -852,10 +2553,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "D-Dur über C7 erzeugt C7(9,#11,13)",
-    "source_citation": "SRC-002"
+    "source_citation": "SRC-002",
+    "original_phase414_id": "REF-0052",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0053",
+    "case_id": "REF-0153",
     "domain": "M05",
     "category": "HARMONY",
     "title": "II-V-I Grundtonfolge in C-Dur",
@@ -870,10 +2573,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "D (2) -> G (7) -> C (0)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0053",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0054",
+    "case_id": "REF-0154",
     "domain": "M05",
     "category": "HARMONY",
     "title": "Quintfall-Intervall der II-V-I Verbindung",
@@ -883,10 +2588,12 @@
     "expected_output": 5,
     "tolerance": 0.0,
     "theoretical_rule": "Quinte abwärts = Quarte aufwärts = 5 Halbtöne mod 12",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0054",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0055",
+    "case_id": "REF-0155",
     "domain": "M05",
     "category": "HARMONY",
     "title": "Tritonussubstitution der Dominante G7",
@@ -896,10 +2603,12 @@
     "expected_output": 1,
     "tolerance": 0.0,
     "theoretical_rule": "(7 + 6) mod 12 = 1 (Db7)",
-    "source_citation": "SRC-002"
+    "source_citation": "SRC-002",
+    "original_phase414_id": "REF-0055",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0056",
+    "case_id": "REF-0156",
     "domain": "M05",
     "category": "HARMONY",
     "title": "Gemeinsamer Tritonus G7 und Db7",
@@ -916,10 +2625,12 @@
     "expected_output": true,
     "tolerance": 0.0,
     "theoretical_rule": "Beide Akkorde teilen denselben Leitton-Tritonus B (11) und F (5)",
-    "source_citation": "SRC-002"
+    "source_citation": "SRC-002",
+    "original_phase414_id": "REF-0056",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0057",
+    "case_id": "REF-0157",
     "domain": "M05",
     "category": "HARMONY",
     "title": "Backdoor bVII7 Grundton in C-Dur",
@@ -929,10 +2640,12 @@
     "expected_output": 10,
     "tolerance": 0.0,
     "theoretical_rule": "(0 - 2) mod 12 = 10 (Bb7)",
-    "source_citation": "SRC-002"
+    "source_citation": "SRC-002",
+    "original_phase414_id": "REF-0057",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0058",
+    "case_id": "REF-0158",
     "domain": "M05",
     "category": "HARMONY",
     "title": "Backdoor Septimen-Auflösung Ab zu G",
@@ -943,10 +2656,12 @@
     "expected_output": 1,
     "tolerance": 0.0,
     "theoretical_rule": "8 - 7 = 1 Halbton abwärts zur Quinte der Tonika",
-    "source_citation": "SRC-002"
+    "source_citation": "SRC-002",
+    "original_phase414_id": "REF-0058",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0059",
+    "case_id": "REF-0159",
     "domain": "M05",
     "category": "HARMONY",
     "title": "Backdoor Terz-Auflösung D zu E (Korrektur)",
@@ -957,10 +2672,12 @@
     "expected_output": 2,
     "tolerance": 0.0,
     "theoretical_rule": "4 - 2 = 2 Halbtöne (Ganztonschritt aufwärts zur Terz der Tonika)",
-    "source_citation": "SRC-002"
+    "source_citation": "SRC-002",
+    "original_phase414_id": "REF-0059",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0060",
+    "case_id": "REF-0160",
     "domain": "M05",
     "category": "HARMONY",
     "title": "Sekundärdominante V7/V in C-Dur",
@@ -970,10 +2687,12 @@
     "expected_output": 2,
     "tolerance": 0.0,
     "theoretical_rule": "D7 = V7 von G (7)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0060",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0061",
+    "case_id": "REF-0161",
     "domain": "M05",
     "category": "HARMONY",
     "title": "Doppeldominante modaler Terzabsturz F# zu F",
@@ -984,10 +2703,12 @@
     "expected_output": 1,
     "tolerance": 0.0,
     "theoretical_rule": "Chromatischer Schritt D7 (F#) nach Dm7 (F natural)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0061",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0062",
+    "case_id": "REF-0162",
     "domain": "M05",
     "category": "HARMONY",
     "title": "Andalusische Kadenz Stufenfolge i-bVII-bVI-V",
@@ -1002,10 +2723,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "A (9) -> G (7) -> F (5) -> E (4)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0062",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0063",
+    "case_id": "REF-0163",
     "domain": "M05",
     "category": "HARMONY",
     "title": "Picardische Terz Auflösung in D-Moll",
@@ -1016,10 +2739,12 @@
     "expected_output": 1,
     "tolerance": 0.0,
     "theoretical_rule": "F (5) wird zu F# (6) im Schlussakkord D-Dur",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0063",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0064",
+    "case_id": "REF-0164",
     "domain": "M05",
     "category": "HARMONY",
     "title": "Coltrane Changes Großterzabstände in Z12",
@@ -1037,10 +2762,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "3 x 4 Halbtöne = 12 Halbtöne (Dreiteilung der Oktave)",
-    "source_citation": "SRC-005 (Cohn 2012)"
+    "source_citation": "SRC-005 (Cohn 2012)",
+    "original_phase414_id": "REF-0064",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0065",
+    "case_id": "REF-0165",
     "domain": "M05",
     "category": "HARMONY",
     "title": "Minor Plagal Kadenz iv nach I",
@@ -1053,10 +2780,12 @@
     "expected_output": 1,
     "tolerance": 0.0,
     "theoretical_rule": "Fm (Ab=8) löst sich mit Halbtonschritt nach C (G=7) auf",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0065",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0066",
+    "case_id": "REF-0166",
     "domain": "M05",
     "category": "HARMONY",
     "title": "Doo-Wop Kadenz I-vi-IV-V in C-Dur",
@@ -1071,10 +2800,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "C (0) -> Am (9) -> F (5) -> G (7)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0066",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0067",
+    "case_id": "REF-0167",
     "domain": "M05",
     "category": "HARMONY",
     "title": "Deceptive Cadence V nach vi in C-Dur",
@@ -1085,10 +2816,12 @@
     "expected_output": 2,
     "tolerance": 0.0,
     "theoretical_rule": "G (7) löst sich trughaft nach Am (9) auf (+2 Halbtöne)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0067",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0068",
+    "case_id": "REF-0168",
     "domain": "M06",
     "category": "VOICE_LEADING",
     "title": "Parallele Quinten Verbot (C-G nach D-A)",
@@ -1101,10 +2834,12 @@
     "expected_output": true,
     "tolerance": 0.0,
     "theoretical_rule": "Reine Quinte (7) gefolgt von reiner Quinte (7) in Parallelbewegung ist verboten",
-    "source_citation": "SRC-004 (Fux 1725)"
+    "source_citation": "SRC-004 (Fux 1725)",
+    "original_phase414_id": "REF-0068",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0069",
+    "case_id": "REF-0169",
     "domain": "M06",
     "category": "VOICE_LEADING",
     "title": "Parallele Oktaven Verbot (C-C nach D-D)",
@@ -1117,10 +2852,12 @@
     "expected_output": true,
     "tolerance": 0.0,
     "theoretical_rule": "Reine Oktave (0 mod 12) gefolgt von reiner Oktave in Parallelbewegung ist verboten",
-    "source_citation": "SRC-004"
+    "source_citation": "SRC-004",
+    "original_phase414_id": "REF-0069",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0070",
+    "case_id": "REF-0170",
     "domain": "M06",
     "category": "VOICE_LEADING",
     "title": "Gegenbewegung statt Parallelbewegung",
@@ -1131,10 +2868,12 @@
     "expected_output": true,
     "tolerance": 0.0,
     "theoretical_rule": "Stimme 1 steigt, Stimme 2 sinkt -> Gegenbewegung ist kontrapunktisch optimal",
-    "source_citation": "SRC-004"
+    "source_citation": "SRC-004",
+    "original_phase414_id": "REF-0070",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0071",
+    "case_id": "REF-0171",
     "domain": "M06",
     "category": "VOICE_LEADING",
     "title": "Leittonauflösung B4 nach C5",
@@ -1145,10 +2884,12 @@
     "expected_output": 1,
     "tolerance": 0.0,
     "theoretical_rule": "Halbtonschritt aufwärts (71 -> 72) in der Oberstimme",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0071",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0072",
+    "case_id": "REF-0172",
     "domain": "M06",
     "category": "VOICE_LEADING",
     "title": "Septimauflösung F4 nach E4 in G7 -> C",
@@ -1159,10 +2900,12 @@
     "expected_output": -1,
     "tolerance": 0.0,
     "theoretical_rule": "Dissonante Septime (65) sinkt stufenweise nach unten zur Terz (64)",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0072",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0073",
+    "case_id": "REF-0173",
     "domain": "M06",
     "category": "VOICE_LEADING",
     "title": "Stimmkreuzungsverbot Definition",
@@ -1173,10 +2916,12 @@
     "expected_output": true,
     "tolerance": 0.0,
     "theoretical_rule": "Alt (67) liegt höher als Sopran (64) -> Stimmkreuzung liegt vor",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0073",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0074",
+    "case_id": "REF-0174",
     "domain": "M06",
     "category": "VOICE_LEADING",
     "title": "Stimmführung Minimaldistanz L1 Dm7 nach G7",
@@ -1195,10 +2940,12 @@
     "expected_output": 3,
     "tolerance": 0.0,
     "theoretical_rule": "F bleibt (0), A->G (-2), C->B (-1) -> Gesamtdistanz = 3 Halbtöne",
-    "source_citation": "SRC-005"
+    "source_citation": "SRC-005",
+    "original_phase414_id": "REF-0074",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0075",
+    "case_id": "REF-0175",
     "domain": "M06",
     "category": "VOICE_LEADING",
     "title": "Stimmtausch (Voice Exchange) 3-10 Bewegung",
@@ -1215,10 +2962,12 @@
     "expected_output": true,
     "tolerance": 0.0,
     "theoretical_rule": "Stimme 1 E->C, Stimme 2 C->E",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0075",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0076",
+    "case_id": "REF-0176",
     "domain": "M06",
     "category": "VOICE_LEADING",
     "title": "Vermeidung verdeckter Quinten im Außenstimmensatz",
@@ -1230,10 +2979,12 @@
     "expected_output": true,
     "tolerance": 0.0,
     "theoretical_rule": "Äußere Stimmen erreichen Quinte im Sprung in gerader Bewegung",
-    "source_citation": "SRC-001"
+    "source_citation": "SRC-001",
+    "original_phase414_id": "REF-0076",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0077",
+    "case_id": "REF-0177",
     "domain": "M07",
     "category": "SWING_TIMING",
     "title": "Straight Timing Offset 50% bei 480 PPQ",
@@ -1244,10 +2995,12 @@
     "expected_output": 0,
     "tolerance": 0.0,
     "theoretical_rule": "240 * 0.50 = 120 -> Offset 120 - 120 = 0 Ticks",
-    "source_citation": "MPC Standard"
+    "source_citation": "MPC Standard",
+    "original_phase414_id": "REF-0077",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0078",
+    "case_id": "REF-0178",
     "domain": "M07",
     "category": "SWING_TIMING",
     "title": "MPC 61% Swing Ticks bei 480 PPQ (ERR-034)",
@@ -1258,10 +3011,12 @@
     "expected_output": 146,
     "tolerance": 0.0,
     "theoretical_rule": "round(240 * 0.61) = 146 Ticks (exakt 146.4)",
-    "source_citation": "MPC Standard (ERR-034)"
+    "source_citation": "MPC Standard (ERR-034)",
+    "original_phase414_id": "REF-0078",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0079",
+    "case_id": "REF-0179",
     "domain": "M07",
     "category": "SWING_TIMING",
     "title": "MPC 61% Swing Offset bei 480 PPQ (ERR-034)",
@@ -1272,10 +3027,12 @@
     "expected_output": 26,
     "tolerance": 0.0,
     "theoretical_rule": "146 - 120 = +26 Ticks Offset",
-    "source_citation": "MPC Standard (ERR-034)"
+    "source_citation": "MPC Standard (ERR-034)",
+    "original_phase414_id": "REF-0079",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0080",
+    "case_id": "REF-0180",
     "domain": "M07",
     "category": "SWING_TIMING",
     "title": "MPC 61% Swing Delay in Millisekunden @ 90 BPM",
@@ -1287,10 +3044,12 @@
     "expected_output": 36.11,
     "tolerance": 0.05,
     "theoretical_rule": "26 * (60000 / (90 * 480)) = 36.11 ms",
-    "source_citation": "MPC Standard (ERR-034)"
+    "source_citation": "MPC Standard (ERR-034)",
+    "original_phase414_id": "REF-0080",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0081",
+    "case_id": "REF-0181",
     "domain": "M07",
     "category": "SWING_TIMING",
     "title": "MPC 61% Swing Ticks bei 960 PPQ",
@@ -1301,10 +3060,12 @@
     "expected_output": 293,
     "tolerance": 0.0,
     "theoretical_rule": "round(480 * 0.61) = 293 Ticks (exakt 292.8)",
-    "source_citation": "MPC Standard"
+    "source_citation": "MPC Standard",
+    "original_phase414_id": "REF-0081",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0082",
+    "case_id": "REF-0182",
     "domain": "M07",
     "category": "SWING_TIMING",
     "title": "MPC 61% Swing Offset bei 960 PPQ",
@@ -1315,10 +3076,12 @@
     "expected_output": 53,
     "tolerance": 0.0,
     "theoretical_rule": "293 - 240 = +53 Ticks Offset",
-    "source_citation": "MPC Standard"
+    "source_citation": "MPC Standard",
+    "original_phase414_id": "REF-0082",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0083",
+    "case_id": "REF-0183",
     "domain": "M07",
     "category": "SWING_TIMING",
     "title": "MPC 61% Swing Ticks bei 240 PPQ",
@@ -1329,10 +3092,12 @@
     "expected_output": 73,
     "tolerance": 0.0,
     "theoretical_rule": "round(120 * 0.61) = 73 Ticks (exakt 73.2)",
-    "source_citation": "MPC Standard"
+    "source_citation": "MPC Standard",
+    "original_phase414_id": "REF-0083",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0084",
+    "case_id": "REF-0184",
     "domain": "M07",
     "category": "SWING_TIMING",
     "title": "MPC 61% Swing Offset bei 240 PPQ",
@@ -1343,10 +3108,12 @@
     "expected_output": 13,
     "tolerance": 0.0,
     "theoretical_rule": "73 - 60 = +13 Ticks Offset",
-    "source_citation": "MPC Standard"
+    "source_citation": "MPC Standard",
+    "original_phase414_id": "REF-0084",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0085",
+    "case_id": "REF-0185",
     "domain": "M07",
     "category": "SWING_TIMING",
     "title": "Neo-Soul 57% Swing Ticks bei 480 PPQ",
@@ -1357,10 +3124,12 @@
     "expected_output": 137,
     "tolerance": 0.0,
     "theoretical_rule": "round(240 * 0.57) = 137 Ticks",
-    "source_citation": "J Dilla / Questlove"
+    "source_citation": "J Dilla / Questlove",
+    "original_phase414_id": "REF-0085",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0086",
+    "case_id": "REF-0186",
     "domain": "M07",
     "category": "SWING_TIMING",
     "title": "Triolischer Swing 66.67% Ticks bei 480 PPQ",
@@ -1371,10 +3140,12 @@
     "expected_output": 160,
     "tolerance": 0.0,
     "theoretical_rule": "round(240 * (2/3)) = 160 Ticks (Offset +40 Ticks)",
-    "source_citation": "Jazz Standard"
+    "source_citation": "Jazz Standard",
+    "original_phase414_id": "REF-0086",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0087",
+    "case_id": "REF-0187",
     "domain": "M08",
     "category": "CLAVE",
     "title": "Afro-Cuban Son Clave 3:2 Onsets auf 16tel-Raster",
@@ -1390,10 +3161,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "3er-Seite (0, 3, 6) gefolgt von 2er-Seite (10, 12)",
-    "source_citation": "Mauleón (1993)"
+    "source_citation": "Mauleón (1993)",
+    "original_phase414_id": "REF-0087",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0088",
+    "case_id": "REF-0188",
     "domain": "M08",
     "category": "CLAVE",
     "title": "Afro-Cuban 12/8 Bembe Bell-Onsets",
@@ -1411,10 +3184,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "7 Onsets auf 12 Pulsen: X.X.XX.X.X.X",
-    "source_citation": "Peñalosa (2009)"
+    "source_citation": "Peñalosa (2009)",
+    "original_phase414_id": "REF-0088",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0089",
+    "case_id": "REF-0189",
     "domain": "M08",
     "category": "POLYRHYTHM",
     "title": "3:2 Polyrhythmus Minimaler gemeinsamer Teiler",
@@ -1425,10 +3200,12 @@
     "expected_output": 6,
     "tolerance": 0.0,
     "theoretical_rule": "kgV(3, 2) = 6 Pulse",
-    "source_citation": "London (2012)"
+    "source_citation": "London (2012)",
+    "original_phase414_id": "REF-0089",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0090",
+    "case_id": "REF-0190",
     "domain": "M09",
     "category": "GENRE",
     "title": "Bossa Nova Surdo Bass-Betonungsmuster",
@@ -1448,10 +3225,12 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Beat 3 traegt den tiefen Hauptakzent der Surdo im 4/4 Bossa",
-    "source_citation": "Mauleón (1993)"
+    "source_citation": "Mauleón (1993)",
+    "original_phase414_id": "REF-0090",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0091",
+    "case_id": "REF-0191",
     "domain": "M10",
     "category": "ERGONOMICS",
     "title": "Klaviertastatur Oktavbreite in Halbtönen",
@@ -1461,10 +3240,12 @@
     "expected_output": 12,
     "tolerance": 0.0,
     "theoretical_rule": "12 Halbtöne = Standard-Oktavgriff (ca. 16.5 cm)",
-    "source_citation": "Pianistische Ergonomie"
+    "source_citation": "Pianistische Ergonomie",
+    "original_phase414_id": "REF-0091",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0092",
+    "case_id": "REF-0192",
     "domain": "M10",
     "category": "ERGONOMICS",
     "title": "Dezimen-Intervallabstand in Halbtönen",
@@ -1474,10 +3255,12 @@
     "expected_output": 16,
     "tolerance": 0.0,
     "theoretical_rule": "Oktave + große Terz (12 + 4 = 16 Halbtöne)",
-    "source_citation": "Pianistische Ergonomie"
+    "source_citation": "Pianistische Ergonomie",
+    "original_phase414_id": "REF-0092",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0093",
+    "case_id": "REF-0193",
     "domain": "M10",
     "category": "VOICING",
     "title": "Guide-Tone Distanz Dm7 nach G7 in der rechten Hand",
@@ -1494,10 +3277,12 @@
     "expected_output": 1,
     "tolerance": 0.0,
     "theoretical_rule": "F(5) bleibt liegen, C(0) sinkt stufenweise nach B(11) -> Distanz 1",
-    "source_citation": "SRC-002"
+    "source_citation": "SRC-002",
+    "original_phase414_id": "REF-0093",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0094",
+    "case_id": "REF-0194",
     "domain": "M12",
     "category": "PEDAGOGY",
     "title": "Didaktische Reduktion Dreiklang Weiß-Weiß-Weiß",
@@ -1507,50 +3292,12 @@
     "expected_output": true,
     "tolerance": 0.0,
     "theoretical_rule": "C-Dur Stamm-Dreiklang (C-E-G) liegt rein auf weißen Tasten",
-    "source_citation": "Modul P01"
+    "source_citation": "Modul P01",
+    "original_phase414_id": "REF-0094",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0095",
-    "domain": "M05",
-    "category": "HARMONY",
-    "title": "Backdoor Kadenz Modal Interchange Herkunft",
-    "input_params": {
-      "borrowed_from": "Parallel Minor"
-    },
-    "expected_output": true,
-    "tolerance": 0.0,
-    "theoretical_rule": "Fm7 und Bb7 stammen aus dem parallelen C-Äolisch",
-    "source_citation": "SRC-002"
-  },
-  {
-    "case_id": "REF-0096",
-    "domain": "M10",
-    "category": "VOICING",
-    "title": "Sekundärdominante mit fallendem Bass Schrittfolge",
-    "input_params": {
-      "bass": [
-        7,
-        1,
-        0,
-        11,
-        9,
-        7
-      ]
-    },
-    "expected_output": [
-      7,
-      1,
-      0,
-      11,
-      9,
-      7
-    ],
-    "tolerance": 0.0,
-    "theoretical_rule": "G -> C# -> C -> B -> A -> G harmonisch lückenlos spielbar",
-    "source_citation": "Modul P19"
-  },
-  {
-    "case_id": "REF-0097",
+    "case_id": "REF-0195",
     "domain": "M11",
     "category": "MIDI_SPEC",
     "title": "Standard MIDI Note Number Bereich",
@@ -1561,10 +3308,12 @@
     "expected_output": 128,
     "tolerance": 0.0,
     "theoretical_rule": "128 diskrete Notennummern (0 bis 127)",
-    "source_citation": "MIDI 1.0 Spec"
+    "source_citation": "MIDI 1.0 Spec",
+    "original_phase414_id": "REF-0097",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0098",
+    "case_id": "REF-0196",
     "domain": "M11",
     "category": "MIDI_SPEC",
     "title": "Standard MIDI Velocity Bereich",
@@ -1575,10 +3324,12 @@
     "expected_output": 128,
     "tolerance": 0.0,
     "theoretical_rule": "7-Bit Auflösung (0 bis 127, wobei 0 = Note-Off)",
-    "source_citation": "MIDI 1.0 Spec"
+    "source_citation": "MIDI 1.0 Spec",
+    "original_phase414_id": "REF-0098",
+    "test_class": "SPECIFICATION_EXAMPLE"
   },
   {
-    "case_id": "REF-0099",
+    "case_id": "REF-0197",
     "domain": "M11",
     "category": "MIDI_TIME",
     "title": "Viertelnoten-Dauer in ms bei 120 BPM",
@@ -1588,10 +3339,12 @@
     "expected_output": 500.0,
     "tolerance": 0.0,
     "theoretical_rule": "60000 / 120 = 500 ms",
-    "source_citation": "MIDI 1.0 Spec"
+    "source_citation": "MIDI 1.0 Spec",
+    "original_phase414_id": "REF-0099",
+    "test_class": "UNIT_TEST"
   },
   {
-    "case_id": "REF-0100",
+    "case_id": "REF-0198",
     "domain": "M11",
     "category": "MIDI_TIME",
     "title": "Tick-Dauer in ms bei 120 BPM und 480 PPQ",
@@ -1602,6 +3355,8 @@
     "expected_output": 1.0417,
     "tolerance": 0.001,
     "theoretical_rule": "500 ms / 480 Ticks = 1.0417 ms pro Tick",
-    "source_citation": "MIDI 1.0 Spec"
+    "source_citation": "MIDI 1.0 Spec",
+    "original_phase414_id": "REF-0100",
+    "test_class": "UNIT_TEST"
   }
 ]

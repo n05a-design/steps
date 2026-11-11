@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """
-STEPS Pre-Commit Secret Scanner Guardrail (Hardened Phase 4.14)
+STEPS Pre-Commit Secret Scanner Guardrail (Hardened Phase 4.15)
 
 Fail-Closed Secret Prevention:
 - Scans git staged diffs for high-risk secret patterns (API keys, tokens, private keys).
-- Strict path-based fixture exemptions only: NO arbitrary line-level keyword bypasses (e.g. SYNTHETIC_TEST / REDACTED).
-- Fail-closed: Command execution errors or file access exceptions immediately abort with exit code 1.
+- Strict Bounded Test Fixture Allowlist: Test fixture files are NOT given blanket exemption.
+  ONLY specifically authorized synthetic mock tokens are permitted in test files.
+  Any new, real, or unauthorized secret in a test file is immediately flagged and blocked.
+- Fail-Closed: Command execution errors or file access exceptions immediately abort with exit code 1.
+- Secret Masking: Leaked values are strictly masked in logs (e.g. AIzaSy...XXXX); unmasked secrets are never logged.
 """
 
 import sys
@@ -20,84 +23,83 @@ SECRET_PATTERNS = [
     (r'-----BEGIN [A-Z]+ PRIVATE KEY-----', 'Private Key Header')
 ]
 
-# Strict path-based exemptions: ONLY authorized test fixtures with bounded synthetic values
-EXEMPT_FILES = {
+# Specifically authorized synthetic mock secrets for testing only
+AUTHORIZED_SYNTHETIC_TEST_SECRETS = {
+    'AIzaSy' + 'FakeSyntheticTestKeyForCI00000000',
+    'AKIA' + 'IOSFODNN7EXAMPLE',
+    'ghp_' + 'FakeSyntheticGitHubTokenForCI1234567'
+}
+
+TEST_FIXTURE_FILES = {
     'tests/test_secret_scanner.py',
     'tests/fixtures/synthetic_secrets.json'
 }
 
 def normalize_path(path_str):
-    return path_str.replace('\\', '/').strip('./')
+    p = path_str.replace('\\\\', '/').replace('\\', '/')
+    while p.startswith('./') or p.startswith('/'):
+        if p.startswith('./'):
+            p = p[2:]
+        elif p.startswith('/'):
+            p = p[1:]
+    return p
+
+def mask_secret(val):
+    if len(val) <= 10:
+        return '***REDACTED***'
+    return val[:6] + '...' + val[-4:]
 
 def scan_diff_content(file_path, diff_text):
     leaks = []
     norm_path = normalize_path(file_path)
-    if norm_path in EXEMPT_FILES:
-        return leaks
 
     for line_num, line in enumerate(diff_text.splitlines(), 1):
         if line.startswith('+') and not line.startswith('+++'):
-            # HARDENED: No loose keyword bypass like 'SYNTHETIC_TEST' or 'REDACTED'
             for pattern, desc in SECRET_PATTERNS:
-                if re.search(pattern, line):
-                    leaks.append((line_num, desc))
+                m = re.search(pattern, line)
+                if m:
+                    matched_str = m.group(0)
+                    # Check if in authorized test fixtures with bounded synthetic values
+                    if norm_path in TEST_FIXTURE_FILES and matched_str in AUTHORIZED_SYNTHETIC_TEST_SECRETS:
+                        continue
+                    
+                    leaks.append((line_num, desc, mask_secret(matched_str)))
+
     return leaks
 
-def main():
-    if len(sys.argv) > 1 and sys.argv[1] != '--cached':
-        files = sys.argv[1:]
-        cached_mode = False
-    else:
-        cached_mode = True
+def scan_staged_files():
+    try:
+        cmd = ['git', 'diff', '--cached', '--name-only', '--diff-filter=ACM']
+        result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, check=True)
+        staged_files = [f.strip() for f in result.stdout.splitlines() if f.strip()]
+    except Exception as e:
+        print(f"FATAL: Failed to query staged files from git (Fail-Closed): {e}", file=sys.stderr)
+        sys.exit(1)
+
+    total_leaks = 0
+
+    for file_path in staged_files:
         try:
-            res = subprocess.run(['git', 'diff', '--cached', '--name-only'], capture_output=True, text=True, check=True)
-            files = [f.strip() for f in res.stdout.splitlines() if f.strip()]
+            diff_cmd = ['git', 'diff', '--cached', '--', file_path]
+            diff_res = subprocess.run(diff_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, check=True)
+            diff_text = diff_res.stdout
         except Exception as e:
-            print(f"[SECURITY FATAL] Failed to inspect git staging: {e}", file=sys.stderr)
+            print(f"FATAL: Failed to retrieve diff for {file_path} (Fail-Closed): {e}", file=sys.stderr)
             sys.exit(1)
 
-    leaks_found = 0
-    errors_found = 0
+        leaks = scan_diff_content(file_path, diff_text)
+        if leaks:
+            total_leaks += len(leaks)
+            for line_num, desc, masked_val in leaks:
+                print(f"ERROR: Exposed secret pattern detected in staged file '{file_path}' (Line {line_num}): {desc} [{masked_val}]", file=sys.stderr)
 
-    for f in files:
-        norm_path = normalize_path(f)
-        if norm_path in EXEMPT_FILES:
-            continue
-
-        try:
-            if cached_mode:
-                diff_cmd = ['git', 'diff', '--cached', f]
-                diff_res = subprocess.run(diff_cmd, capture_output=True, text=True, check=True)
-                diff_text = diff_res.stdout
-            else:
-                if not os.path.exists(f):
-                    continue
-                with open(f, 'r', encoding='utf-8', errors='replace') as fh:
-                    diff_text = '\n'.join('+' + line for line in fh.read().splitlines())
-
-            file_leaks = scan_diff_content(f, diff_text)
-            for line_num, desc in file_leaks:
-                print(f"[SECURITY ALERT] Unmaskiertes Secret in '{f}' erkannt ({desc})!", file=sys.stderr)
-                print(f"  Fundstelle: [GEFILTERT ZUR VERHINDERUNG VON LOG-LEAKS]", file=sys.stderr)
-                leaks_found += 1
-
-        except subprocess.CalledProcessError as e:
-            print(f"[SECURITY ERROR] Git diff fehlgeschlagen fuer '{f}': {e}", file=sys.stderr)
-            errors_found += 1
-        except Exception as e:
-            print(f"[SECURITY ERROR] Unerwarteter Fehler beim Pruefen von '{f}': {e}", file=sys.stderr)
-            errors_found += 1
-
-    if errors_found > 0:
-        print(f"\n[ABORT] Sicherheitspruefung fehlgeschlagen: {errors_found} Fehler aufgetreten (Fail-Closed).", file=sys.stderr)
+    if total_leaks > 0:
+        print(f"\nABORTING COMMIT: {total_leaks} secret leak(s) detected in staged changes.", file=sys.stderr)
+        print("Please revoke or redact exposed credentials before committing.", file=sys.stderr)
         sys.exit(1)
 
-    if leaks_found > 0:
-        print(f"\n[ABORT] Commit wurde blockiert: {leaks_found} unmaskierte(s) Secret(s) gefunden.", file=sys.stderr)
-        sys.exit(1)
-
-    print("[SECURITY OK] Keine unmaskierten Secrets in den geprueften Dateien gefunden.")
+    print("Pre-commit secret scan: PASS (Zero unmasked secrets detected).")
     sys.exit(0)
 
 if __name__ == '__main__':
-    main()
+    scan_staged_files()
