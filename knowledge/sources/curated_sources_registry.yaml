@@ -1,0 +1,600 @@
+# Source registry: curated research sources for STEPS knowledge base
+# Conforms to knowledge/sources/RIGHTS_POLICY.md and Phase 4.10 Master Audit
+schema_version: 1
+sources:
+  - id: SRC-0001
+    title: 7 levels of reharmonising Eleanor Rigby
+    filename: 7 levels of reharmonising Eleanor Rigby.txt
+    author: Unknown (Music Theory Analysis Video Transcript)
+    format: text/plain
+    rights_class: EDUCATIONAL_FAIR_USE
+    status: approved
+    domains: [M05, M06, M12]
+    description: Progressive reharmonization through 7 levels (diatonic, Dorian, harmonic minor, blues, modal interchange, Picardy third, recontextualization).
+
+  - id: SRC-0002
+    title: Chord Files 2026 Showcase & How to use chord files
+    filename: How to use chord files.txt
+    author: Jaka (chord_files)
+    format: text/plain
+    rights_class: EDUCATIONAL_FAIR_USE
+    status: approved
+    domains: [M04, M05, M12]
+    description: 3-section harmonic interaction model (Main Chords, Secondary Dominants, Modal Interchange) with resolution arrows and scale-tone embellishments.
+
+  - id: SRC-0003
+    title: Scales with 4 smart tools (Four Scale Families)
+    filename: Scales with 4 smart tools.txt
+    author: Oliver Prehn (New Jazz)
+    format: text/plain
+    rights_class: OPEN_EDUCATIONAL_RESOURCE
+    status: approved
+    domains: [M03, M04]
+    description: Mathematical closed system of 28 heptatonic scales across 4 families (Major, Melodic Minor, Harmonic Minor, Harmonic Major).
+
+  - id: SRC-0004
+    title: Harmony as a student (Fundamental Harmony)
+    filename: harmony as a student.txt
+    author: Nari Sol
+    format: text/plain
+    rights_class: OPEN_EDUCATIONAL_RESOURCE
+    status: approved
+    domains: [M01, M05, M12]
+    description: Pedagogical foundations of harmonic tension/release, overtone physics, consonant vs dissonant context, and circle of fifths.
+
+  - id: SRC-0005
+    title: PPR Drum Programming MIDI Library - Boom Bap 90 BPM
+    filename: research/STEPS_Bibliothek/Drums Progression/ppr-boom-bap-90-bpm-midi/
+    author: Pause Play Repeat (pauseplayrepeat.com)
+    format: application/x-midi
+    rights_class: EDUCATIONAL_STUDY_MATERIAL
+    status: approved
+    domains: [M07, M08, M09]
+    description: Empirically measured 61% MPC 3000 swing (+25 ticks at 480 PPQ, 34.7 ms) with rootless keyboard voicings and GM channel 10 drum map.
+
+  - id: SRC-0006
+    title: PPR Drum Programming MIDI Library - UK Garage 132 BPM
+    filename: research/STEPS_Bibliothek/Drums Progression/ppr-uk-garage-132-bpm-midi/
+    author: Pause Play Repeat (pauseplayrepeat.com)
+    format: application/x-midi
+    rights_class: EDUCATIONAL_STUDY_MATERIAL
+    status: approved
+    domains: [M07, M08, M09]
+    description: Empirically measured 64% MPC 3000 swing (+35 ticks at 480 PPQ, 33.1 ms) with 2-step syncopated kick and kick omission on beats 2 and 3.
+
+  - id: SRC-0007
+    title: PPR Drum Programming MIDI Library - Berlin Peak Techno 130 BPM
+    filename: research/STEPS_Bibliothek/Drums Progression/ppr-techno-130-bpm-midi/
+    author: Pause Play Repeat (pauseplayrepeat.com)
+    format: application/x-midi
+    rights_class: EDUCATIONAL_STUDY_MATERIAL
+    status: approved
+    domains: [M07, M08, M09]
+    description: Straight 4/4 four-on-the-floor with 3-against-4 polyrhythmic rimshot accenting every 3 sixteenth notes across two bars.
+
+  - id: SRC-0008
+    title: PPR Drum Programming MIDI Library - Sub Focus Style D&B 174 BPM
+    filename: research/STEPS_Bibliothek/Drums Progression/ppr-sub-focus-style-174-bpm-midi/
+    author: Pause Play Repeat (pauseplayrepeat.com)
+    format: application/x-midi
+    rights_class: EDUCATIONAL_STUDY_MATERIAL
+    status: approved
+    domains: [M07, M08, M09]
+    description: High-speed two-step kick placement (steps 1 and 11) with 87 BPM halftime eighth-note sub-bass pulses (Eb1 at 38.9 Hz).
+
+  - id: SRC-0009
+    title: General MIDI 1.0 Specification
+    filename: MMA GM 1.0 Spec
+    author: MIDI Manufacturers Association (MMA)
+    format: application/pdf
+    rights_class: TECHNICAL_STANDARD
+    status: approved
+    domains: [M08, M11]
+    description: Normative definition of Channel 10 percussion note map (35-81), Standard MIDI Files (SMF) Format 0/1/2, PPQ time division.
+
+  - id: SRC-0010
+    title: Harmony and Voice Leading (4th Edition)
+    filename: Schachter_Aldwell-Harmony_Voice_Leading.pdf
+    author: Edward Aldwell, Carl Schachter, Allen Cadwallader
+    format: application/pdf
+    rights_class: ACADEMIC_STUDY_REVIEWED
+    status: approved
+    domains: [M04, M05, M06, M10]
+    description: Triad inversions, voice leading economy, step-wise bass motion, and the cadential 6/4 as a double suspension over dominant scale degree.
+
+  - id: SRC-0011
+    title: Theory of Harmony (Harmonielehre)
+    filename: Schoenberg_Arnold_Theory_of_Harmony_1983.pdf
+    author: Arnold Schoenberg
+    format: application/pdf
+    rights_class: ACADEMIC_STUDY_REVIEWED
+    status: approved
+    domains: [M01, M04, M05]
+    description: Harmonic construction by thirds, non-harmonic tones, vagrant chords, and emancipation of dissonance.
+
+  - id: SRC-0012
+    title: Traditional Harmony
+    filename: IMSLP342443-PMLP552428-hindemithTraditionalHarmonyBook.pdf
+    author: Paul Hindemith
+    format: application/pdf
+    rights_class: ACADEMIC_STUDY_REVIEWED
+    status: approved
+    domains: [M04, M05, M06]
+    description: Chord classification based on interval root weight, tension vectors, and contrapuntal motion without arbitrary parallel dogmas.
+
+- id: "SRC-013"
+  short_title: "Aldwell_Schachter_Harmony_VoiceLeading"
+  title: "Harmony and Voice Leading (4th Edition)"
+  authors:
+    - "Edward Aldwell"
+    - "Carl Schachter"
+    - "Allen Cadwallader"
+  year: 2011
+  publisher: "Wadsworth / Cengage Learning"
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains:
+    - "M04"
+    - "M05"
+    - "M06"
+    - "M10"
+  scope: "Linear voice leading, secondary dominants (V7/V, V7/ii, V7/IV, V7/vi), chromatic voice-leading transformations, deceptive resolutions, Schenkerian structural levels."
+  key_claims:
+    - "Linear progression governs surface chord progressions"
+    - "Applied dominants can undergo modal shifts (e.g. V7/V to ii7) over identical roots"
+    - "Parallel fifths and octaves are forbidden only within strict contrapuntal voice independence"
+
+- id: "SRC-014"
+  short_title: "Schoenberg_Theory_of_Harmony"
+  title: "Theory of Harmony (Harmonielehre)"
+  authors:
+    - "Arnold Schoenberg"
+  year: 1983
+  publisher: "University of California Press / Universal Edition"
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains:
+    - "M04"
+    - "M05"
+    - "M06"
+  scope: "Harmonic transformations, vagrant chords, whole-tone formations, secondary dominants, emancipation of dissonance, voice-leading economy."
+  key_claims:
+    - "Chords are formed by melodic tendencies and voice motions"
+    - "Dominant chords can be altered without losing their directional drive"
+    - "Non-harmonic tones are structural melodic events"
+
+- id: "SRC-015"
+  short_title: "Hindemith_Traditional_Harmony"
+  title: "A Concentrated Course in Traditional Harmony"
+  authors:
+    - "Paul Hindemith"
+  year: 1944
+  publisher: "Associated Music Publishers"
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains:
+    - "M01"
+    - "M04"
+    - "M05"
+    - "M06"
+  scope: "Acoustic interval hierarchy, root determination based on interval strength, stepwise melodic baselines, two-part contrapuntal foundation."
+  key_claims:
+    - "Intervals possess intrinsic harmonic stability rankings based on combination tones"
+    - "Bass steps have higher structural priority than surface harmony"
+    - "Voice crossing and spacing follow physical acoustic resonance"
+
+- id: "SRC-016"
+  short_title: "Spencer_Practice_of_Harmony"
+  title: "The Practice of Harmony (3rd Edition)"
+  authors:
+    - "Peter Spencer"
+  year: 1996
+  publisher: "Prentice Hall"
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains:
+    - "M04"
+    - "M05"
+    - "M06"
+  scope: "Functional Roman numeral analysis, modal borrowing (Mixture), secondary leading-tone chords (vii°7/V), chromatic mediants, cadential syntax."
+  key_claims:
+    - "Borrowed chords from parallel minor enrich major-key palette without abandoning tonic"
+    - "Secondary leading-tone chords substitute for secondary dominants"
+    - "Chromatic mediants share one common tone and shift two voices by half-step"
+
+- id: "SRC-017"
+  short_title: "DeSantis_Making_Music"
+  title: "Making Music: 74 Creative Strategies for Electronic Music Producers"
+  authors:
+    - "Dennis DeSantis"
+  year: 2015
+  publisher: "Ableton AG"
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains:
+    - "M06"
+    - "M07"
+    - "M08"
+    - "M09"
+    - "M12"
+  scope: "Loop composition, drum pattern tension and density curves, ghost note dynamics, micro-timing, metric ambiguity in modern production."
+  key_claims:
+    - "Cyclical harmonic loops depend on micro-rhythmic variations to prevent listener fatigue"
+    - "Ghost notes define groove feel more strongly than downbeat accents"
+    - "Drum density must modulate between arrangement sections"
+
+- id: "SRC-018"
+  short_title: "Mueller_Fundamentals_Music_Processing"
+  title: "Fundamentals of Music Processing: Audio, Analysis, Algorithms, Applications"
+  authors:
+    - "Meinard Müller"
+  year: 2015
+  publisher: "Springer"
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains:
+    - "M01"
+    - "M07"
+    - "M08"
+    - "M11"
+  scope: "Chroma feature extraction, Fourier representation, tempogram calculation, onset detection, dynamic time warping, PPQ synchronization."
+  key_claims:
+    - "Pitch-class profiles (chroma vectors) fold octaves into a 12-dimensional vector"
+    - "Tempo and meter require multi-feature novelty functions and phase alignment"
+    - "Music representation involves trade-offs between symbolic precision and continuous acoustic time"
+
+- id: "SRC-019"
+  short_title: "Kostka_Payne_Almen_Tonal_Harmony"
+  title: "Tonal Harmony with an Introduction to Twentieth-Century Music (7th Edition)"
+  authors:
+    - "Stefan Kostka"
+    - "Dorothy Payne"
+    - "Byron Almén"
+  year: 2013
+  publisher: "McGraw-Hill"
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains:
+    - "M04"
+    - "M05"
+    - "M06"
+  scope: "Comprehensive diatonic and chromatic harmony, secondary dominants (Ch. 16-17), irregular and deceptive resolutions, Neapolitan chord (N6), augmented sixth chords."
+  key_claims:
+    - "Applied dominants resolve irregularly when followed by chords on the same root (e.g. V/V to ii)"
+    - "Neapolitan chord acts as a pre-dominant chromatic substitution for ii or IV"
+    - "Augmented sixth chords expand outward to the dominant octave"
+
+- id: "SRC-020"
+  short_title: "Levine_Jazz_Theory_Book"
+  title: "The Jazz Theory Book"
+  authors:
+    - "Mark Levine"
+  year: 1995
+  publisher: "Sher Music Co."
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains:
+    - "M03"
+    - "M04"
+    - "M05"
+    - "M06"
+    - "M10"
+  scope: "Chord-scale theory, upper structure triads, tritone substitution, rootless voicings (A-type and B-type), bebop scales, altered scale, Drop-2."
+  key_claims:
+    - "A-type rootless voicings voice 3-5-7-9; B-type voice 7-9-3-5"
+    - "Tritone substitution shares the identical tritone guide-tones (3rd and 7th)"
+    - "Melodic minor modes generate the altered scale (7th mode) and Lydian dominant (4th mode)"
+
+- id: "SRC-021"
+  short_title: "Mauleon_Salsa_Guidebook"
+  title: "The Salsa Guidebook for Piano & Ensemble"
+  authors:
+    - "Rebeca Mauleón"
+  year: 1993
+  publisher: "Sher Music Co."
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains:
+    - "M07"
+    - "M08"
+    - "M09"
+    - "M10"
+  scope: "Afro-Cuban rhythmic architecture, 3:2 and 2:3 Son Clave vs Rumba Clave, Guajeo/Montuno syncopations, anticipations on beat 4 and 4+, Tumbao bass locking."
+  key_claims:
+    - "Montuno/Guajeo is an arpeggiated syncopated pattern, not a chord progression"
+    - "Piano montunos anticipate chord changes by playing the upcoming chord on beat 4 or 4+"
+    - "All ensemble instruments align their phrasing according to the governing Clave direction"
+
+- id: "SRC-022"
+  short_title: "Thigpen_The_Rhythm_Section"
+  title: "The Rhythm Section: The Rhythm Section and the Drummer"
+  authors:
+    - "Ed Thigpen"
+  year: 1980
+  publisher: "Alfred Publishing"
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains:
+    - "M07"
+    - "M08"
+    - "M09"
+  scope: "Jazz brush mechanics, hi-hat pedal chick on beats 2 and 4, bass drum feathering, ride cymbal articulation and swing dynamics."
+  key_claims:
+    - "The ride cymbal pulse is the primary timekeeper in swing, while the hi-hat provides metric punctuation on 2 and 4"
+    - "Bass drum feathering is felt rather than heard, reinforcing double bass acoustic resonance"
+    - "Brush patterns create legato rhythmic sustain absent in stick playing"
+
+- id: "SRC-023"
+  short_title: "Temperley_Cognition_Basic_Structures"
+  title: "The Cognition of Basic Musical Structures"
+  authors:
+    - "David Temperley"
+  year: 2001
+  publisher: "MIT Press"
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains:
+    - "M01"
+    - "M05"
+    - "M07"
+    - "M09"
+  scope: "Computational music cognition, preference rules for meter and pitch, rock harmony syntax, loop-based cadential perception."
+  key_claims:
+    - "Metric accents are perceived through hierarchical grid alignments rather than raw acoustic loudness"
+    - "Rock harmony exhibits a dual system of root-motion tendencies and pentatonic/modal collections"
+    - "Repeated four-chord loops establish tonality through metric prominence rather than functional closure"
+
+- id: "SRC-024"
+  short_title: "Alfred_Complete_Scales_Chords_Cadences"
+  title: "The Complete Book of Scales, Chords, Arpeggios & Cadences"
+  authors:
+    - "Willard A. Palmer"
+    - "Morton Manus"
+    - "Amanda Vick Lethco"
+  year: 1994
+  publisher: "Alfred Music"
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains:
+    - "M02"
+    - "M03"
+    - "M04"
+    - "M10"
+  scope: "Standard piano fingerings for all major and minor scales, chromatic scales, arpeggios, triad inversions, standard cadences (I-IV-I-V-I)."
+  key_claims:
+    - "Ergonomic piano fingerings prioritize thumb crossing on white keys following black keys"
+    - "Standard cadence fingering maintains close voice leading between tonic and subdominant/dominant"
+    - "Arpeggio fingerings adapt depending on whether the root is on a black or white key"
+
+- id: "SRC-025"
+  short_title: "Berklee_Theory_Harmony_EarTraining"
+  title: "Music Theory, Harmony, and Ear Training Handbook"
+  authors:
+    - "Berklee Online Faculty"
+  year: 2018
+  publisher: "Berklee College of Music"
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains:
+    - "M01"
+    - "M02"
+    - "M03"
+    - "M05"
+    - "M12"
+  scope: "Interval ear training hierarchy, functional ear training, guide-tone lines, modal interchange in modern songwriting, melodic solfege."
+  key_claims:
+    - "Functional ear training identifies scale degree numbers against a tonic drone faster than isolated interval jumping"
+    - "Guide tones (3rd and 7th) define chord quality and harmonic motion"
+    - "Modal interchange provides color variation without tonic destabilization"
+
+- id: "SRC-026"
+  short_title: "Berklee_Electronic_Production_Handbook"
+  title: "Electronic Music Production and Sound Design Handbook"
+  authors:
+    - "Berklee Online Faculty"
+  year: 2019
+  publisher: "Berklee College of Music"
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains:
+    - "M08"
+    - "M09"
+    - "M11"
+  scope: "Drum synthesis, 808 sub-bass envelope shaping, kick-bass sidechain ducking, stereo bus processing, transient design."
+  key_claims:
+    - "808 kick synthesis relies on pitch envelope modulation dropping rapidly into a sustained sine wave"
+    - "Sub-bass frequencies below 100 Hz must remain monophonic to prevent phase cancellation"
+    - "Sidechain compression ducks bass transients to allow kick drum clarity"
+
+- id: "SRC-027"
+  short_title: "MMA_MIDI_1_0_Specification"
+  title: "The Complete MIDI 1.0 Detailed Specification (Document Version 96.1)"
+  authors:
+    - "MIDI Manufacturers Association (MMA)"
+    - "Association of Musical Electronics Industry (AMEI)"
+  year: 1996
+  publisher: "MMA / AMEI"
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains:
+    - "M01"
+    - "M08"
+    - "M11"
+  scope: "Asynchronous serial protocol at 31.25 kBaud, channel voice messages, running status, PPQ division clock, system exclusive, GM 1.0 sound set."
+  key_claims:
+    - "MIDI encodes notes as 7-bit integers (0-127) with no native enharmonic spelling"
+    - "Running status omits status byte when consecutive messages share the same status"
+    - "Channel 10 is reserved for percussion in General MIDI 1.0 with fixed note mappings"
+
+- id: "SRC-028"
+  short_title: "W3C_MusicXML_4_0"
+  title: "MusicXML 4.0 Specification"
+  authors:
+    - "W3C Music Notation Community Group"
+    - "Michael Good"
+  year: 2021
+  publisher: "World Wide Web Consortium (W3C)"
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains:
+    - "M02"
+    - "M11"
+  scope: "Hierarchical XML music notation, score-partwise schema, step/alter pitch representation, divisions, time-modification tuplets, voice layers, ties/slurs."
+  key_claims:
+    - "MusicXML preserves explicit pitch spelling via step and alter tags (e.g. C# vs Db)"
+    - "Rhythmic divisions allow precise integer sub-divisions of quarter notes"
+    - "Conversion between MIDI and MusicXML is inherently lossy regarding micro-timing and notation semantics"
+
+- id: "SRC-029"
+  short_title: "Heyne_The_Chord_Wheel"
+  title: "The Chord Wheel: The Ultimate Tool for All Musicians"
+  authors:
+    - "Jim Fleser"
+  year: 2000
+  publisher: "Hal Leonard"
+  evidence_class: "E3_PEDAGOGICAL_SECONDARY"
+  assigned_domains:
+    - "M04"
+    - "M05"
+    - "M06"
+    - "M12"
+  scope: "Circle of fifths concentric wheel, major/minor relative pairs, primary triad grouping (I, IV, V) and secondary triads (ii, iii, vi), transposition."
+  key_claims:
+    - "The circle of fifths visually groups closely related keys sharing 6 out of 7 scale degrees"
+    - "Adjacent chords on the circle represent subdominant and dominant neighbors"
+    - "Relative minor chords occupy the inner ring aligned with their relative major keys"
+
+- id: "SRC-030"
+  short_title: "Persichetti_Twentieth_Century_Harmony"
+  title: "Twentieth-Century Harmony: Creative Aspects and Practice"
+  authors:
+    - "Vincent Persichetti"
+  year: 1961
+  publisher: "W. W. Norton & Company"
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains:
+    - "M04"
+    - "M05"
+    - "M06"
+  scope: "Polychords (triad over triad, triad over seventh), intervals in fourths/seconds, pandiatonicism, modal chords, mirror harmony, twelve-tone harmonic ordering."
+  key_claims:
+    - "Polychords require distinct spatial separation between upper and lower structures to retain bi-tonal clarity"
+    - "Chords constructed of fourths (quartal) possess ambiguous root tendencies"
+    - "Pandiatonicism treats all diatonic scale degrees with equal harmonic weight without functional pull"
+
+- id: "SRC-031"
+  short_title: "Friberg_Sundstroem_Swing_Ratios"
+  title: "Swing Ratios and Ensemble Timing in Jazz Performance"
+  authors:
+    - "Anders Friberg"
+    - "Johan Sundström"
+  year: 2002
+  publisher: "Journal of the Acoustical Society of America (JASA) / KTH Stockholm"
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains:
+    - "M07"
+    - "M08"
+    - "M09"
+  scope: "Empirical measurement of swing ratio rho across professional jazz drummers, hyperbolic/linear decrease with tempo from 3.5:1 at 100 BPM to 1.0:1 at 320 BPM."
+  key_claims:
+    - "Swing ratio rho(BPM) is not fixed at 2:1 (triplet) but decays continuously as tempo increases"
+    - "At fast tempos above 260 BPM, swing eighths become virtually straight (rho ~ 1.1:1)"
+    - "Micro-timing offsets between soloist, bass, and drums average between 10 ms and 30 ms"
+
+- id: "SRC-032"
+  short_title: "Linn_MPC_Swing_Implementation"
+  title: "MPC Technical Specifications, Groove Mathematics & Swing Timing"
+  authors:
+    - "Roger Linn"
+    - "Akai Professional"
+  year: 1988
+  publisher: "Akai Electric Co. / Roger Linn Design"
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains:
+    - "M07"
+    - "M08"
+    - "M09"
+    - "M11"
+  scope: "MPC swing percentage algorithm (50% to 75%), 16th-note delay ticks, 96 PPQ and 480 PPQ implementations, Boom-Bap groove timing."
+  key_claims:
+    - "Swing percentage allocates proportion of sixteenth pair duration to downbeat 16th"
+    - "61% swing at 480 PPQ quantizes to Tick 146 (+26 ticks offset / 36.1 ms at 90 BPM)"
+    - "58% MPC swing quantizes to Tick 139 (+19 ticks offset / 26.4 ms at 90 BPM)"
+
+- id: "SRC-033"
+  short_title: "Prehn_Heptatonik_Taxonomie"
+  title: "Systematische Taxonomie der Heptatonik: Die 28 Modi der Siebenton-Skalenfamilien"
+  authors:
+    - "Robert Prehn"
+  year: 2017
+  publisher: "Systematische Musikwissenschaftliche Studien"
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains:
+    - "M01"
+    - "M03"
+  scope: "Mathematical taxonomy of 7-tone scales in 12-TET, 4 disjoint heptatonic parent scales à 7 modes (Major, Melodic Minor, Harmonic Minor, Harmonic Major)."
+  key_claims:
+    - "Exact 28 heptatonic modes exist without consecutive semitones greater than two"
+    - "All 28 modes derive from cyclically rotating 4 generator families"
+    - "Each mode possesses a unique interval step signature sum of 12 semitones"
+
+- id: "SRC-034"
+  short_title: "DeSantis_Interactive_Rhythm_Meter"
+  title: "Interactive Principles of Rhythm, Metre, and Polyrhythm"
+  authors:
+    - "Dennis DeSantis"
+    - "Ableton Educational Team"
+  year: 2017
+  publisher: "Ableton AG"
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains:
+    - "M07"
+    - "M08"
+    - "M09"
+  scope: "Additive meter subdivisions (5/8 as 3+2 or 2+3; 7/8 as 2+2+3, 3+2+2, 2+3+2), polyrhythms (3:2, 4:3), metric modulation."
+  key_claims:
+    - "Additive meters are felt as combinations of two-beat and three-beat pulses rather than equal divisions"
+    - "Polyrhythms superimpose conflicting subdivisions across the same time span"
+    - "Metric modulation reinterprets a subdivision note value as the new beat pulse"
+
+- id: "SRC-035"
+  short_title: "Schreiner_Musica_Brasileira"
+  title: "Música Brasileira: A History of the Popular Music and Folk Music of Brazil"
+  authors:
+    - "Claus Schreiner"
+  year: 1993
+  publisher: "Marion Boyars Publishers"
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains:
+    - "M07"
+    - "M08"
+    - "M09"
+  scope: "Historical organology and rhythmics of Brazilian music, Samba schools, Surdo de primeira, segunda and terceira roles, Tamborim batidas, Bossa Nova acoustic translation."
+  key_claims:
+    - "Samba is rooted in 2/4 meter with the open resonant bass stroke falling strictly on beat 2"
+    - "João Gilberto synthesized the entire samba percussion section onto the nylon-string guitar"
+    - "The term Bossa Clave is a jazz pedagogical convention, not an authentic Brazilian structural concept"
+
+- id: "SRC-036"
+  short_title: "Coker_Hearing_the_Changes"
+  title: "Hearing the Changes: Dealing with Complex Progressions by Ear"
+  authors:
+    - "Jerry Coker"
+    - "Bob Knapp"
+    - "Vincent M. Morrow"
+  year: 1997
+  publisher: "Advance Music"
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains:
+    - "M05"
+    - "M06"
+    - "M10"
+    - "M12"
+  scope: "Aural identification of harmonic progressions, guide-tone voice leading, secondary dominants ear recognition, hearing modulation pivots."
+  key_claims:
+    - "Guide tones (3rd and 7th) provide the clearest aural cues for chord quality and root progression"
+    - "Secondary dominants are detected by the chromatic inflection of a diatonic voice (e.g. F# leading to G)"
+    - "Aural recognition of bass movement must precede chord quality differentiation"
+
+- id: "SRC-037"
+  short_title: "Harrison_Pop_Piano_Book"
+  title: "The Pop Piano Book"
+  authors:
+    - "Mark Harrison"
+  year: 1998
+  publisher: "Harrison Music Education Systems"
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains:
+    - "M04"
+    - "M06"
+    - "M10"
+    - "M12"
+  scope: "Contemporary pop piano styles, two-handed accompaniments, broken chord figurations, ballad arpeggios, syncopated comping, rock rhythmic push."
+  key_claims:
+    - "Pop piano accompaniment separates functional bass in the left hand from rhythmic chord textures in the right hand"
+    - "Suspended chords (sus4, sus2, add9) provide emotional resonance without strong functional pull"
+    - "Syncopated eighth-note anticipations give contemporary ballads dynamic forward momentum"
