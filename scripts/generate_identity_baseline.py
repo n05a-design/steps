@@ -228,9 +228,9 @@ def generate_baseline():
     domains = extract_canonical_domains()
 
     baseline = {
-        'schema_version': '1.1.0',
-        'created_at': '2026-11-11T19:15:00Z',
-        'authoritative_phase': 'Phase 4.16',
+        'schema_version': '1.3.0',
+        'created_at': '2026-11-11T20:30:00Z',
+        'authoritative_phase': 'Phase 4.18',
         'field_classification': {
             'IDENTITY_DEFINING': ['id', 'object_type', 'title', 'name', 'harmonic_structure', 'tempo', 'rhythmic_signature', 'harmonic_basis', 'input_params', 'expected_output'],
             'NORMATIVE_CONTENT': ['domain', 'test_class', 'relation_type', 'source_id', 'target_id'],

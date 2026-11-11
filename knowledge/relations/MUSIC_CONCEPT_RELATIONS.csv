@@ -36,6 +36,7 @@ CR-034,M10-03,M04-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,
 CR-035,M10-04,M06-01,REQUIRES,PEDAGOGICAL_RECOMMENDATION,Foundational Harmony Axioms,Zweihändige Begleitung,Bass in linker Hand,VERIFIED_ACTIVE
 CR-036,M11-04,M02-05,IMPLEMENTED_BY,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Verlustfreie Noten-Repräsentation,STEPS pitch.py trennt DiatonicStep,VERIFIED_ACTIVE
 CR-037,M12-04,M10-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Pädagogische Stufenleiter,Lernpfad beginnt mit Tastaturorientierung und führt zu Progressionen,VERIFIED_ACTIVE
+CR-038,PROG-028,P12,VOICED_BY,FORMAL_RULE,Progression to Voicing (M05 <-> M10),Two-Handed Rootless Stacking,Rootless-Voicings (Modul P12) realisieren None- und Vierklangstrukturen des Circle of Fifths Soul Cycles (PROG-028).,VERIFIED_ACTIVE
 REL-001,PROG-001,PAT-001,COMMONLY_PAIRED_WITH,ILLUSTRATIVE_RELATION,Pop / Classic Rock,STRONG,Pop Four Chords Progression paired with straight 8th Pop/Rock Drum Groove.,VERIFIED_ACTIVE
 REL-002,PROG-001,P07,TAUGHT_VIA,PEDAGOGICAL_RECOMMENDATION,Pop Ballad Piano,STRONG,Pop Four Chords progression arranged as two-handed rolling arpeggio wave.,VERIFIED_ACTIVE
 REL-003,PROG-003,P05,VOICED_BY,ILLUSTRATIVE_RELATION,Jazz Two-Five-One,MANDATORY_JAZZ,Dm7 - G7 - Cmaj7 progression realized using 2-voice Shell Voicings (3 & 7 guide tones).,VERIFIED_ACTIVE
@@ -70,6 +71,8 @@ REL-031,PAT-027,M07,METRIC_ALIGNMENT,GENRE_TENDENCY,Afro-Cuban / Brazilian,Clave
 REL-032,PROG-025,PAT-028,STYLISTICALLY_COMPATIBLE,GENRE_TENDENCY,Afro-Cuban / Cha-Cha-Chá,High Affinity,Die Montuno-Progression verbindet sich mit dem Cha-Cha Conga Tumbao zur typischen Salsa/Latin-Textur.,VERIFIED_ACTIVE
 REL-033,M11,M02,DATA_MODEL_ENCODING,SOFTWARE_DESIGN_RULE,MusicXML 4.0,Normative Lossless Mapping,MusicXML ermoeglicht die verlustfreie Speicherung enharmonischer Notenschreibungen (Step/Alter) gegenueber reinem MIDI.,VERIFIED_ACTIVE
 REL-034,M02,M05,THEORETICAL_DERIVATION,ILLUSTRATIVE_RELATION,Allgemeine Tonalitaet,Deterministic Circle of Fifths,Die deterministische Vorzeichenfolge im Quintenzirkel definiert Tonarten und Leittoeene im Tonsystem.,VERIFIED_ACTIVE
+REL-035,PROG-028,PAT-030,COMMONLY_PAIRED_WITH,GENRE_TENDENCY,Neo-Soul Groove Pairing (M05 <-> M08),Harmonic-Rhythmic Pairing,Kopplung des Circle of Fifths Soul Cycles (PROG-028) mit dem Phrygian Neo-Soul Halftime Shuffle (PAT-030).,VERIFIED_ACTIVE
+REL-036,PAT-031,PROG-025,COMMONLY_PAIRED_WITH,GENRE_TENDENCY,Latin Clave Coupling (M08 <-> M05),Harmonic-Rhythmic Pairing,Kopplung des Afro-Cuban 6/8 Bembe Fusion Patterns (PAT-031) mit dem synkopierten Montuno Ostinato Vamp (PROG-025).,VERIFIED_ACTIVE
 CDR-001,C4_PITCH,MIDI_NOTE_60,MAPS_TO,SOFTWARE_DESIGN_RULE,Cross-Domain M01 <-> M11,Mapping Rule MAPS_TO,Inter-domain synthesis: C4_PITCH MAPS_TO MIDI_NOTE_60,VERIFIED_ACTIVE
 CDR-002,DEUTSCH_H,PITCH_CLASS_11,EQUIVALENT_TO,SOFTWARE_DESIGN_RULE,Cross-Domain M02 <-> M01,Mapping Rule EQUIVALENT_TO,Inter-domain synthesis: DEUTSCH_H EQUIVALENT_TO PITCH_CLASS_11,VERIFIED_ACTIVE
 CDR-003,DEUTSCH_B,PITCH_CLASS_10,EQUIVALENT_TO,SOFTWARE_DESIGN_RULE,Cross-Domain M02 <-> M01,Mapping Rule EQUIVALENT_TO,Inter-domain synthesis: DEUTSCH_B EQUIVALENT_TO PITCH_CLASS_10,VERIFIED_ACTIVE

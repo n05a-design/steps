@@ -600,14 +600,14 @@ def main():
     warnings = result['warnings']
 
     print("=================================================================")
-    print(" STEPS Architecture & Reference ID Integrity Check (Phase 4.17)")
+    print(" STEPS Architecture & Reference ID Integrity Check (Phase 4.18)")
     print("=================================================================")
     print(f"  Architecture Decisions:   {stats['adrs']} (ADR-001..ADR-012)")
     print(f"  Canonical Progressions:   {stats['progressions']} (PROG-001..PROG-028)")
     print(f"  Canonical Drum Patterns:  {stats['drum_patterns']} (PAT-001..PAT-031)")
     print(f"  Canonical Piano Modules:  {stats['piano_modules']} (P01..P19)")
     print(f"  Unified Golden Cases:     {stats['golden_cases']} (REF-0001..REF-0198)")
-    print(f"  Concept Relations:        {stats['relations']} (37 CR, 34 REL, 23 CDR)")
+    print(f"  Concept Relations:        {stats['relations']} (38 CR, 36 REL, 23 CDR)")
     print("-----------------------------------------------------------------")
 
     if warnings:

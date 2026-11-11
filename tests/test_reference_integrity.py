@@ -78,7 +78,7 @@ class TestReferenceIntegrityAndMutations(unittest.TestCase):
         self.assertEqual(stats['drum_patterns'], 31)
         self.assertEqual(stats['piano_modules'], 19)
         self.assertEqual(stats['golden_cases'], 198)
-        self.assertEqual(stats['relations'], 94)
+        self.assertEqual(stats['relations'], 97)
         self.assertEqual(stats['adrs'], 12)
 
     # =========================================================================

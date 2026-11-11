@@ -1,7 +1,7 @@
 {
-  "schema_version": "1.1.0",
-  "created_at": "2026-11-11T19:15:00Z",
-  "authoritative_phase": "Phase 4.16",
+  "schema_version": "1.3.0",
+  "created_at": "2026-11-11T20:30:00Z",
+  "authoritative_phase": "Phase 4.18",
   "field_classification": {
     "IDENTITY_DEFINING": [
       "id",
@@ -44,7 +44,7 @@
     "progressions": 28,
     "drum_patterns": 31,
     "piano_modules": 19,
-    "concept_relations": 94,
+    "concept_relations": 97,
     "reference_cases": 198
   },
   "domains": {
@@ -1534,6 +1534,19 @@
       "status": "VERIFIED_ACTIVE",
       "semantic_hash": "427e43f7628243bf10846a9805a06c9eb639df787a556fb7399319f8df24e247"
     },
+    "CR-038": {
+      "id": "CR-038",
+      "object_type": "CONCEPT_RELATION",
+      "source_id": "PROG-028",
+      "target_id": "P12",
+      "relation_type": "VOICED_BY",
+      "epistemic_classification": "FORMAL_RULE",
+      "domain_scope": "Progression to Voicing (M05 <-> M10)",
+      "formal_rule": "Two-Handed Rootless Stacking",
+      "description": "Rootless-Voicings (Modul P12) realisieren None- und Vierklangstrukturen des Circle of Fifths Soul Cycles (PROG-028).",
+      "status": "VERIFIED_ACTIVE",
+      "semantic_hash": "bc19c237c83c87de4e30ab72657ef388f680fbfc974bfdfec9023cfbbf539d8f"
+    },
     "REL-001": {
       "id": "REL-001",
       "object_type": "CONCEPT_RELATION",
@@ -1975,6 +1988,32 @@
       "description": "Die deterministische Vorzeichenfolge im Quintenzirkel definiert Tonarten und Leittoeene im Tonsystem.",
       "status": "VERIFIED_ACTIVE",
       "semantic_hash": "39665701a8c8620fb78fdfc9bc835d03916c284fe7236127660f22750d16bafb"
+    },
+    "REL-035": {
+      "id": "REL-035",
+      "object_type": "CONCEPT_RELATION",
+      "source_id": "PROG-028",
+      "target_id": "PAT-030",
+      "relation_type": "COMMONLY_PAIRED_WITH",
+      "epistemic_classification": "GENRE_TENDENCY",
+      "domain_scope": "Neo-Soul Groove Pairing (M05 <-> M08)",
+      "formal_rule": "Harmonic-Rhythmic Pairing",
+      "description": "Kopplung des Circle of Fifths Soul Cycles (PROG-028) mit dem Phrygian Neo-Soul Halftime Shuffle (PAT-030).",
+      "status": "VERIFIED_ACTIVE",
+      "semantic_hash": "6b0ad2cd0fdce3621533027a5c68356f57bd9232b737d17dc8dcca99397ea0f2"
+    },
+    "REL-036": {
+      "id": "REL-036",
+      "object_type": "CONCEPT_RELATION",
+      "source_id": "PAT-031",
+      "target_id": "PROG-025",
+      "relation_type": "COMMONLY_PAIRED_WITH",
+      "epistemic_classification": "GENRE_TENDENCY",
+      "domain_scope": "Latin Clave Coupling (M08 <-> M05)",
+      "formal_rule": "Harmonic-Rhythmic Pairing",
+      "description": "Kopplung des Afro-Cuban 6/8 Bembe Fusion Patterns (PAT-031) mit dem synkopierten Montuno Ostinato Vamp (PROG-025).",
+      "status": "VERIFIED_ACTIVE",
+      "semantic_hash": "dc1b135d548778b056805040dd659bc2fb7312d8e2b867110b6b1d242b1d7e3b"
     },
     "CDR-001": {
       "id": "CDR-001",
