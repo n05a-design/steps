@@ -1,13 +1,13 @@
-﻿domain_id,domain_name,unique_sources,reviewed_units,validated_claims,validated_examples,golden_refs,numerical_target_met,content_complete,cross_validated,practically_validated,implementation_ready,readiness_status
-M01,Musikgrundlagen & Akustik,6,8,10,6,4,YES,YES,YES,YES,YES,IMPLEMENTATION_READY
-M02,Musiknotation & Symbolik,7,9,12,8,8,YES,YES,YES,YES,YES,IMPLEMENTATION_READY
-M03,Intervalle & Skalentheorie,6,10,14,10,5,YES,YES,YES,YES,YES,IMPLEMENTATION_READY
-M04,Akkordtheorie & Voicings,7,12,16,12,12,YES,YES,YES,YES,YES,IMPLEMENTATION_READY
-M05,Harmonielehre & Kadenzen,8,14,18,14,12,YES,YES,YES,YES,YES,IMPLEMENTATION_READY
-M06,Voice Leading & Progressionen,7,15,16,25,7,YES,YES,YES,YES,YES,IMPLEMENTATION_READY
-M07,"Rhythmik, Metrum & Swing",6,11,15,12,16,YES,YES,YES,YES,YES,IMPLEMENTATION_READY
-M08,Drums & Percussion Grooves,6,12,15,29,16,YES,YES,YES,YES,YES,IMPLEMENTATION_READY
-M09,Genre-Atlas & Stilkunde,8,16,20,18,6,YES,YES,YES,YES,YES,IMPLEMENTATION_READY
-M10,Klavierpraxis & Ergonomie,5,14,14,14,6,YES,YES,YES,YES,YES,IMPLEMENTATION_READY
-M11,Musiksoftware-Datenmodelle,4,8,12,8,5,YES,YES,YES,NO,NO,CROSS_VALIDATED
-M12,"Didaktik, Komposition & Gehör",5,9,12,10,3,YES,YES,YES,YES,NO,PRACTICALLY_VALIDATED
+domain_id,domain_name,readiness_level,tested_cases_count,sources_cited_count,active_errors,open_adr_blocker,notes
+M01,Tonsystem & Akustik (Axiomatik),KNOWLEDGE_COMPLETE_ADR_GATED,7,6,0,ADR-005 (H/B vs B/Bb),Mathematisch in Z12 modelliert; wartet auf Owner-Entscheidung ADR-005
+M02,"Notation, Enharmonik & Vorzeichen",KNOWLEDGE_COMPLETE_ADR_GATED,7,5,0,ADR-005 (H/B vs B/Bb),Quintenzirkel- und Enharmonik-Regeln formalisiert; wartet auf ADR-005
+M03,Tonleitern & Modi (Heptatonik/Pentatonik),IMPLEMENTATION_READY,12,8,0,NONE,"Modale Ableitungen, Jazz-Moll und symmetrische Skalen vollständig verifiziert"
+M04,"Akkorde, Umkehrungen & Voicings",IMPLEMENTATION_READY,16,9,0,NONE,"Akkordaufbau, Drop-2, Shell-Voicings und Alterationen unabhängig getestet"
+M05,Harmonielehre & Akkordprogressionen,IMPLEMENTATION_READY,15,11,0,NONE,"Stufen- und Funktionstheorie, ERR-033 Doppeldominante korrigiert"
+M06,Stimmführung & Kontrapunkt,IMPLEMENTATION_READY,9,7,0,NONE,"Parallelenverbote, Leittonauflösungen und Gegenbewegung axiomatisch gesichert"
+M07,"Rhythmik, Metrum & Mikro-Timing",SPECIFIED_ROADMAP_DEFERRED,8,6,0,ADR-002 / OA-0012,ERR-034 MPC 61% Swing korrigiert; Software-Scope wartet auf ADR-002 Beschluss
+M08,Drum-Patterns & Perkussionsorchestrierung,SPECIFIED_ROADMAP_DEFERRED,6,5,0,ADR-002 / OA-0012,PAT-001 bis PAT-029 dokumentiert; Implementierung abhängig von v0.1/v0.2 Splitting
+M09,Genre-Atlas & Stilkunde,PRACTICALLY_VALIDATED,5,6,0,NONE,"Latin/Bossa Nova, Boom-Bap, UK Garage und Techno fundiert erforscht"
+M010,Klavier-Spieltechnik & Ergonomie,PRACTICALLY_VALIDATED,5,5,0,NONE,"Rootless Voicings A/B, Daumenuntersatz, Fingersätze für Lernende ausgearbeitet"
+M11,"MIDI-Spezifikation, SMF & Zeitarithmetik",CROSS_VALIDATED,4,4,0,NONE,Variable PPQ (240/480/960) und rationale Taktzeit-Arithmetik formalisiert
+M12,"Pädagogik, Didaktik & Gehörbildung",PRACTICALLY_VALIDATED,7,6,0,NONE,Module P01 bis P14 mit schrittweiser didaktischer Progression

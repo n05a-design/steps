@@ -95,3 +95,27 @@ Takt 4 (C7 - V7 Dominante):
 1. **Kein Kraftaufwand aus den Fingern:** Der Anschlagimpuls kommt aus dem Gewicht des fallenden Unterarms, abgefedert durch ein elastisches, bewegliches Handgelenk.
 2. **Daumen-Untersatz (Crossing under):** Beim Tonleiter- und Arpeggienspiel schwingt der Daumen frühzeitig und flach unter die Handfläche, sobald Finger 2 die Taste berührt.
 3. **Register-Balance:** Bässe unterhalb von $C2$ (65 Hz) nur einstimmig spielen (Oktavverdopplung erst ab $C3$), um Frequenzmatsch zu verhindern.
+
+### Modul P15: Backdoor Voicings & Guide-Tone Leading ($iv^7 - \flat VII^7 \to I^{\text{maj}7}$)
+* **Theorie-Referenz:** `PROG-025`
+* **Ziel:** Begleitung von Backdoor-Kadenzen mit geschmeidiger Stimmführung.
+* **Linke Hand:** Grundtöne $F \to B\flat \to C$ (oder $B\flat - A\flat$ Shell für $\flat VII^7$).
+* **Rechte Hand (Guide-Tone Leading):**
+  - $Fm^7$: Terz $A\flat$, Septime $E\flat$, None $G$ ($A\flat - E\flat - G$).
+  - $B\flat^7$: Terz $D$, Septime $A\flat$, None $C$ ($A\flat - C - D$).
+  - $C^{\text{maj}7}$: Terz $E$, Septime $B$, Quinte $G$ ($G - B - E$).
+* **Didaktischer Schlüssel:** Die Septime von $B\flat^7$ ($A\flat$) sinkt um einen Halbton zur Quinte von $C^{\text{maj}7}$ ($G$). Die Terz $D$ steigt um einen Halbton zur Terz $E$. Maximale Eleganz bei minimaler Handbewegung!
+
+---
+
+### Modul P16: Chromatische Bassführung & Sekundärdominanten in 1. Umkehrung ($V^7/V(6/5)$)
+* **Theorie-Referenz:** `PROG-026`
+* **Ziel:** Flüssige Verbindung von Tonika, Doppeldominante und Subdominantparallele.
+* **Linke Hand:** Chromatische Linie $G \to C\sharp \to C\natural \to B \to G$.
+* **Rechte Hand:**
+  - $G$-Dur: $D - G - B$
+  - $A^7/C\sharp$: $E - G - A$ (Terz $C\sharp$ liegt im Bass!)
+  - $Am/C$: $E - A - C$ (Terz $C$ liegt im Bass!)
+  - $D^7$: $F\sharp - C - D$
+  - $G$-Dur: $G - B - D$
+* **Didaktischer Schlüssel:** Wenn die Doppeldominante in der 1. Umkehrung gespielt wird, vermeidet die Hand große Sprünge und erzeugt einen fließenden Bassverlauf, wie er in Barock, Klassik und Jazz gleichermaßen Standard ist.
