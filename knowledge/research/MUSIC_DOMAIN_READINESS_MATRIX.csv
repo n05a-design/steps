@@ -6,8 +6,8 @@ M04,"Akkorde, Umkehrungen & Voicings",IMPLEMENTATION_READY,16,9,0,NONE,"Akkordau
 M05,Harmonielehre & Akkordprogressionen,IMPLEMENTATION_READY,15,11,0,NONE,"Stufen- und Funktionstheorie, ERR-033 Doppeldominante korrigiert"
 M06,Stimmführung & Kontrapunkt,IMPLEMENTATION_READY,9,7,0,NONE,"Parallelenverbote, Leittonauflösungen und Gegenbewegung axiomatisch gesichert"
 M07,"Rhythmik, Metrum & Mikro-Timing",SPECIFIED_ROADMAP_DEFERRED,8,6,0,ADR-002 / OA-0012,ERR-034 MPC 61% Swing korrigiert; Software-Scope wartet auf ADR-002 Beschluss
-M08,Drum-Patterns & Perkussionsorchestrierung,SPECIFIED_ROADMAP_DEFERRED,6,5,0,ADR-002 / OA-0012,PAT-001 bis PAT-029 dokumentiert; Implementierung abhängig von v0.1/v0.2 Splitting
+M08,Drum-Patterns & Perkussionsorchestrierung,SPECIFIED_ROADMAP_DEFERRED,6,5,0,ADR-002 / OA-0012,PAT-001 bis PAT-031 dokumentiert; Implementierung abhängig von v0.1/v0.2 Splitting
 M09,Genre-Atlas & Stilkunde,PRACTICALLY_VALIDATED,5,6,0,NONE,"Latin/Bossa Nova, Boom-Bap, UK Garage und Techno fundiert erforscht"
 M10,Klavier-Spieltechnik & Ergonomie,PRACTICALLY_VALIDATED,5,5,0,NONE,"Rootless Voicings A/B, Daumenuntersatz, Fingersätze für Lernende ausgearbeitet"
 M11,"MIDI-Spezifikation, SMF & Zeitarithmetik",CROSS_VALIDATED,4,4,0,NONE,Variable PPQ (240/480/960) und rationale Taktzeit-Arithmetik formalisiert
-M12,"Pädagogik, Didaktik & Gehörbildung",PRACTICALLY_VALIDATED,7,6,0,NONE,Module P01 bis P14 mit schrittweiser didaktischer Progression
+M12,"Pädagogik, Didaktik & Gehörbildung",PRACTICALLY_VALIDATED,7,6,0,NONE,Module P01 bis P19 mit schrittweiser didaktischer Progression

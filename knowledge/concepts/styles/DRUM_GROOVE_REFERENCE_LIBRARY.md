@@ -1,6 +1,6 @@
 # STEPS – Drum-Groove-Referenzbibliothek (Phase 4.10 Konsolidierung)
 
-**Dokumenttyp:** KONSOLIDIERTER DRUM GROOVE ATLAS (PAT-001 bis PAT-029)  
+**Dokumenttyp:** KONSOLIDIERTER DRUM GROOVE ATLAS (PAT-001 bis PAT-031)  
 **Wissensdomänen:** M07 (Rhythmik), M08 (Drums), M09 (Genres), M11 (MIDI)  
 **Standard:** 480 PPQ (Division = 480 Ticks / Viertelnote; 1 Takt 4/4 = 1920 Ticks), General-MIDI Percussion Map (Kanal 10).  
 **Identitätsregel:** Einmal vergebene IDs bleiben dauerhaft und unveränderlich an ihr musikalisches Pattern gebunden.

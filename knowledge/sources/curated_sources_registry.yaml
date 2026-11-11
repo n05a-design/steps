@@ -50,7 +50,7 @@ sources:
     rights_class: EDUCATIONAL_STUDY_MATERIAL
     status: approved
     domains: [M07, M08, M09]
-    description: Empirically measured 61% MPC 3000 swing (+25 ticks at 480 PPQ, 34.7 ms) with rootless keyboard voicings and GM channel 10 drum map.
+    description: Empirically measured 61% MPC 3000 swing (+26 ticks at 480 PPQ, 146 ticks, 36.11 ms at 90 BPM; ERR-034) with rootless keyboard voicings and GM channel 10 drum map.
 
   - id: SRC-0006
     title: PPR Drum Programming MIDI Library - UK Garage 132 BPM

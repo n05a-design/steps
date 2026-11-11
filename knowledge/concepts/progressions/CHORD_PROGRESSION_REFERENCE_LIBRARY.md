@@ -7,7 +7,7 @@
 
 ---
 
-## 1. Übersicht aller 27 kanonischen Progressions-Archetypen
+## 1. Übersicht aller 28 kanonischen Progressions-Archetypen
 
 | ID | Name / Typus | Stufen / Analyse | Beispiel (Standardtonart) | Stilistischer Kontext / Anwendung | Quellen & Belege |
 |---|---|---|---|---|---|

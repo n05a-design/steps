@@ -43,7 +43,7 @@ Gemäß Regel 10 des Arbeitsvertrags (*Kritische offene Fragen markieren und in 
   - Cluster-Voicings und Bill-Evans-Style Close-Voicings (Sekund-Reibungen innerhalb des Akkordkerns).
 
 ### M05: Kadenzen & Akkordprogressionen
-* **Aktueller Stand:** 27 kanonische Progressionen (PROG-001 bis PROG-027), inkl. II-V-I, I-VI-II-V, Blues, Rhythm Changes, Modal Interchange.
+* **Aktueller Stand:** 28 kanonische Progressionen (PROG-001 bis PROG-028), inkl. II-V-I, I-VI-II-V, Blues, Rhythm Changes, Modal Interchange, Circle of Fifths.
 * **Forschungslücke / Horizon:**
   - Coltrane Changes (Symmetrische Großterz-Aufteilung der Oktave: z. B. Giant Steps).
   - Nicht-funktionale / impressionistische Fortschreitungen (Debussy/Ravel: Parallele Akkordverschiebungen).
