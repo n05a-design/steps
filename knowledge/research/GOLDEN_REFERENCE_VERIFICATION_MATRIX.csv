@@ -1,0 +1,199 @@
+case_id,domain,category,test_class,title,proof_class,actual_test_function,tolerance,status,source_reference
+REF-0001,M01,PITCH_CLASS,UNIT_TEST,Pitch-Class C4 (MIDI 60),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,M01-06; MIDI 1.0 Spec
+REF-0002,M01,PITCH_CLASS,UNIT_TEST,Pitch-Class A4 (MIDI 69),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,M01-02; ISO 16
+REF-0003,M02,ENHARMONICS,SPECIFICATION_EXAMPLE,Enharmonik C# vs Db (12-TET),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,M01-04; 12-TET Standard
+REF-0004,M02,ENHARMONICS,SPECIFICATION_EXAMPLE,Diatonische Identität C# in D-Dur,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,M02-05; Aldwell & Schachter
+REF-0005,M02,ENHARMONICS,SPECIFICATION_EXAMPLE,Diatonische Identität Db in D-Dur (Skala),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,ERR-004; Kostka & Payne
+REF-0006,M02,NOTE_NAMING,SPECIFICATION_EXAMPLE,Notenbezeichnung H (Deutsch),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,ERR-001; DIN 1317-1
+REF-0007,M02,NOTE_NAMING,SPECIFICATION_EXAMPLE,Notenbezeichnung B (Deutsch),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,ERR-001; DIN 1317-1
+REF-0008,M02,NOTE_NAMING,SPECIFICATION_EXAMPLE,Notenbezeichnung B (International),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,ERR-001; MusicXML 4.0 DTD
+REF-0009,M02,NOTE_NAMING,SPECIFICATION_EXAMPLE,Notenbezeichnung Bb (International),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,ERR-001; MusicXML 4.0 DTD
+REF-0010,M03,INTERVALS,UNIT_TEST,Intervall C4 bis E4,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,M03-01; Open Music Theory 2
+REF-0011,M03,INTERVALS,UNIT_TEST,Intervall C4 bis Eb4,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,M03-01; Open Music Theory 2
+REF-0012,M04,CHORDS,UNIT_TEST,"Dreiklang C-Dur [C, E, G]",COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,M04-01; Spencer Practice of Harmony
+REF-0013,M04,CHORDS,UNIT_TEST,"Dreiklang C-Moll [C, Eb, G]",COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,M04-01; Spencer Practice of Harmony
+REF-0014,M04,CHORDS,UNIT_TEST,Akkord C/E (1. Umkehrung),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,M04-02; Aldwell & Schachter
+REF-0015,M04,CHORDS,UNIT_TEST,Akkord C/G (2. Umkehrung),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,M04-02; Aldwell & Schachter
+REF-0016,M04,CHORDS,UNIT_TEST,Polychord D/C,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,M04-09; Persichetti 20th Century Harmony
+REF-0017,M05,CADENCE,SPECIFICATION_EXAMPLE,Authentische Kadenz V -> I in C,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,M05-03; Riemann Funktionstheorie
+REF-0018,M05,CADENCE,SPECIFICATION_EXAMPLE,Trugschluss V -> vi in C,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,M05-03; Hindemith Traditional Harmony
+REF-0019,M06,VOICE_LEADING,UNIT_TEST,Voice-Leading C-Dur nach G-Dur (eng),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,M06-04; Tymoczko Geometry of Music
+REF-0020,M07,RHYTHM_SWING,UNIT_TEST,Straight 8tel Swing-Ratio,COMPUTATION_EXECUTED,TestReferenceImplementation,0.05,ASSERTION_PASSED,M07-04; SMF 1.0 Spec
+REF-0021,M07,RHYTHM_SWING,UNIT_TEST,Triolen-Swing Ratio,COMPUTATION_EXECUTED,TestReferenceImplementation,0.05,ASSERTION_PASSED,M07-04; SMF 1.0 Spec
+REF-0022,M08,DRUM_MAPPING,SPECIFICATION_EXAMPLE,General MIDI Kick Drum,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,M08-02; MIDI Association GM 1.0
+REF-0023,M08,DRUM_MAPPING,SPECIFICATION_EXAMPLE,General MIDI Snare Drum,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,M08-02; MIDI Association GM 1.0
+REF-0024,M08,DRUM_MAPPING,SPECIFICATION_EXAMPLE,General MIDI Closed Hi-Hat,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,M08-02; MIDI Association GM 1.0
+REF-0025,M08,DRUM_MAPPING,SPECIFICATION_EXAMPLE,General MIDI Open Hi-Hat,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,M08-02; MIDI Association GM 1.0
+REF-0026,M09,STYLE_TIMING,UNIT_TEST,Pop Backbeat Zählzeiten,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,M09-01; Popular Music Analysis
+REF-0027,M09,STYLE_TIMING,UNIT_TEST,House Four-on-the-Floor,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,M09-02; Electronic Music Handbook
+REF-0028,M09,STYLE_TIMING,UNIT_TEST,House Offbeat Hi-Hat,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,M09-02; Electronic Music Handbook
+REF-0029,M07,STYLE_TIMING,UNIT_TEST,8tel-Offbeat nach Schlag 3 (3+),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,VAL-M07-PPQ; SMF Standard
+REF-0030,M07,STYLE_TIMING,UNIT_TEST,16tel-Synkope vor Schlag 4 (3e+),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,VAL-M07-PPQ; SMF Standard
+REF-0031,M04,CHORDS,UNIT_TEST,"A-Moll Dreiklang [A3, C4, E4]",COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,Aldwell & Schachter Kap. 4
+REF-0032,M04,CHORDS,UNIT_TEST,"F-Dur Dreiklang [A3, C4, F4]",COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,Aldwell & Schachter Kap. 5
+REF-0033,M08,DRUM_MAPPING,SPECIFICATION_EXAMPLE,General MIDI Side Stick,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MIDI Association GM 1.0
+REF-0034,M06,VOICE_LEADING,SPECIFICATION_EXAMPLE,Geltungsbereich Parallele Quinten,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,Everett Foundations of Rock
+REF-0035,M05,CADENCE,UNIT_TEST,Tritonsubstitution Dominante G7,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,PROG-013; Levine Jazz Theory Book
+REF-0036,M05,CADENCE,UNIT_TEST,Backdoor Kadenz Bb7 nach C,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,PROG-014/017; WEB-4.6-02; Jazz Theory Foundations
+REF-0037,M07,RHYTHM_STYLE,SPECIFICATION_EXAMPLE,Reggae One Drop Zählzeit 1,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,PAT-010; WEB-4.6-03; Drummerworld Reggae Drumming History
+REF-0038,M07,RHYTHM_STYLE,SPECIFICATION_EXAMPLE,Motown Snare Stomp,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,PAT-009; WEB-4.6-07; Motown Hitsville Sound Analysis
+REF-0039,M04,CHORDS,UNIT_TEST,"Csus4 Akkord [C, F, G]",COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,P06; Spencer Practice of Harmony
+REF-0040,M04,CHORDS,UNIT_TEST,"Cadd9 Akkord [C, D, E, G]",COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,P06; Contemporary Harmony
+REF-0041,M05,PROGRESSION,SPECIFICATION_EXAMPLE,Klassische Jazz Backdoor Kadenz Fm7 -> Bb7 -> Cmaj7,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,PROG-017; WEB-4.6-02; Levine Jazz Theory Book (Kap. 14)
+REF-0042,M05,PROGRESSION,SPECIFICATION_EXAMPLE,Royal Road Progression (Oudou shinkou) in C-Dur,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,PROG-015; WEB-4.6-05; J-Pop Harmonic Analyses
+REF-0043,M10,VOICING,SPECIFICATION_EXAMPLE,Drop-2 Voicing Dm7 aus Grundstellung,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,Modul P08; PIANO_PRACTICE_VALIDATION.md
+REF-0044,M07,RHYTHM_SWING,PROPERTY_TEST,Swing-Ratio Dynamik nach Friberg & Sundström,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,GENRE_RESEARCH_JAZZ_RHYTHM.md; WEB-4.6-04; Friberg & Sundström (2002)
+REF-0045,M08,DRUM_MAPPING,SPECIFICATION_EXAMPLE,General MIDI 1.0 Note 44 Definition,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,WEB-4.6-01; MIDI Manufacturers Association GM 1.0 Spec
+REF-0046,M08,DRUM_PATTERN,SPECIFICATION_EXAMPLE,Reggae Steppers Kick-Pattern,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,PAT-015; GENRE_RESEARCH_REGGAE.md; WEB-4.6-03
+REF-0047,M11,TUPLETS,UNIT_TEST,Absolute Tuplet-Quantisierung Septole bei 480 PPQ,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,ERR-012; tuplet_reference.py; MMA SMF 1.0 Spec
+REF-0048,M08,DRUM_LAYERING,SPECIFICATION_EXAMPLE,Motown Drum Layering (PAT-009),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,PAT-009; GENRE_RESEARCH_FUNK_SOUL.md; WEB-4.6-07
+REF-0049,M04,CHORDS,UNIT_TEST,Cadd2 vs Cadd9 Tonklassen-Vergleich,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,PROGRESSION_ID_CONSISTENCY.md; WEB-4.7-04; Contemporary Keyboard Harmony
+REF-0050,M04,CHORDS,UNIT_TEST,Lydisch-dominanter Tritonusakkord Db7(#11),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,PROG-020; Levine Jazz Theory Book (Kap. 15)
+REF-0051,M05,PROGRESSION,SPECIFICATION_EXAMPLE,Minor Line Cliché Am -> Am(maj7) -> Am7 -> Am6,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,PROG-019; Jazz & Film Noir Analysis
+REF-0052,M05,PROGRESSION,SPECIFICATION_EXAMPLE,Neo-Soul Kadenz Fm7 -> Bb7 -> Cmaj7 -> Abmaj7,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,Fallstudie 1 (Midnight Solace); INTEGRATED_MUSICAL_CASE_STUDIES.md
+REF-0053,M07,RHYTHM_SWING,UNIT_TEST,UK Garage 58% MPC-Swing 16tel-Quantisierung,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-024); GENRE_RESEARCH_UK_GARAGE.md
+REF-0054,M01,GENERAL,SPECIFICATION_EXAMPLE,Drum & Bass Two-Step Kick-Platzierung (174 BPM),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,PAT-018; GENRE_RESEARCH_DNB.md; WEB-4.7-01
+REF-0055,M01,GENERAL,SPECIFICATION_EXAMPLE,UK Garage 2-Step Kick-Omission,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,PAT-020; GENRE_RESEARCH_UK_GARAGE.md
+REF-0056,M01,GENERAL,SPECIFICATION_EXAMPLE,Metrische Dualität im Liquid Drum & Bass,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,Fallstudie 2 (Horizon Drift); INTEGRATED_MUSICAL_CASE_STUDIES.md
+REF-0057,M01,GENERAL,SPECIFICATION_EXAMPLE,Charleston Begleitmuster am Klavier (Modul P09),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,Modul P09; PIANO_LEARNING_MODULES.md
+REF-0058,M01,GENERAL,SPECIFICATION_EXAMPLE,Bass-First Gehörerkennung (Modul P10),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-026); PIANO_LEARNING_MODULES.md (P10)
+REF-0059,M01,GENERAL,SPECIFICATION_EXAMPLE,Mathematische Swing-Berechnung bei 480 PPQ (58% vs 60%),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-024); Roger Linn MPC Specifications
+REF-0060,M01,GENERAL,SPECIFICATION_EXAMPLE,Horizon Drift Modale Klassifikation (Dm9 - Bbmaj7 - Gm7 - C(add9)),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-025); Kostka/Payne Tonal Harmony
+REF-0061,M01,GENERAL,SPECIFICATION_EXAMPLE,Dreiklangsumkehrungen Gehör & Stimmführung (Modul P11),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,PIANO_LEARNING_MODULES.md (P11); Aldwell & Schachter Harmony and Voice Leading
+REF-0062,M01,GENERAL,SPECIFICATION_EXAMPLE,Jungle / Amen Chopped Breakbeat Rhythmik (PAT-021),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,DRUM_GROOVE_REFERENCE_LIBRARY.md (PAT-021); GENRE_RESEARCH_DNB.md
+REF-0063,M01,GENERAL,SPECIFICATION_EXAMPLE,Jump-Up Minimal Bouncer Two-Step (PAT-022),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,DRUM_GROOVE_REFERENCE_LIBRARY.md (PAT-022); GENRE_RESEARCH_DNB.md
+REF-0064,M01,GENERAL,SPECIFICATION_EXAMPLE,UK Garage 4-Bar Shuffle & Vocal-Chop Pattern (PAT-023),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,DRUM_GROOVE_REFERENCE_LIBRARY.md (PAT-023); GENRE_RESEARCH_UK_GARAGE.md
+REF-0065,M01,GENERAL,SPECIFICATION_EXAMPLE,L1-Stimmfuehrungsdistanz bei Dreiklangsumkehrungen,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,PIANO_LEARNING_MODULES.md (P11); Tymoczko Geometry of Music
+REF-0066,M01,GENERAL,SPECIFICATION_EXAMPLE,Cross-Domain Metrische Schichtung im Drum & Bass,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,INTEGRATED_MUSICAL_CASE_STUDIES.md (Horizon Drift); GENRE_RESEARCH_DNB.md
+REF-0067,M01,GENERAL,SPECIFICATION_EXAMPLE,Heptatonik 28-Skalen-System (Prehn-Klassifikation),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,Scales with 4 smart tools.txt; MUSIC_THEORY_FOUNDATION.md
+REF-0068,M01,GENERAL,SPECIFICATION_EXAMPLE,Akkordidentitaet vs. Voicing-Ebene (Schichten-Architektur),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MUSIC_THEORY_FOUNDATION.md; Kostka/Payne Tonal Harmony
+REF-0069,M01,GENERAL,SPECIFICATION_EXAMPLE,Neo-Soul Rootless Minor Cycle (PROG-021),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,PPR Boom Bap Lesson 1.1; CHORD_PROGRESSION_REFERENCE_LIBRARY.md
+REF-0070,M01,GENERAL,SPECIFICATION_EXAMPLE,Picardische Terz Aufloesung (PROG-022),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,7 levels of reharmonising Eleanor Rigby.txt; CHORD_PROGRESSION_REFERENCE_LIBRARY.md
+REF-0071,M07,RHYTHM_SWING,UNIT_TEST,PPR Boom-Bap 61% MPC 3000 Swing-Mathematik (90 BPM),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,PPR Boom Bap README.txt; DRUM_GROOVE_REFERENCE_LIBRARY.md
+REF-0072,M01,GENERAL,SPECIFICATION_EXAMPLE,Berlin Peak Techno Polyrhythmischer Rimshot (PAT-025),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,PPR Techno 130 BPM Drums.mid; DRUM_GROOVE_REFERENCE_LIBRARY.md
+REF-0073,M01,GENERAL,SPECIFICATION_EXAMPLE,Zweihaendige Rootless Voicings (Modul P12),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,PIANO_LEARNING_MODULES.md (P12)
+REF-0074,M01,GENERAL,SPECIFICATION_EXAMPLE,General MIDI 1.0 Percussion Channel 10 Standard,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MMA GM 1.0 Standard; PPR Drum Programming Library
+REF-0075,M01,GENERAL,SPECIFICATION_EXAMPLE,Afro-Kubanische 3:2 Son Clave Rhythmik (480 PPQ),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,GENRE_RESEARCH_LATIN.md; Mauleon Salsa Guidebook
+REF-0076,M01,GENERAL,SPECIFICATION_EXAMPLE,Brasilianische Bossa Nova Clave (PAT-027),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,GENRE_RESEARCH_LATIN.md; Jobim / Gilberto Transkriptionen
+REF-0077,M06,CADENCE,SPECIFICATION_EXAMPLE,Bossa Nova Doppeldominanten-Gleitung (PROG-024),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,GENRE_RESEARCH_LATIN.md; Girl from Ipanema Harmonische Analyse
+REF-0078,M01,GENERAL,SPECIFICATION_EXAMPLE,Bossa Nova Surdo-Bass Pendel am Klavier (Modul P14),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,PIANO_LEARNING_MODULE_P14.md
+REF-0079,M01,GENERAL,SPECIFICATION_EXAMPLE,MusicXML 4.0 Enharmonische Repraesentation vs. MIDI,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MUSICXML_AND_DATA_MODELS.md; W3C MusicXML 4.0 Spezifikation
+REF-0080,M01,GENERAL,SPECIFICATION_EXAMPLE,Deterministische Vorzeichenfolge im Quintenzirkel,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MUSICXML_AND_DATA_MODELS.md; Hindemith Traditional Harmony
+REF-0081,M01,GENERAL,SPECIFICATION_EXAMPLE,Afro-Cuban Cha-Cha-Cha Conga Tumbao (PAT-028),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,GENRE_RESEARCH_LATIN.md; Mauleon Latin Percussion
+REF-0082,M09,STYLE_TIMING,SPECIFICATION_EXAMPLE,Latin Jazz Montuno Piano-Synkopierung (PROG-025),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,GENRE_RESEARCH_LATIN.md; Mauleon Salsa Guidebook
+REF-0083,M07,RHYTHM_SWING,UNIT_TEST,16tel-Straight-Quantisierung 50% bei 480 PPQ,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-032
+REF-0084,M07,RHYTHM_SWING,UNIT_TEST,16tel-Light-Swing 55% bei 480 PPQ und 90 BPM,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-032
+REF-0085,M07,RHYTHM_SWING,UNIT_TEST,16tel-Medium-Swing 60% bei 480 PPQ und 90 BPM,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-032
+REF-0086,M07,RHYTHM_SWING,UNIT_TEST,16tel-Heavy-Swing 62% bei 480 PPQ und 90 BPM,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-032
+REF-0087,M07,RHYTHM_SWING,UNIT_TEST,16tel-Swing 61% bei 960 PPQ High-Resolution Grid,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-032
+REF-0088,M07,RHYTHM_SWING,UNIT_TEST,16tel-Swing 61% bei 240 PPQ Low-Resolution Grid,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-032
+REF-0089,M01,ACOUSTICS,UNIT_TEST,Pythagoreisches Komma mathematische Ableitung (12 reine Quinten vs. 7 Oktaven),COMPUTATION_EXECUTED,TestReferenceImplementation,0.05,ASSERTION_PASSED,SRC-033
+REF-0090,M01,ACOUSTICS,UNIT_TEST,Reine Große Terz (5:4) Cent-Abweichung von 12-TET,COMPUTATION_EXECUTED,TestReferenceImplementation,0.05,ASSERTION_PASSED,SRC-033
+REF-0091,M07,RHYTHM_METER,UNIT_TEST,Additives ungerades Metrum 5/8 (3+2 Subdivision) bei 480 PPQ,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-034
+REF-0092,M07,RHYTHM_METER,UNIT_TEST,Additives ungerades Metrum 7/8 (2+2+3 Subdivision) bei 480 PPQ,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-034
+REF-0093,M10,VOICING,UNIT_TEST,Zweihändiges Rootless Voicing Typ A für Cmaj9 (Mark Levine),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-020
+REF-0094,M10,VOICING,UNIT_TEST,Zweihändiges Rootless Voicing Typ B für Cmaj9 (Mark Levine),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-020
+REF-0095,M05,HARMONY,UNIT_TEST,Backdoor Cadence Modal Interchange Resolution (iv7 - bVII7 -> Imaj7),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,"SRC-020 (Levine 1995), Terefenko (2014)"
+REF-0096,M10,VOICING,UNIT_TEST,Secondary Dominant 1st Inversion Chromatic Bass Line (A7/C# -> Am/C),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,"SRC-001 (Kostka/Payne 2013), Aldwell (1989)"
+REF-0097,M03,INTERVALS,PROPERTY_TEST,Coltrane Changes Symmetric Major Thirds Cycle (3 x 4 semitones = 12),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,"SRC-005 (Tymoczko 2011), Cohn (2012)"
+REF-0098,M07,RHYTHM_SWING,UNIT_TEST,"Neo-Soul 57% Swing Quantization (480 PPQ -> 137 ticks, +17 offset)",COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-032 (Friberg & Sundström 2002)
+REF-0099,M08,DRUM_PATTERN,PROPERTY_TEST,Afro-Cuban Bembe Bell Metric Invariant (7 onsets in 12 pulses),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-031 (Peñalosa 2009)
+REF-0100,M12,INTEGRATION,INTEGRATION_TEST,Integrated Multi-Domain Consistency (Harmony M05 + Drums M08 + Piano M10),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,STEPS Architectural Cross-Domain Specification
+REF-0101,M01,ACOUSTICS,UNIT_TEST,Kammerton A4 Frequenzstandard,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-001 (Kostka/Payne 2013)
+REF-0102,M01,ACOUSTICS,UNIT_TEST,Oktave Frequenzverhältnis,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-003 (Zarlino 1558)
+REF-0103,M01,ACOUSTICS,UNIT_TEST,12-TET Halbton-Frequenzfaktor,COMPUTATION_EXECUTED,TestReferenceImplementation,1e-05,ASSERTION_PASSED,SRC-001 (Piston 1987)
+REF-0104,M01,ACOUSTICS,UNIT_TEST,Centwert der gleichstufigen Oktave,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-001
+REF-0105,M01,ACOUSTICS,UNIT_TEST,Centwert der reinen großen Terz 5/4,COMPUTATION_EXECUTED,TestReferenceImplementation,0.05,ASSERTION_PASSED,SRC-003 (Zarlino 1558)
+REF-0106,M01,ACOUSTICS,UNIT_TEST,Cent-Differenz Reine vs Gleichstufige Terz,COMPUTATION_EXECUTED,TestReferenceImplementation,0.05,ASSERTION_PASSED,SRC-003
+REF-0107,M01,PITCH_CLASS,UNIT_TEST,Tonklasse C4 im Z12-System,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-005 (Tymoczko 2011)
+REF-0108,M01,PITCH_CLASS,UNIT_TEST,Tonklasse A4 im Z12-System,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-005 (Tymoczko 2011)
+REF-0109,M01,MIDI_MAPPING,SPECIFICATION_EXAMPLE,MIDI Note Number von C4,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MIDI Manufacturers Association
+REF-0110,M01,MIDI_MAPPING,SPECIFICATION_EXAMPLE,MIDI Note Number von A4,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MIDI Manufacturers Association
+REF-0111,M01,ACOUSTICS,UNIT_TEST,Frequenz aus MIDI Note 69 (A4),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,MIDI Manufacturers Association
+REF-0112,M01,ACOUSTICS,UNIT_TEST,Frequenz aus MIDI Note 60 (C4),COMPUTATION_EXECUTED,TestReferenceImplementation,0.05,ASSERTION_PASSED,SRC-001
+REF-0113,M01,PITCH_CLASS,UNIT_TEST,Zyklische Gruppe Z12 Transposition (C + 7),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-005 (Tymoczko 2011)
+REF-0114,M01,PITCH_CLASS,UNIT_TEST,Zyklische Gruppe Z12 Überlauf (B + 2),COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-005 (Tymoczko 2011)
+REF-0115,M02,ENHARMONICS,SPECIFICATION_EXAMPLE,Enharmonische Äquivalenz C# und Db,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0116,M02,ENHARMONICS,SPECIFICATION_EXAMPLE,Enharmonische Äquivalenz F# und Gb,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0117,M02,INTERVALS,UNIT_TEST,Intervallabstand Reine Quinte in Halbtönen,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-001
+REF-0118,M02,INTERVALS,UNIT_TEST,Intervallinversion der Quinte modulo 12,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-001
+REF-0119,M02,INTERVALS,UNIT_TEST,Intervallabstand Große Terz in Halbtönen,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-001
+REF-0120,M02,INTERVALS,UNIT_TEST,Intervallinversion der großen Terz modulo 12,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-001
+REF-0121,M02,INTERVALS,UNIT_TEST,Intervallabstand Tritonus in Halbtönen,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-001
+REF-0122,M02,INTERVALS,UNIT_TEST,Selbstinversion des Tritonus modulo 12,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,SRC-005
+REF-0123,M02,CIRCLE_OF_FIFTHS,SPECIFICATION_EXAMPLE,Quintenzirkel 1. Quinte aufwärts von C,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0124,M02,CIRCLE_OF_FIFTHS,SPECIFICATION_EXAMPLE,Quintenzirkel 2. Quinte aufwärts von C,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0125,M02,CIRCLE_OF_FIFTHS,SPECIFICATION_EXAMPLE,Quintenzirkel 1. Quarte aufwärts (1. Quinte abwärts) von C,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0126,M03,SCALES,SPECIFICATION_EXAMPLE,Dur-Tonleiter Halbtonschrittfolge,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0127,M03,SCALES,SPECIFICATION_EXAMPLE,Natürlich Moll (Äolisch) Halbtonschrittfolge,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0128,M03,SCALES,SPECIFICATION_EXAMPLE,Harmonisch Moll übermäßige Sekunde Stufe 6-7,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0129,M03,SCALES,SPECIFICATION_EXAMPLE,Melodisch Moll aufwärts Schrittmuster,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0130,M03,MODES,SPECIFICATION_EXAMPLE,Dorischer Modus Schrittmuster (2. Modus),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-002 (Levine 1995)
+REF-0131,M03,MODES,SPECIFICATION_EXAMPLE,Phrygischer Modus Schrittmuster (3. Modus),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-002
+REF-0132,M03,MODES,SPECIFICATION_EXAMPLE,Lydischer Modus Schrittmuster (4. Modus),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-002
+REF-0133,M03,MODES,SPECIFICATION_EXAMPLE,Mixolydischer Modus Schrittmuster (5. Modus),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-002
+REF-0134,M03,MODES,SPECIFICATION_EXAMPLE,Lokrischer Modus Schrittmuster (7. Modus),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-002
+REF-0135,M03,SCALES,SPECIFICATION_EXAMPLE,Dur-Pentatonik Schrittmuster,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0136,M03,SCALES,SPECIFICATION_EXAMPLE,Moll-Pentatonik Schrittmuster,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0137,M03,SCALES,SPECIFICATION_EXAMPLE,Ganztonskala Symmetrie,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-005
+REF-0138,M04,CHORDS,SPECIFICATION_EXAMPLE,Dur-Dreiklang Tonklassen-Intervallfolge,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0139,M04,CHORDS,SPECIFICATION_EXAMPLE,Moll-Dreiklang Tonklassen-Intervallfolge,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0140,M04,CHORDS,SPECIFICATION_EXAMPLE,Verminderter Dreiklang Tonklassen-Intervallfolge,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0141,M04,CHORDS,SPECIFICATION_EXAMPLE,Übermäßiger Dreiklang Tonklassen-Intervallfolge,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0142,M04,CHORDS,SPECIFICATION_EXAMPLE,Dominantseptakkord Tonklassen-Intervallfolge,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0143,M04,CHORDS,SPECIFICATION_EXAMPLE,Major-7th Akkord Tonklassen-Intervallfolge,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0144,M04,CHORDS,SPECIFICATION_EXAMPLE,Moll-7th Akkord Tonklassen-Intervallfolge,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0145,M04,CHORDS,SPECIFICATION_EXAMPLE,Halbverminderter Septakkord Tonklassen,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0146,M04,CHORDS,SPECIFICATION_EXAMPLE,Ganzverminderter Septakkord Tonklassen,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0147,M04,INVERSIONS,SPECIFICATION_EXAMPLE,Dreiklang 1. Umkehrung (Sextakkord) Basston,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0148,M04,INVERSIONS,SPECIFICATION_EXAMPLE,Dreiklang 2. Umkehrung (Quartsextakkord) Basston,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0149,M04,VOICING,SPECIFICATION_EXAMPLE,Drop-2 Transformation Cmaj7 Close Voicing,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-002 (Levine 1995)
+REF-0150,M04,VOICING,SPECIFICATION_EXAMPLE,Rootless Voicing A-Typ Dm9,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-002
+REF-0151,M04,VOICING,SPECIFICATION_EXAMPLE,Rootless Voicing B-Typ Dm9,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-002
+REF-0152,M04,VOICING,SPECIFICATION_EXAMPLE,Upper Structure Triad D-Dur über C7,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-002
+REF-0153,M05,HARMONY,SPECIFICATION_EXAMPLE,II-V-I Grundtonfolge in C-Dur,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0154,M05,HARMONY,SPECIFICATION_EXAMPLE,Quintfall-Intervall der II-V-I Verbindung,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0155,M05,HARMONY,SPECIFICATION_EXAMPLE,Tritonussubstitution der Dominante G7,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-002
+REF-0156,M05,HARMONY,SPECIFICATION_EXAMPLE,Gemeinsamer Tritonus G7 und Db7,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-002
+REF-0157,M05,HARMONY,SPECIFICATION_EXAMPLE,Backdoor bVII7 Grundton in C-Dur,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-002
+REF-0158,M05,HARMONY,SPECIFICATION_EXAMPLE,Backdoor Septimen-Auflösung Ab zu G,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-002
+REF-0159,M05,HARMONY,SPECIFICATION_EXAMPLE,Backdoor Terz-Auflösung D zu E (Korrektur),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-002
+REF-0160,M05,HARMONY,SPECIFICATION_EXAMPLE,Sekundärdominante V7/V in C-Dur,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0161,M05,HARMONY,SPECIFICATION_EXAMPLE,Doppeldominante modaler Terzabsturz F# zu F,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0162,M05,HARMONY,SPECIFICATION_EXAMPLE,Andalusische Kadenz Stufenfolge i-bVII-bVI-V,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0163,M05,HARMONY,SPECIFICATION_EXAMPLE,Picardische Terz Auflösung in D-Moll,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0164,M05,HARMONY,SPECIFICATION_EXAMPLE,Coltrane Changes Großterzabstände in Z12,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-005 (Cohn 2012)
+REF-0165,M05,HARMONY,SPECIFICATION_EXAMPLE,Minor Plagal Kadenz iv nach I,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0166,M05,HARMONY,SPECIFICATION_EXAMPLE,Doo-Wop Kadenz I-vi-IV-V in C-Dur,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0167,M05,HARMONY,SPECIFICATION_EXAMPLE,Deceptive Cadence V nach vi in C-Dur,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0168,M06,VOICE_LEADING,SPECIFICATION_EXAMPLE,Parallele Quinten Verbot (C-G nach D-A),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-004 (Fux 1725)
+REF-0169,M06,VOICE_LEADING,SPECIFICATION_EXAMPLE,Parallele Oktaven Verbot (C-C nach D-D),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-004
+REF-0170,M06,VOICE_LEADING,SPECIFICATION_EXAMPLE,Gegenbewegung statt Parallelbewegung,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-004
+REF-0171,M06,VOICE_LEADING,SPECIFICATION_EXAMPLE,Leittonauflösung B4 nach C5,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0172,M06,VOICE_LEADING,SPECIFICATION_EXAMPLE,Septimauflösung F4 nach E4 in G7 -> C,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0173,M06,VOICE_LEADING,SPECIFICATION_EXAMPLE,Stimmkreuzungsverbot Definition,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0174,M06,VOICE_LEADING,SPECIFICATION_EXAMPLE,Stimmführung Minimaldistanz L1 Dm7 nach G7,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-005
+REF-0175,M06,VOICE_LEADING,SPECIFICATION_EXAMPLE,Stimmtausch (Voice Exchange) 3-10 Bewegung,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0176,M06,VOICE_LEADING,SPECIFICATION_EXAMPLE,Vermeidung verdeckter Quinten im Außenstimmensatz,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-001
+REF-0177,M07,SWING_TIMING,SPECIFICATION_EXAMPLE,Straight Timing Offset 50% bei 480 PPQ,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MPC Standard
+REF-0178,M07,SWING_TIMING,SPECIFICATION_EXAMPLE,MPC 61% Swing Ticks bei 480 PPQ (ERR-034),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MPC Standard (ERR-034)
+REF-0179,M07,SWING_TIMING,SPECIFICATION_EXAMPLE,MPC 61% Swing Offset bei 480 PPQ (ERR-034),SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MPC Standard (ERR-034)
+REF-0180,M07,SWING_TIMING,SPECIFICATION_EXAMPLE,MPC 61% Swing Delay in Millisekunden @ 90 BPM,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.05,SOURCE_VERIFIED,MPC Standard (ERR-034)
+REF-0181,M07,SWING_TIMING,SPECIFICATION_EXAMPLE,MPC 61% Swing Ticks bei 960 PPQ,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MPC Standard
+REF-0182,M07,SWING_TIMING,SPECIFICATION_EXAMPLE,MPC 61% Swing Offset bei 960 PPQ,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MPC Standard
+REF-0183,M07,SWING_TIMING,SPECIFICATION_EXAMPLE,MPC 61% Swing Ticks bei 240 PPQ,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MPC Standard
+REF-0184,M07,SWING_TIMING,SPECIFICATION_EXAMPLE,MPC 61% Swing Offset bei 240 PPQ,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MPC Standard
+REF-0185,M07,SWING_TIMING,SPECIFICATION_EXAMPLE,Neo-Soul 57% Swing Ticks bei 480 PPQ,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,J Dilla / Questlove
+REF-0186,M07,SWING_TIMING,SPECIFICATION_EXAMPLE,Triolischer Swing 66.67% Ticks bei 480 PPQ,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,Jazz Standard
+REF-0187,M08,CLAVE,SPECIFICATION_EXAMPLE,Afro-Cuban Son Clave 3:2 Onsets auf 16tel-Raster,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,Mauleón (1993)
+REF-0188,M08,CLAVE,SPECIFICATION_EXAMPLE,Afro-Cuban 12/8 Bembe Bell-Onsets,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,Peñalosa (2009)
+REF-0189,M08,POLYRHYTHM,SPECIFICATION_EXAMPLE,3:2 Polyrhythmus Minimaler gemeinsamer Teiler,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,London (2012)
+REF-0190,M09,GENRE,SPECIFICATION_EXAMPLE,Bossa Nova Surdo Bass-Betonungsmuster,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,Mauleón (1993)
+REF-0191,M10,ERGONOMICS,SPECIFICATION_EXAMPLE,Klaviertastatur Oktavbreite in Halbtönen,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,Pianistische Ergonomie
+REF-0192,M10,ERGONOMICS,SPECIFICATION_EXAMPLE,Dezimen-Intervallabstand in Halbtönen,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,Pianistische Ergonomie
+REF-0193,M10,VOICING,SPECIFICATION_EXAMPLE,Guide-Tone Distanz Dm7 nach G7 in der rechten Hand,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,SRC-002
+REF-0194,M12,PEDAGOGY,SPECIFICATION_EXAMPLE,Didaktische Reduktion Dreiklang Weiß-Weiß-Weiß,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,Modul P01
+REF-0195,M11,MIDI_SPEC,SPECIFICATION_EXAMPLE,Standard MIDI Note Number Bereich,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MIDI 1.0 Spec
+REF-0196,M11,MIDI_SPEC,SPECIFICATION_EXAMPLE,Standard MIDI Velocity Bereich,SPECIFICATION_DOCUMENTED,TestGoldenReferenceCases.verify_specification_case,0.0,SOURCE_VERIFIED,MIDI 1.0 Spec
+REF-0197,M11,MIDI_TIME,UNIT_TEST,Viertelnoten-Dauer in ms bei 120 BPM,COMPUTATION_EXECUTED,TestReferenceImplementation,0.0,ASSERTION_PASSED,MIDI 1.0 Spec
+REF-0198,M11,MIDI_TIME,UNIT_TEST,Tick-Dauer in ms bei 120 BPM und 480 PPQ,COMPUTATION_EXECUTED,TestReferenceImplementation,0.001,ASSERTION_PASSED,MIDI 1.0 Spec

@@ -93,6 +93,57 @@ VALID_RELATION_TYPES = {
     'VOICE_LEADING'
 }
 
+VALID_ADR_STATUSES = {'proposed', 'accepted', 'rejected', 'superseded'}
+CANONICAL_ADR_THEMES = {
+    'ADR-001': 'Zwei Fenster',
+    'ADR-002': 'Vision und MVP Chords/Drums',
+    'ADR-003': 'Glide-Code-Quelle',
+    'ADR-004': 'License/Brand',
+    'ADR-005': 'Fachmodell',
+    'ADR-006': 'Datenhaltung',
+    'ADR-007': 'Audio/MIDI',
+    'ADR-008': 'KI-Skill',
+    'ADR-009': 'Historische 21/39-Verzeichnisse',
+    'ADR-010': 'Public-Repository-Medien',
+    'ADR-011': 'Release-Packaging- und Auslieferungsmodell',
+    'ADR-012': 'Aufbewahrungs- und Bereinigungsrichtlinie Web/MIDI'
+}
+
+def verify_adr_integrity(decision_register_path):
+    """Verifies ADR historical identity lock in decisions/DECISION_REGISTER.md (Phase 4.17 Gate 1)."""
+    errors = []
+    if not os.path.exists(decision_register_path):
+        errors.append(f"Decisions register missing: {decision_register_path}")
+        return {}, errors
+
+    adrs = {}
+    with open(decision_register_path, 'r', encoding='utf-8') as f:
+        for line_num, line in enumerate(f, 1):
+            if line.strip().startswith('| ADR-'):
+                parts = [p.strip() for p in line.split('|')[1:-1]]
+                if len(parts) >= 3:
+                    adr_id, status, theme = parts[0], parts[1].lower(), parts[2]
+                    adrs[adr_id] = {'status': status, 'theme': theme, 'line': line_num}
+
+    for adr_id, expected_theme in CANONICAL_ADR_THEMES.items():
+        if adr_id not in adrs:
+            errors.append(f"{decision_register_path}: Missing canonical ADR '{adr_id}' ({expected_theme})")
+            continue
+
+        actual_theme = adrs[adr_id]['theme']
+        actual_status = adrs[adr_id]['status']
+
+        if actual_status not in VALID_ADR_STATUSES:
+            errors.append(f"{decision_register_path}:{adrs[adr_id]['line']}: Invalid status '{actual_status}' for {adr_id}")
+
+        if expected_theme.lower() not in actual_theme.lower():
+            errors.append(
+                f"{decision_register_path}:{adrs[adr_id]['line']}: Semantic identity conflict in {adr_id}! "
+                f"Expected theme '{expected_theme}', but found '{actual_theme}'"
+            )
+
+    return adrs, errors
+
 def extract_markdown_table_definitions(file_path, id_pattern, expected_cols=None):
     """
     Extracts definitions from a markdown table with line numbers, detecting duplicates
@@ -524,6 +575,11 @@ def verify_integrity(repo_root=None):
     lock_errs = verify_identity_lock(baseline_path, progs, drums, pianos, cases, rel_rows, mig_rows)
     errors.extend(lock_errs)
 
+    # 8. Check ADR Historical Identity Lock (Phase 4.17 Gate 1)
+    decisions_path = os.path.join(repo_root, 'decisions', 'DECISION_REGISTER.md')
+    adrs, adr_errs = verify_adr_integrity(decisions_path)
+    errors.extend(adr_errs)
+
     return {
         'errors': errors,
         'warnings': warnings,
@@ -532,7 +588,8 @@ def verify_integrity(repo_root=None):
             'drum_patterns': len(drums),
             'piano_modules': len(pianos),
             'golden_cases': len(cases),
-            'relations': len(rel_rows)
+            'relations': len(rel_rows),
+            'adrs': len(adrs)
         }
     }
 
@@ -543,13 +600,14 @@ def main():
     warnings = result['warnings']
 
     print("=================================================================")
-    print(" STEPS Musical Reference ID Integrity Check (Hardened v4.15)")
+    print(" STEPS Architecture & Reference ID Integrity Check (Phase 4.17)")
     print("=================================================================")
-    print(f"  Canonical Progressions:   {stats['progressions']} (PROG-001..PROG-027)")
+    print(f"  Architecture Decisions:   {stats['adrs']} (ADR-001..ADR-012)")
+    print(f"  Canonical Progressions:   {stats['progressions']} (PROG-001..PROG-028)")
     print(f"  Canonical Drum Patterns:  {stats['drum_patterns']} (PAT-001..PAT-031)")
     print(f"  Canonical Piano Modules:  {stats['piano_modules']} (P01..P19)")
     print(f"  Unified Golden Cases:     {stats['golden_cases']} (REF-0001..REF-0198)")
-    print(f"  Concept Relations:        {stats['relations']} (CR-001..CR-094)")
+    print(f"  Concept Relations:        {stats['relations']} (37 CR, 34 REL, 23 CDR)")
     print("-----------------------------------------------------------------")
 
     if warnings:

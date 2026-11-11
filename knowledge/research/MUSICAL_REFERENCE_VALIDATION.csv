@@ -10,14 +10,14 @@ REF-0008,M02,NOTE_NAMING,SPECIFICATION_EXAMPLE,Notenbezeichnung B (International
 REF-0009,M02,NOTE_NAMING,SPECIFICATION_EXAMPLE,Notenbezeichnung Bb (International),Pitch-Class 10 (MIDI 70),0.0,SPECIFICATION_DOCUMENTED,0.001,,12-TET Enharmonik vs Diatonische Orthographie,ERR-001; MusicXML 4.0 DTD
 REF-0010,M03,INTERVALS,UNIT_TEST,Intervall C4 bis E4,4,0.0,PASS,0.003,,Intervallabstand in Halbtönen (64-60=4 / 63-60=3),M03-01; Open Music Theory 2
 REF-0011,M03,INTERVALS,UNIT_TEST,Intervall C4 bis Eb4,3,0.0,PASS,0.002,,Intervallabstand in Halbtönen (64-60=4 / 63-60=3),M03-01; Open Music Theory 2
-REF-0012,M04,CHORDS,UNIT_TEST,"Dreiklang C-Dur [C, E, G]","[0, 4, 7]",0.0,PASS,0.008,,Dreiklangskonstruktion und Inversion,M04-01; Spencer Practice of Harmony
+REF-0012,M04,CHORDS,UNIT_TEST,"Dreiklang C-Dur [C, E, G]","[0, 4, 7]",0.0,PASS,0.007,,Dreiklangskonstruktion und Inversion,M04-01; Spencer Practice of Harmony
 REF-0013,M04,CHORDS,UNIT_TEST,"Dreiklang C-Moll [C, Eb, G]","[0, 3, 7]",0.0,PASS,0.004,,Dreiklangskonstruktion und Inversion,M04-01; Spencer Practice of Harmony
 REF-0014,M04,CHORDS,UNIT_TEST,Akkord C/E (1. Umkehrung),"Bass E, Töne [E, G, C]",0.0,PASS,0.003,,Dreiklangskonstruktion und Inversion,M04-02; Aldwell & Schachter
 REF-0015,M04,CHORDS,UNIT_TEST,Akkord C/G (2. Umkehrung),"Bass G, Töne [G, C, E]",0.0,PASS,0.002,,Dreiklangskonstruktion und Inversion,M04-02; Aldwell & Schachter
 REF-0016,M04,CHORDS,UNIT_TEST,Polychord D/C,"Dreiklang D über Dreiklang C [C, E, G, D, F#, A]",0.0,PASS,0.001,,Dreiklangskonstruktion und Inversion,M04-09; Persichetti 20th Century Harmony
 REF-0017,M05,CADENCE,SPECIFICATION_EXAMPLE,Authentische Kadenz V -> I in C,G7 -> C,0.0,SPECIFICATION_DOCUMENTED,0.001,,Klassische Kadenzstufen Aldwell/Schachter,M05-03; Riemann Funktionstheorie
 REF-0018,M05,CADENCE,SPECIFICATION_EXAMPLE,Trugschluss V -> vi in C,G -> Am,0.0,SPECIFICATION_DOCUMENTED,0.001,,Klassische Kadenzstufen Aldwell/Schachter,M05-03; Hindemith Traditional Harmony
-REF-0019,M06,VOICE_LEADING,UNIT_TEST,Voice-Leading C-Dur nach G-Dur (eng),3,0.0,PASS,0.008,,L1 minimale Stimmführungsdistanz C->G in Z12,M06-04; Tymoczko Geometry of Music
+REF-0019,M06,VOICE_LEADING,UNIT_TEST,Voice-Leading C-Dur nach G-Dur (eng),3,0.0,PASS,0.007,,L1 minimale Stimmführungsdistanz C->G in Z12,M06-04; Tymoczko Geometry of Music
 REF-0020,M07,RHYTHM_SWING,UNIT_TEST,Straight 8tel Swing-Ratio,1.0,0.05,PASS,0.002,,Swing Ratio nach Friberg & Sundström,M07-04; SMF 1.0 Spec
 REF-0021,M07,RHYTHM_SWING,UNIT_TEST,Triolen-Swing Ratio,2.0,0.05,PASS,0.002,,Swing Ratio nach Friberg & Sundström,M07-04; SMF 1.0 Spec
 REF-0022,M08,DRUM_MAPPING,SPECIFICATION_EXAMPLE,General MIDI Kick Drum,36,0.0,SPECIFICATION_DOCUMENTED,0.001,,General MIDI 1.0 Standard Percussion Key Map,M08-02; MIDI Association GM 1.0
@@ -25,7 +25,7 @@ REF-0023,M08,DRUM_MAPPING,SPECIFICATION_EXAMPLE,General MIDI Snare Drum,38,0.0,S
 REF-0024,M08,DRUM_MAPPING,SPECIFICATION_EXAMPLE,General MIDI Closed Hi-Hat,42,0.0,SPECIFICATION_DOCUMENTED,0.001,,General MIDI 1.0 Standard Percussion Key Map,M08-02; MIDI Association GM 1.0
 REF-0025,M08,DRUM_MAPPING,SPECIFICATION_EXAMPLE,General MIDI Open Hi-Hat,46,0.0,SPECIFICATION_DOCUMENTED,0.001,,General MIDI 1.0 Standard Percussion Key Map,M08-02; MIDI Association GM 1.0
 REF-0026,M09,STYLE_TIMING,UNIT_TEST,Pop Backbeat Zählzeiten,2 und 4 im 4/4-Takt (Ticks 480 & 1440),0.0,PASS,0.002,,Metrische Platzierung im 480 PPQ Grid,M09-01; Popular Music Analysis
-REF-0027,M09,STYLE_TIMING,UNIT_TEST,House Four-on-the-Floor,"Kick auf Ticks 0, 480, 960, 1440",0.0,PASS,0.001,,Metrische Platzierung im 480 PPQ Grid,M09-02; Electronic Music Handbook
+REF-0027,M09,STYLE_TIMING,UNIT_TEST,House Four-on-the-Floor,"Kick auf Ticks 0, 480, 960, 1440",0.0,PASS,0.002,,Metrische Platzierung im 480 PPQ Grid,M09-02; Electronic Music Handbook
 REF-0028,M09,STYLE_TIMING,UNIT_TEST,House Offbeat Hi-Hat,"Open Hi-Hat auf Ticks 240, 720, 1200, 1680",0.0,PASS,0.001,,Metrische Platzierung im 480 PPQ Grid,M09-02; Electronic Music Handbook
 REF-0029,M07,STYLE_TIMING,UNIT_TEST,8tel-Offbeat nach Schlag 3 (3+),Tick 1200 bei 480 PPQ,0.0,PASS,0.001,,Metrische Platzierung im 480 PPQ Grid,VAL-M07-PPQ; SMF Standard
 REF-0030,M07,STYLE_TIMING,UNIT_TEST,16tel-Synkope vor Schlag 4 (3e+),Tick 1320 bei 480 PPQ,0.0,PASS,0.001,,Metrische Platzierung im 480 PPQ Grid,VAL-M07-PPQ; SMF Standard
@@ -34,7 +34,7 @@ REF-0032,M04,CHORDS,UNIT_TEST,"F-Dur Dreiklang [A3, C4, F4]",1. Umkehrung (Sexta
 REF-0033,M08,DRUM_MAPPING,SPECIFICATION_EXAMPLE,General MIDI Side Stick,37,0.0,SPECIFICATION_DOCUMENTED,0.001,,General MIDI 1.0 Note 37 Definition,MIDI Association GM 1.0
 REF-0034,M06,VOICE_LEADING,SPECIFICATION_EXAMPLE,Geltungsbereich Parallele Quinten,Historischer klassischer Kontrapunkt,0.0,SPECIFICATION_DOCUMENTED,0.001,,Geltungsbereich historischer Stimmführungsverbote,Everett Foundations of Rock
 REF-0035,M05,CADENCE,UNIT_TEST,Tritonsubstitution Dominante G7,"[1, 5, 8, 11]",0.0,PASS,0.004,,Tritonussubstitution und Backdoor-Kadenz,PROG-013; Levine Jazz Theory Book
-REF-0036,M05,CADENCE,UNIT_TEST,Backdoor Kadenz Bb7 nach C,Auflösung bVII7 nach I,0.0,PASS,0.002,,Tritonussubstitution und Backdoor-Kadenz,PROG-014/017; WEB-4.6-02; Jazz Theory Foundations
+REF-0036,M05,CADENCE,UNIT_TEST,Backdoor Kadenz Bb7 nach C,Auflösung bVII7 nach I,0.0,PASS,0.001,,Tritonussubstitution und Backdoor-Kadenz,PROG-014/017; WEB-4.6-02; Jazz Theory Foundations
 REF-0037,M07,RHYTHM_STYLE,SPECIFICATION_EXAMPLE,Reggae One Drop Zählzeit 1,Kick schweigt auf Schlag 1,0.0,SPECIFICATION_DOCUMENTED,0.001,,Genretypische Akzente (One Drop / Motown Stomp),PAT-010; WEB-4.6-03; Drummerworld Reggae Drumming History
 REF-0038,M07,RHYTHM_STYLE,SPECIFICATION_EXAMPLE,Motown Snare Stomp,"Snare auf allen 4 Schlägen (1, 2, 3, 4)",0.0,SPECIFICATION_DOCUMENTED,0.001,,Genretypische Akzente (One Drop / Motown Stomp),PAT-009; WEB-4.6-07; Motown Hitsville Sound Analysis
 REF-0039,M04,CHORDS,UNIT_TEST,"Csus4 Akkord [C, F, G]","[0, 5, 7]",0.0,PASS,0.003,,Sus- und Add-Akkord Intervallkonstruktion,P06; Spencer Practice of Harmony
@@ -42,34 +42,34 @@ REF-0040,M04,CHORDS,UNIT_TEST,"Cadd9 Akkord [C, D, E, G]","[0, 2, 4, 7]",0.0,PAS
 REF-0041,M05,PROGRESSION,SPECIFICATION_EXAMPLE,Klassische Jazz Backdoor Kadenz Fm7 -> Bb7 -> Cmaj7,iv7 -> bVII7 -> Imaj7,0.0,SPECIFICATION_DOCUMENTED,0.001,,Kanonische Kadenzen und Archetypen,PROG-017; WEB-4.6-02; Levine Jazz Theory Book (Kap. 14)
 REF-0042,M05,PROGRESSION,SPECIFICATION_EXAMPLE,Royal Road Progression (Oudou shinkou) in C-Dur,IVmaj7 -> V7 -> iii7 -> vi,0.0,SPECIFICATION_DOCUMENTED,0.001,,Kanonische Kadenzen und Archetypen,PROG-015; WEB-4.6-05; J-Pop Harmonic Analyses
 REF-0043,M10,VOICING,SPECIFICATION_EXAMPLE,Drop-2 Voicing Dm7 aus Grundstellung,"LH [D3, A3], RH [F4, C5]",0.0,SPECIFICATION_DOCUMENTED,0.001,,Drop-2 Zweihand-Verteilung Mark Levine,Modul P08; PIANO_PRACTICE_VALIDATION.md
-REF-0044,M07,RHYTHM_SWING,PROPERTY_TEST,Swing-Ratio Dynamik nach Friberg & Sundström,rho(BPM) fällt linear,0.0,PASS,0.002,,Friberg & Sundström empirische Swing-Dynamik,GENRE_RESEARCH_JAZZ_RHYTHM.md; WEB-4.6-04; Friberg & Sundström (2002)
+REF-0044,M07,RHYTHM_SWING,PROPERTY_TEST,Swing-Ratio Dynamik nach Friberg & Sundström,rho(BPM) fällt linear,0.0,PASS,0.001,,Friberg & Sundström empirische Swing-Dynamik,GENRE_RESEARCH_JAZZ_RHYTHM.md; WEB-4.6-04; Friberg & Sundström (2002)
 REF-0045,M08,DRUM_MAPPING,SPECIFICATION_EXAMPLE,General MIDI 1.0 Note 44 Definition,44,0.0,SPECIFICATION_DOCUMENTED,0.001,,GM 1.0 Note 44 Pedal Hi-Hat,WEB-4.6-01; MIDI Manufacturers Association GM 1.0 Spec
 REF-0046,M08,DRUM_PATTERN,SPECIFICATION_EXAMPLE,Reggae Steppers Kick-Pattern,"[0, 480, 960, 1440]",0.0,SPECIFICATION_DOCUMENTED,0.001,,Steppers Four-on-the-Floor Kick Zählzeiten,PAT-015; GENRE_RESEARCH_REGGAE.md; WEB-4.6-03
-REF-0047,M11,TUPLETS,UNIT_TEST,Absolute Tuplet-Quantisierung Septole bei 480 PPQ,"[0, 69, 137, 206, 274, 343, 411, 480]",0.0,PASS,0.006,,Septolen-Quantisierung bei 480 PPQ,ERR-012; tuplet_reference.py; MMA SMF 1.0 Spec
+REF-0047,M11,TUPLETS,UNIT_TEST,Absolute Tuplet-Quantisierung Septole bei 480 PPQ,"[0, 69, 137, 206, 274, 343, 411, 480]",0.0,PASS,0.005,,Septolen-Quantisierung bei 480 PPQ,ERR-012; tuplet_reference.py; MMA SMF 1.0 Spec
 REF-0048,M08,DRUM_LAYERING,SPECIFICATION_EXAMPLE,Motown Drum Layering (PAT-009),"[38, 54]",0.0,SPECIFICATION_DOCUMENTED,0.001,,Snare (38) + Tambourin (54) Layering,PAT-009; GENRE_RESEARCH_FUNK_SOUL.md; WEB-4.6-07
 REF-0049,M04,CHORDS,UNIT_TEST,Cadd2 vs Cadd9 Tonklassen-Vergleich,true,0.0,PASS,0.002,,"Tonklassenäquivalenz {0, 2, 4, 7}",PROGRESSION_ID_CONSISTENCY.md; WEB-4.7-04; Contemporary Keyboard Harmony
 REF-0050,M04,CHORDS,UNIT_TEST,Lydisch-dominanter Tritonusakkord Db7(#11),"[1, 5, 7, 11]",0.0,PASS,0.003,,Lydisch-dominante Akkordtöne,PROG-020; Levine Jazz Theory Book (Kap. 15)
 REF-0051,M05,PROGRESSION,SPECIFICATION_EXAMPLE,Minor Line Cliché Am -> Am(maj7) -> Am7 -> Am6,A -> G,0.0,SPECIFICATION_DOCUMENTED,0.001,,Chromatisch absteigende Innenstimme,PROG-019; Jazz & Film Noir Analysis
 REF-0052,M05,PROGRESSION,SPECIFICATION_EXAMPLE,Neo-Soul Kadenz Fm7 -> Bb7 -> Cmaj7 -> Abmaj7,Am -> G -> F -> E7,0.0,SPECIFICATION_DOCUMENTED,0.001,,Phrygische Halbtonauflösung,Fallstudie 1 (Midnight Solace); INTEGRATED_MUSICAL_CASE_STUDIES.md
-REF-0053,M07,RHYTHM_SWING,UNIT_TEST,UK Garage 58% MPC-Swing 16tel-Quantisierung,139,0.0,PASS,0.002,,UK Garage 58% Swing-Offset (+19 Ticks),MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-024); GENRE_RESEARCH_UK_GARAGE.md
+REF-0053,M07,RHYTHM_SWING,UNIT_TEST,UK Garage 58% MPC-Swing 16tel-Quantisierung,139,0.0,PASS,0.003,,UK Garage 58% Swing-Offset (+19 Ticks),MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-024); GENRE_RESEARCH_UK_GARAGE.md
 REF-0054,M01,GENERAL,SPECIFICATION_EXAMPLE,Drum & Bass Two-Step Kick-Platzierung (174 BPM),Kicks auf Zählzeit 1 (Tick 0) und Zählzeit 3+ (Tick 1200),0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,PAT-018; GENRE_RESEARCH_DNB.md; WEB-4.7-01
 REF-0055,M01,GENERAL,SPECIFICATION_EXAMPLE,UK Garage 2-Step Kick-Omission,Kick schweigt auf Zählzeit 2 und 3 (Hits nur auf 1 und 3+),0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,PAT-020; GENRE_RESEARCH_UK_GARAGE.md
 REF-0056,M01,GENERAL,SPECIFICATION_EXAMPLE,Metrische Dualität im Liquid Drum & Bass,"Drums auf 174 BPM, Bass/Pads phrasierend im 87 BPM Halftime-Modus",0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,Fallstudie 2 (Horizon Drift); INTEGRATED_MUSICAL_CASE_STUDIES.md
 REF-0057,M01,GENERAL,SPECIFICATION_EXAMPLE,Charleston Begleitmuster am Klavier (Modul P09),Akkordschläge der rechten Hand auf 1 (Tick 0) und 2+ (Tick 720),0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,Modul P09; PIANO_LEARNING_MODULES.md
-REF-0058,M01,GENERAL,SPECIFICATION_EXAMPLE,Bass-First Gehörerkennung (Modul P10),Basslinie als akustischer Anker; Funktions- und Geschlechtsbestimmung erfordert Terz/Oberstimmenprüfung wegen Umkehrungen,0.0,SPECIFICATION_DOCUMENTED,0.0,,Formale musiktheoretische Spezifikation,MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-026); PIANO_LEARNING_MODULES.md (P10)
+REF-0058,M01,GENERAL,SPECIFICATION_EXAMPLE,Bass-First Gehörerkennung (Modul P10),Basslinie als akustischer Anker; Funktions- und Geschlechtsbestimmung erfordert Terz/Oberstimmenprüfung wegen Umkehrungen,0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-026); PIANO_LEARNING_MODULES.md (P10)
 REF-0059,M01,GENERAL,SPECIFICATION_EXAMPLE,Mathematische Swing-Berechnung bei 480 PPQ (58% vs 60%),"58% -> Tick 139 (Delta +19, rho ~ 1,38:1); 60% -> Tick 144 (Delta +24, rho = 1,50:1)",0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-024); Roger Linn MPC Specifications
 REF-0060,M01,GENERAL,SPECIFICATION_EXAMPLE,Horizon Drift Modale Klassifikation (Dm9 - Bbmaj7 - Gm7 - C(add9)),"Rein D-Aeolisch (Tonvorrat {D, E, F, G, A, Bb, C}; Ausschluss von D-Dorisch)",0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-025); Kostka/Payne Tonal Harmony
 REF-0061,M01,GENERAL,SPECIFICATION_EXAMPLE,Dreiklangsumkehrungen Gehör & Stimmführung (Modul P11),"Grundstellung (5/3, stabil) vs. 1. Umkehrung (6/3, melodischer Stufenbass) vs. 2. Umkehrung (6/4, kadenzieller Vorhalt)",0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,PIANO_LEARNING_MODULES.md (P11); Aldwell & Schachter Harmony and Voice Leading
 REF-0062,M01,GENERAL,SPECIFICATION_EXAMPLE,Jungle / Amen Chopped Breakbeat Rhythmik (PAT-021),"168 BPM Breakbeat mit synkopierten Kicks (0, 600, 1200, 1560) und Snare-Ghost Rolls (360, 840, 1080)",0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,DRUM_GROOVE_REFERENCE_LIBRARY.md (PAT-021); GENRE_RESEARCH_DNB.md
 REF-0063,M01,GENERAL,SPECIFICATION_EXAMPLE,Jump-Up Minimal Bouncer Two-Step (PAT-022),175 BPM reduzierter Two-Step mit Kick 1 (0) und Kick 2 (1200) und 8tel Closed Hats,0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,DRUM_GROOVE_REFERENCE_LIBRARY.md (PAT-022); GENRE_RESEARCH_DNB.md
-REF-0064,M01,GENERAL,SPECIFICATION_EXAMPLE,UK Garage 4-Bar Shuffle & Vocal-Chop Pattern (PAT-023),"134 BPM, 58% MPC-Swing (Tick 139), 4-taktige dynamische Phrasierung mit Takt-4 Snare-Roll",0.0,SPECIFICATION_DOCUMENTED,0.0,,Formale musiktheoretische Spezifikation,DRUM_GROOVE_REFERENCE_LIBRARY.md (PAT-023); GENRE_RESEARCH_UK_GARAGE.md
+REF-0064,M01,GENERAL,SPECIFICATION_EXAMPLE,UK Garage 4-Bar Shuffle & Vocal-Chop Pattern (PAT-023),"134 BPM, 58% MPC-Swing (Tick 139), 4-taktige dynamische Phrasierung mit Takt-4 Snare-Roll",0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,DRUM_GROOVE_REFERENCE_LIBRARY.md (PAT-023); GENRE_RESEARCH_UK_GARAGE.md
 REF-0065,M01,GENERAL,SPECIFICATION_EXAMPLE,L1-Stimmfuehrungsdistanz bei Dreiklangsumkehrungen,"L1-Distanz von C-Dur (C-E-G) zu G/B (B-D-G) betraegt 3 Halbtöne (C->B = 1, E->D = 2, G liegt)",0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,PIANO_LEARNING_MODULES.md (P11); Tymoczko Geometry of Music
 REF-0066,M01,GENERAL,SPECIFICATION_EXAMPLE,Cross-Domain Metrische Schichtung im Drum & Bass,"Schlagzeug kinetisch auf 174 BPM, Reese-Bass harmonisch phrasierend im 87 BPM Halftime-Modus",0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,INTEGRATED_MUSICAL_CASE_STUDIES.md (Horizon Drift); GENRE_RESEARCH_DNB.md
 REF-0067,M01,GENERAL,SPECIFICATION_EXAMPLE,Heptatonik 28-Skalen-System (Prehn-Klassifikation),"Exakt 4 disjunkte Familien a 7 Modi (Major, Melodic Minor, Harmonic Minor, Harmonic Major)",0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,Scales with 4 smart tools.txt; MUSIC_THEORY_FOUNDATION.md
 REF-0068,M01,GENERAL,SPECIFICATION_EXAMPLE,Akkordidentitaet vs. Voicing-Ebene (Schichten-Architektur),Akkordumkehrung wird ausschliesslich durch tiefsten Gesamtklingelton (akustischer Bass) bestimmt,0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,MUSIC_THEORY_FOUNDATION.md; Kostka/Payne Tonal Harmony
 REF-0069,M01,GENERAL,SPECIFICATION_EXAMPLE,Neo-Soul Rootless Minor Cycle (PROG-021),Stufenfolge i9 - iv9 - bVImaj9 - V7(b9) mit Terz-Septimen-Guide-Tones,0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,PPR Boom Bap Lesson 1.1; CHORD_PROGRESSION_REFERENCE_LIBRARY.md
 REF-0070,M01,GENERAL,SPECIFICATION_EXAMPLE,Picardische Terz Aufloesung (PROG-022),Abschluss einer Moll-Passage mit der Dur-Tonika (gr. Terz),0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,7 levels of reharmonising Eleanor Rigby.txt; CHORD_PROGRESSION_REFERENCE_LIBRARY.md
-REF-0071,M07,RHYTHM_SWING,UNIT_TEST,PPR Boom-Bap 61% MPC 3000 Swing-Mathematik (90 BPM),146,0.0,PASS,0.003,,"MPC 61% Swing: 240 * 0.61 = 146.4 -> round = 146 Ticks (+26 Ticks Offset, 36.11 ms @ 90 BPM; ERR-034)",PPR Boom Bap README.txt; DRUM_GROOVE_REFERENCE_LIBRARY.md
+REF-0071,M07,RHYTHM_SWING,UNIT_TEST,PPR Boom-Bap 61% MPC 3000 Swing-Mathematik (90 BPM),146,0.0,PASS,0.005,,"MPC 61% Swing: 240 * 0.61 = 146.4 -> round = 146 Ticks (+26 Ticks Offset, 36.11 ms @ 90 BPM; ERR-034)",PPR Boom Bap README.txt; DRUM_GROOVE_REFERENCE_LIBRARY.md
 REF-0072,M01,GENERAL,SPECIFICATION_EXAMPLE,Berlin Peak Techno Polyrhythmischer Rimshot (PAT-025),Rimshot schlaegt alle 3 Sechzehntelnoten gegen 4/4 Four-on-the-Floor Kick,0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,PPR Techno 130 BPM Drums.mid; DRUM_GROOVE_REFERENCE_LIBRARY.md
 REF-0073,M01,GENERAL,SPECIFICATION_EXAMPLE,Zweihaendige Rootless Voicings (Modul P12),LH spielt Grundton; RH greift Vierklang ab der Terz (3-5-7-9),0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,PIANO_LEARNING_MODULES.md (P12)
 REF-0074,M01,GENERAL,SPECIFICATION_EXAMPLE,General MIDI 1.0 Percussion Channel 10 Standard,"Kanal 10 ausschliesslich fuer Percussion; feste Notennummern (36 Kick, 38 Snare, 42 Hat)",0.0,SPECIFICATION_DOCUMENTED,0.001,,Formale musiktheoretische Spezifikation,MMA GM 1.0 Standard; PPR Drum Programming Library
@@ -83,16 +83,16 @@ REF-0081,M01,GENERAL,SPECIFICATION_EXAMPLE,Afro-Cuban Cha-Cha-Cha Conga Tumbao (
 REF-0082,M09,STYLE_TIMING,SPECIFICATION_EXAMPLE,Latin Jazz Montuno Piano-Synkopierung (PROG-025),Synkopierte Terzen und Oktaven über 2:3 Clave,0.0,SPECIFICATION_DOCUMENTED,0.001,,Montuno Piano-Synkopierung,GENRE_RESEARCH_LATIN.md; Mauleon Salsa Guidebook
 REF-0083,M07,RHYTHM_SWING,UNIT_TEST,16tel-Straight-Quantisierung 50% bei 480 PPQ,120,0.0,PASS,0.002,,Quantisierter Tick 120 bei 50% Swing und 480 PPQ,SRC-032
 REF-0084,M07,RHYTHM_SWING,UNIT_TEST,16tel-Light-Swing 55% bei 480 PPQ und 90 BPM,132,0.0,PASS,0.002,,Quantisierter Tick 132 bei 55% Swing und 480 PPQ,SRC-032
-REF-0085,M07,RHYTHM_SWING,UNIT_TEST,16tel-Medium-Swing 60% bei 480 PPQ und 90 BPM,144,0.0,PASS,0.002,,Quantisierter Tick 144 bei 60% Swing und 480 PPQ,SRC-032
-REF-0086,M07,RHYTHM_SWING,UNIT_TEST,16tel-Heavy-Swing 62% bei 480 PPQ und 90 BPM,149,0.0,PASS,0.002,,Quantisierter Tick 149 bei 62% Swing und 480 PPQ,SRC-032
-REF-0087,M07,RHYTHM_SWING,UNIT_TEST,16tel-Swing 61% bei 960 PPQ High-Resolution Grid,293,0.0,PASS,0.001,,Quantisierter Tick 293 bei 61% Swing und 960 PPQ,SRC-032
-REF-0088,M07,RHYTHM_SWING,UNIT_TEST,16tel-Swing 61% bei 240 PPQ Low-Resolution Grid,73,0.0,PASS,0.002,,Quantisierter Tick 73 bei 61% Swing und 240 PPQ,SRC-032
-REF-0089,M01,ACOUSTICS,UNIT_TEST,Pythagoreisches Komma mathematische Ableitung (12 reine Quinten vs. 7 Oktaven),23.46,0.05,PASS,0.01,,Pythagoreisches Komma: 1200 * log2((3/2)^12 / 2^7) = 23.46 Cents,SRC-033
-REF-0090,M01,ACOUSTICS,UNIT_TEST,Reine Große Terz (5:4) Cent-Abweichung von 12-TET,386.31,0.05,PASS,0.004,,Reine große Terz (5:4) Centwert = 386.31 Cents (-13.69 Cent Abweichung zu 12-TET),SRC-033
-REF-0091,M07,RHYTHM_METER,UNIT_TEST,Additives ungerades Metrum 5/8 (3+2 Subdivision) bei 480 PPQ,1200,0.0,PASS,0.002,,Additives ungerades Metrum Taktdauer = 1200 Ticks,SRC-034
-REF-0092,M07,RHYTHM_METER,UNIT_TEST,Additives ungerades Metrum 7/8 (2+2+3 Subdivision) bei 480 PPQ,1680,0.0,PASS,0.002,,Additives ungerades Metrum Taktdauer = 1680 Ticks,SRC-034
-REF-0093,M10,VOICING,UNIT_TEST,Zweihändiges Rootless Voicing Typ A für Cmaj9 (Mark Levine),"[52, 55, 59, 62]",0.0,PASS,0.003,,Mark Levine Rootless Voicing Typ A für Cmaj9,SRC-020
-REF-0094,M10,VOICING,UNIT_TEST,Zweihändiges Rootless Voicing Typ B für Cmaj9 (Mark Levine),"[59, 62, 64, 67]",0.0,PASS,0.002,,Mark Levine Rootless Voicing Typ B für Cmaj9,SRC-020
+REF-0085,M07,RHYTHM_SWING,UNIT_TEST,16tel-Medium-Swing 60% bei 480 PPQ und 90 BPM,144,0.0,PASS,0.001,,Quantisierter Tick 144 bei 60% Swing und 480 PPQ,SRC-032
+REF-0086,M07,RHYTHM_SWING,UNIT_TEST,16tel-Heavy-Swing 62% bei 480 PPQ und 90 BPM,149,0.0,PASS,0.001,,Quantisierter Tick 149 bei 62% Swing und 480 PPQ,SRC-032
+REF-0087,M07,RHYTHM_SWING,UNIT_TEST,16tel-Swing 61% bei 960 PPQ High-Resolution Grid,293,0.0,PASS,0.002,,Quantisierter Tick 293 bei 61% Swing und 960 PPQ,SRC-032
+REF-0088,M07,RHYTHM_SWING,UNIT_TEST,16tel-Swing 61% bei 240 PPQ Low-Resolution Grid,73,0.0,PASS,0.003,,Quantisierter Tick 73 bei 61% Swing und 240 PPQ,SRC-032
+REF-0089,M01,ACOUSTICS,UNIT_TEST,Pythagoreisches Komma mathematische Ableitung (12 reine Quinten vs. 7 Oktaven),23.46,0.05,PASS,0.015,,Pythagoreisches Komma: 1200 * log2((3/2)^12 / 2^7) = 23.46 Cents,SRC-033
+REF-0090,M01,ACOUSTICS,UNIT_TEST,Reine Große Terz (5:4) Cent-Abweichung von 12-TET,386.31,0.05,PASS,0.007,,Reine große Terz (5:4) Centwert = 386.31 Cents (-13.69 Cent Abweichung zu 12-TET),SRC-033
+REF-0091,M07,RHYTHM_METER,UNIT_TEST,Additives ungerades Metrum 5/8 (3+2 Subdivision) bei 480 PPQ,1200,0.0,PASS,0.004,,Additives ungerades Metrum Taktdauer = 1200 Ticks,SRC-034
+REF-0092,M07,RHYTHM_METER,UNIT_TEST,Additives ungerades Metrum 7/8 (2+2+3 Subdivision) bei 480 PPQ,1680,0.0,PASS,0.003,,Additives ungerades Metrum Taktdauer = 1680 Ticks,SRC-034
+REF-0093,M10,VOICING,UNIT_TEST,Zweihändiges Rootless Voicing Typ A für Cmaj9 (Mark Levine),"[52, 55, 59, 62]",0.0,PASS,0.005,,Mark Levine Rootless Voicing Typ A für Cmaj9,SRC-020
+REF-0094,M10,VOICING,UNIT_TEST,Zweihändiges Rootless Voicing Typ B für Cmaj9 (Mark Levine),"[59, 62, 64, 67]",0.0,PASS,0.003,,Mark Levine Rootless Voicing Typ B für Cmaj9,SRC-020
 REF-0095,M05,HARMONY,UNIT_TEST,Backdoor Cadence Modal Interchange Resolution (iv7 - bVII7 -> Imaj7),7,0.0,PASS,0.001,,Backdoor Kadenz Modal Interchange Leittonauflösung Ab (8) -> G (7),"SRC-020 (Levine 1995), Terefenko (2014)"
 REF-0096,M10,VOICING,UNIT_TEST,Secondary Dominant 1st Inversion Chromatic Bass Line (A7/C# -> Am/C),"[7, 1, 0, 11, 9, 7]",0.0,PASS,0.002,,Sekundärdominante mit chromatisch fallendem Bass G -> C# -> C -> B -> A -> G,"SRC-001 (Kostka/Payne 2013), Aldwell (1989)"
 REF-0097,M03,INTERVALS,PROPERTY_TEST,Coltrane Changes Symmetric Major Thirds Cycle (3 x 4 semitones = 12),"[4, 4, 4]",0.0,PASS,0.003,,Coltrane Changes Großterz-Zyklus Z12 symmetrische Dreiteilung der Oktave,"SRC-005 (Tymoczko 2011), Cohn (2012)"
@@ -101,10 +101,10 @@ REF-0099,M08,DRUM_PATTERN,PROPERTY_TEST,Afro-Cuban Bembe Bell Metric Invariant (
 REF-0100,M12,INTEGRATION,INTEGRATION_TEST,Integrated Multi-Domain Consistency (Harmony M05 + Drums M08 + Piano M10),true,0.0,PASS,0.004,,Cross-Domain Synthese Konsistenz (Harmonik M05 + Drums M08 + Piano M10),STEPS Architectural Cross-Domain Specification
 REF-0101,M01,ACOUSTICS,UNIT_TEST,Kammerton A4 Frequenzstandard,440.0,0.0,PASS,0.003,,ISO 16 Normstimmton A4 = 440 Hz,SRC-001 (Kostka/Payne 2013)
 REF-0102,M01,ACOUSTICS,UNIT_TEST,Oktave Frequenzverhältnis,2.0,0.0,PASS,0.002,,2:1 Frequenzverhältnis der reinen Oktave,SRC-003 (Zarlino 1558)
-REF-0103,M01,ACOUSTICS,UNIT_TEST,12-TET Halbton-Frequenzfaktor,1.059463,1e-05,PASS,0.002,,Faktor 2^(1/12) fuer gleichstufigen Halbton,SRC-001 (Piston 1987)
-REF-0104,M01,ACOUSTICS,UNIT_TEST,Centwert der gleichstufigen Oktave,1200.0,0.0,PASS,0.002,,1200 * log2(2/1) = 1200 Cent,SRC-001
-REF-0105,M01,ACOUSTICS,UNIT_TEST,Centwert der reinen großen Terz 5/4,386.31,0.05,PASS,0.003,,Reine Terz (5:4) = 386.31 Cent vs 12-TET 400 Cent,SRC-003 (Zarlino 1558)
-REF-0106,M01,ACOUSTICS,UNIT_TEST,Cent-Differenz Reine vs Gleichstufige Terz,13.69,0.05,PASS,0.002,,Syntonisches Terz-Defizit der gleichstufigen Terz (+13.69 Cent),SRC-003
+REF-0103,M01,ACOUSTICS,UNIT_TEST,12-TET Halbton-Frequenzfaktor,1.059463,1e-05,PASS,0.003,,Faktor 2^(1/12) fuer gleichstufigen Halbton,SRC-001 (Piston 1987)
+REF-0104,M01,ACOUSTICS,UNIT_TEST,Centwert der gleichstufigen Oktave,1200.0,0.0,PASS,0.004,,1200 * log2(2/1) = 1200 Cent,SRC-001
+REF-0105,M01,ACOUSTICS,UNIT_TEST,Centwert der reinen großen Terz 5/4,386.31,0.05,PASS,0.005,,Reine Terz (5:4) = 386.31 Cent vs 12-TET 400 Cent,SRC-003 (Zarlino 1558)
+REF-0106,M01,ACOUSTICS,UNIT_TEST,Cent-Differenz Reine vs Gleichstufige Terz,13.69,0.05,PASS,0.004,,Syntonisches Terz-Defizit der gleichstufigen Terz (+13.69 Cent),SRC-003
 REF-0107,M01,PITCH_CLASS,UNIT_TEST,Tonklasse C4 im Z12-System,0,0.0,PASS,0.001,,C = 0 in mod 12 Tonklassen-Arithmetik,SRC-005 (Tymoczko 2011)
 REF-0108,M01,PITCH_CLASS,UNIT_TEST,Tonklasse A4 im Z12-System,9,0.0,PASS,0.001,,A = 9 in mod 12 Tonklassen-Arithmetik,SRC-005 (Tymoczko 2011)
 REF-0109,M01,MIDI_MAPPING,SPECIFICATION_EXAMPLE,MIDI Note Number von C4,60,0.0,SPECIFICATION_DOCUMENTED,0.001,,MIDI 1.0 Spezifikation: Middle C = 60,MIDI Manufacturers Association
@@ -117,7 +117,7 @@ REF-0115,M02,ENHARMONICS,SPECIFICATION_EXAMPLE,Enharmonische Äquivalenz C# und 
 REF-0116,M02,ENHARMONICS,SPECIFICATION_EXAMPLE,Enharmonische Äquivalenz F# und Gb,true,0.0,SPECIFICATION_DOCUMENTED,0.001,,F# und Gb teilen dieselbe Tonklasse 6 in 12-TET,SRC-001
 REF-0117,M02,INTERVALS,UNIT_TEST,Intervallabstand Reine Quinte in Halbtönen,7,0.0,PASS,0.002,,Reine Quinte = 7 Halbtöne,SRC-001
 REF-0118,M02,INTERVALS,UNIT_TEST,Intervallinversion der Quinte modulo 12,5,0.0,PASS,0.001,,(12 - 7) mod 12 = 5 (Reine Quarte),SRC-001
-REF-0119,M02,INTERVALS,UNIT_TEST,Intervallabstand Große Terz in Halbtönen,4,0.0,PASS,0.002,,Große Terz = 4 Halbtöne,SRC-001
+REF-0119,M02,INTERVALS,UNIT_TEST,Intervallabstand Große Terz in Halbtönen,4,0.0,PASS,0.001,,Große Terz = 4 Halbtöne,SRC-001
 REF-0120,M02,INTERVALS,UNIT_TEST,Intervallinversion der großen Terz modulo 12,8,0.0,PASS,0.001,,(12 - 4) mod 12 = 8 (Kleine Sexte),SRC-001
 REF-0121,M02,INTERVALS,UNIT_TEST,Intervallabstand Tritonus in Halbtönen,6,0.0,PASS,0.001,,Tritonus = 6 Halbtöne,SRC-001
 REF-0122,M02,INTERVALS,UNIT_TEST,Selbstinversion des Tritonus modulo 12,6,0.0,PASS,0.001,,(12 - 6) mod 12 = 6 (Symmetrisches Intervall),SRC-005
@@ -128,14 +128,14 @@ REF-0126,M03,SCALES,SPECIFICATION_EXAMPLE,Dur-Tonleiter Halbtonschrittfolge,"[2,
 REF-0127,M03,SCALES,SPECIFICATION_EXAMPLE,Natürlich Moll (Äolisch) Halbtonschrittfolge,"[2, 1, 2, 2, 1, 2, 2]",0.0,SPECIFICATION_DOCUMENTED,0.001,,Äolisch: G-H-G-G-H-G-G Schrittmuster,SRC-001
 REF-0128,M03,SCALES,SPECIFICATION_EXAMPLE,Harmonisch Moll übermäßige Sekunde Stufe 6-7,"[2, 1, 2, 2, 1, 3, 1]",0.0,SPECIFICATION_DOCUMENTED,0.001,,Hiatus (3 Halbtöne) zwischen Stufe 6 und 7,SRC-001
 REF-0129,M03,SCALES,SPECIFICATION_EXAMPLE,Melodisch Moll aufwärts Schrittmuster,"[2, 1, 2, 2, 2, 2, 1]",0.0,SPECIFICATION_DOCUMENTED,0.001,,Erhöhte 6. und 7. Stufe,SRC-001
-REF-0130,M03,MODES,SPECIFICATION_EXAMPLE,Dorischer Modus Schrittmuster (2. Modus),"[2, 1, 2, 2, 2, 1, 2]",0.0,SPECIFICATION_DOCUMENTED,0.001,,Dorian = Moll mit großer Sexte (Stufe 6 = 9 Halbtöne),SRC-002 (Levine 1995)
+REF-0130,M03,MODES,SPECIFICATION_EXAMPLE,Dorischer Modus Schrittmuster (2. Modus),"[2, 1, 2, 2, 2, 1, 2]",0.0,SPECIFICATION_DOCUMENTED,0.003,,Dorian = Moll mit großer Sexte (Stufe 6 = 9 Halbtöne),SRC-002 (Levine 1995)
 REF-0131,M03,MODES,SPECIFICATION_EXAMPLE,Phrygischer Modus Schrittmuster (3. Modus),"[1, 2, 2, 2, 1, 2, 2]",0.0,SPECIFICATION_DOCUMENTED,0.001,,Phrygisch = Moll mit kleiner Sekunde (Stufe 2 = 1 Halbton),SRC-002
 REF-0132,M03,MODES,SPECIFICATION_EXAMPLE,Lydischer Modus Schrittmuster (4. Modus),"[2, 2, 2, 1, 2, 2, 1]",0.0,SPECIFICATION_DOCUMENTED,0.001,,Lydisch = Dur mit übermäßiger Quarte (Stufe 4 = 6 Halbtöne),SRC-002
 REF-0133,M03,MODES,SPECIFICATION_EXAMPLE,Mixolydischer Modus Schrittmuster (5. Modus),"[2, 2, 1, 2, 2, 1, 2]",0.0,SPECIFICATION_DOCUMENTED,0.001,,Mixolydisch = Dur mit kleiner Septime (Stufe 7 = 10 Halbtöne),SRC-002
 REF-0134,M03,MODES,SPECIFICATION_EXAMPLE,Lokrischer Modus Schrittmuster (7. Modus),"[1, 2, 2, 1, 2, 2, 2]",0.0,SPECIFICATION_DOCUMENTED,0.001,,Lokrisch = verminderte Quinte (Stufe 5 = 6 Halbtöne),SRC-002
 REF-0135,M03,SCALES,SPECIFICATION_EXAMPLE,Dur-Pentatonik Schrittmuster,"[2, 2, 3, 2, 3]",0.0,SPECIFICATION_DOCUMENTED,0.001,,"5-Ton-Skala ohne Halbtöne: 1, 2, 3, 5, 6",SRC-001
 REF-0136,M03,SCALES,SPECIFICATION_EXAMPLE,Moll-Pentatonik Schrittmuster,"[3, 2, 2, 3, 2]",0.0,SPECIFICATION_DOCUMENTED,0.001,,"5-Ton-Skala: 1, b3, 4, 5, b7",SRC-001
-REF-0137,M03,SCALES,SPECIFICATION_EXAMPLE,Ganztonskala Symmetrie,"[2, 2, 2, 2, 2, 2]",0.0,SPECIFICATION_DOCUMENTED,0.001,,6 gleichmäßige Ganztonschritte = 12 Halbtöne,SRC-005
+REF-0137,M03,SCALES,SPECIFICATION_EXAMPLE,Ganztonskala Symmetrie,"[2, 2, 2, 2, 2, 2]",0.0,SPECIFICATION_DOCUMENTED,0.0,,6 gleichmäßige Ganztonschritte = 12 Halbtöne,SRC-005
 REF-0138,M04,CHORDS,SPECIFICATION_EXAMPLE,Dur-Dreiklang Tonklassen-Intervallfolge,"[0, 4, 7]",0.0,SPECIFICATION_DOCUMENTED,0.001,,"Grundton, große Terz (4), reine Quinte (7)",SRC-001
 REF-0139,M04,CHORDS,SPECIFICATION_EXAMPLE,Moll-Dreiklang Tonklassen-Intervallfolge,"[0, 3, 7]",0.0,SPECIFICATION_DOCUMENTED,0.001,,"Grundton, kleine Terz (3), reine Quinte (7)",SRC-001
 REF-0140,M04,CHORDS,SPECIFICATION_EXAMPLE,Verminderter Dreiklang Tonklassen-Intervallfolge,"[0, 3, 6]",0.0,SPECIFICATION_DOCUMENTED,0.001,,"Grundton, kleine Terz (3), verminderte Quinte (6)",SRC-001
@@ -195,5 +195,5 @@ REF-0193,M10,VOICING,SPECIFICATION_EXAMPLE,Guide-Tone Distanz Dm7 nach G7 in der
 REF-0194,M12,PEDAGOGY,SPECIFICATION_EXAMPLE,Didaktische Reduktion Dreiklang Weiß-Weiß-Weiß,true,0.0,SPECIFICATION_DOCUMENTED,0.001,,C-Dur Stamm-Dreiklang (C-E-G) liegt rein auf weißen Tasten,Modul P01
 REF-0195,M11,MIDI_SPEC,SPECIFICATION_EXAMPLE,Standard MIDI Note Number Bereich,128,0.0,SPECIFICATION_DOCUMENTED,0.001,,128 diskrete Notennummern (0 bis 127),MIDI 1.0 Spec
 REF-0196,M11,MIDI_SPEC,SPECIFICATION_EXAMPLE,Standard MIDI Velocity Bereich,128,0.0,SPECIFICATION_DOCUMENTED,0.001,,"7-Bit Auflösung (0 bis 127, wobei 0 = Note-Off)",MIDI 1.0 Spec
-REF-0197,M11,MIDI_TIME,UNIT_TEST,Viertelnoten-Dauer in ms bei 120 BPM,500.0,0.0,PASS,0.02,,60000 / 120 = 500 ms,MIDI 1.0 Spec
-REF-0198,M11,MIDI_TIME,UNIT_TEST,Tick-Dauer in ms bei 120 BPM und 480 PPQ,1.0417,0.001,PASS,0.011,,500 ms / 480 Ticks = 1.0417 ms pro Tick,MIDI 1.0 Spec
+REF-0197,M11,MIDI_TIME,UNIT_TEST,Viertelnoten-Dauer in ms bei 120 BPM,500.0,0.0,PASS,0.009,,60000 / 120 = 500 ms,MIDI 1.0 Spec
+REF-0198,M11,MIDI_TIME,UNIT_TEST,Tick-Dauer in ms bei 120 BPM und 480 PPQ,1.0417,0.001,PASS,0.006,,500 ms / 480 Ticks = 1.0417 ms pro Tick,MIDI 1.0 Spec

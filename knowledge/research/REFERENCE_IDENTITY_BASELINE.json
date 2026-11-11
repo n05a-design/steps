@@ -41,7 +41,7 @@
   "description": "Authoritative semantic identity baseline protecting foundational musical concepts, progressions, patterns, piano modules, relations, and golden reference cases from silent reassignment or semantic drift.",
   "summary": {
     "canonical_domains": 12,
-    "progressions": 27,
+    "progressions": 28,
     "drum_patterns": 31,
     "piano_modules": 19,
     "concept_relations": 94,
@@ -442,6 +442,17 @@
       "stylistic_scope": "Minor Blues (*Birk's Works*, *Footprints*)",
       "first_attestation": "Phase 4.11/4.14",
       "semantic_hash": "d608fb6388bd129c27ad0b77c073ea9c425bfac52cbbfcbfa5676bbdd3a5a529"
+    },
+    "PROG-028": {
+      "id": "PROG-028",
+      "object_type": "CHORD_PROGRESSION",
+      "domain": "Mulholland (2013), Levine (1995)",
+      "name": "Circle of Fifths Soul Cycle",
+      "harmonic_structure": "i^9 - iv^9 - bVII^9 - III^maj9",
+      "standard_example": "Em9 - Am9 - D9 - Gmaj9",
+      "stylistic_scope": "Neo-Soul, Jazz-Funk, Contemporary R&B",
+      "first_attestation": "Phase 4.11/4.14",
+      "semantic_hash": "5e55e36b805e0e8b4c2b7cc10b8b91d2b34ed69ea3c767479b7dc7002e21dc9e"
     }
   },
   "drum_patterns": {

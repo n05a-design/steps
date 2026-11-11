@@ -51,6 +51,7 @@ class TestReferenceIntegrityAndMutations(unittest.TestCase):
         
         shutil.copytree(os.path.join(REPO_ROOT, "knowledge"), self.temp_knowledge)
         shutil.copytree(os.path.join(REPO_ROOT, "tests"), self.temp_tests)
+        shutil.copytree(os.path.join(REPO_ROOT, "decisions"), os.path.join(self.temp_dir, "decisions"))
 
     def tearDown(self):
         shutil.rmtree(self.temp_dir, ignore_errors=True)
@@ -73,11 +74,12 @@ class TestReferenceIntegrityAndMutations(unittest.TestCase):
         result = checker.verify_integrity(repo_root=REPO_ROOT)
         self.assertEqual(len(result['errors']), 0, f"Unexpected canonical errors: {result['errors']}")
         stats = result['stats']
-        self.assertEqual(stats['progressions'], 27)
+        self.assertEqual(stats['progressions'], 28)
         self.assertEqual(stats['drum_patterns'], 31)
         self.assertEqual(stats['piano_modules'], 19)
         self.assertEqual(stats['golden_cases'], 198)
         self.assertEqual(stats['relations'], 94)
+        self.assertEqual(stats['adrs'], 12)
 
     # =========================================================================
     # 15 MANDATORY NEGATIVE MUTATION PROOFS (Section 2.1)
@@ -338,7 +340,7 @@ class TestReferenceIntegrityAndMutations(unittest.TestCase):
         """Malformed markdown row (missing column) detected."""
         prog_file = os.path.join(self.temp_knowledge, 'concepts', 'progressions', 'CHORD_PROGRESSION_REFERENCE_LIBRARY.md')
         with open(prog_file, 'a', encoding='utf-8') as f:
-            f.write("| `PROG-028` | Malformed Row | Only 3 Cols |\n")
+            f.write("| `PROG-099` | Malformed Row | Only 3 Cols |\n")
 
         result = checker.verify_integrity(repo_root=self.temp_dir)
         self.assertGreater(len(result['errors']), 0)
@@ -353,6 +355,34 @@ class TestReferenceIntegrityAndMutations(unittest.TestCase):
         result = checker.verify_integrity(repo_root=self.temp_dir)
         self.assertGreater(len(result['errors']), 0)
         self.assertTrue(any("Golden cases desynchronization" in e for e in result['errors']), result['errors'])
+
+    def test_19_mutation_adr_topic_reassignment_fails_closed(self):
+        """ADR topic reassignment (e.g. changing ADR-005 to PyInstaller) fails closed (Section 1.3)."""
+        decisions_file = os.path.join(self.temp_dir, 'decisions', 'DECISION_REGISTER.md')
+        with open(decisions_file, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        # Mutate ADR-005 theme
+        mutated_content = content.replace(
+            "| ADR-005 | proposed | Fachmodell",
+            "| ADR-005 | proposed | Release-Packaging-Modell mit PyInstaller"
+        )
+        with open(decisions_file, 'w', encoding='utf-8') as f:
+            f.write(mutated_content)
+
+        result = checker.verify_integrity(repo_root=self.temp_dir)
+        self.assertGreater(len(result['errors']), 0)
+        self.assertTrue(any("Semantic identity conflict in ADR-005" in e for e in result['errors']), result['errors'])
+
+    def test_20_mutation_graph_topology_dangling_reference(self):
+        """Graph relation containing a dangling target reference fails closed (Section 3.2)."""
+        rel_file = os.path.join(self.temp_knowledge, 'relations', 'MUSIC_CONCEPT_RELATIONS.csv')
+        with open(rel_file, 'a', encoding='utf-8') as f:
+            f.write("CR-999,M01-01,PROG-999,REQUIRES,FORMAL_RULE,Testing,Test Rule,Test desc,PROPOSED\n")
+
+        result = checker.verify_integrity(repo_root=self.temp_dir)
+        self.assertGreater(len(result['errors']), 0)
+        self.assertTrue(any("Dangling reference in target_id: ID 'PROG-999'" in e for e in result['errors']), result['errors'])
 
 if __name__ == '__main__':
     unittest.main()
