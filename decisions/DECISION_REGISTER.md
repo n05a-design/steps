@@ -11,15 +11,17 @@ Die historische Entscheidungsüberlieferung von Glide D01–D77 bleibt im origin
 
 | ID | Status | Entscheidungsthema | Empfohlene Richtung, ohne Ownerfreigabe |
 |---|---|---|---|
-| ADR-001 | proposed | Zwei Fenster | ein Root, zwei Panes; separater Modal-/Inspector nur bei Bedarf |
-| ADR-002 | proposed | Vision und MVP Chords/Drums | Chords zuerst im testbaren Kern; Drums explizit nachfolgenden Meilenstein |
-| ADR-003 | proposed | Glide-Code-Quelle | lokaler 3.53.0-Stand nur nach vollständigem Commit/Backup und QA |
+| ADR-001 | proposed | Zwei Fenster | ein Root, zwei Panes; separater Modal-/Inspector nur bei Bedarf (OA-0003) |
+| ADR-002 | proposed | Vision und MVP Chords/Drums | Chords zuerst im testbaren Kern; Drums explizit nachfolgenden Meilenstein v0.2+ (OA-0004, OA-0012) |
+| ADR-003 | proposed | Glide-Code-Quelle | lokaler 3.53.0-Stand nur nach vollständigem Commit/Backup und QA (OA-0007) |
 | ADR-004 | proposed | License/Brand | MPL für eigene kompatible Dateien; Fremdassets einzeln prüfen, eigenes Steps-Logo |
-| ADR-005 | proposed | Fachmodell | Pitch-Class vs Spelling, Harmonic Interpretation als eigenständige Objekte |
+| ADR-005 | proposed | Fachmodell | Pitch-Class vs Spelling, deutsches H/B vs int. B/Bb, Enharmonik als eigenständige Objekte (OA-0005) |
 | ADR-006 | proposed | Datenhaltung | JSON + Schema + atomarer Writer für MVP; DB erst nach gemessenem Bedarf |
-| ADR-007 | proposed | Audio/MIDI | Ports zuerst, Backend nach Plattform-/Lizenzbenchmark |
-| ADR-008 | proposed | KI-Skill | Router + indexierte Originalreferenzen + Claim-Registry, keine Volltext-Promptkopie |
+| ADR-007 | proposed | Audio/MIDI | Ports zuerst, Backend nach Plattform-/Lizenzbenchmark (OA-0028, OA-0029) |
+| ADR-008 | proposed | KI-Skill | Router + indexierte Originalreferenzen + Claim-Registry, keine Volltext-Promptkopie (OA-0011) |
 | ADR-009 | proposed | Historische 21/39-Verzeichnisse | zunächst beibehalten, Alias-/Mergeentscheidung nach Inhaltsaudit |
-| ADR-010 | proposed | Public-Repository-Medien | sofort Rechts-/History-Audit, keine neuen Fremd-Bytes pushen |
+| ADR-010 | proposed | Public-Repository-Medien | sofort Rechts-/History-Audit, keine neuen Fremd-Bytes pushen (OA-0001) |
+| ADR-011 | proposed | Release-Packaging- und Auslieferungsmodell | Hybride Distribution: reiner Theoriekern auf PyPI, Desktop-App via PyInstaller Bundle |
+| ADR-012 | proposed | Aufbewahrungs- und Bereinigungsrichtlinie Web/MIDI | Strukturierte Isolierung historischer Drittanbieter-Scrapes (Option A/B/C Vorlage) |
 
 **Abgleich:** `source_archive/Steps_Projekt_Overview_konsolidiert_2026-11-09.md` für ältere W- und G-Register sowie aktuelle `docs/project/CONFLICTS_AND_GAPS.md` für Delta-Befunde. Eine Entscheidung löst einen Konflikt erst nach `accepted` samt nachprüfbarem Ownerhinweis und aktualisierten Verweisen auf.

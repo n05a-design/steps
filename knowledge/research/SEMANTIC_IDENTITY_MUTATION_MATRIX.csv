@@ -1,0 +1,19 @@
+mutation_id,test_name,mutation_target,injected_fault,expected_error_signature,detection_layer,status
+MUT-01,test_01_mutation_ref_title_unchanged_expected_output_modified,REF-0001,Expected output mutated (0 -> 99) while title remains unchanged,Expected output changed from 0 to 99 / Semantic identity hash mismatch,Field Check & Semantic Hash,PASS
+MUT-02,test_02_mutation_ref_title_unchanged_input_modified,REF-0001,Input parameter mutated (midi_note: 60 -> 61) while title remains unchanged,Input parameters changed / Semantic identity hash mismatch,Field Check & Semantic Hash,PASS
+MUT-03,test_03_mutation_ref_id_unchanged_context_domain_replaced,REF-0001,Domain changed (M01 -> M08) under identical REF ID,Semantic identity hash mismatch for REF-0001,Semantic Hash Validation,PASS
+MUT-04,test_04_mutation_prog_id_unchanged_chord_progression_changed,PROG-001,Harmonic structure altered (I-V-vi-IV -> I-IV-V-I),Harmonic structure changed from 'I - V - vi - IV' to 'I - IV - V - I',Field Check & Semantic Hash,PASS
+MUT-05,test_05_mutation_pat_id_unchanged_rhythmic_events_changed,PAT-001,Tempo mutated (115 BPM -> 180 BPM),Tempo changed from '115 BPM' to '180 BPM',Field Check & Semantic Hash,PASS
+MUT-06,test_06_mutation_p_module_id_unchanged_learning_target_swapped,P01,Didactic goal swapped with advanced atonality,Didactic goal changed,Field Check & Semantic Hash,PASS
+MUT-07,test_07_mutation_relation_id_unchanged_target_changed,CR-001,Target entity changed (M01-02 -> M01-99),Target changed from 'M01-02' to 'M01-99',Field Check & Semantic Hash,PASS
+MUT-08,test_08_mutation_baseline_hash_modified,REF-0001,Baseline semantic hash manually corrupted to zero string,Semantic identity hash mismatch for REF-0001,Baseline Hash Verification,PASS
+MUT-09,test_09_mutation_baseline_modification_without_migration_record,PROG-001,Baseline entity modified without migration register record,Semantic identity conflict for PROG-001: Name changed,Baseline Drift Detection,PASS
+MUT-10,test_10_mutation_historical_object_deleted,REF-0001,Historical reference case deleted from repository,Baseline Golden Case 'REF-0001' missing from current test suite,Completeness Check,PASS
+MUT-11,test_11_mutation_new_object_reuses_allocated_historical_id,REF-0002,New concept hijacks assigned historical ID REF-0002,Historical identity conflict for REF-0002: Title changed,Historical Identity Lock,PASS
+MUT-12,test_12_mutation_reference_case_wrong_pitch,REF-0001,Pitch output corrupted (0 -> 7),Expected output changed from 0 to 7,Field Check & Semantic Hash,PASS
+MUT-13,test_13_mutation_reference_case_wrong_swing_offset,REF-0177,Swing offset output corrupted (0 -> 120),Expected output changed from 0 to 120,Field Check & Semantic Hash,PASS
+MUT-14,test_14_mutation_reference_case_wrong_enharmonic_notation,REF-0003,Enharmonic spelling corrupted (C#/Db -> E#),Expected output changed,Field Check & Semantic Hash,PASS
+MUT-15,test_15_controlled_migration_path_accepted,REF-0198,Legitimate correction registered with CONTROLLED_CORRECTION,No error - Authorized migration cleanly accepted,Migration Authority Bypass,PASS
+MUT-16,test_16_mutation_duplicate_prog_id,PROG-001,Duplicate PROG-001 added to table,Duplicate definition of ID 'PROG-001',Table Parsing Line Checker,PASS
+MUT-17,test_17_mutation_malformed_markdown_table_row,PROG-028,Markdown row has missing column pipe (3 vs 6),Table row has 3 columns expected 6,Markdown Table Validator,PASS
+MUT-18,test_18_mutation_desync_between_canon_and_mirror,REF-ALL,Golden case mirror JSON diverges from canon JSON,Golden cases desynchronization,SHA-256 Mirror Sync Check,PASS

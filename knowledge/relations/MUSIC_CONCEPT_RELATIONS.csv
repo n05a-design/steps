@@ -1,0 +1,98 @@
+relation_id,source_id,target_id,relation_type,epistemic_classification,domain_scope,formal_rule_or_strength,description,validation_status
+CR-001,M01-01,M01-02,REQUIRES,FORMAL_RULE,Foundational Harmony Axioms,ISO 16 Standardisierung,Tonhöhe erfordert definierte Referenzfrequenz (440 Hz),VERIFIED_ACTIVE
+CR-002,M01-03,M01-05,IS_VARIANT_OF,FORMAL_RULE,Foundational Harmony Axioms,2:1 Frequenzverhältnis,Oktave ist Grundbaustein aller Stimmungssysteme,VERIFIED_ACTIVE
+CR-003,M01-04,M01-06,IS_EQUIVALENT_UNDER,FORMAL_RULE,Foundational Harmony Axioms,Modulo 12 Isomorphismus,12-TET induziert die zyklische Gruppe Z12 der Tonklassen,VERIFIED_ACTIVE
+CR-004,M02-04,M02-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Positionierung auf Linien/Zwischenräumen,Vorzeichen erfordern Notensystem,VERIFIED_ACTIVE
+CR-005,M02-05,M01-04,IS_EQUIVALENT_UNDER,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Akustische Identität unter 12-TET,C# und Db klingen gleich in 12-TET,VERIFIED_ACTIVE
+CR-006,M02-05,M02-04,CONTRADICTS,HISTORICAL_CONVENTION,Foundational Harmony Axioms,Syntaktische Distinktion,Diatonisch sind C# und Db grundverschieden (Leitton vs Mollterz),VERIFIED_ACTIVE
+CR-007,M02-06,M02-04,IS_VARIANT_OF,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Sprachraum-Projektion,Deutsches H/B vs Internationales B/Bb,VERIFIED_ACTIVE
+CR-008,M03-01,M01-04,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Halbtonschritt-Zählung,Intervalle basieren auf Halbtönen,VERIFIED_ACTIVE
+CR-009,M03-02,M03-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Diatonische 7-Ton-Schritte,Dur-Skala erfordert diatonische Intervallmuster,VERIFIED_ACTIVE
+CR-010,M03-03,M03-02,IS_VARIANT_OF,HISTORICAL_CONVENTION,Foundational Harmony Axioms,Parallele / Relatives Moll,Natürliches Moll teilt Vorzeichen mit relativer Dur-Tonart,VERIFIED_ACTIVE
+CR-011,M03-04,M03-03,REQUIRES,HISTORICAL_CONVENTION,Foundational Harmony Axioms,Leitton-Erhöhung der 7. Stufe,Harmonisch Moll erzeugt Dominant-Dur-Akkord auf Stufe V,VERIFIED_ACTIVE
+CR-012,M04-01,M03-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Terzschichtung (große/kleine Terz),Dreiklänge entstehen durch Terzschichtung,VERIFIED_ACTIVE
+CR-013,M04-02,M04-01,IS_VARIANT_OF,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Permutation der Basstöne,Umkehrungen verändern den tiefsten Ton ohne Akkordqualitätsverlust,VERIFIED_ACTIVE
+CR-014,M04-03,M04-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Ergänzung der Septime,Vierklänge erweitern Dreiklänge um eine Terz,VERIFIED_ACTIVE
+CR-015,M04-08,M04-02,IS_VARIANT_OF,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Bass-Spezifikation nach Schrägstrich,Slash-Chords repräsentieren Inversionen oder Pedalnoten,VERIFIED_ACTIVE
+CR-016,M05-01,M03-02,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Stufenbildung auf Skalentönen,Stufentheorie leitet Akkorde aus Tonleitern ab,VERIFIED_ACTIVE
+CR-017,M05-02,M05-01,IS_EQUIVALENT_UNDER,GENRE_TENDENCY,Foundational Harmony Axioms,Funktionale Zuordnung (T/S/D),Riemann-Funktionen korrespondieren mit Skalenstufen I/IV/V,VERIFIED_ACTIVE
+CR-018,M05-03,M05-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Kadenzenfolge (V -> I),Authentische Kadenzen erfordern Stufenbewegung,VERIFIED_ACTIVE
+CR-019,M05-05,M05-01,REQUIRES,HISTORICAL_CONVENTION,Foundational Harmony Axioms,Modal Interchange,Borrowed Chords leihen Akkorde aus der parallelen Molltonart,VERIFIED_ACTIVE
+CR-020,M05-06,M04-03,IS_EQUIVALENT_UNDER,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Tritonus-Symmetrie der Dominante,Tritonsubstitution teilt die Noten Terz und Septime,VERIFIED_ACTIVE
+CR-021,M06-01,M05-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Akkordsequenzen,Progressionen sind horizontale Ketten harmonischer Stufen,VERIFIED_ACTIVE
+CR-022,M06-03,M04-01,REQUIRES,FORMAL_RULE,Foundational Harmony Axioms,Mehrstimmiger Satz,Klassische Stimmführung verbietet parallele reine Quinten/Oktaven,VERIFIED_ACTIVE
+CR-023,M06-04,M11-04,TESTED_BY,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Tymoczko L1/L2 Distanzmetrik,Voice-Leading-Distanz ist formal testbar über Pitch-Vektoren,VERIFIED_ACTIVE
+CR-024,M07-01,M01-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Periodischer Zeitverlauf,Puls/Metrum erfordert periodische Schwingung,VERIFIED_ACTIVE
+CR-025,M07-02,M11-02,IMPLEMENTED_BY,SOFTWARE_DESIGN_RULE,Foundational Harmony Axioms,Tick-Quantisierung,Rhythmisches Grid wird über PPQ in Standard MIDI Files realisiert,VERIFIED_ACTIVE
+CR-026,M07-03,M07-01,IS_VARIANT_OF,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Subdivision-Typen,Binäre vs ternäre Unterteilung,VERIFIED_ACTIVE
+CR-027,M07-04,M07-03,IS_VARIANT_OF,GENRE_TENDENCY,Foundational Harmony Axioms,Swing-Verhältnis rho,Mathematische Streckung der ungeraden Zählzeiten,VERIFIED_ACTIVE
+CR-028,M08-01,M08-02,IMPLEMENTED_BY,SOFTWARE_DESIGN_RULE,Foundational Harmony Axioms,General MIDI Standard,Drum-Kit-Instrumente mappen auf feste MIDI-Noten auf Kanal 10,VERIFIED_ACTIVE
+CR-029,M08-03,M09-01,APPLIES_TO_GENRE,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Kick auf 1/3, Snare auf 2/4,VERIFIED_ACTIVE
+CR-030,M08-03,M09-02,APPLIES_TO_GENRE,GENRE_TENDENCY,Foundational Harmony Axioms,Four-on-the-Floor Kick,House-Groove mit Kick auf allen 4 Vierteln und Offbeat-Hi-Hat,VERIFIED_ACTIVE
+CR-031,M09-01,M06-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Pop-Akkordfolgen (I-V-vi-IV),Popmusik basiert auf prägnanten Kadenzen,VERIFIED_ACTIVE
+CR-032,M09-02,M08-03,REQUIRES,GENRE_TENDENCY,Foundational Harmony Axioms,House-Drum-Architektur,House erfordert 4-on-the-floor Beat bei 120-128 BPM,VERIFIED_ACTIVE
+CR-033,M10-01,M01-04,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Klaviatur-Geometrie,7 weiße und 5 schwarze Tasten bilden die 12 Halbtöne ab,VERIFIED_ACTIVE
+CR-034,M10-03,M04-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Klavier-Dreiklangsgriffe,Dreiklänge werden mit 1-3-5 oder 1-2-5 gegriffen,VERIFIED_ACTIVE
+CR-035,M10-04,M06-01,REQUIRES,PEDAGOGICAL_RECOMMENDATION,Foundational Harmony Axioms,Zweihändige Begleitung,Bass in linker Hand,VERIFIED_ACTIVE
+CR-036,M11-04,M02-05,IMPLEMENTED_BY,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Verlustfreie Noten-Repräsentation,STEPS pitch.py trennt DiatonicStep,VERIFIED_ACTIVE
+CR-037,M12-04,M10-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Pädagogische Stufenleiter,Lernpfad beginnt mit Tastaturorientierung und führt zu Progressionen,VERIFIED_ACTIVE
+CR-038,PROG-028,P12,VOICED_BY,FORMAL_RULE,Progression to Voicing (M05 <-> M10),Two-Handed Rootless Stacking,Rootless-Voicings (Modul P12) realisieren None- und Vierklangstrukturen des Circle of Fifths Soul Cycles (PROG-028).,VERIFIED_ACTIVE
+REL-001,PROG-001,PAT-001,COMMONLY_PAIRED_WITH,ILLUSTRATIVE_RELATION,Pop / Classic Rock,STRONG,Pop Four Chords Progression paired with straight 8th Pop/Rock Drum Groove.,VERIFIED_ACTIVE
+REL-002,PROG-001,P07,TAUGHT_VIA,PEDAGOGICAL_RECOMMENDATION,Pop Ballad Piano,STRONG,Pop Four Chords progression arranged as two-handed rolling arpeggio wave.,VERIFIED_ACTIVE
+REL-003,PROG-003,P05,VOICED_BY,ILLUSTRATIVE_RELATION,Jazz Two-Five-One,MANDATORY_JAZZ,Dm7 - G7 - Cmaj7 progression realized using 2-voice Shell Voicings (3 & 7 guide tones).,VERIFIED_ACTIVE
+REL-004,PROG-003,P08,VOICED_BY,ILLUSTRATIVE_RELATION,Modern Jazz Piano,ADVANCED_JAZZ,Dm7 - G7 - Cmaj7 realized via Drop-2 open position voicings with minimal L1 movement.,VERIFIED_ACTIVE
+REL-005,PROG-003,PAT-012,COMMONLY_PAIRED_WITH,GENRE_TENDENCY,Traditional Swing,STRONG,Jazz Two-Five-One cadence backed by traditional Spang-a-lang ride swing & pedal hi-hat chick.,VERIFIED_ACTIVE
+REL-006,PROG-007,PAT-007,COMMONLY_PAIRED_WITH,GENRE_TENDENCY,Funk & Soul,STRONG,Dorian Groove Vamp (i7 - IV7) paired with Funk 'The One' ghost note drum groove.,VERIFIED_ACTIVE
+REL-007,PROG-017,PAT-013,COMMONLY_PAIRED_WITH,ILLUSTRATIVE_RELATION,Neo-Soul & Jazz-Hop,STRONG,Classical Backdoor progression (iv7 - bVII7 - I) paired with 16th linear ghost-note groove.,VERIFIED_ACTIVE
+REL-008,PROG-017,P08,VOICED_BY,ILLUSTRATIVE_RELATION,Neo-Soul Piano,STRONG,"Backdoor Cadence voiced via Drop-2 5th/4th grips for lush, transparent harmony.",VERIFIED_ACTIVE
+REL-009,PAT-010,P09,REQUIRES_TECHNIQUE,ILLUSTRATIVE_RELATION,Reggae Keyboard Skank,MANDATORY_REGGAE,Reggae One Drop drum pattern requires staccato offbeat chord stabs on piano/guitar.,VERIFIED_ACTIVE
+REL-010,PAT-018,M07,EXEMPLIFIES_METRIC_DUALITY,ILLUSTRATIVE_RELATION,Drum & Bass (174 BPM),STRUCTURAL,174 BPM fast breakbeat operates simultaneously with 87 BPM halftime Reese sub-bass.,VERIFIED_ACTIVE
+REL-011,PAT-020,M07,UTILIZES_SWING_PROFILE,GENRE_TENDENCY,UK Garage 2-Step,STRONG,Authentic 2-step groove requires 55-62% 16th MPC swing and skipped beat 2 kick.,VERIFIED_ACTIVE
+REL-012,P09,PAT-012,TRAINS_RHYTHMIC_INTERACTION,ILLUSTRATIVE_RELATION,Charleston Comping,MEDIUM,Charleston piano stabs (beat 1 and 2+) lock with jazz drummer's hi-hat chick and ride pulse.,VERIFIED_ACTIVE
+REL-013,P10,PROG-001,FOUNDATIONAL_FOR,PEDAGOGICAL_RECOMMENDATION,Functional Ear Training,PEDAGOGICAL,Tonic vs Dominant vs Subdominant tension awareness enables immediate recognition of Pop Four Chords.,VERIFIED_ACTIVE
+REL-014,PROG-002,PAT-018,COMMONLY_PAIRED_WITH,ILLUSTRATIVE_RELATION,Liquid Drum & Bass,STRONG,Emotional Minor Loop (vi - IV - I - V / D-Aeolian) paired with 174 BPM Liquid rolling breakbeat.,VERIFIED_ACTIVE
+REL-015,PROG-007,PAT-020,COMMONLY_PAIRED_WITH,ILLUSTRATIVE_RELATION,UK Garage 2-Step,STRONG,Dorian groove vamp (i7 - IV7) paired with authentic swung 134 BPM 2-Step drum groove.,VERIFIED_ACTIVE
+REL-016,PAT-021,M07,EXEMPLIFIES_METRIC_DUALITY,ILLUSTRATIVE_RELATION,Jungle / Drumfunk,STRUCTURAL,Chopped Amen break variations at 174 BPM operate against sustained 87 BPM 808 sub-bass.,VERIFIED_ACTIVE
+REL-017,PAT-022,M09,BELONGS_TO_GENRE,ILLUSTRATIVE_RELATION,Jump-Up Drum & Bass,STRONG,Minimal two-step kick/snare pattern driving syncopated distorted bass stabs.,VERIFIED_ACTIVE
+REL-018,P09,PAT-020,COMPATIBLE_WITH,ILLUSTRATIVE_RELATION,UK Garage Keyboard Stabs,STRONG,Staccato offbeat chord stabs lock directly into the syncopated 16th gaps of the 2-step groove.,VERIFIED_ACTIVE
+REL-019,P11,P02,EXPANDS_TECHNIQUE_OF,PEDAGOGICAL_RECOMMENDATION,Inversion Voicing Decoding,PEDAGOGICAL,Modul P11 expands the physical inversion mechanics of P02 into functional acoustic ear recognition.,VERIFIED_ACTIVE
+REL-020,P11,ERR-026,PREVENTS_ERROR,PEDAGOGICAL_RECOMMENDATION,Ear Training Inversions,PEDAGOGICAL_GATE,Prevents mistaking inverted bass notes (e.g. C/E) for root-position chords (Em).,VERIFIED_ACTIVE
+REL-021,PROG-021,PAT-024,STYLISTICALLY_COMPATIBLE,GENRE_TENDENCY,Neo-Soul / Boom-Bap,High Affinity,Der Neo-Soul Rootless Minor Cycle (Dm9-Gm9-Bbmaj9-A7b9) harmoniert ideal mit dem 61% MPC Boom-Bap Groove.,VERIFIED_ACTIVE
+REL-022,PROG-021,P12,DIDACTIC_APPLICATION,PEDAGOGICAL_RECOMMENDATION,Klavierpraxis / Neo-Soul,Pedagogical Standard,Modul P12 lehrt das zweihändige Greifen von PROG-021 ueber Rootless Voicings der rechten Hand.,VERIFIED_ACTIVE
+REL-023,PAT-025,M07,POLYRHYTHMIC_INTERACTION,ILLUSTRATIVE_RELATION,Berlin Peak Techno,3-against-4 Metric Contrast,Der 3er-Rimshot-Puls (alle 3 Sechzehntel) bricht das starre Four-on-the-Floor Metrum dynamisch auf.,VERIFIED_ACTIVE
+REL-024,PAT-026,M07,MICROTIMING_QUANTIZATION,GENRE_TENDENCY,UK Garage 2-Step,Offset +35 Ticks @ 480 PPQ,"UK Garage Heavy Swing (64% MPC 3000) verzögert das zweite Sechzehntel um 35 Ticks (33,1 ms bei 132 BPM).",VERIFIED_ACTIVE
+REL-025,PROG-022,P13,DIDACTIC_APPLICATION,ILLUSTRATIVE_RELATION,Klassik / Reharmonisation,Historical Cadential Principle,Die Picardische Terz (PROG-022) wird in Modul P13 als vierte Stufe der emotionalen Reharmonisation vermittelt.,VERIFIED_ACTIVE
+REL-026,PROG-023,PAT-018,STYLISTICALLY_COMPATIBLE,ILLUSTRATIVE_RELATION,Liquid Drum & Bass,Metric Duality Fusion,Liquid D&B Sub-Pulse Akkordfolge verbindet sich mit dem 174 BPM Two-Step Breakbeat zur kanonischen Liquid-Aesthetik.,VERIFIED_ACTIVE
+REL-027,M03,M04,HARMONIC_DERIVATION,ILLUSTRATIVE_RELATION,Skalentheorie / Heptatonik,Axiomatic Closed System,Aus den 4 Familien der 28 Heptatonik-Skalen (Prehn-Modell) werden durch Terzschichtung saemtliche Grundakkorde abgeleitet.,VERIFIED_ACTIVE
+REL-028,M11,M08,CHANNEL_ASSIGNMENT_MAPPING,SOFTWARE_DESIGN_RULE,General MIDI 1.0,Normative Standard Specification,"General MIDI 1.0 spezifiziert Kanal 10 ausschliesslich fuer Perkussion mit fest definierten Key-Nummern (36 Kick, 38 Snare).",VERIFIED_ACTIVE
+REL-029,PROG-024,PAT-027,STYLISTICALLY_COMPATIBLE,GENRE_TENDENCY,Bossa Nova,High Affinity,Die Ipanema-Progression (Imaj7-II7-ii7-V7) harmoniert historisch und klanglich ideal mit dem Bossa-Clave Brush/Cross-Stick Groove.,VERIFIED_ACTIVE
+REL-030,PROG-024,P14,DIDACTIC_APPLICATION,PEDAGOGICAL_RECOMMENDATION,Klavierpraxis / Bossa Nova,Pedagogical Standard,Modul P14 lehrt das pianistische Begleiten von PROG-024 mit Surdo-Pendelbass (LH) und Clave-Comping (RH).,VERIFIED_ACTIVE
+REL-031,PAT-027,M07,METRIC_ALIGNMENT,GENRE_TENDENCY,Afro-Cuban / Brazilian,Clave Synchronization,Das brasilianische Bossa-Nova-Clave-Muster richtet die synkopierten Cross-Sticks an einer 2-taktigen rhythmischen Achse aus.,VERIFIED_ACTIVE
+REL-032,PROG-025,PAT-028,STYLISTICALLY_COMPATIBLE,GENRE_TENDENCY,Afro-Cuban / Cha-Cha-Chá,High Affinity,Die Montuno-Progression verbindet sich mit dem Cha-Cha Conga Tumbao zur typischen Salsa/Latin-Textur.,VERIFIED_ACTIVE
+REL-033,M11,M02,DATA_MODEL_ENCODING,SOFTWARE_DESIGN_RULE,MusicXML 4.0,Normative Lossless Mapping,MusicXML ermoeglicht die verlustfreie Speicherung enharmonischer Notenschreibungen (Step/Alter) gegenueber reinem MIDI.,VERIFIED_ACTIVE
+REL-034,M02,M05,THEORETICAL_DERIVATION,ILLUSTRATIVE_RELATION,Allgemeine Tonalitaet,Deterministic Circle of Fifths,Die deterministische Vorzeichenfolge im Quintenzirkel definiert Tonarten und Leittoeene im Tonsystem.,VERIFIED_ACTIVE
+REL-035,PROG-028,PAT-030,COMMONLY_PAIRED_WITH,GENRE_TENDENCY,Neo-Soul Groove Pairing (M05 <-> M08),Harmonic-Rhythmic Pairing,Kopplung des Circle of Fifths Soul Cycles (PROG-028) mit dem Phrygian Neo-Soul Halftime Shuffle (PAT-030).,VERIFIED_ACTIVE
+REL-036,PAT-031,PROG-025,COMMONLY_PAIRED_WITH,GENRE_TENDENCY,Latin Clave Coupling (M08 <-> M05),Harmonic-Rhythmic Pairing,Kopplung des Afro-Cuban 6/8 Bembe Fusion Patterns (PAT-031) mit dem synkopierten Montuno Ostinato Vamp (PROG-025).,VERIFIED_ACTIVE
+CDR-001,C4_PITCH,MIDI_NOTE_60,MAPS_TO,SOFTWARE_DESIGN_RULE,Cross-Domain M01 <-> M11,Mapping Rule MAPS_TO,Inter-domain synthesis: C4_PITCH MAPS_TO MIDI_NOTE_60,VERIFIED_ACTIVE
+CDR-002,DEUTSCH_H,PITCH_CLASS_11,EQUIVALENT_TO,SOFTWARE_DESIGN_RULE,Cross-Domain M02 <-> M01,Mapping Rule EQUIVALENT_TO,Inter-domain synthesis: DEUTSCH_H EQUIVALENT_TO PITCH_CLASS_11,VERIFIED_ACTIVE
+CDR-003,DEUTSCH_B,PITCH_CLASS_10,EQUIVALENT_TO,SOFTWARE_DESIGN_RULE,Cross-Domain M02 <-> M01,Mapping Rule EQUIVALENT_TO,Inter-domain synthesis: DEUTSCH_B EQUIVALENT_TO PITCH_CLASS_10,VERIFIED_ACTIVE
+CDR-004,HEPTATONIK_28,FOUR_GENERATOR_FAMILIES,DERIVED_FROM,SOFTWARE_DESIGN_RULE,Cross-Domain M03 <-> M01,Mapping Rule DERIVED_FROM,Inter-domain synthesis: HEPTATONIK_28 DERIVED_FROM FOUR_GENERATOR_FAMILIES,VERIFIED_ACTIVE
+CDR-005,ALTERED_SCALE,MELODIC_MINOR_MODE_7,DERIVED_FROM,SOFTWARE_DESIGN_RULE,Cross-Domain M03 <-> M03,Mapping Rule DERIVED_FROM,Inter-domain synthesis: ALTERED_SCALE DERIVED_FROM MELODIC_MINOR_MODE_7,VERIFIED_ACTIVE
+CDR-006,LYDIAN_DOMINANT,MELODIC_MINOR_MODE_4,DERIVED_FROM,SOFTWARE_DESIGN_RULE,Cross-Domain M03 <-> M03,Mapping Rule DERIVED_FROM,Inter-domain synthesis: LYDIAN_DOMINANT DERIVED_FROM MELODIC_MINOR_MODE_4,VERIFIED_ACTIVE
+CDR-007,ROOTLESS_VOICING_A,3_5_7_9_STACK,STRUCTURED_AS,SOFTWARE_DESIGN_RULE,Cross-Domain M04 <-> M10,Mapping Rule STRUCTURED_AS,Inter-domain synthesis: ROOTLESS_VOICING_A STRUCTURED_AS 3_5_7_9_STACK,VERIFIED_ACTIVE
+CDR-008,ROOTLESS_VOICING_B,7_9_3_5_STACK,STRUCTURED_AS,SOFTWARE_DESIGN_RULE,Cross-Domain M04 <-> M10,Mapping Rule STRUCTURED_AS,Inter-domain synthesis: ROOTLESS_VOICING_B STRUCTURED_AS 7_9_3_5_STACK,VERIFIED_ACTIVE
+CDR-009,DROP_2_VOICING,SECOND_VOICE_LOWERED_OCTAVE,TRANSFORMS_TO,SOFTWARE_DESIGN_RULE,Cross-Domain M04 <-> M10,Mapping Rule TRANSFORMS_TO,Inter-domain synthesis: DROP_2_VOICING TRANSFORMS_TO SECOND_VOICE_LOWERED_OCTAVE,VERIFIED_ACTIVE
+CDR-010,POLYCHORD_D_OVER_C,C_MAJ13_SHARP11,EXPRESSES,SOFTWARE_DESIGN_RULE,Cross-Domain M04 <-> M05,Mapping Rule EXPRESSES,Inter-domain synthesis: POLYCHORD_D_OVER_C EXPRESSES C_MAJ13_SHARP11,VERIFIED_ACTIVE
+CDR-011,PROG_024,APPLIED_DOMINANT_V7_OVER_V,HARMONIC_FUNCTION,SOFTWARE_DESIGN_RULE,Cross-Domain M06 <-> M05,Mapping Rule HARMONIC_FUNCTION,Inter-domain synthesis: PROG_024 HARMONIC_FUNCTION APPLIED_DOMINANT_V7_OVER_V,VERIFIED_ACTIVE
+CDR-012,PROG_024,MODAL_SHIFT_TO_II7,VOICE_LEADING,SOFTWARE_DESIGN_RULE,Cross-Domain M06 <-> M06,Mapping Rule VOICE_LEADING,Inter-domain synthesis: PROG_024 VOICE_LEADING MODAL_SHIFT_TO_II7,VERIFIED_ACTIVE
+CDR-013,PROG_025,CYCLICAL_OSTINATO_VAMP,HARMONIC_STRUCTURE,SOFTWARE_DESIGN_RULE,Cross-Domain M06 <-> M05,Mapping Rule HARMONIC_STRUCTURE,Inter-domain synthesis: PROG_025 HARMONIC_STRUCTURE CYCLICAL_OSTINATO_VAMP,VERIFIED_ACTIVE
+CDR-014,PROG_025,PIANO_MONTUNO_GUAJEO,RHYTHMIC_EXECUTION,SOFTWARE_DESIGN_RULE,Cross-Domain M06 <-> M09,Mapping Rule RHYTHMIC_EXECUTION,Inter-domain synthesis: PROG_025 RHYTHMIC_EXECUTION PIANO_MONTUNO_GUAJEO,VERIFIED_ACTIVE
+CDR-015,SWING_61_PCT,TICK_146_AT_480_PPQ,QUANTIZES_TO,GENRE_TENDENCY,Cross-Domain M07 <-> M11,Mapping Rule QUANTIZES_TO,Inter-domain synthesis: SWING_61_PCT QUANTIZES_TO TICK_146_AT_480_PPQ,VERIFIED_ACTIVE
+CDR-016,SWING_58_PCT,TICK_139_AT_480_PPQ,QUANTIZES_TO,GENRE_TENDENCY,Cross-Domain M07 <-> M11,Mapping Rule QUANTIZES_TO,Inter-domain synthesis: SWING_58_PCT QUANTIZES_TO TICK_139_AT_480_PPQ,VERIFIED_ACTIVE
+CDR-017,FRIBERG_SWING_DECAY,TEMPO_DEPENDENT_RHO,MODELS,GENRE_TENDENCY,Cross-Domain M07 <-> M09,Mapping Rule MODELS,Inter-domain synthesis: FRIBERG_SWING_DECAY MODELS TEMPO_DEPENDENT_RHO,VERIFIED_ACTIVE
+CDR-018,SON_CLAVE_3_2,TICKS_0_720_1440_2400_2880,TIMELINE_AT_480_PPQ,SOFTWARE_DESIGN_RULE,Cross-Domain M07 <-> M09,Mapping Rule TIMELINE_AT_480_PPQ,Inter-domain synthesis: SON_CLAVE_3_2 TIMELINE_AT_480_PPQ TICKS_0_720_1440_2400_2880,VERIFIED_ACTIVE
+CDR-019,BOSSA_BATIDA,BRAZILIAN_TAMBORIM_SURDO_SYNTHESIS,HISTORICAL_ORIGIN,GENRE_TENDENCY,Cross-Domain M09 <-> M08,Mapping Rule HISTORICAL_ORIGIN,Inter-domain synthesis: BOSSA_BATIDA HISTORICAL_ORIGIN BRAZILIAN_TAMBORIM_SURDO_SYNTHESIS,VERIFIED_ACTIVE
+CDR-020,GM_CHANNEL_10,PERCUSSION_FIXED_MAP,STANDARDIZED_IN,SOFTWARE_DESIGN_RULE,Cross-Domain M08 <-> M11,Mapping Rule STANDARDIZED_IN,Inter-domain synthesis: GM_CHANNEL_10 STANDARDIZED_IN PERCUSSION_FIXED_MAP,VERIFIED_ACTIVE
+CDR-021,SURDO_PULSE,ACCENT_ON_BEAT_2_IN_2_4,PERFORMANCE_NORM,SOFTWARE_DESIGN_RULE,Cross-Domain M08 <-> M09,Mapping Rule PERFORMANCE_NORM,Inter-domain synthesis: SURDO_PULSE PERFORMANCE_NORM ACCENT_ON_BEAT_2_IN_2_4,VERIFIED_ACTIVE
+CDR-022,MUSICXML_PITCH,STEP_ALTER_OCTAVE_MODEL,SCHEMA_DEFINITION,SOFTWARE_DESIGN_RULE,Cross-Domain M11 <-> M02,Mapping Rule SCHEMA_DEFINITION,Inter-domain synthesis: MUSICXML_PITCH SCHEMA_DEFINITION STEP_ALTER_OCTAVE_MODEL,VERIFIED_ACTIVE
+CDR-023,BASS_FIRST_AURAL,LOWEST_PITCH_ANCHOR,PEDAGOGICAL_PRINCIPLE,PEDAGOGICAL_RECOMMENDATION,Cross-Domain M12 <-> M10,Mapping Rule PEDAGOGICAL_PRINCIPLE,Inter-domain synthesis: BASS_FIRST_AURAL PEDAGOGICAL_PRINCIPLE LOWEST_PITCH_ANCHOR,VERIFIED_ACTIVE

@@ -1,0 +1,66 @@
+# STEPS – Kanonische Klavierpraxis- & Lernmodul-Bibliothek (P01 bis P19)
+
+**Dokumenttyp:** KONSOLIDIERTER KLAVIER-PRAXIS-ATLAS  
+**Wissensdomänen:** M10 (Klavierpraxis), M04 (Akkordtheorie), M06 (Voice Leading), M12 (Didaktik)  
+**Notationsstandard:** SPN (C4 = MIDI 60); deutsches H = int. B explizit.  
+**Integritätsstatus:** `GATE 1 (IDENTITY_INTEGRITY): RECOVERED` in Phase 4.14.
+
+---
+
+## 1. Systematische Übersicht aller 19 Klaviermodule
+
+| Modul-ID | Thema / Titel | Zielkompetenz | Kernprinzip | Phase |
+|---|---|---|---|:---:|
+| `P01` | **Stamm-Dreiklänge & Topografie** | Tastenfindung, Grundstellung, Terzschichtung | Dreiklänge als "Schneemänner" (Weiß-Weiß-Weiß) | Phase 4.3 |
+| `P02` | **Akkordumkehrungen & Minimal Movement** | Geschmeidiges Verbinden ohne Hand-Sprünge | $L_1$-Distanzminimierung (1. & 2. Umkehrung) | Phase 4.3 |
+| `P03` | **Zweihändige Begleitmuster (Pop Groove)** | Rhythmisches Fundament der linken Hand | Linke Hand Bass/Puls, rechte Hand Akkord-Offbeats | Phase 4.3 |
+| `P04` | **Vierklänge & Septakkorde** | Jazz- & Pop-Klangfarben verstehen | Maj7, Dom7, m7 (Erweiterung um die Septime) | Phase 4.4 |
+| `P05` | **Zweihändige Shell-Voicings** | Klobige Griffe vermeiden; Jazz-Transparenz | LH spielt Bass; RH spielt nur 3 & 7 (Guide Tones) | Phase 4.4 |
+| `P06` | **Sus- und Add-Akkorde** | Moderne Pop-Balladen-Sounds erzeugen | Sus4 (Quarte ersetzt Terz) & Add9 (None hinzu) | Phase 4.5 |
+| `P07` | **Zweihändige rollende Arpeggien** | Fließende Balladenbegleitung (Coldplay-Style) | LH Quint-Fundament; RH durchgehende 8tel-Welle | Phase 4.5 |
+| `P08` | **Drop-2 Voicings** | Raumfüllender, transparenter Profi-Klang | Stimme 2 von oben fällt eine Oktave nach unten (inkl. Small-Hand-Option) | Phase 4.6 |
+| `P09` | **Rhythmische Akkordbegleitung** | Vom steifen Akkord zum groovenden Begleiter | Charleston-Rhythmus (1 & 2+) und Staccato-Offbeat-Stabs | Phase 4.7 |
+| `P10` | **Akkorde nach Gehör & Funktion verstehen** | Songs ohne Noten intuitiv am Gehör erfassen | Heimat ($I$), Reise ($IV/ii$), Magnet ($V$); "Bass-First" + Voicing Decoder | Phase 4.7 / 4.8 |
+| `P11` | **Akkordumkehrungen nach Gehör & Funktion** | Den "Inversion Code" knacken; Stufenbässe | Grundstellung ($5/3$) vs. Sextakkord ($6/3$) vs. Quartsextakkord ($6/4$) | Phase 4.8 |
+| `P12` | **Zweihändige Rootless Voicings** | Den weichen Neo-Soul & Lo-Fi Sound spielen | LH spielt tiefen Bass; RH spielt Dreiklang der Terz (z. B. LH D + RH Fmaj7 = Dm9) | Phase 4.9/4.10 |
+| `P13` | **Reharmonisation in der Praxis** | Monotone Melodien spannend umfärben | Diatonische Substitution, Modal Interchange, Picardische Terz & Sus4 | Phase 4.9/4.10 |
+| `P14` | **Bossa Nova & Latin Piano Begleitung** | Sanft wiegende Rhythmen spielen | Linke Hand Surdo-Pendel (1 & 3 Grundton, 2 & 4 Quinte); Rechte Hand Bossa Clave Comping | Phase 4.10 |
+| `P15` | **Stimmführung & Chromatische Medianten** | Geschmeidige Modulationen ohne Tonartbrüche | Minimale L1-Distanzverschiebung (z.B. C-Dur zu E-Dur und Ab-Dur) | Phase 4.12 |
+| `P16` | **Upper Structure Triads über Dominanten** | Komplexe Jazz-Spannungen mühelos greifen | Dur-Dreiklänge der RH über Tritonus-Fundament der LH (z.B. RH D-Dur über LH C7 = C7(#11,13)) | Phase 4.12 |
+| `P17` | **Zeitgenössisches Syncopated Comping** | Moderne R&B- und Gospel-Pushes spielen | 16tel-Vorwegnahmen und synkopierte Push-Akkorde über 2- und 4-Bar-Loops | Phase 4.12 |
+| `P18` | **Backdoor Guide-Tone Voicings** | Reibungslose Auflösung über bVII7 zur Tonika | Stimmführung $iv^7 \to \flat VII^7 \to I^{\text{maj}7}$; Septime $A\flat \to G$ (Halbton); Terz $D \to E$ (**Ganztonschritt / 2 Halbtöne!**) | Phase 4.13/4.14 |
+| `P19` | **Chromatische Bassführung für Sekundärdominanten** | Fließende Basslinien in Kadenzen spielen | $I \to V^7/V(6/5) \to ii^6 \to [I^6] \to V^7 \to I$ ($G \to C\sharp \to C\natural \to B \to A \to G$); harmonisch lückenlos spielbar | Phase 4.13/4.14 |
+
+---
+
+## 2. Fachliche Ausarbeitung der Korrekturen (P18 & P19)
+
+### Modul P18: Backdoor Voicings & Stimmführung ($iv^7 - \flat VII^7 \to I^{\text{maj}7}$)
+* **Theorie-Referenz:** `PROG-017` (*Classical Jazz Backdoor ii–V*)
+* **Ziel:** Begleitung von Backdoor-Kadenzen mit geschmeidiger Stimmführung.
+* **Linke Hand:** Grundtöne $F \to B\flat \to C$ (oder $B\flat - A\flat$ Shell für $\flat VII^7$).
+* **Rechte Hand (Guide-Tone Leading):**
+  - $Fm^7$: Terz $A\flat$, Septime $E\flat$, None $G$ ($A\flat - E\flat - G$).
+  - $B\flat^7$: Terz $D$, Septime $A\flat$, None $C$ ($A\flat - C - D$).
+  - $C^{\text{maj}7}$: Terz $E$, Septime $B$, Quinte $G$ ($G - B - E$).
+* **Stimmführungs-Verifikation (Korrektur):**
+  - Die Septime von $B\flat^7$ ($A\flat$) sinkt um einen **Halbton** (1 Halbton) zur Quinte von $C^{\text{maj}7}$ ($G$).
+  - Die Terz von $B\flat^7$ ($D$) steigt um einen **Ganztonschritt** (**2 Halbtöne**, Intervall $D \to E$) zur Terz $E$, ODER sinkt um 2 Halbtöne zum Grundton $C$.
+  - Die Quinte von $B\flat^7$ ($F$) sinkt um einen **Halbton** zur Terz von $C$ ($E$).
+  - Die Behauptung eines Halbtonschritts von $D$ nach $E$ ist musiktheoretisch falsch und wurde korrigiert.
+
+---
+
+### Modul P19: Chromatische Bassführung bei Sekundärdominanten in 1. Umkehrung ($V^7/V(6/5)$)
+* **Theorie-Referenz:** `PROG-026`
+* **Ziel:** Lückenlos spielbare chromatische Basslinie zur Verbindung von Tonika, Doppeldominante und Subdominantparallele.
+* **Harmonische Klärung (Korrektur):**
+  Ein Standard-$D^7$ besteht aus $D - F\sharp - A - C$. Der Ton $B$ ist kein Akkordton des gewöhnlichen $D^7$. Um die Basslinie $G \to C\sharp \to C\natural \to B \to A \to G$ harmonisch korrekt und transparent zu spielen, wird über dem Basston $B$ der Sextakkord der Tonika ($G/B$, $I^6$) eingeschoben:
+* **Spielbare Akkordfolge:**
+  1. $G$: LH $G2$, RH $D4 - G4 - B4$ (Grundstellung $I$)
+  2. $A^7/C\sharp$: LH $C\sharp 3$ (Terz der Doppeldominante $V^7/V$), RH $E4 - G4 - A4$
+  3. $Am/C$: LH $C3$ (Terz der Moll-Subdominantparallele $ii^6$), RH $E4 - A4 - C5$ (chromatische Bass-Absenkung $C\sharp \to C\natural$!)
+  4. $G/B$: LH $B2$ (Terz der Tonika $I^6$), RH $D4 - G4 - B4$ (stufenweise Weiterführung $C\natural \to B$!)
+  5. $D^7/A$: LH $A2$ (Quinte der Dominante $V^7_4_3$), RH $C4 - D4 - F\sharp 4$
+  6. $G$: LH $G2$, RH $B3 - D4 - G4$ (tonale Auflösung)
+* **Didaktischer Schlüssel:** Die linke Hand vollzieht eine lückenlose Tonleiterbewegung abwärts ($C\sharp \to C \to B \to A \to G$), während jeder Basston exakt als Akkordton harmonisiert ist.

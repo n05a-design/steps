@@ -1,0 +1,2 @@
+#!/bin/sh
+python3 scripts/pre-commit-secret-check.py || python scripts/pre-commit-secret-check.py
