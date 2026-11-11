@@ -1,5 +1,5 @@
 """
-STEPS Music Theory Core: Interval Arithmetics & Inversions.
+STEPS Music Theory Core: Interval Arithmetics, Transpositions & Inversions.
 
 Adheres to:
 - M01 (Intervalldistanzen & Inversionen), M03 (Skalen-Schritte)
@@ -11,6 +11,10 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import IntEnum
 from typing import Literal, Tuple
+
+from .exceptions import InvalidIntervalError, MusicTheoryError
+from .pitch import NoteSpelling, DIATONIC_STEPS, DIATONIC_BASE_PC
+
 
 class ChromaticInterval(IntEnum):
     """Standard chromatic intervals in semitones within the octave."""
@@ -27,6 +31,14 @@ class ChromaticInterval(IntEnum):
     MINOR_SEVENTH = 10
     MAJOR_SEVENTH = 11
     PERFECT_OCTAVE = 12
+    # Compound extensions
+    MINOR_NINTH = 13
+    MAJOR_NINTH = 14
+    AUGMENTED_NINTH = 15
+    PERFECT_ELEVENTH = 17
+    AUGMENTED_ELEVENTH = 18
+    MINOR_THIRTEENTH = 20
+    MAJOR_THIRTEENTH = 21
 
 
 IntervalQuality = Literal['P', 'M', 'm', 'd', 'A']
@@ -35,26 +47,46 @@ IntervalQuality = Literal['P', 'M', 'm', 'd', 'A']
 @dataclass(frozen=True)
 class DiatonicInterval:
     """
-    Represents a diatonic interval with scale-step degree and quality.
+    Represents a diatonic interval with scale-step degree, quality, and direction.
     
     Attributes:
-        number: Diatonic span (1=Unison, 2=Second, 3=Third, 4=Fourth, 5=Fifth, 6=Sixth, 7=Seventh, 8=Octave).
+        number: Diatonic span (1=Unison, 2=Second, 3=Third, 4=Fourth, 5=Fifth, 6=Sixth, 7=Seventh, 8=Octave,
+                9=Ninth, 11=Eleventh, 13=Thirteenth, etc.).
         quality: 'P' (Perfect), 'M' (Major), 'm' (Minor), 'd' (Diminished), 'A' (Augmented).
+        direction: 1 for ascending (default), -1 for descending.
     """
     number: int
     quality: IntervalQuality
+    direction: Literal[1, -1] = 1
 
     def __post_init__(self):
         if self.number < 1:
-            raise ValueError("Interval number must be >= 1.")
-        # Perfect intervals can only be 1, 4, 5, 8, 11, 12, etc.
+            raise InvalidIntervalError("Interval number must be >= 1.")
+        if self.direction not in (1, -1):
+            raise InvalidIntervalError("Interval direction must be +1 (ascending) or -1 (descending).")
+            
+        # Perfect intervals: 1, 4, 5 and their compound octaves (8, 11, 12, 15, etc.)
         simple_num = (self.number - 1) % 7 + 1
         if simple_num in (1, 4, 5):
             if self.quality in ('M', 'm'):
-                raise ValueError(f"Interval {self.number} is perfect-type and cannot be Major ('M') or Minor ('m').")
+                raise InvalidIntervalError(
+                    f"Interval {self.number} is perfect-type and cannot be Major ('M') or Minor ('m')."
+                )
         else:
             if self.quality == 'P':
-                raise ValueError(f"Interval {self.number} is imperfect-type and cannot be Perfect ('P').")
+                raise InvalidIntervalError(
+                    f"Interval {self.number} is imperfect-type and cannot be Perfect ('P')."
+                )
+
+    @property
+    def is_compound(self) -> bool:
+        """Returns True if interval spans more than an octave (> 8)."""
+        return self.number > 8
+
+    @property
+    def octaves(self) -> int:
+        """Returns the number of whole octaves spanned."""
+        return (self.number - 1) // 7
 
     @property
     def semitones(self) -> int:
@@ -74,7 +106,7 @@ class DiatonicInterval:
             elif self.quality == 'd':
                 delta = -1
             else:
-                raise ValueError(f"Invalid quality {self.quality} for perfect interval.")
+                raise InvalidIntervalError(f"Invalid quality {self.quality} for perfect interval.")
         else:
             if self.quality == 'M':
                 delta = 0
@@ -85,14 +117,22 @@ class DiatonicInterval:
             elif self.quality == 'd':
                 delta = -2
             else:
-                raise ValueError(f"Invalid quality {self.quality} for major/minor interval.")
+                raise InvalidIntervalError(f"Invalid quality {self.quality} for major/minor interval.")
                 
         return octaves * 12 + base + delta
 
+    @property
+    def signed_semitones(self) -> int:
+        """Returns signed semitones (+ for ascending, - for descending)."""
+        return self.direction * self.semitones
+
     def invert(self) -> DiatonicInterval:
-        """Inverts a simple diatonic interval (within octave)."""
+        """
+        Inverts a simple diatonic interval (within octave).
+        Rule: 9 - number, opposite quality (M <-> m, A <-> d, P <-> P).
+        """
         if self.number > 8:
-            raise ValueError("Direct diatonic inversion is defined for simple intervals <= 8.")
+            raise InvalidIntervalError("Direct diatonic inversion is defined for simple intervals <= 8.")
         inv_num = 9 - self.number
         quality_map: dict[IntervalQuality, IntervalQuality] = {
             'P': 'P',
@@ -101,7 +141,27 @@ class DiatonicInterval:
             'A': 'd',
             'd': 'A'
         }
-        return DiatonicInterval(number=inv_num, quality=quality_map[self.quality])
+        return DiatonicInterval(number=inv_num, quality=quality_map[self.quality], direction=self.direction)
+
+
+def transpose_spelling(
+    spelling: NoteSpelling,
+    interval: DiatonicInterval,
+    direction: Literal[1, -1] = 1
+) -> NoteSpelling:
+    """
+    Transposes a NoteSpelling by a DiatonicInterval, preserving strict orthography and accidentals.
+    
+    Examples:
+        C4 + DiatonicInterval(5, 'P') -> G4
+        C4 + DiatonicInterval(4, 'A') -> F#4
+        C4 + DiatonicInterval(5, 'd') -> Gb4
+        C4 + DiatonicInterval(5, 'P', direction=-1) -> F3
+    """
+    effective_dir = interval.direction * direction
+    step_delta = effective_dir * (interval.number - 1)
+    semi_delta = effective_dir * interval.semitones
+    return spelling.transpose_diatonic(step_delta=step_delta, semitone_delta=semi_delta)
 
 
 def semitones_between(note_a: int, note_b: int) -> int:
@@ -120,3 +180,55 @@ def invert_semitones_modulo12(semitones: int) -> int:
     Formula: (12 - (s mod 12)) mod 12.
     """
     return (12 - (semitones % 12)) % 12
+
+
+def interval_between_spellings(spelling_a: NoteSpelling, spelling_b: NoteSpelling) -> DiatonicInterval:
+    """
+    Calculates the exact DiatonicInterval from spelling_a to spelling_b.
+    """
+    idx_a = DIATONIC_STEPS.index(spelling_a.step)
+    idx_b = DIATONIC_STEPS.index(spelling_b.step)
+    
+    midi_diff = spelling_b.midi_number - spelling_a.midi_number
+    direction: Literal[1, -1] = 1 if midi_diff >= 0 else -1
+    
+    if direction == 1:
+        step_diff = (idx_b - idx_a) + (spelling_b.octave - spelling_a.octave) * 7
+        semi_diff = midi_diff
+    else:
+        step_diff = (idx_a - idx_b) + (spelling_a.octave - spelling_b.octave) * 7
+        semi_diff = -midi_diff
+        
+    number = step_diff + 1
+    if number < 1:
+        raise InvalidIntervalError("Unable to calculate diatonic interval for negative diatonic span.")
+        
+    simple_num = (number - 1) % 7 + 1
+    octaves = (number - 1) // 7
+    base_semitones = {1: 0, 2: 2, 3: 4, 4: 5, 5: 7, 6: 9, 7: 11}
+    base = octaves * 12 + base_semitones[simple_num]
+    delta = semi_diff - base
+    
+    if simple_num in (1, 4, 5):
+        if delta == 0:
+            quality: IntervalQuality = 'P'
+        elif delta == 1:
+            quality = 'A'
+        elif delta == -1:
+            quality = 'd'
+        else:
+            raise InvalidIntervalError(f"Unsupported alteration delta {delta} for perfect interval.")
+    else:
+        if delta == 0:
+            quality = 'M'
+        elif delta == -1:
+            quality = 'm'
+        elif delta == 1:
+            quality = 'A'
+        elif delta == -2:
+            quality = 'd'
+        else:
+            raise InvalidIntervalError(f"Unsupported alteration delta {delta} for major/minor interval.")
+            
+    return DiatonicInterval(number=number, quality=quality, direction=direction)
+

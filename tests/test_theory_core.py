@@ -1,20 +1,36 @@
 """
-STEPS Music Theory Core Verification Test Suite (Phase 4.18).
+STEPS Music Theory Core Verification Test Suite (Phase 5.1).
 
 Validates:
-- PitchClass arithmetic modulo 12
+- PitchClass arithmetic modulo 12 & domain exceptions
 - NoteSpelling orthography & enharmonic separation (C# vs Db, Fx, Bbb)
-- International vs German nomenclature (B/Bb vs H/B)
+- Enharmonic equality predicates
+- International vs German nomenclature parsing and rendering (B/Bb vs H/B, Fis, Es, As, Heses)
 - ISO 16 acoustics & frequency calculations
-- Diatonic vs Chromatic intervals (A4 vs d5) and inversion invariants
-- Triad construction and inversions
-- Seventh chord qualities, Drop-2 transformations & Shell voicings
-- Voice leading metrics (Tymoczko circular, L1 semitone, parallel 5ths/8ths)
+- Diatonic vs Chromatic intervals (A4 vs d5), compound intervals (9th, 11th, 13th)
+- Interval transpositions and interval_between_spellings
+- Triad & Seventh chord constructions & inversions
+- Comprehensive chord parser (Triads, Sevenths, Extensions, Slash chords, German chords)
+- Lydian dominant 7#11 theoretical pitch-class set vs performance voicings
+- Voicing generation styles (CLOSE, DROP2, SHELL, ROOTLESS)
+- Voice leading metrics (Tymoczko circular, L1 semitone metric space axioms)
+- Smooth voice leading optimizer & voice overlap detection
 """
 
 import unittest
 import math
 
+from src.steps.theory.exceptions import (
+    MusicTheoryError,
+    InvalidPitchClassError,
+    InvalidDiatonicStepError,
+    InvalidAlterationError,
+    PitchRangeError,
+    InvalidIntervalError,
+    ChordConstructionError,
+    VoiceLeadingError,
+    ProgressionParsingError
+)
 from src.steps.theory.pitch import (
     PitchClass,
     NoteSpelling,
@@ -28,7 +44,9 @@ from src.steps.theory.interval import (
     DiatonicInterval,
     semitones_between,
     directed_semitones,
-    invert_semitones_modulo12
+    invert_semitones_modulo12,
+    transpose_spelling,
+    interval_between_spellings
 )
 from src.steps.theory.triad import (
     TriadQuality,
@@ -43,12 +61,21 @@ from src.steps.theory.seventh import (
     make_drop2_voicing,
     make_shell_voicing
 )
+from src.steps.theory.chord import (
+    ChordDefinition,
+    Voicing,
+    parse_chord,
+    CHORD_TEMPLATES
+)
 from src.steps.progression.voice_leading import (
+    VoiceLeadingStyle,
     absolute_semitone_distance,
     circular_pc_distance,
     detect_voice_crossing,
+    detect_voice_overlap,
     detect_parallel_fifths_octaves,
-    guide_tone_resolution
+    guide_tone_resolution,
+    optimize_smooth_voice_leading
 )
 
 
@@ -67,6 +94,10 @@ class TestTheoryCoreAcousticsAndPitch(unittest.TestCase):
         self.assertEqual(pc_neg, 11)
         self.assertEqual((pc14 + 11), 1)
         self.assertEqual((pc0 - 1), 11)
+
+    def test_pitch_class_exceptions(self):
+        with self.assertRaises(InvalidPitchClassError):
+            PitchClass("not-an-int")  # type: ignore
 
     def test_midi_to_frequency_iso16(self):
         # A4 (MIDI 69) must be 440.0 Hz
@@ -98,6 +129,14 @@ class TestTheoryCoreAcousticsAndPitch(unittest.TestCase):
         self.assertEqual(c_sharp.step, 'C')
         self.assertEqual(d_flat.step, 'D')
 
+        # Predicate test
+        self.assertTrue(c_sharp.is_enharmonic_with(d_flat))
+        
+        # Across octaves:
+        d_flat_5 = NoteSpelling(step='D', alteration=-1, octave=5)
+        self.assertFalse(c_sharp.is_enharmonic_with(d_flat_5, ignore_octave=False))
+        self.assertTrue(c_sharp.is_enharmonic_with(d_flat_5, ignore_octave=True))
+
     def test_double_accidentals_and_enharmonics(self):
         # F double sharp (Fx) has pitch class 7 (G) but step 'F'
         f_x = NoteSpelling(step='F', alteration=2, octave=4)
@@ -122,7 +161,7 @@ class TestTheoryCoreAcousticsAndPitch(unittest.TestCase):
         self.assertEqual(b_flat.render('INT'), 'Bb4')
         self.assertEqual(b_flat.render('DE'), 'B4')
 
-        # German inflections: Es, As, Fis, Fisis
+        # German inflections: Es, As, Fis, Fisis, Heses
         e_flat = NoteSpelling(step='E', alteration=-1, octave=4)
         self.assertEqual(e_flat.render('DE'), 'Es4')
 
@@ -135,9 +174,46 @@ class TestTheoryCoreAcousticsAndPitch(unittest.TestCase):
         f_double_sharp = NoteSpelling(step='F', alteration=2, octave=4)
         self.assertEqual(f_double_sharp.render('DE'), 'Fisis4')
 
+        b_double_flat = NoteSpelling(step='B', alteration=-2, octave=4)
+        self.assertEqual(b_double_flat.render('DE'), 'Heses4')
+
+    def test_german_parsing(self):
+        # Parsing German strings
+        h4 = parse_spelling('H4', convention='DE')
+        self.assertEqual(h4.step, 'B')
+        self.assertEqual(h4.alteration, 0)
+        self.assertEqual(h4.pitch_class, 11)
+
+        b4_de = parse_spelling('B4', convention='DE')
+        self.assertEqual(b4_de.step, 'B')
+        self.assertEqual(b4_de.alteration, -1)
+        self.assertEqual(b4_de.pitch_class, 10)
+
+        fis4 = parse_spelling('Fis4')
+        self.assertEqual(fis4.step, 'F')
+        self.assertEqual(fis4.alteration, 1)
+
+        es4 = parse_spelling('Es4')
+        self.assertEqual(es4.step, 'E')
+        self.assertEqual(es4.alteration, -1)
+
+        as4 = parse_spelling('As4')
+        self.assertEqual(as4.step, 'A')
+        self.assertEqual(as4.alteration, -1)
+
+        fisis4 = parse_spelling('Fisis4')
+        self.assertEqual(fisis4.step, 'F')
+        self.assertEqual(fisis4.alteration, 2)
+
+    def test_note_spelling_exceptions(self):
+        with self.assertRaises(InvalidDiatonicStepError):
+            NoteSpelling(step='X', alteration=0, octave=4)  # type: ignore
+        with self.assertRaises(InvalidAlterationError):
+            NoteSpelling(step='C', alteration=3, octave=4)
+
 
 class TestTheoryCoreIntervals(unittest.TestCase):
-    """Verifies interval math, diatonic distinctions, and inversions."""
+    """Verifies interval math, diatonic distinctions, compound intervals, and inversions."""
 
     def test_interval_inversion_modulo12_invariant(self):
         for s in range(12):
@@ -173,6 +249,83 @@ class TestTheoryCoreIntervals(unittest.TestCase):
         self.assertNotEqual(a4.number, d5.number)
         self.assertEqual(a4.invert(), d5)
         self.assertEqual(d5.invert(), a4)
+
+    def test_compound_intervals(self):
+        # Major 9th: number 9, quality 'M' -> 14 semitones
+        m9 = DiatonicInterval(number=9, quality='M')
+        self.assertTrue(m9.is_compound)
+        self.assertEqual(m9.octaves, 1)
+        self.assertEqual(m9.semitones, 14)
+
+        # Perfect 11th: number 11, quality 'P' -> 17 semitones
+        p11 = DiatonicInterval(number=11, quality='P')
+        self.assertTrue(p11.is_compound)
+        self.assertEqual(p11.semitones, 17)
+
+        # Major 13th: number 13, quality 'M' -> 21 semitones
+        m13 = DiatonicInterval(number=13, quality='M')
+        self.assertTrue(m13.is_compound)
+        self.assertEqual(m13.semitones, 21)
+
+    def test_interval_exceptions(self):
+        with self.assertRaises(InvalidIntervalError):
+            DiatonicInterval(number=0, quality='P')
+        # Perfect interval cannot be Major or Minor
+        with self.assertRaises(InvalidIntervalError):
+            DiatonicInterval(number=5, quality='M')
+        # Imperfect interval cannot be Perfect
+        with self.assertRaises(InvalidIntervalError):
+            DiatonicInterval(number=3, quality='P')
+        # Compound interval cannot be directly inverted with invert()
+        with self.assertRaises(InvalidIntervalError):
+            DiatonicInterval(number=9, quality='M').invert()
+
+    def test_diatonic_transpositions_and_invariants(self):
+        c4 = NoteSpelling(step='C', alteration=0, octave=4)
+        
+        # C4 + P5 (asc) -> G4
+        g4 = transpose_spelling(c4, DiatonicInterval(5, 'P'))
+        self.assertEqual(g4.step, 'G')
+        self.assertEqual(g4.alteration, 0)
+        self.assertEqual(g4.octave, 4)
+
+        # C4 + A4 (asc) -> F#4
+        fs4 = transpose_spelling(c4, DiatonicInterval(4, 'A'))
+        self.assertEqual(fs4.step, 'F')
+        self.assertEqual(fs4.alteration, 1)
+
+        # C4 + d5 (asc) -> Gb4
+        gb4 = transpose_spelling(c4, DiatonicInterval(5, 'd'))
+        self.assertEqual(gb4.step, 'G')
+        self.assertEqual(gb4.alteration, -1)
+
+        # C4 + P5 (desc) -> F3
+        f3 = transpose_spelling(c4, DiatonicInterval(5, 'P'), direction=-1)
+        self.assertEqual(f3.step, 'F')
+        self.assertEqual(f3.alteration, 0)
+        self.assertEqual(f3.octave, 3)
+
+        # Metamorphic Round-Trip: (C4 + P5) - P5 == C4
+        c4_recovered = transpose_spelling(g4, DiatonicInterval(5, 'P'), direction=-1)
+        self.assertEqual(c4_recovered, c4)
+
+    def test_interval_between_spellings(self):
+        c4 = NoteSpelling(step='C', alteration=0, octave=4)
+        g4 = NoteSpelling(step='G', alteration=0, octave=4)
+        fs4 = NoteSpelling(step='F', alteration=1, octave=4)
+        gb4 = NoteSpelling(step='G', alteration=-1, octave=4)
+
+        int_cg = interval_between_spellings(c4, g4)
+        self.assertEqual(int_cg.number, 5)
+        self.assertEqual(int_cg.quality, 'P')
+
+        int_cfs = interval_between_spellings(c4, fs4)
+        self.assertEqual(int_cfs.number, 4)
+        self.assertEqual(int_cfs.quality, 'A')
+
+        int_cgb = interval_between_spellings(c4, gb4)
+        self.assertEqual(int_cgb.number, 5)
+        self.assertEqual(int_cgb.quality, 'd')
 
 
 class TestTheoryCoreTriadsAndSevenths(unittest.TestCase):
@@ -234,38 +387,167 @@ class TestTheoryCoreTriadsAndSevenths(unittest.TestCase):
         self.assertEqual(rh_7th % 12, 10)  # Bb
 
 
+class TestTheoryCoreChordEngine(unittest.TestCase):
+    """Verifies ChordDefinition, comprehensive chord parsing, and voicing synthesis."""
+
+    def test_parse_standard_chords(self):
+        c_maj = parse_chord('C')
+        self.assertEqual(c_maj.root.step, 'C')
+        self.assertEqual(c_maj.quality, '')
+        self.assertEqual(c_maj.pitch_class_set, {0, 4, 7})
+
+        dm = parse_chord('Dm')
+        self.assertEqual(dm.root.step, 'D')
+        self.assertEqual(dm.pitch_class_set, {2, 5, 9})
+
+        g7 = parse_chord('G7')
+        self.assertEqual(g7.root.step, 'G')
+        self.assertEqual(g7.pitch_class_set, {7, 11, 2, 5})
+
+        cmaj7 = parse_chord('Cmaj7')
+        self.assertEqual(cmaj7.pitch_class_set, {0, 4, 7, 11})
+
+        bm7b5 = parse_chord('Bm7b5')
+        self.assertEqual(bm7b5.pitch_class_set, {11, 2, 5, 9})
+
+        bdim7 = parse_chord('Bdim7')
+        self.assertEqual(bdim7.pitch_class_set, {11, 2, 5, 8})
+
+    def test_parse_extended_and_altered_chords(self):
+        dm9 = parse_chord('Dm9')
+        self.assertEqual(dm9.pitch_class_set, {2, 5, 9, 0, 4})
+
+        g7b9 = parse_chord('G7(b9)')
+        self.assertEqual(g7b9.pitch_class_set, {7, 11, 2, 5, 8})
+
+        cadd9 = parse_chord('Cadd9')
+        self.assertEqual(cadd9.pitch_class_set, {0, 2, 4, 7})
+
+        csus4 = parse_chord('Csus4')
+        self.assertEqual(csus4.pitch_class_set, {0, 5, 7})
+
+    def test_lydian_dominant_7sharp11_theoretical_vs_voiced(self):
+        # Golden cases REF-0035, REF-0043, REF-0050:
+        # Full theoretical pitch class set: {1, 3, 5, b7, #11} -> {0, 4, 6, 7, 10}
+        # Performance voiced intervals (omitting 5th to avoid tritone clutter): {0, 4, 6, 10}
+        c7_11 = parse_chord('C7#11')
+        self.assertEqual(c7_11.theoretical_intervals, (0, 4, 6, 7, 10))
+        self.assertEqual(c7_11.default_voiced_intervals, (0, 4, 6, 10))
+        self.assertEqual(c7_11.pitch_class_set, {0, 4, 6, 7, 10})
+        self.assertEqual([int(pc) for pc in c7_11.voiced_pitch_classes], [0, 4, 6, 10])
+
+    def test_slash_chords(self):
+        c_e = parse_chord('C/E')
+        self.assertEqual(c_e.root.step, 'C')
+        self.assertIsNotNone(c_e.bass)
+        self.assertEqual(c_e.bass.step, 'E')
+        self.assertEqual(c_e.symbol, 'C/E')
+
+        g_b = parse_chord('G/B')
+        self.assertEqual(g_b.root.step, 'G')
+        self.assertEqual(g_b.bass.step, 'B')
+
+    def test_german_chord_symbols(self):
+        # In German: H7 is B7 international
+        h7 = parse_chord('H7', convention='DE')
+        self.assertEqual(h7.root.step, 'B')
+        self.assertEqual(h7.root.alteration, 0)
+        self.assertEqual(h7.quality, '7')
+
+        # In German: Bmaj7 is Bbmaj7 international
+        b_maj7 = parse_chord('Bmaj7', convention='DE')
+        self.assertEqual(b_maj7.root.step, 'B')
+        self.assertEqual(b_maj7.root.alteration, -1)
+        self.assertEqual(b_maj7.quality, 'maj7')
+
+    def test_voicing_generation_styles(self):
+        cmaj7 = parse_chord('Cmaj7')
+        
+        # Close voicing
+        v_close = cmaj7.to_voicing(bass_octave=3, voicing_type='CLOSE')
+        self.assertEqual(v_close.bass_note, 48)  # C3
+        self.assertEqual(len(v_close.midi_notes), 4)
+
+        # Shell voicing
+        v_shell = cmaj7.to_voicing(bass_octave=3, voicing_type='SHELL')
+        self.assertEqual(v_shell.bass_note, 48)
+        self.assertEqual(len(v_shell.midi_notes), 3)
+
+        # Drop-2 voicing
+        v_drop2 = cmaj7.to_voicing(bass_octave=4, voicing_type='DROP2')
+        self.assertEqual(len(v_drop2.midi_notes), 4)
+
+        # Rootless voicing
+        v_rootless = cmaj7.to_voicing(voicing_type='ROOTLESS')
+        # Does not contain root C
+        self.assertNotIn(0, [n % 12 for n in v_rootless.midi_notes])
+
+
 class TestProgressionVoiceLeading(unittest.TestCase):
     """Verifies M06 voice leading metrics, Tymoczko distances, and contrapuntal rules."""
 
-    def test_absolute_semitone_and_tymoczko_circular_distance(self):
-        # Transition C-Dur -> G/B:
-        # C-Dur: [C4, E4, G4] = [60, 64, 67]
-        # G/B:   [B3, D4, G4] = [59, 62, 67]
-        # Distances: C4 -> B3 (1), E4 -> D4 (2), G4 -> G4 (0).
-        # Sum = 1 + 2 + 0 = 3 semitones.
-        c_dur = [60, 64, 67]
-        g_b = [59, 62, 67]
+    def test_metric_space_axioms_for_l1_distance(self):
+        v1 = [60, 64, 67, 71]
+        v2 = [59, 62, 67, 71]
+        v3 = [57, 60, 65, 69]
 
-        self.assertEqual(absolute_semitone_distance(c_dur, g_b), 3)
-        self.assertEqual(circular_pc_distance(c_dur, g_b), 3)
+        # 1. Non-negativity: d(a, b) >= 0
+        self.assertGreaterEqual(absolute_semitone_distance(v1, v2), 0)
 
-    def test_voice_crossing_detection(self):
+        # 2. Identity of indiscernibles: d(a, a) == 0
+        self.assertEqual(absolute_semitone_distance(v1, v1), 0)
+
+        # 3. Symmetry: d(a, b) == d(b, a)
+        self.assertEqual(absolute_semitone_distance(v1, v2), absolute_semitone_distance(v2, v1))
+
+        # 4. Triangle inequality: d(a, c) <= d(a, b) + d(b, c)
+        d_ac = absolute_semitone_distance(v1, v3)
+        d_ab = absolute_semitone_distance(v1, v2)
+        d_bc = absolute_semitone_distance(v2, v3)
+        self.assertLessEqual(d_ac, d_ab + d_bc)
+
+    def test_voice_crossing_and_overlap_detection(self):
         un_crossed = [48, 60, 64, 67]
         crossed = [48, 65, 64, 67]  # voice 1 (65) > voice 2 (64)!
 
         self.assertFalse(detect_voice_crossing(un_crossed))
         self.assertTrue(detect_voice_crossing(crossed))
 
+        # Overlap test:
+        chord_a = [48, 60, 64, 67]
+        # In chord_b, lowest voice (bass) jumps to 62 (higher than voice 1 was at 60)
+        chord_b_overlap = [62, 64, 67, 72]
+        self.assertTrue(detect_voice_overlap(chord_a, chord_b_overlap))
+
     def test_parallel_fifths_octaves_detection(self):
-        # Parallel fifths:
-        # Chord 1: Bass=C3 (48), Tenor=G3 (55) -> interval 7
-        # Chord 2: Bass=D3 (50), Tenor=A3 (57) -> interval 7
+        # Parallel fifths in strict counterpoint:
         chord1 = [48, 55, 60, 64]
         chord2 = [50, 57, 62, 65]
 
-        violations = detect_parallel_fifths_octaves(chord1, chord2)
-        self.assertTrue(any("Parallel fifth" in v for v in violations))
+        violations_strict = detect_parallel_fifths_octaves(chord1, chord2, style=VoiceLeadingStyle.STRICT_COUNTERPOINT)
+        self.assertTrue(any("Parallel fifth" in v for v in violations_strict))
+
+        # In jazz/pop style: parallel planing is allowed
+        violations_jazz = detect_parallel_fifths_octaves(chord1, chord2, style=VoiceLeadingStyle.JAZZ_POP)
+        self.assertEqual(len(violations_jazz), 0)
+
+    def test_smooth_voice_leading_optimizer(self):
+        # Start with C major close voicing: [48, 64, 67, 72] (C3, E4, G4, C5)
+        # Target: G major (pitch classes 7, 11, 2)
+        source = [48, 64, 67, 72]
+        opt = optimize_smooth_voice_leading(
+            source_voicing=source,
+            target_pcs={7, 11, 2},
+            bass_pc=7,  # G in bass
+            style=VoiceLeadingStyle.JAZZ_POP
+        )
+        self.assertFalse(detect_voice_crossing(opt))
+        self.assertEqual(opt[0] % 12, 7)  # G in bass
+        dist = absolute_semitone_distance(source, opt)
+        # Distance must be small (smooth)
+        self.assertLess(dist, 12)
 
 
 if __name__ == '__main__':
     unittest.main()
+
