@@ -1,52 +1,99 @@
-# STEPS – Musikalisches Lückenregister & Domänen-Status (Phase 4.12)
+# STEPS – Musical Knowledge Gaps & Research Horizon (M01–M12)
 
-**Audit-Zeitpunkt:** 2026-11-11T08:00:00+01:00  
-**Geltungsbereich:** Wissensdomänen M01 bis M12, Ordnerstrukturen, offene Fachfragen  
-**Referenzgrundlage:** 37 kuratierte Standardwerke (SRC-001 bis SRC-037), 130 Claims, 94 Golden Cases  
-
----
-
-## 1. Übersicht: Geschlossene Lücken in Phase 4.12
-
-In Phase 4.12 wurden wesentliche theoretische, mathematische und didaktische Lücken geschlossen:
-
-| Domäne | Geschlossene Wissenslücke (Phase 4.12) | Primäre Nachweise & Quellen | Referenz-IDs |
-|---|---|---|---|
-| **M01** | Mathematische Cent-Modellierung ungleichstufiger historischer Stimmungen (Pythagoreisches Komma 23,46 Cents, Reine Terz 386,31 Cents, Werckmeister III, Mitteltönige Temperatur). | Prehn (SRC-033), Hindemith (SRC-015), Müller (SRC-018) | `CLAIM-003..006`, `REF-0089`, `REF-0090` |
-| **M02** | Vollständige orthografische Regeln für doppelte Vorzeichen ($\sharp\sharp / \times$, $\flat\flat$), Enharmonik-Kontext und internationales vs. deutsches System. | Kostka & Payne (SRC-019), W3C MusicXML 4.0 (SRC-028) | `CLAIM-011..015`, `REF-0003..0009`, `REF-0080` |
-| **M03** | Vollständige Taxonomie der Jazz-Skalen (Altered Scale / Super Locrian, Lydian Dominant, Bebop Dominant, Symmetrische verminderte Skalen HW/WH). | Mark Levine (SRC-020), Vincent Persichetti (SRC-030) | `CLAIM-016..020`, `REF-0067` |
-| **M04** | Schichten-Architektur für erweiterte Jazz-Voicings: Zweihändige Rootless Voicings (Typ A `3-5-7-9` vs. Typ B `7-9-3-5`), Drop-2 Voicings, Upper Structure Triads. | Mark Levine (SRC-020), Vincent Persichetti (SRC-030) | `CLAIM-021..025`, `REF-0093`, `REF-0094` |
-| **M05** | **Korrektur ERR-033:** Sekundärdominante zur Dominante ($V^7/V$ bzw. Doppeldominante $II^7$) mit modalem Tongeschlechtswechsel (Modal Shift) zu $ii^7$ über identischer Bassstufe. Modal Interchange (bIII, iv, bVI, bVII) und chromatische Medianten. | Aldwell & Schachter (SRC-013), Peter Spencer (SRC-016) | `CLAIM-026..030`, `REF-0077` |
-| **M06** | Stimmführungsökonomie (L1-Distanz), Deceptive Resolutions von Sekundärdominanten, systematische Konsolidierung aller 25 Progressionsarchetypen (`PROG-001` bis `PROG-025`). | Aldwell & Schachter (SRC-013), Dennis DeSantis (SRC-017) | `CLAIM-031..032`, `REF-0065`, `REF-0077` |
-| **M07** | **Korrektur ERR-034:** Mathematisch exakte 16tel-Swing-Quantisierung bei 480 PPQ für 61 % (Tick 146, Offset +26 Ticks, 36,11 ms bei 90 BPM). Additive ungerade Metren ($5/8 = 3+2$ und $7/8 = 2+2+3$). | Roger Linn (SRC-032), Dennis DeSantis (SRC-034), Friberg (SRC-031) | `CLAIM-033..036`, `REF-0071`, `REF-0083..0088`, `REF-0091..0092` |
-| **M08** | Vollständige General MIDI 1.0 Kanal-10-Zuordnung, authentischer brasilianischer Surdo-Puls im 2/4-Takt (Betonung auf Schlag 2) vs. 4/4-Transkription (Betonung auf Schlag 3), Ghost Note Dynamic Shading. | MMA (SRC-027), Claus Schreiner (SRC-035), Ed Thigpen (SRC-022) | `CLAIM-037..038`, `REF-0045`, `REF-0076`, `REF-0078` |
-| **M09** | Kulturhistorische Entflechtung: Brasilianische Samba-Batida (Tamborim/Surdo-Ursprung) sauber von kubanischer Clave getrennt; Afro-Kubanischer Montuno/Guajeo als synkopierte Klavierfigur definiert. | Claus Schreiner (SRC-035), Rebeca Mauleón (SRC-021) | `CLAIM-039..040`, `REF-0075`, `REF-0082` |
-| **M10** | Umfassende Klavierpraxis-Bibliothek mit 14 Modulen (`P01` bis `P14`), ergonomische Händekoordination, Drop-2 und Rootless Voicing Praxis. | Alfred (SRC-024), Mark Levine (SRC-020), Mark Harrison (SRC-037) | `CLAIM-041..042`, `REF-0043`, `REF-0057`, `REF-0093..0094` |
-| **M11** | Spezifikation der Konvertierungsverlustbehaftung zwischen MIDI 1.0 und MusicXML 4.0; Tuplets-Repräsentation (`<time-modification>`), variable PPQ-Grids (240, 480, 960). | W3C MusicXML 4.0 (SRC-028), MMA MIDI 1.0 (SRC-027) | `CLAIM-043..044`, `REF-0047`, `REF-0074`, `REF-0079` |
-| **M12** | Bass-First Gehörbildungs-Curriculum, Guide-Tone-Hören und systematische didaktische Stufenfolge für Tastenlernende. | Jerry Coker (SRC-036), Berklee Online (SRC-025) | `CLAIM-045`, `REF-0058` |
+**Datum:** 2026-11-11  
+**Status:** SYSTEMATISCH ERFASST  
+**Geltungsbereich:** Wissensdomänen M01 bis M12  
+**Referenzdokument:** Phase 4.16 Master Prompt, Teil VIII  
 
 ---
 
-## 2. Verbleibende Wissenslücken & Langfristige Forschungsagenda
+## 1. Einleitung & Zielsetzung
 
-Obwohl alle 12 Domänen nun über verifizierte Quellen, Claims und Referenzfälle verfügen, verbleiben spezialisierte Themen, die in künftigen Implementierungsphasen vertieft werden sollen:
+Gemäß Regel 10 des Arbeitsvertrags (*Kritische offene Fragen markieren und in research/gaps/ dokumentieren, nicht als entschiedenen Stand ausgeben*) fasst dieses Dokument alle identifizierten theoretischen, mathematischen und didaktischen Forschungslücken im bestehenden STEPS-Fachbestand zusammen.
 
-### 1. M01 – Akustik & Tuning:
-- **Lücke:** Praktische Audio-Synthese mit mikrotonalen Tuning-Dateien (Scala `.scl` und `.kbm`) und MPE (MIDI Polyphonic Expression).
-- **Priorität:** P2 (für spätere Sound-Engine).
+---
 
-### 2. M03 / M09 – Außereuropäische Tonsysteme:
-- **Lücke:** Indische Raga-Systeme (That-Systematik, 72 Melakarta-Ragas) und arabische Maqamat (Viertelton-Neutralsekunden).
-- **Priorität:** P3 (Erweiterung nach MVP).
+## 2. Detaillierte Lückenanalyse nach Wissensdomänen (M01–M12)
 
-### 3. M07 – Komplexe Polyrhythmik & Metrische Modulation:
-- **Lücke:** Verschachtelte Polyrhythmen (z. B. 5 gegen 4, 7 gegen 3) und Elliott-Carter-artige metrische Modulationen.
-- **Priorität:** P2 (für experimentelle Drum-Tools).
+### M01: Akustik, Frequenzen & Pitch Classes
+* **Aktueller Stand:** ISO 16 Standardstimmung (A4 = 440 Hz), $f(m) = 440 \cdot 2^{\frac{m-69}{12}}$, Pitch-Class-Z12-Arithmetik ($p = m \pmod{12}$).
+* **Forschungslücke / Horizon:**
+  - Inharmonizität bei Klaviersaiten (Railsback-Kurve / Spreizung der Oktaven im Diskant und Bass).
+  - Alternative historische Stimmungen (Werckmeister III, Mitteltönig, Reinstimmung) und deren intervallische Zent-Abweichungen gegenüber 12-TET.
+  - Mathematische Modellierung von Schwebungen und Differenztönen.
 
-### 4. M11 – Softwaretechnischer MusicXML-Parser (T-06):
-- **Lücke:** Eigener C++/Python/Rust-Parser zur verlustarmen Überführung von MusicXML in interne STEPS-Datenstrukturen.
-- **Priorität:** P1 (Kernbestandteil der anstehenden Entwicklungsphase T-06).
+### M02: Skalen, Modi & Tonleitern
+* **Aktueller Stand:** 7 Kirchentonarten (Modi des Dur-Systems), Pentatonik, Blues-Skalen, Harmonisch Moll, Melodisch Moll.
+* **Forschungslücke / Horizon:**
+  - Bebop-Skalen (8-tönige Skalen mit Durchgangstönen: Bebop Dominant, Bebop Major, Bebop Minor).
+  - Symmetrische Skalen (Ganzton-Skala, Verminderte Skala / HTGT & GTHT, Halbton-Ganzton-Modelle).
+  - Alterierte Skala (7. Modus von Melodisch Moll / Super-Lokrisch) und ihre systematische Beziehung zu Dominantseptakkorden mit Alterationen ($b9, \sharp 9, \sharp 11, b13$).
 
-### 5. M12 – Interaktive Gehörbildungs-Algorithmen:
-- **Lücke:** Gamifizierte App-Übungen mit adaptivem Schwierigkeitsgrad für Akkord- und Intervallerkennung.
-- **Priorität:** P2 (Bestandteil der UI- und Anwendungsphase).
+### M03: Intervalle & Mikrotonalität
+* **Aktueller Stand:** Reine und abgeleitete Intervalle innerhalb der Oktave (P1 bis P8), Modulo-12 Inversionen.
+* **Forschungslücke / Horizon:**
+  - Zusammengesetzte Intervalle (Nonen, Dezimen, Undezimen, Tredezimen) und deren akustische Dissonanzgrade im Voicing.
+  - Mikrotonale Intervallabstufungen (Vierteltöne, 24-EDO, Cent-Berechnungen).
+
+### M04: Dreiklänge, Vierklänge & Akkordstrukturen
+* **Aktueller Stand:** Dur, Moll, Vermindert, Übermäßig, Sus2, Sus4, Add9, 7, maj7, min7, m7b5, dim7, 7(#11).
+* **Forschungslücke / Horizon:**
+  - Quartal-Voicings (McCoy Tyner / So What Chords): Konstruktion von Akkorden ausschließlich aus Quartenintervallen.
+  - Polychords / Upper Structures: Dreiklänge über Dominantsept-Bässen (z. B. D-Dur über C7 für $9, \sharp 11, 13$).
+  - Cluster-Voicings und Bill-Evans-Style Close-Voicings (Sekund-Reibungen innerhalb des Akkordkerns).
+
+### M05: Kadenzen & Akkordprogressionen
+* **Aktueller Stand:** 27 kanonische Progressionen (PROG-001 bis PROG-027), inkl. II-V-I, I-VI-II-V, Blues, Rhythm Changes, Modal Interchange.
+* **Forschungslücke / Horizon:**
+  - Coltrane Changes (Symmetrische Großterz-Aufteilung der Oktave: z. B. Giant Steps).
+  - Nicht-funktionale / impressionistische Fortschreitungen (Debussy/Ravel: Parallele Akkordverschiebungen).
+  - Neapolitanischer Sextakkord ($b\text{II}^6$) und Phrygische Halbkadenzen in Moll.
+
+### M06: Funktionale Harmonielehre & Riemann-Analyse
+* **Aktueller Stand:** Stufentheorie, Tonika/Subdominante/Dominante, Parallelen und Gegenklänge, Tritonsubstitution.
+* **Forschungslücke / Horizon:**
+  - Doppelfunktionen und Funktionsmehrdeutigkeit (z. B. verminderter Septakkord als vierfacher Leittonakkord).
+  - Schenkerian Prolongation: Trennung von strukturellen Grundstufen und linearem Auszierungssatz (Voice Leading Reductions).
+  - Dualismus von Hugo Riemann vs. moderne Wiener Stufentheorie.
+
+### M07: Basslinien & Grundtondynamik
+* **Aktueller Stand:** Grundtöne, Quint-Wechselbässe, chromatischer Durchgang, Walking-Bass-Grundmuster.
+* **Forschungslücke / Horizon:**
+  - Walking-Bass Voice-Leading-Regeln (Zielnoten auf Zählzeit 1, Leittöne auf Zählzeit 4, Triolen-Ghost-Notes).
+  - Latin & Afro-Cuban Bass: Tumbao-Rhythmik (Antizipation der Eins auf die Zählzeit 4 bzw. 4-und).
+  - Synth-Bass & Slap-Bass Notationsmuster (Oktavierungen, Dead Notes, Slides).
+
+### M08: Drum Grooves & Rhythmusmuster
+* **Aktueller Stand:** 31 kanonische Patterns (PAT-001 bis PAT-031) für Rock, Funk, Jazz, Reggae, Bossa, Trap.
+* **Forschungslücke / Horizon:**
+  - Lineares Drumming (keine zwei Gliedmaßen spielen gleichzeitig auf demselben Tick).
+  - Ungerade Metren und Odd-Meter-Grooves (5/8, 7/8, 11/8) mit asymmetrischen Subdivisionen ($3+2$ vs. $2+3$).
+  - Polyrhythmik: $3:2$, $4:3$, $5:4$ und Phasing-Muster (Steve Reich Konzept).
+
+### M09: Songstruktur & Formenlehre
+* **Aktueller Stand:** Taktzahlen, Formabschnitte, Standard-Pop/Jazz-Formen (Verse, Chorus, Bridge, 12-Bar Blues).
+* **Forschungslücke / Horizon:**
+  - 32-Takt AABA (American Popular Song Form) und ABAC-Formen.
+  - Dynamische Energie-Kurven über Formabschnitte (Arrangement-Dichte, Frequenzstaffelung im Drop).
+  - Übergangsformen: Pre-Chorus-Funktion, Post-Chorus-Hooks und Riff-basierte Vamps.
+
+### M10: Arrangement & Voicing-Techniken
+* **Aktueller Stand:** 19 Klavier-Module (P01 bis P19), Shell-Voicings, Guide Tones, Drop-2 Grundlagen.
+* **Forschungslücke / Horizon:**
+  - Drop-3 und Drop-2+4 Voicings für Streicher- und Bläsersätze.
+  - Stimmführungskontrolle: Vollständiges Regelwerk zur Vermeidung verdeckter Quinten/Oktaven im 4-stimmigen Satz.
+  - Instrumentenspezifische Voicing-Spannweiten (Handsatz-Ergonomie am Klavier vs. Gitarren-Griffbrett).
+
+### M11: Rhythmik, PPQ & Micro-timing
+* **Aktueller Stand:** Rationale PPQ-Ticks (96, 480, 960), Swing-Verhältnisse (50% bis 67%), Millisekunden-Delays.
+* **Forschungslücke / Horizon:**
+  - Micro-Timing & Laid-Back Feel (z. B. J Dilla / Neo-Soul 16stel-Verschiebungen und Quintolen-Swing).
+  - Tempo-Rubato und algorithmische Beschleunigungs-/Verzögerungskurven (Akzelerando/Ritardando).
+  - Time-Signature Swaps innerhalb von Modulen (Metrische Modulationen).
+
+### M12: Gehörbildung, Solfège & Didaktik
+* **Aktueller Stand:** Intervall-Erkennung, Dreiklang-Qualitäten, Tonhöhen-Visualisierung.
+* **Forschungslücke / Horizon:**
+  - Vergleich und formale Modellierung: Fixed Do vs. Movable Do vs. relative Stufenbezifferung.
+  - Kodály- und Gordon-Music-Learning-Theorien für progressive Übungspfade.
+  - Algorithmen zur automatisierten Generierung von Gehörbildungs-Drills mit ansteigendem Dissonanzgrad.

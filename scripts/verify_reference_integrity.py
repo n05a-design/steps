@@ -232,16 +232,34 @@ def verify_json_schema(file_path, id_key, required_keys):
 
     return cases, errors
 
-def verify_identity_lock(baseline_path, current_progs, current_drums, current_pianos, current_cases):
+def compute_canonical_hash(data):
+    s = json.dumps(data, sort_keys=True, ensure_ascii=False)
+    return hashlib.sha256(s.encode('utf-8')).hexdigest()
+
+def verify_identity_lock(baseline_path, current_progs, current_drums, current_pianos, current_cases, current_relations=None, migration_rows=None):
     errors = []
     if not os.path.exists(baseline_path):
         errors.append(f"Identity baseline missing: {baseline_path}")
         return errors
 
-    with open(baseline_path, 'r', encoding='utf-8') as f:
-        baseline = json.load(f)
+    try:
+        with open(baseline_path, 'r', encoding='utf-8') as f:
+            baseline = json.load(f)
+    except Exception as e:
+        errors.append(f"Identity baseline corrupted: {e}")
+        return errors
 
-    # 1. Verify Progressions
+    # Load authorized migrations if available (Only CONTROLLED_CORRECTION permits hash divergence)
+    authorized_migrations = {}
+    if migration_rows:
+        for l_num, m in migration_rows:
+            orig = m.get('original_id')
+            mig = m.get('migrated_id')
+            action = m.get('action', '')
+            if action == 'CONTROLLED_CORRECTION':
+                authorized_migrations[mig or orig] = m
+
+    # 1. Verify Progressions (PROG-001 to PROG-027)
     prog_map = {p[0]: p for p in current_progs}
     for pid, b_entry in baseline.get('progressions', {}).items():
         if pid not in prog_map:
@@ -250,36 +268,105 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
             parts = prog_map[pid][2]
             name = parts[1].strip('`* ')
             degrees = parts[2].strip('`* ')
-            b_name = b_entry['name'].strip('`* ')
-            b_degrees = b_entry['harmonic_structure'].strip('`* ')
-            if name.lower() != b_name.lower():
-                errors.append(f"Semantic identity conflict for {pid}: Name changed from '{b_entry['name']}' to '{name}'")
-            if degrees != b_degrees:
-                errors.append(f"Semantic identity conflict for {pid}: Harmonic structure changed from '{b_entry['harmonic_structure']}' to '{degrees}'")
+            example = parts[3].strip('`* ') if len(parts) > 3 else ''
+            domain = parts[5].strip('`* ') if len(parts) > 5 else ''
 
-    # 2. Verify Drum Patterns
+            if name.lower() != b_entry['name'].lower():
+                errors.append(f"Semantic identity conflict for {pid}: Name changed from '{b_entry['name']}' to '{name}'")
+            if degrees != b_entry['harmonic_structure']:
+                errors.append(f"Semantic identity conflict for {pid}: Harmonic structure changed from '{b_entry['harmonic_structure']}' to '{degrees}'")
+            if domain and domain != b_entry.get('domain', ''):
+                errors.append(f"Semantic identity conflict for {pid}: Domain changed from '{b_entry.get('domain')}' to '{domain}'")
+
+            computed_h = compute_canonical_hash({
+                'id': pid, 'name': name.strip().lower(), 'domain': domain.strip(),
+                'harmonic_structure': degrees.strip('`* '), 'standard_example': example.strip('`* ')
+            })
+            b_h = b_entry.get('semantic_hash')
+            if b_h and computed_h != b_h:
+                if pid not in authorized_migrations:
+                    errors.append(f"Semantic identity hash mismatch for {pid}: recomputed {computed_h} != baseline {b_h}")
+
+    # 2. Verify Drum Patterns (PAT-001 to PAT-031)
     drum_map = {d[0]: d for d in current_drums}
     for did, b_entry in baseline.get('drum_patterns', {}).items():
         if did not in drum_map:
             errors.append(f"Baseline Drum Pattern '{did}' missing from current library!")
         else:
-            parts = drum_map[did][2]
-            name = parts[1].replace('**', '').strip()
+            parts = [p.replace('**', '').replace('*', '').strip('`* ') for p in drum_map[did][2]]
+            name = parts[1]
+            tempo = parts[2] if len(parts) > 2 else ''
+            meter_feel = parts[3] if len(parts) > 3 else ''
+
             if name.lower() != b_entry['name'].lower():
                 errors.append(f"Semantic identity conflict for {did}: Name changed from '{b_entry['name']}' to '{name}'")
+            if tempo and tempo != b_entry.get('tempo'):
+                errors.append(f"Semantic identity conflict for {did}: Tempo changed from '{b_entry.get('tempo')}' to '{tempo}'")
 
-    # 3. Verify Piano Modules
+            computed_h = compute_canonical_hash({
+                'id': did, 'name': name.strip().lower(), 'domain': 'M08',
+                'tempo': tempo.strip(), 'meter_and_feel': meter_feel.strip()
+            })
+            b_h = b_entry.get('semantic_hash')
+            if b_h and computed_h != b_h:
+                if did not in authorized_migrations:
+                    errors.append(f"Semantic identity hash mismatch for {did}: recomputed {computed_h} != baseline {b_h}")
+
+    # 3. Verify Piano Modules (P01 to P19)
     piano_map = {p[0]: p for p in current_pianos}
     for pid, b_entry in baseline.get('piano_modules', {}).items():
         if pid not in piano_map:
             errors.append(f"Baseline Piano Module '{pid}' missing from current library!")
         else:
-            parts = piano_map[pid][2]
-            title = parts[1].replace('**', '').strip()
+            parts = [p.replace('**', '').replace('*', '').strip('`* ') for p in piano_map[pid][2]]
+            title = parts[1]
+            goal = parts[2] if len(parts) > 2 else ''
+            focus = parts[3] if len(parts) > 3 else ''
+
             if title.lower() != b_entry['title'].lower():
                 errors.append(f"Semantic identity conflict for {pid}: Title changed from '{b_entry['title']}' to '{title}'")
+            if goal and goal != b_entry.get('didactic_goal'):
+                errors.append(f"Semantic identity conflict for {pid}: Didactic goal changed from '{b_entry.get('didactic_goal')}' to '{goal}'")
 
-    # 4. Verify Golden Cases (Historical Identities REF-0001 to REF-0100)
+            computed_h = compute_canonical_hash({
+                'id': pid, 'title': title.strip().lower(), 'domain': 'M10',
+                'didactic_goal': goal.strip(), 'musical_focus': focus.strip()
+            })
+            b_h = b_entry.get('semantic_hash')
+            if b_h and computed_h != b_h:
+                if pid not in authorized_migrations:
+                    errors.append(f"Semantic identity hash mismatch for {pid}: recomputed {computed_h} != baseline {b_h}")
+
+    # 4. Verify Concept Relations (CR-001 to CR-094)
+    if current_relations:
+        rel_map = {r.get('relation_id'): r for l_num, r in current_relations}
+        for rid, b_entry in baseline.get('concept_relations', {}).items():
+            if rid not in rel_map:
+                errors.append(f"Baseline Concept Relation '{rid}' missing from current relations CSV!")
+            else:
+                r = rel_map[rid]
+                src = r.get('source_id', '').strip()
+                tgt = r.get('target_id', '').strip()
+                rel_type = r.get('relation_type', '').strip()
+                dom = r.get('domain_scope', '').strip()
+
+                if src != b_entry.get('source_id'):
+                    errors.append(f"Semantic identity conflict for {rid}: Source changed from '{b_entry.get('source_id')}' to '{src}'")
+                if tgt != b_entry.get('target_id'):
+                    errors.append(f"Semantic identity conflict for {rid}: Target changed from '{b_entry.get('target_id')}' to '{tgt}'")
+                if rel_type != b_entry.get('relation_type'):
+                    errors.append(f"Semantic identity conflict for {rid}: Relation type changed from '{b_entry.get('relation_type')}' to '{rel_type}'")
+
+                computed_h = compute_canonical_hash({
+                    'id': rid, 'source_id': src, 'target_id': tgt,
+                    'relation_type': rel_type, 'domain_scope': dom
+                })
+                b_h = b_entry.get('semantic_hash')
+                if b_h and computed_h != b_h:
+                    if rid not in authorized_migrations:
+                        errors.append(f"Semantic identity hash mismatch for {rid}: recomputed {computed_h} != baseline {b_h}")
+
+    # 5. Verify Golden Cases (REF-0001 to REF-0198)
     case_map = {c['case_id']: c for c in current_cases if isinstance(c, dict)}
     for cid, b_entry in baseline.get('reference_cases', {}).items():
         if cid not in case_map:
@@ -288,8 +375,29 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
             c = case_map[cid]
             c_title = c.get('title', '').strip()
             b_title = b_entry.get('title', '').strip()
+            c_exp = json.dumps(c.get('expected_output'), sort_keys=True, ensure_ascii=False)
+            b_exp = json.dumps(b_entry.get('expected_output'), sort_keys=True, ensure_ascii=False)
+            c_inp = json.dumps(c.get('input_params', {}), sort_keys=True, ensure_ascii=False)
+            b_inp = json.dumps(b_entry.get('input_params', {}), sort_keys=True, ensure_ascii=False)
+
             if c_title and b_title and c_title.lower() != b_title.lower():
                 errors.append(f"Historical identity conflict for {cid}: Title changed from '{b_title}' to '{c_title}'")
+            if c_exp != b_exp:
+                errors.append(f"Historical identity conflict for {cid}: Expected output changed from {b_exp} to {c_exp}")
+            if c_inp != b_inp:
+                errors.append(f"Historical identity conflict for {cid}: Input parameters changed from {b_inp} to {c_inp}")
+
+            computed_h = compute_canonical_hash({
+                'id': cid,
+                'title': c_title.lower(),
+                'domain': c.get('domain', '').strip(),
+                'input_params': c_inp,
+                'expected_output': c_exp
+            })
+            b_h = b_entry.get('semantic_hash')
+            if b_h and computed_h != b_h:
+                if cid not in authorized_migrations:
+                    errors.append(f"Semantic identity hash mismatch for {cid}: recomputed {computed_h} != baseline {b_h}")
 
     return errors
 
@@ -348,19 +456,7 @@ def verify_integrity(repo_root=None):
     )
     errors.extend(json_errs)
 
-    # 4. Check Single Source of Truth Mirror Sync
-    if os.path.exists(canon_json) and os.path.exists(mirror_json):
-        with open(canon_json, 'rb') as f1, open(mirror_json, 'rb') as f2:
-            h1 = hashlib.sha256(f1.read()).hexdigest()
-            h2 = hashlib.sha256(f2.read()).hexdigest()
-            if h1 != h2:
-                errors.append(f"Golden cases desynchronization: {canon_json} ({h1[:8]}) differs from test mirror {mirror_json} ({h2[:8]})")
-
-    # 5. Check Identity Baseline Lock
-    lock_errs = verify_identity_lock(baseline_path, progs, drums, pianos, cases)
-    errors.extend(lock_errs)
-
-    # 6. Check Relations Referential Integrity
+    # 4. Check Relations Referential Integrity & Parsing
     prog_ids = {p[0] for p in progs}
     drum_ids = {d[0] for d in drums}
     piano_ids = {p[0] for p in pianos}
@@ -394,7 +490,8 @@ def verify_integrity(repo_root=None):
                 if term not in known_entities:
                     errors.append(f"{relations_path}:{line_num}: Dangling reference in {label}: ID '{term}' does not exist in any canonical library!")
 
-    # 7. Check Historical Matrix and Migration Register
+    # 5. Check Historical Matrix and Migration Register
+    mig_rows = []
     if not os.path.exists(matrix_path):
         errors.append(f"Historical reference ID matrix missing: {matrix_path}")
     else:
@@ -414,6 +511,18 @@ def verify_integrity(repo_root=None):
             required_cols=['original_id', 'migrated_id', 'domain', 'category', 'title', 'action', 'status']
         )
         errors.extend(mig_errs)
+
+    # 6. Check Single Source of Truth Mirror Sync
+    if os.path.exists(canon_json) and os.path.exists(mirror_json):
+        with open(canon_json, 'rb') as f1, open(mirror_json, 'rb') as f2:
+            h1 = hashlib.sha256(f1.read()).hexdigest()
+            h2 = hashlib.sha256(f2.read()).hexdigest()
+            if h1 != h2:
+                errors.append(f"Golden cases desynchronization: {canon_json} ({h1[:8]}) differs from test mirror {mirror_json} ({h2[:8]})")
+
+    # 7. Check Identity Baseline Lock (Comprehensive Semantic Hash & Field Validation)
+    lock_errs = verify_identity_lock(baseline_path, progs, drums, pianos, cases, rel_rows, mig_rows)
+    errors.extend(lock_errs)
 
     return {
         'errors': errors,

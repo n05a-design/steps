@@ -1,17 +1,24 @@
 #!/usr/bin/env python3
 """
-STEPS Phase 4.15 - Semantic Identity Baseline Generator
+STEPS Phase 4.16 - Semantic Identity Baseline Generator (Hardened Full Lock)
 
-Extracts the authoritative semantic identities of all:
-- PROG (PROG-001 to PROG-027)
-- PAT (PAT-001 to PAT-031)
-- P (P01 to P19)
-- REF (REF-0001 to REF-0100 historical + REF-0101 to REF-0198 migrated)
-- CR / REL (CR-001 to CR-094)
-- Domains (M01 to M12)
+Establishes the authoritative, versioned semantic identity baseline for:
+- 27 Progressions (PROG-001 to PROG-027)
+- 31 Drum Patterns (PAT-001 to PAT-031)
+- 19 Piano Modules (P01 to P19)
+- 94 Concept Relations (CR-001 to CR-094)
+- 198 Golden Reference Cases (REF-0001 to REF-0198)
+- 12 Knowledge Domains (M01 to M12)
 
-Computes a deterministic SHA-256 semantic hash for each entity based on its core structural
-attributes to enforce a versioned identity-lock against accidental reassignment or semantic drift.
+Field Classification:
+- IDENTITY_DEFINING: ID, Object Type, Primary Mathematical / Didactic Core, Inputs & Expected Output
+- NORMATIVE_CONTENT: Domain Scope, Test Class, Taxonomic Relations
+- CORRECTABLE_ERROR: Authorized corrections tracked via Migration Register
+- DESCRIPTIVE_METADATA: Contextual notes, commentary, stylistic tags
+- PROVENANCE: Historical phase attestation, source citations, evidence path
+
+Computes deterministic SHA-256 semantic hashes over identity-defining fields to
+prevent silent semantic drift, unnoticed substitutions, or unrecorded mutations.
 """
 
 import os
@@ -23,6 +30,7 @@ import hashlib
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def compute_hash(data):
+    """Computes deterministic SHA-256 over a canonical JSON dictionary."""
     s = json.dumps(data, sort_keys=True, ensure_ascii=False)
     return hashlib.sha256(s.encode('utf-8')).hexdigest()
 
@@ -35,23 +43,29 @@ def extract_progressions():
             if line.startswith('| `PROG-'):
                 parts = [p.strip().strip('`') for p in line.split('|')[1:-1]]
                 if len(parts) >= 6:
-                    pid, name, degrees, example, context, sources = parts[:6]
+                    pid, name, degrees, example, context, domain = parts[:6]
                     data = {
                         'id': pid,
                         'object_type': 'CHORD_PROGRESSION',
-                        'domain': 'M05',
+                        'domain': domain,
                         'name': name,
                         'harmonic_structure': degrees,
                         'standard_example': example,
                         'stylistic_scope': context,
-                        'sources': sources,
                         'first_attestation': 'Phase 4.1' if int(pid.split('-')[1]) <= 10 else ('Phase 4.9' if int(pid.split('-')[1]) <= 23 else 'Phase 4.11/4.14')
                     }
                     data['semantic_hash'] = compute_hash({
-                        'id': pid, 'name': name, 'harmonic_structure': degrees
+                        'id': pid,
+                        'name': name.strip().lower(),
+                        'domain': domain.strip(),
+                        'harmonic_structure': degrees.strip('`* '),
+                        'standard_example': example.strip('`* ')
                     })
                     items.append(data)
     return items
+
+def clean_markdown_str(s):
+    return s.replace('**', '').replace('*', '').strip('`* ')
 
 def extract_drum_patterns():
     path = os.path.join(REPO_ROOT, 'knowledge', 'concepts', 'styles', 'DRUM_GROOVE_REFERENCE_LIBRARY.md')
@@ -60,7 +74,7 @@ def extract_drum_patterns():
         for line in f:
             line = line.strip()
             if line.startswith('| `PAT-'):
-                parts = [p.strip().strip('`').replace('**', '') for p in line.split('|')[1:-1]]
+                parts = [clean_markdown_str(p) for p in line.split('|')[1:-1]]
                 if len(parts) >= 7:
                     pid, name, tempo, meter_feel, kick, snare, hats = parts[:7]
                     data = {
@@ -76,7 +90,11 @@ def extract_drum_patterns():
                         'first_attestation': 'Phase 4.1' if int(pid.split('-')[1]) <= 10 else ('Phase 4.7' if int(pid.split('-')[1]) <= 20 else 'Phase 4.10/4.14')
                     }
                     data['semantic_hash'] = compute_hash({
-                        'id': pid, 'name': name, 'tempo': tempo, 'meter': meter_feel
+                        'id': pid,
+                        'name': name.strip().lower(),
+                        'domain': 'M08',
+                        'tempo': tempo.strip(),
+                        'meter_and_feel': meter_feel.strip()
                     })
                     items.append(data)
     return items
@@ -88,7 +106,7 @@ def extract_piano_modules():
         for line in f:
             line = line.strip()
             if line.startswith('| `P'):
-                parts = [p.strip().strip('`').replace('**', '') for p in line.split('|')[1:-1]]
+                parts = [clean_markdown_str(p) for p in line.split('|')[1:-1]]
                 if len(parts) >= 5:
                     pid, title, didactic_goal, musical_focus, phase = parts[:5]
                     data = {
@@ -101,7 +119,11 @@ def extract_piano_modules():
                         'first_attestation': phase
                     }
                     data['semantic_hash'] = compute_hash({
-                        'id': pid, 'title': title, 'musical_focus': musical_focus
+                        'id': pid,
+                        'title': title.strip().lower(),
+                        'domain': 'M10',
+                        'didactic_goal': didactic_goal.strip(),
+                        'musical_focus': musical_focus.strip()
                     })
                     items.append(data)
     return items
@@ -118,62 +140,55 @@ def extract_concept_relations():
                 'source_id': row['source_id'],
                 'target_id': row['target_id'],
                 'relation_type': row['relation_type'],
-                'epistemic_classification': row['epistemic_classification'],
-                'domain_scope': row['domain_scope'],
-                'formal_rule': row.get('formal_rule_or_standard', ''),
-                'description': row.get('relation_description', ''),
+                'epistemic_classification': row.get('epistemic_classification', 'EMPIRICAL_CONVENTION'),
+                'domain_scope': row.get('domain_scope', ''),
+                'formal_rule': row.get('formal_rule_or_strength', ''),
+                'description': row.get('description', ''),
                 'status': row.get('validation_status', 'VERIFIED_ACTIVE')
             }
             data['semantic_hash'] = compute_hash({
-                'id': row['relation_id'], 'src': row['source_id'], 'tgt': row['target_id'], 'rel': row['relation_type']
+                'id': row['relation_id'],
+                'source_id': row['source_id'].strip(),
+                'target_id': row['target_id'].strip(),
+                'relation_type': row['relation_type'].strip(),
+                'domain_scope': row.get('domain_scope', '').strip()
             })
             items.append(data)
     return items
 
 def extract_reference_cases():
-    matrix_path = os.path.join(REPO_ROOT, 'knowledge', 'research', 'HISTORICAL_REFERENCE_ID_MATRIX.csv')
-    mig_path = os.path.join(REPO_ROOT, 'knowledge', 'research', 'REFERENCE_ID_MIGRATION_REGISTER.csv')
+    json_path = os.path.join(REPO_ROOT, 'knowledge', 'research', 'golden_cases', 'golden_reference_cases.json')
     items = []
-    
-    # 1. Historical 1..100
-    with open(matrix_path, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            data = {
-                'id': row['REF_ID'],
-                'object_type': 'GOLDEN_REFERENCE_CASE',
-                'title': row['ORIGINAL_CONCEPT'],
-                'expected_output': row['ORIGINAL_EXPECTED_RESULT'],
-                'input': row['ORIGINAL_INPUT'],
-                'first_attestation': row['FIRST_OCCURRENCE'],
-                'dependencies': row['DEPENDENCIES'],
-                'evidence_path': row['EVIDENCE_PATH'],
-                'status': 'ACTIVE_HISTORICAL'
-            }
-            data['semantic_hash'] = compute_hash({
-                'id': row['REF_ID'], 'title': row['ORIGINAL_CONCEPT'], 'expected': row['ORIGINAL_EXPECTED_RESULT']
-            })
-            items.append(data)
+    with open(json_path, 'r', encoding='utf-8') as f:
+        cases = json.load(f)
 
-    # 2. Migrated 101..198
-    with open(mig_path, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            if row['status'] == 'ACTIVE_MIGRATED':
-                data = {
-                    'id': row['migrated_id'],
-                    'object_type': 'GOLDEN_REFERENCE_CASE',
-                    'original_collision_id': row['original_id'],
-                    'domain': row['domain'],
-                    'category': row['category'],
-                    'title': row['title'],
-                    'first_attestation': row['phase_introduced'],
-                    'status': 'ACTIVE_MIGRATED'
-                }
-                data['semantic_hash'] = compute_hash({
-                    'id': row['migrated_id'], 'title': row['title'], 'category': row['category']
-                })
-                items.append(data)
+    for c in cases:
+        cid = c['case_id']
+        num = int(cid.split('-')[1])
+        data = {
+            'id': cid,
+            'object_type': 'GOLDEN_REFERENCE_CASE',
+            'domain': c['domain'],
+            'category': c['category'],
+            'test_class': c['test_class'],
+            'title': c['title'],
+            'input_params': c.get('input_params', {}),
+            'expected_output': c.get('expected_output'),
+            'tolerance': c.get('tolerance', 0.0),
+            'theoretical_rule': c.get('theoretical_rule', ''),
+            'source_citation': c.get('source_citation', ''),
+            'status': 'ACTIVE_HISTORICAL' if num <= 100 else 'ACTIVE_MIGRATED',
+            'first_attestation': 'Phase 4.1' if num <= 94 else ('Phase 4.13' if num <= 100 else 'Phase 4.14')
+        }
+        # Deterministic canonical semantic hash over identity-defining fields
+        data['semantic_hash'] = compute_hash({
+            'id': cid,
+            'title': c['title'].strip().lower(),
+            'domain': c['domain'].strip(),
+            'input_params': json.dumps(c.get('input_params', {}), sort_keys=True, ensure_ascii=False),
+            'expected_output': json.dumps(c.get('expected_output'), sort_keys=True, ensure_ascii=False)
+        })
+        items.append(data)
     return items
 
 def extract_canonical_domains():
@@ -213,9 +228,16 @@ def generate_baseline():
     domains = extract_canonical_domains()
 
     baseline = {
-        'schema_version': '1.0.0',
-        'created_at': '2026-11-11T18:35:00Z',
-        'authoritative_phase': 'Phase 4.15',
+        'schema_version': '1.1.0',
+        'created_at': '2026-11-11T19:15:00Z',
+        'authoritative_phase': 'Phase 4.16',
+        'field_classification': {
+            'IDENTITY_DEFINING': ['id', 'object_type', 'title', 'name', 'harmonic_structure', 'tempo', 'rhythmic_signature', 'harmonic_basis', 'input_params', 'expected_output'],
+            'NORMATIVE_CONTENT': ['domain', 'test_class', 'relation_type', 'source_id', 'target_id'],
+            'CORRECTABLE_ERROR': ['handled exclusively via controlled records in REFERENCE_ID_MIGRATION_REGISTER.csv'],
+            'DESCRIPTIVE_METADATA': ['stylistic_scope', 'context', 'didactic_goal', 'theoretical_rule'],
+            'PROVENANCE': ['first_attestation', 'source_citation', 'evidence_path', 'status']
+        },
         'description': (
             'Authoritative semantic identity baseline protecting foundational musical concepts, '
             'progressions, patterns, piano modules, relations, and golden reference cases from '

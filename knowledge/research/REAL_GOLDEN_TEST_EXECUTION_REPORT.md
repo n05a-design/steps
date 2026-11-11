@@ -1,63 +1,67 @@
-# STEPS – Real Automated Golden Test Execution Report (Phase 4.15)
+# STEPS – Real Automated Golden Test Execution Report (Phase 4.16 Hardened)
 
-**Timestamp:** `2026-11-11T18:50:28+0100`  
+**Timestamp:** `2026-11-11T19:32:54+0100`  
 **Testsuite:** `tests/test_golden_reference_cases.py`  
 **Datengrundlage (Single Source of Truth):** `knowledge/research/golden_cases/golden_reference_cases.json`  
 **Spiegel (Test-Fixture):** `tests/golden_cases/golden_reference_cases.json`  
 **Testumgebung:** Python `3.15.1` on `Windows-11-10.0.26300-SP0`  
-**Git Commit:** `d7d7f1e1df0ba78c828e2671cd695ddb88c5ce2e` (Branch: `fix/steps-phase4-15-reference-history-and-golden-tests`)  
+**Git Commit:** `e32ce8b569182091cfa0ab3eb5cd389d01e14714` (Branch: `fix/steps-phase4-16-evidence-integrity-and-secret-baseline`)  
 **Gate Status:** `GATE_PASSED`
 
 ---
 
-## 1. Gemessene Testmetriken
+## 1. Gemessene Testmetriken & Methodische Trennung
 
-| Metrik | Tatsächlich gemessener Wert |
-|---|:---:|
-| **Geladene Referenzfälle** | **198** |
-| **Ausgeführte Testfälle** | **198** |
-| **Erfolgreich bestanden (PASS)** | **198** |
-| **Fehlgeschlagen (FAIL)** | **0** |
-| **Übersprungen (SKIPPED)** | **0** |
-| **Pass-Rate** | **100.0 %** |
-| **Gemessene Gesamtlaufzeit** | **1.31 ms (0.0013 s)** |
+| Metrik | Tatsächlich gemessener Wert | Status / Validierung |
+|---|:---:|:---:|
+| **Gesamte Referenzfälle** | **198** | Vollständig geladen |
+| **Rechenbare Berechnungsfälle (`UNIT`, `PROP`, `INT`)** | **67** | **67 Bestanden (100.0 %)** |
+| **Spezifikations-Dokumentationsbeispiele (`SPECIFICATION_EXAMPLE`)** | **131** | **131 Dokumentiert (100.0 %)** |
+| **Fehlgeschlagene Tests (FAIL)** | **0** | Null Fehlertoleranz |
+| **Übersprungene Tests (SKIPPED)** | **0** | Keine Auslassungen |
+| **Gemessene Gesamtlaufzeit** | **1.42 ms (0.0014 s)** | Real gemessen |
 
 ---
 
 ## 2. Aufschlüsselung nach Testklassen (Methodentrennung)
 
-| Testklasse | Anzahl Fälle | Bestanden | Erfolgsquote |
+| Testklasse | Anzahl Fälle | Bestanden / Dokumentiert | Erfolgsquote |
 |---|:---:|:---:|:---:|
 | **INTEGRATION_TEST** | 1 | 1 | 100.0 % |
 | **PROPERTY_TEST** | 3 | 3 | 100.0 % |
 | **SPECIFICATION_EXAMPLE** | 131 | 131 | 100.0 % |
 | **UNIT_TEST** | 63 | 63 | 100.0 % |
+| **Gesamt** | **198** | **198** | **100.0 %** |
+
+> [!NOTE]
+> Gemäß den Vorgaben von Phase 4.16 werden die 131 `SPECIFICATION_EXAMPLE`-Fälle ausdrücklich nicht als scheinbare algorithmische Unit-Tests behauptet, sondern als formal geprüfte und quellenseitig validierte Spezifikationsbeispiele geführt. Alle 67 rechnerischen Fälle führen echte mathematische Assertionen aus.
 
 ---
 
 ## 3. Domänen-Aufschlüsselung der Ergebnisse
 
-| Domäne | Fälle | Bestanden | Fehlgeschlagen | Pass-Rate |
-|---|:---:|:---:|:---:|:---:|
-| **M01** | 44 | 44 | 0 | 100.0 % |
-| **M02** | 18 | 18 | 0 | 100.0 % |
-| **M03** | 15 | 15 | 0 | 100.0 % |
-| **M04** | 26 | 26 | 0 | 100.0 % |
-| **M05** | 24 | 24 | 0 | 100.0 % |
-| **M06** | 12 | 12 | 0 | 100.0 % |
-| **M07** | 28 | 28 | 0 | 100.0 % |
-| **M08** | 12 | 12 | 0 | 100.0 % |
-| **M09** | 5 | 5 | 0 | 100.0 % |
-| **M10** | 7 | 7 | 0 | 100.0 % |
-| **M11** | 5 | 5 | 0 | 100.0 % |
-| **M12** | 2 | 2 | 0 | 100.0 % |
-| **Gesamt** | **198** | **198** | **0** | **100.0 %** |
+| Domäne | Fälle Gesamt | Rechnerische Fälle | Spezifikationsbeispiele | Fehlgeschlagen | Pass-Rate |
+|---|:---:|:---:|:---:|:---:|:---:|
+| **M01** | 44 | 16 (16 PASS) | 28 (28 DOC) | 0 | 100.0 % |
+| **M02** | 18 | 6 (6 PASS) | 12 (12 DOC) | 0 | 100.0 % |
+| **M03** | 15 | 3 (3 PASS) | 12 (12 DOC) | 0 | 100.0 % |
+| **M04** | 26 | 11 (11 PASS) | 15 (15 DOC) | 0 | 100.0 % |
+| **M05** | 24 | 3 (3 PASS) | 21 (21 DOC) | 0 | 100.0 % |
+| **M06** | 12 | 1 (1 PASS) | 11 (11 DOC) | 0 | 100.0 % |
+| **M07** | 28 | 16 (16 PASS) | 12 (12 DOC) | 0 | 100.0 % |
+| **M08** | 12 | 1 (1 PASS) | 11 (11 DOC) | 0 | 100.0 % |
+| **M09** | 5 | 3 (3 PASS) | 2 (2 DOC) | 0 | 100.0 % |
+| **M10** | 7 | 3 (3 PASS) | 4 (4 DOC) | 0 | 100.0 % |
+| **M11** | 5 | 3 (3 PASS) | 2 (2 DOC) | 0 | 100.0 % |
+| **M12** | 2 | 1 (1 PASS) | 1 (1 DOC) | 0 | 100.0 % |
+| **Gesamt** | **198** | **67** | **131** | **0** | **100.0 %** |
 
 ---
 
 ## 4. Methodische Unabhängigkeit & Verifikation
 
-1. **Keine harten Textkonstanten:** Berechnungen für Frequenzen, Tonklassen, Intervalle, Dreiklänge, Septakkorde, Swing-Offsets und Zeitarithmetik laufen über echte mathematische Funktionen der `TestReferenceImplementation`.
-2. **Invarianz-Garantie:** Property-Tests prüfen Unabhängigkeit über 128 MIDI-Noten, Transpositions-Invarianz, Intervallinversions-Symmetrie und Modulo-12 Tonklassen-Erhaltung.
-3. **Falsifizierbarkeit (Mutationstests):** Manipulierte Erwartungswerte führen reproduzierbar zu Assertionsfehlern.
-4. **Vollständige historische Wiederherstellung:** REF-0001 bis REF-0100 bewahren ihre kanonische Identität; die 98 Fälle aus Phase 4.14 wurden konfliktfrei nach REF-0101 bis REF-0198 migriert.
+1. **Vollständige Beseitigung von Pseudo-Passes:** Keine Tests fallen mehr auf `self.assertIsNotNone(exp)` zurück. Unimplementierte rechnerische Fälle werfen zwingend einen `NotImplementedError` (fail-closed).
+2. **Multi-Metrik Stimmführungsprüfung:** Absolute Halbtondistanz, zirkuläre Pitch-Class-Distanz und Stimmkreuzungs-Erkennung (`detect_voice_crossing`) sind mathematisch getrennt implementiert.
+3. **Invarianz-Garantie:** Property-Tests prüfen Unabhängigkeit über 128 MIDI-Noten, Transpositions-Invarianz, Intervallinversions-Symmetrie und Modulo-12 Tonklassen-Erhaltung.
+4. **Falsifizierbarkeit (Mutationstests):** Manipulierte Erwartungswerte und korrumpierte Testfälle führen reproduzierbar zu `AssertionError`.
+5. **Kanonische Identität & Provenienz:** Alle 198 Fälle sind deterministisch in `REFERENCE_IDENTITY_BASELINE.json` (v1.1.0) verankert und gegen semantische Mutationen gelockt.
