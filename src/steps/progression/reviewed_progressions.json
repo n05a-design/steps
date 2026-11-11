@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "examples": [
+    {
+      "id": "PROG-001",
+      "reviewed_on": "2026-11-11",
+      "name": "Pop Four Chords",
+      "default_key": "C",
+      "roman": "I - V - vi - IV",
+      "chords": "C - G - Am - F",
+      "context": "Pop-Loop mit angenommener Tonika C",
+      "lesson": "Unter der Annahme C-Dur entsprechen die vier Akkorde den Stufen I, V, vi und IV. Das wahrgenommene tonale Zentrum eines Loops hängt auch von Melodie, Betonung und Phrasierung ab.",
+      "source_ids": ["omt-roman-numerals"]
+    },
+    {
+      "id": "PROG-003",
+      "reviewed_on": "2026-11-11",
+      "name": "Jazz Two-Five-One",
+      "default_key": "C",
+      "roman": "ii^7 - V^7 - I^maj7",
+      "chords": "Dm7 - G7 - Cmaj7",
+      "context": "Jazzkadenz in C-Dur",
+      "lesson": "Eine mögliche Stimmführung verbindet C im Dm7 mit H im G7 und F im G7 mit E im Cmaj7. Beide Bewegungen sind in diesem Dur-Beispiel absteigende Halbtonschritte.",
+      "source_ids": ["omt-ii-v-i"]
+    },
+    {
+      "id": "PROG-009",
+      "reviewed_on": "2026-11-11",
+      "name": "Minor Plagal Romance",
+      "default_key": "C",
+      "roman": "I - IV - iv - I",
+      "chords": "C - F - Fm - C",
+      "context": "Mollsubdominante im Dur-Kontext",
+      "lesson": "Die Subdominante F-Dur wird zu F-Moll, indem A zu As sinkt. In einer möglichen Stimmführung fällt dieselbe Stimme weiter zu G im C-Dur-Akkord.",
+      "source_ids": ["omt-roman-numerals", "omt-chromatic-subdominants"]
+    }
+  ]
+}

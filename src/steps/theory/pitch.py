@@ -301,14 +301,18 @@ def midi_to_pitch_class(midi_note: int) -> PitchClass:
 
 def midi_to_frequency(midi_note: int, a4_ref: float = A4_STANDARD_FREQ) -> float:
     """Computes exact ISO 16 frequency: f = a4_ref * 2^((m - 69) / 12)."""
+    if not 0 <= midi_note <= 127:
+        raise PitchRangeError("MIDI note must be in 0..127.")
+    if not math.isfinite(a4_ref) or a4_ref <= 0:
+        raise MusicTheoryError("Reference frequency must be finite and positive.")
     return a4_ref * (2.0 ** ((midi_note - A4_MIDI_NOTE) / 12.0))
 
 
 def frequency_to_midi(freq: float, a4_ref: float = A4_STANDARD_FREQ) -> float:
     """Computes fractional MIDI note from frequency: m = 69 + 12 * log2(f / a4_ref)."""
-    if freq <= 0:
-        raise MusicTheoryError("Frequency must be positive.")
-    return 69.0 + 12.0 * math.log2(freq / a4_ref)
+    if not all(math.isfinite(value) and value > 0 for value in (freq, a4_ref)):
+        raise MusicTheoryError("Frequencies must be finite and positive.")
+    return 69.0 + 12.0 * (math.log2(freq) - math.log2(a4_ref))
 
 
 def parse_spelling(note_str: str, convention: Literal['INT', 'DE', 'AUTO'] = 'AUTO') -> NoteSpelling:

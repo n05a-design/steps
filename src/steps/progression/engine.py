@@ -9,12 +9,14 @@ Adheres to:
 """
 
 from __future__ import annotations
+import json
 import re
 from dataclasses import dataclass
-from typing import Literal, Optional, List, Dict, Any, Tuple
+from importlib.resources import files
+from typing import Literal, Dict, Any
 
-from ..theory.exceptions import ProgressionParsingError, ChordConstructionError
-from ..theory.pitch import NoteSpelling, PitchClass, parse_spelling, DIATONIC_BASE_PC
+from ..theory.exceptions import ProgressionParsingError, VoiceLeadingError
+from ..theory.pitch import NoteSpelling, parse_spelling
 from ..theory.chord import ChordDefinition, Voicing, parse_chord
 from .voice_leading import (
     VoiceLeadingStyle,
@@ -26,17 +28,8 @@ from .voice_leading import (
 )
 
 
-# Canonical registry data for all 28 progressions from CHORD_PROGRESSION_REFERENCE_LIBRARY.md
-CANONICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
-    {
-        'id': 'PROG-001',
-        'name': 'Pop Four Chords',
-        'roman': 'I - V - vi - IV',
-        'default_key': 'C',
-        'chords': 'C - G - Am - F',
-        'context': 'Pop, Rock, Singer-Songwriter',
-        'sources': 'Piston (1987), Kostka (2013)'
-    },
+# Historical catalog entries retained for callers of the full library.
+_HISTORICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
     {
         'id': 'PROG-002',
         'name': 'Emotional Minor Loop',
@@ -45,15 +38,6 @@ CANONICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
         'chords': 'Am - F - C - G',
         'context': 'Pop-Balladen, Melodic EDM',
         'sources': 'Tagg (2014)'
-    },
-    {
-        'id': 'PROG-003',
-        'name': 'Jazz Two-Five-One',
-        'roman': 'ii^7 - V^7 - I^maj7',
-        'default_key': 'C',
-        'chords': 'Dm7 - G7 - Cmaj7',
-        'context': 'Jazz, Bebop, Neo-Soul',
-        'sources': 'Levine (1995), Nettles (1997)'
     },
     {
         'id': 'PROG-004',
@@ -99,15 +83,6 @@ CANONICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
         'chords': 'C7 - F7 - C7 - G7 - F7 - C7',
         'context': "Traditional Blues, Rock'n'Roll",
         'sources': 'Rawlins/Bahha (2005)'
-    },
-    {
-        'id': 'PROG-009',
-        'name': 'Minor Plagal Romance',
-        'roman': 'I - IV - iv - I',
-        'default_key': 'C',
-        'chords': 'C - F - Fm - C',
-        'context': 'Romantik, Filmkomposition',
-        'sources': 'de la Motte (1976)'
     },
     {
         'id': 'PROG-010',
@@ -193,7 +168,7 @@ CANONICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
     {
         'id': 'PROG-019',
         'name': 'Minor Line Cliché',
-        'roman': 'i - i^(maj7) - i^7 - i^6',
+        'roman': 'i - i^(maj7) - i^7 - im6',
         'default_key': 'Am',
         'chords': 'Am - Am(maj7) - Am7 - Am6',
         'context': 'Bossa Nova, Spy Film, Ballade',
@@ -256,7 +231,7 @@ CANONICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
     {
         'id': 'PROG-026',
         'name': 'Secondary Dominant Chromatic Bassline',
-        'roman': 'I - V^7/V(6/5) - ii^6 - [I^6] - V^7 - I',
+        'roman': 'I - V7(6/5)/V - ii6 - I6 - V7(4/3) - I',
         'default_key': 'G',
         'chords': 'G - A7/C# - Am/C - G/B - D7/A - G',
         'context': 'Barock, Klassik, Latin Jazz',
@@ -312,9 +287,68 @@ class CanonicalProgression:
         return result
 
 
+@dataclass(frozen=True)
+class ReviewedProgression:
+    """A checked progression and the associated original learning text."""
+
+    progression: CanonicalProgression
+    lesson: str
+    source_ids: tuple[str, ...]
+    reviewed_on: str
+
+
+def _load_reviewed_progressions() -> dict[str, ReviewedProgression]:
+    document = json.loads(files(__package__).joinpath("reviewed_progressions.json").read_text(encoding="utf-8"))
+    if document["schema_version"] != 1:
+        raise ValueError("Unsupported reviewed progression schema version.")
+    examples = {}
+    for row in document["examples"]:
+        ident = row["id"]
+        sources = tuple(row["source_ids"])
+        if ident in examples or not row["reviewed_on"] or not sources or not row["lesson"].strip():
+            raise ValueError(f"Missing review data or duplicate reviewed progression: {ident}.")
+        progression = CanonicalProgression(
+            ident, row["name"], row["roman"], row["default_key"],
+            row["chords"], row["context"], ", ".join(sources),
+        )
+        examples[ident] = ReviewedProgression(progression, row["lesson"], sources, row["reviewed_on"])
+    return examples
+
+
+_REVIEWED_PROGRESSIONS = _load_reviewed_progressions()
+
+
+def list_reviewed_progressions() -> tuple[ReviewedProgression, ...]:
+    """Return the reviewed catalog intended for product and learning use."""
+    return tuple(_REVIEWED_PROGRESSIONS.values())
+
+
+def get_reviewed_progression(prog_id: str) -> ReviewedProgression:
+    """Resolve a product example by ID, rejecting unreviewed entries."""
+    try:
+        return _REVIEWED_PROGRESSIONS[prog_id.upper()]
+    except KeyError:
+        raise ProgressionParsingError(f"No reviewed progression for {prog_id!r}.") from None
+
+
+# Preserve the full catalog definition API while sourcing reviewed rows from the reviewed data.
+CANONICAL_PROGRESSION_DEFINITIONS = sorted(
+    _HISTORICAL_PROGRESSION_DEFINITIONS + [
+        {
+            "id": p.prog_id, "name": p.name, "roman": p.roman_numerals,
+            "default_key": p.default_key, "chords": p.chords_str,
+            "context": p.context, "sources": p.sources,
+        }
+        for example in list_reviewed_progressions()
+        for p in (example.progression,)
+    ],
+    key=lambda row: row["id"],
+)
+
+
 def _build_registry() -> Dict[str, CanonicalProgression]:
     reg = {}
-    for d in CANONICAL_PROGRESSION_DEFINITIONS:
+    for d in _HISTORICAL_PROGRESSION_DEFINITIONS:
         p = CanonicalProgression(
             prog_id=d['id'],
             name=d['name'],
@@ -325,7 +359,8 @@ def _build_registry() -> Dict[str, CanonicalProgression]:
             sources=d['sources']
         )
         reg[d['id']] = p
-    return reg
+    reg.update((example.progression.prog_id, example.progression) for example in list_reviewed_progressions())
+    return dict(sorted(reg.items()))
 
 
 CANONICAL_PROGRESSIONS: Dict[str, CanonicalProgression] = _build_registry()
@@ -344,131 +379,114 @@ def list_progressions() -> list[CanonicalProgression]:
     return [CANONICAL_PROGRESSIONS[f"PROG-{i:03d}"] for i in range(1, 29)]
 
 
+_MAJOR_DEGREES = (0, 2, 4, 5, 7, 9, 11)
+_MINOR_DEGREES = (0, 2, 3, 5, 7, 8, 10)
+_DEGREE_INDEX = {name: i for i, name in enumerate(("I", "II", "III", "IV", "V", "VI", "VII"))}
+_FIGURES = {"53": (0, False), "6": (1, False), "63": (1, False), "64": (2, False),
+            "65": (1, True), "43": (2, True), "42": (3, True), "2": (3, True)}
+_EXPLICIT_QUALITIES = {
+    "maj7", "maj9", "maj13", "m", "m6", "m7", "m7b5", "m9", "m11",
+    "dim", "dim7", "aug", "add9", "sus2", "sus4", "7sus4", "7b9",
+    "7#9", "7#11", "7b13", "7#5", "maj7#5", "13", "mmaj7",
+}
+
+
+def _degree_quality(suffix: str, minor_triad: bool, major_seventh: bool) -> str:
+    if suffix == "maj7" and minor_triad:
+        return "m(maj7)"
+    if suffix == "7b5" and not minor_triad:
+        return "7b5"
+    if suffix in {"dom7", "dom9"}:
+        return suffix.removeprefix("dom")
+    if suffix in _EXPLICIT_QUALITIES:
+        return "m(maj7)" if suffix == "mmaj7" else suffix
+    diminished = {"o": "dim", "ob5": "dim", "b5": "dim", "o7": "dim7",
+                  "ø": "m7b5", "ø7": "m7b5", "7b5": "m7b5"}
+    if suffix in diminished:
+        return diminished[suffix]
+    if suffix == "":
+        return "m" if minor_triad else ""
+    if suffix == "7":
+        return "m7" if minor_triad else "maj7" if major_seventh else "7"
+    if suffix == "9":
+        return "m9" if minor_triad else "maj9" if major_seventh else "9"
+    if suffix == "11" and minor_triad:
+        return "m11"
+    raise ProgressionParsingError(f"Unsupported Roman numeral quality: {suffix!r}.")
+
+
 def resolve_roman_degree(
     degree_str: str,
     key_root: str | NoteSpelling = 'C',
-    is_minor_key: bool = False
+    is_minor_key: bool = False,
+    *,
+    convention: Literal['INT', 'DE', 'AUTO'] = 'AUTO',
 ) -> ChordDefinition:
-    """
-    Parses a Roman numeral scale degree in a given key into a ChordDefinition.
-    
-    Supports:
-      - Major: I, ii, iii, IV, V, vi, vii° / viib5
-      - Minor: i, ii°, bIII, iv, v, V, bVI, bVII, vii°
-      - Extensions: ^7, 7, maj7, ^9, 9, m9, 7(b9), 7(#11)
-      - Secondary dominants: V7/vi, V7/V, V7/ii
-      - Alterations/Substitutions: bII7 (tritone sub), iv (minor plagal)
-    """
-    if isinstance(key_root, str):
-        key_spelling = parse_spelling(key_root + '4')
-    else:
-        key_spelling = key_root
-        
-    cleaned = degree_str.strip()
-    if not cleaned:
-        raise ProgressionParsingError("Empty Roman numeral degree.")
+    """Resolve a degree in major or minor, with optional applied function and figures.
 
-    # 1. Secondary Dominant check: e.g. V7/V, V7/vi, V^7/bVI
-    if '/' in cleaned:
-        dom_part, target_part = cleaned.split('/', 1)
-        target_chord = resolve_roman_degree(target_part, key_spelling, is_minor_key)
-        # The secondary dominant has root a Perfect 5th above the target chord's root
-        dom_root = target_chord.root.transpose_diatonic(step_delta=4, semitone_delta=7)
-        dom_quality = re.sub(r"^[vViI]+(?:\^)?", "", dom_part).replace('(', '').replace(')', '')
-        q = dom_quality if dom_quality else '7'
-        return ChordDefinition(root=dom_root, quality=q)
+    A bare V is a triad. V7 and ii7 use the numeral's case and function.
+    Figures 6, 6/4, 6/5, 4/3 and 4/2 select the bass. Use m6 for an
+    added-sixth minor chord. Explicit accidentals are relative to major.
+    """
+    key = parse_spelling(key_root.strip() + '4', convention=convention) if isinstance(key_root, str) else key_root
+    cleaned = degree_str.strip().translate(str.maketrans({"♭": "b", "♯": "#", "°": "o", "º": "o"}))
+    # Parentheses keep figured-bass slashes separate from applied functions.
+    cleaned = re.sub(r'(?<=[IViv7^])([654])/([5432])(?=$|/)', r'(\1/\2)', cleaned)
+    match = re.fullmatch(r'(bb|##|b|#)?([ivIV]+)((?:[^/()\s]|\([^()\s]+\))*)(?:/(.+))?', cleaned)
+    if not match:
+        raise ProgressionParsingError(f"Cannot parse Roman numeral: {degree_str!r}.")
 
-    # 2. Extract leading accidental (e.g. 'b', '#')
-    acc_match = re.match(r"^([b#]+)?([ivIV]+)(.*)$", cleaned)
-    if not ac_match if (ac_match := re.match(r"^([b#]+)?([ivIV]+)(.*)$", cleaned)) else False:
-        pass
-        
-    m = re.match(r"^([b#]+)?([ivIV]+)(.*)$", cleaned)
-    if not m:
-        raise ProgressionParsingError(f"Cannot parse Roman numeral: '{degree_str}'")
-        
-    acc = m.group(1) or ''
-    roman = m.group(2)
-    ext = m.group(3) or ''
-    
-    # Scale degree offset in major scale (diatonic)
-    roman_upper = roman.upper()
-    degree_map = {'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5, 'VI': 6, 'VII': 7}
-    if roman_upper not in degree_map:
-        raise ProgressionParsingError(f"Unknown Roman numeral degree: '{roman}'")
-    deg_num = degree_map[roman_upper]
-    
-    # Scale degree calculation:
-    # Standard music theory convention (Kostka, Levine):
-    # When an explicit accidental prefix is present ('b' or '#', e.g. 'bVI', 'bVII', 'bIII', 'bII', '#IV'),
-    # the accidental applies relative to the major scale degree root.
-    major_diatonic_semis = {1: 0, 2: 2, 3: 4, 4: 5, 5: 7, 6: 9, 7: 11}
-    minor_diatonic_semis = {1: 0, 2: 2, 3: 3, 4: 5, 5: 7, 6: 8, 7: 10}
-    
-    if acc:
-        base_semi = major_diatonic_semis[deg_num]
-        shift = 0
-        if acc == 'b':
-            shift = -1
-        elif acc == 'bb':
-            shift = -2
-        elif acc == '#':
-            shift = 1
-        target_semi = base_semi + shift
+    accidental, numeral, suffix, applied = match.groups()
+    index = _DEGREE_INDEX.get(numeral.upper())
+    if index is None or not (numeral.isupper() or numeral.islower()):
+        raise ProgressionParsingError(f"Unknown Roman numeral: {numeral!r}.")
+    # Also accept the catalog's V7/V(6/5) spelling for V7(6/5)/V.
+    if applied:
+        suffix_figure = re.fullmatch(r'([^()]+)(\((?:6/?5|4/?3|4/?2|2)\))', applied)
+        if suffix_figure and not re.search(r'\d\)$', suffix):
+            applied, figure_text = suffix_figure.groups()
+            suffix += figure_text
+        if accidental or numeral not in {"V", "vii"}:
+            raise ProgressionParsingError(f"Unsupported applied function: {degree_str!r}.")
+        key = resolve_roman_degree(applied, key, is_minor_key).root
+
+    suffix = suffix.removeprefix("^")
+    figure_match = re.search(r'\((5/?3|6(?:/?[345])?|4/?[23]|2)\)$', suffix)
+    if not figure_match:
+        figure_match = re.fullmatch(r'(?:o|ø|dim)(65|43|42|64|63|6|2)', suffix)
+    figure = figure_match[1].replace("/", "") if figure_match else suffix
+    inversion = 0
+    if figure in _FIGURES:
+        inversion, seventh = _FIGURES[figure]
+        suffix = suffix[:figure_match.start(1)].removesuffix("(") if figure_match else ""
+        if seventh and suffix in {"", "o", "ø"}:
+            suffix += "7"
+        elif seventh and suffix == "dim":
+            suffix = "dim7"
+    if not re.fullmatch(r'[^()]*?(?:\([^()]+\))?', suffix):
+        raise ProgressionParsingError(f"Invalid Roman numeral quality: {suffix!r}.")
+    suffix = suffix.replace("(", "").replace(")", "")
+    if applied and numeral == "vii" and suffix not in {"o", "o7", "dim", "dim7", "ø", "ø7", "m7b5", "b5", "7b5"}:
+        raise ProgressionParsingError("Applied leading-tone chords require a diminished quality.")
+
+    minor_scale = is_minor_key and not applied
+    leading_tone = numeral == "vii" and suffix in {"o", "o7", "dim", "dim7", "ø", "ø7", "m7b5", "b5", "7b5"}
+    if accidental:
+        semitones = _MAJOR_DEGREES[index] + (len(accidental) if accidental[0] == "#" else -len(accidental))
     else:
-        target_semi = minor_diatonic_semis[deg_num] if is_minor_key else major_diatonic_semis[deg_num]
-        
-    target_step_delta = deg_num - 1
-    chord_root = key_spelling.transpose_diatonic(step_delta=target_step_delta, semitone_delta=target_semi)
-    
-    # Clean extensions
-    ext_clean = ext.replace('^', '').replace('(', '').replace(')', '').strip()
-    is_lower = roman.islower()
-    
-    # Default quality based on case and degree
-    if is_lower:
-        # Minor-type default
-        if 'b5' in ext_clean or '°' in ext_clean or 'dim' in ext_clean:
-            default_q = 'm7b5' if '7' in ext_clean else 'dim'
-        elif '9' in ext_clean:
-            default_q = 'm9'
-        elif '7' in ext_clean:
-            default_q = 'm(maj7)' if 'maj' in ext_clean else 'm7'
-        elif '6' in ext_clean:
-            default_q = 'm6'
-        else:
-            default_q = 'm'
-    else:
-        # Major/Dominant-type default
-        if deg_num == 5:
-            # V degree is dominant by default
-            if 'b9' in ext_clean:
-                default_q = '7b9'
-            elif '9' in ext_clean:
-                default_q = '9'
-            elif '13' in ext_clean:
-                default_q = '13'
-            else:
-                default_q = '7'
-        else:
-            if 'maj9' in ext_clean or '9' in ext_clean and 'maj' in ext_clean:
-                default_q = 'maj9'
-            elif 'maj7' in ext_clean or '7' in ext_clean:
-                default_q = 'maj7' if deg_num in (1, 4) else '7'
-            elif 'add9' in ext_clean:
-                default_q = 'add9'
-            elif 'sus4' in ext_clean:
-                default_q = 'sus4'
-            else:
-                default_q = ''
-                
-    # If explicit extension specified, map it
-    if ext_clean in ('7', 'maj7', 'm7', 'm7b5', 'dim7', '9', 'maj9', 'm9', '7b9', '7#11', '7#9', '13', 'maj13'):
-        final_q = ext_clean
-    else:
-        final_q = default_q
-        
-    return ChordDefinition(root=chord_root, quality=final_q)
+        semitones = (_MINOR_DEGREES if minor_scale and not leading_tone else _MAJOR_DEGREES)[index]
+    root = key.transpose_diatonic(index, semitones)
+    major_seventh = not accidental and not applied and (
+        (minor_scale and numeral in {"III", "VI"}) or (not minor_scale and numeral in {"I", "IV"})
+    )
+    quality = _degree_quality(suffix, numeral.islower(), major_seventh)
+    chord = ChordDefinition(root, quality)
+    if not inversion:
+        return chord
+    if inversion >= len(chord.theoretical_intervals):
+        raise ProgressionParsingError(f"Inversion exceeds chord size: {degree_str!r}.")
+    bass = root.transpose_diatonic(2 * inversion, chord.theoretical_intervals[inversion])
+    return ChordDefinition(root, quality, bass)
 
 
 def generate_progression_voicings(
@@ -477,36 +495,38 @@ def generate_progression_voicings(
     initial_voicing_type: Literal['CLOSE', 'DROP2', 'SHELL', 'ROOTLESS'] = 'CLOSE',
     bass_octave: int = 3
 ) -> list[Voicing]:
-    """
-    Synthesizes a smoothly voice-led sequence of Voicings for the given progression.
-    Uses optimize_smooth_voice_leading to find the minimal-distance transitions.
+    """Voice all chords with a consistent number of voices and explicit basses.
+
+    The first chord uses the requested layout. Transitions optimize movement
+    over each chord's selected pitch classes and may change the layout.
     """
     chord_list = chords.chord_definitions if isinstance(chords, CanonicalProgression) else chords
     if not chord_list:
         return []
 
-    voicings: list[Voicing] = []
-    
-    # 1. Generate initial voicing
-    first_chord = chord_list[0]
-    initial_voicing = first_chord.to_voicing(bass_octave=bass_octave, voicing_type=initial_voicing_type)
-    voicings.append(initial_voicing)
-    
-    # 2. Iteratively voice-lead each subsequent chord
-    for chord in chord_list[1:]:
-        prev_notes = voicings[-1].midi_notes
-        target_pcs = chord.voiced_pitch_classes
-        bass_pc = int(chord.bass.pitch_class) if chord.bass else int(chord.root.pitch_class)
-        
-        # Optimize voice leading from previous voicing
+    layouts = [chord.to_voicing(bass_octave, initial_voicing_type) for chord in chord_list]
+    voice_count = max(len(layout.notes) for layout in layouts)
+    initial_notes = layouts[0].midi_notes
+    for _ in range(voice_count - len(initial_notes)):
+        # Double a pitch already present while keeping the bass and ascending order.
+        doubled = min(note + 12 * ((initial_notes[-1] - note) // 12 + 1) for note in initial_notes)
+        if doubled > 127:
+            raise VoiceLeadingError("Cannot complete the initial voicing in MIDI range.")
+        initial_notes.append(doubled)
+
+    initial_type = layouts[0].voicing_type if len(initial_notes) == len(layouts[0].notes) else 'CUSTOM'
+    voicings = [Voicing(tuple(initial_notes), initial_type)]
+    for chord, layout in zip(chord_list[1:], layouts[1:]):
+        bass = chord.bass
+        if bass is None and initial_voicing_type in {'CLOSE', 'SHELL'}:
+            bass = chord.root
         next_notes = optimize_smooth_voice_leading(
-            source_voicing=prev_notes,
-            target_pcs=target_pcs,
-            bass_pc=bass_pc,
-            style=style
+            source_voicing=voicings[-1].midi_notes,
+            target_pcs={note % 12 for note in layout.notes},
+            bass_pc=int(bass.pitch_class) if bass is not None else None,
+            style=style,
         )
-        voicings.append(Voicing(notes=tuple(next_notes), voicing_type=initial_voicing_type))
-        
+        voicings.append(Voicing(tuple(next_notes), 'CUSTOM'))
     return voicings
 
 

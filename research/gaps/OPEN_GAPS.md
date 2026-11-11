@@ -7,3 +7,15 @@
 - Historische JSON-/CSV-Indizes benötigen Pfad- und Hashrevalidierung.
 - Externe Integration von Glide nur Vorschlag, konkrete Code-/Lizenzübernahme nicht geprüft.
 - Die bestehenden Bibliotheks-Generatoren wurden nicht ausgeführt und ihre Seiteneffekte sind nicht analysiert.
+
+## Fachprüfung des Progressionskerns (2026-11-11)
+
+- Der App-Katalog umfasst die einzeln geprüften PROG-001, PROG-003 und
+  PROG-009. Weitere Beispiele brauchen eine eigene Prüfung und Quellenreferenz.
+- PROG-020 und PROG-027 enthalten im Bestandskern vereinfachte Dominanten.
+  Für eine Freigabe die konkrete Alterationskombination und die beabsichtigte
+  Realisierung ausweisen. Das mehrdeutige Stufensuffix `alt` benötigt dafür
+  eine ausdrückliche Interpretation.
+- Der Voicing-Solver prüft Tonklassen, Bass, MIDI-Grenzen, Stimmenreihenfolge und
+  im strikten Modus parallele Quinten und Oktaven. Eine vollständige
+  kontrapunktische Prüfung und stilbezogene Spielbarkeitsprüfung bleiben offen.

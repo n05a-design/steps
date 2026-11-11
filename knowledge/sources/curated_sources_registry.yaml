@@ -1,126 +1,127 @@
-# Source registry: curated research sources for STEPS knowledge base
+# Historical research inventory. Product sources are listed in registry.yaml.
+# Historical status labels are not product usage or distribution approvals.
 # Conforms to knowledge/sources/RIGHTS_POLICY.md and Phase 4.10 Master Audit
 schema_version: 1
 sources:
-  - id: SRC-0001
-    title: 7 levels of reharmonising Eleanor Rigby
-    filename: 7 levels of reharmonising Eleanor Rigby.txt
-    author: Unknown (Music Theory Analysis Video Transcript)
-    format: text/plain
-    rights_class: EDUCATIONAL_FAIR_USE
-    status: approved
-    domains: [M05, M06, M12]
-    description: Progressive reharmonization through 7 levels (diatonic, Dorian, harmonic minor, blues, modal interchange, Picardy third, recontextualization).
+- id: SRC-0001
+  title: 7 levels of reharmonising Eleanor Rigby
+  filename: 7 levels of reharmonising Eleanor Rigby.txt
+  author: Unknown (Music Theory Analysis Video Transcript)
+  format: text/plain
+  rights_class: EDUCATIONAL_FAIR_USE
+  status: approved
+  domains: [M05, M06, M12]
+  description: Progressive reharmonization through 7 levels (diatonic, Dorian, harmonic minor, blues, modal interchange, Picardy third, recontextualization).
 
-  - id: SRC-0002
-    title: Chord Files 2026 Showcase & How to use chord files
-    filename: How to use chord files.txt
-    author: Jaka (chord_files)
-    format: text/plain
-    rights_class: EDUCATIONAL_FAIR_USE
-    status: approved
-    domains: [M04, M05, M12]
-    description: 3-section harmonic interaction model (Main Chords, Secondary Dominants, Modal Interchange) with resolution arrows and scale-tone embellishments.
+- id: SRC-0002
+  title: Chord Files 2026 Showcase & How to use chord files
+  filename: How to use chord files.txt
+  author: Jaka (chord_files)
+  format: text/plain
+  rights_class: EDUCATIONAL_FAIR_USE
+  status: approved
+  domains: [M04, M05, M12]
+  description: 3-section harmonic interaction model (Main Chords, Secondary Dominants, Modal Interchange) with resolution arrows and scale-tone embellishments.
 
-  - id: SRC-0003
-    title: Scales with 4 smart tools (Four Scale Families)
-    filename: Scales with 4 smart tools.txt
-    author: Oliver Prehn (New Jazz)
-    format: text/plain
-    rights_class: OPEN_EDUCATIONAL_RESOURCE
-    status: approved
-    domains: [M03, M04]
-    description: Mathematical closed system of 28 heptatonic scales across 4 families (Major, Melodic Minor, Harmonic Minor, Harmonic Major).
+- id: SRC-0003
+  title: Scales with 4 smart tools (Four Scale Families)
+  filename: Scales with 4 smart tools.txt
+  author: Oliver Prehn (New Jazz)
+  format: text/plain
+  rights_class: OPEN_EDUCATIONAL_RESOURCE
+  status: approved
+  domains: [M03, M04]
+  description: Mathematical closed system of 28 heptatonic scales across 4 families (Major, Melodic Minor, Harmonic Minor, Harmonic Major).
 
-  - id: SRC-0004
-    title: Harmony as a student (Fundamental Harmony)
-    filename: harmony as a student.txt
-    author: Nari Sol
-    format: text/plain
-    rights_class: OPEN_EDUCATIONAL_RESOURCE
-    status: approved
-    domains: [M01, M05, M12]
-    description: Pedagogical foundations of harmonic tension/release, overtone physics, consonant vs dissonant context, and circle of fifths.
+- id: SRC-0004
+  title: Harmony as a student (Fundamental Harmony)
+  filename: harmony as a student.txt
+  author: Nari Sol
+  format: text/plain
+  rights_class: OPEN_EDUCATIONAL_RESOURCE
+  status: approved
+  domains: [M01, M05, M12]
+  description: Pedagogical foundations of harmonic tension/release, overtone physics, consonant vs dissonant context, and circle of fifths.
 
-  - id: SRC-0005
-    title: PPR Drum Programming MIDI Library - Boom Bap 90 BPM
-    filename: research/STEPS_Bibliothek/Drums Progression/ppr-boom-bap-90-bpm-midi/
-    author: Pause Play Repeat (pauseplayrepeat.com)
-    format: application/x-midi
-    rights_class: EDUCATIONAL_STUDY_MATERIAL
-    status: approved
-    domains: [M07, M08, M09]
-    description: Empirically measured 61% MPC 3000 swing (+26 ticks at 480 PPQ, 146 ticks, 36.11 ms at 90 BPM; ERR-034) with rootless keyboard voicings and GM channel 10 drum map.
+- id: SRC-0005
+  title: PPR Drum Programming MIDI Library - Boom Bap 90 BPM
+  filename: research/STEPS_Bibliothek/Drums Progression/ppr-boom-bap-90-bpm-midi/
+  author: Pause Play Repeat (pauseplayrepeat.com)
+  format: application/x-midi
+  rights_class: EDUCATIONAL_STUDY_MATERIAL
+  status: approved
+  domains: [M07, M08, M09]
+  description: Empirically measured 61% MPC 3000 swing (+26 ticks at 480 PPQ, 146 ticks, 36.11 ms at 90 BPM; ERR-034) with rootless keyboard voicings and GM channel 10 drum map.
 
-  - id: SRC-0006
-    title: PPR Drum Programming MIDI Library - UK Garage 132 BPM
-    filename: research/STEPS_Bibliothek/Drums Progression/ppr-uk-garage-132-bpm-midi/
-    author: Pause Play Repeat (pauseplayrepeat.com)
-    format: application/x-midi
-    rights_class: EDUCATIONAL_STUDY_MATERIAL
-    status: approved
-    domains: [M07, M08, M09]
-    description: Empirically measured 64% MPC 3000 swing (+35 ticks at 480 PPQ, 33.1 ms) with 2-step syncopated kick and kick omission on beats 2 and 3.
+- id: SRC-0006
+  title: PPR Drum Programming MIDI Library - UK Garage 132 BPM
+  filename: research/STEPS_Bibliothek/Drums Progression/ppr-uk-garage-132-bpm-midi/
+  author: Pause Play Repeat (pauseplayrepeat.com)
+  format: application/x-midi
+  rights_class: EDUCATIONAL_STUDY_MATERIAL
+  status: approved
+  domains: [M07, M08, M09]
+  description: Empirically measured 64% MPC 3000 swing (+35 ticks at 480 PPQ, 33.1 ms) with 2-step syncopated kick and kick omission on beats 2 and 3.
 
-  - id: SRC-0007
-    title: PPR Drum Programming MIDI Library - Berlin Peak Techno 130 BPM
-    filename: research/STEPS_Bibliothek/Drums Progression/ppr-techno-130-bpm-midi/
-    author: Pause Play Repeat (pauseplayrepeat.com)
-    format: application/x-midi
-    rights_class: EDUCATIONAL_STUDY_MATERIAL
-    status: approved
-    domains: [M07, M08, M09]
-    description: Straight 4/4 four-on-the-floor with 3-against-4 polyrhythmic rimshot accenting every 3 sixteenth notes across two bars.
+- id: SRC-0007
+  title: PPR Drum Programming MIDI Library - Berlin Peak Techno 130 BPM
+  filename: research/STEPS_Bibliothek/Drums Progression/ppr-techno-130-bpm-midi/
+  author: Pause Play Repeat (pauseplayrepeat.com)
+  format: application/x-midi
+  rights_class: EDUCATIONAL_STUDY_MATERIAL
+  status: approved
+  domains: [M07, M08, M09]
+  description: Straight 4/4 four-on-the-floor with 3-against-4 polyrhythmic rimshot accenting every 3 sixteenth notes across two bars.
 
-  - id: SRC-0008
-    title: PPR Drum Programming MIDI Library - Sub Focus Style D&B 174 BPM
-    filename: research/STEPS_Bibliothek/Drums Progression/ppr-sub-focus-style-174-bpm-midi/
-    author: Pause Play Repeat (pauseplayrepeat.com)
-    format: application/x-midi
-    rights_class: EDUCATIONAL_STUDY_MATERIAL
-    status: approved
-    domains: [M07, M08, M09]
-    description: High-speed two-step kick placement (steps 1 and 11) with 87 BPM halftime eighth-note sub-bass pulses (Eb1 at 38.9 Hz).
+- id: SRC-0008
+  title: PPR Drum Programming MIDI Library - Sub Focus Style D&B 174 BPM
+  filename: research/STEPS_Bibliothek/Drums Progression/ppr-sub-focus-style-174-bpm-midi/
+  author: Pause Play Repeat (pauseplayrepeat.com)
+  format: application/x-midi
+  rights_class: EDUCATIONAL_STUDY_MATERIAL
+  status: approved
+  domains: [M07, M08, M09]
+  description: High-speed two-step kick placement (steps 1 and 11) with 87 BPM halftime eighth-note sub-bass pulses (Eb1 at 38.9 Hz).
 
-  - id: SRC-0009
-    title: General MIDI 1.0 Specification
-    filename: MMA GM 1.0 Spec
-    author: MIDI Manufacturers Association (MMA)
-    format: application/pdf
-    rights_class: TECHNICAL_STANDARD
-    status: approved
-    domains: [M08, M11]
-    description: Normative definition of Channel 10 percussion note map (35-81), Standard MIDI Files (SMF) Format 0/1/2, PPQ time division.
+- id: SRC-0009
+  title: General MIDI 1.0 Specification
+  filename: MMA GM 1.0 Spec
+  author: MIDI Manufacturers Association (MMA)
+  format: application/pdf
+  rights_class: TECHNICAL_STANDARD
+  status: approved
+  domains: [M08, M11]
+  description: Normative definition of Channel 10 percussion note map (35-81), Standard MIDI Files (SMF) Format 0/1/2, PPQ time division.
 
-  - id: SRC-0010
-    title: Harmony and Voice Leading (4th Edition)
-    filename: Schachter_Aldwell-Harmony_Voice_Leading.pdf
-    author: Edward Aldwell, Carl Schachter, Allen Cadwallader
-    format: application/pdf
-    rights_class: ACADEMIC_STUDY_REVIEWED
-    status: approved
-    domains: [M04, M05, M06, M10]
-    description: Triad inversions, voice leading economy, step-wise bass motion, and the cadential 6/4 as a double suspension over dominant scale degree.
+- id: SRC-0010
+  title: Harmony and Voice Leading (4th Edition)
+  filename: Schachter_Aldwell-Harmony_Voice_Leading.pdf
+  author: Edward Aldwell, Carl Schachter, Allen Cadwallader
+  format: application/pdf
+  rights_class: ACADEMIC_STUDY_REVIEWED
+  status: approved
+  domains: [M04, M05, M06, M10]
+  description: Triad inversions, voice leading economy, step-wise bass motion, and the cadential 6/4 as a double suspension over dominant scale degree.
 
-  - id: SRC-0011
-    title: Theory of Harmony (Harmonielehre)
-    filename: Schoenberg_Arnold_Theory_of_Harmony_1983.pdf
-    author: Arnold Schoenberg
-    format: application/pdf
-    rights_class: ACADEMIC_STUDY_REVIEWED
-    status: approved
-    domains: [M01, M04, M05]
-    description: Harmonic construction by thirds, non-harmonic tones, vagrant chords, and emancipation of dissonance.
+- id: SRC-0011
+  title: Theory of Harmony (Harmonielehre)
+  filename: Schoenberg_Arnold_Theory_of_Harmony_1983.pdf
+  author: Arnold Schoenberg
+  format: application/pdf
+  rights_class: ACADEMIC_STUDY_REVIEWED
+  status: approved
+  domains: [M01, M04, M05]
+  description: Harmonic construction by thirds, non-harmonic tones, vagrant chords, and emancipation of dissonance.
 
-  - id: SRC-0012
-    title: Traditional Harmony
-    filename: IMSLP342443-PMLP552428-hindemithTraditionalHarmonyBook.pdf
-    author: Paul Hindemith
-    format: application/pdf
-    rights_class: ACADEMIC_STUDY_REVIEWED
-    status: approved
-    domains: [M04, M05, M06]
-    description: Chord classification based on interval root weight, tension vectors, and contrapuntal motion without arbitrary parallel dogmas.
+- id: SRC-0012
+  title: Traditional Harmony
+  filename: IMSLP342443-PMLP552428-hindemithTraditionalHarmonyBook.pdf
+  author: Paul Hindemith
+  format: application/pdf
+  rights_class: ACADEMIC_STUDY_REVIEWED
+  status: approved
+  domains: [M04, M05, M06]
+  description: Chord classification based on interval root weight, tension vectors, and contrapuntal motion without arbitrary parallel dogmas.
 
 - id: "SRC-013"
   short_title: "Aldwell_Schachter_Harmony_VoiceLeading"

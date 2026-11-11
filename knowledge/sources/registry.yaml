@@ -1,3 +1,35 @@
-# Source registry: add entries only after verifying actual file/source + rights.
-schema_version: 1
-sources: []
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "omt-roman-numerals",
+      "title": "Open Music Theory – Roman Numerals",
+      "kind": "website",
+      "url": "https://viva.pressbooks.pub/openmusictheory/chapter/roman-numerals/",
+      "retrieved_at": "2026-11-11",
+      "rights_status": "approved",
+      "usage_notes": "Link and bibliographic reference for original STEPS examples. No source text or media bundled."
+    },
+    {
+      "id": "omt-chromatic-subdominants",
+      "title": "Open Music Theory – Chromatically altered subdominant chords",
+      "kind": "website",
+      "url": "https://viva.pressbooks.pub/openmusictheorycopy/chapter/chromatically-altered-subdominant-chords/",
+      "retrieved_at": "2026-11-11",
+      "rights_status": "approved",
+      "usage_notes": "Link and bibliographic reference for original STEPS examples. No source text or media bundled."
+    },
+    {
+      "id": "omt-ii-v-i",
+      "title": "Open Music Theory – ii–V–I",
+      "kind": "website",
+      "authors": [
+        "Megan Lavengood"
+      ],
+      "url": "https://viva.pressbooks.pub/openmusictheory/chapter/ii-v-i/",
+      "retrieved_at": "2026-11-11",
+      "rights_status": "approved",
+      "usage_notes": "Link and bibliographic reference for original STEPS examples. No source text or media bundled."
+    }
+  ]
+}

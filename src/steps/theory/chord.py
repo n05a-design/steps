@@ -13,7 +13,7 @@ import re
 from dataclasses import dataclass
 from typing import Literal, Optional, Tuple, List, Set, Dict
 
-from .exceptions import ChordConstructionError, MusicTheoryError
+from .exceptions import ChordConstructionError, MusicTheoryError, VoiceLeadingError
 from .pitch import NoteSpelling, PitchClass, parse_spelling, DIATONIC_BASE_PC
 
 
@@ -167,10 +167,16 @@ CHORD_TEMPLATES: Dict[str, Dict[str, any]] = {
         'category': 'EXTENDED'
     },
     '7#11': {
-        'aliases': ['7#11', '7(#11)', 'lydian_dom', '7(b5)'],
+        'aliases': ['7#11', '7(#11)', 'lydian_dom'],
         'theoretical': (0, 4, 6, 7, 10),  # Full scale set: 1, 3, #11(6), 5(7), b7(10)
         'voiced': (0, 4, 6, 10),          # Standard voicing omits 5th to prevent tritone clash
         'category': 'EXTENDED'
+    },
+    '7b5': {
+        'aliases': ['7b5', '7(b5)'],
+        'theoretical': (0, 4, 6, 10),
+        'voiced': (0, 4, 6, 10),
+        'category': 'SEVENTH'
     },
     '7b13': {
         'aliases': ['7b13', '7(b13)'],
@@ -222,6 +228,10 @@ class Voicing:
     def __post_init__(self):
         if not self.notes:
             raise ChordConstructionError("A voicing must contain at least one note.")
+        if any(not isinstance(note, int) or isinstance(note, bool) or not 0 <= note <= 127 for note in self.notes):
+            raise VoiceLeadingError("Voicing notes must be MIDI integers in 0..127.")
+        if self.bass_override is not None and self.bass_override != min(self.notes):
+            raise VoiceLeadingError("Bass override must match the lowest sounding note.")
 
     @property
     def midi_notes(self) -> list[int]:
@@ -316,7 +326,7 @@ class ChordDefinition:
 
     @property
     def symbol(self) -> str:
-        root_str = self.root.render('INT')[:-1]  # omit octave number
+        root_str = self.root.render('INT').removesuffix(str(self.root.octave))
         q_str = self.quality
         if q_str == 'm(maj7)':
             q_disp = 'm(maj7)'
@@ -333,7 +343,7 @@ class ChordDefinition:
             
         base_sym = f"{root_str}{q_disp}"
         if self.bass is not None:
-            bass_str = self.bass.render('INT')[:-1]
+            bass_str = self.bass.render('INT').removesuffix(str(self.bass.octave))
             return f"{base_sym}/{bass_str}"
         return base_sym
 
@@ -345,54 +355,61 @@ class ChordDefinition:
         bass_octave: int = 3,
         voicing_type: Literal['CLOSE', 'DROP2', 'SHELL', 'ROOTLESS'] = 'CLOSE'
     ) -> Voicing:
-        """
-        Synthesizes a concrete Voicing in MIDI notes based on requested style.
-        """
+        """Realize the chord with root-relative intervals and an optional slash bass."""
+        if not isinstance(bass_octave, int) or isinstance(bass_octave, bool) or not -1 <= bass_octave <= 9:
+            raise VoiceLeadingError("Bass octave must be an integer in -1..9.")
         root_pc = int(self.root.pitch_class)
-        bass_note = (bass_octave + 1) * 12 + (int(self.bass.pitch_class) if self.bass else root_pc)
-        
-        if voicing_type == 'SHELL':
-            # LH: Bass root note
-            # RH: 3rd and 7th in octave 4
-            intervals = self.default_voiced_intervals
-            # 3rd is interval 1, 7th is interval 3 (or 2 if 3-note)
-            third_semi = intervals[1]
-            seventh_semi = intervals[-1] if len(intervals) >= 4 else intervals[2]
-            rh_3rd = 60 + ((root_pc + third_semi) % 12)
-            rh_7th = 60 + ((root_pc + seventh_semi) % 12)
-            notes = tuple(sorted([bass_note, rh_3rd, rh_7th]))
-            return Voicing(notes=notes, voicing_type='SHELL', bass_override=bass_note)
-            
-        elif voicing_type == 'ROOTLESS':
-            # Typically 3rd, 5th, 7th, 9th (Levine Rootless A/B)
-            intervals = self.default_voiced_intervals
-            upper_notes = []
-            for semi in intervals:
-                if semi % 12 != 0:  # skip root
-                    pc = (root_pc + semi) % 12
-                    upper_notes.append(60 + pc)
-            return Voicing(notes=tuple(sorted(upper_notes)), voicing_type='ROOTLESS')
-            
-        elif voicing_type == 'DROP2':
-            # Construct 4-note close voicing around octave 4, then drop 2nd from top
-            intervals = self.default_voiced_intervals[:4]
-            close_notes = sorted([60 + ((root_pc + semi) % 12) for semi in intervals])
-            if len(close_notes) == 4:
-                # drop 2nd from top (index 2) down 12 semitones
-                v0, v1, v2, v3 = close_notes
-                notes = tuple(sorted([v0, v1, v2 - 12, v3]))
-                return Voicing(notes=notes, voicing_type='DROP2')
+        root_note = 12 * (bass_octave + 1) + root_pc
+        bass_pc = int(self.bass.pitch_class) if self.bass is not None else root_pc
+        bass_note = 12 * (bass_octave + 1) + bass_pc
+        intervals = self.default_voiced_intervals
+
+        if voicing_type == 'DROP2' and len(intervals) >= 4:
+            pcs = sorted({(root_pc + semi) % 12 for semi in intervals[:4]} | {bass_pc})
+            if len(pcs) != 4:
+                raise VoiceLeadingError("Drop-2 requires four chord tones including the explicit bass.")
+            if self.bass is not None:
+                # In a drop-2 voicing, the third note of the close stack becomes the bass.
+                start = (pcs.index(bass_pc) - 2) % 4
+                first = pcs[start]
             else:
-                return Voicing(notes=tuple(close_notes), voicing_type='CLOSE')
-                
-        else:  # CLOSE
-            intervals = self.default_voiced_intervals
-            notes = [bass_note]
-            for semi in intervals:
-                if semi != 0:
-                    note_val = bass_note + semi
-                    notes.append(note_val)
-            return Voicing(notes=tuple(sorted(notes)), voicing_type='CLOSE')
+                first = root_pc
+            close = sorted((pc - first) % 12 for pc in pcs)
+            notes = [root_note - root_pc + first + semi for semi in close]
+            notes[2] -= 12
+            if self.bass is not None:
+                offset = bass_note - min(notes)
+                notes = [note + offset for note in notes]
+            return Voicing(tuple(sorted(notes)), 'DROP2')
+
+        if voicing_type == 'ROOTLESS':
+            pcs = {(root_pc + semi) % 12 for semi in intervals if semi % 12}
+            if self.bass is None:
+                return Voicing(tuple(sorted(60 + pc for pc in pcs)), 'ROOTLESS')
+            upper = [bass_note + ((pc - bass_pc) % 12) for pc in pcs - {bass_pc}]
+            return Voicing(tuple(sorted([bass_note, *upper])), 'ROOTLESS')
+
+        if voicing_type == 'SHELL':
+            seventh = next((semi for semi in intervals if 9 <= semi <= 11), intervals[2])
+            # Major and minor added-sixth chords have no seventh.
+            if self.quality in {'6', 'm6'}:
+                seventh = intervals[2]
+            pcs = {(root_pc + semi) % 12 for semi in (intervals[1], seventh)}
+            floor = max(59, bass_note)
+            upper = [floor + 1 + ((pc - floor - 1) % 12) for pc in pcs - {bass_pc}]
+            return Voicing(tuple(sorted([bass_note, *upper])), 'SHELL', bass_note)
+
+        if voicing_type not in {'CLOSE', 'DROP2'}:
+            raise VoiceLeadingError(f"Unknown voicing type: {voicing_type!r}.")
+        upper = []
+        for semi in intervals:
+            note = root_note + semi
+            if note % 12 == bass_pc:
+                continue
+            if note <= bass_note:
+                note += 12 * ((bass_note - note) // 12 + 1)
+            upper.append(note)
+        return Voicing(tuple(sorted({bass_note, *upper})), 'CLOSE')
 
 
 def parse_chord(symbol: str, convention: Literal['INT', 'DE', 'AUTO'] = 'AUTO') -> ChordDefinition:
