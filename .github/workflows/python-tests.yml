@@ -1,0 +1,37 @@
+name: Python Tests & Verification Suite
+
+on:
+  push:
+    branches: [ main, feat/**, fix/**, chore/** ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Unit Tests (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Run STEPS Core Test Suite
+        run: python -B -m unittest discover -s tests -p "test_*.py" -v
+
+      - name: Run Knowledge Curation Skill Tests
+        run: |
+          if [ -d ".agents/skills/steps-knowledge-curation/tests" ]; then
+            python -B -m unittest discover -s .agents/skills/steps-knowledge-curation/tests -v
+          fi

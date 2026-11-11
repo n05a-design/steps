@@ -1,6 +1,17 @@
 """STEPS core music theory concepts and notation models."""
 from __future__ import annotations
 
+from .exceptions import (
+    MusicTheoryError,
+    InvalidPitchClassError,
+    InvalidDiatonicStepError,
+    InvalidAlterationError,
+    PitchRangeError,
+    InvalidIntervalError,
+    ChordConstructionError,
+    VoiceLeadingError,
+    ProgressionParsingError
+)
 from .pitch import (
     PitchClass,
     NoteSpelling,
@@ -14,7 +25,9 @@ from .interval import (
     DiatonicInterval,
     semitones_between,
     directed_semitones,
-    invert_semitones_modulo12
+    invert_semitones_modulo12,
+    transpose_spelling,
+    interval_between_spellings
 )
 from .triad import (
     TriadQuality,
@@ -29,8 +42,23 @@ from .seventh import (
     make_drop2_voicing,
     make_shell_voicing
 )
+from .chord import (
+    ChordDefinition,
+    Voicing,
+    parse_chord,
+    CHORD_TEMPLATES
+)
 
 __all__ = [
+    'MusicTheoryError',
+    'InvalidPitchClassError',
+    'InvalidDiatonicStepError',
+    'InvalidAlterationError',
+    'PitchRangeError',
+    'InvalidIntervalError',
+    'ChordConstructionError',
+    'VoiceLeadingError',
+    'ProgressionParsingError',
     'PitchClass',
     'NoteSpelling',
     'midi_to_pitch_class',
@@ -42,6 +70,8 @@ __all__ = [
     'semitones_between',
     'directed_semitones',
     'invert_semitones_modulo12',
+    'transpose_spelling',
+    'interval_between_spellings',
     'TriadQuality',
     'construct_triad',
     'invert_triad_voicing',
@@ -50,5 +80,10 @@ __all__ = [
     'construct_seventh',
     'invert_seventh_voicing',
     'make_drop2_voicing',
-    'make_shell_voicing'
+    'make_shell_voicing',
+    'ChordDefinition',
+    'Voicing',
+    'parse_chord',
+    'CHORD_TEMPLATES'
 ]
+

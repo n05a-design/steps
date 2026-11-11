@@ -10,6 +10,7 @@ from __future__ import annotations
 from enum import Enum
 from typing import List, Tuple
 from .pitch import PitchClass
+from .exceptions import ChordConstructionError
 
 class TriadQuality(Enum):
     MAJOR = 'MAJOR'
@@ -41,6 +42,8 @@ def construct_triad(root: int | PitchClass, quality: TriadQuality) -> list[Pitch
         construct_triad(0, TriadQuality.MAJOR) -> [PitchClass(0), PitchClass(4), PitchClass(7)]
         construct_triad(0, TriadQuality.SUS4) -> [PitchClass(0), PitchClass(5), PitchClass(7)]
     """
+    if quality not in TRIAD_INTERVALS:
+        raise ChordConstructionError(f"Unknown triad quality: {quality}")
     r = int(root) % 12
     intervals = TRIAD_INTERVALS[quality]
     return [PitchClass(r + semi) for semi in intervals]
@@ -55,7 +58,7 @@ def invert_triad_voicing(voicing_midi: list[int], inversion: int) -> list[int]:
     inversion 2: 2nd inversion (6/4, bass note is 5th, e.g. [G4, C5, E5] = [67, 72, 76])
     """
     if len(voicing_midi) < 3:
-        raise ValueError("Triad voicing must have at least 3 voices.")
+        raise ChordConstructionError("Triad voicing must have at least 3 voices.")
     inv = inversion % len(voicing_midi)
     if inv == 0:
         return sorted(voicing_midi)
@@ -69,3 +72,4 @@ def invert_triad_voicing(voicing_midi: list[int], inversion: int) -> list[int]:
 def get_triad_pitch_class_set(root: int | PitchClass, quality: TriadQuality) -> set[int]:
     """Returns the set of integers in Z12 belonging to the triad."""
     return {int(pc) for pc in construct_triad(root, quality)}
+
