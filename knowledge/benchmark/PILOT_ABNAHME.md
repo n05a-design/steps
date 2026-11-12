@@ -1,6 +1,6 @@
 # Pilot · fachliche Abnahmeliste
 
-**Dokumentierte Freigaben im Register: 7 von 8.**
+**Dokumentierte Freigaben im Register: 8 von 8.**
 
 Je Aussage im Draft-PR entscheiden: freigegeben, Korrektur erforderlich oder Beleg fehlt.
 Für jede Freigabe Claim-ID und vollständigen Fassungsfingerabdruck angeben.
@@ -37,7 +37,7 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 
 ## PROG-001-TONAL-CENTER
 
-- Stand · Ausstehend
+- Stand · Freigabe eingetragen
 - Art · `style_interpretation`
 - Fassung · `1b52fd68d6ef6e1aeecd3ed6062b9786e4c202d3a23ae425d4c648c8d3181429`
 - Wortlaut · Der Pop-Loop aus C, G, Am und F kann C oder A als tonales Zentrum nahelegen oder mehrdeutig bleiben. Melodie und Phrasierung, Loop-Beginn, metrische Betonung und benachbarte Formteile beeinflussen die Wahrnehmung.
@@ -48,6 +48,7 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 - Prüffrage · Wie kann der Loop C–G–Am–F C oder A als tonales Zentrum nahelegen, und welche Hinweise prägen die Wahrnehmung?
 - Sollantwort · `{"centers": ["C", "A"], "minor_stages": ["III", "VII", "i", "VI"], "chords": ["C", "G", "Am", "F"], "required_context": "Melodie und Phrasierung, Loop-Beginn, metrische Betonung und benachbarte Formteile können C oder A als Zentrum stützen. Die Akkordfolge allein lässt das gehörte Zentrum offen."}`
 - Herleitung · Open Music Theory, Four-Chord Schemas, Absatz nach Example 4. Die Moll-Lesart folgt aus natürlichem A-Moll. Richards (2017), Abs. [1], [9]–[11] und [29]–[30], belegt die Kontexthinweise an Axis-Progressionen.
+- Entscheidung · [n05a-design](https://github.com/n05a-design/steps/pull/11#issuecomment-6834765537) · 2026-11-12
 
 ## PROG-003-HARMONY
 

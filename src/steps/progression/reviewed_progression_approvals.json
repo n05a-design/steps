@@ -13,6 +13,12 @@
       "reviewed_on": "2026-11-12",
       "evidence_url": "https://github.com/n05a-design/steps/pull/11#issuecomment-6833747279"
     },
+    "PROG-001-TONAL-CENTER": {
+      "fingerprint": "1b52fd68d6ef6e1aeecd3ed6062b9786e4c202d3a23ae425d4c648c8d3181429",
+      "reviewer": "n05a-design",
+      "reviewed_on": "2026-11-12",
+      "evidence_url": "https://github.com/n05a-design/steps/pull/11#issuecomment-6834765537"
+    },
     "PROG-003-HARMONY": {
       "fingerprint": "e58aae0c9337cc7d0d043e8ad8df35c411fe5dc4301153e6f5c14dcce8d75037",
       "reviewer": "n05a-design",
