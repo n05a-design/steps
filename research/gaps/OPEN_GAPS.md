@@ -19,3 +19,8 @@
 - Der Voicing-Solver prüft Tonklassen, Bass, MIDI-Grenzen, Stimmenreihenfolge und
   im strikten Modus parallele Quinten und Oktaven. Eine vollständige
   kontrapunktische Prüfung und stilbezogene Spielbarkeitsprüfung bleiben offen.
+
+## Offene Fachnachweise (2026-11-12)
+
+- Bei [PAT-031](../../knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md#pat-031--offene-taktgrenze) fehlen Taktgrenzen und die Hörprüfung der beiden Lesarten.
+- Für die [198 Golden Cases](../../knowledge/research/GOLDEN_DATA_SOURCE_OF_TRUTH.md#2-bestandsübersicht-phase-415) fehlt eine dokumentierte fachliche Einzelabnahme. Die Test- und Integritätsnachweise liegen vor.

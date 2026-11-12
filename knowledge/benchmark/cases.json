@@ -864,7 +864,7 @@
         "check": "swing_source"
       },
       "mandatory": true,
-      "next_step": "DOI und Metadaten beim Verlag abgleichen. Konkrete BPM-Ratios erst nach Prüfung der Messdaten und Abbildungen beibehalten."
+      "next_step": "Vor einer Aussage zu konkreten BPM-Ratios die Messdaten und Abbildungen prüfen und die genaue Fundstelle dokumentieren."
     },
     {
       "id": "COACH-01",

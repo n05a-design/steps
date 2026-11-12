@@ -42,3 +42,11 @@
 | `PAT-029` | **Samba Batucada Sectional** | 105 BPM | 2/2 Alla Breve Street Pulse | Surdo 1 & 2 Fundament | Snare Caixa Rolls auf 16teln | Agogô-Doppelglocken & Tamborim |
 | `PAT-030` | Phrygian Neo-Soul Halftime Shuffle | 84 BPM | 4/4 57% Swing (Tick 137 @ 480 PPQ) | Harter Downbeat-Kick auf 1, synkopierter Sub-Kick auf 3+ | Fetter Snare-Drag auf 2+, tiefer Backbeat auf 3 | Fließende Ghost-Notes & Closed/Pedal Hat Wechsel |
 | `PAT-031` | Afro-Cuban 6/8 Bembé Fusion | 120 BPM | 6/8 Polyrhythm (3:2) | Geerdeter Fundamentpuls auf 1 und 4 (gepunktete Viertel) | Bell-Pattern (12/8 Clave): X.X.XX.X.X.X auf Ride/Campana | Low/High Conga Tumbao mit offenem Slap auf Puls 5 |
+
+## PAT-031 · offene Taktgrenze
+
+Die Vorlage nennt 6/8 für den Grundpuls und 12/8 für das Glockenmuster.
+Die zwölf Positionen haben keine eingezeichnete Taktgrenze. Die Lesarten
+als ein 12/8-Takt oder zwei 6/8-Takte bleiben offen. Für eine spielbare
+Fassung sind Taktstriche und Akzente festzulegen. Die Hörprüfung ist als
+`KB-M08-METER` im [Benchmark](../../benchmark/cases.json) dokumentiert.

@@ -469,22 +469,27 @@ sources:
 
 - id: "SRC-031"
   short_title: "Friberg_Sundstroem_Swing_Ratios"
-  title: "Swing Ratios and Ensemble Timing in Jazz Performance"
+  title: "Swing Ratios and Ensemble Timing in Jazz Performance: Evidence for a Common Rhythmic Pattern"
   authors:
     - "Anders Friberg"
-    - "Johan Sundström"
+    - "Andreas Sundström"
   year: 2002
-  publisher: "Journal of the Acoustical Society of America (JASA) / KTH Stockholm"
+  publisher: "University of California Press"
+  journal: "Music Perception"
+  volume: 19
+  issue: 3
+  pages: "333–349"
+  doi: "10.1525/mp.2002.19.3.333"
   evidence_class: "E1_PRIMARY_ACADEMIC"
   assigned_domains:
     - "M07"
     - "M08"
     - "M09"
-  scope: "Empirical measurement of swing ratio rho across professional jazz drummers, hyperbolic/linear decrease with tempo from 3.5:1 at 100 BPM to 1.0:1 at 320 BPM."
+  scope: "Publisher abstract checked. Ride-cymbal timing was measured in three jazz recordings and one play-along recording."
   key_claims:
-    - "Swing ratio rho(BPM) is not fixed at 2:1 (triplet) but decays continuously as tempo increases"
-    - "At fast tempos above 260 BPM, swing eighths become virtually straight (rho ~ 1.1:1)"
-    - "Micro-timing offsets between soloist, bass, and drums average between 10 ms and 30 ms"
+    - "In the recordings studied, the swing ratio generally decreased as the tempo increased"
+    - "The abstract reports ratios up to 3.5:1 at slow tempos and reaching 1:1 at fast tempos"
+    - "The abstract does not establish universal swing ratios for specific BPM values"
 
 - id: "SRC-032"
   short_title: "Linn_MPC_Swing_Implementation"

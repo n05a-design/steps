@@ -12,3 +12,8 @@ als Forschungsbestand erhalten. Die Zuordnung von CLAIM-001 und CLAIM-002 zu
 SRC-018 folgt Autor und Werkjahr. Die konkreten Fundstellen bleiben als
 `SOURCE_REVIEW_REQUIRED` gekennzeichnet. Platzhalter behalten ihre IDs mit
 dem Status `PLACEHOLDER`.
+
+Bei [CLAIM-034](MUSIC_SOURCE_CLAIM_REGISTER.csv) sind Publikationsangabe und
+Aussage anhand des Verlagsabstracts korrigiert. `KB-M07-SWING-SOURCE` prüft
+die Zitierangabe. Der Claim bleibt mit `REVIEW_REQUIRED` gekennzeichnet.
+Konkrete Verhältnisse bei einzelnen BPM erfordern einen Nachweis aus den Messdaten.
