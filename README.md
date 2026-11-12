@@ -2,9 +2,10 @@
 
 STEPS stellt einen Python-Kern für Tonhöhen, Intervalle, Akkordsymbole,
 Stufenauflösung, Transposition und Stimmführung bereit. Der Checkout enthält
-eine Schnittstelle für fachlich freigegebene Lernbeispiele. Die drei
-Pilotbeispiele liegen zur menschlichen Fachabnahme vor. Die Desktop-App befindet sich
-in Vorbereitung.
+drei fachlich freigegebene Pilotbeispiele für die App-Schnittstelle und
+das [Lernmaterial](knowledge/concepts/progressions/REVIEWED_PROGRESSIONS.md).
+Die [Abnahmeliste](knowledge/benchmark/PILOT_ABNAHME.md) belegt die Freigaben.
+Die Desktop-App befindet sich in Vorbereitung.
 
 Der Entwicklungsstand steht in [VERSION](VERSION), die Paketversion in
 [`src.steps.__version__`](src/steps/__init__.py). Der Quellcode steht unter

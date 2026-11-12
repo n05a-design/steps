@@ -2,7 +2,8 @@
 
 Dieser Leitfaden beschreibt den Code im selben Checkout. Der Einstieg für
 Entwicklung ist die [Root-README](../README.md). Die [API-Referenz](theory/API.md)
-wird aus den exportierten Python-Objekten erzeugt.
+wird aus den exportierten Python-Objekten erzeugt. Der hier dokumentierte
+Kern- und Pilotstand wurde am 12. November 2026 auf Commit `b0abd41` abgeglichen.
 
 ## Versionen und Freigabestatus
 
@@ -25,7 +26,7 @@ Der Checkout enthält einen nutzbaren Python-Kern. Die [Projektkonfiguration](..
 | Akkordsymbole | [chord.py](../src/steps/theory/chord.py) | Explizit registrierte Qualitäten und Aliasse. `CM7` ist Dur, `Cm7` Moll. Slash-Bass ändert die tiefste Note, die Rezeptur bleibt vom Grundton abgeleitet. Theoretische und für ein Voicing ausgewählte Tonklassen können sich unterscheiden. `C11` ist aktuell nicht registriert. |
 | Stufen und Transposition | [engine.py](../src/steps/progression/engine.py) | Stufenauflösung in vorgegebenem Dur-/Moll-Kontext, ausgewählte Sekundärfunktionen und Generalbassfiguren. Keine Tonarterkennung aus Audio oder Auswahl einer kontextabhängigen Analyse. `V7(alt)` wird abgewiesen. Der Vertrag für Mischformen wie `V7(6)` ist offen. |
 | Stimmführung | [voice_leading.py](../src/steps/progression/voice_leading.py), [engine.py](../src/steps/progression/engine.py) | Standardsequenz mit durchgehender Stimmenzahl. Der Solver minimiert die Summe absoluter Halbtonbewegungen je Übergang innerhalb ±12 Halbtönen pro Stimme. Er prüft Tonklassen, Bass, MIDI 0–127 und Stimmenreihenfolge. Der strikte Modus prüft zusätzlich parallele Quinten und Oktaven. Unlösbare Vorgaben lösen `VoiceLeadingError` aus. Das Startlayout akzeptiert `CLOSE`, `DROP2`, `SHELL` und `ROOTLESS`. Folgeakkorde können andere Lagen haben. Vollständiger Kontrapunkt und Spielbarkeit bleiben eigene Abnahmen. |
-| Progressionskatalog | [Historischer Katalog](../knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md), [App-Lernmaterial](../knowledge/concepts/progressions/REVIEWED_PROGRESSIONS.md) | Die allgemeine API bietet 28 Bestandsprogressionen. Für die [App-Schnittstelle](../app/knowledge.py) liegen drei Pilotbeispiele vor. Nach menschlicher Abnahme speist dieselbe [Datenversion](../src/steps/progression/reviewed_progressions.json) die App-Schnittstelle und das Lernmaterial. |
+| Progressionskatalog | [Historischer Katalog](../knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md), [App-Lernmaterial](../knowledge/concepts/progressions/REVIEWED_PROGRESSIONS.md) | Die allgemeine API bietet 28 Bestandsprogressionen. Für die [App-Schnittstelle](../app/knowledge.py) sind drei Pilotbeispiele fachlich freigegeben. App-Schnittstelle und Lernmaterial verwenden dieselbe [Datenbasis](../src/steps/progression/reviewed_progressions.json). Die [Abnahmeliste](../knowledge/benchmark/PILOT_ABNAHME.md) dokumentiert die Freigaben. |
 | Recherche und Quellen | [Quellenregister](../knowledge/sources/README.md), [Ingestion](../knowledge/INGESTION_PIPELINE.md) | App-Adapter und Renderer lösen Quellen-IDs im Produktregister auf und prüfen die fassungsgebundenen Freigaben aller Pilot-Aussagen. CI führt denselben Validator aus. Forschungsclaims und Rohmedien werden über den App-Adapter nicht geladen. |
 | Desktop, Audio, MIDI und Speicherung | [app](../app/README.md), [Architekturziel](architecture/ARCHITECTURE_OVERVIEW.md) | Der App-Adapter ist importierbar. Ein Desktop-Einstieg, Wiedergabe, Import/Export, Persistenz und automatische Harmonieanalyse sind in diesem Checkout nicht als Produktabläufe implementiert. |
 
