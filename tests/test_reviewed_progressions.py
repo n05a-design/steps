@@ -18,9 +18,41 @@ from src.steps.progression import (
     optimize_smooth_voice_leading,
     resolve_roman_degree,
 )
-from src.steps.theory.chord import parse_chord
-from src.steps.theory.exceptions import MusicTheoryError, ProgressionParsingError, VoiceLeadingError
-from src.steps.theory.pitch import frequency_to_midi, midi_to_frequency
+from src.steps.theory import (
+    ChordConstructionError,
+    ChordDefinition,
+    MusicTheoryError,
+    ProgressionParsingError,
+    VoiceLeadingError,
+    frequency_to_midi,
+    midi_to_frequency,
+    parse_chord,
+    parse_spelling,
+)
+
+
+class ChordQualityRegressionTests(unittest.TestCase):
+    def test_major_and_minor_shorthands_use_literal_intervals(self):
+        root = parse_spelling("C4", "INT")
+        cases = (
+            ("M", (0, 4, 7)),
+            ("m", (0, 3, 7)),
+            ("M7", (0, 4, 7, 11)),
+            ("m7", (0, 3, 7, 10)),
+            ("M9", (0, 4, 7, 11, 14)),
+            ("m9", (0, 3, 7, 10, 14)),
+            ("MAJ7", (0, 4, 7, 11)),
+            ("MIN7", (0, 3, 7, 10)),
+        )
+        for suffix, intervals in cases:
+            with self.subTest(suffix=suffix):
+                self.assertEqual(parse_chord("C" + suffix, "INT").theoretical_intervals, intervals)
+                self.assertEqual(ChordDefinition(root, suffix).theoretical_intervals, intervals)
+
+    def test_unregistered_shorthands_do_not_change_case(self):
+        for symbol in ("CM11", "Cm13"):
+            with self.subTest(symbol=symbol), self.assertRaises(ChordConstructionError):
+                parse_chord(symbol, "INT")
 
 
 class RomanNumeralRegressionTests(unittest.TestCase):
@@ -70,28 +102,33 @@ class VoicingRegressionTests(unittest.TestCase):
         self.assertEqual(parse_chord("D7/A").to_voicing(voicing_type="DROP2").bass_note % 12, 9)
 
     def test_all_catalog_progressions_preserve_pitch_classes_and_basses(self):
-        for progression in list_progressions():
-            with self.subTest(progression=progression.prog_id):
-                definitions = progression.chord_definitions
-                voiced = generate_progression_voicings(progression)
-                self.assertEqual(len(voiced), len(definitions))
-                self.assertEqual(len({len(v.notes) for v in voiced}), 1)
-                for chord, voicing in zip(definitions, voiced):
-                    bass = (chord.bass or chord.root).pitch_class
-                    self.assertEqual(voicing.bass_note % 12, bass)
-                    self.assertEqual({note % 12 for note in voicing.notes},
-                                     set(chord.voiced_pitch_classes) | {bass})
-                    self.assertTrue(all(0 <= note <= 127 for note in voicing.notes))
+        progressions = list_progressions()
+        self.assertEqual(len(progressions), 28)
+        for progression in progressions:
+            originals = progression.chord_definitions
+            for shift in range(12):
+                with self.subTest(progression=progression.prog_id, shift=shift):
+                    voiced = generate_progression_voicings(progression.transpose(shift))
+                    self.assertEqual(len(voiced), len(originals))
+                    self.assertEqual(len({len(v.notes) for v in voiced}), 1)
+                    for chord, voicing in zip(originals, voiced, strict=True):
+                        bass = ((chord.bass or chord.root).pitch_class + shift) % 12
+                        pitch_classes = {(pc + shift) % 12 for pc in chord.voiced_pitch_classes}
+                        self.assertEqual(min(voicing.notes) % 12, bass)
+                        self.assertEqual({note % 12 for note in voicing.notes}, pitch_classes | {bass})
+                        self.assertTrue(all(0 <= note <= 127 for note in voicing.notes))
 
     def test_no_invalid_fallback_and_midi_boundaries(self):
         with self.assertRaises(VoiceLeadingError):
             optimize_smooth_voice_leading([48, 55, 60, 64], {0, 4, 7}, bass_pc=1)
-        # Moving these boundary voices while keeping both pitch classes
-        # necessarily produces parallel octaves within the one-octave window.
+        # Moving these voices to pitch class 1 forces parallel octaves
+        # within the one-octave window.
         with self.assertRaises(VoiceLeadingError):
             optimize_smooth_voice_leading([0, 12], {1}, style=VoiceLeadingStyle.STRICT_COUNTERPOINT)
         self.assertEqual(optimize_smooth_voice_leading([0], {11}), [11])
         self.assertEqual(optimize_smooth_voice_leading([127], {8}), [116])
+        self.assertEqual(optimize_smooth_voice_leading([0], {0}), [0])
+        self.assertEqual(optimize_smooth_voice_leading([127], {7}), [127])
         for tuning in (0, -440, float("nan"), float("inf")):
             with self.subTest(tuning=tuning), self.assertRaises(MusicTheoryError):
                 midi_to_frequency(69, tuning)

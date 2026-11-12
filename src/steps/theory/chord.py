@@ -205,15 +205,21 @@ CHORD_TEMPLATES: Dict[str, Dict[str, any]] = {
 }
 
 
-def _build_alias_map() -> Dict[str, str]:
-    mapping = {}
-    for canon_name, data in CHORD_TEMPLATES.items():
-        mapping[canon_name.lower()] = canon_name
-        for alias in data['aliases']:
-            mapping[alias.lower()] = canon_name
-    return mapping
+ALIAS_MAP = {
+    alias: quality
+    for quality, template in CHORD_TEMPLATES.items()
+    for alias in (quality, *template['aliases'])
+}
+# Short M/m quality markers carry musical meaning in their case.
+_FOLDED_ALIASES = {
+    alias.lower(): quality
+    for alias, quality in ALIAS_MAP.items()
+    if not re.match(r"^[Mm](?:$|[0-9(])", alias)
+}
 
-ALIAS_MAP = _build_alias_map()
+
+def _resolve_quality(quality: str) -> str | None:
+    return ALIAS_MAP.get(quality, _FOLDED_ALIASES.get(quality.lower()))
 
 
 @dataclass(frozen=True)
@@ -271,7 +277,7 @@ class ChordDefinition:
     bass: Optional[NoteSpelling] = None
 
     def __post_init__(self):
-        norm_q = ALIAS_MAP.get(self.quality.lower())
+        norm_q = _resolve_quality(self.quality)
         if norm_q is None:
             raise ChordConstructionError(f"Unsupported chord quality: '{self.quality}'")
         # Override with canonical quality name
@@ -484,10 +490,10 @@ def parse_chord(symbol: str, convention: Literal['INT', 'DE', 'AUTO'] = 'AUTO') 
     # Remove enclosing parentheses from tensions if any: e.g. 7(b9) -> 7b9, 7(#11) -> 7#11
     quality_cleaned = re.sub(r"[()]", "", quality_raw)
     
-    # Direct lookup or alias lookup
-    canon_q = ALIAS_MAP.get(quality_cleaned.lower())
+    canon_q = _resolve_quality(quality_raw)
     if canon_q is None:
-        # Try without lowercase or look for longest prefix
+        canon_q = _resolve_quality(quality_cleaned)
+    if canon_q is None:
         raise ChordConstructionError(
             f"Unrecognized chord quality/extension '{quality_raw}' in symbol '{symbol}'."
         )
