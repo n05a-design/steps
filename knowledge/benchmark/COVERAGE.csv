@@ -1,20 +1,23 @@
-Bereich,Gesamt,Formal_geprüft,Formale_Befunde,Inventar_only,Fachlich_untersucht,Fachlich_bestätigt,Fachlich_beanstandet,Fachlich_offen
-Produktquellen,6,6,0,0,0,0,0,6
-Historisches Quellenregister,37,37,0,0,0,0,0,37
-Forschungsclaims,66,66,21,0,3,1,2,63
-Graphrelationen,97,97,97,0,0,0,0,97
-Akkordvorlagen,29,29,0,0,2,2,0,27
-Progressionskatalog,28,28,4,0,0,0,0,28
-Progressionspositionen,116,116,10,0,21,11,10,95
-Klaviermodule,19,19,0,0,2,0,2,17
-Drum-/Groove-Katalog,31,31,0,0,0,0,0,31
-Pilot-Lernaussagen,8,8,0,0,8,8,0,0
-App-Pilotbeispiele,3,3,0,0,3,3,0,0
-Lehrtext-/Themenstichproben,10,10,0,0,8,6,2,2
-Harmony-Coach-Fragen,5,5,0,0,0,0,0,5
-Historisches Dateiregister,1895,1895,20,0,0,0,0,1895
-Forschungsbestand,1811,0,0,1811,0,0,0,1811
-Archivbestand,285,0,0,285,0,0,0,285
-Quellenarchiv,8,0,0,8,0,0,0,8
-Legacy-Wissensbestand,3,0,0,3,0,0,0,3
-Historische Wissensaudits,70,0,0,70,0,0,0,70
+Bereich,Gesamt,Formal_geprüft,Formale_Befunde,Inventar_only,Fachlich_untersucht,Fachlich_bestätigt,Fachlich_beanstandet,Fachlich_offen,Fachlich_vollständig,Fachlich_Stichprobe,Fachlich_nicht_geprüft
+Produktquellen,6,6,0,0,0,0,0,6,0,0,6
+Historisches Quellenregister,37,37,1,0,0,0,0,37,0,0,37
+Forschungsclaims,66,66,21,0,3,1,2,63,0,3,63
+Graphrelationen,97,97,97,0,0,0,0,97,0,0,97
+Akkordvorlagen,29,29,0,0,2,2,0,27,0,2,27
+Progressionskatalog,28,28,4,0,0,0,0,28,0,0,28
+Progressionspositionen,116,116,10,0,21,11,10,95,0,21,95
+Klaviermodule,19,19,0,0,2,0,2,17,0,2,17
+Drum-/Groove-Katalog,31,31,0,0,0,0,0,31,0,0,31
+Pilot-Lernaussagen,8,8,0,0,8,8,0,0,0,8,0
+App-Pilotbeispiele,3,3,0,0,3,3,0,0,0,3,0
+Generierte Lerntexte,1,1,0,0,0,0,0,1,0,0,1
+Golden-Referenzfälle,198,198,0,0,0,0,0,198,0,0,198
+Lehrtext-/Themenstichproben,11,11,0,0,8,6,2,3,0,8,3
+Harmony-Coach-Fragen,12,12,0,0,0,0,0,12,0,0,12
+Historisches Dateiregister,1895,1895,20,0,0,0,0,1895,0,0,1895
+Forschungsbestand,1811,0,0,1811,0,0,0,1811,0,0,1811
+Archivbestand,285,0,0,285,0,0,0,285,0,0,285
+Quellenarchiv,8,0,0,8,0,0,0,8,0,0,8
+Legacy-Wissensbestand,3,0,0,3,0,0,0,3,0,0,3
+Historische Wissensaudits,70,0,0,70,0,0,0,70,0,0,70
+Historische strukturierte Dateien,209,209,1,0,0,0,0,209,0,0,209

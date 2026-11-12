@@ -25,7 +25,7 @@ in [cases.json](cases.json).
 Die hinterlegten Beispiele in `references/harmonic-analysis.md` und
 `references/chord-progressions.md` enthalten plausible Jazz- und Pop-Analysen.
 Das eigene `references/sources.md` führt weiterhin einen Buchplatzhalter.
-Fünf separate Fälle in [cases.json](cases.json) prüfen deshalb neben
+Zwölf separate Fälle in [cases.json](cases.json) prüfen deshalb neben
 Pflichtaussagen auch Alternativen, Kontextgrenzen und Quellen. Der Ergebnislauf
 weist sie als ausstehend aus, solange keine tatsächlichen Antworten und
 nachvollziehbare Bewertungen vorliegen.

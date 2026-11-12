@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 import csv
+from hashlib import sha256
 import json
 from math import isclose
 from pathlib import Path
@@ -23,6 +24,12 @@ DIR = ROOT / "knowledge/benchmark"
 PIANO = ROOT / "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md"
 CLAIMS = ROOT / "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv"
 STATUSES = ("PASS", "FAIL", "PENDING")
+SCOPES = ("pilot", "publication", "catalog", "sample", "coach")
+PUBLICATION_TESTS = {
+    "test_approved_fixture_publishes_same_version_and_content",
+    "test_unknown_source_blocks_every_entry",
+    "test_falsified_lesson_cannot_be_regenerated_with_previous_approval",
+}
 
 
 def require(condition, observed):
@@ -37,9 +44,9 @@ def load_cases():
     if data["schema_version"] != 1 or not cases or len({case["id"] for case in cases}) != len(cases):
         raise ValueError("Invalid benchmark version or duplicate case ID.")
     for case in cases:
-        if (not all(case[field].strip() for field in ("id", "content", "question", "basis", "method"))
+        if (not all(case[field].strip() for field in ("id", "content", "question", "basis", "method", "next_step"))
                 or not re.fullmatch(r"M(?:0[1-9]|1[0-2])", case["domain"])
-                or case["scope"] not in {"pilot", "catalog", "sample", "coach"}
+                or case["scope"] not in SCOPES
                 or not isinstance(case["variants"], list) or type(case["mandatory"]) is not bool
                 or "expected" not in case):
             raise ValueError(f"Incomplete benchmark case {case['id']}.")
@@ -50,24 +57,70 @@ def pitch_set(chord):
     return sorted(chord.pitch_class_set)
 
 
-def evaluate(case, examples, claims, coach):
+def case_fingerprint(case):
+    value = json.dumps(case, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return sha256(value.encode("utf-8")).hexdigest()
+
+
+def evaluate_manual(case, grade):
+    if grade is None:
+        return "PENDING", "Hör-, Spiel- oder Fachabnahme ausstehend."
+    if grade.get("fingerprint") != case_fingerprint(case):
+        return "PENDING", "Manuelle Abnahme bezieht sich auf eine andere Fassung."
+    if not all(isinstance(grade.get(key), str) and grade[key].strip()
+               for key in ("reviewer", "evidence", "observations")):
+        return "FAIL", "Person, konkreter Nachweis und Beobachtungen sind erforderlich."
+    if not isinstance(grade.get("git_sha"), str) or not re.fullmatch(r"[a-f0-9]{40}", grade["git_sha"]):
+        return "FAIL", "Der manuell geprüfte Git-SHA fehlt."
+    current = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    if grade["git_sha"] != current:
+        return "PENDING", "Die manuelle Abnahme dokumentiert einen anderen Git-Stand."
+    if grade.get("criteria") != dict.fromkeys(case["expected"], True):
+        return "FAIL", "Mindestens ein manuelles Pflichtkriterium fehlt oder ist beanstandet."
+    return "PASS", f"{grade['reviewer']} · {grade['evidence']} · {grade['observations']}"
+
+
+def evaluate(case, examples, claims, coach, manual):
     method, expected, data = case["method"], case["expected"], case["input"]
     if method == "manual":
-        return "PENDING", "Redaktionelle Prüfung ausstehend."
+        return evaluate_manual(case, manual.get(case["id"]))
     if method == "coach":
         grade = coach.get(case["id"])
         if grade is None:
             return "PENDING", "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
+        if grade.get("fingerprint") != case_fingerprint(case):
+            return "PENDING", "Coach-Bewertung bezieht sich auf eine andere Fassung."
         if not all(isinstance(grade.get(key), str) and grade[key].strip()
-                   for key in ("reviewer", "response", "source_evidence")):
-            return "FAIL", "Bewertung benötigt Person, Antwort und Nachweis zur Quellenprüfung."
+                   for key in ("reviewer", "response", "source_evidence", "model", "skill_revision", "run_evidence")):
+            return "FAIL", "Bewertung benötigt Person, Antwort, Quellenprüfung und Modell-/Skill-Version mit Laufbeleg."
         if grade.get("criteria") != {criterion: True for criterion in expected} or grade.get("sources_verified") is not True:
             return "FAIL", "Mindestens ein Pflichtbestandteil oder die Quellenprüfung fehlt."
-        return "PASS", f"Rubrik erfüllt laut dokumentierter Bewertung von {grade['reviewer']}."
+        return "PASS", {key: grade[key] for key in ("reviewer", "model", "skill_revision", "run_evidence", "source_evidence")}
 
     if case["scope"] == "pilot":
         require(case["id"] in claims, "Pilot claim ID fehlt im Produktdatensatz.")
-    if method == "notation":
+    if method == "publication_test":
+        test = data["test"]
+        if test not in PUBLICATION_TESTS:
+            raise ValueError(f"Unknown publication test {test}.")
+        command = (sys.executable, "-B", "-m", "unittest",
+                   f"tests.test_pilot_publication.PilotPublicationTests.{test}")
+        completed = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, timeout=30)
+        actual = require(completed.returncode == 0, completed.stderr.strip())
+    elif method == "degree_controls":
+        chords = [resolve_roman_degree(degree, data["key"], convention="INT") for degree in data["degrees"]]
+        actual = [[chord.symbol, pitch_set(chord)] for chord in chords]
+        require(actual == expected, actual)
+    elif method == "piano_control":
+        if data["type"] == "upper_structure":
+            upper = pitch_set(parse_chord("Fmaj7", "INT"))
+            actual = [upper, sorted({*upper, 2})]
+            require(actual[1] == pitch_set(parse_chord("Dm9", "INT")), actual)
+        else:
+            midi = [parse_spelling(note, "INT").midi_number for note in ("C#3", "C3", "B2", "A2", "G2")]
+            actual = [b - a for a, b in zip(midi, midi[1:])]
+        require(actual == expected, actual)
+    elif method == "notation":
         actual = [[parse_spelling(note, convention).midi_number for note, convention in zip(pair, ("DE", "INT"), strict=True)]
                   for pair in data["notes"]]
         require(actual == [[midi, midi] for midi in expected], actual)
@@ -105,7 +158,7 @@ def evaluate(case, examples, claims, coach):
             resolved = resolve_roman_degree(degree, key.removesuffix("m"), key.endswith("m"), convention="INT")
         except MusicTheoryError as exc:
             raise AssertionError(f"{degree} → {exc}; Symbolspalte {written}") from None
-        target = pitch_set(parse_chord(expected, "INT"))
+        target = expected["pitch_classes"]
         actual = {"stage": degree, "resolved": resolved.symbol, "written": written}
         require(pitch_set(resolved) == pitch_set(parse_chord(written, "INT")) == target, actual)
     elif method == "piano":
@@ -191,34 +244,49 @@ def review_sheet(cases, claims):
     return "\n".join(lines)
 
 
-def run(cases, examples, claims, coach):
+def run(cases, examples, claims, coach, manual=None):
     results = []
     for case in cases:
         try:
-            status, observed = evaluate(case, examples, claims, coach)
-        except (AssertionError, KeyError, TypeError, ValueError, MusicTheoryError, StopIteration) as exc:
+            status, observed = evaluate(case, examples, claims, coach, manual or {})
+        except (AssertionError, KeyError, TypeError, ValueError, MusicTheoryError, StopIteration, subprocess.TimeoutExpired) as exc:
             status, observed = "FAIL", exc.args[0] if exc.args else str(type(exc).__name__)
-        results.append({**case, "status": status, "observed": observed})
+        results.append({**case, "fingerprint": case_fingerprint(case), "status": status,
+                        "observed": observed, "next_step": case["next_step"] if status != "PASS" else ""})
     return results
 
 
 def markdown(report):
     lines = ["# STEPS-Wissensbenchmark · Ergebnis", "",
              f"Commit `{report['git_sha']}` · Arbeitsbaum {'mit Änderungen' if report['dirty'] else 'sauber'}.", "",
-             "| Pflichtinhalt | Freigabesperre |", "|---|---|",
-             *(f"| {content} | {', '.join(ids)} |" for content, ids in report["blocks"].items()), "",
-             "| Fall | Bereich | Inhalt | Ergebnis | Beobachtung |", "|---|---|---|---|---|"]
-    for r in report["results"]:
-        observed = str(r["observed"]).replace("|", r"\|").replace("\n", " ")
-        lines.append(f"| {r['id']} | {r['domain']} | {r['content']} | {r['status']} | {observed} |")
-    return "\n".join(lines) + "\n"
+             "| Bereich | Bestanden | Fehlgeschlagen | Ungeprüft |", "|---|---:|---:|---:|"]
+    for scope, totals in report["areas"].items():
+        lines.append(f"| {scope} | {totals['PASS']} | {totals['FAIL']} | {totals['PENDING']} |")
+    lines += ["", "| Pflichtinhalt | Freigabesperre |", "|---|---|",
+              *(f"| {content} | {', '.join(ids)} |" for content, ids in report["blocks"].items()), ""]
+    if report["coach_domains"]:
+        lines += ["## Harmony Coach · Domänenabdeckung", "",
+                  "| Domäne | Aufgaben | Antworten geprüft | Ausstehend |", "|---|---:|---:|---:|"]
+        for domain, totals in report["coach_domains"].items():
+            lines.append(f"| {domain} | {sum(totals.values())} | {totals['PASS'] + totals['FAIL']} | {totals['PENDING']} |")
+        lines.append("")
+    for scope in report["areas"]:
+        lines += [f"## {scope}", "", "| Fall | Domäne | Inhalt | Ergebnis | Beobachtung | Nächster Prüfschritt |",
+                  "|---|---|---|---|---|---|"]
+        for r in report["results"]:
+            if r["scope"] == scope:
+                observed = str(r["observed"]).replace("|", r"\|").replace("\n", " ")
+                lines.append(f"| {r['id']} | {r['domain']} | {r['content']} | {r['status']} | {observed} | {r['next_step']} |")
+        lines.append("")
+    return "\n".join(lines)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--scope", choices=("all", "pilot", "catalog", "sample", "coach"), default="all")
+    parser.add_argument("--scope", choices=("all", *SCOPES), default="all")
     parser.add_argument("--content")
     parser.add_argument("--coach-assessment", type=Path)
+    parser.add_argument("--manual-assessment", type=Path)
     parser.add_argument("--json-out", type=Path)
     parser.add_argument("--markdown-out", type=Path)
     sheet = parser.add_mutually_exclusive_group()
@@ -226,7 +294,14 @@ def main():
     sheet.add_argument("--check-review-sheet", type=Path)
     args = parser.parse_args()
     cases = load_cases()
-    examples, claims = reviewed._candidates()
+    candidate_error = None
+    try:
+        examples, claims = reviewed._candidates()
+    except reviewed.PublicationError as exc:
+        if args.review_sheet or args.check_review_sheet:
+            raise SystemExit(str(exc)) from None
+        examples, claims = {}, {}
+        candidate_error = str(exc)
     if args.review_sheet or args.check_review_sheet:
         content = review_sheet(cases, claims)
         if args.review_sheet:
@@ -235,22 +310,35 @@ def main():
             raise SystemExit("Pilot-Abnahmeliste ist veraltet. Mit --review-sheet aktualisieren.")
         return 0
     coach = json.loads(args.coach_assessment.read_text(encoding="utf-8")) if args.coach_assessment else {}
+    manual = json.loads(args.manual_assessment.read_text(encoding="utf-8")) if args.manual_assessment else {}
     pilot_ids = {case["id"] for case in cases if case["scope"] == "pilot" and case["mandatory"]}
-    if pilot_ids != claims.keys():
+    if candidate_error is None and pilot_ids != claims.keys():
         parser.error("Pflichtfälle des Pilotbenchmarks müssen alle Pilot-Claims abdecken.")
     selected = [case for case in cases if args.scope in {"all", case["scope"]}
                 and (args.content is None or args.content == case["content"])]
     if not selected:
         parser.error("Keine Benchmarkfälle in dieser Auswahl.")
-    results = run(selected, examples, claims, coach)
+    results = run(selected, examples, claims, coach, manual)
+    if candidate_error:
+        for result in results:
+            if result["scope"] == "pilot":
+                result["observed"] = candidate_error
     blocks = {}
     for result in results:
         if result["mandatory"] and result["status"] != "PASS":
             blocks.setdefault(result["content"], []).append(result["id"])
     counts = Counter(r["status"] for r in results)
-    report = {"schema_version": 1, "git_sha": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
+    areas = {}
+    for scope in dict.fromkeys(r["scope"] for r in results):
+        by_status = Counter(r["status"] for r in results if r["scope"] == scope)
+        areas[scope] = {status: by_status[status] for status in STATUSES}
+    coach_domains = {}
+    for domain in sorted({r["domain"] for r in results if r["scope"] == "coach"}):
+        by_status = Counter(r["status"] for r in results if r["scope"] == "coach" and r["domain"] == domain)
+        coach_domains[domain] = {status: by_status[status] for status in STATUSES}
+    report = {"schema_version": 2, "coach_domains": coach_domains, "git_sha": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
               "dirty": bool(subprocess.check_output(["git", "status", "--porcelain", "--untracked-files=no"], cwd=ROOT)),
-              "scope": args.scope, "counts": {s: counts[s] for s in STATUSES}, "blocks": blocks, "results": results}
+              "scope": args.scope, "areas": areas, "counts": {s: counts[s] for s in STATUSES}, "blocks": blocks, "results": results}
     if args.json_out:
         args.json_out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if args.markdown_out:
