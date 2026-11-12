@@ -1,4 +1,47 @@
 {
   "schema_version": 1,
-  "approvals": {}
+  "approvals": {
+    "PILOT-NOTATION-001": {
+      "fingerprint": "c7e2d362ebaf417bd7d1825eec0660d18ee9876cc519ecc3c2a9c47f7acd1d52",
+      "reviewer": "n05a-design",
+      "reviewed_on": "2026-11-12",
+      "evidence_url": "https://github.com/n05a-design/steps/pull/11#issuecomment-6833747279"
+    },
+    "PROG-001-HARMONY": {
+      "fingerprint": "7119ef6ba5e307541ddb848668f6cf9c7030cd252bc53279566f4c93a645e2ec",
+      "reviewer": "n05a-design",
+      "reviewed_on": "2026-11-12",
+      "evidence_url": "https://github.com/n05a-design/steps/pull/11#issuecomment-6833747279"
+    },
+    "PROG-003-HARMONY": {
+      "fingerprint": "e58aae0c9337cc7d0d043e8ad8df35c411fe5dc4301153e6f5c14dcce8d75037",
+      "reviewer": "n05a-design",
+      "reviewed_on": "2026-11-12",
+      "evidence_url": "https://github.com/n05a-design/steps/pull/11#issuecomment-6833747279"
+    },
+    "PROG-003-VOICE-II-V": {
+      "fingerprint": "9afdbfa8083cb0817dcba7c5a263d96a0f79b36dae98617d3ff07ce8fb5c5f07",
+      "reviewer": "n05a-design",
+      "reviewed_on": "2026-11-12",
+      "evidence_url": "https://github.com/n05a-design/steps/pull/11#issuecomment-6833747279"
+    },
+    "PROG-003-VOICE-V-I": {
+      "fingerprint": "f60c73fd68e282cbd83da983fb48eba09f967328a164c60f78379098a63f09ad",
+      "reviewer": "n05a-design",
+      "reviewed_on": "2026-11-12",
+      "evidence_url": "https://github.com/n05a-design/steps/pull/11#issuecomment-6833747279"
+    },
+    "PROG-009-HARMONY": {
+      "fingerprint": "3c8871af475486fd2c6abf7ded583b5ca81d5d227fff85baec4ee0e47f21ed2b",
+      "reviewer": "n05a-design",
+      "reviewed_on": "2026-11-12",
+      "evidence_url": "https://github.com/n05a-design/steps/pull/11#issuecomment-6833747279"
+    },
+    "PROG-009-VOICE-LEADING": {
+      "fingerprint": "b8f2c236c4c034d449003c57235bf5d1f60655dcc201ab23e19c3fd75182f39d",
+      "reviewer": "n05a-design",
+      "reviewed_on": "2026-11-12",
+      "evidence_url": "https://github.com/n05a-design/steps/pull/11#issuecomment-6833747279"
+    }
+  }
 }

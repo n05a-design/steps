@@ -1,6 +1,6 @@
 # Pilot · fachliche Abnahmeliste
 
-**Dokumentierte Freigaben im Register: 0 von 8.**
+**Dokumentierte Freigaben im Register: 7 von 8.**
 
 Je Aussage im Draft-PR entscheiden: freigegeben, Korrektur erforderlich oder Beleg fehlt.
 Für jede Freigabe Claim-ID und vollständigen Fassungsfingerabdruck angeben.
@@ -8,7 +8,7 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 
 ## PILOT-NOTATION-001
 
-- Stand · Ausstehend
+- Stand · Freigabe eingetragen
 - Art · `convention`
 - Fassung · `c7e2d362ebaf417bd7d1825eec0660d18ee9876cc519ecc3c2a9c47f7acd1d52`
 - Wortlaut · Akkordsymbole verwenden internationale Schreibweise. In deutschen Notennamen entsprechen H und B dem internationalen B und B♭, As entspricht A♭.
@@ -18,10 +18,11 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 - Prüffrage · Welche internationalen Notennamen und MIDI-Werte entsprechen H3, B3 und As4 auf Deutsch?
 - Sollantwort · `[59, 58, 68]`
 - Herleitung · Yale University Library, The names of keys, S. 1, Zeilen A flat, B flat und B. C4=60, dann Halbtonabstände.
+- Entscheidung · [n05a-design](https://github.com/n05a-design/steps/pull/11#issuecomment-6833747279) · 2026-11-12
 
 ## PROG-001-HARMONY
 
-- Stand · Ausstehend
+- Stand · Freigabe eingetragen
 - Art · `fact`
 - Fassung · `7119ef6ba5e307541ddb848668f6cf9c7030cd252bc53279566f4c93a645e2ec`
 - Wortlaut · Unter der Annahme C-Dur entsprechen C–G–Am–F den Stufen I–V–vi–IV.
@@ -32,6 +33,7 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 - Prüffrage · Welche Stufen, Akkorde und Tonklassen enthält PROG-001 in C-Dur?
 - Sollantwort · `{"stages": ["I", "V", "vi", "IV"], "chords": ["C", "G", "Am", "F"], "pitch_classes": [[0, 4, 7], [2, 7, 11], [0, 4, 9], [0, 5, 9]]}`
 - Herleitung · C-Dur-Diatonik und Terzschichtung. Open Music Theory, Roman Numerals, Example 3 und Four-Chord Schemas, Singer/Songwriter Schema.
+- Entscheidung · [n05a-design](https://github.com/n05a-design/steps/pull/11#issuecomment-6833747279) · 2026-11-12
 
 ## PROG-001-TONAL-CENTER
 
@@ -48,7 +50,7 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 
 ## PROG-003-HARMONY
 
-- Stand · Ausstehend
+- Stand · Freigabe eingetragen
 - Art · `fact`
 - Fassung · `e58aae0c9337cc7d0d043e8ad8df35c411fe5dc4301153e6f5c14dcce8d75037`
 - Wortlaut · Dm7–G7–Cmaj7 bildet in C-Dur die Jazzfolge ii⁷–V⁷–Imaj7.
@@ -58,10 +60,11 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 - Prüffrage · Welche Stufen, Akkorde und Tonklassen enthält PROG-003 in C-Dur?
 - Sollantwort · `{"stages": ["ii^7", "V^7", "I^maj7"], "chords": ["Dm7", "G7", "Cmaj7"], "pitch_classes": [[0, 2, 5, 9], [2, 5, 7, 11], [0, 4, 7, 11]]}`
 - Herleitung · Terzschichtung über D, G, C. Open Music Theory, ii–V–I, Key Takeaways zur Dur-Variante.
+- Entscheidung · [n05a-design](https://github.com/n05a-design/steps/pull/11#issuecomment-6833747279) · 2026-11-12
 
 ## PROG-003-VOICE-II-V
 
-- Stand · Ausstehend
+- Stand · Freigabe eingetragen
 - Art · `fact`
 - Fassung · `9afdbfa8083cb0817dcba7c5a263d96a0f79b36dae98617d3ff07ce8fb5c5f07`
 - Wortlaut · Eine mögliche Stimme sinkt von C im Dm7 zu H im G7 um einen Halbton.
@@ -71,10 +74,11 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 - Prüffrage · Welche Akkorde tragen die angegebene Stimme und um wie viele Halbtöne sinkt sie je Übergang?
 - Sollantwort · `{"path": [[0, "C4"], [1, "H3"]], "midi": [60, 59], "delta": [-1]}`
 - Herleitung · Dm7 enthält C, G7 enthält H. 59−60=−1. OMT ii–V–I stützt Akkordqualitäten, die konkrete Stimme ist abgeleitet.
+- Entscheidung · [n05a-design](https://github.com/n05a-design/steps/pull/11#issuecomment-6833747279) · 2026-11-12
 
 ## PROG-003-VOICE-V-I
 
-- Stand · Ausstehend
+- Stand · Freigabe eingetragen
 - Art · `fact`
 - Fassung · `f60c73fd68e282cbd83da983fb48eba09f967328a164c60f78379098a63f09ad`
 - Wortlaut · Eine mögliche Stimme sinkt von F im G7 zu E im Cmaj7 um einen Halbton.
@@ -84,10 +88,11 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 - Prüffrage · Welche Akkorde tragen die angegebene Stimme und um wie viele Halbtöne sinkt sie je Übergang?
 - Sollantwort · `{"path": [[1, "F4"], [2, "E4"]], "midi": [65, 64], "delta": [-1]}`
 - Herleitung · G7 enthält F, Cmaj7 enthält E. 64−65=−1. OMT ii–V–I stützt Akkordqualitäten, die konkrete Stimme ist abgeleitet.
+- Entscheidung · [n05a-design](https://github.com/n05a-design/steps/pull/11#issuecomment-6833747279) · 2026-11-12
 
 ## PROG-009-HARMONY
 
-- Stand · Ausstehend
+- Stand · Freigabe eingetragen
 - Art · `fact`
 - Fassung · `3c8871af475486fd2c6abf7ded583b5ca81d5d227fff85baec4ee0e47f21ed2b`
 - Wortlaut · C–F–Fm–C realisiert in C-Dur I–IV–iv–I mit einer Mollsubdominante.
@@ -97,10 +102,11 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 - Prüffrage · Welche Stufen, Akkorde und Tonklassen enthält PROG-009 in C-Dur?
 - Sollantwort · `{"stages": ["I", "IV", "iv", "I"], "chords": ["C", "F", "Fm", "C"], "pitch_classes": [[0, 4, 7], [0, 5, 9], [0, 5, 8], [0, 4, 7]]}`
 - Herleitung · Dreiklänge mit unverändertem F-Grundton und abgesenkter Terz. Open Music Theory, Blues-Based Schemas, Plagal Sigh.
+- Entscheidung · [n05a-design](https://github.com/n05a-design/steps/pull/11#issuecomment-6833747279) · 2026-11-12
 
 ## PROG-009-VOICE-LEADING
 
-- Stand · Ausstehend
+- Stand · Freigabe eingetragen
 - Art · `fact`
 - Fassung · `b8f2c236c4c034d449003c57235bf5d1f60655dcc201ab23e19c3fd75182f39d`
 - Wortlaut · Eine mögliche Stimme verbindet A in F-Dur, As in F-Moll und G in C-Dur durch zwei absteigende Halbtonschritte.
@@ -110,3 +116,4 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 - Prüffrage · Welche Akkorde tragen die angegebene Stimme und um wie viele Halbtöne sinkt sie je Übergang?
 - Sollantwort · `{"path": [[1, "A4"], [2, "As4"], [3, "G4"]], "midi": [69, 68, 67], "delta": [-1, -1]}`
 - Herleitung · Terzen von F/Fm und Quinte von C. OMT Blues-Based Schemas, Plagal Sigh, 6–♭6–5.
+- Entscheidung · [n05a-design](https://github.com/n05a-design/steps/pull/11#issuecomment-6833747279) · 2026-11-12
