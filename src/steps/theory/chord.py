@@ -257,13 +257,21 @@ class Voicing:
         return Voicing(notes=transposed, voicing_type=self.voicing_type, bass_override=transposed_bass)
 
     def invert(self, inversion: int) -> Voicing:
-        sorted_notes = list(sorted(self.notes))
-        n = len(sorted_notes)
-        inv = inversion % n
-        if inv == 0:
+        """Rotate the lowest voices above the top, keeping their pitch classes.
+
+        The rotation count wraps modulo voice count. This operation uses
+        register order and does not infer a harmonic root. If the result
+        cannot fit in MIDI 0..127, it raises VoiceLeadingError.
+        """
+        notes = self.midi_notes
+        count = inversion % len(notes)
+        if count == 0:
             return self
-        rotated = sorted_notes[inv:] + [pitch + 12 for pitch in sorted_notes[:inv]]
-        return Voicing(notes=tuple(sorted(rotated)), voicing_type=self.voicing_type)
+        rotated = notes[count:]
+        for note in notes[:count]:
+            octaves = (rotated[-1] - note) // 12 + 1
+            rotated.append(note + 12 * octaves)
+        return Voicing(tuple(rotated), self.voicing_type)
 
 
 @dataclass(frozen=True)
@@ -449,24 +457,17 @@ def parse_chord(symbol: str, convention: Literal['INT', 'DE', 'AUTO'] = 'AUTO') 
     root_spelling: Optional[NoteSpelling] = None
     remaining: str = ''
     
-    # Check if string starts with standard sus keyword - if so, it's not German accidental
-    is_sus = bool(re.match(r"^[A-Ga-g]sus", cleaned, re.IGNORECASE))
-    
-    # German detection
-    is_german = False
-    if not is_sus:
-        if convention == 'DE':
-            is_german = True
-        elif convention == 'AUTO':
-            if cleaned.startswith(('H', 'h')):
-                is_german = True
-            elif re.match(r"^[A-Ga-g](isis|is|eses|es)[a-z0-9]", cleaned, re.IGNORECASE):
-                is_german = True
-            elif re.match(r"^[EAea](s|ses)[a-z0-9]", cleaned, re.IGNORECASE):
-                is_german = True
-                
+    # In AUTO, A/E followed by "sus" does not indicate a German flat.
+    named_accidental = re.match(
+        r"^(?:[A-G](?:isis|is|eses|es)|[AE](?:ses|s(?!us)))[a-z0-9]",
+        cleaned, re.IGNORECASE,
+    )
+    is_german = convention == 'DE' or (
+        convention == 'AUTO' and (cleaned.startswith(('H', 'h')) or named_accidental)
+    )
+
     if is_german:
-        m_de = re.match(r"^([A-Ha-h](?:isis|is|eses|ses|es|s)?)(.*)$", cleaned)
+        m_de = re.match(r"^([A-H](?:isis|is|eses|ses|es|s(?!us))?)(.*)$", cleaned, re.IGNORECASE)
         if m_de:
             root_candidate = m_de.group(1)
             try:
@@ -487,6 +488,8 @@ def parse_chord(symbol: str, convention: Literal['INT', 'DE', 'AUTO'] = 'AUTO') 
 
     # Normalize remaining quality string
     quality_raw = remaining.strip()
+    if not re.fullmatch(r"(?:[^()]|\([^()]+\))*", quality_raw):
+        raise ChordConstructionError(f"Malformed parentheses in chord symbol '{symbol}'.")
     # Remove enclosing parentheses from tensions if any: e.g. 7(b9) -> 7b9, 7(#11) -> 7#11
     quality_cleaned = re.sub(r"[()]", "", quality_raw)
     

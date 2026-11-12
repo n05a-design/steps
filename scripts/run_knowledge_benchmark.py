@@ -16,19 +16,25 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from src.steps.progression import get_progression, resolve_roman_degree
+from src.steps.progression import analyze_progression_voice_leading, get_progression, resolve_roman_degree
 from src.steps.progression import reviewed
-from src.steps.theory import MusicTheoryError, midi_to_frequency, parse_chord, parse_spelling
+from src.steps.theory import MusicTheoryError, Voicing, midi_to_frequency, parse_chord, parse_spelling
 
 DIR = ROOT / "knowledge/benchmark"
 PIANO = ROOT / "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md"
 CLAIMS = ROOT / "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv"
 STATUSES = ("PASS", "FAIL", "PENDING")
-SCOPES = ("pilot", "publication", "catalog", "sample", "coach")
+SCOPES = ("pilot", "publication", "catalog", "sample", "coach", "api")
 PUBLICATION_TESTS = {
     "test_approved_fixture_publishes_same_version_and_content",
     "test_unknown_source_blocks_every_entry",
     "test_falsified_lesson_cannot_be_regenerated_with_previous_approval",
+}
+
+API_TESTS = {
+    "test_sus_chords_respect_explicit_notation",
+    "test_chord_tensions_require_balanced_parentheses",
+    "test_voicing_invert_rotates_voices_above_original_top",
 }
 
 
@@ -99,14 +105,40 @@ def evaluate(case, examples, claims, coach, manual):
 
     if case["scope"] == "pilot":
         require(case["id"] in claims, "Pilot claim ID fehlt im Produktdatensatz.")
-    if method == "publication_test":
+    if method in {"publication_test", "api_test"}:
         test = data["test"]
-        if test not in PUBLICATION_TESTS:
-            raise ValueError(f"Unknown publication test {test}.")
-        command = (sys.executable, "-B", "-m", "unittest",
-                   f"tests.test_pilot_publication.PilotPublicationTests.{test}")
+        target, allowed = (
+            ("tests.test_pilot_publication.PilotPublicationTests", PUBLICATION_TESTS)
+            if method == "publication_test" else
+            ("tests.test_theory_core.TestTheoryCoreChordEngine", API_TESTS)
+        )
+        if test not in allowed:
+            raise ValueError(f"Unknown benchmark regression test {test}.")
+        command = (sys.executable, "-B", "-m", "unittest", f"{target}.{test}")
         completed = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, timeout=30)
         actual = require(completed.returncode == 0, completed.stderr.strip())
+    elif method == "api_contract":
+        probe = data["probe"]
+        if probe == "auto":
+            actual = {}
+            for symbol in ("Cis", "Es", "Es7"):
+                for locale in ("DE", "AUTO"):
+                    try:
+                        actual[f"{symbol}/{locale}"] = parse_chord(symbol, locale).symbol
+                    except MusicTheoryError as exc:
+                        actual[f"{symbol}/{locale}"] = str(exc)
+        elif probe == "analysis":
+            voicing = Voicing((48, 52, 55))
+            actual = {"empty": sorted(analyze_progression_voice_leading([])),
+                      "two": sorted(analyze_progression_voice_leading([voicing, voicing]))}
+        elif probe == "compound":
+            actual = {symbol: parse_chord(symbol).theoretical_intervals for symbol in ("Cadd9", "C7(#11)", "C9")}
+        elif probe == "drop2":
+            chord = parse_chord("C13")
+            actual = {layout: chord.to_voicing(3, layout).notes for layout in ("CLOSE", "DROP2")}
+        else:
+            raise ValueError(f"Unknown API contract probe {probe}.")
+        return "PENDING", actual
     elif method == "degree_controls":
         chords = [resolve_roman_degree(degree, data["key"], convention="INT") for degree in data["degrees"]]
         actual = [[chord.symbol, pitch_set(chord)] for chord in chords]

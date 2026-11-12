@@ -1280,6 +1280,180 @@
       "input": {},
       "mandatory": true,
       "next_step": "COACH-12 mit festgehaltenem Modell und dem historischen Skill ausführen, Rohantwort sichern und anhand der Sollbestandteile fachlich bewerten."
+    },
+    {
+      "id": "KB-API-SUS-NOTATION",
+      "scope": "api",
+      "content": "Theory-API",
+      "domain": "M04",
+      "question": "Welche Grundtöne und Intervalle ergeben sus, sus2 und sus4 mit B/H in DE und B/Bb in INT?",
+      "expected": {
+        "DE": {
+          "B": 10,
+          "H": 11
+        },
+        "INT": {
+          "B": 11,
+          "Bb": 10
+        },
+        "sus": [
+          0,
+          5,
+          7
+        ],
+        "sus2": [
+          0,
+          2,
+          7
+        ]
+      },
+      "variants": [
+        "Die jeweils dokumentierte Konvention gilt."
+      ],
+      "basis": "Deutsche und internationale Notennamen, sus4 ohne Terz mit Quarte, sus2 mit Sekunde.",
+      "method": "api_test",
+      "input": {
+        "test": "test_sus_chords_respect_explicit_notation"
+      },
+      "mandatory": true,
+      "next_step": "Alle zwölf Symbol-/Locale-Kombinationen erneut prüfen."
+    },
+    {
+      "id": "KB-API-PARENTHESES",
+      "scope": "api",
+      "content": "Theory-API",
+      "domain": "M04",
+      "question": "Wird C7((b9) abgewiesen und C7(b9) gelesen?",
+      "expected": {
+        "C7((b9)": "REJECT",
+        "C7(b9)": [
+          0,
+          4,
+          7,
+          10,
+          13
+        ]
+      },
+      "variants": [
+        "Die jeweils dokumentierte Konvention gilt."
+      ],
+      "basis": "Syntax der Akkordsymbole und kleine None = 13 Halbtöne.",
+      "method": "api_test",
+      "input": {
+        "test": "test_chord_tensions_require_balanced_parentheses"
+      },
+      "mandatory": true,
+      "next_step": "Klammerprüfung vor Normalisierung und gültige Schreibvarianten prüfen."
+    },
+    {
+      "id": "KB-API-OPEN-ROTATION",
+      "scope": "api",
+      "content": "Theory-API",
+      "domain": "M04",
+      "question": "Was ergibt eine zyklische Rotation des offenen Voicings 48,67,76?",
+      "expected": {
+        "notes": [
+          67,
+          76,
+          84
+        ],
+        "bass": 67,
+        "pitch_classes": [
+          0,
+          4,
+          7
+        ]
+      },
+      "variants": [
+        "Die jeweils dokumentierte Konvention gilt."
+      ],
+      "basis": "C3 wird über E5 bis C6 angehoben. Der nächste tiefste Ton G4 bleibt liegen.",
+      "method": "api_test",
+      "input": {
+        "test": "test_voicing_invert_rotates_voices_above_original_top"
+      },
+      "mandatory": true,
+      "next_step": "Offene und enge Lage, Pitch-Class-Erhalt und MIDI-Obergrenze prüfen."
+    },
+    {
+      "id": "KB-CONTRACT-AUTO",
+      "scope": "api",
+      "content": "Theory-API",
+      "domain": "M04",
+      "question": "Soll AUTO nackte deutsche Vorzeichennamen wie Cis akzeptieren?",
+      "expected": {
+        "proposal": "Cis und Es explizit erkennen. Mehrdeutiges B ohne Locale als dokumentierten Kompatibilitätsfall behandeln."
+      },
+      "variants": [
+        "Die jeweils dokumentierte Konvention gilt."
+      ],
+      "basis": "DE und AUTO an Cis, Es und Es7 vergleichen.",
+      "method": "api_contract",
+      "input": {
+        "probe": "auto"
+      },
+      "mandatory": false,
+      "next_step": "Parserdialekt beschließen und Regression für einfache deutsche Vorzeichennamen ergänzen."
+    },
+    {
+      "id": "KB-CONTRACT-ANALYSIS",
+      "scope": "api",
+      "content": "Theory-API",
+      "domain": "M06",
+      "question": "Welche Analysefelder liefert die API bei null, einer oder mehreren Lagen?",
+      "expected": {
+        "proposal": "Ein einheitliches Ergebnisobjekt mit Nullwerten für fehlende Übergänge und gegebenenfalls Übergangsaliassen."
+      },
+      "variants": [
+        "Die jeweils dokumentierte Konvention gilt."
+      ],
+      "basis": "Öffentliche Stimmführungsanalyse mit null und zwei Voicings.",
+      "method": "api_contract",
+      "input": {
+        "probe": "analysis"
+      },
+      "mandatory": false,
+      "next_step": "Konsumenten und Namensmigration prüfen, dann API-Schema festlegen."
+    },
+    {
+      "id": "KB-CONTRACT-COMPOUND",
+      "scope": "api",
+      "content": "Theory-API",
+      "domain": "M04",
+      "question": "Transportiert theoretical_intervals Intervallgröße oder modulo 12 normalisierte Werte?",
+      "expected": {
+        "proposal": "Add9 und ♯11 als 14 bzw. 18 ausweisen; Tonklassen-API weiterhin modulo 12."
+      },
+      "variants": [
+        "Die jeweils dokumentierte Konvention gilt."
+      ],
+      "basis": "Große None = 14, übermäßige Undezime = 18 Halbtöne.",
+      "method": "api_contract",
+      "input": {
+        "probe": "compound"
+      },
+      "mandatory": false,
+      "next_step": "Vertrag zu add2/add9 und vorhandenen Rezepten dokumentieren, dann Intervall- und Voicing-Tests trennen."
+    },
+    {
+      "id": "KB-CONTRACT-DROP2",
+      "scope": "api",
+      "content": "Theory-API",
+      "domain": "M04",
+      "question": "Welche Spannungen muss DROP2 bei C13 erhalten?",
+      "expected": {
+        "proposal": "Die charakteristische Tredezime erhalten oder den erweiterten Akkord im Layout explizit ablehnen."
+      },
+      "variants": [
+        "Die jeweils dokumentierte Konvention gilt."
+      ],
+      "basis": "A ist die Tredezime von C und liegt bei CLOSE in der Tonklassenausgabe.",
+      "method": "api_contract",
+      "input": {
+        "probe": "drop2"
+      },
+      "mandatory": false,
+      "next_step": "Auswahl der vier Stimmen fachlich beschließen und C13 samt Slash-Bass absichern."
     }
   ]
 }
