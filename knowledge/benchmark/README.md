@@ -13,6 +13,8 @@ Benchmark-Prüffälle benötigen sie nicht.
 python -B scripts/run_knowledge_benchmark.py --scope all --json-out /tmp/steps-benchmark.json --markdown-out /tmp/steps-benchmark.md
 python -B scripts/run_knowledge_benchmark.py --scope pilot
 python -B scripts/run_knowledge_benchmark.py --scope publication
+python -B scripts/run_knowledge_benchmark.py --scope api
+python -B scripts/run_knowledge_benchmark.py --scope backlog
 python -B scripts/run_knowledge_benchmark.py --content PROG-008
 python -B scripts/run_knowledge_benchmark.py --scope coach --markdown-out /tmp/steps-coach.md
 

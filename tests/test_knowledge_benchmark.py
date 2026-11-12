@@ -47,6 +47,14 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
             result, = benchmark.run([case], self.examples, self.claims, input_data)
             self.assertEqual(result["status"], status)
 
+    def test_corrected_catalog_and_learning_cases(self):
+        contents = {"PROG-008", "PROG-016", "PROG-020", "PROG-027", "P12", "P19", "PAT-026"}
+        cases = [case for case in self.cases if case["scope"] == "catalog" and case["content"] in contents]
+        self.assertEqual({case["content"] for case in cases}, contents)
+        for result in benchmark.run(cases, self.examples, self.claims, {}):
+            with self.subTest(case=result["id"]):
+                self.assertEqual(result["status"], "PASS", result["observed"])
+
     def test_manual_evidence_is_bound_to_case_and_revision(self):
         case = next(case for case in self.cases if case["method"] == "manual")
         grade = {

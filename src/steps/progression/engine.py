@@ -98,7 +98,7 @@ _HISTORICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
     {
         'id': 'PROG-008',
         'name': '12-Bar Blues',
-        'roman': 'I^7 - IV^7 - I^7 - V^7 - IV^7 - I^7',
+        'roman': 'Idom7 - IVdom7 - Idom7 - V^7 - IVdom7 - Idom7',
         'default_key': 'C',
         'chords': 'C7 - F7 - C7 - G7 - F7 - C7',
         'context': "Traditional Blues, Rock'n'Roll",
@@ -170,9 +170,9 @@ _HISTORICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
     {
         'id': 'PROG-016',
         'name': 'Coltrane Changes (3-Tonic Cycle)',
-        'roman': 'I^maj7 - V^7/bVI - bVI^maj7 - V^7/III - III^maj7',
+        'roman': 'I^maj7 - V^7/bVI - bVI^maj7 - V^7/bIV - bIV^maj7',
         'default_key': 'B',
-        'chords': 'B - D7 - G - Bb7 - Eb',
+        'chords': 'Bmaj7 - D7 - Gmaj7 - Bb7 - Ebmaj7',
         'context': 'Modern Jazz Matrix (Großterzteilung in Z12)',
         'sources': 'Cohn (2012), Tymoczko (2011)'
     },
@@ -206,7 +206,7 @@ _HISTORICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
     {
         'id': 'PROG-020',
         'name': 'Extended Tritone Sub (Altered)',
-        'roman': 'ii^9 - bII^7(alt) - I^maj9',
+        'roman': 'ii^9 - bII^7(#11) - I^maj9',
         'default_key': 'C',
         'chords': 'Dm9 - Db7(#11) - Cmaj9',
         'context': 'Contemporary Jazz',
@@ -269,7 +269,7 @@ _HISTORICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
     {
         'id': 'PROG-027',
         'name': 'Minor Jazz Blues Submediant Turnaround',
-        'roman': 'i^7 - iv^7 - i^7 - bVI^maj7 - V^7(alt) - i^7',
+        'roman': 'i^7 - iv^7 - i^7 - bVI^maj7 - V^7(#11) - i^7',
         'default_key': 'Cm',
         'chords': 'Cm7 - Fm7 - Cm7 - Abmaj7 - G7(#11) - Cm7',
         'context': "Minor Blues (Birk's Works, Footprints)",

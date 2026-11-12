@@ -604,7 +604,14 @@
           4,
           5,
           9
-        ]
+        ],
+        "upper_notes": [
+          0,
+          4,
+          5,
+          9
+        ],
+        "bass": 2
       },
       "variants": [
         "Rootless kann sich auf die rechte Hand beziehen."
@@ -622,17 +629,27 @@
       "scope": "catalog",
       "content": "P19",
       "domain": "M10",
-      "question": "Welche Schritte enthält C♯3–C3–H2–A2–G2?",
-      "expected": [
-        -1,
-        -1,
-        -2,
-        -2
-      ],
+      "question": "Welche Dominantlage spielt P19 in G-Dur, und welche Schritte enthält C♯3–C3–H2–A2–G2?",
+      "expected": {
+        "delta": [
+          -1,
+          -1,
+          -2,
+          -2
+        ],
+        "dominant": "D7/A",
+        "bass": 9,
+        "dominant_tones": [
+          0,
+          2,
+          6,
+          9
+        ]
+      },
       "variants": [
         "Gemischt chromatisch und diatonisch; H kann in internationaler Notation B heißen."
       ],
-      "basis": "P19 der Klavierbibliothek, MIDI 49,48,47,45,43.",
+      "basis": "PROG-026 und die notierte Spielübung in P19. D7 = D–Fis–A–C, im zweiten Umkehrungsbass liegt A. MIDI 49,48,47,45,43.",
       "method": "piano",
       "input": {
         "id": "P19"
@@ -1454,6 +1471,316 @@
       },
       "mandatory": false,
       "next_step": "Auswahl der vier Stimmen fachlich beschließen und C13 samt Slash-Bass absichern."
+    },
+    {
+      "id": "KB-PAT-026-TICKS",
+      "scope": "catalog",
+      "content": "PAT-026",
+      "domain": "M07",
+      "question": "Welchen zweiten Onset und welchen Offset ergeben 64 % Swing bei 480 PPQ im 16tel-Paar?",
+      "expected": {
+        "ppq": 480,
+        "onset": 154,
+        "offset": 34
+      },
+      "variants": [
+        "154 Ticks ab Paarbeginn, +34 gegenüber dem geraden Onset."
+      ],
+      "basis": "Zwei Sechzehntel ergeben 240 Ticks. 240 × 64/100 = 153,6 → 154. Gerader Onset 120.",
+      "method": "drum_ticks",
+      "input": {
+        "percent": 64
+      },
+      "mandatory": true,
+      "next_step": "Die Swing-Position im benannten 480-PPQ-Raster rechnen und den Pattern-Text mit Onset und Offset abgleichen."
+    },
+    {
+      "id": "KB-SRC-033-PROVENANCE",
+      "scope": "backlog",
+      "content": "SRC-033",
+      "domain": "M03",
+      "question": "Ist die behauptete Robert-Prehn-Fundstelle identifizierbar?",
+      "expected": [
+        "Autor, Werk und konkrete Fundstelle bestätigt",
+        "Geltungsgrenze der Vier-Familien-Taxonomie dokumentiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Historisches Quellenregister SRC-033 und der alternative Lehrbeleg https://www.newjazz.dk/.",
+      "method": "manual",
+      "input": {
+        "claims": [
+          "CLAIM-003",
+          "CLAIM-004",
+          "CLAIM-005",
+          "CLAIM-006",
+          "CLAIM-016"
+        ]
+      },
+      "mandatory": true,
+      "next_step": "Die angegebene Publikation bibliografisch suchen und von Oliver Prehns Lehrseite abgrenzen. Unbelegte Zuschreibungen entfernen oder als offen führen."
+    },
+    {
+      "id": "KB-CLAIM-032-MINOR",
+      "scope": "backlog",
+      "content": "CLAIM-032",
+      "domain": "M06",
+      "question": "Gilt die Halbtonregel für beide Stimmführungen auch im Moll-ii–V–i?",
+      "expected": [
+        "Dur und Moll getrennt",
+        "G7 nach Cm7 mit F→Es als Ganzton-Gegenfall"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Historisches Claim-Register CLAIM-032. Open Music Theory ii–V–I, Abschnitt zur Mollvariante.",
+      "method": "manual",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Die Behauptung ausdrücklich auf den Dur-Fall und eine konkrete Stimmenwahl begrenzen."
+    },
+    {
+      "id": "KB-GRAPH-NODES",
+      "scope": "backlog",
+      "content": "Wissensgraph",
+      "domain": "M12",
+      "question": "Lassen sich alle Graphknoten und ihr fachlicher Beleg nachvollziehen?",
+      "expected": [
+        "86 bisher offene Endpunkt-IDs abgeglichen",
+        "97 Relationen mit Claim oder Fundstelle belegt bzw. als ungeprüft markiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Vertiefungsprüfung am Ausgangscommit b7c4618, Tabelle GRAPH_REFERENZEN.csv und Relationsregister.",
+      "method": "manual",
+      "input": {
+        "edges": 97,
+        "unresolved_ids": 86
+      },
+      "mandatory": true,
+      "next_step": "Kanonische Knotendefinitionen für die offenen IDs anlegen oder die Relationen ausdrücklich als historische Hypothesen markieren. Pro Kante eine Fundstelle oder Claim-ID erfassen."
+    },
+    {
+      "id": "KB-HISTORY-F00412",
+      "scope": "backlog",
+      "content": "F00412",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für F00412 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "method": "manual",
+      "input": {
+        "registry_id": "F00412",
+        "path": "research/STEPS_Bibliothek/ANTI-MASS_ From Uganda into the Unknown _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css"
+      },
+      "mandatory": true,
+      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+    },
+    {
+      "id": "KB-HISTORY-F00571",
+      "scope": "backlog",
+      "content": "F00571",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für F00571 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "method": "manual",
+      "input": {
+        "registry_id": "F00571",
+        "path": "research/STEPS_Bibliothek/Cloudchord_ Tending the Bloom Bap Garden _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css"
+      },
+      "mandatory": true,
+      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+    },
+    {
+      "id": "KB-HISTORY-F00704",
+      "scope": "backlog",
+      "content": "F00704",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für F00704 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "method": "manual",
+      "input": {
+        "registry_id": "F00704",
+        "path": "research/STEPS_Bibliothek/Download the Live Set of Artefakt’s New Track “Undertow”_files/embedded_player-d605d516704fd10722142526feae0317.css"
+      },
+      "mandatory": true,
+      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+    },
+    {
+      "id": "KB-HISTORY-F00768",
+      "scope": "backlog",
+      "content": "F00768",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für F00768 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "method": "manual",
+      "input": {
+        "registry_id": "F00768",
+        "path": "research/STEPS_Bibliothek/Download the Live Set of DJ Gigola’s New Track “Unfolding Practice II” _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css"
+      },
+      "mandatory": true,
+      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+    },
+    {
+      "id": "KB-HISTORY-F00937",
+      "scope": "backlog",
+      "content": "F00937",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für F00937 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "method": "manual",
+      "input": {
+        "registry_id": "F00937",
+        "path": "research/STEPS_Bibliothek/Dummy_ Inside The Machine, Outside The Box_files/embedded_player-d605d516704fd10722142526feae0317.css"
+      },
+      "mandatory": true,
+      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+    },
+    {
+      "id": "KB-HISTORY-F01002",
+      "scope": "backlog",
+      "content": "F01002",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für F01002 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "method": "manual",
+      "input": {
+        "registry_id": "F01002",
+        "path": "research/STEPS_Bibliothek/Machinedrum_ Planting Seeds_files/embedded_player-d605d516704fd10722142526feae0317.css"
+      },
+      "mandatory": true,
+      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+    },
+    {
+      "id": "KB-HISTORY-PPR-MIDI-01",
+      "scope": "backlog",
+      "content": "PPR-MIDI-01",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für PPR-MIDI-01 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "method": "manual",
+      "input": {
+        "registry_id": "PPR-MIDI-01",
+        "path": "research/STEPS_Bibliothek/Drums Progression/ppr-boom-bap-90-bpm-midi/PPR Boom Bap 90 BPM MIDI/README.txt"
+      },
+      "mandatory": true,
+      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+    },
+    {
+      "id": "KB-HISTORY-PPR-MIDI-02",
+      "scope": "backlog",
+      "content": "PPR-MIDI-02",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für PPR-MIDI-02 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "method": "manual",
+      "input": {
+        "registry_id": "PPR-MIDI-02",
+        "path": "research/STEPS_Bibliothek/Drums Progression/ppr-uk-garage-132-bpm-midi/PPR UK Garage 132 BPM MIDI/README.txt"
+      },
+      "mandatory": true,
+      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+    },
+    {
+      "id": "KB-HISTORY-PPR-MIDI-03",
+      "scope": "backlog",
+      "content": "PPR-MIDI-03",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für PPR-MIDI-03 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "method": "manual",
+      "input": {
+        "registry_id": "PPR-MIDI-03",
+        "path": "research/STEPS_Bibliothek/Drums Progression/ppr-techno-130-bpm-midi/PPR Techno 130 BPM MIDI/README.txt"
+      },
+      "mandatory": true,
+      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+    },
+    {
+      "id": "KB-HISTORY-PPR-MIDI-04",
+      "scope": "backlog",
+      "content": "PPR-MIDI-04",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für PPR-MIDI-04 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "method": "manual",
+      "input": {
+        "registry_id": "PPR-MIDI-04",
+        "path": "research/STEPS_Bibliothek/Drums Progression/ppr-sub-focus-style-174-bpm-midi/README.txt"
+      },
+      "mandatory": true,
+      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
     }
   ]
 }

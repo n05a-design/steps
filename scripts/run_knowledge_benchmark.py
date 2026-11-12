@@ -21,10 +21,12 @@ from src.steps.progression import reviewed
 from src.steps.theory import MusicTheoryError, Voicing, midi_to_frequency, parse_chord, parse_spelling
 
 DIR = ROOT / "knowledge/benchmark"
+PROGRESSIONS = ROOT / "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md"
+DRUMS = ROOT / "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
 PIANO = ROOT / "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md"
 CLAIMS = ROOT / "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv"
 STATUSES = ("PASS", "FAIL", "PENDING")
-SCOPES = ("pilot", "publication", "catalog", "sample", "coach", "api")
+SCOPES = ("pilot", "publication", "catalog", "sample", "coach", "api", "backlog")
 PUBLICATION_TESTS = {
     "test_approved_fixture_publishes_same_version_and_content",
     "test_unknown_source_blocks_every_entry",
@@ -192,20 +194,43 @@ def evaluate(case, examples, claims, coach, manual):
             raise AssertionError(f"{degree} → {exc}; Symbolspalte {written}") from None
         target = expected["pitch_classes"]
         actual = {"stage": degree, "resolved": resolved.symbol, "written": written}
-        require(pitch_set(resolved) == pitch_set(parse_chord(written, "INT")) == target, actual)
+        require(resolved.symbol == written == expected["symbol"]
+                and pitch_set(resolved) == pitch_set(parse_chord(written, "INT")) == target, actual)
     elif method == "piano":
-        row = next(line for line in PIANO.read_text(encoding="utf-8").splitlines()
-                   if line.startswith(f"| `{data['id']}`"))
+        document = PIANO.read_text(encoding="utf-8")
+        row = next(line for line in document.splitlines() if line.startswith(f"| `{data['id']}`"))
         if data["id"] == "P12":
             upper = pitch_set(parse_chord("Fmaj7", "INT"))
-            total = pitch_set(parse_chord("Dm9", "INT"))
-            actual = {"upper": upper, "total": total, "row": row}
-            require(len(upper) == 4 and total == expected["notes"] and "dreiklang" not in row.lower(), actual)
+            bass = parse_spelling("D3", "INT").midi_number % 12
+            total = sorted({*upper, bass})
+            actual = {"upper": upper, "total": total, "bass": bass, "row": row}
+            require(upper == expected["upper_notes"] and bass == expected["bass"]
+                    and total == expected["notes"] == pitch_set(parse_chord("Dm9", "INT"))
+                    and "vierklang" in row.lower() and "grundton" in row.lower(), actual)
         else:
             midi = [parse_spelling(note, "INT").midi_number for note in ("C#3", "C3", "B2", "A2", "G2")]
             delta = [b - a for a, b in zip(midi, midi[1:])]
-            actual = {"delta": delta, "row": row}
-            require(delta == expected and ("diatonisch" in row.lower() or "ganzton" in row.lower()), actual)
+            progression = get_progression("PROG-026")
+            stage = progression.roman_numerals.split(" - ")[4]
+            symbol = progression.chords_str.split(" - ")[4]
+            dominant = resolve_roman_degree(stage, progression.default_key, convention="INT")
+            catalog_row = next(line for line in PROGRESSIONS.read_text(encoding="utf-8").splitlines()
+                               if line.startswith("| `PROG-026`"))
+            actual = {"delta": delta, "dominant": dominant.symbol, "bass": int(dominant.bass.pitch_class),
+                      "dominant_tones": pitch_set(dominant), "row": row, "catalog": catalog_row}
+            require({key: actual[key] for key in expected} == expected
+                    and symbol == expected["dominant"]
+                    and progression.roman_numerals in catalog_row and progression.chords_str in catalog_row
+                    and r"V^7_{4/3}" in row and "ganzton" in row.lower()
+                    and r"$D^7/A$" in document, actual)
+    elif method == "drum_ticks":
+        row = next(line for line in DRUMS.read_text(encoding="utf-8").splitlines() if line.startswith("| `PAT-026`"))
+        ppq = expected["ppq"]
+        onset = round((ppq // 2) * data["percent"] / 100)
+        actual = {"ppq": ppq, "onset": onset, "offset": onset - ppq // 4}
+        require(actual == expected and all(value in row for value in (
+            "64%", f"{ppq} PPQ", f"Tick {onset}", f"+{actual['offset']} Ticks",
+        )), {"calculated": actual, "row": row})
     elif method == "frequency":
         actual = [midi_to_frequency(note) for note in data["midi"]]
         require(all(isclose(a, b, abs_tol=1e-5) for a, b in zip(actual, expected, strict=True)), actual)

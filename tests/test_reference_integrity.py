@@ -146,6 +146,17 @@ class TestReferenceIntegrityAndMutations(unittest.TestCase):
         self.assertGreater(len(result['errors']), 0)
         self.assertTrue(any("Harmonic structure changed from 'I - V - vi - IV' to 'I - IV - V - I'" in e for e in result['errors']), result['errors'])
 
+    def test_catalog_correction_authorizes_only_its_recorded_hash(self):
+        path = os.path.join(self.temp_knowledge, "concepts", "progressions", "CHORD_PROGRESSION_REFERENCE_LIBRARY.md")
+        with open(path, encoding="utf-8") as source:
+            original = source.read()
+        mutated = original.replace("`C7 - F7 - C7 - G7 - F7 - C7`", "`Cmaj7 - F7 - C7 - G7 - F7 - C7`")
+        self.assertNotEqual(original, mutated)
+        with open(path, "w", encoding="utf-8") as output:
+            output.write(mutated)
+        errors = checker.verify_integrity(repo_root=self.temp_dir)["errors"]
+        self.assertTrue(any("Semantic identity hash mismatch for PROG-008" in err for err in errors), errors)
+
     def test_05_mutation_pat_id_unchanged_rhythmic_events_changed(self):
         """5. PAT ID remains unchanged, tempo/meter changed -> Detected."""
         drum_file = os.path.join(self.temp_knowledge, 'concepts', 'styles', 'DRUM_GROOVE_REFERENCE_LIBRARY.md')
