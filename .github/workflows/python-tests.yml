@@ -38,3 +38,14 @@ jobs:
           if [ -d ".agents/skills/steps-knowledge-curation/tests" ]; then
             python -B -m unittest discover -s .agents/skills/steps-knowledge-curation/tests -v
           fi
+
+  pilot-publication:
+    name: Pilot publication gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate pilot approvals and published learning material
+        run: python -B scripts/render_reviewed_progressions.py --check

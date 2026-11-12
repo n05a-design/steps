@@ -1,38 +1,129 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "notation": {
+    "id": "PILOT-NOTATION-001",
+    "kind": "convention",
+    "text": "Akkordsymbole verwenden internationale Schreibweise. In deutschen Notennamen entsprechen H und B dem internationalen B und B♭, As entspricht A♭.",
+    "scope": "Schreibkonvention für die drei Pilotbeispiele. Die Zuordnung ändert keine Tonhöhe.",
+    "countercheck": "H3 und internationales B3 liegen bei MIDI 59. Deutsches B3 und internationales B♭3 liegen bei MIDI 58. As4 und A♭4 liegen bei MIDI 68.",
+    "references": [
+      {"source_id": "yale-key-names", "locator": "S. 1, Vergleichstabelle der Tonbuchstaben und Vorzeichen, Zeilen A flat, B flat und B"}
+    ]
+  },
   "examples": [
     {
       "id": "PROG-001",
-      "reviewed_on": "2026-11-11",
       "name": "Pop Four Chords",
       "default_key": "C",
       "roman": "I - V - vi - IV",
       "chords": "C - G - Am - F",
       "context": "Pop-Loop mit angenommener Tonika C",
-      "lesson": "Unter der Annahme C-Dur entsprechen die vier Akkorde den Stufen I, V, vi und IV. Das wahrgenommene tonale Zentrum eines Loops hängt auch von Melodie, Betonung und Phrasierung ab.",
-      "source_ids": ["omt-roman-numerals"]
+      "claims": [
+        {
+          "id": "PROG-001-HARMONY",
+          "kind": "fact",
+          "text": "Unter der Annahme C-Dur entsprechen C–G–Am–F den Stufen I–V–vi–IV.",
+          "scope": "Dur-Stufenmodell mit C als Tonika. Akkorde in Grundstellung, ohne Aussage zur gehörten Tonika.",
+          "countercheck": "Die Grundtöne C, G, A und F belegen die Stufen 1, 5, 6 und 4. Die Sollakkordtöne sind C–E–G, G–H–D, A–C–E und F–A–C.",
+          "references": [
+            {"source_id": "omt-roman-numerals", "locator": "Roman Numerals, Example 3 und Abschnitt zur Groß-/Kleinschreibung"},
+            {"source_id": "omt-four-chord-schemas", "locator": "Singer/Songwriter Schema, Key Takeaways: Rotation I–V–vi–IV"}
+          ]
+        },
+        {
+          "id": "PROG-001-TONAL-CENTER",
+          "kind": "style_interpretation",
+          "text": "Im Pop-Loop kann die Melodie die Wahrnehmung von C oder A als tonales Zentrum stützen.",
+          "scope": "Interpretation eines zyklischen Pop-Schemas. Ohne Melodie und Phrasierung ist das wahrgenommene Zentrum hier offen.",
+          "countercheck": "Bei C als Zentrum liest sich die Folge als I–V–vi–IV. Bei A als Zentrum lässt sich dieselbe Akkordfolge als III–VII–i–VI in natürlichem Moll lesen. Die Akkordliste allein entscheidet nicht zwischen den Lesarten.",
+          "references": [
+            {"source_id": "omt-four-chord-schemas", "locator": "Singer/Songwriter Schema, Absatz nach Example 4 über relatives Moll und melodische Bezugstöne"}
+          ]
+        }
+      ]
     },
     {
       "id": "PROG-003",
-      "reviewed_on": "2026-11-11",
       "name": "Jazz Two-Five-One",
       "default_key": "C",
       "roman": "ii^7 - V^7 - I^maj7",
       "chords": "Dm7 - G7 - Cmaj7",
       "context": "Jazzkadenz in C-Dur",
-      "lesson": "Eine mögliche Stimmführung verbindet C im Dm7 mit H im G7 und F im G7 mit E im Cmaj7. Beide Bewegungen sind in diesem Dur-Beispiel absteigende Halbtonschritte.",
-      "source_ids": ["omt-ii-v-i"]
+      "claims": [
+        {
+          "id": "PROG-003-HARMONY",
+          "kind": "fact",
+          "text": "Dm7–G7–Cmaj7 bildet in C-Dur die Jazzfolge ii⁷–V⁷–Imaj7.",
+          "scope": "Dur-Variante des ii–V–I-Schemas mit Septakkorden in C-Dur.",
+          "countercheck": "Die Grundtöne D, G, C liegen auf 2, 5, 1. Die Sollakkordtöne sind D–F–A–C, G–H–D–F und C–E–G–H.",
+          "references": [
+            {"source_id": "omt-ii-v-i", "locator": "Key Takeaways, Dur-Variante ii⁷–V⁷–Imaj7"}
+          ]
+        },
+        {
+          "id": "PROG-003-VOICE-II-V",
+          "kind": "fact",
+          "text": "Eine mögliche Stimme sinkt von C im Dm7 zu H im G7 um einen Halbton.",
+          "scope": "Lokale Stimmführungsoption in 12-TET, etwa C4→H3. Die Aussage legt kein vollständiges Voicing fest.",
+          "countercheck": "C ist die kleine Septime von Dm7. H ist die große Terz von G7. In der angegebenen Lage ergibt 59 − 60 = −1 Halbton.",
+          "voice_path": [
+            {"chord_index": 0, "note": "C4"},
+            {"chord_index": 1, "note": "H3"}
+          ],
+          "references": [
+            {"source_id": "omt-ii-v-i", "locator": "Key Takeaways zur Folge Mollseptakkord–Dominantseptakkord–Durseptakkord. Die konkrete Stimme ist eine STEPS-Ableitung aus diesen Akkordtönen."}
+          ]
+        },
+        {
+          "id": "PROG-003-VOICE-V-I",
+          "kind": "fact",
+          "text": "Eine mögliche Stimme sinkt von F im G7 zu E im Cmaj7 um einen Halbton.",
+          "scope": "Lokale Stimmführungsoption in 12-TET, etwa F4→E4. Die Aussage legt kein vollständiges Voicing fest.",
+          "countercheck": "F ist die kleine Septime von G7. E ist die große Terz von Cmaj7. In der angegebenen Lage ergibt 64 − 65 = −1 Halbton.",
+          "voice_path": [
+            {"chord_index": 1, "note": "F4"},
+            {"chord_index": 2, "note": "E4"}
+          ],
+          "references": [
+            {"source_id": "omt-ii-v-i", "locator": "Key Takeaways zur Folge Mollseptakkord–Dominantseptakkord–Durseptakkord. Die konkrete Stimme ist eine STEPS-Ableitung aus diesen Akkordtönen."}
+          ]
+        }
+      ]
     },
     {
       "id": "PROG-009",
-      "reviewed_on": "2026-11-11",
       "name": "Minor Plagal Romance",
       "default_key": "C",
       "roman": "I - IV - iv - I",
       "chords": "C - F - Fm - C",
       "context": "Mollsubdominante im Dur-Kontext",
-      "lesson": "Die Subdominante F-Dur wird zu F-Moll, indem A zu As sinkt. In einer möglichen Stimmführung fällt dieselbe Stimme weiter zu G im C-Dur-Akkord.",
-      "source_ids": ["omt-roman-numerals", "omt-chromatic-subdominants"]
+      "claims": [
+        {
+          "id": "PROG-009-HARMONY",
+          "kind": "fact",
+          "text": "C–F–Fm–C realisiert in C-Dur I–IV–iv–I mit einer Mollsubdominante.",
+          "scope": "Plagale Wendung in Dur mit gleichbleibendem Subdominantgrundton F.",
+          "countercheck": "Die Folge enthält C–E–G, F–A–C, F–As–C und C–E–G. Nur die Terz wechselt beim Übergang von F zu Fm.",
+          "references": [
+            {"source_id": "omt-blues-based-schemas", "locator": "Plagal Sigh, Beschreibung des Schemas IV–iv–I"}
+          ]
+        },
+        {
+          "id": "PROG-009-VOICE-LEADING",
+          "kind": "fact",
+          "text": "Eine mögliche Stimme verbindet A in F-Dur, As in F-Moll und G in C-Dur durch zwei absteigende Halbtonschritte.",
+          "scope": "Lokale Stimmführung des Schemas IV–iv–I in C-Dur bei gleichstufiger Stimmung, etwa A4→As4→G4.",
+          "countercheck": "A und As sind die Terzen von F und Fm. G ist die Quinte von C. MIDI 69→68→67 ergibt zweimal −1 Halbton.",
+          "voice_path": [
+            {"chord_index": 1, "note": "A4"},
+            {"chord_index": 2, "note": "As4"},
+            {"chord_index": 3, "note": "G4"}
+          ],
+          "references": [
+            {"source_id": "omt-blues-based-schemas", "locator": "Plagal Sigh, Skalenstufenbewegung la–le–sol (6–♭6–5)"}
+          ]
+        }
+      ]
     }
   ]
 }

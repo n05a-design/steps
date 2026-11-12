@@ -9,11 +9,9 @@ Adheres to:
 """
 
 from __future__ import annotations
-import json
 import re
 from dataclasses import dataclass
-from importlib.resources import files
-from typing import Literal, Dict, Any
+from typing import TYPE_CHECKING, Literal, Dict, Any
 
 from ..theory.exceptions import ProgressionParsingError, VoiceLeadingError
 from ..theory.pitch import NoteSpelling, parse_spelling
@@ -28,8 +26,21 @@ from .voice_leading import (
 )
 
 
-# Historical catalog entries retained for callers of the full library.
+if TYPE_CHECKING:
+    from .reviewed import ApprovedClaim
+
+
+# The general catalog preserves compatibility independently of pilot publication.
 _HISTORICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
+    {
+        'id': 'PROG-001',
+        'name': 'Pop Four Chords',
+        'roman': 'I - V - vi - IV',
+        'default_key': 'C',
+        'chords': 'C - G - Am - F',
+        'context': 'Pop-Loop mit angenommener Tonika C',
+        'sources': 'omt-roman-numerals',
+    },
     {
         'id': 'PROG-002',
         'name': 'Emotional Minor Loop',
@@ -38,6 +49,15 @@ _HISTORICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
         'chords': 'Am - F - C - G',
         'context': 'Pop-Balladen, Melodic EDM',
         'sources': 'Tagg (2014)'
+    },
+    {
+        'id': 'PROG-003',
+        'name': 'Jazz Two-Five-One',
+        'roman': 'ii^7 - V^7 - I^maj7',
+        'default_key': 'C',
+        'chords': 'Dm7 - G7 - Cmaj7',
+        'context': 'Jazzkadenz in C-Dur',
+        'sources': 'omt-ii-v-i',
     },
     {
         'id': 'PROG-004',
@@ -83,6 +103,15 @@ _HISTORICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
         'chords': 'C7 - F7 - C7 - G7 - F7 - C7',
         'context': "Traditional Blues, Rock'n'Roll",
         'sources': 'Rawlins/Bahha (2005)'
+    },
+    {
+        'id': 'PROG-009',
+        'name': 'Minor Plagal Romance',
+        'roman': 'I - IV - iv - I',
+        'default_key': 'C',
+        'chords': 'C - F - Fm - C',
+        'context': 'Mollsubdominante im Dur-Kontext',
+        'sources': 'omt-roman-numerals, omt-chromatic-subdominants',
     },
     {
         'id': 'PROG-010',
@@ -295,55 +324,26 @@ class ReviewedProgression:
     lesson: str
     source_ids: tuple[str, ...]
     reviewed_on: str
-
-
-def _load_reviewed_progressions() -> dict[str, ReviewedProgression]:
-    document = json.loads(files(__package__).joinpath("reviewed_progressions.json").read_text(encoding="utf-8"))
-    if document["schema_version"] != 1:
-        raise ValueError("Unsupported reviewed progression schema version.")
-    examples = {}
-    for row in document["examples"]:
-        ident = row["id"]
-        sources = tuple(row["source_ids"])
-        if ident in examples or not row["reviewed_on"] or not sources or not row["lesson"].strip():
-            raise ValueError(f"Missing review data or duplicate reviewed progression: {ident}.")
-        progression = CanonicalProgression(
-            ident, row["name"], row["roman"], row["default_key"],
-            row["chords"], row["context"], ", ".join(sources),
-        )
-        examples[ident] = ReviewedProgression(progression, row["lesson"], sources, row["reviewed_on"])
-    return examples
-
-
-_REVIEWED_PROGRESSIONS = _load_reviewed_progressions()
+    claims: tuple[ApprovedClaim, ...]
+    catalog_version: str
 
 
 def list_reviewed_progressions() -> tuple[ReviewedProgression, ...]:
-    """Return the reviewed catalog intended for product and learning use."""
-    return tuple(_REVIEWED_PROGRESSIONS.values())
+    """Return the published pilot catalog after validating all claim approvals."""
+    from .reviewed import load_reviewed_catalog
+
+    return load_reviewed_catalog()
 
 
 def get_reviewed_progression(prog_id: str) -> ReviewedProgression:
-    """Resolve a product example by ID, rejecting unreviewed entries."""
-    try:
-        return _REVIEWED_PROGRESSIONS[prog_id.upper()]
-    except KeyError:
-        raise ProgressionParsingError(f"No reviewed progression for {prog_id!r}.") from None
+    """Resolve a published pilot example by ID."""
+    for example in list_reviewed_progressions():
+        if example.progression.prog_id == prog_id.upper():
+            return example
+    raise ProgressionParsingError(f"No reviewed progression for {prog_id!r}.")
 
 
-# Preserve the full catalog definition API while sourcing reviewed rows from the reviewed data.
-CANONICAL_PROGRESSION_DEFINITIONS = sorted(
-    _HISTORICAL_PROGRESSION_DEFINITIONS + [
-        {
-            "id": p.prog_id, "name": p.name, "roman": p.roman_numerals,
-            "default_key": p.default_key, "chords": p.chords_str,
-            "context": p.context, "sources": p.sources,
-        }
-        for example in list_reviewed_progressions()
-        for p in (example.progression,)
-    ],
-    key=lambda row: row["id"],
-)
+CANONICAL_PROGRESSION_DEFINITIONS = _HISTORICAL_PROGRESSION_DEFINITIONS
 
 
 def _build_registry() -> Dict[str, CanonicalProgression]:
@@ -359,7 +359,6 @@ def _build_registry() -> Dict[str, CanonicalProgression]:
             sources=d['sources']
         )
         reg[d['id']] = p
-    reg.update((example.progression.prog_id, example.progression) for example in list_reviewed_progressions())
     return dict(sorted(reg.items()))
 
 

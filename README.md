@@ -2,7 +2,8 @@
 
 STEPS stellt einen Python-Kern für Tonhöhen, Intervalle, Akkordsymbole,
 Stufenauflösung, Transposition und Stimmführung bereit. Der Checkout enthält
-eine Schnittstelle für geprüfte Lernbeispiele. Die Desktop-App befindet sich
+eine Schnittstelle für fachlich freigegebene Lernbeispiele. Die drei
+Pilotbeispiele liegen zur menschlichen Fachabnahme vor. Die Desktop-App befindet sich
 in Vorbereitung.
 
 Der Entwicklungsstand steht in [VERSION](VERSION), die Paketversion in
@@ -17,12 +18,11 @@ Aus dem Repository-Root mit Python 3.11 oder 3.12:
 ```sh
 python -B -m unittest discover -s tests
 python -B scripts/verify_reference_integrity.py
-python -B scripts/render_reviewed_progressions.py --check
 python -B scripts/render_api_reference.py --check
 ```
 
 Die [Testanleitung](tests/README.md) beschreibt die Prüfungen, die CI-Matrix
-und die Grenzen der Golden Cases.
+und die Grenzen der Golden Cases. Die [Pilotfreigabe](knowledge/concepts/progressions/README.md) beschreibt den gesonderten Publikationscheck.
 
 ## Dokumentation
 

@@ -2,18 +2,11 @@
 
 from __future__ import annotations
 
-import json
-from pathlib import Path
-from tempfile import TemporaryDirectory
 import unittest
-from unittest.mock import patch
 
-from app.knowledge import get_reviewed_progression, list_reviewed_progressions
-from scripts.render_reviewed_progressions import OUTPUT, REGISTRY, render
 from src.steps.progression import (
     VoiceLeadingStyle,
     generate_progression_voicings,
-    get_progression,
     list_progressions,
     optimize_smooth_voice_leading,
     resolve_roman_degree,
@@ -134,29 +127,3 @@ class VoicingRegressionTests(unittest.TestCase):
                 midi_to_frequency(69, tuning)
             with self.subTest(tuning=tuning), self.assertRaises(MusicTheoryError):
                 frequency_to_midi(440, tuning)
-
-
-class ReviewedCatalogTests(unittest.TestCase):
-    def test_app_catalog_and_generated_material_share_the_reviewed_data(self):
-        examples = list_reviewed_progressions()
-        self.assertEqual([e.progression.prog_id for e in examples], ["PROG-001", "PROG-003", "PROG-009"])
-        with self.assertRaises(ProgressionParsingError):
-            get_reviewed_progression("PROG-027")
-        for example in examples:
-            p = example.progression
-            with self.subTest(progression=p.prog_id):
-                self.assertIs(p, get_progression(p.prog_id))
-                resolved = [resolve_roman_degree(d, p.default_key) for d in p.roman_numerals.split(" - ")]
-                self.assertEqual(resolved, p.chord_definitions)
-                self.assertTrue(generate_progression_voicings(p))
-        self.assertEqual(OUTPUT.read_text(encoding="utf-8"), render())
-
-    def test_unapproved_source_blocks_generated_learning_material(self):
-        registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
-        registry["sources"][0]["rights_status"] = "review_required"
-        with TemporaryDirectory() as tmp:
-            path = Path(tmp) / "registry.yaml"
-            path.write_text(json.dumps(registry), encoding="utf-8")
-            with patch("scripts.render_reviewed_progressions.REGISTRY", path):
-                with self.assertRaisesRegex(ValueError, "Unapproved reference"):
-                    render()

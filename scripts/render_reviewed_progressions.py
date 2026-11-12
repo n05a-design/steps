@@ -1,48 +1,61 @@
-"""Render the reviewed STEPS catalog as Markdown and verify its source links."""
+"""Publish Markdown from the same approved pilot catalog used by the app."""
 
 from __future__ import annotations
 
 import argparse
-import json
-import sys
 from pathlib import Path
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "knowledge/concepts/progressions/REVIEWED_PROGRESSIONS.md"
-REGISTRY = ROOT / "knowledge/sources/registry.yaml"
-
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from src.steps.progression.engine import list_reviewed_progressions
+from app.knowledge import list_reviewed_progressions
+from src.steps.progression.reviewed import ApprovedClaim, PublicationError
+
+LABELS = {
+    "fact": "Nachprüfbare Aussage",
+    "convention": "Konvention",
+    "style_interpretation": "Stilabhängige Interpretation",
+}
+
+
+def render_claim(approval: ApprovedClaim) -> list[str]:
+    claim = approval.claim
+    return [
+        f"**{claim.claim_id} · {LABELS[claim.kind]}**", "",
+        claim.text, "",
+        f"- Gültigkeitsbereich — {claim.scope}",
+        f"- Fachlicher Gegencheck — {claim.countercheck}",
+        *(
+            f"- Quelle — [{ref.title}](<{ref.url}>) · {ref.locator}"
+            for ref in claim.citations
+        ),
+        f"- Freigabe — [{approval.reviewer}]({approval.evidence_url}) am {approval.reviewed_on}",
+        f"- Fassungsfingerabdruck — `{claim.fingerprint}`", "",
+    ]
 
 
 def render() -> str:
-    registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
-    if registry["schema_version"] != 1:
-        raise ValueError("Unsupported source registry version.")
-    sources = {source["id"]: source for source in registry["sources"]}
-    if len(sources) != len(registry["sources"]):
-        raise ValueError("Duplicate source ID in the product registry.")
+    examples = list_reviewed_progressions()
     lines = [
-        "# Einzeln geprüfte STEPS-Progressionen", "",
-        "Dieses Lernmaterial wird aus dem Datensatz für die App erzeugt.",
-        "Zur Aktualisierung dient `python scripts/render_reviewed_progressions.py`.", "",
+        "# Freigegebene STEPS-Pilotprogressionen", "",
+        "Dieses Lernmaterial wird aus demselben geprüften Datensatz wie der App-Katalog erzeugt.",
+        f"Datenversion `{examples[0].catalog_version}`.", "",
+        "## Schreibkonvention", "",
+        *render_claim(examples[0].claims[0]),
     ]
-    for example in list_reviewed_progressions():
+    for example in examples:
         progression = example.progression
-        references = [sources[ident] for ident in example.source_ids]
-        if any(source["rights_status"] != "approved" for source in references):
-            raise ValueError(f"Unapproved reference for {progression.prog_id}.")
-        links = " · ".join(f"[{source['title']}]({source['url']})" for source in references)
         lines.extend([
             f"## {progression.prog_id} – {progression.name}", "",
             f"- **Tonart** `{progression.default_key}`",
             f"- **Stufen** `{progression.roman_numerals}`",
             f"- **Akkorde** `{progression.chords_str}`", "",
-            example.lesson, "",
-            f"Fachlich geprüft am {example.reviewed_on}. {links}", "",
         ])
+        for approval in example.claims[1:]:
+            lines.extend(render_claim(approval))
     return "\n".join(lines)
 
 
@@ -50,7 +63,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
-    content = render()
+    try:
+        content = render()
+    except PublicationError as exc:
+        raise SystemExit(f"Pilot publication blocked: {exc}") from None
     if args.check:
         if not OUTPUT.exists() or OUTPUT.read_text(encoding="utf-8") != content:
             raise SystemExit("Reviewed learning material is out of date. Run the renderer.")

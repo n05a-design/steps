@@ -4,7 +4,7 @@ Quellregister und urheberrechtlich geprüfte abgeleitete Arbeit; externe Origina
 
 [`registry.yaml`](registry.yaml) ist das App-Quellenregister. Es verwendet die JSON-kompatible
 YAML-Schreibweise, damit der Generator das Register mit der Standardbibliothek
-lesen kann. Eine Freigabe gilt für die dort genannte Nutzungsart.
+lesen kann. Die Freigabe eines Quelleneintrags gilt für die genannte Nutzungsart. Die fachliche Freigabe einer musikalischen Aussage wird gesondert in der [Pilotfreigabe](../concepts/progressions/README.md) erfasst.
 
 [`curated_sources_registry.yaml`](curated_sources_registry.yaml) enthält das historische Recherche-Inventar
 mit 37 Einträgen und ursprünglichen Statusbezeichnungen. Die Claim-CSV bleibt

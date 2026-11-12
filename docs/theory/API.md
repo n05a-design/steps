@@ -77,7 +77,7 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 
 ### [ReviewedProgression](../../src/steps/progression/engine.py)
 
-`ReviewedProgression(progression: 'CanonicalProgression', lesson: 'str', source_ids: 'tuple[str, ...]', reviewed_on: 'str') -> None`
+`ReviewedProgression(progression: 'CanonicalProgression', lesson: 'str', source_ids: 'tuple[str, ...]', reviewed_on: 'str', claims: 'tuple[ApprovedClaim, ...]', catalog_version: 'str') -> None`
 
 ### [NoteSpelling](../../src/steps/theory/pitch.py)
 

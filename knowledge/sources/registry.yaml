@@ -26,8 +26,46 @@
       "authors": [
         "Megan Lavengood"
       ],
-      "url": "https://viva.pressbooks.pub/openmusictheory/chapter/ii-v-i/",
+      "url": "https://viva.pressbooks.pub/openmusictheorycopy/chapter/ii-v-i/",
       "retrieved_at": "2026-11-11",
+      "rights_status": "approved",
+      "usage_notes": "Link and bibliographic reference for original STEPS examples. No source text or media bundled."
+    },
+    {
+      "id": "omt-four-chord-schemas",
+      "title": "Open Music Theory – Four-Chord Schemas",
+      "kind": "website",
+      "authors": [
+        "Megan Lavengood",
+        "Bryn Hughes"
+      ],
+      "url": "https://viva.pressbooks.pub/openmusictheorycopy/chapter/4-chord-schemas/",
+      "retrieved_at": "2026-11-12",
+      "rights_status": "approved",
+      "usage_notes": "Link and bibliographic reference for original STEPS examples. No source text or media bundled."
+    },
+    {
+      "id": "omt-blues-based-schemas",
+      "title": "Open Music Theory – Blues-Based Schemas",
+      "kind": "website",
+      "authors": [
+        "Megan Lavengood",
+        "Bryn Hughes"
+      ],
+      "url": "https://viva.pressbooks.pub/openmusictheorycopy/chapter/blues-based-schemas/",
+      "retrieved_at": "2026-11-12",
+      "rights_status": "approved",
+      "usage_notes": "Link and bibliographic reference for original STEPS examples. No source text or media bundled."
+    },
+    {
+      "id": "yale-key-names",
+      "title": "Yale University Library – The names of keys in French, German, Italian, and Spanish",
+      "kind": "website",
+      "authors": [
+        "Yale University Library"
+      ],
+      "url": "https://web.library.yale.edu/printpdf/cataloging/music/names-keys-french-german-italian-and-spanish",
+      "retrieved_at": "2026-11-12",
       "rights_status": "approved",
       "usage_notes": "Link and bibliographic reference for original STEPS examples. No source text or media bundled."
     }
