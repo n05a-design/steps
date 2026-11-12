@@ -1,0 +1,35 @@
+# Zeilenenden für das gesamte Repository.
+#
+# Hintergrund: Die Arbeitskopie wird unter Windows (core.autocrlf=true, CRLF)
+# und macOS (LF) benutzt. Ohne Regel meldete macOS-Git nach dem
+# Konsolidierungsbranch 546 Dateien als geändert, obwohl sich nur die
+# Zeilenenden unterschieden.
+#
+# text=auto vergleicht und speichert Textdateien mit LF. Bereits mit CRLF
+# eingecheckte Dateien bleiben unverändert (derzeit nur in src/glide-v3.53/,
+# das eigene, spezifischere Regeln mitbringt). Kein `git add --renormalize`
+# ohne eigenen Review: Archiv- und Quellbestände tragen Hashnachweise.
+* text=auto
+
+# Direkt ausgeführte Skripte immer mit LF auschecken, auch unter Windows.
+# Ein CRLF-Pre-commit-Hook (`#!/bin/sh\r`) ließ sich unter macOS nicht starten.
+*.sh text eol=lf
+scripts/git-hooks/* text eol=lf
+
+# Binärformate nie konvertieren und nicht textuell mergen.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.docx binary
+*.xlsx binary
+*.zip binary
+*.mid binary
+*.midi binary
+*.mp3 binary
+*.wav binary
+*.amxd binary
+*.als binary
