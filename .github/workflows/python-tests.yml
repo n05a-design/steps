@@ -47,5 +47,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Run mandatory pilot benchmark
+        run: python -B scripts/run_knowledge_benchmark.py --scope pilot
+      - name: Check pilot review sheet
+        run: python -B scripts/run_knowledge_benchmark.py --check-review-sheet knowledge/benchmark/PILOT_ABNAHME.md
       - name: Validate pilot approvals and published learning material
         run: python -B scripts/render_reviewed_progressions.py --check

@@ -1,0 +1,839 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "PILOT-NOTATION-001",
+      "scope": "pilot",
+      "content": "PILOT",
+      "domain": "M02",
+      "question": "Welche internationalen Notennamen und MIDI-Werte entsprechen H3, B3 und As4 auf Deutsch?",
+      "expected": [
+        59,
+        58,
+        68
+      ],
+      "variants": [
+        "B♭3 statt Bb3 und A♭4 statt Ab4"
+      ],
+      "basis": "Yale University Library, The names of keys, S. 1, Zeilen A flat, B flat und B. C4=60, dann Halbtonabstände.",
+      "method": "notation",
+      "input": {
+        "notes": [
+          [
+            "H3",
+            "B3"
+          ],
+          [
+            "B3",
+            "Bb3"
+          ],
+          [
+            "As4",
+            "Ab4"
+          ]
+        ]
+      },
+      "mandatory": true
+    },
+    {
+      "id": "PROG-001-HARMONY",
+      "scope": "pilot",
+      "content": "PROG-001",
+      "domain": "M05",
+      "question": "Welche Stufen, Akkorde und Tonklassen enthält PROG-001 in C-Dur?",
+      "expected": {
+        "stages": [
+          "I",
+          "V",
+          "vi",
+          "IV"
+        ],
+        "chords": [
+          "C",
+          "G",
+          "Am",
+          "F"
+        ],
+        "pitch_classes": [
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            2,
+            7,
+            11
+          ],
+          [
+            0,
+            4,
+            9
+          ],
+          [
+            0,
+            5,
+            9
+          ]
+        ]
+      },
+      "variants": [
+        "Übliche gleichwertige Schreibweisen, etwa ii⁷ und IΔ7 in Erläuterungen."
+      ],
+      "basis": "C-Dur-Diatonik und Terzschichtung. Open Music Theory, Roman Numerals, Example 3 und Four-Chord Schemas, Singer/Songwriter Schema.",
+      "method": "harmony",
+      "input": {},
+      "mandatory": true
+    },
+    {
+      "id": "PROG-003-HARMONY",
+      "scope": "pilot",
+      "content": "PROG-003",
+      "domain": "M05",
+      "question": "Welche Stufen, Akkorde und Tonklassen enthält PROG-003 in C-Dur?",
+      "expected": {
+        "stages": [
+          "ii^7",
+          "V^7",
+          "I^maj7"
+        ],
+        "chords": [
+          "Dm7",
+          "G7",
+          "Cmaj7"
+        ],
+        "pitch_classes": [
+          [
+            0,
+            2,
+            5,
+            9
+          ],
+          [
+            2,
+            5,
+            7,
+            11
+          ],
+          [
+            0,
+            4,
+            7,
+            11
+          ]
+        ]
+      },
+      "variants": [
+        "Übliche gleichwertige Schreibweisen, etwa ii⁷ und IΔ7 in Erläuterungen."
+      ],
+      "basis": "Terzschichtung über D, G, C. Open Music Theory, ii–V–I, Key Takeaways zur Dur-Variante.",
+      "method": "harmony",
+      "input": {},
+      "mandatory": true
+    },
+    {
+      "id": "PROG-009-HARMONY",
+      "scope": "pilot",
+      "content": "PROG-009",
+      "domain": "M05",
+      "question": "Welche Stufen, Akkorde und Tonklassen enthält PROG-009 in C-Dur?",
+      "expected": {
+        "stages": [
+          "I",
+          "IV",
+          "iv",
+          "I"
+        ],
+        "chords": [
+          "C",
+          "F",
+          "Fm",
+          "C"
+        ],
+        "pitch_classes": [
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            5,
+            9
+          ],
+          [
+            0,
+            5,
+            8
+          ],
+          [
+            0,
+            4,
+            7
+          ]
+        ]
+      },
+      "variants": [
+        "Übliche gleichwertige Schreibweisen, etwa ii⁷ und IΔ7 in Erläuterungen."
+      ],
+      "basis": "Dreiklänge mit unverändertem F-Grundton und abgesenkter Terz. Open Music Theory, Blues-Based Schemas, Plagal Sigh.",
+      "method": "harmony",
+      "input": {},
+      "mandatory": true
+    },
+    {
+      "id": "PROG-001-TONAL-CENTER",
+      "scope": "pilot",
+      "content": "PROG-001",
+      "domain": "M09",
+      "question": "Kann der Loop C–G–Am–F sowohl C als auch A als Zentrum nahelegen, und welche Hinweise entscheiden?",
+      "expected": {
+        "centers": [
+          "C",
+          "A"
+        ],
+        "minor_stages": [
+          "III",
+          "VII",
+          "i",
+          "VI"
+        ],
+        "chords": [
+          "C",
+          "G",
+          "Am",
+          "F"
+        ],
+        "required_context": "Melodie, Phrasierung und Loop-Grenzen. Ohne Kontext kein eindeutiges Zentrum."
+      },
+      "variants": [
+        "Rotierte römische Lesart mit entsprechender Verschiebung des Startpunkts."
+      ],
+      "basis": "Open Music Theory, Four-Chord Schemas, Absatz nach Example 4. Das relative Moll ergibt sich aus natürlichem A-Moll.",
+      "method": "relative_minor",
+      "input": {},
+      "mandatory": true
+    },
+    {
+      "id": "PROG-003-VOICE-II-V",
+      "scope": "pilot",
+      "content": "PROG-003",
+      "domain": "M06",
+      "question": "Welche Akkorde tragen die angegebene Stimme und um wie viele Halbtöne sinkt sie je Übergang?",
+      "expected": {
+        "path": [
+          [
+            0,
+            "C4"
+          ],
+          [
+            1,
+            "H3"
+          ]
+        ],
+        "midi": [
+          60,
+          59
+        ],
+        "delta": [
+          -1
+        ]
+      },
+      "variants": [
+        "Oktavversetzung der ganzen Stimme. Internationale Schreibweise bei expliziter Angabe."
+      ],
+      "basis": "Dm7 enthält C, G7 enthält H. 59−60=−1. OMT ii–V–I stützt Akkordqualitäten, die konkrete Stimme ist abgeleitet.",
+      "method": "voice",
+      "input": {},
+      "mandatory": true
+    },
+    {
+      "id": "PROG-003-VOICE-V-I",
+      "scope": "pilot",
+      "content": "PROG-003",
+      "domain": "M06",
+      "question": "Welche Akkorde tragen die angegebene Stimme und um wie viele Halbtöne sinkt sie je Übergang?",
+      "expected": {
+        "path": [
+          [
+            1,
+            "F4"
+          ],
+          [
+            2,
+            "E4"
+          ]
+        ],
+        "midi": [
+          65,
+          64
+        ],
+        "delta": [
+          -1
+        ]
+      },
+      "variants": [
+        "Oktavversetzung der ganzen Stimme. Internationale Schreibweise bei expliziter Angabe."
+      ],
+      "basis": "G7 enthält F, Cmaj7 enthält E. 64−65=−1. OMT ii–V–I stützt Akkordqualitäten, die konkrete Stimme ist abgeleitet.",
+      "method": "voice",
+      "input": {},
+      "mandatory": true
+    },
+    {
+      "id": "PROG-009-VOICE-LEADING",
+      "scope": "pilot",
+      "content": "PROG-009",
+      "domain": "M06",
+      "question": "Welche Akkorde tragen die angegebene Stimme und um wie viele Halbtöne sinkt sie je Übergang?",
+      "expected": {
+        "path": [
+          [
+            1,
+            "A4"
+          ],
+          [
+            2,
+            "As4"
+          ],
+          [
+            3,
+            "G4"
+          ]
+        ],
+        "midi": [
+          69,
+          68,
+          67
+        ],
+        "delta": [
+          -1,
+          -1
+        ]
+      },
+      "variants": [
+        "Oktavversetzung der ganzen Stimme. Internationale Schreibweise bei expliziter Angabe."
+      ],
+      "basis": "Terzen von F/Fm und Quinte von C. OMT Blues-Based Schemas, Plagal Sigh, 6–♭6–5.",
+      "method": "voice",
+      "input": {},
+      "mandatory": true
+    },
+    {
+      "id": "KB-PROG-008-01",
+      "scope": "catalog",
+      "content": "PROG-008",
+      "domain": "M06",
+      "question": "Welchen Akkord erwartet die Blues-Vorlage PROG-008 an Position 1 in C?",
+      "expected": "C7",
+      "variants": [
+        "Explizite dom7-Notation unter demselben Stufenmodell."
+      ],
+      "basis": "Bestandskatalog PROG-008 und Open Music Theory, Blues Harmony, Example 1. I und IV erhalten kleine Septimen.",
+      "method": "catalog_position",
+      "input": {
+        "position": 1
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-PROG-008-02",
+      "scope": "catalog",
+      "content": "PROG-008",
+      "domain": "M06",
+      "question": "Welchen Akkord erwartet die Blues-Vorlage PROG-008 an Position 2 in C?",
+      "expected": "F7",
+      "variants": [
+        "Explizite dom7-Notation unter demselben Stufenmodell."
+      ],
+      "basis": "Bestandskatalog PROG-008 und Open Music Theory, Blues Harmony, Example 1. I und IV erhalten kleine Septimen.",
+      "method": "catalog_position",
+      "input": {
+        "position": 2
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-PROG-008-03",
+      "scope": "catalog",
+      "content": "PROG-008",
+      "domain": "M06",
+      "question": "Welchen Akkord erwartet die Blues-Vorlage PROG-008 an Position 3 in C?",
+      "expected": "C7",
+      "variants": [
+        "Explizite dom7-Notation unter demselben Stufenmodell."
+      ],
+      "basis": "Bestandskatalog PROG-008 und Open Music Theory, Blues Harmony, Example 1. I und IV erhalten kleine Septimen.",
+      "method": "catalog_position",
+      "input": {
+        "position": 3
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-PROG-008-05",
+      "scope": "catalog",
+      "content": "PROG-008",
+      "domain": "M06",
+      "question": "Welchen Akkord erwartet die Blues-Vorlage PROG-008 an Position 5 in C?",
+      "expected": "F7",
+      "variants": [
+        "Explizite dom7-Notation unter demselben Stufenmodell."
+      ],
+      "basis": "Bestandskatalog PROG-008 und Open Music Theory, Blues Harmony, Example 1. I und IV erhalten kleine Septimen.",
+      "method": "catalog_position",
+      "input": {
+        "position": 5
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-PROG-008-06",
+      "scope": "catalog",
+      "content": "PROG-008",
+      "domain": "M06",
+      "question": "Welchen Akkord erwartet die Blues-Vorlage PROG-008 an Position 6 in C?",
+      "expected": "C7",
+      "variants": [
+        "Explizite dom7-Notation unter demselben Stufenmodell."
+      ],
+      "basis": "Bestandskatalog PROG-008 und Open Music Theory, Blues Harmony, Example 1. I und IV erhalten kleine Septimen.",
+      "method": "catalog_position",
+      "input": {
+        "position": 6
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-PROG-016-01",
+      "scope": "catalog",
+      "content": "PROG-016",
+      "domain": "M06",
+      "question": "Welche Qualität verlangt das Maj7-Stufenlabel von PROG-016, Position 1?",
+      "expected": "Bmaj7",
+      "variants": [
+        "Enharmonisches D♯maj7 nur als alternative Schreibweise in 12-TET; die Akkordspalte schreibt E♭."
+      ],
+      "basis": "Wörtliches Maj7-Label der Vorlagenzeile. Terzschichtung ergibt einen Dur-Dreiklang mit großer Septime; Zielgrundton gemäß Akkordspalte.",
+      "method": "catalog_position",
+      "input": {
+        "position": 1
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-PROG-016-03",
+      "scope": "catalog",
+      "content": "PROG-016",
+      "domain": "M06",
+      "question": "Welche Qualität verlangt das Maj7-Stufenlabel von PROG-016, Position 3?",
+      "expected": "Gmaj7",
+      "variants": [
+        "Enharmonisches D♯maj7 nur als alternative Schreibweise in 12-TET; die Akkordspalte schreibt E♭."
+      ],
+      "basis": "Wörtliches Maj7-Label der Vorlagenzeile. Terzschichtung ergibt einen Dur-Dreiklang mit großer Septime; Zielgrundton gemäß Akkordspalte.",
+      "method": "catalog_position",
+      "input": {
+        "position": 3
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-PROG-016-05",
+      "scope": "catalog",
+      "content": "PROG-016",
+      "domain": "M06",
+      "question": "Welche Qualität verlangt das Maj7-Stufenlabel von PROG-016, Position 5?",
+      "expected": "Ebmaj7",
+      "variants": [
+        "Enharmonisches D♯maj7 nur als alternative Schreibweise in 12-TET; die Akkordspalte schreibt E♭."
+      ],
+      "basis": "Wörtliches Maj7-Label der Vorlagenzeile. Terzschichtung ergibt einen Dur-Dreiklang mit großer Septime; Zielgrundton gemäß Akkordspalte.",
+      "method": "catalog_position",
+      "input": {
+        "position": 5
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-PROG-020-02",
+      "scope": "catalog",
+      "content": "PROG-020",
+      "domain": "M06",
+      "question": "Ist der konkrete #11-Akkord an Position 2 von PROG-020 als Realisierung der alt-Stufe eindeutig spezifiziert?",
+      "expected": "Db7(#11)",
+      "variants": [
+        "Fachlich beschriebene und einzeln belegte andere Alterationsvarianten sind möglich, wenn der Katalogvertrag sie ausdrücklich nennt."
+      ],
+      "basis": "Katalog und Python-Definition unterscheiden sich. Alt ist kein eindeutiges Synonym für #11. Der Sollakkord bezeichnet nur die aktuelle Python-Variante, die explizit auszuzeichnen wäre.",
+      "method": "catalog_position",
+      "input": {
+        "position": 2
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-PROG-027-05",
+      "scope": "catalog",
+      "content": "PROG-027",
+      "domain": "M06",
+      "question": "Ist der konkrete #11-Akkord an Position 5 von PROG-027 als Realisierung der alt-Stufe eindeutig spezifiziert?",
+      "expected": "G7(#11)",
+      "variants": [
+        "Fachlich beschriebene und einzeln belegte andere Alterationsvarianten sind möglich, wenn der Katalogvertrag sie ausdrücklich nennt."
+      ],
+      "basis": "Katalog und Python-Definition unterscheiden sich. Alt ist kein eindeutiges Synonym für #11. Der Sollakkord bezeichnet nur die aktuelle Python-Variante, die explizit auszuzeichnen wäre.",
+      "method": "catalog_position",
+      "input": {
+        "position": 5
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-P12",
+      "scope": "catalog",
+      "content": "P12",
+      "domain": "M10",
+      "question": "Ist Fmaj7 ein Dreiklang, und was entsteht mit D im Bass?",
+      "expected": {
+        "right_hand": "F–A–C–E (Vierklang)",
+        "total": "Dm9 mit D als Grundton",
+        "notes": [
+          0,
+          2,
+          4,
+          5,
+          9
+        ]
+      },
+      "variants": [
+        "Rootless kann sich auf die rechte Hand beziehen."
+      ],
+      "basis": "P12 der Klavierbibliothek und unabhängige Terzschichtung 0,3,7,10,14 relativ D.",
+      "method": "piano",
+      "input": {
+        "id": "P12"
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-P19",
+      "scope": "catalog",
+      "content": "P19",
+      "domain": "M10",
+      "question": "Welche Schritte enthält C♯3–C3–H2–A2–G2?",
+      "expected": [
+        -1,
+        -1,
+        -2,
+        -2
+      ],
+      "variants": [
+        "Gemischt chromatisch und diatonisch; H kann in internationaler Notation B heißen."
+      ],
+      "basis": "P19 der Klavierbibliothek, MIDI 49,48,47,45,43.",
+      "method": "piano",
+      "input": {
+        "id": "P19"
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-M01-A4",
+      "scope": "sample",
+      "content": "M01",
+      "domain": "M01",
+      "question": "Welche Frequenzen ergeben MIDI 69 und 60 bei A4=440 Hz in 12-TET?",
+      "expected": [
+        440,
+        261.625565
+      ],
+      "variants": [],
+      "basis": "f=440·2^((m−69)/12)",
+      "method": "frequency",
+      "input": {
+        "midi": [
+          69,
+          60
+        ]
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-M02-ENHARMONIC",
+      "scope": "sample",
+      "content": "M02",
+      "domain": "M02",
+      "question": "Sind Cis4 und Des4 bei gleicher Stimmung klanglich gleich und gleich geschrieben?",
+      "expected": [
+        61,
+        61,
+        "C#4",
+        "Db4"
+      ],
+      "variants": [],
+      "basis": "C4=60 und D4=62. Je ein Vorzeichen verschiebt um einen Halbton.",
+      "method": "enharmonic",
+      "input": {},
+      "mandatory": true
+    },
+    {
+      "id": "KB-M03-HARMONIC-MINOR",
+      "scope": "sample",
+      "content": "M03",
+      "domain": "M03",
+      "question": "Wie groß ist die Stufe F→G♯ in A harmonisch Moll?",
+      "expected": 3,
+      "variants": [],
+      "basis": "A–H–C–D–E–F–G♯–A, MIDI F4=65 und G♯4=68.",
+      "method": "distance",
+      "input": {
+        "notes": [
+          "F4",
+          "G#4"
+        ]
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-M04-MAJOR-MINOR",
+      "scope": "sample",
+      "content": "M04",
+      "domain": "M04",
+      "question": "Welche Halbtonintervalle haben CM7 und Cm7?",
+      "expected": [
+        [
+          0,
+          4,
+          7,
+          11
+        ],
+        [
+          0,
+          3,
+          7,
+          10
+        ]
+      ],
+      "variants": [],
+      "basis": "C–E–G–H und C–Es–G–B (deutsche Notennamen).",
+      "method": "intervals",
+      "input": {
+        "symbols": [
+          "CM7",
+          "Cm7"
+        ]
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-M05-APPLIED",
+      "scope": "sample",
+      "content": "M05",
+      "domain": "M05",
+      "question": "Welcher Akkord ist V7/V in C-Dur?",
+      "expected": "D7",
+      "variants": [],
+      "basis": "G ist das Ziel, D die Quinte über G; D–Fis–A–C.",
+      "method": "degree",
+      "input": {
+        "degree": "V7/V",
+        "key": "C"
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-M07-CLAVE",
+      "scope": "sample",
+      "content": "CLAIM-036",
+      "domain": "M07",
+      "question": "Welche absoluten Ticks hat das genannte 3:2-Son-Clave-Beispiel bei 480 PPQ?",
+      "expected": [
+        0,
+        720,
+        1440,
+        2400,
+        2880
+      ],
+      "variants": [],
+      "basis": "CLAIM-036. Zwei 4/4-Takte mit Offsets [0, 1½, 3] und [1, 2] Vierteln.",
+      "method": "claim_sample",
+      "input": {
+        "id": "CLAIM-036",
+        "check": "clave"
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-M08-METER",
+      "scope": "sample",
+      "content": "PAT-031",
+      "domain": "M08",
+      "question": "Ist in PAT-031 für die zwölf Pulse genau ein 12/8-Takt oder sind zwei 6/8-Takte festgelegt?",
+      "expected": [
+        "Taktgrenzen prüfen",
+        "Zwölf Pulse allein legen die Gruppierung nicht fest."
+      ],
+      "variants": [],
+      "basis": "PAT-031 benennt 6/8 und 12/8 ohne explizite Taktgrenze.",
+      "method": "manual",
+      "input": {},
+      "mandatory": true
+    },
+    {
+      "id": "KB-M11-ALTER",
+      "scope": "sample",
+      "content": "CLAIM-011",
+      "domain": "M11",
+      "question": "Darf MusicXML 4.0 für alter 0,5 verwenden?",
+      "expected": true,
+      "variants": [],
+      "basis": "https://www.w3.org/2021/06/musicxml40/musicxml-reference/data-types/semitones/ nennt 0.5 und spezifiziert decimal ohne die behauptete Begrenzung.",
+      "method": "claim_sample",
+      "input": {
+        "id": "CLAIM-011",
+        "check": "alter"
+      },
+      "mandatory": true
+    },
+    {
+      "id": "KB-M12-PLAYABILITY",
+      "scope": "sample",
+      "content": "P02",
+      "domain": "M12",
+      "question": "Reicht kleine L1-Bewegung allein als Nachweis, dass P02 für kleine Hände spielbar ist?",
+      "expected": [
+        "Handspanne",
+        "Fingersatz",
+        "Tempo",
+        "Spielprobe"
+      ],
+      "variants": [],
+      "basis": "P02 und Solver-Vertrag in docs/IMPLEMENTATION.md. L1 misst Halbtonbewegung, keine Ergonomie.",
+      "method": "manual",
+      "input": {},
+      "mandatory": true
+    },
+    {
+      "id": "KB-M07-SWING-SOURCE",
+      "scope": "sample",
+      "content": "CLAIM-034",
+      "domain": "M07",
+      "question": "Wo steht die empirische Untersuchung zu tempoabhängigen Jazz-Swing-Ratios und was wurde gemessen?",
+      "expected": {
+        "journal": "Music Perception",
+        "volume_issue": "19(3)",
+        "pages": "333–349",
+        "doi": "10.1525/mp.2002.19.3.333"
+      },
+      "variants": [
+        "Abkürzung des Zeitschriftentitels bei eindeutiger DOI. Der Abstract beschreibt Messungen an Ride-Cymbal-Onsets in vier konkreten Aufnahmen."
+      ],
+      "basis": "UC Press, Metadaten und Abstract: https://doi.org/10.1525/mp.2002.19.3.333. Der Abstract belegt keine allgemeingültige Ratio für konkrete BPM.",
+      "method": "claim_sample",
+      "input": {
+        "id": "CLAIM-034",
+        "check": "swing_source"
+      },
+      "mandatory": true
+    },
+    {
+      "id": "COACH-01",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M05",
+      "question": "Analysiere Dm7–G7–Cmaj7 in C-Dur mit einem nachvollziehbaren Stimmführungsbeispiel.",
+      "expected": [
+        "ii7–V7–Imaj7",
+        "Dm7 Mollsept, G7 Dominantsept, Cmaj7 Dursept",
+        "Ein belegter Halbton und passende Akkordtöne",
+        "Quellenfundstelle"
+      ],
+      "variants": [
+        "C→H oder F→E"
+      ],
+      "basis": "https://viva.pressbooks.pub/openmusictheorycopy/chapter/ii-v-i/",
+      "method": "coach",
+      "input": {},
+      "mandatory": true
+    },
+    {
+      "id": "COACH-02",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M09",
+      "question": "Bestimme die gehörte Tonika aus C–G–Am–F ohne Aufnahme oder Melodie.",
+      "expected": [
+        "C und A als mögliche Zentren",
+        "keine eindeutige Tonika ohne musikalischen Kontext",
+        "Quellenfundstelle"
+      ],
+      "variants": [
+        "I–V–vi–IV und III–VII–i–VI"
+      ],
+      "basis": "https://viva.pressbooks.pub/openmusictheorycopy/chapter/4-chord-schemas/",
+      "method": "coach",
+      "input": {},
+      "mandatory": true
+    },
+    {
+      "id": "COACH-03",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M04",
+      "question": "Erkläre Fmaj7 über D im Bass. Sind beide Hände zusammen rootless?",
+      "expected": [
+        "Fmaj7 ist ein Vierklang",
+        "D–F–A–C–E ergibt Dm9",
+        "Gesamtklang enthält D",
+        "keine erfundene Literaturstelle"
+      ],
+      "variants": [
+        "Rechte Hand darf rootless genannt werden."
+      ],
+      "basis": "Unabhängige Terzschichtung über D. P12 ist die zu überprüfende Vorlage.",
+      "method": "coach",
+      "input": {},
+      "mandatory": true
+    },
+    {
+      "id": "COACH-04",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M07",
+      "question": "Sind bei Jazz-Swing auf jedem Tempo exakt dieselben Onsets vorgeschrieben? Belege die Aussage.",
+      "expected": [
+        "keine universelle feste Ratio",
+        "Tempo, Spielweise und Ensemble als Kontext",
+        "konkrete überprüfbare Fundstelle oder Evidenzlücke"
+      ],
+      "variants": [
+        "Tempoabhängige empirische Tendenz darf mit Gültigkeitsgrenze genannt werden."
+      ],
+      "basis": "Friberg und Sundström (2002), Swing Ratios and Ensemble Timing in Jazz Performance, Abstract, DOI 10.1525/mp.2002.19.3.333.",
+      "method": "coach",
+      "input": {},
+      "mandatory": true
+    },
+    {
+      "id": "COACH-05",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M02",
+      "question": "Welche Tonklassen bedeuten H, B und Bb in deutscher und internationaler Eingabe?",
+      "expected": [
+        "H deutsch = internationales B",
+        "B deutsch = internationales B♭",
+        "Bb international = Tonklasse 10",
+        "Mehrdeutigkeit bei unmarkiertem B"
+      ],
+      "variants": [
+        "Deutsches Bb nur mit expliziter hybrider Konvention erläutern."
+      ],
+      "basis": "Yale University Library, The names of keys, S. 1, Zeilen B und B flat.",
+      "method": "coach",
+      "input": {},
+      "mandatory": true
+    }
+  ]
+}

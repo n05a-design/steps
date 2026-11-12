@@ -11,6 +11,9 @@ Kompatibilitätsbestand erhalten.
 
 ## Menschliche Fachabnahme
 
+Die [Abnahmeliste](../../benchmark/PILOT_ABNAHME.md) enthält je Aussage
+Wortlaut, Fingerabdruck, Fundstelle, Gegencheck und Prüffrage mit Sollantwort.
+
 Eine fachkundige Person prüft je Aussage Wortlaut, Gültigkeitsbereich,
 Gegencheck und Fundstelle. Sie hält im GitHub-Review oder PR-Kommentar
 die freigegebenen Claim-IDs mit ihren vollständigen Fassungsfingerabdrücken
@@ -25,7 +28,8 @@ Nach belegter Abnahme wird für jede freigegebene ID ein Eintrag im
 ergänzt. Die Felder sind `fingerprint`, `reviewer` (GitHub-Konto),
 `reviewed_on` (ISO-Datum) und `evidence_url` (Permalink zum Review oder
 Kommentar). Beim Code-Review des Registereintrags sind Konto, Beleg
-und im Beleg genannter Fingerabdruck zu vergleichen. Die lokale
+und im Beleg genannter Fingerabdruck zu vergleichen. Anschließend die
+[Abnahmeliste und Abdeckungsmatrix](../../benchmark/README.md) aktualisieren. Die lokale
 Validierung prüft das Register und die Form des Permalinks offline.
 Die Prüfung, wer die Erklärung tatsächlich abgegeben hat, erfolgt
 beim Review auf GitHub.
