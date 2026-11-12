@@ -1,78 +1,33 @@
-# STEPS – Modulares Musiktheorie- und Kompositionssystem
+# STEPS – Musiktheorie- und Progressionskern
 
-STEPS ist ein modulares, rein in Python implementiertes Open-Source-System für Musiktheorie, funktionale Harmonielehre, Kadenzanalyse, Stimmführung und Kompositionsunterstützung.
+STEPS stellt einen Python-Kern für Tonhöhen, Intervalle, Akkordsymbole,
+Stufenauflösung, Transposition und Stimmführung bereit. Der Checkout enthält
+eine Schnittstelle für geprüfte Lernbeispiele. Die Desktop-App befindet sich
+in Vorbereitung.
 
-**Version:** 0.1.0-alpha (Headless Music Theory Core)  
-**Lizenz:** Mozilla Public License 2.0 (MPL-2.0)  
-**Projektstatus:** Headless-Theorie- und Progressionskern mit einzeln geprüftem App-Katalog
+Der Entwicklungsstand steht in [VERSION](VERSION), die Paketversion in
+[`src.steps.__version__`](src/steps/__init__.py). Der Quellcode steht unter
+[Mozilla Public License 2.0](LICENSE). Die Rechte an Forschungsquellen werden
+je Quelle erfasst.
 
----
+## Schnellstart
 
-## 1. Systemübersicht & Kernarchitektur
+Aus dem Repository-Root mit Python 3.11 oder 3.12:
 
-STEPS trennt Fachmodell, Wissensbasis und spätere Nutzeroberflächen strikt nach ISO/IEC 25010 und Clean Architecture Grundsätzen:
-
-```
-steps/
-├── .github/          # CI/CD Multi-OS & Multi-Python Workflows
-├── .agents/          # Antigravity Curation & Development Skills
-├── app/              # Desktop UI Shell Scaffold (v0.3)
-├── archive/          # Revisionssicheres historisches Archiv
-├── decisions/        # Kanonische Architekturentscheidungen (ADR-001..012)
-├── docs/             # Entwicklungs- und Systemdokumentation
-├── knowledge/        # Gepflegte Wissensbasis, Ontologie & Golden Cases
-├── research/         # Musikologische Forschung & Korpora
-├── scripts/          # Verifikations-, Test- und Kuratierungs-Tools
-├── src/steps/        # Pure Python Musiktheorie- und Progressions-Kern
-│   ├── theory/       # Pitch, Interval, Triad, Seventh, Chord Engine
-│   └── progression/  # Stimmführung, 28 Progressionen, Harmonic Engine
-└── tests/            # Automatisierte Kern- und Referenztests
+```sh
+python -B -m unittest discover -s tests
+python -B scripts/verify_reference_integrity.py
+python -B scripts/render_reviewed_progressions.py --check
+python -B scripts/render_api_reference.py --check
 ```
 
----
+Die [Testanleitung](tests/README.md) beschreibt die Prüfungen, die CI-Matrix
+und die Grenzen der Golden Cases.
 
-## 2. Kernfunktionen des STEPS-Theoriekerns (`src/steps/`)
+## Dokumentation
 
-* **Mathematisches Domänenmodell ($Z_{12}$):** Modulo-12-Arithmetik, Frequenzberechnung ($A_4 = 440\,	ext{Hz}$), zyklische Gruppen und vollständige enharmonische Orthographie (diatonische Stufen und Alterationen).
-* **Zwei-Wege-Notationssystem:** Vollständige Unterstützung internationaler ($B/Blat$) und deutscher Notenkonventionen ($H/B$).
-* **Akkord-Engine:** Konstruktion und Parsen von Dreiklängen, Vierklängen, Sus-/Add-Akkorden, Extensions (9, 11, 13, alteriert), Slash Chords und Stufenakkorden.
-* **Progressionen:** 28 Beispiele im Bestandskatalog. Der [geprüfte App-Katalog](knowledge/concepts/progressions/REVIEWED_PROGRESSIONS.md) enthält die einzeln abgenommenen Lernbeispiele.
-* **Stimmführungs-Solver:** Kontrapunktische Validierung (Parallelenvermeidung, Stimmkreuzungserkennung) und Optimierung nach der Tymoczko-Metrik $\sum |midi(v_{2,i}) - midi(v_{1,i})|$.
-* **Zero External Dependencies:** Der Kern benötigt für Ausführung und Tests **ausschließlich die Python Standardbibliothek**.
-
----
-
-## 3. Schnellstart & Testausführung
-
-```bash
-# 1. Repository klonen
-git clone https://github.com/n05a-design/steps.git
-cd steps
-
-# 2. Kern-Unittests ausführen
-python -m unittest discover -s tests
-
-# 3. Knowledge Curation Skill Tests ausführen (25 Tests)
-python -m unittest discover -s .agents/skills/steps-knowledge-curation/tests
-
-# 4. Golden Reference Suite ausführen (198 Fälle)
-python knowledge/research/run_golden_test_suite.py
-```
-
----
-
-## 4. Qualitätssicherung & Metriken
-
-* **Test-Abdeckung:** Kern- und Skill-Suite prüfen APIs, Referenzintegrität und Curation. Die Kern-Suite prüft zusätzlich, dass App-Katalog und generiertes Lernmaterial übereinstimmen.
-* **Golden Reference Cases:** 198 Referenzfälle (67 rechnerisch, 131 Spezifikation) verifiziert.
-* **Fehlerbilanz:** 37 historische Musikfehler in `knowledge/research/MUSICAL_ERROR_REGISTER.csv` dokumentiert behoben.
-* **Quellenevidenz:** Der App-Katalog verweist auf das Produktregister in `knowledge/sources/registry.yaml`. Die Forschungs-Claim-CSV enthält auch Platzhalter und offene Nachweise.
-* **Glide-Entkopplung:** Exakt **0 Importe** oder Abhängigkeiten zum isolierten Altsystem `src/glide-v3.53/`.
-
----
-
-## 5. Dokumentation & Historisches Archiv
-
-* **Aktive Dokumentation:** [`docs/`](docs/)
-* **Architektur-Entscheidungen:** [`decisions/DECISION_REGISTER.md`](decisions/DECISION_REGISTER.md)
-* **Historisches Archiv:** Frühere Arbeitsstände, Übergaben und Auditpakete befinden sich geordnet in [`archive/`](archive/).
+- [Implementierungsstand und Funktionsgrenzen](docs/IMPLEMENTATION.md)
+- [Python-API und unterstützte Akkordqualitäten](docs/theory/API.md)
+- [Geprüfte Lernbeispiele und Datenpflege](knowledge/concepts/progressions/README.md)
+- [Architektur, Entscheidungen und offene Fragen](docs/README.md)
+- [Historische Fassungen und Audits](archive/INDEX.md)

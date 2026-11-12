@@ -1,11 +1,11 @@
-# app
+# App-Schicht
 
-Desktop-Start, GUI-Komposition und Plattformintegration. Keine doppelte Musiktheorie-Engine. Ein `__main__.py` entsteht erst mit einer ausführbaren Implementierung.
+[`app.knowledge`](knowledge.py) ist der Python-Adapter für die einzeln
+geprüften Lernbeispiele. `list_reviewed_progressions()` liefert alle Einträge
+und `get_reviewed_progression("PROG-003")` liefert das einzelne Beispiel.
+Sein Feld `progression` kann an
+`src.steps.progression.generate_progression_voicings` übergeben werden.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
-
-`app.knowledge.list_reviewed_progressions()` liefert die geprüften
-Beispiele mit Lerntext und Quellen-IDs. Ein Einzelbeispiel lässt sich mit
-`get_reviewed_progression("PROG-003")` laden. Dessen `progression` kann
-direkt an `src.steps.progression.generate_progression_voicings` übergeben
-werden.
+Desktop-Start, Oberfläche und Plattformintegration sind Ziel dieser Schicht.
+Der [Implementierungsstand](../docs/IMPLEMENTATION.md) beschreibt den
+vorhandenen Kern und die Grenzen der App-Schnittstelle.

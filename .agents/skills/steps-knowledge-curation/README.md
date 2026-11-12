@@ -1,39 +1,24 @@
-# STEPS Knowledge Curation – Skill README
+# STEPS Knowledge Curation
 
-## Overview
-The `steps-knowledge-curation` skill provides automated and standardized procedures for curating the STEPS project knowledge base, cataloging music theory literature, analyzing MIDI files, and maintaining the central register of open work instructions (`OFFENE_ARBEITSAUFFORDERUNGEN.md`).
+The [runbook](SKILL.md) describes the review workflow for research sources,
+musical claims and open work instructions. It applies when a compatible agent
+loads it. The helper scripts run independently from the desktop application.
 
-## Installation & Activation
-This workspace skill resides at:
-`.agents/skills/steps-knowledge-curation/`
+| Helper | Implemented behavior |
+|---|---|
+| [check_source.py](scripts/check_source.py) | Resolves the path, hashes the bytes and reports whether the resolved file is within the supplied base path. The boundary result is informational. |
+| [detect_duplicates.py](scripts/detect_duplicates.py) | Looks for matching content hashes. Near duplicates and conflicting editions require review. |
+| [extract_instructions.py](scripts/extract_instructions.py) | Extracts text patterns for possible work instructions. |
+| [validate_register.py](scripts/validate_register.py) | Checks register structure and identifiers. Source locators and factual support require separate review. |
+| [backup_knowledge.py](scripts/backup_knowledge.py) | Provides snapshot and restore operations. Treat the backup and its metadata as trusted inputs and verify restoration independently before relying on it. |
 
-It activates automatically when interacting with Antigravity agents on tasks involving music theory literature, open tasks, research documents, or rights triage in STEPS.
+Music-theory validation, MIDI interpretation and rights clearance require
+separate review. The scripts do not establish factual correctness or rights.
 
-## Directory Structure
-```text
-.agents/skills/steps-knowledge-curation/
-├── SKILL.md             # Main runbook and activation instructions
-├── README.md            # Skill architecture and documentation
-├── CHANGELOG.md         # Version history
-├── references/          # Detailed documentation and guidelines
-│   ├── music_taxonomy.md
-│   ├── rights_policy.md
-│   ├── work_instructions_protocol.md
-│   └── canonical_doc_hierarchy.md
-├── scripts/             # Executable utilities
-│   ├── check_source.py
-│   ├── detect_duplicates.py
-│   ├── extract_instructions.py
-│   └── validate_register.py
-├── templates/           # Reusable templates
-│   ├── source_entry.md
-│   ├── work_instruction_entry.md
-│   └── conflict_entry.md
-└── tests/               # Automated unit tests
-    └── test_curation_tools.py
+Run the helper and end-to-end tests from the repository root.
+
+```sh
+python -B -m unittest discover -s .agents/skills/steps-knowledge-curation/tests -v
 ```
 
-## Running the Self-Test
-```bash
-python -m unittest discover -s .agents/skills/steps-knowledge-curation/tests/ -v
-```
+[Test scope and macOS temporary paths](../../../tests/README.md)

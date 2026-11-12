@@ -2,8 +2,6 @@
 
 Kadenz, Stufenanalyse, Reharmonisierung und Progressionsmuster.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
-
 Der [einzeln geprüfte App-Katalog](REVIEWED_PROGRESSIONS.md) wird mit
 `python scripts/render_reviewed_progressions.py` aus
 `src/steps/progression/reviewed_progressions.json` erzeugt. Die App verwendet

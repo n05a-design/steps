@@ -1,5 +1,7 @@
 # STEPS – konsolidierte Projekt-Overview nach kritischer Zweitprüfung
 
+> Dieser Überblick ist auf den unten genannten Projektstand datiert. Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt die Funktionen des Checkouts.
+
 **Stand:** 10. November 2026, Europe/Berlin. **Status:** *Prüf- und Arbeitsgrundlage, keine Release- oder Owner-Freigabe*. **GitHub-Referenz:** Steps `main` [`75329fef`](https://github.com/n05a-design/steps/commit/75329fef46878a5ac816cef3690e612a9e8fe52c), Glide `main` [`9e767bea`](https://github.com/n05a-design/glide-to-do/commit/9e767bea5e21063466a28ac3a679406484ad5d5f). **Lokaler Code-Upload:** `Glide-Aufgaben-und-Listen_v3.53.0.pyw`, SHA-256 `d7e19151eb0862a8ff58c4cc5e7d06a0452cde1daa73830ff97f54247bc75271`, Git-Blob `0fc522fb5faf9694dbd28d2ca43b1f415a010139`, **identisch** mit Glide-HEAD-`app.pyw`; **nicht** alle weiteren Glide-Modul-/Assetdateien lokal geliefert. Die ältere 66-Dateien-Fassung und ihre damaligen Snapshots werden in `archive/v1_docs` bewahrt.
 
 ## 1. Präzises Projektbild

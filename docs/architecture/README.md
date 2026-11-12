@@ -1,5 +1,6 @@
-# docs/architecture
+# Architektur
 
-Normative technische Zielarchitektur; nicht mit Bestandsnachweisen verwechseln.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Der [Implementierungsstand](../IMPLEMENTATION.md) ordnet vorhandene Module und
+ihre Laufzeitgrenzen ein. Das [Architekturziel](architecture.md) und die
+[Architektur- und Portentwürfe](ARCHITECTURE_OVERVIEW.md) beschreiben die
+geplante Desktop-Anwendung und ihre Schnittstellen.

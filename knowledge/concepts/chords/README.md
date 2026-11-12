@@ -1,5 +1,3 @@
-# knowledge/concepts/chords
+# Akkorde und Klavierübungen
 
-Akkordtypen, Erweiterungen, Alterationen und Voicings.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Die [Python-API](../../../docs/theory/API.md#akkordqualitäten) enthält die unterstützten Akkordqualitäten und Aliasse. Die [Klavierbibliothek](PIANO_PRACTICE_REFERENCE_LIBRARY.md) ist eine eigene didaktische Referenz.

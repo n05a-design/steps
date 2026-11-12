@@ -1,5 +1,7 @@
-# docs/theory
+# Musiktheorie im Python-Kern
 
-Erklärungen zu mathematischen und musiktheoretischen Modellen.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Die [API-Referenz](API.md) zeigt die exportierten Python-Schnittstellen,
+Akkordaliase und Halbtonintervalle des Checkouts. Der
+[Implementierungsstand](../IMPLEMENTATION.md) beschreibt Voraussetzungen,
+Konventionen und Grenzen. Die [Wissensbibliothek](../../knowledge/README.md)
+enthält zusätzlich Forschungs- und Lernmaterial mit eigener Provenienz.

@@ -1,5 +1,3 @@
-# docs/system_reuse
+# Wiederverwendung von Glide
 
-Geplanter Glide-Reuse mit Quellen-/Lizenzzuordnung und API-Grenzen.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Die [Glide-Unterlagen](GLIDE.md) beschreiben die technische Referenz und die Freigabebedingungen. Der [Implementierungsstand](../IMPLEMENTATION.md) dokumentiert die tatsächliche STEPS-Laufzeit.

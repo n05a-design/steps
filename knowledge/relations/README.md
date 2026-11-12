@@ -1,5 +1,3 @@
-# knowledge/relations
+# Konzeptrelationen
 
-Typisierte Relationen zwischen Konzepten und Harmoniezuständen.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Die [Relationstabelle](MUSIC_CONCEPT_RELATIONS.csv) enthält typisierte Aussagen mit IDs und Statusfeldern. Der [Referenzcheck](../../scripts/verify_reference_integrity.py) prüft ihre Identitäten. Die App-Schnittstelle für Lernbeispiele lädt die Tabelle derzeit nicht.

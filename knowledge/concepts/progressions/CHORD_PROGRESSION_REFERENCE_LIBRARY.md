@@ -1,5 +1,7 @@
 # STEPS – Kanonische Akkordprogressions-Bibliothek (PROG-001 bis PROG-028)
 
+> Diese Fassung dokumentiert den Bestandskatalog der allgemeinen Progressions-API. Die einzeln geprüften Einträge der App-Schnittstelle stehen im [kuratierten Lernmaterial](REVIEWED_PROGRESSIONS.md).
+
 **Dokumenttyp:** KONSOLIDIERTER AKKORDPROGRESSIONS-ATLAS  
 **Wissensdomänen:** M05 (Harmonielehre), M04 (Akkordtheorie), M06 (Voice Leading), M09 (Genre-Atlas)  
 **Notationsstandard:** SPN (C4 = MIDI 60); deutsches H = int. B explizit.  

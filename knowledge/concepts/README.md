@@ -1,5 +1,5 @@
-# knowledge/concepts
+# Fachkonzepte
 
-Fachkonzepte mit stabilen IDs und belegten Referenzen, getrennt von Laufzeit-Code.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Die [API-Referenz](../../docs/theory/API.md) beschreibt die implementierten Theorieobjekte.
+Der [Progressionsbestand](progressions/README.md) weist die geprüften App-Beispiele aus.
+[Klavierübungen](chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md) und [Drum-Referenzen](styles/DRUM_GROOVE_REFERENCE_LIBRARY.md) sind Wissensmaterial. Der aktuelle App-Adapter lädt Progressionsbeispiele.

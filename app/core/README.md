@@ -1,5 +1,3 @@
-# app/core
+# App-Komposition
 
-Anwendungs-Lifecycle, Einstellungen, Speicherschnittstellen und Exceptions; fachliche Logik bleibt in `src/steps/`.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Für den Desktop-Start ist hier ein Platzhalter vorgesehen. Der [Python-Kern](../../docs/IMPLEMENTATION.md) lässt sich bereits separat importieren.

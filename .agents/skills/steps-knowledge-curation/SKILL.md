@@ -9,12 +9,12 @@ description: >-
 
 # STEPS Knowledge Curation Skill
 
-This skill provides verified, reproducible procedures and executable helper scripts to inspect, categorize, and incrementally integrate music theory literature, MIDI files, research documents, and open work instructions into the STEPS project without data loss or unverified claims.
+This runbook guides the review and incremental integration of music theory literature, MIDI files, research documents and open work instructions. The [helper inventory](README.md) lists the implemented checks. Reviewers must independently confirm musical claims, source locators, rights and resolved path boundaries before integration.
 
 ## Core Responsibilities
 
 1. **Source Ingestion & Provenance**: Track every file by exact path, size, and SHA-256 hash. Distinguish between own project files, public open-access sources, and proprietary/copyright-protected third-party assets (P0-1 compliance).
-2. **Music Theory Validation**: Enforce the 5 foundational theory axioms from `docs/engineering/MUSIC_DOMAIN_AND_MIDI.md`:
+2. **Music Theory Review**: Apply the five foundational theory distinctions from `docs/engineering/MUSIC_DOMAIN_AND_MIDI.md`:
    - Sounding pitch $\neq$ pitch class (0..11) $\neq$ note spelling.
    - Chord identity $\neq$ chord symbol $\neq$ voicing $\neq$ inversion $\neq$ context function.
    - Progression $\neq$ rhythmic events (`MusicTime` ticks) $\neq$ phrasing $\neq$ style context.
@@ -22,7 +22,7 @@ This skill provides verified, reproducible procedures and executable helper scri
    - Notation $\neq$ MIDI export $\neq$ audio playback.
 3. **Open Work Instructions Maintenance**: Maintain the single canonical master register:
    `%LOCALAPPDATA%\StepsKnowledge\OFFENE_ARBEITSAUFFORDERUNGEN.md`.
-   Ensure no duplicate tasks are introduced, and all tasks trace back to explicit source anchors.
+   Review duplicate candidates and confirm explicit source anchors before writing any approved updates.
 
 ---
 
@@ -47,7 +47,7 @@ When a user adds or updates a music document or specification:
    Proprietary/copyrighted files must remain METADATA_ONLY and outside public Git commits.
         │
         ▼
-4. Extract Claims & Work Instructions:
+4. Extract Candidate Work Instructions (review claims and sources separately):
    python .agents/skills/steps-knowledge-curation/scripts/extract_instructions.py <file_path>
         │
         ▼
@@ -69,7 +69,7 @@ When a user adds or updates a music document or specification:
 
 ## Verification & Self-Test
 
-Run the automated test suite to ensure the skill and its helpers are working correctly:
+Run the helper and workflow tests. Their scope is described in the [skill README](README.md).
 ```bash
 python -m unittest discover -s .agents/skills/steps-knowledge-curation/tests/ -v
 ```

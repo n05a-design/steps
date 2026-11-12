@@ -1,5 +1,3 @@
-# docs/roadmap
+# Roadmap
 
-Versionierte, nach Evidenz priorisierte Meilensteinplanung.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Der [Roadmap-Entwurf](ROADMAP_AND_RESOURCE_PLAN.md) enthält Meilensteine und Abnahmebedingungen. Der [Implementierungsstand](../IMPLEMENTATION.md) zeigt den aktuellen Umfang.

@@ -1,5 +1,3 @@
-# docs/handover
+# Übergaben
 
-Übergaben, Prüfgates und Nachweise inkl. Migrations-/Auditberichten.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Die [Übergabe-Checkliste](HANDOVER_CHECKLIST.md) beschreibt den Arbeitsablauf. Datierte Agentenberichte sind über den [Archivindex](../../archive/INDEX.md) auffindbar.
