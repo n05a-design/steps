@@ -1,5 +1,3 @@
-# knowledge/concepts/voice_leading
+# Stimmführung
 
-Stimmführung, Abstandsminimierung und stilistische Regeln.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Die [Funktionsübersicht](../../../docs/IMPLEMENTATION.md#laufzeit-und-grenzen) beschreibt die vorhandenen Voicing-Verfahren, Annahmen und Grenzen des Solvers.

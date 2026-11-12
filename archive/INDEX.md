@@ -1,13 +1,15 @@
-# STEPS – ARCHIV-INDEX UND NAVIGATIONSLEITFADEN
+# Archivindex
 
-| Kategorie | Pfad | Enthaltene Bestände | Primäre Dokumente |
-|---|---|---|---|
-| **Manifeste & Nachweise** | `manifests/` | Inventare, Pläne, Logs | `ARCHIVE_MANIFEST.csv`, `ARCHIVE_PLAN.csv` |
-| **Agenten-Historie** | `agent-history/antigravity/` | Master-Audit V2, Antigravity-Berichte | `01_GESAMTBERICHT.md`, `17_AUDIT_INDEX.md` |
-| **Agenten-Historie** | `agent-history/openai/` | OpenAI Handover- und Prüfpaket | `OpenAI Steps Bericht.md`, `MANIFEST.json` |
-| **Agenten-Historie** | `agent-history/handovers/` | 15-teiliges Kontext-Übergabedossier | `00_PROJECT_CONTEXT_HANDOVER.md` |
-| **Audit-Historie** | `audit-history/earlier-audits/` | Phase 1 & 2 Auditpakete, V4-Prüfungen | `30_ANTIGRAVITY_MASTER_AUDIT_...` |
-| **Projekt-Historie** | `project-history/early-planning/` | Arbeitsrichtlinien, bootstrap_steps | `Arbeits-Richtlinien_und_Auftraege/` |
-| **Projekt-Historie** | `project-history/architecture-drafts/` | Shell extraction, Glide-Shell-Report | `Glide_Shell_Framework_...md` |
-| **Dokumenten-Historie** | `documentation-history/previous-versions/` | Frühere README_v1, Setup-Guides | `README_v1_historical_2026-11-10.md` |
-| **Legacy-Archive** | `legacy/` | V1 Dokumente & Prompts | `v1_docs/`, `v1_prompts/` |
+| Bestand | Einstieg |
+|---|---|
+| Archivierung und Nachweise | [Manifest](manifests/ARCHIVE_MANIFEST.csv), [Plan](manifests/ARCHIVE_PLAN.csv), [Ausführungsprotokoll](manifests/ARCHIVE_ACTION_LOG.md), [historische Wiederherstellungsanleitung](manifests/ARCHIVE_RESTORE_GUIDE.md) |
+| Archivierungsabschluss | [Abschlussbericht](manifests/10_ABSCHLUSSBERICHT.md) und [Risikostand](manifests/09_OFFENE_RISIKEN.md) |
+| Antigravity Master-Audit V2 | [Bericht](agent-history/antigravity/Antigravity_MasterAuditV2_Bericht/01_GESAMTBERICHT.md), [Auditindex](agent-history/antigravity/Antigravity_MasterAuditV2_Bericht/17_AUDIT_INDEX.md) |
+| OpenAI-Prüfpaket | [Verzeichnis](agent-history/openai/OpenAI_Steps_Bericht/), [Paketmanifest](agent-history/openai/OpenAI_Steps_Bericht/MANIFEST.json) |
+| Übergaben | [Kontextübergabe](agent-history/handovers/AI_CONTEXT_HANDOVER/00_PROJECT_CONTEXT_HANDOVER.md) |
+| Frühere Audits | [Auditpakete](audit-history/earlier-audits/) |
+| Projektplanung | [Frühe Arbeitsrichtlinien](project-history/early-planning/), [Architekturentwürfe](project-history/architecture-drafts/) |
+| Dokumentfassungen | [Frühere README](documentation-history/previous-versions/README_v1_historical_2026-11-10.md), [abgelöste Dokumente](documentation-history/superseded-documents/), [Projekt-ZIP vom 9. November 2026 und seine Repository-Pfade](../docs/project/ARCHIVE_README.md) |
+| V1-Bestände | [Dokumentation](v1_docs/), [Prompts](v1_prompts/) |
+
+[Archivkontext und Wiederherstellung](README.md)

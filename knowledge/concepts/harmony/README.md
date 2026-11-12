@@ -1,5 +1,3 @@
-# knowledge/concepts/harmony
+# Harmonielehre
 
-Funktionstheorie, modale, pop-, jazz- und transformationsorientierte Systeme.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Die vorhandene [Stufenauflösung und ihre Grenzen](../../../docs/IMPLEMENTATION.md#laufzeit-und-grenzen) sind beim Implementierungsstand dokumentiert. Die [Kataloge](../progressions/README.md) führen Beispiele und kuratierte Lerntexte.

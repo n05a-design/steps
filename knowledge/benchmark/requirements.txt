@@ -1,0 +1,2 @@
+# Audit-only YAML parser for historical registers. The runtime has no dependency.
+PyYAML==6.0.3

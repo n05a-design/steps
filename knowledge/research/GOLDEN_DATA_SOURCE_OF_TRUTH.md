@@ -16,10 +16,16 @@ Zur Vermeidung von Datenfragmentierung und divergierenden Versionen gilt für di
 
 ## 2. Bestandsübersicht (Phase 4.15)
 
-Der konsolidierte Gesamtbestand umfasst **198 Golden Reference Cases**:
+Der konsolidierte Gesamtbestand umfasst **198 Golden Reference Cases**.
+
+Die [Abdeckungsmatrix](../benchmark/COVERAGE.csv) dokumentiert für alle 198
+Fälle eine formale Prüfung und für keinen eine fachliche Einzelabnahme.
+Identitäts-, Hash- und Testprüfungen sichern Zuordnung, Spiegelung und
+erwartetes Laufzeitverhalten. Aussagen, Sollwerte und Quellen bedürfen einer
+eigenen fachlichen Prüfung.
 
 * **REF-0001 bis REF-0094 (Historischer Kernbestand Phase 4.1 bis 4.12):**
-  Vollständig in der ursprünglichen fachlichen Bedeutung wiederhergestellt (Tonklassen C4/A4, 12-TET Enharmonik, Intervalle, Kadenzen, Swing-Ratios, GM-Percussion-Mappings, Tuplet-Quantisierung, Rootless Voicings).
+  Historische Fallzuordnungen wiederhergestellt (Tonklassen C4/A4, 12-TET Enharmonik, Intervalle, Kadenzen, Swing-Ratios, GM-Percussion-Mappings, Tuplet-Quantisierung, Rootless Voicings).
 * **REF-0095 bis REF-0100 (Phase 4.13 Multi-Domain & Erweiterungen):**
   Harmonisierte und wiederhergestellte komplexe Fälle (Backdoor-Leittonauflösung, chromatische Sekundärdominanten-Basslinie, Coltrane Großterz-Zyklus, Neo-Soul 57% Swing, Bembé 12/8 Bell-Invariante, Multi-Domain-Synthese).
 * **REF-0101 bis REF-0198 (Phase 4.14 Akustik- & Theoriefallstudien):**

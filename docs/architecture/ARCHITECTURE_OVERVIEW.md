@@ -1,5 +1,7 @@
 # STEPS – Architektur und Laufzeitgrenzen
 
+> Die beschriebenen Laufzeitkomponenten, Ports und Plattformabläufe bilden das Architekturziel. Die implementierten Module und ihre Grenzen stehen im [Implementierungsstand](../IMPLEMENTATION.md).
+
 
 > **Kritischer Aktualitätsnachtrag (10.11.2026, nach GitHub PR #75):** Der folgende Basisteil stammt aus dem früheren Paket und kann für Glide `main` noch den historischen Commit `61a2f3a`/Version 3.50.7 nennen. Der erneut verifizierte Stand ist **Glide `9e767bea` (3.53.0)**; der hochgeladene `app.pyw` ist blobgleich mit diesem HEAD, nicht aber bereits alle weiteren Module und Ressourcen unabhängig verifiziert. Aktuelle Bewertungen und Entscheidungsgates stehen in [`docs/project/PROJECT_OVERVIEW.md`](../../docs/project/PROJECT_OVERVIEW.md) und [`docs/audit/04_VERGLEICH_V1_V2_RESTRISIKEN_MASSNAHMEN.md`](../../docs/audit/04_VERGLEICH_V1_V2_RESTRISIKEN_MASSNAHMEN.md). Aussagen im folgenden Basisteil bleiben als **historisch datierte Ausgangsnotizen** erhalten, keine unmarkierte aktuelle Wahrheit.
 
@@ -7,7 +9,7 @@
 
 **Evidenz:** `UPLOAD` = bereitgestellte Datei, `GITHUB` = gelesener Remote-Stand, `BERICHTET` = in Unterlagen behauptet, `VORSCHLAG` = neue Empfehlung, `OFFEN` = unbestätigt. Kein dokumentierter Test bedeutet nicht bestanden.
 
-## Laufzeitbild
+## Geplantes Laufzeitbild
 
 ```mermaid
 flowchart LR
@@ -21,9 +23,9 @@ flowchart LR
     PIPE --> KB
 ```
 
-`src/steps/` kennt kein Tk, keinen Glide-Task, keine Runtime-Musikaudioengine und keinen Dateisystempfad. `app/` startet Tk und orchestriert Session/Window/Theme/Sidebar/Workspace, `app/adapters` implementiert getrennte Schnittstellen. `knowledge` speichert kuratierte, begründete Claims; `research` ist nicht Runtime-Abhängigkeit. `schemas` spezifizieren Versionierung; `tests` verhindern stillen Bedeutungs-/Formatverlust.
+Im Zielbild startet `app/` die Desktop-Shell und orchestriert Fenster, Theme, Navigation und Arbeitsbereich. `app/adapters` ist für getrennte Schnittstellen vorgesehen. Der aktuelle [Python-Kern](../IMPLEMENTATION.md) verwendet Paketdaten für die kuratierten Progressionen. Der App-Adapter greift auf diese Progressionen zu. `research/` ist dabei keine Laufzeitabhängigkeit.
 
-## Schnittstellenverträge
+## Entworfene Schnittstellenverträge
 
 - `WindowShell`: Fensterzustand, Sidebar/Workspace, Events/Shutdown und OS-Handling.
 - `NavigationRegistry`: stabiler Eintrag mit `id`,`group`,`label`,`icon_role`,`enabled`,`route`; v0 no-op, später validierte Route.

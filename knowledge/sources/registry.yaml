@@ -1,3 +1,84 @@
-# Source registry: add entries only after verifying actual file/source + rights.
-schema_version: 1
-sources: []
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "omt-roman-numerals",
+      "title": "Open Music Theory – Roman Numerals",
+      "kind": "website",
+      "url": "https://viva.pressbooks.pub/openmusictheory/chapter/roman-numerals/",
+      "retrieved_at": "2026-11-11",
+      "rights_status": "approved",
+      "usage_notes": "Link and bibliographic reference for original STEPS examples. No source text or media bundled."
+    },
+    {
+      "id": "omt-chromatic-subdominants",
+      "title": "Open Music Theory – Chromatically altered subdominant chords",
+      "kind": "website",
+      "url": "https://viva.pressbooks.pub/openmusictheorycopy/chapter/chromatically-altered-subdominant-chords/",
+      "retrieved_at": "2026-11-11",
+      "rights_status": "approved",
+      "usage_notes": "Link and bibliographic reference for original STEPS examples. No source text or media bundled."
+    },
+    {
+      "id": "omt-ii-v-i",
+      "title": "Open Music Theory – ii–V–I",
+      "kind": "website",
+      "authors": [
+        "Megan Lavengood"
+      ],
+      "url": "https://viva.pressbooks.pub/openmusictheorycopy/chapter/ii-v-i/",
+      "retrieved_at": "2026-11-11",
+      "rights_status": "approved",
+      "usage_notes": "Link and bibliographic reference for original STEPS examples. No source text or media bundled."
+    },
+    {
+      "id": "omt-four-chord-schemas",
+      "title": "Open Music Theory – Four-Chord Schemas",
+      "kind": "website",
+      "authors": [
+        "Megan Lavengood",
+        "Bryn Hughes"
+      ],
+      "url": "https://viva.pressbooks.pub/openmusictheorycopy/chapter/4-chord-schemas/",
+      "retrieved_at": "2026-11-12",
+      "rights_status": "approved",
+      "usage_notes": "Link and bibliographic reference for original STEPS examples. No source text or media bundled."
+    },
+    {
+      "id": "mto-richards-axis-progressions",
+      "title": "Music Theory Online – Tonal Ambiguity in Popular Music’s Axis Progressions",
+      "kind": "website",
+      "authors": [
+        "Mark Richards"
+      ],
+      "url": "https://mtosmt.org/issues/mto.17.23.3/mto.17.23.3.richards.html",
+      "retrieved_at": "2026-11-12",
+      "rights_status": "approved",
+      "usage_notes": "Link and bibliographic reference to Music Theory Online 23(3), September 2017. No source text or media bundled."
+    },
+    {
+      "id": "omt-blues-based-schemas",
+      "title": "Open Music Theory – Blues-Based Schemas",
+      "kind": "website",
+      "authors": [
+        "Bryn Hughes"
+      ],
+      "url": "https://viva.pressbooks.pub/openmusictheorycopy/chapter/blues-based-schemas/",
+      "retrieved_at": "2026-11-12",
+      "rights_status": "approved",
+      "usage_notes": "Link and bibliographic reference for original STEPS examples. No source text or media bundled."
+    },
+    {
+      "id": "yale-key-names",
+      "title": "Yale University Library – The names of keys in French, German, Italian, and Spanish",
+      "kind": "website",
+      "authors": [
+        "Yale University Library"
+      ],
+      "url": "https://web.library.yale.edu/printpdf/cataloging/music/names-keys-french-german-italian-and-spanish",
+      "retrieved_at": "2026-11-12",
+      "rights_status": "approved",
+      "usage_notes": "Link and bibliographic reference for original STEPS examples. No source text or media bundled."
+    }
+  ]
+}

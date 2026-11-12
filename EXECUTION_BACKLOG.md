@@ -1,6 +1,8 @@
 # STEPS – operativer Startbacklog mit unabhängigen Abschlussbedingungen
 
-**Stand:** 10.11.2026. **Status:** Priorisierter, dokumentierter Vorschlag; **kein** gestarteter Sprint, keine automatisch freigegebene Produkt-/Lizenzentscheidung. Dieser Backlog übersetzt [`ROADMAP_AND_RESOURCE_PLAN.md`](../roadmap/ROADMAP_AND_RESOURCE_PLAN.md) in einzelne Übergabeaufträge. Die vorhandene Glide-To-do-Planung bleibt unter eigenen IDs erhalten.
+> Datierter Startbacklog. Für vorhandene Funktionen und weiterhin fehlende Produktabläufe gilt der [Implementierungsstand](docs/IMPLEMENTATION.md).
+
+**Stand:** 10.11.2026. **Status:** Priorisierter, dokumentierter Vorschlag; **kein** gestarteter Sprint, keine automatisch freigegebene Produkt-/Lizenzentscheidung. Dieser Backlog übersetzt [`ROADMAP_AND_RESOURCE_PLAN.md`](docs/roadmap/ROADMAP_AND_RESOURCE_PLAN.md) in einzelne Übergabeaufträge. Die vorhandene Glide-To-do-Planung bleibt unter eigenen IDs erhalten.
 
 | Reihenfolge | Auftrag / Prompt | Tatsächlich benötigter Eingang | Erfolgskriterium | Blocker / Übergabe |
 |---|---|---|---|---|

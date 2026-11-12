@@ -1,5 +1,8 @@
-# docs/user
+# Nutzung von STEPS
 
-Nutzer- und Installationsdokumentation nach Implementierung.
+In diesem Checkout lässt sich der Python-Kern direkt aus dem Repository
+verwenden. Der [Schnellstart](../../README.md) zeigt die Voraussetzungen und
+Prüfbefehle. Ein [Python-Beispiel](../IMPLEMENTATION.md#ein-beispiel-vom-symbol-bis-zum-voicing)
+führt vom Akkordsymbol über die Stufenauflösung zur Stimmführung.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Die Desktop-Anwendung und ihre Installationspakete befinden sich in Planung.

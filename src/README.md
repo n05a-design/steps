@@ -1,5 +1,7 @@
 # STEPS 0.00 – Entwicklungs- und Übergabebereich
 
+> Der [Implementierungsstand](../docs/IMPLEMENTATION.md) und die [generierte API-Referenz](../docs/theory/API.md) beschreiben den Code dieses Checkouts. Der folgende Text dokumentiert den Entwicklungsstand vom 10. November 2026.
+
 **Projekt:** STEPS – eigenständige Musik-/Harmonieanwendung
 **Status:** Vorbereitung und fachliche Zielarchitektur, **keine als funktionsfähig nachgewiesene STEPS-App**
 **Dokumentationsstand:** 10.11.2026

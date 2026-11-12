@@ -1,5 +1,3 @@
-# knowledge/concepts/intervals
+# Intervalle
 
-Intervalle, Intervallklassen und Intervallschreibweisen.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Der [Theoriekern](../../../src/steps/theory/interval.py) implementiert chromatische und diatonische Intervalle. Die [API-Referenz](../../../docs/theory/API.md) dokumentiert die verfügbaren Typen und Funktionen.

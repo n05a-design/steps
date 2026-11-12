@@ -1,5 +1,7 @@
 # Bibliotheks-Pipeline: Quelle → Claim → Wissen → Code
 
+> Die [Pilotfreigabe](concepts/progressions/README.md) verbindet konkrete Fundstellen und Gegenchecks mit menschlichen, fassungsgebundenen Freigaben. App, Renderer und CI prüfen dieselben JSON-Daten und das Produktquellenregister. Der folgende Q0–Q6-Prozess beschreibt das weitergehende Ziel.
+
 
 > **Kritischer Aktualitätsnachtrag (10.11.2026, nach GitHub PR #75):** Der folgende Basisteil stammt aus dem früheren Paket und kann für Glide `main` noch den historischen Commit `61a2f3a`/Version 3.50.7 nennen. Der erneut verifizierte Stand ist **Glide `9e767bea` (3.53.0)**; der hochgeladene `app.pyw` ist blobgleich mit diesem HEAD, nicht aber bereits alle weiteren Module und Ressourcen unabhängig verifiziert. Aktuelle Bewertungen und Entscheidungsgates stehen in [`docs/project/PROJECT_OVERVIEW.md`](../docs/project/PROJECT_OVERVIEW.md) und [`docs/audit/04_VERGLEICH_V1_V2_RESTRISIKEN_MASSNAHMEN.md`](../docs/audit/04_VERGLEICH_V1_V2_RESTRISIKEN_MASSNAHMEN.md). Aussagen im folgenden Basisteil bleiben als **historisch datierte Ausgangsnotizen** erhalten, keine unmarkierte aktuelle Wahrheit.
 

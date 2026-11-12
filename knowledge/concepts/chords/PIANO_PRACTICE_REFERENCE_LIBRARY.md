@@ -22,14 +22,14 @@
 | `P09` | **Rhythmische Akkordbegleitung** | Vom steifen Akkord zum groovenden Begleiter | Charleston-Rhythmus (1 & 2+) und Staccato-Offbeat-Stabs | Phase 4.7 |
 | `P10` | **Akkorde nach Gehör & Funktion verstehen** | Songs ohne Noten intuitiv am Gehör erfassen | Heimat ($I$), Reise ($IV/ii$), Magnet ($V$); "Bass-First" + Voicing Decoder | Phase 4.7 / 4.8 |
 | `P11` | **Akkordumkehrungen nach Gehör & Funktion** | Den "Inversion Code" knacken; Stufenbässe | Grundstellung ($5/3$) vs. Sextakkord ($6/3$) vs. Quartsextakkord ($6/4$) | Phase 4.8 |
-| `P12` | **Zweihändige Rootless Voicings** | Den weichen Neo-Soul & Lo-Fi Sound spielen | LH spielt tiefen Bass; RH spielt Dreiklang der Terz (z. B. LH D + RH Fmaj7 = Dm9) | Phase 4.9/4.10 |
+| `P12` | **Zweihändige Rootless Voicings** | Den weichen Neo-Soul & Lo-Fi Sound spielen | LH spielt Grundton D; RH spielt den Vierklang Fmaj7 (F–A–C–E) als grundtonlose Oberstruktur. Zusammen ergibt sich Dm9 mit Grundton | Phase 4.9/4.10 |
 | `P13` | **Reharmonisation in der Praxis** | Monotone Melodien spannend umfärben | Diatonische Substitution, Modal Interchange, Picardische Terz & Sus4 | Phase 4.9/4.10 |
 | `P14` | **Bossa Nova & Latin Piano Begleitung** | Sanft wiegende Rhythmen spielen | Linke Hand Surdo-Pendel (1 & 3 Grundton, 2 & 4 Quinte); Rechte Hand Bossa Clave Comping | Phase 4.10 |
 | `P15` | **Stimmführung & Chromatische Medianten** | Geschmeidige Modulationen ohne Tonartbrüche | Minimale L1-Distanzverschiebung (z.B. C-Dur zu E-Dur und Ab-Dur) | Phase 4.12 |
 | `P16` | **Upper Structure Triads über Dominanten** | Komplexe Jazz-Spannungen mühelos greifen | Dur-Dreiklänge der RH über Tritonus-Fundament der LH (z.B. RH D-Dur über LH C7 = C7(#11,13)) | Phase 4.12 |
 | `P17` | **Zeitgenössisches Syncopated Comping** | Moderne R&B- und Gospel-Pushes spielen | 16tel-Vorwegnahmen und synkopierte Push-Akkorde über 2- und 4-Bar-Loops | Phase 4.12 |
 | `P18` | **Backdoor Guide-Tone Voicings** | Reibungslose Auflösung über bVII7 zur Tonika | Stimmführung $iv^7 \to \flat VII^7 \to I^{\text{maj}7}$; Septime $A\flat \to G$ (Halbton); Terz $D \to E$ (**Ganztonschritt / 2 Halbtöne!**) | Phase 4.13/4.14 |
-| `P19` | **Chromatische Bassführung für Sekundärdominanten** | Fließende Basslinien in Kadenzen spielen | $I \to V^7/V(6/5) \to ii^6 \to [I^6] \to V^7 \to I$ ($G \to C\sharp \to C\natural \to B \to A \to G$); harmonisch lückenlos spielbar | Phase 4.13/4.14 |
+| `P19` | **Chromatische Bassführung für Sekundärdominanten** | Fließende Basslinien in Kadenzen spielen | $I \to V^7/V(6/5) \to ii^6 \to I^6 \to V^7_{4/3} \to I$ ($G \to C\sharp \to C\natural \to B \to A \to G$); C♯–C–H in Halbtönen, H–A–G in zwei Ganztonschritten | Phase 4.13/4.14 |
 
 ---
 
@@ -53,7 +53,7 @@
 
 ### Modul P19: Chromatische Bassführung bei Sekundärdominanten in 1. Umkehrung ($V^7/V(6/5)$)
 * **Theorie-Referenz:** `PROG-026`
-* **Ziel:** Lückenlos spielbare chromatische Basslinie zur Verbindung von Tonika, Doppeldominante und Subdominantparallele.
+* **Ziel:** Basslinie mit chromatischem und diatonischem Abschnitt zur Verbindung von Tonika, Doppeldominante und Subdominantparallele.
 * **Harmonische Klärung (Korrektur):**
   Ein Standard-$D^7$ besteht aus $D - F\sharp - A - C$. Der Ton $B$ ist kein Akkordton des gewöhnlichen $D^7$. Um die Basslinie $G \to C\sharp \to C\natural \to B \to A \to G$ harmonisch korrekt und transparent zu spielen, wird über dem Basston $B$ der Sextakkord der Tonika ($G/B$, $I^6$) eingeschoben:
 * **Spielbare Akkordfolge:**
@@ -61,6 +61,6 @@
   2. $A^7/C\sharp$: LH $C\sharp 3$ (Terz der Doppeldominante $V^7/V$), RH $E4 - G4 - A4$
   3. $Am/C$: LH $C3$ (Terz der Moll-Subdominantparallele $ii^6$), RH $E4 - A4 - C5$ (chromatische Bass-Absenkung $C\sharp \to C\natural$!)
   4. $G/B$: LH $B2$ (Terz der Tonika $I^6$), RH $D4 - G4 - B4$ (stufenweise Weiterführung $C\natural \to B$!)
-  5. $D^7/A$: LH $A2$ (Quinte der Dominante $V^7_4_3$), RH $C4 - D4 - F\sharp 4$
+  5. $D^7/A$: LH $A2$ (Quinte der Dominante $V^7_{4/3}$), RH $C4 - D4 - F\sharp 4$
   6. $G$: LH $G2$, RH $B3 - D4 - G4$ (tonale Auflösung)
-* **Didaktischer Schlüssel:** Die linke Hand vollzieht eine lückenlose Tonleiterbewegung abwärts ($C\sharp \to C \to B \to A \to G$), während jeder Basston exakt als Akkordton harmonisiert ist.
+* **Didaktischer Schlüssel:** Ab $C\sharp$ sinkt der Bass zweimal um einen Halbton und zweimal um einen Ganzton ($C\sharp \to C \to B \to A \to G$, international geschrieben). In $D^7/A$ liegt die Quinte A im Bass.

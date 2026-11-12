@@ -1,5 +1,3 @@
-# app/adapters
+# Plattformadapter
 
-Konkrete UI-/Dateisystem-/Audioadapter. Schnittstellen nur mit Tests freigeben.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Für Desktop- und Systemadapter ist hier ein Platzhalter vorgesehen. Der [Wissensadapter](../knowledge.py) ist als Python-Modul auf App-Ebene vorhanden.

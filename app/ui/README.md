@@ -1,5 +1,3 @@
-# app/ui
+# Desktop-Oberfläche
 
-Geplante Tkinter-Views, Interaktion, Accessibility und Design-Token-Anwendung.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Die Desktop-Oberfläche befindet sich in Planung. Das [Architekturziel](../../docs/architecture/architecture.md) dokumentiert die vorgesehenen Komponenten.

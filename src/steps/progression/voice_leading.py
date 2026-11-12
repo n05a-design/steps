@@ -9,8 +9,7 @@ Adheres to:
 
 from __future__ import annotations
 from enum import Enum
-from typing import List, Tuple, Dict, Optional, Set
-import itertools
+from typing import Optional
 
 from ..theory.exceptions import VoiceLeadingError
 
@@ -135,71 +134,52 @@ def optimize_smooth_voice_leading(
     bass_pc: Optional[int] = None,
     style: VoiceLeadingStyle = VoiceLeadingStyle.JAZZ_POP
 ) -> list[int]:
+    """Minimize L1 movement within one octave per voice and MIDI range.
+
+    Returns strictly ascending voices covering all target pitch classes.
+    Raises VoiceLeadingError when the requested constraints cannot be met.
     """
-    Deterministically finds the optimal voicing permutation for target_pcs that:
-    1. Minimizes total L1 semitone distance from source_voicing.
-    2. Strictly avoids voice crossing (v0 < v1 < v2 < ...).
-    3. If style is STRICT_COUNTERPOINT, rejects parallel 5ths and octaves.
-    4. If bass_pc is given, constrains the lowest voice to bass_pc.
-    """
-    n_voices = len(source_voicing)
-    unique_target_pcs = list({pc % 12 for pc in target_pcs})
-    
-    if len(unique_target_pcs) > n_voices:
-        raise VoiceLeadingError(
-            f"Target pitch class set has {len(unique_target_pcs)} elements, exceeding voice count {n_voices}."
-        )
+    if not source_voicing or any(not isinstance(note, int) or isinstance(note, bool) or not 0 <= note <= 127 for note in source_voicing):
+        raise VoiceLeadingError("Source voicing must contain MIDI notes in 0..127.")
+    if detect_voice_crossing(source_voicing):
+        raise VoiceLeadingError("Source voicing must be strictly ascending.")
+    if not target_pcs or any(not isinstance(pc, int) or isinstance(pc, bool) for pc in target_pcs):
+        raise VoiceLeadingError("Target voicing requires integer pitch classes.")
+    if bass_pc is not None and (not isinstance(bass_pc, int) or isinstance(bass_pc, bool)):
+        raise VoiceLeadingError("Bass pitch class must be an integer.")
 
-    # Candidate pitches for each voice: search around source_voicing[i] +/- 12 semitones
-    possible_pitches_per_voice: list[list[int]] = []
-    for base_pitch in source_voicing:
-        candidates = []
-        for semi_offset in range(-12, 13):
-            candidate = base_pitch + semi_offset
-            if (candidate % 12) in unique_target_pcs:
-                candidates.append(candidate)
-        possible_pitches_per_voice.append(candidates)
+    target = {pc % 12 for pc in target_pcs}
+    bass = None if bass_pc is None else bass_pc % 12
+    if len(target) > len(source_voicing):
+        raise VoiceLeadingError(f"{len(target)} target pitch classes exceed the voice count.")
+    if bass is not None and bass not in target:
+        raise VoiceLeadingError("Bass pitch class is absent from the target voicing.")
 
-    best_voicing: Optional[list[int]] = None
-    best_distance = float('inf')
+    candidates = [
+        [
+            note for note in range(max(0, center - 12), min(127, center + 12) + 1)
+            if note % 12 in target and (index != 0 or bass is None or note % 12 == bass)
+        ]
+        for index, center in enumerate(source_voicing)
+    ]
+    best: tuple[int, ...] | None = None
+    best_distance = float("inf")
 
-    # Carthesian product of candidate assignments
-    for combo in itertools.product(*possible_pitches_per_voice):
-        voicing = list(combo)
-        
-        # 1. No voice crossing
-        if detect_voice_crossing(voicing):
-            continue
-            
-        # 2. Check if all target PCs are covered
-        voicing_pcs = {p % 12 for p in voicing}
-        if not set(unique_target_pcs).issubset(voicing_pcs):
-            continue
-            
-        # 3. Check bass note constraint if specified
-        if bass_pc is not None and (voicing[0] % 12) != (bass_pc % 12):
-            continue
-            
-        # 4. Strict counterpoint rules
-        if style == VoiceLeadingStyle.STRICT_COUNTERPOINT:
-            if detect_parallel_fifths_octaves(source_voicing, voicing, style):
-                continue
-                
-        # 5. Measure L1 distance
-        dist = absolute_semitone_distance(source_voicing, voicing)
-        if dist < best_distance:
-            best_distance = dist
-            best_voicing = voicing
+    # Prune partial assignments that already cross voices or exceed the best cost.
+    def search(notes: tuple[int, ...], remaining: set[int], distance: int) -> None:
+        nonlocal best, best_distance
+        index = len(notes)
+        if distance >= best_distance or len(remaining) > len(candidates) - index:
+            return
+        if index == len(candidates):
+            if not detect_parallel_fifths_octaves(source_voicing, list(notes), style):
+                best, best_distance = notes, distance
+            return
+        for note in candidates[index]:
+            if not notes or note > notes[-1]:
+                search(notes + (note,), remaining - {note % 12}, distance + abs(note - source_voicing[index]))
 
-    if best_voicing is None:
-        # Fallback: construct standard close voicing matching target_pcs
-        sorted_pcs = sorted(list(unique_target_pcs))
-        base_octave = source_voicing[0] // 12
-        fallback = [base_octave * 12 + pc for pc in sorted_pcs]
-        # Pad if n_voices > len(pcs) with octave doubling of bass
-        while len(fallback) < n_voices:
-            fallback.append(fallback[0] + 12)
-        return sorted(fallback)
-
-    return best_voicing
-
+    search((), target, 0)
+    if best is None:
+        raise VoiceLeadingError("No voicing satisfies the constraints within one octave per voice.")
+    return list(best)

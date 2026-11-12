@@ -1,5 +1,3 @@
-# knowledge/examples
+# Beispiele
 
-Kleine selbst erzeugte und lizenzgeprüfte Demonstrationen.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Dieser Ordner ist für Beispiele vorgesehen. Der gepflegte [App-Katalog](../concepts/progressions/REVIEWED_PROGRESSIONS.md) liegt bei den Progressionen.

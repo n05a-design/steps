@@ -310,6 +310,12 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
             if action == 'CONTROLLED_CORRECTION':
                 authorized_migrations[mig or orig] = m
 
+    def catalog_correction_matches(ident, computed_hash):
+        # Keep the original baseline and allow only the reviewed target version.
+        migration = authorized_migrations.get(ident, {})
+        _, separator, expected = migration.get("migration_reason", "").rpartition(" sha256=")
+        return bool(separator) and expected == computed_hash
+
     # 1. Verify Progressions (PROG-001 to PROG-027)
     prog_map = {p[0]: p for p in current_progs}
     for pid, b_entry in baseline.get('progressions', {}).items():
@@ -324,8 +330,6 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
 
             if name.lower() != b_entry['name'].lower():
                 errors.append(f"Semantic identity conflict for {pid}: Name changed from '{b_entry['name']}' to '{name}'")
-            if degrees != b_entry['harmonic_structure']:
-                errors.append(f"Semantic identity conflict for {pid}: Harmonic structure changed from '{b_entry['harmonic_structure']}' to '{degrees}'")
             if domain and domain != b_entry.get('domain', ''):
                 errors.append(f"Semantic identity conflict for {pid}: Domain changed from '{b_entry.get('domain')}' to '{domain}'")
 
@@ -334,8 +338,11 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
                 'harmonic_structure': degrees.strip('`* '), 'standard_example': example.strip('`* ')
             })
             b_h = b_entry.get('semantic_hash')
+            corrected = catalog_correction_matches(pid, computed_h)
+            if degrees != b_entry['harmonic_structure'] and not corrected:
+                errors.append(f"Semantic identity conflict for {pid}: Harmonic structure changed from '{b_entry['harmonic_structure']}' to '{degrees}'")
             if b_h and computed_h != b_h:
-                if pid not in authorized_migrations:
+                if not corrected:
                     errors.append(f"Semantic identity hash mismatch for {pid}: recomputed {computed_h} != baseline {b_h}")
 
     # 2. Verify Drum Patterns (PAT-001 to PAT-031)
@@ -360,7 +367,7 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
             })
             b_h = b_entry.get('semantic_hash')
             if b_h and computed_h != b_h:
-                if did not in authorized_migrations:
+                if not catalog_correction_matches(did, computed_h):
                     errors.append(f"Semantic identity hash mismatch for {did}: recomputed {computed_h} != baseline {b_h}")
 
     # 3. Verify Piano Modules (P01 to P19)
@@ -385,7 +392,7 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
             })
             b_h = b_entry.get('semantic_hash')
             if b_h and computed_h != b_h:
-                if pid not in authorized_migrations:
+                if not catalog_correction_matches(pid, computed_h):
                     errors.append(f"Semantic identity hash mismatch for {pid}: recomputed {computed_h} != baseline {b_h}")
 
     # 4. Verify Concept Relations (CR-001 to CR-094)

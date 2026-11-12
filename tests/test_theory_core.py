@@ -390,6 +390,37 @@ class TestTheoryCoreTriadsAndSevenths(unittest.TestCase):
 class TestTheoryCoreChordEngine(unittest.TestCase):
     """Verifies ChordDefinition, comprehensive chord parsing, and voicing synthesis."""
 
+    def test_sus_chords_respect_explicit_notation(self):
+        for suffix, intervals in (("sus", (0, 5, 7)), ("sus2", (0, 2, 7)), ("sus4", (0, 5, 7))):
+            for note, convention, root in (("B", "DE", 10), ("H", "DE", 11), ("Bb", "INT", 10), ("B", "INT", 11)):
+                with self.subTest(note=note, convention=convention, suffix=suffix):
+                    chord = parse_chord(note + suffix, convention)
+                    self.assertEqual(chord.root.pitch_class, root)
+                    self.assertEqual(chord.pitch_class_set, {(root + i) % 12 for i in intervals})
+            for note in ("Asus4", "Esus4"):
+                self.assertEqual(parse_chord(note, "DE"), parse_chord(note, "INT"))
+            with self.assertRaises(ChordConstructionError):
+                parse_chord("H" + suffix, "INT")
+
+    def test_chord_tensions_require_balanced_parentheses(self):
+        for symbol in ("C7((b9)", "C7((b9))", "C7(b9", "C7b9)", "C7()"):
+            with self.subTest(symbol=symbol), self.assertRaises(ChordConstructionError):
+                parse_chord(symbol, "INT")
+        self.assertEqual(parse_chord("C7(b9)", "INT").theoretical_intervals, (0, 4, 7, 10, 13))
+        self.assertEqual(parse_chord("C7b9", "INT"), parse_chord("C7(b9)", "INT"))
+
+    def test_voicing_invert_rotates_voices_above_original_top(self):
+        initial = Voicing((48, 67, 76), "OPEN")
+        rotated = initial.invert(1)
+        self.assertEqual(rotated.notes, (67, 76, 84))
+        self.assertEqual(rotated.bass_note, 67)
+        self.assertEqual({n % 12 for n in rotated.notes}, {0, 4, 7})
+        self.assertEqual(initial.invert(2).notes, (76, 84, 91))
+        self.assertIs(initial.invert(3), initial)
+        self.assertEqual(Voicing((48, 52, 55)).invert(1).notes, (52, 55, 60))
+        with self.assertRaises(VoiceLeadingError):
+            Voicing((120, 124, 127), "OPEN").invert(1)
+
     def test_parse_standard_chords(self):
         c_maj = parse_chord('C')
         self.assertEqual(c_maj.root.step, 'C')

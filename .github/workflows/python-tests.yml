@@ -27,6 +27,9 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Check generated Python API reference
+        run: python -B scripts/render_api_reference.py --check
+
       - name: Run STEPS Core Test Suite
         run: python -B -m unittest discover -s tests -p "test_*.py" -v
 
@@ -35,3 +38,33 @@ jobs:
           if [ -d ".agents/skills/steps-knowledge-curation/tests" ]; then
             python -B -m unittest discover -s .agents/skills/steps-knowledge-curation/tests -v
           fi
+
+  pilot-publication:
+    name: Pilot publication gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run mandatory pilot benchmark
+        run: python -B scripts/run_knowledge_benchmark.py --scope pilot
+      - name: Test production publication paths
+        run: python -B scripts/run_knowledge_benchmark.py --scope publication
+      - name: Check pilot review sheet
+        run: python -B scripts/run_knowledge_benchmark.py --check-review-sheet knowledge/benchmark/PILOT_ABNAHME.md
+      - name: Validate pilot approvals and published learning material
+        run: python -B scripts/render_reviewed_progressions.py --check
+
+  knowledge-coverage:
+    name: Knowledge coverage inventory
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install audit-only YAML parser
+        run: python -m pip install -r knowledge/benchmark/requirements.txt
+      - name: Check versioned knowledge coverage
+        run: python -B scripts/audit_knowledge_coverage.py --check

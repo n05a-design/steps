@@ -1,5 +1,3 @@
-# knowledge/concepts/scales
+# Tonleitern und Modi
 
-Skalen, Modi, Tonalität und Stimmungssysteme.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Dieser Ordner ist für Fachkonzepte vorgesehen. Die [Stufenauflösung](../../../src/steps/progression/engine.py) nutzt Dur- und Moll-Modelle. Der [öffentliche Theorie-Kern](../../../docs/theory/API.md) exportiert derzeit keine eigenständige Tonleiter- oder Modus-API.

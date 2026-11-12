@@ -1,5 +1,3 @@
-# app/audio
+# Audio und MIDI
 
-Geplante Playback-Orchestrierung; deterministische musikalische Modelle nicht hier einbauen.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Für Audioausgabe und MIDI-Anbindung ist hier ein Platzhalter vorgesehen. Der Theorie-Kern verarbeitet MIDI-Notennummern als Zahlen. Einen Audio- oder MIDI-Produktablauf enthält dieser Checkout derzeit nicht.
