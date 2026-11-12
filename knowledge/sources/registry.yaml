@@ -45,6 +45,18 @@
       "usage_notes": "Link and bibliographic reference for original STEPS examples. No source text or media bundled."
     },
     {
+      "id": "mto-richards-axis-progressions",
+      "title": "Music Theory Online – Tonal Ambiguity in Popular Music’s Axis Progressions",
+      "kind": "website",
+      "authors": [
+        "Mark Richards"
+      ],
+      "url": "https://mtosmt.org/issues/mto.17.23.3/mto.17.23.3.richards.html",
+      "retrieved_at": "2026-11-12",
+      "rights_status": "approved",
+      "usage_notes": "Link and bibliographic reference to Music Theory Online 23(3), September 2017. No source text or media bundled."
+    },
+    {
       "id": "omt-blues-based-schemas",
       "title": "Open Music Theory – Blues-Based Schemas",
       "kind": "website",

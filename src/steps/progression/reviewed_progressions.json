@@ -33,11 +33,12 @@
         {
           "id": "PROG-001-TONAL-CENTER",
           "kind": "style_interpretation",
-          "text": "Im Pop-Loop kann die Melodie die Wahrnehmung von C oder A als tonales Zentrum stützen.",
-          "scope": "Interpretation eines zyklischen Pop-Schemas. Ohne Melodie und Phrasierung ist das wahrgenommene Zentrum hier offen.",
+          "text": "Der Pop-Loop aus C, G, Am und F kann C oder A als tonales Zentrum nahelegen oder mehrdeutig bleiben. Melodie und Phrasierung, Loop-Beginn, metrische Betonung und benachbarte Formteile beeinflussen die Wahrnehmung.",
+          "scope": "Gilt für das zyklische Popschema einschließlich seiner Rotationen. Für die gehörte Tonika kann etwa entscheidend sein, ob C oder Am am Beginn einer betonten Taktgruppe steht, auf welchem Ton eine Phrase endet und welches Zentrum ein benachbarter Formteil etabliert.",
           "countercheck": "Bei C als Zentrum liest sich die Folge als I–V–vi–IV. Bei A als Zentrum lässt sich dieselbe Akkordfolge als III–VII–i–VI in natürlichem Moll lesen. Die Akkordliste allein entscheidet nicht zwischen den Lesarten.",
           "references": [
-            {"source_id": "omt-four-chord-schemas", "locator": "Singer/Songwriter Schema, Absatz nach Example 4 über relatives Moll und melodische Bezugstöne"}
+            {"source_id": "omt-four-chord-schemas", "locator": "Singer/Songwriter Schema, Absatz nach Example 4 über relatives Moll und melodische Bezugstöne"},
+            {"source_id": "mto-richards-axis-progressions", "locator": "Abs. [1] zu Rotationen, [9]–[11] und Anm. 10 zu Loop-Beginn und Hypermetrik, [29]–[30] zu Phrasierung und Formkontext"}
           ]
         }
       ]

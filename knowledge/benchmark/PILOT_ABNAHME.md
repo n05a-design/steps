@@ -39,14 +39,15 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 
 - Stand · Ausstehend
 - Art · `style_interpretation`
-- Fassung · `a5341acfba10e95b2c46c463dae522a90ae22489b9726af4b7199405af1a9572`
-- Wortlaut · Im Pop-Loop kann die Melodie die Wahrnehmung von C oder A als tonales Zentrum stützen.
-- Gültigkeitsbereich · Interpretation eines zyklischen Pop-Schemas. Ohne Melodie und Phrasierung ist das wahrgenommene Zentrum hier offen.
+- Fassung · `1b52fd68d6ef6e1aeecd3ed6062b9786e4c202d3a23ae425d4c648c8d3181429`
+- Wortlaut · Der Pop-Loop aus C, G, Am und F kann C oder A als tonales Zentrum nahelegen oder mehrdeutig bleiben. Melodie und Phrasierung, Loop-Beginn, metrische Betonung und benachbarte Formteile beeinflussen die Wahrnehmung.
+- Gültigkeitsbereich · Gilt für das zyklische Popschema einschließlich seiner Rotationen. Für die gehörte Tonika kann etwa entscheidend sein, ob C oder Am am Beginn einer betonten Taktgruppe steht, auf welchem Ton eine Phrase endet und welches Zentrum ein benachbarter Formteil etabliert.
 - Gegencheck · Bei C als Zentrum liest sich die Folge als I–V–vi–IV. Bei A als Zentrum lässt sich dieselbe Akkordfolge als III–VII–i–VI in natürlichem Moll lesen. Die Akkordliste allein entscheidet nicht zwischen den Lesarten.
 - Fundstelle · [Open Music Theory – Four-Chord Schemas](<https://viva.pressbooks.pub/openmusictheorycopy/chapter/4-chord-schemas/>) · Singer/Songwriter Schema, Absatz nach Example 4 über relatives Moll und melodische Bezugstöne
-- Prüffrage · Kann der Loop C–G–Am–F sowohl C als auch A als Zentrum nahelegen, und welche Hinweise entscheiden?
-- Sollantwort · `{"centers": ["C", "A"], "minor_stages": ["III", "VII", "i", "VI"], "chords": ["C", "G", "Am", "F"], "required_context": "Melodie, Phrasierung und Loop-Grenzen. Ohne Kontext kein eindeutiges Zentrum."}`
-- Herleitung · Open Music Theory, Four-Chord Schemas, Absatz nach Example 4. Das relative Moll ergibt sich aus natürlichem A-Moll.
+- Fundstelle · [Music Theory Online – Tonal Ambiguity in Popular Music’s Axis Progressions](<https://mtosmt.org/issues/mto.17.23.3/mto.17.23.3.richards.html>) · Abs. [1] zu Rotationen, [9]–[11] und Anm. 10 zu Loop-Beginn und Hypermetrik, [29]–[30] zu Phrasierung und Formkontext
+- Prüffrage · Wie kann der Loop C–G–Am–F C oder A als tonales Zentrum nahelegen, und welche Hinweise prägen die Wahrnehmung?
+- Sollantwort · `{"centers": ["C", "A"], "minor_stages": ["III", "VII", "i", "VI"], "chords": ["C", "G", "Am", "F"], "required_context": "Melodie und Phrasierung, Loop-Beginn, metrische Betonung und benachbarte Formteile können C oder A als Zentrum stützen. Die Akkordfolge allein lässt das gehörte Zentrum offen."}`
+- Herleitung · Open Music Theory, Four-Chord Schemas, Absatz nach Example 4. Die Moll-Lesart folgt aus natürlichem A-Moll. Richards (2017), Abs. [1], [9]–[11] und [29]–[30], belegt die Kontexthinweise an Axis-Progressionen.
 
 ## PROG-003-HARMONY
 

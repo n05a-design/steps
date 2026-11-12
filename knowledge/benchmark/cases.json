@@ -190,7 +190,7 @@
       "scope": "pilot",
       "content": "PROG-001",
       "domain": "M09",
-      "question": "Kann der Loop C–G–Am–F sowohl C als auch A als Zentrum nahelegen, und welche Hinweise entscheiden?",
+      "question": "Wie kann der Loop C–G–Am–F C oder A als tonales Zentrum nahelegen, und welche Hinweise prägen die Wahrnehmung?",
       "expected": {
         "centers": [
           "C",
@@ -208,12 +208,12 @@
           "Am",
           "F"
         ],
-        "required_context": "Melodie, Phrasierung und Loop-Grenzen. Ohne Kontext kein eindeutiges Zentrum."
+        "required_context": "Melodie und Phrasierung, Loop-Beginn, metrische Betonung und benachbarte Formteile können C oder A als Zentrum stützen. Die Akkordfolge allein lässt das gehörte Zentrum offen."
       },
       "variants": [
         "Rotierte römische Lesart mit entsprechender Verschiebung des Startpunkts."
       ],
-      "basis": "Open Music Theory, Four-Chord Schemas, Absatz nach Example 4. Das relative Moll ergibt sich aus natürlichem A-Moll.",
+      "basis": "Open Music Theory, Four-Chord Schemas, Absatz nach Example 4. Die Moll-Lesart folgt aus natürlichem A-Moll. Richards (2017), Abs. [1], [9]–[11] und [29]–[30], belegt die Kontexthinweise an Axis-Progressionen.",
       "method": "relative_minor",
       "input": {},
       "mandatory": true,
