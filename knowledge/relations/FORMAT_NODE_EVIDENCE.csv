@@ -1,0 +1,5 @@
+node_id,definition,source_url,locator
+GM_CHANNEL_10,General MIDI Level 1 reserviert Kanal 10 für tonnummernbasierte Schlagzeugklänge.,https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view,Tabelle 3 auf Druckseite 6 (PDF-Seite 8)
+PERCUSSION_FIXED_MAP,Die Schlagzeugtabelle legt die Klangbezeichnungen für 47 MIDI-Notennummern von 35 bis 81 fest.,https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view,Tabelle 3 auf Druckseite 6 (PDF-Seite 8)
+MUSICXML_PITCH,Das MusicXML-Element pitch ist ein Kindelement von note für eine geschriebene Tonhöhe.,https://www.w3.org/2021/06/musicxml40/musicxml-reference/elements/pitch/,Parent element und Content
+STEP_ALTER_OCTAVE_MODEL,Pitch enthält in dieser Reihenfolge step und optional alter sowie octave.,https://www.w3.org/2021/06/musicxml40/musicxml-reference/elements/pitch/,Content

@@ -39,6 +39,20 @@ def duplicates(rows, field):
     return {key for key, count in Counter(row[field] for row in rows).items() if count > 1}
 
 
+def format_node_evidence(rows):
+    repeated = duplicates(rows, "node_id")
+    evidence = {}
+    for row in rows:
+        ident = row["node_id"]
+        source = urlsplit(row["source_url"])
+        if (ident in repeated or not re.fullmatch(r"[A-Z][A-Z0-9_]+", ident)
+                or source.scheme != "https" or not source.hostname
+                or not row["definition"].strip() or not row["locator"].strip()):
+            raise ValueError(f"Ungültiger Quellenbeleg für Graphknoten {ident}.")
+        evidence[ident] = f"{row['source_url']} ({row['locator']})"
+    return evidence
+
+
 def table(path, pattern, columns):
     rows, issues = extract_markdown_table_definitions(path, pattern, columns)
     if issues:
@@ -208,14 +222,20 @@ def audit():
     endpoints = progs.keys() | drums.keys() | pianos.keys() | domains
     # These aliases are documented in knowledge/relations/FABLE_GRAPH_REVIEW.md.
     aliases = {"PROG_024": "PROG-024", "PROG_025": "PROG-025"}
+    format_nodes = format_node_evidence(read_csv(KNOWLEDGE / "relations/FORMAT_NODE_EVIDENCE.csv"))
+    if (endpoints | aliases.keys()) & format_nodes.keys():
+        raise ValueError("Formatknoten überschneidet sich mit einer kanonischen ID oder einem Alias.")
     for row in read_csv(KNOWLEDGE / "relations/MUSIC_CONCEPT_RELATIONS.csv"):
         terms = (row["source_id"], row["target_id"])
-        unresolved = [term for term in terms if aliases.get(term, term) not in endpoints]
+        unresolved = [term for term in terms if aliases.get(term, term) not in endpoints and term not in format_nodes]
         notes = f"Registerstatus {row['validation_status']}. Keine direkte Quellen-/Claim-ID in der Relationszeile."
         resolved_aliases = [f"{term} → {aliases[term]}" for term in terms
                             if term in aliases and aliases[term] in endpoints]
         if resolved_aliases:
             notes += " Historische Aliasauflösung: " + ", ".join(resolved_aliases)
+        node_sources = [f"{term}: {format_nodes[term]}" for term in terms if term in format_nodes]
+        if node_sources:
+            notes += " Quellenbelegte Endpunkte: " + " · ".join(node_sources) + "."
         if unresolved:
             notes += " Endpunktdefinition im kanonischen Knotenbestand offen: " + ", ".join(unresolved)
         add("Graphrelationen", row["relation_id"], "BEFUND", note=notes)

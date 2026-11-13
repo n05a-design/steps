@@ -137,3 +137,18 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
             self.assertEqual(n("Gesamt"), n("Formal_geprüft") + n("Inventar_only"))
             self.assertEqual(n("Gesamt"), n("Fachlich_untersucht") + n("Fachlich_offen"))
             self.assertEqual(n("Gesamt"), n("Fachlich_vollständig") + n("Fachlich_Stichprobe") + n("Fachlich_nicht_geprüft"))
+
+    def test_format_node_evidence_requires_unique_id_and_source_locator(self):
+        entry = {
+            "node_id": "MUSICXML_PITCH",
+            "definition": "Geschriebene Tonhöhe",
+            "source_url": "https://www.w3.org/2021/06/musicxml40/musicxml-reference/elements/pitch/",
+            "locator": "Content",
+        }
+        self.assertEqual(
+            coverage.format_node_evidence([entry]),
+            {entry["node_id"]: f"{entry['source_url']} (Content)"},
+        )
+        for rows in ([entry, entry], [{**entry, "locator": ""}], [{**entry, "source_url": "http://example.com"}]):
+            with self.subTest(rows=rows), self.assertRaisesRegex(ValueError, entry["node_id"]):
+                coverage.format_node_evidence(rows)
