@@ -456,8 +456,8 @@ def resolve_roman_degree(
 
     A bare V is a triad. V7 and ii7 use the numeral's case and function.
     A bare vii denotes a minor chord. Write vii° to request a diminished triad.
-    Figures 6, 6/4, 6/5, 4/3 and 4/2 select the bass. Use m6 for an
-    added-sixth minor chord. Explicit minor-key accidentals use major_reference
+    Figures 6, 6/4, 6/5, 4/3 and 4/2 select the bass. Figures 6/5,
+    4/3 and 4/2 require a seventh. Use m6 for an added-sixth minor chord. Explicit minor-key accidentals use major_reference
     for legacy inputs or natural_minor when selected explicitly.
     """
     if minor_accidentals not in ("major_reference", "natural_minor"):
@@ -504,6 +504,7 @@ def resolve_roman_degree(
         figure_match = re.fullmatch(r'(?:o|ø|dim)(65|43|42|64|63|6|2)', suffix)
     figure = figure_match[1].replace("/", "") if figure_match else suffix
     inversion = 0
+    seventh = False
     if figure in _FIGURES:
         inversion, seventh = _FIGURES[figure]
         suffix = suffix[:figure_match.start(1)].removesuffix("(") if figure_match else ""
@@ -538,9 +539,12 @@ def resolve_roman_degree(
             raise ProgressionParsingError(f"Roman numeral case conflicts with chord quality: {degree_str!r}.")
         if not inversion:
             return chord
+        seventh_intervals = (9,) if quality == "dim7" else (10, 11)
+        if seventh and not any(tone in intervals for tone in seventh_intervals):
+            raise ProgressionParsingError(f"Figure requires a seventh: {degree_str!r}.")
         tones = {1: (3, 4), 2: (6, 7, 8), 3: (9, 10, 11)}[inversion]
-        if inversion == 3 and quality != "dim7":
-            tones = (10, 11)
+        if inversion == 3:
+            tones = seventh_intervals
         pitch = next((tone for tone in tones if tone in intervals), None)
         if pitch is None:
             raise ProgressionParsingError(f"Figure refers to a missing chord tone: {degree_str!r}.")
