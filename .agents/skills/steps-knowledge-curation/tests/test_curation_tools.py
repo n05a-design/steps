@@ -3,7 +3,6 @@ from __future__ import annotations
 import unittest
 import tempfile
 import os
-import shutil
 from pathlib import Path
 
 SKILL_DIR = Path(__file__).resolve().parents[1]
@@ -57,7 +56,7 @@ class TestCurationToolsScenarios(unittest.TestCase):
             fp.write(content)
         dups = detect_duplicates.is_duplicate(f1, self.dir_path)
         self.assertEqual(len(dups), 1)
-        self.assertEqual(os.path.normpath(dups[0]), os.path.normpath(f2))
+        self.assertEqual(Path(dups[0]).resolve(), Path(f2).resolve())
 
     # Scenario 4: Non-Duplicate Source (distinct content)
     def test_04_non_duplicate_source(self):
@@ -98,7 +97,7 @@ class TestCurationToolsScenarios(unittest.TestCase):
         items = extract_instructions.extract_from_file(f)
         self.assertEqual(len(items), 1)
         self.assertEqual(items[0]["category"], "EXPLICIT_TODO")
-        self.assertEqual(items[0]["origin"], "EXPLICIT")
+        self.assertEqual(items[0]["origin"], "CANDIDATE_FROM_DOCUMENT")
 
     # Scenario 8: Explicit FIXME Marker Extraction
     def test_08_explicit_fixme_extraction(self):
@@ -117,7 +116,7 @@ class TestCurationToolsScenarios(unittest.TestCase):
         items = extract_instructions.extract_from_file(f)
         self.assertEqual(len(items), 1)
         self.assertEqual(items[0]["category"], "NORMATIVE_MUST_DE")
-        self.assertEqual(items[0]["origin"], "INFERRED")
+        self.assertEqual(items[0]["origin"], "CANDIDATE_FROM_DOCUMENT")
 
     # Scenario 10: Inferred English Normative Instruction (must be implemented)
     def test_10_inferred_english_must(self):
@@ -144,7 +143,8 @@ class TestCurationToolsScenarios(unittest.TestCase):
             fp.write("Eine Owner-Entscheidung ist erforderlich für ADR-002.\n")
         items = extract_instructions.extract_from_file(f)
         self.assertEqual(len(items), 1)
-        self.assertEqual(items[0]["origin"], "OWNER_DECISION_REQUIRED")
+        self.assertEqual(items[0]["category"], "DECISION_REQUIRED_DE")
+        self.assertEqual(items[0]["origin"], "CANDIDATE_FROM_DOCUMENT")
 
     # Scenario 13: Deferred / Postponed Feature Extraction
     def test_13_deferred_feature_extraction(self):
@@ -164,6 +164,10 @@ class TestCurationToolsScenarios(unittest.TestCase):
 * **Kategorie:** Test · **Status:** `OPEN`
 ### OA-0002: Task Two
 * **Kategorie:** Test · **Status:** `DONE_VERIFIED`
+* **Commit:** `0123456789abcdef0123456789abcdef01234567`
+* **Prüfung:** `python -m unittest`
+* **Abnahmebeleg:** Testprotokoll zur oben genannten Revision
+* **Abnahmekriterien:** Die Suite besteht.
 """)
         res = validate_register.validate_master_file(m)
         self.assertEqual(res["total_tasks_found"], 2)
@@ -205,13 +209,17 @@ class TestCurationToolsScenarios(unittest.TestCase):
         items = extract_instructions.extract_from_file(empty)
         self.assertEqual(len(items), 0)
 
-    # Scenario 18: Canonical Production Master File Validation
-    def test_18_canonical_master_production_file(self):
-        canonical_p = os.path.expandvars(r"%LOCALAPPDATA%\StepsKnowledge\OFFENE_ARBEITSAUFFORDERUNGEN.md")
-        if os.path.exists(canonical_p):
-            res = validate_register.validate_master_file(canonical_p)
-            self.assertEqual(res["errors_count"], 0)
-            self.assertGreaterEqual(res["total_tasks_found"], 19)
+    def test_18_register_requires_one_status_per_task(self):
+        content = """### OA-0001: No status
+* **Beschreibung:** The string **Status:** `OPEN` is an example.
+### OA-0002: Repeated status
+* **Status:** `OPEN`
+* **Status:** `IN_PROGRESS`
+"""
+        result = validate_register.validate_content(content)
+        self.assertEqual(result["errors_count"], 2)
+        self.assertIn("OA-0001", result["errors"][0])
+        self.assertIn("OA-0002", result["errors"][1])
 
     # Scenario 19: Directory Boundary Check (within vs outside bounds)
     def test_19_directory_boundary_check(self):
@@ -222,13 +230,11 @@ class TestCurationToolsScenarios(unittest.TestCase):
         self.assertTrue(res_in["within_bounds"])
         
         # Test file outside bounds
-        other_dir = tempfile.TemporaryDirectory()
-        outside = os.path.join(other_dir.name, "outside.txt")
-        with open(outside, "w", encoding="utf-8") as fp:
-            fp.write("Outside file")
-        res_out = check_source.check_file(outside, base_dir=self.dir_path)
-        self.assertFalse(res_out["within_bounds"])
-        other_dir.cleanup()
+        with tempfile.TemporaryDirectory() as other_dir:
+            outside = Path(other_dir) / "outside.txt"
+            outside.write_text("Outside file", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "outside the allowed directory"):
+                check_source.check_file(outside, base_dir=self.dir_path)
 
     # Scenario 20: Non-File / Directory Rejection
     def test_20_non_file_rejection(self):
@@ -274,23 +280,35 @@ class TestCurationToolsScenarios(unittest.TestCase):
         self.assertEqual(len(b_list), 1)
         self.assertEqual(b_list[0]["sha256"], res["sha256"])
         
-        # Mutate master
-        with open(test_master, "w", encoding="utf-8") as fp:
-            fp.write("# Corrupted Master\n")
+        previous = "### OA-0001: Task One\n* **Status:** `IN_PROGRESS`\n"
+        Path(test_master).write_text(previous, encoding="utf-8")
         self.assertNotEqual(backup_knowledge.compute_sha256(test_master), res["sha256"])
         
         # Test restore
         rest_res = backup_knowledge.restore_master(res["backup"], test_master)
         self.assertEqual(rest_res["status"], "RESTORE_SUCCESS")
         self.assertEqual(backup_knowledge.compute_sha256(test_master), res["sha256"])
+        saved = rest_res["previous_backup"]
+        self.assertEqual(Path(saved).read_text(encoding="utf-8"), previous)
+        backup_knowledge.restore_master(saved, test_master)
+        self.assertEqual(Path(test_master).read_text(encoding="utf-8"), previous)
 
-    # Scenario 24: Canonical Production Master Has At Least 21 Tasks (Dynamic Extension)
-    def test_24_canonical_master_has_21_tasks(self):
-        canonical_p = os.path.expandvars(r"%LOCALAPPDATA%\StepsKnowledge\OFFENE_ARBEITSAUFFORDERUNGEN.md")
-        if os.path.exists(canonical_p):
-            res = validate_register.validate_master_file(canonical_p)
-            self.assertEqual(res["errors_count"], 0)
-            self.assertGreaterEqual(res["total_tasks_found"], 21)
+    def test_24_verified_status_needs_evidence_in_its_own_task(self):
+        content = """### OA-0001: No evidence
+* **Status:** `DONE_VERIFIED`
+```md
+* **Commit:** `0123456789abcdef0123456789abcdef01234567`
+```
+### OA-0002: Evidence belongs to this task
+* **Status:** `DONE_VERIFIED`
+* **Commit:** `0123456789abcdef0123456789abcdef01234567`
+* **Prüfung:** `python -m unittest`
+* **Abnahmebeleg:** Testprotokoll
+* **Abnahmekriterien:** Die Suite besteht.
+"""
+        result = validate_register.validate_content(content)
+        self.assertEqual(result["errors_count"], 4)
+        self.assertTrue(all("OA-0001" in error for error in result["errors"]))
 
 
 if __name__ == "__main__":
