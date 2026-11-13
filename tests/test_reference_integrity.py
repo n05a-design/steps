@@ -324,18 +324,23 @@ class TestReferenceIntegrityAndMutations(unittest.TestCase):
         cases[-1]['title'] = "Tick Dauer ms bei 120 BPM und 480 PPQ (Präzise)"
         self._sync_golden_mirrors(cases)
 
-        # Register authorized migration in migration register
+        case = cases[-1]
+        target_hash = checker.compute_canonical_hash({
+            "id": case["case_id"],
+            "title": case["title"].lower(),
+            "domain": case["domain"],
+            "input_params": json.dumps(case["input_params"], sort_keys=True, ensure_ascii=False),
+            "expected_output": json.dumps(case["expected_output"], sort_keys=True, ensure_ascii=False),
+        })
         mig_file = os.path.join(self.temp_knowledge, 'research', 'REFERENCE_ID_MIGRATION_REGISTER.csv')
         with open(mig_file, 'a', encoding='utf-8') as f:
-            f.write("REF-0198,REF-0198,M11,MIDI_TIMING,Tick Dauer ms bei 120 BPM und 480 PPQ (Präzise),Phase 4.16,Authorized typographical refinement,CONTROLLED_CORRECTION,ACTIVE\n")
+            f.write(f"REF-0198,REF-0198,M11,MIDI_TIMING,Tick duration,Phase 4.16,Reviewed title correction sha256={target_hash},CONTROLLED_CORRECTION,ACTIVE\n")
 
-        result = checker.verify_integrity(repo_root=self.temp_dir)
-        # Verify that REF-0198 was exempted from hash mismatch failure because it was authorized
-        self.assertFalse(any("Semantic identity hash mismatch for REF-0198" in e for e in result['errors']), result['errors'])
-
-    # =========================================================================
-    # STRUCTURAL INTEGRITY MUTATIONS
-    # =========================================================================
+        self.assertEqual(checker.verify_integrity(repo_root=self.temp_dir)["errors"], [])
+        case["expected_output"] = 9000
+        self._sync_golden_mirrors(cases)
+        errors = checker.verify_integrity(repo_root=self.temp_dir)["errors"]
+        self.assertTrue(any("Expected output changed" in error for error in errors), errors)
 
     def test_16_mutation_duplicate_prog_id(self):
         """Duplicate PROG-001 detected."""

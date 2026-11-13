@@ -205,12 +205,12 @@
     "domain": "M04",
     "category": "CHORDS",
     "test_class": "UNIT_TEST",
-    "title": "Akkord C/E (1. Umkehrung)",
+    "title": "c-Moll in erster Umkehrung",
     "input_params": {
       "root": "C",
       "quality": "Minor"
     },
-    "expected_output": "Bass E, Töne [E, G, C]",
+    "expected_output": "Bass Eb, Töne [Eb, G, C]",
     "tolerance": 0.0,
     "theoretical_rule": "Dreiklangskonstruktion und Inversion",
     "source_citation": "M04-02; Aldwell & Schachter"
@@ -225,7 +225,7 @@
       "root": "C",
       "quality": "Minor"
     },
-    "expected_output": "Bass G, Töne [G, C, E]",
+    "expected_output": "Bass G, Töne [G, C, Eb]",
     "tolerance": 0.0,
     "theoretical_rule": "Dreiklangskonstruktion und Inversion",
     "source_citation": "M04-02; Aldwell & Schachter"
@@ -234,7 +234,7 @@
     "case_id": "REF-0016",
     "domain": "M04",
     "category": "CHORDS",
-    "test_class": "UNIT_TEST",
+    "test_class": "SPECIFICATION_EXAMPLE",
     "title": "Polychord D/C",
     "input_params": {
       "root": "C",
@@ -531,9 +531,9 @@
       "chord": "G7"
     },
     "expected_output": [
-      1,
+      2,
       5,
-      8,
+      7,
       11
     ],
     "tolerance": 0.0,
@@ -544,7 +544,7 @@
     "case_id": "REF-0036",
     "domain": "M05",
     "category": "CADENCE",
-    "test_class": "UNIT_TEST",
+    "test_class": "SPECIFICATION_EXAMPLE",
     "title": "Backdoor Kadenz Bb7 nach C",
     "input_params": {
       "chord": "Bb7"
@@ -651,13 +651,23 @@
     "case_id": "REF-0043",
     "domain": "M10",
     "category": "VOICING",
-    "test_class": "SPECIFICATION_EXAMPLE",
+    "test_class": "UNIT_TEST",
     "title": "Drop-2 Voicing Dm7 aus Grundstellung",
     "input_params": {
       "chord": "Dm7",
-      "type": "Drop-2"
+      "close_midi": [
+        62,
+        65,
+        69,
+        72
+      ]
     },
-    "expected_output": "LH [D3, A3], RH [F4, C5]",
+    "expected_output": [
+      57,
+      62,
+      65,
+      72
+    ],
     "tolerance": 0.0,
     "theoretical_rule": "Drop-2 Zweihand-Verteilung Mark Levine",
     "source_citation": "Modul P08; PIANO_PRACTICE_VALIDATION.md"
@@ -666,7 +676,7 @@
     "case_id": "REF-0044",
     "domain": "M07",
     "category": "RHYTHM_SWING",
-    "test_class": "PROPERTY_TEST",
+    "test_class": "SPECIFICATION_EXAMPLE",
     "title": "Swing-Ratio Dynamik nach Friberg & Sundström",
     "input_params": {
       "bpm_low": 80,
@@ -1433,7 +1443,7 @@
     "case_id": "REF-0093",
     "domain": "M10",
     "category": "VOICING",
-    "test_class": "UNIT_TEST",
+    "test_class": "SPECIFICATION_EXAMPLE",
     "title": "Zweihändiges Rootless Voicing Typ A für Cmaj9 (Mark Levine)",
     "input_params": {
       "chord": "Cmaj9",
@@ -1454,7 +1464,7 @@
     "case_id": "REF-0094",
     "domain": "M10",
     "category": "VOICING",
-    "test_class": "UNIT_TEST",
+    "test_class": "SPECIFICATION_EXAMPLE",
     "title": "Zweihändiges Rootless Voicing Typ B für Cmaj9 (Mark Levine)",
     "input_params": {
       "chord": "Cmaj9",
@@ -1475,7 +1485,7 @@
     "case_id": "REF-0095",
     "domain": "M05",
     "category": "HARMONY",
-    "test_class": "UNIT_TEST",
+    "test_class": "SPECIFICATION_EXAMPLE",
     "title": "Backdoor Cadence Modal Interchange Resolution (iv7 - bVII7 -> Imaj7)",
     "input_params": {
       "cadence": "iv7 - bVII7 -> Imaj7",
@@ -1490,7 +1500,7 @@
     "case_id": "REF-0096",
     "domain": "M10",
     "category": "VOICING",
-    "test_class": "UNIT_TEST",
+    "test_class": "SPECIFICATION_EXAMPLE",
     "title": "Secondary Dominant 1st Inversion Chromatic Bass Line (A7/C# -> Am/C)",
     "input_params": {
       "progression": "PROG-026",
@@ -1584,7 +1594,7 @@
     "case_id": "REF-0100",
     "domain": "M12",
     "category": "INTEGRATION",
-    "test_class": "INTEGRATION_TEST",
+    "test_class": "SPECIFICATION_EXAMPLE",
     "title": "Integrated Multi-Domain Consistency (Harmony M05 + Drums M08 + Piano M10)",
     "input_params": {
       "components": [
@@ -2970,15 +2980,21 @@
     "case_id": "REF-0176",
     "domain": "M06",
     "category": "VOICE_LEADING",
-    "title": "Vermeidung verdeckter Quinten im Außenstimmensatz",
+    "title": "Direkte Quinte im Basso-continuo-Stil",
     "input_params": {
-      "soprano_motion": 2,
-      "bass_motion": 7,
-      "interval_end": 7
+      "style": "basso continuo",
+      "bass": [
+        "C3",
+        "F3"
+      ],
+      "soprano": [
+        "A3",
+        "C4"
+      ]
     },
-    "expected_output": true,
+    "expected_output": false,
     "tolerance": 0.0,
-    "theoretical_rule": "Äußere Stimmen erreichen Quinte im Sprung in gerader Bewegung",
+    "theoretical_rule": "Das Stilprofil erlaubt direkte Quinten. Andere Satzstile können sie anders behandeln.",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0076",
     "test_class": "SPECIFICATION_EXAMPLE"
@@ -3192,7 +3208,7 @@
     "case_id": "REF-0189",
     "domain": "M08",
     "category": "POLYRHYTHM",
-    "title": "3:2 Polyrhythmus Minimaler gemeinsamer Teiler",
+    "title": "3:2 Polyrhythmus: kleinstes gemeinsames Vielfaches",
     "input_params": {
       "r1": 3,
       "r2": 2

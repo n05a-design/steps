@@ -438,13 +438,6 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
             c_inp = json.dumps(c.get('input_params', {}), sort_keys=True, ensure_ascii=False)
             b_inp = json.dumps(b_entry.get('input_params', {}), sort_keys=True, ensure_ascii=False)
 
-            if c_title and b_title and c_title.lower() != b_title.lower():
-                errors.append(f"Historical identity conflict for {cid}: Title changed from '{b_title}' to '{c_title}'")
-            if c_exp != b_exp:
-                errors.append(f"Historical identity conflict for {cid}: Expected output changed from {b_exp} to {c_exp}")
-            if c_inp != b_inp:
-                errors.append(f"Historical identity conflict for {cid}: Input parameters changed from {b_inp} to {c_inp}")
-
             computed_h = compute_canonical_hash({
                 'id': cid,
                 'title': c_title.lower(),
@@ -452,10 +445,17 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
                 'input_params': c_inp,
                 'expected_output': c_exp
             })
+            if catalog_correction_matches(cid, computed_h):
+                continue
+            if c_title and b_title and c_title.lower() != b_title.lower():
+                errors.append(f"Historical identity conflict for {cid}: Title changed from '{b_title}' to '{c_title}'")
+            if c_exp != b_exp:
+                errors.append(f"Historical identity conflict for {cid}: Expected output changed from {b_exp} to {c_exp}")
+            if c_inp != b_inp:
+                errors.append(f"Historical identity conflict for {cid}: Input parameters changed from {b_inp} to {c_inp}")
             b_h = b_entry.get('semantic_hash')
             if b_h and computed_h != b_h:
-                if cid not in authorized_migrations:
-                    errors.append(f"Semantic identity hash mismatch for {cid}: recomputed {computed_h} != baseline {b_h}")
+                errors.append(f"Semantic identity hash mismatch for {cid}: recomputed {computed_h} != baseline {b_h}")
 
     return errors
 
