@@ -7,3 +7,7 @@ Konventionen und Grenzen. Die [Wissensbibliothek](../../knowledge/README.md)
 enthält zusätzlich Forschungs- und Lernmaterial mit eigener Provenienz.
 
 [API-Verträge und offene Entscheidungen](API_VERTRAEGE.md)
+
+Die [API-Verträge](API_VERTRAEGE.md) beschreiben Eingabekonventionen,
+Generalbass, Transposition und Voicing-Grenzen. Quellmodule und Tests sind
+im [Theoriepaket](../../src/steps/theory/README.md) erschlossen.

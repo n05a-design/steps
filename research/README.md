@@ -1,3 +1,27 @@
+# Forschung und Originalbelege
+
+Dieser Bereich hält Forschungsfragen, Arbeitsnotizen und historisches
+Quellenmaterial nachvollziehbar. Nutzbare Produktquellen werden über die
+[Wissensbasis](../knowledge/README.md) und deren Freigabeprozess geführt.
+
+| Einstieg | Inhalt |
+| --- | --- |
+| [STEPS-Bibliothek](STEPS_Bibliothek/README.md) | Historischer Bestand zu Musiktheorie, Produktion, MIDI und Lehrmaterial. |
+| [Bibliografie](bibliography/README.md) · [Fachpublikationen](papers/README.md) | Literaturmetadaten und eigene Auswertungen. |
+| [Arbeitsnotizen](notes/README.md) | Frühere Recherche- und Übergabeunterlagen. |
+| [Ableton](ableton/README.md) · [Produktion](production/README.md) | DAW- und Rhythmikrecherche. |
+| [Wettbewerb](competitors/README.md) · [UI/UX](UI-UX-Design/README.md) | Historische Produkt- und Gestaltungsreferenzen. |
+| [Offene Evidenz](gaps/README.md) | Prüfbedarf, Quellenlücken und fachliche Restabnahmen. |
+
+Neue Recherche mit Autor oder Institution, Titel, URL, Fundstelle, Datum,
+Rechtestatus und eigener Auswertung erfassen. Für Originaldateien zusätzlich
+Pfad und SHA-256 dokumentieren. Die
+[Rechterichtlinie](../knowledge/sources/RIGHTS_POLICY.md) beschreibt den
+zulässigen Umgang mit Fremdmaterial.
+
+<details>
+<summary>Historische Ausgangsdokumentation vom 10. November 2026</summary>
+
 # Forschungsarbeit und Marktbeobachtung
 
 
@@ -18,3 +42,5 @@ Jeder Auftrag trägt `crawl_batch_id`, Ziel/Fragestellung, Domain, erlaubte Abru
 ## Marktforschung
 
 Vergleiche u.a. Chord-Explorer, Harmony-Learner, Voicing-Tools, Drum-Sequencer und DAWs in den Achsen: UX, interaktive Verknüpfung, Erklärbarkeit, Theorieframework, MIDI/Audio, Offline/Privacy, Preis, Plattform, Lizenz, Bedienbarkeit, Dokumentation und Tutorial-/Learning-Layer. Bei aktuellen Preisen/Funktionen Datum und Link dokumentieren; keine aus alten Screenshots ungeprüft übertragenen Zahlen. Featureideen sind Vorschläge, keine Copy-Paste-Spezifikationen. Siehe `prompts/18_COMPETITOR_RESEARCH.md`.
+
+</details>

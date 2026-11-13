@@ -52,3 +52,12 @@ python -B -m unittest discover -s .agents/skills/steps-knowledge-curation/tests 
 ```
 
 [Test scope and macOS temporary paths](../../../tests/README.md)
+
+## Ordner im Skill
+
+| Ordner | Inhalt |
+| --- | --- |
+| [references](references/README.md) | Taxonomie, Rechte, Dokumenthierarchie und Registerprotokoll. |
+| [scripts](scripts/README.md) | Quellenprüfung, Backup, Restore und Registervalidierung. |
+| [templates](templates/README.md) | Vorlagen für Quelle, Auftrag und Konflikt. |
+| [tests](tests/README.md) | Prüfungen für Werkzeuge und Wiederherstellung. |

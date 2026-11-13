@@ -1,5 +1,10 @@
-# research/production/drums
+# Drum- und Groove-Recherche
 
-Drums/Groove: derzeit zurückgestellter Produktscope (`DEFERRED`).
+Vorgesehener Bereich für Produktionsrecherche. Die App-Umsetzung ist zurückgestellt.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Groove-Katalog](../../../knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md) | Notierte Patterns und Zählvarianten. |
+| [Hörproben](../../../docs/audit/fable-5.2/STEPS_FABLE_5_2_ABNAHMEPROBEN.md) | Messbare Kontrollsignale und praktische Prüfaufgaben. |
+
+[Zur Bereichsübersicht](../README.md)

@@ -1,5 +1,10 @@
-# docs/project/technical-appendix
+# Technischer Anhang
 
-Historische Codebeispiele und Originalblöcke, keine Produktimplementierung.
+Der Ordner verweist auf die erhaltene technische Ausgangsdokumentation.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Technische Auswertung](../Technische%20Auswertung/Steps_Technischer_Anhang_und_Originalvorlagen_2026-11-09.md) | Datierte Codebeispiele und Originalvorlagen. |
+| [Engineering](../../engineering/README.md) | Technische Zielverträge des Projekts. |
+
+[Zur Bereichsübersicht](../README.md)

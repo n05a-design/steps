@@ -20,3 +20,18 @@ Bei [CLAIM-034](MUSIC_SOURCE_CLAIM_REGISTER.csv) sind Publikationsangabe und
 Aussage anhand des Verlagsabstracts korrigiert. `KB-M07-SWING-SOURCE` prüft
 die Zitierangabe. Der Claim bleibt mit `REVIEW_REQUIRED` gekennzeichnet.
 Konkrete Verhältnisse bei einzelnen BPM erfordern einen Nachweis aus den Messdaten.
+
+## Bestand und Pflege
+
+| Datei | Rolle |
+| --- | --- |
+| [App-Register](registry.yaml) | Quellen, die der Pilot-Loader auflöst. |
+| [Recherche-Register](curated_sources_registry.yaml) | Bibliografie, historische Angaben und neu belegte Fundstellen. |
+| [Claim-Register](MUSIC_SOURCE_CLAIM_REGISTER.csv) | Fachliche Aussagen, Gegenproben und Prüfstatus. |
+| [Dateiinventur](MUSIC_SOURCE_REVIEW_PROGRESS.csv) | Historische Pfade, Hashes und Sichtungstiefe. |
+| [Eigene Auswertungen](extracted/README.md) | Ablage und Anforderungen an eigene Synthesen. |
+| [Rechterichtlinie](RIGHTS_POLICY.md) | Zulässige Nutzung und Weitergabe. |
+
+Neue Einträge mit Quell-ID, konkreter Fundstelle, Nutzungsrahmen und
+Prüfstatus pflegen. Eine erreichbare Quelle, ihre Rechte und die fachliche
+Freigabe einer konkreten Aussage haben jeweils eigene Nachweise.

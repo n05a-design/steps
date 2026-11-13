@@ -1,5 +1,10 @@
-# docs/project/overview
+# Historischer Projektüberblick
 
-Konsolidierte Project Overview als historische/quellengebundene Grundlage.
+Diese Fassung dokumentiert die Projektkonsolidierung vom 9. November 2026.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Konsolidierter Überblick](Steps_Projekt_Overview_konsolidiert_2026-11-09.md) | Datierte Ausgangsunterlage. |
+| [Aktueller Implementierungsstand](../../IMPLEMENTATION.md) | Stand des Python-Kerns und der App-Schnittstelle. |
+
+[Zur Bereichsübersicht](../README.md)

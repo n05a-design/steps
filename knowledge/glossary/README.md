@@ -1,5 +1,12 @@
-# knowledge/glossary
+# Terminologie und Notationskonventionen
 
-DE/EN-Terminologie, Notationskonventionen und mehrdeutige Begriffe.
+Hier ist Platz für ein DE/EN-Glossar. Der aktuelle verbindliche Notationsvertrag liegt bei der API.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Notationsvertrag](../../docs/theory/API_VERTRAEGE.md) | Deutsch H/B, international B/B♭ und AUTO. |
+| [Fachkonzepte](../concepts/README.md) | Begriffe in ihrem jeweiligen musikalischen Kontext. |
+
+Neue Einträge mit Begriff, Sprachvariante, Definition, Beispiel und Fundstelle führen.
+
+[Zur Bereichsübersicht](../README.md)

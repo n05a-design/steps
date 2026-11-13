@@ -1,5 +1,10 @@
-# tests/transposition
+# Transpositionsprüfungen
 
-Relative/absolute Transposition und Round-Trips.
+Die ausführbaren Gegenproben liegen in den Root-Testmodulen.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Notation](../test_notation_contract.py) | Buchstabierung, Slash-Bass und enharmonische Fälle. |
+| [Progressionen](../test_progression_engine.py) | Tonartwechsel und Transpositionsverhalten. |
+
+[Zur Bereichsübersicht](../README.md)

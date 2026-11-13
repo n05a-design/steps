@@ -1,5 +1,10 @@
-# tools/packaging
+# Paketierung
 
-Distribution erst mit einer geprüften ausführbaren App.
+Vorgesehene Ablage für Distributionswerkzeuge. Hier liegt derzeit die Ablagebeschreibung. Desktop-Start und installierbare Pakete sind offen.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Implementierungsstand](../../docs/IMPLEMENTATION.md) | Aktuelle Laufzeit- und Installationsgrenzen. |
+| [Release-Rahmen](../../docs/governance/README.md) | Freigabe- und Rechtenachweise. |
+
+[Zur Bereichsübersicht](../README.md)

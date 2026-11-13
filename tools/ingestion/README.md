@@ -1,5 +1,10 @@
-# tools/ingestion
+# Quellenaufnahme
 
-Quellenimport mit Lizenzprüfung, Metadaten und Prüfsummen.
+Der aktive Quellenimport wird durch den Kurationsskill angeleitet. Hier liegt derzeit der Verweis auf den zuständigen Workflow.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Kurationswerkzeuge](../../.agents/skills/steps-knowledge-curation/scripts/README.md) | Hash-, Duplikat- und Registerprüfung. |
+| [Ingestion](../../knowledge/INGESTION_PIPELINE.md) | Ablauf und Quellenregeln. |
+
+[Zur Bereichsübersicht](../README.md)

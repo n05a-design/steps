@@ -1,5 +1,12 @@
-# knowledge/corpora
+# Musikkorpora
 
-Reproduzierbare Datenkorpora mit vollständiger Herkunftsangabe.
+Vorgesehener Ablageort für reproduzierbare Korpus-Metadaten. Der Ordner enthält derzeit diese Übersicht.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Historisches MIDI-Inventar](../../docs/audit/fable-5.2/PPR_MIDI_ARCHIVINVENTAR.csv) | Pfade, Prüfsummen und Messdaten aus dem Audit. |
+| [Quellenrechte](../sources/RIGHTS_POLICY.md) | Regeln für Referenzierung und Weiterverwendung. |
+
+Für einen Korpus Herkunft, Umfang, Erhebungsmethode, Dateihashes und Nutzungsrechte erfassen. Rohmedien erhalten einen eigenen Herkunftsnachweis.
+
+[Zur Bereichsübersicht](../README.md)

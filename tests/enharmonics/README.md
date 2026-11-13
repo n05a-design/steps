@@ -1,5 +1,10 @@
-# tests/enharmonics
+# Notation und Enharmonik
 
-Deutsche/internationale Schreibweisen und enharmonische Eindeutigkeit.
+Die Root-Tests prüfen, wie Schreibweise und Tonklasse zusammenwirken.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Notationsvertrag](../test_notation_contract.py) | Deutsch und international, AUTO sowie mehrdeutige Symbole. |
+| [API-Verträge](../../docs/theory/API_VERTRAEGE.md) | Verbindliche Eingaberegeln. |
+
+[Zur Bereichsübersicht](../README.md)

@@ -1,3 +1,11 @@
 # Übergaben
 
-Die [Übergabe-Checkliste](HANDOVER_CHECKLIST.md) beschreibt den Arbeitsablauf. Datierte Agentenberichte sind über den [Archivindex](../../archive/INDEX.md) auffindbar.
+Für jede Übergabe den Git-Stand, die geprüften Ergebnisse und die nächsten Entscheidungen erfassen.
+
+| Einstieg | Inhalt |
+| --- | --- |
+| [Checkliste](HANDOVER_CHECKLIST.md) | Prüf- und Übergabepunkte. |
+| [Vorlage](../../templates/HANDOVER_TEMPLATE.md) | Struktur für eine neue Übergabe. |
+| [Historische Übergaben](../../archive/INDEX.md) | Datierte Berichte und frühere Projektstände. |
+
+[Zur Bereichsübersicht](../README.md)

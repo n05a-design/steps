@@ -1,5 +1,12 @@
-# knowledge/sources/extracted
+# Eigene Quellenauswertungen
 
-Eigene, rechtmäßig verfasste Auswertungen mit Quell-ID, methodischer Einordnung und Lizenzangabe.
+Vorgesehene Ablage für eigenständig verfasste Zusammenfassungen. Der Ordner enthält derzeit diese Übersicht.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Quellenregister](../README.md) | Quell-IDs und Prüfstatus. |
+| [Rechterichtlinie](../RIGHTS_POLICY.md) | Regeln zur Weiterverwendung und Archivierung. |
+
+Für jede Auswertung Quelle, Ausgabe oder Fassung, Fundstelle, Nutzungsrahmen, Methode und fachliche Grenzen dokumentieren.
+
+[Zur Bereichsübersicht](../README.md)

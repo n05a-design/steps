@@ -1,5 +1,10 @@
-# docs/project/originals
+# Originalunterlagen des Dossiers
 
-Unveränderte Originaldokumente des konsolidierten Dossiers.
+Der Ordner markiert die vorgesehene Ablage unveränderter Projektoriginale und enthält derzeit diese Übersicht.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Quellenarchiv](../../../source_archive/README.md) | Versionierte historische Originale. |
+| [Provenienz](../provenance/README.md) | Quellenzuordnung und Hashes. |
+
+[Zur Bereichsübersicht](../README.md)
