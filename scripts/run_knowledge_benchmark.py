@@ -313,6 +313,42 @@ def evaluate(case, examples, claims, coach, manual):
         require(actual == expected, actual)
     elif method == "piano_exercise":
         actual = evaluate_piano_exercise(case, expected)
+    elif method == "compound_meter":
+        catalog = DRUMS.read_text(encoding="utf-8")
+        row = next(line for line in catalog.splitlines() if line.startswith(f"| `{case['content']}` |"))
+        module = catalog.partition(f"\n## {case['content']} ·")[2].partition("\n## ")[0]
+        pattern = re.search(r"\b([X.]{6,}) auf ", row)
+        timing = re.search(
+            r"`([X.]+)` umfasst (\w+) Achtel\. Bei (\d+) PPQ dauert\s+"
+            r"ein Achtel (\d+) Ticks und die gesamte Folge (\d+) Ticks", module,
+        )
+        tempo = re.search(r"punktierte Viertel = (\d+) BPM", module)
+        require(pattern is not None and timing is not None and tempo is not None, "Puls-, Tempo- oder PPQ-Angabe fehlt.")
+        bell, pulse_count, ppq_text, pulse_text, total_text = timing.groups()
+        ppq, pulse, bpm, total = int(ppq_text), int(pulse_text), int(tempo[1]), int(total_text)
+        require(pattern[1] == bell and f"| {bpm} BPM |" in row
+                and ppq == pulse * 2 and total == len(bell) * pulse,
+                "Katalog, Zählvariante und Zeitbasis stimmen nicht überein.")
+        require(pulse_count == "zwölf" and len(bell) == 12, "Die Glockenfolge muss zwölf Achtel umfassen.")
+
+        def ticks(values):
+            return [int(value) for value in re.findall(r"\d+", values)]
+
+        measures = re.findall(r"^- \*\*(?:Ein|Zwei) (\d+)/8-Takt(?:e)?\*\* mit den Grenzen ([\d, und]+)\.", module, re.MULTILINE)
+        written = {numerator: ticks(boundaries) for numerator, boundaries in measures}
+        require(len(measures) == len(written), "Doppelte Taktvariante.")
+        actual = {
+            "ppq": ppq, "bpm": bpm, "pulse_ticks": pulse,
+            "bell_onsets": [index * pulse for index, event in enumerate(bell) if event == "X"],
+            "beat_onsets": list(range(0, total, 3 * pulse)),
+            "barlines": {count: list(range(0, total + 1, int(count) * pulse)) for count in written},
+            "cycle_seconds": len(bell) / 3 * (60 / bpm),
+        }
+        bell_ticks = re.search(r"liegen bei ([\d, und]+) Ticks", module)
+        beat_ticks = re.search(r"beginnen bei ([\d, und]+) Ticks", module)
+        require(bell_ticks is not None and beat_ticks is not None
+                and ticks(bell_ticks[1]) == actual["bell_onsets"] and ticks(beat_ticks[1]) == actual["beat_onsets"]
+                and written == actual["barlines"] and actual == expected, actual)
     elif method == "drum_ticks":
         row = next(line for line in DRUMS.read_text(encoding="utf-8").splitlines() if line.startswith("| `PAT-026`"))
         ppq = expected["ppq"]
