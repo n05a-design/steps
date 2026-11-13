@@ -264,8 +264,17 @@ def evaluate(case, examples, claims, coach, manual):
                     for part in (expected["journal"], expected["volume_issue"], expected["pages"])
                 )
             ) else row["citation_reference"]
+        elif data["check"] == "alter":
+            from decimal import Decimal
+            from xml.etree import ElementTree
+
+            values = re.findall(r"<alter>[^<]+</alter>", row["musical_example"])
+            actual = [
+                str(value) for element in values
+                if (value := Decimal(ElementTree.fromstring(element).text)) % 1
+            ]
         else:
-            actual = "decimal" in row["claim_text"].lower() and "(-2 to +2)" not in row["claim_text"]
+            raise ValueError(f"Unknown claim sample: {data['check']}.")
         require(actual == expected, {"actual": actual, "claim": row["claim_text"]})
     else:
         raise ValueError(f"Unknown method {method}.")

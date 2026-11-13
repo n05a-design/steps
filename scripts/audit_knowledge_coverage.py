@@ -181,7 +181,7 @@ def audit():
             issues.append("Fundstelle fehlt oder Platzhalter")
         if (not all(row.get(field, "").strip() for field in ("claim_text", "evidence_class"))
                 or not re.fullmatch(r"M(?:0[1-9]|1[0-2])", row.get("domain_id", ""))
-                or row["validation_status"] not in {"VERIFIED_TRUE", "PLACEHOLDER", "REVIEW_REQUIRED", "SOURCE_REVIEW_REQUIRED"}):
+                or row["validation_status"] not in {"PLACEHOLDER", "REVIEW_REQUIRED", "SOURCE_REVIEW_REQUIRED"}):
             issues.append("Pflichtangaben fehlen")
         checks = [r for r in results if r["method"] == "claim_sample" and r["content"] == ident]
         depth = checks[0]["status"] if checks else "OFFEN"
@@ -203,7 +203,7 @@ def audit():
     endpoints = progs.keys() | drums.keys() | pianos.keys() | domains
     for row in read_csv(KNOWLEDGE / "relations/MUSIC_CONCEPT_RELATIONS.csv"):
         unresolved = [row[field] for field in ("source_id", "target_id") if row[field] not in endpoints]
-        notes = "Keine direkte Quellen-/Claim-ID in der Relationszeile."
+        notes = f"Registerstatus {row['validation_status']}. Keine direkte Quellen-/Claim-ID in der Relationszeile."
         if unresolved:
             notes += " Endpunktdefinition im kanonischen Knotenbestand offen: " + ", ".join(unresolved)
         add("Graphrelationen", row["relation_id"], "BEFUND", note=notes)

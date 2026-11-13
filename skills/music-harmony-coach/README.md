@@ -1,5 +1,7 @@
-# skills/music-harmony-coach
+# Historischer Harmony Coach
 
-Historischer Entwurf für den Fachassistenten. Nicht ungeprüft als neue Faktengrundlage ausgeben.
-
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+Der Ordner enthält einen datierten Entwurf des Skills mit Referenzen und
+einem Progressionsschema. Freigegebene STEPS-Beispiele liefert der
+[App-Katalog](../../app/knowledge.py). Die
+[Coach-Abnahme](../../knowledge/benchmark/README.md#harmony-coach) dokumentiert
+Antworten, geprüfte Fundstellen und die menschliche Bewertung je Domäne.
