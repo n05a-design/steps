@@ -24,13 +24,14 @@
 
 ## Aufgabenregister nach dem Fable-Audit (2026-11-13)
 
-Die Suche nach dem Master im angegebenen lokalen GitHub-Stammordner
-in OneDrive ergab Repository-Snapshots. Die End-to-End-Abnahme am echten
-externen Register steht aus. Der schreibgeschützte Repository-Snapshot enthält
-33 Aufgaben und drei `DONE_VERIFIED`-Einträge ohne die jetzt strukturiert
-erfassten Belegfelder (OA-0002, OA-0011, OA-0013). Beim Abgleich am echten
-Register Belege nachtragen oder den Status nach Prüfung korrigieren. Historische
-Backups ohne Manifest bleiben für eine gesonderte Wiederherstellung erhalten.
+Der vom Nutzer benannte Repository-Snapshot enthält 33 Aufgaben.
+Restore und Rücksicherung wurden mit einer Kopie bytegleich geprüft.
+Eine lokale Migrationskopie ergänzt die strukturierten Abschlussbelege
+für OA-0002, OA-0011 und OA-0013. Die strikte Validierung besteht.
+Die Übernahme in ein produktiv genutztes Register und ein Abgleich mit
+etwaigen neueren Einträgen stehen aus. Historische Backups ohne Manifest
+bleiben für eine gesonderte Wiederherstellung erhalten.
+[Nachweis zur Registermigration](../../docs/audit/fable-5.2/STEPS_FABLE_5_2_QUELLENABGLEICH.md#m2--registermigration-aus-dem-bereitgestellten-snapshot)
 
 ## Offene Fachnachweise (Stand 2026-11-13)
 
@@ -53,4 +54,4 @@ der Befunde sind im [Maßnahmenplan](../../docs/audit/fable-5.2/STEPS_FABLE_5_2_
 | W04 | P01–P19, PAT-001–031 und [Latin-Katalog](../../knowledge/concepts/styles/GENRE_RESEARCH_LATIN.md) nachprüfen: Akkordtöne/Bass/Rollen, Taktart/Taktgrenzen/PPQ, Eventraster, stilistische Aussagen und ggf. Hörbeleg. PROG-024 ist ein Übungsschema. Die verlinkte Jobim-Partitur belegt die Variante mit ♭II7. |
 | W05/W08 | 97 Relationen stehen auf REVIEW_REQUIRED. 86 unterschiedliche Knoten-IDs brauchen Definitionen. Richtung, Typ, Gültigkeitsbereich und Claim-Bezug je Kante prüfen. Historische Literatur und Pilotprovenienz trennen. |
 | W06/W07, T01/T03–T05/T07 | 132 Golden Cases außerhalb der Fable-Stichprobe; auch die 66 Stichprobenfälle brauchen individuelle, versionierte Evidenz. Verbleibende Evaluatorzweige und Fixture-Sollwerte klassifizieren. Die gelesenen Renderer-/Benchmark-/Coverage-Pfade mit Negativkontrollen absichern; Hash-Identität und Generatorgleichheit gelten als formale Nachweise. |
-| H01/H02 | Historische Kernaussagen stichprobenhaft geprüft, unter anderem Git-Abstammung, Testzahlen und Golden-Klassen. Weitere historische Aussagen nur bei Übernahme in aktuelle Entscheidungen gegen Originalbelege prüfen. |
+| H01/H02 | Sechs Gegenproben für den OpenAI-Übergabebericht sind dokumentiert. Historische Statuslabel und archivierte Tests bleiben auf ihren Quellstand bezogen. |
