@@ -346,7 +346,7 @@
     "expected_output": 36,
     "tolerance": 0.0,
     "theoretical_rule": "General MIDI 1.0 Standard Percussion Key Map",
-    "source_citation": "M08-02; MIDI Association GM 1.0"
+    "source_citation": "Historischer Verweis M08-02. The MIDI Association, RP-003 General MIDI System Level 1, Tabelle 3 (PDF-S. 8), https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view"
   },
   {
     "case_id": "REF-0023",
@@ -360,7 +360,7 @@
     "expected_output": 38,
     "tolerance": 0.0,
     "theoretical_rule": "General MIDI 1.0 Standard Percussion Key Map",
-    "source_citation": "M08-02; MIDI Association GM 1.0"
+    "source_citation": "Historischer Verweis M08-02. The MIDI Association, RP-003 General MIDI System Level 1, Tabelle 3 (PDF-S. 8), https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view"
   },
   {
     "case_id": "REF-0024",
@@ -374,7 +374,7 @@
     "expected_output": 42,
     "tolerance": 0.0,
     "theoretical_rule": "General MIDI 1.0 Standard Percussion Key Map",
-    "source_citation": "M08-02; MIDI Association GM 1.0"
+    "source_citation": "Historischer Verweis M08-02. The MIDI Association, RP-003 General MIDI System Level 1, Tabelle 3 (PDF-S. 8), https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view"
   },
   {
     "case_id": "REF-0025",
@@ -388,7 +388,7 @@
     "expected_output": 46,
     "tolerance": 0.0,
     "theoretical_rule": "General MIDI 1.0 Standard Percussion Key Map",
-    "source_citation": "M08-02; MIDI Association GM 1.0"
+    "source_citation": "Historischer Verweis M08-02. The MIDI Association, RP-003 General MIDI System Level 1, Tabelle 3 (PDF-S. 8), https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view"
   },
   {
     "case_id": "REF-0026",
@@ -513,7 +513,7 @@
     "expected_output": 37,
     "tolerance": 0.0,
     "theoretical_rule": "General MIDI 1.0 Note 37 Definition",
-    "source_citation": "MIDI Association GM 1.0"
+    "source_citation": "The MIDI Association, RP-003 General MIDI System Level 1, Tabelle 3 (PDF-S. 8), https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view"
   },
   {
     "case_id": "REF-0034",
@@ -707,7 +707,7 @@
     "expected_output": 44,
     "tolerance": 0.0,
     "theoretical_rule": "GM 1.0 Note 44 Pedal Hi-Hat",
-    "source_citation": "WEB-4.6-01; MIDI Manufacturers Association GM 1.0 Spec"
+    "source_citation": "Historischer Verweis WEB-4.6-01. The MIDI Association, RP-003 General MIDI System Level 1, Tabelle 3 (PDF-S. 8), https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view"
   },
   {
     "case_id": "REF-0046",

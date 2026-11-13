@@ -411,12 +411,14 @@ _FIGURES = {"53": (0, False), "6": (1, False), "63": (1, False), "64": (2, False
             "65": (1, True), "43": (2, True), "42": (3, True), "2": (3, True)}
 _EXPLICIT_QUALITIES = {
     "maj7", "maj9", "maj13", "m", "m6", "m7", "m7b5", "m9", "m11",
-    "dim", "dim7", "aug", "add9", "sus2", "sus4", "7sus4", "7b9",
+    "dim", "dim7", "aug", "add9", "madd9", "sus2", "sus4", "7sus4", "7b9",
     "7#9", "7#11", "7b13", "7#5", "maj7#5", "13", "mmaj7",
 }
 
 
 def _degree_quality(suffix: str, minor_triad: bool, major_seventh: bool) -> str:
+    if suffix == "add9" and minor_triad:
+        return "madd9"
     if suffix == "maj7" and minor_triad:
         return "m(maj7)"
     if suffix == "7b5" and not minor_triad:
