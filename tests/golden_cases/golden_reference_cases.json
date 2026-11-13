@@ -223,9 +223,9 @@
     "title": "Akkord C/G (2. Umkehrung)",
     "input_params": {
       "root": "C",
-      "quality": "Minor"
+      "quality": "Major"
     },
-    "expected_output": "Bass G, Töne [G, C, Eb]",
+    "expected_output": "Bass G, Töne [G, C, E]",
     "tolerance": 0.0,
     "theoretical_rule": "Dreiklangskonstruktion und Inversion",
     "source_citation": "M04-02; Aldwell & Schachter"
@@ -305,12 +305,16 @@
     "test_class": "UNIT_TEST",
     "title": "Straight 8tel Swing-Ratio",
     "input_params": {
-      "swing_type": "Straight"
+      "swing_type": "Straight",
+      "durations": [
+        1,
+        1
+      ]
     },
     "expected_output": 1.0,
     "tolerance": 0.05,
-    "theoretical_rule": "Swing Ratio nach Friberg & Sundström",
-    "source_citation": "M07-04; SMF 1.0 Spec"
+    "theoretical_rule": "Ideales Dauerverhältnis eines Achtelpaars (erste Dauer geteilt durch zweite Dauer)",
+    "source_citation": "Friberg & Sundström (2002), Abstract, https://doi.org/10.1525/mp.2002.19.3.333"
   },
   {
     "case_id": "REF-0021",
@@ -319,12 +323,16 @@
     "test_class": "UNIT_TEST",
     "title": "Triolen-Swing Ratio",
     "input_params": {
-      "swing_type": "Triplet"
+      "swing_type": "Triplet",
+      "durations": [
+        2,
+        1
+      ]
     },
     "expected_output": 2.0,
     "tolerance": 0.05,
-    "theoretical_rule": "Swing Ratio nach Friberg & Sundström",
-    "source_citation": "M07-04; SMF 1.0 Spec"
+    "theoretical_rule": "Ideales Dauerverhältnis eines Achtelpaars (erste Dauer geteilt durch zweite Dauer)",
+    "source_citation": "Friberg & Sundström (2002), Abstract, https://doi.org/10.1525/mp.2002.19.3.333"
   },
   {
     "case_id": "REF-0022",
@@ -1391,7 +1399,7 @@
     "domain": "M01",
     "category": "ACOUSTICS",
     "test_class": "UNIT_TEST",
-    "title": "Reine Große Terz (5:4) Cent-Abweichung von 12-TET",
+    "title": "Centwert der reinen großen Terz (5:4)",
     "input_params": {
       "ratio": 1.25
     },
