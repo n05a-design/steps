@@ -78,6 +78,19 @@ class TestNotationContract(unittest.TestCase):
         self.assertEqual(resolve_roman_degree("#vi°", "C", True, minor_accidentals="natural_minor").symbol, "Adim")
         self.assertEqual(resolve_roman_degree("bVI", "C", True).symbol, "Ab")
 
+    def test_seventh_figures_reject_chords_without_sevenths(self):
+        for degree in ("Iadd9(6/5)", "Iadd9(43)", "Iadd9(42)", "im6(65)"):
+            with self.subTest(degree=degree), self.assertRaisesRegex(ProgressionParsingError, "requires a seventh"):
+                resolve_roman_degree(degree, "C", convention="INT")
+        for degree, expected in (
+            ("Iadd9(6)", "Cadd9/E"),
+            ("V7(43)", "G7/D"),
+            ("V9(43)", "G9/D"),
+            ("vii°7(42)", "Bdim7/Ab"),
+        ):
+            with self.subTest(degree=degree):
+                self.assertEqual(resolve_roman_degree(degree, "C", convention="INT").symbol, expected)
+
     def test_transposition_preserves_the_catalog_spelling(self):
         letters = "CDEFGAB"
         for prog in list_progressions():
