@@ -171,6 +171,8 @@ class NoteSpelling:
             C4.transpose_diatonic(step_delta=3, semitone_delta=6) -> F#4 (Augmented 4th)
             C4.transpose_diatonic(step_delta=4, semitone_delta=6) -> Gb4 (Diminished 5th)
         """
+        if type(step_delta) is not int or type(semitone_delta) is not int:
+            raise MusicTheoryError("Diatonic transposition requires whole steps and semitones.")
         current_idx = DIATONIC_STEPS.index(self.step)
         target_idx_unbounded = current_idx + step_delta
         target_step = DIATONIC_STEPS[target_idx_unbounded % 7]
@@ -206,6 +208,8 @@ class NoteSpelling:
         Transposes chromatically by the specified number of semitones.
         Prefers standard circle-of-fifths spellings with simple alterations.
         """
+        if type(semitones) is not int:
+            raise MusicTheoryError("Chromatic transposition requires whole semitones.")
         new_midi = self.midi_number + semitones
         if not (0 <= new_midi <= 127):
             raise PitchRangeError(f"Transposed MIDI note {new_midi} out of range [0..127].")

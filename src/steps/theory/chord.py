@@ -232,12 +232,15 @@ class Voicing:
     bass_override: Optional[int] = None
 
     def __post_init__(self):
-        if not self.notes:
-            raise ChordConstructionError("A voicing must contain at least one note.")
+        if not isinstance(self.notes, (list, tuple)) or not self.notes:
+            raise ChordConstructionError("A voicing must contain at least one note in a list or tuple.")
         if any(not isinstance(note, int) or isinstance(note, bool) or not 0 <= note <= 127 for note in self.notes):
             raise VoiceLeadingError("Voicing notes must be MIDI integers in 0..127.")
-        if self.bass_override is not None and self.bass_override != min(self.notes):
-            raise VoiceLeadingError("Bass override must match the lowest sounding note.")
+        if self.bass_override is not None and (
+            type(self.bass_override) is not int or self.bass_override != min(self.notes)
+        ):
+            raise VoiceLeadingError("Bass override must be the lowest MIDI note as an integer.")
+        object.__setattr__(self, "notes", tuple(self.notes))
 
     @property
     def midi_notes(self) -> list[int]:
@@ -252,6 +255,8 @@ class Voicing:
         return max(self.notes)
 
     def transpose(self, semitones: int) -> Voicing:
+        if type(semitones) is not int:
+            raise VoiceLeadingError("Voicing transposition requires whole semitones.")
         transposed = tuple(n + semitones for n in self.notes)
         transposed_bass = (self.bass_override + semitones) if self.bass_override is not None else None
         return Voicing(notes=transposed, voicing_type=self.voicing_type, bass_override=transposed_bass)
@@ -263,6 +268,8 @@ class Voicing:
         register order and does not infer a harmonic root. If the result
         cannot fit in MIDI 0..127, it raises VoiceLeadingError.
         """
+        if type(inversion) is not int:
+            raise VoiceLeadingError("Voicing rotation count must be an integer.")
         notes = self.midi_notes
         count = inversion % len(notes)
         if count == 0:
@@ -412,10 +419,10 @@ class ChordDefinition:
             return Voicing(tuple(sorted([bass_note, *upper])), 'ROOTLESS')
 
         if voicing_type == 'SHELL':
-            seventh = next((semi for semi in intervals if 9 <= semi <= 11), intervals[2])
-            if self.quality in {'6', 'm6'}:
-                seventh = 9
-            pcs = {(root_pc + semi) % 12 for semi in (intervals[1], seventh)}
+            # The theoretical order separates triad tones from extensions such as add9.
+            recipe = self.theoretical_intervals
+            upper_interval = next((semi for semi in recipe if 9 <= semi <= 11), recipe[2])
+            pcs = {(root_pc + semi) % 12 for semi in (recipe[1], upper_interval)}
             floor = max(59, bass_note)
             upper = [floor + 1 + ((pc - floor - 1) % 12) for pc in pcs - {bass_pc}]
             return Voicing(tuple(sorted([bass_note, *upper])), 'SHELL', bass_note)

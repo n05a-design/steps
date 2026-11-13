@@ -27,19 +27,70 @@ class TestVoicingContract(unittest.TestCase):
         self.assertEqual(make_drop2_voicing([62, 65, 69, 72]), [57, 62, 65, 72])
 
     def test_layouts_across_register_boundaries(self):
-        for quality in CHORD_TEMPLATES:
-            chord = parse_chord("C" + quality, "INT")
-            for layout in ("CLOSE", "DROP2", "SHELL", "ROOTLESS"):
-                for octave in range(-1, 10):
-                    with self.subTest(quality=quality, layout=layout, octave=octave):
-                        try:
-                            voicing = chord.to_voicing(octave, layout)
-                        except MusicTheoryError:
-                            self.assertTrue(layout == "DROP2" or octave in (-1, 8, 9))
-                            continue
-                        self.assertEqual(voicing.voicing_type, layout)
-                        self.assertTrue(all(0 <= note <= 127 for note in voicing.notes))
-                        self.assertTrue({n % 12 for n in voicing.notes} <= chord.pitch_class_set)
+        roots = ("C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B")
+        for root in roots:
+            for quality in CHORD_TEMPLATES:
+                chord = parse_chord(root + quality, "INT")
+                voiced_pcs = {int(pc) for pc in chord.voiced_pitch_classes}
+                for layout in ("CLOSE", "DROP2", "SHELL", "ROOTLESS"):
+                    for octave in range(-1, 10):
+                        with self.subTest(root=root, quality=quality, layout=layout, octave=octave):
+                            try:
+                                voicing = chord.to_voicing(octave, layout)
+                            except MusicTheoryError:
+                                if layout == "CLOSE":
+                                    highest = 12 * (octave + 1) + chord.root.pitch_class + max(
+                                        chord.default_voiced_intervals
+                                    )
+                                    self.assertGreater(highest, 127)
+                                else:
+                                    self.assertTrue(
+                                        (layout == "DROP2" and len(voiced_pcs) < 4) or octave in (-1, 8, 9)
+                                    )
+                                continue
+                            self.assertEqual(voicing.voicing_type, layout)
+                            self.assertTrue(all(0 <= note <= 127 for note in voicing.notes))
+                            self.assertEqual(list(voicing.notes), sorted(set(voicing.notes)))
+                            pitch_classes = {note % 12 for note in voicing.notes}
+                            self.assertLessEqual(pitch_classes, chord.pitch_class_set)
+                            if layout == "ROOTLESS":
+                                self.assertEqual(pitch_classes, voiced_pcs - {chord.root.pitch_class})
+                            elif layout in ("CLOSE", "SHELL"):
+                                self.assertEqual(voicing.bass_note % 12, chord.root.pitch_class)
+                                if layout == "CLOSE":
+                                    self.assertEqual(pitch_classes, voiced_pcs)
+                            else:
+                                self.assertEqual(len(voicing.notes), 4)
+
+    def test_shell_and_slash_bass_keep_their_musical_roles(self):
+        for symbol, layout, expected in (
+            ("Cadd9/E", "SHELL", [52, 67]),
+            ("F#7/E", "SHELL", [52, 70]),
+            ("Ebmaj7/Bb", "DROP2", [58, 63, 67, 74]),
+            ("C7/F#", "CLOSE", [54, 55, 58, 60, 64]),
+            ("Dm9/F", "ROOTLESS", [53, 60, 64]),
+        ):
+            with self.subTest(symbol=symbol, layout=layout):
+                self.assertEqual(parse_chord(symbol, "INT").to_voicing(3, layout).midi_notes, expected)
+
+    def test_voicing_is_immutable_and_discrete_operations_reject_nonintegers(self):
+        notes = [64, 60, 67]
+        voicing = Voicing(notes)
+        notes[0] = 200
+        self.assertEqual(voicing.notes, (64, 60, 67))
+        self.assertEqual(hash(voicing), hash(Voicing((64, 60, 67))))
+        pitch = parse_spelling("C4", "INT")
+        for value in (True, 1.0, "1", None):
+            for operation in (
+                voicing.transpose, voicing.invert, pitch.transpose_chromatic,
+                lambda value: pitch.transpose_diatonic(value, 1),
+                lambda value: pitch.transpose_diatonic(1, value),
+            ):
+                with self.subTest(value=value, operation=operation), self.assertRaises(MusicTheoryError):
+                    operation(value)
+        for value in (False, 0.0):
+            with self.assertRaises(MusicTheoryError):
+                Voicing((0, 4, 7), bass_override=value)
 
     def test_voice_identity_and_stable_result(self):
         a = Voicing((64, 60, 67))
