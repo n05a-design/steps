@@ -46,3 +46,24 @@ assert [v.bass_note % 12 for v in voicings] == [2, 7, 0]
 Die [Pilotfreigabe](../knowledge/concepts/progressions/README.md) beschreibt den zusätzlichen Zugang zu geprüften Lehrtexten.
 
 [Testanleitung](../tests/README.md) · [Quellen und Archiv](../archive/INDEX.md)
+
+## GitHub-Nachweis für die Pilotfreigaben
+
+Die App prüft die lokal gespeicherten Freigaben gegen die Fingerabdrücke und kann
+die geprüften Pilotbeispiele offline anzeigen. Für die Freigabe eines Git-Stands
+prüft `python -B scripts/verify_pilot_review_evidence.py --revision <commit-sha>`
+zusätzlich die Originalkommentare per GitHub-API. Bei Netzfehlern oder abweichenden
+Belegen schlägt dieser Befehl fehl. Die zwei bestehenden Nachweise behalten ihr
+Format. Für neue Freigaben trägt das zugelassene Reviewkonto eine Zeile
+`STEPS-APPROVED <claim-id> <fingerprint>` in einen PR-Kommentar ein. Datum ist
+der Tag der Erstellung in UTC. Nach einer Bearbeitung ist ein neuer Kommentar
+erforderlich. Eine fachliche Prüfung der Fundstelle bleibt Teil des Reviews.
+
+Der Workflow `Pilot review evidence` vergleicht die Daten des Merge-Kandidaten
+mit diesen Nachweisen. Er führt den Prüfer aus dem Basiscommit aus und meldet
+`steps/pilot-review-evidence` auf dem PR-Commit. Nach Einführung auf `main` muss
+der Repository-Verantwortliche diesen Status als erforderlichen Check und
+menschliche Freigaben für Änderungen am Prüfer, Workflow und den Reviewkonten
+über die Repository-Regeln absichern. Bei geänderter Basis oder widerrufenem
+Beleg vor der Freigabe einen frischen Lauf verlangen. Für einen Release den
+Belegcheck für den exakten Release-Commit ausführen.
