@@ -17,8 +17,8 @@ Zur Vermeidung von Datenfragmentierung und divergierenden Versionen gilt für di
 ## 2. Bestandsübersicht (Phase 4.15)
 
 Der konsolidierte Gesamtbestand umfasst **198 Golden Reference Cases**.
-98 Fälle werden als Berechnung oder Produktprüfung ausgeführt. 100 Fälle sind
-Spezifikationsbeispiele mit Strukturprüfung. Die historischen CSV-Matrizen
+120 Fälle werden als Berechnung oder Produktprüfung ausgeführt. 78 Fälle sind
+Spezifikationsbeispiele mit Strukturprüfung und ggf. Quellenabgleich. Die historischen CSV-Matrizen
 dokumentieren frühere Klassifizierungen. Die aktuelle Klasse steht im Golden-Master.
 
 Die [Abdeckungsmatrix](../benchmark/COVERAGE.csv) dokumentiert für alle 198
@@ -37,6 +37,26 @@ führt 35 als Acoustic Bass Drum und 40 als Electric Snare separat.
 Die Tests vergleichen Instrument und Sollwert mit dieser Fundstelle.
 Die sechs Fälle dokumentieren eine Spezifikation für GM1-Geräte.
 [The MIDI Association, General MIDI System Level 1, Tabelle 3](https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view)
+
+REF-0177 bis REF-0186 prüfen die zweite Sechzehntelposition im Paar,
+ihren Versatz zum geraden Raster und die Zeitumrechnung. Die STEPS-Formel
+rundet den Anteil an einem Halbviertel auf ganze Ticks. Das Handbuch
+beschreibt den Parameterbereich in MPC Standalone OS 3.6. Die
+Sollwerte gelten für das STEPS-Rechenmodell. [Akai, Timing Correct](https://cdn.inmusicbrands.com/Software/36/MPC%20Standalone%20OS%20-%20User%20Guide%20-%20v3.6.pdf)
+
+57 Prozent sind ein Übungswert ohne belegte Zuschreibung zu einzelnen
+Musikern. Der Anteil zwei Drittel modelliert die triolische Gruppierung.
+Die beobachteten Swingverhältnisse in Jazzaufnahmen ändern sich mit dem
+Tempo. [Friberg und Sundström, Music Perception 19(3), Abstract](https://doi.org/10.1525/mp.2002.19.3.333)
+
+REF-0126 bis REF-0137 berechnen die Schrittfolgen aus notierten Skalen
+über eine Oktave. Die Modi verwenden die jeweiligen Stammtöne ab ihrem
+Grundton. Für harmonisch und aufsteigend melodisch Moll sind die
+erhöhten Stufen in A notiert. Bei der Pentatonik verwenden Dur und
+relatives Moll denselben Tonvorrat mit unterschiedlichen Grundtönen.
+Die Ganztonfolge schließt die Oktave in sechs gleich großen Schritten.
+[Open Music Theory, Collections and Scales](https://openmusictheory.github.io/scales2.html)
+· [Music Theory for the 21st-Century Classroom, § 3.1 Minor Scales](https://musictheory.pugetsound.edu/mt21c/MinorScales.html)
 
 * **REF-0001 bis REF-0094 (Historischer Kernbestand Phase 4.1 bis 4.12):**
   Historische Fallzuordnungen wiederhergestellt (Tonklassen C4/A4, 12-TET Enharmonik, Intervalle, Kadenzen, Swing-Ratios, GM-Percussion-Mappings, Tuplet-Quantisierung, Rootless Voicings).
