@@ -33,7 +33,53 @@
 
 ---
 
-## 2. Fachliche Ausarbeitung der Korrekturen (P16, P18 & P19)
+## 2. Notierte Übungen und fachliche Korrekturen
+
+Die Übungen verwenden internationale Tonbuchstaben in wissenschaftlicher
+Oktavnotation (SPN). B entspricht dem deutschen H und Bb dem deutschen B.
+Die Noten je Hand stehen von unten nach oben.
+
+### Modul P05: Shell-Voicings über ii–V–I
+
+- `Dm7` · links `D3` · rechts `C4 F4`
+- `G7` · links `G2` · rechts `B3 F4`
+- `Cmaj7` · links `C3` · rechts `B3 E4`
+
+Links liegen die Grundtöne, rechts jeweils Terz und Septime. Die tiefere
+rechte Stimme sinkt von C4 nach H3 und bleibt dort. Die höhere bleibt
+zunächst auf F4 und sinkt dann nach E4. In jeder Stimme gibt es damit
+einen Halbtonschritt und einen gehaltenen Ton.
+[Music Theory for the 21st-Century Classroom, § 31.7.1 Guide Tones](https://musictheory.pugetsound.edu/mt21c/JazzChordVoicings.html)
+
+### Modul P06: Sus4, Sus2 und Add9 im Vergleich
+
+- `Csus4` · links `C3` · rechts `F4 G4`
+- `Csus2` · links `C3` · rechts `D4 G4`
+- `Cadd9` · links `C3` · rechts `E4 G4 D5`
+- `Cmadd9` · links `C3` · rechts `Eb4 G4 D5`
+- `C9` · links `C3` · rechts `E4 G4 Bb4 D5`
+
+Bei `sus4` bzw. `sus2` steht die Quarte bzw. Sekunde anstelle der Terz.
+Bei `add9` bleibt die Dur- oder Mollterz erhalten und die große None
+kommt zum Dreiklang hinzu. `C9` enthält zusätzlich die kleine Septime B
+(international Bb).
+[Kris P. Shaffer, Lead-Sheet Chord Symbols, S. 1](https://openmusictheory.github.io/Graphics/Handouts/LSandFBsymbols.pdf)
+· [Music Theory for the 21st-Century Classroom, § 31.1 Jazz Chord Basics](https://musictheory.pugetsound.edu/mt21c/JazzChordBasics.html)
+
+### Modul P08: Drop-2 aus enger Dm7-Lage
+
+- `Eng` · links `D4` · rechts `F4 A4 C5`
+- `Drop-2` · links `A3` · rechts `D4 F4 C5`
+- `Drop-2 verteilt` · links `A3 D4` · rechts `F4 C5`
+
+A4 ist in enger Lage die zweithöchste Stimme. Sie sinkt um genau eine Oktave
+nach A3. C5 bleibt oben, und mit der Quinte A im Bass entsteht `Dm7/A`
+in zweiter Umkehrung. Die alternative Handverteilung bewahrt alle Tonhöhen.
+Die rechte Hand umfasst dann sieben statt zehn Halbtöne, die linke fünf.
+Fingersatz und Anschlagkomfort hängen von der Handspanne ab.
+[Matthew Clauhs, Arranging for School Jazz Ensembles, S. 268, Abb. 22.21](https://www.ithaca.edu/sites/default/files/2021-03/2019-book-chapter-school-jazz-arranging.pdf#page=12)
+
+---
 
 ### Modul P16: D-Dur über C7
 

@@ -590,6 +590,191 @@
       "next_step": "Die gewählte Alt-Variante von der offenen Kurzschreibweise trennen und mit festen Tonklassen auszeichnen."
     },
     {
+      "id": "KB-P05-NOTEN",
+      "scope": "catalog",
+      "content": "P05",
+      "domain": "M10",
+      "question": "Wie bewegen sich die notierten Guide Tones in Dm7–G7–Cmaj7?",
+      "expected": {
+        "voicings": [
+          [
+            "Dm7",
+            [
+              50
+            ],
+            [
+              60,
+              65
+            ]
+          ],
+          [
+            "G7",
+            [
+              43
+            ],
+            [
+              59,
+              65
+            ]
+          ],
+          [
+            "Cmaj7",
+            [
+              48
+            ],
+            [
+              59,
+              64
+            ]
+          ]
+        ],
+        "motions": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            -1
+          ]
+        ]
+      },
+      "variants": [],
+      "basis": "Music Theory for the 21st-Century Classroom, § 31.7.1. Terz und Septime werden mit den notierten MIDI-Tonhöhen und Halbtonschritten verglichen.",
+      "method": "piano_exercise",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Katalognoten, Quellenfundstelle und unabhängige Sollwerte erneut abgleichen."
+    },
+    {
+      "id": "KB-P06-NOTEN",
+      "scope": "catalog",
+      "content": "P06",
+      "domain": "M10",
+      "question": "Welche notierten Töne unterscheiden Csus4, Csus2, Cadd9, Cmadd9 und C9?",
+      "expected": {
+        "voicings": [
+          [
+            "Csus4",
+            [
+              48
+            ],
+            [
+              65,
+              67
+            ]
+          ],
+          [
+            "Csus2",
+            [
+              48
+            ],
+            [
+              62,
+              67
+            ]
+          ],
+          [
+            "Cadd9",
+            [
+              48
+            ],
+            [
+              64,
+              67,
+              74
+            ]
+          ],
+          [
+            "Cmadd9",
+            [
+              48
+            ],
+            [
+              63,
+              67,
+              74
+            ]
+          ],
+          [
+            "C9",
+            [
+              48
+            ],
+            [
+              64,
+              67,
+              70,
+              74
+            ]
+          ]
+        ]
+      },
+      "variants": [],
+      "basis": "Shaffer, Lead-Sheet Chord Symbols, S. 1 und Music Theory for the 21st-Century Classroom, § 31.1. Cmadd9 wird aus dem Moll-Dreiklang und 14 Halbtönen für die große None hergeleitet.",
+      "method": "piano_exercise",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Katalognoten, Quellenfundstelle und unabhängige Sollwerte erneut abgleichen."
+    },
+    {
+      "id": "KB-P08-NOTEN",
+      "scope": "catalog",
+      "content": "P08",
+      "domain": "M10",
+      "question": "Welche Stimme sinkt im Dm7-Beispiel, und wie ändern sich Bass und Handspanne?",
+      "expected": {
+        "voicings": [
+          [
+            "Eng",
+            [
+              62
+            ],
+            [
+              65,
+              69,
+              72
+            ]
+          ],
+          [
+            "Drop-2",
+            [
+              57
+            ],
+            [
+              62,
+              65,
+              72
+            ]
+          ],
+          [
+            "Drop-2 verteilt",
+            [
+              57,
+              62
+            ],
+            [
+              65,
+              72
+            ]
+          ]
+        ],
+        "octave_drop": 12,
+        "right_span": 10,
+        "distributed_hand_spans": [
+          5,
+          7
+        ],
+        "bass": 57
+      },
+      "variants": [],
+      "basis": "Clauhs, Arranging for School Jazz Ensembles, S. 268, Abb. 22.21. A4 → A3, C5 bleibt oben. Die verteilte Lage umfasst links fünf und rechts sieben Halbtöne.",
+      "method": "piano_exercise",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Katalognoten, Quellenfundstelle und unabhängige Sollwerte erneut abgleichen."
+    },
+    {
       "id": "KB-P12",
       "scope": "catalog",
       "content": "P12",
@@ -895,6 +1080,51 @@
       "next_step": "Die Produktionsausgabe von KB-M07-CLAVE mit der im Fall dokumentierten Herleitung abgleichen."
     },
     {
+      "id": "KB-PAT-031-RASTER",
+      "scope": "catalog",
+      "content": "PAT-031",
+      "domain": "M08",
+      "question": "Welche Glocken- und Puls-Onsets sowie Taktgrenzen ergeben sich in beiden Zählvarianten?",
+      "expected": {
+        "ppq": 480,
+        "bpm": 120,
+        "pulse_ticks": 240,
+        "bell_onsets": [
+          0,
+          480,
+          960,
+          1200,
+          1680,
+          2160,
+          2640
+        ],
+        "beat_onsets": [
+          0,
+          720,
+          1440,
+          2160
+        ],
+        "barlines": {
+          "12": [
+            0,
+            2880
+          ],
+          "6": [
+            0,
+            1440,
+            2880
+          ]
+        },
+        "cycle_seconds": 2.0
+      },
+      "variants": [],
+      "basis": "Notierte Zählvarianten im Drum-Katalog und Music Theory for the 21st-Century Classroom, § 4.4. Drei Achtel je Schlag, vier Schläge pro Zyklus.",
+      "method": "compound_meter",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Glockenmuster, PPQ, Puls, notierte Taktgrenzen und Tempo gemeinsam prüfen."
+    },
+    {
       "id": "KB-M08-METER",
       "scope": "sample",
       "content": "PAT-031",
@@ -905,11 +1135,11 @@
         "Zwölf Pulse allein legen die Gruppierung nicht fest."
       ],
       "variants": [],
-      "basis": "PAT-031 benennt 6/8 und 12/8 ohne explizite Taktgrenze.",
+      "basis": "Der Katalog notiert einen 12/8-Takt und zwei 6/8-Takte. Die Hörproben setzen die jeweiligen Taktanfänge mit der gleichen Glockenfolge um.",
       "method": "manual",
       "input": {},
       "mandatory": true,
-      "next_step": "Aus den zwölf Pulsen ein notiertes Raster mit Taktstrichen, Akzenten und Tempo erstellen; zwei 6/8 gegen einen 12/8-Takt abhören und die gewünschte Lesart festhalten."
+      "next_step": "Die vorhandenen Hörproben mit einem 12/8-Takt und zwei 6/8-Takten vergleichen. Wahrgenommene Taktanfänge und den musikalischen Verwendungszweck protokollieren."
     },
     {
       "id": "KB-M11-ALTER",
