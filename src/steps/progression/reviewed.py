@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import argparse
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, datetime, timezone
 import hashlib
 import json
 from pathlib import Path
@@ -222,6 +222,8 @@ def _approve(claim: Claim, record: dict) -> ApprovedClaim:
         raise PublicationError(f"{ident}: invalid review date.") from None
     if parsed.isoformat() != reviewed_on:
         raise PublicationError(f"{ident}: expected a review date in YYYY-MM-DD format.")
+    if parsed > datetime.now(timezone.utc).date():
+        raise PublicationError(f"{ident}: review date cannot be in the future.")
     evidence = _text(record["evidence_url"], f"{ident}.evidence_url")
     if not REVIEW_LINK.fullmatch(evidence):
         raise PublicationError(f"{ident}: expected a permalink to the human review or comment.")
@@ -229,7 +231,7 @@ def _approve(claim: Claim, record: dict) -> ApprovedClaim:
 
 
 def load_reviewed_catalog() -> tuple[ReviewedProgression, ...]:
-    """Load the pilot atomically. Any incomplete or stale approval blocks publication."""
+    """Load the pilot after checking the stored approvals and their fingerprints offline."""
     examples, claims = _candidates()
     records = _approval_records(claims)
     missing = claims.keys() - records.keys()

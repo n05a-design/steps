@@ -39,6 +39,23 @@ jobs:
             python -B -m unittest discover -s .agents/skills/steps-knowledge-curation/tests -v
           fi
 
+  curation-platforms:
+    name: Curation skill (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .agents/skills/steps-knowledge-curation
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test register recovery and source intake
+        run: python -B -m unittest discover -s .agents/skills/steps-knowledge-curation/tests -v
+
   pilot-publication:
     name: Pilot publication gate
     runs-on: ubuntu-latest

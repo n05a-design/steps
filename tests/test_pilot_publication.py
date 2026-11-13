@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from datetime import datetime, timezone
 import json
 from pathlib import Path
 import shutil
@@ -113,7 +114,7 @@ class PilotPublicationTests(unittest.TestCase):
             ident: {
                 "fingerprint": claim.fingerprint,
                 "reviewer": "fixture-reviewer",
-                "reviewed_on": "2026-11-12",
+                "reviewed_on": datetime.now(timezone.utc).date().isoformat(),
                 "evidence_url": "https://github.com/n05a-design/steps/pull/11#pullrequestreview-1",
             }
             for ident, claim in self.claims.items()
