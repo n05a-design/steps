@@ -71,6 +71,13 @@ Weiterverteilung der Quelle wurden nicht ermittelt.
 
 ## Wissensgraph
 
+Aktualisierung vom 14.11.2026: Nach vier Formatknoten und sechs weiteren
+musikalischen Definitionen fehlen 74 kanonische Endpunktdefinitionen.
+Vier Kanten haben jetzt ein ergänzendes Quellen-/Claim-Register; drei
+Stichproben sind bestätigt, CDR-010 ist beanstandet. Alle Kanten bleiben
+`REVIEW_REQUIRED`. [Aktuelle Graphnachweise](../../docs/audit/fable-5.2/GRAPH_NACHWEISE_2026-11-14.md).
+Die nachfolgende Zählung beschreibt die frühere Gegenprobe ohne diese Ergänzungen.
+
 Im Relationsregister stehen 97 Kanten (38 CR, 36 REL, 23 CDR), alle
 mit `REVIEW_REQUIRED`. Der Abgleich beider Endpunkte mit den Katalogen
 PROG, PAT, P und den Domänen M01–M12 ergibt 86 unterschiedliche
@@ -105,6 +112,10 @@ Bytes mit SHA-256 prüfen.
   Sicherungsbäumen wieder: 63.332 Bytes, SHA-256 wie im Register.
   [Reproduzierbarer Hashabgleich](../../docs/audit/fable-5.2/STEPS_FABLE_5_2_ARCHIVNACHWEISE.md#ergänzung-exakte-registerfassung-lokal-wiedergefunden-13112026).
   Externe Herkunft, Rechte und öffentliche Archivzuordnung bleiben offen.
+  Die [Fortsetzung vom 14.11.2026](../../docs/audit/fable-5.2/CSS_PROVENIENZ_2026-11-14.md)
+  belegt inzwischen die technische Herkunft über 17 gespeicherte
+  Bandcamp-Player und sechs Live-CDN-Vergleiche. Rechte am vollständigen
+  Bundle und dauerhafte Archivzuordnung sind weiterhin nicht abgenommen.
 - Bei PPR-MIDI-01 bis -04 enthält das Register 0 Bytes und den Platzhalter
   `PHYSICAL_MIDI_CORPUS_REVIEW` im Hashfeld. Der historische Commit
   enthält unter den jeweiligen Paketpfaden 18, 10, 5 und 3 MIDI-Dateien.

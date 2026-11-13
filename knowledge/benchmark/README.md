@@ -56,6 +56,11 @@ Claim-ID und Fingerabdruck in den Draft-PR. [Freigabeablauf](../concepts/progres
   ausstehender Abnahme als Stichprobe. Die Detaildatei nennt die Anzahl
   je Status und führt die offenen Schritte auf.
 - Die Detaildatei erfasst alle Einträge der aktiven Register und Kataloge.
+  Graphknoten können ergänzende Fundstellen besitzen; Quellenbelege pro
+  Kante stehen in `knowledge/relations/RELATION_EVIDENCE.csv`.
+  Eine bestandene Gegenprobe mit `COUNTEREXAMPLE` bestätigt eine
+  Beanstandung der ursprünglichen Graphaussage: Ihr Matrixstatus bleibt
+  FAIL. Andere bestandene Graphproben zählen nur als Stichprobe.
   Die automatisierte Prüfung umfasst Eindeutigkeit, Pflichtfelder,
   bibliografische Verweise bzw. lokale Pfade, referenzierte IDs, Graph-Endpunkte,
   Akkordaliase und die Konsistenz jeder Progressionsposition. Nicht auflösbare

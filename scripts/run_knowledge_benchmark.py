@@ -19,6 +19,7 @@ sys.path.insert(0, str(ROOT))
 from src.steps.progression import analyze_progression_voice_leading, get_progression, resolve_roman_degree
 from src.steps.progression import reviewed
 from src.steps.theory import MusicTheoryError, Voicing, midi_to_frequency, parse_chord, parse_spelling
+from src.steps.theory import make_drop2_voicing
 
 DIR = ROOT / "knowledge/benchmark"
 PROGRESSIONS = ROOT / "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md"
@@ -26,6 +27,7 @@ DRUMS = ROOT / "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
 LATIN = DRUMS.with_name("GENRE_RESEARCH_LATIN.md")
 PIANO = ROOT / "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md"
 CLAIMS = ROOT / "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv"
+RELATIONS = ROOT / "knowledge/relations/MUSIC_CONCEPT_RELATIONS.csv"
 STATUSES = ("PASS", "FAIL", "PENDING")
 SCOPES = ("pilot", "publication", "catalog", "sample", "coach", "api", "backlog")
 PUBLICATION_TESTS = {
@@ -453,6 +455,30 @@ def evaluate(case, examples, claims, coach, manual):
                 )
                 motions.append(target_note.midi_number - source_note.midi_number)
             actual[mode] = motions
+        require(actual == expected, actual)
+    elif method == "graph_sample":
+        with RELATIONS.open(encoding="utf-8-sig", newline="") as source:
+            row = next(row for row in csv.DictReader(source) if row["relation_id"] == case["content"])
+        require([row[key] for key in ("source_id", "target_id", "relation_type")] == data["edge"],
+                "Graphkante weicht von der geprüften Zuordnung ab.")
+        if data["check"] == "mode_rotation":
+            steps = data["ascending_melodic_minor"]
+            start = data["degree"] - 1
+            actual = steps[start:] + steps[:start]
+        elif data["check"] == "drop2":
+            actual = make_drop2_voicing(data["close"])
+        elif data["check"] == "polychord_counterexample":
+            aggregate = sorted(parse_chord("C", "INT").pitch_class_set | parse_chord("D", "INT").pitch_class_set)
+            slash = sorted(parse_chord("D/C", "INT").pitch_class_set | {0})
+            # The parser has no maj13(#11) alias. Build the stated theoretical
+            # pitch collection explicitly from maj7 and the written extensions.
+            target = sorted(parse_chord("Cmaj7", "INT").pitch_class_set
+                            | {int(parse_spelling(note, "INT").pitch_class) for note in ("D5", "F#5", "A5")})
+            actual = {"two_triads": aggregate, "slash_bass": slash, "target": target,
+                      "missing_from_two_triads": sorted(set(target) - set(aggregate))}
+            require(aggregate != target and slash != target, "Das Gegenbeispiel darf keine Tonmengenidentität bestätigen.")
+        else:
+            raise ValueError(f"Unknown graph sample: {data['check']}.")
         require(actual == expected, actual)
     elif method == "claim_sample":
         with CLAIMS.open(encoding="utf-8-sig", newline="") as source:

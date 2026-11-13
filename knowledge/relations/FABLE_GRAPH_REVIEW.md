@@ -67,3 +67,12 @@ Nach Auflösung der zwei historischen Aliasse und der vier Formatknoten
 bleiben 80 eindeutige Endpunkt-IDs offen. Die Abdeckungsprüfung führt
 die Quellen der aufgelösten Endpunkte auf. Die Relationseinträge
 bleiben zur fachlichen Prüfung ihrer Richtung und Bedeutung offen.
+
+## Fortsetzung vom 14.11.2026
+
+Sechs zusätzliche Knoten zu melodischen Mollmodi und Drop-2 haben
+konkrete Fundstellen. Damit bleiben 74 eindeutige Endpunkt-IDs offen.
+Die vier neuen Kantenproben sind begrenzte Nachweise. CDR-010 bleibt
+wegen der unbestimmten Polychord-Zuordnung beanstandet: Ein bestandener
+Test der Gegenprobe zählt nicht als Bestätigung der ursprünglichen Kante.
+[Einzelnachweise und offene Knoten](../../docs/audit/fable-5.2/GRAPH_NACHWEISE_2026-11-14.md).

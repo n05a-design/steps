@@ -60,6 +60,30 @@ def table(path, pattern, columns):
     return {ident: (line, fields) for ident, line, fields in rows}
 
 
+def relation_evidence(rows, relation_ids, claim_ids):
+    evidence = {}
+    for row in rows:
+        ident = row["relation_id"]
+        source = urlsplit(row["source_url"])
+        if (ident in evidence or ident not in relation_ids
+                or source.scheme != "https" or not source.hostname
+                or row["assessment"] not in {"SOURCE_SUPPORTED_SAMPLE", "COUNTEREXAMPLE"}
+                or not all(row[key].strip() for key in ("locator", "scope", "limitation"))
+                or (row["claim_id"] and row["claim_id"] not in claim_ids)):
+            raise ValueError(f"Ungültiger Quellenbeleg für Graphkante {ident}.")
+        evidence[ident] = row
+    return evidence
+
+
+def graph_evidence(checks, evidence):
+    status, detail, followup = catalog_evidence(checks)
+    # A passing audit countercheck does not turn the contradicted graph claim green.
+    if evidence and evidence["assessment"] == "COUNTEREXAMPLE" and status == "PASS":
+        status = "FAIL"
+        detail += " Gegenprobe bestätigt eine beanstandete Graphzuordnung."
+    return status, detail, followup
+
+
 def comparable(chord):
     return int(chord.root.pitch_class), chord.theoretical_intervals, int((chord.bass or chord.root).pitch_class)
 
@@ -236,10 +260,15 @@ def audit():
     endpoints = progs.keys() | drums.keys() | pianos.keys() | domains
     # These aliases are documented in knowledge/relations/FABLE_GRAPH_REVIEW.md.
     aliases = {"PROG_024": "PROG-024", "PROG_025": "PROG-025"}
-    format_nodes = format_node_evidence(read_csv(KNOWLEDGE / "relations/FORMAT_NODE_EVIDENCE.csv"))
+    format_nodes = format_node_evidence(
+        read_csv(KNOWLEDGE / "relations/FORMAT_NODE_EVIDENCE.csv")
+        + read_csv(KNOWLEDGE / "relations/MUSIC_NODE_EVIDENCE.csv"))
     if (endpoints | aliases.keys()) & format_nodes.keys():
         raise ValueError("Formatknoten überschneidet sich mit einer kanonischen ID oder einem Alias.")
-    for row in read_csv(KNOWLEDGE / "relations/MUSIC_CONCEPT_RELATIONS.csv"):
+    relations = read_csv(KNOWLEDGE / "relations/MUSIC_CONCEPT_RELATIONS.csv")
+    edge_evidence = relation_evidence(read_csv(KNOWLEDGE / "relations/RELATION_EVIDENCE.csv"),
+                                      {row["relation_id"] for row in relations}, {row["claim_id"] for row in claim_rows})
+    for row in relations:
         terms = (row["source_id"], row["target_id"])
         unresolved = [term for term in terms if aliases.get(term, term) not in endpoints and term not in format_nodes]
         notes = f"Registerstatus {row['validation_status']}. Keine direkte Quellen-/Claim-ID in der Relationszeile."
@@ -252,7 +281,14 @@ def audit():
             notes += " Quellenbelegte Endpunkte: " + " · ".join(node_sources) + "."
         if unresolved:
             notes += " Endpunktdefinition im kanonischen Knotenbestand offen: " + ", ".join(unresolved)
-        add("Graphrelationen", row["relation_id"], "BEFUND", note=notes)
+        evidence = edge_evidence.get(row["relation_id"])
+        if evidence:
+            notes += (f" Ergänzender Kantenbeleg: {evidence['source_url']} ({evidence['locator']})."
+                      f" {evidence['assessment']}: {evidence['scope']}. Grenze: {evidence['limitation']}.")
+        checks = [r for r in results if r["method"] == "graph_sample" and r["content"] == row["relation_id"]]
+        status, detail, next_step = graph_evidence(checks, evidence)
+        add("Graphrelationen", row["relation_id"], "BEFUND", status, note=notes + " " + detail,
+            next_step=(next_step or (evidence["limitation"] if evidence else None)))
 
     template_checks = {"maj7", "m7"}
     for quality, template in CHORD_TEMPLATES.items():
