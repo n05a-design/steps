@@ -96,6 +96,16 @@ class TestReferenceImplementation:
 # ==============================================================================
 
 class TestGoldenReferenceCases(unittest.TestCase):
+    # General MIDI System Level 1, table 3, printed page 6 (PDF page 8).
+    GM_PERCUSSION = {
+        "General MIDI Kick Drum": 36,  # Bass Drum 1
+        "Side Stick": 37,
+        "General MIDI Snare Drum": 38,  # Acoustic Snare
+        "General MIDI Closed Hi-Hat": 42,
+        "Pedal Hi-Hat": 44,
+        "General MIDI Open Hi-Hat": 46,
+    }
+
     @classmethod
     def setUpClass(cls):
         base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -323,6 +333,10 @@ class TestGoldenReferenceCases(unittest.TestCase):
         exp = c.get('expected_output')
         self.assertIsNotNone(exp, f"Specification {case_id} missing expected_output")
         self.assertIn(c.get('domain'), ['M01', 'M02', 'M03', 'M04', 'M05', 'M06', 'M07', 'M08', 'M09', 'M10', 'M11', 'M12'])
+        if c["category"] == "DRUM_MAPPING":
+            instrument = c["input_params"]["instrument"]
+            self.assertIn(instrument, self.GM_PERCUSSION, f"{case_id}: no percussion source value")
+            self.assertEqual(exp, self.GM_PERCUSSION[instrument], f"{case_id}: General MIDI table 3")
         return {
             'case_id': case_id,
             'status': 'SPECIFICATION_DOCUMENTED',
@@ -389,6 +403,16 @@ class TestGoldenReferenceCases(unittest.TestCase):
             verified += 1
 
         self.assertEqual(verified, len(spec_cases))
+
+    def test_general_midi_note_map_rejects_wrong_note_number(self):
+        case_id = "REF-0045"
+        original = self.case_map[case_id]
+        try:
+            self.case_map[case_id] = {**original, "expected_output": 42}
+            with self.assertRaisesRegex(AssertionError, "General MIDI table 3"):
+                self.verify_specification_case(case_id)
+        finally:
+            self.case_map[case_id] = original
 
     def test_unimplemented_executable_case_strictly_raises_error(self):
         """Negative test proving that unhandled executable cases fail closed (no silent fallback)."""
