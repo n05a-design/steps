@@ -50,3 +50,20 @@ Für die Unterscheidung von Puls und Taktgruppierung dient
 [Open Music Theory, Compound Meter and Time Signatures](https://viva.pressbooks.pub/openmusictheory/chapter/compound-meters-and-time-signatures/).
 Für die Stimmungs- und Rhythmusmodelle gelten die dokumentierten
 Referenzfrequenzen, Taktarten und Beispielgrenzen.
+
+## Quellenbelegte Formatknoten
+
+Das [Knotenregister](FORMAT_NODE_EVIDENCE.csv) definiert die vier
+Endpunkte von CDR-020 und CDR-022. Bei CDR-020 stammen Kanal 10 und
+die Zuordnung der 47 Klänge zur MIDI-Notennummer jeweils aus Tabelle 3,
+Druckseite 6. [The MIDI Association, General MIDI System Level 1](https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view)
+
+Bei CDR-022 bewahren `step`, das optionale `alter` und `octave` die
+geschriebene Tonhöhe. Die Kombinationen C, +1, 4 und D, −1, 4
+sind getrennt darstellbar. Im gleichstufigen Zwölftonsystem
+entsprechen beide der MIDI-Notennummer 61. [W3C, MusicXML 4.0, pitch](https://www.w3.org/2021/06/musicxml40/musicxml-reference/elements/pitch/)
+
+Nach Auflösung der zwei historischen Aliasse und der vier Formatknoten
+bleiben 80 eindeutige Endpunkt-IDs offen. Die Abdeckungsprüfung führt
+die Quellen der aufgelösten Endpunkte auf. Die Relationseinträge
+bleiben zur fachlichen Prüfung ihrer Richtung und Bedeutung offen.
