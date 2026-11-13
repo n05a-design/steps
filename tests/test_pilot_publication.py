@@ -209,6 +209,28 @@ class PilotPublicationTests(unittest.TestCase):
         self.save_approvals()
         self.assert_blocked("expected a permalink")
 
+    def test_valid_fingerprint_cannot_publish_inconsistent_music(self):
+        for field, replacement, reason in (
+            ("chords", "Dm7 - G7 - Fmaj7", "Roman numerals disagree"),
+            ("voice_path", "C#4", "invalid music data"),
+            ("voice_path", "E4", "outside its chord"),
+        ):
+            with self.subTest(field=field, replacement=replacement):
+                doc = json.loads((ROOT / CANDIDATES).read_text(encoding="utf-8"))
+                example = doc["examples"][1]
+                if field == "voice_path":
+                    example["claims"][1]["voice_path"][0]["note"] = replacement
+                else:
+                    example[field] = replacement
+                self.save(CANDIDATES, doc)
+                command = ("-m", "src.steps.progression.reviewed", "--review-manifest")
+                manifest = self.assert_entry_succeeds(command)
+                for line in manifest.splitlines()[1:]:
+                    ident, _, _, fingerprint = line.split("\t")
+                    self.records[ident]["fingerprint"] = fingerprint
+                self.save_approvals()
+                self.assert_blocked(reason)
+
     def test_changed_source_locator_invalidates_the_approval(self):
         doc = self.load(CANDIDATES)
         doc["examples"][0]["claims"][0]["references"][0]["locator"] += " in a different edition"
