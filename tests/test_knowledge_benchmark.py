@@ -50,12 +50,31 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
             self.assertEqual(result["status"], status)
 
     def test_corrected_catalog_and_learning_cases(self):
-        contents = {"PROG-008", "PROG-016", "PROG-020", "PROG-027", "P12", "P16", "P19", "PAT-026"}
+        contents = {"PROG-008", "PROG-016", "PROG-020", "PROG-027", "P12", "P16", "P19", "PAT-026", "PAT-027", "PAT-028", "PAT-029"}
         cases = [case for case in self.cases if case["scope"] == "catalog" and case["content"] in contents]
         self.assertEqual({case["content"] for case in cases}, contents)
         for result in benchmark.run(cases, self.examples, self.claims, {}):
             with self.subTest(case=result["id"]):
                 self.assertEqual(result["status"], "PASS", result["observed"])
+
+    def test_latin_timing_detects_changed_catalog_raster(self):
+        document = benchmark.LATIN.read_text(encoding="utf-8")
+        original_read = type(benchmark.LATIN).read_text
+        for pattern, original, altered in (
+            ("PAT-027", "| 2 | 4, 10 |", "| 2 | 4, 9 |"),
+            ("PAT-028", "| 1 | 12, 14 |", "| 1 | 12, 16 |"),
+            ("PAT-029", "105 Halbe | 480", "105 Viertel | 480"),
+        ):
+            case = next(case for case in self.cases if case["id"] == f"KB-{pattern}-RASTER")
+            self.assertEqual(document.count(original), 1)
+            mutated = document.replace(original, altered)
+
+            def read(path, *args, **kwargs):
+                return mutated if path == benchmark.LATIN else original_read(path, *args, **kwargs)
+
+            with self.subTest(pattern=pattern), patch.object(type(benchmark.LATIN), "read_text", read):
+                result, = benchmark.run([case], self.examples, self.claims, {})
+                self.assertEqual(result["status"], "FAIL")
 
     def test_p16_detects_wrong_notated_extension(self):
         case = next(case for case in self.cases if case["id"] == "KB-P16")
