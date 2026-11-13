@@ -83,6 +83,17 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
             self.assertEqual(result["status"], expected)
             self.assertEqual(bool(result["next_step"]), expected != "PASS")
 
+    def test_assessment_templates_keep_unrated_cases_pending(self):
+        for method in ("manual", "coach"):
+            case = next(case for case in self.cases if case["method"] == method)
+            template = benchmark.assessment_template([case], method, "a" * 40)
+            entry = template[case["id"]]
+            self.assertEqual(entry["fingerprint"], benchmark.case_fingerprint(case))
+            self.assertEqual(entry["criteria"], dict.fromkeys(case["expected"], None))
+            args = ({}, template) if method == "manual" else (template, {})
+            result, = benchmark.run([case], self.examples, self.claims, *args)
+            self.assertEqual(result["status"], "PENDING")
+
     def test_coverage_counts_partition_and_coach_rubric_reaches_all_domains(self):
         self.assertEqual(
             {case["domain"] for case in self.cases if case["scope"] == "coach"},
