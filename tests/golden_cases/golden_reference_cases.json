@@ -2023,9 +2023,9 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Ionisch: G-G-H-G-G-G-H Schrittmuster",
-    "source_citation": "SRC-001",
+    "source_citation": "Open Music Theory, Collections and Scales, Diatonic Modes, https://openmusictheory.github.io/scales2.html (historischer Verweis: SRC-001)",
     "original_phase414_id": "REF-0026",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0127",
@@ -2046,9 +2046,9 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Äolisch: G-H-G-G-H-G-G Schrittmuster",
-    "source_citation": "SRC-001",
+    "source_citation": "Open Music Theory, Collections and Scales, Diatonic Modes, https://openmusictheory.github.io/scales2.html (historischer Verweis: SRC-001)",
     "original_phase414_id": "REF-0027",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0128",
@@ -2069,9 +2069,9 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Hiatus (3 Halbtöne) zwischen Stufe 6 und 7",
-    "source_citation": "SRC-001",
+    "source_citation": "Music Theory for the 21st-Century Classroom, § 3.1 Minor Scales, https://musictheory.pugetsound.edu/mt21c/MinorScales.html (historischer Verweis: SRC-001)",
     "original_phase414_id": "REF-0028",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0129",
@@ -2092,9 +2092,9 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Erhöhte 6. und 7. Stufe",
-    "source_citation": "SRC-001",
+    "source_citation": "Music Theory for the 21st-Century Classroom, § 3.1 Minor Scales, https://musictheory.pugetsound.edu/mt21c/MinorScales.html (historischer Verweis: SRC-001)",
     "original_phase414_id": "REF-0029",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0130",
@@ -2115,9 +2115,9 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Dorian = Moll mit großer Sexte (Stufe 6 = 9 Halbtöne)",
-    "source_citation": "SRC-002 (Levine 1995)",
+    "source_citation": "Open Music Theory, Collections and Scales, Diatonic Modes, https://openmusictheory.github.io/scales2.html (historischer Verweis: SRC-002 (Levine 1995))",
     "original_phase414_id": "REF-0030",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0131",
@@ -2138,9 +2138,9 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Phrygisch = Moll mit kleiner Sekunde (Stufe 2 = 1 Halbton)",
-    "source_citation": "SRC-002",
+    "source_citation": "Open Music Theory, Collections and Scales, Diatonic Modes, https://openmusictheory.github.io/scales2.html (historischer Verweis: SRC-002)",
     "original_phase414_id": "REF-0031",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0132",
@@ -2161,9 +2161,9 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Lydisch = Dur mit übermäßiger Quarte (Stufe 4 = 6 Halbtöne)",
-    "source_citation": "SRC-002",
+    "source_citation": "Open Music Theory, Collections and Scales, Diatonic Modes, https://openmusictheory.github.io/scales2.html (historischer Verweis: SRC-002)",
     "original_phase414_id": "REF-0032",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0133",
@@ -2184,9 +2184,9 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Mixolydisch = Dur mit kleiner Septime (Stufe 7 = 10 Halbtöne)",
-    "source_citation": "SRC-002",
+    "source_citation": "Open Music Theory, Collections and Scales, Diatonic Modes, https://openmusictheory.github.io/scales2.html (historischer Verweis: SRC-002)",
     "original_phase414_id": "REF-0033",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0134",
@@ -2207,9 +2207,9 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "Lokrisch = verminderte Quinte (Stufe 5 = 6 Halbtöne)",
-    "source_citation": "SRC-002",
+    "source_citation": "Open Music Theory, Collections and Scales, Diatonic Modes, https://openmusictheory.github.io/scales2.html (historischer Verweis: SRC-002)",
     "original_phase414_id": "REF-0034",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0135",
@@ -2228,9 +2228,9 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "5-Ton-Skala ohne Halbtöne: 1, 2, 3, 5, 6",
-    "source_citation": "SRC-001",
+    "source_citation": "Open Music Theory, Collections and Scales, Pentatonic Collection, https://openmusictheory.github.io/scales2.html (historischer Verweis: SRC-001)",
     "original_phase414_id": "REF-0035",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0136",
@@ -2249,9 +2249,9 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "5-Ton-Skala: 1, b3, 4, 5, b7",
-    "source_citation": "SRC-001",
+    "source_citation": "Open Music Theory, Collections and Scales, Pentatonic Collection, https://openmusictheory.github.io/scales2.html (historischer Verweis: SRC-001)",
     "original_phase414_id": "REF-0036",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0137",
@@ -2271,9 +2271,9 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "6 gleichmäßige Ganztonschritte = 12 Halbtöne",
-    "source_citation": "SRC-005",
+    "source_citation": "Open Music Theory, Collections and Scales, Whole Tone Collection, https://openmusictheory.github.io/scales2.html (historischer Verweis: SRC-005)",
     "original_phase414_id": "REF-0037",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0138",

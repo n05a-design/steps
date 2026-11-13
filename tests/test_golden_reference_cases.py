@@ -105,6 +105,20 @@ class TestGoldenReferenceCases(unittest.TestCase):
         "Pedal Hi-Hat": 44,
         "General MIDI Open Hi-Hat": 46,
     }
+    SCALE_NOTES = {
+        "Major": "C4 D4 E4 F4 G4 A4 B4 C5",
+        "Natural Minor": "A3 B3 C4 D4 E4 F4 G4 A4",
+        "Harmonic Minor": "A3 B3 C4 D4 E4 F4 G#4 A4",
+        "Melodic Minor Ascending": "A3 B3 C4 D4 E4 F#4 G#4 A4",
+        "Dorian": "D4 E4 F4 G4 A4 B4 C5 D5",
+        "Phrygian": "E4 F4 G4 A4 B4 C5 D5 E5",
+        "Lydian": "F4 G4 A4 B4 C5 D5 E5 F5",
+        "Mixolydian": "G4 A4 B4 C5 D5 E5 F5 G5",
+        "Locrian": "B3 C4 D4 E4 F4 G4 A4 B4",
+        "Major Pentatonic": "C4 D4 E4 G4 A4 C5",
+        "Minor Pentatonic": "A3 C4 D4 E4 G4 A4",
+        "Whole Tone": "C4 D4 E4 F#4 G#4 Bb4 C5",
+    }
 
     @classmethod
     def setUpClass(cls):
@@ -143,6 +157,11 @@ class TestGoldenReferenceCases(unittest.TestCase):
                 self.assertEqual(a != b and a.midi_number == b.midi_number, exp)
             elif cid in ['REF-0123', 'REF-0124', 'REF-0125']:
                 self.assertEqual(midi_to_pitch_class((p['root'] + 7 * p['fifths']) % 12), exp)
+            elif 'REF-0126' <= cid <= 'REF-0137':
+                name = p['scale'] if 'scale' in p else p['mode']
+                notes = [parse_spelling(note, 'INT').midi_number for note in self.SCALE_NOTES[name].split()]
+                steps = [high - low for low, high in zip(notes, notes[1:])]
+                self.assertEqual(steps, exp)
 
             # 2. Intervals
             elif cid in ['REF-0010', 'REF-0011']:
@@ -367,7 +386,7 @@ class TestGoldenReferenceCases(unittest.TestCase):
     def test_executable_cases_compute_their_expected_results(self):
         """Run every case classified as executable."""
         exec_cases = [c['case_id'] for c in self.cases if c['test_class'] in ['UNIT_TEST', 'PROPERTY_TEST', 'INTEGRATION_TEST']]
-        self.assertEqual(len(exec_cases), 108)
+        self.assertEqual(len(exec_cases), 120)
 
         passed = 0
         for cid in exec_cases:
@@ -403,7 +422,7 @@ class TestGoldenReferenceCases(unittest.TestCase):
     def test_specification_examples_have_required_fields(self):
         """Check structure of the cases classified as specification examples."""
         spec_cases = [c['case_id'] for c in self.cases if c['test_class'] == 'SPECIFICATION_EXAMPLE']
-        self.assertEqual(len(spec_cases), 90)
+        self.assertEqual(len(spec_cases), 78)
 
         verified = 0
         for cid in spec_cases:
@@ -432,6 +451,16 @@ class TestGoldenReferenceCases(unittest.TestCase):
                     self.case_map[case_id] = {**original, "input_params": {**original["input_params"], field: value}}
                     with self.assertRaises(AssertionError):
                         self.evaluate_executable_case(case_id)
+        finally:
+            self.case_map[case_id] = original
+
+    def test_scale_evaluation_detects_different_mode_with_same_step_sum(self):
+        case_id = "REF-0130"
+        original = self.case_map[case_id]
+        try:
+            self.case_map[case_id] = {**original, "input_params": {"mode": "Mixolydian"}}
+            with self.assertRaises(AssertionError):
+                self.evaluate_executable_case(case_id)
         finally:
             self.case_map[case_id] = original
 
