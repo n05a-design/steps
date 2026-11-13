@@ -43,10 +43,18 @@
 | `PAT-030` | Phrygian Neo-Soul Halftime Shuffle | 84 BPM | 4/4 57% Swing (Tick 137 @ 480 PPQ) | Harter Downbeat-Kick auf 1, synkopierter Sub-Kick auf 3+ | Fetter Snare-Drag auf 2+, tiefer Backbeat auf 3 | Fließende Ghost-Notes & Closed/Pedal Hat Wechsel |
 | `PAT-031` | Afro-Cuban 6/8 Bembé Fusion | 120 BPM | 6/8 Polyrhythm (3:2) | Geerdeter Fundamentpuls auf 1 und 4 (gepunktete Viertel) | Bell-Pattern (12/8 Clave): X.X.XX.X.X.X auf Ride/Campana | Low/High Conga Tumbao mit offenem Slap auf Puls 5 |
 
-## PAT-031 · offene Taktgrenze
+## PAT-031 · Zählvarianten für die offene Taktgrenze
 
-Die Vorlage nennt 6/8 für den Grundpuls und 12/8 für das Glockenmuster.
-Die zwölf Positionen haben keine eingezeichnete Taktgrenze. Die Lesarten
-als ein 12/8-Takt oder zwei 6/8-Takte bleiben offen. Für eine spielbare
-Fassung sind Taktstriche und Akzente festzulegen. Die Hörprüfung ist als
-`KB-M08-METER` im [Benchmark](../../benchmark/cases.json) dokumentiert.
+Das Glockenmotiv `X.X.XX.X.X.X` umfasst zwölf Achtel. Bei 480 PPQ dauert
+ein Achtel 240 Ticks und die gesamte Folge 2880 Ticks. Die Glockenschläge
+liegen bei 0, 480, 960, 1200, 1680, 2160 und 2640 Ticks. Die vier
+punktierten Viertel beginnen bei 0, 720, 1440 und 2160 Ticks.
+
+- **Ein 12/8-Takt** mit den Grenzen 0 und 2880. Vier Dreiergruppen
+  gehören zum selben Takt.
+- **Zwei 6/8-Takte** mit den Grenzen 0, 1440 und 2880. Jeder Takt
+  enthält zwei Dreiergruppen. Der zweite beginnt auf dem siebten Achtel.
+
+Für die Hörprüfung beide Lesarten mit derselben Glockenfolge und jeweils
+hörbar gesetzten Taktanfängen vergleichen. Die Entscheidung steht im
+[Benchmark](../../benchmark/cases.json) als `KB-M08-METER` aus.

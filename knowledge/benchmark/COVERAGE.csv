@@ -1,7 +1,7 @@
 Bereich,Gesamt,Formal_geprüft,Formale_Befunde,Inventar_only,Fachlich_untersucht,Fachlich_bestätigt,Fachlich_beanstandet,Fachlich_offen,Fachlich_vollständig,Fachlich_Stichprobe,Fachlich_nicht_geprüft
 Produktquellen,7,7,0,0,0,0,0,7,0,0,7
-Historisches Quellenregister,37,37,1,0,0,0,0,37,0,0,37
-Forschungsclaims,66,66,21,0,3,3,0,63,0,3,63
+Historisches Quellenregister,37,37,2,0,0,0,0,37,0,0,37
+Forschungsclaims,66,66,21,0,4,4,0,62,0,4,62
 Graphrelationen,97,97,97,0,0,0,0,97,0,0,97
 Akkordvorlagen,29,29,0,0,2,2,0,27,0,2,27
 Progressionskatalog,28,28,0,0,0,0,0,28,0,0,28
@@ -15,7 +15,7 @@ Golden-Referenzfälle,198,198,0,0,0,0,0,198,0,0,198
 Lehrtext-/Themenstichproben,11,11,0,0,8,8,0,3,0,8,3
 Harmony-Coach-Fragen,12,12,0,0,0,0,0,12,0,0,12
 Historisches Dateiregister,1895,1895,20,0,0,0,0,1895,0,0,1895
-Forschungsbestand,1812,0,0,1812,0,0,0,1812,0,0,1812
+Forschungsbestand,1813,0,0,1813,0,0,0,1813,0,0,1813
 Archivbestand,285,0,0,285,0,0,0,285,0,0,285
 Quellenarchiv,8,0,0,8,0,0,0,8,0,0,8
 Legacy-Wissensbestand,3,0,0,3,0,0,0,3,0,0,3
