@@ -206,9 +206,16 @@ def audit():
 
     domains = {f"M{i:02}" for i in range(1, 13)}
     endpoints = progs.keys() | drums.keys() | pianos.keys() | domains
+    # These aliases are documented in knowledge/relations/FABLE_GRAPH_REVIEW.md.
+    aliases = {"PROG_024": "PROG-024", "PROG_025": "PROG-025"}
     for row in read_csv(KNOWLEDGE / "relations/MUSIC_CONCEPT_RELATIONS.csv"):
-        unresolved = [row[field] for field in ("source_id", "target_id") if row[field] not in endpoints]
+        terms = (row["source_id"], row["target_id"])
+        unresolved = [term for term in terms if aliases.get(term, term) not in endpoints]
         notes = f"Registerstatus {row['validation_status']}. Keine direkte Quellen-/Claim-ID in der Relationszeile."
+        resolved_aliases = [f"{term} → {aliases[term]}" for term in terms
+                            if term in aliases and aliases[term] in endpoints]
+        if resolved_aliases:
+            notes += " Historische Aliasauflösung: " + ", ".join(resolved_aliases)
         if unresolved:
             notes += " Endpunktdefinition im kanonischen Knotenbestand offen: " + ", ".join(unresolved)
         add("Graphrelationen", row["relation_id"], "BEFUND", note=notes)
