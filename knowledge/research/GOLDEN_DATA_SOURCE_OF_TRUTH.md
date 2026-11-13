@@ -17,7 +17,7 @@ Zur Vermeidung von Datenfragmentierung und divergierenden Versionen gilt für di
 ## 2. Bestandsübersicht (Phase 4.15)
 
 Der konsolidierte Gesamtbestand umfasst **198 Golden Reference Cases**.
-74 Fälle werden als Berechnung oder Produktprüfung ausgeführt. 124 Fälle sind
+98 Fälle werden als Berechnung oder Produktprüfung ausgeführt. 100 Fälle sind
 Spezifikationsbeispiele mit Strukturprüfung. Die historischen CSV-Matrizen
 dokumentieren frühere Klassifizierungen. Die aktuelle Klasse steht im Golden-Master.
 
