@@ -1,5 +1,10 @@
-# research/production
+# Musikproduktion
 
-Erweitertes Archiv zur Musikproduktion außerhalb des engen MVP.
+Hier werden Produktionsfragen außerhalb des Harmonie-Kerns erschlossen.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Drums und Groove](drums/README.md) | Rhythmik und Produktionsbeispiele. |
+| [Ableton](../ableton/README.md) | DAW-spezifische Recherche. |
+
+[Zur Bereichsübersicht](../README.md)

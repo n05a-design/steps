@@ -1,5 +1,13 @@
-# skills
+# Fachskills und Skill-Entwürfe
 
-Projekt- und Fachskills als Workflows, nicht als primäre Faktenquelle.
+Die Dateien beschreiben Arbeitsweisen für Agenten und die Quellenverwendung.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Harmony Coach](music-harmony-coach/README.md) | Datierter Fachskill mit Referenzen und Ausgabeschema. |
+| [Skill-Konzept](SKILL_DESIGN.md) | Projektentwurf zur Wissensnutzung. |
+| [Wissenskuratierung](../.agents/skills/steps-knowledge-curation/README.md) | Aktiver Workflow für Quellen und Aufgabenregister. |
+
+Coach-Antworten werden anhand der [Rubrik](../knowledge/benchmark/README.md#harmony-coach) fachlich geprüft.
+
+[Zur Bereichsübersicht](../README.md)

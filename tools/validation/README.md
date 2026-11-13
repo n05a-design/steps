@@ -1,5 +1,10 @@
-# tools/validation
+# Strukturprüfung
 
-Deterministische Prüfungen für Repo-Struktur, Referenzen, Schemata und Daten.
+Aus dem Repository-Root prüft `python -B tools/validation/check_structure.py` definierte Projektpfade und grundlegende JSON-Schema-Eigenschaften.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Strukturprüfung](check_structure.py) | Pfad-, JSON- und Schemaschnellprüfung. |
+| [Tests](../../tests/README.md) | Laufzeit-, Referenz- und Publikationsprüfungen. |
+
+[Zur Bereichsübersicht](../README.md)

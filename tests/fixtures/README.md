@@ -1,5 +1,11 @@
-# tests/fixtures
+# Synthetische Testdaten
 
-Geprüfte, künstliche Testfälle ohne geschützte Musikaufnahmen.
+Hier liegen künstliche Eingaben für reproduzierbare Tests.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Synthetische Scannerwerte](synthetic_secrets.json) | Fixture für positive und negative Scannerprüfungen. |
+| [Scanner-Tests](../test_secret_scanner.py) | Erwartetes Erkennungsverhalten. |
+| [Golden-Daten](../golden_cases/README.md) | Eigener Spiegel für musikalische Referenzfälle. |
+
+[Zur Bereichsübersicht](../README.md)

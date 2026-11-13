@@ -1,5 +1,11 @@
-# docs/project/provenance
+# Quellenabdeckung und Dateiintegrität
 
-Quellenabdeckung und Integritätsinformationen der Projektkonsolidierung.
+Hier liegen datierte Herkunfts- und Hashnachweise für die Projektkonsolidierung.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Quellenabdeckung](Steps_Quellenabdeckung_2026-11-09.csv) | Referenzierte Unterlagen und Abdeckung. |
+| [SHA-256](HISTORIC_SHA256SUMS.txt) | Prüfsummen früherer Dateien. |
+| [Quellenaudit](../SOURCE_AND_REPO_AUDIT.md) | Abgleich von Originalen und Repository-Stand. |
+
+[Zur Bereichsübersicht](../README.md)

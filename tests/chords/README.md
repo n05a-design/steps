@@ -1,5 +1,10 @@
-# tests/chords
+# Akkordtests
 
-Akkordsymbole, Quality/Extensions, Inversionen.
+Die ausführbaren Akkordtests liegen auf der obersten Ebene von `tests/`.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Theorie-Suite](../test_theory_core.py) | Akkordkonstruktion, Symbolparser und Erweiterungen. |
+| [Voicing-Vertrag](../test_voicing_contract.py) | Lagen, Bass und Randbedingungen. |
+
+[Zur Bereichsübersicht](../README.md)

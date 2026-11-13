@@ -12,3 +12,13 @@ bei belegtem Bedarf einzeln in einen separaten Arbeitsbereich extrahieren und
 den Hash vor einer Wiedereinführung prüfen. Bei Wiederherstellung unter einem
 früheren Pfad vorhandene neuere Dateien berücksichtigen. Das gilt insbesondere
 für die Root-README, deren alte Fassung separat gesichert wurde.
+
+Die [Manifeste](manifests/README.md) bündeln Pfadzuordnungen,
+Prüfsummen und Wiederherstellung. Die [Originalunterlagen](../source_archive/README.md)
+erschließen den ursprünglichen Quellenbestand.
+
+## Archivbereiche
+
+- [Agentenberichte](agent-history/README.md) und [frühere Audits](audit-history/README.md)
+- [Dokumentfassungen](documentation-history/README.md) und [Projektplanung](project-history/README.md)
+- [Dokumentation der ersten Fassung](v1_docs/README.md) und [historische Arbeitsaufträge](v1_prompts/README.md)

@@ -1,5 +1,9 @@
-# design/brand
+# Markenidentität
 
-Logos, Typografie, Farb-/CI-Regeln nur mit geklärter Eigentümerschaft.
+Vorgesehene Ablage für Wortmarke, Logo und Typografie von STEPS. Hier liegt derzeit die Ablagebeschreibung. Vor der Freigabe Eigentümerschaft, Lizenz und Verwendung im Produkt erfassen.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Produktstrategie](../../docs/product/PRODUCT_STRATEGY_AND_MVP.md) | Maßgeblicher Projektkontext. |
+
+[Zur Bereichsübersicht](../README.md)

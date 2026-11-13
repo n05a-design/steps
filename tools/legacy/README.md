@@ -1,5 +1,9 @@
-# tools/legacy
+# Historische Hilfswerkzeuge
 
-Aufbewahrung historischer Skripte ohne implizite produktive Ausführung.
+Die Skripte dokumentieren frühere Bibliotheksstände.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Bibliotheksgeneratoren](generators/README.md) | Historische V6.7-Generatoren und Hinweise zur Ausführung. |
+
+[Zur Bereichsübersicht](../README.md)

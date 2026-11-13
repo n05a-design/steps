@@ -1,17 +1,10 @@
-# research/notes
+# Arbeitsnotizen und Rechercheentwürfe
 
-Arbeitshypothesen, Deep-Research-Berichte und Prompt-/Projektarchiv.
+Hier liegen historische Synthesen und Rechercheaufträge. Ihre Aussagen sind auf den jeweiligen Quellenstand bezogen.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Deep Research](deep-research/) | Frühere Fachrecherche und Projektgrundlagen. |
+| [Quellenaufnahme](../../knowledge/INGESTION_PIPELINE.md) | Weg zu einem nachvollziehbaren Wissenseintrag. |
 
-## Musiktheorieprüfung der Pilotbeispiele
-
-Das vom Projektinhaber zur Veröffentlichung freigegebene RTF dokumentiert eine
-Recherche zu den acht Pilot-Claims zu Tonnamen, MIDI, Harmonik und Stimmführung.
-Die Datei enthält Quellenverweise und Grafiken. Für die Übernahme einer Aussage
-in die App gelten die Fundstelle im Originalbeleg und die Freigabe der konkreten
-Claim-Fassung im [Pilotregister](../../src/steps/progression/reviewed_progression_approvals.json).
-
-- Dateigröße im Original 33.819.224 Bytes
-- SHA-256 `586cfdf889fcaa78b0a9bfcc88be057e8bdfc70c6214f9d4fcbbab9be21bd823`
-- [Lösung und Analyse Musiktheorie-Fragen (RTF)](deep-research/L%C3%B6sung%20und%20Analyse%20Musiktheorie-Fragen.rtf)
+[Zur Bereichsübersicht](../README.md)

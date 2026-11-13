@@ -1,5 +1,10 @@
-# research/bibliography
+# Bibliografie
 
-Bibliografie und bibliografische Metadaten; keine Volltextsammlung.
+Vorgesehene Ablage für bibliografische Recherche ohne Volltextkopien. Das gepflegte Register liegt in der Wissensbasis.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Quellenregister](../../knowledge/sources/README.md) | Autor, Werk, Fundstelle und Prüfstatus. |
+| [Quellenvorlage](../../templates/SOURCE_TEMPLATE.md) | Benötigte Metadaten für neue Quellen. |
+
+[Zur Bereichsübersicht](../README.md)
