@@ -41,7 +41,7 @@ class ChromaticInterval(IntEnum):
     MAJOR_THIRTEENTH = 21
 
 
-IntervalQuality = Literal['P', 'M', 'm', 'd', 'A']
+IntervalQuality = Literal['P', 'M', 'm', 'd', 'A', 'dd', 'AA']
 
 
 @dataclass(frozen=True)
@@ -60,11 +60,16 @@ class DiatonicInterval:
     direction: Literal[1, -1] = 1
 
     def __post_init__(self):
-        if self.number < 1:
+        if type(self.number) is not int or self.number < 1:
             raise InvalidIntervalError("Interval number must be >= 1.")
-        if self.direction not in (1, -1):
+        if type(self.direction) is not int or self.direction not in (1, -1):
             raise InvalidIntervalError("Interval direction must be +1 (ascending) or -1 (descending).")
             
+        if self.quality not in ("P", "M", "m", "d", "A", "dd", "AA"):
+            raise InvalidIntervalError(f"Unknown interval quality: {self.quality!r}.")
+        if self.number == 1 and self.quality in ("d", "dd"):
+            raise InvalidIntervalError("A diminished unison has no nonnegative interval size.")
+
         # Perfect intervals: 1, 4, 5 and their compound octaves (8, 11, 12, 15, etc.)
         simple_num = (self.number - 1) % 7 + 1
         if simple_num in (1, 4, 5):
@@ -77,6 +82,9 @@ class DiatonicInterval:
                 raise InvalidIntervalError(
                     f"Interval {self.number} is imperfect-type and cannot be Perfect ('P')."
                 )
+
+        if self.semitones < 0:
+            raise InvalidIntervalError("Interval size cannot be negative.")
 
     @property
     def is_compound(self) -> bool:
@@ -105,6 +113,10 @@ class DiatonicInterval:
                 delta = 1
             elif self.quality == 'd':
                 delta = -1
+            elif self.quality == 'dd':
+                delta = -2
+            elif self.quality == 'AA':
+                delta = 2
             else:
                 raise InvalidIntervalError(f"Invalid quality {self.quality} for perfect interval.")
         else:
@@ -116,6 +128,10 @@ class DiatonicInterval:
                 delta = 1
             elif self.quality == 'd':
                 delta = -2
+            elif self.quality == 'dd':
+                delta = -3
+            elif self.quality == 'AA':
+                delta = 2
             else:
                 raise InvalidIntervalError(f"Invalid quality {self.quality} for major/minor interval.")
                 
@@ -131,7 +147,7 @@ class DiatonicInterval:
         Inverts a simple diatonic interval (within octave).
         Rule: 9 - number, opposite quality (M <-> m, A <-> d, P <-> P).
         """
-        if self.number > 8:
+        if self.number > 8 or self.semitones > 12:
             raise InvalidIntervalError("Direct diatonic inversion is defined for simple intervals <= 8.")
         inv_num = 9 - self.number
         quality_map: dict[IntervalQuality, IntervalQuality] = {
@@ -139,7 +155,9 @@ class DiatonicInterval:
             'M': 'm',
             'm': 'M',
             'A': 'd',
-            'd': 'A'
+            'd': 'A',
+            'AA': 'dd',
+            'dd': 'AA'
         }
         return DiatonicInterval(number=inv_num, quality=quality_map[self.quality], direction=self.direction)
 
@@ -158,6 +176,8 @@ def transpose_spelling(
         C4 + DiatonicInterval(5, 'd') -> Gb4
         C4 + DiatonicInterval(5, 'P', direction=-1) -> F3
     """
+    if type(direction) is not int or direction not in (-1, 1):
+        raise InvalidIntervalError("Transposition direction must be +1 or -1.")
     effective_dir = interval.direction * direction
     step_delta = effective_dir * (interval.number - 1)
     semi_delta = effective_dir * interval.semitones
@@ -190,7 +210,8 @@ def interval_between_spellings(spelling_a: NoteSpelling, spelling_b: NoteSpellin
     idx_b = DIATONIC_STEPS.index(spelling_b.step)
     
     midi_diff = spelling_b.midi_number - spelling_a.midi_number
-    direction: Literal[1, -1] = 1 if midi_diff >= 0 else -1
+    written_steps = (idx_b - idx_a) + 7 * (spelling_b.octave - spelling_a.octave)
+    direction: Literal[1, -1] = 1 if (midi_diff or written_steps) >= 0 else -1
     
     if direction == 1:
         step_diff = (idx_b - idx_a) + (spelling_b.octave - spelling_a.octave) * 7
@@ -216,6 +237,10 @@ def interval_between_spellings(spelling_a: NoteSpelling, spelling_b: NoteSpellin
             quality = 'A'
         elif delta == -1:
             quality = 'd'
+        elif delta == -2:
+            quality = 'dd'
+        elif delta == 2:
+            quality = 'AA'
         else:
             raise InvalidIntervalError(f"Unsupported alteration delta {delta} for perfect interval.")
     else:
@@ -227,6 +252,10 @@ def interval_between_spellings(spelling_a: NoteSpelling, spelling_b: NoteSpellin
             quality = 'A'
         elif delta == -2:
             quality = 'd'
+        elif delta == -3:
+            quality = 'dd'
+        elif delta == 2:
+            quality = 'AA'
         else:
             raise InvalidIntervalError(f"Unsupported alteration delta {delta} for major/minor interval.")
             

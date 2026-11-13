@@ -67,7 +67,7 @@ GERMAN_SUFFIX_SEMITONES: Dict[str, int] = {
 UNICODE_ACCIDENTALS: Dict[int, str] = {
     -2: '𝄫',
     -1: '♭',
-    0: '♮',
+    0: '',
     1: '♯',
     2: '𝄪'
 }
@@ -87,7 +87,7 @@ class PitchClass(int):
     0 = C, 1 = C#/Db, 2 = D, ..., 11 = B/H.
     """
     def __new__(cls, val: int):
-        if not isinstance(val, (int, PitchClass)):
+        if isinstance(val, bool) or not isinstance(val, int):
             raise InvalidPitchClassError(f"PitchClass value must be integer, got {type(val).__name__}")
         return super().__new__(cls, int(val) % 12)
 
@@ -116,14 +116,17 @@ class NoteSpelling:
     octave: int = 4
 
     def __post_init__(self):
-        if self.step not in DIATONIC_BASE_PC:
+        if not isinstance(self.step, str) or self.step not in DIATONIC_BASE_PC:
             raise InvalidDiatonicStepError(
                 f"Invalid diatonic step: '{self.step}'. Must be one of {DIATONIC_STEPS}."
             )
-        if self.alteration not in (-2, -1, 0, 1, 2):
+        if type(self.alteration) is not int or not -2 <= self.alteration <= 2:
             raise InvalidAlterationError(
-                f"Alteration must be between -2 and +2, got {self.alteration}."
+                f"Alteration must be an integer between -2 and +2, got {self.alteration}."
             )
+
+        if type(self.octave) is not int:
+            raise PitchRangeError("Octave must be an integer.")
 
     @property
     def pitch_class(self) -> PitchClass:
@@ -251,8 +254,9 @@ class NoteSpelling:
         """
         if convention == 'DE':
             return self._render_german()
-        else:
+        if convention == 'INT':
             return self._render_international(unicode_accidental)
+        raise MusicTheoryError(f"Unknown notation convention: {convention!r}.")
 
     def _render_international(self, unicode_acc: bool = False) -> str:
         acc = UNICODE_ACCIDENTALS[self.alteration] if unicode_acc else ASCII_ACCIDENTALS[self.alteration]
@@ -294,132 +298,73 @@ class NoteSpelling:
 
 def midi_to_pitch_class(midi_note: int) -> PitchClass:
     """Computes pitch class p = m mod 12."""
-    if not (0 <= midi_note <= 127):
+    if isinstance(midi_note, bool) or not isinstance(midi_note, int) or not 0 <= midi_note <= 127:
         raise PitchRangeError(f"MIDI note {midi_note} out of standard range [0..127].")
     return PitchClass(midi_note % 12)
 
 
-def midi_to_frequency(midi_note: int, a4_ref: float = A4_STANDARD_FREQ) -> float:
-    """Computes exact ISO 16 frequency: f = a4_ref * 2^((m - 69) / 12)."""
-    if not 0 <= midi_note <= 127:
+def midi_to_frequency(midi_note: int | float, a4_ref: float = A4_STANDARD_FREQ) -> float:
+    """Convert a MIDI position, including a fractional position, to frequency."""
+    if isinstance(midi_note, bool) or not isinstance(midi_note, (int, float)) or not 0 <= midi_note <= 127:
         raise PitchRangeError("MIDI note must be in 0..127.")
-    if not math.isfinite(a4_ref) or a4_ref <= 0:
+    if not _positive_frequency(a4_ref):
         raise MusicTheoryError("Reference frequency must be finite and positive.")
     return a4_ref * (2.0 ** ((midi_note - A4_MIDI_NOTE) / 12.0))
 
 
+def _positive_frequency(value: float) -> bool:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return False
+    try:
+        return math.isfinite(value) and value > 0
+    except OverflowError:
+        return False
+
+
 def frequency_to_midi(freq: float, a4_ref: float = A4_STANDARD_FREQ) -> float:
     """Computes fractional MIDI note from frequency: m = 69 + 12 * log2(f / a4_ref)."""
-    if not all(math.isfinite(value) and value > 0 for value in (freq, a4_ref)):
+    if not all(_positive_frequency(value) for value in (freq, a4_ref)):
         raise MusicTheoryError("Frequencies must be finite and positive.")
     return 69.0 + 12.0 * (math.log2(freq) - math.log2(a4_ref))
 
 
-def parse_spelling(note_str: str, convention: Literal['INT', 'DE', 'AUTO'] = 'AUTO') -> NoteSpelling:
-    """
-    Parses a scientific pitch notation string under International or German convention.
-    
-    Examples:
-      - International: 'C4', 'C#4', 'Db3', 'F##5', 'Bb2', 'Fx4', 'B4'
-      - German: 'H4' (B4 int), 'B4' (Bb4 int), 'Cis4', 'Des4', 'Es4', 'As4', 'Fis4', 'Fisis4', 'Heses4'
-    """
-    cleaned = note_str.strip()
-    if not cleaned:
-        raise MusicTheoryError("Empty note string cannot be parsed.")
-    
-    # 1. Check for German parsing
-    if convention == 'DE' or (convention == 'AUTO' and _is_german_string(cleaned)):
-        return _parse_german_spelling(cleaned)
-    
-    # 2. International parsing
-    m = re.match(r"^([A-Ga-g])(bb|b|##|#|x|n)?(-?\d+)?$", cleaned)
-    if not m:
-        # Fallback try German if convention was AUTO
-        if convention == 'AUTO':
-            try:
-                return _parse_german_spelling(cleaned)
-            except Exception:
-                pass
-        raise MusicTheoryError(f"Cannot parse international note string: '{note_str}'")
-        
-    step = m.group(1).upper()
-    acc_str = m.group(2) or ''
-    oct_str = m.group(3)
-    octave = int(oct_str) if oct_str is not None else 4
-    alteration = ALTERATION_SEMITONES.get(acc_str.lower(), 0)
-    return NoteSpelling(step=step, alteration=alteration, octave=octave)  # type: ignore
+_UNICODE_TO_ASCII = str.maketrans({"♯": "#", "♭": "b", "𝄪": "x", "𝄫": "bb", "♮": "n"})
+_INT_NAME = re.compile(r"[A-Ga-g](?:bb|b|##|#|x|n)?")
+_DE_NAMES = {
+    NoteSpelling(step, alteration, 4).render("DE")[:-1].lower(): (step, alteration)
+    for step in DIATONIC_STEPS
+    for alteration in range(-2, 3)
+}
 
 
-def _is_german_string(s: str) -> bool:
-    """Heuristic to detect German note nomenclature."""
-    # Matches H or names ending with is, isis, es, ses, etc.
-    if s.startswith(('H', 'h')):
-        return True
-    m = re.match(r"^([A-Ga-g])(isis|is|eses|ses|es|s)?(-?\d+)?$", s, re.IGNORECASE)
-    if m:
-        suffix = (m.group(2) or '').lower()
-        if suffix in ('isis', 'is', 'eses', 'ses'):
-            return True
-        if suffix == 's' and m.group(1).upper() in ('A', 'E'):
-            return True
-        if suffix == 'es' and m.group(1).upper() not in ('A', 'E'):
-            return True
-    return False
-
-
-def _parse_german_spelling(s: str) -> NoteSpelling:
-    """Parses German note string (e.g. 'H4', 'B4', 'Cis4', 'Des4', 'Es4', 'As4', 'Fisis4')."""
-    m = re.match(r"^([A-Ha-h])([a-zA-Z]*?)(-?\d+)?$", s)
-    if not m:
-        raise MusicTheoryError(f"Cannot parse German note string: '{s}'")
-        
-    root_char = m.group(1).upper()
-    suffix = (m.group(2) or '').lower()
-    oct_str = m.group(3)
-    octave = int(oct_str) if oct_str is not None else 4
-    
-    # Handle German H / B
-    if root_char == 'H':
-        step = 'B'
-        if suffix in ('', 'n'):
-            alt = 0
-        elif suffix == 'is':
-            alt = 1
-        elif suffix == 'isis':
-            alt = 2
-        elif suffix in ('eses', 'ses'):
-            alt = -2
-        elif suffix == 'es':
-            alt = -1
-        else:
-            raise InvalidAlterationError(f"Unrecognized German suffix for H: '{suffix}'")
-        return NoteSpelling(step=step, alteration=alt, octave=octave)
-        
-    if root_char == 'B' and suffix in ('', 'n'):
-        # In German, bare 'B' is B flat (Bb)
-        return NoteSpelling(step='B', alteration=-1, octave=octave)
-        
-    # Standard steps: C, D, E, F, G, A, B
-    if root_char not in DIATONIC_BASE_PC:
-        raise InvalidDiatonicStepError(f"Invalid German note root: '{root_char}'")
-        
-    # Check suffixes
-    if suffix in ('', 'n'):
-        alt = 0
-    elif suffix == 'is':
-        alt = 1
-    elif suffix == 'isis':
-        alt = 2
-    elif suffix in ('eses', 'ses'):
-        if suffix == 'ses' and root_char not in ('E', 'A'):
-            raise InvalidAlterationError(f"Contraction '{suffix}' only valid for E or A, not '{root_char}'")
-        alt = -2
-    elif suffix in ('es', 's'):
-        if suffix == 's' and root_char not in ('E', 'A'):
-            raise InvalidAlterationError(f"Contraction '{suffix}' only valid for E or A, not '{root_char}'")
-        alt = -1
+def _parse_note_name(name: str, convention: str, octave: int) -> NoteSpelling:
+    if convention == "DE":
+        german = _DE_NAMES.get(name.lower())
+        if german is not None:
+            return NoteSpelling(*german, octave)
+    elif convention == "INT":
+        if _INT_NAME.fullmatch(name):
+            return NoteSpelling(name[0].upper(), ALTERATION_SEMITONES[name[1:]], octave)
     else:
-        raise InvalidAlterationError(f"Unrecognized German alteration suffix: '{suffix}'")
-        
-    return NoteSpelling(step=root_char, alteration=alt, octave=octave)  # type: ignore
+        raise MusicTheoryError(f"Unknown notation convention: {convention!r}.")
+    raise MusicTheoryError(f"Invalid {convention} note name: {name!r}.")
 
+
+def parse_spelling(note_str: str, convention: Literal['INT', 'DE', 'AUTO'] = 'AUTO') -> NoteSpelling:
+    """Parse a written pitch. AUTO requires explicit DE or INT for a bare B."""
+    if not isinstance(note_str, str):
+        raise MusicTheoryError("Note spelling must be text.")
+    cleaned = note_str.strip().translate(_UNICODE_TO_ASCII)
+    match = re.fullmatch(r"([^0-9-]+)(-?[0-9]+)?", cleaned)
+    if not match:
+        raise MusicTheoryError(f"Cannot parse note spelling: {note_str!r}.")
+    name, raw_octave = match.groups()
+    try:
+        octave = int(raw_octave) if raw_octave is not None else 4
+    except ValueError as exc:
+        raise MusicTheoryError("Invalid octave.") from exc
+    if convention == "AUTO":
+        if name.lower() == "b":
+            raise MusicTheoryError("Ambiguous B: select DE (B-flat) or INT (B-natural).")
+        convention = "DE" if name.lower() in _DE_NAMES else "INT"
+    return _parse_note_name(name, convention, octave)

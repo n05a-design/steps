@@ -119,3 +119,51 @@ Eine `confidence: 0.95` in historischen JSON-Beispielen ist keine empirisch kali
 - Ein fachliches Reviewprotokoll, das Theoriemodell, Datenquelle, Regel-ID und Gegenbeispiel zurückverfolgt.
 
 **Abnahme:** keine Fachregel ohne Test und kenntlich gemachten Kontext; keine öffentliche Quelle ohne Rechteprüfung; keine Audio-/Dateifunktion ohne Round-trip und Failure-Beleg.
+
+## Eingabevertrag für den Harmoniekern
+
+`DE` liest B als B♭ und H als B natural. `INT` liest B als B natural.
+`AUTO` verlangt bei einem mehrdeutigen B eine ausdrückliche Konvention.
+Eindeutige Namensmerkmale gelten für das gesamte Akkordsymbol einschließlich
+Slash-Bass. Der Bestandskatalog speichert internationale Akkordsymbole.
+
+Notenschreibweisen können außerhalb des MIDI-Bereichs liegen. Der Zugriff auf
+`midi_number` verlangt 0 bis 127. Die Frequenzfunktion verarbeitet in diesem
+Bereich auch gebrochene MIDI-Positionen für die akustische Umrechnung.
+
+Die Stufenauflösung prüft die Terz gegen die Groß- oder Kleinschreibung.
+Eine Generalbassfigur verlangt die entsprechende Terz, Quinte oder Septime.
+`vii` bezeichnet wörtlich einen Mollakkord. Die verminderte Variante lautet
+`vii°`. Für bestehende Mollanalysen gelten explizite Vorzeichen wie `bVI` im
+Modus `major_reference` relativ zu Dur. Im Modus `natural_minor` bezieht sich
+ein explizites Vorzeichen auf natürlich Moll. Dort ergibt `#vi°` in c-Moll
+`Adim`. Ein Vorzeichen im alternativen Modus ändert keine Bestandsanalyse.
+
+Progressionstransposition verschiebt alle Grundtöne und Slash-Bässe um dieselbe
+diatonische Distanz. Falls die bevorzugte Zielschreibweise mehr als zwei
+Vorzeichen an einem Ton bräuchte, versucht die API eine einheitliche
+enharmonische Schreibweise. Ist auch diese unmöglich, meldet sie einen
+Domänenfehler.
+
+## Voicing und Analyse
+
+`Voicing.notes` bewahrt die Reihenfolge der zugeordneten Stimmen. Für
+Wiedergabe und Registerdarstellung liefert `midi_notes` dieselben Töne
+aufsteigend sortiert. Die Analyse verwendet die Stimmenreihenfolge und
+liefert für jede Anzahl von Voicings dieselben Schlüssel. Einklang und
+Stimmkreuzung sind unterschiedliche Fälle. Das strikte Stilprofil meldet
+auch gegenläufig erreichte reine Quinten und Oktaven zwischen Außenstimmen.
+Jazz/Pop lässt diese Bewegungen zu.
+
+Drop-2 braucht eine Vierstimmenauswahl. Bei C13 bleiben Grundton, Terz,
+Septime und Tredezime erhalten. Ein expliziter Slash-Bass gehört in die
+Auswahl. Rootless lässt den Grundton in der Oberstimme weg und respektiert
+einen separat angegebenen Slash-Bass. Für einen Sextakkord enthält die
+Shell die Sexte. Die Layouts melden unmögliche MIDI-Lagen als Fehler.
+
+Theoretische Erweiterungen behalten ihre Intervallgröße. Add9 verwendet
+14 Halbtöne für die None und 7♯11 verwendet 18 für die Undezime. Die
+Standardbelegung kann diese Töne in engerer Lage spielen. `add2` bleibt
+ein Alias mit gleicher Tonklassenmenge. Bei Diatonik unterscheidet der
+Kern bis zu doppelt verminderte und doppelt übermäßige Intervalle mit
+nichtnegativer Größe. Die direkte Umkehrung gilt innerhalb einer Oktave.

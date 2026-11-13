@@ -22,7 +22,7 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`PitchClass`](../../src/steps/theory/pitch.py) | `(val: 'int')` |
 | [`NoteSpelling`](../../src/steps/theory/pitch.py) | `(step: "Literal['C', 'D', 'E', 'F', 'G', 'A', 'B']", alteration: 'int' = 0, octave: 'int' = 4) -> None` |
 | [`midi_to_pitch_class`](../../src/steps/theory/pitch.py) | `(midi_note: 'int') -> 'PitchClass'` |
-| [`midi_to_frequency`](../../src/steps/theory/pitch.py) | `(midi_note: 'int', a4_ref: 'float' = 440.0) -> 'float'` |
+| [`midi_to_frequency`](../../src/steps/theory/pitch.py) | `(midi_note: 'int \| float', a4_ref: 'float' = 440.0) -> 'float'` |
 | [`frequency_to_midi`](../../src/steps/theory/pitch.py) | `(freq: 'float', a4_ref: 'float' = 440.0) -> 'float'` |
 | [`parse_spelling`](../../src/steps/theory/pitch.py) | `(note_str: 'str', convention: "Literal['INT', 'DE', 'AUTO']" = 'AUTO') -> 'NoteSpelling'` |
 | [`ChromaticInterval`](../../src/steps/theory/interval.py) | `PERFECT_UNISON`, `MINOR_SECOND`, `MAJOR_SECOND`, `MINOR_THIRD`, `MAJOR_THIRD`, `PERFECT_FOURTH`, `TRITONE`, `PERFECT_FIFTH`, `MINOR_SIXTH`, `MAJOR_SIXTH`, `MINOR_SEVENTH`, `MAJOR_SEVENTH`, `PERFECT_OCTAVE`, `MINOR_NINTH`, `MAJOR_NINTH`, `AUGMENTED_NINTH`, `PERFECT_ELEVENTH`, `AUGMENTED_ELEVENTH`, `MINOR_THIRTEENTH`, `MAJOR_THIRTEENTH` |
@@ -62,7 +62,7 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`CANONICAL_PROGRESSIONS`](../../src/steps/progression/__init__.py) | Datenwert |
 | [`get_progression`](../../src/steps/progression/engine.py) | `(prog_id: 'str') -> 'CanonicalProgression'` |
 | [`list_progressions`](../../src/steps/progression/engine.py) | `() -> 'list[CanonicalProgression]'` |
-| [`resolve_roman_degree`](../../src/steps/progression/engine.py) | `(degree_str: 'str', key_root: 'str \| NoteSpelling' = 'C', is_minor_key: 'bool' = False, *, convention: "Literal['INT', 'DE', 'AUTO']" = 'AUTO') -> 'ChordDefinition'` |
+| [`resolve_roman_degree`](../../src/steps/progression/engine.py) | `(degree_str: 'str', key_root: 'str \| NoteSpelling' = 'C', is_minor_key: 'bool' = False, *, convention: "Literal['INT', 'DE', 'AUTO']" = 'AUTO', minor_accidentals: "Literal['major_reference', 'natural_minor']" = 'major_reference') -> 'ChordDefinition'` |
 | [`generate_progression_voicings`](../../src/steps/progression/engine.py) | `(chords: 'list[ChordDefinition] \| CanonicalProgression', style: 'VoiceLeadingStyle' = <VoiceLeadingStyle.JAZZ_POP: 'JAZZ_POP'>, initial_voicing_type: "Literal['CLOSE', 'DROP2', 'SHELL', 'ROOTLESS']" = 'CLOSE', bass_octave: 'int' = 3) -> 'list[Voicing]'` |
 | [`analyze_progression_voice_leading`](../../src/steps/progression/engine.py) | `(voicings: 'list[Voicing]', style: 'VoiceLeadingStyle' = <VoiceLeadingStyle.JAZZ_POP: 'JAZZ_POP'>) -> 'Dict[str, Any]'` |
 
@@ -149,7 +149,7 @@ die Standardintervalle unter Berücksichtigung des expliziten Basses.
 | `aug` | `aug`, `+` | `(0, 4, 8)` | `(0, 4, 8)` |
 | `sus4` | `sus4`, `sus` | `(0, 5, 7)` | `(0, 5, 7)` |
 | `sus2` | `sus2` | `(0, 2, 7)` | `(0, 2, 7)` |
-| `add9` | `add9`, `add2` | `(0, 2, 4, 7)` | `(0, 2, 4, 7)` |
+| `add9` | `add9`, `add2` | `(0, 4, 7, 14)` | `(0, 2, 4, 7)` |
 | `6` | `6`, `maj6` | `(0, 4, 7, 9)` | `(0, 4, 7, 9)` |
 | `m6` | `m6`, `min6`, `-6` | `(0, 3, 7, 9)` | `(0, 3, 7, 9)` |
 | `7` | `7`, `dom7` | `(0, 4, 7, 10)` | `(0, 4, 7, 10)` |
@@ -166,7 +166,7 @@ die Standardintervalle unter Berücksichtigung des expliziten Basses.
 | `m9` | `m9`, `min9`, `-9` | `(0, 3, 7, 10, 14)` | `(0, 3, 10, 14)` |
 | `7b9` | `7b9`, `7(b9)`, `dom7b9` | `(0, 4, 7, 10, 13)` | `(0, 4, 10, 13)` |
 | `7#9` | `7#9`, `7(#9)`, `dom7#9`, `hendrix` | `(0, 4, 7, 10, 15)` | `(0, 4, 10, 15)` |
-| `7#11` | `7#11`, `7(#11)`, `lydian_dom` | `(0, 4, 6, 7, 10)` | `(0, 4, 6, 10)` |
+| `7#11` | `7#11`, `7(#11)`, `lydian_dom` | `(0, 4, 7, 10, 18)` | `(0, 4, 6, 10)` |
 | `7b5` | `7b5`, `7(b5)` | `(0, 4, 6, 10)` | `(0, 4, 6, 10)` |
 | `7b13` | `7b13`, `7(b13)` | `(0, 4, 7, 10, 20)` | `(0, 4, 10, 20)` |
 | `13` | `13`, `dom13` | `(0, 4, 7, 10, 14, 21)` | `(0, 4, 10, 14, 21)` |
