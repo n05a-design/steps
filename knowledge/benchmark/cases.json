@@ -812,7 +812,7 @@
       "content": "CLAIM-011",
       "domain": "M11",
       "question": "Darf MusicXML 4.0 für alter 0,5 verwenden?",
-      "expected": true,
+      "expected": ["0.5", "-0.5"],
       "variants": [],
       "basis": "https://www.w3.org/2021/06/musicxml40/musicxml-reference/data-types/semitones/ nennt 0.5 und spezifiziert decimal ohne die behauptete Begrenzung.",
       "method": "claim_sample",
@@ -821,7 +821,7 @@
         "check": "alter"
       },
       "mandatory": true,
-      "next_step": "MusicXML-4.0-Typdefinition verlinken, die falsche Begrenzung korrigieren und die Dezimalwerte 0,5 und −0,5 als Prüfeingaben dokumentieren."
+      "next_step": "Beide Dezimalwerte in den XML-Beispielen mit der Typdefinition abgleichen."
     },
     {
       "id": "KB-M12-PLAYABILITY",

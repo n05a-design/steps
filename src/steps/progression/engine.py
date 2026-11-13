@@ -245,8 +245,8 @@ _HISTORICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
         'roman': 'I^maj7 - V^7/V - ii^7 - V^7 - I^maj7',
         'default_key': 'C',
         'chords': 'Cmaj7 - D7 - Dm7 - G7 - Cmaj7',
-        'context': 'Bossa Nova (Girl from Ipanema)',
-        'sources': 'Mauleón (1993), Jobim (1962)'
+        'context': 'Bossa Nova practice schema',
+        'sources': 'Historical reference: Mauleón (1993)'
     },
     {
         'id': 'PROG-025',
