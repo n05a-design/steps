@@ -5,6 +5,7 @@ from __future__ import annotations
 import subprocess
 import unittest
 from copy import deepcopy
+from unittest.mock import patch
 
 from scripts import audit_knowledge_coverage as coverage
 from scripts import run_knowledge_benchmark as benchmark
@@ -49,12 +50,22 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
             self.assertEqual(result["status"], status)
 
     def test_corrected_catalog_and_learning_cases(self):
-        contents = {"PROG-008", "PROG-016", "PROG-020", "PROG-027", "P12", "P19", "PAT-026"}
+        contents = {"PROG-008", "PROG-016", "PROG-020", "PROG-027", "P12", "P16", "P19", "PAT-026"}
         cases = [case for case in self.cases if case["scope"] == "catalog" and case["content"] in contents]
         self.assertEqual({case["content"] for case in cases}, contents)
         for result in benchmark.run(cases, self.examples, self.claims, {}):
             with self.subTest(case=result["id"]):
                 self.assertEqual(result["status"], "PASS", result["observed"])
+
+    def test_p16_detects_wrong_notated_extension(self):
+        case = next(case for case in self.cases if case["id"] == "KB-P16")
+        document = benchmark.PIANO.read_text(encoding="utf-8")
+        self.assertIn("D4 F#4 A4", document)
+        mutated = document.replace("D4 F#4 A4", "D4 F4 A4")
+        with patch.object(type(benchmark.PIANO), "read_text", return_value=mutated):
+            result, = benchmark.run([case], self.examples, self.claims, {})
+        self.assertEqual(result["status"], "FAIL")
+        self.assertEqual(result["observed"]["upper_intervals"], [14, 17, 21])
 
     def test_minor_cadence_requires_whole_tone_and_chord_membership(self):
         case = next(c for c in self.cases if c["id"] == "KB-CLAIM-032-MINOR")
