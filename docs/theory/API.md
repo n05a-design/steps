@@ -70,8 +70,8 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 
 | Export | Signatur |
 |---|---|
-| [`get_reviewed_progression`](../../src/steps/progression/engine.py) | `(prog_id: 'str') -> 'ReviewedProgression'` |
-| [`list_reviewed_progressions`](../../src/steps/progression/engine.py) | `() -> 'tuple[ReviewedProgression, ...]'` |
+| [`get_reviewed_progression`](../../app/knowledge.py) | `(prog_id: str) -> src.steps.progression.engine.ReviewedProgression` |
+| [`list_reviewed_progressions`](../../app/knowledge.py) | `() -> tuple[src.steps.progression.engine.ReviewedProgression, ...]` |
 
 ## Domänenobjekte
 

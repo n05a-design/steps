@@ -21,7 +21,7 @@ from src.steps.progression import reviewed
 
 REPOSITORY = "n05a-design/steps"
 # Numeric GitHub identity survives username changes and cannot be supplied by the catalog.
-REVIEWERS = frozenset({333259995})
+REVIEWERS = frozenset({333259995, 331406730})
 URL = re.compile(r"https://github\.com/n05a-design/steps/pull/([1-9]\d*)#issuecomment-([1-9]\d*)")
 APPROVAL_LINE = re.compile(r"STEPS-APPROVED ([A-Z0-9-]+) ([a-f0-9]{64})")
 LEGACY_TABLE = 6833747279
