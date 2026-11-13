@@ -60,18 +60,6 @@ class TestReferenceImplementation:
         return [(root_pc + s) % 12 for s in formulas[quality]]
 
     @staticmethod
-    def construct_seventh_pitch_classes(root_pc: int, quality: str) -> list[int]:
-        formulas = {
-            '7': [0, 4, 7, 10],
-            'maj7': [0, 4, 7, 11],
-            'min7': [0, 3, 7, 10],
-            'half_diminished': [0, 3, 6, 10],
-            'dim7': [0, 3, 6, 9],
-            '7(#11)': [0, 4, 6, 10]
-        }
-        return [(root_pc + s) % 12 for s in formulas[quality]]
-
-    @staticmethod
     def calculate_swing_quant_tick(ppq: int, ratio: float) -> int:
         span = ppq // 2
         return round(span * ratio)
@@ -141,8 +129,10 @@ class TestGoldenReferenceCases(unittest.TestCase):
                 actual = (p['pc'] + p['interval']) % 12
                 self.assertEqual(actual, exp)
             elif cid in ['REF-0115', 'REF-0116']:
-                actual = (p['pc1'] == p['pc2'])
-                self.assertEqual(actual, exp)
+                a, b = (parse_spelling(note, 'INT') for note in p['notes'])
+                self.assertEqual(a != b and a.midi_number == b.midi_number, exp)
+            elif cid in ['REF-0123', 'REF-0124', 'REF-0125']:
+                self.assertEqual(midi_to_pitch_class((p['root'] + 7 * p['fifths']) % 12), exp)
 
             # 2. Intervals
             elif cid in ['REF-0010', 'REF-0011']:
@@ -169,14 +159,14 @@ class TestGoldenReferenceCases(unittest.TestCase):
                 self.assertEqual(f"Bass {written[0]}, Töne [{', '.join(written)}]", exp)
             elif cid in ['REF-0039', 'REF-0040']:
                 self.assertEqual(sorted(parse_chord(p['chord'], 'INT').pitch_class_set), exp)
-            elif cid in ['REF-0138', 'REF-0139', 'REF-0140', 'REF-0141']:
-                q_map = {'REF-0138': 'Major', 'REF-0139': 'Minor', 'REF-0140': 'Diminished', 'REF-0141': 'Augmented'}
-                actual = tri.construct_triad_pitch_classes(0, q_map[cid])
-                self.assertEqual(actual, exp)
-            elif cid in ['REF-0142', 'REF-0143', 'REF-0144', 'REF-0145']:
-                q_map = {'REF-0142': '7', 'REF-0143': 'maj7', 'REF-0144': 'min7', 'REF-0145': 'half_diminished'}
-                actual = tri.construct_seventh_pitch_classes(0, q_map[cid])
-                self.assertEqual(actual, exp)
+            elif 'REF-0138' <= cid <= 'REF-0146':
+                suffix = {
+                    'Major Triad': '', 'Minor Triad': 'm',
+                    'Diminished Triad': 'dim', 'Augmented Triad': 'aug',
+                    'Dominant 7th': '7', 'Major 7th': 'maj7', 'Minor 7th': 'm7',
+                    'Half-Diminished 7th': 'm7b5', 'Diminished 7th': 'dim7',
+                }[p['chord']]
+                self.assertEqual(list(parse_chord('C' + suffix, 'INT').theoretical_intervals), exp)
             elif cid == 'REF-0149':
                 self.assertEqual(make_drop2_voicing(p['close_voicing']), exp)
             elif cid in ['REF-0035', 'REF-0050']:
@@ -191,6 +181,16 @@ class TestGoldenReferenceCases(unittest.TestCase):
             elif cid == 'REF-0154':
                 roots = p['roots']
                 self.assertEqual([(b - a) % 12 for a, b in zip(roots, roots[1:])], exp)
+            elif cid == 'REF-0155':
+                self.assertEqual((p['dom_root'] + 6) % 12, exp)
+            elif cid in ['REF-0157', 'REF-0160']:
+                degree = p.get('degree', 'V7/V')
+                chord = resolve_roman_degree(degree, p['key'], convention='INT')
+                self.assertEqual(chord.root.pitch_class, exp)
+            elif cid in ['REF-0162', 'REF-0166']:
+                chords = [resolve_roman_degree(degree, p['key'], p['minor'], convention='INT')
+                          for degree in p['degrees']]
+                self.assertEqual([int(chord.root.pitch_class) for chord in chords], exp)
             elif cid == 'REF-0156':
                 a, b = (parse_chord(symbol, 'INT') for symbol in p['chords'])
                 shared = sorted(a.pitch_class_set & b.pitch_class_set)
@@ -199,6 +199,11 @@ class TestGoldenReferenceCases(unittest.TestCase):
                 start = [p['v1_start'], p['v2_start']]
                 end = [p['v1_end'], p['v2_end']]
                 self.assertEqual(bool(detect_parallel_fifths_octaves(start, end)), exp)
+            elif cid == 'REF-0170':
+                self.assertEqual(p['v1_dir'] * p['v2_dir'] < 0, exp)
+            elif cid == 'REF-0175':
+                a, b = p['v1'], p['v2']
+                self.assertEqual(a[0] != b[0] and a == b[::-1], exp)
             elif cid == 'REF-0171':
                 self.assertEqual(directed_semitones(p['leading_tone'], p['tonic']), exp)
             elif cid == 'REF-0172':
@@ -292,6 +297,12 @@ class TestGoldenReferenceCases(unittest.TestCase):
                 actual = round(p['tet_cent'] - p['just_cent'], 2)
                 self.assertAlmostEqual(actual, exp, delta=0.05)
 
+            elif cid == 'REF-0188':
+                self.assertEqual([i for i, hit in enumerate(p['pattern']) if hit == 'X'], exp)
+            elif cid == 'REF-0189':
+                self.assertEqual(math.lcm(p['r1'], p['r2']), exp)
+            elif cid == 'REF-0191':
+                self.assertEqual(DiatonicInterval(1 + 7 * p['octave'], 'P').semitones, exp)
             elif cid == 'REF-0192':
                 quality, number = p['interval'][0], int(p['interval'][1:])
                 self.assertEqual(DiatonicInterval(number, quality).semitones, exp)
@@ -333,7 +344,7 @@ class TestGoldenReferenceCases(unittest.TestCase):
     def test_executable_cases_compute_their_expected_results(self):
         """Run every case classified as executable."""
         exec_cases = [c['case_id'] for c in self.cases if c['test_class'] in ['UNIT_TEST', 'PROPERTY_TEST', 'INTEGRATION_TEST']]
-        self.assertEqual(len(exec_cases), 74)
+        self.assertEqual(len(exec_cases), 98)
 
         passed = 0
         for cid in exec_cases:
@@ -369,7 +380,7 @@ class TestGoldenReferenceCases(unittest.TestCase):
     def test_specification_examples_have_required_fields(self):
         """Check structure of the cases classified as specification examples."""
         spec_cases = [c['case_id'] for c in self.cases if c['test_class'] == 'SPECIFICATION_EXAMPLE']
-        self.assertEqual(len(spec_cases), 124)
+        self.assertEqual(len(spec_cases), 100)
 
         verified = 0
         for cid in spec_cases:
