@@ -30,10 +30,6 @@ class TestReferenceImplementation:
         return midi_note % 12
 
     @staticmethod
-    def midi_to_frequency(midi_note: int, a4_freq: float = 440.0) -> float:
-        return a4_freq * (2.0 ** ((midi_note - 69) / 12.0))
-
-    @staticmethod
     def interval_semitones(n1: int, n2: int) -> int:
         return abs(n2 - n1)
 
@@ -76,15 +72,6 @@ class TestReferenceImplementation:
         return round(span * ratio)
 
     @staticmethod
-    def calculate_swing_offset(quant_tick: int, ppq: int) -> int:
-        straight_tick = ppq // 4
-        return quant_tick - straight_tick
-
-    @staticmethod
-    def calculate_swing_delay_ms(offset_ticks: int, bpm: float, ppq: int) -> float:
-        return offset_ticks * (60000.0 / (bpm * ppq))
-
-    @staticmethod
     def calculate_tuplet_ticks(total_span: int, count: int) -> list[int]:
         return [round(i * total_span / count) for i in range(count + 1)]
 
@@ -109,12 +96,6 @@ class TestReferenceImplementation:
     def detect_voice_crossing(voicing: list[int]) -> bool:
         """Returns True if any higher voice index dips below a lower voice index."""
         return any(voicing[i] > voicing[i+1] for i in range(len(voicing) - 1))
-
-    @staticmethod
-    def verify_cross_domain_compatibility(components: list[str]) -> bool:
-        """Validates that a multi-domain progression, groove, and piano triad form a harmonious triplet."""
-        valid_triplet = {'PROG-021', 'PAT-024', 'P12'}
-        return set(components) == valid_triplet or len(components) == 3
 
 
 # ==============================================================================
@@ -149,7 +130,7 @@ class TestGoldenReferenceCases(unittest.TestCase):
                 actual = p['semitone_offset'] + (p['octave'] + 1) * 12
                 self.assertEqual(actual, exp)
             elif cid in ['REF-0111', 'REF-0112']:
-                actual = round(tri.midi_to_frequency(p['midi_note']), 2)
+                actual = midi_to_frequency(p["midi_note"])
                 self.assertAlmostEqual(actual, exp, delta=0.05)
             elif cid in ['REF-0113', 'REF-0114']:
                 actual = (p['pc'] + p['interval']) % 12
@@ -206,8 +187,10 @@ class TestGoldenReferenceCases(unittest.TestCase):
 
             # 5. Timing, Swing & Micro-timing
             elif cid in ['REF-0020', 'REF-0021']:
-                actual = 1.0 if p['swing_type'] == 'Straight' else 2.0
-                self.assertEqual(actual, exp)
+                first, second = p["durations"]
+                self.assertGreater(first, 0)
+                self.assertGreater(second, 0)
+                self.assertEqual(first / second, exp)
             elif cid in ['REF-0026', 'REF-0027', 'REF-0028', 'REF-0029', 'REF-0030']:
                 ppq = p['ppq']
                 beat_positions = {
@@ -271,17 +254,7 @@ class TestGoldenReferenceCases(unittest.TestCase):
                 actual = round(p['tet_cent'] - p['just_cent'], 2)
                 self.assertAlmostEqual(actual, exp, delta=0.05)
 
-            # 7. Migrated Swing & MIDI Time
-            elif cid in [f'REF-01{i:02d}' for i in range(77, 87)]:
-                if cid == 'REF-0177':
-                    actual = tri.calculate_swing_quant_tick(p['ppq'], p['ratio']) - (p['ppq'] // 4)
-                elif 'quant_tick' in p and 'straight_tick' in p:
-                    actual = p['quant_tick'] - p['straight_tick']
-                elif 'offset' in p and 'bpm' in p and 'ppq' in p:
-                    actual = round(tri.calculate_swing_delay_ms(p['offset'], p['bpm'], p['ppq']), 2)
-                elif 'ppq' in p and 'ratio' in p:
-                    actual = tri.calculate_swing_quant_tick(p['ppq'], p['ratio'])
-                self.assertEqual(actual, exp)
+            # 7. MIDI time
             elif cid == 'REF-0197':
                 actual = 60000.0 / p['bpm']
                 self.assertEqual(actual, exp)
@@ -327,6 +300,18 @@ class TestGoldenReferenceCases(unittest.TestCase):
                 passed += 1
 
         self.assertEqual(passed, len(exec_cases))
+
+    def test_swing_ratio_rejects_changed_durations(self):
+        original = self.case_map["REF-0021"]
+        try:
+            self.case_map["REF-0021"] = {
+                **original,
+                "input_params": {**original["input_params"], "durations": [1, 1]},
+            }
+            with self.assertRaises(AssertionError):
+                self.evaluate_executable_case("REF-0021")
+        finally:
+            self.case_map["REF-0021"] = original
 
     def test_specification_examples_have_required_fields(self):
         """Check structure of the cases classified as specification examples."""
