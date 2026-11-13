@@ -694,7 +694,13 @@
       "variants": [],
       "basis": "C4=60 und D4=62. Je ein Vorzeichen verschiebt um einen Halbton.",
       "method": "enharmonic",
-      "input": {},
+      "input": {
+        "convention": "DE",
+        "notes": [
+          "Cis4",
+          "Des4"
+        ]
+      },
       "mandatory": true,
       "next_step": "Die Produktionsausgabe von KB-M02-ENHARMONIC mit der im Fall dokumentierten Herleitung abgleichen."
     },
@@ -784,7 +790,19 @@
       "method": "claim_sample",
       "input": {
         "id": "CLAIM-036",
-        "check": "clave"
+        "check": "clave",
+        "ppq": 480,
+        "sixteenth_positions": [
+          [
+            0,
+            6,
+            12
+          ],
+          [
+            4,
+            8
+          ]
+        ]
       },
       "mandatory": true,
       "next_step": "Die Produktionsausgabe von KB-M07-CLAVE mit der im Fall dokumentierten Herleitung abgleichen."
