@@ -1013,6 +1013,51 @@
       "next_step": "Die Produktionsausgabe von KB-M07-CLAVE mit der im Fall dokumentierten Herleitung abgleichen."
     },
     {
+      "id": "KB-PAT-031-RASTER",
+      "scope": "catalog",
+      "content": "PAT-031",
+      "domain": "M08",
+      "question": "Welche Glocken- und Puls-Onsets sowie Taktgrenzen ergeben sich in beiden Zählvarianten?",
+      "expected": {
+        "ppq": 480,
+        "bpm": 120,
+        "pulse_ticks": 240,
+        "bell_onsets": [
+          0,
+          480,
+          960,
+          1200,
+          1680,
+          2160,
+          2640
+        ],
+        "beat_onsets": [
+          0,
+          720,
+          1440,
+          2160
+        ],
+        "barlines": {
+          "12": [
+            0,
+            2880
+          ],
+          "6": [
+            0,
+            1440,
+            2880
+          ]
+        },
+        "cycle_seconds": 2.0
+      },
+      "variants": [],
+      "basis": "Notierte Zählvarianten im Drum-Katalog und Music Theory for the 21st-Century Classroom, § 4.4. Drei Achtel je Schlag, vier Schläge pro Zyklus.",
+      "method": "compound_meter",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Glockenmuster, PPQ, Puls, notierte Taktgrenzen und Tempo gemeinsam prüfen."
+    },
+    {
       "id": "KB-M08-METER",
       "scope": "sample",
       "content": "PAT-031",
@@ -1023,11 +1068,11 @@
         "Zwölf Pulse allein legen die Gruppierung nicht fest."
       ],
       "variants": [],
-      "basis": "PAT-031 benennt 6/8 und 12/8 ohne explizite Taktgrenze.",
+      "basis": "Der Katalog notiert einen 12/8-Takt und zwei 6/8-Takte. Die Hörproben setzen die jeweiligen Taktanfänge mit der gleichen Glockenfolge um.",
       "method": "manual",
       "input": {},
       "mandatory": true,
-      "next_step": "Aus den zwölf Pulsen ein notiertes Raster mit Taktstrichen, Akzenten und Tempo erstellen; zwei 6/8 gegen einen 12/8-Takt abhören und die gewünschte Lesart festhalten."
+      "next_step": "Die vorhandenen Hörproben mit einem 12/8-Takt und zwei 6/8-Takten vergleichen. Wahrgenommene Taktanfänge und den musikalischen Verwendungszweck protokollieren."
     },
     {
       "id": "KB-M11-ALTER",

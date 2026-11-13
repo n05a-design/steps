@@ -98,6 +98,24 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
                 self.assertEqual(coverage.catalog_evidence(checks[::-1])[:2], (status, detail))
         self.assertEqual(coverage.catalog_evidence([passed, pending, failed])[2], "Hörprobe. Noten prüfen.")
 
+    def test_pat031_checks_notated_boundaries_and_keeps_hearing_pending(self):
+        cases = [case for case in self.cases if case["content"] == "PAT-031"]
+        results = benchmark.run(cases, self.examples, self.claims, {})
+        self.assertEqual({r["id"]: r["status"] for r in results}, {
+            "KB-PAT-031-RASTER": "PASS", "KB-M08-METER": "PENDING",
+        })
+        document = benchmark.DRUMS.read_text(encoding="utf-8")
+        for before, after in (
+            ("0, 1440 und 2880", "0, 1200 und 2880"),
+            ("punktierte Viertel = 120 BPM", "Viertel = 120 BPM"),
+            ("1200, 1680, 2160", "1200, 1440, 2160"),
+        ):
+            with self.subTest(changed=before):
+                self.assertIn(before, document)
+                with patch.object(type(benchmark.DRUMS), "read_text", return_value=document.replace(before, after)):
+                    results = benchmark.run(cases, self.examples, self.claims, {})
+                self.assertEqual(coverage.catalog_evidence(results)[0], "FAIL")
+
     def test_minor_cadence_requires_whole_tone_and_chord_membership(self):
         case = next(c for c in self.cases if c["id"] == "KB-CLAIM-032-MINOR")
         result, = benchmark.run([case], self.examples, self.claims, {})
