@@ -50,8 +50,9 @@ Claim-ID und Fingerabdruck in den Draft-PR. [Freigabeablauf](../concepts/progres
   Inhalt passenden Fachabnahme. **Stichprobe** nennt einen gegen unabhängiges
   Soll oder eine konkrete Quelle geprüften Teilaspekt. **Nicht geprüft**
   umfasst formale Prüfungen, reine Inventarisierung und ausstehende Abnahmen.
-- Bei mehreren Prüfungen je Klaviermodul oder Drum-Pattern hat ein
-  fehlgeschlagener Fall Vorrang. Ein bestandener Teilcheck zählt bei
+- Bei mehreren Prüfungen je Klaviermodul, Drum-Pattern, Forschungsclaim oder
+  Progressionsposition hat ein fehlgeschlagener Fall Vorrang. Eine Position
+  wertet ihren Einzelfall und den Fall der ganzen Progression gemeinsam aus. Ein bestandener Teilcheck zählt bei
   ausstehender Abnahme als Stichprobe. Die Detaildatei nennt die Anzahl
   je Status und führt die offenen Schritte auf.
 - Die Detaildatei erfasst alle Einträge der aktiven Register und Kataloge.

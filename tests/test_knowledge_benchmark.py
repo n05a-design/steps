@@ -117,6 +117,17 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
                 self.assertEqual(coverage.catalog_evidence(checks[::-1])[:2], (status, detail))
         self.assertEqual(coverage.catalog_evidence([passed, pending, failed])[2], "Hörprobe. Noten prüfen.")
 
+    def test_progression_positions_keep_positional_and_whole_progression_checks(self):
+        by_case = {
+            "KB-PROG-001-02": {"status": "PASS", "next_step": ""},
+            "PROG-001-HARMONY": {"status": "FAIL", "next_step": "Akkordfolge prüfen."},
+        }
+        both = coverage.position_checks(by_case, "PROG-001", 2)
+        self.assertEqual(both, [by_case["KB-PROG-001-02"], by_case["PROG-001-HARMONY"]])
+        self.assertEqual(coverage.catalog_evidence(both), ("FAIL", "1 PASS. 1 FAIL.", "Akkordfolge prüfen."))
+        self.assertEqual(coverage.position_checks(by_case, "PROG-001", 3), [by_case["PROG-001-HARMONY"]])
+        self.assertEqual(coverage.catalog_evidence(coverage.position_checks(by_case, "PROG-002", 1))[0], "OFFEN")
+
     def test_pat031_checks_notated_boundaries_and_keeps_hearing_pending(self):
         cases = [case for case in self.cases if case["content"] == "PAT-031"]
         results = benchmark.run(cases, self.examples, self.claims, {})
