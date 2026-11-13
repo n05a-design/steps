@@ -2077,17 +2077,17 @@
       "domain": "M12",
       "question": "Lassen sich alle Graphknoten und ihr fachlicher Beleg nachvollziehen?",
       "expected": [
-        "84 weiterhin offene Endpunkt-IDs abgeglichen",
+        "74 weiterhin offene Endpunkt-IDs abgeglichen",
         "97 Relationen mit Claim oder Fundstelle belegt bzw. als ungeprüft markiert"
       ],
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
       ],
-      "basis": "Vertiefungsprüfung am Ausgangscommit b7c4618, Tabelle GRAPH_REFERENZEN.csv und Relationsregister.",
+      "basis": "Historische Vertiefungsprüfung am Ausgangscommit b7c4618; aktueller Abgleich einschließlich FORMAT_NODE_EVIDENCE.csv, MUSIC_NODE_EVIDENCE.csv und RELATION_EVIDENCE.csv. Einzelnachweise in docs/audit/fable-5.2/GRAPH_NACHWEISE_2026-11-14.md.",
       "method": "manual",
       "input": {
         "edges": 97,
-        "unresolved_ids": 84
+        "unresolved_ids": 74
       },
       "mandatory": true,
       "next_step": "Kanonische Knotendefinitionen für die offenen IDs anlegen oder die Relationen ausdrücklich als historische Hypothesen markieren. Pro Kante eine Fundstelle oder Claim-ID erfassen."
@@ -2112,7 +2112,7 @@
         "path": "research/STEPS_Bibliothek/ANTI-MASS_ From Uganda into the Unknown _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css"
       },
       "mandatory": true,
-      "next_step": "Die lokal wiedergefundene Registerfassung (sechs MATCH im Hashabgleich vom 13.11.2026) dauerhaft einem zugänglichen Archiv zuordnen und Herkunft sowie Rechte belegen. Lokale Hashidentität ersetzt keine Provenienzabnahme."
+      "next_step": "Archivkette und Live-Bandcamp-CDN liefern identische Registerbytes (14.11.2026). Rechte am vollständigen Bundle und dauerhafte Archivzuordnung dokumentieren; eine Fachfreigabe liegt nicht vor."
     },
     {
       "id": "KB-HISTORY-F00571",
@@ -2134,7 +2134,7 @@
         "path": "research/STEPS_Bibliothek/Cloudchord_ Tending the Bloom Bap Garden _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css"
       },
       "mandatory": true,
-      "next_step": "Die lokal wiedergefundene Registerfassung (sechs MATCH im Hashabgleich vom 13.11.2026) dauerhaft einem zugänglichen Archiv zuordnen und Herkunft sowie Rechte belegen. Lokale Hashidentität ersetzt keine Provenienzabnahme."
+      "next_step": "Archivkette und Live-Bandcamp-CDN liefern identische Registerbytes (14.11.2026). Rechte am vollständigen Bundle und dauerhafte Archivzuordnung dokumentieren; eine Fachfreigabe liegt nicht vor."
     },
     {
       "id": "KB-HISTORY-F00704",
@@ -2156,7 +2156,7 @@
         "path": "research/STEPS_Bibliothek/Download the Live Set of Artefakt’s New Track “Undertow”_files/embedded_player-d605d516704fd10722142526feae0317.css"
       },
       "mandatory": true,
-      "next_step": "Die lokal wiedergefundene Registerfassung (sechs MATCH im Hashabgleich vom 13.11.2026) dauerhaft einem zugänglichen Archiv zuordnen und Herkunft sowie Rechte belegen. Lokale Hashidentität ersetzt keine Provenienzabnahme."
+      "next_step": "Archivkette und Live-Bandcamp-CDN liefern identische Registerbytes (14.11.2026). Rechte am vollständigen Bundle und dauerhafte Archivzuordnung dokumentieren; eine Fachfreigabe liegt nicht vor."
     },
     {
       "id": "KB-HISTORY-F00768",
@@ -2178,7 +2178,7 @@
         "path": "research/STEPS_Bibliothek/Download the Live Set of DJ Gigola’s New Track “Unfolding Practice II” _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css"
       },
       "mandatory": true,
-      "next_step": "Die lokal wiedergefundene Registerfassung (sechs MATCH im Hashabgleich vom 13.11.2026) dauerhaft einem zugänglichen Archiv zuordnen und Herkunft sowie Rechte belegen. Lokale Hashidentität ersetzt keine Provenienzabnahme."
+      "next_step": "Archivkette und Live-Bandcamp-CDN liefern identische Registerbytes (14.11.2026). Rechte am vollständigen Bundle und dauerhafte Archivzuordnung dokumentieren; eine Fachfreigabe liegt nicht vor."
     },
     {
       "id": "KB-HISTORY-F00937",
@@ -2200,7 +2200,7 @@
         "path": "research/STEPS_Bibliothek/Dummy_ Inside The Machine, Outside The Box_files/embedded_player-d605d516704fd10722142526feae0317.css"
       },
       "mandatory": true,
-      "next_step": "Die lokal wiedergefundene Registerfassung (sechs MATCH im Hashabgleich vom 13.11.2026) dauerhaft einem zugänglichen Archiv zuordnen und Herkunft sowie Rechte belegen. Lokale Hashidentität ersetzt keine Provenienzabnahme."
+      "next_step": "Archivkette und Live-Bandcamp-CDN liefern identische Registerbytes (14.11.2026). Rechte am vollständigen Bundle und dauerhafte Archivzuordnung dokumentieren; eine Fachfreigabe liegt nicht vor."
     },
     {
       "id": "KB-HISTORY-F01002",
@@ -2222,7 +2222,7 @@
         "path": "research/STEPS_Bibliothek/Machinedrum_ Planting Seeds_files/embedded_player-d605d516704fd10722142526feae0317.css"
       },
       "mandatory": true,
-      "next_step": "Die lokal wiedergefundene Registerfassung (sechs MATCH im Hashabgleich vom 13.11.2026) dauerhaft einem zugänglichen Archiv zuordnen und Herkunft sowie Rechte belegen. Lokale Hashidentität ersetzt keine Provenienzabnahme."
+      "next_step": "Archivkette und Live-Bandcamp-CDN liefern identische Registerbytes (14.11.2026). Rechte am vollständigen Bundle und dauerhafte Archivzuordnung dokumentieren; eine Fachfreigabe liegt nicht vor."
     },
     {
       "id": "KB-HISTORY-PPR-MIDI-01",
@@ -2311,6 +2311,164 @@
       },
       "mandatory": true,
       "next_step": "Originallieferung, Dateiliste, Prüfsummen und Rechtebeleg für das MIDI-Paket vorlegen. Das Register enthält einen Platzhalter."
+    },
+    {
+      "scope": "sample",
+      "domain": "M03",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-005",
+      "content": "CDR-005",
+      "question": "Welche Intervallfolge ergibt Rotation 7 des aufsteigenden melodischen Moll und passt sie zur Graphzuordnung?",
+      "expected": [
+        1,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "basis": "Oliver Prehn, The Modes, PDF-Seite 1: Ascending mel. minor, Altered / Super Locrian und Lydian dominant; https://www.newjazz.dk/Compendiums/Major_Melmi_Harmmi_HarmMa_Modes.pdf. Rotation aus der notierten Folge selbst nachgerechnet.",
+      "input": {
+        "edge": [
+          "ALTERED_SCALE",
+          "MELODIC_MINOR_MODE_7",
+          "DERIVED_FROM"
+        ],
+        "check": "mode_rotation",
+        "ascending_melodic_minor": [
+          2,
+          1,
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "degree": 7
+      },
+      "next_step": "Historische Knoteninterpretation und Relation fachlich abnehmen. Der Rotationscheck ist eine belegte Stichprobe."
+    },
+    {
+      "scope": "sample",
+      "domain": "M03",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-006",
+      "content": "CDR-006",
+      "question": "Welche Intervallfolge ergibt Rotation 4 des aufsteigenden melodischen Moll und passt sie zur Graphzuordnung?",
+      "expected": [
+        2,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2
+      ],
+      "basis": "Oliver Prehn, The Modes, PDF-Seite 1: Ascending mel. minor, Altered / Super Locrian und Lydian dominant; https://www.newjazz.dk/Compendiums/Major_Melmi_Harmmi_HarmMa_Modes.pdf. Rotation aus der notierten Folge selbst nachgerechnet.",
+      "input": {
+        "edge": [
+          "LYDIAN_DOMINANT",
+          "MELODIC_MINOR_MODE_4",
+          "DERIVED_FROM"
+        ],
+        "check": "mode_rotation",
+        "ascending_melodic_minor": [
+          2,
+          1,
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "degree": 4
+      },
+      "next_step": "Historische Knoteninterpretation und Relation fachlich abnehmen. Der Rotationscheck ist eine belegte Stichprobe."
+    },
+    {
+      "scope": "sample",
+      "domain": "M04",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-009",
+      "content": "CDR-009",
+      "question": "Wird bei Drop-2 die zweithöchste Stimme einer vierstimmigen engen Lage um zwölf Halbtöne gesenkt?",
+      "expected": [
+        55,
+        60,
+        64,
+        71
+      ],
+      "basis": "John Thomas / Berklee Online, Voice Leading for Guitar, Drop-2 Voicings und Abb. 18; https://online.berklee.edu/takenote/voice-leading-for-guitar/. Eigene MIDI-Realisierung C4 E4 G4 B4.",
+      "input": {
+        "edge": [
+          "DROP_2_VOICING",
+          "SECOND_VOICE_LOWERED_OCTAVE",
+          "TRANSFORMS_TO"
+        ],
+        "check": "drop2",
+        "close": [
+          60,
+          64,
+          67,
+          71
+        ]
+      },
+      "next_step": "Spielbarkeit und Hörwirkung separat abnehmen; die Transformation allein gibt keine praktische Freigabe."
+    },
+    {
+      "scope": "sample",
+      "domain": "M04",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-010-COUNTEREXAMPLE",
+      "content": "CDR-010",
+      "question": "Sind D-Dur über C-Dur oder Slashbass D/C als vollständige Tonmenge identisch mit Cmaj13(#11)?",
+      "expected": {
+        "two_triads": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          9
+        ],
+        "slash_bass": [
+          0,
+          2,
+          6,
+          9
+        ],
+        "target": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          9,
+          11
+        ],
+        "missing_from_two_triads": [
+          11
+        ]
+      },
+      "basis": "CLAIM-022 und Open Music Theory, Chord Symbols, Bass notes und Extensions; https://viva.pressbooks.pub/openmusictheory/chapter/chord-symbols/. Tonmengenvergleich ist eigene Gegenrechnung; der Originalgraph bleibt beanstandet.",
+      "input": {
+        "edge": [
+          "POLYCHORD_D_OVER_C",
+          "C_MAJ13_SHARP11",
+          "EXPRESSES"
+        ],
+        "check": "polychord_counterexample"
+      },
+      "next_step": "CDR-010 bleibt beanstandet: Knoteninterpretation und erlaubte Auslassungen festlegen oder die Relation versioniert korrigieren. Keine Gleichsetzung ohne Kontext freigeben."
     }
   ]
 }

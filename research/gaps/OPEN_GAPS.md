@@ -1,5 +1,24 @@
 # Offene Evidenz und historische Bestandsaufnahme
 
+## Fortsetzung vom 14.11.2026
+
+- PR #51 ist nach menschlicher Freigabe auf `9c7b8eb` gemergt.
+- Die sechs CSS-Registerfassungen sind über gespeicherte Bandcamp-Player
+  bis zur live bytegleichen CDN-Datei technisch zugeordnet. Die bisherige
+  Eigenautorschaftsannahme wurde berichtigt; Bundle-Rechte und dauerhafte
+  Archivzuordnung bleiben offen. [CSS-Provenienz](../../docs/audit/fable-5.2/CSS_PROVENIENZ_2026-11-14.md).
+- Der Graph hat nach sechs zusätzlichen Definitionen noch 74 offene
+  Endpunkt-IDs. Drei Kanten haben bestätigte Stichproben; CDR-010 bleibt
+  wegen der unbestimmten Polychord-Zuordnung beanstandet. Alle 97 Kanten
+  bleiben `REVIEW_REQUIRED`, keine ist vollständig fachlich abgenommen.
+  [Graphnachweise](../../docs/audit/fable-5.2/GRAPH_NACHWEISE_2026-11-14.md).
+- Der neue Benchmarkstand hat 56 PASS, 0 FAIL, 27 PENDING. Eine bestandene
+  Gegenprobe der beanstandeten Graphaussage wird in der Matrix als FAIL
+  dieser Aussage geführt. Hör-, Spiel-, Coach- und sonstige offene
+  Fachabnahmen werden dadurch nicht geschlossen.
+
+Die folgenden datierten Abschnitte beschreiben frühere Prüfstände.
+
 ## Repository-Bestandsaufnahme vom 10.11.2026
 
 - Projektkonsolidierung nennt sechs Originaldokumente, im Originalarchiv liegt derzeit kein `Glide Kontext für Fable(2).md` (5 Markdown-Originale vorhanden); Nachweis/Fundort prüfen.

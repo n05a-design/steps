@@ -243,3 +243,38 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
         for rows in ([entry, entry], [{**entry, "locator": ""}], [{**entry, "source_url": "http://example.com"}]):
             with self.subTest(rows=rows), self.assertRaisesRegex(ValueError, entry["node_id"]):
                 coverage.format_node_evidence(rows)
+
+    def test_graph_samples_detect_changed_edges_and_musical_inputs(self):
+        graph_cases = [c for c in self.cases if c["method"] == "graph_sample"]
+        self.assertEqual(len(graph_cases), 4)
+        for case in graph_cases:
+            with self.subTest(case=case["id"]):
+                result, = benchmark.run([case], self.examples, self.claims, {})
+                self.assertEqual(result["status"], "PASS", result["observed"])
+                changed = deepcopy(case)
+                changed["input"]["edge"][1] = "UNRELATED_NODE"
+                result, = benchmark.run([changed], self.examples, self.claims, {})
+                self.assertEqual(result["status"], "FAIL")
+        mode = deepcopy(graph_cases[0])
+        mode["input"]["degree"] = 6
+        result, = benchmark.run([mode], self.examples, self.claims, {})
+        self.assertEqual(result["status"], "FAIL")
+        drop = deepcopy(next(c for c in graph_cases if c["input"]["check"] == "drop2"))
+        drop["input"]["close"][2] += 12
+        result, = benchmark.run([drop], self.examples, self.claims, {})
+        self.assertEqual(result["status"], "FAIL")
+
+    def test_graph_counterexample_keeps_the_underlying_claim_red(self):
+        checks = [{"status": "PASS", "next_step": "Graphzuordnung klären."}]
+        self.assertEqual(coverage.graph_evidence(checks, {"assessment": "COUNTEREXAMPLE"})[0], "FAIL")
+        self.assertEqual(coverage.graph_evidence(checks, {"assessment": "SOURCE_SUPPORTED_SAMPLE"})[0], "PASS")
+
+    def test_relation_evidence_rejects_unknown_duplicate_and_unbounded_records(self):
+        row = {"relation_id": "CDR-005", "source_url": "https://example.com/source", "locator": "Page 1",
+               "claim_id": "CLAIM-022", "assessment": "SOURCE_SUPPORTED_SAMPLE", "scope": "One rotation",
+               "limitation": "No human approval"}
+        coverage.relation_evidence([row], {"CDR-005"}, {"CLAIM-022"})
+        for records in ([row, row], [{**row, "relation_id": "UNKNOWN"}], [{**row, "limitation": ""}],
+                        [{**row, "claim_id": "MISSING"}], [{**row, "assessment": "APPROVED"}]):
+            with self.subTest(records=records), self.assertRaises(ValueError):
+                coverage.relation_evidence(records, {"CDR-005"}, {"CLAIM-022"})
