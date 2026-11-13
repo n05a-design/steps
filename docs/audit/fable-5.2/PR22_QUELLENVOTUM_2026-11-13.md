@@ -16,6 +16,11 @@ LibreTexts-Fassung geschlossen. Die dokumentierten Modellgrenzen bleiben erhalte
 Am Wortlaut, an den Quellenmetadaten und an den sieben Fingerabdrücken ist keine
 weitere Korrektur erforderlich.
 
+Der nachfolgende [Hashabgleich](PR22_HASHABGLEICH_2026-11-13.md) dokumentiert
+den Übergang von `1b52fd68...` zu `b39ac7b5...` und die genaue Nachweisgrenze
+des Hashs. Das [vollständige Prüfpaket](PR22_FREIGABE_PRUEFPAKET_2026-11-13.json)
+legt alle sieben Hash-Payloads und ihre gesonderten Benchmarkfälle offen.
+
 Die genaue Identität des geprüften PDFs ist unten per SHA-256 festgehalten.
 Dies ist eine Inhalts- und Fundstellenprüfung anhand dieses Exports und der
 benannten Spiegelung; es ist keine Behauptung über die Byte-Identität einer

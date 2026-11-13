@@ -2,6 +2,10 @@
 
 **Vorlage, noch keine Freigabe.** Erst nach eigener Prüfung verwenden.
 Der Quellenabschluss steht im [Quellenvotum](PR22_QUELLENVOTUM_2026-11-13.md).
+Der [Hashabgleich](PR22_HASHABGLEICH_2026-11-13.md) erklärt die beiden Fassungen
+`1b52fd68...` und `b39ac7b5...`. Das
+[vollständige Prüfpaket](PR22_FREIGABE_PRUEFPAKET_2026-11-13.json) enthält für
+alle sieben Claims die exakten Hash-Eingaben und die gesonderten Benchmarkfälle.
 Die sieben produktiven Claims und Fingerabdrücke wurden für diese Vorlage neu
 berechnet. Die unveränderte Notationsfreigabe ist nicht erneut anzufordern.
 
@@ -23,10 +27,9 @@ Die Entscheidung gilt nur für die genannten Fassungen und ist kein Mergeauftrag
 
 ## Kopierbarer Kommentarinhalt
 
-Ich gebe die folgenden sieben Claim-Fassungen innerhalb ihrer in der Abnahmeliste
-genannten Gültigkeitsbereiche fachlich frei. Dies ist keine Mergefreigabe.
-
 ```text
+Ich gebe die folgenden sieben Claim-Fassungen innerhalb ihrer dokumentierten Gültigkeitsbereiche fachlich frei. Dies ist keine Mergefreigabe.
+
 STEPS-APPROVED PROG-001-HARMONY 7a9f0ca6312eaa8837c45a624a0ca50cdde3f9af323e8fc81094519cd7c53a63
 STEPS-APPROVED PROG-001-TONAL-CENTER b39ac7b557f1d7846c3c7ec006ebec60b0fbc78b205ae1540d14817ee849a789
 STEPS-APPROVED PROG-003-HARMONY f9224530c773e01d2da4ebc8136b7b10bdf073bc5079b866c003501441faec7a
