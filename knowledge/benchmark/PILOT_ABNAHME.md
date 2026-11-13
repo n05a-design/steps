@@ -46,7 +46,7 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 - Fundstelle · [Music Theory Online – Tonal Ambiguity in Popular Music’s Axis Progressions](<https://mtosmt.org/issues/mto.17.23.3/mto.17.23.3.richards.html>) · Abs. [1] zu Rotationen, [9]–[11] und Anm. 10 zu Loop-Beginn und Hypermetrik, [29]–[30] zu Phrasierung und Formkontext
 - Prüffrage · Wie kann der Loop C–G–Am–F C oder A als tonales Zentrum nahelegen, und welche Hinweise prägen die Wahrnehmung?
 - Sollantwort · `{"centers": ["C", "A"], "minor_stages": ["III", "VII", "i", "VI"], "chords": ["C", "G", "Am", "F"], "required_context": "Melodie und Phrasierung, Loop-Beginn, metrische Betonung und benachbarte Formteile können C oder A als Zentrum stützen. Die Akkordfolge allein lässt das gehörte Zentrum offen."}`
-- Herleitung · Open Music Theory, Four-Chord Schemas, Absatz nach Example 4. Die Moll-Lesart folgt aus natürlichem A-Moll. Richards (2017), Abs. [1], [9]–[11] und [29]–[30], belegt die Kontexthinweise an Axis-Progressionen.
+- Herleitung · Open Music Theory, Four-Chord Schemas, Abschnitt Tonal ambiguity, Absatz vor der Legende zu Example 4. Die Moll-Lesart folgt aus natürlichem A-Moll. Richards (2017), Abs. [1], [9]–[11] und [29]–[30], belegt die Kontexthinweise an Axis-Progressionen.
 
 ## PROG-003-HARMONY
 
