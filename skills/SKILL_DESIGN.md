@@ -15,7 +15,7 @@
 
 - `steps/SKILL.md`: existiert und verweist auf Projektkontext/Wissen/Migration.
 - `steps/skills/music-harmony-coach/2026-11-10 – music-harmony-coach/SKILL.md`: existiert, zusammen mit `references/music-theory.md`, `harmonic-analysis.md`, `chord-progressions.md`, `voice-leading.md`, `sources.md`, `ingestion-guide.md` sowie einem Progression-Schema. Datumspfad kann nicht als automatisch entdeckter Skill angenommen werden; separaten normierten Symlink/Kopiervertrag für Toolprovider planen.
-- `knowledge/sources/registry.yaml`: **leer**, eine Quelle aus fachlichen Texten allein macht den Skill nicht verifiziert.
+- `knowledge/sources/registry.yaml`: enthält die sieben Produktquellen des Pilotkatalogs (Stand 13.11.2026). Die Freigaben sind an einzelne Aussagen und deren Fingerabdrücke gebunden.
 
 ## Regeln der AI-Abfragen
 

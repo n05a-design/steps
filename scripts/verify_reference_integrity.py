@@ -330,8 +330,6 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
 
             if name.lower() != b_entry['name'].lower():
                 errors.append(f"Semantic identity conflict for {pid}: Name changed from '{b_entry['name']}' to '{name}'")
-            if domain and domain != b_entry.get('domain', ''):
-                errors.append(f"Semantic identity conflict for {pid}: Domain changed from '{b_entry.get('domain')}' to '{domain}'")
 
             computed_h = compute_canonical_hash({
                 'id': pid, 'name': name.strip().lower(), 'domain': domain.strip(),
@@ -339,6 +337,8 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
             })
             b_h = b_entry.get('semantic_hash')
             corrected = catalog_correction_matches(pid, computed_h)
+            if domain and domain != b_entry.get('domain', '') and not corrected:
+                errors.append(f"Semantic identity conflict for {pid}: Domain changed from '{b_entry.get('domain')}' to '{domain}'")
             if degrees != b_entry['harmonic_structure'] and not corrected:
                 errors.append(f"Semantic identity conflict for {pid}: Harmonic structure changed from '{b_entry['harmonic_structure']}' to '{degrees}'")
             if b_h and computed_h != b_h:
