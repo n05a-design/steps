@@ -8,7 +8,7 @@ Zur Vermeidung von Datenfragmentierung und divergierenden Versionen gilt für di
 |---|---|---|
 | **Kanonischer Master (Source of Truth)** | `knowledge/research/golden_cases/golden_reference_cases.json` | Primärer, versionierter Wissensbestand im Forschungsbereich. Alle Änderungen und Erweiterungen finden ausschließlich hier statt. |
 | **Ausführbarer Test-Spiegel** | `tests/golden_cases/golden_reference_cases.json` | Für die Unit- und Integrations-Testsuiten bereitgestellter deterministischer Spiegel. |
-| **Validierungs-Register** | `knowledge/research/FINAL_REFERENCE_CASE_VALIDATION.csv` | Tabellarische Erfassung der formalen Verifikationsergebnisse, Testklassen und Belege. |
+| **Validierungs-Register** | `knowledge/research/FINAL_REFERENCE_CASE_VALIDATION.csv` | Historischer Auszug früherer Testklassen und Belege. |
 | **Historische Matrix** | `knowledge/research/HISTORICAL_REFERENCE_ID_MATRIX.csv` | Lückenlose Dokumentation der ursprünglichen und migrierten Bedeutungen aller Referenzfälle. |
 | **Migrationsregister** | `knowledge/research/REFERENCE_ID_MIGRATION_REGISTER.csv` | Register aller historischen Identitätswiederherstellungen und ID-Neuzuweisungen. |
 
@@ -44,7 +44,12 @@ eigenen fachlichen Prüfung.
    Eine Abweichung führt unmittelbar zum Abbruch mit Exit-Code 1 (Fail-Closed).
 
 2. **Automatisierte Spiegelung:**
-   Wird der kanonische Bestand in `knowledge/` aktualisiert, generiert das Skript `scripts/build_unified_golden_cases.py` die Testfixture in `tests/` synchron neu. Eine manuelle Bearbeitung der gespiegelten Datei in `tests/` ist unzulässig.
+   Nach einer Änderung am Master übernimmt
+   `python -B scripts/build_unified_golden_cases.py` dessen Bytes in den
+   Testspiegel. Mit `--check` prüft der Befehl die Übereinstimmung
+   schreibfrei. Der Generator verwendet nur den Master als Datenquelle und
+   prüft die Fall-IDs gegen die Baseline. Die historischen CSV-Berichte
+   bleiben als Belege ihrer jeweiligen Phase erhalten.
 
 3. **Identity-Lock:**
    Die Datei `knowledge/research/REFERENCE_IDENTITY_BASELINE.json` sichert die unveränderliche Zuordnung von `case_id`, `title`, `domain` und `expected_output` dauerhaft ab.

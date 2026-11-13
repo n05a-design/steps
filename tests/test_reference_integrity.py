@@ -35,12 +35,14 @@ import tempfile
 import unittest
 import json
 import csv
+from pathlib import Path
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if REPO_ROOT not in sys.path:
     sys.path.insert(0, REPO_ROOT)
 
 import scripts.verify_reference_integrity as checker
+from scripts.build_unified_golden_cases import FIXTURE, RESEARCH, synchronize
 
 class TestReferenceIntegrityAndMutations(unittest.TestCase):
     def setUp(self):
@@ -80,6 +82,26 @@ class TestReferenceIntegrityAndMutations(unittest.TestCase):
         self.assertEqual(stats['golden_cases'], 198)
         self.assertEqual(stats['relations'], 97)
         self.assertEqual(stats['adrs'], 12)
+
+    def test_golden_mirror_sync_reads_only_master(self):
+        root = Path(self.temp_dir)
+        master = root / RESEARCH / FIXTURE
+        mirror = root / "tests" / FIXTURE
+        original = master.read_bytes()
+        mirror.write_bytes(b"stale mirror")
+
+        with self.assertRaisesRegex(ValueError, "Testspiegel"):
+            synchronize(root, check=True)
+        self.assertEqual(mirror.read_bytes(), b"stale mirror")
+        self.assertEqual(synchronize(root), 198)
+        self.assertEqual(mirror.read_bytes(), original)
+        self.assertEqual(master.read_bytes(), original)
+        self.assertEqual(synchronize(root, check=True), 198)
+
+        master.write_text(json.dumps(json.loads(original)[:-1]), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Fall-IDs"):
+            synchronize(root)
+        self.assertEqual(mirror.read_bytes(), original)
 
     # =========================================================================
     # 15 MANDATORY NEGATIVE MUTATION PROOFS (Section 2.1)

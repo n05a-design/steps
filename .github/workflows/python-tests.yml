@@ -27,6 +27,9 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Check generated Golden Case fixture
+        run: python -B scripts/build_unified_golden_cases.py --check
+
       - name: Check generated Python API reference
         run: python -B scripts/render_api_reference.py --check
 

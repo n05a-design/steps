@@ -1567,7 +1567,7 @@
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
       ],
-      "basis": "Historisches Quellenregister SRC-033 und der alternative Lehrbeleg https://www.newjazz.dk/.",
+      "basis": "Historisches Quellenregister SRC-033 und die separate Lehrquelle SRC-0003. Recherche und Abgrenzung in research/gaps/FABLE_FACHNACHWEISE.md.",
       "method": "manual",
       "input": {
         "claims": [
@@ -1579,7 +1579,7 @@
         ]
       },
       "mandatory": true,
-      "next_step": "Die angegebene Publikation bibliografisch suchen und von Oliver Prehns Lehrseite abgrenzen. Unbelegte Zuschreibungen entfernen oder als offen führen."
+      "next_step": "Die angegebene Publikation bibliografisch suchen und von Oliver Prehns Lehrseite abgrenzen. Originalausgabe oder Katalognachweis mit Fundstelle vorlegen."
     },
     {
       "id": "KB-CLAIM-032-MINOR",
@@ -1587,18 +1587,57 @@
       "content": "CLAIM-032",
       "domain": "M06",
       "question": "Gilt die Halbtonregel für beide Stimmführungen auch im Moll-ii–V–i?",
-      "expected": [
-        "Dur und Moll getrennt",
-        "G7 nach Cm7 mit F→Es als Ganzton-Gegenfall"
-      ],
-      "variants": [
-        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
-      ],
-      "basis": "Historisches Claim-Register CLAIM-032. Open Music Theory ii–V–I, Abschnitt zur Mollvariante.",
-      "method": "manual",
-      "input": {},
+      "expected": {
+        "major": [
+          -1,
+          -1
+        ],
+        "minor": [
+          -1,
+          -2
+        ]
+      },
+      "variants": [],
+      "basis": "Open Music Theory, ii–V–I, Example 2. Gegenrechnung aus den angegebenen Akkordtönen. https://viva.pressbooks.pub/openmusictheory/chapter/ii-v-i/",
+      "method": "guide_tone_paths",
+      "input": {
+        "major": {
+          "chords": [
+            "Dm7",
+            "G7",
+            "Cmaj7"
+          ],
+          "paths": [
+            [
+              "C4",
+              "B3"
+            ],
+            [
+              "F4",
+              "E4"
+            ]
+          ]
+        },
+        "minor": {
+          "chords": [
+            "Dm7b5",
+            "G7",
+            "Cm7"
+          ],
+          "paths": [
+            [
+              "C4",
+              "B3"
+            ],
+            [
+              "F4",
+              "Eb4"
+            ]
+          ]
+        }
+      },
       "mandatory": true,
-      "next_step": "Die Behauptung ausdrücklich auf den Dur-Fall und eine konkrete Stimmenwahl begrenzen."
+      "next_step": "Bei Änderungen an Akkord oder Stimme die Mitgliedschaft und Halbtondistanzen erneut prüfen."
     },
     {
       "id": "KB-GRAPH-NODES",
@@ -1635,14 +1674,14 @@
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
       ],
-      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
       "method": "manual",
       "input": {
         "registry_id": "F00412",
         "path": "research/STEPS_Bibliothek/ANTI-MASS_ From Uganda into the Unknown _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css"
       },
       "mandatory": true,
-      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+      "next_step": "Originalversion mit dem Register-SHA-256 finden. Der Git-Fund hat eine abweichende Prüfsumme."
     },
     {
       "id": "KB-HISTORY-F00571",
@@ -1657,14 +1696,14 @@
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
       ],
-      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
       "method": "manual",
       "input": {
         "registry_id": "F00571",
         "path": "research/STEPS_Bibliothek/Cloudchord_ Tending the Bloom Bap Garden _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css"
       },
       "mandatory": true,
-      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+      "next_step": "Originalversion mit dem Register-SHA-256 finden. Der Git-Fund hat eine abweichende Prüfsumme."
     },
     {
       "id": "KB-HISTORY-F00704",
@@ -1679,14 +1718,14 @@
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
       ],
-      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
       "method": "manual",
       "input": {
         "registry_id": "F00704",
         "path": "research/STEPS_Bibliothek/Download the Live Set of Artefakt’s New Track “Undertow”_files/embedded_player-d605d516704fd10722142526feae0317.css"
       },
       "mandatory": true,
-      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+      "next_step": "Originalversion mit dem Register-SHA-256 finden. Der Git-Fund hat eine abweichende Prüfsumme."
     },
     {
       "id": "KB-HISTORY-F00768",
@@ -1701,14 +1740,14 @@
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
       ],
-      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
       "method": "manual",
       "input": {
         "registry_id": "F00768",
         "path": "research/STEPS_Bibliothek/Download the Live Set of DJ Gigola’s New Track “Unfolding Practice II” _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css"
       },
       "mandatory": true,
-      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+      "next_step": "Originalversion mit dem Register-SHA-256 finden. Der Git-Fund hat eine abweichende Prüfsumme."
     },
     {
       "id": "KB-HISTORY-F00937",
@@ -1723,14 +1762,14 @@
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
       ],
-      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
       "method": "manual",
       "input": {
         "registry_id": "F00937",
         "path": "research/STEPS_Bibliothek/Dummy_ Inside The Machine, Outside The Box_files/embedded_player-d605d516704fd10722142526feae0317.css"
       },
       "mandatory": true,
-      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+      "next_step": "Originalversion mit dem Register-SHA-256 finden. Der Git-Fund hat eine abweichende Prüfsumme."
     },
     {
       "id": "KB-HISTORY-F01002",
@@ -1745,14 +1784,14 @@
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
       ],
-      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
       "method": "manual",
       "input": {
         "registry_id": "F01002",
         "path": "research/STEPS_Bibliothek/Machinedrum_ Planting Seeds_files/embedded_player-d605d516704fd10722142526feae0317.css"
       },
       "mandatory": true,
-      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+      "next_step": "Originalversion mit dem Register-SHA-256 finden. Der Git-Fund hat eine abweichende Prüfsumme."
     },
     {
       "id": "KB-HISTORY-PPR-MIDI-01",
@@ -1767,14 +1806,14 @@
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
       ],
-      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
       "method": "manual",
       "input": {
         "registry_id": "PPR-MIDI-01",
         "path": "research/STEPS_Bibliothek/Drums Progression/ppr-boom-bap-90-bpm-midi/PPR Boom Bap 90 BPM MIDI/README.txt"
       },
       "mandatory": true,
-      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+      "next_step": "Originallieferung, Dateiliste, Prüfsummen und Rechtebeleg für das MIDI-Paket vorlegen. Das Register enthält einen Platzhalter."
     },
     {
       "id": "KB-HISTORY-PPR-MIDI-02",
@@ -1789,14 +1828,14 @@
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
       ],
-      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
       "method": "manual",
       "input": {
         "registry_id": "PPR-MIDI-02",
         "path": "research/STEPS_Bibliothek/Drums Progression/ppr-uk-garage-132-bpm-midi/PPR UK Garage 132 BPM MIDI/README.txt"
       },
       "mandatory": true,
-      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+      "next_step": "Originallieferung, Dateiliste, Prüfsummen und Rechtebeleg für das MIDI-Paket vorlegen. Das Register enthält einen Platzhalter."
     },
     {
       "id": "KB-HISTORY-PPR-MIDI-03",
@@ -1811,14 +1850,14 @@
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
       ],
-      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
       "method": "manual",
       "input": {
         "registry_id": "PPR-MIDI-03",
         "path": "research/STEPS_Bibliothek/Drums Progression/ppr-techno-130-bpm-midi/PPR Techno 130 BPM MIDI/README.txt"
       },
       "mandatory": true,
-      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+      "next_step": "Originallieferung, Dateiliste, Prüfsummen und Rechtebeleg für das MIDI-Paket vorlegen. Das Register enthält einen Platzhalter."
     },
     {
       "id": "KB-HISTORY-PPR-MIDI-04",
@@ -1833,14 +1872,14 @@
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
       ],
-      "basis": "Historisches Dateiregister und Pfadprüfung inklusive Git-Historie am Ausgangscommit b7c4618.",
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
       "method": "manual",
       "input": {
         "registry_id": "PPR-MIDI-04",
         "path": "research/STEPS_Bibliothek/Drums Progression/ppr-sub-focus-style-174-bpm-midi/README.txt"
       },
       "mandatory": true,
-      "next_step": "Originalsnapshot oder Quellpaket gezielt am angegebenen Pfad suchen und den SHA-256 erneut vergleichen."
+      "next_step": "Originallieferung, Dateiliste, Prüfsummen und Rechtebeleg für das MIDI-Paket vorlegen. Das Register enthält einen Platzhalter."
     }
   ]
 }

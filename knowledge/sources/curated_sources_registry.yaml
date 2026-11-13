@@ -31,7 +31,9 @@ sources:
   rights_class: OPEN_EDUCATIONAL_RESOURCE
   status: approved
   domains: [M03, M04]
-  description: Mathematical closed system of 28 heptatonic scales across 4 families (Major, Melodic Minor, Harmonic Minor, Harmonic Major).
+  description: Four selected heptatonic families (Major, Ascending Melodic Minor, Harmonic Minor, Harmonic Major), yielding 28 distinct cyclic interval patterns.
+  reference_url: https://newjazz.dk/Compendiums/Major_Melmi_Harmmi_HarmMa_Modes.pdf
+  reference_locator: "Oliver Prehn, The Modes, pp. 1–2. Teaching chart. Distribution rights not assessed."
 
 - id: SRC-0004
   title: Harmony as a student (Fundamental Harmony)
@@ -522,7 +524,9 @@ sources:
   assigned_domains:
     - "M01"
     - "M03"
-  scope: "Mathematical taxonomy of 7-tone scales in 12-TET, 4 disjoint heptatonic parent scales à 7 modes (Major, Melodic Minor, Harmonic Minor, Harmonic Major)."
+  provenance_status: SOURCE_REVIEW_REQUIRED
+  provenance_note: "Historical metadata and claims below are unconfirmed. The teaching chart under SRC-0003 is a separate work. Harmonic minor and harmonic major each contain a three-semitone step, contradicting the stated step-size limit."
+  scope: "Historical description: taxonomy of four seven-tone scale families in 12-TET."
   key_claims:
     - "Exact 28 heptatonic modes exist without consecutive semitones greater than two"
     - "All 28 modes derive from cyclically rotating 4 generator families"

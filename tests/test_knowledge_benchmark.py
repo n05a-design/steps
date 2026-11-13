@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import subprocess
 import unittest
+from copy import deepcopy
 
 from scripts import audit_knowledge_coverage as coverage
 from scripts import run_knowledge_benchmark as benchmark
@@ -54,6 +55,17 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
         for result in benchmark.run(cases, self.examples, self.claims, {}):
             with self.subTest(case=result["id"]):
                 self.assertEqual(result["status"], "PASS", result["observed"])
+
+    def test_minor_cadence_requires_whole_tone_and_chord_membership(self):
+        case = next(c for c in self.cases if c["id"] == "KB-CLAIM-032-MINOR")
+        result, = benchmark.run([case], self.examples, self.claims, {})
+        self.assertEqual(result["status"], "PASS")
+        self.assertEqual(result["observed"], {"major": [-1, -1], "minor": [-1, -2]})
+        mutated = deepcopy(case)
+        mutated["input"]["minor"]["paths"][1][1] = "E4"
+        result, = benchmark.run([mutated], self.examples, self.claims, {})
+        self.assertEqual(result["status"], "FAIL")
+        self.assertEqual(result["observed"]["error"], "note outside chord")
 
     def test_manual_evidence_is_bound_to_case_and_revision(self):
         case = next(case for case in self.cases if case["method"] == "manual")
