@@ -131,16 +131,20 @@ def evaluate(case, examples, claims, coach, manual):
                         actual[f"{symbol}/{locale}"] = str(exc)
         elif probe == "analysis":
             voicing = Voicing((48, 52, 55))
-            actual = {"empty": sorted(analyze_progression_voice_leading([])),
-                      "two": sorted(analyze_progression_voice_leading([voicing, voicing]))}
+            actual = {
+                "empty": sorted(analyze_progression_voice_leading([])),
+                "one": sorted(analyze_progression_voice_leading([voicing])),
+                "two": sorted(analyze_progression_voice_leading([voicing, voicing])),
+            }
         elif probe == "compound":
-            actual = {symbol: parse_chord(symbol).theoretical_intervals for symbol in ("Cadd9", "C7(#11)", "C9")}
+            actual = {symbol: list(parse_chord(symbol).theoretical_intervals) for symbol in ("Cadd9", "C7(#11)", "C9")}
         elif probe == "drop2":
             chord = parse_chord("C13")
-            actual = {layout: chord.to_voicing(3, layout).notes for layout in ("CLOSE", "DROP2")}
+            actual = {layout: sorted({note % 12 for note in chord.to_voicing(3, layout).notes})
+                      for layout in ("CLOSE", "DROP2")}
         else:
             raise ValueError(f"Unknown API contract probe {probe}.")
-        return "PENDING", actual
+        require(actual == expected, {"actual": actual, "expected": expected})
     elif method == "degree_controls":
         chords = [resolve_roman_degree(degree, data["key"], convention="INT") for degree in data["degrees"]]
         actual = [[chord.symbol, pitch_set(chord)] for chord in chords]
