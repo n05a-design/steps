@@ -69,7 +69,7 @@ class TestNotationContract(unittest.TestCase):
         self.assertGreater(midi_to_frequency(69.5), 440)
 
     def test_roman_case_and_figure_roles(self):
-        for token in ("iadd9", "ii13", "IVm", "Vb5", "V7sus4(65)"):
+        for token in ("Imadd9", "ii13", "IVm", "Vb5", "V7sus4(65)"):
             with self.subTest(token=token), self.assertRaises(ProgressionParsingError):
                 resolve_roman_degree(token)
         self.assertEqual(resolve_roman_degree("Iadd9(6)").symbol, "Cadd9/E")
@@ -79,17 +79,30 @@ class TestNotationContract(unittest.TestCase):
         self.assertEqual(resolve_roman_degree("bVI", "C", True).symbol, "Ab")
 
     def test_seventh_figures_reject_chords_without_sevenths(self):
-        for degree in ("Iadd9(6/5)", "Iadd9(43)", "Iadd9(42)", "im6(65)"):
+        for degree in ("Iadd9(6/5)", "Iadd9(43)", "Iadd9(42)", "iadd9(65)", "im6(65)"):
             with self.subTest(degree=degree), self.assertRaisesRegex(ProgressionParsingError, "requires a seventh"):
                 resolve_roman_degree(degree, "C", convention="INT")
         for degree, expected in (
             ("Iadd9(6)", "Cadd9/E"),
+            ("iadd9(6)", "Cmadd9/Eb"),
             ("V7(43)", "G7/D"),
             ("V9(43)", "G9/D"),
             ("vii°7(42)", "Bdim7/Ab"),
         ):
             with self.subTest(degree=degree):
                 self.assertEqual(resolve_roman_degree(degree, "C", convention="INT").symbol, expected)
+
+    def test_minor_add9_keeps_its_third_and_omits_the_seventh(self):
+        for symbol in ("Cmadd9", "Cm(add9)", "Cminadd9", "C-add9"):
+            with self.subTest(symbol=symbol):
+                chord = parse_chord(symbol, "INT")
+                self.assertEqual(chord.symbol, "Cmadd9")
+                self.assertEqual(chord.theoretical_intervals, (0, 3, 7, 14))
+                self.assertEqual(chord.pitch_class_set, {0, 2, 3, 7})
+        self.assertEqual(resolve_roman_degree("iadd9", "C", True).symbol, "Cmadd9")
+        self.assertEqual(resolve_roman_degree("Iadd9", "C").pitch_class_set, {0, 2, 4, 7})
+        with self.assertRaises(MusicTheoryError):
+            parse_chord("CMadd9", "INT")
 
     def test_transposition_preserves_the_catalog_spelling(self):
         letters = "CDEFGAB"

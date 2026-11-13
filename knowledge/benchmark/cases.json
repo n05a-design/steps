@@ -830,6 +830,73 @@
       "next_step": "Notierte Tonhöhen, tiefsten Ton und die Erweiterungen über C3 neu berechnen."
     },
     {
+      "id": "KB-P18-VOICINGS",
+      "scope": "catalog",
+      "content": "P18",
+      "domain": "M10",
+      "question": "Welche Basstöne, Erweiterungen und Stimmwege sind in der notierten Backdoor-Übung tatsächlich enthalten?",
+      "expected": {
+        "symbols": [
+          "Fm7",
+          "Bb7",
+          "Cmaj7"
+        ],
+        "bass": [
+          53,
+          46,
+          48
+        ],
+        "right": [
+          [
+            56,
+            63,
+            67
+          ],
+          [
+            56,
+            60,
+            62
+          ],
+          [
+            55,
+            59,
+            64
+          ]
+        ],
+        "added_pitch_classes": [
+          [
+            7
+          ],
+          [
+            0
+          ],
+          []
+        ],
+        "omitted_pitch_classes": [
+          [
+            0
+          ],
+          [
+            5
+          ],
+          []
+        ],
+        "resolution": [
+          -1,
+          -1,
+          2
+        ]
+      },
+      "variants": [],
+      "basis": "Notierte P18-Lagen und PROG-017. Fm7 = F–Ab–C–Eb, Bb7 = Bb–D–F–Ab, Cmaj7 = C–E–G–B. Die Sollwerte beziehen sich auf die konkrete Oktavlage.",
+      "method": "piano_backdoor",
+      "input": {
+        "progression": "PROG-017"
+      },
+      "mandatory": true,
+      "next_step": "Die notierten Stimmen und ihre Rollen mit dem Akkordsymbol abgleichen; anschließend die Abstände neu berechnen."
+    },
+    {
       "id": "KB-P19",
       "scope": "catalog",
       "content": "P19",

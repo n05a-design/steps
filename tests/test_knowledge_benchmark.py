@@ -116,6 +116,18 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
                     results = benchmark.run(cases, self.examples, self.claims, {})
                 self.assertEqual(coverage.catalog_evidence(results)[0], "FAIL")
 
+    def test_p18_detects_changed_resolution_in_written_voicing(self):
+        case = next(case for case in self.cases if case["id"] == "KB-P18-VOICINGS")
+        result, = benchmark.run([case], self.examples, self.claims, {})
+        self.assertEqual(result["status"], "PASS", result["observed"])
+        document = benchmark.PIANO.read_text(encoding="utf-8")
+        self.assertIn("G3 B3 E4", document)
+        mutated = document.replace("G3 B3 E4", "G3 B3 Eb4")
+        with patch.object(type(benchmark.PIANO), "read_text", return_value=mutated):
+            result, = benchmark.run([case], self.examples, self.claims, {})
+        self.assertEqual(result["status"], "FAIL")
+        self.assertEqual(result["observed"]["resolution"], [-1, -1, 1])
+
     def test_minor_cadence_requires_whole_tone_and_chord_membership(self):
         case = next(c for c in self.cases if c["id"] == "KB-CLAIM-032-MINOR")
         result, = benchmark.run([case], self.examples, self.claims, {})

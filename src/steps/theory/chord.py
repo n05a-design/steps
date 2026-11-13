@@ -66,6 +66,12 @@ CHORD_TEMPLATES: Dict[str, Dict[str, any]] = {
         'voiced': (0, 2, 4, 7),
         'category': 'ADD'
     },
+    'madd9': {
+        'aliases': ['madd9', 'minadd9', '-add9'],
+        'theoretical': (0, 3, 7, 14),
+        'voiced': (0, 2, 3, 7),
+        'category': 'ADD'
+    },
     '6': {
         'aliases': ['6', 'maj6'],
         'theoretical': (0, 4, 7, 9),
@@ -214,7 +220,7 @@ ALIAS_MAP = {
 _FOLDED_ALIASES = {
     alias.lower(): quality
     for alias, quality in ALIAS_MAP.items()
-    if not re.match(r"^[Mm](?:$|[0-9(]|maj)", alias, re.IGNORECASE)
+    if not re.match(r"^[Mm](?:$|[0-9(]|maj|add)", alias, re.IGNORECASE)
 }
 
 
