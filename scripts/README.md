@@ -5,6 +5,7 @@ Die regulären Befehle werden aus dem Repository-Root mit Python aufgerufen. Die
 | Einstieg | Inhalt |
 | --- | --- |
 | [verify_reference_integrity.py](verify_reference_integrity.py) | Referenz-IDs und kontrollierte Korrekturen abgleichen. |
+| [verify_registered_git_files.py](verify_registered_git_files.py) | Registerpfade, Bytezahlen und SHA-256 gegen einen ausdrücklich gewählten Git-Baum prüfen; keine Herkunfts- oder Rechtefreigabe. |
 | [run_knowledge_benchmark.py](run_knowledge_benchmark.py) | Wissensfälle prüfen, Berichte und Abnahmevorlagen erzeugen. |
 | [audit_knowledge_coverage.py](audit_knowledge_coverage.py) | Wissensinventur prüfen oder mit `--write` aktualisieren. |
 | [build_unified_golden_cases.py](build_unified_golden_cases.py) | Kanonischen Golden-Master mit Testspiegel synchronisieren oder prüfen. |

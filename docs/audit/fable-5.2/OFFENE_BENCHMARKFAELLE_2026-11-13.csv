@@ -1,0 +1,28 @@
+id,scope,content,status,next_step
+KB-M08-METER,sample,PAT-031,PENDING,Die vorhandenen Hörproben mit einem 12/8-Takt und zwei 6/8-Takten vergleichen. Wahrgenommene Taktanfänge und den musikalischen Verwendungszweck protokollieren.
+KB-M12-PLAYABILITY,sample,P02,PENDING,"Zwei notierte Voicing-Folgen bei definiertem Tempo mit kleiner Handspanne spielen. Fingersatz, Abstand und mindestens einen Fall mit niedriger L1-Distanz und unbequemer Lage protokollieren."
+COACH-01,coach,Harmony Coach,PENDING,"Die Frage COACH-01 in einer isolierten Session mit dem historischen Skill stellen. Antwort, Modell, Quellen und Bewertung aller Pflichtbestandteile protokollieren."
+COACH-02,coach,Harmony Coach,PENDING,"Die Frage COACH-02 in einer isolierten Session mit dem historischen Skill stellen. Antwort, Modell, Quellen und Bewertung aller Pflichtbestandteile protokollieren."
+COACH-03,coach,Harmony Coach,PENDING,"Die Frage COACH-03 in einer isolierten Session mit dem historischen Skill stellen. Antwort, Modell, Quellen und Bewertung aller Pflichtbestandteile protokollieren."
+COACH-04,coach,Harmony Coach,PENDING,"Die Frage COACH-04 in einer isolierten Session mit dem historischen Skill stellen. Antwort, Modell, Quellen und Bewertung aller Pflichtbestandteile protokollieren."
+COACH-05,coach,Harmony Coach,PENDING,"Die Frage COACH-05 in einer isolierten Session mit dem historischen Skill stellen. Antwort, Modell, Quellen und Bewertung aller Pflichtbestandteile protokollieren."
+KB-M09-LOOP-HEAR,sample,PROG-001-HÖRPRAXIS,PENDING,Zwei Audiofassungen mit C- bzw. A-zentrierter Melodie erstellen und einer fachkundigen Person in verdeckter Reihenfolge vorspielen.
+COACH-06,coach,Harmony Coach,PENDING,"COACH-06 mit festgehaltenem Modell und dem historischen Skill ausführen, Rohantwort sichern und anhand der Sollbestandteile fachlich bewerten."
+COACH-07,coach,Harmony Coach,PENDING,"COACH-07 mit festgehaltenem Modell und dem historischen Skill ausführen, Rohantwort sichern und anhand der Sollbestandteile fachlich bewerten."
+COACH-08,coach,Harmony Coach,PENDING,"COACH-08 mit festgehaltenem Modell und dem historischen Skill ausführen, Rohantwort sichern und anhand der Sollbestandteile fachlich bewerten."
+COACH-09,coach,Harmony Coach,PENDING,"COACH-09 mit festgehaltenem Modell und dem historischen Skill ausführen, Rohantwort sichern und anhand der Sollbestandteile fachlich bewerten."
+COACH-10,coach,Harmony Coach,PENDING,"COACH-10 mit festgehaltenem Modell und dem historischen Skill ausführen, Rohantwort sichern und anhand der Sollbestandteile fachlich bewerten."
+COACH-11,coach,Harmony Coach,PENDING,"COACH-11 mit festgehaltenem Modell und dem historischen Skill ausführen, Rohantwort sichern und anhand der Sollbestandteile fachlich bewerten."
+COACH-12,coach,Harmony Coach,PENDING,"COACH-12 mit festgehaltenem Modell und dem historischen Skill ausführen, Rohantwort sichern und anhand der Sollbestandteile fachlich bewerten."
+KB-SRC-033-PROVENANCE,backlog,SRC-033,PENDING,Die angegebene Publikation bibliografisch suchen und von Oliver Prehns Lehrseite abgrenzen. Originalausgabe oder Katalognachweis mit Fundstelle vorlegen.
+KB-GRAPH-NODES,backlog,Wissensgraph,PENDING,Kanonische Knotendefinitionen für die offenen IDs anlegen oder die Relationen ausdrücklich als historische Hypothesen markieren. Pro Kante eine Fundstelle oder Claim-ID erfassen.
+KB-HISTORY-F00412,backlog,F00412,PENDING,Die lokal wiedergefundene Registerfassung (sechs MATCH im Hashabgleich vom 13.11.2026) dauerhaft einem zugänglichen Archiv zuordnen und Herkunft sowie Rechte belegen. Lokale Hashidentität ersetzt keine Provenienzabnahme.
+KB-HISTORY-F00571,backlog,F00571,PENDING,Die lokal wiedergefundene Registerfassung (sechs MATCH im Hashabgleich vom 13.11.2026) dauerhaft einem zugänglichen Archiv zuordnen und Herkunft sowie Rechte belegen. Lokale Hashidentität ersetzt keine Provenienzabnahme.
+KB-HISTORY-F00704,backlog,F00704,PENDING,Die lokal wiedergefundene Registerfassung (sechs MATCH im Hashabgleich vom 13.11.2026) dauerhaft einem zugänglichen Archiv zuordnen und Herkunft sowie Rechte belegen. Lokale Hashidentität ersetzt keine Provenienzabnahme.
+KB-HISTORY-F00768,backlog,F00768,PENDING,Die lokal wiedergefundene Registerfassung (sechs MATCH im Hashabgleich vom 13.11.2026) dauerhaft einem zugänglichen Archiv zuordnen und Herkunft sowie Rechte belegen. Lokale Hashidentität ersetzt keine Provenienzabnahme.
+KB-HISTORY-F00937,backlog,F00937,PENDING,Die lokal wiedergefundene Registerfassung (sechs MATCH im Hashabgleich vom 13.11.2026) dauerhaft einem zugänglichen Archiv zuordnen und Herkunft sowie Rechte belegen. Lokale Hashidentität ersetzt keine Provenienzabnahme.
+KB-HISTORY-F01002,backlog,F01002,PENDING,Die lokal wiedergefundene Registerfassung (sechs MATCH im Hashabgleich vom 13.11.2026) dauerhaft einem zugänglichen Archiv zuordnen und Herkunft sowie Rechte belegen. Lokale Hashidentität ersetzt keine Provenienzabnahme.
+KB-HISTORY-PPR-MIDI-01,backlog,PPR-MIDI-01,PENDING,"Originallieferung, Dateiliste, Prüfsummen und Rechtebeleg für das MIDI-Paket vorlegen. Das Register enthält einen Platzhalter."
+KB-HISTORY-PPR-MIDI-02,backlog,PPR-MIDI-02,PENDING,"Originallieferung, Dateiliste, Prüfsummen und Rechtebeleg für das MIDI-Paket vorlegen. Das Register enthält einen Platzhalter."
+KB-HISTORY-PPR-MIDI-03,backlog,PPR-MIDI-03,PENDING,"Originallieferung, Dateiliste, Prüfsummen und Rechtebeleg für das MIDI-Paket vorlegen. Das Register enthält einen Platzhalter."
+KB-HISTORY-PPR-MIDI-04,backlog,PPR-MIDI-04,PENDING,"Originallieferung, Dateiliste, Prüfsummen und Rechtebeleg für das MIDI-Paket vorlegen. Das Register enthält einen Platzhalter."

@@ -101,7 +101,10 @@ Bytes mit SHA-256 prüfen.
   `34f603614eae19caed79c0c752d7cc6a823707bc66c2fad4c72446dffea485fc`.
   Das Register nennt je 63.332 Bytes und
   `32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29`.
-  Der genaue Registerstand bleibt offen.
+  Eine spätere lokale Suche fand die exakte Registerfassung in Codex-
+  Sicherungsbäumen wieder: 63.332 Bytes, SHA-256 wie im Register.
+  [Reproduzierbarer Hashabgleich](../../docs/audit/fable-5.2/STEPS_FABLE_5_2_ARCHIVNACHWEISE.md#ergänzung-exakte-registerfassung-lokal-wiedergefunden-13112026).
+  Externe Herkunft, Rechte und öffentliche Archivzuordnung bleiben offen.
 - Bei PPR-MIDI-01 bis -04 enthält das Register 0 Bytes und den Platzhalter
   `PHYSICAL_MIDI_CORPUS_REVIEW` im Hashfeld. Der historische Commit
   enthält unter den jeweiligen Paketpfaden 18, 10, 5 und 3 MIDI-Dateien.

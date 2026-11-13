@@ -18,7 +18,7 @@ Die Kern-Suite prüft die Veröffentlichungspfade mit isolierten synthetischen
 Freigaben. Damit werden keine Desktop-, Audio- oder Produkt-MIDI-Abläufe abgenommen.
 
 Die [Golden-Datendatei](golden_cases/README.md) enthält 198
-Fälle. Davon werden 98 ausgeführt und 100 strukturell als
+Fälle. Davon werden 120 ausgeführt und 78 strukturell als
 Spezifikationsbeispiele geprüft. Der Golden-Check testet den
 Referenz-Evaluator. Die [produktiven Theory-Tests](test_theory_core.py) prüfen
 die Laufzeitfunktionen direkt, darunter die Frequenzberechnung. Die
