@@ -76,6 +76,8 @@ Fall-ID indizieren. Jeder Eintrag enthält `fingerprint` aus dem Ergebnis,
 Pflichtbestandteil auf einen booleschen Befund ab. Stale Versionen bleiben
 offen. Fehlende oder beanstandete Pflichtbestandteile blockieren den Fall.
 
+[Hörmaterial und Spielaufgabe für PAT-031, PROG-001 und P02](../../docs/audit/fable-5.2/STEPS_FABLE_5_2_ABNAHMEPROBEN.md)
+
 ## Harmony Coach
 
 `--scope coach` protokolliert Aufgaben und tatsächlich bewertete Antworten

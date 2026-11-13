@@ -608,3 +608,69 @@ sources:
     - "Pop piano accompaniment separates functional bass in the left hand from rhythmic chord textures in the right hand"
     - "Suspended chords (sus4, sus2, add9) provide emotional resonance without strong functional pull"
     - "Syncopated eighth-note anticipations give contemporary ballads dynamic forward momentum"
+
+- id: "SRC-0038"
+  title: "Intonational Injustice: A Defense of Just Intonation in the Performance of Renaissance Polyphony"
+  authors:
+    - "Jonathan Walker"
+  year: 1996
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains: ["M01"]
+  reference_url: https://www.mtosmt.org/issues/mto.96.2.6/mto.96.2.6.walker.html
+  reference_locator: "Music Theory Online 2(6), I.4–I.5"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0039"
+  title: "Algorithms for Mapping Diatonic Keyboard Tunings and Temperaments"
+  authors:
+    - "Kenneth P. Scholtz"
+  year: 1998
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains: ["M01"]
+  reference_url: https://www.mtosmt.org/issues/mto.98.4.4/mto.98.4.4.scholtz.html
+  reference_locator: "Music Theory Online 4(4), §§6.1–6.4"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0040"
+  title: "Quid non ebrietas dissignat? Willaert’s didactic demonstration of Syntonic tuning"
+  authors:
+    - "Roger Wibberley"
+  year: 2004
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains: ["M01"]
+  reference_url: https://www.mtosmt.org/retrofit/mto.04.10.1/mto.04.10.1.wibberley1.php
+  reference_locator: "Music Theory Online 10(1), paragraph 20 and preceding calculation"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0041"
+  title: "Scales and temperaments: the fivefold way"
+  authors:
+    - "Dave Benson"
+  year: 2006
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains: ["M01"]
+  reference_url: https://www.lpthe.jussieu.fr/~talon/MUSIC5.PDF
+  reference_locator: "Music: A Mathematical Offering, chapter 5, §5.11, Werckmeister III circle of fifths"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0042"
+  title: "Chord Symbols"
+  authors:
+    - "Megan Lavengood"
+  year: 2021
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains: ["M04"]
+  reference_url: https://viva.pressbooks.pub/openmusictheory/chapter/chord-symbols/
+  reference_locator: "Open Music Theory, Bass notes"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0043"
+  title: "Substitutions"
+  authors:
+    - "Megan Lavengood"
+  year: 2021
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains: ["M05"]
+  reference_url: https://viva.pressbooks.pub/openmusictheory/chapter/substitutions/
+  reference_locator: "Open Music Theory, Key Takeaways and Tritone Substitutions"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."

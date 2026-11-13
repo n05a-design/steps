@@ -54,9 +54,10 @@ Die Titelsuche im DNB-SRU-Dienst mit
 Eine Websuche nach Titel und Autor ergab keinen bibliografischen Treffer.
 WorldCat war über den verwendeten Zugriff nicht auswertbar. Für Robert
 Prehn, das Jahr 2017 und die Seitenangaben liegt damit kein Beleg vor.
-CLAIM-003 bis CLAIM-006 behalten die historische Zuordnung und führen
-den Status `SOURCE_REVIEW_REQUIRED`. Für ihre konkreten Aussagen sind
-separate Fachquellen erforderlich.
+Für CLAIM-003 bis CLAIM-006 liegen inzwischen getrennte Fundstellen
+zu den einzelnen Stimmungsmodellen vor. Die alten Seitenangaben bleiben
+als historische Zuschreibungen in den Zeilen erhalten. Die Nachweise zu
+den ersetzten Fundstellen stehen im [Quellenabgleich](../../docs/audit/fable-5.2/STEPS_FABLE_5_2_QUELLENABGLEICH.md).
 
 Oliver Prehns Lehrmaterial ist unter SRC-0003 verzeichnet. Die vier
 ausgewählten Familien liefern jeweils sieben Rotationen der Intervallfolge,
