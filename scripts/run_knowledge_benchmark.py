@@ -273,6 +273,32 @@ def evaluate(case, examples, claims, coach, manual):
                     and progression.roman_numerals in catalog_row and progression.chords_str in catalog_row
                     and r"V^7_{4/3}" in row and "ganzton" in row.lower()
                     and r"$D^7/A$" in document, actual)
+    elif method == "piano_backdoor":
+        module = PIANO.read_text(encoding="utf-8").partition("### Modul P18:")[2].partition("### Modul ")[0]
+        rows = re.findall(r"^- `([^`]+)` · `([^`]+)` · links `([^`]+)` · rechts `([^`]+)`$", module, re.MULTILINE)
+        stages, symbols, bass_notes, upper_notes = zip(*rows, strict=True)
+        progression = get_progression(data["progression"])
+        require(tuple(progression.chords_str.split(" - ")) == symbols, "Die notierten Akkorde weichen von der Progression ab.")
+        resolved = [resolve_roman_degree(stage, progression.default_key, convention="INT").symbol for stage in stages]
+        require(resolved == list(symbols), "Die notierten Stufen ergeben andere Akkorde.")
+        bass = [parse_spelling(note, "INT").midi_number for note in bass_notes]
+        right = [[parse_spelling(note, "INT").midi_number for note in notes.split()] for notes in upper_notes]
+        parsed = [parse_chord(symbol, "INT") for symbol in symbols]
+        require(all(note % 12 == chord.root.pitch_class for note, chord in zip(bass, parsed, strict=True)),
+                "Der notierte Bass enthält einen fremden Grundton.")
+        require(all(len(upper) == 3 and [note, *upper] == sorted({note, *upper}) for note, upper in zip(bass, right, strict=True)),
+                "Der Bass muss unter drei aufsteigenden rechten Stimmen liegen.")
+        played = [{note % 12 for note in [low, *high]} for low, high in zip(bass, right, strict=True)]
+        chord_tones = [chord.pitch_class_set for chord in parsed]
+        actual = {
+            "symbols": list(symbols),
+            "bass": bass,
+            "right": right,
+            "added_pitch_classes": [sorted(a - b) for a, b in zip(played, chord_tones, strict=True)],
+            "omitted_pitch_classes": [sorted(b - a) for a, b in zip(played, chord_tones, strict=True)],
+            "resolution": [b - a for a, b in zip(right[-2], right[-1], strict=True)],
+        }
+        require(actual == expected, actual)
     elif method == "piano_upper_structure":
         module = PIANO.read_text(encoding="utf-8").partition("### Modul P16:")[2].partition("### Modul ")[0]
         hands = re.search(r"^- Linke Hand: `([^`]+)`\n- Rechte Hand: `([^`]+)`$", module, re.MULTILINE)
