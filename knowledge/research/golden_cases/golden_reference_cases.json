@@ -1751,7 +1751,7 @@
     "theoretical_rule": "MIDI 1.0 Spezifikation: Middle C = 60",
     "source_citation": "MIDI Manufacturers Association",
     "original_phase414_id": "REF-0009",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0110",
@@ -1766,7 +1766,7 @@
     "theoretical_rule": "MIDI A440 = 69",
     "source_citation": "MIDI Manufacturers Association",
     "original_phase414_id": "REF-0010",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0111",
@@ -2500,7 +2500,7 @@
     "theoretical_rule": "2. Stimme von oben (67/G4) fällt eine Oktave nach unten (55/G3)",
     "source_citation": "SRC-002 (Levine 1995)",
     "original_phase414_id": "REF-0049",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0150",
@@ -2593,7 +2593,7 @@
     "theoretical_rule": "D (2) -> G (7) -> C (0)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0053",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0154",
@@ -2601,14 +2601,21 @@
     "category": "HARMONY",
     "title": "Quintfall-Intervall der II-V-I Verbindung",
     "input_params": {
-      "root_step_semitones": 5
+      "roots": [
+        2,
+        7,
+        0
+      ]
     },
-    "expected_output": 5,
+    "expected_output": [
+      5,
+      5
+    ],
     "tolerance": 0.0,
-    "theoretical_rule": "Quinte abwärts = Quarte aufwärts = 5 Halbtöne mod 12",
+    "theoretical_rule": "Grundtonschritte D–G–C auf dem chromatischen Kreis. Jeder Quintfall entspricht fünf Halbtönen aufwärts modulo 12.",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0054",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0155",
@@ -2631,21 +2638,17 @@
     "category": "HARMONY",
     "title": "Gemeinsamer Tritonus G7 und Db7",
     "input_params": {
-      "tones_g7": [
-        11,
-        5
-      ],
-      "tones_db7": [
-        5,
-        11
+      "chords": [
+        "G7",
+        "Db7"
       ]
     },
     "expected_output": true,
     "tolerance": 0.0,
-    "theoretical_rule": "Beide Akkorde teilen denselben Leitton-Tritonus B (11) und F (5)",
-    "source_citation": "SRC-002",
+    "theoretical_rule": "G7 und Db7 teilen F und die Tonklasse H/Cb. Die beiden gemeinsamen Töne bilden einen Tritonus.",
+    "source_citation": "Open Music Theory, Substitutions, https://viva.pressbooks.pub/openmusictheory/chapter/substitutions/",
     "original_phase414_id": "REF-0056",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0157",
@@ -2854,7 +2857,7 @@
     "theoretical_rule": "Reine Quinte (7) gefolgt von reiner Quinte (7) in Parallelbewegung ist verboten",
     "source_citation": "SRC-004 (Fux 1725)",
     "original_phase414_id": "REF-0068",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0169",
@@ -2872,7 +2875,7 @@
     "theoretical_rule": "Reine Oktave (0 mod 12) gefolgt von reiner Oktave in Parallelbewegung ist verboten",
     "source_citation": "SRC-004",
     "original_phase414_id": "REF-0069",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0170",
@@ -2904,7 +2907,7 @@
     "theoretical_rule": "Halbtonschritt aufwärts (71 -> 72) in der Oberstimme",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0071",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0172",
@@ -2920,7 +2923,7 @@
     "theoretical_rule": "Dissonante Septime (65) sinkt stufenweise nach unten zur Terz (64)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0072",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0173",
@@ -2936,7 +2939,7 @@
     "theoretical_rule": "Alt (67) liegt höher als Sopran (64) -> Stimmkreuzung liegt vor",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0073",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0174",
@@ -2960,7 +2963,7 @@
     "theoretical_rule": "F bleibt (0), A->G (-2), C->B (-1) -> Gesamtdistanz = 3 Halbtöne",
     "source_citation": "SRC-005",
     "original_phase414_id": "REF-0074",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0175",
@@ -3174,20 +3177,31 @@
     "category": "CLAVE",
     "title": "Afro-Cuban Son Clave 3:2 Onsets auf 16tel-Raster",
     "input_params": {
-      "grid_16": 16
+      "bar_eighths": [
+        [
+          "1",
+          "2+",
+          "4"
+        ],
+        [
+          "2",
+          "3"
+        ]
+      ],
+      "subdivisions_per_quarter": 4
     },
     "expected_output": [
       0,
-      3,
       6,
-      10,
-      12
+      12,
+      20,
+      24
     ],
     "tolerance": 0.0,
-    "theoretical_rule": "3er-Seite (0, 3, 6) gefolgt von 2er-Seite (10, 12)",
-    "source_citation": "Mauleón (1993)",
+    "theoretical_rule": "Zwei 4/4-Takte mit 16 Sechzehnteln pro Takt. Schläge 1, 2+, 4 und im zweiten Takt 2, 3.",
+    "source_citation": "STEPS Latin-Katalog, Son-Clave. Historischer Literaturhinweis Mauleón (1993), Ausgabe und Seite offen.",
     "original_phase414_id": "REF-0087",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0188",
@@ -3272,16 +3286,16 @@
     "case_id": "REF-0192",
     "domain": "M10",
     "category": "ERGONOMICS",
-    "title": "Dezimen-Intervallabstand in Halbtönen",
+    "title": "Große Dezime in Halbtönen",
     "input_params": {
-      "interval": "Tenth"
+      "interval": "M10"
     },
     "expected_output": 16,
     "tolerance": 0.0,
-    "theoretical_rule": "Oktave + große Terz (12 + 4 = 16 Halbtöne)",
+    "theoretical_rule": "Die große Dezime besteht aus Oktave und großer Terz. Die kleine Dezime misst 15 Halbtöne.",
     "source_citation": "Pianistische Ergonomie",
     "original_phase414_id": "REF-0092",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0193",

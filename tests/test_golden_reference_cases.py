@@ -8,7 +8,12 @@ import math
 import re
 import unittest
 
+from src.steps.progression import (
+    absolute_semitone_distance, detect_parallel_fifths_octaves, detect_voice_crossing,
+    guide_tone_resolution, resolve_roman_degree,
+)
 from src.steps.theory import (
+    DiatonicInterval, directed_semitones,
     midi_to_frequency, midi_to_pitch_class, parse_chord, parse_spelling,
     semitones_between, make_drop2_voicing,
 )
@@ -127,7 +132,7 @@ class TestGoldenReferenceCases(unittest.TestCase):
                 note = p['midi_note'] if 'midi_note' in p else parse_spelling(p['note'], 'INT').midi_number
                 self.assertEqual(midi_to_pitch_class(note), exp)
             elif cid in ['REF-0109', 'REF-0110']:
-                actual = p['semitone_offset'] + (p['octave'] + 1) * 12
+                actual = parse_spelling(p['note'], 'INT').midi_number
                 self.assertEqual(actual, exp)
             elif cid in ['REF-0111', 'REF-0112']:
                 actual = midi_to_frequency(p["midi_note"])
@@ -172,11 +177,36 @@ class TestGoldenReferenceCases(unittest.TestCase):
                 q_map = {'REF-0142': '7', 'REF-0143': 'maj7', 'REF-0144': 'min7', 'REF-0145': 'half_diminished'}
                 actual = tri.construct_seventh_pitch_classes(0, q_map[cid])
                 self.assertEqual(actual, exp)
+            elif cid == 'REF-0149':
+                self.assertEqual(make_drop2_voicing(p['close_voicing']), exp)
             elif cid in ['REF-0035', 'REF-0050']:
                 actual = sorted(int(pc) for pc in parse_chord(p['chord'], 'INT').voiced_pitch_classes)
                 self.assertEqual(actual, exp)
 
-            # 4. Voice Leading
+            # 4. Harmony and voice leading
+            elif cid == 'REF-0153':
+                chords = [resolve_roman_degree(degree, p['key'], convention='INT')
+                          for degree in p['prog'].split('-')]
+                self.assertEqual([int(chord.root.pitch_class) for chord in chords], exp)
+            elif cid == 'REF-0154':
+                roots = p['roots']
+                self.assertEqual([(b - a) % 12 for a, b in zip(roots, roots[1:])], exp)
+            elif cid == 'REF-0156':
+                a, b = (parse_chord(symbol, 'INT') for symbol in p['chords'])
+                shared = sorted(a.pitch_class_set & b.pitch_class_set)
+                self.assertEqual(len(shared) == 2 and shared[1] - shared[0] == 6, exp)
+            elif cid in ['REF-0168', 'REF-0169']:
+                start = [p['v1_start'], p['v2_start']]
+                end = [p['v1_end'], p['v2_end']]
+                self.assertEqual(bool(detect_parallel_fifths_octaves(start, end)), exp)
+            elif cid == 'REF-0171':
+                self.assertEqual(directed_semitones(p['leading_tone'], p['tonic']), exp)
+            elif cid == 'REF-0172':
+                self.assertEqual(guide_tone_resolution(p['seventh'], p['third']), exp)
+            elif cid == 'REF-0173':
+                self.assertEqual(detect_voice_crossing([p['alto'], p['soprano']]), exp)
+            elif cid == 'REF-0174':
+                self.assertEqual(absolute_semitone_distance(p['dm7'], p['g7']), exp)
             elif cid == 'REF-0019':
                 actual = tri.voice_leading_circular_pc_distance(p['chord1'], p['chord2'])
                 self.assertEqual(actual, exp)
@@ -227,6 +257,14 @@ class TestGoldenReferenceCases(unittest.TestCase):
             elif cid in ['REF-0091', 'REF-0092']:
                 actual = sum(p['subdivision']) * (p['ppq'] // 2)
                 self.assertEqual(actual, exp)
+            elif cid == 'REF-0187':
+                subdivisions = p['subdivisions_per_quarter']
+                actual = []
+                for bar, beats in enumerate(p['bar_eighths']):
+                    for beat in beats:
+                        offset = (bar * 4 + int(beat[0]) - 1) * subdivisions
+                        actual.append(offset + (subdivisions // 2 if beat.endswith('+') else 0))
+                self.assertEqual(actual, exp)
             elif cid == 'REF-0099':
                 actual = sum(p['pattern'])
                 self.assertEqual(actual, exp)
@@ -253,6 +291,10 @@ class TestGoldenReferenceCases(unittest.TestCase):
             elif cid == 'REF-0106':
                 actual = round(p['tet_cent'] - p['just_cent'], 2)
                 self.assertAlmostEqual(actual, exp, delta=0.05)
+
+            elif cid == 'REF-0192':
+                quality, number = p['interval'][0], int(p['interval'][1:])
+                self.assertEqual(DiatonicInterval(number, quality).semitones, exp)
 
             # 7. MIDI time
             elif cid == 'REF-0197':
@@ -291,7 +333,7 @@ class TestGoldenReferenceCases(unittest.TestCase):
     def test_executable_cases_compute_their_expected_results(self):
         """Run every case classified as executable."""
         exec_cases = [c['case_id'] for c in self.cases if c['test_class'] in ['UNIT_TEST', 'PROPERTY_TEST', 'INTEGRATION_TEST']]
-        self.assertEqual(len(exec_cases), 60)
+        self.assertEqual(len(exec_cases), 74)
 
         passed = 0
         for cid in exec_cases:
@@ -313,10 +355,21 @@ class TestGoldenReferenceCases(unittest.TestCase):
         finally:
             self.case_map["REF-0021"] = original
 
+    def test_clave_rejects_eighth_positions_in_sixteenth_grid(self):
+        original = self.case_map["REF-0187"]
+        try:
+            self.case_map["REF-0187"] = {
+                **original, "expected_output": [0, 3, 6, 10, 12],
+            }
+            with self.assertRaises(AssertionError):
+                self.evaluate_executable_case("REF-0187")
+        finally:
+            self.case_map["REF-0187"] = original
+
     def test_specification_examples_have_required_fields(self):
         """Check structure of the cases classified as specification examples."""
         spec_cases = [c['case_id'] for c in self.cases if c['test_class'] == 'SPECIFICATION_EXAMPLE']
-        self.assertEqual(len(spec_cases), 138)
+        self.assertEqual(len(spec_cases), 124)
 
         verified = 0
         for cid in spec_cases:
