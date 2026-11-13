@@ -7,23 +7,19 @@ Die lokale Nachprüfung unten bezieht sich auf PR-Head
 `11c1a329c60f73a391c6b70d42af856d345610a0`; dessen Claims und Quellenmetadaten
 sind gegenüber dem ursprünglich geprüften PR-Stand unverändert.
 
-## Ergebnis und Grenzen
+## Abschließendes Ergebnis
 
-Die sieben musikalischen Aussagen sind innerhalb ihrer ausdrücklich genannten
-Modellgrenzen nachvollziehbar. Es wurde kein fachlicher Widerspruch festgestellt.
-Für die drei ii–V–I-Claims ist das Votum positiv. Für die vier Claims zu Pop-Loop
-und Mollsubdominante ist es hinsichtlich der konkreten neuen Quellenfassungen
-bedingt: Die beiden neuen Kapitel-URLs lieferten beim direkten Abruf HTTP 403.
-Indexierter Primärtext bzw. weitere Seiten desselben Lehrbuchs stützen die
-Aussagen, ersetzen aber keinen vollständigen aktuellen Direktvergleich der
-beiden Kapitel.
+**Positives fachliches Votum für alle sieben neuen Claim-Fassungen.** Die bisherige
+Beleglücke ist durch die vollständig gelesenen relevanten Textpassagen des neu
+bereitgestellten OMT-Version-2-PDFs und den Abgleich mit der auf OMT2 zurückgeführten
+LibreTexts-Fassung geschlossen. Die dokumentierten Modellgrenzen bleiben erhalten.
+Am Wortlaut, an den Quellenmetadaten und an den sieben Fingerabdrücken ist keine
+weitere Korrektur erforderlich.
 
-Die anschließende Prüfung der lokalen Ablage hat zusätzliche fachliche Belege
-geliefert, aber keine eindeutig identifizierten Originalkopien dieser beiden
-kanonischen Kapitel. Das musikalische Inhaltsvotum ist positiv; der konkrete
-Quellen- und Fassungsnachweis für diese vier Claims bleibt offen. Die lokale
-Nachprüfung ist damit dokumentiert, die Quellenmigration nicht vollständig
-verifiziert.
+Die genaue Identität des geprüften PDFs ist unten per SHA-256 festgehalten.
+Dies ist eine Inhalts- und Fundstellenprüfung anhand dieses Exports und der
+benannten Spiegelung; es ist keine Behauptung über die Byte-Identität einer
+jederzeit veränderbaren oder weiterhin mit HTTP 403 antwortenden HTML-Seite.
 
 Dies ist ein agentisches Prüfvotum, **keine menschliche Fachfreigabe**. Es wurden
 keine neuen Freigaben im Register eingetragen. Die sieben alten Registereinträge
@@ -34,9 +30,9 @@ bis zur echten erneuten Abnahme weiter blockieren.
 
 - [OMT: Roman Numerals](https://viva.pressbooks.pub/openmusictheory/chapter/roman-numerals/): direkt abrufbar; Stufenbezeichnung und Akkordqualitäten.
 - [OMT: ii–V–I](https://viva.pressbooks.pub/openmusictheory/chapter/ii-v-i/): direkt abrufbar; Key Takeaways zur Dur-Variante mit Septakkorden.
-- [OMT: Four-Chord Schemas](https://viva.pressbooks.pub/openmusictheory/chapter/4-chord-schemas/): Direktabruf HTTP 403; indexierter Text der kanonischen URL, Crawl laut Suchdienst etwa fünf Monate alt. Die Abschnitte Singer/Songwriter und Tonal ambiguity stützen Rotation und kontextabhängiges Dur-/Mollzentrum. Der Absatz zur Mehrdeutigkeit steht vor der Legende zu Example 4. Aktueller Direktvergleich offen.
+- [OMT: Four-Chord Schemas](https://viva.pressbooks.pub/openmusictheory/chapter/4-chord-schemas/): HTML-Direktabruf weiterhin HTTP 403; relevante Passagen nun vollständig im bereitgestellten OMT2-PDF auf gedruckten Seiten 612 und 614–615 sowie auf LibreTexts geprüft. Der Absatz zur Mehrdeutigkeit steht vor der Legende zu Example 4. Beleglücke geschlossen.
 - [Richards (2017): Tonal Ambiguity in Popular Music’s Axis Progressions](https://mtosmt.org/issues/mto.17.23.3/mto.17.23.3.richards.html): direkt abrufbar; Abs. [1], [9]–[11], [28]–[30] und Anm. 10 stützen die Kontextgrenzen der Analyse.
-- [OMT: Blues-Based Schemas, kanonische URL](https://viva.pressbooks.pub/openmusictheory/chapter/blues-based-schemas/): Direktabruf HTTP 403. Das Zielkapitel ist im kanonischen Inhaltsverzeichnis gelistet; sein aktueller Volltext wurde nicht direkt geprüft.
+- [OMT: Blues-Based Schemas, kanonische URL](https://viva.pressbooks.pub/openmusictheory/chapter/blues-based-schemas/): HTML-Direktzugang zuvor blockiert; relevante Passagen nun vollständig im bereitgestellten OMT2-PDF auf gedruckten Seiten 607 und 609 sowie auf LibreTexts geprüft. Beleglücke geschlossen.
 - [OMT: Blues-Based Schemas, bisherige Kopie](https://viva.pressbooks.pub/openmusictheorycopy/chapter/blues-based-schemas/): indexierter Primärtext stützt IV–iv–I und die absteigende Linie 6–♭6–5. Dies bestätigt den fachlichen Ausgangsbeleg, nicht die Identität der neuen Kapitelversion.
 - [OMT: kanonisches Glossar](https://viva.pressbooks.pub/openmusictheory/back-matter/glossary/), Eintrag minor iv schema, und [Schemas-Übersicht](https://viva.pressbooks.pub/openmusictheory/chapter/intro-to-pop-schemas/): indexierter Text der Hauptausgabe stützt das Schema zusätzlich.
 
@@ -47,13 +43,13 @@ gegengeprüft. Fremde Volltexte, Notenbilder und Medien wurden nicht übernommen
 
 | Claim | Fachlicher Gegencheck | Votum zur vorgeschlagenen Fassung |
 | --- | --- | --- |
-| PROG-001-HARMONY | Unter der expliziten Annahme C-Dur sind C, G, Am, F die Stufen I, V, vi, IV. Die Akkordtöne stimmen; daraus folgt keine eindeutige gehörte Tonika. | Inhaltlich positiv; neuer Four-Chord-Kapitelbeleg nur indexiert geprüft. |
-| PROG-001-TONAL-CENTER | Bei C als angenommenem Zentrum I–V–vi–IV; bei A in natürlichem Moll III–VII–i–VI. Richards und der indexierte OMT-Abschnitt stützen die Abhängigkeit von Melodie, Phrasierung, metrischem Beginn und Formkontext. | Inhaltlich positiv mit den vorhandenen Kontextgrenzen; aktuelle kanonische OMT-Passage noch direkt zu vergleichen. |
+| PROG-001-HARMONY | Unter der expliziten Annahme C-Dur sind C, G, Am, F die Stufen I, V, vi, IV. Die Akkordtöne stimmen; daraus folgt keine eindeutige gehörte Tonika. | Positiv; Four-Chord Schemas, Key Takeaways, PDF-Seite 637 / Druckseite 612, zusätzlich LibreTexts 7.9. |
+| PROG-001-TONAL-CENTER | Bei C als angenommenem Zentrum I–V–vi–IV; bei A in natürlichem Moll III–VII–i–VI. Richards und OMT stützen die Abhängigkeit von Melodie, Phrasierung, metrischem Beginn und Formkontext. | Positiv innerhalb des angegebenen Gültigkeitsbereichs; PDF-Seiten 639–640 / Druckseiten 614–615, zusätzlich LibreTexts 7.9. |
 | PROG-003-HARMONY | D–F–A–C, G–H–D–F, C–E–G–H ergeben ii⁷–V⁷–Imaj7 in C-Dur. OMT bestätigt die Akkordqualitäten. | Positiv. |
 | PROG-003-VOICE-II-V | C ist die Septime von Dm7, H die Terz von G7. MIDI 60→59 ergibt −1 Halbton. Dies ist eine eigene STEPS-Ableitung, keine behauptete vollständige Satzregel. | Positiv als lokale mögliche Stimme. |
 | PROG-003-VOICE-V-I | F ist die Septime von G7, E die Terz von Cmaj7. MIDI 65→64 ergibt −1 Halbton. | Positiv als lokale mögliche Stimme. |
-| PROG-009-HARMONY | C–F–Fm–C entspricht I–IV–iv–I in C-Dur. F–A–C wird zu F–As–C; das Grundtonmodell bleibt gleich. | Inhaltlich positiv; aktueller kanonischer Kapiteltext noch direkt zu vergleichen. |
-| PROG-009-VOICE-LEADING | A–As–G gehört nacheinander zu F, Fm, C. MIDI 69→68→67 ergibt zwei absteigende Halbtöne; das entspricht 6–♭6–5. | Inhaltlich positiv als lokale Stimme; Vorbehalt zur neuen Kapitelversion bleibt. |
+| PROG-009-HARMONY | C–F–Fm–C entspricht I–IV–iv–I in C-Dur. F–A–C wird zu F–As–C; das Grundtonmodell bleibt gleich. | Positiv; Blues-Based Schemas, Key Takeaways und Minor iv, PDF-Seiten 632/634 / Druckseiten 607/609, zusätzlich LibreTexts 7.8. |
+| PROG-009-VOICE-LEADING | A–As–G gehört nacheinander zu F, Fm, C. MIDI 69→68→67 ergibt zwei absteigende Halbtöne; das entspricht 6–♭6–5. | Positiv als lokale Stimme; dieselben PDF-Fundstellen benennen das Schema und seine absteigende Linie ausdrücklich. |
 
 Die unveränderte deutsche H/B-Konvention bleibt bestehen. Die drei Voice-Claims
 behaupten keine vollständigen Voicings und keine universell verbindliche
@@ -76,13 +72,66 @@ Stimmführungsregel.
 
 ## Noch erforderlich
 
-Die beiden kanonischen Kapitel direkt prüfen, danach die sieben konkreten
+Die Quellengegenprüfung ist abgeschlossen. Jetzt die sieben konkreten
 Claim-/Fingerprint-Paare durch ein zugelassenes menschliches Reviewkonto
-entscheiden lassen. Erst nach echten Belegen das Freigaberegister und die
+entscheiden lassen. Die [Freigabevorlage](PR22_FACHFREIGABE_VORLAGE.md) nennt
+alle sieben Fassungen und die benötigten Metadaten. Erst nach echten Belegen das Freigaberegister und die
 generierten Lerntexte aktualisieren und die Coverage erneut erzeugen. Dieser PR
 bleibt bis dahin Draft; es erfolgt kein Merge.
 
-## Nachprüfung der lokalen Ablage
+## Abschließende Gegenprüfung über OMT2-PDF und LibreTexts
+
+### Identität und Zugänge
+
+Bereitgestellt wurde `OPEN-MUSIC-THEORY-1688414869.pdf`, 17.906.219 Bytes,
+1.297 PDF-Seiten. SHA-256:
+`7ec47f487b1d4d8a1e128a6e35045fed9da8ae61b7a9c2d9e8b12d4a43544293`.
+PDF-Seiten 3–4 identifizieren *Open Music Theory, Version 2*, die sieben
+Hauptautoren und die Textlizenz CC BY-SA 4.0 mit gesonderten Medienbedingungen.
+Die Kapitel enthalten Rückverweise auf die kanonische Ausgabe
+`https://viva.pressbooks.pub/openmusictheory/`, für die beiden Kapitel auf die
+Beitrags-IDs `?p=1623` und `?p=1621`.
+
+Die [offizielle OMT2-Startseite](https://viva.pressbooks.pub/openmusictheory/)
+bietet unter Digital PDF den
+[Exportzugang](https://viva.pressbooks.pub/openmusictheory/open/download?type=pdf).
+Der Web-Prüfdienst erkannte dort einen PDF-Umfang von 17.906.219 Bytes, konnte
+den Export wegen seiner Größenbegrenzung aber nicht verarbeiten. Ein zusätzlicher
+lokaler HTTP-Abruf lieferte 403. Deshalb wird keine separat gemessene
+Remote-Prüfsumme behauptet. Geprüft wurde das oben eindeutig identifizierte
+bereitgestellte PDF, unterstützt durch die zugängliche OMT2-Spiegelung.
+
+- [LibreTexts 7.9: Four-Chord Schemas](https://human.libretexts.org/Bookshelves/Music/Music_Theory/Open_Music_Theory_2e_(Gotham_et_al.)/07%3A_Popular_Music/7.09%3A_Four-Chord_Schemas), Seiten-ID 232748, weist OMT2/VIVA als Quelle aus. Die Seite nennt als letzten Änderungsstand den 29. August 2025. Die relevanten Textpassagen sind zugänglich und stimmen inhaltlich mit den geprüften PDF-Passagen überein.
+- [LibreTexts 7.8: Blues-Based Schemas](https://human.libretexts.org/Bookshelves/Music/Music_Theory/Open_Music_Theory_2e_(Gotham_et_al.)/07%3A_Popular_Music/7.08%3A_Blues-Based_Schemas), Seiten-ID 232747, weist dieselbe Herkunft und denselben Änderungstag aus. Die Key Takeaways enthalten Schema und Skalenstufenlinie. Die PDF-Fassung wurde zusätzlich genutzt, weil bei der LibreTexts-Darstellung einzelne mathematische bzw. eingebettete Inhalte verkürzt erscheinen.
+- [openmusictheory.github.io](https://openmusictheory.github.io/) ist ein anderer Editionszugang. Er wird nicht als Nachweis einer identischen OMT2-Kapitelversion behandelt.
+- [Klavierspass: 4-Chord-Progressionen](https://www.klavierspass.ch/erfinde-musik/4-chord-progressionen) wurde als ergänzender didaktischer Zugang angesehen, ist für den Abschluss aber nicht nötig. Die Prüfung der OMT-Claims stützt sich auf OMT2 und die bereits dokumentierte Richards-Quelle.
+
+### Vollständig geprüfte relevante Passagen
+
+| Kapitel | PDF-Seite (1-basiert) | Gedruckte Seite | Ergebnis |
+| --- | --- | --- | --- |
+| Four-Chord Schemas, Key Takeaways | 637 | 612 | Die Rotation I–V–vi–IV und die relative Moll-Lesart sind benannt. |
+| Singer/Songwriter, Tonal ambiguity | 639 | 614 | Dur-/Mollzentrum und Mehrdeutigkeit bleiben offen. Melodische Bezugstöne, Zyklusgrenzen und umgebende Progressionen sind als Kontexthinweise genannt. Der Absatz steht vor der Legende zu Example 4. |
+| Formkontext, Example 5 | 640 | 615 | Der Wechsel zwischen Moll-Intro, mehrdeutiger Strophe und Dur-Refrain stützt den Bezug auf benachbarte Formteile. |
+| Blues-Based Schemas, Key Takeaways | 632 | 607 | IV–iv–I und 6–♭6–5 sind ausdrücklich zusammen aufgeführt. |
+| Minor iv | 634 | 609 | Der Text erläutert die Mollsubdominantenwendung und den absteigenden Halbtonverlauf. |
+
+Alle fünf Seiten wurden vollständig textuell und als gerenderte Seiten visuell
+geprüft. Die im PDF ausgelassenen interaktiven Audio-/Notenmodule wurden nicht
+als geprüft ausgegeben; die sieben Claims benötigen für ihre behaupteten
+Akkordtöne, lokalen Halbtonschritte und begrenzten Kontextaussagen keine
+Hörabnahme dieser konkreten Songaufnahmen. Es wurden keine fremden Volltexte,
+Notenbilder oder das gesamte PDF ins Repository übernommen.
+
+Der frühere Zugangsvorbehalt ist damit für die fachliche Belegprüfung dieser
+sieben Fassungen aufgehoben. Die Verfügbarkeit der beiden HTML-URLs und eine
+menschliche fachliche Entscheidung sind weiterhin eigenständige Sachverhalte.
+
+## Bisherige Nachprüfung der lokalen Ablage (historischer Zwischenstand)
+
+Die folgenden Abschnitte halten die Suche vor Bereitstellung des OMT2-PDFs fest.
+Ihre damaligen offenen Quellenbefunde sind durch die oben dokumentierte
+Gegenprüfung überholt; die menschliche Freigabe bleibt weiterhin offen.
 
 ### Umfang und Nachweisgrenze
 
