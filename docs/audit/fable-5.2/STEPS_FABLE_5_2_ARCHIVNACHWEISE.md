@@ -19,7 +19,34 @@ Der historische Registerwert
 `32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29`
 bei 63.332 Bytes blieb in diesen Beständen ohne Treffer. Die abweichenden
 Dateien sind eindeutig identifiziert. Die Registerfassung und ihre
-Herkunft bleiben offen.
+Herkunft blieben in dieser früheren Prüfung offen.
+
+### Ergänzung: exakte Registerfassung lokal wiedergefunden (13.11.2026)
+
+Die erneute Suche über alle lokalen Git-Refs einschließlich der Codex-
+Sicherungsbäume fand die Registerfassung als Blob
+`a1c1bd8389455e29e6124186a9a7108ca6c56fad`: 63.332 Bytes mit exakt
+`32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29`.
+Der Baum `5f1dea83c437aa54267e5f2ca9259a196f141852` enthält diesen Blob
+an allen sechs Registerpfaden. Er ist ein lokaler Sicherungsbaum, kein
+Commit auf dem öffentlichen `main`. Der Rohfund wurde zusätzlich lokal
+gesichert. Der [Prüfbericht](CSS_REGISTER_HASHABGLEICH_2026-11-13.json)
+enthält nur Pfade, Objekt-IDs, Größen und Prüfsummen.
+
+Mit Zugriff auf das lokale Objektarchiv lässt sich die Prüfung aus dem
+Repository-Root wiederholen:
+
+```sh
+python -B scripts/verify_registered_git_files.py --repository <lokales-Objektarchiv> --tree 5f1dea83c437aa54267e5f2ca9259a196f141852 --ids F00412 F00571 F00704 F00768 F00937 F01002 --json-out css-verification.json
+```
+
+Ergebnis: sechs `MATCH`. Der Prüfer liest Rohblobs ohne Checkout-Filter.
+Fehlende oder abweichende Dateien liefern Exit 1; ein nicht verfügbarer
+Baum oder ungültige Registerdaten Exit 2. Ein frischer GitHub-Clone hat
+diesen lokalen Sicherungsbaum nicht automatisch. Die Hashidentität ist
+damit lokal geklärt. Externe Herkunft, Nutzungsrechte und eine dauerhaft
+zugängliche Archivzuordnung bleiben offen. Die sechs manuellen
+Benchmarkfälle bleiben bis zu dieser Abnahme `PENDING`.
 
 ## PPR-MIDI-01 bis PPR-MIDI-04
 

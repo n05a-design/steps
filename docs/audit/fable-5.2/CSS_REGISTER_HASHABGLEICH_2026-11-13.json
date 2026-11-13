@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "tree": "5f1dea83c437aa54267e5f2ca9259a196f141852",
+  "scope": "byte identity only; provenance and rights unreviewed",
+  "counts": {
+    "MATCH": 6
+  },
+  "results": [
+    {
+      "file_id": "F00412",
+      "path": "research/STEPS_Bibliothek/ANTI-MASS_ From Uganda into the Unknown _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css",
+      "expected_size": 63332,
+      "expected_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "status": "MATCH",
+      "blob": "a1c1bd8389455e29e6124186a9a7108ca6c56fad",
+      "observed_size": 63332,
+      "observed_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29"
+    },
+    {
+      "file_id": "F00571",
+      "path": "research/STEPS_Bibliothek/Cloudchord_ Tending the Bloom Bap Garden _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css",
+      "expected_size": 63332,
+      "expected_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "status": "MATCH",
+      "blob": "a1c1bd8389455e29e6124186a9a7108ca6c56fad",
+      "observed_size": 63332,
+      "observed_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29"
+    },
+    {
+      "file_id": "F00704",
+      "path": "research/STEPS_Bibliothek/Download the Live Set of Artefakt’s New Track “Undertow”_files/embedded_player-d605d516704fd10722142526feae0317.css",
+      "expected_size": 63332,
+      "expected_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "status": "MATCH",
+      "blob": "a1c1bd8389455e29e6124186a9a7108ca6c56fad",
+      "observed_size": 63332,
+      "observed_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29"
+    },
+    {
+      "file_id": "F00768",
+      "path": "research/STEPS_Bibliothek/Download the Live Set of DJ Gigola’s New Track “Unfolding Practice II” _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css",
+      "expected_size": 63332,
+      "expected_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "status": "MATCH",
+      "blob": "a1c1bd8389455e29e6124186a9a7108ca6c56fad",
+      "observed_size": 63332,
+      "observed_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29"
+    },
+    {
+      "file_id": "F00937",
+      "path": "research/STEPS_Bibliothek/Dummy_ Inside The Machine, Outside The Box_files/embedded_player-d605d516704fd10722142526feae0317.css",
+      "expected_size": 63332,
+      "expected_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "status": "MATCH",
+      "blob": "a1c1bd8389455e29e6124186a9a7108ca6c56fad",
+      "observed_size": 63332,
+      "observed_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29"
+    },
+    {
+      "file_id": "F01002",
+      "path": "research/STEPS_Bibliothek/Machinedrum_ Planting Seeds_files/embedded_player-d605d516704fd10722142526feae0317.css",
+      "expected_size": 63332,
+      "expected_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "status": "MATCH",
+      "blob": "a1c1bd8389455e29e6124186a9a7108ca6c56fad",
+      "observed_size": 63332,
+      "observed_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29"
+    }
+  ]
+}
