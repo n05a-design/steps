@@ -645,6 +645,73 @@
       "next_step": "Notierte Tonhöhen, tiefsten Ton und die Erweiterungen über C3 neu berechnen."
     },
     {
+      "id": "KB-P18-VOICINGS",
+      "scope": "catalog",
+      "content": "P18",
+      "domain": "M10",
+      "question": "Welche Basstöne, Erweiterungen und Stimmwege sind in der notierten Backdoor-Übung tatsächlich enthalten?",
+      "expected": {
+        "symbols": [
+          "Fm7",
+          "Bb7",
+          "Cmaj7"
+        ],
+        "bass": [
+          53,
+          46,
+          48
+        ],
+        "right": [
+          [
+            56,
+            63,
+            67
+          ],
+          [
+            56,
+            60,
+            62
+          ],
+          [
+            55,
+            59,
+            64
+          ]
+        ],
+        "added_pitch_classes": [
+          [
+            7
+          ],
+          [
+            0
+          ],
+          []
+        ],
+        "omitted_pitch_classes": [
+          [
+            0
+          ],
+          [
+            5
+          ],
+          []
+        ],
+        "resolution": [
+          -1,
+          -1,
+          2
+        ]
+      },
+      "variants": [],
+      "basis": "Notierte P18-Lagen und PROG-017. Fm7 = F–Ab–C–Eb, Bb7 = Bb–D–F–Ab, Cmaj7 = C–E–G–B. Die Sollwerte beziehen sich auf die konkrete Oktavlage.",
+      "method": "piano_backdoor",
+      "input": {
+        "progression": "PROG-017"
+      },
+      "mandatory": true,
+      "next_step": "Die notierten Stimmen und ihre Rollen mit dem Akkordsymbol abgleichen; anschließend die Abstände neu berechnen."
+    },
+    {
       "id": "KB-P19",
       "scope": "catalog",
       "content": "P19",
@@ -1569,6 +1636,102 @@
       },
       "mandatory": false,
       "next_step": "Bei einer Vertragsänderung die erwarteten Werte mit einem unabhängigen Beispiel aktualisieren."
+    },
+    {
+      "id": "KB-PAT-027-RASTER",
+      "scope": "catalog",
+      "content": "PAT-027",
+      "domain": "M08",
+      "question": "Welche Tickpositionen und Taktdauer ergeben sich aus dem notierten Raster für PAT-027?",
+      "expected": {
+        "meter": [
+          4,
+          4
+        ],
+        "bpm": 128,
+        "beat_unit": "Viertel",
+        "ppq": 480,
+        "bars": 2,
+        "ticks_per_bar": 1920,
+        "onsets": [
+          0,
+          720,
+          1440,
+          2400,
+          3120
+        ],
+        "bar_seconds": 1.875
+      },
+      "variants": [],
+      "basis": "Cross-Stick im Latin-Übungsmodell. Die Sollwerte folgen aus den notierten Positionen und der gewählten Tempoeinheit.",
+      "method": "latin_timing",
+      "input": {
+        "voice": "Cross-Stick"
+      },
+      "mandatory": true,
+      "next_step": "Raster, Taktgrenzen und Tempoeinheit mit der Katalogzeile und den unabhängigen Tickwerten abgleichen."
+    },
+    {
+      "id": "KB-PAT-028-RASTER",
+      "scope": "catalog",
+      "content": "PAT-028",
+      "domain": "M08",
+      "question": "Welche Tickpositionen und Taktdauer ergeben sich aus dem notierten Raster für PAT-028?",
+      "expected": {
+        "meter": [
+          4,
+          4
+        ],
+        "bpm": 116,
+        "beat_unit": "Viertel",
+        "ppq": 480,
+        "bars": 1,
+        "ticks_per_bar": 1920,
+        "onsets": [
+          1440,
+          1680
+        ],
+        "bar_seconds": 2.068966
+      },
+      "variants": [],
+      "basis": "Offene High Conga im Latin-Übungsmodell. Die Sollwerte folgen aus den notierten Positionen und der gewählten Tempoeinheit.",
+      "method": "latin_timing",
+      "input": {
+        "voice": "Offene High Conga"
+      },
+      "mandatory": true,
+      "next_step": "Raster, Taktgrenzen und Tempoeinheit mit der Katalogzeile und den unabhängigen Tickwerten abgleichen."
+    },
+    {
+      "id": "KB-PAT-029-RASTER",
+      "scope": "catalog",
+      "content": "PAT-029",
+      "domain": "M08",
+      "question": "Welche Tickpositionen und Taktdauer ergeben sich aus dem notierten Raster für PAT-029?",
+      "expected": {
+        "meter": [
+          2,
+          2
+        ],
+        "bpm": 105,
+        "beat_unit": "Halbe",
+        "ppq": 480,
+        "bars": 1,
+        "ticks_per_bar": 1920,
+        "onsets": [
+          0,
+          960
+        ],
+        "bar_seconds": 1.142857
+      },
+      "variants": [],
+      "basis": "Halbenpuls im Latin-Übungsmodell. Die Sollwerte folgen aus den notierten Positionen und der gewählten Tempoeinheit.",
+      "method": "latin_timing",
+      "input": {
+        "voice": "Halbenpuls"
+      },
+      "mandatory": true,
+      "next_step": "Raster, Taktgrenzen und Tempoeinheit mit der Katalogzeile und den unabhängigen Tickwerten abgleichen."
     },
     {
       "id": "KB-PAT-026-TICKS",

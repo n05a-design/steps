@@ -37,11 +37,17 @@
 | `PAT-024` | Boom-Bap Golden Era | 90 BPM | 4/4 61% MPC 3000 (+26 Ticks [Tick 146 / 36.11 ms @ 90 BPM; ERR-034]) | 1 und 2e+ (Synkope vor 3) | Fester Backbeat 2 & 4 mit Ghosting | Durchgehende 16tel mit Velocity-Drift |
 | `PAT-025` | Berlin 909 Peak Techno | 130 BPM | 4/4 Straight Four-on-the-Floor | Wuchtige Kicks auf 1, 2, 3, 4 | Clap auf 2 & 4; Ghost Kick T2 4e+ | Offbeat Open Hat (46) + **3er-Rimshot (37)** |
 | `PAT-026` | UK Garage 2-Step Heavy | 132 BPM | 4/4 64% Swing (480 PPQ, Tick 154, +34 Ticks) | 1 und 3+; T2 Synkope auf 1e+ | Side Stick / Clap auf 2 & 4 | Schleppende Ghost Hats |
-| `PAT-027` | **Bossa Nova Authentic Brush** | 128 BPM | 4/4 Brazilian Clave | Surdo-Puls auf 1 (leise) und 3 (betont) | **Cross-Stick (37) spielt Bossa-Clave** | Fließender Shaker / Brush-Besen (42) |
-| `PAT-028` | **Afro-Cuban Cha-Cha-Chá** | 116 BPM | 4/4 Campana & Conga | Geerdete Kicks auf 1 und 3 | Mute & Slap Congas; Guíro-Scrape | **Zwei offene Conga-Schläge auf 4 & 4+** |
-| `PAT-029` | **Samba Batucada Sectional** | 105 BPM | 2/2 Alla Breve Street Pulse | Surdo 1 & 2 Fundament | Snare Caixa Rolls auf 16teln | Agogô-Doppelglocken & Tamborim |
+| `PAT-027` | **Bossa Nova Authentic Brush** | 128 BPM | 4/4, zweitaktiges Übungsmuster (Viertel) | Surdo-Modell auf 1 (leise) und 3 (betont) | Cross-Stick (37) auf 1, 2+, 4 sowie 2, 3+ im zweiten Takt | Closed Hi-Hat (42), alternativ separat zugeordneter Shaker- oder Besenklang |
+| `PAT-028` | **Afro-Cuban Cha-Cha-Chá** | 116 BPM | 4/4 Campana & Conga (Viertel) | Geerdete Kicks auf 1 und 3 | Mute & Slap Congas; Guíro-Scrape | **Zwei offene Conga-Schläge auf 4 & 4+** |
+| `PAT-029` | **Samba Batucada Sectional** | 105 BPM | 2/2 Alla breve (Halbe) | Surdo-Modell auf den beiden Halbenpulsen | Snare Caixa Rolls auf 16teln | Agogô-Doppelglocken & Tamborim |
 | `PAT-030` | Phrygian Neo-Soul Halftime Shuffle | 84 BPM | 4/4 57% Swing (Tick 137 @ 480 PPQ) | Harter Downbeat-Kick auf 1, synkopierter Sub-Kick auf 3+ | Fetter Snare-Drag auf 2+, tiefer Backbeat auf 3 | Fließende Ghost-Notes & Closed/Pedal Hat Wechsel |
 | `PAT-031` | Afro-Cuban 6/8 Bembé Fusion | 120 BPM | 6/8 Polyrhythm (3:2) | Geerdeter Fundamentpuls auf 1 und 4 (gepunktete Viertel) | Bell-Pattern (12/8 Clave): X.X.XX.X.X.X auf Ride/Campana | Low/High Conga Tumbao mit offenem Slap auf Puls 5 |
+
+Die Bezeichnungen der Katalogzeilen erhalten ihre historische Identität.
+PAT-027 bis PAT-029 beschreiben STEPS-Übungen mit expliziten
+Tempoeinheiten und ausgewählten Stimmen. Die
+[notierten Raster](GENRE_RESEARCH_LATIN.md#notierte-ereignisse-und-zeitbasis)
+liefern die Tick- und Taktbasis für den Benchmark.
 
 ## PAT-031 · Zählvarianten für die offene Taktgrenze
 

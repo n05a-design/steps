@@ -56,19 +56,29 @@ Handspanne ab.
 ---
 
 
-### Modul P18: Backdoor Voicings & Stimmführung ($iv^7 - \flat VII^7 \to I^{\text{maj}7}$)
-* **Theorie-Referenz:** `PROG-017` (*Classical Jazz Backdoor ii–V*)
-* **Ziel:** Begleitung von Backdoor-Kadenzen mit geschmeidiger Stimmführung.
-* **Linke Hand:** Grundtöne $F \to B\flat \to C$ (oder $B\flat - A\flat$ Shell für $\flat VII^7$).
-* **Rechte Hand (Guide-Tone Leading):**
-  - $Fm^7$: Terz $A\flat$, Septime $E\flat$, None $G$ ($A\flat - E\flat - G$).
-  - $B\flat^7$: Terz $D$, Septime $A\flat$, None $C$ ($A\flat - C - D$).
-  - $C^{\text{maj}7}$: Terz $E$, Septime $B$, Quinte $G$ ($G - B - E$).
-* **Stimmführungs-Verifikation (Korrektur):**
-  - Die Septime von $B\flat^7$ ($A\flat$) sinkt um einen **Halbton** (1 Halbton) zur Quinte von $C^{\text{maj}7}$ ($G$).
-  - Die Terz von $B\flat^7$ ($D$) steigt um einen **Ganztonschritt** (**2 Halbtöne**, Intervall $D \to E$) zur Terz $E$, ODER sinkt um 2 Halbtöne zum Grundton $C$.
-  - Die Quinte von $B\flat^7$ ($F$) sinkt um einen **Halbton** zur Terz von $C$ ($E$).
-  - Die Behauptung eines Halbtonschritts von $D$ nach $E$ ist musiktheoretisch falsch und wurde korrigiert.
+### Modul P18: Backdoor Voicings & Stimmführung
+
+Grundlage ist die STEPS-Übungsfolge `PROG-017` in C-Dur. Das
+Backdoor-Schema verbindet die aus der Mollvariante entlehnte vierte Stufe
+über ♭VII⁷ mit der Durtonika. [Daan Bleij, Music Theory Online 25(4), Anm. 56](https://www.mtosmt.org/issues/mto.19.25.4/mto.19.25.4.bleij.html)
+
+Internationale Notation. Die rechte Hand ist von der tiefsten zur höchsten
+Stimme notiert. Die linke Hand spielt jeweils den Grundton.
+
+- `iv7` · `Fm7` · links `F3` · rechts `Ab3 Eb4 G4`
+- `bVII7` · `Bb7` · links `Bb2` · rechts `Ab3 C4 D4`
+- `Imaj7` · `Cmaj7` · links `C3` · rechts `G3 B3 E4`
+
+In der ersten Lage ergänzt G die None zu Fm7, in der zweiten C die None
+zu B♭7. Die Quinten C und F sind in den jeweiligen Lagen ausgelassen.
+So ergeben sich konkrete Voicings von Fm9 und B♭9. Cmaj7 enthält
+Grundton, Terz, Quinte und große Septime. Für die Praxis der Auslassung
+siehe [Open Music Theory, Jazz Voicings, Omission and doubling](https://viva.pressbooks.pub/openmusictheory/chapter/jazz-voicings/).
+
+Von B♭9 zu Cmaj7 sinkt die Septime A♭3 zu G3 um einen Halbton, die
+None C4 zu H3 um einen Halbton, und die Terz D4 steigt zu E4 um einen
+Ganzton. Ein Weg F → E setzt eine andere B♭7-Lage mit der Quinte F voraus.
+Den Anschlagkomfort der Lagen im Spielversuch prüfen.
 
 ---
 
