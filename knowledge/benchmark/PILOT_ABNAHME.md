@@ -1,6 +1,6 @@
 # Pilot · fachliche Abnahmeliste
 
-**Dokumentierte Freigaben im Register: 1 von 8.**
+**Dokumentierte Freigaben im Register: 8 von 8.**
 
 Je Aussage im Draft-PR entscheiden: freigegeben, Korrektur erforderlich oder Beleg fehlt.
 Für jede Freigabe Claim-ID und vollständigen Fassungsfingerabdruck angeben.
@@ -22,7 +22,7 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 
 ## PROG-001-HARMONY
 
-- Stand · Erneute Prüfung erforderlich
+- Stand · Freigabe eingetragen
 - Art · `fact`
 - Fassung · `7a9f0ca6312eaa8837c45a624a0ca50cdde3f9af323e8fc81094519cd7c53a63`
 - Wortlaut · Unter der Annahme C-Dur entsprechen C–G–Am–F den Stufen I–V–vi–IV.
@@ -33,10 +33,11 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 - Prüffrage · Welche Stufen, Akkorde und Tonklassen enthält PROG-001 in C-Dur?
 - Sollantwort · `{"stages": ["I", "V", "vi", "IV"], "chords": ["C", "G", "Am", "F"], "pitch_classes": [[0, 4, 7], [2, 7, 11], [0, 4, 9], [0, 5, 9]]}`
 - Herleitung · C-Dur-Diatonik und Terzschichtung. Open Music Theory, Roman Numerals, Example 3 und Four-Chord Schemas, Singer/Songwriter Schema.
+- Entscheidung · [n05a-design](https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635) · 2026-11-13
 
 ## PROG-001-TONAL-CENTER
 
-- Stand · Erneute Prüfung erforderlich
+- Stand · Freigabe eingetragen
 - Art · `style_interpretation`
 - Fassung · `b39ac7b557f1d7846c3c7ec006ebec60b0fbc78b205ae1540d14817ee849a789`
 - Wortlaut · Der Pop-Loop aus C, G, Am und F kann C oder A als tonales Zentrum nahelegen oder mehrdeutig bleiben. Melodie und Phrasierung, Loop-Beginn, metrische Betonung und benachbarte Formteile beeinflussen die Wahrnehmung.
@@ -47,10 +48,11 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 - Prüffrage · Wie kann der Loop C–G–Am–F C oder A als tonales Zentrum nahelegen, und welche Hinweise prägen die Wahrnehmung?
 - Sollantwort · `{"centers": ["C", "A"], "minor_stages": ["III", "VII", "i", "VI"], "chords": ["C", "G", "Am", "F"], "required_context": "Melodie und Phrasierung, Loop-Beginn, metrische Betonung und benachbarte Formteile können C oder A als Zentrum stützen. Die Akkordfolge allein lässt das gehörte Zentrum offen."}`
 - Herleitung · Open Music Theory, Four-Chord Schemas, Abschnitt Tonal ambiguity, Absatz vor der Legende zu Example 4. Die Moll-Lesart folgt aus natürlichem A-Moll. Richards (2017), Abs. [1], [9]–[11] und [29]–[30], belegt die Kontexthinweise an Axis-Progressionen.
+- Entscheidung · [n05a-design](https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635) · 2026-11-13
 
 ## PROG-003-HARMONY
 
-- Stand · Erneute Prüfung erforderlich
+- Stand · Freigabe eingetragen
 - Art · `fact`
 - Fassung · `f9224530c773e01d2da4ebc8136b7b10bdf073bc5079b866c003501441faec7a`
 - Wortlaut · Dm7–G7–Cmaj7 bildet in C-Dur die Jazzfolge ii⁷–V⁷–Imaj7.
@@ -60,10 +62,11 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 - Prüffrage · Welche Stufen, Akkorde und Tonklassen enthält PROG-003 in C-Dur?
 - Sollantwort · `{"stages": ["ii^7", "V^7", "I^maj7"], "chords": ["Dm7", "G7", "Cmaj7"], "pitch_classes": [[0, 2, 5, 9], [2, 5, 7, 11], [0, 4, 7, 11]]}`
 - Herleitung · Terzschichtung über D, G, C. Open Music Theory, ii–V–I, Key Takeaways zur Dur-Variante.
+- Entscheidung · [n05a-design](https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635) · 2026-11-13
 
 ## PROG-003-VOICE-II-V
 
-- Stand · Erneute Prüfung erforderlich
+- Stand · Freigabe eingetragen
 - Art · `fact`
 - Fassung · `9dd3c60c8090e001841f83b29ca8c34f7071362ca6984fd107cfa9f3aadf2fcf`
 - Wortlaut · Eine mögliche Stimme sinkt von C im Dm7 zu H im G7 um einen Halbton.
@@ -73,10 +76,11 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 - Prüffrage · Welche Akkorde tragen die angegebene Stimme und um wie viele Halbtöne sinkt sie je Übergang?
 - Sollantwort · `{"path": [[0, "C4"], [1, "H3"]], "midi": [60, 59], "delta": [-1]}`
 - Herleitung · Dm7 enthält C, G7 enthält H. 59−60=−1. OMT ii–V–I stützt Akkordqualitäten, die konkrete Stimme ist abgeleitet.
+- Entscheidung · [n05a-design](https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635) · 2026-11-13
 
 ## PROG-003-VOICE-V-I
 
-- Stand · Erneute Prüfung erforderlich
+- Stand · Freigabe eingetragen
 - Art · `fact`
 - Fassung · `ae607536c2e00567c466a8367dbb30ffe24efc92c21fcce8a2237b25a05ba564`
 - Wortlaut · Eine mögliche Stimme sinkt von F im G7 zu E im Cmaj7 um einen Halbton.
@@ -86,10 +90,11 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 - Prüffrage · Welche Akkorde tragen die angegebene Stimme und um wie viele Halbtöne sinkt sie je Übergang?
 - Sollantwort · `{"path": [[1, "F4"], [2, "E4"]], "midi": [65, 64], "delta": [-1]}`
 - Herleitung · G7 enthält F, Cmaj7 enthält E. 64−65=−1. OMT ii–V–I stützt Akkordqualitäten, die konkrete Stimme ist abgeleitet.
+- Entscheidung · [n05a-design](https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635) · 2026-11-13
 
 ## PROG-009-HARMONY
 
-- Stand · Erneute Prüfung erforderlich
+- Stand · Freigabe eingetragen
 - Art · `fact`
 - Fassung · `adadf2ef5902cb9b2f115060361f224a6faf15c766dfee99967badac4a363969`
 - Wortlaut · C–F–Fm–C realisiert in C-Dur I–IV–iv–I mit einer Mollsubdominante.
@@ -99,10 +104,11 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 - Prüffrage · Welche Stufen, Akkorde und Tonklassen enthält PROG-009 in C-Dur?
 - Sollantwort · `{"stages": ["I", "IV", "iv", "I"], "chords": ["C", "F", "Fm", "C"], "pitch_classes": [[0, 4, 7], [0, 5, 9], [0, 5, 8], [0, 4, 7]]}`
 - Herleitung · Dreiklänge mit unverändertem F-Grundton und abgesenkter Terz. Open Music Theory, Blues-Based Schemas, Plagal Sigh.
+- Entscheidung · [n05a-design](https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635) · 2026-11-13
 
 ## PROG-009-VOICE-LEADING
 
-- Stand · Erneute Prüfung erforderlich
+- Stand · Freigabe eingetragen
 - Art · `fact`
 - Fassung · `051dca398ee6da3c5074a8390de246fe88733a4df17469582a1b09a0fbcf71bc`
 - Wortlaut · Eine mögliche Stimme verbindet A in F-Dur, As in F-Moll und G in C-Dur durch zwei absteigende Halbtonschritte.
@@ -112,3 +118,4 @@ Bei Korrektur oder fehlendem Beleg bitte die konkrete Passage benennen.
 - Prüffrage · Welche Akkorde tragen die angegebene Stimme und um wie viele Halbtöne sinkt sie je Übergang?
 - Sollantwort · `{"path": [[1, "A4"], [2, "As4"], [3, "G4"]], "midi": [69, 68, 67], "delta": [-1, -1]}`
 - Herleitung · Terzen von F/Fm und Quinte von C. OMT Blues-Based Schemas, Plagal Sigh, 6–♭6–5.
+- Entscheidung · [n05a-design](https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635) · 2026-11-13

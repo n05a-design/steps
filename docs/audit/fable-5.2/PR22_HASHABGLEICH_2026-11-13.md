@@ -2,6 +2,11 @@
 
 Geprüfter PR-Head: `16871f1e1609a1af0a28b2bdb999a6ad87f6d15b`.
 Historischer Vergleich: `b0abd41`, die bereits eingegrenzte Fassung des Piloten.
+Der hier dokumentierte damalige Übergang ist inzwischen durch die
+[menschliche Freigabe vom 13. November 2026](https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635)
+abgeschlossen. Register und Lerntexte wurden auf die neuen Hashes gebracht.
+Die unten genannten alten Ausgabestände beziehen sich auf den geprüften
+Zwischenstand `16871f1`, nicht auf den aktuellen Abschlussstand.
 Die aktuellen Hashes wurden mit direktem `hashlib.sha256` auf unabhängig aus
 den Git-Blobs zusammengesetzten JSON-Payloads berechnet und anschließend mit
 den Ergebnissen des produktiven Loaders verglichen. Alle acht Hashes stimmen
@@ -30,7 +35,7 @@ Wortlaut, Art, Gültigkeitsbereich, Gegencheck und Beispielkontext sind identisc
 Aussage mit korrigiertem Quellenbezug, keine Rückkehr zu einer früheren unpräzisen
 Aussage. Für den aktuellen PR ist dieser Fingerabdruck erforderlich.
 
-## Warum im veröffentlichten Lerntext noch 1b52fd68 steht
+## Warum im geprüften Zwischenstand noch 1b52fd68 stand
 
 `knowledge/concepts/progressions/REVIEWED_PROGRESSIONS.md` ist eine generierte
 Ausgabe des zuletzt freigegebenen Katalogs. Dort steht weiterhin `1b52fd68...`
@@ -118,5 +123,6 @@ mitändern. Eine solche Inhalts-/Schemaänderung wurde hier nicht vorgenommen.
 Die [Freigabevorlage](PR22_FACHFREIGABE_VORLAGE.md) enthält den kompletten
 Kommentar in einem einzigen Codeblock mit genau einem Einleitungssatz.
 Die separat bereitgestellte TXT-Fassung enthielt bereits genau einen solchen
-Einleitungssatz. Es wurden keine Kommentare veröffentlicht und keine neuen
-produktiven Freigaben eingetragen.
+Einleitungssatz. Nach dem ausdrücklichen Veröffentlichungsauftrag wurde der
+Kommentar veröffentlicht und wurden die sieben neuen Freigaben mit dem echten
+Permalink eingetragen. Die Hash-Eingaben selbst bleiben unverändert.

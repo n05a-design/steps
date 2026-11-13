@@ -1,6 +1,10 @@
 # PR #22 – Vorlage für die menschliche Fachfreigabe
 
-**Vorlage, noch keine Freigabe.** Erst nach eigener Prüfung verwenden.
+**Dokumentation der verwendeten Vorlage.** Nach eigener Prüfung hat der
+Auftraggeber die sieben Fassungen freigegeben und die Veröffentlichung
+beauftragt. Der entsprechende
+[GitHub-Kommentar](https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635)
+ist der produktive Beleg; dieses Dokument selbst ersetzt ihn nicht.
 Der Quellenabschluss steht im [Quellenvotum](PR22_QUELLENVOTUM_2026-11-13.md).
 Der [Hashabgleich](PR22_HASHABGLEICH_2026-11-13.md) erklärt die beiden Fassungen
 `1b52fd68...` und `b39ac7b5...`. Das
@@ -57,7 +61,7 @@ werden. GitHub muss den Kommentar samt Autor-ID und Zeitstempeln abrufbar liefer
 Eine Bestätigung im Chat allein ersetzt den GitHub-Beleg des aktuellen Verifiers
 nicht. Die frühere Freigabe für den Fingerabdruck `1b52fd68...` ist nicht übertragbar.
 
-Erst nach Vorliegen des echten Kommentars die sieben Registereinträge aktualisieren,
-den Renderer zur Neugenerierung der Lerntexte ausführen, die Coverage neu erzeugen
-und die Online-Evidence sowie die übrigen Checks erneut prüfen. Keine dieser
-produktiven Änderungen ist durch diese Vorlage bereits vorgenommen.
+Nach Vorliegen des echten Kommentars wurden die sieben Registereinträge
+aktualisiert, die Lerntexte mit dem Renderer neu erzeugt und die Coverage neu
+geschrieben. Die Online-Evidence und die übrigen Checks werden auf diesem
+Abschlussstand erneut geprüft. Die Notationsfreigabe bleibt unverändert.

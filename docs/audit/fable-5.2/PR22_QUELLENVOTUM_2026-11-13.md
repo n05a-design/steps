@@ -26,10 +26,19 @@ Dies ist eine Inhalts- und Fundstellenprüfung anhand dieses Exports und der
 benannten Spiegelung; es ist keine Behauptung über die Byte-Identität einer
 jederzeit veränderbaren oder weiterhin mit HTTP 403 antwortenden HTML-Seite.
 
-Dies ist ein agentisches Prüfvotum, **keine menschliche Fachfreigabe**. Es wurden
-keine neuen Freigaben im Register eingetragen. Die sieben alten Registereinträge
-decken die neuen Quellenmetadaten nicht ab. Evidence- und Publikationsgate müssen
-bis zur echten erneuten Abnahme weiter blockieren.
+Das agentische Prüfvotum wurde anschließend durch die ausdrücklich erteilte
+menschliche Fachfreigabe des Auftraggebers ergänzt. Diese wurde mit seinem
+Veröffentlichungsauftrag am 13. November 2026 um 03:01:48 UTC als neuer
+[Kommentar in PR #22](https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635)
+unter `n05a-design` (GitHub-ID 333259995, OWNER) veröffentlicht. Der Kommentar
+enthält alle sieben aktuellen Claim-/Fingerprint-Paare und wurde nicht editiert.
+Autor, Zeitstempel und Inhalt wurden aus der GitHub-API zurückgelesen und mit
+dem bestehenden Evidence-Verifier geprüft.
+
+Die sieben neuen Registereinträge verweisen auf diesen Beleg; die unveränderte
+Notationsfreigabe bleibt erhalten. Abnahmeliste und neu erzeugte Lerntexte
+verwenden nun dieselben aktuellen Fingerabdrücke. Das Register enthält 8 von 8
+passenden Freigaben. Historische rote Läufe bleiben als solche erhalten.
 
 ## Quellen und Zugriff
 
@@ -75,14 +84,18 @@ Stimmführungsregel.
 - Der produktive Verifier, die Reviewer-Liste, die Freigabedatei und die
   Publikationsgates wurden nicht abgeschwächt oder verändert.
 
-## Noch erforderlich
+## Technischer Abschluss nach der Fachfreigabe
 
-Die Quellengegenprüfung ist abgeschlossen. Jetzt die sieben konkreten
-Claim-/Fingerprint-Paare durch ein zugelassenes menschliches Reviewkonto
-entscheiden lassen. Die [Freigabevorlage](PR22_FACHFREIGABE_VORLAGE.md) nennt
-alle sieben Fassungen und die benötigten Metadaten. Erst nach echten Belegen das Freigaberegister und die
-generierten Lerntexte aktualisieren und die Coverage erneut erzeugen. Dieser PR
-bleibt bis dahin Draft; es erfolgt kein Merge.
+Quellengegenprüfung und menschliche Abnahme sind abgeschlossen. Die
+[Freigabevorlage](PR22_FACHFREIGABE_VORLAGE.md) dokumentiert den verwendeten
+Kommentarinhalt und die benötigten Metadaten. Freigaberegister, Lerntexte,
+Abnahmeliste und Coverage wurden mit dem echten GitHub-Beleg aktualisiert.
+
+Der Auftraggeber hat nach der Fachfreigabe zusätzlich und ausdrücklich den
+Merge von PR #22 beauftragt. Diese Anweisung ist vom Wortlaut des fachlichen
+Belegkommentars getrennt. Der Merge wird erst nach erfolgreichen technischen
+Prüfungen und Erfüllung der GitHub-Mergebedingungen ausgeführt; es gibt keine
+Umgehung der Gates.
 
 ## Abschließende Gegenprüfung über OMT2-PDF und LibreTexts
 
