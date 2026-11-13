@@ -1664,7 +1664,7 @@
       "domain": "M12",
       "question": "Lassen sich alle Graphknoten und ihr fachlicher Beleg nachvollziehen?",
       "expected": [
-        "86 bisher offene Endpunkt-IDs abgeglichen",
+        "84 weiterhin offene Endpunkt-IDs abgeglichen",
         "97 Relationen mit Claim oder Fundstelle belegt bzw. als ungeprüft markiert"
       ],
       "variants": [
@@ -1674,7 +1674,7 @@
       "method": "manual",
       "input": {
         "edges": 97,
-        "unresolved_ids": 86
+        "unresolved_ids": 84
       },
       "mandatory": true,
       "next_step": "Kanonische Knotendefinitionen für die offenen IDs anlegen oder die Relationen ausdrücklich als historische Hypothesen markieren. Pro Kante eine Fundstelle oder Claim-ID erfassen."
