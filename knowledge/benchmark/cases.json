@@ -213,7 +213,7 @@
       "variants": [
         "Rotierte römische Lesart mit entsprechender Verschiebung des Startpunkts."
       ],
-      "basis": "Open Music Theory, Four-Chord Schemas, Absatz nach Example 4. Die Moll-Lesart folgt aus natürlichem A-Moll. Richards (2017), Abs. [1], [9]–[11] und [29]–[30], belegt die Kontexthinweise an Axis-Progressionen.",
+      "basis": "Open Music Theory, Four-Chord Schemas, Abschnitt Tonal ambiguity, Absatz vor der Legende zu Example 4. Die Moll-Lesart folgt aus natürlichem A-Moll. Richards (2017), Abs. [1], [9]–[11] und [29]–[30], belegt die Kontexthinweise an Axis-Progressionen.",
       "method": "relative_minor",
       "input": {},
       "mandatory": true,
