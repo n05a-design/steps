@@ -1,8 +1,8 @@
 relation_id,source_id,target_id,relation_type,epistemic_classification,domain_scope,formal_rule_or_strength,description,validation_status
 CR-001,M01-01,M01-02,REQUIRES,FORMAL_RULE,Foundational Harmony Axioms,ISO 16 als Stimmreferenz,Für Umrechnungen aus relativen Intervallen in Hertz wird eine Referenzfrequenz benötigt. A4 = 440 Hz ist eine standardisierte Wahl.,REVIEW_REQUIRED
-CR-002,M01-03,M01-05,IS_VARIANT_OF,FORMAL_RULE,Foundational Harmony Axioms,2:1 Frequenzverhältnis,Oktave ist Grundbaustein aller Stimmungssysteme,REVIEW_REQUIRED
+CR-002,M01-03,M01-05,IS_VARIANT_OF,FORMAL_RULE,Foundational Harmony Axioms,Oktavverhältnis im Modell,Im üblichen Oktavmodell hat eine reine Oktave das Frequenzverhältnis 2:1. Der Graph verwendet diese Referenz für die behandelten Stimmungen.,REVIEW_REQUIRED
 CR-003,M01-04,M01-06,IS_EQUIVALENT_UNDER,FORMAL_RULE,Foundational Harmony Axioms,Modulo 12 Isomorphismus,12-TET induziert die zyklische Gruppe Z12 der Tonklassen,REVIEW_REQUIRED
-CR-004,M02-04,M02-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Positionierung auf Linien/Zwischenräumen,Vorzeichen erfordern Notensystem,REVIEW_REQUIRED
+CR-004,M02-04,M02-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Notationskontext,Vorzeichen verändern die bezeichnete Tonhöhe. Ihre Position in einem Notensystem und ihre Darstellung in einem Akkordsymbol folgen unterschiedlichen Regeln.,REVIEW_REQUIRED
 CR-005,M02-05,M01-04,IS_EQUIVALENT_UNDER,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Akustische Identität unter 12-TET,C# und Db klingen gleich in 12-TET,REVIEW_REQUIRED
 CR-006,M02-05,M02-04,CONTRADICTS,HISTORICAL_CONVENTION,Foundational Harmony Axioms,Syntaktische Distinktion,Diatonisch sind C# und Db grundverschieden (Leitton vs Mollterz),REVIEW_REQUIRED
 CR-007,M02-06,M02-04,IS_VARIANT_OF,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Sprachraum-Projektion,Deutsches H/B vs Internationales B/Bb,REVIEW_REQUIRED
@@ -22,7 +22,7 @@ CR-020,M05-06,M04-03,IS_EQUIVALENT_UNDER,ILLUSTRATIVE_RELATION,Foundational Harm
 CR-021,M06-01,M05-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Akkordsequenzen,Progressionen sind horizontale Ketten harmonischer Stufen,REVIEW_REQUIRED
 CR-022,M06-03,M04-01,REQUIRES,FORMAL_RULE,Foundational Harmony Axioms,Mehrstimmiger Satz,Klassische Stimmführung verbietet parallele reine Quinten/Oktaven,REVIEW_REQUIRED
 CR-023,M06-04,M11-04,TESTED_BY,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Tymoczko L1/L2 Distanzmetrik,Voice-Leading-Distanz ist formal testbar über Pitch-Vektoren,REVIEW_REQUIRED
-CR-024,M07-01,M01-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Periodischer Zeitverlauf,Puls/Metrum erfordert periodische Schwingung,REVIEW_REQUIRED
+CR-024,M07-01,M01-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Rhythmischer Puls,Metrische Gruppierung beschreibt das Verhältnis rhythmischer Schläge und Akzente. Die Schallfrequenz der einzelnen Ereignisse bestimmt dieses Raster nicht.,REVIEW_REQUIRED
 CR-025,M07-02,M11-02,IMPLEMENTED_BY,SOFTWARE_DESIGN_RULE,Foundational Harmony Axioms,Tick-Quantisierung,Rhythmisches Grid wird über PPQ in Standard MIDI Files realisiert,REVIEW_REQUIRED
 CR-026,M07-03,M07-01,IS_VARIANT_OF,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Subdivision-Typen,Binäre vs ternäre Unterteilung,REVIEW_REQUIRED
 CR-027,M07-04,M07-03,IS_VARIANT_OF,GENRE_TENDENCY,Foundational Harmony Axioms,Swing-Verhältnis rho,Mathematische Streckung der ungeraden Zählzeiten,REVIEW_REQUIRED
@@ -30,7 +30,7 @@ CR-028,M08-01,M08-02,IMPLEMENTED_BY,SOFTWARE_DESIGN_RULE,Foundational Harmony Ax
 CR-029,M08-03,M09-01,APPLIES_TO_GENRE,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Kick auf 1/3, Snare auf 2/4,REVIEW_REQUIRED
 CR-030,M08-03,M09-02,APPLIES_TO_GENRE,GENRE_TENDENCY,Foundational Harmony Axioms,Four-on-the-Floor Kick,House-Groove mit Kick auf allen 4 Vierteln und Offbeat-Hi-Hat,REVIEW_REQUIRED
 CR-031,M09-01,M06-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Pop-Akkordfolgen (I-V-vi-IV),Popmusik basiert auf prägnanten Kadenzen,REVIEW_REQUIRED
-CR-032,M09-02,M08-03,REQUIRES,GENRE_TENDENCY,Foundational Harmony Axioms,House-Drum-Architektur,House erfordert 4-on-the-floor Beat bei 120-128 BPM,REVIEW_REQUIRED
+CR-032,M09-02,M08-03,REQUIRES,GENRE_TENDENCY,Foundational Harmony Axioms,House-Übungsmuster,Ein gleichmäßiger Viertelkick bei 120–128 BPM ist ein mögliches House-Übungsmodell. Ein Korpusnachweis für Tempo- oder Stilgrenzen ist offen.,REVIEW_REQUIRED
 CR-033,M10-01,M01-04,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Klaviatur-Geometrie,7 weiße und 5 schwarze Tasten bilden die 12 Halbtöne ab,REVIEW_REQUIRED
 CR-034,M10-03,M04-01,REQUIRES,ILLUSTRATIVE_RELATION,Foundational Harmony Axioms,Klavier-Dreiklangsgriffe,Dreiklänge werden mit 1-3-5 oder 1-2-5 gegriffen,REVIEW_REQUIRED
 CR-035,M10-04,M06-01,REQUIRES,PEDAGOGICAL_RECOMMENDATION,Foundational Harmony Axioms,Zweihändige Begleitung,Bass in linker Hand,REVIEW_REQUIRED
@@ -47,7 +47,7 @@ REL-007,PROG-017,PAT-013,COMMONLY_PAIRED_WITH,ILLUSTRATIVE_RELATION,Neo-Soul & J
 REL-008,PROG-017,P08,VOICED_BY,ILLUSTRATIVE_RELATION,Neo-Soul Piano,STRONG,"Backdoor Cadence voiced via Drop-2 5th/4th grips for lush, transparent harmony.",REVIEW_REQUIRED
 REL-009,PAT-010,P09,REQUIRES_TECHNIQUE,ILLUSTRATIVE_RELATION,Reggae Keyboard Skank,MANDATORY_REGGAE,Reggae One Drop drum pattern requires staccato offbeat chord stabs on piano/guitar.,REVIEW_REQUIRED
 REL-010,PAT-018,M07,EXEMPLIFIES_METRIC_DUALITY,ILLUSTRATIVE_RELATION,Drum & Bass (174 BPM),STRUCTURAL,174 BPM fast breakbeat operates simultaneously with 87 BPM halftime Reese sub-bass.,REVIEW_REQUIRED
-REL-011,PAT-020,M07,UTILIZES_SWING_PROFILE,GENRE_TENDENCY,UK Garage 2-Step,STRONG,Authentic 2-step groove requires 55-62% 16th MPC swing and skipped beat 2 kick.,REVIEW_REQUIRED
+REL-011,PAT-020,M07,UTILIZES_SWING_PROFILE,GENRE_TENDENCY,UK Garage 2-Step,UK-Garage-Übungsmuster,PAT-020 kombiniert ausgewählte synkopierte Kick-Onsets mit Swing. Die konkrete Swing-Rate und die ausgelassenen Kick-Schläge gehören zur Übung.,REVIEW_REQUIRED
 REL-012,P09,PAT-012,TRAINS_RHYTHMIC_INTERACTION,ILLUSTRATIVE_RELATION,Charleston Comping,MEDIUM,Charleston piano stabs (beat 1 and 2+) lock with jazz drummer's hi-hat chick and ride pulse.,REVIEW_REQUIRED
 REL-013,P10,PROG-001,FOUNDATIONAL_FOR,PEDAGOGICAL_RECOMMENDATION,Functional Ear Training,PEDAGOGICAL,Tonic vs Dominant vs Subdominant tension awareness enables immediate recognition of Pop Four Chords.,REVIEW_REQUIRED
 REL-014,PROG-002,PAT-018,COMMONLY_PAIRED_WITH,ILLUSTRATIVE_RELATION,Liquid Drum & Bass,STRONG,Emotional Minor Loop (vi - IV - I - V / D-Aeolian) paired with 174 BPM Liquid rolling breakbeat.,REVIEW_REQUIRED
@@ -56,7 +56,7 @@ REL-016,PAT-021,M07,EXEMPLIFIES_METRIC_DUALITY,ILLUSTRATIVE_RELATION,Jungle / Dr
 REL-017,PAT-022,M09,BELONGS_TO_GENRE,ILLUSTRATIVE_RELATION,Jump-Up Drum & Bass,STRONG,Minimal two-step kick/snare pattern driving syncopated distorted bass stabs.,REVIEW_REQUIRED
 REL-018,P09,PAT-020,COMPATIBLE_WITH,ILLUSTRATIVE_RELATION,UK Garage Keyboard Stabs,STRONG,Staccato offbeat chord stabs lock directly into the syncopated 16th gaps of the 2-step groove.,REVIEW_REQUIRED
 REL-019,P11,P02,EXPANDS_TECHNIQUE_OF,PEDAGOGICAL_RECOMMENDATION,Inversion Voicing Decoding,PEDAGOGICAL,Modul P11 expands the physical inversion mechanics of P02 into functional acoustic ear recognition.,REVIEW_REQUIRED
-REL-020,P11,ERR-026,PREVENTS_ERROR,PEDAGOGICAL_RECOMMENDATION,Ear Training Inversions,PEDAGOGICAL_GATE,Prevents mistaking inverted bass notes (e.g. C/E) for root-position chords (Em).,REVIEW_REQUIRED
+REL-020,P11,ERR-026,PREVENTS_ERROR,PEDAGOGICAL_RECOMMENDATION,Ear Training Inversions,Referenzkonflikt,P11 behandelt Umkehrungen. ERR-026 dokumentiert die L1-Distanz von C zu G/B. Die Zuordnung dieser Kante zur Umkehrungsübung ist ungeklärt.,REVIEW_REQUIRED
 REL-021,PROG-021,PAT-024,STYLISTICALLY_COMPATIBLE,GENRE_TENDENCY,Neo-Soul / Boom-Bap,Übungskombination,PROG-021 und PAT-024 lassen sich als Übung mit Akkordwechseln über einem 61-Prozent-Swing-Pattern kombinieren. Die Eignung hängt von der konkreten Phrasierung ab.,REVIEW_REQUIRED
 REL-022,PROG-021,P12,DIDACTIC_APPLICATION,PEDAGOGICAL_RECOMMENDATION,Klavierpraxis / Neo-Soul,Übertragbare Klavierübung,P12 zeigt Fmaj7 in der rechten Hand über D im Bass. Der Gesamtklang ist Dm9 mit Grundton. Das Beispiel kann als Ausgangspunkt für die erste Lage von PROG-021 dienen.,REVIEW_REQUIRED
 REL-023,PAT-025,M07,POLYRHYTHMIC_INTERACTION,ILLUSTRATIVE_RELATION,Berlin Peak Techno,3-against-4 Metric Contrast,Der 3er-Rimshot-Puls (alle 3 Sechzehntel) bricht das starre Four-on-the-Floor Metrum dynamisch auf.,REVIEW_REQUIRED

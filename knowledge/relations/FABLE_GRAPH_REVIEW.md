@@ -24,3 +24,29 @@ Die Kataloge und Domänen lösen beide Endpunkte von 36 der 97 Kanten auf.
 definierten IDs. Die Zuordnung dieser IDs braucht die ursprüngliche
 Ontologie oder eine dokumentierte Migration. Die zehn Gegenproben
 liefern keine Freigabe für automatische Empfehlungen.
+
+## Abgleich historischer Endpunkt-IDs
+
+Die Original-IDs bleiben in den Kanten und in der Baseline erhalten.
+Für `PROG_024` und `PROG_025` liegen übereinstimmende
+Bezeichnungen in den katalogisierten Übungen und den historischen
+Kantenbeschreibungen vor. Die Abdeckungsprüfung kann diese beiden
+Verweise über die dokumentierten Aliasse auflösen. 84 Endpunkt-IDs
+bleiben offen, darunter die fachlich abweichende Zuordnung in REL-020.
+
+| Historische ID | Katalog-ID | Begründung |
+| --- | --- | --- |
+| PROG_024 | PROG-024 | CDR-011/012 nennen die Doppeldominante und den Wechsel der Terz im Latin-Übungsschema. [Latin-Katalog](../concepts/styles/GENRE_RESEARCH_LATIN.md) |
+| PROG_025 | PROG-025 | CDR-013/014 nennen den zyklischen Mollvamp und seine mögliche Montuno-Begleitung. [Latin-Katalog](../concepts/styles/GENRE_RESEARCH_LATIN.md) |
+
+REL-020 nennt `ERR-026` als Ziel für eine Umkehrungsübung. Im
+[Fehlerregister](../research/MUSICAL_ERROR_REGISTER.csv) bezeichnet
+ERR-026 eine falsche L1-Distanz. P11 und der Fehlereintrag können
+eingesehen werden. Die behauptete fachliche Beziehung bleibt offen.
+
+Die zusätzlichen Gegenproben CR-002, CR-004, CR-024, CR-032 und REL-011
+begrenzen historische Aussagen auf die jeweiligen Modelle und Übungen.
+Für die Unterscheidung von Puls und Taktgruppierung dient
+[Open Music Theory, Compound Meter and Time Signatures](https://viva.pressbooks.pub/openmusictheory/chapter/compound-meters-and-time-signatures/).
+Für die Stimmungs- und Rhythmusmodelle gelten die dokumentierten
+Referenzfrequenzen, Taktarten und Beispielgrenzen.
