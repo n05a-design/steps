@@ -1868,6 +1868,102 @@
       "next_step": "Bei einer Vertragsänderung die erwarteten Werte mit einem unabhängigen Beispiel aktualisieren."
     },
     {
+      "id": "KB-PAT-027-RASTER",
+      "scope": "catalog",
+      "content": "PAT-027",
+      "domain": "M08",
+      "question": "Welche Tickpositionen und Taktdauer ergeben sich aus dem notierten Raster für PAT-027?",
+      "expected": {
+        "meter": [
+          4,
+          4
+        ],
+        "bpm": 128,
+        "beat_unit": "Viertel",
+        "ppq": 480,
+        "bars": 2,
+        "ticks_per_bar": 1920,
+        "onsets": [
+          0,
+          720,
+          1440,
+          2400,
+          3120
+        ],
+        "bar_seconds": 1.875
+      },
+      "variants": [],
+      "basis": "Cross-Stick im Latin-Übungsmodell. Die Sollwerte folgen aus den notierten Positionen und der gewählten Tempoeinheit.",
+      "method": "latin_timing",
+      "input": {
+        "voice": "Cross-Stick"
+      },
+      "mandatory": true,
+      "next_step": "Raster, Taktgrenzen und Tempoeinheit mit der Katalogzeile und den unabhängigen Tickwerten abgleichen."
+    },
+    {
+      "id": "KB-PAT-028-RASTER",
+      "scope": "catalog",
+      "content": "PAT-028",
+      "domain": "M08",
+      "question": "Welche Tickpositionen und Taktdauer ergeben sich aus dem notierten Raster für PAT-028?",
+      "expected": {
+        "meter": [
+          4,
+          4
+        ],
+        "bpm": 116,
+        "beat_unit": "Viertel",
+        "ppq": 480,
+        "bars": 1,
+        "ticks_per_bar": 1920,
+        "onsets": [
+          1440,
+          1680
+        ],
+        "bar_seconds": 2.068966
+      },
+      "variants": [],
+      "basis": "Offene High Conga im Latin-Übungsmodell. Die Sollwerte folgen aus den notierten Positionen und der gewählten Tempoeinheit.",
+      "method": "latin_timing",
+      "input": {
+        "voice": "Offene High Conga"
+      },
+      "mandatory": true,
+      "next_step": "Raster, Taktgrenzen und Tempoeinheit mit der Katalogzeile und den unabhängigen Tickwerten abgleichen."
+    },
+    {
+      "id": "KB-PAT-029-RASTER",
+      "scope": "catalog",
+      "content": "PAT-029",
+      "domain": "M08",
+      "question": "Welche Tickpositionen und Taktdauer ergeben sich aus dem notierten Raster für PAT-029?",
+      "expected": {
+        "meter": [
+          2,
+          2
+        ],
+        "bpm": 105,
+        "beat_unit": "Halbe",
+        "ppq": 480,
+        "bars": 1,
+        "ticks_per_bar": 1920,
+        "onsets": [
+          0,
+          960
+        ],
+        "bar_seconds": 1.142857
+      },
+      "variants": [],
+      "basis": "Halbenpuls im Latin-Übungsmodell. Die Sollwerte folgen aus den notierten Positionen und der gewählten Tempoeinheit.",
+      "method": "latin_timing",
+      "input": {
+        "voice": "Halbenpuls"
+      },
+      "mandatory": true,
+      "next_step": "Raster, Taktgrenzen und Tempoeinheit mit der Katalogzeile und den unabhängigen Tickwerten abgleichen."
+    },
+    {
       "id": "KB-PAT-026-TICKS",
       "scope": "catalog",
       "content": "PAT-026",
