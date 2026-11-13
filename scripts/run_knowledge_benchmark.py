@@ -73,6 +73,11 @@ def case_fingerprint(case):
 def evaluate_manual(case, grade):
     if grade is None:
         return "PENDING", "Hör-, Spiel- oder Fachabnahme ausstehend."
+    if not isinstance(grade, dict):
+        return "FAIL", "Ein Abnahme-Eintrag muss ein Objekt sein."
+    if (grade.get("reviewer") == "" and grade.get("evidence") == "" and grade.get("observations") == ""
+            and grade.get("criteria") == dict.fromkeys(case["expected"], None)):
+        return "PENDING", "Hör-, Spiel- oder Fachabnahme ausstehend."
     if grade.get("fingerprint") != case_fingerprint(case):
         return "PENDING", "Manuelle Abnahme bezieht sich auf eine andere Fassung."
     if not all(isinstance(grade.get(key), str) and grade[key].strip()
@@ -95,6 +100,11 @@ def evaluate(case, examples, claims, coach, manual):
     if method == "coach":
         grade = coach.get(case["id"])
         if grade is None:
+            return "PENDING", "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
+        if not isinstance(grade, dict):
+            return "FAIL", "Ein Coach-Eintrag muss ein Objekt sein."
+        if (grade.get("reviewer") == "" and grade.get("sources_verified") is None
+                and grade.get("criteria") == dict.fromkeys(expected, None)):
             return "PENDING", "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
         if grade.get("fingerprint") != case_fingerprint(case):
             return "PENDING", "Coach-Bewertung bezieht sich auf eine andere Fassung."
@@ -239,7 +249,7 @@ def evaluate(case, examples, claims, coach, manual):
         actual = [midi_to_frequency(note) for note in data["midi"]]
         require(all(isclose(a, b, abs_tol=1e-5) for a, b in zip(actual, expected, strict=True)), actual)
     elif method == "enharmonic":
-        notes = [parse_spelling(note, "INT") for note in ("C#4", "Db4")]
+        notes = [parse_spelling(note, data["convention"]) for note in data["notes"]]
         actual = [*(note.midi_number for note in notes), *(note.render("INT") for note in notes)]
         require(actual == expected, actual)
     elif method == "distance":
@@ -273,15 +283,23 @@ def evaluate(case, examples, claims, coach, manual):
         with CLAIMS.open(encoding="utf-8-sig", newline="") as source:
             row = next(r for r in csv.DictReader(source) if r["claim_id"] == data["id"])
         if data["check"] == "clave":
-            actual = [int(value) for value in re.search(r"\[([\d, ]+)\]", row["musical_example"])[1].split(",")]
+            written = re.search(r"\[([\d, ]+)\]", row["musical_example"])
+            require(written is not None, "Die Beispielspalte enthält keine Tickfolge.")
+            ticks = [int(value) for value in written[1].split(",")]
+            ppq = data["ppq"]
+            actual = [bar * 4 * ppq + onset * ppq // 4
+                      for bar, onsets in enumerate(data["sixteenth_positions"]) for onset in onsets]
+            require(actual == ticks, {"calculated": actual, "register": ticks})
         elif data["check"] == "swing_source":
-            citation = row["citation_reference"].replace(" ", "").replace("–", "-").lower()
-            actual = expected if (
-                expected["doi"] in citation or all(
-                    part.replace(" ", "").replace("–", "-").lower() in citation
-                    for part in (expected["journal"], expected["volume_issue"], expected["pages"])
-                )
-            ) else row["citation_reference"]
+            citation = row["citation_reference"]
+            match = re.search(
+                r", (?P<journal>[^,]+) (?P<volume_issue>\d+\(\d+\)), "
+                r"(?P<pages>\d+[–-]\d+), [^,]+, https://doi\.org/(?P<doi>[^\s,]+)",
+                citation,
+            )
+            require(match is not None, citation)
+            actual = match.groupdict()
+            actual["pages"] = actual["pages"].replace("-", "–")
         elif data["check"] == "alter":
             from decimal import Decimal
             from xml.etree import ElementTree
@@ -332,12 +350,32 @@ def review_sheet(cases, claims):
     return "\n".join(lines)
 
 
+def assessment_template(cases, method, revision):
+    """Prepare empty, version-bound forms for human assessments."""
+    result = {}
+    for case in cases:
+        if case["method"] != method:
+            continue
+        entry = {
+            "fingerprint": case_fingerprint(case),
+            "reviewer": "",
+            "criteria": dict.fromkeys(case["expected"], None),
+        }
+        if method == "coach":
+            entry.update(response="", source_evidence="", sources_verified=None,
+                         model="", skill_revision="", run_evidence="")
+        else:
+            entry.update(git_sha=revision, evidence="", observations="")
+        result[case["id"]] = entry
+    return result
+
+
 def run(cases, examples, claims, coach, manual=None):
     results = []
     for case in cases:
         try:
             status, observed = evaluate(case, examples, claims, coach, manual or {})
-        except (AssertionError, KeyError, TypeError, ValueError, MusicTheoryError, StopIteration, subprocess.TimeoutExpired) as exc:
+        except (AssertionError, IndexError, KeyError, TypeError, ValueError, MusicTheoryError, StopIteration, subprocess.TimeoutExpired) as exc:
             status, observed = "FAIL", exc.args[0] if exc.args else str(type(exc).__name__)
         results.append({**case, "fingerprint": case_fingerprint(case), "status": status,
                         "observed": observed, "next_step": case["next_step"] if status != "PASS" else ""})
@@ -380,8 +418,28 @@ def main():
     sheet = parser.add_mutually_exclusive_group()
     sheet.add_argument("--review-sheet", type=Path)
     sheet.add_argument("--check-review-sheet", type=Path)
+    sheet.add_argument("--coach-template", type=Path)
+    sheet.add_argument("--manual-template", type=Path)
     args = parser.parse_args()
     cases = load_cases()
+    selected = [case for case in cases if args.scope in {"all", case["scope"]}
+                and (args.content is None or args.content == case["content"])]
+    if args.coach_template or args.manual_template:
+        method = "coach" if args.coach_template else "manual"
+        if subprocess.check_output(["git", "status", "--porcelain", "--untracked-files=no"], cwd=ROOT):
+            parser.error("Abnahmevorlagen benötigen einen sauberen versionierten Arbeitsbaum.")
+        revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+        template = assessment_template(selected, method, revision)
+        if not template:
+            parser.error("Keine Abnahmefälle für diese Vorlage ausgewählt.")
+        output = args.coach_template or args.manual_template
+        try:
+            with output.open("x", encoding="utf-8") as stream:
+                json.dump(template, stream, ensure_ascii=False, indent=2)
+                stream.write("\n")
+        except FileExistsError:
+            parser.error(f"Vorlage existiert bereits: {output}")
+        return 0
     candidate_error = None
     try:
         examples, claims = reviewed._candidates()
@@ -402,8 +460,7 @@ def main():
     pilot_ids = {case["id"] for case in cases if case["scope"] == "pilot" and case["mandatory"]}
     if candidate_error is None and pilot_ids != claims.keys():
         parser.error("Pflichtfälle des Pilotbenchmarks müssen alle Pilot-Claims abdecken.")
-    selected = [case for case in cases if args.scope in {"all", case["scope"]}
-                and (args.content is None or args.content == case["content"])]
+
     if not selected:
         parser.error("Keine Benchmarkfälle in dieser Auswahl.")
     results = run(selected, examples, claims, coach, manual)

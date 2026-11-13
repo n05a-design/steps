@@ -84,6 +84,10 @@ fachliche Gültigkeit benötigen einen Einzelnachweis.
 
 ## Historische Dateizuordnung
 
+Die [Archivnachweise](../../docs/audit/fable-5.2/STEPS_FABLE_5_2_ARCHIVNACHWEISE.md)
+dokumentieren zusätzliche CSS-Vergleichsstände und die technische Prüfung
+aller 36 MIDI-Dateipfade.
+
 Alle zehn Registerpfade sind unter einem anderen Wurzelordner in der
 Git-Historie auffindbar. Für die Gegenprobe
 `research/STEPS_Bibliothek/` im Registerpfad durch
