@@ -239,7 +239,7 @@ def evaluate(case, examples, claims, coach, manual):
         actual = [midi_to_frequency(note) for note in data["midi"]]
         require(all(isclose(a, b, abs_tol=1e-5) for a, b in zip(actual, expected, strict=True)), actual)
     elif method == "enharmonic":
-        notes = [parse_spelling(note, "INT") for note in ("C#4", "Db4")]
+        notes = [parse_spelling(note, data["convention"]) for note in data["notes"]]
         actual = [*(note.midi_number for note in notes), *(note.render("INT") for note in notes)]
         require(actual == expected, actual)
     elif method == "distance":
@@ -273,15 +273,23 @@ def evaluate(case, examples, claims, coach, manual):
         with CLAIMS.open(encoding="utf-8-sig", newline="") as source:
             row = next(r for r in csv.DictReader(source) if r["claim_id"] == data["id"])
         if data["check"] == "clave":
-            actual = [int(value) for value in re.search(r"\[([\d, ]+)\]", row["musical_example"])[1].split(",")]
+            written = re.search(r"\[([\d, ]+)\]", row["musical_example"])
+            require(written is not None, "Die Beispielspalte enthält keine Tickfolge.")
+            ticks = [int(value) for value in written[1].split(",")]
+            ppq = data["ppq"]
+            actual = [bar * 4 * ppq + onset * ppq // 4
+                      for bar, onsets in enumerate(data["sixteenth_positions"]) for onset in onsets]
+            require(actual == ticks, {"calculated": actual, "register": ticks})
         elif data["check"] == "swing_source":
-            citation = row["citation_reference"].replace(" ", "").replace("–", "-").lower()
-            actual = expected if (
-                expected["doi"] in citation or all(
-                    part.replace(" ", "").replace("–", "-").lower() in citation
-                    for part in (expected["journal"], expected["volume_issue"], expected["pages"])
-                )
-            ) else row["citation_reference"]
+            citation = row["citation_reference"]
+            match = re.search(
+                r", (?P<journal>[^,]+) (?P<volume_issue>\d+\(\d+\)), "
+                r"(?P<pages>\d+[–-]\d+), [^,]+, https://doi\.org/(?P<doi>[^\s,]+)",
+                citation,
+            )
+            require(match is not None, citation)
+            actual = match.groupdict()
+            actual["pages"] = actual["pages"].replace("-", "–")
         elif data["check"] == "alter":
             from decimal import Decimal
             from xml.etree import ElementTree
@@ -337,7 +345,7 @@ def run(cases, examples, claims, coach, manual=None):
     for case in cases:
         try:
             status, observed = evaluate(case, examples, claims, coach, manual or {})
-        except (AssertionError, KeyError, TypeError, ValueError, MusicTheoryError, StopIteration, subprocess.TimeoutExpired) as exc:
+        except (AssertionError, IndexError, KeyError, TypeError, ValueError, MusicTheoryError, StopIteration, subprocess.TimeoutExpired) as exc:
             status, observed = "FAIL", exc.args[0] if exc.args else str(type(exc).__name__)
         results.append({**case, "fingerprint": case_fingerprint(case), "status": status,
                         "observed": observed, "next_step": case["next_step"] if status != "PASS" else ""})
