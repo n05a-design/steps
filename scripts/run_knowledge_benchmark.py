@@ -23,6 +23,7 @@ from src.steps.theory import MusicTheoryError, Voicing, midi_to_frequency, parse
 DIR = ROOT / "knowledge/benchmark"
 PROGRESSIONS = ROOT / "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md"
 DRUMS = ROOT / "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+LATIN = DRUMS.with_name("GENRE_RESEARCH_LATIN.md")
 PIANO = ROOT / "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md"
 CLAIMS = ROOT / "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv"
 STATUSES = ("PASS", "FAIL", "PENDING")
@@ -91,6 +92,41 @@ def evaluate_manual(case, grade):
     if grade.get("criteria") != dict.fromkeys(case["expected"], True):
         return "FAIL", "Mindestens ein manuelles Pflichtkriterium fehlt oder ist beanstandet."
     return "PASS", f"{grade['reviewer']} · {grade['evidence']} · {grade['observations']}"
+
+
+def latin_timing(pattern, voice):
+    header = "### Notierte Ereignisse und Zeitbasis"
+    table = LATIN.read_text(encoding="utf-8").partition(header)[2].partition("\n## ")[0]
+    rows = []
+    for line in table.splitlines():
+        if line.startswith(f"| {pattern} | {voice} |"):
+            _, _, meter, tempo, ppq, bar, positions = (field.strip() for field in line.strip("|").split("|"))
+            rows.append((meter, tempo, int(ppq), int(bar), [int(x) for x in positions.split(",")]))
+    require(rows, f"Kein Zeitraster für {pattern} · {voice}.")
+    meter, tempo, ppq, _, _ = rows[0]
+    beats, denominator = map(int, meter.split("/"))
+    bpm_text, beat_unit = tempo.split()
+    bpm = int(bpm_text)
+    catalog = DRUMS.read_text(encoding="utf-8")
+    row = next(line for line in catalog.splitlines() if line.startswith(f"| `{pattern}` |"))
+    _, _, catalog_tempo, catalog_meter, *_ = (field.strip() for field in row.strip("|").split("|"))
+    require(catalog_tempo == f"{bpm} BPM" and re.match(re.escape(meter) + r"[, ]", catalog_meter)
+            and f"({beat_unit})" in catalog_meter, "Tempo oder Metrum weicht vom Drum-Katalog ab.")
+    require(beats > 0 and denominator in {2, 4} and bpm > 0
+            and ppq > 0 and ppq % 4 == 0, "Ungültige Zeitbasis.")
+    require(beat_unit == {2: "Halbe", 4: "Viertel"}[denominator], "Tempoeinheit passt nicht zum Metrum.")
+    bar_positions = beats * (16 // denominator)
+    ticks_per_bar = bar_positions * (ppq // 4)
+    onsets = []
+    for index, (row_meter, row_tempo, row_ppq, bar, positions) in enumerate(rows, 1):
+        require((row_meter, row_tempo, row_ppq, bar) == (meter, tempo, ppq, index),
+                "Uneinheitliche Zeitbasis oder unstetige Taktnummer.")
+        require(positions == sorted(set(positions)) and all(0 <= x < bar_positions for x in positions),
+                "Sechzehntelposition liegt außerhalb des Takts oder ist doppelt.")
+        onsets.extend((bar - 1) * ticks_per_bar + x * (ppq // 4) for x in positions)
+    return {"meter": [beats, denominator], "bpm": bpm, "beat_unit": beat_unit,
+            "ppq": ppq, "bars": len(rows), "ticks_per_bar": ticks_per_bar,
+            "onsets": onsets, "bar_seconds": round(beats * 60 / bpm, 6)}
 
 
 def evaluate(case, examples, claims, coach, manual):
@@ -279,6 +315,9 @@ def evaluate(case, examples, claims, coach, manual):
             "upper_intervals": [note - bass for note in right],
             "omitted_fifth": all((note - bass) % 12 != 7 for note in left + right),
         }
+        require(actual == expected, actual)
+    elif method == "latin_timing":
+        actual = latin_timing(case["content"], data["voice"])
         require(actual == expected, actual)
     elif method == "drum_ticks":
         row = next(line for line in DRUMS.read_text(encoding="utf-8").splitlines() if line.startswith("| `PAT-026`"))
