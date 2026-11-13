@@ -50,6 +50,14 @@ def comparable(chord):
     return int(chord.root.pitch_class), chord.theoretical_intervals, int((chord.bass or chord.root).pitch_class)
 
 
+def catalog_evidence(checks):
+    counts = Counter(check["status"] for check in checks)
+    status = next((state for state in ("FAIL", "PASS", "PENDING") if counts[state]), "OFFEN")
+    detail = " ".join(f"{counts[state]} {state}." for state in benchmark.STATUSES if counts[state])
+    next_steps = dict.fromkeys(check["next_step"] for check in checks if check["next_step"])
+    return status, detail, " ".join(next_steps)
+
+
 NEXT = {
     "Produktquellen": "Originalseite und konkrete Passage mit der Aussage abgleichen.",
     "Historisches Quellenregister": "Edition oder Originaldatei lokalisieren und bibliografisch bestätigen.",
@@ -264,9 +272,9 @@ def audit():
     for area, rows in (("Klaviermodule", pianos), ("Drum-/Groove-Katalog", drums)):
         for ident, (line, _) in rows.items():
             checks = [r for r in results if r["content"] == ident]
-            add(area, ident, "OK", checks[0]["status"] if checks else "OFFEN",
-                f"Markdown-Zeile {line}; redaktionelle und spielpraktische Abnahme offen.",
-                next_step=next((r["next_step"] for r in checks if r["next_step"]), None))
+            status, detail, next_step = catalog_evidence(checks)
+            note = f"Markdown-Zeile {line}. Redaktionelle und spielpraktische Abnahme offen."
+            add(area, ident, "OK", status, f"{note} {detail}".rstrip(), next_step=next_step)
 
     approvals = reviewed._approval_records(claims)
     verified = set()

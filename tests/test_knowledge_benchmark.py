@@ -86,6 +86,55 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
         self.assertEqual(result["status"], "FAIL")
         self.assertEqual(result["observed"]["upper_intervals"], [14, 17, 21])
 
+    def test_piano_exercises_detect_wrong_notated_notes(self):
+        document = benchmark.PIANO.read_text(encoding="utf-8")
+        for ident, before, after in (
+            ("P05", "B3 F4", "Bb3 F4"),
+            ("P06", "Eb4 G4 D5", "E4 G4 D5"),
+            ("P08", "A3 D4", "A4 D4"),
+        ):
+            with self.subTest(module=ident):
+                case = next(case for case in self.cases if case["id"] == f"KB-{ident}-NOTEN")
+                result, = benchmark.run([case], self.examples, self.claims, {})
+                self.assertEqual(result["status"], "PASS", result["observed"])
+                self.assertIn(before, document)
+                with patch.object(type(benchmark.PIANO), "read_text", return_value=document.replace(before, after)):
+                    altered, = benchmark.run([case], self.examples, self.claims, {})
+                self.assertEqual(altered["status"], "FAIL")
+
+    def test_catalog_coverage_reports_pass_fail_and_pending_independently_of_order(self):
+        pending = {"status": "PENDING", "next_step": "Hörprobe."}
+        passed = {"status": "PASS", "next_step": ""}
+        failed = {"status": "FAIL", "next_step": "Noten prüfen."}
+        self.assertEqual(coverage.catalog_evidence([]), ("OFFEN", "", ""))
+        for checks, status, detail in (
+            ([pending], "PENDING", "1 PENDING."),
+            ([pending, passed], "PASS", "1 PASS. 1 PENDING."),
+            ([passed, pending, failed], "FAIL", "1 PASS. 1 FAIL. 1 PENDING."),
+        ):
+            with self.subTest(status=status):
+                self.assertEqual(coverage.catalog_evidence(checks)[:2], (status, detail))
+                self.assertEqual(coverage.catalog_evidence(checks[::-1])[:2], (status, detail))
+        self.assertEqual(coverage.catalog_evidence([passed, pending, failed])[2], "Hörprobe. Noten prüfen.")
+
+    def test_pat031_checks_notated_boundaries_and_keeps_hearing_pending(self):
+        cases = [case for case in self.cases if case["content"] == "PAT-031"]
+        results = benchmark.run(cases, self.examples, self.claims, {})
+        self.assertEqual({r["id"]: r["status"] for r in results}, {
+            "KB-PAT-031-RASTER": "PASS", "KB-M08-METER": "PENDING",
+        })
+        document = benchmark.DRUMS.read_text(encoding="utf-8")
+        for before, after in (
+            ("0, 1440 und 2880", "0, 1200 und 2880"),
+            ("punktierte Viertel = 120 BPM", "Viertel = 120 BPM"),
+            ("1200, 1680, 2160", "1200, 1440, 2160"),
+        ):
+            with self.subTest(changed=before):
+                self.assertIn(before, document)
+                with patch.object(type(benchmark.DRUMS), "read_text", return_value=document.replace(before, after)):
+                    results = benchmark.run(cases, self.examples, self.claims, {})
+                self.assertEqual(coverage.catalog_evidence(results)[0], "FAIL")
+
     def test_p18_detects_changed_resolution_in_written_voicing(self):
         case = next(case for case in self.cases if case["id"] == "KB-P18-VOICINGS")
         result, = benchmark.run([case], self.examples, self.claims, {})
