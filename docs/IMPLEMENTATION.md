@@ -40,6 +40,13 @@ Ein angegebener Slash-Bass liegt unten. `DROP2` setzt eine Auswahl von
 genau vier Tonklassen inklusive Slash-Bass voraus. Beim fehlenden
 Slash-Bass verzichtet `ROOTLESS` auf den Grundton im gesamten Voicing.
 
+`Cmadd9` und die C-Stufe `iadd9` ergeben C–E♭–G–D. Die theoretische
+None liegt 14 Halbtöne über dem Grundton. Das Standardvoicing darf
+ihre Tonklasse als Sekunde platzieren. `iadd9(6)` setzt E♭ in den Bass.
+Eine Septakkordfigur wie `iadd9(65)` wird abgewiesen.
+[Kris P. Shaffer, Lead-Sheet Chord Symbols, S. 1](https://openmusictheory.github.io/Graphics/Handouts/LSandFBsymbols.pdf)
+· [Music Theory for the 21st-Century Classroom, § 31.1 Jazz Chord Basics](https://musictheory.pugetsound.edu/mt21c/JazzChordBasics.html)
+
 ## Ein Beispiel vom Symbol bis zum Voicing
 
 ```python
