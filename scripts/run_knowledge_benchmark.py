@@ -227,6 +227,23 @@ def evaluate(case, examples, claims, coach, manual):
                     and progression.roman_numerals in catalog_row and progression.chords_str in catalog_row
                     and r"V^7_{4/3}" in row and "ganzton" in row.lower()
                     and r"$D^7/A$" in document, actual)
+    elif method == "piano_upper_structure":
+        module = PIANO.read_text(encoding="utf-8").partition("### Modul P16:")[2].partition("### Modul ")[0]
+        hands = re.search(r"^- Linke Hand: `([^`]+)`\n- Rechte Hand: `([^`]+)`$", module, re.MULTILINE)
+        require(hands is not None, "Die notierte P16-Handverteilung fehlt.")
+        left, right = (
+            [parse_spelling(note, "INT").midi_number for note in hand.split()]
+            for hand in hands.groups()
+        )
+        bass = min(left + right)
+        actual = {
+            "bass": bass % 12,
+            "left": [note % 12 for note in left],
+            "right": [note % 12 for note in right],
+            "upper_intervals": [note - bass for note in right],
+            "omitted_fifth": all((note - bass) % 12 != 7 for note in left + right),
+        }
+        require(actual == expected, actual)
     elif method == "drum_ticks":
         row = next(line for line in DRUMS.read_text(encoding="utf-8").splitlines() if line.startswith("| `PAT-026`"))
         ppq = expected["ppq"]

@@ -26,14 +26,35 @@
 | `P13` | **Reharmonisation in der Praxis** | Monotone Melodien spannend umfärben | Diatonische Substitution, Modal Interchange, Picardische Terz & Sus4 | Phase 4.9/4.10 |
 | `P14` | **Bossa Nova & Latin Piano Begleitung** | Sanft wiegende Rhythmen spielen | Linke Hand Surdo-Pendel (1 & 3 Grundton, 2 & 4 Quinte); Rechte Hand Bossa Clave Comping | Phase 4.10 |
 | `P15` | **Stimmführung & Chromatische Medianten** | Geschmeidige Modulationen ohne Tonartbrüche | Minimale L1-Distanzverschiebung (z.B. C-Dur zu E-Dur und Ab-Dur) | Phase 4.12 |
-| `P16` | **Upper Structure Triads über Dominanten** | Komplexe Jazz-Spannungen mühelos greifen | Dur-Dreiklänge der RH über Tritonus-Fundament der LH (z.B. RH D-Dur über LH C7 = C7(#11,13)) | Phase 4.12 |
+| `P16` | **Upper Structure Triads über Dominanten** | Komplexe Jazz-Spannungen mühelos greifen | RH D-Dur über dem C7-Gerüst in LH. D, F♯ und A ergeben über C die None, erhöhte Undezime und Tredezime | Phase 4.12 |
 | `P17` | **Zeitgenössisches Syncopated Comping** | Moderne R&B- und Gospel-Pushes spielen | 16tel-Vorwegnahmen und synkopierte Push-Akkorde über 2- und 4-Bar-Loops | Phase 4.12 |
 | `P18` | **Backdoor Guide-Tone Voicings** | Reibungslose Auflösung über bVII7 zur Tonika | Stimmführung $iv^7 \to \flat VII^7 \to I^{\text{maj}7}$; Septime $A\flat \to G$ (Halbton); Terz $D \to E$ (**Ganztonschritt / 2 Halbtöne!**) | Phase 4.13/4.14 |
 | `P19` | **Chromatische Bassführung für Sekundärdominanten** | Fließende Basslinien in Kadenzen spielen | $I \to V^7/V(6/5) \to ii^6 \to I^6 \to V^7_{4/3} \to I$ ($G \to C\sharp \to C\natural \to B \to A \to G$); C♯–C–H in Halbtönen, H–A–G in zwei Ganztonschritten | Phase 4.13/4.14 |
 
 ---
 
-## 2. Fachliche Ausarbeitung der Korrekturen (P18 & P19)
+## 2. Fachliche Ausarbeitung der Korrekturen (P16, P18 & P19)
+
+### Modul P16: D-Dur über C7
+
+Internationale Notation. Die linke Hand spielt Grundton, Terz und Septime
+von C7. Die rechte Hand spielt den D-Dur-Dreiklang.
+
+- Linke Hand: `C3 E3 Bb3`
+- Rechte Hand: `D4 F#4 A4`
+
+Über C sind D die große None, F♯ die erhöhte Undezime und A die große
+Tredezime. Die Quinte G ist in dieser Lage ausgelassen. Das Symbol
+`C7(9,#11,13)` beschreibt die Erweiterungen des notierten Beispiels.
+Für kleine Hände kann der Bass C separat angeschlagen oder auf einer
+Bassstimme gehalten werden. Der Anschlagkomfort hängt von Lage und
+Handspanne ab.
+
+[Open Music Theory, Chord Symbols, Extensions und Alterations](https://viva.pressbooks.pub/openmusictheory/chapter/chord-symbols/)
+· [Open Music Theory, Jazz Voicings, Omission and doubling](https://viva.pressbooks.pub/openmusictheory/chapter/jazz-voicings/)
+
+---
+
 
 ### Modul P18: Backdoor Voicings & Stimmführung ($iv^7 - \flat VII^7 \to I^{\text{maj}7}$)
 * **Theorie-Referenz:** `PROG-017` (*Classical Jazz Backdoor ii–V*)

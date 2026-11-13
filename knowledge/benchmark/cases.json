@@ -625,6 +625,26 @@
       "next_step": "Vierklang und linke Hand explizit unterscheiden. Die Beispielnoten in beiden Händen notieren und den gesamten Dm9 gegen die Sollliste prüfen."
     },
     {
+      "id": "KB-P16",
+      "scope": "catalog",
+      "content": "P16",
+      "domain": "M10",
+      "question": "Welche Erweiterungen entstehen in der notierten D-Dur-Oberstruktur über dem C7-Gerüst?",
+      "expected": {
+        "bass": 0,
+        "left": [0, 4, 10],
+        "right": [2, 6, 9],
+        "upper_intervals": [14, 18, 21],
+        "omitted_fifth": true
+      },
+      "variants": ["Die konkrete Lage lässt die Quinte aus. Fingersatz und Anschlagkomfort sind eine eigene Probe."],
+      "basis": "Noten der P16-Übung; None = 14, erhöhte Undezime = 18 und Tredezime = 21 Halbtöne ab C3.",
+      "method": "piano_upper_structure",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Notierte Tonhöhen, tiefsten Ton und die Erweiterungen über C3 neu berechnen."
+    },
+    {
       "id": "KB-P19",
       "scope": "catalog",
       "content": "P19",
