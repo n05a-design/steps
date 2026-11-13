@@ -61,6 +61,11 @@ punktierten Viertel beginnen bei 0, 720, 1440 und 2160 Ticks.
 - **Zwei 6/8-Takte** mit den Grenzen 0, 1440 und 2880. Jeder Takt
   enthält zwei Dreiergruppen. Der zweite beginnt auf dem siebten Achtel.
 
+Für die beiden Hörproben gilt **punktierte Viertel = 120 BPM**. Bei
+vier solchen Schlägen dauert ein vollständiger Zwölfachtel-Zyklus zwei
+Sekunden. Die punktierte Viertel bündelt je drei Achtel.
+[Music Theory for the 21st-Century Classroom, § 4.4 Meter](https://musictheory.pugetsound.edu/mt21c/meter.html)
+
 Für die Hörprüfung beide Lesarten mit derselben Glockenfolge und jeweils
 hörbar gesetzten Taktanfängen vergleichen. Die Entscheidung steht im
 [Benchmark](../../benchmark/cases.json) als `KB-M08-METER` aus.

@@ -66,6 +66,61 @@ def pitch_set(chord):
     return sorted(chord.pitch_class_set)
 
 
+def piano_exercise(module_id):
+    document = PIANO.read_text(encoding="utf-8")
+    module = document.partition(f"### Modul {module_id}:")[2].partition("\n### ")[0]
+    rows = re.findall(r"^- `([^`]+)` · links `([^`]+)` · rechts `([^`]+)`$", module, re.MULTILINE)
+    return [
+        [label, *([parse_spelling(note, "INT").midi_number for note in hand.split()] for hand in (left, right))]
+        for label, left, right in rows
+    ]
+
+
+def evaluate_piano_exercise(case, expected):
+    module_id = case["content"]
+    rows = piano_exercise(module_id)
+    actual = {"voicings": rows}
+    require(rows == expected["voicings"], actual)
+    if module_id == "P08":
+        _, left, right = rows[0]
+        close = sorted(left + right)
+        _, left, right = rows[1]
+        drop2 = sorted(left + right)
+        right_span = max(right) - min(right)
+        _, left, right = rows[2]
+        chord = parse_chord("Dm7", "INT")
+        actual.update(
+            octave_drop=close[-2] - drop2[0],
+            right_span=right_span,
+            distributed_hand_spans=[max(hand) - min(hand) for hand in (left, right)],
+            bass=drop2[0],
+        )
+        require(sorted(left + right) == drop2 and close[-1] == drop2[-1]
+                and sorted([close[-2] - 12, *close[:-2], close[-1]]) == drop2
+                and tuple(close) == chord.to_voicing(4, "CLOSE").notes
+                and tuple(drop2) == chord.to_voicing(4, "DROP2").notes, actual)
+    elif module_id == "P05":
+        for symbol, left, right in rows:
+            chord = parse_chord(symbol, "INT")
+            _, third, _, seventh = chord.theoretical_intervals
+            bass = int(chord.root.pitch_class)
+            require(left[0] % 12 == bass
+                    and {note % 12 for note in right} == {(bass + third) % 12, (bass + seventh) % 12}, actual)
+        actual["motions"] = [
+            [b - a for a, b in zip(first[2], second[2], strict=True)]
+            for first, second in zip(rows, rows[1:])
+        ]
+    elif module_id == "P06":
+        for symbol, left, right in rows:
+            chord = parse_chord(symbol, "INT")
+            intervals = chord.theoretical_intervals[1:]
+            require(left[0] % 12 == chord.root.pitch_class
+                    and tuple(note - left[0] - 12 for note in right) == intervals, actual)
+    else:
+        raise ValueError(f"Unbekannte Klavierübung {module_id}.")
+    return require(actual == expected, actual)
+
+
 def case_fingerprint(case):
     value = json.dumps(case, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     return sha256(value.encode("utf-8")).hexdigest()
@@ -316,6 +371,44 @@ def evaluate(case, examples, claims, coach, manual):
             "omitted_fifth": all((note - bass) % 12 != 7 for note in left + right),
         }
         require(actual == expected, actual)
+    elif method == "piano_exercise":
+        actual = evaluate_piano_exercise(case, expected)
+    elif method == "compound_meter":
+        catalog = DRUMS.read_text(encoding="utf-8")
+        row = next(line for line in catalog.splitlines() if line.startswith(f"| `{case['content']}` |"))
+        module = catalog.partition(f"\n## {case['content']} ·")[2].partition("\n## ")[0]
+        pattern = re.search(r"\b([X.]{6,}) auf ", row)
+        timing = re.search(
+            r"`([X.]+)` umfasst (\w+) Achtel\. Bei (\d+) PPQ dauert\s+"
+            r"ein Achtel (\d+) Ticks und die gesamte Folge (\d+) Ticks", module,
+        )
+        tempo = re.search(r"punktierte Viertel = (\d+) BPM", module)
+        require(pattern is not None and timing is not None and tempo is not None, "Puls-, Tempo- oder PPQ-Angabe fehlt.")
+        bell, pulse_count, ppq_text, pulse_text, total_text = timing.groups()
+        ppq, pulse, bpm, total = int(ppq_text), int(pulse_text), int(tempo[1]), int(total_text)
+        require(pattern[1] == bell and f"| {bpm} BPM |" in row
+                and ppq == pulse * 2 and total == len(bell) * pulse,
+                "Katalog, Zählvariante und Zeitbasis stimmen nicht überein.")
+        require(pulse_count == "zwölf" and len(bell) == 12, "Die Glockenfolge muss zwölf Achtel umfassen.")
+
+        def ticks(values):
+            return [int(value) for value in re.findall(r"\d+", values)]
+
+        measures = re.findall(r"^- \*\*(?:Ein|Zwei) (\d+)/8-Takt(?:e)?\*\* mit den Grenzen ([\d, und]+)\.", module, re.MULTILINE)
+        written = {numerator: ticks(boundaries) for numerator, boundaries in measures}
+        require(len(measures) == len(written), "Doppelte Taktvariante.")
+        actual = {
+            "ppq": ppq, "bpm": bpm, "pulse_ticks": pulse,
+            "bell_onsets": [index * pulse for index, event in enumerate(bell) if event == "X"],
+            "beat_onsets": list(range(0, total, 3 * pulse)),
+            "barlines": {count: list(range(0, total + 1, int(count) * pulse)) for count in written},
+            "cycle_seconds": len(bell) / 3 * (60 / bpm),
+        }
+        bell_ticks = re.search(r"liegen bei ([\d, und]+) Ticks", module)
+        beat_ticks = re.search(r"beginnen bei ([\d, und]+) Ticks", module)
+        require(bell_ticks is not None and beat_ticks is not None
+                and ticks(bell_ticks[1]) == actual["bell_onsets"] and ticks(beat_ticks[1]) == actual["beat_onsets"]
+                and written == actual["barlines"] and actual == expected, actual)
     elif method == "latin_timing":
         actual = latin_timing(case["content"], data["voice"])
         require(actual == expected, actual)
