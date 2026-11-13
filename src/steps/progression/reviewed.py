@@ -11,8 +11,9 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit
 
-from .engine import CanonicalProgression, ReviewedProgression
-from ..theory.exceptions import ProgressionParsingError
+from .engine import CanonicalProgression, ReviewedProgression, resolve_roman_degree
+from ..theory import parse_chord, parse_spelling
+from ..theory.exceptions import MusicTheoryError, ProgressionParsingError
 
 DIRECTORY = Path(__file__).resolve().parent
 CATALOG = DIRECTORY / "reviewed_progressions.json"
@@ -107,9 +108,9 @@ def _sha256(value) -> str:
     return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
 
 
-def _sources() -> dict[str, dict]:
+def _sources(registry_path: Path | None = None) -> dict[str, dict]:
     index = {}
-    for source in _list(_read(REGISTRY, 1, "sources")["sources"], "Product sources"):
+    for source in _list(_read(registry_path if registry_path is not None else REGISTRY, 1, "sources")["sources"], "Product sources"):
         if not isinstance(source, dict):
             raise PublicationError("Invalid product source entry.")
         ident = _text(source.get("id"), "Source ID")
@@ -168,8 +169,8 @@ def _claim(raw, owner: dict, sources: dict[str, dict]) -> Claim:
     return Claim(ident, kind, text, scope, check, tuple(citations), fingerprint, tuple(path))
 
 
-def _candidates() -> tuple[dict[str, dict], dict[str, Claim]]:
-    sources = _sources()
+def _candidates(registry_path: Path | None = None) -> tuple[dict[str, dict], dict[str, Claim]]:
+    sources = _sources(registry_path)
     examples = {}
     document = _read(CATALOG, 2, "notation", "examples")
     notation = _claim(document["notation"], {"applies_to": list(REQUIRED_CLAIMS)}, sources)
@@ -230,14 +231,41 @@ def _approve(claim: Claim, record: dict) -> ApprovedClaim:
     return ApprovedClaim(claim, reviewer, reviewed_on, evidence)
 
 
-def load_reviewed_catalog() -> tuple[ReviewedProgression, ...]:
+def _verify_music(examples: dict[str, dict], claims: dict[str, Claim]) -> None:
+    for ident, row in examples.items():
+        try:
+            key = row["default_key"]
+            minor = key.endswith("m")
+            chords = [parse_chord(symbol, "INT") for symbol in row["chords"].split(" - ")]
+            degrees = [
+                resolve_roman_degree(degree, key.removesuffix("m"), minor, convention="INT")
+                for degree in row["roman"].split(" - ")
+            ]
+            if [chord.symbol for chord in chords] != [degree.symbol for degree in degrees]:
+                raise PublicationError(f"{ident}: Roman numerals disagree with written chord symbols.")
+            for claim_id in REQUIRED_CLAIMS[ident]:
+                path = claims[claim_id].voice_path
+                notes = [parse_spelling(note, "DE").midi_number for _, note in path]
+                if any(note % 12 not in chords[index].pitch_class_set
+                       for (index, _), note in zip(path, notes, strict=True)):
+                    raise PublicationError(f"{claim_id}: voice path uses a note outside its chord.")
+                if any(right - left != -1 for left, right in zip(notes, notes[1:])):
+                    raise PublicationError(f"{claim_id}: expected descending semitone motion.")
+        except PublicationError:
+            raise
+        except MusicTheoryError as exc:
+            raise PublicationError(f"{ident}: invalid music data: {exc}") from exc
+
+
+def load_reviewed_catalog(*, registry_path: Path | None = None) -> tuple[ReviewedProgression, ...]:
     """Load the pilot after checking the stored approvals and their fingerprints offline."""
-    examples, claims = _candidates()
+    examples, claims = _candidates(registry_path)
     records = _approval_records(claims)
     missing = claims.keys() - records.keys()
     if missing:
         raise PublicationError("Missing human approval: " + ", ".join(sorted(missing)) + ".")
     approved = {ident: _approve(claim, records[ident]) for ident, claim in claims.items()}
+    _verify_music(examples, claims)
     version = _sha256({"claims": {ident: c.fingerprint for ident, c in claims.items()}, "approvals": records})
     result = []
     for ident, ids in REQUIRED_CLAIMS.items():
