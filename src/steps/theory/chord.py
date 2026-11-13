@@ -62,7 +62,7 @@ CHORD_TEMPLATES: Dict[str, Dict[str, any]] = {
     },
     'add9': {
         'aliases': ['add9', 'add2'],
-        'theoretical': (0, 2, 4, 7),
+        'theoretical': (0, 4, 7, 14),
         'voiced': (0, 2, 4, 7),
         'category': 'ADD'
     },
@@ -168,7 +168,7 @@ CHORD_TEMPLATES: Dict[str, Dict[str, any]] = {
     },
     '7#11': {
         'aliases': ['7#11', '7(#11)', 'lydian_dom'],
-        'theoretical': (0, 4, 6, 7, 10),  # Full scale set: 1, 3, #11(6), 5(7), b7(10)
+        'theoretical': (0, 4, 7, 10, 18),  # 1, 3, 5, b7, #11
         'voiced': (0, 4, 6, 10),          # Standard voicing omits 5th to prevent tritone clash
         'category': 'EXTENDED'
     },
@@ -369,7 +369,11 @@ class ChordDefinition:
         bass_octave: int = 3,
         voicing_type: Literal['CLOSE', 'DROP2', 'SHELL', 'ROOTLESS'] = 'CLOSE'
     ) -> Voicing:
-        """Realize the chord with root-relative intervals and an optional slash bass."""
+        """Realize a layout in MIDI range. ROOTLESS omits the root from the upper part.
+
+        An explicit slash bass is retained even if it is the root.
+        DROP2 requires a valid four-note selection and keeps the highest extension.
+        """
         if not isinstance(bass_octave, int) or isinstance(bass_octave, bool) or not -1 <= bass_octave <= 9:
             raise VoiceLeadingError("Bass octave must be an integer in -1..9.")
         root_pc = int(self.root.pitch_class)
@@ -378,8 +382,12 @@ class ChordDefinition:
         bass_note = 12 * (bass_octave + 1) + bass_pc
         intervals = self.default_voiced_intervals
 
-        if voicing_type == 'DROP2' and len(intervals) >= 4:
-            pcs = sorted({(root_pc + semi) % 12 for semi in intervals[:4]} | {bass_pc})
+        if voicing_type == 'DROP2':
+            if len(intervals) < 4:
+                raise VoiceLeadingError("Drop-2 requires a four-tone selection.")
+            # Keep the defining third, seventh and highest written extension.
+            selection = intervals[:3] + intervals[-1:] if len(intervals) > 4 else intervals
+            pcs = sorted({(root_pc + semi) % 12 for semi in selection} | {bass_pc})
             if len(pcs) != 4:
                 raise VoiceLeadingError("Drop-2 requires four chord tones including the explicit bass.")
             if self.bass is not None:
@@ -399,21 +407,20 @@ class ChordDefinition:
         if voicing_type == 'ROOTLESS':
             pcs = {(root_pc + semi) % 12 for semi in intervals if semi % 12}
             if self.bass is None:
-                return Voicing(tuple(sorted(60 + pc for pc in pcs)), 'ROOTLESS')
+                return Voicing(tuple(sorted(12 * (bass_octave + 2) + pc for pc in pcs)), 'ROOTLESS')
             upper = [bass_note + ((pc - bass_pc) % 12) for pc in pcs - {bass_pc}]
             return Voicing(tuple(sorted([bass_note, *upper])), 'ROOTLESS')
 
         if voicing_type == 'SHELL':
             seventh = next((semi for semi in intervals if 9 <= semi <= 11), intervals[2])
-            # Major and minor added-sixth chords have no seventh.
             if self.quality in {'6', 'm6'}:
-                seventh = intervals[2]
+                seventh = 9
             pcs = {(root_pc + semi) % 12 for semi in (intervals[1], seventh)}
             floor = max(59, bass_note)
             upper = [floor + 1 + ((pc - floor - 1) % 12) for pc in pcs - {bass_pc}]
             return Voicing(tuple(sorted([bass_note, *upper])), 'SHELL', bass_note)
 
-        if voicing_type not in {'CLOSE', 'DROP2'}:
+        if voicing_type != 'CLOSE':
             raise VoiceLeadingError(f"Unknown voicing type: {voicing_type!r}.")
         upper = []
         for semi in intervals:

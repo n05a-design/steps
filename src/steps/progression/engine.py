@@ -597,57 +597,29 @@ def analyze_progression_voice_leading(
     voicings: list[Voicing],
     style: VoiceLeadingStyle = VoiceLeadingStyle.JAZZ_POP
 ) -> Dict[str, Any]:
-    """
-    Analyzes voice-leading smoothness, distances, crossings, and parallel violations across a progression.
-    """
-    if len(voicings) < 2:
-        return {
-            'total_l1_distance': 0,
-            'circular_pc_distance': 0,
-            'transition_count': 0,
-            'average_l1_step': 0.0,
-            'voice_crossings_count': sum(1 for v in voicings if detect_voice_crossing(v.midi_notes)),
-            'parallel_violations': []
-        }
-
+    """Analyze transitions using the supplied voice order in each voicing."""
+    transitions = max(0, len(voicings) - 1)
     total_l1 = 0
     total_circ = 0
+    max_jump = 0
     violations = []
-    crossings = 0
-    max_single_voice_jump = 0
-
-    for i in range(len(voicings) - 1):
-        v_a = voicings[i].midi_notes
-        v_b = voicings[i + 1].midi_notes
-        
-        if detect_voice_crossing(v_a):
-            crossings += 1
-            
-        dist_l1 = absolute_semitone_distance(v_a, v_b)
-        dist_circ = circular_pc_distance(v_a, v_b)
-        total_l1 += dist_l1
-        total_circ += dist_circ
-        
-        for a, b in zip(v_a, v_b):
-            max_single_voice_jump = max(max_single_voice_jump, abs(b - a))
-            
-        viols = detect_parallel_fifths_octaves(v_a, v_b, style=style)
-        violations.extend(viols)
-
-    # Check last voicing for crossing
-    if detect_voice_crossing(voicings[-1].midi_notes):
-        crossings += 1
-
-    transitions = len(voicings) - 1
-    n_voices = len(voicings[0].midi_notes)
-    avg_step = total_l1 / (transitions * n_voices) if transitions > 0 and n_voices > 0 else 0.0
-
+    for before, after in zip(voicings, voicings[1:]):
+        left, right = list(before.notes), list(after.notes)
+        total_l1 += absolute_semitone_distance(left, right)
+        total_circ += circular_pc_distance(left, right)
+        max_jump = max(max_jump, *(abs(b - a) for a, b in zip(left, right)))
+        violations.extend(detect_parallel_fifths_octaves(left, right, style=style))
+    comparisons = transitions * len(voicings[0].notes) if transitions else 0
+    average = round(total_l1 / comparisons, 2) if comparisons else 0.0
     return {
-        'total_l1_distance': total_l1,
-        'total_circular_distance': total_circ,
-        'transition_count': transitions,
-        'average_l1_step_per_voice': round(avg_step, 2),
-        'max_single_voice_jump': max_single_voice_jump,
-        'voice_crossings_count': crossings,
-        'parallel_violations': violations
+        "total_l1_distance": total_l1,
+        "total_circular_distance": total_circ,
+        "transition_count": transitions,
+        "average_l1_step_per_voice": average,
+        "max_single_voice_jump": max_jump,
+        "voice_crossings_count": sum(detect_voice_crossing(list(voicing.notes)) for voicing in voicings),
+        "parallel_violations": violations,
+        # Keep the historic short-input keys readable during migration.
+        "circular_pc_distance": total_circ,
+        "average_l1_step": average,
     }
