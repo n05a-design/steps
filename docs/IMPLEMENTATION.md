@@ -54,7 +54,7 @@ die geprüften Pilotbeispiele offline anzeigen. Für die Freigabe eines Git-Stan
 prüft `python -B scripts/verify_pilot_review_evidence.py --revision <commit-sha>`
 zusätzlich die Originalkommentare per GitHub-API. Bei Netzfehlern oder abweichenden
 Belegen schlägt dieser Befehl fehl. Die zwei bestehenden Nachweise behalten ihr
-Format. Für neue Freigaben trägt das zugelassene Reviewkonto eine Zeile
+Format. Für neue Freigaben trägt ein zugelassenes Reviewkonto (`n05a-design` oder `timvontrostorff`) eine Zeile
 `STEPS-APPROVED <claim-id> <fingerprint>` in einen PR-Kommentar ein. Datum ist
 der Tag der Erstellung in UTC. Nach einer Bearbeitung ist ein neuer Kommentar
 erforderlich. Eine fachliche Prüfung der Fundstelle bleibt Teil des Reviews.
