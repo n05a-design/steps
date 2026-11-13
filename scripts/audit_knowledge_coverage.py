@@ -72,6 +72,12 @@ def catalog_evidence(checks):
     return status, detail, " ".join(next_steps)
 
 
+def position_checks(by_case, prog_id, position):
+    """Return the positional case and the whole-progression case, so neither hides the other."""
+    keys = (f"KB-{prog_id}-{position:02}", f"{prog_id}-HARMONY")
+    return [by_case[key] for key in keys if key in by_case]
+
+
 NEXT = {
     "Produktquellen": "Originalseite und konkrete Passage mit der Aussage abgleichen.",
     "Historisches Quellenregister": "Edition oder Originaldatei lokalisieren und bibliografisch bestätigen.",
@@ -211,10 +217,10 @@ def audit():
             r for r in results
             if r["method"] in {"claim_sample", "guide_tone_paths"} and r["content"] == ident
         ]
-        depth = checks[0]["status"] if checks else "OFFEN"
+        depth, detail, next_step = catalog_evidence(checks)
         add("Forschungsclaims", ident, "BEFUND" if issues else "OK", depth,
-            "; ".join([*issues, f"Registerstatus {row['validation_status']}"]),
-            next_step=checks[0]["next_step"] if checks and checks[0]["next_step"] else None)
+            " ".join(filter(None, ["; ".join([*issues, f"Registerstatus {row['validation_status']}."]), detail])),
+            next_step=next_step or None)
 
     progression_path = CONCEPTS / "progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md"
     drum_path = CONCEPTS / "styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
@@ -285,9 +291,10 @@ def audit():
                 observation = f"{token} → {parsed.symbol}; Katalog {symbol}"
             except MusicTheoryError as exc:
                 consistent, observation = False, str(exc)
-            case = by_case.get(f"KB-{ident}-{i:02}") or by_case.get(f"{ident}-HARMONY")
+            status, detail, next_step = catalog_evidence(position_checks(by_case, ident, i))
             add("Progressionspositionen", f"{ident}:{i}", "OK" if consistent else "BEFUND",
-                case["status"] if case else "OFFEN", observation, next_step=case["next_step"] if case else None)
+                status, f"{observation}. {detail}".rstrip() if detail else observation,
+                next_step=next_step or None)
 
     for area, rows in (("Klaviermodule", pianos), ("Drum-/Groove-Katalog", drums)):
         for ident, (line, _) in rows.items():
