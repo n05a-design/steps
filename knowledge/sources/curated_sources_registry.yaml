@@ -674,3 +674,49 @@ sources:
   reference_url: https://viva.pressbooks.pub/openmusictheory/chapter/substitutions/
   reference_locator: "Open Music Theory, Key Takeaways and Tritone Substitutions"
   usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0044"
+  title: "Collections"
+  authors: ["Mark Gotham", "Megan Lavengood", "Brian Moseley", "Kris Shaffer"]
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains: ["M03"]
+  reference_url: https://viva.pressbooks.pub/openmusictheory/chapter/collections/
+  reference_locator: "Open Music Theory, Octatonic Collection, Example 3"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0045"
+  title: "Modal Mixture"
+  authors: ["Brian Jarvis"]
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains: ["M05"]
+  reference_url: https://viva.pressbooks.pub/openmusictheory/chapter/modal-mixture/
+  reference_locator: "Open Music Theory, Key Takeaways and Introduction"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0046"
+  title: "Mediants"
+  authors: ["Mark Gotham"]
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains: ["M05"]
+  reference_url: https://viva.pressbooks.pub/openmusictheory/chapter/mediants/
+  reference_locator: "Open Music Theory, Diatonic Mediants and Chromatic Mediants"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0047"
+  title: "Chromatic Modulation"
+  authors: ["Bryn Hughes"]
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains: ["M05"]
+  reference_url: https://viva.pressbooks.pub/openmusictheory/chapter/reinterpreting-augmented-sixth-chords/
+  reference_locator: "Open Music Theory, Examples 6 and 13"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0048"
+  title: "Geometrical Methods in Recent Music Theory"
+  authors: ["Dmitri Tymoczko"]
+  year: 2010
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains: ["M06"]
+  reference_url: https://www.mtosmt.org/issues/mto.10.16.1/mto.10.16.1.tymoczko.html
+  reference_locator: "Music Theory Online 16(1), paragraph [5]"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
