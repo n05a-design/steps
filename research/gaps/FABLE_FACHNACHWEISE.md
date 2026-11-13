@@ -71,6 +71,13 @@ Weiterverteilung der Quelle wurden nicht ermittelt.
 
 ## Wissensgraph
 
+Weiterführung nach PR #52: 25 weitere historische Restknoten haben eine
+begrenzte Definition; 49 bleiben offen. CDR-010 besitzt einen präzisen
+Korrekturvorschlag zur sechstönigen Sammlung, bleibt aber historisch FAIL.
+Quellen-, Modell- und Projektbelege sind getrennt gekennzeichnet; keine
+neue menschliche Abnahme. [Aktueller Einzelstand](../../docs/audit/fable-5.2/GRAPH_KLAERUNG_CDR010_2026-11-14.md).
+Die folgenden Absätze halten die früheren Zwischenstände fest.
+
 Aktualisierung vom 14.11.2026: Nach vier Formatknoten und sechs weiteren
 musikalischen Definitionen fehlen 74 kanonische Endpunktdefinitionen.
 Vier Kanten haben jetzt ein ergänzendes Quellen-/Claim-Register; drei

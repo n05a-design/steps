@@ -61,6 +61,9 @@ Claim-ID und Fingerabdruck in den Draft-PR. [Freigabeablauf](../concepts/progres
   Eine bestandene Gegenprobe mit `COUNTEREXAMPLE` bestätigt eine
   Beanstandung der ursprünglichen Graphaussage: Ihr Matrixstatus bleibt
   FAIL. Andere bestandene Graphproben zählen nur als Stichprobe.
+  `PROJECT_EXAMPLE_SAMPLE` belegt ausschließlich das benannte STEPS-
+  Beispiel. `GRAPH_CORRECTIONS.json` hält präzise Korrekturvorschläge
+  ohne Produktionsfreigabe fest; sie ersetzen keine historische Kante.
   Die automatisierte Prüfung umfasst Eindeutigkeit, Pflichtfelder,
   bibliografische Verweise bzw. lokale Pfade, referenzierte IDs, Graph-Endpunkte,
   Akkordaliase und die Konsistenz jeder Progressionsposition. Nicht auflösbare

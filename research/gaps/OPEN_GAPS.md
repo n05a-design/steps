@@ -1,5 +1,19 @@
 # Offene Evidenz und historische Bestandsaufnahme
 
+## Weiterführung nach PR #52 (14.11.2026)
+
+PR #52 ist auf `19f3fee` nach menschlicher Freigabe gemergt. Der neue
+Korrekturvorschlag für CDR-010 benennt die exakte sechstönige Sammlung
+C6 plus D und F♯. Der ursprüngliche FAIL bleibt erhalten, der Vorschlag
+ist nicht fachlich oder für Produktion freigegeben. Nach Bearbeitung
+aller bisherigen 74 Restknoten sind 25 Definitionen begrenzt zugeordnet;
+49 bleiben offen: 41 historische Mxx-xx-Definitionen und acht
+kontext-/abnahmeabhängige Knoten. Die
+[Bearbeitung mit Einzelgründen](../../docs/audit/fable-5.2/GRAPH_KLAERUNG_CDR010_2026-11-14.md)
+trennt Quellenlesen, Projektbeispiele und eigene Modellrechnung.
+Benchmark: 68 PASS, 0 FAIL, 27 PENDING. Keine neue Fachabnahme;
+CSS-Bundle-Rechte und dauerhafte Archivzuordnung bleiben offen.
+
 ## Fortsetzung vom 14.11.2026
 
 - PR #51 ist nach menschlicher Freigabe auf `9c7b8eb` gemergt.
