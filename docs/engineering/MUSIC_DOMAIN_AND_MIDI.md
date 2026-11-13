@@ -119,3 +119,28 @@ Eine `confidence: 0.95` in historischen JSON-Beispielen ist keine empirisch kali
 - Ein fachliches Reviewprotokoll, das Theoriemodell, Datenquelle, Regel-ID und Gegenbeispiel zurückverfolgt.
 
 **Abnahme:** keine Fachregel ohne Test und kenntlich gemachten Kontext; keine öffentliche Quelle ohne Rechteprüfung; keine Audio-/Dateifunktion ohne Round-trip und Failure-Beleg.
+
+## Eingabevertrag für den Harmoniekern
+
+`DE` liest B als B♭ und H als B natural. `INT` liest B als B natural.
+`AUTO` verlangt bei einem mehrdeutigen B eine ausdrückliche Konvention.
+Eindeutige Namensmerkmale gelten für das gesamte Akkordsymbol einschließlich
+Slash-Bass. Der Bestandskatalog speichert internationale Akkordsymbole.
+
+Notenschreibweisen können außerhalb des MIDI-Bereichs liegen. Der Zugriff auf
+`midi_number` verlangt 0 bis 127. Die Frequenzfunktion verarbeitet in diesem
+Bereich auch gebrochene MIDI-Positionen für die akustische Umrechnung.
+
+Die Stufenauflösung prüft die Terz gegen die Groß- oder Kleinschreibung.
+Eine Generalbassfigur verlangt die entsprechende Terz, Quinte oder Septime.
+`vii` bezeichnet wörtlich einen Mollakkord. Die verminderte Variante lautet
+`vii°`. Für bestehende Mollanalysen gelten explizite Vorzeichen wie `bVI` im
+Modus `major_reference` relativ zu Dur. Im Modus `natural_minor` bezieht sich
+ein explizites Vorzeichen auf natürlich Moll. Dort ergibt `#vi°` in c-Moll
+`Adim`. Ein Vorzeichen im alternativen Modus ändert keine Bestandsanalyse.
+
+Progressionstransposition verschiebt alle Grundtöne und Slash-Bässe um dieselbe
+diatonische Distanz. Falls die bevorzugte Zielschreibweise mehr als zwei
+Vorzeichen an einem Ton bräuchte, versucht die API eine einheitliche
+enharmonische Schreibweise. Ist auch diese unmöglich, meldet sie einen
+Domänenfehler.

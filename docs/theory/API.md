@@ -22,7 +22,7 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`PitchClass`](../../src/steps/theory/pitch.py) | `(val: 'int')` |
 | [`NoteSpelling`](../../src/steps/theory/pitch.py) | `(step: "Literal['C', 'D', 'E', 'F', 'G', 'A', 'B']", alteration: 'int' = 0, octave: 'int' = 4) -> None` |
 | [`midi_to_pitch_class`](../../src/steps/theory/pitch.py) | `(midi_note: 'int') -> 'PitchClass'` |
-| [`midi_to_frequency`](../../src/steps/theory/pitch.py) | `(midi_note: 'int', a4_ref: 'float' = 440.0) -> 'float'` |
+| [`midi_to_frequency`](../../src/steps/theory/pitch.py) | `(midi_note: 'int \| float', a4_ref: 'float' = 440.0) -> 'float'` |
 | [`frequency_to_midi`](../../src/steps/theory/pitch.py) | `(freq: 'float', a4_ref: 'float' = 440.0) -> 'float'` |
 | [`parse_spelling`](../../src/steps/theory/pitch.py) | `(note_str: 'str', convention: "Literal['INT', 'DE', 'AUTO']" = 'AUTO') -> 'NoteSpelling'` |
 | [`ChromaticInterval`](../../src/steps/theory/interval.py) | `PERFECT_UNISON`, `MINOR_SECOND`, `MAJOR_SECOND`, `MINOR_THIRD`, `MAJOR_THIRD`, `PERFECT_FOURTH`, `TRITONE`, `PERFECT_FIFTH`, `MINOR_SIXTH`, `MAJOR_SIXTH`, `MINOR_SEVENTH`, `MAJOR_SEVENTH`, `PERFECT_OCTAVE`, `MINOR_NINTH`, `MAJOR_NINTH`, `AUGMENTED_NINTH`, `PERFECT_ELEVENTH`, `AUGMENTED_ELEVENTH`, `MINOR_THIRTEENTH`, `MAJOR_THIRTEENTH` |
@@ -62,7 +62,7 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`CANONICAL_PROGRESSIONS`](../../src/steps/progression/__init__.py) | Datenwert |
 | [`get_progression`](../../src/steps/progression/engine.py) | `(prog_id: 'str') -> 'CanonicalProgression'` |
 | [`list_progressions`](../../src/steps/progression/engine.py) | `() -> 'list[CanonicalProgression]'` |
-| [`resolve_roman_degree`](../../src/steps/progression/engine.py) | `(degree_str: 'str', key_root: 'str \| NoteSpelling' = 'C', is_minor_key: 'bool' = False, *, convention: "Literal['INT', 'DE', 'AUTO']" = 'AUTO') -> 'ChordDefinition'` |
+| [`resolve_roman_degree`](../../src/steps/progression/engine.py) | `(degree_str: 'str', key_root: 'str \| NoteSpelling' = 'C', is_minor_key: 'bool' = False, *, convention: "Literal['INT', 'DE', 'AUTO']" = 'AUTO', minor_accidentals: "Literal['major_reference', 'natural_minor']" = 'major_reference') -> 'ChordDefinition'` |
 | [`generate_progression_voicings`](../../src/steps/progression/engine.py) | `(chords: 'list[ChordDefinition] \| CanonicalProgression', style: 'VoiceLeadingStyle' = <VoiceLeadingStyle.JAZZ_POP: 'JAZZ_POP'>, initial_voicing_type: "Literal['CLOSE', 'DROP2', 'SHELL', 'ROOTLESS']" = 'CLOSE', bass_octave: 'int' = 3) -> 'list[Voicing]'` |
 | [`analyze_progression_voice_leading`](../../src/steps/progression/engine.py) | `(voicings: 'list[Voicing]', style: 'VoiceLeadingStyle' = <VoiceLeadingStyle.JAZZ_POP: 'JAZZ_POP'>) -> 'Dict[str, Any]'` |
 
