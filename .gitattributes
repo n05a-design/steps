@@ -33,3 +33,6 @@ scripts/git-hooks/* text eol=lf
 *.wav binary
 *.amxd binary
 *.als binary
+
+# Originale RTF-Fassung mit eingebetteten Bildern bytegenau erhalten.
+"research/notes/deep-research/Lösung und Analyse Musiktheorie-Fragen.rtf" binary
