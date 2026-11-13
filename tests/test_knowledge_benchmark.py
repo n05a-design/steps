@@ -78,6 +78,23 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
         self.assertEqual(result["status"], "FAIL")
         self.assertEqual(result["observed"]["error"], "note outside chord")
 
+    def test_sample_cases_consume_inputs_and_check_observed_citation_fields(self):
+        cases = {case["id"]: case for case in self.cases}
+        for ident, field, value in (
+            ("KB-M02-ENHARMONIC", "notes", ["Cis4", "D4"]),
+            ("KB-M07-CLAVE", "sixteenth_positions", [[0, 3, 6], [4, 8]]),
+        ):
+            case = deepcopy(cases[ident])
+            case["input"][field] = value
+            result, = benchmark.run([case], self.examples, self.claims, {})
+            self.assertEqual(result["status"], "FAIL", result["observed"])
+
+        case = deepcopy(cases["KB-M07-SWING-SOURCE"])
+        case["expected"]["volume_issue"] = "19(4)"
+        result, = benchmark.run([case], self.examples, self.claims, {})
+        self.assertEqual(result["status"], "FAIL")
+        self.assertEqual(result["observed"]["actual"]["volume_issue"], "19(3)")
+
     def test_manual_evidence_is_bound_to_case_and_revision(self):
         case = next(case for case in self.cases if case["method"] == "manual")
         grade = {
@@ -93,6 +110,17 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
             result, = benchmark.run([case], self.examples, self.claims, {}, {case["id"]: evidence})
             self.assertEqual(result["status"], expected)
             self.assertEqual(bool(result["next_step"]), expected != "PASS")
+
+    def test_assessment_templates_keep_unrated_cases_pending(self):
+        for method in ("manual", "coach"):
+            case = next(case for case in self.cases if case["method"] == method)
+            template = benchmark.assessment_template([case], method, "a" * 40)
+            entry = template[case["id"]]
+            self.assertEqual(entry["fingerprint"], benchmark.case_fingerprint(case))
+            self.assertEqual(entry["criteria"], dict.fromkeys(case["expected"], None))
+            args = ({}, template) if method == "manual" else (template, {})
+            result, = benchmark.run([case], self.examples, self.claims, *args)
+            self.assertEqual(result["status"], "PENDING")
 
     def test_coverage_counts_partition_and_coach_rubric_reaches_all_domains(self):
         self.assertEqual(

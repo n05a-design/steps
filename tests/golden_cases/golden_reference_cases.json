@@ -1836,15 +1836,17 @@
     "category": "ENHARMONICS",
     "title": "Enharmonische Äquivalenz C# und Db",
     "input_params": {
-      "pc1": 1,
-      "pc2": 1
+      "notes": [
+        "C#4",
+        "Db4"
+      ]
     },
     "expected_output": true,
     "tolerance": 0.0,
     "theoretical_rule": "C# und Db teilen dieselbe Tonklasse 1 in 12-TET",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0015",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0116",
@@ -1852,15 +1854,17 @@
     "category": "ENHARMONICS",
     "title": "Enharmonische Äquivalenz F# und Gb",
     "input_params": {
-      "pc1": 6,
-      "pc2": 6
+      "notes": [
+        "F#4",
+        "Gb4"
+      ]
     },
     "expected_output": true,
     "tolerance": 0.0,
     "theoretical_rule": "F# und Gb teilen dieselbe Tonklasse 6 in 12-TET",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0016",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0117",
@@ -1966,7 +1970,7 @@
     "theoretical_rule": "(0 + 1*7) mod 12 = 7 (G-Dur, 1 Kreuz)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0023",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0124",
@@ -1982,7 +1986,7 @@
     "theoretical_rule": "(0 + 2*7) mod 12 = 2 (D-Dur, 2 Kreuze)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0024",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0125",
@@ -1998,7 +2002,7 @@
     "theoretical_rule": "(0 - 7) mod 12 = 5 (F-Dur, 1 B)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0025",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0126",
@@ -2288,7 +2292,7 @@
     "theoretical_rule": "Grundton, große Terz (4), reine Quinte (7)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0038",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0139",
@@ -2307,7 +2311,7 @@
     "theoretical_rule": "Grundton, kleine Terz (3), reine Quinte (7)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0039",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0140",
@@ -2326,7 +2330,7 @@
     "theoretical_rule": "Grundton, kleine Terz (3), verminderte Quinte (6)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0040",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0141",
@@ -2345,7 +2349,7 @@
     "theoretical_rule": "Grundton, große Terz (4), übermäßige Quinte (8)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0041",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0142",
@@ -2365,7 +2369,7 @@
     "theoretical_rule": "Dur-Dreiklang + kleine Septime (10)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0042",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0143",
@@ -2385,7 +2389,7 @@
     "theoretical_rule": "Dur-Dreiklang + große Septime (11)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0043",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0144",
@@ -2405,7 +2409,7 @@
     "theoretical_rule": "Moll-Dreiklang + kleine Septime (10)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0044",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0145",
@@ -2425,7 +2429,7 @@
     "theoretical_rule": "Verminderter Dreiklang + kleine Septime (m7b5)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0045",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0146",
@@ -2445,7 +2449,7 @@
     "theoretical_rule": "Symmetrische Schichtung kleiner Terzen (3-3-3)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0046",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0147",
@@ -2630,7 +2634,7 @@
     "theoretical_rule": "(7 + 6) mod 12 = 1 (Db7)",
     "source_citation": "SRC-002",
     "original_phase414_id": "REF-0055",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0156",
@@ -2656,14 +2660,15 @@
     "category": "HARMONY",
     "title": "Backdoor bVII7 Grundton in C-Dur",
     "input_params": {
-      "key_root": 0
+      "key": "C",
+      "degree": "bVII7"
     },
     "expected_output": 10,
     "tolerance": 0.0,
     "theoretical_rule": "(0 - 2) mod 12 = 10 (Bb7)",
     "source_citation": "SRC-002",
     "original_phase414_id": "REF-0057",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0158",
@@ -2710,7 +2715,7 @@
     "theoretical_rule": "D7 = V7 von G (7)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0060",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0161",
@@ -2734,7 +2739,14 @@
     "category": "HARMONY",
     "title": "Andalusische Kadenz Stufenfolge i-bVII-bVI-V",
     "input_params": {
-      "key_root": 9
+      "key": "A",
+      "degrees": [
+        "i",
+        "bVII",
+        "bVI",
+        "V"
+      ],
+      "minor": true
     },
     "expected_output": [
       9,
@@ -2746,7 +2758,7 @@
     "theoretical_rule": "A (9) -> G (7) -> F (5) -> E (4)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0062",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0163",
@@ -2811,7 +2823,14 @@
     "category": "HARMONY",
     "title": "Doo-Wop Kadenz I-vi-IV-V in C-Dur",
     "input_params": {
-      "key": "C"
+      "key": "C",
+      "degrees": [
+        "I",
+        "vi",
+        "IV",
+        "V"
+      ],
+      "minor": false
     },
     "expected_output": [
       0,
@@ -2823,7 +2842,7 @@
     "theoretical_rule": "C (0) -> Am (9) -> F (5) -> G (7)",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0066",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0167",
@@ -2888,10 +2907,10 @@
     },
     "expected_output": true,
     "tolerance": 0.0,
-    "theoretical_rule": "Stimme 1 steigt, Stimme 2 sinkt -> Gegenbewegung ist kontrapunktisch optimal",
+    "theoretical_rule": "Zwei entgegengesetzte Bewegungsrichtungen ergeben Gegenbewegung.",
     "source_citation": "SRC-004",
     "original_phase414_id": "REF-0070",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0171",
@@ -2982,10 +3001,10 @@
     },
     "expected_output": true,
     "tolerance": 0.0,
-    "theoretical_rule": "Stimme 1 E->C, Stimme 2 C->E",
+    "theoretical_rule": "Die beiden identifizierten Stimmen tauschen ihre Ausgangstöne.",
     "source_citation": "SRC-001",
     "original_phase414_id": "REF-0075",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0176",
@@ -3207,9 +3226,9 @@
     "case_id": "REF-0188",
     "domain": "M08",
     "category": "CLAVE",
-    "title": "Afro-Cuban 12/8 Bembe Bell-Onsets",
+    "title": "PAT-031 Glocken-Onsets auf zwölf Achtelpulsen",
     "input_params": {
-      "pulses": 12
+      "pattern": "X.X.XX.X.X.X"
     },
     "expected_output": [
       0,
@@ -3222,9 +3241,9 @@
     ],
     "tolerance": 0.0,
     "theoretical_rule": "7 Onsets auf 12 Pulsen: X.X.XX.X.X.X",
-    "source_citation": "Peñalosa (2009)",
+    "source_citation": "STEPS Drum Groove Reference Library, PAT-031. Historischer Literaturhinweis Peñalosa (2009), Ausgabe und Seite offen.",
     "original_phase414_id": "REF-0088",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0189",
@@ -3240,7 +3259,7 @@
     "theoretical_rule": "kgV(3, 2) = 6 Pulse",
     "source_citation": "London (2012)",
     "original_phase414_id": "REF-0089",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0190",
@@ -3277,10 +3296,10 @@
     },
     "expected_output": 12,
     "tolerance": 0.0,
-    "theoretical_rule": "12 Halbtöne = Standard-Oktavgriff (ca. 16.5 cm)",
+    "theoretical_rule": "Zwölf Halbtöne pro Oktave in 12-TET. Die physische Distanz hängt von der konkreten Klaviatur ab.",
     "source_citation": "Pianistische Ergonomie",
     "original_phase414_id": "REF-0091",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0192",

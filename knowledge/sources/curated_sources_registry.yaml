@@ -674,3 +674,78 @@ sources:
   reference_url: https://viva.pressbooks.pub/openmusictheory/chapter/substitutions/
   reference_locator: "Open Music Theory, Key Takeaways and Tritone Substitutions"
   usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0044"
+  title: "Collections"
+  authors: ["Mark Gotham", "Megan Lavengood", "Brian Moseley", "Kris Shaffer"]
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains: ["M03"]
+  reference_url: https://viva.pressbooks.pub/openmusictheory/chapter/collections/
+  reference_locator: "Open Music Theory, Octatonic Collection, Example 3"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0045"
+  title: "Modal Mixture"
+  authors: ["Brian Jarvis"]
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains: ["M05"]
+  reference_url: https://viva.pressbooks.pub/openmusictheory/chapter/modal-mixture/
+  reference_locator: "Open Music Theory, Key Takeaways and Introduction"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0046"
+  title: "Mediants"
+  authors: ["Mark Gotham"]
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains: ["M05"]
+  reference_url: https://viva.pressbooks.pub/openmusictheory/chapter/mediants/
+  reference_locator: "Open Music Theory, Diatonic Mediants and Chromatic Mediants"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0047"
+  title: "Chromatic Modulation"
+  authors: ["Bryn Hughes"]
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains: ["M05"]
+  reference_url: https://viva.pressbooks.pub/openmusictheory/chapter/reinterpreting-augmented-sixth-chords/
+  reference_locator: "Open Music Theory, Examples 6 and 13"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0048"
+  title: "Geometrical Methods in Recent Music Theory"
+  authors: ["Dmitri Tymoczko"]
+  year: 2010
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains: ["M06"]
+  reference_url: https://www.mtosmt.org/issues/mto.10.16.1/mto.10.16.1.tymoczko.html
+  reference_locator: "Music Theory Online 16(1), paragraph [5]"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0049"
+  title: "Twentieth-Century Rhythmic Techniques"
+  authors: ["Samuel Brady", "Chelsey Hamm"]
+  evidence_class: "E2_STANDARD_TEXTBOOK"
+  assigned_domains: ["M07"]
+  reference_url: https://viva.pressbooks.pub/openmusictheory/chapter/twentieth-century-rhythmic-techniques/
+  reference_locator: "Open Music Theory, Asymmetrical Meter, Examples 1–2"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0050"
+  title: "A Cross-Cultural Grammar for Temporal Harmony in Afro-Latin Musics: Clave, Partido-Alto and Other Timelines"
+  authors: ["Mehmet Vurkaç"]
+  year: 2012
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains: ["M07", "M09"]
+  reference_url: https://journals.library.columbia.edu/index.php/currentmusicology/article/download/5234/2473/9143
+  reference_locator: "Current Musicology 94, Figures 1, 4 and 8"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."
+
+- id: "SRC-0051"
+  title: "Rhythmic Analysis and Modeling of Expressive Music Performances — Samba as a case study"
+  authors: ["Lucas Simões Maia"]
+  year: 2024
+  evidence_class: "E1_PRIMARY_ACADEMIC"
+  assigned_domains: ["M08"]
+  reference_url: https://w1files.solucaoatrio.net.br/atrio/ufrj-pee_upl/THESIS/10004396/tese_versao_final_1_20240730145745648.pdf
+  reference_locator: "COPPE/UFRJ dissertation, pp. 42 and 45, Figure 2.17"
+  usage_notes: "Bibliographic link for research. No third-party text or media bundled."

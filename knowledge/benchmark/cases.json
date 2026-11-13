@@ -714,7 +714,13 @@
       "variants": [],
       "basis": "C4=60 und D4=62. Je ein Vorzeichen verschiebt um einen Halbton.",
       "method": "enharmonic",
-      "input": {},
+      "input": {
+        "convention": "DE",
+        "notes": [
+          "Cis4",
+          "Des4"
+        ]
+      },
       "mandatory": true,
       "next_step": "Die Produktionsausgabe von KB-M02-ENHARMONIC mit der im Fall dokumentierten Herleitung abgleichen."
     },
@@ -804,7 +810,19 @@
       "method": "claim_sample",
       "input": {
         "id": "CLAIM-036",
-        "check": "clave"
+        "check": "clave",
+        "ppq": 480,
+        "sixteenth_positions": [
+          [
+            0,
+            6,
+            12
+          ],
+          [
+            4,
+            8
+          ]
+        ]
       },
       "mandatory": true,
       "next_step": "Die Produktionsausgabe von KB-M07-CLAVE mit der im Fall dokumentierten Herleitung abgleichen."
@@ -1666,7 +1684,7 @@
       "domain": "M12",
       "question": "Lassen sich alle Graphknoten und ihr fachlicher Beleg nachvollziehen?",
       "expected": [
-        "86 bisher offene Endpunkt-IDs abgeglichen",
+        "84 weiterhin offene Endpunkt-IDs abgeglichen",
         "97 Relationen mit Claim oder Fundstelle belegt bzw. als ungeprüft markiert"
       ],
       "variants": [
@@ -1676,7 +1694,7 @@
       "method": "manual",
       "input": {
         "edges": 97,
-        "unresolved_ids": 86
+        "unresolved_ids": 84
       },
       "mandatory": true,
       "next_step": "Kanonische Knotendefinitionen für die offenen IDs anlegen oder die Relationen ausdrücklich als historische Hypothesen markieren. Pro Kante eine Fundstelle oder Claim-ID erfassen."
