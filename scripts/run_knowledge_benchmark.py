@@ -73,6 +73,11 @@ def case_fingerprint(case):
 def evaluate_manual(case, grade):
     if grade is None:
         return "PENDING", "Hör-, Spiel- oder Fachabnahme ausstehend."
+    if not isinstance(grade, dict):
+        return "FAIL", "Ein Abnahme-Eintrag muss ein Objekt sein."
+    if (grade.get("reviewer") == "" and grade.get("evidence") == "" and grade.get("observations") == ""
+            and grade.get("criteria") == dict.fromkeys(case["expected"], None)):
+        return "PENDING", "Hör-, Spiel- oder Fachabnahme ausstehend."
     if grade.get("fingerprint") != case_fingerprint(case):
         return "PENDING", "Manuelle Abnahme bezieht sich auf eine andere Fassung."
     if not all(isinstance(grade.get(key), str) and grade[key].strip()
@@ -95,6 +100,11 @@ def evaluate(case, examples, claims, coach, manual):
     if method == "coach":
         grade = coach.get(case["id"])
         if grade is None:
+            return "PENDING", "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
+        if not isinstance(grade, dict):
+            return "FAIL", "Ein Coach-Eintrag muss ein Objekt sein."
+        if (grade.get("reviewer") == "" and grade.get("sources_verified") is None
+                and grade.get("criteria") == dict.fromkeys(expected, None)):
             return "PENDING", "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
         if grade.get("fingerprint") != case_fingerprint(case):
             return "PENDING", "Coach-Bewertung bezieht sich auf eine andere Fassung."
@@ -340,6 +350,26 @@ def review_sheet(cases, claims):
     return "\n".join(lines)
 
 
+def assessment_template(cases, method, revision):
+    """Prepare empty, version-bound forms for human assessments."""
+    result = {}
+    for case in cases:
+        if case["method"] != method:
+            continue
+        entry = {
+            "fingerprint": case_fingerprint(case),
+            "reviewer": "",
+            "criteria": dict.fromkeys(case["expected"], None),
+        }
+        if method == "coach":
+            entry.update(response="", source_evidence="", sources_verified=None,
+                         model="", skill_revision="", run_evidence="")
+        else:
+            entry.update(git_sha=revision, evidence="", observations="")
+        result[case["id"]] = entry
+    return result
+
+
 def run(cases, examples, claims, coach, manual=None):
     results = []
     for case in cases:
@@ -388,8 +418,28 @@ def main():
     sheet = parser.add_mutually_exclusive_group()
     sheet.add_argument("--review-sheet", type=Path)
     sheet.add_argument("--check-review-sheet", type=Path)
+    sheet.add_argument("--coach-template", type=Path)
+    sheet.add_argument("--manual-template", type=Path)
     args = parser.parse_args()
     cases = load_cases()
+    selected = [case for case in cases if args.scope in {"all", case["scope"]}
+                and (args.content is None or args.content == case["content"])]
+    if args.coach_template or args.manual_template:
+        method = "coach" if args.coach_template else "manual"
+        if subprocess.check_output(["git", "status", "--porcelain", "--untracked-files=no"], cwd=ROOT):
+            parser.error("Abnahmevorlagen benötigen einen sauberen versionierten Arbeitsbaum.")
+        revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+        template = assessment_template(selected, method, revision)
+        if not template:
+            parser.error("Keine Abnahmefälle für diese Vorlage ausgewählt.")
+        output = args.coach_template or args.manual_template
+        try:
+            with output.open("x", encoding="utf-8") as stream:
+                json.dump(template, stream, ensure_ascii=False, indent=2)
+                stream.write("\n")
+        except FileExistsError:
+            parser.error(f"Vorlage existiert bereits: {output}")
+        return 0
     candidate_error = None
     try:
         examples, claims = reviewed._candidates()
@@ -410,8 +460,7 @@ def main():
     pilot_ids = {case["id"] for case in cases if case["scope"] == "pilot" and case["mandatory"]}
     if candidate_error is None and pilot_ids != claims.keys():
         parser.error("Pflichtfälle des Pilotbenchmarks müssen alle Pilot-Claims abdecken.")
-    selected = [case for case in cases if args.scope in {"all", case["scope"]}
-                and (args.content is None or args.content == case["content"])]
+
     if not selected:
         parser.error("Keine Benchmarkfälle in dieser Auswahl.")
     results = run(selected, examples, claims, coach, manual)

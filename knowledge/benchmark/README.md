@@ -68,6 +68,16 @@ Claim-ID und Fingerabdruck in den Draft-PR. [Freigabeablauf](../concepts/progres
 
 ## Hör-, Spiel- und Didaktikabnahme
 
+Aus dem sauberen Checkout lassen sich leere Formulare für den gewählten
+Git-Stand und die aktuellen Fallfingerabdrücke erzeugen. Ein
+unbewertetes Kriterium ist `null`. Nach der Prüfung je Kriterium
+`true` oder `false` eintragen.
+
+```sh
+python -B scripts/run_knowledge_benchmark.py --scope sample --manual-template /tmp/steps-hoer-spiel.json
+python -B scripts/run_knowledge_benchmark.py --scope coach --coach-template /tmp/steps-coach.json
+```
+
 Der Bericht nennt pro offener manueller Aufgabe die konkrete nächste Probe
 und die Pflichtkriterien. Für `--manual-assessment` eine JSON-Datei nach
 Fall-ID indizieren. Jeder Eintrag enthält `fingerprint` aus dem Ergebnis,
