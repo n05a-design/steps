@@ -27,6 +27,17 @@ Identitäts-, Hash- und Testprüfungen sichern Zuordnung, Spiegelung und
 erwartetes Laufzeitverhalten. Aussagen, Sollwerte und Quellen bedürfen einer
 eigenen fachlichen Prüfung.
 
+Die General-MIDI-Drumbeispiele REF-0022 bis REF-0025 sowie REF-0033
+und REF-0045 sind mit Tabelle 3 auf Druckseite 6 (PDF-Seite 8)
+abgeglichen. MIDI-Kanal 10 ordnet 36 dem Bass Drum 1, 37 dem Side Stick,
+38 der Acoustic Snare sowie 42, 44 und 46 den geschlossenen,
+pedalbetätigten und offenen Hi-Hats zu. Die Falltitel „Kick Drum“
+und „Snare Drum“ bezeichnen diese konkreten Varianten. Die Tabelle
+führt 35 als Acoustic Bass Drum und 40 als Electric Snare separat.
+Die Tests vergleichen Instrument und Sollwert mit dieser Fundstelle.
+Die sechs Fälle dokumentieren eine Spezifikation für GM1-Geräte.
+[The MIDI Association, General MIDI System Level 1, Tabelle 3](https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view)
+
 * **REF-0001 bis REF-0094 (Historischer Kernbestand Phase 4.1 bis 4.12):**
   Historische Fallzuordnungen wiederhergestellt (Tonklassen C4/A4, 12-TET Enharmonik, Intervalle, Kadenzen, Swing-Ratios, GM-Percussion-Mappings, Tuplet-Quantisierung, Rootless Voicings).
 * **REF-0095 bis REF-0100 (Phase 4.13 Multi-Domain & Erweiterungen):**
