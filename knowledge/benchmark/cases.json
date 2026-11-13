@@ -812,7 +812,7 @@
       "content": "CLAIM-011",
       "domain": "M11",
       "question": "Darf MusicXML 4.0 für alter 0,5 verwenden?",
-      "expected": true,
+      "expected": ["0.5", "-0.5"],
       "variants": [],
       "basis": "https://www.w3.org/2021/06/musicxml40/musicxml-reference/data-types/semitones/ nennt 0.5 und spezifiziert decimal ohne die behauptete Begrenzung.",
       "method": "claim_sample",
@@ -821,7 +821,7 @@
         "check": "alter"
       },
       "mandatory": true,
-      "next_step": "MusicXML-4.0-Typdefinition verlinken, die falsche Begrenzung korrigieren und die Dezimalwerte 0,5 und −0,5 als Prüfeingaben dokumentieren."
+      "next_step": "Beide Dezimalwerte in den XML-Beispielen mit der Typdefinition abgleichen."
     },
     {
       "id": "KB-M12-PLAYABILITY",
@@ -1399,18 +1399,21 @@
       "domain": "M04",
       "question": "Soll AUTO nackte deutsche Vorzeichennamen wie Cis akzeptieren?",
       "expected": {
-        "proposal": "Cis und Es explizit erkennen. Mehrdeutiges B ohne Locale als dokumentierten Kompatibilitätsfall behandeln."
+        "Cis/DE": "C#",
+        "Cis/AUTO": "C#",
+        "Es/DE": "Eb",
+        "Es/AUTO": "Eb",
+        "Es7/DE": "Eb7",
+        "Es7/AUTO": "Eb7"
       },
-      "variants": [
-        "Die jeweils dokumentierte Konvention gilt."
-      ],
+      "variants": [],
       "basis": "DE und AUTO an Cis, Es und Es7 vergleichen.",
       "method": "api_contract",
       "input": {
         "probe": "auto"
       },
       "mandatory": false,
-      "next_step": "Parserdialekt beschließen und Regression für einfache deutsche Vorzeichennamen ergänzen."
+      "next_step": "Bei einer Vertragsänderung die erwarteten Werte mit einem unabhängigen Beispiel aktualisieren."
     },
     {
       "id": "KB-CONTRACT-ANALYSIS",
@@ -1419,18 +1422,48 @@
       "domain": "M06",
       "question": "Welche Analysefelder liefert die API bei null, einer oder mehreren Lagen?",
       "expected": {
-        "proposal": "Ein einheitliches Ergebnisobjekt mit Nullwerten für fehlende Übergänge und gegebenenfalls Übergangsaliassen."
+        "empty": [
+          "average_l1_step",
+          "average_l1_step_per_voice",
+          "circular_pc_distance",
+          "max_single_voice_jump",
+          "parallel_violations",
+          "total_circular_distance",
+          "total_l1_distance",
+          "transition_count",
+          "voice_crossings_count"
+        ],
+        "one": [
+          "average_l1_step",
+          "average_l1_step_per_voice",
+          "circular_pc_distance",
+          "max_single_voice_jump",
+          "parallel_violations",
+          "total_circular_distance",
+          "total_l1_distance",
+          "transition_count",
+          "voice_crossings_count"
+        ],
+        "two": [
+          "average_l1_step",
+          "average_l1_step_per_voice",
+          "circular_pc_distance",
+          "max_single_voice_jump",
+          "parallel_violations",
+          "total_circular_distance",
+          "total_l1_distance",
+          "transition_count",
+          "voice_crossings_count"
+        ]
       },
-      "variants": [
-        "Die jeweils dokumentierte Konvention gilt."
-      ],
+      "variants": [],
       "basis": "Öffentliche Stimmführungsanalyse mit null und zwei Voicings.",
       "method": "api_contract",
       "input": {
         "probe": "analysis"
       },
       "mandatory": false,
-      "next_step": "Konsumenten und Namensmigration prüfen, dann API-Schema festlegen."
+      "next_step": "Bei einer Vertragsänderung die erwarteten Werte mit einem unabhängigen Beispiel aktualisieren."
     },
     {
       "id": "KB-CONTRACT-COMPOUND",
@@ -1439,18 +1472,35 @@
       "domain": "M04",
       "question": "Transportiert theoretical_intervals Intervallgröße oder modulo 12 normalisierte Werte?",
       "expected": {
-        "proposal": "Add9 und ♯11 als 14 bzw. 18 ausweisen; Tonklassen-API weiterhin modulo 12."
+        "Cadd9": [
+          0,
+          4,
+          7,
+          14
+        ],
+        "C7(#11)": [
+          0,
+          4,
+          7,
+          10,
+          18
+        ],
+        "C9": [
+          0,
+          4,
+          7,
+          10,
+          14
+        ]
       },
-      "variants": [
-        "Die jeweils dokumentierte Konvention gilt."
-      ],
+      "variants": [],
       "basis": "Große None = 14, übermäßige Undezime = 18 Halbtöne.",
       "method": "api_contract",
       "input": {
         "probe": "compound"
       },
       "mandatory": false,
-      "next_step": "Vertrag zu add2/add9 und vorhandenen Rezepten dokumentieren, dann Intervall- und Voicing-Tests trennen."
+      "next_step": "Bei einer Vertragsänderung die erwarteten Werte mit einem unabhängigen Beispiel aktualisieren."
     },
     {
       "id": "KB-CONTRACT-DROP2",
@@ -1459,18 +1509,28 @@
       "domain": "M04",
       "question": "Welche Spannungen muss DROP2 bei C13 erhalten?",
       "expected": {
-        "proposal": "Die charakteristische Tredezime erhalten oder den erweiterten Akkord im Layout explizit ablehnen."
+        "CLOSE": [
+          0,
+          2,
+          4,
+          9,
+          10
+        ],
+        "DROP2": [
+          0,
+          4,
+          9,
+          10
+        ]
       },
-      "variants": [
-        "Die jeweils dokumentierte Konvention gilt."
-      ],
+      "variants": [],
       "basis": "A ist die Tredezime von C und liegt bei CLOSE in der Tonklassenausgabe.",
       "method": "api_contract",
       "input": {
         "probe": "drop2"
       },
       "mandatory": false,
-      "next_step": "Auswahl der vier Stimmen fachlich beschließen und C13 samt Slash-Bass absichern."
+      "next_step": "Bei einer Vertragsänderung die erwarteten Werte mit einem unabhängigen Beispiel aktualisieren."
     },
     {
       "id": "KB-PAT-026-TICKS",

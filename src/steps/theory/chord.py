@@ -14,7 +14,7 @@ from dataclasses import dataclass
 from typing import Literal, Optional, Tuple, List, Set, Dict
 
 from .exceptions import ChordConstructionError, MusicTheoryError, VoiceLeadingError
-from .pitch import NoteSpelling, PitchClass, parse_spelling, DIATONIC_BASE_PC
+from .pitch import NoteSpelling, PitchClass, DIATONIC_BASE_PC, _parse_note_name, _UNICODE_TO_ASCII
 
 
 # Canonical dictionary of standard chord qualities:
@@ -62,7 +62,7 @@ CHORD_TEMPLATES: Dict[str, Dict[str, any]] = {
     },
     'add9': {
         'aliases': ['add9', 'add2'],
-        'theoretical': (0, 2, 4, 7),
+        'theoretical': (0, 4, 7, 14),
         'voiced': (0, 2, 4, 7),
         'category': 'ADD'
     },
@@ -168,7 +168,7 @@ CHORD_TEMPLATES: Dict[str, Dict[str, any]] = {
     },
     '7#11': {
         'aliases': ['7#11', '7(#11)', 'lydian_dom'],
-        'theoretical': (0, 4, 6, 7, 10),  # Full scale set: 1, 3, #11(6), 5(7), b7(10)
+        'theoretical': (0, 4, 7, 10, 18),  # 1, 3, 5, b7, #11
         'voiced': (0, 4, 6, 10),          # Standard voicing omits 5th to prevent tritone clash
         'category': 'EXTENDED'
     },
@@ -214,7 +214,7 @@ ALIAS_MAP = {
 _FOLDED_ALIASES = {
     alias.lower(): quality
     for alias, quality in ALIAS_MAP.items()
-    if not re.match(r"^[Mm](?:$|[0-9(])", alias)
+    if not re.match(r"^[Mm](?:$|[0-9(]|maj)", alias, re.IGNORECASE)
 }
 
 
@@ -369,7 +369,11 @@ class ChordDefinition:
         bass_octave: int = 3,
         voicing_type: Literal['CLOSE', 'DROP2', 'SHELL', 'ROOTLESS'] = 'CLOSE'
     ) -> Voicing:
-        """Realize the chord with root-relative intervals and an optional slash bass."""
+        """Realize a layout in MIDI range. ROOTLESS omits the root from the upper part.
+
+        An explicit slash bass is retained even if it is the root.
+        DROP2 requires a valid four-note selection and keeps the highest extension.
+        """
         if not isinstance(bass_octave, int) or isinstance(bass_octave, bool) or not -1 <= bass_octave <= 9:
             raise VoiceLeadingError("Bass octave must be an integer in -1..9.")
         root_pc = int(self.root.pitch_class)
@@ -378,8 +382,12 @@ class ChordDefinition:
         bass_note = 12 * (bass_octave + 1) + bass_pc
         intervals = self.default_voiced_intervals
 
-        if voicing_type == 'DROP2' and len(intervals) >= 4:
-            pcs = sorted({(root_pc + semi) % 12 for semi in intervals[:4]} | {bass_pc})
+        if voicing_type == 'DROP2':
+            if len(intervals) < 4:
+                raise VoiceLeadingError("Drop-2 requires a four-tone selection.")
+            # Keep the defining third, seventh and highest written extension.
+            selection = intervals[:3] + intervals[-1:] if len(intervals) > 4 else intervals
+            pcs = sorted({(root_pc + semi) % 12 for semi in selection} | {bass_pc})
             if len(pcs) != 4:
                 raise VoiceLeadingError("Drop-2 requires four chord tones including the explicit bass.")
             if self.bass is not None:
@@ -399,21 +407,20 @@ class ChordDefinition:
         if voicing_type == 'ROOTLESS':
             pcs = {(root_pc + semi) % 12 for semi in intervals if semi % 12}
             if self.bass is None:
-                return Voicing(tuple(sorted(60 + pc for pc in pcs)), 'ROOTLESS')
+                return Voicing(tuple(sorted(12 * (bass_octave + 2) + pc for pc in pcs)), 'ROOTLESS')
             upper = [bass_note + ((pc - bass_pc) % 12) for pc in pcs - {bass_pc}]
             return Voicing(tuple(sorted([bass_note, *upper])), 'ROOTLESS')
 
         if voicing_type == 'SHELL':
             seventh = next((semi for semi in intervals if 9 <= semi <= 11), intervals[2])
-            # Major and minor added-sixth chords have no seventh.
             if self.quality in {'6', 'm6'}:
-                seventh = intervals[2]
+                seventh = 9
             pcs = {(root_pc + semi) % 12 for semi in (intervals[1], seventh)}
             floor = max(59, bass_note)
             upper = [floor + 1 + ((pc - floor - 1) % 12) for pc in pcs - {bass_pc}]
             return Voicing(tuple(sorted([bass_note, *upper])), 'SHELL', bass_note)
 
-        if voicing_type not in {'CLOSE', 'DROP2'}:
+        if voicing_type != 'CLOSE':
             raise VoiceLeadingError(f"Unknown voicing type: {voicing_type!r}.")
         upper = []
         for semi in intervals:
@@ -426,79 +433,51 @@ class ChordDefinition:
         return Voicing(tuple(sorted({bass_note, *upper})), 'CLOSE')
 
 
+_ROOT_PATTERNS = {
+    "INT": re.compile(r"^([A-Ga-g](?:bb|b|##|#|x|n)?)(.*)$"),
+    "DE": re.compile(r"^([A-H](?:isis|is|eses|ses|es|s(?!us))?)(.*)$", re.IGNORECASE),
+}
+
+
+def _parse_chord_parts(root_and_quality: str, bass_name: str | None, convention: str) -> ChordDefinition:
+    match = _ROOT_PATTERNS[convention].fullmatch(root_and_quality)
+    if not match:
+        raise ChordConstructionError(f"Cannot identify root in chord symbol: {root_and_quality!r}.")
+    root_name, quality = match.groups()
+    quality = quality.strip()
+    if not re.fullmatch(r"(?:[^()]|\([^()]+\))*", quality):
+        raise ChordConstructionError(f"Malformed parentheses in chord symbol: {root_and_quality!r}.")
+    canonical = _resolve_quality(quality)
+    if canonical is None:
+        canonical = _resolve_quality(re.sub(r"[()]", "", quality))
+    if canonical is None:
+        raise ChordConstructionError(f"Unrecognized chord quality: {quality!r}.")
+    try:
+        root = _parse_note_name(root_name, convention, 4)
+        bass = _parse_note_name(bass_name, convention, 3) if bass_name is not None else None
+    except MusicTheoryError as exc:
+        raise ChordConstructionError(str(exc)) from exc
+    return ChordDefinition(root, canonical, bass)
+
+
 def parse_chord(symbol: str, convention: Literal['INT', 'DE', 'AUTO'] = 'AUTO') -> ChordDefinition:
-    """
-    Parses a lead-sheet chord symbol into a ChordDefinition.
-    
-    Examples:
-      - 'C', 'Dm', 'G7', 'Cmaj7', 'Bm7b5', 'Bdim7', 'C7#11', 'C7(#11)', 'Dm9', 'G7(b9)', 'C/E', 'G/B'
-      - German: 'H7', 'Hm7', 'Bmaj7' (where B is Bb), 'Fis7', 'Esmaj7'
-    """
-    cleaned = symbol.strip()
-    if not cleaned:
-        raise ChordConstructionError("Cannot parse empty chord symbol.")
-        
-    # Check for slash bass: e.g. "C/E" or "Dm7/G"
-    bass_spelling: Optional[NoteSpelling] = None
-    if '/' in cleaned:
-        parts = cleaned.split('/', 1)
-        chord_part = parts[0].strip()
-        bass_part = parts[1].strip()
-        cleaned = chord_part
-        # parse bass note
-        # append default octave 3 for bass note
-        bass_spelling = parse_spelling(bass_part + '3', convention=convention)
-
-    # Heuristic: Match root note letter + optional accidentals
-    # International roots: C, D, E, F, G, A, B with #, b, ##, bb
-    # German roots: H, B, Cis, Des, Es, As, Fis, etc.
-    
-    # 1. Try German prefix if starts with H or is explicitly DE or German pattern
-    root_spelling: Optional[NoteSpelling] = None
-    remaining: str = ''
-    
-    # In AUTO, A/E followed by "sus" does not indicate a German flat.
-    named_accidental = re.match(
-        r"^(?:[A-G](?:isis|is|eses|es)|[AE](?:ses|s(?!us)))[a-z0-9]",
-        cleaned, re.IGNORECASE,
-    )
-    is_german = convention == 'DE' or (
-        convention == 'AUTO' and (cleaned.startswith(('H', 'h')) or named_accidental)
-    )
-
-    if is_german:
-        m_de = re.match(r"^([A-H](?:isis|is|eses|ses|es|s(?!us))?)(.*)$", cleaned, re.IGNORECASE)
-        if m_de:
-            root_candidate = m_de.group(1)
-            try:
-                root_spelling = parse_spelling(root_candidate + '4', convention='DE')
-                remaining = m_de.group(2)
-            except Exception:
-                root_spelling = None
-
-    # 2. International prefix match
-    if root_spelling is None:
-        m_int = re.match(r"^([A-Ga-g])(bb|b|##|#|x)?(.*)$", cleaned)
-        if not m_int:
-            raise ChordConstructionError(f"Cannot identify root note in chord symbol: '{symbol}'")
-        step = m_int.group(1).upper()
-        acc = m_int.group(2) or ''
-        remaining = m_int.group(3)
-        root_spelling = parse_spelling(f"{step}{acc}4", convention='INT')
-
-    # Normalize remaining quality string
-    quality_raw = remaining.strip()
-    if not re.fullmatch(r"(?:[^()]|\([^()]+\))*", quality_raw):
-        raise ChordConstructionError(f"Malformed parentheses in chord symbol '{symbol}'.")
-    # Remove enclosing parentheses from tensions if any: e.g. 7(b9) -> 7b9, 7(#11) -> 7#11
-    quality_cleaned = re.sub(r"[()]", "", quality_raw)
-    
-    canon_q = _resolve_quality(quality_raw)
-    if canon_q is None:
-        canon_q = _resolve_quality(quality_cleaned)
-    if canon_q is None:
-        raise ChordConstructionError(
-            f"Unrecognized chord quality/extension '{quality_raw}' in symbol '{symbol}'."
-        )
-        
-    return ChordDefinition(root=root_spelling, quality=canon_q, bass=bass_spelling)
+    """Parse a chord and optional slash bass under one notation convention."""
+    if not isinstance(symbol, str) or not symbol.strip():
+        raise ChordConstructionError("Chord symbol must be nonempty text.")
+    if convention not in ("INT", "DE", "AUTO"):
+        raise ChordConstructionError(f"Unknown notation convention: {convention!r}.")
+    root_and_quality, slash, bass = symbol.strip().translate(_UNICODE_TO_ASCII).partition("/")
+    parts = (root_and_quality.strip(), bass.strip() if slash else None)
+    if convention != "AUTO":
+        return _parse_chord_parts(*parts, convention)
+    candidates = []
+    for notation in ("INT", "DE"):
+        try:
+            candidates.append(_parse_chord_parts(*parts, notation))
+        except ChordConstructionError:
+            continue
+    if not candidates:
+        raise ChordConstructionError(f"Cannot parse chord in one notation convention: {symbol!r}.")
+    if len(candidates) == 2 and candidates[0] != candidates[1]:
+        raise ChordConstructionError(f"Ambiguous chord symbol {symbol!r}: select DE or INT.")
+    return candidates[0]

@@ -13,9 +13,9 @@ import re
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Literal, Dict, Any
 
-from ..theory.exceptions import ProgressionParsingError, VoiceLeadingError
-from ..theory.pitch import NoteSpelling, parse_spelling
-from ..theory.chord import ChordDefinition, Voicing, parse_chord
+from ..theory.exceptions import MusicTheoryError, ProgressionParsingError, VoiceLeadingError
+from ..theory.pitch import DIATONIC_STEPS, NoteSpelling, parse_spelling
+from ..theory.chord import CHORD_TEMPLATES, ChordDefinition, Voicing, parse_chord
 from .voice_leading import (
     VoiceLeadingStyle,
     absolute_semitone_distance,
@@ -245,8 +245,8 @@ _HISTORICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
         'roman': 'I^maj7 - V^7/V - ii^7 - V^7 - I^maj7',
         'default_key': 'C',
         'chords': 'Cmaj7 - D7 - Dm7 - G7 - Cmaj7',
-        'context': 'Bossa Nova (Girl from Ipanema)',
-        'sources': 'Mauleón (1993), Jobim (1962)'
+        'context': 'Bossa Nova practice schema',
+        'sources': 'Historical reference: Mauleón (1993)'
     },
     {
         'id': 'PROG-025',
@@ -303,17 +303,43 @@ class CanonicalProgression:
 
     @property
     def chord_definitions(self) -> list[ChordDefinition]:
-        chord_symbols = [c.strip() for c in self.chords_str.split('-')]
-        return [parse_chord(s) for s in chord_symbols if s]
+        chord_symbols = re.split(r"\s+-\s+", self.chords_str.strip())
+        return [parse_chord(symbol, "INT") for symbol in chord_symbols if symbol]
 
     def transpose(self, semitones: int) -> list[ChordDefinition]:
-        """Transposes all chords in the progression by a chromatic semitone offset."""
-        result = []
-        for chord in self.chord_definitions:
-            new_root = chord.root.transpose_chromatic(semitones)
-            new_bass = chord.bass.transpose_chromatic(semitones) if chord.bass else None
-            result.append(ChordDefinition(root=new_root, quality=chord.quality, bass=new_bass))
-        return result
+        """Transpose the entire progression using a single diatonic interval."""
+        if isinstance(semitones, bool) or not isinstance(semitones, int):
+            raise ProgressionParsingError("Transposition requires an integer number of semitones.")
+        chords = self.chord_definitions
+        if not chords or semitones == 0:
+            return chords
+
+        # Treat the key as a spelling anchor. The common diatonic shift
+        # preserves relative letter distances, including slash basses.
+        key_name = self.default_key.removesuffix("m")
+        key = parse_spelling(key_name, "INT")
+        preferred = key.transpose_chromatic(semitones)
+        raw_shift = (
+            7 * (preferred.octave - key.octave)
+            + DIATONIC_STEPS.index(preferred.step) - DIATONIC_STEPS.index(key.step)
+        )
+        last_error = None
+        for delta in (0, -1, 1, -2, 2, -3, 3):
+            shift = raw_shift + delta
+            try:
+                key.transpose_diatonic(shift, semitones)
+                return [
+                    ChordDefinition(
+                        chord.root.transpose_diatonic(shift, semitones), chord.quality,
+                        chord.bass.transpose_diatonic(shift, semitones) if chord.bass else None,
+                    )
+                    for chord in chords
+                ]
+            except MusicTheoryError as exc:
+                last_error = exc
+        raise ProgressionParsingError(
+            f"{self.prog_id}: no consistent spelling for transposition by {semitones} semitones."
+        ) from last_error
 
 
 @dataclass(frozen=True)
@@ -395,6 +421,10 @@ def _degree_quality(suffix: str, minor_triad: bool, major_seventh: bool) -> str:
         return "m(maj7)"
     if suffix == "7b5" and not minor_triad:
         return "7b5"
+    if suffix == "+":
+        return "aug"
+    if suffix == "b5" and not minor_triad:
+        raise ProgressionParsingError("A major numeral with b5 requires a supported major-third template.")
     if suffix in {"dom7", "dom9"}:
         return suffix.removeprefix("dom")
     if suffix in _EXPLICIT_QUALITIES:
@@ -420,14 +450,31 @@ def resolve_roman_degree(
     is_minor_key: bool = False,
     *,
     convention: Literal['INT', 'DE', 'AUTO'] = 'AUTO',
+    minor_accidentals: Literal['major_reference', 'natural_minor'] = 'major_reference',
 ) -> ChordDefinition:
     """Resolve a degree in major or minor, with optional applied function and figures.
 
     A bare V is a triad. V7 and ii7 use the numeral's case and function.
+    A bare vii denotes a minor chord. Write vii° to request a diminished triad.
     Figures 6, 6/4, 6/5, 4/3 and 4/2 select the bass. Use m6 for an
-    added-sixth minor chord. Explicit accidentals are relative to major.
+    added-sixth minor chord. Explicit minor-key accidentals use major_reference
+    for legacy inputs or natural_minor when selected explicitly.
     """
-    key = parse_spelling(key_root.strip() + '4', convention=convention) if isinstance(key_root, str) else key_root
+    if minor_accidentals not in ("major_reference", "natural_minor"):
+        raise ProgressionParsingError(f"Unknown minor accidental convention: {minor_accidentals!r}.")
+    if not isinstance(degree_str, str):
+        raise ProgressionParsingError("Roman numeral must be text.")
+    if convention not in ("INT", "DE", "AUTO"):
+        raise ProgressionParsingError(f"Unknown notation convention: {convention!r}.")
+    if isinstance(key_root, str):
+        try:
+            key = parse_spelling(key_root, convention=convention)
+        except MusicTheoryError as exc:
+            raise ProgressionParsingError(str(exc)) from exc
+    elif isinstance(key_root, NoteSpelling):
+        key = key_root
+    else:
+        raise ProgressionParsingError("Key root must be a note name or NoteSpelling.")
     cleaned = degree_str.strip().translate(str.maketrans({"♭": "b", "♯": "#", "°": "o", "º": "o"}))
     # Parentheses keep figured-bass slashes separate from applied functions.
     cleaned = re.sub(r'(?<=[IViv7^])([654])/([5432])(?=$|/)', r'(\1/\2)', cleaned)
@@ -447,7 +494,9 @@ def resolve_roman_degree(
             suffix += figure_text
         if accidental or numeral not in {"V", "vii"}:
             raise ProgressionParsingError(f"Unsupported applied function: {degree_str!r}.")
-        key = resolve_roman_degree(applied, key, is_minor_key).root
+        key = resolve_roman_degree(
+            applied, key, is_minor_key, minor_accidentals=minor_accidentals,
+        ).root
 
     suffix = suffix.removeprefix("^")
     figure_match = re.search(r'\((5/?3|6(?:/?[345])?|4/?[23]|2)\)$', suffix)
@@ -471,21 +520,36 @@ def resolve_roman_degree(
     minor_scale = is_minor_key and not applied
     leading_tone = numeral == "vii" and suffix in {"o", "o7", "dim", "dim7", "ø", "ø7", "m7b5", "b5", "7b5"}
     if accidental:
-        semitones = _MAJOR_DEGREES[index] + (len(accidental) if accidental[0] == "#" else -len(accidental))
+        scale = _MINOR_DEGREES if minor_scale and minor_accidentals == "natural_minor" else _MAJOR_DEGREES
+        semitones = scale[index] + (len(accidental) if accidental[0] == "#" else -len(accidental))
     else:
         semitones = (_MINOR_DEGREES if minor_scale and not leading_tone else _MAJOR_DEGREES)[index]
-    root = key.transpose_diatonic(index, semitones)
     major_seventh = not accidental and not applied and (
         (minor_scale and numeral in {"III", "VI"}) or (not minor_scale and numeral in {"I", "IV"})
     )
     quality = _degree_quality(suffix, numeral.islower(), major_seventh)
-    chord = ChordDefinition(root, quality)
-    if not inversion:
-        return chord
-    if inversion >= len(chord.theoretical_intervals):
-        raise ProgressionParsingError(f"Inversion exceeds chord size: {degree_str!r}.")
-    bass = root.transpose_diatonic(2 * inversion, chord.theoretical_intervals[inversion])
-    return ChordDefinition(root, quality, bass)
+    try:
+        root = key.transpose_diatonic(index, semitones)
+        chord = ChordDefinition(root, quality)
+        intervals = chord.theoretical_intervals
+        required_third = 3 if numeral.islower() else 4
+        # An altered ninth does not determine the triad's quality.
+        if CHORD_TEMPLATES[quality]["category"] != "SUSPENDED" and required_third not in intervals:
+            raise ProgressionParsingError(f"Roman numeral case conflicts with chord quality: {degree_str!r}.")
+        if not inversion:
+            return chord
+        tones = {1: (3, 4), 2: (6, 7, 8), 3: (9, 10, 11)}[inversion]
+        if inversion == 3 and quality != "dim7":
+            tones = (10, 11)
+        pitch = next((tone for tone in tones if tone in intervals), None)
+        if pitch is None:
+            raise ProgressionParsingError(f"Figure refers to a missing chord tone: {degree_str!r}.")
+        bass = root.transpose_diatonic(2 * inversion, pitch)
+        return ChordDefinition(root, quality, bass)
+    except ProgressionParsingError:
+        raise
+    except MusicTheoryError as exc:
+        raise ProgressionParsingError(f"Cannot resolve {degree_str!r}: {exc}") from exc
 
 
 def generate_progression_voicings(
@@ -533,57 +597,29 @@ def analyze_progression_voice_leading(
     voicings: list[Voicing],
     style: VoiceLeadingStyle = VoiceLeadingStyle.JAZZ_POP
 ) -> Dict[str, Any]:
-    """
-    Analyzes voice-leading smoothness, distances, crossings, and parallel violations across a progression.
-    """
-    if len(voicings) < 2:
-        return {
-            'total_l1_distance': 0,
-            'circular_pc_distance': 0,
-            'transition_count': 0,
-            'average_l1_step': 0.0,
-            'voice_crossings_count': sum(1 for v in voicings if detect_voice_crossing(v.midi_notes)),
-            'parallel_violations': []
-        }
-
+    """Analyze transitions using the supplied voice order in each voicing."""
+    transitions = max(0, len(voicings) - 1)
     total_l1 = 0
     total_circ = 0
+    max_jump = 0
     violations = []
-    crossings = 0
-    max_single_voice_jump = 0
-
-    for i in range(len(voicings) - 1):
-        v_a = voicings[i].midi_notes
-        v_b = voicings[i + 1].midi_notes
-        
-        if detect_voice_crossing(v_a):
-            crossings += 1
-            
-        dist_l1 = absolute_semitone_distance(v_a, v_b)
-        dist_circ = circular_pc_distance(v_a, v_b)
-        total_l1 += dist_l1
-        total_circ += dist_circ
-        
-        for a, b in zip(v_a, v_b):
-            max_single_voice_jump = max(max_single_voice_jump, abs(b - a))
-            
-        viols = detect_parallel_fifths_octaves(v_a, v_b, style=style)
-        violations.extend(viols)
-
-    # Check last voicing for crossing
-    if detect_voice_crossing(voicings[-1].midi_notes):
-        crossings += 1
-
-    transitions = len(voicings) - 1
-    n_voices = len(voicings[0].midi_notes)
-    avg_step = total_l1 / (transitions * n_voices) if transitions > 0 and n_voices > 0 else 0.0
-
+    for before, after in zip(voicings, voicings[1:]):
+        left, right = list(before.notes), list(after.notes)
+        total_l1 += absolute_semitone_distance(left, right)
+        total_circ += circular_pc_distance(left, right)
+        max_jump = max(max_jump, *(abs(b - a) for a, b in zip(left, right)))
+        violations.extend(detect_parallel_fifths_octaves(left, right, style=style))
+    comparisons = transitions * len(voicings[0].notes) if transitions else 0
+    average = round(total_l1 / comparisons, 2) if comparisons else 0.0
     return {
-        'total_l1_distance': total_l1,
-        'total_circular_distance': total_circ,
-        'transition_count': transitions,
-        'average_l1_step_per_voice': round(avg_step, 2),
-        'max_single_voice_jump': max_single_voice_jump,
-        'voice_crossings_count': crossings,
-        'parallel_violations': violations
+        "total_l1_distance": total_l1,
+        "total_circular_distance": total_circ,
+        "transition_count": transitions,
+        "average_l1_step_per_voice": average,
+        "max_single_voice_jump": max_jump,
+        "voice_crossings_count": sum(detect_voice_crossing(list(voicing.notes)) for voicing in voicings),
+        "parallel_violations": violations,
+        # Keep the historic short-input keys readable during migration.
+        "circular_pc_distance": total_circ,
+        "average_l1_step": average,
     }

@@ -1,0 +1,9 @@
+# Review the publication workflow, trusted verifier and its data inputs.
+/.github/CODEOWNERS @timvontrostorff
+/.github/workflows/pilot-evidence.yml @timvontrostorff
+/scripts/verify_pilot_review_evidence.py @timvontrostorff
+/src/steps/progression/reviewed.py @timvontrostorff
+/src/steps/progression/reviewed_progressions.json @timvontrostorff
+/src/steps/progression/reviewed_progression_approvals.json @timvontrostorff
+/knowledge/sources/registry.yaml @timvontrostorff
+/app/knowledge.py @timvontrostorff
