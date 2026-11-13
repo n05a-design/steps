@@ -155,6 +155,8 @@ def audit():
         missing = []
         if ident in historical_duplicates or not re.fullmatch(r"SRC-\d{3,4}", ident):
             missing.append("ungültige oder doppelte ID")
+        if row.get("provenance_status") == "SOURCE_REVIEW_REQUIRED":
+            missing.append("Historische Bibliografie und Fundstelle unbestätigt")
         if not row.get("title"):
             missing.append("Titel fehlt")
         if "filename" in row:
@@ -183,7 +185,10 @@ def audit():
                 or not re.fullmatch(r"M(?:0[1-9]|1[0-2])", row.get("domain_id", ""))
                 or row["validation_status"] not in {"PLACEHOLDER", "REVIEW_REQUIRED", "SOURCE_REVIEW_REQUIRED"}):
             issues.append("Pflichtangaben fehlen")
-        checks = [r for r in results if r["method"] == "claim_sample" and r["content"] == ident]
+        checks = [
+            r for r in results
+            if r["method"] in {"claim_sample", "guide_tone_paths"} and r["content"] == ident
+        ]
         depth = checks[0]["status"] if checks else "OFFEN"
         add("Forschungsclaims", ident, "BEFUND" if issues else "OK", depth,
             "; ".join([*issues, f"Registerstatus {row['validation_status']}"]),

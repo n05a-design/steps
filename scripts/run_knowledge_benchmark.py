@@ -251,6 +251,24 @@ def evaluate(case, examples, claims, coach, manual):
     elif method == "degree":
         actual = resolve_roman_degree(data["degree"], data["key"], convention="INT").symbol
         require(actual == expected, actual)
+    elif method == "guide_tone_paths":
+        actual = {}
+        for mode, example in data.items():
+            chords = [parse_chord(symbol, "INT") for symbol in example["chords"]]
+            motions = []
+            for first, second, (source, target) in zip(
+                chords[:-1], chords[1:], example["paths"], strict=True,
+            ):
+                source_note = parse_spelling(source, "INT")
+                target_note = parse_spelling(target, "INT")
+                require(
+                    source_note.pitch_class in first.pitch_class_set
+                    and target_note.pitch_class in second.pitch_class_set,
+                    {"mode": mode, "source": source, "target": target, "error": "note outside chord"},
+                )
+                motions.append(target_note.midi_number - source_note.midi_number)
+            actual[mode] = motions
+        require(actual == expected, actual)
     elif method == "claim_sample":
         with CLAIMS.open(encoding="utf-8-sig", newline="") as source:
             row = next(r for r in csv.DictReader(source) if r["claim_id"] == data["id"])

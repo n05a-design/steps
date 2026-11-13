@@ -1,4 +1,6 @@
-# Aktuelle Lücken (Repository-Bestandsaufnahme 2026-11-10)
+# Offene Evidenz und historische Bestandsaufnahme
+
+## Repository-Bestandsaufnahme vom 10.11.2026
 
 - Projektkonsolidierung nennt sechs Originaldokumente, im Originalarchiv liegt derzeit kein `Glide Kontext für Fable(2).md` (5 Markdown-Originale vorhanden); Nachweis/Fundort prüfen.
 - Kein ausführbarer `app/`- oder `src/steps/`-Musikcode im analysierten `main`-Baum.
@@ -22,16 +24,18 @@
 
 ## Aufgabenregister nach dem Fable-Audit (2026-11-13)
 
-Für die Abnahme am echten externen Register fehlen dessen Pfad und der Zugriff
-auf seinen aktuellen Stand. Der schreibgeschützte Repository-Snapshot enthält
+Die Suche nach dem Master im angegebenen lokalen GitHub-Stammordner
+in OneDrive ergab Repository-Snapshots. Die End-to-End-Abnahme am echten
+externen Register steht aus. Der schreibgeschützte Repository-Snapshot enthält
 33 Aufgaben und drei `DONE_VERIFIED`-Einträge ohne die jetzt strukturiert
 erfassten Belegfelder (OA-0002, OA-0011, OA-0013). Beim Abgleich am echten
 Register Belege nachtragen oder den Status nach Prüfung korrigieren. Historische
 Backups ohne Manifest bleiben für eine gesonderte Wiederherstellung erhalten.
 
-## Offene Fachnachweise (2026-11-12)
+## Offene Fachnachweise (Stand 2026-11-13)
 
-- Bei [PAT-031](../../knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md#pat-031--offene-taktgrenze) fehlen Taktgrenzen und die Hörprüfung der beiden Lesarten.
+- Für [PAT-031](../../knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md) liegen zwei Taktvarianten vor. Die Hörprüfung steht aus.
+- Die [Fachnachweise](FABLE_FACHNACHWEISE.md) halten den geprüften Stand für Coach, Latin-Katalog, SRC-033, Graph und historische Dateien fest.
 - Für die [198 Golden Cases](../../knowledge/research/GOLDEN_DATA_SOURCE_OF_TRUTH.md#2-bestandsübersicht-phase-415) fehlt eine dokumentierte fachliche Einzelabnahme. Die Test- und Integritätsnachweise liegen vor.
 
 ## Restprüfung nach dem Fable-Audit (2026-11-13)
@@ -43,10 +47,10 @@ der Befunde sind im [Maßnahmenplan](../../docs/audit/fable-5.2/STEPS_FABLE_5_2_
 | Prüfgebiet | Offene Evidenz und nächster Nachweis |
 | --- | --- |
 | K01/K03/K06/K07/K10/K13, A01/A02 | Typen, Fehlerhierarchie und Grenzwerte vollständig inventarisieren. Die 1.276 Layout-Aufrufe decken Grundton C ab; Slash-Bässe, weitere Tonarten, Stimmenidentität, Hör-/Spielbarkeit und API-Kompatibilität sind offen. Notations-/Moll- und Stilentscheidungen dokumentieren. Zeitmodell und Serialisierung getrennt bewerten. |
-| K11, T02/T06 | Acht derzeitige GitHub-Belege geprüft. Automatische Belegprüfung und verpflichtender Check fehlen; Änderung des Publikationswegs braucht Negativkontrollen. Python 3.11 ist für den aktuellen Commit in GitHub CI belegt; lokaler 3.11-Lauf und Windows fehlen. |
-| S01/S03/S04 | Echtes externes Register nicht verfügbar; End-to-End-Abnahme für Backup/Restore und Registermigration offen. Für zwölf Coach-Fälle fehlen isolierte Antworten, Modell-/Skill-Revision und menschliche Kriterienbewertung. |
+| K11, T02/T06 | Auf `7fde80e` sind alle acht GitHub-Freigabebelege und der verpflichtende Online-Check belegt. CI meldet erfolgreiche Läufe für Python 3.11–3.14 und den Skill auf macOS und Windows. Für künftige Freigaben bleiben Quellenrelevanz und menschliches Review erforderlich. |
+| S01/S03/S04 | Echtes externes Register nicht verfügbar; End-to-End-Abnahme für Backup/Restore und Registermigration offen. Für zwölf Coach-Fälle liegen Antwortentwürfe vor. Isolierter Lauf, Modell-/Skill-Revision und menschliche Kriterienbewertung stehen aus. |
 | W01/W02/W03 | Kanonische Quellen und genaue Fundstellen je Pilotclaim abgleichen. 14 der 35 historisch als VERIFIED bezeichneten Claims lagen außerhalb der Fable-Stichprobe. Alle 66 Einträge mit Evidenzstatus inventarisieren, Buchseiten nur bei berechtigtem Zugriff bewerten. Historische Quellenmetadaten einschließlich der doppelten Titel nach Autor, Ausgabe, Locator und Rechteklasse auflösen. |
-| W04 | P01–P19, PAT-001–031 und [Latin-Katalog](../../knowledge/concepts/styles/GENRE_RESEARCH_LATIN.md) nachprüfen: Akkordtöne/Bass/Rollen, Taktart/Taktgrenzen/PPQ, Eventraster, stilistische Aussagen und ggf. Hörbeleg. PROG-024-Werkzuschreibung benötigt eine konkrete Ausgabe. |
-| W05/W08 | 87 Relationen außerhalb der Fable-Stichprobe; für aktive Empfehlungen auch Stichprobenfälle nochmals auf Richtung, Typ, Gültigkeitsbereich und Claim-Bezug prüfen. Historische Literatur und Pilotprovenienz trennen. |
+| W04 | P01–P19, PAT-001–031 und [Latin-Katalog](../../knowledge/concepts/styles/GENRE_RESEARCH_LATIN.md) nachprüfen: Akkordtöne/Bass/Rollen, Taktart/Taktgrenzen/PPQ, Eventraster, stilistische Aussagen und ggf. Hörbeleg. PROG-024 ist ein Übungsschema. Die verlinkte Jobim-Partitur belegt die Variante mit ♭II7. |
+| W05/W08 | 97 Relationen stehen auf REVIEW_REQUIRED. 86 unterschiedliche Knoten-IDs brauchen Definitionen. Richtung, Typ, Gültigkeitsbereich und Claim-Bezug je Kante prüfen. Historische Literatur und Pilotprovenienz trennen. |
 | W06/W07, T01/T03–T05/T07 | 132 Golden Cases außerhalb der Fable-Stichprobe; auch die 66 Stichprobenfälle brauchen individuelle, versionierte Evidenz. Verbleibende Evaluatorzweige und Fixture-Sollwerte klassifizieren. Die gelesenen Renderer-/Benchmark-/Coverage-Pfade mit Negativkontrollen absichern; Hash-Identität und Generatorgleichheit gelten als formale Nachweise. |
 | H01/H02 | Historische Kernaussagen stichprobenhaft geprüft, unter anderem Git-Abstammung, Testzahlen und Golden-Klassen. Weitere historische Aussagen nur bei Übernahme in aktuelle Entscheidungen gegen Originalbelege prüfen. |
