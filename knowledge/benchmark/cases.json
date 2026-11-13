@@ -590,6 +590,191 @@
       "next_step": "Die gewählte Alt-Variante von der offenen Kurzschreibweise trennen und mit festen Tonklassen auszeichnen."
     },
     {
+      "id": "KB-P05-NOTEN",
+      "scope": "catalog",
+      "content": "P05",
+      "domain": "M10",
+      "question": "Wie bewegen sich die notierten Guide Tones in Dm7–G7–Cmaj7?",
+      "expected": {
+        "voicings": [
+          [
+            "Dm7",
+            [
+              50
+            ],
+            [
+              60,
+              65
+            ]
+          ],
+          [
+            "G7",
+            [
+              43
+            ],
+            [
+              59,
+              65
+            ]
+          ],
+          [
+            "Cmaj7",
+            [
+              48
+            ],
+            [
+              59,
+              64
+            ]
+          ]
+        ],
+        "motions": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            -1
+          ]
+        ]
+      },
+      "variants": [],
+      "basis": "Music Theory for the 21st-Century Classroom, § 31.7.1. Terz und Septime werden mit den notierten MIDI-Tonhöhen und Halbtonschritten verglichen.",
+      "method": "piano_exercise",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Katalognoten, Quellenfundstelle und unabhängige Sollwerte erneut abgleichen."
+    },
+    {
+      "id": "KB-P06-NOTEN",
+      "scope": "catalog",
+      "content": "P06",
+      "domain": "M10",
+      "question": "Welche notierten Töne unterscheiden Csus4, Csus2, Cadd9, Cmadd9 und C9?",
+      "expected": {
+        "voicings": [
+          [
+            "Csus4",
+            [
+              48
+            ],
+            [
+              65,
+              67
+            ]
+          ],
+          [
+            "Csus2",
+            [
+              48
+            ],
+            [
+              62,
+              67
+            ]
+          ],
+          [
+            "Cadd9",
+            [
+              48
+            ],
+            [
+              64,
+              67,
+              74
+            ]
+          ],
+          [
+            "Cmadd9",
+            [
+              48
+            ],
+            [
+              63,
+              67,
+              74
+            ]
+          ],
+          [
+            "C9",
+            [
+              48
+            ],
+            [
+              64,
+              67,
+              70,
+              74
+            ]
+          ]
+        ]
+      },
+      "variants": [],
+      "basis": "Shaffer, Lead-Sheet Chord Symbols, S. 1 und Music Theory for the 21st-Century Classroom, § 31.1. Cmadd9 wird aus dem Moll-Dreiklang und 14 Halbtönen für die große None hergeleitet.",
+      "method": "piano_exercise",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Katalognoten, Quellenfundstelle und unabhängige Sollwerte erneut abgleichen."
+    },
+    {
+      "id": "KB-P08-NOTEN",
+      "scope": "catalog",
+      "content": "P08",
+      "domain": "M10",
+      "question": "Welche Stimme sinkt im Dm7-Beispiel, und wie ändern sich Bass und Handspanne?",
+      "expected": {
+        "voicings": [
+          [
+            "Eng",
+            [
+              62
+            ],
+            [
+              65,
+              69,
+              72
+            ]
+          ],
+          [
+            "Drop-2",
+            [
+              57
+            ],
+            [
+              62,
+              65,
+              72
+            ]
+          ],
+          [
+            "Drop-2 verteilt",
+            [
+              57,
+              62
+            ],
+            [
+              65,
+              72
+            ]
+          ]
+        ],
+        "octave_drop": 12,
+        "right_span": 10,
+        "distributed_hand_spans": [
+          5,
+          7
+        ],
+        "bass": 57
+      },
+      "variants": [],
+      "basis": "Clauhs, Arranging for School Jazz Ensembles, S. 268, Abb. 22.21. A4 → A3, C5 bleibt oben. Die verteilte Lage umfasst links fünf und rechts sieben Halbtöne.",
+      "method": "piano_exercise",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Katalognoten, Quellenfundstelle und unabhängige Sollwerte erneut abgleichen."
+    },
+    {
       "id": "KB-P12",
       "scope": "catalog",
       "content": "P12",

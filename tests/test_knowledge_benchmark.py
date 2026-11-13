@@ -67,6 +67,37 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
         self.assertEqual(result["status"], "FAIL")
         self.assertEqual(result["observed"]["upper_intervals"], [14, 17, 21])
 
+    def test_piano_exercises_detect_wrong_notated_notes(self):
+        document = benchmark.PIANO.read_text(encoding="utf-8")
+        for ident, before, after in (
+            ("P05", "B3 F4", "Bb3 F4"),
+            ("P06", "Eb4 G4 D5", "E4 G4 D5"),
+            ("P08", "A3 D4", "A4 D4"),
+        ):
+            with self.subTest(module=ident):
+                case = next(case for case in self.cases if case["id"] == f"KB-{ident}-NOTEN")
+                result, = benchmark.run([case], self.examples, self.claims, {})
+                self.assertEqual(result["status"], "PASS", result["observed"])
+                self.assertIn(before, document)
+                with patch.object(type(benchmark.PIANO), "read_text", return_value=document.replace(before, after)):
+                    altered, = benchmark.run([case], self.examples, self.claims, {})
+                self.assertEqual(altered["status"], "FAIL")
+
+    def test_catalog_coverage_reports_pass_fail_and_pending_independently_of_order(self):
+        pending = {"status": "PENDING", "next_step": "Hörprobe."}
+        passed = {"status": "PASS", "next_step": ""}
+        failed = {"status": "FAIL", "next_step": "Noten prüfen."}
+        self.assertEqual(coverage.catalog_evidence([]), ("OFFEN", "", ""))
+        for checks, status, detail in (
+            ([pending], "PENDING", "1 PENDING."),
+            ([pending, passed], "PASS", "1 PASS. 1 PENDING."),
+            ([passed, pending, failed], "FAIL", "1 PASS. 1 FAIL. 1 PENDING."),
+        ):
+            with self.subTest(status=status):
+                self.assertEqual(coverage.catalog_evidence(checks)[:2], (status, detail))
+                self.assertEqual(coverage.catalog_evidence(checks[::-1])[:2], (status, detail))
+        self.assertEqual(coverage.catalog_evidence([passed, pending, failed])[2], "Hörprobe. Noten prüfen.")
+
     def test_minor_cadence_requires_whole_tone_and_chord_membership(self):
         case = next(c for c in self.cases if c["id"] == "KB-CLAIM-032-MINOR")
         result, = benchmark.run([case], self.examples, self.claims, {})
