@@ -20,6 +20,15 @@
   im strikten Modus parallele Quinten und Oktaven. Eine vollständige
   kontrapunktische Prüfung und stilbezogene Spielbarkeitsprüfung bleiben offen.
 
+## Aufgabenregister nach dem Fable-Audit (2026-11-13)
+
+Für die Abnahme am echten externen Register fehlen dessen Pfad und der Zugriff
+auf seinen aktuellen Stand. Der schreibgeschützte Repository-Snapshot enthält
+33 Aufgaben und drei `DONE_VERIFIED`-Einträge ohne die jetzt strukturiert
+erfassten Belegfelder (OA-0002, OA-0011, OA-0013). Beim Abgleich am echten
+Register Belege nachtragen oder den Status nach Prüfung korrigieren. Historische
+Backups ohne Manifest bleiben für eine gesonderte Wiederherstellung erhalten.
+
 ## Offene Fachnachweise (2026-11-12)
 
 - Bei [PAT-031](../../knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md#pat-031--offene-taktgrenze) fehlen Taktgrenzen und die Hörprüfung der beiden Lesarten.
