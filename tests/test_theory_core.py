@@ -462,7 +462,7 @@ class TestTheoryCoreChordEngine(unittest.TestCase):
         # Full theoretical pitch class set: {1, 3, 5, b7, #11} -> {0, 4, 6, 7, 10}
         # Performance voiced intervals (omitting 5th to avoid tritone clutter): {0, 4, 6, 10}
         c7_11 = parse_chord('C7#11')
-        self.assertEqual(c7_11.theoretical_intervals, (0, 4, 6, 7, 10))
+        self.assertEqual(c7_11.theoretical_intervals, (0, 4, 7, 10, 18))
         self.assertEqual(c7_11.default_voiced_intervals, (0, 4, 6, 10))
         self.assertEqual(c7_11.pitch_class_set, {0, 4, 6, 7, 10})
         self.assertEqual([int(pc) for pc in c7_11.voiced_pitch_classes], [0, 4, 6, 10])

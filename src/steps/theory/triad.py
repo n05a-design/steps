@@ -10,6 +10,7 @@ from __future__ import annotations
 from enum import Enum
 from typing import List, Tuple
 from .pitch import PitchClass
+from .chord import Voicing
 from .exceptions import ChordConstructionError
 
 class TriadQuality(Enum):
@@ -57,16 +58,9 @@ def invert_triad_voicing(voicing_midi: list[int], inversion: int) -> list[int]:
     inversion 1: 1st inversion (6/3, bass note is 3rd, e.g. [E4, G4, C5] = [64, 67, 72])
     inversion 2: 2nd inversion (6/4, bass note is 5th, e.g. [G4, C5, E5] = [67, 72, 76])
     """
-    if len(voicing_midi) < 3:
-        raise ChordConstructionError("Triad voicing must have at least 3 voices.")
-    inv = inversion % len(voicing_midi)
-    if inv == 0:
-        return sorted(voicing_midi)
-    
-    sorted_v = sorted(voicing_midi)
-    # Rotate the lowest 'inv' notes up by an octave
-    rotated = sorted_v[inv:] + [pitch + 12 for pitch in sorted_v[:inv]]
-    return rotated
+    if len(voicing_midi) != 3 or type(inversion) is not int or not 0 <= inversion <= 2:
+        raise ChordConstructionError("Triad inversion requires three voices and an inversion in 0..2.")
+    return Voicing(tuple(voicing_midi)).invert(inversion).midi_notes
 
 
 def get_triad_pitch_class_set(root: int | PitchClass, quality: TriadQuality) -> set[int]:
