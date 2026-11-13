@@ -3041,9 +3041,9 @@
     "expected_output": 0,
     "tolerance": 0.0,
     "theoretical_rule": "240 * 0.50 = 120 -> Offset 120 - 120 = 0 Ticks",
-    "source_citation": "MPC Standard",
+    "source_citation": "Akai MPC Standalone OS v3.6 User Guide, Timing Correct (Parameterbereich). STEPS-Rechenmodell; historische Bezeichnung MPC Standard",
     "original_phase414_id": "REF-0077",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0178",
@@ -3057,9 +3057,9 @@
     "expected_output": 146,
     "tolerance": 0.0,
     "theoretical_rule": "round(240 * 0.61) = 146 Ticks (exakt 146.4)",
-    "source_citation": "MPC Standard (ERR-034)",
+    "source_citation": "Akai MPC Standalone OS v3.6 User Guide, Timing Correct (Parameterbereich). STEPS-Rechenmodell; historische Bezeichnung MPC Standard (ERR-034)",
     "original_phase414_id": "REF-0078",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0179",
@@ -3073,9 +3073,9 @@
     "expected_output": 26,
     "tolerance": 0.0,
     "theoretical_rule": "146 - 120 = +26 Ticks Offset",
-    "source_citation": "MPC Standard (ERR-034)",
+    "source_citation": "Akai MPC Standalone OS v3.6 User Guide, Timing Correct (Parameterbereich). STEPS-Rechenmodell; historische Bezeichnung MPC Standard (ERR-034)",
     "original_phase414_id": "REF-0079",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0180",
@@ -3090,9 +3090,9 @@
     "expected_output": 36.11,
     "tolerance": 0.05,
     "theoretical_rule": "26 * (60000 / (90 * 480)) = 36.11 ms",
-    "source_citation": "MPC Standard (ERR-034)",
+    "source_citation": "Akai MPC Standalone OS v3.6 User Guide, Timing Correct (Parameterbereich). STEPS-Rechenmodell; historische Bezeichnung MPC Standard (ERR-034)",
     "original_phase414_id": "REF-0080",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0181",
@@ -3106,9 +3106,9 @@
     "expected_output": 293,
     "tolerance": 0.0,
     "theoretical_rule": "round(480 * 0.61) = 293 Ticks (exakt 292.8)",
-    "source_citation": "MPC Standard",
+    "source_citation": "Akai MPC Standalone OS v3.6 User Guide, Timing Correct (Parameterbereich). STEPS-Rechenmodell; historische Bezeichnung MPC Standard",
     "original_phase414_id": "REF-0081",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0182",
@@ -3122,9 +3122,9 @@
     "expected_output": 53,
     "tolerance": 0.0,
     "theoretical_rule": "293 - 240 = +53 Ticks Offset",
-    "source_citation": "MPC Standard",
+    "source_citation": "Akai MPC Standalone OS v3.6 User Guide, Timing Correct (Parameterbereich). STEPS-Rechenmodell; historische Bezeichnung MPC Standard",
     "original_phase414_id": "REF-0082",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0183",
@@ -3138,9 +3138,9 @@
     "expected_output": 73,
     "tolerance": 0.0,
     "theoretical_rule": "round(120 * 0.61) = 73 Ticks (exakt 73.2)",
-    "source_citation": "MPC Standard",
+    "source_citation": "Akai MPC Standalone OS v3.6 User Guide, Timing Correct (Parameterbereich). STEPS-Rechenmodell; historische Bezeichnung MPC Standard",
     "original_phase414_id": "REF-0083",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0184",
@@ -3154,9 +3154,9 @@
     "expected_output": 13,
     "tolerance": 0.0,
     "theoretical_rule": "73 - 60 = +13 Ticks Offset",
-    "source_citation": "MPC Standard",
+    "source_citation": "Akai MPC Standalone OS v3.6 User Guide, Timing Correct (Parameterbereich). STEPS-Rechenmodell; historische Bezeichnung MPC Standard",
     "original_phase414_id": "REF-0084",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0185",
@@ -3170,9 +3170,9 @@
     "expected_output": 137,
     "tolerance": 0.0,
     "theoretical_rule": "round(240 * 0.57) = 137 Ticks",
-    "source_citation": "J Dilla / Questlove",
+    "source_citation": "STEPS-Rechenbeispiel mit 57 %. Historische Zuschreibung J Dilla / Questlove ohne bestätigte Fundstelle.",
     "original_phase414_id": "REF-0085",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0186",
@@ -3186,9 +3186,9 @@
     "expected_output": 160,
     "tolerance": 0.0,
     "theoretical_rule": "round(240 * (2/3)) = 160 Ticks (Offset +40 Ticks)",
-    "source_citation": "Jazz Standard",
+    "source_citation": "Idealisiertes Triolenmodell. Friberg und Sundström (2002), Abstract, https://doi.org/10.1525/mp.2002.19.3.333, zum Einfluss des Tempos auf gemessenen Swing.",
     "original_phase414_id": "REF-0086",
-    "test_class": "SPECIFICATION_EXAMPLE"
+    "test_class": "UNIT_TEST"
   },
   {
     "case_id": "REF-0187",

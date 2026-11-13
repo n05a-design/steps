@@ -17,8 +17,8 @@ Zur Vermeidung von Datenfragmentierung und divergierenden Versionen gilt für di
 ## 2. Bestandsübersicht (Phase 4.15)
 
 Der konsolidierte Gesamtbestand umfasst **198 Golden Reference Cases**.
-98 Fälle werden als Berechnung oder Produktprüfung ausgeführt. 100 Fälle sind
-Spezifikationsbeispiele mit Strukturprüfung. Die historischen CSV-Matrizen
+108 Fälle werden als Berechnung oder Produktprüfung ausgeführt. 90 Fälle sind
+Spezifikationsbeispiele mit Strukturprüfung und ggf. Quellenabgleich. Die historischen CSV-Matrizen
 dokumentieren frühere Klassifizierungen. Die aktuelle Klasse steht im Golden-Master.
 
 Die [Abdeckungsmatrix](../benchmark/COVERAGE.csv) dokumentiert für alle 198
@@ -37,6 +37,17 @@ führt 35 als Acoustic Bass Drum und 40 als Electric Snare separat.
 Die Tests vergleichen Instrument und Sollwert mit dieser Fundstelle.
 Die sechs Fälle dokumentieren eine Spezifikation für GM1-Geräte.
 [The MIDI Association, General MIDI System Level 1, Tabelle 3](https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view)
+
+REF-0177 bis REF-0186 prüfen die zweite Sechzehntelposition im Paar,
+ihren Versatz zum geraden Raster und die Zeitumrechnung. Die STEPS-Formel
+rundet den Anteil an einem Halbviertel auf ganze Ticks. Das Handbuch
+beschreibt den Parameterbereich in MPC Standalone OS 3.6. Die
+Sollwerte gelten für das STEPS-Rechenmodell. [Akai, Timing Correct](https://cdn.inmusicbrands.com/Software/36/MPC%20Standalone%20OS%20-%20User%20Guide%20-%20v3.6.pdf)
+
+57 Prozent sind ein Übungswert ohne belegte Zuschreibung zu einzelnen
+Musikern. Der Anteil zwei Drittel modelliert die triolische Gruppierung.
+Die beobachteten Swingverhältnisse in Jazzaufnahmen ändern sich mit dem
+Tempo. [Friberg und Sundström, Music Perception 19(3), Abstract](https://doi.org/10.1525/mp.2002.19.3.333)
 
 * **REF-0001 bis REF-0094 (Historischer Kernbestand Phase 4.1 bis 4.12):**
   Historische Fallzuordnungen wiederhergestellt (Tonklassen C4/A4, 12-TET Enharmonik, Intervalle, Kadenzen, Swing-Ratios, GM-Percussion-Mappings, Tuplet-Quantisierung, Rootless Voicings).
