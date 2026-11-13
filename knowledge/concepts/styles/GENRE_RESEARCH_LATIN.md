@@ -2,7 +2,8 @@
 
 **Dokumenttyp:** COMPREHENSIVE LATIN GENRE RESEARCH & GROOVE EXTENSION  
 **Wissensdomänen:** M07 (Rhythmik/Metrum), M08 (Drums/Percussion), M09 (Genres), M10 (Klavierpraxis)  
-**Kulturelle & Musikologische Evidenz:** Antonio Carlos Jobim, João Gilberto (*Chega de Saudade* 1958), Ed Thigpen (*The Rhythm Section*), Rebeca Mauleón (*The Salsa Guidebook*)  
+**Historische Literaturhinweise:** Antonio Carlos Jobim, João Gilberto (*Chega de Saudade* 1958), Ed Thigpen (*The Rhythm Section*), Rebeca Mauleón (*The Salsa Guidebook*)
+
 **Standard:** 480 PPQ (Division = 480 Ticks/Viertel; 1 Takt 4/4 = 1920 Ticks), General MIDI Percussion Map (Kanal 10)  
 **Status:** Forschungsmodelle. Die angegebenen Raster und Stufen sind nachrechenbar. Für Stil- und Werkzuschreibungen gelten die jeweils angegebenen Fundstellen.
 
@@ -18,7 +19,10 @@ Begleitmodell.
 
 Die Son-Clave verteilt fünf Schläge auf zwei 4/4-Takte. Das folgende Raster
 hat 16 Sechzehntelpositionen je Takt. In der 2:3-Richtung steht die 2er-Seite
-zuerst.
+zuerst. Für die 3:2-Figur ist die notierte Gegenprobe in Abbildung 1
+des Aufsatzes von Mehmet Vurkaç dokumentiert. Die Tickwerte sind für
+das hier gewählte Raster berechnet.
+[Vurkaç, Current Musicology 94, Abb. 1](https://journals.library.columbia.edu/index.php/currentmusicology/article/download/5234/2473/9143)
 
 - **3er-Takt (Tresillo-Hälfte):** Schläge auf **1**, **2+** (Tick 720) und **4** (Tick 1440).
 - **2er-Takt:** Schläge auf **2** (Tick 480) und **3** (Tick 960).
@@ -35,6 +39,9 @@ Takt 2 (2er-Seite):  [. . . . X . . . X . . . . . . .]
 
 Für dieses Cross-Stick-Modell bleibt die erste Hälfte des Son-Clave-Rasters
 erhalten. In der zweiten Hälfte liegt der letzte Schlag eine Achtelnote später.
+Vurkaç vergleicht in Abbildung 4 eine brasilianische Figur mit der Son-Clave.
+Die Tickwerte hier beschreiben das konkrete STEPS-Übungsmuster.
+[Vurkaç, Current Musicology 94, Abs. I.b und Abb. 4](https://journals.library.columbia.edu/index.php/currentmusicology/article/download/5234/2473/9143)
 
 - **Takt 1 (3er-Seite):** Ticks 0 (Schlag 1), 720 (Schlag 2+), 1440 (Schlag 4).
 - **Takt 2 (2er-Seite):**
@@ -43,34 +50,55 @@ erhalten. In der zweiten Hälfte liegt der letzte Schlag eine Achtelnote später
 
 ---
 
-## 2. M08 & M09: Drei neue kanonische Drum- & Percussion-Grooves (PAT-027 bis PAT-029)
+## 2. Drum- und Percussion-Übungen PAT-027 bis PAT-029
 
-### A. PAT-027: Bossa Nova Brush & Cross-Stick (128 BPM)
-- **Tempo:** 128 BPM (als 4/4 oder 2/4 notiert) | **Metrum:** 4/4 Straight ($\rho = 1{,}0$) mit weichem humanized Micro-Drift ($\pm 4$ Ticks).
+### A. PAT-027 · Bossa-Nova-Übung mit Besen und Cross-Stick
+- **Tempo und Metrum:** Viertel = 128, 4/4, gerades Sechzehntelraster. Die unten angegebenen Onsets liegen auf diesem Raster. Für die Aufführung kann eine Timingvariation von bis zu 4 Ticks hinzukommen.
 - **Instrumentierung (General MIDI Kanal 10):**
-  - **Bass Drum (35/36):** Das brasilianische "Surdo"-Herzstück. Schlägt auf Zählzeit **1** (leise, Velocity 70) und Zählzeit **3** (betont, Velocity 105), jeweils vorbereitet durch einen leisen synkopierten Geisterschlag auf 2+ bzw. 4+ (punktierte Viertel-Figuren).
+  - **Bass Drum (35/36):** Steht in dieser Übung für einen tiefen Surdo-Puls. Schlägt auf Zählzeit **1** (leise, Velocity 70) und Zählzeit **3** (betont, Velocity 105), jeweils vorbereitet durch einen leisen synkopierten Geisterschlag auf 2+ bzw. 4+ (punktierte Viertel-Figuren).
   - **Cross-Stick / Rimshot (37):** Spielt das zweitaktige **Bossa-Nova-Übungsmuster**:
     - Takt 1: Ticks 0 (1), 720 (2+), 1440 (4).
     - Takt 2: Ticks 480 (2), 1200 (3+).
-  - **Closed Hi-Hat / Shaker (42):** Durchgehende, sanfte Sechzehntelketten mit feiner Akzentuierung der Aufschläge, die das Schwingen von Sand in einem brasilianischen *Ganzá* nachbilden.
+  - **Closed Hi-Hat (42):** Durchgehende Sechzehntel mit variierter Anschlagstärke. Ein Shaker- oder Besenklang kann auf einer separat zugeordneten Spur eingesetzt werden.
 
 ---
 
-### B. PAT-028: Afro-Cuban Cha-Cha-Chá (116 BPM)
-- **Tempo:** 116 BPM | **Metrum:** 4/4.
+### B. PAT-028 · Cha-Cha-Chá-Übung mit Campana und Conga
+- **Tempo und Metrum:** Viertel = 116, 4/4.
 - **Instrumentierung:**
   - **Cowbell / Campana (56):** Fester Puls auf den Viertelschlägen 1, 2, 3, 4.
   - **Congas (62 Mute High, 63 Open High, 64 Low Conga):**
     - Schläge 1, 2 und 3 werden durch gedämpfte Hand- und Fersen-Techniken vorbereitet.
-    - Auf Zählzeit **4 und 4+** (Ticks 1440 und 1680) schlagen zwei offene, warme Töne auf der High Conga (der namensgebende "Cha-Cha"-Schritt!).
+    - Auf Zählzeit **4 und 4+** (Ticks 1440 und 1680) schlagen zwei offene Töne auf der High Conga. Diese Positionen gehören zur notierten STEPS-Übung.
   - **Guiro (73/74):** Langer Zug auf 1, zwei kurze Striche auf 2 und 2+.
 
 ---
 
-### C. PAT-029: Samba Batucada Sectional (105 BPM 2/2 bzw. 210 BPM 4/4)
-- **Tempo:** 105 BPM (Alla Breve) | **Metrum:** 2/2.
+### C. PAT-029 · Samba-Batucada-Übung im Alla breve
+- **Tempo und Metrum:** Halbe = 105 im 2/2. Bei Viertel = 210 im 4/4
+  ergibt sich dieselbe Taktdauer von rund 1,143 Sekunden. Das 2/2-Modell
+  zählt zwei Halben pro Takt. Die 4/4-Variante zählt vier Viertel.
+- Die Beschreibung der Instrumente liefert eine Übungsbesetzung.
+  Konkrete Surdo-Rollen variieren je Ensemble. Für die untersuchte
+  Samba-enredo-Besetzung siehe [Maia, S. 42 und Abb. 2.17](https://w1files.solucaoatrio.net.br/atrio/ufrj-pee_upl/THESIS/10004396/tese_versao_final_1_20240730145745648.pdf).
 - **Charakteristik:**
   - Explosives Zusammenspiel von Surdo (tiefes Fundament), Caixa (Snare-Ghost-Rolls), Tamborim (synkopierte 16tel-Akzente) und Agogô-Glocken (zweitönige Melodiefiguren).
+
+### Notierte Ereignisse und Zeitbasis
+
+Die Positionen zählen je Takt ab null in Sechzehnteln. Eine Achtel
+entspricht zwei Positionen. Im 2/2 dauert ein Taktschlag eine Halbe.
+[Open Music Theory, Simple Meter and Time Signatures](https://viva.pressbooks.pub/openmusictheory/chapter/simple-meter-and-time-signatures/)
+
+| Pattern | Stimme | Metrum | Tempo und Einheit | PPQ | Takt | Sechzehntelpositionen |
+| --- | --- | --- | --- | --- | --- | --- |
+| PAT-027 | Cross-Stick | 4/4 | 128 Viertel | 480 | 1 | 0, 6, 12 |
+| PAT-027 | Cross-Stick | 4/4 | 128 Viertel | 480 | 2 | 4, 10 |
+| PAT-028 | Offene High Conga | 4/4 | 116 Viertel | 480 | 1 | 12, 14 |
+| PAT-029 | Halbenpuls | 2/2 | 105 Halbe | 480 | 1 | 0, 8 |
+
+Die Tabelle erfasst ausgewählte Stimmen der Übungen. Aussagen über eine
+Aufnahme oder repräsentative Stilmerkmale brauchen einen eigenen Nachweis.
 
 ---
 
