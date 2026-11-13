@@ -7,6 +7,7 @@
 | Antigravity Master-Audit V2 | [Bericht](agent-history/antigravity/Antigravity_MasterAuditV2_Bericht/01_GESAMTBERICHT.md), [Auditindex](agent-history/antigravity/Antigravity_MasterAuditV2_Bericht/17_AUDIT_INDEX.md) |
 | OpenAI-Prüfpaket | [Verzeichnis](agent-history/openai/OpenAI_Steps_Bericht/), [Paketmanifest](agent-history/openai/OpenAI_Steps_Bericht/MANIFEST.json) |
 | Übergaben | [Kontextübergabe](agent-history/handovers/AI_CONTEXT_HANDOVER/00_PROJECT_CONTEXT_HANDOVER.md) |
+| Fable 5.2 | [Originaler Auditlauf, Rohdaten und Probeskripte](audit-history/fable-5.2-original/README.md) |
 | Frühere Audits | [Auditpakete](audit-history/earlier-audits/) |
 | Projektplanung | [Frühe Arbeitsrichtlinien](project-history/early-planning/), [Architekturentwürfe](project-history/architecture-drafts/) |
 | Dokumentfassungen | [Frühere README](documentation-history/previous-versions/README_v1_historical_2026-11-10.md), [abgelöste Dokumente](documentation-history/superseded-documents/), [Projekt-ZIP vom 9. November 2026 und seine Repository-Pfade](../docs/project/ARCHIVE_README.md) |

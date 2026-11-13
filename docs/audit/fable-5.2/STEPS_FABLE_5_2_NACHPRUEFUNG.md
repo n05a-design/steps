@@ -14,7 +14,7 @@ Der Fable-Bericht bezieht sich auf `22f3f5f348d060abfd4e2ffc917d0c95a639441e` (M
 | `results/GEGENPROBEN_ROHAUSGABE_2026-11-12.txt` | 42.950 | `e2c5ad12be89cb48790fac609b4022ec8f8995d89e32ca136325eb987095acae` |
 | `results/ARBEITSNOTIZEN.md` | 3.999 | `4d06641794f42c03977f264ab6c30eb6faa04d3242944c424154ea9de3bf6c57` |
 
-Der Fable-Bericht ist ein bereitgestelltes Prüfarbeitsprodukt, kein Primärbeleg für Musiktheorie. Bericht, Rohdaten und Probeskripte bleiben lokal; ihre Veröffentlichungsrechte wurden nicht vorausgesetzt. Diese Nachprüfung enthält eigene Befunde, paraphrasierte Quellenbezüge und Links. Die verlinkten Fachquellen werden nicht mitgeliefert.
+Der Fable-Bericht dokumentiert den damaligen Auditlauf. Bericht, Rohdaten, Arbeitsnotizen und Probeskripte sind im [Originalpaket](../../../archive/audit-history/fable-5.2-original/README.md) mit Prüfsummen archiviert. Die Nachprüfung enthält eigene Befunde und Quellenbezüge. Fachliche Aussagen sind anhand der jeweils verlinkten Fundstelle zu beurteilen.
 
 Fables Umfang: 38 Prüf-IDs, davon 18 als geprüft und 20 als teilweise geprüft ausgewiesen. Seine Prioritäten verteilen sich auf 10 P0, 12 P1, 8 P2 und 3 P3. Die Matrix bleibt ein Umfangsnachweis, keine Gesamtfreigabe.
 
