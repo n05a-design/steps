@@ -105,3 +105,8 @@ jobs:
 
       - name: Check all 14 corpus cases and separated source evidence
         run: python -B scripts/audit_graph_corpus.py --check
+
+      - name: Check partial Billboard and versioned EDM metadata observations
+        run: |
+          python -B scripts/audit_billboard_components.py --check
+          python -B scripts/audit_edm_tempo.py --check

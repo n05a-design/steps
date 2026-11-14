@@ -28,3 +28,5 @@ insbesondere OA-0001, OA-0033 und OA-0034.
 · [33 Fable-Befunde mit technischen Referenzen](NACHT_FABLE_ABGLEICH_2026-11-14.csv)
 
 Fortsetzung nach PR #58: [Korpus-/Quellenbericht](GRAPH_KORPUS_QUELLEN_FORTSETZUNG_2026-11-14.md). CDR-019 benötigt Garcia1999 und die Reily/Cabral-Originalkette; CDR-021 besitzt jetzt einen gelesenen Rollen-/Onset-Beleg aus Florianópolis2010, aber keinen dynamischen Akzentnachweis oder allgemeine Normfreigabe. Die14 Korpusfälle benötigen passend ausgerichtete Annotationen und Sampling-Entscheidungen; getrennte Datensätze dürfen nicht als gemeinsame Aufnahmen ausgegeben werden.
+
+Fortsetzung nach PR #59: [Originalsuche und Korpuskomponenten](ORIGINALQUELLEN_KORPUS_FORTSETZUNG_2026-11-14.md). Cabral-Essay jetzt als Band2 S.10–17 eingegrenzt, p.12 nur indirekt/indexiert; geladener Preview enthält nur Inhaltsverzeichnisse. Reily-Volltext, Cabral-Essay, Garcia1999-Seiten und Schreiner-Originalstelle bleiben erforderlich. Billboard-Harmonie und GiantSteps-Genre/Tempo sind gemessen, aber nicht mit gemeinsamen Drumereignissen verbunden. Alle14 historischen Korpusbehauptungen bleiben offen.

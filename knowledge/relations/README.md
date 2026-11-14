@@ -45,3 +45,5 @@ setzt weder historische Gegenbefunde noch fehlende Fachabnahmen außer Kraft.
 [Fortsetzung nach PR #57: 18 Graph-Semantikfälle](../../docs/audit/fable-5.2/GRAPH_SEMANTIK_FORTSETZUNG_2026-11-14.md): 41 begrenzte Stichproben / 1 FAIL / 55 OPEN, 57 Graphproben und getrennte Primärspezifikationskontrollen; keine externe Freigabe.
 
 [Fortsetzung nach PR #58: 14 Korpusfälle und CDR-019/CDR-021](../../docs/audit/fable-5.2/GRAPH_KORPUS_QUELLEN_FORTSETZUNG_2026-11-14.md): verifizierte GMD-Teilmenge, Rollen-/Akzenttrennung und konkretisierte Quellenketten; 41 Stichproben / 1 FAIL / 55 OPEN, 73 technische Kantenprüfungen und58 Graphproben. Externe Freigaben bleiben offen.
+
+[Fortsetzung nach PR #59: Originalsuche und weitere Korpuskomponenten](../../docs/audit/fable-5.2/ORIGINALQUELLEN_KORPUS_FORTSETZUNG_2026-11-14.md): 890 Billboard-Harmonieannotationen und664 versionierte Genre-/Tempoeinträge tatsächlich ausgewertet; Quellenoriginale und sämtliche14 Korpusbehauptungen bleiben ohne Vollfreigabe.

@@ -137,6 +137,9 @@ def audit(root=ROOT, plan=None):
         if ident in {'CDR-019','CDR-021'}:
             source_status=('SECONDARY_ANALYTICAL_CHAIN_CHECKED' if ident=='CDR-019' else 'PRIMARY_FIELDWORK_SCOPED_NOTATION_CHECK')
             source_locator='docs/audit/fable-5.2/GRAPH_CDR019_CDR021_QUELLEN_2026-11-14.json | '+('Ghezzi2009 PDF9–10; Garcia1999 original unread' if ident=='CDR-019' else 'Marcelino2010 PDF34/printed33 Fig3–4. Onsets, not dynamic accent.')
+            if ident=='CDR-019':
+                source_status='REFERENCE_CHAIN_IDENTIFIED_BODY_UNVERIFIED'
+                source_locator+=' | docs/audit/fable-5.2/CDR019_ORIGINALSUCHE_2026-11-14.json: publisher Cabral vol2 pp10–17, preview TOC only; full originals and causality unverified.'
         definition_status=lambda term: ('HISTORICAL_DEFINITION' if term in nodes and re.fullmatch(r'M\d{2}-\d{2}',term) else
                                       'SCOPED_NODE_DEFINITION' if term in nodes else 'PROJECT_CATALOG' if re.fullmatch(r'(?:PROG[-_]\d{3}|PAT-\d{3}|P\d{2})',term) else
                                       'DOMAIN_CONTEXT_REQUIRED' if re.fullmatch(r'M\d{2}',term) else 'UNRESOLVED')

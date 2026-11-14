@@ -29,7 +29,7 @@
         "chart_sampling_frame"
       ],
       "rights": "CC0 annotations according to DDMAL; no inferred audio rights",
-      "scope": "Official documentation inspected, not downloaded/analyzed. Chart-slot sampling and song identities differ; instrumentation is not drum-event transcription."
+      "scope": "Official annotation delivery downloaded and hashed;890 slots inspected with a deliberately partial exact-chord-per-bar matcher. No drum events or genre-pair approval; artist-title keys are not recording identities."
     },
     {
       "id": "GIANTSTEPS_TEMPO_KEY",
@@ -37,10 +37,11 @@
       "version": "ISMIR2015 documentation",
       "available_annotations": [
         "tempo",
+        "genre",
         "key"
       ],
-      "rights": "Metadata/documentation only; audio/annotation rights require per-delivery review",
-      "scope": "Official dataset overview inspected, not a joint chord/drum corpus; no commercial audio downloaded."
+      "rights": "Metadata and own aggregate classifications only; no general repository licence located, raw annotations/scripts/audio not republished.",
+      "scope": "Tempo repository d51ab2422e76abacfaa86616a57054bc222ec9fd measured locally for genre/tempo metadata; key is a separate dataset candidate, not joined here. No chord/drum sequence or audio downloaded."
     }
   ],
   "cases": [
@@ -69,7 +70,10 @@
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
-      "historical_assertion_closed": false
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/GRAPH_KORPUS_GMD_2026-11-14.json"
+      ]
     },
     {
       "relation_id": "CR-030",
@@ -96,7 +100,10 @@
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
-      "historical_assertion_closed": false
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_GIANTSTEPS_TEMPO_2026-11-14.json"
+      ]
     },
     {
       "relation_id": "CR-031",
@@ -124,7 +131,10 @@
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
-      "historical_assertion_closed": false
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
     },
     {
       "relation_id": "CR-032",
@@ -152,7 +162,10 @@
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
-      "historical_assertion_closed": false
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_GIANTSTEPS_TEMPO_2026-11-14.json"
+      ]
     },
     {
       "relation_id": "REL-001",
@@ -192,7 +205,10 @@
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
-      "historical_assertion_closed": false
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
     },
     {
       "relation_id": "REL-005",
@@ -232,7 +248,10 @@
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
-      "historical_assertion_closed": false
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
     },
     {
       "relation_id": "REL-006",
@@ -272,7 +291,10 @@
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
-      "historical_assertion_closed": false
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
     },
     {
       "relation_id": "REL-007",
@@ -312,7 +334,10 @@
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
-      "historical_assertion_closed": false
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
     },
     {
       "relation_id": "REL-014",
@@ -352,7 +377,10 @@
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
-      "historical_assertion_closed": false
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
     },
     {
       "relation_id": "REL-015",
@@ -392,7 +420,10 @@
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
-      "historical_assertion_closed": false
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
     },
     {
       "relation_id": "REL-017",
@@ -426,7 +457,10 @@
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
-      "historical_assertion_closed": false
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_GIANTSTEPS_TEMPO_2026-11-14.json"
+      ]
     },
     {
       "relation_id": "REL-026",
@@ -466,7 +500,10 @@
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
-      "historical_assertion_closed": false
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
     },
     {
       "relation_id": "REL-032",
@@ -506,7 +543,10 @@
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
-      "historical_assertion_closed": false
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
     },
     {
       "relation_id": "REL-035",
@@ -546,7 +586,10 @@
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
-      "historical_assertion_closed": false
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
     }
   ]
 }
