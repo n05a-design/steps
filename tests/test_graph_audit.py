@@ -19,7 +19,7 @@ class GraphAuditTests(unittest.TestCase):
         self.assertEqual({r['relation_id'] for r in rows},{r['relation_id'] for r in self.relations})
         self.assertTrue(all(r['human_review']=='AUSSTEHEND' and not r['production_use_allowed'] for r in rows))
         self.assertEqual(next(r for r in rows if r['relation_id']=='CDR-010')['relation_status'],'FAIL')
-        self.assertEqual(len(probes),24)
+        self.assertEqual(len(probes),40)
         self.assertTrue(all(p['status']=='PASS' for p in probes.values()))
 
     def test_missing_duplicate_changed_edges_and_approval_forgery_fail(self):

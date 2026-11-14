@@ -4,7 +4,7 @@
   "reviews": [
     {
       "category": "SCOPE_REVIEW",
-      "review_note": "Schall und Frequenz benötigen nicht zwingend ISO 16. Referenzfrequenz ist nur für die benannte Umrechnung relativer Intervalle nach Hertz nötig; REQUIRES ist zu weit.",
+      "review_note": "Schall und Frequenz benötigen nicht zwingend ISO 16. Referenzfrequenz ist nur für die benannte Umrechnung relativer Intervalle nach Hertz nötig; REQUIRES ist zu weit. Gegenprobe: Oktavverhältnis bleibt für mehrere Referenzfrequenzen gleich; keine Notwendigkeit von ISO16 für jeden Frequenzbegriff.",
       "relation_id": "CR-001",
       "edge": {
         "source_id": "M01-01",
@@ -13,7 +13,8 @@
       },
       "original_row_sha256": "91103d5fc0f28e8b30b21157696239ef6856a3cdd9d22dd07421409f6e8d8d42",
       "probe_ids": [
-        "FREQUENCY"
+        "FREQUENCY",
+        "REFERENCE_INVARIANCE"
       ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
@@ -170,7 +171,7 @@
     },
     {
       "category": "SCOPE_REVIEW",
-      "review_note": "Halbtonzahlen sind ein 12-TET-Modell von Intervallen; reine und mikrotonale Intervalle verlangen andere Repräsentation.",
+      "review_note": "Halbtonzahlen sind ein 12-TET-Modell von Intervallen; reine und mikrotonale Intervalle verlangen andere Repräsentation. Explizites 150-Cent-Gegenmodell benötigt keine ganzzahlige 12-TET-Halbtonzahl; reine Modellrechnung, keine Hörprüfung.",
       "relation_id": "CR-008",
       "edge": {
         "source_id": "M03-01",
@@ -178,7 +179,9 @@
         "relation_type": "REQUIRES"
       },
       "original_row_sha256": "cb3d8f8e5b4783cc29128248863e8cd992ed0330870325c2b9d103f231dd9795",
-      "probe_ids": [],
+      "probe_ids": [
+        "MICROTONAL_COUNTERMODEL"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -324,7 +327,7 @@
     },
     {
       "category": "SCOPE_REVIEW",
-      "review_note": "C/F# ist ein nichtakkordeigener Slashbass und keine Umkehrung. IS_VARIANT_OF ist daher nur für akkordeigene Bässe brauchbar.",
+      "review_note": "C/F# ist ein nichtakkordeigener Slashbass und keine Umkehrung. IS_VARIANT_OF ist daher nur für akkordeigene Bässe brauchbar. C/E und C/F# trennen Umkehrung von nichtakkordeigenem Slashbass; kein pauschaler IS_VARIANT_OF-Schluss.",
       "relation_id": "CR-015",
       "edge": {
         "source_id": "M04-08",
@@ -332,7 +335,9 @@
         "relation_type": "IS_VARIANT_OF"
       },
       "original_row_sha256": "3a763d1fbf969572f4b9d0a2fb322b96db2a60a013bc87008fc36bb75712ed2b",
-      "probe_ids": [],
+      "probe_ids": [
+        "NONCHORD_SLASH_BASS"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -528,7 +533,7 @@
     },
     {
       "category": "TYPE_REVIEW",
-      "review_note": "Pulsgruppierung hängt nicht notwendig von der Schwingungsfrequenz ab. Die Beschreibung korrigiert die Vermischung, der REQUIRES-Typ bleibt fraglich.",
+      "review_note": "Pulsgruppierung hängt nicht notwendig von der Schwingungsfrequenz ab. Die Beschreibung korrigiert die Vermischung, der REQUIRES-Typ bleibt fraglich. Bei festem Tonhöhenparameter sind unterschiedliche Pulsperioden möglich; das Ereignismodell ersetzt keine Wahrnehmungsstudie.",
       "relation_id": "CR-024",
       "edge": {
         "source_id": "M07-01",
@@ -536,7 +541,9 @@
         "relation_type": "REQUIRES"
       },
       "original_row_sha256": "3a83e3a64e8524ba8896ef2cdd540526de3ee47ac202a30dcd72c21104afc0be",
-      "probe_ids": [],
+      "probe_ids": [
+        "PULSE_FREQUENCY_COUNTERMODEL"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -570,7 +577,7 @@
     },
     {
       "category": "MODEL_SAMPLE",
-      "review_note": "Zwei und drei gleiche Unterteilungen sind verschiedene Raster desselben Pulses; Akzentwahrnehmung bleibt offen.",
+      "review_note": "Zwei und drei gleiche Unterteilungen sind verschiedene Raster desselben Pulses; Akzentwahrnehmung bleibt offen. Zwei und drei Unterteilungen sind explizit gerechnet; Wahrnehmungs- und Typisierungsabnahme bleibt offen.",
       "relation_id": "CR-026",
       "edge": {
         "source_id": "M07-03",
@@ -578,7 +585,9 @@
         "relation_type": "IS_VARIANT_OF"
       },
       "original_row_sha256": "f2ccc84748b168f8ee52e61ffb876d292e3cccb54542ee7962980e54802b8deb",
-      "probe_ids": [],
+      "probe_ids": [
+        "DUPLE_TRIPLE_GRID"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -823,7 +832,7 @@
     },
     {
       "category": "MODEL_CONFLICT",
-      "review_note": "P12 zeigt Fmaj7 über D und damit Dm9 mit Grundton; PROG-028 startet Em9. Direkte Umsetzung braucht explizite Transposition/Voicings.",
+      "review_note": "P12 zeigt Fmaj7 über D und damit Dm9 mit Grundton; PROG-028 startet Em9. Direkte Umsetzung braucht explizite Transposition/Voicings. Vier neu entworfene Lagen führen das P12-Prinzip explizit auf PROG-028 aus; die ursprüngliche Dm9-Lage genügt nicht ohne Übertragung. Die ursprüngliche P12-Dm9-Lage passt erst nach expliziter Ganztontransposition zum Em9-Start; keine stillschweigende Zuordnung.",
       "relation_id": "CR-038",
       "edge": {
         "source_id": "PROG-028",
@@ -831,7 +840,10 @@
         "relation_type": "VOICED_BY"
       },
       "original_row_sha256": "e30f7529d2ae0bbd07b8cf3bd55a362171da0a2f00f401667f612ee013353168",
-      "probe_ids": [],
+      "probe_ids": [
+        "CIRCLE_SOUL_HAND_LAYERS",
+        "P12_TRANSPOSITION_REQUIRED"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -869,7 +881,7 @@
     },
     {
       "category": "PLAY_REVIEW",
-      "review_note": "P07-Arpeggierung ist eine übertragbare Übung; konkrete vier Akkorde, Register und Spielprobe fehlen für diese Zuordnung.",
+      "review_note": "P07-Arpeggierung ist eine übertragbare Übung; konkrete vier Akkorde, Register und Spielprobe fehlen für diese Zuordnung. Neues eigenes Zweihandbeispiel: 32 RH-Achtel und vier ausdrücklich notierte LH-Grundtöne über vier Akkorde. Keine historische Aufnahme oder Spielabnahme.",
       "relation_id": "REL-002",
       "edge": {
         "source_id": "PROG-001",
@@ -877,7 +889,9 @@
         "relation_type": "TAUGHT_VIA"
       },
       "original_row_sha256": "f65fdca8c4485909dfed25b23cfe984a0f2c7eba2919d80eed209987ca1913d6",
-      "probe_ids": [],
+      "probe_ids": [
+        "P07_COMPLETE_ARPEGGIO"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -892,7 +906,7 @@
     },
     {
       "category": "MODEL_REVIEW",
-      "review_note": "P05-Shell-Beispiele sind vorhanden. Ihre Übertragung auf alle Positionen von PROG-003 und Guide-Tone-Lagen prüfen; kein MANDATORY_JAZZ-Nachweis.",
+      "review_note": "P05-Shell-Beispiele sind vorhanden. Ihre Übertragung auf alle Positionen von PROG-003 und Guide-Tone-Lagen prüfen; kein MANDATORY_JAZZ-Nachweis. Neuer eigener Guide-Tone-Satz für alle drei PROG-003-Akkorde; keine historische Transkription oder MANDATORY_JAZZ-Norm.",
       "relation_id": "REL-003",
       "edge": {
         "source_id": "PROG-003",
@@ -900,7 +914,9 @@
         "relation_type": "VOICED_BY"
       },
       "original_row_sha256": "3ec52d9393432fc81f6f8e5e905c27aaaeac63c0e2cf2c638b96f9f5305aaf3c",
-      "probe_ids": [],
+      "probe_ids": [
+        "II_V_I_SHELL_ARRANGEMENT"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -915,7 +931,7 @@
     },
     {
       "category": "OPTIMUM_REVIEW",
-      "review_note": "P08-Drop-2-Beispiele vorhanden; minimal L1 erfordert definierten Suchraum und unabhängige Optimierungsgegenprobe.",
+      "review_note": "P08-Drop-2-Beispiele vorhanden; minimal L1 erfordert definierten Suchraum und unabhängige Optimierungsgegenprobe. Unabhängige Vollsuche bei ±12 Halbtönen/Stimme: von enger Dm7-Lage kostet globales Minimum3, Drop2-Minimum7. Minimalität braucht festgelegten Suchraum. Bei vorgegebener Dm7-Drop2-Ausgangslage können beide Minima3 sein; kein kontextfreier Drop2-Optimalitätsanspruch.",
       "relation_id": "REL-004",
       "edge": {
         "source_id": "PROG-003",
@@ -923,7 +939,10 @@
         "relation_type": "VOICED_BY"
       },
       "original_row_sha256": "53e9f0a89b50b01f5d0bc33f23988d965676c18d19534d270787220cb19e0e4b",
-      "probe_ids": [],
+      "probe_ids": [
+        "DROP2_ORACLE_FROM_CLOSE",
+        "DROP2_ORACLE_FROM_DROP2"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -1007,7 +1026,7 @@
     },
     {
       "category": "ARRANGEMENT_REQUIRED",
-      "review_note": "P08 enthält kein vollständig notiertes PROG-017-Arrangement; Klangadjektive transparent/lush brauchen Hörprüfung.",
+      "review_note": "P08 enthält kein vollständig notiertes PROG-017-Arrangement; Klangadjektive transparent/lush brauchen Hörprüfung. Neuer eigener vollständiger dreigliedriger Drop2-Satz; Handlage/Ergonomie und Klangadjektive erfordern Spiel-/Hörabnahme.",
       "relation_id": "REL-008",
       "edge": {
         "source_id": "PROG-017",
@@ -1015,7 +1034,9 @@
         "relation_type": "VOICED_BY"
       },
       "original_row_sha256": "8b9e87cf043890727a8c270b640cdc1d129f4d766d8c827d7e7b90fc70a5b665",
-      "probe_ids": [],
+      "probe_ids": [
+        "BACKDOOR_DROP2_ARRANGEMENT"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -1101,7 +1122,7 @@
     },
     {
       "category": "PLAY_REVIEW",
-      "review_note": "Charleston-Onsets 1/2+ sind dokumentiert; lock with beschreibt ein Aufführungsziel, keinen automatisch bewiesenen Gleichlauf.",
+      "review_note": "Charleston-Onsets 1/2+ sind dokumentiert; lock with beschreibt ein Aufführungsziel, keinen automatisch bewiesenen Gleichlauf. Eigene explizite Zweitakt-Überlagerung: gemeinsame Tickachse und Gleichzeitigkeit prüfbar; Gleichzeitigkeit ist kein Fehler und keine Stilfreigabe.",
       "relation_id": "REL-012",
       "edge": {
         "source_id": "P09",
@@ -1109,7 +1130,9 @@
         "relation_type": "TRAINS_RHYTHMIC_INTERACTION"
       },
       "original_row_sha256": "456483453c40213a2200628a32d03cd65818399b996df937b652604f991357b1",
-      "probe_ids": [],
+      "probe_ids": [
+        "CHARLESTON_UKG_OVERLAY"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -1241,7 +1264,7 @@
     },
     {
       "category": "ARRANGEMENT_REQUIRED",
-      "review_note": "Keyboard-Offbeats und Schlagzeuglücken müssen auf einer gemeinsamen Ereigniszeitachse geprüft werden; bloße Modulnamen reichen nicht.",
+      "review_note": "Keyboard-Offbeats und Schlagzeuglücken müssen auf einer gemeinsamen Ereigniszeitachse geprüft werden; bloße Modulnamen reichen nicht. Eigene explizite Zweitakt-Überlagerung: gemeinsame Tickachse und Gleichzeitigkeit prüfbar; Gleichzeitigkeit ist kein Fehler und keine Stilfreigabe.",
       "relation_id": "REL-018",
       "edge": {
         "source_id": "P09",
@@ -1249,7 +1272,9 @@
         "relation_type": "COMPATIBLE_WITH"
       },
       "original_row_sha256": "a05352e9bc127bdad5e4da4bbea07efc367406146b0b7d9bbb57bbd91d4a5595",
-      "probe_ids": [],
+      "probe_ids": [
+        "CHARLESTON_UKG_OVERLAY"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -1287,7 +1312,7 @@
     },
     {
       "category": "IDENTITY_CONFLICT",
-      "review_note": "Aktuelles ERR-026 bezeichnet L1-Distanz, die wiedergefundene Phase-4.8-Fassung Bass-First. Versionsgebundene Fehler-ID statt pauschaler Alias nötig.",
+      "review_note": "Aktuelles ERR-026 bezeichnet L1-Distanz, die wiedergefundene Phase-4.8-Fassung Bass-First. Versionsgebundene Fehler-ID statt pauschaler Alias nötig. Zwei quellversionsgebundene Bedeutungen für ERR-026 nachgewiesen; keine automatische Gleichsetzung und keine bewiesene Fehlervermeidung aus P11.",
       "relation_id": "REL-020",
       "edge": {
         "source_id": "P11",
@@ -1295,7 +1320,9 @@
         "relation_type": "PREVENTS_ERROR"
       },
       "original_row_sha256": "d45cf668c6cf67fa5bc400614c5385e8e669690a4281e5b928d3bad653cc29e5",
-      "probe_ids": [],
+      "probe_ids": [
+        "VERSIONED_ERR026"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -1333,7 +1360,7 @@
     },
     {
       "category": "MODEL_CONFLICT",
-      "review_note": "P12-Beispiel mit D im Bass enthält den Grundton. Für PROG-021 übertragbar, aber kein Gesamt-rootless-Nachweis.",
+      "review_note": "P12-Beispiel mit D im Bass enthält den Grundton. Für PROG-021 übertragbar, aber kein Gesamt-rootless-Nachweis. Vier neue konkrete LH/RH-Lagen zeigen grundtonlose RH bei grundtonhaltigem Gesamtklang; nicht pauschal rootless.",
       "relation_id": "REL-022",
       "edge": {
         "source_id": "PROG-021",
@@ -1341,7 +1368,9 @@
         "relation_type": "DIDACTIC_APPLICATION"
       },
       "original_row_sha256": "b0a1102b39bca17ff2ce8161d91eec9d59607fa1b65103bb9bd80f8ee59c9159",
-      "probe_ids": [],
+      "probe_ids": [
+        "MINOR_CYCLE_HAND_LAYERS"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -2073,7 +2102,7 @@
     },
     {
       "category": "SOURCE_SCOPE_REVIEW",
-      "review_note": "Friberg/Sundström berichtet Tempoabhängigkeit; decay ist keine aus dem Abstract belegte universelle Zerfallsformel.",
+      "review_note": "Friberg/Sundström berichtet Tempoabhängigkeit; decay ist keine aus dem Abstract belegte universelle Zerfallsformel. Das 2023-Autorenmodell ist eine begrenzte Regression mit Untergrenze; kein aus dem 2002-Abstract ableitbares universelles Gesetz.",
       "relation_id": "CDR-017",
       "edge": {
         "source_id": "FRIBERG_SWING_DECAY",
@@ -2081,7 +2110,9 @@
         "relation_type": "MODELS"
       },
       "original_row_sha256": "9ee9c66cbb15604a6c74111b84ce8756b385eb545558b14fa34cd78d86112eb4",
-      "probe_ids": [],
+      "probe_ids": [
+        "SWING_2023_SCOPED_MODEL"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -2963,6 +2994,666 @@
       "relations": [
         "CDR-018"
       ]
+    },
+    {
+      "id": "REFERENCE_INVARIANCE",
+      "kind": "followup",
+      "relations": [
+        "CR-001"
+      ],
+      "input": {
+        "operation": "reference_invariance",
+        "data": {
+          "references": [
+            432,
+            440,
+            442
+          ],
+          "semitones": 12
+        }
+      },
+      "expected": {
+        "ratios": [
+          2,
+          2,
+          2
+        ],
+        "reference_independent": true
+      },
+      "scope": "Gegenprobe: Oktavverhältnis bleibt für mehrere Referenzfrequenzen gleich; keine Notwendigkeit von ISO16 für jeden Frequenzbegriff."
+    },
+    {
+      "id": "MICROTONAL_COUNTERMODEL",
+      "kind": "followup",
+      "relations": [
+        "CR-008"
+      ],
+      "input": {
+        "operation": "microtonal_interval",
+        "data": {
+          "cents": 150
+        }
+      },
+      "expected": {
+        "semitones": 1.5,
+        "integer_semitones": false,
+        "ratio": 1.090507733
+      },
+      "scope": "Explizites 150-Cent-Gegenmodell benötigt keine ganzzahlige 12-TET-Halbtonzahl; reine Modellrechnung, keine Hörprüfung."
+    },
+    {
+      "id": "NONCHORD_SLASH_BASS",
+      "kind": "followup",
+      "relations": [
+        "CR-015"
+      ],
+      "input": {
+        "operation": "slash_bass",
+        "data": {
+          "symbols": [
+            "C/E",
+            "C/F#"
+          ]
+        }
+      },
+      "expected": [
+        {
+          "bass_pc": 4,
+          "root_pc": 0,
+          "bass_is_chord_tone": true
+        },
+        {
+          "bass_pc": 6,
+          "root_pc": 0,
+          "bass_is_chord_tone": false
+        }
+      ],
+      "scope": "C/E und C/F# trennen Umkehrung von nichtakkordeigenem Slashbass; kein pauschaler IS_VARIANT_OF-Schluss."
+    },
+    {
+      "id": "PULSE_FREQUENCY_COUNTERMODEL",
+      "kind": "followup",
+      "relations": [
+        "CR-024"
+      ],
+      "input": {
+        "operation": "pulse_pitch_independence",
+        "data": {
+          "hz": 440,
+          "bpm": [
+            120,
+            150
+          ]
+        }
+      },
+      "expected": [
+        {
+          "hz": 440,
+          "bpm": 120,
+          "quarter_seconds": 0.5
+        },
+        {
+          "hz": 440,
+          "bpm": 150,
+          "quarter_seconds": 0.4
+        }
+      ],
+      "scope": "Bei festem Tonhöhenparameter sind unterschiedliche Pulsperioden möglich; das Ereignismodell ersetzt keine Wahrnehmungsstudie."
+    },
+    {
+      "id": "DUPLE_TRIPLE_GRID",
+      "kind": "followup",
+      "relations": [
+        "CR-026"
+      ],
+      "input": {
+        "operation": "subdivision_grids",
+        "data": {
+          "ppq": 480,
+          "divisions": [
+            2,
+            3
+          ]
+        }
+      },
+      "expected": [
+        [
+          "0",
+          "240"
+        ],
+        [
+          "0",
+          "160",
+          "320"
+        ]
+      ],
+      "scope": "Zwei und drei Unterteilungen sind explizit gerechnet; Wahrnehmungs- und Typisierungsabnahme bleibt offen."
+    },
+    {
+      "id": "II_V_I_SHELL_ARRANGEMENT",
+      "kind": "followup",
+      "relations": [
+        "REL-003"
+      ],
+      "input": {
+        "operation": "shells",
+        "data": {
+          "progression": "PROG-003",
+          "rh": [
+            [
+              "F4",
+              "C5"
+            ],
+            [
+              "F4",
+              "B4"
+            ],
+            [
+              "E4",
+              "B4"
+            ]
+          ]
+        }
+      },
+      "expected": {
+        "rh_pcs": [
+          [
+            5,
+            0
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            4,
+            11
+          ]
+        ],
+        "rh_l1": [
+          1,
+          1
+        ]
+      },
+      "scope": "Neuer eigener Guide-Tone-Satz für alle drei PROG-003-Akkorde; keine historische Transkription oder MANDATORY_JAZZ-Norm."
+    },
+    {
+      "id": "DROP2_ORACLE_FROM_CLOSE",
+      "kind": "followup",
+      "relations": [
+        "REL-004"
+      ],
+      "input": {
+        "operation": "optimizer_oracle",
+        "data": {
+          "source": [
+            62,
+            65,
+            69,
+            72
+          ],
+          "target_pcs": [
+            2,
+            5,
+            7,
+            11
+          ]
+        }
+      },
+      "expected": {
+        "unconstrained_min": 3,
+        "drop2_min": 7,
+        "core_cost": 3,
+        "core_matches_oracle": true
+      },
+      "scope": "Unabhängige Vollsuche bei ±12 Halbtönen/Stimme: von enger Dm7-Lage kostet globales Minimum3, Drop2-Minimum7. Minimalität braucht festgelegten Suchraum."
+    },
+    {
+      "id": "DROP2_ORACLE_FROM_DROP2",
+      "kind": "followup",
+      "relations": [
+        "REL-004"
+      ],
+      "input": {
+        "operation": "optimizer_oracle",
+        "data": {
+          "source": [
+            57,
+            62,
+            65,
+            72
+          ],
+          "target_pcs": [
+            2,
+            5,
+            7,
+            11
+          ]
+        }
+      },
+      "expected": {
+        "unconstrained_min": 3,
+        "drop2_min": 3,
+        "core_cost": 3,
+        "core_matches_oracle": true
+      },
+      "scope": "Bei vorgegebener Dm7-Drop2-Ausgangslage können beide Minima3 sein; kein kontextfreier Drop2-Optimalitätsanspruch."
+    },
+    {
+      "id": "BACKDOOR_DROP2_ARRANGEMENT",
+      "kind": "followup",
+      "relations": [
+        "REL-008"
+      ],
+      "input": {
+        "operation": "arrangement",
+        "data": {
+          "progression": "PROG-017",
+          "lh": [
+            [
+              "C4"
+            ],
+            [
+              "F3"
+            ],
+            [
+              "G3"
+            ]
+          ],
+          "rh": [
+            [
+              "F4",
+              "Ab4",
+              "Eb5"
+            ],
+            [
+              "Bb3",
+              "D4",
+              "Ab4"
+            ],
+            [
+              "C4",
+              "E4",
+              "B4"
+            ]
+          ],
+          "require_drop2": true
+        }
+      },
+      "expected": [
+        {
+          "symbol": "Fm7",
+          "total_root_present": true,
+          "rh_root_present": true
+        },
+        {
+          "symbol": "Bb7",
+          "total_root_present": true,
+          "rh_root_present": true
+        },
+        {
+          "symbol": "Cmaj7",
+          "total_root_present": true,
+          "rh_root_present": true
+        }
+      ],
+      "scope": "Neuer eigener vollständiger dreigliedriger Drop2-Satz; Handlage/Ergonomie und Klangadjektive erfordern Spiel-/Hörabnahme."
+    },
+    {
+      "id": "MINOR_CYCLE_HAND_LAYERS",
+      "kind": "followup",
+      "relations": [
+        "REL-022"
+      ],
+      "input": {
+        "operation": "arrangement",
+        "data": {
+          "progression": "PROG-021",
+          "lh": [
+            [
+              "D3"
+            ],
+            [
+              "G2"
+            ],
+            [
+              "Bb2"
+            ],
+            [
+              "A2"
+            ]
+          ],
+          "rh": [
+            [
+              "F4",
+              "A4",
+              "C5",
+              "E5"
+            ],
+            [
+              "Bb3",
+              "D4",
+              "F4",
+              "A4"
+            ],
+            [
+              "D4",
+              "F4",
+              "A4",
+              "C5"
+            ],
+            [
+              "C#4",
+              "E4",
+              "G4",
+              "Bb4"
+            ]
+          ]
+        }
+      },
+      "expected": [
+        {
+          "symbol": "Dm9",
+          "total_root_present": true,
+          "rh_root_present": false
+        },
+        {
+          "symbol": "Gm9",
+          "total_root_present": true,
+          "rh_root_present": false
+        },
+        {
+          "symbol": "Bbmaj9",
+          "total_root_present": true,
+          "rh_root_present": false
+        },
+        {
+          "symbol": "A7(b9)",
+          "total_root_present": true,
+          "rh_root_present": false
+        }
+      ],
+      "scope": "Vier neue konkrete LH/RH-Lagen zeigen grundtonlose RH bei grundtonhaltigem Gesamtklang; nicht pauschal rootless."
+    },
+    {
+      "id": "CIRCLE_SOUL_HAND_LAYERS",
+      "kind": "followup",
+      "relations": [
+        "CR-038"
+      ],
+      "input": {
+        "operation": "arrangement",
+        "data": {
+          "progression": "PROG-028",
+          "lh": [
+            [
+              "E3"
+            ],
+            [
+              "A2"
+            ],
+            [
+              "D3"
+            ],
+            [
+              "G2"
+            ]
+          ],
+          "rh": [
+            [
+              "G4",
+              "B4",
+              "D5",
+              "F#5"
+            ],
+            [
+              "C4",
+              "E4",
+              "G4",
+              "B4"
+            ],
+            [
+              "F#4",
+              "A4",
+              "C5",
+              "E5"
+            ],
+            [
+              "B3",
+              "D4",
+              "F#4",
+              "A4"
+            ]
+          ]
+        }
+      },
+      "expected": [
+        {
+          "symbol": "Em9",
+          "total_root_present": true,
+          "rh_root_present": false
+        },
+        {
+          "symbol": "Am9",
+          "total_root_present": true,
+          "rh_root_present": false
+        },
+        {
+          "symbol": "D9",
+          "total_root_present": true,
+          "rh_root_present": false
+        },
+        {
+          "symbol": "Gmaj9",
+          "total_root_present": true,
+          "rh_root_present": false
+        }
+      ],
+      "scope": "Vier neu entworfene Lagen führen das P12-Prinzip explizit auf PROG-028 aus; die ursprüngliche Dm9-Lage genügt nicht ohne Übertragung."
+    },
+    {
+      "id": "P12_TRANSPOSITION_REQUIRED",
+      "kind": "followup",
+      "relations": [
+        "CR-038"
+      ],
+      "input": {
+        "operation": "p12_transposition",
+        "data": {
+          "original": [
+            "D3",
+            "F4",
+            "A4",
+            "C5",
+            "E5"
+          ],
+          "semitones": 2
+        }
+      },
+      "expected": {
+        "target_symbol": "Em9",
+        "untransposed_fits": false,
+        "transposed_fits": true,
+        "transposed_midi": [
+          52,
+          67,
+          71,
+          74,
+          78
+        ]
+      },
+      "scope": "Die ursprüngliche P12-Dm9-Lage passt erst nach expliziter Ganztontransposition zum Em9-Start; keine stillschweigende Zuordnung."
+    },
+    {
+      "id": "P07_COMPLETE_ARPEGGIO",
+      "kind": "followup",
+      "relations": [
+        "REL-002"
+      ],
+      "input": {
+        "operation": "arpeggio_events",
+        "data": {
+          "progression": "PROG-001",
+          "ppq": 480,
+          "rh": [
+            [
+              "C4",
+              "E4",
+              "G4",
+              "C5",
+              "G4",
+              "E4",
+              "G4",
+              "E4"
+            ],
+            [
+              "G3",
+              "B3",
+              "D4",
+              "G4",
+              "D4",
+              "B3",
+              "D4",
+              "B3"
+            ],
+            [
+              "A3",
+              "C4",
+              "E4",
+              "A4",
+              "E4",
+              "C4",
+              "E4",
+              "C4"
+            ],
+            [
+              "F3",
+              "A3",
+              "C4",
+              "F4",
+              "C4",
+              "A3",
+              "C4",
+              "A3"
+            ]
+          ],
+          "lh": [
+            "C2",
+            "G2",
+            "A2",
+            "F2"
+          ]
+        }
+      },
+      "expected": {
+        "events": 36,
+        "total_ticks": 7680,
+        "last_onset": 7440,
+        "all_chord_tones": true,
+        "rh_events": 32,
+        "lh_events": 4
+      },
+      "scope": "Neues eigenes Zweihandbeispiel: 32 RH-Achtel und vier ausdrücklich notierte LH-Grundtöne über vier Akkorde. Keine historische Aufnahme oder Spielabnahme."
+    },
+    {
+      "id": "CHARLESTON_UKG_OVERLAY",
+      "kind": "followup",
+      "relations": [
+        "REL-012",
+        "REL-018"
+      ],
+      "input": {
+        "operation": "overlay",
+        "data": {
+          "bars": 2,
+          "beats_per_bar": 4,
+          "ppq": 480,
+          "parts": {
+            "keyboard": [
+              0,
+              720,
+              1920,
+              2640
+            ],
+            "kick": [
+              0,
+              1200,
+              1920,
+              3120
+            ],
+            "snare": [
+              480,
+              1440,
+              2400,
+              3360
+            ]
+          }
+        }
+      },
+      "expected": {
+        "total_ticks": 3840,
+        "keyboard_kick": [
+          0,
+          1920
+        ],
+        "keyboard_snare": []
+      },
+      "scope": "Eigene explizite Zweitakt-Überlagerung: gemeinsame Tickachse und Gleichzeitigkeit prüfbar; Gleichzeitigkeit ist kein Fehler und keine Stilfreigabe."
+    },
+    {
+      "id": "SWING_2023_SCOPED_MODEL",
+      "kind": "followup",
+      "relations": [
+        "CDR-017"
+      ],
+      "input": {
+        "operation": "source_bounded_swing",
+        "data": {
+          "slope": -0.01,
+          "intercept": 4.1019,
+          "bpm": [
+            80,
+            240,
+            400
+          ]
+        }
+      },
+      "expected": [
+        3.3019,
+        1.7019,
+        1
+      ],
+      "scope": "Das 2023-Autorenmodell ist eine begrenzte Regression mit Untergrenze; kein aus dem 2002-Abstract ableitbares universelles Gesetz."
+    },
+    {
+      "id": "VERSIONED_ERR026",
+      "kind": "followup",
+      "relations": [
+        "REL-020"
+      ],
+      "input": {
+        "operation": "error_namespaces",
+        "data": {
+          "historical_source": {
+            "path": "archive/audit-history/ontology-recovery-2026-11-14/originals/20261111T0040_Phase4_8/MUSIC_KNOWLEDGE_CORRECTIONS.md",
+            "sha256": "e487ec8b6a01d725df93ca38fde3b3999917a1f600932995e337b42538ca7cb4",
+            "hash_mode": "bytes"
+          },
+          "current_source": {
+            "path": "knowledge/research/MUSICAL_ERROR_REGISTER.csv",
+            "sha256": "5fde7bc16e70b75f913f447d710de1ed32a80483dd9bad3f8405f7c4a8ad311c",
+            "hash_mode": "git_text_lf"
+          }
+        }
+      },
+      "expected": {
+        "same_bare_id": true,
+        "historical_bass_first": true,
+        "current_l1": true,
+        "same_semantics": false
+      },
+      "scope": "Zwei quellversionsgebundene Bedeutungen für ERR-026 nachgewiesen; keine automatische Gleichsetzung und keine bewiesene Fehlervermeidung aus P11."
     }
-  ]
+  ],
+  "followup_base_main": "9afaf33eaeec332a3d19b4e30d05b1902234936f"
 }

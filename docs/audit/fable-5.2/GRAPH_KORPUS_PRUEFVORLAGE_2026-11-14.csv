@@ -1,0 +1,15 @@
+relation_id,source_id,target_id,sampling_frame,recording_id,licensed_locator,genre_annotation,harmony_annotation,drum_annotation,denominator_definition,annotator,independent_reviewer,bias_notes,review_status
+CR-029,M08-03,M09-01,,,,,,,,,,,AUSSTEHEND
+CR-030,M08-03,M09-02,,,,,,,,,,,AUSSTEHEND
+CR-031,M09-01,M06-01,,,,,,,,,,,AUSSTEHEND
+CR-032,M09-02,M08-03,,,,,,,,,,,AUSSTEHEND
+REL-001,PROG-001,PAT-001,,,,,,,,,,,AUSSTEHEND
+REL-005,PROG-003,PAT-012,,,,,,,,,,,AUSSTEHEND
+REL-006,PROG-007,PAT-007,,,,,,,,,,,AUSSTEHEND
+REL-007,PROG-017,PAT-013,,,,,,,,,,,AUSSTEHEND
+REL-014,PROG-002,PAT-018,,,,,,,,,,,AUSSTEHEND
+REL-015,PROG-007,PAT-020,,,,,,,,,,,AUSSTEHEND
+REL-017,PAT-022,M09,,,,,,,,,,,AUSSTEHEND
+REL-026,PROG-023,PAT-018,,,,,,,,,,,AUSSTEHEND
+REL-032,PROG-025,PAT-028,,,,,,,,,,,AUSSTEHEND
+REL-035,PROG-028,PAT-030,,,,,,,,,,,AUSSTEHEND

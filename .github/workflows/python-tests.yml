@@ -96,3 +96,7 @@ jobs:
         run: python -B scripts/audit_graph.py --check
       - name: Check all remaining historical Golden reviews and source hashes
         run: python -B scripts/audit_golden_remaining.py --check
+      - name: Check source-bound Golden conflict revisions
+        run: python -B scripts/audit_conflict_revisions.py --check
+      - name: Check all 58 graph follow-ups and versioned error identities
+        run: python -B scripts/audit_graph_followup.py --check
