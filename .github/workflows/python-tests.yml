@@ -100,3 +100,5 @@ jobs:
         run: python -B scripts/audit_conflict_revisions.py --check
       - name: Check all 58 graph follow-ups and versioned error identities
         run: python -B scripts/audit_graph_followup.py --check
+      - name: Check scoped graph semantics and MIDI notation contracts
+        run: python -B scripts/audit_graph_semantics.py --check

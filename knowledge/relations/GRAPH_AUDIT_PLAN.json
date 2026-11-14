@@ -29,7 +29,7 @@
     },
     {
       "category": "TYPE_REVIEW",
-      "review_note": "Eine Oktave ist keine Variante eines Stimmungssystems. Die 2:1-Referenz beschreibt das Modell, nicht die behauptete IS_VARIANT_OF-Typisierung.",
+      "review_note": "Eine Oktave ist keine Variante eines Stimmungssystems. Die 2:1-Referenz beschreibt das Modell, nicht die behauptete IS_VARIANT_OF-Typisierung. 2:1-Referenzintervall rechnerisch geprüft; IS_VARIANT_OF zwischen Intervall und Stimmungssystem nicht dadurch bewiesen.",
       "relation_id": "CR-002",
       "edge": {
         "source_id": "M01-03",
@@ -38,7 +38,8 @@
       },
       "original_row_sha256": "a205e0c922d55aa1de94e032446670f549ea5245418901716c7c172639de54b2",
       "probe_ids": [
-        "FREQUENCY"
+        "FREQUENCY",
+        "OCTAVE_IS_REFERENCE_NOT_TEMPERAMENT"
       ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
@@ -77,7 +78,7 @@
     },
     {
       "category": "SCOPE_REVIEW",
-      "review_note": "Vorzeichen existieren auch außerhalb eines Fünfliniensystems; REQUIRES braucht den konkreten Notationskontext.",
+      "review_note": "Vorzeichen existieren auch außerhalb eines Fünfliniensystems; REQUIRES braucht den konkreten Notationskontext. Pitch-Symbol lässt sich ohne Notensystem geparst darstellen; keine universelle Fünflinien-Abhängigkeit.",
       "relation_id": "CR-004",
       "edge": {
         "source_id": "M02-04",
@@ -85,7 +86,9 @@
         "relation_type": "REQUIRES"
       },
       "original_row_sha256": "123a5f932ca843505badc7db8da2ed6c93dcc729f7693f6865802697f413f721",
-      "probe_ids": [],
+      "probe_ids": [
+        "ACCIDENTAL_WITHOUT_STAFF"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -123,7 +126,7 @@
     },
     {
       "category": "TYPE_REVIEW",
-      "review_note": "Unterschiedliche Schreibungen widersprechen dem Vorzeichenkonzept nicht. Leitton-/Mollterzfunktion hängt außerdem von Tonart und Kontext ab.",
+      "review_note": "Unterschiedliche Schreibungen widersprechen dem Vorzeichenkonzept nicht. Leitton-/Mollterzfunktion hängt außerdem von Tonart und Kontext ab. C# ist in D-Dur Stufe7, in A-Dur Stufe3; Db ist in b-Moll Stufe3. Schreibweise bestimmt ohne Tonart keine universelle Funktion.",
       "relation_id": "CR-006",
       "edge": {
         "source_id": "M02-05",
@@ -132,7 +135,8 @@
       },
       "original_row_sha256": "baa12b84f3eb101ebec871c14794d25c3abb6e1974a20e003247c13f4eea26ca",
       "probe_ids": [
-        "ENHARMONIC"
+        "ENHARMONIC",
+        "ENHARMONIC_FUNCTION_CONTEXT"
       ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
@@ -373,7 +377,7 @@
     },
     {
       "category": "CONTEXT_REVIEW",
-      "review_note": "Riemannfunktion und Skalenstufe sind keine kontextfreie Bijektion; Dur-/Mollparallelfunktionen und Stellvertreter fehlen.",
+      "review_note": "Riemannfunktion und Skalenstufe sind keine kontextfreie Bijektion; Dur-/Mollparallelfunktionen und Stellvertreter fehlen. Nur primäre I/IV/V-Dreiklänge in ausdrücklich gesetztem C-Dur; keine globale Bijektion aller Funktionen und Stufen.",
       "relation_id": "CR-017",
       "edge": {
         "source_id": "M05-02",
@@ -381,7 +385,9 @@
         "relation_type": "IS_EQUIVALENT_UNDER"
       },
       "original_row_sha256": "f56eefe0809ab236440e2b10a846c771b8b5d40770fd3be9a2b175d18d5fa7cc",
-      "probe_ids": [],
+      "probe_ids": [
+        "PRIMARY_FUNCTION_TRIADS_ONLY"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -555,7 +561,7 @@
     },
     {
       "category": "MODEL_SAMPLE",
-      "review_note": "PPQ-Zeitrechnung verifiziert das Raster; ein vollständiger SMF-Exporter ist im Kern nicht implementiert.",
+      "review_note": "PPQ-Zeitrechnung verifiziert das Raster; ein vollständiger SMF-Exporter ist im Kern nicht implementiert. Eigenes minimales SMF-Prüfpaket bestätigt PPQ-Division; kein Nachweis eines vollständigen Produkt-Exporters und keine SMPTE-Umdeutung.",
       "relation_id": "CR-025",
       "edge": {
         "source_id": "M07-02",
@@ -563,7 +569,9 @@
         "relation_type": "IMPLEMENTED_BY"
       },
       "original_row_sha256": "86046dd23e0d15f50463b59927274f9cf37230941c538602b8f529c881513c31",
-      "probe_ids": [],
+      "probe_ids": [
+        "SMF_PPQ_AUDIT_CONTROL"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -599,7 +607,7 @@
     },
     {
       "category": "DIRECTION_REVIEW",
-      "review_note": "Swing verschiebt im Paar den zweiten Onset. Ungerade Zählzeiten ist ohne Indexkonvention missverständlich; keine universelle feste Ratio.",
+      "review_note": "Swing verschiebt im Paar den zweiten Onset. Ungerade Zählzeiten ist ohne Indexkonvention missverständlich; keine universelle feste Ratio. Explizite Paarbreite und nullbasierter Index1: verschoben wird der zweite Einsatz; keine universelle feste Swingrate. Explizite Paarbreite und nullbasierter Index1: verschoben wird der zweite Einsatz; keine universelle feste Swingrate.",
       "relation_id": "CR-027",
       "edge": {
         "source_id": "M07-04",
@@ -607,7 +615,10 @@
         "relation_type": "IS_VARIANT_OF"
       },
       "original_row_sha256": "5e06eae4715c86f1e91a0af86f87c4565eb55b0e97ba46b56fc2eb77e178bc8a",
-      "probe_ids": [],
+      "probe_ids": [
+        "PAIR_INDEX_EIGHTH",
+        "PAIR_INDEX_SIXTEENTH"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -622,7 +633,7 @@
     },
     {
       "category": "STANDARD_REVIEW",
-      "review_note": "GM1-Kanal-10-Zuordnung ist eine Geräte-/Profilkonvention. Akustische Drumkits implementieren nicht selbst MIDI; ursprüngliche Tabelle separat lesen.",
+      "review_note": "GM1-Kanal-10-Zuordnung ist eine Geräte-/Profilkonvention. Akustische Drumkits implementieren nicht selbst MIDI; ursprüngliche Tabelle separat lesen. GM1 ist ein explizites Geräteprofil mit Grundbelegung, keine Aussage über alle MIDI-Geräte oder zusätzliche Herstellersounds. Ohne GM1-Profil wird aus Kanal10 keine normierte Klangrolle abgeleitet. MusicXML-4.0-Zahlen sind hier einsbasiert; MIDI-Wire-Kanal und Notenwert werden separat nullbasiert umgerechnet. Kein vollständiger Konverternachweis.",
       "relation_id": "CR-028",
       "edge": {
         "source_id": "M08-01",
@@ -630,7 +641,11 @@
         "relation_type": "IMPLEMENTED_BY"
       },
       "original_row_sha256": "767b855458c30a3509060a373ed46d05771d851c6f8c2b779f2e345ca3e2f984",
-      "probe_ids": [],
+      "probe_ids": [
+        "GM1_EXPLICIT_PROFILE",
+        "NON_GM_PROFILE_IS_UNASSERTED",
+        "MUSICXML_ONE_BASED_PERCUSSION"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -1051,7 +1066,7 @@
     },
     {
       "category": "SCOPE_REVIEW",
-      "review_note": "Ein One-Drop-Drumgroove erfordert nicht zwingend Klavier/Gitarre. REQUIRES_TECHNIQUE überzeichnet eine mögliche Skank-Begleitung.",
+      "review_note": "Ein One-Drop-Drumgroove erfordert nicht zwingend Klavier/Gitarre. REQUIRES_TECHNIQUE überzeichnet eine mögliche Skank-Begleitung. Neues sparsames Drum-Kontrollmodell ohne Keyboard; Begleitung ist optional, kulturelle Authentizität ist nicht aus dem Raster nachgewiesen.",
       "relation_id": "REL-009",
       "edge": {
         "source_id": "PAT-010",
@@ -1059,7 +1074,9 @@
         "relation_type": "REQUIRES_TECHNIQUE"
       },
       "original_row_sha256": "13dc2cdae4acb83edb4e424846052502d223cadbc27fd9f1552dbfe3dfe320b7",
-      "probe_ids": [],
+      "probe_ids": [
+        "ONE_DROP_WITHOUT_KEYBOARD"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -1099,7 +1116,7 @@
     },
     {
       "category": "MODEL_REVIEW",
-      "review_note": "UKG-Katalog nutzt ein Swingmodell; Rate und Onsets sind Übungsdaten, keine empirische Genrenorm.",
+      "review_note": "UKG-Katalog nutzt ein Swingmodell; Rate und Onsets sind Übungsdaten, keine empirische Genrenorm. Konkrete PAT-020-Katalogzeile gelesen; 58%-Übungsparameter ist keine Genrenorm.",
       "relation_id": "REL-011",
       "edge": {
         "source_id": "PAT-020",
@@ -1107,7 +1124,9 @@
         "relation_type": "UTILIZES_SWING_PROFILE"
       },
       "original_row_sha256": "b8003b8ad368d4c7a2e01b7980a93271ed6b0d5225ecd7f295d8b5fb47d3a32a",
-      "probe_ids": [],
+      "probe_ids": [
+        "UKG_EXERCISE_SOURCE_BOUND"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -1481,7 +1500,7 @@
     },
     {
       "category": "NAMESPACE_REVIEW",
-      "review_note": "M03/M04 bezeichnen im historischen Master Intervalle/Skalen und Akkorde; spätere Domänenverschiebungen nicht automatisch auf diese Kante anwenden.",
+      "review_note": "M03/M04 bezeichnen im historischen Master Intervalle/Skalen und Akkorde; spätere Domänenverschiebungen nicht automatisch auf diese Kante anwenden. M03-Titel aus zwei quellgebundenen Gliederungen getrennt; spätere Readiness-Eigenlabels sind keine menschliche Fachabnahme. Vier gewählte Skalen liefern28 Terzschichtungsinstanzen, nicht28 verschiedene Akkordtypen oder einen vollständigen Akkordkatalog.",
       "relation_id": "REL-027",
       "edge": {
         "source_id": "M03",
@@ -1489,7 +1508,10 @@
         "relation_type": "HARMONIC_DERIVATION"
       },
       "original_row_sha256": "467711ed68ac982d9fbd91e73129b9f8d2187cea70dee0d46caf7559471721da",
-      "probe_ids": [],
+      "probe_ids": [
+        "DOMAIN_NAMESPACE_LABELS",
+        "SELECTED_SCALE_TRIAD_INSTANCES"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -1504,7 +1526,7 @@
     },
     {
       "category": "STANDARD_REVIEW",
-      "review_note": "GM1-Profil reserviert Kanal 10; proprietäre/GM2-Erweiterungen separat. Historischer Primärtabellennachweis vorhanden, keine frische Vollprüfung.",
+      "review_note": "GM1-Profil reserviert Kanal 10; proprietäre/GM2-Erweiterungen separat. Historischer Primärtabellennachweis vorhanden, keine frische Vollprüfung. GM1 ist ein explizites Geräteprofil mit Grundbelegung, keine Aussage über alle MIDI-Geräte oder zusätzliche Herstellersounds. Ohne GM1-Profil wird aus Kanal10 keine normierte Klangrolle abgeleitet. MusicXML-4.0-Zahlen sind hier einsbasiert; MIDI-Wire-Kanal und Notenwert werden separat nullbasiert umgerechnet. Kein vollständiger Konverternachweis.",
       "relation_id": "REL-028",
       "edge": {
         "source_id": "M11",
@@ -1512,7 +1534,11 @@
         "relation_type": "CHANNEL_ASSIGNMENT_MAPPING"
       },
       "original_row_sha256": "809c65d774d2af5ecc82702734d183b5dd2d4433f2bb942932e486f0ab7584d9",
-      "probe_ids": [],
+      "probe_ids": [
+        "GM1_EXPLICIT_PROFILE",
+        "NON_GM_PROFILE_IS_UNASSERTED",
+        "MUSICXML_ONE_BASED_PERCUSSION"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -1573,7 +1599,7 @@
     },
     {
       "category": "MODEL_SAMPLE",
-      "review_note": "PAT-027-Onsets im dokumentierten zweitaktigen Raster berechnet; Cross-Stick ist nicht automatisch Gilberto-Gitarrenbatida.",
+      "review_note": "PAT-027-Onsets im dokumentierten zweitaktigen Raster berechnet; Cross-Stick ist nicht automatisch Gilberto-Gitarrenbatida. Die tatsächliche Cross-Stick-Katalogfigur ist gegen den Zweitakt-Tickraum geprüft; keine Gleichsetzung mit einer universellen Gitarrenbatida.",
       "relation_id": "REL-031",
       "edge": {
         "source_id": "PAT-027",
@@ -1581,7 +1607,9 @@
         "relation_type": "METRIC_ALIGNMENT"
       },
       "original_row_sha256": "3b0e7931a170658879f89673d74cf2f8ed300e2b7337ffeb269de9f01911b1f5",
-      "probe_ids": [],
+      "probe_ids": [
+        "BOSSA_CROSS_STICK_SOURCE_BOUND"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -1644,7 +1672,7 @@
     },
     {
       "category": "SCOPE_REVIEW",
-      "review_note": "Vorzeichenfolge bestimmt nicht allein Leittonfunktion; natürliches Moll und Moduswechsel benötigen zusätzlichen Kontext.",
+      "review_note": "Vorzeichenfolge bestimmt nicht allein Leittonfunktion; natürliches Moll und Moduswechsel benötigen zusätzlichen Kontext. Gleiches Vorzeichensignaturmodell lässt natürliche und erhöhte siebte Stufe unterscheiden; Leittonverhalten verlangt Moduskontext.",
       "relation_id": "REL-034",
       "edge": {
         "source_id": "M02",
@@ -1652,7 +1680,9 @@
         "relation_type": "THEORETICAL_DERIVATION"
       },
       "original_row_sha256": "1b46f226c74c4ce4598c444343edc17d157ad323754a4ac411fa1876bd5285cc",
-      "probe_ids": [],
+      "probe_ids": [
+        "SIGNATURE_DOES_NOT_FIX_LEADING_TONE"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -1690,7 +1720,7 @@
     },
     {
       "category": "METER_REVIEW",
-      "review_note": "PAT-031 und PROG-025 besitzen ohne gemeinsame Ereignis-/Taktplanung keine nachgewiesene Passung; 6/8- und 4/4-Modelle getrennt halten.",
+      "review_note": "PAT-031 und PROG-025 besitzen ohne gemeinsame Ereignis-/Taktplanung keine nachgewiesene Passung; 6/8- und 4/4-Modelle getrennt halten. Neue ausdrücklich gesetzte Viertelbasis180BPM verbindet acht2880-Tick-Zyklen und drei7680-Tick-Harmonieschleifen. Eine Taktkarte ist kein COMMONLY_PAIRED_WITH- oder Hörnachweis.",
       "relation_id": "REL-036",
       "edge": {
         "source_id": "PAT-031",
@@ -1698,7 +1728,9 @@
         "relation_type": "COMMONLY_PAIRED_WITH"
       },
       "original_row_sha256": "e427b561c970b1316ceb194fec81e5652211211dedc4dba6f87b08fb5f1807b7",
-      "probe_ids": [],
+      "probe_ids": [
+        "BEMBE_MONTUNO_LCM_DRAFT"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -2185,7 +2217,7 @@
     },
     {
       "category": "STANDARD_REVIEW",
-      "review_note": "GM1-Kanal 10 und 47 feste Notennummern sind Profilregeln, kein Protokollzwang aller MIDI-Geräte.",
+      "review_note": "GM1-Kanal 10 und 47 feste Notennummern sind Profilregeln, kein Protokollzwang aller MIDI-Geräte. GM1 ist ein explizites Geräteprofil mit Grundbelegung, keine Aussage über alle MIDI-Geräte oder zusätzliche Herstellersounds. Ohne GM1-Profil wird aus Kanal10 keine normierte Klangrolle abgeleitet. MusicXML-4.0-Zahlen sind hier einsbasiert; MIDI-Wire-Kanal und Notenwert werden separat nullbasiert umgerechnet. Kein vollständiger Konverternachweis.",
       "relation_id": "CDR-020",
       "edge": {
         "source_id": "GM_CHANNEL_10",
@@ -2193,7 +2225,11 @@
         "relation_type": "STANDARDIZED_IN"
       },
       "original_row_sha256": "6cc48ebba80affe0c1d6ce5860110f6971d316b208a344cd27fff4386e74e711",
-      "probe_ids": [],
+      "probe_ids": [
+        "GM1_EXPLICIT_PROFILE",
+        "NON_GM_PROFILE_IS_UNASSERTED",
+        "MUSICXML_ONE_BASED_PERCUSSION"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -3653,6 +3689,480 @@
         "same_semantics": false
       },
       "scope": "Zwei quellversionsgebundene Bedeutungen für ERR-026 nachgewiesen; keine automatische Gleichsetzung und keine bewiesene Fehlervermeidung aus P11."
+    },
+    {
+      "id": "OCTAVE_IS_REFERENCE_NOT_TEMPERAMENT",
+      "kind": "semantic",
+      "relations": [
+        "CR-002"
+      ],
+      "input": {
+        "operation": "octave_reference",
+        "data": {
+          "lower": 440,
+          "upper": 880
+        }
+      },
+      "expected": {
+        "ratio": 2,
+        "cents": 1200,
+        "interval_is_tuning_system": false
+      },
+      "scope": "2:1-Referenzintervall rechnerisch geprüft; IS_VARIANT_OF zwischen Intervall und Stimmungssystem nicht dadurch bewiesen."
+    },
+    {
+      "id": "ACCIDENTAL_WITHOUT_STAFF",
+      "kind": "semantic",
+      "relations": [
+        "CR-004"
+      ],
+      "input": {
+        "operation": "spelling_without_staff",
+        "data": {
+          "note": "C#4"
+        }
+      },
+      "expected": {
+        "step": "C",
+        "alter": 1,
+        "pitch_class": 1,
+        "staff_required_by_parser": false
+      },
+      "scope": "Pitch-Symbol lässt sich ohne Notensystem geparst darstellen; keine universelle Fünflinien-Abhängigkeit."
+    },
+    {
+      "id": "ENHARMONIC_FUNCTION_CONTEXT",
+      "kind": "semantic",
+      "relations": [
+        "CR-006"
+      ],
+      "input": {
+        "operation": "contextual_degree",
+        "data": {
+          "notes": [
+            "C#4",
+            "C#4",
+            "Db4"
+          ],
+          "scales": [
+            [
+              "D4",
+              "E4",
+              "F#4",
+              "G4",
+              "A4",
+              "B4",
+              "C#5"
+            ],
+            [
+              "A3",
+              "B3",
+              "C#4",
+              "D4",
+              "E4",
+              "F#4",
+              "G#4"
+            ],
+            [
+              "Bb3",
+              "C4",
+              "Db4",
+              "Eb4",
+              "F4",
+              "Gb4",
+              "Ab4"
+            ]
+          ]
+        }
+      },
+      "expected": [
+        7,
+        3,
+        3
+      ],
+      "scope": "C# ist in D-Dur Stufe7, in A-Dur Stufe3; Db ist in b-Moll Stufe3. Schreibweise bestimmt ohne Tonart keine universelle Funktion."
+    },
+    {
+      "id": "PRIMARY_FUNCTION_TRIADS_ONLY",
+      "kind": "semantic",
+      "relations": [
+        "CR-017"
+      ],
+      "input": {
+        "operation": "primary_triads",
+        "data": {
+          "key": "C",
+          "degrees": [
+            "I",
+            "IV",
+            "V"
+          ]
+        }
+      },
+      "expected": [
+        "C",
+        "F",
+        "G"
+      ],
+      "scope": "Nur primäre I/IV/V-Dreiklänge in ausdrücklich gesetztem C-Dur; keine globale Bijektion aller Funktionen und Stufen."
+    },
+    {
+      "id": "SMF_PPQ_AUDIT_CONTROL",
+      "kind": "semantic",
+      "relations": [
+        "CR-025"
+      ],
+      "input": {
+        "operation": "smf_control",
+        "data": {
+          "ppq": 480,
+          "note": 38,
+          "wire_channel": 9
+        }
+      },
+      "expected": {
+        "format": 0,
+        "tracks": 1,
+        "division": 480,
+        "metrical_ppq": true,
+        "track_length_correct": true,
+        "product_exporter_proven": false
+      },
+      "scope": "Eigenes minimales SMF-Prüfpaket bestätigt PPQ-Division; kein Nachweis eines vollständigen Produkt-Exporters und keine SMPTE-Umdeutung."
+    },
+    {
+      "id": "PAIR_INDEX_EIGHTH",
+      "kind": "semantic",
+      "relations": [
+        "CR-027"
+      ],
+      "input": {
+        "operation": "paired_swing",
+        "data": {
+          "pair_ticks": 480,
+          "percent": 60
+        }
+      },
+      "expected": {
+        "zero_based_moving_index": 1,
+        "onsets": [
+          0,
+          288
+        ],
+        "pair_end": 480
+      },
+      "scope": "Explizite Paarbreite und nullbasierter Index1: verschoben wird der zweite Einsatz; keine universelle feste Swingrate."
+    },
+    {
+      "id": "PAIR_INDEX_SIXTEENTH",
+      "kind": "semantic",
+      "relations": [
+        "CR-027"
+      ],
+      "input": {
+        "operation": "paired_swing",
+        "data": {
+          "pair_ticks": 240,
+          "percent": 60
+        }
+      },
+      "expected": {
+        "zero_based_moving_index": 1,
+        "onsets": [
+          0,
+          144
+        ],
+        "pair_end": 240
+      },
+      "scope": "Explizite Paarbreite und nullbasierter Index1: verschoben wird der zweite Einsatz; keine universelle feste Swingrate."
+    },
+    {
+      "id": "GM1_EXPLICIT_PROFILE",
+      "kind": "semantic",
+      "relations": [
+        "CR-028",
+        "REL-028",
+        "CDR-020"
+      ],
+      "input": {
+        "operation": "gm_profile",
+        "data": {
+          "profile": "GM1",
+          "human_channel": 10
+        }
+      },
+      "expected": {
+        "wire_channel": 9,
+        "role": "PERCUSSION",
+        "gm1_note_span_count": 47
+      },
+      "scope": "GM1 ist ein explizites Geräteprofil mit Grundbelegung, keine Aussage über alle MIDI-Geräte oder zusätzliche Herstellersounds."
+    },
+    {
+      "id": "NON_GM_PROFILE_IS_UNASSERTED",
+      "kind": "semantic",
+      "relations": [
+        "CR-028",
+        "REL-028",
+        "CDR-020"
+      ],
+      "input": {
+        "operation": "gm_profile",
+        "data": {
+          "profile": "NON_GM",
+          "human_channel": 10
+        }
+      },
+      "expected": {
+        "wire_channel": 9,
+        "role": "NOT_ASSERTED",
+        "gm1_note_span_count": null
+      },
+      "scope": "Ohne GM1-Profil wird aus Kanal10 keine normierte Klangrolle abgeleitet."
+    },
+    {
+      "id": "MUSICXML_ONE_BASED_PERCUSSION",
+      "kind": "semantic",
+      "relations": [
+        "CR-028",
+        "REL-028",
+        "CDR-020"
+      ],
+      "input": {
+        "operation": "xml_midi_index",
+        "data": {
+          "xml": "<midi-instrument id=\"snare\"><midi-channel>10</midi-channel><midi-unpitched>39</midi-unpitched></midi-instrument>"
+        }
+      },
+      "expected": {
+        "wire_channel": 9,
+        "note_number": 38,
+        "note_on_status": 153
+      },
+      "scope": "MusicXML-4.0-Zahlen sind hier einsbasiert; MIDI-Wire-Kanal und Notenwert werden separat nullbasiert umgerechnet. Kein vollständiger Konverternachweis."
+    },
+    {
+      "id": "ONE_DROP_WITHOUT_KEYBOARD",
+      "kind": "semantic",
+      "relations": [
+        "REL-009"
+      ],
+      "input": {
+        "operation": "drums_without_keyboard",
+        "data": {
+          "events": [
+            {
+              "instrument": "hat",
+              "tick": 0
+            },
+            {
+              "instrument": "kick",
+              "tick": 960
+            },
+            {
+              "instrument": "snare",
+              "tick": 960
+            }
+          ]
+        }
+      },
+      "expected": {
+        "drum_events": 3,
+        "keyboard_events": 0,
+        "event_grid_valid": true,
+        "genre_norm_proven": false
+      },
+      "scope": "Neues sparsames Drum-Kontrollmodell ohne Keyboard; Begleitung ist optional, kulturelle Authentizität ist nicht aus dem Raster nachgewiesen."
+    },
+    {
+      "id": "UKG_EXERCISE_SOURCE_BOUND",
+      "kind": "semantic",
+      "relations": [
+        "REL-011"
+      ],
+      "input": {
+        "operation": "ukg_catalog_swing",
+        "data": {
+          "source": {
+            "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+            "sha256": "ffb0071f19f0f70f486371b7e1ed80de847ba70c3e31086f221174bf5676e512",
+            "hash_mode": "git_text_lf"
+          }
+        }
+      },
+      "expected": {
+        "bpm": 134,
+        "percent": 58,
+        "second_sixteenth_tick": 139,
+        "genre_norm_proven": false
+      },
+      "scope": "Konkrete PAT-020-Katalogzeile gelesen; 58%-Übungsparameter ist keine Genrenorm."
+    },
+    {
+      "id": "DOMAIN_NAMESPACE_LABELS",
+      "kind": "semantic",
+      "relations": [
+        "REL-027"
+      ],
+      "input": {
+        "operation": "domain_namespaces",
+        "data": {
+          "historical_source": {
+            "path": "archive/audit-history/ontology-recovery-2026-11-14/originals/20261110T2330_Phase4_Master/MUSIC_KNOWLEDGE_ONTOLOGY.md",
+            "sha256": "27194b90681b23cc6b6ee6f49d4f2240190b4e9ec3cf57086accee7c404d54cc",
+            "hash_mode": "bytes"
+          },
+          "later_source": {
+            "path": "knowledge/research/MUSIC_DOMAIN_READINESS_MATRIX.csv",
+            "sha256": "6c799b64c31453495dceba669ea60a620842bff3823ef21654c381516395f63d",
+            "hash_mode": "git_text_lf"
+          }
+        }
+      },
+      "expected": {
+        "historical_mentions_intervals": true,
+        "later_mentions_modes": true,
+        "same_label": false,
+        "readiness_is_expert_approval": false
+      },
+      "scope": "M03-Titel aus zwei quellgebundenen Gliederungen getrennt; spätere Readiness-Eigenlabels sind keine menschliche Fachabnahme."
+    },
+    {
+      "id": "SELECTED_SCALE_TRIAD_INSTANCES",
+      "kind": "semantic",
+      "relations": [
+        "REL-027"
+      ],
+      "input": {
+        "operation": "scale_triads",
+        "data": {
+          "scales": [
+            [
+              "C4",
+              "D4",
+              "E4",
+              "F4",
+              "G4",
+              "A4",
+              "B4"
+            ],
+            [
+              "A3",
+              "B3",
+              "C4",
+              "D4",
+              "E4",
+              "F4",
+              "G#4"
+            ],
+            [
+              "A3",
+              "B3",
+              "C4",
+              "D4",
+              "E4",
+              "F#4",
+              "G#4"
+            ],
+            [
+              "C4",
+              "D4",
+              "E4",
+              "F4",
+              "G4",
+              "Ab4",
+              "B4"
+            ]
+          ]
+        }
+      },
+      "expected": {
+        "instances": 28,
+        "all_three_tones": true,
+        "all_instances_unique": false
+      },
+      "scope": "Vier gewählte Skalen liefern28 Terzschichtungsinstanzen, nicht28 verschiedene Akkordtypen oder einen vollständigen Akkordkatalog."
+    },
+    {
+      "id": "BOSSA_CROSS_STICK_SOURCE_BOUND",
+      "kind": "semantic",
+      "relations": [
+        "REL-031"
+      ],
+      "input": {
+        "operation": "bossa_catalog_grid",
+        "data": {
+          "source": {
+            "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+            "sha256": "ffb0071f19f0f70f486371b7e1ed80de847ba70c3e31086f221174bf5676e512",
+            "hash_mode": "git_text_lf"
+          }
+        }
+      },
+      "expected": {
+        "ticks": [
+          0,
+          720,
+          1440,
+          2400,
+          3120
+        ],
+        "cycle_ticks": 3840,
+        "universal_guitar_batida_proven": false
+      },
+      "scope": "Die tatsächliche Cross-Stick-Katalogfigur ist gegen den Zweitakt-Tickraum geprüft; keine Gleichsetzung mit einer universellen Gitarrenbatida."
+    },
+    {
+      "id": "SIGNATURE_DOES_NOT_FIX_LEADING_TONE",
+      "kind": "semantic",
+      "relations": [
+        "REL-034"
+      ],
+      "input": {
+        "operation": "minor_leading_tone",
+        "data": {
+          "tonic": "A4",
+          "sevenths": [
+            "G4",
+            "G#4"
+          ],
+          "signature_fifths": 0
+        }
+      },
+      "expected": {
+        "signature_fifths": 0,
+        "gaps_semitones": [
+          2,
+          1
+        ],
+        "same_leading_tone_behavior": false
+      },
+      "scope": "Gleiches Vorzeichensignaturmodell lässt natürliche und erhöhte siebte Stufe unterscheiden; Leittonverhalten verlangt Moduskontext."
+    },
+    {
+      "id": "BEMBE_MONTUNO_LCM_DRAFT",
+      "kind": "semantic",
+      "relations": [
+        "REL-036"
+      ],
+      "input": {
+        "operation": "metric_overlay",
+        "data": {
+          "ppq": 480,
+          "chords": 4,
+          "quarters_per_chord": 4,
+          "quarter_bpm": 180,
+          "progression": "PROG-025"
+        }
+      },
+      "expected": {
+        "joint_ticks": 23040,
+        "bell_cycles": 8,
+        "harmonic_loops": 3,
+        "seconds": 16,
+        "style_pairing_proven": false
+      },
+      "scope": "Neue ausdrücklich gesetzte Viertelbasis180BPM verbindet acht2880-Tick-Zyklen und drei7680-Tick-Harmonieschleifen. Eine Taktkarte ist kein COMMONLY_PAIRED_WITH- oder Hörnachweis."
     }
   ],
   "followup_base_main": "9afaf33eaeec332a3d19b4e30d05b1902234936f"
