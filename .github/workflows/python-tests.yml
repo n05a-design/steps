@@ -116,3 +116,6 @@ jobs:
 
       - name: Check Swing chart and original-drum source distinctions
         run: python -B scripts/audit_jazzsamba_components.py --check
+
+      - name: Check bounded REL-001 and REL-005 pattern components
+        run: python -B scripts/audit_relation_patterns.py --check

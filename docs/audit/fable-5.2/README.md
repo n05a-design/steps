@@ -37,3 +37,5 @@ Den aktuellen Prüfstand liefert der [Benchmark](../../../knowledge/benchmark/RE
 [Pilot-Event nach schnellem externem Merge](PILOT_PR_EVENT_RACE_2026-11-14.md): fehlendes flüchtiges Merge-Ref durch exakt identitätsgebundenen abgeschlossenen Merge prüfen; historischer roter Lauf bleibt erhalten.
 
 [Fortsetzung nach PR #61: gemeinsame RWC-Zeitachsen und Garcia2023](RWC_GARCIA_FORTSETZUNG_2026-11-14.md): 100 gemeinsam identifizierte RWC-Harmonie-/Beat-/MIDI-Stücke,18 Swing-Chart-/Drum-Takes, deklarierte rhythmische Teilmuster und neuer begrenzter Autorenbeleg. Alle14 Korpusbehauptungen und ältere Originalseiten bleiben offen.
+
+[Abgleich nach PR #70 und Pattern-Fortsetzung](ABGLEICH_PATTERN_FORTSETZUNG_2026-11-14.md): aktualisierte Restposten, strengere REL-001/REL-005-Notenrastermessung und CAPH-Referenz4195N; Fach-, Rechte- und Sicherheitsfreigaben offen.

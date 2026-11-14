@@ -1,0 +1,439 @@
+{
+  "schema_version": 1,
+  "base_commit": "cda6cb99bf3d4c6bc1bde29c4ffef1405a117c0f",
+  "source_archive_sha256": "27bc4da9c8730b143b2dacb4495c92bb45a00e0cf7d7b385d51203fc6055d534",
+  "jazz_catalog_sha256": "92fe14ee3fc41bc8a6f8d6a91b127e51bc99f4a325b654e0a466773735dd89f5",
+  "human_approval": "AUSSTEHEND",
+  "historical_assertion_closed": false,
+  "instrument_mapping_verified": false,
+  "exact_pattern_verified": false,
+  "sampling_prevalence_verified": false,
+  "method": "Channel9 positive note-ons; half-open complete bars in union of strict harmony-shape windows; one-to-one within0.1 local quarter. RWC measured beat grid; Jazz quarter positions interpolated from annotated bar endpoints, not independently measured beat times.",
+  "limits": "Note numbers are hypotheses, not instrument authentication. REL001 core excludes unresolved 3e+ syncopation and exact115BPM. REL005 triplet skip is a separate proposal, not a unique Friberg ratio; dynamics/feathering, performed harmony, audio alignment and130BPM identity are unverified. Subset permits extra events; same_note_grid applies only to each specified note group, never whole pattern.",
+  "rows": [
+    {
+      "relation_id": "REL-001",
+      "record_id": "RWC_P009",
+      "source_sha256": "8b75bb481a46137539a870d0e79de80e77a8b3fd205f35c2b95d438824ea67ae",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 16,
+        "counts": {
+          "kick_core_35_36_subset": 2,
+          "kick_core_35_36_same_note_grid": 0,
+          "snare_38_subset": 15,
+          "snare_38_same_note_grid": 0,
+          "hat_42_subset": 0,
+          "hat_42_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 69.38421509106672,
+        "bar_average_bpm_max": 70.54673721340386
+      }
+    },
+    {
+      "relation_id": "REL-001",
+      "record_id": "RWC_P048",
+      "source_sha256": "d1551ae509d1f2bf85a13ca5e33a5387d7577b5e152ed070c5237c584be13262",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 8,
+        "counts": {
+          "kick_core_35_36_subset": 0,
+          "kick_core_35_36_same_note_grid": 0,
+          "snare_38_subset": 5,
+          "snare_38_same_note_grid": 2,
+          "hat_42_subset": 0,
+          "hat_42_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 85.71428571428537,
+        "bar_average_bpm_max": 86.33093525179852
+      }
+    },
+    {
+      "relation_id": "REL-001",
+      "record_id": "RWC_P050",
+      "source_sha256": "465d91075b09669b1d27697b1eddc7e02abcf1502605bd5a409cb49e22b48e4d",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 15,
+        "counts": {
+          "kick_core_35_36_subset": 0,
+          "kick_core_35_36_same_note_grid": 0,
+          "snare_38_subset": 9,
+          "snare_38_same_note_grid": 9,
+          "hat_42_subset": 0,
+          "hat_42_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 226.41509433962216,
+        "bar_average_bpm_max": 228.57142857143228
+      }
+    },
+    {
+      "relation_id": "REL-001",
+      "record_id": "RWC_P082",
+      "source_sha256": "086ed81449f83b3ea84443ba9a00d9d3e887dd55336eabfa22f385f92d80e150",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 12,
+        "counts": {
+          "kick_core_35_36_subset": 0,
+          "kick_core_35_36_same_note_grid": 0,
+          "snare_38_subset": 2,
+          "snare_38_same_note_grid": 2,
+          "hat_42_subset": 1,
+          "hat_42_same_note_grid": 1,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 87.27272727272727,
+        "bar_average_bpm_max": 88.23529411764802
+      }
+    },
+    {
+      "relation_id": "REL-001",
+      "record_id": "RWC_P084",
+      "source_sha256": "581555db9d6d8b5da7547133baaede5f6fb16b1c35af540c3367350b535601d3",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 3,
+        "counts": {
+          "kick_core_35_36_subset": 2,
+          "kick_core_35_36_same_note_grid": 0,
+          "snare_38_subset": 0,
+          "snare_38_same_note_grid": 0,
+          "hat_42_subset": 0,
+          "hat_42_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 137.14285714285714,
+        "bar_average_bpm_max": 138.7283236994228
+      }
+    },
+    {
+      "relation_id": "REL-001",
+      "record_id": "RWC_P088",
+      "source_sha256": "88d94ec464eec75ff4183c5f7fcbf752e01698c99525c14adecaa8583e840e31",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 10,
+        "counts": {
+          "kick_core_35_36_subset": 0,
+          "kick_core_35_36_same_note_grid": 0,
+          "snare_38_subset": 0,
+          "snare_38_same_note_grid": 0,
+          "hat_42_subset": 0,
+          "hat_42_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 119.40298507462656,
+        "bar_average_bpm_max": 121.2121212121214
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "1",
+      "source_sha256": "6731eee5d5af17e767bdbd6ff88ea14f3f2652ff1f60879696a28a93bcfb243b",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 0,
+        "counts": {},
+        "bar_average_bpm_min": null,
+        "bar_average_bpm_max": null
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "3",
+      "source_sha256": "dbddba0d855f57710bf9f7477f5f367a99fb3f265a7431b412a43a74431b6524",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 0,
+        "counts": {},
+        "bar_average_bpm_min": null,
+        "bar_average_bpm_max": null
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "4",
+      "source_sha256": "2e78d5240988d8088f8444678781d6246f40875d460f8b81d5b4f2bea4b759dc",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 113,
+        "counts": {
+          "ride_quarters_51_subset": 0,
+          "ride_quarters_51_same_note_grid": 0,
+          "pedal_44_subset": 9,
+          "pedal_44_same_note_grid": 3,
+          "ride_triplet_skip_51_proposal_subset": 0,
+          "ride_triplet_skip_51_proposal_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 149.99999999999787,
+        "bar_average_bpm_max": 150.0000000000032
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "6",
+      "source_sha256": "0227ed15706f05049ee46bf8936b9084d1de00252568a8a11d49a7beb12fafb4",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 70,
+        "counts": {
+          "ride_quarters_51_subset": 0,
+          "ride_quarters_51_same_note_grid": 0,
+          "pedal_44_subset": 30,
+          "pedal_44_same_note_grid": 30,
+          "ride_triplet_skip_51_proposal_subset": 0,
+          "ride_triplet_skip_51_proposal_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 189.87341772151748,
+        "bar_average_bpm_max": 190.02375296912464
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "8",
+      "source_sha256": "a890acc4b136fe1b9c9cda3f7a2e8969f5ec1c3b04aeb7942cd84365031fde23",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 14,
+        "counts": {
+          "ride_quarters_51_subset": 0,
+          "ride_quarters_51_same_note_grid": 0,
+          "pedal_44_subset": 0,
+          "pedal_44_same_note_grid": 0,
+          "ride_triplet_skip_51_proposal_subset": 0,
+          "ride_triplet_skip_51_proposal_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 149.99999999999787,
+        "bar_average_bpm_max": 150.0000000000032
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "11",
+      "source_sha256": "0a915dbc9d897947a4a31977062a50d408d02f6fd1fb0580d86e121e1f281881",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 0,
+        "counts": {},
+        "bar_average_bpm_min": null,
+        "bar_average_bpm_max": null
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "13",
+      "source_sha256": "2beebe3a9bdc358f0cb6728209ee44e4d7cf0187c17bfa5c98514acd5319170f",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 61,
+        "counts": {
+          "ride_quarters_51_subset": 0,
+          "ride_quarters_51_same_note_grid": 0,
+          "pedal_44_subset": 0,
+          "pedal_44_same_note_grid": 0,
+          "ride_triplet_skip_51_proposal_subset": 0,
+          "ride_triplet_skip_51_proposal_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 184.89984591679482,
+        "bar_average_bpm_max": 185.04240555127663
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "16",
+      "source_sha256": "85c19f5f62182c622b7986f0e2948a83afcb7b5e896aafac74ddc0f8aba98f51",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 140,
+        "counts": {
+          "ride_quarters_51_subset": 0,
+          "ride_quarters_51_same_note_grid": 0,
+          "pedal_44_subset": 7,
+          "pedal_44_same_note_grid": 7,
+          "ride_triplet_skip_51_proposal_subset": 0,
+          "ride_triplet_skip_51_proposal_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 199.9999999999924,
+        "bar_average_bpm_max": 200.0000000000019
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "19",
+      "source_sha256": "252420673b7da5a7e84084bbf16c5df6c8dbd9ef6f8a2ed727e5eee57fd4ed3d",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 77,
+        "counts": {
+          "ride_quarters_51_subset": 0,
+          "ride_quarters_51_same_note_grid": 0,
+          "pedal_44_subset": 0,
+          "pedal_44_same_note_grid": 0,
+          "ride_triplet_skip_51_proposal_subset": 0,
+          "ride_triplet_skip_51_proposal_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 189.87341772151748,
+        "bar_average_bpm_max": 190.02375296912464
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "21",
+      "source_sha256": "4e4a7932a555fc0330d4992c179d5a5cac2785b11766aff2acceb7e9a6536945",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 63,
+        "counts": {
+          "ride_quarters_51_subset": 0,
+          "ride_quarters_51_same_note_grid": 0,
+          "pedal_44_subset": 21,
+          "pedal_44_same_note_grid": 20,
+          "ride_triplet_skip_51_proposal_subset": 0,
+          "ride_triplet_skip_51_proposal_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 139.94169096209885,
+        "bar_average_bpm_max": 140.0233372228706
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "23",
+      "source_sha256": "090a135e4b5d634b4fbb2095013014c53554150ef749762120570a4c4b04b0c9",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 93,
+        "counts": {
+          "ride_quarters_51_subset": 0,
+          "ride_quarters_51_same_note_grid": 0,
+          "pedal_44_subset": 24,
+          "pedal_44_same_note_grid": 21,
+          "ride_triplet_skip_51_proposal_subset": 0,
+          "ride_triplet_skip_51_proposal_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 114.99760421657629,
+        "bar_average_bpm_max": 115.05273250239622
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "24",
+      "source_sha256": "0dd96708ae3874dab1e6ab1aec85dabe598eae910e89ff3fc7e86103dc4acfde",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 66,
+        "counts": {
+          "ride_quarters_51_subset": 0,
+          "ride_quarters_51_same_note_grid": 0,
+          "pedal_44_subset": 14,
+          "pedal_44_same_note_grid": 11,
+          "ride_triplet_skip_51_proposal_subset": 0,
+          "ride_triplet_skip_51_proposal_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 169.97167138809783,
+        "bar_average_bpm_max": 170.09213323883796
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "25",
+      "source_sha256": "306ed38edfdf4e30cd57caa609313bb66b48af59912ff12b5e3b83c2dabb1a56",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 85,
+        "counts": {
+          "ride_quarters_51_subset": 0,
+          "ride_quarters_51_same_note_grid": 0,
+          "pedal_44_subset": 24,
+          "pedal_44_same_note_grid": 17,
+          "ride_triplet_skip_51_proposal_subset": 0,
+          "ride_triplet_skip_51_proposal_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 164.94845360824277,
+        "bar_average_bpm_max": 165.061898211835
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "33",
+      "source_sha256": "1a881e625df8ec07692328a4839ae1352de5bbc5ccc355ac110fb4762309f8b4",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 21,
+        "counts": {
+          "ride_quarters_51_subset": 0,
+          "ride_quarters_51_same_note_grid": 0,
+          "pedal_44_subset": 3,
+          "pedal_44_same_note_grid": 3,
+          "ride_triplet_skip_51_proposal_subset": 0,
+          "ride_triplet_skip_51_proposal_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 180.04501125281317,
+        "bar_average_bpm_max": 180.04501125281342
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "40",
+      "source_sha256": "34348c014dfdc7b2966c9c1673148f1147b90f0716393f364ec60fc324f6f666",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 14,
+        "counts": {
+          "ride_quarters_51_subset": 0,
+          "ride_quarters_51_same_note_grid": 0,
+          "pedal_44_subset": 0,
+          "pedal_44_same_note_grid": 0,
+          "ride_triplet_skip_51_proposal_subset": 0,
+          "ride_triplet_skip_51_proposal_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 154.93867010974472,
+        "bar_average_bpm_max": 155.03875968992264
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "42",
+      "source_sha256": "5cf0e27536df3937f83d87654721e5a03c42078362e32487b46586e9f9b3543c",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 35,
+        "counts": {
+          "ride_quarters_51_subset": 0,
+          "ride_quarters_51_same_note_grid": 0,
+          "pedal_44_subset": 2,
+          "pedal_44_same_note_grid": 1,
+          "ride_triplet_skip_51_proposal_subset": 0,
+          "ride_triplet_skip_51_proposal_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 179.9100449775108,
+        "bar_average_bpm_max": 180.04501125281342
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "45",
+      "source_sha256": "5ea594d988eb58a0b597b6dc9a108cd794d9c5805f2b96db80aaf0f93cb845df",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 28,
+        "counts": {
+          "ride_quarters_51_subset": 0,
+          "ride_quarters_51_same_note_grid": 0,
+          "pedal_44_subset": 2,
+          "pedal_44_same_note_grid": 2,
+          "ride_triplet_skip_51_proposal_subset": 0,
+          "ride_triplet_skip_51_proposal_same_note_grid": 0,
+          "joint_core_subset": 0
+        },
+        "bar_average_bpm_min": 149.99999999999787,
+        "bar_average_bpm_max": 150.0000000000032
+      }
+    },
+    {
+      "relation_id": "REL-005",
+      "record_id": "49",
+      "source_sha256": "99fe9046a21c736f84e3547c32466ad962787e026944bf0c3cf5cd544380f297",
+      "observation": {
+        "unique_complete_bars_in_harmony_windows": 0,
+        "counts": {},
+        "bar_average_bpm_min": null,
+        "bar_average_bpm_max": null
+      }
+    }
+  ]
+}

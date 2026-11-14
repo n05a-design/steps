@@ -246,14 +246,15 @@
         }
       ],
       "unresolved_claim": "Projektpaarung belegt keine Häufigkeit oder Stilabnahme; getrennte Harmonie- und Drum-Datensätze dürfen nicht als gemeinsame Aufnahme verknüpft werden.",
-      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung. RWC liefert jetzt gemeinsame symbolische IDs/Zeitachsen; offen bleiben Zielpattern-/Instrumentmapping, Funktions-/Genreabnahme und repräsentativer Sampling-Rahmen.",
+      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung. RWC liefert jetzt gemeinsame symbolische IDs/Zeitachsen; offen bleiben Zielpattern-/Instrumentmapping, Funktions-/Genreabnahme und repräsentativer Sampling-Rahmen. Neue engere Notenrasterprüfung ohne vollständigen gemeinsamen Kernrastertreffer; Quellinstrumentmapping und historisch mehrdeutige Patternparameter klären. Keine Widerlegung der Genrebehauptung.",
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
       "historical_assertion_closed": false,
       "component_evidence": [
         "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json",
-        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json",
+        "docs/audit/fable-5.2/REL_PATTERN_KOMPONENTEN_2026-11-14.json"
       ],
       "rwc_scope": "POPULAR_SAME_ID_NOT_PAT001_IDENTITY"
     },
@@ -293,7 +294,7 @@
         }
       ],
       "unresolved_claim": "Projektpaarung belegt keine Häufigkeit oder Stilabnahme; getrennte Harmonie- und Drum-Datensätze dürfen nicht als gemeinsame Aufnahme verknüpft werden.",
-      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung. JazzSAMBA liefert jetzt zeitlich gemeinsame Swing-Chart-/Original-Drumkomponenten; offen bleiben gespielte Harmonie, Rollenmapping und exaktes Ride-/Pedalpattern.",
+      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung. JazzSAMBA liefert jetzt zeitlich gemeinsame Swing-Chart-/Original-Drumkomponenten; offen bleiben gespielte Harmonie, Rollenmapping und exaktes Ride-/Pedalpattern. Neue engere Notenrasterprüfung ohne vollständigen gemeinsamen Kernrastertreffer; Quellinstrumentmapping und historisch mehrdeutige Patternparameter klären. Keine Widerlegung der Genrebehauptung.",
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
@@ -301,7 +302,8 @@
       "component_evidence": [
         "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json",
         "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json",
-        "docs/audit/fable-5.2/KORPUS_JAZZSAMBA_SWING_2026-11-14.json"
+        "docs/audit/fable-5.2/KORPUS_JAZZSAMBA_SWING_2026-11-14.json",
+        "docs/audit/fable-5.2/REL_PATTERN_KOMPONENTEN_2026-11-14.json"
       ],
       "rwc_scope": "HARMONIC_FORM_IN_POPULAR_NOT_REQUESTED_SUBGENRE"
     },

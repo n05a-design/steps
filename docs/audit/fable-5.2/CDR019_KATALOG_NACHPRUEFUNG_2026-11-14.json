@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "relation_id": "CDR-019",
+  "base_commit": "cda6cb99bf3d4c6bc1bde29c4ffef1405a117c0f",
+  "requested_older_original_pages_verified": 0,
+  "historical_assertion_closed": false,
+  "human_approval": "AUSSTEHEND",
+  "records": [
+    {
+      "id": "GARCIA_1998_CAPH_4195N",
+      "url": "https://caph.fflch.usp.br/teses-e-dissertacoes?combine=&field_nodebase_ano_value=All&field_nodebase_departamento_value=Letras+Cl%C3%A1ssicas+e+Vern%C3%A1culas&field_nodebase_grau_value=All&order=field_nodebase_nreferencia&page=11&sort=desc",
+      "locator": "CAPH thesis table, title BIM BOM, author SILVEIRA JUNIOR Walter Garcia da, 1998, reference4195N",
+      "status": "INSTITUTIONAL_CATALOG_NOT_FULLTEXT",
+      "finding": "Konkrete CAPH-Bestellreferenz4195N gefunden; kein bereitgestellter Thesisvolltext oder Editionsabgleich mit Garcia1999. Suchparameter combine=BIM+BOM nicht erreichbar; vollständige indexierte Tabellenadresse lesbar.",
+      "next_action": "Berechtigte CAPH-/Bibliothekskopie unter4195N beschaffen;1998er Dissertation nicht stillschweigend mit1999er Buch gleichsetzen."
+    },
+    {
+      "id": "REILY_QUB_INSTITUTIONAL",
+      "url": "https://pure.qub.ac.uk/en/publications/tom-jobim-and-the-bossa-nova-era/",
+      "locator": "publication metadata; Popular Music15(1),1996,pp1–16",
+      "status": "METADATA_ONLY",
+      "finding": "Institutionelle Autorzuordnung und bibliografische Daten bestätigt; kein Volltextdownload im gelesenen Datensatz. S.5/Fig.1 weiterhin ungelesen."
+    },
+    {
+      "id": "NEW_LIBRARY_EXTRACTS",
+      "scope": "research/STEPS_Bibliothek/**/*.md on cda6cb99",
+      "method": "ripgrep Reily|Cabral|Bim Bom|Schreiner|Garcia, filenames only",
+      "status": "NO_MATCH_FOR_SEARCH_TERMS",
+      "finding": "Neu übernommene Extrakte liefern keinen Treffer zu diesen Suchwörtern. Kein Beweis der Nichtexistenz in Bildern, OCR-Fehlern oder anderen lokalen Ablagen."
+    }
+  ],
+  "remaining": [
+    "Reily1996 printedp5/Fig1",
+    "Cabral Em busca da perfeição, Songbook Bossa Nova vol2 pp10–17, especiallyp12",
+    "Garcia1999 pp21–22/25–38/45–49; edition separation from1998 thesis",
+    "Schreiner1993 original page still unspecified"
+  ],
+  "rights": "No foreign fulltexts or images added; metadata and own findings only. CSS and external rights decisions remain open."
+}
