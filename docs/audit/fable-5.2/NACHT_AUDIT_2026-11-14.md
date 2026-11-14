@@ -232,6 +232,23 @@ uneingeschränkten Merge-Empfehlung.
 
 ## Git-Übergabe und nächste Arbeit
 
+Veröffentlicht als [Draft-PR #55](https://github.com/n05a-design/steps/pull/55).
+Geprüfter Implementierungshead:
+`3d4bd4d5046cfaec07a1c3c3e4a442481eeadbc5`.
+Arbeitsblöcke: `9f9bd3d` (Scanner), `e5ba405` (Graph-/Quellen-/Datenaudit),
+`bb1de12` (43 unveränderliche Quellen-URLs), `3d4bd4d` (getrennte
+Fixture-/Historienzählung). Ein nachfolgender reiner Übergabedokumentations-
+Commit ist keine neue fachliche oder technische Implementierung.
+
+Am genannten Implementierungshead sind **elf von zwölf GitHub-Checks
+erfolgreich**, `scan-secrets` ist **FAIL**. Der abgerufene Joblog bestätigt
+ausdrücklich 48 quarantänisierte historische und sechs zusätzliche Funde,
+Exit 1; die vier autorisierten synthetischen Testtreffer zählen nicht als
+historische Schlüssel. PR #55 bleibt Draft und ohne uneingeschränkte
+Merge-Empfehlung. Die lokalen Rohprotokolle und API-Snapshots liegen
+außerhalb des Repositories unter
+`Auditnachweise-2026-11-14/night-audit/`.
+
 Änderungen werden in größeren Arbeitsblöcken mit Signed-off-by committed und
 als Draft-PR bereitgestellt. Kein Merge nach main, keine Baseline-Ausweitung,
 kein History-Rewrite und keine Änderung der historischen Originalkanten.
