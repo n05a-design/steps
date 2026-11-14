@@ -55,5 +55,26 @@ class RelationPatternTests(unittest.TestCase):
         data['rows'][0]['observation']['counts']['joint_core_subset'] = 999999
         with self.assertRaises(ValueError): validate(data)
 
+    def test_unrelated_recording_with_same_selection_size_rejected(self):
+        data = json.loads(OUTPUT.read_text(encoding='utf8'))
+        data['rows'][0]['record_id'] = 'UNRELATED_RECORD'
+        with self.assertRaises(ValueError): validate(data)
+
+    def test_substituted_member_hash_rejected(self):
+        data = json.loads(OUTPUT.read_text(encoding='utf8'))
+        data['rows'][0]['source_sha256'] = '0'*64
+        with self.assertRaises(ValueError): validate(data)
+
+    def test_bool_is_not_a_bar_denominator(self):
+        data = json.loads(OUTPUT.read_text(encoding='utf8'))
+        data['rows'][0]['observation']['unique_complete_bars_in_harmony_windows'] = True
+        with self.assertRaises(ValueError): validate(data)
+
+    def test_zero_denominator_cannot_hide_tempo(self):
+        data = json.loads(OUTPUT.read_text(encoding='utf8'))
+        row = next(r for r in data['rows'] if r['observation']['unique_complete_bars_in_harmony_windows']==0)
+        row['observation']['bar_average_bpm_min'] = 130
+        with self.assertRaises(ValueError): validate(data)
+
 
 if __name__ == '__main__': unittest.main()

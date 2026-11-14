@@ -130,10 +130,19 @@ def validate(d):
         if d[key] is not False: raise ValueError('Premature acceptance')
     if d['human_approval'] != 'AUSSTEHEND' or d['source_archive_sha256'] != ARCHIVE_SHA or d['jazz_catalog_sha256'] != CATALOG_SHA: raise ValueError('Evidence identity changed')
     pairs = [(r['relation_id'],r['record_id']) for r in d['rows']]
-    if len(pairs) != len(set(pairs)) or sum(r[0]=='REL-001' for r in pairs)!=6 or sum(r[0]=='REL-005' for r in pairs)!=18: raise ValueError('Selection identity mismatch')
+    rwc = json.loads((ROOT/'docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json').read_text(encoding='utf8'))
+    jazz = json.loads((ROOT/'docs/audit/fable-5.2/KORPUS_JAZZSAMBA_SWING_2026-11-14.json').read_text(encoding='utf8'))
+    if rwc['archive_sha256'] != ARCHIVE_SHA or jazz['catalog_sha256'] != CATALOG_SHA:
+        raise ValueError('Component source identity changed')
+    expected = {('REL-001',r['recording_id']):r['member_sha256']['midi'] for r in rwc['records'] if r['patterns']['PROG-001']['exact']}
+    expected.update({('REL-005',r['song_id']):r['source_members']['drums']['sha256'] for r in jazz['records']})
+    if len(pairs) != len(set(pairs)) or set(pairs) != set(expected): raise ValueError('Selection identity mismatch')
     for row in d['rows']:
+        if row['source_sha256'] != expected[(row['relation_id'],row['record_id'])]: raise ValueError('Pattern MIDI source hash changed')
         obs = row['observation']; n = obs['unique_complete_bars_in_harmony_windows']
-        if n < 0 or any(not isinstance(v,int) or not 0 <= v <= n for v in obs['counts'].values()): raise ValueError('Invalid denominator')
+        if type(n) is not int or n < 0 or any(type(v) is not int or not 0 <= v <= n for v in obs['counts'].values()): raise ValueError('Invalid denominator')
+        if not n and (obs['counts'] or obs['bar_average_bpm_min'] is not None or obs['bar_average_bpm_max'] is not None):
+            raise ValueError('Empty observation must have no counts or tempo')
         keys = ('kick_core_35_36','snare_38','hat_42') if row['relation_id'] == 'REL-001' else ('ride_quarters_51','pedal_44','ride_triplet_skip_51_proposal')
         if n and set(obs['counts']) != {key+'_'+level for key in keys for level in ('subset','same_note_grid')} | {'joint_core_subset'}:
             raise ValueError('Missing or unexpected role counts')
