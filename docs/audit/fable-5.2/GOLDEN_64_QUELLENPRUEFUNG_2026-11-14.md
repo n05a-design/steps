@@ -1,6 +1,6 @@
 # Fortsetzung: 64 Golden-Beispiele, Quellen und Sicherheitskorrektur
 
-Stand: 14.11.2026. GitHub-main wurde unverändert als `5d2d09cfba22fa137ef65da5ffcc31bcadf5194a` geprüft. Bearbeitung im bestehenden Nachtbranch `codex/audit-nacht-20261114`, Draft [PR #55](https://github.com/n05a-design/steps/pull/55). Sicherheitskorrektur separat in `codex/security-guardrail-166-20261114`, Commits `b250418` und `c4cf228`; anschließend ohne Änderung von main in den Nachtbranch übernommen.
+Stand: 14.11.2026. Ausgangs-main war `5d2d09cfba22fa137ef65da5ffcc31bcadf5194a`. Während der Bearbeitung wurde [PR #55](https://github.com/n05a-design/steps/pull/55) durch `timvontrostorff` am 14.11.2026 um 10:28:15 UTC gemergt: aktueller main `3d423abdb24f9fca763f708873eb0862cae5409b`. Die noch nicht integrierte Golden-Fortsetzung liegt deshalb auf dem neuen Branch `codex/audit-golden64-20261114`, ausgehend von diesem main; Implementierungscommit `ca915b506cf12cfff96e387477559ffb8a28db8a`. Kein eigener Merge nach main. Sicherheitskorrektur separat in `codex/security-guardrail-166-20261114`, Commits `b250418` und `c4cf228`; anschließend ohne Änderung von main in den Nachtbranch übernommen.
 
 ## Tatsächliche Ergebnisse
 
@@ -102,3 +102,9 @@ Die Schlussprüfung ist eine separate technische Gegenprüfung desselben Agenten
 ## Zusätzlicher Navigationsbefund
 
 Der erweiterte Linklauf über 157 Markdown-Dateien und 917 interne Links fand 25 bereits zuvor defekte relative Verweise in eingefrorenen README-Dateien unter `archive/v1_docs`. Alle tatsächlichen Zieldateien wurden im bestehenden Bestand lokalisiert. Eine [separate aktuelle Navigation](../../../archive/v1_docs/LINK_RESOLUTION_2026-11-14.md) und [maschinenlesbare Zuordnung](LEGACY_LINK_RESOLUTION_2026-11-14.csv) sichern den Einstieg, ohne historische Originale umzuschreiben. Die 25 alten Links bleiben als historische Defekte sichtbar; sie werden nicht als bestandene Originalverweise gezählt. Die neuen und geänderten aktiven Links werden separat überprüft.
+
+## Git-Übergabe nach externem Merge
+
+PR #55 integrierte den Sicherheitsstand bis `c4cf228`; die Golden-Fortsetzung wurde anschließend ohne History-Rewrite auf den aktuellen main übernommen. Der zwischenzeitlich erneut gepushte alte Nachtbranch bleibt aus Gründen des Arbeitsstanderhalts bestehen. Vor einer späteren Branch-Bereinigung müssen die Commit-Zuordnungen erneut geprüft werden.
+
+Zwei lesende Statusinventuren des älteren OneDrive-Checkouts lieferten auch mit ausgeschaltetem Dateimonitor kein Ergebnis im begrenzten Prüfzeitraum. Die ausschließlich hierfür gestarteten Git-Prozesse wurden beendet; Dateien und Repository-Konfiguration dieses Checkouts wurden nicht verändert. Vollständigkeit seiner lokalen Änderungen ist daher nicht neu bestätigt. Dieser begrenzte lokale Befund wird nicht als vollständige Synchronisierung ausgegeben.
