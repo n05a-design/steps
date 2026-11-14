@@ -106,3 +106,9 @@ Negative Regressionen verändern Sollwerte und Eingaben aller 15 Varianten, Quel
 **FACHLICH / RECHTLICH OFFEN:** menschliche Fach-/Hör-/Spiel-/Didaktik-/Coach-Abnahmen, sämtliche sechs historischen Definitionslücken, CSS-Bundle-Rechte und Archivautorität, historische Google-Schlüsselexposition und autorisierte Sicherheitsfreigabe.
 
 **NICHT ABGESCHLOSSEN:** Gesamtaudit, fachliche Annahme/Migration der vorgeschlagenen neuen Fall-/Relationsversionen, Korpusnachweise und die weiterhin unbestätigte Gesamtkonsolidierung des älteren OneDrive-Bestands. [Priorisierte Restblocker](NACHT_RESTBLOCKER_2026-11-14.md) und kanonischer lokaler Aufgabenmaster bleiben maßgeblich.
+
+## Git-Übergabe
+
+[Draft-PR #57](https://github.com/n05a-design/steps/pull/57) enthält den Implementierungscommit `b146d8edea46067d6436176c95ef16403019e37e` auf Basis des verifizierten main `9afaf33eaeec332a3d19b4e30d05b1902234936f`. Diese anschließende Ergänzung dokumentiert nur die Übergabe. Die versionierte Coverage wurde nach dem Staging aller neuen Dateien erzeugt und am sauberen Implementierungscommit nochmals erfolgreich geprüft. Neue aktive Dokumentationslinks sind geprüft; 25 bekannte eingefrorene Archivverweise bleiben über den vorhandenen separaten Navigationsindex ausgewiesen.
+
+Der vollständige lokale Lauf mit 235 Kerntests besteht, einschließlich der Quelle-/Abnahmegrenzen und des neuen Material-Snapshots. Secret-Vollscan: 0 quarantänisierte / 0 neue Treffer, Exit 0. Finale Remote-Ergebnisse und exakter Branch-HEAD werden im PR und im lokalen Abschlussnachweis gesichert. PR bleibt Draft; kein eigener Merge nach main.
