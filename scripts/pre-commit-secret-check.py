@@ -143,7 +143,7 @@ def scan_repository(root_dir: str = None, baseline_path: str = None) -> tuple[in
                                 is_leak, detail = check_secret_match(rel_fp, i, matched_str, desc, line, baseline_map)
                                 if is_leak:
                                     new_leaks.append((rel_fp, i, desc, mask_secret(matched_str), detail))
-                                else:
+                                elif detail == "QUARANTINED_HISTORICAL_BASELINE":
                                     quarantined_count += 1
 
     return quarantined_count, len(new_leaks), new_leaks

@@ -9,7 +9,7 @@ ausgeschlossen, Auditarchive mitgescannt und alle Treffer geprüft.
 Die GitHub-Action verwendet denselben getesteten Scanner statt einer
 zweiten, abweichenden Inline-Implementierung.
 
-Der erweiterte Scan findet **52 bislang quarantänisierte und sechs
+Der erweiterte Scan findet **48 quarantänisierte historische, vier erlaubte synthetische und sechs
 zusätzliche Vorkommen**. Die sechs zusätzlichen Vorkommen haben denselben
 AWS-Key-Fingerprint und stehen bytegleich bereits im Basiscommit.
 Sie sind weder neue Einfügungen des Nacht-Branches noch als harmlos
@@ -28,7 +28,7 @@ verdecktes Redigieren wurden nicht vorgenommen.
 
 Regressionen prüfen den zweiten Treffer desselben Musters sowie Treffer
 unter `.github`, `Auditpakete`, `StepsAudit` und Namen mit `.git` als
-Teilzeichenfolge. Die vorhandenen 15 Tests und die zwei neuen
+Teilzeichenfolge. Die vorhandenen 15 Tests und die drei neuen
 Gegenproben bestehen. Ein grüner Unit-Test hebt den roten Bestandsscan
 nicht auf.
 
@@ -36,3 +36,5 @@ nicht auf.
 python -B -m unittest discover -s tests -p 'test_secret_scanner.py'
 python -B scripts/pre-commit-secret-check.py --scan-all
 ```
+
+Die frühere Scanner-Summe 52 vermischte 48 historische und vier erlaubte synthetische Treffer. Die Zählung ist getrennt; ein eigener Regressionstest verhindert die Vermischung.

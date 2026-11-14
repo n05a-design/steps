@@ -44,7 +44,7 @@ als ausgeschöpfter externer Blocker umetikettiert.
 | Zusätzliche Golden-Berechnungen | — | 14; ursprüngliche Klassen unverändert |
 | MIDI-Dateien vollständig technisch gegengeprüft | historischer Auftrag offen | 112 von 112 |
 | PDF-Metadaten/Hash-Bestand | früherer Bestand | 60 erfasst, 58 lesbar, 2 beschädigt |
-| Secret-Bestandsscan | nur erste Muster pro Zeile, breiter Verzeichnisausschluss | 52 bisher quarantänisierte plus 6 zusätzlich erkannte Vorkommen; FAIL |
+| Secret-Bestandsscan | nur erste Muster pro Zeile, breiter Verzeichnisausschluss | 48 quarantänisierte historische und 4 erlaubte synthetische plus 6 zusätzlich erkannte Vorkommen; FAIL |
 
 Eine Stichprobe zählt einen eng begrenzten Modellnachweis und keine
 vollständige Bestätigung des Relationstyps. Die Spalte „Fachlich“ der
@@ -211,7 +211,7 @@ Der Secret-Scan liefert ebenfalls Exit 1, aber aus einem **anderen Grund**:
 sechs konkrete Sicherheitsfunde. Diese Exitcodes werden nicht als
 uneingeschränkt bestandene Gesamtprüfung ausgegeben.
 
-Abschließender lokaler Lauf: **194 Kerntests und 36 Skilltests erfolgreich**.
+Abschließender lokaler Lauf: **195 Kerntests und 36 Skilltests erfolgreich**.
 Die neuen und bestehenden Validatoren für Graphmatrix, Ontologie,
 Referenzidentitäten, Golden-Spiegel, API und Pilot-Lernmaterial bestehen.
 756 interne Dateilinks in 134 aktiven README/betroffenen Markdown-Dateien

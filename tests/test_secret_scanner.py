@@ -218,5 +218,15 @@ class TestSecretScannerSecuritySuite(unittest.TestCase):
             _, count, _ = scanner.scan_repository(directory, baseline)
             self.assertEqual(count, 4)
 
+    def test_authorized_synthetic_fixture_is_not_counted_as_historical_key(self):
+        with tempfile.TemporaryDirectory() as directory:
+            baseline=os.path.join(directory,'baseline.json')
+            with open(baseline,'w') as target:json.dump([],target)
+            folder=os.path.join(directory,'tests','fixtures');os.makedirs(folder)
+            with open(os.path.join(folder,'synthetic_secrets.json'),'w') as target:
+                json.dump({'example':'AKIA'+'IOSFODNN7EXAMPLE'},target)
+            quarantined,leaks,_=scanner.scan_repository(directory,baseline)
+            self.assertEqual((quarantined,leaks),(0,0))
+
 if __name__ == '__main__':
     unittest.main()
