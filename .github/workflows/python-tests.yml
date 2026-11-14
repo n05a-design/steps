@@ -119,3 +119,6 @@ jobs:
 
       - name: Check bounded REL-001 and REL-005 pattern components
         run: python -B scripts/audit_relation_patterns.py --check
+
+      - name: Check historical REF-0030 syncopation and timing sensitivity
+        run: python -B scripts/audit_pattern_syncopation.py --check

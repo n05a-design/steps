@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "relation_id": "CDR-019",
+  "base_main": "69627ec7f7ec7fadd02046a32d5d8c400a637d6a",
+  "human_approval": "AUSSTEHEND",
+  "historical_assertion_closed": false,
+  "older_original_pages_newly_verified": 0,
+  "rights": "Metadata and own access findings only; no foreign fulltexts or images committed; no CSS/security clearance.",
+  "records": [
+    {
+      "id": "REILY_AUTHOR_UPLOAD",
+      "url": "https://www.academia.edu/5555299/Tom_Jobim_and_the_bossa_nova_era",
+      "access_result": "Direct readable response contained archive/copyright boilerplate, not the needed musical body or Fig1; search preview is not a visually checked original.",
+      "next_requirement": "Berechtigte author/publisher/library copy of printedp5/Fig1."
+    },
+    {
+      "id": "REILY_JSTOR",
+      "url": "https://www.jstor.org/stable/931201",
+      "access_result": "Readable response did not expose scholarly body; no authenticated access attempted, no blocker bypass.",
+      "next_requirement": "Autorisierter Bibliothekszugang oder vorhandene berechtigte Originalkopie."
+    },
+    {
+      "id": "CABRAL_PREVIEW_RECHECK",
+      "url": "https://sheetmusiclibrary.website/wp-content/uploads/2021/02/Bossa-Nova-songbook-1-to-5.pdf",
+      "access_result": "Search returns the already known table-of-contents-only candidate; not reclassified or redownloaded as full essay.",
+      "next_requirement": "Band2 pp10–17/p12; Portuguese and English sections and pagination in actual edition."
+    },
+    {
+      "id": "SCHREINER_CATALOG_SEARCH",
+      "url": "https://vpl.bibliocommons.com/v2/record/S198C207922",
+      "access_result": "Search indexes1992 metadata, not original page. Earlier direct access required JS/robot verification; no repeated challenge/bypass.",
+      "next_requirement": "Title/imprint/ISBN and actual claim page; distinguish project1993 from Reily1992 without silent correction."
+    },
+    {
+      "id": "SCHREINER_BOOKS_API",
+      "url": "https://www.googleapis.com/books/v1/volumes/0CDaAAAAMAAJ",
+      "access_result": "Anonymous metadata API failed with HTTPError. No metadata payload used, no API key obtained or used.",
+      "next_requirement": "Berechtigte Originalausgabe; metadata alone is insufficient."
+    }
+  ],
+  "unchanged_requirements": [
+    "Reily1996 p5/Fig1",
+    "Cabral Songbook Bossa Nova vol2 pp10–17, esp12",
+    "Garcia1999 pp21–22/25–38/45–49; distinct from1998 thesis CAPH4195N",
+    "Schreiner edition identity and exact page"
+  ],
+  "separate_pattern_source_attempt": {
+    "url": "https://staff.aist.go.jp/m.goto/RWC-MDB/AIST-Annotation/",
+    "access_result": "Browser timeout and normal Python URL error; no new full-page/source verification claimed."
+  }
+}
