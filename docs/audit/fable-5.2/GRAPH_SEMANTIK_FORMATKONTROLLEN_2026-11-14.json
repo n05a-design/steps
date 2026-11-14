@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "reader": "Mido1.3.3 independent of the control-byte writer; pypdf plus visual source check",
+  "smf_controls": [
+    {
+      "ppq": 1,
+      "note": 0,
+      "wire_channel": 0,
+      "sha256": "1c56ffbd607c891393778e6972670f62327411dbbb4ab277828bbe9c9e4561fa",
+      "mido_readback": "PASS",
+      "seconds": 0.5
+    },
+    {
+      "ppq": 96,
+      "note": 36,
+      "wire_channel": 9,
+      "sha256": "98bfa25cd894d59506ef52e7857c34690756c4bed8a2ea0944fe2f80421aa293",
+      "mido_readback": "PASS",
+      "seconds": 0.5
+    },
+    {
+      "ppq": 480,
+      "note": 38,
+      "wire_channel": 9,
+      "sha256": "1dec65e1f360e5d0f9d9a38f1c141d478845ecb037f0a29bb1b5419a72e1e035",
+      "mido_readback": "PASS",
+      "seconds": 0.5
+    },
+    {
+      "ppq": 960,
+      "note": 127,
+      "wire_channel": 15,
+      "sha256": "4ca2d2aed6536c1bcd0584dfa811a5b6e39f4ffdb0386fe75644bd3fecc0a7f5",
+      "mido_readback": "PASS",
+      "seconds": 0.5
+    },
+    {
+      "ppq": 32767,
+      "note": 42,
+      "wire_channel": 9,
+      "sha256": "240f70cf49b1be10177838c9f51b6995de462eb048427d57a54b7407e2c86108",
+      "mido_readback": "PASS",
+      "seconds": 0.5
+    }
+  ],
+  "w3c_controls": [
+    {
+      "musicxml_channel": 10,
+      "musicxml_unpitched": 37,
+      "midi_wire_channel": 9,
+      "midi_note": 36,
+      "status": "PASS"
+    },
+    {
+      "musicxml_channel": 10,
+      "musicxml_unpitched": 39,
+      "midi_wire_channel": 9,
+      "midi_note": 38,
+      "status": "PASS"
+    },
+    {
+      "musicxml_channel": 10,
+      "musicxml_unpitched": 43,
+      "midi_wire_channel": 9,
+      "midi_note": 42,
+      "status": "PASS"
+    },
+    {
+      "musicxml_channel": 10,
+      "musicxml_unpitched": 50,
+      "midi_wire_channel": 9,
+      "midi_note": 49,
+      "status": "PASS"
+    },
+    {
+      "musicxml_channel": 10,
+      "musicxml_unpitched": 57,
+      "midi_wire_channel": 9,
+      "midi_note": 56,
+      "status": "PASS"
+    }
+  ],
+  "source_table": {
+    "document_id": "MMA_96_1_3ED",
+    "pdf_page": 151,
+    "distinct_key_count": 47,
+    "min_key": 35,
+    "max_key": 81
+  },
+  "human_approval": "AUSSTEHEND",
+  "production_exporter_claimed": false
+}

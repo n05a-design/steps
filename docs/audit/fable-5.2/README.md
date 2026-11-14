@@ -27,3 +27,5 @@ Den aktuellen Prüfstand liefert der [Benchmark](../../../knowledge/benchmark/RE
 [Fortsetzung: alle 64 übrigen Golden-Beispiele und Quellen](GOLDEN_64_QUELLENPRUEFUNG_2026-11-14.md): 43 getrennte Modellprüfungen, sieben historische Konflikte und neue Primärnotenkontrolle zu CDR-018.
 
 [Fortsetzung nach PR #56: Konfliktrevisionen und Graph](KONFLIKTE_GRAPH_FORTSETZUNG_2026-11-14.md): 15 ausführbare Golden-Vorschläge, 40 Graphproben, versioniertes ERR-026 und neue Prüfmaterialien; externe Freigaben offen.
+
+[Fortsetzung nach PR #57: 18 Graph-Semantikfälle](GRAPH_SEMANTIK_FORTSETZUNG_2026-11-14.md): 41 begrenzte Stichproben / 1 FAIL / 55 OPEN, 57 Graphproben und getrennte Primärspezifikationskontrollen; keine externe Freigabe.

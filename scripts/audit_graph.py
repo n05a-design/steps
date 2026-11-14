@@ -127,6 +127,10 @@ def audit(root=ROOT, plan=None):
             evidence=review['scoped_source_evidence']
             source_status='CURRENT_PRIMARY_NOTATION_SCOPED_CHECK'
             source_locator=evidence['url']+' | '+evidence['locator']+' | PDF SHA-256 '+evidence['pdf_sha256']
+        if ident in {'CR-025','CR-028','REL-028','CDR-020'}:
+            source_status='CURRENT_PRIMARY_SPEC_SCOPED_CHECK'
+            source_locator=('docs/audit/fable-5.2/GRAPH_SEMANTIK_QUELLEN_2026-11-14.json | '
+                            'MMA_96_1_3ED PDF133/147/151; W3C_MUSICXML_PERCUSSION. Scoped check only.')
         if ident in {'REL-033','CDR-022'}:
             source_status='CURRENT_SOURCE_PAGE_PARTIAL_CHECK'
             source_locator='https://www.w3.org/2021/06/musicxml40/musicxml-reference/elements/pitch/ | Content: step, alter optional, octave; semitones decimal type. No full converter proof.'

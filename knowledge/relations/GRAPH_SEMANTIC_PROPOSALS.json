@@ -1,0 +1,495 @@
+{
+  "schema_version": 1,
+  "base_main": "80763f82e95bdfff6f2fd56497286c7f03f27e63",
+  "proposals": [
+    {
+      "historical_relation_id": "CR-002",
+      "original_row_sha256": "a205e0c922d55aa1de94e032446670f549ea5245418901716c7c172639de54b2",
+      "original_edge": {
+        "source_id": "M01-03",
+        "target_id": "M01-05",
+        "relation_type": "IS_VARIANT_OF"
+      },
+      "proposed_relation_type": "IS_REFERENCE_INTERVAL_FOR",
+      "required_context": {
+        "octave_equivalent": true
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [
+        "OCTAVE_IS_REFERENCE_NOT_TEMPERAMENT"
+      ],
+      "source_note": "Eine Oktave ist keine Variante eines Stimmungssystems. Die 2:1-Referenz beschreibt das Modell, nicht die behauptete IS_VARIANT_OF-Typisierung.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; Eine Oktave ist keine Variante eines Stimmungssystems. Die 2:1-Referenz beschreibt das Modell, nicht die behauptete IS_VARIANT_OF-Typisierung.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "CR-004",
+      "original_row_sha256": "123a5f932ca843505badc7db8da2ed6c93dcc729f7693f6865802697f413f721",
+      "original_edge": {
+        "source_id": "M02-04",
+        "target_id": "M02-01",
+        "relation_type": "REQUIRES"
+      },
+      "proposed_relation_type": "INTERPRETED_IN_DECLARED_NOTATION",
+      "required_context": {
+        "notation": "PITCH_SPELLING"
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [
+        "ACCIDENTAL_WITHOUT_STAFF"
+      ],
+      "source_note": "Vorzeichen existieren auch außerhalb eines Fünfliniensystems; REQUIRES braucht den konkreten Notationskontext.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; Vorzeichen existieren auch außerhalb eines Fünfliniensystems; REQUIRES braucht den konkreten Notationskontext.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "CR-006",
+      "original_row_sha256": "baa12b84f3eb101ebec871c14794d25c3abb6e1974a20e003247c13f4eea26ca",
+      "original_edge": {
+        "source_id": "M02-05",
+        "target_id": "M02-04",
+        "relation_type": "CONTRADICTS"
+      },
+      "proposed_relation_type": "USES_KEY_DEPENDENT_SPELLING",
+      "required_context": {
+        "tuning": "12TET",
+        "function_context": "EXPLICIT_KEY_AND_MODE"
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [
+        "ENHARMONIC_FUNCTION_CONTEXT"
+      ],
+      "source_note": "Unterschiedliche Schreibungen widersprechen dem Vorzeichenkonzept nicht. Leitton-/Mollterzfunktion hängt außerdem von Tonart und Kontext ab.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; Unterschiedliche Schreibungen widersprechen dem Vorzeichenkonzept nicht. Leitton-/Mollterzfunktion hängt außerdem von Tonart und Kontext ab.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "CR-017",
+      "original_row_sha256": "f56eefe0809ab236440e2b10a846c771b8b5d40770fd3be9a2b175d18d5fa7cc",
+      "original_edge": {
+        "source_id": "M05-02",
+        "target_id": "M05-01",
+        "relation_type": "IS_EQUIVALENT_UNDER"
+      },
+      "proposed_relation_type": "MAPS_PRIMARY_FUNCTION_SUBSET",
+      "required_context": {
+        "mode": "MAJOR",
+        "mapping": "PRIMARY_TRIADS_ONLY",
+        "key": "C"
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [
+        "PRIMARY_FUNCTION_TRIADS_ONLY"
+      ],
+      "source_note": "Riemannfunktion und Skalenstufe sind keine kontextfreie Bijektion; Dur-/Mollparallelfunktionen und Stellvertreter fehlen.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; Riemannfunktion und Skalenstufe sind keine kontextfreie Bijektion; Dur-/Mollparallelfunktionen und Stellvertreter fehlen.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "CR-025",
+      "original_row_sha256": "86046dd23e0d15f50463b59927274f9cf37230941c538602b8f529c881513c31",
+      "original_edge": {
+        "source_id": "M07-02",
+        "target_id": "M11-02",
+        "relation_type": "IMPLEMENTED_BY"
+      },
+      "proposed_relation_type": "REPRESENTABLE_BY_PPQ_AUDIT_CONTROL",
+      "required_context": {
+        "time_format": "PPQ",
+        "exporter_scope": "AUDIT_CONTROL"
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [
+        "SMF_PPQ_AUDIT_CONTROL"
+      ],
+      "source_note": "PPQ-Zeitrechnung verifiziert das Raster; ein vollständiger SMF-Exporter ist im Kern nicht implementiert.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; PPQ-Zeitrechnung verifiziert das Raster; ein vollständiger SMF-Exporter ist im Kern nicht implementiert.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "CR-027",
+      "original_row_sha256": "5e06eae4715c86f1e91a0af86f87c4565eb55b0e97ba46b56fc2eb77e178bc8a",
+      "original_edge": {
+        "source_id": "M07-04",
+        "target_id": "M07-03",
+        "relation_type": "IS_VARIANT_OF"
+      },
+      "proposed_relation_type": "HAS_EXPLICIT_PAIR_TIMING",
+      "required_context": {
+        "index_base": 0,
+        "pair_model": "EXPLICIT_PAIR_WIDTH"
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [
+        "PAIR_INDEX_EIGHTH",
+        "PAIR_INDEX_SIXTEENTH"
+      ],
+      "source_note": "Swing verschiebt im Paar den zweiten Onset. Ungerade Zählzeiten ist ohne Indexkonvention missverständlich; keine universelle feste Ratio.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; Swing verschiebt im Paar den zweiten Onset. Ungerade Zählzeiten ist ohne Indexkonvention missverständlich; keine universelle feste Ratio.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "CR-028",
+      "original_row_sha256": "767b855458c30a3509060a373ed46d05771d851c6f8c2b779f2e345ca3e2f984",
+      "original_edge": {
+        "source_id": "M08-01",
+        "target_id": "M08-02",
+        "relation_type": "IMPLEMENTED_BY"
+      },
+      "proposed_relation_type": "HAS_PROFILE_DEPENDENT_DRUM_MAPPING",
+      "required_context": {
+        "midi_profile": "GM1",
+        "mapping_scope": "PERCUSSION"
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [
+        "GM1_EXPLICIT_PROFILE",
+        "NON_GM_PROFILE_IS_UNASSERTED",
+        "MUSICXML_ONE_BASED_PERCUSSION"
+      ],
+      "source_note": "GM1-Kanal-10-Zuordnung ist eine Geräte-/Profilkonvention. Akustische Drumkits implementieren nicht selbst MIDI; ursprüngliche Tabelle separat lesen.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; GM1-Kanal-10-Zuordnung ist eine Geräte-/Profilkonvention. Akustische Drumkits implementieren nicht selbst MIDI; ursprüngliche Tabelle separat lesen.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "REL-009",
+      "original_row_sha256": "13dc2cdae4acb83edb4e424846052502d223cadbc27fd9f1552dbfe3dfe320b7",
+      "original_edge": {
+        "source_id": "PAT-010",
+        "target_id": "P09",
+        "relation_type": "REQUIRES_TECHNIQUE"
+      },
+      "proposed_relation_type": "CAN_BE_ACCOMPANIED_BY",
+      "required_context": {
+        "accompaniment": "OPTIONAL_KEYBOARD"
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [
+        "ONE_DROP_WITHOUT_KEYBOARD"
+      ],
+      "source_note": "Ein One-Drop-Drumgroove erfordert nicht zwingend Klavier/Gitarre. REQUIRES_TECHNIQUE überzeichnet eine mögliche Skank-Begleitung.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; Ein One-Drop-Drumgroove erfordert nicht zwingend Klavier/Gitarre. REQUIRES_TECHNIQUE überzeichnet eine mögliche Skank-Begleitung.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "REL-011",
+      "original_row_sha256": "b8003b8ad368d4c7a2e01b7980a93271ed6b0d5225ecd7f295d8b5fb47d3a32a",
+      "original_edge": {
+        "source_id": "PAT-020",
+        "target_id": "M07",
+        "relation_type": "UTILIZES_SWING_PROFILE"
+      },
+      "proposed_relation_type": "HAS_EXPLICIT_SWING_EXERCISE",
+      "required_context": {
+        "scope": "STEPS_PAT020_EXERCISE",
+        "swing_pair": "SIXTEENTH"
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [
+        "UKG_EXERCISE_SOURCE_BOUND"
+      ],
+      "source_note": "UKG-Katalog nutzt ein Swingmodell; Rate und Onsets sind Übungsdaten, keine empirische Genrenorm.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; UKG-Katalog nutzt ein Swingmodell; Rate und Onsets sind Übungsdaten, keine empirische Genrenorm.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "REL-027",
+      "original_row_sha256": "467711ed68ac982d9fbd91e73129b9f8d2187cea70dee0d46caf7559471721da",
+      "original_edge": {
+        "source_id": "M03",
+        "target_id": "M04",
+        "relation_type": "HARMONIC_DERIVATION"
+      },
+      "proposed_relation_type": "DERIVES_SELECTED_TRIAD_INSTANCES",
+      "required_context": {
+        "namespace": "PHASE4_MASTER_20261110",
+        "derivation": "SELECTED_SCALE_TRIADS"
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [
+        "DOMAIN_NAMESPACE_LABELS",
+        "SELECTED_SCALE_TRIAD_INSTANCES"
+      ],
+      "source_note": "M03/M04 bezeichnen im historischen Master Intervalle/Skalen und Akkorde; spätere Domänenverschiebungen nicht automatisch auf diese Kante anwenden.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; M03/M04 bezeichnen im historischen Master Intervalle/Skalen und Akkorde; spätere Domänenverschiebungen nicht automatisch auf diese Kante anwenden.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "REL-028",
+      "original_row_sha256": "809c65d774d2af5ecc82702734d183b5dd2d4433f2bb942932e486f0ab7584d9",
+      "original_edge": {
+        "source_id": "M11",
+        "target_id": "M08",
+        "relation_type": "CHANNEL_ASSIGNMENT_MAPPING"
+      },
+      "proposed_relation_type": "HAS_PROFILE_DEPENDENT_CHANNEL_MAP",
+      "required_context": {
+        "midi_profile": "GM1",
+        "mapping_scope": "PERCUSSION"
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [
+        "GM1_EXPLICIT_PROFILE",
+        "NON_GM_PROFILE_IS_UNASSERTED",
+        "MUSICXML_ONE_BASED_PERCUSSION"
+      ],
+      "source_note": "GM1-Profil reserviert Kanal 10; proprietäre/GM2-Erweiterungen separat. Historischer Primärtabellennachweis vorhanden, keine frische Vollprüfung.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; GM1-Profil reserviert Kanal 10; proprietäre/GM2-Erweiterungen separat. Historischer Primärtabellennachweis vorhanden, keine frische Vollprüfung.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "REL-031",
+      "original_row_sha256": "3b0e7931a170658879f89673d74cf2f8ed300e2b7337ffeb269de9f01911b1f5",
+      "original_edge": {
+        "source_id": "PAT-027",
+        "target_id": "M07",
+        "relation_type": "METRIC_ALIGNMENT"
+      },
+      "proposed_relation_type": "HAS_SOURCE_BOUND_CROSS_STICK_TIMELINE",
+      "required_context": {
+        "scope": "STEPS_PAT027_CROSS_STICK",
+        "meter": "4/4",
+        "bars": 2
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [
+        "BOSSA_CROSS_STICK_SOURCE_BOUND"
+      ],
+      "source_note": "PAT-027-Onsets im dokumentierten zweitaktigen Raster berechnet; Cross-Stick ist nicht automatisch Gilberto-Gitarrenbatida.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; PAT-027-Onsets im dokumentierten zweitaktigen Raster berechnet; Cross-Stick ist nicht automatisch Gilberto-Gitarrenbatida.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "REL-034",
+      "original_row_sha256": "1b46f226c74c4ce4598c444343edc17d157ad323754a4ac411fa1876bd5285cc",
+      "original_edge": {
+        "source_id": "M02",
+        "target_id": "M05",
+        "relation_type": "THEORETICAL_DERIVATION"
+      },
+      "proposed_relation_type": "REQUIRES_MODE_FOR_LEADING_TONE_ANALYSIS",
+      "required_context": {
+        "mode_and_seventh": "EXPLICIT"
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [
+        "SIGNATURE_DOES_NOT_FIX_LEADING_TONE"
+      ],
+      "source_note": "Vorzeichenfolge bestimmt nicht allein Leittonfunktion; natürliches Moll und Moduswechsel benötigen zusätzlichen Kontext.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; Vorzeichenfolge bestimmt nicht allein Leittonfunktion; natürliches Moll und Moduswechsel benötigen zusätzlichen Kontext.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "REL-036",
+      "original_row_sha256": "e427b561c970b1316ceb194fec81e5652211211dedc4dba6f87b08fb5f1807b7",
+      "original_edge": {
+        "source_id": "PAT-031",
+        "target_id": "PROG-025",
+        "relation_type": "COMMONLY_PAIRED_WITH"
+      },
+      "proposed_relation_type": "HAS_EXPLICIT_METRIC_OVERLAY_DRAFT",
+      "required_context": {
+        "meter_mapping": "EXPLICIT_LCM_GRID",
+        "quarter_bpm": 180
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [
+        "BEMBE_MONTUNO_LCM_DRAFT"
+      ],
+      "source_note": "PAT-031 und PROG-025 besitzen ohne gemeinsame Ereignis-/Taktplanung keine nachgewiesene Passung; 6/8- und 4/4-Modelle getrennt halten.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; PAT-031 und PROG-025 besitzen ohne gemeinsame Ereignis-/Taktplanung keine nachgewiesene Passung; 6/8- und 4/4-Modelle getrennt halten.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "CDR-014",
+      "original_row_sha256": "72b5eae57e2c61fdb576a621450e5d8083b1aaa68bcbb565921e2ad41af3165e",
+      "original_edge": {
+        "source_id": "PROG_025",
+        "target_id": "PIANO_MONTUNO_GUAJEO",
+        "relation_type": "RHYTHMIC_EXECUTION"
+      },
+      "proposed_relation_type": "HAS_NEW_PIANO_DRAFT_NOT_TRANSCRIPTION",
+      "required_context": {
+        "exercise_id": "STEPS_SYNCOPATED_PIANO_DRAFT_01",
+        "historical_transcription": false
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [
+        "NEW_PIANO_DRAFT"
+      ],
+      "source_note": "Original nennt keine vollständigen Tonhöhen/Dauern. Neuer Ereignisentwurf darf keine historische Transkription vortäuschen.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; Original nennt keine vollständigen Tonhöhen/Dauern. Neuer Ereignisentwurf darf keine historische Transkription vortäuschen.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "CDR-019",
+      "original_row_sha256": "c1451452080eea9d1073253587a0436614cfe81235e33a68d29e9d29aad4416c",
+      "original_edge": {
+        "source_id": "BOSSA_BATIDA",
+        "target_id": "BRAZILIAN_TAMBORIM_SURDO_SYNTHESIS",
+        "relation_type": "HISTORICAL_ORIGIN"
+      },
+      "proposed_relation_type": "HAS_ATTRIBUTED_ANALOGY_NOT_VERIFIED_ORIGIN",
+      "required_context": {
+        "statement_kind": "ATTRIBUTED_ANALOGY",
+        "historical_origin_verified": false
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [],
+      "source_note": "Surdo-/Tamborim-Deutung als Überlieferung auffindbar, aber keine hier geprüfte zeitgenössische Entstehungsquelle; Gitarrenfamilie nicht mit Cross-Stick gleichsetzen.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; Surdo-/Tamborim-Deutung als Überlieferung auffindbar, aber keine hier geprüfte zeitgenössische Entstehungsquelle; Gitarrenfamilie nicht mit Cross-Stick gleichsetzen.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "CDR-020",
+      "original_row_sha256": "6cc48ebba80affe0c1d6ce5860110f6971d316b208a344cd27fff4386e74e711",
+      "original_edge": {
+        "source_id": "GM_CHANNEL_10",
+        "target_id": "PERCUSSION_FIXED_MAP",
+        "relation_type": "STANDARDIZED_IN"
+      },
+      "proposed_relation_type": "USES_SCOPED_GM1_BASE_MAP",
+      "required_context": {
+        "midi_profile": "GM1",
+        "mapping_scope": "PERCUSSION"
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [
+        "GM1_EXPLICIT_PROFILE",
+        "NON_GM_PROFILE_IS_UNASSERTED",
+        "MUSICXML_ONE_BASED_PERCUSSION"
+      ],
+      "source_note": "GM1-Kanal 10 und 47 feste Notennummern sind Profilregeln, kein Protokollzwang aller MIDI-Geräte.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; GM1-Kanal 10 und 47 feste Notennummern sind Profilregeln, kein Protokollzwang aller MIDI-Geräte.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    },
+    {
+      "historical_relation_id": "CDR-021",
+      "original_row_sha256": "98cf8f9abf96ed8b89a27109a55b6c08802c340680f901855b4260a1c2362c59",
+      "original_edge": {
+        "source_id": "SURDO_PULSE",
+        "target_id": "ACCENT_ON_BEAT_2_IN_2_4",
+        "relation_type": "PERFORMANCE_NORM"
+      },
+      "proposed_relation_type": "HAS_SOURCE_DEPENDENT_ROLE_ACCENT",
+      "required_context": {
+        "role": "PRIMEIRA_MARCACAO",
+        "meter": "2/4",
+        "source_scope": "NAMED_ENSEMBLE_REQUIRED"
+      },
+      "excluded_claims": [
+        "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
+        "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
+      ],
+      "probe_ids": [],
+      "source_note": "Erste/marcação betont in benannter Samba-Besetzung 2, zweite/resposta 1. Keine universelle Norm für jeden Surdo oder Bossa.",
+      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; Erste/marcação betont in benannter Samba-Besetzung 2, zweite/resposta 1. Keine universelle Norm für jeden Surdo oder Bossa.",
+      "review_status": "REVIEW_REQUIRED",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false
+    }
+  ]
+}
