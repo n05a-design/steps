@@ -4,7 +4,6 @@
 | --- | --- |
 | [steps](steps/README.md) | Aktiver Python-Kern für Theorie, Progressionen und kuratiertes Lernmaterial. |
 | [steps-0.00](steps-0.00/README.md) | Dokumentarisches Scaffold aus der frühen Planung. |
-| [glide-v3.53](glide-v3.53/README.md) | Versionierter Glide-Referenzstand mit eigener Lizenz und Dokumentation. |
 
 Die [App-Schicht](../app/README.md) bindet Pilotbeispiele über einen Adapter
 an. Der [Implementierungsstand](../docs/IMPLEMENTATION.md) beschreibt die
