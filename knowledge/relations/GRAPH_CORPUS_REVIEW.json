@@ -42,6 +42,33 @@
       ],
       "rights": "Metadata and own aggregate classifications only; no general repository licence located, raw annotations/scripts/audio not republished.",
       "scope": "Tempo repository d51ab2422e76abacfaa86616a57054bc222ec9fd measured locally for genre/tempo metadata; key is a separate dataset candidate, not joined here. No chord/drum sequence or audio downloaded."
+    },
+    {
+      "id": "RWC2_P_0A1A6C3",
+      "url": "https://github.com/rwc-music/rwc-annotations/tree/0a1a6c31dbe73a7f5d44f7caef8cd0999402a4c2",
+      "version": "commit0a1a6c31dbe73a7f5d44f7caef8cd0999402a4c2",
+      "available_annotations": [
+        "chords",
+        "beats",
+        "genre",
+        "aligned_recording_identity",
+        "symbolic_percussion_channel_events"
+      ],
+      "rights": "CC BY-NC4.0 per pinned repository LICENSE; raw MIDI/audio/annotation sequences and third-party code remain local. No commercial/CSS approval.",
+      "scope": "100 commissioned Popular tracks (Pop/J-pop). Same-ID chord/beat/MIDI axis inspected. Channel9 note classes do not establish exact PAT identity, authenticated source GM mapping, or requested Jazz/Funk/House/DnB/Latin subgenre."
+    },
+    {
+      "id": "JAZZSAMBA_ASYNC_SWING_V1",
+      "url": "https://zenodo.org/records/22943963",
+      "version": "1.0.0, catalog verified,18 preferred async Swing takes",
+      "available_annotations": [
+        "genre",
+        "aligned_recording_identity",
+        "timed_lead_sheet_chords",
+        "original_drum_midi_lane_claimed"
+      ],
+      "rights": "Catalog permission notice for contributed recordings/MIDI/annotations; underlying standard composition copyrights separate. Raw files remain local; no universal rights/CSS release.",
+      "scope": "18 preferred asynchronous4/4 Swing takes selected from76-song catalog. Timed lead-sheet charts are not performed-harmony transcriptions; original lanes distinguished from AMT; no exact ride/pedal or population approval."
     }
   ],
   "cases": [
@@ -62,18 +89,22 @@
       "candidate_ids": [
         "GMD_V1",
         "BILLBOARD_V2",
-        "GIANTSTEPS_TEMPO_KEY"
+        "GIANTSTEPS_TEMPO_KEY",
+        "RWC2_P_0A1A6C3",
+        "JAZZSAMBA_ASYNC_SWING_V1"
       ],
       "project_anchors": [],
       "unresolved_claim": "Keine populationsbezogene Häufigkeit oder allgemeine Popnorm aus beauftragten Schlagzeugtakes.",
-      "next_evidence": "Repräsentative Songstichprobe mit Drum-Annotation und unabhängig geprüften Downbeats.",
+      "next_evidence": "Repräsentative Songstichprobe mit Drum-Annotation und unabhängig geprüften Downbeats. RWC liefert jetzt gemeinsame symbolische IDs/Zeitachsen; offen bleiben Zielpattern-/Instrumentmapping, Funktions-/Genreabnahme und repräsentativer Sampling-Rahmen.",
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
       "historical_assertion_closed": false,
       "component_evidence": [
-        "docs/audit/fable-5.2/GRAPH_KORPUS_GMD_2026-11-14.json"
-      ]
+        "docs/audit/fable-5.2/GRAPH_KORPUS_GMD_2026-11-14.json",
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+      ],
+      "rwc_scope": "POPULAR_NOTECLASS_SUBSET_ONLY"
     },
     {
       "relation_id": "CR-030",
@@ -92,7 +123,9 @@
       "candidate_ids": [
         "GMD_V1",
         "BILLBOARD_V2",
-        "GIANTSTEPS_TEMPO_KEY"
+        "GIANTSTEPS_TEMPO_KEY",
+        "RWC2_P_0A1A6C3",
+        "JAZZSAMBA_ASYNC_SWING_V1"
       ],
       "project_anchors": [],
       "unresolved_claim": "Dance-Etikett ist kein House-Nachweis; Four-on-the-floor/Offbeat-Hat nicht universell.",
@@ -102,8 +135,10 @@
       "production_use_allowed": false,
       "historical_assertion_closed": false,
       "component_evidence": [
-        "docs/audit/fable-5.2/KORPUS_GIANTSTEPS_TEMPO_2026-11-14.json"
-      ]
+        "docs/audit/fable-5.2/KORPUS_GIANTSTEPS_TEMPO_2026-11-14.json",
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+      ],
+      "rwc_scope": "NO_HOUSE_OR_JUMPUP_RWC_P_FRAME"
     },
     {
       "relation_id": "CR-031",
@@ -123,18 +158,22 @@
       "candidate_ids": [
         "GMD_V1",
         "BILLBOARD_V2",
-        "GIANTSTEPS_TEMPO_KEY"
+        "GIANTSTEPS_TEMPO_KEY",
+        "RWC2_P_0A1A6C3",
+        "JAZZSAMBA_ASYNC_SWING_V1"
       ],
       "project_anchors": [],
       "unresolved_claim": "REQUIRES ist eine Notwendigkeitsbehauptung; einzelne I–V–vi–IV-Schleifen beweisen sie nicht.",
-      "next_evidence": "Kadenzdefinition, vollständige Songauswahl und Gegenbeispiele vorab festlegen.",
+      "next_evidence": "Kadenzdefinition, vollständige Songauswahl und Gegenbeispiele vorab festlegen. RWC liefert jetzt gemeinsame symbolische IDs/Zeitachsen; offen bleiben Zielpattern-/Instrumentmapping, Funktions-/Genreabnahme und repräsentativer Sampling-Rahmen.",
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
       "historical_assertion_closed": false,
       "component_evidence": [
-        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
-      ]
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json",
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+      ],
+      "rwc_scope": "POPULAR_HARMONY_NOT_CADENCE_FUNCTION"
     },
     {
       "relation_id": "CR-032",
@@ -154,7 +193,9 @@
       "candidate_ids": [
         "GMD_V1",
         "BILLBOARD_V2",
-        "GIANTSTEPS_TEMPO_KEY"
+        "GIANTSTEPS_TEMPO_KEY",
+        "RWC2_P_0A1A6C3",
+        "JAZZSAMBA_ASYNC_SWING_V1"
       ],
       "project_anchors": [],
       "unresolved_claim": "Übungsbereich120–128 BPM ist keine empirische Stilgrenze.",
@@ -164,8 +205,10 @@
       "production_use_allowed": false,
       "historical_assertion_closed": false,
       "component_evidence": [
-        "docs/audit/fable-5.2/KORPUS_GIANTSTEPS_TEMPO_2026-11-14.json"
-      ]
+        "docs/audit/fable-5.2/KORPUS_GIANTSTEPS_TEMPO_2026-11-14.json",
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+      ],
+      "rwc_scope": "NO_HOUSE_OR_JUMPUP_RWC_P_FRAME"
     },
     {
       "relation_id": "REL-001",
@@ -186,7 +229,9 @@
       "candidate_ids": [
         "GMD_V1",
         "BILLBOARD_V2",
-        "GIANTSTEPS_TEMPO_KEY"
+        "GIANTSTEPS_TEMPO_KEY",
+        "RWC2_P_0A1A6C3",
+        "JAZZSAMBA_ASYNC_SWING_V1"
       ],
       "project_anchors": [
         {
@@ -201,14 +246,16 @@
         }
       ],
       "unresolved_claim": "Projektpaarung belegt keine Häufigkeit oder Stilabnahme; getrennte Harmonie- und Drum-Datensätze dürfen nicht als gemeinsame Aufnahme verknüpft werden.",
-      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung.",
+      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung. RWC liefert jetzt gemeinsame symbolische IDs/Zeitachsen; offen bleiben Zielpattern-/Instrumentmapping, Funktions-/Genreabnahme und repräsentativer Sampling-Rahmen.",
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
       "historical_assertion_closed": false,
       "component_evidence": [
-        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
-      ]
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json",
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+      ],
+      "rwc_scope": "POPULAR_SAME_ID_NOT_PAT001_IDENTITY"
     },
     {
       "relation_id": "REL-005",
@@ -229,7 +276,9 @@
       "candidate_ids": [
         "GMD_V1",
         "BILLBOARD_V2",
-        "GIANTSTEPS_TEMPO_KEY"
+        "GIANTSTEPS_TEMPO_KEY",
+        "RWC2_P_0A1A6C3",
+        "JAZZSAMBA_ASYNC_SWING_V1"
       ],
       "project_anchors": [
         {
@@ -244,14 +293,17 @@
         }
       ],
       "unresolved_claim": "Projektpaarung belegt keine Häufigkeit oder Stilabnahme; getrennte Harmonie- und Drum-Datensätze dürfen nicht als gemeinsame Aufnahme verknüpft werden.",
-      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung.",
+      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung. JazzSAMBA liefert jetzt zeitlich gemeinsame Swing-Chart-/Original-Drumkomponenten; offen bleiben gespielte Harmonie, Rollenmapping und exaktes Ride-/Pedalpattern.",
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
       "historical_assertion_closed": false,
       "component_evidence": [
-        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
-      ]
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json",
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json",
+        "docs/audit/fable-5.2/KORPUS_JAZZSAMBA_SWING_2026-11-14.json"
+      ],
+      "rwc_scope": "HARMONIC_FORM_IN_POPULAR_NOT_REQUESTED_SUBGENRE"
     },
     {
       "relation_id": "REL-006",
@@ -272,7 +324,9 @@
       "candidate_ids": [
         "GMD_V1",
         "BILLBOARD_V2",
-        "GIANTSTEPS_TEMPO_KEY"
+        "GIANTSTEPS_TEMPO_KEY",
+        "RWC2_P_0A1A6C3",
+        "JAZZSAMBA_ASYNC_SWING_V1"
       ],
       "project_anchors": [
         {
@@ -293,8 +347,10 @@
       "production_use_allowed": false,
       "historical_assertion_closed": false,
       "component_evidence": [
-        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
-      ]
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json",
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+      ],
+      "rwc_scope": "HARMONIC_FORM_IN_POPULAR_NOT_REQUESTED_SUBGENRE"
     },
     {
       "relation_id": "REL-007",
@@ -315,7 +371,9 @@
       "candidate_ids": [
         "GMD_V1",
         "BILLBOARD_V2",
-        "GIANTSTEPS_TEMPO_KEY"
+        "GIANTSTEPS_TEMPO_KEY",
+        "RWC2_P_0A1A6C3",
+        "JAZZSAMBA_ASYNC_SWING_V1"
       ],
       "project_anchors": [
         {
@@ -336,8 +394,10 @@
       "production_use_allowed": false,
       "historical_assertion_closed": false,
       "component_evidence": [
-        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
-      ]
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json",
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+      ],
+      "rwc_scope": "HARMONIC_FORM_IN_POPULAR_NOT_REQUESTED_SUBGENRE"
     },
     {
       "relation_id": "REL-014",
@@ -358,7 +418,9 @@
       "candidate_ids": [
         "GMD_V1",
         "BILLBOARD_V2",
-        "GIANTSTEPS_TEMPO_KEY"
+        "GIANTSTEPS_TEMPO_KEY",
+        "RWC2_P_0A1A6C3",
+        "JAZZSAMBA_ASYNC_SWING_V1"
       ],
       "project_anchors": [
         {
@@ -379,8 +441,10 @@
       "production_use_allowed": false,
       "historical_assertion_closed": false,
       "component_evidence": [
-        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
-      ]
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json",
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+      ],
+      "rwc_scope": "HARMONIC_FORM_IN_POPULAR_NOT_REQUESTED_SUBGENRE"
     },
     {
       "relation_id": "REL-015",
@@ -401,7 +465,9 @@
       "candidate_ids": [
         "GMD_V1",
         "BILLBOARD_V2",
-        "GIANTSTEPS_TEMPO_KEY"
+        "GIANTSTEPS_TEMPO_KEY",
+        "RWC2_P_0A1A6C3",
+        "JAZZSAMBA_ASYNC_SWING_V1"
       ],
       "project_anchors": [
         {
@@ -422,8 +488,10 @@
       "production_use_allowed": false,
       "historical_assertion_closed": false,
       "component_evidence": [
-        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
-      ]
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json",
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+      ],
+      "rwc_scope": "HARMONIC_FORM_IN_POPULAR_NOT_REQUESTED_SUBGENRE"
     },
     {
       "relation_id": "REL-017",
@@ -443,7 +511,9 @@
       "candidate_ids": [
         "GMD_V1",
         "BILLBOARD_V2",
-        "GIANTSTEPS_TEMPO_KEY"
+        "GIANTSTEPS_TEMPO_KEY",
+        "RWC2_P_0A1A6C3",
+        "JAZZSAMBA_ASYNC_SWING_V1"
       ],
       "project_anchors": [
         {
@@ -459,8 +529,10 @@
       "production_use_allowed": false,
       "historical_assertion_closed": false,
       "component_evidence": [
-        "docs/audit/fable-5.2/KORPUS_GIANTSTEPS_TEMPO_2026-11-14.json"
-      ]
+        "docs/audit/fable-5.2/KORPUS_GIANTSTEPS_TEMPO_2026-11-14.json",
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+      ],
+      "rwc_scope": "NO_HOUSE_OR_JUMPUP_RWC_P_FRAME"
     },
     {
       "relation_id": "REL-026",
@@ -481,7 +553,9 @@
       "candidate_ids": [
         "GMD_V1",
         "BILLBOARD_V2",
-        "GIANTSTEPS_TEMPO_KEY"
+        "GIANTSTEPS_TEMPO_KEY",
+        "RWC2_P_0A1A6C3",
+        "JAZZSAMBA_ASYNC_SWING_V1"
       ],
       "project_anchors": [
         {
@@ -502,8 +576,10 @@
       "production_use_allowed": false,
       "historical_assertion_closed": false,
       "component_evidence": [
-        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
-      ]
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json",
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+      ],
+      "rwc_scope": "HARMONIC_FORM_IN_POPULAR_NOT_REQUESTED_SUBGENRE"
     },
     {
       "relation_id": "REL-032",
@@ -524,7 +600,9 @@
       "candidate_ids": [
         "GMD_V1",
         "BILLBOARD_V2",
-        "GIANTSTEPS_TEMPO_KEY"
+        "GIANTSTEPS_TEMPO_KEY",
+        "RWC2_P_0A1A6C3",
+        "JAZZSAMBA_ASYNC_SWING_V1"
       ],
       "project_anchors": [
         {
@@ -545,8 +623,10 @@
       "production_use_allowed": false,
       "historical_assertion_closed": false,
       "component_evidence": [
-        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
-      ]
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json",
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+      ],
+      "rwc_scope": "HARMONIC_FORM_IN_POPULAR_NOT_REQUESTED_SUBGENRE"
     },
     {
       "relation_id": "REL-035",
@@ -567,7 +647,9 @@
       "candidate_ids": [
         "GMD_V1",
         "BILLBOARD_V2",
-        "GIANTSTEPS_TEMPO_KEY"
+        "GIANTSTEPS_TEMPO_KEY",
+        "RWC2_P_0A1A6C3",
+        "JAZZSAMBA_ASYNC_SWING_V1"
       ],
       "project_anchors": [
         {
@@ -588,8 +670,10 @@
       "production_use_allowed": false,
       "historical_assertion_closed": false,
       "component_evidence": [
-        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
-      ]
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json",
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+      ],
+      "rwc_scope": "HARMONIC_FORM_IN_POPULAR_NOT_REQUESTED_SUBGENRE"
     }
   ]
 }

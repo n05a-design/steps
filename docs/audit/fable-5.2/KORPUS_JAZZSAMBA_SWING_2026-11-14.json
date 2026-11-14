@@ -1,0 +1,6455 @@
+{
+  "schema_version": 1,
+  "source_record": "10.5281/zenodo.22943963",
+  "catalog_sha256": "92fe14ee3fc41bc8a6f8d6a91b127e51bc99f4a325b654e0a466773735dd89f5",
+  "selected_songs": 18,
+  "source_archive_published_md5": "1f437b3f0fec27e106f5a7fa0c64d4fb",
+  "source_archive_full_md5_verified": false,
+  "retrieval": "Bounded public HTTP206 ranges, ZIP-member CRC checked, individual SHA256 recorded; no audio or10.8GB archive downloaded.",
+  "chart_origin": "TIMED_LEAD_SHEET_NOT_PERFORMED_HARMONY_TRANSCRIPTION",
+  "drum_origin": "PREFERRED_ASYNC_DRUM_MIDI_PER_DATASET_NOT_AMT",
+  "exact_ride_pedal_pattern_verified": false,
+  "human_approval": "AUSSTEHEND",
+  "historical_assertion_closed": false,
+  "rights": "Catalog permission notice covers contributed original recordings, MIDI and annotations; underlying standard composition copyrights are separately listed. Raw files remain local; no universal rights/CSS release inferred.",
+  "attribution": "Phillip Long and contributors, JazzSAMBA v1.0.0, Zenodo10.5281/zenodo.22943963 and arXiv2609.34931v1.",
+  "limits": "Chosen gig-book repertoire and18 preferred asynchronous takes are not a representative Swing population. Chart matching plus onsets proves neither performed ii–V–I nor ride/pedal identity or exact style. Native note numbers are not automatically GM instrument roles.",
+  "summary": {
+    "exact": {
+      "chart_windows": 373,
+      "windows_with_drum_onsets": 373,
+      "songs_with_both": 14
+    },
+    "triad_projection": {
+      "chart_windows": 689,
+      "windows_with_drum_onsets": 688,
+      "songs_with_both": 18
+    }
+  },
+  "records": [
+    {
+      "song_id": "1",
+      "basename": "01-a_sunday_kind_of_love",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/01-a_sunday_kind_of_love/preferred/annotations/bars.csv",
+          "sha256": "bd923ebb3c02802d3c4bd2b350376801cfac288d7515c0df1c297bf25c4897f6",
+          "crc32": "dcef1073",
+          "bytes": 4021
+        },
+        "chords": {
+          "member": "async/songs/01-a_sunday_kind_of_love/preferred/annotations/chords.csv",
+          "sha256": "d0b04dc9fee626dfa2c920596902731258fee6b1b62713f895631652847849d2",
+          "crc32": "29a7cbf3",
+          "bytes": 71129
+        },
+        "drums": {
+          "member": "async/songs/01-a_sunday_kind_of_love/preferred/drums.mid",
+          "sha256": "6731eee5d5af17e767bdbd6ff88ea14f3f2652ff1f60879696a28a93bcfb243b",
+          "crc32": "a2555cab",
+          "bytes": 28374
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 3971,
+      "drum_channels": {
+        "9": 3971
+      },
+      "note_number_histogram": {
+        "38": 946,
+        "48": 56,
+        "41": 26,
+        "36": 837,
+        "55": 30,
+        "51": 63,
+        "45": 1792,
+        "49": 13,
+        "46": 19,
+        "44": 28,
+        "26": 24,
+        "42": 21,
+        "22": 14,
+        "59": 53,
+        "40": 49
+      },
+      "excluded_terminal_zero_duration_rows": 0,
+      "bar_grid_max_error_seconds": 1.1368683772161603e-13,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 193,
+          "windows": []
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 76,
+          "windows": [
+            {
+              "start_seconds": 19.2,
+              "end_seconds": 24.0,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 44.8,
+              "end_seconds": 49.6,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 57.6,
+              "end_seconds": 62.4,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 96.0,
+              "end_seconds": 100.8,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 121.6,
+              "end_seconds": 126.4,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 147.2,
+              "end_seconds": 152.0,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 160.0,
+              "end_seconds": 164.8,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 198.4,
+              "end_seconds": 203.2,
+              "drum_note_onsets": 11
+            },
+            {
+              "start_seconds": 224.0,
+              "end_seconds": 228.8,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 249.6,
+              "end_seconds": 254.4,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 262.4,
+              "end_seconds": 267.2,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 300.8,
+              "end_seconds": 305.6,
+              "drum_note_onsets": 8
+            },
+            {
+              "start_seconds": 326.4,
+              "end_seconds": 331.2,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 352.0,
+              "end_seconds": 356.8,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 364.8,
+              "end_seconds": 369.6,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 403.2,
+              "end_seconds": 408.0,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 428.8,
+              "end_seconds": 433.6,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 454.4,
+              "end_seconds": 459.2,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 467.2,
+              "end_seconds": 472.0,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 505.6,
+              "end_seconds": 510.4,
+              "drum_note_onsets": 10
+            },
+            {
+              "start_seconds": 531.2,
+              "end_seconds": 536.0,
+              "drum_note_onsets": 12
+            },
+            {
+              "start_seconds": 556.8,
+              "end_seconds": 561.6,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 569.6,
+              "end_seconds": 574.4,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 608.0,
+              "end_seconds": 612.8,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 633.6,
+              "end_seconds": 638.4,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 659.2,
+              "end_seconds": 664.0,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 672.0,
+              "end_seconds": 676.8,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 710.4,
+              "end_seconds": 720.0,
+              "drum_note_onsets": 73
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "3",
+      "basename": "03-all_of_me",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/03-all_of_me/preferred/annotations/bars.csv",
+          "sha256": "c5981f7635273e02fbf6c67e21122d9782ce38089a37ee8e1329238e4207f9aa",
+          "crc32": "585c85af",
+          "bytes": 5095
+        },
+        "chords": {
+          "member": "async/songs/03-all_of_me/preferred/annotations/chords.csv",
+          "sha256": "5737b4ab61f2a1b5d043c4d2cbfc3c7d8b3b75320fbf81e592272c234de9dddf",
+          "crc32": "9f91f627",
+          "bytes": 26612
+        },
+        "drums": {
+          "member": "async/songs/03-all_of_me/preferred/drums.mid",
+          "sha256": "dbddba0d855f57710bf9f7477f5f367a99fb3f265a7431b412a43a74431b6524",
+          "crc32": "f1434d2a",
+          "bytes": 43161
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 3114,
+      "drum_channels": {
+        "9": 3114
+      },
+      "note_number_histogram": {
+        "36": 725,
+        "45": 898,
+        "44": 250,
+        "38": 980,
+        "48": 47,
+        "41": 39,
+        "51": 22,
+        "55": 24,
+        "40": 18,
+        "49": 4,
+        "26": 72,
+        "46": 4,
+        "59": 6,
+        "22": 18,
+        "42": 7
+      },
+      "excluded_terminal_zero_duration_rows": 1,
+      "bar_grid_max_error_seconds": 5.684341886080802e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 56,
+          "windows": []
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 17,
+          "windows": [
+            {
+              "start_seconds": 7.059,
+              "end_seconds": 10.588,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 11.294,
+              "end_seconds": 15.529,
+              "drum_note_onsets": 40
+            },
+            {
+              "start_seconds": 32.471,
+              "end_seconds": 38.118,
+              "drum_note_onsets": 51
+            },
+            {
+              "start_seconds": 52.235,
+              "end_seconds": 55.765,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 56.471,
+              "end_seconds": 60.706,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 77.647,
+              "end_seconds": 83.294,
+              "drum_note_onsets": 56
+            },
+            {
+              "start_seconds": 97.412,
+              "end_seconds": 100.941,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 101.647,
+              "end_seconds": 105.882,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 122.824,
+              "end_seconds": 128.471,
+              "drum_note_onsets": 50
+            },
+            {
+              "start_seconds": 142.588,
+              "end_seconds": 146.118,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 146.824,
+              "end_seconds": 151.059,
+              "drum_note_onsets": 47
+            },
+            {
+              "start_seconds": 168.0,
+              "end_seconds": 173.647,
+              "drum_note_onsets": 40
+            },
+            {
+              "start_seconds": 187.765,
+              "end_seconds": 191.294,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 192.0,
+              "end_seconds": 196.235,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 213.176,
+              "end_seconds": 218.824,
+              "drum_note_onsets": 55
+            },
+            {
+              "start_seconds": 232.941,
+              "end_seconds": 236.4705,
+              "drum_note_onsets": 39
+            },
+            {
+              "start_seconds": 237.176,
+              "end_seconds": 241.412,
+              "drum_note_onsets": 40
+            },
+            {
+              "start_seconds": 258.353,
+              "end_seconds": 264.0,
+              "drum_note_onsets": 52
+            },
+            {
+              "start_seconds": 278.118,
+              "end_seconds": 281.647,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 282.353,
+              "end_seconds": 286.588,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 309.176,
+              "end_seconds": 314.824,
+              "drum_note_onsets": 67
+            },
+            {
+              "start_seconds": 328.941,
+              "end_seconds": 332.4705,
+              "drum_note_onsets": 36
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "4",
+      "basename": "04-all_the_things_you_are",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/04-all_the_things_you_are/preferred/annotations/bars.csv",
+          "sha256": "6f175cea1ee34e749ed5ddd45b9e4ecd23a79850cd8c962d88a1dbc29e74aa98",
+          "crc32": "8fcbd164",
+          "bytes": 4699
+        },
+        "chords": {
+          "member": "async/songs/04-all_the_things_you_are/preferred/annotations/chords.csv",
+          "sha256": "29d8f34ec834055b9fb97945f24d2f60963792972d2180801f11d32c0efab63a",
+          "crc32": "bdf01dae",
+          "bytes": 36517
+        },
+        "drums": {
+          "member": "async/songs/04-all_the_things_you_are/preferred/drums.mid",
+          "sha256": "2e78d5240988d8088f8444678781d6246f40875d460f8b81d5b4f2bea4b759dc",
+          "crc32": "3258337d",
+          "bytes": 33461
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 3465,
+      "drum_channels": {
+        "9": 3465
+      },
+      "note_number_histogram": {
+        "38": 1299,
+        "48": 58,
+        "41": 30,
+        "36": 685,
+        "51": 21,
+        "55": 10,
+        "45": 1036,
+        "40": 16,
+        "44": 160,
+        "49": 8,
+        "22": 98,
+        "59": 10,
+        "26": 16,
+        "46": 3,
+        "42": 15
+      },
+      "excluded_terminal_zero_duration_rows": 0,
+      "bar_grid_max_error_seconds": 2.842170943040401e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 58,
+          "windows": [
+            {
+              "start_seconds": 16.0,
+              "end_seconds": 20.8,
+              "drum_note_onsets": 43
+            },
+            {
+              "start_seconds": 28.8,
+              "end_seconds": 33.6,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 40.0,
+              "end_seconds": 46.4,
+              "drum_note_onsets": 52
+            },
+            {
+              "start_seconds": 54.4,
+              "end_seconds": 59.2,
+              "drum_note_onsets": 41
+            },
+            {
+              "start_seconds": 65.6,
+              "end_seconds": 70.4,
+              "drum_note_onsets": 40
+            },
+            {
+              "start_seconds": 73.6,
+              "end_seconds": 78.4,
+              "drum_note_onsets": 40
+            },
+            {
+              "start_seconds": 86.4,
+              "end_seconds": 91.2,
+              "drum_note_onsets": 44
+            },
+            {
+              "start_seconds": 97.6,
+              "end_seconds": 104.0,
+              "drum_note_onsets": 52
+            },
+            {
+              "start_seconds": 112.0,
+              "end_seconds": 116.8,
+              "drum_note_onsets": 43
+            },
+            {
+              "start_seconds": 123.2,
+              "end_seconds": 128.0,
+              "drum_note_onsets": 39
+            },
+            {
+              "start_seconds": 131.2,
+              "end_seconds": 136.0,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 144.0,
+              "end_seconds": 148.8,
+              "drum_note_onsets": 46
+            },
+            {
+              "start_seconds": 155.2,
+              "end_seconds": 161.6,
+              "drum_note_onsets": 49
+            },
+            {
+              "start_seconds": 169.6,
+              "end_seconds": 174.4,
+              "drum_note_onsets": 44
+            },
+            {
+              "start_seconds": 180.8,
+              "end_seconds": 185.6,
+              "drum_note_onsets": 46
+            },
+            {
+              "start_seconds": 188.8,
+              "end_seconds": 193.6,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 201.6,
+              "end_seconds": 206.4,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 212.8,
+              "end_seconds": 219.2,
+              "drum_note_onsets": 48
+            },
+            {
+              "start_seconds": 227.2,
+              "end_seconds": 232.0,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 238.4,
+              "end_seconds": 243.2,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 246.4,
+              "end_seconds": 251.2,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 259.2,
+              "end_seconds": 264.0,
+              "drum_note_onsets": 41
+            },
+            {
+              "start_seconds": 270.4,
+              "end_seconds": 276.8,
+              "drum_note_onsets": 54
+            },
+            {
+              "start_seconds": 284.8,
+              "end_seconds": 289.6,
+              "drum_note_onsets": 38
+            },
+            {
+              "start_seconds": 296.0,
+              "end_seconds": 300.8,
+              "drum_note_onsets": 42
+            },
+            {
+              "start_seconds": 304.0,
+              "end_seconds": 308.8,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 316.8,
+              "end_seconds": 321.6,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 328.0,
+              "end_seconds": 334.4,
+              "drum_note_onsets": 69
+            },
+            {
+              "start_seconds": 342.4,
+              "end_seconds": 347.2,
+              "drum_note_onsets": 46
+            },
+            {
+              "start_seconds": 353.6,
+              "end_seconds": 358.4,
+              "drum_note_onsets": 41
+            },
+            {
+              "start_seconds": 361.6,
+              "end_seconds": 366.4,
+              "drum_note_onsets": 48
+            },
+            {
+              "start_seconds": 374.4,
+              "end_seconds": 379.2,
+              "drum_note_onsets": 47
+            },
+            {
+              "start_seconds": 385.6,
+              "end_seconds": 392.0,
+              "drum_note_onsets": 57
+            },
+            {
+              "start_seconds": 400.0,
+              "end_seconds": 404.8,
+              "drum_note_onsets": 42
+            },
+            {
+              "start_seconds": 411.2,
+              "end_seconds": 417.6,
+              "drum_note_onsets": 41
+            }
+          ]
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 51,
+          "windows": [
+            {
+              "start_seconds": 16.0,
+              "end_seconds": 20.8,
+              "drum_note_onsets": 43
+            },
+            {
+              "start_seconds": 28.8,
+              "end_seconds": 33.6,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 40.0,
+              "end_seconds": 46.4,
+              "drum_note_onsets": 52
+            },
+            {
+              "start_seconds": 54.4,
+              "end_seconds": 59.2,
+              "drum_note_onsets": 41
+            },
+            {
+              "start_seconds": 65.6,
+              "end_seconds": 70.4,
+              "drum_note_onsets": 40
+            },
+            {
+              "start_seconds": 73.6,
+              "end_seconds": 78.4,
+              "drum_note_onsets": 40
+            },
+            {
+              "start_seconds": 86.4,
+              "end_seconds": 91.2,
+              "drum_note_onsets": 44
+            },
+            {
+              "start_seconds": 97.6,
+              "end_seconds": 104.0,
+              "drum_note_onsets": 52
+            },
+            {
+              "start_seconds": 112.0,
+              "end_seconds": 116.8,
+              "drum_note_onsets": 43
+            },
+            {
+              "start_seconds": 123.2,
+              "end_seconds": 128.0,
+              "drum_note_onsets": 39
+            },
+            {
+              "start_seconds": 131.2,
+              "end_seconds": 136.0,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 144.0,
+              "end_seconds": 148.8,
+              "drum_note_onsets": 46
+            },
+            {
+              "start_seconds": 155.2,
+              "end_seconds": 161.6,
+              "drum_note_onsets": 49
+            },
+            {
+              "start_seconds": 169.6,
+              "end_seconds": 174.4,
+              "drum_note_onsets": 44
+            },
+            {
+              "start_seconds": 180.8,
+              "end_seconds": 185.6,
+              "drum_note_onsets": 46
+            },
+            {
+              "start_seconds": 188.8,
+              "end_seconds": 193.6,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 201.6,
+              "end_seconds": 206.4,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 212.8,
+              "end_seconds": 219.2,
+              "drum_note_onsets": 48
+            },
+            {
+              "start_seconds": 227.2,
+              "end_seconds": 232.0,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 238.4,
+              "end_seconds": 243.2,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 246.4,
+              "end_seconds": 251.2,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 259.2,
+              "end_seconds": 264.0,
+              "drum_note_onsets": 41
+            },
+            {
+              "start_seconds": 270.4,
+              "end_seconds": 276.8,
+              "drum_note_onsets": 54
+            },
+            {
+              "start_seconds": 284.8,
+              "end_seconds": 289.6,
+              "drum_note_onsets": 38
+            },
+            {
+              "start_seconds": 296.0,
+              "end_seconds": 300.8,
+              "drum_note_onsets": 42
+            },
+            {
+              "start_seconds": 304.0,
+              "end_seconds": 308.8,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 316.8,
+              "end_seconds": 321.6,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 328.0,
+              "end_seconds": 334.4,
+              "drum_note_onsets": 69
+            },
+            {
+              "start_seconds": 342.4,
+              "end_seconds": 347.2,
+              "drum_note_onsets": 46
+            },
+            {
+              "start_seconds": 353.6,
+              "end_seconds": 358.4,
+              "drum_note_onsets": 41
+            },
+            {
+              "start_seconds": 361.6,
+              "end_seconds": 366.4,
+              "drum_note_onsets": 48
+            },
+            {
+              "start_seconds": 374.4,
+              "end_seconds": 379.2,
+              "drum_note_onsets": 47
+            },
+            {
+              "start_seconds": 385.6,
+              "end_seconds": 392.0,
+              "drum_note_onsets": 57
+            },
+            {
+              "start_seconds": 400.0,
+              "end_seconds": 404.8,
+              "drum_note_onsets": 42
+            },
+            {
+              "start_seconds": 411.2,
+              "end_seconds": 417.6,
+              "drum_note_onsets": 41
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "6",
+      "basename": "06-autumn_leaves",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/06-autumn_leaves/preferred/annotations/bars.csv",
+          "sha256": "9a439336a02b82a5506404b8829082b0adb2e263e15335e7ec3880f12d1fcf64",
+          "crc32": "1424c1b2",
+          "bytes": 4778
+        },
+        "chords": {
+          "member": "async/songs/06-autumn_leaves/preferred/annotations/chords.csv",
+          "sha256": "840daba4a62aaa4e6d49d9ec109afdcbe41c3b94cfe092d26a479fbb7a4dc926",
+          "crc32": "900b66fa",
+          "bytes": 29814
+        },
+        "drums": {
+          "member": "async/songs/06-autumn_leaves/preferred/drums.mid",
+          "sha256": "0227ed15706f05049ee46bf8936b9084d1de00252568a8a11d49a7beb12fafb4",
+          "crc32": "d754d779",
+          "bytes": 34615
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 2513,
+      "drum_channels": {
+        "9": 2513
+      },
+      "note_number_histogram": {
+        "38": 653,
+        "48": 64,
+        "45": 990,
+        "36": 454,
+        "51": 17,
+        "41": 25,
+        "55": 9,
+        "59": 4,
+        "40": 11,
+        "26": 15,
+        "44": 269,
+        "46": 1,
+        "49": 1
+      },
+      "excluded_terminal_zero_duration_rows": 0,
+      "bar_grid_max_error_seconds": 2.842170943040401e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 49,
+          "windows": [
+            {
+              "start_seconds": 1.263,
+              "end_seconds": 5.053,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 11.368,
+              "end_seconds": 15.158,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 26.526,
+              "end_seconds": 31.579,
+              "drum_note_onsets": 45
+            },
+            {
+              "start_seconds": 41.684,
+              "end_seconds": 45.474,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 51.789,
+              "end_seconds": 55.579,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 66.947,
+              "end_seconds": 72.0,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 82.105,
+              "end_seconds": 85.895,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 92.211,
+              "end_seconds": 96.0,
+              "drum_note_onsets": 34
+            },
+            {
+              "start_seconds": 107.368,
+              "end_seconds": 112.421,
+              "drum_note_onsets": 50
+            },
+            {
+              "start_seconds": 122.526,
+              "end_seconds": 126.316,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 132.632,
+              "end_seconds": 136.421,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 147.789,
+              "end_seconds": 152.842,
+              "drum_note_onsets": 51
+            },
+            {
+              "start_seconds": 162.947,
+              "end_seconds": 166.737,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 173.053,
+              "end_seconds": 176.842,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 188.211,
+              "end_seconds": 193.263,
+              "drum_note_onsets": 48
+            },
+            {
+              "start_seconds": 203.368,
+              "end_seconds": 207.158,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 213.474,
+              "end_seconds": 217.263,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 228.632,
+              "end_seconds": 233.684,
+              "drum_note_onsets": 44
+            },
+            {
+              "start_seconds": 243.789,
+              "end_seconds": 247.579,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 253.895,
+              "end_seconds": 257.684,
+              "drum_note_onsets": 34
+            },
+            {
+              "start_seconds": 269.053,
+              "end_seconds": 274.105,
+              "drum_note_onsets": 39
+            }
+          ]
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 49,
+          "windows": [
+            {
+              "start_seconds": 1.263,
+              "end_seconds": 5.053,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 11.368,
+              "end_seconds": 15.158,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 26.526,
+              "end_seconds": 31.579,
+              "drum_note_onsets": 45
+            },
+            {
+              "start_seconds": 41.684,
+              "end_seconds": 45.474,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 51.789,
+              "end_seconds": 55.579,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 66.947,
+              "end_seconds": 72.0,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 82.105,
+              "end_seconds": 85.895,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 92.211,
+              "end_seconds": 96.0,
+              "drum_note_onsets": 34
+            },
+            {
+              "start_seconds": 107.368,
+              "end_seconds": 112.421,
+              "drum_note_onsets": 50
+            },
+            {
+              "start_seconds": 122.526,
+              "end_seconds": 126.316,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 132.632,
+              "end_seconds": 136.421,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 147.789,
+              "end_seconds": 152.842,
+              "drum_note_onsets": 51
+            },
+            {
+              "start_seconds": 162.947,
+              "end_seconds": 166.737,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 173.053,
+              "end_seconds": 176.842,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 188.211,
+              "end_seconds": 193.263,
+              "drum_note_onsets": 48
+            },
+            {
+              "start_seconds": 203.368,
+              "end_seconds": 207.158,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 213.474,
+              "end_seconds": 217.263,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 228.632,
+              "end_seconds": 233.684,
+              "drum_note_onsets": 44
+            },
+            {
+              "start_seconds": 243.789,
+              "end_seconds": 247.579,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 253.895,
+              "end_seconds": 257.684,
+              "drum_note_onsets": 34
+            },
+            {
+              "start_seconds": 269.053,
+              "end_seconds": 274.105,
+              "drum_note_onsets": 39
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "8",
+      "basename": "08-blue_skies",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/08-blue_skies/preferred/annotations/bars.csv",
+          "sha256": "aafd214de51160baa885d1a75efe74c393e79f523526fc7c9c988d1b3e972d2c",
+          "crc32": "0be304e3",
+          "bytes": 4098
+        },
+        "chords": {
+          "member": "async/songs/08-blue_skies/preferred/annotations/chords.csv",
+          "sha256": "8929238f06220b24b37884257ca2b99ff8fab2ffb95a8aaec464b8f719ac20fa",
+          "crc32": "94cca384",
+          "bytes": 48627
+        },
+        "drums": {
+          "member": "async/songs/08-blue_skies/preferred/drums.mid",
+          "sha256": "a890acc4b136fe1b9c9cda3f7a2e8969f5ec1c3b04aeb7942cd84365031fde23",
+          "crc32": "b5064254",
+          "bytes": 41129
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 3173,
+      "drum_channels": {
+        "9": 3173
+      },
+      "note_number_histogram": {
+        "38": 1110,
+        "48": 111,
+        "41": 67,
+        "36": 780,
+        "51": 15,
+        "45": 739,
+        "44": 124,
+        "49": 5,
+        "26": 75,
+        "46": 23,
+        "22": 9,
+        "42": 4,
+        "59": 54,
+        "55": 42,
+        "40": 15
+      },
+      "excluded_terminal_zero_duration_rows": 1,
+      "bar_grid_max_error_seconds": 5.684341886080802e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 104,
+          "windows": [
+            {
+              "start_seconds": 38.4,
+              "end_seconds": 41.6,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 89.6,
+              "end_seconds": 92.8,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 140.8,
+              "end_seconds": 144.0,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 192.0,
+              "end_seconds": 195.2,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 243.2,
+              "end_seconds": 246.4,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 294.4,
+              "end_seconds": 297.6,
+              "drum_note_onsets": 39
+            },
+            {
+              "start_seconds": 345.6,
+              "end_seconds": 348.8,
+              "drum_note_onsets": 29
+            }
+          ]
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 82,
+          "windows": [
+            {
+              "start_seconds": 9.6,
+              "end_seconds": 12.8,
+              "drum_note_onsets": 0
+            },
+            {
+              "start_seconds": 22.4,
+              "end_seconds": 25.6,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 35.2,
+              "end_seconds": 38.4,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 38.4,
+              "end_seconds": 41.6,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 60.8,
+              "end_seconds": 64.0,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 73.6,
+              "end_seconds": 76.8,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 86.4,
+              "end_seconds": 89.6,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 89.6,
+              "end_seconds": 92.8,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 112.0,
+              "end_seconds": 115.2,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 124.8,
+              "end_seconds": 128.0,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 137.6,
+              "end_seconds": 140.8,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 140.8,
+              "end_seconds": 144.0,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 163.2,
+              "end_seconds": 166.4,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 176.0,
+              "end_seconds": 179.2,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 188.8,
+              "end_seconds": 192.0,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 192.0,
+              "end_seconds": 195.2,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 214.4,
+              "end_seconds": 217.6,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 227.2,
+              "end_seconds": 230.4,
+              "drum_note_onsets": 34
+            },
+            {
+              "start_seconds": 240.0,
+              "end_seconds": 243.2,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 243.2,
+              "end_seconds": 246.4,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 265.6,
+              "end_seconds": 268.8,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 278.4,
+              "end_seconds": 281.6,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 291.2,
+              "end_seconds": 294.4,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 294.4,
+              "end_seconds": 297.6,
+              "drum_note_onsets": 39
+            },
+            {
+              "start_seconds": 316.8,
+              "end_seconds": 320.0,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 329.6,
+              "end_seconds": 332.8,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 342.4,
+              "end_seconds": 345.6,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 345.6,
+              "end_seconds": 348.8,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 368.0,
+              "end_seconds": 371.2,
+              "drum_note_onsets": 19
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "11",
+      "basename": "11-dream_a_little_dream_of_me",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/11-dream_a_little_dream_of_me/preferred/annotations/bars.csv",
+          "sha256": "a2a59db04a1b2d254e867162111189d24e9774fe39badcc71ee4ac3a0862d25b",
+          "crc32": "b34dadc6",
+          "bytes": 4901
+        },
+        "chords": {
+          "member": "async/songs/11-dream_a_little_dream_of_me/preferred/annotations/chords.csv",
+          "sha256": "2b7dc32a5ecda0162658b9cb9498e44f5083a9bac1d6ea2a7c29e811fd736cb7",
+          "crc32": "35400eb7",
+          "bytes": 67831
+        },
+        "drums": {
+          "member": "async/songs/11-dream_a_little_dream_of_me/preferred/drums.mid",
+          "sha256": "0a915dbc9d897947a4a31977062a50d408d02f6fd1fb0580d86e121e1f281881",
+          "crc32": "bf81083d",
+          "bytes": 30273
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 3157,
+      "drum_channels": {
+        "9": 3157
+      },
+      "note_number_histogram": {
+        "38": 948,
+        "36": 798,
+        "45": 1037,
+        "44": 122,
+        "48": 104,
+        "41": 66,
+        "40": 34,
+        "49": 2,
+        "51": 9,
+        "55": 21,
+        "59": 14,
+        "26": 2
+      },
+      "excluded_terminal_zero_duration_rows": 0,
+      "bar_grid_max_error_seconds": 5.684341886080802e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 150,
+          "windows": []
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 43,
+          "windows": [
+            {
+              "start_seconds": 26.182,
+              "end_seconds": 30.545,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 44.727,
+              "end_seconds": 46.909,
+              "drum_note_onsets": 14
+            },
+            {
+              "start_seconds": 48.0,
+              "end_seconds": 51.273,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 52.364,
+              "end_seconds": 55.636,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 56.727,
+              "end_seconds": 60.0,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 61.091,
+              "end_seconds": 65.455,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 96.0,
+              "end_seconds": 100.364,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 114.5455,
+              "end_seconds": 116.727,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 117.818,
+              "end_seconds": 121.091,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 122.182,
+              "end_seconds": 125.4545,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 126.545,
+              "end_seconds": 129.818,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 130.909,
+              "end_seconds": 135.273,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 165.818,
+              "end_seconds": 170.182,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 184.364,
+              "end_seconds": 186.5455,
+              "drum_note_onsets": 12
+            },
+            {
+              "start_seconds": 187.636,
+              "end_seconds": 190.909,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 192.0,
+              "end_seconds": 195.273,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 196.364,
+              "end_seconds": 199.636,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 200.727,
+              "end_seconds": 205.091,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 235.636,
+              "end_seconds": 240.0,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 254.182,
+              "end_seconds": 256.364,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 257.455,
+              "end_seconds": 260.727,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 261.818,
+              "end_seconds": 265.091,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 266.182,
+              "end_seconds": 269.4545,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 270.545,
+              "end_seconds": 274.909,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 305.455,
+              "end_seconds": 309.818,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 324.0,
+              "end_seconds": 326.182,
+              "drum_note_onsets": 12
+            },
+            {
+              "start_seconds": 327.273,
+              "end_seconds": 330.5455,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 331.636,
+              "end_seconds": 334.909,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 336.0,
+              "end_seconds": 339.273,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 340.364,
+              "end_seconds": 344.727,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 375.273,
+              "end_seconds": 379.636,
+              "drum_note_onsets": 42
+            },
+            {
+              "start_seconds": 393.818,
+              "end_seconds": 396.0,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 397.091,
+              "end_seconds": 400.364,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 401.455,
+              "end_seconds": 404.727,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 405.818,
+              "end_seconds": 409.091,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 410.182,
+              "end_seconds": 414.545,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 445.091,
+              "end_seconds": 449.455,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 463.636,
+              "end_seconds": 465.818,
+              "drum_note_onsets": 13
+            },
+            {
+              "start_seconds": 466.909,
+              "end_seconds": 470.182,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 471.273,
+              "end_seconds": 474.5455,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 475.636,
+              "end_seconds": 478.909,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 480.0,
+              "end_seconds": 484.364,
+              "drum_note_onsets": 33
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "13",
+      "basename": "13-four",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/13-four/preferred/annotations/bars.csv",
+          "sha256": "09930b2de51cb96e136152f75d6c1d4edea093ab51b6606044acc158e75eb271",
+          "crc32": "82d3e14e",
+          "bytes": 4750
+        },
+        "chords": {
+          "member": "async/songs/13-four/preferred/annotations/chords.csv",
+          "sha256": "1ceb0d7a1bb703e32a0d845dcd5350f475ead00a1783dffa25baba96bc606929",
+          "crc32": "dfa46e41",
+          "bytes": 35281
+        },
+        "drums": {
+          "member": "async/songs/13-four/preferred/drums.mid",
+          "sha256": "2beebe3a9bdc358f0cb6728209ee44e4d7cf0187c17bfa5c98514acd5319170f",
+          "crc32": "ea305319",
+          "bytes": 33405
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 2355,
+      "drum_channels": {
+        "9": 2355
+      },
+      "note_number_histogram": {
+        "46": 36,
+        "45": 590,
+        "38": 836,
+        "36": 456,
+        "40": 136,
+        "26": 138,
+        "48": 56,
+        "41": 20,
+        "59": 17,
+        "44": 28,
+        "55": 20,
+        "51": 11,
+        "22": 4,
+        "49": 7
+      },
+      "excluded_terminal_zero_duration_rows": 1,
+      "bar_grid_max_error_seconds": 5.684341886080802e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 1,
+          "windows": [
+            {
+              "start_seconds": 2.595,
+              "end_seconds": 6.486,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 22.054,
+              "end_seconds": 27.243,
+              "drum_note_onsets": 34
+            },
+            {
+              "start_seconds": 41.514,
+              "end_seconds": 44.108,
+              "drum_note_onsets": 13
+            },
+            {
+              "start_seconds": 44.108,
+              "end_seconds": 48.0,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 63.568,
+              "end_seconds": 68.757,
+              "drum_note_onsets": 42
+            },
+            {
+              "start_seconds": 83.027,
+              "end_seconds": 85.622,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 85.622,
+              "end_seconds": 89.514,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 105.081,
+              "end_seconds": 110.27,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 124.541,
+              "end_seconds": 127.135,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 127.135,
+              "end_seconds": 131.027,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 146.595,
+              "end_seconds": 151.784,
+              "drum_note_onsets": 41
+            },
+            {
+              "start_seconds": 166.054,
+              "end_seconds": 168.649,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 168.649,
+              "end_seconds": 172.541,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 188.108,
+              "end_seconds": 193.297,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 207.568,
+              "end_seconds": 210.162,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 210.162,
+              "end_seconds": 214.054,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 229.622,
+              "end_seconds": 234.811,
+              "drum_note_onsets": 46
+            },
+            {
+              "start_seconds": 249.081,
+              "end_seconds": 251.676,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 251.676,
+              "end_seconds": 255.568,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 271.135,
+              "end_seconds": 276.324,
+              "drum_note_onsets": 53
+            }
+          ]
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 1,
+          "windows": [
+            {
+              "start_seconds": 2.595,
+              "end_seconds": 6.486,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 22.054,
+              "end_seconds": 27.243,
+              "drum_note_onsets": 34
+            },
+            {
+              "start_seconds": 41.514,
+              "end_seconds": 44.108,
+              "drum_note_onsets": 13
+            },
+            {
+              "start_seconds": 44.108,
+              "end_seconds": 48.0,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 63.568,
+              "end_seconds": 68.757,
+              "drum_note_onsets": 42
+            },
+            {
+              "start_seconds": 83.027,
+              "end_seconds": 85.622,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 85.622,
+              "end_seconds": 89.514,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 105.081,
+              "end_seconds": 110.27,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 124.541,
+              "end_seconds": 127.135,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 127.135,
+              "end_seconds": 131.027,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 146.595,
+              "end_seconds": 151.784,
+              "drum_note_onsets": 41
+            },
+            {
+              "start_seconds": 166.054,
+              "end_seconds": 168.649,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 168.649,
+              "end_seconds": 172.541,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 188.108,
+              "end_seconds": 193.297,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 207.568,
+              "end_seconds": 210.162,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 210.162,
+              "end_seconds": 214.054,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 229.622,
+              "end_seconds": 234.811,
+              "drum_note_onsets": 46
+            },
+            {
+              "start_seconds": 249.081,
+              "end_seconds": 251.676,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 251.676,
+              "end_seconds": 255.568,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 271.135,
+              "end_seconds": 276.324,
+              "drum_note_onsets": 53
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "16",
+      "basename": "16-how_high_the_moon",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/16-how_high_the_moon/preferred/annotations/bars.csv",
+          "sha256": "f5dc97ccefa5ee0a5a462756ff398b59b3265a44f89a746ea8ea59405b9f0846",
+          "crc32": "3596231a",
+          "bytes": 4006
+        },
+        "chords": {
+          "member": "async/songs/16-how_high_the_moon/preferred/annotations/chords.csv",
+          "sha256": "ae30ac45c81695ae9c45de4cdba052d28ec7bddc1ef97ed56bc5f17d3e8908bf",
+          "crc32": "e9a51745",
+          "bytes": 38582
+        },
+        "drums": {
+          "member": "async/songs/16-how_high_the_moon/preferred/drums.mid",
+          "sha256": "85c19f5f62182c622b7986f0e2948a83afcb7b5e896aafac74ddc0f8aba98f51",
+          "crc32": "73f486f9",
+          "bytes": 35890
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 2536,
+      "drum_channels": {
+        "9": 2536
+      },
+      "note_number_histogram": {
+        "38": 610,
+        "45": 1020,
+        "44": 70,
+        "40": 35,
+        "48": 43,
+        "41": 22,
+        "36": 658,
+        "51": 16,
+        "55": 26,
+        "59": 14,
+        "26": 17,
+        "46": 1,
+        "49": 4
+      },
+      "excluded_terminal_zero_duration_rows": 0,
+      "bar_grid_max_error_seconds": 5.684341886080802e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 29,
+          "windows": [
+            {
+              "start_seconds": 4.8,
+              "end_seconds": 8.4,
+              "drum_note_onsets": 42
+            },
+            {
+              "start_seconds": 8.4,
+              "end_seconds": 13.2,
+              "drum_note_onsets": 49
+            },
+            {
+              "start_seconds": 13.2,
+              "end_seconds": 16.8,
+              "drum_note_onsets": 38
+            },
+            {
+              "start_seconds": 24.0,
+              "end_seconds": 27.6,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 27.6,
+              "end_seconds": 32.4,
+              "drum_note_onsets": 52
+            },
+            {
+              "start_seconds": 32.4,
+              "end_seconds": 36.0,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 43.2,
+              "end_seconds": 46.8,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 46.8,
+              "end_seconds": 51.6,
+              "drum_note_onsets": 53
+            },
+            {
+              "start_seconds": 51.6,
+              "end_seconds": 55.2,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 62.4,
+              "end_seconds": 66.0,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 66.0,
+              "end_seconds": 70.8,
+              "drum_note_onsets": 43
+            },
+            {
+              "start_seconds": 70.8,
+              "end_seconds": 74.4,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 81.6,
+              "end_seconds": 85.2,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 85.2,
+              "end_seconds": 90.0,
+              "drum_note_onsets": 43
+            },
+            {
+              "start_seconds": 90.0,
+              "end_seconds": 93.6,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 100.8,
+              "end_seconds": 104.4,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 104.4,
+              "end_seconds": 109.2,
+              "drum_note_onsets": 47
+            },
+            {
+              "start_seconds": 109.2,
+              "end_seconds": 112.8,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 120.0,
+              "end_seconds": 123.6,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 123.6,
+              "end_seconds": 128.4,
+              "drum_note_onsets": 41
+            },
+            {
+              "start_seconds": 128.4,
+              "end_seconds": 132.0,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 139.2,
+              "end_seconds": 142.8,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 142.8,
+              "end_seconds": 147.6,
+              "drum_note_onsets": 40
+            },
+            {
+              "start_seconds": 147.6,
+              "end_seconds": 151.2,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 158.4,
+              "end_seconds": 162.0,
+              "drum_note_onsets": 43
+            },
+            {
+              "start_seconds": 162.0,
+              "end_seconds": 166.8,
+              "drum_note_onsets": 56
+            },
+            {
+              "start_seconds": 166.8,
+              "end_seconds": 170.4,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 177.6,
+              "end_seconds": 181.2,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 181.2,
+              "end_seconds": 186.0,
+              "drum_note_onsets": 48
+            },
+            {
+              "start_seconds": 186.0,
+              "end_seconds": 189.6,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 196.8,
+              "end_seconds": 200.4,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 200.4,
+              "end_seconds": 205.2,
+              "drum_note_onsets": 48
+            },
+            {
+              "start_seconds": 205.2,
+              "end_seconds": 208.8,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 216.0,
+              "end_seconds": 219.6,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 219.6,
+              "end_seconds": 224.4,
+              "drum_note_onsets": 48
+            },
+            {
+              "start_seconds": 224.4,
+              "end_seconds": 228.0,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 235.2,
+              "end_seconds": 238.8,
+              "drum_note_onsets": 38
+            },
+            {
+              "start_seconds": 238.8,
+              "end_seconds": 243.6,
+              "drum_note_onsets": 49
+            },
+            {
+              "start_seconds": 243.6,
+              "end_seconds": 247.2,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 254.4,
+              "end_seconds": 258.0,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 258.0,
+              "end_seconds": 262.8,
+              "drum_note_onsets": 52
+            },
+            {
+              "start_seconds": 262.8,
+              "end_seconds": 266.4,
+              "drum_note_onsets": 38
+            }
+          ]
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 21,
+          "windows": [
+            {
+              "start_seconds": 2.4,
+              "end_seconds": 4.8,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 4.8,
+              "end_seconds": 8.4,
+              "drum_note_onsets": 42
+            },
+            {
+              "start_seconds": 8.4,
+              "end_seconds": 13.2,
+              "drum_note_onsets": 49
+            },
+            {
+              "start_seconds": 13.2,
+              "end_seconds": 16.8,
+              "drum_note_onsets": 38
+            },
+            {
+              "start_seconds": 24.0,
+              "end_seconds": 27.6,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 27.6,
+              "end_seconds": 32.4,
+              "drum_note_onsets": 52
+            },
+            {
+              "start_seconds": 32.4,
+              "end_seconds": 36.0,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 40.8,
+              "end_seconds": 43.2,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 43.2,
+              "end_seconds": 46.8,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 46.8,
+              "end_seconds": 51.6,
+              "drum_note_onsets": 53
+            },
+            {
+              "start_seconds": 51.6,
+              "end_seconds": 55.2,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 62.4,
+              "end_seconds": 66.0,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 66.0,
+              "end_seconds": 70.8,
+              "drum_note_onsets": 43
+            },
+            {
+              "start_seconds": 70.8,
+              "end_seconds": 74.4,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 79.2,
+              "end_seconds": 81.6,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 81.6,
+              "end_seconds": 85.2,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 85.2,
+              "end_seconds": 90.0,
+              "drum_note_onsets": 43
+            },
+            {
+              "start_seconds": 90.0,
+              "end_seconds": 93.6,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 100.8,
+              "end_seconds": 104.4,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 104.4,
+              "end_seconds": 109.2,
+              "drum_note_onsets": 47
+            },
+            {
+              "start_seconds": 109.2,
+              "end_seconds": 112.8,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 117.6,
+              "end_seconds": 120.0,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 120.0,
+              "end_seconds": 123.6,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 123.6,
+              "end_seconds": 128.4,
+              "drum_note_onsets": 41
+            },
+            {
+              "start_seconds": 128.4,
+              "end_seconds": 132.0,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 139.2,
+              "end_seconds": 142.8,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 142.8,
+              "end_seconds": 147.6,
+              "drum_note_onsets": 40
+            },
+            {
+              "start_seconds": 147.6,
+              "end_seconds": 151.2,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 156.0,
+              "end_seconds": 158.4,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 158.4,
+              "end_seconds": 162.0,
+              "drum_note_onsets": 43
+            },
+            {
+              "start_seconds": 162.0,
+              "end_seconds": 166.8,
+              "drum_note_onsets": 56
+            },
+            {
+              "start_seconds": 166.8,
+              "end_seconds": 170.4,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 177.6,
+              "end_seconds": 181.2,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 181.2,
+              "end_seconds": 186.0,
+              "drum_note_onsets": 48
+            },
+            {
+              "start_seconds": 186.0,
+              "end_seconds": 189.6,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 194.4,
+              "end_seconds": 196.8,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 196.8,
+              "end_seconds": 200.4,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 200.4,
+              "end_seconds": 205.2,
+              "drum_note_onsets": 48
+            },
+            {
+              "start_seconds": 205.2,
+              "end_seconds": 208.8,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 216.0,
+              "end_seconds": 219.6,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 219.6,
+              "end_seconds": 224.4,
+              "drum_note_onsets": 48
+            },
+            {
+              "start_seconds": 224.4,
+              "end_seconds": 228.0,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 232.8,
+              "end_seconds": 235.2,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 235.2,
+              "end_seconds": 238.8,
+              "drum_note_onsets": 38
+            },
+            {
+              "start_seconds": 238.8,
+              "end_seconds": 243.6,
+              "drum_note_onsets": 49
+            },
+            {
+              "start_seconds": 243.6,
+              "end_seconds": 247.2,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 254.4,
+              "end_seconds": 258.0,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 258.0,
+              "end_seconds": 262.8,
+              "drum_note_onsets": 52
+            },
+            {
+              "start_seconds": 262.8,
+              "end_seconds": 266.4,
+              "drum_note_onsets": 38
+            },
+            {
+              "start_seconds": 271.2,
+              "end_seconds": 273.6,
+              "drum_note_onsets": 12
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "19",
+      "basename": "19-if_i_were_a_bell",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/19-if_i_were_a_bell/preferred/annotations/bars.csv",
+          "sha256": "985dc7db4e32f027d6a0ea49f5356936a4c1166f9889fbf95543303d75d8b397",
+          "crc32": "d34ed177",
+          "bytes": 5018
+        },
+        "chords": {
+          "member": "async/songs/19-if_i_were_a_bell/preferred/annotations/chords.csv",
+          "sha256": "82063e3dc12302e5c9e7b177c3b439d664175885969806e763ac2fc0ebfd1b9f",
+          "crc32": "2417886d",
+          "bytes": 47095
+        },
+        "drums": {
+          "member": "async/songs/19-if_i_were_a_bell/preferred/drums.mid",
+          "sha256": "252420673b7da5a7e84084bbf16c5df6c8dbd9ef6f8a2ed727e5eee57fd4ed3d",
+          "crc32": "17c85ee1",
+          "bytes": 30692
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 2176,
+      "drum_channels": {
+        "9": 2176
+      },
+      "note_number_histogram": {
+        "36": 446,
+        "38": 570,
+        "45": 1026,
+        "44": 8,
+        "48": 54,
+        "41": 25,
+        "51": 12,
+        "40": 17,
+        "26": 8,
+        "55": 9,
+        "59": 1
+      },
+      "excluded_terminal_zero_duration_rows": 0,
+      "bar_grid_max_error_seconds": 5.684341886080802e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 50,
+          "windows": [
+            {
+              "start_seconds": 12.632,
+              "end_seconds": 16.421,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 20.211,
+              "end_seconds": 22.1055,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 32.842,
+              "end_seconds": 36.632,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 40.421,
+              "end_seconds": 42.3155,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 46.737,
+              "end_seconds": 50.526,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 53.053,
+              "end_seconds": 56.842,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 60.632,
+              "end_seconds": 62.5265,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 73.263,
+              "end_seconds": 77.053,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 80.842,
+              "end_seconds": 82.7365,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 87.158,
+              "end_seconds": 90.947,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 93.474,
+              "end_seconds": 97.263,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 101.053,
+              "end_seconds": 102.9475,
+              "drum_note_onsets": 13
+            },
+            {
+              "start_seconds": 113.684,
+              "end_seconds": 117.474,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 121.263,
+              "end_seconds": 123.1575,
+              "drum_note_onsets": 14
+            },
+            {
+              "start_seconds": 127.579,
+              "end_seconds": 131.368,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 133.895,
+              "end_seconds": 137.684,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 141.474,
+              "end_seconds": 143.3685,
+              "drum_note_onsets": 14
+            },
+            {
+              "start_seconds": 154.105,
+              "end_seconds": 157.895,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 161.684,
+              "end_seconds": 163.579,
+              "drum_note_onsets": 14
+            },
+            {
+              "start_seconds": 168.0,
+              "end_seconds": 171.789,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 174.316,
+              "end_seconds": 178.105,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 181.895,
+              "end_seconds": 183.7895,
+              "drum_note_onsets": 13
+            },
+            {
+              "start_seconds": 194.526,
+              "end_seconds": 198.316,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 202.105,
+              "end_seconds": 204.0,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 208.421,
+              "end_seconds": 212.211,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 214.737,
+              "end_seconds": 218.526,
+              "drum_note_onsets": 34
+            },
+            {
+              "start_seconds": 222.316,
+              "end_seconds": 224.2105,
+              "drum_note_onsets": 13
+            },
+            {
+              "start_seconds": 234.947,
+              "end_seconds": 238.737,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 242.526,
+              "end_seconds": 244.421,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 248.842,
+              "end_seconds": 252.632,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 255.158,
+              "end_seconds": 258.947,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 262.737,
+              "end_seconds": 264.6315,
+              "drum_note_onsets": 12
+            },
+            {
+              "start_seconds": 275.368,
+              "end_seconds": 279.158,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 282.947,
+              "end_seconds": 284.8425,
+              "drum_note_onsets": 14
+            },
+            {
+              "start_seconds": 289.263,
+              "end_seconds": 293.053,
+              "drum_note_onsets": 21
+            }
+          ]
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 50,
+          "windows": [
+            {
+              "start_seconds": 12.632,
+              "end_seconds": 16.421,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 20.211,
+              "end_seconds": 22.737,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 32.842,
+              "end_seconds": 36.632,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 40.421,
+              "end_seconds": 42.947,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 46.737,
+              "end_seconds": 50.526,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 50.526,
+              "end_seconds": 53.053,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 53.053,
+              "end_seconds": 56.842,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 60.632,
+              "end_seconds": 63.158,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 73.263,
+              "end_seconds": 77.053,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 80.842,
+              "end_seconds": 83.368,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 87.158,
+              "end_seconds": 90.947,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 90.947,
+              "end_seconds": 93.474,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 93.474,
+              "end_seconds": 97.263,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 101.053,
+              "end_seconds": 103.579,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 113.684,
+              "end_seconds": 117.474,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 121.263,
+              "end_seconds": 123.789,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 127.579,
+              "end_seconds": 131.368,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 131.368,
+              "end_seconds": 133.895,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 133.895,
+              "end_seconds": 137.684,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 141.474,
+              "end_seconds": 144.0,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 154.105,
+              "end_seconds": 157.895,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 161.684,
+              "end_seconds": 164.211,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 168.0,
+              "end_seconds": 171.789,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 171.789,
+              "end_seconds": 174.316,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 174.316,
+              "end_seconds": 178.105,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 181.895,
+              "end_seconds": 184.421,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 194.526,
+              "end_seconds": 198.316,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 202.105,
+              "end_seconds": 204.632,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 208.421,
+              "end_seconds": 212.211,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 212.211,
+              "end_seconds": 214.737,
+              "drum_note_onsets": 13
+            },
+            {
+              "start_seconds": 214.737,
+              "end_seconds": 218.526,
+              "drum_note_onsets": 34
+            },
+            {
+              "start_seconds": 222.316,
+              "end_seconds": 224.842,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 234.947,
+              "end_seconds": 238.737,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 242.526,
+              "end_seconds": 245.053,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 248.842,
+              "end_seconds": 252.632,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 252.632,
+              "end_seconds": 255.158,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 255.158,
+              "end_seconds": 258.947,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 262.737,
+              "end_seconds": 265.263,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 275.368,
+              "end_seconds": 279.158,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 282.947,
+              "end_seconds": 285.474,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 289.263,
+              "end_seconds": 293.053,
+              "drum_note_onsets": 21
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "21",
+      "basename": "21-isnt_it_romantic",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/21-isnt_it_romantic/preferred/annotations/bars.csv",
+          "sha256": "5fdc7a5298680135d82da3bf88b22cc09a170db17e5b1aa486c9ea46acd73978",
+          "crc32": "d7947327",
+          "bytes": 4788
+        },
+        "chords": {
+          "member": "async/songs/21-isnt_it_romantic/preferred/annotations/chords.csv",
+          "sha256": "456d6b82e5d9c13ec0a0c758536b23d94a9321fa673b6106faf4c13387fc3846",
+          "crc32": "8d8d74aa",
+          "bytes": 64645
+        },
+        "drums": {
+          "member": "async/songs/21-isnt_it_romantic/preferred/drums.mid",
+          "sha256": "4e4a7932a555fc0330d4992c179d5a5cac2785b11766aff2acceb7e9a6536945",
+          "crc32": "8a145514",
+          "bytes": 48373
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 3358,
+      "drum_channels": {
+        "9": 3358
+      },
+      "note_number_histogram": {
+        "38": 1099,
+        "36": 887,
+        "45": 957,
+        "44": 220,
+        "26": 18,
+        "48": 65,
+        "41": 56,
+        "51": 13,
+        "55": 15,
+        "40": 20,
+        "46": 4,
+        "59": 3,
+        "49": 1
+      },
+      "excluded_terminal_zero_duration_rows": 1,
+      "bar_grid_max_error_seconds": 5.684341886080802e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 94,
+          "windows": [
+            {
+              "start_seconds": 10.286,
+              "end_seconds": 12.857,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 17.143,
+              "end_seconds": 20.571,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 20.571,
+              "end_seconds": 24.0,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 27.429,
+              "end_seconds": 30.0,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 37.714,
+              "end_seconds": 40.286,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 44.571,
+              "end_seconds": 48.0,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 65.143,
+              "end_seconds": 67.714,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 72.0,
+              "end_seconds": 75.429,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 75.429,
+              "end_seconds": 78.857,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 82.286,
+              "end_seconds": 84.857,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 92.571,
+              "end_seconds": 95.143,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 99.429,
+              "end_seconds": 102.857,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 120.0,
+              "end_seconds": 122.5715,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 126.857,
+              "end_seconds": 130.286,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 130.286,
+              "end_seconds": 133.714,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 137.143,
+              "end_seconds": 139.714,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 147.429,
+              "end_seconds": 150.0,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 154.286,
+              "end_seconds": 157.714,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 174.857,
+              "end_seconds": 177.4285,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 181.714,
+              "end_seconds": 185.143,
+              "drum_note_onsets": 58
+            },
+            {
+              "start_seconds": 185.143,
+              "end_seconds": 188.571,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 192.0,
+              "end_seconds": 194.5715,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 202.286,
+              "end_seconds": 204.857,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 209.143,
+              "end_seconds": 212.571,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 229.714,
+              "end_seconds": 232.286,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 236.571,
+              "end_seconds": 240.0,
+              "drum_note_onsets": 34
+            },
+            {
+              "start_seconds": 240.0,
+              "end_seconds": 243.429,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 246.857,
+              "end_seconds": 249.4285,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 257.143,
+              "end_seconds": 259.714,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 264.0,
+              "end_seconds": 267.429,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 284.571,
+              "end_seconds": 287.143,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 291.429,
+              "end_seconds": 294.857,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 294.857,
+              "end_seconds": 298.286,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 301.714,
+              "end_seconds": 304.286,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 312.0,
+              "end_seconds": 314.5715,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 318.857,
+              "end_seconds": 322.286,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 339.429,
+              "end_seconds": 342.0,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 346.286,
+              "end_seconds": 349.714,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 349.714,
+              "end_seconds": 353.143,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 356.571,
+              "end_seconds": 359.143,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 366.857,
+              "end_seconds": 369.4285,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 373.714,
+              "end_seconds": 377.143,
+              "drum_note_onsets": 29
+            }
+          ]
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 36,
+          "windows": [
+            {
+              "start_seconds": 3.429,
+              "end_seconds": 6.0,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 10.286,
+              "end_seconds": 12.857,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 13.714,
+              "end_seconds": 16.286,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 17.143,
+              "end_seconds": 20.571,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 20.571,
+              "end_seconds": 24.0,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 27.429,
+              "end_seconds": 30.0,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 37.714,
+              "end_seconds": 40.286,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 41.143,
+              "end_seconds": 43.714,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 44.571,
+              "end_seconds": 48.0,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 58.286,
+              "end_seconds": 60.857,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 65.143,
+              "end_seconds": 67.714,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 68.571,
+              "end_seconds": 71.143,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 72.0,
+              "end_seconds": 75.429,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 75.429,
+              "end_seconds": 78.857,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 82.286,
+              "end_seconds": 84.857,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 92.571,
+              "end_seconds": 95.143,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 96.0,
+              "end_seconds": 98.5715,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 99.429,
+              "end_seconds": 102.857,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 113.143,
+              "end_seconds": 115.714,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 120.0,
+              "end_seconds": 122.5715,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 123.429,
+              "end_seconds": 126.0,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 126.857,
+              "end_seconds": 130.286,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 130.286,
+              "end_seconds": 133.714,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 137.143,
+              "end_seconds": 139.714,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 147.429,
+              "end_seconds": 150.0,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 150.857,
+              "end_seconds": 153.4285,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 154.286,
+              "end_seconds": 157.714,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 168.0,
+              "end_seconds": 170.5715,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 174.857,
+              "end_seconds": 177.4285,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 178.286,
+              "end_seconds": 180.857,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 181.714,
+              "end_seconds": 185.143,
+              "drum_note_onsets": 58
+            },
+            {
+              "start_seconds": 185.143,
+              "end_seconds": 188.571,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 192.0,
+              "end_seconds": 194.5715,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 202.286,
+              "end_seconds": 204.857,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 205.714,
+              "end_seconds": 208.286,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 209.143,
+              "end_seconds": 212.571,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 222.857,
+              "end_seconds": 225.4285,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 229.714,
+              "end_seconds": 232.286,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 233.143,
+              "end_seconds": 235.714,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 236.571,
+              "end_seconds": 240.0,
+              "drum_note_onsets": 34
+            },
+            {
+              "start_seconds": 240.0,
+              "end_seconds": 243.429,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 246.857,
+              "end_seconds": 249.4285,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 257.143,
+              "end_seconds": 259.714,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 260.571,
+              "end_seconds": 263.143,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 264.0,
+              "end_seconds": 267.429,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 277.714,
+              "end_seconds": 280.286,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 284.571,
+              "end_seconds": 287.143,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 288.0,
+              "end_seconds": 290.5715,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 291.429,
+              "end_seconds": 294.857,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 294.857,
+              "end_seconds": 298.286,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 301.714,
+              "end_seconds": 304.286,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 312.0,
+              "end_seconds": 314.5715,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 315.429,
+              "end_seconds": 318.0,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 318.857,
+              "end_seconds": 322.286,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 332.571,
+              "end_seconds": 335.143,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 339.429,
+              "end_seconds": 342.0,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 342.857,
+              "end_seconds": 345.4285,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 346.286,
+              "end_seconds": 349.714,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 349.714,
+              "end_seconds": 353.143,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 356.571,
+              "end_seconds": 359.143,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 366.857,
+              "end_seconds": 369.4285,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 370.286,
+              "end_seconds": 372.857,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 373.714,
+              "end_seconds": 377.143,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 387.429,
+              "end_seconds": 390.0,
+              "drum_note_onsets": 6
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "23",
+      "basename": "23-like_someone_in_love",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/23-like_someone_in_love/preferred/annotations/bars.csv",
+          "sha256": "c97f0a6adf11e18c67fbe6fab8a62d9fa1743ccc37b9fb52b00fe773c6aa3110",
+          "crc32": "d40a27e3",
+          "bytes": 4975
+        },
+        "chords": {
+          "member": "async/songs/23-like_someone_in_love/preferred/annotations/chords.csv",
+          "sha256": "101606436d67e45c04e2a074441e33809b15803ba3f2f7a367153e9f22f30c75",
+          "crc32": "f756afd1",
+          "bytes": 48777
+        },
+        "drums": {
+          "member": "async/songs/23-like_someone_in_love/preferred/drums.mid",
+          "sha256": "090a135e4b5d634b4fbb2095013014c53554150ef749762120570a4c4b04b0c9",
+          "crc32": "d62e17e1",
+          "bytes": 40061
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 2973,
+      "drum_channels": {
+        "9": 2973
+      },
+      "note_number_histogram": {
+        "45": 871,
+        "36": 534,
+        "38": 1121,
+        "48": 70,
+        "51": 11,
+        "44": 211,
+        "41": 30,
+        "55": 21,
+        "26": 25,
+        "49": 3,
+        "40": 53,
+        "46": 16,
+        "59": 3,
+        "22": 4
+      },
+      "excluded_terminal_zero_duration_rows": 0,
+      "bar_grid_max_error_seconds": 5.684341886080802e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 38,
+          "windows": [
+            {
+              "start_seconds": 4.174,
+              "end_seconds": 8.348,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 16.696,
+              "end_seconds": 20.87,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 27.13,
+              "end_seconds": 33.391,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 37.565,
+              "end_seconds": 43.826,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 60.522,
+              "end_seconds": 66.783,
+              "drum_note_onsets": 38
+            },
+            {
+              "start_seconds": 70.957,
+              "end_seconds": 75.13,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 83.478,
+              "end_seconds": 87.652,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 93.913,
+              "end_seconds": 100.174,
+              "drum_note_onsets": 40
+            },
+            {
+              "start_seconds": 104.348,
+              "end_seconds": 110.609,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 127.304,
+              "end_seconds": 133.565,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 137.739,
+              "end_seconds": 141.913,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 150.261,
+              "end_seconds": 154.435,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 160.696,
+              "end_seconds": 166.957,
+              "drum_note_onsets": 46
+            },
+            {
+              "start_seconds": 171.13,
+              "end_seconds": 177.391,
+              "drum_note_onsets": 49
+            },
+            {
+              "start_seconds": 194.087,
+              "end_seconds": 200.348,
+              "drum_note_onsets": 38
+            },
+            {
+              "start_seconds": 204.522,
+              "end_seconds": 208.696,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 217.043,
+              "end_seconds": 221.217,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 227.478,
+              "end_seconds": 233.739,
+              "drum_note_onsets": 49
+            },
+            {
+              "start_seconds": 237.913,
+              "end_seconds": 244.174,
+              "drum_note_onsets": 44
+            },
+            {
+              "start_seconds": 260.87,
+              "end_seconds": 267.13,
+              "drum_note_onsets": 43
+            },
+            {
+              "start_seconds": 271.304,
+              "end_seconds": 275.478,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 283.826,
+              "end_seconds": 288.0,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 294.261,
+              "end_seconds": 300.522,
+              "drum_note_onsets": 45
+            },
+            {
+              "start_seconds": 304.696,
+              "end_seconds": 310.957,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 327.652,
+              "end_seconds": 333.913,
+              "drum_note_onsets": 41
+            },
+            {
+              "start_seconds": 338.087,
+              "end_seconds": 342.261,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 350.609,
+              "end_seconds": 354.783,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 361.043,
+              "end_seconds": 367.304,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 371.478,
+              "end_seconds": 377.739,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 394.435,
+              "end_seconds": 400.696,
+              "drum_note_onsets": 46
+            },
+            {
+              "start_seconds": 404.87,
+              "end_seconds": 409.043,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 417.391,
+              "end_seconds": 421.565,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 427.826,
+              "end_seconds": 434.087,
+              "drum_note_onsets": 34
+            },
+            {
+              "start_seconds": 438.261,
+              "end_seconds": 444.522,
+              "drum_note_onsets": 39
+            },
+            {
+              "start_seconds": 461.217,
+              "end_seconds": 467.478,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 471.652,
+              "end_seconds": 475.826,
+              "drum_note_onsets": 29
+            }
+          ]
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 15,
+          "windows": [
+            {
+              "start_seconds": 4.174,
+              "end_seconds": 8.348,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 12.522,
+              "end_seconds": 16.696,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 16.696,
+              "end_seconds": 20.87,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 20.87,
+              "end_seconds": 25.043,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 27.13,
+              "end_seconds": 33.391,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 33.391,
+              "end_seconds": 37.565,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 37.565,
+              "end_seconds": 43.826,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 54.261,
+              "end_seconds": 58.435,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 60.522,
+              "end_seconds": 66.783,
+              "drum_note_onsets": 38
+            },
+            {
+              "start_seconds": 66.783,
+              "end_seconds": 70.957,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 70.957,
+              "end_seconds": 75.13,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 79.304,
+              "end_seconds": 83.478,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 83.478,
+              "end_seconds": 87.652,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 87.652,
+              "end_seconds": 91.826,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 93.913,
+              "end_seconds": 100.174,
+              "drum_note_onsets": 40
+            },
+            {
+              "start_seconds": 100.174,
+              "end_seconds": 104.348,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 104.348,
+              "end_seconds": 110.609,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 121.043,
+              "end_seconds": 125.217,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 127.304,
+              "end_seconds": 133.565,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 133.565,
+              "end_seconds": 137.739,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 137.739,
+              "end_seconds": 141.913,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 146.087,
+              "end_seconds": 150.261,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 150.261,
+              "end_seconds": 154.435,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 154.435,
+              "end_seconds": 158.609,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 160.696,
+              "end_seconds": 166.957,
+              "drum_note_onsets": 46
+            },
+            {
+              "start_seconds": 166.957,
+              "end_seconds": 171.13,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 171.13,
+              "end_seconds": 177.391,
+              "drum_note_onsets": 49
+            },
+            {
+              "start_seconds": 187.826,
+              "end_seconds": 192.0,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 194.087,
+              "end_seconds": 200.348,
+              "drum_note_onsets": 38
+            },
+            {
+              "start_seconds": 200.348,
+              "end_seconds": 204.522,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 204.522,
+              "end_seconds": 208.696,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 212.87,
+              "end_seconds": 217.043,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 217.043,
+              "end_seconds": 221.217,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 221.217,
+              "end_seconds": 225.391,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 227.478,
+              "end_seconds": 233.739,
+              "drum_note_onsets": 49
+            },
+            {
+              "start_seconds": 233.739,
+              "end_seconds": 237.913,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 237.913,
+              "end_seconds": 244.174,
+              "drum_note_onsets": 44
+            },
+            {
+              "start_seconds": 254.609,
+              "end_seconds": 258.783,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 260.87,
+              "end_seconds": 267.13,
+              "drum_note_onsets": 43
+            },
+            {
+              "start_seconds": 267.13,
+              "end_seconds": 271.304,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 271.304,
+              "end_seconds": 275.478,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 279.652,
+              "end_seconds": 283.826,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 283.826,
+              "end_seconds": 288.0,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 288.0,
+              "end_seconds": 292.174,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 294.261,
+              "end_seconds": 300.522,
+              "drum_note_onsets": 45
+            },
+            {
+              "start_seconds": 300.522,
+              "end_seconds": 304.696,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 304.696,
+              "end_seconds": 310.957,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 321.391,
+              "end_seconds": 325.565,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 327.652,
+              "end_seconds": 333.913,
+              "drum_note_onsets": 41
+            },
+            {
+              "start_seconds": 333.913,
+              "end_seconds": 338.087,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 338.087,
+              "end_seconds": 342.261,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 346.435,
+              "end_seconds": 350.609,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 350.609,
+              "end_seconds": 354.783,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 354.783,
+              "end_seconds": 358.957,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 361.043,
+              "end_seconds": 367.304,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 367.304,
+              "end_seconds": 371.478,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 371.478,
+              "end_seconds": 377.739,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 388.174,
+              "end_seconds": 392.348,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 394.435,
+              "end_seconds": 400.696,
+              "drum_note_onsets": 46
+            },
+            {
+              "start_seconds": 400.696,
+              "end_seconds": 404.87,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 404.87,
+              "end_seconds": 409.043,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 413.217,
+              "end_seconds": 417.391,
+              "drum_note_onsets": 11
+            },
+            {
+              "start_seconds": 417.391,
+              "end_seconds": 421.565,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 421.565,
+              "end_seconds": 425.739,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 427.826,
+              "end_seconds": 434.087,
+              "drum_note_onsets": 34
+            },
+            {
+              "start_seconds": 434.087,
+              "end_seconds": 438.261,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 438.261,
+              "end_seconds": 444.522,
+              "drum_note_onsets": 39
+            },
+            {
+              "start_seconds": 454.957,
+              "end_seconds": 459.13,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 461.217,
+              "end_seconds": 467.478,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 467.478,
+              "end_seconds": 471.652,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 471.652,
+              "end_seconds": 475.826,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 480.0,
+              "end_seconds": 486.261,
+              "drum_note_onsets": 20
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "24",
+      "basename": "24-long_ago",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/24-long_ago/preferred/annotations/bars.csv",
+          "sha256": "1792f745937d2871489e8fe5b87f78a29dbdd18e47630f5b947547140c25b409",
+          "crc32": "3ccb2799",
+          "bytes": 4951
+        },
+        "chords": {
+          "member": "async/songs/24-long_ago/preferred/annotations/chords.csv",
+          "sha256": "92efa607fcb6c8d70a05185570299097dc34fee633be2b4c534dca4b6a6bff48",
+          "crc32": "251ea4d9",
+          "bytes": 52414
+        },
+        "drums": {
+          "member": "async/songs/24-long_ago/preferred/drums.mid",
+          "sha256": "0dd96708ae3874dab1e6ab1aec85dabe598eae910e89ff3fc7e86103dc4acfde",
+          "crc32": "672623c4",
+          "bytes": 41392
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 2546,
+      "drum_channels": {
+        "9": 2546
+      },
+      "note_number_histogram": {
+        "45": 1027,
+        "38": 694,
+        "36": 457,
+        "48": 46,
+        "44": 219,
+        "41": 20,
+        "55": 14,
+        "40": 61,
+        "51": 2,
+        "26": 4,
+        "59": 2
+      },
+      "excluded_terminal_zero_duration_rows": 0,
+      "bar_grid_max_error_seconds": 5.684341886080802e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 67,
+          "windows": [
+            {
+              "start_seconds": 1.412,
+              "end_seconds": 6.353,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 14.118,
+              "end_seconds": 16.941,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 25.412,
+              "end_seconds": 28.235,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 36.706,
+              "end_seconds": 39.529,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 46.588,
+              "end_seconds": 51.5295,
+              "drum_note_onsets": 42
+            },
+            {
+              "start_seconds": 59.294,
+              "end_seconds": 62.118,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 70.588,
+              "end_seconds": 73.412,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 81.882,
+              "end_seconds": 84.706,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 91.765,
+              "end_seconds": 96.706,
+              "drum_note_onsets": 42
+            },
+            {
+              "start_seconds": 104.471,
+              "end_seconds": 107.294,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 115.765,
+              "end_seconds": 118.588,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 127.059,
+              "end_seconds": 129.882,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 136.941,
+              "end_seconds": 141.882,
+              "drum_note_onsets": 39
+            },
+            {
+              "start_seconds": 149.647,
+              "end_seconds": 152.471,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 160.941,
+              "end_seconds": 163.765,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 172.235,
+              "end_seconds": 175.059,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 182.118,
+              "end_seconds": 187.059,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 194.824,
+              "end_seconds": 197.647,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 206.118,
+              "end_seconds": 208.941,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 217.412,
+              "end_seconds": 220.235,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 227.294,
+              "end_seconds": 232.235,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 240.0,
+              "end_seconds": 242.824,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 251.294,
+              "end_seconds": 254.118,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 262.588,
+              "end_seconds": 265.412,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 272.471,
+              "end_seconds": 277.412,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 285.176,
+              "end_seconds": 288.0,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 296.471,
+              "end_seconds": 299.294,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 307.765,
+              "end_seconds": 310.588,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 317.647,
+              "end_seconds": 322.588,
+              "drum_note_onsets": 31
+            }
+          ]
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 8,
+          "windows": [
+            {
+              "start_seconds": 1.412,
+              "end_seconds": 6.353,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 8.471,
+              "end_seconds": 11.294,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 11.294,
+              "end_seconds": 13.412,
+              "drum_note_onsets": 14
+            },
+            {
+              "start_seconds": 14.118,
+              "end_seconds": 16.941,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 16.941,
+              "end_seconds": 19.765,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 25.412,
+              "end_seconds": 28.235,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 32.471,
+              "end_seconds": 36.0,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 36.706,
+              "end_seconds": 39.529,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 39.529,
+              "end_seconds": 42.353,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 46.588,
+              "end_seconds": 51.5295,
+              "drum_note_onsets": 42
+            },
+            {
+              "start_seconds": 53.647,
+              "end_seconds": 56.471,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 56.471,
+              "end_seconds": 58.588,
+              "drum_note_onsets": 13
+            },
+            {
+              "start_seconds": 59.294,
+              "end_seconds": 62.118,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 62.118,
+              "end_seconds": 64.941,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 70.588,
+              "end_seconds": 73.412,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 77.647,
+              "end_seconds": 81.1765,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 81.882,
+              "end_seconds": 84.706,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 84.706,
+              "end_seconds": 87.529,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 91.765,
+              "end_seconds": 96.706,
+              "drum_note_onsets": 42
+            },
+            {
+              "start_seconds": 98.824,
+              "end_seconds": 101.647,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 101.647,
+              "end_seconds": 103.765,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 104.471,
+              "end_seconds": 107.294,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 107.294,
+              "end_seconds": 110.118,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 115.765,
+              "end_seconds": 118.588,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 122.824,
+              "end_seconds": 126.353,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 127.059,
+              "end_seconds": 129.882,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 129.882,
+              "end_seconds": 132.706,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 136.941,
+              "end_seconds": 141.882,
+              "drum_note_onsets": 39
+            },
+            {
+              "start_seconds": 144.0,
+              "end_seconds": 146.824,
+              "drum_note_onsets": 7
+            },
+            {
+              "start_seconds": 146.824,
+              "end_seconds": 148.941,
+              "drum_note_onsets": 13
+            },
+            {
+              "start_seconds": 149.647,
+              "end_seconds": 152.471,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 152.471,
+              "end_seconds": 155.294,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 160.941,
+              "end_seconds": 163.765,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 168.0,
+              "end_seconds": 171.5295,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 172.235,
+              "end_seconds": 175.059,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 175.059,
+              "end_seconds": 177.882,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 182.118,
+              "end_seconds": 187.059,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 189.176,
+              "end_seconds": 192.0,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 192.0,
+              "end_seconds": 194.118,
+              "drum_note_onsets": 10
+            },
+            {
+              "start_seconds": 194.824,
+              "end_seconds": 197.647,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 197.647,
+              "end_seconds": 200.471,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 206.118,
+              "end_seconds": 208.941,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 213.176,
+              "end_seconds": 216.706,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 217.412,
+              "end_seconds": 220.235,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 220.235,
+              "end_seconds": 223.059,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 227.294,
+              "end_seconds": 232.235,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 234.353,
+              "end_seconds": 237.176,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 237.176,
+              "end_seconds": 239.294,
+              "drum_note_onsets": 13
+            },
+            {
+              "start_seconds": 240.0,
+              "end_seconds": 242.824,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 242.824,
+              "end_seconds": 245.647,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 251.294,
+              "end_seconds": 254.118,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 258.353,
+              "end_seconds": 261.882,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 262.588,
+              "end_seconds": 265.412,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 265.412,
+              "end_seconds": 268.235,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 272.471,
+              "end_seconds": 277.412,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 279.529,
+              "end_seconds": 282.353,
+              "drum_note_onsets": 14
+            },
+            {
+              "start_seconds": 282.353,
+              "end_seconds": 284.4705,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 285.176,
+              "end_seconds": 288.0,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 288.0,
+              "end_seconds": 290.824,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 296.471,
+              "end_seconds": 299.294,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 303.529,
+              "end_seconds": 307.059,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 307.765,
+              "end_seconds": 310.588,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 310.588,
+              "end_seconds": 313.412,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 317.647,
+              "end_seconds": 322.588,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 324.706,
+              "end_seconds": 328.941,
+              "drum_note_onsets": 11
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "25",
+      "basename": "25-lullaby_of_birdland",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/25-lullaby_of_birdland/preferred/annotations/bars.csv",
+          "sha256": "30228ee946b581d604e0b7cd659ad64a906a5a4518bf48c094dc3d8534446774",
+          "crc32": "f6724149",
+          "bytes": 4828
+        },
+        "chords": {
+          "member": "async/songs/25-lullaby_of_birdland/preferred/annotations/chords.csv",
+          "sha256": "73d1768d38503678490fb5b714854cf785a06aa40429906b64a41c57f609e084",
+          "crc32": "302cf291",
+          "bytes": 58646
+        },
+        "drums": {
+          "member": "async/songs/25-lullaby_of_birdland/preferred/drums.mid",
+          "sha256": "306ed38edfdf4e30cd57caa609313bb66b48af59912ff12b5e3b83c2dabb1a56",
+          "crc32": "d1ba5796",
+          "bytes": 44202
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 2799,
+      "drum_channels": {
+        "9": 2799
+      },
+      "note_number_histogram": {
+        "38": 686,
+        "45": 997,
+        "44": 472,
+        "36": 518,
+        "48": 32,
+        "41": 27,
+        "40": 33,
+        "51": 16,
+        "55": 6,
+        "26": 11,
+        "59": 1
+      },
+      "excluded_terminal_zero_duration_rows": 1,
+      "bar_grid_max_error_seconds": 5.684341886080802e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 78,
+          "windows": [
+            {
+              "start_seconds": 2.909,
+              "end_seconds": 5.091,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 11.636,
+              "end_seconds": 13.818,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 14.545,
+              "end_seconds": 17.455,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 23.273,
+              "end_seconds": 25.4545,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 26.182,
+              "end_seconds": 28.3635,
+              "drum_note_onsets": 14
+            },
+            {
+              "start_seconds": 32.0,
+              "end_seconds": 36.364,
+              "drum_note_onsets": 40
+            },
+            {
+              "start_seconds": 37.818,
+              "end_seconds": 41.4545,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 46.545,
+              "end_seconds": 48.7275,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 49.455,
+              "end_seconds": 51.6365,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 58.182,
+              "end_seconds": 60.3635,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 61.091,
+              "end_seconds": 64.0,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 69.818,
+              "end_seconds": 72.0,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 72.727,
+              "end_seconds": 74.909,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 78.545,
+              "end_seconds": 82.909,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 84.364,
+              "end_seconds": 88.0,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 93.091,
+              "end_seconds": 95.2725,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 96.0,
+              "end_seconds": 98.182,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 104.727,
+              "end_seconds": 106.909,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 107.636,
+              "end_seconds": 110.545,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 116.364,
+              "end_seconds": 118.5455,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 119.273,
+              "end_seconds": 121.4545,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 125.091,
+              "end_seconds": 129.455,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 130.909,
+              "end_seconds": 134.5455,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 139.636,
+              "end_seconds": 141.818,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 142.545,
+              "end_seconds": 144.7275,
+              "drum_note_onsets": 13
+            },
+            {
+              "start_seconds": 151.273,
+              "end_seconds": 153.4545,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 154.182,
+              "end_seconds": 157.091,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 162.909,
+              "end_seconds": 165.091,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 165.818,
+              "end_seconds": 168.0,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 171.636,
+              "end_seconds": 176.0,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 177.455,
+              "end_seconds": 181.091,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 186.182,
+              "end_seconds": 188.3635,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 189.091,
+              "end_seconds": 191.2725,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 197.818,
+              "end_seconds": 200.0,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 200.727,
+              "end_seconds": 203.636,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 209.455,
+              "end_seconds": 211.6365,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 212.364,
+              "end_seconds": 214.5455,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 218.182,
+              "end_seconds": 222.545,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 224.0,
+              "end_seconds": 227.6365,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 232.727,
+              "end_seconds": 234.909,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 235.636,
+              "end_seconds": 237.818,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 244.364,
+              "end_seconds": 246.5455,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 247.273,
+              "end_seconds": 250.182,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 256.0,
+              "end_seconds": 258.182,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 258.909,
+              "end_seconds": 261.091,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 264.727,
+              "end_seconds": 269.091,
+              "drum_note_onsets": 51
+            },
+            {
+              "start_seconds": 270.545,
+              "end_seconds": 274.182,
+              "drum_note_onsets": 39
+            },
+            {
+              "start_seconds": 279.273,
+              "end_seconds": 281.4545,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 282.182,
+              "end_seconds": 284.3635,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 290.909,
+              "end_seconds": 293.091,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 293.818,
+              "end_seconds": 296.727,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 302.545,
+              "end_seconds": 304.7275,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 305.455,
+              "end_seconds": 307.6365,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 311.273,
+              "end_seconds": 315.636,
+              "drum_note_onsets": 44
+            },
+            {
+              "start_seconds": 317.091,
+              "end_seconds": 320.7275,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 325.818,
+              "end_seconds": 328.0,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 328.727,
+              "end_seconds": 330.909,
+              "drum_note_onsets": 15
+            }
+          ]
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 71,
+          "windows": [
+            {
+              "start_seconds": 2.909,
+              "end_seconds": 5.091,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 11.636,
+              "end_seconds": 13.818,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 14.545,
+              "end_seconds": 17.455,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 23.273,
+              "end_seconds": 25.4545,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 26.182,
+              "end_seconds": 28.3635,
+              "drum_note_onsets": 14
+            },
+            {
+              "start_seconds": 32.0,
+              "end_seconds": 36.364,
+              "drum_note_onsets": 40
+            },
+            {
+              "start_seconds": 37.818,
+              "end_seconds": 41.4545,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 46.545,
+              "end_seconds": 48.7275,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 49.455,
+              "end_seconds": 51.6365,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 58.182,
+              "end_seconds": 60.3635,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 61.091,
+              "end_seconds": 64.0,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 69.818,
+              "end_seconds": 72.0,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 72.727,
+              "end_seconds": 74.909,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 78.545,
+              "end_seconds": 82.909,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 84.364,
+              "end_seconds": 88.0,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 93.091,
+              "end_seconds": 95.2725,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 96.0,
+              "end_seconds": 98.182,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 104.727,
+              "end_seconds": 106.909,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 107.636,
+              "end_seconds": 110.545,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 116.364,
+              "end_seconds": 118.5455,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 119.273,
+              "end_seconds": 121.4545,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 125.091,
+              "end_seconds": 129.455,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 130.909,
+              "end_seconds": 134.5455,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 139.636,
+              "end_seconds": 141.818,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 142.545,
+              "end_seconds": 144.7275,
+              "drum_note_onsets": 13
+            },
+            {
+              "start_seconds": 151.273,
+              "end_seconds": 153.4545,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 154.182,
+              "end_seconds": 157.091,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 162.909,
+              "end_seconds": 165.091,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 165.818,
+              "end_seconds": 168.0,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 171.636,
+              "end_seconds": 176.0,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 177.455,
+              "end_seconds": 181.091,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 186.182,
+              "end_seconds": 188.3635,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 189.091,
+              "end_seconds": 191.2725,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 197.818,
+              "end_seconds": 200.0,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 200.727,
+              "end_seconds": 203.636,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 209.455,
+              "end_seconds": 211.6365,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 212.364,
+              "end_seconds": 214.5455,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 218.182,
+              "end_seconds": 222.545,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 224.0,
+              "end_seconds": 227.6365,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 232.727,
+              "end_seconds": 234.909,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 235.636,
+              "end_seconds": 237.818,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 244.364,
+              "end_seconds": 246.5455,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 247.273,
+              "end_seconds": 250.182,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 256.0,
+              "end_seconds": 258.182,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 258.909,
+              "end_seconds": 261.091,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 264.727,
+              "end_seconds": 269.091,
+              "drum_note_onsets": 51
+            },
+            {
+              "start_seconds": 270.545,
+              "end_seconds": 274.182,
+              "drum_note_onsets": 39
+            },
+            {
+              "start_seconds": 279.273,
+              "end_seconds": 281.4545,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 282.182,
+              "end_seconds": 284.3635,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 290.909,
+              "end_seconds": 293.091,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 293.818,
+              "end_seconds": 296.727,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 302.545,
+              "end_seconds": 304.7275,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 305.455,
+              "end_seconds": 307.6365,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 311.273,
+              "end_seconds": 315.636,
+              "drum_note_onsets": 44
+            },
+            {
+              "start_seconds": 317.091,
+              "end_seconds": 320.7275,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 325.818,
+              "end_seconds": 328.0,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 328.727,
+              "end_seconds": 330.909,
+              "drum_note_onsets": 15
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "33",
+      "basename": "33-peris_scope",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/33-peris_scope/preferred/annotations/bars.csv",
+          "sha256": "6ff8e2b7209bda820ec2bfd0d919a69a422052da5c4840149bbdc406331c0a54",
+          "crc32": "570a52c2",
+          "bytes": 3334
+        },
+        "chords": {
+          "member": "async/songs/33-peris_scope/preferred/annotations/chords.csv",
+          "sha256": "2f8913b24bcd92953cc166324327f0bdfe8aff708e197c7c8af0ccbb639bd334",
+          "crc32": "1843559c",
+          "bytes": 40358
+        },
+        "drums": {
+          "member": "async/songs/33-peris_scope/preferred/drums.mid",
+          "sha256": "1a881e625df8ec07692328a4839ae1352de5bbc5ccc355ac110fb4762309f8b4",
+          "crc32": "586cb6e8",
+          "bytes": 28391
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 1946,
+      "drum_channels": {
+        "9": 1946
+      },
+      "note_number_histogram": {
+        "38": 524,
+        "36": 527,
+        "45": 677,
+        "48": 51,
+        "41": 22,
+        "49": 2,
+        "40": 21,
+        "44": 55,
+        "51": 13,
+        "26": 33,
+        "55": 11,
+        "59": 5,
+        "46": 5
+      },
+      "excluded_terminal_zero_duration_rows": 0,
+      "bar_grid_max_error_seconds": 2.842170943040401e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 62,
+          "windows": [
+            {
+              "start_seconds": 4.0,
+              "end_seconds": 6.0,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 6.667,
+              "end_seconds": 9.333,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 36.0,
+              "end_seconds": 38.0,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 38.667,
+              "end_seconds": 41.333,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 68.0,
+              "end_seconds": 70.0,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 70.667,
+              "end_seconds": 73.333,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 100.0,
+              "end_seconds": 102.0,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 102.667,
+              "end_seconds": 105.333,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 132.0,
+              "end_seconds": 134.0,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 134.667,
+              "end_seconds": 137.333,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 164.0,
+              "end_seconds": 166.0,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 166.667,
+              "end_seconds": 169.333,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 196.0,
+              "end_seconds": 198.0,
+              "drum_note_onsets": 14
+            },
+            {
+              "start_seconds": 198.667,
+              "end_seconds": 201.333,
+              "drum_note_onsets": 15
+            }
+          ]
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 55,
+          "windows": [
+            {
+              "start_seconds": 4.0,
+              "end_seconds": 6.0,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 6.667,
+              "end_seconds": 9.333,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 36.0,
+              "end_seconds": 38.0,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 38.667,
+              "end_seconds": 41.333,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 68.0,
+              "end_seconds": 70.0,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 70.667,
+              "end_seconds": 73.333,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 100.0,
+              "end_seconds": 102.0,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 102.667,
+              "end_seconds": 105.333,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 132.0,
+              "end_seconds": 134.0,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 134.667,
+              "end_seconds": 137.333,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 164.0,
+              "end_seconds": 166.0,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 166.667,
+              "end_seconds": 169.333,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 196.0,
+              "end_seconds": 198.0,
+              "drum_note_onsets": 14
+            },
+            {
+              "start_seconds": 198.667,
+              "end_seconds": 201.333,
+              "drum_note_onsets": 15
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "40",
+      "basename": "40-stompin_at_the_savoy",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/40-stompin_at_the_savoy/preferred/annotations/bars.csv",
+          "sha256": "530d4ddd2692ffe6b6359a9c64945ef91adaf9a5454b39c571bea2ccdcb1d15c",
+          "crc32": "62e89f91",
+          "bytes": 4858
+        },
+        "chords": {
+          "member": "async/songs/40-stompin_at_the_savoy/preferred/annotations/chords.csv",
+          "sha256": "b6c80032122acd8ce55f49a90937d488d6d5594a4a3ecdc4d9fa121ea8b9d2c4",
+          "crc32": "ef82e50d",
+          "bytes": 38699
+        },
+        "drums": {
+          "member": "async/songs/40-stompin_at_the_savoy/preferred/drums.mid",
+          "sha256": "34348c014dfdc7b2966c9c1673148f1147b90f0716393f364ec60fc324f6f666",
+          "crc32": "f6e4adfa",
+          "bytes": 38398
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 2674,
+      "drum_channels": {
+        "9": 2674
+      },
+      "note_number_histogram": {
+        "38": 866,
+        "45": 837,
+        "36": 628,
+        "44": 153,
+        "40": 40,
+        "55": 27,
+        "26": 11,
+        "48": 62,
+        "41": 19,
+        "51": 12,
+        "59": 15,
+        "49": 2,
+        "22": 1,
+        "46": 1
+      },
+      "excluded_terminal_zero_duration_rows": 0,
+      "bar_grid_max_error_seconds": 5.684341886080802e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 50,
+          "windows": [
+            {
+              "start_seconds": 18.581,
+              "end_seconds": 22.4515,
+              "drum_note_onsets": 1
+            },
+            {
+              "start_seconds": 68.129,
+              "end_seconds": 72.0,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 117.677,
+              "end_seconds": 121.5485,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 167.226,
+              "end_seconds": 171.097,
+              "drum_note_onsets": 39
+            },
+            {
+              "start_seconds": 216.774,
+              "end_seconds": 220.645,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 266.323,
+              "end_seconds": 270.1935,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 315.871,
+              "end_seconds": 319.742,
+              "drum_note_onsets": 37
+            }
+          ]
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 28,
+          "windows": [
+            {
+              "start_seconds": 1.548,
+              "end_seconds": 6.968,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 13.935,
+              "end_seconds": 17.8065,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 18.581,
+              "end_seconds": 22.4515,
+              "drum_note_onsets": 1
+            },
+            {
+              "start_seconds": 26.323,
+              "end_seconds": 32.516,
+              "drum_note_onsets": 41
+            },
+            {
+              "start_seconds": 51.097,
+              "end_seconds": 56.516,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 63.484,
+              "end_seconds": 67.355,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 68.129,
+              "end_seconds": 72.0,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 75.871,
+              "end_seconds": 82.065,
+              "drum_note_onsets": 34
+            },
+            {
+              "start_seconds": 100.645,
+              "end_seconds": 106.0645,
+              "drum_note_onsets": 41
+            },
+            {
+              "start_seconds": 113.032,
+              "end_seconds": 116.903,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 117.677,
+              "end_seconds": 121.5485,
+              "drum_note_onsets": 28
+            },
+            {
+              "start_seconds": 125.419,
+              "end_seconds": 131.613,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 150.194,
+              "end_seconds": 155.613,
+              "drum_note_onsets": 44
+            },
+            {
+              "start_seconds": 162.581,
+              "end_seconds": 166.4515,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 167.226,
+              "end_seconds": 171.097,
+              "drum_note_onsets": 39
+            },
+            {
+              "start_seconds": 174.968,
+              "end_seconds": 181.161,
+              "drum_note_onsets": 54
+            },
+            {
+              "start_seconds": 199.742,
+              "end_seconds": 205.161,
+              "drum_note_onsets": 44
+            },
+            {
+              "start_seconds": 212.129,
+              "end_seconds": 216.0,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 216.774,
+              "end_seconds": 220.645,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 224.516,
+              "end_seconds": 230.71,
+              "drum_note_onsets": 48
+            },
+            {
+              "start_seconds": 249.29,
+              "end_seconds": 254.7095,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 261.677,
+              "end_seconds": 265.5485,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 266.323,
+              "end_seconds": 270.1935,
+              "drum_note_onsets": 35
+            },
+            {
+              "start_seconds": 274.065,
+              "end_seconds": 280.258,
+              "drum_note_onsets": 59
+            },
+            {
+              "start_seconds": 298.839,
+              "end_seconds": 304.258,
+              "drum_note_onsets": 50
+            },
+            {
+              "start_seconds": 311.226,
+              "end_seconds": 315.097,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 315.871,
+              "end_seconds": 319.742,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 323.613,
+              "end_seconds": 329.806,
+              "drum_note_onsets": 34
+            },
+            {
+              "start_seconds": 348.387,
+              "end_seconds": 353.032,
+              "drum_note_onsets": 26
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "42",
+      "basename": "42-take_the_a_train",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/42-take_the_a_train/preferred/annotations/bars.csv",
+          "sha256": "3a130e83a6478cfee734efdd137d8e27930f8b05ef02ba714485485b3b6d8a3c",
+          "crc32": "b972c181",
+          "bytes": 4818
+        },
+        "chords": {
+          "member": "async/songs/42-take_the_a_train/preferred/annotations/chords.csv",
+          "sha256": "43354f1dcaf9c7e2736c857d490b69a10a6bf26fc7473447a565938dfe4e29bd",
+          "crc32": "ee32243a",
+          "bytes": 27614
+        },
+        "drums": {
+          "member": "async/songs/42-take_the_a_train/preferred/drums.mid",
+          "sha256": "5cf0e27536df3937f83d87654721e5a03c42078362e32487b46586e9f9b3543c",
+          "crc32": "c06e3729",
+          "bytes": 39365
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 2910,
+      "drum_channels": {
+        "9": 2910
+      },
+      "note_number_histogram": {
+        "38": 915,
+        "36": 827,
+        "45": 795,
+        "48": 63,
+        "41": 43,
+        "59": 47,
+        "44": 99,
+        "55": 40,
+        "51": 6,
+        "26": 42,
+        "46": 11,
+        "40": 21,
+        "49": 1
+      },
+      "excluded_terminal_zero_duration_rows": 0,
+      "bar_grid_max_error_seconds": 5.684341886080802e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 75,
+          "windows": [
+            {
+              "start_seconds": 26.667,
+              "end_seconds": 33.333,
+              "drum_note_onsets": 73
+            },
+            {
+              "start_seconds": 69.333,
+              "end_seconds": 76.0,
+              "drum_note_onsets": 59
+            },
+            {
+              "start_seconds": 112.0,
+              "end_seconds": 118.667,
+              "drum_note_onsets": 59
+            },
+            {
+              "start_seconds": 154.667,
+              "end_seconds": 161.333,
+              "drum_note_onsets": 63
+            },
+            {
+              "start_seconds": 197.333,
+              "end_seconds": 204.0,
+              "drum_note_onsets": 57
+            },
+            {
+              "start_seconds": 240.0,
+              "end_seconds": 246.667,
+              "drum_note_onsets": 61
+            },
+            {
+              "start_seconds": 282.667,
+              "end_seconds": 289.333,
+              "drum_note_onsets": 57
+            }
+          ]
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 31,
+          "windows": [
+            {
+              "start_seconds": 12.0,
+              "end_seconds": 16.0,
+              "drum_note_onsets": 39
+            },
+            {
+              "start_seconds": 16.0,
+              "end_seconds": 20.0,
+              "drum_note_onsets": 39
+            },
+            {
+              "start_seconds": 22.667,
+              "end_seconds": 26.667,
+              "drum_note_onsets": 40
+            },
+            {
+              "start_seconds": 26.667,
+              "end_seconds": 33.333,
+              "drum_note_onsets": 73
+            },
+            {
+              "start_seconds": 44.0,
+              "end_seconds": 48.0,
+              "drum_note_onsets": 46
+            },
+            {
+              "start_seconds": 48.0,
+              "end_seconds": 52.0,
+              "drum_note_onsets": 44
+            },
+            {
+              "start_seconds": 54.667,
+              "end_seconds": 58.667,
+              "drum_note_onsets": 38
+            },
+            {
+              "start_seconds": 58.667,
+              "end_seconds": 62.667,
+              "drum_note_onsets": 45
+            },
+            {
+              "start_seconds": 65.333,
+              "end_seconds": 69.333,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 69.333,
+              "end_seconds": 76.0,
+              "drum_note_onsets": 59
+            },
+            {
+              "start_seconds": 86.667,
+              "end_seconds": 90.667,
+              "drum_note_onsets": 38
+            },
+            {
+              "start_seconds": 90.667,
+              "end_seconds": 94.667,
+              "drum_note_onsets": 42
+            },
+            {
+              "start_seconds": 97.333,
+              "end_seconds": 101.333,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 101.333,
+              "end_seconds": 105.333,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 108.0,
+              "end_seconds": 112.0,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 112.0,
+              "end_seconds": 118.667,
+              "drum_note_onsets": 59
+            },
+            {
+              "start_seconds": 129.333,
+              "end_seconds": 133.333,
+              "drum_note_onsets": 44
+            },
+            {
+              "start_seconds": 133.333,
+              "end_seconds": 137.333,
+              "drum_note_onsets": 40
+            },
+            {
+              "start_seconds": 140.0,
+              "end_seconds": 144.0,
+              "drum_note_onsets": 40
+            },
+            {
+              "start_seconds": 144.0,
+              "end_seconds": 148.0,
+              "drum_note_onsets": 45
+            },
+            {
+              "start_seconds": 150.667,
+              "end_seconds": 154.667,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 154.667,
+              "end_seconds": 161.333,
+              "drum_note_onsets": 63
+            },
+            {
+              "start_seconds": 172.0,
+              "end_seconds": 176.0,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 176.0,
+              "end_seconds": 180.0,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 182.667,
+              "end_seconds": 186.667,
+              "drum_note_onsets": 50
+            },
+            {
+              "start_seconds": 186.667,
+              "end_seconds": 190.667,
+              "drum_note_onsets": 46
+            },
+            {
+              "start_seconds": 193.333,
+              "end_seconds": 197.333,
+              "drum_note_onsets": 32
+            },
+            {
+              "start_seconds": 197.333,
+              "end_seconds": 204.0,
+              "drum_note_onsets": 57
+            },
+            {
+              "start_seconds": 214.667,
+              "end_seconds": 218.667,
+              "drum_note_onsets": 50
+            },
+            {
+              "start_seconds": 218.667,
+              "end_seconds": 222.667,
+              "drum_note_onsets": 36
+            },
+            {
+              "start_seconds": 225.333,
+              "end_seconds": 229.333,
+              "drum_note_onsets": 30
+            },
+            {
+              "start_seconds": 229.333,
+              "end_seconds": 233.333,
+              "drum_note_onsets": 33
+            },
+            {
+              "start_seconds": 236.0,
+              "end_seconds": 240.0,
+              "drum_note_onsets": 34
+            },
+            {
+              "start_seconds": 240.0,
+              "end_seconds": 246.667,
+              "drum_note_onsets": 61
+            },
+            {
+              "start_seconds": 257.333,
+              "end_seconds": 261.333,
+              "drum_note_onsets": 48
+            },
+            {
+              "start_seconds": 261.333,
+              "end_seconds": 265.333,
+              "drum_note_onsets": 50
+            },
+            {
+              "start_seconds": 268.0,
+              "end_seconds": 272.0,
+              "drum_note_onsets": 38
+            },
+            {
+              "start_seconds": 272.0,
+              "end_seconds": 276.0,
+              "drum_note_onsets": 38
+            },
+            {
+              "start_seconds": 278.667,
+              "end_seconds": 282.667,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 282.667,
+              "end_seconds": 289.333,
+              "drum_note_onsets": 57
+            },
+            {
+              "start_seconds": 300.0,
+              "end_seconds": 304.0,
+              "drum_note_onsets": 38
+            },
+            {
+              "start_seconds": 304.0,
+              "end_seconds": 308.0,
+              "drum_note_onsets": 52
+            },
+            {
+              "start_seconds": 310.667,
+              "end_seconds": 314.0,
+              "drum_note_onsets": 29
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "45",
+      "basename": "45-tour_de_force",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/45-tour_de_force/preferred/annotations/bars.csv",
+          "sha256": "5277d0b3a452840fdd3cccab20abfa3c81489509bfffd016a8fafc0790513ce7",
+          "crc32": "4c91969d",
+          "bytes": 4003
+        },
+        "chords": {
+          "member": "async/songs/45-tour_de_force/preferred/annotations/chords.csv",
+          "sha256": "3ee76c2596687206f850e746323e2364b629a396a258329b0f2dbef6ee559ddd",
+          "crc32": "b79a3141",
+          "bytes": 61958
+        },
+        "drums": {
+          "member": "async/songs/45-tour_de_force/preferred/drums.mid",
+          "sha256": "5ea594d988eb58a0b597b6dc9a108cd794d9c5805f2b96db80aaf0f93cb845df",
+          "crc32": "d17877ff",
+          "bytes": 34476
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 2704,
+      "drum_channels": {
+        "9": 2704
+      },
+      "note_number_histogram": {
+        "40": 139,
+        "55": 57,
+        "36": 622,
+        "38": 789,
+        "59": 79,
+        "45": 671,
+        "48": 98,
+        "41": 49,
+        "44": 133,
+        "26": 35,
+        "51": 6,
+        "22": 3,
+        "46": 23
+      },
+      "excluded_terminal_zero_duration_rows": 0,
+      "bar_grid_max_error_seconds": 2.842170943040401e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 85,
+          "windows": [
+            {
+              "start_seconds": 32.0,
+              "end_seconds": 34.4,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 35.2,
+              "end_seconds": 38.4,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 38.4,
+              "end_seconds": 40.8,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 83.2,
+              "end_seconds": 85.6,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 86.4,
+              "end_seconds": 89.6,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 89.6,
+              "end_seconds": 92.0,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 134.4,
+              "end_seconds": 136.8,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 137.6,
+              "end_seconds": 140.8,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 140.8,
+              "end_seconds": 143.2,
+              "drum_note_onsets": 14
+            },
+            {
+              "start_seconds": 185.6,
+              "end_seconds": 188.0,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 188.8,
+              "end_seconds": 192.0,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 192.0,
+              "end_seconds": 194.4,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 236.8,
+              "end_seconds": 239.2,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 240.0,
+              "end_seconds": 243.2,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 243.2,
+              "end_seconds": 245.6,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 288.0,
+              "end_seconds": 290.4,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 291.2,
+              "end_seconds": 294.4,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 294.4,
+              "end_seconds": 296.8,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 339.2,
+              "end_seconds": 341.6,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 342.4,
+              "end_seconds": 345.6,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 345.6,
+              "end_seconds": 348.0,
+              "drum_note_onsets": 29
+            }
+          ]
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 63,
+          "windows": [
+            {
+              "start_seconds": 3.2,
+              "end_seconds": 6.4,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 16.0,
+              "end_seconds": 18.4,
+              "drum_note_onsets": 9
+            },
+            {
+              "start_seconds": 28.8,
+              "end_seconds": 32.0,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 32.0,
+              "end_seconds": 34.4,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 35.2,
+              "end_seconds": 38.4,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 38.4,
+              "end_seconds": 40.8,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 54.4,
+              "end_seconds": 57.6,
+              "drum_note_onsets": 11
+            },
+            {
+              "start_seconds": 67.2,
+              "end_seconds": 69.6,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 80.0,
+              "end_seconds": 83.2,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 83.2,
+              "end_seconds": 85.6,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 86.4,
+              "end_seconds": 89.6,
+              "drum_note_onsets": 27
+            },
+            {
+              "start_seconds": 89.6,
+              "end_seconds": 92.0,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 105.6,
+              "end_seconds": 108.8,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 118.4,
+              "end_seconds": 120.8,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 131.2,
+              "end_seconds": 134.4,
+              "drum_note_onsets": 22
+            },
+            {
+              "start_seconds": 134.4,
+              "end_seconds": 136.8,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 137.6,
+              "end_seconds": 140.8,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 140.8,
+              "end_seconds": 143.2,
+              "drum_note_onsets": 14
+            },
+            {
+              "start_seconds": 156.8,
+              "end_seconds": 160.0,
+              "drum_note_onsets": 31
+            },
+            {
+              "start_seconds": 169.6,
+              "end_seconds": 172.0,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 182.4,
+              "end_seconds": 185.6,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 185.6,
+              "end_seconds": 188.0,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 188.8,
+              "end_seconds": 192.0,
+              "drum_note_onsets": 20
+            },
+            {
+              "start_seconds": 192.0,
+              "end_seconds": 194.4,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 208.0,
+              "end_seconds": 211.2,
+              "drum_note_onsets": 10
+            },
+            {
+              "start_seconds": 220.8,
+              "end_seconds": 223.2,
+              "drum_note_onsets": 15
+            },
+            {
+              "start_seconds": 233.6,
+              "end_seconds": 236.8,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 236.8,
+              "end_seconds": 239.2,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 240.0,
+              "end_seconds": 243.2,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 243.2,
+              "end_seconds": 245.6,
+              "drum_note_onsets": 21
+            },
+            {
+              "start_seconds": 259.2,
+              "end_seconds": 262.4,
+              "drum_note_onsets": 18
+            },
+            {
+              "start_seconds": 272.0,
+              "end_seconds": 274.4,
+              "drum_note_onsets": 17
+            },
+            {
+              "start_seconds": 284.8,
+              "end_seconds": 288.0,
+              "drum_note_onsets": 23
+            },
+            {
+              "start_seconds": 288.0,
+              "end_seconds": 290.4,
+              "drum_note_onsets": 19
+            },
+            {
+              "start_seconds": 291.2,
+              "end_seconds": 294.4,
+              "drum_note_onsets": 25
+            },
+            {
+              "start_seconds": 294.4,
+              "end_seconds": 296.8,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 310.4,
+              "end_seconds": 313.6,
+              "drum_note_onsets": 37
+            },
+            {
+              "start_seconds": 323.2,
+              "end_seconds": 325.6,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 336.0,
+              "end_seconds": 339.2,
+              "drum_note_onsets": 26
+            },
+            {
+              "start_seconds": 339.2,
+              "end_seconds": 341.6,
+              "drum_note_onsets": 16
+            },
+            {
+              "start_seconds": 342.4,
+              "end_seconds": 345.6,
+              "drum_note_onsets": 24
+            },
+            {
+              "start_seconds": 345.6,
+              "end_seconds": 348.0,
+              "drum_note_onsets": 29
+            },
+            {
+              "start_seconds": 361.6,
+              "end_seconds": 364.8,
+              "drum_note_onsets": 12
+            }
+          ]
+        }
+      }
+    },
+    {
+      "song_id": "49",
+      "basename": "49-woodchoppers_ball",
+      "source_members": {
+        "bars": {
+          "member": "async/songs/49-woodchoppers_ball/preferred/annotations/bars.csv",
+          "sha256": "13a57d533fc509948b9246e8b4b3d6a68a3f2a99610b49ebd5d0cd634580ebae",
+          "crc32": "f27d9dfb",
+          "bytes": 3488
+        },
+        "chords": {
+          "member": "async/songs/49-woodchoppers_ball/preferred/annotations/chords.csv",
+          "sha256": "c998dd7bbe0fff7cb1a9724573efa249e7c55a7cc14a4061c047e4fb6d365af7",
+          "crc32": "72b26c17",
+          "bytes": 14848
+        },
+        "drums": {
+          "member": "async/songs/49-woodchoppers_ball/preferred/drums.mid",
+          "sha256": "99fe9046a21c736f84e3547c32466ad962787e026944bf0c3cf5cd544380f297",
+          "crc32": "0878cf2e",
+          "bytes": 31723
+        }
+      },
+      "genre": "swing",
+      "is_swung": true,
+      "synchronous": false,
+      "take": "preferred",
+      "time_signature": "4/4",
+      "drum_note_onsets": 1831,
+      "drum_channels": {
+        "9": 1831
+      },
+      "note_number_histogram": {
+        "45": 586,
+        "38": 597,
+        "44": 258,
+        "40": 134,
+        "59": 40,
+        "48": 54,
+        "41": 31,
+        "55": 28,
+        "26": 2,
+        "51": 1,
+        "36": 100
+      },
+      "excluded_terminal_zero_duration_rows": 1,
+      "bar_grid_max_error_seconds": 2.842170943040401e-14,
+      "patterns": {
+        "exact": {
+          "excluded_chart_rows": 43,
+          "windows": []
+        },
+        "triad_projection": {
+          "excluded_chart_rows": 1,
+          "windows": [
+            {
+              "start_seconds": 12.353,
+              "end_seconds": 23.647,
+              "drum_note_onsets": 88
+            },
+            {
+              "start_seconds": 29.294,
+              "end_seconds": 40.588,
+              "drum_note_onsets": 84
+            },
+            {
+              "start_seconds": 46.235,
+              "end_seconds": 57.52925,
+              "drum_note_onsets": 76
+            },
+            {
+              "start_seconds": 63.17625,
+              "end_seconds": 74.471,
+              "drum_note_onsets": 90
+            },
+            {
+              "start_seconds": 80.118,
+              "end_seconds": 91.412,
+              "drum_note_onsets": 79
+            },
+            {
+              "start_seconds": 97.059,
+              "end_seconds": 108.353,
+              "drum_note_onsets": 84
+            },
+            {
+              "start_seconds": 114.0,
+              "end_seconds": 125.294,
+              "drum_note_onsets": 82
+            },
+            {
+              "start_seconds": 130.941,
+              "end_seconds": 142.235,
+              "drum_note_onsets": 85
+            },
+            {
+              "start_seconds": 147.88225,
+              "end_seconds": 159.17625,
+              "drum_note_onsets": 80
+            },
+            {
+              "start_seconds": 164.82325,
+              "end_seconds": 176.118,
+              "drum_note_onsets": 75
+            },
+            {
+              "start_seconds": 181.765,
+              "end_seconds": 193.059,
+              "drum_note_onsets": 67
+            },
+            {
+              "start_seconds": 198.706,
+              "end_seconds": 210.0,
+              "drum_note_onsets": 101
+            },
+            {
+              "start_seconds": 215.647,
+              "end_seconds": 226.941,
+              "drum_note_onsets": 120
+            },
+            {
+              "start_seconds": 232.588,
+              "end_seconds": 238.588,
+              "drum_note_onsets": 63
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

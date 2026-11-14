@@ -148,10 +148,13 @@ def audit(document=None):
                      'BILLBOARD_CHORD_SHAPES_NOT_CADENCES' if row['relation_id']=='CR-031' else
                      'GIANTSTEPS_PARENT_DNB_LABEL_NOT_JUMPUP' if row['relation_id']=='REL-017' else
                      'BILLBOARD_HARMONY_COMPONENT_ONLY')
+        if row['relation_id'] in {'CR-029','CR-031'} or (row['relation_id'].startswith('REL-') and row['relation_id']!='REL-017'):
+            observation+=';RWC_SAME_ID_SYMBOLIC_COMPONENTS_NOT_EXACT_PATTERN'
+        if row['relation_id']=='REL-005':observation+=';JAZZSAMBA_SWING_CHART_ORIGINAL_DRUM_COMPONENTS_ONLY'
         out.append({'relation_id':row['relation_id'],'original_row_sha256':row['original_row_sha256'],**row['original_edge'],
                     'sampling_frame':row['sampling_frame'],'required_annotations':';'.join(row['required_annotations']),
                     'candidate_gaps':json.dumps(checks,ensure_ascii=False,sort_keys=True),
-                    'local_observation':observation,
+                    'local_observation':observation,'rwc_scope':row['rwc_scope'],
                     'unresolved_claim':row['unresolved_claim'],'next_evidence':row['next_evidence'],
                     'relation_status':'OPEN','human_approval':'AUSSTEHEND','production_use_allowed':False})
     validate_observation(json.loads(OBS.read_text(encoding='utf8')))
@@ -160,7 +163,22 @@ def audit(document=None):
     billboard.validate(json.loads(billboard.OUTPUT.read_text(encoding='utf8')))
     edm.validate(json.loads(edm.OUTPUT.read_text(encoding='utf8')))
     validate_original_search(json.loads((ROOT/'docs/audit/fable-5.2/CDR019_ORIGINALSUCHE_2026-11-14.json').read_text(encoding='utf8')))
+    from scripts import audit_rwc_joint as rwc
+    rwc.validate(json.loads(rwc.OUTPUT.read_text(encoding='utf8')))
+    from scripts import audit_jazzsamba_components as jazz
+    jazz.validate(json.loads(jazz.OUTPUT.read_text(encoding='utf8')))
+    validate_garcia_followup(json.loads((ROOT/'docs/audit/fable-5.2/CDR019_GARCIA_2023_QUELLENBEFUND_2026-11-14.json').read_text(encoding='utf8')))
     return out
+
+
+def validate_garcia_followup(d):
+    if (d['schema_version']!=1 or d['relation_id']!='CDR-019' or d['human_approval']!='AUSSTEHEND'
+            or d['historical_assertion_closed'] is not False or d['requested_original_fulltexts_verified']!=0
+            or d['new_author_article_scoped_checks']!=1 or d['source']['author']!='Walter Garcia'
+            or d['source']['journal']!='Iberic@l24,2023'
+            or d['source']['sha256']!='5f659a994bcf07c95adbde4fbec83352e56992fc987664325cc09954cee523d7'
+            or d['source']['visually_checked_pdf_pages']!=[1,7] or not d['source']['scope'] or not d['source']['rights']):
+        raise ValueError('Later author article is not verification of the requested older originals')
 
 
 def validate_original_search(d):

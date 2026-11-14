@@ -110,3 +110,9 @@ jobs:
         run: |
           python -B scripts/audit_billboard_components.py --check
           python -B scripts/audit_edm_tempo.py --check
+
+      - name: Check same-ID RWC component observations without accepting groove claims
+        run: python -B scripts/audit_rwc_joint.py --check
+
+      - name: Check Swing chart and original-drum source distinctions
+        run: python -B scripts/audit_jazzsamba_components.py --check

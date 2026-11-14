@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "relation_id": "CDR-019",
+  "human_approval": "AUSSTEHEND",
+  "historical_assertion_closed": false,
+  "requested_original_fulltexts_verified": 0,
+  "new_author_article_scoped_checks": 1,
+  "source": {
+    "author": "Walter Garcia",
+    "title": "Uma introdução à estética de João Gilberto (com linhas biográficas de apoio)",
+    "journal": "Iberic@l24,2023",
+    "doi": "10.4000/127ib",
+    "publisher_url": "https://journals.openedition.org/iberical/1577",
+    "readable_copy_url": "https://dialnet.unirioja.es/descarga/articulo/10358444.pdf",
+    "sha256": "5f659a994bcf07c95adbde4fbec83352e56992fc987664325cc09954cee523d7",
+    "bytes": 269049,
+    "pages": 15,
+    "visually_checked_pdf_pages": [
+      1,
+      7
+    ],
+    "locator": "PDF7/printed6, section4, paragraphs21–27; PDF1 publication and rights notice",
+    "finding": "Garcia unterscheidet die eigenständige Gitarrenbasis von ihren Variationen und deren Ähnlichkeit zu Tamborim- oder Caixa-Phrasierung. Bassakzente werden als Veränderung der Surdo-Wirkung analysiert. Dies stützt eine differenzierte Funktions-/Ähnlichkeitsanalyse, keine schlichte eindeutige Ursprungsbehauptung.",
+    "scope": "Gelesener Originalbeitrag dieses Autors von2023; kein Ersatz für ungelesene Reily1996-, Cabral-, Garcia1999- oder Schreiner-Seiten und kein zeitgenössisches Entstehungszeugnis.",
+    "rights": "Text CC BY-NC-ND4.0 laut Titelseite; andere Elemente gesondert vorbehalten. PDF und Seitenbilder bleiben lokal, keine Übernahme des Originaltextes oder der Abbildungen."
+  },
+  "access_notes": [
+    "Direkte OpenEdition-Seite bot Anubis-Challenge; keine Umgehung.",
+    "Dialnet-Kopie regulär über Windows-Zertifikatsprüfung geladen; Python-Standardabruf scheiterte an lokaler CA-Kette. Keine TLS-Prüfung abgeschaltet.",
+    "Fehlerhafte Glyphen bei Textextraktion nicht stillschweigend als zuverlässiger Text übernommen; maßgebliche Seite visuell geprüft.",
+    "Neuer Scribd-Treffer Bim Bom nennt41 Seiten statt221 im Werkdatensatz; nur Metadaten, kein Originalseitenbeleg. Cabral-Direktabruf erneut Challenge.",
+    "JazzSAMBA-Codepfad lieferte zunächst404. Alternative Suche fand den veröffentlichten Zenodo-Datensatz; Katalog und54 ausgewählte kleine Original-MIDI-/Annotationsdateien wurden später begrenzt gelesen. Kein Vollarchiv-/Audioabruf."
+  ]
+}
