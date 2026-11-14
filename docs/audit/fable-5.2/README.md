@@ -21,3 +21,5 @@ Die Nachprüfung erfasst die Befunde des Fable-Audits und verweist auf die repro
 Den aktuellen Prüfstand liefert der [Benchmark](../../../knowledge/benchmark/README.md). Fehlende Belege sind in den [offenen Nachweisen](../../../research/gaps/OPEN_GAPS.md) erfasst.
 
 [Zur Bereichsübersicht](../README.md)
+
+[Sicherheitskorrektur Guardrail #166](SECRET_GUARDRAIL_166_2026-11-14.md): vollständige Bereinigung des aktuellen Stands; historische Sicherheitsbewertung offen.

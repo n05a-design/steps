@@ -218,6 +218,17 @@ class TestSecretScannerSecuritySuite(unittest.TestCase):
             _, count, _ = scanner.scan_repository(directory, baseline)
             self.assertEqual(count, 4)
 
+    def test_extensionless_svg_and_binary_payloads_are_scanned(self):
+        with tempfile.TemporaryDirectory() as directory:
+            baseline = os.path.join(directory, 'baseline.json')
+            with open(baseline, 'w') as target:
+                json.dump([], target)
+            for name in ['m=root,base(1)', 'instagram.svg', 'settings.toml', 'sample.bin']:
+                with open(os.path.join(directory, name), 'wb') as target:
+                    target.write(b'\xff\x00' + ('AKIA' + '4' * 16).encode())
+            quarantined, leaks, _ = scanner.scan_repository(directory, baseline)
+            self.assertEqual((quarantined, leaks), (0, 4))
+
     def test_authorized_synthetic_fixture_is_not_counted_as_historical_key(self):
         with tempfile.TemporaryDirectory() as directory:
             baseline=os.path.join(directory,'baseline.json')

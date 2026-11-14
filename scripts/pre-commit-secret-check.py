@@ -129,22 +129,23 @@ def scan_repository(root_dir: str = None, baseline_path: str = None) -> tuple[in
         # '.git' (which previously hid .github) or historical audit folders.
         dirs[:] = [name for name in dirs if name not in {'.git', '.venv', '__pycache__'}]
         for f in files:
-            if f.endswith(('.download', '.html', '.js', '.py', '.md', '.json', '.yaml', '.yml', '.csv', '.sh', '.ps1')):
-                abs_fp = os.path.join(root, f)
-                rel_fp = normalize_path(os.path.relpath(abs_fp, target_dir))
-                if rel_fp == 'scripts/historical_secret_baseline.json':
-                    continue
+            # Scan every file, including extensionless downloaded JavaScript,
+            # SVG, configuration files and text embedded in binary payloads.
+            abs_fp = os.path.join(root, f)
+            rel_fp = normalize_path(os.path.relpath(abs_fp, target_dir))
+            if rel_fp == 'scripts/historical_secret_baseline.json':
+                continue
 
-                with open(abs_fp, 'r', encoding='utf-8', errors='replace') as fh:
-                    for i, line in enumerate(fh, 1):
-                        for pattern, desc in SECRET_PATTERNS:
-                            for m in re.finditer(pattern, line):
-                                matched_str = m.group(0)
-                                is_leak, detail = check_secret_match(rel_fp, i, matched_str, desc, line, baseline_map)
-                                if is_leak:
-                                    new_leaks.append((rel_fp, i, desc, mask_secret(matched_str), detail))
-                                elif detail == "QUARANTINED_HISTORICAL_BASELINE":
-                                    quarantined_count += 1
+            with open(abs_fp, 'r', encoding='utf-8', errors='replace') as fh:
+                for i, line in enumerate(fh, 1):
+                    for pattern, desc in SECRET_PATTERNS:
+                        for m in re.finditer(pattern, line):
+                            matched_str = m.group(0)
+                            is_leak, detail = check_secret_match(rel_fp, i, matched_str, desc, line, baseline_map)
+                            if is_leak:
+                                new_leaks.append((rel_fp, i, desc, mask_secret(matched_str), detail))
+                            elif detail == "QUARANTINED_HISTORICAL_BASELINE":
+                                quarantined_count += 1
 
     return quarantined_count, len(new_leaks), new_leaks
 
