@@ -94,3 +94,5 @@ jobs:
         run: python -B scripts/audit_knowledge_coverage.py --check
       - name: Check complete historical graph audit matrix
         run: python -B scripts/audit_graph.py --check
+      - name: Check all remaining historical Golden reviews and source hashes
+        run: python -B scripts/audit_golden_remaining.py --check

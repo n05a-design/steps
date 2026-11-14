@@ -11,3 +11,5 @@ Berichte, Gegenproben und Arbeitsfassungen früherer Prüfungen.
 Für eine Rückführung die Quellfassung, den Hash und den aktuellen Zielpfad vergleichen.
 
 [Zur Bereichsübersicht](../README.md)
+
+[Wiedergefundene Golden-Quellfassungen](golden-source-recovery-2026-11-14/README.md): zwölf versionierte Projektoriginale und Hashnachweise.

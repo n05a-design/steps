@@ -66,10 +66,24 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--csv-out',type=Path,required=True)
     args=parser.parse_args();cases=json.loads((ROOT/'knowledge/research/golden_cases/golden_reference_cases.json').read_text(encoding='utf-8'))
     rows=audit(cases)
+    # Keep the original 14-case calculator distinct, but publish an up-to-date
+    # inventory instead of continuing to call the remaining 64 unexamined.
+    from scripts.audit_golden_remaining import audit as audit_remaining
+    remaining={r['case_id']:r for r in audit_remaining(cases=cases)}
+    for row in rows:
+        if row['case_id'] in remaining:
+            review=remaining[row['case_id']]
+            row['supplement_status']='REVIEWED_64_'+review['model_status']
+            row['observed']=review['observed']
+            row['source_locator']=review['source_locator']
+            row['limitation']=review['original_assessment']+': '+review['finding']+' Next: '+review['next_step']
     with args.csv_out.open('w',encoding='utf-8',newline='') as target:
         writer=csv.DictWriter(target,fieldnames=rows[0]);writer.writeheader();writer.writerows(rows)
-    print('198 cases inventoried;',sum(r['supplement_status']=='BOUNDED_CALCULATION_PASS' for r in rows),'additional bounded calculations; zero new expert approvals.')
-    if any(r['supplement_status']=='BOUNDED_CALCULATION_FAIL' for r in rows):raise SystemExit(1)
+    print('198 cases inventoried;',sum(r['supplement_status']=='BOUNDED_CALCULATION_PASS' for r in rows),
+          'original supplements;',len(remaining),'individual reviews;',
+          sum(r['model_status']=='PASS' for r in remaining.values()),'separate typed model passes; zero new expert approvals.')
+    if (any(r['supplement_status']=='BOUNDED_CALCULATION_FAIL' for r in rows)
+            or any(r['model_status']=='FAIL' for r in remaining.values())):raise SystemExit(1)
 
 
 if __name__=='__main__':main()
