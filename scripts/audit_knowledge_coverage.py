@@ -22,6 +22,7 @@ from scripts import render_reviewed_progressions as renderer
 from scripts import run_knowledge_benchmark as benchmark
 from scripts import graph_corrections
 from scripts import verify_historical_ontology
+from scripts import audit_graph
 from scripts.verify_reference_integrity import extract_markdown_table_definitions, verify_integrity
 from src.steps.progression import list_progressions, resolve_roman_degree, reviewed
 from src.steps.theory import CHORD_TEMPLATES, MusicTheoryError, parse_chord
@@ -279,6 +280,8 @@ def audit():
         json.loads((KNOWLEDGE / "relations/GRAPH_CORRECTIONS.json").read_text(encoding="utf-8")), relations, format_nodes)
     edge_evidence = relation_evidence(read_csv(KNOWLEDGE / "relations/RELATION_EVIDENCE.csv"),
                                       {row["relation_id"] for row in relations}, {row["claim_id"] for row in claim_rows})
+    night_rows, _ = audit_graph.audit(ROOT)
+    night_evidence = {row['relation_id']: row for row in night_rows}
     for row in relations:
         terms = (row["source_id"], row["target_id"])
         unresolved = [term for term in terms if aliases.get(term, term) not in endpoints and term not in format_nodes]
@@ -302,6 +305,11 @@ def audit():
                       " REVIEW_REQUIRED, keine Produktionsfreigabe. Historischer FAIL bleibt erhalten.")
         checks = [r for r in results if r["method"] == "graph_sample" and r["content"] == row["relation_id"]]
         status, detail, next_step = graph_evidence(checks, evidence)
+        night = night_evidence[row['relation_id']]
+        notes += f" Nachtprüfung: {night['review_category']}; {night['review_note']}"
+        if status == 'OFFEN' and night['relation_status'] == 'SAMPLE_SUPPORTED':
+            status = 'PASS'
+            detail += ' Begrenzte technische Modellstichprobe; keine Vollabnahme.'
         add("Graphrelationen", row["relation_id"], "BEFUND", status, note=notes + " " + detail,
             next_step=(next_step or (evidence["limitation"] if evidence else None)))
 

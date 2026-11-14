@@ -1,0 +1,2931 @@
+{
+  "schema_version": 1,
+  "base_sha": "5d2d09cfba22fa137ef65da5ffcc31bcadf5194a",
+  "reviews": [
+    {
+      "category": "SCOPE_REVIEW",
+      "review_note": "Schall und Frequenz benötigen nicht zwingend ISO 16. Referenzfrequenz ist nur für die benannte Umrechnung relativer Intervalle nach Hertz nötig; REQUIRES ist zu weit.",
+      "relation_id": "CR-001",
+      "edge": {
+        "source_id": "M01-01",
+        "target_id": "M01-02",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "91103d5fc0f28e8b30b21157696239ef6856a3cdd9d22dd07421409f6e8d8d42",
+      "probe_ids": [
+        "FREQUENCY"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Schall und Frequenz benötigen nicht zwingend ISO 16. Referenzfrequenz ist nur für die benannte Umrechnung relativer Intervalle nach Hertz nötig; REQUIRES ist zu weit.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-001"
+      ]
+    },
+    {
+      "category": "TYPE_REVIEW",
+      "review_note": "Eine Oktave ist keine Variante eines Stimmungssystems. Die 2:1-Referenz beschreibt das Modell, nicht die behauptete IS_VARIANT_OF-Typisierung.",
+      "relation_id": "CR-002",
+      "edge": {
+        "source_id": "M01-03",
+        "target_id": "M01-05",
+        "relation_type": "IS_VARIANT_OF"
+      },
+      "original_row_sha256": "a205e0c922d55aa1de94e032446670f549ea5245418901716c7c172639de54b2",
+      "probe_ids": [
+        "FREQUENCY"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Eine Oktave ist keine Variante eines Stimmungssystems. Die 2:1-Referenz beschreibt das Modell, nicht die behauptete IS_VARIANT_OF-Typisierung.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-001"
+      ]
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "Modulo-12-Probe im 12-TET-Modell; keine Aussage für andere EDO-Systeme oder Wahrnehmung.",
+      "relation_id": "CR-003",
+      "edge": {
+        "source_id": "M01-04",
+        "target_id": "M01-06",
+        "relation_type": "IS_EQUIVALENT_UNDER"
+      },
+      "original_row_sha256": "8545ce79e37b36c35076f7764dd805af276215a0c02e975dd4dbb8b10c018f62",
+      "probe_ids": [
+        "MOD12"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Modulo-12-Probe im 12-TET-Modell; keine Aussage für andere EDO-Systeme oder Wahrnehmung.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-002"
+      ]
+    },
+    {
+      "category": "SCOPE_REVIEW",
+      "review_note": "Vorzeichen existieren auch außerhalb eines Fünfliniensystems; REQUIRES braucht den konkreten Notationskontext.",
+      "relation_id": "CR-004",
+      "edge": {
+        "source_id": "M02-04",
+        "target_id": "M02-01",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "123a5f932ca843505badc7db8da2ed6c93dcc729f7693f6865802697f413f721",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Vorzeichen existieren auch außerhalb eines Fünfliniensystems; REQUIRES braucht den konkreten Notationskontext.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-011"
+      ]
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "Cis und Des haben gleiche Tonklasse in 12-TET, unterschiedliche Schreibweise; keine Enharmonikbehauptung für beliebige Stimmungen.",
+      "relation_id": "CR-005",
+      "edge": {
+        "source_id": "M02-05",
+        "target_id": "M01-04",
+        "relation_type": "IS_EQUIVALENT_UNDER"
+      },
+      "original_row_sha256": "a8c618423b62bdebe68c30e010e4b17a2f28578c86ff2af62c0fdf117113c9dc",
+      "probe_ids": [
+        "ENHARMONIC"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Cis und Des haben gleiche Tonklasse in 12-TET, unterschiedliche Schreibweise; keine Enharmonikbehauptung für beliebige Stimmungen.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-011"
+      ]
+    },
+    {
+      "category": "TYPE_REVIEW",
+      "review_note": "Unterschiedliche Schreibungen widersprechen dem Vorzeichenkonzept nicht. Leitton-/Mollterzfunktion hängt außerdem von Tonart und Kontext ab.",
+      "relation_id": "CR-006",
+      "edge": {
+        "source_id": "M02-05",
+        "target_id": "M02-04",
+        "relation_type": "CONTRADICTS"
+      },
+      "original_row_sha256": "baa12b84f3eb101ebec871c14794d25c3abb6e1974a20e003247c13f4eea26ca",
+      "probe_ids": [
+        "ENHARMONIC"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Unterschiedliche Schreibungen widersprechen dem Vorzeichenkonzept nicht. Leitton-/Mollterzfunktion hängt außerdem von Tonart und Kontext ab.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-011"
+      ]
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "Explizites DE H/B gegen INT B/Bb; Stichprobe der Sprachkonvention, nicht Gleichsetzung der gesamten Konzepte.",
+      "relation_id": "CR-007",
+      "edge": {
+        "source_id": "M02-06",
+        "target_id": "M02-04",
+        "relation_type": "IS_VARIANT_OF"
+      },
+      "original_row_sha256": "607dbb65f051d9116633bdb23d801466330dcbbd2964fe05bea728e1a6517b50",
+      "probe_ids": [
+        "DE_H_B"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Explizites DE H/B gegen INT B/Bb; Stichprobe der Sprachkonvention, nicht Gleichsetzung der gesamten Konzepte.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-012"
+      ]
+    },
+    {
+      "category": "SCOPE_REVIEW",
+      "review_note": "Halbtonzahlen sind ein 12-TET-Modell von Intervallen; reine und mikrotonale Intervalle verlangen andere Repräsentation.",
+      "relation_id": "CR-008",
+      "edge": {
+        "source_id": "M03-01",
+        "target_id": "M01-04",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "cb3d8f8e5b4783cc29128248863e8cd992ed0330870325c2b9d103f231dd9795",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Halbtonzahlen sind ein 12-TET-Modell von Intervallen; reine und mikrotonale Intervalle verlangen andere Repräsentation.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "C-Dur-Stufendreiklänge prüfen die notierte diatonische Folge; REQUIRES bleibt als Modellabhängigkeit begrenzt.",
+      "relation_id": "CR-009",
+      "edge": {
+        "source_id": "M03-02",
+        "target_id": "M03-01",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "f828003b1cb027f4e94d342ef378850edfa5a7960f3bf9d65c2ceaf8de44f894",
+      "probe_ids": [
+        "DIATONIC"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; C-Dur-Stufendreiklänge prüfen die notierte diatonische Folge; REQUIRES bleibt als Modellabhängigkeit begrenzt.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "C-Dur und A-natürlich-Moll teilen eine Tonklassensammlung; identische Tonika oder Funktion folgt daraus nicht.",
+      "relation_id": "CR-010",
+      "edge": {
+        "source_id": "M03-03",
+        "target_id": "M03-02",
+        "relation_type": "IS_VARIANT_OF"
+      },
+      "original_row_sha256": "554fe9a6166c4d5998ff4bc90e9cb0e442fcd9f72eeeef2e3dba72e95b7f6f1a",
+      "probe_ids": [
+        "RELATIVE_COLLECTION"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; C-Dur und A-natürlich-Moll teilen eine Tonklassensammlung; identische Tonika oder Funktion folgt daraus nicht.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "G7 in c-Moll demonstriert den erhöhten Leitton; natürliches Moll allein ergibt nicht diese Dominantqualität.",
+      "relation_id": "CR-011",
+      "edge": {
+        "source_id": "M03-04",
+        "target_id": "M03-03",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "1fc19dede258a3442284c9f7c9f2005f24b444fcc18d04fb19884ca6a98530b1",
+      "probe_ids": [
+        "MINOR_DOMINANT"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; G7 in c-Moll demonstriert den erhöhten Leitton; natürliches Moll allein ergibt nicht diese Dominantqualität.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "Vier konkrete terzgeschichtete Dreiklangsqualitäten; andere Akkordbildung nicht ausgeschlossen.",
+      "relation_id": "CR-012",
+      "edge": {
+        "source_id": "M04-01",
+        "target_id": "M03-01",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "60831083dbce3cacd513c0f8901804498f87a749b92920fedad890aa88b5ea5c",
+      "probe_ids": [
+        "TRIADS"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Vier konkrete terzgeschichtete Dreiklangsqualitäten; andere Akkordbildung nicht ausgeschlossen.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "C/E und C/G behalten die C-Dur-Tonklasse und ändern den Bass; kein Gleichsetzen von Bass und Grundton.",
+      "relation_id": "CR-013",
+      "edge": {
+        "source_id": "M04-02",
+        "target_id": "M04-01",
+        "relation_type": "IS_VARIANT_OF"
+      },
+      "original_row_sha256": "43e7954e2e3e3bcddb880ea9ca6926d9b513f80e57caf9dc0df6118686fdd02b",
+      "probe_ids": [
+        "INVERSION"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; C/E und C/G behalten die C-Dur-Tonklasse und ändern den Bass; kein Gleichsetzen von Bass und Grundton.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-023"
+      ]
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "Cmaj7 und Cm7 als Terzerweiterungen konkreter Dreiklänge; kein allgemeiner Satz über beliebige Vierklänge.",
+      "relation_id": "CR-014",
+      "edge": {
+        "source_id": "M04-03",
+        "target_id": "M04-01",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "e0736e5892fbdc91ec02444cae09927120bda186f89da1eded892203a86320e8",
+      "probe_ids": [
+        "SEVENTHS"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Cmaj7 und Cm7 als Terzerweiterungen konkreter Dreiklänge; kein allgemeiner Satz über beliebige Vierklänge.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "SCOPE_REVIEW",
+      "review_note": "C/F# ist ein nichtakkordeigener Slashbass und keine Umkehrung. IS_VARIANT_OF ist daher nur für akkordeigene Bässe brauchbar.",
+      "relation_id": "CR-015",
+      "edge": {
+        "source_id": "M04-08",
+        "target_id": "M04-02",
+        "relation_type": "IS_VARIANT_OF"
+      },
+      "original_row_sha256": "3a763d1fbf969572f4b9d0a2fb322b96db2a60a013bc87008fc36bb75712ed2b",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; C/F# ist ein nichtakkordeigener Slashbass und keine Umkehrung. IS_VARIANT_OF ist daher nur für akkordeigene Bässe brauchbar.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-023"
+      ]
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "C-Dur-Stufenakkorde als Modell; römische Notation und Funktionsdeutung bleiben verschieden.",
+      "relation_id": "CR-016",
+      "edge": {
+        "source_id": "M05-01",
+        "target_id": "M03-02",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "dc74877edc0f9a64d4083108ab7c3e8c38a038e0badd4c4b4fffb64825aa8c16",
+      "probe_ids": [
+        "DIATONIC"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; C-Dur-Stufenakkorde als Modell; römische Notation und Funktionsdeutung bleiben verschieden.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "CONTEXT_REVIEW",
+      "review_note": "Riemannfunktion und Skalenstufe sind keine kontextfreie Bijektion; Dur-/Mollparallelfunktionen und Stellvertreter fehlen.",
+      "relation_id": "CR-017",
+      "edge": {
+        "source_id": "M05-02",
+        "target_id": "M05-01",
+        "relation_type": "IS_EQUIVALENT_UNDER"
+      },
+      "original_row_sha256": "f56eefe0809ab236440e2b10a846c771b8b5d40770fd3be9a2b175d18d5fa7cc",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Riemannfunktion und Skalenstufe sind keine kontextfreie Bijektion; Dur-/Mollparallelfunktionen und Stellvertreter fehlen.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "G7–C ist ein Tonklassenbeispiel einer authentischen Schlusswendung; melodischer Abschluss und Metrum sind nicht damit abgenommen.",
+      "relation_id": "CR-018",
+      "edge": {
+        "source_id": "M05-03",
+        "target_id": "M05-01",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "1797fa50548fdbef7b74ea8c83a5de1f792682706d63300a6e0eb18ea9e70970",
+      "probe_ids": [
+        "CADENCE"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; G7–C ist ein Tonklassenbeispiel einer authentischen Schlusswendung; melodischer Abschluss und Metrum sind nicht damit abgenommen.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "Fm als iv in C-Dur illustriert Entlehnung; nicht jede Entlehnung stammt ausschließlich aus parallelem natürlichen Moll.",
+      "relation_id": "CR-019",
+      "edge": {
+        "source_id": "M05-05",
+        "target_id": "M05-01",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "d7a3315a7a72e790ea5950d3899f143a96c695b414c15b5771c517163fce48fa",
+      "probe_ids": [
+        "BORROWED"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Fm als iv in C-Dur illustriert Entlehnung; nicht jede Entlehnung stammt ausschließlich aus parallelem natürlichen Moll.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-027"
+      ]
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "G7 und Db7 teilen F und H/Cb als Tritonus; die vollständigen Akkordtonmengen bleiben verschieden.",
+      "relation_id": "CR-020",
+      "edge": {
+        "source_id": "M05-06",
+        "target_id": "M04-03",
+        "relation_type": "IS_EQUIVALENT_UNDER"
+      },
+      "original_row_sha256": "e54831c85963157053a6552946da6779659c286bb91a9b517c687b3dd22dfb06",
+      "probe_ids": [
+        "TRITONE"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; G7 und Db7 teilen F und H/Cb als Tritonus; die vollständigen Akkordtonmengen bleiben verschieden.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-028"
+      ]
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "Diatonische Folge als Stufenmodell; nicht jede Progression setzt funktionale Tonalität voraus.",
+      "relation_id": "CR-021",
+      "edge": {
+        "source_id": "M06-01",
+        "target_id": "M05-01",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "70a8aa35797e28430438b35b752fec8b10c20de66cff74d793fd5232d26d3ab7",
+      "probe_ids": [
+        "DIATONIC"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Diatonische Folge als Stufenmodell; nicht jede Progression setzt funktionale Tonalität voraus.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "Konkrete parallele Quinte im strikten Stil erkannt; keine vollständige Kontrapunktprüfung oder universelles Stilgesetz.",
+      "relation_id": "CR-022",
+      "edge": {
+        "source_id": "M06-03",
+        "target_id": "M04-01",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "ce056011fbae6b559e6a49ee342c2d290b11c5ebdfc7be693440ac7db5b7c541",
+      "probe_ids": [
+        "PARALLELS"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Konkrete parallele Quinte im strikten Stil erkannt; keine vollständige Kontrapunktprüfung oder universelles Stilgesetz.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-031"
+      ]
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "L1 bei festgelegter Stimmenzuordnung beträgt 3; kein Beleg für globale Optimierung auf dem Tonhöhentorus oder L2-Implementierung.",
+      "relation_id": "CR-023",
+      "edge": {
+        "source_id": "M06-04",
+        "target_id": "M11-04",
+        "relation_type": "TESTED_BY"
+      },
+      "original_row_sha256": "667b75da452f12951b7f7554a498e6c58cb06a0530e0810d1a39214086f509d4",
+      "probe_ids": [
+        "L1"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; L1 bei festgelegter Stimmenzuordnung beträgt 3; kein Beleg für globale Optimierung auf dem Tonhöhentorus oder L2-Implementierung.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-031"
+      ]
+    },
+    {
+      "category": "TYPE_REVIEW",
+      "review_note": "Pulsgruppierung hängt nicht notwendig von der Schwingungsfrequenz ab. Die Beschreibung korrigiert die Vermischung, der REQUIRES-Typ bleibt fraglich.",
+      "relation_id": "CR-024",
+      "edge": {
+        "source_id": "M07-01",
+        "target_id": "M01-01",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "3a83e3a64e8524ba8896ef2cdd540526de3ee47ac202a30dcd72c21104afc0be",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Pulsgruppierung hängt nicht notwendig von der Schwingungsfrequenz ab. Die Beschreibung korrigiert die Vermischung, der REQUIRES-Typ bleibt fraglich.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "PPQ-Zeitrechnung verifiziert das Raster; ein vollständiger SMF-Exporter ist im Kern nicht implementiert.",
+      "relation_id": "CR-025",
+      "edge": {
+        "source_id": "M07-02",
+        "target_id": "M11-02",
+        "relation_type": "IMPLEMENTED_BY"
+      },
+      "original_row_sha256": "86046dd23e0d15f50463b59927274f9cf37230941c538602b8f529c881513c31",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; PPQ-Zeitrechnung verifiziert das Raster; ein vollständiger SMF-Exporter ist im Kern nicht implementiert.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-044"
+      ]
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "Zwei und drei gleiche Unterteilungen sind verschiedene Raster desselben Pulses; Akzentwahrnehmung bleibt offen.",
+      "relation_id": "CR-026",
+      "edge": {
+        "source_id": "M07-03",
+        "target_id": "M07-01",
+        "relation_type": "IS_VARIANT_OF"
+      },
+      "original_row_sha256": "f2ccc84748b168f8ee52e61ffb876d292e3cccb54542ee7962980e54802b8deb",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Zwei und drei gleiche Unterteilungen sind verschiedene Raster desselben Pulses; Akzentwahrnehmung bleibt offen.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "DIRECTION_REVIEW",
+      "review_note": "Swing verschiebt im Paar den zweiten Onset. Ungerade Zählzeiten ist ohne Indexkonvention missverständlich; keine universelle feste Ratio.",
+      "relation_id": "CR-027",
+      "edge": {
+        "source_id": "M07-04",
+        "target_id": "M07-03",
+        "relation_type": "IS_VARIANT_OF"
+      },
+      "original_row_sha256": "5e06eae4715c86f1e91a0af86f87c4565eb55b0e97ba46b56fc2eb77e178bc8a",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Swing verschiebt im Paar den zweiten Onset. Ungerade Zählzeiten ist ohne Indexkonvention missverständlich; keine universelle feste Ratio.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-033",
+        "CLAIM-034"
+      ]
+    },
+    {
+      "category": "STANDARD_REVIEW",
+      "review_note": "GM1-Kanal-10-Zuordnung ist eine Geräte-/Profilkonvention. Akustische Drumkits implementieren nicht selbst MIDI; ursprüngliche Tabelle separat lesen.",
+      "relation_id": "CR-028",
+      "edge": {
+        "source_id": "M08-01",
+        "target_id": "M08-02",
+        "relation_type": "IMPLEMENTED_BY"
+      },
+      "original_row_sha256": "767b855458c30a3509060a373ed46d05771d851c6f8c2b779f2e345ca3e2f984",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; GM1-Kanal-10-Zuordnung ist eine Geräte-/Profilkonvention. Akustische Drumkits implementieren nicht selbst MIDI; ursprüngliche Tabelle separat lesen.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-037"
+      ]
+    },
+    {
+      "category": "CORPUS_REQUIRED",
+      "review_note": "Kick/Snare-Rollen sind ein Pop-Übungsmodell. Häufigkeit und Stilrepräsentativität erfordern einen annotierten Korpus.",
+      "relation_id": "CR-029",
+      "edge": {
+        "source_id": "M08-03",
+        "target_id": "M09-01",
+        "relation_type": "APPLIES_TO_GENRE"
+      },
+      "original_row_sha256": "f929075f0051c79afa2e32692daf1374ba23e0865bd09dc8c453d1ab970ec2b7",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Kick/Snare-Rollen sind ein Pop-Übungsmodell. Häufigkeit und Stilrepräsentativität erfordern einen annotierten Korpus.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "CORPUS_REQUIRED",
+      "review_note": "Four-on-the-floor und Offbeat-Hat sind House-Beispiele; keine notwendige Bedingung jedes House-Stücks.",
+      "relation_id": "CR-030",
+      "edge": {
+        "source_id": "M08-03",
+        "target_id": "M09-02",
+        "relation_type": "APPLIES_TO_GENRE"
+      },
+      "original_row_sha256": "3c1c0bd3cc4d2ac325c7c65dee2d70faa24a50e22c331f015719bdd2e45c7278",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Four-on-the-floor und Offbeat-Hat sind House-Beispiele; keine notwendige Bedingung jedes House-Stücks.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "CORPUS_REQUIRED",
+      "review_note": "PROG-001 demonstriert eine Schleife. Die pauschale Pop-Notwendigkeit folgt weder aus einem Beispiel noch aus dem Register.",
+      "relation_id": "CR-031",
+      "edge": {
+        "source_id": "M09-01",
+        "target_id": "M06-01",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "74b469e681c6f6d5adbccf0bfafbadb4e4aec63c11f84d2ef0090652a62cb51b",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; PROG-001 demonstriert eine Schleife. Die pauschale Pop-Notwendigkeit folgt weder aus einem Beispiel noch aus dem Register.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "CORPUS_REQUIRED",
+      "review_note": "120–128 BPM ist als Übungsbereich beschrieben. Stil- und Tempogrenzen sind nicht durch einen Korpus belegt.",
+      "relation_id": "CR-032",
+      "edge": {
+        "source_id": "M09-02",
+        "target_id": "M08-03",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "8155d8311b37896526c31624456f721a980eeeae83f3bc798ab385cf2efcc761",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; 120–128 BPM ist als Übungsbereich beschrieben. Stil- und Tempogrenzen sind nicht durch einen Korpus belegt.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "Diatonische weiße Tonklassen und ihre chromatischen Lücken demonstrieren die 7/5-Aufteilung der üblichen Klaviatur.",
+      "relation_id": "CR-033",
+      "edge": {
+        "source_id": "M10-01",
+        "target_id": "M01-04",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "de3603c7043aaf019f2139d2e71a9a363a3b94ac9164d9d39c7dd7318964d09c",
+      "probe_ids": [
+        "WHITE_KEYS"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Diatonische weiße Tonklassen und ihre chromatischen Lücken demonstrieren die 7/5-Aufteilung der üblichen Klaviatur.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "PLAY_REVIEW",
+      "review_note": "Historische Fingersätze hängen von Lage, Handgröße und Stimme ab; keine Spielabnahme aus Tonklassen ableiten.",
+      "relation_id": "CR-034",
+      "edge": {
+        "source_id": "M10-03",
+        "target_id": "M04-01",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "8cb54cd44a84f8a491e842c653f2ad1e109ede56169d1e596f04a44df1b5e103",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Historische Fingersätze hängen von Lage, Handgröße und Stimme ab; keine Spielabnahme aus Tonklassen ableiten.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-041"
+      ]
+    },
+    {
+      "category": "PLAY_REVIEW",
+      "review_note": "Bass links ist eine didaktische Arbeitsteilung, keine notwendige Regel für Progressionen oder Klavierbegleitung.",
+      "relation_id": "CR-035",
+      "edge": {
+        "source_id": "M10-04",
+        "target_id": "M06-01",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "f530be1515de1b0f323f2c3d99e53f7464ec51799d889fe095bfa2d3954136ec",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Bass links ist eine didaktische Arbeitsteilung, keine notwendige Regel für Progressionen oder Klavierbegleitung.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "Cis/Des bleiben im Pitch-Modell unterscheidbar; das beweist keinen verlustfreien Roundtrip beliebiger Import-/Exportformate.",
+      "relation_id": "CR-036",
+      "edge": {
+        "source_id": "M11-04",
+        "target_id": "M02-05",
+        "relation_type": "IMPLEMENTED_BY"
+      },
+      "original_row_sha256": "98bec135be69b79f993142ba299b2664e93b6f5795cb99c80ffb471d5b1f10b8",
+      "probe_ids": [
+        "ENHARMONIC"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Cis/Des bleiben im Pitch-Modell unterscheidbar; das beweist keinen verlustfreien Roundtrip beliebiger Import-/Exportformate.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-011"
+      ]
+    },
+    {
+      "category": "DIDACTIC_REVIEW",
+      "review_note": "Original-Lernpfad beginnt mit Klaviaturorientierung; pädagogische Notwendigkeit und Wirksamkeit sind nicht untersucht.",
+      "relation_id": "CR-037",
+      "edge": {
+        "source_id": "M12-04",
+        "target_id": "M10-01",
+        "relation_type": "REQUIRES"
+      },
+      "original_row_sha256": "2b0476ae8841140a67f4cf2d8852811f4bd85d9853da16203edbf689582c52fa",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Original-Lernpfad beginnt mit Klaviaturorientierung; pädagogische Notwendigkeit und Wirksamkeit sind nicht untersucht.",
+      "references": [
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_CONFLICT",
+      "review_note": "P12 zeigt Fmaj7 über D und damit Dm9 mit Grundton; PROG-028 startet Em9. Direkte Umsetzung braucht explizite Transposition/Voicings.",
+      "relation_id": "CR-038",
+      "edge": {
+        "source_id": "PROG-028",
+        "target_id": "P12",
+        "relation_type": "VOICED_BY"
+      },
+      "original_row_sha256": "e30f7529d2ae0bbd07b8cf3bd55a362171da0a2f00f401667f612ee013353168",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; P12 zeigt Fmaj7 über D und damit Dm9 mit Grundton; PROG-028 startet Em9. Direkte Umsetzung braucht explizite Transposition/Voicings.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "CORPUS_REQUIRED",
+      "review_note": "Katalogkombination PROG-001/PAT-001 vorhanden; COMMONLY und STRONG brauchen Korpus-/Hörbelege.",
+      "relation_id": "REL-001",
+      "edge": {
+        "source_id": "PROG-001",
+        "target_id": "PAT-001",
+        "relation_type": "COMMONLY_PAIRED_WITH"
+      },
+      "original_row_sha256": "8996aed87fd0c58d7e56dcdfd651c3ef8ca6ab99c0e6a82877d237b29f9d5e2d",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Katalogkombination PROG-001/PAT-001 vorhanden; COMMONLY und STRONG brauchen Korpus-/Hörbelege.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "PLAY_REVIEW",
+      "review_note": "P07-Arpeggierung ist eine übertragbare Übung; konkrete vier Akkorde, Register und Spielprobe fehlen für diese Zuordnung.",
+      "relation_id": "REL-002",
+      "edge": {
+        "source_id": "PROG-001",
+        "target_id": "P07",
+        "relation_type": "TAUGHT_VIA"
+      },
+      "original_row_sha256": "f65fdca8c4485909dfed25b23cfe984a0f2c7eba2919d80eed209987ca1913d6",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; P07-Arpeggierung ist eine übertragbare Übung; konkrete vier Akkorde, Register und Spielprobe fehlen für diese Zuordnung.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_REVIEW",
+      "review_note": "P05-Shell-Beispiele sind vorhanden. Ihre Übertragung auf alle Positionen von PROG-003 und Guide-Tone-Lagen prüfen; kein MANDATORY_JAZZ-Nachweis.",
+      "relation_id": "REL-003",
+      "edge": {
+        "source_id": "PROG-003",
+        "target_id": "P05",
+        "relation_type": "VOICED_BY"
+      },
+      "original_row_sha256": "3ec52d9393432fc81f6f8e5e905c27aaaeac63c0e2cf2c638b96f9f5305aaf3c",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; P05-Shell-Beispiele sind vorhanden. Ihre Übertragung auf alle Positionen von PROG-003 und Guide-Tone-Lagen prüfen; kein MANDATORY_JAZZ-Nachweis.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "OPTIMUM_REVIEW",
+      "review_note": "P08-Drop-2-Beispiele vorhanden; minimal L1 erfordert definierten Suchraum und unabhängige Optimierungsgegenprobe.",
+      "relation_id": "REL-004",
+      "edge": {
+        "source_id": "PROG-003",
+        "target_id": "P08",
+        "relation_type": "VOICED_BY"
+      },
+      "original_row_sha256": "53e9f0a89b50b01f5d0bc33f23988d965676c18d19534d270787220cb19e0e4b",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; P08-Drop-2-Beispiele vorhanden; minimal L1 erfordert definierten Suchraum und unabhängige Optimierungsgegenprobe.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "CORPUS_REQUIRED",
+      "review_note": "ii–V–I und Swing-Pattern sind kombinierbar; Genre-Häufigkeit und Spang-a-lang-Realisierung brauchen Aufführung/Korpus.",
+      "relation_id": "REL-005",
+      "edge": {
+        "source_id": "PROG-003",
+        "target_id": "PAT-012",
+        "relation_type": "COMMONLY_PAIRED_WITH"
+      },
+      "original_row_sha256": "f7a3854967a7918583b3fe2f7337fc2b3ec70cf4248f00545ccf5c675b88f693",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; ii–V–I und Swing-Pattern sind kombinierbar; Genre-Häufigkeit und Spang-a-lang-Realisierung brauchen Aufführung/Korpus.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "CORPUS_REQUIRED",
+      "review_note": "Dorian-Vamp und Funkpattern sind Projektkombination, kein Häufigkeitsbeleg.",
+      "relation_id": "REL-006",
+      "edge": {
+        "source_id": "PROG-007",
+        "target_id": "PAT-007",
+        "relation_type": "COMMONLY_PAIRED_WITH"
+      },
+      "original_row_sha256": "88bb7c6714e548bea67a3251240a23cd285767eba8195cc0f8da7f4446da91e4",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Dorian-Vamp und Funkpattern sind Projektkombination, kein Häufigkeitsbeleg.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "CORPUS_REQUIRED",
+      "review_note": "Backdoor und Jazz-Hop-Groove sind kombinierbar; gemeinsame Stiltypizität nicht empirisch belegt.",
+      "relation_id": "REL-007",
+      "edge": {
+        "source_id": "PROG-017",
+        "target_id": "PAT-013",
+        "relation_type": "COMMONLY_PAIRED_WITH"
+      },
+      "original_row_sha256": "3c3e9493b6399d4646f749b3b66900abd8dc3350813101173334575157d8e8a8",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Backdoor und Jazz-Hop-Groove sind kombinierbar; gemeinsame Stiltypizität nicht empirisch belegt.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "ARRANGEMENT_REQUIRED",
+      "review_note": "P08 enthält kein vollständig notiertes PROG-017-Arrangement; Klangadjektive transparent/lush brauchen Hörprüfung.",
+      "relation_id": "REL-008",
+      "edge": {
+        "source_id": "PROG-017",
+        "target_id": "P08",
+        "relation_type": "VOICED_BY"
+      },
+      "original_row_sha256": "8b9e87cf043890727a8c270b640cdc1d129f4d766d8c827d7e7b90fc70a5b665",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; P08 enthält kein vollständig notiertes PROG-017-Arrangement; Klangadjektive transparent/lush brauchen Hörprüfung.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "SCOPE_REVIEW",
+      "review_note": "Ein One-Drop-Drumgroove erfordert nicht zwingend Klavier/Gitarre. REQUIRES_TECHNIQUE überzeichnet eine mögliche Skank-Begleitung.",
+      "relation_id": "REL-009",
+      "edge": {
+        "source_id": "PAT-010",
+        "target_id": "P09",
+        "relation_type": "REQUIRES_TECHNIQUE"
+      },
+      "original_row_sha256": "13dc2cdae4acb83edb4e424846052502d223cadbc27fd9f1552dbfe3dfe320b7",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Ein One-Drop-Drumgroove erfordert nicht zwingend Klavier/Gitarre. REQUIRES_TECHNIQUE überzeichnet eine mögliche Skank-Begleitung.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "Vier Viertel bei 174 BPM dauern wie zwei Viertel bei 87 BPM. Reese-Timbre und konkrete Bassereignisse sind damit nicht geprüft.",
+      "relation_id": "REL-010",
+      "edge": {
+        "source_id": "PAT-018",
+        "target_id": "M07",
+        "relation_type": "EXEMPLIFIES_METRIC_DUALITY"
+      },
+      "original_row_sha256": "bb877a709f6f34240eb2d535938b83ca743cd33f8e97f21cf95cdc8af6adc130",
+      "probe_ids": [
+        "METRIC_DUALITY"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Vier Viertel bei 174 BPM dauern wie zwei Viertel bei 87 BPM. Reese-Timbre und konkrete Bassereignisse sind damit nicht geprüft.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_REVIEW",
+      "review_note": "UKG-Katalog nutzt ein Swingmodell; Rate und Onsets sind Übungsdaten, keine empirische Genrenorm.",
+      "relation_id": "REL-011",
+      "edge": {
+        "source_id": "PAT-020",
+        "target_id": "M07",
+        "relation_type": "UTILIZES_SWING_PROFILE"
+      },
+      "original_row_sha256": "b8003b8ad368d4c7a2e01b7980a93271ed6b0d5225ecd7f295d8b5fb47d3a32a",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; UKG-Katalog nutzt ein Swingmodell; Rate und Onsets sind Übungsdaten, keine empirische Genrenorm.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "PLAY_REVIEW",
+      "review_note": "Charleston-Onsets 1/2+ sind dokumentiert; lock with beschreibt ein Aufführungsziel, keinen automatisch bewiesenen Gleichlauf.",
+      "relation_id": "REL-012",
+      "edge": {
+        "source_id": "P09",
+        "target_id": "PAT-012",
+        "relation_type": "TRAINS_RHYTHMIC_INTERACTION"
+      },
+      "original_row_sha256": "456483453c40213a2200628a32d03cd65818399b996df937b652604f991357b1",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Charleston-Onsets 1/2+ sind dokumentiert; lock with beschreibt ein Aufführungsziel, keinen automatisch bewiesenen Gleichlauf.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "DIDACTIC_REVIEW",
+      "review_note": "Tonika-/Dominantgefühl garantiert keine sofortige Akkorderkennung. Kontext, Hörer und Erfolgsmaß fehlen.",
+      "relation_id": "REL-013",
+      "edge": {
+        "source_id": "P10",
+        "target_id": "PROG-001",
+        "relation_type": "FOUNDATIONAL_FOR"
+      },
+      "original_row_sha256": "f3ba0fe0059b232172c7712b07b6ec58e7db2542c48de159ff55ab8c93185099",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Tonika-/Dominantgefühl garantiert keine sofortige Akkorderkennung. Kontext, Hörer und Erfolgsmaß fehlen.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "CORPUS_REQUIRED",
+      "review_note": "Mollschleife über Liquid-Pattern als Beispiel, keine Häufigkeits- oder Emotionsabnahme.",
+      "relation_id": "REL-014",
+      "edge": {
+        "source_id": "PROG-002",
+        "target_id": "PAT-018",
+        "relation_type": "COMMONLY_PAIRED_WITH"
+      },
+      "original_row_sha256": "e36391ea9c27fd4818fd306a61ede0387d4d119862fb6565d4884e5b77c049b6",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Mollschleife über Liquid-Pattern als Beispiel, keine Häufigkeits- oder Emotionsabnahme.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "CORPUS_REQUIRED",
+      "review_note": "Vamp über 2-Step ist möglich; authentic und STRONG sind ohne Aufnahme/Korpus nicht nachgewiesen.",
+      "relation_id": "REL-015",
+      "edge": {
+        "source_id": "PROG-007",
+        "target_id": "PAT-020",
+        "relation_type": "COMMONLY_PAIRED_WITH"
+      },
+      "original_row_sha256": "8e5ab2da35991bcce784bd7469017860bc59c0d713656003c24c3b7e54211405",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Vamp über 2-Step ist möglich; authentic und STRONG sind ohne Aufnahme/Korpus nicht nachgewiesen.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "174/87-Pulsrelation rechnerisch bestätigt; Amen-Chop- und Bass-Audio fehlen für den konkreten Gleichlauf.",
+      "relation_id": "REL-016",
+      "edge": {
+        "source_id": "PAT-021",
+        "target_id": "M07",
+        "relation_type": "EXEMPLIFIES_METRIC_DUALITY"
+      },
+      "original_row_sha256": "41a8ab6fc7f464a6df2aeb561bc491934113e9cd33c5f575a3c74837c90f9d7c",
+      "probe_ids": [
+        "METRIC_DUALITY"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; 174/87-Pulsrelation rechnerisch bestätigt; Amen-Chop- und Bass-Audio fehlen für den konkreten Gleichlauf.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "CORPUS_REQUIRED",
+      "review_note": "Jump-Up-Profil ist als Katalogbeschreibung vorhanden; Genrezugehörigkeit benötigt repräsentative annotierte Aufnahmen.",
+      "relation_id": "REL-017",
+      "edge": {
+        "source_id": "PAT-022",
+        "target_id": "M09",
+        "relation_type": "BELONGS_TO_GENRE"
+      },
+      "original_row_sha256": "c9754d3dbf7eb2e7365d50f62236ff911442cdecfadead69b66924508ae246ba",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Jump-Up-Profil ist als Katalogbeschreibung vorhanden; Genrezugehörigkeit benötigt repräsentative annotierte Aufnahmen.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "ARRANGEMENT_REQUIRED",
+      "review_note": "Keyboard-Offbeats und Schlagzeuglücken müssen auf einer gemeinsamen Ereigniszeitachse geprüft werden; bloße Modulnamen reichen nicht.",
+      "relation_id": "REL-018",
+      "edge": {
+        "source_id": "P09",
+        "target_id": "PAT-020",
+        "relation_type": "COMPATIBLE_WITH"
+      },
+      "original_row_sha256": "a05352e9bc127bdad5e4da4bbea07efc367406146b0b7d9bbb57bbd91d4a5595",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Keyboard-Offbeats und Schlagzeuglücken müssen auf einer gemeinsamen Ereigniszeitachse geprüft werden; bloße Modulnamen reichen nicht.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "DIDACTIC_REVIEW",
+      "review_note": "P11 behandelt Umkehrungen, P02 Griffe. Physische und auditive Lernübertragung braucht Lernaufgabe und externe Bewertung.",
+      "relation_id": "REL-019",
+      "edge": {
+        "source_id": "P11",
+        "target_id": "P02",
+        "relation_type": "EXPANDS_TECHNIQUE_OF"
+      },
+      "original_row_sha256": "fa478374941fdaf8e9237754997294971ac5fb8ed64c6a97427781403608105b",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; P11 behandelt Umkehrungen, P02 Griffe. Physische und auditive Lernübertragung braucht Lernaufgabe und externe Bewertung.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "IDENTITY_CONFLICT",
+      "review_note": "Aktuelles ERR-026 bezeichnet L1-Distanz, die wiedergefundene Phase-4.8-Fassung Bass-First. Versionsgebundene Fehler-ID statt pauschaler Alias nötig.",
+      "relation_id": "REL-020",
+      "edge": {
+        "source_id": "P11",
+        "target_id": "ERR-026",
+        "relation_type": "PREVENTS_ERROR"
+      },
+      "original_row_sha256": "d45cf668c6cf67fa5bc400614c5385e8e669690a4281e5b928d3bad653cc29e5",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Aktuelles ERR-026 bezeichnet L1-Distanz, die wiedergefundene Phase-4.8-Fassung Bass-First. Versionsgebundene Fehler-ID statt pauschaler Alias nötig.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "PLAY_REVIEW",
+      "review_note": "Swing-Pattern 61 Prozent ist rechnerisch vorhanden; konkrete Akkordphrasierung und Eignung bleiben Hör-/Spielaufgabe.",
+      "relation_id": "REL-021",
+      "edge": {
+        "source_id": "PROG-021",
+        "target_id": "PAT-024",
+        "relation_type": "STYLISTICALLY_COMPATIBLE"
+      },
+      "original_row_sha256": "53d2182b5e4d3ad14eb58486a774ae2386c58132eef5e56dabae30a1414a4707",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Swing-Pattern 61 Prozent ist rechnerisch vorhanden; konkrete Akkordphrasierung und Eignung bleiben Hör-/Spielaufgabe.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_CONFLICT",
+      "review_note": "P12-Beispiel mit D im Bass enthält den Grundton. Für PROG-021 übertragbar, aber kein Gesamt-rootless-Nachweis.",
+      "relation_id": "REL-022",
+      "edge": {
+        "source_id": "PROG-021",
+        "target_id": "P12",
+        "relation_type": "DIDACTIC_APPLICATION"
+      },
+      "original_row_sha256": "b0a1102b39bca17ff2ce8161d91eec9d59607fa1b65103bb9bd80f8ee59c9159",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; P12-Beispiel mit D im Bass enthält den Grundton. Für PROG-021 übertragbar, aber kein Gesamt-rootless-Nachweis.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "3er-Rimshot-Periode gegen 4er-Unterteilung hat einen 12-Sechzehntel-Zyklus; Stilwirkung nicht berechnet.",
+      "relation_id": "REL-023",
+      "edge": {
+        "source_id": "PAT-025",
+        "target_id": "M07",
+        "relation_type": "POLYRHYTHMIC_INTERACTION"
+      },
+      "original_row_sha256": "88883840eb0fdababb8e7830c8fb216210f35a5143d680517d288808967071b9",
+      "probe_ids": [
+        "POLYRHYTHM"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; 3er-Rimshot-Periode gegen 4er-Unterteilung hat einen 12-Sechzehntel-Zyklus; Stilwirkung nicht berechnet.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "64 Prozent bei 480 PPQ ergibt Tick 154, +34 Ticks, 32.196970 ms bei 132 BPM; kein historischer MPC-Wertbeleg.",
+      "relation_id": "REL-024",
+      "edge": {
+        "source_id": "PAT-026",
+        "target_id": "M07",
+        "relation_type": "MICROTIMING_QUANTIZATION"
+      },
+      "original_row_sha256": "5e196360b2829a92a6d42834c892b0c57706ad3194b5cab48dcbf1f12fee2a55",
+      "probe_ids": [
+        "SWING64"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; 64 Prozent bei 480 PPQ ergibt Tick 154, +34 Ticks, 32.196970 ms bei 132 BPM; kein historischer MPC-Wertbeleg.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "DIDACTIC_REVIEW",
+      "review_note": "Picardische-Terz-Prinzip und Modulverweis sind vorhanden; emotionaler Effekt und Reihenfolge brauchen unabhängige Didaktikabnahme.",
+      "relation_id": "REL-025",
+      "edge": {
+        "source_id": "PROG-022",
+        "target_id": "P13",
+        "relation_type": "DIDACTIC_APPLICATION"
+      },
+      "original_row_sha256": "d1b49849d13387e5ade2146a97e192c3aa49cfba9a343e87a8ad1808f7922406",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Picardische-Terz-Prinzip und Modulverweis sind vorhanden; emotionaler Effekt und Reihenfolge brauchen unabhängige Didaktikabnahme.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "CORPUS_REQUIRED",
+      "review_note": "Liquid-Aesthetik ist keine Folge aus einem Akkord- und Patternpaar. Gemeinsame Fassung/Audio fehlen.",
+      "relation_id": "REL-026",
+      "edge": {
+        "source_id": "PROG-023",
+        "target_id": "PAT-018",
+        "relation_type": "STYLISTICALLY_COMPATIBLE"
+      },
+      "original_row_sha256": "31c8377fc4a20a4272f876da7a8e3d25f703707fddfc5e9c1bc5fbc0a5c6cdab",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Liquid-Aesthetik ist keine Folge aus einem Akkord- und Patternpaar. Gemeinsame Fassung/Audio fehlen.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "NAMESPACE_REVIEW",
+      "review_note": "M03/M04 bezeichnen im historischen Master Intervalle/Skalen und Akkorde; spätere Domänenverschiebungen nicht automatisch auf diese Kante anwenden.",
+      "relation_id": "REL-027",
+      "edge": {
+        "source_id": "M03",
+        "target_id": "M04",
+        "relation_type": "HARMONIC_DERIVATION"
+      },
+      "original_row_sha256": "467711ed68ac982d9fbd91e73129b9f8d2187cea70dee0d46caf7559471721da",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; M03/M04 bezeichnen im historischen Master Intervalle/Skalen und Akkorde; spätere Domänenverschiebungen nicht automatisch auf diese Kante anwenden.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "STANDARD_REVIEW",
+      "review_note": "GM1-Profil reserviert Kanal 10; proprietäre/GM2-Erweiterungen separat. Historischer Primärtabellennachweis vorhanden, keine frische Vollprüfung.",
+      "relation_id": "REL-028",
+      "edge": {
+        "source_id": "M11",
+        "target_id": "M08",
+        "relation_type": "CHANNEL_ASSIGNMENT_MAPPING"
+      },
+      "original_row_sha256": "809c65d774d2af5ecc82702734d183b5dd2d4433f2bb942932e486f0ab7584d9",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; GM1-Profil reserviert Kanal 10; proprietäre/GM2-Erweiterungen separat. Historischer Primärtabellennachweis vorhanden, keine frische Vollprüfung.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "PLAY_REVIEW",
+      "review_note": "Explizit als Unterrichtskombination formuliert; konkrete gemeinsame Phrasierung und Spielabnahme fehlen.",
+      "relation_id": "REL-029",
+      "edge": {
+        "source_id": "PROG-024",
+        "target_id": "PAT-027",
+        "relation_type": "STYLISTICALLY_COMPATIBLE"
+      },
+      "original_row_sha256": "97a0c61d0c737fee132d6fe2e7dfafda8f3cc55b6f02803505bd066c31159674",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Explizit als Unterrichtskombination formuliert; konkrete gemeinsame Phrasierung und Spielabnahme fehlen.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "PLAY_REVIEW",
+      "review_note": "P14 ist ein Begleitentwurf, dessen Übertragung auf PROG-024 geprüft werden muss; keine unabhängige Ergonomie-/Stilabnahme.",
+      "relation_id": "REL-030",
+      "edge": {
+        "source_id": "PROG-024",
+        "target_id": "P14",
+        "relation_type": "DIDACTIC_APPLICATION"
+      },
+      "original_row_sha256": "9196fc768a67615dca71f5b812c2a40b644a384ed0e084a6d48212cd3341c8a1",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; P14 ist ein Begleitentwurf, dessen Übertragung auf PROG-024 geprüft werden muss; keine unabhängige Ergonomie-/Stilabnahme.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "PAT-027-Onsets im dokumentierten zweitaktigen Raster berechnet; Cross-Stick ist nicht automatisch Gilberto-Gitarrenbatida.",
+      "relation_id": "REL-031",
+      "edge": {
+        "source_id": "PAT-027",
+        "target_id": "M07",
+        "relation_type": "METRIC_ALIGNMENT"
+      },
+      "original_row_sha256": "3b0e7931a170658879f89673d74cf2f8ed300e2b7337ffeb269de9f01911b1f5",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; PAT-027-Onsets im dokumentierten zweitaktigen Raster berechnet; Cross-Stick ist nicht automatisch Gilberto-Gitarrenbatida.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "CORPUS_REQUIRED",
+      "review_note": "Montuno/Cha-Cha-Verknüpfung braucht konkrete Arrangementfassung und Genrebeleg; Namen allein beweisen typische Textur nicht.",
+      "relation_id": "REL-032",
+      "edge": {
+        "source_id": "PROG-025",
+        "target_id": "PAT-028",
+        "relation_type": "STYLISTICALLY_COMPATIBLE"
+      },
+      "original_row_sha256": "af8d6e143a3b4f10264b9e8216239d124ea855224a0ea43cfc6b734903887bd9",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Montuno/Cha-Cha-Verknüpfung braucht konkrete Arrangementfassung und Genrebeleg; Namen allein beweisen typische Textur nicht.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "MusicXML pitch mit step/alter/octave kann unterschiedliche enharmonische Schreibweisen darstellen; keine allgemeine Verlustfreiheitsgarantie jedes Konverters.",
+      "relation_id": "REL-033",
+      "edge": {
+        "source_id": "M11",
+        "target_id": "M02",
+        "relation_type": "DATA_MODEL_ENCODING"
+      },
+      "original_row_sha256": "2e04d37770c68a1637e2165a6c50b726ff52f1d5a35f48700b869624c0168daa",
+      "probe_ids": [
+        "XML"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; MusicXML pitch mit step/alter/octave kann unterschiedliche enharmonische Schreibweisen darstellen; keine allgemeine Verlustfreiheitsgarantie jedes Konverters.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "SCOPE_REVIEW",
+      "review_note": "Vorzeichenfolge bestimmt nicht allein Leittonfunktion; natürliches Moll und Moduswechsel benötigen zusätzlichen Kontext.",
+      "relation_id": "REL-034",
+      "edge": {
+        "source_id": "M02",
+        "target_id": "M05",
+        "relation_type": "THEORETICAL_DERIVATION"
+      },
+      "original_row_sha256": "1b46f226c74c4ce4598c444343edc17d157ad323754a4ac411fa1876bd5285cc",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Vorzeichenfolge bestimmt nicht allein Leittonfunktion; natürliches Moll und Moduswechsel benötigen zusätzlichen Kontext.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "CORPUS_REQUIRED",
+      "review_note": "PROG-028/PAT-030 ist eine Projektpaarung; 57-Prozent-Wert hat keine gesicherte historische Musikerzuschreibung.",
+      "relation_id": "REL-035",
+      "edge": {
+        "source_id": "PROG-028",
+        "target_id": "PAT-030",
+        "relation_type": "COMMONLY_PAIRED_WITH"
+      },
+      "original_row_sha256": "436bca28bff8d37fc89ab25262d3aa0dbb94a921bc22d5f5d8ed73a1b69f7226",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; PROG-028/PAT-030 ist eine Projektpaarung; 57-Prozent-Wert hat keine gesicherte historische Musikerzuschreibung.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "METER_REVIEW",
+      "review_note": "PAT-031 und PROG-025 besitzen ohne gemeinsame Ereignis-/Taktplanung keine nachgewiesene Passung; 6/8- und 4/4-Modelle getrennt halten.",
+      "relation_id": "REL-036",
+      "edge": {
+        "source_id": "PAT-031",
+        "target_id": "PROG-025",
+        "relation_type": "COMMONLY_PAIRED_WITH"
+      },
+      "original_row_sha256": "e427b561c970b1316ceb194fec81e5652211211dedc4dba6f87b08fb5f1807b7",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; PAT-031 und PROG-025 besitzen ohne gemeinsame Ereignis-/Taktplanung keine nachgewiesene Passung; 6/8- und 4/4-Modelle getrennt halten.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+      ],
+      "candidate_claim_ids": []
+    },
+    {
+      "category": "EXISTING_SAMPLE",
+      "review_note": "SPN/MusicXML-C4 und MIDI 60 unter ausdrücklich benannter Oktavkonvention.",
+      "relation_id": "CDR-001",
+      "edge": {
+        "source_id": "C4_PITCH",
+        "target_id": "MIDI_NOTE_60",
+        "relation_type": "MAPS_TO"
+      },
+      "original_row_sha256": "c492229f48a8b8b1a127eb60a9688f5cebaf12aeaff46946f8b5b7f594aaa11c",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; SPN/MusicXML-C4 und MIDI 60 unter ausdrücklich benannter Oktavkonvention.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-008",
+        "CLAIM-015"
+      ]
+    },
+    {
+      "category": "EXISTING_SAMPLE",
+      "review_note": "Deutsches H als Tonklasse 11; eindeutige Notationskonvention nötig.",
+      "relation_id": "CDR-002",
+      "edge": {
+        "source_id": "DEUTSCH_H",
+        "target_id": "PITCH_CLASS_11",
+        "relation_type": "EQUIVALENT_TO"
+      },
+      "original_row_sha256": "b86297ab9f34ec143f11df811b798f1b884fd3a4ca74c6c0c0ad75b75f3181a0",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Deutsches H als Tonklasse 11; eindeutige Notationskonvention nötig.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-012"
+      ]
+    },
+    {
+      "category": "EXISTING_SAMPLE",
+      "review_note": "Deutsches B als Tonklasse 10; kein impliziter AUTO-Default.",
+      "relation_id": "CDR-003",
+      "edge": {
+        "source_id": "DEUTSCH_B",
+        "target_id": "PITCH_CLASS_10",
+        "relation_type": "EQUIVALENT_TO"
+      },
+      "original_row_sha256": "b2794077fdb2198cf22ea51da5a8a9840b553012dffcc768c2522db0a5220b30",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Deutsches B als Tonklasse 10; kein impliziter AUTO-Default.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-012"
+      ]
+    },
+    {
+      "category": "EXISTING_SAMPLE",
+      "review_note": "28 Rotationen aus vier ausgewählten Familien, kein vollständiger Katalog aller Heptatonik.",
+      "relation_id": "CDR-004",
+      "edge": {
+        "source_id": "HEPTATONIK_28",
+        "target_id": "FOUR_GENERATOR_FAMILIES",
+        "relation_type": "DERIVED_FROM"
+      },
+      "original_row_sha256": "337c53aa6290c2f5d128677fd833f72290013b06e349502479974afe6bdf8033",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; 28 Rotationen aus vier ausgewählten Familien, kein vollständiger Katalog aller Heptatonik.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-016"
+      ]
+    },
+    {
+      "category": "EXISTING_SAMPLE",
+      "review_note": "Siebte Rotation aufsteigenden melodischen Molls; klassische absteigende Variante getrennt.",
+      "relation_id": "CDR-005",
+      "edge": {
+        "source_id": "ALTERED_SCALE",
+        "target_id": "MELODIC_MINOR_MODE_7",
+        "relation_type": "DERIVED_FROM"
+      },
+      "original_row_sha256": "3cf1ea2bc185e1267754c779120a8d7e30ef8296fe7eb82f2a31318152bec76c",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Siebte Rotation aufsteigenden melodischen Molls; klassische absteigende Variante getrennt.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-017"
+      ]
+    },
+    {
+      "category": "EXISTING_SAMPLE",
+      "review_note": "Vierte Rotation aufsteigenden melodischen Molls.",
+      "relation_id": "CDR-006",
+      "edge": {
+        "source_id": "LYDIAN_DOMINANT",
+        "target_id": "MELODIC_MINOR_MODE_4",
+        "relation_type": "DERIVED_FROM"
+      },
+      "original_row_sha256": "6a24c0f4bf3a30076bde8fb48a15658a1591c0f2bc46dacaabad6dd347c58a26",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Vierte Rotation aufsteigenden melodischen Molls.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-018"
+      ]
+    },
+    {
+      "category": "EXISTING_SAMPLE",
+      "review_note": "A-Lage ist ein konkretes Cmaj9-Projektbeispiel, keine frische Levine-Seitenprüfung.",
+      "relation_id": "CDR-007",
+      "edge": {
+        "source_id": "ROOTLESS_VOICING_A",
+        "target_id": "3_5_7_9_STACK",
+        "relation_type": "STRUCTURED_AS"
+      },
+      "original_row_sha256": "37257430ff0ce0a8fdecfcddca3bff6e3e98584b42bad1e3247240368ff55586",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; A-Lage ist ein konkretes Cmaj9-Projektbeispiel, keine frische Levine-Seitenprüfung.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-021"
+      ]
+    },
+    {
+      "category": "EXISTING_SAMPLE",
+      "review_note": "B-Lage ist ein konkretes Cmaj9-Projektbeispiel, keine universelle Jazz-Konvention.",
+      "relation_id": "CDR-008",
+      "edge": {
+        "source_id": "ROOTLESS_VOICING_B",
+        "target_id": "7_9_3_5_STACK",
+        "relation_type": "STRUCTURED_AS"
+      },
+      "original_row_sha256": "1973b73fcd7c8ff248afba78e8ee218520337edb112d1c772e764ea75a3dc4ef",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; B-Lage ist ein konkretes Cmaj9-Projektbeispiel, keine universelle Jazz-Konvention.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-021"
+      ]
+    },
+    {
+      "category": "EXISTING_SAMPLE",
+      "review_note": "Zweithöchste Stimme enger Vierstimmigkeit um Oktave gesenkt; keine Spielbarkeit garantiert.",
+      "relation_id": "CDR-009",
+      "edge": {
+        "source_id": "DROP_2_VOICING",
+        "target_id": "SECOND_VOICE_LOWERED_OCTAVE",
+        "relation_type": "TRANSFORMS_TO"
+      },
+      "original_row_sha256": "34f6d7ed49d75425b11bf39017d6d1dd677169b470090a6686afdfc7ee2a2116",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Zweithöchste Stimme enger Vierstimmigkeit um Oktave gesenkt; keine Spielbarkeit garantiert.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-042"
+      ]
+    },
+    {
+      "category": "COUNTEREXAMPLE",
+      "review_note": "Zwei Dreiklänge D/C enthalten kein H. Historische Gleichsetzung mit vollständigem Cmaj13#11 bleibt FAIL; Korrekturvorschlag getrennt.",
+      "relation_id": "CDR-010",
+      "edge": {
+        "source_id": "POLYCHORD_D_OVER_C",
+        "target_id": "C_MAJ13_SHARP11",
+        "relation_type": "EXPRESSES"
+      },
+      "original_row_sha256": "3e11912952cf37bf21c92ca6f52758e307425fc8e4984386337d9fd0cc3ba617",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Zwei Dreiklänge D/C enthalten kein H. Historische Gleichsetzung mit vollständigem Cmaj13#11 bleibt FAIL; Korrekturvorschlag getrennt.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-022"
+      ]
+    },
+    {
+      "category": "EXISTING_SAMPLE",
+      "review_note": "D7 hat die Gestalt V7/V, löst hier aber nach Dm7 statt G auf. Bestehende Frage auf Gestalt statt tatsächliche Auflösung präzisieren.",
+      "relation_id": "CDR-011",
+      "edge": {
+        "source_id": "PROG_024",
+        "target_id": "APPLIED_DOMINANT_V7_OVER_V",
+        "relation_type": "HARMONIC_FUNCTION"
+      },
+      "original_row_sha256": "4d64b784c523bc85409ebadb78d6dcfe78f90f545d7296de57042274803749d5",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; D7 hat die Gestalt V7/V, löst hier aber nach Dm7 statt G auf. Bestehende Frage auf Gestalt statt tatsächliche Auflösung präzisieren.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-026"
+      ]
+    },
+    {
+      "category": "DIRECTION_REVIEW",
+      "review_note": "II7→ii7 ist im Original beschrieben; Name TO_II7 widerspricht der Zielrichtung. Separater Vorschlag SAME_ROOT_MAJOR_TO_MINOR_SEVENTH.",
+      "relation_id": "CDR-012",
+      "edge": {
+        "source_id": "PROG_024",
+        "target_id": "MODAL_SHIFT_TO_II7",
+        "relation_type": "VOICE_LEADING"
+      },
+      "original_row_sha256": "3c106fc241ad50d508c99d2689c88268667644e745ca892eb8531cd6eb4daccb",
+      "probe_ids": [
+        "SAME_ROOT_SHIFT"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; II7→ii7 ist im Original beschrieben; Name TO_II7 widerspricht der Zielrichtung. Separater Vorschlag SAME_ROOT_MAJOR_TO_MINOR_SEVENTH.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-026"
+      ]
+    },
+    {
+      "category": "EXISTING_SAMPLE",
+      "review_note": "Cm–Fm–G7–Fm als Projektvamp, kein repräsentativer Korpusnachweis.",
+      "relation_id": "CDR-013",
+      "edge": {
+        "source_id": "PROG_025",
+        "target_id": "CYCLICAL_OSTINATO_VAMP",
+        "relation_type": "HARMONIC_STRUCTURE"
+      },
+      "original_row_sha256": "bb7056cda5f1b6b16ff767d361c1721ba3c4ed08fd76ea553592d9591381d69b",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Cm–Fm–G7–Fm als Projektvamp, kein repräsentativer Korpusnachweis.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-040"
+      ]
+    },
+    {
+      "category": "ARRANGEMENT_REQUIRED",
+      "review_note": "Original nennt keine vollständigen Tonhöhen/Dauern. Neuer Ereignisentwurf darf keine historische Transkription vortäuschen.",
+      "relation_id": "CDR-014",
+      "edge": {
+        "source_id": "PROG_025",
+        "target_id": "PIANO_MONTUNO_GUAJEO",
+        "relation_type": "RHYTHMIC_EXECUTION"
+      },
+      "original_row_sha256": "72b5eae57e2c61fdb576a621450e5d8083b1aaa68bcbb565921e2ad41af3165e",
+      "probe_ids": [
+        "NEW_PIANO_DRAFT"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Original nennt keine vollständigen Tonhöhen/Dauern. Neuer Ereignisentwurf darf keine historische Transkription vortäuschen.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-040"
+      ]
+    },
+    {
+      "category": "EXISTING_SAMPLE",
+      "review_note": "61 Prozent als STEPS-Paarmodell bei 480 PPQ gerundet Tick 146.",
+      "relation_id": "CDR-015",
+      "edge": {
+        "source_id": "SWING_61_PCT",
+        "target_id": "TICK_146_AT_480_PPQ",
+        "relation_type": "QUANTIZES_TO"
+      },
+      "original_row_sha256": "e0e70496593ff3d8e7ccaa03f1b3f3e4fb7ea3891f94718d5f6c52a0d753c752",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; 61 Prozent als STEPS-Paarmodell bei 480 PPQ gerundet Tick 146.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-033"
+      ]
+    },
+    {
+      "category": "EXISTING_SAMPLE",
+      "review_note": "58 Prozent als STEPS-Paarmodell bei 480 PPQ gerundet Tick 139.",
+      "relation_id": "CDR-016",
+      "edge": {
+        "source_id": "SWING_58_PCT",
+        "target_id": "TICK_139_AT_480_PPQ",
+        "relation_type": "QUANTIZES_TO"
+      },
+      "original_row_sha256": "3eb732bd94cbe084a22637ce25881ac92ce816b67e4019e2c8e7fe703c6648ee",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; 58 Prozent als STEPS-Paarmodell bei 480 PPQ gerundet Tick 139.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-033"
+      ]
+    },
+    {
+      "category": "SOURCE_SCOPE_REVIEW",
+      "review_note": "Friberg/Sundström berichtet Tempoabhängigkeit; decay ist keine aus dem Abstract belegte universelle Zerfallsformel.",
+      "relation_id": "CDR-017",
+      "edge": {
+        "source_id": "FRIBERG_SWING_DECAY",
+        "target_id": "TEMPO_DEPENDENT_RHO",
+        "relation_type": "MODELS"
+      },
+      "original_row_sha256": "9ee9c66cbb15604a6c74111b84ce8756b385eb545558b14fa34cd78d86112eb4",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Friberg/Sundström berichtet Tempoabhängigkeit; decay ist keine aus dem Abstract belegte universelle Zerfallsformel.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-034"
+      ]
+    },
+    {
+      "category": "EXISTING_SAMPLE",
+      "review_note": "Kontinuierliche Son-Clave-Ticks unterscheiden sich von taktrelativen Positionen; konkretes Modell, keine Hörabnahme.",
+      "relation_id": "CDR-018",
+      "edge": {
+        "source_id": "SON_CLAVE_3_2",
+        "target_id": "TICKS_0_720_1440_2400_2880",
+        "relation_type": "TIMELINE_AT_480_PPQ"
+      },
+      "original_row_sha256": "f79013fa1ed57a1e0a0506f4705455cc7a63fb5246fd9047f25e0b02276a9a3b",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Kontinuierliche Son-Clave-Ticks unterscheiden sich von taktrelativen Positionen; konkretes Modell, keine Hörabnahme.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-036"
+      ]
+    },
+    {
+      "category": "HISTORICAL_SOURCE_REQUIRED",
+      "review_note": "Surdo-/Tamborim-Deutung als Überlieferung auffindbar, aber keine hier geprüfte zeitgenössische Entstehungsquelle; Gitarrenfamilie nicht mit Cross-Stick gleichsetzen.",
+      "relation_id": "CDR-019",
+      "edge": {
+        "source_id": "BOSSA_BATIDA",
+        "target_id": "BRAZILIAN_TAMBORIM_SURDO_SYNTHESIS",
+        "relation_type": "HISTORICAL_ORIGIN"
+      },
+      "original_row_sha256": "c1451452080eea9d1073253587a0436614cfe81235e33a68d29e9d29aad4416c",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Surdo-/Tamborim-Deutung als Überlieferung auffindbar, aber keine hier geprüfte zeitgenössische Entstehungsquelle; Gitarrenfamilie nicht mit Cross-Stick gleichsetzen.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-039"
+      ]
+    },
+    {
+      "category": "STANDARD_REVIEW",
+      "review_note": "GM1-Kanal 10 und 47 feste Notennummern sind Profilregeln, kein Protokollzwang aller MIDI-Geräte.",
+      "relation_id": "CDR-020",
+      "edge": {
+        "source_id": "GM_CHANNEL_10",
+        "target_id": "PERCUSSION_FIXED_MAP",
+        "relation_type": "STANDARDIZED_IN"
+      },
+      "original_row_sha256": "6cc48ebba80affe0c1d6ce5860110f6971d316b208a344cd27fff4386e74e711",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; GM1-Kanal 10 und 47 feste Notennummern sind Profilregeln, kein Protokollzwang aller MIDI-Geräte.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-037"
+      ]
+    },
+    {
+      "category": "ROLE_SCOPE_REQUIRED",
+      "review_note": "Erste/marcação betont in benannter Samba-Besetzung 2, zweite/resposta 1. Keine universelle Norm für jeden Surdo oder Bossa.",
+      "relation_id": "CDR-021",
+      "edge": {
+        "source_id": "SURDO_PULSE",
+        "target_id": "ACCENT_ON_BEAT_2_IN_2_4",
+        "relation_type": "PERFORMANCE_NORM"
+      },
+      "original_row_sha256": "98cf8f9abf96ed8b89a27109a55b6c08802c340680f901855b4260a1c2362c59",
+      "probe_ids": [],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Erste/marcação betont in benannter Samba-Besetzung 2, zweite/resposta 1. Keine universelle Norm für jeden Surdo oder Bossa.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-038"
+      ]
+    },
+    {
+      "category": "MODEL_SAMPLE",
+      "review_note": "MusicXML-Pitch-Struktur anhand W3C-Fundstelle und XML-Beispiel; Bruchteils-alter darf nicht in Ganzzahl-MIDI verloren gehen.",
+      "relation_id": "CDR-022",
+      "edge": {
+        "source_id": "MUSICXML_PITCH",
+        "target_id": "STEP_ALTER_OCTAVE_MODEL",
+        "relation_type": "SCHEMA_DEFINITION"
+      },
+      "original_row_sha256": "6f4dfb37f35c640688244bf8109017190eeb835f5ddb502fca52d7de14efcafe",
+      "probe_ids": [
+        "XML"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; MusicXML-Pitch-Struktur anhand W3C-Fundstelle und XML-Beispiel; Bruchteils-alter darf nicht in Ganzzahl-MIDI verloren gehen.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-011"
+      ]
+    },
+    {
+      "category": "DIDACTIC_REVIEW",
+      "review_note": "P10 definiert Bass zuerst mit Umkehrungscheck. Keine Hörstrategie-Wirksamkeit aus Tonhöhenarithmetik oder Timingstudien ableiten.",
+      "relation_id": "CDR-023",
+      "edge": {
+        "source_id": "BASS_FIRST_AURAL",
+        "target_id": "LOWEST_PITCH_ANCHOR",
+        "relation_type": "PEDAGOGICAL_PRINCIPLE"
+      },
+      "original_row_sha256": "ba99d971206494cb2e897f94aa455a0d589e66502395f7e82cfe18d670b85876",
+      "probe_ids": [
+        "BASS_AMBIGUITY"
+      ],
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "source_assertion_verified": false,
+      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; P10 definiert Bass zuerst mit Umkehrungscheck. Keine Hörstrategie-Wirksamkeit aus Tonhöhenarithmetik oder Timingstudien ableiten.",
+      "references": [
+        "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
+        "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+      ],
+      "candidate_claim_ids": [
+        "CLAIM-045"
+      ]
+    }
+  ],
+  "probes": [
+    {
+      "id": "FREQUENCY",
+      "kind": "frequency",
+      "input": {
+        "midi": [
+          60,
+          69,
+          72
+        ]
+      },
+      "expected": [
+        261.625565,
+        440.0,
+        523.251131
+      ],
+      "relations": [
+        "CR-001",
+        "CR-002"
+      ]
+    },
+    {
+      "id": "MOD12",
+      "kind": "pitch_class",
+      "input": {
+        "midi": [
+          0,
+          12,
+          60,
+          61,
+          127
+        ]
+      },
+      "expected": [
+        0,
+        0,
+        0,
+        1,
+        7
+      ],
+      "relations": [
+        "CR-003"
+      ]
+    },
+    {
+      "id": "ENHARMONIC",
+      "kind": "spellings",
+      "input": {
+        "convention": "INT",
+        "notes": [
+          "C#4",
+          "Db4"
+        ]
+      },
+      "expected": [
+        [
+          "C",
+          1,
+          1
+        ],
+        [
+          "D",
+          -1,
+          1
+        ]
+      ],
+      "relations": [
+        "CR-005",
+        "CR-006",
+        "CR-036"
+      ]
+    },
+    {
+      "id": "DE_H_B",
+      "kind": "spellings",
+      "input": {
+        "convention": "DE",
+        "notes": [
+          "H3",
+          "B3"
+        ]
+      },
+      "expected": [
+        [
+          "B",
+          0,
+          11
+        ],
+        [
+          "B",
+          -1,
+          10
+        ]
+      ],
+      "relations": [
+        "CR-007"
+      ]
+    },
+    {
+      "id": "DIATONIC",
+      "kind": "roman",
+      "input": {
+        "key": "C",
+        "degrees": [
+          "I",
+          "ii",
+          "iii",
+          "IV",
+          "V",
+          "vi",
+          "vii°"
+        ]
+      },
+      "expected": [
+        "C",
+        "Dm",
+        "Em",
+        "F",
+        "G",
+        "Am",
+        "Bdim"
+      ],
+      "relations": [
+        "CR-009",
+        "CR-016",
+        "CR-021"
+      ]
+    },
+    {
+      "id": "RELATIVE_COLLECTION",
+      "kind": "collections",
+      "input": {
+        "notes": [
+          [
+            "C4",
+            "D4",
+            "E4",
+            "F4",
+            "G4",
+            "A4",
+            "B4"
+          ],
+          [
+            "A3",
+            "B3",
+            "C4",
+            "D4",
+            "E4",
+            "F4",
+            "G4"
+          ]
+        ]
+      },
+      "expected": [
+        [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ]
+      ],
+      "relations": [
+        "CR-010"
+      ]
+    },
+    {
+      "id": "MINOR_DOMINANT",
+      "kind": "roman",
+      "input": {
+        "key": "C",
+        "minor": true,
+        "degrees": [
+          "V7"
+        ]
+      },
+      "expected": [
+        "G7"
+      ],
+      "relations": [
+        "CR-011"
+      ]
+    },
+    {
+      "id": "TRIADS",
+      "kind": "chords",
+      "input": {
+        "symbols": [
+          "C",
+          "Cm",
+          "Cdim",
+          "Caug"
+        ]
+      },
+      "expected": [
+        [
+          0,
+          4,
+          7
+        ],
+        [
+          0,
+          3,
+          7
+        ],
+        [
+          0,
+          3,
+          6
+        ],
+        [
+          0,
+          4,
+          8
+        ]
+      ],
+      "relations": [
+        "CR-012"
+      ]
+    },
+    {
+      "id": "INVERSION",
+      "kind": "bass_ambiguity",
+      "input": {
+        "symbols": [
+          "C",
+          "C/E",
+          "C/G"
+        ]
+      },
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          7
+        ]
+      ],
+      "relations": [
+        "CR-013"
+      ]
+    },
+    {
+      "id": "SEVENTHS",
+      "kind": "chords",
+      "input": {
+        "symbols": [
+          "Cmaj7",
+          "Cm7"
+        ]
+      },
+      "expected": [
+        [
+          0,
+          4,
+          7,
+          11
+        ],
+        [
+          0,
+          3,
+          7,
+          10
+        ]
+      ],
+      "relations": [
+        "CR-014"
+      ]
+    },
+    {
+      "id": "CADENCE",
+      "kind": "roman",
+      "input": {
+        "key": "C",
+        "degrees": [
+          "V7",
+          "I"
+        ]
+      },
+      "expected": [
+        "G7",
+        "C"
+      ],
+      "relations": [
+        "CR-018"
+      ]
+    },
+    {
+      "id": "BORROWED",
+      "kind": "roman",
+      "input": {
+        "key": "C",
+        "degrees": [
+          "iv"
+        ]
+      },
+      "expected": [
+        "Fm"
+      ],
+      "relations": [
+        "CR-019"
+      ]
+    },
+    {
+      "id": "TRITONE",
+      "kind": "chords",
+      "input": {
+        "symbols": [
+          "G7",
+          "Db7"
+        ]
+      },
+      "expected": [
+        [
+          2,
+          5,
+          7,
+          11
+        ],
+        [
+          1,
+          5,
+          8,
+          11
+        ]
+      ],
+      "relations": [
+        "CR-020"
+      ]
+    },
+    {
+      "id": "PARALLELS",
+      "kind": "parallels",
+      "input": {
+        "from": [
+          48,
+          55
+        ],
+        "to": [
+          50,
+          57
+        ]
+      },
+      "expected": true,
+      "relations": [
+        "CR-022"
+      ]
+    },
+    {
+      "id": "L1",
+      "kind": "voice_cost",
+      "input": {
+        "from": [
+          60,
+          64,
+          67
+        ],
+        "to": [
+          59,
+          62,
+          67
+        ]
+      },
+      "expected": 3,
+      "relations": [
+        "CR-023"
+      ]
+    },
+    {
+      "id": "METRIC_DUALITY",
+      "kind": "metric_duality",
+      "input": {
+        "fast_bpm": 174,
+        "slow_bpm": 87
+      },
+      "expected": true,
+      "relations": [
+        "REL-010",
+        "REL-016"
+      ]
+    },
+    {
+      "id": "POLYRHYTHM",
+      "kind": "cycle",
+      "input": {
+        "periods": [
+          3,
+          4
+        ]
+      },
+      "expected": 12,
+      "relations": [
+        "REL-023"
+      ]
+    },
+    {
+      "id": "SWING64",
+      "kind": "swing",
+      "input": {
+        "ppq": 480,
+        "percent": 64,
+        "bpm": 132
+      },
+      "expected": [
+        154,
+        34,
+        32.19697
+      ],
+      "relations": [
+        "REL-024"
+      ]
+    },
+    {
+      "id": "WHITE_KEYS",
+      "kind": "collections",
+      "input": {
+        "notes": [
+          [
+            "C4",
+            "D4",
+            "E4",
+            "F4",
+            "G4",
+            "A4",
+            "B4"
+          ]
+        ]
+      },
+      "expected": [
+        [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ]
+      ],
+      "relations": [
+        "CR-033"
+      ]
+    },
+    {
+      "id": "XML",
+      "kind": "xml",
+      "input": {
+        "xml": "<pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch>"
+      },
+      "expected": {
+        "step": "D",
+        "alter": "-1",
+        "octave": "4"
+      },
+      "relations": [
+        "REL-033",
+        "CDR-022"
+      ]
+    },
+    {
+      "id": "SAME_ROOT_SHIFT",
+      "kind": "same_root_shift",
+      "input": {
+        "symbols": [
+          "D7",
+          "Dm7"
+        ]
+      },
+      "expected": {
+        "root_preserved": true,
+        "common": [
+          0,
+          2,
+          9
+        ],
+        "removed": [
+          6
+        ],
+        "added": [
+          5
+        ]
+      },
+      "relations": [
+        "CDR-012"
+      ]
+    },
+    {
+      "id": "BASS_AMBIGUITY",
+      "kind": "bass_ambiguity",
+      "input": {
+        "symbols": [
+          "C/E",
+          "Em",
+          "Am/E"
+        ]
+      },
+      "expected": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          9,
+          4
+        ]
+      ],
+      "relations": [
+        "CDR-023"
+      ]
+    },
+    {
+      "id": "NEW_PIANO_DRAFT",
+      "kind": "draft_events",
+      "input": {
+        "bars": 4,
+        "beats": 4,
+        "ppq": 480,
+        "chords": [
+          "Cm",
+          "Fm",
+          "G7",
+          "Fm"
+        ],
+        "events": [
+          [
+            0,
+            120,
+            "C4",
+            "Cm"
+          ],
+          [
+            720,
+            120,
+            "Eb4",
+            "Cm"
+          ],
+          [
+            960,
+            120,
+            "G4",
+            "Cm"
+          ],
+          [
+            1680,
+            120,
+            "C5",
+            "Cm"
+          ],
+          [
+            1920,
+            120,
+            "C4",
+            "Fm"
+          ],
+          [
+            2640,
+            120,
+            "F4",
+            "Fm"
+          ],
+          [
+            2880,
+            120,
+            "Ab4",
+            "Fm"
+          ],
+          [
+            3600,
+            120,
+            "C5",
+            "Fm"
+          ],
+          [
+            3840,
+            120,
+            "B3",
+            "G7"
+          ],
+          [
+            4560,
+            120,
+            "D4",
+            "G7"
+          ],
+          [
+            4800,
+            120,
+            "F4",
+            "G7"
+          ],
+          [
+            5520,
+            120,
+            "G4",
+            "G7"
+          ],
+          [
+            5760,
+            120,
+            "C4",
+            "Fm"
+          ],
+          [
+            6480,
+            120,
+            "F4",
+            "Fm"
+          ],
+          [
+            6720,
+            120,
+            "Ab4",
+            "Fm"
+          ],
+          [
+            7440,
+            120,
+            "C5",
+            "Fm"
+          ]
+        ],
+        "clave_onsets": [
+          480,
+          960,
+          1920,
+          2640,
+          3360,
+          4320,
+          4800,
+          5760,
+          6480,
+          7200
+        ]
+      },
+      "expected": {
+        "total_ticks": 7680,
+        "events": 16,
+        "onsets": [
+          0,
+          720,
+          960,
+          1680,
+          1920,
+          2640,
+          2880,
+          3600,
+          3840,
+          4560,
+          4800,
+          5520,
+          5760,
+          6480,
+          6720,
+          7440
+        ],
+        "historical_transcription": false,
+        "clave_relation": "SHARED_GRID_ONLY_NOT_HISTORICAL_STYLE_PROOF"
+      },
+      "relations": [
+        "CDR-014"
+      ]
+    }
+  ]
+}

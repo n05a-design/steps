@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "status": "REVIEW_REQUIRED",
+  "production_use_allowed": false,
+  "historical_definitions_resolved": false,
+  "proposals": [
+    {
+      "historical_node_id": "MODAL_SHIFT_TO_II7",
+      "relation_ids": ["CDR-012"],
+      "proposed_id": "SAME_ROOT_MAJOR_TO_MINOR_SEVENTH",
+      "definition": "Im STEPS-Beispiel D7 nach Dm7 bleibt D als Grundton erhalten; Fis sinkt nach F, D/A/C können liegenbleiben. Die tatsächliche Zielqualität ist ii7 in C-Dur.",
+      "original_locator": "archive/audit-history/ontology-recovery-2026-11-14/originals/20261111T0130_Phase4_10/GENRE_RESEARCH_LATIN.md, Abschnitt 3.A; historisch F-Dur G7 nach Gm7",
+      "probe_id": "SAME_ROOT_SHIFT",
+      "source_url": "https://viva.pressbooks.pub/openmusictheory/chapter/substitutions/",
+      "source_scope": "Begriffe für angewandte Dominanten; konkrete Stimmbewegung ist eigene Rechnung des Projektbeispiels.",
+      "blocker": "TO_II7 benennt eine andere Zielrichtung. Historische Intention und neue Benennung fachlich bestätigen; keinen alten Knoten umbenennen."
+    },
+    {
+      "historical_node_id": "PIANO_MONTUNO_GUAJEO",
+      "relation_ids": ["CDR-014"],
+      "proposed_id": "STEPS_SYNCOPATED_PIANO_DRAFT_01",
+      "definition": "Neu geschriebene viertaktige Cm-Fm-G7-Fm-Übung mit 16 Tonereignissen, expliziten MIDI-kompatiblen Tonhöhen, 120-Tick-Dauern und 2:3-Clave-Bezugsraster bei 480 PPQ. Gemeinsames Raster beweist keine stilistische Clave-Passung.",
+      "original_locator": "knowledge/concepts/styles/GENRE_RESEARCH_LATIN.md, Abschnitt 3.B nennt nur Oktav-/Terzenbrechungen; Vurkac Fig. 8 ist ohne Harmonie.",
+      "probe_id": "NEW_PIANO_DRAFT",
+      "source_url": "https://journals.library.columbia.edu/index.php/currentmusicology/article/download/5234/2473/9143",
+      "source_scope": "Indexierter Originalauszug unterscheidet Rhythmusfigur und entfernte Akkorde; direkter Abruf durch Zugriffsschutz begrenzt. Keine frische Notentranskription.",
+      "blocker": "Historische Figur weiter unbekannt; neue Übung braucht Noten-, Spiel-, Hör- und Clave-Fachprüfung."
+    },
+    {
+      "historical_node_id": "BOSSA_BATIDA",
+      "relation_ids": ["CDR-019"],
+      "proposed_id": "BOSSA_GUITAR_ACCOMPANIMENT_FAMILY",
+      "definition": "Familie variierter Gitarrenbegleitungen mit Bass-/Akkordschicht, nicht identisch mit einem festen Cross-Stick-Timeline-Pattern oder dem STEPS-Klavierpendel.",
+      "original_locator": "knowledge/concepts/styles/GENRE_RESEARCH_LATIN.md, Abschnitte 1 und 2.A; historische Projektmodelle. Inayatullah (2016), Abschnitt zu Gilberto, Absatz nach Baden-Powell-Zitat.",
+      "probe_id": null,
+      "source_url": "https://www.scielo.br/j/cint/a/3TTy5RCKtKQDJLghWzb833b/?lang=en",
+      "source_scope": "Gelesener Forschungsartikel unterscheidet variierte Gitarrenbegleitung von einer einzigen festen Figur. Keine konkrete historische STEPS-ID-Definition.",
+      "blocker": "Gemeinte historische Aufnahme/Figur und Umfang des Knotens fehlen; Vorschlag ist keine rückwirkende Originaldefinition."
+    },
+    {
+      "historical_node_id": "BRAZILIAN_TAMBORIM_SURDO_SYNTHESIS",
+      "relation_ids": ["CDR-019"],
+      "proposed_id": "ATTRIBUTED_GUITAR_PERCUSSION_ANALOGY",
+      "definition": "Quellengebundene Deutung der Gitarrenschichten als Surdo-/Tamborim-Analogie; als zugeschriebene Überlieferung formulieren, nicht als nachgewiesene alleinige Entstehungsursache.",
+      "original_locator": "Inayatullah (2016), Baden-Powell-Passage mit Verweis auf Reily (1996:5) und Cabral; Primärinterview nicht eingesehen.",
+      "probe_id": null,
+      "source_url": "https://www.scielo.br/j/cint/a/3TTy5RCKtKQDJLghWzb833b/?lang=en",
+      "source_scope": "Sekundär überlieferte Quellenkette gelesen. Reily/Cabral/Interview bleiben separat zu prüfen; keine Schreiner-Seitenabnahme.",
+      "blocker": "Zeitgenössische Primärquelle beziehungsweise belastbare Originalinterview-Fundstelle und historische Kausalbewertung fehlen."
+    },
+    {
+      "historical_node_id": "SURDO_PULSE",
+      "relation_ids": ["CDR-021"],
+      "proposed_id": "SAMBA_SURDO_ROLE_SCOPED",
+      "definition": "Rollenabhängiger Surdo-Puls in benannter Samba-Bateria; primeira/marcação und segunda/resposta werden getrennt. Keine Übertragung einer einzigen Akzentnorm auf alle Trommeln.",
+      "original_locator": "CLAIM-038, Maia (2024), gedruckte S.42/45 Fig.2.17; Grinnell-Sammlung, Player–Instrument Interface and Sound Production.",
+      "probe_id": null,
+      "source_url": "https://omeka-s.grinnell.edu/s/MusicalInstruments/item/1240",
+      "source_scope": "Grinnell-Indexauszug bestätigt unterschiedliche Rollen; direkter Abruf 403. UFRJ-PDF in dieser Sitzung gesperrt. Frühere Fundstellen sind keine neue Volltextprüfung.",
+      "blocker": "Vollständige aktuelle Originalfundstelle und konkrete Ensemble-/Aufführungsfassung prüfen."
+    },
+    {
+      "historical_node_id": "ACCENT_ON_BEAT_2_IN_2_4",
+      "relation_ids": ["CDR-021"],
+      "proposed_id": "SAMBA_MARCACAO_BEAT2_SCOPED",
+      "definition": "Für die benannte primeira-/marcação-Rolle ein Akzent auf Zählzeit 2 im 2/4-Modell; resposta auf 1 bleibt als Gegenkontext erhalten. Keine universelle PERFORMANCE_NORM.",
+      "original_locator": "CLAIM-038 und Grinnell-Instrumenteintrag; STEPS PAT-027/P14 ist dagegen ein anderes 4/4-Begleitmodell.",
+      "probe_id": null,
+      "source_url": "https://omeka-s.grinnell.edu/s/MusicalInstruments/item/1240",
+      "source_scope": "Begrenzter Rollenbeleg aus vorhandenem Claim und indexierter Quelle; kein Hör-/Spieltest und keine neue Archivkopie des UFRJ-Originals.",
+      "blocker": "Geltungsbereich quellengebunden bestätigen und praktische Ausführung unabhängig abnehmen."
+    }
+  ]
+}

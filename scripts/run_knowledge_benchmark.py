@@ -461,6 +461,12 @@ def evaluate(case, examples, claims, coach, manual):
     elif method == "historical_ontology":
         actual = verify_historical_ontology.verify(ROOT)
         require(actual == expected, actual)
+    elif method == "night_graph_probe":
+        from scripts import graph_probes
+        plan = json.loads((ROOT / 'knowledge/relations/GRAPH_AUDIT_PLAN.json').read_text(encoding='utf-8'))
+        spec = next(p for p in plan['probes'] if p['id'] == data['probe_id'])
+        actual = graph_probes.evaluate(spec)
+        require(actual == expected, actual)
     elif method == "graph_sample":
         with RELATIONS.open(encoding="utf-8-sig", newline="") as source:
             row = next(row for row in csv.DictReader(source) if row["relation_id"] == case["content"])

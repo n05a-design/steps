@@ -1,5 +1,13 @@
 # STEPS-Wissensbenchmark
 
+Der Nachtstand umfasst 119 Fälle: 92 PASS, 0 FAIL und 27 PENDING.
+23 neue Modellproben sind technische Teilnachweise. Keine menschliche
+Fachabnahme wurde ergänzt. Die sechs CSS-Fälle verlangen ausdrücklich
+Bundle-Rechte und dauerhafte Archivzuordnung. Der vollständige Secret-Scan
+hat zusätzlich sechs bislang verdeckte historische Funde; grüne
+Benchmarkberechnungen heben diesen Sicherheitsbefund nicht auf.
+[Nachtbericht](../../docs/audit/fable-5.2/NACHT_AUDIT_2026-11-14.md).
+
 Nach dem [Windows-Originalfund](../../docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md) prüft `KB-GRAPH-ONTOLOGY-RECOVERY` die Bytes und exakten Zeilenanker von 41 historischen Definitionen. Dieser technische Herkunftsnachweis ist keine Fachabnahme. Die manuelle Graphaufgabe bleibt offen; sechs Definitionen und sämtliche fehlenden Kantenabnahmen sind weiter zu klären.
 
 [Versionierte Abdeckung](COVERAGE.csv) · [Fallregister mit Sollantworten](cases.json)

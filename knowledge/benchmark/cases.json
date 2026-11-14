@@ -2094,7 +2094,7 @@
       "domain": "M12",
       "question": "Lassen sich alle Graphknoten und ihr fachlicher Beleg nachvollziehen?",
       "expected": [
-        "49 weiterhin offene Endpunkt-IDs abgeglichen",
+        "Sechs weiterhin offene historische Endpunkt-IDs und getrennte Definitionsvorschläge abgeglichen",
         "97 Relationen mit Claim oder Fundstelle belegt bzw. als ungeprüft markiert"
       ],
       "variants": [
@@ -2117,7 +2117,9 @@
       "question": "Lässt sich der historische SHA-256 für F00412 einem Originalbestand zuordnen?",
       "expected": [
         "Registerhash und gefundene Version verglichen",
-        "Provenienz oder verbleibende Abweichung dokumentiert"
+        "Provenienz oder verbleibende Abweichung dokumentiert",
+        "Belastbarer Rechtebeleg für das gesamte CSS-Bundle",
+        "Dauerhafte Archivzuordnung autorisiert"
       ],
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
@@ -2139,7 +2141,9 @@
       "question": "Lässt sich der historische SHA-256 für F00571 einem Originalbestand zuordnen?",
       "expected": [
         "Registerhash und gefundene Version verglichen",
-        "Provenienz oder verbleibende Abweichung dokumentiert"
+        "Provenienz oder verbleibende Abweichung dokumentiert",
+        "Belastbarer Rechtebeleg für das gesamte CSS-Bundle",
+        "Dauerhafte Archivzuordnung autorisiert"
       ],
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
@@ -2161,7 +2165,9 @@
       "question": "Lässt sich der historische SHA-256 für F00704 einem Originalbestand zuordnen?",
       "expected": [
         "Registerhash und gefundene Version verglichen",
-        "Provenienz oder verbleibende Abweichung dokumentiert"
+        "Provenienz oder verbleibende Abweichung dokumentiert",
+        "Belastbarer Rechtebeleg für das gesamte CSS-Bundle",
+        "Dauerhafte Archivzuordnung autorisiert"
       ],
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
@@ -2183,7 +2189,9 @@
       "question": "Lässt sich der historische SHA-256 für F00768 einem Originalbestand zuordnen?",
       "expected": [
         "Registerhash und gefundene Version verglichen",
-        "Provenienz oder verbleibende Abweichung dokumentiert"
+        "Provenienz oder verbleibende Abweichung dokumentiert",
+        "Belastbarer Rechtebeleg für das gesamte CSS-Bundle",
+        "Dauerhafte Archivzuordnung autorisiert"
       ],
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
@@ -2205,7 +2213,9 @@
       "question": "Lässt sich der historische SHA-256 für F00937 einem Originalbestand zuordnen?",
       "expected": [
         "Registerhash und gefundene Version verglichen",
-        "Provenienz oder verbleibende Abweichung dokumentiert"
+        "Provenienz oder verbleibende Abweichung dokumentiert",
+        "Belastbarer Rechtebeleg für das gesamte CSS-Bundle",
+        "Dauerhafte Archivzuordnung autorisiert"
       ],
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
@@ -2227,7 +2237,9 @@
       "question": "Lässt sich der historische SHA-256 für F01002 einem Originalbestand zuordnen?",
       "expected": [
         "Registerhash und gefundene Version verglichen",
-        "Provenienz oder verbleibende Abweichung dokumentiert"
+        "Provenienz oder verbleibende Abweichung dokumentiert",
+        "Belastbarer Rechtebeleg für das gesamte CSS-Bundle",
+        "Dauerhafte Archivzuordnung autorisiert"
       ],
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
@@ -2698,7 +2710,7 @@
       "method": "graph_sample",
       "id": "KB-GRAPH-CDR-011",
       "content": "CDR-011",
-      "question": "Ist der D7-Akkord in PROG-024 die aufgelöste Dominante der Dominante in C-Dur?",
+      "question": "Hat D7 in PROG-024 die Akkordgestalt V7/V, ohne damit seine tatsächliche Auflösung nach G zu behaupten?",
       "expected": [
         "D7",
         "D7"
@@ -2875,6 +2887,567 @@
       "variants": [],
       "mandatory": true,
       "next_step": "Alle historischen Aussagen und Kanten getrennt fachlich prüfen; CSS-Rechte und andere Abnahmen bleiben offen."
+    },
+    {
+      "id": "KB-NIGHT-FREQUENCY",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-FREQUENCY",
+      "question": "Besteht die begrenzte Modellprobe FREQUENCY?",
+      "expected": [
+        261.625565,
+        440.0,
+        523.251131
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "FREQUENCY"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-MOD12",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-MOD12",
+      "question": "Besteht die begrenzte Modellprobe MOD12?",
+      "expected": [
+        0,
+        0,
+        0,
+        1,
+        7
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "MOD12"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-ENHARMONIC",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-ENHARMONIC",
+      "question": "Besteht die begrenzte Modellprobe ENHARMONIC?",
+      "expected": [
+        [
+          "C",
+          1,
+          1
+        ],
+        [
+          "D",
+          -1,
+          1
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "ENHARMONIC"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-DE_H_B",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-DE_H_B",
+      "question": "Besteht die begrenzte Modellprobe DE_H_B?",
+      "expected": [
+        [
+          "B",
+          0,
+          11
+        ],
+        [
+          "B",
+          -1,
+          10
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "DE_H_B"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-DIATONIC",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-DIATONIC",
+      "question": "Besteht die begrenzte Modellprobe DIATONIC?",
+      "expected": [
+        "C",
+        "Dm",
+        "Em",
+        "F",
+        "G",
+        "Am",
+        "Bdim"
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "DIATONIC"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-RELATIVE_COLLECTION",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-RELATIVE_COLLECTION",
+      "question": "Besteht die begrenzte Modellprobe RELATIVE_COLLECTION?",
+      "expected": [
+        [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "RELATIVE_COLLECTION"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-MINOR_DOMINANT",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-MINOR_DOMINANT",
+      "question": "Besteht die begrenzte Modellprobe MINOR_DOMINANT?",
+      "expected": [
+        "G7"
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "MINOR_DOMINANT"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-TRIADS",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-TRIADS",
+      "question": "Besteht die begrenzte Modellprobe TRIADS?",
+      "expected": [
+        [
+          0,
+          4,
+          7
+        ],
+        [
+          0,
+          3,
+          7
+        ],
+        [
+          0,
+          3,
+          6
+        ],
+        [
+          0,
+          4,
+          8
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "TRIADS"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-INVERSION",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-INVERSION",
+      "question": "Besteht die begrenzte Modellprobe INVERSION?",
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          7
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "INVERSION"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-SEVENTHS",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-SEVENTHS",
+      "question": "Besteht die begrenzte Modellprobe SEVENTHS?",
+      "expected": [
+        [
+          0,
+          4,
+          7,
+          11
+        ],
+        [
+          0,
+          3,
+          7,
+          10
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "SEVENTHS"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-CADENCE",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-CADENCE",
+      "question": "Besteht die begrenzte Modellprobe CADENCE?",
+      "expected": [
+        "G7",
+        "C"
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "CADENCE"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-BORROWED",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-BORROWED",
+      "question": "Besteht die begrenzte Modellprobe BORROWED?",
+      "expected": [
+        "Fm"
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "BORROWED"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-TRITONE",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-TRITONE",
+      "question": "Besteht die begrenzte Modellprobe TRITONE?",
+      "expected": [
+        [
+          2,
+          5,
+          7,
+          11
+        ],
+        [
+          1,
+          5,
+          8,
+          11
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "TRITONE"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-PARALLELS",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-PARALLELS",
+      "question": "Besteht die begrenzte Modellprobe PARALLELS?",
+      "expected": true,
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "PARALLELS"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-L1",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-L1",
+      "question": "Besteht die begrenzte Modellprobe L1?",
+      "expected": 3,
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "L1"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-METRIC_DUALITY",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-METRIC_DUALITY",
+      "question": "Besteht die begrenzte Modellprobe METRIC_DUALITY?",
+      "expected": true,
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "METRIC_DUALITY"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-POLYRHYTHM",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-POLYRHYTHM",
+      "question": "Besteht die begrenzte Modellprobe POLYRHYTHM?",
+      "expected": 12,
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "POLYRHYTHM"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-SWING64",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-SWING64",
+      "question": "Besteht die begrenzte Modellprobe SWING64?",
+      "expected": [
+        154,
+        34,
+        32.19697
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "SWING64"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-WHITE_KEYS",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-WHITE_KEYS",
+      "question": "Besteht die begrenzte Modellprobe WHITE_KEYS?",
+      "expected": [
+        [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "WHITE_KEYS"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-XML",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-XML",
+      "question": "Besteht die begrenzte Modellprobe XML?",
+      "expected": {
+        "step": "D",
+        "alter": "-1",
+        "octave": "4"
+      },
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "XML"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-SAME_ROOT_SHIFT",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-SAME_ROOT_SHIFT",
+      "question": "Besteht die begrenzte Modellprobe SAME_ROOT_SHIFT?",
+      "expected": {
+        "root_preserved": true,
+        "common": [
+          0,
+          2,
+          9
+        ],
+        "removed": [
+          6
+        ],
+        "added": [
+          5
+        ]
+      },
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "SAME_ROOT_SHIFT"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-BASS_AMBIGUITY",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-BASS_AMBIGUITY",
+      "question": "Besteht die begrenzte Modellprobe BASS_AMBIGUITY?",
+      "expected": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          9,
+          4
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "BASS_AMBIGUITY"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
+    },
+    {
+      "id": "KB-NIGHT-NEW_PIANO_DRAFT",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-NEW_PIANO_DRAFT",
+      "question": "Besteht die begrenzte Modellprobe NEW_PIANO_DRAFT?",
+      "expected": {
+        "total_ticks": 7680,
+        "events": 16,
+        "onsets": [
+          0,
+          720,
+          960,
+          1680,
+          1920,
+          2640,
+          2880,
+          3600,
+          3840,
+          4560,
+          4800,
+          5520,
+          5760,
+          6480,
+          6720,
+          7440
+        ],
+        "historical_transcription": false,
+        "clave_relation": "SHARED_GRID_ONLY_NOT_HISTORICAL_STYLE_PROOF"
+      },
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "NEW_PIANO_DRAFT"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Originalrelation und musikalischen Kontext unabhängig fachlich prüfen; neue Ereignisbeispiele sind keine historischen Transkriptionen."
     }
   ]
 }

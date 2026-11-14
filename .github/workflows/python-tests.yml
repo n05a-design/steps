@@ -21,6 +21,10 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          # Source-preservation regressions compare sanitized assets with their
+          # immutable historical blobs without printing credential payloads.
+          fetch-depth: 0
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
@@ -88,3 +92,5 @@ jobs:
         run: python -m pip install -r knowledge/benchmark/requirements.txt
       - name: Check versioned knowledge coverage
         run: python -B scripts/audit_knowledge_coverage.py --check
+      - name: Check complete historical graph audit matrix
+        run: python -B scripts/audit_graph.py --check

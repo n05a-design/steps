@@ -1,5 +1,17 @@
 # Offene Evidenz und historische Bestandsaufnahme
 
+## Nachtstand nach PR #54
+
+[Aktueller Nachtbericht](../../docs/audit/fable-5.2/NACHT_AUDIT_2026-11-14.md)
+und [priorisierte Restblocker](../../docs/audit/fable-5.2/NACHT_RESTBLOCKER_2026-11-14.md)
+ersetzen keine Fachfreigabe. 97 Kanten einzeln eingeordnet; 38 begrenzte
+Stichproben gestützt, CDR-010 beanstandet, 58 weiterhin offen. Sechs
+Definitionsvorschläge sind nicht als historische Originaldefinitionen
+anerkannt. 27 Pflichtfälle bleiben PENDING. Sechs neu erkannte historische
+AWS-Mustervorkommen blockieren den verschärften Secret-Scan; keine
+automatische Erweiterung der Baseline. Die folgenden Abschnitte halten
+frühere Auditstände fest.
+
 ## Originalfund nach PR #53 (14.11.2026)
 
 Unter `%LOCALAPPDATA%/StepsAudit` sind die Originalontologie und ihre Schwesterdateien wiedergefunden. Alle 41 historischen Graphkennungen sind mit Originalwortlaut, Zeile und Hash im eigenen Namensraum zugeordnet. Zwei Bass-/Höranker-Begriffe sind als historische P10-Projektstrategie definiert. Sechs Definitionen bleiben offen; alle fehlenden Fachabnahmen und CSS-Bundle-Rechte bleiben offen. Die spätere Domäneneinteilung ist nicht mit dem historischen Namensraum gleichgesetzt.

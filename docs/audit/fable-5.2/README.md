@@ -15,8 +15,11 @@ Die Nachprüfung erfasst die Befunde des Fable-Audits und verweist auf die repro
 | [Graphnachweise](GRAPH_NACHWEISE_2026-11-14.md) | Sechs zusätzliche Knoten, vier Gegenprüfungen, beanstandete Polychord-Zuordnung und offene IDs. |
 | [CDR-010 und weitere Graphknoten](GRAPH_KLAERUNG_CDR010_2026-11-14.md) | Präziser Korrekturvorschlag, Bearbeitung aller 74 bisherigen Restknoten und 49 verbleibende Definitionen. |
 | [Originalontologie wiedergefunden](ONTOLOGIE_WIEDERFUND_2026-11-14.md) | Windows-Originale, 41 historische Definitionsanker, acht einzeln geprüfte Restknoten und sechs verbleibende Definitionen. |
+| [Nacht-Audit nach PR #54](NACHT_AUDIT_2026-11-14.md) | Vollständige Graphmatrix, sechs Definitionsvorschläge, Quellen-/MIDI-/PDF-Gegenprüfungen und offene Sicherheits-/Fachfreigaben. |
 | [PR-22-Freigabenachweis](PR22_HASHABGLEICH_2026-11-13.md) | Fassungsgebundener Nachweis der damaligen Pilotfreigaben. |
 
 Den aktuellen Prüfstand liefert der [Benchmark](../../../knowledge/benchmark/README.md). Fehlende Belege sind in den [offenen Nachweisen](../../../research/gaps/OPEN_GAPS.md) erfasst.
 
 [Zur Bereichsübersicht](../README.md)
+
+[Sicherheitskorrektur Guardrail #166](SECRET_GUARDRAIL_166_2026-11-14.md): vollständige Bereinigung des aktuellen Stands; historische Sicherheitsbewertung offen.

@@ -199,5 +199,45 @@ class TestSecretScannerSecuritySuite(unittest.TestCase):
             leaks = scanner.scan_line("src/steps/model.py", idx, line, self.baseline_map)
             self.assertEqual(len(leaks), 0, f"False positive detected on clean line: {line}")
 
+    def test_same_pattern_second_secret_cannot_hide_behind_quarantine(self):
+        first = 'AKIA' + '1' * 16
+        second = 'AKIA' + '2' * 16
+        desc = 'AWS Access Key ID'
+        baseline = {('example.py', 1, desc): {'secret_sha256': hashlib.sha256(first.encode()).hexdigest()}}
+        self.assertEqual(len(scanner.scan_line('example.py', 1, first + ' ' + second, baseline)), 1)
+
+    def test_github_and_historical_audit_directories_are_scanned(self):
+        with tempfile.TemporaryDirectory() as directory:
+            baseline = os.path.join(directory, 'baseline.json')
+            with open(baseline, 'w') as target:
+                json.dump([], target)
+            for folder in ['.github/workflows', 'archive/Auditpakete', 'StepsAudit', 'not.git-hidden']:
+                os.makedirs(os.path.join(directory, folder))
+                with open(os.path.join(directory, folder, 'sample.yml'), 'w') as target:
+                    target.write('AKIA' + '3' * 16)
+            _, count, _ = scanner.scan_repository(directory, baseline)
+            self.assertEqual(count, 4)
+
+    def test_extensionless_svg_and_binary_payloads_are_scanned(self):
+        with tempfile.TemporaryDirectory() as directory:
+            baseline = os.path.join(directory, 'baseline.json')
+            with open(baseline, 'w') as target:
+                json.dump([], target)
+            for name in ['m=root,base(1)', 'instagram.svg', 'settings.toml', 'sample.bin']:
+                with open(os.path.join(directory, name), 'wb') as target:
+                    target.write(b'\xff\x00' + ('AKIA' + '4' * 16).encode())
+            quarantined, leaks, _ = scanner.scan_repository(directory, baseline)
+            self.assertEqual((quarantined, leaks), (0, 4))
+
+    def test_authorized_synthetic_fixture_is_not_counted_as_historical_key(self):
+        with tempfile.TemporaryDirectory() as directory:
+            baseline=os.path.join(directory,'baseline.json')
+            with open(baseline,'w') as target:json.dump([],target)
+            folder=os.path.join(directory,'tests','fixtures');os.makedirs(folder)
+            with open(os.path.join(folder,'synthetic_secrets.json'),'w') as target:
+                json.dump({'example':'AKIA'+'IOSFODNN7EXAMPLE'},target)
+            quarantined,leaks,_=scanner.scan_repository(directory,baseline)
+            self.assertEqual((quarantined,leaks),(0,0))
+
 if __name__ == '__main__':
     unittest.main()
