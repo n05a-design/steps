@@ -1,0 +1,252 @@
+---
+quelle_pdf: "Is_Generative_Theory_Misleading_for_Music.pdf"
+quelle_sha256: d558907e864bc005ce6620462017f1379adb7ffe69b94fac57e40aaf7355d9ba
+seiten: 16
+konvertierung: "docling 2.150.0 (Profil d3f6f9dfb2b4, Pipeline standard, OCR torch)"
+konvertiert_am: 2026-11-14
+pruefstatus: "FIGURE_CLASSIFICATION_REQUIRED;REVIEW_REQUIRED;VISUAL_COMPLETENESS_REVIEW_REQUIRED"
+fachliche_freigabe: false
+omr_ausgefuehrt: false
+abbildungen: 2
+tabellen: 0
+rechte: restricted_local
+---
+
+> Maschineller Docling-Extrakt aus `Is_Generative_Theory_Misleading_for_Music.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
+
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d558907e864bc005/d3f6f9dfb2b4/00001-00010/try-20261114T115415-0cc6d4/document.md -->
+
+HAL
+
+<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d558907e864bc005/d3f6f9dfb2b4/00001-00010/try-20261114T115415-0cc6d4/document_artifacts/image_000000_7b75bd107c9ff3901d210ba6e07075ab96435e68bd33f333f59e451abd5a6dab.png -->
+
+## Is Generative Theory Misleading for Music Theory?
+
+Rafael Barbosa
+
+## To cite this version:
+
+Rafael Barbosa. Is Generative Theory Misleading for Music Theory?. Language, Music and Computing, Springer Nature Switzerland AG, 2019, Language, Music and Computing. ฀hal-02184441฀
+
+## HAL Id: hal-02184441
+
+https://hal.archives-ouvertes.fr/hal-02184441
+
+Submitted on 16 Jul 2019
+
+HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific research documents, whether they are published or not. The documents may come from teaching and research institutions in France or abroad, or from public or private research centers.
+
+L'archive ouverte pluridisciplinaire HAL, est destinée au dépôt et à la diffusion de documents scientifiques de niveau recherche, publiés ou non, émanant des établissements d'enseignement et de recherche français ou étrangers, des laboratoires publics ou privés.
+
+## Is Generative Theory Misleading for Music Theory?
+
+## Rafael Barbosa
+
+CTEL, Côte d'Azur University, Nice, France
+
+rafael.barbosa2606@gmail.com
+
+Abstract. During the decade of the 1960's linguistics entered what can be seen as a paradigm shift following Thomas Kuhn's theory of the Structure of Scientific Revolutions (1962). As a result, the discipline steps out of the Cartesian dualism between body and mind. During the 80 th's analytical musicology was related to the methodological approach of transformational grammars, the best known example being the Generative Theory of Tonal Music (Lerdahl and Jackendoff, 1983). For musicologist, the motivation to adopt this position is naturally nurtured by the work of Heinrich Schenker (Der Freier Satz, 1935) in which, as in transformational grammar, a hierarchy of layers going from the actual piece of music to its Ursatz (Kernel) is proposed. The hypothesis developed in this article is that the analytical musicology, despite the efforts to link it with modern linguistics, has not yet stepped into the new scientific paradigm led by cognitive sciences. The reason for this is that musicology has not yet adopted a redefinition of its object of study from a non-dualistic and transdisciplinary perspective. With the development of experimental aesthetics, the ontological gap between the object of musicology and that of the scientific approach to music has been growing larger. As a result, if the study of aesthetic meaning in music has become possible today, it seems to be inconsistent with the traditional reductionist methods of analytical musicology, from which the analogy with transformational grammar rely upon.
+
+Keywords: Musicology · Music analysis · Scientific aesthetics · Generative theory · Epistemology · Paradigm shift
+
+## 1 Introduction
+
+Looking at the evolution of knowledge during the twentieth century, a deep transformation on the nature of the object of many sciences can be observed. An important example is the development of a philosophy of an "embodied mind" that can be traced back from the work of James Williams (1842-1910) and later John Dewey (1859-1952) to the publication in 1999, by Mark Johnson and George Lakoff, of Philosophy in the flesh, putting forward the concept of an embodied mind as a challenge to western thought. Another meaningful example is the assumption that our faculty for abstract reasoning depends to an important degree on an emotional and somatic basis, challenging western traditional ideas concerning the nature and function of sensation and emotions. That is indeed the position defended by neurologists like Antonio Damasio. On the realm of linguistics, The Chomskian hypothesis assuming the existence of an innate linguistic structure working as a Universal Grammar, enabling us to acquire linguistic skills, is another example of what can be described as a paradigm shift.
+
+The concept of paradigm as it was developed by Thomas Kuhn in his acclaimed book released in 1962, The Structure of Scientific Revolutions, embrace two broad meanings: on one hand it represents the total amount of beliefs, standard values, and techniques that belong to the members of a scientific community. On the other hand, it describes a specific methodological procedure to resolve a specific kind of enigmas (problems) that become a reference on the normal practice and transmission of that scientific discipline. One of Kuhn's ideas is that the ontological definition of the object of a scientific discipline depends on the existence of one or more paradigms. Consequently, paradigms have an indirect - but real - influence on the way scholars conceive the methodologies they employ to resolve new enigmas. Kuhn shows that on the evolution of a discipline over an extended period of time, paradigms become obsolete. Before a new paradigm replace the old one, a "crisis" and a "rejection" of the latter takes place. This is commonly represented in a cycle as shown in figure 1.
+
+Fig. 1. Kuhn cycle showing the passage from normal science to the adoption of a new paradigm.
+
+<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d558907e864bc005/d3f6f9dfb2b4/00001-00010/try-20261114T115415-0cc6d4/document_artifacts/image_000001_51929c9207a2222bc1617f1b2c08155130db7003c7d0c9e41f2036d1fd369b33.png -->
+
+The recent evolution of the disciplines mentioned above - to which anthropology, ethology and scientific aesthetics should be added -, reveals a common faith. It is of course the overtaking of the old paradigm of duality that defended the existence of an ontological contradiction between body and mind, and consequently, on a larger scale, a disconnection between nature and culture. The contact of musicology with modern - and more precisely Chomskian - linguistics, led to the collaboration between the composer and musicologist Fred Lerdahl, and the linguist Ray Jackendoff who in 1983 published A Generative theory of Tonal Music (GTTM). This should not be seen as an isolated initiative since in Europe the Belgian musicologist Celestin Deliege also brought forward an analytical theory inspired by transformational grammar [1].
+
+This methodological proximity has been strongly motivated by the work of the Austrian musicologist Heinrich Schenker [2] who developed an analytical method based on systematical reductions leading from the actual piece of music - the foreground - to a kernel which is common to a vast repertoire of musical pieces ; what he calls "die Meisterwerke". This hierarchical representation displays a clear formal resemblance with that of surface and deep structures of transformational grammar. The idea that a given phrases - musical or linguistic -, is the result of a more general abstract principle is also a common feature of both theories. The way musicology relates to modern linguistics let us think that music theory takes part to the paradigm renewal described above. In this article I defend the idea that musicology has not entered what can be called a paradigm of continuity between body and mind. Therefore, it's relation to generative grammar is problematic.
+
+From an epistemological perspective, I will question the relevance of a methodological interaction between linguistics and analytical musicology in the particular context of the overtaking of the dualistic paradigm. This concern can be formulated in the following questions: are the objects of generative linguistics and analytical musicology heuristics of related paradigms? And, how is analytical musicology related to the dualistic paradigm?
+
+## 2 Defining the Objects
+
+## 2.1 A Call for Transdisciplinarity
+
+The history of sciences and more generally, that of thought, is full of quarrels which seem inevitable when two scholars studying the same objet do not come to an agreement about both the methods to be adopted, and the aims to be fulfilled. It is often some time later, through a retrospective view on history, that the reasons for such disagreements appears clearly: in order to define their object, different scientist may respond to different enigmas and adopt different methods, consequently, their object subscribes to different paradigms. 1 We find a famous example on the critic Chomsky addressed to Skinner's book Verbal Behavior in 1959, showing that cognitivism and behaviorism could not share the same idea of what language is. In an interview with the american linguist, Javier Virués-Ortega synthesizes the position against Skinner as follows:
+
+Behavior is evidence. It's not what you are studying; what you are studying is competence, capacity. If you study man's insight you want to know what is going on in his brain; behavior gives the evidence for that. Nevertheless, in a serious field, you wouldn't identify the subject with the study of the data [3].
+
+1 This is also one of the ideas that Kuhn develops extensively on his book. " Men whose research is based on shared paradigms are committed to the same rules and standards for scientific practice. That commitment and the apparent consensus it produces are prerequisites for normal science, i.e., for the genesis and continuation of a particular research tradition." [4].
+
+In the case of the GTTM, the deliberated application of a common methodological approach to both music and language supposes that the question about their ontological relation has been thoroughly considered. Otherwise we could just be treating one domain as a metaphor for the other. In order to understand those inquires we first have to make a ontological comparison between a Chomskian definition of language as object of research, and music as defined by the theoretical apparatus of musicology.
+
+Music, as it is well known, has always call the curiosity of scholars; philosophers like Nietzsche, mathematicians like Leonhard Euler, and physiologists like Hermann von Helmholtz, count among the many thinkers that worked on music before the 20 th century. It is possible to assess today, as François Delalande [5] does, that an important development of what should be called the "sciences of music" exceeds by far the realm of academic musicology. It is evident that analytical musicology has not made a serious effort to assimilate the discoveries that disciplines like psychoacoustics, cognitive psychology and scientific aesthetics have been accumulating for more 150 years. The excellent work on the physiological basis for the perception of tonal music made by Helmholtz, did not have a real impact on the way tonal harmony is taught in universities and conservatoires. The call for transdisciplinarity that opens Helmholtz's book published in 1863, has not been heard by musicology.
+
+In the present work an attempt will be made to connect the boundaries of tow sciences, which, although drawn towards each other by many natural affinities, have hitherto remained practically distinct -I mean the boundaries of physical and physiological acoustics on the one side, and of musical theory and aesthetics on the other. [6]
+
+The study of auditory perception as well as that of music by cognitive psychologists has also been kept sidelined from the development of the 20 th century theoretical musicology. This, as well as the achievements of scientific aesthetics - a field that has known a spectacular development in recent decades -, have been considered only by a very small group of musicologist like Michel Imberty and Philipe Lalitte, whose work remain overlooked by the tenants of normal musicology. This split between a scientific approach to music and the musicology it self, shows an epistemological disconnection between the way linguistics and musicology have evolved since the late 19 th century to the present day. Stressing one of the main features of this distinction we can say that musicology has been refusing transdisciplinarity, while linguistics has been assuming it.
+
+## 2.2 Scientific Aesthetics, Right Between Body and Mind
+
+With regard to art and particularly to music, special attention should be given to the scientific study of aesthetics, which has undoubtedly contributed to linking culture to nature. This goal has been achieved through the patient development of a scientific approach to sensation, perception and finally, to aesthetic judgment. In contrast with the philosophical tradition of speculative aesthetics, the development of the experimental and empirical approach which started with the publication in 1876 of Introduction to aesthetics by the German scientist Gustav Fechner, has remained largely over shadowed to the human sciences and therefore to musicology.
+
+What Fechner started doing was gathering data about the way humans react to specific sensitive stimuli, measuring the hedonic response as pleasant (Gefallen) or unpleasant (Misfallen). If the complexity of proper art works prevented scientific aesthetics to use them as the basis of experiences for decades, the development of the experimental method and the achievements in the study of perception, have made it possible since the 50's. The French psychologist Robet Francès published a series of experiments on music in 1958, followed in 1971 by Daniel Berlyne who focused mainly on visual Arts [7, 8].
+
+If the tradition of speculative aesthetics conceived beauty as independent of the somatic expression of the agreeable, and as being in disconnection with our rewarding instinct responding to pleasure, from the perspective of scientific aesthetics, the distance between what Kant understood as a pure aesthetic experience, and the hedonic experience of pleasurable perceptions, is not impaired by an ontological duality, instead, it implies a challenge of transdisciplinarity and a methodological complexity. 2
+
+Music has played a prominent role in the development of scientific esthetics as well as on the more general fields of perception and cognition. The question of the perception of time for example, leads inevitably to inquire into the capacity to perceive melodies as coherent entities. 3 The study on the cognitive mechanisms of learning led to a great number of experimental studies that have been measuring our capacity to assimilate and identify violations on musical grammars. That has been the purpose of the recent work of Martin Rohrmeier at the university of Cambridge [10]. When it comes to the study of memory, which has been one of the most studied subjects in cognitive psychology during the 20 th century, music has also been involved: a series of experiments enquiring the capacity of listeners to judge the effect of the global temporal organization of a piece of music has strongly challenge the traditional ideas of musicology relating to the implication of global structure on the esthetic experience [11, 12]. But normal musicology, that is: the academic mainstream of music scholarship, has not take that enigmas into consideration. This lack of overture, as I will try to explain, is the main reasons why the theoretical background of GTTM (namely schenkerian reductionism) remains deeply rooted on the dualistic paradigm.
+
+2 The development of complexity as a methodological approach; a kind of Discours de la méthode for the 20 th century, has been the work of thinkers like Edgar Morin [9] who elaborates a theory of complex thinking in order to defend a new epistemological definition of anthropology: what he named fundamental anthropology.
+
+3 Not only the authors of the gestalt theory like Ehrenfelds and Kurt Kofka used melody to explain the effect of grouping laws in time, but Husserl used it as well on his Lessons on the Phenomenology of Inner Time Consciousness. Studying time perception, psychologist like Paul Fraisse and John Michon have also reflected both on the nature of melody and musical rhythm.
+
+By giving a scientific status to the hedonic and sensitive aspects of the experience of music, scientific aesthetics has evolved within the paradigm shift that overcomes dualism and embrace an integrated conception of human. Therefore we may recognize the existence of an ontological distinction between the objet of what can be called sciences of music on one side, and that of traditional musicology on the other. We can say that the object being studied by the sciences of music would be better named, as Michel Imberty puts it, the "human musicality" [13], term that refers to our capacity for aesthetic communication either through the creation, the performance or simply the listening of organized sound. From this perspective, analytical musicology stands out as a rather conservative and isolated discipline, maintaining a representation of it's object inherited from enlightenment music theory, and showing little interest for recognizing a heuristic value to the achievements of scientific aesthetics. This strongly suggest that an ontological gap persists between analytical musicology and modern linguistics; a gap that remain untold by the literature concerned.
+
+So how it is that music can on the one side encourage scientists to move out of the dualist paradigm, and on the other side leave musicologists indifferent to the implication of such a transformation? The answer I propose is that the modal difference between the score, as a semiotic object, and the aesthetic experience as a phenomenological experience, has not been properly considered as a paradox by musicology, or at least not by a large part of the community of musicologists worldwide. Therefore, most of the enigmas studied by the sciences of music do not resonate with the theoretical construct of analytical musicology.
+
+## 3 Generative theory as Temptation
+
+## 3.1 A "Cartesian" Musicology
+
+The reliance of normal musicology on a dualism between body and mind was already a characteristic of the way music theory was understood in the ancient Greece. If the proportions related to musical intervals placed music among the four sciences of the Quadrivium - side by side with astronomy, arithmetic and geometry -, when Plato reflects on the experience of music, the sensitive effect of the same rigorous mathematical proportions could become the target of accusations and even be prohibited. That is the case of the Ionien mode 4 in The republic where Plato suggests that the music based on this particular mode should be banished. The development of music theory since the 17 th century has in deed inherited this ontological duality leaving the aesthetic value of a piece of music beyond the reach of the analytical endeavor. Reductionism appears to be the most constant characteristic in the development of musical analysis of western music. On his excellent book on the history of musical analysis, Ian Bent [14] shows us that Schenker's reductionism inherited a long tradition of German musical theorists starting at least with J. B Logier (1777-1846) and pursued by J. C. Lobe (1797-1881). This trend appears also to be deeply rooted in the fact that the notational system developed in western music allows an abstract representation where sound and musical parameters gain an important degree of autonomy from the acoustic events they signify. 5 The titles of the treatises published by Philippe Rameau show the importance, from a methodological perspective, of proceeding by systematic reduction to reveal the coherence of the whole. The first of them, published in 1722, is suitably entitled Musical harmony reduced to its natural principles. In his last treatise Rameau show a position that recalls vividly the place of music among the four sciences of the Quadrivium.
+
+It is in music that nature presents us the physical principles of the pure mathematical notions which are the basis for all sciences. I refer to the harmonic 6 , arithmetic and geometrical proportions [15].
+
+This structuralist approach to music has maintained the aesthetic value of music unconcerned, reduced entirely to a matter of subjectivity. Of course, the possibility of a scientific discourse on the affective power of music was not possible before the 20 th century. But the segregation between musical analysis and actual perception has continued to grow it's roots to the present day. Even the development of scientific aesthetics through the paradigm shift mentioned above, does not seem to attract analytical musicology, which has remained faithful to it's traditional background. Ultimately, it has led to a situation where, as Pierre Boulez said, "it is possible to make brilliant analysis of music of no interest" [16]. But there is an even worst situation : using the tools of today's normal musicology, we can celebrate through a sophisticated and intelligent analysis, a piece of music whose aesthetic value leaves us indifferent. The risk is that the analysis becomes a metaphor between the structure it unfolds and the aesthetic content of the piece ; a metaphor that does not take into account the value added by perception. This idea is expressed by Nicholas Cook when he argues that musicologists like Allen Forte, Steven Gilbert and Hans Keller 7 "could, if they wished, maintain that the aesthetic value of a piece of music is simply a function of the score's formal structure." [17]. This appraisal applies not only to Shenkerian analysis - which lies at the basis of the analogy between musical analysis and transformational grammar -, but also to theories concerning part of the atonal repertoire of the 20th century like the Set Theory developed by George Perle and Allen Forte during the late sixties. Both approaches have been widely taught across conservatories and universities, becoming today an important component of what can be understood as normal analytical musicology.
+
+4 The Ionien mode is one of the musical scales used in the ancient Greece. This mode is known to be used on festivities related to the tribute of Dionysos. Surprisingly, it corresponds very closely to a major scale, which is the basis of tonal music, as developed in europe from the baroque era.
+
+5 The sophisticated notation of sound parameters like pitch and duration, played an important role on the evolution of musical style. Theoretical concepts of melodic phrase, harmony, counterpoint and basso continuo, are also tightly related to the evolution of notation.
+
+6 From antiquity the term harmony use to be applied to the study of astronomy. It is still the case during the 17 th when Kepler publishes his Harmonices Mundi (1619). We can see that it is the same sense used by Rameau on this passage.
+
+## 3.2 A Silent Crisis
+
+The growing diversification of compositional techniques that characterizes western music during the last decades of the 20 th century, along with the constant and increasing research for new sounds encouraged by new technologies, has pushed the analytical musicology to a "crisis" in the sense given by Thomas Kuhn (1962). What this means is that the works of composers like Giorgy Ligeti, Ianis Xenakis and others, could not be properly understood using Set Theory or serial analysis. This conjuncture was an opportunity for music scholars to broaden the epistemological and methodological template of analytical theory. But did analytical musicology finally dared an alliance with the sciences of music? In deed, the study of "human musicality" represented already at that time a new and interesting perspective on music research; it would allow musicologists to face the growing diversity of musical invention through the universality of the perceptive and cognitive processes that enable the aesthetic experience. This alliance would seemingly open a unifying perspective concerning not only the whole spectrum of western written music, but embracing music as the expression of a communicative skill inherent to human nature. In other words, attention would be driven more on content that on form; more on actual sound perception, and less on music notation.
+
+But engaging on transdisciplinarity would need a huge epistemological endeavor. The need for updating old theoretical concepts in order to fit the enigmas of the new, non-dualist paradigm, would force musicology to build a complex relation between compositional procedures and perceptual capacity. Instead of taking the risk of such a project, the mainstream of analytical musicology engaged on the domain of sketch studies, a tendency that was pioneered by Gustav Nottebohm (1817-1882) who worked on the sketches left by Beethoven.
+
+7 Allen Forte and Steven Gilbert are the authors of Introduction to schenkerian analysis, New York, Norton &amp; Co, 1983.
+
+This approach consist in trying to understand the genesis of a piece of music, by a cross relation between biographical facts and the analysis of material evidence of the work in progress. If such a method reveals itself as particularly suitable to contemporary music; a repertoire where the standards of notation and traditional instrumentation are constantly challenged by the creativity of each composer, the trend toward a hyper-specialization where each composer or even each piece of music implies it's own theory, becomes inevitable. The dominance of this approach seems to put an obstacle to the transdisciplinary development of the discipline, and therefore to it's epistemological actualization. Lorenz Konrad expresses his preoccupation on this kind of academic development with the following words:
+
+The specialist comes to know more and more about less and less, until finally he knows everything about a mere nothing. There is a danger that the specialist, forced to compete with his colleges in acquiring more and more specialized knowledge, will become more and more ignorant about other branches of knowledge, until he is utterly incapable of forming any judgment on the role and importance of his own sphere within the context of human knowledge, as a whole [18].
+
+In such a context, the link up between generative grammar and tonal music analysis seems to count as an effort to finally take musicology out of its epistemological isolation. But in fact, it doesn't take it out of the dualistic paradigm. The link between linguistics and music analysis is based on a formal resemblance; an external analogy between transformational grammar on one hand, and Schekerian reductionism on the other. By focusing on this analogy we fail to identify the ontological gap between the object of psycho-linguistics and that of normal analytical musicology, which - for the reasons presented above - are rooted in different paradigms. On the basis of the superficial resemblance between the two methods, even respectable musicologists like Jean-Claude Risset, have seen in Schenker's theory a prefiguration of Chomsky's transformational grammar.
+
+In the course of his analytical study of tonal music, the Viennese musicologist Heinrich Schenker came up with the concept of generative grammar, fifty years earlier than the linguist Noam Chomsky [19].
+
+The authors of A Generative Theory for Tonal Music don't make such a statement, but they don't comment either on the hypothesis of a parallel between semantic (linguistic) and aesthetic (musical) meaning; an idea one expect to be the main motivation behind the methodological borrowing of concepts like transformational rules, span reduction or the generative process it self. This epistemological ambiguity is not apparent to them. The analogy is taken as self-sufficient when they say: "This kind of organization, which in music-theory
+
+## Zusätzlich erkannte Beschriftungen (ungeprüft)
+
+- (paradoxes are solved)
+- (divergent
+- approaches to
+- paradoxes)
+- 7 Allen Forte and Steven Gilbert are the authors of Introduction to schenkerian analysis, New York, Norton & Co, 1983.
+
+
+## Seitenabbildungen zur Sichtprüfung
+
+![PDF-Seite 1](<document_artifacts/page_000001_67849e0d01af8c1a85f70a0d0e98256c5bc9bf47555580d68d64a339225ca4d2.png>)
+
+![PDF-Seite 2](<document_artifacts/page_000002_e328473a28963e13dc7d3e7fd3a906ad9f85b9a44bbb78fdaa698b0ce4b0ce84.png>)
+
+![PDF-Seite 3](<document_artifacts/page_000003_cd589f94541f5af58a3893553d64b7fd7bfbaf16a7fea0a0cbc57bff87678a30.png>)
+
+![PDF-Seite 4](<document_artifacts/page_000004_ec792b1fe803c1b2fa60fd114f93e3a3c21c170450c7fc71c09a522a999348e5.png>)
+
+![PDF-Seite 5](<document_artifacts/page_000005_8c94e31d02236bd844bc936875c6619832720c66ccb9761bc58f2b7244e0d83b.png>)
+
+![PDF-Seite 6](<document_artifacts/page_000006_a595b6ab15a1e01509c75ba769777c08ca962ca3fffd5eabc5330e10be35466b.png>)
+
+![PDF-Seite 7](<document_artifacts/page_000007_fde96ef6515614ce8f96b544f13b9deb4ad7ec26aca096ab98d47269e251e2f2.png>)
+
+![PDF-Seite 8](<document_artifacts/page_000008_2e693c04e8ae4fe31724cce04155017389da81c5c0956c8f92284bba5afabce0.png>)
+
+![PDF-Seite 9](<document_artifacts/page_000009_f671ff20ed8bfefbe781b19c9eab660823ef9b5127ca49d34135e815fd09dcc9.png>)
+
+![PDF-Seite 10](<document_artifacts/page_000010_d7810b08922088fc1306b7a3aa34fce449404e05a0181c6062b3344facd64b14.png>)
+
+
+[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Is_Generative_Theory_Misleading_for_Music.pdf#page=1>)
+
+<!-- PDF-Seiten 11–16 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d558907e864bc005/d3f6f9dfb2b4/00011-00016/try-20261114T115431-71fa91/document.md -->
+
+circles is often called a pitch reduction - in the tradition of Schenker -, is notated in A Generative Theory for Tonal Music as a tree structure" [20].
+
+Maybe the main difference between Schenker's reductionist approach and transformational grammar is the notion of deep structure, which plays a central role in both cases. In Schenker as in the GTTM, the fact that the different layers keep signifying specific acoustic events placed in time, let us understand them as new surface levels. The process of rarefaction of the surface level, which is done by the systematic reduction of harmonic and rhythmic patterns does not imply a process of abstraction, rather it obeys to the application of an external theory of substitution. Therefore we can say that the nature of the reductions is the same as that of the surface structure; they are and remain acoustic statements. In contrast, transformational grammar implies an abstraction from the physical signal of any spoken language, to the computational operations defining Universal Grammar. As Chomsky puts it,
+
+We can thus distinguish the surface structure of the sentence, the organization into categories and phrases that is directly associated with the physical signal, from the underlying deep structure, also a system of categories and phrases, but with a more abstract character [21].
+
+I would suggest that generative theory acted as a temptation for musicology, just in the same way Charles Darwin's theory of evolution was a temptation for linguistics during the late 19 th century, when language came to be considered by some as a living organism. In his book La vie des mots of 1887, the French philologist Arsène Darmesteter wrote the following statement : "Despite of their intellectual nature, the fact that languages are also living organisms like plants and animals, is today an unquestionable truth" [22]. A statement that could not be defended some 30 years later, under the light of Saussure's distinction between synchronic and diachronic approaches to linguistic in which culture plays an essential part.
+
+## 4 Differences that Matter
+
+The study of the relation between the sonic structure and the aesthetic meaning of music can certainly benefit from linguistics. Nevertheless, it seems that in order for that relation to be fruitful, the two disciplines concerned should first accomplish a comparative study of the nature of their respective object. In order to prevent false analogies that would cover important discrepancies, there should also be a comparison that lies on the same epistemological context characterized by transdisciplinarity. Both similarities and contrasts may help to identify the convenience or inconvenience of implementing the methodological apparatus of one discipline to the other. The brief comparison on three points that follows seek to underline ontological specificities that dissociate music from language on a basic epistemological level. I suggest that a thorough consideration of these specificities - among others - should point out incompatibilities that question the interest and the aim of sharing specific methodological tools like the one discussed on this paper.
+
+## 4.1 Orality vs. Instrumentality
+
+The first comparison concerns the orality of language and the use of manufactured instruments in music. If all the hypotheses on the origin of music propose that singing precedes the use of instruments, the oldest remains of musical instruments go back some 43.000 years in time. 8 Following that fact we can assume that music develops in a close relation to technological acquisitions and material constraints. As a consequence of that, the technical skill of knowing how to play such instruments appears as an specific cultural feature. Another significant consequence is the distinction between the performer and the listener, a feature that will know different variations in different cultures. In contrast, the orality of language is constant from one culture to another. Cultural changes and technological development through time do not seem to challenge the use of inherent vocal capacity as the material means for linguistic communication. As written language depends on a semiotic relation between phonetic units and graphic signs, orality remains a prerequisite. Therefore we can say that while there is a high degree of influence of both ecological and sociological factors on the development of music, what gives language its robustness is it's relation to strong physiological and cognitive constraints.
+
+Both ethnomusicology and psychology of music have shown the existence of music universals, which are also related to psychoacoustic and cognitive constraints. It is the case for the preference of harmonic relations such as 2:1 or 3:2, the asymmetric character of musical scales, the prominence of pattern repetition and metric stability. Nevertheless, these characteristics apply in different and renewed ways through different cultures and history. This suggests that universals in music do not imply the existence of a set of rules acting as a generative principle, but are rather a common set of characteristics accessible to direct perception; evident on a surface level of the music structure.
+
+## 4.2 Different Learning Mechanisms
+
+The second aspect I want to briefly consider is the relation of music and language to human innate learning capacity. Cognitive psychology has been studying for more than a century the processes of learning and knowledge acquisition. The use of artificial grammars to that purpose has consistently developed in recent decades [23], and music has been given special attention by researchers. For instances, the acquisition of a competence related to the harmonic regularities of tonal music has been the object of many studies [24]. Other kinds of music, including serial music, have also played an important role concerning implicit learning of artificial grammars [25, 26]. Such studies have shown that the capacity to appreciate a variety of musical styles from different cultural backgrounds can be acquired at any time of life and through implicit mechanisms of learning. Another feature revealed by the same experiments is the velocity of these processes, which in certain cases need nothing more that a limited number of experiences. In contrast, the acquisition of linguistic skills is strongly related to the biological clock managing the brain's development during the early years of life. Learning a foreign language as an adult requires a great deal of time, and implies an explicit effort of learning.
+
+8 It is the case of the well known Divje Babe flute found in 1995 in a Slovenian cave by Ivan Turk.
+
+If the acquisition of a tonal music skill has been proven to take place around the age of 6, this fact does not necessarily point to considering tonality as a natural or universal grammar - which is anyway inconsistent with historical evidence. What is proven is the fact that music, and particularly tonal music, requires a certain state of development of the brain in order to be assimilated. So if the acquisition of language is the consequence of an innate predisposition - Universal Grammar -, the acquisition of musical expertise seem to be tightly related to the processes of implicit learning of artificial grammars. That statement alone suggests the necessity of a distinction between the cognitive treatment of linguistic and musical stimuli. Recent research in neurosciences seems to prove that assumption [27].
+
+## 4.3 Implications of Notational Standards
+
+The last comparison I will comment is the striking difference between the effect of notation in both music and language. Taking the example of western culture - which is not the only one having developed a notational system, but which is in deed a very complex one -, it appears that notation has been tightly linked to the evolution of both stylistic and technological aspects of music [28]. Since the 12 th century, when notation became more precise and was systematically adopted by both church and court composers, the history of western music changed dramatically. An example is the apparition of complex polyphonies that encourage the research on rhythmic notation, and ended up challenging the prominent role of the sacred texts in vocal music. 9 Another striking example is the enharmonic relation in tonal music, which become fully practicable only after the adoption of equal temperament. More recently, modern technology has open the possibility for sound wave synthesis, transforming the traditional role of musical instrument, showing once again that when the means for notation evolve, important changes in music aesthetics follow. We can say that meaning in written music depends to some extent on the notational means at hand. This is not the case for language where meaning is embedded in the recursive structure of the generative process, and both the graphic and the acoustic signs remain, as Saussure said, arbitrary.
+
+9 A rapid evolution of polyphonic music takes place following the adoption of the staff invented by Guido de Arezzo during the first half on the 11 th century. The music of Léonin (1150-1201) and Pérotin
+
+## 5 Conclusion
+
+As mentioned in the second point of the last section, the universals that ethnomusicological and psychological studies have discovered in music [29, 30] consist on audible features with salient sensitive characteristics. These features are of a very different nature from the " length and complexity of the chain of operations that relate the mental structures expressing the semantic content of the utterance to the physical realization. " [21, p. 22]. To consider this and other aspects discussed above when it comes to reflect on the distinction between semantic and aesthetic forms of meaning, should prevent transdisciplinarity from building analogies and methodological bridges that may end-up avoiding or masking some important problematics.
+
+The reductionist theories, conventional to the tradition of theoretical musicology, reflect not only the composite character of written music and the difficulties it engenders to analysis, but also show the influence of a given paradigm on the epistemic priorities that researchers adopt at some point in history. In the context of a redefinition of concepts like body, mind and humanity that concerns both human and natural sciences, it seems to me that the suggested parallel between generative grammar and musical theory can be understood as a reminiscence of the dualistic paradigm.
+
+## References
+
+1. Deliège, Célestin : Fondements de la musique tonale. Lattès, Paris, (1984)
+2. Schenker, Heinrich : Free Composition. 2d edition, translated by E. Oster, Longman, New
+
+York, (1979), (original from 1935)
+
+3. Virués-Ortega, Javier : The Case Against B. F. Skinner 45 years Later: An Encounter with N.
+
+le Grand (1160-1230), using long melismas on each vowel, shows how the understanding of the sacred text became secondary in comparison with Gregorian plaintchant.
+
+- Chomsky. In: The Behavior Analyst, vol. 29, pp. 243-251, (2006), p. 245 4. Kuhn, Thomas : The Structure of Scientific Revolutions. University of Chicago Press, Chicago, (1962), p. 23 5. Delalande, François : Analyser la musique, pourquoi, comment ?. INA, Paris, (2013) 6. Helmholtz, Herman von : On the sensation of Tone as physiological Basis for the Theory of Music. éd. and trad. A. J. Ellis, New York, Dover, New York, (1954), p. 6 7. Francès, Robert : La perception de la musique. Vrin, Paris, (1958) 8. Berlyne, Daniel (ed.) : Studies in Experimental Aesthetics : A Step Toward an Objective Psychology of Aesthetic Appreciation. Hemisphere Publishing corp., Washington, (1974) 9. Morin, Edgar : Introduction à la pensée complexe, Seuil, Paris, (2005) 10. Rohrmeier M., Rebuschat, P. : Implicit learning and acquisition of Music. In : TopiCS, n°4, pp. 525-553, (2012) 11. Granot, R., Jacoby, N. : Musically Puzzling I: Sensitivity to Overall Structure in the Sonata Form? In : Musicae Scientiae, vol. 15 n° 3, pp. 365-86, (2011) 12. Tillmann B., Bigand E.. : Global context effect in normal and scrambled musical sequences. In : Journal of Experimental Psychology, vol. 27 : 5, pp. 1185-1196, (2001) 13. Imberty, M., Maya, G. (eds) : Temps,geste et musicalité. L'harmattan, Paris, (2007) 14. Bent, Ian : Analysis. Macmillan, London, (1987) 15. Rameau, Jean-Philippe : Démonstration du principe de l'harmonie. Durant-Pissot, Paris, p.viii, (1750) 16. Boulez, Pierre : Jalons, Pour une décennie. Christian Bourgois, Paris, p. 34, (1989) 17. Cook, Nicholas : Music imagination and culture. Oxford University Press, Oxford, p. 3, (1992) 18. Lorenz, Konrad : Behind the Mirror : A Search for a Natural History of Human Knowledge. Methuen, London, p. 49, (1977) 19. This assumption is made by Jean-Claude Risset, in the forword to : Auriol, Berdard : La clef des sons. Erès, Toulouse, (1991) 20. Jackendoff, R., Lerdahl, F. : The capacity for music : What is it, and what's special about it ?. In : Cognition, n°100, pp. 33-72, p. 55, (2006) 21. Chomsky, Noam : Language and Mind. Third edition, Cambridge University Press, Cambridge, p. 25, (2006) 22. Darmesteter, Arsène : La vie des mots. Delagrave, Paris, (1887) 23. Reber, Arthur : Implicit learning and tacit knowledge. Oxford University Press, Oxford, (1993)
+24. Imberty, Michel : L'aquisition de structures tonales chez l'enfant. Klincksieck, Paris, (1969)
+25. Bigand, E., Charles D. : L'apprentissage implicite de la musique occidentale. In: Musique, Langage, Emotion : une approche neuro-cognitive. Régine Kolinsky, José Morais &amp; Isabelle
+
+Peretz (dir.), Presse Universitaire de Renne, Renne, (2010) 26. Rohrmeier, M., Cross I. : Tacit tonality: implicit learning of context-free harmonic structures. In: Proccedings of the 7 th Trennial conference of the ESCOM, pp. 443-452, (2009) 27. Peretz, Isabelle : The nature of music from a biological perspective. In: Elsevier Cognition, n°100, pp. 1-32, (2006) 28. Bosseur, Jean-Yves : Du son au signe. Alternatives, Paris, (2005). 29. Ball, Philip : The music instinct, How music works and why we can't do without it. Vintage, London, (2011) 30. Sloboda, John : The Musical Mind. The Cognitive Psychology of Music. Oxford University
+
+Press, Oxford, (1986)
+
+## Zusätzlich erkannte Beschriftungen (ungeprüft)
+
+- Bigand, E., Charles D. : L'apprentissage implicite de la musique occidentale. In: Musique, Langage, Emotion : une approche neuro-cognitive. Régine Kolinsky, José Morais & Isabelle
+
+
+## Seitenabbildungen zur Sichtprüfung
+
+![PDF-Seite 11](<document_artifacts/page_000011_14648de2e821a0c347ed64af9d3f442a9382301fe3f4ceacd6fbca299edf9253.png>)
+
+![PDF-Seite 12](<document_artifacts/page_000012_2ab21dff4a12fc5bcb941d8f07a43cff5a79ea7afc03a626f6f820203bb8e8b0.png>)
+
+![PDF-Seite 13](<document_artifacts/page_000013_0e6a7352bdf98c93177f464b05c7bf17d795aec5d822c12362d2c7acb8d3d520.png>)
+
+![PDF-Seite 14](<document_artifacts/page_000014_c17e02612660ae5da5d6032e8856227848486cab00fbfecdbc56d57796d39708.png>)
+
+![PDF-Seite 15](<document_artifacts/page_000015_0ae2509f1b31e7a7cb57dcd0319e42bf026d942d53198e91952d6e972f19d216.png>)
+
+![PDF-Seite 16](<document_artifacts/page_000016_958983eba0dcfcf9d35f593e5fb07eacb7f21e8615ef930f41b41eea28865d08.png>)
+
+
+[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Is_Generative_Theory_Misleading_for_Music.pdf#page=11>)
