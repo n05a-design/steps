@@ -2097,7 +2097,7 @@
     },
     {
       "category": "EXISTING_SAMPLE",
-      "review_note": "Kontinuierliche Son-Clave-Ticks unterscheiden sich von taktrelativen Positionen; konkretes Modell, keine Hörabnahme.",
+      "review_note": "Kontinuierliche Son-Clave-Ticks unterscheiden sich von taktrelativen Positionen; konkretes Modell, keine Hörabnahme. Verlagsautorisierte Notenprobe S.48 Abb.3.3a visuell geprüft; zwei notierte 4/4-Takte und daraus abgeleitete 480-PPQ-Timeline stimmen überein. Historischer Verweis auf S.52 wurde nicht als geprüft ausgegeben.",
       "relation_id": "CDR-018",
       "edge": {
         "source_id": "SON_CLAVE_3_2",
@@ -2105,7 +2105,9 @@
         "relation_type": "TIMELINE_AT_480_PPQ"
       },
       "original_row_sha256": "f79013fa1ed57a1e0a0506f4705455cc7a63fb5246fd9047f25e0b02276a9a3b",
-      "probe_ids": [],
+      "probe_ids": [
+        "SON_CLAVE_PUBLISHER_480"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
@@ -2113,11 +2115,18 @@
       "references": [
         "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
         "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
-        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md",
+        "docs/audit/fable-5.2/GOLDEN_SOURCE_REVIEW_2026-11-14.json"
       ],
       "candidate_claim_ids": [
         "CLAIM-036"
-      ]
+      ],
+      "scoped_source_evidence": {
+        "status": "PRIMARY_NOTATION_SCOPED_CHECK",
+        "url": "https://www.shermusic.com/products/salsa-guidebook-for-piano-ensemble",
+        "locator": "Offiziell verlinkte Sample Pages 1, gedruckte S. 48, Abb. 3.3a; 3:2: Takt 1 [1,2+,4], Takt 2 [2,3]; Tickumrechnung eigene Rechnung. Keine menschliche Fachabnahme.",
+        "pdf_sha256": "88a08b6dd81d5195f1341ab7960b290ebd651c10895644fc8ab9279b276fcae4"
+      }
     },
     {
       "category": "HISTORICAL_SOURCE_REQUIRED",
@@ -2925,6 +2934,34 @@
       },
       "relations": [
         "CDR-014"
+      ]
+    },
+    {
+      "id": "SON_CLAVE_PUBLISHER_480",
+      "kind": "clave_timeline",
+      "input": {
+        "ppq": 480,
+        "bars": [
+          [
+            1,
+            2.5,
+            4
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "expected": [
+        0,
+        720,
+        1440,
+        2400,
+        2880
+      ],
+      "relations": [
+        "CDR-018"
       ]
     }
   ]

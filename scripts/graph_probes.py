@@ -34,6 +34,10 @@ def calculate(spec):
         return round(4 * 60 / data['fast_bpm'], 6) == round(2 * 60 / data['slow_bpm'], 6)
     if kind == 'cycle':
         return lcm(*data['periods'])
+    if kind == 'clave_timeline':
+        if data['ppq']!=480 or len(data['bars'])!=2 or any(not 1<=b<5 for bar in data['bars'] for b in bar):
+            raise ValueError('Expected two explicitly transcribed 4/4 bars at 480 PPQ')
+        return [round((4*i+beat-1)*data['ppq']) for i,bar in enumerate(data['bars']) for beat in bar]
     if kind == 'xml':
         pitch = ElementTree.fromstring(data['xml'])
         return {child.tag: child.text for child in pitch}

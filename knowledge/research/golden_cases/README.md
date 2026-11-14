@@ -11,3 +11,5 @@ Die JSON-Datei ist der kanonische Golden-Bestand. Der Testspiegel wird aus diese
 Vor einer Korrektur den Fall fachlich belegen und die erforderliche Migration erfassen. Danach aus dem Repository-Root `python -B scripts/build_unified_golden_cases.py --check` ausführen.
 
 [Zur Bereichsübersicht](../README.md)
+
+[64 einzelne Ergänzungsprüfungen](REMAINING_64_AUDIT.json) und [Ergebnisbericht](../../../docs/audit/fable-5.2/GOLDEN_64_QUELLENPRUEFUNG_2026-11-14.md): Originalbestand unverändert; typisierte Modellvorschläge und Quellen-/Fachgrenzen separat.

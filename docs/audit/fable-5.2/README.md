@@ -23,3 +23,5 @@ Den aktuellen Prüfstand liefert der [Benchmark](../../../knowledge/benchmark/RE
 [Zur Bereichsübersicht](../README.md)
 
 [Sicherheitskorrektur Guardrail #166](SECRET_GUARDRAIL_166_2026-11-14.md): vollständige Bereinigung des aktuellen Stands; historische Sicherheitsbewertung offen.
+
+[Fortsetzung: alle 64 übrigen Golden-Beispiele und Quellen](GOLDEN_64_QUELLENPRUEFUNG_2026-11-14.md): 43 getrennte Modellprüfungen, sieben historische Konflikte und neue Primärnotenkontrolle zu CDR-018.

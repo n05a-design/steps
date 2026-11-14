@@ -1,0 +1,1447 @@
+{
+  "schema_version": 1,
+  "historical_source_status": "PROJECT_RECORDS_NOT_EXTERNAL_EXPERT_APPROVAL",
+  "reviews": [
+    {
+      "case_id": "REF-0003",
+      "original_sha256": "cc19bf4379de9c505dcb8fd3d696e354c6a5c4f4db1cffe834b8f5734948346b",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "C# und Db haben in 12-TET dieselbe Pitch-Class; die Schreibweisen bleiben verschieden. Oktave 4 wird für die Rechnung ergänzt.",
+      "source_locator": "M01-04; 12-TET Standard",
+      "next_step": "Register und INT-Konvention typisiert in einer neuen Fallversion festlegen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "enharmonic",
+        "input": {
+          "notes": [
+            "C#4",
+            "Db4"
+          ]
+        },
+        "expected": {
+          "same_pc": true,
+          "same_spelling": false,
+          "pc": 1
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0004",
+      "original_sha256": "8d373925758788eecbab9ee128538ac8eac482548bba6b636e3eff03b223688c",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "C# ist die geschriebene siebte Stufe der angegebenen D-Dur-Skala; Leittonfunktion setzt tonalen Kontext voraus.",
+      "source_locator": "M02-05; Aldwell & Schachter",
+      "next_step": "Aldwell-Ausgabe und genaue Seite ergänzen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "diatonic",
+        "input": {
+          "note": "C#4",
+          "scale": [
+            "D4",
+            "E4",
+            "F#4",
+            "G4",
+            "A4",
+            "B4",
+            "C#5"
+          ]
+        },
+        "expected": {
+          "written_degree": 7,
+          "pc_present": true
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0005",
+      "original_sha256": "a6a6f5d08c4c096a9a0f0376e812f1fb9ec9f8e299c9cd63b8fc600597003aa2",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Db fehlt als Schreibweise in D-Dur, obwohl seine Pitch-Class enharmonisch enthalten ist.",
+      "source_locator": "ERR-004; Kostka & Payne",
+      "next_step": "Warnung auf Schreibweise statt klingenden Tonvorrat begrenzen; Kostka-Seite verifizieren.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "diatonic",
+        "input": {
+          "note": "Db4",
+          "scale": [
+            "D4",
+            "E4",
+            "F#4",
+            "G4",
+            "A4",
+            "B4",
+            "C#5"
+          ]
+        },
+        "expected": {
+          "written_degree": null,
+          "pc_present": true
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0006",
+      "original_sha256": "fd547308be823d9c2e3573959cfe9f54810091b9ec77487fa271dc8027b95337",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Notennamen-Konvention ist angegeben, Oktave 4 fehlt im historischen Input und wird explizit ergänzt. DIN- bzw. DTD-Zitat belegt diese Ergänzung nicht.",
+      "source_locator": "ERR-001; DIN 1317-1",
+      "next_step": "Originalreferenz und Ausgabe prüfen; Oktave in neue strukturierte Eingabe aufnehmen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "note",
+        "input": {
+          "note": "H4",
+          "convention": "DE"
+        },
+        "expected": {
+          "pitch_class": 11,
+          "midi": 71
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0007",
+      "original_sha256": "83e22e3f7de007928c5359a4dfc2f047f608c55f2b4f5f8e4301c4ed03ce1e44",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Notennamen-Konvention ist angegeben, Oktave 4 fehlt im historischen Input und wird explizit ergänzt. DIN- bzw. DTD-Zitat belegt diese Ergänzung nicht.",
+      "source_locator": "ERR-001; DIN 1317-1",
+      "next_step": "Originalreferenz und Ausgabe prüfen; Oktave in neue strukturierte Eingabe aufnehmen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "note",
+        "input": {
+          "note": "B4",
+          "convention": "DE"
+        },
+        "expected": {
+          "pitch_class": 10,
+          "midi": 70
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0008",
+      "original_sha256": "64486c8b9eb8e27fd61bc91c95b1d2d2b7f7639797f8a6dbe1f5c93ee02dc5d5",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Notennamen-Konvention ist angegeben, Oktave 4 fehlt im historischen Input und wird explizit ergänzt. DIN- bzw. DTD-Zitat belegt diese Ergänzung nicht.",
+      "source_locator": "ERR-001; MusicXML 4.0 DTD",
+      "next_step": "Originalreferenz und Ausgabe prüfen; Oktave in neue strukturierte Eingabe aufnehmen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "note",
+        "input": {
+          "note": "B4",
+          "convention": "INT"
+        },
+        "expected": {
+          "pitch_class": 11,
+          "midi": 71
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0009",
+      "original_sha256": "48c23646f79aac505f210e33bd3d428be814b2dcb63dae6ec9c0e831bd4afeb6",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Notennamen-Konvention ist angegeben, Oktave 4 fehlt im historischen Input und wird explizit ergänzt. DIN- bzw. DTD-Zitat belegt diese Ergänzung nicht.",
+      "source_locator": "ERR-001; MusicXML 4.0 DTD",
+      "next_step": "Originalreferenz und Ausgabe prüfen; Oktave in neue strukturierte Eingabe aufnehmen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "note",
+        "input": {
+          "note": "Bb4",
+          "convention": "INT"
+        },
+        "expected": {
+          "pitch_class": 10,
+          "midi": 70
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0016",
+      "original_sha256": "74488f42d63b3915dab01e19645f9195924ec36880af2c11c7e6d7acd5b37a32",
+      "original_assessment": "CONFLICTING_INPUTS",
+      "finding": "Titel und Erwartung nennen zwei Dur-Dreiklänge D über C; Input root=C, quality=Minor beschreibt sie nicht. Slash-Bass D/C und Polychord aus zwei Dreiklängen unterscheiden.",
+      "source_locator": "M04-09; Persichetti 20th Century Harmony",
+      "next_step": "Neue Fall-ID mit beiden Dreiklängen anlegen; CDR-010 weiterhin FAIL. Persichetti-Seite separat prüfen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "union",
+        "input": {
+          "chords": [
+            "C",
+            "D"
+          ]
+        },
+        "expected": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          9
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0017",
+      "original_sha256": "c8463c21fcb9f4d382a8a763440f3a0bc8afebf667898ec9ef19fc09a8b0fb5e",
+      "original_assessment": "EXPECTATION_CONFLICT",
+      "finding": "Originaleingabe V -> I ergibt G -> C; die erwartete Septime G7 ist in V nicht enthalten.",
+      "source_locator": "M05-03; Riemann Funktionstheorie",
+      "next_step": "Korrekturvorschlag: entweder V7 als neue Eingabe oder G als neue Erwartung; Original unverändert.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "roman",
+        "input": {
+          "key": "C",
+          "degrees": [
+            "V",
+            "I"
+          ]
+        },
+        "expected": [
+          "G",
+          "C"
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0018",
+      "original_sha256": "685ab19528fde1d43a9b6ad103c5cd19436066362874487e60ca44ede1e01535",
+      "original_assessment": "SUPPORTED_BY_ORIGINAL_INPUT",
+      "finding": "Die angegebenen Stufen V und vi in C ergeben G und Am. Die zitierte Buchfundstelle ist nicht präzisiert.",
+      "source_locator": "M05-03; Hindemith Traditional Harmony",
+      "next_step": "Hindemith-Fundstelle ergänzen; Rechnung und Quellenstatus getrennt halten.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "roman",
+        "input": {
+          "key": "C",
+          "degrees": [
+            "V",
+            "vi"
+          ]
+        },
+        "expected": [
+          "G",
+          "Am"
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0022",
+      "original_sha256": "fa4a22e3c6e3e5408a7ddbb6f21e00ddad51ac43ca5e06b34bb4e9e555ddda9b",
+      "original_assessment": "SOURCE_TABLE_ALREADY_CHECKED",
+      "finding": "Bereits vorhandener Golden-Test vergleicht den konkreten Instrumentnamen mit der separat dokumentierten GM-Tabelle 3; keine neue Parserfunktion nötig.",
+      "source_locator": "Historischer Verweis M08-02. The MIDI Association, RP-003 General MIDI System Level 1, Tabelle 3 (PDF-S. 8), https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view; tests/test_golden_reference_cases.py::GM_PERCUSSION und verify_specification_case",
+      "next_step": "Keinen Doppeltest als neue fachliche Freigabe zählen; Original-PDF-Fundstelle und bestehende sechs Tabellenchecks erhalten.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0023",
+      "original_sha256": "4fa444e9a8eb459b513fdaab5a3d0d20512c59407226b1540ccd76cc1b698cbf",
+      "original_assessment": "SOURCE_TABLE_ALREADY_CHECKED",
+      "finding": "Bereits vorhandener Golden-Test vergleicht den konkreten Instrumentnamen mit der separat dokumentierten GM-Tabelle 3; keine neue Parserfunktion nötig.",
+      "source_locator": "Historischer Verweis M08-02. The MIDI Association, RP-003 General MIDI System Level 1, Tabelle 3 (PDF-S. 8), https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view; tests/test_golden_reference_cases.py::GM_PERCUSSION und verify_specification_case",
+      "next_step": "Keinen Doppeltest als neue fachliche Freigabe zählen; Original-PDF-Fundstelle und bestehende sechs Tabellenchecks erhalten.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0024",
+      "original_sha256": "24673d464801386ce0545de2ceec91813684078db31aa759fd1d9421a8517b0c",
+      "original_assessment": "SOURCE_TABLE_ALREADY_CHECKED",
+      "finding": "Bereits vorhandener Golden-Test vergleicht den konkreten Instrumentnamen mit der separat dokumentierten GM-Tabelle 3; keine neue Parserfunktion nötig.",
+      "source_locator": "Historischer Verweis M08-02. The MIDI Association, RP-003 General MIDI System Level 1, Tabelle 3 (PDF-S. 8), https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view; tests/test_golden_reference_cases.py::GM_PERCUSSION und verify_specification_case",
+      "next_step": "Keinen Doppeltest als neue fachliche Freigabe zählen; Original-PDF-Fundstelle und bestehende sechs Tabellenchecks erhalten.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0025",
+      "original_sha256": "8b19bcf10333480d99254b9750a3ba22cf161065be29923261f64fd5519b3b95",
+      "original_assessment": "SOURCE_TABLE_ALREADY_CHECKED",
+      "finding": "Bereits vorhandener Golden-Test vergleicht den konkreten Instrumentnamen mit der separat dokumentierten GM-Tabelle 3; keine neue Parserfunktion nötig.",
+      "source_locator": "Historischer Verweis M08-02. The MIDI Association, RP-003 General MIDI System Level 1, Tabelle 3 (PDF-S. 8), https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view; tests/test_golden_reference_cases.py::GM_PERCUSSION und verify_specification_case",
+      "next_step": "Keinen Doppeltest als neue fachliche Freigabe zählen; Original-PDF-Fundstelle und bestehende sechs Tabellenchecks erhalten.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0033",
+      "original_sha256": "c597c4df5e92b6e6e36972b93589cb9a0902e43bfb485b0c8ced339ad4aa7795",
+      "original_assessment": "SOURCE_TABLE_ALREADY_CHECKED",
+      "finding": "Bereits vorhandener Golden-Test vergleicht den konkreten Instrumentnamen mit der separat dokumentierten GM-Tabelle 3; keine neue Parserfunktion nötig.",
+      "source_locator": "The MIDI Association, RP-003 General MIDI System Level 1, Tabelle 3 (PDF-S. 8), https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view; tests/test_golden_reference_cases.py::GM_PERCUSSION und verify_specification_case",
+      "next_step": "Keinen Doppeltest als neue fachliche Freigabe zählen; Original-PDF-Fundstelle und bestehende sechs Tabellenchecks erhalten.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0034",
+      "original_sha256": "2c46f5476b38b24a392cf8877ba051cf952570d08d1b2a853d99962fb8e74b68",
+      "original_assessment": "SOURCE_SCOPE_OPEN",
+      "finding": "Parallele Quinten sind eine stilgebundene Satzregel. Die pauschale Abgrenzung auf historischen klassischen Kontrapunkt ersetzt kein benanntes Stilprofil; Everett-Seite fehlt.",
+      "source_locator": "Everett Foundations of Rock",
+      "next_step": "Stil, Textur, Stimmenpaar und Ausnahmen durch Satzlehre-Prüfer bestimmen; keine universelle Verbotsregel aktivieren.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0036",
+      "original_sha256": "7463195873c14a49e001d693653005268dacc7fced767f6ade086a3fa731cf71",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Nur Bb7 steht im Input; Tonika C und Zielauflösung stammen aus dem Titel. Mit diesem ergänzten Kontext ist bVII7 -> I berechenbar.",
+      "source_locator": "PROG-014/017; WEB-4.6-02; Jazz Theory Foundations",
+      "next_step": "Tonart und Zielakkord in neuer Fallversion explizit machen; Quellenfundstelle zur Backdoor-Praxis prüfen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "roman",
+        "input": {
+          "key": "C",
+          "degrees": [
+            "bVII7",
+            "I"
+          ]
+        },
+        "expected": [
+          "Bb7",
+          "C"
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0037",
+      "original_sha256": "4ea38026d47f5080662bffecc4591997cdb97910e07686b2aa4432aa86362ffb",
+      "original_assessment": "SOURCE_SCOPE_OPEN",
+      "finding": "Reggae als Stil allein legt kein One-Drop-Pattern fest; PAT-010 ist ein konkretes Projektbeispiel mit freier Kick auf Schlag 1.",
+      "source_locator": "PAT-010; WEB-4.6-03; Drummerworld Reggae Drumming History",
+      "next_step": "One-Drop-Variante und Quelle benennen; nicht auf sämtlichen Reggae verallgemeinern.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0038",
+      "original_sha256": "04f2b5d4fca3c49f56bb1576c8e1d42e1b689fed8ade9137e25db0ab0c5c2205",
+      "original_assessment": "SOURCE_SCOPE_OPEN",
+      "finding": "PAT-009 dokumentiert einen All-Quarter-Snare-Stomp; das ist keine Norm für jede Motown-Produktion.",
+      "source_locator": "PAT-009; WEB-4.6-07; Motown Hitsville Sound Analysis",
+      "next_step": "Konkrete Aufnahme, Takte und Transkription fachlich prüfen; Beispielstatus erhalten.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0041",
+      "original_sha256": "6d63bb6d9a79946f1a6ce5248dff3a0457ac4c057ee4078a164912165f22011f",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Explizite Stufen iv7 bVII7 Imaj7 ergeben Fm7 Bb7 Cmaj7; der Input nennt nur eine Kadenzgattung.",
+      "source_locator": "PROG-017; WEB-4.6-02; Levine Jazz Theory Book (Kap. 14)",
+      "next_step": "Neue strukturierte Stufenliste; Levine-Kapitel und Seiten tatsächlich prüfen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "roman",
+        "input": {
+          "key": "C",
+          "degrees": [
+            "iv7",
+            "bVII7",
+            "Imaj7"
+          ]
+        },
+        "expected": [
+          "Fm7",
+          "Bb7",
+          "Cmaj7"
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0042",
+      "original_sha256": "bd2ad68e854014d19dee266261d65d866a515b5571ba11f3d1afad3cdd0a879b",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Die bezeichnete Projektvariante mit IVmaj7 V7 iii7 vi ergibt Fmaj7 G7 Em7 Am; Royal Road existiert auch mit anderen Erweiterungen.",
+      "source_locator": "PROG-015; WEB-4.6-05; J-Pop Harmonic Analyses",
+      "next_step": "Erweiterte Variante klar benennen; Genreverbreitung nicht aus Stufenrechnung ableiten.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "roman",
+        "input": {
+          "key": "C",
+          "degrees": [
+            "IVmaj7",
+            "V7",
+            "iii7",
+            "vi"
+          ]
+        },
+        "expected": [
+          "Fmaj7",
+          "G7",
+          "Em7",
+          "Am"
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0044",
+      "original_sha256": "c8d4bfc10b5cbb2ad416b590f5ef3d72a46e28a13913e324df16285c3a59ff3f",
+      "original_assessment": "SOURCE_SCOPE_OPEN",
+      "finding": "Die wiedergefundene Projektnotiz behauptet eine allgemeine lineare Swing-Funktion ohne belastbare Parameterprovenienz. Die Originalautor-Arbeit 2023 nutzt ausdrücklich eine begrenzte lineare Regression und warnt vor Streuung und Auswahlabhängigkeit; sie beweist kein universelles Gesetz und ersetzt keine Vollprüfung von 2002.",
+      "source_locator": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261111T0005_Phase4_6/GENRE_RESEARCH_JAZZ_RHYTHM.md; Friberg/Gulz/Wettebrandt 2023, Abschnitt Swing Ratio, gedruckt S. 92-93, Gleichung (1); GOLDEN_SOURCE_REVIEW_2026-11-14.json::SWING-2023",
+      "next_step": "2002-Volltext und Messbereich prüfen; Projektformel von 2023-Modellversion und Aufführungsdaten trennen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "swing_regression",
+        "input": {
+          "slope": -0.01,
+          "intercept": 4.1019,
+          "bpm": [
+            80,
+            240,
+            400
+          ]
+        },
+        "expected": [
+          3.3019,
+          1.7019,
+          1
+        ],
+        "scope": "Nur Gleichung (1) aus Friberg/Gulz/Wettebrandt 2023; keine Annahme einer universellen Aufführungsregel oder Rekonstruktion der Messdaten 2002."
+      }
+    },
+    {
+      "case_id": "REF-0045",
+      "original_sha256": "7ba79efccd0baaf3835af6bb959e82884966b716ba45362802a9aaeb3a750adf",
+      "original_assessment": "SOURCE_TABLE_ALREADY_CHECKED",
+      "finding": "Bereits vorhandener Golden-Test vergleicht den konkreten Instrumentnamen mit der separat dokumentierten GM-Tabelle 3; keine neue Parserfunktion nötig.",
+      "source_locator": "Historischer Verweis WEB-4.6-01. The MIDI Association, RP-003 General MIDI System Level 1, Tabelle 3 (PDF-S. 8), https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view; tests/test_golden_reference_cases.py::GM_PERCUSSION und verify_specification_case",
+      "next_step": "Keinen Doppeltest als neue fachliche Freigabe zählen; Original-PDF-Fundstelle und bestehende sechs Tabellenchecks erhalten.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0046",
+      "original_sha256": "7bf525c5e1924b60af05cd78ead3c4b28c3b859ba3c0bc31492918942cc55e59",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Viertel-Kicks des Steppers-Beispiels bei 480 PPQ sind 0/480/960/1440; Stilname allein enthält keine Ereignisliste.",
+      "source_locator": "PAT-015; GENRE_RESEARCH_REGGAE.md; WEB-4.6-03",
+      "next_step": "Ereignisse und PPQ typisieren; Genre-/Aufnahmeabnahme offen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "ticks",
+        "input": {
+          "ppq": 480,
+          "beats": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "expected": [
+          0,
+          480,
+          960,
+          1440
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0048",
+      "original_sha256": "17079fc612ae21c37199b9b181605d0f963fefe758cb364923532e5af1ea9c76",
+      "original_assessment": "SOURCE_SCOPE_OPEN",
+      "finding": "GM 38 und 54 bezeichnen Acoustic Snare und Tambourine. Gleichzeitigkeit, Velocity und ein universeller Motown-Layer folgen nicht aus der Notennummernliste.",
+      "source_locator": "PAT-009; GENRE_RESEARCH_FUNK_SOUL.md; WEB-4.6-07",
+      "next_step": "PAT-009 als Projektbeispiel führen; Transkriptions- und Hörnachweis separat verlangen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0051",
+      "original_sha256": "1adbed655033673ec29eae754c5e1867bffaab5b8cf968c2068e4769c88a00ca",
+      "original_assessment": "EXPECTATION_INCOMPLETE",
+      "finding": "Erwartung A -> G lässt G# und F# des vierstufigen Clichés weg. Die vollständige mögliche Stimme A G# G F# ist in Am Am(maj7) Am7 Am6 enthalten.",
+      "source_locator": "PROG-019; Jazz & Film Noir Analysis",
+      "next_step": "Vollständige Linie und Register in neue Erwartungsversion aufnehmen; keine Änderung am Original.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "voice_path",
+        "input": {
+          "chords": [
+            "Am",
+            "Am(maj7)",
+            "Am7",
+            "Am6"
+          ],
+          "notes": [
+            "A4",
+            "G#4",
+            "G4",
+            "F#4"
+          ]
+        },
+        "expected": {
+          "pcs": [
+            9,
+            8,
+            7,
+            6
+          ],
+          "motions": [
+            -1,
+            -1,
+            -1
+          ]
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0052",
+      "original_sha256": "799f812b5c905d34fce237815ab3b6a1b7771e1beb671c251b0415f1ded8098b",
+      "original_assessment": "CONFLICTING_INPUTS",
+      "finding": "Titel nennt Fm7 Bb7 Cmaj7 Abmaj7, Input und Ergebnis dagegen eine Andalusische Kadenz Am G F E7. Die wiedergefundene Fallstudie ist eine separate historische Projektfassung.",
+      "source_locator": "Fallstudie 1 (Midnight Solace); INTEGRATED_MUSICAL_CASE_STUDIES.md",
+      "next_step": "Zwei getrennte neue Fall-IDs vorschlagen; keine Mehrdeutigkeit durch einen grünen Stringvergleich verdecken.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0054",
+      "original_sha256": "087f2b903f6c40c93700dbd5676e4c8abfa3dda5d7bbf86b2fa8ed5f641fb3b2",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Bei 480 PPQ liegt 3+ auf Tick 1200; Tempo 174 ändert die Tickposition nicht. Die Genrebezeichnung ist keine Ereigniseingabe.",
+      "source_locator": "PAT-018; GENRE_RESEARCH_DNB.md; WEB-4.7-01",
+      "next_step": "Pattern-ID und Vierteltempo typisieren; konkretes Beispiel statt Genrestandard.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "ticks",
+        "input": {
+          "ppq": 480,
+          "beats": [
+            1,
+            3.5
+          ]
+        },
+        "expected": [
+          0,
+          1200
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0055",
+      "original_sha256": "25a63db60f1e01da1d0fe6d97dba880969131d199f1e4fc622d074e4353f15c2",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Das vorgeschlagene Beispiel hat Kicks auf 1 und 3+ und keinen Hit exakt auf 2 oder 3. Daraus folgt kein allgemeines UK-Garage-Kickverbot.",
+      "source_locator": "PAT-020; GENRE_RESEARCH_UK_GARAGE.md",
+      "next_step": "Ereignisliste und Geltungsbereich ergänzen; Stilabnahme offen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "ticks",
+        "input": {
+          "ppq": 480,
+          "beats": [
+            1,
+            3.5
+          ]
+        },
+        "expected": [
+          0,
+          1200
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0056",
+      "original_sha256": "fd91dc031eaff41ca37be59d2669bbdc0d80a10b61d97e45df5c58da7f4e275b",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Ein 4/4-Takt bei Viertel=174 und ein halber 4/4-Takt bei Viertel=87 haben dieselbe Dauer. Bass-/Pad-Phrasierung wird dadurch nicht als gehörte Eigenschaft nachgewiesen.",
+      "source_locator": "Fallstudie 2 (Horizon Drift); INTEGRATED_MUSICAL_CASE_STUDIES.md",
+      "next_step": "Notierte Tempoeinheit und reale Stimmenereignisse ergänzen; Hörabnahme offen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "duality",
+        "input": {
+          "fast": 174,
+          "slow": 87
+        },
+        "expected": {
+          "fast_bar_seconds": 1.37931,
+          "slow_halfbar_seconds": 1.37931
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0057",
+      "original_sha256": "5ed02c866b895e50b3c03c2e5a18ff1ece6f65112c9ad974c8f1fdadbb8e2c4d",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Das P09-Projektbeispiel 1 und 2+ ergibt bei 480 PPQ 0 und 720; keine vollständige Hand-/Voicing-Prüfung.",
+      "source_locator": "Modul P09; PIANO_LEARNING_MODULES.md",
+      "next_step": "Dauern und Handlage ergänzen; Spielabnahme offen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "ticks",
+        "input": {
+          "ppq": 480,
+          "beats": [
+            1,
+            2.5
+          ]
+        },
+        "expected": [
+          0,
+          720
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0058",
+      "original_sha256": "c20fc002de706f779ae785f37afcef5b17a7ad6c8c7b3062059afcdf868c20af",
+      "original_assessment": "HUMAN_REVIEW_REQUIRED",
+      "finding": "P10 beschreibt eine Lehrstrategie, keinen nachgewiesenen Lernerfolg. Bass allein bestimmt bei Umkehrungen weder Grundton noch Dur/Moll.",
+      "source_locator": "MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-026); PIANO_LEARNING_MODULES.md (P10)",
+      "next_step": "Höraufgaben mit Zielgruppe, Bewertungsrubrik und unabhängiger didaktischer Abnahme durchführen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0059",
+      "original_sha256": "ba1e1a6d942cb588cd029524cfe8d32ec8d91ab8dff5c818e6ab383f4b6f74eb",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "58% und 60% einer 240-Tick-Achtel ergeben gerundet Tick 139/144 und Offsets 19/24. Roger-Linn-Implementierung ist damit nicht belegt.",
+      "source_locator": "MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-024); Roger Linn MPC Specifications",
+      "next_step": "Rundungsverfahren und Swing-Unterteilung explizit machen; Geräte-/Historienquelle separat prüfen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "swing",
+        "input": {
+          "ppq": 480,
+          "percent": [
+            58,
+            60
+          ]
+        },
+        "expected": [
+          {
+            "percent": 58,
+            "tick": 139,
+            "offset": 19
+          },
+          {
+            "percent": 60,
+            "tick": 144,
+            "offset": 24
+          }
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0060",
+      "original_sha256": "403376781115a12c5fb738a0b8aedd67433c5d1b2bb6befad92b97bd796bb720",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Die Akkordtonvereinigung entspricht D-Aeolisch und enthält Bb statt B. Tonvorrat allein beweist weder gehörte Tonika noch ausschließlich eine modale Deutung.",
+      "source_locator": "MUSIC_KNOWLEDGE_CORRECTIONS.md (ERR-025); Kostka/Payne Tonal Harmony",
+      "next_step": "Ergebnis auf Pitch-Class-Menge begrenzen; Kadenz-/Hörkontext separat.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "membership",
+        "input": {
+          "chords": [
+            "Dm9",
+            "Bbmaj7",
+            "Gm7",
+            "Cadd9"
+          ],
+          "collection": [
+            0,
+            2,
+            4,
+            5,
+            7,
+            9,
+            10
+          ]
+        },
+        "expected": {
+          "collection": [
+            0,
+            2,
+            4,
+            5,
+            7,
+            9,
+            10
+          ],
+          "matches_named_collection": true
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0061",
+      "original_sha256": "b785b56c62d411bb69e6a02c4574829e38f28a95e657822e689701d9e9aaed46",
+      "original_assessment": "HUMAN_REVIEW_REQUIRED",
+      "finding": "Die Bassintervalle der Umkehrungen sind berechenbar; Stabilität und kadenzieller Vorhalt sind kontextabhängige Funktionen. Nicht jeder Quartsextakkord ist kadenziell.",
+      "source_locator": "PIANO_LEARNING_MODULES.md (P11); Aldwell & Schachter Harmony and Voice Leading",
+      "next_step": "P11 um konkrete Satzbeispiele und Gegenbeispiele ergänzen; Hör- und Fachabnahme offen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0062",
+      "original_sha256": "80cd88d770a42eee50b85c469561f04a7a0d43a4074332929b8b4cb2626ba40b",
+      "original_assessment": "VERSION_CONFLICT",
+      "finding": "Archivierte PAT-021-Fassung nennt 174 BPM und andere Kick-/Ghost-Ticks als das heutige Beispiel mit 168 BPM. Historische Versionen dürfen nicht vermischt werden.",
+      "source_locator": "DRUM_GROOVE_REFERENCE_LIBRARY.md (PAT-021); GENRE_RESEARCH_DNB.md",
+      "next_step": "Beide Ereignislisten versioniert zuordnen; ursprüngliche Golden-Erwartung nicht rückwirkend als alte Transkription ausgeben.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0063",
+      "original_sha256": "e3a3e41fed512fb4c413d2ca220e1a7a115b6737a8a4904855b7aec26b31bb46",
+      "original_assessment": "VERSION_CONFLICT",
+      "finding": "Archivierte PAT-022-Fassung nennt 174 BPM, heutige Golden-Erwartung 175 BPM; gleiche Kickpositionen beweisen keine identische Version.",
+      "source_locator": "DRUM_GROOVE_REFERENCE_LIBRARY.md (PAT-022); GENRE_RESEARCH_DNB.md",
+      "next_step": "Tempoänderung mit Versionsherkunft dokumentieren; Kickraster ist davon getrennt prüfbar.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "ticks",
+        "input": {
+          "ppq": 480,
+          "beats": [
+            1,
+            3.5
+          ]
+        },
+        "expected": [
+          0,
+          1200
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0064",
+      "original_sha256": "eb3bb1f741e4ba7056a61ffad825ebc5bc716750dd8c51262c59a67c57606129",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Bei 480 PPQ ergibt 58%-Swing gerundet Tick 139. Vier Takte, Vocal-Chops und Snare-Roll erfordern zusätzliche Ereignisdaten.",
+      "source_locator": "DRUM_GROOVE_REFERENCE_LIBRARY.md (PAT-023); GENRE_RESEARCH_UK_GARAGE.md",
+      "next_step": "Vollständige PAT-023-Version, Dauern und Takt-4-Ereignisse typisieren; Hörabnahme offen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "swing",
+        "input": {
+          "ppq": 480,
+          "percent": [
+            58
+          ]
+        },
+        "expected": [
+          {
+            "percent": 58,
+            "tick": 139,
+            "offset": 19
+          }
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0065",
+      "original_sha256": "aa16261a7d100998decfe19be596dcfced2ecf833f03ef916badaf6266f728e2",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Mit fest zugeordneten Stimmen C4 E4 G4 nach B3 D4 G4 beträgt absolute L1-Distanz 3. Register und Stimmenzuordnung fehlen im ursprünglichen Konzeptstring.",
+      "source_locator": "PIANO_LEARNING_MODULES.md (P11); Tymoczko Geometry of Music",
+      "next_step": "Register und Zuordnung explizit machen; diese Distanz nicht mit Tonraum-/Permutationminimum gleichsetzen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "l1",
+        "input": {
+          "from": [
+            60,
+            64,
+            67
+          ],
+          "to": [
+            59,
+            62,
+            67
+          ]
+        },
+        "expected": 3,
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0066",
+      "original_sha256": "b7f234e147ffa666c7618d283e4fa72c19623515efd8c20e945c60cdca125007",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Ein 4/4-Takt bei Viertel=174 und ein halber 4/4-Takt bei Viertel=87 haben dieselbe Dauer. Bass-/Pad-Phrasierung wird dadurch nicht als gehörte Eigenschaft nachgewiesen.",
+      "source_locator": "INTEGRATED_MUSICAL_CASE_STUDIES.md (Horizon Drift); GENRE_RESEARCH_DNB.md",
+      "next_step": "Notierte Tempoeinheit und reale Stimmenereignisse ergänzen; Hörabnahme offen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "duality",
+        "input": {
+          "fast": 174,
+          "slow": 87
+        },
+        "expected": {
+          "fast_bar_seconds": 1.37931,
+          "slow_halfbar_seconds": 1.37931
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0067",
+      "original_sha256": "26a3a386ef6c6204c1816f774626252a857c1005b057fcc58570e1936c39fc7e",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Vier explizite Siebenton-Intervallfamilien erzeugen 28 unterschiedliche zyklische Rotationen. Das ist keine vollständige Klassifikation aller heptatonischen Skalen und kein Provenienznachweis für Prehn.",
+      "source_locator": "Scales with 4 smart tools.txt; MUSIC_THEORY_FOUNDATION.md",
+      "next_step": "Systemgrenze und externen Originalbeleg zur Urheberschaft ergänzen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "families",
+        "input": {
+          "families": [
+            [
+              2,
+              2,
+              1,
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              2,
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              2,
+              2,
+              1,
+              3,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              2,
+              1,
+              3,
+              1
+            ]
+          ]
+        },
+        "expected": 28,
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0068",
+      "original_sha256": "009540b614f5fd563d8bd98c05846c2741c855e919a2386c5b56e1d41220b7da",
+      "original_assessment": "SOURCE_SCOPE_OPEN",
+      "finding": "Basslage bestimmt eine Umkehrung erst bei feststehender Akkordidentität und akkordeigenem Bass. Slash-Bässe, Durchgangstöne und Mehrdeutigkeit widerlegen die unbedingte Formulierung.",
+      "source_locator": "MUSIC_THEORY_FOUNDATION.md; Kostka/Payne Tonal Harmony",
+      "next_step": "Definition um Akkordidentität, Gesamttextur und akkordeigene Bassnote einschränken; Quellenstelle nachprüfen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0069",
+      "original_sha256": "71e67732c151f3688a64bc22065ab3d5b7e9c208b33f99e5f76261c0fd412b26",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Die in D ergänzten Stufen i9 iv9 bVImaj9 V7(b9) ergeben die PROG-021-Akkordidentitäten. Rootless-Lage und Guide-Tone-Führung benötigen konkrete Voicings.",
+      "source_locator": "PPR Boom Bap Lesson 1.1; CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+      "next_step": "Ereignisse und Handlagen getrennt von Akkordsymbolen modellieren.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "roman",
+        "input": {
+          "key": "D",
+          "degrees": [
+            "i9",
+            "iv9",
+            "bVImaj9",
+            "V7(b9)"
+          ]
+        },
+        "expected": [
+          "Dm9",
+          "Gm9",
+          "Bbmaj9",
+          "A7(b9)"
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0070",
+      "original_sha256": "480f43cfd7e102f3868f50d2a8e9b2579c4960c6af5ca220dbbacc700a4b9994",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "PROG-022 kann mit Dm Gm C D als Mollbeispiel mit abschließender Dur-Tonika illustriert werden. Das ist keine Originaltranskription von Eleanor Rigby.",
+      "source_locator": "7 levels of reharmonising Eleanor Rigby.txt; CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+      "next_step": "Version und Werkbezug getrennt belegen; finalen Akkord explizit statt nur Begriff angeben.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "roman",
+        "input": {
+          "key": "D",
+          "degrees": [
+            "i",
+            "iv",
+            "bVII",
+            "I"
+          ]
+        },
+        "expected": [
+          "Dm",
+          "Gm",
+          "C",
+          "D"
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0072",
+      "original_sha256": "9d66d06f469f96177afa15187a093887229d86e8ffb305568cb625026ae2a817",
+      "original_assessment": "SOURCE_SCOPE_OPEN",
+      "finding": "Drei Sechzehntel gegen Viertelimpulse treffen nach zwölf Sechzehnteln wieder zusammen; gleiche 4/4-Taktphase erst nach 48. Vollständige Pattern- und MIDI-Fassungen sind getrennt zu prüfen.",
+      "source_locator": "PPR Techno 130 BPM Drums.mid; DRUM_GROOVE_REFERENCE_LIBRARY.md",
+      "next_step": "Startphase, Endregel, MIDI-Version und drei Takte umfassende Ereignisliste festlegen; nicht zwei Periodenbegriffe gleichsetzen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0073",
+      "original_sha256": "59dc135345a2aaaaa72a3f97502641af748486608002057aff6de5ea07db9a1a",
+      "original_assessment": "EXPECTATION_SCOPE_CONFLICT",
+      "finding": "LH mit D-Grundton und RH F A C E ist im Gesamtklang nicht rootless, nur die RH ist grundtonlos.",
+      "source_locator": "PIANO_LEARNING_MODULES.md (P12)",
+      "next_step": "Bezeichnung auf RH einschränken; Hand- und Gesamttextur getrennt modellieren.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "root_presence",
+        "input": {
+          "chord": "Dm9",
+          "notes": [
+            "D3",
+            "F3",
+            "A3",
+            "C4",
+            "E4"
+          ]
+        },
+        "expected": {
+          "contains_root": true,
+          "all_chord_tones": true
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0074",
+      "original_sha256": "453098a4c045338643845f6b54d83a66746f479d5c535285530f97406426f652",
+      "original_assessment": "SOURCE_SCOPE_OPEN",
+      "finding": "Percussion-Kanal 10 ist eine GM1-Profilvorgabe, keine universelle Regel für beliebige MIDI-Geräte oder Kanalkonfigurationen.",
+      "source_locator": "MMA GM 1.0 Standard; PPR Drum Programming Library",
+      "next_step": "GM1-Geräteprofil und Tabelle 3 explizit nennen; fremde MIDI-Dateien nicht pauschal als fehlerhaft markieren.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0075",
+      "original_sha256": "de67f4d0dd26ab10d39ff2e8ea1f0b04ae536c46967a9d55376e84b656e0c70c",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "3:2-Son-Clave wird als zwei 4/4-Takte mit angegebenen Zählzeiten gerechnet; lokale und fortlaufende Ticks sind verschieden. Neue Primärnotenkontrolle: offizielle Verlagsprobe, gedruckt S.48, Abb.3.3a stimmt mit der Zählzeitliste überein.",
+      "source_locator": "GENRE_RESEARCH_LATIN.md; Mauleon Salsa Guidebook; https://www.shermusic.com/products/salsa-guidebook-for-piano-ensemble, Sample Pages 1, p.48 Fig.3.3a",
+      "next_step": "Quellenaussage und berechnete Timeline sind begrenzt geprüft; Hör-/Spiel- und unabhängige Fachabnahme bleiben ausstehend.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "clave",
+        "input": {
+          "ppq": 480,
+          "bars": [
+            [
+              1,
+              2.5,
+              4
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        "expected": [
+          0,
+          720,
+          1440,
+          2400,
+          2880
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0076",
+      "original_sha256": "643e7490d42af263150091fc6de3999cdfed8b973b6f264737d03e92654d8ae8",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Im PAT-027-Projektbeispiel ist der letzte Hit des zweiten Takts lokal 1200, fortlaufend 3120. Keine allgemeine Bossa-Batida-Definition.",
+      "source_locator": "GENRE_RESEARCH_LATIN.md; Jobim / Gilberto Transkriptionen",
+      "next_step": "Instrument, Taktart und konkrete Quelle festlegen; CDR-019-Definitionslücken bleiben offen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "clave",
+        "input": {
+          "ppq": 480,
+          "bars": [
+            [
+              1,
+              2.5,
+              4
+            ],
+            [
+              2,
+              3.5
+            ]
+          ]
+        },
+        "expected": [
+          0,
+          720,
+          1440,
+          2400,
+          3120
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0077",
+      "original_sha256": "ed34aed5111823bf5ae59d7817307b5912134de254447f72c3270e7f107667f9",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Das konkrete C-Beispiel D7 nach Dm7 ändert F# zu F bei gleichem Grundton. Historischer Knoten TO_II7 benennt nicht dieselbe Zielqualität.",
+      "source_locator": "GENRE_RESEARCH_LATIN.md; Girl from Ipanema Harmonische Analyse",
+      "next_step": "CDR-012-Korrekturvorschlag getrennt halten; keine historische Umbenennung.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "roman",
+        "input": {
+          "key": "C",
+          "degrees": [
+            "II7",
+            "ii7"
+          ]
+        },
+        "expected": [
+          "D7",
+          "Dm7"
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0078",
+      "original_sha256": "1080a1335672bb6753a2eada1c1f90f609f937a6d2ca3159b5d2947e8acd07c2",
+      "original_assessment": "HUMAN_REVIEW_REQUIRED",
+      "finding": "P14 beschreibt ein pädagogisches Klavierpendel Grundton/Quinte im 4/4-Raster. Das ist keine Definition sämtlicher Surdo-Ensemblerollen oder 2/4-Akzente.",
+      "source_locator": "PIANO_LEARNING_MODULE_P14.md",
+      "next_step": "Instrument- und Ensemblekontext, Velocity und unabhängige Spielabnahme ergänzen; CDR-021 offen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0079",
+      "original_sha256": "d644572a90000d19651a07045f5d624f67bb9fa553476e2ffce9b15060676bd6",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Explizites MusicXML step/alter/octave unterscheidet C#4 und Db4 bei gleicher MIDI-Notennummer 61. MIDI-Ereignisse enthalten zusätzlich z.B. Kanal, Dauer und Velocity; nur die Notennummer trägt hier keine diatonische Schreibweise.",
+      "source_locator": "https://www.w3.org/2021/06/musicxml40/tutorial/midi-compatible-part/; Abschnitt Pitch; historische Projektnotiz MUSICXML_AND_DATA_MODELS.md",
+      "next_step": "Begrenzung auf Pitch-Repräsentation dokumentieren; Originalfall bleibt Konzeptstring.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "xml",
+        "input": {
+          "names": [
+            "C#4",
+            "Db4"
+          ],
+          "pitches": [
+            "<pitch><step>C</step><alter>1</alter><octave>4</octave></pitch>",
+            "<pitch><step>D</step><alter>-1</alter><octave>4</octave></pitch>"
+          ]
+        },
+        "expected": {
+          "same_midi": true,
+          "different_step": true,
+          "midi": 61
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0080",
+      "original_sha256": "94a083246bfd7a2cac4a33b1bc0aff3b9a4a65f169e76861e27b9481ae661d85",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Vorzeichenfolgen werden durch auf-/absteigende geschriebene Quinten erzeugt; Register werden nur zur Rechnung ergänzt.",
+      "source_locator": "MUSICXML_AND_DATA_MODELS.md; Hindemith Traditional Harmony",
+      "next_step": "Hindemith-Fundstelle überprüfen; enharmonische Umdeutung nicht einmischen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "signature_order",
+        "input": {
+          "sharp_start": "F#2",
+          "flat_start": "Bb5"
+        },
+        "expected": {
+          "sharps": [
+            "F#",
+            "C#",
+            "G#",
+            "D#",
+            "A#",
+            "E#",
+            "B#"
+          ],
+          "flats": [
+            "Bb",
+            "Eb",
+            "Ab",
+            "Db",
+            "Gb",
+            "Cb",
+            "Fb"
+          ]
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0081",
+      "original_sha256": "dad3e51146b55c30de3d4ef805e1d9598c33ceb60ba62cef0ea801b77abe0650",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "4 und 4+ ergeben bei 480 PPQ 1440 und 1680. Offener Conga-Klang und stilistische Authentizität sind nicht aus den Tickwerten nachgewiesen.",
+      "source_locator": "GENRE_RESEARCH_LATIN.md; Mauleon Latin Percussion",
+      "next_step": "Originalnotation, Artikulation und Mauleón-Seite ergänzen; Hörabnahme offen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "ticks",
+        "input": {
+          "ppq": 480,
+          "beats": [
+            4,
+            4.5
+          ]
+        },
+        "expected": [
+          1440,
+          1680
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0082",
+      "original_sha256": "33bea55894d1dbe936ed6b1d018dde94a730682aaebda79e4e9721041e18a36c",
+      "original_assessment": "HUMAN_REVIEW_REQUIRED",
+      "finding": "Stilname Latin Jazz Montuno enthält keine Tonhöhen, Onsets, Dauern oder Clave-Zuordnung. Das neue Auditbeispiel ist ausdrücklich keine historische Originalfigur.",
+      "source_locator": "GENRE_RESEARCH_LATIN.md; Mauleon Salsa Guidebook",
+      "next_step": "PIANO_MONTUNO_GUAJEO mit Originalfigur, harmonischem Kontext und Clave-Nachweis fachlich prüfen; CDR-014 offen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0095",
+      "original_sha256": "9f08620e68c11cc0a07165e68bf62a328a83f499f297d02b944265201c484e73",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Die Erwartung Pitch-Class 7 ist nur für eine ergänzte Stimme Ab nach G eindeutig; aus dem Kadenznamen allein folgt keine bestimmte Zielstimme.",
+      "source_locator": "SRC-020 (Levine 1995), Terefenko (2014)",
+      "next_step": "Voicing, Stimme und Oktave in neue Fallfassung aufnehmen; Quellenstelle verifizieren.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "voice_path",
+        "input": {
+          "chords": [
+            "Bb7",
+            "Cmaj7"
+          ],
+          "notes": [
+            "Ab4",
+            "G4"
+          ]
+        },
+        "expected": {
+          "pcs": [
+            8,
+            7
+          ],
+          "motions": [
+            -1
+          ]
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0096",
+      "original_sha256": "bff43238f2939ba2a87987d8b31095b8f152567469a67f19d364820df6ae7116",
+      "original_assessment": "SUPPORTED_BY_ORIGINAL_INPUT",
+      "finding": "Die Bass-Pitch-Classes werden aus den geparsten PROG-026-Akkorden und Slash-Bässen berechnet; die Eingabeliste wird nicht als Ergebnis zurückgegeben.",
+      "source_locator": "SRC-001 (Kostka/Payne 2013), Aldwell (1989)",
+      "next_step": "Konkrete Register/Stimmenführung ergänzen, falls zusätzlich chromatische Bewegung bewertet werden soll.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "catalog",
+        "input": {
+          "id": "PROG-026"
+        },
+        "expected": {
+          "chords": [
+            "G",
+            "A7/C#",
+            "Am/C",
+            "G/B",
+            "D7/A",
+            "G"
+          ],
+          "bass": [
+            7,
+            1,
+            0,
+            11,
+            9,
+            7
+          ]
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0100",
+      "original_sha256": "9b1ad11397956a1bb1d491532a78f519e348cd058ba119303a0fb3298ac7aafe",
+      "original_assessment": "HUMAN_REVIEW_REQUIRED",
+      "finding": "Vorhandensein der IDs PROG-021/PAT-024/P12 reicht nicht zum Nachweis einer musikalisch konsistenten Integration. Es fehlen gemeinsame Ereignisse, Tempo-/Taktmapping und Textur.",
+      "source_locator": "STEPS Architectural Cross-Domain Specification",
+      "next_step": "Konkretes Arrangement, Register-, Timing- und Spielbarkeitskriterien definieren; externe Abnahme offen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0147",
+      "original_sha256": "a204274dd3a7d9a9c4425bdbf5f5b39a98f43c6e59eff68bd035800a584c944d",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Umkehrungsindex allein nennt keine Akkordidentität. Ein ergänzter C-Dur-Dreiklang prüft die Bassintervallregel.",
+      "source_locator": "SRC-001",
+      "next_step": "Akkordtyp und Ausgangslage explizit in neue Eingabe aufnehmen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "inversion",
+        "input": {
+          "chord": "C",
+          "inversion": 1
+        },
+        "expected": "Third",
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0148",
+      "original_sha256": "1448be5f0b3ae3596652d1480df5676e0cd118925a4621304a7e3fbd0626b2b9",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Umkehrungsindex allein nennt keine Akkordidentität. Ein ergänzter C-Dur-Dreiklang prüft die Bassintervallregel.",
+      "source_locator": "SRC-001",
+      "next_step": "Akkordtyp und Ausgangslage explizit in neue Eingabe aufnehmen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "inversion",
+        "input": {
+          "chord": "C",
+          "inversion": 2
+        },
+        "expected": "Fifth",
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0152",
+      "original_sha256": "2660126a9189082e9cd53b56db04e7b3beeac255380b86e414ce16f0196012a6",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "Die Zahlenlisten werden gegen C7 ohne Quinte und D-Dur geprüft; erst daraus wird die geschichtete Folge berechnet. Die Quinten-Auslassung ist eine Voicingentscheidung.",
+      "source_locator": "SRC-002",
+      "next_step": "Benannte Akkorde und Auslassungen typisieren; keine rohe Expected-Output-Rückgabe.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "upper_structure",
+        "input": {
+          "lower_chord": "C7",
+          "omit": [
+            7
+          ],
+          "upper_chord": "D",
+          "declared_lower": [
+            0,
+            4,
+            10
+          ],
+          "declared_upper": [
+            2,
+            6,
+            9
+          ]
+        },
+        "expected": [
+          0,
+          4,
+          10,
+          2,
+          6,
+          9
+        ],
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0176",
+      "original_sha256": "0f79002da8619a1aa4abcada44f8d7cb29f101facfdf68abc76a0445bfab16ec",
+      "original_assessment": "STYLE_POLICY_OPEN",
+      "finding": "Bass C3->F3 und Sopran A3->C4 erreichen eine Quinte in gleicher Richtung, Sopran springt eine kleine Terz. Ob diese im konkret gemeinten Basso-continuo-Stil verboten ist, erfordert ein benanntes Regelprofil; False ist ohne Profil nicht reproduzierbar.",
+      "source_locator": "SRC-001",
+      "next_step": "Stilhistorische Quelle und Geltungsbereich fachlich entscheiden; geometrische Quinte nicht mit Verbot gleichsetzen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "direct_fifth",
+        "input": {
+          "bass": [
+            "C3",
+            "F3"
+          ],
+          "soprano": [
+            "A3",
+            "C4"
+          ]
+        },
+        "expected": {
+          "vertical_intervals": [
+            9,
+            7
+          ],
+          "motions": [
+            5,
+            3
+          ],
+          "direct_fifth": true,
+          "style_prohibition_determined": false
+        },
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    },
+    {
+      "case_id": "REF-0190",
+      "original_sha256": "9e02b2b7004ae5c66c6e5fda9d6eed190d84bb155d41502938718f82a7cd98e0",
+      "original_assessment": "SOURCE_SCOPE_OPEN",
+      "finding": "Die Liste 1/2/3/4 bestimmt keine Akzentierung. Die Erwartung nur Schlag 3 gehört zu einem 4/4-Bossa-Beispiel und belegt keine allgemeine 2/4-Samba-Surdo-Norm.",
+      "source_locator": "Mauleón (1993)",
+      "next_step": "Surdo-Rolle, Instrument, Taktart, Velocity und konkrete Originalstelle bestimmen; CDR-021 offen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false
+    },
+    {
+      "case_id": "REF-0194",
+      "original_sha256": "82761786132a5ae5e2ecf02c202c2c2c0504fd4356b244f2ad99afa13a58917b",
+      "original_assessment": "ADAPTED_MODEL_ONLY",
+      "finding": "C-Major wird für die separate Rechnung explizit als C-Dur-Dreiklang normalisiert; seine Pitch-Classes liegen auf weißen Tasten. Das bestätigt keine didaktische Wirksamkeit.",
+      "source_locator": "Modul P01",
+      "next_step": "Normalisierungsregel typisieren; didaktische Abnahme durch Menschen offen.",
+      "human_review": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "model": {
+        "kind": "white_keys",
+        "input": {
+          "chord": "C"
+        },
+        "expected": true,
+        "scope": "Separate explizite Auditinterpretation; ergänzte Register, Stimmen oder Taktkontexte sind keine historischen Originaldaten."
+      }
+    }
+  ]
+}

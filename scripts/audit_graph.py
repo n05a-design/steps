@@ -67,6 +67,12 @@ def validate(plan, relations, root=ROOT):
                 or not row['references'] or any(not (root / p).is_file() or Path(p).is_absolute() or '..' in Path(p).parts for p in row['references'])
                 or any(p not in by_probe or row['relation_id'] not in by_probe[p]['relations'] for p in row['probe_ids'])):
             raise ValueError('Changed original, invalid evidence or premature approval: '+row['relation_id'])
+        if 'scoped_source_evidence' in row:
+            evidence=row['scoped_source_evidence']
+            if (evidence.get('status')!='PRIMARY_NOTATION_SCOPED_CHECK'
+                    or not evidence.get('url','').startswith('https://www.shermusic.com/')
+                    or not evidence.get('locator') or not re.fullmatch(r'[0-9a-f]{64}',evidence.get('pdf_sha256',''))):
+                raise ValueError('Invalid scoped source evidence')
     if next(r for r in reviews if r['relation_id']=='CDR-010')['category'] != 'COUNTEREXAMPLE':
         raise ValueError('Historical CDR-010 failure must remain visible')
     return by_probe
@@ -113,6 +119,10 @@ def audit(root=ROOT, plan=None):
         source=prior_sources.get(ident)
         source_status='PRIOR_SOURCE_SAMPLE_DOCUMENTED' if source and source['assessment']=='SOURCE_SUPPORTED_SAMPLE' else 'PROJECT_RECORD_ONLY'
         source_locator=f"{source['source_url']} | {source['locator']}" if source else ';'.join(review['references'])
+        if 'scoped_source_evidence' in review:
+            evidence=review['scoped_source_evidence']
+            source_status='CURRENT_PRIMARY_NOTATION_SCOPED_CHECK'
+            source_locator=evidence['url']+' | '+evidence['locator']+' | PDF SHA-256 '+evidence['pdf_sha256']
         if ident in {'REL-033','CDR-022'}:
             source_status='CURRENT_SOURCE_PAGE_PARTIAL_CHECK'
             source_locator='https://www.w3.org/2021/06/musicxml40/musicxml-reference/elements/pitch/ | Content: step, alter optional, octave; semitones decimal type. No full converter proof.'

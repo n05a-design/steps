@@ -260,3 +260,7 @@ nachweistreu korrigiert.
 unterscheiden externe Entscheidungen von noch nicht vollständig geprüften
 Spezifikationen und lokalen Beständen. Dieser Bericht ist ausdrücklich
 keine Erklärung eines vollständig bestandenen Gesamtaudits.
+
+## Nachtrag: Sicherheitskorrektur und Golden-Fortsetzung
+
+Die vorstehenden roten Sicherheitswerte dokumentieren den früheren Prüfstand. Die [vollständige Bereinigung](SECRET_GUARDRAIL_166_2026-11-14.md) schließt auch 15 zusätzliche Vorkommen in zuvor übergangenen Dateitypen ein; GitHub-Lauf #168 besteht. Die [Fortsetzung über alle 64 Golden-Beispiele](GOLDEN_64_QUELLENPRUEFUNG_2026-11-14.md) enthält den aktuellen Stand. Historische Protokolle bleiben erhalten.

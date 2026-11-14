@@ -19,7 +19,7 @@ class GraphAuditTests(unittest.TestCase):
         self.assertEqual({r['relation_id'] for r in rows},{r['relation_id'] for r in self.relations})
         self.assertTrue(all(r['human_review']=='AUSSTEHEND' and not r['production_use_allowed'] for r in rows))
         self.assertEqual(next(r for r in rows if r['relation_id']=='CDR-010')['relation_status'],'FAIL')
-        self.assertEqual(len(probes),23)
+        self.assertEqual(len(probes),24)
         self.assertTrue(all(p['status']=='PASS' for p in probes.values()))
 
     def test_missing_duplicate_changed_edges_and_approval_forgery_fail(self):
@@ -39,6 +39,21 @@ class GraphAuditTests(unittest.TestCase):
             altered=deepcopy(original);altered['expected']=None
             with self.subTest(probe=original['id']),self.assertRaises(ValueError):
                 graph_probes.evaluate(altered)
+
+    def test_publisher_notation_is_scoped_and_not_human_acceptance(self):
+        rows,_=audit_graph.audit()
+        row=next(r for r in rows if r['relation_id']=='CDR-018')
+        self.assertEqual(row['source_assertion_status'],'CURRENT_PRIMARY_NOTATION_SCOPED_CHECK')
+        self.assertEqual(row['human_review'],'AUSSTEHEND')
+        altered=deepcopy(self.plan)
+        next(r for r in altered['reviews'] if r['relation_id']=='CDR-018')['scoped_source_evidence']['url']=''
+        with self.assertRaises(ValueError):audit_graph.validate(altered,self.relations)
+
+    def test_clave_direction_and_meter_are_not_interchangeable(self):
+        original=next(p for p in self.plan['probes'] if p['id']=='SON_CLAVE_PUBLISHER_480')
+        for bars in [[[2,3],[1,2.5,4]],[[1,2.5,5],[2,3]]]:
+            altered=deepcopy(original);altered['input']['bars']=bars
+            with self.assertRaises(ValueError):graph_probes.evaluate(altered)
 
     def test_piano_draft_rejects_foreign_pitch_and_invalid_timeline(self):
         original=next(p for p in self.plan['probes'] if p['id']=='NEW_PIANO_DRAFT')

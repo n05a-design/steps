@@ -22,3 +22,5 @@ erschließen den ursprünglichen Quellenbestand.
 - [Agentenberichte](agent-history/README.md) und [frühere Audits](audit-history/README.md)
 - [Dokumentfassungen](documentation-history/README.md) und [Projektplanung](project-history/README.md)
 - [Dokumentation der ersten Fassung](v1_docs/README.md) und [historische Arbeitsaufträge](v1_prompts/README.md)
+
+[Aktuelle Navigation für 25 historische relative Verweise](v1_docs/LINK_RESOLUTION_2026-11-14.md). Die eingefrorenen README-Originale bleiben unverändert.
