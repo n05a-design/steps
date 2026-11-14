@@ -659,7 +659,7 @@
     },
     {
       "category": "CORPUS_REQUIRED",
-      "review_note": "Kick/Snare-Rollen sind ein Pop-Übungsmodell. Häufigkeit und Stilrepräsentativität erfordern einen annotierten Korpus.",
+      "review_note": "Kick/Snare-Rollen sind ein Pop-Übungsmodell. Häufigkeit und Stilrepräsentativität erfordern einen annotierten Korpus. Neue Teilbeobachtungen dokumentiert: GMD-Teilbeobachtung bleibt begrenzte Schlagzeugstichprobe, keine Pop-Populationsstatistik.",
       "relation_id": "CR-029",
       "edge": {
         "source_id": "M08-03",
@@ -673,13 +673,14 @@
       "source_assertion_verified": false,
       "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Kick/Snare-Rollen sind ein Pop-Übungsmodell. Häufigkeit und Stilrepräsentativität erfordern einen annotierten Korpus.",
       "references": [
-        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv",
+        "docs/audit/fable-5.2/GRAPH_KORPUS_GMD_2026-11-14.json"
       ],
       "candidate_claim_ids": []
     },
     {
       "category": "CORPUS_REQUIRED",
-      "review_note": "Four-on-the-floor und Offbeat-Hat sind House-Beispiele; keine notwendige Bedingung jedes House-Stücks.",
+      "review_note": "Four-on-the-floor und Offbeat-Hat sind House-Beispiele; keine notwendige Bedingung jedes House-Stücks. Neue Teilbeobachtungen dokumentiert: GiantSteps Genre/Tempo, getrenntev1/v2; kein Drum-/Harmonie-Paarbeleg.",
       "relation_id": "CR-030",
       "edge": {
         "source_id": "M08-03",
@@ -693,13 +694,14 @@
       "source_assertion_verified": false,
       "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Four-on-the-floor und Offbeat-Hat sind House-Beispiele; keine notwendige Bedingung jedes House-Stücks.",
       "references": [
-        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv",
+        "docs/audit/fable-5.2/KORPUS_GIANTSTEPS_TEMPO_2026-11-14.json"
       ],
       "candidate_claim_ids": []
     },
     {
       "category": "CORPUS_REQUIRED",
-      "review_note": "PROG-001 demonstriert eine Schleife. Die pauschale Pop-Notwendigkeit folgt weder aus einem Beispiel noch aus dem Register.",
+      "review_note": "PROG-001 demonstriert eine Schleife. Die pauschale Pop-Notwendigkeit folgt weder aus einem Beispiel noch aus dem Register. Neue Teilbeobachtungen dokumentiert: Billboard2.0, eng begrenzter Harmonieform-Scan; keine Kadenz-, Genre-, Drum- oder Paarungsabnahme.",
       "relation_id": "CR-031",
       "edge": {
         "source_id": "M09-01",
@@ -713,13 +715,14 @@
       "source_assertion_verified": false,
       "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; PROG-001 demonstriert eine Schleife. Die pauschale Pop-Notwendigkeit folgt weder aus einem Beispiel noch aus dem Register.",
       "references": [
-        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv",
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
       ],
       "candidate_claim_ids": []
     },
     {
       "category": "CORPUS_REQUIRED",
-      "review_note": "120–128 BPM ist als Übungsbereich beschrieben. Stil- und Tempogrenzen sind nicht durch einen Korpus belegt.",
+      "review_note": "120–128 BPM ist als Übungsbereich beschrieben. Stil- und Tempogrenzen sind nicht durch einen Korpus belegt. Neue Teilbeobachtungen dokumentiert: GiantSteps Genre/Tempo, getrenntev1/v2; kein Drum-/Harmonie-Paarbeleg.",
       "relation_id": "CR-032",
       "edge": {
         "source_id": "M09-02",
@@ -733,7 +736,8 @@
       "source_assertion_verified": false,
       "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; 120–128 BPM ist als Übungsbereich beschrieben. Stil- und Tempogrenzen sind nicht durch einen Korpus belegt.",
       "references": [
-        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"
+        "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv",
+        "docs/audit/fable-5.2/KORPUS_GIANTSTEPS_TEMPO_2026-11-14.json"
       ],
       "candidate_claim_ids": []
     },
@@ -873,7 +877,7 @@
     },
     {
       "category": "CORPUS_REQUIRED",
-      "review_note": "Katalogkombination PROG-001/PAT-001 vorhanden; COMMONLY und STRONG brauchen Korpus-/Hörbelege.",
+      "review_note": "Katalogkombination PROG-001/PAT-001 vorhanden; COMMONLY und STRONG brauchen Korpus-/Hörbelege. Neue Teilbeobachtungen dokumentiert: Billboard2.0, eng begrenzter Harmonieform-Scan; keine Kadenz-, Genre-, Drum- oder Paarungsabnahme.",
       "relation_id": "REL-001",
       "edge": {
         "source_id": "PROG-001",
@@ -890,7 +894,8 @@
         "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
         "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
         "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
-        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
       ],
       "candidate_claim_ids": []
     },
@@ -972,7 +977,7 @@
     },
     {
       "category": "CORPUS_REQUIRED",
-      "review_note": "ii–V–I und Swing-Pattern sind kombinierbar; Genre-Häufigkeit und Spang-a-lang-Realisierung brauchen Aufführung/Korpus.",
+      "review_note": "ii–V–I und Swing-Pattern sind kombinierbar; Genre-Häufigkeit und Spang-a-lang-Realisierung brauchen Aufführung/Korpus. Neue Teilbeobachtungen dokumentiert: Billboard2.0, eng begrenzter Harmonieform-Scan; keine Kadenz-, Genre-, Drum- oder Paarungsabnahme.",
       "relation_id": "REL-005",
       "edge": {
         "source_id": "PROG-003",
@@ -989,13 +994,14 @@
         "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
         "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
         "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
-        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
       ],
       "candidate_claim_ids": []
     },
     {
       "category": "CORPUS_REQUIRED",
-      "review_note": "Dorian-Vamp und Funkpattern sind Projektkombination, kein Häufigkeitsbeleg.",
+      "review_note": "Dorian-Vamp und Funkpattern sind Projektkombination, kein Häufigkeitsbeleg. Neue Teilbeobachtungen dokumentiert: Billboard2.0, eng begrenzter Harmonieform-Scan; keine Kadenz-, Genre-, Drum- oder Paarungsabnahme.",
       "relation_id": "REL-006",
       "edge": {
         "source_id": "PROG-007",
@@ -1012,13 +1018,14 @@
         "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
         "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
         "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
-        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
       ],
       "candidate_claim_ids": []
     },
     {
       "category": "CORPUS_REQUIRED",
-      "review_note": "Backdoor und Jazz-Hop-Groove sind kombinierbar; gemeinsame Stiltypizität nicht empirisch belegt.",
+      "review_note": "Backdoor und Jazz-Hop-Groove sind kombinierbar; gemeinsame Stiltypizität nicht empirisch belegt. Neue Teilbeobachtungen dokumentiert: Billboard2.0, eng begrenzter Harmonieform-Scan; keine Kadenz-, Genre-, Drum- oder Paarungsabnahme.",
       "relation_id": "REL-007",
       "edge": {
         "source_id": "PROG-017",
@@ -1035,7 +1042,8 @@
         "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
         "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
         "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
-        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
       ],
       "candidate_claim_ids": []
     },
@@ -1189,7 +1197,7 @@
     },
     {
       "category": "CORPUS_REQUIRED",
-      "review_note": "Mollschleife über Liquid-Pattern als Beispiel, keine Häufigkeits- oder Emotionsabnahme.",
+      "review_note": "Mollschleife über Liquid-Pattern als Beispiel, keine Häufigkeits- oder Emotionsabnahme. Neue Teilbeobachtungen dokumentiert: Billboard2.0, eng begrenzter Harmonieform-Scan; keine Kadenz-, Genre-, Drum- oder Paarungsabnahme.",
       "relation_id": "REL-014",
       "edge": {
         "source_id": "PROG-002",
@@ -1206,13 +1214,14 @@
         "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
         "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
         "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
-        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
       ],
       "candidate_claim_ids": []
     },
     {
       "category": "CORPUS_REQUIRED",
-      "review_note": "Vamp über 2-Step ist möglich; authentic und STRONG sind ohne Aufnahme/Korpus nicht nachgewiesen.",
+      "review_note": "Vamp über 2-Step ist möglich; authentic und STRONG sind ohne Aufnahme/Korpus nicht nachgewiesen. Neue Teilbeobachtungen dokumentiert: Billboard2.0, eng begrenzter Harmonieform-Scan; keine Kadenz-, Genre-, Drum- oder Paarungsabnahme.",
       "relation_id": "REL-015",
       "edge": {
         "source_id": "PROG-007",
@@ -1229,7 +1238,8 @@
         "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
         "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
         "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
-        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
       ],
       "candidate_claim_ids": []
     },
@@ -1260,7 +1270,7 @@
     },
     {
       "category": "CORPUS_REQUIRED",
-      "review_note": "Jump-Up-Profil ist als Katalogbeschreibung vorhanden; Genrezugehörigkeit benötigt repräsentative annotierte Aufnahmen.",
+      "review_note": "Jump-Up-Profil ist als Katalogbeschreibung vorhanden; Genrezugehörigkeit benötigt repräsentative annotierte Aufnahmen. Neue Teilbeobachtungen dokumentiert: GiantSteps Genre/Tempo, getrenntev1/v2; kein Drum-/Harmonie-Paarbeleg.",
       "relation_id": "REL-017",
       "edge": {
         "source_id": "PAT-022",
@@ -1277,7 +1287,8 @@
         "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
         "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
         "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
-        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+        "docs/audit/fable-5.2/KORPUS_GIANTSTEPS_TEMPO_2026-11-14.json"
       ],
       "candidate_claim_ids": []
     },
@@ -1477,7 +1488,7 @@
     },
     {
       "category": "CORPUS_REQUIRED",
-      "review_note": "Liquid-Aesthetik ist keine Folge aus einem Akkord- und Patternpaar. Gemeinsame Fassung/Audio fehlen.",
+      "review_note": "Liquid-Aesthetik ist keine Folge aus einem Akkord- und Patternpaar. Gemeinsame Fassung/Audio fehlen. Neue Teilbeobachtungen dokumentiert: Billboard2.0, eng begrenzter Harmonieform-Scan; keine Kadenz-, Genre-, Drum- oder Paarungsabnahme.",
       "relation_id": "REL-026",
       "edge": {
         "source_id": "PROG-023",
@@ -1494,7 +1505,8 @@
         "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
         "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
         "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
-        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
       ],
       "candidate_claim_ids": []
     },
@@ -1624,7 +1636,7 @@
     },
     {
       "category": "CORPUS_REQUIRED",
-      "review_note": "Montuno/Cha-Cha-Verknüpfung braucht konkrete Arrangementfassung und Genrebeleg; Namen allein beweisen typische Textur nicht.",
+      "review_note": "Montuno/Cha-Cha-Verknüpfung braucht konkrete Arrangementfassung und Genrebeleg; Namen allein beweisen typische Textur nicht. Neue Teilbeobachtungen dokumentiert: Billboard2.0, eng begrenzter Harmonieform-Scan; keine Kadenz-, Genre-, Drum- oder Paarungsabnahme.",
       "relation_id": "REL-032",
       "edge": {
         "source_id": "PROG-025",
@@ -1641,7 +1653,8 @@
         "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
         "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
         "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
-        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
       ],
       "candidate_claim_ids": []
     },
@@ -1697,7 +1710,7 @@
     },
     {
       "category": "CORPUS_REQUIRED",
-      "review_note": "PROG-028/PAT-030 ist eine Projektpaarung; 57-Prozent-Wert hat keine gesicherte historische Musikerzuschreibung.",
+      "review_note": "PROG-028/PAT-030 ist eine Projektpaarung; 57-Prozent-Wert hat keine gesicherte historische Musikerzuschreibung. Neue Teilbeobachtungen dokumentiert: Billboard2.0, eng begrenzter Harmonieform-Scan; keine Kadenz-, Genre-, Drum- oder Paarungsabnahme.",
       "relation_id": "REL-035",
       "edge": {
         "source_id": "PROG-028",
@@ -1714,7 +1727,8 @@
         "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
         "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
         "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
-        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
+        "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
       ],
       "candidate_claim_ids": []
     },
@@ -2193,7 +2207,7 @@
     },
     {
       "category": "HISTORICAL_SOURCE_REQUIRED",
-      "review_note": "Surdo-/Tamborim-Deutung als Überlieferung auffindbar, aber keine hier geprüfte zeitgenössische Entstehungsquelle; Gitarrenfamilie nicht mit Cross-Stick gleichsetzen. Neue getrennte Quellenprüfung: Ghezzi2009 mit Garcia1999-Verweisen; keine Originalinterview-/Schreiner-Prüfung und kein kausaler Entstehungsnachweis.",
+      "review_note": "Surdo-/Tamborim-Deutung als Überlieferung auffindbar, aber keine hier geprüfte zeitgenössische Entstehungsquelle; Gitarrenfamilie nicht mit Cross-Stick gleichsetzen. Neue getrennte Quellenprüfung: Ghezzi2009 mit Garcia1999-Verweisen; keine Originalinterview-/Schreiner-Prüfung und kein kausaler Entstehungsnachweis. Verlagsreferenzliste identifiziert Cabral-Essay Band2 S.10–17; indexierterp.12-Verweis ist keine Seitenprüfung. Songbook-Preview nur4 Inhaltsverzeichnisseiten. USP1998-Dissertation und Garcia1999-Buch getrennt.",
       "relation_id": "CDR-019",
       "edge": {
         "source_id": "BOSSA_BATIDA",
@@ -2205,12 +2219,13 @@
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
-      "action": "Unabhängige Fachprüfung; Garcia1999 sowie Reily/Cabral-Originalkette und historische Kausalität prüfen.",
+      "action": "Autorisierte Originale beschaffen: Reily1996 S.5/Fig.1, Cabral Band2 S.10–17 insbesonderep.12, Garcia1999 genannte Seiten und Schreiner-Ausgabe; historische Kausalität separat beurteilen.",
       "references": [
         "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
         "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
         "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md",
-        "docs/audit/fable-5.2/GRAPH_CDR019_CDR021_QUELLEN_2026-11-14.json"
+        "docs/audit/fable-5.2/GRAPH_CDR019_CDR021_QUELLEN_2026-11-14.json",
+        "docs/audit/fable-5.2/CDR019_ORIGINALSUCHE_2026-11-14.json"
       ],
       "candidate_claim_ids": [
         "CLAIM-039"

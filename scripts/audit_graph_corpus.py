@@ -143,15 +143,38 @@ def audit(document=None):
             if p.is_absolute() and not p.resolve().is_relative_to(ROOT):raise ValueError('Source outside repository')
             if sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest()!=a['lf_sha256'] or a['row'] not in p.read_text(encoding='utf8').splitlines():
                 raise ValueError('Project catalog anchor changed')
+        observation=('GMD_POP_SCOPED' if row['relation_id']=='CR-029' else
+                     'GIANTSTEPS_GENRE_TEMPO_ONLY' if row['relation_id'] in {'CR-030','CR-032'} else
+                     'BILLBOARD_CHORD_SHAPES_NOT_CADENCES' if row['relation_id']=='CR-031' else
+                     'GIANTSTEPS_PARENT_DNB_LABEL_NOT_JUMPUP' if row['relation_id']=='REL-017' else
+                     'BILLBOARD_HARMONY_COMPONENT_ONLY')
         out.append({'relation_id':row['relation_id'],'original_row_sha256':row['original_row_sha256'],**row['original_edge'],
                     'sampling_frame':row['sampling_frame'],'required_annotations':';'.join(row['required_annotations']),
                     'candidate_gaps':json.dumps(checks,ensure_ascii=False,sort_keys=True),
-                    'local_observation':'GMD_POP_SCOPED' if row['relation_id']=='CR-029' else 'NOT_EXECUTED',
+                    'local_observation':observation,
                     'unresolved_claim':row['unresolved_claim'],'next_evidence':row['next_evidence'],
                     'relation_status':'OPEN','human_approval':'AUSSTEHEND','production_use_allowed':False})
     validate_observation(json.loads(OBS.read_text(encoding='utf8')))
     validate_sources(json.loads((ROOT/'docs/audit/fable-5.2/GRAPH_CDR019_CDR021_QUELLEN_2026-11-14.json').read_text(encoding='utf8')))
+    from scripts import audit_billboard_components as billboard, audit_edm_tempo as edm
+    billboard.validate(json.loads(billboard.OUTPUT.read_text(encoding='utf8')))
+    edm.validate(json.loads(edm.OUTPUT.read_text(encoding='utf8')))
+    validate_original_search(json.loads((ROOT/'docs/audit/fable-5.2/CDR019_ORIGINALSUCHE_2026-11-14.json').read_text(encoding='utf8')))
     return out
+
+
+def validate_original_search(d):
+    expected={'REILY_PUBLISHER','CABRAL_VOLUME2_PREVIEW','REILY_DISCOVERY_MIRRORS','GARCIA_USP_1998','GARCIA_1999_CATALOG','SCHREINER_1993_CATALOG'}
+    if (d['schema_version']!=1 or d['relation_id']!='CDR-019' or d['human_approval']!='AUSSTEHEND'
+            or d['historical_assertion_closed'] is not False or d['verified_causal_claim'] is not False
+            or d['fulltext_originals_verified']!=0 or len(d['records'])!=6 or {r['id'] for r in d['records']}!=expected):
+        raise ValueError('Invalid original search scope or premature source acceptance')
+    statuses={'REFERENCE_LIST_READ_BODY_ACCESS_REQUIRED','TOC_ONLY','INDEXED_EXCERPT_ONLY','INSTITUTIONAL_CATALOG_ONLY','CATALOG_ONLY'}
+    for r in d['records']:
+        if r['status'] not in statuses or not all(r[k].strip() for k in ('url','finding','access_result','next_required')):
+            raise ValueError('Search result is not an original-page verification')
+        if r['id']=='CABRAL_VOLUME2_PREVIEW' and (r['pages']!=4 or r['sha256']!='ed3c09a75b6ef168cfc344d260685ae0da81fbfeeab31cb44627c92905b4ccef' or r['status']!='TOC_ONLY'):
+            raise ValueError('Preview misrepresented as full book')
 
 
 def validate_sources(d):
