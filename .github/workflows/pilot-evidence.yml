@@ -51,9 +51,6 @@ jobs:
           status pending
           trap 'if (( $? != 0 )); then status failure; fi' EXIT
           # The merge commit supplies data only. The verifier is loaded from the base revision.
-          git fetch --no-tags --depth=2 origin "refs/pull/$PR_NUMBER/merge"
-          revision=$(git rev-parse FETCH_HEAD)
-          [[ "$(git rev-parse "$revision^1")" == "$PR_BASE" ]]
-          [[ "$(git rev-parse "$revision^2")" == "$PR_HEAD" ]]
+          revision=$(python -B scripts/resolve_pilot_review_revision.py --pr "$PR_NUMBER" --base "$PR_BASE" --head "$PR_HEAD")
           python -B scripts/verify_pilot_review_evidence.py --revision "$revision"
           status success

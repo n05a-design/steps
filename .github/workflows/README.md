@@ -12,3 +12,5 @@ Die Workflows prüfen unterschiedliche Eigenschaften der jeweils geprüften Revi
 [Lokale Prüfungen](../../tests/README.md) · [GitHub Actions](https://github.com/n05a-design/steps/actions)
 
 [Zur Bereichsübersicht](../README.md)
+
+Der Pilot-Evidenzworkflow verwendet den vertrauenswürdigen Base-Resolver `scripts/resolve_pilot_review_revision.py`: Nach verschwundenem PR-Merge-Ref ist ausschließlich derselbe nachweislich abgeschlossene Merge mit exakten Event-Eltern zulässig. API-/Identitätsfehler bleiben gesperrt; Zielcode wird nicht ausgeführt.
