@@ -13,3 +13,5 @@ Vor einer Korrektur den Fall fachlich belegen und die erforderliche Migration er
 [Zur Bereichsübersicht](../README.md)
 
 [64 einzelne Ergänzungsprüfungen](REMAINING_64_AUDIT.json) und [Ergebnisbericht](../../../docs/audit/fable-5.2/GOLDEN_64_QUELLENPRUEFUNG_2026-11-14.md): Originalbestand unverändert; typisierte Modellvorschläge und Quellen-/Fachgrenzen separat.
+
+[Sieben Konflikte: getrennte Revisionsvorschläge](CONFLICT_REVISION_PROPOSALS.json) bleiben ausdrücklich neben dem unveränderten Golden-Master. `python -B scripts/audit_conflict_revisions.py --check` reproduziert 15 Einzelprüfungen.

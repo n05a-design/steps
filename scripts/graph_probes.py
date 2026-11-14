@@ -9,6 +9,9 @@ from src.steps.progression import resolve_roman_degree, absolute_semitone_distan
 
 def calculate(spec):
     kind, data = spec['kind'], spec['input']
+    if kind == 'followup':
+        from scripts.graph_followup_probes import calculate as followup
+        return followup(spec)
     if kind == 'frequency':
         return [round(midi_to_frequency(value), 6) for value in data['midi']]
     if kind == 'pitch_class':

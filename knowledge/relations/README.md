@@ -39,3 +39,5 @@ offen. Originalquelle, Projektbeispiel und eigene Modellrechnung werden in
 setzt weder historische Gegenbefunde noch fehlende Fachabnahmen außer Kraft.
 
 [Zur Bereichsübersicht](../README.md)
+
+[Aktuelle Fortsetzung nach PR #56](../../docs/audit/fable-5.2/KONFLIKTE_GRAPH_FORTSETZUNG_2026-11-14.md): 39 gestützte Stichproben / 1 FAIL / 57 OPEN, 40 Modellproben und [versionierte Fehleridentitäten](VERSIONED_ERROR_IDENTITIES.json). Keine vollständige unabhängige Fachabnahme.

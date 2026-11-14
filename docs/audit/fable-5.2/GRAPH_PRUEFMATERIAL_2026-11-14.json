@@ -1,0 +1,837 @@
+{
+  "schema_version": 1,
+  "source_plan_lf_sha256": "292b77b54c8fb58f25bbb9d40a8435cd6cd1e7e72f8b56e3c2ea2b65b07d0eb5",
+  "human_approvals": 0,
+  "historical_transcriptions": 0,
+  "examples": [
+    {
+      "id": "II_V_I_SHELL_ARRANGEMENT",
+      "probe_ids": [
+        "II_V_I_SHELL_ARRANGEMENT"
+      ],
+      "bpm_quarter": 100,
+      "ppq": 480,
+      "ticks": 5760,
+      "events": [
+        [
+          0,
+          1680,
+          50,
+          0
+        ],
+        [
+          0,
+          1680,
+          65,
+          1
+        ],
+        [
+          0,
+          1680,
+          72,
+          1
+        ],
+        [
+          1920,
+          1680,
+          55,
+          0
+        ],
+        [
+          1920,
+          1680,
+          65,
+          1
+        ],
+        [
+          1920,
+          1680,
+          71,
+          1
+        ],
+        [
+          3840,
+          1680,
+          48,
+          0
+        ],
+        [
+          3840,
+          1680,
+          64,
+          1
+        ],
+        [
+          3840,
+          1680,
+          71,
+          1
+        ]
+      ],
+      "seconds": 7.2,
+      "peak": 0.16097813255571414,
+      "wav_sha256": "59d756cfa57212ad58546f87522cd56b0f9942fe661849d8d47a14f41f370c62",
+      "human_listen_play_approval": "AUSSTEHEND",
+      "historical_transcription": false,
+      "synthesis": "sinusoidal pitch control; no acoustic piano or style simulation",
+      "midi_sha256": "8f402e5e692a31d70050dafbd7d2579044b55f536f6ac1e9703a711fe50dc7b4"
+    },
+    {
+      "id": "BACKDOOR_DROP2_ARRANGEMENT",
+      "probe_ids": [
+        "BACKDOOR_DROP2_ARRANGEMENT"
+      ],
+      "bpm_quarter": 100,
+      "ppq": 480,
+      "ticks": 5760,
+      "events": [
+        [
+          0,
+          1680,
+          60,
+          0
+        ],
+        [
+          0,
+          1680,
+          65,
+          1
+        ],
+        [
+          0,
+          1680,
+          68,
+          1
+        ],
+        [
+          0,
+          1680,
+          75,
+          1
+        ],
+        [
+          1920,
+          1680,
+          53,
+          0
+        ],
+        [
+          1920,
+          1680,
+          58,
+          1
+        ],
+        [
+          1920,
+          1680,
+          62,
+          1
+        ],
+        [
+          1920,
+          1680,
+          68,
+          1
+        ],
+        [
+          3840,
+          1680,
+          55,
+          0
+        ],
+        [
+          3840,
+          1680,
+          60,
+          1
+        ],
+        [
+          3840,
+          1680,
+          64,
+          1
+        ],
+        [
+          3840,
+          1680,
+          71,
+          1
+        ]
+      ],
+      "seconds": 7.2,
+      "peak": 0.20805984703655744,
+      "wav_sha256": "6a3345416f712224f4b63f6be28cbe7d352d2f4a3e2247542fb04524747e3f2f",
+      "human_listen_play_approval": "AUSSTEHEND",
+      "historical_transcription": false,
+      "synthesis": "sinusoidal pitch control; no acoustic piano or style simulation",
+      "midi_sha256": "5db55d35e284e3dabd4d00c243a0b336795175c9ea4311e08ec46a5ffaa4ce9b"
+    },
+    {
+      "id": "MINOR_CYCLE_HAND_LAYERS",
+      "probe_ids": [
+        "MINOR_CYCLE_HAND_LAYERS"
+      ],
+      "bpm_quarter": 100,
+      "ppq": 480,
+      "ticks": 7680,
+      "events": [
+        [
+          0,
+          1680,
+          50,
+          0
+        ],
+        [
+          0,
+          1680,
+          65,
+          1
+        ],
+        [
+          0,
+          1680,
+          69,
+          1
+        ],
+        [
+          0,
+          1680,
+          72,
+          1
+        ],
+        [
+          0,
+          1680,
+          76,
+          1
+        ],
+        [
+          1920,
+          1680,
+          43,
+          0
+        ],
+        [
+          1920,
+          1680,
+          58,
+          1
+        ],
+        [
+          1920,
+          1680,
+          62,
+          1
+        ],
+        [
+          1920,
+          1680,
+          65,
+          1
+        ],
+        [
+          1920,
+          1680,
+          69,
+          1
+        ],
+        [
+          3840,
+          1680,
+          46,
+          0
+        ],
+        [
+          3840,
+          1680,
+          62,
+          1
+        ],
+        [
+          3840,
+          1680,
+          65,
+          1
+        ],
+        [
+          3840,
+          1680,
+          69,
+          1
+        ],
+        [
+          3840,
+          1680,
+          72,
+          1
+        ],
+        [
+          5760,
+          1680,
+          45,
+          0
+        ],
+        [
+          5760,
+          1680,
+          61,
+          1
+        ],
+        [
+          5760,
+          1680,
+          64,
+          1
+        ],
+        [
+          5760,
+          1680,
+          67,
+          1
+        ],
+        [
+          5760,
+          1680,
+          70,
+          1
+        ]
+      ],
+      "seconds": 9.6,
+      "peak": 0.2166714986927357,
+      "wav_sha256": "854ecd9486cb5b3e4cafcbcbb48f4655c19fa58242ad39c071d058b5a2abe9c4",
+      "human_listen_play_approval": "AUSSTEHEND",
+      "historical_transcription": false,
+      "synthesis": "sinusoidal pitch control; no acoustic piano or style simulation",
+      "midi_sha256": "cdfcdd9a994855dc8e4ff8d6a4f8d25da1d6317bad3ffea649082ac91f911e4a"
+    },
+    {
+      "id": "CIRCLE_SOUL_HAND_LAYERS",
+      "probe_ids": [
+        "CIRCLE_SOUL_HAND_LAYERS"
+      ],
+      "bpm_quarter": 100,
+      "ppq": 480,
+      "ticks": 7680,
+      "events": [
+        [
+          0,
+          1680,
+          52,
+          0
+        ],
+        [
+          0,
+          1680,
+          67,
+          1
+        ],
+        [
+          0,
+          1680,
+          71,
+          1
+        ],
+        [
+          0,
+          1680,
+          74,
+          1
+        ],
+        [
+          0,
+          1680,
+          78,
+          1
+        ],
+        [
+          1920,
+          1680,
+          45,
+          0
+        ],
+        [
+          1920,
+          1680,
+          60,
+          1
+        ],
+        [
+          1920,
+          1680,
+          64,
+          1
+        ],
+        [
+          1920,
+          1680,
+          67,
+          1
+        ],
+        [
+          1920,
+          1680,
+          71,
+          1
+        ],
+        [
+          3840,
+          1680,
+          50,
+          0
+        ],
+        [
+          3840,
+          1680,
+          66,
+          1
+        ],
+        [
+          3840,
+          1680,
+          69,
+          1
+        ],
+        [
+          3840,
+          1680,
+          72,
+          1
+        ],
+        [
+          3840,
+          1680,
+          76,
+          1
+        ],
+        [
+          5760,
+          1680,
+          43,
+          0
+        ],
+        [
+          5760,
+          1680,
+          59,
+          1
+        ],
+        [
+          5760,
+          1680,
+          62,
+          1
+        ],
+        [
+          5760,
+          1680,
+          66,
+          1
+        ],
+        [
+          5760,
+          1680,
+          69,
+          1
+        ]
+      ],
+      "seconds": 9.6,
+      "peak": 0.22956267524360943,
+      "wav_sha256": "790b38f2399d28a8d10b3018dcaa6f3f719661b8ea5901e5fae14a9f80ebf418",
+      "human_listen_play_approval": "AUSSTEHEND",
+      "historical_transcription": false,
+      "synthesis": "sinusoidal pitch control; no acoustic piano or style simulation",
+      "midi_sha256": "50c4939cb8fb7d57e282a243fe967db0e25c7ce0c41b2ca8d1c4f85a57db96d1"
+    },
+    {
+      "id": "P07_COMPLETE_ARPEGGIO",
+      "probe_ids": [
+        "P07_COMPLETE_ARPEGGIO"
+      ],
+      "bpm_quarter": 100,
+      "ppq": 480,
+      "ticks": 7680,
+      "events": [
+        [
+          0,
+          200,
+          60,
+          1
+        ],
+        [
+          240,
+          200,
+          64,
+          1
+        ],
+        [
+          480,
+          200,
+          67,
+          1
+        ],
+        [
+          720,
+          200,
+          72,
+          1
+        ],
+        [
+          960,
+          200,
+          67,
+          1
+        ],
+        [
+          1200,
+          200,
+          64,
+          1
+        ],
+        [
+          1440,
+          200,
+          67,
+          1
+        ],
+        [
+          1680,
+          200,
+          64,
+          1
+        ],
+        [
+          1920,
+          200,
+          55,
+          1
+        ],
+        [
+          2160,
+          200,
+          59,
+          1
+        ],
+        [
+          2400,
+          200,
+          62,
+          1
+        ],
+        [
+          2640,
+          200,
+          67,
+          1
+        ],
+        [
+          2880,
+          200,
+          62,
+          1
+        ],
+        [
+          3120,
+          200,
+          59,
+          1
+        ],
+        [
+          3360,
+          200,
+          62,
+          1
+        ],
+        [
+          3600,
+          200,
+          59,
+          1
+        ],
+        [
+          3840,
+          200,
+          57,
+          1
+        ],
+        [
+          4080,
+          200,
+          60,
+          1
+        ],
+        [
+          4320,
+          200,
+          64,
+          1
+        ],
+        [
+          4560,
+          200,
+          69,
+          1
+        ],
+        [
+          4800,
+          200,
+          64,
+          1
+        ],
+        [
+          5040,
+          200,
+          60,
+          1
+        ],
+        [
+          5280,
+          200,
+          64,
+          1
+        ],
+        [
+          5520,
+          200,
+          60,
+          1
+        ],
+        [
+          5760,
+          200,
+          53,
+          1
+        ],
+        [
+          6000,
+          200,
+          57,
+          1
+        ],
+        [
+          6240,
+          200,
+          60,
+          1
+        ],
+        [
+          6480,
+          200,
+          65,
+          1
+        ],
+        [
+          6720,
+          200,
+          60,
+          1
+        ],
+        [
+          6960,
+          200,
+          57,
+          1
+        ],
+        [
+          7200,
+          200,
+          60,
+          1
+        ],
+        [
+          7440,
+          200,
+          57,
+          1
+        ]
+      ],
+      "seconds": 9.6,
+      "peak": 0.054556386859487126,
+      "wav_sha256": "369df9274dea3501fde36a1cbf3215a2d130733d863d91be5570ebe02711fe9e",
+      "human_listen_play_approval": "AUSSTEHEND",
+      "historical_transcription": false,
+      "synthesis": "sinusoidal pitch control; no acoustic piano or style simulation",
+      "midi_sha256": "a19ed090c5460bf839c018df226d57e04a37b72a4470351feada1b3ca7cf46f9"
+    },
+    {
+      "id": "ORACLE_GLOBAL_MIN",
+      "probe_ids": [
+        "DROP2_ORACLE_FROM_CLOSE"
+      ],
+      "bpm_quarter": 100,
+      "ppq": 480,
+      "ticks": 3840,
+      "events": [
+        [
+          0,
+          1680,
+          62,
+          1
+        ],
+        [
+          0,
+          1680,
+          65,
+          1
+        ],
+        [
+          0,
+          1680,
+          69,
+          1
+        ],
+        [
+          0,
+          1680,
+          72,
+          1
+        ],
+        [
+          1920,
+          1680,
+          62,
+          1
+        ],
+        [
+          1920,
+          1680,
+          65,
+          1
+        ],
+        [
+          1920,
+          1680,
+          67,
+          1
+        ],
+        [
+          1920,
+          1680,
+          71,
+          1
+        ]
+      ],
+      "seconds": 4.8,
+      "peak": 0.19665547936447014,
+      "wav_sha256": "627ba163b3c2150c964773e440860c6dc891297f04f9817a432c8129db243a6a",
+      "human_listen_play_approval": "AUSSTEHEND",
+      "historical_transcription": false,
+      "synthesis": "sinusoidal pitch control; no acoustic piano or style simulation",
+      "midi_sha256": "11fb68d19dbf29ce9bfb2b65d841ef3a78860a7ff1e08ce22933072b64514e0d"
+    },
+    {
+      "id": "ORACLE_DROP2_MIN",
+      "probe_ids": [
+        "DROP2_ORACLE_FROM_CLOSE"
+      ],
+      "bpm_quarter": 100,
+      "ppq": 480,
+      "ticks": 3840,
+      "events": [
+        [
+          0,
+          1680,
+          62,
+          1
+        ],
+        [
+          0,
+          1680,
+          65,
+          1
+        ],
+        [
+          0,
+          1680,
+          69,
+          1
+        ],
+        [
+          0,
+          1680,
+          72,
+          1
+        ],
+        [
+          1920,
+          1680,
+          59,
+          1
+        ],
+        [
+          1920,
+          1680,
+          65,
+          1
+        ],
+        [
+          1920,
+          1680,
+          67,
+          1
+        ],
+        [
+          1920,
+          1680,
+          74,
+          1
+        ]
+      ],
+      "seconds": 4.8,
+      "peak": 0.19949235148865088,
+      "wav_sha256": "8e18c3dd4648c16deb6ca88a941b5ee122d28c9cb2d669605fb2a1bb8e416d1f",
+      "human_listen_play_approval": "AUSSTEHEND",
+      "historical_transcription": false,
+      "synthesis": "sinusoidal pitch control; no acoustic piano or style simulation",
+      "midi_sha256": "a519c64bfa746fbd48106db9e50e406ca03d2bef9a64ba02bbed38717c2bc915"
+    }
+  ],
+  "independent_format_validation": {
+    "reader": "Mido 1.3.3 and Python wave",
+    "results": [
+      {
+        "id": "II_V_I_SHELL_ARRANGEMENT",
+        "midi_events_roundtrip": "PASS",
+        "wav_timing": "PASS",
+        "human_approval": "AUSSTEHEND"
+      },
+      {
+        "id": "BACKDOOR_DROP2_ARRANGEMENT",
+        "midi_events_roundtrip": "PASS",
+        "wav_timing": "PASS",
+        "human_approval": "AUSSTEHEND"
+      },
+      {
+        "id": "MINOR_CYCLE_HAND_LAYERS",
+        "midi_events_roundtrip": "PASS",
+        "wav_timing": "PASS",
+        "human_approval": "AUSSTEHEND"
+      },
+      {
+        "id": "CIRCLE_SOUL_HAND_LAYERS",
+        "midi_events_roundtrip": "PASS",
+        "wav_timing": "PASS",
+        "human_approval": "AUSSTEHEND"
+      },
+      {
+        "id": "P07_COMPLETE_ARPEGGIO",
+        "midi_events_roundtrip": "PASS",
+        "wav_timing": "PASS",
+        "human_approval": "AUSSTEHEND"
+      },
+      {
+        "id": "ORACLE_GLOBAL_MIN",
+        "midi_events_roundtrip": "PASS",
+        "wav_timing": "PASS",
+        "human_approval": "AUSSTEHEND"
+      },
+      {
+        "id": "ORACLE_DROP2_MIN",
+        "midi_events_roundtrip": "PASS",
+        "wav_timing": "PASS",
+        "human_approval": "AUSSTEHEND"
+      }
+    ],
+    "audio_listened_by_human": false
+  },
+  "source_plan_snapshot": "source-plan.json"
+}

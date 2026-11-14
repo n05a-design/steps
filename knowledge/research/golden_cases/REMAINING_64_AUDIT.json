@@ -181,7 +181,7 @@
       "original_assessment": "CONFLICTING_INPUTS",
       "finding": "Titel und Erwartung nennen zwei Dur-Dreiklänge D über C; Input root=C, quality=Minor beschreibt sie nicht. Slash-Bass D/C und Polychord aus zwei Dreiklängen unterscheiden.",
       "source_locator": "M04-09; Persichetti 20th Century Harmony",
-      "next_step": "Neue Fall-ID mit beiden Dreiklängen anlegen; CDR-010 weiterhin FAIL. Persichetti-Seite separat prüfen.",
+      "next_step": "Konkrete getrennte Varianten in knowledge/research/golden_cases/CONFLICT_REVISION_PROPOSALS.json unter REF-0016 prüfen; 15 technische Vorschläge sind gerechnet, Originalkonflikt und menschliche Freigabe bleiben offen.",
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "model": {
@@ -209,7 +209,7 @@
       "original_assessment": "EXPECTATION_CONFLICT",
       "finding": "Originaleingabe V -> I ergibt G -> C; die erwartete Septime G7 ist in V nicht enthalten.",
       "source_locator": "M05-03; Riemann Funktionstheorie",
-      "next_step": "Korrekturvorschlag: entweder V7 als neue Eingabe oder G als neue Erwartung; Original unverändert.",
+      "next_step": "Konkrete getrennte Varianten in knowledge/research/golden_cases/CONFLICT_REVISION_PROPOSALS.json unter REF-0017 prüfen; 15 technische Vorschläge sind gerechnet, Originalkonflikt und menschliche Freigabe bleiben offen.",
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "model": {
@@ -497,7 +497,7 @@
       "original_assessment": "EXPECTATION_INCOMPLETE",
       "finding": "Erwartung A -> G lässt G# und F# des vierstufigen Clichés weg. Die vollständige mögliche Stimme A G# G F# ist in Am Am(maj7) Am7 Am6 enthalten.",
       "source_locator": "PROG-019; Jazz & Film Noir Analysis",
-      "next_step": "Vollständige Linie und Register in neue Erwartungsversion aufnehmen; keine Änderung am Original.",
+      "next_step": "Konkrete getrennte Varianten in knowledge/research/golden_cases/CONFLICT_REVISION_PROPOSALS.json unter REF-0051 prüfen; 15 technische Vorschläge sind gerechnet, Originalkonflikt und menschliche Freigabe bleiben offen.",
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "model": {
@@ -538,7 +538,7 @@
       "original_assessment": "CONFLICTING_INPUTS",
       "finding": "Titel nennt Fm7 Bb7 Cmaj7 Abmaj7, Input und Ergebnis dagegen eine Andalusische Kadenz Am G F E7. Die wiedergefundene Fallstudie ist eine separate historische Projektfassung.",
       "source_locator": "Fallstudie 1 (Midnight Solace); INTEGRATED_MUSICAL_CASE_STUDIES.md",
-      "next_step": "Zwei getrennte neue Fall-IDs vorschlagen; keine Mehrdeutigkeit durch einen grünen Stringvergleich verdecken.",
+      "next_step": "Konkrete getrennte Varianten in knowledge/research/golden_cases/CONFLICT_REVISION_PROPOSALS.json unter REF-0052 prüfen; 15 technische Vorschläge sind gerechnet, Originalkonflikt und menschliche Freigabe bleiben offen.",
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false
     },
@@ -741,7 +741,7 @@
       "original_assessment": "VERSION_CONFLICT",
       "finding": "Archivierte PAT-021-Fassung nennt 174 BPM und andere Kick-/Ghost-Ticks als das heutige Beispiel mit 168 BPM. Historische Versionen dürfen nicht vermischt werden.",
       "source_locator": "DRUM_GROOVE_REFERENCE_LIBRARY.md (PAT-021); GENRE_RESEARCH_DNB.md",
-      "next_step": "Beide Ereignislisten versioniert zuordnen; ursprüngliche Golden-Erwartung nicht rückwirkend als alte Transkription ausgeben.",
+      "next_step": "Konkrete getrennte Varianten in knowledge/research/golden_cases/CONFLICT_REVISION_PROPOSALS.json unter REF-0062 prüfen; 15 technische Vorschläge sind gerechnet, Originalkonflikt und menschliche Freigabe bleiben offen.",
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false
     },
@@ -751,7 +751,7 @@
       "original_assessment": "VERSION_CONFLICT",
       "finding": "Archivierte PAT-022-Fassung nennt 174 BPM, heutige Golden-Erwartung 175 BPM; gleiche Kickpositionen beweisen keine identische Version.",
       "source_locator": "DRUM_GROOVE_REFERENCE_LIBRARY.md (PAT-022); GENRE_RESEARCH_DNB.md",
-      "next_step": "Tempoänderung mit Versionsherkunft dokumentieren; Kickraster ist davon getrennt prüfbar.",
+      "next_step": "Konkrete getrennte Varianten in knowledge/research/golden_cases/CONFLICT_REVISION_PROPOSALS.json unter REF-0063 prüfen; 15 technische Vorschläge sind gerechnet, Originalkonflikt und menschliche Freigabe bleiben offen.",
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "model": {
@@ -985,7 +985,7 @@
       "original_assessment": "EXPECTATION_SCOPE_CONFLICT",
       "finding": "LH mit D-Grundton und RH F A C E ist im Gesamtklang nicht rootless, nur die RH ist grundtonlos.",
       "source_locator": "PIANO_LEARNING_MODULES.md (P12)",
-      "next_step": "Bezeichnung auf RH einschränken; Hand- und Gesamttextur getrennt modellieren.",
+      "next_step": "Konkrete getrennte Varianten in knowledge/research/golden_cases/CONFLICT_REVISION_PROPOSALS.json unter REF-0073 prüfen; 15 technische Vorschläge sind gerechnet, Originalkonflikt und menschliche Freigabe bleiben offen.",
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "model": {

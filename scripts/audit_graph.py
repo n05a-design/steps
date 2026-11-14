@@ -96,6 +96,7 @@ def audit(root=ROOT, plan=None):
         for node in read_csv(root/'knowledge/relations'/name):
             nodes[node['node_id']] = f"{node.get('namespace','EXPLICIT_SCOPED_NODE')} | {node['source_url']} | {node['locator']}"
     prior_sources={r['relation_id']:r for r in read_csv(root/'knowledge/relations/RELATION_EVIDENCE.csv')}
+    versioned_errors=json.loads((root/'knowledge/relations/VERSIONED_ERROR_IDENTITIES.json').read_text(encoding='utf-8'))['records']
     from scripts import run_knowledge_benchmark as benchmark
     from src.steps.progression import reviewed
     examples, claims = reviewed._candidates()
@@ -116,6 +117,9 @@ def audit(root=ROOT, plan=None):
             if term in nodes: endpoints.append(term+': '+nodes[term])
             elif re.fullmatch(r'(?:PROG[-_]\d{3}|PAT-\d{3}|P\d{2})',term):endpoints.append(term+': project catalog definition; no automatic musical approval')
             elif re.fullmatch(r'M\d{2}',term):endpoints.append(term+': DOMAIN CONTEXT REQUIRED; historical and later domains differ')
+        if ident=='REL-020':
+            endpoints += [r['versioned_id']+' | '+r['source']['path']+' | '+r['source']['sha256']
+                          for r in versioned_errors]
         source=prior_sources.get(ident)
         source_status='PRIOR_SOURCE_SAMPLE_DOCUMENTED' if source and source['assessment']=='SOURCE_SUPPORTED_SAMPLE' else 'PROJECT_RECORD_ONLY'
         source_locator=f"{source['source_url']} | {source['locator']}" if source else ';'.join(review['references'])
@@ -131,7 +135,8 @@ def audit(root=ROOT, plan=None):
                                       'DOMAIN_CONTEXT_REQUIRED' if re.fullmatch(r'M\d{2}',term) else 'UNRESOLVED')
         rows.append({'relation_id':ident,**review['edge'],'original_row_sha256':review['original_row_sha256'],
                      'source_definition_status':definition_status(review['edge']['source_id']),
-                     'target_definition_status':definition_status(review['edge']['target_id']),
+                     'target_definition_status':('AMBIGUOUS_VERSIONED_IDENTITY' if ident=='REL-020'
+                                                 else definition_status(review['edge']['target_id'])),
                      'definition_evidence':' || '.join(endpoints) or 'UNRESOLVED',
                      'source_assertion_status':source_status,'source_locator':source_locator,
                      'candidate_claim_ids':';'.join(review.get('candidate_claim_ids',[])),
