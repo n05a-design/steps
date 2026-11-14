@@ -1,0 +1,49 @@
+{
+  "url": "https://pypi.org/pypi/jazzsamba/json",
+  "version": "0.1.1",
+  "distribution": "jazzsamba-0.1.1-py3-none-any.whl",
+  "url_distribution": "https://files.pythonhosted.org/packages/ac/0f/7f095e572b520830133ee1fc0a8932a8a979a17a53af4165e4479e11d7bf/jazzsamba-0.1.1-py3-none-any.whl",
+  "sha256": "0f417a587adb6ec831eb4c4920614cc92b82d7467f970b1238e75891ffaa2b79",
+  "bytes": 17105,
+  "published_sha256_verified": true,
+  "installed": false,
+  "third_party_code_executed": false,
+  "mapping_term_hits": [],
+  "scope": "Static inspection of text/code members for declared terms only; not proof of mapping absence in all external hardware/data documents.",
+  "human_approval": "AUSSTEHEND",
+  "historical_assertion_closed": false,
+  "instrument_mapping_verified": false,
+  "software_license_scope": "MIT applies to loader software; no inference for dataset audio, compositions, CSS or commercial use.",
+  "source_locators": [
+    {
+      "member": "jazzsamba/constants.py",
+      "lines": "85-87",
+      "finding": "Async original drums and piano are designated GT; sync only piano. Confirms source-lane distinction, not note-to-instrument mapping."
+    },
+    {
+      "member": "jazzsamba/stem.py",
+      "lines": "89-106",
+      "finding": "Resolver distinguishes original and transcribed/derived MIDI; file preference is not authentication of musical content."
+    }
+  ],
+  "CDR019_followup": {
+    "older_original_pages_newly_verified": 0,
+    "reily_publisher_url": "https://www.cambridge.org/core/journals/popular-music/article/abs/tom-jobim-and-the-bossa-nova-era/D61EFEFEF21863C86C31477EDCD12FF9",
+    "publisher_locators": [
+      "Extract and Get access sections",
+      "References: Cabral n.d.a; Schreiner1992"
+    ],
+    "finding": "Reily public page remains extract/reference list, not p5/Fig1. Cabral vol2 pp10–17 confirmed bibliographically. Reily cites Schreiner1992 whereas historical project catalog uses1993; edition identity needs title/imprint/ISBN comparison, no silent year correction.",
+    "blocked_access": [
+      {
+        "url": "https://isdistribution.com/work/musica-brasileira/",
+        "result": "403"
+      },
+      {
+        "url": "https://vpl.bibliocommons.com/v2/record/S198C207922",
+        "result": "JavaScript/robot verification; no bypass"
+      }
+    ],
+    "required_evidence": "Berechtigte Originale: Reily1996 p5/Fig1; Cabral vol2 pp10–17/p12; Garcia1999 requested pages; Schreiner actual edition and page. CAPH4195N remains thesis discovery only."
+  }
+}
