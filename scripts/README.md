@@ -11,6 +11,11 @@ Die regulären Befehle werden aus dem Repository-Root mit Python aufgerufen. Die
 | [audit_knowledge_coverage.py](audit_knowledge_coverage.py) | Wissensinventur prüfen oder mit `--write` aktualisieren. |
 | [graph_corrections.py](graph_corrections.py) | Historisch gebundene Korrekturvorschläge auf Identität, Tonklassenschema und ausdrücklich ausstehende Freigabe prüfen; wird von Benchmark und Inventur verwendet. |
 | [verify_historical_ontology.py](verify_historical_ontology.py) | Wiedergefundene Originalbytes, 41 historische Definitionsanker und Reviewgrenzen prüfen; keine Fachabnahme. |
+| [audit_graph.py](audit_graph.py) | Alle 97 Originalkanten samt Namensraum, Prüfstatus, Blocker und getrennten Vorschlägen inventarisieren; `--check` sichert die Matrix. |
+| [graph_probes.py](graph_probes.py) | Begrenzte musikalische Modellrechnungen und neu geschriebene Ereignisübung; keine historischen Transkriptionen oder Fachfreigaben. |
+| [audit_remaining.py](audit_remaining.py) | PENDING-Fälle und die 33 Fable-Befunde mit ihren Evidenzgrenzen konsolidieren. |
+| [audit_midi_files.py](audit_midi_files.py) | Lesende SMF-Hüllenprüfung und unabhängiger Eventreader für den Forschungsbestand. Optionaler Auditreader: `python -m pip install mido==1.3.3`; keine Produktabhängigkeit. |
+| [audit_golden_supplements.py](audit_golden_supplements.py) | 14 zusätzliche begrenzte Rechnungen neben den unveränderten historischen Golden-Klassen; sämtliche 198 Fälle inventarisiert. |
 | [build_unified_golden_cases.py](build_unified_golden_cases.py) | Kanonischen Golden-Master mit Testspiegel synchronisieren oder prüfen. |
 | [render_api_reference.py](render_api_reference.py) | API-Referenz erzeugen oder mit `--check` vergleichen. |
 | [render_reviewed_progressions.py](render_reviewed_progressions.py) | Freigegebene Pilotdaten in Lernmaterial umsetzen. |

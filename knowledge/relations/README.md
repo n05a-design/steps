@@ -1,5 +1,14 @@
 # Konzeptrelationen
 
+Der [Nacht-Auditbericht](../../docs/audit/fable-5.2/NACHT_AUDIT_2026-11-14.md)
+führt den aktuellen Stand. [97 Einzelkanten](GRAPH_AUDIT_MATRIX.csv) trennen
+Definition, Quellenstand, technische Probe und ausstehende menschliche
+Abnahme. [Prüfplan und Modellproben](GRAPH_AUDIT_PLAN.json) sowie
+[sechs getrennte Definitionsvorschläge](NODE_DEFINITION_PROPOSALS.json)
+bewahren alle historischen Originale. Die sechs historischen Lücken werden
+durch Vorschläge nicht automatisch geschlossen. Spätere Zahlen beschreiben
+frühere Auditstände.
+
 Der [Originalfund unter Windows](../../docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md) belegt jetzt alle 41 fehlenden historischen Definitionen. Zwei P10-Begriffe sind als Projektstrategie eingegrenzt; sechs Definitionen bleiben offen. Die historischen Domänen werden nicht automatisch auf spätere Gliederungen abgebildet. Keine neue Kanten-, Hör-, Spiel- oder Didaktikabnahme wurde erteilt. Die später folgenden Zahlen zu 49 offenen Definitionen beschreiben den vorherigen Prüfstand.
 
 Die Tabelle führt typisierte Beziehungen und dokumentiert deren Prüfstatus. Die App-Schnittstelle für Lernbeispiele lädt den Graphen derzeit nicht.
