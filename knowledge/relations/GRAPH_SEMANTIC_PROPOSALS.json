@@ -477,15 +477,19 @@
       "required_context": {
         "role": "PRIMEIRA_MARCACAO",
         "meter": "2/4",
-        "source_scope": "NAMED_ENSEMBLE_REQUIRED"
+        "source_scope": "NAMED_ENSEMBLE_REQUIRED",
+        "ensemble_scope": "FLORIANOPOLIS_2010",
+        "claim_scope": "ONSET_ROLE_NOT_DYNAMIC_ACCENT"
       },
       "excluded_claims": [
         "Keine automatische Geltung außerhalb des deklarierten Kontexts.",
         "Keine menschliche Fachabnahme aus einer Vertrags- oder Modellprüfung."
       ],
-      "probe_ids": [],
-      "source_note": "Erste/marcação betont in benannter Samba-Besetzung 2, zweite/resposta 1. Keine universelle Norm für jeden Surdo oder Bossa.",
-      "remaining_requirement": "Unabhängige Fachprüfung des exakten Relationsumfangs; Erste/marcação betont in benannter Samba-Besetzung 2, zweite/resposta 1. Keine universelle Norm für jeden Surdo oder Bossa.",
+      "probe_ids": [
+        "SURDO_FLORIANOPOLIS_2010_ROLE_GRID"
+      ],
+      "source_note": "Marcelino2010 PDF34/gedruckt33 Fig3–4: primeira2 und segunda1. Notation ohne dynamische Akzentzeichen. Keine universelle PERFORMANCE_NORM.",
+      "remaining_requirement": "Unabhängige Fach-/Spielabnahme; dynamische Akzentbehauptung und Übertragung auf andere Ensembles bleiben unbelegt.",
       "review_status": "REVIEW_REQUIRED",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,

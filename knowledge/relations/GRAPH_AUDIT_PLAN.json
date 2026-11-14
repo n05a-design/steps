@@ -2193,7 +2193,7 @@
     },
     {
       "category": "HISTORICAL_SOURCE_REQUIRED",
-      "review_note": "Surdo-/Tamborim-Deutung als Überlieferung auffindbar, aber keine hier geprüfte zeitgenössische Entstehungsquelle; Gitarrenfamilie nicht mit Cross-Stick gleichsetzen.",
+      "review_note": "Surdo-/Tamborim-Deutung als Überlieferung auffindbar, aber keine hier geprüfte zeitgenössische Entstehungsquelle; Gitarrenfamilie nicht mit Cross-Stick gleichsetzen. Neue getrennte Quellenprüfung: Ghezzi2009 mit Garcia1999-Verweisen; keine Originalinterview-/Schreiner-Prüfung und kein kausaler Entstehungsnachweis.",
       "relation_id": "CDR-019",
       "edge": {
         "source_id": "BOSSA_BATIDA",
@@ -2205,11 +2205,12 @@
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
-      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Surdo-/Tamborim-Deutung als Überlieferung auffindbar, aber keine hier geprüfte zeitgenössische Entstehungsquelle; Gitarrenfamilie nicht mit Cross-Stick gleichsetzen.",
+      "action": "Unabhängige Fachprüfung; Garcia1999 sowie Reily/Cabral-Originalkette und historische Kausalität prüfen.",
       "references": [
         "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
         "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
-        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md",
+        "docs/audit/fable-5.2/GRAPH_CDR019_CDR021_QUELLEN_2026-11-14.json"
       ],
       "candidate_claim_ids": [
         "CLAIM-039"
@@ -2245,7 +2246,7 @@
     },
     {
       "category": "ROLE_SCOPE_REQUIRED",
-      "review_note": "Erste/marcação betont in benannter Samba-Besetzung 2, zweite/resposta 1. Keine universelle Norm für jeden Surdo oder Bossa.",
+      "review_note": "Erste/marcação betont in benannter Samba-Besetzung 2, zweite/resposta 1. Keine universelle Norm für jeden Surdo oder Bossa. Neue getrennte Quellenprüfung: Marcelino2010 PDF34/gedruckt33 Fig3–4 visuell geprüft: primeira2, segunda1 im Florianópolis-Kontext; keine dynamischen Akzentzeichen, keine universelle Norm.",
       "relation_id": "CDR-021",
       "edge": {
         "source_id": "SURDO_PULSE",
@@ -2253,15 +2254,18 @@
         "relation_type": "PERFORMANCE_NORM"
       },
       "original_row_sha256": "98cf8f9abf96ed8b89a27109a55b6c08802c340680f901855b4260a1c2362c59",
-      "probe_ids": [],
+      "probe_ids": [
+        "SURDO_FLORIANOPOLIS_2010_ROLE_GRID"
+      ],
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
-      "action": "Unabhängige Fachprüfung des exakten Relationsumfangs; Erste/marcação betont in benannter Samba-Besetzung 2, zweite/resposta 1. Keine universelle Norm für jeden Surdo oder Bossa.",
+      "action": "Unabhängige Fachprüfung; Onset-Rollen im benannten2010-Kontext von dynamischem Akzent unterscheiden; konkrete praktische Fassung abnehmen.",
       "references": [
         "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
         "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
-        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md"
+        "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md",
+        "docs/audit/fable-5.2/GRAPH_CDR019_CDR021_QUELLEN_2026-11-14.json"
       ],
       "candidate_claim_ids": [
         "CLAIM-038"
@@ -4163,6 +4167,41 @@
         "style_pairing_proven": false
       },
       "scope": "Neue ausdrücklich gesetzte Viertelbasis180BPM verbindet acht2880-Tick-Zyklen und drei7680-Tick-Harmonieschleifen. Eine Taktkarte ist kein COMMONLY_PAIRED_WITH- oder Hörnachweis."
+    },
+    {
+      "id": "SURDO_FLORIANOPOLIS_2010_ROLE_GRID",
+      "relations": [
+        "CDR-021"
+      ],
+      "kind": "semantic",
+      "input": {
+        "operation": "surdo_role_grid",
+        "data": {
+          "scope": "FLORIANOPOLIS_2010_MARCELINO_FIG3_4",
+          "meter": "2/4",
+          "ppq": 480,
+          "primeira_ticks": [
+            480,
+            1440
+          ],
+          "segunda_ticks": [
+            0,
+            960
+          ]
+        }
+      },
+      "expected": {
+        "primeira_quarter_positions": [
+          2,
+          4
+        ],
+        "segunda_quarter_positions": [
+          1,
+          3
+        ],
+        "dynamic_accent_proven": false,
+        "universal_norm_proven": false
+      }
     }
   ],
   "followup_base_main": "9afaf33eaeec332a3d19b4e30d05b1902234936f"

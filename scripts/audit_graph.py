@@ -134,6 +134,9 @@ def audit(root=ROOT, plan=None):
         if ident in {'REL-033','CDR-022'}:
             source_status='CURRENT_SOURCE_PAGE_PARTIAL_CHECK'
             source_locator='https://www.w3.org/2021/06/musicxml40/musicxml-reference/elements/pitch/ | Content: step, alter optional, octave; semitones decimal type. No full converter proof.'
+        if ident in {'CDR-019','CDR-021'}:
+            source_status=('SECONDARY_ANALYTICAL_CHAIN_CHECKED' if ident=='CDR-019' else 'PRIMARY_FIELDWORK_SCOPED_NOTATION_CHECK')
+            source_locator='docs/audit/fable-5.2/GRAPH_CDR019_CDR021_QUELLEN_2026-11-14.json | '+('Ghezzi2009 PDF9–10; Garcia1999 original unread' if ident=='CDR-019' else 'Marcelino2010 PDF34/printed33 Fig3–4. Onsets, not dynamic accent.')
         definition_status=lambda term: ('HISTORICAL_DEFINITION' if term in nodes and re.fullmatch(r'M\d{2}-\d{2}',term) else
                                       'SCOPED_NODE_DEFINITION' if term in nodes else 'PROJECT_CATALOG' if re.fullmatch(r'(?:PROG[-_]\d{3}|PAT-\d{3}|P\d{2})',term) else
                                       'DOMAIN_CONTEXT_REQUIRED' if re.fullmatch(r'M\d{2}',term) else 'UNRESOLVED')
