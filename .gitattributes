@@ -6,8 +6,8 @@
 # Zeilenenden unterschieden.
 #
 # text=auto vergleicht und speichert Textdateien mit LF. Bereits mit CRLF
-# eingecheckte Dateien bleiben unverändert (derzeit nur in src/glide-v3.53/,
-# das eigene, spezifischere Regeln mitbringt). Kein `git add --renormalize`
+# eingecheckte Dateien bleiben unverändert (betraf bis zur Entfernung am
+# 14.11.2026 nur src/glide-v3.53/). Kein `git add --renormalize`
 # ohne eigenen Review: Archiv- und Quellbestände tragen Hashnachweise.
 * text=auto
 

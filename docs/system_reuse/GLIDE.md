@@ -2,9 +2,18 @@
 
 Potentielle externe Quelle: https://github.com/n05a-design/glide-to-do. Relevante Elemente: Desktop-Widget-Bibliothek, Datenpersistenz, Testtools, CI-Muster, Packaging und Übergabeprozesse. Vor Reuse: konkrete Commit-SHA, Lizenz/MPL-Abdeckung, Herkunft sämtlicher Assets und technische Kompatibilität dokumentieren. UI- und Persistence-Layer von `src/steps/`-Musiklogik klar trennen. Versions- und CI-Ergebnisse von Glide nicht als STEPS-Ergebnisse ausgeben.
 
+## Entfernung am 14.11.2026
+
+Der Inhaber hat am 14.11.2026 entschieden, den bisherigen Glide-Code zu
+entfernen. Eine neue Glide-Version wird später eingefügt. Entfernt wurden
+`src/glide-v3.53` aus dem Repository sowie die nicht versionierten lokalen Ordner `src/glide-3.55.1`
+und `src/GLIDE_STEPS_GESAMTAUDIT_V2_2026-11-10`. Der letzte Stand mit
+`src/glide-v3.53` ist [`99ca36a`](https://github.com/n05a-design/steps/tree/99ca36aa1b2b1db4671edcd06e3eb97454d07496/src/glide-v3.53). Die folgenden
+Abschnitte beschreiben den Stand vor der Entfernung.
+
 ## Lokaler Referenzstand 3.55.1
 
-Der lokale Ordner `src/glide-3.55.1` entspricht dem öffentlich
+Der lokale Ordner `src/glide-3.55.1` entsprach dem öffentlich
 versionierten [Glide-Stand 45ab307e](https://github.com/n05a-design/glide-to-do/tree/45ab307e2d2fcf5892a806880faaf344a3c058a1).
 Alle 1.508 versionierbaren Dateien des lokalen Ordners haben einen
 gleichnamigen Git-Pfad in diesem Stand. 1.500 Dateien stimmen bytegleich
@@ -16,4 +25,4 @@ deren Dokumentation, Tests und [Lizenzhinweisen](https://github.com/n05a-design/
 Für die lokale Kopie des Glide-Gesamtaudits vom 10. November 2026 sind
 35 Dateien im versionierten STEPS-Referenzordner bytegleich vorhanden.
 Die drei Tabellen `ISSUES.csv`, `REQUIREMENTS.csv` und `SOURCES.csv`
-haben dort LF-Zeilenenden. [Versionierte Auditunterlagen](../../src/glide-v3.53/GLIDE_GESAMTAUDIT_V2_2026-11-10/GLIDE_STEPS_GESAMTAUDIT_V2_2026-11-10/)
+haben dort LF-Zeilenenden. [Versionierte Auditunterlagen](https://github.com/n05a-design/steps/tree/99ca36aa1b2b1db4671edcd06e3eb97454d07496/src/glide-v3.53/GLIDE_GESAMTAUDIT_V2_2026-11-10/GLIDE_STEPS_GESAMTAUDIT_V2_2026-11-10/)
