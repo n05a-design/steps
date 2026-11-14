@@ -817,12 +817,26 @@
       "question": "Welche Erweiterungen entstehen in der notierten D-Dur-Oberstruktur über dem C7-Gerüst?",
       "expected": {
         "bass": 0,
-        "left": [0, 4, 10],
-        "right": [2, 6, 9],
-        "upper_intervals": [14, 18, 21],
+        "left": [
+          0,
+          4,
+          10
+        ],
+        "right": [
+          2,
+          6,
+          9
+        ],
+        "upper_intervals": [
+          14,
+          18,
+          21
+        ],
         "omitted_fifth": true
       },
-      "variants": ["Die konkrete Lage lässt die Quinte aus. Fingersatz und Anschlagkomfort sind eine eigene Probe."],
+      "variants": [
+        "Die konkrete Lage lässt die Quinte aus. Fingersatz und Anschlagkomfort sind eine eigene Probe."
+      ],
       "basis": "Noten der P16-Übung; None = 14, erhöhte Undezime = 18 und Tredezime = 21 Halbtöne ab C3.",
       "method": "piano_upper_structure",
       "input": {},
@@ -1147,7 +1161,10 @@
       "content": "CLAIM-011",
       "domain": "M11",
       "question": "Darf MusicXML 4.0 für alter 0,5 verwenden?",
-      "expected": ["0.5", "-0.5"],
+      "expected": [
+        "0.5",
+        "-0.5"
+      ],
       "variants": [],
       "basis": "https://www.w3.org/2021/06/musicxml40/musicxml-reference/data-types/semitones/ nennt 0.5 und spezifiziert decimal ohne die behauptete Begrenzung.",
       "method": "claim_sample",
@@ -2087,10 +2104,10 @@
       "method": "manual",
       "input": {
         "edges": 97,
-        "unresolved_ids": 49
+        "unresolved_ids": 6
       },
       "mandatory": true,
-      "next_step": "Die 41 historischen Mxx-xx-Definitionen aus der Originalontologie zuordnen und für die acht übrigen Knoten die dokumentierten Kontext-/Abnahmenachweise ergänzen. Die neue Restliste enthält 49 IDs; keine Freigabe aus Namen oder bestandenen Teilchecks ableiten."
+      "next_step": "Die sechs verbleibenden Definitionen und alle 97 Kanten fachlich prüfen. 41 historische Definitionen wurden im Original wiedergefunden, zwei P10-Begriffe als Projektstrategie eingegrenzt; daraus folgt keine Fachabnahme."
     },
     {
       "id": "KB-HISTORY-F00412",
@@ -2840,6 +2857,24 @@
         "check": "polychord_resolution"
       },
       "next_step": "Die begrenzte Definition und ihre Quellen fachlich abnehmen. Quellen-/Modellstichprobe ist keine unabhängige Vollabnahme."
+    },
+    {
+      "id": "KB-GRAPH-ONTOLOGY-RECOVERY",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "HISTORICAL-ONTOLOGY-RECOVERY",
+      "question": "Stimmen Originalbytes, Zeilenanker und alle 41 historischen Graphdefinitionen überein, ohne eine Freigabe vorwegzunehmen?",
+      "expected": {
+        "originals": 12,
+        "historical_definitions": 41,
+        "fachabnahme": "AUSSTEHEND"
+      },
+      "basis": "RECOVERY_MANIFEST.json und HISTORICAL_NODE_EVIDENCE.csv; verifiziert historische Projektidentität, keine musiktheoretische Richtigkeit.",
+      "method": "historical_ontology",
+      "input": {},
+      "variants": [],
+      "mandatory": true,
+      "next_step": "Alle historischen Aussagen und Kanten getrennt fachlich prüfen; CSS-Rechte und andere Abnahmen bleiben offen."
     }
   ]
 }

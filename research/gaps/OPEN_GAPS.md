@@ -1,5 +1,11 @@
 # Offene Evidenz und historische Bestandsaufnahme
 
+## Originalfund nach PR #53 (14.11.2026)
+
+Unter `%LOCALAPPDATA%/StepsAudit` sind die Originalontologie und ihre Schwesterdateien wiedergefunden. Alle 41 historischen Graphkennungen sind mit Originalwortlaut, Zeile und Hash im eigenen Namensraum zugeordnet. Zwei Bass-/Höranker-Begriffe sind als historische P10-Projektstrategie definiert. Sechs Definitionen bleiben offen; alle fehlenden Fachabnahmen und CSS-Bundle-Rechte bleiben offen. Die spätere Domäneneinteilung ist nicht mit dem historischen Namensraum gleichgesetzt.
+[Fundauswertung und Einzelbefunde](../../docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md).
+Die nachfolgenden Abschnitte dokumentieren frühere Prüfstände.
+
 ## Weiterführung nach PR #52 (14.11.2026)
 
 PR #52 ist auf `19f3fee` nach menschlicher Freigabe gemergt. Der neue

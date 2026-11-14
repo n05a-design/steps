@@ -1,5 +1,9 @@
 # Fachnachweise aus dem Fable-Audit
 
+Aktualisierung nach PR #53: Die Windows-Originale belegen die Definitionen aller 41 historischen Mxx-xx-Endpunkte. Zwei P10-Begriffe sind als Projektstrategie eingegrenzt, sechs weitere Definitionen bleiben offen.
+[Originalfund, Versionskonflikte und acht Einzelbefunde](../../docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md).
+Keine neue Fachabnahme oder CSS-Rechtefreigabe; die nachfolgenden datierten Abschnitte behalten ihren historischen Prüfstand.
+
 Stand 13.11.2026. Geprüfter Ausgangscommit
 `7fde80efcb09a99f74669aac128dae84a3e63843`. Die Belege ergänzen die
 Maßnahmen M6 und M9. Die Antworten sind Entwürfe für die menschliche

@@ -10,6 +10,7 @@ Die regulären Befehle werden aus dem Repository-Root mit Python aufgerufen. Die
 | [run_knowledge_benchmark.py](run_knowledge_benchmark.py) | Wissensfälle prüfen, Berichte und Abnahmevorlagen erzeugen. |
 | [audit_knowledge_coverage.py](audit_knowledge_coverage.py) | Wissensinventur prüfen oder mit `--write` aktualisieren. |
 | [graph_corrections.py](graph_corrections.py) | Historisch gebundene Korrekturvorschläge auf Identität, Tonklassenschema und ausdrücklich ausstehende Freigabe prüfen; wird von Benchmark und Inventur verwendet. |
+| [verify_historical_ontology.py](verify_historical_ontology.py) | Wiedergefundene Originalbytes, 41 historische Definitionsanker und Reviewgrenzen prüfen; keine Fachabnahme. |
 | [build_unified_golden_cases.py](build_unified_golden_cases.py) | Kanonischen Golden-Master mit Testspiegel synchronisieren oder prüfen. |
 | [render_api_reference.py](render_api_reference.py) | API-Referenz erzeugen oder mit `--check` vergleichen. |
 | [render_reviewed_progressions.py](render_reviewed_progressions.py) | Freigegebene Pilotdaten in Lernmaterial umsetzen. |
