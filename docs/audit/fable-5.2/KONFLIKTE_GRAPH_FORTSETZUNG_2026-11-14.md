@@ -54,7 +54,7 @@ Originalklassen und frühere Konfliktbewertungen bleiben erhalten. Der vorhanden
 - **REL-004:** Unabhängige kartesische Vollsuche bei ±12 Halbtönen pro Stimme, streng aufsteigenden Stimmen und vollständigem Zieltonvorrat. Aus `[62,65,69,72]` nach G7 kostet das unbeschränkte Minimum 3, das Drop-2-beschränkte Minimum 7. Aus einer bereits vorgegebenen Drop-2-Dm7-Lage können beide Minima 3 sein. Der Produktoptimierer stimmt mit dem unabhängigen Suchergebnis überein; es wurde kein Produktfehler behauptet oder hierfür künstlich geändert.
 - **REL-008:** Neuer dreigliedriger Drop-2-Satz für PROG-017, auf tatsächliche Drop-2-Form und Akkordtöne geprüft. Keine Klangadjektiv-/Spielabnahme.
 - **REL-022 / CR-038:** Neue explizite LH/RH-Lagen für sämtliche Akkorde von PROG-021 und PROG-028. RH ohne Grundton ist vom grundtonhaltigen Gesamtklang getrennt; die Dm9-Ausgangslage benötigt zum Em9-Start eine explizite Transposition.
-- **REL-002 / REL-012 / REL-018:** Neue 32-Ereignis-Arpeggiofassung und explizite Zweitakt-Überlagerung. Gemeinsame Tickachsen und Gleichzeitigkeit sind geprüft, Stilpassung und praktische Ausführung nicht.
+- **REL-002 / REL-012 / REL-018:** Neue Zweihand-Arpeggiofassung mit 32 RH-Achteln und vier expliziten LH-Grundtönen und explizite Zweitakt-Überlagerung. Gemeinsame Tickachsen und Gleichzeitigkeit sind geprüft, Stilpassung und praktische Ausführung nicht.
 - **CDR-012 / CDR-017:** Vorhandene D7→Dm7-Qualitätswechselprobe wiederverwendet; 2023-Swing-Regression getrennt vom universellen historischen Decay-Anspruch gerechnet. Historische Zielrichtung und Urheberschaft bleiben getrennt.
 
 [Fortsetzungsmatrix aller ursprünglich 58 offenen Kanten](GRAPH_FORTSETZUNG_58_2026-11-14.csv) enthält Original-ID und Hash, ursprünglichen Relationstyp, Vorschlag, Proben und Restaktion. Vorschläge für geänderte Relationstypen sind reviewpflichtige Alternativen, keine nachträglich als historisch richtig ausgegebenen Tripel.
@@ -77,7 +77,7 @@ UNIRIO- und UFMG-Surdo-PDFs blieben beim Direktabruf 403. Beim Cristal-Artikel w
 
 ## Konkretes Hör-/Spielmaterial, ohne fingierte Abnahme
 
-Sieben neue Übungen liegen lokal als sieben WAV- und sieben MIDI-Dateien im Nachweisordner `Auditnachweise-2026-11-14/konflikte-graph-hoerproben/`. Die Quellplanfassung ist dort zusätzlich gesichert. Der versionierte [Materialnachweis](GRAPH_PRUEFMATERIAL_2026-11-14.json) enthält Ereignisse, Tempo, Ticks, Dateihashes und Prüfstatus.
+Sieben neue Übungen liegen lokal als sieben WAV- und sieben MIDI-Dateien im Nachweisordner `Auditnachweise-2026-11-14/konflikte-graph-hoerproben-v2/`. Die Quellplanfassung ist dort zusätzlich gesichert. Der versionierte [Materialnachweis](GRAPH_PRUEFMATERIAL_2026-11-14.json) enthält Ereignisse, Tempo, Ticks, Dateihashes und Prüfstatus.
 
 Die MIDI-Ereignisse wurden mit Mido unabhängig zurückgelesen und mit dem Ereignisplan verglichen; Note-offs und Zyklusende sind geprüft. WAV-Format, Dauer und Spitzenpegel sind gegengeprüft. Die WAVs sind sinusförmige Tonhöhenkontrollen, keine akustische Klaviersimulation oder Genreaufnahme. Kein menschliches Hören/Spielen wurde behauptet.
 
@@ -112,3 +112,5 @@ Negative Regressionen verändern Sollwerte und Eingaben aller 15 Varianten, Quel
 [Draft-PR #57](https://github.com/n05a-design/steps/pull/57) enthält den Implementierungscommit `b146d8edea46067d6436176c95ef16403019e37e` auf Basis des verifizierten main `9afaf33eaeec332a3d19b4e30d05b1902234936f`. Diese anschließende Ergänzung dokumentiert nur die Übergabe. Die versionierte Coverage wurde nach dem Staging aller neuen Dateien erzeugt und am sauberen Implementierungscommit nochmals erfolgreich geprüft. Neue aktive Dokumentationslinks sind geprüft; 25 bekannte eingefrorene Archivverweise bleiben über den vorhandenen separaten Navigationsindex ausgewiesen.
 
 Der vollständige lokale Lauf mit 235 Kerntests besteht, einschließlich der Quelle-/Abnahmegrenzen und des neuen Material-Snapshots. Secret-Vollscan: 0 quarantänisierte / 0 neue Treffer, Exit 0. Finale Remote-Ergebnisse und exakter Branch-HEAD werden im PR und im lokalen Abschlussnachweis gesichert. PR bleibt Draft; kein eigener Merge nach main.
+
+Der Schlussgegenprüfung folgend ist das P07-Prüfmaterial vollständig zweihändig notiert: vier explizite LH-Grundtöne zusätzlich zu 32 RH-Achteln. Die frühere ausschließlich rechte-Hand-Fassung bleibt lokal als V1 erhalten; die aktive V2 hat eigene Datei- und Quellplanhashes. Das ist weiterhin ein neuer Entwurf ohne Spielabnahme.

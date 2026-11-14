@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
-  "source_plan_lf_sha256": "292b77b54c8fb58f25bbb9d40a8435cd6cd1e7e72f8b56e3c2ea2b65b07d0eb5",
+  "source_plan_lf_sha256": "941c5bab6782ad90fcb219a77c9c5de9c379ad64ce555133d40ac0963f1be433",
+  "source_plan_snapshot": "source-plan.json",
   "human_approvals": 0,
   "historical_transcriptions": 0,
   "examples": [
@@ -453,6 +454,12 @@
       "events": [
         [
           0,
+          1680,
+          36,
+          0
+        ],
+        [
+          0,
           200,
           60,
           1
@@ -498,6 +505,12 @@
           200,
           64,
           1
+        ],
+        [
+          1920,
+          1680,
+          43,
+          0
         ],
         [
           1920,
@@ -549,6 +562,12 @@
         ],
         [
           3840,
+          1680,
+          45,
+          0
+        ],
+        [
+          3840,
           200,
           57,
           1
@@ -594,6 +613,12 @@
           200,
           60,
           1
+        ],
+        [
+          5760,
+          1680,
+          41,
+          0
         ],
         [
           5760,
@@ -645,12 +670,12 @@
         ]
       ],
       "seconds": 9.6,
-      "peak": 0.054556386859487126,
-      "wav_sha256": "369df9274dea3501fde36a1cbf3215a2d130733d863d91be5570ebe02711fe9e",
+      "peak": 0.10460455951451239,
+      "wav_sha256": "ffc9ac4859372a4190dfc4c49d4fca1cbb755aa2fc73e6809f057717f78b4a25",
       "human_listen_play_approval": "AUSSTEHEND",
       "historical_transcription": false,
       "synthesis": "sinusoidal pitch control; no acoustic piano or style simulation",
-      "midi_sha256": "a19ed090c5460bf839c018df226d57e04a37b72a4470351feada1b3ca7cf46f9"
+      "midi_sha256": "99c28f92d96931375c2c51e94dd06a19cd96cf3876f9c593ac726ffacef5a727"
     },
     {
       "id": "ORACLE_GLOBAL_MIN",
@@ -832,6 +857,5 @@
       }
     ],
     "audio_listened_by_human": false
-  },
-  "source_plan_snapshot": "source-plan.json"
+  }
 }

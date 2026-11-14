@@ -881,7 +881,7 @@
     },
     {
       "category": "PLAY_REVIEW",
-      "review_note": "P07-Arpeggierung ist eine übertragbare Übung; konkrete vier Akkorde, Register und Spielprobe fehlen für diese Zuordnung. Neues eigenes 32-Ereignis-Arpeggiobeispiel für vier Akkorde bei festem Raster; keine historische Aufnahme oder Spielabnahme.",
+      "review_note": "P07-Arpeggierung ist eine übertragbare Übung; konkrete vier Akkorde, Register und Spielprobe fehlen für diese Zuordnung. Neues eigenes Zweihandbeispiel: 32 RH-Achtel und vier ausdrücklich notierte LH-Grundtöne über vier Akkorde. Keine historische Aufnahme oder Spielabnahme.",
       "relation_id": "REL-002",
       "edge": {
         "source_id": "PROG-001",
@@ -3536,16 +3536,24 @@
               "C4",
               "A3"
             ]
+          ],
+          "lh": [
+            "C2",
+            "G2",
+            "A2",
+            "F2"
           ]
         }
       },
       "expected": {
-        "events": 32,
+        "events": 36,
         "total_ticks": 7680,
         "last_onset": 7440,
-        "all_chord_tones": true
+        "all_chord_tones": true,
+        "rh_events": 32,
+        "lh_events": 4
       },
-      "scope": "Neues eigenes 32-Ereignis-Arpeggiobeispiel für vier Akkorde bei festem Raster; keine historische Aufnahme oder Spielabnahme."
+      "scope": "Neues eigenes Zweihandbeispiel: 32 RH-Achtel und vier ausdrücklich notierte LH-Grundtöne über vier Akkorde. Keine historische Aufnahme oder Spielabnahme."
     },
     {
       "id": "CHARLESTON_UKG_OVERLAY",

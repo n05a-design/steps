@@ -12,6 +12,9 @@ class GraphReviewStimuliTests(unittest.TestCase):
     def test_explicit_comparison_uses_identical_source_and_distinct_targets(self):
         cases=render.examples()
         self.assertEqual(len(cases),7)
+        arp=cases['P07_COMPLETE_ARPEGGIO']['events']
+        self.assertEqual(sum(e[3]==0 for e in arp),4)
+        self.assertEqual(sum(e[3]==1 for e in arp),32)
         a,b=cases['ORACLE_GLOBAL_MIN'],cases['ORACLE_DROP2_MIN']
         self.assertEqual(a['events'][:4],b['events'][:4])
         self.assertNotEqual(a['events'][4:],b['events'][4:])

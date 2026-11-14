@@ -120,10 +120,13 @@ def calculate(spec):
                 'keyboard_snare':sorted(set(parts['keyboard'])&set(parts['snare']))}
     if kind=='arpeggio_events':
         chords=get_progression(data['progression']).chord_definitions
-        if len(chords)!=len(data['rh']) or any(len(ns)!=8 for ns in data['rh']):raise ValueError('Eight eighths per chord required')
-        for chord,notes in zip(chords,data['rh']):
+        if len(chords)!=len(data['rh']) or len(chords)!=len(data['lh']) or any(len(ns)!=8 for ns in data['rh']):
+            raise ValueError('Explicit LH and eight RH eighths per chord required')
+        for chord,left,notes in zip(chords,data['lh'],data['rh']):
             if not {midi(n)%12 for n in notes}<=chord.pitch_class_set:raise ValueError('Foreign arpeggio note')
-        return {'events':8*len(chords),'total_ticks':len(chords)*4*data['ppq'],
+            if (midi(left)%12!=int(chord.root.pitch_class) or midi(left)>=min(map(midi,notes))):
+                raise ValueError('LH must explicitly carry the root below the RH')
+        return {'events':9*len(chords),'rh_events':8*len(chords),'lh_events':len(chords),'total_ticks':len(chords)*4*data['ppq'],
                 'last_onset':(len(chords)*8-1)*data['ppq']//2,'all_chord_tones':True}
     if kind=='source_bounded_swing':
         from scripts.audit_golden_remaining import calculate as bounded

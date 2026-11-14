@@ -27,6 +27,7 @@ def examples():
         result[ident]={'probe_ids':[ident],'ticks':1920*len(chords),'events':events}
     data=probes['P07_COMPLETE_ARPEGGIO']['input']['data'];events=[]
     for bar,notes in enumerate(data['rh']):
+        events.append([bar*1920,1680,parse_spelling(data['lh'][bar],'INT').midi_number,0])
         events += [[bar*1920+i*240,200,parse_spelling(n,'INT').midi_number,1] for i,n in enumerate(notes)]
     result['P07_COMPLETE_ARPEGGIO']={'probe_ids':['P07_COMPLETE_ARPEGGIO'],'ticks':7680,'events':events}
     for name,target in [('ORACLE_GLOBAL_MIN',[62,65,67,71]),('ORACLE_DROP2_MIN',[59,65,67,74])]:
