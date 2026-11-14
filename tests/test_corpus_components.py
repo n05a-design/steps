@@ -86,5 +86,16 @@ class CorpusComponentTests(unittest.TestCase):
             d=json.loads(p.read_text(encoding='utf8'));mutation(d)
             with self.assertRaises(ValueError):c.validate_original_search(d)
 
+    def test_new_garcia_article_does_not_replace_old_book_or_cabral(self):
+        path=c.ROOT/'docs/audit/fable-5.2/CDR019_GARCIA_2023_QUELLENBEFUND_2026-11-14.json'
+        d=json.loads(path.read_text(encoding='utf8'));c.validate_garcia_followup(d)
+        d['requested_original_fulltexts_verified']=1
+        with self.assertRaises(ValueError):c.validate_garcia_followup(d)
+
+    def test_visual_scope_cannot_silently_expand_to_whole_source(self):
+        path=c.ROOT/'docs/audit/fable-5.2/CDR019_GARCIA_2023_QUELLENBEFUND_2026-11-14.json'
+        d=json.loads(path.read_text(encoding='utf8'));d['source']['visually_checked_pdf_pages']=list(range(1,16))
+        with self.assertRaises(ValueError):c.validate_garcia_followup(d)
+
 
 if __name__=='__main__':unittest.main()

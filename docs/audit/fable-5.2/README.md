@@ -35,3 +35,5 @@ Den aktuellen Prüfstand liefert der [Benchmark](../../../knowledge/benchmark/RE
 [Fortsetzung nach PR #59: Originalsuche und weitere Korpuskomponenten](ORIGINALQUELLEN_KORPUS_FORTSETZUNG_2026-11-14.md): 890 Billboard-Harmonieannotationen und664 versionierte Genre-/Tempoeinträge tatsächlich ausgewertet; Quellenoriginale und sämtliche14 Korpusbehauptungen bleiben ohne Vollfreigabe.
 
 [Pilot-Event nach schnellem externem Merge](PILOT_PR_EVENT_RACE_2026-11-14.md): fehlendes flüchtiges Merge-Ref durch exakt identitätsgebundenen abgeschlossenen Merge prüfen; historischer roter Lauf bleibt erhalten.
+
+[Fortsetzung nach PR #61: gemeinsame RWC-Zeitachsen und Garcia2023](RWC_GARCIA_FORTSETZUNG_2026-11-14.md): 100 gemeinsam identifizierte RWC-Harmonie-/Beat-/MIDI-Stücke,18 Swing-Chart-/Drum-Takes, deklarierte rhythmische Teilmuster und neuer begrenzter Autorenbeleg. Alle14 Korpusbehauptungen und ältere Originalseiten bleiben offen.

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "source_archive_sha256": "27bc4da9c8730b143b2dacb4495c92bb45a00e0cf7d7b385d51203fc6055d534",
+  "records": [
+    {
+      "recording_id": "RWC_P084",
+      "positive_note_on_events": 2134,
+      "window_counts_checked": 5,
+      "midi_time_routes_agree": true,
+      "window_bisect_vs_direct_count": "PASS"
+    },
+    {
+      "recording_id": "RWC_P001",
+      "positive_note_on_events": 2556,
+      "window_counts_checked": 6,
+      "midi_time_routes_agree": true,
+      "window_bisect_vs_direct_count": "PASS"
+    },
+    {
+      "recording_id": "RWC_P002",
+      "positive_note_on_events": 683,
+      "window_counts_checked": 10,
+      "midi_time_routes_agree": true,
+      "window_bisect_vs_direct_count": "PASS"
+    }
+  ],
+  "all_complete_4_4_bars": 10744,
+  "all_noteclass_subset_bars": {
+    "kick_snare_subset": 3589,
+    "closed_hat_eighth_subset": 2153,
+    "combined_subset": 1095
+  },
+  "method": "Manual tick/tempo accumulation compared to Mido seconds iterator; parser is shared. Stored interval counts checked by direct scan instead of bisect.",
+  "human_approval": "AUSSTEHEND",
+  "audio_alignment_independently_verified": false,
+  "exact_drum_pattern_verified": false
+}
