@@ -1,5 +1,11 @@
-# research/gaps
+# Offene Evidenz und Fachabnahmen
 
-Offene Evidenz, widersprüchliche Stände und Daten-/Produktlücken.
+Hier werden widersprüchliche Stände, fehlende Fundstellen und ausstehende Abnahmen dokumentiert.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Offene Nachweise](OPEN_GAPS.md) | Befunde, Abhängigkeiten und nächste Gegenproben. |
+| [Fable-Fachnachweise](FABLE_FACHNACHWEISE.md) | Fachbeispiele, Coach-Entwürfe und Archivzuordnungen. |
+| [Audit-Maßnahmen](../../docs/audit/fable-5.2/STEPS_FABLE_5_2_MASSNAHMENPLAN.md) | Arbeitsplan und Abnahmekriterien. |
+
+[Zur Bereichsübersicht](../README.md)

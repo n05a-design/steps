@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from datetime import datetime, timezone
 import json
 from pathlib import Path
 import shutil
@@ -113,7 +114,7 @@ class PilotPublicationTests(unittest.TestCase):
             ident: {
                 "fingerprint": claim.fingerprint,
                 "reviewer": "fixture-reviewer",
-                "reviewed_on": "2026-11-12",
+                "reviewed_on": datetime.now(timezone.utc).date().isoformat(),
                 "evidence_url": "https://github.com/n05a-design/steps/pull/11#pullrequestreview-1",
             }
             for ident, claim in self.claims.items()
@@ -207,6 +208,28 @@ class PilotPublicationTests(unittest.TestCase):
         self.records["PROG-001-HARMONY"]["evidence_url"] = "https://example.org/review"
         self.save_approvals()
         self.assert_blocked("expected a permalink")
+
+    def test_valid_fingerprint_cannot_publish_inconsistent_music(self):
+        for field, replacement, reason in (
+            ("chords", "Dm7 - G7 - Fmaj7", "Roman numerals disagree"),
+            ("voice_path", "C#4", "invalid music data"),
+            ("voice_path", "E4", "outside its chord"),
+        ):
+            with self.subTest(field=field, replacement=replacement):
+                doc = json.loads((ROOT / CANDIDATES).read_text(encoding="utf-8"))
+                example = doc["examples"][1]
+                if field == "voice_path":
+                    example["claims"][1]["voice_path"][0]["note"] = replacement
+                else:
+                    example[field] = replacement
+                self.save(CANDIDATES, doc)
+                command = ("-m", "src.steps.progression.reviewed", "--review-manifest")
+                manifest = self.assert_entry_succeeds(command)
+                for line in manifest.splitlines()[1:]:
+                    ident, _, _, fingerprint = line.split("\t")
+                    self.records[ident]["fingerprint"] = fingerprint
+                self.save_approvals()
+                self.assert_blocked(reason)
 
     def test_changed_source_locator_invalidates_the_approval(self):
         doc = self.load(CANDIDATES)

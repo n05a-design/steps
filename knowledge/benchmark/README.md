@@ -1,5 +1,15 @@
 # STEPS-Wissensbenchmark
 
+Der Nachtstand umfasst 119 Fälle: 92 PASS, 0 FAIL und 27 PENDING.
+23 neue Modellproben sind technische Teilnachweise. Keine menschliche
+Fachabnahme wurde ergänzt. Die sechs CSS-Fälle verlangen ausdrücklich
+Bundle-Rechte und dauerhafte Archivzuordnung. Der vollständige Secret-Scan
+hat zusätzlich sechs bislang verdeckte historische Funde; grüne
+Benchmarkberechnungen heben diesen Sicherheitsbefund nicht auf.
+[Nachtbericht](../../docs/audit/fable-5.2/NACHT_AUDIT_2026-11-14.md).
+
+Nach dem [Windows-Originalfund](../../docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md) prüft `KB-GRAPH-ONTOLOGY-RECOVERY` die Bytes und exakten Zeilenanker von 41 historischen Definitionen. Dieser technische Herkunftsnachweis ist keine Fachabnahme. Die manuelle Graphaufgabe bleibt offen; sechs Definitionen und sämtliche fehlenden Kantenabnahmen sind weiter zu klären.
+
 [Versionierte Abdeckung](COVERAGE.csv) · [Fallregister mit Sollantworten](cases.json)
 · [Pilot-Abnahmeliste](PILOT_ABNAHME.md) · [Domänenstichproben](THEMENSTICHPROBEN.md)
 
@@ -50,7 +60,20 @@ Claim-ID und Fingerabdruck in den Draft-PR. [Freigabeablauf](../concepts/progres
   Inhalt passenden Fachabnahme. **Stichprobe** nennt einen gegen unabhängiges
   Soll oder eine konkrete Quelle geprüften Teilaspekt. **Nicht geprüft**
   umfasst formale Prüfungen, reine Inventarisierung und ausstehende Abnahmen.
+- Bei mehreren Prüfungen je Klaviermodul, Drum-Pattern, Forschungsclaim oder
+  Progressionsposition hat ein fehlgeschlagener Fall Vorrang. Eine Position
+  wertet ihren Einzelfall und den Fall der ganzen Progression gemeinsam aus. Ein bestandener Teilcheck zählt bei
+  ausstehender Abnahme als Stichprobe. Die Detaildatei nennt die Anzahl
+  je Status und führt die offenen Schritte auf.
 - Die Detaildatei erfasst alle Einträge der aktiven Register und Kataloge.
+  Graphknoten können ergänzende Fundstellen besitzen; Quellenbelege pro
+  Kante stehen in `knowledge/relations/RELATION_EVIDENCE.csv`.
+  Eine bestandene Gegenprobe mit `COUNTEREXAMPLE` bestätigt eine
+  Beanstandung der ursprünglichen Graphaussage: Ihr Matrixstatus bleibt
+  FAIL. Andere bestandene Graphproben zählen nur als Stichprobe.
+  `PROJECT_EXAMPLE_SAMPLE` belegt ausschließlich das benannte STEPS-
+  Beispiel. `GRAPH_CORRECTIONS.json` hält präzise Korrekturvorschläge
+  ohne Produktionsfreigabe fest; sie ersetzen keine historische Kante.
   Die automatisierte Prüfung umfasst Eindeutigkeit, Pflichtfelder,
   bibliografische Verweise bzw. lokale Pfade, referenzierte IDs, Graph-Endpunkte,
   Akkordaliase und die Konsistenz jeder Progressionsposition. Nicht auflösbare
@@ -68,6 +91,16 @@ Claim-ID und Fingerabdruck in den Draft-PR. [Freigabeablauf](../concepts/progres
 
 ## Hör-, Spiel- und Didaktikabnahme
 
+Aus dem sauberen Checkout lassen sich leere Formulare für den gewählten
+Git-Stand und die aktuellen Fallfingerabdrücke erzeugen. Ein
+unbewertetes Kriterium ist `null`. Nach der Prüfung je Kriterium
+`true` oder `false` eintragen.
+
+```sh
+python -B scripts/run_knowledge_benchmark.py --scope sample --manual-template /tmp/steps-hoer-spiel.json
+python -B scripts/run_knowledge_benchmark.py --scope coach --coach-template /tmp/steps-coach.json
+```
+
 Der Bericht nennt pro offener manueller Aufgabe die konkrete nächste Probe
 und die Pflichtkriterien. Für `--manual-assessment` eine JSON-Datei nach
 Fall-ID indizieren. Jeder Eintrag enthält `fingerprint` aus dem Ergebnis,
@@ -75,6 +108,8 @@ Fall-ID indizieren. Jeder Eintrag enthält `fingerprint` aus dem Ergebnis,
 `observations` und `criteria`. `criteria` bildet jeden erwarteten
 Pflichtbestandteil auf einen booleschen Befund ab. Stale Versionen bleiben
 offen. Fehlende oder beanstandete Pflichtbestandteile blockieren den Fall.
+
+[Hörmaterial und Spielaufgabe für PAT-031, PROG-001 und P02](../../docs/audit/fable-5.2/STEPS_FABLE_5_2_ABNAHMEPROBEN.md)
 
 ## Harmony Coach
 

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261110T2330_Phase4_Master\\MUSIC_KNOWLEDGE_ONTOLOGY.md",
+      "archive_path": "archive/audit-history/ontology-recovery-2026-11-14/originals/20261110T2330_Phase4_Master/MUSIC_KNOWLEDGE_ONTOLOGY.md",
+      "bytes": 15903,
+      "sha256": "27194b90681b23cc6b6ee6f49d4f2240190b4e9ec3cf57086accee7c404d54cc",
+      "classification": "PROJECT_GENERATED_HISTORICAL_RECORD",
+      "fachabnahme": "AUSSTEHEND"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261110T2330_Phase4_Master\\GENRE_HARMONY_AND_DRUM_ATLAS.md",
+      "archive_path": "archive/audit-history/ontology-recovery-2026-11-14/originals/20261110T2330_Phase4_Master/GENRE_HARMONY_AND_DRUM_ATLAS.md",
+      "bytes": 5632,
+      "sha256": "0ec3d4caa57ff332c49ed7c56720ce4afdda6e6a2f23856ce860f62902173138",
+      "classification": "PROJECT_GENERATED_HISTORICAL_RECORD",
+      "fachabnahme": "AUSSTEHEND"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261110T2330_Phase4_Master\\PIANO_LEARNING_PATH.md",
+      "archive_path": "archive/audit-history/ontology-recovery-2026-11-14/originals/20261110T2330_Phase4_Master/PIANO_LEARNING_PATH.md",
+      "bytes": 4635,
+      "sha256": "f04f3a0dab9c481b5c6b26fd3302817a3bac6fe55f2ddcf34b6eef4be7b15e76",
+      "classification": "PROJECT_GENERATED_HISTORICAL_RECORD",
+      "fachabnahme": "AUSSTEHEND"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0005_Phase4_6\\MUSIC_KNOWLEDGE_CORRECTIONS.md",
+      "archive_path": "archive/audit-history/ontology-recovery-2026-11-14/originals/20261111T0005_Phase4_6/MUSIC_KNOWLEDGE_CORRECTIONS.md",
+      "bytes": 11085,
+      "sha256": "b75bfd8d47516e43ac67b55e051674661b33a9074966ba8e9b1f4186ebd60664",
+      "classification": "PROJECT_GENERATED_HISTORICAL_RECORD",
+      "fachabnahme": "AUSSTEHEND"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0025_Phase4_7\\PIANO_LEARNING_MODULES.md",
+      "archive_path": "archive/audit-history/ontology-recovery-2026-11-14/originals/20261111T0025_Phase4_7/PIANO_LEARNING_MODULES.md",
+      "bytes": 5086,
+      "sha256": "6c536a2af4b92cb45ecd5d6b02451980d4a2449abce4416f57c68d397aba4361",
+      "classification": "PROJECT_GENERATED_HISTORICAL_RECORD",
+      "fachabnahme": "AUSSTEHEND"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0040_Phase4_8\\PIANO_LEARNING_MODULES.md",
+      "archive_path": "archive/audit-history/ontology-recovery-2026-11-14/originals/20261111T0040_Phase4_8/PIANO_LEARNING_MODULES.md",
+      "bytes": 10034,
+      "sha256": "4c1d808b63078f28b8b74e589e1c6191e669acdf87945f49d072881742a2d89a",
+      "classification": "PROJECT_GENERATED_HISTORICAL_RECORD",
+      "fachabnahme": "AUSSTEHEND"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0040_Phase4_8\\MUSIC_KNOWLEDGE_CORRECTIONS.md",
+      "archive_path": "archive/audit-history/ontology-recovery-2026-11-14/originals/20261111T0040_Phase4_8/MUSIC_KNOWLEDGE_CORRECTIONS.md",
+      "bytes": 6325,
+      "sha256": "e487ec8b6a01d725df93ca38fde3b3999917a1f600932995e337b42538ca7cb4",
+      "classification": "PROJECT_GENERATED_HISTORICAL_RECORD",
+      "fachabnahme": "AUSSTEHEND"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0105_Phase4_9\\MUSIC_KNOWLEDGE_ONTOLOGY.md",
+      "archive_path": "archive/audit-history/ontology-recovery-2026-11-14/originals/20261111T0105_Phase4_9/MUSIC_KNOWLEDGE_ONTOLOGY.md",
+      "bytes": 5468,
+      "sha256": "08701f2a883e4cf7a63dd73b4faad977b2e67636f30b68dadc49bec0af6c0bb1",
+      "classification": "PROJECT_GENERATED_HISTORICAL_RECORD",
+      "fachabnahme": "AUSSTEHEND"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0130_Phase4_10\\GENRE_RESEARCH_LATIN.md",
+      "archive_path": "archive/audit-history/ontology-recovery-2026-11-14/originals/20261111T0130_Phase4_10/GENRE_RESEARCH_LATIN.md",
+      "bytes": 4928,
+      "sha256": "cafec74f944168387b3a5205caa0459f6a95650fdb43f7ea2f6578d604bc6cb3",
+      "classification": "PROJECT_GENERATED_HISTORICAL_RECORD",
+      "fachabnahme": "AUSSTEHEND"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0130_Phase4_10\\PIANO_LEARNING_MODULE_P14.md",
+      "archive_path": "archive/audit-history/ontology-recovery-2026-11-14/originals/20261111T0130_Phase4_10/PIANO_LEARNING_MODULE_P14.md",
+      "bytes": 3036,
+      "sha256": "cc4ae952ee30b0b88b582fd0096fcb13575c7c8ae955557a41bf985adaa297ce",
+      "classification": "PROJECT_GENERATED_HISTORICAL_RECORD",
+      "fachabnahme": "AUSSTEHEND"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T1000_Phase4_14\\DOMAIN_ONTOLOGY_INTEGRITY.md",
+      "archive_path": "archive/audit-history/ontology-recovery-2026-11-14/originals/20261111T1000_Phase4_14/DOMAIN_ONTOLOGY_INTEGRITY.md",
+      "bytes": 4204,
+      "sha256": "c89b444a66e6dafe36e93d292d79c28b297ef3e80aade208de9d38acedd1a0f7",
+      "classification": "PROJECT_GENERATED_HISTORICAL_RECORD",
+      "fachabnahme": "AUSSTEHEND"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0800_Phase4_12\\build_coverage_and_matrices.py",
+      "archive_path": "archive/audit-history/ontology-recovery-2026-11-14/originals/20261111T0800_Phase4_12/build_coverage_and_matrices.py",
+      "bytes": 19024,
+      "sha256": "1b53fcc4191e4f4ba2fb17baf85aba16e2c888d12d326100206e327fb3095d28",
+      "classification": "PROJECT_GENERATED_HISTORICAL_RECORD",
+      "fachabnahme": "AUSSTEHEND"
+    }
+  ]
+}

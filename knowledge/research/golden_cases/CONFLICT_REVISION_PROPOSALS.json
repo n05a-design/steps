@@ -1,0 +1,551 @@
+{
+  "schema_version": 1,
+  "base_main": "9afaf33eaeec332a3d19b4e30d05b1902234936f",
+  "revisions": [
+    {
+      "historical_case_id": "REF-0016",
+      "original_sha256": "74488f42d63b3915dab01e19645f9195924ec36880af2c11c7e6d7acd5b37a32",
+      "historical_status": "CONFLICT_RETAINED",
+      "review_status": "REVIEW_REQUIRED",
+      "production_use_allowed": false,
+      "human_approval": "AUSSTEHEND",
+      "decision_required": "Polychord, Slashbass und ursprüngliche Moll-Eingabe als getrennte Fallidentitäten reviewen; CDR-010 bleibt FAIL.",
+      "sources": [
+        {
+          "path": "knowledge/research/golden_cases/golden_reference_cases.json",
+          "sha256": "59aeefc9a592ff585b15cb7139beb294e01f36fefab738239f741909b2e0f5dc",
+          "hash_mode": "git_text_lf"
+        }
+      ],
+      "variants": [
+        {
+          "id": "REF-0016/PROPOSAL-1",
+          "title": "D-Dur-Dreiklang über C-Dur-Dreiklang",
+          "scope": "Neuer expliziter Zweidreiklangfall; ersetzt keine historische Eingabe.",
+          "model": {
+            "kind": "union",
+            "input": {
+              "chords": [
+                "D",
+                "C"
+              ]
+            },
+            "expected": [
+              0,
+              2,
+              4,
+              6,
+              7,
+              9
+            ]
+          }
+        },
+        {
+          "id": "REF-0016/PROPOSAL-2",
+          "title": "D-Dur mit zusätzlichem C-Bass",
+          "scope": "Slash-Symbol D/C bedeutet keinen vollständigen C-Dur-Unterdreiklang.",
+          "model": {
+            "kind": "chord_identity",
+            "input": {
+              "symbol": "D/C"
+            },
+            "expected": {
+              "chord_pcs": [
+                2,
+                6,
+                9
+              ],
+              "bass_pc": 0
+            }
+          }
+        },
+        {
+          "id": "REF-0016/PROPOSAL-3",
+          "title": "C-Moll als tatsächliche ursprüngliche Akkordqualität",
+          "scope": "Gegenprobe zum Input root=C, quality=Minor; kein Polychord.",
+          "model": {
+            "kind": "chord_identity",
+            "input": {
+              "symbol": "Cm"
+            },
+            "expected": {
+              "chord_pcs": [
+                0,
+                3,
+                7
+              ],
+              "bass_pc": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "historical_case_id": "REF-0017",
+      "original_sha256": "c8463c21fcb9f4d382a8a763440f3a0bc8afebf667898ec9ef19fc09a8b0fb5e",
+      "historical_status": "CONFLICT_RETAINED",
+      "review_status": "REVIEW_REQUIRED",
+      "production_use_allowed": false,
+      "human_approval": "AUSSTEHEND",
+      "decision_required": "Zwischen Dreiklangkadenz und Dominantseptakkordkadenz entscheiden; zwei präzise Varianten statt stiller Änderung.",
+      "sources": [
+        {
+          "path": "knowledge/research/golden_cases/golden_reference_cases.json",
+          "sha256": "59aeefc9a592ff585b15cb7139beb294e01f36fefab738239f741909b2e0f5dc",
+          "hash_mode": "git_text_lf"
+        }
+      ],
+      "variants": [
+        {
+          "id": "REF-0017/PROPOSAL-1",
+          "title": "V nach I in C",
+          "scope": "Originale Stufeneingabe ohne zusätzliche Septime.",
+          "model": {
+            "kind": "roman",
+            "input": {
+              "key": "C",
+              "degrees": [
+                "V",
+                "I"
+              ]
+            },
+            "expected": [
+              "G",
+              "C"
+            ]
+          }
+        },
+        {
+          "id": "REF-0017/PROPOSAL-2",
+          "title": "V7 nach I in C",
+          "scope": "Neue explizite Septakkordeingabe passend zur alten G7-Erwartung.",
+          "model": {
+            "kind": "roman",
+            "input": {
+              "key": "C",
+              "degrees": [
+                "V7",
+                "I"
+              ]
+            },
+            "expected": [
+              "G7",
+              "C"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "historical_case_id": "REF-0051",
+      "original_sha256": "1adbed655033673ec29eae754c5e1867bffaab5b8cf968c2068e4769c88a00ca",
+      "historical_status": "CONFLICT_RETAINED",
+      "review_status": "REVIEW_REQUIRED",
+      "production_use_allowed": false,
+      "human_approval": "AUSSTEHEND",
+      "decision_required": "Vollständige viergliedrige Linie und zulässigen zweigliedrigen Ausschnitt eindeutig betiteln und getrennt freigeben.",
+      "sources": [
+        {
+          "path": "knowledge/research/golden_cases/golden_reference_cases.json",
+          "sha256": "59aeefc9a592ff585b15cb7139beb294e01f36fefab738239f741909b2e0f5dc",
+          "hash_mode": "git_text_lf"
+        }
+      ],
+      "variants": [
+        {
+          "id": "REF-0051/PROPOSAL-1",
+          "title": "Vollständige innere Linie Am–Am(maj7)–Am7–Am6",
+          "scope": "Neu festgelegtes Register 4, vollständige viergliedrige mögliche Stimme.",
+          "model": {
+            "kind": "voice_path",
+            "input": {
+              "chords": [
+                "Am",
+                "Am(maj7)",
+                "Am7",
+                "Am6"
+              ],
+              "notes": [
+                "A4",
+                "G#4",
+                "G4",
+                "F#4"
+              ]
+            },
+            "expected": {
+              "pcs": [
+                9,
+                8,
+                7,
+                6
+              ],
+              "motions": [
+                -1,
+                -1,
+                -1
+              ]
+            }
+          }
+        },
+        {
+          "id": "REF-0051/PROPOSAL-2",
+          "title": "Ausgelassener Zwischenakkord: Ausschnitt Am nach Am7",
+          "scope": "A nach G ist nur ein Ausschnitt; nicht das vollständige ursprüngliche Cliché.",
+          "model": {
+            "kind": "voice_path",
+            "input": {
+              "chords": [
+                "Am",
+                "Am7"
+              ],
+              "notes": [
+                "A4",
+                "G4"
+              ]
+            },
+            "expected": {
+              "pcs": [
+                9,
+                7
+              ],
+              "motions": [
+                -2
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "historical_case_id": "REF-0052",
+      "original_sha256": "799f812b5c905d34fce237815ab3b6a1b7771e1beb671c251b0415f1ded8098b",
+      "historical_status": "CONFLICT_RETAINED",
+      "review_status": "REVIEW_REQUIRED",
+      "production_use_allowed": false,
+      "human_approval": "AUSSTEHEND",
+      "decision_required": "Neo-Soul-Titel und Andalusische Eingabe in getrennten Fallversionen führen; keine automatische Werk-/Stilabnahme.",
+      "sources": [
+        {
+          "path": "knowledge/research/golden_cases/golden_reference_cases.json",
+          "sha256": "59aeefc9a592ff585b15cb7139beb294e01f36fefab738239f741909b2e0f5dc",
+          "hash_mode": "git_text_lf"
+        }
+      ],
+      "variants": [
+        {
+          "id": "REF-0052/PROPOSAL-1",
+          "title": "Explizite Akkordfolge Fm7–Bb7–Cmaj7–Abmaj7",
+          "scope": "Eigene typisierte Folge nach dem historischen Titel; keine Transkriptionsbehauptung.",
+          "model": {
+            "kind": "chord_sequence",
+            "input": {
+              "symbols": [
+                "Fm7",
+                "Bb7",
+                "Cmaj7",
+                "Abmaj7"
+              ]
+            },
+            "expected": [
+              [
+                0,
+                3,
+                5,
+                8
+              ],
+              [
+                2,
+                5,
+                8,
+                10
+              ],
+              [
+                0,
+                4,
+                7,
+                11
+              ],
+              [
+                0,
+                3,
+                7,
+                8
+              ]
+            ]
+          }
+        },
+        {
+          "id": "REF-0052/PROPOSAL-2",
+          "title": "Explizite Andalusische Übungsfolge Am–G–F–E7",
+          "scope": "Eigene typisierte Folge nach ursprünglicher Eingabe/Erwartung; keine Gleichsetzung mit Neo-Soul-Titel.",
+          "model": {
+            "kind": "chord_sequence",
+            "input": {
+              "symbols": [
+                "Am",
+                "G",
+                "F",
+                "E7"
+              ]
+            },
+            "expected": [
+              [
+                0,
+                4,
+                9
+              ],
+              [
+                2,
+                7,
+                11
+              ],
+              [
+                0,
+                5,
+                9
+              ],
+              [
+                2,
+                4,
+                8,
+                11
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "historical_case_id": "REF-0062",
+      "original_sha256": "80cd88d770a42eee50b85c469561f04a7a0d43a4074332929b8b4cb2626ba40b",
+      "historical_status": "CONFLICT_RETAINED",
+      "review_status": "REVIEW_REQUIRED",
+      "production_use_allowed": false,
+      "human_approval": "AUSSTEHEND",
+      "decision_required": "PAT-021-Fassungen über Quellenhash und dokumentierten Umfang unterscheiden; alten Zweitaktanspruch nicht durch erfundene zweite Takte vervollständigen.",
+      "sources": [
+        {
+          "path": "knowledge/research/golden_cases/golden_reference_cases.json",
+          "sha256": "59aeefc9a592ff585b15cb7139beb294e01f36fefab738239f741909b2e0f5dc",
+          "hash_mode": "git_text_lf"
+        },
+        {
+          "path": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261111T0040_Phase4_8/GENRE_RESEARCH_DNB.md",
+          "sha256": "95ccbec285e03a7abdfcfc38376d64bbe330332d5b16ef182e672633af35b524",
+          "hash_mode": "bytes"
+        },
+        {
+          "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+          "sha256": "ffb0071f19f0f70f486371b7e1ed80de847ba70c3e31086f221174bf5676e512",
+          "hash_mode": "git_text_lf"
+        }
+      ],
+      "variants": [
+        {
+          "id": "REF-0062/PROPOSAL-1",
+          "title": "PAT-021 – historische Fassung Phase4.8",
+          "scope": "Direkte Extraktion des ausdrücklich als Auszug bezeichneten ersten Takts, kein vollständiger Amen-Transkriptionsnachweis.",
+          "model": {
+            "kind": "historical_dnb",
+            "input": {
+              "source": {
+                "path": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261111T0040_Phase4_8/GENRE_RESEARCH_DNB.md",
+                "sha256": "95ccbec285e03a7abdfcfc38376d64bbe330332d5b16ef182e672633af35b524",
+                "hash_mode": "bytes"
+              },
+              "pattern": "PAT-021"
+            },
+            "expected": {
+              "bpm": 174,
+              "kicks": [
+                0,
+                360,
+                1200,
+                1800
+              ],
+              "ghosts": [
+                120,
+                840,
+                1080,
+                1320
+              ],
+              "documented_bars": 1
+            }
+          }
+        },
+        {
+          "id": "REF-0062/PROPOSAL-2",
+          "title": "PAT-021 – aktuelle Katalogzusammenfassung",
+          "scope": "Direkte Extraktion der heutigen Kurzbeschreibung; fehlende Dauern/Velocities bleiben offen.",
+          "model": {
+            "kind": "current_dnb",
+            "input": {
+              "source": {
+                "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+                "sha256": "ffb0071f19f0f70f486371b7e1ed80de847ba70c3e31086f221174bf5676e512",
+                "hash_mode": "git_text_lf"
+              },
+              "pattern": "PAT-021"
+            },
+            "expected": {
+              "bpm": 168,
+              "kicks": [
+                0,
+                600,
+                1200,
+                1560
+              ],
+              "ghosts": [
+                360,
+                840,
+                1080
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "historical_case_id": "REF-0063",
+      "original_sha256": "e3a3e41fed512fb4c413d2ca220e1a7a115b6737a8a4904855b7aec26b31bb46",
+      "historical_status": "CONFLICT_RETAINED",
+      "review_status": "REVIEW_REQUIRED",
+      "production_use_allowed": false,
+      "human_approval": "AUSSTEHEND",
+      "decision_required": "174- und 175-BPM-Fassungen getrennt halten. Historische Snare ist hier nicht als GM40 spezifiziert; aktuelle Tabelle nennt ausdrücklich GM40.",
+      "sources": [
+        {
+          "path": "knowledge/research/golden_cases/golden_reference_cases.json",
+          "sha256": "59aeefc9a592ff585b15cb7139beb294e01f36fefab738239f741909b2e0f5dc",
+          "hash_mode": "git_text_lf"
+        },
+        {
+          "path": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261111T0040_Phase4_8/GENRE_RESEARCH_DNB.md",
+          "sha256": "95ccbec285e03a7abdfcfc38376d64bbe330332d5b16ef182e672633af35b524",
+          "hash_mode": "bytes"
+        },
+        {
+          "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+          "sha256": "ffb0071f19f0f70f486371b7e1ed80de847ba70c3e31086f221174bf5676e512",
+          "hash_mode": "git_text_lf"
+        }
+      ],
+      "variants": [
+        {
+          "id": "REF-0063/PROPOSAL-1",
+          "title": "PAT-022 – historische Fassung Phase4.8",
+          "scope": "Kickpositionen für beide ausdrücklich genannten Takte; keine erfundene historische Snare-Notennummer.",
+          "model": {
+            "kind": "historical_dnb",
+            "input": {
+              "source": {
+                "path": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261111T0040_Phase4_8/GENRE_RESEARCH_DNB.md",
+                "sha256": "95ccbec285e03a7abdfcfc38376d64bbe330332d5b16ef182e672633af35b524",
+                "hash_mode": "bytes"
+              },
+              "pattern": "PAT-022"
+            },
+            "expected": {
+              "bpm": 174,
+              "kicks": [
+                0,
+                1200
+              ],
+              "documented_bars": 2
+            }
+          }
+        },
+        {
+          "id": "REF-0063/PROPOSAL-2",
+          "title": "PAT-022 – aktuelle Katalogfassung",
+          "scope": "Kicks aus Zählzeiten 1/3+ bei480PPQ abgeleitet; heutige Snare-GM40 explizit aus Tabelle gelesen.",
+          "model": {
+            "kind": "current_dnb",
+            "input": {
+              "source": {
+                "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+                "sha256": "ffb0071f19f0f70f486371b7e1ed80de847ba70c3e31086f221174bf5676e512",
+                "hash_mode": "git_text_lf"
+              },
+              "pattern": "PAT-022"
+            },
+            "expected": {
+              "bpm": 175,
+              "kicks": [
+                0,
+                1200
+              ],
+              "snare_gm": 40
+            }
+          }
+        }
+      ]
+    },
+    {
+      "historical_case_id": "REF-0073",
+      "original_sha256": "59dc135345a2aaaaa72a3f97502641af748486608002057aff6de5ea07db9a1a",
+      "historical_status": "CONFLICT_RETAINED",
+      "review_status": "REVIEW_REQUIRED",
+      "production_use_allowed": false,
+      "human_approval": "AUSSTEHEND",
+      "decision_required": "RH-grundtonlose Oberstruktur und grundtonhaltigen Gesamtklang getrennt benennen; Handsatz-/Spielabnahme offen.",
+      "sources": [
+        {
+          "path": "knowledge/research/golden_cases/golden_reference_cases.json",
+          "sha256": "59aeefc9a592ff585b15cb7139beb294e01f36fefab738239f741909b2e0f5dc",
+          "hash_mode": "git_text_lf"
+        },
+        {
+          "path": "knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md",
+          "sha256": "2889f84c9e431232f49f1a0f2d44c9e8c55c95dd4ecdab14def928181d8e8601",
+          "hash_mode": "git_text_lf"
+        }
+      ],
+      "variants": [
+        {
+          "id": "REF-0073/PROPOSAL-1",
+          "title": "P12 – rechte Hand ohne D-Grundton",
+          "scope": "RH F4 A4 C5 E5 ist Teilmenge von Dm9 und enthält kein D.",
+          "model": {
+            "kind": "root_presence",
+            "input": {
+              "chord": "Dm9",
+              "notes": [
+                "F4",
+                "A4",
+                "C5",
+                "E5"
+              ]
+            },
+            "expected": {
+              "contains_root": false,
+              "all_chord_tones": true
+            }
+          }
+        },
+        {
+          "id": "REF-0073/PROPOSAL-2",
+          "title": "P12 – Gesamtklang Dm9 mit LH-Grundton",
+          "scope": "D3 in LH plus RH-Oberstruktur; nicht insgesamt rootless.",
+          "model": {
+            "kind": "root_presence",
+            "input": {
+              "chord": "Dm9",
+              "notes": [
+                "D3",
+                "F4",
+                "A4",
+                "C5",
+                "E5"
+              ]
+            },
+            "expected": {
+              "contains_root": true,
+              "all_chord_tones": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

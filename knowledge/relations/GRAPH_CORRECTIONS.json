@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "corrections": [
+    {
+      "historical_relation_id": "CDR-010",
+      "historical_edge": {
+        "source_id": "POLYCHORD_D_OVER_C",
+        "target_id": "C_MAJ13_SHARP11",
+        "relation_type": "EXPRESSES"
+      },
+      "historical_assessment": "FAIL",
+      "replacement": {
+        "source_id": "POLYCHORD_D_OVER_C",
+        "target_id": "C6_9_SHARP11_COLLECTION",
+        "relation_type": "HAS_PITCH_CLASS_COLLECTION",
+        "pitch_classes": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          9
+        ]
+      },
+      "review_status": "REVIEW_REQUIRED",
+      "production_use_allowed": false,
+      "source_url": "https://viva.pressbooks.pub/openmusictheory/chapter/chord-symbols/",
+      "basis": "CLAIM-022 und erwarteter Zweidreiklang von REF-0016 legen das historische Beispiel fest. C6 plus D und Fis liefert exakt dieselben sechs Tonklassen.",
+      "limitation": "Korrekturvorschlag zur expliziten Tonmenge; keine automatische Empfehlung oder menschliche Fachabnahme. Der historische FAIL bleibt sichtbar; C6/9(#11) ist kein neuer Parseralias."
+    }
+  ]
+}

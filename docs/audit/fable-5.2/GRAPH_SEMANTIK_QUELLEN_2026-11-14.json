@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "human_approval": "AUSSTEHEND",
+  "redistribution": "METADATA_AND_OWN_FINDINGS_ONLY",
+  "sources": [
+    {
+      "id": "MMA_96_1_3ED",
+      "document": "MIDI Manufacturers Association, Complete MIDI1.0 Detailed Specification v96.1, third edition, PDF presentation2014",
+      "url": "https://www.freqsound.com/SIRA/MIDI%20Specification.pdf",
+      "publisher_context_url": "https://midi.org/general-midi-level-1",
+      "hosting": "Third-party mirror of primary authored specification; publisher imprint and version inspected, no official byte-hash comparison available.",
+      "sha256": "e08bc18bdd6590af61a847a6bd29e86e98bfbf04d750bc07062ae97062cdfd78",
+      "bytes": 10109522,
+      "pages": 334,
+      "visually_checked_pdf_pages": [
+        133,
+        147,
+        151
+      ],
+      "locator": "SMF printed p.4 (PDF133); General MIDI printed pp.2/6 (PDF147/151), Table3",
+      "status": "PRIMARY_DOCUMENT_SCOPED_VISUAL_CHECK",
+      "finding": "Explizite PPQ/SMPTE-Unterscheidung. GM1-Geräteprofil und Grundbelegung, Kanal10 sowie47 Einträge der Percussion-Grundtabelle. Keine Vollprüfung der334 Seiten oder aller Gerätefunktionen.",
+      "relations": [
+        "CR-025",
+        "CR-028",
+        "REL-028",
+        "CDR-020"
+      ],
+      "rights": "Copyright MMA, all rights reserved; PDF and rendered pages remain local, no redistribution approval."
+    },
+    {
+      "id": "W3C_MUSICXML_PERCUSSION",
+      "url": "https://www.w3.org/2021/06/musicxml40/tutorial/percussion/",
+      "locator": "Multiple Instruments Per Part, midi-instrument example; Staff Lines section",
+      "status": "PRIMARY_SPEC_TEXT_AND_XML_READ",
+      "finding": "Das GM-Beispiel setzt MusicXML-Kanal10 und für Snare midi-unpitched39. Es repräsentiert MIDI-Kanalindex9 und Notennummer38. Darstellung und Wiedergabenummer sind getrennt; einzeiliges Percussion-System ist zulässig.",
+      "relations": [
+        "CR-028",
+        "REL-028",
+        "CDR-020",
+        "CR-004"
+      ],
+      "rights": "Only metadata, own calculations and minimal independent controls are versioned."
+    },
+    {
+      "id": "MIDI_ASSOCIATION_PROFILE",
+      "url": "https://midi.org/general-midi-level-1",
+      "locator": "General MIDI Level1, specification description",
+      "status": "PUBLISHER_SCOPE_TEXT_READ",
+      "finding": "GM1 beschreibt eine Geräteklasse. Daraus folgt kein allgemeiner Kanalzwang für jedes MIDI-Gerät.",
+      "relations": [
+        "CR-028",
+        "REL-028",
+        "CDR-020"
+      ],
+      "rights": "Source reference only."
+    }
+  ]
+}

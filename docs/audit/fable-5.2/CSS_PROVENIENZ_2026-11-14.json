@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "tree": "5f1dea83c437aa54267e5f2ca9259a196f141852",
+  "scope": "byte identity and saved/live delivery chain; bundle rights and human approval unreviewed",
+  "counts": {
+    "MATCH": 6
+  },
+  "results": [
+    {
+      "file_id": "F00412",
+      "path": "research/STEPS_Bibliothek/ANTI-MASS_ From Uganda into the Unknown _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css",
+      "expected_size": 63332,
+      "expected_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "status": "MATCH",
+      "blob": "a1c1bd8389455e29e6124186a9a7108ca6c56fad",
+      "observed_size": 63332,
+      "observed_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "saved_embed_witnesses": [
+        {
+          "path": "research/STEPS_Bibliothek/ANTI-MASS_ From Uganda into the Unknown _ Ableton_files/saved_resource(2).html",
+          "blob": "32b41e44455aea82feb300c4816570a466a2e615",
+          "sha256": "893221781f6d5f6ddb28f6f2b458f83d25d10759599679728503c42f6d2e35c6",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1241782241/size=small/bgcol=ffffff/linkcol=0687f5/track=3628634061/transparent=true/"
+        },
+        {
+          "path": "research/STEPS_Bibliothek/ANTI-MASS_ From Uganda into the Unknown _ Ableton_files/saved_resource(3).html",
+          "blob": "fa286d63b8fcdb520392d5db142b5453db8cb7d2",
+          "sha256": "62efedbc35774c93056b9b7c9dfb008c36988c6c16876efea4e9739055ff6f2e",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1241782241/size=small/bgcol=ffffff/linkcol=0687f5/track=3351894678/transparent=true/"
+        },
+        {
+          "path": "research/STEPS_Bibliothek/ANTI-MASS_ From Uganda into the Unknown _ Ableton_files/saved_resource(4).html",
+          "blob": "7657b7385167f13cc5166a578cbfbe5e164aafac",
+          "sha256": "0be9999538624400785b9201bc66cb2e0d18736130210ae937fba37518dbc050",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1241782241/size=small/bgcol=ffffff/linkcol=0687f5/track=602375487/transparent=true/"
+        },
+        {
+          "path": "research/STEPS_Bibliothek/ANTI-MASS_ From Uganda into the Unknown _ Ableton_files/saved_resource(5).html",
+          "blob": "4d9b53341f2cca736ffd05975f8f9f175edf3fab",
+          "sha256": "800f0a8a487f462ee011fec6ad934af8065d8966c2e0c380927d43509416783d",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1241782241/size=small/bgcol=ffffff/linkcol=0687f5/track=1199645939/transparent=true/"
+        },
+        {
+          "path": "research/STEPS_Bibliothek/ANTI-MASS_ From Uganda into the Unknown _ Ableton_files/saved_resource.html",
+          "blob": "75714ae76450ba267d49c46b8249f0167e7a7af1",
+          "sha256": "d65ab2e1bdb3d5d69895be5c6342c051ab9d22bb8493d25204803a031c5527d1",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1241782241/size=small/bgcol=ffffff/linkcol=0687f5/track=50497959/transparent=true/"
+        }
+      ],
+      "chain_status": "MATCH",
+      "live_origin": {
+        "url": "https://s4.bcbits.com/client-bundle/1/trackpipe/embedded_player-d605d516704fd10722142526feae0317.css",
+        "size": 63332,
+        "sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+        "last_modified": "Thu, 24 Sep 2026 21:55:15 GMT",
+        "status": "MATCH"
+      }
+    },
+    {
+      "file_id": "F00571",
+      "path": "research/STEPS_Bibliothek/Cloudchord_ Tending the Bloom Bap Garden _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css",
+      "expected_size": 63332,
+      "expected_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "status": "MATCH",
+      "blob": "a1c1bd8389455e29e6124186a9a7108ca6c56fad",
+      "observed_size": 63332,
+      "observed_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "saved_embed_witnesses": [
+        {
+          "path": "research/STEPS_Bibliothek/Cloudchord_ Tending the Bloom Bap Garden _ Ableton_files/saved_resource(1).html",
+          "blob": "017ad87ec542dd9328cbfacc1225dcede8aa8eb1",
+          "sha256": "494524f39373044b6a436341c10ae02315a6e34451a9405d4afb9f9a139b363e",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/track=3192323651/transparent=true/size=small/bgcol=ffffff/linkcol=0687f5/"
+        },
+        {
+          "path": "research/STEPS_Bibliothek/Cloudchord_ Tending the Bloom Bap Garden _ Ableton_files/saved_resource.html",
+          "blob": "f32efa8af5a0f85301bdbf8c0adaf5b849afee0e",
+          "sha256": "6b971718d7904b9abbd70b110c38f78358c3e8c083370e41fc23f369d039a0f0",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/track=1929009143/transparent=true/size=small/bgcol=ffffff/linkcol=0687f5/"
+        }
+      ],
+      "chain_status": "MATCH",
+      "live_origin": {
+        "url": "https://s4.bcbits.com/client-bundle/1/trackpipe/embedded_player-d605d516704fd10722142526feae0317.css",
+        "size": 63332,
+        "sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+        "last_modified": "Thu, 24 Sep 2026 21:55:15 GMT",
+        "status": "MATCH"
+      }
+    },
+    {
+      "file_id": "F00704",
+      "path": "research/STEPS_Bibliothek/Download the Live Set of Artefakt’s New Track “Undertow”_files/embedded_player-d605d516704fd10722142526feae0317.css",
+      "expected_size": 63332,
+      "expected_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "status": "MATCH",
+      "blob": "a1c1bd8389455e29e6124186a9a7108ca6c56fad",
+      "observed_size": 63332,
+      "observed_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "saved_embed_witnesses": [
+        {
+          "path": "research/STEPS_Bibliothek/Download the Live Set of Artefakt’s New Track “Undertow”_files/saved_resource(1).html",
+          "blob": "94226d6fc5009aa4bc5a9f1d9b6a7b52b1139150",
+          "sha256": "506e47e1a60e5fd76b3dd762f6385f545228a0de20bd25c47956933653b716e2",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1023266916/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
+        },
+        {
+          "path": "research/STEPS_Bibliothek/Download the Live Set of Artefakt’s New Track “Undertow”_files/saved_resource(2).html",
+          "blob": "a4d93d7968aff7c56f35eedea4c2e84591ca9627",
+          "sha256": "3b9740951efe799f9612d9fcf6fda8d704fb86416d74a8aa8f811657b361f2f7",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1604961836/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=3776012603/transparent=true/"
+        }
+      ],
+      "chain_status": "MATCH",
+      "live_origin": {
+        "url": "https://s4.bcbits.com/client-bundle/1/trackpipe/embedded_player-d605d516704fd10722142526feae0317.css",
+        "size": 63332,
+        "sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+        "last_modified": "Thu, 24 Sep 2026 21:55:15 GMT",
+        "status": "MATCH"
+      }
+    },
+    {
+      "file_id": "F00768",
+      "path": "research/STEPS_Bibliothek/Download the Live Set of DJ Gigola’s New Track “Unfolding Practice II” _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css",
+      "expected_size": 63332,
+      "expected_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "status": "MATCH",
+      "blob": "a1c1bd8389455e29e6124186a9a7108ca6c56fad",
+      "observed_size": 63332,
+      "observed_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "saved_embed_witnesses": [
+        {
+          "path": "research/STEPS_Bibliothek/Download the Live Set of DJ Gigola’s New Track “Unfolding Practice II” _ Ableton_files/saved_resource(1).html",
+          "blob": "616dc2ab000d4761783acd736aa2c9107743b677",
+          "sha256": "f8f43dd28825ccb99cfa99309892f1f3312f7f4e7b2306b6135f75e60103787c",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/track=2609106131/transparent=true/size=small/bgcol=ffffff/linkcol=0687f5/"
+        },
+        {
+          "path": "research/STEPS_Bibliothek/Download the Live Set of DJ Gigola’s New Track “Unfolding Practice II” _ Ableton_files/saved_resource(2).html",
+          "blob": "0d8ff3a7bfffffb32e9feb64dcf3d27379438cb5",
+          "sha256": "c9b951211e29a47dedb2831f0b25c8ec5d88c5b787150a31b4b7975c494d6952",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/track=4145270766/transparent=true/size=small/bgcol=ffffff/linkcol=0687f5/"
+        },
+        {
+          "path": "research/STEPS_Bibliothek/Download the Live Set of DJ Gigola’s New Track “Unfolding Practice II” _ Ableton_files/saved_resource(3).html",
+          "blob": "7fe4ab70fa1cc74abcb6ce755fe66ed6b1bf9dda",
+          "sha256": "0f4b82e93f30b0eb348a3567c49ed51c8854ca40c1360e6b9992f759896b1e09",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/track=2492790752/transparent=true/size=small/bgcol=ffffff/linkcol=0687f5/"
+        },
+        {
+          "path": "research/STEPS_Bibliothek/Download the Live Set of DJ Gigola’s New Track “Unfolding Practice II” _ Ableton_files/saved_resource(5).html",
+          "blob": "7721bfacf92d0788e836f9b46acdfffba4020bee",
+          "sha256": "7df0d6f1ae08d945d77394233c4ce16e4b13da62b6d866f742933c4e33b57d09",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/track=2746981149/transparent=true/size=small/bgcol=ffffff/linkcol=0687f5/"
+        },
+        {
+          "path": "research/STEPS_Bibliothek/Download the Live Set of DJ Gigola’s New Track “Unfolding Practice II” _ Ableton_files/saved_resource(7).html",
+          "blob": "84d43b2de93c04190de6726870e704a32a2873af",
+          "sha256": "6d72d38714502003ac9b044c980bbe7524a8f0ee2bc3805326ace87e507cc55b",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/track=2425445439/transparent=true/size=small/bgcol=ffffff/linkcol=0687f5/"
+        }
+      ],
+      "chain_status": "MATCH",
+      "live_origin": {
+        "url": "https://s4.bcbits.com/client-bundle/1/trackpipe/embedded_player-d605d516704fd10722142526feae0317.css",
+        "size": 63332,
+        "sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+        "last_modified": "Thu, 24 Sep 2026 21:55:15 GMT",
+        "status": "MATCH"
+      }
+    },
+    {
+      "file_id": "F00937",
+      "path": "research/STEPS_Bibliothek/Dummy_ Inside The Machine, Outside The Box_files/embedded_player-d605d516704fd10722142526feae0317.css",
+      "expected_size": 63332,
+      "expected_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "status": "MATCH",
+      "blob": "a1c1bd8389455e29e6124186a9a7108ca6c56fad",
+      "observed_size": 63332,
+      "observed_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "saved_embed_witnesses": [
+        {
+          "path": "research/STEPS_Bibliothek/Dummy_ Inside The Machine, Outside The Box_files/saved_resource(1).html",
+          "blob": "a4dddc4fa7ae848f5b4989393c823e9ce09bff4e",
+          "sha256": "d2b6388372340b7f12b97362252d85131341f6acf9360917e34235e656ea8071",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/album=2649634835/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=2058673227/transparent=true/"
+        },
+        {
+          "path": "research/STEPS_Bibliothek/Dummy_ Inside The Machine, Outside The Box_files/saved_resource.html",
+          "blob": "4431ce12dd04a1004450e85349a028ea97a0e406",
+          "sha256": "b641d8582ed8a95b89b67e983c2fcce70ea5c3dae823a81d1b0eb07b26181d07",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/album=1199301027/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=2324768399/transparent=true/"
+        }
+      ],
+      "chain_status": "MATCH",
+      "live_origin": {
+        "url": "https://s4.bcbits.com/client-bundle/1/trackpipe/embedded_player-d605d516704fd10722142526feae0317.css",
+        "size": 63332,
+        "sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+        "last_modified": "Thu, 24 Sep 2026 21:55:15 GMT",
+        "status": "MATCH"
+      }
+    },
+    {
+      "file_id": "F01002",
+      "path": "research/STEPS_Bibliothek/Machinedrum_ Planting Seeds_files/embedded_player-d605d516704fd10722142526feae0317.css",
+      "expected_size": 63332,
+      "expected_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "status": "MATCH",
+      "blob": "a1c1bd8389455e29e6124186a9a7108ca6c56fad",
+      "observed_size": 63332,
+      "observed_sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+      "saved_embed_witnesses": [
+        {
+          "path": "research/STEPS_Bibliothek/Machinedrum_ Planting Seeds_files/saved_resource.html",
+          "blob": "8b43e7da30dd0ac5143a90983bf90a3cfc793b5c",
+          "sha256": "efae2b3a2c5196607abfd6230f070ffd67630aeaddfa32109985930fec4c6e44",
+          "embed_url": "https://bandcamp.com/EmbeddedPlayer/album=3951551959/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=3178869463/transparent=true/"
+        }
+      ],
+      "chain_status": "MATCH",
+      "live_origin": {
+        "url": "https://s4.bcbits.com/client-bundle/1/trackpipe/embedded_player-d605d516704fd10722142526feae0317.css",
+        "size": 63332,
+        "sha256": "32289d8747feddbc21cccedc6522f0f1ab2b18bf2a0c5d9a65356f8fdc9f5f29",
+        "last_modified": "Thu, 24 Sep 2026 21:55:15 GMT",
+        "status": "MATCH"
+      }
+    }
+  ],
+  "checked_at": "2026-11-13T23:12:48.889059+00:00",
+  "online": true,
+  "rights_status": "UNREVIEWED_BUNDLE; jQuery UI header applies only to its component"
+}

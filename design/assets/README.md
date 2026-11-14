@@ -1,5 +1,9 @@
-# design/assets
+# Design-Assets
 
-Eigene oder entsprechend lizenzierte Icons und Medien.
+Vorgesehene Ablage für eigene oder nachweislich lizenzierte Icons und Medien. Hier liegt derzeit die Ablagebeschreibung. Neue Dateien mit Herkunft, Bearbeitungsstand und Nutzungsrahmen dokumentieren.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Quellenrechte](../../knowledge/sources/RIGHTS_POLICY.md) | Maßgeblicher Projektkontext. |
+
+[Zur Bereichsübersicht](../README.md)

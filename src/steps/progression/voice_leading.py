@@ -45,14 +45,8 @@ def circular_pc_distance(voicing_a: list[int], voicing_b: list[int]) -> int:
 
 
 def detect_voice_crossing(voicing: list[int]) -> bool:
-    """
-    Checks if a voicing contains voice crossing:
-    Returns True if any lower voice i has pitch >= voice i+1 (strict ascending order violated).
-    """
-    for i in range(len(voicing) - 1):
-        if voicing[i] >= voicing[i + 1]:
-            return True
-    return False
+    """Detect crossing in voice order. A unison is not a crossing."""
+    return any(lower > upper for lower, upper in zip(voicing, voicing[1:]))
 
 
 def detect_voice_overlap(voicing_a: list[int], voicing_b: list[int]) -> bool:
@@ -77,42 +71,27 @@ def detect_parallel_fifths_octaves(
     chord_b: list[int],
     style: VoiceLeadingStyle = VoiceLeadingStyle.STRICT_COUNTERPOINT
 ) -> list[str]:
-    """
-    Detects parallel fifths (7 semitones) and octaves (0/12 semitones) between
-    any two voices moving in the same direction.
-    
-    In JAZZ_POP style, parallel movement (planing) is acknowledged but marked as non-violating.
+    """Report perfect parallels and contrary outer-voice intervals in strict style.
+
+    JAZZ_POP permits both forms of movement. Input order assigns voice identity.
     """
     if len(chord_a) != len(chord_b):
         raise VoiceLeadingError("Chords must have identical voice count.")
-    
+    if style != VoiceLeadingStyle.STRICT_COUNTERPOINT:
+        return []
     violations = []
-    n_voices = len(chord_a)
-    
-    for i in range(n_voices):
-        for j in range(i + 1, n_voices):
-            # Interval in chord_a
-            int_a = abs(chord_a[j] - chord_a[i]) % 12
-            # Interval in chord_b
-            int_b = abs(chord_b[j] - chord_b[i]) % 12
-            
-            # Motion of both voices
-            delta_i = chord_b[i] - chord_a[i]
-            delta_j = chord_b[j] - chord_a[j]
-            
-            # Parallel motion in same direction
-            if delta_i != 0 and delta_j != 0 and (delta_i * delta_j > 0):
-                # Parallel octaves / unisons
-                if int_a == 0 and int_b == 0:
-                    msg = f"Parallel octave/unison between voice {i} and {j}"
-                    if style == VoiceLeadingStyle.STRICT_COUNTERPOINT:
-                        violations.append(msg)
-                # Parallel fifths
-                elif int_a == 7 and int_b == 7:
-                    msg = f"Parallel fifth between voice {i} and {j}"
-                    if style == VoiceLeadingStyle.STRICT_COUNTERPOINT:
-                        violations.append(msg)
-                        
+    for low in range(len(chord_a)):
+        for high in range(low + 1, len(chord_a)):
+            before = abs(chord_a[high] - chord_a[low]) % 12
+            after = abs(chord_b[high] - chord_b[low]) % 12
+            if before != after or before not in (0, 7):
+                continue
+            motion = (chord_b[low] - chord_a[low]) * (chord_b[high] - chord_a[high])
+            label = "octave/unison" if before == 0 else "fifth"
+            if motion > 0:
+                violations.append(f"Parallel {label} between voice {low} and {high}")
+            elif motion < 0 and low == 0 and high == len(chord_a) - 1:
+                violations.append(f"Contrary {label} between outer voices {low} and {high}")
     return violations
 
 
@@ -141,15 +120,15 @@ def optimize_smooth_voice_leading(
     """
     if not source_voicing or any(not isinstance(note, int) or isinstance(note, bool) or not 0 <= note <= 127 for note in source_voicing):
         raise VoiceLeadingError("Source voicing must contain MIDI notes in 0..127.")
-    if detect_voice_crossing(source_voicing):
+    if any(a >= b for a, b in zip(source_voicing, source_voicing[1:])):
         raise VoiceLeadingError("Source voicing must be strictly ascending.")
-    if not target_pcs or any(not isinstance(pc, int) or isinstance(pc, bool) for pc in target_pcs):
-        raise VoiceLeadingError("Target voicing requires integer pitch classes.")
-    if bass_pc is not None and (not isinstance(bass_pc, int) or isinstance(bass_pc, bool)):
-        raise VoiceLeadingError("Bass pitch class must be an integer.")
+    if not target_pcs or any(not isinstance(pc, int) or isinstance(pc, bool) or not 0 <= pc <= 11 for pc in target_pcs):
+        raise VoiceLeadingError("Target voicing requires integer pitch classes in 0..11.")
+    if bass_pc is not None and (not isinstance(bass_pc, int) or isinstance(bass_pc, bool) or not 0 <= bass_pc <= 11):
+        raise VoiceLeadingError("Bass pitch class must be an integer in 0..11.")
 
-    target = {pc % 12 for pc in target_pcs}
-    bass = None if bass_pc is None else bass_pc % 12
+    target = set(target_pcs)
+    bass = bass_pc
     if len(target) > len(source_voicing):
         raise VoiceLeadingError(f"{len(target)} target pitch classes exceed the voice count.")
     if bass is not None and bass not in target:

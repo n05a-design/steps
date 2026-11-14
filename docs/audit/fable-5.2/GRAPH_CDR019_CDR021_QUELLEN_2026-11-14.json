@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "human_approval": "AUSSTEHEND",
+  "historical_definitions_resolved": false,
+  "redistribution": "METADATA_AND_OWN_FINDINGS_ONLY",
+  "sources": [
+    {
+      "id": "MARCELINO_2010",
+      "relation_id": "CDR-021",
+      "author": "André Felipe Marcelino",
+      "title": "O ritmo das baterias das escolas de samba de Florianópolis em 2010, na perspectiva de seus mestres",
+      "institution": "Universidade do Estado de Santa Catarina, 2010",
+      "url": "https://sistemabu.udesc.br/pergamumweb/vinculos/000000/000000000019/00001934.pdf",
+      "sha256": "9510e9bd804c786522f767832dbca4bff4e32dc6e9e0df101774bee81e34fa4c",
+      "bytes": 4022972,
+      "pages": 76,
+      "locator": "PDF34 / printed33, Figures3–4 and footnotes13–14; PDF35 / printed34, third-surdo discussion",
+      "visually_checked_pdf_pages": [34],
+      "status": "PRIMARY_FIELDWORK_SCOPED_NOTATION_CHECK",
+      "finding": "Die Feldstudie verortet primeira auf2 und segunda auf1 im binären Modell der untersuchten Florianópolis-Baterias. Figuren3–4 zeigen zwei Takte mit Viertelpause/Viertelnote beziehungsweise umgekehrter Folge. Es stehen keine dynamischen Akzentzeichen in diesen Figuren.",
+      "limits": "Onset/Rolle belegt keine universelle dynamische Akzentnorm. Fußnote14 nennt abweichende Stimmung in São Clemente und fehlende segunda in Mangueira; die Feldstudie ist kein aktueller Nachweis dieser Rio-Aussagen. Keine menschliche Spiel-/Hörabnahme.",
+      "rights": "Copyright source retained locally; no PDF or page images published."
+    },
+    {
+      "id": "GHEZZI_2009",
+      "relation_id": "CDR-019",
+      "author": "Daniela Ribas Ghezzi",
+      "title": "A MPB e a lógica do mudar-conservando: uma aproximação entre História e Música Popular",
+      "url": "https://anpuh.org.br/uploads/anais-simposios/pdf/2019-01/1548772191_92b37c846f0c683a26fa7f6e60e6d08a.pdf",
+      "sha256": "abd8b07b100a55a162af4be0e144f0eb96a90d29d0233b92ffed4f37d637c7ff",
+      "bytes": 64253,
+      "pages": 13,
+      "locator": "PDF9–10 / printed9–10; references to Garcia1999 pp.21–22,25–38,45–49",
+      "visually_checked_pdf_pages": [9],
+      "status": "SECONDARY_ANALYTICAL_CHAIN_CHECKED",
+      "finding": "Die Analyse beschreibt Gitarrenbass und Akkordanschläge über Surdo-/Tamborim-Funktionen, verändert deren Akzentbehandlung und betont variable Begleitfiguren. Sie verweist auf Walter Garcia1999 statt auf Schreiner.",
+      "limits": "Garcia1999 wurde nicht selbst eingesehen. Dieser spätere analytische Beleg ist kein zeitgenössischer Nachweis einer eindeutigen historischen Entstehungsursache; die alte Schreiner-Seitenlücke bleibt offen.",
+      "rights": "Copyright source retained locally; metadata and own findings only."
+    },
+    {
+      "id": "REILY_1996_METADATA",
+      "relation_id": "CDR-019",
+      "url": "https://pure.qub.ac.uk/en/publications/tom-jobim-and-the-bossa-nova-era/",
+      "locator": "University publication record; Popular Music15(1),1996",
+      "status": "BIBLIOGRAPHIC_RECORD_ONLY",
+      "finding": "Institutioneller Werkdatensatz zu Suzel Reily, Tom Jobim and the Bossa Nova Era. Keine neue Volltext-/Cabral-Interviewprüfung.",
+      "limits": "Reily/Cabral/Baden-Powell-Interviewkette bleibt als Originalfundstellenprüfung offen."
+    }
+  ]
+}

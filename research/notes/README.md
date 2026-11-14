@@ -1,5 +1,10 @@
-# research/notes
+# Arbeitsnotizen und Rechercheentwürfe
 
-Arbeitshypothesen, Deep-Research-Berichte und Prompt-/Projektarchiv.
+Hier liegen historische Synthesen und Rechercheaufträge. Ihre Aussagen sind auf den jeweiligen Quellenstand bezogen.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Deep Research](deep-research/) | Frühere Fachrecherche und Projektgrundlagen. |
+| [Quellenaufnahme](../../knowledge/INGESTION_PIPELINE.md) | Weg zu einem nachvollziehbaren Wissenseintrag. |
+
+[Zur Bereichsübersicht](../README.md)

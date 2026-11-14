@@ -16,16 +16,23 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ['3.11', '3.12']
+        python-version: ['3.11', '3.12', '3.13', '3.14']
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          # Source-preservation regressions compare sanitized assets with their
+          # immutable historical blobs without printing credential payloads.
+          fetch-depth: 0
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
+
+      - name: Check generated Golden Case fixture
+        run: python -B scripts/build_unified_golden_cases.py --check
 
       - name: Check generated Python API reference
         run: python -B scripts/render_api_reference.py --check
@@ -38,6 +45,23 @@ jobs:
           if [ -d ".agents/skills/steps-knowledge-curation/tests" ]; then
             python -B -m unittest discover -s .agents/skills/steps-knowledge-curation/tests -v
           fi
+
+  curation-platforms:
+    name: Curation skill (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .agents/skills/steps-knowledge-curation
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test register recovery and source intake
+        run: python -B -m unittest discover -s .agents/skills/steps-knowledge-curation/tests -v
 
   pilot-publication:
     name: Pilot publication gate
@@ -68,3 +92,21 @@ jobs:
         run: python -m pip install -r knowledge/benchmark/requirements.txt
       - name: Check versioned knowledge coverage
         run: python -B scripts/audit_knowledge_coverage.py --check
+      - name: Check complete historical graph audit matrix
+        run: python -B scripts/audit_graph.py --check
+      - name: Check all remaining historical Golden reviews and source hashes
+        run: python -B scripts/audit_golden_remaining.py --check
+      - name: Check source-bound Golden conflict revisions
+        run: python -B scripts/audit_conflict_revisions.py --check
+      - name: Check all 58 graph follow-ups and versioned error identities
+        run: python -B scripts/audit_graph_followup.py --check
+      - name: Check scoped graph semantics and MIDI notation contracts
+        run: python -B scripts/audit_graph_semantics.py --check
+
+      - name: Check all 14 corpus cases and separated source evidence
+        run: python -B scripts/audit_graph_corpus.py --check
+
+      - name: Check partial Billboard and versioned EDM metadata observations
+        run: |
+          python -B scripts/audit_billboard_components.py --check
+          python -B scripts/audit_edm_tempo.py --check

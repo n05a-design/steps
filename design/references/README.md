@@ -1,5 +1,9 @@
-# design/references
+# Gestaltungsreferenzen
 
-Fremde Inspirationen nur mit Herkunft/Verwendungsgrenzen dokumentieren.
+Vorgesehene Ablage für Herkunft und Analyse externer Gestaltungsvorbilder. Neue Referenzen brauchen Quelle, Verwendungsrahmen und eine konkrete Gestaltungsfrage.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Historische UI-Referenzen](../../research/UI-UX-Design/README.md) | Maßgeblicher Projektkontext. |
+
+[Zur Bereichsübersicht](../README.md)

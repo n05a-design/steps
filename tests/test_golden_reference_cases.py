@@ -1,22 +1,22 @@
 ﻿#!/usr/bin/env python3
-"""
-STEPS Golden Reference Test Engine (Hardened Phase 4.16)
-
-Eliminates all pseudo-passes and fallback asserting `self.assertIsNotNone(exp)`.
-Enforces strict separation of:
-- 67 Executable Computational Tests (63 UNIT_TEST, 3 PROPERTY_TEST, 1 INTEGRATION_TEST):
-  Every executable case executes genuine mathematical domain operations and asserts against expected results.
-  Any unmapped or unimplemented executable case raises an explicit NotImplementedError.
-- 131 Specification Documentation Examples (SPECIFICATION_EXAMPLE):
-  Verified against authoritative theoretical rules and recorded as SPECIFICATION_DOCUMENTED / SOURCE_VERIFIED.
-- Property-Based Mathematical Invariants (Addressing 4.4 Multi-metric Voice Leading, Inversions, Symmetries).
-"""
+"""Check numerical reference cases and the structure of specification examples."""
 
 import os
 import sys
 import json
 import math
+import re
 import unittest
+
+from src.steps.progression import (
+    absolute_semitone_distance, detect_parallel_fifths_octaves, detect_voice_crossing,
+    guide_tone_resolution, resolve_roman_degree,
+)
+from src.steps.theory import (
+    DiatonicInterval, directed_semitones,
+    midi_to_frequency, midi_to_pitch_class, parse_chord, parse_spelling,
+    semitones_between, make_drop2_voicing,
+)
 
 # ==============================================================================
 # TEST REFERENCE IMPLEMENTATION (ISOLATED DOMAIN ALGORITHMS)
@@ -33,10 +33,6 @@ class TestReferenceImplementation:
     @staticmethod
     def midi_to_pitch_class(midi_note: int) -> int:
         return midi_note % 12
-
-    @staticmethod
-    def midi_to_frequency(midi_note: int, a4_freq: float = 440.0) -> float:
-        return a4_freq * (2.0 ** ((midi_note - 69) / 12.0))
 
     @staticmethod
     def interval_semitones(n1: int, n2: int) -> int:
@@ -64,30 +60,9 @@ class TestReferenceImplementation:
         return [(root_pc + s) % 12 for s in formulas[quality]]
 
     @staticmethod
-    def construct_seventh_pitch_classes(root_pc: int, quality: str) -> list[int]:
-        formulas = {
-            '7': [0, 4, 7, 10],
-            'maj7': [0, 4, 7, 11],
-            'min7': [0, 3, 7, 10],
-            'half_diminished': [0, 3, 6, 10],
-            'dim7': [0, 3, 6, 9],
-            '7(#11)': [0, 4, 6, 10]
-        }
-        return [(root_pc + s) % 12 for s in formulas[quality]]
-
-    @staticmethod
     def calculate_swing_quant_tick(ppq: int, ratio: float) -> int:
         span = ppq // 2
         return round(span * ratio)
-
-    @staticmethod
-    def calculate_swing_offset(quant_tick: int, ppq: int) -> int:
-        straight_tick = ppq // 4
-        return quant_tick - straight_tick
-
-    @staticmethod
-    def calculate_swing_delay_ms(offset_ticks: int, bpm: float, ppq: int) -> float:
-        return offset_ticks * (60000.0 / (bpm * ppq))
 
     @staticmethod
     def calculate_tuplet_ticks(total_span: int, count: int) -> list[int]:
@@ -115,18 +90,36 @@ class TestReferenceImplementation:
         """Returns True if any higher voice index dips below a lower voice index."""
         return any(voicing[i] > voicing[i+1] for i in range(len(voicing) - 1))
 
-    @staticmethod
-    def verify_cross_domain_compatibility(components: list[str]) -> bool:
-        """Validates that a multi-domain progression, groove, and piano triad form a harmonious triplet."""
-        valid_triplet = {'PROG-021', 'PAT-024', 'P12'}
-        return set(components) == valid_triplet or len(components) == 3
-
 
 # ==============================================================================
 # TEST SUITE
 # ==============================================================================
 
 class TestGoldenReferenceCases(unittest.TestCase):
+    # General MIDI System Level 1, table 3, printed page 6 (PDF page 8).
+    GM_PERCUSSION = {
+        "General MIDI Kick Drum": 36,  # Bass Drum 1
+        "Side Stick": 37,
+        "General MIDI Snare Drum": 38,  # Acoustic Snare
+        "General MIDI Closed Hi-Hat": 42,
+        "Pedal Hi-Hat": 44,
+        "General MIDI Open Hi-Hat": 46,
+    }
+    SCALE_NOTES = {
+        "Major": "C4 D4 E4 F4 G4 A4 B4 C5",
+        "Natural Minor": "A3 B3 C4 D4 E4 F4 G4 A4",
+        "Harmonic Minor": "A3 B3 C4 D4 E4 F4 G#4 A4",
+        "Melodic Minor Ascending": "A3 B3 C4 D4 E4 F#4 G#4 A4",
+        "Dorian": "D4 E4 F4 G4 A4 B4 C5 D5",
+        "Phrygian": "E4 F4 G4 A4 B4 C5 D5 E5",
+        "Lydian": "F4 G4 A4 B4 C5 D5 E5 F5",
+        "Mixolydian": "G4 A4 B4 C5 D5 E5 F5 G5",
+        "Locrian": "B3 C4 D4 E4 F4 G4 A4 B4",
+        "Major Pentatonic": "C4 D4 E4 G4 A4 C5",
+        "Minor Pentatonic": "A3 C4 D4 E4 G4 A4",
+        "Whole Tone": "C4 D4 E4 F#4 G#4 Bb4 C5",
+    }
+
     @classmethod
     def setUpClass(cls):
         base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -148,25 +141,31 @@ class TestGoldenReferenceCases(unittest.TestCase):
         if cid := case_id:
             # 1. Pitch Class & Acoustics
             if cid in ['REF-0001', 'REF-0002', 'REF-0107', 'REF-0108']:
-                note = p.get('midi_note', 60 if cid in ['REF-0001', 'REF-0107'] else 69)
-                actual = tri.midi_to_pitch_class(note)
-                self.assertEqual(actual, exp)
+                note = p['midi_note'] if 'midi_note' in p else parse_spelling(p['note'], 'INT').midi_number
+                self.assertEqual(midi_to_pitch_class(note), exp)
             elif cid in ['REF-0109', 'REF-0110']:
-                actual = p['semitone_offset'] + (p['octave'] + 1) * 12
+                actual = parse_spelling(p['note'], 'INT').midi_number
                 self.assertEqual(actual, exp)
             elif cid in ['REF-0111', 'REF-0112']:
-                actual = round(tri.midi_to_frequency(p['midi_note']), 2)
+                actual = midi_to_frequency(p["midi_note"])
                 self.assertAlmostEqual(actual, exp, delta=0.05)
             elif cid in ['REF-0113', 'REF-0114']:
                 actual = (p['pc'] + p['interval']) % 12
                 self.assertEqual(actual, exp)
             elif cid in ['REF-0115', 'REF-0116']:
-                actual = (p['pc1'] == p['pc2'])
-                self.assertEqual(actual, exp)
+                a, b = (parse_spelling(note, 'INT') for note in p['notes'])
+                self.assertEqual(a != b and a.midi_number == b.midi_number, exp)
+            elif cid in ['REF-0123', 'REF-0124', 'REF-0125']:
+                self.assertEqual(midi_to_pitch_class((p['root'] + 7 * p['fifths']) % 12), exp)
+            elif 'REF-0126' <= cid <= 'REF-0137':
+                name = p['scale'] if 'scale' in p else p['mode']
+                notes = [parse_spelling(note, 'INT').midi_number for note in self.SCALE_NOTES[name].split()]
+                steps = [high - low for low, high in zip(notes, notes[1:])]
+                self.assertEqual(steps, exp)
 
             # 2. Intervals
             elif cid in ['REF-0010', 'REF-0011']:
-                actual = tri.interval_semitones(p['note1'], p['note2'])
+                actual = semitones_between(p['note1'], p['note2'])
                 self.assertEqual(actual, exp)
             elif cid in ['REF-0117', 'REF-0119', 'REF-0121']:
                 actual = tri.interval_name_to_semitones(p['interval'])
@@ -176,48 +175,74 @@ class TestGoldenReferenceCases(unittest.TestCase):
                 self.assertEqual(actual, exp)
 
             # 3. Triads & Chords
-            elif cid == 'REF-0012':
-                actual = tri.construct_triad_pitch_classes(0, 'Major')
-                self.assertEqual(actual, exp)
-            elif cid == 'REF-0013':
-                actual = tri.construct_triad_pitch_classes(0, 'Minor')
-                self.assertEqual(actual, exp)
-            elif cid == 'REF-0014':
-                actual = 'Bass E, Töne [E, G, C]'
-                self.assertEqual(actual, exp)
-            elif cid == 'REF-0015':
-                actual = 'Bass G, Töne [G, C, E]'
-                self.assertEqual(actual, exp)
-            elif cid == 'REF-0016':
-                actual = 'Dreiklang D über Dreiklang C [C, E, G, D, F#, A]'
-                self.assertEqual(actual, exp)
+            elif cid in ['REF-0012', 'REF-0013']:
+                suffix = {'Major': '', 'Minor': 'm'}[p['quality']]
+                self.assertEqual(sorted(parse_chord(p['root'] + suffix, 'INT').pitch_class_set), exp)
+            elif cid in ['REF-0014', 'REF-0015']:
+                suffix = {'Major': '', 'Minor': 'm'}[p['quality']]
+                chord = parse_chord(p['root'] + suffix, 'INT')
+                inversion = 1 if cid == 'REF-0014' else 2
+                notes = chord.to_voicing().invert(inversion).midi_notes
+                names = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B']
+                written = [names[note % 12] for note in notes]
+                self.assertEqual(f"Bass {written[0]}, Töne [{', '.join(written)}]", exp)
             elif cid in ['REF-0039', 'REF-0040']:
-                actual = tri.construct_triad_pitch_classes(0, 'sus4' if cid == 'REF-0039' else 'add9')
-                self.assertEqual(actual, exp)
-            elif cid in ['REF-0138', 'REF-0139', 'REF-0140', 'REF-0141']:
-                q_map = {'REF-0138': 'Major', 'REF-0139': 'Minor', 'REF-0140': 'Diminished', 'REF-0141': 'Augmented'}
-                actual = tri.construct_triad_pitch_classes(0, q_map[cid])
-                self.assertEqual(actual, exp)
-            elif cid in ['REF-0142', 'REF-0143', 'REF-0144', 'REF-0145']:
-                q_map = {'REF-0142': '7', 'REF-0143': 'maj7', 'REF-0144': 'min7', 'REF-0145': 'half_diminished'}
-                actual = tri.construct_seventh_pitch_classes(0, q_map[cid])
-                self.assertEqual(actual, exp)
+                self.assertEqual(sorted(parse_chord(p['chord'], 'INT').pitch_class_set), exp)
+            elif 'REF-0138' <= cid <= 'REF-0146':
+                suffix = {
+                    'Major Triad': '', 'Minor Triad': 'm',
+                    'Diminished Triad': 'dim', 'Augmented Triad': 'aug',
+                    'Dominant 7th': '7', 'Major 7th': 'maj7', 'Minor 7th': 'm7',
+                    'Half-Diminished 7th': 'm7b5', 'Diminished 7th': 'dim7',
+                }[p['chord']]
+                self.assertEqual(list(parse_chord('C' + suffix, 'INT').theoretical_intervals), exp)
+            elif cid == 'REF-0149':
+                self.assertEqual(make_drop2_voicing(p['close_voicing']), exp)
             elif cid in ['REF-0035', 'REF-0050']:
-                actual = tri.construct_seventh_pitch_classes(1, '7' if cid == 'REF-0035' else '7(#11)')
+                actual = sorted(int(pc) for pc in parse_chord(p['chord'], 'INT').voiced_pitch_classes)
                 self.assertEqual(actual, exp)
 
-            # 4. Voice Leading
+            # 4. Harmony and voice leading
+            elif cid == 'REF-0153':
+                chords = [resolve_roman_degree(degree, p['key'], convention='INT')
+                          for degree in p['prog'].split('-')]
+                self.assertEqual([int(chord.root.pitch_class) for chord in chords], exp)
+            elif cid == 'REF-0154':
+                roots = p['roots']
+                self.assertEqual([(b - a) % 12 for a, b in zip(roots, roots[1:])], exp)
+            elif cid == 'REF-0155':
+                self.assertEqual((p['dom_root'] + 6) % 12, exp)
+            elif cid in ['REF-0157', 'REF-0160']:
+                degree = p.get('degree', 'V7/V')
+                chord = resolve_roman_degree(degree, p['key'], convention='INT')
+                self.assertEqual(chord.root.pitch_class, exp)
+            elif cid in ['REF-0162', 'REF-0166']:
+                chords = [resolve_roman_degree(degree, p['key'], p['minor'], convention='INT')
+                          for degree in p['degrees']]
+                self.assertEqual([int(chord.root.pitch_class) for chord in chords], exp)
+            elif cid == 'REF-0156':
+                a, b = (parse_chord(symbol, 'INT') for symbol in p['chords'])
+                shared = sorted(a.pitch_class_set & b.pitch_class_set)
+                self.assertEqual(len(shared) == 2 and shared[1] - shared[0] == 6, exp)
+            elif cid in ['REF-0168', 'REF-0169']:
+                start = [p['v1_start'], p['v2_start']]
+                end = [p['v1_end'], p['v2_end']]
+                self.assertEqual(bool(detect_parallel_fifths_octaves(start, end)), exp)
+            elif cid == 'REF-0170':
+                self.assertEqual(p['v1_dir'] * p['v2_dir'] < 0, exp)
+            elif cid == 'REF-0175':
+                a, b = p['v1'], p['v2']
+                self.assertEqual(a[0] != b[0] and a == b[::-1], exp)
+            elif cid == 'REF-0171':
+                self.assertEqual(directed_semitones(p['leading_tone'], p['tonic']), exp)
+            elif cid == 'REF-0172':
+                self.assertEqual(guide_tone_resolution(p['seventh'], p['third']), exp)
+            elif cid == 'REF-0173':
+                self.assertEqual(detect_voice_crossing([p['alto'], p['soprano']]), exp)
+            elif cid == 'REF-0174':
+                self.assertEqual(absolute_semitone_distance(p['dm7'], p['g7']), exp)
             elif cid == 'REF-0019':
                 actual = tri.voice_leading_circular_pc_distance(p['chord1'], p['chord2'])
-                self.assertEqual(actual, exp)
-            elif cid == 'REF-0036':
-                actual = 'Auflösung bVII7 nach I'
-                self.assertEqual(actual, exp)
-            elif cid == 'REF-0095':
-                actual = 8 - 1 # Ab resolves to G
-                self.assertEqual(actual, exp)
-            elif cid == 'REF-0096':
-                actual = p['bass']
                 self.assertEqual(actual, exp)
             elif cid == 'REF-0097':
                 roots = p['roots']
@@ -226,51 +251,66 @@ class TestGoldenReferenceCases(unittest.TestCase):
 
             # 5. Timing, Swing & Micro-timing
             elif cid in ['REF-0020', 'REF-0021']:
-                actual = 1.0 if p['swing_type'] == 'Straight' else 2.0
-                self.assertEqual(actual, exp)
-            elif cid == 'REF-0026':
-                actual = '2 und 4 im 4/4-Takt (Ticks 480 & 1440)'
-                self.assertEqual(actual, exp)
-            elif cid == 'REF-0027':
-                actual = 'Kick auf Ticks 0, 480, 960, 1440'
-                self.assertEqual(actual, exp)
-            elif cid == 'REF-0028':
-                actual = 'Open Hi-Hat auf Ticks 240, 720, 1200, 1680'
-                self.assertEqual(actual, exp)
-            elif cid == 'REF-0029':
-                actual = 'Tick 1200 bei 480 PPQ'
-                self.assertEqual(actual, exp)
-            elif cid == 'REF-0030':
-                actual = 'Tick 1320 bei 480 PPQ'
-                self.assertEqual(actual, exp)
+                first, second = p["durations"]
+                self.assertGreater(first, 0)
+                self.assertGreater(second, 0)
+                self.assertEqual(first / second, exp)
+            elif cid in ['REF-0026', 'REF-0027', 'REF-0028', 'REF-0029', 'REF-0030']:
+                ppq = p['ppq']
+                beat_positions = {
+                    'Pop Backbeat Zählzeiten': (1, 3), 'House Four-on-the-Floor': (0, 1, 2, 3),
+                    'House Offbeat Hi-Hat': (0.5, 1.5, 2.5, 3.5),
+                    '8tel-Offbeat nach Schlag 3 (3+)': (2.5,),
+                    '16tel-Synkope vor Schlag 4 (3e+)': (2.75,),
+                }
+                actual = [int(beat * ppq) for beat in beat_positions[p['style_event']]]
+                expected_ticks = [int(tick) for tick in re.findall(r"\b[0-9]+\b", exp.split('Tick', 1)[1].split(' bei ')[0])]
+                self.assertEqual(actual, expected_ticks)
             elif cid in ['REF-0031', 'REF-0032']:
-                actual = 'Grundstellung (5/3)' if cid == 'REF-0031' else '1. Umkehrung (Sextakkord 6)'
+                pcs = {note % 12 for note in p['notes']}
+                roots = [root for root in pcs if {(root + x) % 12 for x in (0, 3, 7)} == pcs
+                         or {(root + x) % 12 for x in (0, 4, 7)} == pcs]
+                self.assertEqual(len(roots), 1)
+                distance = (min(p['notes']) - roots[0]) % 12
+                actual = {0: 'Grundstellung (5/3)', 3: '1. Umkehrung (Sextakkord 6)',
+                          4: '1. Umkehrung (Sextakkord 6)', 7: '2. Umkehrung (Quartsextakkord 6/4)'}[distance]
                 self.assertEqual(actual, exp)
-            elif cid == 'REF-0044':
-                actual = 'rho(BPM) fällt linear'
-                self.assertEqual(actual, exp)
+            elif cid == 'REF-0043':
+                chord = parse_chord(p['chord'], 'INT')
+                self.assertEqual({n % 12 for n in p['close_midi']}, chord.pitch_class_set)
+                self.assertEqual(make_drop2_voicing(p['close_midi']), exp)
             elif cid == 'REF-0047':
                 actual = tri.calculate_tuplet_ticks(p['ppq'], p['tuplets'])
                 self.assertEqual(actual, exp)
             elif cid == 'REF-0049':
-                actual = True
-                self.assertEqual(actual, exp)
+                first, second = (parse_chord(symbol, "INT") for symbol in p["chords"])
+                self.assertEqual(first.pitch_class_set == second.pitch_class_set, exp)
             elif cid in ['REF-0053', 'REF-0071', 'REF-0083', 'REF-0084', 'REF-0085', 'REF-0086', 'REF-0087', 'REF-0088', 'REF-0098']:
                 actual = tri.calculate_swing_quant_tick(p['ppq'], p['ratio'])
                 self.assertEqual(actual, exp)
+            elif cid in {'REF-0178', 'REF-0181', 'REF-0183', 'REF-0185', 'REF-0186'}:
+                self.assertEqual(tri.calculate_swing_quant_tick(p['ppq'], p['ratio']), exp)
+            elif cid == 'REF-0177':
+                self.assertEqual(tri.calculate_swing_quant_tick(p['ppq'], p['ratio']) - p['ppq'] // 4, exp)
+            elif cid in {'REF-0179', 'REF-0182', 'REF-0184'}:
+                self.assertEqual(p['quant_tick'] - p['straight_tick'], exp)
+            elif cid == 'REF-0180':
+                milliseconds = p['offset'] * 60_000 / (p['bpm'] * p['ppq'])
+                self.assertAlmostEqual(milliseconds, exp, delta=c['tolerance'])
             elif cid in ['REF-0091', 'REF-0092']:
                 actual = sum(p['subdivision']) * (p['ppq'] // 2)
                 self.assertEqual(actual, exp)
-            elif cid in ['REF-0093', 'REF-0094']:
-                actual = [52, 55, 59, 62] if cid == 'REF-0093' else [59, 62, 64, 67]
+            elif cid == 'REF-0187':
+                subdivisions = p['subdivisions_per_quarter']
+                actual = []
+                for bar, beats in enumerate(p['bar_eighths']):
+                    for beat in beats:
+                        offset = (bar * 4 + int(beat[0]) - 1) * subdivisions
+                        actual.append(offset + (subdivisions // 2 if beat.endswith('+') else 0))
                 self.assertEqual(actual, exp)
             elif cid == 'REF-0099':
                 actual = sum(p['pattern'])
                 self.assertEqual(actual, exp)
-            elif cid == 'REF-0100':
-                actual = tri.verify_cross_domain_compatibility(p['components'])
-                self.assertEqual(actual, exp)
-
             # 6. Acoustics & Tuning
             elif cid == 'REF-0089':
                 ratio = (1.5 ** p['fifths']) / (2.0 ** p['octaves'])
@@ -280,7 +320,7 @@ class TestGoldenReferenceCases(unittest.TestCase):
                 actual = round(1200.0 * math.log2(p['ratio']), 2)
                 self.assertAlmostEqual(actual, exp, delta=0.05)
             elif cid == 'REF-0101':
-                actual = tri.midi_to_frequency(69)
+                actual = midi_to_frequency(parse_spelling(p['note'], 'INT').midi_number)
                 self.assertEqual(actual, exp)
             elif cid == 'REF-0102':
                 actual = p['f2'] / p['f1']
@@ -295,17 +335,17 @@ class TestGoldenReferenceCases(unittest.TestCase):
                 actual = round(p['tet_cent'] - p['just_cent'], 2)
                 self.assertAlmostEqual(actual, exp, delta=0.05)
 
-            # 7. Migrated Swing & MIDI Time
-            elif cid in [f'REF-01{i:02d}' for i in range(77, 87)]:
-                if cid == 'REF-0177':
-                    actual = tri.calculate_swing_quant_tick(p['ppq'], p['ratio']) - (p['ppq'] // 4)
-                elif 'quant_tick' in p and 'straight_tick' in p:
-                    actual = p['quant_tick'] - p['straight_tick']
-                elif 'offset' in p and 'bpm' in p and 'ppq' in p:
-                    actual = round(tri.calculate_swing_delay_ms(p['offset'], p['bpm'], p['ppq']), 2)
-                elif 'ppq' in p and 'ratio' in p:
-                    actual = tri.calculate_swing_quant_tick(p['ppq'], p['ratio'])
-                self.assertEqual(actual, exp)
+            elif cid == 'REF-0188':
+                self.assertEqual([i for i, hit in enumerate(p['pattern']) if hit == 'X'], exp)
+            elif cid == 'REF-0189':
+                self.assertEqual(math.lcm(p['r1'], p['r2']), exp)
+            elif cid == 'REF-0191':
+                self.assertEqual(DiatonicInterval(1 + 7 * p['octave'], 'P').semitones, exp)
+            elif cid == 'REF-0192':
+                quality, number = p['interval'][0], int(p['interval'][1:])
+                self.assertEqual(DiatonicInterval(number, quality).semitones, exp)
+
+            # 7. MIDI time
             elif cid == 'REF-0197':
                 actual = 60000.0 / p['bpm']
                 self.assertEqual(actual, exp)
@@ -316,11 +356,15 @@ class TestGoldenReferenceCases(unittest.TestCase):
                 raise NotImplementedError(f"Executable test case '{cid}' has no implementation!")
 
     def verify_specification_case(self, case_id: str) -> dict:
-        """Verifies that a specification example is well-formed and matches documented rules."""
+        """Check the expected-output and domain fields of a specification example."""
         c = self.case_map[case_id]
         exp = c.get('expected_output')
         self.assertIsNotNone(exp, f"Specification {case_id} missing expected_output")
         self.assertIn(c.get('domain'), ['M01', 'M02', 'M03', 'M04', 'M05', 'M06', 'M07', 'M08', 'M09', 'M10', 'M11', 'M12'])
+        if c["category"] == "DRUM_MAPPING":
+            instrument = c["input_params"]["instrument"]
+            self.assertIn(instrument, self.GM_PERCUSSION, f"{case_id}: no percussion source value")
+            self.assertEqual(exp, self.GM_PERCUSSION[instrument], f"{case_id}: General MIDI table 3")
         return {
             'case_id': case_id,
             'status': 'SPECIFICATION_DOCUMENTED',
@@ -339,22 +383,46 @@ class TestGoldenReferenceCases(unittest.TestCase):
     # SUITE EXECUTION METHODS
     # ==========================================================================
 
-    def test_all_67_computational_cases_execute_with_assertions(self):
-        """Executes all 67 computational cases (UNIT_TEST, PROPERTY_TEST, INTEGRATION_TEST) with real math."""
+    def test_executable_cases_compute_their_expected_results(self):
+        """Run every case classified as executable."""
         exec_cases = [c['case_id'] for c in self.cases if c['test_class'] in ['UNIT_TEST', 'PROPERTY_TEST', 'INTEGRATION_TEST']]
-        self.assertEqual(len(exec_cases), 67, f"Expected 67 executable cases, got {len(exec_cases)}")
+        self.assertEqual(len(exec_cases), 120)
 
         passed = 0
         for cid in exec_cases:
-            self.evaluate_executable_case(cid)
-            passed += 1
+            with self.subTest(case=cid):
+                self.evaluate_executable_case(cid)
+                passed += 1
 
-        self.assertEqual(passed, 67)
+        self.assertEqual(passed, len(exec_cases))
 
-    def test_all_131_specification_cases_are_verified(self):
-        """Verifies all 131 specification documentation examples without claiming false algorithmic pass."""
+    def test_swing_ratio_rejects_changed_durations(self):
+        original = self.case_map["REF-0021"]
+        try:
+            self.case_map["REF-0021"] = {
+                **original,
+                "input_params": {**original["input_params"], "durations": [1, 1]},
+            }
+            with self.assertRaises(AssertionError):
+                self.evaluate_executable_case("REF-0021")
+        finally:
+            self.case_map["REF-0021"] = original
+
+    def test_clave_rejects_eighth_positions_in_sixteenth_grid(self):
+        original = self.case_map["REF-0187"]
+        try:
+            self.case_map["REF-0187"] = {
+                **original, "expected_output": [0, 3, 6, 10, 12],
+            }
+            with self.assertRaises(AssertionError):
+                self.evaluate_executable_case("REF-0187")
+        finally:
+            self.case_map["REF-0187"] = original
+
+    def test_specification_examples_have_required_fields(self):
+        """Check structure of the cases classified as specification examples."""
         spec_cases = [c['case_id'] for c in self.cases if c['test_class'] == 'SPECIFICATION_EXAMPLE']
-        self.assertEqual(len(spec_cases), 131, f"Expected 131 specification cases, got {len(spec_cases)}")
+        self.assertEqual(len(spec_cases), 78)
 
         verified = 0
         for cid in spec_cases:
@@ -362,7 +430,39 @@ class TestGoldenReferenceCases(unittest.TestCase):
             self.assertEqual(res['status'], 'SPECIFICATION_DOCUMENTED')
             verified += 1
 
-        self.assertEqual(verified, 131)
+        self.assertEqual(verified, len(spec_cases))
+
+    def test_general_midi_note_map_rejects_wrong_note_number(self):
+        case_id = "REF-0045"
+        original = self.case_map[case_id]
+        try:
+            self.case_map[case_id] = {**original, "expected_output": 42}
+            with self.assertRaisesRegex(AssertionError, "General MIDI table 3"):
+                self.verify_specification_case(case_id)
+        finally:
+            self.case_map[case_id] = original
+
+    def test_swing_quantization_uses_ratio_and_resolution(self):
+        case_id = "REF-0181"
+        original = self.case_map[case_id]
+        try:
+            for field, value in (("ratio", 0.6), ("ppq", 480)):
+                with self.subTest(field=field):
+                    self.case_map[case_id] = {**original, "input_params": {**original["input_params"], field: value}}
+                    with self.assertRaises(AssertionError):
+                        self.evaluate_executable_case(case_id)
+        finally:
+            self.case_map[case_id] = original
+
+    def test_scale_evaluation_detects_different_mode_with_same_step_sum(self):
+        case_id = "REF-0130"
+        original = self.case_map[case_id]
+        try:
+            self.case_map[case_id] = {**original, "input_params": {"mode": "Mixolydian"}}
+            with self.assertRaises(AssertionError):
+                self.evaluate_executable_case(case_id)
+        finally:
+            self.case_map[case_id] = original
 
     def test_unimplemented_executable_case_strictly_raises_error(self):
         """Negative test proving that unhandled executable cases fail closed (no silent fallback)."""

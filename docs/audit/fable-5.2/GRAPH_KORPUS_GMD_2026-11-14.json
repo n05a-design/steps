@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "archive_sha256": "651cbc524ffb891be1a3e46d89dc82a1cecb09a57c748c7b45b844c4841dcc1e",
+  "metadata_rows": 1150,
+  "metadata_style_counts": {
+    "afrobeat": 13,
+    "afrocuban": 60,
+    "blues": 4,
+    "country": 29,
+    "dance": 7,
+    "funk": 160,
+    "gospel": 19,
+    "highlife": 2,
+    "hiphop": 95,
+    "jazz": 101,
+    "latin": 97,
+    "middleeastern": 1,
+    "neworleans": 53,
+    "pop": 27,
+    "punk": 58,
+    "reggae": 20,
+    "rock": 341,
+    "soul": 63
+  },
+  "selection": "primary style exactly pop; beat_type beat; time_signature 4-4",
+  "tolerance_quarter_notes": 0.1,
+  "bar_origin": "tick zero; complete bars before SMF end-of-track",
+  "kick_notes": [
+    36
+  ],
+  "snare_notes": [
+    37,
+    38,
+    40
+  ],
+  "denominator": "two target opportunities per role per complete bar; pooled hits are not independent songs",
+  "selected_recordings": 15,
+  "selected_drummers": 4,
+  "totals": {
+    "kick_1_3": {
+      "matched": 331,
+      "opportunities": 612
+    },
+    "snare_2_4": {
+      "matched": 366,
+      "opportunities": 612
+    }
+  },
+  "recordings": [
+    {
+      "recording_id": "drummer1/eval_session/7",
+      "member": "groove/drummer1/eval_session/7_pop-groove7_138_beat_4-4.mid",
+      "sha256": "d65fbd6b773c84859701167094952464632575ccc2a35c7442d457dc5d2e4745",
+      "drummer": "drummer1",
+      "session": "drummer1/eval_session",
+      "style": "pop/groove7",
+      "bpm": 138,
+      "split": "test",
+      "ppq": 480,
+      "complete_bars": 15,
+      "coverage": {
+        "kick_1_3": {
+          "matched": 17,
+          "opportunities": 30
+        },
+        "snare_2_4": {
+          "matched": 26,
+          "opportunities": 30
+        }
+      }
+    },
+    {
+      "recording_id": "drummer5/eval_session/7",
+      "member": "groove/drummer5/eval_session/7_pop-groove7_138_beat_4-4.mid",
+      "sha256": "ebfc116516d8b74126a984edbb856ea690ab5a7ff27b2df92367944dd85829ff",
+      "drummer": "drummer5",
+      "session": "drummer5/eval_session",
+      "style": "pop/groove7",
+      "bpm": 138,
+      "split": "test",
+      "ppq": 480,
+      "complete_bars": 15,
+      "coverage": {
+        "kick_1_3": {
+          "matched": 22,
+          "opportunities": 30
+        },
+        "snare_2_4": {
+          "matched": 30,
+          "opportunities": 30
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/eval_session/7",
+      "member": "groove/drummer7/eval_session/7_pop-groove7_138_beat_4-4.mid",
+      "sha256": "42cf3c42b89e9bc12f8a8fde89bb92b47bc4c8f2f1daff8c8ea519421861dbf9",
+      "drummer": "drummer7",
+      "session": "drummer7/eval_session",
+      "style": "pop/groove7",
+      "bpm": 138,
+      "split": "test",
+      "ppq": 480,
+      "complete_bars": 15,
+      "coverage": {
+        "kick_1_3": {
+          "matched": 23,
+          "opportunities": 30
+        },
+        "snare_2_4": {
+          "matched": 30,
+          "opportunities": 30
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/100",
+      "member": "groove/drummer7/session2/100_pop_142_beat_4-4.mid",
+      "sha256": "327d2072ec7ff40d86ebe39990286a52b151bcb00d744c5714a7f60e83a253bc",
+      "drummer": "drummer7",
+      "session": "drummer7/session2",
+      "style": "pop",
+      "bpm": 142,
+      "split": "validation",
+      "ppq": 480,
+      "complete_bars": 16,
+      "coverage": {
+        "kick_1_3": {
+          "matched": 12,
+          "opportunities": 32
+        },
+        "snare_2_4": {
+          "matched": 4,
+          "opportunities": 32
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/101",
+      "member": "groove/drummer7/session2/101_pop_142_beat_4-4.mid",
+      "sha256": "8280f442d28306f374f62e028d7b9945ed333581b30cbdfc5fc030b9cba1df4b",
+      "drummer": "drummer7",
+      "session": "drummer7/session2",
+      "style": "pop",
+      "bpm": 142,
+      "split": "train",
+      "ppq": 480,
+      "complete_bars": 23,
+      "coverage": {
+        "kick_1_3": {
+          "matched": 19,
+          "opportunities": 46
+        },
+        "snare_2_4": {
+          "matched": 5,
+          "opportunities": 46
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/102",
+      "member": "groove/drummer7/session2/102_pop_132_beat_4-4.mid",
+      "sha256": "5b0b9d678e84e4161389566ae4a438497a562c7631d286e32faa6b471f5ab16a",
+      "drummer": "drummer7",
+      "session": "drummer7/session2",
+      "style": "pop",
+      "bpm": 132,
+      "split": "validation",
+      "ppq": 480,
+      "complete_bars": 6,
+      "coverage": {
+        "kick_1_3": {
+          "matched": 4,
+          "opportunities": 12
+        },
+        "snare_2_4": {
+          "matched": 11,
+          "opportunities": 12
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/103",
+      "member": "groove/drummer7/session2/103_pop_132_beat_4-4.mid",
+      "sha256": "ee676a736249dca931d507b601edc0a22d1c8768f006ce844bfc287d7b15d6bc",
+      "drummer": "drummer7",
+      "session": "drummer7/session2",
+      "style": "pop",
+      "bpm": 132,
+      "split": "train",
+      "ppq": 480,
+      "complete_bars": 25,
+      "coverage": {
+        "kick_1_3": {
+          "matched": 23,
+          "opportunities": 50
+        },
+        "snare_2_4": {
+          "matched": 45,
+          "opportunities": 50
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/104",
+      "member": "groove/drummer7/session2/104_pop_132_beat_4-4.mid",
+      "sha256": "f71fdf7bb0dc4db09e27880e6fdacd4f52886652fa4fd96af048c39a329ca2b0",
+      "drummer": "drummer7",
+      "session": "drummer7/session2",
+      "style": "pop",
+      "bpm": 132,
+      "split": "train",
+      "ppq": 480,
+      "complete_bars": 26,
+      "coverage": {
+        "kick_1_3": {
+          "matched": 36,
+          "opportunities": 52
+        },
+        "snare_2_4": {
+          "matched": 35,
+          "opportunities": 52
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/105",
+      "member": "groove/drummer7/session2/105_pop_132_beat_4-4.mid",
+      "sha256": "679d7f3013b30860e8278d6ea9571200e6a3e56f22f76e2552ad9ba3c7f559ce",
+      "drummer": "drummer7",
+      "session": "drummer7/session2",
+      "style": "pop",
+      "bpm": 132,
+      "split": "train",
+      "ppq": 480,
+      "complete_bars": 10,
+      "coverage": {
+        "kick_1_3": {
+          "matched": 10,
+          "opportunities": 20
+        },
+        "snare_2_4": {
+          "matched": 15,
+          "opportunities": 20
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/96",
+      "member": "groove/drummer7/session2/96_pop_142_beat_4-4.mid",
+      "sha256": "d5a165a1fc16623f1acca2b81779e519accb8b281c2057f395373fa2bb797cdf",
+      "drummer": "drummer7",
+      "session": "drummer7/session2",
+      "style": "pop",
+      "bpm": 142,
+      "split": "validation",
+      "ppq": 480,
+      "complete_bars": 50,
+      "coverage": {
+        "kick_1_3": {
+          "matched": 51,
+          "opportunities": 100
+        },
+        "snare_2_4": {
+          "matched": 3,
+          "opportunities": 100
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/97",
+      "member": "groove/drummer7/session2/97_pop_142_beat_4-4.mid",
+      "sha256": "c42c6055c966705148fbd920cddaeee62e4a8ab752e9e4546e884c91826f5856",
+      "drummer": "drummer7",
+      "session": "drummer7/session2",
+      "style": "pop",
+      "bpm": 142,
+      "split": "train",
+      "ppq": 480,
+      "complete_bars": 19,
+      "coverage": {
+        "kick_1_3": {
+          "matched": 23,
+          "opportunities": 38
+        },
+        "snare_2_4": {
+          "matched": 3,
+          "opportunities": 38
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session3/11",
+      "member": "groove/drummer7/session3/11_pop-soft_83_beat_4-4.mid",
+      "sha256": "cbfd4de16aca7dc740e4ad2036a4e1185e657381fec8cb0ce148846728f00822",
+      "drummer": "drummer7",
+      "session": "drummer7/session3",
+      "style": "pop/soft",
+      "bpm": 83,
+      "split": "validation",
+      "ppq": 480,
+      "complete_bars": 47,
+      "coverage": {
+        "kick_1_3": {
+          "matched": 49,
+          "opportunities": 94
+        },
+        "snare_2_4": {
+          "matched": 86,
+          "opportunities": 94
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session3/22",
+      "member": "groove/drummer7/session3/22_pop-soft_83_beat_4-4.mid",
+      "sha256": "9af3f1bb4ee5120f4a3b7327dcf3a62a87638f12800e819c01bf71bba536e9d2",
+      "drummer": "drummer7",
+      "session": "drummer7/session3",
+      "style": "pop/soft",
+      "bpm": 83,
+      "split": "validation",
+      "ppq": 480,
+      "complete_bars": 16,
+      "coverage": {
+        "kick_1_3": {
+          "matched": 12,
+          "opportunities": 32
+        },
+        "snare_2_4": {
+          "matched": 29,
+          "opportunities": 32
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session3/23",
+      "member": "groove/drummer7/session3/23_pop-soft_83_beat_4-4.mid",
+      "sha256": "01c418db0852e392fa7c91f41feeca7a80494218df6c0da214545898655f8c3e",
+      "drummer": "drummer7",
+      "session": "drummer7/session3",
+      "style": "pop/soft",
+      "bpm": 83,
+      "split": "train",
+      "ppq": 480,
+      "complete_bars": 8,
+      "coverage": {
+        "kick_1_3": {
+          "matched": 7,
+          "opportunities": 16
+        },
+        "snare_2_4": {
+          "matched": 14,
+          "opportunities": 16
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/eval_session/7",
+      "member": "groove/drummer8/eval_session/7_pop-groove7_138_beat_4-4.mid",
+      "sha256": "e374db71ee5861723e8e017311a8924f8d58e1612dd922198179320ef8e737db",
+      "drummer": "drummer8",
+      "session": "drummer8/eval_session",
+      "style": "pop/groove7",
+      "bpm": 138,
+      "split": "test",
+      "ppq": 480,
+      "complete_bars": 15,
+      "coverage": {
+        "kick_1_3": {
+          "matched": 23,
+          "opportunities": 30
+        },
+        "snare_2_4": {
+          "matched": 30,
+          "opportunities": 30
+        }
+      }
+    }
+  ],
+  "population_generalization": false,
+  "human_approval": "AUSSTEHEND",
+  "relation_status": "OPEN",
+  "historical_assertion_closed": false,
+  "attribution": "Google LLC, Groove MIDI Dataset v1.0.0, CC BY 4.0; Gillick et al., Learning to Groove with Inverse Sequence Transformations (2019)",
+  "source_url": "https://magenta.tensorflow.org/datasets/groove"
+}

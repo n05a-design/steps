@@ -31,12 +31,12 @@
 | `PROG-016` | Coltrane Changes (3-Tonic Cycle) | `I^maj7 - V^7/bVI - bVI^maj7 - V^7/bIV - bIV^maj7` | `Bmaj7 - D7 - Gmaj7 - Bb7 - Ebmaj7` | Modern Jazz Matrix (Großterzteilung in Z12) | Cohn (2012), Tymoczko (2011) |
 | `PROG-017` | Classical Jazz Backdoor ii–V | `iv^7 - bVII^7 - I^maj7` | `Fm7 - Bb7 - Cmaj7` | Jazz-Standards (*Lady Bird*, *Yardbird*) | Levine (1995), Terefenko (2014) |
 | `PROG-018` | Substitute Backdoor ii–V | `ii^7 - bVII^7 - I^maj7` | `Dm7 - Bb7 - Cmaj7` | Cool Jazz, West Coast | Rawlins/Bahha (2005) |
-| `PROG-019` | Minor Line Cliché | `i - i^(maj7) - i^7 - i^6` | `Am - Am(maj7) - Am7 - Am6` | Bossa Nova, Spy Film, Ballade | Levine (1995) |
+| `PROG-019` | Minor Line Cliché | `i - i^(maj7) - i^7 - im6` | `Am - Am(maj7) - Am7 - Am6` | Bossa Nova, Spy Film, Ballade | Levine (1995) |
 | `PROG-020` | Extended Tritone Sub (Altered) | `ii^9 - bII^7(#11) - I^maj9` | `Dm9 - Db7(#11) - Cmaj9` | Contemporary Jazz | Levine (1995), Pease (2003) |
 | `PROG-021` | Neo-Soul Rootless Minor Cycle | `i^9 - iv^9 - bVI^maj9 - V^7(b9)` | `Dm9 - Gm9 - Bbmaj9 - A7(b9)` | Neo-Soul, R&B, Lo-Fi | Mulholland (2013) |
 | `PROG-022` | Picardy Third Resolution | `i - iv - bVII - I` | `Dm - Gm - C - D` | Barock, Renaissance, Folk | Aldwell/Schachter (1989) |
 | `PROG-023` | Liquid D&B Sub-Pulse Cadence | `i^7 - bVI^maj7 - bVII - i` | `Fm7 - Dbmaj7 - Eb - Fm` | Drum & Bass, UK Bass | Butterfield (2010) |
-| `PROG-024` | Bossa Nova Applied Dominant | `I^maj7 - V^7/V - ii^7 - V^7 - I^maj7` | `Cmaj7 - D7 - Dm7 - G7 - Cmaj7` | Bossa Nova (*Girl from Ipanema*) | Mauleón (1993), Jobim (1962) |
+| `PROG-024` | Bossa Nova Applied Dominant | `I^maj7 - V^7/V - ii^7 - V^7 - I^maj7` | `Cmaj7 - D7 - Dm7 - G7 - Cmaj7` | Bossa-Nova-Übungsschema | Historischer Literaturhinweis: Mauleón (1993) |
 | `PROG-025` | Afro-Cuban Minor Ostinato Vamp | `i - iv - V^7 - iv` | `Cm - Fm - G7 - Fm` | Salsa, Afro-Cuban, Mambo (Montuno) | Mauleón (1993), Peñalosa (2009) |
 | `PROG-026` | Secondary Dominant Chromatic Bassline | `I - V7(6/5)/V - ii6 - I6 - V7(4/3) - I` | `G - A7/C# - Am/C - G/B - D7/A - G` | Barock, Klassik, Latin Jazz | Kostka (2013), Aldwell (1989) |
 | `PROG-027` | Minor Jazz Blues Submediant Turnaround | `i^7 - iv^7 - i^7 - bVI^maj7 - V^7(#11) - i^7` | `Cm7 - Fm7 - Cm7 - Abmaj7 - G7(#11) - Cm7` | Minor Blues (*Birk's Works*, *Footprints*) | Levine (1995), Terefenko (2014) |
@@ -64,3 +64,12 @@
   ein konkretes Voicing fest. Der STEPS-Parser verlangt explizite
   unterstützte Alterationen und weist die offene Kurzform ab.
   [Open Music Theory, Altered and Extended Chords](https://viva.pressbooks.pub/openmusictheory/chapter/altered-and-extended-dominant-chords/)
+
+## Herkunft der Pilotbeispiele und der Bossa-Nova-Übung
+
+Die Fachbelege zu PROG-001, PROG-003 und PROG-009 stehen im
+[freigegebenen Lernkatalog](REVIEWED_PROGRESSIONS.md). Die Literaturspalte
+der Bestandsbibliothek bewahrt historische Hinweise zur Entstehung der
+Beispiele. PROG-024 bleibt als allgemeines Übungsschema erhalten. Im
+[Paulo-Jobim-Arrangement, S. 2–3](https://www.jobim.org/jobim/bitstream/handle/2010/10407/garota%20de%20ipanema.pdf)
+ist für eine F-Dur-Kadenz Gm7–G♭7–Fmaj7 notiert.

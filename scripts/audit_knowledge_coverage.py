@@ -20,6 +20,9 @@ sys.path.insert(0, str(ROOT))
 
 from scripts import render_reviewed_progressions as renderer
 from scripts import run_knowledge_benchmark as benchmark
+from scripts import graph_corrections
+from scripts import verify_historical_ontology
+from scripts import audit_graph
 from scripts.verify_reference_integrity import extract_markdown_table_definitions, verify_integrity
 from src.steps.progression import list_progressions, resolve_roman_degree, reviewed
 from src.steps.theory import CHORD_TEMPLATES, MusicTheoryError, parse_chord
@@ -39,6 +42,25 @@ def duplicates(rows, field):
     return {key for key, count in Counter(row[field] for row in rows).items() if count > 1}
 
 
+def format_node_evidence(rows):
+    repeated = duplicates(rows, "node_id")
+    evidence = {}
+    for row in rows:
+        ident = row["node_id"]
+        source = urlsplit(row["source_url"])
+        if (ident in repeated or not re.fullmatch(r"[A-Z0-9][A-Z0-9_-]+", ident)
+                or source.scheme != "https" or not source.hostname
+                or not row["definition"].strip() or not row["locator"].strip()):
+            raise ValueError(f"Ungültiger Quellenbeleg für Graphknoten {ident}.")
+        kind = row.get("evidence_kind", "SOURCE_PAGE")
+        if kind not in {"SOURCE_PAGE", "PROJECT_EXAMPLE", "COMPUTED_MODEL", "HISTORICAL_DEFINITION"}:
+            raise ValueError(f"Ungültige Belegart für Graphknoten {ident}.")
+        evidence[ident] = f"{row['source_url']} ({row['locator']})" + (f" [{kind}]" if "evidence_kind" in row else "")
+        if kind == "HISTORICAL_DEFINITION":
+            evidence[ident] += f" Namensraum {row['namespace']}; nur historische Definition, keine fachliche Freigabe."
+    return evidence
+
+
 def table(path, pattern, columns):
     rows, issues = extract_markdown_table_definitions(path, pattern, columns)
     if issues:
@@ -46,8 +68,46 @@ def table(path, pattern, columns):
     return {ident: (line, fields) for ident, line, fields in rows}
 
 
+def relation_evidence(rows, relation_ids, claim_ids):
+    evidence = {}
+    for row in rows:
+        ident = row["relation_id"]
+        source = urlsplit(row["source_url"])
+        if (ident in evidence or ident not in relation_ids
+                or source.scheme != "https" or not source.hostname
+                or row["assessment"] not in {"SOURCE_SUPPORTED_SAMPLE", "PROJECT_EXAMPLE_SAMPLE", "COUNTEREXAMPLE"}
+                or not all(row[key].strip() for key in ("locator", "scope", "limitation"))
+                or (row["claim_id"] and row["claim_id"] not in claim_ids)):
+            raise ValueError(f"Ungültiger Quellenbeleg für Graphkante {ident}.")
+        evidence[ident] = row
+    return evidence
+
+
+def graph_evidence(checks, evidence):
+    status, detail, followup = catalog_evidence(checks)
+    # A passing audit countercheck does not turn the contradicted graph claim green.
+    if evidence and evidence["assessment"] == "COUNTEREXAMPLE" and status == "PASS":
+        status = "FAIL"
+        detail += " Gegenprobe bestätigt eine beanstandete Graphzuordnung."
+    return status, detail, followup
+
+
 def comparable(chord):
     return int(chord.root.pitch_class), chord.theoretical_intervals, int((chord.bass or chord.root).pitch_class)
+
+
+def catalog_evidence(checks):
+    counts = Counter(check["status"] for check in checks)
+    status = next((state for state in ("FAIL", "PASS", "PENDING") if counts[state]), "OFFEN")
+    detail = " ".join(f"{counts[state]} {state}." for state in benchmark.STATUSES if counts[state])
+    next_steps = dict.fromkeys(check["next_step"] for check in checks if check["next_step"])
+    return status, detail, " ".join(next_steps)
+
+
+def position_checks(by_case, prog_id, position):
+    """Return the positional case and the whole-progression case, so neither hides the other."""
+    keys = (f"KB-{prog_id}-{position:02}", f"{prog_id}-HARMONY")
+    return [by_case[key] for key in keys if key in by_case]
 
 
 NEXT = {
@@ -155,6 +215,8 @@ def audit():
         missing = []
         if ident in historical_duplicates or not re.fullmatch(r"SRC-\d{3,4}", ident):
             missing.append("ungültige oder doppelte ID")
+        if row.get("provenance_status") == "SOURCE_REVIEW_REQUIRED":
+            missing.append("Historische Bibliografie und Fundstelle unbestätigt")
         if not row.get("title"):
             missing.append("Titel fehlt")
         if "filename" in row:
@@ -181,13 +243,16 @@ def audit():
             issues.append("Fundstelle fehlt oder Platzhalter")
         if (not all(row.get(field, "").strip() for field in ("claim_text", "evidence_class"))
                 or not re.fullmatch(r"M(?:0[1-9]|1[0-2])", row.get("domain_id", ""))
-                or row["validation_status"] not in {"VERIFIED_TRUE", "PLACEHOLDER", "REVIEW_REQUIRED", "SOURCE_REVIEW_REQUIRED"}):
+                or row["validation_status"] not in {"PLACEHOLDER", "REVIEW_REQUIRED", "SOURCE_REVIEW_REQUIRED"}):
             issues.append("Pflichtangaben fehlen")
-        checks = [r for r in results if r["method"] == "claim_sample" and r["content"] == ident]
-        depth = checks[0]["status"] if checks else "OFFEN"
+        checks = [
+            r for r in results
+            if r["method"] in {"claim_sample", "guide_tone_paths"} and r["content"] == ident
+        ]
+        depth, detail, next_step = catalog_evidence(checks)
         add("Forschungsclaims", ident, "BEFUND" if issues else "OK", depth,
-            "; ".join([*issues, f"Registerstatus {row['validation_status']}"]),
-            next_step=checks[0]["next_step"] if checks and checks[0]["next_step"] else None)
+            " ".join(filter(None, ["; ".join([*issues, f"Registerstatus {row['validation_status']}."]), detail])),
+            next_step=next_step or None)
 
     progression_path = CONCEPTS / "progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md"
     drum_path = CONCEPTS / "styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"
@@ -201,12 +266,52 @@ def audit():
 
     domains = {f"M{i:02}" for i in range(1, 13)}
     endpoints = progs.keys() | drums.keys() | pianos.keys() | domains
-    for row in read_csv(KNOWLEDGE / "relations/MUSIC_CONCEPT_RELATIONS.csv"):
-        unresolved = [row[field] for field in ("source_id", "target_id") if row[field] not in endpoints]
-        notes = "Keine direkte Quellen-/Claim-ID in der Relationszeile."
+    # These aliases are documented in knowledge/relations/FABLE_GRAPH_REVIEW.md.
+    aliases = {"PROG_024": "PROG-024", "PROG_025": "PROG-025"}
+    verify_historical_ontology.verify(ROOT)
+    format_nodes = format_node_evidence(
+        read_csv(KNOWLEDGE / "relations/FORMAT_NODE_EVIDENCE.csv")
+        + read_csv(KNOWLEDGE / "relations/MUSIC_NODE_EVIDENCE.csv")
+        + read_csv(KNOWLEDGE / "relations/HISTORICAL_NODE_EVIDENCE.csv"))
+    if (endpoints | aliases.keys()) & format_nodes.keys():
+        raise ValueError("Formatknoten überschneidet sich mit einer kanonischen ID oder einem Alias.")
+    relations = read_csv(KNOWLEDGE / "relations/MUSIC_CONCEPT_RELATIONS.csv")
+    corrections = graph_corrections.validate(
+        json.loads((KNOWLEDGE / "relations/GRAPH_CORRECTIONS.json").read_text(encoding="utf-8")), relations, format_nodes)
+    edge_evidence = relation_evidence(read_csv(KNOWLEDGE / "relations/RELATION_EVIDENCE.csv"),
+                                      {row["relation_id"] for row in relations}, {row["claim_id"] for row in claim_rows})
+    night_rows, _ = audit_graph.audit(ROOT)
+    night_evidence = {row['relation_id']: row for row in night_rows}
+    for row in relations:
+        terms = (row["source_id"], row["target_id"])
+        unresolved = [term for term in terms if aliases.get(term, term) not in endpoints and term not in format_nodes]
+        notes = f"Registerstatus {row['validation_status']}. Keine direkte Quellen-/Claim-ID in der Relationszeile."
+        resolved_aliases = [f"{term} → {aliases[term]}" for term in terms
+                            if term in aliases and aliases[term] in endpoints]
+        if resolved_aliases:
+            notes += " Historische Aliasauflösung: " + ", ".join(resolved_aliases)
+        node_sources = [f"{term}: {format_nodes[term]}" for term in terms if term in format_nodes]
+        if node_sources:
+            notes += " Quellenbelegte Endpunkte: " + " · ".join(node_sources) + "."
         if unresolved:
             notes += " Endpunktdefinition im kanonischen Knotenbestand offen: " + ", ".join(unresolved)
-        add("Graphrelationen", row["relation_id"], "BEFUND", note=notes)
+        evidence = edge_evidence.get(row["relation_id"])
+        if evidence:
+            notes += (f" Ergänzender Kantenbeleg: {evidence['source_url']} ({evidence['locator']})."
+                      f" {evidence['assessment']}: {evidence['scope']}. Grenze: {evidence['limitation']}.")
+        if row["relation_id"] in corrections:
+            correction = corrections[row["relation_id"]]
+            notes += (f" Expliziter Korrekturvorschlag: {correction['replacement']['target_id']};"
+                      " REVIEW_REQUIRED, keine Produktionsfreigabe. Historischer FAIL bleibt erhalten.")
+        checks = [r for r in results if r["method"] == "graph_sample" and r["content"] == row["relation_id"]]
+        status, detail, next_step = graph_evidence(checks, evidence)
+        night = night_evidence[row['relation_id']]
+        notes += f" Nachtprüfung: {night['review_category']}; {night['review_note']}"
+        if status == 'OFFEN' and night['relation_status'] == 'SAMPLE_SUPPORTED':
+            status = 'PASS'
+            detail += ' Begrenzte technische Modellstichprobe; keine Vollabnahme.'
+        add("Graphrelationen", row["relation_id"], "BEFUND", status, note=notes + " " + detail,
+            next_step=(next_step or (evidence["limitation"] if evidence else None)))
 
     template_checks = {"maj7", "m7"}
     for quality, template in CHORD_TEMPLATES.items():
@@ -245,16 +350,17 @@ def audit():
                 observation = f"{token} → {parsed.symbol}; Katalog {symbol}"
             except MusicTheoryError as exc:
                 consistent, observation = False, str(exc)
-            case = by_case.get(f"KB-{ident}-{i:02}") or by_case.get(f"{ident}-HARMONY")
+            status, detail, next_step = catalog_evidence(position_checks(by_case, ident, i))
             add("Progressionspositionen", f"{ident}:{i}", "OK" if consistent else "BEFUND",
-                case["status"] if case else "OFFEN", observation, next_step=case["next_step"] if case else None)
+                status, f"{observation}. {detail}".rstrip() if detail else observation,
+                next_step=next_step or None)
 
     for area, rows in (("Klaviermodule", pianos), ("Drum-/Groove-Katalog", drums)):
         for ident, (line, _) in rows.items():
             checks = [r for r in results if r["content"] == ident]
-            add(area, ident, "OK", checks[0]["status"] if checks else "OFFEN",
-                f"Markdown-Zeile {line}; redaktionelle und spielpraktische Abnahme offen.",
-                next_step=next((r["next_step"] for r in checks if r["next_step"]), None))
+            status, detail, next_step = catalog_evidence(checks)
+            note = f"Markdown-Zeile {line}. Redaktionelle und spielpraktische Abnahme offen."
+            add(area, ident, "OK", status, f"{note} {detail}".rstrip(), next_step=next_step)
 
     approvals = reviewed._approval_records(claims)
     verified = set()

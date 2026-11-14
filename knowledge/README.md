@@ -1,3 +1,25 @@
+# Wissensbasis
+
+| Einstieg | Inhalt |
+| --- | --- |
+| [Quellen](sources/README.md) | App-Quellen, historische Bibliografie, Claims und Dateiinventur. |
+| [Fachkonzepte](concepts/README.md) | Akkorde, Harmonie, Intervalle, Tonleitern, Progressionen, Stimmführung und Rhythmik. |
+| [Pilot-Lernmaterial](concepts/progressions/REVIEWED_PROGRESSIONS.md) | Drei freigegebene Beispiele aus demselben Datensatz wie der App-Adapter. |
+| [Konzeptrelationen](relations/README.md) | Forschungsgraph mit typisierten Kanten und dokumentierten Lücken. |
+| [Benchmark](benchmark/README.md) | Wissensprüfung, Abdeckungsmatrix und Abnahmeprotokolle. |
+| [Referenzdaten](research/README.md) | Golden-Master, Identitätsregister und historische Prüfberichte. |
+| [Korpora](corpora/README.md) · [Beispiele](examples/README.md) · [Glossar](glossary/README.md) | Ablagezwecke und vorhandene Referenzen für den Ausbau. |
+| [Legacy](legacy/README.md) | Zuordnung zum Rohbestand der V6.x-Bibliothek. |
+
+Für neue Inhalte den [Kurationsablauf](INGESTION_PIPELINE.md) und die
+[Rechteprüfung](sources/RIGHTS_POLICY.md) verwenden. Zu einer Aussage gehören
+Quell-ID, konkrete Fundstelle, Geltungsbereich und nachvollziehbare Gegenprobe.
+Der [App-Pilot](concepts/progressions/README.md) prüft zusätzlich die
+Freigabe der konkreten Fassung.
+
+<details>
+<summary>Historische Ausgangsdokumentation vom 10. November 2026</summary>
+
 # STEPS – wachsende Knowledge Base und Literaturarchiv
 
 > Der operative Einstieg führt zum [Quellenregister](sources/README.md), zur [Ingestion](INGESTION_PIPELINE.md) und zu den [einzeln geprüften App-Beispielen](concepts/progressions/REVIEWED_PROGRESSIONS.md). Die folgenden Projekt- und Glide-Angaben sind datierte Ausgangsnotizen.
@@ -32,3 +54,5 @@ Musiktheorie (Intervalle, Skalen, Notation), Harmonik (Funktion/Modal/Jazz/Chrom
 8. Für Produktabfragen nur geprüfte Claim-ID und passende Lizenz verwenden; Herkunft/Interpretationskonflikte im UI erhalten.
 
 Siehe `INGESTION_PIPELINE.md`, `skills/SKILL_DESIGN.md`, `source_archive/README_STEPS_BIBLIOTHEK.md`, `prompts/14_SOURCE_INGESTION.md` und `prompts/15_KNOWLEDGE_SKILL.md`.
+
+</details>

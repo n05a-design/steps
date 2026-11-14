@@ -1,5 +1,9 @@
-# design/tokens
+# Design-Tokens
 
-Geplante konsistente Spacing-/Color-/Typography-Token und Accessibility.
+Vorgesehene Ablage für Farb-, Typografie-, Abstands- und Zustandswerte. Hier liegt derzeit die Ablagebeschreibung. Bei späterer Implementierung Kontrast und Skalierung prüfen.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Qualitätsgates](../../docs/quality/QUALITY_GATES.md) | Maßgeblicher Projektkontext. |
+
+[Zur Bereichsübersicht](../README.md)

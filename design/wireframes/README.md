@@ -1,5 +1,9 @@
-# design/wireframes
+# Wireframes und Bedienabläufe
 
-Eigene Screens/Wireframes, noch keine fertige GUI.
+Vorgesehene Ablage für datierte STEPS-Entwürfe. Neue Entwürfe benennen Szenario, Zustände und offene Bedienfragen. Hier liegt derzeit die Ablagebeschreibung.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Bedien- und Lernkonzept](../../docs/product/LEARNING_AND_EXPERIENCE.md) | Maßgeblicher Projektkontext. |
+
+[Zur Bereichsübersicht](../README.md)

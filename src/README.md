@@ -1,3 +1,20 @@
+# Quellcode und technische Referenzen
+
+| Ordner | Rolle im Checkout |
+| --- | --- |
+| [steps](steps/README.md) | Aktiver Python-Kern für Theorie, Progressionen und kuratiertes Lernmaterial. |
+| [steps-0.00](steps-0.00/README.md) | Dokumentarisches Scaffold aus der frühen Planung. |
+| [glide-v3.53](glide-v3.53/README.md) | Versionierter Glide-Referenzstand mit eigener Lizenz und Dokumentation. |
+
+Die [App-Schicht](../app/README.md) bindet Pilotbeispiele über einen Adapter
+an. Der [Implementierungsstand](../docs/IMPLEMENTATION.md) beschreibt die
+heutigen Funktionen und Laufzeitgrenzen. Der
+[Glide-Reuse-Index](../docs/system_reuse/README.md) führt Herkunft und
+Nachweise zur möglichen technischen Übernahme.
+
+<details>
+<summary>Historische Ausgangsdokumentation vom 10. November 2026</summary>
+
 # STEPS 0.00 – Entwicklungs- und Übergabebereich
 
 > Der [Implementierungsstand](../docs/IMPLEMENTATION.md) und die [generierte API-Referenz](../docs/theory/API.md) beschreiben den Code dieses Checkouts. Der folgende Text dokumentiert den Entwicklungsstand vom 10. November 2026.
@@ -74,3 +91,5 @@ Die vorgesehene Start-Shell ist ein Hauptfenster mit zwei Bereichen (Sidebar und
 - Neuer Auditauftrag (in diesem Einspielpaket): `prompts/30_ANTIGRAVITY_MASTER_AUDIT_2026-11-10.md`
 
 **Hinweis:** Diese README dokumentiert Ziel, Quellen und Abnahmekriterien. Sie behauptet keine bereits umgesetzten oder getesteten STEPS-Funktionen. Technische Rückbauten und Git-Änderungen erfolgen erst in einem gesondert freigegebenen Feature-Branch.
+
+</details>

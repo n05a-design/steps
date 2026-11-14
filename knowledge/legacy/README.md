@@ -1,5 +1,11 @@
-# knowledge/legacy
+# Historische V6.x-Wissensbibliothek
 
-Historische V6.x-Wissensbibliothek; bis zum Rechte-/Linkaudit bleibt der vorhandene Altordner referenziert.
+Dieses Verzeichnis enthält die Beschreibung der früheren Bibliothek und ihre Zuordnung zum heutigen Arbeitsbestand.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Historische Beschreibung](STEPS_BIBLIOTHEK_README.md) | Ausgangsstruktur der Bibliothek. |
+| [Zuordnung](MAPPING.md) | Einordnung der alten Pfade. |
+| [Forschungsbestand](../../research/STEPS_Bibliothek/README.md) | Historischer Dateibaum. |
+
+[Zur Bereichsübersicht](../README.md)

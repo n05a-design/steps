@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "independent_human_approval": "AUSSTEHEND",
+  "source_reviews": [
+    {
+      "id": "HUTCHINSON-GUIDE-TONES",
+      "url": "https://musictheory.pugetsound.edu/mt21c/JazzChordVoicings.html",
+      "locator": "31.7.1 Guide Tones, first paragraph and following written practice instruction",
+      "status": "PRIMARY_TEXT_SCOPED_READ",
+      "finding": "Text definiert Guide Tones als Terz und Septime und beschreibt Bass links, Guide Tones rechts. Die hier gerechnete konkrete Lage ist ein neuer eigener Entwurf; Klang, Ergonomie und MANDATORY_JAZZ werden dadurch nicht freigegeben.",
+      "relations": [
+        "REL-003"
+      ],
+      "source_figures_transcribed": false
+    },
+    {
+      "id": "SMITHER-2019",
+      "url": "https://mtosmt.org/issues/mto.19.25.2/mto.19.25.2.smither.php",
+      "locator": "Guide-Tone Space, paragraphs 1.6 and 2.1-2.2",
+      "status": "PRIMARY_RESEARCH_TEXT_SCOPED_READ",
+      "finding": "Die eigene theoretische Untersuchung formalisiert Guide-Tone-Dyaden aus Terz und Septime. Das stützt den begrenzten Begriff, keinen Nachweis jeder STEPS-Spielanweisung oder jedes Jazz-Stils.",
+      "relations": [
+        "REL-003"
+      ],
+      "source_figures_transcribed": false
+    },
+    {
+      "id": "HUTCHINSON-SIX-FOUR",
+      "url": "https://musictheory.pugetsound.edu/mt21c/TypesOfSixFourChords.html",
+      "locator": "26.11, written list of pedal, passing and cadential six-four chords",
+      "status": "PRIMARY_TEXT_SCOPED_READ",
+      "finding": "Drei benannte Funktionen widerlegen die pauschale Gleichsetzung jeder zweiten Umkehrung mit einem kadenzierenden Vorhalt. Keine neue Notentranskription aus den Abbildungen.",
+      "relations": [
+        "REL-019"
+      ],
+      "source_figures_transcribed": false
+    },
+    {
+      "id": "SURDO-UNIRIO",
+      "url": "https://www.unirio.br/cla/ivl/cursos/bernardopinto.pdf",
+      "locator": "Attempted full PDF retrieval, 2026-11-14",
+      "status": "HTTP_403_NOT_VERIFIED",
+      "finding": "Suchindextext reicht nicht als neue Volltext- oder Notenabnahme. Frühere Rollenhinweise bleiben begrenzte vorhandene Belege.",
+      "relations": [
+        "CDR-021"
+      ],
+      "source_figures_transcribed": false
+    },
+    {
+      "id": "SURDO-UFMG",
+      "url": "https://repositorio.ufmg.br/bitstream/1843/32245/2/O%20IDIOMATISMO%20COMPOSICIONAL%20DE%20JUAREZ%20MOREIRA%20.pdf",
+      "locator": "Attempted full PDF retrieval, 2026-11-14",
+      "status": "HTTP_403_NOT_VERIFIED",
+      "finding": "Keine neue Quellenbestätigung aus dem gesperrten Direktabruf.",
+      "relations": [
+        "CDR-021"
+      ],
+      "source_figures_transcribed": false
+    },
+    {
+      "id": "CRISTAL-2013",
+      "url": "https://new.scielo.br/j/pm/a/Grtn6Svp4rvRLrC6NsPyTrn/?ilang=en&lang=pt",
+      "locator": "Gomes/Barros 2013, introductory text retrieved; targeted later text and publisher PDF timed out",
+      "status": "INTRODUCTION_ONLY_RELEVANT_SECTION_UNVERIFIED",
+      "finding": "Einleitung zum pianistischen Samba gelesen. Relevante spätere Surdo-Stelle und Notenbeispiel wurden nicht visuell geprüft und nicht als Nachweis ausgegeben.",
+      "relations": [
+        "CDR-021"
+      ],
+      "source_figures_transcribed": false
+    },
+    {
+      "id": "OMT-INVERSION",
+      "url": "https://viva.pressbooks.pub/openmusictheory/chapter/inversion-and-figured-bass/",
+      "locator": "Attempted page retrieval",
+      "status": "HTTP_404_NOT_VERIFIED",
+      "finding": "Nicht funktionierender Direktpfad wurde nicht als gelesener Quellenbeleg behandelt.",
+      "relations": [
+        "CR-015"
+      ],
+      "source_figures_transcribed": false
+    }
+  ]
+}

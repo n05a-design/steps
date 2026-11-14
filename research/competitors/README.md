@@ -1,5 +1,11 @@
-# research/competitors
+# Wettbewerbs- und Referenzanalyse
 
-Wettbewerbervergleich mit URLs/Belegen; fremde Screenshots und Seitenkopien nur nach Rechteprüfung.
+Hier liegen historische Produktreferenzen für musikbezogene Werkzeuge. Rechte und technische Eignung werden pro Fundstelle geprüft.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Produktbilder](Produktbilder/) | Historisch erfasste visuelle Referenzen. |
+| [Quellcode-Referenzen](Source%20Code/) | Historische technische Unterlagen. |
+| [Markt und Validierung](../../docs/product/MARKET_AND_VALIDATION.md) | Vorgehen für vergleichende Analyse. |
+
+[Zur Bereichsübersicht](../README.md)

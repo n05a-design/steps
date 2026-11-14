@@ -1,0 +1,55 @@
+[
+  {
+    "claim_id": "CLAIM-001",
+    "old_locator": "Müller (2015), Ch. 1, p. 14",
+    "new_locator": "Meinard Müller (2015), Fundamentals of Music Processing, section 1.3.2, printed p. 22 (PDF p. 48), equation (1.1); local edition ISBN 978-3-319-21945-5. Historical locator: Müller (2015), Ch. 1, p. 14 (superseded).",
+    "local_file": "research/STEPS_Bibliothek/Fundamentals of Music Proce_ (Z-Library).pdf",
+    "sha256": "feb755b854a0683cccd611545f4298a9e9d90dcce5839bbde92f14eea27e4767",
+    "method": "PDF_TEXT_AND_RENDERED_PAGE_INSPECTION",
+    "source_status": "FORMULA_AND_LOCATOR_CHECKED",
+    "human_review": "AUSSTEHEND",
+    "rights": "NO_NEW_SOURCE_BYTES_PUBLISHED"
+  },
+  {
+    "claim_id": "CLAIM-010",
+    "old_locator": "Müller (2015), Ch. 3, p. 78",
+    "new_locator": "Meinard Müller (2015), Fundamentals of Music Processing, section 1.3.2, printed p. 22 (PDF p. 48), equation (1.4); local edition ISBN 978-3-319-21945-5. Historical locator: Müller (2015), Ch. 3, p. 78 (superseded).",
+    "local_file": "research/STEPS_Bibliothek/Fundamentals of Music Proce_ (Z-Library).pdf",
+    "sha256": "feb755b854a0683cccd611545f4298a9e9d90dcce5839bbde92f14eea27e4767",
+    "method": "PDF_TEXT_AND_RENDERED_PAGE_INSPECTION",
+    "source_status": "FORMULA_AND_LOCATOR_CHECKED",
+    "human_review": "AUSSTEHEND",
+    "rights": "NO_NEW_SOURCE_BYTES_PUBLISHED"
+  },
+  {
+    "claim_id": "CLAIM-007",
+    "local_file": "research/STEPS_Bibliothek/IMSLP342443-PMLP552428-hindemithTraditionalHarmonyBook.pdf",
+    "sha256": "bc984b1afaa713d124146712ff9aebf3a96862c78dad0f05bc07beadc7104d0b",
+    "method": "RENDERED_PDF_PAGE_19_PRINTED_PAGE_12",
+    "source_status": "CITATION_MISMATCH",
+    "finding": "Printed page 12 is Chapter III, Sixth Chords and Exercise 16. It does not establish the claimed acoustic interval dissonance hierarchy. No assertion that the entire musical claim is thereby disproved.",
+    "human_review": "AUSSTEHEND"
+  },
+  {
+    "claim_id": "CLAIM-016",
+    "old_locator": "Oliver Prehn, The Modes, pp. 1–2, https://newjazz.dk/Compendiums/Major_Melmi_Harmmi_HarmMa_Modes.pdf. Former attribution to SRC-033 unconfirmed.",
+    "new_locator": "Oliver Prehn, The Modes, PDF p. 1, https://newjazz.dk/Compendiums/Major_Melmi_Harmmi_HarmMa_Modes.pdf. Former attribution to SRC-033 unconfirmed.",
+    "method": "CURRENT_ONE_PAGE_ORIGINAL_PDF",
+    "human_review": "AUSSTEHEND"
+  },
+  {
+    "claim_id": "CLAIM-042",
+    "old_fields": {
+      "citation_reference": "Levine (1995), Ch. 17, p. 280",
+      "claim_text": "Drop-2 voicings lower the second voice from the top of a close-position four-note seventh chord by one octave into the left hand or lower register.",
+      "falsification_or_boundary_condition": "Drop-2 requires four-voice tertian chords; does not apply to triads or five-note voicings."
+    },
+    "new_fields": {
+      "citation_reference": "John Thomas, Voice Leading for Guitar, Drop-2 Voicings, Figure 18, https://online.berklee.edu/takenote/voice-leading-for-guitar/. Historical Levine (1995), Ch.17, p.280 remains unverified.",
+      "claim_text": "For the specified four-note close-position example, drop-2 lowers the second voice from the top by one octave. The transformation determines register, not a compulsory left-hand assignment.",
+      "falsification_or_boundary_condition": "This STEPS example is four-note. It does not establish a prohibition on applying a drop operation to other voice counts; hand distribution and playability require separate choices."
+    },
+    "method": "SCOPE_CORRECTION_MATCHING_EXISTING_GRAPH_SOURCE",
+    "human_review": "AUSSTEHEND"
+  }
+]

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "relation_id": "CDR-019",
+  "human_approval": "AUSSTEHEND",
+  "historical_assertion_closed": false,
+  "verified_causal_claim": false,
+  "fulltext_originals_verified": 0,
+  "records": [
+    {
+      "id": "REILY_PUBLISHER",
+      "url": "https://www.cambridge.org/core/journals/popular-music/article/abs/tom-jobim-and-the-bossa-nova-era/D61EFEFEF21863C86C31477EDCD12FF9",
+      "doi": "10.1017/S0261143000007935",
+      "edition": "Popular Music15(1), January1996, pp.1–16; online publication11November2008 is distinct",
+      "status": "REFERENCE_LIST_READ_BODY_ACCESS_REQUIRED",
+      "finding": "Verlagsreferenzliste identifiziert Cabral n.d.a als Em busca da perfeição, Songbook: Bossa Nova, Band2, herausgegeben von Almir Chediak, Rio de Janeiro, S.10–17.",
+      "access_result": "Publizierter PDF-Link lieferte HTML statt eines PDFs. Auszug und Referenzen gelesen; kein vollständiger Artikel oder Fig.1 visuell geprüft.",
+      "next_required": "Autorisierter Volltext: gedruckte S.5 und Fig.1 prüfen; die p.12-Zuschreibung in Cabral ist bisher nur indexiert/überliefert."
+    },
+    {
+      "id": "CABRAL_VOLUME2_PREVIEW",
+      "url": "https://sheetmusiclibrary.website/wp-content/uploads/2021/02/Bossa-Nova-songbook-1-to-5.pdf",
+      "sha256": "ed3c09a75b6ef168cfc344d260685ae0da81fbfeeab31cb44627c92905b4ccef",
+      "pages": 4,
+      "visually_checked_pdf_pages": [1,2],
+      "status": "TOC_ONLY",
+      "finding": "Trotz des Dateinamens enthält die Lieferung nur vier Inhaltsverzeichnisseiten. PDF1 nennt Em busca da perfeição und die englische Fassung in Band2. Die betreffende Essayseite fehlt; Seitenfelder für Band2 sind leer.",
+      "access_result": "Lokaler Preview-Hash gesichert. Kein Volltextfund und keine Rechtefreigabe.",
+      "next_required": "Songbook Bossa Nova Band2, Cabral-Essay S.10–17, insbesondere S.12, im berechtigten Original einsehen; Zitat und interviewte Person exakt prüfen."
+    },
+    {
+      "id": "REILY_DISCOVERY_MIRRORS",
+      "url": "https://www.academia.edu/5555299/Tom_Jobim_and_the_bossa_nova_era",
+      "secondary_discovery_url": "https://www.scribd.com/document/881500284/Reily-TomJobimBossa-1996",
+      "status": "INDEXED_EXCERPT_ONLY",
+      "finding": "Indexierter Text nennt die Cabral-p.12-Kette. Direkter Academia-Abruf bot nur Metadaten, Scribd einen JavaScript-Challenge-Bildschirm. Der Indextext wurde nicht als gelesene Originalseite gewertet.",
+      "access_result": "Kein Login, Kauf, Kontakt oder Umgehen einer Zugriffssperre.",
+      "next_required": "Verlags-/Autorenexemplar oder vorhandene berechtigte Bibliothekskopie prüfen."
+    },
+    {
+      "id": "GARCIA_USP_1998",
+      "url": "https://dlcv.fflch.usp.br/book/export/html/359",
+      "status": "INSTITUTIONAL_CATALOG_ONLY",
+      "finding": "USP-Verzeichnis führt BIM BOM (A contradição sem conflitos de João Gilberto), Walter Garcia da Silveira Junior, Betreuung Jose Antonio Pasta Junior, Verteidigung7October1998. Keine Thesis-Datei im gelesenen Verzeichnis.",
+      "access_result": "Institutioneller Nachweis der1998er Dissertation, kein Inhalts-/Seitenabgleich mit dem1999er Buch.",
+      "next_required": "Dissertation und1999er Buch getrennt beschaffen; Seitenzählung und Editionsunterschiede prüfen."
+    },
+    {
+      "id": "GARCIA_1999_CATALOG",
+      "url": "https://openlibrary.org/works/OL1004484W/Bim_bom",
+      "institutional_author_url": "https://uspaberta.ime.usp.br/docentes/7540759423089612",
+      "status": "CATALOG_ONLY",
+      "finding": "Werkdatensatz nennt Paz e Terra1999, portugiesisch,221 Seiten. Institutioneller Autoreneintrag bestätigt das Buch. Kein lesbarer Originalvolltext gefunden.",
+      "access_result": "Ghezzi2009-Locatoren21–22/25–38/45–49 bleiben indirekt; keine Gleichsetzung mit Dissertation1998.",
+      "next_required": "Originalbuch mit Editionsdaten und den konkret zitierten Seiten prüfen."
+    },
+    {
+      "id": "SCHREINER_1993_CATALOG",
+      "url": "https://books.google.com/books?id=0CDaAAAAMAAJ",
+      "status": "CATALOG_ONLY",
+      "finding": "Claus Schreiner, Música Brasileira: A History of Popular Music and the People of Brazil, Marion Boyars1993,306 Seiten. Keine eingesehene einschlägige Originalseite.",
+      "access_result": "Bibliografischer Treffer schließt weder den historischen STEPS-Locator noch die Rechtefrage.",
+      "next_required": "Passende Ausgabe und tatsächliche Surdo-/Tamborim-Herkunftsaussage mit Seitenbeleg prüfen."
+    }
+  ]
+}

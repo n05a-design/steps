@@ -1,8 +1,12 @@
-# Nutzung von STEPS
+# STEPS verwenden
 
-In diesem Checkout lässt sich der Python-Kern direkt aus dem Repository
-verwenden. Der [Schnellstart](../../README.md) zeigt die Voraussetzungen und
-Prüfbefehle. Ein [Python-Beispiel](../IMPLEMENTATION.md#ein-beispiel-vom-symbol-bis-zum-voicing)
-führt vom Akkordsymbol über die Stufenauflösung zur Stimmführung.
+Der Python-Kern lässt sich aus dem Repository-Root nutzen. Desktop-Start und Installationspakete befinden sich in Vorbereitung.
 
-Die Desktop-Anwendung und ihre Installationspakete befinden sich in Planung.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Schnellstart](../../README.md#schnellstart) | Voraussetzungen und erster Parser-Aufruf. |
+| [Vom Symbol zum Voicing](../IMPLEMENTATION.md#ein-beispiel-vom-symbol-bis-zum-voicing) | Ausführbares Beispiel für Akkord, Stufe und Stimmführung. |
+| [Geprüfte Lernbeispiele](../../knowledge/concepts/progressions/REVIEWED_PROGRESSIONS.md) | Die drei Pilotprogressionen und ihre Fundstellen. |
+| [Eingabekonventionen](../theory/API_VERTRAEGE.md) | Notennamen, Tonarten und musikalische Grenzen. |
+
+[Zur Bereichsübersicht](../README.md)

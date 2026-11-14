@@ -1,0 +1,56 @@
+[
+  {
+    "file": "research/STEPS_Bibliothek/ANTI-MASS_ From Uganda into the Unknown _ Ableton.html",
+    "line": 416,
+    "pattern_desc": "AWS Access Key ID",
+    "secret_sha256": "b869b709d04bf784c669a9c83b80e63e17c5bda45ddcb84fac33d5dbf4663ef7",
+    "line_sha256": "e3b436c76270d359fddbebf717c36c39e61962f7fd5f81a51adabe54187c12c8",
+    "historical_commit": "5d2d09cfba22fa137ef65da5ffcc31bcadf5194a",
+    "status": "HISTORICAL_UNRESOLVED_OWNER_ACTION"
+  },
+  {
+    "file": "research/STEPS_Bibliothek/Bathe_ Inside The Inside Voice(s) _ Ableton.html",
+    "line": 423,
+    "pattern_desc": "AWS Access Key ID",
+    "secret_sha256": "b869b709d04bf784c669a9c83b80e63e17c5bda45ddcb84fac33d5dbf4663ef7",
+    "line_sha256": "620ae145bdc40112b1e496478a9d980908934b5a22ef9af561dcff4d0b9693b1",
+    "historical_commit": "5d2d09cfba22fa137ef65da5ffcc31bcadf5194a",
+    "status": "HISTORICAL_UNRESOLVED_OWNER_ACTION"
+  },
+  {
+    "file": "research/STEPS_Bibliothek/Cloudchord_ Tending the Bloom Bap Garden _ Ableton.html",
+    "line": 418,
+    "pattern_desc": "AWS Access Key ID",
+    "secret_sha256": "b869b709d04bf784c669a9c83b80e63e17c5bda45ddcb84fac33d5dbf4663ef7",
+    "line_sha256": "7aff619754ab4f2e7f9cd49c158a7e00747fd9ac03cc4886e1c6505971d8270e",
+    "historical_commit": "5d2d09cfba22fa137ef65da5ffcc31bcadf5194a",
+    "status": "HISTORICAL_UNRESOLVED_OWNER_ACTION"
+  },
+  {
+    "file": "research/STEPS_Bibliothek/Download a Live Set from Rob Garza _ Ableton.html",
+    "line": 422,
+    "pattern_desc": "AWS Access Key ID",
+    "secret_sha256": "b869b709d04bf784c669a9c83b80e63e17c5bda45ddcb84fac33d5dbf4663ef7",
+    "line_sha256": "64f1e51cec8bd5c7fb3714c441598856281962a3ead1ca3ecf36978bf879cea7",
+    "historical_commit": "5d2d09cfba22fa137ef65da5ffcc31bcadf5194a",
+    "status": "HISTORICAL_UNRESOLVED_OWNER_ACTION"
+  },
+  {
+    "file": "research/STEPS_Bibliothek/Download the Live Set of DJ Gigola’s New Track “Unfolding Practice II” _ Ableton.html",
+    "line": 432,
+    "pattern_desc": "AWS Access Key ID",
+    "secret_sha256": "b869b709d04bf784c669a9c83b80e63e17c5bda45ddcb84fac33d5dbf4663ef7",
+    "line_sha256": "22c70246ebc4a92a5d149a22db84c26ecf7979448311af518ead639e04c473ba",
+    "historical_commit": "5d2d09cfba22fa137ef65da5ffcc31bcadf5194a",
+    "status": "HISTORICAL_UNRESOLVED_OWNER_ACTION"
+  },
+  {
+    "file": "research/STEPS_Bibliothek/Download the Live Set of Merrin Karras’ New Track “Still Life” _ Ableton.html",
+    "line": 422,
+    "pattern_desc": "AWS Access Key ID",
+    "secret_sha256": "b869b709d04bf784c669a9c83b80e63e17c5bda45ddcb84fac33d5dbf4663ef7",
+    "line_sha256": "7eedb45d386d7340410b24603f2cfcb71845cd08df77711dc952a0f34a65db4b",
+    "historical_commit": "5d2d09cfba22fa137ef65da5ffcc31bcadf5194a",
+    "status": "HISTORICAL_UNRESOLVED_OWNER_ACTION"
+  }
+]

@@ -11,7 +11,6 @@ from __future__ import annotations
 import unittest
 import tempfile
 import os
-import shutil
 from pathlib import Path
 
 SKILL_DIR = Path(__file__).resolve().parents[1]
@@ -38,7 +37,7 @@ class TestE2ECurationPipeline(unittest.TestCase):
         with open(self.master_file, "w", encoding="utf-8") as f:
             f.write("""# Test Master Tasks
 ### OA-0001: Initial Setup
-* **Kategorie:** Test · **Status:** `DONE_VERIFIED`
+* **Kategorie:** Test · **Status:** `DONE_UNVERIFIED`
 """)
 
     def tearDown(self):
@@ -55,7 +54,7 @@ Eine Entscheidung ist noch zu treffen regarding microtonal support.
 """)
         
         # Step 2: Source intake check
-        check_res = check_source.check_file(sample_doc)
+        check_res = check_source.check_file(sample_doc, self.docs_dir)
         self.assertEqual(check_res["extension"], ".md")
         self.assertEqual(len(check_res["sha256"]), 64)
         self.assertGreater(check_res["size_bytes"], 0)
@@ -65,8 +64,9 @@ Eine Entscheidung ist noch zu treffen regarding microtonal support.
         self.assertEqual(len(dups), 0)
 
         # Step 4: Instruction & Claim extraction
-        extracted = extract_instructions.extract_from_file(sample_doc)
+        extracted = extract_instructions.extract_from_file(sample_doc, self.docs_dir)
         self.assertEqual(len(extracted), 3)
+        self.assertEqual({item["origin"] for item in extracted}, {"CANDIDATE_FROM_DOCUMENT"})
         categories = {item["category"] for item in extracted}
         self.assertIn("NORMATIVE_MUST_EN", categories)
         self.assertIn("EXPLICIT_TODO", categories)

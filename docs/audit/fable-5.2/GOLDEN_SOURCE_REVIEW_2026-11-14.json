@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-14",
+  "source_reviews": [
+    {
+      "id": "MAULEON-CLAVE",
+      "status": "PRIMARY_NOTATION_VISUALLY_CHECKED",
+      "url": "https://www.shermusic.com/products/salsa-guidebook-for-piano-ensemble",
+      "locator": "Sample Pages 1, printed p.48 Fig.3.3a; preview PDF page 2; SHA-256 88a08b6dd81d5195f1341ab7960b290ebd651c10895644fc8ab9279b276fcae4; 315587 bytes",
+      "result": "Notierte 3:2-Figur: Takt 1 [1,2+,4], Takt 2 [2,3]. Eigene Umrechnung bei 480 PPQ: [0,720,1440,2400,2880]. Verlagsprobe heruntergeladen, lokal gerendert und visuell geprüft; keine neue Übernahme von Notenbild oder PDF ins Repository.",
+      "remaining_evidence": "Historische Seitenangabe 52 nicht verifiziert. Keine Hör-/Spiel- oder unabhängige Fachabnahme.",
+      "cases": [
+        "REF-0075",
+        "CDR-018",
+        "CLAIM-036"
+      ],
+      "human_approval": "AUSSTEHEND",
+      "redistribution": "METADATA_AND_OWN_FINDINGS_ONLY"
+    },
+    {
+      "id": "MAULEON-OTHER",
+      "status": "PRIMARY_TOC_ONLY_CONTENT_OPEN",
+      "url": "https://cdn.shopify.com/s/files/1/0684/9524/5503/files/The_Salsa_Guidebook_-_Table_of_Contents.pdf?v=1781833857",
+      "locator": "Offiziell verlinktes Inhaltsverzeichnis, printed pp.viii-ix",
+      "result": "Es lokalisiert Brazilian Clave auf S.57, Conga ab S.64 und Klavier ab S.117. Diese Kapitel sind nicht in der geprüften Clave-Probe enthalten. Produktbeschreibung und Inhaltsverzeichnis sind kein Nachweis einer konkreten Montunofigur oder Bossa-/Surdo-Herkunftsthese.",
+      "remaining_evidence": "Originalseiten 57,64ff,117ff und genaue historische Figur sowie Quellen-/Werkzuordnung fehlen.",
+      "cases": [
+        "REF-0076",
+        "REF-0078",
+        "REF-0081",
+        "REF-0082",
+        "CDR-014",
+        "CDR-019",
+        "CDR-021"
+      ],
+      "human_approval": "AUSSTEHEND",
+      "redistribution": "METADATA_AND_OWN_FINDINGS_ONLY"
+    },
+    {
+      "id": "SWING-2023",
+      "status": "PRIMARY_TEXT_AND_FORMULA_VISUALLY_CHECKED",
+      "url": "https://static1.squarespace.com/static/5eff757b1fa3ef50d966d284/t/6a43be2fd0d433120c9a9607/1782824496476/Friberg-Gulz-Wettebrandt-2023-Computer%2BTools%2Bfor%2BModeling%2BSwing%2Bin%2Ba%2BJazz%2BEnsemble.pdf",
+      "locator": "Friberg/Gulz/Wettebrandt, Computer Music Journal 47(1), printed pp.92-93, PDF pp.8-9, equation(1); SHA-256 db48d5d200f0fc71f6c030e594d5f2640773bfbeb33f18a595495a798a970c13; 1361565 bytes; 25 pages",
+      "result": "Begrenzte Modellfunktion SR=max(1,-0.01*BPM+4.1019). Die Autoren begrenzen sie auf durchschnittliche Tendenzen und nennen Daten-/Auswahlabhängigkeit. Getrennte Rechnung 80/240/400 BPM -> 3.3019/1.7019/1.0. PDF-Seiten visuell geprüft; Textauslesung allein hatte eine FontTools-Warnung.",
+      "remaining_evidence": "Das Modell ersetzt weder Originalmessdaten 2002 noch eine universelle Aufführungsnorm. Keine historische Zuschreibung für 57%-Swing geschlossen.",
+      "cases": [
+        "REF-0044",
+        "CLAIM-034"
+      ],
+      "human_approval": "AUSSTEHEND",
+      "redistribution": "METADATA_AND_OWN_FINDINGS_ONLY"
+    },
+    {
+      "id": "SWING-2002",
+      "status": "PRIMARY_ABSTRACT_ONLY",
+      "url": "https://doi.org/10.1525/mp.2002.19.3.333",
+      "locator": "UC Press, Abstract; printed pp.333-349 bibliographic metadata",
+      "result": "Abstract beschreibt Variation mit Tempo in untersuchten Aufnahmen; ein universeller linearer Zusammenhang ist dort nicht belegt. Verlag meldet Volltextzugang nur als PDF ohne vorhandenen Zugriff.",
+      "remaining_evidence": "Volltext, Messdaten, Figur/Modell-Umfang von 2002 nicht vollständig geprüft.",
+      "cases": [
+        "REF-0044",
+        "CLAIM-034"
+      ],
+      "human_approval": "AUSSTEHEND",
+      "redistribution": "METADATA_AND_OWN_FINDINGS_ONLY"
+    },
+    {
+      "id": "MUSICXML-4",
+      "status": "PRIMARY_SPECIFICATION_SCOPED_CHECK",
+      "url": "https://www.w3.org/2021/06/musicxml40/tutorial/midi-compatible-part/",
+      "locator": "Pitch; related version history /version-history/40/",
+      "result": "step, optional alter, octave repräsentieren geschriebene Tonhöhe; C#4 und Db4 bleiben unterscheidbar. Version 4.0 führt XML-Schemata als Nachfolger veralteter DTDs. Ein pauschaler DTD-Verweis ist keine genaue Fundstelle.",
+      "remaining_evidence": "Keine vollständige Konverter- oder Wiedergabeabnahme; deutsche H/B-Namenskonvention wird nicht aus MusicXML allein abgeleitet.",
+      "cases": [
+        "REF-0008",
+        "REF-0009",
+        "REF-0079",
+        "CDR-022",
+        "REL-033"
+      ],
+      "human_approval": "AUSSTEHEND",
+      "redistribution": "METADATA_AND_OWN_FINDINGS_ONLY"
+    },
+    {
+      "id": "GM1",
+      "status": "PRIOR_PRIMARY_CHECK_RETAINED",
+      "url": "https://drive.google.com/file/d/1TTM2HI2JAp_XiTJYEJ8gPNvuJpIjJiTP/view",
+      "locator": "RP-003, table 3, printed p.6/PDF p.8; existing six Golden dictionary checks",
+      "result": "Frühere direkte Primärtabellenprüfung und sechs konkrete Tabellenchecks bleiben erhalten. Der aktuelle Direktabruf über das Webwerkzeug lieferte keinen lesbaren Original-PDF-Inhalt; die zusätzliche CMU-Seite ist ausdrücklich ein Spiegel, keine neue Primärabnahme.",
+      "remaining_evidence": "Keine neue Prüfung des vollständigen GM-Standards; GM1-Geräteprofil von beliebigem MIDI trennen.",
+      "cases": [
+        "REF-0022",
+        "REF-0023",
+        "REF-0024",
+        "REF-0025",
+        "REF-0033",
+        "REF-0045",
+        "REF-0074"
+      ],
+      "human_approval": "AUSSTEHEND",
+      "redistribution": "METADATA_AND_OWN_FINDINGS_ONLY"
+    },
+    {
+      "id": "PROJECT-ORIGINALS",
+      "status": "HISTORICAL_PROJECT_TEXTS_HASH_VERIFIED",
+      "url": "archive/audit-history/golden-source-recovery-2026-11-14/RECOVERY_MANIFEST.json",
+      "locator": "Twelve original local project Markdown files; per-file SHA-256 and bytes",
+      "result": "Reggae-, Funk-, Jazz-, DnB-, UKG-, integrierte Fallstudien-, Theorie- und MusicXML-Fassungen gesichert. PAT-021/-022-Versionen und REF-0052-Identitätswiderspruch bleiben getrennt.",
+      "remaining_evidence": "Projekttexte sind keine unabhängigen Originalbuchbelege oder menschliche Fachfreigabe.",
+      "cases": [
+        "REF-0037",
+        "REF-0038",
+        "REF-0044",
+        "REF-0046",
+        "REF-0048",
+        "REF-0052",
+        "REF-0062",
+        "REF-0063"
+      ],
+      "human_approval": "AUSSTEHEND",
+      "redistribution": "METADATA_AND_OWN_FINDINGS_ONLY"
+    },
+    {
+      "id": "DIN-1317",
+      "status": "CITATION_NOT_VERIFIED",
+      "url": "https://www.dinmedia.de/",
+      "locator": "Search for DIN 1317 / music naming, 2026-11-14",
+      "result": "Kein belastbarer Originalstandard-Inhaltsnachweis für die zitierte deutsche H/B-Konvention gefunden. Das ist kein Nachweis, dass ein Standard nicht existiert.",
+      "remaining_evidence": "Exakte Normidentität, Titel, Ausgabe und Textstelle klären; Notennamensrechnung bleibt konventionsgebunden.",
+      "cases": [
+        "REF-0006",
+        "REF-0007"
+      ],
+      "human_approval": "AUSSTEHEND",
+      "redistribution": "METADATA_AND_OWN_FINDINGS_ONLY"
+    },
+    {
+      "id": "PREHN",
+      "status": "AUTHORSHIP_AND_CLASSIFICATION_OPEN",
+      "url": "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
+      "locator": "SRC-033; historical Robert-Prehn attribution versus Oliver-Prehn chart",
+      "result": "Die 28 Rotationen lassen sich aus vier expliziten Familien rechnen. Rechnung beweist weder vollständige Heptatonik noch historische Autorenidentität.",
+      "remaining_evidence": "Bibliografisches Original oder autorisierte Ablösung erforderlich.",
+      "cases": [
+        "REF-0067",
+        "KB-SRC-033-PROVENANCE"
+      ],
+      "human_approval": "AUSSTEHEND",
+      "redistribution": "METADATA_AND_OWN_FINDINGS_ONLY"
+    },
+    {
+      "id": "LEVINE-SAMPLE",
+      "status": "DIFFERENT_WORK_TOC_ONLY",
+      "url": "https://www.jazzbooks.com/mm5/samples/D-JP.pdf",
+      "locator": "The Jazz Piano Book, table of contents: chapter 7 left-hand voicings p.41, chapter14 upper structures p.109, chapter20 Salsa/Latin Jazz p.207",
+      "result": "Die verfügbare Probe ist ein anderes Werk als das bei REF-0041 zitierte Jazz Theory Book. Ihr Inhaltsverzeichnis darf nicht als Kontrolle von dessen Kapitel14 ausgegeben werden.",
+      "remaining_evidence": "Exakte Ausgabe und tatsächlich einschlägige Seiten für Backdoor-Kadenz und Upper Structures beschaffen/prüfen.",
+      "cases": [
+        "REF-0041",
+        "REF-0095",
+        "REF-0152"
+      ],
+      "human_approval": "AUSSTEHEND",
+      "redistribution": "METADATA_AND_OWN_FINDINGS_ONLY"
+    }
+  ],
+  "independent_human_approvals": 0
+}

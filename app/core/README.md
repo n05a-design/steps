@@ -1,3 +1,10 @@
-# App-Komposition
+# App-Komposition und Start
 
-Für den Desktop-Start ist hier ein Platzhalter vorgesehen. Der [Python-Kern](../../docs/IMPLEMENTATION.md) lässt sich bereits separat importieren.
+Hier soll die Desktop-Anwendung ihre Adapter und Ansichten zusammenführen. Der Ordner enthält derzeit diese Übersicht.
+
+| Einstieg | Inhalt |
+| --- | --- |
+| [Fachkern](../../src/steps/README.md) | Bereits importierbare Musiklogik. |
+| [Shell-Spezifikation](../../docs/engineering/SHELL_EXTRACTION_DEEP_SPEC.md) | Geplanter Start- und Fensteraufbau. |
+
+[Zur Bereichsübersicht](../README.md)

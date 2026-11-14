@@ -1,15 +1,25 @@
 # STEPS-Dokumentation
 
-| Frage | Dokument |
-|---|---|
-| Was funktioniert im Checkout? | [Implementierungsstand](IMPLEMENTATION.md) |
-| Welche Python-Schnittstellen gibt es? | [Generierte API-Referenz](theory/API.md) |
-| Was lässt sich reproduzierbar prüfen? | [Testanleitung](../tests/README.md) |
-| Welche Inhalte verwendet die App-Schnittstelle? | [Kuratierte Progressionen](../knowledge/concepts/progressions/README.md) |
-| Was ist geplant, entschieden oder offen? | [Architekturziel](architecture/architecture.md), [Entscheidungen](../decisions/DECISION_REGISTER.md), [offene Fragen](../research/gaps/OPEN_GAPS.md) |
-| Welche Meilensteine und Übergaberegeln gelten? | [Roadmap](roadmap/README.md), [Übergabe](handover/README.md) |
-| Wie entstand der Projektstand? | [Projektunterlagen](project/README.md), [Archiv](../archive/INDEX.md) |
+Die Dokumentation führt vom aktuellen Verhalten über die technischen Verträge bis zu den datierten Projekt- und Auditnachweisen.
 
-Datierte Übergaben, Produktentwürfe, Auditberichte und technische Zielbilder
-belegen ihren jeweiligen Stand. Laufzeitverhalten und Testbefehle beziehen sich
-auf den Checkout, in dem diese Seite liegt.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Implementierungsstand](IMPLEMENTATION.md) | Heute nutzbarer Code und Laufzeitgrenzen. |
+| [Nutzung](user/README.md) | Schnellstart für den Python-Kern und den App-Katalog. |
+| [Theorie-API](theory/README.md) | Generierte API und Eingabeverträge. |
+| [Architektur](architecture/README.md) | Schichten, Speicherverträge, Migration und technische Ziele. |
+| [Engineering](engineering/README.md) | Technische Spezifikationen für Shell, MIDI und Datenhaltung. |
+| [Produkt](product/README.md) | Zielgruppe, MVP, Lernen und Validierung. |
+| [Roadmap](roadmap/README.md) | Meilensteine und Freigabebedingungen. |
+| [Qualität](quality/README.md) | Prüfplan und Risiken. |
+| [Audits](audit/README.md) | V1/V2-Abgleich und Fable-Nachprüfung. |
+| [Betrieb](operations/README.md) | Aufgabenregister und Ausführungsplanung. |
+| [Governance](governance/README.md) | Rechte, Sicherheit und Veröffentlichung. |
+| [Übergabe](handover/README.md) | Checkliste und frühere Übergaben. |
+| [Projektunterlagen](project/README.md) | Dossier, Herkunft und historische Fassungen. |
+| [Glide-Reuse](system_reuse/README.md) | Technische Vorbilder und Grenzen möglicher Übernahme. |
+| [Forschungssystem](research/README.md) | Modell für Quellen, Claims und Wissenspflege. |
+
+[Architekturentscheidungen](../decisions/README.md) · [Testanleitung](../tests/README.md) · [Offene Nachweise](../research/gaps/README.md)
+
+[Zur Bereichsübersicht](../README.md)

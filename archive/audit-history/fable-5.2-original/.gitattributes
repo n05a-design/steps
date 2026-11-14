@@ -1,0 +1,5 @@
+# Preserve the original byte hashes, including recorded line endings and spaces.
+STEPS_FABLE_5_2_STARTAUFTRAG.md -text whitespace=-blank-at-eol
+/arbeitsfassungen/** -text whitespace=-blank-at-eol
+/results/** -text whitespace=-blank-at-eol
+/work/probes/** -text whitespace=-blank-at-eol

@@ -1,3 +1,19 @@
+# Gestaltung von STEPS
+
+| Bereich | Inhalt |
+| --- | --- |
+| [Brand](brand/README.md) · [Assets](assets/README.md) | Eigene visuelle Identität und Rechte an Grafiken, Icons und Schriften. |
+| [Tokens](tokens/README.md) · [Komponenten](components/README.md) | Geplante Gestaltungssystematik und Bedienzustände. |
+| [Wireframes](wireframes/README.md) | Geplante Bildschirmabläufe und Entwurfsnachweise. |
+| [Referenzen](references/README.md) | Herkunft und Einordnung externer Gestaltungsvorbilder. |
+
+Die [Shell-Architektur](../docs/architecture/GLIDE_TO_STEPS_2_AREA_SHELL.md)
+und das [Lern- und Bedienkonzept](../docs/product/LEARNING_AND_EXPERIENCE.md)
+beschreiben Zielbilder. Stand der Desktop-Schicht siehe [App](../app/README.md).
+
+<details>
+<summary>Historische Ausgangsdokumentation vom 10. November 2026</summary>
+
 # Steps – Designübertragung aus Glide
 
 
@@ -14,3 +30,5 @@ Der verbindliche Glide-Originalvertrag liegt in `glide-to-do/01_Repository/Glide
 **Wird Steps-spezifisch entschieden:** Name, eigenes Logo/Icons, App-Bundle-ID, Default-Akzent, Wortwahl, Menügruppen, Seitenlistentaxonomie, Fach-Workspace, Status für Funktionen, Tooltips. Die lokale Glide 3.53-Schriftwahl Rubik, DM Mono, DM Serif Display, Charis SIL ist **nur Quellenstand**; Fontrechte, OS-Verfügbarkeit und realen Renderer prüfen, keine Fontdateien im ZIP.
 
 **Abnahme:** Grundfarben/Kontrast ≥4,5:1 für normalen UI-Text, typografische Größen/Zeilenhöhen, 860×700 und 1280×800 sowie DPI-/Font-Skalierung, Dark/Systemwechsel, nur symbolische Werkzeuge mit Accessible Name, Mouse und Keyboard; Timing bei Animation/Tooltip, Windows/Mac/Linux. Manuelle Vorher-/Nachher-Freigabe bleibt separat. Keine 1:1-Bildpixel-Übernahme der Glide-Markenassets.
+
+</details>

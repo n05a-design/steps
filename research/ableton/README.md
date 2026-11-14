@@ -1,5 +1,10 @@
-# research/ableton
+# Ableton-Recherche
 
-Ableton-bezogene Forschungsfragen getrennt vom Harmony-MVP.
+Hier werden Ableton-spezifische Fragen zu Produktionspraxis, Timing und Bedienung gesammelt. Der Ordner enthält derzeit diese Übersicht.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Historische Bibliothek](../STEPS_Bibliothek/README.md) | Ablage früherer Recherchematerialien. |
+| [Groove-Fachbestand](../../knowledge/concepts/styles/README.md) | Kuratiert erschlossene rhythmische Beispiele. |
+
+[Zur Bereichsübersicht](../README.md)

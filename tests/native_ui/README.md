@@ -1,5 +1,10 @@
-# tests/native_ui
+# Native UI und Bedienbarkeit
 
-Tkinter-/Native-UI- und Accessibility-Tests nach GUI-Implementierung.
+Dieser Ordner dokumentiert den vorgesehenen Testbereich. Eine native Desktop-Suite steht mit der Desktop-Implementierung aus.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [App-UI](../../app/ui/README.md) | Implementierungsgrenze und Zielstruktur. |
+| [Qualitätsgates](../../docs/quality/QUALITY_GATES.md) | Kriterien für Plattform- und Bedienabnahme. |
+
+[Zur Bereichsübersicht](../README.md)

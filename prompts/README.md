@@ -37,3 +37,10 @@
 | **Neuer Produktauftrag** | [29_PRODUCT_LEARNING_VALIDATION.md](29_PRODUCT_LEARNING_VALIDATION.md) | Nutzertests, Konkurrenz, Lernwirksamkeit | Prototyp + Owner-Werte |
 
 **Bewertung:** Prompts sind mögliche Arbeitsaufträge, keine erledigten Arbeitspakete. Kein Agent darf ohne Repo-/Source-/Rechteprüfung Produktänderungen implementieren oder historische Handover-IDs als freigegebene Roadmap interpretieren.
+
+## Einstieg nach Aufgabe
+
+- [Quellen aufnehmen](14_SOURCE_INGESTION.md) und [Wissenspflege planen](15_KNOWLEDGE_SKILL.md).
+- [Wettbewerb recherchieren](18_COMPETITOR_RESEARCH.md).
+- [Glide-Referenz prüfen](03_GLIDE_AUDIT_REUSE.md) und [Shell-Übernahme planen](04_GLIDE_TO_STEPS_SHELL.md).
+- [Audit-Unterlagen](../docs/audit/README.md) und [Vorlagen](../templates/README.md) für neue Arbeitsaufträge verwenden.

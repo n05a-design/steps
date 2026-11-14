@@ -1,5 +1,10 @@
-# tests/integration
+# Integrationsprüfungen
 
-Persistenz, Formate, Integrationsports und Adapter.
+Vorgesehener Ablageort für zusätzliche Integrationssuiten. Vorhandene Integrationsproben liegen auf Root-Ebene.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Pilot-Integration](../test_reviewed_progressions.py) | Katalog, App-Adapter und Lernmaterial. |
+| [Publikationsprüfung](../test_pilot_publication.py) | Freigabe- und Ablehnungsfälle mit synthetischen Fixtures. |
+
+[Zur Bereichsübersicht](../README.md)

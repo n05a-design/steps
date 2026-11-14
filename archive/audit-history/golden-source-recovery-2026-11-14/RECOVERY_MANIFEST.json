@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261110T2330_Phase4_Master\\MUSIC_THEORY_FOUNDATION.md",
+      "archive_path": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261110T2330_Phase4_Master/MUSIC_THEORY_FOUNDATION.md",
+      "bytes": 6254,
+      "sha256": "4bb9e76076353c7bfa4f8f6193febb8e96975c43dc299c6143e55558addf835d",
+      "status": "HISTORICAL_PROJECT_RECORD_NOT_EXPERT_APPROVED"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0005_Phase4_6\\GENRE_RESEARCH_REGGAE.md",
+      "archive_path": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261111T0005_Phase4_6/GENRE_RESEARCH_REGGAE.md",
+      "bytes": 7439,
+      "sha256": "3d47168c4157cf01e57e84ba14dd7940b86bd7e195abac43b1f0bb39d3ad34b9",
+      "status": "HISTORICAL_PROJECT_RECORD_NOT_EXPERT_APPROVED"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0005_Phase4_6\\GENRE_RESEARCH_JAZZ_RHYTHM.md",
+      "archive_path": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261111T0005_Phase4_6/GENRE_RESEARCH_JAZZ_RHYTHM.md",
+      "bytes": 6202,
+      "sha256": "213b5abf44c899be8a1e800325db2d0a0a69a0cfb8469d5a6dfea4d0cdbf262c",
+      "status": "HISTORICAL_PROJECT_RECORD_NOT_EXPERT_APPROVED"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0005_Phase4_6\\GENRE_RESEARCH_FUNK_SOUL.md",
+      "archive_path": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261111T0005_Phase4_6/GENRE_RESEARCH_FUNK_SOUL.md",
+      "bytes": 5077,
+      "sha256": "575ca646621d0b8c8b5dab47fb9a355b6ba12f8717a44962fb288f38bc0b9c13",
+      "status": "HISTORICAL_PROJECT_RECORD_NOT_EXPERT_APPROVED"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0025_Phase4_7\\GENRE_RESEARCH_DNB.md",
+      "archive_path": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261111T0025_Phase4_7/GENRE_RESEARCH_DNB.md",
+      "bytes": 5477,
+      "sha256": "6bd6c5d41c9cc21ea54135b0555daaa793e0a8ed670abf0cbda53935244cedb1",
+      "status": "HISTORICAL_PROJECT_RECORD_NOT_EXPERT_APPROVED"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0025_Phase4_7\\GENRE_RESEARCH_UK_GARAGE.md",
+      "archive_path": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261111T0025_Phase4_7/GENRE_RESEARCH_UK_GARAGE.md",
+      "bytes": 4663,
+      "sha256": "344fac8d4dfa3a2b517e375995ac968eeca06eebbc9686130334bd46c8a8e95a",
+      "status": "HISTORICAL_PROJECT_RECORD_NOT_EXPERT_APPROVED"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0025_Phase4_7\\INTEGRATED_MUSICAL_CASE_STUDIES.md",
+      "archive_path": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261111T0025_Phase4_7/INTEGRATED_MUSICAL_CASE_STUDIES.md",
+      "bytes": 6165,
+      "sha256": "d482d513d23c1b64a8f5dd8f849811b85c028b4989c633e730562f993736a3b6",
+      "status": "HISTORICAL_PROJECT_RECORD_NOT_EXPERT_APPROVED"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0040_Phase4_8\\GENRE_RESEARCH_DNB.md",
+      "archive_path": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261111T0040_Phase4_8/GENRE_RESEARCH_DNB.md",
+      "bytes": 4152,
+      "sha256": "95ccbec285e03a7abdfcfc38376d64bbe330332d5b16ef182e672633af35b524",
+      "status": "HISTORICAL_PROJECT_RECORD_NOT_EXPERT_APPROVED"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0040_Phase4_8\\GENRE_RESEARCH_UK_GARAGE.md",
+      "archive_path": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261111T0040_Phase4_8/GENRE_RESEARCH_UK_GARAGE.md",
+      "bytes": 3449,
+      "sha256": "87e8eddd13280c6e1639cf6ab44b7d7fd2ec687a893a73b5ecd97a44cd3e97a3",
+      "status": "HISTORICAL_PROJECT_RECORD_NOT_EXPERT_APPROVED"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0040_Phase4_8\\INTEGRATED_MUSICAL_CASE_STUDIES.md",
+      "archive_path": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261111T0040_Phase4_8/INTEGRATED_MUSICAL_CASE_STUDIES.md",
+      "bytes": 11767,
+      "sha256": "5dbed4e50b6a4ab9f80cf374ed4b0198e4658015589b4496753a77d090a112a4",
+      "status": "HISTORICAL_PROJECT_RECORD_NOT_EXPERT_APPROVED"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0105_Phase4_9\\MUSIC_THEORY_FOUNDATION.md",
+      "archive_path": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261111T0105_Phase4_9/MUSIC_THEORY_FOUNDATION.md",
+      "bytes": 7747,
+      "sha256": "1c1f6beb762d600c55ed6ff29712c91bf93bf71d0fc4976125111fb6674495e2",
+      "status": "HISTORICAL_PROJECT_RECORD_NOT_EXPERT_APPROVED"
+    },
+    {
+      "source_path": "C:\\Users\\Timvo\\AppData\\Local\\StepsAudit\\20261111T0130_Phase4_10\\MUSICXML_AND_DATA_MODELS.md",
+      "archive_path": "archive/audit-history/golden-source-recovery-2026-11-14/originals/20261111T0130_Phase4_10/MUSICXML_AND_DATA_MODELS.md",
+      "bytes": 2889,
+      "sha256": "06e6a76fb4105cc8206b5449fc24e52ce6e3097ce55b594b0020219bd8680dc0",
+      "status": "HISTORICAL_PROJECT_RECORD_NOT_EXPERT_APPROVED"
+    }
+  ]
+}

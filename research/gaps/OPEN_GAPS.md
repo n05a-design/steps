@@ -1,4 +1,57 @@
-# Aktuelle Lücken (Repository-Bestandsaufnahme 2026-11-10)
+# Offene Evidenz und historische Bestandsaufnahme
+
+## Nachtstand nach PR #54
+
+[Aktueller Nachtbericht](../../docs/audit/fable-5.2/NACHT_AUDIT_2026-11-14.md)
+und [priorisierte Restblocker](../../docs/audit/fable-5.2/NACHT_RESTBLOCKER_2026-11-14.md)
+ersetzen keine Fachfreigabe. 97 Kanten einzeln eingeordnet; 38 begrenzte
+Stichproben gestützt, CDR-010 beanstandet, 58 weiterhin offen. Sechs
+Definitionsvorschläge sind nicht als historische Originaldefinitionen
+anerkannt. 27 Pflichtfälle bleiben PENDING. Sechs neu erkannte historische
+AWS-Mustervorkommen blockieren den verschärften Secret-Scan; keine
+automatische Erweiterung der Baseline. Die folgenden Abschnitte halten
+frühere Auditstände fest.
+
+## Originalfund nach PR #53 (14.11.2026)
+
+Unter `%LOCALAPPDATA%/StepsAudit` sind die Originalontologie und ihre Schwesterdateien wiedergefunden. Alle 41 historischen Graphkennungen sind mit Originalwortlaut, Zeile und Hash im eigenen Namensraum zugeordnet. Zwei Bass-/Höranker-Begriffe sind als historische P10-Projektstrategie definiert. Sechs Definitionen bleiben offen; alle fehlenden Fachabnahmen und CSS-Bundle-Rechte bleiben offen. Die spätere Domäneneinteilung ist nicht mit dem historischen Namensraum gleichgesetzt.
+[Fundauswertung und Einzelbefunde](../../docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md).
+Die nachfolgenden Abschnitte dokumentieren frühere Prüfstände.
+
+## Weiterführung nach PR #52 (14.11.2026)
+
+PR #52 ist auf `19f3fee` nach menschlicher Freigabe gemergt. Der neue
+Korrekturvorschlag für CDR-010 benennt die exakte sechstönige Sammlung
+C6 plus D und F♯. Der ursprüngliche FAIL bleibt erhalten, der Vorschlag
+ist nicht fachlich oder für Produktion freigegeben. Nach Bearbeitung
+aller bisherigen 74 Restknoten sind 25 Definitionen begrenzt zugeordnet;
+49 bleiben offen: 41 historische Mxx-xx-Definitionen und acht
+kontext-/abnahmeabhängige Knoten. Die
+[Bearbeitung mit Einzelgründen](../../docs/audit/fable-5.2/GRAPH_KLAERUNG_CDR010_2026-11-14.md)
+trennt Quellenlesen, Projektbeispiele und eigene Modellrechnung.
+Benchmark: 68 PASS, 0 FAIL, 27 PENDING. Keine neue Fachabnahme;
+CSS-Bundle-Rechte und dauerhafte Archivzuordnung bleiben offen.
+
+## Fortsetzung vom 14.11.2026
+
+- PR #51 ist nach menschlicher Freigabe auf `9c7b8eb` gemergt.
+- Die sechs CSS-Registerfassungen sind über gespeicherte Bandcamp-Player
+  bis zur live bytegleichen CDN-Datei technisch zugeordnet. Die bisherige
+  Eigenautorschaftsannahme wurde berichtigt; Bundle-Rechte und dauerhafte
+  Archivzuordnung bleiben offen. [CSS-Provenienz](../../docs/audit/fable-5.2/CSS_PROVENIENZ_2026-11-14.md).
+- Der Graph hat nach sechs zusätzlichen Definitionen noch 74 offene
+  Endpunkt-IDs. Drei Kanten haben bestätigte Stichproben; CDR-010 bleibt
+  wegen der unbestimmten Polychord-Zuordnung beanstandet. Alle 97 Kanten
+  bleiben `REVIEW_REQUIRED`, keine ist vollständig fachlich abgenommen.
+  [Graphnachweise](../../docs/audit/fable-5.2/GRAPH_NACHWEISE_2026-11-14.md).
+- Der neue Benchmarkstand hat 56 PASS, 0 FAIL, 27 PENDING. Eine bestandene
+  Gegenprobe der beanstandeten Graphaussage wird in der Matrix als FAIL
+  dieser Aussage geführt. Hör-, Spiel-, Coach- und sonstige offene
+  Fachabnahmen werden dadurch nicht geschlossen.
+
+Die folgenden datierten Abschnitte beschreiben frühere Prüfstände.
+
+## Repository-Bestandsaufnahme vom 10.11.2026
 
 - Projektkonsolidierung nennt sechs Originaldokumente, im Originalarchiv liegt derzeit kein `Glide Kontext für Fable(2).md` (5 Markdown-Originale vorhanden); Nachweis/Fundort prüfen.
 - Kein ausführbarer `app/`- oder `src/steps/`-Musikcode im analysierten `main`-Baum.
@@ -20,14 +73,43 @@
   im strikten Modus parallele Quinten und Oktaven. Eine vollständige
   kontrapunktische Prüfung und stilbezogene Spielbarkeitsprüfung bleiben offen.
 
-## Offene Fachnachweise (2026-11-12)
+## Aufgabenregister nach dem Fable-Audit (2026-11-13)
 
-- Bei [PAT-031](../../knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md#pat-031--offene-taktgrenze) fehlen Taktgrenzen und die Hörprüfung der beiden Lesarten.
+Der vom Nutzer benannte Repository-Snapshot enthält 33 Aufgaben.
+Restore und Rücksicherung wurden mit einer Kopie bytegleich geprüft.
+Eine lokale Migrationskopie ergänzt die strukturierten Abschlussbelege
+für OA-0002, OA-0011 und OA-0013. Die strikte Validierung besteht.
+Die Übernahme in ein produktiv genutztes Register und ein Abgleich mit
+etwaigen neueren Einträgen stehen aus. Historische Backups ohne Manifest
+bleiben für eine gesonderte Wiederherstellung erhalten.
+[Nachweis zur Registermigration](../../docs/audit/fable-5.2/STEPS_FABLE_5_2_QUELLENABGLEICH.md#m2--registermigration-aus-dem-bereitgestellten-snapshot)
+
+## Offene Fachnachweise (Stand 2026-11-13)
+
+- Für [PAT-031](../../knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md) liegen zwei Taktvarianten vor. Die Hörprüfung steht aus.
+- Die [Fachnachweise](FABLE_FACHNACHWEISE.md) halten den geprüften Stand für Coach, Latin-Katalog, SRC-033, Graph und historische Dateien fest.
 - Für die [198 Golden Cases](../../knowledge/research/GOLDEN_DATA_SOURCE_OF_TRUTH.md#2-bestandsübersicht-phase-415) fehlt eine dokumentierte fachliche Einzelabnahme. Die Test- und Integritätsnachweise liegen vor.
+
+## Restprüfung nach dem Fable-Audit (2026-11-13)
+
+Die [Nachprüfung](../../docs/audit/fable-5.2/STEPS_FABLE_5_2_NACHPRUEFUNG.md)
+trennt bestätigte Abweichungen von Konventionsfragen. Die Umsetzung und Abnahme
+der Befunde sind im [Maßnahmenplan](../../docs/audit/fable-5.2/STEPS_FABLE_5_2_MASSNAHMENPLAN.md) beschrieben.
+
+| Prüfgebiet | Offene Evidenz und nächster Nachweis |
+| --- | --- |
+| K01/K03/K06/K07/K10/K13, A01/A02 | Typen, Fehlerhierarchie und Grenzwerte vollständig inventarisieren. 15.312 Layoutkombinationen und fünf konkrete Slash-Bass-Beispiele sind automatisiert geprüft. Die Hör-/Spielbarkeit braucht eigene Abnahmen. Notations-/Moll- und Stilentscheidungen dokumentieren. Zeitmodell und Serialisierung getrennt bewerten. |
+| K11, T02/T06 | Auf `7fde80e` sind alle acht GitHub-Freigabebelege und der verpflichtende Online-Check belegt. CI meldet erfolgreiche Läufe für Python 3.11–3.14 und den Skill auf macOS und Windows. Für künftige Freigaben bleiben Quellenrelevanz und menschliches Review erforderlich. |
+| S01/S03/S04 | Echtes externes Register nicht verfügbar; End-to-End-Abnahme für Backup/Restore und Registermigration offen. Für zwölf Coach-Fälle liegen Antwortentwürfe vor. Isolierter Lauf, Modell-/Skill-Revision und menschliche Kriterienbewertung stehen aus. |
+| W01/W02/W03 | Kanonische Quellen und genaue Fundstellen je Pilotclaim abgleichen. 14 der 35 historisch als VERIFIED bezeichneten Claims lagen außerhalb der Fable-Stichprobe. Alle 66 Einträge mit Evidenzstatus inventarisieren, Buchseiten nur bei berechtigtem Zugriff bewerten. Historische Quellenmetadaten einschließlich der doppelten Titel nach Autor, Ausgabe, Locator und Rechteklasse auflösen. |
+| W04 | P01–P19, PAT-001–031 und [Latin-Katalog](../../knowledge/concepts/styles/GENRE_RESEARCH_LATIN.md) nachprüfen: Akkordtöne/Bass/Rollen, Taktart/Taktgrenzen/PPQ, Eventraster, stilistische Aussagen und ggf. Hörbeleg. PROG-024 ist ein Übungsschema. Die verlinkte Jobim-Partitur belegt die Variante mit ♭II7. |
+| W05/W08 | 97 Relationen stehen auf REVIEW_REQUIRED. Zwei historische Aliasse sind aufgelöst. Für 84 Knoten-IDs fehlt die kanonische Definition. Richtung, Typ, Gültigkeitsbereich und Claim-Bezug je Kante prüfen. Historische Literatur und Pilotprovenienz trennen. |
+| W06/W07, T01/T03–T05/T07 | 132 Golden Cases außerhalb der Fable-Stichprobe; auch die 66 Stichprobenfälle brauchen individuelle, versionierte Evidenz. Verbleibende Evaluatorzweige und Fixture-Sollwerte klassifizieren. Die gelesenen Renderer-/Benchmark-/Coverage-Pfade mit Negativkontrollen absichern; Hash-Identität und Generatorgleichheit gelten als formale Nachweise. |
+| H01/H02 | Sechs Gegenproben für den OpenAI-Übergabebericht sind dokumentiert. Historische Statuslabel und archivierte Tests bleiben auf ihren Quellstand bezogen. |
 
 ## PDF-Konvertierung mit Docling (2026-11-14)
 
 - Neben 58 PDF-Kopien (40 eindeutige Dateien) liegen jetzt gleichnamige Docling-Extrakte (`.md`). Zuordnung und Hashes: [`manifests/pdf_docling_markdown_2026-11-14.csv`](../../manifests/pdf_docling_markdown_2026-11-14.csv). Alle Extrakte sind `REVIEW_REQUIRED`, ohne OMR und ohne fachliche Freigabe.
 - `research/STEPS_Bibliothek/MakingMusic.pdf` und die bytegleiche Kopie in `Dokumentation (unsortiert)/` beginnen mit Null-Bytes und sind keine gültige PDF (Docling: `INVALID_PDF`). Möglicherweise defekter Download oder OneDrive-Synchronisationsschaden. Eine lesbare Fassung liegt vermutlich als `MakingMusic_DennisDeSantis.pdf` vor. Das ist nicht per Inhaltsvergleich bestätigt.
-- Der Inhaber hat am 14.11.2026 entschieden, die Extrakte wie die Original-PDFs in Git zu versionieren. Damit weicht der Bestand von `knowledge/sources/RIGHTS_POLICY.md` ab, nach der fremde Volltexte lokal und per `.gitignore` geschützt bleiben. Die Rechteprüfung je Quelle bleibt offen. Vor einer Veröffentlichung des Repositorys muss sie abgeschlossen sein.
+- Der Inhaber hat am 14.11.2026 entschieden, die Extrakte wie die Original-PDFs in Git zu versionieren. Damit weicht der Bestand von `knowledge/sources/RIGHTS_POLICY.md` ab, nach der fremde Volltexte lokal und per `.gitignore` geschützt bleiben. Die Rechteprüfung je Quelle bleibt offen. Das Repository ist öffentlich, die Extrakte sind also bereits frei abrufbar.
 - 82 Markdown-Dateien (78 in `STEPS_Bibliothek_V6_6_Ableton_Blog_Archiv_und_Tutorials`, 4 in `source_archive`) konnten lokal nicht gelesen werden (`Errno 22`). Wahrscheinlich hängt das mit OneDrive zusammen. Derselbe Fehler bricht `git status` ab.

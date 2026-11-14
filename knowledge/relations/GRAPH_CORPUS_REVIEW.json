@@ -1,0 +1,595 @@
+{
+  "schema_version": 1,
+  "base_main": "cedcaaf55d85f57e3b5cd71c090f237d4b4e517b",
+  "corpus_candidates": [
+    {
+      "id": "GMD_V1",
+      "url": "https://magenta.tensorflow.org/datasets/groove",
+      "version": "1.0.0",
+      "available_annotations": [
+        "genre",
+        "tempo",
+        "drum_events",
+        "meter",
+        "performer",
+        "session"
+      ],
+      "rights": "CC BY 4.0, Google LLC; raw archive stays local; derived summary attributed",
+      "scope": "Commissioned click-track drumming; no chord progressions or commercial song population; primary dance is not House/UKG/DnB."
+    },
+    {
+      "id": "BILLBOARD_V2",
+      "url": "https://ddmal.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/",
+      "version": "2.0",
+      "available_annotations": [
+        "chords",
+        "structure",
+        "timing",
+        "instrumentation",
+        "chart_sampling_frame"
+      ],
+      "rights": "CC0 annotations according to DDMAL; no inferred audio rights",
+      "scope": "Official annotation delivery downloaded and hashed;890 slots inspected with a deliberately partial exact-chord-per-bar matcher. No drum events or genre-pair approval; artist-title keys are not recording identities."
+    },
+    {
+      "id": "GIANTSTEPS_TEMPO_KEY",
+      "url": "https://www.cp.jku.at/datasets/giantsteps/",
+      "version": "ISMIR2015 documentation",
+      "available_annotations": [
+        "tempo",
+        "genre",
+        "key"
+      ],
+      "rights": "Metadata and own aggregate classifications only; no general repository licence located, raw annotations/scripts/audio not republished.",
+      "scope": "Tempo repository d51ab2422e76abacfaa86616a57054bc222ec9fd measured locally for genre/tempo metadata; key is a separate dataset candidate, not joined here. No chord/drum sequence or audio downloaded."
+    }
+  ],
+  "cases": [
+    {
+      "relation_id": "CR-029",
+      "original_row_sha256": "f929075f0051c79afa2e32692daf1374ba23e0865bd09dc8c453d1ab970ec2b7",
+      "original_edge": {
+        "source_id": "M08-03",
+        "target_id": "M09-01",
+        "relation_type": "APPLIES_TO_GENRE"
+      },
+      "sampling_frame": "Pop-Aufnahmen mit definiertem Zeitraum/Region; hier nur GMD-Pop-Beat-Stichprobe",
+      "required_annotations": [
+        "genre",
+        "drum_events",
+        "representative_song_sample"
+      ],
+      "candidate_ids": [
+        "GMD_V1",
+        "BILLBOARD_V2",
+        "GIANTSTEPS_TEMPO_KEY"
+      ],
+      "project_anchors": [],
+      "unresolved_claim": "Keine populationsbezogene Häufigkeit oder allgemeine Popnorm aus beauftragten Schlagzeugtakes.",
+      "next_evidence": "Repräsentative Songstichprobe mit Drum-Annotation und unabhängig geprüften Downbeats.",
+      "status": "OPEN",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/GRAPH_KORPUS_GMD_2026-11-14.json"
+      ]
+    },
+    {
+      "relation_id": "CR-030",
+      "original_row_sha256": "3c1c0bd3cc4d2ac325c7c65dee2d70faa24a50e22c331f015719bdd2e45c7278",
+      "original_edge": {
+        "source_id": "M08-03",
+        "target_id": "M09-02",
+        "relation_type": "APPLIES_TO_GENRE"
+      },
+      "sampling_frame": "House-Aufnahmen mit expliziter Subgenre-/Zeitraumabgrenzung",
+      "required_annotations": [
+        "house_subgenre",
+        "drum_events",
+        "representative_song_sample"
+      ],
+      "candidate_ids": [
+        "GMD_V1",
+        "BILLBOARD_V2",
+        "GIANTSTEPS_TEMPO_KEY"
+      ],
+      "project_anchors": [],
+      "unresolved_claim": "Dance-Etikett ist kein House-Nachweis; Four-on-the-floor/Offbeat-Hat nicht universell.",
+      "next_evidence": "House-Korpus mit Kick-/Hat-Ereignissen, Negativfällen und festem Nenner.",
+      "status": "OPEN",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_GIANTSTEPS_TEMPO_2026-11-14.json"
+      ]
+    },
+    {
+      "relation_id": "CR-031",
+      "original_row_sha256": "74b469e681c6f6d5adbccf0bfafbadb4e4aec63c11f84d2ef0090652a62cb51b",
+      "original_edge": {
+        "source_id": "M09-01",
+        "target_id": "M06-01",
+        "relation_type": "REQUIRES"
+      },
+      "sampling_frame": "Pop-Aufnahmen; Kadenzbegriff vorab von viertaktiger Schleife unterscheiden",
+      "required_annotations": [
+        "chords",
+        "genre",
+        "cadence_labels",
+        "representative_song_sample"
+      ],
+      "candidate_ids": [
+        "GMD_V1",
+        "BILLBOARD_V2",
+        "GIANTSTEPS_TEMPO_KEY"
+      ],
+      "project_anchors": [],
+      "unresolved_claim": "REQUIRES ist eine Notwendigkeitsbehauptung; einzelne I–V–vi–IV-Schleifen beweisen sie nicht.",
+      "next_evidence": "Kadenzdefinition, vollständige Songauswahl und Gegenbeispiele vorab festlegen.",
+      "status": "OPEN",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
+    },
+    {
+      "relation_id": "CR-032",
+      "original_row_sha256": "8155d8311b37896526c31624456f721a980eeeae83f3bc798ab385cf2efcc761",
+      "original_edge": {
+        "source_id": "M09-02",
+        "target_id": "M08-03",
+        "relation_type": "REQUIRES"
+      },
+      "sampling_frame": "House-Aufnahmen einschließlich Randtempi und rhythmischer Varianten",
+      "required_annotations": [
+        "house_subgenre",
+        "tempo",
+        "drum_events",
+        "representative_song_sample"
+      ],
+      "candidate_ids": [
+        "GMD_V1",
+        "BILLBOARD_V2",
+        "GIANTSTEPS_TEMPO_KEY"
+      ],
+      "project_anchors": [],
+      "unresolved_claim": "Übungsbereich120–128 BPM ist keine empirische Stilgrenze.",
+      "next_evidence": "House-Tempoverteilung mit Halb-/Doppeltempoentscheidungen und Kick-Annotation.",
+      "status": "OPEN",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_GIANTSTEPS_TEMPO_2026-11-14.json"
+      ]
+    },
+    {
+      "relation_id": "REL-001",
+      "original_row_sha256": "8996aed87fd0c58d7e56dcdfd651c3ef8ca6ab99c0e6a82877d237b29f9d5e2d",
+      "original_edge": {
+        "source_id": "PROG-001",
+        "target_id": "PAT-001",
+        "relation_type": "COMMONLY_PAIRED_WITH"
+      },
+      "sampling_frame": "PROG-001 / PAT-001: vorab abgegrenztes Genre, Zeitraum und Sampling-Einheit",
+      "required_annotations": [
+        "chords",
+        "drum_events",
+        "genre",
+        "aligned_recording_identity",
+        "representative_song_sample"
+      ],
+      "candidate_ids": [
+        "GMD_V1",
+        "BILLBOARD_V2",
+        "GIANTSTEPS_TEMPO_KEY"
+      ],
+      "project_anchors": [
+        {
+          "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "row": "| `PROG-001` | Pop Four Chords | `I - V - vi - IV` | `C - G - Am - F` | Pop, Rock, Singer-Songwriter | Piston (1987), Kostka (2013) |"
+        },
+        {
+          "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+          "lf_sha256": "ffb0071f19f0f70f486371b7e1ed80de847ba70c3e31086f221174bf5676e512",
+          "row": "| `PAT-001` | Pop / Rock Straight | 115 BPM | 4/4 Straight ($\\rho = 1{,}0$) | 1 und 3 (Synkope auf 3e+) | 2 und 4 (Acoustic Snare 38) | Durchgehende 8tel (Closed Hat 42) |"
+        }
+      ],
+      "unresolved_claim": "Projektpaarung belegt keine Häufigkeit oder Stilabnahme; getrennte Harmonie- und Drum-Datensätze dürfen nicht als gemeinsame Aufnahme verknüpft werden.",
+      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung.",
+      "status": "OPEN",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
+    },
+    {
+      "relation_id": "REL-005",
+      "original_row_sha256": "f7a3854967a7918583b3fe2f7337fc2b3ec70cf4248f00545ccf5c675b88f693",
+      "original_edge": {
+        "source_id": "PROG-003",
+        "target_id": "PAT-012",
+        "relation_type": "COMMONLY_PAIRED_WITH"
+      },
+      "sampling_frame": "PROG-003 / PAT-012: vorab abgegrenztes Genre, Zeitraum und Sampling-Einheit",
+      "required_annotations": [
+        "chords",
+        "drum_events",
+        "genre",
+        "aligned_recording_identity",
+        "representative_song_sample"
+      ],
+      "candidate_ids": [
+        "GMD_V1",
+        "BILLBOARD_V2",
+        "GIANTSTEPS_TEMPO_KEY"
+      ],
+      "project_anchors": [
+        {
+          "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "row": "| `PROG-003` | Jazz Two-Five-One | `ii^7 - V^7 - I^maj7` | `Dm7 - G7 - Cmaj7` | Jazz, Bebop, Neo-Soul | Levine (1995), Nettles (1997) |"
+        },
+        {
+          "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+          "lf_sha256": "ffb0071f19f0f70f486371b7e1ed80de847ba70c3e31086f221174bf5676e512",
+          "row": "| `PAT-012` | Jazz Traditional Ride | 130 BPM | 4/4 Swung (Friberg $\\rho$) | Sehr leises Feathering (35 auf 1, 2, 3, 4) | Nur Comping & Ghost Notes | **Ride Cymbal (51) + Pedal Hat (44) auf 2 & 4!** |"
+        }
+      ],
+      "unresolved_claim": "Projektpaarung belegt keine Häufigkeit oder Stilabnahme; getrennte Harmonie- und Drum-Datensätze dürfen nicht als gemeinsame Aufnahme verknüpft werden.",
+      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung.",
+      "status": "OPEN",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
+    },
+    {
+      "relation_id": "REL-006",
+      "original_row_sha256": "88bb7c6714e548bea67a3251240a23cd285767eba8195cc0f8da7f4446da91e4",
+      "original_edge": {
+        "source_id": "PROG-007",
+        "target_id": "PAT-007",
+        "relation_type": "COMMONLY_PAIRED_WITH"
+      },
+      "sampling_frame": "PROG-007 / PAT-007: vorab abgegrenztes Genre, Zeitraum und Sampling-Einheit",
+      "required_annotations": [
+        "chords",
+        "drum_events",
+        "genre",
+        "aligned_recording_identity",
+        "representative_song_sample"
+      ],
+      "candidate_ids": [
+        "GMD_V1",
+        "BILLBOARD_V2",
+        "GIANTSTEPS_TEMPO_KEY"
+      ],
+      "project_anchors": [
+        {
+          "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "row": "| `PROG-007` | Dorian Groove Vamp | `i^7 - IV^7` | `Dm7 - G7` | Funk, Fusion, Modaler Jazz | Pease (2003) |"
+        },
+        {
+          "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+          "lf_sha256": "ffb0071f19f0f70f486371b7e1ed80de847ba70c3e31086f221174bf5676e512",
+          "row": "| `PAT-007` | Funk \"The One\" | 105 BPM | 4/4 16th Funk | Betonte Zählzeit 1 | 2 und 4 + Ghost Notes (Vel 25–45) | Durchgehende 16tel |"
+        }
+      ],
+      "unresolved_claim": "Projektpaarung belegt keine Häufigkeit oder Stilabnahme; getrennte Harmonie- und Drum-Datensätze dürfen nicht als gemeinsame Aufnahme verknüpft werden.",
+      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung.",
+      "status": "OPEN",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
+    },
+    {
+      "relation_id": "REL-007",
+      "original_row_sha256": "3c3e9493b6399d4646f749b3b66900abd8dc3350813101173334575157d8e8a8",
+      "original_edge": {
+        "source_id": "PROG-017",
+        "target_id": "PAT-013",
+        "relation_type": "COMMONLY_PAIRED_WITH"
+      },
+      "sampling_frame": "PROG-017 / PAT-013: vorab abgegrenztes Genre, Zeitraum und Sampling-Einheit",
+      "required_annotations": [
+        "chords",
+        "drum_events",
+        "genre",
+        "aligned_recording_identity",
+        "representative_song_sample"
+      ],
+      "candidate_ids": [
+        "GMD_V1",
+        "BILLBOARD_V2",
+        "GIANTSTEPS_TEMPO_KEY"
+      ],
+      "project_anchors": [
+        {
+          "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "row": "| `PROG-017` | Classical Jazz Backdoor ii–V | `iv^7 - bVII^7 - I^maj7` | `Fm7 - Bb7 - Cmaj7` | Jazz-Standards (*Lady Bird*, *Yardbird*) | Levine (1995), Terefenko (2014) |"
+        },
+        {
+          "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+          "lf_sha256": "ffb0071f19f0f70f486371b7e1ed80de847ba70c3e31086f221174bf5676e512",
+          "row": "| `PAT-013` | Funk 16th Linear Ghost | 100 BPM | 4/4 16th Straight | Synkopierte Kicks (0, 360, 1200, 1560) | Backbeat auf 2 & 4; dichte Ghost Notes | Durchgehende 16tel + Open Hat Release |"
+        }
+      ],
+      "unresolved_claim": "Projektpaarung belegt keine Häufigkeit oder Stilabnahme; getrennte Harmonie- und Drum-Datensätze dürfen nicht als gemeinsame Aufnahme verknüpft werden.",
+      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung.",
+      "status": "OPEN",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
+    },
+    {
+      "relation_id": "REL-014",
+      "original_row_sha256": "e36391ea9c27fd4818fd306a61ede0387d4d119862fb6565d4884e5b77c049b6",
+      "original_edge": {
+        "source_id": "PROG-002",
+        "target_id": "PAT-018",
+        "relation_type": "COMMONLY_PAIRED_WITH"
+      },
+      "sampling_frame": "PROG-002 / PAT-018: vorab abgegrenztes Genre, Zeitraum und Sampling-Einheit",
+      "required_annotations": [
+        "chords",
+        "drum_events",
+        "genre",
+        "aligned_recording_identity",
+        "representative_song_sample"
+      ],
+      "candidate_ids": [
+        "GMD_V1",
+        "BILLBOARD_V2",
+        "GIANTSTEPS_TEMPO_KEY"
+      ],
+      "project_anchors": [
+        {
+          "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "row": "| `PROG-002` | Emotional Minor Loop | `vi - IV - I - V` | `Am - F - C - G` | Pop-Balladen, Melodic EDM | Tagg (2014) |"
+        },
+        {
+          "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+          "lf_sha256": "ffb0071f19f0f70f486371b7e1ed80de847ba70c3e31086f221174bf5676e512",
+          "row": "| `PAT-018` | Liquid D&B Rolling Break | 174 BPM | 4/4 Fast Two-Step | 1 und 3+ (Ticks 0, 1200); Push in T2 (1080) | Backbeat auf 2 & 4 (38); dichte Ghost Rolls | Fließendes Ride (51) + Offbeat Hats (42/46) |"
+        }
+      ],
+      "unresolved_claim": "Projektpaarung belegt keine Häufigkeit oder Stilabnahme; getrennte Harmonie- und Drum-Datensätze dürfen nicht als gemeinsame Aufnahme verknüpft werden.",
+      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung.",
+      "status": "OPEN",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
+    },
+    {
+      "relation_id": "REL-015",
+      "original_row_sha256": "8e5ab2da35991bcce784bd7469017860bc59c0d713656003c24c3b7e54211405",
+      "original_edge": {
+        "source_id": "PROG-007",
+        "target_id": "PAT-020",
+        "relation_type": "COMMONLY_PAIRED_WITH"
+      },
+      "sampling_frame": "PROG-007 / PAT-020: vorab abgegrenztes Genre, Zeitraum und Sampling-Einheit",
+      "required_annotations": [
+        "chords",
+        "drum_events",
+        "genre",
+        "aligned_recording_identity",
+        "representative_song_sample"
+      ],
+      "candidate_ids": [
+        "GMD_V1",
+        "BILLBOARD_V2",
+        "GIANTSTEPS_TEMPO_KEY"
+      ],
+      "project_anchors": [
+        {
+          "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "row": "| `PROG-007` | Dorian Groove Vamp | `i^7 - IV^7` | `Dm7 - G7` | Funk, Fusion, Modaler Jazz | Pease (2003) |"
+        },
+        {
+          "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+          "lf_sha256": "ffb0071f19f0f70f486371b7e1ed80de847ba70c3e31086f221174bf5676e512",
+          "row": "| `PAT-020` | Authentic UKG 2-Step | 134 BPM | 4/4 58% MPC-Swing | 1 und 3+ (Schlag 2 & 3 frei!) | Trockener Side Stick (37) + Clap (39) auf 2 & 4 | Geschwungene Ghost-Hats & Shaker |"
+        }
+      ],
+      "unresolved_claim": "Projektpaarung belegt keine Häufigkeit oder Stilabnahme; getrennte Harmonie- und Drum-Datensätze dürfen nicht als gemeinsame Aufnahme verknüpft werden.",
+      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung.",
+      "status": "OPEN",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
+    },
+    {
+      "relation_id": "REL-017",
+      "original_row_sha256": "c9754d3dbf7eb2e7365d50f62236ff911442cdecfadead69b66924508ae246ba",
+      "original_edge": {
+        "source_id": "PAT-022",
+        "target_id": "M09",
+        "relation_type": "BELONGS_TO_GENRE"
+      },
+      "sampling_frame": "Jump-Up-DnB-Aufnahmen mit dokumentierten Bass- und Drumspuren",
+      "required_annotations": [
+        "jumpup_subgenre",
+        "drum_events",
+        "bass_events",
+        "aligned_recording_identity"
+      ],
+      "candidate_ids": [
+        "GMD_V1",
+        "BILLBOARD_V2",
+        "GIANTSTEPS_TEMPO_KEY"
+      ],
+      "project_anchors": [
+        {
+          "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+          "lf_sha256": "ffb0071f19f0f70f486371b7e1ed80de847ba70c3e31086f221174bf5676e512",
+          "row": "| `PAT-022` | Jump-Up Minimal Bouncer | 175 BPM | 4/4 Stripped Minimal | Harte Kicks exakt auf 1 und 3+ | Trockener Snare-Crack (40) auf 2 und 4 | Minimalistische Closed Hats |"
+        }
+      ],
+      "unresolved_claim": "PAT-022 allein belegt keine Genrezugehörigkeit oder verzerrten Bass.",
+      "next_evidence": "Gleiche Aufnahme mit Subgenreannotation, Bass-/Drumereignissen und Aufnahme-ID.",
+      "status": "OPEN",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_GIANTSTEPS_TEMPO_2026-11-14.json"
+      ]
+    },
+    {
+      "relation_id": "REL-026",
+      "original_row_sha256": "31c8377fc4a20a4272f876da7a8e3d25f703707fddfc5e9c1bc5fbc0a5c6cdab",
+      "original_edge": {
+        "source_id": "PROG-023",
+        "target_id": "PAT-018",
+        "relation_type": "STYLISTICALLY_COMPATIBLE"
+      },
+      "sampling_frame": "PROG-023 / PAT-018: vorab abgegrenztes Genre, Zeitraum und Sampling-Einheit",
+      "required_annotations": [
+        "chords",
+        "drum_events",
+        "genre",
+        "aligned_recording_identity",
+        "representative_song_sample"
+      ],
+      "candidate_ids": [
+        "GMD_V1",
+        "BILLBOARD_V2",
+        "GIANTSTEPS_TEMPO_KEY"
+      ],
+      "project_anchors": [
+        {
+          "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "row": "| `PROG-023` | Liquid D&B Sub-Pulse Cadence | `i^7 - bVI^maj7 - bVII - i` | `Fm7 - Dbmaj7 - Eb - Fm` | Drum & Bass, UK Bass | Butterfield (2010) |"
+        },
+        {
+          "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+          "lf_sha256": "ffb0071f19f0f70f486371b7e1ed80de847ba70c3e31086f221174bf5676e512",
+          "row": "| `PAT-018` | Liquid D&B Rolling Break | 174 BPM | 4/4 Fast Two-Step | 1 und 3+ (Ticks 0, 1200); Push in T2 (1080) | Backbeat auf 2 & 4 (38); dichte Ghost Rolls | Fließendes Ride (51) + Offbeat Hats (42/46) |"
+        }
+      ],
+      "unresolved_claim": "Projektpaarung belegt keine Häufigkeit oder Stilabnahme; getrennte Harmonie- und Drum-Datensätze dürfen nicht als gemeinsame Aufnahme verknüpft werden.",
+      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung.",
+      "status": "OPEN",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
+    },
+    {
+      "relation_id": "REL-032",
+      "original_row_sha256": "af8d6e143a3b4f10264b9e8216239d124ea855224a0ea43cfc6b734903887bd9",
+      "original_edge": {
+        "source_id": "PROG-025",
+        "target_id": "PAT-028",
+        "relation_type": "STYLISTICALLY_COMPATIBLE"
+      },
+      "sampling_frame": "PROG-025 / PAT-028: vorab abgegrenztes Genre, Zeitraum und Sampling-Einheit",
+      "required_annotations": [
+        "chords",
+        "drum_events",
+        "genre",
+        "aligned_recording_identity",
+        "representative_song_sample"
+      ],
+      "candidate_ids": [
+        "GMD_V1",
+        "BILLBOARD_V2",
+        "GIANTSTEPS_TEMPO_KEY"
+      ],
+      "project_anchors": [
+        {
+          "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "row": "| `PROG-025` | Afro-Cuban Minor Ostinato Vamp | `i - iv - V^7 - iv` | `Cm - Fm - G7 - Fm` | Salsa, Afro-Cuban, Mambo (Montuno) | Mauleón (1993), Peñalosa (2009) |"
+        },
+        {
+          "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+          "lf_sha256": "ffb0071f19f0f70f486371b7e1ed80de847ba70c3e31086f221174bf5676e512",
+          "row": "| `PAT-028` | **Afro-Cuban Cha-Cha-Chá** | 116 BPM | 4/4 Campana & Conga (Viertel) | Geerdete Kicks auf 1 und 3 | Mute & Slap Congas; Guíro-Scrape | **Zwei offene Conga-Schläge auf 4 & 4+** |"
+        }
+      ],
+      "unresolved_claim": "Projektpaarung belegt keine Häufigkeit oder Stilabnahme; getrennte Harmonie- und Drum-Datensätze dürfen nicht als gemeinsame Aufnahme verknüpft werden.",
+      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung.",
+      "status": "OPEN",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
+    },
+    {
+      "relation_id": "REL-035",
+      "original_row_sha256": "436bca28bff8d37fc89ab25262d3aa0dbb94a921bc22d5f5d8ed73a1b69f7226",
+      "original_edge": {
+        "source_id": "PROG-028",
+        "target_id": "PAT-030",
+        "relation_type": "COMMONLY_PAIRED_WITH"
+      },
+      "sampling_frame": "PROG-028 / PAT-030: vorab abgegrenztes Genre, Zeitraum und Sampling-Einheit",
+      "required_annotations": [
+        "chords",
+        "drum_events",
+        "genre",
+        "aligned_recording_identity",
+        "representative_song_sample"
+      ],
+      "candidate_ids": [
+        "GMD_V1",
+        "BILLBOARD_V2",
+        "GIANTSTEPS_TEMPO_KEY"
+      ],
+      "project_anchors": [
+        {
+          "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
+          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "row": "| `PROG-028` | Circle of Fifths Soul Cycle | `i^9 - iv^9 - bVII^9 - III^maj9` | `Em9 - Am9 - D9 - Gmaj9` | Neo-Soul, Jazz-Funk, Contemporary R&B | Mulholland (2013), Levine (1995) |"
+        },
+        {
+          "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",
+          "lf_sha256": "ffb0071f19f0f70f486371b7e1ed80de847ba70c3e31086f221174bf5676e512",
+          "row": "| `PAT-030` | Phrygian Neo-Soul Halftime Shuffle | 84 BPM | 4/4 57% Swing (Tick 137 @ 480 PPQ) | Harter Downbeat-Kick auf 1, synkopierter Sub-Kick auf 3+ | Fetter Snare-Drag auf 2+, tiefer Backbeat auf 3 | Fließende Ghost-Notes & Closed/Pedal Hat Wechsel |"
+        }
+      ],
+      "unresolved_claim": "Projektpaarung belegt keine Häufigkeit oder Stilabnahme; getrennte Harmonie- und Drum-Datensätze dürfen nicht als gemeinsame Aufnahme verknüpft werden. Historische Zuschreibung des57-Prozent-Werts bleibt gesondert unbelegt.",
+      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung.",
+      "status": "OPEN",
+      "human_approval": "AUSSTEHEND",
+      "production_use_allowed": false,
+      "historical_assertion_closed": false,
+      "component_evidence": [
+        "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json"
+      ]
+    }
+  ]
+}

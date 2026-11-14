@@ -11,6 +11,7 @@ from __future__ import annotations
 from enum import Enum
 from typing import List, Tuple
 from .pitch import PitchClass
+from .chord import Voicing
 from .exceptions import ChordConstructionError
 
 class SeventhQuality(Enum):
@@ -20,7 +21,7 @@ class SeventhQuality(Enum):
     HALF_DIMINISHED = 'HALF_DIMINISHED'          # m7b5: [0, 3, 6, 10]
     DIMINISHED_SEVENTH = 'DIMINISHED_SEVENTH'    # dim7: [0, 3, 6, 9]
     MINOR_MAJOR_SEVENTH = 'MINOR_MAJOR_SEVENTH'  # m(maj7): [0, 3, 7, 11]
-    LYDIAN_DOMINANT = 'LYDIAN_DOMINANT'          # 7(#11): theoretical [0, 4, 6, 7, 10] or voiced [0, 4, 6, 10]
+    LYDIAN_DOMINANT = 'LYDIAN_DOMINANT'          # 7(#11): theoretical [0, 4, 7, 10, 18] or voiced [0, 4, 6, 10]
 
 
 # Canonical 4-voice interval structures from root in semitones
@@ -42,7 +43,7 @@ THEORETICAL_INTERVALS: dict[SeventhQuality, list[int]] = {
     SeventhQuality.HALF_DIMINISHED: [0, 3, 6, 10],
     SeventhQuality.DIMINISHED_SEVENTH: [0, 3, 6, 9],
     SeventhQuality.MINOR_MAJOR_SEVENTH: [0, 3, 7, 11],
-    SeventhQuality.LYDIAN_DOMINANT: [0, 4, 6, 7, 10]  # Full theoretical scale-degree set: 1, 3, #11, 5, b7
+    SeventhQuality.LYDIAN_DOMINANT: [0, 4, 7, 10, 18]  # 1, 3, 5, b7, #11
 }
 
 
@@ -72,14 +73,9 @@ def invert_seventh_voicing(voicing_midi: list[int], inversion: int) -> list[int]
     inversion 2: 2nd inversion (4/3, 5th in bass)
     inversion 3: 3rd inversion (4/2, 7th in bass)
     """
-    if len(voicing_midi) < 4:
-        raise ChordConstructionError("Seventh chord voicing must have at least 4 voices.")
-    inv = inversion % len(voicing_midi)
-    if inv == 0:
-        return sorted(voicing_midi)
-    
-    sorted_v = sorted(voicing_midi)
-    return sorted_v[inv:] + [pitch + 12 for pitch in sorted_v[:inv]]
+    if len(voicing_midi) != 4 or type(inversion) is not int or not 0 <= inversion <= 3:
+        raise ChordConstructionError("Seventh chord inversion requires four voices and an inversion in 0..3.")
+    return Voicing(tuple(voicing_midi)).invert(inversion).midi_notes
 
 
 def make_drop2_voicing(close_voicing_midi: list[int]) -> list[int]:
@@ -93,11 +89,10 @@ def make_drop2_voicing(close_voicing_midi: list[int]) -> list[int]:
     """
     if len(close_voicing_midi) != 4:
         raise ChordConstructionError("Drop-2 voicing transformation requires exactly 4 voices.")
-    sorted_v = sorted(close_voicing_midi)
-    # Voices from bottom to top: v0 (lowest), v1, v2 (second from top), v3 (highest)
-    v0, v1, v2, v3 = sorted_v
-    dropped_v2 = v2 - 12
-    return sorted([v0, v1, dropped_v2, v3])
+    v0, v1, v2, v3 = Voicing(tuple(close_voicing_midi)).midi_notes
+    if len({v0, v1, v2, v3}) != 4 or v3 - v0 >= 12:
+        raise ChordConstructionError("Drop-2 requires four distinct notes in close position.")
+    return Voicing((v0, v1, v2 - 12, v3), "DROP2").midi_notes
 
 
 def make_shell_voicing(root_midi: int, quality: SeventhQuality) -> tuple[int, tuple[int, int]]:
@@ -111,14 +106,16 @@ def make_shell_voicing(root_midi: int, quality: SeventhQuality) -> tuple[int, tu
     """
     if quality not in SEVENTH_INTERVALS:
         raise ChordConstructionError(f"Unknown seventh chord quality: {quality}")
+    Voicing((root_midi,))
     r_pc = root_midi % 12
     intervals = SEVENTH_INTERVALS[quality]
     third_pc = intervals[1]
     seventh_pc = intervals[3]
     
-    # Place guide tones in octave 4 (around middle C)
-    rh_third = 60 + ((r_pc + third_pc) % 12)
-    rh_seventh = 60 + ((r_pc + seventh_pc) % 12)
+    floor = max(60, root_midi + 1)
+    rh_third = floor + (r_pc + third_pc - floor) % 12
+    rh_seventh = floor + (r_pc + seventh_pc - floor) % 12
+    Voicing((root_midi, rh_third, rh_seventh))
     
     return (root_midi, (rh_third, rh_seventh))
 

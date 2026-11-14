@@ -438,10 +438,10 @@ class TestTheoryCoreChordEngine(unittest.TestCase):
         cmaj7 = parse_chord('Cmaj7')
         self.assertEqual(cmaj7.pitch_class_set, {0, 4, 7, 11})
 
-        bm7b5 = parse_chord('Bm7b5')
+        bm7b5 = parse_chord('Bm7b5', 'INT')
         self.assertEqual(bm7b5.pitch_class_set, {11, 2, 5, 9})
 
-        bdim7 = parse_chord('Bdim7')
+        bdim7 = parse_chord('Bdim7', 'INT')
         self.assertEqual(bdim7.pitch_class_set, {11, 2, 5, 8})
 
     def test_parse_extended_and_altered_chords(self):
@@ -462,7 +462,7 @@ class TestTheoryCoreChordEngine(unittest.TestCase):
         # Full theoretical pitch class set: {1, 3, 5, b7, #11} -> {0, 4, 6, 7, 10}
         # Performance voiced intervals (omitting 5th to avoid tritone clutter): {0, 4, 6, 10}
         c7_11 = parse_chord('C7#11')
-        self.assertEqual(c7_11.theoretical_intervals, (0, 4, 6, 7, 10))
+        self.assertEqual(c7_11.theoretical_intervals, (0, 4, 7, 10, 18))
         self.assertEqual(c7_11.default_voiced_intervals, (0, 4, 6, 10))
         self.assertEqual(c7_11.pitch_class_set, {0, 4, 6, 7, 10})
         self.assertEqual([int(pc) for pc in c7_11.voiced_pitch_classes], [0, 4, 6, 10])
@@ -474,7 +474,7 @@ class TestTheoryCoreChordEngine(unittest.TestCase):
         self.assertEqual(c_e.bass.step, 'E')
         self.assertEqual(c_e.symbol, 'C/E')
 
-        g_b = parse_chord('G/B')
+        g_b = parse_chord('G/B', 'INT')
         self.assertEqual(g_b.root.step, 'G')
         self.assertEqual(g_b.bass.step, 'B')
 

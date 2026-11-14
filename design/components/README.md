@@ -1,5 +1,9 @@
-# design/components
+# Komponentenspezifikationen
 
-Eigene Komponenten-Spezifikationen und Design-Patterns.
+Vorgesehene Ablage für eigene UI-Komponenten. Neue Spezifikationen beschreiben Aufgabe, Zustände, Fokus, Tastatur und Plattformgrenzen. Hier liegt derzeit die Ablagebeschreibung.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [UI-Schicht](../../app/ui/README.md) | Maßgeblicher Projektkontext. |
+
+[Zur Bereichsübersicht](../README.md)

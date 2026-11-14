@@ -1,5 +1,10 @@
-# tests/progressions
+# Progressionsprüfungen
 
-Verbindungen, Kadenz-/Stufenanalysen und Alternativdeutungen.
+Die Root-Tests behandeln Stufenauflösung und Stimmführung sowie die getrennte Pilotdatenprüfung.
 
-**Stand:** Struktur vorbereitet; Inhalte/Implementierung sind nur dann vorhanden, wenn hier tatsächlich weitere Dateien hinzugefügt wurden. Keine Produktfreigabe ableiten.
+| Einstieg | Inhalt |
+| --- | --- |
+| [Progression Engine](../test_progression_engine.py) | Stufen, Voicings und Grenzfälle. |
+| [Pilotkatalog](../test_reviewed_progressions.py) | Kuratierte Daten und App-Schnittstelle. |
+
+[Zur Bereichsübersicht](../README.md)
