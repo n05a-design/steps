@@ -151,6 +151,7 @@ def audit(document=None):
         if row['relation_id'] in {'CR-029','CR-031'} or (row['relation_id'].startswith('REL-') and row['relation_id']!='REL-017'):
             observation+=';RWC_SAME_ID_SYMBOLIC_COMPONENTS_NOT_EXACT_PATTERN'
         if row['relation_id']=='REL-005':observation+=';JAZZSAMBA_SWING_CHART_ORIGINAL_DRUM_COMPONENTS_ONLY'
+        if row['relation_id'] in {'REL-001','REL-005'}:observation+=';BOUNDED_NOTE_GRID_NO_COMPLETE_CORE_MATCH_NOT_GENRE_DISPROOF'
         out.append({'relation_id':row['relation_id'],'original_row_sha256':row['original_row_sha256'],**row['original_edge'],
                     'sampling_frame':row['sampling_frame'],'required_annotations':';'.join(row['required_annotations']),
                     'candidate_gaps':json.dumps(checks,ensure_ascii=False,sort_keys=True),
@@ -167,6 +168,8 @@ def audit(document=None):
     rwc.validate(json.loads(rwc.OUTPUT.read_text(encoding='utf8')))
     from scripts import audit_jazzsamba_components as jazz
     jazz.validate(json.loads(jazz.OUTPUT.read_text(encoding='utf8')))
+    from scripts import audit_relation_patterns as patterns
+    patterns.validate(json.loads(patterns.OUTPUT.read_text(encoding='utf8')))
     validate_garcia_followup(json.loads((ROOT/'docs/audit/fable-5.2/CDR019_GARCIA_2023_QUELLENBEFUND_2026-11-14.json').read_text(encoding='utf8')))
     return out
 
