@@ -9,12 +9,13 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 139
 tabellen: 24
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `Mathematics_and_Music.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00001-00010/try-20261114T120526-272c64/document.md -->
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00001-00010/try-20261114T120526-272c64/document.md -->
 
 ## Mathematics and Music
 
@@ -85,32 +86,10 @@ Yet it should be acknowledged that there is quite a bit of material in line with
 
 Suggestions for the course. This book is meant for a one-semester course open to college students at any level. Such a course could be cross-listed as an offering in both the mathematics and music departments so as to satisfy curriculum requirements in either field. It could also be structured to fulfill
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<Mathematics_and_Music.pdf#page=1>)
 
-![PDF-Seite 1](<document_artifacts/page_000001_17254cdbeb9f0754654c7d88361b4a167b57c940e26c4c828ad969d1a6e3f871.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_da9d8133c5dd4b06fb9bf337faa5452670e72067f51a5db481dc6323a4451611.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_12222864293b36882980a0f09b1ebd7c2331525322a6bf215e27c9a20dc9f17a.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_a552da6acff6731ce81312b8329c8780009f6b8c1cffa4a28cd70d3d79d5037c.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_b1b51d92bbd0713ff968a50a62d6ad2436b35297420fba366508961c8b0da792.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_b9142fd10d191adb287e8a2bc9cb9a95615bae8fc3010444decca894b0e70f90.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_ec74d6160582a908144a0be6f0a11909666ae9eda40acd31c9598a1ac06a1f40.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_06275064a6113e3972ba776e9bed0b0ee5b00136f7bc42de008b459124bbf5ac.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_3218098c2523fc0cac21b74f94a791ce531f61c79cc9e8020062303a935b267d.png>)
-
-![PDF-Seite 10](<document_artifacts/page_000010_ea45a7837b6193dfb4e2c33d3e8751dd5e1a204dc364f78400638ee69362a759.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=1>)
-
-<!-- PDF-Seiten 11–20 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document.md -->
+<!-- PDF-Seiten 11–20 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document.md -->
 
 a quantitative requirement in liberal arts. Since the material interrelates with and complements subjects such as calculus, music theory, and physics of sound, it could be a part of an interdisciplinary "course cluster" offered by some universities.
 
@@ -178,9 +157,9 @@ Functions and graphs. A function from some subset of R into R has a graph, and w
 
 Two functions which will be especially relevant to our topic are the trigonometric functions y = sin x and y = cos x.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000000_d29c67eab2d6699f0ca855e80068314cde4d50dbf27afdadffe1d1f0ad1844d1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000000_d29c67eab2d6699f0ca855e80068314cde4d50dbf27afdadffe1d1f0ad1844d1.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000001_decf7c3b035cc1178a1da470420ff46bf1be8f98ee7a757b027c4364e01812b4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000001_decf7c3b035cc1178a1da470420ff46bf1be8f98ee7a757b027c4364e01812b4.png -->
 
 Transformations of Graphs. We will need to understand some procedures, called geometric transformations, which move and deform a graph in certain ways. Let c ∈ R.
 
@@ -195,15 +174,15 @@ Below are graphs which illustrate some of these transformations for the function
 
 V
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000002_ad68a7f6e8277715fbd2dbfc0502d8d7dcfddedbf476da15cbbd0842a45e236b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000002_ad68a7f6e8277715fbd2dbfc0502d8d7dcfddedbf476da15cbbd0842a45e236b.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000003_932302247daf3dc6336a596c5582494709889d1ae45552fb7026ff1bfe61df44.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000003_932302247daf3dc6336a596c5582494709889d1ae45552fb7026ff1bfe61df44.png -->
 
 T
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000004_dcb6d5846c2ed2a9e6805b95cbddcd10dd092ba82c9a496cd21cab12080ffbea.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000004_dcb6d5846c2ed2a9e6805b95cbddcd10dd092ba82c9a496cd21cab12080ffbea.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000005_14157eda8f1976c268a4073de8a9060ecc4b745386d24e421092d39852e7380d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000005_14157eda8f1976c268a4073de8a9060ecc4b745386d24e421092d39852e7380d.png -->
 
 Equivalence relations. Let S be a set an let ∼ be a relationship which holds between certain pairs of elements. If the relationship holds between s and t we write s ∼ t. For example, S could be a set of solid-colored objects and s ∼ t could be the relationship "s is the same color as t". We say that ∼ is an equivalence relation if the following three properties hold for all s, t, u ∈ S:
 
@@ -217,13 +196,13 @@ When these hold, we define the equivalence class of s ∈ S to be the set {t ∈
 
 Pitch. A musical tone is the result of a regular vibration transmitted through the air as a sound wave. The pitch of the tone is the frequency of the vibration. Frequency is usually measured in cycles per second, or hertz, (after the German physicist Heinrich Hertz (1857-1894)) which is abbreviated Hz. For example, standard tuning places the note A above middle C on a musical staff at 440 Hz. It is notated on the treble clef as:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000006_54bb4878fddc2c5b1c4b01183a41b03efd812fd4617d7924d3ae0b3724583aee.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000006_54bb4878fddc2c5b1c4b01183a41b03efd812fd4617d7924d3ae0b3724583aee.png -->
 
 The range of audibility for the human ear is about 20 Hz to 20,000 Hz. We will, however, associate a positive real number x with the frequency x Hz, so that the set of pitches is in one-to-one correspondence with the set R+.
 
 Notes. In a musical score, specific pitches are called for in a musical score by notes on a staff. We assume familiarity with the usual bass and treble clefs
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000007_29bb364960ad0c65163b6e6f83ccd52319d92e4cf58cf28c8034678c0bb043d4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000007_29bb364960ad0c65163b6e6f83ccd52319d92e4cf58cf28c8034678c0bb043d4.png -->
 
 I ¯
 
@@ -231,7 +210,7 @@ Middle C as it appears on the treble and bass clefs
 
 and the labeling of notes on the lines and spaces of those clefs using the letters A through G. These are notes are arranged as follows on a keyboard instrument.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000008_541dde3f92d0f583d8c9ba3c903b4cc197c8a1e3a19c1cd87571fde79e555361.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00011-00020/try-20261114T120542-34f03b/document_artifacts/image_000008_541dde3f92d0f583d8c9ba3c903b4cc197c8a1e3a19c1cd87571fde79e555361.png -->
 
 Note the presence of "white notes" and "black notes" and the pattern of their juxtapositions.
 
@@ -264,33 +243,10 @@ We call intervals positive or negative according to whether they are upward or d
 - y = ( x2 )2
 - G A C D F G A C D
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 11](<Mathematics_and_Music.pdf#page=11>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 11](<document_artifacts/page_000011_ebc55a117f34a32ac29c44c17e7459286a54ad9fc2ce53fe8d4625a5e41cf598.png>)
-
-![PDF-Seite 12](<document_artifacts/page_000012_d73cce0ee4ec7d228cd1d1b59536c5f7c8722b152e588c202410db838d6d9890.png>)
-
-![PDF-Seite 13](<document_artifacts/page_000013_0902b9fe03fcb80822b5bfba0a67798f21bd096afbe7c6c319e3164a34f23bc6.png>)
-
-![PDF-Seite 14](<document_artifacts/page_000014_4da6bcb5a20f23a4d6232752ba2ada7a3d3b603dd4044a47e8f7de2f24ffd5ff.png>)
-
-![PDF-Seite 15](<document_artifacts/page_000015_c6639574fa44ba05bf80263cbd29e18c90f99a5b1257754c2739bff447435779.png>)
-
-![PDF-Seite 16](<document_artifacts/page_000016_f6aecb39e30eaa4d7e3a44b0f73707bf200ae27c600d96cd6273fdea851403c8.png>)
-
-![PDF-Seite 17](<document_artifacts/page_000017_a6c1ae3777de6076c1158ec9b519d7a362f7035d09a50c6c101d75c221511366.png>)
-
-![PDF-Seite 18](<document_artifacts/page_000018_92900a4825afbbab172006d6c3b91e59440fab370ea190888d889dc7b740866e.png>)
-
-![PDF-Seite 19](<document_artifacts/page_000019_0c2298a75d839f014248e9cd1d0cbca239402be655effa216c4025807c5ab5ee.png>)
-
-![PDF-Seite 20](<document_artifacts/page_000020_1677bd5282322cfcc0364b24a83119588bc0ba6a3175059862c462df03c19e17.png>)
-
-
-[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=11>)
-
-<!-- PDF-Seiten 21–30 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document.md -->
+<!-- PDF-Seiten 21–30 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document.md -->
 
 described as down a minor sixth, or as negative a minor sixth.
 
@@ -326,13 +282,13 @@ G ˇ
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document_artifacts/image_000000_52b41625fe6917e2733283fa5d38852f641a0fb0add519d8fd4863834d179752.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document_artifacts/image_000000_52b41625fe6917e2733283fa5d38852f641a0fb0add519d8fd4863834d179752.png -->
 
 We will say that two sequences of pitches are equivalent if the sequence of respective intervals is the same. Note, for example that the scale contains the two equivalent tetrachords (i.e., four note sequences bounded by the interval of a perfect fourth) CDEF and GABC.
 
 Key Signatures. For the moment we will call any sequence of eight consecutive notes a standard scale if it is equivalent to the C scale. Note that the sequence E♭ F G A♭ B♭ C D E♭ is a standard scale.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document_artifacts/image_000001_3bfb99b793de0c77be57ccc6ca49e7138e5ffeed478d6420394572c0ffcdf58a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document_artifacts/image_000001_3bfb99b793de0c77be57ccc6ca49e7138e5ffeed478d6420394572c0ffcdf58a.png -->
 
 ˇ
 
@@ -360,7 +316,7 @@ becomes a standard scale. This explains the key signatures for the major keys of
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document_artifacts/image_000002_268791aeee2aab9c1c80223621390257577a733c49c012454f190a9720932917.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document_artifacts/image_000002_268791aeee2aab9c1c80223621390257577a733c49c012454f190a9720932917.png -->
 
 ˇ
 
@@ -388,13 +344,13 @@ Hence the key signature of B♭ is:
 
 <!-- formula-not-decoded -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document_artifacts/image_000003_b33d684c0e4bfc066fecc399bfbff4f3b404255440bcb667177a7e8e6182bab1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document_artifacts/image_000003_b33d684c0e4bfc066fecc399bfbff4f3b404255440bcb667177a7e8e6182bab1.png -->
 
 Continuing this gives us a sequence of keys C, F, B♭ , E♭ , A♭ , D♭ , G♭ , C♭ . (This sequence continues in theory, but subsequent key signatures will require double flats and eventually other multiple flats.) These are shown below, with the proper placement of flats on the bass and treble clefs.
 
 Ž
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document_artifacts/image_000004_c0b4254c115e7e8e002d66755e3f2c65c3060855bab9372f6c1cedcc0f0b52b4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document_artifacts/image_000004_c0b4254c115e7e8e002d66755e3f2c65c3060855bab9372f6c1cedcc0f0b52b4.png -->
 
 2 2
 
@@ -461,7 +417,7 @@ For example, no sharps or flats indicates the key of C major and the key of A mi
 
 Scale Numbers and Solmization. A basic and traditional use of numerology in music is the numbering of scale tones. Numbers with a circumflex, or "hat", ˆ1, ˆ2, ˆ3, . . ., will be used to denote specific notes of the diatonic major scale. Thus in the key of A♭ , A♭ is the first scale tone and is therefore denoted by ˆ1. B♭ is denoted by by ˆ2, C by ˆ3, and so on.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document_artifacts/image_000005_00ee588b30366879f4b5062e075580da719dc6c8fac895d2f955214e4000d537.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document_artifacts/image_000005_00ee588b30366879f4b5062e075580da719dc6c8fac895d2f955214e4000d537.png -->
 
 G2 2 2 2
 
@@ -489,7 +445,7 @@ G2 2 2
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document_artifacts/image_000006_0f5dccf9a091f49b78beb46567a0dd04a34cc7d0eb741c4de439579fa2a47c79.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document_artifacts/image_000006_0f5dccf9a091f49b78beb46567a0dd04a34cc7d0eb741c4de439579fa2a47c79.png -->
 
 The chromatic scale tones which lie a half-step above or below diatonic notes are denoted by preceding the number with ♯ or ♭. Hence, in the key of G, ♭ˆ6 denotes E♭ . (Note that this can coincide with a diatonic note, e.g., ♯ˆ3 = ˆ4.) Solmization also provides names for these tones, but we will not give them here.
 
@@ -546,7 +502,7 @@ The chromatic scale tones which lie a half-step above or below diatonic notes ar
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document_artifacts/image_000007_812066ee9c4545e73e51ad958ce8d0d1d455452cf32c3ba6443d235ef5ef66be.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00021-00030/try-20261114T120602-f2b1f1/document_artifacts/image_000007_812066ee9c4545e73e51ad958ce8d0d1d455452cf32c3ba6443d235ef5ef66be.png -->
 
 G 2 2 2 44 ˇ
 
@@ -597,33 +553,10 @@ G 2 2 2 44 ˇ
 - do ˇ
 - re ˇ
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 21](<Mathematics_and_Music.pdf#page=21>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 21](<document_artifacts/page_000021_fdc57965529cf22c91614bd2d4ac21ef89e23913201ab2ecfdfdd68811190f43.png>)
-
-![PDF-Seite 22](<document_artifacts/page_000022_bb130805cb22b81abaaeefe86b5e132228bb5783a17c02a8a70d5cd31084aaaf.png>)
-
-![PDF-Seite 23](<document_artifacts/page_000023_7a0f83dc35435d3039c9d5a75105064dffb12cfe0e9026b3153e6533a991afcb.png>)
-
-![PDF-Seite 24](<document_artifacts/page_000024_e7c56a04e51f8267d37bd0defbe2ceeec781f40d2df4efb00761d467fbb2cdb3.png>)
-
-![PDF-Seite 25](<document_artifacts/page_000025_d475269d60207e0c0598bd75e927e38ce63e64c29ee87ed39d6acce9c0ffd52d.png>)
-
-![PDF-Seite 26](<document_artifacts/page_000026_88cb7c8740de1148540dcd8b02849b8682cbd09bcf30cd792b1345fe309f60b7.png>)
-
-![PDF-Seite 27](<document_artifacts/page_000027_3216af16eb641ee9d404fd77aa03cdc2796ec498121ca8c6446a818ef204a3ee.png>)
-
-![PDF-Seite 28](<document_artifacts/page_000028_de74f721e2d8c47f3bfef7ded9baa65ffb6c92f365de78d86f38dd27cdc86573.png>)
-
-![PDF-Seite 29](<document_artifacts/page_000029_44b4dc055b50b9eaa8ac7c4904c716a8f3c1bfab2e0b18329b5ad64bb88f84c7.png>)
-
-![PDF-Seite 30](<document_artifacts/page_000030_e1492425decadef0669c159c76debe833a8ae68273edcdfbf46d8cbe7cdb4be7.png>)
-
-
-[Original-PDF, Seite 21](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=21>)
-
-<!-- PDF-Seiten 31–40 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document.md -->
+<!-- PDF-Seiten 31–40 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document.md -->
 
 ## Chapter 2
 
@@ -658,13 +591,13 @@ Noteheads, Stems, Flags, and Beams. The whole note and half note are written wit
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000000_d5178a3e6c2fb3e18b9ae3e913a81f302db969953e3339331d9323a2e3b2a9d4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000000_d5178a3e6c2fb3e18b9ae3e913a81f302db969953e3339331d9323a2e3b2a9d4.png -->
 
 .
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000001_d162bb36bf13573a291d5ef0180fc5b2ff4e4c470c30a79d858099c3b9630f1f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000001_d162bb36bf13573a291d5ef0180fc5b2ff4e4c470c30a79d858099c3b9630f1f.png -->
 
 /
 
@@ -676,7 +609,7 @@ Noteheads, Stems, Flags, and Beams. The whole note and half note are written wit
 
 In adjacent notes, flags may be replaced by beams connecting the stems:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000002_f4ec5e79d81d99f1cf5e9d375e74a24e205cb4592a9029b9cccf0c85eaf2e8e9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000002_f4ec5e79d81d99f1cf5e9d375e74a24e205cb4592a9029b9cccf0c85eaf2e8e9.png -->
 
 ˇ
 
@@ -750,7 +683,7 @@ In adjacent notes, flags may be replaced by beams connecting the stems:
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000003_01f0bc88b9fcc1fa79162ea050342210d31535e9f89d6558cba1436b464d6bc2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000003_01f0bc88b9fcc1fa79162ea050342210d31535e9f89d6558cba1436b464d6bc2.png -->
 
 ˇ
 
@@ -762,7 +695,7 @@ In adjacent notes, flags may be replaced by beams connecting the stems:
 
 Rests. A rest is a notational symbol which indicates silence for a duration determined by the type of rest which appears. Rests come in the same durational types as notes, distinguished by their appearance. The whole rest, for example, is a rectangle attached on the underside of a staff line. This and other rests are as indicated below.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000004_d72436290572e7028fbc53d9535f592138871e81adc1712c9c81a448e22b6b71.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000004_d72436290572e7028fbc53d9535f592138871e81adc1712c9c81a448e22b6b71.png -->
 
 =
 
@@ -826,7 +759,7 @@ For example, suppose we wish to divide the quarter note ( 1 22 -th note) into 3 
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000005_281c55f313ae2386f0088cc9c754d916c6d2e66cfe39fa4b6f4c98b651dea49f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000005_281c55f313ae2386f0088cc9c754d916c6d2e66cfe39fa4b6f4c98b651dea49f.png -->
 
 ˇ
 
@@ -838,7 +771,7 @@ For example, suppose we wish to divide the quarter note ( 1 22 -th note) into 3 
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000006_7a1accfa4fa9cd63b7d886b6831efa9a34c2c66401a68776545c26cc8f058d84.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000006_7a1accfa4fa9cd63b7d886b6831efa9a34c2c66401a68776545c26cc8f058d84.png -->
 
 The concept of dividing a unit of duration into n equal parts by an ntuplet has an interesting similararity to the notion of the nth harmonic, which is a vibration n times faster than the vibration of a fundamental pitch. Harmonics will be discussed in Chapter 10.
 
@@ -852,7 +785,7 @@ gives a duration of 1 + 38 = 11 8 beats.
 
 Closely related is the slur, which looks like a tie but connects notes of different pitches.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000007_e641c12ebd86240fdd1508218ce9bc9fded5a42001317086cddebb85273a80e1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000007_e641c12ebd86240fdd1508218ce9bc9fded5a42001317086cddebb85273a80e1.png -->
 
 <!-- formula-not-decoded -->
 
@@ -898,7 +831,7 @@ Rhythm. Rhythm is the way in which time is organized within measures. Consider t
 
 ˘
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000008_d2100614eac62dfcaf127a3a7f89ba130c4735b5346af53fb4d828674197c801.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000008_d2100614eac62dfcaf127a3a7f89ba130c4735b5346af53fb4d828674197c801.png -->
 
 `
 
@@ -960,7 +893,7 @@ Sometimes certain types of rhythms are implied but not written, swing rhythm bei
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000009_4c15cff801fa3ce25767fb69e47086e6762d27614bdfcb20ea0a45db7c290ec1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000009_4c15cff801fa3ce25767fb69e47086e6762d27614bdfcb20ea0a45db7c290ec1.png -->
 
 ˇ
 
@@ -986,7 +919,7 @@ G2 2 2 2 6ˇ
 
 6˘
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000010_fd80f5c95b3354f2a51585a244b2e5d91b49cf73a9cc69707947dfaeb3f8f03a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000010_fd80f5c95b3354f2a51585a244b2e5d91b49cf73a9cc69707947dfaeb3f8f03a.png -->
 
 Sometimes, for the benefit of the reader, music includes accidentals which are not required according to the rules given above. Such redundant accidentals are called cautionary accidentals, and are enclosed in parentheses.
 
@@ -1000,7 +933,7 @@ It should be emphasized that a melody is defined and made recognizable not only 
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000011_6466cf4401d4ff53e93e758358c3cec3668882c258b240d952683e342fe94886.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000011_6466cf4401d4ff53e93e758358c3cec3668882c258b240d952683e342fe94886.png -->
 
 ˇ
 
@@ -1014,7 +947,7 @@ which by itself evokes no particular song. However, the same sequence of pitches
 
 `
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000012_6e5369b69a681128eb9dc3092e4502da93b1f543008e36ea14aedb2f6ea79813.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000012_6e5369b69a681128eb9dc3092e4502da93b1f543008e36ea14aedb2f6ea79813.png -->
 
 -
 
@@ -1084,7 +1017,7 @@ Translations. A simple example of such is a horizontal shift, or translation, wh
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000013_423ba1f3a9e34163b94de47930839ef890446fcb54ed28d886c96d733a438b2b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000013_423ba1f3a9e34163b94de47930839ef890446fcb54ed28d886c96d733a438b2b.png -->
 
 ˇ
 
@@ -1146,7 +1079,7 @@ An example of melodic (as well as rhythmic) translation is found in the spiritua
 
 ˘
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000014_fa47b5c809b0d1ee75548243b5a46b86fe2cb98076df1fd3457004a718e5fe03.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000014_fa47b5c809b0d1ee75548243b5a46b86fe2cb98076df1fd3457004a718e5fe03.png -->
 
 where the melodic sequence F-A-B♭-C appears three times consecutively.
 
@@ -1186,7 +1119,7 @@ G 2 2 R
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000015_2cf9bdbac887a3837ff4d8cf83e69bb31ad2d00b95e150ae9a29c521b2ee7f09.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000015_2cf9bdbac887a3837ff4d8cf83e69bb31ad2d00b95e150ae9a29c521b2ee7f09.png -->
 
 This type of transposition exemplified above is called chromatic transposition.
 
@@ -1242,7 +1175,7 @@ A variant form of transposition, called diatonic transposition, occurs when a di
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000016_d99a441834fe7948f8fdc1f60f426de4b701affd337e825e71be34ef8453d6e3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00031-00040/try-20261114T120634-319533/document_artifacts/image_000016_d99a441834fe7948f8fdc1f60f426de4b701affd337e825e71be34ef8453d6e3.png -->
 
 ︷︷
 
@@ -1404,33 +1337,10 @@ Retrogression. Yet another form of transformation in music is retrogression, whi
 - midst
 - snow.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 31](<Mathematics_and_Music.pdf#page=31>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 31](<document_artifacts/page_000031_191138a0ea2c491a940e25a25f7a0f56130d1c3fad09f4125116a94c0af3e6b2.png>)
-
-![PDF-Seite 32](<document_artifacts/page_000032_6ba77fa782ac1e94ff87118a75fc0b96f8f9af0fe5c06efe575136312d702616.png>)
-
-![PDF-Seite 33](<document_artifacts/page_000033_c8891ff87ad80e612f9161f36aa8ed3edbbdf73c30c72339d9a23f23760652dd.png>)
-
-![PDF-Seite 34](<document_artifacts/page_000034_419fab5565edb3a28d4207733dcfd6cc9b6c5784012ad6da4087fdfb1be0c1d7.png>)
-
-![PDF-Seite 35](<document_artifacts/page_000035_588095f38e8ffff737e15c0e0f890bbc02a4b520c34ced438e14b3d03e40a8fb.png>)
-
-![PDF-Seite 36](<document_artifacts/page_000036_f2fad089c7ab7ad2ddccc2d765fb5761599151df5c88d306e97a3ecce37183d0.png>)
-
-![PDF-Seite 37](<document_artifacts/page_000037_ba7d0acff09f0dced8e017be51f73ef4762a43191f5ad77da6aa423114adeb9f.png>)
-
-![PDF-Seite 38](<document_artifacts/page_000038_70ee801634da9c5e716f2e427def2237ecf243d1c9dc867ec237103a5048cfde.png>)
-
-![PDF-Seite 39](<document_artifacts/page_000039_49f85589af57eafaa5a9bb8adab0abf0d8a40a3b7d5e350d3bce5089ca333423.png>)
-
-![PDF-Seite 40](<document_artifacts/page_000040_62d03812f4418c567b5bf4eef3415e61c92cacfc53a520fcd0a1c445643b400c.png>)
-
-
-[Original-PDF, Seite 31](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=31>)
-
-<!-- PDF-Seiten 41–50 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document.md -->
+<!-- PDF-Seiten 41–50 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document.md -->
 
 G 4 4
 
@@ -1468,7 +1378,7 @@ G 4 4
 
 ∧ Form. The sequence of larger sections of music into which music may be organized is sometimes called form. The number of measures in a section is often a power of 2. For example, ragtime compositions typically consist of three or four sections, each section having 16 measures; sometimes one or more of these sections is repeated once. These sections are distinguishable by the listener by virtue of different rhythmic and melodic character. If a composition consisted of three sections, we might denote the form by: ABC. If the first two sections were repeated, the form would be AA BB C. Scott Joplin's (1868-1917) Maple Leaf Rag has the form AA BB A CC DD.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000000_5625d30663d4de169dcdeb86c2b866d6df3f9a32bc2ae6610e9bda9c1428c25d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000000_5625d30663d4de169dcdeb86c2b866d6df3f9a32bc2ae6610e9bda9c1428c25d.png -->
 
 Two classical type forms are binary form and ternary form. The former presents a piece of music as two main sections which are repeated, giving a form AABB. Many of the minuets and scherzos of the late 18th and 19th centuries have this form. Ternary form presents three sections, with the first and third being the same, or very similar, giving C pattern ABA. It often is found in the nocturnes of Fr´ed´erik Chopin (1810-1849) and the piano pieces of Johannes Brahms (1833-1897).
 
@@ -1502,7 +1412,7 @@ for any integer m ≥ 0 and any real number r ̸= 1. (Hint: Consider the product
 8. (c) a quarter note 17-tuplet
 6. Complete these measures with a single durational note:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000001_a06711c3cb5c398eefafaa033061dfda955d5f840491de3ae0e67d105710f0be.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000001_a06711c3cb5c398eefafaa033061dfda955d5f840491de3ae0e67d105710f0be.png -->
 
 (c) 98 `
 
@@ -1522,7 +1432,7 @@ for any integer m ≥ 0 and any real number r ̸= 1. (Hint: Consider the product
 
 7. Complete the following excerpt three ways with a measure having the same rhythm, G2 2 2 2 44 ˇ ŻŻ ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000002_33724101f1b961e04f92f33daa843985e1b99da143703ef880ee5edfa165ad01.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000002_33724101f1b961e04f92f33daa843985e1b99da143703ef880ee5edfa165ad01.png -->
 
 ˇ
 
@@ -1598,7 +1508,7 @@ chords:G ¯
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000003_a107c798c49732343682f8b682ad4042b64c7a554bfff83008d59f75f641e59c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000003_a107c798c49732343682f8b682ad4042b64c7a554bfff83008d59f75f641e59c.png -->
 
 G 4 4 4 4 ¯
 
@@ -1608,7 +1518,7 @@ In general, chords are defined by the note classes (and modular intervals) they 
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000004_c1eb8dbb29b2496beffa166115385ddb0aec00ab777131035337f7a1f3794992.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000004_c1eb8dbb29b2496beffa166115385ddb0aec00ab777131035337f7a1f3794992.png -->
 
 ă
 
@@ -1636,7 +1546,7 @@ and again the root, third and fifth are uniquely determined by the sequence of m
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000005_bb9beb873b15d70ab337f7e41562b2e689c63dc5933d2adde38de25057dd8444.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000005_bb9beb873b15d70ab337f7e41562b2e689c63dc5933d2adde38de25057dd8444.png -->
 
 ă
 
@@ -1684,7 +1594,7 @@ Diminished and Augmented Chords. Two other triads which play significant roles i
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000006_52c8025d6e255c8a9a07b6137e4b51c0750cce326bb5e5eab5c8a8118904ab5d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000006_52c8025d6e255c8a9a07b6137e4b51c0750cce326bb5e5eab5c8a8118904ab5d.png -->
 
 the sequence (4, 4, 4).Gdiminished
 
@@ -1702,7 +1612,7 @@ This sequence has no non-trivial cyclic symmetries, hence the root, third, fifth
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000007_99ca83268d39019758fdf685eb6b2bd9d52f0b67246e82bf8b97323d932f14fb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000007_99ca83268d39019758fdf685eb6b2bd9d52f0b67246e82bf8b97323d932f14fb.png -->
 
 <!-- formula-not-decoded -->
 
@@ -1718,7 +1628,7 @@ This sequence has no non-trivial cyclic symmetries, hence the root, third, fifth
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000008_8f2ef47d84eb95326feefd10e036c010b6a92cf2cbc6e4da882b3ef04c56858b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000008_8f2ef47d84eb95326feefd10e036c010b6a92cf2cbc6e4da882b3ef04c56858b.png -->
 
 Observe that this chord contains the major chord with the same root, third, and fifth. We will later say quite a bit about this chord's role in the development of Western harmony and the tuning obstacles associated with it.
 
@@ -1736,7 +1646,7 @@ Minor Seventh Chord. Another four-note chord to be introduced here is the minor 
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000009_6cff074448fe79ac9594b2a76cf8d0303ec79f4590e443d5570d3d310ab3727d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000009_6cff074448fe79ac9594b2a76cf8d0303ec79f4590e443d5570d3d310ab3727d.png -->
 
 ă
 
@@ -1760,7 +1670,7 @@ Major Seventh Chord. A somewhat dissonant variation is the major seventh chord, 
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000010_37c399e23a82626e67527fe523c36e67cc6dbf44bd4c4c8e247a13c4930e2c02.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000010_37c399e23a82626e67527fe523c36e67cc6dbf44bd4c4c8e247a13c4930e2c02.png -->
 
 ă
 
@@ -1786,7 +1696,7 @@ Diminished Seventh. The diminished seventh, or full diminished chord is defined 
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000011_db9bfeb1340f0d4c0c3931df760fd8e46815ea77ba4e4611a63eae39597ae2e3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000011_db9bfeb1340f0d4c0c3931df760fd8e46815ea77ba4e4611a63eae39597ae2e3.png -->
 
 <!-- formula-not-decoded -->
 
@@ -1808,7 +1718,7 @@ This chord imparts a feeling of tension or instability. It often resolves to a m
 
 Half-Diminished Seventh. The half-diminished seventh, chord is defined by the sequence of modular intervals (3, 3, 4, 2). It has a discernible root, having no non-trivial cyclic permutations. Examples:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000012_14fb9fa2f6a4c85a3b4937142c8b59885ccc0ab5324e85349da149ef06bf22ff.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00041-00050/try-20261114T120723-fcec1c/document_artifacts/image_000012_14fb9fa2f6a4c85a3b4937142c8b59885ccc0ab5324e85349da149ef06bf22ff.png -->
 
 ¯
 
@@ -1854,33 +1764,10 @@ There are various conventions for writing the suffix which indicates the chord t
 - G ¯ I G 2 2 2 2 2¯ 2¯ 2¯ G 4 4 4 ¯
 - G 4 4 6 ¯
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 41](<Mathematics_and_Music.pdf#page=41>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 41](<document_artifacts/page_000041_d7f78992e01a7e2dd2de210fcebfbe88ad772ab207f7e22fbd639641e6997eae.png>)
-
-![PDF-Seite 42](<document_artifacts/page_000042_6803659ac87ebb7fd60d2e9aa33f79b27432cb1460180b87bf479c93e483ec1b.png>)
-
-![PDF-Seite 43](<document_artifacts/page_000043_501bc7efa2dbe295c43391d999ac7fdab794e83afb98022650dc8646627495f4.png>)
-
-![PDF-Seite 44](<document_artifacts/page_000044_f3f663517aeb5b7096c747d7c8f026214ffe59c4902bb6debb749da73a7211eb.png>)
-
-![PDF-Seite 45](<document_artifacts/page_000045_25f4170a1e1cd4553e9973cf8d940d944ada9f1e452c043bbae3691ae7177ac1.png>)
-
-![PDF-Seite 46](<document_artifacts/page_000046_b01c158b1ca55a7b6ac8f5c685c8e41bc4ea665c996b1de5a308e9448927f0ae.png>)
-
-![PDF-Seite 47](<document_artifacts/page_000047_8627039a14aa9c6c8893b9d08a9167939f7da77532728fa8b3a48fb18f0c85ce.png>)
-
-![PDF-Seite 48](<document_artifacts/page_000048_27e8fbc79554791f848f3ae9fec400183c4e688d44724c4ae7013d7a3039646b.png>)
-
-![PDF-Seite 49](<document_artifacts/page_000049_690049f7ee7e9f3a1291ba6619ff8473c52082715c93965ae156f667b30dca5f.png>)
-
-![PDF-Seite 50](<document_artifacts/page_000050_6c932cdc1d274c0e4b1ce1126205520b25c5f507115594a19c29ca62e53f8819.png>)
-
-
-[Original-PDF, Seite 41](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=41>)
-
-<!-- PDF-Seiten 51–60 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document.md -->
+<!-- PDF-Seiten 51–60 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document.md -->
 
 For example, a major triad whose root is C is denoted by C. In the key of F major, it would be denoted V. In the key of A minor, it would be denoted III. The minor seventh chord whose root is F♯ is denoted F♯m7 . In the key of D major, it would be IIIm7 . In the key of G minor, it would be denoted ♯VIIm7 . We often label augmented or diminished seventh chords, which have no discernable root, by declaring the root to be the lowest note in its voicing.
 
@@ -1912,7 +1799,7 @@ Here are some chords labeled according to the note class of the root.
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000000_3e2229375a3655e99a9466cdb0e6b0a3b75e4d9910cee3f106ded2252e85218a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000000_3e2229375a3655e99a9466cdb0e6b0a3b75e4d9910cee3f106ded2252e85218a.png -->
 
 <!-- formula-not-decoded -->
 
@@ -1942,7 +1829,7 @@ Below are some chords labeled according to the scale tone numeral of the root. H
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000001_bca0c99ad4c072e344ab5e4b4da5e7071f94d7337703952d9644d72bc5f59cb8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000001_bca0c99ad4c072e344ab5e4b4da5e7071f94d7337703952d9644d72bc5f59cb8.png -->
 
 Chapter 11 will present mathematical reasons why certain chords seem to possess a "harmonious", or consonant, quality, while others have a more "clashing", or dissonant, effect.
 
@@ -1980,7 +1867,7 @@ As an example, if the root of a major chord is spelled as C♯ , then its third 
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000002_3963f77262ce2e5c5e88b63caf0db196be42f1896757d96a86ad61eaffb6fb54.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000002_3963f77262ce2e5c5e88b63caf0db196be42f1896757d96a86ad61eaffb6fb54.png -->
 
 <!-- formula-not-decoded -->
 
@@ -1998,7 +1885,7 @@ G 4 4 4 4 4
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000003_5533e8230f7be09a9823c642a9dd3be8fdc2b42c56fc1217b14cd5b0dfb5c913.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000003_5533e8230f7be09a9823c642a9dd3be8fdc2b42c56fc1217b14cd5b0dfb5c913.png -->
 
 For augmented and diminished seventh chords, whose roots cannot be determined merely from the chords' pitch classes, correct spelling will identify the root. Rules of spelling, however, tend to be followed less rigorously for these chords, as well as for diminished triads. Note, for example, that the I dim chord in the example is misspelled. The first example below gives the correct spelling of C07 . The middle chord of the second example gives the same enharmonic chord spelled as D♯07 ; however in some contexts (such as the one that appears here) this chord might be viewed as a misspelling of C07 .
 
@@ -2018,7 +1905,7 @@ For augmented and diminished seventh chords, whose roots cannot be determined me
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000004_6f2ffd43b494cac933514235bd3547a3b7b5c6a73f89f1ca2858c3c3371cd87b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000004_6f2ffd43b494cac933514235bd3547a3b7b5c6a73f89f1ca2858c3c3371cd87b.png -->
 
 In the following example the middle chord, because of context, would likely be labeled as E aug, even though it is spelled as C aug (here the sharp applies throughout, since there is no bar line) to allow the augmented fifth to be written diatonically as C rather than B♯ .
 
@@ -2038,13 +1925,13 @@ In the following example the middle chord, because of context, would likely be l
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000005_dbfa8cbcf2651432c4d5fc2617a91ccae4a8db1a4ec57285b52737b47471838d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000005_dbfa8cbcf2651432c4d5fc2617a91ccae4a8db1a4ec57285b52737b47471838d.png -->
 
 In some cases music gives a different name to an alternate spelling of a chord. We will not delve much into this, but an example that comes to mind is the augmented sixth chord, which is enharmonically equivalent to the seventh chord but spells the seventh as an augmented sixth, as in the first chord of the example below.
 
 ˘
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000006_c9403612ea854fc370219f3c315084df49f212d3b824ad5ad361c4caf492827b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000006_c9403612ea854fc370219f3c315084df49f212d3b824ad5ad361c4caf492827b.png -->
 
 ă
 
@@ -2066,7 +1953,7 @@ A classical example is a progression in which the root moves counterclockwise ar
 
 The Circle of Fifths
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000007_4964b7582ed10983be8d9237e2957023f38b8e2e88fc3aeb16af34be8c27143d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000007_4964b7582ed10983be8d9237e2957023f38b8e2e88fc3aeb16af34be8c27143d.png -->
 
 Note that as we proceed clockwise the progressions go up a fifth, or, equivalently modulo octave, down a fourth; as we proceed counter-clockwise the progressions are up a fourth, or down a fifth. (Note also that each chromatic scale tone occupies one and only one clock position. We say more about this
 
@@ -2078,7 +1965,7 @@ later.) The classical circle-of-fifths progression is one in which the the root 
 
 Often a melody suggests the chords which should underlie it by offering a sequence of notes which lie mostly within a certain chord. Sometimes this basic "implied harmony" can be artistically altered or enhanced. For example, this melody, in F major,
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000008_19a8310728ae9e7ee40aed5acc410fe4c64714dfab3d66d8fba593befb174e63.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000008_19a8310728ae9e7ee40aed5acc410fe4c64714dfab3d66d8fba593befb174e63.png -->
 
 ˇ
 
@@ -2235,7 +2122,7 @@ Name the chord given by each of these sequence of intervals:
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000009_8bbc2865fe25e1b36441ae8883b2c543571371b99120bc7e0915b6e21525257c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000009_8bbc2865fe25e1b36441ae8883b2c543571371b99120bc7e0915b6e21525257c.png -->
 
 2
 
@@ -2266,7 +2153,7 @@ I G
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000010_d522fa787c1f260682b786d429a8fd77f871f030fe05b4765313642df34e6e92.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000010_d522fa787c1f260682b786d429a8fd77f871f030fe05b4765313642df34e6e92.png -->
 
 | G   | 4¯   | 4¯   | 4¯   |
 |-----|------|------|------|
@@ -2322,13 +2209,13 @@ I G
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000011_dc3b44142efa0e6e15d422e1831a5ad98e4ba8df77a672d52dbd470878e83ed1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000011_dc3b44142efa0e6e15d422e1831a5ad98e4ba8df77a672d52dbd470878e83ed1.png -->
 
 13. Give a plausible harmonization of this melody by providing, in the bass clef, one whole note chord for each measure. Label each chord by root scale tone (Roman numeral) and chord type (e.g., IIm7 ).
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000012_13da3735e16fe84b49295c7dba8a73a4facecb6f881c929824270f55e13d42a2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00051-00060/try-20261114T120754-1efd4d/document_artifacts/image_000012_13da3735e16fe84b49295c7dba8a73a4facecb6f881c929824270f55e13d42a2.png -->
 
 ă
 
@@ -2407,33 +2294,10 @@ Multiplicative and Additive Measurements. The measurement of intervals by ratio 
 - 6ˇ
 - Orientation of Intervals. Intervals have an upward or downward orientation. We say that the interval given by pitches (f2, f1) (which we read as the interval from f1 to f2) is upward if f2 > f1 and downward if f2 < f1. In the former case we have f2 f1 > 1; in the latter case f2 f1 < 1. Thus the upward intervals are given by the real numbers x which are greater than 1, and the downward intervals are given by the positive real numbers x which are less than 1.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 51](<Mathematics_and_Music.pdf#page=51>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 51](<document_artifacts/page_000051_2971989f7ceb99176cede0b243a78752cb37bf84cd7021d0c8c19dd34905f633.png>)
-
-![PDF-Seite 52](<document_artifacts/page_000052_4374c0c27d7dfc1e05722256489f916454306dfac7ce90d22d40499dc9e71bbc.png>)
-
-![PDF-Seite 53](<document_artifacts/page_000053_fb1c72d243fd48a4b48c741e644d86fbc3ef0f576201e8e87ff1248d684fdb21.png>)
-
-![PDF-Seite 54](<document_artifacts/page_000054_f475eff4df6372129a124f3fe631631de6196b169e1d02913ae6c1f5a7693a8d.png>)
-
-![PDF-Seite 55](<document_artifacts/page_000055_b0f1a2abf92dd97e3ede2f6db2c327884dfa851b800ada6adfe1823e8d3c4dc7.png>)
-
-![PDF-Seite 56](<document_artifacts/page_000056_68eac6285c68dfd000d74f14e24f4d97b85466cd9c1cc5d09d9878d5269c4215.png>)
-
-![PDF-Seite 57](<document_artifacts/page_000057_249af14be63ccfe891f4406287ac3ec904aedca7f3ed924760b69c9c1a1d6526.png>)
-
-![PDF-Seite 58](<document_artifacts/page_000058_a8580256317bd1f91b883231d4b5f72d5473804679ec90b55cc83e97b0b35b93.png>)
-
-![PDF-Seite 59](<document_artifacts/page_000059_d55452ca0d58bffbddcab0eed4b5d8c25ad59e22a062b73273b41cc87bd23fd6.png>)
-
-![PDF-Seite 60](<document_artifacts/page_000060_205a210b3ba1b25daf4818c8c94b34f07a23631b0012e10a4a4d728a4af5b248.png>)
-
-
-[Original-PDF, Seite 51](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=51>)
-
-<!-- PDF-Seiten 61–70 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00061-00070/try-20261114T120833-581b84/document.md -->
+<!-- PDF-Seiten 61–70 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00061-00070/try-20261114T120833-581b84/document.md -->
 
 called additive because when we juxtapose two intervals we think of adding or subtracting. For example we say that 2 semitones plus 3 semitones equals 5 semitones; a fifth is a major third plus a minor third; a semitone is a major sixth minus a minor sixth. We will show later how this more conventional notion of interval relates to the multiplicative notion of an interval as a ratio.
 
@@ -2503,7 +2367,7 @@ The distances on the frequency axis between An, An+1 for various integers n are 
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00061-00070/try-20261114T120833-581b84/document_artifacts/image_000000_c580f93053f35fb8597c36d23a41f401b58b8be4a6a8fb323e25dbb6bf9dbc22.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00061-00070/try-20261114T120833-581b84/document_artifacts/image_000000_c580f93053f35fb8597c36d23a41f401b58b8be4a6a8fb323e25dbb6bf9dbc22.png -->
 
 ¯
 
@@ -2519,7 +2383,7 @@ for some k ∈ R+.
 
 Let us consider how the fret (or, equivalently, the position of the instrumentalist's finger on an unfretted instrument) can be positioned to effect a given change of frequency. Suppose the string has length L and its frequency is F . Visualize the string stretching horizontally, and suppose a fret is positioned at distance L′ from, say, the right end of the string.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00061-00070/try-20261114T120833-581b84/document_artifacts/image_000001_5c62aa45962718570952f8d92678681950981523335afb5f12cbdef09d0c7f57.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00061-00070/try-20261114T120833-581b84/document_artifacts/image_000001_5c62aa45962718570952f8d92678681950981523335afb5f12cbdef09d0c7f57.png -->
 
 We want to calculate the interval ratio F ′ : F , where F ′ is the frequency of the segment of string to the right of the fret. This segment has length L′ , so by 4.5 we have
 
@@ -2590,7 +2454,7 @@ Exponential Functions. The calculus concept of limit provides a definition bx fo
 
 For b &gt; 1 the function is increasing, hence it gives a one-to-one correspondence between the sets R and R+. The graph of f(x) = bx is:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00061-00070/try-20261114T120833-581b84/document_artifacts/image_000002_5d374a49bdd0d4351b3bf5caf752765f9c90f9af86f8c59de9135eb995521627.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00061-00070/try-20261114T120833-581b84/document_artifacts/image_000002_5d374a49bdd0d4351b3bf5caf752765f9c90f9af86f8c59de9135eb995521627.png -->
 
 The number b is called the base of the exponential function. It will always be a positive real number, ̸= 1, and we generally take it to be &gt; 1.
 
@@ -2606,7 +2470,7 @@ Thus the statement logb x = y means exactly the same as by = x. The domain of g(
 
 The graph of g(x) = logb x is obtained by flipping the graph of f(x) = bx around the line y = x. Again assuming b ≥ 1, we see that g(x) = logb x is an increasing, hence one-to-one, function whose graph is:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00061-00070/try-20261114T120833-581b84/document_artifacts/image_000003_96e31756d56d27b1f72b391efe7a588fd523129f8e2a3476b5e3acf5e4ca178e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00061-00070/try-20261114T120833-581b84/document_artifacts/image_000003_96e31756d56d27b1f72b391efe7a588fd523129f8e2a3476b5e3acf5e4ca178e.png -->
 
 The number b is called the base of the logarithm. Remember that it is always positive, ̸= 1, and we usually take it to be &gt; 1.
 
@@ -2669,33 +2533,10 @@ Returning to a problem posed in the last section, suppose we are given a musical
 - The number b is called the base of the logarithm. Remember that it is always positive, ̸= 1, and we usually take it to be > 1.
 - for any real numbers x, y > 0 and any real number p. Property (L1) derives from the law of exponents bs+t = bs bt as follows: Let s = logb x and t = logb y. Then
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 61](<Mathematics_and_Music.pdf#page=61>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 61](<document_artifacts/page_000061_c46dd2cc393310b38d92841623be72fe610b4c9eb42018cf18d4d073f8890692.png>)
-
-![PDF-Seite 62](<document_artifacts/page_000062_ad867925838517adb00b3386ab22493df6582931595d55a7d0eae3405d46afe4.png>)
-
-![PDF-Seite 63](<document_artifacts/page_000063_d79eb9ea8f31beaf72b8a916937fc9d3b064e0c813d9ecf79d938f886b083545.png>)
-
-![PDF-Seite 64](<document_artifacts/page_000064_4696e74b3837bc711b76cb211ef79ed58f1304b6b97bee6322b280b4c27fd5af.png>)
-
-![PDF-Seite 65](<document_artifacts/page_000065_14c2aacf10c29c80d80ebd5275af53ff2d4f182c53bda1150265f06f653b9870.png>)
-
-![PDF-Seite 66](<document_artifacts/page_000066_fc9a4f945ce790f31b9968bd87bb26479a36f3f0bc9a316cfb87bf5fdd458eec.png>)
-
-![PDF-Seite 67](<document_artifacts/page_000067_64d6a102d5fc8800bee088f65dc22e5e172b6f476d15f23f43a13785d741eee0.png>)
-
-![PDF-Seite 68](<document_artifacts/page_000068_ba5d8974f48b8a106231e07e9a1e8a49ebe310cd73cfc13040222efc05bb3f87.png>)
-
-![PDF-Seite 69](<document_artifacts/page_000069_09b3bab54c44615292e91ddb8f6d27a43173e8a2d87b983a1a9a20294e0e6c73.png>)
-
-![PDF-Seite 70](<document_artifacts/page_000070_12433195ff7658cd4128730970335d5212c5af7f75347eb2bcad5ca3de8a7ae8.png>)
-
-
-[Original-PDF, Seite 61](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=61>)
-
-<!-- PDF-Seiten 71–80 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00071-00080/try-20261114T120909-562f96/document.md -->
+<!-- PDF-Seiten 71–80 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00071-00080/try-20261114T120909-562f96/document.md -->
 
 the standard measurements for intervals such as octaves, steps, semitones, or cents. We have noted that if x is the measurement of the interval in cents, then r = 2x/1200 . Applying the function log2 to both sides of this equation yields log2 r = log2 (2x/1200 ) = x/1200, i.e., x = 1200 log2 r. Thus we have:
 
@@ -2776,7 +2617,7 @@ using properties of exponents.
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00071-00080/try-20261114T120909-562f96/document_artifacts/image_000000_775ac2aa48620f0dd8f62aec6235e4a24a3baff73ee77b8fa1b06dcccb933d29.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00071-00080/try-20261114T120909-562f96/document_artifacts/image_000000_775ac2aa48620f0dd8f62aec6235e4a24a3baff73ee77b8fa1b06dcccb933d29.png -->
 
 10. Express the following interval ratios in terms of n-chromatic units, for the given n. Round off to 2 digits to the right of the decimal.
 2. (a) ratio 5 2 ; n = 19
@@ -2847,7 +2688,7 @@ As an example, consider this sequence of 12 notes classes:
 
 4ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00071-00080/try-20261114T120909-562f96/document_artifacts/image_000001_276325dc79add1ffa96dfb1e21adf772aa59cb0e1c97f8b9954db64309dc5492.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00071-00080/try-20261114T120909-562f96/document_artifacts/image_000001_276325dc79add1ffa96dfb1e21adf772aa59cb0e1c97f8b9954db64309dc5492.png -->
 
 The spelling of notes in twelve-tone music often consists of a mixture of sharps and flats in no apparent pattern. Observe in the above that the sharp is used four times and the flat one time. Since each of the 12 note classes appears precisely once, this sequence qualifies as an original (top) row, which generates the row chart below.
 
@@ -2905,7 +2746,7 @@ This example, from [3], is based on the row chart above.
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00071-00080/try-20261114T120909-562f96/document_artifacts/image_000002_93c79508c2564df273875ded1ea1b1efccf272303e89f8aa163615a3c33399cd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00071-00080/try-20261114T120909-562f96/document_artifacts/image_000002_93c79508c2564df273875ded1ea1b1efccf272303e89f8aa163615a3c33399cd.png -->
 
 -
 
@@ -2931,7 +2772,7 @@ Since there is little feeling of tonal center, twelve-tone music is often writte
 
 Sometimes the notes from a sequence are assembled in vertical fashion. Consider the following original row.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00071-00080/try-20261114T120909-562f96/document_artifacts/image_000003_c36b66ea80ba3077f588fb1d3902320b0dfff230acc5ea443699cc52fdb5743b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00071-00080/try-20261114T120909-562f96/document_artifacts/image_000003_c36b66ea80ba3077f588fb1d3902320b0dfff230acc5ea443699cc52fdb5743b.png -->
 
 Eˇ
 
@@ -2953,7 +2794,7 @@ The following example, again from [3], uses this row by using groups of note cla
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00071-00080/try-20261114T120909-562f96/document_artifacts/image_000004_ce4132a1c0d70358f5c8317205b2dd53d32b0ae73573629981051f53c4976234.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00071-00080/try-20261114T120909-562f96/document_artifacts/image_000004_ce4132a1c0d70358f5c8317205b2dd53d32b0ae73573629981051f53c4976234.png -->
 
 ## Exercises
 
@@ -3025,33 +2866,10 @@ The following example, again from [3], uses this row by using groups of note cla
 - 68
 - ŔŔ 6ˇ
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 71](<Mathematics_and_Music.pdf#page=71>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 71](<document_artifacts/page_000071_e28b11c2338255e079a3a322244af2082ab59e59466a25056270af838205f8b7.png>)
-
-![PDF-Seite 72](<document_artifacts/page_000072_e9772a707a15c3b8745408de87dc4b3a7d52a467dd906fa29362e6672879ca0f.png>)
-
-![PDF-Seite 73](<document_artifacts/page_000073_cc691caa7224318d076861bdb803e9a9f5e82ffc4b4789ed5b48bb09072fba85.png>)
-
-![PDF-Seite 74](<document_artifacts/page_000074_2a231381ba226141de4b3f39134e1b2ded29c554d05699fa6f3cdb132c406d10.png>)
-
-![PDF-Seite 75](<document_artifacts/page_000075_e7f921776b57afe47be4b6716c43c880b8fa13e4b6e7e93c188562710cbefaee.png>)
-
-![PDF-Seite 76](<document_artifacts/page_000076_52fd74e7255ccb9a040ca43ee1d1dae7e28a2dde9667797bfe66e41177ce54ad.png>)
-
-![PDF-Seite 77](<document_artifacts/page_000077_c14cc1ac1ca4f673cb54941db3b57c6c408de74f3ac5263acb26457318229b48.png>)
-
-![PDF-Seite 78](<document_artifacts/page_000078_730350e8757deb66626ba98baf39e4ad1e5de6e04f8a183bd62f8f7504132aff.png>)
-
-![PDF-Seite 79](<document_artifacts/page_000079_2a93d35331936a009599332f90784e9c981e5dafd0e43282beedbc29e013386b.png>)
-
-![PDF-Seite 80](<document_artifacts/page_000080_5ac3ec5e4111e57d30b5d6482d786ad2459e08d7e8eaf86128089ea2704f14d8.png>)
-
-
-[Original-PDF, Seite 71](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=71>)
-
-<!-- PDF-Seiten 81–90 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00081-00090/try-20261114T120949-79b3b3/document.md -->
+<!-- PDF-Seiten 81–90 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00081-00090/try-20261114T120949-79b3b3/document.md -->
 
 3. Identify these chords by root note with suffix (e.g., B m7) and root scale note with suffix (e.g., V7 ). Indicate the chromatic n-scale's best approximation of the chord by giving, for each note in the chord, it's interval in (whole) n-chromatic units from the bottom note.
 
@@ -3065,7 +2883,7 @@ The following example, again from [3], uses this row by using groups of note cla
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00081-00090/try-20261114T120949-79b3b3/document_artifacts/image_000000_2715f59133057357754b30ba8cb7fa94adcd18bcf26964d1acb8f96818374a73.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00081-00090/try-20261114T120949-79b3b3/document_artifacts/image_000000_2715f59133057357754b30ba8cb7fa94adcd18bcf26964d1acb8f96818374a73.png -->
 
 ¯
 
@@ -3081,7 +2899,7 @@ The following example, again from [3], uses this row by using groups of note cla
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00081-00090/try-20261114T120949-79b3b3/document_artifacts/image_000001_3713cbe17872a75141fbf25d566a13a68545239d376e508da90164fa2eebcecb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00081-00090/try-20261114T120949-79b3b3/document_artifacts/image_000001_3713cbe17872a75141fbf25d566a13a68545239d376e508da90164fa2eebcecb.png -->
 
 ˇ
 
@@ -3182,7 +3000,7 @@ Let us denote the set of equivalence classes by R/ ∼. The function which assoc
 
 Thus R/ ∼ is parameterized by the circle in the same way R is parameterized by the line.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00081-00090/try-20261114T120949-79b3b3/document_artifacts/image_000002_0db73acc0bf6835116d2581035838dfcd07d31ec889855d5ddb26c42b046df6d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00081-00090/try-20261114T120949-79b3b3/document_artifacts/image_000002_0db73acc0bf6835116d2581035838dfcd07d31ec889855d5ddb26c42b046df6d.png -->
 
 The Generalized Division Algorithm asserts that for each x ∈ R, there is precisely one equivalence class representative r ∈ ¯x such that 0 ≤ r &lt; m. It is the number r for which x = qm + r in the algorithm. This is reflected in the fact that for any point p on the circle there is precisely one point in the interval [0, m) which wraps onto p.
 
@@ -3194,7 +3012,7 @@ For k ∈ Z, we write [k] for the equivalence class containing k. Note that the 
 
 The set Zm is a subset of R/ ∼, and it can be seen as the image of Z by the wrapping function described above. If we place m equally spaced points around the circle, these points will be this image; they correspond to the classes [0], [1], [2], . . . , [m - 1], which is all of Zm. Hence elements of Zm can be seen as "clock positions" on the "m-hour clock". This is depicted below, again for m = 8.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00081-00090/try-20261114T120949-79b3b3/document_artifacts/image_000003_c739135724183147ba07162aabcf1290fbcd15ae717e02ce2bffa18ff38c9eb9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00081-00090/try-20261114T120949-79b3b3/document_artifacts/image_000003_c739135724183147ba07162aabcf1290fbcd15ae717e02ce2bffa18ff38c9eb9.png -->
 
 We now introduce some concepts from abstract algebra which will be useful in this discussion.
 
@@ -3288,33 +3106,10 @@ The Group of Modular Chromatic Intervals. We have noted that the set of keyboard
 - -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8
 - The Generalized Division Algorithm asserts that for each x ∈ R, there is precisely one equivalence class representative r ∈ ¯x such that 0 ≤ r < m. It is the number r for which x = qm + r in the algorithm. This is reflected in the fact that for any point p on the circle there is precisely one point in the interval [0, m) which wraps onto p.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 81](<Mathematics_and_Music.pdf#page=81>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 81](<document_artifacts/page_000081_72e5d81023cbb21a30857dcee1de392a7eef029740d8e7a79db84802d6dea1a8.png>)
-
-![PDF-Seite 82](<document_artifacts/page_000082_f0fa7a55a59729bc86d7b52aef520c7485f16843e2ab4893d4bcca72f0110e65.png>)
-
-![PDF-Seite 83](<document_artifacts/page_000083_c3193bf8ffe23748a45c5d45f4fff913768542b2b7df8da9960f8a0c5cd1d23c.png>)
-
-![PDF-Seite 84](<document_artifacts/page_000084_0ab160447104ef2ced8d9f14365d8f67a71a9df6b0b05a1d475ac1908a9f3974.png>)
-
-![PDF-Seite 85](<document_artifacts/page_000085_4cfcfb69e69cd817cc5cd9eec205865dee733a3e137d5bd87f70280b9530a278.png>)
-
-![PDF-Seite 86](<document_artifacts/page_000086_35f285690c0edef93eb627062f4246e128a9daef58b04534e52a1465f9852cbb.png>)
-
-![PDF-Seite 87](<document_artifacts/page_000087_bb07cdc4ad7c80b7c13bd51c896cc34f3eca013e68e65edcfb9f2a958f0325ff.png>)
-
-![PDF-Seite 88](<document_artifacts/page_000088_340e500f33baccc729a4dfd4c71ff22d95643f91d24a4ce11bd1f0c28abbda61.png>)
-
-![PDF-Seite 89](<document_artifacts/page_000089_c81065c68de3949af0c62a8d0ccbb843f531cbe06549c74acd7d483e0b954b27.png>)
-
-![PDF-Seite 90](<document_artifacts/page_000090_fd688d2ce8a2d312b0a372f314b126c1fb9bd2fe7066a61599021ca2a42a8f1a.png>)
-
-
-[Original-PDF, Seite 81](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=81>)
-
-<!-- PDF-Seiten 91–100 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00091-00100/try-20261114T121015-cd7d31/document.md -->
+<!-- PDF-Seiten 91–100 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00091-00100/try-20261114T121015-cd7d31/document.md -->
 
 of intervals. Any modular chromatic interval can be has a unique equivalence class representative n semitones, where 0 ≤ n ≤ 11. As with performing addition in Z12, the iteration of modular chromatic intervals can be seen as a sequence of rotations on the modular clock.
 
@@ -3324,7 +3119,7 @@ Nonstandard Chromatic Intervals. If we divide the octave into n equal intervals 
 
 Modular clock. The group Zn can be realized as the group of rotations of a regular n-gon, or of a "clock" with n positions, dividing the circle into n equal arcs, with a position at the top of the circle. For example, Z4 is the group of rotations of the square, or a clock with four positions:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00091-00100/try-20261114T121015-cd7d31/document_artifacts/image_000000_a3c1ad7a801bd1b87b6e93c51947fe242156b05ca8dd21b9c904e6c7a7963c48.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00091-00100/try-20261114T121015-cd7d31/document_artifacts/image_000000_a3c1ad7a801bd1b87b6e93c51947fe242156b05ca8dd21b9c904e6c7a7963c48.png -->
 
 O
 
@@ -3338,7 +3133,7 @@ Example. We revisit the first example in Chapter 5, which generates the row char
 
 4ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00091-00100/try-20261114T121015-cd7d31/document_artifacts/image_000001_c0bb5fbf8e5127b20504282f0603fd546bba11c01fea5992cbdd7de06b5103cd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00091-00100/try-20261114T121015-cd7d31/document_artifacts/image_000001_c0bb5fbf8e5127b20504282f0603fd546bba11c01fea5992cbdd7de06b5103cd.png -->
 
 As prescribed above, let E be our designated note class. The sequence, given according to modular interval from E, is then:
 
@@ -3375,7 +3170,7 @@ We now proceed to fill in each position of the chart with the element of Z12 cor
 
 In order to convert this to a chart of note classes, it is helpful to draw the modular clock, additionally labeling each position by the note class which has the given interval from E, as follows:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00091-00100/try-20261114T121015-cd7d31/document_artifacts/image_000002_8eccae0eac744adc07ea69cabddc18b5e0a97f9ca99b0a29218c44111200aa27.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00091-00100/try-20261114T121015-cd7d31/document_artifacts/image_000002_8eccae0eac744adc07ea69cabddc18b5e0a97f9ca99b0a29218c44111200aa27.png -->
 
 Using this we can translate back to the chart in Chapter 5.
 
@@ -3399,13 +3194,13 @@ We begin by detuning the synthesizer to play in seven-tone equal temperament. Su
 
 We now associate each of these seven redefined note classes to an element of Z7 according to its modular interval from C. The following modular clock allows us to easily convert from one to the other.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00091-00100/try-20261114T121015-cd7d31/document_artifacts/image_000003_668119fca6edaa703d64de39cb3e13520f068e8e4b7c63df5ed9ae12f2ebcccb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00091-00100/try-20261114T121015-cd7d31/document_artifacts/image_000003_668119fca6edaa703d64de39cb3e13520f068e8e4b7c63df5ed9ae12f2ebcccb.png -->
 
 Referring to (1), we fill in the rows of the 7 × 7 row chart with elements of Z7 using (2). This gives the chart below on the left, which translates to the chart on the right using the clock above.
 
 row chart with modular integers
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00091-00100/try-20261114T121015-cd7d31/document_artifacts/image_000004_4c0c8dae616533fe0c7745d0e599916ca2beb675418069f72713faf215cad463.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00091-00100/try-20261114T121015-cd7d31/document_artifacts/image_000004_4c0c8dae616533fe0c7745d0e599916ca2beb675418069f72713faf215cad463.png -->
 
 row chart with note classes
 
@@ -3413,7 +3208,7 @@ A seven-tone composition based on this row chart might contain the following:
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00091-00100/try-20261114T121015-cd7d31/document_artifacts/image_000005_8ee8c4626170e59c2f3729bf0e1bc013bba8f995ba56ff1a95036099af71088f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00091-00100/try-20261114T121015-cd7d31/document_artifacts/image_000005_8ee8c4626170e59c2f3729bf0e1bc013bba8f995ba56ff1a95036099af71088f.png -->
 
 ˘
 
@@ -3578,33 +3373,10 @@ By the criterion advertised above, these coincide with those classes [m] ∈ Zn 
 - If s ̸= ∅, the S has a smallest element m, by the Well-Ordering Principle. The positive integer m will be called the order of t. We claim that any element x ∈ G has a unique expression x = tr with 0 ≤ r < m. This follows from the Division Algorithm: Writing n = qm + r as in the algorithm, we have tn = tmq+r = tmq · tr = (tm)q · tr = eq · tr = e · tr = tr . This uses the rules of exponents in (4). The uniqueness of r is fairly apparent. If two distinct integers r and r′ , with 0 ≤ r < r′ < m had the property, then we would have tr′-r = e and r′ - r < m, violating the minimality of m. So the claim is proved, and we see that
 - Express the following compositions of modular 12-chromatic intervals as r semitones with 0 ≤ r < 12. Interpret all these compositions as operations in Z12.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 91](<Mathematics_and_Music.pdf#page=91>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 91](<document_artifacts/page_000091_9cc34f1a85a0a0df1f8f0e4893d5e59a89f3eed350ffd93fe7c8ed829c64f07b.png>)
-
-![PDF-Seite 92](<document_artifacts/page_000092_82f9ddf46a9949364f7f7de06974355e95f2584fa82f175bea1ea53d7bc63678.png>)
-
-![PDF-Seite 93](<document_artifacts/page_000093_0753d15ecee878e9418d3d03e5a243d260e7ba166960917c3b18cb575caf67f2.png>)
-
-![PDF-Seite 94](<document_artifacts/page_000094_06fc04c2725aa89835cb0c57c20796a7bb0a466ef9464a957ce436ae267ffdab.png>)
-
-![PDF-Seite 95](<document_artifacts/page_000095_921ba429ec5113f8b70c3f459df3c6d170af77705bd866b9e299c6af0ccd202f.png>)
-
-![PDF-Seite 96](<document_artifacts/page_000096_9b37066547c36c80e0f9d8d4f649687c9403f802d18592f8493fd54dcb8f0d61.png>)
-
-![PDF-Seite 97](<document_artifacts/page_000097_727cf71e72c8234bbc251aff8e085aa47c29043dc037d6ab4d9b459a3f5a0b51.png>)
-
-![PDF-Seite 98](<document_artifacts/page_000098_242bbab780972ec9cf3a8e7d0901c627e458b33b91c7fb0d70a329ee4482a4a9.png>)
-
-![PDF-Seite 99](<document_artifacts/page_000099_30b3fb5cd9add8acbfbfdc01b831177a037beae404d075af311d4cd99cfb0499.png>)
-
-![PDF-Seite 100](<document_artifacts/page_000100_25233445502456972c6546bb3484e2c120efc2e9572cd3281393d790befbbc55.png>)
-
-
-[Original-PDF, Seite 91](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=91>)
-
-<!-- PDF-Seiten 101–110 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00101-00110/try-20261114T121041-264232/document.md -->
+<!-- PDF-Seiten 101–110 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00101-00110/try-20261114T121041-264232/document.md -->
 
 ## Chapter 8
 
@@ -3618,7 +3390,7 @@ We have identified a musical interval I with a positive real number x ∈ R+. Si
 
 2 = octave interval
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00101-00110/try-20261114T121041-264232/document_artifacts/image_000000_6520f38a5be26d8b07ce0b4f5861af570ea00610d8d5da0bbf2316f2f9e9707a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00101-00110/try-20261114T121041-264232/document_artifacts/image_000000_6520f38a5be26d8b07ce0b4f5861af570ea00610d8d5da0bbf2316f2f9e9707a.png -->
 
 ¯
 
@@ -3749,7 +3521,7 @@ For example φ(12) = 4, since the numbers 1, 5, 7, 11 are precisely the positive
 
 Patterns of m on n in Music. Composers sometimes create ingenious musical passages by imposing a pattern of m notes or beats against a pattern of n such, where gcd (m, n) = 1. This technique exploits (perhaps unknowingly by the composer) the fact that [m] is a generator in Zn (and vice versa).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00101-00110/try-20261114T121041-264232/document_artifacts/image_000001_1a8ae64833267a3d3efcc441cca6528c32d1d69d544afdff167274dae85979cf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00101-00110/try-20261114T121041-264232/document_artifacts/image_000001_1a8ae64833267a3d3efcc441cca6528c32d1d69d544afdff167274dae85979cf.png -->
 
 ˇ
 
@@ -3793,7 +3565,7 @@ The melody repeats the sequence of three pitches C4, E♭4 , A♭4 , through the
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00101-00110/try-20261114T121041-264232/document_artifacts/image_000002_a28f43a9d7afe809026ff97ed7c7071cf76ef7ef1c1c9655ef7aa4b877fe1fc3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00101-00110/try-20261114T121041-264232/document_artifacts/image_000002_a28f43a9d7afe809026ff97ed7c7071cf76ef7ef1c1c9655ef7aa4b877fe1fc3.png -->
 
 Note that both patterns end their cycle on the twelfth eighth notes and not before. The reason for this lies in the previous theorem. Let the top numbers represent the elements of Z4 = {[1], [2], [3], [4] = [0]}. Identifying each of the bottom numbers with the element of Z4 represented directly above it, we see the effect of adding [3]s successively in Z4. The multiples of [3] (i.e., the elements of Z4 lying above the 3s) are, respectively [3], [2], [1], [4] = [0], which exhausts the set Z4. This is because, since gcd (3, 4) = 1, [3] is a generator of Z4, so all four of the numbers 1-4 must appear above the 3 s before any of them makes a repeat appearance above a 3. Each three-note cycle below starts on a different number 1-4, and the two cycles culminate together only at 3 × 4 = 12 eighth notes, and not before.
 
@@ -3839,7 +3611,7 @@ ff
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00101-00110/try-20261114T121041-264232/document_artifacts/image_000003_28f9fcdd150a7fa2808e6bacdfac4a453d73cd00c0267e668fe864a71a8ffc6b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00101-00110/try-20261114T121041-264232/document_artifacts/image_000003_28f9fcdd150a7fa2808e6bacdfac4a453d73cd00c0267e668fe864a71a8ffc6b.png -->
 
 ¯
 
@@ -3903,7 +3675,7 @@ Another type of m on n pattern occurs when a melodic figure of duration m beats 
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00101-00110/try-20261114T121041-264232/document_artifacts/image_000004_efc8a5458ab64a681dc7fe14a5ba2066d9e71b9bf51845008ae7543d032f77e9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00101-00110/try-20261114T121041-264232/document_artifacts/image_000004_efc8a5458ab64a681dc7fe14a5ba2066d9e71b9bf51845008ae7543d032f77e9.png -->
 
 ę
 
@@ -4081,33 +3853,10 @@ integer:
 - 8ˇ
 - To identify all primes ≤ n, we performed the sieve of Eratosthenes, listing the integers 1 to n, then crossing off 1 and all higher multiples of each m for 1 < m < n. Actually we could have stopped sooner, just checking m in the interval 1 < m < s. What s would suffice?
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 101](<Mathematics_and_Music.pdf#page=101>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 101](<document_artifacts/page_000101_65adbb8c286a6aa5df208673fc6f2f89b39f59d8a5739169de91641a0175518a.png>)
-
-![PDF-Seite 102](<document_artifacts/page_000102_cf6334b1bc27c2699c2235fbd374235fd538fc011cd06e04de5fe544673af00e.png>)
-
-![PDF-Seite 103](<document_artifacts/page_000103_2dd795a0073a2c7a51a086a1008020a01dd569de8f0296173d019a11408ad487.png>)
-
-![PDF-Seite 104](<document_artifacts/page_000104_09938a87c69c7def2a330ff7b3946ef03b2e519f8be163a0d06cf3bad5b268c4.png>)
-
-![PDF-Seite 105](<document_artifacts/page_000105_b6f04d553c3847f717d9690b4fdead642778e54326e958a36bbe0bb3fb2dcc26.png>)
-
-![PDF-Seite 106](<document_artifacts/page_000106_61917ba2cd970b2c6935e985aeb552874c77db16fc3125576f289fc6452461f0.png>)
-
-![PDF-Seite 107](<document_artifacts/page_000107_41e8cd2183f5b5f3f1d29a315c02a535c472b0c4ee3a270524de508a42a32994.png>)
-
-![PDF-Seite 108](<document_artifacts/page_000108_98cacc132e9938b44e013a99b30a13654e700d3801d4844cf2e76f5270ba4703.png>)
-
-![PDF-Seite 109](<document_artifacts/page_000109_56e04045a624f6d39d52ea03dc6cd2326008891e14506e8f3988b3d394a73814.png>)
-
-![PDF-Seite 110](<document_artifacts/page_000110_d26fcc54efcac6f38bda455c775bcfa91d21dce9a6fbecae534594a856982edc.png>)
-
-
-[Original-PDF, Seite 101](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=101>)
-
-<!-- PDF-Seiten 111–120 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document.md -->
+<!-- PDF-Seiten 111–120 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document.md -->
 
 ## Chapter 9
 
@@ -4127,7 +3876,7 @@ Moreover, the keyboard's equally tempered chromatic scale is tuned to give a per
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000000_884500d964b9791f4ca4dd3e82d119ee986be7cac64d19090c07f0fdf1e823fd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000000_884500d964b9791f4ca4dd3e82d119ee986be7cac64d19090c07f0fdf1e823fd.png -->
 
 keyboard's exact representation of 2
 
@@ -4137,7 +3886,7 @@ Three. We have noted that the prime interval 3 is best approximated on the keybo
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000001_851f64914c7ff8c1f901bac01ddf1327893a0b52708a6289f12353d5dfcc13e9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000001_851f64914c7ff8c1f901bac01ddf1327893a0b52708a6289f12353d5dfcc13e9.png -->
 
 keyboard's approximation of 3, ≈ 2 cents flat
 
@@ -4147,7 +3896,7 @@ This approximation is about 2 cents under, since 3 is measured in cents by 1200 
 
 Four. The ratio 4 is two octaves by virtue of 4 = 22 . It can be played precisely on the keyboard, as can any integer ratio which is a power of two.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000002_f2bdb127e41dad9304d22e0dd951308d3aae709fe477803006a9e09867e3c792.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000002_f2bdb127e41dad9304d22e0dd951308d3aae709fe477803006a9e09867e3c792.png -->
 
 ¯
 
@@ -4159,7 +3908,7 @@ We will see that the powers of 2 are the only positive integers which is can be 
 
 Five. The next interesting integer ratio is the prime number 5, which is given in cents by 1200 log2 5 ≈ 2786.31. The closest interval to this on the keyboard is 2800 cents, which is two octaves plus a major third.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000003_b3224fb98a492a1d52f18bacda876503101e327423eb5666ce2b5b6054130595.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000003_b3224fb98a492a1d52f18bacda876503101e327423eb5666ce2b5b6054130595.png -->
 
 ¯
 
@@ -4195,7 +3944,7 @@ The closest interval on the keyboard is 3400 cents, which over-estimates 7's int
 
 keyboard's approximation of 7, ≈ 31 cents sharp
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000004_a4a20515b731c50cffc396710c702dc5dba4e065c12dc73d24da4534752d26d0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000004_a4a20515b731c50cffc396710c702dc5dba4e065c12dc73d24da4534752d26d0.png -->
 
 ă
 
@@ -4203,7 +3952,7 @@ keyboard's approximation of 7, ≈ 31 cents sharp
 
 Eight. Continuing, we note that 8, being 23 , is exactly three octaves, and is rendered precisely on the keyboard.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000005_2464f4d7c40af2d98bc7445fd922d8e9b5a65dd70573eaeb06671d49a71ec56d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000005_2464f4d7c40af2d98bc7445fd922d8e9b5a65dd70573eaeb06671d49a71ec56d.png -->
 
 ¯
 
@@ -4215,7 +3964,7 @@ keyboard's exact representation of 8
 
 Nine. Since 9 = 32 , it is approximated by composing the octave-plus-a-fifth interval with itself, which yields two octaves plus a ninth, or three octaves plus a step. This has double the error of the approximation of 3, so the approximation of 9 is about 4 cents flat.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000006_8d4ba43018ad56cbf0e4258ce3222d0fb1f2ce144b7c2f70c3d2d9d90d440637.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000006_8d4ba43018ad56cbf0e4258ce3222d0fb1f2ce144b7c2f70c3d2d9d90d440637.png -->
 
 ¯
 
@@ -4227,7 +3976,7 @@ keyboard's approximation of 9, ≈ 4 cents flat
 
 Ten. We have 10 = 2 · 5, hence 10 is approximated by the composition of the octave with the two-octaves-plus-a-third interval, yielding three octaves and a third, and having the same error as the approximation of 5 (since 2 is rendered exactly), which is about 14 cents sharp.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000007_106381fbfc8cd2ccc95310fcca3ed363d36709e561ed9bd5bbf6043d420ac4df.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000007_106381fbfc8cd2ccc95310fcca3ed363d36709e561ed9bd5bbf6043d420ac4df.png -->
 
 ¯
 
@@ -4239,7 +3988,7 @@ keyboard's approximation of 10, ≈ 14 cents sharp
 
 Eleven. The next integer, the prime 11, has the worst tempered scale approximation encountered so far: 1200 log2 11 ≈ 4151.32. Notice that it lies very close to halfway between 41 semitones (three octaves plus a fourth) and 42 semitones (three octaves plus a tritone), slightly closer to the latter.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000008_ff864a78f7b16c47802164065889e38dab02e355a4a18626257b010f69d16892.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000008_ff864a78f7b16c47802164065889e38dab02e355a4a18626257b010f69d16892.png -->
 
 ¯
 
@@ -4253,7 +4002,7 @@ This interval is truly "in the cracks", lying about a quarter step from the clos
 
 Twelve. We note that 12, being 22 · 3, is approximated 14 cents sharp by three octaves plus a fifth.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000009_b60c8c033ed065d320064937c2d507492b2e651ee71ef9b020e3a7eed9a4f17e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000009_b60c8c033ed065d320064937c2d507492b2e651ee71ef9b020e3a7eed9a4f17e.png -->
 
 ¯
 
@@ -4275,13 +4024,13 @@ Thirteen. The last integer we will consider here is the prime 13. Since 1200 log
 
 keyboard's approximation of 13, ≈ 41 cents flat
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000010_325b38d03de931448014f7ec86d1bf9393e850156237caa834a69ca6f357b5f5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000010_325b38d03de931448014f7ec86d1bf9393e850156237caa834a69ca6f357b5f5.png -->
 
 Summary. The sequence of chromatic notes best approximating the pitch having ratio n with F2, for n = 1, 2, 3, . . . , 13 is: 4ˇ 2ˇ
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000011_299263188d474ad74b6de5f1f6c67610c5f0acc9e1c762e3ef675255d76fbe74.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000011_299263188d474ad74b6de5f1f6c67610c5f0acc9e1c762e3ef675255d76fbe74.png -->
 
 The discussion above reveals that some of these approximations are very close, others are not close at all.
 
@@ -4309,7 +4058,7 @@ approximates the pitch having interval ratio k with N; and label M by letter and
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000012_1ae1ecb68493a48bf7049dfb5ec73a5d9f5426146a76b84d4d788f139c986bba.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000012_1ae1ecb68493a48bf7049dfb5ec73a5d9f5426146a76b84d4d788f139c986bba.png -->
 
 2. For each given pair of positive integers m and n, express in m-chromatic units the m-chromatic scale's best approximation of the integer ratio n, and indicate how many cents sharp or flat the approximation is.
 2. (a) m = 7, n = 5
@@ -4337,7 +4086,7 @@ Piecewise Definitions and Continuity. A function can be defined in piecewise fas
 
 <!-- formula-not-decoded -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000013_e708c54a3fd1b39efb8f22e66f1add1ce3c1eb8ff34aeca8bd695a7668eefbe2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000013_e708c54a3fd1b39efb8f22e66f1add1ce3c1eb8ff34aeca8bd695a7668eefbe2.png -->
 
 <!-- formula-not-decoded -->
 
@@ -4347,7 +4096,7 @@ or
 
 whose graph is:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000014_8a15b140667220f13c219fb7220c0a99966b3325aed0908de8aca923dbe32f1d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000014_8a15b140667220f13c219fb7220c0a99966b3325aed0908de8aca923dbe32f1d.png -->
 
 Note the "jump" that appears in the graph of y = h(x) at x = 1. This is an example of a discontinuity, i.e., the situation at a point x = a at which the function fails to be continuous, as per the following definition.
 
@@ -4365,7 +4114,7 @@ which has the graph
 
 <!-- formula-not-decoded -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000015_1858676579adffc11e13160be74496b865027241706e6f728f1b78c9c5fce1eb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00111-00120/try-20261114T121108-8b388d/document_artifacts/image_000015_1858676579adffc11e13160be74496b865027241706e6f728f1b78c9c5fce1eb.png -->
 
 which again has a discontinuity at x = 1. It is not hard to prove that there is, in fact, no way to reasign h(1), leaving all other values of h unchanged,
 
@@ -4382,33 +4131,10 @@ which again has a discontinuity at x = 1. It is not hard to prove that there is,
 - This says that f(x) will be arbitrarily close to f(a) when x is sufficiently close to a. In the example h(x) above, note that, for a = 1 and ǫ = 1/2, there does not exist δ > 0 such that if x lies within δ of 1 then h(x) will lie within 1/2 of h(1) = 1; for as x approaches 1 from above, all values of h(x) are 2.
 - y = h2(x)
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 111](<Mathematics_and_Music.pdf#page=111>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 111](<document_artifacts/page_000111_257ce358bbeb597a0cbad7ae078ffbf281876590283d37b6e5046eee505c9c2c.png>)
-
-![PDF-Seite 112](<document_artifacts/page_000112_04dbe9bda2383c269aaf75596af2df6971f9696b1fdd3112433fbed52b91bed4.png>)
-
-![PDF-Seite 113](<document_artifacts/page_000113_de83a9c82bcb604faa6c03e14ad7aa6dd017cfbe37210b7c8146bcee92568f6f.png>)
-
-![PDF-Seite 114](<document_artifacts/page_000114_b16414b47be0090f4c8e27df771345d764414c44ad92fe50b8df8c77dc0b6a8b.png>)
-
-![PDF-Seite 115](<document_artifacts/page_000115_ac30f48d59974f173456e044a33818be281cd8a20794cb62474a7923b21449b7.png>)
-
-![PDF-Seite 116](<document_artifacts/page_000116_aa39cc5cf715ffdfde423da39300fa8f50c4ca79acd2e52c67195cd320669526.png>)
-
-![PDF-Seite 117](<document_artifacts/page_000117_9700df41880360d2712ee3a42270f54c1ace4fb3f547df2293c01059987c59f1.png>)
-
-![PDF-Seite 118](<document_artifacts/page_000118_18c33f7c82cbc97a1662659728a50283522d75e7341e0c82051f0a743f3bbe41.png>)
-
-![PDF-Seite 119](<document_artifacts/page_000119_5b67019137bc766c31e6a00fd7962ba099b7d7391ef3d7a66888d3e60668b4cf.png>)
-
-![PDF-Seite 120](<document_artifacts/page_000120_bc83231eac55146ee41fba3bcda5b0cef1465ed9ef74cb03cd531da088530b67.png>)
-
-
-[Original-PDF, Seite 111](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=111>)
-
-<!-- PDF-Seiten 121–130 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00121-00130/try-20261114T121135-ae132a/document.md -->
+<!-- PDF-Seiten 121–130 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00121-00130/try-20261114T121135-ae132a/document.md -->
 
 in such a way that h is continuous at x = 1.
 
@@ -4416,7 +4142,7 @@ A rough interpretation of a discontinuity is a "jump" in the graph. (This is not
 
 Periodic Functions. A function f(x) whose domain is all of R is called periodic if there is a positive number P such that for all x ∈ R, f(x + P ) = f(x). This means that the behavior of the function is completely determined by its behavior on the half-open interval [0, P ) (or on any half-open interval of length P ).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00121-00130/try-20261114T121135-ae132a/document_artifacts/image_000000_31f464ea615d054d773363c6b3a9bf863f4764b2183db6883031d0e7786f7843.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00121-00130/try-20261114T121135-ae132a/document_artifacts/image_000000_31f464ea615d054d773363c6b3a9bf863f4764b2183db6883031d0e7786f7843.png -->
 
 The number P is called the period of the function.
 
@@ -4545,7 +4271,7 @@ The kth summand dk sin(2πF kt + βk) is obtained from sin t via shifting by βk
 
 ă
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00121-00130/try-20261114T121135-ae132a/document_artifacts/image_000001_aacd35e35d15be3b0e9e811ce8597c26387fdb0caa94f8deacf3c34a62febd0a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00121-00130/try-20261114T121135-ae132a/document_artifacts/image_000001_aacd35e35d15be3b0e9e811ce8597c26387fdb0caa94f8deacf3c34a62febd0a.png -->
 
 For a given fundamental frequency F , the infinite sequence of pitches
 
@@ -4567,7 +4293,7 @@ Another situation where overtones can become audible occurs when a certain pitch
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00121-00130/try-20261114T121135-ae132a/document_artifacts/image_000002_6a8da23b81565a26855ae6c5acbbd44820328138ff94a244053580f2fb9acb88.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00121-00130/try-20261114T121135-ae132a/document_artifacts/image_000002_6a8da23b81565a26855ae6c5acbbd44820328138ff94a244053580f2fb9acb88.png -->
 
 ă
 
@@ -4585,7 +4311,7 @@ and extended by periodicity to a function whose domain is R. The graph of one pe
 
 <!-- formula-not-decoded -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00121-00130/try-20261114T121135-ae132a/document_artifacts/image_000003_e5566af681dde876d6e9059b3ff265e25e5f1be639380137d8b5a6973909a8dc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00121-00130/try-20261114T121135-ae132a/document_artifacts/image_000003_e5566af681dde876d6e9059b3ff265e25e5f1be639380137d8b5a6973909a8dc.png -->
 
 This waveform, encountered in electronics and signal processing and available in most synthesizers, produces a distinctive timbre that vaguely resembles the sound of a clarinet. The function satisfies the hypothesis of the theorem, so we wish to use 10.6 to calculate the coefficients C, Ak, and Bk that appear in its Fourier series.
 
@@ -4595,7 +4321,7 @@ Now let us consider the coefficients Bk = 1π ∫ 2π 0 cos(kt)s(t) dt (again fr
 
 According to 10.6 we have C = 1 2π ∫ 2π 0 s(t) dt. It now becomes apparent from the graph of s(t) that ∫ 2π 0 s(t) dt = 0, since the rectangle enclosed above the t-axis between 0 and π has the same area as the one below the axis between π and 2π. Hence C = 0.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00121-00130/try-20261114T121135-ae132a/document_artifacts/image_000004_bf59fc4bef7cc3fc17426bbbe26cd3048a33f879e85b6d8c56be092669aea046.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00121-00130/try-20261114T121135-ae132a/document_artifacts/image_000004_bf59fc4bef7cc3fc17426bbbe26cd3048a33f879e85b6d8c56be092669aea046.png -->
 
 and it follows easily from the summation formula:
 
@@ -4620,39 +4346,16 @@ Appealing to basic properties of the integral which are apparent from our workin
 - y = cos 2t
 - y = cos 5t
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 121](<Mathematics_and_Music.pdf#page=121>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 121](<document_artifacts/page_000121_02eac45582cd978d4253f6ddb937edd633fd68022c988b14f4633957db5092b0.png>)
-
-![PDF-Seite 122](<document_artifacts/page_000122_9b10206d1c5f75e43263833c487eb22f4baddd9fe4b64f6ca9e63e8b8cde7258.png>)
-
-![PDF-Seite 123](<document_artifacts/page_000123_90b6d8635a8ac42e2b6f1d228989621dde2088e76f373e114ba5146aeef9310a.png>)
-
-![PDF-Seite 124](<document_artifacts/page_000124_e53bc80e3d94864598410f7c8eb6fa5550dcf11390de73b61ff08fdbd46e8a7a.png>)
-
-![PDF-Seite 125](<document_artifacts/page_000125_4ab9ac10b17dda5b1dddc84f0a2ef22f9785633bed375f3ff0a5de492461a963.png>)
-
-![PDF-Seite 126](<document_artifacts/page_000126_ff3b0d6d28e86d77bdb000aa8b54eda66c4cb845812b0f1479042f64e242f9be.png>)
-
-![PDF-Seite 127](<document_artifacts/page_000127_d6896f879667efbb060b1f0c8c3ae5a8ad464b27180b85c7207eba2970e04817.png>)
-
-![PDF-Seite 128](<document_artifacts/page_000128_98641a5573dbba6ca3b0d2c5e4da1c8487505a553af0776919340686d4141ad0.png>)
-
-![PDF-Seite 129](<document_artifacts/page_000129_e5209cf458d7ebbd6ad77b58a9b19d16c3c6b7760b4b05fc18961ed1eb45b096.png>)
-
-![PDF-Seite 130](<document_artifacts/page_000130_84d99c8cefdb6894d8cb3c6c91793023030e291913d7c0ff8df68906b7350371.png>)
-
-
-[Original-PDF, Seite 121](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=121>)
-
-<!-- PDF-Seiten 131–140 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document.md -->
+<!-- PDF-Seiten 131–140 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document.md -->
 
 the last equality owing to 10.10. This shows Bk = 0.
 
 In order to evaluate Ak = 1π ∫ 2π 0 sin(kt)s(t) dt, we make some observations about the behavior of sin(kt) on the interval [0, 2π]. Specifically, we want to see how its graph on [0, π] compares to its graph on [π, 2π]. Now sin(kt) has period 2π/k, each period being a horizontal compression the graph of y = sin t over the interval [0, 2π], thus comprising an "upper lobe" and a "lower lobe", each enclosing the same amount of area between the graph and the t-axis. From this it follows that the integral of sin(kt) over any one period, or over any number of complete periods, is zero. Moreover, the point t = π lies either at the point between two adjacent periods or at the midpoint of a period, depending on whether k is even or odd, respectively.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document_artifacts/image_000000_7de5dbb4530d92a2518192223e8c4300de6cf5f3361155a4c120a748fc068e0f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document_artifacts/image_000000_7de5dbb4530d92a2518192223e8c4300de6cf5f3361155a4c120a748fc068e0f.png -->
 
 In the case k is even (see k = 2 above), the graph looks exactly the same on both intervals, thus the integral over both intervals is the same (and in fact equal to zero, since each period has the same amount of area below the t-axis as above). Therefore ∫ 2π 0 sin(kt)s(t) dt = ∫ π 0 sin(kt)s(t) dt + ∫ 2π π sin(kt)s(t) dt = ∫ π 0 sin(kt) · 1 dt + ∫ 2π π sin(kt) · (-1) dt = ∫ π 0 sin(kt) dt - ∫ 2π π sin(kt) dt = 0 - 0 = 0. Hence we have Ak = 0 when k is even.
 
@@ -4686,7 +4389,7 @@ Note that the absence of cosines in the series says that the phase shifts βk ar
 
 It is interesting (and fun!) to "watch" the summation 10.14 converge by plotting the graph of the truncated series 4π ∑Nn=0 1 2n+1 sin((2n+1)t) for larger and larger N. Note how the graphs below increasingly resemble the graph of s(t).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document_artifacts/image_000001_da30cf7e8f9be54c14ab0c05811665a6172f8afdb2303a2ea54635d50465ca80.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document_artifacts/image_000001_da30cf7e8f9be54c14ab0c05811665a6172f8afdb2303a2ea54635d50465ca80.png -->
 
 We should remark that all but finitely many overtones lie outside the range of human audibility. Hence some truncation of the Fourier series suffices to represent the audible sound.
 
@@ -4704,11 +4407,11 @@ As examples, we will consider the three vowel sounds as typically spoken by Amer
 
 formants for the oo vowel
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document_artifacts/image_000002_3ffadc6fb90b1a5a4e43741c7d3b4c2ee76481eb8bece5da42fa4178f332d98b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document_artifacts/image_000002_3ffadc6fb90b1a5a4e43741c7d3b4c2ee76481eb8bece5da42fa4178f332d98b.png -->
 
 2Modern studio editing now allows recorded tones to be transposed (i.e., pitch altered) in a way that keeps the formants intact, thus preserving the character of the sound. This process is highly sophisticated and represents a great triumph in signal analysis technology.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document_artifacts/image_000003_1a4c9d983b79a829053f5799ca1e7761287338d43676ce72ba0b1af5e246e39a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document_artifacts/image_000003_1a4c9d983b79a829053f5799ca1e7761287338d43676ce72ba0b1af5e246e39a.png -->
 
 We often use the word "bright" to describe sounds with one or more prominent high formants, and "dark" for sounds whose formants all lie low. Note that the ee vowel has higher second and third upper formants than the other two, which accounts for its relatively bright sound. Note also that a formant will have no effect on the timbre if the fundamental pitch being sung lies above that formant; hence if a soprano sings A5 (880 Hz) on an oo vowel, the lowest formant, centered around 310 Hz, has no harmonics to amplify.
 
@@ -4725,7 +4428,7 @@ period cP .
 2. Show that if a periodic function f(t) has period P , then it also has period nP for any positive integer n. Note that the determination of the Fourier coefficients C, Ak, and Bk depend on the choice of period for f(t) (see equation (7)). How do these coefficients for f as a function of period kP compare to those obtained from viewing f as a function of period P ?
 3. Suppose the function y = f(t) is the periodic function of period P corresponding to a musical tone, and suppose the graph of y = f(t) is:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document_artifacts/image_000004_c243224e3f817cb3962f7b3dd720718cdcd2dbe4f2f90ef14ddea56b5b67da20.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document_artifacts/image_000004_c243224e3f817cb3962f7b3dd720718cdcd2dbe4f2f90ef14ddea56b5b67da20.png -->
 
 For each of the functions below, sketch its graph and explain how its associated tone compares that of f(t).
 
@@ -4751,7 +4454,7 @@ For each of the functions below, sketch its graph and explain how its associated
 8. Verify the formula cos(k(π - x)) = cos(k(π + x)) using the formula 10.9. Recall this formula was used in showing the Fourier coefficients Bk for the square wave function are all zero.
 9. This is a challenging exercise. Let q(t) be defined by q(t) = 1π t - 1 on the interval [0, 2π), extended to a periodic function on R by periodicity. This a sawtooth wave. It's graph on [0, 2π) is:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document_artifacts/image_000005_dd579aed040ca2b05e0d4bb5831d0f9948c5123faf3ee3a6224f43eaf9b2ac44.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document_artifacts/image_000005_dd579aed040ca2b05e0d4bb5831d0f9948c5123faf3ee3a6224f43eaf9b2ac44.png -->
 
 The sound of this waveform is a harsh buzz. Show that
 
@@ -4769,7 +4472,7 @@ which calculus students should verify using integration by parts.
 
 which looks like
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document_artifacts/image_000006_50102fb44e366ae4bb056a4f938e659a0fdf8cd6e88ef0d816bea0df291d5bcf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document_artifacts/image_000006_50102fb44e366ae4bb056a4f938e659a0fdf8cd6e88ef0d816bea0df291d5bcf.png -->
 
 You should find that the triangle wave, like the square wave, has only odd harmonics. However the weights of the higher harmonics diminish faster than those of the square wave, hence its sound is less harsh.
 
@@ -4793,7 +4496,7 @@ In ancient times such intervals could be accurately created with a vibrating str
 
 If nm ≥ 1, its rational interval is obtained with the strings fundamental frequency by fretting the string at distance mn · L (≤ L) from one end.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document_artifacts/image_000007_2670eb66fdbdf6bde21b334a704c9ddefd18718dbccab0ba39072b00da325e6a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00131-00140/try-20261114T121215-7df324/document_artifacts/image_000007_2670eb66fdbdf6bde21b334a704c9ddefd18718dbccab0ba39072b00da325e6a.png -->
 
 The intervals of equal temperament, however, were not so accessible before the development of relatively modern techniques. For example the semitone's ratio of 21/12 would necessitate, as we have seen, finding the distance 2-1/12L - a technique not accessible to ancient mathematicians.
 
@@ -4819,33 +4522,10 @@ Given x = pα1 1 · · · pαr r as in the theorem, we may, without loss of gene
 - formants for the ee vowel
 - y = r(t)
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 131](<Mathematics_and_Music.pdf#page=131>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 131](<document_artifacts/page_000131_c9afc72076058260331c74c5e99b9884db19b16a5b535577a8a80a514f160ce8.png>)
-
-![PDF-Seite 132](<document_artifacts/page_000132_d978c9e223bd1d07136d9b1ed973ffd5ef0c16315e81841aef280e89ecadcfcc.png>)
-
-![PDF-Seite 133](<document_artifacts/page_000133_2af77f0b7d69ce71955492cb7f141d1dbf134d8da87a39a9ecff28b18edab762.png>)
-
-![PDF-Seite 134](<document_artifacts/page_000134_6064ddc655343de8c022583bb3d6f8e65abe161e5026dd15d009cb0c72e5d8a1.png>)
-
-![PDF-Seite 135](<document_artifacts/page_000135_fbb2f7286db3c91c975f9ab9919da3b9b4565d33a3d55ed79d6591a62770dc1f.png>)
-
-![PDF-Seite 136](<document_artifacts/page_000136_e8bc5ee79ec93501929182da3357554ddebd75d84f07f481aed72a14ceeb5050.png>)
-
-![PDF-Seite 137](<document_artifacts/page_000137_95759d972124ddaf5d28cb1f267acfb1a7b0c8c7eb02b0074168a2a0bb6eab01.png>)
-
-![PDF-Seite 138](<document_artifacts/page_000138_a5c55016b56afbfb2719077152bdbb60c66e94757a8acf87deba3be36e1fcddd.png>)
-
-![PDF-Seite 139](<document_artifacts/page_000139_8a8fe377138e33ace46fb539105d6f839f554686c8a15855f189bc68a5f2a1a9.png>)
-
-![PDF-Seite 140](<document_artifacts/page_000140_249a98934c16ab2b9678aa998dda48487665e976f9529f7fd6abeb31181d9157.png>)
-
-
-[Original-PDF, Seite 131](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=131>)
-
-<!-- PDF-Seiten 141–150 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document.md -->
+<!-- PDF-Seiten 141–150 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document.md -->
 
 and let βj = -αi+j and qj = pi+j for j = 1, . . . , s. We have
 
@@ -4861,7 +4541,7 @@ We begin considering some cases where the denominator is a power of 2, i.e. rati
 
 Just Fifth. Consider the interval given by 3 2 ∈ Q+. This is the integral interval interval 3 lowered by 1 octave. We noted in Chapter 8 that the interval 3 is ≈ 1.96 cents sharp of the keyboard's octave plus a fifth. Hence 32 is sharp of a keyboard fifth by this same amount. (Or we can calculate directly: 1200 log2 3 2 ≈ 701.96. The keyboards fifth is 700 cents.) The rational interval given by 32 is called the just fifth.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000000_9184e63dc166b737023501ff5c524eaa0ed2cc2ab65b7f4b12c3c662ffce157d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000000_9184e63dc166b737023501ff5c524eaa0ed2cc2ab65b7f4b12c3c662ffce157d.png -->
 
 ¯
 
@@ -4875,11 +4555,11 @@ approximation of 3 (≈ 2 cents flat)
 
 approximation of 32 (≈ 2 cents flat)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000001_0301b77565e04580826138656a2b69ca995d76a7df3dc3cd26f47fc2f151a68e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000001_0301b77565e04580826138656a2b69ca995d76a7df3dc3cd26f47fc2f151a68e.png -->
 
 Just Major Third. The interval 5 4 is the integral interval 5 minus two octaves. Recall that 5 is about 14 cents less than the keyboard's two octaves plus a major third. Hence 54 is the same amount flat of the keyboard major third, and is called the just major third.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000002_08b6f53fa19b91d0c029331f2ade9f82dffd1d1180cd5a5ed68b8a6ecacd777c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000002_08b6f53fa19b91d0c029331f2ade9f82dffd1d1180cd5a5ed68b8a6ecacd777c.png -->
 
 ¯
 
@@ -4891,7 +4571,7 @@ approximation of 5 (≈ 14 cents sharp)
 
 approximation of 54 (≈ 14 cents sharp)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000003_4bbfad52cd6c473eba91d4895a3776aaf3d95e20f30b98c422ded9a73727f353.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000003_4bbfad52cd6c473eba91d4895a3776aaf3d95e20f30b98c422ded9a73727f353.png -->
 
 Greater Whole Tone (Pythagorean Whole Tone). Since 3 is approximately one octave plus a fifth, the interval 98 is twice that, lowered by three octaves: 98 = ( 3 2 )2 · 12 . This gives something close to the keyboard's step. The calculation 1200 log2 9 8 ≈ 203.91 shows that this just interval is about 4 cents sharp of a step. We refrain from calling this interval the "just step" or "just whole tone" because we will soon encounter another just interval that is well approximated by the keyboard's one step. Instead, we will refer to this interval as the greater whole tone. It is also called the Pythagorean whole tone, for a reason that will be given in Chapter 12.
 
@@ -4899,7 +4579,7 @@ Now we will investigate some intervals having ratio n/3β , where n is not divis
 
 Just Fourth. The most basic of these is the interval given by the ratio 4 3 . Note that this interval, call it I, is complimentary to the just fifth, since 43 · 32 = 2. This says I is given additively as one octave minus a just fifth, which means it is about 2 cents flat of a keyboard fourth. We call I the just fourth.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000004_9fc7fdc7fe8b3c85784f4193a30675d93a9b7fbd4921bc0bf145df1cbe062048.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000004_9fc7fdc7fe8b3c85784f4193a30675d93a9b7fbd4921bc0bf145df1cbe062048.png -->
 
 ¯
 
@@ -4911,7 +4591,7 @@ Lesser Whole Tone. The ratio 10 9 gives another interval approximated by the key
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000005_74a609c76976bf90a6e9385ef5c08aed882558b57bb0972ed2dc00fbdbecf693.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000005_74a609c76976bf90a6e9385ef5c08aed882558b57bb0972ed2dc00fbdbecf693.png -->
 
 The interval between the lesser and greater whole tones has a ratio of 9 8 ÷ 10 9 = 81 80 which is measured in cents by 1200 log2 81 80 ≈ 21.50. This is called the comma of Didymus.
 
@@ -4919,7 +4599,7 @@ Just Major Sixth. The fraction 5 3 gives us an interval ≈ 884.36 measured in c
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000006_735cc4443478bfbf5131b659e050a5495a73fd022bd85d96bf0651e0d7691132.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000006_735cc4443478bfbf5131b659e050a5495a73fd022bd85d96bf0651e0d7691132.png -->
 
 ¯
 
@@ -4933,7 +4613,7 @@ Just Minor Third. By virtue of the equality 32 ÷ 54 = 65 , the ratio 6 5 gives 
 
 approximation of 65 (≈ 16 cents flat)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000007_7c314a392aa4b67fd480523d5968fe0ced0c9487eaefe799c02d7f63aa460a26.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000007_7c314a392aa4b67fd480523d5968fe0ced0c9487eaefe799c02d7f63aa460a26.png -->
 
 Just Semitone. We consider the fraction 16 15 = 23 3·5 . By virtue of the fact that it has larger numerator and denominator than any of those previously discussed, it gives an interval that might be considered "less just", and which one might expect to be less consonant. It is also the first ratio we have listed whose denominator involves more than one prime. We have 1200 log2 16 15 ≈ 111.73, placing this interval about 12 cents sharp of the keyboard semitone.
 
@@ -4941,7 +4621,7 @@ It is called the just semitone.
 
 approximation of 16 15 (≈ 12 cents flat)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000008_00634cfc6a626663a574ab6073c9a5ec7fce2b1f0ad5f264ba31cb701d6b3c3e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000008_00634cfc6a626663a574ab6073c9a5ec7fce2b1f0ad5f264ba31cb701d6b3c3e.png -->
 
 2 ¯
 
@@ -4949,17 +4629,17 @@ approximation of 16 15 (≈ 12 cents flat)
 
 Septimal Intervals. All the just intervals above involve only the primes 2,3, and 5. (According to a definition that will be given in the next chapter, these are 5-limit intervals.) The prime 7 introduces us to still more just intervals, and these intervals are not so well approximated by 12-tone equal temperament. Three examples are the septimal minor seventh, with ratio 7 4 , its compliment the septimal whole tone, with ratio 87 , and the septimal minor third, with ratio 76 . These intervals are sufficiently far away from keyboard notes as to impart a texture that is sometimes called "blue", or "soulful" to music which employs them.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000009_d7b579889ab3bab790134a2c6e7a4bb6545a7bf86e67d6e975422c9a5c6ba828.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000009_d7b579889ab3bab790134a2c6e7a4bb6545a7bf86e67d6e975422c9a5c6ba828.png -->
 
 approximation of 74 (≈ 31 cents sharp)
 
 approximation of 87 (≈ 31 cents flat)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000010_a2fbfbee7cb9aede91c051bdd5ba4d633742f2c71f0a97117328a68b6d36c14d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000010_a2fbfbee7cb9aede91c051bdd5ba4d633742f2c71f0a97117328a68b6d36c14d.png -->
 
 approximation of 7 6 (≈ 33 cents sharp)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000011_b0a754579fbdb06ee5b38bdbfbb79a50d0aa3dd44b5d72fd1e9806dabaffff19.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000011_b0a754579fbdb06ee5b38bdbfbb79a50d0aa3dd44b5d72fd1e9806dabaffff19.png -->
 
 ¯
 
@@ -4997,13 +4677,13 @@ This comma is the discrepancy we would get if we were to try to tune up the 12-n
 
 12-octave clock with tempered fifths
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000012_6dfbb967b7e58943c295b62819301651e32f9056001dd1157bff82021d07ae0c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000012_6dfbb967b7e58943c295b62819301651e32f9056001dd1157bff82021d07ae0c.png -->
 
 If we plot the 7-octave circle of fifths using just fifths, the twelve intervals add up to slightly more than one rotation, wrapping around the clock and ending up clockwise of the 12 o'clock position by precisely the comma of Pythagoras, as shown below. Thus the tuning of C would be problematic.
 
 7-octave clock with just fifths
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000013_9e3057361bf95ff08c85da5a91c829fb03d9effe47fb6a9ec891ddd53dd92daf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000013_9e3057361bf95ff08c85da5a91c829fb03d9effe47fb6a9ec891ddd53dd92daf.png -->
 
 This small but nonnegligible interval, not quite a quarter of a semitone, was greatly disturbing to Pythagoras.
 
@@ -5029,7 +4709,7 @@ Consider first the major chord. A just rendition of it comprises harmonics 4,5, 
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000014_6f77728f8005e8233bd645c2781e57067ef72b280e7f753160a7c3ace9a30098.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000014_6f77728f8005e8233bd645c2781e57067ef72b280e7f753160a7c3ace9a30098.png -->
 
 ğ
 
@@ -5039,7 +4719,7 @@ Consider first the major chord. A just rendition of it comprises harmonics 4,5, 
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000015_7fc85367daae620c0e8a67eb640e0cae17a2f3ef6c3cddc42bc41e0461825947.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000015_7fc85367daae620c0e8a67eb640e0cae17a2f3ef6c3cddc42bc41e0461825947.png -->
 
 The presence of this chord in the lower harmonics surely explains why the chord is so pleasing and so basic in music.
 
@@ -5071,7 +4751,7 @@ duces a seventh chord that is laser-like in its perfect consonance. This low sev
 
 The harmonic (overtone) series also explains more complicated harmonies such as those found in jazz. For example, the type of ninth chord shown below
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000016_de4df1095349aec77205d847e496673f2b3b188a61f1be403a563eaf36a2b189.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000016_de4df1095349aec77205d847e496673f2b3b188a61f1be403a563eaf36a2b189.png -->
 
 ¯
 
@@ -5165,7 +4845,7 @@ ffi
 
 ˇ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000017_43cf30ddc542e4dd6b4c4a193f639cfcc9cba8aed2b1f6c8fe507bf8974a51b9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00141-00150/try-20261114T121248-829f60/document_artifacts/image_000017_43cf30ddc542e4dd6b4c4a193f639cfcc9cba8aed2b1f6c8fe507bf8974a51b9.png -->
 
 3
 
@@ -5671,33 +5351,10 @@ writing the primes of the numerator and denominator in ascending order, as in 23
 - 2ˇ
 - Ř
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 141](<Mathematics_and_Music.pdf#page=141>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 141](<document_artifacts/page_000141_2569080edb20cac6b79836c9bc8b88f4b747e457d3145f852717a74adcdf4637.png>)
-
-![PDF-Seite 142](<document_artifacts/page_000142_dd98a065992d36e62890b9fd9489035ad0b85f8085ba25c229377de10a27b78e.png>)
-
-![PDF-Seite 143](<document_artifacts/page_000143_16de9d7a634938b530800b0ae883e636d8d11cd9bbaa782aecb2659dcf5a799a.png>)
-
-![PDF-Seite 144](<document_artifacts/page_000144_de3dad1d4cf454e2ea3673c9bd47e58800b5e576a4a357dad14dc5fd0115b807.png>)
-
-![PDF-Seite 145](<document_artifacts/page_000145_caac9fa3f04df22620b309d88d383b28a11ec7f68c6c2f04d5c360ef749551f7.png>)
-
-![PDF-Seite 146](<document_artifacts/page_000146_693d1597243bf6a1bda7237434221acbd36fac516237551ce8db7fdc3ef37d61.png>)
-
-![PDF-Seite 147](<document_artifacts/page_000147_77a235747df695d8d8cedd2654367edc585174ae9db52980cf201d82de201232.png>)
-
-![PDF-Seite 148](<document_artifacts/page_000148_6edbd209f8beb803ab2693794d922765ede9d865dbc7bc45e0c5b5ee105d5d38.png>)
-
-![PDF-Seite 149](<document_artifacts/page_000149_b225d05f7c5ca2b3c8cfb2c00aafc0688368dbe4a41cb69aa0339d39b015060c.png>)
-
-![PDF-Seite 150](<document_artifacts/page_000150_3b6f220540d685c08ebf9d27899c1053199652055f0e6dd349ad3bf435eb1a12.png>)
-
-
-[Original-PDF, Seite 141](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=141>)
-
-<!-- PDF-Seiten 151–160 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00151-00160/try-20261114T121331-ba1342/document.md -->
+<!-- PDF-Seiten 151–160 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00151-00160/try-20261114T121331-ba1342/document.md -->
 
 6. Show by multiplication and division in Q+ that:
 2. (a) A just major third plus a just minor third is a just fifth.
@@ -5719,7 +5376,7 @@ In each case above, calculate the difference as a rational interval ratio, with 
 
 2 2
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00151-00160/try-20261114T121331-ba1342/document_artifacts/image_000000_b68478029406c6fbb61f22d2bef6a0244e4be0aa0f471e032d49ccdd3f01ebb9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00151-00160/try-20261114T121331-ba1342/document_artifacts/image_000000_b68478029406c6fbb61f22d2bef6a0244e4be0aa0f471e032d49ccdd3f01ebb9.png -->
 
 ¯
 
@@ -5735,7 +5392,7 @@ In each case above, calculate the difference as a rational interval ratio, with 
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00151-00160/try-20261114T121331-ba1342/document_artifacts/image_000001_4a1ac27e42a59e55805043bbb42154d3d3f4651d3a50f13f0d22be122e625684.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00151-00160/try-20261114T121331-ba1342/document_artifacts/image_000001_4a1ac27e42a59e55805043bbb42154d3d3f4651d3a50f13f0d22be122e625684.png -->
 
 ¯
 
@@ -5777,7 +5434,7 @@ to be 3 : 2. Note that the diatonic notes occupy seven consecutive positions on 
 
 The Circle of Fifths
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00151-00160/try-20261114T121331-ba1342/document_artifacts/image_000002_3bbb2ee3cea802f0c02e18bb85883e88ea138278743a50f1ea93ed9756dc3d49.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00151-00160/try-20261114T121331-ba1342/document_artifacts/image_000002_3bbb2ee3cea802f0c02e18bb85883e88ea138278743a50f1ea93ed9756dc3d49.png -->
 
 The Pythagorean scale simply tunes each of these fifths between diatonic notes to be just fifths.
 
@@ -5804,7 +5461,7 @@ In this scale each of the five whole step intervals ˆ1 → ˆ2, ˆ2 → ˆ3, ˆ
 
 The Pythagorean scale can be extended to a chromatic scale by continuing to tune just fifths around the circle of fifths, but, as we have seen, the comma of Pythagoras prevents us from completing the circle using only just fifths. The comma is accommodated by allowing a "small" fifth between some two adjacent positions in the circle. This is often placed at one of the bottom clock positions, either between ˆ7 and ♭ˆ5 or between ♭ˆ5 and ♭ˆ2. Choosing the latter, we get:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00151-00160/try-20261114T121331-ba1342/document_artifacts/image_000003_68b4200c379c17c3cfbe69e94b6c81d7c3b81e03e5b2773a6f0a140c557dc7af.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00151-00160/try-20261114T121331-ba1342/document_artifacts/image_000003_68b4200c379c17c3cfbe69e94b6c81d7c3b81e03e5b2773a6f0a140c557dc7af.png -->
 
 A significant weakness of this scale is it's poor representation of the major third as 81 64 , two Pythagorean whole tones. This ratio is even greater than the tempered major third, and is sharp of the just major third by precisely the comma of Didymus (exercise). We will call it the Pythagorean major third. The sharpness of this interval is easily perceived, and the dissonance heard in the in the major triads I, IV, and V when played in Pythagorean tuning render this system unacceptable for music in which a high level of consonance is desired.
 
@@ -5822,7 +5479,7 @@ The Just Intonation Scale. This scale employs 5-limit tuning in such a way that 
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00151-00160/try-20261114T121331-ba1342/document_artifacts/image_000004_ae64a00e9137994b9ec1e4ee2c93c75897529e69b1b3768b94ee7e0f72532db3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00151-00160/try-20261114T121331-ba1342/document_artifacts/image_000004_ae64a00e9137994b9ec1e4ee2c93c75897529e69b1b3768b94ee7e0f72532db3.png -->
 
 This is enough to define a tuning for each diatonic scale note, since each diatonic note is used in at least one of these three chords. The justness of the tonic triad I dictates ˆ1 → ˆ3 gives 54 and ˆ1 → ˆ5 gives 32 . The justness of V says that ˆ5 → ˆ7 gives 54 , hence ˆ1 → ˆ7 is 3 2 · 5 4 = 15 8 , and that ˆ5 → ˆ2 is 3 4 (being downward a just fourth), hence ˆ1 → ˆ2 is 3 2 · 34 = 98 , which is the greater whole tone. To effect the justness of IV, we deduce in similar fashion that the ratios of ˆ4 and ˆ6 to ˆ1 must be 4 3 and 53 , respectively. Thus the ratios of scale tones to ˆ1 in the just intonation scale are given by:
 
@@ -5875,7 +5532,7 @@ However, as with the Pythagorean scale, there must be a comma in the circle. The
 
 Hence if we tune fifths around the clock so that every four consecutive clock positions equals (modulo cotave) a just major third, then the twelfth position does not coincide with the starting point, being flat by the interval ratio 2/( 125 64 ) = 128 125 , which is about 41 cents. Therefore a "large fifth" is placed somewhere on the lower left side of the clock, usually located so that it does not occur between diatonic scale tones. For example, it could be placed between the 8 and 9 o'clock positions, as depicted below.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00151-00160/try-20261114T121331-ba1342/document_artifacts/image_000005_8f77d8e385a106fed7abfe64c99933b244f7a83de0f69f4e30fa8ca80f16f7cf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00151-00160/try-20261114T121331-ba1342/document_artifacts/image_000005_8f77d8e385a106fed7abfe64c99933b244f7a83de0f69f4e30fa8ca80f16f7cf.png -->
 
 The large fifth which appears in the mean-tone chromatic scale, lying about two fifths of a semitone sharp of the just fifth or tempered fifth, was long ago dubbed the wolf fifth, after the animal's howl.
 
@@ -5903,7 +5560,7 @@ In the first half of the 18th century J. S. Bach produced a bold demonstration o
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00151-00160/try-20261114T121331-ba1342/document_artifacts/image_000006_fa1eb1f8a1565af4a1d3d04339848720ce365180cf07ff1359118c4e2288ae2f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00151-00160/try-20261114T121331-ba1342/document_artifacts/image_000006_fa1eb1f8a1565af4a1d3d04339848720ce365180cf07ff1359118c4e2288ae2f.png -->
 
 2 2 2 2
 
@@ -5946,37 +5603,14 @@ In the first half of the 18th century J. S. Bach produced a bold demonstration o
 - I G 4 4 4
 - (c) ğ
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 151](<Mathematics_and_Music.pdf#page=151>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 151](<document_artifacts/page_000151_43be00b031b169cf1d9dfe03faadd4504690a0eb0183678fb9aeb3ab35cde492.png>)
-
-![PDF-Seite 152](<document_artifacts/page_000152_cde49a9e03d8118e0efc67c3912fb6efea09dfd2bee218d99081bc4e4abc168a.png>)
-
-![PDF-Seite 153](<document_artifacts/page_000153_cb8ff6d8295aa4cad5a7ad55abd0f5ce0e22d9ec6ed7499b51b19bc6264d7bf9.png>)
-
-![PDF-Seite 154](<document_artifacts/page_000154_fc7f7e1816adfb10c170001822bd70c623a5b119a05b366aa58f7266ce048042.png>)
-
-![PDF-Seite 155](<document_artifacts/page_000155_2500fe132dc0e8cb1c8bcba6822ab43863178dc36d69d4af3ee6b3855ee65f3f.png>)
-
-![PDF-Seite 156](<document_artifacts/page_000156_2ccf24d874c1b539612861bfe9b6bfa15ceefabc1076ecca8b7087840abf74c1.png>)
-
-![PDF-Seite 157](<document_artifacts/page_000157_9b187f80642c32b18f5c61e32daf5e844148ed44b67b1cb411a60934b6d16db2.png>)
-
-![PDF-Seite 158](<document_artifacts/page_000158_6335b386eaaefc574de8ab6554b5f9e298fcf137ef62acb33b3d735bca327182.png>)
-
-![PDF-Seite 159](<document_artifacts/page_000159_5b5c784396dacc2ab9254e9de33721d05de87026065b189a85f9802cf0a3384d.png>)
-
-![PDF-Seite 160](<document_artifacts/page_000160_fc7e83628459847969d827023ef831e4a839aafde301dd6085754f08e1119e24.png>)
-
-
-[Original-PDF, Seite 151](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=151>)
-
-<!-- PDF-Seiten 161–170 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00161-00170/try-20261114T121408-2fcfd7/document.md -->
+<!-- PDF-Seiten 161–170 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00161-00170/try-20261114T121408-2fcfd7/document.md -->
 
 ¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00161-00170/try-20261114T121408-2fcfd7/document_artifacts/image_000000_062ce8eec3caa8122b390c3b18ea10055be16d49020150d6675c3ad18b04d670.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00161-00170/try-20261114T121408-2fcfd7/document_artifacts/image_000000_062ce8eec3caa8122b390c3b18ea10055be16d49020150d6675c3ad18b04d670.png -->
 
 ğ
 
@@ -6413,32 +6047,10 @@ In the first half of the 18th century J. S. Bach produced a bold demonstration o
 |                                                                   | 12                                                                          |
 |                                                                   | Locrian,                                                                    |
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 161](<Mathematics_and_Music.pdf#page=161>)
 
-![PDF-Seite 161](<document_artifacts/page_000161_dde228878fbaa6cc3d23694668e2bc238c949b9c0d981706aa1ef09ef14a291a.png>)
-
-![PDF-Seite 162](<document_artifacts/page_000162_7ec3f193f9e727d59c2ae6a14e541b9ede82373ca08ad52d4a8ad564d2879beb.png>)
-
-![PDF-Seite 163](<document_artifacts/page_000163_dfa43fac1d47bc1d133e55ccbab9e38e2ebc8a777de169714a1606cbc05999e8.png>)
-
-![PDF-Seite 164](<document_artifacts/page_000164_c621619721894f17f83835fccab48b1cc97b988852638eed84fdd83220dfada3.png>)
-
-![PDF-Seite 165](<document_artifacts/page_000165_020a6de60dc8f2905a514ab8ac79f139f1d858691c3c38a24ec83e7d137075ba.png>)
-
-![PDF-Seite 166](<document_artifacts/page_000166_56883986a49610cb841b6570464b68b9f0ddb347f1079faebf4cd20ef6fbd52c.png>)
-
-![PDF-Seite 167](<document_artifacts/page_000167_457241b670f0b29fed2d1db8b40eb509e9571e7e7a4095c1670e1e6350b0faeb.png>)
-
-![PDF-Seite 168](<document_artifacts/page_000168_e59360c10c5edcbb2a3282b32be6c7b5bae358070cbdc3fba54ed70dd9077a8e.png>)
-
-![PDF-Seite 169](<document_artifacts/page_000169_01f9414c554293357783c9627da9011c35ec075df783ba7d715b0f330cecf0d4.png>)
-
-![PDF-Seite 170](<document_artifacts/page_000170_174676b3a49903249336a53e588b59341535934d03c5464ed4da1ae417e1eace.png>)
-
-
-[Original-PDF, Seite 161](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=161>)
-
-<!-- PDF-Seiten 171–176 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00171-00176/try-20261114T121523-90b2aa/document.md -->
+<!-- PDF-Seiten 171–176 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/184cbc1c6cb4018b/d3f6f9dfb2b4/00171-00176/try-20261114T121523-90b2aa/document.md -->
 
 ## INDEX
 
@@ -6729,19 +6341,5 @@ In the first half of the 18th century J. S. Bach produced a bold demonstration o
 chord, 145 detuning, 61-62 fork, 111 jazz chords, 146 just, 133-138, 141 just intonation scale, 142 keyboard, 47-48, 134 micro, 48 Pythagorean, 131, 140, 141 rationality, vi seventh chord, 34 tuplet, 17, 21-22, 28 twelve-tone chromatic scale, vii music, viii, x, 63-67 row chart, 77-79 union, 1 unique factorization, vi, viii, 91-92, 102, 133 rational numbers, 126-127, 137 unison interval, 46, 70, 76, 84 unit, 88 in Zm, 92 upper bound, 70, 71 vertical axis, 17 vibration, 4, 22, 109-110 string, 50, 125-126 tone, 110 violin, 22, 24, 50, 105, 109, 134 vocal cords, 109 voice leading, 40 voicing, vii, 33, 37, 138 ratio, 133 tenth, 134 volume, 113 vowel, vii, 105, 138 formant, 119-121, 138 waveform, 115, 119, 123, 124 Webern, Anton, 64 Well-Ordering Principle, 2, 70-71, 82, 89, 91 Western harmony, 34 Western music, 31, 34, 61, 143 whole note, 17-18, 21, 22, 28, 29, 43 whole tone, 6 diatonic, 145 greater, viii, 128-129, 137, 140, 142, 146 lesser, 128-129, 137, 142 Pythagorean, 128, 140, 141 septimal, 130 wolf fifth, 144-145 wrapping function, 72, 75
 ```
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 171](<document_artifacts/page_000171_0d6505195fbfff787f77e1eac274ec5cf41b18b3ac09629fe102e2efd4403b6e.png>)
-
-![PDF-Seite 172](<document_artifacts/page_000172_2a304162043bd07c3606138ae716eac38e5094a9324ed51d5cdf2243ec4705f9.png>)
-
-![PDF-Seite 173](<document_artifacts/page_000173_9a0f14ff2f25f9999fad4d5ba081cca4b619151cfff4113874b913b111207767.png>)
-
-![PDF-Seite 174](<document_artifacts/page_000174_25277f9d71847484b17681d91730eb3b1d005844e24bda960a79f83137f24767.png>)
-
-![PDF-Seite 175](<document_artifacts/page_000175_844f44efaee10cd69fe7bf25bbccb75af5e0b3d90a0416fd412e3fb88b8f24b6.png>)
-
-![PDF-Seite 176](<document_artifacts/page_000176_e83a8c91c6429cff7b62bc4008e19be8b726673023a24c63377dd6a4c8693424.png>)
-
-
-[Original-PDF, Seite 171](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Mathematics_and_Music.pdf#page=171>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 171](<Mathematics_and_Music.pdf#page=171>)

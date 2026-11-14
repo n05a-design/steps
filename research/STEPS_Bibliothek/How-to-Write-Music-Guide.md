@@ -9,16 +9,17 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 2
 tabellen: 0
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `How-to-Write-Music-Guide.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–9 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/04958d7ce1502ea1/d3f6f9dfb2b4/00001-00009/try-20261114T114444-e69a35/document.md -->
+<!-- PDF-Seiten 1–9 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/04958d7ce1502ea1/d3f6f9dfb2b4/00001-00009/try-20261114T114444-e69a35/document.md -->
 
 ## How to Write Music A Quick Start Guide
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/04958d7ce1502ea1/d3f6f9dfb2b4/00001-00009/try-20261114T114444-e69a35/document_artifacts/image_000000_d412d66be9b8d861663bd1267f0451644fdd2969bcf88b0269f001af65ac40a9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/04958d7ce1502ea1/d3f6f9dfb2b4/00001-00009/try-20261114T114444-e69a35/document_artifacts/image_000000_d412d66be9b8d861663bd1267f0451644fdd2969bcf88b0269f001af65ac40a9.png -->
 
 ## How to Write Music
 
@@ -26,7 +27,7 @@ rechte: restricted_local
 
 ## Introduc�on
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/04958d7ce1502ea1/d3f6f9dfb2b4/00001-00009/try-20261114T114444-e69a35/document_artifacts/image_000001_76902ff622287a9302dd22189c1b1dd5c3e719761a16e4a971be360d6009ec6a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/04958d7ce1502ea1/d3f6f9dfb2b4/00001-00009/try-20261114T114444-e69a35/document_artifacts/image_000001_76902ff622287a9302dd22189c1b1dd5c3e719761a16e4a971be360d6009ec6a.png -->
 
 Welcome to this crash course in how to write music. The approach I'm going outline for you can be applied to almost any form of music: from pop songs to hip hop tracks, film scores to string quartets. I am assuming you probably play an instrument of some kind and therefore have some basic knowledge of music, know what a scale is and how to play basic chords, C F G etc. Wri�ng a simple piece of music isn't rocket science, wri�ng a really good piece of music is a life�me's work, but we all have to start somewhere, so let's get going! Guy Michelmore is an award winning film. Games and TV composer. He has been nominated for an EMMY and an ANNIE and works regularly with Marvel, Disney, Dreamworks and many others with hundreds of film and TV projects to his name. He founded the distance learning company ThinkSpace Educa�on 20 years ago which now has trained over 7000 composers and coun�ng.
 
@@ -139,26 +140,5 @@ much more to say, so much more to learn. We have only just started…
 - 10O
 - O0l
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_a7c96ddbee7f4267fb3815f4e4abf993cde1985d76d5f5e5c93bd5ffcc173c97.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_81f3cdd92ce826f80e8cf554cd61c1c864c4d880894c62bec84939b437c618e1.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_da17a62f54ae509af8f994a999e9a4180ed44f9901f07a3e520df0760976daff.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_9c290c312dc8b39eb4cbb932b3528428d3c1902e6c5c8e7b0bbd3de167f7cae5.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_ac89d73c9245690af62b41ec4ec8aa6e84aebd9c110a1505b7d891111c8409a7.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_ebdb48c55636461a37313c2afe6a6c4ee0790ab011a2d6281bf3010ba32071ec.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_13cbc09148fb4acf501027733ffa7193f36b0f6c026df68dbbc5195de6002f49.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_acd855e9a8f7534325ba87d41ef0d9e2b9ecf7c826f52e2244b4f93d0ccdf0be.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_b3ab7b790df4fb59fe49850242871eee764f2185cbff0e425e9236231c9c8971.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/How-to-Write-Music-Guide.pdf#page=1>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<How-to-Write-Music-Guide.pdf#page=1>)

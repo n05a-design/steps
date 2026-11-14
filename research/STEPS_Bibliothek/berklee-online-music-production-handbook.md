@@ -9,14 +9,15 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 22
 tabellen: 5
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `berklee-online-music-production-handbook.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00001-00010/try-20261114T104642-c699fd/document.md -->
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00001-00010/try-20261114T104642-c699fd/document.md -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00001-00010/try-20261114T104642-c699fd/document_artifacts/image_000000_80ba75193c28efbe1d2f5c3d8762f69a101f811bad29bcb890907071cb17b9d3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00001-00010/try-20261114T104642-c699fd/document_artifacts/image_000000_80ba75193c28efbe1d2f5c3d8762f69a101f811bad29bcb890907071cb17b9d3.png -->
 
 [b](https://online.berklee.edu/)
 
@@ -24,7 +25,7 @@ rechte: restricted_local
 
 Digital Handbook
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00001-00010/try-20261114T104642-c699fd/document_artifacts/image_000001_26ada806aacbca654c4ec6aa136f0aa5865e662225192e146bd1636aa522d97c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00001-00010/try-20261114T104642-c699fd/document_artifacts/image_000001_26ada806aacbca654c4ec6aa136f0aa5865e662225192e146bd1636aa522d97c.png -->
 
 ## Contents
 
@@ -47,7 +48,7 @@ Whether you're just beginning your musical journey, advancing your career, or si
 
 All the best,
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00001-00010/try-20261114T104642-c699fd/document_artifacts/image_000002_6cf4f9709f40e2ec6e60f9d432ee131779bf0b0c9c6c29b31f2554791fd6a2e1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00001-00010/try-20261114T104642-c699fd/document_artifacts/image_000002_6cf4f9709f40e2ec6e60f9d432ee131779bf0b0c9c6c29b31f2554791fd6a2e1.png -->
 
 Jonathan Mahoney
 
@@ -57,7 +58,7 @@ Dean of Pre-College, Online, and Professional Programs
 
 With Berklee Online, you can study the renowned curriculum of Berklee College of Music from anywhere in the world, and in your own rhythm. Since 2002, more than 75,000 students from 144 countries have enhanced their creative output and marketability with Berklee Online's award-winning master's degree programs, bachelor's degree majors, certificate programs, and 300+ music courses. Through Berklee Online, you'll receive unparalleled instruction from music industry professionals and the same faculty members who teach at Berklee's Boston campus.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00001-00010/try-20261114T104642-c699fd/document_artifacts/image_000003_70a2fb46152fe67b6ce9a608bef7e2bc2aa52265029150d077144fcbc79e49be.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00001-00010/try-20261114T104642-c699fd/document_artifacts/image_000003_70a2fb46152fe67b6ce9a608bef7e2bc2aa52265029150d077144fcbc79e49be.png -->
 
 ## What Makes a Great Record?
 
@@ -102,33 +103,10 @@ Repetition: We as humans are conditioned to respond to what is familiar. The fam
 - 1-2
 - 3-4
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<berklee-online-music-production-handbook.pdf#page=1>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_fb89767dbd33f18cb2ebac08676e205e876a716af133a1c1bef95e5a02709854.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_66f329065f33f24ccae1acee2c59facac8db1a10ab5f81da4a6ba7e4fd152aea.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_8cbe7a1df8696403055d45d362a8fbbf8839d0631a7c593460db2d15cf881044.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_34576d664c249e5aeb8476121e19bcadc9b220f324a1cce9cf3e682a85c60938.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_7798b97d8057e377263feba42a21d1206e9fc50fca86261505f5e04eb12d29f4.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_2dd3666d01d641a27d2b4670d1bd1043a7d05e4921651659f1db27f3d0846d08.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_a532dfd85d2186a41fd80437296b31af2bdb3c0fea88b62f8f33aa5ae4013f39.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_6ba472f8759a462e48bd4ea2f207788954e809f228835c8b129aeb31ce3339c2.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_693cdd1c5d42d69bb0c1b3cd85eaba6fcb72de9932e15f27e3eb00d8efefd19f.png>)
-
-![PDF-Seite 10](<document_artifacts/page_000010_d9aed5ea713a0664230dbce49cff5bc94177513460432e6128e007710c3c5a07.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-production-handbook.pdf#page=1>)
-
-<!-- PDF-Seiten 11–20 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00011-00020/try-20261114T104703-ea9524/document.md -->
+<!-- PDF-Seiten 11–20 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00011-00020/try-20261114T104703-ea9524/document.md -->
 
 Contrast: We might also label this tension and release, a fundamental concept in music and in other arts. As with repetition, we are also conditioned as humans to respond to contrast. From an evolutionary standpoint, we have evolved to ignore steady state situations (continuous background noise, non-moving objects), but be alert to sudden change or contrast (low growl of the tiger, lion jumping out from behind the bushes). Change puts our senses on alert. In music or music production, this contrast can manifest itself in a number of ways: tempo change, key change, intensity change, major/minor chord area change, density of arrangement, changes in texture, etc.
 
@@ -233,34 +211,12 @@ Dan Thompson is the author of the Berklee Online course from which this lesson c
 
 [Learn More](https://online.berklee.edu/courses/critical-analysis-of-music-production-techniques)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 11](<berklee-online-music-production-handbook.pdf#page=11>)
 
-![PDF-Seite 11](<document_artifacts/page_000011_02a4fb12e44f40f6f5ce091a3cee3f8dfdd800fe1b22077cd191e8374aff94a2.png>)
+<!-- PDF-Seiten 21–30 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00021-00030/try-20261114T104719-70da6a/document.md -->
 
-![PDF-Seite 12](<document_artifacts/page_000012_e2c48f91b2e85b5c7a8b253826a00794525904863573af4aa785229bcb639eea.png>)
-
-![PDF-Seite 13](<document_artifacts/page_000013_949d47624fe7d90b5c73f9040a786335f4191d66b43b81f251e150eb28900c02.png>)
-
-![PDF-Seite 14](<document_artifacts/page_000014_bc508c4e77d21ab21c667f476034ac166a9e7b04e99c800c352d4c143b9bb0df.png>)
-
-![PDF-Seite 15](<document_artifacts/page_000015_cf776f6b90c7892b95f1e585090d3ed55f8f040987bb9acf3507d2cb673fa19d.png>)
-
-![PDF-Seite 16](<document_artifacts/page_000016_6507745ceaef163f6f06145da5bffbde770cf0a596f40303dc6e84a77e7fc718.png>)
-
-![PDF-Seite 17](<document_artifacts/page_000017_2bc3cbaf7c659e8834d170a0360663adfdf5b190a273769be708dd6b013b240e.png>)
-
-![PDF-Seite 18](<document_artifacts/page_000018_d6e8ca07044e48d426d4001401bb7864d9d6e1fe6fed6b993263e5fc761fbc1d.png>)
-
-![PDF-Seite 19](<document_artifacts/page_000019_b2bb63a95e0837ab5e966fd1a84642b9f5f0b20c6cd578a1e2830896d394701c.png>)
-
-![PDF-Seite 20](<document_artifacts/page_000020_89f11f9bbb6480ee631daf2f8dd0eb49c73dc4d3e1d800285cbb89c6de21301a.png>)
-
-
-[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-production-handbook.pdf#page=11>)
-
-<!-- PDF-Seiten 21–30 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00021-00030/try-20261114T104719-70da6a/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00021-00030/try-20261114T104719-70da6a/document_artifacts/image_000000_709c3a9024ee5e675edd0753ca4b58e4370f42cab6de7fb73f0eaeb427e88789.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00021-00030/try-20261114T104719-70da6a/document_artifacts/image_000000_709c3a9024ee5e675edd0753ca4b58e4370f42cab6de7fb73f0eaeb427e88789.png -->
 
 Daniel M. Thompson is a Latin Grammy Award-winning recording engineer and assistant chair of Music Production and Engineering (MP&amp;E) at Berklee College of Music, where he has taught advanced production, recording, mix techniques, and music technology for more than two decades. His credits include work on ER, The Sopranos, Melrose Place, NCIS, and Monk.
 
@@ -278,7 +234,7 @@ I had been called in to produce a vocal for ER, and the song was both sung in En
 
 A good friend and artist that I've worked with for a long time, Ben Gundersheimer, had a band called the Ben Swift Band. They used to open for Dave Matthews and Phish. Then he took a detour and went into children's music, and has become really big. I worked as an engineer on one of his projects that won a Latin Grammy.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00021-00030/try-20261114T104719-70da6a/document_artifacts/image_000001_b5adee9e52eb009838a01654e4d6167704553e0460ac51314cfa8671a94cb7f8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00021-00030/try-20261114T104719-70da6a/document_artifacts/image_000001_b5adee9e52eb009838a01654e4d6167704553e0460ac51314cfa8671a94cb7f8.png -->
 
 Instructor Insights
 
@@ -310,7 +266,7 @@ continued on next page These analytical tactics will help you grow as a producer
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | How does the mix sound? | · Does the kick drum sound heavily compressed or more open and dynamic? · Are the hi-hats equalized to be very bright and light or dark and heavy? · Is there a lot of reverb in the mix, or just a little? · Is there delay being used, and, if so, is it applied to a lot of instruments, or just a few? |
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00021-00030/try-20261114T104719-70da6a/document_artifacts/image_000002_71b99294c6f5b0d76c2d6d2462e9ded02c6e48b7a099a4838a91a69e01548d98.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00021-00030/try-20261114T104719-70da6a/document_artifacts/image_000002_71b99294c6f5b0d76c2d6d2462e9ded02c6e48b7a099a4838a91a69e01548d98.png -->
 
 Instructor Spotlight:
 
@@ -343,33 +299,10 @@ By Sylvia Massy
 - Dan Thompson
 - Daniel M. Thompson is a Latin Grammy Award-winning recording engineer and assistant chair of Music Production and Engineering (MP&E) at Berklee College of Music, where he has taught advanced production, recording, mix techniques, and music technology for more than two decades. His credits include work on ER, The Sopranos, Melrose Place, NCIS, and Monk.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 21](<berklee-online-music-production-handbook.pdf#page=21>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 21](<document_artifacts/page_000021_b6d05943cda7cf6ef927895bc54a659d1dc0ead8b649803315391d90ab64fef0.png>)
-
-![PDF-Seite 22](<document_artifacts/page_000022_b00e5e0b8736e8ccdc63ff44b82916c70d95c9448b3192a3be330fc801a35cd9.png>)
-
-![PDF-Seite 23](<document_artifacts/page_000023_f0c14b0d90a6016e9fcb27abdb19c339d82ae9864fceb0e6ee4ba4e5ab49e10c.png>)
-
-![PDF-Seite 24](<document_artifacts/page_000024_447568a546f3b6ca7fafd85e7e9ba770007f42b7e18433532ce810ccd96c0213.png>)
-
-![PDF-Seite 25](<document_artifacts/page_000025_e68c22f969a21254e3d660f7fa4f3f174b47de61386cd04c71d20e88b1d3101f.png>)
-
-![PDF-Seite 26](<document_artifacts/page_000026_11f663eb8eed061cc7b4898b3f524f4f053fe58073ed60f9de1a07fc018fa1e1.png>)
-
-![PDF-Seite 27](<document_artifacts/page_000027_c6d2de335e135bccd0831e39cbcbfce8ae54e76b01d39a48a97877648e95398a.png>)
-
-![PDF-Seite 28](<document_artifacts/page_000028_b55993b1261987e3f6f83852b01737d5b1c5f091b01570dcdbb596d56d62ab77.png>)
-
-![PDF-Seite 29](<document_artifacts/page_000029_7a149c94e9c84c2bb3c009700d6e2b5a67c9fff238409a7bf51c675c079684ad.png>)
-
-![PDF-Seite 30](<document_artifacts/page_000030_af4783677537441c7607114748e4776f71a3307f8de755b74bc5a660f8ca7df4.png>)
-
-
-[Original-PDF, Seite 21](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-production-handbook.pdf#page=21>)
-
-<!-- PDF-Seiten 31–40 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00031-00040/try-20261114T104737-89cb57/document.md -->
+<!-- PDF-Seiten 31–40 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00031-00040/try-20261114T104737-89cb57/document.md -->
 
 Loosen up your concept of "the studio" and what you can use to record. Challenge what is considered an instrument, and scout unusual places to make noise in. For instance, if you have a singer under the kitchen sink, will they perform differently? If they are outside in a snowbank, will they perform differently? Inventory equipment you can use to record in unusual locations, and figure out how to take advantage of the space you already have.
 
@@ -393,7 +326,7 @@ Sylvia Massy is the author of this course, along with Chris Johnson, Chrissy Tig
 
 Learn More Known for her playful style and fearless approach to recording, Sylvia Massy is a seminal figure in production for her work in alternative music. She has worked with everyone from Prince to the Red Hot Chilli Peppers to Johnny Cash and Tool. She currently runs her own studio out of Ashland, Oregon, working on select recording and creative projects.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00031-00040/try-20261114T104737-89cb57/document_artifacts/image_000000_20ecbddf420debe7e0f55f0fae3aa5d5067b208834d99d4924d1cb148067e403.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00031-00040/try-20261114T104737-89cb57/document_artifacts/image_000000_20ecbddf420debe7e0f55f0fae3aa5d5067b208834d99d4924d1cb148067e403.png -->
 
 At Berklee Online, Sylvia is the author of the course Sylvia Massy: Creative Approaches to Recording and Producing Music.
 
@@ -419,7 +352,7 @@ Remember, you are NOT a producer if you don't finish.
 
 It's all about the song. If you have a great song, one with memorable melodies, you're gonna win.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00031-00040/try-20261114T104737-89cb57/document_artifacts/image_000001_e401c15b86876852a4666bd74f1117722a30e6fb49b5451210da66b7dc64aa91.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00031-00040/try-20261114T104737-89cb57/document_artifacts/image_000001_e401c15b86876852a4666bd74f1117722a30e6fb49b5451210da66b7dc64aa91.png -->
 
 Instructor Interview
 
@@ -443,7 +376,7 @@ I did a lot of Latin music. Jon Fausty, who's like the king of Latin engineering
 
 Kashif and Paul Laurence were also my early mentors when I was in the studio. So I'm like, "I want to be a Black engineer. I want to have Black clientele," and here comes this guy with all this gear in the studio. Come to find out he's a Black producer. His name is Paul Laurence, and he's got like millions of dollars worth of gear. … After I worked with Paul for a couple of months, Kashif said, "I'm looking for a guy to work with me at my home studio." Kashif pulls me out. I'm working for $800 a week. I'm like, "Man, I'm rich. $800 a week?" Then we actually pick up and we go to LA, and I'm working like 80 hours a week. … People work 40-hour weeks, so obviously I'm working twice as long as the average human. I'm working 16 hours a day!
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00031-00040/try-20261114T104737-89cb57/document_artifacts/image_000002_1c9c17fa39707c9bfc66f6389bf2c26c73e7c3eeccf9bb161ca39d57b1fccb27.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00031-00040/try-20261114T104737-89cb57/document_artifacts/image_000002_1c9c17fa39707c9bfc66f6389bf2c26c73e7c3eeccf9bb161ca39d57b1fccb27.png -->
 
 66
 
@@ -464,33 +397,10 @@ I started working with a group called Jodeci and we had a big platinum record. T
 - To really hear the human making the music is the connection we all subconsciously strive for. When I produced Skunk Anansie's 1995 album, Paranoid & Sunburnt, the band's singer, Skin, was emotionally caught up in the performance of "100 Ways to Be a Good Girl." You can hear it in her voice. And even if there were any technical imperfections, we would have kept the take because it is real emotion. In Tool's "4 Degrees," singer Maynard James Keenan makes a grunting noise in the background at 5:30. It was an outtake that I left in the final mix, because it added a realism to the scene.
 - Instructor Spotlight:
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 31](<berklee-online-music-production-handbook.pdf#page=31>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 31](<document_artifacts/page_000031_e3a860a71ac17c834628677245e5013d75daa7ea5d51c744a95f7ab60cd982d0.png>)
-
-![PDF-Seite 32](<document_artifacts/page_000032_b41d55d1aed94841344b8a6da074e5a2c4c53829ffdc6dd7aa03184eebaa21a8.png>)
-
-![PDF-Seite 33](<document_artifacts/page_000033_7beadb6cdd4a3bf4f0816df21e6777566524eda815e080637b140c0e946310c7.png>)
-
-![PDF-Seite 34](<document_artifacts/page_000034_2f08fc16c7202b14797a68d746973cf6b205b5c46f8ada8e7345c4f24cda24c7.png>)
-
-![PDF-Seite 35](<document_artifacts/page_000035_4764eca3a60fada93d2b2ddb3cf858d176f4b2040d69b03e29db2e777a4bcf53.png>)
-
-![PDF-Seite 36](<document_artifacts/page_000036_97824664ab8f04c3c4d3398c843423e0f2396b699361f13cf1d25487e729318b.png>)
-
-![PDF-Seite 37](<document_artifacts/page_000037_864c578df4112cfe3ccfe19b32b1e06bde16e45f24731b31b80d07dc0d6df1c4.png>)
-
-![PDF-Seite 38](<document_artifacts/page_000038_1ef317d2450d3b0eda4b2076aabb738f6761fc64a1ca3b5c8e5593cd3276edc7.png>)
-
-![PDF-Seite 39](<document_artifacts/page_000039_7654b13202386fd2822d4f1b69bab43673843ce18c959ab342f785b7875ea056.png>)
-
-![PDF-Seite 40](<document_artifacts/page_000040_da546dadf5b65417c5f4b990b08bb2fa33e8029c9ce5ff3f32692021e3dff39b.png>)
-
-
-[Original-PDF, Seite 31](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-production-handbook.pdf#page=31>)
-
-<!-- PDF-Seiten 41–50 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00041-00050/try-20261114T104755-57eeab/document.md -->
+<!-- PDF-Seiten 41–50 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00041-00050/try-20261114T104755-57eeab/document.md -->
 
 said, "Go to Rochester." So Jimmy Douglass hooks up with Jodeci in Rochester. In the Jodeci camp was a junior producer and a junior vocal group called Sista. Sista had a singer in it called Missy Elliott and one of the junior producers was Tim Mosley, and that became Missy and Timbaland. They actually were formed in Rochester. Jimmy became Timbaland's engineer for the next 15 years. I'm like, "Dammit, I should've done that!" So when they left, the A&amp;R guy for Jodeci came and asked me if I would work on his acts. That A&amp;R guy was Puffy. Puffy was a fan of my work with Jodeci and that began a relationship that lasted for about 10 years.
 
@@ -566,33 +476,10 @@ But how do you know what each musician is capable of? In order to empathize with
 
 - said, "Go to Rochester." So Jimmy Douglass hooks up with Jodeci in Rochester. In the Jodeci camp was a junior producer and a junior vocal group called Sista. Sista had a singer in it called Missy Elliott and one of the junior producers was Tim Mosley, and that became Missy and Timbaland. They actually were formed in Rochester. Jimmy became Timbaland's engineer for the next 15 years. I'm like, "Dammit, I should've done that!" So when they left, the A&R guy for Jodeci came and asked me if I would work on his acts. That A&R guy was Puffy. Puffy was a fan of my work with Jodeci and that began a relationship that lasted for about 10 years.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 41](<berklee-online-music-production-handbook.pdf#page=41>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 41](<document_artifacts/page_000041_4141131c585736347d18ebe178b230bdc67b49a0760e724924b14b388522e836.png>)
-
-![PDF-Seite 42](<document_artifacts/page_000042_1f25546f18b5a0c86e2890caa515fc52504fa5798c35cfa7a5a79e7f6dcc0526.png>)
-
-![PDF-Seite 43](<document_artifacts/page_000043_fce94f44fd939edffc50c150b7bcfa93bf4049f2d7d56584441dfecd79f52c4a.png>)
-
-![PDF-Seite 44](<document_artifacts/page_000044_518625c98f3620b86ba418bd2a86761cfb222b70c4135c4ea8de2ca8d4e12a81.png>)
-
-![PDF-Seite 45](<document_artifacts/page_000045_2734b8562014802ed6ca193aa791c51bc7b1e0c3033450a264963bde15252ee1.png>)
-
-![PDF-Seite 46](<document_artifacts/page_000046_20c1b1540f3edaca91fae5e8564ed053f14e4acb177972f9d90c6d8c8c1fcd38.png>)
-
-![PDF-Seite 47](<document_artifacts/page_000047_080717d06185abc68a8465e73d83e72bd748385d87f9dcf986f6458d770a70ff.png>)
-
-![PDF-Seite 48](<document_artifacts/page_000048_29fd7f32cd3c103bd413c50a7647bc1ad7b160a5fb44870a132e023f6ef1c252.png>)
-
-![PDF-Seite 49](<document_artifacts/page_000049_af70ebb3edac2d5afcca0172a7114e3bdb7e19864c991b961446f57ed73fdc6c.png>)
-
-![PDF-Seite 50](<document_artifacts/page_000050_a144b65455c25756f237e75e54b74491af8190c1b86017f5467dcfc3f7660d9d.png>)
-
-
-[Original-PDF, Seite 41](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-production-handbook.pdf#page=41>)
-
-<!-- PDF-Seiten 51–60 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00051-00060/try-20261114T104810-ce5827/document.md -->
+<!-- PDF-Seiten 51–60 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00051-00060/try-20261114T104810-ce5827/document.md -->
 
 what an individual musician can do.
 
@@ -622,7 +509,7 @@ Sean Slade is the author of the Berklee Online course from which this lesson com
 
 [Learn More](https://online.berklee.edu/courses/culminating-experience-in-music-production-1)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00051-00060/try-20261114T104810-ce5827/document_artifacts/image_000000_03d17fb9a2dc4e3363097f69f6d2b972d7bd72797709cd728399878a475517c0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00051-00060/try-20261114T104810-ce5827/document_artifacts/image_000000_03d17fb9a2dc4e3363097f69f6d2b972d7bd72797709cd728399878a475517c0.png -->
 
 ## Instructor Spotlight: Sean Slade
 
@@ -653,11 +540,11 @@ With Berklee Online, you have more than 300 courses to choose from, including mo
 - Composing and Producing Electronic Music 1 �
 - Music Production Analysis 
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00051-00060/try-20261114T104810-ce5827/document_artifacts/image_000001_f6f3398209f9025e83b838a41b57a8e3c785d5b5e3583fe19e0c5d6f1076dfda.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00051-00060/try-20261114T104810-ce5827/document_artifacts/image_000001_f6f3398209f9025e83b838a41b57a8e3c785d5b5e3583fe19e0c5d6f1076dfda.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00051-00060/try-20261114T104810-ce5827/document_artifacts/image_000002_f8961a5d9dc5d9c6512c4d78ed0769bfc3b85e94938fd717147210b1debed510.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00051-00060/try-20261114T104810-ce5827/document_artifacts/image_000002_f8961a5d9dc5d9c6512c4d78ed0769bfc3b85e94938fd717147210b1debed510.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00051-00060/try-20261114T104810-ce5827/document_artifacts/image_000003_31aa94ec5e84c9555631aff4190e9a7c3821bec0fd100462983b2ff7705eaa5c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00051-00060/try-20261114T104810-ce5827/document_artifacts/image_000003_31aa94ec5e84c9555631aff4190e9a7c3821bec0fd100462983b2ff7705eaa5c.png -->
 
 Student Stories
 
@@ -687,33 +574,10 @@ As an elective course towards his degree program, Frank didn't go into Writing a
 
 - AKAI
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 51](<berklee-online-music-production-handbook.pdf#page=51>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 51](<document_artifacts/page_000051_312c42d2e22da53a30bb66d71256ea9ee88cb16ae45444b05e2541b5f901e8e3.png>)
-
-![PDF-Seite 52](<document_artifacts/page_000052_efe17b7ddf47b2e8d713c7d2899050bf5ffe135aeee99575187d397a0bc59793.png>)
-
-![PDF-Seite 53](<document_artifacts/page_000053_2927e27e002a0ebf03de8b504888b2b91246ca9206576f66f5883885cecee6a9.png>)
-
-![PDF-Seite 54](<document_artifacts/page_000054_e66a6fb2ae7e884cad7b8db038200ead14e5834dad5b0ca70e3a166d2152bb88.png>)
-
-![PDF-Seite 55](<document_artifacts/page_000055_31b290ef833f071bfea8668bb75c9f1005266e1151827e7134e6faa0f527eded.png>)
-
-![PDF-Seite 56](<document_artifacts/page_000056_d9f11c48f3d113ec42d3995129d0df29fb2bd62823004a5f0ab6e9a36c7f0107.png>)
-
-![PDF-Seite 57](<document_artifacts/page_000057_3a79c56d40c850ca1b1c3f9ed275ec71fbc7168475c7b14e9f5330710a80ac46.png>)
-
-![PDF-Seite 58](<document_artifacts/page_000058_c23c858c95353ffae539021534757df5722a0aa258019d2aff4a0bc7945dcfc6.png>)
-
-![PDF-Seite 59](<document_artifacts/page_000059_934d342866a6db2102775c12512568ae107e89cbb61a3e33776831e0457b7863.png>)
-
-![PDF-Seite 60](<document_artifacts/page_000060_b98b488b274099b3a3f25363b33bfe7d90456f653b414ca9d67791ac55ea83af.png>)
-
-
-[Original-PDF, Seite 51](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-production-handbook.pdf#page=51>)
-
-<!-- PDF-Seiten 61–70 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00061-00070/try-20261114T104830-9f8629/document.md -->
+<!-- PDF-Seiten 61–70 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00061-00070/try-20261114T104830-9f8629/document.md -->
 
 would have even thought of myself as a composer. Singer, songwriter, producer, sure, but specifically scoring to pictureit just wasn't something that I had really explored."
 
@@ -743,7 +607,7 @@ Out of the 25 demos Katie submitted for Shortcake, Frank's was the one that MLB 
 
 "I was just so shocked-I'm still shocked at the magnitude of the opportunity, but then also, wow, she really trusts me to take this on," says Frank about Katie. "To see someone have that level of confidence and support in you makes you look at yourself and say, 'Man, you really are doing this! You really have what it takes!' And I think that's what Katie was for me."
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00061-00070/try-20261114T104830-9f8629/document_artifacts/image_000000_46f7ed794b9bebb21b78c776d18c9e639bb996c5fadf56d719347607d5ee7c0a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00061-00070/try-20261114T104830-9f8629/document_artifacts/image_000000_46f7ed794b9bebb21b78c776d18c9e639bb996c5fadf56d719347607d5ee7c0a.png -->
 
 66
 
@@ -767,7 +631,7 @@ Frank seems to be headed in that direction as well. In 2025, he graduated with h
 
 "Your whole life can change in one year," says Frank. "This wasn't something I was looking for. I didn't even know it existed. I was just taking a class, and because of what I was doing, because of who I was, and what I was contributing, someone saw value in me."
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00061-00070/try-20261114T104830-9f8629/document_artifacts/image_000001_bb53ea083a222c67c7c2686de5000d0c5ccc201bbaa2384cd8becd10f93f2d2e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00061-00070/try-20261114T104830-9f8629/document_artifacts/image_000001_bb53ea083a222c67c7c2686de5000d0c5ccc201bbaa2384cd8becd10f93f2d2e.png -->
 
 ## Rich Mendelson
 
@@ -810,33 +674,10 @@ Mixing: The individual tracks that make up a multitrack recording are combined a
 - Instructor Spotlight:
 - Rich Mendelson is a senior faculty member in the Music Production and Engineering (MP&E) Department at Berklee College of Music. Rich specializes in mixing and recording. His former students include many Grammy-winning mixing and recording engineers, and his work has been featured in recordings by Rihanna, Nicole Scherzinger, Fergie, Garbage, and more.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 61](<berklee-online-music-production-handbook.pdf#page=61>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 61](<document_artifacts/page_000061_502a4f8456447fa0c5e05ec363e60556ebfc8baf84cdb1bce07083045895039e.png>)
-
-![PDF-Seite 62](<document_artifacts/page_000062_e3d9a352281f3487becc7f70510b56fc0928fd63771bcb05485d9946a1555511.png>)
-
-![PDF-Seite 63](<document_artifacts/page_000063_8ac4cc40a9b74f15b28ff7535fabea2c36b8cbfc1f76563f0109513829496f2c.png>)
-
-![PDF-Seite 64](<document_artifacts/page_000064_0c429442c64661e1960c83fb476fbf9b75ddf04178dc98adfd8da851c7763455.png>)
-
-![PDF-Seite 65](<document_artifacts/page_000065_88b0bb1a319d27aaa15212612fde99dc3732595b46a11d943829e78e0b959852.png>)
-
-![PDF-Seite 66](<document_artifacts/page_000066_4c77d7ddf72d40209e7ccc6ab8e3c9e1eaa4566cc51600839dc2388cc89a5720.png>)
-
-![PDF-Seite 67](<document_artifacts/page_000067_ba49a9cfc2034f794a40d6a2ac8fc0fda758f5e8769caf936c8915f09820a7ba.png>)
-
-![PDF-Seite 68](<document_artifacts/page_000068_b7f4ab8b9fcc0201dbe37bf4bb74e54e3b5c9310a3fefd575a73d309b100c82c.png>)
-
-![PDF-Seite 69](<document_artifacts/page_000069_11c4e136c10c692fe9f97225639707b510b9c842709b3e0997d61e049faa2a65.png>)
-
-![PDF-Seite 70](<document_artifacts/page_000070_cbf3a4e54f64930b862dbd643b5b2877bc6fc705a5a583bf16b3cb77b7a58a63.png>)
-
-
-[Original-PDF, Seite 61](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-production-handbook.pdf#page=61>)
-
-<!-- PDF-Seiten 71–80 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00071-00080/try-20261114T104845-543fa5/document.md -->
+<!-- PDF-Seiten 71–80 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00071-00080/try-20261114T104845-543fa5/document.md -->
 
 Mastering: Where we prepare our finished stereo mix for distribution as an audio CD or a digital file by making final adjustments to the overall sound of the recording.
 
@@ -888,7 +729,7 @@ Michael Bierylo and David Mash are the authors of the Berklee Online course from
 
 earn More Michael Bierylo is an electronic musician, guitarist, composer, and sound designer. He has been a faculty member at Berklee College of Music since 1995 and is currently the Chair Emeritus of the Electronic Production and Design Department.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00071-00080/try-20261114T104845-543fa5/document_artifacts/image_000000_d995d027bf5671aeb170dc6e35efa5b76f3e3b74b66b99c736193c77a3a89d84.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00071-00080/try-20261114T104845-543fa5/document_artifacts/image_000000_d995d027bf5671aeb170dc6e35efa5b76f3e3b74b66b99c736193c77a3a89d84.png -->
 
 He authored the Electronic Music Production and Sound Design Capstone course for Berklee Online and co-authored Music Production 101 and Sound Design for the Electronic Musician.
 
@@ -908,7 +749,7 @@ I generally don't listen to music I've worked on once it's finished, but I still
 
 If something takes forever to mix, there's probably something wrong with the music. Fix that, and the mix should be easy.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00071-00080/try-20261114T104845-543fa5/document_artifacts/image_000001_ac41c13116d39d9a0783bb0d3ae0491a7fabd68b9382c8df63f0296cc51f54cf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00071-00080/try-20261114T104845-543fa5/document_artifacts/image_000001_ac41c13116d39d9a0783bb0d3ae0491a7fabd68b9382c8df63f0296cc51f54cf.png -->
 
 ## Instructor Spotlight: David Mash
 
@@ -938,34 +779,12 @@ Check out our Careers page for more inspiration!
 
 [Learn More](https://online.berklee.edu/careers-in-music/roles)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 71](<berklee-online-music-production-handbook.pdf#page=71>)
 
-![PDF-Seite 71](<document_artifacts/page_000071_1b3a3f302540692105533682c778403c30ab32c103996c015e729c2920073119.png>)
+<!-- PDF-Seiten 81–90 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00081-00090/try-20261114T104903-292c28/document.md -->
 
-![PDF-Seite 72](<document_artifacts/page_000072_6f769af214a58e508b2e78b3316a89871b7ee8161b17674865e5e678926ff783.png>)
-
-![PDF-Seite 73](<document_artifacts/page_000073_00e81ac18a8bfbbb73846ac6268f20ecce24a72bafa183ea1cd1a9635af038d6.png>)
-
-![PDF-Seite 74](<document_artifacts/page_000074_a019dd93c7caa5933f71719ffd1c26643ebf44dccde9b0890dd30c9b867b4fbd.png>)
-
-![PDF-Seite 75](<document_artifacts/page_000075_8fc75df6288f4a931443d7dd63c166787dece2c4a9658eb40515f3c093521143.png>)
-
-![PDF-Seite 76](<document_artifacts/page_000076_e725b56320caf703e8a005975426cb02f03c62057c2fe52841bf3caff1d1f8cb.png>)
-
-![PDF-Seite 77](<document_artifacts/page_000077_2b92c16e87dcf94fa1174af58b1c36b5b76051ef7657bd330bfef19ea000918b.png>)
-
-![PDF-Seite 78](<document_artifacts/page_000078_a34a11020973e07aacc9d55d51d8571b084acad61b17d2e775ef73d9a68effa6.png>)
-
-![PDF-Seite 79](<document_artifacts/page_000079_3e087e6a21c85a1b473cf70700f8a008c868a060a8927f50780f0510981d3131.png>)
-
-![PDF-Seite 80](<document_artifacts/page_000080_6e9ee33a1e917ec566d7976e298651450325179560015281d0848bf9fb0b1b4b.png>)
-
-
-[Original-PDF, Seite 71](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-production-handbook.pdf#page=71>)
-
-<!-- PDF-Seiten 81–90 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00081-00090/try-20261114T104903-292c28/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00081-00090/try-20261114T104903-292c28/document_artifacts/image_000000_d083d26295116736cc320fca7cab69c48b58dd5bb0f34bf06fc36d4427179243.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00081-00090/try-20261114T104903-292c28/document_artifacts/image_000000_d083d26295116736cc320fca7cab69c48b58dd5bb0f34bf06fc36d4427179243.png -->
 
 Instructor Spotlight:
 
@@ -1035,7 +854,7 @@ Erin Barra is the author of this course, along with Loudon Stearns. Learn how sh
 
 [Learn More](https://online.berklee.edu/courses/ableton-live-techniques-non-linear-creative-strategies-and-composition)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00081-00090/try-20261114T104903-292c28/document_artifacts/image_000001_6e3fab5f0bbe56843f5391cbd8c31292aacf0cb5648046f74a7a6e98f3dd8953.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00081-00090/try-20261114T104903-292c28/document_artifacts/image_000001_6e3fab5f0bbe56843f5391cbd8c31292aacf0cb5648046f74a7a6e98f3dd8953.png -->
 
 ## Erin Barra
 
@@ -1059,33 +878,10 @@ Use your ears-plain and simple. People get stuck because they're not truly liste
 
 - Jonathan Wyner is an associate professor in the Music Production and Engineering (MP&E) department at Berklee College of Music and owner of M Works Mastering Studios. He has worked with artists such as James Taylor, David Bowie, Aerosmith, Pink Floyd, Cream, Richard Stoltzman, Miles Davis, Nirvana, Aimee Mann, Juliana Hatfield, Tiny Tim, and John Cage.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 81](<berklee-online-music-production-handbook.pdf#page=81>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 81](<document_artifacts/page_000081_f0c5883e47342e1d977376f5a830565a2928afa3101e1562c1a984d9bd4a572b.png>)
-
-![PDF-Seite 82](<document_artifacts/page_000082_3785ed57d357809571e96027dd5fcfd8785f303b44933415e5ce7acf76c07488.png>)
-
-![PDF-Seite 83](<document_artifacts/page_000083_b4f3fef505c4046256803f87c74b00f9be88da795031efc79580a64a5bdc9da6.png>)
-
-![PDF-Seite 84](<document_artifacts/page_000084_cd0d43cc67a1dd9a935a3dddadc7f1e66d24c67865f04a64bca9df7044eb04d9.png>)
-
-![PDF-Seite 85](<document_artifacts/page_000085_ec782d68b873d7a6b47699534102eba2e31eb8e859c54e8c94d1d7498fd088d9.png>)
-
-![PDF-Seite 86](<document_artifacts/page_000086_93650356208606cbd38a691bdc9f53cbf2a8966d50a9f2632efb645596638fef.png>)
-
-![PDF-Seite 87](<document_artifacts/page_000087_f9dd2c1e99cce254a29801f98ad281bd7205addca657ec9ea98e753345c35d94.png>)
-
-![PDF-Seite 88](<document_artifacts/page_000088_05adce3dbfda5d69787345506b43a0ba394cbee3aa9bc8e742f2d82f44d88c16.png>)
-
-![PDF-Seite 89](<document_artifacts/page_000089_17d2194f8afa9f7b5b509a4a0ccc586b7cb48ab444415b2bdfea96761841944d.png>)
-
-![PDF-Seite 90](<document_artifacts/page_000090_87059f468ab526ed99e14c085277afe86360907107125e955054589db82d33bb.png>)
-
-
-[Original-PDF, Seite 81](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-production-handbook.pdf#page=81>)
-
-<!-- PDF-Seiten 91–92 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00091-00092/try-20261114T104921-a47d6b/document.md -->
+<!-- PDF-Seiten 91–92 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00091-00092/try-20261114T104921-a47d6b/document.md -->
 
 ## Customize Your Own Path to Success
 
@@ -1099,7 +895,7 @@ Whether you're looking to advance your career or simply take your skills to the 
 - Bachelor's Degree Programs
 - Master's Degree Program
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00091-00092/try-20261114T104921-a47d6b/document_artifacts/image_000000_d62525f47b76a6397f52077aac9d6f4c30e1e59682f8820276674aac07616e1a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00091-00092/try-20261114T104921-a47d6b/document_artifacts/image_000000_d62525f47b76a6397f52077aac9d6f4c30e1e59682f8820276674aac07616e1a.png -->
 
 m
 
@@ -1123,13 +919,7 @@ Questions about
 
 advisors@online.berklee.edu 1-866-BERKLEE (US) +1-617-747-2146 (INT'L)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00091-00092/try-20261114T104921-a47d6b/document_artifacts/image_000001_ee474170190bfbe1dc8100b37d11608b101a02c07323162ee3d55dfb7e65aabd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/63cc0304a1c2f0a6/d3f6f9dfb2b4/00091-00092/try-20261114T104921-a47d6b/document_artifacts/image_000001_ee474170190bfbe1dc8100b37d11608b101a02c07323162ee3d55dfb7e65aabd.png -->
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 91](<document_artifacts/page_000091_d4a2349323ab7ad143d9f9ec249176fb6489e38549b240726531ea142b74fedb.png>)
-
-![PDF-Seite 92](<document_artifacts/page_000092_8b86a2f419ccfaac2aa5271adf7b47a4a2d002d7f2713c87e1c966ea35f7dc68.png>)
-
-
-[Original-PDF, Seite 91](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-production-handbook.pdf#page=91>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 91](<berklee-online-music-production-handbook.pdf#page=91>)

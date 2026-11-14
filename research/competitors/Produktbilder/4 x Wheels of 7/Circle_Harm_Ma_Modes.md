@@ -9,12 +9,13 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 1
 tabellen: 0
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `Circle_Harm_Ma_Modes.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–2 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/a703de1b54e7425a/d3f6f9dfb2b4/00001-00002/try-20261114T103903-7b983f/document.md -->
+<!-- PDF-Seiten 1–2 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a703de1b54e7425a/d3f6f9dfb2b4/00001-00002/try-20261114T103903-7b983f/document.md -->
 
 ## The Circle of "Harmonic Major Modes"
 
@@ -50,7 +51,7 @@ Warm Regards Oliver Prehn, NewJazz YouTube channel: https://www.youtube.com/c/ne
 
 And many many thanks to my YT subscriber and Patron "nupfe" from Germany who has redesigned the discs and made them really smart and handy. Your work has been extravagant and so exceptionally helpful!!!
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a703de1b54e7425a/d3f6f9dfb2b4/00001-00002/try-20261114T103903-7b983f/document_artifacts/image_000000_db6375eff0306375b83da100a7fd7111ad855a9b0c9c743e349a312f15f25199.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a703de1b54e7425a/d3f6f9dfb2b4/00001-00002/try-20261114T103903-7b983f/document_artifacts/image_000000_db6375eff0306375b83da100a7fd7111ad855a9b0c9c743e349a312f15f25199.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -75,12 +76,5 @@ And many many thanks to my YT subscriber and Patron "nupfe" from Germany who has
 - [Ma7#5 or dim7]
 - Lyd.aug.#2
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_f2456ad825b86fb7b923f20e9667a7fc52b0e2f228e94581f7f0e819c50778f1.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_694318b07d7218bcf5a3ee0cc54ca7b10a06c41604e09496ab18b7afc0d4cac0.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/competitors/Produktbilder/4%20x%20Wheels%20of%207/Circle_Harm_Ma_Modes.pdf#page=1>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<Circle_Harm_Ma_Modes.pdf#page=1>)

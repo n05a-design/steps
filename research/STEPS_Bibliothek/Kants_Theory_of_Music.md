@@ -9,14 +9,15 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 13
 tabellen: 0
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `Kants_Theory_of_Music.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00001-00010/try-20261114T115440-4f8c32/document.md -->
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00001-00010/try-20261114T115440-4f8c32/document.md -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00001-00010/try-20261114T115440-4f8c32/document_artifacts/image_000000_2c960695de5573bbcff46b00a073de50cdcb54512a3e060b52e3c8a86ec6ee3c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00001-00010/try-20261114T115440-4f8c32/document_artifacts/image_000000_2c960695de5573bbcff46b00a073de50cdcb54512a3e060b52e3c8a86ec6ee3c.png -->
 
 CON-TEXTOS KANTIANOS.
 
@@ -54,7 +55,7 @@ International Journal of Philosophy
 
 N. o 14, December 2021, pp. 416-438
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00001-00010/try-20261114T115440-4f8c32/document_artifacts/image_000001_da2fd5de4d82e5399139367ce388f8917288af3e016d294134804114dc39b661.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00001-00010/try-20261114T115440-4f8c32/document_artifacts/image_000001_da2fd5de4d82e5399139367ce388f8917288af3e016d294134804114dc39b661.png -->
 
 CTK
 
@@ -102,7 +103,7 @@ However, there is also pleasure in music that is not derived from this universal
 
 12 Hutcheson (2008, 1.6.9).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00001-00010/try-20261114T115440-4f8c32/document_artifacts/image_000002_bd53f02113fad400e1bb13b39a3528d5b03ff0688d81e1f30f45e9f4925a96cb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00001-00010/try-20261114T115440-4f8c32/document_artifacts/image_000002_bd53f02113fad400e1bb13b39a3528d5b03ff0688d81e1f30f45e9f4925a96cb.png -->
 
 CTK
 
@@ -153,7 +154,7 @@ But how about the harmonious form of music as expressible in mathematical terms?
 
 17 VL 24:357-8, my translation.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00001-00010/try-20261114T115440-4f8c32/document_artifacts/image_000003_da2fd5de4d82e5399139367ce388f8917288af3e016d294134804114dc39b661.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00001-00010/try-20261114T115440-4f8c32/document_artifacts/image_000003_da2fd5de4d82e5399139367ce388f8917288af3e016d294134804114dc39b661.png -->
 
 CTK
 
@@ -203,7 +204,7 @@ The two positions outlined so far (arousal theory, formalism) do not resolve the
 
 25 KU §53, 5:329. Cf. Guyer (2014, pp. 436f). Ravasio (2021) points out that Herder takes a similarly skeptical position with regard to the role of mathematical explanations in musical aesthetics, due to their failure to explain our first-person emotional responses.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00001-00010/try-20261114T115440-4f8c32/document_artifacts/image_000004_e06744f5ba8af2f07b5ac3daa713614d233adfcf1bc27776b3c76cf4445ec799.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00001-00010/try-20261114T115440-4f8c32/document_artifacts/image_000004_e06744f5ba8af2f07b5ac3daa713614d233adfcf1bc27776b3c76cf4445ec799.png -->
 
 CTK
 
@@ -249,34 +250,12 @@ Putting the point into a historical perspective: When Kant speaks of "music" in 
 
 38 On this point, see also Ravasio (2021).
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<Kants_Theory_of_Music.pdf#page=1>)
 
-![PDF-Seite 1](<document_artifacts/page_000001_f673127c09e83ab94ce4db6e6d42e8926c73dd60ec6014a4457ae9aa8a3c8755.png>)
+<!-- PDF-Seiten 11–20 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00011-00020/try-20261114T115458-2e5d2b/document.md -->
 
-![PDF-Seite 2](<document_artifacts/page_000002_278ef473185d84d28b1eddb5d69fec2e24e981c2576aa68eea76b1872fc4b957.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_d6aaee8215cdc5bf97e10c80d160d7e5eef43466ef5c1dbc9c381273ae80c052.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_5096d3fbd698212faa100a0f6a40425040b2b193593aa5eb6f3dcc69a9dd7a05.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_86e1a0c5da861e1b39eff9548029d8d209bee40944bf06898919a6697bf63b0f.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_634c75ae25fb00eb9459f0ce0d4a406f53edb988b8a8b2a5d0ea1303d579ef25.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_0dac760690dbeb2e874317e46ff4bfa4b965269f44bfe3ac34e118081e833d23.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_e6debf2a71ca52b727c01b8c1bfe6544af729a512b6b1064b8686994ee7d6ed1.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_840b3609abbac9f7f365217ff14068cd447d1c65a6296c42dc6265d03ec1fcd6.png>)
-
-![PDF-Seite 10](<document_artifacts/page_000010_944dbf41dd1e4f3ce305428066d9f4c2ff6f8c7ffefe168bdc037ee3a6dc6cc1.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Kants_Theory_of_Music.pdf#page=1>)
-
-<!-- PDF-Seiten 11–20 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00011-00020/try-20261114T115458-2e5d2b/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00011-00020/try-20261114T115458-2e5d2b/document_artifacts/image_000000_da2fd5de4d82e5399139367ce388f8917288af3e016d294134804114dc39b661.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00011-00020/try-20261114T115458-2e5d2b/document_artifacts/image_000000_da2fd5de4d82e5399139367ce388f8917288af3e016d294134804114dc39b661.png -->
 
 CTK
 
@@ -322,7 +301,7 @@ The problem is that music alone has no conceptual content whatsoever, and thus, 
 
 48 KU §53, 5:328.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00011-00020/try-20261114T115458-2e5d2b/document_artifacts/image_000001_da2fd5de4d82e5399139367ce388f8917288af3e016d294134804114dc39b661.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00011-00020/try-20261114T115458-2e5d2b/document_artifacts/image_000001_da2fd5de4d82e5399139367ce388f8917288af3e016d294134804114dc39b661.png -->
 
 CTK
 
@@ -370,7 +349,7 @@ The answer to this question has to do with the overall motivation to write the C
 
 N. o 14, December 2021, pp. 416-438
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00011-00020/try-20261114T115458-2e5d2b/document_artifacts/image_000002_da2fd5de4d82e5399139367ce388f8917288af3e016d294134804114dc39b661.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00011-00020/try-20261114T115458-2e5d2b/document_artifacts/image_000002_da2fd5de4d82e5399139367ce388f8917288af3e016d294134804114dc39b661.png -->
 
 CTK
 
@@ -408,7 +387,7 @@ Kant also draws this connection when he says that the arousal of emotions in mus
 
 70 E.g., KU §14, 5:225f.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00011-00020/try-20261114T115458-2e5d2b/document_artifacts/image_000003_da2fd5de4d82e5399139367ce388f8917288af3e016d294134804114dc39b661.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00011-00020/try-20261114T115458-2e5d2b/document_artifacts/image_000003_da2fd5de4d82e5399139367ce388f8917288af3e016d294134804114dc39b661.png -->
 
 CTK
 
@@ -444,7 +423,7 @@ In the context of Kant's rejection of the arousal theory, I have pointed to the 
 
 79 KU §43, 5:304-5; §47, 309; §60, 354-5. Cf. Refl 15:269; VAnth 25:176, 385.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00011-00020/try-20261114T115458-2e5d2b/document_artifacts/image_000004_bd53f02113fad400e1bb13b39a3528d5b03ff0688d81e1f30f45e9f4925a96cb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00011-00020/try-20261114T115458-2e5d2b/document_artifacts/image_000004_bd53f02113fad400e1bb13b39a3528d5b03ff0688d81e1f30f45e9f4925a96cb.png -->
 
 CTK
 
@@ -477,34 +456,12 @@ both arousal theory and aesthetic rationalism stand in the tradition of art as i
 
 82 See for example, VAnth 25:212; KU §43, 5:305f.; Anth 7:277.
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 11](<Kants_Theory_of_Music.pdf#page=11>)
 
-![PDF-Seite 11](<document_artifacts/page_000011_873cea9c1cdc727731e02de17d8c3b44bfde8a65fca23c0d0003d26896d28779.png>)
+<!-- PDF-Seiten 21–23 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00021-00023/try-20261114T115516-fb9e20/document.md -->
 
-![PDF-Seite 12](<document_artifacts/page_000012_72e81fecf57d339ce21f974addd3c732e8fab9e0fdbe703bb47e6a2b78b0fa38.png>)
-
-![PDF-Seite 13](<document_artifacts/page_000013_b7ffb01cac68bac37d50f4fb0677cdf6ae7279f2cfaee146763a1eed6add6245.png>)
-
-![PDF-Seite 14](<document_artifacts/page_000014_cf3645a4f032bb6df93044565272fa10b7794ba31b25861c90f3ff495e4bdae2.png>)
-
-![PDF-Seite 15](<document_artifacts/page_000015_f0cb02558d644b6e8d2cfdf033a6bd5616d46402b1fb28c00f79a687a088ec87.png>)
-
-![PDF-Seite 16](<document_artifacts/page_000016_50e58625ed6e4362c4a50b940e1071a2cb51803455ebee959fa8b1047a982094.png>)
-
-![PDF-Seite 17](<document_artifacts/page_000017_1e50014b1a3c601c7bf8df8898b9f2054f2da9917f3cfca17ecaa577a90cc757.png>)
-
-![PDF-Seite 18](<document_artifacts/page_000018_108baaf7c40d02ddd66f3aa15284b2b7b2e8c7f7a15dcd8467e241d14decaff7.png>)
-
-![PDF-Seite 19](<document_artifacts/page_000019_0951cdbea9f9c696162c8d8944d9c08048aab74e8409ce2a5af91da79b0a891c.png>)
-
-![PDF-Seite 20](<document_artifacts/page_000020_b1ffa80cab076acd0f0be3cf2b6123ebb83e03cc50516b2c2a9f1126c634644d.png>)
-
-
-[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Kants_Theory_of_Music.pdf#page=11>)
-
-<!-- PDF-Seiten 21–23 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00021-00023/try-20261114T115516-fb9e20/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00021-00023/try-20261114T115516-fb9e20/document_artifacts/image_000000_d6143ae96dc7d4b25c2232da8e63165984b2fedcd147143b492ce35671b1191b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00021-00023/try-20261114T115516-fb9e20/document_artifacts/image_000000_d6143ae96dc7d4b25c2232da8e63165984b2fedcd147143b492ce35671b1191b.png -->
 
 CTK
 
@@ -568,7 +525,7 @@ Refl Reflexion (Reflection). In AA, Vols. 14-19.
 
 VAnth Vorlesungen über Anthropologie (Lectures on Anthropology). In AA, Vol. 25.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00021-00023/try-20261114T115516-fb9e20/document_artifacts/image_000001_e06744f5ba8af2f07b5ac3daa713614d233adfcf1bc27776b3c76cf4445ec799.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00021-00023/try-20261114T115516-fb9e20/document_artifacts/image_000001_e06744f5ba8af2f07b5ac3daa713614d233adfcf1bc27776b3c76cf4445ec799.png -->
 
 CTK
 
@@ -576,15 +533,7 @@ CTK
 - VP Vorlesungen über Physik (Lectures on Physics). In AA, Vol. 29.
 - VT Von einem neuerdings erhobenen vornehmen Ton in der Philosophie. (On a recently prominent tone of superiority in philosophy). In AA, Vol. 8.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00021-00023/try-20261114T115516-fb9e20/document_artifacts/image_000002_b133db13008ac820939386af2d750f89ad6ece5d6340a2b5e3700ea821889bba.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/54997a12eaf3958f/d3f6f9dfb2b4/00021-00023/try-20261114T115516-fb9e20/document_artifacts/image_000002_b133db13008ac820939386af2d750f89ad6ece5d6340a2b5e3700ea821889bba.png -->
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 21](<document_artifacts/page_000021_5160c586ea15837e0b5d77eba89ed1a719f2c75eb0a557bdc2b0e682f91497ed.png>)
-
-![PDF-Seite 22](<document_artifacts/page_000022_afc86aa8e92cc62adfc6f32b6f68d38edd8dbdb2ac158a8f0421b92b39b40481.png>)
-
-![PDF-Seite 23](<document_artifacts/page_000023_0ed5d276f0bc3bb6e1a88292bd7a9aef337a553eeade196666d21b2533dd534b.png>)
-
-
-[Original-PDF, Seite 21](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Kants_Theory_of_Music.pdf#page=21>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 21](<Kants_Theory_of_Music.pdf#page=21>)

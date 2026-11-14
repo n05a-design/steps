@@ -9,12 +9,13 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 5
 tabellen: 0
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `Computational_Music_Theory.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–8 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d0e60dd530d82a2b/d3f6f9dfb2b4/00001-00008/try-20261114T105258-d585c5/document.md -->
+<!-- PDF-Seiten 1–8 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d0e60dd530d82a2b/d3f6f9dfb2b4/00001-00008/try-20261114T105258-d585c5/document.md -->
 
 ## Georg Boenn
 
@@ -122,7 +123,7 @@ The earlier versions of ANTON generate multi-part pieces where the melodic rules
 
 Very little music plays all the notes for the same duration at the same times. There are simple rhythmic forms like a waltz or l¨andler where regular patterns of different lengths and emphasis are used, to more complex forms like swing (one part played at a slightly different speed) or syncopation
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d0e60dd530d82a2b/d3f6f9dfb2b4/00001-00008/try-20261114T105258-d585c5/document_artifacts/image_000000_56cbdf67831287cbf297606b3b42709046e697e3deb62eed02e54012b3cd6438.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d0e60dd530d82a2b/d3f6f9dfb2b4/00001-00008/try-20261114T105258-d585c5/document_artifacts/image_000000_56cbdf67831287cbf297606b3b42709046e697e3deb62eed02e54012b3cd6438.png -->
 
 ```
 | 65 67 65 77 76 69 71 76 72 74 76 77 | F G F F' E' A B E' C' D' E' F' | +2 -2 +12 -1 -7 +2 +5 -4 +2 +2 +1 | (((X X) (X X)) ((X (X X X)) ((X X) (X X))))
@@ -180,11 +181,11 @@ In order to make it more accessible to non-technical users a simple FLTK-based G
 
 Figure 6: A diagrammatic representation of ANTON
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d0e60dd530d82a2b/d3f6f9dfb2b4/00001-00008/try-20261114T105258-d585c5/document_artifacts/image_000001_2bcd9e10bbcfa991eb162939028d57a67354ce3ebb1e93d83cc9bdcd2f23fe9b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d0e60dd530d82a2b/d3f6f9dfb2b4/00001-00008/try-20261114T105258-d585c5/document_artifacts/image_000001_2bcd9e10bbcfa991eb162939028d57a67354ce3ebb1e93d83cc9bdcd2f23fe9b.png -->
 
 Figure 8: Extract from Wedding on 2012 6 23
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d0e60dd530d82a2b/d3f6f9dfb2b4/00001-00008/try-20261114T105258-d585c5/document_artifacts/image_000002_7c710f91e7890f0f466f369409a5c33cc36dfdfb435838e5b0379752b35edbf6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d0e60dd530d82a2b/d3f6f9dfb2b4/00001-00008/try-20261114T105258-d585c5/document_artifacts/image_000002_7c710f91e7890f0f466f369409a5c33cc36dfdfb435838e5b0379752b35edbf6.png -->
 
 It should be noted that if the inputs for a piece do not permit any solution, ANTON returns no answers. This response should lead to the operator changing or relaxing the parameters. Experience has shown that a small number of measures often leads to no solution, while large numbers can have large computing time.
 
@@ -200,7 +201,7 @@ noteheads noteheads noteheads noteheads noteheads noteheads We are currently lim
 
 Figure 7: The ANTON GUI in use
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d0e60dd530d82a2b/d3f6f9dfb2b4/00001-00008/try-20261114T105258-d585c5/document_artifacts/image_000003_faab97f964989098921bbe0fc929a4c9409ea0400ff4028e7cd5e9d52f8bb8d6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d0e60dd530d82a2b/d3f6f9dfb2b4/00001-00008/try-20261114T105258-d585c5/document_artifacts/image_000003_faab97f964989098921bbe0fc929a4c9409ea0400ff4028e7cd5e9d52f8bb8d6.png -->
 
 ## Future Work
 
@@ -228,7 +229,7 @@ brackettips noteheads noteheads noteheads noteheads noteheads noteheads notehead
 
 Figure 9: Example of a quartet
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d0e60dd530d82a2b/d3f6f9dfb2b4/00001-00008/try-20261114T105258-d585c5/document_artifacts/image_000004_6ca7360ff67b39aa4272e8a50713005e400633072656a29eb0923957957d41c6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d0e60dd530d82a2b/d3f6f9dfb2b4/00001-00008/try-20261114T105258-d585c5/document_artifacts/image_000004_6ca7360ff67b39aa4272e8a50713005e400633072656a29eb0923957957d41c6.png -->
 
 ## Conclusions
 
@@ -341,24 +342,5 @@ Thakar, M. 1990. Counterpoint. New Haven.
 - brackettips timesig
 - clefs
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_246a808e922cf320ce43f94b79dbbfaafd7b980d04ecf505b77844fbb22ba1e9.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_386c155df8c24c05c3d57f6f05abdd3541bd57730820af26a840742b79d12eef.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_8d0a8248b848d7769c5f1f1c75dcdc17b73fca0b3a91a3d20f7b947591bf3778.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_274277ea4a7d200d70fe3cb70b06cd4923de86cde38393247b08ba2bf701505a.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_e6da6394658de0cccb31b72490860480a254b6ef8cff6cdf4af9f5e4253b9654.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_400c393ffa30a0fae40a9cf1045dbb2d04b18a9f9a0352f6f56a2adccb817c07.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_f4b0c4c6ef3840a093e794088e4b9014413fdd56108c8c6fc73754dbd1f76cdd.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_616e5a1dde98f5f0a8b8bf9fba7c194f90855fae6601a96f769fd55aaeb98816.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Computational_Music_Theory.pdf#page=1>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<Computational_Music_Theory.pdf#page=1>)

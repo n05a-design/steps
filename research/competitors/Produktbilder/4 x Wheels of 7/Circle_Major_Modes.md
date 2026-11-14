@@ -9,12 +9,13 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 1
 tabellen: 0
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `Circle_Major_Modes.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–2 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/27669e529ea86d05/d3f6f9dfb2b4/00001-00002/try-20261114T103918-d131f9/document.md -->
+<!-- PDF-Seiten 1–2 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/27669e529ea86d05/d3f6f9dfb2b4/00001-00002/try-20261114T103918-d131f9/document.md -->
 
 ## The Circle of "Major Modes"
 
@@ -51,7 +52,7 @@ And many many thanks to my YT subscriber and Patron "nupfe" from Germany who has
 
 A
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/27669e529ea86d05/d3f6f9dfb2b4/00001-00002/try-20261114T103918-d131f9/document_artifacts/image_000000_e945d0ed8e4ba33c55b29abfdbf96b84cce94bb9db4b6eb54544909e8a011236.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/27669e529ea86d05/d3f6f9dfb2b4/00001-00002/try-20261114T103918-d131f9/document_artifacts/image_000000_e945d0ed8e4ba33c55b29abfdbf96b84cce94bb9db4b6eb54544909e8a011236.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -67,12 +68,5 @@ A
 - Aeolian
 - Naturmi.
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_4445a47bdd0dbce2afc476af5024011053ce886737556823af8e2cde8bb63272.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_9903088a6ef5ec55a23ae8de769a92e11141525c1695dac2b44b3f41664ce752.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/competitors/Produktbilder/4%20x%20Wheels%20of%207/Circle_Major_Modes.pdf#page=1>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<Circle_Major_Modes.pdf#page=1>)

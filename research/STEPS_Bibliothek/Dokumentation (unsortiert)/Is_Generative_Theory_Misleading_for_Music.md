@@ -9,16 +9,17 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 2
 tabellen: 0
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `Is_Generative_Theory_Misleading_for_Music.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d558907e864bc005/d3f6f9dfb2b4/00001-00010/try-20261114T115415-0cc6d4/document.md -->
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d558907e864bc005/d3f6f9dfb2b4/00001-00010/try-20261114T115415-0cc6d4/document.md -->
 
 HAL
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d558907e864bc005/d3f6f9dfb2b4/00001-00010/try-20261114T115415-0cc6d4/document_artifacts/image_000000_7b75bd107c9ff3901d210ba6e07075ab96435e68bd33f333f59e451abd5a6dab.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d558907e864bc005/d3f6f9dfb2b4/00001-00010/try-20261114T115415-0cc6d4/document_artifacts/image_000000_7b75bd107c9ff3901d210ba6e07075ab96435e68bd33f333f59e451abd5a6dab.png -->
 
 ## Is Generative Theory Misleading for Music Theory?
 
@@ -58,7 +59,7 @@ The concept of paradigm as it was developed by Thomas Kuhn in his acclaimed book
 
 Fig. 1. Kuhn cycle showing the passage from normal science to the adoption of a new paradigm.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d558907e864bc005/d3f6f9dfb2b4/00001-00010/try-20261114T115415-0cc6d4/document_artifacts/image_000001_51929c9207a2222bc1617f1b2c08155130db7003c7d0c9e41f2036d1fd369b33.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d558907e864bc005/d3f6f9dfb2b4/00001-00010/try-20261114T115415-0cc6d4/document_artifacts/image_000001_51929c9207a2222bc1617f1b2c08155130db7003c7d0c9e41f2036d1fd369b33.png -->
 
 The recent evolution of the disciplines mentioned above - to which anthropology, ethology and scientific aesthetics should be added -, reveals a common faith. It is of course the overtaking of the old paradigm of duality that defended the existence of an ontological contradiction between body and mind, and consequently, on a larger scale, a disconnection between nature and culture. The contact of musicology with modern - and more precisely Chomskian - linguistics, led to the collaboration between the composer and musicologist Fred Lerdahl, and the linguist Ray Jackendoff who in 1983 published A Generative theory of Tonal Music (GTTM). This should not be seen as an isolated initiative since in Europe the Belgian musicologist Celestin Deliege also brought forward an analytical theory inspired by transformational grammar [1].
 
@@ -144,33 +145,10 @@ The authors of A Generative Theory for Tonal Music don't make such a statement, 
 - paradoxes)
 - 7 Allen Forte and Steven Gilbert are the authors of Introduction to schenkerian analysis, New York, Norton & Co, 1983.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<Is_Generative_Theory_Misleading_for_Music.pdf#page=1>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_67849e0d01af8c1a85f70a0d0e98256c5bc9bf47555580d68d64a339225ca4d2.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_e328473a28963e13dc7d3e7fd3a906ad9f85b9a44bbb78fdaa698b0ce4b0ce84.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_cd589f94541f5af58a3893553d64b7fd7bfbaf16a7fea0a0cbc57bff87678a30.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_ec792b1fe803c1b2fa60fd114f93e3a3c21c170450c7fc71c09a522a999348e5.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_8c94e31d02236bd844bc936875c6619832720c66ccb9761bc58f2b7244e0d83b.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_a595b6ab15a1e01509c75ba769777c08ca962ca3fffd5eabc5330e10be35466b.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_fde96ef6515614ce8f96b544f13b9deb4ad7ec26aca096ab98d47269e251e2f2.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_2e693c04e8ae4fe31724cce04155017389da81c5c0956c8f92284bba5afabce0.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_f671ff20ed8bfefbe781b19c9eab660823ef9b5127ca49d34135e815fd09dcc9.png>)
-
-![PDF-Seite 10](<document_artifacts/page_000010_d7810b08922088fc1306b7a3aa34fce449404e05a0181c6062b3344facd64b14.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Is_Generative_Theory_Misleading_for_Music.pdf#page=1>)
-
-<!-- PDF-Seiten 11–16 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d558907e864bc005/d3f6f9dfb2b4/00011-00016/try-20261114T115431-71fa91/document.md -->
+<!-- PDF-Seiten 11–16 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d558907e864bc005/d3f6f9dfb2b4/00011-00016/try-20261114T115431-71fa91/document.md -->
 
 circles is often called a pitch reduction - in the tradition of Schenker -, is notated in A Generative Theory for Tonal Music as a tree structure" [20].
 
@@ -233,20 +211,5 @@ Press, Oxford, (1986)
 
 - Bigand, E., Charles D. : L'apprentissage implicite de la musique occidentale. In: Musique, Langage, Emotion : une approche neuro-cognitive. Régine Kolinsky, José Morais & Isabelle
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 11](<document_artifacts/page_000011_14648de2e821a0c347ed64af9d3f442a9382301fe3f4ceacd6fbca299edf9253.png>)
-
-![PDF-Seite 12](<document_artifacts/page_000012_2ab21dff4a12fc5bcb941d8f07a43cff5a79ea7afc03a626f6f820203bb8e8b0.png>)
-
-![PDF-Seite 13](<document_artifacts/page_000013_0e6a7352bdf98c93177f464b05c7bf17d795aec5d822c12362d2c7acb8d3d520.png>)
-
-![PDF-Seite 14](<document_artifacts/page_000014_c17e02612660ae5da5d6032e8856227848486cab00fbfecdbc56d57796d39708.png>)
-
-![PDF-Seite 15](<document_artifacts/page_000015_0ae2509f1b31e7a7cb57dcd0319e42bf026d942d53198e91952d6e972f19d216.png>)
-
-![PDF-Seite 16](<document_artifacts/page_000016_958983eba0dcfcf9d35f593e5fb07eacb7f21e8615ef930f41b41eea28865d08.png>)
-
-
-[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Is_Generative_Theory_Misleading_for_Music.pdf#page=11>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 11](<Is_Generative_Theory_Misleading_for_Music.pdf#page=11>)

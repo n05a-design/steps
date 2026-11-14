@@ -9,14 +9,15 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 5
 tabellen: 3
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `ModeWheel_Manual_1.21.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–9 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/b1b848255dd66273/d3f6f9dfb2b4/00001-00009/try-20261114T121610-4ab637/document.md -->
+<!-- PDF-Seiten 1–9 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b1b848255dd66273/d3f6f9dfb2b4/00001-00009/try-20261114T121610-4ab637/document.md -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b1b848255dd66273/d3f6f9dfb2b4/00001-00009/try-20261114T121610-4ab637/document_artifacts/image_000000_2b32310d78ea0ad8d754065e8d83e90bb4635746d76b3a6c68b409bb8cb6d992.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b1b848255dd66273/d3f6f9dfb2b4/00001-00009/try-20261114T121610-4ab637/document_artifacts/image_000000_2b32310d78ea0ad8d754065e8d83e90bb4635746d76b3a6c68b409bb8cb6d992.png -->
 
 ## Table of Contents
 
@@ -91,7 +92,7 @@ This version of ModeWheel requires Windows 10 or later. It is distributed using 
 
 ModeWheel opens with a window that identifies the current version of the program, including links to Oliver Prehn's website and YouTube channel and to the author's own website.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b1b848255dd66273/d3f6f9dfb2b4/00001-00009/try-20261114T121610-4ab637/document_artifacts/image_000001_4a704f4e80d824a05ebbf74f4609a5ef6d4fabbfd28ccacf13040d3a3db4b5df.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b1b848255dd66273/d3f6f9dfb2b4/00001-00009/try-20261114T121610-4ab637/document_artifacts/image_000001_4a704f4e80d824a05ebbf74f4609a5ef6d4fabbfd28ccacf13040d3a3db4b5df.png -->
 
 Although available as a free download, the ModeWheel application itself is copyrighted by the author and subject to end-user restrictions detailed at the end of this Quickstart document. This splash screen appears for only a few seconds, but can be redisplayed at any time from the program's About menu item.
 
@@ -101,7 +102,7 @@ By default, ModeWheel displays the screen for the first of the four seven-note f
 
 A
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b1b848255dd66273/d3f6f9dfb2b4/00001-00009/try-20261114T121610-4ab637/document_artifacts/image_000002_465b9ce306e345e2bb3eeedd4f999fecaa7642937b2644fa9f1603e64b0e8871.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b1b848255dd66273/d3f6f9dfb2b4/00001-00009/try-20261114T121610-4ab637/document_artifacts/image_000002_465b9ce306e345e2bb3eeedd4f999fecaa7642937b2644fa9f1603e64b0e8871.png -->
 
 - A. Mode Wheel
 
@@ -153,7 +154,7 @@ As illustrated in the next panel of the ModeWheel window display, these seventh 
 
 While musicians employ an endless variety of chord progressions to build their tunes and color their improvisations, the seventh chords identified on the outer ring of the mode wheel suggest how a very basic progression can be built upon the second, fifth, and first steps of a given mode, using only those notes belonging to that mode.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b1b848255dd66273/d3f6f9dfb2b4/00001-00009/try-20261114T121610-4ab637/document_artifacts/image_000003_cc675ef0f9ab508ddfce645792acc61cc66b9b55a5dd2a1039bc03616a2e0a4a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b1b848255dd66273/d3f6f9dfb2b4/00001-00009/try-20261114T121610-4ab637/document_artifacts/image_000003_cc675ef0f9ab508ddfce645792acc61cc66b9b55a5dd2a1039bc03616a2e0a4a.png -->
 
 Each chord is assigned a color, which corresponds to the color of the notes shown on one of the three small keyboards displayed at the bottom of the ModeWheel screen. The standard chord name is provided, followed by a graphic that identifies the scale steps that define the structure of that chord. For any given mode (chosen using the Mode buttons or Mode menu) these items will remain the same. However, changing the tonic (using either the Tonic buttons or Tonic menu)-which "spins" the middle ring of the mode wheel-will update the display so as to identify (on the far right) the note that is the root of the corresponding chord. The example shown above-mirrored on the keyboards at the bottom of the ModeWheel screenillustrates the II-V-I progression for the Ionian mode of the Major scale when the chosen tonic is "C". This feature may be of limited value to experienced musicians, but personally I have found this-in conjunction with the graphical keyboard displays-helpful in becoming more familiar with the basic structure of the modes and how these interrelate.
 
@@ -161,7 +162,7 @@ Each chord is assigned a color, which corresponds to the color of the notes show
 
 Embedded in the ModeWheel app are generic grand piano samples for the notes of the four octaves of the keyboards displayed across the bottom third of the screen, along with a number of chords. (The quality of these audioclips is less than ideal, but this compromise was necessary in order to limit the overall size of the downloadable app.) Still, for users who might find this helpful, it is possible to sound the notes of any chosen mode in any key, as well as to play the notes of the II-V-I progression in root position. This panel of the ModeWheel screen provides a number of playback options, as shown here:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b1b848255dd66273/d3f6f9dfb2b4/00001-00009/try-20261114T121610-4ab637/document_artifacts/image_000004_24ac9ef5590a40c42d1529b5834bf41b1947d7832842fa36ea2fe38e48c426e8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b1b848255dd66273/d3f6f9dfb2b4/00001-00009/try-20261114T121610-4ab637/document_artifacts/image_000004_24ac9ef5590a40c42d1529b5834bf41b1947d7832842fa36ea2fe38e48c426e8.png -->
 
 1. The Tempo menu includes three options-Slow, Moderate, and Fast-that control the tempo at which the chosen mode is played. (The default option is Moderate and only affects playback of the chosen mode.)
 2. The Rhythm menu has two options-Straight vs. Swing-which affect playback of both the chosen mode and the chord progression. (The default option is Straight.)
@@ -293,26 +294,5 @@ https://modewheelapp.newpsyc.com modewheelapp@newpsyc.com
 - q9
 - q99
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_a8f6a05ca4326aa27fad20b8d631e2a4dc394976adbea0bb462ed47eed752aee.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_23e6e659d1c885d7d90c82239581ec92019bbb22322535ce6facc587793ac8c6.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_4378787b4794b028d3d3784007111ca18d6621a863ef7a57968b18880d978b85.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_ee9fcd470e6c60efa266701d83ddbf59361338bb6b5b37a0945aeb6cb6c6bd16.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_833f7e6ec4efbe8630d5b307fd4a382459fe524f5eaaf1192d50c99010dc469b.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_783818ba2fb0ec787f17d7f0e9a7c7fb6328adb7a1fbebd59d20f58c1cd388b4.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_ccb2bc98ede2cb6db706b786a8c7806905063f86c4256bf3071066594f6af58f.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_11468fbb52a18567acb52f529f1f221df182499df61377a959d9cb37d648de8f.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_b1c1e147ea968892aef9f367f5805a77f1193e48319c46eef0c08a1eb8f7593c.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/ModeWheel_Manual_1.21.pdf#page=1>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<ModeWheel_Manual_1.21.pdf#page=1>)

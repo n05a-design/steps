@@ -97,5 +97,5 @@ Im Rahmen der historischen Entwicklungsphasen und des aktuellen Master-Audits wu
 ## 3. Nachweis der Regressionsfreiheit
 
 Alle 37 korrigierten Fehler wurden in automatisierten Tests gegen Wiedereinführung (Regression) abgesichert:
-- [test_reference_integrity.py](file:///C:/Users/Timvo/OneDrive/Github/steps/tests/test_reference_integrity.py): Prüft unveränderliche IDs, Tabellenformate, Headerkonsistenz und Graphbeziehungen (**21/21 PASS**).
-- [test_golden_reference_cases.py](file:///C:/Users/Timvo/OneDrive/Github/steps/tests/test_golden_reference_cases.py): Validiert mathematisch und theoretisch alle 198 Referenzfälle (**198/198 PASS**).
+- [test_reference_integrity.py](../../tests/test_reference_integrity.py): Prüft unveränderliche IDs, Tabellenformate, Headerkonsistenz und Graphbeziehungen (**21/21 PASS**).
+- [test_golden_reference_cases.py](../../tests/test_golden_reference_cases.py): Validiert mathematisch und theoretisch alle 198 Referenzfälle (**198/198 PASS**).

@@ -9,24 +9,25 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 6
 tabellen: 9
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `The Piano Chord Collection HI RES.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00001-00010/try-20261114T144649-dd8ca0/document.md -->
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00001-00010/try-20261114T144649-dd8ca0/document.md -->
 
 Major, minor, sevenths &amp; extended chords +20 chord categories | +250 chord diagrams
 
 Piano Chord Collection PIANOCHORD.ORG EBOOKS
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00001-00010/try-20261114T144649-dd8ca0/document_artifacts/image_000000_3c2929c97168d97701c481b478d26872fc8a740de5865fe5887a8bae8bd3280e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00001-00010/try-20261114T144649-dd8ca0/document_artifacts/image_000000_3c2929c97168d97701c481b478d26872fc8a740de5865fe5887a8bae8bd3280e.png -->
 
 The
 
 ## Piano Chord
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00001-00010/try-20261114T144649-dd8ca0/document_artifacts/image_000001_08daa163db95d5da88ed4b2741fbbbf7266b5bb8f7eeaaff74476bf8e265515c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00001-00010/try-20261114T144649-dd8ca0/document_artifacts/image_000001_08daa163db95d5da88ed4b2741fbbbf7266b5bb8f7eeaaff74476bf8e265515c.png -->
 
 Collection
 
@@ -572,33 +573,10 @@ Notes: B - D - F# - G#
 - Major & Minor 13th chords
 - Dominant 11th & 13th chords
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<The Piano Chord Collection HI RES.pdf#page=1>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_83a4e2488762846e7b6771a55f8015e6daa4adcc78b4d4a9fc92bef89b1a2f3d.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_50e23ab4e7a7ccdcadea4c9b710b05b3f7c58f7d068ff3c5014de501d12b070a.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_19d3cb1002ee22f873e7d5375596d906983b28f626d276a1c4e33227e4c12526.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_90a4c9a28b5f2086ec5114c970c6568d11c5e9af6951c09b6a7df17c96824ae2.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_062b6da87d35630e9c0b0d75a0f4079b468531522d4717ab03a6c3d0707bf11c.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_062b6da87d35630e9c0b0d75a0f4079b468531522d4717ab03a6c3d0707bf11c.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_062b6da87d35630e9c0b0d75a0f4079b468531522d4717ab03a6c3d0707bf11c.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_062b6da87d35630e9c0b0d75a0f4079b468531522d4717ab03a6c3d0707bf11c.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_062b6da87d35630e9c0b0d75a0f4079b468531522d4717ab03a6c3d0707bf11c.png>)
-
-![PDF-Seite 10](<document_artifacts/page_000010_062b6da87d35630e9c0b0d75a0f4079b468531522d4717ab03a6c3d0707bf11c.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/The%20Piano%20Chord%20Collection%20HI%20RES.pdf#page=1>)
-
-<!-- PDF-Seiten 11–20 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00011-00020/try-20261114T144706-d4ee62/document.md -->
+<!-- PDF-Seiten 11–20 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00011-00020/try-20261114T144706-d4ee62/document.md -->
 
 Major 7th
 
@@ -1183,32 +1161,10 @@ Chart 3. Chords in Melodic Minor keys
 1. Several degrees have been excluded since they are represented by less applied chords, including augmented and diminished chords.
 2. Substituting chords are not always straightforward in these keys. Building four-note chords in the A Melodic Minor key, for example, would result in AminMaj7, Bm7, D7 and E7.
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 11](<The Piano Chord Collection HI RES.pdf#page=11>)
 
-![PDF-Seite 11](<document_artifacts/page_000011_062b6da87d35630e9c0b0d75a0f4079b468531522d4717ab03a6c3d0707bf11c.png>)
-
-![PDF-Seite 12](<document_artifacts/page_000012_062b6da87d35630e9c0b0d75a0f4079b468531522d4717ab03a6c3d0707bf11c.png>)
-
-![PDF-Seite 13](<document_artifacts/page_000013_062b6da87d35630e9c0b0d75a0f4079b468531522d4717ab03a6c3d0707bf11c.png>)
-
-![PDF-Seite 14](<document_artifacts/page_000014_062b6da87d35630e9c0b0d75a0f4079b468531522d4717ab03a6c3d0707bf11c.png>)
-
-![PDF-Seite 15](<document_artifacts/page_000015_062b6da87d35630e9c0b0d75a0f4079b468531522d4717ab03a6c3d0707bf11c.png>)
-
-![PDF-Seite 16](<document_artifacts/page_000016_062b6da87d35630e9c0b0d75a0f4079b468531522d4717ab03a6c3d0707bf11c.png>)
-
-![PDF-Seite 17](<document_artifacts/page_000017_4ea26c264b2b508c18ce133845f94623df6eb13417e510ac4fd9d9dafae46177.png>)
-
-![PDF-Seite 18](<document_artifacts/page_000018_0fa80fe4c0348114bf4c8ce0dbca8f801eccd67f824ba55ecebc363efcd6abf7.png>)
-
-![PDF-Seite 19](<document_artifacts/page_000019_b1ba491517a3ca05884bb973ad16948b00c3272b2b2cf8400a185111e39e6bca.png>)
-
-![PDF-Seite 20](<document_artifacts/page_000020_ef14dc83d73d5a218497efda924395b158c64b4ddd1e327a05436c370eb3b51b.png>)
-
-
-[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/The%20Piano%20Chord%20Collection%20HI%20RES.pdf#page=11>)
-
-<!-- PDF-Seiten 21–24 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00021-00024/try-20261114T144757-3425de/document.md -->
+<!-- PDF-Seiten 21–24 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00021-00024/try-20261114T144757-3425de/document.md -->
 
 ## Chord progressions
 
@@ -1252,7 +1208,7 @@ Part 3. Jazz: ii7 - V7 - Imaj7
 
 Part 4. Minor blues: i - iv - i - V7 - iv - i
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00021-00024/try-20261114T144757-3425de/document_artifacts/image_000000_7f625b2ee82383c69adee51d0e0871af82ca0ab40e2aca9682ba2bdd4657e410.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00021-00024/try-20261114T144757-3425de/document_artifacts/image_000000_7f625b2ee82383c69adee51d0e0871af82ca0ab40e2aca9682ba2bdd4657e410.png -->
 
 | Key   | i   | iv   | i   | V7   | iv   | i   |
 |-------|-----|------|-----|------|------|-----|
@@ -1269,7 +1225,7 @@ The tables show the relationship of chords and scales. The first column shows th
 
 Table 1. Major scales and chords
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00021-00024/try-20261114T144757-3425de/document_artifacts/image_000001_5660fad2f282d135521234ccfce1d3aebc3ab7e4ebe91634670acb4103630215.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00021-00024/try-20261114T144757-3425de/document_artifacts/image_000001_5660fad2f282d135521234ccfce1d3aebc3ab7e4ebe91634670acb4103630215.png -->
 
 | Degrees       | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10   | 11   | 12   | 13   |
 |---------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|------|------|------|------|
@@ -1285,11 +1241,11 @@ Note: The 11th interval in the maj11 chord is raised and therefore outside the k
 
 Table 2. Minor scales and chords
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00021-00024/try-20261114T144757-3425de/document_artifacts/image_000002_efab664172f92c3fcd6fe16490cb70d0896530820f5eaab4834e3c611115c68f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00021-00024/try-20261114T144757-3425de/document_artifacts/image_000002_efab664172f92c3fcd6fe16490cb70d0896530820f5eaab4834e3c611115c68f.png -->
 
 Note: The 6th and 11th intervals in the m6 and m13 chords are raised and therefore outside the key.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00021-00024/try-20261114T144757-3425de/document_artifacts/image_000003_4dd0d5e9e614b6f000d24eb36fe09bd6651f728d07c474228fc6d57a45f132fb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b0812d37b6c3747d/d3f6f9dfb2b4/00021-00024/try-20261114T144757-3425de/document_artifacts/image_000003_4dd0d5e9e614b6f000d24eb36fe09bd6651f728d07c474228fc6d57a45f132fb.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -1308,16 +1264,5 @@ Note: The 6th and 11th intervals in the m6 and m13 chords are raised and therefo
 - Cadd2 chord C D
 - Cadd9 chord C
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 21](<document_artifacts/page_000021_e31396961756c8765d7585d3fa26f40034b19b716514c2678d26a6686ce33d64.png>)
-
-![PDF-Seite 22](<document_artifacts/page_000022_69736f4dff569de5ebe3cb642e2e1ca32ba80829fc566824b87b314390239959.png>)
-
-![PDF-Seite 23](<document_artifacts/page_000023_beb0789bff627dfd64abffdb96a965db458213de5b25ad240e3a0f6afb426cbf.png>)
-
-![PDF-Seite 24](<document_artifacts/page_000024_a836cc84e2af11f56fee49967a83d18813d564c78a7953827cee75cc8c6712e1.png>)
-
-
-[Original-PDF, Seite 21](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/The%20Piano%20Chord%20Collection%20HI%20RES.pdf#page=21>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 21](<The Piano Chord Collection HI RES.pdf#page=21>)

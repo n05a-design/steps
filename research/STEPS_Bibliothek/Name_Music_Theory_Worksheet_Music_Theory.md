@@ -9,32 +9,33 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 83
 tabellen: 0
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `Name_Music_Theory_Worksheet_Music_Theory.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document.md -->
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document.md -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000000_f190d9a8e95758427294fd1b743a0f70fdd25ad82fac164a90badef833e2491a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000000_f190d9a8e95758427294fd1b743a0f70fdd25ad82fac164a90badef833e2491a.png -->
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 Music Theory Worksheet
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000001_45c6f00fe8cb17c46a82108c2af8d1fe60b5f14a4dd915de1ad8324f4236d518.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000001_45c6f00fe8cb17c46a82108c2af8d1fe60b5f14a4dd915de1ad8324f4236d518.png -->
 
 ## INTRODUCTION TO THE STAVE &amp; NOTATION
 
 The way we write music down has changed a great deal through the centuries but today we use a series of 5 lines called a stave on which to base the notes. It is rather like a washing line that we hang the musical notes on.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000002_ec8021bbe96215ac82e2a02ac219b69af97f69ca266779866bc8fafcfab04cad.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000002_ec8021bbe96215ac82e2a02ac219b69af97f69ca266779866bc8fafcfab04cad.png -->
 
 Music is written down using a series of signs and symbols that tell us many different things about the piece that we are listening to or playing - this is called notation.
 
 Here are some of the signs that we will be looking at in future lessons - how many do you recognise? Circle the ones that you know.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000003_9e37eeeb09ce4b12c8380bb3268e16de49ef5f5418dfee0e0867bac30467f453.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000003_9e37eeeb09ce4b12c8380bb3268e16de49ef5f5418dfee0e0867bac30467f453.png -->
 
 Some of the things that music notation tells us are:
 
@@ -42,22 +43,22 @@ Some of the things that music notation tells us are:
 
 or low sounds.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000004_f1f426c4c88bf7cc6d3665dc22cc24085c35b3d5dee85a3faa550195a13d7f54.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000004_f1f426c4c88bf7cc6d3665dc22cc24085c35b3d5dee85a3faa550195a13d7f54.png -->
 
 - the speed of the music and how to count.
 - the length or duration of the notes - long or short. Can you make up your own picture to show something that is long and something that is short?
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000005_7a05e58c358508b22118a858cf8b8b02ddeae9d6b48c4b9ee4ea69f574794dbb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000005_7a05e58c358508b22118a858cf8b8b02ddeae9d6b48c4b9ee4ea69f574794dbb.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000006_e3bbf04899d6e4f8a5b623d6ba91a432997c49e24f96b3cf04f82a568af0534b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000006_e3bbf04899d6e4f8a5b623d6ba91a432997c49e24f96b3cf04f82a568af0534b.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000007_c857406db20ad841d959c550ce60c44be6a5c98e1b8c57ed3987fb884eec1d37.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000007_c857406db20ad841d959c550ce60c44be6a5c98e1b8c57ed3987fb884eec1d37.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000008_ba0f1fc9a6c1ed0540aab760f019dc490ea0ddfc21dbe0075b7320ab2034082a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000008_ba0f1fc9a6c1ed0540aab760f019dc490ea0ddfc21dbe0075b7320ab2034082a.png -->
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000009_8aa93d8b4bb0a8fb91f3876681a013002ab7130c0cfe5938e3599b4c7b54d144.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000009_8aa93d8b4bb0a8fb91f3876681a013002ab7130c0cfe5938e3599b4c7b54d144.png -->
 
 1. Give another name for the treble clef.
 
@@ -78,7 +79,7 @@ Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 5. Since we use the first 7 letters of the alphabet for writing down music, you can also spell out words using notes. Can you spell out these words?
 6. What is another name for the bass clef?
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000010_1bba00067293c1d932636e10ab3680a51045a572a8482d369907920c4f0255e4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000010_1bba00067293c1d932636e10ab3680a51045a572a8482d369907920c4f0255e4.png -->
 
 ........................................................................................................................................................................
 
@@ -88,21 +89,21 @@ Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 8. Can you write these words out using bass clef notes? ADD, AGE, CAB, DECADE
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000011_5dade71468ee7caa7dc162355f24cbef5cc4a679eb872d552ff78bade3335524.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000011_5dade71468ee7caa7dc162355f24cbef5cc4a679eb872d552ff78bade3335524.png -->
 
 15444=45444=4444=45555444=
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000012_afa04c84a5fd7813391198c2017112706b65b90e9bb1c8a05fc94660d71c3d7a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000012_afa04c84a5fd7813391198c2017112706b65b90e9bb1c8a05fc94660d71c3d7a.png -->
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000013_7595ba85a6bb1647b48f948195d2c2c7704aae6389edb6974c32a5dff3f9d3c3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000013_7595ba85a6bb1647b48f948195d2c2c7704aae6389edb6974c32a5dff3f9d3c3.png -->
 
 ## NOTE VALUES
 
 As well as looking at the pitch of notes on the stave, we need to also think about some of the other elements needed to create a piece of music. Another important consideration is the length or duration of the notes. Notes can be written several different ways and each tells us how many counts or beats to hold them on for. š
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000014_5c1d7103b28e7e0b48f763b5eacbcd56673ebc216aed3360adc18dfa68b578bd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000014_5c1d7103b28e7e0b48f763b5eacbcd56673ebc216aed3360adc18dfa68b578bd.png -->
 
 - Note: When two or more quavers or semi-quavers are written together they can be joined up like this : or KK KKKK
 
@@ -114,9 +115,9 @@ As well as looking at the pitch of notes on the stave, we need to also think abo
 4. True or false - L + L + L + L = J \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 5. Complete this sentence : A \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ is worth a 1/4 beat.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000015_57da4e327c3133ccd1649b7b56b753d30dede1cd66b01700e753b555ec4e8167.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000015_57da4e327c3133ccd1649b7b56b753d30dede1cd66b01700e753b555ec4e8167.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000016_81db59da57fac2dbc9f1f5901ef4c53501d46ee4c5c3268b6da87765bf118f63.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00001-00010/try-20261114T125123-989b24/document_artifacts/image_000016_81db59da57fac2dbc9f1f5901ef4c53501d46ee4c5c3268b6da87765bf118f63.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -226,39 +227,16 @@ As well as looking at the pitch of notes on the stave, we need to also think abo
 - DOTTED NOTES
 - Did you know that staccato is an Italian musical term telling you that the notes are short and detached?
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<Name_Music_Theory_Worksheet_Music_Theory.pdf#page=1>)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- PDF-Seiten 11–20 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document.md -->
 
-![PDF-Seite 1](<document_artifacts/page_000001_b62bfd83f7cc422cc23fcac42a5f3eaaebd75f94d72a9100aa8ee821b19ebaa0.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_12a35087b0acee6f4a215f90147163308ce49d1794cafc0147b5387af584bc06.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_2c40f55ebedef5a743fa169ab689338eb5eb2c399e90f56bfb73e9c9536e8219.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_973ddb834b5153c2f6ef35f07dc86b630d1d98d8df2c3b36b23155d169350a87.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_094e5fbf90d65acb03d3b8403786da911c9821b544c8f4bdacc0bffe4b2dc139.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_97773f0ed8f773487d652897e1ff59e92607cde237d5e19c09edf34fb900e15a.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_e381a5225c4796d7c3efa888dc90c035ebfdd581d3b8e16bc3c785c004f9d7d8.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_dc5f6a2f4bb4e3a7f4cf9b71a6e342c4f60ac0b515ed3e59743bb7d0c23a7a9b.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_3dc23d18c9c897a673a95ada6b08c2343ac1183f14469be17d8f0829230e087c.png>)
-
-![PDF-Seite 10](<document_artifacts/page_000010_4e0f1559153b6bdd8ae998a940a62a677a0f5da5cf182981654529c7e0ac7a06.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Name_Music_Theory_Worksheet_Music_Theory.pdf#page=1>)
-
-<!-- PDF-Seiten 11–20 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000000_57c3642f61bb2c0af8b639fdc86912fcab6acfd321683d354a4420d50478d2ce.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000000_57c3642f61bb2c0af8b639fdc86912fcab6acfd321683d354a4420d50478d2ce.png -->
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000001_2355c5dba65c385e6d2652060510d64623aa19191e4f96115d46e9f49ecdd467.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000001_2355c5dba65c385e6d2652060510d64623aa19191e4f96115d46e9f49ecdd467.png -->
 
 ## Time for another Quiz!
 
@@ -266,7 +244,7 @@ Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 ## Music Theory Worksheet
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000002_18021e350adfbbac23b5879367d739dea9650ee62ffe46149f9946faa36b6f33.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000002_18021e350adfbbac23b5879367d739dea9650ee62ffe46149f9946faa36b6f33.png -->
 
 A \_\_\_\_\_\_\_\_\_\_\_\_ is a musical silence A \_\_\_\_\_\_\_\_\_\_\_\_ is worth 4 beats How many quavers are there in a crotchet? \_\_\_\_\_\_\_\_\_\_\_\_ A tie joins notes on the \_\_\_\_\_\_\_\_\_\_\_\_ line or space This is a \_\_\_\_\_\_\_\_\_\_\_\_ rest 595
 
@@ -280,13 +258,13 @@ The Italian word staccato means play smoothly? \_\_\_\_\_\_\_\_\_\_\_\_ A minim 
 
 10
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000003_33fc25802b6469ffb5206b7e6730093a57832a416de01958f634fbc4c61fa621.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000003_33fc25802b6469ffb5206b7e6730093a57832a416de01958f634fbc4c61fa621.png -->
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 Music Theory Worksheet
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000004_9129bd4b7ccd48c4748c629d50e589db0507fa78809556417242a830e5bc66fd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000004_9129bd4b7ccd48c4748c629d50e589db0507fa78809556417242a830e5bc66fd.png -->
 
 ## MUSICAL TERMS
 
@@ -302,7 +280,7 @@ p = piano = quiet f = forte = loud
 
 ff = fortissimo = very loud
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000005_4316e82e8c1667bb79c4b23e8ed8f919cf7e68d5bf72d3a5ee84278ad611612d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000005_4316e82e8c1667bb79c4b23e8ed8f919cf7e68d5bf72d3a5ee84278ad611612d.png -->
 
 Now here are some musical words to do with the speed or tempo of a piece.
 
@@ -318,17 +296,17 @@ Presto = very quick
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000006_b5f5441139946bd9ab8440c47fc31ef46dcefea0dac509be33b4aee8788ca345.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000006_b5f5441139946bd9ab8440c47fc31ef46dcefea0dac509be33b4aee8788ca345.png -->
 
 ## ACCIDENTALS
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000007_4cdcc3021abda12a5fc641b99962ee0ad2cade4df97b07862fbbdaa7baa01a91.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000007_4cdcc3021abda12a5fc641b99962ee0ad2cade4df97b07862fbbdaa7baa01a91.png -->
 
 Accidentals are signs that affect the sound of a note - for example a sharp sign [ makes a note a half step higher and a flat sign ] makes the note half a step lower. These steps are called semitones in music and two semitones make up a whole tone. Sharps and flats are usually the black notes on a piano keyboard. On sheet 16 we will look at tones and semitones more closely, but first let's look at the signs for sharps, flats and naturals. C [ F [ B]
 
 Here are some examples of sharps and flats - notice how the sharp and flat is always written on the line or space that you want it to affect.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000008_05d82d17c41d9b8d99071aeef38d25a68f5f0aa489bed6d5af878b91d6718641.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000008_05d82d17c41d9b8d99071aeef38d25a68f5f0aa489bed6d5af878b91d6718641.png -->
 
 `666Êi66666‹\4
 
@@ -336,15 +314,15 @@ Remember when writing music on the stave the sharp, flat or natural symbol goes 
 
 Now try adding a sharp sign to these notes:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000009_26e2d13fd8a5e59874d4600e9d9dc4fb90f110b71e33c1bb53b9c0a83d80a55a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000009_26e2d13fd8a5e59874d4600e9d9dc4fb90f110b71e33c1bb53b9c0a83d80a55a.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000010_699a7a84673862941ca3aac67c20e3ca8fca656d6acecb12362493f2c4d069f6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000010_699a7a84673862941ca3aac67c20e3ca8fca656d6acecb12362493f2c4d069f6.png -->
 
 `6666p46]46u46o46s64t5
 
 Now try adding a flat sign below:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000011_beb213ac3665e8c36d6d4a5515a4b59b68cf61482638d9fd73354ec042c45c75.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000011_beb213ac3665e8c36d6d4a5515a4b59b68cf61482638d9fd73354ec042c45c75.png -->
 
 `6666y46i46p46r46a64]5
 
@@ -352,17 +330,17 @@ A natural sign F cancels out an accidental - for example it would make B flat so
 
 Now name these notes: the first example is done for you.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000012_5520a7e29b624a23b4a0da274529098ae04c1adc49f1a08df8f4b2695d36ce98.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000012_5520a7e29b624a23b4a0da274529098ae04c1adc49f1a08df8f4b2695d36ce98.png -->
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000013_ed8d3f72c6d749615e507188a2b49a7138b2dabf0da1cb8f3b2d198b6f758554.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000013_ed8d3f72c6d749615e507188a2b49a7138b2dabf0da1cb8f3b2d198b6f758554.png -->
 
 ## ENHARMONIC NOTES
 
 All notes have an enharmonic equivalent. This sounds very complicated but simply means that, for example, the note C [ sounds the same as D] and B] sounds the same as A [ . It is rather like a word that has two different spellings but one meaning. Here in England we spell colour with a U, but in America it is spelt color without a U. Both words still mean exactly the same.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000014_9d0cfecfc158f2d8e3f7d046e236026ab05376491fdee3c523fb04dc16314c17.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000014_9d0cfecfc158f2d8e3f7d046e236026ab05376491fdee3c523fb04dc16314c17.png -->
 
 Remember notes move step by step alphabetically. Here is F [ . Can you work out where G] would be on the keyboard? F [
 
@@ -370,15 +348,15 @@ Remember notes move step by step alphabetically. Here is F [ . Can you work out 
 
 Now let's look at the note D] - work out where C [ would be on the keyboard?
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000015_d9e3f045a2b9a61ff282d4bf728c3263ac0678ef48242959fbe16a944d5e1ee7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000015_d9e3f045a2b9a61ff282d4bf728c3263ac0678ef48242959fbe16a944d5e1ee7.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000016_02bb1408ef822dea7f9d37f203a015a6a50764727f27288b8ba85d2215956622.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000016_02bb1408ef822dea7f9d37f203a015a6a50764727f27288b8ba85d2215956622.png -->
 
 Now try and work out the enharmonic equivalents to these notes: G [ = ? \_\_\_\_\_ B] = ? \_\_\_\_\_ A [ = ? \_\_\_\_\_ G] = ? \_\_\_\_\_ C [ = ? \_\_\_\_\_
 
 On the stave below write the note and its enharmonic equivalent:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000017_f8cf3065a764b6e5a93d280c2554f7c6966a2792482cc8ca6f7f8a31274df426.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000017_f8cf3065a764b6e5a93d280c2554f7c6966a2792482cc8ca6f7f8a31274df426.png -->
 
 C [ = D]
 
@@ -390,35 +368,35 @@ In written music the accidental always goes before a note on the stave. Make sur
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000018_03ac10a1f839a369ad756463adc09262055a380945cb1fc8b1d1b278a0b48f48.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000018_03ac10a1f839a369ad756463adc09262055a380945cb1fc8b1d1b278a0b48f48.png -->
 
 ## TONES AND SEMITONES
 
 As we progress with our theory it is useful to be able to picture the tones and semitones that we use as building blocks in music, the easiest way to see how these work is to look at a keyboard.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000019_4886c7ef678371ff60ceee4bb2b43166bf2286b0d3655bc80026b51a1c7a23cf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000019_4886c7ef678371ff60ceee4bb2b43166bf2286b0d3655bc80026b51a1c7a23cf.png -->
 
 As you can see above the notes move by step alphabetically and on a keyboard are made up of white keys and black keys
 
 The shortest distance between two notes is a semitone, for example C to C sharp or G to G flat. C [ G]
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000020_ab3b4d22a314678963cb57cd78710dcd25bec5d3f9d9159261fd6e1573c5922d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000020_ab3b4d22a314678963cb57cd78710dcd25bec5d3f9d9159261fd6e1573c5922d.png -->
 
 A tone is made up of two semitones, for example from C to D or A to B.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000021_b5facaff20a50b9450dc3dc1f7409d50f4875fa24e7f12e01726b5ed216569d0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000021_b5facaff20a50b9450dc3dc1f7409d50f4875fa24e7f12e01726b5ed216569d0.png -->
 
 Do remember that semitones don't always mean moving between a white note and a black one, there is a semitone between B and C and E and F too because there is nothing between those two notes.
 
 Now try to work out whether these notes move by a semitone or a tone:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000022_0e74c951f30b865cc2427bfdca3e12d4e2c7927c4dcf5b335efb3b3ce873cc35.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000022_0e74c951f30b865cc2427bfdca3e12d4e2c7927c4dcf5b335efb3b3ce873cc35.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000023_4b7ef6d558c7a853aac391ebd448f4aaa31b7436f09d0de556f8de837468a59b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000023_4b7ef6d558c7a853aac391ebd448f4aaa31b7436f09d0de556f8de837468a59b.png -->
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000024_21d33586637d7e7272e8b577c01d57154253935d46bea020a31f2a1b79cd229d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000024_21d33586637d7e7272e8b577c01d57154253935d46bea020a31f2a1b79cd229d.png -->
 
 ## INTRODUCTION TO MAJOR SCALES
 
@@ -426,31 +404,31 @@ A scale is a series of eight notes that move step by step and follow a set patte
 
 Here is a C major scale:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000025_0f2859587c41c5c71f8337d1bec3b0a6202fcc61932b0bd8bbe7858cd3185b49.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000025_0f2859587c41c5c71f8337d1bec3b0a6202fcc61932b0bd8bbe7858cd3185b49.png -->
 
 A scale that is going upwards is called an ascending scale. A scale that is going downwards is called a descending scale.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000026_63e8825b53e1b78158e776b6d220497f62464ed254fab0af2899dc648631683c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000026_63e8825b53e1b78158e776b6d220497f62464ed254fab0af2899dc648631683c.png -->
 
 Now lets look at the pattern of tones and semitones that make up a C major scale:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000027_8513632163737388fed223402269ed463644435c502479244f60a615c125b8d6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000027_8513632163737388fed223402269ed463644435c502479244f60a615c125b8d6.png -->
 
 Now here is a G major scale:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000028_af3beec248078d0b6d7f3f6165848ee85fe1bf2ac01ef85ee50d352cce0d8939.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000028_af3beec248078d0b6d7f3f6165848ee85fe1bf2ac01ef85ee50d352cce0d8939.png -->
 
 To keep the correct pattern of tones and semitones you have to add in an F sharp otherwise the distance between the notes E to F would only be a semitone and not a tone.
 
 Now try to add in the correct accidentals to make a D major scale:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000029_bd31160ec4fdca0a8a7c9813cd100e5a9050f594efc350be96131e89792ad05c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000029_bd31160ec4fdca0a8a7c9813cd100e5a9050f594efc350be96131e89792ad05c.png -->
 
 `65t65y56u65i56o65p65[65]6
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000030_c6a725a9c19ddb881ff6c5d19e2b0ce66e053747bc89f80be4efa26106b498f3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000030_c6a725a9c19ddb881ff6c5d19e2b0ce66e053747bc89f80be4efa26106b498f3.png -->
 
 ## DEGREES OF THE SCALE
 
@@ -466,11 +444,11 @@ Each note or degree of a scale has a different name so that we can easily work o
 
 Then we are back to C which is the TONIC
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000031_cc127174243b874727c24c576538e8e5cd6f17022dc68fabe4f3827ba58c48b7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000031_cc127174243b874727c24c576538e8e5cd6f17022dc68fabe4f3827ba58c48b7.png -->
 
 Here is the scale of F major. Underneath the notes write what degree of the scale they are:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000032_0e6d0978a6ba767ec72340e068d95f7675a87f97f3cae27980ac9443dbaef2e0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000032_0e6d0978a6ba767ec72340e068d95f7675a87f97f3cae27980ac9443dbaef2e0.png -->
 
 Now work out the degrees of the scale for these notes:
 
@@ -482,11 +460,11 @@ In G major the note E is the \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 In F major the note C is the \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000033_a2b9c0cf85b5b179646529a846e3fb6ebd44dcce74526cce8245aa85c5b4cf08.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000033_a2b9c0cf85b5b179646529a846e3fb6ebd44dcce74526cce8245aa85c5b4cf08.png -->
 
 Write out the scale of G major and fill in the names of the notes (tonic, etc) underneath:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000034_96b1ca0d0dcc61bda5bdba00ed82d54a8f5adbaaa056f1cb18cda34394ec973c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00011-00020/try-20261114T125147-90fb4b/document_artifacts/image_000034_96b1ca0d0dcc61bda5bdba00ed82d54a8f5adbaaa056f1cb18cda34394ec973c.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -556,39 +534,16 @@ Write out the scale of G major and fill in the names of the notes (tonic, etc) u
 - Remember to count up the scale carefully!
 - `66666666666666664444444444444444
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 11](<Name_Music_Theory_Worksheet_Music_Theory.pdf#page=11>)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- PDF-Seiten 21–30 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document.md -->
 
-![PDF-Seite 11](<document_artifacts/page_000011_dbf2d3abcf98b25e96f6d318d07fc10f13d9450499db5165f837cb656e172533.png>)
-
-![PDF-Seite 12](<document_artifacts/page_000012_b565fa417c4240ba954f4cc359336c45fc45e9fc66f6e017e261d160f8fb692d.png>)
-
-![PDF-Seite 13](<document_artifacts/page_000013_ef1a5641b4d2dc3ab98cdfd214cfdc0b0d0244e815ab6b27d284401c67a79324.png>)
-
-![PDF-Seite 14](<document_artifacts/page_000014_0346a6e5ad6763e2d542846d61b00cc1685a4798e1c5085045c4854be12f2ff3.png>)
-
-![PDF-Seite 15](<document_artifacts/page_000015_b9239089ffe6f24bab618012bca344adf4f88e5ae858d49dc775249298105930.png>)
-
-![PDF-Seite 16](<document_artifacts/page_000016_32af79e1dbacc03df2b185b6b62150c2d3cad126f0e13a0f40754a1f0f77594b.png>)
-
-![PDF-Seite 17](<document_artifacts/page_000017_6b2500abd238a3a66969ffa962f6eb9e088953c93bc9da435907713691734029.png>)
-
-![PDF-Seite 18](<document_artifacts/page_000018_3ae2db1ee3bef785164a23157c125b6ce868200342c8142e53626cc888112965.png>)
-
-![PDF-Seite 19](<document_artifacts/page_000019_398e5573ab684a9e3f60d80b6ee8b58a0e996ae9084ac0ea6e46e256608a527c.png>)
-
-![PDF-Seite 20](<document_artifacts/page_000020_0a05e1a6d3c03c28498669f1fc61c5a24843d927d53b0882b867fcad29bc6217.png>)
-
-
-[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Name_Music_Theory_Worksheet_Music_Theory.pdf#page=11>)
-
-<!-- PDF-Seiten 21–30 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000000_d686123f842550aaedcac0288a129a61c165210eeef87c02a9e4181a5a5628e2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000000_d686123f842550aaedcac0288a129a61c165210eeef87c02a9e4181a5a5628e2.png -->
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000001_6b208b22799c9dba86dddb4495ac0efa49677938f7abc7f75fbcf0d4bc848bd1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000001_6b208b22799c9dba86dddb4495ac0efa49677938f7abc7f75fbcf0d4bc848bd1.png -->
 
 ## KEY SIGNATURES
 
@@ -596,29 +551,29 @@ When we looked at major scales you will remember that sometimes you have to add 
 
 Here is the key signature for G major:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000002_ba0deee032505e59dd07b1fa21d07767bd1be078682ae4aefb8a341d0323fb74.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000002_ba0deee032505e59dd07b1fa21d07767bd1be078682ae4aefb8a341d0323fb74.png -->
 
 `6"4
 
 The key signature is written at the beginning of the line and tells us that we are in the key of G and that every time we have to play an F it should be played an F sharp unless it is cancelled out by another accidental.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000003_5fabc4b50babca5068c30a5dd8cc78c2f672c12224afe80acd88a11a7c866978.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000003_5fabc4b50babca5068c30a5dd8cc78c2f672c12224afe80acd88a11a7c866978.png -->
 
 Here are the key signatures for C, D, F, A and B flat major:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000004_410379a7055ac9d1b62fbe3d4ef848dc94c676a4d1c3e409f1ac884cdc0481a1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000004_410379a7055ac9d1b62fbe3d4ef848dc94c676a4d1c3e409f1ac884cdc0481a1.png -->
 
 When you are writing a key signature always make sure that you put the accidental on the correct line or space and that they always follow the same order.
 
 Now try to fill in the correct key signature below:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000005_b433709c2cf0c7e1ad403223f890071bcf0a049ef64fd776c590793d00997a1d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000005_b433709c2cf0c7e1ad403223f890071bcf0a049ef64fd776c590793d00997a1d.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000006_400b0052bc1ed6faef1cffc713c6ba36f5735a052f35cc6fa93a268cf3206abf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000006_400b0052bc1ed6faef1cffc713c6ba36f5735a052f35cc6fa93a268cf3206abf.png -->
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000007_1cbbb91ee15805d4778ab172ccdaf1af49137c1c02f6083230349095e9a81b98.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000007_1cbbb91ee15805d4778ab172ccdaf1af49137c1c02f6083230349095e9a81b98.png -->
 
 ## SIMPLE TIME SIGNATURES
 
@@ -650,7 +605,7 @@ e
 
 Now write out the full meaning of these time signatures:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000008_209bf87a77dde94a09675147c0631325dbfcc8de9e2d4e12e724fe588674bde8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000008_209bf87a77dde94a09675147c0631325dbfcc8de9e2d4e12e724fe588674bde8.png -->
 
 2 2
 
@@ -674,15 +629,15 @@ J
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000009_a09331894fe1dff6d8744f5e968720ceb73b72315b328bb42635afddb3a40411.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000009_a09331894fe1dff6d8744f5e968720ceb73b72315b328bb42635afddb3a40411.png -->
 
 ## MUSICAL TERMS 2
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000010_a4796df1e6c90ba67497a3de50f692c62646b0b0e8fa59366530ae9db19387c9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000010_a4796df1e6c90ba67497a3de50f692c62646b0b0e8fa59366530ae9db19387c9.png -->
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000011_3918dabf328ea7ccc115443a3551bb3850b00bbefe01837b71a3558b129f0167.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000011_3918dabf328ea7ccc115443a3551bb3850b00bbefe01837b71a3558b129f0167.png -->
 
 ## COMPOUND TIME SIGNATURES
 
@@ -719,7 +674,7 @@ In simple time signatures the main beats are indicated by the top number. Compou
 
 Now add in the barlines and time signatures below. Each starts on the 1st beat of the bar.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000012_b97cd9b905468680094e800243dcd95181fd8d5bdaf9c6eccba327a373e2df58.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000012_b97cd9b905468680094e800243dcd95181fd8d5bdaf9c6eccba327a373e2df58.png -->
 
 Another name for two time is duple time. Three time is also known as triple time and finally four time can also be known as quadruple time.
 
@@ -729,13 +684,13 @@ or
 
 Don't forget the bottom number tells us what kinds of beats are being used. e.g. 4 = crotchets
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000013_024ef66dae7f651bf162cfc085266b40c0bd5359dd044a2dfdf4e48ae2523ffd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000013_024ef66dae7f651bf162cfc085266b40c0bd5359dd044a2dfdf4e48ae2523ffd.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000014_15fbd39e6ae21767dced7712f4e491b49f0e1fa1c588bc9ef58135f3e93fa818.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000014_15fbd39e6ae21767dced7712f4e491b49f0e1fa1c588bc9ef58135f3e93fa818.png -->
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000015_80e9db49276a37b163b79da896a8346fa4d23ce4db677c0ba396e97605f78aba.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000015_80e9db49276a37b163b79da896a8346fa4d23ce4db677c0ba396e97605f78aba.png -->
 
 ## INTRODUCTION TO MINOR SCALES - HARMONIC
 
@@ -743,19 +698,19 @@ Each major scale has what is called a relative minor scale. The relative minor i
 
 There are two types of minor scale - first let's look at harmonic minor scales. If we look at the last 3 notes of the scale of C major - A B C, we have the first 3 notes of the scale of A minor. As you can see from the diagram below this changes the pattern of tones and semitones that we find between the first 3 notes:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000016_31d684106991e739336aac2470102cef2cecc0479c38e41c6192438859faa467.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000016_31d684106991e739336aac2470102cef2cecc0479c38e41c6192438859faa467.png -->
 
 Now here is the relative minor scale of C major which is called A minor.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000017_f7a339edf1c215d7c13428e267884af4a14b77c94363548a349aa10317c365a5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000017_f7a339edf1c215d7c13428e267884af4a14b77c94363548a349aa10317c365a5.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000018_4f09023368534a321d1b61c6491595425ceeeffca64ed56c08cb2f8293b83acc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000018_4f09023368534a321d1b61c6491595425ceeeffca64ed56c08cb2f8293b83acc.png -->
 
 The other main difference with a minor scale comes with the seventh note of the scale. Can you see in the scale above that the G has moved up another semitone and become G sharp? In a harmonic minor scale the leading note (the seventh note) is always raised a semitone higher.
 
 Now here is the minor scale of E minor which is the relative minor of G major. Can you write in the correct pattern of tones and semitones underneath?
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000019_b80029c21cc1889908f6969a45ca56cf9df5a67edc1b5f46a1f3f8f91631e776.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000019_b80029c21cc1889908f6969a45ca56cf9df5a67edc1b5f46a1f3f8f91631e776.png -->
 
 `yÂuiop[Ø]\Ø][poiÂuy
 
@@ -767,7 +722,7 @@ Now write in the relative minor for these keys:
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000020_2e894a89c1b43a953c6ea8b423c807e2286f702ac02a2426c18c98a0bd735055.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000020_2e894a89c1b43a953c6ea8b423c807e2286f702ac02a2426c18c98a0bd735055.png -->
 
 ## CHORDS
 
@@ -775,7 +730,7 @@ When we have more that two notes playing together they form what is called a cho
 
 Here are some examples of common chords:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000021_1475f6e23f873bd7938cf1459fe715b6a692804934db72b48e7c5519b4b0c8c5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000021_1475f6e23f873bd7938cf1459fe715b6a692804934db72b48e7c5519b4b0c8c5.png -->
 
 šš
 
@@ -783,17 +738,17 @@ Here are some examples of common chords:
 
 Now try to write out the tonic chords for these keys
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000022_535a3adef5bd334f765cb17131d7f08a25581a8e815c56fe9ad20b8d3d0bdad8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000022_535a3adef5bd334f765cb17131d7f08a25581a8e815c56fe9ad20b8d3d0bdad8.png -->
 
 D
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000023_654ef09c795ff4dcbca442f514f37a6b59eb414a103a5beea6ed0904511303ab.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000023_654ef09c795ff4dcbca442f514f37a6b59eb414a103a5beea6ed0904511303ab.png -->
 
 A chord or triad can be built on every note of the scale in every key. Here are all the possible chords in C major: š šš š š šš š š š š
 
 š š
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000024_2caf9627b7551948ebcb82ef3896d048b8d5ef85e21e3e25e485facef4e55b14.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000024_2caf9627b7551948ebcb82ef3896d048b8d5ef85e21e3e25e485facef4e55b14.png -->
 
 So that we can recognise one chord from another chords can be numbered - in music when we number chords we usually use roman numerals.
 
@@ -821,7 +776,7 @@ What are the notes in chord V in F major?
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000025_0a2f691015e1e397db0d29aabbf11a8ced7a03a8149267ca30837042a882c00b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00021-00030/try-20261114T125209-f7c2a9/document_artifacts/image_000025_0a2f691015e1e397db0d29aabbf11a8ced7a03a8149267ca30837042a882c00b.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -954,51 +909,28 @@ What are the notes in chord V in F major?
 - `5)4 `44444
 - þ
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 21](<Name_Music_Theory_Worksheet_Music_Theory.pdf#page=21>)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- PDF-Seiten 31–33 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00031-00033/try-20261114T125228-670ee1/document.md -->
 
-![PDF-Seite 21](<document_artifacts/page_000021_02c156d8a84b5bd26e2081957a9d1cf0c910cc539dd0be74fec73b134db9cc81.png>)
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00031-00033/try-20261114T125228-670ee1/document_artifacts/image_000000_e3914df7934edab07216575c649b6c1f24e5c1ee74a3ed4a4c5ab2fa2937a03b.png -->
 
-![PDF-Seite 22](<document_artifacts/page_000022_8d2a7539fbc864a030d7bc614cd6119fa87cd393835c22eca06a16f9204eb261.png>)
-
-![PDF-Seite 23](<document_artifacts/page_000023_565c0e99c46b8c0a89f6ab49d34e36ce646082ba0e34be6e629d65f6a1925896.png>)
-
-![PDF-Seite 24](<document_artifacts/page_000024_f0ce4f6388edabfc1778a3bdc5b64d0e925d7a96d9edcd4f74bb9bfd13d59190.png>)
-
-![PDF-Seite 25](<document_artifacts/page_000025_2eb534a4cea1c4c63f2de4560d1aaffb634f0ed12e918142d247e873bb623853.png>)
-
-![PDF-Seite 26](<document_artifacts/page_000026_39ecf23e10b04f9abef6ff4e9945d7b8da3a2c65b74104712d9a65744e63d096.png>)
-
-![PDF-Seite 27](<document_artifacts/page_000027_7530f7d2fcff00f67266c805c4305a59a3e9bc4bb79bb3c3f4c8a6d679bef118.png>)
-
-![PDF-Seite 28](<document_artifacts/page_000028_69a04520cb49ebc48f6998eb52b74ac2faf511d300ecb309c8c0a22898b73387.png>)
-
-![PDF-Seite 29](<document_artifacts/page_000029_dcbe3c0d693ec7da292b6516c3c37b3b06874dec5e85f9e92e70e550c2a30e61.png>)
-
-![PDF-Seite 30](<document_artifacts/page_000030_e8f669cdaccc6b79fa591f9d4a23af3d30318c1f084ba362dece6e69fbb5ed5a.png>)
-
-
-[Original-PDF, Seite 21](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Name_Music_Theory_Worksheet_Music_Theory.pdf#page=21>)
-
-<!-- PDF-Seiten 31–33 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00031-00033/try-20261114T125228-670ee1/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00031-00033/try-20261114T125228-670ee1/document_artifacts/image_000000_e3914df7934edab07216575c649b6c1f24e5c1ee74a3ed4a4c5ab2fa2937a03b.png -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00031-00033/try-20261114T125228-670ee1/document_artifacts/image_000001_e44eeb664c8234758507e26cb6adbc1f4f866e25fa73cb06fef68e762989a989.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00031-00033/try-20261114T125228-670ee1/document_artifacts/image_000001_e44eeb664c8234758507e26cb6adbc1f4f866e25fa73cb06fef68e762989a989.png -->
 
 Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 ## Music Theory Worksheet
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00031-00033/try-20261114T125228-670ee1/document_artifacts/image_000002_a57af8503cf302c5266c89841164e203489e509940e9faccd8619786bea85c5f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00031-00033/try-20261114T125228-670ee1/document_artifacts/image_000002_a57af8503cf302c5266c89841164e203489e509940e9faccd8619786bea85c5f.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00031-00033/try-20261114T125228-670ee1/document_artifacts/image_000003_022b0d54d82d62a25a3d9c829073b968410fd363be567f39ffc5bf638c8dc595.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00031-00033/try-20261114T125228-670ee1/document_artifacts/image_000003_022b0d54d82d62a25a3d9c829073b968410fd363be567f39ffc5bf638c8dc595.png -->
 
 10
 
 1. Write out the ascending and descending harmonic minor scale of A minor adding any accidentals:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00031-00033/try-20261114T125228-670ee1/document_artifacts/image_000004_0004e8f7b1bddef0c9bf25ca5866546e298782bf34125462a6a60c1bc2ab24ec.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6a3276dd9ed6f681/d3f6f9dfb2b4/00031-00033/try-20261114T125228-670ee1/document_artifacts/image_000004_0004e8f7b1bddef0c9bf25ca5866546e298782bf34125462a6a60c1bc2ab24ec.png -->
 
 `4444444444444444444
 
@@ -1071,14 +1003,5 @@ D minor `444 F sharp minor `444
 - lzz
 - 32
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 31](<document_artifacts/page_000031_75b49102eb0b7938a015a27fd051899c72111d2a677b76e9129fb7ea07bc12b5.png>)
-
-![PDF-Seite 32](<document_artifacts/page_000032_28d1078d6b793630acafea8a9e9aba1ec6e8953987a4724849b5d344837c6e27.png>)
-
-![PDF-Seite 33](<document_artifacts/page_000033_1a5e885c2c024a0cb1ca3f3cd71c63d5847ef914c9b8bdbadd4b5e79bfcef057.png>)
-
-
-[Original-PDF, Seite 31](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Name_Music_Theory_Worksheet_Music_Theory.pdf#page=31>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 31](<Name_Music_Theory_Worksheet_Music_Theory.pdf#page=31>)
