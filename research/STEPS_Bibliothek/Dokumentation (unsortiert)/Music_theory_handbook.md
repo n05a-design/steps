@@ -9,26 +9,27 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 23
 tabellen: 7
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `Music_theory_handbook.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document.md -->
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document.md -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000000_5c2d81cc91bb125a1753555d1a0c91f8c930b5c1c2b4f8e887b58eba6f9cd258.png -->
-
-## MUSIC THEORY HANDBOOK VOL 1
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000000_5c2d81cc91bb125a1753555d1a0c91f8c930b5c1c2b4f8e887b58eba6f9cd258.png -->
 
 ## MUSIC THEORY HANDBOOK VOL 1
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000001_16e5d82ebb94f544af616225ea28a253f01ccb0f8619b43cf647f1f2d652a7f3.png -->
+## MUSIC THEORY HANDBOOK VOL 1
+
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000001_16e5d82ebb94f544af616225ea28a253f01ccb0f8619b43cf647f1f2d652a7f3.png -->
 
 ## GETTING STARTED WITH COUNTERPOINT FROM THE ONLINE COURSE COUNTERPOINT
 
 ## BY BETH DENISCH
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000002_b51002972d1303fa00fac6dfc6bca5488f5bca56045f81fd3f194216043adef4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000002_b51002972d1303fa00fac6dfc6bca5488f5bca56045f81fd3f194216043adef4.png -->
 
 Beth Denisch is a professor in the Composition Department at Berklee College of Music. Her music has been performed throughout the U.S. and in Canada, Mexico, Greece, Ukraine, Russia, China, and Thailand, and recorded by Juxtab, Albany, and Interval record labels.
 
@@ -46,7 +47,7 @@ The term texture is used to describe the relative "thickness" or "thinness" of m
 
 A portion of the Winchester Troper
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000003_451ad110ae04d514bc597c8d874e0eb7d2a10c6862d5c1972a2822181d21c6fe.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000003_451ad110ae04d514bc597c8d874e0eb7d2a10c6862d5c1972a2822181d21c6fe.png -->
 
 3. Polyphony-More than one melody happening at the same time. For example, in "Canto di Bella Bocca," by Barbara Strozzi, you can hear two vocal melodies working together to create beautiful harmonies while at the same time maintaining their melodic independence from each other. That is, multiple layers are heard separately and simultaneously. This is called polyphony. (From the Greek: poly-many; and phony-sound or voice.)
 
@@ -78,7 +79,7 @@ This course uses musical examples from the Medieval, Renaissance, Baroque, Class
 
 ## BY STEVE ROCHINSKI
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000004_51e319a2699aa9f5b71092292e1b64c27fc04b9fe95f3e10dbe206d0a247088d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000004_51e319a2699aa9f5b71092292e1b64c27fc04b9fe95f3e10dbe206d0a247088d.png -->
 
 Steve Rochinski is a Professor in the Harmony Department at Berklee College of Music. An accomplished guitarist, recording artist, and internationally known performer and clinician, Steve has received numerous grants and awards including a 1993 Jazz Fellowship from the National Endowment for the Arts for private study with Tal Farlow.
 
@@ -135,19 +136,19 @@ Here are several versions of a popular birthday song originally titled "Good Mor
 
 The first version is harmonized with the original chords.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000005_846ca68c302c6ee9217b08cdbd7aa81b576822a4449c7f03fb192f35bf56a1ca.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000005_846ca68c302c6ee9217b08cdbd7aa81b576822a4449c7f03fb192f35bf56a1ca.png -->
 
 The second version is reharmonized with simple, substitute diatonic chords. There's no change in the harmonic rhythm.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000006_40a6521bede30d58b203be6de98100d6ffca00ae81e1b8266547463a8f0dbfdc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000006_40a6521bede30d58b203be6de98100d6ffca00ae81e1b8266547463a8f0dbfdc.png -->
 
 The third version is reharmonized with approach chords, along with 6th and 7th chords to enrich the triads, resulting in a more active harmonic rhythm.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000007_9b9175f5a4eeed786df4e4e79bf745c67aea990db1a0f10b04f26eb8d6ac7c7e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000007_9b9175f5a4eeed786df4e4e79bf745c67aea990db1a0f10b04f26eb8d6ac7c7e.png -->
 
 The final version is a reharmonization using a combination of substitute and approach treatments. This creates a very active and colorful harmonic support with the majority of the melody notes harmonized with a different chord.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000008_a90b726119079db27134afd560720e10923cbe82f49901ac2c74e4a34d8825b4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000008_a90b726119079db27134afd560720e10923cbe82f49901ac2c74e4a34d8825b4.png -->
 
 If you can, try playing these melodies. How would you describe the emotional differences between them?
 
@@ -161,7 +162,7 @@ Reharmonization Techniques teaches where and how to approach changing the harmon
 
 ## BY PAUL SCHMELING
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000009_2d90cd71c0440ccd30dd1cf2a5a1ecabd1c3c71f09fdf35730da4d1732a00f97.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00001-00010/try-20261114T122023-baf9d4/document_artifacts/image_000009_2d90cd71c0440ccd30dd1cf2a5a1ecabd1c3c71f09fdf35730da4d1732a00f97.png -->
 
 Paul Schmeling is a master pianist, interpreter, improviser, and arranger who has inspired countless students since he began teaching at Berklee in 1961. He has performed or recorded with jazz greats such as Clark Terry, Rebecca Parris, George Coleman, Carol Sloane, Frank Foster, Art Farmer, Herb Pomeroy, Phil Wilson, Dick Johnson and Slide Hampton.
 
@@ -221,37 +222,14 @@ In this time signature, there are two beats per measure.
 - B-7 Cma7 C#°7 Gma7/D C9 F9
 - B-7 Bb7 A-7 Ebma7 Abma7 G6(9)
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<Music_theory_handbook.pdf#page=1>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_224f5e37926b3016ebd06b7895dc09dc6c97b051cef7da107574bb1b1c19da93.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_b53f971f720a0ccbc4f9a04d8f2ba4852c8996d76a69e5a85b610d720fb68808.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_37914d9dca4085ab280cc0eb02db0389fdd8518dac8aaa1814f417c6b634d22b.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_5c4713a970115df70749488e95ac5cbb4b5060c5bb6cacaeb8263b1f52ceab41.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_e91f2206df0e04336f0d7527ac2a7b570b6bbdcf36c45eb98955844c14350fbf.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_e3368d0f4d5c9c569fe49b68a4178488ba750523b83ffa870249fafbcd3ef77e.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_411b8b3aa0f9ea7a891b94ea98d449133489b1f570d8653e3e9f9d822e5e33b2.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_89a3f11e3fb7faf69d1e6c3b47c57a89359b061b7c809d3cf270f2afc4b9d87f.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_b9defd4690a948c775b0cba1dbd983ace98106b66f4d3d99e74748591e10b02b.png>)
-
-![PDF-Seite 10](<document_artifacts/page_000010_42e953f834fcd6f3344e66c273b98b46e29cc4e1c956d316e1c017f5235729d7.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Music_theory_handbook.pdf#page=1>)
-
-<!-- PDF-Seiten 11–20 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document.md -->
+<!-- PDF-Seiten 11–20 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document.md -->
 
 Let's focus on the 4/4 time signature, or as it is also called, common time (C). This is the most common meter in popular and jazz music.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000000_719caa834f6b7196a5cf489a64457ff3a6a933d4598fe2dc40fb0ccc6b59114c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000000_719caa834f6b7196a5cf489a64457ff3a6a933d4598fe2dc40fb0ccc6b59114c.png -->
 
 e
 
@@ -272,7 +250,7 @@ Each note value has a corresponding rest symbol, which indicates silence for tha
 - Half rests are rectangles that lie on top of a staff line. They last for two beats.
 - Quarter rests look like a sideways W with a thick middle. They last for one beat.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000001_3a7ee725692c8eafadf040c152e7214161b9dac67e7225d9fb3084eb7981f1d5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000001_3a7ee725692c8eafadf040c152e7214161b9dac67e7225d9fb3084eb7981f1d5.png -->
 
 n
 
@@ -298,7 +276,7 @@ Establish a toolkit of musical expertise that will prepare you for any musical e
 
 ## BY MICHAEL RENDISH
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000002_8eb7a3a9df003a2a6903a66dafa1d89e03f1ea0410c2fd035678adb5d21286d6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000002_8eb7a3a9df003a2a6903a66dafa1d89e03f1ea0410c2fd035678adb5d21286d6.png -->
 
 Michael Rendish is the former Assistant Chair of Berklee College of Music's Film Scoring Department. A gifted performer and award-winning writer, he has composed, orchestrated, and conducted some thirty film scores, including Faces of Freedom, A Place of Dreams, Yorktown, and the five-part PBS series America by Design.
 
@@ -308,7 +286,7 @@ The answers to these questions lie in seventh chords, a vital part of your harmo
 
 Think of a seventh chord as an upward extension of a triad. The chord members, then, are the root, third, fifth, and seventh.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000003_85e325ad6f865836d03a161b5f9d58d9fd1f6dd46a8d861802df89c5bf41a115.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000003_85e325ad6f865836d03a161b5f9d58d9fd1f6dd46a8d861802df89c5bf41a115.png -->
 
 Picture what kind of third, what kind of fifth, and what kind of seventh occur above the root when the chord is in close, root position.
 
@@ -346,7 +324,7 @@ Let's see what kind of seventh chords we find on each degree of the major scale.
 
 <!-- formula-not-decoded -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000004_d7272e0092715993ba5e2448d9dee8f045baefe22571c3e68387b7f4a540fd85.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000004_d7272e0092715993ba5e2448d9dee8f045baefe22571c3e68387b7f4a540fd85.png -->
 
 In summary, then, we find the following types of seventh chords diatonic to the major scale:
 
@@ -359,7 +337,7 @@ Why might the term position rather than inversion be more appropriate when refer
 
 The notes of any standard chord (triad or seventh) are defined. A Cmaj7 will always contain a C, an E, a G, and a B. However, those notes may be positioned a number of different ways. Take a look at the following:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000005_a4a854ffe6d5e71b2ff9892632e9b5f3e5fde8df25ca015c6ca07462a2ee3f67.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000005_a4a854ffe6d5e71b2ff9892632e9b5f3e5fde8df25ca015c6ca07462a2ee3f67.png -->
 
 These are all Cmaj7 chords. All of these versions (and many others) are used all the time. As it was with triads, it's an important part of your chord recognition skill to be able to identify seventh chords in no matter what order the notes may appear.
 
@@ -381,7 +359,7 @@ Through keyboard chord voicings and voice-leading exercises, you'll gain an unde
 
 ## BY PAUL SCHMELING
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000006_a19ce3905a1df46f4532313d0ef7ebe2df9fd2b04c4d8239914cf414957cba99.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000006_a19ce3905a1df46f4532313d0ef7ebe2df9fd2b04c4d8239914cf414957cba99.png -->
 
 Paul Schmeling is a master pianist, interpreter, improviser, and arranger who has inspired countless students since he began teaching at Berklee in 1961. He has performed or recorded with jazz greats such as Clark Terry, Rebecca Parris, George Coleman, Carol Sloane, Frank Foster, Art Farmer, Herb Pomeroy, Phil Wilson, Dick Johnson and Slide Hampton.
 
@@ -403,17 +381,17 @@ The most common variations of these basic harmonies are found in measures 9-10, 
 | SUBDOMINANT          |                      | TONIC   |
 | SUBDOMINANT DOMINANT | DOMINANT SUBDOMINANT | TONIC   |
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000007_8bef09d6a5044d40b55bb720d3fe74ceea928c768453c6f7e1b9da335b1b1823.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000007_8bef09d6a5044d40b55bb720d3fe74ceea928c768453c6f7e1b9da335b1b1823.png -->
 
 Before we move on to the actual chords commonly used in blues progressions, let's translate the function names into chord roots using the strongest of each function group. The tonic function will be the I chord; the subdominant function, the IV chord; and the dominant function, the V chord. Putting these chords into the key of F, the basic chords of blues would look like this:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000008_d4b2abb3b1791a897aa1ccdaac7bbc3ed02d6b6e740b91b1bb8293544c567787.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000008_d4b2abb3b1791a897aa1ccdaac7bbc3ed02d6b6e740b91b1bb8293544c567787.png -->
 
 The term blues can be used to identify a musical form, as we have just discussed, or it can be used to identify a style, which we are going to look at next. Often the two are used together (both blues form and style), but sometimes a blues form may have a melody and chords that do not sound blues-like. Also, a song that is not a blues form can be made to sound "bluesy" by the use of the "blues notes."
 
 The blues notes, as you superimpose them over a major scale, are the flatted 3rd, the flatted 5th, and the flatted 7th. Their origin is in vocal music, where these flatted notes were vocal inflections or bendings of the pitch.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000009_e266dbb73baa5c3f7c8bfa8b4dd3ff5bd905e700f510e7974324f56c470103e7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000009_e266dbb73baa5c3f7c8bfa8b4dd3ff5bd905e700f510e7974324f56c470103e7.png -->
 
 The most immediate and obvious influence the blues notes have is their effect on the harmony of a blues progression. Going back to the basic I, IV, and V chords discussed earlier, it is common that the I chord is a dominant 7th chord, as the b7 (Eb) is used as part of the chord. Similarly, the IV chord is also a dominant 7th as it uses the b3 (Ab) as its 7th. The V chord is already a dominant 7th chord as a diatonic chord in the F major scale.
 
@@ -424,17 +402,17 @@ The most immediate and obvious influence the blues notes have is their effect on
 
 Even the choice of tensions is often affected by the blues notes. The I chord frequently uses #9, and the V chord frequently uses the b13-both using the b3 (Ab). The b5 can show up as the b9 of the IV7 chord or the #11 on the I7 chord, but obviously won't work on the V7. The following sums up the potential use of the blues notes as tensions on the three chords of the basic blues progression.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000010_76990dcfe5e645bd1ba6f79aa523b63075fc7d8110c4f856dafa5c43062b6163.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000010_76990dcfe5e645bd1ba6f79aa523b63075fc7d8110c4f856dafa5c43062b6163.png -->
 
 The blues notes (b3, b5, b7) may be used in addition to, or instead of, the regular 3rd, 5th, and 7th from the major scale, but the most common blues scale is the following. Notice that the flatted 3rd and 7th are used instead of the regular 3rd and 7th, but the flatted 5th is used in addition to the natural 5th.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000011_8954c4a317ed3402bca6a92ef283af1ba687eef430271170292439d50ba194e7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000011_8954c4a317ed3402bca6a92ef283af1ba687eef430271170292439d50ba194e7.png -->
 
 This same scale may be used over the three basic chords of a blues progression, even though not every note of the scale "fits" on each of the chords. The sound of the blues scale is strong enough to override these concerns.
 
 The three four-measure phrases of the blues form are typically set up to be a four-measure phrase repeated in measures 5-8 and somehow varied in measures 9-12. Notice, in the following blues melody, the use of the blues notes, as well as the three four-measure phrases. The second phrase repeats the first, and the third phrase is similar to the first but changed a little for variation purposes.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000012_a7cdad5bf7a2334679516897edd0ed5436181c6bbba4de4dffe3420fc5a1415e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00011-00020/try-20261114T122049-297f46/document_artifacts/image_000012_a7cdad5bf7a2334679516897edd0ed5436181c6bbba4de4dffe3420fc5a1415e.png -->
 
 ## PAUL SCHMELING'S ONLINE COURSES
 
@@ -456,33 +434,10 @@ Establish a toolkit of musical expertise that will prepare you for any musical e
 - I MAJOR SCALE
 - b7b9
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 11](<Music_theory_handbook.pdf#page=11>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 11](<document_artifacts/page_000011_2bbe34828c14f71e2f0983ac8cb6946915770ed69439da3311a30801a294e21d.png>)
-
-![PDF-Seite 12](<document_artifacts/page_000012_b7433ad973107dedfcbe3d9148f3730d54a9ca41aa398a6b1c707b22511a9ab6.png>)
-
-![PDF-Seite 13](<document_artifacts/page_000013_e94d996aee8644e6b86293a417688016feacd6071d8303ec40b0e13102fb784f.png>)
-
-![PDF-Seite 14](<document_artifacts/page_000014_c8d4f19fe6b3ffabff08948dbd44ea6c96011b5d1bc96c82ebc37e5461faa9dd.png>)
-
-![PDF-Seite 15](<document_artifacts/page_000015_9c881a5bc61c532b43733000b1965715397eb37222d21ec91abea7686297e788.png>)
-
-![PDF-Seite 16](<document_artifacts/page_000016_f31f6555261147c0d30aad6d723789e9b6fbda180f5ae11fd8535ab0328caf9c.png>)
-
-![PDF-Seite 17](<document_artifacts/page_000017_15a77610f86bf761afb342bbe00ead09ac4e0e8fe9201a90927c010759bdba4e.png>)
-
-![PDF-Seite 18](<document_artifacts/page_000018_5f79238459e263f4a084f87467782c3882d5c0dc3ad3eed45d4cc22ae1ac1a07.png>)
-
-![PDF-Seite 19](<document_artifacts/page_000019_dc71ff73ed5e62147d62b5234dcbea6c9d715cfa4e9a4dcb66adf5ad1c6fe06b.png>)
-
-![PDF-Seite 20](<document_artifacts/page_000020_08c7665d485490e321c98802a1d223fd9581c1e2b41056db47cef31661836f68.png>)
-
-
-[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Music_theory_handbook.pdf#page=11>)
-
-<!-- PDF-Seiten 21–21 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00021-00021/try-20261114T122118-ee9250/document.md -->
+<!-- PDF-Seiten 21–21 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/2ca72424c5274d71/d3f6f9dfb2b4/00021-00021/try-20261114T122118-ee9250/document.md -->
 
 ## ONLINE COURSES IN MUSIC THEORY
 
@@ -513,9 +468,5 @@ STUDY WITH THE RENOWNED FACULTY OF BERKLEE COLLEGE OF MUSIC FROM ANYWHERE IN THE
 - Theory and Harmony
 - Voice Technique and Musicianship
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 21](<document_artifacts/page_000021_60bba01fe53f74e585438994ec461b4ec34ac39650fe8d53ac036d258f7ae9e6.png>)
-
-
-[Original-PDF, Seite 21](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Music_theory_handbook.pdf#page=21>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 21](<Music_theory_handbook.pdf#page=21>)

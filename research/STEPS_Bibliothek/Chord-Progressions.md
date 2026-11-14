@@ -9,12 +9,13 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 11
 tabellen: 0
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `Chord-Progressions.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–8 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document.md -->
+<!-- PDF-Seiten 1–8 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document.md -->
 
 ## Chord Progression
 
@@ -22,7 +23,7 @@ A chord progression (or harmonic progression) is a series of musical chords, or 
 
 A chord progression can be thought of as a harmonic simultaneity succession: it offers an ongoing shift of level that is essential to the music of Europe (at least
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000000_547f0c65c6df5c00178f05d724fd74d920d1eeae61b3e940ab68ad2772d409c8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000000_547f0c65c6df5c00178f05d724fd74d920d1eeae61b3e940ab68ad2772d409c8.png -->
 
 since 1600), Oceania and South/West Africa. A change of chord, or "chord change", generally occurs on an accented beat, so that chord progressions may contribute significantly to the rhythm, meter and musical form of a piece, delineating bars, phrases and sections. [3]
 
@@ -34,7 +35,7 @@ major/minor/diminished/etc. The
 
 harmonic function of any particular chord depends on the context of the particular chord progression in which it is found. [1] (See Diatonic function)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000001_774149ead374f963bc6a80c680176971992d89bd35071b13fcc87dc31ad92f17.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000001_774149ead374f963bc6a80c680176971992d89bd35071b13fcc87dc31ad92f17.png -->
 
 The key note or tonic of a piece of music is called note number one, the first step of the ascending scale. Chords built on each scale degree are numbered in the same way so that, for example, in the key of C, the progression E minor - F - G can be generally described as a three - four - five progression.
 
@@ -67,11 +68,11 @@ The three-chord I - IV - V progression, a particularly popular kind of circle pr
 
 Beethoven imagined composing his Pastoral Symphony
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000002_4399c0db0e4e731b076362cd8108c2c51853f82129ea3aea5f0c5c62926daa08.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000002_4399c0db0e4e731b076362cd8108c2c51853f82129ea3aea5f0c5c62926daa08.png -->
 
 This basic harmonic pattern occurs in many other pop songs-the output of Phil Spector might also be cited. Similar progressions abound in African popular music. They may be varied by the addition of sevenths (or other scale degrees) to any chord or by substitution of the relative minor of the IV chord to give, for example, I - ii - V. This last is heard, for example, in The Beach Boys' "Good Vibrations" ("Got to keep those...."). This sequence, using the chord based on the second scale degree, is also used cadentially in a common chord
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000003_e89ba84e86ec872a9400602bee4bd2f1a0d52826759e5aa42ea312eca88ef282.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000003_e89ba84e86ec872a9400602bee4bd2f1a0d52826759e5aa42ea312eca88ef282.png -->
 
 progression of jazz harmony, the so-called ii-V-I turnaround, on which are based the more ornate Coltrane changes.
 
@@ -94,9 +95,9 @@ The twelve bar blues and its many variants use an elongated, three-line form of 
 
 Blues progressions influenced a great deal of 20th century American popular music
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000004_208b6559dbdd5002abaa0687bfc5141638c7de0538516e7861c4d2b582f4bf3b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000004_208b6559dbdd5002abaa0687bfc5141638c7de0538516e7861c4d2b582f4bf3b.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000005_1633ce648cb84c837df6d4ac46ac896585be3a7bc442f748f7e722eef3227697.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000005_1633ce648cb84c837df6d4ac46ac896585be3a7bc442f748f7e722eef3227697.png -->
 
 Again, blues progressions have formed the entire harmonic basis of many recorded songs but may also be confined to a single section of a more elaborate form, as frequently with The Beatles in such songs as "You Can't Do That", "I Feel Fine", and "She's A Woman". They have also been subjected to densely chromatic elaboration, as in the work of Charlie Parker.
 
@@ -113,11 +114,11 @@ modified sequences (such as the "rhythm changes"). Important transformations inc
 
 The Mills Brothers' recording of "Till Then" looked forward both to the end of World War II and to the popular music of the 1950s. (Courtesy of the Fraser MacPherson estate c/o Guy MacPherson)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000006_e02c050062d6b58e45638bfab43891a1c84f9d0e7241d1d67c7cacaabf21586d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000006_e02c050062d6b58e45638bfab43891a1c84f9d0e7241d1d67c7cacaabf21586d.png -->
 
 In fact this sequence had been in use from the earliest days of classical music (used often by Wolfgang Amadeus Mozart), but after generating popular hits such as Rogers and Hart's "Blue Moon" (1934), Jerome Kern and Dorothy Fields' 1936 "The Way You Look Tonight" and Hoagy Carmichael's "Heart and Soul" (1938), it became associated with the black American vocal groups of the 1940s, The Ink Spots and The Mills Another common way of extending the I - IV - V sequence is by adding the chord of the sixth scale degree, giving the sequence I - vi - IV - V or I - vi - ii - V, sometimes called the 50s progression.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000007_1bfe64dc30ba95e3cd4363a1ccf7f19bca57bc9720772cf683284a68d6a3eeda.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000007_1bfe64dc30ba95e3cd4363a1ccf7f19bca57bc9720772cf683284a68d6a3eeda.png -->
 
 Brothers ("Till Then"), and thus later became the entire basis of the 1950s doo-wop genre, a typical example being The Monotones' "The Book of Love".
 
@@ -131,11 +132,11 @@ It continued to be used sectionally, as in the refrain of The Beatles' "Girl", a
 
 Introducing the ii chord into these progressions emphasises their appeal as constituting elementary forms of circle progression. These, named for the circle of fifths, consist of "adjacent roots in ascending fourth or descending fifth relationship"-for instance, the sequence vi - ii - V - I ascends with each successive chord to one a fourth above the previous. Such a motion, based upon close harmonic relations, offers "undoubtedly the most common and the strongest of all harmonic progressions". [14] The succession of cadences gives an impression of inevitable return to the key-note of the piece.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000008_a5360aded2161657ea601c9bd54750f8312ed3aba8555b9550bfe5e327d6b36b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000008_a5360aded2161657ea601c9bd54750f8312ed3aba8555b9550bfe5e327d6b36b.png -->
 
 The ragtime progression (E7-A7-D7-G7) often appears in the bridge of jazz standards (Play). [15] The III7-VI7-II7-V7 (or V7/V/V/V - V7/V/V - V7/V - V7) leads back to C major (I) but is itself indefinite in key.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000009_7fd09be80e6252db682a5616fb1937811bc83b1052ebbabb45f2d17dcd189c73.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000009_7fd09be80e6252db682a5616fb1937811bc83b1052ebbabb45f2d17dcd189c73.png -->
 
 Short cyclical progressions may be derived by selecting a sequence of chords from the series completing a circle from the tonic through all seven diatonic chords [14] :
 
@@ -160,7 +161,7 @@ The descending chromatic scale has also formed the basis of many progressions, f
 
 Needless to say, similar strategies to all the above work equally well in minor modes: there have been one-, two- and three-minor-chord songs, minor blues from the time of Benny Goodman ("Why Don't You Do Right?") to The
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000010_007d03bd2c1911764e64e2d3b9b0e11a4bfae32bb0e5d052989e9b95ab18a87d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/45c33b3bdc24ea55/d3f6f9dfb2b4/00001-00008/try-20261114T105144-bdfbc5/document_artifacts/image_000010_007d03bd2c1911764e64e2d3b9b0e11a4bfae32bb0e5d052989e9b95ab18a87d.png -->
 
 Doors ("Riders On The Storm"). A notable example of a descending minor chord progression is the four-chord Andalusian cadence, i - VII - VI - V, which appears in Ray Charles' "Hit the Road, Jack", the verse of "Good Vibrations", the instrumental section of David Bowie's "Moonage Daydream", etc. Similar descending minor sequences are heard in Jimi Hendrix's version of Bob Dylan's "All Along the Watchtower", Dire Straits' "Sultans of Swing" and Neil Young's "Southern Man".
 
@@ -255,24 +256,5 @@ Creative Commons Attribution-Share Alike 3.0 Unported http:/ / creativecommons. 
 - Benward & Saker (2003). Music: In Theory and Practice, Vol. I, p.178. Seventh Edition. ISBN 978-0-07-294262-0.
 - Nettles, Barrie & Graf, Richard (1997). The Chord Scale Theory and Jazz Harmony. Advance Music, ISBN 389221056X.
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_54bb220cad29b922e668826c5664f824e60551437ac40632ec395819a19c2ee7.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_3c47d999b1d965885d477bf8d46575973b3c7f92f774fe78d36ea396f3c5f282.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_1f7b33cf794fb765352342588b45efedc98f74400a5878d9da4c86083c317551.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_540ebfbca95465955e3228f497c315da4c12387b90fc47d656588f84b00eba11.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_6c7141575b0285efa5a3a92ff56d933dd0494a5cdc35c3f64be425c27671cb23.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_104ff842db9d2a256dad1f0fdecba0af43d0dac622910cd912429b2f280e8801.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_734fad07c3ec50e877f604ff1d4c841e7926d0f8e8ece6794944644294034497.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_fc599980a7bb700ad5fd1ae739448765c7411cecf6c8cbcf0edb7d647ad3f71c.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Chord-Progressions.pdf#page=1>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<Chord-Progressions.pdf#page=1>)

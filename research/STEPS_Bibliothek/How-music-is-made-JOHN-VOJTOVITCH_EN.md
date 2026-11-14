@@ -9,12 +9,13 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 12
 tabellen: 1
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `How-music-is-made-JOHN-VOJTOVITCH_EN.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00001-00010/try-20261114T114334-4bf6c9/document.md -->
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00001-00010/try-20261114T114334-4bf6c9/document.md -->
 
 ## John Vojtovitch - How music is made
 
@@ -42,7 +43,7 @@ Main volume, program change, velocity, modulation, pan, pitch bend, articulation
 
 out of the 127 controllers and draw the values related to the tones above.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00001-00010/try-20261114T114334-4bf6c9/document_artifacts/image_000000_9a269070d43c7e594b24b4122eb7f2d7cdbf6516418cf9bde49e34b5508f260f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00001-00010/try-20261114T114334-4bf6c9/document_artifacts/image_000000_9a269070d43c7e594b24b4122eb7f2d7cdbf6516418cf9bde49e34b5508f260f.png -->
 
 ## Sequencer (working place)
 
@@ -52,7 +53,7 @@ In the past, music was recorded on a tape recorder, later on a multi-track recor
 
 In the past, we used to write everything down in notes, nowadays it is much easier to work with music optically or, rather, graphically. Everything is more intuitive and thus quicker. I will not teach you how to work with a sequencer, you will learn it on the Internet, I just want to show you the basic principle of tone editing, which is a genius invention. In the picture, you can see some "noodles" - they are tones. You can record them in the real time, draw them, shorten them, lengthen them or move them anywhere or delete them, and thus adjust your record. Isn´t it great? You can also hear them in the real time. That is how today we work with music. Of course, Cubase enables you to work also with notes, if you, for example, need to print the musicians´ parts.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00001-00010/try-20261114T114334-4bf6c9/document_artifacts/image_000001_d20938ff04d4bff008f9377039f7323445c1d97b306d0da6da8edb6ed5915b34.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00001-00010/try-20261114T114334-4bf6c9/document_artifacts/image_000001_d20938ff04d4bff008f9377039f7323445c1d97b306d0da6da8edb6ed5915b34.png -->
 
 ## Stereo and Mono (Space Where You Hear It)
 
@@ -114,33 +115,10 @@ AFRICA CANTUS CELTIC CINE SYMPONY LITE DELTA BLUES ELECTRICITY ERA ETHNO WORLD F
 - 962.4
 - F1
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<How-music-is-made-JOHN-VOJTOVITCH_EN.pdf#page=1>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_9cd45b09e63da1faf2e9c5986324a8f7b0ff2db249db088b11aaa686fbf8d3fd.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_b8e62aaf0b618867fe84a85bd497470551db8dffa60484c74e13a5c5449f988b.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_9f14f74198d6ece56aff9c5a6079412d2f0d2fc72c038053efcdb82ababf24c4.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_e14ee8a89329341bc2e5cf55a360b3c1078cfcd73b3703d0a205dce0716c93a1.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_a8618a222cd5652bc372d02e579409e676059a9fe87feb165ba1e616ee6738fd.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_d99dc11ea859ed847961a881cdb1982acc42fc4e3b4e4c79ae3b59e9a798d558.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_02102090b056dea9b258f1508184f46d688661daa9d68dc0ba2aef44839a4bbd.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_2bebe56e25ba584961a01637f3e8ccc8c73e13baaa3270027c577db24a2ec693.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_7613e94038fa10d58b3fd206d78903720811dbe57488fc62f83c77bdec4d6fcf.png>)
-
-![PDF-Seite 10](<document_artifacts/page_000010_fd7eef71acef48eb204d6e217d0486ae097f1af54a766557d56f3f98961e43ea.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/How-music-is-made-JOHN-VOJTOVITCH_EN.pdf#page=1>)
-
-<!-- PDF-Seiten 11–20 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00011-00020/try-20261114T114351-a362a6/document.md -->
+<!-- PDF-Seiten 11–20 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00011-00020/try-20261114T114351-a362a6/document.md -->
 
 AGENT DRUMS EDIROL ORCHESTRAL HYPER CANVAS QUARTET CELTIC ERA ERA UU CODEX VOCALOID3 AWANA Virtual effects: usually from Cubase system Sequencer: Cubase 8 Volume is a very important aspect. It is necessary to realize that it is not possible to work only on one system, each system of listening has its advantages and disadvantages. For example, if you kept listening to loud music all day, it would be very tiring, moreover, a human ear behaves a little strangely and there is no wonder -it is protected against destruction. If you keep listening for a long time and loudly, two problems wil arise:
 
@@ -171,7 +149,7 @@ Are you ready? OK, let´s start:
 
 To simplify, we can imagine a line of tones one after another (chromatically) passing through the universe. It keeps repeating over and over and it sounds like this:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00011-00020/try-20261114T114351-a362a6/document_artifacts/image_000000_a5be978031cc2e4deaf9c9b6830d6e837a141f2c28303a8bac5dff4dc93d6dff.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00011-00020/try-20261114T114351-a362a6/document_artifacts/image_000000_a5be978031cc2e4deaf9c9b6830d6e837a141f2c28303a8bac5dff4dc93d6dff.png -->
 
 If it sounds from the deepest to the highest tone - we will only hear the 9 octaves, but now memorize this 12-tone line so that you can name it at any time without thinking.
 
@@ -286,7 +264,7 @@ ais
 
 gis Now, when we are able to form scales and when you see the table in front of you, the whole music world is opening to you, but we still have to explain what a key is and what a chord is. Since almost everything in the universe is divided into three parts (an atom, an electron, a neutron), it is not different in music. To know the chord, you have to hear 3 tones; to recognize perfectly a key, you have to hear 3 chords.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00011-00020/try-20261114T114351-a362a6/document_artifacts/image_000001_a4b016c6fd65b07ddec8463c5563801f97a04d34ecfa76d43b09760837472b78.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00011-00020/try-20261114T114351-a362a6/document_artifacts/image_000001_a4b016c6fd65b07ddec8463c5563801f97a04d34ecfa76d43b09760837472b78.png -->
 
 ## Keys
 
@@ -362,7 +340,7 @@ Now that you know what the C7, Gmaj7, Dsus4, etc. chords are, I recommend moving
 
 If you want to use physical synthesizers, you need to connect them to your computer (in and out). As mentioned above, I use 128 channels (8 in and 8 out). In practice, this means that I can use multiple physical synthesizers. If you want to make your own sounds, you have to connect both in and out of a physical machine, a specific software editor then controls the machine through the computer and it sends back its data. The disadvantage of physical machines is a rather late latency, so you have to own a professional sound card. If you want to hang an effect behind the machine, I recommend doing it always on the computer, otherwise you might no longer be able to correct the recording. The advantage of physical (hardware) synthesizers is the specificity of sounds, special editors and standalone PCU units, due to which you do not overload your computer. On the other hand, virtual instruments are not so expensive, but unfortunately, they load your computer more. The example of my midi connection in the past:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00011-00020/try-20261114T114351-a362a6/document_artifacts/image_000002_03a0fa07a16eeb21f98f8f886bbf2cc759b38d34612c5e010895b59e7ffe6db6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00011-00020/try-20261114T114351-a362a6/document_artifacts/image_000002_03a0fa07a16eeb21f98f8f886bbf2cc759b38d34612c5e010895b59e7ffe6db6.png -->
 
 ## Sounds
 
@@ -412,33 +390,10 @@ There are 16 broadcast channels for one midi circuit, you can have one synthesiz
 - Klávesnice
 - Midi kytara
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 11](<How-music-is-made-JOHN-VOJTOVITCH_EN.pdf#page=11>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 11](<document_artifacts/page_000011_93b9981f96d492a64a60e458c39b2e0dd349f6dd185a63409f2ad88b6414bf23.png>)
-
-![PDF-Seite 12](<document_artifacts/page_000012_3417742e49c256bc64009f3db0915b2a3a595117f4035ecb1ad96ee98deefb4e.png>)
-
-![PDF-Seite 13](<document_artifacts/page_000013_2978233ba8ae7f2cad4b23d26aa6a02fad60b644f909c6ec4e3774037d4c8442.png>)
-
-![PDF-Seite 14](<document_artifacts/page_000014_ae80093f0fb535e8da2b39f44d92528ca3cf878228d3168c1583f8b811a4fc83.png>)
-
-![PDF-Seite 15](<document_artifacts/page_000015_5709a57fc4d3e2955ac916b2fe03f3ad8a189c894f0b882f5198547f045a8e0d.png>)
-
-![PDF-Seite 16](<document_artifacts/page_000016_e743df0beadcbe44f96973b1479f66c0483055f904c07a2e270efb2da52c4ffc.png>)
-
-![PDF-Seite 17](<document_artifacts/page_000017_046b4dd55a6d869deb0d29cd1de09871ffd2137093186fc26de25056a125d637.png>)
-
-![PDF-Seite 18](<document_artifacts/page_000018_97afb02eeabaef5ac45e6f15c716235bc8343f1b9ed5c9f32d4804f873f44c3c.png>)
-
-![PDF-Seite 19](<document_artifacts/page_000019_a4bb0c14db4e71d00fce1fa282770f8c1fd34b5b841bf2fe6b44c3cbd44a2974.png>)
-
-![PDF-Seite 20](<document_artifacts/page_000020_450d8497b5bb61372e0b2411dd8b61503feb93761f6fecdfac3709cf6a2bf07c.png>)
-
-
-[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/How-music-is-made-JOHN-VOJTOVITCH_EN.pdf#page=11>)
-
-<!-- PDF-Seiten 21–30 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00021-00030/try-20261114T114417-c41a07/document.md -->
+<!-- PDF-Seiten 21–30 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00021-00030/try-20261114T114417-c41a07/document.md -->
 
 Of course, every synthesizer is different, but they are similar. In addition, the manufacturers have tried to make the system compatible through various mappings such as GM, XG, and so on. But let´s not deal with it. I want to add to this topic that you are not limited with the physical midi interface in virtual instruments, which is great, because you can have many synthesizers regardless of your interface. Each synthesizer has 16 channels and you can load it repeatedly.
 
@@ -448,7 +403,7 @@ You cannot do without an analysis of what you have created. Imagine, if you were
 
 given composition, for example: 1. Composition description 2. Composition type 3. Beat 4. Pace 5. Tone 6. Verses + periods 7. Blocks 8. Chords 9. Dynamic peaks 10.Melodic joints 11. Comparison of the harmony of verses Here you can have a look at an analytic record of chords from my prepared album Monitors:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00021-00030/try-20261114T114417-c41a07/document_artifacts/image_000000_4e6b1648ef83b46fccda6ec01c4f8f1f0f70471d548b14351fe0251d19fcb31b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00021-00030/try-20261114T114417-c41a07/document_artifacts/image_000000_4e6b1648ef83b46fccda6ec01c4f8f1f0f70471d548b14351fe0251d19fcb31b.png -->
 
 Cubase sequencer is a great tool, it is popular for its simplicity and clarity. If you choose to add a track (you have 3 options): 1. Audio 2. Virtual instrument 3.Midi To add an analytical track, select the midi track, turn off all inputs and outputs, and you have the edit bar. You can cut it exactly according to the tact and pace. The point is the colouring of the foundation stones: 1.Tonic (white colour) 4. Subdominant (red colour) 5. Dominant (blue colour) That is how I control, for example, the chords, keys, joints, verses, blocks, and so on (see above).
 
@@ -468,19 +423,19 @@ Now we have got to the stage of concrete theory that will lead you to composing.
 
 Here are 2 theme title options:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00021-00030/try-20261114T114417-c41a07/document_artifacts/image_000001_c7cdf906c407b863327a630a55a8a9ab42a9711905471c2fd989df60da6225b1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00021-00030/try-20261114T114417-c41a07/document_artifacts/image_000001_c7cdf906c407b863327a630a55a8a9ab42a9711905471c2fd989df60da6225b1.png -->
 
 It is clear from the picture that A1 is the copied theme and the last note is edited, but the B theme is a completely new contrasting theme. Both options are correct, but for demonstration we choose the option with B to explain better the construction of the verse.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00021-00030/try-20261114T114417-c41a07/document_artifacts/image_000002_53d33c558697596e1c12195420bd87735d161003a8f04150d9c108f28289a1ea.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00021-00030/try-20261114T114417-c41a07/document_artifacts/image_000002_53d33c558697596e1c12195420bd87735d161003a8f04150d9c108f28289a1ea.png -->
 
 We will choose the option with B theme and copy it all. By copying the first period, a Verse was created. To complete the verse, we have to add the chords we played when we were inventing the themes. The part holds the rule that there must be at least 2 chords but the standard is 3 but there can be more. In this case we use the foundation stones - C, F, G.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00021-00030/try-20261114T114417-c41a07/document_artifacts/image_000003_f3dd01db3917a5604bc05a93d1e5d7013f576a658f1cba911718d0489b25581a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00021-00030/try-20261114T114417-c41a07/document_artifacts/image_000003_f3dd01db3917a5604bc05a93d1e5d7013f576a658f1cba911718d0489b25581a.png -->
 
 Hurray … we have the complete first verse. In case we choose the first option, the result will look like this:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00021-00030/try-20261114T114417-c41a07/document_artifacts/image_000004_a00634cff7d97b753e4cbfbb10e02615643cc409e9dbd3c7208913570378573a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00021-00030/try-20261114T114417-c41a07/document_artifacts/image_000004_a00634cff7d97b753e4cbfbb10e02615643cc409e9dbd3c7208913570378573a.png -->
 
 If we have composed the verse in this way, it is all right. There is the representation of three foundation harmonic stones. We have the copied A1 or the different B, (thus following the rule of unity or contrast), we have copied the period, thanks to which we have again followed the rule of unity. But let us return to the first scheme with the B option.
 
@@ -490,7 +445,7 @@ There is another miracle phenomenon. The transposition effect.
 
 The transposition effect is a certain rule when we follow the rule of unity by copying a period and changing the chords in the second period (it must be the foundation stones). Thus an effect arises - the rhythmization of melodies in the second period is the same (we can add the letter T to the theme)Thus we know that we have a transposition effect in the composition.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00021-00030/try-20261114T114417-c41a07/document_artifacts/image_000005_06bca849839d18128ef7cbcdabab80ef670bf5b1287ed9dae1ed1c28284d94d6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00021-00030/try-20261114T114417-c41a07/document_artifacts/image_000005_06bca849839d18128ef7cbcdabab80ef670bf5b1287ed9dae1ed1c28284d94d6.png -->
 
 The effect is created by transposing the same or very similar melodic formation into another chord. Generally, a transposition is a formation that is copied and vertically shifted up or down. Attention! It is not possible to keep the chord and change the rhythmization ... that would cancel the transposition effect, because we would not follow the rule of unity and it would not simply sound good. I have to add that the transposition effect concerns the main themes of compositions, the demonstration of ideas, et cetera. You can take some famous songs and analyze them, analyze the main themes, take apart the
 
@@ -622,33 +577,10 @@ Ideally, move harmonically on the first degree and think up a simple melody to t
 - A1·J
 - A1TJ
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 21](<How-music-is-made-JOHN-VOJTOVITCH_EN.pdf#page=21>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 21](<document_artifacts/page_000021_37be38960f58d39077c9b6c96bd1ba4059c8f2a90c246b21742f6dc1a12248ff.png>)
-
-![PDF-Seite 22](<document_artifacts/page_000022_dfd5c194b72f6e5015ef6a6b1665d8c49cfb47d645a7f4d8d23f72ea094a354e.png>)
-
-![PDF-Seite 23](<document_artifacts/page_000023_0c1f510e4f3b3d8e7a874bf6b9a07fa4045b0f796514dc9fc376b9bec7f3c57b.png>)
-
-![PDF-Seite 24](<document_artifacts/page_000024_584c1039292de5bb7dec72e2dae69d0f1330865fcc17486638a78a73ae411ca3.png>)
-
-![PDF-Seite 25](<document_artifacts/page_000025_18d3054a88b874f928488b8baa45e5a294848ae0e31a2b07282f8877ff7e9bc9.png>)
-
-![PDF-Seite 26](<document_artifacts/page_000026_d12b1f38c7b18a71687f7037650cb94dcdf026b6a8b2a499be8fe67e383ba165.png>)
-
-![PDF-Seite 27](<document_artifacts/page_000027_1fcc8ec9fdd7551fd7c8536223d39136baad1a740fe16982816a5fc575c58b4f.png>)
-
-![PDF-Seite 28](<document_artifacts/page_000028_aa42470d82ed65b81b010098be0b3403fca2982ac7d9b28b914d7bb22406c00d.png>)
-
-![PDF-Seite 29](<document_artifacts/page_000029_bb2d919ddbd7349602dbee9198e512384b2d1234748a2fb79f554ff9aaf5c250.png>)
-
-![PDF-Seite 30](<document_artifacts/page_000030_727211e072a90c9789919b9ee5ea82e2b8f34dd5443fac5defa1e37b34990ec0.png>)
-
-
-[Original-PDF, Seite 21](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/How-music-is-made-JOHN-VOJTOVITCH_EN.pdf#page=21>)
-
-<!-- PDF-Seiten 31–33 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00031-00033/try-20261114T114437-67bdcc/document.md -->
+<!-- PDF-Seiten 31–33 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00031-00033/try-20261114T114437-67bdcc/document.md -->
 
 The harmony of verses cannot avoid unity. That is why also this rule is a certain lead to make the second part. Sometimes it is enough to change two chords in the second part. In this case, copying makes sense again.
 
@@ -680,7 +612,7 @@ Once in a time it is good to break the outline with a one-piece verse. It is, in
 
 Of course, inspiration and certain improvisation also play and important role in my composing.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00031-00033/try-20261114T114437-67bdcc/document_artifacts/image_000000_4380f1c3c431d6ca3a633963ba0198bb3a5279190d4041b4f1c4c01745858a20.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/dfa8dc2abf47dc58/d3f6f9dfb2b4/00031-00033/try-20261114T114437-67bdcc/document_artifacts/image_000000_4380f1c3c431d6ca3a633963ba0198bb3a5279190d4041b4f1c4c01745858a20.png -->
 
 Thus we got to the end of my short and, as I believe, instructive publication. There is no doubt that a book could be written about every rule and also about further information from the branch of composing. I believe that if you use my advice, you will get very far. I have collected the information for many years and I really stand up to it. I wish you a lot of success on your compositional journey and I hope you will live a lot of pleasure and good luck. If you let me know what you have learnt or tell me your experience, I will be happy.
 
@@ -708,14 +640,5 @@ John Vojtovitch
 - Kontaks 5 02
 - i i Copy uof kyt
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 31](<document_artifacts/page_000031_f375f33809dc005be2502351b833bd21215b0974bbb09fdbc623e332db2d152b.png>)
-
-![PDF-Seite 32](<document_artifacts/page_000032_091b0be376370d685960aae168c99e268f2acf82446704e20b5404e7d64ac9c2.png>)
-
-![PDF-Seite 33](<document_artifacts/page_000033_a4214e49503aa42f15c48e624a54e3844e0598de623a10635a9b710ffb4d6b2c.png>)
-
-
-[Original-PDF, Seite 31](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/How-music-is-made-JOHN-VOJTOVITCH_EN.pdf#page=31>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 31](<How-music-is-made-JOHN-VOJTOVITCH_EN.pdf#page=31>)

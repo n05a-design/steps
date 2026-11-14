@@ -9,14 +9,15 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 2
 tabellen: 0
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `Popular_Music_Analysis_in_American_Music.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–9 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/3b2803ec2a78fa48/d3f6f9dfb2b4/00001-00009/try-20261114T125237-82beb8/document.md -->
+<!-- PDF-Seiten 1–9 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/3b2803ec2a78fa48/d3f6f9dfb2b4/00001-00009/try-20261114T125237-82beb8/document.md -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/3b2803ec2a78fa48/d3f6f9dfb2b4/00001-00009/try-20261114T125237-82beb8/document_artifacts/image_000000_e4d955b0b2a82d1e8de00bff5e3884ac4c8c924d58746d38484a1d6b6c14890a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/3b2803ec2a78fa48/d3f6f9dfb2b4/00001-00009/try-20261114T125237-82beb8/document_artifacts/image_000000_e4d955b0b2a82d1e8de00bff5e3884ac4c8c924d58746d38484a1d6b6c14890a.png -->
 
 ## ZGMTH
 
@@ -26,7 +27,7 @@ Neal, Jocelyn (2003/05): Popular Music Analysis in American Music Theory. ZGMTH 
 
 © 2003/05 Jocelyn Neal
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/3b2803ec2a78fa48/d3f6f9dfb2b4/00001-00009/try-20261114T125237-82beb8/document_artifacts/image_000001_4fbace6370d041901c9e089ecbb2bcca36f4649c7da18785059b5b1bf63e4923.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/3b2803ec2a78fa48/d3f6f9dfb2b4/00001-00009/try-20261114T125237-82beb8/document_artifacts/image_000001_4fbace6370d041901c9e089ecbb2bcca36f4649c7da18785059b5b1bf63e4923.png -->
 
 Dieser Text erscheint im Open Access und ist lizenziert unter einer Creative Commons Namensnennung 4.0 International Lizenz.
 
@@ -171,25 +172,5 @@ Just what constitutes analysis of popular music from a music-theoretic perspecti
 - Zak, Albin. 2001. The Poetics of Rock: Cutting Tracks, Making Records. Berkeley: University of California Press.
 - . 2004. "Bob Dylan and Jimi Hendrix: Juxtaposition and Transformation - All Along the Watchtower." Journal of the American Musicological Society 57: 599-644.
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_a605e51bed433e34bbd7ab9f3217f229eff1a535991f1f8f2d4f4f67a7cd62ab.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_6c6503cb5230f65ff1081d7cb50d1256d0f69f74c0a7a9022850b9629819f028.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_3e2acae3ce1c123ea1c36cd61fb348b3925cf840665ae8b0da35a70878850952.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_99c1205fa0f036b5d0ff6072bc020e8bff2cc39ba216d713317963bf030733a9.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_4e22e5c89d1e9b1c62a6b6dc6381eabdd48a247599bdeb01c4a1b75f0bb995b7.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_f68122cb6c28dd2e3314c8646ad904b2beee8e27959965d8007c71049e4731bf.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_83110445d961876d4dd5f6bffbe0ff95c1e5010564a115b3cfd0f8464321aff7.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_d2e48aa2cf7e17e0bf57e886b35041450a78a5b14b21ee231912a360867cc930.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_b72f1056a532ee6ae2f6ff9867f1afa3c20035df8ea5b5dc94a128e1df2cb3b9.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/Popular_Music_Analysis_in_American_Music.pdf#page=1>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<Popular_Music_Analysis_in_American_Music.pdf#page=1>)

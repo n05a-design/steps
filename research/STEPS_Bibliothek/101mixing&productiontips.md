@@ -9,26 +9,27 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 5
 tabellen: 0
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `101mixing&productiontips.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/e1d4a7d1a52cc1a6/d3f6f9dfb2b4/00001-00010/try-20261114T103926-8b61d4/document.md -->
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/e1d4a7d1a52cc1a6/d3f6f9dfb2b4/00001-00010/try-20261114T103926-8b61d4/document.md -->
 
 ## Music Habits
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/e1d4a7d1a52cc1a6/d3f6f9dfb2b4/00001-00010/try-20261114T103926-8b61d4/document_artifacts/image_000000_357b26a7595d5654666eab320e9d5180ca62e602f8aba2d6e1b33e010bd6b75b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/e1d4a7d1a52cc1a6/d3f6f9dfb2b4/00001-00010/try-20261114T103926-8b61d4/document_artifacts/image_000000_357b26a7595d5654666eab320e9d5180ca62e602f8aba2d6e1b33e010bd6b75b.png -->
 
 101 music habits &amp; production tips
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/e1d4a7d1a52cc1a6/d3f6f9dfb2b4/00001-00010/try-20261114T103926-8b61d4/document_artifacts/image_000001_5af0df63e8b881f337d4321d43e3baa650e289ea99a1f0933d45e54d5a57f205.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/e1d4a7d1a52cc1a6/d3f6f9dfb2b4/00001-00010/try-20261114T103926-8b61d4/document_artifacts/image_000001_5af0df63e8b881f337d4321d43e3baa650e289ea99a1f0933d45e54d5a57f205.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/e1d4a7d1a52cc1a6/d3f6f9dfb2b4/00001-00010/try-20261114T103926-8b61d4/document_artifacts/image_000002_1cb152ce3c567444a80c382735695ab004d56c2d6948c770c939a2f5aaadd1f2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/e1d4a7d1a52cc1a6/d3f6f9dfb2b4/00001-00010/try-20261114T103926-8b61d4/document_artifacts/image_000002_1cb152ce3c567444a80c382735695ab004d56c2d6948c770c939a2f5aaadd1f2.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/e1d4a7d1a52cc1a6/d3f6f9dfb2b4/00001-00010/try-20261114T103926-8b61d4/document_artifacts/image_000003_4ceece86d779e36157f5ff48982e24f85bf5bf80694417473332581d7eb593ab.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/e1d4a7d1a52cc1a6/d3f6f9dfb2b4/00001-00010/try-20261114T103926-8b61d4/document_artifacts/image_000003_4ceece86d779e36157f5ff48982e24f85bf5bf80694417473332581d7eb593ab.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/e1d4a7d1a52cc1a6/d3f6f9dfb2b4/00001-00010/try-20261114T103926-8b61d4/document_artifacts/image_000004_4b4b8b38dc668a0b2bb45e17130eedee21aa2b75079e2c5a217f8423b796e167.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/e1d4a7d1a52cc1a6/d3f6f9dfb2b4/00001-00010/try-20261114T103926-8b61d4/document_artifacts/image_000004_4b4b8b38dc668a0b2bb45e17130eedee21aa2b75079e2c5a217f8423b796e167.png -->
 
 A handbook of many essential tricks for music makers
 
@@ -112,33 +113,10 @@ your sounds to 8 or 12bit with a sampling rate of 10-20khz. 36. Don't worry abou
 - 41. By layering a sampled loop with a reverse phased copy of itself, you can often get clean sounds in the left & right speakers that were previously obscured by bass or vocals. This is a great way to make use of samples you might otherwise find unusable. It doesn't always work, but when it does, it gives you access to some pretty cool sounds.
 - 42. Sidechaining is a great way to keep your kicks sounding clean & give your parts a rhythmic "pumping" sound. To do this you'll need a Compressor plugin that is capable of sidechaining. You will drag the compressor to the track you want to add that "pumping" sound to & then there will be an option to choose what track to sidechain from. Typically people like to sidechain to a kick drum for the classic sidechain sound, but you can get really creative by trying other instruments to sidechain to. The setting on your compressor will usually have the threshold between -30 & -50db, ratio around 5:1, a fast attack & the decay between 150-350ms. Adjust the decay until you get the right timing & feel. Adjust the threshold for a more or less dramatic effect.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<101mixing&productiontips.pdf#page=1>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_49b73f211ff774a1f54ce5c17bff51e6b532df13ef85721aa3e835974d1b2c68.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_2162b0a4888a8d0c4b579d8fc327309b2f1ac46e39b16cf6748c4eacd77d1541.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_6844afff2ba0b5493755f696dc7cafd184e73f153be691856178c868a6412e1f.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_1f736419ec8a53aaa5aa8fe1fe12d9b93057ccf685d40a85c82763e7511d7900.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_0e560e883bb13dd3135566133de6de286d11ba0c68661938fe7ce634f559e48c.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_9e5e0e75a6deb4001366762b124332fe60bb2a942075e065b7f15a8131e947b3.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_5f9aa51e1226ed4c74c7b840bc5f73a84f462ee1ff9cce405a25d4a710716c6b.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_2a0d9c5fd460d23f9c278a1334e513d98048accf40a172d78a759dcb7b706698.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_900d5311445dd5ca251ce190a25f67b3123a29c0ff9e205019861ce06cee5e41.png>)
-
-![PDF-Seite 10](<document_artifacts/page_000010_bc3cab0504181b7d04a53b0edb0f343dd06b4859f27aaf2d5ef8859112310e10.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/101mixing%26productiontips.pdf#page=1>)
-
-<!-- PDF-Seiten 11–20 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/e1d4a7d1a52cc1a6/d3f6f9dfb2b4/00011-00020/try-20261114T103939-767e24/document.md -->
+<!-- PDF-Seiten 11–20 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/e1d4a7d1a52cc1a6/d3f6f9dfb2b4/00011-00020/try-20261114T103939-767e24/document.md -->
 
 ## Sends/Returns
 
@@ -260,33 +238,10 @@ This way when you get distracted &amp; try to jump on to Facebook, you'll be qui
 - 98. Take time to make the first elements of your song sound inspiring, whether it be adding little details to your drums or coming up with a great chord structure. This is important, as the rest of your tune will be inspired by these parts. Failing to do this can result in you realizing that no matter how much time & how many layers you put into a song, it's not going to excite you or the listener.
 - 100. Collaborating with other artists is one of the best ways to boost your knowledge & gain some powerful production techniques. It's best to work with someone who has strengths where you have weaknesses.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 11](<101mixing&productiontips.pdf#page=11>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 11](<document_artifacts/page_000011_6e870e5f46810aa16f9c19f192986cdb3e9107eba7762ce5468df06695512080.png>)
-
-![PDF-Seite 12](<document_artifacts/page_000012_f414a61c1f538cce53f7e6c5816d150adfcb11a4bb8841b1727d2a1af4e1177b.png>)
-
-![PDF-Seite 13](<document_artifacts/page_000013_4a5a67b72c4c06e2b25a7ed3596833613626bd438a39325c361cd8618dc92f97.png>)
-
-![PDF-Seite 14](<document_artifacts/page_000014_28b2a3e6be4c1de50f507206c42edd160edf4f61f56c696d65c32045e6a2afa2.png>)
-
-![PDF-Seite 15](<document_artifacts/page_000015_68f6803e6356f0c633bc318505c0c68a4b2356728756a8ddb6ceff472ea6d080.png>)
-
-![PDF-Seite 16](<document_artifacts/page_000016_2a1e2fd3a6f6968c2c130347d3d7824562ef1c60b82eeff72d0999969c91889c.png>)
-
-![PDF-Seite 17](<document_artifacts/page_000017_f2b48a9ea9903ab2d4deb2a518120ffffb0824621dff542746087a8f766fcff6.png>)
-
-![PDF-Seite 18](<document_artifacts/page_000018_68ecf452b02aed3243138a83bfecf019c43a366ba69dfef938d3a834384b21cc.png>)
-
-![PDF-Seite 19](<document_artifacts/page_000019_c1bb6d14d00a380ef18f8def6b4c14f1c362b3ccf416da50ac2c3f304d9c9baa.png>)
-
-![PDF-Seite 20](<document_artifacts/page_000020_02401f9cbe046561317afbfaa87f79cb3c5ab6f03fb1f801a49afaf7ebf9c159.png>)
-
-
-[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/101mixing%26productiontips.pdf#page=11>)
-
-<!-- PDF-Seiten 21–21 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/e1d4a7d1a52cc1a6/d3f6f9dfb2b4/00021-00021/try-20261114T103950-c9ff11/document.md -->
+<!-- PDF-Seiten 21–21 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/e1d4a7d1a52cc1a6/d3f6f9dfb2b4/00021-00021/try-20261114T103950-c9ff11/document.md -->
 
 101. Work on 1 song at a time. Don't build a cool sounding riff or 16 bar loop &amp; then abandon it to start another idea. You'll never finish anything, and finished songs is all anyone cares about, not how much time you've spent in the studio. If you don't push through songwriting obstacles right when you come across them, you'll never gain the skills that will make you more productive on future songs.
 
@@ -296,10 +251,5 @@ And I'll leave you with an important final rule: All rules are made to be broken
 
 - 101. Work on 1 song at a time. Don't build a cool sounding riff or 16 bar loop & then abandon it to start another idea. You'll never finish anything, and finished songs is all anyone cares about, not how much time you've spent in the studio. If you don't push through songwriting obstacles right when you come across them, you'll never gain the skills that will make you more productive on future songs.
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 21](<document_artifacts/page_000021_a183c69099fc3d6e5d3d969b92973a9a3b2e488cf3badd32610e8543338d53b8.png>)
-
-
-[Original-PDF, Seite 21](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/101mixing%26productiontips.pdf#page=21>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 21](<101mixing&productiontips.pdf#page=21>)

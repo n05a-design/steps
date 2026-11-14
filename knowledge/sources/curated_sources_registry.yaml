@@ -96,9 +96,9 @@ sources:
   description: Normative definition of Channel 10 percussion note map (35-81), Standard MIDI Files (SMF) Format 0/1/2, PPQ time division.
 
 - id: SRC-0010
-  title: Harmony and Voice Leading (4th Edition)
+  title: Harmony and Voice Leading (3rd Edition)
   filename: Schachter_Aldwell-Harmony_Voice_Leading.pdf
-  author: Edward Aldwell, Carl Schachter, Allen Cadwallader
+  author: Edward Aldwell, Carl Schachter
   format: application/pdf
   rights_class: ACADEMIC_STUDY_REVIEWED
   status: approved
@@ -123,7 +123,7 @@ sources:
   rights_class: ACADEMIC_STUDY_REVIEWED
   status: approved
   domains: [M04, M05, M06]
-  description: Chord classification based on interval root weight, tension vectors, and contrapuntal motion without arbitrary parallel dogmas.
+  description: Concise exercise-based course in four-part traditional harmony (1943/44) covering principal and secondary triads, inversions, V7 and its derivatives (V9, V13), non-chord tones, alteration, secondary dominants, augmented sixth chords, and modulation; parallel fifths and octaves are prohibited with explicitly stated exceptions. Not Hindemith's own system from The Craft of Musical Composition.
 
 - id: "SRC-013"
   short_title: "Aldwell_Schachter_Harmony_VoiceLeading"

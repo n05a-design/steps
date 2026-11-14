@@ -9,12 +9,13 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 12
 tabellen: 1
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `THE_ELEMENTS_OF_MUSIC.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–8 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document.md -->
+<!-- PDF-Seiten 1–8 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document.md -->
 
 ## CHAPTER 1
 
@@ -49,11 +50,11 @@ Largo = "large" or labored (slow) Adagio = slow Andante = steady "walking" tempo
 
 Presto = very fast
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000000_9e72fbba25f74d990a8cf64ead78383c4d30127f0ff9a7408f7e409d640d7249.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000000_9e72fbba25f74d990a8cf64ead78383c4d30127f0ff9a7408f7e409d640d7249.png -->
 
 - METER: Beats organized into recognizable/recurring accent patterns. Meter can be seen/felt through the standard patterns used by conductors.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000001_c75f9211e9009e4959ff5e518f0a48e225518beb8dcc7559ec379bd7ccbdea36.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000001_c75f9211e9009e4959ff5e518f0a48e225518beb8dcc7559ec379bd7ccbdea36.png -->
 
 Other basic terms relating to Rhythm are:
 
@@ -89,7 +90,7 @@ Diminuendo (or decrescendo) : gradually getting QUIETER
 
 Accent: "punching" or "leaning into" a note harder to temporarily emphasize it.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000002_1600586207e4a72b8493a7a5ad57a885007830d51de5b3acf9e0c929d106ac27.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000002_1600586207e4a72b8493a7a5ad57a885007830d51de5b3acf9e0c929d106ac27.png -->
 
 ## MELODY
 
@@ -110,7 +111,7 @@ Melodies can be described as:
 
 Harmony is the VERTICALIZATION of pitch. Often, harmony is thought of as the art of combining pitches into chords (several notes played simultaneously as a "block"). These chords are usually arranged into sentence-like patterns called chord progressions.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000003_3653331cab7b5864dd9431e644e92627e64ad7eba72ac300c736428e173bdf08.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000003_3653331cab7b5864dd9431e644e92627e64ad7eba72ac300c736428e173bdf08.png -->
 
 Harmony is often described in terms of its relative HARSHNESS:
 
@@ -149,25 +150,25 @@ NOTE: Be careful not to confuse the number of musical lines with the number of p
 
 Music with only one note sounding at a time (having no harmony or accompaniment).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000004_f17cb788fff71af55a041355f06741625b8340da6f1ecae6f8443128a606edb7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000004_f17cb788fff71af55a041355f06741625b8340da6f1ecae6f8443128a606edb7.png -->
 
 ## Homophonic texture:
 
 Music with two or more notes sounding at a the same time, but generally featuring a prominent melody in the upper part, supported by a less intricate harmonic accompaniment underneath (often based on homogenous chords-BLOCKS of sound).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000005_c8fb9657286c4baa8e8da062aa7e4e7c4e54db757ccff0f7298dd806e3178fdc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000005_c8fb9657286c4baa8e8da062aa7e4e7c4e54db757ccff0f7298dd806e3178fdc.png -->
 
 ## Polyphonic texture:
 
 Music with two or more independent melodies sounding at the same time. The most intricate types of polyphonic texture- canon and fugue-may introduce three, four, five or more independent melodies simultaneously! This manner of writing is called COUNTERPOINT.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000006_6c4b470daede1ced14098bfbad08659b158f979e323a11fc19056a8ac72379d0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000006_6c4b470daede1ced14098bfbad08659b158f979e323a11fc19056a8ac72379d0.png -->
 
 ## Imitative texture:
 
 Imitation is a special type of polyphonic texture produced whenever a musical idea is ECHOED from "voice" to "voice". Although imitation can be used in monophonic styles, it is more prevalent in polyphonic art-musicespecially from the Renaissance and Baroque periods.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000007_c898a7124cd6bf9133ec2421531a0a8b29fbf9c43d3f408a58b91b9e49e706a3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000007_c898a7124cd6bf9133ec2421531a0a8b29fbf9c43d3f408a58b91b9e49e706a3.png -->
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -187,11 +188,11 @@ Through-composed a structure in which there is no repeat or return of any large-
 
 Binary Form a two-part form in which both main sections are repeated (as indicated in the diagram by "repeat marks"). The basic premise of this form is CONTRAST:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000008_5545b59710f9d6a608eae4296316626e30ed2bbfc42ff2516354f56c849d762a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000008_5545b59710f9d6a608eae4296316626e30ed2bbfc42ff2516354f56c849d762a.png -->
 
 Ternary Form a three-part form featuring a return of the initial music after a contrasting section. Symmetry and balance are achieved through this return of material:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000009_e7bd69d99411275cd9a04f56785b31847941c5dc381b6991bc4b6a1085a5af15.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000009_e7bd69d99411275cd9a04f56785b31847941c5dc381b6991bc4b6a1085a5af15.png -->
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -225,7 +226,7 @@ This era witnessed an explosion of flamboyance, nationalism, the rise of "supers
 
 Since approximately 1900, art-music has been impacted by daring experimentation and advances in musical technology, as well as popular/non-Western influences. Leading composers of the early 20th century were Debussy, Schoenberg and Stravinsky, while many of the most prominent composers since 1950 have come from the US.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000010_43e3cef07aaef9232b59d0874f556b1febfb355eebe1f1071dc184c30b3086ce.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000010_43e3cef07aaef9232b59d0874f556b1febfb355eebe1f1071dc184c30b3086ce.png -->
 
 1934 Misc. Orchestral
 
@@ -235,7 +236,7 @@ by Benjamin BRITTEN (1913-76)
 
 Outline of the structure of this work:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000011_9808d29bf882bf48f88e5805011d8c3af83fcb4fb2c00042f139ed183a9908a0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/812fdfd20e9a7b86/d3f6f9dfb2b4/00001-00008/try-20261114T150419-1ecfb3/document_artifacts/image_000011_9808d29bf882bf48f88e5805011d8c3af83fcb4fb2c00042f139ed183a9908a0.png -->
 
 Kamien 4-CD set CD1/Tracks 13-37
 
@@ -341,24 +342,5 @@ Benjamin Britten was the most important British composer of the 20th century. He
 - Timpani, snare drum & wood block
 - Timpani, castanets & gong
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_eab427ecc5333736a90dda1f2d23c837099bd3d8f60166b3dbc729ee920611df.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_98c39ae3a5eaa0189cceeee8308a78d8ffecbfcd300427f0d419d8dd354f4af2.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_cf55f53e21eeec96b150a8becb5df9e02c3342c29df89cb25c090084dd27bca8.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_a0987fae7aa68ddadcb5efddc62b8046d9bcf4602e780f362dca47d36d0acd61.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_a1cedcf27c79b3d4d31776be0acb8703efeb8b8c85759fa96346ab0d3bb40aad.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_ea5f3102e2651a58ffb33fcc2804f79814ca28e349162a7d9149304223058ba6.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_fd02fff74e5e9c70100c320d21bbb6b535757036d52b91d9e3f7bd7addddf568.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_3c4f6fd9c4dd5e21c8fd700705584674094a6ec0134597ee98651efd14cb09d2.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/THE_ELEMENTS_OF_MUSIC.pdf#page=1>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<THE_ELEMENTS_OF_MUSIC.pdf#page=1>)

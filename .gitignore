@@ -231,3 +231,36 @@ secrets/
 *.pem
 *.key
 credentials.json
+
+# ==========================================
+# Rechteklasse E (restricted_local), Entscheidung des Inhabers vom 14.11.2026
+# Originale und Volltext-Extrakte bleiben lokal; im Repository stehen nur
+# eigene Zusammenfassungen unter research/STEPS_Bibliothek/Zusammenfassungen/.
+# Siehe research/gaps/RECHTEINVENTAR_VOLLTEXTE_2026-11-14.md
+# ==========================================
+/research/STEPS_Bibliothek/Fundamentals of Music Proce_ (Z-Library).pdf
+/research/STEPS_Bibliothek/Fundamentals of Music Proce_ (Z-Library).md
+/research/STEPS_Bibliothek/Schachter_Aldwell-Harmony_Voice_Leading.pdf
+/research/STEPS_Bibliothek/Schachter_Aldwell-Harmony_Voice_Leading.md
+/research/STEPS_Bibliothek/Schoenberg_Arnold_Theory_of_Harmony_1983.pdf
+/research/STEPS_Bibliothek/Schoenberg_Arnold_Theory_of_Harmony_1983.md
+/research/STEPS_Bibliothek/the_practice_of_harmony_3rd_ed_peter_spencer.pdf
+/research/STEPS_Bibliothek/the_practice_of_harmony_3rd_ed_peter_spencer.md
+/research/STEPS_Bibliothek/The-Complete-Book-of-Scales-Chords-Arpeggios-Cadences.pdf
+/research/STEPS_Bibliothek/The-Complete-Book-of-Scales-Chords-Arpeggios-Cadences.md
+/research/STEPS_Bibliothek/Creative Sequencing Techniques for Music Production_ A practical guide to Logic- Digital Performer- Cubase and Pro Tools.pdf
+/research/STEPS_Bibliothek/Creative Sequencing Techniques for Music Production_ A practical guide to Logic- Digital Performer- Cubase and Pro Tools.md
+/research/STEPS_Bibliothek/MakingMusic_DennisDeSantis.pdf
+/research/STEPS_Bibliothek/MakingMusic_DennisDeSantis.md
+/research/STEPS_Bibliothek/MakingMusic.pdf
+/research/STEPS_Bibliothek/MakingMusic.md
+/research/STEPS_Bibliothek/Dokumentation (unsortiert)/MakingMusic.pdf
+/research/STEPS_Bibliothek/Dokumentation (unsortiert)/MakingMusic.md
+/research/STEPS_Bibliothek/L-0002916879.pdf
+/research/STEPS_Bibliothek/L-0002916879.md
+/research/STEPS_Bibliothek/Dokumentation (unsortiert)/L-0002916879.pdf
+/research/STEPS_Bibliothek/Dokumentation (unsortiert)/L-0002916879.md
+/research/STEPS_Bibliothek/IMSLP342443-PMLP552428-hindemithTraditionalHarmonyBook.pdf
+/research/STEPS_Bibliothek/IMSLP342443-PMLP552428-hindemithTraditionalHarmonyBook.md
+/research/STEPS_Bibliothek/1500-chord-progressions-walter-1.pdf
+/research/STEPS_Bibliothek/1500-chord-progressions-walter-1.md

@@ -9,12 +9,13 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 1
 tabellen: 0
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `Circle_Mel_mi_Modes.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–2 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/400983fe5b750bfc/d3f6f9dfb2b4/00001-00002/try-20261114T103922-746630/document.md -->
+<!-- PDF-Seiten 1–2 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/400983fe5b750bfc/d3f6f9dfb2b4/00001-00002/try-20261114T103922-746630/document.md -->
 
 ## The Circle of "Melodic minor Modes"
 
@@ -53,7 +54,7 @@ Warm Regards Oliver Prehn, NewJazz YouTube channel: https://www.youtube.com/c/ne
 
 And many many thanks to my YT subscriber and Patron "nupfe" from Germany who has redesigned the discs and made them really smart and handy. Your work has been extravagant and so exceptionally helpful!!!
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/400983fe5b750bfc/d3f6f9dfb2b4/00001-00002/try-20261114T103922-746630/document_artifacts/image_000000_3d6f7d10a32786efd3d85268ef934a96622963125056bafd867cce444c024e6c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/400983fe5b750bfc/d3f6f9dfb2b4/00001-00002/try-20261114T103922-746630/document_artifacts/image_000000_3d6f7d10a32786efd3d85268ef934a96622963125056bafd867cce444c024e6c.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -78,12 +79,5 @@ And many many thanks to my YT subscriber and Patron "nupfe" from Germany who has
 - [mi65]
 - Hai dim.
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_5432eb03697a5f470e154b87d00a6813f1d65e736d877c06756ba25335b40077.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_4a3c16d1d90fb126cf47acea04fce72931a33ef7bfa7a3d69cc458187e3d222a.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/competitors/Produktbilder/4%20x%20Wheels%20of%207/Circle_Mel_mi_Modes.pdf#page=1>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<Circle_Mel_mi_Modes.pdf#page=1>)

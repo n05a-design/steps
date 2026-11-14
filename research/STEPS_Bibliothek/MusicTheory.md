@@ -9,12 +9,13 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 852
 tabellen: 105
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `MusicTheory.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00001-00010/try-20261114T122120-7cadd3/document.md -->
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00001-00010/try-20261114T122120-7cadd3/document.md -->
 
 Music Theory for the 21st-Century Classroom
 
@@ -99,32 +100,10 @@ Tacoma, Washington 2017
 | 6 Triads  35  6.1 Introduction to Triads . . . . . . . . . . . . . . . . . . . . . . . 35  6.2 Lead-Sheet Symbols . . . . . . . . . . . . . . . . . . . . . . . . 35  6.3 Inverted Triads . . . . . . . . . . . . . . . . . . . . . . . . . . . 37  6.4 Analyzing Chords . . . . . . . . . . . . . . . . . . . . . . . . . . 37  6.5 Simple "Sus" Chords . . . . . . . . . . . . . . . . . . . . . . . . 39  6.6 Practice Exercises . . . . . . . . . . . . . . . . . . . . . . . . . 41  7 Roman Numerals and Cadences  43  7.1 Roman Numeral Chord Symbols . . . . . . . . . . . . . . . . . 43  7.2 Diatonic Chords in Major . . . . . . . . . . . . . . . . . . . . . 44  7.3 Diatonic Chords in Minor . . . . . . . . . . . . . . . . . . . . . 44  7.4 Cadences . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 45  7.5 Practice Exercises . . . . . . . . . . . . . . . . . . . . . . . . . 53  8 Seventh Chords  55  8.1 Introduction to Seventh Chords . . . . . . . . . . . . . . . . . . 55  8.2 The IV/5 "sus" chord . . . . . . . . . . . . . . . . . . . . . . . . 56  8.3 Roman Numerals of Diatonic Seventh Chords . . . . . . . . . . 57  8.4 Practice Exercises . . . . . . . . . . . . . . . . . . . . . . . . . 58  9 Harmonic Progression and Harmonic Function  59  9.1 The Circle of Fifths Progression . . . . . . . . . . . . . . . . . . 59  9.2 Harmonic Rhythm . . . . . . . . . . . . . . . . . . . . . . . . . 64  9.3 Shorter Progressions from the Circle of Fifths . . . . . . . . . . 65  9.4 Harmonic Function . . . . . . . . . . . . . . . . . . . . . . . . . 72  9.5 Exceptions Created by Harmonic Sequences . . . . . . . . . . . 83  9.6 The Subtonic VII Chord in Popular Music . . . . . . . . . . . . 85  9.7 The Best-Seller Progression . . . . . . . . . . . . . . . . . . . . 87  9.8 The i-VII-VI-VII Progression . . . . . . . . . . . . . . . . . . . 90  9.9 Practice Exercises . . . . . . . . . . . . . . . . . . . . . . . . . 93  10 Non-Chord Tones  97  10.1 Introduction to Non-Chord Tones . . . . . . . . . . . . . . . . 97  10.2 Passing Tones . . . . . . . . . . . . . . . . . . . . . . . . . . . . 97  10.3 Neighbor Tones . . . . . . . . . . . . . . . . . . . . . . . . . . . 99  10.4 Appoggiatura . . . . . . . . . . . . . . . . . . . . . . . . . . . . 99  10.5 Escape Tone . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 100  10.6 Double Neighbor . . . . . . . . . . . . . . . . . . . . . . . . . . 102  10.7 Anticipation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 103  10.8 Pedal Point . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 104  10.9 Suspension . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 106  10.10Retardation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 109  10.11Incomplete Neighbor . . . . . . . . . . . . . . . . . . . . . . . . 110  10.12Adding Non-Chord Tones to a Chord Progression . . . . . . . 111  10.13Practice Exercises . . . . . . . . . . . . . . . . . . . . . . . . . 113  11 Melodic Analysis  117  11.1 Motive . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 117  11.2 Melodic Alteration . . . . . . . . . . . . . . . . . . . . . . . . . 121  11.3 Fragment . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 127  11.4 Phrase . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 128  11.5 Subphrase . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 131  11.6 Practice Exercises . . . . . . . . . . . . . . . . . . . . . . . . . 134   |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<MusicTheory.pdf#page=1>)
 
-![PDF-Seite 1](<document_artifacts/page_000001_3fbdb8835c49c4e37eb0fd7bdeb92d555e721ff534f9a55e335961fd33acb116.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_d970a724c915239448874e40bb6596e70ca950229ee1e4057fe261df81aafb87.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_3cff7a66457e4ca5ef97c06751d82ba0a0bc0e2be47b9d99a6f70bf0734a359c.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_dca3840a946efe3f5b0caebfd0ae67e3f7eb734651546178f3537121e8e7b277.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_3541819322aa88f77035c8347b198348815f33229351c22fbe7905ce0c5945fc.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_4598e8ac48628e2c315be9f641446f0222af233e9f63f70bdc414a92d135f6cf.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_28304dcb5e44f40741332778d3c0ceb75eff909707e7d2db97bdd65da84cbd7a.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_20e39a733d96e4ecb7d2b9265ad51f3471f34e58c89dbe94130281c4d272c3a2.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_0c2bc5d1733d315c6c7274b4494587c5aba3baf71203bed84eddc83e1de10b76.png>)
-
-![PDF-Seite 10](<document_artifacts/page_000010_e0bbcfc3a3d67eb36945ace5a752348e3fb715ffc470bed7cdb221f989de7437.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=1>)
-
-<!-- PDF-Seiten 11–20 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document.md -->
+<!-- PDF-Seiten 11–20 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document.md -->
 
 |                              |                                                                            |                                                                                               |             |
 |------------------------------|----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|-------------|
@@ -327,7 +306,7 @@ Tacoma, Washington 2017
 
 Pitch has to do with notes. On the piano there are 88 notes. As you move to
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000000_3f629e79d853896495a40d2cef6ffb7da6360d526189dccb7db20adf1bf00fb7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000000_3f629e79d853896495a40d2cef6ffb7da6360d526189dccb7db20adf1bf00fb7.png -->
 
 Notes are written on a five-line staff. A clef orients the lines to a reference
 
@@ -355,7 +334,7 @@ Every Good Boy Does Fine A C
 
 E
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000001_6d5acb9b61ed8aa82435db63460a1aac7a3553c60110e8bc6afeef06e00a718f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000001_6d5acb9b61ed8aa82435db63460a1aac7a3553c60110e8bc6afeef06e00a718f.png -->
 
 second line from the top, creates the bass clef. See the example for the names
 
@@ -369,7 +348,7 @@ w w
 
 ?
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000002_6f86c9e30d7e05346dde5e16f296f69b78981e47b2ef0a1cc50f0d12b77f0355.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000002_6f86c9e30d7e05346dde5e16f296f69b78981e47b2ef0a1cc50f0d12b77f0355.png -->
 
 1
 
@@ -389,7 +368,7 @@ w w w ?
 
 ## 1.3 Octave Registers
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000003_45f6b0099089bebd3211ecc4a7e85c322b91c23699053277c36d8ec51bfbc3a4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000003_45f6b0099089bebd3211ecc4a7e85c322b91c23699053277c36d8ec51bfbc3a4.png -->
 
 &amp;
 
@@ -467,7 +446,7 @@ notes are eight steps apart.)
 
 Good Boys Do Fine Always ledger lines
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000004_54af37c0c1d7ac4db9322bec66a7cfe9d0972c0ee01f287926bc2f9e969ee403.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000004_54af37c0c1d7ac4db9322bec66a7cfe9d0972c0ee01f287926bc2f9e969ee403.png -->
 
 A B C D E F G A
 
@@ -481,7 +460,7 @@ above or below is called an octave (abbreviated "8ve").
 
 How can the piano keyboard have 88 notes when there are only seven note
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000005_5b0790d66cfdaa0c7b672194bb0e697c182d65f42e09faba50b04f058530a540.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000005_5b0790d66cfdaa0c7b672194bb0e697c182d65f42e09faba50b04f058530a540.png -->
 
 &amp;
 
@@ -521,7 +500,7 @@ B
 
 1.4. ACCIDENTALS
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000006_8f37c963a5f05155eeed173a03946af53b56b04772023606e64e16de660c4774.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000006_8f37c963a5f05155eeed173a03946af53b56b04772023606e64e16de660c4774.png -->
 
 ## 1.5 Enharmonic Notes
 
@@ -543,7 +522,7 @@ Observe that C 4 and D 2 are the same note on the piano but are written as diffe
 
 CHAPTER 1. BASIC CONCEPTS
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000007_f01c08fc69cb0f6dcae9f08f0f3b30b76aaa52c3072a6b274cc23872a621dafc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000007_f01c08fc69cb0f6dcae9f08f0f3b30b76aaa52c3072a6b274cc23872a621dafc.png -->
 
 ## Chapter 2
 
@@ -551,7 +530,7 @@ CHAPTER 1. BASIC CONCEPTS
 
 2.1 Half Steps and Whole Steps
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000008_6351314a8b7c1e0e38136cf12803beb5223efcb8305cc951e1e124fc70c04f98.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000008_6351314a8b7c1e0e38136cf12803beb5223efcb8305cc951e1e124fc70c04f98.png -->
 
 ## 2.2 The Major Scale
 
@@ -573,7 +552,7 @@ CHAPTER 2. MAJOR SCALES AND KEY SIGNATURES
 
 tetrachord tetrachord
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000009_6d13585878356a1b140f8003fd5f799dff2cdfe42d9b63d7d8139193b245e1bb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00011-00020/try-20261114T122253-ebc6ba/document_artifacts/image_000009_6d13585878356a1b140f8003fd5f799dff2cdfe42d9b63d7d8139193b245e1bb.png -->
 
 B
 
@@ -680,33 +659,10 @@ B
 - œ œ œ œ œ œ ˙ œ œ œ œ œ œ ˙ œ œ œ œ œ œ ˙
 - Figure 2.3.1: "Twinkle, Twinkle, Little Star" in D major
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 11](<MusicTheory.pdf#page=11>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 11](<document_artifacts/page_000011_d097c7a1f89240848a3b40fff197702c23552aac6ef54378cb27e2b0573addc6.png>)
-
-![PDF-Seite 12](<document_artifacts/page_000012_49006cfee6d2643b8ba86fdf4806a1cbac1655be6829ca17a1eba2c41e316c5c.png>)
-
-![PDF-Seite 13](<document_artifacts/page_000013_6989eba5d623a9fcee6cffa34ac1d6f55c2f7229b16f2733ba2be6d87a4a29bc.png>)
-
-![PDF-Seite 14](<document_artifacts/page_000014_61ae40354d352343ad28ae9d9088062a03c575807cbb7028ab4556a4b48b137a.png>)
-
-![PDF-Seite 15](<document_artifacts/page_000015_f3fecc174e03b3a15e7ca265558a5d5e8f39c9eb2ef7706e797fadbd069a3b04.png>)
-
-![PDF-Seite 16](<document_artifacts/page_000016_aa65aae2e365a3505a2e28ee129651855a5313c28ae5c78b72ecdb2fa53f8c2b.png>)
-
-![PDF-Seite 17](<document_artifacts/page_000017_7509a4d4bdee9962d2fc45fcc797a88a5b76942f7f0e0d0dba1e938a0dd160c8.png>)
-
-![PDF-Seite 18](<document_artifacts/page_000018_6e1b5d57c6aaea6ca2483a12a07c274a1e7032e86a68436e701623565a7fd923.png>)
-
-![PDF-Seite 19](<document_artifacts/page_000019_7662f03d17b34148e22434d26b45364267ee0fbe6cf2a17baac4537ce460fb0d.png>)
-
-![PDF-Seite 20](<document_artifacts/page_000020_90a356ca94a09c51bde030fed61ae982b6ed2b9479c687589b1de956f4461e1d.png>)
-
-
-[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=11>)
-
-<!-- PDF-Seiten 21–30 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document.md -->
+<!-- PDF-Seiten 21–30 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document.md -->
 
 W W H W
 
@@ -722,7 +678,7 @@ flats in the key signature. The other key signatures can have between 1 to 7
 
 # # œ œ œ œ œ œ ˙ œ œ œ œ œ œ ˙ œ œ œ œ œ œ ˙
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000000_19137edd671ef775428ea8e917c5d42de1a1602cf839f9e0e55f50eb71926b82.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000000_19137edd671ef775428ea8e917c5d42de1a1602cf839f9e0e55f50eb71926b82.png -->
 
 It is important to memorize the order of sharps and flats, since you will be writing key signatures regularly.
 
@@ -738,7 +694,7 @@ A helpful learning device to remember the order of keys in relation to the order
 
 Figure 2.3.4: Circle of Fifths for Major Keys
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000001_a92e914107465414e7dab4ca59e7e4210fbebdcf54d7d9390ec49354616d20e5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000001_a92e914107465414e7dab4ca59e7e4210fbebdcf54d7d9390ec49354616d20e5.png -->
 
 Note the overlapping keys at the bottom of the circle. B major is enharmonically the same as C 2 major, F 4 major is enharmonically the same as G 2 major, and C 4 major is enharmonically the same as D 2 major.
 
@@ -785,11 +741,11 @@ While it is preferable to memorize key signatures, use the following method to d
 
 77
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000002_d751b21ea54412fa05e6568cd22c8399b0d06033959547e07ab397efdebdde6e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000002_d751b21ea54412fa05e6568cd22c8399b0d06033959547e07ab397efdebdde6e.png -->
 
 Db major scale A major scale
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000003_b335ad4a9f34380cda19c828178aed6695b30b6b47776eb4c1c383359856d6f2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000003_b335ad4a9f34380cda19c828178aed6695b30b6b47776eb4c1c383359856d6f2.png -->
 
 2.4. PRACTICE EXERCISES
 
@@ -799,11 +755,11 @@ Db major scale A major scale
 
 9
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000004_f5eeea9d5a25a0f39d8a558bbb62b97d12583902dc134210520d6805c2cd00dc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000004_f5eeea9d5a25a0f39d8a558bbb62b97d12583902dc134210520d6805c2cd00dc.png -->
 
 using key signatures. A¯≤ major scale C˜ major scale
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000005_3def8cd89e575506daa066af10ab8c901579ee5c8463098f374deeabbcf02e42.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000005_3def8cd89e575506daa066af10ab8c901579ee5c8463098f374deeabbcf02e42.png -->
 
 D¯≤ major scale A major scale
 
@@ -851,7 +807,7 @@ b b b
 
 C˜ major scale
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000006_708d09ee128a544379598e183a51ffb1c2c66ad8e48d3e78ff0c9ad5f134309b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000006_708d09ee128a544379598e183a51ffb1c2c66ad8e48d3e78ff0c9ad5f134309b.png -->
 
 \_\_\_\_
 
@@ -905,7 +861,7 @@ b b
 
 #
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000007_42d578df070c254da9452ea566c07022cd2cfca860223008aa8ebdb578b75de9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000007_42d578df070c254da9452ea566c07022cd2cfca860223008aa8ebdb578b75de9.png -->
 
 ? b b b b b b
 
@@ -929,7 +885,7 @@ b b b b b
 
 1. A major 2. B¯≤ major 3. F˜ major 4. D¯≤ major 5. D major
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000008_19893027a870de8954077d6f7ad48122e0b89c119819eb60a537783e00c54ed2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000008_19893027a870de8954077d6f7ad48122e0b89c119819eb60a537783e00c54ed2.png -->
 
 &amp; # # #
 
@@ -963,9 +919,9 @@ b b b b b b b
 
 ?
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000009_df4aa092523c2bb1c79b1a0210642b252d1c8bb677542781d7060e8dc61c22af.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000009_df4aa092523c2bb1c79b1a0210642b252d1c8bb677542781d7060e8dc61c22af.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000010_8a1e83dcd820897ac51a87fd6262a4ede221b2dac9326e2f54f0ebcd661df489.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000010_8a1e83dcd820897ac51a87fd6262a4ede221b2dac9326e2f54f0ebcd661df489.png -->
 
 &amp;
 
@@ -975,11 +931,11 @@ b b b b b b b
 
 ?
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000011_30706e0f0d73413cb13d3a39feab364dc184fef7bafd4a05d321c54af52a31d9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000011_30706e0f0d73413cb13d3a39feab364dc184fef7bafd4a05d321c54af52a31d9.png -->
 
 83
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000012_3481b2c20f4022a79f15874a87108f346c357bf943c33c4188fd4bf83cd5f675.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000012_3481b2c20f4022a79f15874a87108f346c357bf943c33c4188fd4bf83cd5f675.png -->
 
 &amp;
 
@@ -1013,7 +969,7 @@ B b b b b b b b
 
 So far, we have looked at minor scales in relation to the major scale. However, we will typically encounter minor scales in music using minor key signa-
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000013_ec45b35b7a5c9ddd6dde4b6dc1458b7ce7b4df562345148dfe2cbbb084d23969.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000013_ec45b35b7a5c9ddd6dde4b6dc1458b7ce7b4df562345148dfe2cbbb084d23969.png -->
 
 73
 
@@ -1023,7 +979,7 @@ So far, we have looked at minor scales in relation to the major scale. However, 
 
 75
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000014_e2d11a4aaaaa687b546c1e6578f6aac0e9ce06ac120c049045a6f2ca585cbf9c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000014_e2d11a4aaaaa687b546c1e6578f6aac0e9ce06ac120c049045a6f2ca585cbf9c.png -->
 
 75
 
@@ -1057,7 +1013,7 @@ So far, we have looked at minor scales in relation to the major scale. However, 
 
 Figure 3.2.1
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000015_7c06d53ca4af0a60988ef62591062fff705b6ab75da3c46ac965aaa9ca462325.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000015_7c06d53ca4af0a60988ef62591062fff705b6ab75da3c46ac965aaa9ca462325.png -->
 
 75
 
@@ -1067,7 +1023,7 @@ Figure 3.2.1
 
 B b b b b b b b
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000016_a5826d8c3185aff63cd337a9b9290889c8b193333386cd47f7e72227577176bb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000016_a5826d8c3185aff63cd337a9b9290889c8b193333386cd47f7e72227577176bb.png -->
 
 58
 
@@ -1100,7 +1056,7 @@ B b b b b b b b
 
 15
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000017_91bc7c81093dc691dbcf0040fec87b6a96ccd42b9565dfc8499c95cb5dbf635f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000017_91bc7c81093dc691dbcf0040fec87b6a96ccd42b9565dfc8499c95cb5dbf635f.png -->
 
 ˆ
 
@@ -1118,7 +1074,7 @@ b 6
 
 ˆ7
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000018_ae3b2ddc50a2ea7dfc06d6b8bcbafe7b68ca509cd339716d97c0788fe8966d72.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000018_ae3b2ddc50a2ea7dfc06d6b8bcbafe7b68ca509cd339716d97c0788fe8966d72.png -->
 
 natural minor
 
@@ -1134,7 +1090,7 @@ b 6
 
 œ œœœ œœ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000019_bd7d9620d63db0afe046dc0e936166068b91a8cd5a140690c188bbfa67751de5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000019_bd7d9620d63db0afe046dc0e936166068b91a8cd5a140690c188bbfa67751de5.png -->
 
 &amp; b b C
 
@@ -1172,7 +1128,7 @@ n œ œ œ œ œ œ œ
 
 œ œ Œ œœ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000020_24a756b8cb7da5f2c8cf3c23a052597ea878d885a651f143a692b0d08af503b4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000020_24a756b8cb7da5f2c8cf3c23a052597ea878d885a651f143a692b0d08af503b4.png -->
 
 n œœœœœ
 
@@ -1190,13 +1146,13 @@ n œ
 
 œœœ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000021_4be89a74cca0d9095015f3bb98f0a6216aaa1a2b1ac5e94dae657e23c94ce4ef.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000021_4be89a74cca0d9095015f3bb98f0a6216aaa1a2b1ac5e94dae657e23c94ce4ef.png -->
 
 Figure 3.2.4: J.S. Bach, Well-Tempered Clavier, Book One, Fugue 2 in C
 
 Minor
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000022_68abd1030ccfa56c84d1b378d16313d6548fe28871ea33218a23220b9a9cd342.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000022_68abd1030ccfa56c84d1b378d16313d6548fe28871ea33218a23220b9a9cd342.png -->
 
 ˆ
 
@@ -1258,7 +1214,7 @@ HW
 
 3. Write the minor key signature for the given key in each example.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000023_1ce2ed52ea7f12e890f0d75887d66ed9a00bd40574d130b884e3b395d20dca9a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000023_1ce2ed52ea7f12e890f0d75887d66ed9a00bd40574d130b884e3b395d20dca9a.png -->
 
 ?
 
@@ -1652,7 +1608,7 @@ b b b b b b b b
 
 2. Write the minor key signature and specified minor scale in each example.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000024_9af85d4565a10d1be3190316ffbe112b6ea773e0e9b6d85d828fa2d6c1443740.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00021-00030/try-20261114T122344-5efa6f/document_artifacts/image_000024_9af85d4565a10d1be3190316ffbe112b6ea773e0e9b6d85d828fa2d6c1443740.png -->
 
 (include key signature)
 
@@ -1797,33 +1753,10 @@ HW
 - B melodic minor scale
 - F harmonic minor scale
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 21](<MusicTheory.pdf#page=21>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 21](<document_artifacts/page_000021_8c74b776870ad74a1a8f4aab68a6a12eefc381db3a2d6ac4b9bcd3ddf2a223ee.png>)
-
-![PDF-Seite 22](<document_artifacts/page_000022_04fad9f7162fef391c4e41996ce5e69d7b9a43bca9858fd62d705821fd5b5f29.png>)
-
-![PDF-Seite 23](<document_artifacts/page_000023_9eda217c566907d642e222874915c3756610a845f7a0cf4bd171f87cdeed8eb0.png>)
-
-![PDF-Seite 24](<document_artifacts/page_000024_76aead40ec730111d103d7d5b365021b29fc0c90f3b25c986545eb0fe60dbd37.png>)
-
-![PDF-Seite 25](<document_artifacts/page_000025_50191d87eced8007befcec7701e250ac0c25c51dc9d67e08c50a342da70d1bcf.png>)
-
-![PDF-Seite 26](<document_artifacts/page_000026_9480035c0e6fb718bb36741c672da135310f6e195e674ea6bd0d6e9105bc0c0b.png>)
-
-![PDF-Seite 27](<document_artifacts/page_000027_de7e507e61a7ddd4dd8ed925cf61b7563ab6d60c7ad3f040fb9b875ba506771b.png>)
-
-![PDF-Seite 28](<document_artifacts/page_000028_b8cd43dd94e7a20413e5778f4b61f3a1c2b12db813e3de324d8954428b515cc0.png>)
-
-![PDF-Seite 29](<document_artifacts/page_000029_0047a0f191cfb390cbc4526e4c0005a4502aab8f7bcc1e4100d334bce6733223.png>)
-
-![PDF-Seite 30](<document_artifacts/page_000030_d8892c8a08bdfd03a6eb2ebfac2533d1586818a9d6bede4b65fa3b12b2cd0fcd.png>)
-
-
-[Original-PDF, Seite 21](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=21>)
-
-<!-- PDF-Seiten 31–40 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document.md -->
+<!-- PDF-Seiten 31–40 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document.md -->
 
 ## 3.4. PRACTICE EXERCISES 17
 
@@ -1846,11 +1779,11 @@ Click here to download the homework.
 
 In relation to rhythm in music, we will discuss time signatures, durational symbols, meter, beat, pulse, tempo.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000000_35e10fa8935af0251635659f7e04d3b250978b005efb098886970cbdbaba137d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000000_35e10fa8935af0251635659f7e04d3b250978b005efb098886970cbdbaba137d.png -->
 
 To put this information into practice, listen to the durational values double in speed in each measure of the following example.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000001_2ca1a704afb8f364e1f208e8b17014205f6c79c4b5b3d1e3b1cf57afefbcd812.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000001_2ca1a704afb8f364e1f208e8b17014205f6c79c4b5b3d1e3b1cf57afefbcd812.png -->
 
 11
 
@@ -1862,7 +1795,7 @@ To put this information into practice, listen to the durational values double in
 
 ∑
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000002_07a4e22664375896daa86bd9256f71be1e839d0077a35c0ecc432b038429e864.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000002_07a4e22664375896daa86bd9256f71be1e839d0077a35c0ecc432b038429e864.png -->
 
 112
 
@@ -1874,7 +1807,7 @@ A tie links two notes together to create a new duration. Ties occur between
 
 notes of the same pitch. A slur, which looks like a tie, is placed over or under
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000003_7d7f8a35832aa2432e175f6171cd92a4a7faed79d082797932d4982e0c828afe.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000003_7d7f8a35832aa2432e175f6171cd92a4a7faed79d082797932d4982e0c828afe.png -->
 
 112
 
@@ -1892,7 +1825,7 @@ notes of the same pitch. A slur, which looks like a tie, is placed over or under
 
 4.4 Meter
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000004_d63176fc1a3883a2b3eb8b4bcc889d03eeb0eb4169aa57ee4ade57babd969d37.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000004_d63176fc1a3883a2b3eb8b4bcc889d03eeb0eb4169aa57ee4ade57babd969d37.png -->
 
 Tuplet is a generic term that describes a grouping of notes that would not normally occur within a beat.
 
@@ -1940,7 +1873,7 @@ two beats="duple"
 
 œœœœœœ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000005_333db7f53187c820552856ccf1068ebede59bb18d91ba48ac464578beb4990f5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000005_333db7f53187c820552856ccf1068ebede59bb18d91ba48ac464578beb4990f5.png -->
 
 118
 
@@ -1980,7 +1913,7 @@ four beats="quadruple"
 
 ˙
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000006_407b04423b775e05692b457ef398e10efb31a68f154068e86073143025b89ff9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000006_407b04423b775e05692b457ef398e10efb31a68f154068e86073143025b89ff9.png -->
 
 .
 
@@ -2002,11 +1935,11 @@ Figure 4.5.1: Two measures that sound the same
 
 &amp;
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000007_91150399276a24b1b7403377db6d33a1ac3a4b41cdaf09122c166963889e7987.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000007_91150399276a24b1b7403377db6d33a1ac3a4b41cdaf09122c166963889e7987.png -->
 
 126
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000008_831de98836dc82d794a76c8f234a500db1c7cb1d5ee5cdb06c1daa3febbed3de.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000008_831de98836dc82d794a76c8f234a500db1c7cb1d5ee5cdb06c1daa3febbed3de.png -->
 
 120
 
@@ -2062,7 +1995,7 @@ four eighth notes to occur with the span of a dotted quarter note.
 
 œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000009_bb0a3606592ad01749dccd030a02d95acaea8962c5290771a992d94b0eef7a53.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000009_bb0a3606592ad01749dccd030a02d95acaea8962c5290771a992d94b0eef7a53.png -->
 
 The standard practice when notating rhythms is to use beaming to show where
 
@@ -2070,7 +2003,7 @@ the beginning of each beat occurs.
 
 Consider the following example:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000010_c35b9cb6d20c129502dcd24fe56d20ac9b1b8b5f930dcdf25d9e8bb84e84d179.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000010_c35b9cb6d20c129502dcd24fe56d20ac9b1b8b5f930dcdf25d9e8bb84e84d179.png -->
 
 &amp; 4 4 J œ œ œ œ œ œ œ œ œ œ œ
 
@@ -2078,7 +2011,7 @@ It is difficult to discern where the downbeats are.
 
 downbeats?
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000011_6bed2af00d8438a842f704edc99813cd770d9868e93c153c0f1b3323d751d6fa.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000011_6bed2af00d8438a842f704edc99813cd770d9868e93c153c0f1b3323d751d6fa.png -->
 
 &amp; 4 4 J œ œ œ œ œ œ œ œ œ œ œ
 
@@ -2088,9 +2021,9 @@ Here is the same rhythm correctly notated. The downbeats provide a ref-
 
 In compound meters like 68 , the beat is the dotted quarter.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000012_8a2ff671cdebc94a9d9602947ae5dd00115fa687b530c3a66ff2992ad9d5c6a7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000012_8a2ff671cdebc94a9d9602947ae5dd00115fa687b530c3a66ff2992ad9d5c6a7.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000013_4a1259917c76e489a02f4ca8c9ad788deacf007198b9600bc64c4edd8198a964.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000013_4a1259917c76e489a02f4ca8c9ad788deacf007198b9600bc64c4edd8198a964.png -->
 
 127
 
@@ -2104,13 +2037,13 @@ In compound meters like 68 , the beat is the dotted quarter.
 
 127
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000014_66a0f027a1a03abc298fbc21d490a5a9650658d79d0a398b3cad5cfd5afac933.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000014_66a0f027a1a03abc298fbc21d490a5a9650658d79d0a398b3cad5cfd5afac933.png -->
 
 4.7. PRACTICE EXERCISES
 
 25
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000015_abbf899b5920b25e4edb9b3bf8de55d07b28231af26135563e216f542b7f7b66.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000015_abbf899b5920b25e4edb9b3bf8de55d07b28231af26135563e216f542b7f7b66.png -->
 
 19
 
@@ -2186,7 +2119,7 @@ CHAPTER 4. BASICS OF RHYTHM
 
 .
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000016_706dc6c7e68c695a95578956751c4552445e294858ac63486aa30f2198a120f9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000016_706dc6c7e68c695a95578956751c4552445e294858ac63486aa30f2198a120f9.png -->
 
 œ
 
@@ -2202,7 +2135,7 @@ Beethoven, Op. 110, III, mm. 124-125
 
 .
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000017_b7e3818f254e28b70c054efeae5e2084d3d9ade2d26aedd97b023b5136195660.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000017_b7e3818f254e28b70c054efeae5e2084d3d9ade2d26aedd97b023b5136195660.png -->
 
 ?
 
@@ -2278,7 +2211,7 @@ Corelli, Op. 5, No. 1, mm. 12-15
 
 ∑
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000018_51c3b5f7351379fb57ca5feb3de4806751a14e431a8ba4a112c2bc72f4b5c454.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000018_51c3b5f7351379fb57ca5feb3de4806751a14e431a8ba4a112c2bc72f4b5c454.png -->
 
 R œ ≈≈Œ.‰.
 
@@ -2398,7 +2331,7 @@ b. Time Signature: Meter:
 
 Mozart, K. 283, III, mm. 187-190
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000019_ae8d09f90b63b0fbb69bd99a66056dd73755099ae6ce3333b05fcbda5ba5c1e5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000019_ae8d09f90b63b0fbb69bd99a66056dd73755099ae6ce3333b05fcbda5ba5c1e5.png -->
 
 23
 
@@ -2488,7 +2421,7 @@ b
 
 10. A¯≤ minor
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000020_afe957d988ff74bee872383dd821691d97bf7b42ac41ad00742fc451cdaa14ed.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000020_afe957d988ff74bee872383dd821691d97bf7b42ac41ad00742fc451cdaa14ed.png -->
 
 11. E¯≤ minor
 
@@ -2554,7 +2487,7 @@ Example
 
 œ œ œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000021_d22795e45db3e80dc99b63f0005d3ee7cc78d883280a3182445cc507e55cb8a0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00031-00040/try-20261114T122413-617598/document_artifacts/image_000021_d22795e45db3e80dc99b63f0005d3ee7cc78d883280a3182445cc507e55cb8a0.png -->
 
 =
 
@@ -2878,33 +2811,10 @@ HW
 - 9. B¯≤ minor
 - 10. E minor
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 31](<MusicTheory.pdf#page=31>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 31](<document_artifacts/page_000031_657eede23c5bcd2c74c68c86984182834e20c2b87215723fd523e440734b9b40.png>)
-
-![PDF-Seite 32](<document_artifacts/page_000032_92c33f8c339f7f7e4b7f1f63b4e03ca7bc472e67c703f8aa295cde9277e8aeaf.png>)
-
-![PDF-Seite 33](<document_artifacts/page_000033_80016d2cd4ba99f38687b44f16c36cbd3c27cc72f7b7201a05e99f47d94a0440.png>)
-
-![PDF-Seite 34](<document_artifacts/page_000034_17161ce0f93f6b3a665ef372b58a9d5ad62c156845e3ddcef9fe4901a83f5d65.png>)
-
-![PDF-Seite 35](<document_artifacts/page_000035_29b5cf998b48eff6847a762a616390980d26e4286a96671573a88f7df54e98f8.png>)
-
-![PDF-Seite 36](<document_artifacts/page_000036_f3e71048564692aea3cc4c3ce898b861731824fda128841ed2a777524a94a67f.png>)
-
-![PDF-Seite 37](<document_artifacts/page_000037_f8d08f322b324e099d2d2c4bdc80f960351312ff7b8fb8dd73c548b03bc01db1.png>)
-
-![PDF-Seite 38](<document_artifacts/page_000038_07fae541d4abd7d31c6988135ec52e4024db9d9e114c22d56a169f30c9cb7bb8.png>)
-
-![PDF-Seite 39](<document_artifacts/page_000039_a25f6630ffbb0a0949cffaa5b2b5fc86f8b8d170c62d21b1b3bb6450e6b826e7.png>)
-
-![PDF-Seite 40](<document_artifacts/page_000040_ca46e8d0d1276da3df1433b52759347f30de658ef72ae25f34efe6cf3625a813.png>)
-
-
-[Original-PDF, Seite 31](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=31>)
-
-<!-- PDF-Seiten 41–50 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document.md -->
+<!-- PDF-Seiten 41–50 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document.md -->
 
 4. Correct the incorrect rhythmic notation in each example in order to show
 
@@ -2914,7 +2824,7 @@ above the rhythms to be corrected.
 
 11
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000000_c2241f166e3e36618a0c88447f2861c9bd7bd32aa1e188a531663f6d732b06dd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000000_c2241f166e3e36618a0c88447f2861c9bd7bd32aa1e188a531663f6d732b06dd.png -->
 
 383 Click here to download the homework.
 
@@ -2930,7 +2840,7 @@ above the rhythms to be corrected.
 
 148
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000001_8b6cafae5648c40373c7d487b2ebb2baef3f74a46afb117ac1ac345e6855ddf9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000001_8b6cafae5648c40373c7d487b2ebb2baef3f74a46afb117ac1ac345e6855ddf9.png -->
 
 &amp; # 4 4
 
@@ -2939,7 +2849,7 @@ above the rhythms to be corrected.
 
 5.2 How to Identify Perfect, Major, and Minor Intervals
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000002_41eb0620fe979c005bcfed0825824d20bb49c89c89357f2c4b9e2fd61d19088d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000002_41eb0620fe979c005bcfed0825824d20bb49c89c89357f2c4b9e2fd61d19088d.png -->
 
 Here are two methods for identifying intervals.
 
@@ -2958,7 +2868,7 @@ tonic (the first note of the scale). Remember that all the notes above the tonic
 
 12
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000003_b471af338cafd9f320a78f33162f2709d2c6a35de3583cd0609aa823ad191adf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000003_b471af338cafd9f320a78f33162f2709d2c6a35de3583cd0609aa823ad191adf.png -->
 
 instead of G˜
 
@@ -2981,7 +2891,7 @@ The second method is to memorize how many half steps there are in each interval.
 
 # # #
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000004_033bbf96dac7bea74425168969264b7385c3f480cdde9db8cb9df12539429bce.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000004_033bbf96dac7bea74425168969264b7385c3f480cdde9db8cb9df12539429bce.png -->
 
 10 half steps = m7
 
@@ -3005,11 +2915,11 @@ n w
 
 counting half steps
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000005_e48b7de979f7dee27d42f00df9a667f067f5c5fa58920ea00a4ba28e9686e8e9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000005_e48b7de979f7dee27d42f00df9a667f067f5c5fa58920ea00a4ba28e9686e8e9.png -->
 
 219 Augmented intervals are one half step larger than perfect or major intervals
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000006_037cb01787b286fc32eec4c0fde570b691c1844383de939a122d3a4175ff0eaf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000006_037cb01787b286fc32eec4c0fde570b691c1844383de939a122d3a4175ff0eaf.png -->
 
 &amp;
 
@@ -3027,9 +2937,9 @@ interval can be augmented or diminished.
 
 Here are musical examples illustrating the continuum of interval quality.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000007_a5d6c4175fbe26032ab8100c53154748bdf1cf4bdd92775bcd969c3262336601.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000007_a5d6c4175fbe26032ab8100c53154748bdf1cf4bdd92775bcd969c3262336601.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000008_d6adccf063e51ae3caad58ba3798d4707b92a106742025bfa430de08dfab28a3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000008_d6adccf063e51ae3caad58ba3798d4707b92a106742025bfa430de08dfab28a3.png -->
 
 210
 
@@ -3085,7 +2995,7 @@ CHAPTER 5. INTERVALS
 
 third
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000009_0888437e3b47fc1ecd89f199cf504f26e4c3067abb23a5862ea8c20eeb3a6564.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000009_0888437e3b47fc1ecd89f199cf504f26e4c3067abb23a5862ea8c20eeb3a6564.png -->
 
 245
 
@@ -3117,7 +3027,7 @@ third
 
 238
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000010_452c1858cf39fe311f1d30e4f3da351575de83334de3921cc7dd8fdceca3313f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000010_452c1858cf39fe311f1d30e4f3da351575de83334de3921cc7dd8fdceca3313f.png -->
 
 HW
 
@@ -3177,7 +3087,7 @@ ww
 
 minor third
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000011_060ce9374f5784b8619b3c127b2128fdeed69a613af6a0a3925647e361d0b132.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000011_060ce9374f5784b8619b3c127b2128fdeed69a613af6a0a3925647e361d0b132.png -->
 
 w
 
@@ -3283,7 +3193,7 @@ w
 
 ww
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000012_ed404b130e0a3827c1229473a15bf877c51d5d914b8c6572b3931f844d42c91f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000012_ed404b130e0a3827c1229473a15bf877c51d5d914b8c6572b3931f844d42c91f.png -->
 
 Fifth
 
@@ -3291,7 +3201,7 @@ Fifth Fifth Fifth
 
 augmented third Beethoven, Op. 127, II, mm. 100-102
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000013_38cb8b99213605d2d9175a0e5044369f36f33f8f6411317e6b0e25c5b5f5e05e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000013_38cb8b99213605d2d9175a0e5044369f36f33f8f6411317e6b0e25c5b5f5e05e.png -->
 
 &amp;
 
@@ -3339,7 +3249,7 @@ b
 
 www m3
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000014_3770574d0e5bb6098f7cfd767efed37231d5149692c472b1d2322d2e1c2dba6d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000014_3770574d0e5bb6098f7cfd767efed37231d5149692c472b1d2322d2e1c2dba6d.png -->
 
 jazz. These symbols allow a guitarist or pianist to choose how to "voice" the
 
@@ -3347,7 +3257,7 @@ chords, i.e., how they want to arrange the notes.
 
 C major triad in different voicings-all chords below contain only C, E, and G
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000015_2dcb697ef746a45d9a599b360b1b3c664a1aaac30962fbbfb1f6ff495246f1ea.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000015_2dcb697ef746a45d9a599b360b1b3c664a1aaac30962fbbfb1f6ff495246f1ea.png -->
 
 Lead-sheet symbols for triads communicate the root and quality of a chord.
 
@@ -3373,7 +3283,7 @@ augmented C-E-G 4
 
 Here is a musical example with lead-sheet symbols and guitar tablature.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000016_2b06d2c8ddbf684ae0992ed850bca83499a0f0af321f7981c53a83b4475c7484.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00041-00050/try-20261114T122441-859179/document_artifacts/image_000016_2b06d2c8ddbf684ae0992ed850bca83499a0f0af321f7981c53a83b4475c7484.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -3679,33 +3589,10 @@ Here is a musical example with lead-sheet symbols and guitar tablature.
 - (e.g., C◦ ) while augmented triads are represented by including the augmented
 - symbol after the root (C+).
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 41](<MusicTheory.pdf#page=41>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 41](<document_artifacts/page_000041_eda9fca1f41c50cb187f72193d96b19e383f34479113ca56a69e26a200b3a60b.png>)
-
-![PDF-Seite 42](<document_artifacts/page_000042_fc4b63b685bd93e1ad84b3638353d28b004241685aa3b6ca3d698c54477fe6d8.png>)
-
-![PDF-Seite 43](<document_artifacts/page_000043_611a7d1e51ce00ee69781d3566bcda77556d3034ecee6370b56d0d854ab3abf5.png>)
-
-![PDF-Seite 44](<document_artifacts/page_000044_aeb6d06b64b968dbeeeebc5d2c6bb8a2e90c299ea8722588451d7c9da7bf4fa6.png>)
-
-![PDF-Seite 45](<document_artifacts/page_000045_b5fefe9bd629904638aef877adbf846c8653d9f89aa387d0802e70534f0a9111.png>)
-
-![PDF-Seite 46](<document_artifacts/page_000046_38cf6b5ae8953c031ba05cc357258c13bab43a32ff1bb19e575b976811067684.png>)
-
-![PDF-Seite 47](<document_artifacts/page_000047_cb71f9589e59307746cbcbc77605480e23632751d87edb454617b8291cce3908.png>)
-
-![PDF-Seite 48](<document_artifacts/page_000048_0958908e0f7a35f97f50fa20039cf323eeb4345aa01312289e973d080cf326e0.png>)
-
-![PDF-Seite 49](<document_artifacts/page_000049_737ae97cdbd642f650480996fd0dae3e94caf14968511e12f0ed667c73e54d07.png>)
-
-![PDF-Seite 50](<document_artifacts/page_000050_2a935f81c28ebcb7b47198e6d4db6f479f102fa004cd0c073ab7ded1c2147be4.png>)
-
-
-[Original-PDF, Seite 41](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=41>)
-
-<!-- PDF-Seiten 51–60 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document.md -->
+<!-- PDF-Seiten 51–60 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document.md -->
 
 77
 
@@ -3727,7 +3614,7 @@ Here is a musical example with lead-sheet symbols and guitar tablature.
 
 37
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000000_f33cb863bd71fbb4651a3e7fa239964849b14180bf399f8ad6de6675cfd7764a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000000_f33cb863bd71fbb4651a3e7fa239964849b14180bf399f8ad6de6675cfd7764a.png -->
 
 when the fifth of the chord is the lowest note.
 
@@ -3757,7 +3644,7 @@ w w w
 
 w E
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000001_fdb772272799a92bb4d8250aca8045b658f46a0c6b7d0aa33b7e704a86b5f1cf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000001_fdb772272799a92bb4d8250aca8045b658f46a0c6b7d0aa33b7e704a86b5f1cf.png -->
 
 www
 
@@ -3807,7 +3694,7 @@ w ww
 
 E
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000002_b8ffa436f5286f2cc35bfcf5a45d0ab8ddcab62601c303f5fe026c11d9c5790f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000002_b8ffa436f5286f2cc35bfcf5a45d0ab8ddcab62601c303f5fe026c11d9c5790f.png -->
 
 411
 
@@ -3825,13 +3712,13 @@ Now, try the process again.
 
 ∑
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000003_195a01c90e85076efc338e21829071efccea82e430b55d6d6bdde5a69bc05be4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000003_195a01c90e85076efc338e21829071efccea82e430b55d6d6bdde5a69bc05be4.png -->
 
 w w
 
 Since the lowest note is G, the chord is inverted. Our lead-sheet symbol is E◦ /G, which means we have an E◦ chord with a G in the bass.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000004_4e7daad634fc39687f07d1dca582ac36eb9d437900a8ac1f1c1ad6243481a357.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000004_4e7daad634fc39687f07d1dca582ac36eb9d437900a8ac1f1c1ad6243481a357.png -->
 
 Common in popular music are "sus" chords, with "sus" being a shortening of "suspended, " a term we will study in the chapter on non-chord tones.
 
@@ -3864,7 +3751,7 @@ Csus2
 
 (also Csus9)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000005_f4557414c1fa5bb4092976a785823ebb30670a8bb330b79428e64b92548d917e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000005_f4557414c1fa5bb4092976a785823ebb30670a8bb330b79428e64b92548d917e.png -->
 
 92
 
@@ -3884,9 +3771,9 @@ w
 
 w
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000006_e5940bca4535f8e55870ed9f5d8b7d7fc3ba11bdef23bf472e0692c04d753d9b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000006_e5940bca4535f8e55870ed9f5d8b7d7fc3ba11bdef23bf472e0692c04d753d9b.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000007_5e5c6f0833dc3b9b090ed320e62fe31534b75b91af2150c58101471b00eace08.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000007_5e5c6f0833dc3b9b090ed320e62fe31534b75b91af2150c58101471b00eace08.png -->
 
 296
 
@@ -3972,7 +3859,7 @@ f
 
 c
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000008_6a6eb7306862f3655cda23ee6ef928b55ee02d254018f62e395abb73fc9547a5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000008_6a6eb7306862f3655cda23ee6ef928b55ee02d254018f62e395abb73fc9547a5.png -->
 
 B-D-F 4
 
@@ -4012,11 +3899,11 @@ The following table offers more examples.
 | a     | iv/5th       | D      | ˆ4                   | D-F-A            | A           |
 | D     | vii◦ /3rd    | C 4    | ˆ7                   | C 4 -E-G         | E           |
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000009_f20cb004f2c17571f9a5f77b6902b8cece315a4ceae416c227036d2b5a9713e2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000009_f20cb004f2c17571f9a5f77b6902b8cece315a4ceae416c227036d2b5a9713e2.png -->
 
 229
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000010_2ed4ae5d661957e117361689448a872cccdeabc020e00179ff80edf35328298e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000010_2ed4ae5d661957e117361689448a872cccdeabc020e00179ff80edf35328298e.png -->
 
 Notice that both VII (the "subtonic triad") and vii◦ (the "leading-tone triad") are included. The subtonic triad (VII), built on the lowered ˆ7 that occurs in natural minor, regularly occurs in circle of fifth progressions in minor and in rock and pop music, while the leading-tone triad (vii◦ ), built on raised ˆ7 , is usually either a passing harmony or has dominant function.
 
@@ -4035,7 +3922,7 @@ We've been studying harmony-triads and chords. A cadence is a harmonic arrival p
 
 Figure 7.4.1: Francis Scott Key and John Stafford Smith, "Star-Spangled Banner"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000011_affa7e341f896e3cfcc5a73ffa7a4f80d14a60e052cc2b1dce11c9f0cb428d28.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000011_affa7e341f896e3cfcc5a73ffa7a4f80d14a60e052cc2b1dce11c9f0cb428d28.png -->
 
 In the example above, the notes surrounded by parentheses are non-chord tones, which will be studied later. Also, there are seventh chords in this example, which we will study in the next chapter.
 
@@ -4043,7 +3930,7 @@ Here is another example ending with an authentic cadence.
 
 10
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000012_e3c72ee2fa956f0bd286f00657cec457d2106b3bad6c189077bff01eeeb35fbd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00051-00060/try-20261114T122509-e865d6/document_artifacts/image_000012_e3c72ee2fa956f0bd286f00657cec457d2106b3bad6c189077bff01eeeb35fbd.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -4301,37 +4188,14 @@ Here is another example ending with an authentic cadence.
 - YT: jenWdylTtzs
 - Figure 7.4.2: Lennon-McCartney,
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 51](<MusicTheory.pdf#page=51>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 51](<document_artifacts/page_000051_0e3a1ba9657c6a2ff26d0f186fd20af22dc867d6a15cdb97bfc0e48d0c61304d.png>)
-
-![PDF-Seite 52](<document_artifacts/page_000052_f27925fd1f0cb3be309eb67084486638dd7db49a086394edcf70604966155677.png>)
-
-![PDF-Seite 53](<document_artifacts/page_000053_0c6adbc111201bc84602cc121e696cdd33e4a9bab7a698b58afdb14b1d4b2090.png>)
-
-![PDF-Seite 54](<document_artifacts/page_000054_6ae5f69e49d972e3944296e9c86fd7813859eeba34b1b6a90b2e6fb47c09dbf5.png>)
-
-![PDF-Seite 55](<document_artifacts/page_000055_3d23556daab59367a81ef2c39ad57b5a84b0e29c9d2aff703b4adaaabf8d17a9.png>)
-
-![PDF-Seite 56](<document_artifacts/page_000056_eeb7e80d2f33f1ae6272ce4b24df265d0cfcb189b80548b92a64fd16696432fd.png>)
-
-![PDF-Seite 57](<document_artifacts/page_000057_129a5b46bd89a2724dc93e835b619aa3457f402b828bbc58f2d7d8d87014bb41.png>)
-
-![PDF-Seite 58](<document_artifacts/page_000058_c17065da2a1a8648e282e308d8f568c533478746e00070651b3dd649e8010a9f.png>)
-
-![PDF-Seite 59](<document_artifacts/page_000059_c8423c4bac030009e1f815152f663c3ff80474991455c4633b974b8443a0c7f0.png>)
-
-![PDF-Seite 60](<document_artifacts/page_000060_7c0b2e79587fc2a8ed8afa0e88daa272203a980654b523695dc7b7b85d06d511.png>)
-
-
-[Original-PDF, Seite 51](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=51>)
-
-<!-- PDF-Seiten 61–70 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document.md -->
+<!-- PDF-Seiten 61–70 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document.md -->
 
 Score
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000000_35c0d779b122dda15b891a4a9fccc1ba3727170304800098a4ff9b8c87ec22be.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000000_35c0d779b122dda15b891a4a9fccc1ba3727170304800098a4ff9b8c87ec22be.png -->
 
 ## 7.4.2 Examples of Plagal Cadences
 
@@ -4339,7 +4203,7 @@ Here are examples with plagal cadences.
 
 Figure 7.4.4: Pink, Bhasker, and Ruess, "Just Give Me a Reason"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000001_333370f9e2c0d9fd737210c46d658abdd1f1ed9d9052356d0ca30bf8d72da09a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000001_333370f9e2c0d9fd737210c46d658abdd1f1ed9d9052356d0ca30bf8d72da09a.png -->
 
 24
 
@@ -4355,7 +4219,7 @@ Figure 7.4.4: Pink, Bhasker, and Ruess, "Just Give Me a Reason"
 
 Figure 7.4.6: Mozart, The Marriage of Figaro, "Voi che sapete"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000002_034573624139bba3eeed7dad805632f6ec01fd0a9f0a12ea402a2353df77719e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000002_034573624139bba3eeed7dad805632f6ec01fd0a9f0a12ea402a2353df77719e.png -->
 
 92
 
@@ -4377,7 +4241,7 @@ C F
 
 Figure 7.4.8: Wagner, Tristan und Isolde, Prelude to Act I
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000003_0634cc827442ce62504a37733aa140c267902da3d788d1cdf78acad1890c2333.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000003_0634cc827442ce62504a37733aa140c267902da3d788d1cdf78acad1890c2333.png -->
 
 A deceptive cadence means V did not go to I. This means that " V to not-I" is technically a more correct description for a deceptive cadence than V-vi, which is the most common realization of " V to not-I. "
 
@@ -4393,11 +4257,11 @@ In the example below, V goes to IV/3rd.
 
 Figure 7.4.10: Mozart, Eine kleine Nachtmusik, K. 525, I.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000004_2b450728fa89d5c8cecbaf1d07e0e027673a1c9f170c01cab5ed91f23d24beca.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000004_2b450728fa89d5c8cecbaf1d07e0e027673a1c9f170c01cab5ed91f23d24beca.png -->
 
 Figure 7.4.11: Sheeran and Wadge, "Thinking Out Loud"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000005_e534be8744db2712522a6f6bf62a7837e408ac75e0c4b7afdd05399320c62b65.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000005_e534be8744db2712522a6f6bf62a7837e408ac75e0c4b7afdd05399320c62b65.png -->
 
 You may encounter chords with no thirds in rock and pop music. If you encounter a chord that has only a root and fifth, label it with a "5" after the root in lead sheet labeling (e.g., B5 , as in the next example).
 
@@ -4425,15 +4289,15 @@ Additionally, you may encounter incomplete chords, which are chords containing o
 
 53
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000006_fce10ef416d5275d4de6d0f3000bc8ed2ec0f236c2b392986370a3ede4d2cef0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000006_fce10ef416d5275d4de6d0f3000bc8ed2ec0f236c2b392986370a3ede4d2cef0.png -->
 
 1. Label the following chords with lead sheet symbols (above) and Roman
 
 numerals (below).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000007_e367c160d3d036b4d7c5ff6af6694870c03dc7ed42dbde6ef5ff6bc54d22bc10.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000007_e367c160d3d036b4d7c5ff6af6694870c03dc7ed42dbde6ef5ff6bc54d22bc10.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000008_47522582d557d01a12aea309a21fdb9ba519b8c18ba76273217d0ca12b9b7101.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000008_47522582d557d01a12aea309a21fdb9ba519b8c18ba76273217d0ca12b9b7101.png -->
 
 381
 
@@ -4479,7 +4343,7 @@ numerals (below).
 
 ˜ ˜ ˜ ˜
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000009_b1344accb521bc903def8d5b40179d48cd4caadfaabf904bdfe8145b49e255f7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000009_b1344accb521bc903def8d5b40179d48cd4caadfaabf904bdfe8145b49e255f7.png -->
 
 (a) "Columbia, the Gem of the Ocean" (YouTube)
 
@@ -4487,7 +4351,7 @@ numerals (below).
 
 &amp;
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000010_a1fed243f97b3e2ac8ee5a10e7f29756398e683b1fb259968255793bc15d1752.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000010_a1fed243f97b3e2ac8ee5a10e7f29756398e683b1fb259968255793bc15d1752.png -->
 
 (b) "Could You Be Loved" (YouTube)
 
@@ -4513,7 +4377,7 @@ Bob Marley
 
 "Blowin' in the Wind" Click here to download the homework.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000011_17f631bf43e3a70c7b8045603b9134380176928df5671583e7720b68e188a19f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000011_17f631bf43e3a70c7b8045603b9134380176928df5671583e7720b68e188a19f.png -->
 
 \_\_\_\_
 
@@ -4533,9 +4397,9 @@ Bob Dylan
 
 \_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000012_d50c2299173f0667b415a87042554a6e101399f74d10dc118dafcde8d8db3549.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000012_d50c2299173f0667b415a87042554a6e101399f74d10dc118dafcde8d8db3549.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000013_07ca29a4a4383f0ef92b94843e492731f1742b380c028777c3cff97fc9c765ed.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000013_07ca29a4a4383f0ef92b94843e492731f1742b380c028777c3cff97fc9c765ed.png -->
 
 \_\_\_\_
 
@@ -4549,9 +4413,9 @@ Bob Dylan
 
 ## Chapter 8
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000014_a01f839ec8fc45b3a75ba397460391dbc279445d5558e2c70db8a1ad2172165c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000014_a01f839ec8fc45b3a75ba397460391dbc279445d5558e2c70db8a1ad2172165c.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000015_7e555b80c9843f431dc89a98300478e9e85c3289ec15e0cf403ac88ec29cb871.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000015_7e555b80c9843f431dc89a98300478e9e85c3289ec15e0cf403ac88ec29cb871.png -->
 
 242
 
@@ -4564,7 +4428,7 @@ In later chapters we will discuss other seventh chords built on augmented triads
 
 An additional four-note chord that sounds like and functions similar to a V7
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000016_8dc743b6d5c34325e5cc0d45126edd1371076239bcacd6c96ccafb8f5f9f6b7b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00061-00070/try-20261114T122533-78ac33/document_artifacts/image_000016_8dc743b6d5c34325e5cc0d45126edd1371076239bcacd6c96ccafb8f5f9f6b7b.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -4929,33 +4793,10 @@ An additional four-note chord that sounds like and functions similar to a V7
 - 248
 - Here is a musical example with the IV/ˆ5 chord in A 2 major.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 61](<MusicTheory.pdf#page=61>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 61](<document_artifacts/page_000061_b77cc837871f7630628ca88e6d4f7be795b31fb3e50aef5907bdf3605ed592b1.png>)
-
-![PDF-Seite 62](<document_artifacts/page_000062_0f21a60f68265a06731c77555913dfb913461976bfa47732a49a25da81317706.png>)
-
-![PDF-Seite 63](<document_artifacts/page_000063_e5313f6725645564242b43474357b0014e8638a52de9897aa14cbdb478096268.png>)
-
-![PDF-Seite 64](<document_artifacts/page_000064_be8d41077d39789ee732b65c30b6ae08479ac967ac07c23dd99287ac6331936b.png>)
-
-![PDF-Seite 65](<document_artifacts/page_000065_d9671505690d39cb45f8e295ef96a38bf70ca32c059462062b033d11981e4c22.png>)
-
-![PDF-Seite 66](<document_artifacts/page_000066_7fba4747cef0c511e86030e002c29ef18a9dc0696c612902675bb9a8449d1da7.png>)
-
-![PDF-Seite 67](<document_artifacts/page_000067_ad81d3b98525ffae193f3c1ca4ebb5960a8468b3a554dec10697243ef6b2ebf3.png>)
-
-![PDF-Seite 68](<document_artifacts/page_000068_fe40f612e826ae30aacf4b092e138ea80bcddc72afc838d9819a6db9d05dca0f.png>)
-
-![PDF-Seite 69](<document_artifacts/page_000069_f3eca221b1dfb4c5692e3cd5b4c7c9b45427812b90616ef86511351b158b411e.png>)
-
-![PDF-Seite 70](<document_artifacts/page_000070_368bded871b0f21976e1dd6c57c6691207f61f47ae48de47a28422d9ca6faa10.png>)
-
-
-[Original-PDF, Seite 61](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=61>)
-
-<!-- PDF-Seiten 71–80 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document.md -->
+<!-- PDF-Seiten 71–80 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document.md -->
 
 237
 
@@ -4965,13 +4806,13 @@ An additional four-note chord that sounds like and functions similar to a V7
 
 7
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000000_4640e67ff79d3ad6a3a7a4f920cc839592f64ae3636f18d0a64eca75b20abaa7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000000_4640e67ff79d3ad6a3a7a4f920cc839592f64ae3636f18d0a64eca75b20abaa7.png -->
 
 244
 
 407
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000001_60cc98a214c8bc4d133dab834c402a44f8dd359935935d301c77cb8b37d2ddcb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000001_60cc98a214c8bc4d133dab834c402a44f8dd359935935d301c77cb8b37d2ddcb.png -->
 
 ## Chapter 9
 
@@ -4989,33 +4830,33 @@ The circle of fifths progression (I-IV-vii◦ -iii-vi-ii-V-I) was a stalwart of 
 
 This circle (the circle of fifths for harmonic progression) is different than the circle of fifths for key signatures because this circle of fifths for harmonic progression contains diatonic notes only. (The circle of fifths for key signatures (Figure 2.3.4) contained all 12 notes of the chromatic scale.)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000002_0e2f93c554addb9db1219c3d6f938ed6e9959ef0102e90273eb3710e6ce04b71.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000002_0e2f93c554addb9db1219c3d6f938ed6e9959ef0102e90273eb3710e6ce04b71.png -->
 
 61
 
 Figure 9.1.3: Circle of Fifths for Harmonic Progression
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000003_c1343a03eb7c7320d8934d0a24658556153e58d309bc5b2ef30e290b39a1cb86.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000003_c1343a03eb7c7320d8934d0a24658556153e58d309bc5b2ef30e290b39a1cb86.png -->
 
 The circle of fifths (for harmonic progression) is sometimes known as the "circle of descending fifths. "
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000004_827d1c5888258926766caf222ba144c24a877c41d280603535f73dba133a4658.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000004_827d1c5888258926766caf222ba144c24a877c41d280603535f73dba133a4658.png -->
 
 ends on C
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000005_ec46e89da1eb6edfe14c0b749cbca871d869e31971f50bd14db1667eaa3f1b36.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000005_ec46e89da1eb6edfe14c0b749cbca871d869e31971f50bd14db1667eaa3f1b36.png -->
 
 The circle of fifths progression has been used regularly since the Baroque era.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000006_f6fda21754a2c2fa779db2e5cedb1426369c3e280654388f619538d320389d2f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000006_f6fda21754a2c2fa779db2e5cedb1426369c3e280654388f619538d320389d2f.png -->
 
 F
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000007_5432ce4c1e579ea86eab58f92bcb6d20611fcbc905bc46758eae70f314083f54.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000007_5432ce4c1e579ea86eab58f92bcb6d20611fcbc905bc46758eae70f314083f54.png -->
 
 Figure 9.1.13: Handel Passacaglia with roots as open note heads
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000008_1d291a6cb1a712d998f1447e73c8ad229804a52c901105868d01cc85d1c7c8d8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000008_1d291a6cb1a712d998f1447e73c8ad229804a52c901105868d01cc85d1c7c8d8.png -->
 
 We will return to the idea of harmonic sequence later in this chapter.
 
@@ -5031,7 +4872,7 @@ YT: F90Cw4l-8NY
 
 Figure 9.2.1: Bastille, "Pompeii"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000009_882bf2e1b864b8631f2fea1a6fdb83b4261f0de70adaa428409b7a70ef3284aa.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000009_882bf2e1b864b8631f2fea1a6fdb83b4261f0de70adaa428409b7a70ef3284aa.png -->
 
 In some music, harmonic rhythm will remain consistent, while in other pieces there will be an infinite variety to the length of harmonies. Throughout this text, we will be examining harmonic rhythm and the placement of harmonies within the phrase.
 
@@ -5043,7 +4884,7 @@ The " ii-V-I" progression can be found in many pieces of music in all styles-cla
 
 many examples of this progression.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000010_699f6683d1e07164f2e221c765d09d56b37e59fcbdfa05b90db45ed7bf32603d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000010_699f6683d1e07164f2e221c765d09d56b37e59fcbdfa05b90db45ed7bf32603d.png -->
 
 13
 
@@ -5069,7 +4910,7 @@ A7
 
 Dmaj7
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000011_f5f602695eff5cea560b1f3b0b9bcf4e2b5d2024336f32b1e0c8a7c5421ec3b7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00071-00080/try-20261114T122554-2de37a/document_artifacts/image_000011_f5f602695eff5cea560b1f3b0b9bcf4e2b5d2024336f32b1e0c8a7c5421ec3b7.png -->
 
 w
 
@@ -5486,33 +5327,10 @@ One can think of these reorderings as rotations, as shown in the example below.
 - "As Time Goes By"
 - 9.3.2 VI-II-V-I
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 71](<MusicTheory.pdf#page=71>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 71](<document_artifacts/page_000071_dbd37874523d4a78740a7c6a8591151d896e36ffd12f9604c9686c3674f75747.png>)
-
-![PDF-Seite 72](<document_artifacts/page_000072_2868eb40ebc27c460851aa7c7d7fc5ea39d9b0bdbf4aedd1bfe43c47a4e2e163.png>)
-
-![PDF-Seite 73](<document_artifacts/page_000073_bfd8ef9dccc6782a87b1dda0b890afc0f293effad91a88dc47a829e003d2239f.png>)
-
-![PDF-Seite 74](<document_artifacts/page_000074_f9283e9092783a2b897c2f717ca98ab295fa42f0d083ae3f2bdb5253aa633702.png>)
-
-![PDF-Seite 75](<document_artifacts/page_000075_da92f3b2a177c658663bb8ada2a5ac3ae20552a8639036ede545db986db383c0.png>)
-
-![PDF-Seite 76](<document_artifacts/page_000076_bae12125cb3b8d28e0687d1e2c5810741d7cad21dc1dfd03fd040d2506fb8fcf.png>)
-
-![PDF-Seite 77](<document_artifacts/page_000077_e262c5d569cf33fba42e542b4e6f4a677bb3aa1e98251d2ff2aa58591c801649.png>)
-
-![PDF-Seite 78](<document_artifacts/page_000078_19e04486b83ebf7f42f0e556efec5b7d3c2f1d1b91e2fe6da4191ae28053300f.png>)
-
-![PDF-Seite 79](<document_artifacts/page_000079_84efb2f3292686202edd6769f8277e534c03b4549b78c11b4be6fc6c8094e7e9.png>)
-
-![PDF-Seite 80](<document_artifacts/page_000080_8b9827352d0e78c812f70013cb22d2287ae02e92ae7d71dfc3fd68cbb035af99.png>)
-
-
-[Original-PDF, Seite 71](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=71>)
-
-<!-- PDF-Seiten 81–90 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document.md -->
+<!-- PDF-Seiten 81–90 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document.md -->
 
 68
 
@@ -5530,19 +5348,19 @@ One can think of these reorderings as rotations, as shown in the example below.
 
 Figure 9.3.5: Kern, "All the Things You Are"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000000_0ab746722462f923635e41c0a6752cad2f617eb6594d73dbf661cce17e184a66.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000000_0ab746722462f923635e41c0a6752cad2f617eb6594d73dbf661cce17e184a66.png -->
 
 Here is another example from more recent popular music.
 
 80
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000001_68318baf469e35328653b6dca100cf7e42a10b6f6f301febcaf8a95e5339ca67.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000001_68318baf469e35328653b6dca100cf7e42a10b6f6f301febcaf8a95e5339ca67.png -->
 
 ## 9.3.2.2 I-vi-ii-V
 
 Here are examples of the I-vi-ii-V progression, sometimes called the 1950s progression because of its prevalence during that decade, although this progression was also widely used in the 1930s and '40s.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000002_800b97793e993830bb01dacdc05a4053853672699e017400b750c154e6ea8bff.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000002_800b97793e993830bb01dacdc05a4053853672699e017400b750c154e6ea8bff.png -->
 
 F6 Dm7
 
@@ -5600,13 +5418,13 @@ V b 4 4
 
 282
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000003_1e13fe32a7c453393f854c124dd37aeb03db1a7e173ac67325ed4c5b10c28d75.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000003_1e13fe32a7c453393f854c124dd37aeb03db1a7e173ac67325ed4c5b10c28d75.png -->
 
 9.3. SHORTER PROGRESSIONS FROM THE CIRCLE OF FIFTHS 69
 
 Figure 9.3.9: Lymon, Santiago, Merchant, "Why Do Fools Fall in Love" (1950s)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000004_d44d582daa85c441cf955da80f53981c3e6ce716400905169d7be98c4872c62f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000004_d44d582daa85c441cf955da80f53981c3e6ce716400905169d7be98c4872c62f.png -->
 
 ## 9.3.2.3 ii-V-I-vi
 
@@ -5618,7 +5436,7 @@ Below is an example of the ii-V-I-vi progression. In this example, the vi chord 
 
 Figure 9.3.10: Wright, Forrest, Borodin, "Stranger in Paradise"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000005_a6a8463f4a0a778fc228333f1500a2adf94cfdad191fc1b9a489d1bfa7ec47b7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000005_a6a8463f4a0a778fc228333f1500a2adf94cfdad191fc1b9a489d1bfa7ec47b7.png -->
 
 If you view this video on YouTube, you will briefly see the double bass part, which has lead-sheet symbols on it.
 
@@ -5628,7 +5446,7 @@ The iii-vi-ii-V circle of fifths segment is sometimes repeated (or looped) withi
 
 9.3. SHORTER PROGRESSIONS FROM THE CIRCLE OF FIFTHS 71
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000006_f23453596aeea4203a10523ffba95225d6463c5563591dd5c5b3917f7e63ada7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000006_f23453596aeea4203a10523ffba95225d6463c5563591dd5c5b3917f7e63ada7.png -->
 
 Sometimes, this progression is rotated to ii-V-iii-vi, as in "September, " the well known song by Earth, Wind, and Fire.
 
@@ -5646,11 +5464,11 @@ V7/7th
 
 Figure 9.3.12: White, McKay, Willis, "September"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000007_dc1289445b021f13db98548a8a936b0c88040771810a475f246cd52607eb082d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000007_dc1289445b021f13db98548a8a936b0c88040771810a475f246cd52607eb082d.png -->
 
 This ii-V-iii-vi progression is also seen in the following song.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000008_d13c67cfab8a5a9ced99742352b0911307927c3d0e98e50e1305e31f7c7d2b3b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000008_d13c67cfab8a5a9ced99742352b0911307927c3d0e98e50e1305e31f7c7d2b3b.png -->
 
 b b b b b
 
@@ -5673,7 +5491,7 @@ Banner.
 
 "
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000009_bdd8fa19aae1049b0f0b61bc07be58a1e004e5e69911106883f85bac07ea45b2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000009_bdd8fa19aae1049b0f0b61bc07be58a1e004e5e69911106883f85bac07ea45b2.png -->
 
 (dashed lines represent possible movement within a functional area)
 
@@ -5693,7 +5511,7 @@ YT: o1iUR3GG4DQ
 
 Figure 9.4.5: Beethoven, Piano Sonata in C major, Op. 2, No. 3, I.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000010_b706e5ca09c311704e4eeaad5fc64ca65f2fac60bad628b7a2537cd57b4cb278.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000010_b706e5ca09c311704e4eeaad5fc64ca65f2fac60bad628b7a2537cd57b4cb278.png -->
 
 13
 
@@ -5703,11 +5521,11 @@ Figure 9.4.5: Beethoven, Piano Sonata in C major, Op. 2, No. 3, I.
 
 Figure 9.4.7: Lennon-McCartney, "Hey Jude"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000011_9b3b9da2945c8ae5bf2b6d6073584a591ebd406e4bb43bbcc7fc5baf6b624758.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000011_9b3b9da2945c8ae5bf2b6d6073584a591ebd406e4bb43bbcc7fc5baf6b624758.png -->
 
 76CHAPTER 9. HARMONIC PROGRESSION AND HARMONIC FUNCTION
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000012_77a5c23d46c5a47028ff88ba215277f51a7c58ea6ea4d11035ca59f1bc30c8ee.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00081-00090/try-20261114T122613-f4e618/document_artifacts/image_000012_77a5c23d46c5a47028ff88ba215277f51a7c58ea6ea4d11035ca59f1bc30c8ee.png -->
 
 ## 9.4.3 Tonic-PreDominant-Dominant-Tonic Progression
 
@@ -5967,33 +5785,10 @@ Here are examples with I-ii-V-I.
 - " We will revisit this concept and other
 - possibilities for "dominant function" later.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 81](<MusicTheory.pdf#page=81>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 81](<document_artifacts/page_000081_992434d97f0576be2148c6d9551cfd89a3d3a7103523a58837a9e970a8df76e2.png>)
-
-![PDF-Seite 82](<document_artifacts/page_000082_2bd1a916aa756c536014e607169f8d3c4c9dff070583d4b7cf02c3d945d44a06.png>)
-
-![PDF-Seite 83](<document_artifacts/page_000083_1aa23e9934a63502c7fc0f7ed3220d60cc4e76c80ee4d85047283322bd956e77.png>)
-
-![PDF-Seite 84](<document_artifacts/page_000084_326647d8a9f47fbc4210888fba838840f0e690356d7b5c821c8e2128b1c1dda3.png>)
-
-![PDF-Seite 85](<document_artifacts/page_000085_7083bd97c1de7976b7a572de95bc2da9179238216a5d0c38a4e5369c130ee9ba.png>)
-
-![PDF-Seite 86](<document_artifacts/page_000086_6c4474b7b7b4d134227c05a00ede89dd7a7dbf361920356770fce277f08822ac.png>)
-
-![PDF-Seite 87](<document_artifacts/page_000087_cf6d91d9315589ac730fd2db6e704c7cf74303c15cce0a2f592e92ec0fcfc5d4.png>)
-
-![PDF-Seite 88](<document_artifacts/page_000088_0cedfa823128560f3a004f25e63fd435343ae1ce0cb7ec35e3d783ab14bb2a6c.png>)
-
-![PDF-Seite 89](<document_artifacts/page_000089_50dbadb7bcf305b85ef22b093b5f5db7e535ee3c1d7a1268ad508f4233bec50e.png>)
-
-![PDF-Seite 90](<document_artifacts/page_000090_bd59f3cf2c8b6ccfe4c40993a91204ad3512ea4c808a3a304a9c0eef6aeba612.png>)
-
-
-[Original-PDF, Seite 81](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=81>)
-
-<!-- PDF-Seiten 91–100 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document.md -->
+<!-- PDF-Seiten 91–100 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document.md -->
 
 14
 
@@ -6001,7 +5796,7 @@ Here are examples with I-ii-V-I.
 
 77
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000000_9b2c3763ee3e4e77261d50522c0be4c38c42b6f742b5ffc63aceaf4e56892a27.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000000_9b2c3763ee3e4e77261d50522c0be4c38c42b6f742b5ffc63aceaf4e56892a27.png -->
 
 12
 
@@ -6009,13 +5804,13 @@ Here are examples with I-ii-V-I.
 
 Figure 9.4.11: Kander and Ebb, "New York, New York"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000001_8b9cae018bca3890342ae8255029532f3e1595333f0f1c40db92a5359efa877d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000001_8b9cae018bca3890342ae8255029532f3e1595333f0f1c40db92a5359efa877d.png -->
 
 203
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000002_d3c74d096aec874ce14d6bc5b2ddf775c9776229eb23d66d4f41d1f3ddc9e3c6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000002_d3c74d096aec874ce14d6bc5b2ddf775c9776229eb23d66d4f41d1f3ddc9e3c6.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000003_ea109be35e990d771ba0793233c2905a3dfc95e47dde35437080b9b86b4a6563.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000003_ea109be35e990d771ba0793233c2905a3dfc95e47dde35437080b9b86b4a6563.png -->
 
 ˙˙˙
 
@@ -6029,7 +5824,7 @@ C: I
 
 7
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000004_f3df04081953eafabbe5b30d6725769289908588df90a14b50e21dad45b6da52.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000004_f3df04081953eafabbe5b30d6725769289908588df90a14b50e21dad45b6da52.png -->
 
 gression.
 
@@ -6055,7 +5850,7 @@ I
 
 vi ii/3rd V
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000005_4976fe5308454d967d662e15b723f8eee3794126134113c3918b2ceecfa0aab9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000005_4976fe5308454d967d662e15b723f8eee3794126134113c3918b2ceecfa0aab9.png -->
 
 ? b b b b b
 
@@ -6063,7 +5858,7 @@ Figure 9.4.18: Atwey, Messinger, Pellizzer, Spivak, Tanas, "Rude" (bass line and
 
 323
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000006_c33b9330aee4219fd1e2ca945218b6388f67e00b8d898bee06a7f0e54fb39d77.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000006_c33b9330aee4219fd1e2ca945218b6388f67e00b8d898bee06a7f0e54fb39d77.png -->
 
 ## 9.5 Exceptions Created by Harmonic Sequences
 
@@ -6083,7 +5878,7 @@ Exceptions to the harmonic flowchart often can be explained by harmonic sequence
 
 Figure 9.5.3: Felder, Henley, Frey, "Hotel California"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000007_5de27687e3ca6af9673ceda386ee67bb393107b7d68010355dc886bbeb55a5cf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000007_5de27687e3ca6af9673ceda386ee67bb393107b7d68010355dc886bbeb55a5cf.png -->
 
 15
 
@@ -6091,7 +5886,7 @@ Figure 9.5.3: Felder, Henley, Frey, "Hotel California"
 
 343
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000008_6dfae85146111322144c112a812508051d34a6811214d9c3a3ddd867b65ac30f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000008_6dfae85146111322144c112a812508051d34a6811214d9c3a3ddd867b65ac30f.png -->
 
 355
 
@@ -6113,7 +5908,7 @@ does it have dominant function (i.e, is it a half cadence)? Does IV have
 
 331
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000009_ecdd45df685931f7cfa60c238a258688d54ba5eb54990848f4a230ab5b4b9900.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000009_ecdd45df685931f7cfa60c238a258688d54ba5eb54990848f4a230ab5b4b9900.png -->
 
 to a IV-I conclusion.
 
@@ -6255,7 +6050,7 @@ Figure 9.6.4: Forsey and Schiff,
 
 "Don't You (Forget About Me)" (bass line
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000010_6c2691105f5290f5847ae82c797efcb2c3c764445b21f279186b47b90b6c419f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000010_6c2691105f5290f5847ae82c797efcb2c3c764445b21f279186b47b90b6c419f.png -->
 
 Figure 9.6.5: Becker and Fagen,
 
@@ -6310,7 +6105,7 @@ dom.
 
 ## 9.7 The Best-Seller Progression
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000011_b459883c98d52e875120586a8a2c764a9bf7668485599609526b43c6a262b489.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000011_b459883c98d52e875120586a8a2c764a9bf7668485599609526b43c6a262b489.png -->
 
 13
 
@@ -6330,11 +6125,11 @@ start start
 
 13
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000012_cdeb969cdb413372271c961b2030f9cff10d18331f3eec29ebeb2eb5d8994557.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000012_cdeb969cdb413372271c961b2030f9cff10d18331f3eec29ebeb2eb5d8994557.png -->
 
 235 Figure 9.7.5: "Best-Seller" Progression with Roman Numerals in Major and Relative Minor
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000013_5a907752747f2e2eb4a3be71fe1ada9b66b300318f158e8cc49a8bb52c50bac8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00091-00100/try-20261114T122630-4edda5/document_artifacts/image_000013_5a907752747f2e2eb4a3be71fe1ada9b66b300318f158e8cc49a8bb52c50bac8.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -6560,39 +6355,16 @@ start start
 - f: i VI
 - Whether you hear this progression in major or minor depends on whether
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 91](<MusicTheory.pdf#page=91>)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- PDF-Seiten 101–110 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document.md -->
 
-![PDF-Seite 91](<document_artifacts/page_000091_a1f7874f86d945bad2d8cd88139cd467a2d97bee011bd9713d4cbcb520a52e0b.png>)
-
-![PDF-Seite 92](<document_artifacts/page_000092_4a2518f573b4f6f80013a0e5e64cc80e91d5319053dae4c6d416a9a707f2f2d1.png>)
-
-![PDF-Seite 93](<document_artifacts/page_000093_e5a1ab4e51cae8dae3ccb9d003cec1a74bb20f6153eb5122f2a4f4cfb500acfa.png>)
-
-![PDF-Seite 94](<document_artifacts/page_000094_d064b5d8d7e3ef7cea7cecbd27b92598c0722e7ca5d92a868a00a02599ebab22.png>)
-
-![PDF-Seite 95](<document_artifacts/page_000095_bdaea69fb576a8fee42c6e8e6e61c9265e9d02a01601cb2a544fde9596c98885.png>)
-
-![PDF-Seite 96](<document_artifacts/page_000096_c683b83b5fa277aa52a3a692bc623e8eb2f7d44a5ca8ae1d74e415b225147232.png>)
-
-![PDF-Seite 97](<document_artifacts/page_000097_f593a5db4651a387db1ce477e6ae196f465985bf742a182997922b0b54f71972.png>)
-
-![PDF-Seite 98](<document_artifacts/page_000098_16125a8e78252e8c3239cd7fad7cc5193f58b21108f7b56b803f62f20f91dd96.png>)
-
-![PDF-Seite 99](<document_artifacts/page_000099_cd2136031b5627aeb1cb69e5ffe52f1161a0124d9ce60dc44e45c81da3704aa6.png>)
-
-![PDF-Seite 100](<document_artifacts/page_000100_2fc565e46c41aa0bcbee61e6431e45d9770c25d5aad906f687339acf0a9a87b1.png>)
-
-
-[Original-PDF, Seite 91](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=91>)
-
-<!-- PDF-Seiten 101–110 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000000_11c2b61cd2d162e9affee2b00e40f3fd2e601965fcd3524dabf4a244149747f0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000000_11c2b61cd2d162e9affee2b00e40f3fd2e601965fcd3524dabf4a244149747f0.png -->
 
 Figure 9.7.6: Stewart, Nash, Harrell, Carter, "Umbrella"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000001_45ab2bd873b4b755a84e43f93e24a75e7ae90ad8355be9f8b81db40d4c6c2bf8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000001_45ab2bd873b4b755a84e43f93e24a75e7ae90ad8355be9f8b81db40d4c6c2bf8.png -->
 
 ## 9.8 The i-VII-VI-VII Progression
 
@@ -6606,7 +6378,7 @@ vi
 
 I
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000002_c688f6ad5f51d93cda6c41b232de20c1a9bdf705c89f3a36c2d14ea31538f5d5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000002_c688f6ad5f51d93cda6c41b232de20c1a9bdf705c89f3a36c2d14ea31538f5d5.png -->
 
 ? # #
 
@@ -6614,7 +6386,7 @@ In some cases, the fourth chord is eliminated. In that case, VI-VII-i-VII become
 
 Figure 9.8.6: The same progression viewed from minor and relative major
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000003_a8e31da717df741be06266e43dafbfc73bb76d28be8f65026a103b5f851f44a7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000003_a8e31da717df741be06266e43dafbfc73bb76d28be8f65026a103b5f851f44a7.png -->
 
 There are several more common harmonic progressions to explore in future chapters dealing with topics like secondary chords, mode mixture, the Neapolitan chord, augmented sixth chords, and jazz harmony.
 
@@ -6640,7 +6412,7 @@ Gmaj7 /D
 
 13
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000004_e0bc02a77deccc1d40af96d7e5220c59b2046a6245fd5f7a5f5a113b5d8a4cb4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000004_e0bc02a77deccc1d40af96d7e5220c59b2046a6245fd5f7a5f5a113b5d8a4cb4.png -->
 
 469
 
@@ -6650,11 +6422,11 @@ Day Two:
 
 5. For each cadence, label the chord(s) involved.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000005_6b927d5dfd2fecf91a3a52b31b0fa0f4f864f7b9b297a9b63fa54748036cda00.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000005_6b927d5dfd2fecf91a3a52b31b0fa0f4f864f7b9b297a9b63fa54748036cda00.png -->
 
 \_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000006_a4680cdd5aa9507431e4a063639791c0f07da463873292e363c97972aab4e1bd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000006_a4680cdd5aa9507431e4a063639791c0f07da463873292e363c97972aab4e1bd.png -->
 
 \_\_\_\_\_
 
@@ -6706,7 +6478,7 @@ ww w
 
 ˙ ˙ ˙˙
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000007_e859ecf346ca705bab711ac363255fea25e0a0f198987be4f87c07943ad4b154.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000007_e859ecf346ca705bab711ac363255fea25e0a0f198987be4f87c07943ad4b154.png -->
 
 &amp;
 
@@ -6767,7 +6539,7 @@ Passing tones are notes that pass between chord tones.
 
 CHAPTER 10. NON-CHORD TONES
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000008_eb982f5fbab58e9a61f453d10bbf280ddd9c5c3eb8a18be945644083d19fdbea.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000008_eb982f5fbab58e9a61f453d10bbf280ddd9c5c3eb8a18be945644083d19fdbea.png -->
 
 œ
 
@@ -6871,7 +6643,7 @@ want me
 
 Figure 10.2.3: Monk, "Blue Monk"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000009_c3fbfa11233ed93f5cba00aa015bd3097f1a21f61965beb09ccd770763cef609.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000009_c3fbfa11233ed93f5cba00aa015bd3097f1a21f61965beb09ccd770763cef609.png -->
 
 In the next section we discuss the neighbor tone.
 
@@ -6891,7 +6663,7 @@ G
 
 (G-B-D)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000010_f58df3be6c5bfc6a2d71befcc3060de604f18f07ad136d19bfa70314a2a6fcad.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000010_f58df3be6c5bfc6a2d71befcc3060de604f18f07ad136d19bfa70314a2a6fcad.png -->
 
 Allegretto
 
@@ -6913,7 +6685,7 @@ pt
 
 CHAPTER 10. NON-CHORD TONES
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000011_0604955b8c4ff74090df8784c7b47ff97effa2a33cc8eb81a7609322a0e2af81.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00101-00110/try-20261114T122654-8e0d8f/document_artifacts/image_000011_0604955b8c4ff74090df8784c7b47ff97effa2a33cc8eb81a7609322a0e2af81.png -->
 
 An escape tone is approached by step and left by leap in the opposite direction. An easy example to remember is the end of the "Star-Spangled Banner. " The word "of" in "home of the brave" is an escape tone.
 
@@ -7129,33 +6901,10 @@ An escape tone is approached by step and left by leap in the opposite direction.
 - In the next section we discuss the escape tone.
 - 10.5 Escape Tone
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 101](<MusicTheory.pdf#page=101>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 101](<document_artifacts/page_000101_54791ed936359a99bd739cb2c2e840f48c19cc7dbdfcc4658c9182686b94b8d7.png>)
-
-![PDF-Seite 102](<document_artifacts/page_000102_b6366cc1690e4c5fc2e19d8c99bfd2645953aa57f5c27c7984327a95c568f3f8.png>)
-
-![PDF-Seite 103](<document_artifacts/page_000103_8d60c13473059db860e786dd7f7acc35f07b20cbee051b02a492120fb1e2c3e5.png>)
-
-![PDF-Seite 104](<document_artifacts/page_000104_62bcffe5cc1d9bf93a14792706d3a01c8e3f60e0bf6a8a593a56ddc65aa85a01.png>)
-
-![PDF-Seite 105](<document_artifacts/page_000105_aea3804a5c309cc2c04bed548cbe9007563ae1732093ea7d1a141f6c09df0c44.png>)
-
-![PDF-Seite 106](<document_artifacts/page_000106_143b012f992c47e75334eac3d6459d763c294014b2fff13cf8e35f7ad0af5407.png>)
-
-![PDF-Seite 107](<document_artifacts/page_000107_b9a898381dd7ec67d2f469c277d60072ebeb6a19ab0a036a7342c6120b0a491f.png>)
-
-![PDF-Seite 108](<document_artifacts/page_000108_2d63bbd96ded06785b76e7683bbad3e7dcf6c484b11b84b43a5e002e6cb28afa.png>)
-
-![PDF-Seite 109](<document_artifacts/page_000109_c1e4f079c97b4fafc32c7d364c23b968bb4dcd25105d605df480a4ccce485eaa.png>)
-
-![PDF-Seite 110](<document_artifacts/page_000110_2c356110376b1eff98f0211e6bdc44c265ac31b4c0c8dc5b1dbc390fc907350b.png>)
-
-
-[Original-PDF, Seite 101](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=101>)
-
-<!-- PDF-Seiten 111–120 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document.md -->
+<!-- PDF-Seiten 111–120 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document.md -->
 
 2
 
@@ -7163,7 +6912,7 @@ An escape tone is approached by step and left by leap in the opposite direction.
 
 14
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000000_85d814663734f1b94bc693f2ed2a4ea05b3bc240890a9ea933fd2007a915f70e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000000_85d814663734f1b94bc693f2ed2a4ea05b3bc240890a9ea933fd2007a915f70e.png -->
 
 ## 10.6 Double Neighbor
 
@@ -7209,7 +6958,7 @@ pt pt
 
 Figure 10.6.3: Mozart, Piano Sonata K. 333, I
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000001_18760c53f59496008079a1b46ecb5d4b5593dccaee445256b1054c1a47454965.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000001_18760c53f59496008079a1b46ecb5d4b5593dccaee445256b1054c1a47454965.png -->
 
 In the next section we discuss the anticipation.
 
@@ -7221,7 +6970,7 @@ w
 
 126
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000002_50b4b4c3702b1240766fd156a782beee98f3d0eb1a274fb7a22c0092c0b51ad6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000002_50b4b4c3702b1240766fd156a782beee98f3d0eb1a274fb7a22c0092c0b51ad6.png -->
 
 Sometimes syncopation will lead to an anticipation of a note in a chord in the following measure, as occurs at the ends of bars 1, 2, and 3 of the "Call Me" example.
 
@@ -7233,17 +6982,17 @@ A pedal point is a note that is held through changing harmonies, starting as a c
 
 CHAPTER 10. NON-CHORD TONES
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000003_bd27d6c13682eecee9144066fa789bff7894f5aee2beeb116c63a6b2045b9e25.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000003_bd27d6c13682eecee9144066fa789bff7894f5aee2beeb116c63a6b2045b9e25.png -->
 
 283
 
 C pedal (in bass) starts as consonant note (in the chord)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000004_37df316bcba1c982d75a2a9188acde022ba0e1549527ae2a97054c7fedb994eb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000004_37df316bcba1c982d75a2a9188acde022ba0e1549527ae2a97054c7fedb994eb.png -->
 
 pedal point (in bass) is now a non-chord tone
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000005_92be3a3f69723f3b97671ce1e13815bc8cae29142fc5151b3e2043cc1df0567d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000005_92be3a3f69723f3b97671ce1e13815bc8cae29142fc5151b3e2043cc1df0567d.png -->
 
 Here is an example from the Romantic era.
 
@@ -7259,19 +7008,19 @@ Here is an example from the Romantic era.
 
 101
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000006_598d686f26cb1325637699341d0976b312a068d945560cd9915e0c1e34f041b9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000006_598d686f26cb1325637699341d0976b312a068d945560cd9915e0c1e34f041b9.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000007_4b8550f64d6ba9a60f2686011db8a8f34a418be80b968039796e7fa33df52aeb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000007_4b8550f64d6ba9a60f2686011db8a8f34a418be80b968039796e7fa33df52aeb.png -->
 
 The 2-3 suspension is the "bass suspension" and is measured against an upper voice. Again, you may encounter the literal intervals 10-9 but should label the suspension as 2-3.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000008_8a192fa95dc5ce84fab04f33cc658d5298a8f7fec08645cf729562d6e5fbe869.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000008_8a192fa95dc5ce84fab04f33cc658d5298a8f7fec08645cf729562d6e5fbe869.png -->
 
 20
 
 292
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000009_8c220d1bc559698d1484c2b01f393e707c237ffee654b22bbf72efcdca90280c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000009_8c220d1bc559698d1484c2b01f393e707c237ffee654b22bbf72efcdca90280c.png -->
 
 When a chord is inverted, you will sometimes encounter non-standard suspension numbers like 5-4 or 3-2.
 
@@ -7279,11 +7028,11 @@ When a chord is inverted, you will sometimes encounter non-standard suspension n
 
 Figure 10.9.6: Non-standard suspension numbers because of inverted chords
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000010_cf6d9f19a5c8c26345cb06c38e76e4f5631f4a162fe38720454e08d7ff205156.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000010_cf6d9f19a5c8c26345cb06c38e76e4f5631f4a162fe38720454e08d7ff205156.png -->
 
 You will sometimes encounter decorations of suspensions where other notes occur before the resolution, as in the following example.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000011_3cc96f458f9bf29d53fcdd1730c2a9c77a5981d942d6234785968498a6328d7f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000011_3cc96f458f9bf29d53fcdd1730c2a9c77a5981d942d6234785968498a6328d7f.png -->
 
 ## 10.10 Retardation
 
@@ -7291,7 +7040,7 @@ A retardation is usually an accented non-chord tone, meaning it occurs on a down
 
 23
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000012_f9f0016df8cd2b6cb25c70f2cecf6cd0022b412f3d7eaecd91f1dafe637332b1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000012_f9f0016df8cd2b6cb25c70f2cecf6cd0022b412f3d7eaecd91f1dafe637332b1.png -->
 
 Classical composers like Mozart often used retardations and suspensions at cadences in slow movements.
 
@@ -7305,7 +7054,7 @@ Because composers are notorious for "breaking the rules, " you will encounter ex
 
 Figure 10.11.1: Puccini, Gianni Schicchi, "O mio babbino caro"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000013_0908e00747e1b61afaa24707845d0d93f0bd7967ddb726da9f0ea59979a8cf3a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00111-00120/try-20261114T122711-e1a098/document_artifacts/image_000013_0908e00747e1b61afaa24707845d0d93f0bd7967ddb726da9f0ea59979a8cf3a.png -->
 
 You may also find incomplete double neighbor figures, especially in late Romantic music and jazz. Keep an open mind when analyzing music.
 
@@ -7547,33 +7296,10 @@ Here are ideas for how to add non-chord tones (or "embellishments") to the melod
 - B¯≤m7
 - YT: Sf-tjXevlyQ
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 111](<MusicTheory.pdf#page=111>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 111](<document_artifacts/page_000111_ebbf033876181caa5e66d6ad5512e763bd72ac07829e110cbe5e816d2e29501a.png>)
-
-![PDF-Seite 112](<document_artifacts/page_000112_69e586e7f927a0527b0a950212ae7d80bcc01bf5cd78f3c2d6dc7074a24eed56.png>)
-
-![PDF-Seite 113](<document_artifacts/page_000113_98b38256254bb2c1bac79bdfb82eceea13b066d07ec390082b63c3f83b3f46c9.png>)
-
-![PDF-Seite 114](<document_artifacts/page_000114_e3a96e4003cf93b050d8b2f14e537e1735ae475f01b8bdbe193783c63c5cb08e.png>)
-
-![PDF-Seite 115](<document_artifacts/page_000115_2c4dfa63c8435f501252c615f5c8c54bf100d6d0e8aff1ef6ad24578f6409335.png>)
-
-![PDF-Seite 116](<document_artifacts/page_000116_1e272ab80a89a21680c528ec32f01239901ae061f238c7570f4f02be33cfb1b0.png>)
-
-![PDF-Seite 117](<document_artifacts/page_000117_55fe6eadf3350881a7d4969f8245bc60de67e7481601f67d60b7bc071ded4707.png>)
-
-![PDF-Seite 118](<document_artifacts/page_000118_cd8cc1c49ab7b551b46506d6f046c905320f3a64005b29512e960fea9a14a4db.png>)
-
-![PDF-Seite 119](<document_artifacts/page_000119_1ebfcff4aead6ed974adab4dbe9e2c5151c8882d2c207f7e5a2565b4d22a4639.png>)
-
-![PDF-Seite 120](<document_artifacts/page_000120_fd030476d30c4feb8958a48aac7757347684e12c0c3dfe5961969ac15228ac13.png>)
-
-
-[Original-PDF, Seite 111](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=111>)
-
-<!-- PDF-Seiten 121–130 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document.md -->
+<!-- PDF-Seiten 121–130 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document.md -->
 
 307
 
@@ -7585,7 +7311,7 @@ Here are ideas for how to add non-chord tones (or "embellishments") to the melod
 
 3. Step up:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000000_5f1ea4ce0f8f08e81b72778e32670a6cf1bf61a4220ed64fc96a081d0f6e7e7e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000000_5f1ea4ce0f8f08e81b72778e32670a6cf1bf61a4220ed64fc96a081d0f6e7e7e.png -->
 
 B¯≤7
 
@@ -7607,7 +7333,7 @@ Notice that, when non-chord tones are added to different voices on the same beat
 |      |        |                |       | step          | step in same direction     |
 |      |        |                |       | leap          |                            |
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000001_470dbd7f99d8b249c4bf4e20817ed1c45a309694c0e662534de1b83195eedc90.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000001_470dbd7f99d8b249c4bf4e20817ed1c45a309694c0e662534de1b83195eedc90.png -->
 
 3. Analyze the harmonies with lead-sheet symbols above the staff and Roman numerals below, then analyze the non-chord tones.
 
@@ -7615,7 +7341,7 @@ Notice that, when non-chord tones are added to different voices on the same beat
 
 "Stop! In the Name of Love" (YouTube)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000002_2c8bf19f88276472acf656b4a5d020df68e752924a175ec0987845d347002be4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000002_2c8bf19f88276472acf656b4a5d020df68e752924a175ec0987845d347002be4.png -->
 
 C: \_\_\_\_\_
 
@@ -7649,7 +7375,7 @@ Monat Mai" (YouTube)
 
 ∑
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000003_b60595d253195161b0734c576afb89a0759ae15fbdf5763ea6da808fa8c6a740.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000003_b60595d253195161b0734c576afb89a0759ae15fbdf5763ea6da808fa8c6a740.png -->
 
 151
 
@@ -7661,7 +7387,7 @@ f ˜: V
 
 ∑
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000004_04c3c0b1dcef83a7bef554d6614552b16f758113e36175af8011f16cf6ef8745.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000004_04c3c0b1dcef83a7bef554d6614552b16f758113e36175af8011f16cf6ef8745.png -->
 
 Click here to download the homework.
 
@@ -7697,7 +7423,7 @@ No. 1, we find four motives within the first four measures of the primary theme.
 
 382
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000005_9d62b1c501d30c9392acad3644944325ac879ff343192938b79a31bd19c7a9e1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000005_9d62b1c501d30c9392acad3644944325ac879ff343192938b79a31bd19c7a9e1.png -->
 
 337
 
@@ -7711,7 +7437,7 @@ No. 1, we find four motives within the first four measures of the primary theme.
 
 CHAPTER 11. MELODIC ANALYSIS
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000006_5b4967d1bd2c5652400242e6e5c374f48e4fbc8edbea5204925eafac94410cd7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000006_5b4967d1bd2c5652400242e6e5c374f48e4fbc8edbea5204925eafac94410cd7.png -->
 
 Here is development of motives 2 and 3 together.
 
@@ -7721,7 +7447,7 @@ Here is development of motives 2 and 3 together.
 
 113
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000007_9700dbb2b45326b3d43bd64466795331d0bcaba42a01b755fad7644126a786d1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000007_9700dbb2b45326b3d43bd64466795331d0bcaba42a01b755fad7644126a786d1.png -->
 
 œ . œ .
 
@@ -7739,7 +7465,7 @@ The previous excerpt leads directly into the next, which features development of
 
 356
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000008_c1e1b3410272f8ff563e13dd2a5060b7c31f5ebbda6eb945650cc03a408236ae.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000008_c1e1b3410272f8ff563e13dd2a5060b7c31f5ebbda6eb945650cc03a408236ae.png -->
 
 In the next section, we will look at some of the various ways one can alter a melody
 
@@ -7769,7 +7495,7 @@ First, listen to the following example.
 
 388 Figure 11.2.2: Melodic inversion in Invention No. 1 in C Major by J.S. Bach
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000009_eb12c01b729c0946597c67a9bacfa8271076205b29e08dcee43606d30fe003f0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000009_eb12c01b729c0946597c67a9bacfa8271076205b29e08dcee43606d30fe003f0.png -->
 
 &amp;
 
@@ -7805,7 +7531,7 @@ Intervallic change is less exact than inversion. With intervallic change, the rh
 | &    |            |            |
 | ? ∑ | ∑ ∑ ∑   | ∑ ∑ ∑   |
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000010_aca804c956b64a35130c2aeb7c404a869ce19fc05b9317672a0637a5ed08d009.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00121-00130/try-20261114T122731-57f928/document_artifacts/image_000010_aca804c956b64a35130c2aeb7c404a869ce19fc05b9317672a0637a5ed08d009.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -7986,39 +7712,16 @@ Intervallic change is less exact than inversion. With intervallic change, the rh
 - We will discuss extension and fragmentation of motives later in this chapter.
 - Diminution is the opposite of augmentation and usually refers to the
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 121](<MusicTheory.pdf#page=121>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 121](<document_artifacts/page_000121_758bdc4443a4d3efb7716c26952636c152c9e0c09c8f311011058b3286ed85e4.png>)
-
-![PDF-Seite 122](<document_artifacts/page_000122_06032f1ff83ada3686fbe74a43f16b117008a5d72deb4295c5fd1cbbe478ee13.png>)
-
-![PDF-Seite 123](<document_artifacts/page_000123_426498256edfc90cdf1fa223cc5e80d85e8f205fa0c9f3e70808c175e00043cb.png>)
-
-![PDF-Seite 124](<document_artifacts/page_000124_a84cf80c1753512b10569b7490ad54c55a92b6845c12b2df44e719fd2cb513af.png>)
-
-![PDF-Seite 125](<document_artifacts/page_000125_3e3edc96f44cc6ea288b39da91fa8dbb9d81971862caa93bd2184514bec91751.png>)
-
-![PDF-Seite 126](<document_artifacts/page_000126_5d097615f1b7db7dde20ecdb6bd3781c65c5958ce3eea841023817133bd066bd.png>)
-
-![PDF-Seite 127](<document_artifacts/page_000127_9efddd8d6c16445f8cd4ce335de4c7bc992ed8e9e488ebd751381cbcffa24f4e.png>)
-
-![PDF-Seite 128](<document_artifacts/page_000128_e98277ef7b59acf02861489e2757aefc7ed4233ce485b271f90609224bd54f0c.png>)
-
-![PDF-Seite 129](<document_artifacts/page_000129_29fe95c6a9c306a7e38524206d21ad379eb5053812be65c7dcc11a721af7a13e.png>)
-
-![PDF-Seite 130](<document_artifacts/page_000130_6f9fc8e80f7912b2bfb344c59441a90babb47f321f86e25a3daced8da544cdbd.png>)
-
-
-[Original-PDF, Seite 121](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=121>)
-
-<!-- PDF-Seiten 131–140 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document.md -->
+<!-- PDF-Seiten 131–140 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document.md -->
 
 11.2. MELODIC ALTERATION
 
 117
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000000_5fe64f8a0acfe564c28b7e122feadfbc12f63b7bc42ce1a2eab434d820dad809.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000000_5fe64f8a0acfe564c28b7e122feadfbc12f63b7bc42ce1a2eab434d820dad809.png -->
 
 8
 
@@ -8054,13 +7757,13 @@ Intervallic change is less exact than inversion. With intervallic change, the rh
 
 11.2.4 Rhythmic Change
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000001_4189cbbbc4afd32920e344a3caa27caac54405d263bcafe9666b5268150cb347.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000001_4189cbbbc4afd32920e344a3caa27caac54405d263bcafe9666b5268150cb347.png -->
 
 362
 
 Figure 11.2.9: Beethoven, Pathétique Sonata, Op. 13, I, development section
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000002_b252ca21d89b4eed368eea894a75a8a9faedf4e9e43c9d645473acf3004c53a0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000002_b252ca21d89b4eed368eea894a75a8a9faedf4e9e43c9d645473acf3004c53a0.png -->
 
 ## 11.2.5 Ornamentation
 
@@ -8090,7 +7793,7 @@ mot. 1 (orn. &amp; ext.)
 
 &amp; # # # # # 4 4
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000003_f37dfae5ca5db5fd5c9acc277075d5b0f576e7df4aa7182385decc0eedfe646d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000003_f37dfae5ca5db5fd5c9acc277075d5b0f576e7df4aa7182385decc0eedfe646d.png -->
 
 We will not consider transposition of a motive (also know as a sequence) to be a motivic alteration worth labeling since it is so common.
 
@@ -8117,7 +7820,7 @@ n . œ. œ. œ. œ
 | cadence,                                                     |                                                                                                                                                                                                                                                                         |
 | ? ∑                                                         | ∑ ∑ ∑ ∑ ∑ ∑ popular                                                                                                                                                                                                                                               |
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000004_2ff8624337c87f23e3e0715548e8e0a097a1b6294deb6ee8915d3fed41080bd7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000004_2ff8624337c87f23e3e0715548e8e0a097a1b6294deb6ee8915d3fed41080bd7.png -->
 
 nt
 
@@ -8147,7 +7850,7 @@ Here are examples of four-measure phrases. Notice that these phrases have a sens
 
 3
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000005_4fc74f4e21cdeec888d5042ba911993c3c94ff77ddcba4b80698a72361ca582f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000005_4fc74f4e21cdeec888d5042ba911993c3c94ff77ddcba4b80698a72361ca582f.png -->
 
 65
 
@@ -8167,13 +7870,13 @@ V b b b
 
 V b b b ∑ is part of a half cadence or deceptive cadence, yet the phrase has a feeling of completion, especially considering its relation to the phrases before and after
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000006_0ae2143fe359b541e334e0fbed9794a235c8c148da19739c7f0cf94118cbd782.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000006_0ae2143fe359b541e334e0fbed9794a235c8c148da19739c7f0cf94118cbd782.png -->
 
 (a minor iv chord, which will be discussed in the chapter on mode mixture)
 
 71
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000007_9657a69f07a5f5cd9d4b2c2e30f5470ea64033ff6e6fc00082c3d4335966f62b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000007_9657a69f07a5f5cd9d4b2c2e30f5470ea64033ff6e6fc00082c3d4335966f62b.png -->
 
 65
 
@@ -8195,13 +7898,13 @@ b b
 
 Figure 11.4.3: Smith, Eriksen, Hermansen, Lind, Bjørklund, Knowles, "Irre-
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000008_a4943710d2362d087bd654d6fc7b60681c76569563226d2c4e0c7a2ea625f050.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000008_a4943710d2362d087bd654d6fc7b60681c76569563226d2c4e0c7a2ea625f050.png -->
 
 placeable"
 
 59
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000009_72bb14d4004ae1abe4b612af98ea59f7830070ba6fcf09948d9a9fb1e39e8d9d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000009_72bb14d4004ae1abe4b612af98ea59f7830070ba6fcf09948d9a9fb1e39e8d9d.png -->
 
 &amp; b b
 
@@ -8221,7 +7924,7 @@ placeable"
 
 Figure 11.4.5: Mozart, Piano Sonata in C Major, K. 545, II
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000010_350dc3df008523e577a23233fbae15d00224a6a39679df50f7d4a45ade3f6cbd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000010_350dc3df008523e577a23233fbae15d00224a6a39679df50f7d4a45ade3f6cbd.png -->
 
 Examples of seven-measure phrases are rare and often involve elisions, which will be covered in a later chapter when we discuss how phrases are combined to create small forms like periods and phrase groups.
 
@@ -8241,11 +7944,11 @@ In the following example, notice that subphrases a and a' have the same first si
 
 48
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000011_6e16303ba6a8c772e010c9d0cb53622ed9031acd48ebd22d138f2ef9e2b793be.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000011_6e16303ba6a8c772e010c9d0cb53622ed9031acd48ebd22d138f2ef9e2b793be.png -->
 
 Figure 11.5.4: Noble, "The Very Thought of You"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000012_eb34e7863255d41f9b75aedc5745dd46a23c7c89dbb4158e4ee2580cd943c2f8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000012_eb34e7863255d41f9b75aedc5745dd46a23c7c89dbb4158e4ee2580cd943c2f8.png -->
 
 When you listen to the music of "The Very Through of You" you will hear that each motive lasts for two measures. The difference is that motives are typically short-two to seven notes-whereas subphrases will usually contain six or more notes and occupy two measures (half of a four-measure phrase).
 
@@ -8259,7 +7962,7 @@ When you listen to the music of "The Very Through of You" you will hear that eac
 
 \_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000013_42616f1beb18e1af17a8ed73e0e9f8bd7814bfc6d8e6dea49459f7b660c249ef.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000013_42616f1beb18e1af17a8ed73e0e9f8bd7814bfc6d8e6dea49459f7b660c249ef.png -->
 
 · Label non-chord tones for notes in parentheses
 
@@ -8277,7 +7980,7 @@ six motives in this example due to motivic alteration.)
 
 YT: RgKAFK5djSk
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000014_a6d238970f3ebfe543c4c60397338c23679a963e8b674e794b0ec9fbb97fa2e7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00131-00140/try-20261114T122753-29bac1/document_artifacts/image_000014_a6d238970f3ebfe543c4c60397338c23679a963e8b674e794b0ec9fbb97fa2e7.png -->
 
 Figure 11.6.1: Franks, Puth, Thomaz, "See You Again"
 
@@ -8554,33 +8257,10 @@ Figure 11.6.1: Franks, Puth, Thomaz, "See You Again"
 - B¯≤: __ __ __
 - Lead-sheet: __ __ __
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 131](<MusicTheory.pdf#page=131>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 131](<document_artifacts/page_000131_473caa7859737e2744681c05e52a2917f81fa2adde75fd3545f2a99b469e810e.png>)
-
-![PDF-Seite 132](<document_artifacts/page_000132_61067a0de3cd0530e199547ff1e31f50f429d9adfdf5102186d1c52cdaf9eeb6.png>)
-
-![PDF-Seite 133](<document_artifacts/page_000133_b61a2023676b64d7d77696e27081e74459797df93ce65cad331350e9edc0ee3c.png>)
-
-![PDF-Seite 134](<document_artifacts/page_000134_2b684e9519c5182cf907fbecc701bbbb15468dbd2387b66d60e9011425875cf4.png>)
-
-![PDF-Seite 135](<document_artifacts/page_000135_187a8bc41b7d2bc17bb604dd9fc8d16ae195297fbc16829bbe1bf4664b8cedf3.png>)
-
-![PDF-Seite 136](<document_artifacts/page_000136_7b3a39ed15abfaecc20661bcc3c0a9f43b7b6b77b92480d3422bcd1923c48d0a.png>)
-
-![PDF-Seite 137](<document_artifacts/page_000137_d7b1bdfd9b20056f7b68d49a002c371da32c6a8e88b6011f399298fac23151a3.png>)
-
-![PDF-Seite 138](<document_artifacts/page_000138_4be01ebe1a80f91085c5605d89d8bef484bfc1bdfc66fc3c4bef7ae80143780c.png>)
-
-![PDF-Seite 139](<document_artifacts/page_000139_b23a70ddbc3d49d36e82e9e83ea95a6cff3f3204136f8983c863743195632d56.png>)
-
-![PDF-Seite 140](<document_artifacts/page_000140_0b70b56060390abfdbe84b4d4f28a5984f94281ad0beefc02e6128f78815b186.png>)
-
-
-[Original-PDF, Seite 131](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=131>)
-
-<!-- PDF-Seiten 141–150 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document.md -->
+<!-- PDF-Seiten 141–150 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document.md -->
 
 393
 
@@ -8592,7 +8272,7 @@ Figure 11.6.1: Franks, Puth, Thomaz, "See You Again"
 
 11.6. PRACTICE EXERCISES
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000000_b589920fef8980e350b517862d5a25099e8c7ccaefa91e26cd180b8ece01f5ad.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000000_b589920fef8980e350b517862d5a25099e8c7ccaefa91e26cd180b8ece01f5ad.png -->
 
 2. For the following example, alter the given motives as specified. Also,
 
@@ -8618,7 +8298,7 @@ chord tones.
 
 \_\_ \_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000001_f915abe574f2c01475e74f484aba7befea02eed52cdc7cdfcc7fcb4d2b3cc379.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000001_f915abe574f2c01475e74f484aba7befea02eed52cdc7cdfcc7fcb4d2b3cc379.png -->
 
 C: \_\_\_
 
@@ -8642,7 +8322,7 @@ e:
 
 \_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000002_75dcdb29032229d7a7ac94d70b0815bb1655106910533de38d82c29c97ecad49.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000002_75dcdb29032229d7a7ac94d70b0815bb1655106910533de38d82c29c97ecad49.png -->
 
 C: \_\_\_
 
@@ -8658,11 +8338,11 @@ C: \_\_\_
 
 410
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000003_4ead207ed2d6eff4c9b16081cd286c2f49d0b1daee0db561e31d0dd2fa03b9a3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000003_4ead207ed2d6eff4c9b16081cd286c2f49d0b1daee0db561e31d0dd2fa03b9a3.png -->
 
 Day Two:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000004_fafe129f85c47ef0fbc9e87f87f736de9875adef842bcb7be0d77dc4a1122223.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000004_fafe129f85c47ef0fbc9e87f87f736de9875adef842bcb7be0d77dc4a1122223.png -->
 
 œ . œ . œ . œ .
 
@@ -8677,7 +8357,7 @@ Day Two:
 
 Figure 11.6.2: Robert Schumann, Album for the Young, Op. 68, No. 16, "First Loss"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000005_3746d506366f4b5a8fa25c58c8786a7004d73b67da00d98c94aed077ec9ac5f0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000005_3746d506366f4b5a8fa25c58c8786a7004d73b67da00d98c94aed077ec9ac5f0.png -->
 
 Click here to download the first assignment for this chapter.
 
@@ -8701,11 +8381,11 @@ The Verse-Chorus form is arguably the most common musical form of present day po
 
 Table 12.1.1: Jackson and Richie, "We Are The World"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000006_9d132a19f223bf0ee594cc1109a319f8bf1f04e49f0bd7f7d3c7133fac08018b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000006_9d132a19f223bf0ee594cc1109a319f8bf1f04e49f0bd7f7d3c7133fac08018b.png -->
 
 YT: 9AjkUyX0rVw
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000007_b91bef55d18106336f0a17bff26f760a575c469bceab170e57ab36f7ebcb585a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000007_b91bef55d18106336f0a17bff26f760a575c469bceab170e57ab36f7ebcb585a.png -->
 
 Common additions to the Verse-Chorus form, beside the bridge, are the pre-chorus and post-chorus.
 
@@ -8730,9 +8410,9 @@ Table 12.1.2: Cobain, Novoselic, and Grohl, "Smells Like Teen Spirit"
 
 YT: hTWKbfoikeg
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000008_3189ffb28f3320ca05fa21d719956df6ff5258eae458d2c707ab18ba5ccd054d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000008_3189ffb28f3320ca05fa21d719956df6ff5258eae458d2c707ab18ba5ccd054d.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000009_755458b1270fff22408ba8ca9075634db0e48b1abeaf63c907efe38c0e63d441.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000009_755458b1270fff22408ba8ca9075634db0e48b1abeaf63c907efe38c0e63d441.png -->
 
 It is worth noting that there may disagreement about labeling sections in a form. One person may call a section a "pre-chorus, " another may call it a "first chorus, " while another may call it "verse part b. " There is ambiguity in naming sections and disagreement is to be expected.
 
@@ -8750,9 +8430,9 @@ Table 12.2.1: Gershwin, "I Got Rhythm"
 
 YT: Q\_jKTPsh54Y
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000010_7e45ca2c19f0a4cea330306af0bdaf0752cff72c51cb4388bd05bc8c191b16d4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000010_7e45ca2c19f0a4cea330306af0bdaf0752cff72c51cb4388bd05bc8c191b16d4.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000011_e1284bc1d1c7121ebe6691257acbd42b3133c1eca994a2b17c58f7c8830b1f56.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000011_e1284bc1d1c7121ebe6691257acbd42b3133c1eca994a2b17c58f7c8830b1f56.png -->
 
 It is common for one or more of the A sections to be instrumental, and it is also common to eliminate an A section on the repeat of the entire AABA form (AABAABA, for example).
 
@@ -8776,11 +8456,11 @@ Many popular songs from the 1930s-1950s were in the 32-bar ABAC form. Well-known
 
 YT: hWkoFj14HkE
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000012_e9bcaa945728f7a6b1f634308401740ed0276167f292668a0c3756539374c53e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000012_e9bcaa945728f7a6b1f634308401740ed0276167f292668a0c3756539374c53e.png -->
 
 Table 12.3.1: Carmichael, "Star Dust"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000013_ae45812451026b756e3dafabbeeb58f0d14b9a639e60bd0b2ea702375221641d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000013_ae45812451026b756e3dafabbeeb58f0d14b9a639e60bd0b2ea702375221641d.png -->
 
 The ABAC form may also occur as ABAB' where the B' section begins the same as the B section but ends differently.
 
@@ -8792,9 +8472,9 @@ Associated with the Blues genre, which originated in the early 1900s, the 12-bar
 
 Table 12.4.1: Berry, "Johnny B. Goode"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000014_d7fc86fb904bc4e178c0c978cde752fe73188ac6dcdbc6a7bb37fe693c4ab262.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000014_d7fc86fb904bc4e178c0c978cde752fe73188ac6dcdbc6a7bb37fe693c4ab262.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000015_01b98262515ef89435626fca4a2de46cf4b962740d90f8fffaa47e849820ac40.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000015_01b98262515ef89435626fca4a2de46cf4b962740d90f8fffaa47e849820ac40.png -->
 
 YT: ZFo8-JqzSCM
 
@@ -8862,11 +8542,11 @@ Section Type:
 
 Section Type:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000016_b4ddee5799a21e265c8dfb97438dd31d3f4b46a3212e1bacef1ea51add5c4c66.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000016_b4ddee5799a21e265c8dfb97438dd31d3f4b46a3212e1bacef1ea51add5c4c66.png -->
 
 Table 12.6.1: Bahler, "She's Out of My Life"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000017_a84b75ea103262ad0c9984a7f6b9d0e802de564c377c0a42d5869abad2426a2d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000017_a84b75ea103262ad0c9984a7f6b9d0e802de564c377c0a42d5869abad2426a2d.png -->
 
 YT:
 
@@ -8922,11 +8602,11 @@ Section Type:
 
 ,
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000018_f833ebe1f148a025cbd33d443b2524a393226c9deaa6d4f654cd2558e500f9cb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000018_f833ebe1f148a025cbd33d443b2524a393226c9deaa6d4f654cd2558e500f9cb.png -->
 
 Table 12.6.2: Lennon-McCartney, "Penny Lane"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000019_79a8af078e6a95dcea40a108e0aefd76eda5a526f53bae34eeb457088b9ee09d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000019_79a8af078e6a95dcea40a108e0aefd76eda5a526f53bae34eeb457088b9ee09d.png -->
 
 YT:
 
@@ -8998,11 +8678,11 @@ bars
 
 both V &amp; I are in root position
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000020_8e49915081fd20176b87a1b56e921931518ae109467eefc11440bfdcd68cb444.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000020_8e49915081fd20176b87a1b56e921931518ae109467eefc11440bfdcd68cb444.png -->
 
 ∑ ∑ ∑ ∑ ∑ ∑ ∑ ∑ ∑ ∑ ∑ ∑ ∑ ∑ ∑ ∑ ∑ A sentence in music is a phrase with a specific melodic construction: a melodic idea (motive 1 or subphrase a) is either repeated or sequenced then followed by either related or unrelated material leading to a cadence.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000021_aaf4e8aa768db4d949dcb568e59e179174e1bf1dea8c42002f6122bb68fed2f7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000021_aaf4e8aa768db4d949dcb568e59e179174e1bf1dea8c42002f6122bb68fed2f7.png -->
 
 In this first example, Mozart sequences motive 1 from measure 1 up a step in measure 2. Measure 3 contains related material and measure 4 contains cadential material.
 
@@ -9107,7 +8787,7 @@ Half Cadence
 
 Figure 13.2.2: Sentence Structure in Beethoven, Op. 2, No. 1, I
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000022_e49db873c94224065b3fde25ce31a51d3fa1c4fc8af8f36775e7e7a42c94b54b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00141-00150/try-20261114T122814-df2fe8/document_artifacts/image_000022_e49db873c94224065b3fde25ce31a51d3fa1c4fc8af8f36775e7e7a42c94b54b.png -->
 
 In the next example, unrelated material follows subphrase a and its repetition.
 
@@ -9180,37 +8860,14 @@ j
 - i/3rd ii o /3rd
 - YT: G8yuCJGWS20
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 141](<MusicTheory.pdf#page=141>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 141](<document_artifacts/page_000141_c3f1c4649fa447c579ab9c09fd1b6e26d8ba47a2021524f7f7b10cacdd971048.png>)
-
-![PDF-Seite 142](<document_artifacts/page_000142_5725642bd03c80bf9d5a9cc3b40c0c0a12a9b036abaa9e047bc1a7281dd73457.png>)
-
-![PDF-Seite 143](<document_artifacts/page_000143_74279125c87a627033c1eafd947f3671d5a64f05cfe530b7080f59a79cb423e5.png>)
-
-![PDF-Seite 144](<document_artifacts/page_000144_a25e5bce35f8a99cee053d4e9b5273a67c6c552fd01701588e10c6e400c3315e.png>)
-
-![PDF-Seite 145](<document_artifacts/page_000145_9fa14a1504b1ae03931003fdfad13847e4e8ed6e39cf09edcf04fbbfaf8bf672.png>)
-
-![PDF-Seite 146](<document_artifacts/page_000146_79b9b75adf7286dd6d34ebc9d50c48e0da08aceb647e00f68e6a058b114e2df5.png>)
-
-![PDF-Seite 147](<document_artifacts/page_000147_e07d1bc9dd3f736373ef183ce012264f4ec04ce31c0887edcdfe667c200d3080.png>)
-
-![PDF-Seite 148](<document_artifacts/page_000148_d9f90f0f817b093f1e69e33633de8f5c97fc8866dd405605cb657697328230d1.png>)
-
-![PDF-Seite 149](<document_artifacts/page_000149_64246f828b9433e2c371c4faf9eef80d200e6e5b799ffdda065619b9a827b42b.png>)
-
-![PDF-Seite 150](<document_artifacts/page_000150_11582dab535e65e73e6371891eb5a845ca1e5538355d33cbc083f154c313c633.png>)
-
-
-[Original-PDF, Seite 141](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=141>)
-
-<!-- PDF-Seiten 151–160 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document.md -->
+<!-- PDF-Seiten 151–160 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document.md -->
 
 Figure 13.2.3: Sentence Structure in Mozart, K. 333, I
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000000_c06916663d5a755c767427e508cb88b7f1086fbd5a7e026d11a2e1d60553e40b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000000_c06916663d5a755c767427e508cb88b7f1086fbd5a7e026d11a2e1d60553e40b.png -->
 
 ## 13.3 The Period
 
@@ -9233,13 +8890,13 @@ than an inverted IAC.
 
 13.3.2 Examples of the "Less Conclusive-More Conclusive" Cadential Form
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000001_d77d18edfeee70d7a9a81062cd3c1b6d625651cd18f474024dbea3eba46c3a6a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000001_d77d18edfeee70d7a9a81062cd3c1b6d625651cd18f474024dbea3eba46c3a6a.png -->
 
 Here is a formal diagram of the above example.
 
 Figure 13.3.2: Diagram of Mozart, K. 331, I, mm. 1-8
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000002_459c6458ddb80c574d1cfd4eaede02fbe59b5627d6543eba882bbd81d8246e43.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000002_459c6458ddb80c574d1cfd4eaede02fbe59b5627d6543eba882bbd81d8246e43.png -->
 
 Notice that one or more phrases within a period can be a sentence, as in the example above, since sentences are phrases with specific melodic structure.
 
@@ -9247,13 +8904,13 @@ In the next example, the first phrase concludes with an IAC and the second phras
 
 37
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000003_5e44259799b396397cfa9c7cff543eb1af26e77902fe7efb5514eb49bcd2e75e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000003_5e44259799b396397cfa9c7cff543eb1af26e77902fe7efb5514eb49bcd2e75e.png -->
 
 In the next example, the first phrase ends with an IAC and is followed by a second phrase ending with a PAC.
 
 Figure 13.3.4: Beethoven, Bagatelle in A minor, WoO 59, "Für Elise"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000004_189cdbc99afb1049c37df699cecb23a8b31e3f61675e975ab129a6698fa14680.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000004_189cdbc99afb1049c37df699cecb23a8b31e3f61675e975ab129a6698fa14680.png -->
 
 Another example with a less conclusive cadence followed by a more conclusive cadence is "Lean on Me" by Bill Withers.
 
@@ -9261,7 +8918,7 @@ Another example with a less conclusive cadence followed by a more conclusive cad
 
 531
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000005_91675223d7eb62845b668d0b416d60695c694f298392c80f50656cd4ab14567f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000005_91675223d7eb62845b668d0b416d60695c694f298392c80f50656cd4ab14567f.png -->
 
 YT: vp\_h649sZ9A
 
@@ -9285,7 +8942,7 @@ that requires triple and quadruple primes, it is clearer to use a1 , a2 , a3 , a
 
 Below is an example of a contrasting period.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000006_2a97800ba3e1d3b6f79f9cdf1f126a1050134a2c9130743a0760574f07a6700d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000006_2a97800ba3e1d3b6f79f9cdf1f126a1050134a2c9130743a0760574f07a6700d.png -->
 
 ?
 
@@ -9297,7 +8954,7 @@ phrase a
 
 œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000007_a38a7d90094b03517b87586fd9b9477f467f170629e3c21fe4dd2e9a7ccaf70b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000007_a38a7d90094b03517b87586fd9b9477f467f170629e3c21fe4dd2e9a7ccaf70b.png -->
 
 4 2
 
@@ -9323,7 +8980,7 @@ b
 
 ? b b b b ∑ ∑ ∑ ∑ ∑ ∑ Figure 13.3.8: Formal diagram of the example above (2nd movement of Beethoven Pathétique sonata)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000008_3ea85013299607a00e9d120a3bc8f5927898ff0377b83c4d1f1570e343a985c0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000008_3ea85013299607a00e9d120a3bc8f5927898ff0377b83c4d1f1570e343a985c0.png -->
 
 ## 13.3.5 Repeated Phrase
 
@@ -9355,7 +9012,7 @@ p
 
 ? # # # ∑ ∑ ∑ ∑ ∑ ∑ Figure 13.3.10: Formal diagram of the example above ("Little Morning Wanderer")
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000009_fd8b5b42c977842658cbe4b4f182b2013a6945a9469de3bc4b41977012cedf74.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000009_fd8b5b42c977842658cbe4b4f182b2013a6945a9469de3bc4b41977012cedf74.png -->
 
 In following two sections, we will examine periods containing more than two phrases.
 
@@ -9371,7 +9028,7 @@ CHAPTER 13. PHRASES IN COMBINATION
 
 Figure 13.4.1: Chopin, Prelude Op. 28, No. 20, in C minor
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000010_3e68b418f59e2ad57771f14e7d0b8cbe61bc937c18433a6c0b50460763eba548.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000010_3e68b418f59e2ad57771f14e7d0b8cbe61bc937c18433a6c0b50460763eba548.png -->
 
 ## 13.5 The Double Period
 
@@ -9397,7 +9054,7 @@ phrase a
 
 phrase a
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000011_f208357d26cb8d72ef53c9062f1035f0e74eedb837e9704188adeca6d7528080.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00151-00160/try-20261114T122948-838684/document_artifacts/image_000011_f208357d26cb8d72ef53c9062f1035f0e74eedb837e9704188adeca6d7528080.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -9501,33 +9158,10 @@ phrase a
 - n œœ
 - YT: VlfL9LWtCls
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 151](<MusicTheory.pdf#page=151>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 151](<document_artifacts/page_000151_5e8d18c359838cdf24053463d5e5336a9521e16eaff4f215e0c9940e1a8bcbf6.png>)
-
-![PDF-Seite 152](<document_artifacts/page_000152_6d752ba5c02edb6847be14d58dd73a3bab21e84ede62b9d396d8496bedae753c.png>)
-
-![PDF-Seite 153](<document_artifacts/page_000153_68af1dab3cca916d92c2ccd95aba19a14a9b380f9110c55a088c142cf004e551.png>)
-
-![PDF-Seite 154](<document_artifacts/page_000154_e267020ed86db6239599ef848cf13e2b435d8440357e9f3ff5c87b526c91df0a.png>)
-
-![PDF-Seite 155](<document_artifacts/page_000155_fd3599d596dcb0639c2eb6fce21fb06eb865fd61a421b6f0afebae83209a9e26.png>)
-
-![PDF-Seite 156](<document_artifacts/page_000156_873ad792049fee2fd3f59ff55b04835052a775110c40dc2eb6d68c33761dea61.png>)
-
-![PDF-Seite 157](<document_artifacts/page_000157_c7e77dcb9e0f3af384bdd90d49fc9cc42d3515aaa2593caf118cc228fec15b02.png>)
-
-![PDF-Seite 158](<document_artifacts/page_000158_b3bedd0b096faf96047cd38460f6cfe5b9df025fa1180e04196cb7b4e0a55b33.png>)
-
-![PDF-Seite 159](<document_artifacts/page_000159_5deb8d33fa7f81e651dc308fcc91170cf17cfb88d04a0b890285203d5cd6c45e.png>)
-
-![PDF-Seite 160](<document_artifacts/page_000160_26e42e23befd7d9563398060f3e61d08b154603eec034fce1f39cb39ab4769d7.png>)
-
-
-[Original-PDF, Seite 151](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=151>)
-
-<!-- PDF-Seiten 161–170 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00161-00170/try-20261114T123006-5fc429/document.md -->
+<!-- PDF-Seiten 161–170 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00161-00170/try-20261114T123006-5fc429/document.md -->
 
 686
 
@@ -9612,7 +9246,7 @@ You may encounter a section consisting of four phrases that is not a double peri
 
 CHAPTER 13. PHRASES IN COMBINATION
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00161-00170/try-20261114T123006-5fc429/document_artifacts/image_000000_7d79f06183a76fec9848d3ea3a040aef94dec0234c40237d7e91fc35d8063f5d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00161-00170/try-20261114T123006-5fc429/document_artifacts/image_000000_7d79f06183a76fec9848d3ea3a040aef94dec0234c40237d7e91fc35d8063f5d.png -->
 
 593
 
@@ -9620,7 +9254,7 @@ I (PAC)
 
 Figure 13.5.6: Formal diagram of a double period (Beethoven, Op. 10, No. 1, II)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00161-00170/try-20261114T123006-5fc429/document_artifacts/image_000001_0653ca7bf520d68768ede1548433b09ee184123b8eca86dce0286160ac8e9bbe.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00161-00170/try-20261114T123006-5fc429/document_artifacts/image_000001_0653ca7bf520d68768ede1548433b09ee184123b8eca86dce0286160ac8e9bbe.png -->
 
 In the next section we will examine phrase combinations that are not periods.
 
@@ -9632,7 +9266,7 @@ Phrase groups and phrase chains are not periods. In phrase groups and phrase cha
 
 CHAPTER 13. PHRASES IN COMBINATION
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00161-00170/try-20261114T123006-5fc429/document_artifacts/image_000002_97efa5fbb5da560f52f9fb660be5ae75bc5d1296cb47b160a95351053b871ada.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00161-00170/try-20261114T123006-5fc429/document_artifacts/image_000002_97efa5fbb5da560f52f9fb660be5ae75bc5d1296cb47b160a95351053b871ada.png -->
 
 A phrase chain also ends in a half cadence and consists of at least two phrases with contrasting melodies.
 
@@ -9640,7 +9274,7 @@ A phrase chain also ends in a half cadence and consists of at least two phrases 
 
 151
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00161-00170/try-20261114T123006-5fc429/document_artifacts/image_000003_7764981f3525283e07505404eaeba4187f9db010d54df823508732090c14b5d2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00161-00170/try-20261114T123006-5fc429/document_artifacts/image_000003_7764981f3525283e07505404eaeba4187f9db010d54df823508732090c14b5d2.png -->
 
 ## 13.7 The Elision
 
@@ -9648,7 +9282,7 @@ An elision is a special device for joining phrases together in an overlapping ma
 
 phrase a
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00161-00170/try-20261114T123006-5fc429/document_artifacts/image_000004_7f7b9a5b2c1dc9729214b3e509c180f7b9e204d6d9f027b064b9a0ec48044663.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00161-00170/try-20261114T123006-5fc429/document_artifacts/image_000004_7f7b9a5b2c1dc9729214b3e509c180f7b9e204d6d9f027b064b9a0ec48044663.png -->
 
 ## 13.8 Summary of Phrases in Combination
 
@@ -9675,7 +9309,7 @@ phrase, repeated period).
 
 "Ein Mädchen oder Weibchen"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00161-00170/try-20261114T123006-5fc429/document_artifacts/image_000005_af0429be40d49f743602f38a3c661faafbd64268d15b8cbee5e293260b77e5dc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00161-00170/try-20261114T123006-5fc429/document_artifacts/image_000005_af0429be40d49f743602f38a3c661faafbd64268d15b8cbee5e293260b77e5dc.png -->
 
 48
 
@@ -9773,33 +9407,10 @@ Click here to download the homework assignment for this chapter. Click here to d
 - n œ Œ
 - ____ ____
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 161](<MusicTheory.pdf#page=161>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 161](<document_artifacts/page_000161_49b932165ecdec6e662397cbf88479427a53264068c233613254bcd0a31cdfa1.png>)
-
-![PDF-Seite 162](<document_artifacts/page_000162_03f8c9ae45b8ba8c163d5c24fde03f31418437084ecc24ef0cce114e62339a08.png>)
-
-![PDF-Seite 163](<document_artifacts/page_000163_3a89877115b5c508e003f933e17bd41c7d3c2c93a235cf62220c0f1623ec3e81.png>)
-
-![PDF-Seite 164](<document_artifacts/page_000164_99820e4f446a783b6092c85387f496e2bf48066491ecf0f64fd3e2ff2aef969f.png>)
-
-![PDF-Seite 165](<document_artifacts/page_000165_fa677978470cdf50a412d03ba3e504c5a9f622a3b8015a44f7eeee61dca8b58c.png>)
-
-![PDF-Seite 166](<document_artifacts/page_000166_593b9f67d70ad5e90bf3a5260052a5e6b26c751c354b7ac49e305e8cdc87f755.png>)
-
-![PDF-Seite 167](<document_artifacts/page_000167_3df5eb1e7094a1bc9925ef3abf0dae95189debc4847f1f950ecd080185ae41ad.png>)
-
-![PDF-Seite 168](<document_artifacts/page_000168_8735a51c85dbdeb81d82be8f852e43c5ab7fd5fc1cba6e693a8bc7e5d6bff58a.png>)
-
-![PDF-Seite 169](<document_artifacts/page_000169_7f3113f2011fd26d7671fcd2c0693ec9a4ad84da56977b7b6c3eac0fafa5e0d6.png>)
-
-![PDF-Seite 170](<document_artifacts/page_000170_80068251402828c98ffd112b9ef50d0e2f2d4a6544f9a2df653668274067a72c.png>)
-
-
-[Original-PDF, Seite 161](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=161>)
-
-<!-- PDF-Seiten 171–180 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document.md -->
+<!-- PDF-Seiten 171–180 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document.md -->
 
 705
 
@@ -9819,7 +9430,7 @@ five voices with a melody (a sixth voice) above. Notice that the texture has
 
 slow rhythmic values on the horizontal plane.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000000_63da6f0b96e5859a69badf321f6ecc16a4cd4e1efc3acb2eb463f5c18fc31c7c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000000_63da6f0b96e5859a69badf321f6ecc16a4cd4e1efc3acb2eb463f5c18fc31c7c.png -->
 
 707
 
@@ -9869,7 +9480,7 @@ Figure 14.1.1: Barber, Adagio for Strings
 
 complexity.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000001_610c18354e00265f36a2ad18700202e4ef304cc168c7fa5c5417c03d7d958113.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000001_610c18354e00265f36a2ad18700202e4ef304cc168c7fa5c5417c03d7d958113.png -->
 
 œ œ œ œ œ œ
 
@@ -9927,7 +9538,7 @@ plagal cadence
 
 ˙
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000002_d7cbb142196116c66b52415fb766b4960843701229eac7a76d3ef1e47af7eaf6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000002_d7cbb142196116c66b52415fb766b4960843701229eac7a76d3ef1e47af7eaf6.png -->
 
 A:
 
@@ -9949,7 +9560,7 @@ J
 
 -
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000003_2a68d7e6792e7387aca90174c778a99c5f31da009f320283c3e1f226cf06406b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000003_2a68d7e6792e7387aca90174c778a99c5f31da009f320283c3e1f226cf06406b.png -->
 
 \_\_\_
 
@@ -9959,7 +9570,7 @@ J
 
 Figure 14.2.2: Schubert, Winterreise, D.911, "Die Nebensonnen"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000004_cb3a0cbe0a873ded800fefd7e0fbb9849549d8f5a9b70980894b876f4b7af35f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000004_cb3a0cbe0a873ded800fefd7e0fbb9849549d8f5a9b70980894b876f4b7af35f.png -->
 
 Chorale textures are also described as "homorhythmic" because all of the parts move in the same rhythm.
 
@@ -9987,7 +9598,7 @@ V
 
 Figure 14.3.1: Beethoven, Moonlight Sonata, Op. 27, No. 2, I
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000005_55d5f6e1eff450cb3cb0d7a4e9f107c6a0674910e49210d74623776cde3f9d8d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000005_55d5f6e1eff450cb3cb0d7a4e9f107c6a0674910e49210d74623776cde3f9d8d.png -->
 
 54
 
@@ -9999,7 +9610,7 @@ Figure 14.3.1: Beethoven, Moonlight Sonata, Op. 27, No. 2, I
 
 The next example has descending arpeggios.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000006_4f6fdaf6b0362555d7e3ed6e4da9e527f2269efbdab045a0cb241ab4f4fdc659.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000006_4f6fdaf6b0362555d7e3ed6e4da9e527f2269efbdab045a0cb241ab4f4fdc659.png -->
 
 161
 
@@ -10009,13 +9620,13 @@ The next example has descending arpeggios.
 
 CHAPTER 14. ACCOMPANIMENTAL TEXTURES
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000007_d6fd55ac080bfd047a2541afb64af09cab7d4d0be17a9c1d1a1c2b3b73dde7f3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000007_d6fd55ac080bfd047a2541afb64af09cab7d4d0be17a9c1d1a1c2b3b73dde7f3.png -->
 
 Notice in the above example that there is also an organ playing block chords to create a sense of legato in the texture.
 
 The next two examples are from more recent popular music.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000008_595a575065da74db47c948d0146c5c97dce75dcf2a50a1da203f63c10ab7d712.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000008_595a575065da74db47c948d0146c5c97dce75dcf2a50a1da203f63c10ab7d712.png -->
 
 4
 
@@ -10043,7 +9654,7 @@ D
 
 \_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000009_f49010cc8fd687f6e9e401999b9ebb34a8be5c663ec782592ead36815de71ee7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000009_f49010cc8fd687f6e9e401999b9ebb34a8be5c663ec782592ead36815de71ee7.png -->
 
 F˜m/C˜
 
@@ -10061,7 +9672,7 @@ J.S. Bach
 
 \_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000010_7de21bcc4d1562dc7a7f3f0f98a69ab1da7b7cc459b8dc95a1bdb3423b5db5dc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000010_7de21bcc4d1562dc7a7f3f0f98a69ab1da7b7cc459b8dc95a1bdb3423b5db5dc.png -->
 
 ? # # 4 4
 
@@ -10123,7 +9734,7 @@ Wolfgang Amadeus Mozart
 
 œ œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000011_8938b9ab49ba7609c79f5937eb5163f3c016831d502459fe1c84fa49e8e170dd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000011_8938b9ab49ba7609c79f5937eb5163f3c016831d502459fe1c84fa49e8e170dd.png -->
 
 \_\_\_\_\_
 
@@ -10183,7 +9794,7 @@ n
 
 œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000012_6addca618f479e7ac43006e9c65adc07914231157f13aff7d75f6eff140ac9c3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000012_6addca618f479e7ac43006e9c65adc07914231157f13aff7d75f6eff140ac9c3.png -->
 
 œ
 
@@ -10218,7 +9829,7 @@ j
 
 754
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000013_e70e9b39e2041f75f9261366b2c3c79606a29cf5579cc9cc198c3502189aebea.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000013_e70e9b39e2041f75f9261366b2c3c79606a29cf5579cc9cc198c3502189aebea.png -->
 
 4
 
@@ -10238,7 +9849,7 @@ Below are five more examples of block chord accompaniment in the "1 (2)
 
 &amp;" rhythm.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000014_675adbc2f4a6e1d9eb9a0fcaf5801b9fb32e98dcd78051fc2b0c8ba19f6b353c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000014_675adbc2f4a6e1d9eb9a0fcaf5801b9fb32e98dcd78051fc2b0c8ba19f6b353c.png -->
 
 œ
 
@@ -10290,7 +9901,7 @@ b b b b b
 
 b b b b b
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000015_2ba0537f07b856eb63c44e2a2c4329fad9e406b004470d65cc2b9dee112f2838.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000015_2ba0537f07b856eb63c44e2a2c4329fad9e406b004470d65cc2b9dee112f2838.png -->
 
 b b b b b
 
@@ -10338,7 +9949,7 @@ er
 
 ∑
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000016_d056b1dd496b067ed54eaa3f144a63520de471831336d77630fe0ad0961d18d8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00171-00180/try-20261114T123025-a54646/document_artifacts/image_000016_d056b1dd496b067ed54eaa3f144a63520de471831336d77630fe0ad0961d18d8.png -->
 
 YT: iP6XpLQM2Cs
 
@@ -10539,33 +10150,10 @@ er
 - Keyboard 1
 - Keyboard 2
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 171](<MusicTheory.pdf#page=171>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 171](<document_artifacts/page_000171_2e0dfe8f6fb6283315cfe6711e7e1c266ed1fda7beb5b0657b1cf1b953c743ef.png>)
-
-![PDF-Seite 172](<document_artifacts/page_000172_0a5535bbb6166a675c6c950022e52f1574ae04d78b0126ac61753bcb64083541.png>)
-
-![PDF-Seite 173](<document_artifacts/page_000173_1c3a4598d0c8c29b069cdb25a410163b260e72eb8e450af9f22e7ff060fa1bfe.png>)
-
-![PDF-Seite 174](<document_artifacts/page_000174_a9a1fa59cd8b5f54a8952e05c9f165642cf256e6fd0040d1e82cfa17dcc20c95.png>)
-
-![PDF-Seite 175](<document_artifacts/page_000175_16f9d30d8579d7d88a24ff2cf2375677c654e6f5cb6dc6a952219820c855fcd4.png>)
-
-![PDF-Seite 176](<document_artifacts/page_000176_1f0d2c2e6afc8d7bf1f45a5e6a508d85388193d3d244eff27f539729ca8731f5.png>)
-
-![PDF-Seite 177](<document_artifacts/page_000177_73c76bf1eef822a249d15aa22614542702fe564c56635a7d583eebb0d95b54c2.png>)
-
-![PDF-Seite 178](<document_artifacts/page_000178_06a7e4496f6e1dc4999f3023e0da828384e7442a4042c05bc2fe1cc1bb4d02f1.png>)
-
-![PDF-Seite 179](<document_artifacts/page_000179_ab4b44e17df1e14593c519955cff8e966068eff39cd37f8f6b79dc837957463a.png>)
-
-![PDF-Seite 180](<document_artifacts/page_000180_b0ae44fa4292fe7f82ebea28544c1e3972fcfd9c94c82ba0d77f3afb1bb98e5a.png>)
-
-
-[Original-PDF, Seite 171](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=171>)
-
-<!-- PDF-Seiten 181–190 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document.md -->
+<!-- PDF-Seiten 181–190 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document.md -->
 
 762
 
@@ -10573,7 +10161,7 @@ er
 
 Figure 14.4.7: Franks, Puth, Thomaz, "See You Again"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000000_22c2d3946b10803968b44e4e0be3fa569d84da96ea3c0208a6f1c5031ba69c2a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000000_22c2d3946b10803968b44e4e0be3fa569d84da96ea3c0208a6f1c5031ba69c2a.png -->
 
 8
 
@@ -10581,11 +10169,11 @@ Figure 14.4.7: Franks, Puth, Thomaz, "See You Again"
 
 CHAPTER 14. ACCOMPANIMENTAL TEXTURES
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000001_2c419e32cdab0145ea5b57dd76c14dc93ffefb5fc1463138024cfa6dc3e2801c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000001_2c419e32cdab0145ea5b57dd76c14dc93ffefb5fc1463138024cfa6dc3e2801c.png -->
 
 &amp;
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000002_fc072bacccacc3e2d491d5cb8d2977251baebd67473b73400feb620a5f8e09dd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000002_fc072bacccacc3e2d491d5cb8d2977251baebd67473b73400feb620a5f8e09dd.png -->
 
 # # # # 785 14.4.2 The "Barbara Ann" Rhythm
 
@@ -10605,7 +10193,7 @@ CHAPTER 14. ACCOMPANIMENTAL TEXTURES
 
 419
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000003_172cada8c089abf989947ae9430c7bdee2371e19abf9e6289936b868a72cb983.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000003_172cada8c089abf989947ae9430c7bdee2371e19abf9e6289936b868a72cb983.png -->
 
 ?
 
@@ -10629,7 +10217,7 @@ b b b b b b
 
 Figure 14.4.12: Allen, Hall, and Oates, "Maneater"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000004_4121b0344d9ddba023f3bcd2ef18aea5b6a0c4b620d861327f40dc0df53ebd84.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000004_4121b0344d9ddba023f3bcd2ef18aea5b6a0c4b620d861327f40dc0df53ebd84.png -->
 
 431
 
@@ -10661,7 +10249,7 @@ C
 
 CHAPTER 14. ACCOMPANIMENTAL TEXTURES
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000005_723e689fe2f4a550ea8d2a0b74474e4d2d6aa5ce6d6c97b2c0645b209d756800.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000005_723e689fe2f4a550ea8d2a0b74474e4d2d6aa5ce6d6c97b2c0645b209d756800.png -->
 
 443
 
@@ -10672,23 +10260,23 @@ CHAPTER 14. ACCOMPANIMENTAL TEXTURES
 
 Figure 14.4.16: Mozart, Piano Sonata K. 310, I
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000006_b375a1a8fa3c349c8ab427ffcfeca45f7de20f412cacf4f90ee226f1f646302a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000006_b375a1a8fa3c349c8ab427ffcfeca45f7de20f412cacf4f90ee226f1f646302a.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000007_8a79be7cfac8fd21b65beb377a0595f93cf771adad170cbc12d4fa3cbfc40246.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000007_8a79be7cfac8fd21b65beb377a0595f93cf771adad170cbc12d4fa3cbfc40246.png -->
 
 19
 
 Figure 14.4.18: Robert Schumann, Dichterliebe, "Ich grolle nicht"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000008_f40acb1910caafdfebe91a81cfbb120289bbdb8d2aa94916961e5c385029732b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000008_f40acb1910caafdfebe91a81cfbb120289bbdb8d2aa94916961e5c385029732b.png -->
 
 The next example is from the musical Annie. Note the "1 (2) &amp;" rhythm in the bass line.
 
 Repeated eighth notes are a standard accompanimental texture in rock.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000009_ad66938cfb23ab026f6fa868db61a6231ca35577a9f76cb6163586860547ad3a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000009_ad66938cfb23ab026f6fa868db61a6231ca35577a9f76cb6163586860547ad3a.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000010_4799332753199fa89fe0d07e331b7fefe0b8005fb093dddcbef716999046f131.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000010_4799332753199fa89fe0d07e331b7fefe0b8005fb093dddcbef716999046f131.png -->
 
 ## 14.4.4 Repeated Quarter-note Chords
 
@@ -10700,7 +10288,7 @@ Test 2 Review
 
 Analysis
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000011_551e1b09137b308027906f89810c5b2720a4323b210d5286398a172a5ff85ba1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000011_551e1b09137b308027906f89810c5b2720a4323b210d5286398a172a5ff85ba1.png -->
 
 \_\_\_
 
@@ -10750,7 +10338,7 @@ b
 
 œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000012_f7839c84a53a9cb7efd402aea0599b3ca4df9c6590f8dd6493db2d8476cab0e5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000012_f7839c84a53a9cb7efd402aea0599b3ca4df9c6590f8dd6493db2d8476cab0e5.png -->
 
 ( )
 
@@ -10768,7 +10356,7 @@ b
 
 33
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000013_c53e4388a4c650e84ee197bf39dacd4882807a821ec21fe48012fdd7529743a8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000013_c53e4388a4c650e84ee197bf39dacd4882807a821ec21fe48012fdd7529743a8.png -->
 
 5
 
@@ -10780,7 +10368,7 @@ b
 
 The term "afterbeats" is from Fundamentals of Musical Composition by noted composer and pedagogue Arnold Schoenberg. "Afterbeats" are repeated chords (usually eighth notes, sometimes quarter notes) that occur after the downbeat.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000014_fd0da4abc41d4b53b3040834551d27944d54b28827ad853daec819e646cfc017.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00181-00190/try-20261114T123044-cdac84/document_artifacts/image_000014_fd0da4abc41d4b53b3040834551d27944d54b28827ad853daec819e646cfc017.png -->
 
 59
 
@@ -10992,33 +10580,10 @@ The term "afterbeats" is from Fundamentals of Musical Composition by noted compo
 - In the next example, the afterbeats are not repeated chords but instead are
 - passing-tone figures harmonized in thirds.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 181](<MusicTheory.pdf#page=181>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 181](<document_artifacts/page_000181_341c78fb0eeaf4cafc07d33315bbd38b8feae47d9cc1d5788dd6b6ab9791a79f.png>)
-
-![PDF-Seite 182](<document_artifacts/page_000182_64dfd88399263a264291bdba7fcab015a28fb9f3df1c3199059d7f4d943d7df3.png>)
-
-![PDF-Seite 183](<document_artifacts/page_000183_1316e5117f419ba231ee1c71e8693a0ea5fd384e998203f463335e319bb38132.png>)
-
-![PDF-Seite 184](<document_artifacts/page_000184_5a89bc5384ac98d2115ac4f5b99ad7edc45eaa81e4ff70a05a005f4733c8100f.png>)
-
-![PDF-Seite 185](<document_artifacts/page_000185_9c447ccd832545995369eb301fe70fac3ad3f7d1acf4ff8854f14d2f2f91fd60.png>)
-
-![PDF-Seite 186](<document_artifacts/page_000186_5a00422a213a2f883bffaef1ff3f83a278db2bbd4444239bb2fb2419b6d7699c.png>)
-
-![PDF-Seite 187](<document_artifacts/page_000187_927e77d82dc8550a9e46c8a57c9e0fd5c2faa5763684bc82c3a16328a42b1dfa.png>)
-
-![PDF-Seite 188](<document_artifacts/page_000188_b4faae4c4266c12fdb09e864ce6109e151b3354c616867bdb7e8f668afd4463a.png>)
-
-![PDF-Seite 189](<document_artifacts/page_000189_3d67d9c46952657a0100933406f354e4a539de18b11e8d8788bae8778652e16c.png>)
-
-![PDF-Seite 190](<document_artifacts/page_000190_0b498599cb5d884905c86befbfd1a037c0f021c11eec0adde4c61646b9e0a0b8.png>)
-
-
-[Original-PDF, Seite 181](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=181>)
-
-<!-- PDF-Seiten 191–200 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document.md -->
+<!-- PDF-Seiten 191–200 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document.md -->
 
 825
 
@@ -11032,7 +10597,7 @@ b b
 
 Figure 14.5.2: Mozart, Piano Sonata K. 279, III
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000000_2924f917fed323ba3dcb3eced2ed46565be30233771e5c766b56d4d314546e85.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000000_2924f917fed323ba3dcb3eced2ed46565be30233771e5c766b56d4d314546e85.png -->
 
 ## 14.5.2 Offbeats
 
@@ -11042,7 +10607,7 @@ Offbeats are typically chords that occur regularly on upbeats, avoiding downbeat
 
 The polka, which originated in Bohemia, has connotations with Germary and Oktoberfest. The polka in the United States is often associated with Frankie Yankovic, who was known as the "Polka King. "
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000001_9da03fc7bb35a943589ffffca3fff5206270ec690472536e8b09823dd4058f5a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000001_9da03fc7bb35a943589ffffca3fff5206270ec690472536e8b09823dd4058f5a.png -->
 
 60
 
@@ -11054,11 +10619,11 @@ The polka, which originated in Bohemia, has connotations with Germary and Oktobe
 
 Reggae is associated with the island of Jamaica and, in the most elemental sense, is characterized by offbeats, often played on an electric guitar. Bob Marley is closely associated with reggae music.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000002_a8d96c0d3cf5e4123637ddcce6fb24ef7ad082b0525302ca56f95b0dc673bdd6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000002_a8d96c0d3cf5e4123637ddcce6fb24ef7ad082b0525302ca56f95b0dc673bdd6.png -->
 
 Figure 14.5.7: Stefani and Stewart, "Underneath It All" (2001)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000003_50a1e0ab9663a483645e2dd09a25a566355bd9682fb41051d393473c97b8c5c5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000003_50a1e0ab9663a483645e2dd09a25a566355bd9682fb41051d393473c97b8c5c5.png -->
 
 841
 
@@ -11068,7 +10633,7 @@ Figure 14.5.7: Stefani and Stewart, "Underneath It All" (2001)
 
 CHAPTER 14. ACCOMPANIMENTAL TEXTURES
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000004_fef15816b1db8b492bcee426beeeecd4fe63d061f738101531a9a3a10fa42590.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000004_fef15816b1db8b492bcee426beeeecd4fe63d061f738101531a9a3a10fa42590.png -->
 
 30
 
@@ -11094,7 +10659,7 @@ b b b
 
 The 3-2 clavé (and the 2-3 clavé) are essential rhythmic elements in AfroCuban music. In this section we will see how cross rhythms implied by the 3-2 clavé can be viewed as a possible source of cross rhythms in popular music. Here is a video demonstration of a 3-2 clavé.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000005_f0ce1345cc4796ebd88ee3e01080999c286d56ef2148ff6a77624ee593496edd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000005_f0ce1345cc4796ebd88ee3e01080999c286d56ef2148ff6a77624ee593496edd.png -->
 
 YouTube: https://www.youtube.com/watch?v=dxVeiPQ1juo
 
@@ -11108,7 +10673,7 @@ the first measure and 2 attacks in the second bar.
 
 23
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000006_4891def2bd5908bb27b571ed0e2ff483b81cf04323b3e87fcd77ae9097e2e41b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000006_4891def2bd5908bb27b571ed0e2ff483b81cf04323b3e87fcd77ae9097e2e41b.png -->
 
 423
 
@@ -11126,13 +10691,13 @@ the first measure and 2 attacks in the second bar.
 
 Œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000007_149f0af1c2ceb2af55730ef02aa1d01acfae78ffd03b3bfe3d23bd7fe7af242c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000007_149f0af1c2ceb2af55730ef02aa1d01acfae78ffd03b3bfe3d23bd7fe7af242c.png -->
 
 447
 
 Figure 14.6.2: Berns, Feldman, Goldstein, and Gottehrer, "I Want Candy"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000008_66d77967b0d359a8f26b35ed077158d9de62556c1e8bd0c141ff0fb4ee4ee231.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000008_66d77967b0d359a8f26b35ed077158d9de62556c1e8bd0c141ff0fb4ee4ee231.png -->
 
 419
 
@@ -11160,26 +10725,26 @@ Figure 14.6.2: Berns, Feldman, Goldstein, and Gottehrer, "I Want Candy"
 
 432
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000009_0cc401d780dd75b6cd1a74b68aa3c88d49462a8fd341a511dd827db706a80ea7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000009_0cc401d780dd75b6cd1a74b68aa3c88d49462a8fd341a511dd827db706a80ea7.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000010_29a0effab4ebdc2aca55e362f95f7496a4cf8f4ab7a79099bdd9a9188aebc346.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000010_29a0effab4ebdc2aca55e362f95f7496a4cf8f4ab7a79099bdd9a9188aebc346.png -->
 
 YT: LKdHy18rZcI
 
 YT: oOmUCbDofo4
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000011_a908f7674e433df99bfa5c55e89f1c50a2c375e995807e52d515f20b69fdb481.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000011_a908f7674e433df99bfa5c55e89f1c50a2c375e995807e52d515f20b69fdb481.png -->
 
 Figure 14.6.3: Ballard, "Back in the New York Groove"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000012_8fbbd1b28812f0529d1fa0bb6e4393c6232bbc9157ad61ae152d16d322a4887d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000012_8fbbd1b28812f0529d1fa0bb6e4393c6232bbc9157ad61ae152d16d322a4887d.png -->
 
 | 1 2 3 1 2 3 1 2 1 2 3 1 2 3 1 2  ã   |
 |--------------------------------------|
 
 Figure 14.6.4: Michael, "Faith"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000013_962ca22bd9e75089061361d4d29fd422748aef75cea7648576c4ff38c1fef432.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000013_962ca22bd9e75089061361d4d29fd422748aef75cea7648576c4ff38c1fef432.png -->
 
 ã 4 4
 
@@ -11187,13 +10752,13 @@ Figure 14.6.4: Michael, "Faith"
 
 Figure 14.6.6: Calloway, "Casanova"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000014_46688e0456812f7e10cb33c3e060fd70b75de3c290767c8902792a48a708b170.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000014_46688e0456812f7e10cb33c3e060fd70b75de3c290767c8902792a48a708b170.png -->
 
 The well-known introduction to "Eye of the Tiger" uses the 3+3+2 rhythm.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000015_fa68c42c3bc426c30160dc847001838830ea07550090f0a46217e997c78bca1b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000015_fa68c42c3bc426c30160dc847001838830ea07550090f0a46217e997c78bca1b.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000016_5d554a2428fd1b03434c4837eef3eb0eaa239207963fcdef76d737ecb6e3306f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000016_5d554a2428fd1b03434c4837eef3eb0eaa239207963fcdef76d737ecb6e3306f.png -->
 
 YT: btPJPFnesV4
 
@@ -11219,7 +10784,7 @@ CHAPTER 14. ACCOMPANIMENTAL TEXTURES
 
 Notice that this progression is from the Best-Seller progression.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000017_eaf0dc5ae0c48e67dc41f813b51ac565cd40dd927161be62cd7d84a6def12e36.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000017_eaf0dc5ae0c48e67dc41f813b51ac565cd40dd927161be62cd7d84a6def12e36.png -->
 
 419
 
@@ -11239,11 +10804,11 @@ Notice that this progression is from the Best-Seller progression.
 
 185
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000018_c56549308a5c05e67de3715d2f1c16c07e821140ae0fc115da9c5beec68c069a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000018_c56549308a5c05e67de3715d2f1c16c07e821140ae0fc115da9c5beec68c069a.png -->
 
 Figure 14.6.14: Grohl, Hawkins, Mendel, Shiflett, "Best of You"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000019_a43505b7bf90b156d97ac2a72c0439b10b05b15cc94d313aed12ebe0b70d129e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000019_a43505b7bf90b156d97ac2a72c0439b10b05b15cc94d313aed12ebe0b70d129e.png -->
 
 24
 
@@ -11273,7 +10838,7 @@ Figure 14.6.14: Grohl, Hawkins, Mendel, Shiflett, "Best of You"
 
 186
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000020_49a259a398b8ad6f13214162ded708e014a772f3cf0600c8e252bde3d0d04771.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00191-00200/try-20261114T123105-f8f19e/document_artifacts/image_000020_49a259a398b8ad6f13214162ded708e014a772f3cf0600c8e252bde3d0d04771.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -11424,45 +10989,22 @@ Figure 14.6.14: Grohl, Hawkins, Mendel, Shiflett, "Best of You"
 - Figure 14.6.17: Johnson and Browne,
 - "Dem Bow"
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 191](<MusicTheory.pdf#page=191>)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- PDF-Seiten 201–210 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document.md -->
 
-![PDF-Seite 191](<document_artifacts/page_000191_e6cf05ea5783c7f1f1fb14af63945975673226b7ea72e1701441feea4318830a.png>)
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000000_bbb3191365942e2b93b3cceb7ebfa81a4a9d59689304f34be36bc70c147a28d1.png -->
 
-![PDF-Seite 192](<document_artifacts/page_000192_7cb277c3c93ee44a93cbbc58817bee8c522ddb251cd5bf8ae14045977aa4ed76.png>)
-
-![PDF-Seite 193](<document_artifacts/page_000193_e9fda6107b3f4334b91edd95901cc70667de7e27d72f72785a4f450dd2b3f675.png>)
-
-![PDF-Seite 194](<document_artifacts/page_000194_d914cb2b961160d720568a7cf88e5c1b0b50952330dda39894e317c53dda79db.png>)
-
-![PDF-Seite 195](<document_artifacts/page_000195_34e0778d6a9e8917e623a660152f3a2e076f6750f9b3974218b67dfada057b6d.png>)
-
-![PDF-Seite 196](<document_artifacts/page_000196_3221b9c49af2a8d9453f1b97ce58a1ca38b1bc45c685f409375068198efd2ad3.png>)
-
-![PDF-Seite 197](<document_artifacts/page_000197_d687e70eca280b40541f2e63588e9a00f6539e6effae98ce19adcd47b46861e0.png>)
-
-![PDF-Seite 198](<document_artifacts/page_000198_b17071c28bf602f683a6140a66d97c379c3caa0e92b3d99d14c6fd73efaeafda.png>)
-
-![PDF-Seite 199](<document_artifacts/page_000199_4a80ac2b888c334fd30ffa9af5ab5aa7ef69ea382bbfac1495ca146ebef26b90.png>)
-
-![PDF-Seite 200](<document_artifacts/page_000200_6eedccd518c4cc74587232292dcc842c3ebf20c1ff2c12e02d8bc5f926a74882.png>)
-
-
-[Original-PDF, Seite 191](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=191>)
-
-<!-- PDF-Seiten 201–210 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000000_bbb3191365942e2b93b3cceb7ebfa81a4a9d59689304f34be36bc70c147a28d1.png -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000001_4e1fa171a799cf6f0f82a5d3ca58901daef08e7958ba8a50312372998c7039f5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000001_4e1fa171a799cf6f0f82a5d3ca58901daef08e7958ba8a50312372998c7039f5.png -->
 
 YT: 6vjv9O4c1do
 
 Figure 14.6.18: Graham, Jefferies, Shebib, Balogun, Reid, Smith, "One Dance"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000002_c7d966d8ac4a3e3b006a26c69a44577b4334f3d643c9f11562998e42f6015b22.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000002_c7d966d8ac4a3e3b006a26c69a44577b4334f3d643c9f11562998e42f6015b22.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000003_0da538ac91cbf95995833d93548c9167b3b6d580c43383e86d9743c70e9fdde0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000003_0da538ac91cbf95995833d93548c9167b3b6d580c43383e86d9743c70e9fdde0.png -->
 
 YT: kJQP7kiw5Fk
 
@@ -11470,27 +11012,27 @@ Figure 14.6.19: Rodriguez, Ender, and Ayala, "Despacito"
 
 Notice that the progression for "Despacito" comes from the Best-Seller progression.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000004_95f4af54549b70a4904ca7a659b3aadc13da23669ab7eba96a6c2db88c96c6d0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000004_95f4af54549b70a4904ca7a659b3aadc13da23669ab7eba96a6c2db88c96c6d0.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000005_a8abe36e040c40f7d6e32d06f45be2b5cdb09712b4e818a46de9d357e64df227.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000005_a8abe36e040c40f7d6e32d06f45be2b5cdb09712b4e818a46de9d357e64df227.png -->
 
 YT: 8ELbX5CMomE
 
 Figure 14.6.20: Bieber, Michaels, Tranter, Moore, and Tucker, "Sorry"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000006_f65a4320456f87599dfb136ba9257e2db98e1295e52f5fa8f14405d467b8d5f1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000006_f65a4320456f87599dfb136ba9257e2db98e1295e52f5fa8f14405d467b8d5f1.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000007_690df7f3d7be878d92db5a08a3bb26374f7f66bb6fbbae09c996992ed35bdacf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000007_690df7f3d7be878d92db5a08a3bb26374f7f66bb6fbbae09c996992ed35bdacf.png -->
 
 YT: FjvxZO4BX38
 
 YT: DCBmhs4dYzc
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000008_0de159c2b0b54486fb4d600cfa31c73fe7c6a97932cc9293945eb8047bacfbae.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000008_0de159c2b0b54486fb4d600cfa31c73fe7c6a97932cc9293945eb8047bacfbae.png -->
 
 Figure 14.6.21: Ørsted, Parmenius, and Emenike, "Final Song"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000009_18daf009c2e90649c2a0045a2c0ef8284654c601c46d86d8ba256a8fb8bd9f21.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000009_18daf009c2e90649c2a0045a2c0ef8284654c601c46d86d8ba256a8fb8bd9f21.png -->
 
 Figure 14.6.22: Levine, Ryan, Hindlin, Tranter, and Shaouy, "Cold"
 
@@ -11502,29 +11044,29 @@ In this section, we will see each number in the 3+3+2 pattern repeated, generati
 
 Listen for the 3+3+3+3+2+2 rhythm in the following examples.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000010_e812f1f7a7a4e719d218f326afdfc31515f22a8532b20798e0f5ff4a20e37065.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000010_e812f1f7a7a4e719d218f326afdfc31515f22a8532b20798e0f5ff4a20e37065.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000011_a79cabe1073fdff7d4b52603558b0bb53642a3503f9f53130224e10437d39dba.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000011_a79cabe1073fdff7d4b52603558b0bb53642a3503f9f53130224e10437d39dba.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000012_587c94089675fb6145b827c4c86b1621b46435524129efaa1be03c8f9dcb4a9e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000012_587c94089675fb6145b827c4c86b1621b46435524129efaa1be03c8f9dcb4a9e.png -->
 
 YT: co6WMzDOh1o
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000013_452638bc895360a0f450fffc98c447101caec227fe05ba0c33ea5f43c46cba4a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000013_452638bc895360a0f450fffc98c447101caec227fe05ba0c33ea5f43c46cba4a.png -->
 
 Figure 14.6.23: U2, "Beautiful Day"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000014_1c9270a1c1c548e7e774b64636dedfa553c92000fd3ec73cee8abacadc083647.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000014_1c9270a1c1c548e7e774b64636dedfa553c92000fd3ec73cee8abacadc083647.png -->
 
 YT: PKRuEY68BVA
 
 YT: cLyUcAUMmMY
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000015_f1bbfc21143a7814222b33eda1a2642364899c3154d2562b6b921391f1a7b4ec.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000015_f1bbfc21143a7814222b33eda1a2642364899c3154d2562b6b921391f1a7b4ec.png -->
 
 Figure 14.6.24: Frances and Reid, "You Know You Like It"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000016_dd05710c2be10ed5fffb3f52bafdab2174ce96061ce0e64e8a4155b790fecb0a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000016_dd05710c2be10ed5fffb3f52bafdab2174ce96061ce0e64e8a4155b790fecb0a.png -->
 
 Figure 14.6.25: Bennett, Glynne, Patterson, and Wroldsen, "Hold My Hand"
 
@@ -11534,7 +11076,7 @@ the 3+3+2 pattern can also be expanded to 8 groups of 3 sixteenth notes
 
 followed by 4 groups of 2 sixteenth notes, as shown in the example below.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000017_40d32a76bd7f1c722b202b74dfb847c35f156eecc9d46f45dfe03fe6dc828a5d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000017_40d32a76bd7f1c722b202b74dfb847c35f156eecc9d46f45dfe03fe6dc828a5d.png -->
 
 664
 
@@ -11542,21 +11084,21 @@ followed by 4 groups of 2 sixteenth notes, as shown in the example below.
 
 Figure 14.6.26: Parker, Jr., "Ghostbusters"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000018_06cd97b602b92b33d70b9478f9c8b96a9d6ec3d7c3a4bd31d896c9f56f8e39f3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000018_06cd97b602b92b33d70b9478f9c8b96a9d6ec3d7c3a4bd31d896c9f56f8e39f3.png -->
 
 YT: XjVNlG5cZyQ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000019_6a91288d91e370abc3ff5887f808a017cfc1bdd43d740954cc5dc71932c7cf67.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000019_6a91288d91e370abc3ff5887f808a017cfc1bdd43d740954cc5dc71932c7cf67.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000020_7e91eddf3e5e5c08c2bcefb206ff38597c04dc48d613c7f638e550d1cb9909af.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000020_7e91eddf3e5e5c08c2bcefb206ff38597c04dc48d613c7f638e550d1cb9909af.png -->
 
 Figure 14.6.27: Pink, Martin, Schuster, "Raise Your Glass"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000021_b0ee22173dea7f25f9be9408e7cb4cf6f9b10bdc83a7f93be9ac97590f9b71a2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000021_b0ee22173dea7f25f9be9408e7cb4cf6f9b10bdc83a7f93be9ac97590f9b71a2.png -->
 
 YT: IIkqOLvuQNo
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000022_b3b793aece11c778ff421e1990235ba9428617a0162b724f348e6999bf5fc6be.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000022_b3b793aece11c778ff421e1990235ba9428617a0162b724f348e6999bf5fc6be.png -->
 
 Figure 14.6.28: Too Many Zooz, "Warriors"
 
@@ -11564,13 +11106,13 @@ Figure 14.6.28: Too Many Zooz, "Warriors"
 
 You will also find other combinations of 3s and 2s (or 3s and 4s).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000023_49d1655d6c3ee9d25d3e569f870b3d247e651799d2dd761ae8dedeae09191463.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000023_49d1655d6c3ee9d25d3e569f870b3d247e651799d2dd761ae8dedeae09191463.png -->
 
 YT: SeIJmciN8mo
 
 Figure 14.6.30: Maraj, Khayat, Falk, Yacoub, Hector, and Hajji, "Starships"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000024_a5db182c413728a915bc36abf4ddd725f8895d17b2abafcd7af48d6441fae6f0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000024_a5db182c413728a915bc36abf4ddd725f8895d17b2abafcd7af48d6441fae6f0.png -->
 
 YT: iS1g8G\_njx8
 
@@ -11584,7 +11126,7 @@ One also finds the 3+3+4+3+3 pattern in the second bar of "Tik Tok, " an example
 
 Figure 14.6.32: Sebert, Gottwald, Blanco, "Tik Tok"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000025_9852a7a11a7d3df3367de46bdabee172e837384276082dcd4681763ba8d2073c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000025_9852a7a11a7d3df3367de46bdabee172e837384276082dcd4681763ba8d2073c.png -->
 
 © Notice that this progression comes from a rotation of the i-VII-VI-VII progression.
 
@@ -11594,59 +11136,59 @@ Sometimes the identity of a song is in its repeated bass line (known as a "riff,
 
 Figure 14.7.1: Winner, "Little Brown Jug" (1939)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000026_9aff23fb47c5f82f278ca1f1e0093ffed362b0c1f30d436f6aca65477a05303a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000026_9aff23fb47c5f82f278ca1f1e0093ffed362b0c1f30d436f6aca65477a05303a.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000027_35a5a4d56603cba7e057bb14cbbca4c85400a9575217f343021e66bb037c369a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000027_35a5a4d56603cba7e057bb14cbbca4c85400a9575217f343021e66bb037c369a.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000028_8ab16a5e9c1beaacb514b6faa34490b607007bc8748dcf3810fa3b3cefd9361f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000028_8ab16a5e9c1beaacb514b6faa34490b607007bc8748dcf3810fa3b3cefd9361f.png -->
 
 YT: eeFpUDCyTUo
 
 Figure 14.7.2: Lennon-McCartney, "Day Tripper" (1965)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000029_0cc401d780dd75b6cd1a74b68aa3c88d49462a8fd341a511dd827db706a80ea7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000029_0cc401d780dd75b6cd1a74b68aa3c88d49462a8fd341a511dd827db706a80ea7.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000030_1ed544e8f54574b3f4cdccfa6c9924f7b7b0d73f3c8b425d18b875cd8be1e3e6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000030_1ed544e8f54574b3f4cdccfa6c9924f7b7b0d73f3c8b425d18b875cd8be1e3e6.png -->
 
 YT: TBMuGCw8hJY
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000031_6f6848908aa98ca85c684fa8e64f344ab9cecf7666ddc10c3d9e25687a3dcb23.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000031_6f6848908aa98ca85c684fa8e64f344ab9cecf7666ddc10c3d9e25687a3dcb23.png -->
 
 Figure 14.7.3: The Sugarhill Gang, O'Brien, Robinson, Rodgers, Edwards, and Grandmaster Caz, "Rapper's Delight" (1979)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000032_5a4c668440b0f3ad8369c650dbdd8b0d287450c01d878511db00e365192ae45e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000032_5a4c668440b0f3ad8369c650dbdd8b0d287450c01d878511db00e365192ae45e.png -->
 
 YT: rY0WxgSXdEE
 
 Figure 14.7.4: Deacon, "Another One Bites the Dust" (1980)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000033_5b120aaf828df612746fa6a3468f6c7c17201ee5dfd77b041d9608582ae518ee.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000033_5b120aaf828df612746fa6a3468f6c7c17201ee5dfd77b041d9608582ae518ee.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000034_7f561578a2d37771f9fd828e9ce529d43b39e6757a03294324adf2dfacc3716a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000034_7f561578a2d37771f9fd828e9ce529d43b39e6757a03294324adf2dfacc3716a.png -->
 
 YT: QYHxGBH6o4M
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000035_8734740499bdb200db3d0940b2cc37b7e5ba322c5963010d7df546fbae6a4c35.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000035_8734740499bdb200db3d0940b2cc37b7e5ba322c5963010d7df546fbae6a4c35.png -->
 
 Figure 14.7.5: James, "Superfreak" (1981)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000036_fe3c9b38c86365d5693405c7bac2072ef95a57463da0e4f1f77cc5e016f24ce0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000036_fe3c9b38c86365d5693405c7bac2072ef95a57463da0e4f1f77cc5e016f24ce0.png -->
 
 YT: a01QQZyl-\_I
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000037_87e805d2a0afd4ab005de37812f35efecd72c429d96609ad65abf32a04130cf1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000037_87e805d2a0afd4ab005de37812f35efecd72c429d96609ad65abf32a04130cf1.png -->
 
 Figure 14.7.6: Bowie, "Under Pressure" (1981)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000038_e6fec1ff3a0e71203e003e8ca71ab0a78af09452d22bdb055316a64311226aea.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000038_e6fec1ff3a0e71203e003e8ca71ab0a78af09452d22bdb055316a64311226aea.png -->
 
 YT: JtpX8KBT768
 
 Figure 14.7.7: Kelly, Aitchison, Astasio, Pebworth, Shave, McKenzie, "Fancy" (2014)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000039_fa01486f4b88eabc995fc27f9baba29a7757095329fe56a36ae161ce13a77f23.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000039_fa01486f4b88eabc995fc27f9baba29a7757095329fe56a36ae161ce13a77f23.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000040_6120a81c0208a07a77fe5c371f3e44981abb2a1c6bcf935b6a9f775287148547.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000040_6120a81c0208a07a77fe5c371f3e44981abb2a1c6bcf935b6a9f775287148547.png -->
 
 YT: a5qZOMQ1qys
 
@@ -11656,33 +11198,33 @@ Figure 14.7.8: Haggerty, Lewis, Dutton, Nally, Karp, Rawlings, Asplund, Flory-Ba
 
 You will also find distinctive riffs played by guitar in conjunction with bass, as in the following examples.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000041_273826d15d2e8c491dc76e9a0b610c14b691e3cfbd7cafcf408aa4f4daf71541.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000041_273826d15d2e8c491dc76e9a0b610c14b691e3cfbd7cafcf408aa4f4daf71541.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000042_5565ee0c2226ad612dad139886bef7b03115e3eff5c3eda316bd35d01b19f206.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000042_5565ee0c2226ad612dad139886bef7b03115e3eff5c3eda316bd35d01b19f206.png -->
 
 YT: fTTsY-oz6Go
 
 Figure 14.7.9: Davies, "You Really Got Me" (1964)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000043_907ce8ca449236e9b892f071c352741a82be4f21c1b0100fefec9de0cc743168.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000043_907ce8ca449236e9b892f071c352741a82be4f21c1b0100fefec9de0cc743168.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000044_ad084362f79cf93695e260e7e76ff838aa6d98f7b002f5113e3d9013bba14599.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000044_ad084362f79cf93695e260e7e76ff838aa6d98f7b002f5113e3d9013bba14599.png -->
 
 YT: y8OtzJtp-EM
 
 Figure 14.7.10: Page and Plant, "Immigrant Song" (1970)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000045_05c9074f40686a30cacb4ff9a41505dbd1a9a19ac9c385120a92b49e0ec06bc2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000045_05c9074f40686a30cacb4ff9a41505dbd1a9a19ac9c385120a92b49e0ec06bc2.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000046_dd010c3c6f9963b3ad4217802fa2d752945ac95db9f5bcd755e04453301d5872.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000046_dd010c3c6f9963b3ad4217802fa2d752945ac95db9f5bcd755e04453301d5872.png -->
 
 YT: tA5A\_AcBKvs
 
 Figure 14.7.11: Tyler and Perry, "Walk This Way" (1975)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000047_750343352c2e90bcd81b09b43ce09d5d3318e14a2063ab8bc694f94d47a9af9c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000047_750343352c2e90bcd81b09b43ce09d5d3318e14a2063ab8bc694f94d47a9af9c.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000048_a1377063a5d5002d5314b15ca04e2ee6e72f53f6d04e36591b6bad2381785b58.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000048_a1377063a5d5002d5314b15ca04e2ee6e72f53f6d04e36591b6bad2381785b58.png -->
 
 YT: pAgnJDJN4VA
 
@@ -11726,7 +11268,7 @@ Let us examine the elements of music in the first section (the A section).
 
 œ œ J œ ‰J œ. œ J œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000049_55078db0bec5189ce10a78e3c3c2f640895750bafec29897494a42b23fe9569d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00201-00210/try-20261114T123133-26957f/document_artifacts/image_000049_55078db0bec5189ce10a78e3c3c2f640895750bafec29897494a42b23fe9569d.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -11812,35 +11354,12 @@ Let us examine the elements of music in the first section (the A section).
 - Table 15.2.2: A Section, Second Movement, Eine kleine Nachtmusik
 - Here is the beginning of the second section (the B section):
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 201](<MusicTheory.pdf#page=201>)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- PDF-Seiten 211–220 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document.md -->
 
-![PDF-Seite 201](<document_artifacts/page_000201_e71c5bf7e530cb093cfa1c5dc019e5bb360bd7c89674a9ca791d69d51dcfc506.png>)
-
-![PDF-Seite 202](<document_artifacts/page_000202_676f77a262a24be94008c61b6c946116275a5cb587c2e9add889d4cefaa3e6d6.png>)
-
-![PDF-Seite 203](<document_artifacts/page_000203_046e3fa74517ff7bfd401f8429ed10c16541dcaa199f419e0bf75a55d1059d26.png>)
-
-![PDF-Seite 204](<document_artifacts/page_000204_3d7d300c1198ef90248e994935ed2874bb17ddb60c08ae3b99faefad2234e9dd.png>)
-
-![PDF-Seite 205](<document_artifacts/page_000205_7db21d4494c9dc37fc1097c4a817c30f1586544d4edb945bd5e450cf9d5bbb5d.png>)
-
-![PDF-Seite 206](<document_artifacts/page_000206_4226ef9c4bb0feb380b2939ef19d8067b6f0870f36ecdd8ed223aebbb3d99d45.png>)
-
-![PDF-Seite 207](<document_artifacts/page_000207_dc22eb0c819a1594ac7be2d67166f49ddc8cc781d2a9540fad7cc4d3cae260bd.png>)
-
-![PDF-Seite 208](<document_artifacts/page_000208_7e3ac8121485522ffb2eef96a078c1559e909c97d457df2d29e01574ecd3cdad.png>)
-
-![PDF-Seite 209](<document_artifacts/page_000209_7cece3f5a5c2bf3f1105f6d158e9a71f0ba6599a68b33906dd4c2f594d89b441.png>)
-
-![PDF-Seite 210](<document_artifacts/page_000210_fffacd169828d6026300550eed729e996d6f1e7b4e5c55042b12ecc4526933fd.png>)
-
-
-[Original-PDF, Seite 201](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=201>)
-
-<!-- PDF-Seiten 211–220 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000000_8557ce90c9c7265083f7d7b190d7b6310bbdea1e694a7a2674d89049bb6f7bd5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000000_8557ce90c9c7265083f7d7b190d7b6310bbdea1e694a7a2674d89049bb6f7bd5.png -->
 
 Here are the most noticeable differences:
 
@@ -11855,7 +11374,7 @@ Now, look at the beginning of the next contrasting section (the C section):
 
 Figure 15.2.5: C Section, Second Movement, Eine kleine Nachtmusik
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000001_182cf885a0860f94f9aaf20c7aeec5f9deb25cb5ff46eaeebedaddf9b9154f24.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000001_182cf885a0860f94f9aaf20c7aeec5f9deb25cb5ff46eaeebedaddf9b9154f24.png -->
 
 The following elements are noticeably changed:
 
@@ -11879,7 +11398,7 @@ Listen to how Mozart puts the entire form together, including transitional mater
 
 Figure 15.2.7: Formal Diagram of Second Movement, Eine kleine Nachtmusik
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000002_5ea82417f278da079735bd22f3f78a4028a5e14b063bcce01d06127f0f1d3c12.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000002_5ea82417f278da079735bd22f3f78a4028a5e14b063bcce01d06127f0f1d3c12.png -->
 
 ## 15.3 "Rude" by MAGIC!
 
@@ -11889,23 +11408,23 @@ example of the texture from the reggae section of this song, as seen in the
 
 previous chapter.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000003_dd3e2a592f370abfebe42821a0178954b1cf24dd50f7f897ecf89dcad5b9c59e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000003_dd3e2a592f370abfebe42821a0178954b1cf24dd50f7f897ecf89dcad5b9c59e.png -->
 
 14 In Verse 1 there is no bass drum, snare drum, or electric bass. All we hear are the voice part and the two guitar parts from the top two staves in
 
 b b b b b In the pre-chorus, the guitars and bass have legato half notes and quarter notes while the drummer plays cross-stick eighth notes (if one is counting in a slow 44 ). Without the snare drum backbeat, the texture lightens.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000004_1487230e961dbe19a2be43d46ace8b5bdfd004730baeabf42b6bc29e37eabe6a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000004_1487230e961dbe19a2be43d46ace8b5bdfd004730baeabf42b6bc29e37eabe6a.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000005_fcb2420ca922fff5573898d3d2dd9bc391e8b65a7dd08491653e3da360bc3aa3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000005_fcb2420ca922fff5573898d3d2dd9bc391e8b65a7dd08491653e3da360bc3aa3.png -->
 
 Figure 15.3.2: Verse 2 of "Rude"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000006_e8a320369753a785d1c911fc3baa8fad7a2b027351e9677b3a085738a1f589be.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000006_e8a320369753a785d1c911fc3baa8fad7a2b027351e9677b3a085738a1f589be.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000007_bd55f2bc2ba46ac62decbcae01f7339eb74bd5a1883d6515651e215ff33073a3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000007_bd55f2bc2ba46ac62decbcae01f7339eb74bd5a1883d6515651e215ff33073a3.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000008_cef87340bf2a5b37bf4a7b79475018c0c13fd77e253d936f49ad6fa68a9c7674.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000008_cef87340bf2a5b37bf4a7b79475018c0c13fd77e253d936f49ad6fa68a9c7674.png -->
 
 YT: PIh2xe4jnpk
 
@@ -11919,11 +11438,11 @@ the "hook.
 
 "
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000009_46a01984e0b48ce464521ac2298d29a1f9f22e7f7480c75bc3926315bd86e41d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000009_46a01984e0b48ce464521ac2298d29a1f9f22e7f7480c75bc3926315bd86e41d.png -->
 
 23
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000010_50a4c72f3e9d6b0ac10be360887bdfcbc201301f27406ddfa36a6d8a015692b2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000010_50a4c72f3e9d6b0ac10be360887bdfcbc201301f27406ddfa36a6d8a015692b2.png -->
 
 303
 
@@ -11944,7 +11463,7 @@ Vn1+Vn2 vs Bass All 4 together Vn1+Vn2 vs Bass Bass imitates Vn1 Vn1+Vn2 vs Bass
 | b b b   |
 |---------|
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000011_7a4d918d0b716b393fc96bcb01a35648391893e428a15d994f5d884ecbb4bf72.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000011_7a4d918d0b716b393fc96bcb01a35648391893e428a15d994f5d884ecbb4bf72.png -->
 
 ## Chapter 16
 
@@ -11956,7 +11475,7 @@ In the Baroque era in music (roughly 1600-1750 C.E.), a shorthand was developed 
 
 Figure 16.1.1: Handel's handwritten manuscript of Recorder Sonata in A minor, HWV 362, I. Larghetto
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000012_8b7706fe65f15dd2a6ed3b59f0e2218e0da34a329ec000a607c2de4508699e96.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000012_8b7706fe65f15dd2a6ed3b59f0e2218e0da34a329ec000a607c2de4508699e96.png -->
 
 188
 
@@ -11986,7 +11505,7 @@ J œ
 
 # œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000013_033497326585a9384a20cdc36f697bb304569fbe521a872283b242dae1cc12be.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000013_033497326585a9384a20cdc36f697bb304569fbe521a872283b242dae1cc12be.png -->
 
 Like lead-sheet symbols, figured bass allowed a keyboardist or guitarist freedom in choosing chord voicings. While some early music specialists perform from scores with the original notation, editions of Baroque compositions by composers like J.S. Bach and Handel that were originally notated with figured bass have been "realized" or written out in modern editions.
 
@@ -12008,7 +11527,7 @@ Figured Bass
 
 Figure 16.2.2: Figured Bass Inversion Symbols for Seventh Chords
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000014_f9dcf3a0cc49900f9a8eed8d72615897f971e30a8d0164a9a40780c10c3ccdbc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000014_f9dcf3a0cc49900f9a8eed8d72615897f971e30a8d0164a9a40780c10c3ccdbc.png -->
 
 Unlike original figured bass notation in the Baroque era, in music theory courses, figured bass inversion symbols are placed after Roman numerals.
 
@@ -12019,7 +11538,7 @@ using in previous chapters.
 | &   |
 |-----|
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000015_b600ee278cf20bd0af3642c45e5a0a657df9ebdff653bc8a5632cac78a5c17b9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000015_b600ee278cf20bd0af3642c45e5a0a657df9ebdff653bc8a5632cac78a5c17b9.png -->
 
 205
 
@@ -12027,7 +11546,7 @@ using in previous chapters.
 
 Figure 16.3.1: Mozart, Piano Sonata K. 331, I
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000016_9cef6504da3f255cb352f044f1c9fbd26efaffe115bfee9b20ffc51fc409c5d3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00211-00220/try-20261114T123158-93a29e/document_artifacts/image_000016_9cef6504da3f255cb352f044f1c9fbd26efaffe115bfee9b20ffc51fc409c5d3.png -->
 
 I M4
 
@@ -12213,33 +11732,10 @@ I M4
 - (Cadential 6 )
 - YT: vp_h649sZ9A
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 211](<MusicTheory.pdf#page=211>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 211](<document_artifacts/page_000211_575decdfd1fef036efe007ed47a6d9d51faa6b7b197c2e802e71307b45ef4be1.png>)
-
-![PDF-Seite 212](<document_artifacts/page_000212_4d038e8324ecabd9acfd6a74c0c1e7ea0d4c1668372af379206f20a0793a857a.png>)
-
-![PDF-Seite 213](<document_artifacts/page_000213_307e457e8cf8e2a52c569940b6aa6115851742e3146827d0e677759b16f68acd.png>)
-
-![PDF-Seite 214](<document_artifacts/page_000214_68635cc131d8b4a4b2fbb2d062938ffe075077f92511a00c3ad287485387d829.png>)
-
-![PDF-Seite 215](<document_artifacts/page_000215_60ce61f4a6f33d62489abbc133402d7714fd3f057e79ffe3a4fa1252d0897420.png>)
-
-![PDF-Seite 216](<document_artifacts/page_000216_93d2f74cc7d8a519d55d0f3a25b8958d164d3b7413699764313bd936da42da02.png>)
-
-![PDF-Seite 217](<document_artifacts/page_000217_6a166ed1789bea076252baef54a21962cbd1f57a05ccda4d2f77d86df1860d73.png>)
-
-![PDF-Seite 218](<document_artifacts/page_000218_6d668f59f865c399d4212bf0fadb685d243607b7d9120f928b2f11087475c2b1.png>)
-
-![PDF-Seite 219](<document_artifacts/page_000219_0e15f48fabd7c6f0fceb8bb8d9cab9202681419c0f256d77201312ecd25a1961.png>)
-
-![PDF-Seite 220](<document_artifacts/page_000220_a514adacbf030dce839019f0e622a14a807f9ad02b5a38e78e1aef78ee6bf0f1.png>)
-
-
-[Original-PDF, Seite 211](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=211>)
-
-<!-- PDF-Seiten 221–230 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document.md -->
+<!-- PDF-Seiten 221–230 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document.md -->
 
 159
 
@@ -12253,7 +11749,7 @@ I M4
 
 V vi Second-inversion chords with the fifth of the chord in the bass, also known as 64 chords, are special chords found only in four situations in Classical music.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000000_f94b6e75fa36cebc13128a19bb7259b97acfe97c0c3fe0c93496801dbcbd5157.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000000_f94b6e75fa36cebc13128a19bb7259b97acfe97c0c3fe0c93496801dbcbd5157.png -->
 
 1. Cadential six-four (discussed in the previous section)
 2. Passing six-four: the bass line will look like a passing-tone figure, with three stepwise ascending or descending notes, and the middle chord will be a 64 chord
@@ -12262,7 +11758,7 @@ V vi Second-inversion chords with the fifth of the chord in the bass, also known
 
 &amp;
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000001_4808b5cca92d9067a0b56a854529211fef3ae541ab6d540756d000ddc8ee59f5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000001_4808b5cca92d9067a0b56a854529211fef3ae541ab6d540756d000ddc8ee59f5.png -->
 
 œ œœ
 
@@ -12312,7 +11808,7 @@ Though we will not use them in our harmonic analyses, you will sometimes encount
 
 209
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000002_e5e3a103907a2092b63ccadc8c5c6eebaa3dd49de1061f9c386fe815db131146.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000002_e5e3a103907a2092b63ccadc8c5c6eebaa3dd49de1061f9c386fe815db131146.png -->
 
 wwww
 
@@ -12376,7 +11872,7 @@ C˜ o D˜ o
 
 F˜ o G˜ o œ œ œ œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000003_1a5743a180bf82b0d4454325ed3404a37d44640ccca810e0de156b8338a12f3d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000003_1a5743a180bf82b0d4454325ed3404a37d44640ccca810e0de156b8338a12f3d.png -->
 
 b b b b b
 
@@ -12412,7 +11908,7 @@ w
 
 63
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000004_5e56b7f952f9ace8f8b419161c311aca1e62b0e1d66e580fc765f9f1f689bc94.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000004_5e56b7f952f9ace8f8b419161c311aca1e62b0e1d66e580fc765f9f1f689bc94.png -->
 
 17
 
@@ -12426,25 +11922,25 @@ So far we have studied diatonic harmony (chords without accidentals, with the ex
 
 ## 17.1 Examples with Secondary Dominants
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000005_404cfab753facbf2131219775c96bf44ab403f89b3bea2167cb5545a6927b092.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000005_404cfab753facbf2131219775c96bf44ab403f89b3bea2167cb5545a6927b092.png -->
 
 Figure 17.1.1: Paul McCartney, "Yesterday" (1965)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000006_2ef3fac28a1707a514d84bb946338a88edb2475d57170b3571c94b588a21f4d4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000006_2ef3fac28a1707a514d84bb946338a88edb2475d57170b3571c94b588a21f4d4.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000007_11184487086ed866726f3acda60c02eabd16c3c154ab7fa034fac0c6f1bee47c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000007_11184487086ed866726f3acda60c02eabd16c3c154ab7fa034fac0c6f1bee47c.png -->
 
 Figure 17.1.2: Jesse Harris, "Don't Know Why" (2002)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000008_4bc00664dd3e96de855a0476979cd4bd90e1307dc101c1edb014c94e06a5c894.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000008_4bc00664dd3e96de855a0476979cd4bd90e1307dc101c1edb014c94e06a5c894.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000009_a7efed55e74b8a85e885492766a13d665c129dfdcaeb1a9345206c5f0eb097cc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000009_a7efed55e74b8a85e885492766a13d665c129dfdcaeb1a9345206c5f0eb097cc.png -->
 
 64
 
 882
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000010_f77b21fb3fa29dbbbba2237d254fe478002c336e7ea98c5d4bc87a1e25bdcab4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000010_f77b21fb3fa29dbbbba2237d254fe478002c336e7ea98c5d4bc87a1e25bdcab4.png -->
 
 206
 
@@ -12460,7 +11956,7 @@ Figure 17.1.2: Jesse Harris, "Don't Know Why" (2002)
 
 Figure 17.1.7: Tchaikovsky, The Nutcracker, "Miniature Overture" (1892)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000011_ea0da341ccaf8bd133361479b619727d7a8f121614ac2402faa7f10d2cd6cd67.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000011_ea0da341ccaf8bd133361479b619727d7a8f121614ac2402faa7f10d2cd6cd67.png -->
 
 ## 17.2 Tonicization
 
@@ -12476,7 +11972,7 @@ In this chapter and the next, we will study tonicization, which means treating a
 
 215
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000012_87ca2368a1c7cb64c896cff3dc849a107ee2b89986cb9d9d7c2c1f05e58ad1c0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000012_87ca2368a1c7cb64c896cff3dc849a107ee2b89986cb9d9d7c2c1f05e58ad1c0.png -->
 
 Figure 17.2.1
 
@@ -12490,7 +11986,7 @@ through its chromaticism, intensifies the drive to the next chord.
 
 25
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000013_57be1685f0fb24cec00667c5c23b7ad1047e35c68d8fa9b746e9f69ff7ff98af.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000013_57be1685f0fb24cec00667c5c23b7ad1047e35c68d8fa9b746e9f69ff7ff98af.png -->
 
 In C major
 
@@ -12514,11 +12010,11 @@ III 7
 
 VI 7
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000014_02a32a49836cb513315ad8b77f28b742fc5d867eb3f11819767e2a1368a41b2a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000014_02a32a49836cb513315ad8b77f28b742fc5d867eb3f11819767e2a1368a41b2a.png -->
 
 (not recommended)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000015_b8c1edbc9fbde738997a5642fab8f97b4f0e03f8d4b0e379be1f9c9e3b833dc2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000015_b8c1edbc9fbde738997a5642fab8f97b4f0e03f8d4b0e379be1f9c9e3b833dc2.png -->
 
 VII 7
 
@@ -12534,7 +12030,7 @@ I 7
 
 2
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000016_04bfd2262a6739b59e60b2d2a2233f3352fa59c46aff5a4e521c17d464ef86ff.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00221-00230/try-20261114T123218-a02e73/document_artifacts/image_000016_04bfd2262a6739b59e60b2d2a2233f3352fa59c46aff5a4e521c17d464ef86ff.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -12795,33 +12291,10 @@ I 7
 - Remember that both vii◦ (on raised ˆ7 ) and the subtonic VII (on the
 - lowered ˆ7 ) occur in the minor mode. The subtonic VII can be tonicized with
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 221](<MusicTheory.pdf#page=221>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 221](<document_artifacts/page_000221_3f40262e6e01d7c79f42e7d86b72060515bfc753c3d3eada6313e50cfca0e874.png>)
-
-![PDF-Seite 222](<document_artifacts/page_000222_d80451380cb682de7dff7e6a3997472bafaadee2f3eaab7e7c591fcead8ff600.png>)
-
-![PDF-Seite 223](<document_artifacts/page_000223_c5cc4a6fd31a3914f3318d9da0a487336f89da1ea4ae35fed27d8a672055f196.png>)
-
-![PDF-Seite 224](<document_artifacts/page_000224_e7d240753ebd440ca7b457675b880e5f18662c5c1c579d71eaac1369565bb13b.png>)
-
-![PDF-Seite 225](<document_artifacts/page_000225_781733156ff8aaba1be1123df622f711dd1deacff54bc7f0d1e6c8ae57326120.png>)
-
-![PDF-Seite 226](<document_artifacts/page_000226_1cf4ffe5a3b226520f96bf7a84853e4e7682e1f2afeb8e26d8c172404a1302e3.png>)
-
-![PDF-Seite 227](<document_artifacts/page_000227_441ce5b3469204ce1633c9fd0c384cabd17161fc79662348cacab87291f47b50.png>)
-
-![PDF-Seite 228](<document_artifacts/page_000228_b794466ca4adb0d28229eba71f372c58fcd09bcbb99df5777b0fa1f203e94a8f.png>)
-
-![PDF-Seite 229](<document_artifacts/page_000229_ddc92ef608cfd3deb87cca98127e4fbdd53ac18f8a220f46e7b5626cb98bed66.png>)
-
-![PDF-Seite 230](<document_artifacts/page_000230_75c11e46783bc10c10a0814bb65e4a0fe121b63ef2fbd8d341ad93469efd1c1d.png>)
-
-
-[Original-PDF, Seite 221](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=221>)
-
-<!-- PDF-Seiten 231–240 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document.md -->
+<!-- PDF-Seiten 231–240 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document.md -->
 
 542
 
@@ -12839,7 +12312,7 @@ V7/VII, while vii◦
 
 \_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000000_3a79c5ba1771ecd0312ff25d6e4d87098cae822e7559315b3f7802e27fc1dc79.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000000_3a79c5ba1771ecd0312ff25d6e4d87098cae822e7559315b3f7802e27fc1dc79.png -->
 
 \_\_\_\_\_
 
@@ -12867,7 +12340,7 @@ w
 
 F˜ down P5 is B; in E major, B is 5ˆ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000001_99b832e7a1f7eb3d11f514cbfece5a56e242745e4ad4997b1720af96461d7a11.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000001_99b832e7a1f7eb3d11f514cbfece5a56e242745e4ad4997b1720af96461d7a11.png -->
 
 in the bass.
 
@@ -12875,9 +12348,9 @@ in the bass.
 
 d: V 4 /VI 3
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000002_d9e53a8605613c979a8e8fb8495121ca99a3092558ded5aae24045365413311c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000002_d9e53a8605613c979a8e8fb8495121ca99a3092558ded5aae24045365413311c.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000003_c19a84417fa42d7f3d248aeec404f2753f76692d71d3566b42f53c644693d04f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000003_c19a84417fa42d7f3d248aeec404f2753f76692d71d3566b42f53c644693d04f.png -->
 
 17.6 Irregular Resolutions of Secondary Chords
 
@@ -12895,19 +12368,19 @@ dominants at the beginning of this chapter, the secondary dominants resolve
 
 deceptively.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000004_6efe245c816ece36d060ba1c5a32aa148255d7c00488d97446a0c82e95382cb1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000004_6efe245c816ece36d060ba1c5a32aa148255d7c00488d97446a0c82e95382cb1.png -->
 
 Figure 17.6.1: Paul McCartney, "Yesterday" (1965)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000005_cbba1cabe6e767b6eccdbc6cb6a22877de3dc04f1ccf72b2d005b97e87290eae.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000005_cbba1cabe6e767b6eccdbc6cb6a22877de3dc04f1ccf72b2d005b97e87290eae.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000006_940df154a011bf42473554e82c343ac6410cea49a827cf5186778661ef12549f.png -->
-
-206
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000006_940df154a011bf42473554e82c343ac6410cea49a827cf5186778661ef12549f.png -->
 
 206
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000007_c72cc8b65f0fc3c71255ef4764c2cf7ce61f9405a5d30fa684868a483660f045.png -->
+206
+
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000007_c72cc8b65f0fc3c71255ef4764c2cf7ce61f9405a5d30fa684868a483660f045.png -->
 
 210
 
@@ -12917,7 +12390,7 @@ Figure 17.6.1: Paul McCartney, "Yesterday" (1965)
 
 CHAPTER 17. SECONDARY DOMINANT CHORDS
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000008_1aa705a04beb1d66f1bcddd83c6a99f68122ec836e53c976b28d4ab1a8f09d2f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000008_1aa705a04beb1d66f1bcddd83c6a99f68122ec836e53c976b28d4ab1a8f09d2f.png -->
 
 Finally, a rather common deceptive resolution of a secondary dominant is V7/vi to IV, which can be seen in the following three examples.
 
@@ -12943,13 +12416,13 @@ J
 
 221
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000009_b792dea98ea8fa75beb21b635227dc0a6a08bdfe0c667d211459e8eb06a814d2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000009_b792dea98ea8fa75beb21b635227dc0a6a08bdfe0c667d211459e8eb06a814d2.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000010_6def843397f07928997238ff58f503a68e43d9e886af2e2552c64ea7f4d01557.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000010_6def843397f07928997238ff58f503a68e43d9e886af2e2552c64ea7f4d01557.png -->
 
 Figure 17.6.7: Beethoven, Piano Sonata Op. 53, I (1804)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000011_9df93fb4ca8b6e19f57a7951275bd139d65ff7b800520c41ae87bad2c2c07444.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000011_9df93fb4ca8b6e19f57a7951275bd139d65ff7b800520c41ae87bad2c2c07444.png -->
 
 26
 
@@ -12963,13 +12436,13 @@ Figure 17.6.7: Beethoven, Piano Sonata Op. 53, I (1804)
 
 489
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000012_b82664ff0a6566310559381e20be9d71d1742caa92d91579bc997bc2ce52503a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000012_b82664ff0a6566310559381e20be9d71d1742caa92d91579bc997bc2ce52503a.png -->
 
 3. On the empty staff below, copy the notes from the upper staff to the lower staff while adding the specified non-chord tones. (Note: LNT = lower neighbor tone; UNT = upper neighbor tone.) Realize the lead-sheet symbols using quarter-note accompanimental texture. Below the lower staff, analyze the chords using Roman numerals with
 
 figured bass inversion symbols.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000013_732c7a348a82f6c5fdfbba55b0dae9f9398db284aaa33afa40d6911c795adab6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000013_732c7a348a82f6c5fdfbba55b0dae9f9398db284aaa33afa40d6911c795adab6.png -->
 
 67
 
@@ -12995,7 +12468,7 @@ accompanimental texture of afterbeats. Analyze the Roman numerals
 
 with figured bass inversion symbols below the staff.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000014_797bd9e3b44707a982e7577380f98f8127a5f770db94c994a203625f778e5ba0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000014_797bd9e3b44707a982e7577380f98f8127a5f770db94c994a203625f778e5ba0.png -->
 
 F: \_\_\_\_\_
 
@@ -13007,7 +12480,7 @@ F: \_\_\_\_\_
 
 \_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000015_4de21f12b2bcfde01010dcdf21fb457565e1a66924c6935a4924235ad4299c8c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000015_4de21f12b2bcfde01010dcdf21fb457565e1a66924c6935a4924235ad4299c8c.png -->
 
 1. F: \_\_\_\_\_
 
@@ -13031,7 +12504,7 @@ F: \_\_\_\_\_
 
 \_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000016_ae840d8f0eb82c357b1b8d59b1eb8462754da989fa084557a3f56ad4f568bdb8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000016_ae840d8f0eb82c357b1b8d59b1eb8462754da989fa084557a3f56ad4f568bdb8.png -->
 
 6. A¯:\_\_\_\_\_ 7. G: \_\_\_\_\_
 
@@ -13059,7 +12532,7 @@ f˜: V 4 /iv D¯: V/ii d: V 7 /V
 
 ## 18.1 Secondary Diminished Chords
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000017_fffd17dd015d88a7e694f6eee26a2471aa2aec62f7e3e26e688995994b1bf385.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000017_fffd17dd015d88a7e694f6eee26a2471aa2aec62f7e3e26e688995994b1bf385.png -->
 
 967 Figure 18.1.1: A Harmonic Sequence with Secondary Diminished Chords in C major
 
@@ -13080,7 +12553,7 @@ f˜: V 4 /iv D¯: V/ii d: V 7 /V
 
 967
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000018_4543e5f3812e305f1f4755fbdfef564af3142e4c18240ebc374756e347bd0745.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00231-00240/try-20261114T123337-02ea75/document_artifacts/image_000018_4543e5f3812e305f1f4755fbdfef564af3142e4c18240ebc374756e347bd0745.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -13420,37 +12893,14 @@ f˜: V 4 /iv D¯: V/ii d: V 7 /V
 - Figure 18.1.4: Billy Joel,
 - "Just the Way You Are" (1977)
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 231](<MusicTheory.pdf#page=231>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 231](<document_artifacts/page_000231_69073b2c9fec399402d6f00a814469d0fce5769369d0b3f3484e1612ff227599.png>)
-
-![PDF-Seite 232](<document_artifacts/page_000232_3b5057d478b8bf433009c0235f3f6077c5aafc772d74687b03cd8306105af352.png>)
-
-![PDF-Seite 233](<document_artifacts/page_000233_120c716e9e1a6a85d65926793cf7877d32c3f37be6431af5d293b19b2403703d.png>)
-
-![PDF-Seite 234](<document_artifacts/page_000234_6cfc2f866fd4a27f18a581e229da1f9850909eeff2984f24d41c5526025cb530.png>)
-
-![PDF-Seite 235](<document_artifacts/page_000235_50504016a09b0309c1428756774643d7fc6eb34d711f67852466a49fb51cfe8e.png>)
-
-![PDF-Seite 236](<document_artifacts/page_000236_48a04f3793694f62658adee2da7d20de0936d2314ec83c352836f632afd9307b.png>)
-
-![PDF-Seite 237](<document_artifacts/page_000237_c735334e71bb379f9e33bd348309cfe1f8bc910106bba8e7cd8e58c690cbac46.png>)
-
-![PDF-Seite 238](<document_artifacts/page_000238_a23747009b5673c2429863a6519921914be68cac25364efc2ef4e5c4f6784a62.png>)
-
-![PDF-Seite 239](<document_artifacts/page_000239_c6a8000cd49e03cf63f6b51fb8bc4b663440a7229ab53b252cd6b0c7bf97b3da.png>)
-
-![PDF-Seite 240](<document_artifacts/page_000240_e275f624b511aa81a6f90b19c71438aaf406d00fd9e4ff7e9229a68b5d770aeb.png>)
-
-
-[Original-PDF, Seite 231](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=231>)
-
-<!-- PDF-Seiten 241–250 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document.md -->
+<!-- PDF-Seiten 241–250 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document.md -->
 
 Figure 18.1.5: Dewayne Blackwell and Earl Bud Lee, "Friends in Low Places" (1990)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000000_c8b04f7f033e203a4ba4c178b036babb8afd15640427826eb09ee662d6dc0816.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000000_c8b04f7f033e203a4ba4c178b036babb8afd15640427826eb09ee662d6dc0816.png -->
 
 18.2 Secondary Diminished Chords in Major and Minor
 
@@ -13482,7 +12932,7 @@ www
 
 Notice that vii◦ /III in minor is not included because it is ii◦ . Notice also that vii ø7/III has no accidentals-it is the same as ii ø7 but functions
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000001_00d90b903ff7f817b2f7cf56ea1f4c3c72d24cc5493494df8c440f5e7bd83938.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000001_00d90b903ff7f817b2f7cf56ea1f4c3c72d24cc5493494df8c440f5e7bd83938.png -->
 
 538
 
@@ -13502,7 +12952,7 @@ When you encounter a chord with a chromaticism and suspect it is a secondary dim
 
 triad or a half-diminished and fully-diminished seventh chord, the chord
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000002_4eaca96021174531e52acd7c98cb9c579d3714912873eccba4bba0f6e42b2711.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000002_4eaca96021174531e52acd7c98cb9c579d3714912873eccba4bba0f6e42b2711.png -->
 
 # 977 The chord in question is an G4 half-diminished seventh chord in first inversion.
 
@@ -13538,9 +12988,9 @@ G˜ up m2 is A; in D major, A is 5ˆ
 
 #
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000003_f0a03eb248cc2a93085beb8c261e23eb94e1223288a8841b3ff3c0f09ac0e238.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000003_f0a03eb248cc2a93085beb8c261e23eb94e1223288a8841b3ff3c0f09ac0e238.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000004_22e185732b7af2ce31dc1c5c855d4162ea02dc0ea29a68cbe9c6c124141c61cc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000004_22e185732b7af2ce31dc1c5c855d4162ea02dc0ea29a68cbe9c6c124141c61cc.png -->
 
 988
 
@@ -13552,7 +13002,7 @@ G˜ up m2 is A; in D major, A is 5ˆ
 
 515
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000005_6ad6ab3edc0053c875b100667a4774451dc40216019060b9beeda7ed24262d3b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000005_6ad6ab3edc0053c875b100667a4774451dc40216019060b9beeda7ed24262d3b.png -->
 
 G˜ up m2 is A; in D major, A is 5ˆ
 
@@ -13568,7 +13018,7 @@ which is the Roman numeral after the slash): B is the root of vii◦7 in
 
 C minor because it is a m2 below C.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000006_5fbd341db86b20d18b95d757e4ba8663a62e00fb2cd23aad7eab7783173174ab.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000006_5fbd341db86b20d18b95d757e4ba8663a62e00fb2cd23aad7eab7783173174ab.png -->
 
 g: vii o4 /iv
 
@@ -13578,13 +13028,13 @@ g: vii o4 /iv
 
 42 inversion means the 7th of the chord (A2)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000007_4a351946b645e0889c74064cc7c575ebff8cf97fc913c71c3084866f5fb890de.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000007_4a351946b645e0889c74064cc7c575ebff8cf97fc913c71c3084866f5fb890de.png -->
 
 2
 
 g: vii o4 /iv
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000008_f190a8249733ff9b6ad278d8634d9102cc08c77778eda5d198aaec452cd62005.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000008_f190a8249733ff9b6ad278d8634d9102cc08c77778eda5d198aaec452cd62005.png -->
 
 18.5 Practice Exercises
 
@@ -13634,7 +13084,7 @@ n w w
 
 wwww
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000009_b0c303777b3df3bd4e699c39ee62b5cccc0dd605f27c0caab1627dc74f25b4c4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000009_b0c303777b3df3bd4e699c39ee62b5cccc0dd605f27c0caab1627dc74f25b4c4.png -->
 
 &amp; b b
 
@@ -13766,7 +13216,7 @@ ww
 
 n
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000010_3deeca23a85b2c143d965702fd53f51cb4225bbebb4ff848df8b5ee0c3dbcec3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000010_3deeca23a85b2c143d965702fd53f51cb4225bbebb4ff848df8b5ee0c3dbcec3.png -->
 
 &amp;
 
@@ -13776,7 +13226,7 @@ n
 
 523
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000011_111e1671a4f0ee11eca79f0f19851b81607196d15202b5201464ceee7e3b2832.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000011_111e1671a4f0ee11eca79f0f19851b81607196d15202b5201464ceee7e3b2832.png -->
 
 \_\_\_\_\_
 
@@ -13910,7 +13360,7 @@ b b b b b b b b Click here to download the first homework assignment for this ch
 
 Figure 18.5.1: Freddie Mercury, "We Are the Champions" (1977)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000012_7d7cb4867da93949f6c52bab4fd0ac70a3abdee4cb5cce2be310bef37ae3e587.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000012_7d7cb4867da93949f6c52bab4fd0ac70a3abdee4cb5cce2be310bef37ae3e587.png -->
 
 24
 
@@ -13922,23 +13372,23 @@ Figure 18.5.1: Freddie Mercury, "We Are the Champions" (1977)
 
 Mode mixture typically consists of borrowing chords from the parallel minor during a passage in a major key. "Borrowed chords" refers to borrowing chords from minor and is synonymous with mode mixture. In the examples that follow, notice the lowered chromaticisms-2ˆ6 is most common but 2ˆ3 and 2ˆ7 also occur in borrowed chords.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000013_357994e3a169f14d78c02e98eeeba42b4e053c3af3ad30d689fefabbdf421505.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000013_357994e3a169f14d78c02e98eeeba42b4e053c3af3ad30d689fefabbdf421505.png -->
 
 the minor i chord is Richard Strauss's Also Sprach Zarathustra.
 
 231
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000014_b174c2eaf3b51e819cbbf64e4434838b7a353b2f6280fd77ab87cc68540cdadc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000014_b174c2eaf3b51e819cbbf64e4434838b7a353b2f6280fd77ab87cc68540cdadc.png -->
 
 72
 
 The next three examples have the pattern ˆ1 -2ˆ7 -ˆ6 -2ˆ6 in the bass line.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000015_a9fdb4e02eaf2b0a97f463a5212357baff6a71127d5823c99a9fe87fddf585c2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000015_a9fdb4e02eaf2b0a97f463a5212357baff6a71127d5823c99a9fe87fddf585c2.png -->
 
 Figure 19.1.4: Linda Perry, "Beautiful" (2002)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000016_a7559fd40f3c5564c286e0c8e88eb50861d6c669f937a64c4bc789e97bb9187f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000016_a7559fd40f3c5564c286e0c8e88eb50861d6c669f937a64c4bc789e97bb9187f.png -->
 
 239
 
@@ -13948,13 +13398,13 @@ CHAPTER 19. MODE MIXTURE
 
 Figure 19.1.5: Hoyt Axton, "Joy to the World" (1970)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000017_4970071bcf4883552f36e807aa3402fbeef53cc2db78b38facbed183438e1a65.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000017_4970071bcf4883552f36e807aa3402fbeef53cc2db78b38facbed183438e1a65.png -->
 
 This same bass line can be found (in the same harmonic rhythm) in "Part of Your World. "
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000018_cc2067fc5ffd590e31dc2eb4cfd89eb84ec0037a0ffe87245da0f491dd4b1ef8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000018_cc2067fc5ffd590e31dc2eb4cfd89eb84ec0037a0ffe87245da0f491dd4b1ef8.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000019_78cb38341d26f8f7efa296fd8d87402b6b6ea008401e2a4729c72194054817f8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000019_78cb38341d26f8f7efa296fd8d87402b6b6ea008401e2a4729c72194054817f8.png -->
 
 YT: SXKlJuO07eM
 
@@ -13968,13 +13418,13 @@ In the next example by Radiohead, the iv chord (borrowed from minor) is preceded
 
 Figure 19.1.8: Kurt Cobain, "Lithium" (1992)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000020_23cddbb8441fe1868ae05d1a75f82b00755994609a1df801e3bbaf7bb6eede80.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000020_23cddbb8441fe1868ae05d1a75f82b00755994609a1df801e3bbaf7bb6eede80.png -->
 
 In the example above for "Lithium, " the Roman numerals are analyzed as triads instead of "5" chords because the third of the chord is either implied or occurs in the voice part (not shown).
 
 In the next example from the third movement Brahms's Third Symphony, the I chord alternates twice with a borrowed chord. The movement began in C minor, so there are three flats in the key signature, but this section is in C major.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000021_6b456ec289f15da5677671c1629b3f00204451550bc98733b71498810657e404.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00241-00250/try-20261114T123402-510e6b/document_artifacts/image_000021_6b456ec289f15da5677671c1629b3f00204451550bc98733b71498810657e404.png -->
 
 A similar alternation between the I chord and a borrowed chord (2VII7 ) happens in "Inchworm, " from the movie Hans Christian Andersen. Notice the special quality of the borrowed 2ˆ6 in the upper melody.
 
@@ -14168,45 +13618,22 @@ A similar alternation between the I chord and a borrowed chord (2VII7 ) happens 
 - Figure 19.1.9: Brahms, Symphony No. 3 in F major, Op. 90, III. Poco
 - Allegretto (1883)
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 241](<MusicTheory.pdf#page=241>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 241](<document_artifacts/page_000241_114dfa2956feab1a023e464bf55ff85faba6c370eb5cb15d4a6841170090359b.png>)
-
-![PDF-Seite 242](<document_artifacts/page_000242_01be14588add945655d044bc710b87e71f598057c6189617abacf419bf3bb7d7.png>)
-
-![PDF-Seite 243](<document_artifacts/page_000243_02e82e2cb68c8304831b7021663fd4410145b9701a6bec132f70ebc6ff54c70e.png>)
-
-![PDF-Seite 244](<document_artifacts/page_000244_f3020369d44e410fbb8ea1ac79afa57262ee5d9caa3cce22c6a9244eee2cc4fa.png>)
-
-![PDF-Seite 245](<document_artifacts/page_000245_1e81ee3511490c97e9b9ac5fdf58a3a361286f91594764ee534c19e285cf8f29.png>)
-
-![PDF-Seite 246](<document_artifacts/page_000246_7ce2bf1694e2ba9c62e7d4e1fd2e663574ca4083c092dfe147abc88527b4f913.png>)
-
-![PDF-Seite 247](<document_artifacts/page_000247_f8483775a1f37ce86544836ff9c69aa459bbc5735e18eb074f102f352ff3eb40.png>)
-
-![PDF-Seite 248](<document_artifacts/page_000248_96d80e8f6561e74e2f3280917181d74eb4fa909310a4b589cc3ff691db7f53be.png>)
-
-![PDF-Seite 249](<document_artifacts/page_000249_7e03b9d0aaca0f764b18668239343be364974d10e80f1daad874cea3b5631556.png>)
-
-![PDF-Seite 250](<document_artifacts/page_000250_5feff9d2dfd7b41f21c0f8ced978425ebafba8eccae469fc5540f429b761b32a.png>)
-
-
-[Original-PDF, Seite 241](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=241>)
-
-<!-- PDF-Seiten 251–260 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document.md -->
+<!-- PDF-Seiten 251–260 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document.md -->
 
 19.1. MODE MIXTURE
 
 237
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000000_01b56723f584b681e38e2ff1867de0efd2540520f0ff5c3ac9b61f6f99788f7d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000000_01b56723f584b681e38e2ff1867de0efd2540520f0ff5c3ac9b61f6f99788f7d.png -->
 
 A famous example of mode mixture occurs in the "Waltz of the Flowers" from Tchaikovsky's Nutcracker.
 
 Figure 19.1.11: Tchaikovsky, Nutcracker, "Waltz of the Flowers" (1892)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000001_47090e3a341325a55c795f521535f1a637c5faf3fe0438c656f408857fdcd5e0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000001_47090e3a341325a55c795f521535f1a637c5faf3fe0438c656f408857fdcd5e0.png -->
 
 A similar melody occurs in "One Day I'll Fly Away, " which, though it has a different harmonization, still uses mode mixture.
 
@@ -14214,7 +13641,7 @@ A similar melody occurs in "One Day I'll Fly Away, " which, though it has a diff
 
 YT: I8eNaVEEtC8
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000002_0483d1d702a1a48cfbe8bfd5da2fb42bf5179ab2e061166cef9d7062a69194db.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000002_0483d1d702a1a48cfbe8bfd5da2fb42bf5179ab2e061166cef9d7062a69194db.png -->
 
 Figure 19.1.12: Joe Sample and Will Jennings, "One Day I'll Fly Away" (1980)
 
@@ -14224,7 +13651,7 @@ Let us examine the ways 2ˆ6 can be harmonized as root, 3rd, 5th, and 7th of a
 
 borrowed chord.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000003_c39b8e69f8b2106322e8e02e35df6567d7b1f27f0b0c3dd4826d0720e8b0f472.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000003_c39b8e69f8b2106322e8e02e35df6567d7b1f27f0b0c3dd4826d0720e8b0f472.png -->
 
 30
 
@@ -14274,7 +13701,7 @@ ww
 
 7th
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000004_515e68a8300fbc63bb88fc0a44b34dca64470f83f007a97cbc8c58981c629bb3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000004_515e68a8300fbc63bb88fc0a44b34dca64470f83f007a97cbc8c58981c629bb3.png -->
 
 C: ¯III
 
@@ -14320,7 +13747,7 @@ b
 
 b
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000005_d24de7bdc957b355ddc8c89dd4b845f9cf1249a894edacac674c2801f4c0cd3d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000005_d24de7bdc957b355ddc8c89dd4b845f9cf1249a894edacac674c2801f4c0cd3d.png -->
 
 Figure 19.2.2: Harmonization of 2ˆ3 and 2ˆ7
 
@@ -14328,7 +13755,7 @@ A: ¯VI
 
 Be careful of flats before Roman numerals. Flats mean to lower a root a m2 in the key signature, not to literally put a flat in front of the root of a chord.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000006_6f32f228fba507456762015b3adbd8462a6ecb0680b67988fde00c7f56f179b0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000006_6f32f228fba507456762015b3adbd8462a6ecb0680b67988fde00c7f56f179b0.png -->
 
 The V-2VI deceptive cadence is a deceptive realization of a deceptive progression. This V-2VI cadence ties into the 2VI-2VII-I progression to produce an "epic" (although somewhat clichéd) ending to the "Star Spangled Banner" as
 
@@ -14340,7 +13767,7 @@ b
 
 performed at the Super Bowl and Presidential Inaugurations by artists such as Whitney Houston, Beyoncé, and Lady Gaga, among others.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000007_eadff98d28d285483edd3cc4dda5d887a24fa75bd9bb52525c5266485ee6317f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000007_eadff98d28d285483edd3cc4dda5d887a24fa75bd9bb52525c5266485ee6317f.png -->
 
 242
 
@@ -14388,7 +13815,7 @@ I
 
 Figure 19.4.3: John Stafford Smith and Francis Scott Key, "The Star Spangled Banner" (1814) as performed by Lady Gaga at the 2016 Super Bowl
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000008_ca84edef20362c5f90fe1e6e294436defe869fdbf12ba95a9ee3338c0e6b8baf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000008_ca84edef20362c5f90fe1e6e294436defe869fdbf12ba95a9ee3338c0e6b8baf.png -->
 
 This same V-2VI deceptive cadence with 2VI progressing to 2VII followed by I occurs in epic fashion at the end of the animated film Beauty and the Beast from 1991.
 
@@ -14402,7 +13829,7 @@ In minor, the one place to borrow from the major mode is at the end of a piece i
 
 Figure 19.5.1: J.S. Bach, French Suite No. 1 in D Minor, BWV 812, Sarabande
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000009_ffc500dca8f899f214b67501820c4da72ca15a88dc44602fa8a88957d264a164.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000009_ffc500dca8f899f214b67501820c4da72ca15a88dc44602fa8a88957d264a164.png -->
 
 While the Picardy 3rd (the major third above the tonic) was most commonly encountered in the Baroque era, it has been used from then until now, though with less frequency.
 
@@ -14412,7 +13839,7 @@ While the Picardy 3rd (the major third above the tonic) was most commonly encoun
 
 1. Analyze the following chords with lead-sheet symbols above and Roman
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000010_86564976d6297026508f23e0874a2b62572bb1e792c7ca049f04db95b0014219.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000010_86564976d6297026508f23e0874a2b62572bb1e792c7ca049f04db95b0014219.png -->
 
 C˜ o7 /B¯
 
@@ -14430,7 +13857,7 @@ D/F˜
 
 \_\_\_\_\_\_\_\_\_\_ \_\_\_\_\_\_\_\_\_\_ \_\_\_\_\_\_\_\_\_\_ \_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000011_30fa41a00b80dcf9de42dd263c3061e1f86173b3663dddb1dbbf2bd0e80b6d54.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00251-00260/try-20261114T123420-0c3f54/document_artifacts/image_000011_30fa41a00b80dcf9de42dd263c3061e1f86173b3663dddb1dbbf2bd0e80b6d54.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -14599,33 +14026,10 @@ D/F˜
 - Figure 19.6.1: Chopin, Nocturne in E-flat major, Op. 9, No. 2 (1832)
 - Click here to download the homework assignment for this chapter.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 251](<MusicTheory.pdf#page=251>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 251](<document_artifacts/page_000251_255081ba0c9dd84ffd42022699ca82e21610accf9cf642de50b696cf187c777f.png>)
-
-![PDF-Seite 252](<document_artifacts/page_000252_7ad4b7c27ba560701ef1d5404b11bb905d92229737a18ea5395de80afde0bd44.png>)
-
-![PDF-Seite 253](<document_artifacts/page_000253_4befc84271b205891c83b72d26f93a634bc2980839f1c62e2256985c69e0be1c.png>)
-
-![PDF-Seite 254](<document_artifacts/page_000254_687cc428f90ea76b9f1920783c631178888cd0f90ad6e6464a24b291e0af38d1.png>)
-
-![PDF-Seite 255](<document_artifacts/page_000255_6a0498dd15ea4718ab27eaddf6ac6c4eef5165294a307aba233023e24a934f50.png>)
-
-![PDF-Seite 256](<document_artifacts/page_000256_4c02cf3652322c6bf331b2a25df3c3207e43d3cb9c5d954a2e0b7f4bec361a0c.png>)
-
-![PDF-Seite 257](<document_artifacts/page_000257_55752d04a0576d01ae0c29c4de02ee477bd97a7e889e1972b450fa34862813a7.png>)
-
-![PDF-Seite 258](<document_artifacts/page_000258_8bb84a7a5c52fce80b8842f2df2aa8d2b2d2ef7c38cf5fdf06818047cd1a3edd.png>)
-
-![PDF-Seite 259](<document_artifacts/page_000259_e12ddecf986f96bc55bac038cd38cc95729c8bbe216a241c8dbe13f78a99a213.png>)
-
-![PDF-Seite 260](<document_artifacts/page_000260_282f45789c6dfa868faeceb6a4e2de58f095342d6ceaeef0a5fc67c3ba30cf3e.png>)
-
-
-[Original-PDF, Seite 251](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=251>)
-
-<!-- PDF-Seiten 261–270 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document.md -->
+<!-- PDF-Seiten 261–270 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document.md -->
 
 ## Chapter 20
 
@@ -14643,7 +14047,7 @@ times alter texture, register, and dynamics when the Neapolitan occurs, as in
 
 the first movement of Beethoven's Symphony No. 7, Op. 92.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000000_f4c576b6a78878350c5608d96e70380f8d1165ab3768005da5235bb6b91d423a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000000_f4c576b6a78878350c5608d96e70380f8d1165ab3768005da5235bb6b91d423a.png -->
 
 # # #
 
@@ -14651,7 +14055,7 @@ the first movement of Beethoven's Symphony No. 7, Op. 92.
 
 Figure 20.2.1: Beethoven, Moonlight Sonata, Op. 27, No. 2, I (1802)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000001_4e23886780276ac98415ab5b44ed3ebef62072713169dcd0db3ff13f1162a0ad.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000001_4e23886780276ac98415ab5b44ed3ebef62072713169dcd0db3ff13f1162a0ad.png -->
 
 For comparison, play the example above from the Moonlight Sonata and try other pre-dominant chords in its place, like iv (F 4 m) or ii◦6 (D 4 ◦/F 4 ), while noting the difference in effect.
 
@@ -14659,9 +14063,9 @@ The next example is a well-known movie theme.
 
 76
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000002_289212642389e44f94f0c1c2b5cde679cdd9713ce4cd575803b16974f6c83e57.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000002_289212642389e44f94f0c1c2b5cde679cdd9713ce4cd575803b16974f6c83e57.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000003_0947f1f77c65dce2f9d257d63aba6fcdfcef03e67ec2ec24a912499a14a4e309.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000003_0947f1f77c65dce2f9d257d63aba6fcdfcef03e67ec2ec24a912499a14a4e309.png -->
 
 ## Chapter 21
 
@@ -14671,7 +14075,7 @@ The next example is a well-known movie theme.
 
 Augmented sixth chords are a special class of pre-dominant chords with notes that approach the dominant (ˆ5 ) from a half-step below (4ˆ4 ) and from a half-step above (2ˆ6 ) simultaneously.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000004_217afbc75e97e756322e49f199b5fccaaf1ed7730b804553294e313d00b5ed0b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000004_217afbc75e97e756322e49f199b5fccaaf1ed7730b804553294e313d00b5ed0b.png -->
 
 714 In minor, 2ˆ6 doesn't require a flat because ˆ6 is lowered in the minor key signature.
 
@@ -14708,7 +14112,7 @@ c:
 
 CHAPTER 21. AUGMENTED SIXTH CHORDS
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000005_89056c34f25316b7b72c6da436141dbc737523706fb2ef4b3b5860bb6baae4ee.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000005_89056c34f25316b7b72c6da436141dbc737523706fb2ef4b3b5860bb6baae4ee.png -->
 
 ## 21.4 Lead-Sheet Analysis of Augmented Sixth Chords
 
@@ -14726,7 +14130,7 @@ C:
 
 721
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000006_7cf5609709d69ef4203c310d0bfe26b764f5f1e94fc2d39d39f26e0c9e1a6756.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000006_7cf5609709d69ef4203c310d0bfe26b764f5f1e94fc2d39d39f26e0c9e1a6756.png -->
 
 In the example above, we see a disagreement between "Classical" analysis and lead-sheet analysis. The fundamental concept of lead-sheet analysis is to show root, quality, and inversion. The "Classical" spelling and the Classical analysis of augmented sixth chords show the direction of resolution (with the chromatically raised notes), which necessitate the need for original labels, since we don't have a Roman numeral or a lead-sheet symbol that would communicate a chord containing a diminished third above the root (that is then inverted!).
 
@@ -14744,19 +14148,19 @@ CHAPTER 21. AUGMENTED SIXTH CHORDS
 
 The next example from popular music has an It+6 spelled enharmonically
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000007_0ff27296f981a8b654031d6c523f3dc1edca16076f76498589f2e2b0fdf9ca42.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000007_0ff27296f981a8b654031d6c523f3dc1edca16076f76498589f2e2b0fdf9ca42.png -->
 
 as a major-minor seventh chord with the fifth omitted. 29
 
 &amp;
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000008_99731a2f307df39c0641c427b14d8700c2ed01fa021a0369393451e9db97ac09.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000008_99731a2f307df39c0641c427b14d8700c2ed01fa021a0369393451e9db97ac09.png -->
 
 289
 
 b b b
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000009_6bd2665cde0c7b6e924a248e92e4000a286178af4e6f8d1ce7c8dddf7e29d9fa.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000009_6bd2665cde0c7b6e924a248e92e4000a286178af4e6f8d1ce7c8dddf7e29d9fa.png -->
 
 ## 21.5.3 The German Augmented Sixth Chord
 
@@ -14764,7 +14168,7 @@ The following example, from Rossini's William Tell Overture, has a German augmen
 
 Figure 21.5.4: Rossini, William Tell Overture (1829)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000010_d3f5cec97e1a21340ed6e395891f7d37aff405ccecbee86dc6903300974734fb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00261-00270/try-20261114T123442-5b5a80/document_artifacts/image_000010_d3f5cec97e1a21340ed6e395891f7d37aff405ccecbee86dc6903300974734fb.png -->
 
 John Coltrane's minor blues, "Mr. P.C., " contains a German augmented sixth chord (spelled as VI7 in minor) progressing to the V chord. (Note: The bass line in this example is a jazz "walking" bass, which doesn't stick strictly to chord tones.)
 
@@ -14993,33 +14397,10 @@ John Coltrane's minor blues, "Mr. P.C., " contains a German augmented sixth chor
 - V/ii
 - YT: oGPys3sKBHw
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 261](<MusicTheory.pdf#page=261>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 261](<document_artifacts/page_000261_946547bcab43287e9ceb4a3df3f8aac5b5ccc2a49756cddbb9842ded8e485c06.png>)
-
-![PDF-Seite 262](<document_artifacts/page_000262_b63eeb2b6f0d5388cdf06b5c494f076c5b2fb405a976d4b34255586b58767c2e.png>)
-
-![PDF-Seite 263](<document_artifacts/page_000263_f08464e9f1b60774b0197ca130a583c406de584db93965b04218433f061d6b91.png>)
-
-![PDF-Seite 264](<document_artifacts/page_000264_3abd18f86f9ac35d5bbf7062deee0756d8ca4b1ad79feab2f01ef74ebf69465d.png>)
-
-![PDF-Seite 265](<document_artifacts/page_000265_bdb0c427568cdf43cdaecb78d4f6680e7663162af268e6fd7fb2a9a40ea0c658.png>)
-
-![PDF-Seite 266](<document_artifacts/page_000266_c5434951ae60f2d7e5d7e58e62f74d6857b0befe1b0b86dbc32dea5b0a84bd46.png>)
-
-![PDF-Seite 267](<document_artifacts/page_000267_57a81a5c4e0f400e5c50492749282d6068f1c9ac8e868219403b7f6bb7f0a2ef.png>)
-
-![PDF-Seite 268](<document_artifacts/page_000268_1770ff1b4982cb50ecb5d4479d7dbe6be5fed93c5cbabaef86b6da43699b4cee.png>)
-
-![PDF-Seite 269](<document_artifacts/page_000269_8bc535ff2c4bed79255aa48e2e994996ee0572515941c687271e70127c6a1250.png>)
-
-![PDF-Seite 270](<document_artifacts/page_000270_6d0c02580c77679d2b1df7f3701a4702217c20eaf5e4d59fccdef322c135ba06.png>)
-
-
-[Original-PDF, Seite 261](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=261>)
-
-<!-- PDF-Seiten 271–280 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document.md -->
+<!-- PDF-Seiten 271–280 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document.md -->
 
 IV 7
 
@@ -15033,7 +14414,7 @@ bē
 
 Figure 21.5.5: John Coltrane, "Mr. P.C. " (1959)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000000_00d39629ba01f59ded8b994f5fb6a4978f676a6f94fd4cc922ebd6a268abb1f9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000000_00d39629ba01f59ded8b994f5fb6a4978f676a6f94fd4cc922ebd6a268abb1f9.png -->
 
 The next example is a movie theme and features a German augmented sixth chord spelled as a major-minor seventh chord (VI7 ). In this particular case, the third of the chord doesn't occur until the fourth beat of the measure.
 
@@ -15041,7 +14422,7 @@ The next example is a movie theme and features a German augmented sixth chord sp
 
 CHAPTER 21. AUGMENTED SIXTH CHORDS
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000001_22a3b7c4ca4f9e2cfe291a7b7071aba1fceb0dce6781b8cdfa592720b05e31ce.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000001_22a3b7c4ca4f9e2cfe291a7b7071aba1fceb0dce6781b8cdfa592720b05e31ce.png -->
 
 Fiona Apple's "Criminal, " from 1996, features German augmented sixth chords in the verse (F7 in the key of A minor) as well as in the pre-chorus, seen in the example below.
 
@@ -15051,15 +14432,15 @@ Fiona Apple's "Criminal, " from 1996, features German augmented sixth chords in 
 
 Figure 21.5.7: Fiona Apple, "Criminal" (1996)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000002_61acf5f9ac6b6cca66ec6488dcd5945f21bb18678a7f0c25a47c3ac17ee6f102.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000002_61acf5f9ac6b6cca66ec6488dcd5945f21bb18678a7f0c25a47c3ac17ee6f102.png -->
 
 A repeating progression of Am-F7 -E (i-Ger+6 -V in Roman numerals) occurs in "Friend Like Me" from the movie and musical Aladdin.
 
 260
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000003_ab3bbdf34ff555a3929a8da97dbd9163f8710e472c12980f73146368ec48673c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000003_ab3bbdf34ff555a3929a8da97dbd9163f8710e472c12980f73146368ec48673c.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000004_21921ebf4739255510c4f7467f3afd7aecaa58cd6fe73c71a35c8bed56cb19dc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000004_21921ebf4739255510c4f7467f3afd7aecaa58cd6fe73c71a35c8bed56cb19dc.png -->
 
 YT: PMFUeLdhhuM
 
@@ -15079,13 +14460,13 @@ A common musical pattern is the descending chromatic bass line (ˆ1 -ˆ7 -2ˆ7 -
 
 Figure 21.6.2: J.S. Bach, Mass in B minor, BWV 232, Crucifixus (1733)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000005_4b5615bb09cddb66a47d37b4354a1a678b8cf12d0bfe3f3a9db401467d9bb550.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000005_4b5615bb09cddb66a47d37b4354a1a678b8cf12d0bfe3f3a9db401467d9bb550.png -->
 
 727
 
 727
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000006_3abfd95dceac00679ca72a9be20557e7e35720a6eeb12992dc582f6a366a0482.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000006_3abfd95dceac00679ca72a9be20557e7e35720a6eeb12992dc582f6a366a0482.png -->
 
 g:
 
@@ -15103,13 +14484,13 @@ i
 
 Figure 21.6.6: Steven Tyler, "Dream On" (1973)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000007_2c3712e4b3d441fa2c26fc7261ac4cbe66bdabc9b1bb93affa5c9d7f38273e11.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000007_2c3712e4b3d441fa2c26fc7261ac4cbe66bdabc9b1bb93affa5c9d7f38273e11.png -->
 
 Figure 21.6.7: Robert DeLeo and Scott Weiland, "Interstate Love Song" (1994)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000008_1bea08e9293acb19a6bf87b3d49ff94ca865786bac5a87d6fa094c548e68aff5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000008_1bea08e9293acb19a6bf87b3d49ff94ca865786bac5a87d6fa094c548e68aff5.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000009_0dd2388d8df2deaa7cd3031b857e75d78463e1e77371635d68b3a84207294174.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000009_0dd2388d8df2deaa7cd3031b857e75d78463e1e77371635d68b3a84207294174.png -->
 
 Below is a table comparing the harmonizations of these descending bass lines.
 
@@ -15132,7 +14513,7 @@ For the harmonization of scale degree ˆ6 , remember that the concept of 4vi◦ 
 
 The table below shows how our study of chromatic harmonies in recent chapters includes the chromatic expansion of the pre-dominant harmonic function category.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000010_bd95fb7d9abb456dcf6bac2c3fecfd9dbac1aea8e53a4fe53e96666be58fa656.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00271-00280/try-20261114T123500-d24d35/document_artifacts/image_000010_bd95fb7d9abb456dcf6bac2c3fecfd9dbac1aea8e53a4fe53e96666be58fa656.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -15412,33 +14793,10 @@ The table below shows how our study of chromatic harmonies in recent chapters in
 - Click here to download the second homework assignment for this chapter.
 - Click here to download the Unit 4 Practice Test.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 271](<MusicTheory.pdf#page=271>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 271](<document_artifacts/page_000271_533d035b33ed34dbfd461bd2c0041823d64b71a9473d0eb6a597fbf99555a3ae.png>)
-
-![PDF-Seite 272](<document_artifacts/page_000272_e57621c13ebb4b0e1defec9cb0f1bc021e1d652770f178f2b3e9bff7b47290fc.png>)
-
-![PDF-Seite 273](<document_artifacts/page_000273_1e35ef9365ef32e60db5c41704e6a2f7c1c54a0d79fe5beb4899419fff5c793e.png>)
-
-![PDF-Seite 274](<document_artifacts/page_000274_37bdffb43b3ff304bdc593128f33946af1af014b105bafc944edc27aa19ec1c4.png>)
-
-![PDF-Seite 275](<document_artifacts/page_000275_522979cc926297cb7fbdc00affbaf8082ff1a292946e4f7bd51f841f34e16918.png>)
-
-![PDF-Seite 276](<document_artifacts/page_000276_7e220e31da910522aa844e12efec46d24398179191839f4a1f6d1e0f3db21a91.png>)
-
-![PDF-Seite 277](<document_artifacts/page_000277_3ebfd9af2f677ab07469fa76d58c96cd9a89aebf3df2c246326352f5915d9102.png>)
-
-![PDF-Seite 278](<document_artifacts/page_000278_45499efd5aa334a50f9cf764dcb0ea1d40de80b760448381821b32696f96fec3.png>)
-
-![PDF-Seite 279](<document_artifacts/page_000279_5ae1a463f74dab2344713b6c113d928900eb9ff0a03eb90d627b19bf34486028.png>)
-
-![PDF-Seite 280](<document_artifacts/page_000280_c936d2f429f0ff7097816d8fc85b596633149ba3bc4d4b7d3d6b69a3c5eaf71e.png>)
-
-
-[Original-PDF, Seite 271](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=271>)
-
-<!-- PDF-Seiten 281–290 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document.md -->
+<!-- PDF-Seiten 281–290 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document.md -->
 
 ## Chapter 22
 
@@ -15452,15 +14810,15 @@ Here are examples of key changes in popular music.
 
 Figure 22.1.1: Beyoncé Knowles, Terius Nash, and Shea Taylor, "Love on Top" (2011)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000000_6ed72cb9ef85bfc0111caa1e59d7f45aaedeb80d4b2023a05626d4a7c5841384.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000000_6ed72cb9ef85bfc0111caa1e59d7f45aaedeb80d4b2023a05626d4a7c5841384.png -->
 
 Figure 22.1.2: James Horner and Will Jennings, "My Heart Will Go On" (1997)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000001_d76be096629db5c3db1c961a231f4b8fb3cad349164b0c82658abb21cd38e313.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000001_d76be096629db5c3db1c961a231f4b8fb3cad349164b0c82658abb21cd38e313.png -->
 
 Figure 22.1.3: Jon Bon Jovi, Richie Sambora, and Desmond Child, "Livin' on a Prayer" (1986)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000002_7c85eb7e4fec13e3abb1b1e03fb6f685f6cc1a5b50f05a84a86ee3868c4f341a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000002_7c85eb7e4fec13e3abb1b1e03fb6f685f6cc1a5b50f05a84a86ee3868c4f341a.png -->
 
 ## 22.2 Tonicization versus Modulation
 
@@ -15484,11 +14842,11 @@ CHAPTER 22. MODULATION
 
 Figure 22.2.1: Schubert, Schwanegesang, D. 957, "Abschied" (1828)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000003_359e0fab4985c3a22214f62e61e51193ee42254506750fcac77f122f143e3446.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000003_359e0fab4985c3a22214f62e61e51193ee42254506750fcac77f122f143e3446.png -->
 
 Below is a reduction showing the underlying diatonic progression of the example above.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000004_cf69e12ff19c64ccb74af3b0d8f1093ac46e7580d048dfd866953e5eeb98ae3d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000004_cf69e12ff19c64ccb74af3b0d8f1093ac46e7580d048dfd866953e5eeb98ae3d.png -->
 
 Notice that this cadential formula establishes a key more strongly than the simple V-I of an authentic cadence. This means there will be ambiguity between a tonicization and a short modulation ending in an authentic cadence, especially in music with fast harmonic rhythm, like Bach chorales (usually in quarter-note harmonic rhythm).
 
@@ -15502,13 +14860,13 @@ CHAPTER 22. MODULATION
 
 Figure 22.2.5: J.S. Bach, Christmas Oratorio, BWV 248, "Ermuntre dich, mein schwacher Geist, " (Chorale) (1734)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000005_ee4505cb7ecab72303b233233b42148db0f602e749f397b616a1fd8ffe73629e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000005_ee4505cb7ecab72303b233233b42148db0f602e749f397b616a1fd8ffe73629e.png -->
 
 To determine pivot chords and the new key, listen to the music to hear the cadence in the new key, then work backward from the cadence to see if the dominant in the new key was approached by pre-dominant chords (ii or IV) in the new key. Then, analyze from the beginning of the phrase until you reach the new key. Finally, look for a logical pivot point. Sometimes two successive chords could logically be pivot chords. If so, include two chords on either side
 
 of your pivot bracket.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000006_a619d98adc38a35bc1dda61409a16d77428f7792f455de38c1dc21915b2d2341.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000006_a619d98adc38a35bc1dda61409a16d77428f7792f455de38c1dc21915b2d2341.png -->
 
 Before we start analyzing and writing modulations, we will examine key
 
@@ -15534,7 +14892,7 @@ In the Baroque and Classical eras, composers typically modulated to the dominant
 
 Figure 22.3.1: Closely Related Keys with A Major as Home Key
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000007_ae1062d83d5db53ca81569ccbbf7e32165a445230fd484d85702a5cbd39286fe.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000007_ae1062d83d5db53ca81569ccbbf7e32165a445230fd484d85702a5cbd39286fe.png -->
 
 Key signatures that are not closely related are said to be "foreign" or "distantly related. " We will see that some types of modulations from the Romantic era, like common-tone modulations, exploit foreign key relationships to dramatic effect.
 
@@ -15547,11 +14905,11 @@ Key signatures that are not closely related are said to be "foreign" or "distant
 
 Modulations with pivot chords will be analyzed using a pivot bracket, as we've seen earlier in the chapter.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000008_4fe2617e1b6a3061789be06e24c0bab90a94f848151a602f7a6361656d214207.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000008_4fe2617e1b6a3061789be06e24c0bab90a94f848151a602f7a6361656d214207.png -->
 
 Figure 22.4.2: Diatonic Common Chords in G major and D major
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000009_950af04e5e15de129281daefd9fa3f5c91fb860be624bdd78b56c695b393aa14.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000009_950af04e5e15de129281daefd9fa3f5c91fb860be624bdd78b56c695b393aa14.png -->
 
 We can repeat this process with Roman numerals, aligning the roots of the chords in the two keys.
 
@@ -15573,9 +14931,9 @@ We can repeat this process with Roman numerals, aligning the roots of the chords
 
 Figure 22.4.3: Roman Numerals for Diatonic Common Chords in G major and D major
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000010_18055577a725791c0380a58d3a53467c9505059395589cb5eb4636c6b4e32c11.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000010_18055577a725791c0380a58d3a53467c9505059395589cb5eb4636c6b4e32c11.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000011_ea9960c7495485d5f43f1c85aada0b4098478aea128e85037ab4415b5447e550.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000011_ea9960c7495485d5f43f1c85aada0b4098478aea128e85037ab4415b5447e550.png -->
 
 The pivot chord in the first key, G, has tonic harmonic function, while in the second key, D major, the G chord has pre-dominant function.
 
@@ -15585,9 +14943,9 @@ Observe the harmonic function of the pivot chords in the following examples from
 
 Figure 22.4.5: J.S. Bach, Chorale 4, "Es ist das Heil uns kommen her" , BWV 9
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000012_6431e8b7ca4651e6ec5e31da7309ce0bb15c16f7280837ae5ad3191bc504fbfc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000012_6431e8b7ca4651e6ec5e31da7309ce0bb15c16f7280837ae5ad3191bc504fbfc.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000013_94f5adab2da21f6a24052229ff3be161bad7ebe542188699625bd588d49c1972.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00281-00290/try-20261114T123521-263874/document_artifacts/image_000013_94f5adab2da21f6a24052229ff3be161bad7ebe542188699625bd588d49c1972.png -->
 
 ## 22.5 How to Recognize a Key After a Modulation
 
@@ -15778,33 +15136,10 @@ Look for the following cues when examining music containing modulations:
 - "Freuet euch, ihr Christen"
 - , BWV 40
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 281](<MusicTheory.pdf#page=281>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 281](<document_artifacts/page_000281_a995a202f5fa24b240c1e345724fec3812601bed9c1b30057596ae88f1f0f06b.png>)
-
-![PDF-Seite 282](<document_artifacts/page_000282_1ec648f0d77c7d8c87902e5c977dc5471e4eae319b654a40304e504747f3695c.png>)
-
-![PDF-Seite 283](<document_artifacts/page_000283_0949b6276e205a4efe624a0ad276c1409f4202b3e8fa85f54590596559cf33ae.png>)
-
-![PDF-Seite 284](<document_artifacts/page_000284_1978a75d2752ad1f2b6c5135e5382026c2068a4992a8298a4d30ac771a466708.png>)
-
-![PDF-Seite 285](<document_artifacts/page_000285_92547bbfb89f189ed36bd5185dc09613c54fac7fc9e1c20942e8f365c296382b.png>)
-
-![PDF-Seite 286](<document_artifacts/page_000286_3fbc79945358bba2ed23cbae336ee5ca3936c0aa0744c899598b0a9b9859c997.png>)
-
-![PDF-Seite 287](<document_artifacts/page_000287_d9dea674e834efa5fc1a1a6badfcfbeee699b1dd16b358c0a8e1f199092d3083.png>)
-
-![PDF-Seite 288](<document_artifacts/page_000288_ead2f233af8f0c921f0c39867b81d3db8891f32f110b28f7a1ccda02d6694402.png>)
-
-![PDF-Seite 289](<document_artifacts/page_000289_f74191f917170c52d39c381f37e3ec951ecb7354283bf623d905cd53fedc860f.png>)
-
-![PDF-Seite 290](<document_artifacts/page_000290_73ac24ad965b9d107f05a8985d3ad626d33e16d88c3620641c29a0d430d9db61.png>)
-
-
-[Original-PDF, Seite 281](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=281>)
-
-<!-- PDF-Seiten 291–300 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document.md -->
+<!-- PDF-Seiten 291–300 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document.md -->
 
 - (b) Raised notes (like sharps) often create ˆ7 , the leading tone
 - i. If there are multiple raised notes, look for the "sharpest of sharps" (in key signature order) to determine which sharp is acting as ˆ7
@@ -15812,7 +15147,7 @@ Look for the following cues when examining music containing modulations:
 
 non-chord tones E n cancels out E¯, which means
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000000_82a51beefe8622eea5e86919c80d8d09bdd8dd6abfc7eda1a20723bf7f2da7ca.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000000_82a51beefe8622eea5e86919c80d8d09bdd8dd6abfc7eda1a20723bf7f2da7ca.png -->
 
 B n occurs 3 times and isn't canceled out, representing a modulation
 
@@ -15820,7 +15155,7 @@ YT: 9WQbN91tpWI
 
 Figure 22.5.1: J.S. Bach, English Suite No. 4 in F Major, BWV 809, Sarabande (ca. 1715)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000001_e896d26ff961cf667bd5be560505a1530e0e542c16b6a847c1d81cf03b5b008c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000001_e896d26ff961cf667bd5be560505a1530e0e542c16b6a847c1d81cf03b5b008c.png -->
 
 ## 22.6 Modulations with Chromatic Pivot Chords
 
@@ -15838,7 +15173,7 @@ CHAPTER 22. MODULATION
 
 Figure 22.6.1: Schubert, Schwanegesang, D. 957, "Abschied" (1828)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000002_ece78de16d68ab84f6e38f4265f7fc9c19234224555f62b33a0eaf2f291ab96d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000002_ece78de16d68ab84f6e38f4265f7fc9c19234224555f62b33a0eaf2f291ab96d.png -->
 
 ## 22.6.2 Borrowed Common Chord
 
@@ -15848,7 +15183,7 @@ In the following example, a borrowed chord, i6 in D2 minor, rewritten as a C4 mi
 
 Figure 22.6.2: Beethoven, Piano Sonata No. 31 in A2 major, Op.110, I, (1821)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000003_3a205765fc009b396dec02c37fc127115501e3bcfe156507cb6f63180103efef.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000003_3a205765fc009b396dec02c37fc127115501e3bcfe156507cb6f63180103efef.png -->
 
 ## 22.6.3 Neapolitan Common Chord
 
@@ -15860,11 +15195,11 @@ CHAPTER 22. MODULATION
 
 22.6.4 Augmented Sixth Common Chord
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000004_9019aa6e9c9dae33101c003937e9d5fcb4b811adfe181596c84b59b6e4ed456e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000004_9019aa6e9c9dae33101c003937e9d5fcb4b811adfe181596c84b59b6e4ed456e.png -->
 
 344
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000005_30548a58dc8c1520a689ae4ee1013a14284db400ad3ed933305c1e7bc418f772.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000005_30548a58dc8c1520a689ae4ee1013a14284db400ad3ed933305c1e7bc418f772.png -->
 
 - Common-Tone Modulation
 - Sequential Modulation
@@ -15885,7 +15220,7 @@ a¯: V 6
 
 Figure 22.7.1: Schubert, Schwanegesang, D. 957, "Liebesbotschaft" (1828)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000006_df6af1e32b9a058bfc982694b547568f82c76a483e4c939f76e458d36165c484.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000006_df6af1e32b9a058bfc982694b547568f82c76a483e4c939f76e458d36165c484.png -->
 
 In the example below from the second song of the same song cycle as the example above, Schubert does not attempt to change gradually from C minor to A2 major, but instead stops on a half cadence in C minor and begins on the tonic in A2 major in the next bar.
 
@@ -15895,7 +15230,7 @@ V
 
 Figure 22.7.2: Schubert, Schwanegesang, D. 957, "Kriegers Ahnung" (1828)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000007_39c01cef5f9086451476aba941d8d22b97bd57f857e46c819c46c203e1593152.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000007_39c01cef5f9086451476aba941d8d22b97bd57f857e46c819c46c203e1593152.png -->
 
 Direct modulation is the most common type of "modulation" found in popular music. At the beginning of this chapter we defined this type of modulation in popular music as "key change. "
 
@@ -15905,11 +15240,11 @@ Direct modulation is the most common type of "modulation" found in popular music
 
 283
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000008_c4cce5a5878a06bc0c2e157411fab41fda2d9136fbbbfa28bbef5e80ca977136.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000008_c4cce5a5878a06bc0c2e157411fab41fda2d9136fbbbfa28bbef5e80ca977136.png -->
 
 354 Figure 22.7.3: James Horner and Will Jennings, "My Heart Will Go On" (1997)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000009_f617354bcac684c8eb6fb5e7926f4196aba106da95fec0e7cde45814ec0d7834.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000009_f617354bcac684c8eb6fb5e7926f4196aba106da95fec0e7cde45814ec0d7834.png -->
 
 | & b b b b ∑                                 | ∑                   | ∑             | ∑                | ∑              |
 |---------------------------------------------|---------------------|---------------|------------------|----------------|
@@ -15933,7 +15268,7 @@ CHAPTER 22. MODULATION
 
 Figure 22.7.4: Beethoven, Symphony No. 2 in D major, Op. 36, I. (1801-1802)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000010_c4c54303b9bc59443ce28b39d2fb0eb97e350ed7811bee8a12c7c7b9b1c93c88.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000010_c4c54303b9bc59443ce28b39d2fb0eb97e350ed7811bee8a12c7c7b9b1c93c88.png -->
 
 In the next example, the note A acts as a hinge between an A major chord (V in D minor) and an F major chord (I in F major).
 
@@ -15955,7 +15290,7 @@ In the next example, the note A acts as a hinge between an A major chord (V in D
 
 Figure 22.7.5: Schubert, Piano Trio No. 1 in B-flat major, D. 898, I. (1828)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000011_3acfa262e902ba2ef65997fb32f406d33124d77379f1a513dbf1497422af9b78.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000011_3acfa262e902ba2ef65997fb32f406d33124d77379f1a513dbf1497422af9b78.png -->
 
 ## 22.7.2.1 Chromatic Mediants
 
@@ -15977,7 +15312,7 @@ F
 
 Figure 22.7.8: Richard Wagner, Das Rheingold, Scene 3 (1854)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000012_b1bf4fa492ad50f5bb739100c7249f04f4472f34ab197fccc123979c27aa44e5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00291-00300/try-20261114T123540-622f0b/document_artifacts/image_000012_b1bf4fa492ad50f5bb739100c7249f04f4472f34ab197fccc123979c27aa44e5.png -->
 
 37
 
@@ -16205,33 +15540,10 @@ Figure 22.7.8: Richard Wagner, Das Rheingold, Scene 3 (1854)
 - Em G˜m Em B (no 3rd)
 - YT: GXmaz-mj6Q8
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 291](<MusicTheory.pdf#page=291>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 291](<document_artifacts/page_000291_34f429118b031b3a1336bbab829592e620a72a7837c6ad780949aa0b11a87d61.png>)
-
-![PDF-Seite 292](<document_artifacts/page_000292_8faed2c8165622be58f0613288dce358ade94dc88b7711238efe2648079ce529.png>)
-
-![PDF-Seite 293](<document_artifacts/page_000293_b75ac0b03283e75f0661f2ff23924a23ff0bb93bd9a1740aece53cc7be690a04.png>)
-
-![PDF-Seite 294](<document_artifacts/page_000294_7bb1a0d00955381904206c3750926b820305cbaf97d0755fd252f0b6b22917da.png>)
-
-![PDF-Seite 295](<document_artifacts/page_000295_6bf7652d53fcc2833465e3b6bdf37cf8e0f954e2ea6aea4c98c49c1a72bde866.png>)
-
-![PDF-Seite 296](<document_artifacts/page_000296_2cda108fe146a8f855a38345daa355b6f3ad3da11978a00df0b946cf817f969f.png>)
-
-![PDF-Seite 297](<document_artifacts/page_000297_88ee1297c960628e3e7efcc4f04b3e7276c0cd71f0a2b5cdbd78bde62b3796d4.png>)
-
-![PDF-Seite 298](<document_artifacts/page_000298_cfbb37235d8e1bc135385440ba4400c0a6d85b9a757e92c17aafb54e64004888.png>)
-
-![PDF-Seite 299](<document_artifacts/page_000299_023fbbf6ed719318d5b6173024a5345747c88e67c9384a4bece610a04caa1e2a.png>)
-
-![PDF-Seite 300](<document_artifacts/page_000300_0703e13e3bc2115dc7900a44785ea1fd12437a003fa9cc65825acf775275baa4.png>)
-
-
-[Original-PDF, Seite 291](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=291>)
-
-<!-- PDF-Seiten 301–310 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document.md -->
+<!-- PDF-Seiten 301–310 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document.md -->
 
 820
 
@@ -16251,11 +15563,11 @@ Figure 22.7.8: Richard Wagner, Das Rheingold, Scene 3 (1854)
 
 Figure 22.7.9: John Williams, Star Wars: Return of the Jedi, "Main Title (The Story Continues)" (1983)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000000_59afdca241b38c59429cc4f8dd24240740df3074ea16fc74d401d1dec2825feb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000000_59afdca241b38c59429cc4f8dd24240740df3074ea16fc74d401d1dec2825feb.png -->
 
 22.7.3 Sequential Modulation
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000001_4a9b34cf8d5d0e1aea6da38b793bc0798ebf5c275aa57739fe39f7b5b8f4deef.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000001_4a9b34cf8d5d0e1aea6da38b793bc0798ebf5c275aa57739fe39f7b5b8f4deef.png -->
 
 63
 
@@ -16268,7 +15580,7 @@ Figure 22.7.9: John Williams, Star Wars: Return of the Jedi, "Main Title (The St
 
 Figure 22.7.11: Beethoven, Piano Sonata Op. 2, No. 1, III. (1795)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000002_07c0f8ec70f352a16ec99a8ee14b38de17db60b395c622cd53fc4997e9d0bc2d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000002_07c0f8ec70f352a16ec99a8ee14b38de17db60b395c622cd53fc4997e9d0bc2d.png -->
 
 In the following example, an idea in C major is repeated up a step in D major, then up another step in E minor before reaching an F4 ◦ chord, a chord with dominant function in G major.
 
@@ -16308,7 +15620,7 @@ In the following example, an idea in C major is repeated up a step in D major, t
 
 Figure 22.7.12: Mozart, Oboe Concerto in C major, K. 314, III. (1777)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000003_84882a6e2df9d9efcec0268c8a8287520c76c6b807f53677903eea03f2b8ff7a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000003_84882a6e2df9d9efcec0268c8a8287520c76c6b807f53677903eea03f2b8ff7a.png -->
 
 In the next example, after a cadence in G minor, an idea in F minor is repeated down a whole step in E2 minor to achieve the change of key to E2
 
@@ -16316,11 +15628,11 @@ major, which is the starting key of this aria, as can be seen in the key signatu
 
 4
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000004_9532412298b24d744a9b09f2ade5a7e2d07c4f993e5f7581366b6b09a5486da0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000004_9532412298b24d744a9b09f2ade5a7e2d07c4f993e5f7581366b6b09a5486da0.png -->
 
 f: ii o V 7
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000005_f73d69f85f66fd36e0fc34ca36316fd48db8bd246fc571509d787ab118fdddc1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000005_f73d69f85f66fd36e0fc34ca36316fd48db8bd246fc571509d787ab118fdddc1.png -->
 
 YT: VEmnmVXEqqM
 
@@ -16384,7 +15696,7 @@ Day Two
 
 (a) d:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000006_dd8826bbc9f980ec16d42adae3091ea0ee50871a74af61545b80e2eec0d649f4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000006_dd8826bbc9f980ec16d42adae3091ea0ee50871a74af61545b80e2eec0d649f4.png -->
 
 2. For each progression, analyze the Roman numerals with lead-sheet
 
@@ -16404,13 +15716,13 @@ I 6
 
 vi
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000007_6bbb69e68aa92c484b393bd196f283d97d6b2503768ba4161d5411938df0aac9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000007_6bbb69e68aa92c484b393bd196f283d97d6b2503768ba4161d5411938df0aac9.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000008_aa60709f7ce93bbe56ba339b271e2a5d00e6e1c6b320f2fffd1bbef18882ea95.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000008_aa60709f7ce93bbe56ba339b271e2a5d00e6e1c6b320f2fffd1bbef18882ea95.png -->
 
 35
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000009_8460ee234b46e1d5a367ab8ba29e89d0cf633bb3b4cd7446879b8bdaf4a5e27f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000009_8460ee234b46e1d5a367ab8ba29e89d0cf633bb3b4cd7446879b8bdaf4a5e27f.png -->
 
 4. For each progression, analyze the Roman numerals with lead-sheet
 
@@ -16463,13 +15775,13 @@ F: \_\_\_ \_\_\_ \_\_\_ \_\_\_ \_\_\_ \_\_\_ \_\_\_
 
 CHAPTER 22. MODULATION
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000010_3d2cc84cc3769539922f4dc59facfa026accea7445f491bd15769fb05b40a4f5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000010_3d2cc84cc3769539922f4dc59facfa026accea7445f491bd15769fb05b40a4f5.png -->
 
 Function
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000011_388fcc96caf8dbfc4513cd9c40373ea6a1bfb397770ea8e2136dbef04b60ef58.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000011_388fcc96caf8dbfc4513cd9c40373ea6a1bfb397770ea8e2136dbef04b60ef58.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000012_ff189d7fa7dc7c2d755c985dac186b24a7656e8cd12ab33831bf7b7752986758.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000012_ff189d7fa7dc7c2d755c985dac186b24a7656e8cd12ab33831bf7b7752986758.png -->
 
 ## Day Four
 
@@ -16477,7 +15789,7 @@ Function
 
 Day Five
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000013_7350547fc792270258b895a1a425c9819a94e0d9375aef9619f4a067fe13aa37.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000013_7350547fc792270258b895a1a425c9819a94e0d9375aef9619f4a067fe13aa37.png -->
 
 96
 
@@ -16495,7 +15807,7 @@ by G.K.B.
 
 by G.K.B.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000014_a9d9cf72eaa14c0cf4bfe411ddd6cd3ce22177081f72e9750f125eb1aaf10552.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000014_a9d9cf72eaa14c0cf4bfe411ddd6cd3ce22177081f72e9750f125eb1aaf10552.png -->
 
 RN:
 
@@ -16559,7 +15871,7 @@ b
 
 \_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000015_9d0c3f33b9690997b12f28ef196fda5e45ce4e629fc02d997f9a541b74e95090.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000015_9d0c3f33b9690997b12f28ef196fda5e45ce4e629fc02d997f9a541b74e95090.png -->
 
 RN: \_\_\_
 
@@ -16629,7 +15941,7 @@ b
 
 \_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000016_4c02390439ef03be4f8866e9cf6dc314652b48b4851e1c8b9639ec70c0e93b6d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000016_4c02390439ef03be4f8866e9cf6dc314652b48b4851e1c8b9639ec70c0e93b6d.png -->
 
 &amp;
 
@@ -16673,7 +15985,7 @@ LSS: \_\_\_
 
 \_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000017_8839c492dd9def479b31b95fdac7b3ccfa7eb35b9b4003095c4cc59b098a4f14.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000017_8839c492dd9def479b31b95fdac7b3ccfa7eb35b9b4003095c4cc59b098a4f14.png -->
 
 b
 
@@ -16709,7 +16021,7 @@ HF: \_\_\_
 
 \_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000018_c3d6663beb9273af6bab703d5f680cad1599742281decf229d05fdc48804d051.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00301-00310/try-20261114T123600-737fc7/document_artifacts/image_000018_c3d6663beb9273af6bab703d5f680cad1599742281decf229d05fdc48804d051.png -->
 
 \_\_\_
 
@@ -16900,33 +16212,10 @@ Click here to download the first homework assignment for this chapter. Click her
 - œ œ œœ œ œœ œ
 - œœ œ
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 301](<MusicTheory.pdf#page=301>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 301](<document_artifacts/page_000301_3a0ce3569ddda000637af54453e1a5708acf26c446437ac2cce9744f385bb928.png>)
-
-![PDF-Seite 302](<document_artifacts/page_000302_52147db3eaac8dfef4415b49c406683c4f3f25cb43b85fe2fe3a805722e22c2e.png>)
-
-![PDF-Seite 303](<document_artifacts/page_000303_337b84e9838c017e68db6386f76a039119f277312c1cff305b82ff3bc0332454.png>)
-
-![PDF-Seite 304](<document_artifacts/page_000304_0dc9cdbaefab763ced347ca94690823d64c6c5a935f6f15e8a261f721974f25d.png>)
-
-![PDF-Seite 305](<document_artifacts/page_000305_de6e45d64c0d799f08d29eb47975ac0ef97d76278ac66b769944bf0b1c1df967.png>)
-
-![PDF-Seite 306](<document_artifacts/page_000306_cc1becb19600bacc3e32db6619c84d7d9097b275bed406e25d9f0aff991b63b4.png>)
-
-![PDF-Seite 307](<document_artifacts/page_000307_b4b8aa2f09a26f8a8e2fd90e93290234cc1945fc71a289f0e419359a42c46982.png>)
-
-![PDF-Seite 308](<document_artifacts/page_000308_4810bbc1312803f896acd62ced66fcce39e538a1e13cee3b8f9b80f93d6856e4.png>)
-
-![PDF-Seite 309](<document_artifacts/page_000309_e6bb7ceb589fe92c53093feec782f1df26b7db29182cc3a299c2de4400f5a076.png>)
-
-![PDF-Seite 310](<document_artifacts/page_000310_6b2ef4ff1b3bfe699a709b597ca7796c06900536de6bc088480f7dd072400874.png>)
-
-
-[Original-PDF, Seite 301](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=301>)
-
-<!-- PDF-Seiten 311–320 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document.md -->
+<!-- PDF-Seiten 311–320 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document.md -->
 
 ## Chapter 23
 
@@ -16944,7 +16233,7 @@ The "sun" of York is the son of York, King Edward IV.
 
 Here is a simple enharmonic modulation:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000000_f50667d3f71de604eb9cdc7b316ffd6b5bdd39ff14461e03e655ba9620715590.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000000_f50667d3f71de604eb9cdc7b316ffd6b5bdd39ff14461e03e655ba9620715590.png -->
 
 Figure 23.1.1: Enharmonic Modulation from C major to B minor
 
@@ -16956,9 +16245,9 @@ chord of dominant function, i64 in the example above.
 
 107
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000001_8c47e42788c94d19ccf6ceb2eece96be2248fb96386d89ee1e734ed031aef057.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000001_8c47e42788c94d19ccf6ceb2eece96be2248fb96386d89ee1e734ed031aef057.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000002_f73fa0bd5386efd5e3976558d13c25b242c39f24899866f82955772f51c47f57.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000002_f73fa0bd5386efd5e3976558d13c25b242c39f24899866f82955772f51c47f57.png -->
 
 Remember, you will not see this respelling in the music you are analyzing. You must be able to visualize the enharmonic respelling in order to analyze the enharmonic modulation correctly.
 
@@ -16972,7 +16261,7 @@ CHAPTER 23. ENHARMONIC MODULATION
 
 Figure 23.2.3: Tchaikovsky, The Nutcracker"Waltz of the Flowers" (1892)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000003_fb2c0eea5b99909f519bb47b4432aa8c58d811e537a8cb458cba6763e8ecd376.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000003_fb2c0eea5b99909f519bb47b4432aa8c58d811e537a8cb458cba6763e8ecd376.png -->
 
 In the following example from the second movement of Beethoven's Fifth Symphony, the same pivot chords are used as in the example above-V7/IV in A2 major is enharmonically respelled and resolves as a Ger+6 in C major.
 
@@ -16982,7 +16271,7 @@ In the following example from the second movement of Beethoven's Fifth Symphony,
 
 Figure 23.2.4: Beethoven, Symphony No. 5, Op. 67, II (1808)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000004_ad8ddb0ef21e2d9c028ddb7bffe305df8833b60acdf5decc2240cab0e28570eb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000004_ad8ddb0ef21e2d9c028ddb7bffe305df8833b60acdf5decc2240cab0e28570eb.png -->
 
 In the following example from Les Miserables, a Ger+6 in E minor is spelled as a V7 chord in F major and resolves to the I chord F major.
 
@@ -16992,7 +16281,7 @@ CHAPTER 23. ENHARMONIC MODULATION
 
 Figure 23.2.5: Music by Claude-Michel Schönberg, lyrics by Alain Boublil, Herbert Kretzmer, John Caird, Trevor Nunn, and Jean-Marc Natel, Les Miserables, "On My Own" (1980)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000005_33b503ea6d3542d6107eecf3db240e58c17e5e889315810d523aaa2ca310846a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000005_33b503ea6d3542d6107eecf3db240e58c17e5e889315810d523aaa2ca310846a.png -->
 
 In the next section we will examine how the fully diminished seventh chord can be enharmonically reinterpreted.
 
@@ -17012,17 +16301,17 @@ Each diminished seventh sonority implies four different keys. Play and sing
 
 through the example below.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000006_b7484710e227a336a2fe2210367c208a9c2614a2649ba01656dc96a6f9a4551c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000006_b7484710e227a336a2fe2210367c208a9c2614a2649ba01656dc96a6f9a4551c.png -->
 
 Figure 23.3.1: The Four Resolutions of a Diminished Seventh Sonority
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000007_a87799f5ef70a81a2d17523cf8e2f12dd4fb59f1a5f38a48eb2dade943a8c1ef.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000007_a87799f5ef70a81a2d17523cf8e2f12dd4fb59f1a5f38a48eb2dade943a8c1ef.png -->
 
 In the example above, each note of the vii◦7 chord was treated in turn as the ˆ7 scale degree and resolved up by half step. In the example below, each note of the chord is resolved as if it were the 7th of the chord, moving down
 
 by half step to the root of a dominant seventh chord.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000008_b3ca4599c00be0f25b02486ed1164ee193113c3bbf17cb8c5f3d9402f8dca3cc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000008_b3ca4599c00be0f25b02486ed1164ee193113c3bbf17cb8c5f3d9402f8dca3cc.png -->
 
 This means that for any diminished seventh chord, you should be able to imagine the other three respellings in the same way you can imagine other spellings of words like two (i.e., to and too) or there (their and they're).
 
@@ -17032,7 +16321,7 @@ In the first example, Beethoven enharmonically reinterprets F 4 ◦7/C in G mino
 
 Figure 23.3.3: Beethoven, Pathétique Sonata, Op. 13, I (1798)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000009_721abb88c5199d73566ceb4ab102786c1f94ffcc1b16e2fc22c8780cf2140030.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000009_721abb88c5199d73566ceb4ab102786c1f94ffcc1b16e2fc22c8780cf2140030.png -->
 
 In the next example from the second movement of Beethoven's Fifth Symphony, Beethoven modulates from C major to A2 major by enharmonically reinterpreting an E◦7 chord in C (vii◦7/IV) as vii◦42 in A2 (G◦7/F 2 ). Notice the unusual resolution of the vii◦42 chord to a Ger+6 chord by leading all three of the upper voices of the vii◦42 up by half step to the Ger+6 , which itself is unusually spelled in the key of A2 major (E-A2-C2-D instead of F2-A2-C2-D).
 
@@ -17270,7 +16559,7 @@ A¯: vii o4 (G-B¯-D¯-F¯)
 
 Figure 23.3.4: Beethoven, Symphony No. 5, Op. 67, II (1808)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000010_7aeca82cb5bd5bebef42f9f763e288dfcd9566624369041553dd87f7f1964071.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000010_7aeca82cb5bd5bebef42f9f763e288dfcd9566624369041553dd87f7f1964071.png -->
 
 ?
 
@@ -17290,7 +16579,7 @@ In the final example of this section, Schubert reinterprets a G 4 ◦7 in G mino
 
 CHAPTER 23. ENHARMONIC MODULATION
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000011_689936c17f05c303d1cfda9190f4e8bad3fd78b8575fd23ab44ec14bd5c21c68.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00311-00320/try-20261114T123622-b5e661/document_artifacts/image_000011_689936c17f05c303d1cfda9190f4e8bad3fd78b8575fd23ab44ec14bd5c21c68.png -->
 
 ## 23.4 Practice Exercises
 
@@ -17425,35 +16714,12 @@ Day One
 - Figure 23.3.5: Schubert, Schwanegesang, D. 957,
 - "Der Atlas" (1828)
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 311](<MusicTheory.pdf#page=311>)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- PDF-Seiten 321–330 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document.md -->
 
-![PDF-Seite 311](<document_artifacts/page_000311_03f3f1eea47aa40b3d23c3598eabde9868450a6bf04bb38b6aa395e318fd53aa.png>)
-
-![PDF-Seite 312](<document_artifacts/page_000312_9e1786e34518c71229404c7c6dd459e26fbb99cbb2663b54472bff6a01775820.png>)
-
-![PDF-Seite 313](<document_artifacts/page_000313_634ba398be8ddfc4cc80ea6364860eb3fd993b25504ecde42615310d28ea83a4.png>)
-
-![PDF-Seite 314](<document_artifacts/page_000314_a2a08130dfed97c42d0796ef0e5150921986703687d47f2e316c6f65efdc92b8.png>)
-
-![PDF-Seite 315](<document_artifacts/page_000315_78f4a0766d222b1e1745585caf21f9e82fed076f26a0f2b1f4cceaa2ce26bc80.png>)
-
-![PDF-Seite 316](<document_artifacts/page_000316_8881c157b11a73ba96a3c8e57ee6c90923796c2d2601316675c9ca68d3096a0b.png>)
-
-![PDF-Seite 317](<document_artifacts/page_000317_bd28718633633838600f8849d81f57e28d7da03e05fa8834912236d2b5770980.png>)
-
-![PDF-Seite 318](<document_artifacts/page_000318_26b436eb46f6971473fa971a98ce2118cecb848f85f28cfff27f35290e449025.png>)
-
-![PDF-Seite 319](<document_artifacts/page_000319_28a24f75cbc0ed7be58e575fc59e0a2dbb7f74d720b39b740cd400e947746c55.png>)
-
-![PDF-Seite 320](<document_artifacts/page_000320_21ae922f4ed903a92d014df9b7faa7fd2d0beee777161138c69b8c3ea6892928.png>)
-
-
-[Original-PDF, Seite 311](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=311>)
-
-<!-- PDF-Seiten 321–330 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000000_97c6c2b4759f576d0c7c5eeb419fcab49d2ebf1600424e8dae6074ba1de15c9a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000000_97c6c2b4759f576d0c7c5eeb419fcab49d2ebf1600424e8dae6074ba1de15c9a.png -->
 
 42
 
@@ -17465,13 +16731,13 @@ Day One
 
 enharmonic respelling(s).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000001_af982ed38817f9df7580f9b7543fe452c45031fc2b76b080f7a6c6f5a870c8fc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000001_af982ed38817f9df7580f9b7543fe452c45031fc2b76b080f7a6c6f5a870c8fc.png -->
 
 826
 
 830
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000002_5d80e7403b569d8a88dc1a94f7a205e752e9ba983f9d8e6d241452af4a72d82f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000002_5d80e7403b569d8a88dc1a94f7a205e752e9ba983f9d8e6d241452af4a72d82f.png -->
 
 &amp; #
 
@@ -17493,7 +16759,7 @@ resolve
 
 2
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000003_de527b06fa28abf0b341d0c4494ea1960ca530d903c30073052f614d9622e4ff.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000003_de527b06fa28abf0b341d0c4494ea1960ca530d903c30073052f614d9622e4ff.png -->
 
 &amp; b b b b
 
@@ -17505,7 +16771,7 @@ Roman numerals: E¯: I
 
 &amp; # #
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000004_ef71c5fbb5188e78091ab5aa6c831dd2d51a50f2803303ce9e896355341b2681.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000004_ef71c5fbb5188e78091ab5aa6c831dd2d51a50f2803303ce9e896355341b2681.png -->
 
 resolve
 
@@ -17543,7 +16809,7 @@ respell
 
 3. Analyze with lead-sheet symbols and Roman numerals and label the
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000005_0c41adac6fe996d18e5937fef57c7ee8457c8f299d3d8e48f113e78700c001bf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000005_0c41adac6fe996d18e5937fef57c7ee8457c8f299d3d8e48f113e78700c001bf.png -->
 
 # # # #
 
@@ -17581,7 +16847,7 @@ Day Two
 
 enharmonic respelling(s).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000006_b48b5b6a63684169c9b43a4545a89a339c87c68ddbf3be9336c5ac9a67e25630.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000006_b48b5b6a63684169c9b43a4545a89a339c87c68ddbf3be9336c5ac9a67e25630.png -->
 
 ?
 
@@ -17621,7 +16887,7 @@ enharmonic pivot chords in the examples below.
 
 \_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000007_b4815c177d8b905c6f94a672be6183af430d7fc475468fbf6dbf71c3fae7bf7e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000007_b4815c177d8b905c6f94a672be6183af430d7fc475468fbf6dbf71c3fae7bf7e.png -->
 
 \_\_ : \_\_\_\_
 
@@ -17633,7 +16899,7 @@ enharmonic pivot chords in the examples below.
 
 \_\_\_\_ \_\_\_\_ \_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000008_b56294e810b11223d629d27897edbb1245c72d2c14c474c46eba314a03941406.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000008_b56294e810b11223d629d27897edbb1245c72d2c14c474c46eba314a03941406.png -->
 
 respell
 
@@ -17645,7 +16911,7 @@ respell
 
 \_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000009_15459aa8801f22a116ed0cc233d83e167328ac337f4bfa888e30a4f2bd3a889c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000009_15459aa8801f22a116ed0cc233d83e167328ac337f4bfa888e30a4f2bd3a889c.png -->
 
 resolve
 
@@ -17675,13 +16941,13 @@ section (the A section) ends on the tonic. (Note: We use lowercase letters to
 
 refer to phrases and uppercase letters to refer to sections.)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000010_4d7c545a2764f9ea72a5b63ef7027a0fe970c196897134d8abae353270064d40.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000010_4d7c545a2764f9ea72a5b63ef7027a0fe970c196897134d8abae353270064d40.png -->
 
 39
 
 39
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000011_4c81d286ee96bba91476ebf7b596fcff47817a3a6395acfc0fca23ac3bbd7f38.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000011_4c81d286ee96bba91476ebf7b596fcff47817a3a6395acfc0fca23ac3bbd7f38.png -->
 
 112
 
@@ -18219,7 +17485,7 @@ V
 
 YT: lLjwkamp3lI
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000012_40db659000078c10ef71baf6957f3a7771a23b34fd936f1bb58d2e406fbc4ceb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000012_40db659000078c10ef71baf6957f3a7771a23b34fd936f1bb58d2e406fbc4ceb.png -->
 
 Figure 24.2.2: Haydn, Symphony No. 94 in G major, Hob.I:94, II (1791)
 
@@ -18337,7 +17603,7 @@ Tonal Music, features a binary form with a first section (the A section) ending
 
 in a new key, and the second section ending with essentially the same cadence,
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000013_0f376ff930a9c215b44425a35b7b38b10fc85f591d6bfba870ea89718066e519.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000013_0f376ff930a9c215b44425a35b7b38b10fc85f591d6bfba870ea89718066e519.png -->
 
 ?
 
@@ -18387,7 +17653,7 @@ n œ œ œ œœœ œ
 
 114
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000014_bb5b8749ec887a660171943a5514bb5234f1b2287af7f77ab4a2c5e9228ac2ee.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000014_bb5b8749ec887a660171943a5514bb5234f1b2287af7f77ab4a2c5e9228ac2ee.png -->
 
 œ œ œ œ œ
 
@@ -18407,11 +17673,11 @@ These 9 bars are modulating from B¯ major to F major.
 
 These 9 bars are modulating from B¯ major to F major.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000015_1c0ad9e1d06799e265b58f7bf9b64284e695506c55e2cd43ff483812d77936ee.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000015_1c0ad9e1d06799e265b58f7bf9b64284e695506c55e2cd43ff483812d77936ee.png -->
 
 ? b b YouTube: https://www.youtube.com/watch?v=HFeLqgVLxBM
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000016_a3973dd065cea36aa45beaf70d7f73a0c5a35e8729e2a1e98ec70c37c1493bc9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000016_a3973dd065cea36aa45beaf70d7f73a0c5a35e8729e2a1e98ec70c37c1493bc9.png -->
 
 ?
 
@@ -18423,13 +17689,13 @@ b
 
 314
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000017_693be3d740a955717bbfba343084ea613c4cc09fb495633842e1f2a4e5de6bc0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000017_693be3d740a955717bbfba343084ea613c4cc09fb495633842e1f2a4e5de6bc0.png -->
 
 YT: jrHP6Fp1yUY
 
 These 9 bars are modulating from B¯ major to F major.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000018_d5a0e4084cb498ccf3d59ce6ae0ab23da91af0b12e626602d03477d16811daaa.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000018_d5a0e4084cb498ccf3d59ce6ae0ab23da91af0b12e626602d03477d16811daaa.png -->
 
 Below is an example of a rounded binary form.
 
@@ -18441,7 +17707,7 @@ First Section
 
 315
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000019_95bdc86aee0c5b5fcb82d1444448b5c3ec384c5a6a3fb3e1f75a5b0ffa795d17.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000019_95bdc86aee0c5b5fcb82d1444448b5c3ec384c5a6a3fb3e1f75a5b0ffa795d17.png -->
 
 YT: zHtXRBi91dA
 
@@ -18449,7 +17715,7 @@ Figure 24.4.1: Mozart, Piano Sonata in D major, K. 284, III.
 
 115
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000020_868830c0f98f0c6f8e54f68fa953f88f857b966cb56dc5b3f107de718f3de01d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000020_868830c0f98f0c6f8e54f68fa953f88f857b966cb56dc5b3f107de718f3de01d.png -->
 
 Because both the first section (the A section) and second section (the B section) repeat in the example above, this form would be called "two-reprise
 
@@ -18469,7 +17735,7 @@ a
 
 Figure 24.4.2: Schubert, 20 Minuets, D. 41, No. 18 in F major
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000021_39cadaff0892039be17a5ec263b2a961d8cf1afcbecd604313f0663deead597f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00321-00330/try-20261114T123639-e15f07/document_artifacts/image_000021_39cadaff0892039be17a5ec263b2a961d8cf1afcbecd604313f0663deead597f.png -->
 
 b
 
@@ -18585,33 +17851,10 @@ This form of the example above would be called "two-reprise continuous rounded b
 - (different accompanimental texture and register)
 - YT: 2vs-CrxwOmE
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 321](<MusicTheory.pdf#page=321>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 321](<document_artifacts/page_000321_b6b9fb1eedee34a1c9e170f950b293c82ec74b7e44d45eefc3f6564088af48e9.png>)
-
-![PDF-Seite 322](<document_artifacts/page_000322_9f88232a5312544ebcea21f9837d12dc4684902c26faa6780203f1218eea7fae.png>)
-
-![PDF-Seite 323](<document_artifacts/page_000323_d636b45f1fb860f6d2465d1147e1f27a9dc7678e2768dbe421d5815e47b5a242.png>)
-
-![PDF-Seite 324](<document_artifacts/page_000324_c7587c0e5551d86cd79216625cf908779b3cac63cf6dcc12f341dc0aae47b69d.png>)
-
-![PDF-Seite 325](<document_artifacts/page_000325_51b0ead15dcc758570b1109281240d7b24a464a97c2f074b74ffe555d4bf3d12.png>)
-
-![PDF-Seite 326](<document_artifacts/page_000326_4b79750486923329956c071f2aac5e3ec8d8fb0b48a73df6a051c5a0e5906ea1.png>)
-
-![PDF-Seite 327](<document_artifacts/page_000327_1cbc77f5037e9a08c6c120ab41dc2d5d201bbad732b11b8e8a8bc7d035e4e367.png>)
-
-![PDF-Seite 328](<document_artifacts/page_000328_486c77084954545a49a6a98caac82e4080b9d68bcaab84bf77ad68f2e770f678.png>)
-
-![PDF-Seite 329](<document_artifacts/page_000329_a2bd9a5ea4a2af6a64f042db95d3edbd23bf53f994fb36f630008318c9d64f21.png>)
-
-![PDF-Seite 330](<document_artifacts/page_000330_61d8a6ae46a357900603a871104e09bdaf6032a1193d86f57c1bd6738ccbe7a9.png>)
-
-
-[Original-PDF, Seite 321](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=321>)
-
-<!-- PDF-Seiten 331–340 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document.md -->
+<!-- PDF-Seiten 331–340 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document.md -->
 
 - In a rounded binary form the opening melody returns after contrasting material
 
@@ -19009,7 +18252,7 @@ CHAPTER 24. BINARY AND TERNARY FORMS
 
 (starts in G minor)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000000_976843220a8dfd402381d1255cc82d97ca4109714d08622b289dd5981f71dbb9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000000_976843220a8dfd402381d1255cc82d97ca4109714d08622b289dd5981f71dbb9.png -->
 
 ˙
 
@@ -20293,7 +19536,7 @@ below.
 
 Figure 24.6.1: Diagram illustrating Binary Principle
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000001_3f8e42d546669646086ca60852e50f631f693b0d4547e6d17f66181365973d7f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000001_3f8e42d546669646086ca60852e50f631f693b0d4547e6d17f66181365973d7f.png -->
 
 ## 24.7 Ternary Form
 
@@ -20303,7 +19546,7 @@ Ternary form is usually diagrammed as ABA and is described as "statement, digres
 
 120
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000002_d5648dacbba8aa9221330469f60f5f691bbd392a0a0533de1143190971f05651.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000002_d5648dacbba8aa9221330469f60f5f691bbd392a0a0533de1143190971f05651.png -->
 
 119
 
@@ -20311,17 +19554,17 @@ Ternary form is usually diagrammed as ABA and is described as "statement, digres
 
 Figure 24.7.2: Diagram illustrating Binary Principle
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000003_c35b3e82c6c7d49f7b82c20356ff5ce9b80d2a3a83e45635c7a86c606b7341dc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000003_c35b3e82c6c7d49f7b82c20356ff5ce9b80d2a3a83e45635c7a86c606b7341dc.png -->
 
 Character pieces from the Romantic era with titles such as "Nocturne, " "Intermezzo, " and "Song Without Words, " among others, by composers such as Schubert, Chopin, Mendelssohn, Schumann, and Brahms, are often in a larger ternary form where each section might be longer than eight bars.
 
 Below are examples from a larger ternary piece, Rachmaninov's Prelude in C-sharp minor, Op.3 No.2.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000004_d82f71aa0d8e06cf5fbf5ac8d82978406099456a308c5934365af73befc72b2b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000004_d82f71aa0d8e06cf5fbf5ac8d82978406099456a308c5934365af73befc72b2b.png -->
 
 &amp; # # # #
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000005_c2a63935db65c63ac94453992799def0afa01d54dcca8043406c085e2756be7e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000005_c2a63935db65c63ac94453992799def0afa01d54dcca8043406c085e2756be7e.png -->
 
 ## 24.7.1 Compound Ternary
 
@@ -20354,7 +19597,7 @@ Vivace moderato.
 
 Moderato
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000006_1a41c847e0fd7e076fb7af0ec70e608c3d1536a036b7322e71608a3446c0d936.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000006_1a41c847e0fd7e076fb7af0ec70e608c3d1536a036b7322e71608a3446c0d936.png -->
 
 Moderato œ œ œ œ œ
 
@@ -20402,7 +19645,7 @@ Allegretto
 
 œ œ œ œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000007_aebdf43c15c7c8cdfa7d905ffd1786aebb26567af5a6ef7059681f8310b62a4c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000007_aebdf43c15c7c8cdfa7d905ffd1786aebb26567af5a6ef7059681f8310b62a4c.png -->
 
 ?
 
@@ -20510,7 +19753,7 @@ p
 
 ..
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000008_a1def6df2474f00128a3a5bd39f5b934984282ef26e87ddbc4250843ddefabc1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00331-00340/try-20261114T123703-5712dc/document_artifacts/image_000008_a1def6df2474f00128a3a5bd39f5b934984282ef26e87ddbc4250843ddefabc1.png -->
 
 RN: \_\_\_\_
 
@@ -20632,39 +19875,16 @@ a
 - RN in B¯: ____
 - NCTs:
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 331](<MusicTheory.pdf#page=331>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 331](<document_artifacts/page_000331_07bd8c370d5b1c7eac63aa23ad038b7c6714ad8ed94bb59e59fa6e98e1d5cfca.png>)
-
-![PDF-Seite 332](<document_artifacts/page_000332_7337d1c3ec802b6b3982addc5e2bfc5dd282b40ef912e4b8ef1feb7e6649ea40.png>)
-
-![PDF-Seite 333](<document_artifacts/page_000333_7d01b08777b86af95e9ff4976209426612b149328656508842eb7bbc4d3f4228.png>)
-
-![PDF-Seite 334](<document_artifacts/page_000334_5bfe7db95771b0e029d2c952b9e8ba004577cc3993930b7f1cf5e644e710b3de.png>)
-
-![PDF-Seite 335](<document_artifacts/page_000335_daf0527928cd6f55bddc2853acd50cc24c1d77ee9407b921a0a7136a2e5824e9.png>)
-
-![PDF-Seite 336](<document_artifacts/page_000336_0216bb79065a4cc5bc6a5a05dc23c53e84adfcdc4c54edbc51829ac91e3a6cfa.png>)
-
-![PDF-Seite 337](<document_artifacts/page_000337_1b1fc12344d2ae0dce665143e749c66a253d9e5e6ff9081dacccbf884365556b.png>)
-
-![PDF-Seite 338](<document_artifacts/page_000338_db3d2c67ca77030d7eb5b203f153b9b9992a924f283e2e544c3ba31b29d7def1.png>)
-
-![PDF-Seite 339](<document_artifacts/page_000339_ddcc523cfaee841faf71f4b40076be7e878aa43f7551d429ae6e6b9989f884b7.png>)
-
-![PDF-Seite 340](<document_artifacts/page_000340_2f640fc06d854205cea34bbcb47074ec81a455aa391214abf22dd8aa07d3bb58.png>)
-
-
-[Original-PDF, Seite 331](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=331>)
-
-<!-- PDF-Seiten 341–350 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document.md -->
+<!-- PDF-Seiten 341–350 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document.md -->
 
 2. For the theme from first movement of Mozart's Piano Sonata in A
 
 major, K. 331, please fill in the blanks below the staves and diagram
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000000_fa321c8be29302ae41351f7e48af247ca63a56d096d7522b8377b37c88750116.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000000_fa321c8be29302ae41351f7e48af247ca63a56d096d7522b8377b37c88750116.png -->
 
 ?
 
@@ -20694,7 +19914,7 @@ the staves and diagram the form. Also, name the form.
 
 ?
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000001_40e9c522cce15b7be71066118a75757eac1f82c65b8744bc8b606dc2f01dcacb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000001_40e9c522cce15b7be71066118a75757eac1f82c65b8744bc8b606dc2f01dcacb.png -->
 
 ?
 
@@ -20740,7 +19960,7 @@ b
 
 œ- œ œ - œ œ- œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000002_ad5996cf9a6cca324f1464629b831a11cc1c1c592ff4f2022fb587e247264c97.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000002_ad5996cf9a6cca324f1464629b831a11cc1c1c592ff4f2022fb587e247264c97.png -->
 
 ?
 
@@ -20788,7 +20008,7 @@ p
 
 ..
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000003_90667cf9783722eb759e9a902a28e9d5be2d69bf7c5c0c15daccdf1a4545974f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000003_90667cf9783722eb759e9a902a28e9d5be2d69bf7c5c0c15daccdf1a4545974f.png -->
 
 ?
 
@@ -20878,7 +20098,7 @@ b œ
 
 ..
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000004_45e4c96ead49ce364d449109e90b95ea324684e09cb8dde640b1f01b8c7d088a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000004_45e4c96ead49ce364d449109e90b95ea324684e09cb8dde640b1f01b8c7d088a.png -->
 
 &amp;
 
@@ -20936,7 +20156,7 @@ b
 
 LSS:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000005_d58388a07430f9032a5bfac8ff81e48a9370d4ed8169e2be10e3fdeb9ae686cb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000005_d58388a07430f9032a5bfac8ff81e48a9370d4ed8169e2be10e3fdeb9ae686cb.png -->
 
 Menuetto diagram:
 
@@ -21026,7 +20246,7 @@ m. 20
 
 127
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000006_97259d36efd7103d33dc63bce32843e01076b4737ce3783af5d1c3bf38693b22.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000006_97259d36efd7103d33dc63bce32843e01076b4737ce3783af5d1c3bf38693b22.png -->
 
 Day Three
 
@@ -21036,7 +20256,7 @@ ter the Ball" from Alexander Gretchaninoff's Children's Book, Op.98.
 
 Also, name the form.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000007_2da5d3c3fe3327eb989da921134a58a101807f1b8d0422e403b8d0a446388ca4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000007_2da5d3c3fe3327eb989da921134a58a101807f1b8d0422e403b8d0a446388ca4.png -->
 
 ?
 
@@ -21130,7 +20350,7 @@ f
 
 \_\_\_\_\_\_\_\_\_\_ \_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000008_dbb59147476d301cc7a2a779a19e65459a022c92acf5a5abd6f8dba60a8ed725.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000008_dbb59147476d301cc7a2a779a19e65459a022c92acf5a5abd6f8dba60a8ed725.png -->
 
 \_\_\_\_\_\_\_\_\_\_ \_\_\_\_\_\_\_\_
 
@@ -21194,7 +20414,7 @@ YT: 3AeFVFC1zy0
 
 \_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000009_3e75aeaedd133f8bd32c07bbb9eb3df542361019274770f81507e2a507d651e3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000009_3e75aeaedd133f8bd32c07bbb9eb3df542361019274770f81507e2a507d651e3.png -->
 
 # #
 
@@ -21232,7 +20452,7 @@ cadences using the abbreviations PAC, IAC, HC, DC, PC.
 
 Circle all of the terms that apply to the name of the form:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000010_e5431a06ea891e4a3b5b95d7e9bb65396cca391c233d8f14f7b75d7a3374253d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000010_e5431a06ea891e4a3b5b95d7e9bb65396cca391c233d8f14f7b75d7a3374253d.png -->
 
 f
 
@@ -21250,7 +20470,7 @@ in the blanks below the staves and diagram the form. Also, name the
 
 form.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000011_8acc6220611514106531a6604b8d2a034986c93a279ef456f495aa912702bb03.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000011_8acc6220611514106531a6604b8d2a034986c93a279ef456f495aa912702bb03.png -->
 
 &amp;
 
@@ -21360,7 +20580,7 @@ f
 
 œ œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000012_54283965073f43a18e9694de9557aaf6df2ed0864acc106a435c20e43b84b43a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000012_54283965073f43a18e9694de9557aaf6df2ed0864acc106a435c20e43b84b43a.png -->
 
 œ œ œ œ
 
@@ -21459,7 +20679,7 @@ Click here to download the first homework assignment for this chapter. Click her
 | In major: | I                 | modulating                | V                 | V                   | V modulations                              | V pedal                      | I                     | tonicizations                 | I                     | I                       |
 | In minor: | i                 | modulating                | III               | III                 | III modulations                            | V pedal                      | i                     | tonicizations                 | i                     | i                       |
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000013_eecc1b7d168383eab09890f6ef05da51ebb601719f37befb9181b117e977f723.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000013_eecc1b7d168383eab09890f6ef05da51ebb601719f37befb9181b117e977f723.png -->
 
 PT = Primary Theme
 
@@ -21481,9 +20701,9 @@ While "sonatina" is sometimes understood to mean a short sonata or an easy sonat
 
 YouTube: https://www.youtube.com/watch?v=JRXIDEpquCg
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000014_da79c53f8d93a8b52ed1fd183521052188bc965cd096d4725baa940b3bd8cfe1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000014_da79c53f8d93a8b52ed1fd183521052188bc965cd096d4725baa940b3bd8cfe1.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000015_8b904a16e9b95341469cbc30a1bb56668046c9d78c7f212514bd5b0e606bb987.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00341-00350/try-20261114T123732-bd54d0/document_artifacts/image_000015_8b904a16e9b95341469cbc30a1bb56668046c9d78c7f212514bd5b0e606bb987.png -->
 
 Figure 25.1.1: Tchaikovsky, The Nutcracker, "Miniature Overture" (1892)
 
@@ -21553,33 +20773,10 @@ The dominant is conceived as a dissonant tonality in the exposition....The polar
 - ST (CT) Fragmentation & Retransition PT transition
 - images/video-356.jpg
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 341](<MusicTheory.pdf#page=341>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 341](<document_artifacts/page_000341_694972546e44dab1a6f9a45bb23f2c11504c41c3efad2803136d06b5325d8fd3.png>)
-
-![PDF-Seite 342](<document_artifacts/page_000342_af59591f2bbd0e03247c1c3bcb95da31794f65ba3cec79e4e9b43cc7207102f8.png>)
-
-![PDF-Seite 343](<document_artifacts/page_000343_2b8cdef4e44a41529d6a695d5743cc39c586d640d43ba0f3abea5daa2779f7a7.png>)
-
-![PDF-Seite 344](<document_artifacts/page_000344_49801692cb45316beef9cc6cee7e04963cac18d936045c0b4f6fc01680ecb14c.png>)
-
-![PDF-Seite 345](<document_artifacts/page_000345_4fcaa7d21bac6a94867deb52544be3ae786df0d150c9731aea544e75651c96bd.png>)
-
-![PDF-Seite 346](<document_artifacts/page_000346_c29e2fdbb68bb4da2707a4587e4b294842217148211bda6f8a94080b62efcdc9.png>)
-
-![PDF-Seite 347](<document_artifacts/page_000347_fdad365d123af1989ea851f8c94bd60fb675d8a3d6d498027701867ae4ab0a3f.png>)
-
-![PDF-Seite 348](<document_artifacts/page_000348_7360ac2f95b06f9959e52dd8613983ef9c03fbc31e8ace414f01602d279a631f.png>)
-
-![PDF-Seite 349](<document_artifacts/page_000349_8a2157eaac7b210d20bf5b396ff026cc24ce62a85b6cedb462c53823f20c7462.png>)
-
-![PDF-Seite 350](<document_artifacts/page_000350_0705a1ef0c340948663cd0c634dfb81db26381ddac9370208d61327f53c5708d.png>)
-
-
-[Original-PDF, Seite 341](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=341>)
-
-<!-- PDF-Seiten 351–360 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document.md -->
+<!-- PDF-Seiten 351–360 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document.md -->
 
 ## 25.1.4 The Monothematic Sonata
 
@@ -21618,7 +20815,7 @@ a
 
 a
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000000_0daeedda1d44eae17b4a8f8658664112ee6ba7526ad51e4f4b54802905ec9fba.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000000_0daeedda1d44eae17b4a8f8658664112ee6ba7526ad51e4f4b54802905ec9fba.png -->
 
 \_\_\_\_ \_\_\_\_
 
@@ -21664,7 +20861,7 @@ Allegro con brio
 
 Allegro con brio
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000001_fae8d4fd570fe313c8ea039a83c1c3d09db14d54f79805109e468653011de82c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000001_fae8d4fd570fe313c8ea039a83c1c3d09db14d54f79805109e468653011de82c.png -->
 
 141
 
@@ -21686,7 +20883,7 @@ Primary Theme
 
 Figure 25.2.3: Mozart, Piano Sonata, K. 284, I.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000002_84da87da95717d16681b428561bda833edfa7bf4faf6f427419b09ca30573c5c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000002_84da87da95717d16681b428561bda833edfa7bf4faf6f427419b09ca30573c5c.png -->
 
 ## 25.2.3 Developmental Function
 
@@ -21700,11 +20897,11 @@ Examples from a development section can be found in Section 11.1 of this text. N
 
 Terminative function is typically expressed through a rather emphatic alternation of tonic and dominant harmonies, usually to affirm a tonal center. The closing theme of a sonata has terminative function.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000003_783d576431d438ae3f79def425d509cbffb424b56bb82728749191f76cf0a589.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000003_783d576431d438ae3f79def425d509cbffb424b56bb82728749191f76cf0a589.png -->
 
 Figure 25.2.4: Mozart, Symphony No. 41, K. 551, I., Closing Theme
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000004_ae0bbbebb3efbda92ad6b71817e7c4a0ceba3d157ba6494f99f2f495ddb7369d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000004_ae0bbbebb3efbda92ad6b71817e7c4a0ceba3d157ba6494f99f2f495ddb7369d.png -->
 
 (half cadence followed by rest)
 
@@ -21714,7 +20911,7 @@ Figure 25.2.4: Mozart, Symphony No. 41, K. 551, I., Closing Theme
 
 343
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000005_0a07ac9392117f4ce8ea997f3ebf450d55d8209567418c5aa0ef87381b6b4d1c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000005_0a07ac9392117f4ce8ea997f3ebf450d55d8209567418c5aa0ef87381b6b4d1c.png -->
 
 The refrain (the A section) is always in tonic. The first episode (the B section) was typically in a closely related key-the dominant (V) if in major or the mediant (III) if in minor. There was greater variety of keys used for
 
@@ -21730,7 +20927,7 @@ Note that the B section being first stated in the dominant then later in tonic i
 
 An example of Classical seven-part rondo form is found below in the third and final movement of Beethoven's Pathétique Sonata, Op. 13.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000006_26dec446e6586539073421c091c2ab60c90e16537da9cb5cdb75ffaf378279b6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000006_26dec446e6586539073421c091c2ab60c90e16537da9cb5cdb75ffaf378279b6.png -->
 
 ? b b b
 
@@ -21738,7 +20935,7 @@ w
 
 Í
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000007_60a5f016dbd48c245ef8baca20be4fcd6309e9a7c2650f316a8070551047ee66.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000007_60a5f016dbd48c245ef8baca20be4fcd6309e9a7c2650f316a8070551047ee66.png -->
 
 Œ Ó
 
@@ -21762,13 +20959,13 @@ The second episode (the C section) follows immediately after the refrain. The se
 
 Figure 25.3.7: Beethoven, Pathétique Sonata, Op. 13, III, Retransition to Third Refrain
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000008_d74300d95093c13447c4bb44ab2aec36802c74327b80b440564f712fedf1ecad.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000008_d74300d95093c13447c4bb44ab2aec36802c74327b80b440564f712fedf1ecad.png -->
 
 An abbreviated version of the refrain follows, leading directly to a restatement of the second episode (the B section), this time in tonic major (C major).
 
 Figure 25.3.8: Beethoven, Pathétique Sonata, Op. 13, III, Third Refrain and Second Episode restated in tonic
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000009_d2e9e33a9360bed70b9c2f3c89418fd3c03d52b80d2eec0cb46dd084ce3f37c4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00351-00360/try-20261114T123802-9e33d9/document_artifacts/image_000009_d2e9e33a9360bed70b9c2f3c89418fd3c03d52b80d2eec0cb46dd084ce3f37c4.png -->
 
 Following the Second Episode is brief retransition that develops final motives of that episode through sequences.
 
@@ -21934,43 +21131,20 @@ Following the Second Episode is brief retransition that develops final motives o
 - A retransition follows the second episode, ending on a half cadence on G
 - b b w w
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 351](<MusicTheory.pdf#page=351>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 351](<document_artifacts/page_000351_f73dee59c237809a52ff12b18cdbac5603681ebcb883bc62d18e823d761be846.png>)
-
-![PDF-Seite 352](<document_artifacts/page_000352_8315500d768817c460e5d6414dc6d7a0515167f6410a62ae389cb6c729ee4e41.png>)
-
-![PDF-Seite 353](<document_artifacts/page_000353_6f7f816e0d673e75f66179cd0e3adf8a97c65819ad4881e34d0a24aed30edcda.png>)
-
-![PDF-Seite 354](<document_artifacts/page_000354_c1f00fe1658addaf27df6004e1f3f3f18fa5bfe6d52e53cb383e9728b102ad9e.png>)
-
-![PDF-Seite 355](<document_artifacts/page_000355_3649a76449b266ea242324de64bca528ca4e9e3c82599193552d73150fad682c.png>)
-
-![PDF-Seite 356](<document_artifacts/page_000356_9404daa06c5b00b6a269d52b50266bc3bfe3862b13993ad712466b8971c6d09b.png>)
-
-![PDF-Seite 357](<document_artifacts/page_000357_17fa8e137ac21ade903577b37673013905a19298fcd6d895288639e9bb017528.png>)
-
-![PDF-Seite 358](<document_artifacts/page_000358_aefe24c7813e3adcea8c762b0f9dd5a470757c1f4116c35a31681b5497e611da.png>)
-
-![PDF-Seite 359](<document_artifacts/page_000359_938da42df0fccdc25861855606351e36b5b5cc0cc11af1a6a4c9c3614bf0d09a.png>)
-
-![PDF-Seite 360](<document_artifacts/page_000360_169309c58398af091178232b9a02c69110a3cf4ba6e8bc890ffebec7b9c5e333.png>)
-
-
-[Original-PDF, Seite 351](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=351>)
-
-<!-- PDF-Seiten 361–370 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document.md -->
+<!-- PDF-Seiten 361–370 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document.md -->
 
 Figure 25.3.9: Beethoven, Pathétique Sonata, Op. 13, III, Retransition to Final Refrain
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000000_3674484d95142d899a58a7cde037ad61ad2e3e80c5f8eeaa3fc353765784bd4f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000000_3674484d95142d899a58a7cde037ad61ad2e3e80c5f8eeaa3fc353765784bd4f.png -->
 
 After one last statement of the refrain in C minor, the Coda begins immediately after the cadence closing the refrain.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000001_b7ec944aedf5e9561655f8f42735ec736d82c76ee50e68238865678003b2b44e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000001_b7ec944aedf5e9561655f8f42735ec736d82c76ee50e68238865678003b2b44e.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000002_e6faa79cc6b449968f3061d6bc726034e4c97c7bc28b1f48f96c1daae739c1f4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000002_e6faa79cc6b449968f3061d6bc726034e4c97c7bc28b1f48f96c1daae739c1f4.png -->
 
 YT: 05Xyc2FHHRI
 
@@ -21980,7 +21154,7 @@ Figure 25.3.10: Beethoven, Pathétique Sonata, Op. 13, III, Final Refrain
 
 œ.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000003_75a9be16a2c5945fae16d2d277a3ce41fac534350ab6715ad1c00d929375b09c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000003_75a9be16a2c5945fae16d2d277a3ce41fac534350ab6715ad1c00d929375b09c.png -->
 
 To review a simple, five-part rondo form, see the section on the second movement of Eine kleine nachtmusik in the chapter on Creating Contrast Be-
 
@@ -22007,9 +21181,9 @@ Listen to the following six examples to develop familiarity with rondo character
 
 1.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000004_946bbb9ee679c0c8b1b64c76e93b950a014b4f20bdecc2e96421de4fa05885bc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000004_946bbb9ee679c0c8b1b64c76e93b950a014b4f20bdecc2e96421de4fa05885bc.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000005_38449e502ab0f59bcfd8bf8a1b2e61d02794fefb2467440f15c5febb057c2467.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000005_38449e502ab0f59bcfd8bf8a1b2e61d02794fefb2467440f15c5febb057c2467.png -->
 
 YT: ysB5SeaJp6s
 
@@ -22017,9 +21191,9 @@ Figure 25.4.1: Haydn, Piano Sonata in D major, H. XVI No. 37, III.
 
 2.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000006_c96422b18afdb8686747fe89705e36fd4090eb68449cb3e1016e3920035ea858.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000006_c96422b18afdb8686747fe89705e36fd4090eb68449cb3e1016e3920035ea858.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000007_f7f117c6571a4089e0445c4c7e4f201f29952a8a28624743c7963dcec36c2242.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000007_f7f117c6571a4089e0445c4c7e4f201f29952a8a28624743c7963dcec36c2242.png -->
 
 YT: QYUANirkakg
 
@@ -22027,9 +21201,9 @@ Figure 25.4.2: Haydn, Symphony No. 104 in D major, Hob. I:104, IV.
 
 3.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000008_de5490fba80df6dbed32143795f1798d9fafeb7a0bd857bdcef0571de7c0678c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000008_de5490fba80df6dbed32143795f1798d9fafeb7a0bd857bdcef0571de7c0678c.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000009_5455aa245e565d470207048bd4a47c5b8cfa251247a4e9040c6507bcc75f338c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000009_5455aa245e565d470207048bd4a47c5b8cfa251247a4e9040c6507bcc75f338c.png -->
 
 YT: YhGkLPqWjBc
 
@@ -22037,9 +21211,9 @@ Figure 25.4.3: Haydn, String Quartet in E-flat major, Op. 33, No. 2, IV.
 
 4.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000010_435ae63ae68bffced2adea870b638a397db5e5fa1d02048bcd438d321b4a780e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000010_435ae63ae68bffced2adea870b638a397db5e5fa1d02048bcd438d321b4a780e.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000011_ac7a0ccae189d13247ceb76c43e88c708cce8ca7c1998fe3c280fee63d0f5043.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000011_ac7a0ccae189d13247ceb76c43e88c708cce8ca7c1998fe3c280fee63d0f5043.png -->
 
 YT: hwxNp-LzDYo
 
@@ -22047,13 +21221,13 @@ Figure 25.4.4: Mozart, Symphony No. 36 in C major, K.425, IV.
 
 YT: H0x\_dCrKd4w
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000012_1c63b0f4e757968bc665e53afd6e087946f75fdb553164b1dc77b3e18034267d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000012_1c63b0f4e757968bc665e53afd6e087946f75fdb553164b1dc77b3e18034267d.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000013_4bf35eb0e11f5ef98078aeb32f71512a4d43d1ac99196641c04956b00867c7ca.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000013_4bf35eb0e11f5ef98078aeb32f71512a4d43d1ac99196641c04956b00867c7ca.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000014_73017b6a53e13c036cd20e87f7f9ffaba5eaf71038b330615c08cffe0f85c50a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000014_73017b6a53e13c036cd20e87f7f9ffaba5eaf71038b330615c08cffe0f85c50a.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000015_b934da9d035f0af4aa03f31624029b081e3d01192fcba1d3f7969b6f80605a41.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000015_b934da9d035f0af4aa03f31624029b081e3d01192fcba1d3f7969b6f80605a41.png -->
 
 YT: 6zbNgyJkzdw
 
@@ -22074,9 +21248,9 @@ Below are the forms commonly encountered in the various movements of Classical s
 
 (a)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000016_263bf8edc41b60c55c66192de9e6fac18cec9c5da2814b8bfae568f2b2751e28.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000016_263bf8edc41b60c55c66192de9e6fac18cec9c5da2814b8bfae568f2b2751e28.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000017_4cb8c940b644c57f91105e4f844fa63cbb957820653894dd7ff1fcace06285a2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000017_4cb8c940b644c57f91105e4f844fa63cbb957820653894dd7ff1fcace06285a2.png -->
 
 YT: je74Fhokrxg
 
@@ -22084,39 +21258,39 @@ Figure 25.6.1: Haydn, Piano Sonata No. 59 in E-flat major, Hob. XVI:49, I.
 
 (b)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000018_e43fdce91e5eeea705e35edcc47dc20b731233d924faed7c2e7eaf6a9c8cb79f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000018_e43fdce91e5eeea705e35edcc47dc20b731233d924faed7c2e7eaf6a9c8cb79f.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000019_a46e03ebe6f527f7866d2ec1afd78eb96ef8b7e7798842928be52c22855596d4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000019_a46e03ebe6f527f7866d2ec1afd78eb96ef8b7e7798842928be52c22855596d4.png -->
 
 YT: W2qW6fOtAMY
 
 Figure 25.6.2: Beethoven, Symphony No. 5 in C Minor, Op. 67, I.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000020_55109819c59689b65e16ea9784d9a66827b150599294149b8f82dda87066b0ca.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000020_55109819c59689b65e16ea9784d9a66827b150599294149b8f82dda87066b0ca.png -->
 
 Figure 25.6.3: Mozart, Piano Sonata No. 18 in D major, K.576, I.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000021_758a481b13bfc9b974359a7e11beb1e6db598a997d48fc64e61e1f87d7f0c81d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000021_758a481b13bfc9b974359a7e11beb1e6db598a997d48fc64e61e1f87d7f0c81d.png -->
 
 Figure 25.6.4: Mozart, Symphony No. 40 in G Minor, K. 550, I.
 
 (e)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000022_2ba50dee7ecfcf18bf07546b48953e81928f085859f22ddb36481e0b33f6e8d4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000022_2ba50dee7ecfcf18bf07546b48953e81928f085859f22ddb36481e0b33f6e8d4.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000023_e4186fc66dc4624da5347c3cf937e23a3d26b268ecc1e7a76748640383bda04c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000023_e4186fc66dc4624da5347c3cf937e23a3d26b268ecc1e7a76748640383bda04c.png -->
 
 YT: ZbWsNTiaebY
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000024_9e9d806e2b11bb53d6fcc97c2d3d5cd953094c949f2804364c2518ad030c5943.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000024_9e9d806e2b11bb53d6fcc97c2d3d5cd953094c949f2804364c2518ad030c5943.png -->
 
 Figure 25.6.5: Mozart, Piano Sonata No. 7 in C major, K. 309, I.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000025_09eafd9ee90299b80dbd56dc37ad477ce04cfe9bcf606d2e930663cd3dfbb2d2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000025_09eafd9ee90299b80dbd56dc37ad477ce04cfe9bcf606d2e930663cd3dfbb2d2.png -->
 
 352
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000026_970c9a08c2528fc03ed5f524aeab0e99f823647360690209c6da85d329706502.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000026_970c9a08c2528fc03ed5f524aeab0e99f823647360690209c6da85d329706502.png -->
 
 YouTube: https://www.youtube.com/watch?v=wPKFdj5V3Bw Examples for Assignment 36, Section 1
 
@@ -22128,33 +21302,33 @@ Figure 25.6.14: Mozart, Eine kleine nachtmusik, K. 525, I.
 
 YT: je74Fhokrxg
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000027_655607f9c6c519acfe8e57cab3775234877d55d105ec5004ee6ce04a12cfd16c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000027_655607f9c6c519acfe8e57cab3775234877d55d105ec5004ee6ce04a12cfd16c.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000028_00faf8c54f767d1f99f960b82f79f68aefb2db9711c98c7b09aa373266760cba.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000028_00faf8c54f767d1f99f960b82f79f68aefb2db9711c98c7b09aa373266760cba.png -->
 
 Figure 25.6.15: Haydn, Piano Sonata No. 59 in E-flat major, Hob. XVI:49, I.
 
 (b)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000029_7ad5cf895d080743ef07b2d5bff42bd63b0987ce4431fc1cd67db24f12ad2462.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000029_7ad5cf895d080743ef07b2d5bff42bd63b0987ce4431fc1cd67db24f12ad2462.png -->
 
 YT: ZbWsNTiaebY
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000030_aeffdc9769a41678311d04c5a855fef6ac378ae83cd5ba424e7a09fda6fb4b31.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000030_aeffdc9769a41678311d04c5a855fef6ac378ae83cd5ba424e7a09fda6fb4b31.png -->
 
 Figure 25.6.16: Mozart, Piano Sonata No. 7 in C major, K. 309, I.
 
 (c)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000031_46ef233f212b4b4dc792de5dd449ea2d39cdc59e45cbaff24221c87c2a1214a4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000031_46ef233f212b4b4dc792de5dd449ea2d39cdc59e45cbaff24221c87c2a1214a4.png -->
 
 YT: 6z4KK7RWjmk
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000032_7abde8a4bb63fa023eb56e0369de5aea9c844365ccec584a9116aa32c47d8325.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000032_7abde8a4bb63fa023eb56e0369de5aea9c844365ccec584a9116aa32c47d8325.png -->
 
 Figure 25.6.17: Beethoven, Symphony No. 5 in C Minor, Op. 67, IV.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000033_c196574c55a225fa98817ae44d2481f2b92ad234334a3b77a0f941675915961e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000033_c196574c55a225fa98817ae44d2481f2b92ad234334a3b77a0f941675915961e.png -->
 
 YT: U4K2mz\_rPcs
 
@@ -22162,19 +21336,19 @@ Figure 25.6.18: Mozart, Piano Sonata No. 8 in A Minor, K. 310, I.
 
 (e)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000034_7dce9935c7db94370f3e83155b2a1414fdc2acecb71699ad9ed0331493f10b3c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000034_7dce9935c7db94370f3e83155b2a1414fdc2acecb71699ad9ed0331493f10b3c.png -->
 
 YT: sBYfP1gbTkE
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000035_74b7741e9db88691fa67c3a9ac339f15b6897a713c50515d2a200084715f3b0e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000035_74b7741e9db88691fa67c3a9ac339f15b6897a713c50515d2a200084715f3b0e.png -->
 
 Figure 25.6.19: Mozart, Piano Sonata No. 14 in C Minor, K. 457, I.
 
 (f)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000036_fe467548faafa84615f6c2be7c0e85fcaedd4e52b9b9835bcbcd33c29bce83d1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000036_fe467548faafa84615f6c2be7c0e85fcaedd4e52b9b9835bcbcd33c29bce83d1.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000037_5690badad65d6aa8d2f2624e6be16467093d5319efff7a4ff30d71d838faaa88.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00361-00370/try-20261114T123831-5dea65/document_artifacts/image_000037_5690badad65d6aa8d2f2624e6be16467093d5319efff7a4ff30d71d838faaa88.png -->
 
 Click here to download the first homework assignment for this chapter. Click here to download the second homework assignment for this chapter. Click here to download the Unit 7 Practice Test.
 
@@ -22252,33 +21426,10 @@ Click here to download the first homework assignment for this chapter. Click her
 - Retransition PT transition ST 1 ST 2 CT
 - images/video-392.jpg
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 361](<MusicTheory.pdf#page=361>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 361](<document_artifacts/page_000361_24acc798957e07ffc31a39714e88cb12a48b35d65a7240324ae8b4943572625b.png>)
-
-![PDF-Seite 362](<document_artifacts/page_000362_e8d14ea0fc0fe5f4e51deb1a77f15dacfcd0c92551e550bfd697a1d6326c226e.png>)
-
-![PDF-Seite 363](<document_artifacts/page_000363_e947ed1c3aa6ae314e5034e3b38a3df5ec746b67919bf517808b42018f20a2f3.png>)
-
-![PDF-Seite 364](<document_artifacts/page_000364_779a597993e261af492389fa065c38486c2e71aaf1a735ae955aee464d4fb5a1.png>)
-
-![PDF-Seite 365](<document_artifacts/page_000365_261f65ab5db83fb1f119ce93fed8be94f782f9332fc46b8231a4e09d798b033f.png>)
-
-![PDF-Seite 366](<document_artifacts/page_000366_29a1e95a5098917de84177b877bcde94e83120121e9af9394e6bd88ea0ca789e.png>)
-
-![PDF-Seite 367](<document_artifacts/page_000367_0d22999554637610c056128e7a1f4f04d1859dee93edba8f08ebcdbe6ab2d42a.png>)
-
-![PDF-Seite 368](<document_artifacts/page_000368_97f1d7f72dcd096ad6926ae46974f48196fefc6de8b58e297a941a6a7270c4d7.png>)
-
-![PDF-Seite 369](<document_artifacts/page_000369_f5077db11dbf57aa0a08b7c3cf251d56267e091c2550cc1330da62e8f0807657.png>)
-
-![PDF-Seite 370](<document_artifacts/page_000370_e7d3e44c46aa85d30a1c9600d86c245847e36c2a4c03563e12d88cbc83847f22.png>)
-
-
-[Original-PDF, Seite 361](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=361>)
-
-<!-- PDF-Seiten 371–380 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document.md -->
+<!-- PDF-Seiten 371–380 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document.md -->
 
 ## Chapter 26
 
@@ -22294,7 +21445,7 @@ voice types. SATB voice leading will also be referred to as "chorale-style" voic
 
 leading.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000000_e88f2c7c65ea09abfee26975da487446e752f8ec7c09ce4516e66d8a7bfda999.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000000_e88f2c7c65ea09abfee26975da487446e752f8ec7c09ce4516e66d8a7bfda999.png -->
 
 ?
 
@@ -22316,7 +21467,7 @@ Figure 26.1.1: Soprano, Alto, Tenor, and Bass voices on the grand staff in
 
 staff (the right hand part) and the bass is the only voice in bass clef (the left
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000001_5126f1293e0efa0e17a54b1b79d72dfa4df5b5cd159bc5219faaf0508b9e102d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000001_5126f1293e0efa0e17a54b1b79d72dfa4df5b5cd159bc5219faaf0508b9e102d.png -->
 
 hand part).
 
@@ -22332,7 +21483,7 @@ Bass
 
 ? Figure 26.1.2: "Piano-style" voice leading
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000002_8c319daffd2c4b3beaaf8111b292bb15a626091f219d14fd8dc5f9c78aed16ac.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000002_8c319daffd2c4b3beaaf8111b292bb15a626091f219d14fd8dc5f9c78aed16ac.png -->
 
 ˙
 
@@ -22351,7 +21502,7 @@ Definitions must be set out regarding types of motion between two parts.
 
 moves up or down by step or leap.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000003_4a97fdacb495d762250baf2b19c9740cdc19786a77f3cea580f3aaf34d8abf75.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000003_4a97fdacb495d762250baf2b19c9740cdc19786a77f3cea580f3aaf34d8abf75.png -->
 
 · Similar motion occurs when both voices move in the same (or "similar")
 
@@ -22359,7 +21510,7 @@ direction-both up (by step or leap) or both down (by step or leap);
 
 similar motion is also called "direct" motion
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000004_f95d445b96af45650fb64dde97bddd9d2cd55d23a67e1868366a539c1ffa2b50.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000004_f95d445b96af45650fb64dde97bddd9d2cd55d23a67e1868366a539c1ffa2b50.png -->
 
 Tenor
 
@@ -22399,7 +21550,7 @@ Figure 26.2.1: The four types of motion
 
 ˙
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000005_dc7270e60e74cc66838f47797b0f1352c74ac0c5387d19fbb243d28507ff1fde.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000005_dc7270e60e74cc66838f47797b0f1352c74ac0c5387d19fbb243d28507ff1fde.png -->
 
 ?
 
@@ -22407,19 +21558,19 @@ Figure 26.2.1: The four types of motion
 
 ˙
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000006_e0d8942d6020c39e43bc30394809de6205283dcf7c23d73431aea090f37c42b6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000006_e0d8942d6020c39e43bc30394809de6205283dcf7c23d73431aea090f37c42b6.png -->
 
 &amp;
 
 26.3 Objectionable Parallels
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000007_3d37cbfe62f117cd2bba4e3d28073590e94bef5f1e8e1478a65c557f302a7bb3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000007_3d37cbfe62f117cd2bba4e3d28073590e94bef5f1e8e1478a65c557f302a7bb3.png -->
 
 2nds and 7ths generally were not used.
 
 Figure 26.3.1: Objectionable parallel fifths and parallel octaves
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000008_6f12f85cdf16727b2e73d7728c26d42dab15335dd8e38bab632f1380c7473200.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000008_6f12f85cdf16727b2e73d7728c26d42dab15335dd8e38bab632f1380c7473200.png -->
 
 For the purpose of music theory class, we will set out restrictions for voice ranges that are likely more limited than those found among vocalists in the
 
@@ -22446,7 +21597,7 @@ up (by 2nd)
 
 43
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000009_627855a1aa22c762b20f8857eae8dbb427c181aa6f1a8d4d22e973a6579287dd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000009_627855a1aa22c762b20f8857eae8dbb427c181aa6f1a8d4d22e973a6579287dd.png -->
 
 ## 26.6 Rules of Spacing
 
@@ -22474,13 +21625,13 @@ CHAPTER 26. VOICE LEADING TRIADS
 
 Figure 26.6.1
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000010_656416c533f71836822d48e4aaa53d5d2bf20d3b7705660de65dbace1a878161.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000010_656416c533f71836822d48e4aaa53d5d2bf20d3b7705660de65dbace1a878161.png -->
 
 In terms of spacing chords, one should consider the spacing that occurs in
 
 the overtone series.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000011_82a10e6b2dc1ef8a68726b8a783bb4f292a8706f6b275f541ca7ae985ba18876.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000011_82a10e6b2dc1ef8a68726b8a783bb4f292a8706f6b275f541ca7ae985ba18876.png -->
 
 ?
 
@@ -22492,7 +21643,7 @@ Larger spaces between notes occur lower in the overtone series. Consider
 
 the voicings of the following chords. Some "ring" or resonate better than others.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000012_fa4462e4eeb8a4eb5eb055dc829b5f1091a820685deec196de9606f43e8bbb3d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000012_fa4462e4eeb8a4eb5eb055dc829b5f1091a820685deec196de9606f43e8bbb3d.png -->
 
 c
 
@@ -22511,7 +21662,7 @@ Figure 26.6.3
 | ? To move from one chord to the next, consider the interval that occurs melodically in the bass line between the current chord and subsequent one.   |
 |------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000013_8eb11a5c6286f835fafdb9338968bf3574379eea8cbbffa66b6014a2ed467a0b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000013_8eb11a5c6286f835fafdb9338968bf3574379eea8cbbffa66b6014a2ed467a0b.png -->
 
 ## 26.7.1 Bass movement of the interval of a 3rd or 6th
 
@@ -22602,11 +21753,11 @@ Bass moves by 6th
 
 26.7.3 Bass movement of the interval of a 2nd
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000014_20076bb0f73cc16eccb29a71e96825bdb4483cf2367bf49bb38243e12ef0190b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000014_20076bb0f73cc16eccb29a71e96825bdb4483cf2367bf49bb38243e12ef0190b.png -->
 
 Move the three upper parts in contrary motion to the bass line.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000015_66750ff86f2370ed8f11ac4cafe05970940140655f13d79f5ad6755640821983.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000015_66750ff86f2370ed8f11ac4cafe05970940140655f13d79f5ad6755640821983.png -->
 
 V chord up by step while the other notes (the 5th and the doubled root)
 
@@ -22636,22 +21787,22 @@ w
 
 Figure 26.7.7: Repeated notes in the bass line
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000016_0cf8afdc42eb714ae91e444d34907064d0dfe2a59f63ce0ac29f9621b5566e4f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000016_0cf8afdc42eb714ae91e444d34907064d0dfe2a59f63ce0ac29f9621b5566e4f.png -->
 
 If the 3rd of a first inversion is doubled, it will be in one of the following situations:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000017_37f355524f4ae36e4fb70e3496173928b5bb4333b81b035704beee515b2dfd4b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000017_37f355524f4ae36e4fb70e3496173928b5bb4333b81b035704beee515b2dfd4b.png -->
 
 364
 
 Figure 26.8.3: J.S. Bach, Chorale 103, "Nun ruhen alle Wälder" , BWV 392
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000018_33492f6a53d3cb3651c3916a4a35b0608863a4b8e2f7c75a9ca71836e62f899a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000018_33492f6a53d3cb3651c3916a4a35b0608863a4b8e2f7c75a9ca71836e62f899a.png -->
 
 2. Consecutive first inversion chords-alternate between doubling the third and not doubling the third
 3. Approached in opposite direction in both parts
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000019_bf6e23dc2ab8f560f68746b0cd98a01288a6e11d184271eea908a58f07a11c63.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000019_bf6e23dc2ab8f560f68746b0cd98a01288a6e11d184271eea908a58f07a11c63.png -->
 
 A: I
 
@@ -22671,7 +21822,7 @@ consecutive 1st inversion triads
 
 Figure 26.9.1: J.S. Bach, Chorale 204, "Wer weiß, wie nahe mir" , BWV 166
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000020_2f3f56c218fd5c59a3d21ff49ac062edc7b0250c20836a741d5b00f630976136.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000020_2f3f56c218fd5c59a3d21ff49ac062edc7b0250c20836a741d5b00f630976136.png -->
 
 ## 26.10 Special Situations
 
@@ -22697,7 +21848,7 @@ Avoid parallel fifths when the roots of triads are a second apart, as in the fol
 
 Figure 26.11.1: Examples with the Pedal Six-Four
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000021_a88b3a6f54097a7e7323b31aeacfe66ab003ef74a6a3994f03437e43e4d2972f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00371-00380/try-20261114T123859-54cbde/document_artifacts/image_000021_a88b3a6f54097a7e7323b31aeacfe66ab003ef74a6a3994f03437e43e4d2972f.png -->
 
 The passing 64 typically occurs in the patterns I-V 64 -I 6 (or its retrograde) and IV-I 64 -IV 6 (or its retrograde).
 
@@ -22894,37 +22045,14 @@ The passing 64 typically occurs in the patterns I-V 64 -I 6 (or its retrograde) 
 - œœœ
 - œœ œ
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 371](<MusicTheory.pdf#page=371>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 371](<document_artifacts/page_000371_1b4018840198c016d6ef1f8afce9c77027c106a24fda5d78c63097d16a60cd14.png>)
-
-![PDF-Seite 372](<document_artifacts/page_000372_972662e777f692a8c0041b29c6603bb27022229113dac87247a33f6e4352de56.png>)
-
-![PDF-Seite 373](<document_artifacts/page_000373_63d6e38fe9adae5785836a229d26080a3c710485db396572d4d885ff2e933990.png>)
-
-![PDF-Seite 374](<document_artifacts/page_000374_dbc7d0d92adf9fe88d7e699f898347f74758eaeab8746a9bf18205daf5eeca23.png>)
-
-![PDF-Seite 375](<document_artifacts/page_000375_da0ecb9346be94be116b6501fc610e77d7bd58930a63d9eba47e636d385a7210.png>)
-
-![PDF-Seite 376](<document_artifacts/page_000376_d1c2d824397f5e4ead61d4844c89a1cb55016ef2ae52ca4b0e4073403e03160b.png>)
-
-![PDF-Seite 377](<document_artifacts/page_000377_cd0c1bb77ca40d02695c143246467b34605c5114b57b980d5b670e6ae6e6bf64.png>)
-
-![PDF-Seite 378](<document_artifacts/page_000378_26be1a164bfabad0387b43ee0c7a2c11bd48de6de09f11a2befe454f01434eb3.png>)
-
-![PDF-Seite 379](<document_artifacts/page_000379_4b893a1ad59efa60c830505f5d2a4082a957683eb7702c691c21b115adff7ad2.png>)
-
-![PDF-Seite 380](<document_artifacts/page_000380_c8f11ff8bd0509e92b4fe04ed9788877c86abb887f321f4449d38487dfe50624.png>)
-
-
-[Original-PDF, Seite 371](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=371>)
-
-<!-- PDF-Seiten 381–390 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document.md -->
+<!-- PDF-Seiten 381–390 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document.md -->
 
 26.12. SUMMARY OF DOUBLING RULES FOR TRIADS
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000000_08593d0f63f125926581a17e275756b37e1dfb16cf8fc0f099be75cd3672ab04.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000000_08593d0f63f125926581a17e275756b37e1dfb16cf8fc0f099be75cd3672ab04.png -->
 
 4
 
@@ -22932,7 +22060,7 @@ The passing 64 typically occurs in the patterns I-V 64 -I 6 (or its retrograde) 
 
 Figure 26.11.2: Examples with the Passing Six-Four
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000001_3bdf8b5df89b89ce6388652b58ac1f50bfa840dbad25a1dd5106475099a8daaa.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000001_3bdf8b5df89b89ce6388652b58ac1f50bfa840dbad25a1dd5106475099a8daaa.png -->
 
 ## 26.12 Summary of Doubling Rules for Triads
 
@@ -22956,9 +22084,9 @@ track of doubling by specifying which voice has the root, third, or fifth
 
 for each chord.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000002_dc15fc2fc3e94adbaffae9d82d841f89b929c1212e0ae943cfc264c39f329fe6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000002_dc15fc2fc3e94adbaffae9d82d841f89b929c1212e0ae943cfc264c39f329fe6.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000003_f8985cb62377d5214ebc5aad25b8a208d31d8bf09e93858c467c7cc2ba4d04e5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000003_f8985cb62377d5214ebc5aad25b8a208d31d8bf09e93858c467c7cc2ba4d04e5.png -->
 
 367
 
@@ -22988,7 +22116,7 @@ CHAPTER 26. VOICE LEADING TRIADS
 
 Day Three
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000004_19e36de0a7b1ad3b04c4d9a613b5f4560a66673b7e57a58064bd9d3affe73a4f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000004_19e36de0a7b1ad3b04c4d9a613b5f4560a66673b7e57a58064bd9d3affe73a4f.png -->
 
 # # #
 
@@ -23000,11 +22128,11 @@ Day Three
 
 Day Four
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000005_a3fc8f5be550a1673861dd4fc55af92b212371dde4c5c88b0b9a2060ad5dde63.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000005_a3fc8f5be550a1673861dd4fc55af92b212371dde4c5c88b0b9a2060ad5dde63.png -->
 
 162
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000006_d23384f7ec0eb90861f29ae810600dce4df68aed93559bed6aa06af4e1c9ba6b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000006_d23384f7ec0eb90861f29ae810600dce4df68aed93559bed6aa06af4e1c9ba6b.png -->
 
 ## Chapter 27
 
@@ -23016,7 +22144,7 @@ There is one general rule for voice leading any seventh chord: resolve the 7th o
 
 Principle 27.1.1 7th chords. Resolve the 7th of a 7th chord down by step.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000007_3c161cdb0aa4bd0cc2860aa0d57b49f61b14876138fc4e0afa48f4b1667293e7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000007_3c161cdb0aa4bd0cc2860aa0d57b49f61b14876138fc4e0afa48f4b1667293e7.png -->
 
 401
 
@@ -23046,13 +22174,13 @@ CHAPTER 27. VOICE LEADING SEVENTH CHORDS
 
 Figure 27.1.3: Schubert, Winterreise, D. 911, "Frühlingstraum" (1823)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000008_123415df6116537143d2861460d2e4192f13507d0c16d3a32c30dba50b4b3c45.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000008_123415df6116537143d2861460d2e4192f13507d0c16d3a32c30dba50b4b3c45.png -->
 
 The one exception to this is in the progression I-V43 -I6 , which closes the theme of the first movement of Mozart's Piano Sonata K. 331.
 
 w
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000009_b4233d319bc353335b8ef3cbe8975102190c44ff64f951eaac9e5554c6483101.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000009_b4233d319bc353335b8ef3cbe8975102190c44ff64f951eaac9e5554c6483101.png -->
 
 tionable because they consist of unequal fifths (where one of the fifths is in a case of parallel fifths is diminished).
 
@@ -23066,7 +22194,7 @@ Sometimes you will encounter a situation where there are successive seventh chor
 
 CHAPTER 27. VOICE LEADING SEVENTH CHORDS
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000010_df868930d68dd1aa1a02026656d3ddb0286910de2f4e38b4b877ffa84f557db5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000010_df868930d68dd1aa1a02026656d3ddb0286910de2f4e38b4b877ffa84f557db5.png -->
 
 ?
 
@@ -23090,13 +22218,13 @@ If, on the other hand, you are asked to voice lead a circle of fifths progressio
 
 other two voices resolve downward by step.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000011_958db9eaea52370141e9e4beb7bafd0fc5f5a511e61cd93eebd624b8cba6a154.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000011_958db9eaea52370141e9e4beb7bafd0fc5f5a511e61cd93eebd624b8cba6a154.png -->
 
 5
 
 In piano music you will sometimes find "improper" resolution of the 7th of a chord because it fits the hand better. This should be considered an exception and will not be acceptable in voice leading exercises completed for this class.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000012_9e04b1e8a32ffbfff3a55aab9537faa26a9f2c1574049af8f31134c9bef28e1b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000012_9e04b1e8a32ffbfff3a55aab9537faa26a9f2c1574049af8f31134c9bef28e1b.png -->
 
 411
 
@@ -23106,11 +22234,11 @@ In piano music you will sometimes find "improper" resolution of the 7th of a cho
 
 CHAPTER 27. VOICE LEADING SEVENTH CHORDS
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000013_e0b180467133b0e95dc65431dec1ef13053e75ae3c0eb9c2f708f000cf8b0367.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000013_e0b180467133b0e95dc65431dec1ef13053e75ae3c0eb9c2f708f000cf8b0367.png -->
 
 Figure 27.3.1: Giordani, Caro mio ben (1783)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000014_97495823ace320dc58c2e49c18efea7577c6c616ab7c4a92ff02f4fe3706acac.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000014_97495823ace320dc58c2e49c18efea7577c6c616ab7c4a92ff02f4fe3706acac.png -->
 
 in the I64 chord. If it is, move all upper voices upward to the closest notes of
 
@@ -23134,7 +22262,7 @@ b b b
 
 If one resolves all of those tendency tones correctly (ˆ2 -ˆ1 , ˆ4 -ˆ3 , ˆ6 -ˆ5 , ˆ7 -ˆ8 ), one might write parallel 5ths depending on the voicing of the vii◦7 and vii ø7 chord. Therefore, be sure to memorize the following principle:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000015_0e79c7253113f0ec7a9c78e5b8bb0ff73e78edf0c2acb8beaf78eff5a19496cb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00381-00390/try-20261114T123925-14475a/document_artifacts/image_000015_0e79c7253113f0ec7a9c78e5b8bb0ff73e78edf0c2acb8beaf78eff5a19496cb.png -->
 
 &amp; ? Principle 27.4.1 Resolving vii◦7 . When the 7th of a vii◦7 or vii ø7 chord is voiced above the 3rd of the chord, resolve the 3rd of the chord (scale degree ˆ2 ) up by step while resolving all other tendency tones normally (ˆ4 -ˆ3 , ˆ6 -ˆ5 , ˆ7 -ˆ8 ).
 
@@ -23344,37 +22472,14 @@ If one resolves all of those tendency tones correctly (ˆ2 -ˆ1 , ˆ4 -ˆ3 , ˆ6
 - 27.4 The Special Resolution of vii ◦7 (and vii ø7 )
 - The vii◦7 and vii ø7 chords consist entirely of tendency tones (ˆ7 , ˆ2 , ˆ4 , ˆ6 ).
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 381](<MusicTheory.pdf#page=381>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 381](<document_artifacts/page_000381_50883cfba75ca0847d9b6ff0149488c6e8dd70bdd4228b668527897ba9d9c989.png>)
-
-![PDF-Seite 382](<document_artifacts/page_000382_5e21e39b45e2a479536a29cdd357e6c19e03a4b97757371e090bca1ee5b1c7fd.png>)
-
-![PDF-Seite 383](<document_artifacts/page_000383_01a94de9954b3cf4e5bf258c5d5f59e0a382947a8cd87a992f964ea76d875941.png>)
-
-![PDF-Seite 384](<document_artifacts/page_000384_03fc6f59897ac1b9e910a360d0922507fda8060c6ea6fc4c17c71d1a6251de9b.png>)
-
-![PDF-Seite 385](<document_artifacts/page_000385_cc153fdf5d6e5e88fabe5820cb983a19511a6445e48ae90113bad60ea526ae28.png>)
-
-![PDF-Seite 386](<document_artifacts/page_000386_cf88dfa78f7a6b32f72469f71cf2ff67b1470377857172a4cc2eefa707019630.png>)
-
-![PDF-Seite 387](<document_artifacts/page_000387_30694dd1b115886f630e68df1649864d2438843a17e38ac34ce88941104ed890.png>)
-
-![PDF-Seite 388](<document_artifacts/page_000388_4040713f959fd44bc0c101340fc3c22c641dab8b57f4bbefa0d59c0228846c0e.png>)
-
-![PDF-Seite 389](<document_artifacts/page_000389_382f9e3d1b3bcbb091ad51e6623f1f8506b31c7bd0c00a5b1e113f553eff4cac.png>)
-
-![PDF-Seite 390](<document_artifacts/page_000390_c3aee2f873f7166ee7118eb154b75ac76495a70809e599f7579939143fade877.png>)
-
-
-[Original-PDF, Seite 381](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=381>)
-
-<!-- PDF-Seiten 391–400 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document.md -->
+<!-- PDF-Seiten 391–400 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document.md -->
 
 Figure 27.5.1: J.S. Bach, Chorale 342, "Lobt Gott, ihr Christen, allzugleich" , BWV 376
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000000_b660b52582726928f4287c9832259a2b2a3ef8e5522950fc77f99b83eb84fbad.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000000_b660b52582726928f4287c9832259a2b2a3ef8e5522950fc77f99b83eb84fbad.png -->
 
 166
 
@@ -23382,19 +22487,19 @@ Figure 27.5.1: J.S. Bach, Chorale 342, "Lobt Gott, ihr Christen, allzugleich" , 
 
 167
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000001_5e3bd658dc8731b4c2e5205bb6b70b2e99f4e21c9953caab14d89e6301b3cd59.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000001_5e3bd658dc8731b4c2e5205bb6b70b2e99f4e21c9953caab14d89e6301b3cd59.png -->
 
 ## Chapter 28
 
 ## Voice Leading With Non-Chord Tones
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000002_471caef800cde5142b30a49bb1fd068dd3f3da2bd99d7f7c1a18983b76ba65d2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000002_471caef800cde5142b30a49bb1fd068dd3f3da2bd99d7f7c1a18983b76ba65d2.png -->
 
 170
 
 Figure 28.1.2: J.S. Bach, Chorale 326, "Allein Gott in der Höh' sei Erh' , BWV 104" , BWV 172
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000003_c9c415f55b247721418990d366c0da1d3e1cc0b8e863e48dcff27f8b251b7b38.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000003_c9c415f55b247721418990d366c0da1d3e1cc0b8e863e48dcff27f8b251b7b38.png -->
 
 ## 28.2 Avoiding Objectionable Parallels
 
@@ -23402,9 +22507,9 @@ When adding non-chord tones, one must avoid creating objectionable parallels. To
 
 identify intervals of 5ths and 8ves between voices in your original voice leading.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000004_e615b93ed87dcf5427f4d5fdf296b62e75e786fa5d8b13d692b195c51fe38041.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000004_e615b93ed87dcf5427f4d5fdf296b62e75e786fa5d8b13d692b195c51fe38041.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000005_65430ff337bcade6a6280886e34049a625d193c40830281021740f7474e5abe2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000005_65430ff337bcade6a6280886e34049a625d193c40830281021740f7474e5abe2.png -->
 
 ## 28.3 Adding Non-Chord Tones to a Chord Progression
 
@@ -23414,7 +22519,7 @@ the voice parts of an SATB chord progression.
 
 1. Repeated note: add upper or lower neighbor
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000006_c1a894515c3d69d02d3f38b05c345811ff758a89a2a3da9788c371c6038983f6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000006_c1a894515c3d69d02d3f38b05c345811ff758a89a2a3da9788c371c6038983f6.png -->
 
 &amp;
 
@@ -23438,7 +22543,7 @@ sus 4 - 3
 
 œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000007_e0a36dfdedf78a9906eac7a6d0ffea51520b410b56f3ecb6fb3d2bb9970fe631.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000007_e0a36dfdedf78a9906eac7a6d0ffea51520b410b56f3ecb6fb3d2bb9970fe631.png -->
 
 œ
 
@@ -23448,11 +22553,11 @@ sus 4 - 3
 
 3. Step up:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000008_9f77e2304b78e38193a4a5185c23da9cc006965ae8acff45f85d012aaa105e9b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000008_9f77e2304b78e38193a4a5185c23da9cc006965ae8acff45f85d012aaa105e9b.png -->
 
 384
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000009_7b16ab1946570b638f04dbb8d016442f236e73865285d032589e50ffe817ebcb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000009_7b16ab1946570b638f04dbb8d016442f236e73865285d032589e50ffe817ebcb.png -->
 
 307
 
@@ -23474,7 +22579,7 @@ sus 4 - 3
 
 21
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000010_84047d63ab8e63e5cec8ab84c18b7a8b8f0667447ebf56ac3aa1240acf060523.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000010_84047d63ab8e63e5cec8ab84c18b7a8b8f0667447ebf56ac3aa1240acf060523.png -->
 
 386
 
@@ -23484,7 +22589,7 @@ sus 4 - 3
 
 171
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000011_e05afa42de657d2c66bb145b5de5179a345a514baf21787b8e247e326e96daf3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00391-00400/try-20261114T123945-889e4c/document_artifacts/image_000011_e05afa42de657d2c66bb145b5de5179a345a514baf21787b8e247e326e96daf3.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -23688,43 +22793,20 @@ sus 4 - 3
 - beat four, (5) a suspension on beat 5, (6) an anticipation during beat six,
 - and (7) a suspension on beat 7.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 391](<MusicTheory.pdf#page=391>)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- PDF-Seiten 401–410 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document.md -->
 
-![PDF-Seite 391](<document_artifacts/page_000391_6053cfc7939cef4d79627861f5e969d795d253e997b2fb91ffd1b62216866425.png>)
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000000_c01d7281ae121a4993b05438cc555ec9358308981363381fc9efa9c1e690ac84.png -->
 
-![PDF-Seite 392](<document_artifacts/page_000392_efe995ace25d50cefbea0167475641c535e67bab26acdd8a4242090798c9fc7e.png>)
-
-![PDF-Seite 393](<document_artifacts/page_000393_0be4896f25748a9d75596af1bc9fc4c98171feba284a7faccb5bd8e99410aa60.png>)
-
-![PDF-Seite 394](<document_artifacts/page_000394_232e9980672e383e5bf398c592c8bc3d21ae179e881657cc940a1bde7540fbf4.png>)
-
-![PDF-Seite 395](<document_artifacts/page_000395_2d1ede8d37591ba8ed23505c5bd4b7e5cce81d128f87fb458658c5d217c502ef.png>)
-
-![PDF-Seite 396](<document_artifacts/page_000396_7e10653b176215e5ec939fa629577bd4ec8787e3faa0ee7f30a8eed7b0adbf52.png>)
-
-![PDF-Seite 397](<document_artifacts/page_000397_857bbc23c015cccf28e7eb730c888450d1973cc0cc992bb727783c38b6877796.png>)
-
-![PDF-Seite 398](<document_artifacts/page_000398_d6669d1730a0341506e7283ffd2f79a2700bc6d30227a20c4c4438f8c625c301.png>)
-
-![PDF-Seite 399](<document_artifacts/page_000399_a86687634c08e6bee4b3cd5e25b1e63a870bdf289d83473ad727b3e65464c720.png>)
-
-![PDF-Seite 400](<document_artifacts/page_000400_ca5e8ecc27cf0fb05c3a4748b34d34e7e6edbb80b3faf8e8a90826986eb53646.png>)
-
-
-[Original-PDF, Seite 391](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=391>)
-
-<!-- PDF-Seiten 401–410 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000000_c01d7281ae121a4993b05438cc555ec9358308981363381fc9efa9c1e690ac84.png -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000001_2477a05d8cdda58ee5847f5f1f95b859d6efeda80c6245353ff3f8e85729cbaf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000001_2477a05d8cdda58ee5847f5f1f95b859d6efeda80c6245353ff3f8e85729cbaf.png -->
 
 388
 
 CHAPTER 29. VOICE LEADING CHROMATIC HARMONIES
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000002_64f4779df0221d91104c04fd902a78076dd3c5b73bb775fad8d8ae6da0fa514b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000002_64f4779df0221d91104c04fd902a78076dd3c5b73bb775fad8d8ae6da0fa514b.png -->
 
 ondary vii◦7 and vii ø7 chords.
 
@@ -23756,11 +22838,11 @@ fifths instead of the doubling of the leading tone, which is considered
 
 œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000003_e9c4a6f9f10cd0ff069e7f0dbeb265c557e01a8cc2bbec24b1969e781ff73bbb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000003_e9c4a6f9f10cd0ff069e7f0dbeb265c557e01a8cc2bbec24b1969e781ff73bbb.png -->
 
 less acceptable.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000004_93255108e18a038ab2022dc439a66e0b9dbf6f856c229a64368ef846d1ab9a7b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000004_93255108e18a038ab2022dc439a66e0b9dbf6f856c229a64368ef846d1ab9a7b.png -->
 
 |    | 29.2 Voice Leading Borrowed Chords                                                                                                                                                                                                                    |
 |----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -23773,7 +22855,7 @@ less acceptable.
 
 177
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000005_c724a68131767bb3284ad0809642f980257e09ba154c48f56828f1710f678703.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000005_c724a68131767bb3284ad0809642f980257e09ba154c48f56828f1710f678703.png -->
 
 It may be helpful to review the three types of augmented sixth chords before discussing how one voice leads them.
 
@@ -23783,7 +22865,7 @@ The salient accidental in all three augmented sixth chords is 4ˆ4 , which almos
 
 CHAPTER 29. VOICE LEADING CHROMATIC HARMONIES
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000006_81910bbe037ddd4eb91f3e3c089e3f16154fe1ccb5469aee367d600d162580e9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000006_81910bbe037ddd4eb91f3e3c089e3f16154fe1ccb5469aee367d600d162580e9.png -->
 
 183
 
@@ -23805,11 +22887,11 @@ a: Ger +6 i 6
 
 Figure 29.4.4: 4ˆ4 to 6ˆ4 in resolution to V7
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000007_4098355be48548b1db5b04f4ef63872cb2820fd64874278a3574909e5f169e9b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000007_4098355be48548b1db5b04f4ef63872cb2820fd64874278a3574909e5f169e9b.png -->
 
 29.5 Practice Exercises
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000008_0075b5c1483361fd028d5d4214b40984d261ef094e34e50e5d79f37c7bc032e5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000008_0075b5c1483361fd028d5d4214b40984d261ef094e34e50e5d79f37c7bc032e5.png -->
 
 Day One
 
@@ -23845,9 +22927,9 @@ signature. Add the following non-chord tones: 1 suspension, 1 passing
 
 œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000009_881309a8b4e0ac2220cda7a64c4b03bcad01f33062914c9a2b79d25d5b84d808.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000009_881309a8b4e0ac2220cda7a64c4b03bcad01f33062914c9a2b79d25d5b84d808.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000010_d3fefe34aecfac2f2051aab73b5d3cffa5ce7f757499d744e40c2992fdff8657.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000010_d3fefe34aecfac2f2051aab73b5d3cffa5ce7f757499d744e40c2992fdff8657.png -->
 
 tone, 1 anticipation, and 3 neighbor tones.
 
@@ -23895,7 +22977,7 @@ b
 
 ˙
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000011_fc46ee8357deac55b9d5e6f47d95c60094d0c0af293685bf071a174d9a07cfca.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000011_fc46ee8357deac55b9d5e6f47d95c60094d0c0af293685bf071a174d9a07cfca.png -->
 
 | & &   |
 |-------|
@@ -23905,7 +22987,7 @@ b
 
 D: I V 4 /IV IV 6
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000012_514489c8d275530ca626c641e70a3e4330fc151ad7add9c6534514d657fe44dc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000012_514489c8d275530ca626c641e70a3e4330fc151ad7add9c6534514d657fe44dc.png -->
 
 ? œ
 
@@ -23951,11 +23033,11 @@ vi
 
 177
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000013_247785175039f7cba0b599508b500ba36fa896b54f4be6c3e454dacc44f98c1d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000013_247785175039f7cba0b599508b500ba36fa896b54f4be6c3e454dacc44f98c1d.png -->
 
 Figure 30.1.1: Bach, J.S., Well-Tempered Clavier, Book I, Fugue 3 in C-sharp major, BWV 848
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000014_dcc78b9b269eedf7d3478f699eeb9801fc99dd5566e47a712833793cfe1100bf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000014_dcc78b9b269eedf7d3478f699eeb9801fc99dd5566e47a712833793cfe1100bf.png -->
 
 Textures made of counterpoint are called "contrapuntal" and can be contrasted with melody-accompaniment textures, which are called "homophonic. "
 
@@ -23967,7 +23049,7 @@ You will be given a melody, called the cantus firmus (abbreviated "c.f.
 
 against which you will write a counterpoint.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000015_48622f531566bd3f62c44f4427379c153cad5b34007280cf9debff74ed952e65.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000015_48622f531566bd3f62c44f4427379c153cad5b34007280cf9debff74ed952e65.png -->
 
 c.f. (cantus firmus, a pre-existing melody)
 
@@ -23977,7 +23059,7 @@ Intervallic distance from cantus firmus to counterpoint:
 
 8
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000016_9e2ace70dd9322337ffd99af41b9d121d58090fdfee8fc729c16e07e92495c8d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000016_9e2ace70dd9322337ffd99af41b9d121d58090fdfee8fc729c16e07e92495c8d.png -->
 
 &amp;
 
@@ -24029,7 +23111,7 @@ w
 
 w
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000017_3bdeab27bef95864b3fcb16b42051d20d75ed754e256e0076cc4535e2a307076.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000017_3bdeab27bef95864b3fcb16b42051d20d75ed754e256e0076cc4535e2a307076.png -->
 
 w
 
@@ -24055,7 +23137,7 @@ w
 
 w
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000018_357ae0cafd98cb7403a80c3766aab16ef816f46aa7476f01e588628a219bbbf0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000018_357ae0cafd98cb7403a80c3766aab16ef816f46aa7476f01e588628a219bbbf0.png -->
 
 w
 
@@ -24073,7 +23155,7 @@ w
 
 &amp;
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000019_ef3d54676a7c0a03e5c6ab7b5768f3c53eaec6d1c5dffd1d5f980f44205fd126.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000019_ef3d54676a7c0a03e5c6ab7b5768f3c53eaec6d1c5dffd1d5f980f44205fd126.png -->
 
 w
 
@@ -24093,7 +23175,7 @@ w
 
 w
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000020_fce70d24a186de8b7d315984eacb1347616f73d121fcd05f48b1d163469876c0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000020_fce70d24a186de8b7d315984eacb1347616f73d121fcd05f48b1d163469876c0.png -->
 
 w
 
@@ -24103,11 +23185,11 @@ w
 
 "),
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000021_d86417750cb3831311119639840d61bfbfb46552a0331e08b397421c3e34cff3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000021_d86417750cb3831311119639840d61bfbfb46552a0331e08b397421c3e34cff3.png -->
 
 ## 7. Avoid repeating notes in order to create a flowing melody
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000022_f0ba24a9828d9e41d87a12426ce255dbee85100c99c06ee86f8522b284687c4d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000022_f0ba24a9828d9e41d87a12426ce255dbee85100c99c06ee86f8522b284687c4d.png -->
 
 In second species, one writes two half notes against a cantus firmus in whole notes. (Second species can also include writing three half notes against a cantus
 
@@ -24117,7 +23199,7 @@ D dorian A aeolian
 
 CHAPTER 30. INTRODUCTION TO COUNTERPOINT
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000023_126765f38d13360c122842171f34c03e22089233e6a07871d19a73ca430ccf14.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000023_126765f38d13360c122842171f34c03e22089233e6a07871d19a73ca430ccf14.png -->
 
 a half rest at the beginning of the measure.
 
@@ -24125,7 +23207,7 @@ Intervallic distance from cantus firmus to counterpoint:
 
 8
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000024_fa6b9050c4b5cf1826a29dd22b7703de95cb437eb7b7fca2b45a181d6d09ef46.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000024_fa6b9050c4b5cf1826a29dd22b7703de95cb437eb7b7fca2b45a181d6d09ef46.png -->
 
 2. End with a whole note on an octave or unison, using one of these concluding formulas:
 2. (a) If the cantus firmus is in the lower part, approach the final octave with intervals of a fifth and sixth (ˆ6 -ˆ7 against ˆ2 in the cantus firmus).
@@ -24135,9 +23217,9 @@ Intervallic distance from cantus firmus to counterpoint:
 4. When crossing barlines, apply the following:
 7. (a) "Imperfect" consonances (3rds and 6ths) can be approached in any manner.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000025_c2674ad436c0c64018ffaaa641d8135247be51020b730870655901032bd1577e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000025_c2674ad436c0c64018ffaaa641d8135247be51020b730870655901032bd1577e.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000026_86679d4e38f39f5419f20d80964a32ce3de8df3f0662e0d1659c361d25ffa282.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00401-00410/try-20261114T124014-1338a1/document_artifacts/image_000026_86679d4e38f39f5419f20d80964a32ce3de8df3f0662e0d1659c361d25ffa282.png -->
 
 &amp;
 
@@ -24338,39 +23420,16 @@ Intervallic distance from cantus firmus to counterpoint:
 - & ∑ (b) "Perfect" consonances (unisons, 5ths, 8ves, 12ths) may only be ap- proached in contrary motion in order to avoid direct 5ths and direct 8ves.
 - (c) Do not repeat notes across barlines
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 401](<MusicTheory.pdf#page=401>)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- PDF-Seiten 411–420 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document.md -->
 
-![PDF-Seite 401](<document_artifacts/page_000401_da527935d1489a6bf3ad843296a6a27d02cefde7fc3b6450fc12f160290ddb37.png>)
-
-![PDF-Seite 402](<document_artifacts/page_000402_9783ce48a62d73b7bbec227bb81d54f67bbac334adc78afe69b20e9b7dfe1867.png>)
-
-![PDF-Seite 403](<document_artifacts/page_000403_692e1a90ad38d038257e5d98fe9e449c0e759b28891a9cace06bf1e8663cf5e3.png>)
-
-![PDF-Seite 404](<document_artifacts/page_000404_abf481dbf005e3c32dfa2ed17cae64d95b32698bfddcf00022ef83f97421e3a0.png>)
-
-![PDF-Seite 405](<document_artifacts/page_000405_5a7550e08f9303b1c432908fc768c78376bb8598b4f5c231c8239c7069c2d5e0.png>)
-
-![PDF-Seite 406](<document_artifacts/page_000406_08eafe7b872efe90e2ceb5a8a4ff78bd94e1a3eafcf779b09a678b9f0988af31.png>)
-
-![PDF-Seite 407](<document_artifacts/page_000407_a25a951e3d8b4c1fbba1da7afe6a4ae5e06a3ddfd4b84209c7d20a06f7403033.png>)
-
-![PDF-Seite 408](<document_artifacts/page_000408_982eefff4bd5f46f0deec369c37f6332441088b5c7c0333976d4e307f0a66671.png>)
-
-![PDF-Seite 409](<document_artifacts/page_000409_4725af17a398365861e36def05d9706c1c7d3bcd089637729822da1358142f61.png>)
-
-![PDF-Seite 410](<document_artifacts/page_000410_43dae1551cd2010b0631f2e15f17869825fed08a0a156f8fd418ac116fbea9b4.png>)
-
-
-[Original-PDF, Seite 401](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=401>)
-
-<!-- PDF-Seiten 411–420 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000000_ad652a912c50feaa50ced99bebddc1034379adf20e0c7974aae638ae53096b36.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000000_ad652a912c50feaa50ced99bebddc1034379adf20e0c7974aae638ae53096b36.png -->
 
 Go to Third Species Practice Exercises.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000001_66f7aea2175be4ac6c2f65c92375683b9a93c259ead411e9cc04a378a56ede85.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000001_66f7aea2175be4ac6c2f65c92375683b9a93c259ead411e9cc04a378a56ede85.png -->
 
 ## 30.5 Fourth Species Counterpoint
 
@@ -24384,7 +23443,7 @@ Fourth species deals with writing suspensions (and syncopations). Because this i
 6. (a) Allowable suspensions in the upper part are 4-3 and 7-6; 9-8 and 2-1 are not allowed.
 6. If the half note after the tie is a consonance (1, 3, 5, 6, 8), it is a syncopation and can be left in any manner (by step or leap in any direction).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000002_987ddb0e52c12886ab33047f115709946bd9b8750cde8525e4f686e4ba9aa5f2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000002_987ddb0e52c12886ab33047f115709946bd9b8750cde8525e4f686e4ba9aa5f2.png -->
 
 ## 30.7 Invention Expositions
 
@@ -24394,9 +23453,9 @@ J.S. Bach's Two-Part Inventions were not only intended as instructional keyboard
 
 does not emphasize V chord In the majority of examples, you will be given an invention theme in the first measure, which you will write an octave lower in the bass part in the second measure, then a perfect fifth higher than the first measure in the third measure, the fourth measure will be the third measure transposed down one octave, and, finally, you will end on the interval of a 10th-tonic in the bass part and ˆ3 in the upper part. Please see the example below.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000003_b3db1af28179c047590e91847b0bafa063c2096174e204f07264c27dbc68f371.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000003_b3db1af28179c047590e91847b0bafa063c2096174e204f07264c27dbc68f371.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000004_8b2f98b99837ac90259f4464d122822020fead82c3a33b70c7fe8c571c16cfd3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000004_8b2f98b99837ac90259f4464d122822020fead82c3a33b70c7fe8c571c16cfd3.png -->
 
 402
 
@@ -24416,11 +23475,11 @@ I
 
 CHAPTER 30. INTRODUCTION TO COUNTERPOINT
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000005_cf388739693633ff0ff9b7bede34e40b40709253cfb17f76a6a43ca728a65877.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000005_cf388739693633ff0ff9b7bede34e40b40709253cfb17f76a6a43ca728a65877.png -->
 
 Figure 30.7.4: Microharmonies in the C Major Invention by J.S. Bach
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000006_fcf011807152ca4b752a8d22dd45e7478854505218bcc9b5add50c53c4a86353.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000006_fcf011807152ca4b752a8d22dd45e7478854505218bcc9b5add50c53c4a86353.png -->
 
 Given these pieces of information, you are prepared to begin writing tonal counterpoint in two parts.
 
@@ -24446,7 +23505,7 @@ the subject at least once. It is important to note that a response is considered
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ? b b · A countersubject is counterpoint that consistently accompanies each                                                                                                                               |
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000007_180decb371889351cd672e3f85648bc57dcc268a3307665915f1c07da4f345f4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000007_180decb371889351cd672e3f85648bc57dcc268a3307665915f1c07da4f345f4.png -->
 
 ?
 
@@ -24462,17 +23521,17 @@ Within the bridge (bar 5 in the example above), we see motivic fragmentation of 
 
 Figure 30.8.2: First Episode of Fugue 2 in C minor from WellTempered Clavier, Book I (BWV 847)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000008_7e8300348bdc2f1bf146cb79c21b5b6618f87f81918225f12e268ccfc55127fa.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000008_7e8300348bdc2f1bf146cb79c21b5b6618f87f81918225f12e268ccfc55127fa.png -->
 
 Below are the second exposition, the second episode, the third exposition, and the third episode.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000009_62b6b0239e626368a638bc869b912b5f3d9631823a7fa7831c470e12c372f648.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000009_62b6b0239e626368a638bc869b912b5f3d9631823a7fa7831c470e12c372f648.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000010_da0a5768e97266decc182cf4706ebebfa735f262654637569438e745146cc358.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000010_da0a5768e97266decc182cf4706ebebfa735f262654637569438e745146cc358.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000011_16ee211eff8184b4cbff703cec219169655dddf07d48cb8d32baab9c2bd9e688.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000011_16ee211eff8184b4cbff703cec219169655dddf07d48cb8d32baab9c2bd9e688.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000012_55308b56ddc7ef5c8d32eae9b025048c5633a7e4a24dcd9053d744fbe13c411b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00411-00420/try-20261114T124036-b5e15e/document_artifacts/image_000012_55308b56ddc7ef5c8d32eae9b025048c5633a7e4a24dcd9053d744fbe13c411b.png -->
 
 195
 
@@ -24763,33 +23822,10 @@ Below are the second exposition, the second episode, the third exposition, and t
 - œ œ œ œ œ œ œ ‰ j
 - n œ œ œ œ œ ‰ œ
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 411](<MusicTheory.pdf#page=411>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 411](<document_artifacts/page_000411_b5433bad577d456a1be93ab67ccbb0d99f73557bf19320ced51c4376ee553227.png>)
-
-![PDF-Seite 412](<document_artifacts/page_000412_07208d213edd41083bbc0a9d12a0c8f755e72de3477542bab5d4862708ac5406.png>)
-
-![PDF-Seite 413](<document_artifacts/page_000413_604cb43ac069fbb4c742e96fdd2f7efb69e0414ea596c75dde9e4461b64c4733.png>)
-
-![PDF-Seite 414](<document_artifacts/page_000414_45f0a4089e7e973229739b0375cd7c9fff52f94732cd5a1ef96a7104ce47e9bf.png>)
-
-![PDF-Seite 415](<document_artifacts/page_000415_32608678d6e93a920cc40af8f3ca7334b9e5b7948533243dfffe50fe130892e7.png>)
-
-![PDF-Seite 416](<document_artifacts/page_000416_ace1db88d8d5fa68166ed423fc5cd1b6097f86308716ab73eed7c16283680d95.png>)
-
-![PDF-Seite 417](<document_artifacts/page_000417_5ff4f1a3bb5ae682c6c70a99a5e422741ef5e0c5b6a47eaac546f506a250204a.png>)
-
-![PDF-Seite 418](<document_artifacts/page_000418_a9b618f68ada0bd9b4c4522f2535daf32f91e23a0ca5889c45e7cc288b33e982.png>)
-
-![PDF-Seite 419](<document_artifacts/page_000419_ce968ebaa7084792efb30c45b10ebdea55178439db90285360a59d0dae5ecd95.png>)
-
-![PDF-Seite 420](<document_artifacts/page_000420_28f28921f7fdbc7da7ae4574d2b0ffbdda27c12567ca2def3e9303e07a938748.png>)
-
-
-[Original-PDF, Seite 411](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=411>)
-
-<!-- PDF-Seiten 421–430 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document.md -->
+<!-- PDF-Seiten 421–430 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document.md -->
 
 C. S. 1 HEAD C. S. 1 HEAD C. S. 1 HEAD C. S. 1 HEAD
 
@@ -24813,7 +23849,7 @@ C. S. 1 HEAD INV
 
 407
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000000_9934ba6e35259ec224e1ea085b508461bbefd9604460e332d3c74128ccce1828.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000000_9934ba6e35259ec224e1ea085b508461bbefd9604460e332d3c74128ccce1828.png -->
 
 ?
 
@@ -24831,7 +23867,7 @@ In homework and on the test, you will be asked to analyze a fugue with regard to
 
 c.f.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000001_3500d52bbb9cad776bfabc2a74db07b72dfa8f99ffb61c974cd639c5234ff8ad.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000001_3500d52bbb9cad776bfabc2a74db07b72dfa8f99ffb61c974cd639c5234ff8ad.png -->
 
 c.f.
 
@@ -24855,7 +23891,7 @@ w w w w w w w w w
 
 ?
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000002_ff9536ce63c71e44481d728f0efb575dd8362cbd5a163ac677fcd782deaecfb5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000002_ff9536ce63c71e44481d728f0efb575dd8362cbd5a163ac677fcd782deaecfb5.png -->
 
 4 4
 
@@ -24863,7 +23899,7 @@ Species Counterpoint: Day Two
 
 410
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000003_dd8770f1a57ecf1243cd66a23e39cdfd847919a2340ebc783a6c59d65dc44323.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000003_dd8770f1a57ecf1243cd66a23e39cdfd847919a2340ebc783a6c59d65dc44323.png -->
 
 ?
 
@@ -24879,7 +23915,7 @@ Int: \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ 
 
 c.f.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000004_2fa73b3679485dcb32d2ca2866e5942a55705081a656010d4232ab7fef7fe1ce.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000004_2fa73b3679485dcb32d2ca2866e5942a55705081a656010d4232ab7fef7fe1ce.png -->
 
 suspensions with "sus" and syncopations with "sync.
 
@@ -24897,7 +23933,7 @@ Intervals: \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_
 
 c.f.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000005_6496f80ffc46802bdca4cd7adb1d7f71a83fcbdc5bb564c95a6b9f809837cdb4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000005_6496f80ffc46802bdca4cd7adb1d7f71a83fcbdc5bb564c95a6b9f809837cdb4.png -->
 
 c.f.
 
@@ -24909,27 +23945,9 @@ Intervals: \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_
 
 Intervals: \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000006_5e6aada569a11a7bdca067b0fde2006c87e4bbef3c3912312392220bf5cf4138.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000006_5e6aada569a11a7bdca067b0fde2006c87e4bbef3c3912312392220bf5cf4138.png -->
 
 Intervals: \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_
-
-c.f.
-
-c.f.
-
-c.f.
-
-c.f.
-
-Intervals: \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_
-
-Intervals: \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_
-
-Intervals: \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_
-
-Intervals: \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000007_f857f553cc83c4bafb3d44a70a7a8fe3a6184c3c26737849367a8ab9a2483c80.png -->
 
 c.f.
 
@@ -24947,7 +23965,25 @@ Intervals: \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_
 
 Intervals: \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000008_0a709d9285eef6d80ef30e08684d81aa577ceaead8834ce33de747d1ac158699.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000007_f857f553cc83c4bafb3d44a70a7a8fe3a6184c3c26737849367a8ab9a2483c80.png -->
+
+c.f.
+
+c.f.
+
+c.f.
+
+c.f.
+
+Intervals: \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_
+
+Intervals: \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_
+
+Intervals: \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_
+
+Intervals: \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_ \_\_
+
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000008_0a709d9285eef6d80ef30e08684d81aa577ceaead8834ce33de747d1ac158699.png -->
 
 c.f.
 
@@ -24967,7 +24003,7 @@ Invention Expositions
 
 5. Complete these invention expositions by following the I-I-V-V-I har- Fugue Analysis
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000009_25001ade97a144261f159367670ae992f38783658e96feeb18834f4b955eb658.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000009_25001ade97a144261f159367670ae992f38783658e96feeb18834f4b955eb658.png -->
 
 6. For this fugue from the second Kyrie eleison of Bach's Mass in B
 
@@ -24981,7 +24017,7 @@ contains more "counterpoint" (material not derived for subjects or
 
 countersubjects) than the C minor fugue in the body of the text.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000010_c67777a2d7bb14730217dfecfa67468d8d4ba93ab1dba7fe2b9a4d728ac8f4f9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00421-00430/try-20261114T124059-6cde02/document_artifacts/image_000010_c67777a2d7bb14730217dfecfa67468d8d4ba93ab1dba7fe2b9a4d728ac8f4f9.png -->
 
 Click here to download the first homework assignment for this chapter. Click here to download the second homework assignment for this chapter. Click here to download the third homework assignment for this chapter. Click here to download the fourth homework assignment for this chapter. Click here to download the fifth homework assignment for this chapter. Click here to download the Unit 10 Practice Test.
 
@@ -25051,33 +24087,10 @@ Click here to download the first homework assignment for this chapter. Click her
 - son, Ky ri e
 - ˙ Ó ∑
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 421](<MusicTheory.pdf#page=421>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 421](<document_artifacts/page_000421_7313442613de6c6dee3282534702c609912cab0c7183276c28591f011a9d75dc.png>)
-
-![PDF-Seite 422](<document_artifacts/page_000422_ce4790016f4ee57494ff1045e2e3fdfa26c1b5b4078355f0044d564ddcecd8d6.png>)
-
-![PDF-Seite 423](<document_artifacts/page_000423_157853bdc44f0b4c2ca4fe22d601f692050a837b53eeb7d3473ac3b6d78639d2.png>)
-
-![PDF-Seite 424](<document_artifacts/page_000424_0e3a20f380c85e3ff0398446c7c56077215735a56c5ee5fd81fe75dccb4efd60.png>)
-
-![PDF-Seite 425](<document_artifacts/page_000425_9576511c07a7ad9252b6e24ea5a56b9f49ac6aa5994858d9d230984fae72afe7.png>)
-
-![PDF-Seite 426](<document_artifacts/page_000426_0ff468c67a7831e9759d62f7ce054e480d34a00675fee384aa50c146dfa65ea5.png>)
-
-![PDF-Seite 427](<document_artifacts/page_000427_d63718661e098681d4f804c0fbf91c18730e1efd49cd54cf8bdbc426ba9311f5.png>)
-
-![PDF-Seite 428](<document_artifacts/page_000428_9b2f22a4534d656068acf48e36066caa210b40da9f30751324bce679a2873680.png>)
-
-![PDF-Seite 429](<document_artifacts/page_000429_46322b31f0b7a02d303fd5efb02911dec863afdd419aca9a85add750c4b5db65.png>)
-
-![PDF-Seite 430](<document_artifacts/page_000430_41171f3b9d477c05258b1170a6f1d125703eae104b1b9186daa66f1387c5b383.png>)
-
-
-[Original-PDF, Seite 421](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=421>)
-
-<!-- PDF-Seiten 431–440 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document.md -->
+<!-- PDF-Seiten 431–440 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document.md -->
 
 44
 
@@ -25098,7 +24111,7 @@ i. The ø7 chord is also labeled as m7 (25) in jazz-C ø7 is the same
 
 as Cm7 (25).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000000_af4db4e9ae36b9de7e6310e62e2d306d113d9c187fa21151858afe4274b1752d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000000_af4db4e9ae36b9de7e6310e62e2d306d113d9c187fa21151858afe4274b1752d.png -->
 
 949
 
@@ -25116,13 +24129,13 @@ or A¯7( ˜ 11)
 
 Ebmaj9(#5) Bb7#9(#5)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000001_3d64934ab33229b1ca473b196342320ce2c66a147badf41f53b5994d15660eef.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000001_3d64934ab33229b1ca473b196342320ce2c66a147badf41f53b5994d15660eef.png -->
 
 or
 
 945
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000002_21350bdd2bd3188d214490380913ab50a6168d76b8ebbfb2923275b3fa68ae11.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000002_21350bdd2bd3188d214490380913ab50a6168d76b8ebbfb2923275b3fa68ae11.png -->
 
 ## 31.3 Altered Dominant Seventh Chords
 
@@ -25141,7 +24154,7 @@ unaltered 5th occurs in the chord, while 45 does not.
 
 6 If you are composing or arranging and want to know when to use altered chords, know that dominant sevenths are usually altered (with altered 5th or
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000003_94312c53dd19af269acb6ae691e0aaa3e9a468e324faf21fc7dbcfbe983d6740.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000003_94312c53dd19af269acb6ae691e0aaa3e9a468e324faf21fc7dbcfbe983d6740.png -->
 
 9th or both) when they have dominant function (i.e., when the root is going
 
@@ -25155,11 +24168,11 @@ have tonic function, i.e., the first chord in a blues.
 
 ## 31.4 Chord Labels
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000004_12e02dc090a79f5cdf2f017defdd7d70bfeb7ddf2bc696610eac9fe5584cdfc2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000004_12e02dc090a79f5cdf2f017defdd7d70bfeb7ddf2bc696610eac9fe5584cdfc2.png -->
 
 45
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000005_70afd0acf970545c23d8f91ed0d4d64ae9ea28e9287352c56da9eb958fd4c248.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000005_70afd0acf970545c23d8f91ed0d4d64ae9ea28e9287352c56da9eb958fd4c248.png -->
 
 To write a jazz chord after being given a lead-sheet symbol, begin with all of the major notes up to the 13th.
 
@@ -25175,7 +24188,7 @@ F4
 
 sightread.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000006_caebeb2ccbb74cb0d596e853dc66b98c6f4d0f91cb7d5e818884baada6be1f7c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000006_caebeb2ccbb74cb0d596e853dc66b98c6f4d0f91cb7d5e818884baada6be1f7c.png -->
 
 3. Any alterations to any of the chord members
 4. If any of the notes are enharmonically respelled
@@ -25184,7 +24197,7 @@ sightread.
 
 46
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000007_8651a11073b2129896479c0dff2b6d10621860bfde31d0ad42a7503b3b10aad9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000007_8651a11073b2129896479c0dff2b6d10621860bfde31d0ad42a7503b3b10aad9.png -->
 
 We notice we don't have an A, and we remember that we might have a sus chord where the 4 (or sus4) substitutes for the 3rd. We see we have a B2 , which confirms this. We also do not see a C, but we remember that it is common to omit the 5th in a chord (see Incomplete Chords). Therefore we have F-B2-E2 , making an F7sus chord. When we examine for upper structure notes (the 9, 11, and 13), we find a G2 (the 29 of the chord) and a D (the 13). Remember, the B2 is the sus (the 4th), not the 11th, because we have no 3rd (see 11 versus Sus).
 
@@ -25202,15 +24215,15 @@ the 11th because "sus" and 11 refer the same note (B2).
 
 "29" means the 9th is
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000008_608375adefd72dc4a20eed45da50719f8e29d486d63f0e599ee4166c7845b777.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000008_608375adefd72dc4a20eed45da50719f8e29d486d63f0e599ee4166c7845b777.png -->
 
 35
 
 37
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000009_be40266b737b29645a8416e05b30ca34b6dfe6c6e2ff17914afbc9a4d5c38359.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000009_be40266b737b29645a8416e05b30ca34b6dfe6c6e2ff17914afbc9a4d5c38359.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000010_65012a4ee8d818b9a2a9e896f7cc42fcd9b721fe5d041d8de73050aa5b6f4907.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000010_65012a4ee8d818b9a2a9e896f7cc42fcd9b721fe5d041d8de73050aa5b6f4907.png -->
 
 ## 31.7.2 Jazz Chord Voicings
 
@@ -25241,15 +24254,15 @@ C 9(13)
 
 7th (like C 6 or C 69 ). In those cases, voice the sus4 like you would the 3rd, and
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000011_52c1f116b1a6df2d1c5c3001905bcca70c7d7a91e347cc50551adc16c2b25ff0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000011_52c1f116b1a6df2d1c5c3001905bcca70c7d7a91e347cc50551adc16c2b25ff0.png -->
 
 likewise voice the 6th as you would the 7th.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000012_f0ffa03adc19199c219d416a93507b99cc91f2c4a5fcf6dbdfc287cd678edcab.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000012_f0ffa03adc19199c219d416a93507b99cc91f2c4a5fcf6dbdfc287cd678edcab.png -->
 
 &amp;
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000013_d1c5c1cf2ff2a242e3634dfbdaaa286741b6bb01252cea8281c5b5a2a10a3063.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000013_d1c5c1cf2ff2a242e3634dfbdaaa286741b6bb01252cea8281c5b5a2a10a3063.png -->
 
 63
 
@@ -25259,7 +24272,7 @@ likewise voice the 6th as you would the 7th.
 
 &amp;
 
-| 63 &amp; ? The II-V-I is one of most common progressions in jazz, especially in tunes like "Autumn Leaves, " "What Is This Thing Called Love, " "Tune-Up, " "Pent Up House, " "Lady Bird, " and "Firm Roots, " to name just a few. In major the progression is Dmin9-G9(13)-C∆9. In minor it is Dmin7(25)-G7alt-Cm 69 .  <!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000014_b7d156ca4b923f56f3b5fb22cd1d78d20f2f95bfa96e7ca7a239d629f3f20f1a.png -->   |
+| 63 &amp; ? The II-V-I is one of most common progressions in jazz, especially in tunes like "Autumn Leaves, " "What Is This Thing Called Love, " "Tune-Up, " "Pent Up House, " "Lady Bird, " and "Firm Roots, " to name just a few. In major the progression is Dmin9-G9(13)-C∆9. In minor it is Dmin7(25)-G7alt-Cm 69 .  <!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000014_b7d156ca4b923f56f3b5fb22cd1d78d20f2f95bfa96e7ca7a239d629f3f20f1a.png -->   |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 71
@@ -25276,7 +24289,7 @@ likewise voice the 6th as you would the 7th.
 
 Figure 31.8.3: The III-VI-II-V Progression in Major and shown with Tritone Substitutions
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000015_7c5481b463a8283a3e1f5e4471a054fe180e69968a82909960a62d6663eb0687.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00431-00440/try-20261114T124121-62de3d/document_artifacts/image_000015_7c5481b463a8283a3e1f5e4471a054fe180e69968a82909960a62d6663eb0687.png -->
 
 Because of tritone substitutions, the 2II 7 chord can be substituted for V 7 . In C, D29(13) is often substituted for G7 ( 49 45 ) ).
 
@@ -25611,33 +24624,10 @@ Because of tritone substitutions, the 2II 7 chord can be substituted for V 7 . I
 - I 7 ¯III 7
 - II 7 ¯II 7
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 431](<MusicTheory.pdf#page=431>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 431](<document_artifacts/page_000431_f65cd7b96b9c008ac411dd910dd513e8d0d1f79093c5ebd2adae465ca39a4ecd.png>)
-
-![PDF-Seite 432](<document_artifacts/page_000432_bb3df6911c6da9d4dae00f9acf1ad5b94128b6725e8502e270e9da55068149b7.png>)
-
-![PDF-Seite 433](<document_artifacts/page_000433_cc77ed19f28f762bf835e0edd4eedd94148109438888eb4be68a255b82904baf.png>)
-
-![PDF-Seite 434](<document_artifacts/page_000434_d66df017b23dbeec14ae8ea1a12403757247622e4902138773eadcc4c85f6b34.png>)
-
-![PDF-Seite 435](<document_artifacts/page_000435_17ee123ddab5bf54ab350697d815c54fe4303b98e5af2b2a001874b3f072b64e.png>)
-
-![PDF-Seite 436](<document_artifacts/page_000436_437b5dc1f777cd2eea7083a011c4ab1e50c17bb43c8d53dac3a02876582924ca.png>)
-
-![PDF-Seite 437](<document_artifacts/page_000437_2187a0fe6dbd7798b0b9f40c389274479d8e8ec5f749b68f074710ee9d43d5fe.png>)
-
-![PDF-Seite 438](<document_artifacts/page_000438_1c3efb68d8cdb234419bd1761aa2184faee8a829b9fdca56f76036eb5c355cf2.png>)
-
-![PDF-Seite 439](<document_artifacts/page_000439_357cd467b78259e0d65ef8040b07e0cdaf729df1911a366935b85242f27c1041.png>)
-
-![PDF-Seite 440](<document_artifacts/page_000440_ed67914b4971c48c12c6a3303dec199307132e3e4998e3ffd3d0dfc471d8089b.png>)
-
-
-[Original-PDF, Seite 431](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=431>)
-
-<!-- PDF-Seiten 441–450 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document.md -->
+<!-- PDF-Seiten 441–450 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document.md -->
 
 74
 
@@ -25647,7 +24637,7 @@ Because of tritone substitutions, the 2II 7 chord can be substituted for V 7 . I
 
 55
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000000_b55e0f8317c8ddabc6c96be738d48fc94d52bb55175ec4e670d863d8e4a9fdf5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000000_b55e0f8317c8ddabc6c96be738d48fc94d52bb55175ec4e670d863d8e4a9fdf5.png -->
 
 2nd phrase
 
@@ -25657,7 +24647,7 @@ Because of tritone substitutions, the 2II 7 chord can be substituted for V 7 . I
 
 ?
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000001_b9e319bf71a234cfa57974deb6994e129991cd9565cea2e855a92cf7edad6b05.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000001_b9e319bf71a234cfa57974deb6994e129991cd9565cea2e855a92cf7edad6b05.png -->
 
 In the blues scale, the 2ˆ5 and 2ˆ3 are considered to be "blue notes" because they are not chord tones (of a major triad or dominant 7th chord). Blue notes
 
@@ -25667,7 +24657,7 @@ In the blues scale, the 2ˆ5 and 2ˆ3 are considered to be "blue notes" because 
 
 Figure 31.9.3: Descending C Bebop Scale starting on Root, then 3rd, then 5th, then 7th
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000002_fea32f7e89b4df1d0986f64974e8e45886a613ebf53fe8888cda395462305a41.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000002_fea32f7e89b4df1d0986f64974e8e45886a613ebf53fe8888cda395462305a41.png -->
 
 ## 31.9.3 Table of Scales
 
@@ -25692,15 +24682,15 @@ In the example below, we determine the scale that best fits G∆7 (411) by doing
 
 Figure 31.10.1: How to Determine a Scale for a Chord
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000003_dbe42470a1cc3b1b3bd52ab0b0affe9b55aa06a8a61d7dc595b1e397e8e22075.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000003_dbe42470a1cc3b1b3bd52ab0b0affe9b55aa06a8a61d7dc595b1e397e8e22075.png -->
 
 The G Lydian scale is the most correct scale to play over G∆7 (411).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000004_cf01233ad3657ef6575d93ea818a4ca2624ec6c0dfd1e4cec3a5f87b32785407.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000004_cf01233ad3657ef6575d93ea818a4ca2624ec6c0dfd1e4cec3a5f87b32785407.png -->
 
 Principle 31.10.2 Determining Chord-Scale Relationships. When constructing the scale, avoid augmented seconds and consecutive half-steps
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000005_677caef4eb1c40caac6c8d4ca4e92d86640910a4b9d92e63e8d6fdb5fc80a877.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000005_677caef4eb1c40caac6c8d4ca4e92d86640910a4b9d92e63e8d6fdb5fc80a877.png -->
 
 Below is a list of common chord-scale relationships. When there are two scales listed for a single chord, it is because the chord has a minor third that can be filled with half-step then whole-step or whole-step then half-step. This
 
@@ -25740,21 +24730,21 @@ b
 
 49
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000006_497abe591c08d4460a18ff0227b55661c52fb133c37e99d521914fc7da5b84bc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000006_497abe591c08d4460a18ff0227b55661c52fb133c37e99d521914fc7da5b84bc.png -->
 
 œœ
 
 Figure 31.11.2: Four-Part Harmonization of the Bebop Scale in Minor
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000007_fd6378031fdb3cccf78d02206be61e2ee7b1b49f42747be63b8b2de53c95fd25.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000007_fd6378031fdb3cccf78d02206be61e2ee7b1b49f42747be63b8b2de53c95fd25.png -->
 
 One hears a similar approach to harmonizing a scale (though without the fully-diminished seventh chords as passing chords) in the following example.
 
 YT: tnLK5lMY97s
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000008_9cd844f5db23392c40550906c23533b8e5f1d03797b459636197774d53206f51.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000008_9cd844f5db23392c40550906c23533b8e5f1d03797b459636197774d53206f51.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000009_2ca3618350261f55d70d64f25169315ae70adb98a870e868774567e9d3bd18ed.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000009_2ca3618350261f55d70d64f25169315ae70adb98a870e868774567e9d3bd18ed.png -->
 
 Figure 31.11.3: Count Basie and His Orchestra, "London Bridge is Falling Down"
 
@@ -25782,11 +24772,11 @@ Jazz Theory: Day Two
 
 47
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000010_193c50ec6dc2f8cef9108933a372a97a9e1205f475373842595f1faf939d1736.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000010_193c50ec6dc2f8cef9108933a372a97a9e1205f475373842595f1faf939d1736.png -->
 
 434
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000011_46b49762d568bc11b9432efa54ff8287194573057c1ae70cd8cfa16f95d2e9c5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000011_46b49762d568bc11b9432efa54ff8287194573057c1ae70cd8cfa16f95d2e9c5.png -->
 
 A7 # 9
 
@@ -25810,7 +24800,7 @@ Jazz Theory: Day Four
 
 # œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000012_e5b107f5679bc14e8e1f16f1acba9042754ad8ce56c068665fdea7d85049d1e7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00441-00450/try-20261114T124141-890fb0/document_artifacts/image_000012_e5b107f5679bc14e8e1f16f1acba9042754ad8ce56c068665fdea7d85049d1e7.png -->
 
 œ
 
@@ -26147,33 +25137,10 @@ Click here to download the Unit 11 Practice Test.
 - 4. E¯ Octatonic (Whole-Half)
 - Jazz Theory: Day Five
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 441](<MusicTheory.pdf#page=441>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 441](<document_artifacts/page_000441_e14d77616796e3c5c9166f8efdeaafc11c11ab6b9f8feecc38c01de8a4f62a0b.png>)
-
-![PDF-Seite 442](<document_artifacts/page_000442_6257c7fccc9a35d2f4280d3470f903f94fe264a6d9511c79f73fe5d67c4ae0cb.png>)
-
-![PDF-Seite 443](<document_artifacts/page_000443_7481354927a1e0f5d5ca5bc9643d2960a6edecb55b0e47454edd0b8efa1ed949.png>)
-
-![PDF-Seite 444](<document_artifacts/page_000444_80f7a8839246f808a478c918e0863ae747d2b141690b2d5ae7fc4ea11514b83a.png>)
-
-![PDF-Seite 445](<document_artifacts/page_000445_bcc863b4f996175583700c269c70d25bebf8e7b010b350256610b13e547acdf0.png>)
-
-![PDF-Seite 446](<document_artifacts/page_000446_d31b70dd5a163bdae8721246ca985db0237aaa9aeecef9e99f71953525fa4d10.png>)
-
-![PDF-Seite 447](<document_artifacts/page_000447_6d68dfb1feb57fe624c6655604b8a77f5710bdf205ecde6ef1d12a5b2cddc0c7.png>)
-
-![PDF-Seite 448](<document_artifacts/page_000448_da9bbbd3741cff7e7d0d8c37311714b99c5cf773e792c736c03e32788ee81bb3.png>)
-
-![PDF-Seite 449](<document_artifacts/page_000449_4947cea87b683cc0d9b29df475c27dd5344e2688353200d3cdb4137a8be8b135.png>)
-
-![PDF-Seite 450](<document_artifacts/page_000450_c5ddb4e13b90c2a31f35fc89ed1499e5154c702c523250728191a9ae21e9f6d8.png>)
-
-
-[Original-PDF, Seite 441](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=441>)
-
-<!-- PDF-Seiten 451–460 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document.md -->
+<!-- PDF-Seiten 451–460 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document.md -->
 
 93
 
@@ -26191,7 +25158,7 @@ Impressionism and Extended
 
 E7 # 9
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000000_f419052eadab35b40f9287af6b506f281509f673902406916790f3875aaee80b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000000_f419052eadab35b40f9287af6b506f281509f673902406916790f3875aaee80b.png -->
 
 437
 
@@ -26199,11 +25166,11 @@ E7 # 9
 
 Figure 32.1.2: Debussy, Danses, II. Danse profane
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000001_8c2a49348bf0027cd4091d2374e20e2eeb1e778f1f40ac8f0ddc37981b8d350e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000001_8c2a49348bf0027cd4091d2374e20e2eeb1e778f1f40ac8f0ddc37981b8d350e.png -->
 
 (c) The first movement of Ravel's Piano Trio Ravel begins in the Dorian
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000002_ef2b46d5c5e319d5bd84ece8eb56ca969b4c30814c8c00cfed5ed2925d3a2fe6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000002_ef2b46d5c5e319d5bd84ece8eb56ca969b4c30814c8c00cfed5ed2925d3a2fe6.png -->
 
 106
 
@@ -26213,19 +25180,19 @@ Figure 32.1.2: Debussy, Danses, II. Danse profane
 
 108
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000003_656bc8a1fe8104f69fdc617c96d771436100fc1c61cdd8146387c30afe7f6040.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000003_656bc8a1fe8104f69fdc617c96d771436100fc1c61cdd8146387c30afe7f6040.png -->
 
 205
 
 Figure 32.1.7: Debussy, Préludes, Book II, No. 3, La Puerto del Vino
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000004_0ce6dca49352938d6c0d52366cdf9bd20bd34b0b8256c7b80308bf88b68f9fb3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000004_0ce6dca49352938d6c0d52366cdf9bd20bd34b0b8256c7b80308bf88b68f9fb3.png -->
 
 3. Use of parallelism (also known as "planing"). In contrast to the prohibition against parallel fifths and octaves in traditional voice leading, both Debussy and Ravel would take a chord voicing and move all voices in parallel motion.
 2. (a) In Pavane pour une infante défunte, Ravel writes dominant 9th chords in parallel motion in bar 27.
 3. (b) At 5 bars after rehearsal number 5 in Prelude to the Afternoon of a Faun, Debussy writes chromatically ascending dominant seventh chords.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000005_1d70275df341e39672a3da5c63ee48689d611178b0aa49f5e5c2add78ece496c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000005_1d70275df341e39672a3da5c63ee48689d611178b0aa49f5e5c2add78ece496c.png -->
 
 48
 
@@ -26255,7 +25222,7 @@ Figure 32.1.7: Debussy, Préludes, Book II, No. 3, La Puerto del Vino
 
 Figure 32.1.10: Debussy, Prelude to the Afternoon of a Faun
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000006_b335e9f52dfb7c57475f54ac27751052094060dc9811a0badcdee3baa9b9efda.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000006_b335e9f52dfb7c57475f54ac27751052094060dc9811a0badcdee3baa9b9efda.png -->
 
 ## 32.2 Pandiatonicism
 
@@ -26263,7 +25230,7 @@ Pandiatonicism refers to the use of all diatonic notes without the need for scal
 
 In the first example, notice how Stravinsky creates a wash of sound from the notes of the major scale.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000007_447acddf789fed38553e8ae86cc6df057f65309fca6d10a681742060eaa630e2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000007_447acddf789fed38553e8ae86cc6df057f65309fca6d10a681742060eaa630e2.png -->
 
 YouTube: https://www.youtube.com/watch?v=WVahuS9hk\_s
 
@@ -26271,7 +25238,7 @@ Figure 32.2.2: Copland, Appalachian Spring
 
 The third example is similar to the first, with Copland creating a wash of sound from the notes of the major scale, with no regard to the dissonant intervals occurring in counterpoint.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000008_bb3e230a815ee37e24116b0022882716af622b612a4ce4c66ab7e8b56b46bca8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000008_bb3e230a815ee37e24116b0022882716af622b612a4ce4c66ab7e8b56b46bca8.png -->
 
 YouTube: https://www.youtube.com/watch?v=WVahuS9hk\_s
 
@@ -26283,19 +25250,19 @@ Quartal harmony refers to chords stacked entirely (or mostly) in fourths. Quinta
 
 The next three examples demonstrate quartal harmony.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000009_fbd1a53d8d45faeebccd664418355fdbd287107ad4b1775498b85b4dc3a0405e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000009_fbd1a53d8d45faeebccd664418355fdbd287107ad4b1775498b85b4dc3a0405e.png -->
 
 YouTube: https://www.youtube.com/watch?v=m\_hMVzPT9f4
 
 Figure 32.3.1: Schoenberg, Chamber Symphony No. 1, Op. 9
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000010_7a8b78bc86e4c1910d570eda80b6639c03de5589d0b4635c1777a7ad221e1dc7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000010_7a8b78bc86e4c1910d570eda80b6639c03de5589d0b4635c1777a7ad221e1dc7.png -->
 
 YT: D5-bD372v5s
 
 Figure 32.3.2: John Parker, CHiPs Theme
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000011_2616817f1981b246c13155e66e5aed8c3874d5c926c963342f83fe757dfdb5e9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000011_2616817f1981b246c13155e66e5aed8c3874d5c926c963342f83fe757dfdb5e9.png -->
 
 YT: g0GxiL96i78
 
@@ -26303,9 +25270,9 @@ Figure 32.3.3: Merv Griffin and Julann Wright, Jeopardy! Theme
 
 The following is an extended example of quintal harmony.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000012_b2fd26033f6b4d982ae098e0b80bcfc8ee4c27736473ee630bf1ff21b1c57192.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000012_b2fd26033f6b4d982ae098e0b80bcfc8ee4c27736473ee630bf1ff21b1c57192.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000013_67198ac848265a1759ff61daf9df2b0b66e782fd33d51cac1be6b4ddd8a24929.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000013_67198ac848265a1759ff61daf9df2b0b66e782fd33d51cac1be6b4ddd8a24929.png -->
 
 YouTube: https://www.youtube.com/watch?v=IfOJCKN148M
 
@@ -26335,11 +25302,11 @@ E¯ 7
 
 F¯
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000014_de112aa3a3cb3ffe2221cca1d6ad39492ab8b20b6760e655f617b252ad4ba8d5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000014_de112aa3a3cb3ffe2221cca1d6ad39492ab8b20b6760e655f617b252ad4ba8d5.png -->
 
 121
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000015_d72be3138aa2fa9e5eaae4f112d62f5784857171250410c424f5d796ed692513.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000015_d72be3138aa2fa9e5eaae4f112d62f5784857171250410c424f5d796ed692513.png -->
 
 Figure 32.4.1: Stravinsky, Rite of Spring,
 
@@ -26347,13 +25314,13 @@ Figure 32.4.1: Stravinsky, Rite of Spring,
 
 "Dance of the Adolescents"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000016_c4fd0973d6aa4b07f15a9a27ad57b11bb1a393976b0a412f853bd30084b8de00.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000016_c4fd0973d6aa4b07f15a9a27ad57b11bb1a393976b0a412f853bd30084b8de00.png -->
 
 Polychords are notated using a horizontal line between the chords instead
 
 of a slash. (The slash was used for slash chords.)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000017_e6a11cf123747d306e598e0a39a0269e4c98214072051467f5ac5d853f439690.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000017_e6a11cf123747d306e598e0a39a0269e4c98214072051467f5ac5d853f439690.png -->
 
 Also note that it is not necessary to specify the inversion of each of the chords in the polychord.
 
@@ -26361,7 +25328,7 @@ In th example below, Copland voices an A major chord below an E major chord.
 
 445
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000018_11cb8ede8290bb7c1fbe6402c4cd24961c32cb82c59fd662403a3b4a230a4b52.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000018_11cb8ede8290bb7c1fbe6402c4cd24961c32cb82c59fd662403a3b4a230a4b52.png -->
 
 YouTube: https://www.youtube.com/watch?v=WVahuS9hk\_s
 
@@ -26369,7 +25336,7 @@ Figure 32.4.2: Copland, Appalachian Spring
 
 In the example below, features chromatically ascending dominant seventh chords in the left hand against a repeating three-chord cycle of G-F-C in the right hand.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000019_8dbcfc703b59aff7410a0aafde44a9cc8ce67c2f8b58a16b7b6277843585c144.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00451-00460/try-20261114T124204-5998fa/document_artifacts/image_000019_8dbcfc703b59aff7410a0aafde44a9cc8ce67c2f8b58a16b7b6277843585c144.png -->
 
 YouTube: https://www.youtube.com/watch?v=XkM4bKjggKo
 
@@ -26546,39 +25513,16 @@ Day One
 - images/video-449.jpg
 - images/video-450.jpg
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 451](<MusicTheory.pdf#page=451>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 451](<document_artifacts/page_000451_d1e322a0f96bb9b9ed80796c1ca1e8addf736879a282b480a31186956495f83c.png>)
-
-![PDF-Seite 452](<document_artifacts/page_000452_275b94048177d1645c36d1113dbef8c758491e9e17efbab83239307b97a14ecf.png>)
-
-![PDF-Seite 453](<document_artifacts/page_000453_ea0e5be591b470ee98e51cbb42c83b33908606d7f83486dcbdd2a0a983827820.png>)
-
-![PDF-Seite 454](<document_artifacts/page_000454_bd70c76c6c85fa6fa5551efe67d5de2d142dcfb23b66d1b79706a08914873cae.png>)
-
-![PDF-Seite 455](<document_artifacts/page_000455_0401271342904b2769115a5f980e121a3353093c46675fc3676747d32d764240.png>)
-
-![PDF-Seite 456](<document_artifacts/page_000456_6050aa04e24bfec510ed0a6d276d539a60fa19111c6c93bde0e036be09803fcb.png>)
-
-![PDF-Seite 457](<document_artifacts/page_000457_521a1cf9e5dd5e7da3081ce819d488537a6b997639b18512c6e6d01502f239df.png>)
-
-![PDF-Seite 458](<document_artifacts/page_000458_f94135ffda2986894a960caf88ddaf6b081e76bb143723cfb7b325d6ef9af025.png>)
-
-![PDF-Seite 459](<document_artifacts/page_000459_ab9d5251452157de1aaeae5f40a8d4e1a9bf2a19f28f8a7bc234685496738464.png>)
-
-![PDF-Seite 460](<document_artifacts/page_000460_8ec48e6c8a6a170ec7887967f18feffaaaf0b2871ab46d7633fb0c8d37450bbc.png>)
-
-
-[Original-PDF, Seite 451](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=451>)
-
-<!-- PDF-Seiten 461–470 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document.md -->
+<!-- PDF-Seiten 461–470 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document.md -->
 
 129
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000000_2014e967a93e286721cb1ed821e8e2bfbdb2e32cf5cef6e89f4ac31cec67458e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000000_2014e967a93e286721cb1ed821e8e2bfbdb2e32cf5cef6e89f4ac31cec67458e.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000001_4eaae8a893a63641e65a788fe59c9f8b227e21ad296d85ddfc6df9c932ec2d22.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000001_4eaae8a893a63641e65a788fe59c9f8b227e21ad296d85ddfc6df9c932ec2d22.png -->
 
 ## Chapter 33
 
@@ -26592,7 +25536,7 @@ Set theory is the analytical technique we will use to analyze expressionist musi
 
 Listen to the following example by Anton Webern.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000002_e1b1d913c88d173ee40fa3a634bdef5a9af6e2883fc29a0f14df419bcf833c9a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000002_e1b1d913c88d173ee40fa3a634bdef5a9af6e2883fc29a0f14df419bcf833c9a.png -->
 
 YouTube: https://www.youtube.com/watch?v=ELAKF8ZxDmg
 
@@ -26600,7 +25544,7 @@ Figure 33.1.1: Webern, 5 movements for string quartet, No. 3. Sehr bewegt
 
 1 Of the 208 sets that exist, only 6 are different between the Forte and Rahn methods for prime form. See https://www.mta.ca/pc-set/pc-setnew/pages/pc - table/packed.html.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000003_8103b6cfaf7a89ce23c40bfed09a7c63189dc4f3f8a7ddbadbdf175b949e51b3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000003_8103b6cfaf7a89ce23c40bfed09a7c63189dc4f3f8a7ddbadbdf175b949e51b3.png -->
 
 162
 
@@ -26610,7 +25554,7 @@ Gone are the triadic structures we have studied throughout this text. In
 
 this music, intervals are paramount. Let us examine the intervals we find.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000004_da10f0160fc6a5059c6c5f3eb9d696010d64cd29b0e2ba2271e03bdd6cf7369c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000004_da10f0160fc6a5059c6c5f3eb9d696010d64cd29b0e2ba2271e03bdd6cf7369c.png -->
 
 163 Look at the intervallic structure of the first two chords, 2 not including the C4 in the cello part. We see the interval of an augmented 5th below the interval of a minor 3rd in the first chord, and the interval of a minor sixth below the interval of a minor 3rd in the second chord. Notice that the names we use for intervals carry tonal implications. An augmented 5th would
 
@@ -26633,7 +25577,7 @@ We will also measure intervals using integers, with each interval represented by
 
 2 Some authors call atonal chords "sonorities" to differentiate them from chords in the traditional triadic sense; we will continue to use "chord" in this text.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000005_383a1bc0322fab088caa60f593dfff936b71109dfb0a05c9306b7974a882aa93.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000005_383a1bc0322fab088caa60f593dfff936b71109dfb0a05c9306b7974a882aa93.png -->
 
 m2
 
@@ -26659,7 +25603,7 @@ M6
 
 9
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000006_369402b2fb7a70235c5e0254f0f84b59f4fd0da2eb7239e47439eb9645f2bc7f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000006_369402b2fb7a70235c5e0254f0f84b59f4fd0da2eb7239e47439eb9645f2bc7f.png -->
 
 m3
 
@@ -26673,7 +25617,7 @@ b n œœ œ
 
 n b œœ œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000007_b11db1b66da7326fe43fdef09fa2d9521bd5394e220e99cc241e2a6c0ac6f61e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000007_b11db1b66da7326fe43fdef09fa2d9521bd5394e220e99cc241e2a6c0ac6f61e.png -->
 
 11
 
@@ -26689,7 +25633,7 @@ b n œœ œ
 
 8 semitones n b œœ œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000008_eb766424ba624ad114202d3e72a4bd66bfa895fa2214ad1e74702647e8d1ba4d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000008_eb766424ba624ad114202d3e72a4bd66bfa895fa2214ad1e74702647e8d1ba4d.png -->
 
 ?
 
@@ -26707,7 +25651,7 @@ semitones. The second chord has the same intervallic construction.
 
 Now, let's look at the two chords in the second half of the third measure.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000009_a0483ff67ce8d34d0f8852bff9016c7b2e1ecbb817bd2d74529f14a40324e773.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000009_a0483ff67ce8d34d0f8852bff9016c7b2e1ecbb817bd2d74529f14a40324e773.png -->
 
 ?
 
@@ -26729,7 +25673,7 @@ n
 
 7
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000010_06ee6ba8a7eef9121116e0e6242b7a535e18cfd71817914d238d893b3699ce54.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000010_06ee6ba8a7eef9121116e0e6242b7a535e18cfd71817914d238d893b3699ce54.png -->
 
 1 The Forte method for determining prime form would have measured from first to second note to break the tie instead of first to penultimate note, which is method used Rahn's Basic Atonal Theory.
 
@@ -26761,7 +25705,7 @@ general idea "dominant seventh chord.
 
 Ascending numeric order:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000011_8e4d2e377e402a0ba3dba375dea790fe5db3b4ca274ab2f5a8c07c246c51a626.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000011_8e4d2e377e402a0ba3dba375dea790fe5db3b4ca274ab2f5a8c07c246c51a626.png -->
 
 in music theory-many ideas are demonstrated in their relation to the C major
 
@@ -26773,9 +25717,9 @@ n&gt;
 
 .
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000012_8467e8d834c284d7da50c20d9d772ee9516e6d3f2302cf09e1348e84a2f24553.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000012_8467e8d834c284d7da50c20d9d772ee9516e6d3f2302cf09e1348e84a2f24553.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000013_e84f808f617817a8fc04eade445f0fdab4f4521586932ebb3d257be38367d557.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000013_e84f808f617817a8fc04eade445f0fdab4f4521586932ebb3d257be38367d557.png -->
 
 ## 33.3.1 Application of Normal Form and Prime Form
 
@@ -26809,7 +25753,7 @@ The first chord contained E2
 
 œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000014_b6934edce5a464dee37ed89c7a0ae88644669563e6d61787271c52da5723d274.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000014_b6934edce5a464dee37ed89c7a0ae88644669563e6d61787271c52da5723d274.png -->
 
 9
 
@@ -26851,7 +25795,7 @@ The prime form is (014).
 
 œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000015_7c3cc7154881d241510f5f19f5b8697d56a27613fcef412ee900289566df7e15.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000015_7c3cc7154881d241510f5f19f5b8697d56a27613fcef412ee900289566df7e15.png -->
 
 8
 
@@ -26957,7 +25901,7 @@ transposed to 0
 
 version of Normal Form version transposed to 0
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000016_305c25719382e5c7d9ece7182230bc644da4bedc090df07ffee09463090f4605.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000016_305c25719382e5c7d9ece7182230bc644da4bedc090df07ffee09463090f4605.png -->
 
 We see that the third set has the same prime form-(014)-as the other sets in the opening measures of Webern's Op 5, No. 3. Prime form can allow us to see relationships that may not be apparent on the surface of the music.
 
@@ -26967,7 +25911,7 @@ What about the C4 in the cello part? Should it be included with the three notes 
 
 Below, we examine the first two chords with the C4 included in each.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000017_5008b9520b891ae859a84cc5c4e08e4568538df61dd0b1ca9980ac4819807972.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000017_5008b9520b891ae859a84cc5c4e08e4568538df61dd0b1ca9980ac4819807972.png -->
 
 &amp;
 
@@ -26979,7 +25923,7 @@ b
 
 # œ œ œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000018_8b4de46741459b41c7af8e48ff10bbaa0ec8c5b2dc91ead13927e67fabcdb4b3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000018_8b4de46741459b41c7af8e48ff10bbaa0ec8c5b2dc91ead13927e67fabcdb4b3.png -->
 
 b œ œ
 
@@ -27016,7 +25960,7 @@ b b
 
 œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000019_8e248606d9d6330efa38988d086637d410efda6d30d0ea8c6e351a63876a9976.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00461-00470/try-20261114T124232-2e64a4/document_artifacts/image_000019_8e248606d9d6330efa38988d086637d410efda6d30d0ea8c6e351a63876a9976.png -->
 
 ? œ b œ # œ œ possible interval occurring in a pitch-class set. Calculating an interval vector is rather straightforward. First, after determing normal form, measure from the first note to all the other notes. Second, measure from the second note to all higher notes (not back or down to the first note). Continue measuring from each successive note to the notes following and you will have completed the interval vector.
 
@@ -27205,39 +26149,16 @@ Before demonstrating this, it is important to discuss the term "interval class. 
 - (0124).
 - An interval vector (also known as "Interval Class Content") is a list of every
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 461](<MusicTheory.pdf#page=461>)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- PDF-Seiten 471–480 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00471-00480/try-20261114T124405-70d33b/document.md -->
 
-![PDF-Seite 461](<document_artifacts/page_000461_53739dc5324f378cd5a5d9a4f155febc8d2a48eda8dc3edf427b8ff46a107a45.png>)
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00471-00480/try-20261114T124405-70d33b/document_artifacts/image_000000_fff5f4a87bb35f29ea50198d1528d0247c6d2549cba04d9ce51c83da75f41ca1.png -->
 
-![PDF-Seite 462](<document_artifacts/page_000462_e634eaf74d9d33ded9a5ffdc2677649651385b5800cc4a2592f35f3996d631f2.png>)
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00471-00480/try-20261114T124405-70d33b/document_artifacts/image_000001_75bfc3e3e11b59919a558ea77f01ab8e020479e2f5716d590549692b9ea0f96c.png -->
 
-![PDF-Seite 463](<document_artifacts/page_000463_f187f6458d7557ac36cb6a98ffa9b5ffa69a023d0422f3530bb6f1f7671573ea.png>)
-
-![PDF-Seite 464](<document_artifacts/page_000464_7d53348c102580f2f110e3657bfd922026834d92573cc342c6c2c7202b7acb11.png>)
-
-![PDF-Seite 465](<document_artifacts/page_000465_0b2534846a383d39b1fd5408ca5d1d5497e983f058c25f900e32145016ef294d.png>)
-
-![PDF-Seite 466](<document_artifacts/page_000466_a859c778a1a3b8e833082c4c6448a9b490db37b2a25ee94fe176bbd86fe238cf.png>)
-
-![PDF-Seite 467](<document_artifacts/page_000467_325c8b6a19faf71459f75cc5f3d4cae7858673a6369891bc1c267e6e3cd6be3b.png>)
-
-![PDF-Seite 468](<document_artifacts/page_000468_aaa8a549042ab82284da49b723a4faa652f8ec81229763cb9b78dbee67ac57bc.png>)
-
-![PDF-Seite 469](<document_artifacts/page_000469_88c9c44eb9f5b44fba46860fb9621a4ade89cb3f4bdc94e54dc38ca0e9e6a93d.png>)
-
-![PDF-Seite 470](<document_artifacts/page_000470_d3d140602969c2bbcb27f77b42e2d747e441f99ccb68ab9cff9a61a7761311dd.png>)
-
-
-[Original-PDF, Seite 461](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=461>)
-
-<!-- PDF-Seiten 471–480 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00471-00480/try-20261114T124405-70d33b/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00471-00480/try-20261114T124405-70d33b/document_artifacts/image_000000_fff5f4a87bb35f29ea50198d1528d0247c6d2549cba04d9ce51c83da75f41ca1.png -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00471-00480/try-20261114T124405-70d33b/document_artifacts/image_000001_75bfc3e3e11b59919a558ea77f01ab8e020479e2f5716d590549692b9ea0f96c.png -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00471-00480/try-20261114T124405-70d33b/document_artifacts/image_000002_6185554324c81ad469d15fbb02a0d31b30a923379f7a7d51c3c22b9d6d8e14ed.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00471-00480/try-20261114T124405-70d33b/document_artifacts/image_000002_6185554324c81ad469d15fbb02a0d31b30a923379f7a7d51c3c22b9d6d8e14ed.png -->
 
 3-2, etc.) are now known as "Forte numbers, " and are seen in the tables in the Lists of Set Classes, which include prime forms and interval vectors as well.
 
@@ -27392,7 +26313,7 @@ Transposition is an operation performed as Tn, where n is the number of semitone
 
 To determine n of TnI for two inversionally-related sets, write the second set backward and add the notes of the two sets together. Each sum will equal n. Let's use our two sets from the previous example above: [2, 4, 5] and [2, 3, 5].
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00471-00480/try-20261114T124405-70d33b/document_artifacts/image_000003_d22cf33b3a728fa80ca458800d8a97a2035095ec6c102c644d1ce5ec2398fd84.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00471-00480/try-20261114T124405-70d33b/document_artifacts/image_000003_d22cf33b3a728fa80ca458800d8a97a2035095ec6c102c644d1ce5ec2398fd84.png -->
 
 59
 
@@ -27438,11 +26359,11 @@ transposed to
 
 57
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00471-00480/try-20261114T124405-70d33b/document_artifacts/image_000004_c531658982d1a00e296b240338e540408c66aed0513ebd5fd212c1f7c6f39042.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00471-00480/try-20261114T124405-70d33b/document_artifacts/image_000004_c531658982d1a00e296b240338e540408c66aed0513ebd5fd212c1f7c6f39042.png -->
 
 2. For each of the six sets in the example below, determine the normal form, prime form, Forte number, and interval vector.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00471-00480/try-20261114T124405-70d33b/document_artifacts/image_000005_298a16c90c7a72650325da025f2d24b1d1406805219813fa08d18c39e1a994b8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00471-00480/try-20261114T124405-70d33b/document_artifacts/image_000005_298a16c90c7a72650325da025f2d24b1d1406805219813fa08d18c39e1a994b8.png -->
 
 Day Three
 
@@ -27571,33 +26492,10 @@ Click here to download the third homework assignment for this chapter.
 - œœ
 - œœ œ
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 471](<MusicTheory.pdf#page=471>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 471](<document_artifacts/page_000471_a91283173bdb614f4fb793e8378b3531577807d670a67ddf296c095da37771fe.png>)
-
-![PDF-Seite 472](<document_artifacts/page_000472_cdc96b0784c27544d0f2293a6f884f9e931fda5f418ff638b249e00faf10e0e6.png>)
-
-![PDF-Seite 473](<document_artifacts/page_000473_287b8209baba8a6171b1ca11618e87061adcdea27af8d0d00ae2982c0f9e403f.png>)
-
-![PDF-Seite 474](<document_artifacts/page_000474_ec13f19502dc6f224ea10d5bb611e61cfcc3a497c9578046833b93aee1e0306d.png>)
-
-![PDF-Seite 475](<document_artifacts/page_000475_a62d8575365ab99b8156cae9bccdfb125ed1d07bfa3b47960827efba66a8e594.png>)
-
-![PDF-Seite 476](<document_artifacts/page_000476_15477e74a0c65072f102f4bfcfc5365f230bb2dac406472a67ee64fa6386ff79.png>)
-
-![PDF-Seite 477](<document_artifacts/page_000477_3dd6f148ab963fe3e2f913899d922d005dd281e6c2c1738c2b8f8e658991f867.png>)
-
-![PDF-Seite 478](<document_artifacts/page_000478_e80a5cab3fcde6ef73179a9d259122c5ab6f81990587f360d11fb62853f99f15.png>)
-
-![PDF-Seite 479](<document_artifacts/page_000479_c53880d3e2322a64164726eff53e5a162afa718dc14b1599ceed990511f7a344.png>)
-
-![PDF-Seite 480](<document_artifacts/page_000480_be854e7d88e5f4412d65ab6426ce8845383fab7629f1257a9391aa91f2d059ca.png>)
-
-
-[Original-PDF, Seite 471](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=471>)
-
-<!-- PDF-Seiten 481–490 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document.md -->
+<!-- PDF-Seiten 481–490 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document.md -->
 
 ## Chapter 34
 
@@ -27607,7 +26505,7 @@ Serialism is a term that encompasses the twelve-tone technique of Schoenberg, We
 
 ## 34.1 Twelve-Tone Technique
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000000_b9f3bea06eb47724ff41a2f959250871efca7ad70186081dde0114f1ce4ceea6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000000_b9f3bea06eb47724ff41a2f959250871efca7ad70186081dde0114f1ce4ceea6.png -->
 
 YouTube: https://www.youtube.com/watch?v=bQHR\_Z8XVvI
 
@@ -27628,7 +26526,7 @@ The four types of row forms used in twelve-tone technique are prime (P),
 
 retrograde (R), inversion (I), and retrograde inversion (RI). The prime is the
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000001_d4b499f9646a99387b05acad8e72aa9326d5f6ac375a92baf1ab289ae628c380.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000001_d4b499f9646a99387b05acad8e72aa9326d5f6ac375a92baf1ab289ae628c380.png -->
 
 &amp;
 
@@ -27638,7 +26536,7 @@ retrograde (R), inversion (I), and retrograde inversion (RI). The prime is the
 
 &amp;
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000002_01a553cee0843eacea5a9b2d37a4cf426d9bf3fb13730c400d39edf332da4d28.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000002_01a553cee0843eacea5a9b2d37a4cf426d9bf3fb13730c400d39edf332da4d28.png -->
 
 168
 
@@ -27656,7 +26554,7 @@ retrograde (R), inversion (I), and retrograde inversion (RI). The prime is the
 
 211
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000003_114496c1d802528fe5abd7d76baa59ac2d858edcf72c09d91a04f2e28225454a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000003_114496c1d802528fe5abd7d76baa59ac2d858edcf72c09d91a04f2e28225454a.png -->
 
 ## 34.3 Writing Row Forms
 
@@ -27664,7 +26562,7 @@ To write specified row forms from a given prime form, write all four versions of
 
 To write I9 and RI5 if given P0:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000004_fba5dbe09aedadfd740a0a40feb64b280a078357e5e75c29b47c3d89cedaba8e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000004_fba5dbe09aedadfd740a0a40feb64b280a078357e5e75c29b47c3d89cedaba8e.png -->
 
 ## 34.4 Twelve-Tone Matrix
 
@@ -27690,7 +26588,7 @@ Table 34.4.1: Twelve-Tone Matrix
 
 To construct a matrix, write the prime form from left to right in the top row, then write the inverted form from top to bottom in the left column.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000005_80386ec4834b6fb1f841f4e185bad06cded94ac9d07c4d6b87dc5c1a2e2129c7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000005_80386ec4834b6fb1f841f4e185bad06cded94ac9d07c4d6b87dc5c1a2e2129c7.png -->
 
 From there, you can write the transpositions of the prime form, given the starting notes in the left column. One would continue with each transposition of the prime form until the matrix is complete.
 
@@ -27702,7 +26600,7 @@ In a piece of music, twelve-tone rows may not be clearly presented. One manner o
 
 CHAPTER 34. SERIALISM
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000006_8c855b9c2208310587ee0de684fb71aea8805f8b10839485fb2f6c62f8009e2e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000006_8c855b9c2208310587ee0de684fb71aea8805f8b10839485fb2f6c62f8009e2e.png -->
 
 ?
 
@@ -27710,9 +26608,9 @@ An analyst would first attempt to find a clear presentation of a twelve-tone row
 
 ? grade inversion of the series. An example is found in Stravinsky's Septet from
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000007_24da4acfe5e9ba043f580f0e7630ca6e11bf1db3420d85b744cf421336701f3b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000007_24da4acfe5e9ba043f580f0e7630ca6e11bf1db3420d85b744cf421336701f3b.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000008_ff1b5d4abc19c9e0a265dc50c26a7a4e65e8e15086da7e26bfa120a22a57e70b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000008_ff1b5d4abc19c9e0a265dc50c26a7a4e65e8e15086da7e26bfa120a22a57e70b.png -->
 
 64
 
@@ -27724,13 +26622,13 @@ An analyst would first attempt to find a clear presentation of a twelve-tone row
 
 Such a series could imply E or A as a tonal center. Note that Stravinsky's Septet is not strictly serial but contains serial elements. Such an example shows us that serialism can be employed in ways other than the strict, original twelve-tone version.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000009_155950f8c0656c8666f6cfa1c437ad864cc032bb55874bf67a42888325077afb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000009_155950f8c0656c8666f6cfa1c437ad864cc032bb55874bf67a42888325077afb.png -->
 
 1 See Erwin Stein, "Strawinsky's Septet (1953)." Tempo. Spring, 1954.
 
 ## 34.7 Practice Exercises
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000010_589e749532c646e611377b24b2c684b0f7e326c18e983d5a6c32927d7f071358.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000010_589e749532c646e611377b24b2c684b0f7e326c18e983d5a6c32927d7f071358.png -->
 
 61
 
@@ -27738,20 +26636,20 @@ part 2 PRAC EXER
 
 8
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000011_468b45e3e7b938cdc6d62928a4d3483295686e18b10634667885afce37177ed1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000011_468b45e3e7b938cdc6d62928a4d3483295686e18b10634667885afce37177ed1.png -->
 
 3. Construct a 12 by 12 matrix for the prime form of this twelve-tone row given in pitch integers: 3, 7, 11, 1, 5, 0, 2, 10, 6, 4, 8, 9. Include labels for all row forms including all transposition levels (P0, R3, I8, RI6, etc.). Use note names in the matrix, not integers.
 4. For the following excerpt, determine P4 and identify each row form
 
 Table 34.7.1
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000012_3602d052c927a9eca064e9272e04b3285a68231ee58a6cab089f47b82efe17e8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000012_3602d052c927a9eca064e9272e04b3285a68231ee58a6cab089f47b82efe17e8.png -->
 
 and statement. This example contains overlap.
 
 # . œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000013_abd57693732862ee7ebdb6963fd233f37f411baff9a8dd1271c214e617f9c785.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00481-00490/try-20261114T124500-2d7f83/document_artifacts/image_000013_abd57693732862ee7ebdb6963fd233f37f411baff9a8dd1271c214e617f9c785.png -->
 
 - &amp; 187 5. Referring to the twelve-tone row used to construct the matrix in the practice exercise above (3, 7, 11, 1, 5, 0, 2, 10, 6, 4, 8, 9), find the normal form and prime form for each discrete three-note set from the row, and provide an interval vector for each.
 
@@ -27938,33 +26836,10 @@ Click here to download the first homework assignment for this chapter. Click her
 - œ œœ
 - b œ. œ
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 481](<MusicTheory.pdf#page=481>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 481](<document_artifacts/page_000481_b664651057b7c09fe498b2519b2084afab2749979523d0c444730119e5337c77.png>)
-
-![PDF-Seite 482](<document_artifacts/page_000482_6fc4bec8140894f9639b473676822698e57e0cfe02b458575d115fbafe4d8d96.png>)
-
-![PDF-Seite 483](<document_artifacts/page_000483_3b24c37148164a57ee5b5f12b0dec842fc6fb9acc9cc0eb346ea38648b214e47.png>)
-
-![PDF-Seite 484](<document_artifacts/page_000484_88776e0f9717b86c13cce6ec552caf6ad930a2879c7e84abc36f904b6c329f21.png>)
-
-![PDF-Seite 485](<document_artifacts/page_000485_95e96012ffcb9a5e8886607a0042ec8f197f3247e2918a1d5b099aa12a2a2312.png>)
-
-![PDF-Seite 486](<document_artifacts/page_000486_5317a2185df3918219e276f943c9fbbc452981fe5e23fab371e0a1e9019bc48d.png>)
-
-![PDF-Seite 487](<document_artifacts/page_000487_07d51e0c8c876c2a59ca9843b4c481dda9300238a5feb98e074827f4305e5ef9.png>)
-
-![PDF-Seite 488](<document_artifacts/page_000488_341929977e17218c77842c585da4ee3194fd6a9e7ff80040113b380b051236af.png>)
-
-![PDF-Seite 489](<document_artifacts/page_000489_ad9f7c2987261bcda37303af53e05f037c2ba13f44a3afc8f383bcb33793b948.png>)
-
-![PDF-Seite 490](<document_artifacts/page_000490_a9294e04d6a806d160bfb36c2b4ac10df1e8ef7cd1a2661065a09316f6ffe13b.png>)
-
-
-[Original-PDF, Seite 481](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=481>)
-
-<!-- PDF-Seiten 491–500 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document.md -->
+<!-- PDF-Seiten 491–500 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document.md -->
 
 ## Chapter 35
 
@@ -27982,19 +26857,19 @@ a transcription and analysis meant to show the additive process and is not
 
 necessarily how the music is written in the score.)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000000_06f5ac0fb0a02c434484f6a7d1cd15ee7cff8b25d153407dc43453219b1971f8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000000_06f5ac0fb0a02c434484f6a7d1cd15ee7cff8b25d153407dc43453219b1971f8.png -->
 
 65 65 65
 
 Figure 35.1.2: Glass, Music in Fifths (1969)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000001_bc3a573df33b7d5a1cf59eef402fa03c06e94cf581896ed5bf6d53968d5f013c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000001_bc3a573df33b7d5a1cf59eef402fa03c06e94cf581896ed5bf6d53968d5f013c.png -->
 
 To hear additive process in Glass's well-known Einstein on the Beach, listen to the following minute of music from Act 1, Scene 1, "Train. " Each chord in a five-chord cadential progression is gradually lengthened by adding to the number of subdivisions given to each chord.
 
 YT: pRerJeYmUgY
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000002_e073629708da068d6426060cde7ebe350546c609a144c1f435c98f534c5d03ba.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000002_e073629708da068d6426060cde7ebe350546c609a144c1f435c98f534c5d03ba.png -->
 
 Figure 35.1.3: Glass, Einstein on the Beach
 
@@ -28010,7 +26885,7 @@ Below is the basic twelve-note pattern of Piano Phase along with a video
 
 demonstrating the phase-shifting.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000003_36173f6878ffa376aa2d17f94135d9d0946253a13a32cfe48bbae8a53d3a65e8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000003_36173f6878ffa376aa2d17f94135d9d0946253a13a32cfe48bbae8a53d3a65e8.png -->
 
 YouTube: https://www.youtube.com/watch?v=57TuvksMR70
 
@@ -28022,7 +26897,7 @@ During the phase-shifting process, one can think of the lower voices in the exam
 
 CHAPTER 35. MINIMALISM
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000004_a1b07b18635c02890e0ccff1cdb35ddef8907021a47c871bf5117021dafaa4f5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000004_a1b07b18635c02890e0ccff1cdb35ddef8907021a47c871bf5117021dafaa4f5.png -->
 
 rotating pattern one note to the right. 2nd note begins pattern, then the 3rd note begins the pattern, until the 1st notestarts the pattern again to complete the process.
 
@@ -28030,13 +26905,13 @@ Figure 35.2.3: Rotation demonstrated with a five-note pattern
 
 &amp;
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000005_07504f813fea7dd7d03142bc85a3e8ad76fc28fe2fc8010a28d45a13f6b1c50b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000005_07504f813fea7dd7d03142bc85a3e8ad76fc28fe2fc8010a28d45a13f6b1c50b.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000006_59d28e627aeff51c55288aa80f005c181ccfcfc54407b084357ae8bdc44ebd46.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000006_59d28e627aeff51c55288aa80f005c181ccfcfc54407b084357ae8bdc44ebd46.png -->
 
 213
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000007_e414917ce6a4c0e8e231d8c7e72f9737da946307b371fb1ae0ccd6ce0eb2f8ee.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000007_e414917ce6a4c0e8e231d8c7e72f9737da946307b371fb1ae0ccd6ce0eb2f8ee.png -->
 
 YouTube: https://www.youtube.com/watch?v=XIuJ\_my4\_-k
 
@@ -28123,7 +26998,7 @@ Click here to download the Unit 12 Practice Test.
 
 11
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000008_1130c8081d508153b60f04f30c1eeed1d309cf06f70bcf3316348bf57eb08fdb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000008_1130c8081d508153b60f04f30c1eeed1d309cf06f70bcf3316348bf57eb08fdb.png -->
 
 - 6.6.4. Answer. (lowest to highest) 1. DGB, 2. DF 4 B, 3. FA 2 D 2 , 4. B 2 EG
 - 6.6.5. Answer. 1. F 4 A 4 C 4 , 2. GB 2 D, 3. A 2 C 2 E 2
@@ -28186,7 +27061,7 @@ Day One
 
 1. B-D-F4
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000009_ffea63c06f770e96ab5da193ef4a69cb78b4eceb435762e0244858b79b208599.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000009_ffea63c06f770e96ab5da193ef4a69cb78b4eceb435762e0244858b79b208599.png -->
 
 2. iv = E-G-B
 
@@ -28194,7 +27069,7 @@ Day One
 
 6. iiº = C4-E-G
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000010_89d9b241696e53a95a3529c0a342e53c176c7846911d16de84b1ada8dc4f7aa8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000010_89d9b241696e53a95a3529c0a342e53c176c7846911d16de84b1ada8dc4f7aa8.png -->
 
 7. V = F4-A4-C4
 
@@ -28202,7 +27077,7 @@ Day One
 
 3. 3 flats in key signature, iiº
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000011_41dd7fda4ef02842407d805ce771724f24827d47929da6817918b7eb841d78a0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000011_41dd7fda4ef02842407d805ce771724f24827d47929da6817918b7eb841d78a0.png -->
 
 , F-A2-D
 
@@ -28210,13 +27085,13 @@ Day One
 
 5. 2 flats in signature, viiº7, F4-A-C-E2
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000012_8dbae40e33e4287a4263be463272efd6c1ba3ef4724649bd17099f96628cd370.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000012_8dbae40e33e4287a4263be463272efd6c1ba3ef4724649bd17099f96628cd370.png -->
 
 9.9.4. Answer.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000013_b44db66b50739b9f6f4db8c3605ed9d4abdb7d6604b4198f1e213d739be44f31.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000013_b44db66b50739b9f6f4db8c3605ed9d4abdb7d6604b4198f1e213d739be44f31.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000014_9ab83f5ef0ac606c48c04388d2df465031f4bc4b28bc2bfe7c2020e772d72ee3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00491-00500/try-20261114T124528-5dcd23/document_artifacts/image_000014_9ab83f5ef0ac606c48c04388d2df465031f4bc4b28bc2bfe7c2020e772d72ee3.png -->
 
 9.9.5. Answer. HC = V
 
@@ -28381,33 +27256,10 @@ w
 - œ œ œ œ œ œ ≈ œ œ œ œ œ
 - ã b
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 491](<MusicTheory.pdf#page=491>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 491](<document_artifacts/page_000491_3a9ca88a21fde8b8c1998b8d2ff2f474dd8cb1556b666513eec670cfa8984f28.png>)
-
-![PDF-Seite 492](<document_artifacts/page_000492_56dab2f65492d89f0d6fff2683c2f4f47ba59b5161f56ef5d17a7f632eda354f.png>)
-
-![PDF-Seite 493](<document_artifacts/page_000493_ce2ab60bb6ab04d421cc3d8369b71eaf4dee3ed54aee23c598850f33796796f3.png>)
-
-![PDF-Seite 494](<document_artifacts/page_000494_b3254c48e2378e6b1fa29543a1b004553dffb47c944c1ec5d2fb75445dfffc6e.png>)
-
-![PDF-Seite 495](<document_artifacts/page_000495_b907da7c90d04e6afd143d21a7a15615cd28f8287a8e34d0c7bdc57c5df518e7.png>)
-
-![PDF-Seite 496](<document_artifacts/page_000496_54aee40b6298560951441d4013954c04c90f8d3ef2549d97cabd925fa43302ce.png>)
-
-![PDF-Seite 497](<document_artifacts/page_000497_28b2cd99dfc5da33e4c931a928246140fef502c4a1432d773e08b8cbac7057c1.png>)
-
-![PDF-Seite 498](<document_artifacts/page_000498_ba354c0b9fff0c6211d71ecc9f2fc1ff10f6e28ddc90f8292b4572896ad872e9.png>)
-
-![PDF-Seite 499](<document_artifacts/page_000499_35dd4333a77542602cc06dcb4704c67fc51d3399ae74677d1c885cf6a01eec7a.png>)
-
-![PDF-Seite 500](<document_artifacts/page_000500_ed85db6e89196acd7866ccc73127ab817025b9a4a6c7cb0adc74f910009ee750.png>)
-
-
-[Original-PDF, Seite 491](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=491>)
-
-<!-- PDF-Seiten 501–510 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document.md -->
+<!-- PDF-Seiten 501–510 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document.md -->
 
 491
 
@@ -28427,7 +27279,7 @@ w
 
 \_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000000_812dff9b8b0d6158afe175f1c6a8435a501e03a71dc6b787d5b49c7fdb8f7359.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000000_812dff9b8b0d6158afe175f1c6a8435a501e03a71dc6b787d5b49c7fdb8f7359.png -->
 
 AC
 
@@ -28435,7 +27287,7 @@ Cadence: \_\_\_\_\_\_\_
 
 10.13 · Practice Exercises
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000001_b1f741cbb8d1ecfb091638bc9f4aeed6749e10717bf60d0883152762fd2b020d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000001_b1f741cbb8d1ecfb091638bc9f4aeed6749e10717bf60d0883152762fd2b020d.png -->
 
 503
 
@@ -28537,7 +27389,7 @@ Mozart, Piano Sonata K. 333, I:
 
 · Figured bass: 1. I64 ; 2. vii◦6 ; 3. ii64 ; 4. V
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000002_11cc63369f5354065190407361b0fc996c369983778f3085df6a8f68f3ec1c3a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000002_11cc63369f5354065190407361b0fc996c369983778f3085df6a8f68f3ec1c3a.png -->
 
 &amp;
 
@@ -28643,7 +27495,7 @@ I
 
 572
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000003_d0a9974afa3ca41283e362c5620be7c8bf95d7148139677757669d0513df39ee.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000003_d0a9974afa3ca41283e362c5620be7c8bf95d7148139677757669d0513df39ee.png -->
 
 71
 
@@ -28665,7 +27517,7 @@ n œœ œœ œœ
 
 29
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000004_54d36062daf73898ab115c624d7cb60951180291503f4a0ba8fd670f907d3814.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000004_54d36062daf73898ab115c624d7cb60951180291503f4a0ba8fd670f907d3814.png -->
 
 31
 
@@ -28687,7 +27539,7 @@ A: ¯VI
 
 19.6.2. Answer.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000005_36ac4a819e7ee772f2e7fe236ef59a902d759caa4af55e43c1334bf8879e1301.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000005_36ac4a819e7ee772f2e7fe236ef59a902d759caa4af55e43c1334bf8879e1301.png -->
 
 APPENDIX A. ANSWERS TO PRACTICE EXERCISES
 
@@ -28713,7 +27565,7 @@ E¯ 7
 
 ?
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000006_e4975b99908c4da5731746def95c0aed084e700986b520f9a4939698c9e418a5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000006_e4975b99908c4da5731746def95c0aed084e700986b520f9a4939698c9e418a5.png -->
 
 ## 21 · Augmented Sixth Chords
 
@@ -28721,7 +27573,7 @@ E¯ 7
 
 21.8.1. Answer.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000007_4389ee19f32d89ad187d6606d0c0049646e9aa02bef9907f67e95f59aaef9ead.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000007_4389ee19f32d89ad187d6606d0c0049646e9aa02bef9907f67e95f59aaef9ead.png -->
 
 &amp;
 
@@ -28812,7 +27664,7 @@ Roman numerals: F: I V 4
 
 Roman numerals: F: I V 4
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000008_1374aaf4995a3d5b223d39611610cedae1baa9cebe0b7048ccd8f1b4c9c00bcb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000008_1374aaf4995a3d5b223d39611610cedae1baa9cebe0b7048ccd8f1b4c9c00bcb.png -->
 
 Roman numerals: g:
 
@@ -28826,9 +27678,9 @@ I
 
 G major: G Am Bm C D Em F˜ o
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000009_50e03548f01c835143f97425083953ce44350eb00a4783993a4b4a49842d6c70.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000009_50e03548f01c835143f97425083953ce44350eb00a4783993a4b4a49842d6c70.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000010_92f50be031893895aa5e1b5127e5009092decdc586956d6345655eaab3210d1d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000010_92f50be031893895aa5e1b5127e5009092decdc586956d6345655eaab3210d1d.png -->
 
 D¯ c˜
 
@@ -28846,7 +27698,7 @@ D¯ c˜
 
 &amp; # # # #
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000011_f493e8af4f6e7355e431f3621cd31945318794270f49bfc1b6bf5a1edec24f4b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000011_f493e8af4f6e7355e431f3621cd31945318794270f49bfc1b6bf5a1edec24f4b.png -->
 
 b
 
@@ -28982,7 +27834,7 @@ Em F˜ 7 Bm/D G 7 (¯5) Bm/F˜ F˜ Bm
 
 \_\_\_ \_\_\_ \_\_\_ \_\_\_ \_\_\_ \_\_\_ \_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000012_8e9ccec9e4988ee5ea28dcd356c746b5d98df878d62522f6244bb567c3300db4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000012_8e9ccec9e4988ee5ea28dcd356c746b5d98df878d62522f6244bb567c3300db4.png -->
 
 i vii o6 i 6
 
@@ -29002,7 +27854,7 @@ b:\_\_\_ \_\_\_ \_\_\_ Fr +6 \_\_\_ \_\_\_ \_\_\_
 
 HF: Ton Dom Ton \_\_\_ \_\_/ V Dom \_\_\_\_ Dom Ton \_\_\_ Cad 6 Dom Ton 4 PD PD PD PD
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000013_40fafd0063501e4b8cde815e06770eb1796c2db0e37c2c0ba3b9ffc8459643a4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000013_40fafd0063501e4b8cde815e06770eb1796c2db0e37c2c0ba3b9ffc8459643a4.png -->
 
 p
 
@@ -29052,7 +27904,7 @@ ii
 
 23.4.1. Answer.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000014_83b39d215df447323e3adfbc92ee55a914e9206ba810932eb8955903809bc1c2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000014_83b39d215df447323e3adfbc92ee55a914e9206ba810932eb8955903809bc1c2.png -->
 
 b
 
@@ -29064,7 +27916,7 @@ b
 
 www
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000015_602e2cd74cb83f1466f96d0e27c2a464eb46ad1ad58adb81a0fff1480d4d4738.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000015_602e2cd74cb83f1466f96d0e27c2a464eb46ad1ad58adb81a0fff1480d4d4738.png -->
 
 826
 
@@ -29096,7 +27948,7 @@ a
 
 \_\_\_: Ger +6 i 6 V 4 vii o7 /iv iv V
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000016_1c5163e0918dcaffc7b3029d1c2b3853fe059e8125cc3a9152ae1fc76ca2cb23.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000016_1c5163e0918dcaffc7b3029d1c2b3853fe059e8125cc3a9152ae1fc76ca2cb23.png -->
 
 \_\_ : \_\_\_\_
 
@@ -29116,7 +27968,7 @@ respell
 
 &amp; b b b b
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000017_09c5924d76241184998e6276cb33be74a7ab384ed55ed547d11c0188f25eb6b2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00501-00510/try-20261114T124546-f3f48b/document_artifacts/image_000017_09c5924d76241184998e6276cb33be74a7ab384ed55ed547d11c0188f25eb6b2.png -->
 
 &amp; # #
 
@@ -29364,33 +28216,10 @@ resolve
 - respelled
 - f: V 7 /VI
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 501](<MusicTheory.pdf#page=501>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 501](<document_artifacts/page_000501_4dc5e1e4e21a08714a3313c95daa16a32bb3e87945c0b21a537fd71a5dbba623.png>)
-
-![PDF-Seite 502](<document_artifacts/page_000502_834aea5d73add146ff520716eded9d21311c491ab80e7b25518e2b635c72f328.png>)
-
-![PDF-Seite 503](<document_artifacts/page_000503_5325b201e4deb5e687c54fbdff02d1a9fb0ce84390cd114a9cbbc627b939f682.png>)
-
-![PDF-Seite 504](<document_artifacts/page_000504_9ef603b20b39fca423f628c5d69c0603e9b838e686c6d80c1c7f2e6e792cd01c.png>)
-
-![PDF-Seite 505](<document_artifacts/page_000505_33f95f981b46c88cd466272a6d8669cc34427c77a56cac136ea6c3bc4d5261ad.png>)
-
-![PDF-Seite 506](<document_artifacts/page_000506_18e9f530bd3bb38f3919e7d38c7a1d5a34eae6835b32aa1847d65c6dedeedac0.png>)
-
-![PDF-Seite 507](<document_artifacts/page_000507_83daba01bec6770f2736d41f7a4c268323861ad805b44b8918d642a006d31030.png>)
-
-![PDF-Seite 508](<document_artifacts/page_000508_29834580fd958471e155c039e93f17f8882b0878db4fd26e8cb6b5786d35aa4a.png>)
-
-![PDF-Seite 509](<document_artifacts/page_000509_ec365ddf82b0fc5a700209477a8c922d2cf572e610dd50bc875af7dddc78566a.png>)
-
-![PDF-Seite 510](<document_artifacts/page_000510_90ee13958522ee4d262b10718a833bb91d69eef73b111393db5b24dcd89009f4.png>)
-
-
-[Original-PDF, Seite 501](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=501>)
-
-<!-- PDF-Seiten 511–520 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document.md -->
+<!-- PDF-Seiten 511–520 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document.md -->
 
 \_\_\_\_\_
 
@@ -29400,7 +28229,7 @@ resolve
 
 846
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000000_fec828f169195411dc83be9831c59e5405e7de499f86501f5375b53de8252fc4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000000_fec828f169195411dc83be9831c59e5405e7de499f86501f5375b53de8252fc4.png -->
 
 497
 
@@ -29430,7 +28259,7 @@ J œ J œ œ œ
 
 ˙
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000001_aba3f4912892f57acee00657013306c06c526e2c05f36983b506cf6331357f7b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000001_aba3f4912892f57acee00657013306c06c526e2c05f36983b506cf6331357f7b.png -->
 
 G: HC
 
@@ -29514,7 +28343,7 @@ b .
 
 œ .
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000002_5d60f6bd5b3b454eb1a2c879e32512c1ba37c70a9646975d863b20bdeb3ef86c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000002_5d60f6bd5b3b454eb1a2c879e32512c1ba37c70a9646975d863b20bdeb3ef86c.png -->
 
 A
 
@@ -29550,7 +28379,7 @@ B
 
 /:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000003_3f2d1eec8c99044e31634e3cd7cdef4e69e8e5e883814203bca9fb75749ed172.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000003_3f2d1eec8c99044e31634e3cd7cdef4e69e8e5e883814203bca9fb75749ed172.png -->
 
 Menuetto diagram:
 
@@ -29622,7 +28451,7 @@ m. 16
 
 œ .
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000004_63a5335bea7f89f25ff7cb04ddc50deea1325ebe5fdc7695d75c83f5b550012b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000004_63a5335bea7f89f25ff7cb04ddc50deea1325ebe5fdc7695d75c83f5b550012b.png -->
 
 ‰ œ œ œ œ œ
 
@@ -29700,7 +28529,7 @@ m. 12
 
 m. 18
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000005_1a7c27ae84464b3ffbd101fbeb04b9a8881296806a55caac47e08742c2c0d95b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000005_1a7c27ae84464b3ffbd101fbeb04b9a8881296806a55caac47e08742c2c0d95b.png -->
 
 Trio diagram:
 
@@ -29788,7 +28617,7 @@ poco rit.
 
 œ U
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000006_9f77297e07b8187ac8219465519315f2b54a94b67198e41edbc05b021d9782e0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000006_9f77297e07b8187ac8219465519315f2b54a94b67198e41edbc05b021d9782e0.png -->
 
 ## 25 · Sonata and Rondo Forms
 
@@ -29852,7 +28681,7 @@ CT = ClosingTheme
 
 25.6.2. Answer.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000007_06d8f1bc8f4fae20b9e9150e5d873ce39a71db08796924a3c61e5dceea6070b5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000007_06d8f1bc8f4fae20b9e9150e5d873ce39a71db08796924a3c61e5dceea6070b5.png -->
 
 1:36 2:07 2:24 2:37 3:04
 
@@ -29924,7 +28753,7 @@ CT = ClosingTheme
 
 EXPOSITION
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000008_c9366f723eed97bdb17a180ba497127ab8fbc55b71823c15e1e9b027d5fbf5db.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000008_c9366f723eed97bdb17a180ba497127ab8fbc55b71823c15e1e9b027d5fbf5db.png -->
 
 139
 
@@ -29932,11 +28761,11 @@ DEVELOPMENT
 
 RECAPITULATION
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000009_79464e13b1b2faa3c5652cd3513b8f29e6e139e193aa3eb05b01a6f626bac541.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000009_79464e13b1b2faa3c5652cd3513b8f29e6e139e193aa3eb05b01a6f626bac541.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000010_97bced5e97d421f9ccfc79bb592b0502191750c5a1c911c53ac09112df17b701.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000010_97bced5e97d421f9ccfc79bb592b0502191750c5a1c911c53ac09112df17b701.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000011_8afce25e921d69089fdfa197e34b42f6a98007c0d92d0ff36ee99c1f37b98af2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000011_8afce25e921d69089fdfa197e34b42f6a98007c0d92d0ff36ee99c1f37b98af2.png -->
 
 178
 
@@ -29944,7 +28773,7 @@ RECAPITULATION
 
 177
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000012_634df4a35b93cdb201fb612b8c161ab903b1bf76790e772185e4893d358f4d96.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000012_634df4a35b93cdb201fb612b8c161ab903b1bf76790e772185e4893d358f4d96.png -->
 
 184
 
@@ -29984,7 +28813,7 @@ b b b b œ œ œ
 
 #
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000013_3ba0cc15a0b4055ddbb6a298a49af2a907e5c12c968bfb99971d3aa505ed8b18.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000013_3ba0cc15a0b4055ddbb6a298a49af2a907e5c12c968bfb99971d3aa505ed8b18.png -->
 
 œ œ œ
 
@@ -30016,7 +28845,7 @@ esc, 4-3 sus, p, ant
 
 505
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000014_1464e009be85ad8e9cde06b7235f2b34742149d80ff370937d700e91d5288289.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00511-00520/try-20261114T124603-d6b8ea/document_artifacts/image_000014_1464e009be85ad8e9cde06b7235f2b34742149d80ff370937d700e91d5288289.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -30250,33 +29079,10 @@ esc, 4-3 sus, p, ant
 - 8 3 3 5 8 3 6 3 6 6 3 3
 - 8 5 6 6 3 3 5 8 6 3 6 3 3 1
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 511](<MusicTheory.pdf#page=511>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 511](<document_artifacts/page_000511_2d12dc9e0cd840e05c2ce27a267dbec101f74990581d1b6292675623092eb74f.png>)
-
-![PDF-Seite 512](<document_artifacts/page_000512_7741ff288e4fe23c3c9ffdc6e8eb8e1033fa6909ef6722412c887777bceef785.png>)
-
-![PDF-Seite 513](<document_artifacts/page_000513_35968dbe0755fed3c3df6b4014fb643bb30e8330f108301c256e189bce379895.png>)
-
-![PDF-Seite 514](<document_artifacts/page_000514_7ae9f57917ff9439297ba4c61434cfabc871354dc7a076e902858e7e25364c93.png>)
-
-![PDF-Seite 515](<document_artifacts/page_000515_b29c80da1e8becf076a39a1c735989ff6cf22fdfc20af2279a3daf7123860fd5.png>)
-
-![PDF-Seite 516](<document_artifacts/page_000516_b5dd242b5c50693d63d65430cd945bfcbc342863edcbd44e51aed3800aadf15e.png>)
-
-![PDF-Seite 517](<document_artifacts/page_000517_25210122588701faba4ee333b4c668d1b18b5f597bebe431f37c1d6a06d6f72f.png>)
-
-![PDF-Seite 518](<document_artifacts/page_000518_f491c4e92dcabeff30791a3a5a2526b5790594a743f33a7f35dc830b74afc4d4.png>)
-
-![PDF-Seite 519](<document_artifacts/page_000519_55c7826e9613e478ca9849255c3b4046dde1e1ebf796915caa2c2b345ee0984c.png>)
-
-![PDF-Seite 520](<document_artifacts/page_000520_4da9439c0371adf97f08a907a60f355dd0cd46e5315e7963c77717966c2cf062.png>)
-
-
-[Original-PDF, Seite 511](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=511>)
-
-<!-- PDF-Seiten 521–530 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document.md -->
+<!-- PDF-Seiten 521–530 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document.md -->
 
 Int:
 
@@ -30284,7 +29090,7 @@ Int:
 
 &amp;
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000000_2cb03a923915bae46beec9dc038c85f0fc026f7027633deeec6d86c6958714dc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000000_2cb03a923915bae46beec9dc038c85f0fc026f7027633deeec6d86c6958714dc.png -->
 
 &amp;
 
@@ -30294,9 +29100,9 @@ Int:
 |-------|
 | ? ?   |
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000001_0b23da211ce9a2a9b3a1d2f04cb6ee29618b48d34f4d4675668e28e068fbf626.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000001_0b23da211ce9a2a9b3a1d2f04cb6ee29618b48d34f4d4675668e28e068fbf626.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000002_b1ac336ef786d7924384d4470bf30b03033d96a2e7f07f81e176943e409c279a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000002_b1ac336ef786d7924384d4470bf30b03033d96a2e7f07f81e176943e409c279a.png -->
 
 c.f.
 
@@ -30314,7 +29120,7 @@ c.f.
 
 APPENDIX A. ANSWERS TO PRACTICE EXERCISES
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000003_a2774dcfd022dfe8d9ad4c33dff8a5841f2fc8fbc71eaa6847b2c66bc97ad227.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000003_a2774dcfd022dfe8d9ad4c33dff8a5841f2fc8fbc71eaa6847b2c66bc97ad227.png -->
 
 (ii)
 
@@ -30354,7 +29160,7 @@ n
 
 œ
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000004_e7cc2edefc4cecc81eb02efa6bd3d897270c67b8fe9a11e1d1979a4bc827bc0a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000004_e7cc2edefc4cecc81eb02efa6bd3d897270c67b8fe9a11e1d1979a4bc827bc0a.png -->
 
 &amp;
 
@@ -30470,13 +29276,13 @@ Table A.0.3: Mass in B Minor: Fugue Analysis Table
 
 ## 31.12 · Practice Exercises
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000005_9ab3d0574906616e1cc088b5f500a5b9d637571d121aa4eb8885da8cf91a2e8a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000005_9ab3d0574906616e1cc088b5f500a5b9d637571d121aa4eb8885da8cf91a2e8a.png -->
 
 &amp;
 
 1. E¯ 7(˜5) ; Scale: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000006_60d07810bd49069128dbf3ba96e57e5a5fa6e0c1400fcc95d072b024bf24d278.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000006_60d07810bd49069128dbf3ba96e57e5a5fa6e0c1400fcc95d072b024bf24d278.png -->
 
 1. E¯ 7(˜5) ; Scale: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -30578,11 +29384,11 @@ i v ø6 i
 
 5
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000007_43d073c65dfb5365c3a52be0b3aa10980377c3c75a10b5f964c87efb04820a88.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000007_43d073c65dfb5365c3a52be0b3aa10980377c3c75a10b5f964c87efb04820a88.png -->
 
 ?
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000008_03219116aa663258eaca6e7641584f976fb0b186bf37eeaac625ec9f31c8c528.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000008_03219116aa663258eaca6e7641584f976fb0b186bf37eeaac625ec9f31c8c528.png -->
 
 ?
 
@@ -30644,7 +29450,7 @@ n
 
 209
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000009_07b16bef907a5d34b0cb050b2879ae33b1409439f2f1d6cc3181005064d31578.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000009_07b16bef907a5d34b0cb050b2879ae33b1409439f2f1d6cc3181005064d31578.png -->
 
 c
 
@@ -30709,7 +29515,7 @@ w w
 
 62
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000010_031b4449a6b1b8317bb379a0202d558a186640b9d496a5d155c455ed38037136.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000010_031b4449a6b1b8317bb379a0202d558a186640b9d496a5d155c455ed38037136.png -->
 
 (a)
 
@@ -30719,7 +29525,7 @@ P 1
 
 P 1
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000011_ebf5ecdbdd7ca3a4db9290f4dd39e8de69c76cab0698fe535474507043c1c1a4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00521-00530/try-20261114T124630-d1ef8b/document_artifacts/image_000011_ebf5ecdbdd7ca3a4db9290f4dd39e8de69c76cab0698fe535474507043c1c1a4.png -->
 
 b
 
@@ -30942,33 +29748,10 @@ b
 - I 8
 - RI 10
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 521](<MusicTheory.pdf#page=521>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 521](<document_artifacts/page_000521_b73535603f587b4d52f8cf0d03e117049912520b978a20ac009d655fe56b5aec.png>)
-
-![PDF-Seite 522](<document_artifacts/page_000522_84a3a65067f425b5071c5f5a4b00c355957cb4516e002c6e336c2cc7eec0a4b6.png>)
-
-![PDF-Seite 523](<document_artifacts/page_000523_7a5961c6b9cdbd774f50f38ba6a96e86321baa47216f6faaa2d2895d7cbeb0bf.png>)
-
-![PDF-Seite 524](<document_artifacts/page_000524_497e3df9a0f7a9decc29919458e67d5af609c1cd8e724eda19de853cf3f761ae.png>)
-
-![PDF-Seite 525](<document_artifacts/page_000525_52f499ad30021b43c750786d0fe037a2390ee820b06e2def1c0928602b02350b.png>)
-
-![PDF-Seite 526](<document_artifacts/page_000526_ae4e9897762eeb487ce074d394c324f4a2119aa00cc62f355c98255e3d328919.png>)
-
-![PDF-Seite 527](<document_artifacts/page_000527_41583cc3963ec6e9db388be20cadff6c3e87fedd7dec645e5959ce1844b85236.png>)
-
-![PDF-Seite 528](<document_artifacts/page_000528_2e8c885b28afdf0c7792fd690367a9d745dd1fb4f0099fc9c86680cbef8a94c6.png>)
-
-![PDF-Seite 529](<document_artifacts/page_000529_673bba917558f4aa1a3f38a4dc7d472d0f9adaa5bd39a4c18b42e2a0f6cf73aa.png>)
-
-![PDF-Seite 530](<document_artifacts/page_000530_fe13adfb1b63962cdd1af1b6db8da089d65a7a8f7b9d2e9666b350e7d715e169.png>)
-
-
-[Original-PDF, Seite 521](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=521>)
-
-<!-- PDF-Seiten 531–540 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00531-00540/try-20261114T124700-20306d/document.md -->
+<!-- PDF-Seiten 531–540 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00531-00540/try-20261114T124700-20306d/document.md -->
 
 184
 
@@ -31000,7 +29783,7 @@ Table A.0.5: Twelve-Tone Matrix
 
 34.7.4. Answer.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00531-00540/try-20261114T124700-20306d/document_artifacts/image_000000_1edf851b58d1dad178495ec2a2e6185bc7c8b13b9d3458edf2be5436e103153f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00531-00540/try-20261114T124700-20306d/document_artifacts/image_000000_1edf851b58d1dad178495ec2a2e6185bc7c8b13b9d3458edf2be5436e103153f.png -->
 
 ## 34.7.5. Answer.
 
@@ -31170,33 +29953,10 @@ If your document contains nontrivial examples of program code, we recommend rele
 - 1 2 3 4 5/6 7 8/9 10/11 12
 - Copyright © 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc. <http://www.fsf.org/>
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 531](<MusicTheory.pdf#page=531>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 531](<document_artifacts/page_000531_b1f43ef0868ddfb40507910315f8949221bd31e2f1b4233744ec3cd5d409984b.png>)
-
-![PDF-Seite 532](<document_artifacts/page_000532_8287e87212be5433587667c804466078d08cf5f0eb34769393eea33825963093.png>)
-
-![PDF-Seite 533](<document_artifacts/page_000533_c4b086dae36381ff6ffe8475d897ec64720ae1048115b103641f74b21fff2500.png>)
-
-![PDF-Seite 534](<document_artifacts/page_000534_65589b98e0f522c9c4a47c1802728ed6ab7ca3c663981c0e72ac47c92a229bf6.png>)
-
-![PDF-Seite 535](<document_artifacts/page_000535_66dd75af8cbf6e1fb49e1d2db3de56638ff2aeebafa58c1aa7396e285d5455df.png>)
-
-![PDF-Seite 536](<document_artifacts/page_000536_00a2b7b307e8f5b4974dfabe75bf998ea405b7b8f5db8284f3f705422b41a064.png>)
-
-![PDF-Seite 537](<document_artifacts/page_000537_d70b4d8117f882b08dbc45fbd16aa3b7590c3393d09c9ddb9776e3a588f5e6e3.png>)
-
-![PDF-Seite 538](<document_artifacts/page_000538_e3147b4799f2d4d0333c69fab0a266aa8c6a66f98f498a883af444aa3ededa38.png>)
-
-![PDF-Seite 539](<document_artifacts/page_000539_eb044b806352099abcf85138352527e54b856f3b1b8e725450a8e8c4672550bd.png>)
-
-![PDF-Seite 540](<document_artifacts/page_000540_e874f2b36044d68b56e05bc812f256fab22ad5d311c5b2100e7c02a2ff8dd832.png>)
-
-
-[Original-PDF, Seite 531](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=531>)
-
-<!-- PDF-Seiten 541–550 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00541-00550/try-20261114T124723-eb1dab/document.md -->
+<!-- PDF-Seiten 541–550 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00541-00550/try-20261114T124723-eb1dab/document.md -->
 
 ## Index
 
@@ -31339,32 +30099,10 @@ If your document contains nontrivial examples of program code, we recommend rele
 | definition of,                      | definition                                 |
 | 45                                  | 311                                        |
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 541](<MusicTheory.pdf#page=541>)
 
-![PDF-Seite 541](<document_artifacts/page_000541_b0d909419aef4c8c3adbf28ec333246ef8ed8b33c0aae388773f851387d24a56.png>)
-
-![PDF-Seite 542](<document_artifacts/page_000542_3efa5b92bf2a40360d4ba7c4aec78e9121dd27f8852ace112150d1d5098f6b5a.png>)
-
-![PDF-Seite 543](<document_artifacts/page_000543_778ba70de354f39ee7250c5bf931457ec3cf3847874f74acd4c608e36efcf2c5.png>)
-
-![PDF-Seite 544](<document_artifacts/page_000544_254f5a5babf59e39df73658994d85144d921a7b64fdb6b0c09d41240eda2bbe7.png>)
-
-![PDF-Seite 545](<document_artifacts/page_000545_2e8d56b6686486a6f08203a31d242068d46421edc803ea725d1b18a14b152bec.png>)
-
-![PDF-Seite 546](<document_artifacts/page_000546_b6c136382fb2a8fa019691e83acca81b1a7ba888d600befb96518f23ba6b80b1.png>)
-
-![PDF-Seite 547](<document_artifacts/page_000547_73c462df23cd5f27c7687ade779c4a712cf62f5b37e3f15b1acf10a2a3488f26.png>)
-
-![PDF-Seite 548](<document_artifacts/page_000548_878b95002aec049c69f23de1b236b311667f02cc4ff9aa5c4a59fa72d4ff7a0f.png>)
-
-![PDF-Seite 549](<document_artifacts/page_000549_cdac5a42726fc7ea2456495b57258b9e8d4269ce65b5fc359aa2d75679b4820a.png>)
-
-![PDF-Seite 550](<document_artifacts/page_000550_4ad32ca20b42d2afe2359e2b627c6116a521277b2f5bb3a22a2d4ad75b612ea2.png>)
-
-
-[Original-PDF, Seite 541](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=541>)
-
-<!-- PDF-Seiten 551–553 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00551-00553/try-20261114T125117-644e09/document.md -->
+<!-- PDF-Seiten 551–553 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/d1e6d12b8c906fff/d3f6f9dfb2b4/00551-00553/try-20261114T125117-644e09/document.md -->
 
 | unequal fifths definition of, 373 Vejvoda "Beer Barrel Polka" , 177 Verdi Rigoletto, "La donna è mobile" , 75, 214 Verse-Chorus form, 129 Vivaldi Concerto for Two Violins and Cello in D minor, RV 565, V., 374 voice leading definition of, 357 Wagner, Richard Das Rheingold, Scene 3, 286 Die Meistersinger, Act II, Scene 6, 62   | Tristan und Isolde, Prelude to Act I, 50, 437 Webern, Anton 5 movements for string quartet No. 3. Sehr bewegt, 449 Williams, John Raiders of the Lost Ark, "Raiders March" , 249 Star Wars: Return of the Jedi, "Main Title (The Story Continues)" , 287 The Phantom Menace, "Duel of the Fates" , 287 Zimmer, Hans and Antonius Tom Holkenborg Batman v Superman: Dawn of Justice, "The Red Capes are Coming" , 250   |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -31375,13 +30113,5 @@ If your document contains nontrivial examples of program code, we recommend rele
 
 This book was authored and produced with PreTeXt.
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 551](<document_artifacts/page_000551_aa10c4830fb7e39e45e2c717b7bbf71a63b824b0693e7204c56903ae90eec91a.png>)
-
-![PDF-Seite 552](<document_artifacts/page_000552_f52672cc6ccc02d6e7900cca53024a6d45267105ef9f2a9eaa1ef29023f95ba6.png>)
-
-![PDF-Seite 553](<document_artifacts/page_000553_f34ad00f9ac828a5b1e6e1aab7add9a12bad4cc5352b69d2ddd24d553e86d4ae.png>)
-
-
-[Original-PDF, Seite 551](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/MusicTheory.pdf#page=551>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 551](<MusicTheory.pdf#page=551>)

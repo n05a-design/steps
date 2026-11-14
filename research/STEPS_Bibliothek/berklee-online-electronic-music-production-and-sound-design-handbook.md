@@ -9,14 +9,15 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 26
 tabellen: 1
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `berklee-online-electronic-music-production-and-sound-design-handbook.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00001-00010/try-20261114T104345-0d4b6c/document.md -->
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00001-00010/try-20261114T104345-0d4b6c/document.md -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00001-00010/try-20261114T104345-0d4b6c/document_artifacts/image_000000_c09dc46b98c203fec169c50ea365dc4f4ddee4443ca3dfa56f1815de984444ee.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00001-00010/try-20261114T104345-0d4b6c/document_artifacts/image_000000_c09dc46b98c203fec169c50ea365dc4f4ddee4443ca3dfa56f1815de984444ee.png -->
 
 [b](https://online.berklee.edu/)
 
@@ -47,7 +48,7 @@ Whether you're just beginning your musical journey, advancing your career, or si
 
 All the best,
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00001-00010/try-20261114T104345-0d4b6c/document_artifacts/image_000001_6cf4f9709f40e2ec6e60f9d432ee131779bf0b0c9c6c29b31f2554791fd6a2e1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00001-00010/try-20261114T104345-0d4b6c/document_artifacts/image_000001_6cf4f9709f40e2ec6e60f9d432ee131779bf0b0c9c6c29b31f2554791fd6a2e1.png -->
 
 Jonathan Mahoney
 
@@ -57,7 +58,7 @@ Dean of Pre-College, Online, and Professional Programs
 
 With Berklee Online, you can study the renowned curriculum of Berklee College of Music from anywhere in the world, and in your own rhythm. Since 2002, more than 75,000 students from 144 countries have enhanced their creative output and marketability with Berklee Online's award-winning master's degree programs, bachelor's degree majors, certificate programs, and 300+ music courses. Through Berklee Online, you'll receive unparalleled instruction from music industry professionals and the same faculty members who teach at Berklee's Boston campus.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00001-00010/try-20261114T104345-0d4b6c/document_artifacts/image_000002_70a2fb46152fe67b6ce9a608bef7e2bc2aa52265029150d077144fcbc79e49be.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00001-00010/try-20261114T104345-0d4b6c/document_artifacts/image_000002_70a2fb46152fe67b6ce9a608bef7e2bc2aa52265029150d077144fcbc79e49be.png -->
 
 ## Getting Savvy with Synthesizer Basics
 
@@ -93,33 +94,10 @@ With a complex waveform like a sawtooth, you will hear a change in brightness wh
 
 - Electronic Music Production & Sound Design
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=1>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_3fc79ae1ffb1be5352f813ea58d966aba629e6dc9289a013edfe66367b87ad37.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_4d26130eb900820d6984de19edf49196b86d9f822e9f4d870b7a89e99b15f8a7.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_8cbe7a1df8696403055d45d362a8fbbf8839d0631a7c593460db2d15cf881044.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_9ac005c3b6d0af53c9aae3d9a49f520621ba299c37db2f685f04d45ddc0ed985.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_b25bc633ab5373f83a33b28e7e7f87bb5e25e665d9791e95ed74103efab38c79.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_595f0d01c5aa7b3b01b19974b09c62b03589778802bbc4b3d9d0e507fa9b77ab.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_d53d029f472e40ba88761d55f9d78638dd317ba629177a08e982819040b0bdf9.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_1174d078a362693ab44765a801d202e19256f66b8d01e7d2a1a9e45686286c82.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_c57f7ab3495fe294c9dcee90828d8694aa5d5cc82bce7b78b1a08acb7a9cb746.png>)
-
-![PDF-Seite 10](<document_artifacts/page_000010_e1e44a1b66bb6f83de849e7978df20034d2aa1c8ff6c6532f81360c4b56b2c0f.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=1>)
-
-<!-- PDF-Seiten 11–20 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00011-00020/try-20261114T104403-7048a6/document.md -->
+<!-- PDF-Seiten 11–20 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00011-00020/try-20261114T104403-7048a6/document.md -->
 
 A low cutoff frequency makes the wave look and sound more like a sine wave, and a high cutoff frequency lets the brightness of the waveform through. Notice that the changing of cutoff frequency has had no impact on the frequency of the waveform, but it does change the level. As the filter cuts the high end of the waveform, it reduces the overall energy and in turn, the level meter goes down.
 
@@ -147,11 +125,11 @@ To emulate sustaining instrumental sounds, the sustain portion of your amplitude
 
 Now that we have a sense of what some of these approaches will sound like, let's look at the wave shapes and the parameters, to get a visual. Here are some common settings for the amp envelope:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00011-00020/try-20261114T104403-7048a6/document_artifacts/image_000000_431e84f86e71aa3ab06993772c590ff7716f1b37e8adf30313c8731e3104adaa.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00011-00020/try-20261114T104403-7048a6/document_artifacts/image_000000_431e84f86e71aa3ab06993772c590ff7716f1b37e8adf30313c8731e3104adaa.png -->
 
 Switches are on or off with nearly instant movement. So, it takes no time to go from zero to full volume. Attack is 0. Sustain is at 100 percent, so decay does nothing. There isn't a different level to go down to. On "Note off," the sound should stop instantly, so Release is set to 0. Organs can be emulated with this envelope. Pro tip: To add a little bite to the beginning of the note reduce sustain to 80 percent and set decay very short. That is good for percussive organs.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00011-00020/try-20261114T104403-7048a6/document_artifacts/image_000001_8d38b5ba49c9d6d80c35c5d65cd95231b7b61219bb5afe16f9e5e524d88b6cad.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00011-00020/try-20261114T104403-7048a6/document_artifacts/image_000001_8d38b5ba49c9d6d80c35c5d65cd95231b7b61219bb5afe16f9e5e524d88b6cad.png -->
 
 These percentages are rough guides and will vary from synth to synth. But when you start to blow or bow, there is an initial strong burst of energy, and then the note settles into a steady sustaining level. That initial energy causes the envelope to jump from 0 to full volume quickly (the low attack time setting) then quickly down to the sustain level (the low decay time setting). The note holds at the sustain level-any variations in level during the sustain are added with LFOs-until the note off, where the instrument vibrates for a moment, trailing off after you've stopped blowing or bowing.
 
@@ -159,7 +137,7 @@ Increasing attack time and decay time will soften the initial transient. Increas
 
 This envelope is the standard sustaining envelope and is adjusted according to the actual instrument. For strings, the attack decay and release is longer, but varies with articulation. For horns, the sustain level is lower as the initial burst of air is quite strong, compared to the sustaining level. Again, this varies according to playing style.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00011-00020/try-20261114T104403-7048a6/document_artifacts/image_000002_1640bc56b61828a63136ec2c99568b36af67bb3c4037afdfcd5f4c9432ee2533.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00011-00020/try-20261114T104403-7048a6/document_artifacts/image_000002_1640bc56b61828a63136ec2c99568b36af67bb3c4037afdfcd5f4c9432ee2533.png -->
 
 This is a non-sustaining envelope that plays out, regardless of how long you hit the note for. It's perfect for emulating struck or plucked instruments. When an instrument is struck or plucked it goes to full volume nearly instantly, then decays based on the decay time. Release is set similar to decay so that if the player releases the MIDI note the envelope will continue to play out naturally. The Decay (and release) parameters are adjusted based on the instrument. A gong would have a very long Decay, while a marimba note would be very short.
 
@@ -167,17 +145,17 @@ Envelope Trigger Mode: Some synthesizers give a variety of modes for envelope pl
 
 Keytracking and Envelope Time: Often higher notes decay faster than lower notes in real instruments. To make that happen on your synthesizer you would need to route keytracking to decay and release time (negatively, because high notes need to cause short values)-this is a common parameter on synthesizers. Some synthesizers have a general purpose time control for the envelope, routing keytracking to control this parameter has a similar result.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00011-00020/try-20261114T104403-7048a6/document_artifacts/image_000003_07012b72ae72b8926cc6cc6204a8ec299202746d2e7d34bf56db039015257c39.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00011-00020/try-20261114T104403-7048a6/document_artifacts/image_000003_07012b72ae72b8926cc6cc6204a8ec299202746d2e7d34bf56db039015257c39.png -->
 
 This is very similar to the pluck or strike, but because release time is zero when the envelope receives a note, off it goes to zero, stopping the sound. This is representative of a piano, when the key is pressed a felt hammer strikes a string, and when the key is released a damper raises up and stops the note. A similar envelope would be used to emulate electric guitar and bass.
 
 But if you don't have access to your synthesizer right now while you read this, the best way to hear a damped pluck or strike in your head is by thinking of an analog piano. Think about how the note simply stops sounding once you've taken your finger off of the key. There is no sustain because you're no longer holding down the key.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00011-00020/try-20261114T104403-7048a6/document_artifacts/image_000004_280888d0e0469466459c63725aaab6f0e42d03ec5bc50ba1cd13f76cfd74aed0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00011-00020/try-20261114T104403-7048a6/document_artifacts/image_000004_280888d0e0469466459c63725aaab6f0e42d03ec5bc50ba1cd13f76cfd74aed0.png -->
 
 This one emulates a reversed percussion sound. It's great for energy -building and transitions, but no real instrument behaves this way.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00011-00020/try-20261114T104403-7048a6/document_artifacts/image_000005_3e31b30c232730cd8aeff2234d228b79649edce18729e413b3ba42ab96f046ad.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00011-00020/try-20261114T104403-7048a6/document_artifacts/image_000005_3e31b30c232730cd8aeff2234d228b79649edce18729e413b3ba42ab96f046ad.png -->
 
 This is a funny envelope-and not really that useful, if I'm being honest-but interesting to try. With these settings, if you hold a note down for a long time, the envelope goes through its short decay phase and you end up with a short percussive note, like a pluck.
 
@@ -199,33 +177,10 @@ Loudon Stearns is the author of the Berklee Online course from which this lesson
 - Attack 0, Decay 10-30%, Sustain 0, Release 50-100%
 - Quirk
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 11](<berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=11>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 11](<document_artifacts/page_000011_afc73f41a52a52f72c3f2f3ae4ea9a9d41140ba3a84e2a6c83a1ca83583ddf34.png>)
-
-![PDF-Seite 12](<document_artifacts/page_000012_dc8d6e8e862f59c7b65c377731f3f62ae32391040a4b56a561852979db703ff9.png>)
-
-![PDF-Seite 13](<document_artifacts/page_000013_59687e43b63f205745fe55d79d8eb32ad02ea86eb5ec01326dfd535456ba4363.png>)
-
-![PDF-Seite 14](<document_artifacts/page_000014_393eb84232cb8a8b6ee6ced5abb47c2c50180bdb47857182569ae18c896e3c1c.png>)
-
-![PDF-Seite 15](<document_artifacts/page_000015_3d209058560ad27f4fa69d041cc85d7b1082c362987ba0ac926c216608d79126.png>)
-
-![PDF-Seite 16](<document_artifacts/page_000016_d92206d492e4d3408aff1ba3c690415fdaa518cdacf39179b18718810c971170.png>)
-
-![PDF-Seite 17](<document_artifacts/page_000017_4699e78d3b0eb05335ed922d5a6ff4636d099dc2874ca8490060623f5a5e88f5.png>)
-
-![PDF-Seite 18](<document_artifacts/page_000018_5ea1877b9896ab62c0c2a39aa34355ba1a16058887b784404b2951d326586535.png>)
-
-![PDF-Seite 19](<document_artifacts/page_000019_459299ed9a4dc19e660c806f9210de6867b7ba5d301892546261edfb75d2c6ea.png>)
-
-![PDF-Seite 20](<document_artifacts/page_000020_5d4739049375205fb6861ede403343894a7df9d9d99ff3f9fbb4c7ecd1504261.png>)
-
-
-[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=11>)
-
-<!-- PDF-Seiten 21–30 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00021-00030/try-20261114T104422-30a3eb/document.md -->
+<!-- PDF-Seiten 21–30 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00021-00030/try-20261114T104422-30a3eb/document.md -->
 
 Instructor Spotlight:
 
@@ -251,7 +206,7 @@ I have an all tube Hewlett Packard sine wave generator. It was my father's and i
 
 Dive in! Make all the time. Don't let "I don't know how" stop you from making anything. The beauty of Berklee Online is it forces you to make constantly, and there is no better way to grow as an artist.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00021-00030/try-20261114T104422-30a3eb/document_artifacts/image_000000_6610b0828c0d0ad7b30e8a7d8b7d00e91736cbdb8592c162d6aa3894993f1cba.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00021-00030/try-20261114T104422-30a3eb/document_artifacts/image_000000_6610b0828c0d0ad7b30e8a7d8b7d00e91736cbdb8592c162d6aa3894993f1cba.png -->
 
 Industry Insider
 
@@ -279,7 +234,7 @@ It's difficult to say, really, because I think there will always be people who d
 
 In terms of where it sits in popular music: samples in most big records are cleared. I think people enjoy the nostalgia element of it, if they're familiar with the original. And if they're not familiar with the original, they might enjoy discovering that record for the first time. If you ask Timmy Thomas, whether he thinks being sampled by Drake on "Hotline Bling" was a good thing, I guarantee you he's going to say, yes. Because for one thing, he got paid really nicely for it and it gave his career a second burst. He's in the later years of his musical career and suddenly a song that he made 40, 50 years ago, is kind of trending again off the back of a Drake song. He's an absolute winner in that situation.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00021-00030/try-20261114T104422-30a3eb/document_artifacts/image_000001_9e8d4bcee1a34eb1f92ad4b6297e5ab23b10904dfe6184bc608934899cf3b381.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00021-00030/try-20261114T104422-30a3eb/document_artifacts/image_000001_9e8d4bcee1a34eb1f92ad4b6297e5ab23b10904dfe6184bc608934899cf3b381.png -->
 
 66
 
@@ -310,33 +265,10 @@ We use a variety of resources online to check the data sides of things. Most of 
 - Preserving the Art & History of Sampling
 - In this Q&A, which originally appeared in Berklee Online's Take Note publication, he opens up about what drives this powerhouse of a music discovery service, and breaks down the deep history of sampling as well as the direction it's pushing music in today.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 21](<berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=21>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 21](<document_artifacts/page_000021_7554a67c6bc60281d1f11247dfa266f32aa64bd156266aec1aa0dfd9170059ec.png>)
-
-![PDF-Seite 22](<document_artifacts/page_000022_1c1b9bc6d6d38b96dcb09075a5e1983fb75ea23aa273ba54a9ba13a957e0381e.png>)
-
-![PDF-Seite 23](<document_artifacts/page_000023_dc485b37eb388b3bdd3f33d75f024d63624ca148841f860f06d98e7643835fd6.png>)
-
-![PDF-Seite 24](<document_artifacts/page_000024_bdb2f9e97a7fae7755c238251b37ab4e14ec8fa6637c507841c4ec78a0503b6a.png>)
-
-![PDF-Seite 25](<document_artifacts/page_000025_6ce510fbf5261cd97ed62d0797a95c27fb619a011bbb59a0c7f1a2a998550985.png>)
-
-![PDF-Seite 26](<document_artifacts/page_000026_deba304b63a56ac2d598afacac1f81c21007f91e9db85258539574c126b84869.png>)
-
-![PDF-Seite 27](<document_artifacts/page_000027_f5941c606c3ca9f9df18eb87a47d4320bf5555dd9ed6822a5b3d3d0b8699d371.png>)
-
-![PDF-Seite 28](<document_artifacts/page_000028_23f9b3c81227ff4eb4847e00591afb6a44714802d07ce04816398186a2e930f2.png>)
-
-![PDF-Seite 29](<document_artifacts/page_000029_65b972bcd1b00ee3109f3c3bf9fdbea01a6eca8731164acf75be83a263f41e63.png>)
-
-![PDF-Seite 30](<document_artifacts/page_000030_11ffe2dd2a9c3c3c5c1035e01a172aa40e75a879a20fb7df078acfa26e5375a3.png>)
-
-
-[Original-PDF, Seite 21](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=21>)
-
-<!-- PDF-Seiten 31–40 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00031-00040/try-20261114T104438-f011e9/document.md -->
+<!-- PDF-Seiten 31–40 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00031-00040/try-20261114T104438-f011e9/document.md -->
 
 ## 1,500 a week, just new discoveries?
 
@@ -374,7 +306,7 @@ Carpenter has said that his biggest influences as a composer were Ennio Morricon
 
 ## Let's take a look at the main Halloween theme:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00031-00040/try-20261114T104438-f011e9/document_artifacts/image_000000_2b64af1db9c196ce8e247f8876aa352811e0b6eaee6531e6c452cce839e9a09a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00031-00040/try-20261114T104438-f011e9/document_artifacts/image_000000_2b64af1db9c196ce8e247f8876aa352811e0b6eaee6531e6c452cce839e9a09a.png -->
 
 The main theme from the film is actually very simple yet incredibly memorable. This could be because of its haunting dissonance or its relentless drive. One of the techniques Carpenter uses to make us feel unsteady is the irregular time signature. As he mentioned, the piece is in 5/4: the syncopation is created with accents in groups of 3, 3, 2, and 2. The initial pace in the groups of three is set, but then is suddenly changed to groups of two, making it feel as if it's pushing us forward and creating an unsteadiness.
 
@@ -388,7 +320,7 @@ The theme occurs as a car drives by the girls. Jamie Lee Curtis' character Lauri
 
 The simplicity of this theme is highly effective with its steady pulse in 5/4 time and the recognizable melody. The tick-tock clock-like nature of the electronic percussive sound in relentless sixteenth notes suggests Michael's unrelenting drive to kill. It truly is what makes this scene so frightening. There's no gore here, but we know the threat is imminent, and the continuous, steady, and unresolving, music holds us in anticipation; we know this threat will continue.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00031-00040/try-20261114T104438-f011e9/document_artifacts/image_000001_46aa941eae07aa7f7f25f031d359c3a911d1d8c81fa4d65befc91bc77c6cb0a9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00031-00040/try-20261114T104438-f011e9/document_artifacts/image_000001_46aa941eae07aa7f7f25f031d359c3a911d1d8c81fa4d65befc91bc77c6cb0a9.png -->
 
 Let's take a look at another scene (this one is definitely gorier). Again, just do a quick search online. It's called "The Chase." The following music cue, "Michael Kills Judith," occurs when Laurie sees her murdered friend on the bed in a position representing Jesus dying on the cross. For context, Judith is Michael's sister, who he killed at the beginning of the film. It is her gravestone that we see on top of the bed.
 
@@ -447,33 +379,10 @@ Carpenter says the scoring sessions took two weeks "because that's all the budge
 - ADVANCE
 - FELOCITY
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 31](<berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=31>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 31](<document_artifacts/page_000031_8a7621c2a34b637f7774328cd5ca1816bbb88e76554a70a7c23c2f8f6e5413de.png>)
-
-![PDF-Seite 32](<document_artifacts/page_000032_14e3479e3c5f8c4f0c19e9bd5317031ee0da897c6a657bbe49bcbab7c109c878.png>)
-
-![PDF-Seite 33](<document_artifacts/page_000033_a1293c6fafa4daa9b44dfa4919a1903a6c319902264071726d843b5f4c8996d0.png>)
-
-![PDF-Seite 34](<document_artifacts/page_000034_14fda1e7a56a48a5360c2a4c7816c9f730a9121bd8c9f7590a91980ccd127f56.png>)
-
-![PDF-Seite 35](<document_artifacts/page_000035_302e15ec95583981f07a8c88f6bc64a92ff6a82d74b51706ae002b7425832efc.png>)
-
-![PDF-Seite 36](<document_artifacts/page_000036_792847ca8b23d2a90e77dfe67bd74d8ef09f87949cd2c86a72dd715eb2f0fd53.png>)
-
-![PDF-Seite 37](<document_artifacts/page_000037_b30ea710fdaff6ae8cb17afbcc52faa3bd86001e5eb49303ee3b10f4524ddb21.png>)
-
-![PDF-Seite 38](<document_artifacts/page_000038_12f1b4e81990d7301094ee4ad1749149c3f9ccbafc93bb32f359c0d4e7d858be.png>)
-
-![PDF-Seite 39](<document_artifacts/page_000039_fa6cb593c29a4eb49d808905e3f608ee5a23366ac1550231c1b04a4a93c2148b.png>)
-
-![PDF-Seite 40](<document_artifacts/page_000040_b6514573e5afdfdf46786745e409340fe8f101979ddc5dce91b389ee5d5a91e5.png>)
-
-
-[Original-PDF, Seite 31](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=31>)
-
-<!-- PDF-Seiten 41–50 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00041-00050/try-20261114T104456-13f830/document.md -->
+<!-- PDF-Seiten 41–50 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00041-00050/try-20261114T104456-13f830/document.md -->
 
 He dubbed the music in late July and finally saw the picture with an audience in the fall.
 
@@ -485,7 +394,7 @@ Michele Darling is the author of the Berklee Online course from which this lesso
 
 Learn More Instructor Spotlight:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00041-00050/try-20261114T104456-13f830/document_artifacts/image_000000_ce0a7d2baab746dcd4bb7e694fed000ae3a0d8a9306274458aa600f2f4513c7d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00041-00050/try-20261114T104456-13f830/document_artifacts/image_000000_ce0a7d2baab746dcd4bb7e694fed000ae3a0d8a9306274458aa600f2f4513c7d.png -->
 
 ## Michele Darling
 
@@ -509,7 +418,7 @@ You are capable. Just get out of your own way. Stop trying to force it and let t
 
 I watch the visuals several times until I start to feel emotion. When I feel immersed in the emotion, I start to play on the keyboard and come up with musical elements and sounds that align with the emotion. Then I have a basis to work off of and I can build on it.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00041-00050/try-20261114T104456-13f830/document_artifacts/image_000001_9e1e05589e1e46a0c2d5f47138a1fa8da4e8b7ff8e4c649bb64bf303c4342840.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00041-00050/try-20261114T104456-13f830/document_artifacts/image_000001_9e1e05589e1e46a0c2d5f47138a1fa8da4e8b7ff8e4c649bb64bf303c4342840.png -->
 
 Tips of the Trade
 
@@ -587,33 +496,10 @@ Now that we know everything's working, let's label the two audio tracks. Label t
 - I could use the External Instrument device (Instruments > External Instrument) to control the external instruments, but I recommend using the individual MIDI and audio tracks. This makes it easier to record MIDI data on the MIDI track, and then record the audio on the audio track.
 - Start by deleting the external instrument track and creating another MIDI track (right-click > Insert MIDI Track). You should have four columns. Name one track "drums" and another "model d" for your synth bass line.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 41](<berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=41>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 41](<document_artifacts/page_000041_511d80ec1458867322f74e8f88c66d34b2024ba4f0ab086b2e35e33ba635477c.png>)
-
-![PDF-Seite 42](<document_artifacts/page_000042_9c629f4ee3ee27be4a63def0a62973881a053ca7f19db99a555a30a2818f36f5.png>)
-
-![PDF-Seite 43](<document_artifacts/page_000043_0684ae232724810a4c1220e4242e5903f6c66c901b2eb59b82d2023616ebbda0.png>)
-
-![PDF-Seite 44](<document_artifacts/page_000044_c23d6088a254bf9acbc73c55b17807325043d33ac9604ad305445b5a24934668.png>)
-
-![PDF-Seite 45](<document_artifacts/page_000045_636bfe08b04c2f67d807a72c4ff6ebaa34a7eb91b326ee558d180dd15169f0a9.png>)
-
-![PDF-Seite 46](<document_artifacts/page_000046_e34f34549035becf71403a233dcdbe04e2bd9f28b0ae049e399ad60530510b86.png>)
-
-![PDF-Seite 47](<document_artifacts/page_000047_910720d53ef45814624e90304f9a4a957ab47605bdc8eb6fd82ccf667042ed0d.png>)
-
-![PDF-Seite 48](<document_artifacts/page_000048_60cd42d03e3981107953524a8c9a2e7d88c85e2115b6e2c0ce710a0a91b2e0e5.png>)
-
-![PDF-Seite 49](<document_artifacts/page_000049_8418d3b23d24eff296b3c866021529002d9e46450ebdc9dce659c9580f6566a8.png>)
-
-![PDF-Seite 50](<document_artifacts/page_000050_ddf8d3e1de6973a20e8ec3919b7aeedb9eec16dc4533a28579346556226b8169.png>)
-
-
-[Original-PDF, Seite 41](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=41>)
-
-<!-- PDF-Seiten 51–60 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00051-00060/try-20261114T104512-b1b3d9/document.md -->
+<!-- PDF-Seiten 51–60 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00051-00060/try-20261114T104512-b1b3d9/document.md -->
 
 ## MIDI Sequencing the TT-606 Analog Drums
 
@@ -687,7 +573,7 @@ So that's basically how you do it. To refresh-so you don't have to flip back thr
 
 And although this is my method, it's just one way to do it. The most important thing is to experiment and have fun. And the more you do of that, the chances increase that you'll find a new song that nobody's heard before. And that's why it's called synthesis!
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00051-00060/try-20261114T104512-b1b3d9/document_artifacts/image_000000_10d221af810276d6039d1f210540914d06939577fd20646bd8bb007c7de80aed.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00051-00060/try-20261114T104512-b1b3d9/document_artifacts/image_000000_10d221af810276d6039d1f210540914d06939577fd20646bd8bb007c7de80aed.png -->
 
 Erik "Hawk" Hawkins is an EDM artist, producer, composer, remixer, label owner, and author. His music has been used by networks and film studios, including ABC, CBS, MTV, Nickelodeon, and New Line Cinema. He also manages his own music production channel on YouTube, with more than 7,000 subscribers.
 
@@ -725,33 +611,10 @@ By Erin Barra
 - Start by setting up two MIDI tracks (right-click > Insert MIDI Track). One MIDI track will be the TX7, which will be for the chords. The other MIDI track will be the Pro-1 for the lead synth.
 - Instructor Spotlight: Erik Hawkins
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 51](<berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=51>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 51](<document_artifacts/page_000051_b6c064784ad98295f4deb6d6c0d2ab420894e7d9632934f22ac5af71b8544df4.png>)
-
-![PDF-Seite 52](<document_artifacts/page_000052_aeefeac9dd6c1f9306f042121b933029f04568623233ad4702d37b19c067b047.png>)
-
-![PDF-Seite 53](<document_artifacts/page_000053_9d3c036dba813e04db4ffbef9800e5c398e96cd6b4e54789568320f978ce99dc.png>)
-
-![PDF-Seite 54](<document_artifacts/page_000054_dacd36828112855b789876dea278ef2ce6b84422f3f1c026b0090a7d2db0e33d.png>)
-
-![PDF-Seite 55](<document_artifacts/page_000055_a577df576a217257b5f30e92497b235bfcb20c6b6cfa06edefcf9113567cb4dd.png>)
-
-![PDF-Seite 56](<document_artifacts/page_000056_1339e2e1f7afa4e75b09ecc96eb2fe644872e3587eecab714e1a7ae876cd7689.png>)
-
-![PDF-Seite 57](<document_artifacts/page_000057_eced763bd3570948da13e43fae354faff85f049c96c7e82596fa64a6e724875f.png>)
-
-![PDF-Seite 58](<document_artifacts/page_000058_a66ec22500b3d4969c44bd949f9407ec7d14750d51fc123aca4c24df583cb6fe.png>)
-
-![PDF-Seite 59](<document_artifacts/page_000059_da337bbbcc5aa030c414cd5f988cb2135669e7aab212e714abd9642cabc7191e.png>)
-
-![PDF-Seite 60](<document_artifacts/page_000060_deb4d6821693759e62f4fd08ac9678006b23edf14d3c65571541d6f681fc71ae.png>)
-
-
-[Original-PDF, Seite 51](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=51>)
-
-<!-- PDF-Seiten 61–70 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00061-00070/try-20261114T104527-40d433/document.md -->
+<!-- PDF-Seiten 61–70 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00061-00070/try-20261114T104527-40d433/document.md -->
 
 The idea of improvisation is something that a lot of laptop musicians cringe at the thought of. For some of us, the whole idea of being completely in control is what draws us to a Digital Audio Workstation (DAW) in the first place. But in many respects, even when it's just us and we've got a distinct plan in place, much of what we do is largely improvisational. Whether it's the point at which we're picking out a melody, playing around with drum patterns, or twisting knobs until we find just the right setting, we are in fact improvising in those moments. Composition is improvisation, just at a different pace and through a different lens.
 
@@ -793,7 +656,7 @@ Erin Barra is the author of this course, along with Loudon Stearns. Learn how sh
 
 [earn More](https://online.berklee.edu/courses/ableton-live-techniques-non-linear-creative-strategies-and-composition)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00061-00070/try-20261114T104527-40d433/document_artifacts/image_000000_71e1f75ef12479dbe68b0ea7fcd42280407484c0f135c43db220d1657c0c38f8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00061-00070/try-20261114T104527-40d433/document_artifacts/image_000000_71e1f75ef12479dbe68b0ea7fcd42280407484c0f135c43db220d1657c0c38f8.png -->
 
 ## Erin Barra
 
@@ -821,7 +684,7 @@ I saw Disclosure at Boston Calling maybe five years ago, and I've never heard mu
 
 Don't get overwhelmed by everything there is to know and instead get excited by the fact that you've got a lifetime of learning ahead of you and endless discoveries pending.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00061-00070/try-20261114T104527-40d433/document_artifacts/image_000001_cb69a34b066767846311c054533fa3a8a5b5b2cb49b7889413aff88d8348b795.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00061-00070/try-20261114T104527-40d433/document_artifacts/image_000001_cb69a34b066767846311c054533fa3a8a5b5b2cb49b7889413aff88d8348b795.png -->
 
 Instructor Insights
 
@@ -854,39 +717,16 @@ The idea for #hundredtrackhive first came about as a response to the pandemic. W
 - Reels
 - The idea for #hundredtrackhive first came about as a response to the pandemic. What was a class that only met once a week to learn Electronic Production & Design (EPD) techniques became an online community that shared and supported each other's works. Using Splice's sample downloads and synthesizer presets helped keep the inspiration flowing for those 100 days, and the company was kind enough to provide Loudon's class with a free three-month subscription.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 61](<berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=61>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 61](<document_artifacts/page_000061_ea18e75fbee4e2f350c1e2f2f62c6023fa063793e5421488dd2221db594a3488.png>)
-
-![PDF-Seite 62](<document_artifacts/page_000062_abe0204cd252f3d1ec2b73c55e0ab8265b014285525e9d44664f5398345fa4dd.png>)
-
-![PDF-Seite 63](<document_artifacts/page_000063_bc07fccb7726255f5652f0f4aa038d359b467eb7c59fd078b0e76b39125d3aa6.png>)
-
-![PDF-Seite 64](<document_artifacts/page_000064_48c44b2ed84fc3e17ad648a5f810c8e197f3727cef038c0a1e6902276bed9dd7.png>)
-
-![PDF-Seite 65](<document_artifacts/page_000065_7fb83e92af90276c9f069f31d22e1cfd9803f0b376f3e0e158be15079e56e122.png>)
-
-![PDF-Seite 66](<document_artifacts/page_000066_c5dfac1d06837a40cc7cd519e63941868dae72fbb421cafd49f794fa35d8c6e8.png>)
-
-![PDF-Seite 67](<document_artifacts/page_000067_3481d3ffc66e4a8920afe82b2612c8622aa14314f3782792ac8439342f33efd5.png>)
-
-![PDF-Seite 68](<document_artifacts/page_000068_7abe8dc9ddc6f27387b6072a22f7848276ca596e6c8ec7680b791506a268440c.png>)
-
-![PDF-Seite 69](<document_artifacts/page_000069_8d1c078a956ca9900e860e81821f3804b03dcd30fe6835eefec30fed56bc9be5.png>)
-
-![PDF-Seite 70](<document_artifacts/page_000070_1cdba84d29aca7f480685dd1aff30a4361c82b0027fc77821291f78f000d488a.png>)
-
-
-[Original-PDF, Seite 61](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=61>)
-
-<!-- PDF-Seiten 71–80 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00071-00080/try-20261114T104546-4ba187/document.md -->
+<!-- PDF-Seiten 71–80 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00071-00080/try-20261114T104546-4ba187/document.md -->
 
 Instagram ended up being a great medium for the project, due its fast-paced nature. The fact that Loudon and his students were sharing snippets and ideas instead of full projects made the app seem like the right place for the experiment. Loudon also saw other advantages to it:
 
 "We have a natural tendency as artists to make long things, so I love Instagram for many reasons," he says. "One, the audio isn't the best quality. So it avoids getting too precious with the mix, because it's
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00071-00080/try-20261114T104546-4ba187/document_artifacts/image_000000_778d3112a2f5f9cef069c6ef37a7a46277c6f42c73c0aa9ec2a219af4bf84e23.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00071-00080/try-20261114T104546-4ba187/document_artifacts/image_000000_778d3112a2f5f9cef069c6ef37a7a46277c6f42c73c0aa9ec2a219af4bf84e23.png -->
 
 66
 
@@ -918,7 +758,7 @@ Loudon says he noticed a natural kind of arc: most of the students are really go
 
 "To me it's like, 'I'm almost there!' and it's a marathon," says Loudon. "And then we all did the last one in class and we all made our 100th post together, which was super fun."
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00071-00080/try-20261114T104546-4ba187/document_artifacts/image_000001_c15bd0cecd782bdfeac22b2edf6f36c5fcaead709213ee546caa96a6d38d19ef.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00071-00080/try-20261114T104546-4ba187/document_artifacts/image_000001_c15bd0cecd782bdfeac22b2edf6f36c5fcaead709213ee546caa96a6d38d19ef.png -->
 
 ## David Doms
 
@@ -957,7 +797,7 @@ With Berklee Online, you have more than 300 courses to choose from, including mo
 - Mixing and Mastering for the Electronic Musician �
 - Advanced Mixing Techniques 
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00071-00080/try-20261114T104546-4ba187/document_artifacts/image_000002_838b9bca149c50766896f24f0768a2e447c38aa0713bab3e942dfa15f25429f4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00071-00080/try-20261114T104546-4ba187/document_artifacts/image_000002_838b9bca149c50766896f24f0768a2e447c38aa0713bab3e942dfa15f25429f4.png -->
 
 ## Shaping the Sounds of Your Mix with EQ
 
@@ -986,33 +826,10 @@ We use EQ to help tracks blend together in a mix. A very common example would be
 - Composing and Producing Electronic Music 1 & 2 �
 - AKAI
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 71](<berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=71>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 71](<document_artifacts/page_000071_0ffb25df028db127114778185c5075f8ebdf2094e3dac0624638857e086a9fc9.png>)
-
-![PDF-Seite 72](<document_artifacts/page_000072_d48a59fc25b9ba93de4c8e6b7f01581780e1d509892d4722f3f24576aeac6887.png>)
-
-![PDF-Seite 73](<document_artifacts/page_000073_78d5646f261a65edb8c93063cd8a2c4f6c5493fcfb29ad60604964c3e5c6c64a.png>)
-
-![PDF-Seite 74](<document_artifacts/page_000074_a19d653d86659542eac9471ffe536287f5b64fd7fd4aef5b5776231ad726748b.png>)
-
-![PDF-Seite 75](<document_artifacts/page_000075_dd6c65edb95b2e94f0468e76c6046fcbc09bb6815bb1892652cd4b127533dc9e.png>)
-
-![PDF-Seite 76](<document_artifacts/page_000076_b954b410edd63a6e1dba963977f97f6fd148802d39d5fdad8a79371727710e95.png>)
-
-![PDF-Seite 77](<document_artifacts/page_000077_16121adb4429ab4e821a72e42f3caeccbd01953639441198d2ebf40cd8e86040.png>)
-
-![PDF-Seite 78](<document_artifacts/page_000078_d28f7aeb1aef4260e39fb6306f167f97bad5112c86eb206308b2ba734eb9ec39.png>)
-
-![PDF-Seite 79](<document_artifacts/page_000079_b397e2b67216c322ed339d5a42083810873ed9ceb6ff94814dda5549cc509b40.png>)
-
-![PDF-Seite 80](<document_artifacts/page_000080_323165b45b593ef6d4a6e2ec84da0a10aebe2a50d71dce9b813704038b9a9478.png>)
-
-
-[Original-PDF, Seite 71](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=71>)
-
-<!-- PDF-Seiten 81–90 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00081-00090/try-20261114T104603-ec1711/document.md -->
+<!-- PDF-Seiten 81–90 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00081-00090/try-20261114T104603-ec1711/document.md -->
 
 ## For Balance
 
@@ -1072,7 +889,7 @@ Jeff Baust is the author of the Berklee Online course from which this lesson com
 
 [earn More](https://online.berklee.edu/courses/mixing-and-mastering-for-the-electronic-musician)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00081-00090/try-20261114T104603-ec1711/document_artifacts/image_000000_a7f72bedfe97079dc585062097e0756adfb4c37963578c1d0916fbc8fa9dd916.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00081-00090/try-20261114T104603-ec1711/document_artifacts/image_000000_a7f72bedfe97079dc585062097e0756adfb4c37963578c1d0916fbc8fa9dd916.png -->
 
 ## Instructor Spotlight: Jeff Baust
 
@@ -1096,34 +913,12 @@ It's really important to me, for my teaching as well as for my music. I do a lot
 
 Our graduates go onto careers in a lot of different aspects of the industry, some of them into game sound design, film sound design, electronic music composition, working for technology companies, and more.
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 81](<berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=81>)
 
-![PDF-Seite 81](<document_artifacts/page_000081_dce1e551800cbda074e306c1b89938c3d06a2b765cffd0ad7312a2ae93d73861.png>)
+<!-- PDF-Seiten 91–100 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00091-00100/try-20261114T104620-788640/document.md -->
 
-![PDF-Seite 82](<document_artifacts/page_000082_6ff9d2bda44219d5e4cbed23b92ec3f97a87500b524919760272b0f9dcc05e08.png>)
-
-![PDF-Seite 83](<document_artifacts/page_000083_2167c198c6049a0f1077f20ba9fd15c97077efa65e8bb5371e3aa3845b49be9d.png>)
-
-![PDF-Seite 84](<document_artifacts/page_000084_f91b4b35060d51d3a1a3d4ac7e4ce468a85c9f9022361dc68d390154d69e6865.png>)
-
-![PDF-Seite 85](<document_artifacts/page_000085_151c3c9d14cd9c2a9360f78f267071dac1dfa19594d54c0f525beef640830b28.png>)
-
-![PDF-Seite 86](<document_artifacts/page_000086_152636d337a43ce89b0150b4c06c56d8fbfeaf11f64a536f9d952f545651e909.png>)
-
-![PDF-Seite 87](<document_artifacts/page_000087_d0ec793fb609f4388f3dc773e3cd53f4042e02d07bb86d0debe6115c0a4079b9.png>)
-
-![PDF-Seite 88](<document_artifacts/page_000088_c1bbad82faf4148e525a41adeebdea19a379cc3c96d3a31a37e3856c3c80e5b7.png>)
-
-![PDF-Seite 89](<document_artifacts/page_000089_588ed56e8f820e6d6479893a6f0cddf95f996151603c95369db238a012ea5fff.png>)
-
-![PDF-Seite 90](<document_artifacts/page_000090_93dc984ab5b268d6260dae3e4be56f9348790a646f213b43cd02b26d0f7fa130.png>)
-
-
-[Original-PDF, Seite 81](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=81>)
-
-<!-- PDF-Seiten 91–100 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00091-00100/try-20261114T104620-788640/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00091-00100/try-20261114T104620-788640/document_artifacts/image_000000_ff0ec7dd555bde58297fa9ff872381a879e8a89b01bd50037b5f29d2e2123fa5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00091-00100/try-20261114T104620-788640/document_artifacts/image_000000_ff0ec7dd555bde58297fa9ff872381a879e8a89b01bd50037b5f29d2e2123fa5.png -->
 
 Student Stories
 
@@ -1141,7 +936,7 @@ He'd also fallen in love with the Boston campus when he first toured Berklee on 
 
 Josh grew up in a small town in Ontario, Canada and found ways to pursue the arts, though they were not always easy to find in his sports-dominated high school. He played the drums, breakdanced, and discovered his passion for producing electronic music.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00091-00100/try-20261114T104620-788640/document_artifacts/image_000001_1e55c8ea9041790ca6b0ccc3974d0e716879f88cf81672bf816b2b776ba4504b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00091-00100/try-20261114T104620-788640/document_artifacts/image_000001_1e55c8ea9041790ca6b0ccc3974d0e716879f88cf81672bf816b2b776ba4504b.png -->
 
 66
 
@@ -1169,7 +964,7 @@ Mixing Engineer · Mastering Engineer · Synth Programmer Music Editor · Sound 
 
 Check out our Careers page for more inspiration!
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00091-00100/try-20261114T104620-788640/document_artifacts/image_000002_4baf908ae2642f0f054d47fd8b2167e596db7cb11d8840ea7e1dc0cfd000804c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00091-00100/try-20261114T104620-788640/document_artifacts/image_000002_4baf908ae2642f0f054d47fd8b2167e596db7cb11d8840ea7e1dc0cfd000804c.png -->
 
 Michael Bierylo is an electronic musician, guitarist, composer, and sound designer. He has been a faculty member at Berklee College of Music since 1995 and is currently the Chair Emeritus of the Electronic Production and Design Department.
 
@@ -1223,7 +1018,7 @@ Questions about
 
 advisors@online.berklee.edu 1-866-BERKLEE (US) +1-617-747-2146 (INT'L)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00091-00100/try-20261114T104620-788640/document_artifacts/image_000003_ee474170190bfbe1dc8100b37d11608b101a02c07323162ee3d55dfb7e65aabd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/a4444849d8425517/d3f6f9dfb2b4/00091-00100/try-20261114T104620-788640/document_artifacts/image_000003_ee474170190bfbe1dc8100b37d11608b101a02c07323162ee3d55dfb7e65aabd.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -1231,28 +1026,5 @@ advisors@online.berklee.edu 1-866-BERKLEE (US) +1-617-747-2146 (INT'L)
 - When Josh Sebek arrived at the Berklee campus in Boston to start his freshman year, he was already quite familiar with what taking classes through Berklee was all about. Right out of high school, Josh completed his Advanced Certificate in Music Production using Pro Tools, a stepping stone that led him to attend Berklee's Boston campus and eventually become a Music Production and Engineering (MP&E) student.
 - Instructor Spotlight:
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 91](<document_artifacts/page_000091_bd06410df212d155b1d65b8d27d511380465c438fea16fe2b2968233b483d7f8.png>)
-
-![PDF-Seite 92](<document_artifacts/page_000092_8b92390832d88383ab0afbac8f0a3a9f320523b1a545d6fe8822a5a78b53795f.png>)
-
-![PDF-Seite 93](<document_artifacts/page_000093_1c76efb3cfbfce8883f3775eeaeb93b3d89128ebf9565976a9fd572aae63c689.png>)
-
-![PDF-Seite 94](<document_artifacts/page_000094_b12d44787dad371ab3f6ceafbbc0c1f8b8b2ceb545969edd89211fecbbf2fadc.png>)
-
-![PDF-Seite 95](<document_artifacts/page_000095_fbf94d71a012b467d6165f9ef8c5a43f26851dd478120f5ba83c9639f27048c9.png>)
-
-![PDF-Seite 96](<document_artifacts/page_000096_dafdbf89e40b8fb80090eb93d9cfc322b0d9f3339f0781dfc135e4b9b728d126.png>)
-
-![PDF-Seite 97](<document_artifacts/page_000097_2a23f750316ab0de725a93417221a56a8a2af4af0f6163227bf504d9b0b52896.png>)
-
-![PDF-Seite 98](<document_artifacts/page_000098_895549b2a3c3431d2f4ca53dc61830c2c4edcf3aa0cd3a17dc8e38bc8bf36eae.png>)
-
-![PDF-Seite 99](<document_artifacts/page_000099_c871d7158eb5fa87225c0bd845b663d0015fb3840b1a9c3cb982572b839e8264.png>)
-
-![PDF-Seite 100](<document_artifacts/page_000100_8b86a2f419ccfaac2aa5271adf7b47a4a2d002d7f2713c87e1c966ea35f7dc68.png>)
-
-
-[Original-PDF, Seite 91](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=91>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 91](<berklee-online-electronic-music-production-and-sound-design-handbook.pdf#page=91>)

@@ -9,12 +9,13 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 57
 tabellen: 1
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `s06-the-elements-of-rhythm-sound-s.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document.md -->
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document.md -->
 
 This is "The Elements of Rhythm: Sound, Symbol, and Time", chapter 1 from the book Music Theory (index.html) (v. 1.0).
 
@@ -26,7 +27,7 @@ Normally, the author and publisher would be credited here. However, the publishe
 
 For more information on the source of this book, or why it is available for free, please see the project's home page (http://2012books.lardbucket.org/). You can browse or download additional books there.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000000_fd00aba09e0504e3d7ebd62044de1c9387e9e399986444a996f6ece324d27777.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000000_fd00aba09e0504e3d7ebd62044de1c9387e9e399986444a996f6ece324d27777.png -->
 
 ## Chapter 1
 
@@ -54,7 +55,7 @@ There have been many differing notational systems throughout the history of musi
 
 Let us first examine how durational values are drawn:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000001_5f1d7479bf2718436c9c7a241f38ef9437a4d8d3fddfc9ff0aff6b9a645de5e8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000001_5f1d7479bf2718436c9c7a241f38ef9437a4d8d3fddfc9ff0aff6b9a645de5e8.png -->
 
 Note values may be "open notes" (not filled in or blackened), or "filled-in notes." In the context of how musical time is organized (discussed below), these will have greater or lesser lengths or time spans.Chapter 2 "The Elements of Pitch:Sound, Symbol, and Tone" will discuss general rules and practices as to how note values are drawn in the context of pitch placement. In the following example they are not yet assigned any particular value: only proportional values in relation to each other.
 
@@ -66,7 +67,7 @@ Below are examples of basic durational values and their common names. Proper nam
 
 Figure 1.2 Durational Values and Nomenclature
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000002_79224d24170bae3106d3e9c94b8844b7e32a8b22effba3c854b07cbd29c402ec.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000002_79224d24170bae3106d3e9c94b8844b7e32a8b22effba3c854b07cbd29c402ec.png -->
 
 There are rare examples of "One-hundred and twenty-eighth-notes." A notable example is found in the First Movement Introduction to Beethoven's "Pathetique" Sonata No. 8, Opus 13.
 
@@ -80,7 +81,7 @@ Durational values are held in proportion to one another. Observe that each value
 
 2. Durational Values may be nondotted or dotted. Dotted Values have three interpretations: (1) The dot represents the addition of half the original value; (2) The dotted value may divide into two lower dotted values; (3) Or the dotted value may divide into three nondotted values. This potential division into three is critical for comprehending Compound Meter.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000003_69bcff676cc95bb025da82cc81e8d5ad54101d7479f6d4632b6fb826edfcb4a5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000003_69bcff676cc95bb025da82cc81e8d5ad54101d7479f6d4632b6fb826edfcb4a5.png -->
 
 ## Tremolo
 
@@ -89,7 +90,7 @@ At times notes may have a diagonal slash (or slashes) through the stem, or below
 1. These indicate a tremolo, the performer rapidly repeating the note, or;
 2. As a notational convenience, slashes represent flags, denoting embedded smaller durational values:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000004_8ff2cea9f2b4a39e8b19dcb4e54199cdf40ff95a6d2900d6df026427bd3d2c06.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000004_8ff2cea9f2b4a39e8b19dcb4e54199cdf40ff95a6d2900d6df026427bd3d2c06.png -->
 
 These can be interpreted as "eighth-notes in the space of a half-note" (4), or sixteenth-notes in the space of a quarter," (4) and so on. This is merely a notational convenience employed as needed.
 
@@ -101,17 +102,17 @@ Durational values may have small periods ("dots") appended to them. Originally, 
 2. A dotted value may be divisible into three non-dotted values:
 3. A dotted value may be divisible into two smaller dotted values:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000005_8b825e844cdd007779b9f64dea36dac9ed106cd721e7032d11176206ea2e2e58.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000005_8b825e844cdd007779b9f64dea36dac9ed106cd721e7032d11176206ea2e2e58.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000006_0edbbbcd44a7d3d3ca7b773dcf8e01f185732b882cc9a8b62ca27e6f16ee36b5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000006_0edbbbcd44a7d3d3ca7b773dcf8e01f185732b882cc9a8b62ca27e6f16ee36b5.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000007_3e6b21d2ffddb476e9150a0425443a372f52419e31825bd0d6a5827a6983d5f1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000007_3e6b21d2ffddb476e9150a0425443a372f52419e31825bd0d6a5827a6983d5f1.png -->
 
 These varying uses of dotted values shall come into focus in subsequent discussions concerning meter and notational practice in Section 1.2 "Pulse, Tempo, and Meter" and Section 1.3 "Music Notation Practices" below. As with non-dotted values, dotted values are in proportion to one another as well. Figure 1.8 "Dotted Values" shows the proportional chain of dotted values.
 
 3. Rests are the symbols used to represent the relative length of silence in music. They are equivalent in value to durations.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000008_53f329b86ae76b49d5936c45ca06abe4d854e12e9d5762b1b03542677dc6dea4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000008_53f329b86ae76b49d5936c45ca06abe4d854e12e9d5762b1b03542677dc6dea4.png -->
 
 ## Rests
 
@@ -119,7 +120,7 @@ Just as durational values represent the length of sound in music, symbols of equ
 
 Figure 1.9 Rests
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000009_3d281740b84c819c0fa9f47309a9f4edb9e42d6bc0a20b6ccb2463f8476ffbea.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000009_3d281740b84c819c0fa9f47309a9f4edb9e42d6bc0a20b6ccb2463f8476ffbea.png -->
 
 ## KEY TAKEAWAYS
 
@@ -135,9 +136,9 @@ The student should understand:
 1. Practice drawing durational values and rests following the model below. Make sure to draw noteheads correctly (no "stick figures" please!).
 2. For each value given, draw three lower divisions: for example, given a whole-note, draw two half-notes, four quarter-notes, eight eighth-notes. Use flags and beams (ligatures). Make sure to align and space properly. See sample solution.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000010_039d2a6b52ccb310cf7cf9358ce11edd3aa59471c81f0b662abf0bee335846cb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000010_039d2a6b52ccb310cf7cf9358ce11edd3aa59471c81f0b662abf0bee335846cb.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000011_37006f746d0389cfbafc76730c22908c380625ab34ac10c9f1dbe7357fe1339d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00001-00010/try-20261114T125251-8a8eec/document_artifacts/image_000011_37006f746d0389cfbafc76730c22908c380625ab34ac10c9f1dbe7357fe1339d.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -178,37 +179,14 @@ The student should understand:
 - 4. (Use only dotted values)
 - 2. (Use non-dotted values)
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<s06-the-elements-of-rhythm-sound-s.pdf#page=1>)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- PDF-Seiten 11–20 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document.md -->
 
-![PDF-Seite 1](<document_artifacts/page_000001_56fe15e6d8278d6ba5eebe2fbf442e4738761922b7435d213b317120b072fc14.png>)
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000000_7f84093b3cbea8328af4bf596560d560f287abe64ce8ba0cff0c480eeb0ddc5e.png -->
 
-![PDF-Seite 2](<document_artifacts/page_000002_f43d77cd40826a0f87883e4b263505a971a95fc2ff8f703219508330f47ac280.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_729421492beb5d23a57ead6aac6689546144ed40e17f803e97e26134f5090181.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_186f05c95a9569856a7a8a2040da95069451f1050495b6dea7d9b12bd3beb528.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_bca7ee54457157e63ddc28df1221d68e3cb0f5a6432000e2ed890a45e18eef07.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_aa6b8081cdedc57afdc884d87169faa3c1cb04bb9a11bfc84b1fc3aedb23cf4d.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_be6f64f2f708d055b53bbed3588c23dbbd13d4dd97f5b9ac72190910a73cb021.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_e91d446e487fd8f639ed63e9b7d95b960e3790f541f0209bfa54d3e63994e977.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_f5758128dbbc4a7c3c7477544a38cc944c62ae9efe6bae2ffed90625e2d6c1f4.png>)
-
-![PDF-Seite 10](<document_artifacts/page_000010_fa120e018a5114a423c80db6f3eb3b28d974584c65c65fade371fac96163754f.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/s06-the-elements-of-rhythm-sound-s.pdf#page=1>)
-
-<!-- PDF-Seiten 11–20 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000000_7f84093b3cbea8328af4bf596560d560f287abe64ce8ba0cff0c480eeb0ddc5e.png -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000001_7dd5ef0d7ce0326a50790035bab162d97856f061b4deec60b87c24f4bed3a029.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000001_7dd5ef0d7ce0326a50790035bab162d97856f061b4deec60b87c24f4bed3a029.png -->
 
 ## 1.2 Pulse, Tempo, and Meter
 
@@ -280,13 +258,13 @@ We name meters according to two criteria:
 
 Figure 1.16 Simple and Compound Divisions of Given Pulses
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000002_823f3d9615d66a5991e94a7326344a8935fc3b2345b0a3898b48c8a6f21ddc0e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000002_823f3d9615d66a5991e94a7326344a8935fc3b2345b0a3898b48c8a6f21ddc0e.png -->
 
 So, a time signature wherein (a) the pulse subdivides into two portions, and (b) two pulses are grouped together is called Simple Duple. Three pulses grouped together, Simple Triple and so forth. A time signature wherein (a) the pulse subdivides into three portions, and (b) two pulses are grouped together is called Compound Duple, three pulses, Compound Triple, and so forth.
 
 Figure 1.17 Time Signatures and Labels
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000003_dbc5db27e204afff85ba31b4d16feb7b23184e22b830a4cde9129e3d5513c287.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000003_dbc5db27e204afff85ba31b4d16feb7b23184e22b830a4cde9129e3d5513c287.png -->
 
 ## Simple Meter
 
@@ -299,11 +277,11 @@ So the time signature 24 has two quarter-notes grouped together, therefore, we l
 
 Figure 1.18 Typical Simple Meters
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000004_1e2761a18ae3a02cdfe1e305c9e45301a6015ad2f826cc514b4871f872586ba2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000004_1e2761a18ae3a02cdfe1e305c9e45301a6015ad2f826cc514b4871f872586ba2.png -->
 
 In Renaissance music, specialized symbols were employed that were the forerunner of time signatures. These symbols determined how relative durational values were held in proportion to one another. We continue to employ two holdovers from this system.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000005_1b9fdf9599bce0468f404d961884a5cf9de229d746d9a41aabb14ab3faa1bc7a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000005_1b9fdf9599bce0468f404d961884a5cf9de229d746d9a41aabb14ab3faa1bc7a.png -->
 
 "Common Time" and "Cut Time," are slang terms. Other names for "Cut Time" are "March Time" and the proper name, Alla Breve.
 
@@ -326,7 +304,7 @@ Table 1.1 Time Signature Table
 
 Figure 1.20 Time Signature Table Example
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000006_198d3220a9506aad90234c1f2f7c8898e80ba558a224d66320438f8384f859da.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000006_198d3220a9506aad90234c1f2f7c8898e80ba558a224d66320438f8384f859da.png -->
 
 Use this table to map out time signatures and their component organizational layers.
 
@@ -349,20 +327,20 @@ As with Simple time signatures, let us employ the same Time Signature Table to g
 
 1. For the Compound Duple time signature 68 list six eighth-notes in two groupings of three in the First Division row:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000007_655e04ea38e3fc23e1e2e9af9c337305f9b984213624e22dfae43ca33c801076.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000007_655e04ea38e3fc23e1e2e9af9c337305f9b984213624e22dfae43ca33c801076.png -->
 
 2. Next, sum these groupings of three into dotted values ("two eighthnotes equal a quarter-note, the additional quarter-note represented by a dot"); list the two resulting dotted quarter-notes in the Pulse row:
 3. Lastly, draw subdivisions of the First Division values in the Subdivision row:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000008_87b396a3dd6d19073c8e6866ca5123f77857cf75dadf586e5662cf4540b663a8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000008_87b396a3dd6d19073c8e6866ca5123f77857cf75dadf586e5662cf4540b663a8.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000009_8683af46e81b7a5365e3fa89088eda61d4573fbf73680509d277471be52e4613.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000009_8683af46e81b7a5365e3fa89088eda61d4573fbf73680509d277471be52e4613.png -->
 
 Below are typical compound meters and their respective labels.
 
 Figure 1.24 Typical Compound Meters
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000010_4afeee6729a191150eec7b545e5e10a8d9f36b9c8366079bc030a57768cd5c54.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000010_4afeee6729a191150eec7b545e5e10a8d9f36b9c8366079bc030a57768cd5c54.png -->
 
 Note that Simple meters divide all values into two subdivisions in each level of the Table. Compound meters divide the First Division level into three (see Statement 1 above). Subsequent subdivisions divide into two.
 
@@ -378,7 +356,7 @@ The Time Signature Table will show this:
 
 Figure 1.25 Simple Triple, Compound "Single"
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000011_f081309beb109fc65143c6339885e5d39e854ffaedbe3d2904cf9102c250e8bb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00011-00020/try-20261114T125316-82eac6/document_artifacts/image_000011_f081309beb109fc65143c6339885e5d39e854ffaedbe3d2904cf9102c250e8bb.png -->
 
 In the next section, these fundamental elements of sound, symbol, and time will be placed in full musical context by uniting them with common notational practices.
 
@@ -409,33 +387,10 @@ In the next section, these fundamental elements of sound, symbol, and time will 
 - Ⅱ
 - Compound Quadruple
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 11](<s06-the-elements-of-rhythm-sound-s.pdf#page=11>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 11](<document_artifacts/page_000011_e265eed2376b61eb9337dac82be3feb8fae9e11beaaea0a4c2d2e0003622f4de.png>)
-
-![PDF-Seite 12](<document_artifacts/page_000012_d5486419731316091d1d7c49c7d1c748902c0fce94f1efe64c445b7f686a59a0.png>)
-
-![PDF-Seite 13](<document_artifacts/page_000013_9b57f2f24bcfe19a3813551c702b4684c5b2f558caf5fb4fde1885c903a1f1de.png>)
-
-![PDF-Seite 14](<document_artifacts/page_000014_c43a547606aab5a3b78d376aecea25dab471506a0b301b9b102de564b0db956c.png>)
-
-![PDF-Seite 15](<document_artifacts/page_000015_a446bd7815493a254dac4ccc89b5603bdbf59271b24408afb5c9825245d44098.png>)
-
-![PDF-Seite 16](<document_artifacts/page_000016_3002a7e064151f6339a1f2b8df4d9d82b3e5f52b96c3e8848c4425b502021eb4.png>)
-
-![PDF-Seite 17](<document_artifacts/page_000017_9e7123c51492a543dd6cc5d514071d9b8644b0615b83e11ab4ff2d73d2bb7b79.png>)
-
-![PDF-Seite 18](<document_artifacts/page_000018_38d326bc921c5c50374ad800da48f1c29c1b855bbfd04fbc287bd3b127090c84.png>)
-
-![PDF-Seite 19](<document_artifacts/page_000019_089382d24c81548aead4d23501542b6f50b568c6e24b6686a0ae39acdf6b410d.png>)
-
-![PDF-Seite 20](<document_artifacts/page_000020_230902bac2e91043eddedc6eeb17352b813376264f9d48f788918d3a6a419aa5.png>)
-
-
-[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/s06-the-elements-of-rhythm-sound-s.pdf#page=11>)
-
-<!-- PDF-Seiten 21–30 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00021-00030/try-20261114T125344-88a9ee/document.md -->
+<!-- PDF-Seiten 21–30 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00021-00030/try-20261114T125344-88a9ee/document.md -->
 
 ## KEY TAKEAWAYS
 
@@ -513,7 +468,7 @@ a. 3
 3. In class (or some group), practice tapping a slow beat with your left foot. Against that beat tap two equal ("even") divisions with your right hand (simple division). Next, keeping that same slow beat in your left foot, practice tapping three equal ("even") divisions with your right hand (compound division). Lastly, switch hands and feet. Good luck.
 4. The following exercises alternate between simple duple and compound duple. Tap these rhythms while keeping the same constant background pulse. Practice each segment separately at first: then practice in sequence, switching from simple to compound time as you go.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00021-00030/try-20261114T125344-88a9ee/document_artifacts/image_000000_e730048a60ec94b645b786db35f05b11e7d523939b858504b3e35354f19b6113.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00021-00030/try-20261114T125344-88a9ee/document_artifacts/image_000000_e730048a60ec94b645b786db35f05b11e7d523939b858504b3e35354f19b6113.png -->
 
 ## 1.3 Music Notation Practices
 
@@ -535,13 +490,13 @@ Since rhythmic durations in Renaissance music were organized in proportion to on
 
 This became common notational practice. Ameasure 8 of music constituted beat groupings (or their durational equivalents) within the context of the stated time signature, bounded by a bar-line. Composers may use a double bar line to denote sectional divisions in a piece. A final bar line ends the composition.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00021-00030/try-20261114T125344-88a9ee/document_artifacts/image_000001_8410de191e0903a5dc0932af0bba227fb05686012084ccaa5264087e460a9701.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00021-00030/try-20261114T125344-88a9ee/document_artifacts/image_000001_8410de191e0903a5dc0932af0bba227fb05686012084ccaa5264087e460a9701.png -->
 
 Within measures, specified beats received greater of lesser accentuation, referred to simply as "strong" or "weak" beats. This perception is based upon how the relative strength of beats is perceived in a given time signature.
 
 Figure 1.28 Sample Time Signatures and Beat Accents
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00021-00030/try-20261114T125344-88a9ee/document_artifacts/image_000002_46d6c6fa415667cd9f2c8ed98ac2fa1fbbe31e861cee89c292dc1f5259dd72bc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00021-00030/try-20261114T125344-88a9ee/document_artifacts/image_000002_46d6c6fa415667cd9f2c8ed98ac2fa1fbbe31e861cee89c292dc1f5259dd72bc.png -->
 
 ## Conducting Patterns
 
@@ -551,7 +506,7 @@ The Basic Two-Pattern: for example any simple duple or compound duple time signa
 
 Figure 1.29 Two-Pattern
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00021-00030/try-20261114T125344-88a9ee/document_artifacts/image_000003_1975a81f3b628f87c94deef0c690295e5c08dba4e63e777153943ab5d7bef513.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00021-00030/try-20261114T125344-88a9ee/document_artifacts/image_000003_1975a81f3b628f87c94deef0c690295e5c08dba4e63e777153943ab5d7bef513.png -->
 
 All conducting figures by Michael Paolantonio
 
@@ -559,7 +514,7 @@ The Basic Three-Pattern: any simple triple or compound triple time signature. Th
 
 Figure 1.30 Three-Pattern
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00021-00030/try-20261114T125344-88a9ee/document_artifacts/image_000004_8ae49a69981c8f96dbc1c6348bc5a5197eb24764a14a961111afeb3543c21e96.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00021-00030/try-20261114T125344-88a9ee/document_artifacts/image_000004_8ae49a69981c8f96dbc1c6348bc5a5197eb24764a14a961111afeb3543c21e96.png -->
 
 All conducting figures by Michael Paolantonio
 
@@ -567,7 +522,7 @@ The Basic Four-Pattern: any simple or compound quadruple time signature. Think "
 
 Figure 1.31 Four-Pattern
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00021-00030/try-20261114T125344-88a9ee/document_artifacts/image_000005_0ca8217305333b7d4921f87bdce913dba50678c604b5f6f941ffd5d51e34bf7f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00021-00030/try-20261114T125344-88a9ee/document_artifacts/image_000005_0ca8217305333b7d4921f87bdce913dba50678c604b5f6f941ffd5d51e34bf7f.png -->
 
 All conducting figures by Michael Paolantonio
 
@@ -577,7 +532,7 @@ Figure 1.32 One-Pattern
 
 All conducting figures by Michael Paolantonio
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00021-00030/try-20261114T125344-88a9ee/document_artifacts/image_000006_eb49bf25fd41a00b17deecb9f37eaad524c87770c94389638856bf6bde2bd49d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00021-00030/try-20261114T125344-88a9ee/document_artifacts/image_000006_eb49bf25fd41a00b17deecb9f37eaad524c87770c94389638856bf6bde2bd49d.png -->
 
 The Basic Six-Pattern:
 
@@ -599,39 +554,16 @@ The Basic Six-Pattern:
 - ③
 - ④
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 21](<s06-the-elements-of-rhythm-sound-s.pdf#page=21>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 21](<document_artifacts/page_000021_df7a9f795a0c2f56dc00e3a8c7065e4b7724c1d074fdf7be37b671a878af9cf3.png>)
-
-![PDF-Seite 22](<document_artifacts/page_000022_7abb020d3a2fdfc8063188b1f248fd937a35911f6802b2ea4682431f99ac30f6.png>)
-
-![PDF-Seite 23](<document_artifacts/page_000023_8bb4e9e33f2e8597f7340df9193d43a2c3cc88f65fb67de80a0eaca60c7b35b0.png>)
-
-![PDF-Seite 24](<document_artifacts/page_000024_04c46f4bf6cb6089ae6bb906663b9ddd7332d281e54bf64a04a90ce221b179dd.png>)
-
-![PDF-Seite 25](<document_artifacts/page_000025_ba39b0f87170bf1622d0149030c77197cf47c3c5810d46794c656c287be4e5d1.png>)
-
-![PDF-Seite 26](<document_artifacts/page_000026_887c309016163c923daca91074e28e5ebad05d5547f74a72d1cca04c42bf1097.png>)
-
-![PDF-Seite 27](<document_artifacts/page_000027_1c212c76aca0628ce6161a73971c53ed9c0bb73748fcb48ab57394174efdd11e.png>)
-
-![PDF-Seite 28](<document_artifacts/page_000028_20d8b8ca928f6b2cf89f9c70fd901b413435fffec6903365ee485c7e51dccb6f.png>)
-
-![PDF-Seite 29](<document_artifacts/page_000029_b2fb1ea3bd53b6182c5fa842c6719ae5db27fa2495b25bed60a2e2ebc84f80df.png>)
-
-![PDF-Seite 30](<document_artifacts/page_000030_3c715f1a19fc1cc9ca966763a472791bdebbb996574d58752d851ea101cd6672.png>)
-
-
-[Original-PDF, Seite 21](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/s06-the-elements-of-rhythm-sound-s.pdf#page=21>)
-
-<!-- PDF-Seiten 31–40 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document.md -->
+<!-- PDF-Seiten 31–40 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document.md -->
 
 9. Special symbols indicating that segments of the music previously performed are to be repeated.
 
 Figure 1.33 Six-Pattern
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000000_bf1d8f444fdecd07052aad142e93b194bf4805a8082a8bb5cbbb3301f988db3b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000000_bf1d8f444fdecd07052aad142e93b194bf4805a8082a8bb5cbbb3301f988db3b.png -->
 
 All conducting figures by Michael Paolantonio
 
@@ -641,17 +573,17 @@ Numerous expedient shortcuts evolved to facilitate writing music efficiently, as
 
 Figure 1.34 Repeats, Measure Repeats, Section Repeats
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000001_cdc2638c9767f244d5a630433fab6905ca77fdf8a4c70b14a5dc8a4fd9c469fc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000001_cdc2638c9767f244d5a630433fab6905ca77fdf8a4c70b14a5dc8a4fd9c469fc.png -->
 
 A repeated section might end differently than its first iteration: the repeated section might end differently or it might make a transition to a new section. Composers employ "First and Second Endings" to serve this function.
 
 Figure 1.35 First and Second Endings
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000002_016d4a1cd83569471fe89c1dcf18c2e6635916e63fc483f30e3cf7dd9868aa50.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000002_016d4a1cd83569471fe89c1dcf18c2e6635916e63fc483f30e3cf7dd9868aa50.png -->
 
 A passage repeated multiple times is so indicated by listing the number of repetitions in the first ending. In Jazz notation and vernacular music, this may be accompanied by an instruction at the beginning of the passage that indicates the number of iterations, for example, 3x's, meaning "repeat this passage three times."
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000003_0c551728095707e4bebc2905f85e527dd3b99265e1a9106ceebc48ac2e5a7782.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000003_0c551728095707e4bebc2905f85e527dd3b99265e1a9106ceebc48ac2e5a7782.png -->
 
 At times in a composition, it is desirable or necessary to repeat an entire earlier passage, or return to the beginning of the piece. Rather than re-write the particular passage, specific notational expedients evolved to accommodate this. These shortcuts employed Italian phrases, accompanied by specific symbols. These phases and symbols are directions to the performer as to what segment is repeated and how to conclude the piece.
 
@@ -662,7 +594,7 @@ At times in a composition, it is desirable or necessary to repeat an entire earl
 
 Figure 1.37 D.C. al Fine, D.S. al Coda
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000004_a51e9202d8a584a9fccb2526c85916cffb6e3aa4338ed33ae2e6ba428c000a82.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000004_a51e9202d8a584a9fccb2526c85916cffb6e3aa4338ed33ae2e6ba428c000a82.png -->
 
 ## KEY TAKEAWAYS
 
@@ -681,15 +613,15 @@ The student should be able to define and understand:
 
 Figure 1.38 Incomplete Measures
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000005_96cc33c2167e5f857ba593409d17610049d2c32e008f520e825006f313b92a83.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000005_96cc33c2167e5f857ba593409d17610049d2c32e008f520e825006f313b92a83.png -->
 
 Figure 1.39 Identify Meter
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000006_14d070269ab6f754dbdd7bdd66602909acbcefbd390dcfcf55c1dbe7bccb45b0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000006_14d070269ab6f754dbdd7bdd66602909acbcefbd390dcfcf55c1dbe7bccb45b0.png -->
 
 4. In each example below using "roadmaps", draw arrows to indicate what segment is repeated and how the segment concludes. See example.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000007_173d638adb4acf999222078ade308c8ba7010eeb67986118fb9ef44add89893b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000007_173d638adb4acf999222078ade308c8ba7010eeb67986118fb9ef44add89893b.png -->
 
 ## 1.4 Additional Information
 
@@ -710,7 +642,7 @@ Curves lines have several uses in music notation. Curves lines may be drawn abov
 
 1. A slur 10 is a performance indication in music, used to instruct the performer to connect those notes encompassed by the slur. A wind player will not articulate ("tongue") these notes, a string player will play them all in one bow stroke, a pianist will strive to connect the notes fluidly.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000008_57dceaae845313881e30c6f5bd1a60a7154a1043acfa0eae7410d8e22f26665b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000008_57dceaae845313881e30c6f5bd1a60a7154a1043acfa0eae7410d8e22f26665b.png -->
 
 Slurs should be drawn connecting or encompassing note-heads. A common mistake by students is to draw slurs connecting stems. The exception to this general practice occurs when a slur is drawn over note stems that change direction. (See measure 1 of Figure 1.41 "Slurs".)
 
@@ -718,11 +650,11 @@ Slurs should be drawn connecting or encompassing note-heads. A common mistake by
 
 12. A tie is a short slur used to connect notes across a bar line.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000009_32086caa359a5d4dba267bb26d851c6e4c0ff485ca4f2e808226bc679863ca92.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000009_32086caa359a5d4dba267bb26d851c6e4c0ff485ca4f2e808226bc679863ca92.png -->
 
 3. At times a durational value exceeds the bounds of a measure in a given time signature: the note value occupies more "beats" than the measure will allow. To accommodate this, we use a tie 12 , a short curved line connecting one durational value to another in the succeeding measure.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000010_db0dd1971e8077246f523235914cf338e90b7a2b5c7cbee2e93414edd850f8f6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000010_db0dd1971e8077246f523235914cf338e90b7a2b5c7cbee2e93414edd850f8f6.png -->
 
 ## Dynamic Markings and Articulations
 
@@ -741,7 +673,7 @@ Some composers expand this range, adding dynamic markings using three or four "p
 
 Figure 1.44 Basic Dynamic Markings
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000011_0b386da12d69d70077217ecb622724d4fa83b6146f8a32879cd91832cc4b0f14.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000011_0b386da12d69d70077217ecb622724d4fa83b6146f8a32879cd91832cc4b0f14.png -->
 
 Composers employ special markings that serve as performance "indicators," denoting how notes are to be performed. Those commonly used are listed below.
 
@@ -751,17 +683,17 @@ Composers employ special markings that serve as performance "indicators," denoti
 4. Marcatisimo: heavily accented.
 5. Martelé: in writing for strings, this marking is used to denote a very heavy accent, heavy bow pressure being achieved by the use of "downbow."
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000012_7d6ef86c5c56b17fe8709df11dfc2fb4aa9b7db20c2349f35358d01757aaef01.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000012_7d6ef86c5c56b17fe8709df11dfc2fb4aa9b7db20c2349f35358d01757aaef01.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000013_f9e4443c1a04e8f6da9b1a2cecdd1decb86cb642f73af3e3e6289ca7c3685426.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000013_f9e4443c1a04e8f6da9b1a2cecdd1decb86cb642f73af3e3e6289ca7c3685426.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000014_04f017c303e83df26fc2b4e3961e5a25eca79469d1f5ce81f4d569d8a03e66fb.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000014_04f017c303e83df26fc2b4e3961e5a25eca79469d1f5ce81f4d569d8a03e66fb.png -->
 
 Figure 1.48 Marcatissimo Examples
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000015_747e6cb6436121c255b59b5fc91a957766139a523be59356b67abe0a5d69c84e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000015_747e6cb6436121c255b59b5fc91a957766139a523be59356b67abe0a5d69c84e.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000016_83a558e6e0e7e0cb4f654f93c341faf009d4a227fa4c5f2a8f0ce0857272fe3b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000016_83a558e6e0e7e0cb4f654f93c341faf009d4a227fa4c5f2a8f0ce0857272fe3b.png -->
 
 ## Artificial Divisions
 
@@ -769,23 +701,23 @@ Review the fundamental attributes defining simple and compound meter. Simple met
 
 In a simple meter, inserting a compound division (artificially dividing the beat into three equal portions) is called a triplet and is written thus:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000017_6a03f5cf8d8a6901b97f9f8b16103657ec7daea35aadca7ca8109261673fe3a0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000017_6a03f5cf8d8a6901b97f9f8b16103657ec7daea35aadca7ca8109261673fe3a0.png -->
 
 Conversely, inserting a simple division into a compound meter (artificially dividing the beat unto two equal portions) is called a duplet, and is written thus:
 
 Figure 1.51 Duplets in Compound Meter
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000018_ec54f1fb0dde21b944b97d48e5e37a59d5be351819c54d9e696e30608cdf4f29.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000018_ec54f1fb0dde21b944b97d48e5e37a59d5be351819c54d9e696e30608cdf4f29.png -->
 
 A triplet may occur across multiple beats in Simple Meter, called a super-triplet. In Compound Meter, a larger tuplet across multiple beats may occur.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000019_e824e81a37d9701e97ecf3bd327b49479e322b7007f9777dda88498118d5b7a4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000019_e824e81a37d9701e97ecf3bd327b49479e322b7007f9777dda88498118d5b7a4.png -->
 
 Composers have employed many other tuplet figures, inserting larger artificial divisions within beats or groups of beats.
 
 Figure 1.53 Examples of Larger Tuplets
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000020_31c78531bcddbc4638c66baa4e4eade1e37698d25c0a61c2c2c4edef760c3f5f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000020_31c78531bcddbc4638c66baa4e4eade1e37698d25c0a61c2c2c4edef760c3f5f.png -->
 
 Artificial division is used as a process for making rigid time and beat division much more fluid and irregular. This technique is especially prevalent in music from the 19th Century onwards.
 
@@ -802,7 +734,7 @@ Here are some typical rhythmic patterns demonstrating this device:
 
 Figure 1.54 Examples of Syncopation Patterns
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000021_1bda5851c1b9602b6fbf049034208f12bbd00caf89a66fe02337a523fb6fc181.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00031-00040/try-20261114T125405-fff88a/document_artifacts/image_000021_1bda5851c1b9602b6fbf049034208f12bbd00caf89a66fe02337a523fb6fc181.png -->
 
 ## Asymmetrical Meter
 
@@ -862,35 +794,12 @@ Triple meters and their multiples are not included in this category generally. O
 - Figure 1.52 Super-triplet, Tuplet
 - Inserting a compound division into simple time (triplets) or simple divisions into compound time (duplet).
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 31](<s06-the-elements-of-rhythm-sound-s.pdf#page=31>)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- PDF-Seiten 41–46 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00041-00046/try-20261114T125442-cab7c0/document.md -->
 
-![PDF-Seite 31](<document_artifacts/page_000031_d4c4206625ef502c7198d35b0de65fabde256e4ce0ba08298eb008e312015316.png>)
-
-![PDF-Seite 32](<document_artifacts/page_000032_89ebba147c4006358daddfc7d2df50e45d7df198120a18533000e3793b6e5849.png>)
-
-![PDF-Seite 33](<document_artifacts/page_000033_9390bb6b3f04269d4146f729323840662a83dd43a8ed5b91088048083e8846a8.png>)
-
-![PDF-Seite 34](<document_artifacts/page_000034_98ee5928d4ca32a2bd61f269e7a7dc9bd6ee986572d083eaa58cb62d3091034f.png>)
-
-![PDF-Seite 35](<document_artifacts/page_000035_c28ff4f470b09f06a4e01f86ed2d2afd1e20dff64e1b2cf7ecdcbeb108c1b54a.png>)
-
-![PDF-Seite 36](<document_artifacts/page_000036_9f4cd3a273722f3f8a53f3454609c7b1bc35ac24ce480c097a6c3b9f4bab49db.png>)
-
-![PDF-Seite 37](<document_artifacts/page_000037_f52d7238b1096ee5bf7497c4b790d267f5416605753348c6c78e90c08a6a2978.png>)
-
-![PDF-Seite 38](<document_artifacts/page_000038_e116707cfa97f0ef0e224488700c1f6be5cc2b8ae5e991f8139714cb3b0429c6.png>)
-
-![PDF-Seite 39](<document_artifacts/page_000039_a64f322772fb1f17b6315f2995062ea03a639561583404f248c71425dc60fe4b.png>)
-
-![PDF-Seite 40](<document_artifacts/page_000040_46c9adefeb89e723c49d897ffdcf979df60d435e13a620bd5d976ee4d05ab3e3.png>)
-
-
-[Original-PDF, Seite 31](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/s06-the-elements-of-rhythm-sound-s.pdf#page=31>)
-
-<!-- PDF-Seiten 41–46 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00041-00046/try-20261114T125442-cab7c0/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00041-00046/try-20261114T125442-cab7c0/document_artifacts/image_000000_d57f5f979193b838b662e05725fb223609ab981e2ae1ebecff75a61980ec1da4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00041-00046/try-20261114T125442-cab7c0/document_artifacts/image_000000_d57f5f979193b838b662e05725fb223609ab981e2ae1ebecff75a61980ec1da4.png -->
 
 A seven-meter might be grouped 2+2+3, 3+2+2, or 2+3+2, and so forth for other asymmetrical meters. It is possible to construct asymmetrical divisions from typical meters by irregular groupings. For example,
 
@@ -900,7 +809,7 @@ A seven-meter might be grouped 2+2+3, 3+2+2, or 2+3+2, and so forth for other as
 
 Figure 1.56 Other Meters and Sample Groupings
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00041-00046/try-20261114T125442-cab7c0/document_artifacts/image_000001_04fd8b4cbc20dfa1d6a1b5aea1c1dfd077423bd7d36bef76052da84856838a91.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00041-00046/try-20261114T125442-cab7c0/document_artifacts/image_000001_04fd8b4cbc20dfa1d6a1b5aea1c1dfd077423bd7d36bef76052da84856838a91.png -->
 
 Until the 20th Century, there were relatively few examples of asymmetrical meter in the literature. A notable exception is the second movement of Tchaikovsky's Sixth Symphony (Páthetique) (in 5).
 
@@ -986,11 +895,11 @@ Figure 1.57
 
 Asymmetrical Division Groupings
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00041-00046/try-20261114T125442-cab7c0/document_artifacts/image_000002_47f0744cf92dd835f0623bc3bfc631e6731219f3862f49ba0dd0c4413064163c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00041-00046/try-20261114T125442-cab7c0/document_artifacts/image_000002_47f0744cf92dd835f0623bc3bfc631e6731219f3862f49ba0dd0c4413064163c.png -->
 
 4. Sum the divisions you've created in order to determine pulse values. See example.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00041-00046/try-20261114T125442-cab7c0/document_artifacts/image_000003_032e3726588ecd87b7cd0a69f071c3a314a50cdd07923b4f38a2862ecd9714e2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/b7ad61aa2ab11001/d3f6f9dfb2b4/00041-00046/try-20261114T125442-cab7c0/document_artifacts/image_000003_032e3726588ecd87b7cd0a69f071c3a314a50cdd07923b4f38a2862ecd9714e2.png -->
 
 ## 1.5 Summary
 
@@ -1007,20 +916,5 @@ The next chapter will discuss the other half of this equation: pitch and its att
 - Figure 1.58
 - Asymmetrical Pulse Values
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 41](<document_artifacts/page_000041_916cd7ab5083d56c14a5c5efb913cb7d7fa2b500e6cbf19118d981a70d377887.png>)
-
-![PDF-Seite 42](<document_artifacts/page_000042_7924be51982f707e0d0aea0d0f86a0618e2db4f821e19d2136dead6669eeaec2.png>)
-
-![PDF-Seite 43](<document_artifacts/page_000043_9bf020ae90ae63bef2ef18dba858f6b5da979b619e806791845ddc1729be250b.png>)
-
-![PDF-Seite 44](<document_artifacts/page_000044_80b11df5557487a9b09980695d8804c77c06a547e2049e8e29ec69c74d013198.png>)
-
-![PDF-Seite 45](<document_artifacts/page_000045_5765f518145682ff9ada2b5ee69ffab8b7446fe6c170306a8b42606697574abc.png>)
-
-![PDF-Seite 46](<document_artifacts/page_000046_26925cf484d3b49105e6e0723870f21f43b182f531c39a5f0d54d2df80066585.png>)
-
-
-[Original-PDF, Seite 41](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/s06-the-elements-of-rhythm-sound-s.pdf#page=41>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 41](<s06-the-elements-of-rhythm-sound-s.pdf#page=41>)

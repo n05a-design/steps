@@ -31,6 +31,7 @@ KNOWLEDGE = ROOT / "knowledge"
 SOURCES = KNOWLEDGE / "sources"
 CONCEPTS = KNOWLEDGE / "concepts"
 MATRIX = KNOWLEDGE / "benchmark/COVERAGE.csv"
+RESTRICTED_LOCAL = ROOT / "manifests/restricted_local_2026-11-14.csv"
 
 
 def read_csv(path):
@@ -208,7 +209,9 @@ def audit():
     entries = historical["sources"]
     historical_duplicates = duplicates(entries, "id")
     historic_ids = {row["id"] for row in entries}
-    filenames = {Path(path).name for path in tracked}
+    # Bewusst nur lokal geführte Originale (restricted_local) gelten als dokumentierter Ablageort, nicht als fehlender Pfad.
+    restricted = {normalize("NFC", row["path"]) for row in read_csv(RESTRICTED_LOCAL)} if RESTRICTED_LOCAL.exists() else set()
+    filenames = {Path(path).name for path in tracked | restricted}
     tracked_dirs = {parent.as_posix() for path in tracked for parent in Path(path).parents}
     for row in entries:
         ident = row["id"]
@@ -409,11 +412,12 @@ def audit():
     for row in source_inventory:
         path = normalize("NFC", row["path"])
         target = moved.get(path)
-        status = "Direkter Pfad" if path in tracked else "Archivpfad" if target in tracked else "Pfad fehlt im Checkout"
+        status = ("Direkter Pfad" if path in tracked else "Archivpfad" if target in tracked
+                  else "restricted_local" if path in restricted else "Pfad fehlt im Checkout")
         if row["file_id"] in duplicate_file_ids or not re.fullmatch(r"[a-f0-9]{64}", row["sha256"]):
             status += ", ID oder Hashfeld auffällig"
         add("Historisches Dateiregister", row["file_id"],
-            "OK" if status in {"Direkter Pfad", "Archivpfad"} else "BEFUND",
+            "OK" if status in {"Direkter Pfad", "Archivpfad", "restricted_local"} else "BEFUND",
             note=f"{status}: {target if status == 'Archivpfad' else path}")
 
     for area, prefix in (("Forschungsbestand", "research/"), ("Archivbestand", "archive/"),

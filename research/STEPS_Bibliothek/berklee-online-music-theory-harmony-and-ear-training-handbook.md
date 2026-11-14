@@ -9,14 +9,15 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 37
 tabellen: 3
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `berklee-online-music-theory-harmony-and-ear-training-handbook.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document.md -->
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document.md -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000000_c09dc46b98c203fec169c50ea365dc4f4ddee4443ca3dfa56f1815de984444ee.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000000_c09dc46b98c203fec169c50ea365dc4f4ddee4443ca3dfa56f1815de984444ee.png -->
 
 [b](https://online.berklee.edu/)
 
@@ -45,7 +46,7 @@ Whether you're just beginning your musical journey, advancing your career, or si
 
 All the best,
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000001_6cf4f9709f40e2ec6e60f9d432ee131779bf0b0c9c6c29b31f2554791fd6a2e1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000001_6cf4f9709f40e2ec6e60f9d432ee131779bf0b0c9c6c29b31f2554791fd6a2e1.png -->
 
 Jonathan Mahoney
 
@@ -55,7 +56,7 @@ Dean of Pre-College, Online, and Professional Programs
 
 With Berklee Online, you can study the renowned curriculum of Berklee College of Music from anywhere in the world, and in your own rhythm. Since 2002, more than 75,000 students from 144 countries have enhanced their creative output and marketability with Berklee Online's award-winning master's degree programs, bachelor's degree majors, certificate programs, and 300+ music courses. Through Berklee Online, you'll receive unparalleled instruction from music industry professionals and the same faculty members who teach at Berklee's Boston campus.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000002_70a2fb46152fe67b6ce9a608bef7e2bc2aa52265029150d077144fcbc79e49be.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000002_70a2fb46152fe67b6ce9a608bef7e2bc2aa52265029150d077144fcbc79e49be.png -->
 
 ## Just Do It: How to Learn Inner Hearing
 
@@ -75,15 +76,15 @@ For some context, take a look at the scales on the following pages. There are ex
 
 ## Chromatic Scale - Key of C
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000003_b4f9ecb950f9d117adf94e9c49a3cfd1c8d592d543d877e4e5961df372e2532c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000003_b4f9ecb950f9d117adf94e9c49a3cfd1c8d592d543d877e4e5961df372e2532c.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000004_84797b9e3c6e668828215171e88031181cd7c854f8c156ad95a18653c27b0172.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000004_84797b9e3c6e668828215171e88031181cd7c854f8c156ad95a18653c27b0172.png -->
 
 ## Chromatic Scale - Key of F
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000005_5ba6572efd5882fa0ec94e42d9f771ffe2f8acad97845009217e54ae14e36eca.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000005_5ba6572efd5882fa0ec94e42d9f771ffe2f8acad97845009217e54ae14e36eca.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000006_f6db6f2cf1913ab53bc53280fab77a852ad09403ce94838e0ba20101d96e4d42.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000006_f6db6f2cf1913ab53bc53280fab77a852ad09403ce94838e0ba20101d96e4d42.png -->
 
 ## Chromatic Scale - Key of G
 
@@ -93,7 +94,7 @@ For some context, take a look at the scales on the following pages. There are ex
 
 #
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000007_18eb034ca659831fa5725e9f5365855654747654cb1bbdd380f09bf979b87aa8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000007_18eb034ca659831fa5725e9f5365855654747654cb1bbdd380f09bf979b87aa8.png -->
 
 #
 
@@ -145,21 +146,21 @@ Then, sing Do, which is the first note in each of these examples, and use your m
 
 Key of C
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000008_c554342932d614cbaf568f2c83903f30969f97b71540dd85823d26fb849980ae.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000008_c554342932d614cbaf568f2c83903f30969f97b71540dd85823d26fb849980ae.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000009_d4dd6ddb0cfa9d4d9061aa4ba828a077c5178c018a9e21234068b360ba15701d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000009_d4dd6ddb0cfa9d4d9061aa4ba828a077c5178c018a9e21234068b360ba15701d.png -->
 
 continued on next page Each time you get ready to sing a melodic example in this lesson, first give yourself the tonic note, Do (only), as a reference.
 
 Key of F
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000010_576398f585798c99c02d50775af76e763e584a3edbd608d819565069952c1b84.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000010_576398f585798c99c02d50775af76e763e584a3edbd608d819565069952c1b84.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000011_247f3d7a4732f42e87dcfa2ca5febeda8464c32c235a56e26142f69c17e54f69.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000011_247f3d7a4732f42e87dcfa2ca5febeda8464c32c235a56e26142f69c17e54f69.png -->
 
 Key of G
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000012_dd12cdf743b692e2d2a1d1ce0f2039955eb63f1f52405b4d70eef6b060905b60.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00001-00010/try-20261114T104927-c377b5/document_artifacts/image_000012_dd12cdf743b692e2d2a1d1ce0f2039955eb63f1f52405b4d70eef6b060905b60.png -->
 
 But what if you don't have access to a piano and keyboard to help you find Do? Or what if you're in a performing situation where you don't have the time? Finding Do is more innate than you think. Next we'll talk about how you can train yourself to find Do easily.
 
@@ -179,33 +180,10 @@ But what if you don't have access to a piano and keyboard to help you find Do? O
 - Le Sol Se
 - Fa Mi Me Re
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<berklee-online-music-theory-harmony-and-ear-training-handbook.pdf#page=1>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_1eb3acf03b2378cb89d123bf2b34491540a5bde7b16b301ec4748a27b4d5357e.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_12c24662e8e1fd26182e9fb264006fb06536c586a9625721521fffe8562cee89.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_8cbe7a1df8696403055d45d362a8fbbf8839d0631a7c593460db2d15cf881044.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_75e93bba700cb522c215da1980529d4497cb6ffcc5a4feca413c79b6c852f4f3.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_8b05f1a4288fac74a1c6caa80edd80aa6deacaa8674329b872a437bcf0e5e3a5.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_f52e78f4db4a50c70607198edc3e083e8ac3a25476bb9bc046571459a1d21fa2.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_57c06e4f04f94cd77fa1556f214a59aacf3606c462cc831abcedd8ae1419e558.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_9f34b34e64fc511534e2750be7f4adb72fafeb975178123e6e630f174a975d01.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_e4d9753e9e562092174b4fb3c7ae3426a5ca9910265ae37c848133574b3bbe81.png>)
-
-![PDF-Seite 10](<document_artifacts/page_000010_da69066b96b601589be0c642b75f632971405a497050da86dd98f7e5d848cf62.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-theory-harmony-and-ear-training-handbook.pdf#page=1>)
-
-<!-- PDF-Seiten 11–20 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00011-00020/try-20261114T104954-b02f5b/document.md -->
+<!-- PDF-Seiten 11–20 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00011-00020/try-20261114T104954-b02f5b/document.md -->
 
 ## Finding Do
 
@@ -253,7 +231,7 @@ In lesson 10, they begin to apply their own creative approaches to music, using 
 
 First and foremost are the students. I love seeing their passion for music, their desire to learn more, and their growth and development throughout the semester.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00011-00020/try-20261114T104954-b02f5b/document_artifacts/image_000000_af3aed7bda1fb0884a5fe1c080aefec6120c78b3b2dec877fb63850aa5218d76.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00011-00020/try-20261114T104954-b02f5b/document_artifacts/image_000000_af3aed7bda1fb0884a5fe1c080aefec6120c78b3b2dec877fb63850aa5218d76.png -->
 
 Instructor Interview
 
@@ -275,7 +253,7 @@ Composers develop many different skills for their toolbox. These include compete
 
 Counterpoint's power and effectiveness as a creative technique provides musicians with the technical skills to more fully realize their musical ideas. Techniques fuel inspiration, and a well-equipped composer transforms that creative spark into an effective piece of music by using the tools of the craft.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00011-00020/try-20261114T104954-b02f5b/document_artifacts/image_000001_362fab19ec1d53ae5ee5106b4eee1407bae84529d2f80eebe29ece8b44db74f5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00011-00020/try-20261114T104954-b02f5b/document_artifacts/image_000001_362fab19ec1d53ae5ee5106b4eee1407bae84529d2f80eebe29ece8b44db74f5.png -->
 
 66
 
@@ -304,35 +282,12 @@ Yes, first, from the Classical/Baroque era, we have Barbara Stozzi's "Canto di b
 - Debbie Cavalier co-founded Berklee Online in 2002, and has been instrumental in transforming the online school of Berklee College of Music into the worldwide music education powerhouse that it is today. Debbie also leads the children's/family music group Debbie & Friends, and is a Grammy award-winning songwriter.
 - Beth Denisch teaches counterpoint both at Berklee Online and at Berklee's Boston campus. Counterpoint is one of the core subjects for anyone who creates music, and while some of the ways it is used have evolved over time, many of the basic contrapuntal principles remain as relevant today as they were centuries ago. Beth's book Contemporary Counterpoint: Theory & Application, published by Berklee Press, presents the practical considerations for how to use and consider counterpoint in today's musical industry, whether you are writing rock songs, film scores, EDM tracks, or any type of music. She discusses all of this and more below.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 11](<berklee-online-music-theory-harmony-and-ear-training-handbook.pdf#page=11>)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- PDF-Seiten 21–30 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00021-00030/try-20261114T105009-ee7653/document.md -->
 
-![PDF-Seite 11](<document_artifacts/page_000011_e6887ad9a4107fa566418f9c03f458af178510cce71afecc02283a2f4d4748c1.png>)
-
-![PDF-Seite 12](<document_artifacts/page_000012_2e9a45116ffe0c08116b9867640aefa988de02e960f2cd093c7e57c5ef767f35.png>)
-
-![PDF-Seite 13](<document_artifacts/page_000013_de1ff7808defcaac2855f4a111cbaed5c8ffecc227c9285589cb2b266d863055.png>)
-
-![PDF-Seite 14](<document_artifacts/page_000014_a24f5c74b7a3e5480a96ed927344f9c7cfe6718941503b6fe3f2074eb3291403.png>)
-
-![PDF-Seite 15](<document_artifacts/page_000015_4c37a1879d59fce339905a78873d4e35ce7a67afca042d9ebcf8300f2abf7da4.png>)
-
-![PDF-Seite 16](<document_artifacts/page_000016_211540d69b63d908f3572dd4ac21ea1a085f1bbf881500175c7110462b33f99c.png>)
-
-![PDF-Seite 17](<document_artifacts/page_000017_49e7cd9c4ee590a5473cbd4020278f01ee75c785aeed747f29288e596fc4fdaf.png>)
-
-![PDF-Seite 18](<document_artifacts/page_000018_c15426222b763a8a39865b4ef15ed4e5e05c792ce38f5e98000763acb0508c35.png>)
-
-![PDF-Seite 19](<document_artifacts/page_000019_e62cc7c6360ef28214e049399045e5ba686a756846e6110a5421e23667288f99.png>)
-
-![PDF-Seite 20](<document_artifacts/page_000020_3a359013cb3b38ca43a88d53ba78410cbc6cd12ca507e1e498d69c48062e7999.png>)
-
-
-[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-theory-harmony-and-ear-training-handbook.pdf#page=11>)
-
-<!-- PDF-Seiten 21–30 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00021-00030/try-20261114T105009-ee7653/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00021-00030/try-20261114T105009-ee7653/document_artifacts/image_000000_b214aa24d0f7e80596a2efa951d1894878972cdfcee90428050a5dce20259140.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00021-00030/try-20261114T105009-ee7653/document_artifacts/image_000000_b214aa24d0f7e80596a2efa951d1894878972cdfcee90428050a5dce20259140.png -->
 
 Instructor Spotlight:
 
@@ -374,7 +329,7 @@ When beats are grouped together, the pulse is said to be in meter. Most music ha
 
 Let's focus on the 4/4 time signature, or as it is also called, common time (C). This is the most common meter in popular and jazz music.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00021-00030/try-20261114T105009-ee7653/document_artifacts/image_000001_c8892efd568b14debfc6eb3ae1e0408f4b0633433b8b3f1d2ace645584065b2a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00021-00030/try-20261114T105009-ee7653/document_artifacts/image_000001_c8892efd568b14debfc6eb3ae1e0408f4b0633433b8b3f1d2ace645584065b2a.png -->
 
 Bar lines separate measures, and the music ends with a final bar line-a thin and thick line. Notes are the building blocks of any piece of music, and can last for any number of beats-we will refer to this as the note's duration or value. Each note value represents a rhythmic attack. Let's look at three common types of note values: whole, half, and quarter notes:
 
@@ -409,7 +364,7 @@ Paul Schmeling is the author of the Berklee Online course from which this lesson
 
 Learn More Instructor Spotlight:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00021-00030/try-20261114T105009-ee7653/document_artifacts/image_000002_67572f547c49f23eecf68789142763080d281c6a1e54e973a09f2f305a71f765.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00021-00030/try-20261114T105009-ee7653/document_artifacts/image_000002_67572f547c49f23eecf68789142763080d281c6a1e54e973a09f2f305a71f765.png -->
 
 ## Paul Schmeling
 
@@ -433,35 +388,12 @@ I think it would be in the lesson that involves major scales where for the first
 
 - ÷ c œ œ œ œ
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 21](<berklee-online-music-theory-harmony-and-ear-training-handbook.pdf#page=21>)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- PDF-Seiten 31–40 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00031-00040/try-20261114T105024-7a10f1/document.md -->
 
-![PDF-Seite 21](<document_artifacts/page_000021_783cb8383c03b655c93569e3a9d2f3eef77d252ab0f763b1fd20b1c070491069.png>)
-
-![PDF-Seite 22](<document_artifacts/page_000022_50b43a82d6ae8fecdb4b44285bd7288ed08a15dadfdc9f728f62917e7fe8c488.png>)
-
-![PDF-Seite 23](<document_artifacts/page_000023_9dc1f8bb972185efbca764ca894aaca046eb5c4423c330e8a28448e83c605ef0.png>)
-
-![PDF-Seite 24](<document_artifacts/page_000024_9228d8ac2ce3a46f9487afe324f9aaa08459d5929e65463436d2adad03e427aa.png>)
-
-![PDF-Seite 25](<document_artifacts/page_000025_1383a094035698a159e270eabdfa255bad3c6ff91ece8dbf88c0ce118e46c42a.png>)
-
-![PDF-Seite 26](<document_artifacts/page_000026_7a2871f553059d56dd5d3ea9472f5a6d1d66e8e9a0ee62ad3694d1e9581a49ad.png>)
-
-![PDF-Seite 27](<document_artifacts/page_000027_5f09b1c23636b96dfbdf83064f95ca510d013e74742985c82c28810bc5ac8beb.png>)
-
-![PDF-Seite 28](<document_artifacts/page_000028_a445fe7ec2430427e89ba7f47e94d154bb7710fce2c44885f072e0cb606302b2.png>)
-
-![PDF-Seite 29](<document_artifacts/page_000029_6a0069a690a334394a19cb3b7c50b8eaccb5de1caa574c11f337255a0546dac0.png>)
-
-![PDF-Seite 30](<document_artifacts/page_000030_c92beb60aa4e1ad7ad1a250ed15743e940448dc488b22fe2db83a97af04a2fcc.png>)
-
-
-[Original-PDF, Seite 21](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-theory-harmony-and-ear-training-handbook.pdf#page=21>)
-
-<!-- PDF-Seiten 31–40 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00031-00040/try-20261114T105024-7a10f1/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00031-00040/try-20261114T105024-7a10f1/document_artifacts/image_000000_98314113d4f0c0ee943d5d52d8583cc21b64af243f3c64d9fc103efb1d740090.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00031-00040/try-20261114T105024-7a10f1/document_artifacts/image_000000_98314113d4f0c0ee943d5d52d8583cc21b64af243f3c64d9fc103efb1d740090.png -->
 
 Student Stories
 
@@ -483,7 +415,7 @@ Sushant is a self-taught musician from Kathmandu, and studying at Berklee Online
 
 Sushant first started writing music and playing guitar after finishing his A-levels in school (a test for students ages 16 and over). After recording his first album, he knew he wanted to pursue music professionally, though he knew he'd face hardships.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00031-00040/try-20261114T105024-7a10f1/document_artifacts/image_000001_c13899145cc40bb2598cc91ca7e50d9276ab00665c1880b513832c5fc02098c2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00031-00040/try-20261114T105024-7a10f1/document_artifacts/image_000001_c13899145cc40bb2598cc91ca7e50d9276ab00665c1880b513832c5fc02098c2.png -->
 
 66
 
@@ -509,7 +441,7 @@ In addition to his classes, Sushant KC is currently collaborating with David Gue
 
 "The music theory class has enabled me to understand what I was doing in the past and has pointed the right way forward," says Sushant.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00031-00040/try-20261114T105024-7a10f1/document_artifacts/image_000002_a2372cc17a41672f39b6965e7dd287e174b2268924755122ed6aa9e8e4eae9cf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00031-00040/try-20261114T105024-7a10f1/document_artifacts/image_000002_a2372cc17a41672f39b6965e7dd287e174b2268924755122ed6aa9e8e4eae9cf.png -->
 
 Instructor Spotlight:
 
@@ -549,32 +481,10 @@ So we know that reharmonization keeps boredom at bay, but why else do we reharmo
 
 For the improvising player, reharmonization is regarded as improvising harmonies to a fixed melody line-the opposite of melodic improvisation. For the improviser who is soloing melodically within the standard framework of the chord changes of a tune, the various substitution and approach techniques-that you will learn later in this course-and superimposed against the rhythm section accompaniment can be applied to great effect.
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 31](<berklee-online-music-theory-harmony-and-ear-training-handbook.pdf#page=31>)
 
-![PDF-Seite 31](<document_artifacts/page_000031_9efb0956320a3550786061374c50f8e84cb21fe2e11acfaddb6558cc80439735.png>)
-
-![PDF-Seite 32](<document_artifacts/page_000032_1aa3ae4ea5b33de789b4548acb7b24c89410826f3142aedb34489f33f6d7971a.png>)
-
-![PDF-Seite 33](<document_artifacts/page_000033_f9bbf35f861428e6f1c9a6f55762c6da0cba460f97b252752f3eedb6ba0831f7.png>)
-
-![PDF-Seite 34](<document_artifacts/page_000034_16342a236038983f8bf2992ae6b383193ce65f0af34d3431734aa50d8978cf95.png>)
-
-![PDF-Seite 35](<document_artifacts/page_000035_f76006197c5e5fb633528ed2da0a65c7807548a33d43bdb09d6d4dffa1e8cf29.png>)
-
-![PDF-Seite 36](<document_artifacts/page_000036_90a5c086a66f4676c755cfa2df93e37d6b17492c0577d50a7d7a2895a69aa462.png>)
-
-![PDF-Seite 37](<document_artifacts/page_000037_1237d116613b5ba144c92f6c2bed8bf02a543ca782d35e53dd61302dc1d7069d.png>)
-
-![PDF-Seite 38](<document_artifacts/page_000038_cbf5d39e813d9dc1e437f7aab510e84af505c77d46665b3bd910dff61584311d.png>)
-
-![PDF-Seite 39](<document_artifacts/page_000039_97b2d82034de50bac30b319c1a4f1d7731d70813f7e3f888cf09e5bb946150d5.png>)
-
-![PDF-Seite 40](<document_artifacts/page_000040_f495ada56e92aee26ac07e6b86e0c0bdd6e9fba2ded466cf4dfe4a9211712eda.png>)
-
-
-[Original-PDF, Seite 31](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-theory-harmony-and-ear-training-handbook.pdf#page=31>)
-
-<!-- PDF-Seiten 41–50 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00041-00050/try-20261114T105038-e10dba/document.md -->
+<!-- PDF-Seiten 41–50 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00041-00050/try-20261114T105038-e10dba/document.md -->
 
 To reharmonize means to alter the underlying harmonic form, while maintaining the original melodic structure. It is essentially an arrangement change that puts the focus on the harmony.
 
@@ -607,25 +517,25 @@ Here are several versions of a popular birthday song originally titled "Good Mor
 
 Let's start with the first version, which is (obviously) harmonized with the original chords. Take a look at the notation here:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00041-00050/try-20261114T105038-e10dba/document_artifacts/image_000000_49e1ce9a69dd4a7e1955352b140127de103ea724430187913df74a1433e14d2e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00041-00050/try-20261114T105038-e10dba/document_artifacts/image_000000_49e1ce9a69dd4a7e1955352b140127de103ea724430187913df74a1433e14d2e.png -->
 
 œ
 
 The second version is reharmonized with simple, substitute diatonic chords. There's no change in the harmonic rhythm.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00041-00050/try-20261114T105038-e10dba/document_artifacts/image_000001_4298d89f841c3ddfd0102cacc4d9eff49cf49b9d0337304b046b7cd47c94c9e0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00041-00050/try-20261114T105038-e10dba/document_artifacts/image_000001_4298d89f841c3ddfd0102cacc4d9eff49cf49b9d0337304b046b7cd47c94c9e0.png -->
 
 The third version is reharmonized with approach chords, along with 6th and 7th chords to enrich the triads, resulting in a more active harmonic rhythm.
 
 F#o 7
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00041-00050/try-20261114T105038-e10dba/document_artifacts/image_000002_77059f34cc7180d8e8a5f37eb0d81dfb0c56c47e9eaf72d6d03958d3b3349913.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00041-00050/try-20261114T105038-e10dba/document_artifacts/image_000002_77059f34cc7180d8e8a5f37eb0d81dfb0c56c47e9eaf72d6d03958d3b3349913.png -->
 
 œ
 
 This final version uses both substitute and approach treatments. This creates a very active and colorful harmonic support with the majority of the melody notes harmonized with a different chord.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00041-00050/try-20261114T105038-e10dba/document_artifacts/image_000003_1086ce30ea3855ff85a3e92a98db402d768b3ba9654a1288682f840aa32ae3a6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00041-00050/try-20261114T105038-e10dba/document_artifacts/image_000003_1086ce30ea3855ff85a3e92a98db402d768b3ba9654a1288682f840aa32ae3a6.png -->
 
 Play these melodies, and really take in the emotional differences between them. Now try reharmonizing some of your favorite songs!
 
@@ -635,7 +545,7 @@ Steve Rochinski is the author of the Berklee Online course from which this lesso
 
 Learn More Steven Kirby's jazz compositions have won numerous awards from the likes of the International Songwriting Competition, the Billboard Song Contest and Downbeat. He is a graduate of Berklee College of Music and has a Master's degree in Jazz Composition and Arranging from the University of Massachusetts (Amherst).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00041-00050/try-20261114T105038-e10dba/document_artifacts/image_000004_9b66ff8269f125b25f78adf0c09922b24e5ad4f638b34d7d34ab232e061a9432.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00041-00050/try-20261114T105038-e10dba/document_artifacts/image_000004_9b66ff8269f125b25f78adf0c09922b24e5ad4f638b34d7d34ab232e061a9432.png -->
 
 At Berklee Online, Steven co-authored Harmony 2 with George Russell Jr. (see page 70). He's also an instructor for Music Theory 101 and Music Theory and Composition 1 and 2.
 
@@ -651,7 +561,7 @@ I love Billy Childs' arrangement of the Peter Gabriel classic "In Your Eyes." I 
 
 Well I'm not much of a singer so I don't know if I could help much with the vocal technique part, but I would like to help everyone understand, and be able to do more with harmony and music in general (including helping myself, because the learning never ends).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00041-00050/try-20261114T105038-e10dba/document_artifacts/image_000005_d87e20dc762a0f642995110ca38b752aedea1f2d877d75d037debe1b2f8f9f67.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00041-00050/try-20261114T105038-e10dba/document_artifacts/image_000005_d87e20dc762a0f642995110ca38b752aedea1f2d877d75d037debe1b2f8f9f67.png -->
 
 Instructor Interview
 
@@ -698,37 +608,14 @@ In ear training, we work on relative pitch: Given one pitch as a reference, you 
 - Instructor Spotlight:
 - Columbia
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 41](<berklee-online-music-theory-harmony-and-ear-training-handbook.pdf#page=41>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 41](<document_artifacts/page_000041_bf2b5d6349a80e141b99b845520852b46b483688fc2ff4bd02c03e992faf6abd.png>)
-
-![PDF-Seite 42](<document_artifacts/page_000042_a3e29c49cb50e7a51cf4c51646a8da70adc58b70df77e9c3303f0a81998f8488.png>)
-
-![PDF-Seite 43](<document_artifacts/page_000043_3cb23ca3d5a02afb22e032739124f5ecfa93879ccaa1247062b4de1a48627d6e.png>)
-
-![PDF-Seite 44](<document_artifacts/page_000044_2b0ff51bb0f7b6fffac8838461832657e2ff4eaf24b2a1ec3768dcfeb1359dde.png>)
-
-![PDF-Seite 45](<document_artifacts/page_000045_325b8d366dc089da4dfc5f2e27aacf98ae8756877a5d2a2eb8b45296dd8b338e.png>)
-
-![PDF-Seite 46](<document_artifacts/page_000046_d0f8cdb923e3a4ccacf029ce5303ccd099d5bd26dd4616f28bcb76a47b70fbe9.png>)
-
-![PDF-Seite 47](<document_artifacts/page_000047_b74c8d94e8491bf3e28251ed264532805cb0baa4eebe5f5c186d7c76815582b0.png>)
-
-![PDF-Seite 48](<document_artifacts/page_000048_fc2b2653d4c991f8d0da75754f3aaba7cf816c6d35a843128f67e1b6a0cc1c9a.png>)
-
-![PDF-Seite 49](<document_artifacts/page_000049_68cbc6756bd39a3466d0f01da0e799cdd3bb3ecb3ef7698bbe221ff03311b76f.png>)
-
-![PDF-Seite 50](<document_artifacts/page_000050_f589e72584c393c3957b6d768fb47768eac0caa79b7714b8064c7889f7f4789c.png>)
-
-
-[Original-PDF, Seite 41](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-theory-harmony-and-ear-training-handbook.pdf#page=41>)
-
-<!-- PDF-Seiten 51–60 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00051-00060/try-20261114T105054-fea6b3/document.md -->
+<!-- PDF-Seiten 51–60 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00051-00060/try-20261114T105054-fea6b3/document.md -->
 
 excellent relative pitch who has heard or played one note is in about the same place as a musician as someone with absolute pitch (perfect pitch). They know what all the notes are and can follow what's happening, even through complex chords and key changes. It's a matter of degree, but you can't really tell a musician with perfect pitch from one without it by listening to them play or sing.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00051-00060/try-20261114T105054-fea6b3/document_artifacts/image_000000_a07a26a435bb05d59d741eb7417b31fe194ea02f105bc68a6a3687f241d18c26.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00051-00060/try-20261114T105054-fea6b3/document_artifacts/image_000000_a07a26a435bb05d59d741eb7417b31fe194ea02f105bc68a6a3687f241d18c26.png -->
 
 66
 
@@ -773,9 +660,9 @@ With Berklee Online, you have more than 300 courses to choose from, including mo
 - Music Theory 201: Harmony and Function �
 - Reharmonization Techniques 
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00051-00060/try-20261114T105054-fea6b3/document_artifacts/image_000001_f58e4d60c2db09ba9c5b81cda59ab3b388f0690a251a823587a7e1313ff13a54.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00051-00060/try-20261114T105054-fea6b3/document_artifacts/image_000001_f58e4d60c2db09ba9c5b81cda59ab3b388f0690a251a823587a7e1313ff13a54.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00051-00060/try-20261114T105054-fea6b3/document_artifacts/image_000002_86ee983f91765051a72ed8bbe546940ed62b550112bba25f977c3ef515712557.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00051-00060/try-20261114T105054-fea6b3/document_artifacts/image_000002_86ee983f91765051a72ed8bbe546940ed62b550112bba25f977c3ef515712557.png -->
 
 Suzanne M. Clark is a professor in the Harmony department at Berklee College of Music, and also teaches songwriting and performance health courses. Suzanne is a bassist, and throughout the years has played and recorded in a variety of genres including jazz, musical theater, and contemporary music. She has also guest lectured at Harvard.
 
@@ -805,7 +692,7 @@ The answers to these questions lie in 7th chords, a vital part of your harmonic 
 
 Think of a 7th chord as an upward extension of a triad. The chord members, then, are the root, 3rd, 5th, and 7th.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00051-00060/try-20261114T105054-fea6b3/document_artifacts/image_000003_d27bd327dd1c23cc10de9ac30773558575f580941fb2de0667da0a4cad529f85.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00051-00060/try-20261114T105054-fea6b3/document_artifacts/image_000003_d27bd327dd1c23cc10de9ac30773558575f580941fb2de0667da0a4cad529f85.png -->
 
 1
 
@@ -838,33 +725,10 @@ Using a piano, keyboard, or online keyboard, try playing these 7th chords to get
 - µp
 - Instructor Spotlight: Suzanne Clark
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 51](<berklee-online-music-theory-harmony-and-ear-training-handbook.pdf#page=51>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 51](<document_artifacts/page_000051_a8dbf2ada876c0fecffb89001ad4fe77afb6b1fa5a65c5b73271c9bd7e74306e.png>)
-
-![PDF-Seite 52](<document_artifacts/page_000052_19ec6168cd0a695802d918f2492b61fd0ed2f88e8e34468e116502f327d4b5e3.png>)
-
-![PDF-Seite 53](<document_artifacts/page_000053_8bbbc0eced1516e038bb0b0e2d258a4fc6da0109c7b157a6df3cf5d1cb9f6472.png>)
-
-![PDF-Seite 54](<document_artifacts/page_000054_6022e61a0d58e42b32dc0860750a9a89de30030ad3d896e315ff32cbc0bcf119.png>)
-
-![PDF-Seite 55](<document_artifacts/page_000055_844a5711db7860c0a1cf20f55612820638673540353730e13e3eb96e183a72e5.png>)
-
-![PDF-Seite 56](<document_artifacts/page_000056_cd4719a19a60ce755b77d6dc418b3e75fce9a0dc5f69533df49e0529e3d29beb.png>)
-
-![PDF-Seite 57](<document_artifacts/page_000057_d3fa9e643162beaa2a2d5828023956d1219745cc6b97a98619ee8ddc753156d1.png>)
-
-![PDF-Seite 58](<document_artifacts/page_000058_3e69e03717e66012871c9cae5373a092a52811ba4426f99e8bebecdf7619e90b.png>)
-
-![PDF-Seite 59](<document_artifacts/page_000059_553d3fa55abadd57f781d76f280b79107771586b8afb4267010af1857fc96930.png>)
-
-![PDF-Seite 60](<document_artifacts/page_000060_853efc89f909a4f66011afaa7fa38b105f2e1734c4f810e02c0b8b3e49509efe.png>)
-
-
-[Original-PDF, Seite 51](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-theory-harmony-and-ear-training-handbook.pdf#page=51>)
-
-<!-- PDF-Seiten 61–70 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00061-00070/try-20261114T105115-97d8de/document.md -->
+<!-- PDF-Seiten 61–70 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00061-00070/try-20261114T105115-97d8de/document.md -->
 
 In summary, then, we find the following types of 7th chords diatonic to the major scale:
 
@@ -879,7 +743,7 @@ The notes of any standard chord (triad or 7th) are defined. A Cmaj7 will always 
 
 w w
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00061-00070/try-20261114T105115-97d8de/document_artifacts/image_000000_d6b2e17fbb8674e6dcb346cb0962fe420467b65fee5f1666652e3c5165587648.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00061-00070/try-20261114T105115-97d8de/document_artifacts/image_000000_d6b2e17fbb8674e6dcb346cb0962fe420467b65fee5f1666652e3c5165587648.png -->
 
 w w All of what you see at the end of the previous page are Cmaj7 chords. All of these versions (and many others) are used all the time. It's an important part of your chord recognition skill to be able to identify 7th chords in whatever order the notes may appear.
 
@@ -909,7 +773,7 @@ Stevie Wonder, Donald Fagen, Dirty Loops, Regina Spektor, Tori Amos, Esperanza S
 
 Let me put it to you this way: Who would willingly be illiterate in their native language? 'Nuff said, don't you think?!
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00061-00070/try-20261114T105115-97d8de/document_artifacts/image_000001_ced5281576ecf9b14379501b6e674a821f66017a2e218d2ec1fd65bfcf270683.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00061-00070/try-20261114T105115-97d8de/document_artifacts/image_000001_ced5281576ecf9b14379501b6e674a821f66017a2e218d2ec1fd65bfcf270683.png -->
 
 Student Stories
 
@@ -931,7 +795,7 @@ The Berklee Online course is offered in collaboration with Southern New Hampshir
 
 George Russell Jr. is the chair of harmony and jazz composition at Berklee College of Music, and the author and instructor of this course. He has taught Developing Your Musicianship to millions of students through Coursera. But he says the six students in this pilot program are special.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00061-00070/try-20261114T105115-97d8de/document_artifacts/image_000002_c3ee7877ec8c22537b118c52ecafb122cc4ce832c37dc136b6017ca02d173ec1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00061-00070/try-20261114T105115-97d8de/document_artifacts/image_000002_c3ee7877ec8c22537b118c52ecafb122cc4ce832c37dc136b6017ca02d173ec1.png -->
 
 66
 
@@ -964,33 +828,10 @@ At Berklee Online, George teaches Music Theory and Composition 1, and co-authore
 - w ww
 - online.berklee.edu
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 61](<berklee-online-music-theory-harmony-and-ear-training-handbook.pdf#page=61>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 61](<document_artifacts/page_000061_7cdcbc0c14985f8ad9253d8f639cd9d5c78928337a9a885d39ba3c417c5cb91c.png>)
-
-![PDF-Seite 62](<document_artifacts/page_000062_e180061275258bb186f8742b9d0e295abed063554a7a07f8dc9b65479e1ddc6c.png>)
-
-![PDF-Seite 63](<document_artifacts/page_000063_ef1f567eb86fced0895714a1274fdd70972349ba855839acd727b439f4e49429.png>)
-
-![PDF-Seite 64](<document_artifacts/page_000064_267356e009cfce7b1008fd317b9e7b866cb518ac7f5cb9d2a401d0c98e62a599.png>)
-
-![PDF-Seite 65](<document_artifacts/page_000065_6136180eff84bf0f2a34b5eb6e8fdc5ad4a89f9ffd58a2119fa292fab6b0c44f.png>)
-
-![PDF-Seite 66](<document_artifacts/page_000066_cd0af26ff810abe703d2eeaa95f7e97e8bed18f40c0e35aa3412ac53dc33f92d.png>)
-
-![PDF-Seite 67](<document_artifacts/page_000067_7408263e069780728a110a747e8cc76b51e652fc80bc7801a4728b201db73e9d.png>)
-
-![PDF-Seite 68](<document_artifacts/page_000068_83572d033121358ac9320ea49662089731678b0a1842402038286db73fb80bd9.png>)
-
-![PDF-Seite 69](<document_artifacts/page_000069_8a3a46b3cf52dde896d0011a637fc64d853a9182fadfddae0346bf65197fd7e4.png>)
-
-![PDF-Seite 70](<document_artifacts/page_000070_17cb936ad331ad631b4885fc6565eec04e00d7a9ef2e45803cc44b9a1f0c61be.png>)
-
-
-[Original-PDF, Seite 61](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-theory-harmony-and-ear-training-handbook.pdf#page=61>)
-
-<!-- PDF-Seiten 71–76 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00071-00076/try-20261114T105130-ebedd1/document.md -->
+<!-- PDF-Seiten 71–76 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00071-00076/try-20261114T105130-ebedd1/document.md -->
 
 ## What first sparked your interest in music?
 
@@ -1016,7 +857,7 @@ Check out our Careers page for more inspiration!
 
 m
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00071-00076/try-20261114T105130-ebedd1/document_artifacts/image_000000_6c4d792079396532cad5354cc4a92a404bee5df6a760d2f7afafa9e59756e5a3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00071-00076/try-20261114T105130-ebedd1/document_artifacts/image_000000_6c4d792079396532cad5354cc4a92a404bee5df6a760d2f7afafa9e59756e5a3.png -->
 
 ## Instructor Spotlight: Joe Mulholland
 
@@ -1048,7 +889,7 @@ Whether you're looking to advance your career or just take your skills to the ne
 - Certificate Programs
 - Bachelor's Degree Programs
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00071-00076/try-20261114T105130-ebedd1/document_artifacts/image_000001_16ce3b9a34879c0a9b89ab650c5c7797eb155a00b7ee327f0cbcf0b6dfb2db3c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00071-00076/try-20261114T105130-ebedd1/document_artifacts/image_000001_16ce3b9a34879c0a9b89ab650c5c7797eb155a00b7ee327f0cbcf0b6dfb2db3c.png -->
 
 m
 
@@ -1072,21 +913,7 @@ Questions about
 
 advisors@online.berklee.edu 1-866-BERKLEE (US) +1-617-747-2146 (INT'L)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00071-00076/try-20261114T105130-ebedd1/document_artifacts/image_000002_ee474170190bfbe1dc8100b37d11608b101a02c07323162ee3d55dfb7e65aabd.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/6b773ccd4c757ccc/d3f6f9dfb2b4/00071-00076/try-20261114T105130-ebedd1/document_artifacts/image_000002_ee474170190bfbe1dc8100b37d11608b101a02c07323162ee3d55dfb7e65aabd.png -->
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 71](<document_artifacts/page_000071_c1d9fee561041bea3136972e3cadf01e34580666af8891c14e2b0770f473d3a1.png>)
-
-![PDF-Seite 72](<document_artifacts/page_000072_bacbe84a37f8f30d29fa28b314305b32f719332c63dea03b96c91f3f1114bbef.png>)
-
-![PDF-Seite 73](<document_artifacts/page_000073_77ed410ef6b471602f69e6918a775f936bac11957457a630cd56d092571baa71.png>)
-
-![PDF-Seite 74](<document_artifacts/page_000074_01e62a2732073b9d3f2b7f10093b2d372dbf5eff5f8c4718c424da4f7fe1f9e2.png>)
-
-![PDF-Seite 75](<document_artifacts/page_000075_9a540745779d021b42a3bb4dc2faef96b814c19a77741c026ce5f91a8cd8f2a7.png>)
-
-![PDF-Seite 76](<document_artifacts/page_000076_8b86a2f419ccfaac2aa5271adf7b47a4a2d002d7f2713c87e1c966ea35f7dc68.png>)
-
-
-[Original-PDF, Seite 71](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/berklee-online-music-theory-harmony-and-ear-training-handbook.pdf#page=71>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 71](<berklee-online-music-theory-harmony-and-ear-training-handbook.pdf#page=71>)

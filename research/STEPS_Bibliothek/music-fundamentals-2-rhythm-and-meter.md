@@ -9,12 +9,13 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 61
 tabellen: 5
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `music-fundamentals-2-rhythm-and-meter.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document.md -->
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document.md -->
 
 1. Duration: Note Lengths in Written Music
 2. Duration: Rest Length
@@ -36,7 +37,7 @@ In standard notation, a single musical sound is written as a note. The two most 
 
 ## The Parts of a Note
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000000_97ff26700fa843ecf5b4cdde58adf68ef7719f4425cb1728acd838ad2238f9e4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000000_97ff26700fa843ecf5b4cdde58adf68ef7719f4425cb1728acd838ad2238f9e4.png -->
 
 All of the parts of a written note affect how long it lasts.
 
@@ -44,7 +45,7 @@ The pitch of the note depends only on what line or space the head of the note is
 
 ## Notes Without Heads
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000001_a574c07aad63ce8b580b01bec0541387faa3180157b72da9404d4d5de42aee1b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000001_a574c07aad63ce8b580b01bec0541387faa3180157b72da9404d4d5de42aee1b.png -->
 
 If a note does not have head, it does not have one definite pitch. Such a note may be a pitchless sound, like a drum beat or a hand clap, or it may be an entire chord rather than a single note.
 
@@ -56,15 +57,15 @@ Note:A dot that is someplace other than next to the head of the note does not af
 
 Most Common Note Lengths The simplest-looking note, with no stems or flags, is a whole note. All other note lengths are defined by how long they last compared to a whole note. A note that lasts half as long as a whole note is a half note. A note that lasts a quarter as long as a whole note is a quarter note. The pattern continues with eighth notes, sixteenth notes, thirty-second notes, sixtyfourth notes, and so on, each type of note being half the length of the previous type. (There are no such thing as third notes, sixth notes, tenth notes, etc.; see Dots, Ties, and Borrowed Divisions to find out how notes of unusual lengths are written.)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000002_cfe6c48b50eacc33495d9a01852c3d059f3f20182a65cc3b6aea5ed7e4c272ce.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000002_cfe6c48b50eacc33495d9a01852c3d059f3f20182a65cc3b6aea5ed7e4c272ce.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000003_61e93d389cd82ca2752d616f4de05c49d24b2725525e4bbfb599c8906f3714a2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000003_61e93d389cd82ca2752d616f4de05c49d24b2725525e4bbfb599c8906f3714a2.png -->
 
 Note lengths work just like fractions in arithmetic: two half notes or four quarter notes last the same amount of time as one whole note. Flags are often replaced by beams that connect the notes into easy-to-read groups.
 
 You may have noticed that some of the eighth notes in [link] don't have flags; instead they have a beam connecting them to another eighth note. If flagged notes are next to each other, their flags can be replaced by beams that connect the notes into easy-to-read groups. The beams may connect notes that are all in the same beat, or, in some vocal music, they may connect notes that are sung on the same text syllable. Each note will have the same number of beams as it would have flags.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000004_9896482cc736ee808f2ca4b953dbe5c079f2b9f30a495282c80caba33f90a877.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000004_9896482cc736ee808f2ca4b953dbe5c079f2b9f30a495282c80caba33f90a877.png -->
 
 The notes connected with beams are easier to read quickly than the flagged notes. Notice that each note has the same number of beams as it would have flags, even if it is connected to a different type of note. The notes are often (but not always) connected so that each beamed group gets one beat. This makes the notes easier to read quickly.
 
@@ -100,11 +101,11 @@ quarters
 
 ## Solution:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000005_aba85955b861cf46a7d2058392e8110ec488f7d4bf9b82ffb9280f0ee6e23e48.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000005_aba85955b861cf46a7d2058392e8110ec488f7d4bf9b82ffb9280f0ee6e23e48.png -->
 
 So how long does each of these notes actually last? That depends on a couple of things. A written note lasts for a certain amount of time measured in beats. To find out exactly how many beats it takes, you must know the time signature. And to find out how long a beat is, you need to know the tempo.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000006_f88753fa2ef488567f565ba4859989be5fbbdd7b2f60a07f76c682ca6dc959e5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000006_f88753fa2ef488567f565ba4859989be5fbbdd7b2f60a07f76c682ca6dc959e5.png -->
 
 ## More about Stems
 
@@ -120,7 +121,7 @@ Whether a stem points up or down does not affect the note length at all. There a
 
 Stem Direction Keep stems and beams in or near the staff, but also use stem direction to clarify rhythms and parts when necessary.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000007_a6cabd676d9a2bb55dd5b48d9545f330e31b511ecfdd11ab69f6285f3ccb1dd0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000007_a6cabd676d9a2bb55dd5b48d9545f330e31b511ecfdd11ab69f6285f3ccb1dd0.png -->
 
 ## Duration: Rest Length In standard music notation, rests of different lengths have different shapes.
 
@@ -128,7 +129,7 @@ A rest stands for a silence in music. For each kind of note, there is a written 
 
 ## The Most Common Rests
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000008_db0e12ac64fa64309df5239f0f743e0b55fdb5f2df8ab4dd2227ba738e14d0a7.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000008_db0e12ac64fa64309df5239f0f743e0b55fdb5f2df8ab4dd2227ba738e14d0a7.png -->
 
 ## Exercise:
 
@@ -136,13 +137,13 @@ A rest stands for a silence in music. For each kind of note, there is a written 
 
 For each note on the first line, write a rest of the same length on the second line. The first measure is done for you.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000009_7b8add5988dc4c7423d3dca75c8d1133abf1fdd29b8cf09f069821e80f29b08e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000009_7b8add5988dc4c7423d3dca75c8d1133abf1fdd29b8cf09f069821e80f29b08e.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000010_1cc54a299ed7c0959681dc37c34932c197fec0df99a6898fddca110abd247c6e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000010_1cc54a299ed7c0959681dc37c34932c197fec0df99a6898fddca110abd247c6e.png -->
 
 ## Solution:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000011_127b2f0cfd94f5f3bf5bad322f3dab5cccbec4413ef3536326fcffb7579d36e8.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00001-00010/try-20261114T121640-7f59d7/document_artifacts/image_000011_127b2f0cfd94f5f3bf5bad322f3dab5cccbec4413ef3536326fcffb7579d36e8.png -->
 
 Rests don't necessarily mean that there is silence in the music at that point; only that that part is silent. Often, on a staff with multiple parts, a rest must be used as a placeholder for one of the parts, even if a single person is playing both parts. When the rhythms are complex, this is necessary to make the rhythm in each part clear.
 
@@ -179,43 +180,20 @@ Rests don't necessarily mean that there is silence in the music at that point; o
 - Sixteenth Thirty-second
 - 447
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<music-fundamentals-2-rhythm-and-meter.pdf#page=1>)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- PDF-Seiten 11–20 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document.md -->
 
-![PDF-Seite 1](<document_artifacts/page_000001_ad5a37b56de038874dd5d7982a2e07b458dfb8e1ddfc747de700de053998bdf9.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_795dd04d2eca19c7ec77850a5d0575f4519ddabe609235971665ffa215d3b7a4.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_867152f68ded75cd557a421eddad9fb9d6aa49954f683bfce86afa7019fa6a87.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_fe16bad2dbf5540e21d9a1831022194d00d99a671756abbd433266ef1c51114b.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_450e10d8c68d46cc4e2dd8c8aa15489db5f236453ec324592ce2579eb137effd.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_4c98c54723ef8582fc0c702e017e90aa539db62c7bb468142bd93ff81cd3f73d.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_19308f09dac1412e045097400295c13fa32f5f27fbde161e6eb83436ced08b38.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_ae9dacbf1b81f9b886ed5683d4d363dd22a8f730ebc75fa244f7f96f5af06d7a.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_d69fc50a2da8bdce44f13fdb3c4587d1cdfc6e37b813eb95350778e530c30f46.png>)
-
-![PDF-Seite 10](<document_artifacts/page_000010_29e7727ed166cab435c40e661b6f3c908849b8c210c58cf430f9c624ed2d8b7b.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/music-fundamentals-2-rhythm-and-meter.pdf#page=1>)
-
-<!-- PDF-Seiten 11–20 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000000_1eb0c2bf1f75c8a529bc2aa3386bd0ca913422279d0e07beff9c4f9b42464bdf.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000000_1eb0c2bf1f75c8a529bc2aa3386bd0ca913422279d0e07beff9c4f9b42464bdf.png -->
 
 When multiple simultaneous rhythms are written on the same staff, rests may be used to clarify individual rhythms, even if another rhythm contains notes at that point.
 
 The normal rule in common notation is that, for any line of music, the notes and rests in each measure must "add up" to exactly the amount in the time signature, no more and no less. For example, in 3/4 time, a measure can have any combination of notes and rests that is the same length as three quarter notes. There is only one common exception to this rule. As a simplifying shorthand, a completely silent measure can simply have a whole rest. In this case, "whole rest" does not necessarily mean "rest for the same length of time as a whole note"; it means "rest for the entire measure".
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000001_58e1217816b1a458f1132d20c5ac5676599cdba917f90079b5e885ce92e6a3ba.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000001_58e1217816b1a458f1132d20c5ac5676599cdba917f90079b5e885ce92e6a3ba.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000002_992634d412bb0e9141838bf7aa9a662c7581c648ada7bedc55ed29211817e801.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000002_992634d412bb0e9141838bf7aa9a662c7581c648ada7bedc55ed29211817e801.png -->
 
 A whole rest may be used to indicate a completely silent measure, no matter what the actual length of the measure will be.
 
@@ -227,7 +205,7 @@ another note (or rest) length?
 
 One way to get a different length is by dotting the note or rest. A dotted note is one-and-a-half times the length of the same note without the dot. In other words, the note keeps its original length and adds another half of that original length because of the dot. So a dotted half note, for example, would last as long as a half note plus a quarter note, or three quarters of a whole note.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000003_d02657a17998ea2c43eedaaf76a3fd817cc0044fbc4f2d80af2b9576d0f69276.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000003_d02657a17998ea2c43eedaaf76a3fd817cc0044fbc4f2d80af2b9576d0f69276.png -->
 
 The dot acts as if it is adding another note half the length of the original note. A dotted quarter note, for example , would be the length of a quarter plus an eighth, because an eighth note is half the length of a quarter note.
 
@@ -237,17 +215,17 @@ Make groups of equal length on each side, by putting a dotted note or rest in th
 
 o =
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000004_6f419bd05c08dd238bb3a320d6c0ec1170f724e0030b39763c2edcdda8230914.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000004_6f419bd05c08dd238bb3a320d6c0ec1170f724e0030b39763c2edcdda8230914.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000005_641babb45f038f3e045cbbda156bfb242c3d6470e68558beb4f848cff30548b3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000005_641babb45f038f3e045cbbda156bfb242c3d6470e68558beb4f848cff30548b3.png -->
 
 。√」=
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000006_efff33dd4f5f06e3bc4bff3622a89712e0c61c767320c8e4253fbdb86defe1c5.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000006_efff33dd4f5f06e3bc4bff3622a89712e0c61c767320c8e4253fbdb86defe1c5.png -->
 
 」」=
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000007_b56a4b2746b3a2b032af9b39792ce3af3e2a5593d81bb7e73be065b3a56b2114.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000007_b56a4b2746b3a2b032af9b39792ce3af3e2a5593d81bb7e73be065b3a56b2114.png -->
 
 ## Solution:
 
@@ -257,13 +235,13 @@ o =
 
 」d
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000008_21c477e9e2321c3feae064809b55cd4ec6f66c8da3b1f11e10477b3804a29324.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000008_21c477e9e2321c3feae064809b55cd4ec6f66c8da3b1f11e10477b3804a29324.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000009_cca3e4b20322228aed06e96be0fb526d5ea592e6718e179e9b03d00c8547b824.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000009_cca3e4b20322228aed06e96be0fb526d5ea592e6718e179e9b03d00c8547b824.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000010_1e203b330567a37a8ca86bce2216802064f7e984279ff193aacd187fdb5e1f38.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000010_1e203b330567a37a8ca86bce2216802064f7e984279ff193aacd187fdb5e1f38.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000011_548f6b4afdaab936950b8700338ea1d2a4a663f1edf5400b3e57410f3314fe71.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000011_548f6b4afdaab936950b8700338ea1d2a4a663f1edf5400b3e57410f3314fe71.png -->
 
 。 = 」」♪
 
@@ -271,21 +249,21 @@ o =
 
 77
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000012_d5d461e5e346580820c8be48f8b525b6f2f853019c4f829a00ce7dab477a50bc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000012_d5d461e5e346580820c8be48f8b525b6f2f853019c4f829a00ce7dab477a50bc.png -->
 
 几 =
 
 ～7
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000013_06268446bc04175d21b119d136ef6f36afe7c2fc82aa3979d6766b884f55217f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000013_06268446bc04175d21b119d136ef6f36afe7c2fc82aa3979d6766b884f55217f.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000014_87fc47b4360358d94a6888159ccf82091804085ec999dd1b82e1aed4aaa80272.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000014_87fc47b4360358d94a6888159ccf82091804085ec999dd1b82e1aed4aaa80272.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000015_fc421b8ce0a43f91f3151a16f79af84088d1fc1da317c1af5b6f28c11ed1e8c0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000015_fc421b8ce0a43f91f3151a16f79af84088d1fc1da317c1af5b6f28c11ed1e8c0.png -->
 
 A note may have more than one dot. Each dot adds half the length that the dot before it added. For example, the first dot after a half note adds a quarter note length; the second dot would add an eighth note length.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000016_403f824b47f4abebd6b0acf8c141a813c28356a3283eb896a493e8d1390704f6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000016_403f824b47f4abebd6b0acf8c141a813c28356a3283eb896a493e8d1390704f6.png -->
 
 When a note has more than one dot, each dot is worth half of the dot before it.
 
@@ -295,7 +273,7 @@ A dotted half lasts as long as a half note plus a quarter note. The same length 
 
 Note:Ties may look like slurs, but they are not the same; a slur connects to notes with different pitches and is a type of articulation.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000017_6b391284de7e7b1bd29319723685401b6442784cb3df7dc75a57db2f7a9a3386.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000017_6b391284de7e7b1bd29319723685401b6442784cb3df7dc75a57db2f7a9a3386.png -->
 
 64
 
@@ -305,11 +283,11 @@ When these eight notes are played as written, only five distinct notes are heard
 
 Dots and ties give you much freedom to write notes of varying lengths, but so far you must build your notes from halves of other notes. If you want to divide a note length into anything other than halves or halves of halves - if you want to divide a beat into thirds or fifths, for example - you must write the number of the division over the notes. These unusual subdivisions are called borrowed divisions because they sound as if they have been borrowed from a completely different meter. They can be difficult to perform correctly and are avoided in music for beginners. The only one that is commonly used is triplets, which divide a note length into equal thirds. Some Borrowed Divisions Any common note length can be divided into an unusual number of equal-length notes and rests, for example by dividing a whole note into three instead of two "half" notes. The notes are labeled with the appropriate number. If there might be any question as to which notes are involved in the borrowed division, a bracket is placed above them. Triplets are by far the most common borrowed division.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000018_07948ec30fef5ee690a5f68baa458af15e2cad5e3eb12bb7ea251628f0e5a2d3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000018_07948ec30fef5ee690a5f68baa458af15e2cad5e3eb12bb7ea251628f0e5a2d3.png -->
 
 Borrowed Duplets
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000019_d771303fef0bd96e003e9551a28cfbb57a58712c8a5ab5e706c03af84dc4903c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000019_d771303fef0bd96e003e9551a28cfbb57a58712c8a5ab5e706c03af84dc4903c.png -->
 
 In a compound meter, which normally divides a beat into three, the borrowed division may divide the beat into two, as in a simple meter. You may also see duplets in swing music.
 
@@ -317,7 +295,7 @@ Notes in jazzy-sounding music that has a "swing" beat are often assumed to be tr
 
 Note:Some jazz musicians prefer to think of a swing rhythm as more of a heavy accent on the second eighth, rather than as a triplet rhythm, particularly when the tempo is fast. This distinction is not important for students of music theory, but jazz students will want to work hard on using both rhythm and articulation to produce a convincing "swing".
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000020_f1da690115ae0c4ef54dc0c2657f89aee0fc615064ef7bf1ef62a07fc156357b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00011-00020/try-20261114T121712-2321d2/document_artifacts/image_000020_f1da690115ae0c4ef54dc0c2657f89aee0fc615064ef7bf1ef62a07fc156357b.png -->
 
 Jazz or blues with a "swing" rhythm often assumes that all divisions are triplets. The swung triplets may be written as triplets, or they may simply be written as "straight" eighth notes or dotted eighth-sixteenths. If rhythms are not written as triplets, the tempo marking usually includes an indication to "swing", or it may simply be implied by the style and genre of the music.
 
@@ -334,33 +312,10 @@ Jazz or blues with a "swing" rhythm often assumes that all divisions are triplet
 - εε
 - LεLL
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 11](<music-fundamentals-2-rhythm-and-meter.pdf#page=11>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 11](<document_artifacts/page_000011_fc76f8c964a08998aad08031e586ceba421f908b43f866702e5f40876d5c62a8.png>)
-
-![PDF-Seite 12](<document_artifacts/page_000012_cc7734823deb472bb74fa54fd88b0548eecc298e11e1124c98092ce0286de74f.png>)
-
-![PDF-Seite 13](<document_artifacts/page_000013_1c7d3cfb350c7f5fd7ecb6614d2f2a6e3edc25194ba0b5813c75f98eb9852bf2.png>)
-
-![PDF-Seite 14](<document_artifacts/page_000014_a1019ef4645073c0e82f121774d1d7622be98b406d8c754c008eade98cc8b699.png>)
-
-![PDF-Seite 15](<document_artifacts/page_000015_2d1711e26a5412e37067b2e957d007d041b723a4ee2ee905f9b9ea951afd7b41.png>)
-
-![PDF-Seite 16](<document_artifacts/page_000016_40a54393775a7494da8f19f8bf6ad2dd6ae16c69ecbc3b4e987e68e713971cba.png>)
-
-![PDF-Seite 17](<document_artifacts/page_000017_4772d0576bedd8a88e1447b25f5e7445a0411d4dd290715afb869e17d545eda1.png>)
-
-![PDF-Seite 18](<document_artifacts/page_000018_49981aff06398d268844a10337c4d477d44c1d1a6f23eee3b5cd50668fca38a9.png>)
-
-![PDF-Seite 19](<document_artifacts/page_000019_f519e8ca8eba785a5f217a9acc0cd4010c9098e6c6b5cbca35007426e434f7e1.png>)
-
-![PDF-Seite 20](<document_artifacts/page_000020_d970a724c915239448874e40bb6596e70ca950229ee1e4057fe261df81aafb87.png>)
-
-
-[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/music-fundamentals-2-rhythm-and-meter.pdf#page=11>)
-
-<!-- PDF-Seiten 21–30 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document.md -->
+<!-- PDF-Seiten 21–30 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document.md -->
 
 Rhythm An introduction to the basic element of music called rhythm, with some definitions. Rhythm, melody, harmony, timbre, and texture are the essential aspects of a musical performance. They are often called the basic elements of music. The main purpose of music theory is to describe various pieces of music in terms of their similarities and differences in these elements, and music is usually grouped into genres based on similarities in all or most elements. It's useful, therefore, to be familiar with the terms commonly used to describe each element. Because harmony is the most highly developed aspect of Western music, music theory tends to focus almost exclusively on melody and harmony. Music does not have to have harmony, however, and some music doesn't even have melody. So perhaps the other three elements can be considered the most basic components of music. Music cannot happen without time. The placement of the sounds in time is the rhythm of a piece of music. Because music must be heard over a period of time, rhythm is one of the most basic elements of music. In some pieces of music, the rhythm is simply a "placement in time" that cannot be assigned a beat or meter, but most rhythm terms concern more familiar types of music with a steady beat. See Meter for more on how such music is organized, and Duration and Time Signature for more on how to read and write rhythms. See Simple Rhythm Activities for easy ways to encourage
 
@@ -377,7 +332,7 @@ children to explore rhythm.
 
 Time Signature The time signature on a musical staff tells you the meter of the music by defining both the number of beats in a measure and the type of note that fills one beat. In common notation, the time signature appears at the beginning of a piece of music, right after the key signature. Unlike the key signature, which is on every staff, the time signature will not appear again in the music unless the meter changes. The meter of a piece is a repetitive rhythmic pulse that underlies the music. The time signature is the symbol that tells you what meter is being used in a piece of music and what types of note) are being used to write it out.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document_artifacts/image_000000_1574f7306f1d0aaabb7c6675da999d318259a4c9275cf9d4b871260edf1dc24e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document_artifacts/image_000000_1574f7306f1d0aaabb7c6675da999d318259a4c9275cf9d4b871260edf1dc24e.png -->
 
 The time signature appears at the beginning of the piece of music, right after the clef symbol and key signature.
 
@@ -398,7 +353,7 @@ The quarter note is most likely to play this role, but any type of note can get
 
 the "this is one beat" designation. In most metered music, some of the beats are stronger (louder, more powerful, more noticeable, or busier), than others, and there is a regular pattern of stronger and weaker beats, for example, strong-weak-weakstrong-weak-weak, or strong-weak-strong-weak. So the beats are organized even further by grouping them into bars, or measures. (The two words mean the same thing.) For example, for music with a beat pattern of strongweak-weak-strong-weak-weak, or 1-2-3-1-2-3, a measure would have three beats in it. The time signature tells you two things: how many beats there are in each measure, and what type of note gets a beat. Reading the Time Signature
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document_artifacts/image_000001_0fae587188d6f73af652df41f676877246cc4ea29664945007e9cbb3673fb1e9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document_artifacts/image_000001_0fae587188d6f73af652df41f676877246cc4ea29664945007e9cbb3673fb1e9.png -->
 
 This time signature means that there are three quarter notes (or any combination of notes that equals three quarter notes) in every measure. A piece with this time signature would be "in three four time" or just "in three four".
 
@@ -417,13 +372,13 @@ Listen again to the music in [link]. Instead of clapping, count each beat. Decid
 
 Most time signatures contain two numbers. The top number tells you how many beats there are in a measure. The bottom number tells you what kind of note gets a beat.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document_artifacts/image_000002_b4160f4422bb9b3928976ea463110bafd274e1a47ff410a6ddb1cae0796399f1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document_artifacts/image_000002_b4160f4422bb9b3928976ea463110bafd274e1a47ff410a6ddb1cae0796399f1.png -->
 
 In "four four" time, there are four beats in a measure and a quarter note gets a beat. In order to keep the meter going steadily, every measure must have a combination of notes and rests that is equivalent to four quarter notes.
 
 You may have noticed that the time signature looks a little like a fraction in arithmetic. Filling up measures feels a little like finding equivalent fractions, too. In "four four time", for example, there are four beats in a measure and a quarter note gets one beat. So four quarter notes would fill up one measure. But so would any other combination of notes and rests that equals four quarters: one whole, two halves, one half plus two quarters, a half note and a half rest, and so on.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document_artifacts/image_000003_e0076ba723ae984075b18941dd6b10de81ab7da5a379acc31bbe3d79648443ec.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document_artifacts/image_000003_e0076ba723ae984075b18941dd6b10de81ab7da5a379acc31bbe3d79648443ec.png -->
 
 | Example:                                                                                                                                                                                                              |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -443,25 +398,25 @@ Write each of the time signatures below (with a clef symbol) at the beginning of
 
 There are an enormous number of possible note combinations for any time signature. That's one of the things that makes music interesting. Here are some possibilities. If you are not sure that yours are correct, check with your music instructor.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document_artifacts/image_000004_da4df20f1b2f242f1cc49fe4f912e3dee35fddce95d2bf57adc2f9aada4c314c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document_artifacts/image_000004_da4df20f1b2f242f1cc49fe4f912e3dee35fddce95d2bf57adc2f9aada4c314c.png -->
 
 These are only a few of the many, many possible note combinations that could be used in these time signatures.
 
 A few time signatures don't have to be written as numbers. Four four time is used so much that it is often called common time, written as a bold "C". When both fours are "cut" in half to twos, you have cut time, written as a "C" cut by a vertical slash.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document_artifacts/image_000005_11609028ca1d604fdef2b7fd23d228578fb764ef9f607448c846eabbaf213e46.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document_artifacts/image_000005_11609028ca1d604fdef2b7fd23d228578fb764ef9f607448c846eabbaf213e46.png -->
 
 ## Counting and Conducting
 
 You may have already noticed that a measure in four four time looks the same as a measure in two two. After all, in arithmetic, four quarters adds up to the same thing as two halves. For that matter, why not call the time signature "one one" or "eight eight"?
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document_artifacts/image_000006_ec7e9b960d42d1d17f8442daa14103f6c56c57d6385a4fcd0344e6112a120668.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document_artifacts/image_000006_ec7e9b960d42d1d17f8442daa14103f6c56c57d6385a4fcd0344e6112a120668.png -->
 
 Measures in all of these meters look the same, but feel different. The difference is how many downbeats there are in a measure.
 
 Or why not write two two as two four, giving quarter notes the beat instead of half notes? The music would look very different, but it would sound the same, as long as you made the beats the same speed. The music in each of the staves in [link] would sound like this.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document_artifacts/image_000007_79360c9ba16840facd3b119a226896b604000ccd5b0135ef65bf4180a61a151a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00021-00030/try-20261114T121731-cb2cff/document_artifacts/image_000007_79360c9ba16840facd3b119a226896b604000ccd5b0135ef65bf4180a61a151a.png -->
 
 The music in each of these staves should sound exactly alike.
 
@@ -481,35 +436,12 @@ way for composers to write beats that are divided into thirds.
 - J=116
 - 0=116
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 21](<music-fundamentals-2-rhythm-and-meter.pdf#page=21>)
 
-## Seitenabbildungen zur Sichtprüfung
+<!-- PDF-Seiten 31–40 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document.md -->
 
-![PDF-Seite 21](<document_artifacts/page_000021_b448098907fa5f7739b6b26dfc079cb985f98d5d1b2a40f30fe63c7d8538242a.png>)
-
-![PDF-Seite 22](<document_artifacts/page_000022_8b083b874517576f5be11460b728b5c2926eaabc3f475b6eda5c3c91d6822a61.png>)
-
-![PDF-Seite 23](<document_artifacts/page_000023_1a6b83541760c18ac33f0087359b67989635bb3f732ab016f9680771644f9db4.png>)
-
-![PDF-Seite 24](<document_artifacts/page_000024_7eb9d7d178ede3daf1d1908a863d5b43a32760f1124df01d6911f37af0d5072c.png>)
-
-![PDF-Seite 25](<document_artifacts/page_000025_06357cb450d419f685b4ba45e1c7a4feaaf12178efc8c5898e14e639445604bd.png>)
-
-![PDF-Seite 26](<document_artifacts/page_000026_5b5e355174172184ded6caae7f45618c40310222d71e50f12d388d0998ad7d0b.png>)
-
-![PDF-Seite 27](<document_artifacts/page_000027_35ae75a9652c07df5f86d66d9ddcdb92224fde507b3017742e898c4ade354cc6.png>)
-
-![PDF-Seite 28](<document_artifacts/page_000028_46760c514d33f2ca3fd1ebfa4d7ad31f28e427973c44c3265e494d5aa9cd266e.png>)
-
-![PDF-Seite 29](<document_artifacts/page_000029_678fa273976ff84343cc3ff31f6fbb8b9fc24388d815a60170bee13c33f04e9b.png>)
-
-![PDF-Seite 30](<document_artifacts/page_000030_aed740541dc3fbe14e3ef16b432e292bf36d6ba78f8670005536a6472086eb05.png>)
-
-
-[Original-PDF, Seite 21](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/music-fundamentals-2-rhythm-and-meter.pdf#page=21>)
-
-<!-- PDF-Seiten 31–40 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document.md -->
-
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000000_c5645d020061883a4919b73b3b9ff57fae4465de59f2774207e4ab1e0c796e7d.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000000_c5645d020061883a4919b73b3b9ff57fae4465de59f2774207e4ab1e0c796e7d.png -->
 
 =
 
@@ -523,23 +455,23 @@ Introduction to subdivisions in simple meters. The module introduces divisions a
 
 Simple meters (2/4, 3/4, 4/4 etc.) generally feature subdivisions of the beat subdivisions of all of the larger value notes:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000001_b5926b852bbf6f42aff0d02067a790ce69b05015180b04b3cf4189a1893fcf52.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000001_b5926b852bbf6f42aff0d02067a790ce69b05015180b04b3cf4189a1893fcf52.png -->
 
 Below is an example with subdivisions: the upper part is aligned with sixteenth note subdivisions in the lower part:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000002_05369cb54f94fb259530552c9ad438bfe7ec96ec6c05dc53a7171ff037e9dea0.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000002_05369cb54f94fb259530552c9ad438bfe7ec96ec6c05dc53a7171ff037e9dea0.png -->
 
 The first step to internalizing the subdivisions is to beat out a steady pattern of sixteenth notes while playing a melody line. For instance, while tapping 16th notes with a hand or foot try singing or saying the upper part with "ta" or "la" for each note. This may take a little bit of practice.
 
 Try tapping out eighth notes while performing these simple patterns:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000003_237f2d51b90675c27230e7a03581f60a8fa77a32eb4df1758474da43161dd2b9.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000003_237f2d51b90675c27230e7a03581f60a8fa77a32eb4df1758474da43161dd2b9.png -->
 
 When you are able to perform the rhythms accurately with tapping, try to then perform them accurately by internally "hearing" the taps. When I subdivide I usually do so with internal "tapping" sounds rather than counting "1 ee and ah, 2 ee and ah." The internal tapping works better with
 
 When you have mastered the above examples with eighth notes, try subdivisions of sixteenth notes. Here are some further examples to practice
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000004_b873d2a1a1d25aa4e9bdba9b6e8bfb0cecde25eaf1747647f83b2d56d4fa96f3.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000004_b873d2a1a1d25aa4e9bdba9b6e8bfb0cecde25eaf1747647f83b2d56d4fa96f3.png -->
 
 more complex rhythms or faster subdivisions. with sixteenth note subdivisions:
 
@@ -549,15 +481,15 @@ Audio engineers speak of "sampling rates," that is the rate at which sound waves
 
 Consider the following figure with notes placed rhythmically placed spatially along the staff line:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000005_e2cca7748d7769fc195e26f26eec7204d9f4714a5816cafce34f77bdbb235ce1.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000005_e2cca7748d7769fc195e26f26eec7204d9f4714a5816cafce34f77bdbb235ce1.png -->
 
 If we add eighth note pulses we obtain:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000006_fd2adef5e4f952fac09a2242dc9fea261f98aec4ccf8263554acd73454d0c40b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000006_fd2adef5e4f952fac09a2242dc9fea261f98aec4ccf8263554acd73454d0c40b.png -->
 
 The sixteenth notes at numbers 1 and 2 appear rhythmically accurate; at least they are positioned so that they don't intersect the eighth note lines. However, if we subdivide the example with sixteenth notes (presented in the green and blue lines) we notice that the rhythmic placement at number 2 is not accurate:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000007_8d39b68e3a4c3fef71e98fae23eb55ff36f4aebb3da415161d794ecd7588ec07.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000007_8d39b68e3a4c3fef71e98fae23eb55ff36f4aebb3da415161d794ecd7588ec07.png -->
 
 The sixteenth at number 1 coincides with the sixteenth note pulse (blue line) but the sixteenth at number 2 clearly is not centered with the noticeable with eight note divisions but becomes quite obvious with the
 
@@ -579,11 +511,11 @@ Simple Time Signatures
 
 In simple time signatures the top number represents the number of beats per measure. The bottom number indicates the type of note equal to one beat. The division of the beat is the lower number multiplied by 2. Thus, the division of the beat is grouped by twos.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000008_8401572d3b33f0e157ed792b9625b22f7aa03610d7836d9144866f3b63eb843c.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000008_8401572d3b33f0e157ed792b9625b22f7aa03610d7836d9144866f3b63eb843c.png -->
 
 In compound time signatures the top number divided by 3 represents the number of beats per measure. The bottom number indicates the type of note that divides the beat. The division of the beat is grouped by threes.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000009_c74fae792d0cf4e90958ade11460cc16246fc76b9650f37d2eaae3eed56b31f6.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00031-00040/try-20261114T121754-1cabea/document_artifacts/image_000009_c74fae792d0cf4e90958ade11460cc16246fc76b9650f37d2eaae3eed56b31f6.png -->
 
 16 – Three sixteenth notes equals 1 beat.
 
@@ -622,33 +554,10 @@ To learn to recognize meter, remember that (in most Western music) the beats and
 - 12
 - 9 –There are 3 beats per measure.
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 31](<music-fundamentals-2-rhythm-and-meter.pdf#page=31>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 31](<document_artifacts/page_000031_042692ae0637bfc3409af07dafd7f7f6d0082103fc4e65301b7469e9497c6d40.png>)
-
-![PDF-Seite 32](<document_artifacts/page_000032_b0e7bc68e1ae8c5bb6441bd792361502bab45b133246287c7ca39df72aa6ec7b.png>)
-
-![PDF-Seite 33](<document_artifacts/page_000033_61e361360da1cb44e7d3418c70235f3898089c0481823b533038ce172f9c28ad.png>)
-
-![PDF-Seite 34](<document_artifacts/page_000034_8a24d380f1ca9fb225e5ac06a49d3f5e52af8983f669c0fe8011a3d44601a8fa.png>)
-
-![PDF-Seite 35](<document_artifacts/page_000035_e3fe2393dc60d26943bd42270fc03c9a55d0552538bc7226c9962881bc4fe258.png>)
-
-![PDF-Seite 36](<document_artifacts/page_000036_eb0aeb7d7d0fbcf475a94ff2827becd984e6876658b964682fb45a224b40ce64.png>)
-
-![PDF-Seite 37](<document_artifacts/page_000037_1080627dc8d35d787d4fdb8cf84d76bf0e880642f3225aed1032e969b6373060.png>)
-
-![PDF-Seite 38](<document_artifacts/page_000038_f1dbcdfb4c85b58dbd0db959c2d8d2d86dcba923bd80bebea4af416abfba0aef.png>)
-
-![PDF-Seite 39](<document_artifacts/page_000039_e664200a2e29642fb485ae893a814125afc644b28e03fa72c4b2b6513d5d6554.png>)
-
-![PDF-Seite 40](<document_artifacts/page_000040_c5b1064d5a993a0dce2dd17a2d1cb51b24534fc71444dc6940bb53b4c7d2a603.png>)
-
-
-[Original-PDF, Seite 31](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/music-fundamentals-2-rhythm-and-meter.pdf#page=31>)
-
-<!-- PDF-Seiten 41–50 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document.md -->
+<!-- PDF-Seiten 41–50 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document.md -->
 
 comfortable to count "ONE-and-a-Two-and-a-ONE-and-a-Two-and-a", it's probably compound duple meter. (Make sure numbers always come on a pulse, and "one" always on the strongest pulse.)
 
@@ -656,7 +565,7 @@ This may take some practice if you're not used to it, but it can be useful pract
 
 ## Meters
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000000_972e198330b84df1ac19b12050ca40f2ffaaf4c86a427b89b1970b547bd5ae45.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000000_972e198330b84df1ac19b12050ca40f2ffaaf4c86a427b89b1970b547bd5ae45.png -->
 
 Remember that meter is not the same as time signature; the time signatures given here are just examples. For example, 2/2 and 2/8 are also simple duple meters.
 
@@ -666,23 +575,23 @@ Introduction to Subdivisions in Compound Meters Introduction to subdivisions in 
 
 Subdivisions in compound meters (6/8, 9/8, 12/8 etc.) generally feature divisions of three eighth notes to each beat or pulse. Naturally each eighth note may then be divided with sixteenth notes:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000001_ec83e16f56668f10ea928d4adc9f4dac88dfb8fcda1f28e5914542ea4d36c3d2.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000001_ec83e16f56668f10ea928d4adc9f4dac88dfb8fcda1f28e5914542ea4d36c3d2.png -->
 
 First perform the following by tapping eighth notes while singing the melody with "Ta" or "La" or playing it on your instrument.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000002_002c1318dec41b33e87b4a876d7d17f4b1838a0cf4ce4886a9cdf23ce2506a1a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000002_002c1318dec41b33e87b4a876d7d17f4b1838a0cf4ce4886a9cdf23ce2506a1a.png -->
 
 Once you have mastered that exercise, try to "hear" the tapping internally. Play the upper line while hearing the tapping.
 
 Try this example in 6/8 with sixteenth note subdivisions:
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000003_463b38a3cb89965a4173ab9cc68954800743f43098124eeaa18429b3d0b73993.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000003_463b38a3cb89965a4173ab9cc68954800743f43098124eeaa18429b3d0b73993.png -->
 
 A good rule of thumb is to subdivide with the smallest note value possible. If the example above was performed at a slow tempo, eighth note = 60, then subdivisions with 32 notes would be quite possible and would help to ensure proper note values. At a tempo of dotted quarter note = 100, sixteenth note subdivisions would be preferred. This new tempo would be too rapid to subdivide easily with 32 notes. nd nd
 
 Here are some further examples to subdivide with sixteenth notes (Wedge, p. 165):
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000004_7bc474440801d466f2ccf1a551acee6c55640f99612b0dcbfa2f4e6e1fd8ba46.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000004_7bc474440801d466f2ccf1a551acee6c55640f99612b0dcbfa2f4e6e1fd8ba46.png -->
 
 Pickup Notes and Measures A shortened first measure of a piece of music is called a pickup measure. Notes that begin a phrase shortly before a strong downbeat are also called pickup notes.
 
@@ -690,7 +599,7 @@ Pickup Notes and Measures A shortened first measure of a piece of music is calle
 
 Normally, all the measures of a piece of music must have exactly the number of beats indicated in the time signature. The beats may be filled with any combination of notes or rests (with duration values also dictated by the time signature), but they must combine to make exactly the right number of beats. If a measure or group of measures has more or fewer beats, the time signature must change.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000005_b20320fab2b4e2945d8052bf90d5262267ce505bc820fd4dfabc2d0a6d892acc.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000005_b20320fab2b4e2945d8052bf90d5262267ce505bc820fd4dfabc2d0a6d892acc.png -->
 
 Normally, a composer who wants to put more or fewer beats in a measure must change the time signature, as in this example from Mussorgsky's
 
@@ -698,7 +607,7 @@ Normally, a composer who wants to put more or fewer beats in a measure must chan
 
 There is one common exception to this rule. (There are also some less common exceptions not discussed here.) Often, a piece of music does not begin on the strongest downbeat. Instead, the strong beat that people like to count as "one" (the beginning of a measure), happens on the second or third note, or even later. In this case, the first measure may be a full measure that begins with some rests. But often the first measure is simply not a full measure. This shortened first measure is called a pickup measure. If there is a pickup measure, the final measure of the piece should be shortened by the length of the pickup measure (although this rule is sometimes ignored in less formal written music). For example, if the meter of the piece has four beats, and the pickup measure has one beat, then the final measure should have only three beats. (Of course, any combination of notes and rests can be used, as long as the total in the first and final measures equals one full measure.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000006_cb7a3fb58dcebd84b3de17c10346e526440a95403cbfd1fff302b45faaed928e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000006_cb7a3fb58dcebd84b3de17c10346e526440a95403cbfd1fff302b45faaed928e.png -->
 
 If a piece begins with a pickup measure, the final measure of the piece is shortened by the length of the pickup measure.
 
@@ -706,13 +615,13 @@ If a piece begins with a pickup measure, the final measure of the piece is short
 
 Any phrase of music (not just the first one) may begin someplace other than on a strong downbeat. All the notes before the first strong downbeat of any phrase are the pickup notes to that phrase.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000007_b94329fb799006d314d867a7d6b73293197d051eb5ce2197f8d50ae4112ec6ab.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000007_b94329fb799006d314d867a7d6b73293197d051eb5ce2197f8d50ae4112ec6ab.png -->
 
 Any phrase may begin with pickup notes. Each of these four phrases begins with one or two pickup notes. (You may listen to the tune here; can you hear that the pickup notes lead to the stronger downbeat?)
 
 A piece that is using pickup measures or pickup notes may also sometimes place a double bar (with or without repeat signs) inside a measure, in order to make it clear which phrase and which section of the music the pickup notes belong to. If this happens (which is a bit rare, because it can be confusing to read), there is still a single bar line where it should be, at the end of the measure.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000008_54391a770c8f3c413322a0b6b96f4f1b5706ec1604fb19bb8c79148dfdc2822b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000008_54391a770c8f3c413322a0b6b96f4f1b5706ec1604fb19bb8c79148dfdc2822b.png -->
 
 At the ends of sections of the music, a measure may be interrupted by a double bar that places the pickup notes in the correct section and assures that repeats have the correct number of beats. When this happens, the bar line will still appear at the end of the completed measure. This notation can be confusing, though, and in some music the pickups and repeats are written in a way that avoids these broken-up measures.
 
@@ -724,7 +633,7 @@ The tempo of a piece of music is its speed. There are two ways to specify a temp
 
 Metronome markings are given in beats per minute. They can be estimated using a clock with a second hand, but the easiest way to find them is with a metronome, which is a tool that can give a beat-per-minute tempo as a clicking sound or a pulse of light. [link] shows some examples of metronome markings.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000009_8318d0a8eb6af002be7ac4d643894b622886fd05044548585bebe64fbb8b340b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/30e2a1e16fc8eb89/d3f6f9dfb2b4/00041-00050/try-20261114T121817-033feb/document_artifacts/image_000009_8318d0a8eb6af002be7ac4d643894b622886fd05044548585bebe64fbb8b340b.png -->
 
 Metronomes often come with other tempo indications written on them, but this is misleading. For example, a metronome may have allegro marked at 120 beats per minute and andante marked at 80 beats per minute. Allegro should certainly be quite a bit faster than andante, but it may not be exactly 120 beats per minute.
 
@@ -806,28 +715,5 @@ If the tempo of a piece of music suddenly changes into a completely different te
 - Could be conducted in a fast six (eighth note gets one beat)
 - or in a slow two (dotted quarter gets one beat: about. = 50 .)
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 41](<document_artifacts/page_000041_74ed5a47c660ebaddebf47481cb3798b53b74ef2b122060f5bc2850845621839.png>)
-
-![PDF-Seite 42](<document_artifacts/page_000042_e9f9a81da11c92aafd9dbeb0c90dbb63654bcbe4a2d0ffc508dc09a8c30bd15b.png>)
-
-![PDF-Seite 43](<document_artifacts/page_000043_b32da08d8d7e88aeeadcdc961d1209116f7630693083e95470d5fe4ceb8a8d2d.png>)
-
-![PDF-Seite 44](<document_artifacts/page_000044_9ab8e0a9eb96ed06e41c27507bc77fa1474b7cfa0f7604f1d8c604eed5c55504.png>)
-
-![PDF-Seite 45](<document_artifacts/page_000045_c9ef630486f597790401ac6ada090a61d875684dd92d89fded92f31ea19ba6be.png>)
-
-![PDF-Seite 46](<document_artifacts/page_000046_1614d960d630248e17f7d5e7dce8492de242e058ed65e2d4eeeda4dbba145120.png>)
-
-![PDF-Seite 47](<document_artifacts/page_000047_a3484730be74551de414f36c27e2a173351b4863cb76b9df38ff612d7d1eec23.png>)
-
-![PDF-Seite 48](<document_artifacts/page_000048_14d3de68d35bd4c729640259eafeda4a4718222fb16f511e428762ba41c5dcc0.png>)
-
-![PDF-Seite 49](<document_artifacts/page_000049_c0bcb80b45ce5aab479b36dd0de489f61054a57a4dcbe32e531021c5699512f2.png>)
-
-![PDF-Seite 50](<document_artifacts/page_000050_84c52197d14a8bc50b040785d98e4551bbe7663289f3bf81f0dbbb4d2e043dd0.png>)
-
-
-[Original-PDF, Seite 41](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/music-fundamentals-2-rhythm-and-meter.pdf#page=41>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 41](<music-fundamentals-2-rhythm-and-meter.pdf#page=41>)

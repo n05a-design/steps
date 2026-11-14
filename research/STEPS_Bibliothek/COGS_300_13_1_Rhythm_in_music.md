@@ -9,12 +9,13 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 12
 tabellen: 0
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `COGS_300_13_1_Rhythm_in_music.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00001-00010/try-20261114T105200-77f3ac/document.md -->
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00001-00010/try-20261114T105200-77f3ac/document.md -->
 
 ## Rhythm	
   in	
@@ -177,7 +178,7 @@ Patel
   simple	
   melody
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00001-00010/try-20261114T105200-77f3ac/document_artifacts/image_000000_19d692de33ca226219865b362fff1235ad21f17cbcaf0ff655e6ad2ec927232b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00001-00010/try-20261114T105200-77f3ac/document_artifacts/image_000000_19d692de33ca226219865b362fff1235ad21f17cbcaf0ff655e6ad2ec927232b.png -->
 
 Ch.	
   3	
@@ -607,33 +608,10 @@ Ch.
   beat	
   finding:
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<COGS_300_13_1_Rhythm_in_music.pdf#page=1>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_6a2601bcda9a0f2e25c1c7dab721eb87c1b952cee6bc5a7699a9e05df69cb72c.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_1c02f71edc9735117c0699db2e20bc3f723bef7fc700535b3c9ed588ca949ae7.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_00c6e3b74e2cf70a2b9444039435ce9670f820515114343c9e5a6f6b5363a1c6.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_8f8286b9e193c8392a84da7b947eef9db318f0a3a58163a5285cd436cd18a363.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_db9d0916cd4f26c1003c71ea773aed995ddaa609dea90c59f84f22271b592d80.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_c66824014ec4097645a8304f902709b1270afd27b55325fbc77fbc1472facf95.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_56990eeafe5b02f046cfeec5d1b9488a8fb3ace0be07a2d24e66bb57e9b56398.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_de495b79feda8dfc6388b073a63b8b74570e6f4986a6cd5de5d6c2ea2cc9213a.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_2faf422adb5e2b4fb861d13e898676d6820d480af262c95fb7ec8861c73a9ecf.png>)
-
-![PDF-Seite 10](<document_artifacts/page_000010_436d53c0108d166f6fcce021034616be266b7ea8f1450ed892c7811a021c9d8e.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/COGS_300_13_1_Rhythm_in_music.pdf#page=1>)
-
-<!-- PDF-Seiten 11–20 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00011-00020/try-20261114T105213-864e50/document.md -->
+<!-- PDF-Seiten 11–20 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00011-00020/try-20261114T105213-864e50/document.md -->
 
 ## Meter:	
   mul�ple	
@@ -703,7 +681,7 @@ Ch.
 
 ## K0016
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00011-00020/try-20261114T105213-864e50/document_artifacts/image_000000_20e23cc481a8efc26e4f9f1900e5b47ecb689a1bf85beaf2e83a664dc5325737.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00011-00020/try-20261114T105213-864e50/document_artifacts/image_000000_20e23cc481a8efc26e4f9f1900e5b47ecb689a1bf85beaf2e83a664dc5325737.png -->
 
 ## Meter:	
   mul�ple	
@@ -907,7 +885,7 @@ Ch.
   3	
   Rhythm Figure 3.3 (A) Repeating two-note rhythmic pattern, in which the listener imagines the downbeat on either the first tone (left)or second tone (right). (B)Evoked neural responses (measured over auditorybrain regions) to the two-tone pattern subjectively interpeeted in two different ways, in other words, with the downbeat on tone 1 versus tone 2. (The onset times of tones 1 and 2 are indicated by thin, vertical, gray lines at 0 and 0.2 s). The solid and dashed black lines show across-sulbject means for the two imagined beat conditions (solid = beat imagined on tone 1, dashed = beat imagined on tone 2). Data are fromthe beta frequency range (20–30 Hz). The difference is shown by the dotted line, with shading indicating1 standard error. (C)Evoked neural responses in the beta frequency range to a two-tone pattern physically accented in two different
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00011-00020/try-20261114T105213-864e50/document_artifacts/image_000001_caebe63dc6ff45b39b15422ac078d7ef500cc81b33d876ce58a1f06985821f2e.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00011-00020/try-20261114T105213-864e50/document_artifacts/image_000001_caebe63dc6ff45b39b15422ac078d7ef500cc81b33d876ce58a1f06985821f2e.png -->
 
 ## Telemann	
   Flute	
@@ -976,7 +954,7 @@ Kate:
 6/4	
   �me
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00011-00020/try-20261114T105213-864e50/document_artifacts/image_000002_3f6c140b750efe53b3805bc24d153774d923cb3e25f4b5970fc98f6fc7cc9c6f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00011-00020/try-20261114T105213-864e50/document_artifacts/image_000002_3f6c140b750efe53b3805bc24d153774d923cb3e25f4b5970fc98f6fc7cc9c6f.png -->
 
 ## Grouping:	
   the	
@@ -1004,7 +982,7 @@ Kate:
 
 es (p1 = phrase 1 etc.).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00011-00020/try-20261114T105213-864e50/document_artifacts/image_000003_bcdaebac31f6e6dab55d001a343a1525d2402f83f7f6e65afbe9648d0a536784.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00011-00020/try-20261114T105213-864e50/document_artifacts/image_000003_bcdaebac31f6e6dab55d001a343a1525d2402f83f7f6e65afbe9648d0a536784.png -->
 
 ## Grouping:	
   the	
@@ -1147,7 +1125,7 @@ R. Jackendoff, F. Lerdahl 1 Cognition 100 (2006) 33–72
 
 Fig. 3. The first phrase of Yellow Submarine with its metrical and grouping structures.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00011-00020/try-20261114T105213-864e50/document_artifacts/image_000004_461e76f3c107e170f682c991668f974bd8b4990dd28dd494675d8d84d4cdff01.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00011-00020/try-20261114T105213-864e50/document_artifacts/image_000004_461e76f3c107e170f682c991668f974bd8b4990dd28dd494675d8d84d4cdff01.png -->
 
 ## Zusätzlich erkannte Beschriftungen (ungeprüft)
 
@@ -1195,33 +1173,10 @@ Fig. 3. The first phrase of Yellow Submarine with its metrical and grouping stru
   1980
 - We all live in a yel-low sub-ma-rine
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 11](<COGS_300_13_1_Rhythm_in_music.pdf#page=11>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 11](<document_artifacts/page_000011_8a32d9ba2aece73f38b058212fb134096ab791078f6009994450046f0e373d41.png>)
-
-![PDF-Seite 12](<document_artifacts/page_000012_70d938ec004d9d2b6889bd040719869910b1b534d1029e989b4f16c743e52b1e.png>)
-
-![PDF-Seite 13](<document_artifacts/page_000013_edab865bd4b8ec0978123b23b6d3fad2cc4393f679939ce31531c300242fae5e.png>)
-
-![PDF-Seite 14](<document_artifacts/page_000014_dcc2c980463fefa7de95300bcf645025eaac799a32e25bf392216629f73d8b89.png>)
-
-![PDF-Seite 15](<document_artifacts/page_000015_2d470740f2515b0d4e85a9e9d6c3900c2c18a62528d65f35c0ebeedb5bf69046.png>)
-
-![PDF-Seite 16](<document_artifacts/page_000016_ea37781a26956fb8d886a502aff52c5dab213536f087e2846570ff2b9ac1875c.png>)
-
-![PDF-Seite 17](<document_artifacts/page_000017_befb7aee485d6967a9d6a19673ea20238747cf8c4dcebefb9ba3bec492122f3c.png>)
-
-![PDF-Seite 18](<document_artifacts/page_000018_1c19911f45dfd8cfd8fed3f8a78f1d43cb57be4624c24ec797d0f913bd111c1d.png>)
-
-![PDF-Seite 19](<document_artifacts/page_000019_c3d0d7b9b34232c9a294d9bf2143237ddfbfe138460f302e2c7f1653aee4cc7d.png>)
-
-![PDF-Seite 20](<document_artifacts/page_000020_61fa9493619388bb27f117089909aa85fd2dd6845360cc6267ada4471e587038.png>)
-
-
-[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/COGS_300_13_1_Rhythm_in_music.pdf#page=11>)
-
-<!-- PDF-Seiten 21–30 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00021-00030/try-20261114T105233-e76786/document.md -->
+<!-- PDF-Seiten 21–30 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00021-00030/try-20261114T105233-e76786/document.md -->
 
 ## Grouping:	
   the	
@@ -1353,11 +1308,11 @@ To illustrate briefly the kind of analytic insight that can emerge from our prop
 
 2.14
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00021-00030/try-20261114T105233-e76786/document_artifacts/image_000000_14b44ed5aca512dc34518c6c2b0a942922a627bb44c1ffb95c363de0f79ec44f.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00021-00030/try-20261114T105233-e76786/document_artifacts/image_000000_14b44ed5aca512dc34518c6c2b0a942922a627bb44c1ffb95c363de0f79ec44f.png -->
 
 ## 2.14 (cont.)
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00021-00030/try-20261114T105233-e76786/document_artifacts/image_000001_6b3eaee5f9d0d3a90dad97e8b413aca57e0b14aa05fe10b89856ded11b806b4a.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00021-00030/try-20261114T105233-e76786/document_artifacts/image_000001_6b3eaee5f9d0d3a90dad97e8b413aca57e0b14aa05fe10b89856ded11b806b4a.png -->
 
 ## Grouping:	
   the	
@@ -1409,9 +1364,9 @@ To illustrate briefly the kind of analytic insight that can emerge from our prop
 
 Figure 3.5 (A) Syntactic and (B) prosodic hierarchy for a sentence of English. Abbreviations for (A): S = sentence, PP = prepositional phrase, NP = noun phrase, VP = verb phrase, Det = Determiner, A = adjective, N = Noun, V = Verb. Abbreviations for (B): U = utterance, I = Intonation phrase, P = phonological phrase, C = clitic group, W = word. Adapted from Hayes, 1989.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00021-00030/try-20261114T105233-e76786/document_artifacts/image_000002_caffdbc6ab3323bcb17e59bf0214b33a7f89eebf3b61e1ddde1603705c846973.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00021-00030/try-20261114T105233-e76786/document_artifacts/image_000002_caffdbc6ab3323bcb17e59bf0214b33a7f89eebf3b61e1ddde1603705c846973.png -->
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00021-00030/try-20261114T105233-e76786/document_artifacts/image_000003_b1355baf8438eb6040b31e3ed3325fc21142fc3844461bab1de6bd0b5ea4bf9b.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00021-00030/try-20261114T105233-e76786/document_artifacts/image_000003_b1355baf8438eb6040b31e3ed3325fc21142fc3844461bab1de6bd0b5ea4bf9b.png -->
 
 ## Grouping:	
   the	
@@ -1628,7 +1583,7 @@ Figure 3.5 (A) Syntactic and (B) prosodic hierarchy for a sentence of English. A
 
 Figure 3.6a Histogram of syllable durations in a corpus of spontaneous speech in American English. Data are from approximately 16,000 syllables. Mean syllable duration = 191 ms, sd = 125 ms. Syllables with duration &gt;750 ms are not shown (&lt;1% of total).
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00021-00030/try-20261114T105233-e76786/document_artifacts/image_000004_8cbc6d01e2c07fc869943610bb0ca644649c1ee674d42dfc6e2c7715a0757262.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00021-00030/try-20261114T105233-e76786/document_artifacts/image_000004_8cbc6d01e2c07fc869943610bb0ca644649c1ee674d42dfc6e2c7715a0757262.png -->
 
 ## Dura�onal	
   pa�erns	
@@ -1728,33 +1683,10 @@ Figure 3.6a Histogram of syllable durations in a corpus of spontaneous speech in
 - 400
 - Syllable duration (ms)
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 21](<COGS_300_13_1_Rhythm_in_music.pdf#page=21>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 21](<document_artifacts/page_000021_9ba7a087c35b1ec8eb7798b5cab37ecacf6e5e3f26a5c58e9b9ff5fbfbf6c694.png>)
-
-![PDF-Seite 22](<document_artifacts/page_000022_11a5c54987c489b8ab0c818a9b22e5d7f2f73da8dbbee5adde61a1266ef5bbfc.png>)
-
-![PDF-Seite 23](<document_artifacts/page_000023_3b7b019d8fe018018c43abf8221bbdbb2afd36109264e075b87434a00d866721.png>)
-
-![PDF-Seite 24](<document_artifacts/page_000024_9ce38a027f7ecdfc5efe5a451fdedaae7df035e1846e70aa811ce05a6ba0cf6a.png>)
-
-![PDF-Seite 25](<document_artifacts/page_000025_4fb2148bf9c6adebd3f51aa5308a7b2db0b300e66c6d1e92a972ead576061e1d.png>)
-
-![PDF-Seite 26](<document_artifacts/page_000026_d6d7f598cd61e1cb4087ba392f0bfd9d874430412b73d82eb074ea1d517c1fd3.png>)
-
-![PDF-Seite 27](<document_artifacts/page_000027_55165c79f635bc45b1936b938ee7fb693a80f42396bc02fa75ecbf7f2284ab60.png>)
-
-![PDF-Seite 28](<document_artifacts/page_000028_f5cf80511f9189882f9eefd9928c899fef828fc40a6a382baa1132b98d052f28.png>)
-
-![PDF-Seite 29](<document_artifacts/page_000029_1eb3b5cbec5f93dfa4efed40ec14e992c6d5dcfdf387102222051aa70f8930da.png>)
-
-![PDF-Seite 30](<document_artifacts/page_000030_dc3e10686cba7069bd061a7502ef3747d6d4d8136adb2af57e1efc2ce1885884.png>)
-
-
-[Original-PDF, Seite 21](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/COGS_300_13_1_Rhythm_in_music.pdf#page=21>)
-
-<!-- PDF-Seiten 31–34 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00031-00034/try-20261114T105249-f6052f/document.md -->
+<!-- PDF-Seiten 31–34 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00031-00034/try-20261114T105249-f6052f/document.md -->
 
 ## A	
   performance	
@@ -1763,7 +1695,7 @@ Figure 3.6a Histogram of syllable durations in a corpus of spontaneous speech in
 
 Figure 3.6b Histogram of durations of eighth notes from a performance of Schumann's Träumerei by Claudio Arrau. The large values in the right tail of the histogram are due to phrase-final ritards. Data are from approximately 170 eighth notes. Mean note duration = 652 ms, sd = 227 ms. Notes with duration &gt; 1,600 ms are not shown (&lt;1% of total). Histogram bin size = 50 ms.
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00031-00034/try-20261114T105249-f6052f/document_artifacts/image_000000_e8253923c2cb88b4eadc32a0d46f19994a894686b466bfb5fdca6a2f724e42d4.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/5d310d8bd78ab18b/d3f6f9dfb2b4/00031-00034/try-20261114T105249-f6052f/document_artifacts/image_000000_e8253923c2cb88b4eadc32a0d46f19994a894686b466bfb5fdca6a2f724e42d4.png -->
 
 Ch.	
   3	
@@ -1985,16 +1917,5 @@ Ch.
   Juslin	
   1996
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 31](<document_artifacts/page_000031_9c24615ac6cb540e66354d1e44fb6e421dc73ddb2b1ab9cd399bcdd7281207ad.png>)
-
-![PDF-Seite 32](<document_artifacts/page_000032_e86ec03c731f6948770701a2d6a74a5ac224b405bd7d2cf00a64e46326d974b7.png>)
-
-![PDF-Seite 33](<document_artifacts/page_000033_6c7c151b89dbf99faee866257a3be208e52f169bc8976ca9ffd9a25d091564ac.png>)
-
-![PDF-Seite 34](<document_artifacts/page_000034_404f7fbbde3283ee46583fa16f333abebea44bf101f23a3eb5e8858c8f433bd7.png>)
-
-
-[Original-PDF, Seite 31](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/COGS_300_13_1_Rhythm_in_music.pdf#page=31>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 31](<COGS_300_13_1_Rhythm_in_music.pdf#page=31>)

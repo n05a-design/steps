@@ -9,16 +9,17 @@ fachliche_freigabe: false
 omr_ausgefuehrt: false
 abbildungen: 1
 tabellen: 1
+docling_rohdaten: "lokal außerhalb des Repositorys unter STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert"
 rechte: restricted_local
 ---
 
 > Maschineller Docling-Extrakt aus `What_is_popular_music_And_what_isn_t_An.pdf`. Ungeprüft: Tabellen, Vorzeichen (H/B vs. B/Bb), Akkordsymbole und Notenbeispiele am Original prüfen. Abbildungen sind nicht eingebettet; Notenbilder benötigen gesonderte OMR. Fremder Volltext – keine Veröffentlichung ohne Rechteprüfung.
 
-<!-- PDF-Seiten 1–10 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/531e3af3b7ea619a/d3f6f9dfb2b4/00001-00010/try-20261114T155921-f6c769/document.md -->
+<!-- PDF-Seiten 1–10 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/531e3af3b7ea619a/d3f6f9dfb2b4/00001-00010/try-20261114T155921-f6c769/document.md -->
 
 ## Musiikki 2/2010
 
-<!-- Abbildung (nicht übernommen): PDF-Dateien-konvertiert/documents/531e3af3b7ea619a/d3f6f9dfb2b4/00001-00010/try-20261114T155921-f6c769/document_artifacts/image_000000_13a5e89261d66026274ad14c6c9316a6e7548047e4b5f011a1b25cf7b34069ea.png -->
+<!-- Abbildung (nicht übernommen): STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/531e3af3b7ea619a/d3f6f9dfb2b4/00001-00010/try-20261114T155921-f6c769/document_artifacts/image_000000_13a5e89261d66026274ad14c6c9316a6e7548047e4b5f011a1b25cf7b34069ea.png -->
 
 | Markus Mantere: Foreword .....................................................................                                                                      |   3 |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
@@ -105,33 +106,10 @@ But before we come to the establishment of "organized" popular music studies, we
 - Sisällys
 - 2/2010 (40. vuosikerta)
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 1](<What_is_popular_music_And_what_isn_t_An.pdf#page=1>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 1](<document_artifacts/page_000001_02782b4602796c67dc12b16ccecb906770e5e92b412cd2e99af869a10effa599.png>)
-
-![PDF-Seite 2](<document_artifacts/page_000002_fc65339c31e71dec8cb5f29ef51ac8b6782cb3769e2481bd957580fe0d6852a8.png>)
-
-![PDF-Seite 3](<document_artifacts/page_000003_6c7096144d6f2dc6708e7df2ecf971b2804d10383e32e92a57823987b715199b.png>)
-
-![PDF-Seite 4](<document_artifacts/page_000004_cfecab8e3092c2c49d7f31e7098dce0d55594b3b97a02e0186d882c30595e806.png>)
-
-![PDF-Seite 5](<document_artifacts/page_000005_9e948c59668629bbf76a25ee7aabf75101a5633442106a368a794252ea1ab3a8.png>)
-
-![PDF-Seite 6](<document_artifacts/page_000006_8f83216be52ed5da51a5d17f0f6b51c2616205dda59c4577109579b77c91effe.png>)
-
-![PDF-Seite 7](<document_artifacts/page_000007_94c2dc9f566a12c1078a2425f048cca748e1da6a02866f6798ec92877b1fe21b.png>)
-
-![PDF-Seite 8](<document_artifacts/page_000008_3d796e2332904b3fbf0cb9ba9f403639bbd0f42887575b44f66cb6bbb5c6456f.png>)
-
-![PDF-Seite 9](<document_artifacts/page_000009_9b59e068771c7ad4501512f5e768989615d8c647770c03055e58d4ea84df6682.png>)
-
-![PDF-Seite 10](<document_artifacts/page_000010_aed372a3eb08787e5bf472e38a9610a8656bd49f509ef54688c4e254b55c990d.png>)
-
-
-[Original-PDF, Seite 1](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/What_is_popular_music_And_what_isn_t_An.pdf#page=1>)
-
-<!-- PDF-Seiten 11–20 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/531e3af3b7ea619a/d3f6f9dfb2b4/00011-00020/try-20261114T155937-d06dcd/document.md -->
+<!-- PDF-Seiten 11–20 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/531e3af3b7ea619a/d3f6f9dfb2b4/00011-00020/try-20261114T155937-d06dcd/document.md -->
 
 were also independent music teachers, former or active jazz, rock, pop, folk musicians, wanting to discuss their methods with colleagues, looking for social and institutional recognition, wondering why the instruments, genres and theories they were teaching could not be introduced in conservatories or universities. In some countries this came to be a significant social movement: in Italy it brought to the establishment (in 1979) of a monthly magazine, Laboratorio musica, edited by composer Luigi Nono and published jointly by Ricordi (the music publisher) and Arci (the cultural and recreational organization of Italian left), which hosted some of the first studies on popular music after Le canzoni della cattiva coscienza.
 
@@ -235,33 +213,10 @@ To answer these questions, first of all, one should be able to trace the develop
 
 - There are at least twelve criteria by which one can determine the popularity of any given music: 1) number of people involved; 2) combined homogeneity and heterogeneity of audience, 3) unpredictability of listeners; 4) size of the business that markets the product; 5) efficiency (that is, breadth and cheapness) of transmission; 6) aural rather than visual transmission; 7) secular or entertainment function; 8) simplicity of the aesthetic object; 9) emphasis on performer rather than composer; 10) standardisation; 11) range of variability; 12) degree of ephemerality (Jones & Rahn 1981, 47-48).
 
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 11](<What_is_popular_music_And_what_isn_t_An.pdf#page=11>)
 
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 11](<document_artifacts/page_000011_078ec3b1f4862efb81b74fc77e15ee7c4696a88688529bbeec050b768785ce79.png>)
-
-![PDF-Seite 12](<document_artifacts/page_000012_4be27e576ae4897b685a6f6b5e881527eb497aa8195fdfab9fdd33ca55d57c5e.png>)
-
-![PDF-Seite 13](<document_artifacts/page_000013_c34d7204c8f3cf9e83c9e165ba9bd95e9a06262cf5eccb7171134cffe019feae.png>)
-
-![PDF-Seite 14](<document_artifacts/page_000014_c1154e6084ecb37e0275a7a4562e25316b4b33b9574edc6956f6de23c814de8d.png>)
-
-![PDF-Seite 15](<document_artifacts/page_000015_bf79d141db734f3f8934b859c74c110932183bc743ad6632d0cf0ba9b4ed9c19.png>)
-
-![PDF-Seite 16](<document_artifacts/page_000016_2e4566ded2ee1a97a00e8ad25915a4ca27fed64ee6267e4fc53ef8ef119aff48.png>)
-
-![PDF-Seite 17](<document_artifacts/page_000017_b7426a6293ae84b3955616e171d0e3c4c47570861303aceccba70f03d2134185.png>)
-
-![PDF-Seite 18](<document_artifacts/page_000018_a00bfdc7248d2d9adce37cf1798b5f6b7e00531b2317a99f22b958f2c4e0e0cf.png>)
-
-![PDF-Seite 19](<document_artifacts/page_000019_a72f646bba748e36a00957f3cd5e39bc375a149394dec79c8fa77401c397d1c7.png>)
-
-![PDF-Seite 20](<document_artifacts/page_000020_dc558d9efaa6e4591cdff0c21210e568e40dc1a293f6845c78145b7f71c8d3fb.png>)
-
-
-[Original-PDF, Seite 11](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/What_is_popular_music_And_what_isn_t_An.pdf#page=11>)
-
-<!-- PDF-Seiten 21–25 | Docling-Ausgabe: PDF-Dateien-konvertiert/documents/531e3af3b7ea619a/d3f6f9dfb2b4/00021-00025/try-20261114T155952-9353f8/document.md -->
+<!-- PDF-Seiten 21–25 | Docling-Ausgabe: STEPS_Konvertierung_Rohdaten/PDF-Dateien-konvertiert/documents/531e3af3b7ea619a/d3f6f9dfb2b4/00021-00025/try-20261114T155952-9353f8/document.md -->
 
 The ethnocentric vs. multicultural issue: is popular music just the AngloAmerican pop-rock mainstream? What is 'world music', then?
 
@@ -376,18 +331,5 @@ Dr. Franco Fabbri (prof.fabbri@gmail.com) teaches popular music, musicology and 
 - Straarup, O. 1982. "Popular Music Research: Needs and Uses in Education", in Horn & Tagg 1982, 246-248.
 - Tagg, P. 1982a. "Music Teacher Training Problems and Popular Music Research", in Horn & Tagg 1982, 232-242.
 
-
-## Seitenabbildungen zur Sichtprüfung
-
-![PDF-Seite 21](<document_artifacts/page_000021_2f11e8fca91cb92db1e94a551c5f8828677ed3affd42334351cbb57ad9cc87fe.png>)
-
-![PDF-Seite 22](<document_artifacts/page_000022_319a3d194bed5b6438ea43afdd82726e4c73bcdb81fbb0bafa5c5c593cf8076b.png>)
-
-![PDF-Seite 23](<document_artifacts/page_000023_c858c0883c87ee0e8c769c9c557f39332ecae26e09a06c64209415cadf664cec.png>)
-
-![PDF-Seite 24](<document_artifacts/page_000024_1927e0594718686303ff6f129e265bda4c89d5a1c3e4f4846fa0236729a1b77f.png>)
-
-![PDF-Seite 25](<document_artifacts/page_000025_8da7d611ddf6b9cf413ce16f979bce147458fd2574034a6b162af2222115b2be.png>)
-
-
-[Original-PDF, Seite 21](<file:///C:/Users/Timvo/OneDrive/Github/steps/.claude/worktrees/steps-checkout-selbstcheck-03cfe9/research/STEPS_Bibliothek/What_is_popular_music_And_what_isn_t_An.pdf#page=21>)
+<!-- Seitenabbildungen zur Sichtprüfung liegen in der lokalen Docling-Ausgabe. -->
+[Original-PDF, Seite 21](<What_is_popular_music_And_what_isn_t_An.pdf#page=21>)
