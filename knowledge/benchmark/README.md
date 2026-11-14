@@ -1,5 +1,7 @@
 # STEPS-Wissensbenchmark
 
+Nach dem [Windows-Originalfund](../../docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md) prüft `KB-GRAPH-ONTOLOGY-RECOVERY` die Bytes und exakten Zeilenanker von 41 historischen Definitionen. Dieser technische Herkunftsnachweis ist keine Fachabnahme. Die manuelle Graphaufgabe bleibt offen; sechs Definitionen und sämtliche fehlenden Kantenabnahmen sind weiter zu klären.
+
 [Versionierte Abdeckung](COVERAGE.csv) · [Fallregister mit Sollantworten](cases.json)
 · [Pilot-Abnahmeliste](PILOT_ABNAHME.md) · [Domänenstichproben](THEMENSTICHPROBEN.md)
 

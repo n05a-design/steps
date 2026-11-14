@@ -345,17 +345,18 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
         relations = coverage.read_csv(benchmark.RELATIONS)
         nodes = coverage.format_node_evidence(
             coverage.read_csv(root / "knowledge/relations/FORMAT_NODE_EVIDENCE.csv")
-            + coverage.read_csv(root / "knowledge/relations/MUSIC_NODE_EVIDENCE.csv"))
+            + coverage.read_csv(root / "knowledge/relations/MUSIC_NODE_EVIDENCE.csv")
+            + coverage.read_csv(root / "knowledge/relations/HISTORICAL_NODE_EVIDENCE.csv"))
         known = set(nodes) | {p.prog_id for p in coverage.list_progressions()} | {f"M{i:02}" for i in range(1, 13)}
         known |= coverage.table(benchmark.DRUMS, r"PAT-\d{3}", 7).keys()
         known |= coverage.table(benchmark.PIANO, r"P\d{2}", 5).keys()
         aliases = {"PROG_024": "PROG-024", "PROG_025": "PROG-025"}
         unresolved = {term for row in relations for term in (row["source_id"], row["target_id"])
                       if aliases.get(term, term) not in known}
-        work = coverage.read_csv(root / "docs/audit/fable-5.2/GRAPH_KNOTENBEARBEITUNG_2026-11-14.csv")
-        remaining = coverage.read_csv(root / "docs/audit/fable-5.2/GRAPH_RESTKNOTEN_2026-11-14.csv")
+        work = coverage.read_csv(root / "docs/audit/fable-5.2/GRAPH_KNOTENBEARBEITUNG_NACH_ORIGINALFUND_2026-11-14.csv")
+        remaining = coverage.read_csv(root / "docs/audit/fable-5.2/GRAPH_RESTKNOTEN_NACH_ORIGINALFUND_2026-11-14.csv")
         self.assertEqual({row["node_id"] for row in remaining}, unresolved)
-        self.assertEqual(len(unresolved), 49)
+        self.assertEqual(len(unresolved), 6)
         self.assertEqual(len(work), len({row["node_id"] for row in work}))
         self.assertEqual({row["node_id"] for row in work if row["definition_status"] != "DEFINITION_ZUGEORDNET"}, unresolved)
         self.assertTrue(all(row["fachabnahme"] == "AUSSTEHEND" for row in work))

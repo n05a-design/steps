@@ -21,6 +21,7 @@ sys.path.insert(0, str(ROOT))
 from scripts import render_reviewed_progressions as renderer
 from scripts import run_knowledge_benchmark as benchmark
 from scripts import graph_corrections
+from scripts import verify_historical_ontology
 from scripts.verify_reference_integrity import extract_markdown_table_definitions, verify_integrity
 from src.steps.progression import list_progressions, resolve_roman_degree, reviewed
 from src.steps.theory import CHORD_TEMPLATES, MusicTheoryError, parse_chord
@@ -51,9 +52,11 @@ def format_node_evidence(rows):
                 or not row["definition"].strip() or not row["locator"].strip()):
             raise ValueError(f"Ungültiger Quellenbeleg für Graphknoten {ident}.")
         kind = row.get("evidence_kind", "SOURCE_PAGE")
-        if kind not in {"SOURCE_PAGE", "PROJECT_EXAMPLE", "COMPUTED_MODEL"}:
+        if kind not in {"SOURCE_PAGE", "PROJECT_EXAMPLE", "COMPUTED_MODEL", "HISTORICAL_DEFINITION"}:
             raise ValueError(f"Ungültige Belegart für Graphknoten {ident}.")
         evidence[ident] = f"{row['source_url']} ({row['locator']})" + (f" [{kind}]" if "evidence_kind" in row else "")
+        if kind == "HISTORICAL_DEFINITION":
+            evidence[ident] += f" Namensraum {row['namespace']}; nur historische Definition, keine fachliche Freigabe."
     return evidence
 
 
@@ -264,9 +267,11 @@ def audit():
     endpoints = progs.keys() | drums.keys() | pianos.keys() | domains
     # These aliases are documented in knowledge/relations/FABLE_GRAPH_REVIEW.md.
     aliases = {"PROG_024": "PROG-024", "PROG_025": "PROG-025"}
+    verify_historical_ontology.verify(ROOT)
     format_nodes = format_node_evidence(
         read_csv(KNOWLEDGE / "relations/FORMAT_NODE_EVIDENCE.csv")
-        + read_csv(KNOWLEDGE / "relations/MUSIC_NODE_EVIDENCE.csv"))
+        + read_csv(KNOWLEDGE / "relations/MUSIC_NODE_EVIDENCE.csv")
+        + read_csv(KNOWLEDGE / "relations/HISTORICAL_NODE_EVIDENCE.csv"))
     if (endpoints | aliases.keys()) & format_nodes.keys():
         raise ValueError("Formatknoten überschneidet sich mit einer kanonischen ID oder einem Alias.")
     relations = read_csv(KNOWLEDGE / "relations/MUSIC_CONCEPT_RELATIONS.csv")

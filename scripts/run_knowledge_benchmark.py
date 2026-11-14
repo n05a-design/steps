@@ -21,6 +21,7 @@ from src.steps.progression import reviewed
 from src.steps.theory import MusicTheoryError, Voicing, midi_to_frequency, parse_chord, parse_spelling
 from src.steps.theory import make_drop2_voicing
 from scripts import graph_corrections
+from scripts import verify_historical_ontology
 
 DIR = ROOT / "knowledge/benchmark"
 PROGRESSIONS = ROOT / "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md"
@@ -456,6 +457,9 @@ def evaluate(case, examples, claims, coach, manual):
                 )
                 motions.append(target_note.midi_number - source_note.midi_number)
             actual[mode] = motions
+        require(actual == expected, actual)
+    elif method == "historical_ontology":
+        actual = verify_historical_ontology.verify(ROOT)
         require(actual == expected, actual)
     elif method == "graph_sample":
         with RELATIONS.open(encoding="utf-8-sig", newline="") as source:
