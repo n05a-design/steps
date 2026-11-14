@@ -13,6 +13,7 @@ Die Nachprüfung erfasst die Befunde des Fable-Audits und verweist auf die repro
 | [Fortsetzung nach PR #50](FORTSETZUNG_2026-11-13.md) | Reproduzierter Main-Stand, offene Fälle, lokale Bestände und wiedergefundene CSS-Registerfassung. |
 | [CSS-Provenienz](CSS_PROVENIENZ_2026-11-14.md) | Archivierte Playerseiten, Live-CDN-Hashvergleich und weiterhin offene Bundle-Rechte. |
 | [Graphnachweise](GRAPH_NACHWEISE_2026-11-14.md) | Sechs zusätzliche Knoten, vier Gegenprüfungen, beanstandete Polychord-Zuordnung und offene IDs. |
+| [CDR-010 und weitere Graphknoten](GRAPH_KLAERUNG_CDR010_2026-11-14.md) | Präziser Korrekturvorschlag, Bearbeitung aller 74 bisherigen Restknoten und 49 verbleibende Definitionen. |
 | [PR-22-Freigabenachweis](PR22_HASHABGLEICH_2026-11-13.md) | Fassungsgebundener Nachweis der damaligen Pilotfreigaben. |
 
 Den aktuellen Prüfstand liefert der [Benchmark](../../../knowledge/benchmark/README.md). Fehlende Belege sind in den [offenen Nachweisen](../../../research/gaps/OPEN_GAPS.md) erfasst.

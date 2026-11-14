@@ -20,6 +20,7 @@ sys.path.insert(0, str(ROOT))
 
 from scripts import render_reviewed_progressions as renderer
 from scripts import run_knowledge_benchmark as benchmark
+from scripts import graph_corrections
 from scripts.verify_reference_integrity import extract_markdown_table_definitions, verify_integrity
 from src.steps.progression import list_progressions, resolve_roman_degree, reviewed
 from src.steps.theory import CHORD_TEMPLATES, MusicTheoryError, parse_chord
@@ -45,11 +46,14 @@ def format_node_evidence(rows):
     for row in rows:
         ident = row["node_id"]
         source = urlsplit(row["source_url"])
-        if (ident in repeated or not re.fullmatch(r"[A-Z][A-Z0-9_]+", ident)
+        if (ident in repeated or not re.fullmatch(r"[A-Z0-9][A-Z0-9_-]+", ident)
                 or source.scheme != "https" or not source.hostname
                 or not row["definition"].strip() or not row["locator"].strip()):
             raise ValueError(f"Ungültiger Quellenbeleg für Graphknoten {ident}.")
-        evidence[ident] = f"{row['source_url']} ({row['locator']})"
+        kind = row.get("evidence_kind", "SOURCE_PAGE")
+        if kind not in {"SOURCE_PAGE", "PROJECT_EXAMPLE", "COMPUTED_MODEL"}:
+            raise ValueError(f"Ungültige Belegart für Graphknoten {ident}.")
+        evidence[ident] = f"{row['source_url']} ({row['locator']})" + (f" [{kind}]" if "evidence_kind" in row else "")
     return evidence
 
 
@@ -67,7 +71,7 @@ def relation_evidence(rows, relation_ids, claim_ids):
         source = urlsplit(row["source_url"])
         if (ident in evidence or ident not in relation_ids
                 or source.scheme != "https" or not source.hostname
-                or row["assessment"] not in {"SOURCE_SUPPORTED_SAMPLE", "COUNTEREXAMPLE"}
+                or row["assessment"] not in {"SOURCE_SUPPORTED_SAMPLE", "PROJECT_EXAMPLE_SAMPLE", "COUNTEREXAMPLE"}
                 or not all(row[key].strip() for key in ("locator", "scope", "limitation"))
                 or (row["claim_id"] and row["claim_id"] not in claim_ids)):
             raise ValueError(f"Ungültiger Quellenbeleg für Graphkante {ident}.")
@@ -266,6 +270,8 @@ def audit():
     if (endpoints | aliases.keys()) & format_nodes.keys():
         raise ValueError("Formatknoten überschneidet sich mit einer kanonischen ID oder einem Alias.")
     relations = read_csv(KNOWLEDGE / "relations/MUSIC_CONCEPT_RELATIONS.csv")
+    corrections = graph_corrections.validate(
+        json.loads((KNOWLEDGE / "relations/GRAPH_CORRECTIONS.json").read_text(encoding="utf-8")), relations, format_nodes)
     edge_evidence = relation_evidence(read_csv(KNOWLEDGE / "relations/RELATION_EVIDENCE.csv"),
                                       {row["relation_id"] for row in relations}, {row["claim_id"] for row in claim_rows})
     for row in relations:
@@ -285,6 +291,10 @@ def audit():
         if evidence:
             notes += (f" Ergänzender Kantenbeleg: {evidence['source_url']} ({evidence['locator']})."
                       f" {evidence['assessment']}: {evidence['scope']}. Grenze: {evidence['limitation']}.")
+        if row["relation_id"] in corrections:
+            correction = corrections[row["relation_id"]]
+            notes += (f" Expliziter Korrekturvorschlag: {correction['replacement']['target_id']};"
+                      " REVIEW_REQUIRED, keine Produktionsfreigabe. Historischer FAIL bleibt erhalten.")
         checks = [r for r in results if r["method"] == "graph_sample" and r["content"] == row["relation_id"]]
         status, detail, next_step = graph_evidence(checks, evidence)
         add("Graphrelationen", row["relation_id"], "BEFUND", status, note=notes + " " + detail,

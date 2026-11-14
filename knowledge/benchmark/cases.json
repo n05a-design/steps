@@ -2077,20 +2077,20 @@
       "domain": "M12",
       "question": "Lassen sich alle Graphknoten und ihr fachlicher Beleg nachvollziehen?",
       "expected": [
-        "74 weiterhin offene Endpunkt-IDs abgeglichen",
+        "49 weiterhin offene Endpunkt-IDs abgeglichen",
         "97 Relationen mit Claim oder Fundstelle belegt bzw. als ungeprüft markiert"
       ],
       "variants": [
         "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
       ],
-      "basis": "Historische Vertiefungsprüfung am Ausgangscommit b7c4618; aktueller Abgleich einschließlich FORMAT_NODE_EVIDENCE.csv, MUSIC_NODE_EVIDENCE.csv und RELATION_EVIDENCE.csv. Einzelnachweise in docs/audit/fable-5.2/GRAPH_NACHWEISE_2026-11-14.md.",
+      "basis": "Historische Vertiefungsprüfung am Ausgangscommit b7c4618; aktueller Abgleich einschließlich FORMAT_NODE_EVIDENCE.csv, MUSIC_NODE_EVIDENCE.csv und RELATION_EVIDENCE.csv. Einzelnachweise und Bearbeitung aller bisherigen Restknoten in docs/audit/fable-5.2/GRAPH_KLAERUNG_CDR010_2026-11-14.md.",
       "method": "manual",
       "input": {
         "edges": 97,
-        "unresolved_ids": 74
+        "unresolved_ids": 49
       },
       "mandatory": true,
-      "next_step": "Kanonische Knotendefinitionen für die offenen IDs anlegen oder die Relationen ausdrücklich als historische Hypothesen markieren. Pro Kante eine Fundstelle oder Claim-ID erfassen."
+      "next_step": "Die 41 historischen Mxx-xx-Definitionen aus der Originalontologie zuordnen und für die acht übrigen Knoten die dokumentierten Kontext-/Abnahmenachweise ergänzen. Die neue Restliste enthält 49 IDs; keine Freigabe aus Namen oder bestandenen Teilchecks ableiten."
     },
     {
       "id": "KB-HISTORY-F00412",
@@ -2468,7 +2468,378 @@
         ],
         "check": "polychord_counterexample"
       },
-      "next_step": "CDR-010 bleibt beanstandet: Knoteninterpretation und erlaubte Auslassungen festlegen oder die Relation versioniert korrigieren. Keine Gleichsetzung ohne Kontext freigeben."
+      "next_step": "Der genaue Korrekturvorschlag zu C6_9_SHARP11_COLLECTION steht in GRAPH_CORRECTIONS.json. Fachkundig prüfen; historische Kante bleibt FAIL und der Vorschlag ohne Produktionsfreigabe."
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-001",
+      "content": "CDR-001",
+      "question": "Entspricht C4 in der STEPS-/MusicXML-Oktavkonvention MIDI 60 und Tonklasse 0?",
+      "expected": [
+        60,
+        0
+      ],
+      "basis": "W3C MusicXML octave: mittleres C beginnt Oktave 4; Ithaca MIDI Basics, PDF-Seite 14: middle C (#60). Keine universelle DAW-Oktavbeschriftung.",
+      "input": {
+        "edge": [
+          "C4_PITCH",
+          "MIDI_NOTE_60",
+          "MAPS_TO"
+        ],
+        "check": "notation_mapping",
+        "note": "C4",
+        "convention": "INT"
+      },
+      "next_step": "Die begrenzte Definition und ihre Quellen fachlich abnehmen. Quellen-/Modellstichprobe ist keine unabhängige Vollabnahme."
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-002",
+      "content": "CDR-002",
+      "question": "Welche MIDI-Zahl und Tonklasse hat H3 bei expliziter deutscher Konvention?",
+      "expected": [
+        59,
+        11
+      ],
+      "basis": "John Paul Ito, Notes on Transposition, PDF-Seite 4, Reading Note Names in Other Languages; https://www.andrew.cmu.edu/user/johnito/music_theory/transp/Transposition.pdf. Tonklasse im STEPS-Modulo-12-Modell mit C=0.",
+      "input": {
+        "edge": [
+          "DEUTSCH_H",
+          "PITCH_CLASS_11",
+          "EQUIVALENT_TO"
+        ],
+        "check": "notation_mapping",
+        "note": "H3",
+        "convention": "DE"
+      },
+      "next_step": "Die begrenzte Definition und ihre Quellen fachlich abnehmen. Quellen-/Modellstichprobe ist keine unabhängige Vollabnahme."
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-003",
+      "content": "CDR-003",
+      "question": "Welche MIDI-Zahl und Tonklasse hat B3 bei expliziter deutscher Konvention?",
+      "expected": [
+        58,
+        10
+      ],
+      "basis": "John Paul Ito, Notes on Transposition, PDF-Seite 4, Reading Note Names in Other Languages; https://www.andrew.cmu.edu/user/johnito/music_theory/transp/Transposition.pdf. Tonklasse im STEPS-Modulo-12-Modell mit C=0.",
+      "input": {
+        "edge": [
+          "DEUTSCH_B",
+          "PITCH_CLASS_10",
+          "EQUIVALENT_TO"
+        ],
+        "check": "notation_mapping",
+        "note": "B3",
+        "convention": "DE"
+      },
+      "next_step": "Die begrenzte Definition und ihre Quellen fachlich abnehmen. Quellen-/Modellstichprobe ist keine unabhängige Vollabnahme."
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-004",
+      "content": "CDR-004",
+      "question": "Ergeben die vier ausgewählten Familien 28 unterschiedliche Rotationen?",
+      "expected": 28,
+      "basis": "Oliver Prehn, The Modes, PDF-Seite 1: vier ausgewählte Familien; https://www.newjazz.dk/Compendiums/Major_Melmi_Harmmi_HarmMa_Modes.pdf. Eigene Rotationsrechnung, kein Vollständigkeitsanspruch für alle Heptatonik.",
+      "input": {
+        "edge": [
+          "HEPTATONIK_28",
+          "FOUR_GENERATOR_FAMILIES",
+          "DERIVED_FROM"
+        ],
+        "check": "four_families",
+        "families": [
+          [
+            2,
+            2,
+            1,
+            2,
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            1,
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            1,
+            2,
+            2,
+            1,
+            3,
+            1
+          ],
+          [
+            2,
+            2,
+            1,
+            2,
+            1,
+            3,
+            1
+          ]
+        ]
+      },
+      "next_step": "Die begrenzte Definition und ihre Quellen fachlich abnehmen. Quellen-/Modellstichprobe ist keine unabhängige Vollabnahme."
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-007",
+      "content": "CDR-007",
+      "question": "Entspricht das STEPS-A-Beispiel aus CLAIM-021 einer grundtonlosen Cmaj9-Lage?",
+      "expected": [
+        52,
+        55,
+        59,
+        62
+      ],
+      "basis": "CLAIM-021, explizites Cmaj9-Beispiel. Projektbeispiel, keine neue Prüfung der historischen Levine-Buchseite.",
+      "input": {
+        "edge": [
+          "ROOTLESS_VOICING_A",
+          "3_5_7_9_STACK",
+          "STRUCTURED_AS"
+        ],
+        "check": "rootless_example",
+        "chord": "Cmaj9",
+        "notes": [
+          "E3",
+          "G3",
+          "B3",
+          "D4"
+        ]
+      },
+      "next_step": "Die begrenzte Definition und ihre Quellen fachlich abnehmen. Quellen-/Modellstichprobe ist keine unabhängige Vollabnahme."
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-008",
+      "content": "CDR-008",
+      "question": "Entspricht das STEPS-B-Beispiel aus CLAIM-021 einer grundtonlosen Cmaj9-Lage?",
+      "expected": [
+        59,
+        62,
+        64,
+        67
+      ],
+      "basis": "CLAIM-021, explizites Cmaj9-Beispiel. Projektbeispiel, keine neue Prüfung der historischen Levine-Buchseite.",
+      "input": {
+        "edge": [
+          "ROOTLESS_VOICING_B",
+          "7_9_3_5_STACK",
+          "STRUCTURED_AS"
+        ],
+        "check": "rootless_example",
+        "chord": "Cmaj9",
+        "notes": [
+          "B3",
+          "D4",
+          "E4",
+          "G4"
+        ]
+      },
+      "next_step": "Die begrenzte Definition und ihre Quellen fachlich abnehmen. Quellen-/Modellstichprobe ist keine unabhängige Vollabnahme."
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-011",
+      "content": "CDR-011",
+      "question": "Ist der D7-Akkord in PROG-024 die aufgelöste Dominante der Dominante in C-Dur?",
+      "expected": [
+        "D7",
+        "D7"
+      ],
+      "basis": "STEPS PROG-024: Cmaj7–D7–Dm7–G7–Cmaj7. Rechnerische Stufenprobe des Übungsschemas, keine historische Stilabnahme.",
+      "input": {
+        "edge": [
+          "PROG_024",
+          "APPLIED_DOMINANT_V7_OVER_V",
+          "HARMONIC_FUNCTION"
+        ],
+        "check": "applied_dominant_example"
+      },
+      "next_step": "Die begrenzte Definition und ihre Quellen fachlich abnehmen. Quellen-/Modellstichprobe ist keine unabhängige Vollabnahme."
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-013",
+      "content": "CDR-013",
+      "question": "Welche Akkordfolge bezeichnet der zyklisch wiederholbare STEPS-Vamp PROG-025?",
+      "expected": [
+        "Cm",
+        "Fm",
+        "G7",
+        "Fm"
+      ],
+      "basis": "STEPS-Katalog PROG-025, i–iv–V7–iv in C-Moll. Die Datenübereinstimmung bestätigt keine Genretypizität.",
+      "input": {
+        "edge": [
+          "PROG_025",
+          "CYCLICAL_OSTINATO_VAMP",
+          "HARMONIC_STRUCTURE"
+        ],
+        "check": "cyclical_example"
+      },
+      "next_step": "Die begrenzte Definition und ihre Quellen fachlich abnehmen. Quellen-/Modellstichprobe ist keine unabhängige Vollabnahme."
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-015",
+      "content": "CDR-015",
+      "question": "Welcher Tick ergibt sich bei 61 Prozent des 240-Tick-Paars?",
+      "expected": 146,
+      "basis": "STEPS-Swing-Rechenmodell REF-0177 bis REF-0186: gerundeter Anteil an einem Halbviertel bei 480 PPQ. Keine historische Musikerzuschreibung.",
+      "input": {
+        "edge": [
+          "SWING_61_PCT",
+          "TICK_146_AT_480_PPQ",
+          "QUANTIZES_TO"
+        ],
+        "check": "swing_model",
+        "ppq": 480,
+        "percent": 61
+      },
+      "next_step": "Die begrenzte Definition und ihre Quellen fachlich abnehmen. Quellen-/Modellstichprobe ist keine unabhängige Vollabnahme."
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-016",
+      "content": "CDR-016",
+      "question": "Welcher Tick ergibt sich bei 58 Prozent des 240-Tick-Paars?",
+      "expected": 139,
+      "basis": "STEPS-Swing-Rechenmodell REF-0177 bis REF-0186: gerundeter Anteil an einem Halbviertel bei 480 PPQ. Keine historische Musikerzuschreibung.",
+      "input": {
+        "edge": [
+          "SWING_58_PCT",
+          "TICK_139_AT_480_PPQ",
+          "QUANTIZES_TO"
+        ],
+        "check": "swing_model",
+        "ppq": 480,
+        "percent": 58
+      },
+      "next_step": "Die begrenzte Definition und ihre Quellen fachlich abnehmen. Quellen-/Modellstichprobe ist keine unabhängige Vollabnahme."
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-018",
+      "content": "CDR-018",
+      "question": "Welche kontinuierlichen Ticks hat das konkrete zweitaktige Son-Clave-Modell in CLAIM-036?",
+      "expected": [
+        0,
+        720,
+        1440,
+        2400,
+        2880
+      ],
+      "basis": "CLAIM-036, STEPS-Übungsraster. Die dort zitierte Columbia-Originalquelle war in dieser Sitzung durch Zugriffsschutz nicht erneut lesbar; geprüft wird die Modellrechnung.",
+      "input": {
+        "edge": [
+          "SON_CLAVE_3_2",
+          "TICKS_0_720_1440_2400_2880",
+          "TIMELINE_AT_480_PPQ"
+        ],
+        "check": "clave_model",
+        "ppq": 480,
+        "sixteenth_positions": [
+          [
+            0,
+            6,
+            12
+          ],
+          [
+            4,
+            8
+          ]
+        ]
+      },
+      "next_step": "Die begrenzte Definition und ihre Quellen fachlich abnehmen. Quellen-/Modellstichprobe ist keine unabhängige Vollabnahme."
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-010-RESOLUTION",
+      "content": "CDR-010",
+      "question": "Passt der explizite Korrekturvorschlag zu den beiden Dreiklängen und bleibt er ohne Produktionsfreigabe?",
+      "expected": {
+        "target_id": "C6_9_SHARP11_COLLECTION",
+        "pitch_classes": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          9
+        ],
+        "major_seventh_present": false,
+        "production_use_allowed": false
+      },
+      "basis": "CLAIM-022 und historischer REF-0016 definieren zwei Dur-Dreiklänge. OMT Chord Symbols für Bass-/Erweiterungsunterscheidung. GRAPH_CORRECTIONS.json dokumentiert die genaue Korrektur unter REVIEW_REQUIRED.",
+      "input": {
+        "edge": [
+          "POLYCHORD_D_OVER_C",
+          "C_MAJ13_SHARP11",
+          "EXPRESSES"
+        ],
+        "check": "polychord_resolution"
+      },
+      "next_step": "Die begrenzte Definition und ihre Quellen fachlich abnehmen. Quellen-/Modellstichprobe ist keine unabhängige Vollabnahme."
     }
   ]
 }

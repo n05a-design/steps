@@ -20,6 +20,7 @@ from src.steps.progression import analyze_progression_voice_leading, get_progres
 from src.steps.progression import reviewed
 from src.steps.theory import MusicTheoryError, Voicing, midi_to_frequency, parse_chord, parse_spelling
 from src.steps.theory import make_drop2_voicing
+from scripts import graph_corrections
 
 DIR = ROOT / "knowledge/benchmark"
 PROGRESSIONS = ROOT / "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md"
@@ -477,6 +478,47 @@ def evaluate(case, examples, claims, coach, manual):
             actual = {"two_triads": aggregate, "slash_bass": slash, "target": target,
                       "missing_from_two_triads": sorted(set(target) - set(aggregate))}
             require(aggregate != target and slash != target, "Das Gegenbeispiel darf keine Tonmengenidentität bestätigen.")
+        elif data["check"] == "polychord_resolution":
+            document = json.loads((ROOT / "knowledge/relations/GRAPH_CORRECTIONS.json").read_text(encoding="utf-8"))
+            with RELATIONS.open(encoding="utf-8-sig", newline="") as source:
+                relations = list(csv.DictReader(source))
+            with (ROOT / "knowledge/relations/MUSIC_NODE_EVIDENCE.csv").open(encoding="utf-8-sig", newline="") as source:
+                nodes = {entry["node_id"] for entry in csv.DictReader(source)}
+            proposal = graph_corrections.validate(document, relations, nodes)[case["content"]]
+            aggregate = sorted(parse_chord("C", "INT").pitch_class_set | parse_chord("D", "INT").pitch_class_set)
+            corrected = sorted(parse_chord("C6", "INT").pitch_class_set
+                               | {int(parse_spelling(note, "INT").pitch_class) for note in ("D5", "F#5")})
+            require(proposal["replacement"]["pitch_classes"] == aggregate == corrected,
+                    "Der Korrekturvorschlag muss exakt den beiden Dreiklängen entsprechen.")
+            actual = {"target_id": proposal["replacement"]["target_id"],
+                      "pitch_classes": aggregate, "major_seventh_present": 11 in aggregate,
+                      "production_use_allowed": proposal["production_use_allowed"]}
+        elif data["check"] == "notation_mapping":
+            note = parse_spelling(data["note"], data["convention"])
+            actual = [note.midi_number, int(note.pitch_class)]
+        elif data["check"] == "four_families":
+            rotations = {tuple(steps[start:] + steps[:start]) for steps in data["families"] for start in range(7)}
+            require(all(len(steps) == 7 and sum(steps) == 12 for steps in data["families"]), "Ungültige Skalenfamilie.")
+            actual = len(rotations)
+        elif data["check"] == "rootless_example":
+            chord = parse_chord(data["chord"], "INT")
+            notes = [parse_spelling(note, "INT") for note in data["notes"]]
+            pcs = {int(note.pitch_class) for note in notes}
+            require(int(chord.root.pitch_class) not in pcs and pcs <= chord.pitch_class_set,
+                    "Rootless-Beispiel enthält Grundton oder akkordfremde Töne.")
+            actual = [note.midi_number for note in notes]
+        elif data["check"] == "swing_model":
+            actual = round(data["ppq"] / 2 * data["percent"] / 100)
+        elif data["check"] == "clave_model":
+            ppq = data["ppq"]
+            actual = [bar * 4 * ppq + position * ppq // 4
+                      for bar, positions in enumerate(data["sixteenth_positions"]) for position in positions]
+        elif data["check"] == "applied_dominant_example":
+            progression = get_progression("PROG-024")
+            actual = [resolve_roman_degree("V7/V", "C", convention="INT").symbol,
+                      progression.chords_str.split(" - ")[1]]
+        elif data["check"] == "cyclical_example":
+            actual = get_progression("PROG-025").chords_str.split(" - ")
         else:
             raise ValueError(f"Unknown graph sample: {data['check']}.")
         require(actual == expected, actual)

@@ -76,3 +76,14 @@ Die vier neuen Kantenproben sind begrenzte Nachweise. CDR-010 bleibt
 wegen der unbestimmten Polychord-Zuordnung beanstandet: Ein bestandener
 Test der Gegenprobe zählt nicht als Bestätigung der ursprünglichen Kante.
 [Einzelnachweise und offene Knoten](../../docs/audit/fable-5.2/GRAPH_NACHWEISE_2026-11-14.md).
+
+## Weiterführung nach dem Merge von PR #52
+
+CDR-010 ist technisch als Zweidreiklang geklärt: C-Dur plus D-Dur ergibt
+die Sammlung C6 plus D und F♯, ohne H. `GRAPH_CORRECTIONS.json` hält den
+konkreten Korrekturvorschlag ohne Produktionsfreigabe fest. Die alte
+Graphzuordnung bleibt FAIL und unverändert dokumentiert.
+25 der zuvor 74 Restknoten sind begrenzt zugeordnet; 49 Definitionen
+bleiben offen. Die Graphmatrix nennt 14 bestätigte Stichproben, einen
+beanstandeten und 82 fachlich offene Einträge; keine vollständige Abnahme.
+[Korrektur und vollständige Bearbeitungsliste](../../docs/audit/fable-5.2/GRAPH_KLAERUNG_CDR010_2026-11-14.md).

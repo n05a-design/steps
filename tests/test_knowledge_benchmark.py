@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import subprocess
+import json
 import unittest
 from copy import deepcopy
 from unittest.mock import patch
@@ -246,7 +247,7 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
 
     def test_graph_samples_detect_changed_edges_and_musical_inputs(self):
         graph_cases = [c for c in self.cases if c["method"] == "graph_sample"]
-        self.assertEqual(len(graph_cases), 4)
+        self.assertEqual(len(graph_cases), 16)
         for case in graph_cases:
             with self.subTest(case=case["id"]):
                 result, = benchmark.run([case], self.examples, self.claims, {})
@@ -278,3 +279,85 @@ class KnowledgeBenchmarkTests(unittest.TestCase):
                         [{**row, "claim_id": "MISSING"}], [{**row, "assessment": "APPROVED"}]):
             with self.subTest(records=records), self.assertRaises(ValueError):
                 coverage.relation_evidence(records, {"CDR-005"}, {"CLAIM-022"})
+
+    def test_correction_proposal_preserves_original_edge_and_pending_review(self):
+        path = benchmark.ROOT / "knowledge/relations/GRAPH_CORRECTIONS.json"
+        document = json.loads(path.read_text(encoding="utf-8"))
+        relations = coverage.read_csv(benchmark.RELATIONS)
+        nodes = coverage.format_node_evidence(coverage.read_csv(benchmark.ROOT / "knowledge/relations/MUSIC_NODE_EVIDENCE.csv"))
+        coverage.graph_corrections.validate(document, relations, nodes)
+        for change in ({"review_status": "APPROVED"}, {"production_use_allowed": True},
+                       {"historical_edge": {"source_id": "OTHER", "target_id": "OTHER", "relation_type": "EXPRESSES"}}):
+            altered = deepcopy(document)
+            altered["corrections"][0].update(change)
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                coverage.graph_corrections.validate(altered, relations, nodes)
+
+    def test_resolution_probe_rejects_wrong_target_or_major_seventh(self):
+        path = benchmark.ROOT / "knowledge/relations/GRAPH_CORRECTIONS.json"
+        document = json.loads(path.read_text(encoding="utf-8"))
+        case = next(c for c in self.cases if c["input"].get("check") == "polychord_resolution")
+        original_read = type(path).read_text
+        for change in ({"target_id": "C_MAJ13_SHARP11"}, {"pitch_classes": [0, 2, 4, 6, 7, 9, 11]}):
+            altered = deepcopy(document)
+            altered["corrections"][0]["replacement"].update(change)
+            def read(selected, *args, **kwargs):
+                return json.dumps(altered) if selected == path else original_read(selected, *args, **kwargs)
+            with self.subTest(change=change), patch.object(type(path), "read_text", read):
+                result, = benchmark.run([case], self.examples, self.claims, {})
+                self.assertEqual(result["status"], "FAIL")
+
+    def test_node_evidence_preserves_numeric_and_error_ids_and_distinguishes_basis(self):
+        entry = {"node_id": "3_5_7_9_STACK", "definition": "STEPS-Beispiel", "source_url": "https://example.com/source",
+                 "locator": "CLAIM-021", "evidence_kind": "PROJECT_EXAMPLE"}
+        self.assertIn("PROJECT_EXAMPLE", coverage.format_node_evidence([entry])[entry["node_id"]])
+        self.assertIn("ERR-026", coverage.format_node_evidence([{**entry, "node_id": "ERR-026"}]))
+        for change in ({"node_id": "INVALID ID"}, {"evidence_kind": "APPROVED"}, {"source_url": ""}):
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                coverage.format_node_evidence([{**entry, **change}])
+
+    def test_graph_model_probes_detect_wrong_conventions_and_musical_inputs(self):
+        cases = {case["id"]: case for case in self.cases}
+        mutations = []
+        for ident in ("CDR-002", "CDR-003"):
+            case = deepcopy(cases[f"KB-GRAPH-{ident}"])
+            case["input"]["convention"] = "INT"
+            mutations.append(case)
+        case = deepcopy(cases["KB-GRAPH-CDR-004"])
+        case["input"]["families"][1] = case["input"]["families"][0]
+        mutations.append(case)
+        case = deepcopy(cases["KB-GRAPH-CDR-007"])
+        case["input"]["notes"][0] = "C3"
+        mutations.append(case)
+        case = deepcopy(cases["KB-GRAPH-CDR-015"])
+        case["input"]["percent"] = 64
+        mutations.append(case)
+        case = deepcopy(cases["KB-GRAPH-CDR-018"])
+        case["input"]["sixteenth_positions"][1][1] = 10
+        mutations.append(case)
+        for case in mutations:
+            with self.subTest(case=case["id"]):
+                result, = benchmark.run([case], self.examples, self.claims, {})
+                self.assertEqual(result["status"], "FAIL")
+
+    def test_graph_worklist_and_manual_task_match_actual_unresolved_endpoints(self):
+        root = benchmark.ROOT
+        relations = coverage.read_csv(benchmark.RELATIONS)
+        nodes = coverage.format_node_evidence(
+            coverage.read_csv(root / "knowledge/relations/FORMAT_NODE_EVIDENCE.csv")
+            + coverage.read_csv(root / "knowledge/relations/MUSIC_NODE_EVIDENCE.csv"))
+        known = set(nodes) | {p.prog_id for p in coverage.list_progressions()} | {f"M{i:02}" for i in range(1, 13)}
+        known |= coverage.table(benchmark.DRUMS, r"PAT-\d{3}", 7).keys()
+        known |= coverage.table(benchmark.PIANO, r"P\d{2}", 5).keys()
+        aliases = {"PROG_024": "PROG-024", "PROG_025": "PROG-025"}
+        unresolved = {term for row in relations for term in (row["source_id"], row["target_id"])
+                      if aliases.get(term, term) not in known}
+        work = coverage.read_csv(root / "docs/audit/fable-5.2/GRAPH_KNOTENBEARBEITUNG_2026-11-14.csv")
+        remaining = coverage.read_csv(root / "docs/audit/fable-5.2/GRAPH_RESTKNOTEN_2026-11-14.csv")
+        self.assertEqual({row["node_id"] for row in remaining}, unresolved)
+        self.assertEqual(len(unresolved), 49)
+        self.assertEqual(len(work), len({row["node_id"] for row in work}))
+        self.assertEqual({row["node_id"] for row in work if row["definition_status"] != "DEFINITION_ZUGEORDNET"}, unresolved)
+        self.assertTrue(all(row["fachabnahme"] == "AUSSTEHEND" for row in work))
+        manual = next(case for case in self.cases if case["id"] == "KB-GRAPH-NODES")
+        self.assertEqual(manual["input"]["unresolved_ids"], len(unresolved))
