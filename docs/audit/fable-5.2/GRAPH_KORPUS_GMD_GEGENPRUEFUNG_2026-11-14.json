@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "method": "Independent nearest-quarter slot sets in exact tick arithmetic versus target-window iteration; Mido parser shared, not an independent MIDI parser.",
+  "archive_sha256": "651cbc524ffb891be1a3e46d89dc82a1cecb09a57c748c7b45b844c4841dcc1e",
+  "records": [
+    {
+      "recording_id": "drummer1/eval_session/7",
+      "independent_slot_set_counts": {
+        "kick_1_3": 17,
+        "snare_2_4": 26
+      },
+      "matches_primary": true
+    },
+    {
+      "recording_id": "drummer5/eval_session/7",
+      "independent_slot_set_counts": {
+        "kick_1_3": 22,
+        "snare_2_4": 30
+      },
+      "matches_primary": true
+    },
+    {
+      "recording_id": "drummer7/eval_session/7",
+      "independent_slot_set_counts": {
+        "kick_1_3": 23,
+        "snare_2_4": 30
+      },
+      "matches_primary": true
+    },
+    {
+      "recording_id": "drummer7/session2/100",
+      "independent_slot_set_counts": {
+        "kick_1_3": 12,
+        "snare_2_4": 4
+      },
+      "matches_primary": true
+    },
+    {
+      "recording_id": "drummer7/session2/101",
+      "independent_slot_set_counts": {
+        "kick_1_3": 19,
+        "snare_2_4": 5
+      },
+      "matches_primary": true
+    },
+    {
+      "recording_id": "drummer7/session2/102",
+      "independent_slot_set_counts": {
+        "kick_1_3": 4,
+        "snare_2_4": 11
+      },
+      "matches_primary": true
+    },
+    {
+      "recording_id": "drummer7/session2/103",
+      "independent_slot_set_counts": {
+        "kick_1_3": 23,
+        "snare_2_4": 45
+      },
+      "matches_primary": true
+    },
+    {
+      "recording_id": "drummer7/session2/104",
+      "independent_slot_set_counts": {
+        "kick_1_3": 36,
+        "snare_2_4": 35
+      },
+      "matches_primary": true
+    },
+    {
+      "recording_id": "drummer7/session2/105",
+      "independent_slot_set_counts": {
+        "kick_1_3": 10,
+        "snare_2_4": 15
+      },
+      "matches_primary": true
+    },
+    {
+      "recording_id": "drummer7/session2/96",
+      "independent_slot_set_counts": {
+        "kick_1_3": 51,
+        "snare_2_4": 3
+      },
+      "matches_primary": true
+    },
+    {
+      "recording_id": "drummer7/session2/97",
+      "independent_slot_set_counts": {
+        "kick_1_3": 23,
+        "snare_2_4": 3
+      },
+      "matches_primary": true
+    },
+    {
+      "recording_id": "drummer7/session3/11",
+      "independent_slot_set_counts": {
+        "kick_1_3": 49,
+        "snare_2_4": 86
+      },
+      "matches_primary": true
+    },
+    {
+      "recording_id": "drummer7/session3/22",
+      "independent_slot_set_counts": {
+        "kick_1_3": 12,
+        "snare_2_4": 29
+      },
+      "matches_primary": true
+    },
+    {
+      "recording_id": "drummer7/session3/23",
+      "independent_slot_set_counts": {
+        "kick_1_3": 7,
+        "snare_2_4": 14
+      },
+      "matches_primary": true
+    },
+    {
+      "recording_id": "drummer8/eval_session/7",
+      "independent_slot_set_counts": {
+        "kick_1_3": 23,
+        "snare_2_4": 30
+      },
+      "matches_primary": true
+    }
+  ],
+  "tolerance_sensitivity": {
+    "0.05": {
+      "kick_1_3": 218,
+      "snare_2_4": 273
+    },
+    "0.1": {
+      "kick_1_3": 331,
+      "snare_2_4": 366
+    },
+    "0.15": {
+      "kick_1_3": 359,
+      "snare_2_4": 385
+    }
+  },
+  "opportunities_per_role": 612,
+  "human_approval": "AUSSTEHEND",
+  "population_generalization": false,
+  "phase_limit": "Tick-zero bar origin; no human downbeat validation or confidence interval for a song population."
+}

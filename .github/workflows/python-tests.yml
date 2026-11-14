@@ -102,3 +102,6 @@ jobs:
         run: python -B scripts/audit_graph_followup.py --check
       - name: Check scoped graph semantics and MIDI notation contracts
         run: python -B scripts/audit_graph_semantics.py --check
+
+      - name: Check all 14 corpus cases and separated source evidence
+        run: python -B scripts/audit_graph_corpus.py --check

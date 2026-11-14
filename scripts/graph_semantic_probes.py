@@ -119,4 +119,13 @@ def calculate(spec):
         joint=lcm(harmonic,bell)
         return {'joint_ticks':joint,'bell_cycles':joint//bell,'harmonic_loops':joint//harmonic,
                 'seconds':joint/ppq*60/data['quarter_bpm'],'style_pairing_proven':False}
+    if operation=='surdo_role_grid':
+        if data['scope']!='FLORIANOPOLIS_2010_MARCELINO_FIG3_4' or data['meter']!='2/4':
+            raise ValueError('Source-specific roles required')
+        ppq=integer(data['ppq'],1,32767)
+        first=data['primeira_ticks'];second=data['segunda_ticks']
+        if first!=[ppq,3*ppq] or second!=[0,2*ppq]:raise ValueError('Role onsets differ from source figures')
+        return {'primeira_quarter_positions':[x//ppq+1 for x in first],
+                'segunda_quarter_positions':[x//ppq+1 for x in second],
+                'dynamic_accent_proven':False,'universal_norm_proven':False}
     raise ValueError('Unknown semantic probe operation')

@@ -17,8 +17,8 @@ class GraphSemanticTests(unittest.TestCase):
     def test_all_eighteen_contracts_do_not_turn_into_eighteen_musical_passes(self):
         rows=audit.audit(self.document)
         self.assertEqual(len(rows),18)
-        self.assertEqual(sum(r['model_status']=='PASS' for r in rows),16)
-        self.assertEqual(sum(r['model_status']=='NOT_EXECUTED' for r in rows),2)
+        self.assertEqual(sum(r['model_status']=='PASS' for r in rows),17)
+        self.assertEqual(sum(r['model_status']=='NOT_EXECUTED' for r in rows),1)
         self.assertTrue(all(not r['historical_assertion_closed'] and not r['production_use_allowed'] for r in rows))
         self.assertEqual(audit.render(rows),(audit.ROOT/audit.MATRIX).read_text(encoding='utf-8'))
 

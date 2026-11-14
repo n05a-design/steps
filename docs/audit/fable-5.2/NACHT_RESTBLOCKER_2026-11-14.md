@@ -12,7 +12,7 @@ insbesondere OA-0001, OA-0033 und OA-0034.
 | P0 | Required-Check-Policy | Owner prüft die beiden aktiven Rulesets und macht insbesondere den Secret-Scan sowie gewünschte Python-Prüfungen zu verbindlichen Gates. | Aktuell ist als erforderlicher Statuscheck nur der geschützte Pilot-Evidenzcheck registriert; keine Regeln oder Rechte wurden geändert. |
 | P1 | Sechs CSS-Pflichtfälle | Rechte am gesamten Bundle und dauerhafte Archivzuordnung belegen. | Bereits bestätigte technische Lieferkette schließt diese Pflichtfälle nicht. |
 | P1 | Sechs historische Definitionslücken | NODE_DEFINITION_PROPOSALS.json fachlich prüfen; Zielrichtung, Instrument/Rolle, Aufnahme und Geltungsbereich entscheiden. | Vorschläge bleiben außerhalb der historischen Knotenauflösung. |
-| P1 | 55 offene Kanten und 41 Stichproben | GRAPH_FORTSETZUNG_58_2026-11-14.csv führt alle ursprünglich 58 Restkanten: 16 ausführbare Vorschläge/Gegenproben, 18 jetzt einzeln präzisierte Quellen-/Semantikvorschläge (16 begrenzte Modellprüfungen, zwei nicht ausgeführt; GRAPH_SEMANTIK_18_2026-11-14.csv), 14 Korpus- und zehn menschliche Prüfungen. | Keine der 97 Kanten ist vollständig unabhängig fachlich abgenommen. |
+| P1 | 55 offene Kanten und 41 Stichproben | GRAPH_FORTSETZUNG_58_2026-11-14.csv führt alle ursprünglich 58 Restkanten: 16 ausführbare Vorschläge/Gegenproben, 18 jetzt einzeln präzisierte Quellen-/Semantikvorschläge (16 begrenzte Modellprüfungen, zwei nicht ausgeführt; GRAPH_SEMANTIK_18_2026-11-14.csv), 14 jetzt einzeln spezifizierte Korpusfälle (GRAPH_KORPUS_14_2026-11-14.csv, GMD-Pop-Teilfrage gemessen) und zehn menschliche Prüfungen. | Keine der 97 Kanten ist vollständig unabhängig fachlich abgenommen. |
 | P1 | CDR-010 | Den gesonderten C6/9(#11)-Sammlungsvorschlag fachlich prüfen; historischen FAIL erhalten. | Kein automatisches Ersetzen der Kante. |
 | P1 | 12 Coach-Abnahmen | Tatsächliche Antworten mit Modell-/Skill-Version, Quellen und unabhängiger menschlicher Rubrikbewertung erheben. | Selbst geschriebene Musterantworten zählen nicht als unabhängige Abnahme. |
 | P1 | Drei Hör-/Spielabnahmen | PAT-031-Taktgruppierung, P02-Hand/Fingersatz/Tempo und die beiden Loop-Fassungen praktisch prüfen. | WAV-Messungen und kleine L1-Distanzen ersetzen Hören/Spielen nicht. |
@@ -26,3 +26,5 @@ insbesondere OA-0001, OA-0033 und OA-0034.
 
 [Alle 27 PENDING-Fälle einzeln](NACHT_PENDING_2026-11-14.csv)
 · [33 Fable-Befunde mit technischen Referenzen](NACHT_FABLE_ABGLEICH_2026-11-14.csv)
+
+Fortsetzung nach PR #58: [Korpus-/Quellenbericht](GRAPH_KORPUS_QUELLEN_FORTSETZUNG_2026-11-14.md). CDR-019 benötigt Garcia1999 und die Reily/Cabral-Originalkette; CDR-021 besitzt jetzt einen gelesenen Rollen-/Onset-Beleg aus Florianópolis2010, aber keinen dynamischen Akzentnachweis oder allgemeine Normfreigabe. Die14 Korpusfälle benötigen passend ausgerichtete Annotationen und Sampling-Entscheidungen; getrennte Datensätze dürfen nicht als gemeinsame Aufnahmen ausgegeben werden.
