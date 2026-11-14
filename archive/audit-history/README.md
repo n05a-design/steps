@@ -13,3 +13,5 @@ Für eine Rückführung die Quellfassung, den Hash und den aktuellen Zielpfad ve
 [Zur Bereichsübersicht](../README.md)
 
 [Wiedergefundene Golden-Quellfassungen](golden-source-recovery-2026-11-14/README.md): zwölf versionierte Projektoriginale und Hashnachweise.
+
+[Wiederhergestellte Glide-Gesamtaudit-Originale](glide-gesamtaudit-v2-recovery-2026-11-14/README.md): vier registrierte Projektdokumente aus `src/glide-v3.53`, bytegenau aus `99ca36a`.
