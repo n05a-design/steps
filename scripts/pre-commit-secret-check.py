@@ -97,8 +97,7 @@ def check_secret_match(norm_path: str, line_num: int, matched_str: str, desc: st
 def scan_line(norm_path: str, line_num: int, line: str, baseline_map: dict = None) -> list:
     leaks = []
     for pattern, desc in SECRET_PATTERNS:
-        m = re.search(pattern, line)
-        if m:
+        for m in re.finditer(pattern, line):
             matched_str = m.group(0)
             is_leak, detail = check_secret_match(norm_path, line_num, matched_str, desc, line, baseline_map or {})
             if is_leak:
@@ -126,9 +125,9 @@ def scan_repository(root_dir: str = None, baseline_path: str = None) -> tuple[in
     quarantined_count = 0
 
     for root, dirs, files in os.walk(target_dir):
-        norm_root = normalize_path(os.path.relpath(root, target_dir))
-        if '.git' in norm_root or 'Auditpakete' in norm_root or 'StepsAudit' in norm_root or '.venv' in norm_root:
-            continue
+        # Exclude actual runtime directories, never names merely containing
+        # '.git' (which previously hid .github) or historical audit folders.
+        dirs[:] = [name for name in dirs if name not in {'.git', '.venv', '__pycache__'}]
         for f in files:
             if f.endswith(('.download', '.html', '.js', '.py', '.md', '.json', '.yaml', '.yml', '.csv', '.sh', '.ps1')):
                 abs_fp = os.path.join(root, f)
@@ -139,8 +138,7 @@ def scan_repository(root_dir: str = None, baseline_path: str = None) -> tuple[in
                 with open(abs_fp, 'r', encoding='utf-8', errors='replace') as fh:
                     for i, line in enumerate(fh, 1):
                         for pattern, desc in SECRET_PATTERNS:
-                            m = re.search(pattern, line)
-                            if m:
+                            for m in re.finditer(pattern, line):
                                 matched_str = m.group(0)
                                 is_leak, detail = check_secret_match(rel_fp, i, matched_str, desc, line, baseline_map)
                                 if is_leak:
