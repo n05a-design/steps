@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "relation_id": "CDR-019",
+  "base_main": "4feb3dbae07dd5575b46a4f65d74ba748bda64ff",
+  "human_approval": "AUSSTEHEND",
+  "historical_assertion_closed": false,
+  "requested_older_original_pages_newly_verified": 0,
+  "new_author_article_content_verified": false,
+  "candidate": {
+    "author": "Walter Garcia",
+    "title": "Radicalismos a brasileira",
+    "journal": "Celeuma1(1),2013,pp20–31",
+    "doi": "10.11606/issn.2318-7875.v1i1p20-31",
+    "publisher_url": "https://revistas.usp.br/celeuma/en/article/view/68015",
+    "public_pdf_url": "https://revistas.usp.br/celeuma/en/article/download/68015/70585",
+    "metadata_verified": true,
+    "content_verified": false,
+    "scope": "Separate author work, not Bim Bom1999 or proof of the requested earlier pages."
+  },
+  "access_attempts": [
+    {
+      "route": "Portuguese article page",
+      "result": "Browser redirect loop; language-neutral page successfully resolved to English metadata page."
+    },
+    {
+      "route": "Published PDF viewer link",
+      "result": "Browser timeout."
+    },
+    {
+      "route": "Regular public PDF download",
+      "result": "Stalled partial transfer, explicitly cancelled; not a complete original."
+    },
+    {
+      "route": "Regular download with explicit operation deadline",
+      "result": "OperationTimeout20seconds; partial bytes retained only locally."
+    },
+    {
+      "route": "Bounded public Range probe",
+      "result": "Connection deadline expired; no successful Content-Range receipt, no reconstructed PDF."
+    }
+  ],
+  "partial_files": [
+    {
+      "local_file": "garcia2013.pdf.partial",
+      "bytes": 15892,
+      "partial_sha256": "a62635cd4c750e4f92866f4ad906af0a6247a31337bbc7c126ffd55942ec365b",
+      "complete_original_verified": false
+    },
+    {
+      "local_file": "garcia2013-retry.pdf.partial",
+      "bytes": 65044,
+      "partial_sha256": "33e9a8a20f38800484fb0ee74108be016706452ffeb7718b386a3aa9785f254d",
+      "complete_original_verified": false
+    }
+  ],
+  "source_integrity_note": "Partial-file hashes are NOT full-original hashes. A parser attempt on the incomplete first transfer did not establish a valid Pages tree; no original page reading/visual verification claimed.",
+  "unchanged_original_requirements": [
+    "Reily1996 p5/Fig1",
+    "Cabral Songbook Bossa Nova vol2 pp10–17/p12",
+    "Garcia1999 pp21–22/25–38/45–49, distinct from1998 thesis",
+    "Schreiner1992/1993 edition comparison and claim page"
+  ],
+  "rights": "No author PDF/text/image committed; metadata and own findings only. No authentication, purchase, contact or bypass. CSS and security approval open."
+}

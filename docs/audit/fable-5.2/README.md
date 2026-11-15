@@ -47,3 +47,5 @@ Den aktuellen Prüfstand liefert der [Benchmark](../../../knowledge/benchmark/RE
 [Swing-Quellenprüfung nach PR #73](GMD_SWING_QUELLEN_FORTSETZUNG_2026-11-15.md): herausgeberdokumentiertes GMD-Instrumentmapping, elf Swing-Performances mit konkreten Teilmuster-Prüfstellen und Schreiner-Ausgabe mit ISBN; keine Harmoniekopplungs- oder Fachfreigabe.
 
 [Ride-/Dynamikprüfung nach PR #74](GMD_RIDE_DYNAMIK_FORTSETZUNG_2026-11-15.md): tatsächliche Zwischenintervalle, Kick-Präsenz und MIDI-Velocities der beiden Prüfstellen; institutionelle Foto-/Autorenhinweise zu CDR-019 von Originaltexten getrennt. Akustische und fachliche Abnahmen offen.
+
+[Pop-Pattern und Originalquellen nach PR #77](GMD_POP_ORIGINALQUELLEN_FORTSETZUNG_2026-11-15.md): 15 Pop-Performances/306 Takte mit zwei getrennten Kick-Vorschlägen und Original-/Familien-Hats; Garcia2013 nur metadatenbestätigt, PDF-Übertragungen unvollständig. Historische und externe Abnahmen offen.
