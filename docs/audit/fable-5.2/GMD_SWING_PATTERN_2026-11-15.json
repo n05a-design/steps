@@ -1,0 +1,599 @@
+{
+  "schema_version": 1,
+  "archive_sha256": "651cbc524ffb891be1a3e46d89dc82a1cecb09a57c748c7b45b844c4841dcc1e",
+  "metadata_sha256": "3e17eef2f18012c0160c183ad5b106964eb429876cceb1eee1b746def4e6b11b",
+  "selection": "style exactly jazz/swing; beat_type beat; time_signature4-4",
+  "source_mapping_scope": "PUBLISHER_DECLARED_GMD_TD11_TABLE_ONLY",
+  "source_mapping_url": "https://magenta.tensorflow.org/datasets/groove#drum-mapping",
+  "source_mapping": {
+    "51": "Ride Bow",
+    "53": "Ride Bell",
+    "59": "Ride Edge",
+    "44": "HH Pedal"
+  },
+  "source_mapping_limits": "Publisher declaration verified against its table; not independent listening or a mapping for RWC/JazzSAMBA. Family51/53/59 remains separate from literal PAT012 note51.",
+  "source_mapping_documented": true,
+  "exact_pat012_verified": false,
+  "harmonic_pairing_verified": false,
+  "population_generalization": false,
+  "historical_assertion_closed": false,
+  "human_approval": "AUSSTEHEND",
+  "rights": "Google LLC, GMDv1.0.0, CC BY4.0; Gillick et al.2019. Raw MIDI/audio remain local; no CSS or security approval.",
+  "method": "Tick-zero metronome4/4 grid; positive channel9 note-ons; half-open complete bars before SMF end; one-to-one ±0.04/0.1 quarter. Ride quarter/pedal subsets permit extras; not complete swung/feathering130BPM pattern.",
+  "denominator": "Commissioned drum performances, not independent songs; no chord annotations; all splits inspected for audit, not evaluation claims.",
+  "selected_recordings": 11,
+  "selected_drummers": 2,
+  "complete_bars": 702,
+  "summary": {
+    "0.04": {
+      "ride_bow_quarters": 8,
+      "ride_family_quarters": 8,
+      "pedal_2_4": 58,
+      "joint_bow_pedal": 2,
+      "joint_family_pedal": 2
+    },
+    "0.1": {
+      "ride_bow_quarters": 21,
+      "ride_family_quarters": 23,
+      "pedal_2_4": 214,
+      "joint_bow_pedal": 12,
+      "joint_family_pedal": 13
+    }
+  },
+  "records": [
+    {
+      "recording_id": "drummer1/session3/2",
+      "member": "groove/drummer1/session3/2_jazz-swing_185_beat_4-4.mid",
+      "midi_sha256": "a723c9b1885cd02606d2b62f23b1efbbaed387d455e25ac855f38946c189dbe4",
+      "drummer": "drummer1",
+      "session": "drummer1/session3",
+      "split": "train",
+      "style": "jazz/swing",
+      "bpm_metadata": 185,
+      "ppq": 480,
+      "midi_tempos_microseconds": [
+        324324
+      ],
+      "complete_bars": 192,
+      "positive_note_histogram": {
+        "22": 1,
+        "36": 467,
+        "37": 18,
+        "38": 133,
+        "40": 76,
+        "43": 805,
+        "44": 390,
+        "48": 224,
+        "50": 22,
+        "51": 238,
+        "52": 12,
+        "55": 5,
+        "58": 2,
+        "59": 11
+      },
+      "counts": {
+        "0.04": {
+          "ride_bow_quarters": 4,
+          "ride_family_quarters": 4,
+          "pedal_2_4": 40,
+          "joint_bow_pedal": 1,
+          "joint_family_pedal": 1
+        },
+        "0.1": {
+          "ride_bow_quarters": 7,
+          "ride_family_quarters": 8,
+          "pedal_2_4": 126,
+          "joint_bow_pedal": 5,
+          "joint_family_pedal": 6
+        }
+      },
+      "first_joint_bow_pedal_bar_zero_based": {
+        "0.04": 75,
+        "0.1": 75
+      }
+    },
+    {
+      "recording_id": "drummer10/session1/1",
+      "member": "groove/drummer10/session1/1_jazz-swing_124_beat_4-4.mid",
+      "midi_sha256": "2d300ae2ea6f26a2858fe7efcf40bd0eb997ada9d5c1b517a0575f29f2eb55eb",
+      "drummer": "drummer10",
+      "session": "drummer10/session1",
+      "split": "train",
+      "style": "jazz/swing",
+      "bpm_metadata": 124,
+      "ppq": 480,
+      "midi_tempos_microseconds": [
+        483871
+      ],
+      "complete_bars": 84,
+      "positive_note_histogram": {
+        "22": 56,
+        "26": 29,
+        "36": 246,
+        "37": 2,
+        "38": 225,
+        "40": 1,
+        "42": 6,
+        "43": 84,
+        "44": 143,
+        "45": 12,
+        "48": 38,
+        "50": 2,
+        "51": 219,
+        "53": 11,
+        "55": 36,
+        "58": 3,
+        "59": 2
+      },
+      "counts": {
+        "0.04": {
+          "ride_bow_quarters": 1,
+          "ride_family_quarters": 1,
+          "pedal_2_4": 0,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        },
+        "0.1": {
+          "ride_bow_quarters": 3,
+          "ride_family_quarters": 4,
+          "pedal_2_4": 9,
+          "joint_bow_pedal": 1,
+          "joint_family_pedal": 1
+        }
+      },
+      "first_joint_bow_pedal_bar_zero_based": {
+        "0.04": null,
+        "0.1": 54
+      }
+    },
+    {
+      "recording_id": "drummer10/session1/10",
+      "member": "groove/drummer10/session1/10_jazz-swing_110_beat_4-4.mid",
+      "midi_sha256": "22534c40c80f20ee19685a56ad0d1f5c726858dbb31284c9e4f7577741c7786e",
+      "drummer": "drummer10",
+      "session": "drummer10/session1",
+      "split": "train",
+      "style": "jazz/swing",
+      "bpm_metadata": 110,
+      "ppq": 480,
+      "midi_tempos_microseconds": [
+        545455
+      ],
+      "complete_bars": 80,
+      "positive_note_histogram": {
+        "22": 116,
+        "26": 85,
+        "36": 312,
+        "37": 2,
+        "38": 352,
+        "40": 33,
+        "42": 13,
+        "43": 39,
+        "44": 171,
+        "45": 19,
+        "46": 1,
+        "47": 3,
+        "48": 90,
+        "49": 1,
+        "50": 8,
+        "51": 98,
+        "53": 39,
+        "55": 23,
+        "58": 8
+      },
+      "counts": {
+        "0.04": {
+          "ride_bow_quarters": 0,
+          "ride_family_quarters": 0,
+          "pedal_2_4": 2,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        },
+        "0.1": {
+          "ride_bow_quarters": 0,
+          "ride_family_quarters": 0,
+          "pedal_2_4": 25,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        }
+      },
+      "first_joint_bow_pedal_bar_zero_based": {
+        "0.04": null,
+        "0.1": null
+      }
+    },
+    {
+      "recording_id": "drummer10/session1/2",
+      "member": "groove/drummer10/session1/2_jazz-swing_215_beat_4-4.mid",
+      "midi_sha256": "f30e0c54f785dfa6a5decee7ca89ac5c844c26aad912f43cde138417927cc4b3",
+      "drummer": "drummer10",
+      "session": "drummer10/session1",
+      "split": "train",
+      "style": "jazz/swing",
+      "bpm_metadata": 215,
+      "ppq": 480,
+      "midi_tempos_microseconds": [
+        279070
+      ],
+      "complete_bars": 81,
+      "positive_note_histogram": {
+        "26": 2,
+        "36": 192,
+        "38": 78,
+        "43": 409,
+        "44": 149,
+        "45": 29,
+        "47": 2,
+        "48": 33,
+        "50": 11,
+        "55": 6,
+        "58": 16,
+        "59": 2
+      },
+      "counts": {
+        "0.04": {
+          "ride_bow_quarters": 0,
+          "ride_family_quarters": 0,
+          "pedal_2_4": 0,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        },
+        "0.1": {
+          "ride_bow_quarters": 0,
+          "ride_family_quarters": 0,
+          "pedal_2_4": 1,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        }
+      },
+      "first_joint_bow_pedal_bar_zero_based": {
+        "0.04": null,
+        "0.1": null
+      }
+    },
+    {
+      "recording_id": "drummer10/session1/3",
+      "member": "groove/drummer10/session1/3_jazz-swing_215_beat_4-4.mid",
+      "midi_sha256": "67075bb5a2b8d600b883ee4e3ed597b578cf54218d02ad881e085ff120d3753e",
+      "drummer": "drummer10",
+      "session": "drummer10/session1",
+      "split": "train",
+      "style": "jazz/swing",
+      "bpm_metadata": 215,
+      "ppq": 480,
+      "midi_tempos_microseconds": [
+        279070
+      ],
+      "complete_bars": 46,
+      "positive_note_histogram": {
+        "36": 19,
+        "38": 32,
+        "43": 1,
+        "44": 93,
+        "48": 3,
+        "50": 4,
+        "51": 265,
+        "55": 2,
+        "59": 2
+      },
+      "counts": {
+        "0.04": {
+          "ride_bow_quarters": 3,
+          "ride_family_quarters": 3,
+          "pedal_2_4": 1,
+          "joint_bow_pedal": 1,
+          "joint_family_pedal": 1
+        },
+        "0.1": {
+          "ride_bow_quarters": 11,
+          "ride_family_quarters": 11,
+          "pedal_2_4": 6,
+          "joint_bow_pedal": 6,
+          "joint_family_pedal": 6
+        }
+      },
+      "first_joint_bow_pedal_bar_zero_based": {
+        "0.04": 1,
+        "0.1": 1
+      }
+    },
+    {
+      "recording_id": "drummer10/session1/4",
+      "member": "groove/drummer10/session1/4_jazz-swing_215_beat_4-4.mid",
+      "midi_sha256": "e49f31bf18dfbb76dcf89161bc2b91649b09655b46cde7daa9a98c9092e5b76b",
+      "drummer": "drummer10",
+      "session": "drummer10/session1",
+      "split": "train",
+      "style": "jazz/swing",
+      "bpm_metadata": 215,
+      "ppq": 480,
+      "midi_tempos_microseconds": [
+        279070
+      ],
+      "complete_bars": 40,
+      "positive_note_histogram": {
+        "22": 57,
+        "26": 92,
+        "36": 141,
+        "38": 102,
+        "43": 6,
+        "44": 83,
+        "45": 1,
+        "46": 2,
+        "48": 10,
+        "50": 1,
+        "55": 24,
+        "58": 1
+      },
+      "counts": {
+        "0.04": {
+          "ride_bow_quarters": 0,
+          "ride_family_quarters": 0,
+          "pedal_2_4": 1,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        },
+        "0.1": {
+          "ride_bow_quarters": 0,
+          "ride_family_quarters": 0,
+          "pedal_2_4": 6,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        }
+      },
+      "first_joint_bow_pedal_bar_zero_based": {
+        "0.04": null,
+        "0.1": null
+      }
+    },
+    {
+      "recording_id": "drummer10/session1/5",
+      "member": "groove/drummer10/session1/5_jazz-swing_215_beat_4-4.mid",
+      "midi_sha256": "69ab684fe007827342a04c90ef6fa6cf8c0b74996debdac329e1a92f80a386f7",
+      "drummer": "drummer10",
+      "session": "drummer10/session1",
+      "split": "train",
+      "style": "jazz/swing",
+      "bpm_metadata": 215,
+      "ppq": 480,
+      "midi_tempos_microseconds": [
+        279070
+      ],
+      "complete_bars": 50,
+      "positive_note_histogram": {
+        "22": 3,
+        "26": 6,
+        "36": 156,
+        "38": 226,
+        "40": 1,
+        "43": 63,
+        "44": 99,
+        "45": 41,
+        "47": 2,
+        "48": 39,
+        "49": 1,
+        "50": 1,
+        "51": 2,
+        "55": 10,
+        "58": 2,
+        "59": 4
+      },
+      "counts": {
+        "0.04": {
+          "ride_bow_quarters": 0,
+          "ride_family_quarters": 0,
+          "pedal_2_4": 0,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        },
+        "0.1": {
+          "ride_bow_quarters": 0,
+          "ride_family_quarters": 0,
+          "pedal_2_4": 0,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        }
+      },
+      "first_joint_bow_pedal_bar_zero_based": {
+        "0.04": null,
+        "0.1": null
+      }
+    },
+    {
+      "recording_id": "drummer10/session1/6",
+      "member": "groove/drummer10/session1/6_jazz-swing_215_beat_4-4.mid",
+      "midi_sha256": "ccd6b1ed8374b13463032c17953ec5d7b2b51513e77a18fffdce163ef625363f",
+      "drummer": "drummer10",
+      "session": "drummer10/session1",
+      "split": "train",
+      "style": "jazz/swing",
+      "bpm_metadata": 215,
+      "ppq": 480,
+      "midi_tempos_microseconds": [
+        279070
+      ],
+      "complete_bars": 20,
+      "positive_note_histogram": {
+        "22": 1,
+        "36": 37,
+        "37": 5,
+        "38": 135,
+        "40": 12,
+        "43": 1,
+        "44": 34,
+        "50": 5,
+        "55": 4,
+        "58": 1
+      },
+      "counts": {
+        "0.04": {
+          "ride_bow_quarters": 0,
+          "ride_family_quarters": 0,
+          "pedal_2_4": 0,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        },
+        "0.1": {
+          "ride_bow_quarters": 0,
+          "ride_family_quarters": 0,
+          "pedal_2_4": 0,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        }
+      },
+      "first_joint_bow_pedal_bar_zero_based": {
+        "0.04": null,
+        "0.1": null
+      }
+    },
+    {
+      "recording_id": "drummer10/session1/7",
+      "member": "groove/drummer10/session1/7_jazz-swing_215_beat_4-4.mid",
+      "midi_sha256": "54ac859918e3fa41edf0420c8d9ab5d73022d828fab1ec4bf8727a6166977aff",
+      "drummer": "drummer10",
+      "session": "drummer10/session1",
+      "split": "train",
+      "style": "jazz/swing",
+      "bpm_metadata": 215,
+      "ppq": 480,
+      "midi_tempos_microseconds": [
+        279070
+      ],
+      "complete_bars": 16,
+      "positive_note_histogram": {
+        "22": 40,
+        "26": 8,
+        "36": 30,
+        "38": 31,
+        "42": 1,
+        "44": 12,
+        "45": 1,
+        "47": 1,
+        "48": 1,
+        "50": 2,
+        "55": 3
+      },
+      "counts": {
+        "0.04": {
+          "ride_bow_quarters": 0,
+          "ride_family_quarters": 0,
+          "pedal_2_4": 0,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        },
+        "0.1": {
+          "ride_bow_quarters": 0,
+          "ride_family_quarters": 0,
+          "pedal_2_4": 0,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        }
+      },
+      "first_joint_bow_pedal_bar_zero_based": {
+        "0.04": null,
+        "0.1": null
+      }
+    },
+    {
+      "recording_id": "drummer10/session1/8",
+      "member": "groove/drummer10/session1/8_jazz-swing_215_beat_4-4.mid",
+      "midi_sha256": "b2acfb3309442024a5fb252eb9edd3c617ba658afbe8865fb6263971535d9bdc",
+      "drummer": "drummer10",
+      "session": "drummer10/session1",
+      "split": "train",
+      "style": "jazz/swing",
+      "bpm_metadata": 215,
+      "ppq": 480,
+      "midi_tempos_microseconds": [
+        279070
+      ],
+      "complete_bars": 17,
+      "positive_note_histogram": {
+        "26": 48,
+        "36": 52,
+        "38": 41,
+        "40": 3,
+        "43": 2,
+        "44": 1,
+        "45": 2,
+        "48": 4,
+        "55": 4,
+        "58": 1
+      },
+      "counts": {
+        "0.04": {
+          "ride_bow_quarters": 0,
+          "ride_family_quarters": 0,
+          "pedal_2_4": 0,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        },
+        "0.1": {
+          "ride_bow_quarters": 0,
+          "ride_family_quarters": 0,
+          "pedal_2_4": 0,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        }
+      },
+      "first_joint_bow_pedal_bar_zero_based": {
+        "0.04": null,
+        "0.1": null
+      }
+    },
+    {
+      "recording_id": "drummer10/session1/9",
+      "member": "groove/drummer10/session1/9_jazz-swing_110_beat_4-4.mid",
+      "midi_sha256": "27da7b94b20617f73e65253e464d4e87236d2f6df67aa65cccf9e2024bee23bb",
+      "drummer": "drummer10",
+      "session": "drummer10/session1",
+      "split": "train",
+      "style": "jazz/swing",
+      "bpm_metadata": 110,
+      "ppq": 480,
+      "midi_tempos_microseconds": [
+        545455
+      ],
+      "complete_bars": 76,
+      "positive_note_histogram": {
+        "22": 118,
+        "26": 118,
+        "36": 236,
+        "38": 415,
+        "40": 3,
+        "42": 39,
+        "43": 15,
+        "44": 174,
+        "45": 4,
+        "46": 1,
+        "47": 1,
+        "48": 11,
+        "50": 2,
+        "51": 9,
+        "53": 61,
+        "55": 18,
+        "58": 4
+      },
+      "counts": {
+        "0.04": {
+          "ride_bow_quarters": 0,
+          "ride_family_quarters": 0,
+          "pedal_2_4": 14,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        },
+        "0.1": {
+          "ride_bow_quarters": 0,
+          "ride_family_quarters": 0,
+          "pedal_2_4": 41,
+          "joint_bow_pedal": 0,
+          "joint_family_pedal": 0
+        }
+      },
+      "first_joint_bow_pedal_bar_zero_based": {
+        "0.04": null,
+        "0.1": null
+      }
+    }
+  ]
+}

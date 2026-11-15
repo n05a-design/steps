@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "relation_id": "CDR-019",
+  "base_main": "e9d15dd6291e9bd420d042fee2998f07fc511b0b",
+  "human_approval": "AUSSTEHEND",
+  "historical_assertion_closed": false,
+  "older_original_pages_newly_verified": 0,
+  "catalogue_entries": [
+    {
+      "id": "OPENLIBRARY_1993",
+      "url": "https://openlibrary.org/isbn/071452946X.json",
+      "sha256": "d015176dc9d366bfb1dea0a99c5de9b8a59825418556be70c4134309d507ce4c",
+      "bytes": 1060,
+      "finding": {
+        "title": "Música brasileira",
+        "publish_date": "1993",
+        "publishers": [
+          "Marion Boyars"
+        ],
+        "isbn_10": [
+          "071452946X"
+        ],
+        "isbn_13": null,
+        "number_of_pages": 306,
+        "by_statement": "Claus Schreiner ; translated from the German by Mark Weinstein.",
+        "key": "/books/OL22283469M"
+      },
+      "status": "CATALOG_METADATA_ONLY"
+    },
+    {
+      "id": "DNB_ISBN",
+      "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=isbn%3D071452946X&recordSchema=MARC21-xml",
+      "status": "ACCESS_FAILED",
+      "error_type": "URLError"
+    }
+  ],
+  "new_catalogue_anchor": "Schreiner, Musica brasileira, Marion Boyars1993, ISBN071452946X,306 pages, translated by Mark Weinstein; OpenLibrary OL22283469M. Catalog metadata only, no title-page or claim-page verification.",
+  "remaining": "Reily cites1992; the original1992/1993 title/imprint/page comparison and actual surdo/tamborim claim remain unverified. Other missing Reily/Cabral/Garcia originals remain required.",
+  "rights": "Metadata and own findings only; raw catalog responses outside Git. No book fulltext, human/CSS/security clearance."
+}

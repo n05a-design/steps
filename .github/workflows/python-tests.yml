@@ -122,3 +122,6 @@ jobs:
 
       - name: Check historical REF-0030 syncopation and timing sensitivity
         run: python -B scripts/audit_pattern_syncopation.py --check
+
+      - name: Check publisher-mapped Swing drum components without harmonic approval
+        run: python -B scripts/audit_gmd_swing.py --check
