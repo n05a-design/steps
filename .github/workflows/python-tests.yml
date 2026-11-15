@@ -125,3 +125,6 @@ jobs:
 
       - name: Check publisher-mapped Swing drum components without harmonic approval
         run: python -B scripts/audit_gmd_swing.py --check
+
+      - name: Check actual Ride intervals without acoustic dynamics approval
+        run: python -B scripts/audit_gmd_swing_detail.py --check

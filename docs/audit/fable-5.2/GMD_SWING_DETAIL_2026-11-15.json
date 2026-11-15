@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "archive_sha256": "651cbc524ffb891be1a3e46d89dc82a1cecb09a57c748c7b45b844c4841dcc1e",
+  "candidate_scope": "First narrow literal51/44 candidate per selected Swing performance from prior source-bound receipt",
+  "method": "Unique actual51 quarter endpoints within0.04 metronome quarters; one strictly intermediate51 onset. Beat4-to-next-downbeat endpoint may belong to next bar and is used only as interval endpoint. Velocity summaries use half-open current bar.",
+  "publisher_mapping_url": "https://magenta.tensorflow.org/datasets/groove#drum-mapping",
+  "mapping_scope": "Source36 Kick and51 Ride Bow per GMD publisher; source36 is not silently renamed to historical PAT012 literal35.",
+  "limits": "Descriptive MIDI inter-onset ratios, no fixed Swing norm. MIDI velocity is not acoustic loudness or cross-instrument loudness calibration. Quiet feathering, complete PAT012,130BPM identity and harmony pairing unapproved.",
+  "human_approval": "AUSSTEHEND",
+  "acoustic_loudness_verified": false,
+  "pat012_feathering_verified": false,
+  "harmonic_pairing_verified": false,
+  "historical_assertion_closed": false,
+  "records": [
+    {
+      "recording_id": "drummer1/session3/2",
+      "midi_sha256": "a723c9b1885cd02606d2b62f23b1efbbaed387d455e25ac855f38946c189dbe4",
+      "bar_zero_based": 75,
+      "ppq": 480,
+      "bpm_metadata": 185,
+      "ride_bow_intervals": {
+        "2": {
+          "status": "MEASURED",
+          "first_interval_ticks": 338,
+          "second_interval_ticks": 151,
+          "ratio_fraction": "338/151",
+          "ratio": 2.23841059602649
+        },
+        "4": {
+          "status": "MEASURED",
+          "first_interval_ticks": 317,
+          "second_interval_ticks": 171,
+          "ratio_fraction": "317/171",
+          "ratio": 1.8538011695906433
+        }
+      },
+      "literal35_quarter_hits": 0,
+      "source36_quarter_hits": 2,
+      "velocity_diagnostics": {
+        "35": {
+          "positive_onsets": 0,
+          "min": null,
+          "max": null,
+          "median": null
+        },
+        "36": {
+          "positive_onsets": 2,
+          "min": 86,
+          "max": 103,
+          "median": 94.5
+        },
+        "51": {
+          "positive_onsets": 6,
+          "min": 40,
+          "max": 82,
+          "median": 54.0
+        },
+        "44": {
+          "positive_onsets": 2,
+          "min": 70,
+          "max": 72,
+          "median": 71.0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer10/session1/3",
+      "midi_sha256": "67075bb5a2b8d600b883ee4e3ed597b578cf54218d02ad881e085ff120d3753e",
+      "bar_zero_based": 1,
+      "ppq": 480,
+      "bpm_metadata": 215,
+      "ride_bow_intervals": {
+        "2": {
+          "status": "MEASURED",
+          "first_interval_ticks": 349,
+          "second_interval_ticks": 139,
+          "ratio_fraction": "349/139",
+          "ratio": 2.5107913669064748
+        },
+        "4": {
+          "status": "MEASURED",
+          "first_interval_ticks": 324,
+          "second_interval_ticks": 157,
+          "ratio_fraction": "324/157",
+          "ratio": 2.0636942675159236
+        }
+      },
+      "literal35_quarter_hits": 0,
+      "source36_quarter_hits": 0,
+      "velocity_diagnostics": {
+        "35": {
+          "positive_onsets": 0,
+          "min": null,
+          "max": null,
+          "median": null
+        },
+        "36": {
+          "positive_onsets": 0,
+          "min": null,
+          "max": null,
+          "median": null
+        },
+        "51": {
+          "positive_onsets": 6,
+          "min": 46,
+          "max": 127,
+          "median": 62.0
+        },
+        "44": {
+          "positive_onsets": 2,
+          "min": 57,
+          "max": 60,
+          "median": 58.5
+        }
+      }
+    }
+  ]
+}
