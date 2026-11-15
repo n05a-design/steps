@@ -141,6 +141,8 @@ def audit(root=ROOT, plan=None):
                 source_status='LATER_AUTHOR_ARTICLE_SCOPED_CHECK_OLDER_ORIGINALS_UNVERIFIED'
                 source_locator+=' | docs/audit/fable-5.2/CDR019_ORIGINALSUCHE_2026-11-14.json: publisher Cabral vol2 pp10–17, preview TOC only; full originals and causality unverified.'
                 source_locator+=' | docs/audit/fable-5.2/CDR019_GARCIA_2023_QUELLENBEFUND_2026-11-14.json: Garcia2023 PDF7/printed6 paras21–27 visually read.'
+                source_status='REILY_ORIGINAL_TEXT_ATTRIBUTION_SCOPED_CHECK_NOT_ORIGIN_APPROVAL'
+                source_locator+=' | docs/audit/fable-5.2/CDR019_REILY_ORIGINALTEXT_2026-11-15.json: Reily1996 printed5/PDF6 prose and printed16/PDF17 bibliography read through web PDF extraction; Fig1 not visually verified, Cabral original unread.'
         definition_status=lambda term: ('HISTORICAL_DEFINITION' if term in nodes and re.fullmatch(r'M\d{2}-\d{2}',term) else
                                       'SCOPED_NODE_DEFINITION' if term in nodes else 'PROJECT_CATALOG' if re.fullmatch(r'(?:PROG[-_]\d{3}|PAT-\d{3}|P\d{2})',term) else
                                       'DOMAIN_CONTEXT_REQUIRED' if re.fullmatch(r'M\d{2}',term) else 'UNRESOLVED')

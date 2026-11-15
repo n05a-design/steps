@@ -1,0 +1,1952 @@
+{
+  "schema_version": 1,
+  "archive_sha256": "651cbc524ffb891be1a3e46d89dc82a1cecb09a57c748c7b45b844c4841dcc1e",
+  "metadata_sha256": "3e17eef2f18012c0160c183ad5b106964eb429876cceb1eee1b746def4e6b11b",
+  "selection": "primary style funk; beat;4-4; all substyles retained including shuffle; no straight subdivision inferred from genre",
+  "method": "tick-zero complete half-open bars; positive channel9 events; one-to-one subset grids at0.04/0.1 quarter tolerance",
+  "mapping_url": "https://magenta.tensorflow.org/datasets/groove#drum-mapping",
+  "mapping_scope": "GMD publisher only:36 Kick,38 Snare Head,42 Closed Hat Bow,22 Closed Hat Edge",
+  "limits": "25-45 is project MIDI velocity, not acoustic ghost-note approval. At least one off-backbeat hit is not density. Within-kick maximum may tie and is not The One accent. Exact tick collision can refute strict simultaneity-free MIDI at that tick; absence cannot prove musical linearity. Open-hat release undefined, untested. No harmonic annotations or representative song sample.",
+  "rights": "Google LLC GMDv1.0.0 CC BY4.0; Gillick et al.2019; raw MIDI stays local",
+  "human_approval": "AUSSTEHEND",
+  "historical_assertion_closed": false,
+  "harmonic_pairing_verified": false,
+  "exact_pattern_verified": false,
+  "population_generalization": false,
+  "summary": {
+    "0.04": {
+      "kick36_downbeat": 523,
+      "snare38_backbeat": 400,
+      "hat42_sixteenths": 2,
+      "hat42_22_sixteenths": 12,
+      "pat013_kick_grid": 7,
+      "snare38_velocity25_45_off_backbeat": 1415,
+      "downbeat_kick_at_bar_max_velocity": 260,
+      "exact_tick_multi_pitch_collision": 881,
+      "pat007_component_joint": 0,
+      "pat013_component_joint": 0
+    },
+    "0.1": {
+      "kick36_downbeat": 608,
+      "snare38_backbeat": 578,
+      "hat42_sixteenths": 6,
+      "hat42_22_sixteenths": 26,
+      "pat013_kick_grid": 40,
+      "snare38_velocity25_45_off_backbeat": 1405,
+      "downbeat_kick_at_bar_max_velocity": 284,
+      "exact_tick_multi_pitch_collision": 881,
+      "pat007_component_joint": 0,
+      "pat013_component_joint": 0
+    }
+  },
+  "records": [
+    {
+      "recording_id": "drummer1/eval_session/1",
+      "member": "groove/drummer1/eval_session/1_funk-groove1_138_beat_4-4.mid",
+      "midi_sha256": "0c579a8e907ef5a9ccb7e47096f9894179a3a0ab1a2d97acb420044fc34f3562",
+      "drummer": "drummer1",
+      "style": "funk/groove1",
+      "bpm_metadata": 138,
+      "ppq": 480,
+      "complete_bars": 16,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 2,
+          "snare38_backbeat": 3,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 15,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 4,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 2,
+          "snare38_backbeat": 5,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 15,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 4,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer1/eval_session/2",
+      "member": "groove/drummer1/eval_session/2_funk-groove2_105_beat_4-4.mid",
+      "midi_sha256": "05bd92056f42f61de95702b55433dc083cd0064148ad6d478880470548bfced1",
+      "drummer": "drummer1",
+      "style": "funk/groove2",
+      "bpm_metadata": 105,
+      "ppq": 480,
+      "complete_bars": 15,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 3,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 13,
+          "downbeat_kick_at_bar_max_velocity": 2,
+          "exact_tick_multi_pitch_collision": 1,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 4,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 13,
+          "downbeat_kick_at_bar_max_velocity": 3,
+          "exact_tick_multi_pitch_collision": 1,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer1/eval_session/5",
+      "member": "groove/drummer1/eval_session/5_funk-groove5_84_beat_4-4.mid",
+      "midi_sha256": "1c72abd93ccf875f9546ad751758225e1349d7f8f3ceb61d380df534172fd459",
+      "drummer": "drummer1",
+      "style": "funk/groove5",
+      "bpm_metadata": 84,
+      "ppq": 480,
+      "complete_bars": 15,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 0,
+          "snare38_backbeat": 1,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 11,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 9,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 0,
+          "snare38_backbeat": 5,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 11,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 9,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer1/session1/1",
+      "member": "groove/drummer1/session1/1_funk_80_beat_4-4.mid",
+      "midi_sha256": "532056021de9578813e7c9acdf7efca62d868d74c3a0aaafd0b4b1f0faa48555",
+      "drummer": "drummer1",
+      "style": "funk",
+      "bpm_metadata": 80,
+      "ppq": 480,
+      "complete_bars": 29,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 3,
+          "snare38_backbeat": 9,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 18,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 13,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 3,
+          "snare38_backbeat": 19,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 18,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 13,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer1/session1/102",
+      "member": "groove/drummer1/session1/102_funk_95_beat_4-4.mid",
+      "midi_sha256": "e4178d7fda35a643643ad8ce5d423061ca94786461d5006f671c70087ad65798",
+      "drummer": "drummer1",
+      "style": "funk",
+      "bpm_metadata": 95,
+      "ppq": 480,
+      "complete_bars": 105,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 18,
+          "snare38_backbeat": 1,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 76,
+          "downbeat_kick_at_bar_max_velocity": 3,
+          "exact_tick_multi_pitch_collision": 21,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 19,
+          "snare38_backbeat": 3,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 1,
+          "snare38_velocity25_45_off_backbeat": 75,
+          "downbeat_kick_at_bar_max_velocity": 3,
+          "exact_tick_multi_pitch_collision": 21,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer1/session1/126",
+      "member": "groove/drummer1/session1/126_funk-fast_125_beat_4-4.mid",
+      "midi_sha256": "38ae9e683f8b021d893103a6e84475b11f7aff9abf923834ccebbff67730cd5a",
+      "drummer": "drummer1",
+      "style": "funk/fast",
+      "bpm_metadata": 125,
+      "ppq": 480,
+      "complete_bars": 111,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 11,
+          "snare38_backbeat": 5,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 68,
+          "downbeat_kick_at_bar_max_velocity": 6,
+          "exact_tick_multi_pitch_collision": 17,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 14,
+          "snare38_backbeat": 12,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 67,
+          "downbeat_kick_at_bar_max_velocity": 7,
+          "exact_tick_multi_pitch_collision": 17,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer1/session1/2",
+      "member": "groove/drummer1/session1/2_funk_80_beat_4-4.mid",
+      "midi_sha256": "948e5c0175fe79b536512b7f219547493ac4f65c07147e6340eaba4670c349db",
+      "drummer": "drummer1",
+      "style": "funk",
+      "bpm_metadata": 80,
+      "ppq": 480,
+      "complete_bars": 29,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 1,
+          "snare38_backbeat": 9,
+          "hat42_sixteenths": 1,
+          "hat42_22_sixteenths": 1,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 21,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 13,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 1,
+          "snare38_backbeat": 15,
+          "hat42_sixteenths": 1,
+          "hat42_22_sixteenths": 1,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 21,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 13,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer1/session1/239",
+      "member": "groove/drummer1/session1/239_funk-purdieshuffle_130_beat_4-4.mid",
+      "midi_sha256": "beaa0744211b03ad2dfd5058f1d1b1ef78b0abf52ac92453bd4189cd2da93bd7",
+      "drummer": "drummer1",
+      "style": "funk/purdieshuffle",
+      "bpm_metadata": 130,
+      "ppq": 480,
+      "complete_bars": 170,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 9,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 71,
+          "downbeat_kick_at_bar_max_velocity": 3,
+          "exact_tick_multi_pitch_collision": 17,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 10,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 71,
+          "downbeat_kick_at_bar_max_velocity": 4,
+          "exact_tick_multi_pitch_collision": 17,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer1/session1/3",
+      "member": "groove/drummer1/session1/3_funk_80_beat_4-4.mid",
+      "midi_sha256": "01e63c2bc0d59351347ba53802cf55d374d4b63c46abbe0c82fbcf7daaec43be",
+      "drummer": "drummer1",
+      "style": "funk",
+      "bpm_metadata": 80,
+      "ppq": 480,
+      "complete_bars": 41,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 2,
+          "snare38_backbeat": 1,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 33,
+          "downbeat_kick_at_bar_max_velocity": 2,
+          "exact_tick_multi_pitch_collision": 20,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 3,
+          "snare38_backbeat": 5,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 33,
+          "downbeat_kick_at_bar_max_velocity": 3,
+          "exact_tick_multi_pitch_collision": 20,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer1/session2/90",
+      "member": "groove/drummer1/session2/90_funk-rock_92_beat_4-4.mid",
+      "midi_sha256": "722df3833d0512c243c6c1ff0273bb62fb11e476e586d86e26b05b6e8b81b46e",
+      "drummer": "drummer1",
+      "style": "funk/rock",
+      "bpm_metadata": 92,
+      "ppq": 480,
+      "complete_bars": 45,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 0,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 40,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 17,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 0,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 40,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 17,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer1/session3/15",
+      "member": "groove/drummer1/session3/15_funk_117_beat_4-4.mid",
+      "midi_sha256": "cc92d8f06e4c185d7df75b711e560724ea5b5805a4e85aad4c5cd1705cbd6d3d",
+      "drummer": "drummer1",
+      "style": "funk",
+      "bpm_metadata": 117,
+      "ppq": 480,
+      "complete_bars": 70,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 1,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 1,
+          "hat42_22_sixteenths": 2,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 1,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 2,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 1,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 2,
+          "hat42_22_sixteenths": 6,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 1,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 2,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer1/session3/16",
+      "member": "groove/drummer1/session3/16_funk_117_beat_4-4.mid",
+      "midi_sha256": "93527dd7ed9ceae60b1192ec915664f07dcca0f6827e115a3cf26b0ce63c3f78",
+      "drummer": "drummer1",
+      "style": "funk",
+      "bpm_metadata": 117,
+      "ppq": 480,
+      "complete_bars": 42,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 2,
+          "snare38_backbeat": 1,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 2,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 0,
+          "downbeat_kick_at_bar_max_velocity": 2,
+          "exact_tick_multi_pitch_collision": 4,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 3,
+          "snare38_backbeat": 2,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 2,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 0,
+          "downbeat_kick_at_bar_max_velocity": 3,
+          "exact_tick_multi_pitch_collision": 4,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer5/eval_session/1",
+      "member": "groove/drummer5/eval_session/1_funk-groove1_138_beat_4-4.mid",
+      "midi_sha256": "59c1a01f5b5182ad6282bb89507fde852741abe2d3eac69cbc79b1f9ff3bfac8",
+      "drummer": "drummer5",
+      "style": "funk/groove1",
+      "bpm_metadata": 138,
+      "ppq": 480,
+      "complete_bars": 16,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 10,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 15,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 3,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 10,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 15,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 3,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer5/eval_session/2",
+      "member": "groove/drummer5/eval_session/2_funk-groove2_105_beat_4-4.mid",
+      "midi_sha256": "60dc7b5d4c7d0a501ae10c34a9754aedbe1771ef599e70dacf840fe06c0522a8",
+      "drummer": "drummer5",
+      "style": "funk/groove2",
+      "bpm_metadata": 105,
+      "ppq": 480,
+      "complete_bars": 15,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 6,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 7,
+          "downbeat_kick_at_bar_max_velocity": 2,
+          "exact_tick_multi_pitch_collision": 6,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 10,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 7,
+          "downbeat_kick_at_bar_max_velocity": 4,
+          "exact_tick_multi_pitch_collision": 6,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer5/eval_session/5",
+      "member": "groove/drummer5/eval_session/5_funk-groove5_84_beat_4-4.mid",
+      "midi_sha256": "13e98e7837d6bea168ed55088fd49432d59a3d7727998247303bcf9815d6826e",
+      "drummer": "drummer5",
+      "style": "funk/groove5",
+      "bpm_metadata": 84,
+      "ppq": 480,
+      "complete_bars": 15,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 5,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 4,
+          "snare38_velocity25_45_off_backbeat": 10,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 8,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 5,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 4,
+          "snare38_velocity25_45_off_backbeat": 7,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 8,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer5/session1/15",
+      "member": "groove/drummer5/session1/15_funk_100_beat_4-4.mid",
+      "midi_sha256": "bdc55ba06aaf9ae7138070777f2fd2bf40c63f1781a72c0ee776e0c3eb4df35d",
+      "drummer": "drummer5",
+      "style": "funk",
+      "bpm_metadata": 100,
+      "ppq": 480,
+      "complete_bars": 124,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 19,
+          "snare38_backbeat": 1,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 86,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 55,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 68,
+          "snare38_backbeat": 6,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 5,
+          "snare38_velocity25_45_off_backbeat": 84,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 55,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/eval_session/1",
+      "member": "groove/drummer7/eval_session/1_funk-groove1_138_beat_4-4.mid",
+      "midi_sha256": "65c823de736bb9619a3fe21b8ee4d8f69d881a12b281425f98eb320bfeb2b10b",
+      "drummer": "drummer7",
+      "style": "funk/groove1",
+      "bpm_metadata": 138,
+      "ppq": 480,
+      "complete_bars": 15,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 5,
+          "snare38_backbeat": 1,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 8,
+          "downbeat_kick_at_bar_max_velocity": 2,
+          "exact_tick_multi_pitch_collision": 2,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 8,
+          "snare38_backbeat": 2,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 8,
+          "downbeat_kick_at_bar_max_velocity": 4,
+          "exact_tick_multi_pitch_collision": 2,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/eval_session/2",
+      "member": "groove/drummer7/eval_session/2_funk-groove2_105_beat_4-4.mid",
+      "midi_sha256": "b9b75dee2c266057675621bddff2c6a5405fdc7efa3dd15d58246877d21ab9ea",
+      "drummer": "drummer7",
+      "style": "funk/groove2",
+      "bpm_metadata": 105,
+      "ppq": 480,
+      "complete_bars": 15,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 4,
+          "snare38_backbeat": 7,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 0,
+          "downbeat_kick_at_bar_max_velocity": 2,
+          "exact_tick_multi_pitch_collision": 2,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 4,
+          "snare38_backbeat": 15,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 0,
+          "downbeat_kick_at_bar_max_velocity": 2,
+          "exact_tick_multi_pitch_collision": 2,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/eval_session/5",
+      "member": "groove/drummer7/eval_session/5_funk-groove5_84_beat_4-4.mid",
+      "midi_sha256": "1f6d5e679a91a3bd81c4da7d3f7db35d73d04695957983de52ca1dca87512c15",
+      "drummer": "drummer7",
+      "style": "funk/groove5",
+      "bpm_metadata": 84,
+      "ppq": 480,
+      "complete_bars": 16,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 1,
+          "snare38_backbeat": 1,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 7,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 6,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 1,
+          "snare38_backbeat": 8,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 1,
+          "snare38_velocity25_45_off_backbeat": 7,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 6,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session1/12",
+      "member": "groove/drummer7/session1/12_funk_102_beat_4-4.mid",
+      "midi_sha256": "58f2f2e0d84a876ad1c148b2dc8c971c30d7e6a851b7ff7ad617e4b69aab1760",
+      "drummer": "drummer7",
+      "style": "funk",
+      "bpm_metadata": 102,
+      "ppq": 480,
+      "complete_bars": 23,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 0,
+          "snare38_backbeat": 5,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 22,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 11,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 0,
+          "snare38_backbeat": 18,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 22,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 11,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session1/13",
+      "member": "groove/drummer7/session1/13_funk_102_beat_4-4.mid",
+      "midi_sha256": "dd38d986db4cf6c159bcd0759d7065fb57adec8cb1c3b43513bbaca795d3565f",
+      "drummer": "drummer7",
+      "style": "funk",
+      "bpm_metadata": 102,
+      "ppq": 480,
+      "complete_bars": 40,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 4,
+          "snare38_backbeat": 6,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 37,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 16,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 4,
+          "snare38_backbeat": 29,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 37,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 16,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/72",
+      "member": "groove/drummer7/session2/72_funk_100_beat_4-4.mid",
+      "midi_sha256": "218b39c39fbe63a6b6bd86fa0940fa0fee6c620e6a1d1eb20c441e0326fbe735",
+      "drummer": "drummer7",
+      "style": "funk",
+      "bpm_metadata": 100,
+      "ppq": 480,
+      "complete_bars": 44,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 3,
+          "snare38_backbeat": 12,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 44,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 15,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 3,
+          "snare38_backbeat": 27,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 44,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 15,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/76",
+      "member": "groove/drummer7/session2/76_funk_100_beat_4-4.mid",
+      "midi_sha256": "b29755941c75f742cfa299515e8ab5c41505ffd673cde4ac59e07efca76537c9",
+      "drummer": "drummer7",
+      "style": "funk",
+      "bpm_metadata": 100,
+      "ppq": 480,
+      "complete_bars": 1,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 0,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 1,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 0,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 0,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 1,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 0,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/77",
+      "member": "groove/drummer7/session2/77_funk_100_beat_4-4.mid",
+      "midi_sha256": "cc75102398ca3f35dea70b5ffd8fa2739a6978ff1d646f5fa4d1d45e7b9c5f62",
+      "drummer": "drummer7",
+      "style": "funk",
+      "bpm_metadata": 100,
+      "ppq": 480,
+      "complete_bars": 3,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 0,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 3,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 2,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 0,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 3,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 2,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/78",
+      "member": "groove/drummer7/session2/78_funk_100_beat_4-4.mid",
+      "midi_sha256": "482270147f76f08d5f24bc17e2104a31b2abd2b326a974b042cebaf78eaeb631",
+      "drummer": "drummer7",
+      "style": "funk",
+      "bpm_metadata": 100,
+      "ppq": 480,
+      "complete_bars": 1,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 0,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 1,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 1,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 0,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 1,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 1,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/79",
+      "member": "groove/drummer7/session2/79_funk_100_beat_4-4.mid",
+      "midi_sha256": "0b16c19cb2a5c7f11405cf1596f0594769c333acbb60a8cff2f68bb21972308d",
+      "drummer": "drummer7",
+      "style": "funk",
+      "bpm_metadata": 100,
+      "ppq": 480,
+      "complete_bars": 9,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 1,
+          "snare38_backbeat": 2,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 9,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 0,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 1,
+          "snare38_backbeat": 3,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 9,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 0,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session3/47",
+      "member": "groove/drummer7/session3/47_funk_112_beat_4-4.mid",
+      "midi_sha256": "fb075da87c105ebdbf50d2653516b958b271e0f88291bddaf06487710ebf9190",
+      "drummer": "drummer7",
+      "style": "funk",
+      "bpm_metadata": 112,
+      "ppq": 480,
+      "complete_bars": 44,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 3,
+          "snare38_backbeat": 4,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 43,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 9,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 3,
+          "snare38_backbeat": 8,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 43,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 9,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session3/48",
+      "member": "groove/drummer7/session3/48_funk_112_beat_4-4.mid",
+      "midi_sha256": "a7fc5ee5253df04047ec0e75afdc2686c1404c75bde2dfecca8919929a06a659",
+      "drummer": "drummer7",
+      "style": "funk",
+      "bpm_metadata": 112,
+      "ppq": 480,
+      "complete_bars": 5,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 1,
+          "snare38_backbeat": 2,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 5,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 3,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 1,
+          "snare38_backbeat": 2,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 5,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 3,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session3/49",
+      "member": "groove/drummer7/session3/49_funk_112_beat_4-4.mid",
+      "midi_sha256": "405d54e5281296a434da31ea2dc7466a4dbab61c317a1c66df1e3a4435e8b3e2",
+      "drummer": "drummer7",
+      "style": "funk",
+      "bpm_metadata": 112,
+      "ppq": 480,
+      "complete_bars": 15,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 3,
+          "snare38_backbeat": 9,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 15,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 4,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 3,
+          "snare38_backbeat": 14,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 15,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 4,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session3/64",
+      "member": "groove/drummer7/session3/64_funk_112_beat_4-4.mid",
+      "midi_sha256": "f33340055b25421e4a6000c7d34c8435e826fd7bdfc3a873a88bc78490164dbd",
+      "drummer": "drummer7",
+      "style": "funk",
+      "bpm_metadata": 112,
+      "ppq": 480,
+      "complete_bars": 15,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 0,
+          "snare38_backbeat": 3,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 15,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 5,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 0,
+          "snare38_backbeat": 12,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 15,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 5,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session3/65",
+      "member": "groove/drummer7/session3/65_funk_112_beat_4-4.mid",
+      "midi_sha256": "942dd75a164046bc9916c08124323b0e2613947c963192224c9a36d60c10610d",
+      "drummer": "drummer7",
+      "style": "funk",
+      "bpm_metadata": 112,
+      "ppq": 480,
+      "complete_bars": 37,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 4,
+          "snare38_backbeat": 24,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 37,
+          "downbeat_kick_at_bar_max_velocity": 2,
+          "exact_tick_multi_pitch_collision": 5,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 4,
+          "snare38_backbeat": 34,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 37,
+          "downbeat_kick_at_bar_max_velocity": 2,
+          "exact_tick_multi_pitch_collision": 5,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/eval_session/1",
+      "member": "groove/drummer8/eval_session/1_funk-groove1_138_beat_4-4.mid",
+      "midi_sha256": "499c9f369ecc9149cf438ab8b95a6860bc76f520a17ab701b8dd959970e30f64",
+      "drummer": "drummer8",
+      "style": "funk/groove1",
+      "bpm_metadata": 138,
+      "ppq": 480,
+      "complete_bars": 15,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 10,
+          "snare38_backbeat": 2,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 13,
+          "downbeat_kick_at_bar_max_velocity": 5,
+          "exact_tick_multi_pitch_collision": 2,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 12,
+          "snare38_backbeat": 3,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 13,
+          "downbeat_kick_at_bar_max_velocity": 7,
+          "exact_tick_multi_pitch_collision": 2,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/eval_session/2",
+      "member": "groove/drummer8/eval_session/2_funk-groove2_105_beat_4-4.mid",
+      "midi_sha256": "bdebf662f759b9027d572a9b91d7639e9dac943f570954f5b0adc30fd0404005",
+      "drummer": "drummer8",
+      "style": "funk/groove2",
+      "bpm_metadata": 105,
+      "ppq": 480,
+      "complete_bars": 15,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 8,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 0,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 3,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 9,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 0,
+          "downbeat_kick_at_bar_max_velocity": 0,
+          "exact_tick_multi_pitch_collision": 3,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/eval_session/5",
+      "member": "groove/drummer8/eval_session/5_funk-groove5_84_beat_4-4.mid",
+      "midi_sha256": "6ac052b3b45106854b8307467c0ef1840e410292ee0227917882b61ea43b7f6d",
+      "drummer": "drummer8",
+      "style": "funk/groove5",
+      "bpm_metadata": 84,
+      "ppq": 480,
+      "complete_bars": 15,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 5,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 2,
+          "snare38_velocity25_45_off_backbeat": 0,
+          "downbeat_kick_at_bar_max_velocity": 4,
+          "exact_tick_multi_pitch_collision": 9,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 5,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 3,
+          "hat42_22_sixteenths": 3,
+          "pat013_kick_grid": 2,
+          "snare38_velocity25_45_off_backbeat": 0,
+          "downbeat_kick_at_bar_max_velocity": 4,
+          "exact_tick_multi_pitch_collision": 9,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session1/1",
+      "member": "groove/drummer8/session1/1_funk_95_beat_4-4.mid",
+      "midi_sha256": "c8215ea887cc75a7994caa4ce3a274ace0b75a295f281fffa93034617f38cf54",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 95,
+      "ppq": 480,
+      "complete_bars": 103,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 20,
+          "snare38_backbeat": 46,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 6,
+          "downbeat_kick_at_bar_max_velocity": 14,
+          "exact_tick_multi_pitch_collision": 38,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 20,
+          "snare38_backbeat": 49,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 6,
+          "downbeat_kick_at_bar_max_velocity": 14,
+          "exact_tick_multi_pitch_collision": 38,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session1/18",
+      "member": "groove/drummer8/session1/18_funk_108_beat_4-4.mid",
+      "midi_sha256": "e33654e42e82a46888eb0dcc0a3f05bcbb8a2ae49250c4e580e9fa4fe6a9ae71",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 108,
+      "ppq": 480,
+      "complete_bars": 69,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 7,
+          "snare38_backbeat": 1,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 67,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 34,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 7,
+          "snare38_backbeat": 1,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 67,
+          "downbeat_kick_at_bar_max_velocity": 1,
+          "exact_tick_multi_pitch_collision": 34,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session1/19",
+      "member": "groove/drummer8/session1/19_funk_108_beat_4-4.mid",
+      "midi_sha256": "15d8f4d9a9165698581ee1e09c055c5c4a40824a1216505520fbcbfb64151f5a",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 108,
+      "ppq": 480,
+      "complete_bars": 84,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 17,
+          "snare38_backbeat": 2,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 71,
+          "downbeat_kick_at_bar_max_velocity": 9,
+          "exact_tick_multi_pitch_collision": 29,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 18,
+          "snare38_backbeat": 2,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 2,
+          "snare38_velocity25_45_off_backbeat": 70,
+          "downbeat_kick_at_bar_max_velocity": 10,
+          "exact_tick_multi_pitch_collision": 29,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session1/2",
+      "member": "groove/drummer8/session1/2_funk_95_beat_4-4.mid",
+      "midi_sha256": "b1804401dfad9168cfa31a952f545a1019bc6398b45db32946e593a55604e74a",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 95,
+      "ppq": 480,
+      "complete_bars": 63,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 13,
+          "snare38_backbeat": 6,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 0,
+          "downbeat_kick_at_bar_max_velocity": 9,
+          "exact_tick_multi_pitch_collision": 12,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 13,
+          "snare38_backbeat": 7,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 0,
+          "downbeat_kick_at_bar_max_velocity": 9,
+          "exact_tick_multi_pitch_collision": 12,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session1/22",
+      "member": "groove/drummer8/session1/22_funk_115_beat_4-4.mid",
+      "midi_sha256": "f58165864977396a2478a77fbd97353f4ed568fefc9a8bc72a077f5a104a876f",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 115,
+      "ppq": 480,
+      "complete_bars": 120,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 3,
+          "snare38_backbeat": 3,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 104,
+          "downbeat_kick_at_bar_max_velocity": 3,
+          "exact_tick_multi_pitch_collision": 41,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 3,
+          "snare38_backbeat": 13,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 104,
+          "downbeat_kick_at_bar_max_velocity": 3,
+          "exact_tick_multi_pitch_collision": 41,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session1/24",
+      "member": "groove/drummer8/session1/24_funk-latin_100_beat_4-4.mid",
+      "midi_sha256": "cdf56b2f11c62e3aeb17b7d4602019222d101eecc8d64348ffc4da5cef569fbf",
+      "drummer": "drummer8",
+      "style": "funk/latin",
+      "bpm_metadata": 100,
+      "ppq": 480,
+      "complete_bars": 80,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 4,
+          "snare38_backbeat": 6,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 49,
+          "downbeat_kick_at_bar_max_velocity": 4,
+          "exact_tick_multi_pitch_collision": 30,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 4,
+          "snare38_backbeat": 9,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 49,
+          "downbeat_kick_at_bar_max_velocity": 4,
+          "exact_tick_multi_pitch_collision": 30,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session1/25",
+      "member": "groove/drummer8/session1/25_funk-latin_100_beat_4-4.mid",
+      "midi_sha256": "6f6496cb29b7d5328a730d5885ff412d35cce2a6b4e0b9e0803bd0e0d98abb4a",
+      "drummer": "drummer8",
+      "style": "funk/latin",
+      "bpm_metadata": 100,
+      "ppq": 480,
+      "complete_bars": 52,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 8,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 23,
+          "downbeat_kick_at_bar_max_velocity": 3,
+          "exact_tick_multi_pitch_collision": 22,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 9,
+          "snare38_backbeat": 1,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 23,
+          "downbeat_kick_at_bar_max_velocity": 4,
+          "exact_tick_multi_pitch_collision": 22,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session1/6",
+      "member": "groove/drummer8/session1/6_funk_80_beat_4-4.mid",
+      "midi_sha256": "d76586ed3c2c7782e38bfd60daf4cfd67ac27b6da7d5e97aeba6c35cb5bd9dc2",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 80,
+      "ppq": 480,
+      "complete_bars": 55,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 10,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 1,
+          "downbeat_kick_at_bar_max_velocity": 4,
+          "exact_tick_multi_pitch_collision": 37,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 10,
+          "snare38_backbeat": 1,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 1,
+          "downbeat_kick_at_bar_max_velocity": 4,
+          "exact_tick_multi_pitch_collision": 37,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session1/7",
+      "member": "groove/drummer8/session1/7_funk_80_beat_4-4.mid",
+      "midi_sha256": "7afa545e9eceedafa634ac94ab49dcb36fd1d8b9d0534e8927af130731d77bfa",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 80,
+      "ppq": 480,
+      "complete_bars": 51,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 8,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 4,
+          "downbeat_kick_at_bar_max_velocity": 7,
+          "exact_tick_multi_pitch_collision": 24,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 9,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 4,
+          "downbeat_kick_at_bar_max_velocity": 8,
+          "exact_tick_multi_pitch_collision": 24,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session1/8",
+      "member": "groove/drummer8/session1/8_funk_96_beat_4-4.mid",
+      "midi_sha256": "f5ab0f63623287ad088b09d5825603dba94e17682b7efb636258ade3e5e61414",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 96,
+      "ppq": 480,
+      "complete_bars": 63,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 35,
+          "snare38_backbeat": 1,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 0,
+          "downbeat_kick_at_bar_max_velocity": 14,
+          "exact_tick_multi_pitch_collision": 4,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 36,
+          "snare38_backbeat": 1,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 0,
+          "downbeat_kick_at_bar_max_velocity": 14,
+          "exact_tick_multi_pitch_collision": 4,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session1/9",
+      "member": "groove/drummer8/session1/9_funk_96_beat_4-4.mid",
+      "midi_sha256": "a8835c8f97bcefa09949e340dd610f2e81cda0966e4e2f78cc1d10cf09451cbf",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 96,
+      "ppq": 480,
+      "complete_bars": 39,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 18,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 0,
+          "downbeat_kick_at_bar_max_velocity": 6,
+          "exact_tick_multi_pitch_collision": 5,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 19,
+          "snare38_backbeat": 0,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 0,
+          "downbeat_kick_at_bar_max_velocity": 6,
+          "exact_tick_multi_pitch_collision": 5,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session2/1",
+      "member": "groove/drummer8/session2/1_funk_92_beat_4-4.mid",
+      "midi_sha256": "b8fd55e8c8c74731ba5df06f2717d6823e362e39c99a2e467c8b59e52bfe7581",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 92,
+      "ppq": 480,
+      "complete_bars": 65,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 36,
+          "snare38_backbeat": 10,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 1,
+          "snare38_velocity25_45_off_backbeat": 64,
+          "downbeat_kick_at_bar_max_velocity": 15,
+          "exact_tick_multi_pitch_collision": 41,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 36,
+          "snare38_backbeat": 11,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 12,
+          "snare38_velocity25_45_off_backbeat": 64,
+          "downbeat_kick_at_bar_max_velocity": 15,
+          "exact_tick_multi_pitch_collision": 41,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session2/11",
+      "member": "groove/drummer8/session2/11_funk_81_beat_4-4.mid",
+      "midi_sha256": "91c2ac3e6373089d467e387bfd03f8df8979d2f7c1d5b7c3ba684d735a253b85",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 81,
+      "ppq": 480,
+      "complete_bars": 79,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 22,
+          "snare38_backbeat": 57,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 6,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 10,
+          "downbeat_kick_at_bar_max_velocity": 15,
+          "exact_tick_multi_pitch_collision": 34,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 22,
+          "snare38_backbeat": 59,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 8,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 10,
+          "downbeat_kick_at_bar_max_velocity": 15,
+          "exact_tick_multi_pitch_collision": 34,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session2/12",
+      "member": "groove/drummer8/session2/12_funk_81_beat_4-4.mid",
+      "midi_sha256": "c6d55233b1cd31df61a9e137c9763b1a3dc3b9c76277908a447fb253e1632248",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 81,
+      "ppq": 480,
+      "complete_bars": 64,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 28,
+          "snare38_backbeat": 42,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 1,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 11,
+          "downbeat_kick_at_bar_max_velocity": 16,
+          "exact_tick_multi_pitch_collision": 37,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 29,
+          "snare38_backbeat": 43,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 2,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 11,
+          "downbeat_kick_at_bar_max_velocity": 17,
+          "exact_tick_multi_pitch_collision": 37,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session2/15",
+      "member": "groove/drummer8/session2/15_funk_95_beat_4-4.mid",
+      "midi_sha256": "6397ccd959ab0b2bd2d214579b475d577603c7345ce3e8fad0ebe49a5204954b",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 95,
+      "ppq": 480,
+      "complete_bars": 72,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 25,
+          "snare38_backbeat": 58,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 22,
+          "downbeat_kick_at_bar_max_velocity": 17,
+          "exact_tick_multi_pitch_collision": 16,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 27,
+          "snare38_backbeat": 67,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 1,
+          "snare38_velocity25_45_off_backbeat": 21,
+          "downbeat_kick_at_bar_max_velocity": 19,
+          "exact_tick_multi_pitch_collision": 16,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session2/16",
+      "member": "groove/drummer8/session2/16_funk_95_beat_4-4.mid",
+      "midi_sha256": "3363a933490aedd78abc2090ad4d8f4df68d55a013592b585d5a53a72fa14eea",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 95,
+      "ppq": 480,
+      "complete_bars": 56,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 20,
+          "snare38_backbeat": 37,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 11,
+          "downbeat_kick_at_bar_max_velocity": 17,
+          "exact_tick_multi_pitch_collision": 20,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 21,
+          "snare38_backbeat": 40,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 11,
+          "downbeat_kick_at_bar_max_velocity": 18,
+          "exact_tick_multi_pitch_collision": 20,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session2/2",
+      "member": "groove/drummer8/session2/2_funk_92_beat_4-4.mid",
+      "midi_sha256": "5e30e71033c9b0a8d907fc2615ea00755f5bc6f97c39d7dc893e3ff43b9c3ceb",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 92,
+      "ppq": 480,
+      "complete_bars": 140,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 44,
+          "snare38_backbeat": 5,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 113,
+          "downbeat_kick_at_bar_max_velocity": 14,
+          "exact_tick_multi_pitch_collision": 81,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 46,
+          "snare38_backbeat": 8,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 12,
+          "snare38_velocity25_45_off_backbeat": 112,
+          "downbeat_kick_at_bar_max_velocity": 15,
+          "exact_tick_multi_pitch_collision": 81,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session2/5",
+      "member": "groove/drummer8/session2/5_funk_91_beat_4-4.mid",
+      "midi_sha256": "b3149a1fa84b33a33b9f2053b2951f8641a7a4e6eb01d0b365fb525023f310b8",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 91,
+      "ppq": 480,
+      "complete_bars": 64,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 30,
+          "snare38_backbeat": 4,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 64,
+          "downbeat_kick_at_bar_max_velocity": 22,
+          "exact_tick_multi_pitch_collision": 39,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 30,
+          "snare38_backbeat": 4,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 4,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 64,
+          "downbeat_kick_at_bar_max_velocity": 22,
+          "exact_tick_multi_pitch_collision": 39,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/session2/6",
+      "member": "groove/drummer8/session2/6_funk_91_beat_4-4.mid",
+      "midi_sha256": "a014e63f21ccde6ed65031b60f7ff7ada7022cef07065d2e12b519bfa2ba3621",
+      "drummer": "drummer8",
+      "style": "funk",
+      "bpm_metadata": 91,
+      "ppq": 480,
+      "complete_bars": 55,
+      "counts": {
+        "0.04": {
+          "kick36_downbeat": 31,
+          "snare38_backbeat": 13,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 50,
+          "downbeat_kick_at_bar_max_velocity": 24,
+          "exact_tick_multi_pitch_collision": 32,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        },
+        "0.1": {
+          "kick36_downbeat": 38,
+          "snare38_backbeat": 15,
+          "hat42_sixteenths": 0,
+          "hat42_22_sixteenths": 0,
+          "pat013_kick_grid": 0,
+          "snare38_velocity25_45_off_backbeat": 50,
+          "downbeat_kick_at_bar_max_velocity": 29,
+          "exact_tick_multi_pitch_collision": 32,
+          "pat007_component_joint": 0,
+          "pat013_component_joint": 0
+        }
+      }
+    }
+  ]
+}

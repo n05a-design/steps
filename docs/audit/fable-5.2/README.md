@@ -49,3 +49,5 @@ Den aktuellen Prüfstand liefert der [Benchmark](../../../knowledge/benchmark/RE
 [Ride-/Dynamikprüfung nach PR #74](GMD_RIDE_DYNAMIK_FORTSETZUNG_2026-11-15.md): tatsächliche Zwischenintervalle, Kick-Präsenz und MIDI-Velocities der beiden Prüfstellen; institutionelle Foto-/Autorenhinweise zu CDR-019 von Originaltexten getrennt. Akustische und fachliche Abnahmen offen.
 
 [Pop-Pattern und Originalquellen nach PR #77](GMD_POP_ORIGINALQUELLEN_FORTSETZUNG_2026-11-15.md): 15 Pop-Performances/306 Takte mit zwei getrennten Kick-Vorschlägen und Original-/Familien-Hats; Garcia2013 nur metadatenbestätigt, PDF-Übertragungen unvollständig. Historische und externe Abnahmen offen.
+
+[Funk-Pattern und Reily-Originaltext nach PR #79](GMD_FUNK_REILY_FORTSETZUNG_2026-11-15.md):53 Performances/2560 Takte, getrennte Timing-/Velocitykomponenten; Reily1996 S.5 als zugeschriebene Originalprosa gelesen. Figur, Cabral und historische Kausalitaet weiter offen; keine Fach-/Rechte-/Sicherheitsfreigabe.

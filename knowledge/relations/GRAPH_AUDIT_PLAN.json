@@ -2222,7 +2222,7 @@
     },
     {
       "category": "HISTORICAL_SOURCE_REQUIRED",
-      "review_note": "Surdo-/Tamborim-Deutung als Überlieferung auffindbar, aber keine hier geprüfte zeitgenössische Entstehungsquelle; Gitarrenfamilie nicht mit Cross-Stick gleichsetzen. Neue getrennte Quellenprüfung: Ghezzi2009 mit Garcia1999-Verweisen; keine Originalinterview-/Schreiner-Prüfung und kein kausaler Entstehungsnachweis. Verlagsreferenzliste identifiziert Cabral-Essay Band2 S.10–17; indexierterp.12-Verweis ist keine Seitenprüfung. Songbook-Preview nur4 Inhaltsverzeichnisseiten. USP1998-Dissertation und Garcia1999-Buch getrennt. Neuer Originalbeitrag Garcia2023 PDF7/gedruckt6 Abs21–27 visuell geprüft: Basis und Varianten unterscheiden; Ähnlichkeit ist keine einfache Kausalrichtung. Kein Ersatz der ungelesenen älteren Quellen.",
+      "review_note": "Surdo-/Tamborim-Deutung als Überlieferung auffindbar, aber keine hier geprüfte zeitgenössische Entstehungsquelle; Gitarrenfamilie nicht mit Cross-Stick gleichsetzen. Neue getrennte Quellenprüfung: Ghezzi2009 mit Garcia1999-Verweisen; keine Originalinterview-/Schreiner-Prüfung und kein kausaler Entstehungsnachweis. Verlagsreferenzliste identifiziert Cabral-Essay Band2 S.10–17; indexierterp.12-Verweis ist keine Seitenprüfung. Songbook-Preview nur4 Inhaltsverzeichnisseiten. USP1998-Dissertation und Garcia1999-Buch getrennt. Neuer Originalbeitrag Garcia2023 PDF7/gedruckt6 Abs21–27 visuell geprüft: Basis und Varianten unterscheiden; Ähnlichkeit ist keine einfache Kausalrichtung. Kein Ersatz der ungelesenen älteren Quellen. Fortsetzung15.11: Reily1996 Original-PDF-Prosa S.5 und Bibliografie S.16 via Web gelesen; Zuschreibung an Baden Powell ueber Cabral n.d.a p12 jetzt direkt im Reily-Text nachgewiesen. Figur nicht visuell geprueft, Cabral-Original und historische Kausalitaet weiterhin offen.",
       "relation_id": "CDR-019",
       "edge": {
         "source_id": "BOSSA_BATIDA",
@@ -2234,14 +2234,15 @@
       "human_review": "AUSSTEHEND",
       "production_use_allowed": false,
       "source_assertion_verified": false,
-      "action": "Autorisierte Originale beschaffen: Reily1996 S.5/Fig.1, Cabral Band2 S.10–17 insbesonderep.12, Garcia1999 genannte Seiten und Schreiner-Ausgabe; historische Kausalität separat beurteilen.",
+      "action": "Reily Fig1 aus autorisierter Kopie visuell pruefen; Cabral Band2 S.10-17 insbesonderep12, Garcia1999 und Schreiner-Originalstellen beschaffen; Zuschreibung und Kausalitaet getrennt fachlich beurteilen.",
       "references": [
         "knowledge/relations/MUSIC_NODE_EVIDENCE.csv",
         "knowledge/sources/MUSIC_SOURCE_CLAIM_REGISTER.csv",
         "docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md",
         "docs/audit/fable-5.2/GRAPH_CDR019_CDR021_QUELLEN_2026-11-14.json",
         "docs/audit/fable-5.2/CDR019_ORIGINALSUCHE_2026-11-14.json",
-        "docs/audit/fable-5.2/CDR019_GARCIA_2023_QUELLENBEFUND_2026-11-14.json"
+        "docs/audit/fable-5.2/CDR019_GARCIA_2023_QUELLENBEFUND_2026-11-14.json",
+        "docs/audit/fable-5.2/CDR019_REILY_ORIGINALTEXT_2026-11-15.json"
       ],
       "candidate_claim_ids": [
         "CLAIM-039"
