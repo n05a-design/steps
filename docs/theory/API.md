@@ -73,6 +73,17 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`get_reviewed_progression`](../../app/knowledge.py) | `(prog_id: str) -> src.steps.progression.engine.ReviewedProgression` |
 | [`list_reviewed_progressions`](../../app/knowledge.py) | `() -> tuple[src.steps.progression.engine.ReviewedProgression, ...]` |
 
+## `app.brand`
+
+| Export | Signatur |
+|---|---|
+| [`APP_ICON_SIZES`](../../app/brand.py) | Datenwert |
+| [`LOGO_SIZES`](../../app/brand.py) | Datenwert |
+| [`app_icon_ico_path`](../../app/brand.py) | `() -> 'Path'` |
+| [`app_icon_path`](../../app/brand.py) | `(size: 'int' = 256) -> 'Path'` |
+| [`apply_window_icon`](../../app/brand.py) | `(root) -> 'None'` |
+| [`logo_path`](../../app/brand.py) | `(size: 'int' = 128) -> 'Path'` |
+
 ## Domänenobjekte
 
 ### [ReviewedProgression](../../src/steps/progression/engine.py)

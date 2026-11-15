@@ -9,6 +9,7 @@ Aus dem Repository-Root mit einer Python-Version aus der CI-Matrix 3.11 bis 3.14
 | Referenzidentität | `python -B scripts/verify_reference_integrity.py` | Prüft geschützte Referenzdateien und Inhalte gegen die hinterlegte Baseline. |
 | Lernmaterial | `python -B scripts/render_reviewed_progressions.py --check` | Prüft Quellen, die menschlichen Freigaben der konkreten Fassungen und den generierten Text. Vor Abschluss der Pilotabnahme blockiert diese Prüfung. |
 | API-Dokumentation | `python -B scripts/render_api_reference.py --check` | Prüft die generierten API-Exporte, Akkordqualitäten und Versionen gegen den Code. |
+| Logo und App-Symbol | `python -B scripts/build_brand_assets.py --check` | Prüft die SHA-256 der SVG-Master und die Bildpunkte der abgeleiteten PNG- und ICO-Dateien. Die Kern-Suite führt denselben Vergleich aus. |
 
 [GitHub Actions](../.github/workflows/python-tests.yml) führt die Kern- und
 Curation-Suiten sowie den API-Abgleich auf Ubuntu mit Python 3.11, 3.12, 3.13 und 3.14

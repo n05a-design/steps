@@ -37,6 +37,10 @@ scripts/git-hooks/* text eol=lf
 # Originale RTF-Fassung mit eingebetteten Bildern bytegenau erhalten.
 "research/notes/deep-research/Lösung und Analyse Musiktheorie-Fragen.rtf" binary
 
+# Logo-Master bytegenau halten, auch im Windows-Checkout; ihre SHA-256 stehen
+# in design/brand/README.md und scripts/build_brand_assets.py.
+design/brand/*.svg -text
+
 # Aus 99ca36a wiederhergestellte Glide-Gesamtaudit-Originale auch im Windows-Checkout bytegenau halten;
 # ihre SHA-256 stehen in knowledge/sources/MUSIC_SOURCE_REVIEW_PROGRESS.csv.
 archive/audit-history/glide-gesamtaudit-v2-recovery-2026-11-14/originals/** -text
