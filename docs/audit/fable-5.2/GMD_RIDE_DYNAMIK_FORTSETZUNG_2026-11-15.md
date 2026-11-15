@@ -3,8 +3,13 @@
 ## Geprüfte Basis und Arbeitskontext
 
 PR #74 wurde extern mit `ca69c16998b1e74e717ce7ede55208e3b4b172b5`
-gemergt. Der saubere Checkout wurde gegen GitHub abgeglichen und der Branch
-`codex/audit-pattern-dynamik-20261115` von diesem main angelegt.
+gemergt. Während der Prüfung kamen PR #75 (Markenassets) und #76
+(Projektseite) hinzu. Die finale Basis ist deshalb
+`7c8d73a1bd55a23b3ae6d4cb9bfdca0d4f4f33a9` auf dem Branch
+`codex/audit-ride-dynamik-20261115`. Der eigene Auditpatch wurde auf diese
+neue Basis übertragen; Markenassets und Projektseite bleiben erhalten.
+Der vorbereitende Commit `6e3498fc3873a37108415230990c5dd96db8043e`
+bleibt auf seinem früheren Auditbranch erhalten; kein Rewrite oder Force-Push.
 Die elf GMD-Swing-Performances und deren Auswahl wurden nicht neu definiert;
 dieses Paket untersucht die zwei bereits belegten engen Prüfstellen genauer.
 
@@ -120,10 +125,16 @@ Gesamtaudit **NICHT ABGESCHLOSSEN**; lokales OA-Register bleibt Aufgabenmaster.
 
 ## Lokale Abschlussvalidierung
 
-360 Kerntests und36 Skilltests sowie21 zusätzliche Integritäts-/Generator-
+371 Kerntests und36 Skilltests sowie21 zusätzliche Integritäts-/Generator-
 prüfungen bestehen. Die Originalmessung ist erneut reproduziert.
-Wissensbenchmark92 PASS/0 FAIL/27 PENDING, erwarteter Exit1.995 interne Links
+Wissensbenchmark92 PASS/0 FAIL/27 PENDING, erwarteter Exit1.1040 interne Links
 in168 Markdown-Dateien geprüft, keine neuen aktiven Fehler;25 bekannte
 Archivfehler bleiben dokumentiert. Der abschließende vollständige Secret-Scan
 und die Remote-CI-Zuordnung werden im lokalen Abschlussnachweis getrennt
 festgehalten. Diese Ergebnisse erteilen keine Fach-/Rechte-/Sicherheitsfreigabe.
+
+Die finale Wiederholungsprüfung auf7c8d73a berücksichtigt die elf zusätzlichen
+Marken-/Projektseitentests der neuen Basis. Die frühere360-Test-Prüfung auf
+ca69c16 bleibt als separater lokaler Nachweis erhalten; keine rückwirkende
+Änderung ihrer Revision oder Ergebnisse. Finale Protokolle liegen im
+Unterordner `current-main/` des lokalen Nachweisordners.
