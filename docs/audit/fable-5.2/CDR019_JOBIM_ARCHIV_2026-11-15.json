@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "relation_id": "CDR-019",
+  "older_original_pages_newly_verified": 0,
+  "historical_assertion_closed": false,
+  "human_approval": "AUSSTEHEND",
+  "records": [
+    {
+      "id": "JOBIM_8376",
+      "url": "https://www.jobim.org/jobim/handle/2010/8376?show=full",
+      "type": "INSTITUTIONAL_PHOTOGRAPH_METADATA",
+      "dc_type": "Fotografia",
+      "series": "p11f017",
+      "created": "1960",
+      "declared_jpeg_bytes": 68654,
+      "finding": "Title describes interview event, but actual item is a photograph. No interview transcript, notation or Tamborim/Surdo origin statement verified.",
+      "linked_reference": "Metadata refers to O Cruzeiro13April1960 article pim079 and a different Cabral1986 bookp124; neither was accessed as original article/book.",
+      "accepted_for_historical_causal_claim": false
+    },
+    {
+      "id": "JOBIM_9164",
+      "url": "https://jobim.org/jobim/handle/2010/9164",
+      "type": "SEARCH_METADATA_ONLY",
+      "finding": "Search identifies Mario Cabral, not Sergio Cabral. Required Em busca da perfeicao author/work identity is not established; no fulltext verified.",
+      "accepted_for_historical_causal_claim": false
+    },
+    {
+      "id": "JOBIM_SEARCH_ROUTES",
+      "urls": [
+        "https://www.jobim.org/jobim/simple-search?query=pim079",
+        "https://www.jobim.org/jobim/simple-search?query=%22Em+busca+da+perfei%C3%A7%C3%A3o%22"
+      ],
+      "type": "ACCESS_FAILED",
+      "finding": "Regular archive search URLs not accessible in browser fetch; no authentication or bypass attempted."
+    }
+  ],
+  "unchanged_required_originals": [
+    "Reily1996 p5/Fig1",
+    "Cabral Songbook Bossa Nova vol2 pp10–17/p12",
+    "Garcia1999 stated pages, distinct from1998 thesis",
+    "Schreiner identified edition and claim page"
+  ],
+  "rights": "Own metadata/findings only. No institutional photo, original article or book fulltext downloaded or committed. CSS/security clearance remains open."
+}
