@@ -355,7 +355,8 @@
       "historical_assertion_closed": false,
       "component_evidence": [
         "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json",
-        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json",
+        "docs/audit/fable-5.2/GMD_FUNK_PATTERN_2026-11-15.json"
       ],
       "rwc_scope": "HARMONIC_FORM_IN_POPULAR_NOT_REQUESTED_SUBGENRE"
     },
@@ -402,7 +403,8 @@
       "historical_assertion_closed": false,
       "component_evidence": [
         "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json",
-        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json",
+        "docs/audit/fable-5.2/GMD_FUNK_PATTERN_2026-11-15.json"
       ],
       "rwc_scope": "HARMONIC_FORM_IN_POPULAR_NOT_REQUESTED_SUBGENRE"
     },
