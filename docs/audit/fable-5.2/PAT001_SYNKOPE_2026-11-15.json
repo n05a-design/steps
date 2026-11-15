@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "source_archive_sha256": "27bc4da9c8730b143b2dacb4495c92bb45a00e0cf7d7b385d51203fc6055d534",
+  "anchor": {
+    "path": "knowledge/research/golden_cases/golden_reference_cases.json",
+    "case_id": "REF-0030",
+    "case_sha256": "7823e056fcebec2e8468e4b6dbaf6873ec067fe9f46af1d988e690212c580721",
+    "ppq": 480,
+    "tick": 1320,
+    "zero_based_quarter_phase": "11/4",
+    "scope": "Project timing definition only; linking it to PAT001 is a disclosed cross-reference, not human style acceptance."
+  },
+  "human_approval": "AUSSTEHEND",
+  "historical_assertion_closed": false,
+  "instrument_mapping_verified": false,
+  "exact_pattern_verified": false,
+  "method": "Half-open complete bars in union of strict PROG001 windows; channel9 positive note-ons; kick35/36, snare38, hat42; existing one-to-one matcher. Compare0.04 and0.1 local-quarter tolerances.",
+  "limits": "0.04 separates ideal2.75 from ideal2+2/3;0.1 does not. This is sensitivity analysis, no measured error distribution or human approval. Timing anchor is project evidence, not authentic instrumentation,115BPM identity, style prevalence or independent performance acceptance.",
+  "rows": [
+    {
+      "recording_id": "RWC_P009",
+      "midi_sha256": "8b75bb481a46137539a870d0e79de80e77a8b3fd205f35c2b95d438824ea67ae",
+      "beat_sha256": "d4096e9c49a003aa3c530c653cb583a114ccb5b5771b62b7a0f3a6d449c2d609",
+      "unique_complete_bars": 16,
+      "tolerances_in_local_quarters": {
+        "0.04": {
+          "syncopation_subset": 0,
+          "kick_grid_subset": 0,
+          "kick_same_note_grid": 0,
+          "joint_core_and_syncopation_subset": 0
+        },
+        "0.1": {
+          "syncopation_subset": 7,
+          "kick_grid_subset": 1,
+          "kick_same_note_grid": 0,
+          "joint_core_and_syncopation_subset": 0
+        }
+      }
+    },
+    {
+      "recording_id": "RWC_P048",
+      "midi_sha256": "d1551ae509d1f2bf85a13ca5e33a5387d7577b5e152ed070c5237c584be13262",
+      "beat_sha256": "9635d16438f6d0e9d8b24785cb68da5dc4e98fe097bc4515a300b8943b5b8636",
+      "unique_complete_bars": 8,
+      "tolerances_in_local_quarters": {
+        "0.04": {
+          "syncopation_subset": 0,
+          "kick_grid_subset": 0,
+          "kick_same_note_grid": 0,
+          "joint_core_and_syncopation_subset": 0
+        },
+        "0.1": {
+          "syncopation_subset": 0,
+          "kick_grid_subset": 0,
+          "kick_same_note_grid": 0,
+          "joint_core_and_syncopation_subset": 0
+        }
+      }
+    },
+    {
+      "recording_id": "RWC_P050",
+      "midi_sha256": "465d91075b09669b1d27697b1eddc7e02abcf1502605bd5a409cb49e22b48e4d",
+      "beat_sha256": "dd01328a31c9544034988d615ab14a6cd64f0952f413b62bc05d324f746a0f4a",
+      "unique_complete_bars": 15,
+      "tolerances_in_local_quarters": {
+        "0.04": {
+          "syncopation_subset": 0,
+          "kick_grid_subset": 0,
+          "kick_same_note_grid": 0,
+          "joint_core_and_syncopation_subset": 0
+        },
+        "0.1": {
+          "syncopation_subset": 0,
+          "kick_grid_subset": 0,
+          "kick_same_note_grid": 0,
+          "joint_core_and_syncopation_subset": 0
+        }
+      }
+    },
+    {
+      "recording_id": "RWC_P082",
+      "midi_sha256": "086ed81449f83b3ea84443ba9a00d9d3e887dd55336eabfa22f385f92d80e150",
+      "beat_sha256": "5122e120367e057f9363aef5a3ad535e4fb0f750a05455c5c4c12a8824db6f57",
+      "unique_complete_bars": 12,
+      "tolerances_in_local_quarters": {
+        "0.04": {
+          "syncopation_subset": 0,
+          "kick_grid_subset": 0,
+          "kick_same_note_grid": 0,
+          "joint_core_and_syncopation_subset": 0
+        },
+        "0.1": {
+          "syncopation_subset": 1,
+          "kick_grid_subset": 0,
+          "kick_same_note_grid": 0,
+          "joint_core_and_syncopation_subset": 0
+        }
+      }
+    },
+    {
+      "recording_id": "RWC_P084",
+      "midi_sha256": "581555db9d6d8b5da7547133baaede5f6fb16b1c35af540c3367350b535601d3",
+      "beat_sha256": "60cf74c920fa1573902a9b49131e6d489d62aeb00b8654716d3801562cab05de",
+      "unique_complete_bars": 3,
+      "tolerances_in_local_quarters": {
+        "0.04": {
+          "syncopation_subset": 0,
+          "kick_grid_subset": 0,
+          "kick_same_note_grid": 0,
+          "joint_core_and_syncopation_subset": 0
+        },
+        "0.1": {
+          "syncopation_subset": 0,
+          "kick_grid_subset": 0,
+          "kick_same_note_grid": 0,
+          "joint_core_and_syncopation_subset": 0
+        }
+      }
+    },
+    {
+      "recording_id": "RWC_P088",
+      "midi_sha256": "88d94ec464eec75ff4183c5f7fcbf752e01698c99525c14adecaa8583e840e31",
+      "beat_sha256": "d471aa1af557979004fc4e937ae11e3fcb71d6659084a5539165a8fef7dba776",
+      "unique_complete_bars": 10,
+      "tolerances_in_local_quarters": {
+        "0.04": {
+          "syncopation_subset": 0,
+          "kick_grid_subset": 0,
+          "kick_same_note_grid": 0,
+          "joint_core_and_syncopation_subset": 0
+        },
+        "0.1": {
+          "syncopation_subset": 0,
+          "kick_grid_subset": 0,
+          "kick_same_note_grid": 0,
+          "joint_core_and_syncopation_subset": 0
+        }
+      }
+    }
+  ]
+}

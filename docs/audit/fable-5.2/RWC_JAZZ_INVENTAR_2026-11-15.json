@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source_archive_sha256": "27bc4da9c8730b143b2dacb4495c92bb45a00e0cf7d7b385d51203fc6055d534",
+  "metadata_sha256": "eba3fe129f835db58a9c23dad554547201ab02ef3af90c10857ef5b50b8b99da",
+  "jazz_metadata_records": 50,
+  "jazz_midi_members": 50,
+  "jazz_chord_csv_members": 0,
+  "explicit_swing_ids": [
+    "RWC_J038"
+  ],
+  "harmonic_joint_evidence": false,
+  "human_approval": "AUSSTEHEND",
+  "historical_assertion_closed": false,
+  "scope": "Inventory only; J038 note-grid exploratory measurements kept local, no full harmonic pairing inferred."
+}

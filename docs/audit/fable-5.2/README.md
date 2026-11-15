@@ -41,3 +41,5 @@ Den aktuellen Prüfstand liefert der [Benchmark](../../../knowledge/benchmark/RE
 [Abgleich nach PR #70 und Pattern-Fortsetzung](ABGLEICH_PATTERN_FORTSETZUNG_2026-11-14.md): aktualisierte Restposten, strengere REL-001/REL-005-Notenrastermessung und CAPH-Referenz4195N; Fach-, Rechte- und Sicherheitsfreigaben offen.
 
 [Fortsetzung nach autorisiertem Push](PATTERN_QUELLEN_FORTSETZUNG_2026-11-15.md): konkrete Aufnahme-/Quelldateibindung des Patternvalidators korrigiert; Loader-Lieferung statisch geprüft und Schreiner-Editionsfrage präzisiert. Keine neue Fach- oder Rechtefreigabe.
+
+[Synkopenprüfung nach PR #71/#72](PATTERN_SYNKOPE_ORIGINALSUCHE_2026-11-15.md): historischen REF-0030-Tickanker wieder zugeordnet, Kick-Synkope mit zwei Toleranzen gemessen und Originalzugänge zu CDR-019 getrennt dokumentiert. Fach-/Rechte-/Sicherheitsabnahmen offen.
