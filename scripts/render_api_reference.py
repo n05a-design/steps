@@ -14,7 +14,7 @@ OUTPUT = ROOT / "docs/theory/API.md"
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from app import knowledge
+from app import brand, knowledge
 from src import steps
 from src.steps import progression, theory
 from src.steps.progression.engine import ReviewedProgression
@@ -32,7 +32,7 @@ def render() -> str:
         "",
     ]
     domain_types = [ReviewedProgression]
-    for module in (theory, progression, knowledge):
+    for module in (theory, progression, knowledge, brand):
         lines += [f"## `{module.__name__}`", "", "| Export | Signatur |", "|---|---|"]
         for name in module.__all__:
             value = getattr(module, name)

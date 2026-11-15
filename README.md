@@ -1,12 +1,27 @@
-# STEPS
+<p align="center">
+  <img src="app/assets/brand/steps-app-icon-512.png" alt="STEPS-Symbol" width="96">
+</p>
 
-STEPS ist ein Python-Kern für Musiktheorie und Akkordfolgen. Er verarbeitet
-Tonhöhen, Notation, Intervalle, Akkordsymbole, Stufen, Transposition und
-Stimmführung. Über die App-Schnittstelle sind drei fachlich freigegebene
-Pilotbeispiele mit Quellen verfügbar. Desktop-Oberfläche, Wiedergabe und
-Installationspakete befinden sich in Vorbereitung.
-[Implementierungsstand](docs/IMPLEMENTATION.md) ·
-[Geprüfte Lernbeispiele](knowledge/concepts/progressions/REVIEWED_PROGRESSIONS.md)
+<h1 align="center">STEPS</h1>
+
+<p align="center">
+  <strong>Python-Kern für Musiktheorie und Akkordfolgen.</strong><br>
+  STEPS verarbeitet Tonhöhen, Notation, Intervalle, Akkordsymbole, Stufen, Transposition und Stimmführung. Über die App-Schnittstelle sind drei fachlich freigegebene Pilotbeispiele mit Quellen verfügbar. Desktop-Oberfläche, Wiedergabe und Installationspakete befinden sich in Vorbereitung.
+</p>
+
+<p align="center">
+  <img alt="Python 3.11 bis 3.14" src="https://img.shields.io/badge/Python-3.11%E2%80%933.14-555">
+  <a href="LICENSE"><img alt="Lizenz MPL-2.0" src="https://img.shields.io/badge/Lizenz-MPL--2.0-2E7D32"></a>
+  <a href="https://github.com/n05a-design/steps/actions/workflows/python-tests.yml"><img alt="STEPS-Prüfung" src="https://github.com/n05a-design/steps/actions/workflows/python-tests.yml/badge.svg?branch=main"></a>
+</p>
+
+<p align="center">
+  <a href="#schnellstart"><strong>Schnellstart</strong></a> ·
+  <a href="docs/IMPLEMENTATION.md">Implementierungsstand</a> ·
+  <a href="knowledge/concepts/progressions/REVIEWED_PROGRESSIONS.md">Geprüfte Lernbeispiele</a> ·
+  <a href="docs/theory/API.md">Python-API</a> ·
+  <a href="CHANGELOG.md">Änderungen</a>
+</p>
 
 ## Schnellstart
 
@@ -35,12 +50,12 @@ Weitere Aufrufe und Grenzen stehen in der [Testanleitung](tests/README.md).
 | Ordner | Inhalt |
 | --- | --- |
 | [src](src/README.md) | Aktiver Python-Kern, historischer STEPS-Entwurf und Glide-Referenz. |
-| [app](app/README.md) | App-Wissensadapter und geplante Desktop-, UI- und Audio-Schichten. |
+| [app](app/README.md) | App-Wissensadapter, Logo und App-Symbol sowie geplante Desktop-, UI- und Audio-Schichten. |
 | [knowledge](knowledge/README.md) | Lernmaterial, Quellenregister, Fachkataloge und Wissensbenchmark. |
 | [research](research/README.md) | Historische Forschungsbibliothek, Arbeitsnotizen und offene Nachweise. |
 | [docs](docs/README.md) | Implementierungsstand, Architektur, Projektbetrieb, Roadmap und Audits. |
 | [decisions](decisions/README.md) | Architekturentscheidungen und ADR-Vorlagen. |
-| [design](design/README.md) | Gestaltungsvorgaben, Referenzen und Ablage für eigene Designartefakte. |
+| [design](design/README.md) | Logo-Master, Gestaltungsvorgaben, Referenzen und Ablage für eigene Designartefakte. |
 | [schemas](schemas/README.md) | JSON-Schema-Entwürfe für Fach- und Quelldaten. |
 | [tests](tests/README.md) | Prüfbefehle, Testmodule, Golden-Daten und Grenzen der Abnahme. |
 | [scripts](scripts/README.md) | Reproduzierbare Prüfungen, Generatoren und Übergabewerkzeuge. |
