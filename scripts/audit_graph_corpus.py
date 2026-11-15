@@ -156,6 +156,9 @@ def audit(document=None):
         if row['relation_id']=='REL-005':observation+=';GMD_SWING_PUBLISHER_MAPPED_DRUM_COMPONENT_NOT_HARMONIC_PAIRING'
         if row['relation_id']=='REL-005':observation+=';ACTUAL_RIDE_IOI_DIAGNOSTIC_NOT_FEATHERING_APPROVAL'
         if row['relation_id'] in {'REL-001','CR-029'}:observation+=';GMD_POP_LITERAL_HAT_FAMILY_AND_TWO_KICK_PROPOSALS_NO_JOINT_MATCH'
+        if row['relation_id'] in {'REL-006','REL-007'}:observation+=';GMD_FUNK_COMPONENTS_NO_FULL_PATTERN_OR_HARMONY_APPROVAL'
+        observation+=';GMD_EXPLICIT_LABEL_SCOPE_SEPARATE_FROM_PATTERN_VALIDITY'
+        if row['relation_id']=='REL-035':observation+=';SOUL_PROXY_NOT_VERIFIED_NEOSOUL_OR_PAT030'
         out.append({'relation_id':row['relation_id'],'original_row_sha256':row['original_row_sha256'],**row['original_edge'],
                     'sampling_frame':row['sampling_frame'],'required_annotations':';'.join(row['required_annotations']),
                     'candidate_gaps':json.dumps(checks,ensure_ascii=False,sort_keys=True),
@@ -182,8 +185,48 @@ def audit(document=None):
     detail.validate(json.loads(detail.OUTPUT.read_text(encoding='utf8')))
     from scripts import audit_gmd_pop_pattern as pop_pattern
     pop_pattern.validate(json.loads(pop_pattern.OUTPUT.read_text(encoding='utf8')))
+    from scripts import audit_gmd_funk as funk, audit_gmd_coverage as coverage
+    funk.validate(json.loads(funk.OUTPUT.read_text(encoding='utf8')))
+    coverage.validate(json.loads(coverage.OUTPUT.read_text(encoding='utf8')))
+    validate_reily_followup(json.loads((ROOT/'docs/audit/fable-5.2/CDR019_REILY_ORIGINALTEXT_2026-11-15.json').read_text(encoding='utf8')))
     validate_garcia_followup(json.loads((ROOT/'docs/audit/fable-5.2/CDR019_GARCIA_2023_QUELLENBEFUND_2026-11-14.json').read_text(encoding='utf8')))
+    validate_garcia_2013_fulltext(json.loads((ROOT/'docs/audit/fable-5.2/CDR019_GARCIA2013_VOLLTEXT_2026-11-15.json').read_text(encoding='utf8')))
+    validate_jobim_pim079_source(json.loads((ROOT/'docs/audit/fable-5.2/CDR019_JOBIM_PIM079_PRIMARQUELLE_2026-11-15.json').read_text(encoding='utf8')))
     return out
+
+
+def validate_garcia_2013_fulltext(d):
+    if (d['schema_version']!=1 or d['relation_id']!='CDR-019' or d['human_approval']!='AUSSTEHEND'
+            or d['historical_assertion_closed'] is not False or d['requested_older_original_pages_newly_verified']!=0
+            or d['candidate']['author']!='Walter Garcia' or d['candidate']['doi']!='10.11606/issn.2318-7875.v1i1p20-31'
+            or d['full_pdf_bytes']!=286707
+            or d['full_pdf_sha256']!='400e09368af09df303e965894f7068ab9a134b0346d84f2864bf183862d8ae8a'
+            or d['pages']!=12 or d['retrieval_status']!='COMPLETE_ORIGINAL_RETRIEVED'
+            or not d['content_analysis'] or not d['rights']):
+        raise ValueError('Garcia 2013 fulltext cannot close historical assertions or replace 1999 book')
+
+
+def validate_jobim_pim079_source(d):
+    if (d['schema_version']!=1 or d['relation_id']!='CDR-019' or d['human_approval']!='AUSSTEHEND'
+            or d['historical_assertion_closed'] is not False or d['node_definitions_closed'] is not False
+            or d['source_type']!='ZEITGENOESSISCHE_HISTORISCHE_PRIMARQUELLE'
+            or d['handle']!='2010/8983' or d['pdf_bytes']!=1693721
+            or d['pdf_sha256']!='8701544af8382d246973b94d21d5090c8774ee17995b443e1cf55c079f2f5d4b'
+            or d['pages']!=8 or len(d['page_image_shas'])!=8 or len(d['notations_visually_verified'])!=3
+            or not d['content_findings'] or not d['rights']):
+        raise ValueError('Jobim pim079 primary source cannot close historical assertions or approve synthesis')
+
+
+def validate_reily_followup(d):
+    """An attributed prose account and figure cannot become unread original or causal approval."""
+    if (d['schema_version']!=1 or d['relation_id']!='CDR-019' or d['doi']!='10.1017/S0261143000007935'
+            or d['web_pdf_pages']!=17 or d['full_pdf_sha256']!='1b23c9ad982c335e271e7d63802f4421316b5af4c966d6cd5fef0740714a0c44'
+            or d['source_statement_scope']!='ATTRIBUTED_ACCOUNT_AND_FIGURE1_NOTATION_IN_REILY_ORIGINAL_VERIFIED'
+            or d['human_approval']!='AUSSTEHEND' or d['notation_visually_verified'] is not True
+            or any(d[k] is not False for k in ('cabral_original_verified','historical_causality_verified','node_definitions_closed','historical_assertion_closed'))
+            or [(r['printed_page'],r['pdf_page_one_based']) for r in d['locators']]!=[(5,6),(16,17)]
+            or not all(d[k] for k in ('access_scope','access_limits','rights','next_evidence'))):
+        raise ValueError('Reily prose evidence cannot approve unread originals, notation or causality')
 
 
 def validate_garcia_followup(d):

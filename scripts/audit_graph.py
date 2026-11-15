@@ -143,6 +143,9 @@ def audit(root=ROOT, plan=None):
                 source_locator+=' | docs/audit/fable-5.2/CDR019_GARCIA_2023_QUELLENBEFUND_2026-11-14.json: Garcia2023 PDF7/printed6 paras21–27 visually read.'
                 source_status='REILY_ORIGINAL_TEXT_ATTRIBUTION_SCOPED_CHECK_NOT_ORIGIN_APPROVAL'
                 source_locator+=' | docs/audit/fable-5.2/CDR019_REILY_ORIGINALTEXT_2026-11-15.json: Reily1996 printed5/PDF6 prose and printed16/PDF17 bibliography read through web PDF extraction; Fig1 not visually verified, Cabral original unread.'
+                source_locator+=' | docs/audit/fable-5.2/CDR019_GARCIA2013_VOLLTEXT_2026-11-15.json: Garcia2013 complete 12-page PDF retrieved, 286707 bytes, SHA-256 400e09368af09df303e965894f7068ab9a134b0346d84f2864bf183862d8ae8a; aesthetic essay, cites Bim Bom 1999, no notation.'
+                source_status='CONTEMPORARY_1960_PRIMARY_SOURCE_NOTATION_CHECKED_AND_GARCIA2013_FULLTEXT_RETRIEVED_NOT_SYNTHESIS_APPROVAL'
+                source_locator+=' | docs/audit/fable-5.2/CDR019_JOBIM_PIM079_PRIMARQUELLE_2026-11-15.json: O Cruzeiro 13.04.1960 pim079 8-page primary source retrieved, 3 batida notations verified, 1960 discourse identifies batida as increased syncopation, no Tamborim/Surdo synthesis attribution.'
         definition_status=lambda term: ('HISTORICAL_DEFINITION' if term in nodes and re.fullmatch(r'M\d{2}-\d{2}',term) else
                                       'SCOPED_NODE_DEFINITION' if term in nodes else 'PROJECT_CATALOG' if re.fullmatch(r'(?:PROG[-_]\d{3}|PAT-\d{3}|P\d{2})',term) else
                                       'DOMAIN_CONTEXT_REQUIRED' if re.fullmatch(r'M\d{2}',term) else 'UNRESOLVED')

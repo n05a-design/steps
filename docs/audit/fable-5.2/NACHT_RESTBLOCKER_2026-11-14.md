@@ -48,3 +48,5 @@ REL-005 hat zusätzlich18 geprüfte bevorzugte asynchrone Swing-Chart-/Drum-Take
 [Pop-Pattern und Originalquellen nach #77](GMD_POP_ORIGINALQUELLEN_FORTSETZUNG_2026-11-15.md):15 GMD-Pop-Performances/306 Takte mit literalem Snare-/Hat-Mapping und getrennten Zusatz-/Verschiebungsvorschlägen gemessen; keine gemeinsamen Treffer, keine Pop-/Harmonie-Widerlegung. Garcia2013 als anderes Autorenwerk metadatenbestätigt; PDF-Abrufe unvollständig,0 neue Originalseiten geprüft.
 
 [Funk-Pattern und Reily-Originaltext nach PR #79](GMD_FUNK_REILY_FORTSETZUNG_2026-11-15.md):53 Performances/2560 Takte, getrennte Timing-/Velocitykomponenten; Reily1996 S.5 als zugeschriebene Originalprosa gelesen. Figur, Cabral und historische Kausalitaet weiter offen; keine Fach-/Rechte-/Sicherheitsfreigabe.
+
+[Korpusabdeckung und CDR-019-Primärquellen nach PR #80](GMD_KORPUS_ABDECKUNG_PRIMARQUELLEN_2026-11-15.md): GMD-Genreabdeckung aller 14 Korpusfälle, 28 Soul-Proxy-Takes; Garcia2013-Volltext (286.707 Bytes) und zeitgenössische 1960er Primärquelle Revista O Cruzeiro (pim079, 3 Batida-Notationen) gesichert; externe Fach-/Rechte-/Sicherheitsfreigaben offen.

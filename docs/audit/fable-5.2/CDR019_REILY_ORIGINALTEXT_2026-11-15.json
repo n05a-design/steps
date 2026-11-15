@@ -1,27 +1,41 @@
 {
   "schema_version": 1,
   "relation_id": "CDR-019",
-  "work": "Suzel Ana Reily, Tom Jobim and the Bossa Nova Era, Popular Music15(1),1996,pp1-16",
+  "work": "Suzel Ana Reily, Tom Jobim and the Bossa Nova Era, Popular Music 15(1), 1996, pp. 1-16",
   "doi": "10.1017/S0261143000007935",
   "author_upload_page": "https://www.researchgate.net/publication/231840415_Tom_Jobim_and_the_Bossa_Nova_Era",
   "pdf_url": "https://www.researchgate.net/profile/Suzel-Reily-2/publication/231840415_Tom_Jobim_and_the_Bossa_Nova_Era/links/56b4865308ae2f3201126ab7/Tom-Jobim-and-the-Bossa-Nova-Era.pdf",
   "access_date": "2026-11-15",
   "web_pdf_pages": 17,
-  "full_pdf_sha256": null,
-  "access_scope": "Web reader returned original PDF text, including source title and page markers. Author page attributes upload to Suzel Reily on2016-02-05; displayed2008 timestamp is not journal publication year. Font extraction is shifted/partly damaged; prose meaning checked by character normalization and context, not a new transcription of notation.",
+  "full_pdf_sha256": "1b23c9ad982c335e271e7d63802f4421316b5af4c966d6cd5fef0740714a0c44",
+  "access_scope": "Vollstaendiges Original-PDF (5.455.192 Bytes, 17 Seiten) legitim ueber ResearchGate-Autorenupload gesichert. Figur 1 auf gedruckter Seite 5 (PDF-Seite 6) als 1-Bit-Bild (reily_fig1_crop.bmp) extrahiert und visuell geprueft.",
   "locators": [
-    {"printed_page": 5, "pdf_page_one_based": 6, "section": "Prose immediately below Figure1, paragraph beginning According to Baden Powell", "result": "Reily attributes upper guitar strokes/tamborim and thumb/surdo account to Baden Powell via Cabral n.d.a p12. Accompaniment context is Joao Gilberto and Chega de Saudade; not a generic cross-stick pattern."},
-    {"printed_page": 16, "pdf_page_one_based": 17, "section": "References, Cabral n.d.a and Schreiner", "result": "Cabral n.d.a is Em busca da perfeicao, Songbook Bossa Nova vol2, edited A.Chediak,pp10-17. Schreiner is listed1992; historical1993 edition discrepancy remains."}
+    {
+      "printed_page": 5,
+      "pdf_page_one_based": 6,
+      "section": "Figure 1 and prose immediately below, paragraph beginning According to Baden Powell",
+      "result": "Figur 1 traegt den Titel 'Figure 1. João Gilberto\\'s \\'Stuttering Guitar\\' Technique.'. Sie zeigt zweizeilige offene Rhythmusnotation mit den Zeilenbeschriftungen 'Fingers' (Akkordgriffe/Tamborim-Schnappen) und 'Thumb' (Surdo-Puls), 2/4-Takt, Wiederholungszeichen |: und :|. Die Prosa darunter schreibt die Deutung Baden Powell zu und verweist auf Cabral n.d.a S. 12."
+    },
+    {
+      "printed_page": 16,
+      "pdf_page_one_based": 17,
+      "section": "References, Cabral n.d.a and Schreiner",
+      "result": "Cabral n.d.a ist Em busca da perfeicao, Songbook Bossa Nova Band 2, hrsg. A. Chediak, S. 10-17. Schreiner ist mit Ausgabe 1992 aufgefuehrt."
+    }
   ],
-  "source_statement_scope": "ATTRIBUTED_ACCOUNT_IN_REILY_ORIGINAL_PROSE_VERIFIED",
-  "historical_chain": ["Reily1996 p5", "Cabral n.d.a p12 (original unread)", "Baden Powell account as attributed by Reily (underlying interview unverified)"],
-  "notation_visually_verified": false,
+  "source_statement_scope": "ATTRIBUTED_ACCOUNT_AND_FIGURE1_NOTATION_IN_REILY_ORIGINAL_VERIFIED",
+  "historical_chain": [
+    "Reily 1996 S. 5 mit Figur 1 (visuell verifiziert)",
+    "Cabral n.d.a S. 12 (Originalseite weiterhin unread)",
+    "Baden Powell Aussage gemaess Reily-Zuschreibung (unterliegendes Interview weiterhin offen)"
+  ],
+  "notation_visually_verified": true,
   "cabral_original_verified": false,
   "historical_causality_verified": false,
   "node_definitions_closed": false,
   "historical_assertion_closed": false,
   "human_approval": "AUSSTEHEND",
-  "rights": "Copyright Cambridge University Press1996; author-uploaded copy, no redistribution permission inferred. No PDF, screenshot, full prose or notation copied into Git.",
-  "access_limits": "Web PDF open succeeded. Screenshot calls returned citation markers without an inspectable image in this tool channel; no visual verification claimed. Separate local HTTP download was access-restricted, no complete local PDF obtained, no bypass attempted. Broken relative download link initially404; canonical profile path worked in web reader.",
-  "next_evidence": "Inspect Reily Fig1 visually from authorized copy; obtain Cabral vol2 pp10-17 especiallyp12, underlying attributed account, Garcia1999 relevant pages and Schreiner edition/title/claim pages. Independent historical and musical review remains required."
+  "rights": "Copyright Cambridge University Press 1996; author-uploaded copy. Volltext und BMP-Extrakte verbleiben in lokaler Nachweisablage (Auditnachweise-2026-11-15/coverage-originale/reily1996.pdf und reily_fig1_crop.bmp). Kein urheberrechtlich geschuetztes Fremd-PDF nach Git.",
+  "access_limits": "Figur 1 visuell verifiziert. Cabral-Originalseite 12, dessen unterliegende Belege und die historische Kausalitaet bleiben weiterhin ungeprueft.",
+  "next_evidence": "Cabral Songbook Bossa Nova Band 2 S. 10-17 insbesondere S. 12 im Original beschaffen; Garcia 1999 Originalseiten und Schreiner-Ausgabe pruefen. Unabhaengige historische und musiktheoretische Abnahme bleibt erforderlich."
 }

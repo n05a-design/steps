@@ -134,3 +134,6 @@ jobs:
 
       - name: Check source-bound Funk components without musical approval
         run: python -B scripts/audit_gmd_funk.py --check
+
+      - name: Check explicit corpus label coverage and bounded Soul proxy
+        run: python -B scripts/audit_gmd_coverage.py --check
