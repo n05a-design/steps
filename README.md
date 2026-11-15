@@ -5,34 +5,119 @@
 <h1 align="center">STEPS</h1>
 
 <p align="center">
-  <strong>Python-Kern für Musiktheorie und Akkordfolgen.</strong><br>
-  STEPS verarbeitet Tonhöhen, Notation, Intervalle, Akkordsymbole, Stufen, Transposition und Stimmführung. Über die App-Schnittstelle sind drei fachlich freigegebene Pilotbeispiele mit Quellen verfügbar. Desktop-Oberfläche, Wiedergabe und Installationspakete befinden sich in Vorbereitung.
+  <strong>Akkordfolgen bauen. Harmonie verstehen. Mit Quellen lernen.</strong><br>
+  STEPS wird eine eigenständige Open-Source-App für Akkordfolgen, Harmonielehre und Musiktheorie. Nutzbar ist heute der geprüfte Python-Kern für Tonhöhen, Akkorde, Stufen und Stimmführung. Die Desktop-Oberfläche ist in Vorbereitung.
 </p>
 
 <p align="center">
-  <img alt="Python 3.11 bis 3.14" src="https://img.shields.io/badge/Python-3.11%E2%80%933.14-555">
+  <img alt="Stand: Python-Kern nutzbar, Desktop in Vorbereitung" src="https://img.shields.io/badge/Stand-Python--Kern%20%C2%B7%20Desktop%20in%20Vorbereitung-555">
+  <img alt="Python 3.11 bis 3.14" src="https://img.shields.io/badge/Python-3.11%E2%80%933.14-209F95">
   <a href="LICENSE"><img alt="Lizenz MPL-2.0" src="https://img.shields.io/badge/Lizenz-MPL--2.0-2E7D32"></a>
   <a href="https://github.com/n05a-design/steps/actions/workflows/python-tests.yml"><img alt="STEPS-Prüfung" src="https://github.com/n05a-design/steps/actions/workflows/python-tests.yml/badge.svg?branch=main"></a>
 </p>
 
 <p align="center">
-  <a href="#schnellstart"><strong>Schnellstart</strong></a> ·
-  <a href="docs/IMPLEMENTATION.md">Implementierungsstand</a> ·
-  <a href="knowledge/concepts/progressions/REVIEWED_PROGRESSIONS.md">Geprüfte Lernbeispiele</a> ·
+  <a href="#schnellstart"><strong>Loslegen</strong></a> ·
+  <a href="#was-steps-heute-kann">Was STEPS kann</a> ·
+  <a href="#ein-blick-hinein">Ein Blick hinein</a> ·
+  <a href="knowledge/concepts/progressions/REVIEWED_PROGRESSIONS.md">Lernbeispiele</a> ·
   <a href="docs/theory/API.md">Python-API</a> ·
-  <a href="CHANGELOG.md">Änderungen</a>
+  <a href="CHANGELOG.md">Änderungen</a> ·
+  <a href="#in-english">English</a>
 </p>
+
+<p align="center">
+  <strong>Projektentwicklung</strong><br>
+  <a href="CONTRIBUTING.md">An STEPS arbeiten</a> ·
+  <a href="docs/roadmap/ROADMAP_AND_RESOURCE_PLAN.md">Roadmap</a> ·
+  <a href="docs/IMPLEMENTATION.md">Implementierungsstand</a> ·
+  <a href="docs/architecture/README.md">Aufbau</a> ·
+  <a href="docs/product/PRODUCT_STRATEGY_AND_MVP.md">Produktstrategie</a> ·
+  <a href="docs/quality/README.md">Qualität</a>
+</p>
+
+## Warum STEPS?
+
+- **Akkorde im Zusammenhang lesen.** STEPS löst Stufen in einer gewählten Tonart auf. `E7` ist in a-Moll die V⁷ und in C-Dur die V⁷/vi: derselbe Akkord, zwei Lesarten.
+- **Schreibweise ernst nehmen.** Deutsches H/B und internationales B/B♭ sind getrennte Konventionen. Tonklasse und Notenname bleiben eigene Angaben, damit Enharmonik erhalten bleibt.
+- **Vom Symbol zum Voicing.** Aus `Dm7 – G7 – Cmaj7` werden spielbare MIDI-Noten in enger Lage, als Drop 2, Shell oder ohne Grundton. Die Stimmführung hält die Bewegung zwischen den Akkorden klein.
+- **Aussagen mit Quelle.** Die App-Schnittstelle liefert ein Lernbeispiel erst, wenn ein Mensch jede seiner Aussagen in genau dieser Fassung freigegeben hat. Die Fundstellen stehen im Quellenregister.
+- **Nachprüfbar.** Golden-Fälle, Tests und Generatoren laufen bei jeder Änderung in der CI. Der Code steht unter MPL-2.0.
+
+## Ein Blick hinein
+
+STEPS hat noch keine Oberfläche. Die Abbildung zeigt deshalb, was der Kern heute berechnet: die Voicings der drei freigegebenen Pilotbeispiele als Notenrolle. Sie wird mit [`render_project_page_figure.py`](scripts/render_project_page_figure.py) aus dem aktuellen Code erzeugt.
+
+<img alt="Notenrolle der drei Pilotbeispiele Pop Four Chords, Jazz Two-Five-One und Minor Plagal Romance" src="design/assets/project-page-pilot-voicings.svg">
+<p><sub><strong>Pilotbeispiele</strong> · MIDI-Noten je Akkord, der dunklere Balken ist der Basston</sub></p>
+
+```python
+from app.knowledge import get_reviewed_progression
+from src.steps.progression import generate_progression_voicings, resolve_roman_degree
+
+example = get_reviewed_progression("PROG-003")
+print(example.progression.chords_str)                 # Dm7 - G7 - Cmaj7
+for voicing in generate_progression_voicings(example.progression):
+    print(voicing.midi_notes)                         # [50, 53, 57, 60]
+                                                      # [43, 53, 59, 62]
+                                                      # [48, 55, 59, 64]
+print(example.lesson)                                 # freigegebener Lehrtext mit Quellen
+print(resolve_roman_degree("V7/vi", "C").symbol)      # E7
+```
+
+Zu jedem Beispiel gehören der freigegebene Lehrtext, die Quellen-IDs und das Datum der Freigabe. [Alle drei Lernbeispiele lesen](knowledge/concepts/progressions/REVIEWED_PROGRESSIONS.md)
+
+## Was STEPS heute kann
+
+### Töne, Intervalle und Akkorde
+
+- **Tonhöhen und Schreibweise:** Tonklasse und diatonische Schreibweise als eigene Typen, MIDI-Nummern und Frequenzen in gleichstufiger Stimmung mit 440 Hz als Standard.
+- **Zwei Notationen:** `INT` liest B/B♭, `DE` liest H/B. `parse_chord("Esmaj7/B", "DE")` ergibt E♭maj7 mit B♭ im Bass.
+- **Intervalle:** klingender Abstand in Halbtönen und diatonische Intervalle, Umkehrung und Transposition mit erhaltener Schreibweise.
+- **Akkordsymbole:** 30 registrierte Akkordqualitäten mit ihren Aliassen. `CM7` ist Dur, `Cm7` Moll. Ein Slash-Bass ändert den tiefsten Ton, nicht die Akkordidentität.
+- **Dreiklänge und Septakkorde:** Konstruktion, Umkehrungen, Drop-2- und Shell-Voicings.
+
+### Stufen, Transposition und Stimmführung
+
+- **Stufen auflösen:** römische Stufen in einem vorgegebenen Dur- oder Moll-Kontext, ausgewählte Zwischendominanten und Generalbassfiguren.
+- **Progressionskatalog:** 28 Bestandsprogressionen, in jede Tonart übertragbar.
+- **Voicings erzeugen:** Startlagen `CLOSE`, `DROP2`, `SHELL` und `ROOTLESS` mit durchgehender Stimmenzahl im MIDI-Bereich 0 bis 127.
+- **Stimmführung:** Der Solver minimiert die Halbtonbewegung je Übergang. Der strikte Modus prüft zusätzlich parallele Quinten und Oktaven.
+- **Klare Fehler:** Unlösbare Vorgaben und nicht registrierte Symbole melden einen Fehler, statt still zu raten.
+
+### Geprüftes Lernmaterial und Wissensbasis
+
+- **Drei freigegebene Pilotbeispiele:** Pop Four Chords, Jazz Two-Five-One und Minor Plagal Romance, jeweils mit Lehrtext, Quellen und Freigabe je Aussage.
+- **Ein Datensatz für App und Lesetext:** Die App-Schnittstelle und das veröffentlichte Lernmaterial verwenden dieselben Daten. Bei fehlender oder veralteter Freigabe verweigert die Schnittstelle die Ausgabe.
+- **Quellenregister:** Jede Aussage führt Quell-ID, Fundstelle, Geltungsbereich und Gegenprobe.
+- **Golden-Fälle:** 198 Referenzfälle, davon 120 ausgeführt und 78 als Spezifikationsbeispiele strukturell geprüft.
+
+Der [Implementierungsstand](docs/IMPLEMENTATION.md) beschreibt Verhalten und Grenzen jeder Funktion, die [Python-API](docs/theory/API.md) alle Exporte.
+
+## Was noch nicht geht
+
+- **Keine Desktop-App.** Es gibt kein Fenster, keine Installationspakete und keinen Download. STEPS läuft heute als Python-Code aus dem Repository.
+- **Kein Hören, kein MIDI-Export.** Der Kern liefert MIDI-Notennummern. Wiedergabe, MIDI-Dateien, Import und Speicherung sind nicht umgesetzt.
+- **Keine automatische Analyse.** STEPS erkennt keine Tonart aus Audio und wählt keine Deutung für dich aus. Die Tonart gibst du vor.
+- **Bewusst enge Grenzen.** `C11` ist nicht registriert, `V7(alt)` wird abgewiesen. Solche Lücken stehen im Implementierungsstand, nicht in einer Fußnote.
+
+## Wohin STEPS will
+
+Das Ziel ist eine Desktop-App, in der du Akkordfolgen anlegst, transponierst, erklärt bekommst und als MIDI ausgibst – ohne Benutzerkonto. Die [Produktstrategie](docs/product/PRODUCT_STRATEGY_AND_MVP.md) unterscheidet drei Zielbilder: ein Harmonie-Labor zum Erkunden und Lernen, ein Sketchpad für Akkord- und Drum-Folgen und eine Wissensbibliothek zur Musikproduktion.
+
+Die [Roadmap](docs/roadmap/ROADMAP_AND_RESOURCE_PLAN.md) ordnet die Schritte nach Abhängigkeiten: Datenmodell und Golden-Tests, Speichern und Laden, Akkord-Editor mit Transposition, MIDI-Export, danach Erklärungen und weitere Arbeitsweisen. Für die Oberfläche wird die Zwei-Bereiche-Shell von [Glide](https://github.com/n05a-design/glide-to-do) als [technische Grundlage geprüft](docs/architecture/GLIDE_TO_STEPS_2_AREA_SHELL.md).
+
+Strategie und Roadmap sind Entwürfe und vom Inhaber noch nicht freigegeben. Offen ist unter anderem, ob Drums zur ersten Version gehören. Das [Entscheidungsregister](decisions/DECISION_REGISTER.md) führt den Stand.
 
 ## Schnellstart
 
-Die [CI-Matrix](.github/workflows/python-tests.yml) verwendet Python 3.11 bis
-3.14. Aus dem Repository-Root ausführen.
+STEPS braucht Python 3.11 bis 3.14 und keine weiteren Pakete. Alle Befehle laufen aus dem Repository-Root.
 
-```sh
-python -B -m unittest discover -s tests
-python -B scripts/verify_reference_integrity.py
-python -B scripts/render_api_reference.py --check
-```
+| Startweg | Verfügbarkeit | Nächster Schritt |
+|---|---|---|
+| **Python-Kern** | Im Repository enthalten | Repository klonen und das Beispiel unten ausführen |
+| **Desktop-App** | In Vorbereitung | [Implementierungsstand](docs/IMPLEMENTATION.md) verfolgen |
+| **Installationspakete** | Nicht vorhanden | – |
 
 ```python
 from src.steps.theory import parse_chord
@@ -43,9 +128,60 @@ print(chord.symbol, int(chord.bass.pitch_class))
 
 Im Beispiel bezeichnet deutsches B den Ton B♭ mit Tonklasse 10. Die
 [API-Verträge](docs/theory/API_VERTRAEGE.md) erläutern die Eingabekonventionen.
+
+Prüfen, ob dein Checkout in Ordnung ist:
+
+```sh
+python -B -m unittest discover -s tests
+python -B scripts/verify_reference_integrity.py
+python -B scripts/render_api_reference.py --check
+```
+
+Die [CI-Matrix](.github/workflows/python-tests.yml) führt dieselben Prüfungen mit Python 3.11 bis 3.14 aus.
 Weitere Aufrufe und Grenzen stehen in der [Testanleitung](tests/README.md).
 
-## Repository-Übersicht
+## Quellen und Rechte
+
+- Das [App-Quellenregister](knowledge/sources/README.md) führt jede Quelle mit ihrem Nutzungsrahmen.
+- Die [Pilot-Abnahmeliste](knowledge/benchmark/PILOT_ABNAHME.md) weist die fachlichen Freigaben der Lernbeispiele aus.
+- Forschungsnotizen und Rohmedien sind vom App-Material getrennt. Die App-Schnittstelle lädt sie nicht.
+- Offene Nachweise stehen in der [Lückenliste](research/gaps/OPEN_GAPS.md) und im [Fable-Audit](docs/audit/fable-5.2/README.md).
+- Für Quellen und Fremdmaterial gelten die jeweiligen [Nutzungsbedingungen](knowledge/sources/RIGHTS_POLICY.md).
+
+<details>
+<summary><strong>Häufige Fragen</strong></summary>
+
+**Kann ich STEPS schon herunterladen und starten?** Als App noch nicht. Der Python-Kern läuft aus dem Repository, siehe [Schnellstart](#schnellstart).
+
+**Kann STEPS MIDI-Dateien schreiben?** Noch nicht. Der Kern berechnet MIDI-Notennummern für jedes Voicing; der Dateiexport steht auf der Roadmap.
+
+**Warum unterscheidet STEPS H und B?** Im Deutschen heißt der Ton unter C „H“ und „B“ meint B♭. International meint „B“ den Ton H. STEPS verlangt bei mehrdeutigen Eingaben die Konvention, damit kein Akkord einen Halbton daneben landet.
+
+**Sagt mir STEPS, welche Analyse richtig ist?** Nein. STEPS rechnet im Kontext, den du vorgibst, und hält alternative Lesarten offen. Die Lernbeispiele nennen ihre Annahmen ausdrücklich.
+
+**Wie hängt STEPS mit Glide zusammen?** STEPS ist ein eigenes Projekt. Glide ist der Desktop-Planer desselben Inhabers; seine Fenster-Shell wird als technische Grundlage für die STEPS-Oberfläche geprüft.
+
+**Unter welcher Lizenz steht STEPS?** Der Quellcode steht unter MPL-2.0. Quellen und Fremdmaterial behalten ihre eigenen Bedingungen; siehe [Lizenz](#lizenz).
+
+</details>
+
+## Rückmeldung
+
+Fehler und Wünsche nimmt der [Issue-Bereich](https://github.com/n05a-design/steps/issues/new/choose) mit kurzen Formularen entgegen. Bei musikalischen Fehlern helfen Eingabe, Notationskonvention und erwartetes Ergebnis. Sicherheitslücken meldest du nach der [Sicherheitsrichtlinie](SECURITY.md).
+
+## Entwicklung und Qualität
+
+[VERSION](VERSION) nennt den Entwicklungsstand, [`src.steps.__version__`](src/steps/__init__.py) die Python-Paketversion.
+
+- [An STEPS arbeiten](CONTRIBUTING.md) · [Arbeitsregeln für Agenten](AGENTS.md) · [GitHub und CI](.github/GITHUB_UND_CI.md)
+- [Implementierungsstand](docs/IMPLEMENTATION.md) · [Python-API](docs/theory/API.md) · [Testanleitung](tests/README.md)
+- [Architektur](docs/architecture/README.md) · [Entscheidungsregister](decisions/DECISION_REGISTER.md) · [Glide-Reuse](docs/system_reuse/README.md)
+- [Produkt und Lernkonzept](docs/product/README.md) · [Roadmap](docs/roadmap/README.md) · [Qualität](docs/quality/README.md)
+- [Wissensbasis](knowledge/README.md) · [Rechte, Sicherheit und Veröffentlichung](docs/governance/README.md) · [Logo und Marke](design/brand/README.md)
+- [Dokumentationsindex](docs/README.md) · [Sicherheitsrichtlinie](SECURITY.md)
+
+<details>
+<summary><strong>Repository-Übersicht</strong></summary>
 
 | Ordner | Inhalt |
 | --- | --- |
@@ -65,18 +201,16 @@ Weitere Aufrufe und Grenzen stehen in der [Testanleitung](tests/README.md).
 | [manifests](manifests/README.md) | Datierte Bestands-, Quellen- und Auditnachweise. |
 | [archive](archive/README.md) · [source_archive](source_archive/README.md) | Frühere Projektstände, Originale und Provenienz. |
 | [publish_overlay](publish_overlay/README.md) | Historischer Publikationsentwurf. |
-| [.github](.github/README.md) | Workflows, PR-Vorlage und Reviewzuständigkeiten. |
+| [.github](.github/GITHUB_UND_CI.md) | Workflows, PR-Vorlage und Reviewzuständigkeiten. |
 
-## Quellen, Qualität und Mitarbeit
+</details>
 
-Das [App-Quellenregister](knowledge/sources/README.md) führt Quellen und
-Nutzungsrahmen. Die [Pilot-Abnahmeliste](knowledge/benchmark/PILOT_ABNAHME.md)
-weist die zugehörigen fachlichen Freigaben aus. Offene Nachweise stehen in der
-[Lückenliste](research/gaps/OPEN_GAPS.md) und im [Fable-Audit](docs/audit/fable-5.2/README.md).
+## Lizenz
 
-[VERSION](VERSION) nennt den Entwicklungsstand,
-[`src.steps.__version__`](src/steps/__init__.py) die Python-Paketversion.
-Für den STEPS-Quellcode gilt die [Mozilla Public License 2.0](LICENSE).
-Für Quellen und Fremdmaterial gelten die jeweiligen
-[Nutzungsbedingungen](knowledge/sources/RIGHTS_POLICY.md).
-[Mitwirken](CONTRIBUTING.md) · [Sicherheitsmeldungen](SECURITY.md)
+Der STEPS-Quellcode steht unter der **Mozilla Public License 2.0 (`MPL-2.0`)**. Maßgeblich ist der vollständige [Lizenztext](LICENSE). Quellen und Fremdmaterial behalten ihre jeweiligen [Nutzungsbedingungen](knowledge/sources/RIGHTS_POLICY.md). Markenrechte am [Logo](design/brand/README.md) werden gesondert behandelt.
+
+## In English
+
+**STEPS is becoming an independent, open-source app for chord progressions, harmony and music theory.** Today the tested Python core is usable: pitches and spellings, intervals, chord symbols, Roman numerals in a given key, voicings and voice leading. Three learning examples are published with sources and a human approval for each statement. The desktop interface, playback and MIDI file export are in preparation.
+
+The source code is available under [MPL-2.0](LICENSE). The [implementation status](docs/IMPLEMENTATION.md) lists what works and where the limits are.

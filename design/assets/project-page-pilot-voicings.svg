@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 482" role="img" aria-label="MIDI-Noten der drei freigegebenen Pilotbeispiele als Notenrolle">
+  <rect width="1200" height="482" rx="28" fill="#15243c"/>
+  <text x="40" y="62" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff">Pop Four Chords</text>
+  <text x="40" y="92" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" fill="#4ee4cd">PROG-001 · I – V – vi – IV</text>
+  <rect x="40" y="120" width="352" height="277" rx="14" fill="#ffffff" fill-opacity="0.05"/>
+  <line x1="74" y1="384.5" x2="382" y2="384.5" stroke="#ffffff" stroke-opacity="0.16"/>
+  <text x="50" y="388.5" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" fill-opacity="0.6">C2</text>
+  <line x1="74" y1="276.5" x2="382" y2="276.5" stroke="#ffffff" stroke-opacity="0.16"/>
+  <text x="50" y="280.5" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" fill-opacity="0.6">C3</text>
+  <line x1="74" y1="168.5" x2="382" y2="168.5" stroke="#ffffff" stroke-opacity="0.16"/>
+  <text x="50" y="172.5" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" fill-opacity="0.6">C4</text>
+  <rect x="80" y="273" width="62" height="7" rx="3.5" fill="#209f95"/>
+  <rect x="80" y="237" width="62" height="7" rx="3.5" fill="#4ee4cd"/>
+  <rect x="80" y="210" width="62" height="7" rx="3.5" fill="#4ee4cd"/>
+  <text x="111" y="425" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#ffffff">C</text>
+  <rect x="156" y="318" width="62" height="7" rx="3.5" fill="#209f95"/>
+  <rect x="156" y="255" width="62" height="7" rx="3.5" fill="#4ee4cd"/>
+  <rect x="156" y="174" width="62" height="7" rx="3.5" fill="#4ee4cd"/>
+  <text x="187" y="425" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#ffffff">G</text>
+  <rect x="232" y="300" width="62" height="7" rx="3.5" fill="#209f95"/>
+  <rect x="232" y="237" width="62" height="7" rx="3.5" fill="#4ee4cd"/>
+  <rect x="232" y="165" width="62" height="7" rx="3.5" fill="#4ee4cd"/>
+  <text x="263" y="425" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#ffffff">Am</text>
+  <rect x="308" y="336" width="62" height="7" rx="3.5" fill="#209f95"/>
+  <rect x="308" y="192" width="62" height="7" rx="3.5" fill="#4ee4cd"/>
+  <rect x="308" y="165" width="62" height="7" rx="3.5" fill="#4ee4cd"/>
+  <text x="339" y="425" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#ffffff">F</text>
+  <text x="424" y="62" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff">Jazz Two-Five-One</text>
+  <text x="424" y="92" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" fill="#4ee4cd">PROG-003 · ii^7 – V^7 – I^maj7</text>
+  <rect x="424" y="120" width="352" height="277" rx="14" fill="#ffffff" fill-opacity="0.05"/>
+  <line x1="458" y1="384.5" x2="766" y2="384.5" stroke="#ffffff" stroke-opacity="0.16"/>
+  <text x="434" y="388.5" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" fill-opacity="0.6">C2</text>
+  <line x1="458" y1="276.5" x2="766" y2="276.5" stroke="#ffffff" stroke-opacity="0.16"/>
+  <text x="434" y="280.5" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" fill-opacity="0.6">C3</text>
+  <line x1="458" y1="168.5" x2="766" y2="168.5" stroke="#ffffff" stroke-opacity="0.16"/>
+  <text x="434" y="172.5" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" fill-opacity="0.6">C4</text>
+  <rect x="464" y="255" width="91.3333" height="7" rx="3.5" fill="#209f95"/>
+  <rect x="464" y="228" width="91.3333" height="7" rx="3.5" fill="#4ee4cd"/>
+  <rect x="464" y="192" width="91.3333" height="7" rx="3.5" fill="#4ee4cd"/>
+  <rect x="464" y="165" width="91.3333" height="7" rx="3.5" fill="#4ee4cd"/>
+  <text x="509.667" y="425" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#ffffff">Dm7</text>
+  <rect x="569.333" y="318" width="91.3333" height="7" rx="3.5" fill="#209f95"/>
+  <rect x="569.333" y="228" width="91.3333" height="7" rx="3.5" fill="#4ee4cd"/>
+  <rect x="569.333" y="174" width="91.3333" height="7" rx="3.5" fill="#4ee4cd"/>
+  <rect x="569.333" y="147" width="91.3333" height="7" rx="3.5" fill="#4ee4cd"/>
+  <text x="615" y="425" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#ffffff">G7</text>
+  <rect x="674.667" y="273" width="91.3333" height="7" rx="3.5" fill="#209f95"/>
+  <rect x="674.667" y="210" width="91.3333" height="7" rx="3.5" fill="#4ee4cd"/>
+  <rect x="674.667" y="174" width="91.3333" height="7" rx="3.5" fill="#4ee4cd"/>
+  <rect x="674.667" y="129" width="91.3333" height="7" rx="3.5" fill="#4ee4cd"/>
+  <text x="720.333" y="425" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#ffffff">Cmaj7</text>
+  <text x="808" y="62" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff">Minor Plagal Romance</text>
+  <text x="808" y="92" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="17" fill="#4ee4cd">PROG-009 · I – IV – iv – I</text>
+  <rect x="808" y="120" width="352" height="277" rx="14" fill="#ffffff" fill-opacity="0.05"/>
+  <line x1="842" y1="384.5" x2="1150" y2="384.5" stroke="#ffffff" stroke-opacity="0.16"/>
+  <text x="818" y="388.5" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" fill-opacity="0.6">C2</text>
+  <line x1="842" y1="276.5" x2="1150" y2="276.5" stroke="#ffffff" stroke-opacity="0.16"/>
+  <text x="818" y="280.5" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" fill-opacity="0.6">C3</text>
+  <line x1="842" y1="168.5" x2="1150" y2="168.5" stroke="#ffffff" stroke-opacity="0.16"/>
+  <text x="818" y="172.5" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#ffffff" fill-opacity="0.6">C4</text>
+  <rect x="848" y="273" width="62" height="7" rx="3.5" fill="#209f95"/>
+  <rect x="848" y="237" width="62" height="7" rx="3.5" fill="#4ee4cd"/>
+  <rect x="848" y="210" width="62" height="7" rx="3.5" fill="#4ee4cd"/>
+  <text x="879" y="425" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#ffffff">C</text>
+  <rect x="924" y="336" width="62" height="7" rx="3.5" fill="#209f95"/>
+  <rect x="924" y="273" width="62" height="7" rx="3.5" fill="#4ee4cd"/>
+  <rect x="924" y="192" width="62" height="7" rx="3.5" fill="#4ee4cd"/>
+  <text x="955" y="425" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#ffffff">F</text>
+  <rect x="1000" y="336" width="62" height="7" rx="3.5" fill="#209f95"/>
+  <rect x="1000" y="273" width="62" height="7" rx="3.5" fill="#4ee4cd"/>
+  <rect x="1000" y="201" width="62" height="7" rx="3.5" fill="#4ee4cd"/>
+  <text x="1031" y="425" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#ffffff">Fm</text>
+  <rect x="1076" y="381" width="62" height="7" rx="3.5" fill="#209f95"/>
+  <rect x="1076" y="237" width="62" height="7" rx="3.5" fill="#4ee4cd"/>
+  <rect x="1076" y="210" width="62" height="7" rx="3.5" fill="#4ee4cd"/>
+  <text x="1107" y="425" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#ffffff">C</text>
+  <text x="40" y="460" font-family="system-ui, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#ffffff" fill-opacity="0.6">Ausgabe von generate_progression_voicings für die freigegebenen Pilotbeispiele · dunkler Balken = Basston</text>
+</svg>
