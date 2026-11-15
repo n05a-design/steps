@@ -20,6 +20,7 @@ Die regulären Befehle werden aus dem Repository-Root mit Python aufgerufen. Die
 | [render_api_reference.py](render_api_reference.py) | API-Referenz erzeugen oder mit `--check` vergleichen. |
 | [render_reviewed_progressions.py](render_reviewed_progressions.py) | Freigegebene Pilotdaten in Lernmaterial umsetzen. |
 | [build_brand_assets.py](build_brand_assets.py) | Logo und App-Symbol aus den [SVG-Mastern](../design/brand/README.md) erzeugen oder mit `--check` vergleichen. |
+| [render_project_page_figure.py](render_project_page_figure.py) | Abbildung der Pilot-Voicings für die Root-README erzeugen oder mit `--check` vergleichen. |
 | [verify_pilot_review_evidence.py](verify_pilot_review_evidence.py) | Echte Freigabebelege per GitHub-API prüfen. |
 | [Hörproben erzeugen](render_audit_listening_examples.py) | Eigene WAV-Signale ausgeben. |
 | [Hörproben messen](analyze_audit_listening_examples.py) | Akzente, Melodie- und Begleittöne der WAV-Dateien messen. |

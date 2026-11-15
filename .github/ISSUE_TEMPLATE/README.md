@@ -9,4 +9,4 @@ Wähle die Vorlage nach Art des Anliegens.
 
 Für Sicherheitsmeldungen gilt der [vertrauliche Meldeweg](../../SECURITY.md).
 
-[Zur Bereichsübersicht](../README.md)
+[Zur Bereichsübersicht](../GITHUB_UND_CI.md)
