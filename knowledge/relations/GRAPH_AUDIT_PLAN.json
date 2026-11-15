@@ -2222,7 +2222,7 @@
     },
     {
       "category": "HISTORICAL_SOURCE_REQUIRED",
-      "review_note": "Surdo-/Tamborim-Deutung als Überlieferung auffindbar, aber keine hier geprüfte zeitgenössische Entstehungsquelle; Gitarrenfamilie nicht mit Cross-Stick gleichsetzen. Neue getrennte Quellenprüfung: Ghezzi2009 mit Garcia1999-Verweisen; keine Originalinterview-/Schreiner-Prüfung und kein kausaler Entstehungsnachweis. Verlagsreferenzliste identifiziert Cabral-Essay Band2 S.10–17; indexierterp.12-Verweis ist keine Seitenprüfung. Songbook-Preview nur4 Inhaltsverzeichnisseiten. USP1998-Dissertation und Garcia1999-Buch getrennt. Neuer Originalbeitrag Garcia2023 PDF7/gedruckt6 Abs21–27 visuell geprüft: Basis und Varianten unterscheiden; Ähnlichkeit ist keine einfache Kausalrichtung. Kein Ersatz der ungelesenen älteren Quellen. Fortsetzung15.11: Reily1996 Original-PDF-Prosa S.5 und Bibliografie S.16 via Web gelesen; Zuschreibung an Baden Powell ueber Cabral n.d.a p12 jetzt direkt im Reily-Text nachgewiesen. Figur nicht visuell geprueft, Cabral-Original und historische Kausalitaet weiterhin offen.",
+      "review_note": "Surdo-/Tamborim-Deutung als Überlieferung auffindbar, aber keine hier geprüfte zeitgenössische Entstehungsquelle; Gitarrenfamilie nicht mit Cross-Stick gleichsetzen. Neue getrennte Quellenprüfung: Ghezzi2009 mit Garcia1999-Verweisen; keine Originalinterview-/Schreiner-Prüfung und kein kausaler Entstehungsnachweis. Verlagsreferenzliste identifiziert Cabral-Essay Band2 S.10–17; indexierterp.12-Verweis ist keine Seitenprüfung. Songbook-Preview nur4 Inhaltsverzeichnisseiten. USP1998-Dissertation und Garcia1999-Buch getrennt. Neuer Originalbeitrag Garcia2023 PDF7/gedruckt6 Abs21–27 visuell geprüft: Basis und Varianten unterscheiden; Ähnlichkeit ist keine einfache Kausalrichtung. Kein Ersatz der ungelesenen älteren Quellen. Fortsetzung15.11: Reily1996 Original-PDF-Prosa S.5 und Bibliografie S.16 via Web gelesen; Zuschreibung an Baden Powell ueber Cabral n.d.a p12 jetzt direkt im Reily-Text nachgewiesen. Figur nicht visuell geprueft, Cabral-Original und historische Kausalitaet weiterhin offen. Garcia2013 vollstaendiger 12-seitiger Aufsatz abgerufen (286707 Bytes, SHA-256 400e0936); aesthetischer Essay, zitiert Bim Bom 1999, keine Noten/Interviews. Jobim-Archiv Pim-079 (Revista O Cruzeiro 13.04.1960) vollstaendig abgerufen (1693721 Bytes PDF, SHA-256 8701544a; 8 hochaufgeloeste Bildseiten): enthaelt 3 gedruckte Batida-Notationen im 2/4-Takt und zeitgenoessische Aussagen; historischer Diskurs von 1960 belegt Batida als Sinckopen-Erhoehung, nennt keine Tamborim-/Surdo-Synthese.",
       "relation_id": "CDR-019",
       "edge": {
         "source_id": "BOSSA_BATIDA",
@@ -2242,7 +2242,9 @@
         "docs/audit/fable-5.2/GRAPH_CDR019_CDR021_QUELLEN_2026-11-14.json",
         "docs/audit/fable-5.2/CDR019_ORIGINALSUCHE_2026-11-14.json",
         "docs/audit/fable-5.2/CDR019_GARCIA_2023_QUELLENBEFUND_2026-11-14.json",
-        "docs/audit/fable-5.2/CDR019_REILY_ORIGINALTEXT_2026-11-15.json"
+        "docs/audit/fable-5.2/CDR019_REILY_ORIGINALTEXT_2026-11-15.json",
+        "docs/audit/fable-5.2/CDR019_GARCIA2013_VOLLTEXT_2026-11-15.json",
+        "docs/audit/fable-5.2/CDR019_JOBIM_PIM079_PRIMARQUELLE_2026-11-15.json"
       ],
       "candidate_claim_ids": [
         "CLAIM-039"

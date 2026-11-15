@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "relation_id": "CDR-019",
+  "source_type": "ZEITGENOESSISCHE_HISTORISCHE_PRIMARQUELLE",
+  "title": "Música de Bossa Nova: Os Moços do samba estereofônico",
+  "publication": "Revista O Cruzeiro, Rio de Janeiro, 13 de abril de 1960",
+  "archive": "Instituto Antônio Carlos Jobim",
+  "handle": "2010/8983",
+  "handle_url": "https://www.jobim.org/jobim/handle/2010/8983",
+  "series": "Publicação na Imprensa / Pim-079",
+  "pdf_url": "https://www.jobim.org/jobim/bitstream/handle/2010/8983/pim079.pdf?sequence=20",
+  "pdf_bytes": 1693721,
+  "pdf_sha256": "8701544af8382d246973b94d21d5090c8774ee17995b443e1cf55c079f2f5d4b",
+  "pages": 8,
+  "page_image_shas": {
+    "page_1": "c2becd5019972229b614a40353370db6df959c601a5dc3d69618cdd5dda2c976",
+    "page_2": "b22633a4f7c8bebc4fbb2f8ce6b0931252cb7b7891278ff56aee68798544b826",
+    "page_3": "0ad18345567b9059f12d26d3d4b68a478eb4889c09c250529d499ad3e8b0a969",
+    "page_4": "5fe31ea1f2edfd4ac38e8869a234b3f548d4f40f0f3531b4632c0d83296068be",
+    "page_5": "5deef8d49bff6dea450a8b9e69c5e40c49733c706d87e025ec617e174b01e389",
+    "page_6": "a1d5edf3a02aac197607ea0ba2f4e3c544fae24beaf566a7071ea23689269d7a",
+    "page_7": "b2f21e31b35492acfe4f8dc5c9d46927da8033c4ef93766eb541ba3c7fe3c5d6",
+    "page_8": "bcda3aa5429b20b5f5432ce604db056345ec4668b5fa0b433bf9e2c6943e80f4"
+  },
+  "notations_visually_verified": [
+    {
+      "page": 1,
+      "title": "BATIDA BOSSA-CLÁSSICA / OU TELECOTECO (José Henrique)",
+      "clef": "treble",
+      "meter": "2/4"
+    },
+    {
+      "page": 1,
+      "title": "BATIDA BOSSA-NOVA / COM SÍNCOPE / ANTES (Normando Santos)",
+      "clef": "treble",
+      "meter": "2/4"
+    },
+    {
+      "page": 2,
+      "title": "BATIDA BOSSA-NOVA MISTA / ANTES & DEPOIS (Bebeto do Sax)",
+      "clef": "treble",
+      "meter": "2/4"
+    }
+  ],
+  "content_findings": "Originalbericht vom 13.04.1960 dokumentiert die Entstehung in Juazeiro ('so ele e o violao... ate que ouve um disco de Bonfa... Hobalala e Bim-Bom sao composicoes originalissimas'), enthaelt Notenbeispiele fuer klassische vs. Bossa-Nova-Batida im 2/4-Takt und Aussagen von Zeitzeugen (Normando Santos: 'Essa diferenca no samba e um aumento de sincope'; Bebeto do Sax: 'aplicacao nova de ritmo e melodia ao que ja existia ha muito tempo'). Baden Powell wird im paternalen Kollegium genannt, die spezifische Tamborim-/Surdo-Synthese-Hypothese taucht im zeitgenoessischen Diskurs von 1960 jedoch nicht auf.",
+  "historical_assertion_closed": false,
+  "node_definitions_closed": false,
+  "human_approval": "AUSSTEHEND",
+  "rights": "Eigene Metadaten und Befunde; Scans verbleiben in lokaler Nachweisablage (Auditnachweise-2026-11-15/coverage-originale/pim079_pages/). Keine unberechtigte Weiterverbreitung urheberrechtlich geschuetzter Bilddaten nach Git."
+}

@@ -51,3 +51,5 @@ Den aktuellen Prüfstand liefert der [Benchmark](../../../knowledge/benchmark/RE
 [Pop-Pattern und Originalquellen nach PR #77](GMD_POP_ORIGINALQUELLEN_FORTSETZUNG_2026-11-15.md): 15 Pop-Performances/306 Takte mit zwei getrennten Kick-Vorschlägen und Original-/Familien-Hats; Garcia2013 nur metadatenbestätigt, PDF-Übertragungen unvollständig. Historische und externe Abnahmen offen.
 
 [Funk-Pattern und Reily-Originaltext nach PR #79](GMD_FUNK_REILY_FORTSETZUNG_2026-11-15.md):53 Performances/2560 Takte, getrennte Timing-/Velocitykomponenten; Reily1996 S.5 als zugeschriebene Originalprosa gelesen. Figur, Cabral und historische Kausalitaet weiter offen; keine Fach-/Rechte-/Sicherheitsfreigabe.
+
+[Korpusabdeckung und CDR-019-Primärquellen nach PR #80](GMD_KORPUS_ABDECKUNG_PRIMARQUELLEN_2026-11-15.md): GMD-Genreabdeckung aller 14 Korpusfälle, 28 Soul-Proxy-Takes; Garcia2013-Volltext (286.707 Bytes) und zeitgenössische 1960er Primärquelle Revista O Cruzeiro (pim079, 3 Batida-Notationen) gesichert; externe Fach-/Rechte-/Sicherheitsfreigaben offen.

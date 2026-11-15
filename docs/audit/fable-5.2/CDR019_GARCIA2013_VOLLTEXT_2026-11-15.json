@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "relation_id": "CDR-019",
+  "candidate": {
+    "author": "Walter Garcia",
+    "title": "Radicalismos à brasileira",
+    "journal": "Celeuma 1(1), 2013, pp. 20–31",
+    "doi": "10.11606/issn.2318-7875.v1i1p20-31",
+    "publisher_url": "https://revistas.usp.br/celeuma/article/view/68015",
+    "direct_pdf_url": "https://revistas.usp.br/celeuma/pt_BR/article/view/68015/70585",
+    "access_date": "2026-11-15"
+  },
+  "retrieval_status": "COMPLETE_ORIGINAL_RETRIEVED",
+  "full_pdf_bytes": 286707,
+  "full_pdf_sha256": "400e09368af09df303e965894f7068ab9a134b0346d84f2864bf183862d8ae8a",
+  "pages": 12,
+  "content_analysis": "Vollstaendiger 12-seitiger Verlagsaufsatz erfolgreich abgerufen und analysiert. Behandelt die Bossa-Nova-Aesthetik ('o trabalho de sintese e de estilizacao do samba') und Kordialitaet in der brasilianischen Moderne im Dialog mit Antonio Candido. Zitiert sein eigenes 1999er Buch 'Bim Bom' auf S. 12. Enthaelt keine Notentranskriptionen und keinen Beleg fuer die gesuchte Tamborim-/Surdo-Synthese-Zuschreibung.",
+  "requested_older_original_pages_newly_verified": 0,
+  "historical_assertion_closed": false,
+  "node_definitions_closed": false,
+  "human_approval": "AUSSTEHEND",
+  "rights": "Eigene Metadaten und Befunde; Volltext bleibt in lokaler Nachweisablage (Auditnachweise-2026-11-15/coverage-originale/garcia2013.pdf). Keine unberechtigte Weiterverbreitung geschuetzter Werke nach Git."
+}
