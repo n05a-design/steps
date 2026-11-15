@@ -153,6 +153,7 @@ def audit(document=None):
         if row['relation_id']=='REL-005':observation+=';JAZZSAMBA_SWING_CHART_ORIGINAL_DRUM_COMPONENTS_ONLY'
         if row['relation_id'] in {'REL-001','REL-005'}:observation+=';BOUNDED_NOTE_GRID_NO_COMPLETE_CORE_MATCH_NOT_GENRE_DISPROOF'
         if row['relation_id']=='REL-001':observation+=';REF0030_1320TICK_SYNCOPATION_SENSITIVITY_NO_JOINT_MATCH'
+        if row['relation_id']=='REL-005':observation+=';GMD_SWING_PUBLISHER_MAPPED_DRUM_COMPONENT_NOT_HARMONIC_PAIRING'
         out.append({'relation_id':row['relation_id'],'original_row_sha256':row['original_row_sha256'],**row['original_edge'],
                     'sampling_frame':row['sampling_frame'],'required_annotations':';'.join(row['required_annotations']),
                     'candidate_gaps':json.dumps(checks,ensure_ascii=False,sort_keys=True),
@@ -173,6 +174,8 @@ def audit(document=None):
     patterns.validate(json.loads(patterns.OUTPUT.read_text(encoding='utf8')))
     from scripts import audit_pattern_syncopation as syncopation
     syncopation.validate(json.loads(syncopation.OUTPUT.read_text(encoding='utf8')))
+    from scripts import audit_gmd_swing as swing
+    swing.validate(json.loads(swing.OUTPUT.read_text(encoding='utf8')))
     validate_garcia_followup(json.loads((ROOT/'docs/audit/fable-5.2/CDR019_GARCIA_2023_QUELLENBEFUND_2026-11-14.json').read_text(encoding='utf8')))
     return out
 

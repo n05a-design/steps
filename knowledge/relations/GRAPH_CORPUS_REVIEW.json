@@ -295,7 +295,7 @@
         }
       ],
       "unresolved_claim": "Projektpaarung belegt keine Häufigkeit oder Stilabnahme; getrennte Harmonie- und Drum-Datensätze dürfen nicht als gemeinsame Aufnahme verknüpft werden.",
-      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung. JazzSAMBA liefert jetzt zeitlich gemeinsame Swing-Chart-/Original-Drumkomponenten; offen bleiben gespielte Harmonie, Rollenmapping und exaktes Ride-/Pedalpattern. Neue engere Notenrasterprüfung ohne vollständigen gemeinsamen Kernrastertreffer; Quellinstrumentmapping und historisch mehrdeutige Patternparameter klären. Keine Widerlegung der Genrebehauptung.",
+      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung. JazzSAMBA liefert jetzt zeitlich gemeinsame Swing-Chart-/Original-Drumkomponenten; offen bleiben gespielte Harmonie, Rollenmapping und exaktes Ride-/Pedalpattern. Neue engere Notenrasterprüfung ohne vollständigen gemeinsamen Kernrastertreffer; Quellinstrumentmapping und historisch mehrdeutige Patternparameter klären. Keine Widerlegung der Genrebehauptung. GMD liefert jetzt11 explizite Swing-Performances mit herausgeberdokumentiertem51/44-Mapping und Teilrasterkandidaten; Harmonieannotation und repräsentative Paarungsabnahme fehlen weiterhin.",
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
@@ -304,7 +304,8 @@
         "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json",
         "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json",
         "docs/audit/fable-5.2/KORPUS_JAZZSAMBA_SWING_2026-11-14.json",
-        "docs/audit/fable-5.2/REL_PATTERN_KOMPONENTEN_2026-11-14.json"
+        "docs/audit/fable-5.2/REL_PATTERN_KOMPONENTEN_2026-11-14.json",
+        "docs/audit/fable-5.2/GMD_SWING_PATTERN_2026-11-15.json"
       ],
       "rwc_scope": "HARMONIC_FORM_IN_POPULAR_NOT_REQUESTED_SUBGENRE"
     },

@@ -43,3 +43,5 @@ Den aktuellen Prüfstand liefert der [Benchmark](../../../knowledge/benchmark/RE
 [Fortsetzung nach autorisiertem Push](PATTERN_QUELLEN_FORTSETZUNG_2026-11-15.md): konkrete Aufnahme-/Quelldateibindung des Patternvalidators korrigiert; Loader-Lieferung statisch geprüft und Schreiner-Editionsfrage präzisiert. Keine neue Fach- oder Rechtefreigabe.
 
 [Synkopenprüfung nach PR #71/#72](PATTERN_SYNKOPE_ORIGINALSUCHE_2026-11-15.md): historischen REF-0030-Tickanker wieder zugeordnet, Kick-Synkope mit zwei Toleranzen gemessen und Originalzugänge zu CDR-019 getrennt dokumentiert. Fach-/Rechte-/Sicherheitsabnahmen offen.
+
+[Swing-Quellenprüfung nach PR #73](GMD_SWING_QUELLEN_FORTSETZUNG_2026-11-15.md): herausgeberdokumentiertes GMD-Instrumentmapping, elf Swing-Performances mit konkreten Teilmuster-Prüfstellen und Schreiner-Ausgabe mit ISBN; keine Harmoniekopplungs- oder Fachfreigabe.
