@@ -128,3 +128,6 @@ jobs:
 
       - name: Check actual Ride intervals without acoustic dynamics approval
         run: python -B scripts/audit_gmd_swing_detail.py --check
+
+      - name: Check source-bound Pop pattern interpretations without approval
+        run: python -B scripts/audit_gmd_pop_pattern.py --check

@@ -95,14 +95,15 @@
       ],
       "project_anchors": [],
       "unresolved_claim": "Keine populationsbezogene Häufigkeit oder allgemeine Popnorm aus beauftragten Schlagzeugtakes.",
-      "next_evidence": "Repräsentative Songstichprobe mit Drum-Annotation und unabhängig geprüften Downbeats. RWC liefert jetzt gemeinsame symbolische IDs/Zeitachsen; offen bleiben Zielpattern-/Instrumentmapping, Funktions-/Genreabnahme und repräsentativer Sampling-Rahmen.",
+      "next_evidence": "Repräsentative Songstichprobe mit Drum-Annotation und unabhängig geprüften Downbeats. RWC liefert jetzt gemeinsame symbolische IDs/Zeitachsen; offen bleiben Zielpattern-/Instrumentmapping, Funktions-/Genreabnahme und repräsentativer Sampling-Rahmen. GMD-Pop jetzt an15 Performances/306 Takten mit literalem Snare-/Hat-Mapping und getrennten zusätzlichen/verschobenen Kick-Vorschlägen gemessen; kein gemeinsamer Treffer oder historischer Paarungsnachweis.",
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
       "historical_assertion_closed": false,
       "component_evidence": [
         "docs/audit/fable-5.2/GRAPH_KORPUS_GMD_2026-11-14.json",
-        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json"
+        "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json",
+        "docs/audit/fable-5.2/GMD_POP_PATTERN_2026-11-15.json"
       ],
       "rwc_scope": "POPULAR_NOTECLASS_SUBSET_ONLY"
     },
@@ -246,7 +247,7 @@
         }
       ],
       "unresolved_claim": "Projektpaarung belegt keine Häufigkeit oder Stilabnahme; getrennte Harmonie- und Drum-Datensätze dürfen nicht als gemeinsame Aufnahme verknüpft werden.",
-      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung. RWC liefert jetzt gemeinsame symbolische IDs/Zeitachsen; offen bleiben Zielpattern-/Instrumentmapping, Funktions-/Genreabnahme und repräsentativer Sampling-Rahmen. Neue engere Notenrasterprüfung ohne vollständigen gemeinsamen Kernrastertreffer; Quellinstrumentmapping und historisch mehrdeutige Patternparameter klären. Keine Widerlegung der Genrebehauptung. REF-0030 belegt3e+ als1320Ticks/480PPQ; neue0.04/0.1-Toleranzmessung ergänzt die zuvor ausgelassene Synkope, ohne historischen Paarungsnachweis.",
+      "next_evidence": "Gemeinsame Aufnahme-ID mit zeitlich ausgerichteter Harmonie-/Drumannotation; Definition der Paarung, Nenner und unabhängige Bewertung. RWC liefert jetzt gemeinsame symbolische IDs/Zeitachsen; offen bleiben Zielpattern-/Instrumentmapping, Funktions-/Genreabnahme und repräsentativer Sampling-Rahmen. Neue engere Notenrasterprüfung ohne vollständigen gemeinsamen Kernrastertreffer; Quellinstrumentmapping und historisch mehrdeutige Patternparameter klären. Keine Widerlegung der Genrebehauptung. REF-0030 belegt3e+ als1320Ticks/480PPQ; neue0.04/0.1-Toleranzmessung ergänzt die zuvor ausgelassene Synkope, ohne historischen Paarungsnachweis. GMD-Pop jetzt an15 Performances/306 Takten mit literalem Snare-/Hat-Mapping und getrennten zusätzlichen/verschobenen Kick-Vorschlägen gemessen; kein gemeinsamer Treffer oder historischer Paarungsnachweis.",
       "status": "OPEN",
       "human_approval": "AUSSTEHEND",
       "production_use_allowed": false,
@@ -255,7 +256,8 @@
         "docs/audit/fable-5.2/KORPUS_BILLBOARD_KOMPONENTEN_2026-11-14.json",
         "docs/audit/fable-5.2/KORPUS_RWC_GEMEINSAME_ZEITACHSE_2026-11-14.json",
         "docs/audit/fable-5.2/REL_PATTERN_KOMPONENTEN_2026-11-14.json",
-        "docs/audit/fable-5.2/PAT001_SYNKOPE_2026-11-15.json"
+        "docs/audit/fable-5.2/PAT001_SYNKOPE_2026-11-15.json",
+        "docs/audit/fable-5.2/GMD_POP_PATTERN_2026-11-15.json"
       ],
       "rwc_scope": "POPULAR_SAME_ID_NOT_PAT001_IDENTITY"
     },

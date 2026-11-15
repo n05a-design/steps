@@ -1,0 +1,591 @@
+{
+  "schema_version": 1,
+  "archive_sha256": "651cbc524ffb891be1a3e46d89dc82a1cecb09a57c748c7b45b844c4841dcc1e",
+  "anchor": {
+    "path": "knowledge/research/golden_cases/golden_reference_cases.json",
+    "case_id": "REF-0030",
+    "case_sha256": "7823e056fcebec2e8468e4b6dbaf6873ec067fe9f46af1d988e690212c580721",
+    "ppq": 480,
+    "tick": 1320,
+    "zero_based_quarter_phase": "11/4",
+    "scope": "Project timing definition only; linking it to PAT001 is a disclosed cross-reference, not human style acceptance."
+  },
+  "source_mapping_url": "https://magenta.tensorflow.org/datasets/groove#drum-mapping",
+  "mapping_scope": "GMD publisher36 Kick,38 Snare Head,42 Closed Hat Bow,22 Closed Hat Edge; no transfer to RWC/JazzSAMBA.",
+  "interpretations": "Proposals only: additional requires0,2,2.75; shifted requires0,2.75 and absence of2. Hat42 literal versus source22/42 family remain separate. Neither interpretation approved as historical PAT001 identity.",
+  "method": "All primary-style pop, beat,4-4 source records, tick-zero metronome bars; positive channel9 onsets, half-open complete bars, one-to-one0.04/0.1-quarter tolerance; extra events allowed unless explicitly forbidden.",
+  "rights": "Google LLC, GMDv1.0.0, CC BY4.0; Gillick et al.2019. Original MIDI/audio stay local.",
+  "human_approval": "AUSSTEHEND",
+  "historical_assertion_closed": false,
+  "exact_pat001_verified": false,
+  "harmonic_pairing_verified": false,
+  "population_generalization": false,
+  "summary": {
+    "0.04": {
+      "base_kick_1_3": 8,
+      "additional_kick_grid": 0,
+      "shifted_kick_without_beat3": 0,
+      "literal_snare38": 19,
+      "literal_hat42": 0,
+      "hat_family42_22": 0,
+      "additional_joint_literal": 0,
+      "additional_joint_hatfamily": 0,
+      "shifted_joint_literal": 0,
+      "shifted_joint_hatfamily": 0
+    },
+    "0.1": {
+      "base_kick_1_3": 11,
+      "additional_kick_grid": 0,
+      "shifted_kick_without_beat3": 0,
+      "literal_snare38": 38,
+      "literal_hat42": 4,
+      "hat_family42_22": 11,
+      "additional_joint_literal": 0,
+      "additional_joint_hatfamily": 0,
+      "shifted_joint_literal": 0,
+      "shifted_joint_hatfamily": 0
+    }
+  },
+  "records": [
+    {
+      "recording_id": "drummer1/eval_session/7",
+      "member": "groove/drummer1/eval_session/7_pop-groove7_138_beat_4-4.mid",
+      "midi_sha256": "d65fbd6b773c84859701167094952464632575ccc2a35c7442d457dc5d2e4745",
+      "drummer": "drummer1",
+      "style": "pop/groove7",
+      "bpm_metadata": 138,
+      "ppq": 480,
+      "complete_bars": 15,
+      "counts": {
+        "0.04": {
+          "base_kick_1_3": 0,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 0,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        },
+        "0.1": {
+          "base_kick_1_3": 0,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 1,
+          "literal_hat42": 2,
+          "hat_family42_22": 2,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer5/eval_session/7",
+      "member": "groove/drummer5/eval_session/7_pop-groove7_138_beat_4-4.mid",
+      "midi_sha256": "ebfc116516d8b74126a984edbb856ea690ab5a7ff27b2df92367944dd85829ff",
+      "drummer": "drummer5",
+      "style": "pop/groove7",
+      "bpm_metadata": 138,
+      "ppq": 480,
+      "complete_bars": 15,
+      "counts": {
+        "0.04": {
+          "base_kick_1_3": 1,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 0,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        },
+        "0.1": {
+          "base_kick_1_3": 1,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 0,
+          "literal_hat42": 0,
+          "hat_family42_22": 3,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/eval_session/7",
+      "member": "groove/drummer7/eval_session/7_pop-groove7_138_beat_4-4.mid",
+      "midi_sha256": "42cf3c42b89e9bc12f8a8fde89bb92b47bc4c8f2f1daff8c8ea519421861dbf9",
+      "drummer": "drummer7",
+      "style": "pop/groove7",
+      "bpm_metadata": 138,
+      "ppq": 480,
+      "complete_bars": 15,
+      "counts": {
+        "0.04": {
+          "base_kick_1_3": 1,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 3,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        },
+        "0.1": {
+          "base_kick_1_3": 1,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 10,
+          "literal_hat42": 1,
+          "hat_family42_22": 1,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/100",
+      "member": "groove/drummer7/session2/100_pop_142_beat_4-4.mid",
+      "midi_sha256": "327d2072ec7ff40d86ebe39990286a52b151bcb00d744c5714a7f60e83a253bc",
+      "drummer": "drummer7",
+      "style": "pop",
+      "bpm_metadata": 142,
+      "ppq": 480,
+      "complete_bars": 16,
+      "counts": {
+        "0.04": {
+          "base_kick_1_3": 0,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 0,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        },
+        "0.1": {
+          "base_kick_1_3": 0,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 1,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/101",
+      "member": "groove/drummer7/session2/101_pop_142_beat_4-4.mid",
+      "midi_sha256": "8280f442d28306f374f62e028d7b9945ed333581b30cbdfc5fc030b9cba1df4b",
+      "drummer": "drummer7",
+      "style": "pop",
+      "bpm_metadata": 142,
+      "ppq": 480,
+      "complete_bars": 23,
+      "counts": {
+        "0.04": {
+          "base_kick_1_3": 1,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 0,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        },
+        "0.1": {
+          "base_kick_1_3": 1,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 0,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/102",
+      "member": "groove/drummer7/session2/102_pop_132_beat_4-4.mid",
+      "midi_sha256": "5b0b9d678e84e4161389566ae4a438497a562c7631d286e32faa6b471f5ab16a",
+      "drummer": "drummer7",
+      "style": "pop",
+      "bpm_metadata": 132,
+      "ppq": 480,
+      "complete_bars": 6,
+      "counts": {
+        "0.04": {
+          "base_kick_1_3": 0,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 0,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        },
+        "0.1": {
+          "base_kick_1_3": 0,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 0,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/103",
+      "member": "groove/drummer7/session2/103_pop_132_beat_4-4.mid",
+      "midi_sha256": "ee676a736249dca931d507b601edc0a22d1c8768f006ce844bfc287d7b15d6bc",
+      "drummer": "drummer7",
+      "style": "pop",
+      "bpm_metadata": 132,
+      "ppq": 480,
+      "complete_bars": 25,
+      "counts": {
+        "0.04": {
+          "base_kick_1_3": 0,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 1,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        },
+        "0.1": {
+          "base_kick_1_3": 0,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 2,
+          "literal_hat42": 0,
+          "hat_family42_22": 3,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/104",
+      "member": "groove/drummer7/session2/104_pop_132_beat_4-4.mid",
+      "midi_sha256": "f71fdf7bb0dc4db09e27880e6fdacd4f52886652fa4fd96af048c39a329ca2b0",
+      "drummer": "drummer7",
+      "style": "pop",
+      "bpm_metadata": 132,
+      "ppq": 480,
+      "complete_bars": 26,
+      "counts": {
+        "0.04": {
+          "base_kick_1_3": 2,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 1,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        },
+        "0.1": {
+          "base_kick_1_3": 3,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 7,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/105",
+      "member": "groove/drummer7/session2/105_pop_132_beat_4-4.mid",
+      "midi_sha256": "679d7f3013b30860e8278d6ea9571200e6a3e56f22f76e2552ad9ba3c7f559ce",
+      "drummer": "drummer7",
+      "style": "pop",
+      "bpm_metadata": 132,
+      "ppq": 480,
+      "complete_bars": 10,
+      "counts": {
+        "0.04": {
+          "base_kick_1_3": 0,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 1,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        },
+        "0.1": {
+          "base_kick_1_3": 0,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 1,
+          "literal_hat42": 0,
+          "hat_family42_22": 1,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/96",
+      "member": "groove/drummer7/session2/96_pop_142_beat_4-4.mid",
+      "midi_sha256": "d5a165a1fc16623f1acca2b81779e519accb8b281c2057f395373fa2bb797cdf",
+      "drummer": "drummer7",
+      "style": "pop",
+      "bpm_metadata": 142,
+      "ppq": 480,
+      "complete_bars": 50,
+      "counts": {
+        "0.04": {
+          "base_kick_1_3": 1,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 0,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        },
+        "0.1": {
+          "base_kick_1_3": 1,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 0,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session2/97",
+      "member": "groove/drummer7/session2/97_pop_142_beat_4-4.mid",
+      "midi_sha256": "c42c6055c966705148fbd920cddaeee62e4a8ab752e9e4546e884c91826f5856",
+      "drummer": "drummer7",
+      "style": "pop",
+      "bpm_metadata": 142,
+      "ppq": 480,
+      "complete_bars": 19,
+      "counts": {
+        "0.04": {
+          "base_kick_1_3": 1,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 0,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        },
+        "0.1": {
+          "base_kick_1_3": 1,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 0,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session3/11",
+      "member": "groove/drummer7/session3/11_pop-soft_83_beat_4-4.mid",
+      "midi_sha256": "cbfd4de16aca7dc740e4ad2036a4e1185e657381fec8cb0ce148846728f00822",
+      "drummer": "drummer7",
+      "style": "pop/soft",
+      "bpm_metadata": 83,
+      "ppq": 480,
+      "complete_bars": 47,
+      "counts": {
+        "0.04": {
+          "base_kick_1_3": 1,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 9,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        },
+        "0.1": {
+          "base_kick_1_3": 2,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 12,
+          "literal_hat42": 1,
+          "hat_family42_22": 1,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session3/22",
+      "member": "groove/drummer7/session3/22_pop-soft_83_beat_4-4.mid",
+      "midi_sha256": "9af3f1bb4ee5120f4a3b7327dcf3a62a87638f12800e819c01bf71bba536e9d2",
+      "drummer": "drummer7",
+      "style": "pop/soft",
+      "bpm_metadata": 83,
+      "ppq": 480,
+      "complete_bars": 16,
+      "counts": {
+        "0.04": {
+          "base_kick_1_3": 0,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 2,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        },
+        "0.1": {
+          "base_kick_1_3": 0,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 2,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer7/session3/23",
+      "member": "groove/drummer7/session3/23_pop-soft_83_beat_4-4.mid",
+      "midi_sha256": "01c418db0852e392fa7c91f41feeca7a80494218df6c0da214545898655f8c3e",
+      "drummer": "drummer7",
+      "style": "pop/soft",
+      "bpm_metadata": 83,
+      "ppq": 480,
+      "complete_bars": 8,
+      "counts": {
+        "0.04": {
+          "base_kick_1_3": 0,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 0,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        },
+        "0.1": {
+          "base_kick_1_3": 0,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 0,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        }
+      }
+    },
+    {
+      "recording_id": "drummer8/eval_session/7",
+      "member": "groove/drummer8/eval_session/7_pop-groove7_138_beat_4-4.mid",
+      "midi_sha256": "e374db71ee5861723e8e017311a8924f8d58e1612dd922198179320ef8e737db",
+      "drummer": "drummer8",
+      "style": "pop/groove7",
+      "bpm_metadata": 138,
+      "ppq": 480,
+      "complete_bars": 15,
+      "counts": {
+        "0.04": {
+          "base_kick_1_3": 0,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 2,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        },
+        "0.1": {
+          "base_kick_1_3": 1,
+          "additional_kick_grid": 0,
+          "shifted_kick_without_beat3": 0,
+          "literal_snare38": 2,
+          "literal_hat42": 0,
+          "hat_family42_22": 0,
+          "additional_joint_literal": 0,
+          "additional_joint_hatfamily": 0,
+          "shifted_joint_literal": 0,
+          "shifted_joint_hatfamily": 0
+        }
+      }
+    }
+  ]
+}
