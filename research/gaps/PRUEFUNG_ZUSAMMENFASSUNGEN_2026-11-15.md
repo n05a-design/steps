@@ -4,23 +4,7 @@
 
 ## Vorgehen und Ergebnis
 
-Jede der zehn [Zusammenfassungen](../STEPS_Bibliothek/Zusammenfassungen/README.md) wurde in Einzelaussagen zerlegt und gegen ihren lokalen Volltext-Extrakt geprüft. Jede Aussage erhielt genau einen Status: BELEGT, TEILWEISE, NICHT BELEGT, FALSCH oder NICHT PRÜFBAR. Getrennt geprüft wurden Notation (englische und deutsche Tonnamen, Enharmonik, Stufenschreibweise), funktionale Mehrdeutigkeit, die Abschnitte „Nutzen für STEPS“ und „Grenzen“ sowie Nähe zum Wortlaut und zur Struktur des Originals.
-
-Die Extrakte zu Hindemith, Palmer/Manus/Lethco, Stuart und Adorno wurden vollständig gelesen. Bei den übrigen sechs Werken wurden Titelei, Vorwort und Inhaltsverzeichnis vollständig gelesen und die weiteren Aussagen per Volltextsuche an den einschlägigen Stellen geprüft.
-
-| Werk | FALSCH | TEILWEISE | NICHT BELEGT | NICHT PRÜFBAR | Aussagen |
-| --- | --- | --- | --- | --- | --- |
-| Aldwell/Schachter | 0 | 11 | 1 | 0 | 47 |
-| Schönberg | 3 | 7 | 1 | 0 | 43 |
-| Hindemith | 2 | 9 | 2 | 0 | 46 |
-| Spencer | 0 | 5 | 1 | 0 | 36 |
-| Palmer/Manus/Lethco | 0 | 3 | 2 | 1 | 38 |
-| Stuart | 0 | 6 | 3 | 0 | 50 |
-| DeSantis | 0 | 4 | 1 | 0 | 36 |
-| Pejrolo | 0 | 6 | 0 | 0 | 28 |
-| Müller | 1 | 4 | 3 | 0 | 34 |
-| Adorno (Auszug) | 0 | 2 | 0 | 0 | 29 |
-| **Summe** | **6** | **57** | **14** | **1** | **387** |
+Jede der zehn [Zusammenfassungen](../STEPS_Bibliothek/Zusammenfassungen/README.md) wurde in Einzelaussagen zerlegt und gegen ihren lokalen Volltext-Extrakt geprüft (387 Aussagen: 6 FALSCH, 57 TEILWEISE, 14 NICHT BELEGT, 1 NICHT PRÜFBAR). Zählung je Werk, Fehlerarten, Notation, Mehrdeutigkeit und Grenzen der Prüfung stehen im [Prüfprotokoll](../STEPS_Bibliothek/Zusammenfassungen/PRUEFPROTOKOLL_FABLE_2026-11-15.md). Diese Datei hält fest, was danach offen bleibt.
 
 Alle sechs FALSCH-Stellen und die beanstandeten TEILWEISE- und NICHT-BELEGT-Stellen sind in den Zusammenfassungen korrigiert. Bei Hindemith war die Leittonregel ins Gegenteil verkehrt: Übermäßige und verminderte Schritte zum Leitton sind erlaubt, das Verlassen so seltener. Die Kopfdaten tragen den Vermerk „korrigiert am 15.11.2026 nach PRUEFBERICHT.md“. Das Feld `seiten` ist dort, wo es die PDF-Seitenzahl und nicht den Buchumfang angibt, entsprechend kommentiert.
 
@@ -66,6 +50,6 @@ Wörtliche Passagen von mehr als etwa 15 Wörtern wurden in keiner Zusammenfassu
 
 ### Prüfberichte
 
-Die zehn Prüfberichte und die Gesamtübersicht liegen nur lokal im Prüfpaket außerhalb des Repositorys, ebenso eine Sicherung der Zusammenfassungen vor der Korrektur. Der Vermerk „nach PRUEFBERICHT.md“ in den Kopfdaten verweist auf diese lokalen Berichte. Ob sie versioniert werden, ist offen: Sie enthalten Fundstellen und kurze Belegformulierungen aus den Extrakten.
+Die Gesamtübersicht ist als [Prüfprotokoll](../STEPS_Bibliothek/Zusammenfassungen/PRUEFPROTOKOLL_FABLE_2026-11-15.md) versioniert. Die zehn Einzelberichte und eine Sicherung der Zusammenfassungen vor der Korrektur liegen nur lokal im Prüfpaket außerhalb des Repositorys, weil sie zur Belegführung aus den Extrakten zitieren. Der Vermerk „nach PRUEFBERICHT.md“ in den Kopfdaten verweist auf diese lokalen Berichte. Die Fassungen vor der Korrektur sind zusätzlich in der Git-Historie erhalten (Stand `4feb3db`).
 
 [Zur Übersicht der offenen Evidenz](README.md)
