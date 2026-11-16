@@ -5,6 +5,8 @@ STEPS Platform-Independent Golden Test Suite Runner (Phase 4.16 Hardened)
 Features:
 - Completely decoupled from hardcoded local paths (no fixed %LOCALAPPDATA% path).
 - Accepts optional --output-dir argument for audit exports.
+- Writes the versioned baseline files under knowledge/research/ only with
+  --update-baseline; a plain run leaves the working tree untouched.
 - Eliminates pseudo-passes: strictly separates 67 computational tests from 131 specification examples.
 - Generates:
   - REAL_GOLDEN_TEST_EXECUTION_REPORT.md
@@ -91,7 +93,7 @@ def get_actual_test_function(cid: str, test_class: str) -> str:
         return 'TestReferenceImplementation.verify_cross_domain_compatibility'
     return 'TestGoldenReferenceCases.evaluate_executable_case'
 
-def run_suite(output_dir=None):
+def run_suite(output_dir=None, update_baseline=False):
     commit_sha, git_branch = get_git_info()
     py_version = platform.python_version()
     os_info = platform.platform()
@@ -306,10 +308,13 @@ def run_suite(output_dir=None):
 """
 
     # Target destinations
-    targets = [
-        os.path.join(REPO_ROOT, 'knowledge', 'research', 'REAL_GOLDEN_TEST_EXECUTION_REPORT.md'),
-        os.path.join(REPO_ROOT, 'knowledge', 'research', 'GOLDEN_TEST_EXECUTION_REPORT.md')
-    ]
+    baseline_dir = os.path.join(REPO_ROOT, 'knowledge', 'research')
+    targets = []
+    if update_baseline:
+        targets.extend([
+            os.path.join(baseline_dir, 'REAL_GOLDEN_TEST_EXECUTION_REPORT.md'),
+            os.path.join(baseline_dir, 'GOLDEN_TEST_EXECUTION_REPORT.md')
+        ])
     if output_dir:
         os.makedirs(output_dir, exist_ok=True)
         targets.extend([
@@ -328,10 +333,12 @@ def run_suite(output_dir=None):
         'expected_output', 'tolerance', 'status', 'execution_ms',
         'error_detail', 'theoretical_rule', 'source_citation'
     ]
-    csv_targets = [
-        os.path.join(REPO_ROOT, 'knowledge', 'research', 'FINAL_REFERENCE_CASE_VALIDATION.csv'),
-        os.path.join(REPO_ROOT, 'knowledge', 'research', 'MUSICAL_REFERENCE_VALIDATION.csv')
-    ]
+    csv_targets = []
+    if update_baseline:
+        csv_targets.extend([
+            os.path.join(baseline_dir, 'FINAL_REFERENCE_CASE_VALIDATION.csv'),
+            os.path.join(baseline_dir, 'MUSICAL_REFERENCE_VALIDATION.csv')
+        ])
     if output_dir:
         csv_targets.extend([
             os.path.join(output_dir, 'FINAL_REFERENCE_CASE_VALIDATION.csv'),
@@ -351,9 +358,9 @@ def run_suite(output_dir=None):
         'expected_output', 'actual_computed_result', 'source_reference',
         'scope', 'test_status'
     ]
-    audit_targets = [
-        os.path.join(REPO_ROOT, 'knowledge', 'research', 'GOLDEN_TEST_CLASSIFICATION_AUDIT.csv')
-    ]
+    audit_targets = []
+    if update_baseline:
+        audit_targets.append(os.path.join(baseline_dir, 'GOLDEN_TEST_CLASSIFICATION_AUDIT.csv'))
     if output_dir:
         audit_targets.append(os.path.join(output_dir, 'GOLDEN_TEST_CLASSIFICATION_AUDIT.csv'))
 
@@ -364,12 +371,20 @@ def run_suite(output_dir=None):
             writer.writerows(audit_rows)
         print(f"Generated Audit CSV: {at}")
 
+    if not (update_baseline or output_dir):
+        print("No files written (use --output-dir for exports or --update-baseline "
+              "to refresh the versioned reports under knowledge/research/).")
+
     return 0 if total_failed == 0 else 1
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="STEPS Golden Test Runner")
     parser.add_argument('--output-dir', help="Optional path to output reports and CSVs", default=None)
+    parser.add_argument(
+        '--update-baseline', action='store_true',
+        help="Overwrite the versioned reports and CSVs under knowledge/research/ "
+             "(they embed timestamp, timings, platform and commit SHA)")
     args = parser.parse_args()
 
-    exit_code = run_suite(output_dir=args.output_dir)
+    exit_code = run_suite(output_dir=args.output_dir, update_baseline=args.update_baseline)
     sys.exit(exit_code)
