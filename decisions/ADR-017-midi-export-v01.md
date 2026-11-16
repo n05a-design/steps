@@ -14,7 +14,7 @@
 | Dateiformat | SMF Typ 1, 480 PPQ |
 | Spuren | Track 0: globale Meta-Events · Track 1 „Chords“ (Kanal 1) · Track 2 „Bass“ (Kanal 2). Tracknamen als Meta 0x03. Option im Export: eine einzige Spur. |
 | Notenlänge | Standard: Akkorddauer minus 10 Ticks (≈ 10 ms bei 120 BPM). Option: 95 % der Akkorddauer. Auf demselben Tick stehen Note-offs immer vor Note-ons (Vertrag T14). |
-| Lage | Akkorde: 4-stimmig in enger Lage (`CLOSE`) im Bereich MIDI 48–72. Option: `DROP2` oder `ROOTLESS` (3-7-9-13). Bass: Grundton bzw. notierter Bass in MIDI 36–47 (C2–B2), über `realize(..., bass_octave=2)`. |
+| Lage | Akkorde: 4-stimmig in enger Lage (`CLOSE`) im Bereich MIDI 48–72. Option: `DROP2` oder `ROOTLESS` (3-7-9-13). Bass: Grundton bzw. notierter Bass in MIDI 36–47 (C2–B2), über `ChordDefinition.to_voicing(..., bass_octave=2)`. |
 | Velocity | Fest: Akkorde 90, Bass 100. Kein Humanize. Ergebnis ist deterministisch und hashbar. |
 | Metadaten | Tempo (0x51) und Taktart (0x58) auf Track 0, Standard 120 BPM und 4/4. Tonart (0x59) nur bei diatonischem Dur oder Moll mit −7…+7 Vorzeichen; bei modalen Tonarten (z. B. D-Dorisch) oder mehr als 7 Vorzeichen weglassen. Kein Program Change (0xC0). |
 | DAW-Abnahme | Reaper (strenger SMF-Parser) und MuseScore 4 (Taktart, Tonart, Notation); alternativ Ableton Live oder Logic Pro als zweites Programm. Ergebnis mit Versionsstand protokollieren. |
@@ -30,5 +30,5 @@
 
 ## Links
 - [`docs/engineering/MUSIC_DOMAIN_AND_MIDI.md`](../docs/engineering/MUSIC_DOMAIN_AND_MIDI.md)
-- [`src/steps/theory/chord.py`](../src/steps/theory/chord.py) (`realize`, Voicing-Arten)
+- [`src/steps/theory/chord.py`](../src/steps/theory/chord.py) (`ChordDefinition.to_voicing`, Voicing-Arten)
 - [SMF-Spezifikation der MIDI Association](https://midi.org/standard-midi-files)

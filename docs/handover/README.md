@@ -4,7 +4,7 @@ Für jede Übergabe den Git-Stand, die geprüften Ergebnisse und die nächsten E
 
 | Einstieg | Inhalt |
 | --- | --- |
-| [Master-Übergabe (16.11.2026)](MASTER_UEBERGABE_2026-11-16.md) | Ganzheitliche kontextbasierte Übergabe für den nächsten KI-Agenten: Projektstand, Audits, CI-Gates, offene Aufgaben. |
+| [Master-Übergabe (fortgeschrieben am 17.11.2026)](MASTER_UEBERGABE_2026-11-16.md) | Ganzheitliche Übergabe für den nächsten KI-Agenten: Schnelleinstieg, Arbeitsregeln, Audits und Entscheidungen bis ADR-017, CI-Gates, Fahrplan ab SMF-Writer. |
 | [Checkliste](HANDOVER_CHECKLIST.md) | Prüf- und Übergabepunkte. |
 | [Vorlage](../../templates/HANDOVER_TEMPLATE.md) | Struktur für eine neue Übergabe. |
 | [Historische Übergaben](../../archive/INDEX.md) | Datierte Berichte und frühere Projektstände. |

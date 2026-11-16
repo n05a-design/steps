@@ -1,10 +1,12 @@
 # STEPS – Ganzheitliche kontextbasierte Master-Übergabe für den nächsten KI-Agenten
 
-- **Stand:** 16.11.2026 (Europe/Berlin)
+- **Stand:** 17.11.2026 (Europe/Berlin), Fortschreibung der Fassung vom 16.11.2026. Der Dateiname bleibt für stabile Verweise unverändert.
 - **Projekt:** STEPS (Desktop-Musik-App für Harmonielehre, Voicings, Progressionen und Rhythmus)
 - **Remote-Repository:** `https://github.com/n05a-design/steps`
-- **Geprüfter Ausgangsstand (`origin/main`):** Commit `d717cec` (nach Merge von PR #110); die erste Fassung dieses Dokuments bezog sich auf `93e8b5c` (PR #107)
-- **Status:** Konsolidierter Master-Übergabestand nach PR #88–#110. Lokale Gates am 16.11.2026 auf `d717cec` nachgeprüft (Abschnitt 3.8 und 4); fachliche Menschabnahme weiterhin `AUSSTEHEND`.
+- **Geprüfter Ausgangsstand (`origin/main`):** Commit `1682d35` (nach Merge von PR #115). Diese Fortschreibung kommt mit dem Branch `claude/v01-spezifikation-und-graph-review-v2` (v0.1-Spezifikation, Graph-Abnahme v2). Frühere Fassungen bezogen sich auf `d717cec` (PR #110) und `93e8b5c` (PR #107).
+- **Status:** Konsolidierter Stand nach PR #88–#115 plus diesem Branch. Richtung für v0.1, Lizenz, Fenster, Speicherformat und MIDI-Export sind vom Inhaber entschieden (Abschnitt 3.9). Alle 97 Graphkanten und alle 15 Punkte des Abnahmebogens sind vom Inhaber bewertet; eine unabhängige Fachabnahme steht aus. Der nächste Code-Schritt ist der SMF-Writer nach [ADR-017](../../decisions/ADR-017-midi-export-v01.md) (Abschnitt 5).
+
+**Schnelleinstieg für einen neuen Agenten:** 1. `AGENTS.md` lesen. 2. Abschnitt 2 (Arbeitsregeln) und 5 (Fahrplan) dieser Datei lesen. 3. Entscheidungen im [Register](../../decisions/DECISION_REGISTER.md) und in `decisions/ADR-0*.md`. 4. Offene Punkte in [`OPEN_GAPS.md`](../../research/gaps/OPEN_GAPS.md) (Tabelle „Restprüfung nach dem Fable-Audit“, neueste Zeilen unten). 5. Vor jeder Änderung die Gates aus Abschnitt 4 laufen lassen.
 
 ---
 
@@ -40,15 +42,20 @@ Für alle Agenten (Codex, Claude, Gemini, Antigravity, ChatGPT) gelten ausnahmsl
 5. **Datenherkunft und Urheberrecht:** Keine Volltexte oder Seitenbilder urheberrechtlich geschützter Werke (Rechteklasse E) ins Git committen. Klasse E verbleibt als `restricted_local` ausschließlich auf der lokalen Festplatte.
 6. **PR-Workflow und Ruleset 26983173:**
    - **Niemals direkt auf `main` pushen.**
-   - Wegen des GitHub Rulesets `26983173` ("basic") schlagen Pushes auf bestehende Remote-Branches mit `GH013: Changes must be made through a pull request` fehl. Jeder PR muss daher auf einem **frischen, neuen Branch-Namen** mit genau einem vollständigen Commit angelegt und via `gh pr create` eingereicht werden.
+   - Wegen des GitHub Rulesets `26983173` ("basic") schlagen Pushes auf bestehende Remote-Branches mit `GH013: Changes must be made through a pull request` fehl. Jeder PR wird daher auf einem **frischen, neuen Branch-Namen** angelegt und via `gh pr create` eingereicht. Mehrere Commits je PR sind möglich (PR #113 wurde mit zwei Commits gemergt); die Aussage zu `GH013` bei Pushes auf bestehende Branches wurde am 17.11.2026 nicht erneut geprüft.
+   - Gemergt wird durch den Inhaber, nicht durch Agenten. Merged Branches bleiben auf `origin` erhalten.
 7. **OneDrive-Worktree-Besonderheit:**
    - Das Hauptcheckout liegt unter OneDrive (`~/Library/CloudStorage/OneDrive-Persönlich/Github/steps`); Agenten arbeiten in eigenen Worktrees (z. B. `.claude/worktrees/<name>`). Der Worktree `fix_onedrive_git_index` liegt außerhalb von OneDrive unter `~/.gemini/antigravity/worktrees/steps/`. Maschinenpfade gehören nicht in versionierte Dokumente – Verweise immer relativ setzen.
    - OneDrive neigt dazu, die Index-Datei eines Worktrees (`.git/worktrees/<name>/index`) bei Schreibkollisionen in `index 2` oder `index (<Datum>)` umzubenennen. Git meldet dann plötzlich alle 2.900+ Dateien als "gelöscht".
    - **Lösung:** Den Index sofort mit `git reset -q HEAD` (niemals `--hard`) wiederherstellen. Die Dateien auf der Platte bleiben dabei 100% unberührt. Die von OneDrive erzeugten Konfliktkopien im `.git`-Verzeichnis nicht löschen.
+   - Der Pfad enthält „ö“ in zwei Unicode-Schreibweisen (NFC/NFD). Einzelne Editor-Werkzeuge lehnen den Pfad deshalb ab; Python- und Shell-Aufrufe aus dem Repository-Root funktionieren.
+   - `git worktree list` zeigt neun veraltete Einträge (`prunable`) früherer Windows-/Temp-Worktrees. Nicht ohne Rückfrage bereinigen.
+8. **Git-Identität:** Auf dem Mac ist kein `user.name`/`user.email` konfiguriert; die automatische Ableitung aus dem Rechnernamen scheitert je nach Netz. Identität beim Inhaber erfragen und je Commit mit `git -c user.name=… -c user.email=… commit` übergeben, keine globale Konfiguration ändern.
+9. **Inhaberentscheidungen statt Fachabnahme:** Entscheidungen des Inhabers werden als „Inhaber“ mit Datum eingetragen und ausdrücklich nicht als unabhängige Fachabnahme bezeichnet. `scripts/audit_graph.py` erzeugt `GRAPH_AUDIT_MATRIX.csv` und weist dort jede Freigabe ab; menschliche Bewertungen liegen deshalb in eigenen, per `original_row_sha256` gebundenen Dateien (`GRAPH_HUMAN_REVIEW_v*.csv`).
 
 ---
 
-## 3. Konsolidierte Audit-Befunde (PR #88 – #107)
+## 3. Konsolidierte Audit-Befunde und Entscheidungen (PR #88 – #115 und Folgebranch)
 
 In den zurückliegenden Arbeitssitzungen wurden sämtliche historischen Unklarheiten und offenen Lücken systematisch aufgearbeitet:
 
@@ -93,11 +100,29 @@ In den zurückliegenden Arbeitssitzungen wurden sämtliche historischen Unklarhe
 - **Korrigiert:** Diese Übergabe enthielt 11 absolute `file:///Users/…/.gemini/…`-Links, die nur auf einer Maschine auflösten und vom bisherigen Linkcheck nicht erfasst wurden. Sie sind jetzt relativ.
 - **Bekannte Nebenwirkung:** `run_golden_test_suite.py` überschreibt bei jedem Lauf fünf versionierte Dateien unter `knowledge/research/` (`FINAL_REFERENCE_CASE_VALIDATION.csv`, `GOLDEN_TEST_CLASSIFICATION_AUDIT.csv`, `MUSICAL_REFERENCE_VALIDATION.csv`, `GOLDEN_TEST_EXECUTION_REPORT.md`, `REAL_GOLDEN_TEST_EXECUTION_REPORT.md`) mit Zeitstempel, Laufzeiten, Plattform, Commit und CRLF→LF. Fachlich ändert sich nichts. **Behoben:** Ohne Argumente schreibt der Runner jetzt nichts; `--output-dir <Pfad>` exportiert, `--update-baseline` erneuert die versionierten Berichte bewusst (abgesichert durch `tests/test_golden_runner_outputs.py`).
 
+### 3.9 Sitzung 16./17.11.2026: Korrekturen, Abnahmen und Richtungsentscheidungen
+| PR | Inhalt |
+| --- | --- |
+| #111 | Diese Übergabe portabel gemacht (11 absolute `file:///`-Links → relativ), Ausgangsstand nachgezogen, Fahrplan korrigiert (Kern existiert bereits). |
+| #112 | `knowledge/research/run_golden_test_suite.py` schreibt ohne Argumente nichts mehr; `--output-dir` exportiert, `--update-baseline` erneuert die versionierten Berichte; `tests/test_golden_runner_outputs.py`. |
+| #113 | Abnahmebogen A1–A6, B1–B9 vom Inhaber entschieden (12 freigegeben, A1/B1 Korrektur, B2 Beleg fehlt), in zwei getrennten Commits. |
+| #114 | Fehler behoben: `NoteSpelling.transpose_diatonic` verschob bei unpassenden Stufen/Halbtönen still die Oktave (C4 `(0, 11)` → Cb5); jetzt `InvalidAlterationError`. `tests/test_transpose_diatonic_strict.py` mit Eigenschaftsprüfung über alle 35 Schreibweisen. Gefunden über eine Zeilenmessung des Kerns: 85,3 % (831/974 Zeilen) werden von den Tests ausgeführt; Lücken sind fast nur Fehlerpfade. |
+| #115 | [ADR-013](../../decisions/ADR-013-v01-umfang-akkorde-und-midi-export.md) (v0.1 = Akkorde + MIDI-Export, Drums v2, Zielgruppe Produzierende), [ADR-014](../../decisions/ADR-014-theorie-perspektiven-und-kontext.md) (Perspektivenmodell mit `paradigm`/`source`/`StyleContext`), [ADR-015](../../decisions/ADR-015-kernvertraege-intervalle-voicing-notation.md) (Kernverträge), [ADR-016](../../decisions/ADR-016-v7alt-alterierte-dominante.md) (`V7alt`); Graph-Abnahme v1 (25 Kanten). |
+| Folgebranch | [ADR-017](../../decisions/ADR-017-midi-export-v01.md) (MIDI-Export), [ADR-007](../../decisions/ADR-007-audio-nur-dateiexport-v01.md) (nur Dateiexport), [ADR-001](../../decisions/ADR-001-ein-fenster-zwei-bereiche.md) (ein Fenster, zwei Bereiche), [ADR-003](../../decisions/ADR-003-glide-nur-shell-und-infrastruktur.md) (Glide nur Shell), [ADR-004](../../decisions/ADR-004-lizenz-und-marke.md) (Code MPL-2.0, eigene Wissensdaten CC BY 4.0), [ADR-006](../../decisions/ADR-006-json-mit-schema-version.md) (JSON, ganzzahlige `schema_version`); ADR-014 mit Hindemith I,2; Graph-Abnahme v2 mit allen 97 Kanten. |
+
+**Wichtige Abgleiche aus dieser Sitzung**, damit sie nicht erneut aufkommen:
+- Ein vorgeschlagener Lizenzwechsel zu MIT/Apache wurde verworfen: Das Repository steht unter MPL-2.0, aus Glide übernommene Dateien müssen MPL-2.0 bleiben.
+- Glide hat kein Musik-Datenmodell und keinen Parser; Wiederverwendung nur für die UI-Shell.
+- 95 % Notenlänge hätte bei ganztaktigen Akkorden 100 ms Lücke ergeben (120 BPM); Standard ist deshalb Dauer minus 10 Ticks.
+- CDR-019 darf nicht `HISTORICAL_ORIGIN` heißen, weil der Inhaber bei A5 einen Kausalanspruch ausgeschlossen hat; Typ `ATTRIBUTED_INTERPRETATION`.
+
 ---
 
 ## 4. Testarchitektur und Qualitätsgates
 
 **Lokale Einrichtung:** `python3 -m pip install -r knowledge/benchmark/requirements.txt` (PyYAML 6.0.3, nur für Audit-Skripte; der Kern hat keine Laufzeitabhängigkeit).
+
+**Stand 17.11.2026:** 415 Kern-Unittests und 36 Curation-Skill-Tests OK; `verify_reference_integrity.py` meldet 17 ADRs. Die vollständige CI-Liste steht in [`.github/workflows/python-tests.yml`](../../.github/workflows/python-tests.yml); lokal mindestens zusätzlich `python3 -B scripts/audit_graph.py --check`, `python3 -B tools/validation/check_structure.py`, `python3 -B scripts/render_api_reference.py --check` und `python3 -B scripts/pre-commit-secret-check.py`. Neue ADRs brauchen einen Eintrag in `CANONICAL_ADR_THEMES` (`scripts/verify_reference_integrity.py`) und die erwartete Anzahl in `tests/test_reference_integrity.py`; der ADR-Status im Register muss ein reiner Wert sein (`proposed`, `accepted`, `rejected`, `superseded`).
 
 Bevor ein PR eingereicht wird, müssen folgende Tests lokal fehlerfrei durchlaufen:
 1. **Referenzintegrität:**
@@ -118,16 +143,32 @@ Bevor ein PR eingereicht wird, müssen folgende Tests lokal fehlerfrei durchlauf
 
 ## 5. Konkreter Fahrplan für den nächsten Agenten
 
-Der nächste Agent soll nahtlos an folgenden konkreten Punkten anknüpfen:
+Stand 17.11.2026. Kein Punkt wartet auf eine Inhaberentscheidung, bevor AP 1 beginnen kann.
 
-### Arbeitspaket 1: Begleitung der Fable-5.2-Menschabnahme
-- Der [`ABNAHMEBOGEN_2026-11-16.md`](../../docs/audit/fable-5.2/ABNAHMEBOGEN_2026-11-16.md) ist am 16.11.2026 vom Inhaber entschieden: 12 von 15 Punkten freigegeben, A1 mit Korrektur am Knotennamen (`SAME_ROOT_DOMINANT_TO_MINOR_SEVENTH` statt `SAME_ROOT_MAJOR_TO_MINOR_SEVENTH`), B1 mit Korrektur (schwarze Notenköpfe als Grenz-/Ausnahmetöne, Deutung nach Konvention), B2 mit fehlendem Beleg (Kap. XIII im Original-PDF sichten). **Nächster Schritt:** Entscheidungen in einem eigenen PR in Graph (`knowledge/relations/`) und `NODE_DEFINITION_PROPOSALS.json` übernehmen. Eine unabhängige Fachperson kann die Punkte weiterhin korrigieren.
+### Arbeitspaket 1: SMF-Writer für v0.1 (nächster Code-Schritt)
+- Grundlage: [ADR-017](../../decisions/ADR-017-midi-export-v01.md), Zielvertrag [`MUSIC_DOMAIN_AND_MIDI.md`](../engineering/MUSIC_DOMAIN_AND_MIDI.md) §4–5, Prüfplan Q5 in [`VERIFICATION_PLAN_V2.md`](../quality/VERIFICATION_PLAN_V2.md).
+- Reiner Writer im Kern (`src/steps/`, Paketort im PR festlegen), ohne Abhängigkeit von `app/` und ohne Fremdbibliothek, solange die Standardbibliothek genügt.
+- Akkord-Timeline mit ganzzahligen Ticks (480 PPQ), Voicing über `ChordDefinition.to_voicing` ([`chord.py`](../../src/steps/theory/chord.py)), Bass mit `bass_octave=2`.
+- 10 Golden-Exportfälle mit Byte-Hash; Prüfpunkte 1–10 aus `MUSIC_DOMAIN_AND_MIDI.md` §5 (Note-off vor Note-on, Tempo-Map, Meta-Events, Tracknamen, Tonart nur bei Dur/Moll −7…+7).
+- DAW-Abnahme (Reaper, MuseScore 4) macht der Inhaber; Ergebnis mit Versionsstand protokollieren.
 
-### Arbeitspaket 2: Ausbau der Core-Implementierung (Phase 5 MVP v0.1)
-- **Richtung seit 17.11.2026 entschieden:** v0.1 = Akkorde + MIDI-Export, Drums in v2, Zielgruppe Produzierende ([ADR-013](../../decisions/ADR-013-v01-umfang-akkorde-und-midi-export.md)); Perspektivenmodell für widersprüchliche Theorien ([ADR-014](../../decisions/ADR-014-theorie-perspektiven-und-kontext.md)); Kernverträge ([ADR-015](../../decisions/ADR-015-kernvertraege-intervalle-voicing-notation.md)) und `V7alt` ([ADR-016](../../decisions/ADR-016-v7alt-alterierte-dominante.md)) sind beschlossen, aber noch nicht umgesetzt. 25 Graphkanten sind vom Inhaber abgenommen ([`GRAPH_HUMAN_REVIEW_v1.csv`](../../knowledge/relations/GRAPH_HUMAN_REVIEW_v1.csv)).
-- **v0.1-Spezifikation (17.11.2026):** MIDI-Export nach [ADR-017](../../decisions/ADR-017-midi-export-v01.md) ist der nächste Kernbaustein (reiner SMF-Writer in `src/steps/`, 10 Golden-Exportfälle). Dazu ADR-001, 003, 004, 006 und 007 angenommen; alle 97 Graphkanten bewertet ([`GRAPH_HUMAN_REVIEW_v2.csv`](../../knowledge/relations/GRAPH_HUMAN_REVIEW_v2.csv)).
-- **Nicht bei null beginnen:** `src/steps/theory/` (`pitch`, `interval`, `chord`, `triad`, `seventh`, `exceptions`) und `src/steps/progression/` (`engine`, `voice_leading`, `reviewed` samt Bestands- und Freigabe-JSON) existieren bereits mit rund 2.600 Zeilen. `models/` und `ports/` sind nur Paketorte, `app/` umfasst rund 80 Zeilen Python. Verträge und API: [`docs/theory/API_VERTRAEGE.md`](../theory/API_VERTRAEGE.md), [`docs/theory/API.md`](../theory/API.md); Tests u. a. `tests/test_theory_core.py`, `tests/test_progression_engine.py`, `tests/test_voicing_contract.py`, `tests/test_notation_contract.py`.
-- Vor neuem Code die vorhandenen Verträge lesen und gegen [`research/gaps/OPEN_GAPS.md`](../../research/gaps/OPEN_GAPS.md) (Abschnitt „Fachprüfung des Progressionskerns“) abgleichen. Offene Ausbaupunkte:
-  - Intervall-, Akkord- und Skalen-Parser (mit strikter Unterscheidung von H/B und B/B♭).
-  - Modus- und Syntax-Engine (unter Berücksichtigung von Aldwell/Schachter, Hindemith und Schönberg).
-  - Anbindung der UI-Shell in `app/` ohne Vermischung mit der Fachdomäne.
+### Arbeitspaket 2: Beschlossene Kernverträge umsetzen
+- [ADR-015](../../decisions/ADR-015-kernvertraege-intervalle-voicing-notation.md): unreduzierte Intervalle prüfen und angleichen; `VOICING_REDUCTION_4_VOICE` vor DROP2 (`C13` behält 3, ♭7, 13); deutsche Namen ohne Suffix mit dokumentweiter Locale.
+- [ADR-016](../../decisions/ADR-016-v7alt-alterierte-dominante.md): `7alt` als Tonvorrat, Voicing nur mit ausdrücklicher Auswahl.
+- [ADR-014](../../decisions/ADR-014-theorie-perspektiven-und-kontext.md): `InterpretationEdge` und `StyleContext` in die Domänenverträge; für v0.1 genügt der Kontext Jazz/Pop.
+- Je Punkt eigener PR mit Golden-Fällen und Gegenprobe am alten Verhalten. Aktualisiert `API_VERTRAEGE.md` und den CHANGELOG.
+
+### Arbeitspaket 3: Graph-Abnahme in den Generator übernehmen
+- [`GRAPH_HUMAN_REVIEW_v2.csv`](../../knowledge/relations/GRAPH_HUMAN_REVIEW_v2.csv) bewertet alle 97 Kanten. `GRAPH_AUDIT_PLAN.json` und `scripts/audit_graph.py` lehnen Freigaben derzeit ab; die Übernahme braucht eine bewusste Änderung dieser Sperre mit Test.
+- Folgearbeiten aus den Entscheidungen: CDR-012-Zielknoten in [`NODE_DEFINITION_PROPOSALS.json`](../../knowledge/relations/NODE_DEFINITION_PROPOSALS.json) umbenennen; ERR-026 in zwei Versionen trennen (REL-020); CDR-010-Ersatz `C6_9_SHARP11_COLLECTION` aus [`GRAPH_CORRECTIONS.json`](../../knowledge/relations/GRAPH_CORRECTIONS.json) übernehmen.
+- 14 Korpuskanten bleiben ohne Produktionsfreigabe, bis ein empirischer Korpus vorliegt.
+
+### Arbeitspaket 4: Qualitätswerkzeuge (nur mit Zustimmung des Inhabers zur Paketinstallation)
+- Vorgeschlagen und noch nicht installiert: `ruff` (in `pyproject.toml` konfiguriert), `mypy` (Kern deklariert `py.typed`), `coverage` mit Schwelle (Kern derzeit 85,3 % Zeilen), `hypothesis`, `mutmut`.
+
+### Arbeitspaket 5: Rechte und Kennzeichnung
+- Lizenzkennzeichnung je Ordner nach [ADR-004](../../decisions/ADR-004-lizenz-und-marke.md) (SPDX für Code, CC BY 4.0 nur für eigene Wissensdaten, Fremdinhalte laut Rechteinventar); Markenprüfung „STEPS“ steht aus.
+
+### Restpunkte ohne Blockade
+- B2: Hindemith Kap. XIII im Original-PDF sichten; A6: Montuno-Entwurf anhören (beide nach v0.1).
+- Offene Richtungsfragen mit geringer v0.1-Wirkung: Datenschema-Felder und Undo, Glide-Shell-Spike, Governance ([`PROJECT_OVERVIEW.md`](../project/PROJECT_OVERVIEW.md) §8).
