@@ -33,6 +33,10 @@ Die lokalen Original-PDFs (`restricted_local`) wurden an den betreffenden Stelle
 | Adorno | Ist die zweite Kopie bytegleich? | Ja, beide Dateien haben SHA-256 `3077b828…e39c`. |
 | Spencer | Steht das Basston-Beispiel „C7/E“ so im Original? | Ja. Gedruckte S. 334 (PDF-S. 345) zeigt „C7 über E oder C7/E“ für die Umkehrung und „Cm7 über F oder Cm7/F“ für den Orgelpunkt. Das frühere „Cm/Bb“ stand dort nicht. Nachgeprüft am 16.11.2026, zweiter Durchgang. |
 | Schönberg | Ist Kap. XI nur über Titel und Kapitelanfang belegt? | Nein: Das Kapitel liegt im PDF vollständig vor (gedruckte S. 202–206, PDF-S. 214–218) und wurde ganz gelesen. Die Zusammenfassung ist um Schönbergs Regel zum Quartsextakkord (kadenzierender auf betonter Zählzeit, durchgehender frei) und die Notation der Übungen (Halbe, zwei Akkorde pro Takt) ergänzt. Nachgeprüft am 16.11.2026, zweiter Durchgang. |
+| Hindemith | Stimmumfänge (nur Notenbild) | Abgelesen aus dem Notenbeispiel auf S. 1 (PDF-S. 8): Sopran C4–G5, Alt G3–D5, Tenor C3–G4, Bass E2–C4; angehängte schwarze Notenköpfe bis A3–A5, F3–F5, A4 und D2–D4. In die Zusammenfassung übernommen. Dritter Durchgang, 16.11.2026. |
+| Hindemith | Kapitelzuordnung der Randbemerkungen | Bestätigt. Die Zäsurregel steht am Ende von Kap. III nach Übung 21 (S. 17, PDF-S. 24); die Freigabe der Terzverdopplung steht in Kap. IV nach Übung 26 (S. 22, PDF-S. 29). Dritter Durchgang, 16.11.2026. |
+| Hindemith | Alterierte Dominantformen in Kap. XIII | Aufbau geprüft (S. 88–90, PDF-S. 95–97): elf Formen aus drei Verfahren, Nr. 6–8 nicht regulär, Auflösung direkt oder trugschlussartig. In die Zusammenfassung übernommen. Die einzelnen Akkorde und Auflösungen sind bewusst nicht transkribiert. Dritter Durchgang, 16.11.2026. |
+| Palmer/Manus/Lethco | Fingersatz-Leitfaden | Bestätigt (S. 16–17, PDF-S. 18–19): Lage des 4. Fingers je Hand in drei Tonartgruppen, mit Ausnahmen. In die Zusammenfassung übernommen. Dritter Durchgang, 16.11.2026. |
 
 ## Offen
 
@@ -42,8 +46,8 @@ Die lokalen Original-PDFs (`restricted_local`) wurden an den betreffenden Stelle
 | --- | --- |
 | Aldwell/Schachter | Jahr und ISBN (Impressumseite fehlt im PDF). Teile des Inhaltsverzeichnisses und die Aufzählung der drei Quartsextakkord-Arten (Unit 19 §2) sind im Extrakt verstümmelt bzw. ausgefallen. Sequenzmuster und Literaturbeispiele liegen nur als Notenbild vor. |
 | Schönberg | Jahr und ISBN (Impressumseite fehlt im PDF). Mehrere Jahreszahlen sind OCR-gestört. |
-| Hindemith | Stimmumfänge, die alterierten Dominantformen in Kap. XIII und die Auflösungstabellen liegen nur als Notenbild vor. Die Kapitelzuordnung verschobener Randbemerkungen (Terzverdopplung, Zäsurregel) ist zu bestätigen. |
-| Palmer/Manus/Lethco | Fingersätze und Vorzeichen. |
+| Hindemith | Die einzelnen alterierten Akkorde und Auflösungen in Kap. XIII sowie die übrigen Auflösungstabellen sind nicht Note für Note transkribiert. Das ist nur nötig, wenn STEPS sie als Daten übernehmen soll. |
+| Palmer/Manus/Lethco | Die Einzelfingersätze und Vorzeichen auf den Tonleiterseiten sind nicht einzeln geprüft. Die Zusammenfassung gibt sie nicht wieder; nötig nur für eine spätere Fingersatz-Datenebene. |
 | Stuart | Die fehlerhaft erkannten Zellen der Akkordtabelle und einzelne verrutschte Katalognummern. |
 | DeSantis | Das Stufendiagramm zu den Tendenzregeln fehlt im Extrakt. |
 | Müller | Abbildungen und Beispiele zu Kapitel 5 liegen nur als Bild vor. |
