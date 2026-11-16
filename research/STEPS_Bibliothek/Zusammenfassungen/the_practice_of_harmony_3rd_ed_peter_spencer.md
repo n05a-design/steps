@@ -72,7 +72,7 @@ Spencer stellt die in Jazz und Popularmusik üblichen Symbole neben die Stufen- 
 - Das Symbol des verminderten Dreiklangs steht oft auch für den verminderten Septakkord.
 - Für den halbverminderten Septakkord gibt es nach Spencer kein einfaches Symbol. Er wird als Mollseptakkord mit erniedrigter Quinte geschrieben (m7−5 bzw. m7♭5).
 - Alterationen werden mit Zusatzziffern und „+“ oder „♯“ bzw. „−“ oder „♭“ gekennzeichnet, jeweils als gleichwertige Schreibweisen (z. B. C−9 bzw. C♭9, C+11 bzw. C♯11). Der halbverminderte Septakkord erscheint als Cm7−5 bzw. Cm7♭5. Vor einer Zusatzziffer bedeutet „+“ also „erhöht“; allein (C+) steht es für den übermäßigen Dreiklang.
-- Umkehrungen und Orgelpunkte werden durch den Basston angegeben, der unter dem Symbol (als Bruch) oder rechts daneben (mit Schrägstrich) steht, z. B. C7/E.
+- Umkehrungen und Orgelpunkte werden durch den Basston angegeben, der unter dem Symbol (als Bruch) oder rechts daneben (mit Schrägstrich) steht, z. B. C7/E für die Umkehrung und Cm7/F für den Orgelpunkt.
 - Lead-Sheet-Symbole sind ausdrücklich **Näherungen**. Die Übertragung aus der Stufenanalyse wird an Beispielen geübt.
 
 ## Nutzen für STEPS
