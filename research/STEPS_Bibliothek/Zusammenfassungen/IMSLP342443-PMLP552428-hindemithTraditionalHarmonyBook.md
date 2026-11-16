@@ -6,7 +6,6 @@ seiten: 132   # PDF-Seiten, nicht Buchumfang
 quelle_pdf: "research/STEPS_Bibliothek/IMSLP342443-PMLP552428-hindemithTraditionalHarmonyBook.pdf (Bezug über IMSLP)"
 quelle_sha256: bc984b1afaa713d124146712ff9aebf3a96862c78dad0f05bc07beadc7104d0b
 rechteklasse: E
-rechtehinweis: "Hindemith starb 1963; in der EU bis Ende 2033 geschützt. IMSLP stellt das Werk nur für Länder mit kürzerer Schutzfrist bereit."
 original: restricted_local (per .gitignore ausgeschlossen)
 grundlage: "Docling-Extrakt vom 14.11.2026; Vorworte, Inhaltsverzeichnis und Regeltexte aller Kapitel gelesen; korrigiert am 15.11.2026 nach PRUEFBERICHT.md; Einzelstellen am Original-PDF nachgeprüft am 16.11.2026"
 stand: 2026-11-16

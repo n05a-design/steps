@@ -56,9 +56,9 @@ Die lokalen Original-PDFs (`restricted_local`) wurden an den betreffenden Stelle
 
 - **Aldwell/Schachter:** Dem PDF fehlen die Impressumseite, Anhang II und beide Register. Gedruckte Seitenzahlen und PDF-Seiten laufen auseinander (Unit 6, S. 83 in PDF 91–100; Anhang I, S. 619 in PDF 601–610). Dem PDF fehlen also vermutlich auch im Buchinneren Seiten.
 - **Schönberg:** Dem PDF fehlt die Impressumseite.
-- **Müller:** Der Dateiname verweist auf Z-Library, also eine nicht autorisierte Quelle. Die Beschaffungsfrage ist nicht erledigt; siehe [Rechteinventar](RECHTEINVENTAR_VOLLTEXTE_2026-11-14.md).
+- **Müller:** Der Dateiname verweist auf Z-Library. Der Inhaber hat am 16.11.2026 entschieden, mit der Zusammenfassung normal weiterzuarbeiten; eine Beschaffung ist nicht vorgesehen. Siehe [Rechteinventar](RECHTEINVENTAR_VOLLTEXTE_2026-11-14.md).
 - **Adorno:** Nur ein 30-seitiger Auszug, Herkunft offen (Verlagsleseprobe?).
-- **Hindemith, Schönberg:** Rechtsaussagen zu Schutzfrist und Gemeinfreiheit (bei Hindemith im Feld `rechtehinweis`) stehen nicht in den Quellen. Sie sind Projektannahmen, keine geprüfte Rechtslage.
+- **Hindemith, Schönberg:** Die unbelegten Rechtsaussagen zu Schutzfrist und Gemeinfreiheit sind auf Entscheidung des Inhabers vom 16.11.2026 aus den Zusammenfassungen gestrichen (bei Hindemith das Feld `rechtehinweis`, bei Schönberg der Punkt unter „Grenzen“). Beide bleiben Rechteklasse E. Die frühere Fassung steht in der Git-Historie (Stand `80ece47`).
 
 ### Strukturnähe (entschieden)
 

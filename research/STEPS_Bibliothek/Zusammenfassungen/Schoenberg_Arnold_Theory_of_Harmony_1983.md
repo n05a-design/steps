@@ -64,4 +64,3 @@ Schönbergs Harmonielehre (1911, 3. Auflage 1922) ist zugleich Lehrbuch des tona
 
 - Viele Notenbeispiele sind im Extrakt nur als Bild vorhanden. Konkrete Beispiele brauchen das Original.
 - Schönbergs Terminologie (Stufen, Kreise, schwebende Tonalität) weicht von angloamerikanischen Lehrbüchern ab. Bei Übernahme in STEPS-Begriffe ist eine Zuordnungstabelle nötig.
-- Projektannahme zur Rechtslage (nicht aus dem Werk, Klärung offen): Die Übersetzung ist urheberrechtlich geschützt. Das deutsche Original wäre die rechtlich unproblematischere Quelle; die Übersetzung beruht allerdings auf der 3. Auflage von 1922, nicht auf der Erstausgabe von 1911.

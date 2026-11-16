@@ -5,7 +5,7 @@ verlag: "Springer (Cham u. a.), © Springer International Publishing Switzerland
 isbn: "978-3-319-21944-8"
 seiten: 509   # PDF-Seiten, nicht Buchumfang
 quelle_pdf: "research/STEPS_Bibliothek/Fundamentals of Music Proce_ (Z-Library).pdf"
-herkunft: "Dateiname nennt Z-Library, also eine nicht autorisierte Quelle. Nicht weiterverbreiten; ggf. durch eine lizenzierte Ausgabe ersetzen."
+herkunft: "Dateiname nennt Z-Library. Der Inhaber hat am 16.11.2026 entschieden, mit dieser Zusammenfassung normal weiterzuarbeiten."
 quelle_sha256: feb755b854a0683cccd611545f4298a9e9d90dcce5839bbde92f14eea27e4767
 rechteklasse: E
 original: restricted_local (per .gitignore ausgeschlossen)
@@ -16,7 +16,7 @@ fachliche_freigabe: false
 
 # Meinard Müller: Fundamentals of Music Processing
 
-> Zusammenfassung in eigenen Worten. Formeln und Abbildungen sind nicht wiedergegeben. Tonnamen und Akkordsymbole folgen dem Original (englisch: B = deutsches H, Bb = deutsches B; C = C-Dur-Dreiklang, Cm = c-Moll-Dreiklang). **Herkunftshinweis:** Die Datei im Repository stammt laut Dateiname aus einer nicht autorisierten Quelle (Z-Library). Für eine weitere Verwendung ist eine lizenzierte Ausgabe zu beschaffen.
+> Zusammenfassung in eigenen Worten. Formeln und Abbildungen sind nicht wiedergegeben. Tonnamen und Akkordsymbole folgen dem Original (englisch: B = deutsches H, Bb = deutsches B; C = C-Dur-Dreiklang, Cm = c-Moll-Dreiklang). **Herkunftshinweis:** Die zugrunde liegende Datei stammt laut Dateiname von Z-Library. Nach Entscheidung des Inhabers vom 16.11.2026 wird die Zusammenfassung trotzdem normal verwendet.
 
 ## Einordnung
 
