@@ -2,11 +2,9 @@
 
 Für zehn kommerzielle Werke der Rechteklasse E aus dem [Rechteinventar](../../gaps/RECHTEINVENTAR_VOLLTEXTE_2026-11-14.md) stehen hier ausführliche Zusammenfassungen in eigenen Worten. Sie ersetzen im Repository die Original-PDFs und deren Volltext-Extrakte. Diese sind seit dem 14.11.2026 per `.gitignore` ausgeschlossen und werden nur noch lokal als `restricted_local` geführt.
 
-**Prüfstand:** Am 15.11.2026 hat Claude Fable 5.2 alle zehn Zusammenfassungen gegen die Extrakte geprüft (387 Aussagen, davon 6 falsch und 57 teilweise zutreffend) und die Korrekturen eingearbeitet; die sechs als falsch eingestuften Stellen sind zusätzlich am Quelltext nachgeprüft. Ergebnis und Grenzen der Prüfung: [Prüfprotokoll](PRUEFPROTOKOLL_FABLE_2026-11-15.md). Eine fachliche Abnahme am gedruckten Original steht weiterhin aus.
+**Prüfstand:** Am 15.11.2026 hat Claude Fable 5.2 alle zehn Zusammenfassungen gegen die Extrakte geprüft (387 Aussagen, davon 6 falsch und 57 teilweise zutreffend) und die Korrekturen eingearbeitet; die sechs als falsch eingestuften Stellen sind zusätzlich am Quelltext nachgeprüft. Ergebnis und Grenzen der Prüfung: [Prüfprotokoll](PRUEFPROTOKOLL_FABLE_2026-11-15.md). Offene Fragen am Original je Werk: [Prüfung der Zusammenfassungen](../../gaps/PRUEFUNG_ZUSAMMENFASSUNGEN_2026-11-15.md). Eine fachliche Abnahme am gedruckten Original steht weiterhin aus.
 
 Jede Zusammenfassung nennt Werk, Verlag, Quell-Hash und Grundlage. Sie gliedert den Inhalt nach dem Original, benennt den Nutzen für STEPS und die Grenzen. Fachliche Freigaben liegen nicht vor. Konkrete Notenbeispiele, Fingersätze und Akkordkataloge sind bewusst nicht übernommen und am Original zu prüfen.
-
-Am 15.11.2026 wurden alle Zusammenfassungen Aussage für Aussage gegen ihre Extrakte geprüft und korrigiert. Ergebnis und offene Fragen stehen in der [Prüfung der Zusammenfassungen](../../gaps/PRUEFUNG_ZUSAMMENFASSUNGEN_2026-11-15.md).
 
 | Zusammenfassung | Werk | Schwerpunkt für STEPS |
 | --- | --- | --- |
