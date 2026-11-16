@@ -17,6 +17,7 @@ frühere Auditstände fest.
 Unter `%LOCALAPPDATA%/StepsAudit` sind die Originalontologie und ihre Schwesterdateien wiedergefunden. Alle 41 historischen Graphkennungen sind mit Originalwortlaut, Zeile und Hash im eigenen Namensraum zugeordnet. Zwei Bass-/Höranker-Begriffe sind als historische P10-Projektstrategie definiert. Sechs Definitionen bleiben offen; alle fehlenden Fachabnahmen und CSS-Bundle-Rechte bleiben offen. Die spätere Domäneneinteilung ist nicht mit dem historischen Namensraum gleichgesetzt.
 [Fundauswertung und Einzelbefunde](../../docs/audit/fable-5.2/ONTOLOGIE_WIEDERFUND_2026-11-14.md).
 Am 16.11.2026 hat der Inhaber die Bedeutung von `MODAL_SHIFT_TO_II7` (CDR-012) als II7 → ii7 festgelegt; der Name gilt als historische Fehlbenennung. Die Fachabnahme bleibt offen, ebenso die fünf übrigen Restknoten ([Entscheidung](../../docs/audit/fable-5.2/ENTSCHEIDUNG_CDR012_2026-11-16.md)).
+Für CDR-021 hat der Inhaber am selben Tag den Geltungsbereich festgelegt: Akzent auf der Zwei nur für den Surdo de primeira in der Bateria einer Escola de samba, gestützt auf vier neu gelesene Sekundärquellen. Dynamikmessung sowie Fach- und Spielabnahme bleiben offen; CDR-014 und CDR-019 sind unverändert offen ([Entscheidung](../../docs/audit/fable-5.2/ENTSCHEIDUNG_CDR021_2026-11-16.md)).
 Die nachfolgenden Abschnitte dokumentieren frühere Prüfstände.
 
 ## Weiterführung nach PR #52 (14.11.2026)
