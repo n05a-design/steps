@@ -28,7 +28,7 @@
       "probe_id": "NEW_PIANO_DRAFT",
       "source_url": "https://journals.library.columbia.edu/index.php/currentmusicology/article/download/5234/2473/9143",
       "source_scope": "Indexierter Originalauszug unterscheidet Rhythmusfigur und entfernte Akkorde; direkter Abruf durch Zugriffsschutz begrenzt. Keine frische Notentranskription.",
-      "blocker": "Historische Figur weiter unbekannt; neue Übung braucht Noten-, Spiel-, Hör- und Clave-Fachprüfung."
+      "blocker": "Bedeutung am 16.11.2026 vom Inhaber festgelegt: Der Knoten wird durch den STEPS-Entwurf STEPS_SYNCOPATED_PIANO_DRAFT_01 als eigene Übung ohne historischen Anspruch definiert (docs/audit/fable-5.2/ENTSCHEIDUNG_CDR014_CDR019_2026-11-16.md). Historische Figur weiter unbekannt; Noten-, Spiel-, Hör- und Clave-Fachprüfung offen."
     },
     {
       "historical_node_id": "BOSSA_BATIDA",
@@ -41,7 +41,7 @@
       "probe_id": null,
       "source_url": "https://www.scielo.br/j/cint/a/3TTy5RCKtKQDJLghWzb833b/?lang=en",
       "source_scope": "Gelesener Forschungsartikel unterscheidet variierte Gitarrenbegleitung von einer einzigen festen Figur. Keine konkrete historische STEPS-ID-Definition.",
-      "blocker": "Gemeinte historische Aufnahme/Figur und Umfang des Knotens fehlen; Vorschlag ist keine rückwirkende Originaldefinition."
+      "blocker": "Bedeutung am 16.11.2026 vom Inhaber festgelegt: Familie variierter Gitarrenbegleitungen, keine einzelne feste Figur; die drei notierten Batidas aus O Cruzeiro 1960 dienen als Beispiele (docs/audit/fable-5.2/ENTSCHEIDUNG_CDR014_CDR019_2026-11-16.md). Keine rückwirkende Originaldefinition; Fach- und Spielabnahme offen."
     },
     {
       "historical_node_id": "BRAZILIAN_TAMBORIM_SURDO_SYNTHESIS",
@@ -54,7 +54,7 @@
       "probe_id": null,
       "source_url": "https://www.scielo.br/j/cint/a/3TTy5RCKtKQDJLghWzb833b/?lang=en",
       "source_scope": "Sekundär überlieferte Quellenkette gelesen. Reily/Cabral/Interview bleiben separat zu prüfen; keine Schreiner-Seitenabnahme.",
-      "blocker": "Zeitgenössische Primärquelle beziehungsweise belastbare Originalinterview-Fundstelle und historische Kausalbewertung fehlen."
+      "blocker": "Lesart am 16.11.2026 vom Inhaber festgelegt: zugeschriebene Deutung (Baden Powell laut Reily 1996, nach Cabral), keine belegte Entstehungsursache (docs/audit/fable-5.2/ENTSCHEIDUNG_CDR014_CDR019_2026-11-16.md). Cabral (Songbook Bd. 2, S. 12), Garcia 1999 und Schreiner bleiben zu beschaffen; Fachabnahme offen."
     },
     {
       "historical_node_id": "SURDO_PULSE",
