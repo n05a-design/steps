@@ -17,6 +17,9 @@ from urllib.request import HTTPRedirectHandler, Request, build_opener
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+if "SSL_CERT_FILE" not in os.environ and Path("/etc/ssl/cert.pem").exists():
+    os.environ["SSL_CERT_FILE"] = "/etc/ssl/cert.pem"
+
 from src.steps.progression import reviewed
 
 REPOSITORY = "n05a-design/steps"
