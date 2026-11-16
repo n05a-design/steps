@@ -60,7 +60,7 @@ Die folgenden datierten Abschnitte beschreiben frühere Prüfstände.
 - Kein ausführbarer `app/`- oder `src/steps/`-Musikcode im analysierten `main`-Baum.
 - Urheberrechte zahlreicher Fach-PDFs, heruntergeladener Web-Seiten und Drittanbieterbilder offen.
 - V6.6/V6.7: mehrere Versionen, Fachordner 21 und 39 doppelt benannt; unterschiedliche Struktur-/Zählmodelle.
-- Historische JSON-/CSV-Indizes benötigen Pfad- und Hashrevalidierung.
+- Historische JSON-/CSV-Indizes benötigen Pfad- und Hashrevalidierung. **Teilweise erledigt 16.11.2026:** Das [Bestandsinventar vom 11.11.2026](../../docs/audit/BESTANDSINVENTAR_NACHPRUEFUNG_2026-11-16.md) ist nachgeprüft; alle 3.947 Zeilen sind wiedergefunden oder erklärt, kein ungeklärter Verlust. Weitere historische Indizes sind offen.
 - Externe Integration von Glide nur Vorschlag, konkrete Code-/Lizenzübernahme nicht geprüft.
 - Die bestehenden Bibliotheks-Generatoren wurden nicht ausgeführt und ihre Seiteneffekte sind nicht analysiert.
 
