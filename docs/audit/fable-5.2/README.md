@@ -16,6 +16,7 @@ Die Nachprüfung erfasst die Befunde des Fable-Audits und verweist auf die repro
 | [CDR-010 und weitere Graphknoten](GRAPH_KLAERUNG_CDR010_2026-11-14.md) | Präziser Korrekturvorschlag, Bearbeitung aller 74 bisherigen Restknoten und 49 verbleibende Definitionen. |
 | [Originalontologie wiedergefunden](ONTOLOGIE_WIEDERFUND_2026-11-14.md) | Windows-Originale, 41 historische Definitionsanker, acht einzeln geprüfte Restknoten und sechs verbleibende Definitionen. |
 | [Abnahmebogen für die Fachperson](ABNAHMEBOGEN_2026-11-16.md) | Elf Prüfpunkte zu den Knotenfestlegungen und PDF-Nachprüfungen vom 16.11.2026, mit Ankreuzfeldern. |
+| [Buch-Fundstellen der Claims](CLAIM_BUCHFUNDSTELLEN_2026-11-16.md) | Nachprüfung von neun Claim-Fundstellen an den lokalen Original-PDFs (Müller, Hindemith, Palmer, Aldwell/Schachter, Spencer, DeSantis). |
 | [Entscheidungen zu CDR-014 und CDR-019](ENTSCHEIDUNG_CDR014_CDR019_2026-11-16.md) | Montuno als eigene STEPS-Übung, Bossa-Batida als Begleitfamilie, Tamborim-/Surdo-These als zugeschriebene Deutung; Abnahmen offen. |
 | [Entscheidung zu CDR-021](ENTSCHEIDUNG_CDR021_2026-11-16.md) | Surdo-Akzent auf der Zwei auf den Surdo de primeira in der Bateria eingegrenzt; vier neu gelesene Quellen; Abnahme offen. |
 | [Entscheidung zu CDR-012](ENTSCHEIDUNG_CDR012_2026-11-16.md) | Bedeutung von `MODAL_SHIFT_TO_II7` als II7 → ii7 festgelegt; Fachabnahme offen. |
