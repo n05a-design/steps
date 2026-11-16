@@ -64,11 +64,11 @@ P0: öffentlicher Drittmaterial-/Rechteaudit, Glide 3.53.0 vollständig einfrier
 
 ## 8. Entscheidungsregister – Was ausdrücklich offen bleibt
 
-- **Produkt:** Chord-only/Chord+MIDI/Chord+Drums in v0.1, Spielbarkeit vs. Lehrfokus; primäre Personas.
+- **Produkt:** Chord-only/Chord+MIDI/Chord+Drums in v0.1, Spielbarkeit vs. Lehrfokus; primäre Personas. **Entschieden 17.11.2026:** Akkorde + MIDI-Export, Drums in v2, Produzieren und Lernen beim Produzieren ([ADR-013](../../decisions/ADR-013-v01-umfang-akkorde-und-midi-export.md)).
 - **Fenster:** eine Tk-Root mit zwei Bereichen vs. `Toplevel`-Fenster; Ergonomie und Tastaturbedienung.
 - **Glide-Reuse:** B vs. D Spike, Code-/Font-/Asset- und Lizenzübernahme; Module nicht blind portieren.
 - **Datenschema:** Chord-Spelling/Voicing/Timing/Drum-Track, Undo- und Save/Load-Kontrakt, Versionierung.
-- **Wissensbasis:** Fachtheorien/Quellenpriorität, Review-Owner, Pilotquellen, private versus öffentliche Inhalte.
+- **Wissensbasis:** Fachtheorien/Quellenpriorität, Review-Owner, Pilotquellen, private versus öffentliche Inhalte. **Quellenpriorität entschieden 17.11.2026:** keine globale Rangfolge, Perspektivenmodell mit `StyleContext` ([ADR-014](../../decisions/ADR-014-theorie-perspektiven-und-kontext.md)); die übrigen Punkte bleiben offen.
 - **Audio:** Datei-MIDI vs. Live-Playback, Ausgabebackend und Rechte an Soundfonts.
 - **Governance:** wer trifft Scope-/License-/Release-/Brand-Entscheidungen, wer führt native QA durch, welche Agents besitzen welche Pfade.
 

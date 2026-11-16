@@ -106,7 +106,11 @@ CANONICAL_ADR_THEMES = {
     'ADR-009': 'Historische 21/39-Verzeichnisse',
     'ADR-010': 'Public-Repository-Medien',
     'ADR-011': 'Release-Packaging- und Auslieferungsmodell',
-    'ADR-012': 'Aufbewahrungs- und Bereinigungsrichtlinie Web/MIDI'
+    'ADR-012': 'Aufbewahrungs- und Bereinigungsrichtlinie Web/MIDI',
+    'ADR-013': 'Umfang v0.1 und Zielgruppe',
+    'ADR-014': 'Widersprüchliche Musiktheorien',
+    'ADR-015': 'Kernverträge',
+    'ADR-016': 'V7alt'
 }
 
 def verify_adr_integrity(decision_register_path):
@@ -609,7 +613,7 @@ def main():
     print("=================================================================")
     print(" STEPS Architecture & Reference ID Integrity Check (Phase 4.18)")
     print("=================================================================")
-    print(f"  Architecture Decisions:   {stats['adrs']} (ADR-001..ADR-012)")
+    print(f"  Architecture Decisions:   {stats['adrs']} (ADR-001..ADR-016)")
     print(f"  Canonical Progressions:   {stats['progressions']} (PROG-001..PROG-028)")
     print(f"  Canonical Drum Patterns:  {stats['drum_patterns']} (PAT-001..PAT-031)")
     print(f"  Canonical Piano Modules:  {stats['piano_modules']} (P01..P19)")
