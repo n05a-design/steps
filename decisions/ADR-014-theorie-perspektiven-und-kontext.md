@@ -47,9 +47,9 @@ Beides wird verworfen. Eine globale Rangfolge zerstört die Mehrdeutigkeit und e
 | `classical_voice_leading` | Aldwell/Schachter | V⁶₄ (kadenzierend) | dissonante Verzierung |
 | `classical_harmonic` | Schönberg | I⁶₄ | Tonika-Umkehrung mit Dominantwirkung |
 | `jazz_functional` | Spencer/DeSantis | C/G bzw. G7sus4(add6) | Slash- bzw. sus-Dominante |
-| `acoustic_hindemith` | Hindemith | **Gruppe I, Untergruppe offen (siehe Prüfhinweis)** | labile Grundtonwirkung |
+| `acoustic_hindemith` | Hindemith | Gruppe I,2 (Grundton C über dem Bass G) | labile Grundtonwirkung |
 
-> **Prüfhinweis (17.11.2026):** Die Entscheidungsvorlage ordnet den Klang Hindemiths Gruppe **I,1** zu. Nach Hindemiths *Unterweisung im Tonsatz* steht in Untergruppe 1 der Grundton im Bass, in Untergruppe 2 liegt er darüber. Bei G–C–E bestimmt die Quarte G–C den Grundton C, der Bass ist G; das spricht für **I,2**. Die *Unterweisung* liegt nicht im Repository, die Zuordnung ist deshalb vor der Übernahme in Daten am Original zu prüfen.
+> **Entschieden (17.11.2026, Inhaber):** Nach Hindemiths *Unterweisung im Tonsatz* enthält Untergruppe I,1 Dreiklänge ohne Tritonus mit Grundton im Bass, I,2 deren Umkehrungen (Terz oder Quinte im Bass). Bei G–C–E bestimmt die Quarte G–C den Grundton C, der Bass ist G, also **I,2**. Die erste Fassung dieses ADR nannte nach der Vorlage I,1. Die *Unterweisung* liegt nicht im Repository; die Zuordnung beruht auf der Inhaberentscheidung, nicht auf einer Seitenprüfung.
 
 ## Auswirkungen
 - Datenmodell: `InterpretationEdge` (Pflichtfelder `paradigm`, `source`, `label`, `function`, optional `granularity`) und `StyleContext` werden Teil der Domänenverträge ([`DOMAIN_AND_STORAGE_CONTRACTS.md`](../docs/architecture/DOMAIN_AND_STORAGE_CONTRACTS.md)); Umsetzung in eigenem PR.
