@@ -31,6 +31,8 @@ Die lokalen Original-PDFs (`restricted_local`) wurden an den betreffenden Stelle
 | DeSantis | Zeigen die Piano-Roll-Abbildungen Ableton Live? | Die Abbildungen zeigen einen schlichten Piano-Roll-Editor ohne Programmnamen (z. B. S. 205). Auch der Text bleibt werkzeugneutral und spricht von „most DAWs“. |
 | Pejrolo | Beilage | Laut Rückseite eine CD-ROM mit MIDI-Dateien, Samples, Beispieltracks und Software-Demos. Der Anhang listet die Beispiele nach CD-Track (S. 309–311, 322). |
 | Adorno | Ist die zweite Kopie bytegleich? | Ja, beide Dateien haben SHA-256 `3077b828…e39c`. |
+| Spencer | Steht das Basston-Beispiel „C7/E“ so im Original? | Ja. Gedruckte S. 334 (PDF-S. 345) zeigt „C7 über E oder C7/E“ für die Umkehrung und „Cm7 über F oder Cm7/F“ für den Orgelpunkt. Das frühere „Cm/Bb“ stand dort nicht. Nachgeprüft am 16.11.2026, zweiter Durchgang. |
+| Schönberg | Ist Kap. XI nur über Titel und Kapitelanfang belegt? | Nein: Das Kapitel liegt im PDF vollständig vor (gedruckte S. 202–206, PDF-S. 214–218) und wurde ganz gelesen. Die Zusammenfassung ist um Schönbergs Regel zum Quartsextakkord (kadenzierender auf betonter Zählzeit, durchgehender frei) und die Notation der Übungen (Halbe, zwei Akkorde pro Takt) ergänzt. Nachgeprüft am 16.11.2026, zweiter Durchgang. |
 
 ## Offen
 
@@ -39,9 +41,8 @@ Die lokalen Original-PDFs (`restricted_local`) wurden an den betreffenden Stelle
 | Werk | Frage |
 | --- | --- |
 | Aldwell/Schachter | Jahr und ISBN (Impressumseite fehlt im PDF). Teile des Inhaltsverzeichnisses und die Aufzählung der drei Quartsextakkord-Arten (Unit 19 §2) sind im Extrakt verstümmelt bzw. ausgefallen. Sequenzmuster und Literaturbeispiele liegen nur als Notenbild vor. |
-| Schönberg | Jahr und ISBN (Impressumseite fehlt im PDF). Kap. XI ist nur über den Titel und den Kapitelanfang belegt. Mehrere Jahreszahlen sind OCR-gestört. |
+| Schönberg | Jahr und ISBN (Impressumseite fehlt im PDF). Mehrere Jahreszahlen sind OCR-gestört. |
 | Hindemith | Stimmumfänge, die alterierten Dominantformen in Kap. XIII und die Auflösungstabellen liegen nur als Notenbild vor. Die Kapitelzuordnung verschobener Randbemerkungen (Terzverdopplung, Zäsurregel) ist zu bestätigen. |
-| Spencer | Ob das Basston-Beispiel „C7/E“ der Zusammenfassung so auf S. 345 steht. Es ersetzt am 16.11.2026 das frühere „Cm/Bb“; die Tabelle oben belegt nur die Schreibregel, nicht das Beispiel. |
 | Palmer/Manus/Lethco | Fingersätze und Vorzeichen. |
 | Stuart | Die fehlerhaft erkannten Zellen der Akkordtabelle und einzelne verrutschte Katalognummern. |
 | DeSantis | Das Stufendiagramm zu den Tendenzregeln fehlt im Extrakt. |
