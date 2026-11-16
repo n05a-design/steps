@@ -37,6 +37,11 @@ Die lokalen Original-PDFs (`restricted_local`) wurden an den betreffenden Stelle
 | Hindemith | Kapitelzuordnung der Randbemerkungen | Bestätigt. Die Zäsurregel steht am Ende von Kap. III nach Übung 21 (S. 17, PDF-S. 24); die Freigabe der Terzverdopplung steht in Kap. IV nach Übung 26 (S. 22, PDF-S. 29). Dritter Durchgang, 16.11.2026. |
 | Hindemith | Alterierte Dominantformen in Kap. XIII | Aufbau geprüft (S. 88–90, PDF-S. 95–97): elf Formen aus drei Verfahren, Nr. 6–8 nicht regulär, Auflösung direkt oder trugschlussartig. In die Zusammenfassung übernommen. Die einzelnen Akkorde und Auflösungen sind bewusst nicht transkribiert. Dritter Durchgang, 16.11.2026. |
 | Palmer/Manus/Lethco | Fingersatz-Leitfaden | Bestätigt (S. 16–17, PDF-S. 18–19): Lage des 4. Fingers je Hand in drei Tonartgruppen, mit Ausnahmen. In die Zusammenfassung übernommen. Dritter Durchgang, 16.11.2026. |
+| Aldwell/Schachter | Inhaltsverzeichnis und drei Arten dissonanter Quartsextakkorde (Unit 19 §2) | Inhaltsverzeichnis (gedruckte S. iii–ix, PDF-S. 2–8) vollständig lesbar; alle 32 Kurztitel und beide Anhänge bestätigt. Unit 19 §2 (gedruckte S. 307, PDF-S. 306) und *Points for Review* Nr. 2 (gedruckte S. 324, PDF-S. 323) nennen die drei Hauptarten dissonanter Quartsextakkorde: *accented $\frac{6}{4}$ ($\frac{6-5}{4-3}$)*, *neighboring $\frac{6}{4}$* und *passing $\frac{6}{4}$* (neben konsonantem Arpeggio- und Pendel-/Walzertyp in §13–15). In die Zusammenfassung übernommen. Vierter Durchgang, 16.11.2026. |
+| Schönberg | OCR-gestörte Jahreszahlen (`191r`, `192z`, `192r`) | Am Original-PDF bestätigt (gedruckte S. xv–xvi = PDF-S. 7–8, S. 3 = PDF-S. 16, S. 5 = PDF-S. 18): 1. Auflage Juli 1911; 3. Auflage abgeschlossen am 24. Juni 1921, erschienen 1922; Randnotizen Schönbergs vom März 1922; Steins *Leitfaden*-Vorwort März 1923; Adams-Übersetzung 1948; letztes Copyright 1949; Rufers Vorwort zur 7. Auflage Herbst 1966. In die Kopfdaten übernommen. Vierter Durchgang, 16.11.2026. |
+| Stuart | Akkordtabelle (S. 3) und verrutschte Katalognummern | Auf S. 3 (PDF-S. 3) sind alle 72 Zellen (12 Grundtöne × 6 Akkordtypen) und auf den Tonartseiten (z. B. C-Dur S. 4, c-Moll S. 14) alle Katalognummern (1–78 bzw. 1–70) vollständig und fehlerfrei; die Störungen betrafen nur die OCR des Extrakts. Wichtiger Befund auf S. 3: Die Tabellenüberschrift lautet ausdrücklich *„Flats and sharps given by one name only“* (bewusste Enharmonik-Einebnung in der Tabelle, z. B. `Dbm = Db–E–Ab`, `E+ = E–G♯–C`, `Fdim = F–Ab–B–D`). In die Zusammenfassung übernommen. Vierter Durchgang, 16.11.2026. |
+| DeSantis | Stufendiagramm zu den Tendenzregeln | Bestätigt auf S. 208 (PDF-S. 208): Das Diagramm zeigt die Kette `[iii] → [vi] → [IV / ii] → [vii° / V] → (I)` mit vier Zusatzpfeilen (`IV → ii`, `IV → I`, `V → vi` sowie gestrichelter Rückpfeil ab `I`) und deckt sich vollständig mit den im Text beschriebenen Faustregeln. In die Zusammenfassung übernommen. Vierter Durchgang, 16.11.2026. |
+| Müller | Abbildungen und Beispiele zu Kapitel 5 | Bestätigt an den Seitenbildern (gedruckte S. 238, 258, 261–265 = PDF-S. 263, 283, 286–290): Fig. 5.1/5.16 (*Let It Be*, halbtaktige vs. feinere Expertenannotation), Fig. 5.17 (Tonklassen-Überlappung `C` mit `Am`/`Cm`/`Em` sowie `Cmaj7` mit `C`/`Em`), Fig. 5.18 (Obertonbias des Dreiklangs `C` zugunsten der Vorlage `G` bei acht Teiltönen) und Fig. 5.20 (Bach BWV 846 `C – Dm – G – C`, Zerfall bei 200-ms-Fenstern vs. Glättung über 20 Fenster). In die Zusammenfassung übernommen. Vierter Durchgang, 16.11.2026. |
 
 ## Offen
 
@@ -44,13 +49,10 @@ Die lokalen Original-PDFs (`restricted_local`) wurden an den betreffenden Stelle
 
 | Werk | Frage |
 | --- | --- |
-| Aldwell/Schachter | Jahr und ISBN (Impressumseite fehlt im PDF). Teile des Inhaltsverzeichnisses und die Aufzählung der drei Quartsextakkord-Arten (Unit 19 §2) sind im Extrakt verstümmelt bzw. ausgefallen. Sequenzmuster und Literaturbeispiele liegen nur als Notenbild vor. |
-| Schönberg | Jahr und ISBN (Impressumseite fehlt im PDF). Mehrere Jahreszahlen sind OCR-gestört. |
+| Aldwell/Schachter | Jahr und ISBN (Impressumseite fehlt im PDF). Die einzelnen Sequenzmuster und Literaturbeispiele im Notentext sind nicht Note für Note transkribiert (nur nötig, falls STEPS konkrete Notenbeispiele übernimmt). |
+| Schönberg | Jahr und ISBN der Druckausgabe (Impressumseite fehlt im PDF). |
 | Hindemith | Die einzelnen alterierten Akkorde und Auflösungen in Kap. XIII sowie die übrigen Auflösungstabellen sind nicht Note für Note transkribiert. Das ist nur nötig, wenn STEPS sie als Daten übernehmen soll. |
 | Palmer/Manus/Lethco | Die Einzelfingersätze und Vorzeichen auf den Tonleiterseiten sind nicht einzeln geprüft. Die Zusammenfassung gibt sie nicht wieder; nötig nur für eine spätere Fingersatz-Datenebene. |
-| Stuart | Die fehlerhaft erkannten Zellen der Akkordtabelle und einzelne verrutschte Katalognummern. |
-| DeSantis | Das Stufendiagramm zu den Tendenzregeln fehlt im Extrakt. |
-| Müller | Abbildungen und Beispiele zu Kapitel 5 liegen nur als Bild vor. |
 
 ### Zu den Quelldateien
 
