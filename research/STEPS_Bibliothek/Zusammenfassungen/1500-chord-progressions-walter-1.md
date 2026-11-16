@@ -30,7 +30,7 @@ Ein schmales Nachschlageheft (20 Seiten) aus der Tradition der US-amerikanischen
 ## Aufbau
 
 1. **Einleitung** mit Gebrauchsanweisung und Inhaltsverzeichnis.
-2. **Akkordtabelle** für zwölf Grundtöne: Töne von Dur-, Moll-, Dominantsept-, Moll-Sept-, verminderten und übermäßigen Akkorden. Die Tabelle ist im Extrakt teilweise fehlerhaft erkannt (OCR) und muss am Original geprüft werden.
+2. **Akkordtabelle (S. 3)** für zwölf Grundtöne (links C, D, E, F, G, A, B; rechts Db, Eb, Gb, Ab, Bb): Töne von Dur-, Moll-, Dominantsept-, Moll-Sept-, verminderten (durchweg vierstimmig) und übermäßigen Akkorden, jeweils vom Grundton aufwärts geschichtet. Die Kopfzeile vermerkt ausdrücklich *„Flats and sharps given by one name only“*: Stuart ebnet die Enharmonik in der Tabelle bewusst ein (z. B. Dbm = Db–E–Ab, Gbm = Gb–A–Db, E+ = E–G♯–C, Db+ = Db–F–A, Fdim = F–Ab–B–D). Im Original-PDF sind alle 72 Zellen und alle Katalognummern (1–78 in Dur, 1–70 in Moll) vollständig lesbar; die Störungen betreffen nur den Docling-Extrakt.
 3. **Teil 1 – Dur:** je eine Seite für C, Db, D, Eb, E, F, G, Ab, A, Bb (10 Tonarten), jeweils 78 nummerierte Progressionen.
 4. **Teil 2 – Moll:** je eine Seite für c, d, e, f, g, a und b (englisch B minor, deutsch h-Moll; 7 Tonarten), jeweils 70 Progressionen. Die Moll-Seiten enthalten auch Folgen der parallelen Durtonart (z. B. Eb-Dur-Folgen auf der c-Moll-Seite).
 
