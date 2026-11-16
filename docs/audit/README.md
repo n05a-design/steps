@@ -13,6 +13,8 @@ Diese Unterlagen belegen Prüfungen zu ihren jeweiligen Ausgangsständen.
 | [Suchauftrag V6.6-Bibliothek (Windows)](SUCHAUFTRAG_BIBLIOTHEK_V6_6_WINDOWS_2026-11-16.md) | Rein lesende Hashsuche nach den 148 fehlenden Bibliotheksdateien. |
 | [Seiteneffekte der Generatoren](GENERATOREN_SEITENEFFEKTE_2026-11-16.md) | Statische Analyse von 17 Bibliotheksskripten: Schreibziele, Überschreiben, Netzzugriff. |
 | [Historische Indizes nachgeprüft](INDIZES_NACHPRUEFUNG_2026-11-16.md) | 14 Indizes mit Pfad und Hash: Repository-Ebene vollständig erklärt, 148 fehlende Dateien der V6.6-Bibliothek. |
+| [JSON/TXT-Indizes nachgeprüft](INDIZES_JSON_TXT_NACHPRUEFUNG_2026-11-16.md) | 14 JSON/TXT-Manifeste in `00_NAVIGATION/`: Herkunft der 148 fehlenden V6.6-Dateien exakt aufgeschlüsselt. |
+| [HTML-Extrakte und OCR nachgeprüft](HTML_EXTRAKTE_UND_OCR_NACHPRUEFUNG_2026-11-16.md) | 18 eindeutige HTML-Extrakte (26 Pfade) und zwei Vollseiten-OCR-Neuläufe strukturell und quellenkritisch geprüft. |
 | [Bestandsinventar nachgeprüft](BESTANDSINVENTAR_NACHPRUEFUNG_2026-11-16.md) | Pfad- und Hashabgleich des Inventars vom 11.11.2026: kein ungeklärter Dateiverlust. |
 
 [Auditmanifest](../../manifests/README.md) · [Historisches Archiv](../../archive/INDEX.md)

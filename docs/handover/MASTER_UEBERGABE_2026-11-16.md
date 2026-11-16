@@ -1,0 +1,123 @@
+# STEPS – Ganzheitliche kontextbasierte Master-Übergabe für den nächsten KI-Agenten
+
+- **Stand:** 16.11.2026 (Europe/Berlin)
+- **Projekt:** STEPS (Desktop-Musik-App für Harmonielehre, Voicings, Progressionen und Rhythmus)
+- **Remote-Repository:** `https://github.com/n05a-design/steps`
+- **Geprüfter Ausgangsstand (`origin/main`):** Commit `93e8b5c` (nach Merge von PR #107)
+- **Status:** Konsolidierter Master-Übergabestand nach PR #88–#107. Alle Tests und CI-Gates grün.
+
+---
+
+## 1. Projektidentität, Leitbild und Domänengrenzen
+
+### 1.1 Was ist STEPS?
+STEPS ist eine eigenständige Musik-Desktop-Anwendung, die Musiker, Produzenten und Komponisten bei Harmonielehre, Voicing-Bildung, Akkordprogressionen und rhythmischer Fundierung unterstützt.
+
+Es existieren drei strikt getrennte Projektachsen, die niemals miteinander vermengt werden dürfen:
+1. **Produktachse (App-Code, Phase 5 MVP v0.1):**
+   - `src/steps/`: Reiner, vollkommen UI-unabhängiger Python-Kern für Harmonielehre, Notenlogik, Enharmonik, Voicings und Takt/PPQ-Modelle.
+   - `app/`: Ausschließlich Desktop-Start, Tkinter-UI-Shell (abgeleitet aus der bewährten Systemarchitektur von `glide-to-do`, jedoch ohne Todo-Fachlogik), Widgets und Controller.
+   - *Wichtig (Rule 3 in `AGENTS.md`):* Die Versionsbezeichnung `V6.6 / V6.7` bezieht sich ausschließlich auf die historische Ableton-Blog-Forschungsbibliothek, **nicht** auf die App-Version! Die App-Version ist `0.0.0-dev`.
+2. **Forschungsachse (`knowledge/`, `research/`):**
+   - Strukturierte Daten, Schemata, kanonische Progressions- und Rhythmikkataloge (`PROG-001..028`, `PAT-001..031`, `P01..P19`), Wissensgraphen und musikwissenschaftliche Belege mit strikter Provenienz.
+3. **Archivachse (`archive/`, `source_archive/`):**
+   - Historische Übergaben, alte Skripte und Dokumentationsstände aus früheren Projektphasen.
+
+### 1.2 Musiktheoretische Grundprinzipien für STEPS
+- **Tonbezeichnungen:** Deutsche Notation (H = B♮, B = B♭) und internationale Notation (B = B♮, B♭ = B♭) müssen an jeder Schnittstelle und im UI explizit und verwechslungsfrei geführt werden.
+- **Enharmonik:** C♯ und D♭ sind musikalisch und funktional fundamental verschieden. Keine vorzeitige Einebnung auf Piano-Roll-Midi-Pitches (widerspricht dem didaktischen Kern von STEPS).
+- **Funktionale Mehrdeutigkeit:** Verminderte Septakkorde, Medianten und Alterationen besitzen mehrere Deutungen je nach tonalem Zentrum (z. B. nach Schönberg, Hindemith, Aldwell/Schachter). Diese Mehrdeutigkeit muss im Datenmodell abbildbar bleiben.
+
+---
+
+## 2. Arbeitsvertrag und Governance für KI-Agenten (`AGENTS.md`)
+
+Für alle Agenten (Codex, Claude, Gemini, Antigravity, ChatGPT) gelten ausnahmslos folgende verbindliche Regeln:
+1. **Erst inventarisieren, dann verändern:** `main`-SHA, `git status`, Quelle, Lizenz, Dateihashes vor jeder Änderung prüfen.
+2. **Preservation-first:** Keine stillschweigenden Löschungen, kein Force-Push, kein Rewrite der Historie, keine automatische Beseitigung historischer Versionen.
+3. **Verifikation vor Behauptung:** `fachliche_freigabe` und `human_review` bleiben stets `false` bzw. `AUSSTEHEND`, solange kein Mensch die Freigabe erteilt hat. Keine erfundenen Testergebnisse oder APIs.
+4. **Strikte Domänengrenzen:** `src/steps/` (reine Logik) $\neq$ `app/` (UI) $\neq$ `knowledge/` (Fakten mit Provenienz).
+5. **Datenherkunft und Urheberrecht:** Keine Volltexte oder Seitenbilder urheberrechtlich geschützter Werke (Rechteklasse E) ins Git committen. Klasse E verbleibt als `restricted_local` ausschließlich auf der lokalen Festplatte.
+6. **PR-Workflow und Ruleset 26983173:**
+   - **Niemals direkt auf `main` pushen.**
+   - Wegen des GitHub Rulesets `26983173` ("basic") schlagen Pushes auf bestehende Remote-Branches mit `GH013: Changes must be made through a pull request` fehl. Jeder PR muss daher auf einem **frischen, neuen Branch-Namen** mit genau einem vollständigen Commit angelegt und via `gh pr create` eingereicht werden.
+7. **OneDrive-Worktree-Besonderheit:**
+   - Der lokale Arbeitsbaum liegt unter OneDrive (`fix_onedrive_git_index`).
+   - OneDrive neigt dazu, die Datei `.git/worktrees/fix_onedrive_git_index/index` bei Schreibkollisionen in `index 2` oder `index (<Datum>)` umzubenennen. Git meldet dann plötzlich alle 2.900+ Dateien als "gelöscht".
+   - **Lösung:** Den Index sofort mit `git reset -q HEAD` (niemals `--hard`) wiederherstellen. Die Dateien auf der Platte bleiben dabei 100% unberührt. Die von OneDrive erzeugten Konfliktkopien im `.git`-Verzeichnis nicht löschen.
+
+---
+
+## 3. Konsolidierte Audit-Befunde (PR #88 – #107)
+
+In den zurückliegenden Arbeitssitzungen wurden sämtliche historischen Unklarheiten und offenen Lücken systematisch aufgearbeitet:
+
+### 3.1 Historische Bibliotheksstruktur V6.6 / V6.7
+- **Vier Strukturmodelle geklärt:** In [`docs/audit/BIBLIOTHEK_V6_6_V6_7_STRUKTUR_UND_ZAEHLMODELLE_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/BIBLIOTHEK_V6_6_V6_7_STRUKTUR_UND_ZAEHLMODELLE_2026-11-16.md) wurden die 4 Modelle (`V1/V3/V4`, `V5.0–V5.4`, `V6.0–V6.6` und `V6.7-Delta`) aufgeschlüsselt.
+- **Exakte Zählkette:** Der historische Zuwachs von V5.0 (260 Dateien) bis V6.6 (1.145 Manifestdateien) wurde rechnerisch bewiesen ($1.145 - 148\text{ fehlend} + 3\text{ nicht gelistet} = 1.000\text{ versionierte Dateien im Repo}$).
+- **148 fehlende Dateien zugeordnet:** In [`docs/audit/BIBLIOTHEK_V6_6_FEHLENDE_DATEIEN_2026-11-16.csv`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/BIBLIOTHEK_V6_6_FEHLENDE_DATEIEN_2026-11-16.csv) und [`docs/audit/INDIZES_JSON_TXT_NACHPRUEFUNG_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/INDIZES_JSON_TXT_NACHPRUEFUNG_2026-11-16.md) wurde jede der 148 fehlenden Dateien ihrem Ursprungs-ZIP/RAR-Paket zugeordnet (34 V6.0, 29 V6.3, 62 V6.4, 10 V6.5, 13 V6.6).
+- **Fachordner 21 und 39:** Die historische Doppelvergabe der Ordnernummern 21 und 39 weist keinerlei Datei- oder Inhaltsüberschneidung auf.
+
+### 3.2 Statische Generator-Sicherheitsanalyse
+- In [`docs/audit/GENERATOREN_SEITENEFFEKTE_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/GENERATOREN_SEITENEFFEKTE_2026-11-16.md) wurden 17 Skripte per Python-AST ohne Ausführung untersucht:
+  - Kein Skript löscht oder verschiebt Dateien oder startet Fremdprozesse.
+  - Nur der Ableton-Blog-Indexer besitzt Netzzugriff (beachtet `robots.txt`).
+  - V6.7-Generatoren schreiben ZIP-Archive ins CWD und überschreiben gleichnamige Dateien.
+  - `Ordnerliste.py` ist PowerShell-Code, kein Python.
+
+### 3.3 Schutzfristen, Zusammenfassungen & Rechteklasse E
+- 10 Werke der Rechteklasse E liegen nur lokal als `restricted_local` vor (`manifests/restricted_local_2026-11-14.csv`).
+- Die 10 versionierten Zusammenfassungen in `research/STEPS_Bibliothek/Zusammenfassungen/` wurden gegen die Extrakte geprüft. Strukturnahe Abschnitte bei Aldwell/Schachter (TOC-Unterpunkte) und Stuart (Musterkatalog) wurden per Inhaberentscheidung gekürzt (PR #89).
+- Nicht belegbare Gemeinfreiheits- und Schutzfristbehauptungen zu Hindemith und Schönberg wurden aus den Zusammenfassungen gestrichen. Die Z-Library-Herkunft von Müller ist transparent dokumentiert.
+
+### 3.4 Swift-Rendering & Claim-Fundstellen an Original-Büchern
+- Mittels `render_pdf.swift` wurden hochauflösende PNGs der Original-PDF-Seiten im Scratch-Verzeichnis gerendert und alle 9 Buchclaims (`CLAIM-002`, `007`, `014`, `026`, `027`, `029`, `031`, `035`, `041`) an den Originalseiten verifiziert ([`CLAIM_BUCHFUNDSTELLEN_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/fable-5.2/CLAIM_BUCHFUNDSTELLEN_2026-11-16.md)).
+- Der Abnahmebogen für Fable 5.2 wurde um die Prüfpunkte B6–B9 erweitert ([`ABNAHMEBOGEN_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/fable-5.2/ABNAHMEBOGEN_2026-11-16.md)).
+
+### 3.5 Quellenmetadaten W01–W03 und CLAIM-033
+- In [`docs/audit/fable-5.2/QUELLENMETADATEN_UND_CLAIMS_W01_W03_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/fable-5.2/QUELLENMETADATEN_UND_CLAIMS_W01_W03_2026-11-16.md) wurden alle 5 Duplikatpaare in `curated_sources_registry.yaml` aufgelöst, alle 30 PDFs der Klassen A–D bibliografiert (inkl. CC-BY-Nachweis für Catherine Schmidt-Jones) und `CLAIM-033` (Linn MPC 96 PPQ vs. STEPS 480 PPQ) klargestellt.
+
+### 3.6 HTML-Extrakte & OCR-Neuläufe
+- In [`docs/audit/HTML_EXTRAKTE_UND_OCR_NACHPRUEFUNG_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/HTML_EXTRAKTE_UND_OCR_NACHPRUEFUNG_2026-11-16.md) wurden alle 18 eindeutigen HTML-Extrakte geprüft.
+- `The Chord Wheel.html` wurde als SEO-/KI-Text mit halluzinierter Geschichte (*„Klaus Vogel 1997“*) identifiziert und für wissenschaftliche Zwecke gesperrt.
+- Die OCR-Neuläufe `Music_Theory_Advanced_Level.md` und `Understanding_Basic_Music_Theory.md` (CC BY 2.0) wurden im Detail analysiert.
+
+---
+
+## 4. Testarchitektur und Qualitätsgates
+
+Bevor ein PR eingereicht wird, müssen folgende Tests lokal fehlerfrei durchlaufen:
+1. **Referenzintegrität:**
+   ```bash
+   /Library/Frameworks/Python.framework/Versions/3.14/bin/python3 scripts/verify_reference_integrity.py
+   ```
+   *Soll:* 100% CANONICAL REFERENCE & SCHEMA INTEGRITY VERIFIED (Exitcode 0).
+2. **Restricted Local Check:**
+   ```bash
+   /Library/Frameworks/Python.framework/Versions/3.14/bin/python3 -m unittest tests/test_restricted_local.py
+   ```
+   *Soll:* OK (keine Klasse-E-Volltexte im Git).
+3. **Knowledge Coverage CI-Gate (`scripts/audit_knowledge_coverage.py --check`):**
+   - **Kritischer Hinweis:** GitHub Actions vergleicht `knowledge/benchmark/COVERAGE.csv` bitgenau mit der Anzahl der getrackten Dateien unter `research/`, `archive/`, `source_archive/`, `knowledge/legacy/` und `knowledge/research/`.
+   - **Regel:** Niemals neue Dateien in diese 5 Ordner legen, ohne `COVERAGE.csv` nachzuziehen! Alle neuen Berichte und Dokumentationen gehören nach `docs/audit/` oder `docs/audit/fable-5.2/`!
+
+---
+
+## 5. Konkreter Fahrplan für den nächsten Agenten
+
+Der nächste Agent soll nahtlos an folgenden konkreten Punkten anknüpfen:
+
+### Arbeitspaket 1: Katalog-Stichprobenmatrix W04 (`docs/audit/fable-5.2/`)
+- In `OPEN_GAPS.md` Zeile 108 ist `W04` offen:
+  - Systematische Gegenüberstellung aller 19 Klaviermodule (`P01–P19`), 31 Drum-Patterns (`PAT-001–031`), 28 kanonischen Akkordfolgen (`PROG-001–028`) und des [Latin-Katalogs](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/knowledge/concepts/styles/GENRE_RESEARCH_LATIN.md).
+  - Prüfung von Rollen, Taktart, PPQ-Auflösung (480 PPQ) und Abgleich gegen die automatisierten Testfälle in `knowledge/benchmark/cases.json` vs. noch ausstehende menschliche Hör-/Spielabnahmen.
+  - Erstellung des Berichts `docs/audit/fable-5.2/KATALOG_STICHTEST_W04_2026-11-16.md` und Verlinkung in `docs/audit/fable-5.2/README.md` sowie Aktualisierung von `OPEN_GAPS.md` (W04).
+
+### Arbeitspaket 2: Begleitung der Fable-5.2-Menschabnahme
+- Der [`ABNAHMEBOGEN_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/fable-5.2/ABNAHMEBOGEN_2026-11-16.md) enthält die Teile A (Graph-Inhaberentscheidungen) und B (Auditproben B1–B9). Sobald der menschliche Reviewer Punkte abzeichnet, Status in der Matrix nachführen.
+
+### Arbeitspaket 3: Vorbereitung der Core-Implementierung (Phase 5 MVP v0.1)
+- Aufsetzen der puren Harmonielehre in `src/steps/`:
+  - Intervall-, Akkord- und Skalen-Parser (mit strikter Unterscheidung von H/B und B/B♭).
+  - Modus- und Syntax-Engine (unter Berücksichtigung von Aldwell/Schachter, Hindemith und Schönberg).
+  - Anbindung der UI-Shell in `app/` ohne Vermischung mit der Fachdomäne.
