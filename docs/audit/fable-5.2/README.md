@@ -15,6 +15,7 @@ Die Nachprüfung erfasst die Befunde des Fable-Audits und verweist auf die repro
 | [Graphnachweise](GRAPH_NACHWEISE_2026-11-14.md) | Sechs zusätzliche Knoten, vier Gegenprüfungen, beanstandete Polychord-Zuordnung und offene IDs. |
 | [CDR-010 und weitere Graphknoten](GRAPH_KLAERUNG_CDR010_2026-11-14.md) | Präziser Korrekturvorschlag, Bearbeitung aller 74 bisherigen Restknoten und 49 verbleibende Definitionen. |
 | [Originalontologie wiedergefunden](ONTOLOGIE_WIEDERFUND_2026-11-14.md) | Windows-Originale, 41 historische Definitionsanker, acht einzeln geprüfte Restknoten und sechs verbleibende Definitionen. |
+| [Entscheidung zu CDR-012](ENTSCHEIDUNG_CDR012_2026-11-16.md) | Bedeutung von `MODAL_SHIFT_TO_II7` als II7 → ii7 festgelegt; Fachabnahme offen. |
 | [Nacht-Audit nach PR #54](NACHT_AUDIT_2026-11-14.md) | Vollständige Graphmatrix, sechs Definitionsvorschläge, Quellen-/MIDI-/PDF-Gegenprüfungen und offene Sicherheits-/Fachfreigaben. |
 | [PR-22-Freigabenachweis](PR22_HASHABGLEICH_2026-11-13.md) | Fassungsgebundener Nachweis der damaligen Pilotfreigaben. |
 
