@@ -8,8 +8,8 @@ quelle_sha256: bc984b1afaa713d124146712ff9aebf3a96862c78dad0f05bc07beadc7104d0b
 rechteklasse: E
 rechtehinweis: "Hindemith starb 1963; in der EU bis Ende 2033 geschützt. IMSLP stellt das Werk nur für Länder mit kürzerer Schutzfrist bereit."
 original: restricted_local (per .gitignore ausgeschlossen)
-grundlage: "Docling-Extrakt vom 14.11.2026; Vorworte, Inhaltsverzeichnis und Regeltexte aller Kapitel gelesen; korrigiert am 15.11.2026 nach PRUEFBERICHT.md"
-stand: 2026-11-15
+grundlage: "Docling-Extrakt vom 14.11.2026; Vorworte, Inhaltsverzeichnis und Regeltexte aller Kapitel gelesen; korrigiert am 15.11.2026 nach PRUEFBERICHT.md; Einzelstellen am Original-PDF nachgeprüft am 16.11.2026"
+stand: 2026-11-16
 fachliche_freigabe: false
 ---
 
@@ -19,7 +19,7 @@ fachliche_freigabe: false
 
 ## Einordnung und Absicht
 
-Hindemith schrieb den Kurs an der Yale School of Music als bewusst **knappes, übungsorientiertes** Lehrbuch. Im Vorwort nennt er die traditionelle Harmonielehre ein Fach, das seine frühere Autorität verloren hat. Es bleibe aber der wichtigste Teil des Theorieunterrichts, bis es durch ein besseres System ersetzt werde. Statt dicker Regelwerke will er ein Minimum an Regeln und ein Maximum an Übungen bieten. Der Stoff folgt grob der historischen Entwicklung der Satztechnik, vom einfachen Dreiklang bis zu weitreichender Alteration. Kleine Klassen sollen damit in ein bis zwei Jahren durchkommen; in Yale wurde der Stoff nach Hindemiths Angabe in wenigen Wochen durchgearbeitet. Die zweite Auflage (1944) ändert die Übungen nicht, ergänzt aber Erklärungen.
+Hindemith schrieb den Kurs an der Yale School of Music als bewusst **knappes, übungsorientiertes** Lehrbuch. Im Vorwort nennt er die traditionelle Harmonielehre ein Fach, das seine frühere Autorität verloren hat. Es bleibe aber der wichtigste Teil des Theorieunterrichts, bis es durch ein besseres System ersetzt werde. Statt dicker Regelwerke will er ein Minimum an Regeln und ein Maximum an Übungen bieten. Der Stoff folgt grob der historischen Entwicklung der Satztechnik, vom einfachen Dreiklang bis zu weitreichender Alteration. Kleine Klassen sollen damit in ein bis zwei Jahren durchkommen; in Yale wurde der Stoff nach Hindemiths Angabe in wenigen Wochen durchgearbeitet. Die zweite Auflage (1944) ändert die Übungen nicht, ergänzt aber Erklärungen. Die vorliegende Datei ist diese Fassung: Die Titelseite nennt „Revised Edition“ und trägt keine Bandzählung.
 
 ## Arbeitsweise
 

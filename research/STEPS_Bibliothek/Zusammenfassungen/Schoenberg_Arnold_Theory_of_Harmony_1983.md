@@ -2,14 +2,14 @@
 werk: "Theory of Harmony (Harmonielehre), englische Übersetzung"
 autor: "Arnold Schoenberg; übersetzt von Roy E. Carter"
 grundlage_original: "Harmonielehre, Universal Edition Wien; 1. Auflage 1911, 3. revidierte Auflage 1922 (Grundlage der Übersetzung)"
-verlag: "University of California Press, Berkeley / Los Angeles (laut Titelseite); Ausgabe 1983 laut Dateiname, Impressum nicht im Extrakt"
+verlag: "University of California Press, Berkeley / Los Angeles (laut Titelseite); Ausgabe 1983 laut Dateiname; die Impressumseite fehlt im PDF"
 seiten: 455   # PDF-Seiten, nicht Buchumfang
 quelle_pdf: "research/STEPS_Bibliothek/Schoenberg_Arnold_Theory_of_Harmony_1983.pdf"
 quelle_sha256: dfffeafdd6f735a760d0b9b16050a82958b9275df988eec8ef87ae1bab3241fe
 rechteklasse: E
 original: restricted_local (per .gitignore ausgeschlossen)
-grundlage: "Docling-Extrakt vom 14.11.2026; Übersetzervorwort, Vorworte, Inhaltsverzeichnis und Kapitelanfänge gelesen; korrigiert am 15.11.2026 nach PRUEFBERICHT.md"
-stand: 2026-11-15
+grundlage: "Docling-Extrakt vom 14.11.2026; Übersetzervorwort, Vorworte, Inhaltsverzeichnis und Kapitelanfänge gelesen; korrigiert am 15.11.2026 nach PRUEFBERICHT.md; Einzelstellen am Original-PDF nachgeprüft am 16.11.2026"
+stand: 2026-11-16
 fachliche_freigabe: false
 ---
 

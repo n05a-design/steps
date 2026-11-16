@@ -8,8 +8,8 @@ quelle_pdf: "research/STEPS_Bibliothek/Creative Sequencing Techniques for Music 
 quelle_sha256: 7cc3a0bfc9f83d060eb8efb708ddb01af1c5e8c53bd2565cdf72acb4df1704d9
 rechteklasse: E
 original: restricted_local (per .gitignore ausgeschlossen)
-grundlage: "Docling-Extrakt vom 14.11.2026; vollständige Gliederung, Abschnitte zu Quantisierung und Groove gelesen; korrigiert am 15.11.2026 nach PRUEFBERICHT.md"
-stand: 2026-11-15
+grundlage: "Docling-Extrakt vom 14.11.2026; vollständige Gliederung, Abschnitte zu Quantisierung und Groove gelesen; korrigiert am 15.11.2026 nach PRUEFBERICHT.md; Einzelstellen am Original-PDF nachgeprüft am 16.11.2026"
+stand: 2026-11-16
 fachliche_freigabe: false
 ---
 
@@ -19,7 +19,7 @@ fachliche_freigabe: false
 
 ## Einordnung
 
-Ein praxisorientiertes Lehrbuch für MIDI- und Audio-Sequencing im Projektstudio. Es erklärt Techniken programmunabhängig und zeigt sie jeweils in den vier damals führenden DAWs. Zum Buch gehörte eine CD mit Hörbeispielen, Loops und Vorlagen. Jedes Kapitel endet mit Zusammenfassung und Übungen.
+Ein praxisorientiertes Lehrbuch für MIDI- und Audio-Sequencing im Projektstudio. Es erklärt Techniken programmunabhängig und zeigt sie jeweils in den vier damals führenden DAWs. Zum Buch gehörte laut Rückseite eine CD-ROM mit MIDI-Dateien, Samples und Beispieltracks sowie Software-Demos. Der Anhang listet die Beispiele nach CD-Track. Jedes Kapitel endet mit Zusammenfassung und Übungen.
 
 ## Gliederung und Kerninhalte
 

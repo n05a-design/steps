@@ -7,8 +7,8 @@ quelle_pdf: "research/STEPS_Bibliothek/1500-chord-progressions-walter-1.pdf"
 quelle_sha256: 60a2b3348a18b3dedfe8dbb67d18e8e14d58f3f74f3d7700bc25cbb1000b5a99
 rechteklasse: E
 original: restricted_local (per .gitignore ausgeschlossen)
-grundlage: "Docling-Extrakt vom 14.11.2026, vollständig gelesen; korrigiert am 15.11.2026 nach PRUEFBERICHT.md"
-stand: 2026-11-15
+grundlage: "Docling-Extrakt vom 14.11.2026, vollständig gelesen; korrigiert am 15.11.2026 nach PRUEFBERICHT.md; Einzelstellen am Original-PDF nachgeprüft am 16.11.2026"
+stand: 2026-11-16
 fachliche_freigabe: false
 ---
 
@@ -18,7 +18,7 @@ fachliche_freigabe: false
 
 ## Einordnung
 
-Ein schmales Nachschlageheft (20 Seiten) aus der Tradition der US-amerikanischen Unterhaltungs- und Jazzpädagogik der 1950er Jahre. Der Dateiname verweist auf „1500“ Progressionen. Die Titelseite ist im Extrakt nur verstümmelt lesbar, die genaue Zahl im Titel ist am Original zu prüfen; die vorliegende Datei enthält 1270 Folgen (10 × 78 und 7 × 70). Zielgruppe sind Pianisten, Organisten, Gitarristen, Songwriter und Arrangeure, die Popmusik begleiten, harmonisieren oder darüber improvisieren wollen.
+Ein schmales Nachschlageheft (20 Seiten) aus der Tradition der US-amerikanischen Unterhaltungs- und Jazzpädagogik der 1950er Jahre. Die Titelseite verspricht „1500 Chord progressions“. Tatsächlich enthält das Heft 1270 Folgen (10 × 78 und 7 × 70). Es ist trotzdem vollständig: Das Inhaltsverzeichnis nennt genau die 17 vorhandenen Tonartseiten. Die Titelzahl ist also höher als der Inhalt. Zielgruppe sind Pianisten, Organisten, Gitarristen, Songwriter und Arrangeure, die Popmusik begleiten, harmonisieren oder darüber improvisieren wollen.
 
 ## Grundidee des Autors
 
