@@ -54,9 +54,9 @@ Keine vollwertige DAW, kein Audiodatei-Mastering, keine automatische transkribie
 
 ## 8. Owner-Entscheidungen mit Vorlage
 
-1. **ADR-PROD-01:** M2/M3, inkl. Drums im v0.1? Kriterien Nutzennachweis, Aufwand, Wissen/Engine-Testbarkeit und Zeitbudget.
+1. **ADR-PROD-01:** M2/M3, inkl. Drums im v0.1? Kriterien Nutzennachweis, Aufwand, Wissen/Engine-Testbarkeit und Zeitbudget. **Entschieden am 17.11.2026:** M2, Drums in v2 ([ADR-013](../../decisions/ADR-013-v01-umfang-akkorde-und-midi-export.md)).
 2. **ADR-UI-01:** eine Root/zwei Bereiche vs. Root + Toplevel; Demo-Bilder, Betriebs- und Fokusrisiken.
-3. **ADR-PROD-02:** welche drei Zielgruppen haben im MVP Vorrang? Entsprechende Nutzertests.
+3. **ADR-PROD-02:** welche drei Zielgruppen haben im MVP Vorrang? Entsprechende Nutzertests. **Entschieden am 17.11.2026:** primär Produzierende, die beim Produzieren lernen ([ADR-013](../../decisions/ADR-013-v01-umfang-akkorde-und-midi-export.md)); Nutzertests stehen aus.
 4. **ADR-LICENSE-01:** Rechteinventar und öffentlicher Repository-Bestand – unabhängig vom App-MVP.
 
 **Definition of Done dieses Dokuments:** Es enthält überprüfbare Hypothesen und Freigabefragen. Es bestätigt **weder** eine UX-Validierung **noch** eine Implementierung. Eine Owner-Unterschrift, Aufgaben-/Testprotokoll und testbarer MVP-Commit fehlen weiterhin.
