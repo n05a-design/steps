@@ -70,3 +70,8 @@ Unabhängig davon sollte `Fundamentals of Music Proce_ (Z-Library).pdf` zuerst b
 - **Git-Historie:** bleibt unverändert; kein Umschreiben, kein Wechsel auf privat. Begründung des Inhabers: Die Inhalte sind nicht bekannt gemacht, und eine spätere automatische Löschung wird erwartet. Die Historie enthält die Klasse-E-Dateien bis dahin weiterhin.
 - **Klasse E:** Option 2 umgesetzt (lokal, per `.gitignore`), Zusammenfassungen versioniert.
 - **Klassen A–D und gespeicherte Webseiten:** bleiben versioniert. Der Inhaber stuft sie als frei zugängliche öffentliche Inhalte ein. Die Lizenzhinweise oben bleiben als Dokumentation bestehen.
+
+## Entscheidungen des Inhabers (16.11.2026)
+
+- **Müller, `Fundamentals of Music Proce_ (Z-Library).pdf`:** Die Herkunft wird in diesem Fall nicht weiter verfolgt. Mit der Zusammenfassung wird normal weitergearbeitet; eine lizenzierte Ausgabe wird nicht beschafft. Der Herkunftshinweis bleibt als Tatsache in den Kopfdaten stehen.
+- **Hindemith, Schönberg:** Die unbelegten Rechtsaussagen (Schutzfristen, Gemeinfreiheit) sind aus den Zusammenfassungen gestrichen. Die Einordnung in der Tabelle oben bleibt als Stand vom 14.11.2026 erhalten.
