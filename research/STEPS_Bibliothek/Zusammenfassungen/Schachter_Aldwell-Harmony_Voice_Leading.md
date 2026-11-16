@@ -1,14 +1,14 @@
 ---
 werk: "Harmony and Voice Leading, Third Edition"
 autor: "Edward Aldwell, Carl Schachter"
-verlag: "Thomson / Schirmer"   # laut Titelblatt-Logo; Impressum (Jahr, ISBN) nicht im Extrakt
+verlag: "Thomson / Schirmer"   # laut Titelblatt-Logo; die Impressumseite (Jahr, ISBN) fehlt im PDF
 seiten: 626   # PDF-Seiten, nicht Buchumfang (Register laut Inhaltsverzeichnis ab S. 647)
 quelle_pdf: "research/STEPS_Bibliothek/Schachter_Aldwell-Harmony_Voice_Leading.pdf"
 quelle_sha256: aa0c165fdf57ec9f0e66964bead2594e69fc96840cf88f59a6033bb3dcbf8bc4
 rechteklasse: E
 original: restricted_local (per .gitignore ausgeschlossen)
-grundlage: "Docling-Extrakt vom 14.11.2026; Vorwort, vollständiges Inhaltsverzeichnis und Kapitelanfänge gelesen; korrigiert am 15.11.2026 nach PRUEFBERICHT.md"
-stand: 2026-11-15
+grundlage: "Docling-Extrakt vom 14.11.2026; Vorwort, vollständiges Inhaltsverzeichnis und Kapitelanfänge gelesen; korrigiert am 15.11.2026 nach PRUEFBERICHT.md; Einzelstellen am Original-PDF nachgeprüft am 16.11.2026"
+stand: 2026-11-16
 fachliche_freigabe: false
 ---
 

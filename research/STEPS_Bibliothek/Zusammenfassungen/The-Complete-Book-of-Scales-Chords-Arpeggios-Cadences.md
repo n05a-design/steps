@@ -8,8 +8,8 @@ quelle_pdf: "research/STEPS_Bibliothek/The-Complete-Book-of-Scales-Chords-Arpegg
 quelle_sha256: 1ccd3333c122f748ffe4ca2fa4da4247d98e1d9bc63748cd0cbfcf6ac292c04b
 rechteklasse: E
 original: restricted_local (per .gitignore ausgeschlossen)
-grundlage: "Docling-Extrakt vom 14.11.2026; Teil 1 und 7 gelesen, Tonartseiten über Gliederung und Stichproben; korrigiert am 15.11.2026 nach PRUEFBERICHT.md"
-stand: 2026-11-15
+grundlage: "Docling-Extrakt vom 14.11.2026; Teil 1 und 7 gelesen, Tonartseiten über Gliederung und Stichproben; korrigiert am 15.11.2026 nach PRUEFBERICHT.md; Einzelstellen am Original-PDF nachgeprüft am 16.11.2026"
+stand: 2026-11-16
 fachliche_freigabe: false
 ---
 
@@ -37,7 +37,7 @@ Ein klavierpädagogisches Übungsbuch. Es behandelt Grundlagen (Tetrachorde, Dre
 
 - **Tetrachord:** vier Töne in alphabetischer Folge mit dem Muster Ganzton–Ganzton–Halbton. Eine Durtonleiter besteht aus zwei Tetrachorden, verbunden durch einen Ganzton. Der obere Tetrachord einer Tonart ist der untere der nächsten Tonart im Quintenzirkel. Daraus ergibt sich die Reihenfolge der Kreuz- und B-Vorzeichen.
 - **Dreiklang:** Grundton, Terz, Quinte. Grundstellung, 1. Umkehrung (Grundton oben) und 2. Umkehrung (Grundton in der Mitte). Fingersätze werden für jede Lage angegeben.
-- **Hauptdreiklänge:** I, IV und V. Damit die Hand nicht springen muss, werden IV und V in Umkehrungen gespielt. Daraus entsteht eine Kadenz in enger Lage (die genaue Akkordfolge steht im Notenbild; am Original zu bestätigen: I–IV–I–V(7)–I).
+- **Hauptdreiklänge:** I, IV und V. Damit die Hand nicht springen muss, werden IV und V in Umkehrungen gespielt. Daraus entsteht eine Kadenz in enger Lage. Sie lautet I–IV–I–V (oder V7)–I und wird in drei Lagen geübt; die Akkordfolge steht nur im Notenbild.
 - **V7** als Erweiterung der V. Stufe; für die enge Lage wird die Quinte weggelassen, Terz und Septime werden eine Oktave tiefer gelegt. **Stufennamen:** Tonika, Supertonika, Mediante, Subdominante, Dominante, Submediante, Leitton.
 - **Moll:** Paralleltonart (a-Moll zu C-Dur), natürliche, harmonische und melodische Form. Hauptdreiklänge i, iv, V(7). Der verminderte Septakkord wird aus dem Dominantseptakkord gebildet, indem alle Töne außer dem Grundton um einen Halbton erniedrigt werden, oder durch Schichtung kleiner Terzen; das Buch besteht dabei auf der korrekten Schreibweise mit Doppel-b.
 - **Fingersatz-Leitfaden:** Für jede Tonleiter wird angegeben, auf welchem Ton der 4. Finger jeder Hand liegt. Das ist die zentrale Orientierungsregel des Buchs.

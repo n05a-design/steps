@@ -15,28 +15,43 @@ Die Spencer-Symboltabelle zu Kapitel 25 folgte in Auswahl und Reihenfolge der Ta
 - Angaben, die nur aus Erinnerung stammen und im Extrakt nicht stehen (in den Prüfberichten als **[Außenwissen]** markiert): Erscheinungsjahr und ISBN von Aldwell/Schachter, Ausgabejahre der Schönberg-Übersetzung, Sterbejahr und Schutzfrist bei Hindemith und Schönberg sowie die Angaben „Professor“ und „FMP Notebooks“ bei Müller.
 - Alle Punkte, die nur am gedruckten Original entscheidbar sind (siehe unten).
 
+## Am Original-PDF geklärt (16.11.2026)
+
+Die lokalen Original-PDFs (`restricted_local`) wurden an den betreffenden Stellen als Seitenbild angesehen. Die Bilder sind nicht versioniert. Die Zusammenfassungen sind entsprechend angepasst.
+
+| Werk | Frage | Befund (PDF-Seite) |
+| --- | --- | --- |
+| Stuart | Zahl im Titel, Vollständigkeit | Der Titel nennt „1500 Chord progressions“. Das Inhaltsverzeichnis listet genau die 17 vorhandenen Tonartseiten (S. 2). Das Heft ist also vollständig; die Titelzahl liegt über den tatsächlichen 1270 Folgen. |
+| Palmer/Manus/Lethco | Akkordfolge der Kadenzen | I–IV–I–V (oder V7)–I in drei Lagen (S. 21, C-Dur). |
+| Palmer/Manus/Lethco | Bezug des verminderten Septakkords zu harmonisch Moll | Nicht vorhanden. Der Abschnitt leitet den Akkord nur aus dem Dominantseptakkord her und betont die Schreibung B𝄫 statt A (S. 17). |
+| Spencer | Schreibweise der Alterationen und des Basstons | Gleichwertige Paare ohne 7 vor der Option: C−9/C♭9 und C+11/C♯11, dazu Cm7−5/Cm7♭5 für halbvermindert. Basston unter dem Symbol (als Bruch) oder rechts daneben mit Schrägstrich, für Umkehrung wie Orgelpunkt (S. 345). Die Zusammenfassung hatte die Beispiele fälschlich mit 7 geschrieben. |
+| Spencer | Bedeutung von „changing tones“ (Kap. 12) | Das steht schon im Fließtext: Ein Paar von changing tones gilt als Verbindung von oberer und unterer Nebennote, also die Wechselnotengruppe. |
+| Hindemith | Bandzählung | Die Titelseite nennt „Revised Edition“, © 1943, 1944, und keine Bandzählung (S. 1–2). |
+| Aldwell/Schachter, Schönberg | Impressum | Auf das Titelblatt folgt direkt das Inhaltsverzeichnis; die Impressumseite fehlt im PDF selbst (S. 1–2). Jahr und ISBN lassen sich aus diesen Dateien nicht belegen. |
+| DeSantis | Zeigen die Piano-Roll-Abbildungen Ableton Live? | Die Abbildungen zeigen einen schlichten Piano-Roll-Editor ohne Programmnamen (z. B. S. 205). Auch der Text bleibt werkzeugneutral und spricht von „most DAWs“. |
+| Pejrolo | Beilage | Laut Rückseite eine CD-ROM mit MIDI-Dateien, Samples, Beispieltracks und Software-Demos. Der Anhang listet die Beispiele nach CD-Track (S. 309–311, 322). |
+| Adorno | Ist die zweite Kopie bytegleich? | Ja, beide Dateien haben SHA-256 `3077b828…e39c`. |
+
 ## Offen
 
 ### Am Original zu klären
 
 | Werk | Frage |
 | --- | --- |
-| Aldwell/Schachter | Impressum (Jahr, ISBN). Teile des Inhaltsverzeichnisses und die Aufzählung der drei Quartsextakkord-Arten (Unit 19 §2) sind im Extrakt verstümmelt bzw. ausgefallen. Sequenzmuster und Literaturbeispiele liegen nur als Notenbild vor. |
-| Schönberg | Impressum (Jahr, ISBN). Kap. XI ist nur über den Titel und den Kapitelanfang belegt. Mehrere Jahreszahlen sind OCR-gestört. |
-| Hindemith | Bandzählung („Book I“). Stimmumfänge, die alterierten Dominantformen in Kap. XIII und die Auflösungstabellen liegen nur als Notenbild vor. Die Kapitelzuordnung verschobener Randbemerkungen (Terzverdopplung, Zäsurregel) ist zu bestätigen. |
-| Spencer | Schreibweise der Alterationssymbole und des Basstons. Ob „changing tones“ (Kap. 12) die Wechselnotengruppe meint. |
-| Palmer/Manus/Lethco | Akkordfolge der Kadenzen. Ob der Abschnitt zum verminderten Septakkord auch auf harmonisch Moll verweist (eine Zeile ist unlesbar). Fingersätze und Vorzeichen. |
-| Stuart | Zahl im Titel. Die fehlerhaft erkannten Zellen der Akkordtabelle und einzelne verrutschte Katalognummern. |
-| DeSantis | Ob die Piano-Roll-Abbildungen Ableton Live zeigen. Das Stufendiagramm zu den Tendenzregeln fehlt im Extrakt. |
-| Pejrolo | Was dem Buch beilag (Audio-CD oder CD-ROM). |
+| Aldwell/Schachter | Jahr und ISBN (Impressumseite fehlt im PDF). Teile des Inhaltsverzeichnisses und die Aufzählung der drei Quartsextakkord-Arten (Unit 19 §2) sind im Extrakt verstümmelt bzw. ausgefallen. Sequenzmuster und Literaturbeispiele liegen nur als Notenbild vor. |
+| Schönberg | Jahr und ISBN (Impressumseite fehlt im PDF). Mehrere Jahreszahlen sind OCR-gestört. |
+| Hindemith | Stimmumfänge, die alterierten Dominantformen in Kap. XIII und die Auflösungstabellen liegen nur als Notenbild vor. Die Kapitelzuordnung verschobener Randbemerkungen (Terzverdopplung, Zäsurregel) ist zu bestätigen. |
+| Palmer/Manus/Lethco | Fingersätze und Vorzeichen. |
+| Stuart | Die fehlerhaft erkannten Zellen der Akkordtabelle und einzelne verrutschte Katalognummern. |
+| DeSantis | Das Stufendiagramm zu den Tendenzregeln fehlt im Extrakt. |
 | Müller | Abbildungen und Beispiele zu Kapitel 5 liegen nur als Bild vor. |
 
 ### Zu den Quelldateien
 
-- **Aldwell/Schachter:** Dem PDF fehlen Anhang II und beide Register. Gedruckte Seitenzahlen und PDF-Seiten laufen auseinander (Unit 6, S. 83 in PDF 91–100; Anhang I, S. 619 in PDF 601–610). Dem PDF fehlen also vermutlich auch im Buchinneren Seiten.
-- **Stuart:** Der Dateiname nennt „1500“ Folgen und endet auf „-1“. Das PDF enthält 1270 (10 Dur-Seiten × 78, 7 Moll-Seiten × 70). Ob es ein Teilband oder eine gekürzte Fassung ist, ist offen.
+- **Aldwell/Schachter:** Dem PDF fehlen die Impressumseite, Anhang II und beide Register. Gedruckte Seitenzahlen und PDF-Seiten laufen auseinander (Unit 6, S. 83 in PDF 91–100; Anhang I, S. 619 in PDF 601–610). Dem PDF fehlen also vermutlich auch im Buchinneren Seiten.
+- **Schönberg:** Dem PDF fehlt die Impressumseite.
 - **Müller:** Der Dateiname verweist auf Z-Library, also eine nicht autorisierte Quelle. Die Beschaffungsfrage ist nicht erledigt; siehe [Rechteinventar](RECHTEINVENTAR_VOLLTEXTE_2026-11-14.md).
-- **Adorno:** Nur ein 30-seitiger Auszug, Herkunft offen (Verlagsleseprobe?). Ob die zweite Kopie in `Dokumentation (unsortiert)/` bytegleich ist, wurde nicht nachgerechnet.
+- **Adorno:** Nur ein 30-seitiger Auszug, Herkunft offen (Verlagsleseprobe?).
 - **Hindemith, Schönberg:** Rechtsaussagen zu Schutzfrist und Gemeinfreiheit (bei Hindemith im Feld `rechtehinweis`) stehen nicht in den Quellen. Sie sind Projektannahmen, keine geprüfte Rechtslage.
 
 ### Strukturnähe

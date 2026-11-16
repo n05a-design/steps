@@ -8,8 +8,8 @@ quelle_pdf: "research/STEPS_Bibliothek/the_practice_of_harmony_3rd_ed_peter_spen
 quelle_sha256: 7dfc29f0fe36fce287aabed3883c5fd7301bce3c68765ad00c95aa8bc8a154dc
 rechteklasse: E
 original: restricted_local (per .gitignore ausgeschlossen)
-grundlage: "Docling-Extrakt vom 14.11.2026; Vorwort, Inhaltsverzeichnis und Kapitel 23, 25 und 26 gelesen, übrige Kapitel über Gliederung; korrigiert am 15.11.2026 nach PRUEFBERICHT.md"
-stand: 2026-11-15
+grundlage: "Docling-Extrakt vom 14.11.2026; Vorwort, Inhaltsverzeichnis und Kapitel 23, 25 und 26 gelesen, übrige Kapitel über Gliederung; korrigiert am 15.11.2026 nach PRUEFBERICHT.md; Einzelstellen am Original-PDF nachgeprüft am 16.11.2026"
+stand: 2026-11-16
 fachliche_freigabe: false
 ---
 
@@ -71,8 +71,8 @@ Spencer stellt die in Jazz und Popularmusik üblichen Symbole neben die Stufen- 
 - Sexte, Septime, None, Undezime und Tredezime werden als Ziffer angehängt (6, 7, 9, 11, 13), auch am Mollakkord.
 - Das Symbol des verminderten Dreiklangs steht oft auch für den verminderten Septakkord.
 - Für den halbverminderten Septakkord gibt es nach Spencer kein einfaches Symbol. Er wird als Mollseptakkord mit erniedrigter Quinte geschrieben (m7−5 bzw. m7♭5).
-- Alterationen werden mit Zusatzziffern und „+“, „♯“ oder „−“ gekennzeichnet (z. B. C7+11 bzw. C7♯11, C7−9).
-- Umkehrungen und Orgelpunkte werden durch den Basston angegeben, der unter oder rechts neben dem Symbol steht (z. B. Cm/Bb).
+- Alterationen werden mit Zusatzziffern und „+“ oder „♯“ bzw. „−“ oder „♭“ gekennzeichnet, jeweils als gleichwertige Schreibweisen (z. B. C−9 bzw. C♭9, C+11 bzw. C♯11). Der halbverminderte Septakkord erscheint als Cm7−5 bzw. Cm7♭5. Vor einer Zusatzziffer bedeutet „+“ also „erhöht“; allein (C+) steht es für den übermäßigen Dreiklang.
+- Umkehrungen und Orgelpunkte werden durch den Basston angegeben, der unter dem Symbol (als Bruch) oder rechts daneben (mit Schrägstrich) steht, z. B. C7/E.
 - Lead-Sheet-Symbole sind ausdrücklich **Näherungen**. Die Übertragung aus der Stufenanalyse wird an Beispielen geübt.
 
 ## Nutzen für STEPS
