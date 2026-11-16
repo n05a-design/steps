@@ -9,6 +9,7 @@ Diese Unterlagen belegen Prüfungen zu ihren jeweiligen Ausgangsständen.
 | [Befunde und Widersprüche](02_KORREKTUREN_UND_WIDERSPRUECHE.md) | Korrekturen und Befundlage. |
 | [V1/V2-Abgleich](04_VERGLEICH_V1_V2_RESTRISIKEN_MASSNAHMEN.md) | Abweichungen, Restrisiken und Maßnahmen. |
 | [Validierungsbericht](05_VALIDIERUNGSBERICHT.md) | Prüfstand des datierten Auditpakets. |
+| [Bestandsinventar nachgeprüft](BESTANDSINVENTAR_NACHPRUEFUNG_2026-11-16.md) | Pfad- und Hashabgleich des Inventars vom 11.11.2026: kein ungeklärter Dateiverlust. |
 
 [Auditmanifest](../../manifests/README.md) · [Historisches Archiv](../../archive/INDEX.md)
 
