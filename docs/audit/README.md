@@ -10,6 +10,7 @@ Diese Unterlagen belegen Prüfungen zu ihren jeweiligen Ausgangsständen.
 | [V1/V2-Abgleich](04_VERGLEICH_V1_V2_RESTRISIKEN_MASSNAHMEN.md) | Abweichungen, Restrisiken und Maßnahmen. |
 | [Validierungsbericht](05_VALIDIERUNGSBERICHT.md) | Prüfstand des datierten Auditpakets. |
 | [Suchauftrag V6.6-Bibliothek (Windows)](SUCHAUFTRAG_BIBLIOTHEK_V6_6_WINDOWS_2026-11-16.md) | Rein lesende Hashsuche nach den 148 fehlenden Bibliotheksdateien. |
+| [Seiteneffekte der Generatoren](GENERATOREN_SEITENEFFEKTE_2026-11-16.md) | Statische Analyse von 17 Bibliotheksskripten: Schreibziele, Überschreiben, Netzzugriff. |
 | [Historische Indizes nachgeprüft](INDIZES_NACHPRUEFUNG_2026-11-16.md) | 14 Indizes mit Pfad und Hash: Repository-Ebene vollständig erklärt, 148 fehlende Dateien der V6.6-Bibliothek. |
 | [Bestandsinventar nachgeprüft](BESTANDSINVENTAR_NACHPRUEFUNG_2026-11-16.md) | Pfad- und Hashabgleich des Inventars vom 11.11.2026: kein ungeklärter Dateiverlust. |
 
