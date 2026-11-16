@@ -23,7 +23,7 @@ Die lokalen Original-PDFs (`restricted_local`) wurden an den betreffenden Stelle
 | --- | --- | --- |
 | Stuart | Zahl im Titel, Vollständigkeit | Der Titel nennt „1500 Chord progressions“. Das Inhaltsverzeichnis listet genau die 17 vorhandenen Tonartseiten (S. 2). Das Heft ist also vollständig; die Titelzahl liegt über den tatsächlichen 1270 Folgen. |
 | Palmer/Manus/Lethco | Akkordfolge der Kadenzen | I–IV–I–V (oder V7)–I in drei Lagen (S. 21, C-Dur). |
-| Palmer/Manus/Lethco | Bezug des verminderten Septakkords zu harmonisch Moll | Nicht vorhanden. Der Abschnitt leitet den Akkord nur aus dem Dominantseptakkord her und betont die Schreibung B𝄫 statt A (S. 17). |
+| Palmer/Manus/Lethco | Bezug des verminderten Septakkords zu harmonisch Moll | Nicht vorhanden. Der Abschnitt leitet den Akkord nur aus dem Dominantseptakkord her und betont die Schreibung B𝄫 (deutsch: Heses) statt A (S. 17). |
 | Spencer | Schreibweise der Alterationen und des Basstons | Gleichwertige Paare ohne 7 vor der Option: C−9/C♭9 und C+11/C♯11, dazu Cm7−5/Cm7♭5 für halbvermindert. Basston unter dem Symbol (als Bruch) oder rechts daneben mit Schrägstrich, für Umkehrung wie Orgelpunkt (S. 345). Die Zusammenfassung hatte die Beispiele fälschlich mit 7 geschrieben. |
 | Spencer | Bedeutung von „changing tones“ (Kap. 12) | Das steht schon im Fließtext: Ein Paar von changing tones gilt als Verbindung von oberer und unterer Nebennote, also die Wechselnotengruppe. |
 | Hindemith | Bandzählung | Die Titelseite nennt „Revised Edition“, © 1943, 1944, und keine Bandzählung (S. 1–2). |
@@ -39,8 +39,9 @@ Die lokalen Original-PDFs (`restricted_local`) wurden an den betreffenden Stelle
 | Werk | Frage |
 | --- | --- |
 | Aldwell/Schachter | Jahr und ISBN (Impressumseite fehlt im PDF). Teile des Inhaltsverzeichnisses und die Aufzählung der drei Quartsextakkord-Arten (Unit 19 §2) sind im Extrakt verstümmelt bzw. ausgefallen. Sequenzmuster und Literaturbeispiele liegen nur als Notenbild vor. |
-| Schönberg | Jahr und ISBN (Impressumseite fehlt im PDF). Mehrere Jahreszahlen sind OCR-gestört. |
+| Schönberg | Jahr und ISBN (Impressumseite fehlt im PDF). Kap. XI ist nur über den Titel und den Kapitelanfang belegt. Mehrere Jahreszahlen sind OCR-gestört. |
 | Hindemith | Stimmumfänge, die alterierten Dominantformen in Kap. XIII und die Auflösungstabellen liegen nur als Notenbild vor. Die Kapitelzuordnung verschobener Randbemerkungen (Terzverdopplung, Zäsurregel) ist zu bestätigen. |
+| Spencer | Ob das Basston-Beispiel „C7/E“ der Zusammenfassung so auf S. 345 steht. Es ersetzt am 16.11.2026 das frühere „Cm/Bb“; die Tabelle oben belegt nur die Schreibregel, nicht das Beispiel. |
 | Palmer/Manus/Lethco | Fingersätze und Vorzeichen. |
 | Stuart | Die fehlerhaft erkannten Zellen der Akkordtabelle und einzelne verrutschte Katalognummern. |
 | DeSantis | Das Stufendiagramm zu den Tendenzregeln fehlt im Extrakt. |
