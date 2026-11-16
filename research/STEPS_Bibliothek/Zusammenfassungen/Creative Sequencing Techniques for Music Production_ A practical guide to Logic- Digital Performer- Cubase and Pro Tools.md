@@ -1,14 +1,15 @@
 ---
-werk: "Creative Sequencing Techniques for Music Production – A practical guide to Logic, Digital Performer, Cubase and Pro Tools"
+werk: "Creative Sequencing Techniques for Music Production – A practical guide for Logic, Digital Performer, Cubase and Pro Tools"
 autor: "Andrea Pejrolo"
-verlag: "britischer Fachverlag laut Rechtevermerk (Copyright, Designs and Patents Act 1988); © 2005 Andrea Pejrolo"
-seiten: 324
+verlag: "Focal Press (Imprint von Elsevier), Oxford / Burlington MA; First published 2005; © 2005 Andrea Pejrolo"
+isbn: "0-240-51960-4"
+seiten: 324   # PDF-Seiten, nicht Buchumfang
 quelle_pdf: "research/STEPS_Bibliothek/Creative Sequencing Techniques for Music Production_ A practical guide to Logic- Digital Performer- Cubase and Pro Tools.pdf"
 quelle_sha256: 7cc3a0bfc9f83d060eb8efb708ddb01af1c5e8c53bd2565cdf72acb4df1704d9
 rechteklasse: E
 original: restricted_local (per .gitignore ausgeschlossen)
-grundlage: "Docling-Extrakt vom 14.11.2026; vollständige Gliederung, Abschnitte zu Quantisierung und Groove gelesen"
-stand: 2026-11-14
+grundlage: "Docling-Extrakt vom 14.11.2026; vollständige Gliederung, Abschnitte zu Quantisierung und Groove gelesen; korrigiert am 15.11.2026 nach PRUEFBERICHT.md"
+stand: 2026-11-15
 fachliche_freigabe: false
 ---
 
@@ -18,7 +19,7 @@ fachliche_freigabe: false
 
 ## Einordnung
 
-Ein praxisorientiertes Lehrbuch für MIDI- und Audio-Sequencing im Projektstudio. Es erklärt Techniken programmunabhängig und zeigt sie jeweils in den vier damals führenden DAWs. Zum Buch gehörte eine Audio-CD mit Hörbeispielen. Jedes Kapitel endet mit Zusammenfassung und Übungen.
+Ein praxisorientiertes Lehrbuch für MIDI- und Audio-Sequencing im Projektstudio. Es erklärt Techniken programmunabhängig und zeigt sie jeweils in den vier damals führenden DAWs. Zum Buch gehörte eine CD mit Hörbeispielen, Loops und Vorlagen. Jedes Kapitel endet mit Zusammenfassung und Übungen.
 
 ## Gliederung und Kerninhalte
 
@@ -36,15 +37,15 @@ Ein praxisorientiertes Lehrbuch für MIDI- und Audio-Sequencing im Projektstudio
 - Grundlagen der Quantisierung. Destruktive und nichtdestruktive Audiobearbeitung.
 - Automation: statisch, in Echtzeit, Bearbeitung. Lautstärke, Panorama, Mute.
 
-### 3. Fortgeschrittene Techniken
-- **Groove-Quantisierung und Humanisierung:** Quantisierungsfilter (nur bestimmte Noten oder Bereiche), **Swing-Quantisierung** und Groove-Vorlagen.
-- Zum Swing: Ein Swing-Parameter erlaubt jede Abstufung zwischen geraden Achteln (0 %) und Triolenachteln. Der Autor empfiehlt, die Swing-Werte zwischen Songteilen leicht zu variieren (etwa ±10 %), damit der Groove menschlicher wirkt. Unterschiedliche Swing-Werte für verschiedene Spuren verbessern das Zusammenspiel.
+### 3. Techniken für die Mittelstufe
+- **Groove-Quantisierung und Humanisierung:** Quantisierungsfilter (welche Ereignisse quantisiert werden; Empfindlichkeit als Einzugsbereich um das Raster; Stärke als Anteil der Verschiebung, empfohlen etwa 50–80 %), **Swing-Quantisierung** und Groove-Vorlagen, die Timing, Velocity und Notenlänge formen. Die reine Zufallsfunktion hält der Autor für wenig brauchbar.
+- Zum Swing: Ein Swing-Parameter erlaubt jede Abstufung zwischen geraden Achteln (0 %) und Triolenachteln (100 % in den meisten Programmen); natürlich wirken nach dem Autor Werte zwischen etwa 70 und 120 %. Der Autor empfiehlt, die Swing-Werte zwischen Songteilen leicht zu variieren (etwa ±10 %), damit der Groove menschlicher wirkt. Unterschiedliche Swing-Werte für verschiedene Spuren verbessern das Zusammenspiel.
 - Layering von MIDI-Spuren sowie von MIDI und Audio.
 - Drum-Editor. Alternative Controller: Gitarre/Bass-zu-MIDI, Drumpads, Blaswandler.
 - Komplexe Tempospuren, Tempo- und Taktwechsel, Time-Stretching.
 - Synchronisation (MIDI Clock, MTC), Backup und Archivierung, Berechnung der Projektgröße.
 
-### 4. Profi-Techniken
+### 4. Fortgeschrittene Techniken
 - Eigene Grooves erstellen und bearbeiten, Grooves aus Audio gewinnen, Audio quantisieren.
 - Erweiterte MIDI-Editoren, Offline-Transformationen von MIDI-Daten, Echtzeit-MIDI-Effekte.
 - Insert- und Send-Effekte. Video (QuickTime), SMPTE-Synchronisation, SysEx-Dumps.
@@ -65,7 +66,7 @@ Ein praxisorientiertes Lehrbuch für MIDI- und Audio-Sequencing im Projektstudio
 
 ## Nutzen für STEPS
 
-- **Drum- und Groove-Modul:** Die Beschreibung der Swing-Quantisierung als stufenloser Parameter zwischen gerade und triolisch sowie der Rat, Swing je Spur und Abschnitt zu variieren, sind direkt übertragbar auf die STEPS-Groove-Logik (z. B. Swing-Prozentwert, Humanize, Velocity).
+- **Drum- und Groove-Modul:** Die Beschreibung der Swing-Quantisierung als stufenloser Parameter zwischen gerade und triolisch sowie der Rat, Swing je Spur und Abschnitt zu variieren, sind direkt übertragbar auf die STEPS-Groove-Logik (z. B. Swing-Prozentwert, Quantisierungsstärke, Velocity). Für eine Humanize-Funktion ist zu beachten, dass der Autor reine Zufallsstreuung ablehnt und stattdessen Groove-Vorlagen empfiehlt. Die Prozentskala für Swing ist zwischen den Programmen nicht einheitlich und muss in STEPS eigens definiert werden.
 - **MIDI-Export:** Das Kapitel zu MIDI-Nachrichten liefert die Begriffswelt für den MIDI-Export (Kanal, Program Change, Controller, SysEx), der in STEPS geplant ist.
 - **Arrangement-Hinweise:** Die Hinweise zur Programmierung von Rhythmusgruppe und Bläsern eignen sich als Grundlage für spätere Voicing-Presets je Instrument (Lage, Umfang, typische Spielweise).
 
