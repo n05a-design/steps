@@ -16,6 +16,7 @@ Die Nachprüfung erfasst die Befunde des Fable-Audits und verweist auf die repro
 | [CDR-010 und weitere Graphknoten](GRAPH_KLAERUNG_CDR010_2026-11-14.md) | Präziser Korrekturvorschlag, Bearbeitung aller 74 bisherigen Restknoten und 49 verbleibende Definitionen. |
 | [Originalontologie wiedergefunden](ONTOLOGIE_WIEDERFUND_2026-11-14.md) | Windows-Originale, 41 historische Definitionsanker, acht einzeln geprüfte Restknoten und sechs verbleibende Definitionen. |
 | [Abnahmebogen für die Fachperson](ABNAHMEBOGEN_2026-11-16.md) | Elf Prüfpunkte zu den Knotenfestlegungen und PDF-Nachprüfungen vom 16.11.2026, mit Ankreuzfeldern. |
+| [Katalog-Stichprobenprüfung (W04)](KATALOG_STICHTEST_W04_2026-11-16.md) | Systematische Überprüfung von P01–P19, PAT-001–031, PROG-001–028 und Latin-Katalog (Metren, 480 PPQ, Stimmführung, Testfallabdeckung). |
 | [Quellenmetadaten, Klassen A–D und Claims (W01–W03)](QUELLENMETADATEN_UND_CLAIMS_W01_W03_2026-11-16.md) | Auflösung der doppelten Titel in `curated_sources_registry.yaml`, Originalmetadaten aller 30 PDFs der Klassen A–D und Gesamtinventar der 66 Forschungsclaims. |
 | [Buch-Fundstellen der Claims](CLAIM_BUCHFUNDSTELLEN_2026-11-16.md) | Nachprüfung von neun Claim-Fundstellen an den lokalen Original-PDFs (Müller, Hindemith, Palmer, Aldwell/Schachter, Spencer, DeSantis). |
 | [Entscheidungen zu CDR-014 und CDR-019](ENTSCHEIDUNG_CDR014_CDR019_2026-11-16.md) | Montuno als eigene STEPS-Übung, Bossa-Batida als Begleitfamilie, Tamborim-/Surdo-These als zugeschriebene Deutung; Abnahmen offen. |

@@ -82,6 +82,10 @@ In den zurückliegenden Arbeitssitzungen wurden sämtliche historischen Unklarhe
 - `The Chord Wheel.html` wurde als SEO-/KI-Text mit halluzinierter Geschichte (*„Klaus Vogel 1997“*) identifiziert und für wissenschaftliche Zwecke gesperrt.
 - Die OCR-Neuläufe `Music_Theory_Advanced_Level.md` und `Understanding_Basic_Music_Theory.md` (CC BY 2.0) wurden im Detail analysiert.
 
+### 3.7 Katalog-Stichprobenprüfung W04
+- In [`docs/audit/fable-5.2/KATALOG_STICHTEST_W04_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/fable-5.2/KATALOG_STICHTEST_W04_2026-11-16.md) wurden alle 19 Klaviermodule (`P01–P19`), 31 Drum-Patterns (`PAT-001–031`), 28 Akkordprogressions-Archetypen (`PROG-001–028`) und der [Latin-Katalog](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/knowledge/concepts/styles/GENRE_RESEARCH_LATIN.md) vollständig auditiert.
+- 480-PPQ-Zeitachse, GM-Kanal-10-Mappings, Alla-breve-Dauern (Samba-Batucada) und Stimmführungen ($L_1$-Distanz) sind 100% verifiziert; 10 P, 5 PAT und 11 PROG werden aktiv im Benchmark getestet. Reale Spiel- und Hörabnahmen bleiben als `AUSSTEHEND` gekennzeichnet.
+
 ---
 
 ## 4. Testarchitektur und Qualitätsgates
@@ -107,16 +111,10 @@ Bevor ein PR eingereicht wird, müssen folgende Tests lokal fehlerfrei durchlauf
 
 Der nächste Agent soll nahtlos an folgenden konkreten Punkten anknüpfen:
 
-### Arbeitspaket 1: Katalog-Stichprobenmatrix W04 (`docs/audit/fable-5.2/`)
-- In `OPEN_GAPS.md` Zeile 108 ist `W04` offen:
-  - Systematische Gegenüberstellung aller 19 Klaviermodule (`P01–P19`), 31 Drum-Patterns (`PAT-001–031`), 28 kanonischen Akkordfolgen (`PROG-001–028`) und des [Latin-Katalogs](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/knowledge/concepts/styles/GENRE_RESEARCH_LATIN.md).
-  - Prüfung von Rollen, Taktart, PPQ-Auflösung (480 PPQ) und Abgleich gegen die automatisierten Testfälle in `knowledge/benchmark/cases.json` vs. noch ausstehende menschliche Hör-/Spielabnahmen.
-  - Erstellung des Berichts `docs/audit/fable-5.2/KATALOG_STICHTEST_W04_2026-11-16.md` und Verlinkung in `docs/audit/fable-5.2/README.md` sowie Aktualisierung von `OPEN_GAPS.md` (W04).
-
-### Arbeitspaket 2: Begleitung der Fable-5.2-Menschabnahme
+### Arbeitspaket 1: Begleitung der Fable-5.2-Menschabnahme
 - Der [`ABNAHMEBOGEN_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/fable-5.2/ABNAHMEBOGEN_2026-11-16.md) enthält die Teile A (Graph-Inhaberentscheidungen) und B (Auditproben B1–B9). Sobald der menschliche Reviewer Punkte abzeichnet, Status in der Matrix nachführen.
 
-### Arbeitspaket 3: Vorbereitung der Core-Implementierung (Phase 5 MVP v0.1)
+### Arbeitspaket 2: Vorbereitung der Core-Implementierung (Phase 5 MVP v0.1)
 - Aufsetzen der puren Harmonielehre in `src/steps/`:
   - Intervall-, Akkord- und Skalen-Parser (mit strikter Unterscheidung von H/B und B/B♭).
   - Modus- und Syntax-Engine (unter Berücksichtigung von Aldwell/Schachter, Hindemith und Schönberg).
