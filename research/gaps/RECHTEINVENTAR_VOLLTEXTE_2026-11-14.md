@@ -18,21 +18,21 @@ Klassen: **A** offene Lizenz im Dokument belegt · **B** vermutlich gemeinfrei o
 | A | `Popular_Music_Analysis_in_American_Music.pdf` (2) | Jocelyn Neal, CC BY 4.0 | Namensnennung erforderlich. |
 | A | `s06-the-elements-of-rhythm-sound-s.pdf` | CC BY-NC-SA 3.0 | Nicht kommerziell; Weitergabe unter gleicher Lizenz. |
 | A | `MusicTheory.pdf` | © 2017 Robert Hutchinson, GNU Free Documentation License 1.2+ | Lizenztext muss beiliegen. |
-| B | `cu31924022305357.pdf` | Cornell University Library: keine bekannten US-Beschränkungen; Titel „Harmony Simplified“ | Historischer Druck; Status außerhalb der USA prüfen. |
-| B | `Chord-Progressions.pdf` | Aufbau mit Einzelnachweisen wie ein Wikipedia-Artikel | Falls Wikipedia: CC BY-SA, Quelle und Version fehlen. |
-| A | `Understanding_Basic_Music_Theory.pdf` (2) | nach OCR lesbar: © 2007 Catherine Schmidt-Jones, Connexions (Rice University), Creative Commons Attribution License | Namensnennung erforderlich; Lizenzversion am Original prüfen. |
-| C | `berklee-online-*-handbook.pdf` (3), `Music_theory_handbook.pdf` (2) | Berklee Online | Werbe-Handbücher; Download erlaubt, Weiterverbreitung nicht belegt. |
-| C | `ModeWheel_Manual_1.21.pdf` (2) | Endbenutzer-Lizenzvertrag im Dokument | Software-Handbuch mit EULA. |
-| C | `The Piano Chord Collection HI RES.pdf` | © Pianochord.org | |
-| C | `the-chord-wheel.pdf` (2), `Circle_*_Modes.pdf` (4 × 2) | Produktbeschreibung Hal Leonard bzw. Produktbilder | Herstellermaterial. |
-| C | `101mixing&productiontips.pdf`, `How-to-Write-Music-Guide.pdf` | Autor bzw. Anbieter genannt, keine Lizenz | Werbe-E-Books. |
-| D | `Computational_Music_Theory.pdf` (2) | © 2012 AAAI, alle Rechte vorbehalten | Konferenzbeitrag. |
-| D | `Kants_Theory_of_Music.pdf` (2) | Con-Textos Kantianos 14 (2021), DOI über Zenodo | Open-Access-Zeitschrift; Lizenz im Original prüfen. |
-| D | `Is_Generative_Theory_Misleading_for_Music.pdf` (2) | HAL-Deposit eines Springer-Beitrags | Lizenz der HAL-Fassung prüfen. |
-| D | `What_is_popular_music_And_what_isn_t_An.pdf` (2) | Musiikki 2/2010 | Zeitschriftenbeitrag. |
+| B | `cu31924022305357.pdf` | Cornell University Library: keine bekannten US-Beschränkungen; Hugo Riemann, *Harmony Simplified* (Übers. H. Bewerunge, Augener, London 1896) | Autor († 1919) und Übersetzer († 1923) seit über 100 Jahren verstorben; gemeinfrei. |
+| B | `Chord-Progressions.pdf` | Englischer Wikipedia-Artikel *Chord progression* (`oldid=441402396`, S. 7–8), CC BY-SA 3.0 Unported | Autorenliste und Bildlizenzen stehen auf S. 7–8 des Extrakts. |
+| A | `Understanding_Basic_Music_Theory.pdf` (2) | nach OCR lesbar: © 2007 Catherine Schmidt-Jones (Co-Autor Russell Jones), Connexions (Rice University, `col10363/1.3`), CC BY 2.0 | Namensnennung erforderlich; Lizenzversion 2.0 auf S. 4 bestätigt. |
+| C | `berklee-online-*-handbook.pdf` (3), `Music_theory_handbook.pdf` (2) | Berklee Online (*Digital Handbooks*, ca. 2018–2025) | Werbe-Handbücher; Download erlaubt, Weiterverbreitung nicht belegt. |
+| C | `ModeWheel_Manual_1.21.pdf` (2) | Jeffrey M. Kunka, Mai 2023; Endbenutzer-Lizenzvertrag (S. 8–9) im Dokument | Software-Handbuch mit EULA (untersagt Weiterverbreitung der Software über Drittseiten). |
+| C | `The Piano Chord Collection HI RES.pdf` | © Pianochord.org, Alle Rechte vorbehalten (S. 2) | |
+| C | `the-chord-wheel.pdf` (2), `Circle_*_Modes.pdf` (4 × 2) | 4-seitiger Scraper-Flyer zu Jim Fleser / Hal Leonard bzw. 4 Drehscheiben von Oliver Prehn (`newjazz.dk`) & „nupfe“ | Herstellermaterial / Lehrbögen. |
+| C | `101mixing&productiontips.pdf`, `How-to-Write-Music-Guide.pdf` | Jason Timothy (`MusicSoftwareTraining.com`) bzw. Guy Michelmore (`ThinkSpace Education`), keine Lizenz | Werbe-E-Books. |
+| D | `Computational_Music_Theory.pdf` (2) | Georg Boenn, Martin Brain, Marina De Vos, John ffitch; © 2012 AAAI, alle Rechte vorbehalten | Konferenzbeitrag. |
+| D | `Kants_Theory_of_Music.pdf` (2) | Oliver Thorndike, *Con-Textos Kantianos* 14 (2021), S. 416–438, DOI `10.5281/zenodo.5776100` | Open-Access-Zeitschrift; Lizenz im Original prüfen. |
+| D | `Is_Generative_Theory_Misleading_for_Music.pdf` (2) | Rafael Barbosa, HAL-Preprint (`hal-02184441`, 2019) eines Springer-LNCS-Beitrags | Lizenz der HAL-Fassung prüfen. |
+| D | `What_is_popular_music_And_what_isn_t_An.pdf` (2) | Markus Mantere (Vorwort) & Franco Fabbri, *Musiikki* 2/2010, S. 3–5, 72–92 | Zeitschriftenbeitrag. |
 | D | `Mathematics_and_Music.pdf` (2) | David Wright, Washington University, 2009 | Vorlesungsskript. |
-| D | `COGS_300_13_1_Rhythm_in_music.pdf` | Vorlesungsfolien zu Patel, Kap. 3 | Folien mit Buchinhalten. |
-| D | `How-music-is-made-JOHN-VOJTOVITCH_EN.pdf`, `music-fundamentals-2-rhythm-and-meter.pdf`, `Name_Music_Theory_Worksheet_Music_Theory.pdf` (2), `THE_ELEMENTS_OF_MUSIC.pdf` (2) | kein Hinweis im Extrakt | Herkunft ermitteln. `THE_ELEMENTS_OF_MUSIC` ist ein Lehrbuchkapitel. |
+| D | `COGS_300_13_1_Rhythm_in_music.pdf` | Vorlesungsfolien (`COGS 300`) zu Aniruddh D. Patel (2008), Kap. 3.1–3.2 | Folien mit Buchinhalten. |
+| D | `How-music-is-made-JOHN-VOJTOVITCH_EN.pdf`, `music-fundamentals-2-rhythm-and-meter.pdf`, `Name_Music_Theory_Worksheet_Music_Theory.pdf` (2), `THE_ELEMENTS_OF_MUSIC.pdf` (2) | Nachprüfung 16.11.2026: `music-fundamentals-2-rhythm-and-meter.pdf` stammt aus Catherine Schmidt-Jones’ Connexions-Kurs (CC BY, identisch mit Kap. 1.2 in `Understanding_Basic_Music_Theory.pdf`); `How-music-is-made` ist von John Vojtovitch (ohne Lizenz); die beiden übrigen sind ein britisches Arbeitsblatt-Heft (Worksheet 1–10) und ein US-College-Handout (Kap. 1 *The Elements of Music*) ohne Autorenangabe | Einzelbelege siehe [Quellenmetadaten-Bericht](../../docs/audit/fable-5.2/QUELLENMETADATEN_UND_CLAIMS_W01_W03_2026-11-16.md). |
 | D | `Music_Theory_Advanced_Level.pdf` (2) | nach OCR lesbar: Zusammenstellung von Forenbeiträgen der Nutzerin „Eowyn“ auf mysongbook.com, Juni 2005 | Keine Lizenz genannt; Forenbeiträge bleiben urheberrechtlich bei der Verfasserin. |
 | E | `Fundamentals of Music Proce_ (Z-Library).pdf` | Springer, ISBN 978-3-319-21944-8; Dateiname nennt Z-Library | **Höchstes Risiko:** kommerzielles Buch aus einer nicht autorisierten Quelle. |
 | E | `Schachter_Aldwell-Harmony_Voice_Leading.pdf` | Lehrbuch (Aldwell/Schachter) | Kommerziell, Verlagsangabe im Extrakt nicht gefunden. |
