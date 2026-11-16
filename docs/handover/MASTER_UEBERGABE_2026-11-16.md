@@ -121,7 +121,7 @@ Bevor ein PR eingereicht wird, müssen folgende Tests lokal fehlerfrei durchlauf
 Der nächste Agent soll nahtlos an folgenden konkreten Punkten anknüpfen:
 
 ### Arbeitspaket 1: Begleitung der Fable-5.2-Menschabnahme
-- Der [`ABNAHMEBOGEN_2026-11-16.md`](../../docs/audit/fable-5.2/ABNAHMEBOGEN_2026-11-16.md) enthält die Teile A (Graph-Inhaberentscheidungen) und B (Auditproben B1–B9). Sobald der menschliche Reviewer Punkte abzeichnet, Status in der Matrix nachführen.
+- Der [`ABNAHMEBOGEN_2026-11-16.md`](../../docs/audit/fable-5.2/ABNAHMEBOGEN_2026-11-16.md) ist am 16.11.2026 vom Inhaber entschieden: 13 von 15 Punkten freigegeben, A1 mit Korrektur am Knotennamen (`SAME_ROOT_DOMINANT_TO_MINOR_SEVENTH` statt `SAME_ROOT_MAJOR_TO_MINOR_SEVENTH`), A2 mit fehlendem Beleg (Aufnahme oder Praxisbeleg zum Akzent des Surdo de primeira). **Nächster Schritt:** Entscheidungen in einem eigenen PR in Graph (`knowledge/relations/`) und `NODE_DEFINITION_PROPOSALS.json` übernehmen; A2 bleibt `REVIEW_REQUIRED`. Eine unabhängige Fachperson kann die Punkte weiterhin korrigieren.
 
 ### Arbeitspaket 2: Ausbau der Core-Implementierung (Phase 5 MVP v0.1)
 - **Nicht bei null beginnen:** `src/steps/theory/` (`pitch`, `interval`, `chord`, `triad`, `seventh`, `exceptions`) und `src/steps/progression/` (`engine`, `voice_leading`, `reviewed` samt Bestands- und Freigabe-JSON) existieren bereits mit rund 2.600 Zeilen. `models/` und `ports/` sind nur Paketorte, `app/` umfasst rund 80 Zeilen Python. Verträge und API: [`docs/theory/API_VERTRAEGE.md`](../theory/API_VERTRAEGE.md), [`docs/theory/API.md`](../theory/API.md); Tests u. a. `tests/test_theory_core.py`, `tests/test_progression_engine.py`, `tests/test_voicing_contract.py`, `tests/test_notation_contract.py`.
