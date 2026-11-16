@@ -53,7 +53,7 @@ Die zweite Kopie des Antigravity-Inventars (`Antigravity_Steps_Bericht/MASTER_AU
 - 34 Dateien nennen alle vier Indizes V6.0–V6.6, 91 nur V6.4 und V6.6, 23 nur V6.6.
 - Vollständige Liste mit Hash laut Index: [`BIBLIOTHEK_V6_6_FEHLENDE_DATEIEN_2026-11-16.csv`](BIBLIOTHEK_V6_6_FEHLENDE_DATEIEN_2026-11-16.csv)
 
-Die Dateien sind projekteigene Notizen der Bibliothek, keine fremden Originale. Ob sie auf dem Windows-Rechner oder in einem Bibliotheksarchiv (ZIP) liegen, ist ungeprüft.
+Die Dateien sind projekteigene Notizen der Bibliothek, keine fremden Originale. Eine erweiterte Suche auf dem Mac (Benutzerverzeichnis per `find`, alle gefundenen ZIP-Archive) blieb ebenfalls ohne Treffer. Für den Windows-Rechner liegt ein [Suchauftrag](SUCHAUFTRAG_BIBLIOTHEK_V6_6_WINDOWS_2026-11-16.md) bereit.
 
 ## Grenzen
 
