@@ -1,4 +1,11 @@
 """Bounded counterexamples, arrangements and an independent optimization oracle."""
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 import csv
 from fractions import Fraction
 from itertools import product
@@ -6,7 +13,7 @@ from math import log2
 
 from src.steps.theory import parse_chord,parse_spelling
 from src.steps.progression import get_progression,optimize_smooth_voice_leading
-from scripts.audit_conflict_revisions import ROOT,source_bytes
+from scripts.audit_conflict_revisions import source_bytes
 
 
 def midi(note):return parse_spelling(note,'INT').midi_number

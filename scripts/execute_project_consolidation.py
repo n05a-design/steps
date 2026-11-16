@@ -368,7 +368,7 @@ steps/
 
 ## 2. Kernfunktionen des STEPS-Theoriekerns (`src/steps/`)
 
-* **Mathematisches Domänenmodell ($Z_{12}$):** Modulo-12-Arithmetik, Frequenzberechnung ($A_4 = 440\,\text{Hz}$), zyklische Gruppen und vollständige enharmonische Orthographie (diatonische Stufen und Alterationen).
+* **Mathematisches Domänenmodell ($Z_{12}$):** Modulo-12-Arithmetik, Frequenzberechnung ($A_4 = 440\\,\\text{Hz}$), zyklische Gruppen und vollständige enharmonische Orthographie (diatonische Stufen und Alterationen).
 * **Zwei-Wege-Notationssystem:** Vollständige Unterstützung internationaler ($B/B\flat$) und deutscher Notenkonventionen ($H/B$).
 * **Akkord-Engine:** Konstruktion und Parsen von Dreiklängen, Vierklängen, Sus-/Add-Akkorden, Extensions (9, 11, 13, alteriert), Slash Chords und Stufenakkorden.
 * **28 kanonische Progressionen:** Vollständige Abdeckung aller klassischen, Jazz- und Pop-Archetypen (II-V-I, Andalusische Kadenz, Pop-Punk, Coltrane Changes, Rhythm Changes, Modal Vamps).
@@ -420,15 +420,15 @@ python knowledge/research/run_golden_test_suite.py
     print("[Phase K & L] Verifying project integrity and running tests...")
     
     # 1. Run unittest discover -s tests
-    res_core = subprocess.run(["python", "-m", "unittest", "discover", "-s", "tests"], capture_output=True, text=True)
+    res_core = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "tests"], capture_output=True, text=True)
     print("  [TEST] Core tests returncode:", res_core.returncode)
     
     # 2. Run unittest discover -s .agents/skills/steps-knowledge-curation/tests
-    res_skill = subprocess.run(["python", "-m", "unittest", "discover", "-s", ".agents/skills/steps-knowledge-curation/tests"], capture_output=True, text=True)
+    res_skill = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", ".agents/skills/steps-knowledge-curation/tests"], capture_output=True, text=True)
     print("  [TEST] Skill tests returncode:", res_skill.returncode)
 
     # 3. Run golden test suite
-    res_golden = subprocess.run(["python", "knowledge/research/run_golden_test_suite.py"], capture_output=True, text=True)
+    res_golden = subprocess.run([sys.executable, "knowledge/research/run_golden_test_suite.py"], capture_output=True, text=True)
     print("  [TEST] Golden test suite returncode:", res_golden.returncode)
 
     # Clean any modified report files from golden test run if any
