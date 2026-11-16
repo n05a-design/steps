@@ -26,49 +26,51 @@ Ungewöhnlich ist die Reihenfolge: Nach Akkordvokabular und Grundregeln des vier
 
 ## Gliederung
 
-### Teil I – Grundmaterial und Verfahren
-1. Tonart, Skalen, Modi: Tonbeziehungen, Dur, Moll, Kirchentonarten, Tonalität.
-2. Intervalle: Bildung, Obertonreihe, Konsonanz/Dissonanz, Intervalle in der Tonart.
-3. Rhythmus und Metrum: rhythmische Organisation, Rhythmus und Dissonanzbehandlung.
-4. Dreiklänge und Septakkorde; Textur und Struktur.
-5. Vierstimmiger Satz: Akkordbau, Stimmführung.
+32 Einheiten in sechs Teilen. Hier nur die Themen der Einheiten in eigener Kurzform, ohne deren Unterabschnitte. Die für STEPS wichtigen Konzepte stehen unter „Nutzen für STEPS“.
 
-### Teil II – I–V–I und seine Ausweitungen
-6. I, V und V7: Tonika und Dominante, I–V–I vierstimmig, Dominantseptakkord.
-7. I6, V6 und VII6 (Leittondreiklang).
-8. Umkehrungen von V7; **kontrapunktische Ausweitungen** von Tonika und Dominante.
-9. Hinführung zu V: IV, II und II6 als Zwischenharmonien. Kontrapunktische Progressionen, Ausweitungen von II und IV, **harmonische Syntax** und rhythmische Implikationen.
-10. Der Kadenzquartsextakkord als **Intensivierung von V** (nicht als eigene Tonikaform).
-11. VI und IV6.
-12. Supertonika- und Subdominantseptakkorde.
-13. Weitere Verwendungen von IV, IV6 und VI; Übersicht der Kadenzen.
-14. V als Tonartbereich: **Tonikalisierung und Modulation**.
-15. III und VII.
+### Teil I – Grundmaterial und Verfahren (1–5)
+1. Tonart, Skalen, Modi
+2. Intervalle
+3. Rhythmus und Metrum
+4. Dreiklänge und Septakkorde
+5. Vierstimmiger Satz
 
-### Teil III – 5/3-, 6/3- und 6/4-Techniken
-16. 5/3-Techniken: Fortschreitungen in Quinten und Terzen, kontrapunktische Akkordfunktionen, V als Molldreiklang.
-17. **Diatonische Sequenzen**: kompositorische Funktion, Quintfallsequenzen, steigende Quinten, steigende **5–6-Technik**, in Terzen fallende Sequenzen (fallende 5–6), seltenere Muster.
-18. 6/3-Techniken: parallele Sextakkorde und weitere Verwendungen.
-19. 6/4-Techniken: dissonante Quartsextakkorde (akzentuiert, Wechsel, Durchgang), besondere Behandlung des Kadenzquartsextakkords, konsonante Quartsextakkorde, Sonderfälle.
+### Teil II – I–V–I und seine Ausweitungen (6–15)
+6. I, V und V7
+7. I6, V6 und VII6
+8. Umkehrungen von V7
+9. Hinführung zu V: IV, II und II6
+10. Kadenzquartsextakkord
+11. VI und IV6
+12. Septakkorde auf II und IV
+13. Weitere Verwendungen von IV und VI; Kadenzen
+14. V als Tonartbereich
+15. III und VII
 
-### Teil IV – Elemente der Figuration
-20. Melodische Figuration: Akkordbrechung, Durchgangs- und Wechselnoten.
-21. Rhythmische Figuration: Vorhalte, Vorausnahmen, Orgelpunkt.
+### Teil III – 5/3-, 6/3- und 6/4-Techniken (16–19)
+16. 5/3-Techniken
+17. Diatonische Sequenzen
+18. 6/3-Techniken
+19. 6/4-Techniken
 
-### Teil V – Dissonanz und Chromatik I
-22. Leittonseptakkorde: verminderter und halbverminderter Septakkord.
-23. **Mischung** (Modusmischung von Dur und Moll).
-24. Weitere Verwendungen von Septakkorden: Septakkorde in Sequenzen, erweiterte Behandlung, scheinbare Septakkorde.
-25. **Angewandte (Zwischen-)Dominanten** V und VII: Akkorde bezogen auf V und auf andere Stufen, angewandte Akkorde in Sequenzen.
-26. Diatonische Modulation: Techniken, Modulation, großräumige Bewegung und Form.
+### Teil IV – Elemente der Figuration (20–21)
+20. Melodische Figuration
+21. Rhythmische Figuration
 
-### Teil VI – Dissonanz und Chromatik II
-27. Septakkorde mit hinzugefügter Dissonanz: Nonen, „Undezimen“ und „Tredezimen“. Die Anführungszeichen markieren, dass die Autoren sie als Vorhalts- oder Stimmführungsergebnisse verstehen.
-28. Die **phrygische II** (Neapolitaner): als Hinführung zu V, weitere Verwendungen, chromatische Notation.
-29. Übermäßige Sextakkorde: chromatische Vorbereitung von V, Stimmführung, Modulation, „Umkehrungen“, deutscher Sextakkord und Dominantseptakkord.
-30. Weitere chromatische Akkorde: fortgeschrittene Mischung, übermäßige Dreiklänge, alterierte Dominantseptakkorde, verminderte Septakkorde mit gemeinsamem Ton (common-tone diminished sevenths, Nebennotenfunktion), sonstige chromatische Verzierungsakkorde.
-31. Chromatische Stimmführungstechniken.
-32. Chromatik in größeren Zusammenhängen: neue Modulationstechniken, chromatische Tonartbereiche.
+### Teil V – Dissonanz und Chromatik I (22–26)
+22. Leittonseptakkorde
+23. Modusmischung
+24. Weitere Verwendungen von Septakkorden
+25. Angewandte Dominanten
+26. Diatonische Modulation
+
+### Teil VI – Dissonanz und Chromatik II (27–32)
+27. Septakkorde mit hinzugefügter Dissonanz
+28. Phrygische II (Neapolitaner)
+29. Übermäßige Sextakkorde
+30. Weitere chromatische Akkorde
+31. Chromatische Stimmführung
+32. Chromatik in größeren Zusammenhängen
 
 **Anhänge:** I. Keyboard-Progressionen; II. Partiturreduktion.
 

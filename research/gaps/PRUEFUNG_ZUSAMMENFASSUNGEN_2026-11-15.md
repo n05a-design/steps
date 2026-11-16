@@ -60,12 +60,14 @@ Die lokalen Original-PDFs (`restricted_local`) wurden an den betreffenden Stelle
 - **Adorno:** Nur ein 30-seitiger Auszug, Herkunft offen (Verlagsleseprobe?).
 - **Hindemith, Schönberg:** Rechtsaussagen zu Schutzfrist und Gemeinfreiheit (bei Hindemith im Feld `rechtehinweis`) stehen nicht in den Quellen. Sie sind Projektannahmen, keine geprüfte Rechtslage.
 
-### Strukturnähe
+### Strukturnähe (entschieden)
 
-Zwei Stellen kommen einer Strukturübernahme nahe und sind noch nicht entschieden:
+Zwei Stellen kamen einer Strukturübernahme nahe. Der Inhaber hat am 16.11.2026 entschieden:
 
-- **Aldwell/Schachter, Gliederung:** fast vollständiges übersetztes Inhaltsverzeichnis mit Unterabschnitten.
-- **Stuart, Musterlisten:** rund 35 Folgen, die sich einzelnen Katalognummern zuordnen lassen (etwa ein Viertel des Grundkatalogs).
+- **Aldwell/Schachter, Gliederung:** Die Zusammenfassung gab ein fast vollständiges übersetztes Inhaltsverzeichnis mit Unterabschnitten wieder. Jetzt stehen nur noch die 32 Einheiten mit eigenem Kurztitel, ohne Unterabschnitte. Die wichtigen Konzepte stehen weiter unter „Nutzen für STEPS“.
+- **Stuart, Musterlisten:** Die Zusammenfassung nannte rund 35 Folgen, die sich einzelnen Katalognummern zuordnen ließen (etwa ein Viertel des Grundkatalogs). Jetzt bleiben die Musterfamilien mit je ein bis zwei typischen Beispielen.
+
+Die früheren Fassungen sind in der Git-Historie erhalten (Stand `5139760`).
 
 Wörtliche Passagen von mehr als etwa 15 Wörtern wurden in keiner Zusammenfassung gefunden. Das ist ein fachlicher Hinweis, keine Rechtsberatung.
 
