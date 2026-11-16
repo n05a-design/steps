@@ -141,6 +141,42 @@ Die Entscheidung kann direkt in dieser Datei (per PR) oder als Kommentar am zuge
 - Name, Datum · 
 - Anmerkung · 
 
+### B6 · Aldwell/Schachter, dissonante Quartsextakkorde (Unit 19 §2)
+
+- Aussage · Neben konsonantem Arpeggio- und Pendel-/Walzertyp (§13–15) unterscheidet Unit 19 §2 drei Hauptarten dissonanter Quartsextakkorde: *accented $\frac{6}{4}$* (Vorhalt $\frac{6-5}{4-3}$ auf betonter Zeit, am häufigsten über der 5. Stufe als kadenzierender Quartsextakkord, daneben über I oder anderen Stufen), *neighboring $\frac{6}{4}$* (unbetonte Wechselnote über liegenbleibendem Bass $\frac{5-6-5}{3-4-3}$) und *passing $\frac{6}{4}$* (Stimmtausch über stufenweise schreitendem Bass).
+- Fundstelle · Aldwell/Schachter, *Harmony and Voice Leading*, 3. Aufl., Unit 19 §2, gedruckt S. 307 (PDF-S. 306) und *Points for Review* Nr. 2, gedruckt S. 324 (PDF-S. 323); [Zusammenfassung](../../../research/STEPS_Bibliothek/Zusammenfassungen/Schachter_Aldwell-Harmony_Voice_Leading.md)
+- Prüffrage · Gibt die Zusammenfassung die Systematik aus Unit 19 vollständig und sachgerecht wieder?
+- Entscheidung · ☐ freigegeben · ☐ Korrektur · ☐ Beleg fehlt
+- Name, Datum · 
+- Anmerkung · 
+
+### B7 · Stuart, Enharmonik-Einebnung der Akkordtabelle (S. 3)
+
+- Aussage · Die Akkordtabelle auf S. 3 (12 Grundtöne × 6 Akkordtypen = 72 Zellen) trägt die ausdrückliche Überschrift *„Flats and sharps given by one name only“* und buchstabiert Akkordtöne bewusst ohne Rücksicht auf Terzschichtung (z. B. `Dbm = Db–E–Ab` statt `Fb`, `E+ = E–G♯–C` statt `B♯`, `Fdim = F–Ab–B–D` statt `Cb`/`E𝄫`). Das Heft umfasst laut Inhaltsverzeichnis (S. 2) vollständig 17 Tonartseiten mit 1.270 Folgen (10 Durtonarten × 78 + 7 Molltonarten × 70).
+- Fundstelle · Walter Stuart, *1500 Chord Progressions*, gedruckt S. 2–4 und 14 (PDF-S. 2–4 und 14); [Zusammenfassung](../../../research/STEPS_Bibliothek/Zusammenfassungen/1500-chord-progressions-walter-1.md)
+- Prüffrage · Stimmt die Abgrenzung für STEPS (Übernahme von Stufenmustern nur mit echter enharmonischer Stufenschreibung statt aus der vereinfachten Buchstabentabelle auf S. 3)?
+- Entscheidung · ☐ freigegeben · ☐ Korrektur · ☐ Beleg fehlt
+- Name, Datum · 
+- Anmerkung · 
+
+### B8 · DeSantis, Stufendiagramm zu den Tendenzregeln (S. 208)
+
+- Aussage · Das Diagramm auf S. 208 fasst die harmonischen Tendenzregeln in Dur als gerichtete Kette `[iii] → [vi] → [IV / ii] → [vii° / V] → (I)` zusammen, ergänzt um vier Zusatzpfeile (`IV → ii`, `IV → I` als plagale Wendung, `V → vi` als Trugschluss sowie einen gestrichelten Rückpfeil von `I` an den Kettenanfang).
+- Fundstelle · Dennis DeSantis, *Making Music*, gedruckt S. 208 (PDF-S. 208); [Zusammenfassung](../../../research/STEPS_Bibliothek/Zusammenfassungen/MakingMusic_DennisDeSantis.md)
+- Prüffrage · Ist die Darstellung des Diagramms und seiner Grenzen (Dur-Standardmodell ohne Nebenfunktionen und ohne modale Mischung) zutreffend?
+- Entscheidung · ☐ freigegeben · ☐ Korrektur · ☐ Beleg fehlt
+- Name, Datum · 
+- Anmerkung · 
+
+### B9 · Müller, Mehrdeutigkeitsbeispiele der Akkorderkennung (Kap. 5)
+
+- Aussage · Kapitel 5 illustriert die Grenzen reiner Chroma-Schablonen an vier konkreten Beispielen: (1) *Let It Be* mit halbtaktiger vs. feinerer Expertenannotation bei Durchgangs- und Vorhaltsnoten (Fig. 5.1/5.16), (2) Tonklassen-Überlappung zwischen `C` (`C–E–G`) und `Am`/`Cm`/`Em` (je zwei gemeinsame Tonklassen) sowie `Cmaj7` (`C–E–G–B`) und `C`/`Em` (je drei von vier Tonklassen, Fig. 5.17), (3) Obertonbias eines synthetischen `C`-Dreiklangs mit acht Teiltönen zugunsten der Schablone `G` wegen starker Obertöne auf `G`, `B` und `D` (Fig. 5.18) und (4) Bachs C-Dur-Präludium BWV 846 T. 1–4 (`C – Dm7/C – G7/B – C`), bei dem 200-ms-Fenster die arpeggierten Harmonien in Scheinwechsel zerlegen, während erst eine zeitliche Glättung über 20 Fenster die viertaktige Akkordfolge herstellt (Fig. 5.20).
+- Fundstelle · Meinard Müller, *Fundamentals of Music Processing*, Kap. 5, gedruckt S. 238, 258, 261–265 (PDF-S. 263, 283, 286–290); [Zusammenfassung](../../../research/STEPS_Bibliothek/Zusammenfassungen/Fundamentals%20of%20Music%20Proce_%20(Z-Library).md)
+- Prüffrage · Sind die vier Beispiele und ihre Konsequenz für STEPS (Symbolik und Stimmführungskontext nicht auf ungeglättete 12-TET-Chromavektoren reduzieren) fachlich treffend zusammengefasst?
+- Entscheidung · ☐ freigegeben · ☐ Korrektur · ☐ Beleg fehlt
+- Name, Datum · 
+- Anmerkung · 
+
 ---
 
 ## Nicht Teil dieses Bogens
