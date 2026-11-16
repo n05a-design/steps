@@ -171,7 +171,7 @@ Die Entscheidung kann direkt in dieser Datei (per PR) oder als Kommentar am zuge
 ### B9 · Müller, Mehrdeutigkeitsbeispiele der Akkorderkennung (Kap. 5)
 
 - Aussage · Kapitel 5 illustriert die Grenzen reiner Chroma-Schablonen an vier konkreten Beispielen: (1) *Let It Be* mit halbtaktiger vs. feinerer Expertenannotation bei Durchgangs- und Vorhaltsnoten (Fig. 5.1/5.16), (2) Tonklassen-Überlappung zwischen `C` (`C–E–G`) und `Am`/`Cm`/`Em` (je zwei gemeinsame Tonklassen) sowie `Cmaj7` (`C–E–G–B`) und `C`/`Em` (je drei von vier Tonklassen, Fig. 5.17), (3) Obertonbias eines synthetischen `C`-Dreiklangs mit acht Teiltönen zugunsten der Schablone `G` wegen starker Obertöne auf `G`, `B` und `D` (Fig. 5.18) und (4) Bachs C-Dur-Präludium BWV 846 T. 1–4 (`C – Dm7/C – G7/B – C`), bei dem 200-ms-Fenster die arpeggierten Harmonien in Scheinwechsel zerlegen, während erst eine zeitliche Glättung über 20 Fenster die viertaktige Akkordfolge herstellt (Fig. 5.20).
-- Fundstelle · Meinard Müller, *Fundamentals of Music Processing*, Kap. 5, gedruckt S. 238, 258, 261–265 (PDF-S. 263, 283, 286–290); [Zusammenfassung](../../../research/STEPS_Bibliothek/Zusammenfassungen/Fundamentals%20of%20Music%20Proce_%20(Z-Library).md)
+- Fundstelle · Meinard Müller, *Fundamentals of Music Processing*, Kap. 5, gedruckt S. 238, 258, 261–265 (PDF-S. 263, 283, 286–290); [Zusammenfassung](../../../research/STEPS_Bibliothek/Zusammenfassungen/Fundamentals%20of%20Music%20Proce_%20%28Z-Library%29.md)
 - Prüffrage · Sind die vier Beispiele und ihre Konsequenz für STEPS (Symbolik und Stimmführungskontext nicht auf ungeglättete 12-TET-Chromavektoren reduzieren) fachlich treffend zusammengefasst?
 - Entscheidung · ☐ freigegeben · ☐ Korrektur · ☐ Beleg fehlt
 - Name, Datum · 
