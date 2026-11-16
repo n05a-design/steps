@@ -4,6 +4,8 @@ Für zehn kommerzielle Werke der Rechteklasse E aus dem [Rechteinventar](../../g
 
 Jede Zusammenfassung nennt Werk, Verlag, Quell-Hash und Grundlage. Sie gliedert den Inhalt nach dem Original, benennt den Nutzen für STEPS und die Grenzen. Fachliche Freigaben liegen nicht vor. Konkrete Notenbeispiele, Fingersätze und Akkordkataloge sind bewusst nicht übernommen und am Original zu prüfen.
 
+Am 15.11.2026 wurden alle Zusammenfassungen Aussage für Aussage gegen ihre Extrakte geprüft und korrigiert. Ergebnis und offene Fragen stehen in der [Prüfung der Zusammenfassungen](../../gaps/PRUEFUNG_ZUSAMMENFASSUNGEN_2026-11-15.md).
+
 | Zusammenfassung | Werk | Schwerpunkt für STEPS |
 | --- | --- | --- |
 | [Aldwell & Schachter](Schachter_Aldwell-Harmony_Voice_Leading.md) | Harmony and Voice Leading, 3. Aufl. | harmonische vs. kontrapunktische Funktion, Syntax, Sequenzen |
