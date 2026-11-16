@@ -4,7 +4,7 @@
 
 ## Hintergrund
 
-Die [Nachprüfung der historischen Indizes](INDIZES_NACHPRUEFUNG_2026-11-16.md) hat ergeben: 148 Markdown-Dateien, die die bibliothekseigenen Indizes V6.0–V6.6 nennen, waren nie im Repository. Die [Liste mit Pfad und SHA-256 laut Index](BIBLIOTHEK_V6_6_FEHLENDE_DATEIEN_2026-11-16.csv) ist die Suchgrundlage.
+Die [Nachprüfung der historischen Indizes](INDIZES_NACHPRUEFUNG_2026-11-16.md) und die [Ergänzungsprüfung der JSON-/TXT-Manifeste](INDIZES_JSON_TXT_NACHPRUEFUNG_2026-11-16.md) haben ergeben: 148 Markdown-Dateien, die die bibliothekseigenen Indizes V6.0–V6.6 nennen, waren nie im Repository (davon stammen 34 erstmals aus V6.0, 29 aus V6.3, 62 aus V6.4, 10 aus V6.5 und 13 aus V6.6; alle Zugänge aus V6.1 und V6.2 sind vorhanden). Die [Liste mit Pfad, SHA-256 und Indexständen](BIBLIOTHEK_V6_6_FEHLENDE_DATEIEN_2026-11-16.csv) ist die Suchgrundlage.
 
 ## Auf dem Mac bereits ohne Treffer durchsucht (16.11.2026)
 
