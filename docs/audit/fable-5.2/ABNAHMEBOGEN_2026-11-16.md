@@ -8,7 +8,7 @@
 
 ## Stand der Entscheidungen (16.11.2026)
 
-Der Inhaber hat am 16.11.2026 alle 15 Punkte entschieden: 13 freigegeben, A1 mit Korrektur am Knotennamen, A2 mit fehlendem Beleg. Grundlage waren die verlinkten Nachprüfungen und eine rechnerische Gegenprobe durch Claude (Tonklassen, MIDI, Ticks, Fingersätze, Zählungen); die Original-PDFs wurden dabei nicht erneut gelesen. Es handelt sich um eine **Inhaberentscheidung**, nicht um die Abnahme durch eine unabhängige Fachperson; eine solche kann jeden Punkt weiterhin korrigieren. Die Statuswerte im Graphen und im Pilot-Register sind unverändert und werden in einem eigenen PR übernommen.
+Der Inhaber hat am 16.11.2026 alle 15 Punkte entschieden: 12 freigegeben, A1 und B1 mit Korrektur, B2 mit fehlendem Beleg. Grundlage waren die verlinkten Nachprüfungen, eine rechnerische Gegenprobe durch Claude (Tonklassen, MIDI, Ticks, Fingersätze, Zählungen) und eine weitere Ausarbeitung des Inhabers, nach der A2, B1 und B2 gegenüber der ersten Eintragung geändert wurden. Die Original-PDFs wurden dabei nicht erneut gelesen. Es handelt sich um eine **Inhaberentscheidung**, nicht um die Abnahme durch eine unabhängige Fachperson; eine solche kann jeden Punkt weiterhin korrigieren. Die Statuswerte im Graphen und im Pilot-Register sind unverändert und werden in einem eigenen PR übernommen.
 
 ## So ausfüllen
 
@@ -42,9 +42,9 @@ Die Entscheidung kann direkt in dieser Datei (per PR) oder als Kommentar am zuge
 - Prüffrage · Ist die Zwei für den Surdo de primeira in der Bateria tatsächlich dynamisch betont, nicht nur der Ort seines Schlags?
 - Erwartung · Ja, als charakteristischer Akzent beschrieben. Eine Lautstärkemessung liegt nicht vor.
 - Spielprobe · Gewünscht: Einschätzung aus eigener Bateria-Praxis oder Verweis auf eine Aufnahme.
-- Entscheidung · ☐ freigegeben · ☐ Korrektur · ☒ Beleg fehlt
+- Entscheidung · ☒ freigegeben · ☐ Korrektur · ☐ Beleg fehlt
 - Name, Datum · Inhaber, 16.11.2026
-- Anmerkung · Durch Guimarães, Pinto und Cunha gestützt, aber weder Lautstärkemessung noch Aufnahme oder eigene Bateria-Praxis liegen vor. Benötigt: Aufnahme mit Zeitangabe oder Einschätzung aus der Praxis.
+- Anmerkung · Korrigiert nach weiterer Ausarbeitung (zunächst „Beleg fehlt“): Die drei Literaturstellen (Guimarães, Pinto, Cunha) reichen als Beleg für das Standardmodell aus; eine Lautstärkemessung ist für den Graphknoten nicht erforderlich. Gemeint ist der offene Hauptschlag bzw. metrische Schwerpunkt des Surdo de primeira auf 2.
 
 ### A3 · CDR-021 `SURDO_PULSE`
 
@@ -105,18 +105,18 @@ Die Entscheidung kann direkt in dieser Datei (per PR) oder als Kommentar am zuge
 - MIDI · Kern 60–79, 55–74, 48–67, 40–60; erweitert 57–81, 53–77, bis 69, 38–62
 - Fundstelle · Hindemith, *Traditional Harmony*, Revised Edition, S. 1 (PDF-S. 8), Notenbeispiel unter „Voices“. Aus dem Notenbild abgelesen.
 - Prüffrage · Stimmen die abgelesenen Grenzen? Was bedeuten die schwarzen Notenköpfe (Grenzbereich, Ausnahme)?
-- Entscheidung · ☒ freigegeben · ☐ Korrektur · ☐ Beleg fehlt
+- Entscheidung · ☐ freigegeben · ☒ Korrektur · ☐ Beleg fehlt
 - Name, Datum · Inhaber, 16.11.2026
-- Anmerkung · MIDI-Werte gegen die Notennamen nachgerechnet. Die Bedeutung der schwarzen Notenköpfe (Grenzbereich oder Ausnahme) ist im Original nicht erläutert und bleibt als unklar vermerkt.
+- Anmerkung · Korrigiert nach weiterer Ausarbeitung (zunächst „freigegeben“ mit offener Bedeutung): Die schwarzen Notenköpfe bezeichnen die äußersten Grenz- bzw. Ausnahmetöne, die weißen den regulären Umfang. Das ist eine Deutung nach der üblichen Notationskonvention; Hindemiths Text selbst erklärt die schwarzen Köpfe nicht (siehe Zusammenfassung). MIDI-Werte nachgerechnet.
 
 ### B2 · Hindemith, Kap. XIII
 
 - Aussage · Aus V7 entstehen elf alterierte Formen durch enharmonische Umdeutung der Septime oder der Quinte oder durch Ersatz der Quinte durch den Halbton darüber oder darunter. Nr. 6–8 gelten wegen doppelt übermäßiger oder verminderter Intervalle nicht als regulär. Aufgelöst wird ohne chromatische Verbindung, direkt oder trugschlussartig eine Terz tiefer. Nach dem deutschen und dem französischen Sextakkord ist Nr. 9 die häufigste Form. In solchen Folgen gilt das Ohr als unempfindlich für Quintparallelen.
 - Fundstelle · S. 88–90 (PDF-S. 95–97); [Zusammenfassung](../../../research/STEPS_Bibliothek/Zusammenfassungen/IMSLP342443-PMLP552428-hindemithTraditionalHarmonyBook.md)
 - Prüffrage · Gibt die Zusammenfassung Hindemiths Systematik richtig wieder?
-- Entscheidung · ☒ freigegeben · ☐ Korrektur · ☐ Beleg fehlt
+- Entscheidung · ☐ freigegeben · ☐ Korrektur · ☒ Beleg fehlt
 - Name, Datum · Inhaber, 16.11.2026
-- Anmerkung · Auf Grundlage der dokumentierten Gegenprüfung am Original-PDF (S. 88–90) freigegeben.
+- Anmerkung · Korrigiert nach weiterer Ausarbeitung (zunächst „freigegeben“): Zurückgestellt, bis Kap. XIII (S. 88–90, PDF-S. 95–97) noch einmal im Original-PDF gesichtet ist. Die vorhandene Gegenprüfung allein genügt für die Freigabe nicht.
 
 ### B3 · Spencer, Akkordsymbole
 
