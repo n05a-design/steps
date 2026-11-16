@@ -56,7 +56,7 @@ Die folgenden datierten Abschnitte beschreiben frühere Prüfstände.
 
 ## Repository-Bestandsaufnahme vom 10.11.2026
 
-- Projektkonsolidierung nennt sechs Originaldokumente, im Originalarchiv liegt derzeit kein `Glide Kontext für Fable(2).md` (5 Markdown-Originale vorhanden); Nachweis/Fundort prüfen.
+- Projektkonsolidierung nennt sechs Originaldokumente, im Originalarchiv liegt derzeit kein `Glide Kontext für Fable(2).md` (5 Markdown-Originale vorhanden); Nachweis/Fundort prüfen. **Erledigt 16.11.2026:** Seit `954cc4c` (11.11.2026) liegen alle sechs Originaldokumente einschließlich `Glide Kontext für Fable(2).md` unter `archive/audit-history/earlier-audits/Gesamtpruefung_V4_mit_Originalquellen_2026-11-10/private_sources/`. Von den zehn Einträgen des historischen Manifests [`HISTORIC_SHA256SUMS.txt`](../../docs/project/provenance/HISTORIC_SHA256SUMS.txt) stimmen neun per SHA-256 überein, teils erst nach Umstellung der Zeilenenden (Glide-Kontext: CRLF, `8349fd43…`). Die Paket-`README.md` (`bd607d59…`) ist im Repository nicht per Hash auffindbar; sie ist eine Begleitdatei, kein Originaldokument.
 - Kein ausführbarer `app/`- oder `src/steps/`-Musikcode im analysierten `main`-Baum.
 - Urheberrechte zahlreicher Fach-PDFs, heruntergeladener Web-Seiten und Drittanbieterbilder offen.
 - V6.6/V6.7: mehrere Versionen, Fachordner 21 und 39 doppelt benannt; unterschiedliche Struktur-/Zählmodelle.
