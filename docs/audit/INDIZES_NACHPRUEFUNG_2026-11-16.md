@@ -28,7 +28,7 @@ Indizes innerhalb der V6.6-Bibliothek wurden relativ zu deren Wurzel `research/S
 Die zweite Kopie des Antigravity-Inventars (`Antigravity_Steps_Bericht/MASTER_AUDIT_V2/`) ist bytegleich und nicht doppelt gezählt.
 
 **Erklärungen:**
-- *Lokal, Hash anders* (je 2): `MakingMusic.pdf` und die Kopie in `Dokumentation (unsortiert)/`. Die Indizes nennen den Hash der früheren Null-Byte-Datei (`dba9fb9e…`). Der Inhaber hat sie am 14.11.2026 durch die intakte Fassung (`4c6ba38b…`) ersetzt (OA-0017, siehe `OPEN_GAPS.md`).
+- *Lokal, Hash anders* (je 2 zum Prüfzeitpunkt `a96abb5`): `MakingMusic.pdf` und die Kopie in `Dokumentation (unsortiert)/`. Die historischen Indizes nannten den Hash der früheren Null-Byte-Datei (`dba9fb9e…`). Der Inhaber hat sie am 14.11.2026 durch die intakte Fassung (`4c6ba38b…`) ersetzt (OA-0017, siehe `OPEN_GAPS.md`); in `MUSIC_SOURCE_REVIEW_PROGRESS.csv` (`F00626`, `F01046`) ist der reparierte Hash am 16.11.2026 nachgezogen.
 - *Ohne Hash* (15): Webquellen ohne Datei im Quellenregister, etwa General MIDI 1.0 oder Friberg & Sundström 2002.
 - Alle 26 Dateien unter `restricted_local` liegen lokal vor und stimmen per Hash.
 - Alle 229 bzw. 233 Archivierungsziele sind vorhanden und unverändert, abgesehen von Zeilenenden.
