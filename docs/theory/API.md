@@ -68,11 +68,13 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`optimize_smooth_voice_leading`](../../src/steps/progression/voice_leading.py) | `(source_voicing: 'list[int]', target_pcs: 'set[int] \| list[int]', bass_pc: 'Optional[int]' = None, style: 'VoiceLeadingStyle' = <VoiceLeadingStyle.JAZZ_POP: 'JAZZ_POP'>) -> 'list[int]'` |
 | [`CanonicalProgression`](../../src/steps/progression/engine.py) | `(prog_id: 'str', name: 'str', roman_numerals: 'str', default_key: 'str', chords_str: 'str', context: 'str', sources: 'str') -> None` |
 | [`CANONICAL_PROGRESSIONS`](../../src/steps/progression/__init__.py) | Datenwert |
+| [`ARCHETYPE_THEORY_METADATA`](../../src/steps/progression/__init__.py) | Datenwert |
 | [`get_progression`](../../src/steps/progression/engine.py) | `(prog_id: 'str') -> 'CanonicalProgression'` |
 | [`list_progressions`](../../src/steps/progression/engine.py) | `() -> 'list[CanonicalProgression]'` |
 | [`resolve_roman_degree`](../../src/steps/progression/engine.py) | `(degree_str: 'str', key_root: 'str \| NoteSpelling' = 'C', is_minor_key: 'bool' = False, *, convention: "Literal['INT', 'DE', 'AUTO']" = 'AUTO', minor_accidentals: "Literal['major_reference', 'natural_minor']" = 'major_reference') -> 'ChordDefinition'` |
 | [`generate_progression_voicings`](../../src/steps/progression/engine.py) | `(chords: 'list[ChordDefinition] \| CanonicalProgression', style: 'VoiceLeadingStyle' = <VoiceLeadingStyle.JAZZ_POP: 'JAZZ_POP'>, initial_voicing_type: "Literal['CLOSE', 'DROP2', 'SHELL', 'ROOTLESS']" = 'CLOSE', bass_octave: 'int' = 3) -> 'list[Voicing]'` |
 | [`analyze_progression_voice_leading`](../../src/steps/progression/engine.py) | `(voicings: 'list[Voicing]', style: 'VoiceLeadingStyle' = <VoiceLeadingStyle.JAZZ_POP: 'JAZZ_POP'>) -> 'Dict[str, Any]'` |
+| [`detect_progression_archetypes`](../../src/steps/progression/engine.py) | `(chords: 'list[str] \| list[ChordDefinition] \| CanonicalProgression', key_root: 'str \| NoteSpelling' = 'C', is_minor_key: 'bool' = False, allow_rotations: 'bool' = True, convention: "Literal['INT', 'DE', 'AUTO']" = 'AUTO') -> 'list[dict[str, Any]]'` |
 | [`ProgressionSession`](../../src/steps/progression/session.py) | `(initial_chords: 'Optional[List[str]]' = None, key_root: 'str' = 'C', is_minor: 'bool' = False, convention: "Literal['INT', 'DE']" = 'INT', bpm: 'float' = 120.0)` |
 | [`ChordRecommendation`](../../src/steps/progression/session.py) | `(candidate_symbol: 'str', relation_type: "Literal['DOMINANT_OF', 'RESOLVES_TO', 'BORROWED_FROM', 'VOICE_LEADING_NEAR', 'SUBSTITUTES_FOR']", explanation: 'str', framework: 'str', source_id: 'str') -> None` |
 | [`DegreeAnalysis`](../../src/steps/progression/session.py) | `(index: 'int', symbol: 'str', roman_numeral: 'str', semitone_distance_to_next: 'Optional[int]' = None, voice_leading_warnings: 'tuple[str, ...]' = ()) -> None` |
@@ -173,6 +175,8 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 `CanonicalProgression(prog_id: 'str', name: 'str', roman_numerals: 'str', default_key: 'str', chords_str: 'str', context: 'str', sources: 'str') -> None`
 
 - `chord_definitions` (Eigenschaft)
+- `theory_profile` (Eigenschaft)
+- `archetype_family` (Eigenschaft)
 - `transpose(self, semitones: 'int') -> 'list[ChordDefinition]'`
 
 ### [ChordRecommendation](../../src/steps/progression/session.py)
