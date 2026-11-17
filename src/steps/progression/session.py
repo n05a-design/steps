@@ -371,6 +371,39 @@ class ProgressionSession:
                     framework="Stufentheorie / Functional Harmony",
                     source_id="Kostka/Payne (2013)"
                 ))
+            # ii is 2 semitones above tonic (Tritone substitution candidate)
+            elif (curr_pc - key_pc) % 12 == 2:
+                bii_root = key_spelling.transpose_diatonic(step_delta=1, semitone_delta=1)
+                bii_sym = f"{bii_root.render(self.convention)[:-1]}7"
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=bii_sym,
+                    relation_type="SUBSTITUTES_FOR",
+                    explanation=f"Tritonussubstitution: {bii_sym} (bII7) ersetzt die Quintfall-Dominante V7 durch chromatischen Bassabstieg.",
+                    framework="Tritone Substitution",
+                    source_id="Levine (1995)"
+                ))
+            # bVII is 10 semitones above tonic (Backdoor resolution)
+            elif (curr_pc - key_pc) % 12 == 10:
+                i_root = key_spelling
+                i_sym = f"{i_root.render(self.convention)[:-1]}"
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=i_sym,
+                    relation_type="RESOLVES_TO",
+                    explanation=f"Backdoor-Auflösung: Subtonika {curr_sym} (bVII7) löst sich subdominantisch in die Tonika {i_sym} auf.",
+                    framework="Backdoor Progression",
+                    source_id="Terefenko (2014)"
+                ))
+            # I is tonic (Secondary dominant lift to vi)
+            elif (curr_pc - key_pc) % 12 == 0:
+                v_vi_root = key_spelling.transpose_diatonic(step_delta=2, semitone_delta=4)
+                v_vi_sym = f"{v_vi_root.render(self.convention)[:-1]}7"
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=v_vi_sym,
+                    relation_type="DOMINANT_OF",
+                    explanation=f"Zwischendominante: {v_vi_sym} (V7/vi) bereitet leittönig die Tonikaparallele vi vor.",
+                    framework="Zwischendominanten",
+                    source_id="Kostka/Payne (2013)"
+                ))
 
         return recommendations
 
