@@ -70,6 +70,14 @@ class MidiTrack:
         payload = b"\xFF\x58\x04" + struct.pack("BBBB", numerator, denom_pow2, 24, 8)
         self._raw_events.append(RawMidiEvent(abs_tick=start_tick, msg_bytes=payload))
 
+    def add_key_signature(self, start_tick: int, accidentals: int = 0, is_minor: bool = False) -> None:
+        """Adds meta event 0x59 Key Signature (accidentals: -7..+7, is_minor: bool)."""
+        if not (-7 <= accidentals <= 7):
+            raise ValueError(f"Key signature accidentals must be in [-7..7], got {accidentals}")
+        mi = 1 if is_minor else 0
+        payload = b"\xFF\x59\x02" + struct.pack("bb", accidentals, mi)
+        self._raw_events.append(RawMidiEvent(abs_tick=start_tick, msg_bytes=payload))
+
     def add_note(
         self,
         start_tick: int,
@@ -255,6 +263,10 @@ def _parse_track_events(track: MidiTrack, data: bytes) -> None:
                     num = meta_data[0]
                     denom = 2 ** meta_data[1]
                     track.add_time_signature(current_tick, num, denom)
+            elif meta_type == 0x59:  # Key Signature
+                if len(meta_data) >= 2:
+                    sf, mi = struct.unpack("bb", meta_data[:2])
+                    track.add_key_signature(current_tick, sf, bool(mi))
             running_status = None
 
         elif status_byte in (0xF0, 0xF7):
