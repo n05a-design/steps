@@ -86,6 +86,19 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`ProgressionSession`](../../src/steps/progression/session.py) | `(initial_chords: 'Optional[List[str]]' = None, key_root: 'str' = 'C', is_minor: 'bool' = False, convention: "Literal['INT', 'DE']" = 'INT', bpm: 'float' = 120.0)` |
 | [`ChordRecommendation`](../../src/steps/progression/session.py) | `(candidate_symbol: 'str', relation_type: "Literal['DOMINANT_OF', 'RESOLVES_TO', 'BORROWED_FROM', 'VOICE_LEADING_NEAR', 'SUBSTITUTES_FOR']", explanation: 'str', framework: 'str', source_id: 'str') -> None` |
 | [`DegreeAnalysis`](../../src/steps/progression/session.py) | `(index: 'int', symbol: 'str', roman_numeral: 'str', semitone_distance_to_next: 'Optional[int]' = None, voice_leading_warnings: 'tuple[str, ...]' = ()) -> None` |
+| [`BasslineModel`](../../src/steps/progression/recommender.py) | `(name: 'str', style_category: 'str', description: 'str', time_signature: 'Tuple[int, int]', tempo_range: 'Tuple[int, int]', pattern_description: 'str') -> None` |
+| [`CANONICAL_BASSLINE_MODELS`](../../src/steps/progression/__init__.py) | Datenwert |
+| [`CANONICAL_DRUM_PATTERNS`](../../src/steps/progression/__init__.py) | Datenwert |
+| [`CANONICAL_PIANO_MODULES`](../../src/steps/progression/__init__.py) | Datenwert |
+| [`CrossDomainRecommendation`](../../src/steps/progression/recommender.py) | `(prog_id: 'str', prog_name: 'str', genre_scope: 'str', drum_grooves: 'List[RecommendationItem]', piano_voicings: 'List[RecommendationItem]', bassline_model: 'BasslineModel', explicit_relations: 'List[CrossDomainRelation]', overall_compatibility: 'str' = 'HIGH') -> None` |
+| [`CrossDomainRecommender`](../../src/steps/progression/recommender.py) | `(relations_path: 'Optional[str \| Path]' = None) -> 'None'` |
+| [`CrossDomainRelation`](../../src/steps/progression/recommender.py) | `(relation_id: 'str', source_id: 'str', target_id: 'str', relation_type: 'str', epistemic_classification: 'str', domain_scope: 'str', formal_rule_or_strength: 'str', description: 'str', validation_status: 'str') -> None` |
+| [`RecommendationItem`](../../src/steps/progression/recommender.py) | `(target_id: 'str', target_name: 'str', domain: 'str', relation_type: 'str', strength: 'str', confidence: 'float', description: 'str', source_relation_id: 'Optional[str]' = None) -> None` |
+| [`get_concept_relations`](../../src/steps/progression/recommender.py) | `(entity_id: 'str', relations_path: 'Optional[str \| Path]' = None) -> 'List[CrossDomainRelation]'` |
+| [`get_recommender`](../../src/steps/progression/recommender.py) | `(relations_path: 'Optional[str \| Path]' = None) -> 'CrossDomainRecommender'` |
+| [`recommend_for_drum_pattern`](../../src/steps/progression/recommender.py) | `(pat_id: 'str', relations_path: 'Optional[str \| Path]' = None) -> 'List[RecommendationItem]'` |
+| [`recommend_for_piano_module`](../../src/steps/progression/recommender.py) | `(piano_id: 'str', relations_path: 'Optional[str \| Path]' = None) -> 'List[RecommendationItem]'` |
+| [`recommend_for_progression`](../../src/steps/progression/recommender.py) | `(prog_id: 'str', relations_path: 'Optional[str \| Path]' = None) -> 'CrossDomainRecommendation'` |
 
 ## `app.knowledge`
 
@@ -198,6 +211,22 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 ### [DegreeAnalysis](../../src/steps/progression/session.py)
 
 `DegreeAnalysis(index: 'int', symbol: 'str', roman_numeral: 'str', semitone_distance_to_next: 'Optional[int]' = None, voice_leading_warnings: 'tuple[str, ...]' = ()) -> None`
+
+### [BasslineModel](../../src/steps/progression/recommender.py)
+
+`BasslineModel(name: 'str', style_category: 'str', description: 'str', time_signature: 'Tuple[int, int]', tempo_range: 'Tuple[int, int]', pattern_description: 'str') -> None`
+
+### [CrossDomainRecommendation](../../src/steps/progression/recommender.py)
+
+`CrossDomainRecommendation(prog_id: 'str', prog_name: 'str', genre_scope: 'str', drum_grooves: 'List[RecommendationItem]', piano_voicings: 'List[RecommendationItem]', bassline_model: 'BasslineModel', explicit_relations: 'List[CrossDomainRelation]', overall_compatibility: 'str' = 'HIGH') -> None`
+
+### [CrossDomainRelation](../../src/steps/progression/recommender.py)
+
+`CrossDomainRelation(relation_id: 'str', source_id: 'str', target_id: 'str', relation_type: 'str', epistemic_classification: 'str', domain_scope: 'str', formal_rule_or_strength: 'str', description: 'str', validation_status: 'str') -> None`
+
+### [RecommendationItem](../../src/steps/progression/recommender.py)
+
+`RecommendationItem(target_id: 'str', target_name: 'str', domain: 'str', relation_type: 'str', strength: 'str', confidence: 'float', description: 'str', source_relation_id: 'Optional[str]' = None) -> None`
 
 ## Akkordqualitäten
 
