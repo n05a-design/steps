@@ -17,9 +17,12 @@ from ..theory.exceptions import MusicTheoryError, ProgressionParsingError, Voice
 from ..theory.pitch import DIATONIC_STEPS, NoteSpelling, parse_spelling
 from ..theory.chord import CHORD_TEMPLATES, ChordDefinition, Voicing, parse_chord
 from .voice_leading import (
+    ContrapuntalMotion,
     VoiceLeadingStyle,
     absolute_semitone_distance,
+    analyze_contrapuntal_motions,
     circular_pc_distance,
+    classify_voice_motion,
     detect_voice_crossing,
     detect_parallel_fifths_octaves,
     optimize_smooth_voice_leading
@@ -1058,12 +1061,19 @@ def analyze_progression_voice_leading(
     total_circ = 0
     max_jump = 0
     violations = []
+    motion_distribution: dict[str, int] = {m.value: 0 for m in ContrapuntalMotion}
+    outer_voice_motions: list[str] = []
     for before, after in zip(voicings, voicings[1:]):
         left, right = list(before.notes), list(after.notes)
         total_l1 += absolute_semitone_distance(left, right)
         total_circ += circular_pc_distance(left, right)
         max_jump = max(max_jump, *(abs(b - a) for a, b in zip(left, right)))
         violations.extend(detect_parallel_fifths_octaves(left, right, style=style))
+        if len(left) >= 2 and len(right) >= 2 and len(left) == len(right):
+            cm_analysis = analyze_contrapuntal_motions(left, right)
+            outer_voice_motions.append(cm_analysis['outer_voice_motion'])
+            for m_type, cnt in cm_analysis['motion_counts'].items():
+                motion_distribution[m_type] += cnt
     comparisons = transitions * len(voicings[0].notes) if transitions else 0
     average = round(total_l1 / comparisons, 2) if comparisons else 0.0
     return {
@@ -1074,6 +1084,8 @@ def analyze_progression_voice_leading(
         "max_single_voice_jump": max_jump,
         "voice_crossings_count": sum(detect_voice_crossing(list(voicing.notes)) for voicing in voicings),
         "parallel_violations": violations,
+        "motion_distribution": motion_distribution,
+        "outer_voice_motions": outer_voice_motions,
         # Keep the historic short-input keys readable during migration.
         "circular_pc_distance": total_circ,
         "average_l1_step": average,

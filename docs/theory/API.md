@@ -58,9 +58,12 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 
 | Export | Signatur |
 |---|---|
+| [`ContrapuntalMotion`](../../src/steps/progression/voice_leading.py) | `PARALLEL`, `SIMILAR`, `CONTRARY`, `OBLIQUE`, `STATIC` |
 | [`VoiceLeadingStyle`](../../src/steps/progression/voice_leading.py) | `STRICT_COUNTERPOINT`, `JAZZ_POP` |
 | [`absolute_semitone_distance`](../../src/steps/progression/voice_leading.py) | `(voicing_a: 'list[int]', voicing_b: 'list[int]') -> 'int'` |
+| [`analyze_contrapuntal_motions`](../../src/steps/progression/voice_leading.py) | `(voicing_a: 'list[int] \| tuple[int, ...]', voicing_b: 'list[int] \| tuple[int, ...]') -> 'dict[str, Any]'` |
 | [`circular_pc_distance`](../../src/steps/progression/voice_leading.py) | `(voicing_a: 'list[int]', voicing_b: 'list[int]') -> 'int'` |
+| [`classify_voice_motion`](../../src/steps/progression/voice_leading.py) | `(v1_start: 'int', v1_end: 'int', v2_start: 'int', v2_end: 'int') -> 'ContrapuntalMotion'` |
 | [`detect_voice_crossing`](../../src/steps/progression/voice_leading.py) | `(voicing: 'list[int]') -> 'bool'` |
 | [`detect_voice_overlap`](../../src/steps/progression/voice_leading.py) | `(voicing_a: 'list[int]', voicing_b: 'list[int]') -> 'bool'` |
 | [`detect_parallel_fifths_octaves`](../../src/steps/progression/voice_leading.py) | `(chord_a: 'list[int]', chord_b: 'list[int]', style: 'VoiceLeadingStyle' = <VoiceLeadingStyle.STRICT_COUNTERPOINT: 'STRICT_COUNTERPOINT'>) -> 'list[str]'` |
