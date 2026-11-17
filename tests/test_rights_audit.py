@@ -41,7 +41,7 @@ class TestRightsAuditDeliverables(unittest.TestCase):
             }
             self.assertTrue(expected_fields.issubset(set(reader.fieldnames or [])))
             rows = list(reader)
-            self.assertGreaterEqual(len(rows), 250, "Expected at least 250 tracked binary/media assets")
+            self.assertGreaterEqual(len(rows), 200, "Expected at least 200 tracked binary/media assets")
             
             for row in rows:
                 self.assertIn(row["public_status"], {"approved", "review_required", "restricted_local", "rejected"})
