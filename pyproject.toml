@@ -1,4 +1,42 @@
-# Configuration scaffold only; no build-system / installable STEPS app has been verified.
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "steps-music"
+version = "0.1.0"
+description = "STEPS – Reine, testbare Musik- & Harmonielehre und Desktop Applikation"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MPL-2.0" }
+authors = [
+    { name = "STEPS Core Team", email = "steps@n05a.de" }
+]
+keywords = ["music-theory", "harmony", "chords", "voicings", "midi", "drums", "timeline"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Multimedia :: Sound/Audio :: MIDI",
+]
+
+[project.scripts]
+steps = "app.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["steps*"]
+
+[tool.setuptools.package-data]
+steps = ["py.typed", "progression/*.json"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
