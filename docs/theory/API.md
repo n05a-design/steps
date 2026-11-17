@@ -3,8 +3,8 @@
 Erzeugt mit `python scripts/render_api_reference.py`.
 Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispiele.
 
-- Repository-Version `0.1.0`
-- Paketversion `0.1.0`
+- Repository-Version `0.2.0-dev`
+- Paketversion `0.2.0.dev0`
 
 ## `src.steps.theory`
 
