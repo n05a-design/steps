@@ -83,6 +83,18 @@ from .beginner_voicing import (
     determine_beginner_fingering,
     generate_beginner_voicings,
 )
+from .voice_leading import (
+    VoiceLeadingStyle,
+    ContrapuntalMotion,
+    VoiceLeadingViolation,
+    VoiceLeadingEvaluation,
+    classify_voice_motion,
+    analyze_contrapuntal_motions,
+    detect_parallel_fifths_octaves,
+    detect_voice_crossing,
+    detect_voice_overlap,
+    evaluate_voice_leading_transition,
+)
 
 __all__ = [
     'MusicTheoryError',
@@ -146,6 +158,16 @@ __all__ = [
     'reduce_chord_for_beginners',
     'generate_beginner_inversions',
     'determine_beginner_fingering',
-    'generate_beginner_voicings'
+    'generate_beginner_voicings',
+    'VoiceLeadingStyle',
+    'ContrapuntalMotion',
+    'VoiceLeadingViolation',
+    'VoiceLeadingEvaluation',
+    'classify_voice_motion',
+    'analyze_contrapuntal_motions',
+    'detect_parallel_fifths_octaves',
+    'detect_voice_crossing',
+    'detect_voice_overlap',
+    'evaluate_voice_leading_transition'
 ]
 

@@ -72,20 +72,33 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`generate_beginner_inversions`](../../src/steps/theory/beginner_voicing.py) | `(chord: 'Union[str, ChordDefinition]', target_octave: 'int' = 4, convention: "Literal['INT', 'DE']" = 'INT') -> 'List[Tuple[BeginnerTriadInversion, Tuple[int, int, int]]]'` |
 | [`determine_beginner_fingering`](../../src/steps/theory/beginner_voicing.py) | `(rh_notes: 'Tuple[int, int, int]', inversion: 'BeginnerTriadInversion', prev_rh_notes: 'Optional[Tuple[int, int, int]]' = None, chord_symbol: 'str' = '') -> 'Tuple[int, int, int]'` |
 | [`generate_beginner_voicings`](../../src/steps/theory/beginner_voicing.py) | `(progression: 'Union[str, List[str], Any, List[ChordDefinition]]', starting_inversion: 'Optional[Union[str, BeginnerTriadInversion]]' = None, lh_octave: 'int' = 2, rh_octave: 'int' = 4, convention: "Literal['INT', 'DE']" = 'INT') -> 'BeginnerProgressionVoicings'` |
+| [`VoiceLeadingStyle`](../../src/steps/theory/voice_leading.py) | `STRICT_CLASSICAL`, `STRICT_COUNTERPOINT`, `CONTEMPORARY_POP`, `JAZZ_POP`, `POWER_CHORDS`, `QUARTAL_JAZZ` |
+| [`ContrapuntalMotion`](../../src/steps/theory/voice_leading.py) | `PARALLEL`, `SIMILAR`, `CONTRARY`, `OBLIQUE`, `STATIC` |
+| [`VoiceLeadingViolation`](../../src/steps/theory/voice_leading.py) | `(rule_name: 'str', voice_indices: 'Tuple[int, int]', motion_type: 'str', pitch_interval: 'int', from_pitches: 'Tuple[int, int]', to_pitches: 'Tuple[int, int]', severity: "Literal['ERROR', 'WARNING', 'INFO']", explanation: 'str', stylistic_context: 'str') -> None` |
+| [`VoiceLeadingEvaluation`](../../src/steps/theory/voice_leading.py) | `(from_voicing: 'Tuple[int, ...]', to_voicing: 'Tuple[int, ...]', style: 'VoiceLeadingStyle', is_valid: 'bool', violations: 'List[VoiceLeadingViolation]', l1_distance: 'int', max_voice_leap: 'int', contrapuntal_motion: 'Dict[str, Any]', stylistic_notes: 'List[str]') -> None` |
+| [`classify_voice_motion`](../../src/steps/theory/voice_leading.py) | `(v1_start: 'int', v1_end: 'int', v2_start: 'int', v2_end: 'int') -> 'ContrapuntalMotion'` |
+| [`analyze_contrapuntal_motions`](../../src/steps/theory/voice_leading.py) | `(voicing_a: 'Union[List[int], Tuple[int, ...]]', voicing_b: 'Union[List[int], Tuple[int, ...]]') -> 'Dict[str, Any]'` |
+| [`detect_parallel_fifths_octaves`](../../src/steps/theory/voice_leading.py) | `(chord_a: 'Union[List[int], Tuple[int, ...]]', chord_b: 'Union[List[int], Tuple[int, ...]]', style: 'Union[str, VoiceLeadingStyle]' = <VoiceLeadingStyle.STRICT_COUNTERPOINT: 'STRICT_COUNTERPOINT'>) -> 'List[str]'` |
+| [`detect_voice_crossing`](../../src/steps/theory/voice_leading.py) | `(notes: 'Union[List[int], Tuple[int, ...]]') -> 'bool'` |
+| [`detect_voice_overlap`](../../src/steps/theory/voice_leading.py) | `(voicing_a: 'Union[List[int], Tuple[int, ...]]', voicing_b: 'Union[List[int], Tuple[int, ...]]') -> 'bool'` |
+| [`evaluate_voice_leading_transition`](../../src/steps/theory/voice_leading.py) | `(chord_a: 'Union[List[int], Tuple[int, ...]]', chord_b: 'Union[List[int], Tuple[int, ...]]', style: 'Union[str, VoiceLeadingStyle]' = <VoiceLeadingStyle.CONTEMPORARY_POP: 'CONTEMPORARY_POP'>) -> 'VoiceLeadingEvaluation'` |
 
 ## `src.steps.progression`
 
 | Export | Signatur |
 |---|---|
-| [`ContrapuntalMotion`](../../src/steps/progression/voice_leading.py) | `PARALLEL`, `SIMILAR`, `CONTRARY`, `OBLIQUE`, `STATIC` |
-| [`VoiceLeadingStyle`](../../src/steps/progression/voice_leading.py) | `STRICT_COUNTERPOINT`, `JAZZ_POP` |
+| [`ContrapuntalMotion`](../../src/steps/theory/voice_leading.py) | `PARALLEL`, `SIMILAR`, `CONTRARY`, `OBLIQUE`, `STATIC` |
+| [`VoiceLeadingStyle`](../../src/steps/theory/voice_leading.py) | `STRICT_CLASSICAL`, `STRICT_COUNTERPOINT`, `CONTEMPORARY_POP`, `JAZZ_POP`, `POWER_CHORDS`, `QUARTAL_JAZZ` |
+| [`VoiceLeadingViolation`](../../src/steps/theory/voice_leading.py) | `(rule_name: 'str', voice_indices: 'Tuple[int, int]', motion_type: 'str', pitch_interval: 'int', from_pitches: 'Tuple[int, int]', to_pitches: 'Tuple[int, int]', severity: "Literal['ERROR', 'WARNING', 'INFO']", explanation: 'str', stylistic_context: 'str') -> None` |
+| [`VoiceLeadingEvaluation`](../../src/steps/theory/voice_leading.py) | `(from_voicing: 'Tuple[int, ...]', to_voicing: 'Tuple[int, ...]', style: 'VoiceLeadingStyle', is_valid: 'bool', violations: 'List[VoiceLeadingViolation]', l1_distance: 'int', max_voice_leap: 'int', contrapuntal_motion: 'Dict[str, Any]', stylistic_notes: 'List[str]') -> None` |
 | [`absolute_semitone_distance`](../../src/steps/progression/voice_leading.py) | `(voicing_a: 'list[int]', voicing_b: 'list[int]') -> 'int'` |
-| [`analyze_contrapuntal_motions`](../../src/steps/progression/voice_leading.py) | `(voicing_a: 'list[int] \| tuple[int, ...]', voicing_b: 'list[int] \| tuple[int, ...]') -> 'dict[str, Any]'` |
+| [`analyze_contrapuntal_motions`](../../src/steps/theory/voice_leading.py) | `(voicing_a: 'Union[List[int], Tuple[int, ...]]', voicing_b: 'Union[List[int], Tuple[int, ...]]') -> 'Dict[str, Any]'` |
 | [`circular_pc_distance`](../../src/steps/progression/voice_leading.py) | `(voicing_a: 'list[int]', voicing_b: 'list[int]') -> 'int'` |
-| [`classify_voice_motion`](../../src/steps/progression/voice_leading.py) | `(v1_start: 'int', v1_end: 'int', v2_start: 'int', v2_end: 'int') -> 'ContrapuntalMotion'` |
-| [`detect_voice_crossing`](../../src/steps/progression/voice_leading.py) | `(voicing: 'list[int]') -> 'bool'` |
-| [`detect_voice_overlap`](../../src/steps/progression/voice_leading.py) | `(voicing_a: 'list[int]', voicing_b: 'list[int]') -> 'bool'` |
-| [`detect_parallel_fifths_octaves`](../../src/steps/progression/voice_leading.py) | `(chord_a: 'list[int]', chord_b: 'list[int]', style: 'VoiceLeadingStyle' = <VoiceLeadingStyle.STRICT_COUNTERPOINT: 'STRICT_COUNTERPOINT'>) -> 'list[str]'` |
+| [`classify_voice_motion`](../../src/steps/theory/voice_leading.py) | `(v1_start: 'int', v1_end: 'int', v2_start: 'int', v2_end: 'int') -> 'ContrapuntalMotion'` |
+| [`detect_voice_crossing`](../../src/steps/theory/voice_leading.py) | `(notes: 'Union[List[int], Tuple[int, ...]]') -> 'bool'` |
+| [`detect_voice_overlap`](../../src/steps/theory/voice_leading.py) | `(voicing_a: 'Union[List[int], Tuple[int, ...]]', voicing_b: 'Union[List[int], Tuple[int, ...]]') -> 'bool'` |
+| [`detect_parallel_fifths_octaves`](../../src/steps/theory/voice_leading.py) | `(chord_a: 'Union[List[int], Tuple[int, ...]]', chord_b: 'Union[List[int], Tuple[int, ...]]', style: 'Union[str, VoiceLeadingStyle]' = <VoiceLeadingStyle.STRICT_COUNTERPOINT: 'STRICT_COUNTERPOINT'>) -> 'List[str]'` |
+| [`evaluate_voice_leading_transition`](../../src/steps/theory/voice_leading.py) | `(chord_a: 'Union[List[int], Tuple[int, ...]]', chord_b: 'Union[List[int], Tuple[int, ...]]', style: 'Union[str, VoiceLeadingStyle]' = <VoiceLeadingStyle.CONTEMPORARY_POP: 'CONTEMPORARY_POP'>) -> 'VoiceLeadingEvaluation'` |
 | [`guide_tone_resolution`](../../src/steps/progression/voice_leading.py) | `(seventh_midi: 'int', target_third_midi: 'int') -> 'int'` |
 | [`optimize_smooth_voice_leading`](../../src/steps/progression/voice_leading.py) | `(source_voicing: 'list[int]', target_pcs: 'set[int] \| list[int]', bass_pc: 'Optional[int]' = None, style: 'VoiceLeadingStyle' = <VoiceLeadingStyle.JAZZ_POP: 'JAZZ_POP'>) -> 'list[int]'` |
 | [`CanonicalProgression`](../../src/steps/progression/engine.py) | `(prog_id: 'str', name: 'str', roman_numerals: 'str', default_key: 'str', chords_str: 'str', context: 'str', sources: 'str') -> None` |
@@ -97,7 +110,7 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`generate_progression_voicings`](../../src/steps/progression/engine.py) | `(chords: 'list[ChordDefinition] \| CanonicalProgression', style: 'VoiceLeadingStyle' = <VoiceLeadingStyle.JAZZ_POP: 'JAZZ_POP'>, initial_voicing_type: "Literal['CLOSE', 'DROP2', 'SHELL', 'ROOTLESS']" = 'CLOSE', bass_octave: 'int' = 3) -> 'list[Voicing]'` |
 | [`analyze_progression_voice_leading`](../../src/steps/progression/engine.py) | `(voicings: 'list[Voicing]', style: 'VoiceLeadingStyle' = <VoiceLeadingStyle.JAZZ_POP: 'JAZZ_POP'>) -> 'Dict[str, Any]'` |
 | [`detect_progression_archetypes`](../../src/steps/progression/engine.py) | `(chords: 'list[str] \| list[ChordDefinition] \| CanonicalProgression', key_root: 'str \| NoteSpelling' = 'C', is_minor_key: 'bool' = False, allow_rotations: 'bool' = True, convention: "Literal['INT', 'DE', 'AUTO']" = 'AUTO') -> 'list[dict[str, Any]]'` |
-| [`ProgressionSession`](../../src/steps/progression/session.py) | `(initial_chords: 'Optional[List[str]]' = None, key_root: 'str' = 'C', is_minor: 'bool' = False, convention: "Literal['INT', 'DE']" = 'INT', bpm: 'float' = 120.0)` |
+| [`ProgressionSession`](../../src/steps/progression/session.py) | `(initial_chords: 'Optional[List[str]]' = None, key_root: 'str' = 'C', is_minor: 'bool' = False, convention: "Literal['INT', 'DE']" = 'INT', bpm: 'float' = 120.0, voice_leading_style: 'Union[str, VoiceLeadingStyle]' = <VoiceLeadingStyle.CONTEMPORARY_POP: 'CONTEMPORARY_POP'>)` |
 | [`ChordRecommendation`](../../src/steps/progression/session.py) | `(candidate_symbol: 'str', relation_type: "Literal['DOMINANT_OF', 'RESOLVES_TO', 'BORROWED_FROM', 'VOICE_LEADING_NEAR', 'SUBSTITUTES_FOR']", explanation: 'str', framework: 'str', source_id: 'str') -> None` |
 | [`DegreeAnalysis`](../../src/steps/progression/session.py) | `(index: 'int', symbol: 'str', roman_numeral: 'str', semitone_distance_to_next: 'Optional[int]' = None, voice_leading_warnings: 'tuple[str, ...]' = ()) -> None` |
 | [`GuideToneResolution`](../../src/steps/theory/voicings.py) | `(from_chord: 'str', to_chord: 'str', retained_note: 'Optional[int]', moving_note_from: 'int', moving_note_to: 'int', motion_semitones: 'int', resolution_type: "Literal['HALF_STEP_DOWN', 'HALF_STEP_UP', 'WHOLE_STEP_DOWN', 'WHOLE_STEP_UP', 'STATIC', 'LEAP']", total_l1_distance: 'int', description: 'str') -> None` |
@@ -260,6 +273,34 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 ### [BeginnerProgressionVoicings](../../src/steps/theory/beginner_voicing.py)
 
 `BeginnerProgressionVoicings(voicings: 'List[BeginnerChordVoicing]', transitions: 'List[BeginnerVoiceLeadingTransition]', total_l1_distance: 'int', average_l1_distance: 'float', smoothness_score: 'float', has_any_hand_jumps: 'bool', movement_reduction_vs_root_percent: 'float') -> None`
+
+- `to_dict(self) -> 'Dict[str, Any]'`
+
+### [VoiceLeadingViolation](../../src/steps/theory/voice_leading.py)
+
+`VoiceLeadingViolation(rule_name: 'str', voice_indices: 'Tuple[int, int]', motion_type: 'str', pitch_interval: 'int', from_pitches: 'Tuple[int, int]', to_pitches: 'Tuple[int, int]', severity: "Literal['ERROR', 'WARNING', 'INFO']", explanation: 'str', stylistic_context: 'str') -> None`
+
+- `violation_type` (Eigenschaft)
+- `rule_source` (Eigenschaft)
+- `to_dict(self) -> 'Dict[str, Any]'`
+
+### [VoiceLeadingEvaluation](../../src/steps/theory/voice_leading.py)
+
+`VoiceLeadingEvaluation(from_voicing: 'Tuple[int, ...]', to_voicing: 'Tuple[int, ...]', style: 'VoiceLeadingStyle', is_valid: 'bool', violations: 'List[VoiceLeadingViolation]', l1_distance: 'int', max_voice_leap: 'int', contrapuntal_motion: 'Dict[str, Any]', stylistic_notes: 'List[str]') -> None`
+
+- `to_dict(self) -> 'Dict[str, Any]'`
+
+### [VoiceLeadingViolation](../../src/steps/theory/voice_leading.py)
+
+`VoiceLeadingViolation(rule_name: 'str', voice_indices: 'Tuple[int, int]', motion_type: 'str', pitch_interval: 'int', from_pitches: 'Tuple[int, int]', to_pitches: 'Tuple[int, int]', severity: "Literal['ERROR', 'WARNING', 'INFO']", explanation: 'str', stylistic_context: 'str') -> None`
+
+- `violation_type` (Eigenschaft)
+- `rule_source` (Eigenschaft)
+- `to_dict(self) -> 'Dict[str, Any]'`
+
+### [VoiceLeadingEvaluation](../../src/steps/theory/voice_leading.py)
+
+`VoiceLeadingEvaluation(from_voicing: 'Tuple[int, ...]', to_voicing: 'Tuple[int, ...]', style: 'VoiceLeadingStyle', is_valid: 'bool', violations: 'List[VoiceLeadingViolation]', l1_distance: 'int', max_voice_leap: 'int', contrapuntal_motion: 'Dict[str, Any]', stylistic_notes: 'List[str]') -> None`
 
 - `to_dict(self) -> 'Dict[str, Any]'`
 
