@@ -373,6 +373,49 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
             'Chromatic inflection from G natural (in G) to G# leading tone (in E)',
         ],
     },
+    'PROG-007': {
+        'family': 'MODAL_DORIAN_VAMP',
+        'functional_syntax': 'i7 - IV7 (t7 - S7[dur])',
+        'harmonic_drive': 'Modal vamp highlighting characteristic Dorian major 6th',
+        'tonal_ambiguity': {
+            'modal_center': 'Dm',
+            'characteristic_pitch': 'B (major 6th in D)',
+            'citations': ['Pease (2003)'],
+        },
+        'voice_leading_features': [
+            'Root oscillation D -> G',
+            'Common tone D preserved between Dm7 and G7',
+            'Guide-tone counterpoint: F (minor 3rd of Dm7) serves as 7th of G7, while B (major 3rd of G7) represents Dorian 6th',
+        ],
+    },
+    'PROG-010': {
+        'family': 'SECONDARY_DOMINANT_PROLONGATION',
+        'functional_syntax': 'I - V7/vi - vi - IV (T - (D7)->Tp - Tp - S)',
+        'harmonic_drive': 'Chromatic lift via secondary dominant E7 targeting relative minor Am',
+        'tonal_ambiguity': {
+            'tonic': 'C',
+            'applied_target': 'Am (vi)',
+            'citations': ['Kostka/Payne (2013)'],
+        },
+        'voice_leading_features': [
+            'Chromatic voice step G -> G# in E7 resolving to A in Am',
+            'Subdominant continuation to F (IV) via smooth step motion',
+        ],
+    },
+    'PROG-011': {
+        'family': 'MODAL_INTERCHANGE_AEOLIAN',
+        'functional_syntax': 'I - bVI - bVII - I (T - sP - dP - T)',
+        'harmonic_drive': 'Epic rock and film cadence borrowing bVI and bVII from parallel minor (Mario Cadence)',
+        'tonal_ambiguity': {
+            'tonic': 'C',
+            'borrowed_mode': 'C Minor / C Aeolian',
+            'citations': ['Mulholland (2013)'],
+        },
+        'voice_leading_features': [
+            'Stepwise rising bass Ab -> Bb -> C',
+            'Chromatic third-relation root movement C -> Ab',
+        ],
+    },
     'PROG-012': {
         'family': 'FALLING_FIFTHS_SEQUENCE',
         'functional_syntax': 'vi - ii - V - I (Tp - Sp - D - T)',
@@ -387,6 +430,36 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
             'Consistent diatonic fifth-motion: root intervals of -5 semitones (or +7)',
             'Stepwise descending voice lines in alternating 3rds and 7ths',
             'Submediant vi prepares ii - V - I turnaround through uninterrupted quintal chain',
+        ],
+    },
+    'PROG-013': {
+        'family': 'TRITONE_SUBSTITUTION_CADENCE',
+        'functional_syntax': 'ii7 - bII7 - Imaj7 (Sp7 - SubD7 - Tmaj7)',
+        'harmonic_drive': 'Tritone substitution replacing dominant V7 (G7) with bII7 (Db7)',
+        'tonal_ambiguity': {
+            'tonic': 'C',
+            'substitute_for': 'G7 (V7)',
+            'common_tritone': ['F', 'B/Cb'],
+            'citations': ['Levine (1995)'],
+        },
+        'voice_leading_features': [
+            'Chromatic descending bass D -> Db -> C',
+            'Tritone retention: F and B/Cb active in both G7 and Db7',
+            'Half-step inward resolutions: Db -> C, F -> E, Ab -> G, Cb -> B',
+        ],
+    },
+    'PROG-014': {
+        'family': 'BACKDOOR_RESOLUTION',
+        'functional_syntax': 'IV - bVII7 - I (S - Subtonik7 - T)',
+        'harmonic_drive': 'Backdoor progression resolving subdominant minor/subtonic into major tonic',
+        'tonal_ambiguity': {
+            'tonic': 'C',
+            'backdoor_dominant': 'Bb7',
+            'citations': ['Terefenko (2014)'],
+        },
+        'voice_leading_features': [
+            'Whole-step bass rise Bb -> C',
+            'Inner voice chromatic descent: Ab (in Bb7) resolves down to G (in C)',
         ],
     },
 }
