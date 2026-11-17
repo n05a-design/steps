@@ -9,8 +9,8 @@ Kern- und Pilotstand wurde am 12. November 2026 auf Commit `b0abd41` abgeglichen
 
 | Wert | Fundstelle und Bedeutung |
 |---|---|
-| `0.0.0-dev` | [VERSION](../VERSION) im Repository |
-| `0.0.0.dev0` | [`src.steps.__version__`](../src/steps/__init__.py) im Python-Paket |
+| `0.1.0` | [VERSION](../VERSION) im Repository |
+| `0.1.0` | [`src.steps.__version__`](../src/steps/__init__.py) im Python-Paket |
 | Phase 5.1 | Historischer Entwicklungsstand des Headless-Kerns |
 | V6.6/V6.7 | Stände der Forschungsbibliothek |
 | 3.53.0 | Glide-Referenzstand |
