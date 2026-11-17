@@ -30,6 +30,12 @@ from .session import (
     ChordRecommendation,
     DegreeAnalysis
 )
+from ..theory.voicings import (
+    GuideToneResolution,
+    ProgressionShellVoicings,
+    ShellVoicing,
+    generate_shell_voicings,
+)
 from .recommender import (
     BasslineModel,
     CANONICAL_BASSLINE_MODELS,
@@ -70,6 +76,10 @@ __all__ = [
     'ProgressionSession',
     'ChordRecommendation',
     'DegreeAnalysis',
+    'GuideToneResolution',
+    'ProgressionShellVoicings',
+    'ShellVoicing',
+    'generate_shell_voicings',
     'BasslineModel',
     'CANONICAL_BASSLINE_MODELS',
     'CANONICAL_DRUM_PATTERNS',

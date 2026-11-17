@@ -65,6 +65,13 @@ from .inversion import (
     detect_chord_inversion,
     detect_hand_voicing
 )
+from .voicings import (
+    GuideToneResolution,
+    ProgressionShellVoicings,
+    ShellVoicing,
+    extract_guide_tone_pcs,
+    generate_shell_voicings,
+)
 
 __all__ = [
     'MusicTheoryError',
@@ -114,6 +121,11 @@ __all__ = [
     'FiguredBassSymbol',
     'InversionAnalysis',
     'detect_chord_inversion',
-    'detect_hand_voicing'
+    'detect_hand_voicing',
+    'GuideToneResolution',
+    'ProgressionShellVoicings',
+    'ShellVoicing',
+    'extract_guide_tone_pcs',
+    'generate_shell_voicings'
 ]
 

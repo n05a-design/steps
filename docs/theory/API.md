@@ -58,6 +58,11 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`InversionAnalysis`](../../src/steps/theory/inversion.py) | `(inversion: 'ChordInversion', figured_bass: 'str', bass_factor: 'str', root_pc: 'int', bass_pc: 'int', german_name: 'str', is_seventh_chord: 'bool') -> None` |
 | [`detect_chord_inversion`](../../src/steps/theory/inversion.py) | `(notes: 'Union[List[int], Tuple[int, ...], Voicing]', root_pitch_class: 'Optional[int]' = None, is_seventh: 'Optional[bool]' = None) -> 'InversionAnalysis'` |
 | [`detect_hand_voicing`](../../src/steps/theory/inversion.py) | `(hand_notes: 'Union[List[int], Tuple[int, ...], Voicing]', separate_bass_note: 'Optional[int]' = None, root_pitch_class: 'Optional[int]' = None) -> 'dict[str, Any]'` |
+| [`GuideToneResolution`](../../src/steps/theory/voicings.py) | `(from_chord: 'str', to_chord: 'str', retained_note: 'Optional[int]', moving_note_from: 'int', moving_note_to: 'int', motion_semitones: 'int', resolution_type: "Literal['HALF_STEP_DOWN', 'HALF_STEP_UP', 'WHOLE_STEP_DOWN', 'WHOLE_STEP_UP', 'STATIC', 'LEAP']", total_l1_distance: 'int', description: 'str') -> None` |
+| [`ProgressionShellVoicings`](../../src/steps/theory/voicings.py) | `(voicings: 'List[ShellVoicing]', resolutions: 'List[GuideToneResolution]', total_l1_distance: 'int', average_l1_distance: 'float', starting_layout: "Literal['7_3', '3_7']") -> None` |
+| [`ShellVoicing`](../../src/steps/theory/voicings.py) | `(chord_symbol: 'str', root_pc: 'int', bass_note: 'int', guide_tones: 'Tuple[int, int]', third_note: 'int', seventh_note: 'int', layout: "Literal['7_3', '3_7']", lh_spelling: 'str', rh_spellings: 'Tuple[str, str]') -> None` |
+| [`extract_guide_tone_pcs`](../../src/steps/theory/voicings.py) | `(chord: 'ChordDefinition') -> 'Tuple[int, int]'` |
+| [`generate_shell_voicings`](../../src/steps/theory/voicings.py) | `(progression: 'Union[str, List[str], Any, List[ChordDefinition]]', key_root: 'str' = 'C', starting_layout: "Literal['7_3', '3_7', 'AUTO']" = 'AUTO', bass_octave: 'int' = 2, rh_octave: 'int' = 4, convention: "Literal['INT', 'DE']" = 'INT') -> 'ProgressionShellVoicings'` |
 
 ## `src.steps.progression`
 
@@ -86,6 +91,10 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`ProgressionSession`](../../src/steps/progression/session.py) | `(initial_chords: 'Optional[List[str]]' = None, key_root: 'str' = 'C', is_minor: 'bool' = False, convention: "Literal['INT', 'DE']" = 'INT', bpm: 'float' = 120.0)` |
 | [`ChordRecommendation`](../../src/steps/progression/session.py) | `(candidate_symbol: 'str', relation_type: "Literal['DOMINANT_OF', 'RESOLVES_TO', 'BORROWED_FROM', 'VOICE_LEADING_NEAR', 'SUBSTITUTES_FOR']", explanation: 'str', framework: 'str', source_id: 'str') -> None` |
 | [`DegreeAnalysis`](../../src/steps/progression/session.py) | `(index: 'int', symbol: 'str', roman_numeral: 'str', semitone_distance_to_next: 'Optional[int]' = None, voice_leading_warnings: 'tuple[str, ...]' = ()) -> None` |
+| [`GuideToneResolution`](../../src/steps/theory/voicings.py) | `(from_chord: 'str', to_chord: 'str', retained_note: 'Optional[int]', moving_note_from: 'int', moving_note_to: 'int', motion_semitones: 'int', resolution_type: "Literal['HALF_STEP_DOWN', 'HALF_STEP_UP', 'WHOLE_STEP_DOWN', 'WHOLE_STEP_UP', 'STATIC', 'LEAP']", total_l1_distance: 'int', description: 'str') -> None` |
+| [`ProgressionShellVoicings`](../../src/steps/theory/voicings.py) | `(voicings: 'List[ShellVoicing]', resolutions: 'List[GuideToneResolution]', total_l1_distance: 'int', average_l1_distance: 'float', starting_layout: "Literal['7_3', '3_7']") -> None` |
+| [`ShellVoicing`](../../src/steps/theory/voicings.py) | `(chord_symbol: 'str', root_pc: 'int', bass_note: 'int', guide_tones: 'Tuple[int, int]', third_note: 'int', seventh_note: 'int', layout: "Literal['7_3', '3_7']", lh_spelling: 'str', rh_spellings: 'Tuple[str, str]') -> None` |
+| [`generate_shell_voicings`](../../src/steps/theory/voicings.py) | `(progression: 'Union[str, List[str], Any, List[ChordDefinition]]', key_root: 'str' = 'C', starting_layout: "Literal['7_3', '3_7', 'AUTO']" = 'AUTO', bass_octave: 'int' = 2, rh_octave: 'int' = 4, convention: "Literal['INT', 'DE']" = 'INT') -> 'ProgressionShellVoicings'` |
 | [`BasslineModel`](../../src/steps/progression/recommender.py) | `(name: 'str', style_category: 'str', description: 'str', time_signature: 'Tuple[int, int]', tempo_range: 'Tuple[int, int]', pattern_description: 'str') -> None` |
 | [`CANONICAL_BASSLINE_MODELS`](../../src/steps/progression/__init__.py) | Datenwert |
 | [`CANONICAL_DRUM_PATTERNS`](../../src/steps/progression/__init__.py) | Datenwert |
@@ -195,6 +204,23 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 
 `InversionAnalysis(inversion: 'ChordInversion', figured_bass: 'str', bass_factor: 'str', root_pc: 'int', bass_pc: 'int', german_name: 'str', is_seventh_chord: 'bool') -> None`
 
+### [GuideToneResolution](../../src/steps/theory/voicings.py)
+
+`GuideToneResolution(from_chord: 'str', to_chord: 'str', retained_note: 'Optional[int]', moving_note_from: 'int', moving_note_to: 'int', motion_semitones: 'int', resolution_type: "Literal['HALF_STEP_DOWN', 'HALF_STEP_UP', 'WHOLE_STEP_DOWN', 'WHOLE_STEP_UP', 'STATIC', 'LEAP']", total_l1_distance: 'int', description: 'str') -> None`
+
+### [ProgressionShellVoicings](../../src/steps/theory/voicings.py)
+
+`ProgressionShellVoicings(voicings: 'List[ShellVoicing]', resolutions: 'List[GuideToneResolution]', total_l1_distance: 'int', average_l1_distance: 'float', starting_layout: "Literal['7_3', '3_7']") -> None`
+
+### [ShellVoicing](../../src/steps/theory/voicings.py)
+
+`ShellVoicing(chord_symbol: 'str', root_pc: 'int', bass_note: 'int', guide_tones: 'Tuple[int, int]', third_note: 'int', seventh_note: 'int', layout: "Literal['7_3', '3_7']", lh_spelling: 'str', rh_spellings: 'Tuple[str, str]') -> None`
+
+- `midi_notes` (Eigenschaft)
+- `rh_span` (Eigenschaft)
+- `is_seventh_below_third` (Eigenschaft)
+- `to_dict(self) -> 'Dict[str, Any]'`
+
 ### [CanonicalProgression](../../src/steps/progression/engine.py)
 
 `CanonicalProgression(prog_id: 'str', name: 'str', roman_numerals: 'str', default_key: 'str', chords_str: 'str', context: 'str', sources: 'str') -> None`
@@ -211,6 +237,23 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 ### [DegreeAnalysis](../../src/steps/progression/session.py)
 
 `DegreeAnalysis(index: 'int', symbol: 'str', roman_numeral: 'str', semitone_distance_to_next: 'Optional[int]' = None, voice_leading_warnings: 'tuple[str, ...]' = ()) -> None`
+
+### [GuideToneResolution](../../src/steps/theory/voicings.py)
+
+`GuideToneResolution(from_chord: 'str', to_chord: 'str', retained_note: 'Optional[int]', moving_note_from: 'int', moving_note_to: 'int', motion_semitones: 'int', resolution_type: "Literal['HALF_STEP_DOWN', 'HALF_STEP_UP', 'WHOLE_STEP_DOWN', 'WHOLE_STEP_UP', 'STATIC', 'LEAP']", total_l1_distance: 'int', description: 'str') -> None`
+
+### [ProgressionShellVoicings](../../src/steps/theory/voicings.py)
+
+`ProgressionShellVoicings(voicings: 'List[ShellVoicing]', resolutions: 'List[GuideToneResolution]', total_l1_distance: 'int', average_l1_distance: 'float', starting_layout: "Literal['7_3', '3_7']") -> None`
+
+### [ShellVoicing](../../src/steps/theory/voicings.py)
+
+`ShellVoicing(chord_symbol: 'str', root_pc: 'int', bass_note: 'int', guide_tones: 'Tuple[int, int]', third_note: 'int', seventh_note: 'int', layout: "Literal['7_3', '3_7']", lh_spelling: 'str', rh_spellings: 'Tuple[str, str]') -> None`
+
+- `midi_notes` (Eigenschaft)
+- `rh_span` (Eigenschaft)
+- `is_seventh_below_third` (Eigenschaft)
+- `to_dict(self) -> 'Dict[str, Any]'`
 
 ### [BasslineModel](../../src/steps/progression/recommender.py)
 
