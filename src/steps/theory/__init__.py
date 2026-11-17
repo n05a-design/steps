@@ -72,6 +72,17 @@ from .voicings import (
     extract_guide_tone_pcs,
     generate_shell_voicings,
 )
+from .beginner_voicing import (
+    BeginnerTriadInversion,
+    PedagogicalReduction,
+    BeginnerChordVoicing,
+    BeginnerVoiceLeadingTransition,
+    BeginnerProgressionVoicings,
+    reduce_chord_for_beginners,
+    generate_beginner_inversions,
+    determine_beginner_fingering,
+    generate_beginner_voicings,
+)
 
 __all__ = [
     'MusicTheoryError',
@@ -126,6 +137,15 @@ __all__ = [
     'ProgressionShellVoicings',
     'ShellVoicing',
     'extract_guide_tone_pcs',
-    'generate_shell_voicings'
+    'generate_shell_voicings',
+    'BeginnerTriadInversion',
+    'PedagogicalReduction',
+    'BeginnerChordVoicing',
+    'BeginnerVoiceLeadingTransition',
+    'BeginnerProgressionVoicings',
+    'reduce_chord_for_beginners',
+    'generate_beginner_inversions',
+    'determine_beginner_fingering',
+    'generate_beginner_voicings'
 ]
 

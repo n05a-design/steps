@@ -63,6 +63,15 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`ShellVoicing`](../../src/steps/theory/voicings.py) | `(chord_symbol: 'str', root_pc: 'int', bass_note: 'int', guide_tones: 'Tuple[int, int]', third_note: 'int', seventh_note: 'int', layout: "Literal['7_3', '3_7']", lh_spelling: 'str', rh_spellings: 'Tuple[str, str]') -> None` |
 | [`extract_guide_tone_pcs`](../../src/steps/theory/voicings.py) | `(chord: 'ChordDefinition') -> 'Tuple[int, int]'` |
 | [`generate_shell_voicings`](../../src/steps/theory/voicings.py) | `(progression: 'Union[str, List[str], Any, List[ChordDefinition]]', key_root: 'str' = 'C', starting_layout: "Literal['7_3', '3_7', 'AUTO']" = 'AUTO', bass_octave: 'int' = 2, rh_octave: 'int' = 4, convention: "Literal['INT', 'DE']" = 'INT') -> 'ProgressionShellVoicings'` |
+| [`BeginnerTriadInversion`](../../src/steps/theory/beginner_voicing.py) | `ROOT`, `FIRST`, `SECOND` |
+| [`PedagogicalReduction`](../../src/steps/theory/beginner_voicing.py) | `(original_symbol: 'str', reduced_symbol: 'str', was_reduced: 'bool', omitted_factors: 'Tuple[str, ...]', explanation: 'str') -> None` |
+| [`BeginnerChordVoicing`](../../src/steps/theory/beginner_voicing.py) | `(chord_symbol: 'str', reduced_symbol: 'str', inversion: 'BeginnerTriadInversion', lh_bass_note: 'int', lh_fingering: 'int', lh_spelling: 'str', rh_notes: 'Tuple[int, int, int]', rh_fingering: 'Tuple[int, int, int]', rh_spellings: 'Tuple[str, str, str]', rh_span_semitones: 'int', pedagogical_description: 'str', reduction: 'PedagogicalReduction') -> None` |
+| [`BeginnerVoiceLeadingTransition`](../../src/steps/theory/beginner_voicing.py) | `(from_chord: 'str', to_chord: 'str', common_tones: 'Tuple[int, ...]', moving_voices: 'Tuple[Tuple[int, int, int], ...]', total_l1_distance: 'int', max_single_leap: 'int', has_hand_jump: 'bool', pedagogical_guidance: 'str') -> None` |
+| [`BeginnerProgressionVoicings`](../../src/steps/theory/beginner_voicing.py) | `(voicings: 'List[BeginnerChordVoicing]', transitions: 'List[BeginnerVoiceLeadingTransition]', total_l1_distance: 'int', average_l1_distance: 'float', smoothness_score: 'float', has_any_hand_jumps: 'bool', movement_reduction_vs_root_percent: 'float') -> None` |
+| [`reduce_chord_for_beginners`](../../src/steps/theory/beginner_voicing.py) | `(chord: 'Union[str, ChordDefinition]', convention: "Literal['INT', 'DE']" = 'INT') -> 'PedagogicalReduction'` |
+| [`generate_beginner_inversions`](../../src/steps/theory/beginner_voicing.py) | `(chord: 'Union[str, ChordDefinition]', target_octave: 'int' = 4, convention: "Literal['INT', 'DE']" = 'INT') -> 'List[Tuple[BeginnerTriadInversion, Tuple[int, int, int]]]'` |
+| [`determine_beginner_fingering`](../../src/steps/theory/beginner_voicing.py) | `(rh_notes: 'Tuple[int, int, int]', inversion: 'BeginnerTriadInversion', prev_rh_notes: 'Optional[Tuple[int, int, int]]' = None, chord_symbol: 'str' = '') -> 'Tuple[int, int, int]'` |
+| [`generate_beginner_voicings`](../../src/steps/theory/beginner_voicing.py) | `(progression: 'Union[str, List[str], Any, List[ChordDefinition]]', starting_inversion: 'Optional[Union[str, BeginnerTriadInversion]]' = None, lh_octave: 'int' = 2, rh_octave: 'int' = 4, convention: "Literal['INT', 'DE']" = 'INT') -> 'BeginnerProgressionVoicings'` |
 
 ## `src.steps.progression`
 
@@ -95,6 +104,13 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`ProgressionShellVoicings`](../../src/steps/theory/voicings.py) | `(voicings: 'List[ShellVoicing]', resolutions: 'List[GuideToneResolution]', total_l1_distance: 'int', average_l1_distance: 'float', starting_layout: "Literal['7_3', '3_7']") -> None` |
 | [`ShellVoicing`](../../src/steps/theory/voicings.py) | `(chord_symbol: 'str', root_pc: 'int', bass_note: 'int', guide_tones: 'Tuple[int, int]', third_note: 'int', seventh_note: 'int', layout: "Literal['7_3', '3_7']", lh_spelling: 'str', rh_spellings: 'Tuple[str, str]') -> None` |
 | [`generate_shell_voicings`](../../src/steps/theory/voicings.py) | `(progression: 'Union[str, List[str], Any, List[ChordDefinition]]', key_root: 'str' = 'C', starting_layout: "Literal['7_3', '3_7', 'AUTO']" = 'AUTO', bass_octave: 'int' = 2, rh_octave: 'int' = 4, convention: "Literal['INT', 'DE']" = 'INT') -> 'ProgressionShellVoicings'` |
+| [`BeginnerChordVoicing`](../../src/steps/theory/beginner_voicing.py) | `(chord_symbol: 'str', reduced_symbol: 'str', inversion: 'BeginnerTriadInversion', lh_bass_note: 'int', lh_fingering: 'int', lh_spelling: 'str', rh_notes: 'Tuple[int, int, int]', rh_fingering: 'Tuple[int, int, int]', rh_spellings: 'Tuple[str, str, str]', rh_span_semitones: 'int', pedagogical_description: 'str', reduction: 'PedagogicalReduction') -> None` |
+| [`BeginnerProgressionVoicings`](../../src/steps/theory/beginner_voicing.py) | `(voicings: 'List[BeginnerChordVoicing]', transitions: 'List[BeginnerVoiceLeadingTransition]', total_l1_distance: 'int', average_l1_distance: 'float', smoothness_score: 'float', has_any_hand_jumps: 'bool', movement_reduction_vs_root_percent: 'float') -> None` |
+| [`BeginnerTriadInversion`](../../src/steps/theory/beginner_voicing.py) | `ROOT`, `FIRST`, `SECOND` |
+| [`BeginnerVoiceLeadingTransition`](../../src/steps/theory/beginner_voicing.py) | `(from_chord: 'str', to_chord: 'str', common_tones: 'Tuple[int, ...]', moving_voices: 'Tuple[Tuple[int, int, int], ...]', total_l1_distance: 'int', max_single_leap: 'int', has_hand_jump: 'bool', pedagogical_guidance: 'str') -> None` |
+| [`PedagogicalReduction`](../../src/steps/theory/beginner_voicing.py) | `(original_symbol: 'str', reduced_symbol: 'str', was_reduced: 'bool', omitted_factors: 'Tuple[str, ...]', explanation: 'str') -> None` |
+| [`generate_beginner_voicings`](../../src/steps/theory/beginner_voicing.py) | `(progression: 'Union[str, List[str], Any, List[ChordDefinition]]', starting_inversion: 'Optional[Union[str, BeginnerTriadInversion]]' = None, lh_octave: 'int' = 2, rh_octave: 'int' = 4, convention: "Literal['INT', 'DE']" = 'INT') -> 'BeginnerProgressionVoicings'` |
+| [`reduce_chord_for_beginners`](../../src/steps/theory/beginner_voicing.py) | `(chord: 'Union[str, ChordDefinition]', convention: "Literal['INT', 'DE']" = 'INT') -> 'PedagogicalReduction'` |
 | [`BasslineModel`](../../src/steps/progression/recommender.py) | `(name: 'str', style_category: 'str', description: 'str', time_signature: 'Tuple[int, int]', tempo_range: 'Tuple[int, int]', pattern_description: 'str') -> None` |
 | [`CANONICAL_BASSLINE_MODELS`](../../src/steps/progression/__init__.py) | Datenwert |
 | [`CANONICAL_DRUM_PATTERNS`](../../src/steps/progression/__init__.py) | Datenwert |
@@ -221,6 +237,32 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 - `is_seventh_below_third` (Eigenschaft)
 - `to_dict(self) -> 'Dict[str, Any]'`
 
+### [PedagogicalReduction](../../src/steps/theory/beginner_voicing.py)
+
+`PedagogicalReduction(original_symbol: 'str', reduced_symbol: 'str', was_reduced: 'bool', omitted_factors: 'Tuple[str, ...]', explanation: 'str') -> None`
+
+- `to_dict(self) -> 'Dict[str, Any]'`
+
+### [BeginnerChordVoicing](../../src/steps/theory/beginner_voicing.py)
+
+`BeginnerChordVoicing(chord_symbol: 'str', reduced_symbol: 'str', inversion: 'BeginnerTriadInversion', lh_bass_note: 'int', lh_fingering: 'int', lh_spelling: 'str', rh_notes: 'Tuple[int, int, int]', rh_fingering: 'Tuple[int, int, int]', rh_spellings: 'Tuple[str, str, str]', rh_span_semitones: 'int', pedagogical_description: 'str', reduction: 'PedagogicalReduction') -> None`
+
+- `all_midi_notes` (Eigenschaft)
+- `rh_center_pitch` (Eigenschaft)
+- `to_dict(self) -> 'Dict[str, Any]'`
+
+### [BeginnerVoiceLeadingTransition](../../src/steps/theory/beginner_voicing.py)
+
+`BeginnerVoiceLeadingTransition(from_chord: 'str', to_chord: 'str', common_tones: 'Tuple[int, ...]', moving_voices: 'Tuple[Tuple[int, int, int], ...]', total_l1_distance: 'int', max_single_leap: 'int', has_hand_jump: 'bool', pedagogical_guidance: 'str') -> None`
+
+- `to_dict(self) -> 'Dict[str, Any]'`
+
+### [BeginnerProgressionVoicings](../../src/steps/theory/beginner_voicing.py)
+
+`BeginnerProgressionVoicings(voicings: 'List[BeginnerChordVoicing]', transitions: 'List[BeginnerVoiceLeadingTransition]', total_l1_distance: 'int', average_l1_distance: 'float', smoothness_score: 'float', has_any_hand_jumps: 'bool', movement_reduction_vs_root_percent: 'float') -> None`
+
+- `to_dict(self) -> 'Dict[str, Any]'`
+
 ### [CanonicalProgression](../../src/steps/progression/engine.py)
 
 `CanonicalProgression(prog_id: 'str', name: 'str', roman_numerals: 'str', default_key: 'str', chords_str: 'str', context: 'str', sources: 'str') -> None`
@@ -253,6 +295,32 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 - `midi_notes` (Eigenschaft)
 - `rh_span` (Eigenschaft)
 - `is_seventh_below_third` (Eigenschaft)
+- `to_dict(self) -> 'Dict[str, Any]'`
+
+### [BeginnerChordVoicing](../../src/steps/theory/beginner_voicing.py)
+
+`BeginnerChordVoicing(chord_symbol: 'str', reduced_symbol: 'str', inversion: 'BeginnerTriadInversion', lh_bass_note: 'int', lh_fingering: 'int', lh_spelling: 'str', rh_notes: 'Tuple[int, int, int]', rh_fingering: 'Tuple[int, int, int]', rh_spellings: 'Tuple[str, str, str]', rh_span_semitones: 'int', pedagogical_description: 'str', reduction: 'PedagogicalReduction') -> None`
+
+- `all_midi_notes` (Eigenschaft)
+- `rh_center_pitch` (Eigenschaft)
+- `to_dict(self) -> 'Dict[str, Any]'`
+
+### [BeginnerProgressionVoicings](../../src/steps/theory/beginner_voicing.py)
+
+`BeginnerProgressionVoicings(voicings: 'List[BeginnerChordVoicing]', transitions: 'List[BeginnerVoiceLeadingTransition]', total_l1_distance: 'int', average_l1_distance: 'float', smoothness_score: 'float', has_any_hand_jumps: 'bool', movement_reduction_vs_root_percent: 'float') -> None`
+
+- `to_dict(self) -> 'Dict[str, Any]'`
+
+### [BeginnerVoiceLeadingTransition](../../src/steps/theory/beginner_voicing.py)
+
+`BeginnerVoiceLeadingTransition(from_chord: 'str', to_chord: 'str', common_tones: 'Tuple[int, ...]', moving_voices: 'Tuple[Tuple[int, int, int], ...]', total_l1_distance: 'int', max_single_leap: 'int', has_hand_jump: 'bool', pedagogical_guidance: 'str') -> None`
+
+- `to_dict(self) -> 'Dict[str, Any]'`
+
+### [PedagogicalReduction](../../src/steps/theory/beginner_voicing.py)
+
+`PedagogicalReduction(original_symbol: 'str', reduced_symbol: 'str', was_reduced: 'bool', omitted_factors: 'Tuple[str, ...]', explanation: 'str') -> None`
+
 - `to_dict(self) -> 'Dict[str, Any]'`
 
 ### [BasslineModel](../../src/steps/progression/recommender.py)

@@ -46,6 +46,7 @@ class ProgressionSessionController:
     def get_view_model(self) -> Dict[str, Any]:
         """Produces a structured view-model dictionary ready for GUI rendering."""
         analysis = self._session.analyze_progression()
+        beginner_data = self._session.get_beginner_voicings().to_dict()
         return {
             "title": self._session.state.title,
             "chords": self._session.chords,
@@ -56,6 +57,7 @@ class ProgressionSessionController:
             "is_dirty": self._session.is_dirty,
             "can_undo": self._session.can_undo,
             "can_redo": self._session.can_redo,
+            "beginner_voicings": beginner_data,
             "analysis": [
                 {
                     "index": a.index,
@@ -78,6 +80,10 @@ class ProgressionSessionController:
             "can_undo": self._session.can_undo,
             "can_redo": self._session.can_redo,
         }
+
+    def get_beginner_voicings(self, starting_inversion: Optional[str] = None) -> Dict[str, Any]:
+        """Provides beginner keyboard voicings and pedagogical guidance for UI rendering (OA-0024)."""
+        return self._session.get_beginner_voicings(starting_inversion).to_dict()
 
     def set_chord(self, index: int, symbol: str) -> None:
         self._session.set_chord(index, symbol)

@@ -36,6 +36,15 @@ from ..theory.voicings import (
     ShellVoicing,
     generate_shell_voicings,
 )
+from ..theory.beginner_voicing import (
+    BeginnerChordVoicing,
+    BeginnerProgressionVoicings,
+    BeginnerTriadInversion,
+    BeginnerVoiceLeadingTransition,
+    PedagogicalReduction,
+    generate_beginner_voicings,
+    reduce_chord_for_beginners,
+)
 from .recommender import (
     BasslineModel,
     CANONICAL_BASSLINE_MODELS,
@@ -80,6 +89,13 @@ __all__ = [
     'ProgressionShellVoicings',
     'ShellVoicing',
     'generate_shell_voicings',
+    'BeginnerChordVoicing',
+    'BeginnerProgressionVoicings',
+    'BeginnerTriadInversion',
+    'BeginnerVoiceLeadingTransition',
+    'PedagogicalReduction',
+    'generate_beginner_voicings',
+    'reduce_chord_for_beginners',
     'BasslineModel',
     'CANONICAL_BASSLINE_MODELS',
     'CANONICAL_DRUM_PATTERNS',

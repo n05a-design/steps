@@ -221,6 +221,24 @@ class ProgressionSession:
         defs = [parse_chord(sym, convention=self.convention) for sym in self.chords]
         return generate_progression_voicings(defs, style=style)
 
+    def get_beginner_voicings(
+        self,
+        starting_inversion: Optional[str] = None,
+        lh_octave: int = 2,
+        rh_octave: int = 4,
+    ) -> Any:
+        """
+        Generates didactic beginner voicings, fingerings and smooth voice-leading guidance (OA-0024).
+        """
+        from ..theory.beginner_voicing import generate_beginner_voicings
+        return generate_beginner_voicings(
+            progression=self.chords,
+            starting_inversion=starting_inversion,
+            lh_octave=lh_octave,
+            rh_octave=rh_octave,
+            convention=self.convention,
+        )
+
     def analyze_progression(self) -> List[DegreeAnalysis]:
         """
         Performs Roman numeral analysis and calculates adjacent voice-leading
