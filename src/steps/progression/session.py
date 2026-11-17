@@ -24,6 +24,7 @@ from ..theory.exceptions import ChordConstructionError, ProgressionParsingError
 from ..theory.pitch import NoteSpelling, parse_spelling
 from .engine import (
     analyze_progression_voice_leading,
+    detect_progression_archetypes,
     generate_progression_voicings,
     resolve_roman_degree,
 )
@@ -326,7 +327,65 @@ class ProgressionSession:
             source_id="REF-0019"
         ))
 
+        # 5. Andalusian Cadence / Phrygian Step (bVI -> V in minor)
+        if self.is_minor:
+            key_spelling = parse_spelling(self.key_root, convention=self.convention)
+            key_pc = int(key_spelling.pitch_class)
+            curr_pc = int(curr_chord.root.pitch_class)
+            # bVI is 8 semitones above tonic
+            if (curr_pc - key_pc) % 12 == 8:
+                v_root = key_spelling.transpose_diatonic(step_delta=4, semitone_delta=7)
+                v_sym = f"{v_root.render(self.convention)[:-1]}"
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=v_sym,
+                    relation_type="RESOLVES_TO",
+                    explanation=f"Andalusische Kadenz / Phrygischer Halbschluss: Leittönige Auflösung {curr_sym} -> {v_sym} mit charakteristischem Halbtonschritt im Bass.",
+                    framework="Andalusian Cadence / Phrygian Schema",
+                    source_id="Gauldin (2004)"
+                ))
+
+        # 6. 50s Doo-Wop Turnaround Steps
+        if not self.is_minor:
+            key_spelling = parse_spelling(self.key_root, convention=self.convention)
+            key_pc = int(key_spelling.pitch_class)
+            curr_pc = int(curr_chord.root.pitch_class)
+            # vi is 9 semitones above tonic
+            if (curr_pc - key_pc) % 12 == 9:
+                iv_root = key_spelling.transpose_diatonic(step_delta=3, semitone_delta=5)
+                iv_sym = f"{iv_root.render(self.convention)[:-1]}"
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=iv_sym,
+                    relation_type="VOICE_LEADING_NEAR",
+                    explanation=f"50s Doo-Wop Kadenz: Subdominante {iv_sym} folgt auf Tonikaparallele {curr_sym} und bereitet Dominante vor.",
+                    framework="Doo-Wop Turnaround",
+                    source_id="Aldwell/Schachter (1989)"
+                ))
+            # V is 7 semitones above tonic
+            elif (curr_pc - key_pc) % 12 == 7:
+                i_root = key_spelling
+                i_sym = f"{i_root.render(self.convention)[:-1]}"
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=i_sym,
+                    relation_type="RESOLVES_TO",
+                    explanation=f"Authentischer Ganzschluss: Dominante {curr_sym} löst sich in die Tonika {i_sym} auf.",
+                    framework="Stufentheorie / Functional Harmony",
+                    source_id="Kostka/Payne (2013)"
+                ))
+
         return recommendations
+
+    def identify_archetypes(self, allow_rotations: bool = True) -> list[dict[str, Any]]:
+        """
+        Identifies canonical progression archetypes matching the current session chords,
+        including exact matches, rotations (e.g. Pop 4-Chord rotations) and transpositions.
+        """
+        return detect_progression_archetypes(
+            self.chords,
+            key_root=self.key_root,
+            is_minor_key=self.is_minor,
+            allow_rotations=allow_rotations,
+            convention=self.convention,
+        )
 
     def save_to_file(self, file_path: Path | str) -> Path:
         """Saves current session state to a STEPS project file."""

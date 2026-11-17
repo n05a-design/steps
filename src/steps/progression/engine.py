@@ -287,6 +287,111 @@ _HISTORICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
 ]
 
 
+ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
+    'PROG-001': {
+        'family': 'AXIS_FOUR_CHORD',
+        'functional_syntax': 'I - V - vi - IV (T - D - Tp - S)',
+        'harmonic_drive': 'Cyclic pop schema / singer-songwriter loop',
+        'tonal_ambiguity': {
+            'dual_center': True,
+            'primary_center': 'C',
+            'relative_center': 'Am',
+            'major_reading': 'I - V - vi - IV',
+            'minor_reading': 'III - VII - i - VI',
+            'citations': ['Open Music Theory', 'Richards (2017)'],
+        },
+        'voice_leading_features': [
+            'Common-tone C retained between C, Am and F',
+            'Stepwise motion between IV and V',
+        ],
+    },
+    'PROG-002': {
+        'family': 'AXIS_PROGRESSION_MINOR_ROTATION',
+        'functional_syntax': 'vi - IV - I - V (Tp - S - T - D) / i - VI - III - VII (t - sP - tP - dP)',
+        'harmonic_drive': 'Emotional minor loop initiating on relative minor tonic',
+        'tonal_ambiguity': {
+            'dual_center': True,
+            'primary_center': 'Am',
+            'relative_center': 'C',
+            'major_reading': 'vi - IV - I - V',
+            'minor_reading': 'i - bVI - bIII - bVII (natural minor) or i - VI - III - VII',
+            'citations': ['Tagg (2014)', 'Richards (2017)'],
+            'ambiguity_notes': 'Beginning on Am creates strong minor gravitational pull; absence of leading tone G# leaves tonal center open to melodic resolution.',
+        },
+        'voice_leading_features': [
+            'Descending bass line A -> F -> C -> G',
+            'Common-tone C anchors the first three chords (Am, F, C)',
+            'Smooth voice-leading step G -> A on loop turnaround',
+        ],
+    },
+    'PROG-003': {
+        'family': 'JAZZ_CADENCE',
+        'functional_syntax': 'ii7 - V7 - Imaj7 (Sp7 - D7 - Tmaj7)',
+        'harmonic_drive': 'Circle-of-fifths authentic full cadence in major',
+        'tonal_ambiguity': {
+            'dual_center': False,
+            'primary_center': 'C',
+            'cadence_type': 'Authentic Cadence',
+            'citations': ['Levine (1995)', 'Open Music Theory'],
+        },
+        'voice_leading_features': [
+            '7th of ii7 (C) resolves downward by half step to 3rd of V7 (B)',
+            '7th of V7 (F) resolves downward by half step to 3rd of Imaj7 (E)',
+            'Guide-tone counterpoint (3rd & 7th exchange)',
+        ],
+    },
+    'PROG-004': {
+        'family': 'DOO_WOP_AUTHENTIC_LOOP',
+        'functional_syntax': 'I - vi - IV - V (T - Tp - S - D)',
+        'harmonic_drive': 'Classic 50s Doo-Wop harmonic loop with submediant tonic prolongation and authentic turnaround',
+        'tonal_ambiguity': {
+            'dual_center': False,
+            'primary_center': 'C',
+            'cadence_type': 'Turnaround loop ending on dominant V',
+            'citations': ['Aldwell/Schachter (1989)', 'Kostka/Payne (2013)'],
+        },
+        'voice_leading_features': [
+            'Tonic prolongation via descending third C -> A',
+            'Predominant preparation via F (IV) moving to dominant G (V)',
+            'Stepwise bass motion F -> G -> C on cadence resolution',
+        ],
+    },
+    'PROG-005': {
+        'family': 'ANDALUSIAN_CADENCE_PHRYGIAN',
+        'functional_syntax': 'i - bVII - bVI - V (t - dP - sP - D[dur])',
+        'harmonic_drive': 'Descending minor tetrachord (lamento bass) terminating in Phrygian half-cadence',
+        'tonal_ambiguity': {
+            'modal_context': 'A Minor / A Phrygian Dominant',
+            'primary_center': 'Am',
+            'tetrachord_motion': 'A -> G -> F -> E (descending natural scale degrees 1 - b7 - b6 - 5)',
+            'harmonic_tension': 'Dominant E major introduces chromatic leading-tone G# against modal subtonic G in bVII',
+            'citations': ['Gauldin (2004)'],
+        },
+        'voice_leading_features': [
+            'Lamento bass descent: stepwise down 2 - 2 - 1 semitones (A -> G -> F -> E)',
+            'Characteristic Phrygian half-step resolution from F (bVI) to E (V)',
+            'Chromatic inflection from G natural (in G) to G# leading tone (in E)',
+        ],
+    },
+    'PROG-012': {
+        'family': 'FALLING_FIFTHS_SEQUENCE',
+        'functional_syntax': 'vi - ii - V - I (Tp - Sp - D - T)',
+        'harmonic_drive': 'Complete diatonic circle-of-fifths sequence (basse fondamentale)',
+        'tonal_ambiguity': {
+            'dual_center': False,
+            'primary_center': 'C',
+            'cycle_type': 'Descending Fifths / Quintfall',
+            'citations': ['Rameau (1722)', 'Salzer (1952)'],
+        },
+        'voice_leading_features': [
+            'Consistent diatonic fifth-motion: root intervals of -5 semitones (or +7)',
+            'Stepwise descending voice lines in alternating 3rds and 7ths',
+            'Submediant vi prepares ii - V - I turnaround through uninterrupted quintal chain',
+        ],
+    },
+}
+
+
 @dataclass(frozen=True)
 class CanonicalProgression:
     """
@@ -305,6 +410,21 @@ class CanonicalProgression:
     def chord_definitions(self) -> list[ChordDefinition]:
         chord_symbols = re.split(r"\s+-\s+", self.chords_str.strip())
         return [parse_chord(symbol, "INT") for symbol in chord_symbols if symbol]
+
+    @property
+    def theory_profile(self) -> dict[str, Any]:
+        """Deep musicological and structural profile of the archetype."""
+        return ARCHETYPE_THEORY_METADATA.get(self.prog_id, {
+            'family': 'CANONICAL_ARCHETYPE',
+            'functional_syntax': self.roman_numerals,
+            'harmonic_drive': self.context,
+            'citations': [self.sources],
+        })
+
+    @property
+    def archetype_family(self) -> str:
+        """Categorical harmonic family identifier."""
+        return self.theory_profile.get('family', 'CANONICAL_ARCHETYPE')
 
     def transpose(self, semitones: int) -> list[ChordDefinition]:
         """Transpose the entire progression using a single diatonic interval."""
@@ -629,3 +749,95 @@ def analyze_progression_voice_leading(
         "circular_pc_distance": total_circ,
         "average_l1_step": average,
     }
+
+
+def detect_progression_archetypes(
+    chords: list[str] | list[ChordDefinition] | CanonicalProgression,
+    key_root: str | NoteSpelling = "C",
+    is_minor_key: bool = False,
+    allow_rotations: bool = True,
+    convention: Literal['INT', 'DE', 'AUTO'] = 'AUTO'
+) -> list[dict[str, Any]]:
+    """
+    Intelligently identifies which canonical progression archetypes match a given chord sequence.
+    Detects exact matches, cyclic rotations (e.g. Pop 4-Chord rotations), and transpositions.
+    """
+    if isinstance(chords, CanonicalProgression):
+        chord_list = chords.chord_definitions
+    elif isinstance(chords, list):
+        if not chords:
+            return []
+        if isinstance(chords[0], str):
+            conv = 'INT' if convention == 'AUTO' else convention
+            chord_list = [parse_chord(s, convention=conv) for s in chords]  # type: ignore[arg-type]
+        else:
+            chord_list = chords  # type: ignore[assignment]
+    else:
+        raise ProgressionParsingError("Chords must be a list of chord strings or ChordDefinitions.")
+
+    if not chord_list:
+        return []
+
+    input_roots = [int(c.root.pitch_class) for c in chord_list]
+    input_qualities = [c.quality for c in chord_list]
+    n = len(chord_list)
+
+    input_rel_roots = [(r - input_roots[0]) % 12 for r in input_roots]
+
+    matches: list[dict[str, Any]] = []
+
+    for prog in CANONICAL_PROGRESSIONS.values():
+        p_chords = prog.chord_definitions
+        if len(p_chords) != n:
+            continue
+
+        p_roots = [int(c.root.pitch_class) for c in p_chords]
+        p_qualities = [c.quality for c in p_chords]
+
+        rotations_to_check = range(n) if allow_rotations else (0,)
+
+        for rot in rotations_to_check:
+            rot_roots = p_roots[rot:] + p_roots[:rot]
+            rot_qualities = p_qualities[rot:] + p_qualities[:rot]
+
+            # Quality check
+            if input_qualities != rot_qualities:
+                continue
+
+            # Interval pattern check
+            rot_rel_roots = [(r - rot_roots[0]) % 12 for r in rot_roots]
+            if input_rel_roots != rot_rel_roots:
+                continue
+
+            # Check if in exact key or transposed
+            is_exact_key = (input_roots == rot_roots)
+            transposition_semitones = (input_roots[0] - rot_roots[0]) % 12
+
+            # Scoring
+            if rot == 0 and is_exact_key:
+                score = 1.0
+            elif rot == 0:
+                score = 0.95
+            elif is_exact_key:
+                score = 0.90
+            else:
+                score = 0.85
+
+            matches.append({
+                'prog_id': prog.prog_id,
+                'name': prog.name,
+                'score': score,
+                'rotation_offset': rot,
+                'is_exact_match': (rot == 0 and is_exact_key),
+                'is_exact_key': is_exact_key,
+                'transposition_semitones': transposition_semitones,
+                'roman_numerals': prog.roman_numerals,
+                'default_key': prog.default_key,
+                'context': prog.context,
+                'family': prog.archetype_family,
+                'theory_profile': prog.theory_profile,
+            })
+
+    # Sort matches by score descending, then by prog_id
+    matches.sort(key=lambda m: (-m['score'], m['prog_id']))
+    return matches
