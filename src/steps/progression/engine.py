@@ -373,6 +373,20 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
             'Chromatic inflection from G natural (in G) to G# leading tone (in E)',
         ],
     },
+    'PROG-006': {
+        'family': 'PACHELBEL_ROMANESCA_SEQUENCE',
+        'functional_syntax': 'I - V - vi - iii - IV - I - IV - V (T - D - Tp - Dp - S - T - S - D)',
+        'harmonic_drive': 'Diatonic descending sequence with alternating falling fourths and rising steps',
+        'tonal_ambiguity': {
+            'tonic': 'D',
+            'sequence_type': 'Descending 4th / Romanesca variant',
+            'citations': ['Fux (1725)', 'Rameau (1722)'],
+        },
+        'voice_leading_features': [
+            'Stepwise descending soprano line over alternating root movements',
+            'Authentic cadential turnaround IV - V - I on return',
+        ],
+    },
     'PROG-007': {
         'family': 'MODAL_DORIAN_VAMP',
         'functional_syntax': 'i7 - IV7 (t7 - S7[dur])',
@@ -460,6 +474,52 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
         'voice_leading_features': [
             'Whole-step bass rise Bb -> C',
             'Inner voice chromatic descent: Ab (in Bb7) resolves down to G (in C)',
+        ],
+    },
+    'PROG-015': {
+        'family': 'ROYAL_ROAD_ODO_SHINKO',
+        'functional_syntax': 'IVmaj7 - V7 - iii7 - vi (Smaj7 - D7 - Dp7 - Tp)',
+        'harmonic_drive': 'Subdominant onset with deceptive-mediant falling-fifth resolution (J-Pop / Anime / Fusion)',
+        'tonal_ambiguity': {
+            'tonic': 'C',
+            'cadence_type': 'Deceptive resolution to iii7 continuing as falling fifth to vi',
+            'citations': ['Jaffe (1996)'],
+        },
+        'voice_leading_features': [
+            'Parallel seventh voicings in smooth step motion',
+            'Stepwise guide-tone descent F -> E -> D -> C across the loop',
+            'Falling fifth motion iii7 -> vi (Em7 -> Am)',
+        ],
+    },
+    'PROG-016': {
+        'family': 'COLTRANE_CHANGES_THREE_TONIC',
+        'functional_syntax': 'Imaj7 - V7/bVI - bVImaj7 - V7/bIV - bIVmaj7',
+        'harmonic_drive': 'Symmetrical division of the octave into 3 equal major thirds in Z12 (Giant Steps Matrix)',
+        'tonal_ambiguity': {
+            'primary_key': 'B',
+            'tonic_centers': ['B', 'G', 'Eb'],
+            'symmetry_interval': 4,
+            'citations': ['Cohn (2012)', 'Tymoczko (2011)', 'McClimon (2016)'],
+        },
+        'voice_leading_features': [
+            'Hexatonic / Augmented triad symmetry {B, G, Eb}',
+            'Interspersed secondary dominants (D7 -> Gmaj7, Bb7 -> Ebmaj7)',
+            'Chromatic voice leading between major seventh and dominant seventh qualities',
+        ],
+    },
+    'PROG-019': {
+        'family': 'MINOR_LINE_CLICHE',
+        'functional_syntax': 'i - i(maj7) - i7 - im6 (t - t[maj7] - t7 - t6)',
+        'harmonic_drive': 'Chromatic inner-voice descent 8 -> 7 -> b7 -> 6 over static tonic pedal',
+        'tonal_ambiguity': {
+            'tonic': 'Am',
+            'cliche_voice': 'A -> G# -> G -> F# (semitone descent)',
+            'citations': ['Levine (1995)'],
+        },
+        'voice_leading_features': [
+            'Static root anchor A',
+            'Single chromatic voice line descending 1 semitone per step',
+            'Outer voices remain stable while inner chromatic motion generates harmonic tension',
         ],
     },
 }
