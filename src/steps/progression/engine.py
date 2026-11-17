@@ -417,6 +417,21 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
             'Plagal return V7 -> IV7 -> I7 characteristic of classic 12-bar blues',
         ],
     },
+    'PROG-009': {
+        'family': 'MINOR_PLAGAL_ROMANCE',
+        'functional_syntax': 'I - IV - iv - I (T - S - s - T)',
+        'harmonic_drive': 'Minor plagal cadence with chromatic descent from major 6th to minor 6th into 5th',
+        'tonal_ambiguity': {
+            'tonic': 'C',
+            'chromatic_voice': 'A -> Ab -> G',
+            'citations': ['de la Motte (1976)'],
+        },
+        'voice_leading_features': [
+            'Diatonic major subdominant IV (F) inflects to minor subdominant iv (Fm)',
+            'Chromatic voice descent A -> Ab -> G',
+            'Subdominant resolution directly into major tonic I without dominant fifth jump',
+        ],
+    },
     'PROG-010': {
         'family': 'SECONDARY_DOMINANT_PROLONGATION',
         'functional_syntax': 'I - V7/vi - vi - IV (T - (D7)->Tp - Tp - S)',
@@ -582,6 +597,97 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
             'Half-step chromatic bass descent D -> Db -> C',
         ],
     },
+    'PROG-021': {
+        'family': 'NEO_SOUL_ROOTLESS_CYCLE',
+        'functional_syntax': 'i9 - iv9 - bVImaj9 - V7(b9) (t9 - s9 - tPmaj9 - D7[b9])',
+        'harmonic_drive': 'Extended minor root cycle with rootless 9th upper structures and harmonic minor dominant V7(b9)',
+        'tonal_ambiguity': {
+            'tonic': 'Dm',
+            'dominant_voicing': 'A7(b9) providing leading-tone C# resolution to D',
+            'citations': ['Mulholland (2013)'],
+        },
+        'voice_leading_features': [
+            'Sophisticated 9th extension sonorities on minor and major seventh qualities',
+            'Smooth chromatic voice descent: Bb in A7(b9) resolves down a semitone to A in Dm9',
+            'Cycle of falling fourths/fifths anchored by altered dominant turnaround',
+        ],
+    },
+    'PROG-022': {
+        'family': 'PICARDY_THIRD_RESOLUTION',
+        'functional_syntax': 'i - iv - bVII - I (t - s - dP - T[dur])',
+        'harmonic_drive': 'Renaissance/Baroque Tierce de Picardie converting expected minor tonic into triumphant major triad',
+        'tonal_ambiguity': {
+            'tonic_minor': 'Dm',
+            'tonic_major': 'D',
+            'picardy_third': 'F natural in Dm chromatically inflects to F# in D major',
+            'citations': ['Aldwell/Schachter (1989)'],
+        },
+        'voice_leading_features': [
+            'Diatonic minor preparation via iv (Gm) and subtonic bVII (C)',
+            'Chromatic modal surprise: Soprano/inner voice resolves to major 3rd F# instead of minor 3rd F',
+            'Complete harmonic transformation from minor sadness to major brightness',
+        ],
+    },
+    'PROG-023': {
+        'family': 'MODAL_SUBPULSE_CADENCE',
+        'functional_syntax': 'i7 - bVImaj7 - bVII - i (t7 - tPmaj7 - dP - t)',
+        'harmonic_drive': 'Aeolian sub-bass step cadence characteristic of Liquid Drum & Bass and modern electronic bass music',
+        'tonal_ambiguity': {
+            'modal_center': 'Fm',
+            'cadential_climb': 'Dbmaj7 -> Eb -> Fm (bVI -> bVII -> i)',
+            'citations': ['Butterfield (2010)'],
+        },
+        'voice_leading_features': [
+            'Ascending parallel step motion bVI -> bVII -> i in bass register',
+            'Sub-bass foundation over root position electronic chords',
+            'Modal resolution into tonic minor without dominant leading-tone requirement',
+        ],
+    },
+    'PROG-024': {
+        'family': 'BOSSA_NOVA_APPLIED_DOMINANT',
+        'functional_syntax': 'Imaj7 - V7/V - ii7 - V7 - Imaj7 (Tmaj7 - (D7)->Sp - Sp7 - D7 - Tmaj7)',
+        'harmonic_drive': 'Bossa Nova double dominant (V7/V) interpolation with chromatic voice-leading descent into ii7',
+        'tonal_ambiguity': {
+            'tonic': 'C',
+            'applied_dominant': 'D7 (V7/V) targeting G7 via intervening Dm7',
+            'citations': ['Mauleón (1993)'],
+        },
+        'voice_leading_features': [
+            'Chromatic descent: F# (in D7) falls a semitone to F natural (in Dm7 and G7)',
+            'Classic Jobim / Bossa Nova circle cycle with syncopated comping voicings',
+            'Smooth return to Imaj7 via standard ii-V-I guide tones',
+        ],
+    },
+    'PROG-025': {
+        'family': 'AFRO_CUBAN_OSTINATO_VAMP',
+        'functional_syntax': 'i - iv - V7 - iv (t - s - D7 - s)',
+        'harmonic_drive': 'Afro-Cuban cyclical piano montuno vamp over son/rumba clave with subdominant rebound',
+        'tonal_ambiguity': {
+            'tonic': 'Cm',
+            'vamp_structure': 'Cyclic 4-chord loop framing dominant V7 between subdominants iv',
+            'citations': ['Mauleón (1993)', 'Peñalosa (2009)'],
+        },
+        'voice_leading_features': [
+            'Arpeggiated octave/tenth figures across montuno register',
+            'Subdominant return: G7 does not resolve directly to Cm, but rebounds via Fm back to loop start',
+            'Syncopated rhythmic accentuation locked to 2-3 or 3-2 clave patterns',
+        ],
+    },
+    'PROG-026': {
+        'family': 'CHROMATIC_BASS_SECONDARY_DOMINANT',
+        'functional_syntax': 'I - V7(6/5)/V - ii6 - I6 - V7(4/3) - I',
+        'harmonic_drive': 'Classical/Baroque passacaglia with stepwise chromatic descending bassline and secondary dominant inversions',
+        'tonal_ambiguity': {
+            'tonic': 'G',
+            'bassline_descent': 'G -> C# -> C -> B -> A -> G',
+            'citations': ['Kostka (2013)', 'Aldwell/Schachter (1989)'],
+        },
+        'voice_leading_features': [
+            'Strict chromatic bassline with first-inversion chords (6 and 6/5 figures)',
+            'V7(6/5)/V (A7/C#) introduces chromatic tritone bass step leading into ii6 (Am/C)',
+            'Stepwise contrapuntal voice movement avoiding parallel fifths and octaves',
+        ],
+    },
     'PROG-027': {
         'family': 'MINOR_JAZZ_BLUES_SUBMEDIANT_TURNAROUND',
         'functional_syntax': 'i7 - iv7 - i7 - bVImaj7 - V7(#11) - i7',
@@ -595,6 +701,21 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
             'Submediant bVImaj7 (Abmaj7) prepares dominant V7(#11) (G7(#11)) by downward half-step bass motion',
             'Sharp eleven (#11 = C#/Db) in dominant resolves into root/third of tonic minor',
             'Minor blues scale flexibility over minor seventh and altered dominant qualities',
+        ],
+    },
+    'PROG-028': {
+        'family': 'SOUL_CIRCLE_OF_FIFTHS',
+        'functional_syntax': 'i9 - iv9 - bVII9 - IIImaj9 (t9 - s9 - dP9 - tPmaj9)',
+        'harmonic_drive': 'Natural minor diatonic falling-fifth sequence modulating/resolving into relative major',
+        'tonal_ambiguity': {
+            'primary_tonic': 'Em',
+            'relative_major': 'Gmaj9 (IIImaj9)',
+            'citations': ['Mulholland (2013)', 'Levine (1995)'],
+        },
+        'voice_leading_features': [
+            'Continuous descending circle of fifths root progression E -> A -> D -> G',
+            'Uniform 9th extensions across both minor, dominant, and major seventh chord qualities',
+            'Smooth downward stepwise guide-tone resolutions (7th resolving to 3rd of subsequent chord)',
         ],
     },
 }
