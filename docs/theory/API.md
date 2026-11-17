@@ -53,6 +53,11 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`get_scale_template`](../../src/steps/theory/scale.py) | `(name_or_alias: 'str') -> 'Optional[ScaleTemplate]'` |
 | [`construct_scale`](../../src/steps/theory/scale.py) | `(root: 'NoteSpelling', template_or_name: 'ScaleTemplate \| str') -> 'ScaleDefinition'` |
 | [`parse_scale`](../../src/steps/theory/scale.py) | `(text: 'str', convention: "Literal['INT', 'DE', 'AUTO']" = 'AUTO') -> 'ScaleDefinition'` |
+| [`ChordInversion`](../../src/steps/theory/inversion.py) | `ROOT_POSITION`, `FIRST_INVERSION`, `SECOND_INVERSION`, `THIRD_INVERSION` |
+| [`FiguredBassSymbol`](../../src/steps/theory/inversion.py) | `TRIAD_ROOT`, `TRIAD_FIRST`, `TRIAD_SECOND`, `SEVENTH_ROOT`, `SEVENTH_FIRST`, `SEVENTH_SECOND`, `SEVENTH_THIRD` |
+| [`InversionAnalysis`](../../src/steps/theory/inversion.py) | `(inversion: 'ChordInversion', figured_bass: 'str', bass_factor: 'str', root_pc: 'int', bass_pc: 'int', german_name: 'str', is_seventh_chord: 'bool') -> None` |
+| [`detect_chord_inversion`](../../src/steps/theory/inversion.py) | `(notes: 'Union[List[int], Tuple[int, ...], Voicing]', root_pitch_class: 'Optional[int]' = None, is_seventh: 'Optional[bool]' = None) -> 'InversionAnalysis'` |
+| [`detect_hand_voicing`](../../src/steps/theory/inversion.py) | `(hand_notes: 'Union[List[int], Tuple[int, ...], Voicing]', separate_bass_note: 'Optional[int]' = None, root_pitch_class: 'Optional[int]' = None) -> 'dict[str, Any]'` |
 
 ## `src.steps.progression`
 
@@ -172,6 +177,10 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 - `get_diatonic_triad(self, degree: 'int') -> 'ChordDefinition'`
 - `get_diatonic_seventh(self, degree: 'int') -> 'ChordDefinition'`
 - `render_text(self, convention: "Literal['INT', 'DE']" = 'INT', unicode_accidental: 'bool' = False) -> 'list[str]'`
+
+### [InversionAnalysis](../../src/steps/theory/inversion.py)
+
+`InversionAnalysis(inversion: 'ChordInversion', figured_bass: 'str', bass_factor: 'str', root_pc: 'int', bass_pc: 'int', german_name: 'str', is_seventh_chord: 'bool') -> None`
 
 ### [CanonicalProgression](../../src/steps/progression/engine.py)
 
