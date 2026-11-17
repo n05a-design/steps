@@ -19,6 +19,20 @@ from .timeline import (
     apply_swing,
     validate_midi_note_on_off_pairing,
 )
+from .swing import (
+    SWING_PRESETS,
+    SwingEngine,
+    SwingProfile,
+    SwingProfileType,
+    SwingSubdivision,
+    calculate_swing_offset_ticks,
+    calculate_swing_quant_tick,
+    friberg_swing_ratio,
+    milliseconds_to_ticks,
+    percentage_to_swing_ratio,
+    swing_ratio_to_percentage,
+    ticks_to_milliseconds,
+)
 
 __all__ = [
     "DEFAULT_PPQ",
@@ -35,4 +49,16 @@ __all__ = [
     "DrumStep",
     "DrumTrack",
     "DrumPattern",
+    "SwingSubdivision",
+    "SwingProfileType",
+    "SwingProfile",
+    "SWING_PRESETS",
+    "SwingEngine",
+    "calculate_swing_quant_tick",
+    "calculate_swing_offset_ticks",
+    "ticks_to_milliseconds",
+    "milliseconds_to_ticks",
+    "swing_ratio_to_percentage",
+    "percentage_to_swing_ratio",
+    "friberg_swing_ratio",
 ]
