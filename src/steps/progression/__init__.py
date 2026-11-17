@@ -30,6 +30,21 @@ from .session import (
     ChordRecommendation,
     DegreeAnalysis
 )
+from .recommender import (
+    BasslineModel,
+    CANONICAL_BASSLINE_MODELS,
+    CANONICAL_DRUM_PATTERNS,
+    CANONICAL_PIANO_MODULES,
+    CrossDomainRecommendation,
+    CrossDomainRecommender,
+    CrossDomainRelation,
+    RecommendationItem,
+    get_concept_relations,
+    get_recommender,
+    recommend_for_drum_pattern,
+    recommend_for_piano_module,
+    recommend_for_progression,
+)
 
 __all__ = [
     'ContrapuntalMotion',
@@ -54,6 +69,19 @@ __all__ = [
     'detect_progression_archetypes',
     'ProgressionSession',
     'ChordRecommendation',
-    'DegreeAnalysis'
+    'DegreeAnalysis',
+    'BasslineModel',
+    'CANONICAL_BASSLINE_MODELS',
+    'CANONICAL_DRUM_PATTERNS',
+    'CANONICAL_PIANO_MODULES',
+    'CrossDomainRecommendation',
+    'CrossDomainRecommender',
+    'CrossDomainRelation',
+    'RecommendationItem',
+    'get_concept_relations',
+    'get_recommender',
+    'recommend_for_drum_pattern',
+    'recommend_for_piano_module',
+    'recommend_for_progression',
 ]
 
