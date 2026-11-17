@@ -1,10 +1,10 @@
 # STEPS – Ganzheitliche kontextbasierte Master-Übergabe für den nächsten KI-Agenten
 
-- **Stand:** 17.11.2026 (Europe/Berlin), fortgeschrieben nach Abschluss von Release v0.1.0 (PR #139), Versionswechsel auf 0.2.0-dev (PR #140) und OA-0026. Der Dateiname bleibt für stabile Verweise unverändert.
+- **Stand:** 17.11.2026 (Europe/Berlin), fortgeschrieben nach Abschluss von Release v0.1.0 (PR #139), Versionswechsel auf 0.2.0-dev (PR #140), PR #141 (OA-0026) und OA-0027. Der Dateiname bleibt für stabile Verweise unverändert.
 - **Projekt:** STEPS (Desktop-Musik-App für Harmonielehre, Voicings, Progressionen und Rhythmus)
 - **Remote-Repository:** `https://github.com/n05a-design/steps`
-- **Geprüfter Ausgangsstand (`origin/main`):** Commit `be32c5d` (Versionswechsel 0.2.0-dev, PR #140) und vorangehend `1023fcf` (Release v0.1.0, PR #139).
-- **Status:** Konsolidierter Stand nach PR #88–#140 und OA-0026. Alle 650 Unittests fehlerfrei bestanden (100% grün). Richtung für v0.1 (publiziert), Lizenz, Fenster, Speicherformat und MIDI-Export sind entschieden. Cross-Domain Recommender (OA-0032), Shell-Voicings (OA-0030), Swing-Ratio Engine (OA-0022), Didaktische Reduktions-Engine (OA-0024) und Stilistische Stimmführungsregeln (OA-0026) sind vollständig implementiert. Nächste anstehende Aufgabe: OA-0027 (Property-Based Tests).
+- **Geprüfter Ausgangsstand (`origin/main`):** Commit `40e18f0` (nach Merge von PR #141, OA-0026).
+- **Status:** Konsolidierter Stand nach PR #88–#141 und OA-0027. Alle 655 Unittests fehlerfrei bestanden (100% grün). Richtung für v0.1 (publiziert), Lizenz, Fenster, Speicherformat und MIDI-Export sind entschieden. Cross-Domain Recommender (OA-0032), Shell-Voicings (OA-0030), Swing-Ratio Engine (OA-0022), Didaktische Reduktions-Engine (OA-0024), Stilistische Stimmführungsregeln (OA-0026) und Property-Based Tests (OA-0027) sind vollständig implementiert. Nächste anstehende Aufgabe: OA-0028 / OA-0029 (Rationale MIDI-Zeit & SMF-Parser).
 
 **Schnelleinstieg für einen neuen Agenten:** 1. `AGENTS.md` lesen. 2. Abschnitt 2 (Arbeitsregeln) und 5 (Fahrplan) dieser Datei lesen. 3. Entscheidungen im [Register](../../decisions/DECISION_REGISTER.md) und in `decisions/ADR-0*.md`. 4. Offene Punkte in [`OPEN_GAPS.md`](../../research/gaps/OPEN_GAPS.md) (Tabelle „Restprüfung nach dem Fable-Audit“, neueste Zeilen unten). 5. Vor jeder Änderung die Gates aus Abschnitt 4 laufen lassen.
 
@@ -117,7 +117,8 @@ In den zurückliegenden Arbeitssitzungen wurden sämtliche historischen Unklarhe
 | #138 | **Docs**: Konsolidierte Master-Übergabe auf Commit `cc0c3f9` nach Abschluss von PR #134–#137. |
 | #139 | **Release v0.1.0**: Erstes stabiles GitHub-Release von STEPS (Harmonik-Kern, Voicings, Rhythmik & MIDI-Export), Tag `v0.1.0`, Commit `1023fcf`. |
 | #140 | **Chore**: Versionswechsel auf `0.2.0-dev` für Phase 5.4/v2 Entwicklung, Commit `be32c5d`. |
-| PR (Folge) | **OA-0026**: Stilistische Differenzierung von Stimmführungsregeln (`src/steps/theory/voice_leading.py`). `VoiceLeadingStyle` (`STRICT_CLASSICAL`, `STRICT_COUNTERPOINT`, `CONTEMPORARY_POP`, `JAZZ_POP`, `POWER_CHORDS`, `QUARTAL_JAZZ`), Everett (2009) Power-Chords & Planing vs. Fux (1725) Kontrapunkt, Integration in `ProgressionSession` & `ProgressionSessionController`, 8 Tests (Gesamttests: 650). |
+| #141 | **OA-0026**: Stilistische Differenzierung von Stimmführungsregeln (`src/steps/theory/voice_leading.py`). `VoiceLeadingStyle` (`STRICT_CLASSICAL`, `STRICT_COUNTERPOINT`, `CONTEMPORARY_POP`, `JAZZ_POP`, `POWER_CHORDS`, `QUARTAL_JAZZ`), Everett (2009) Power-Chords & Planing vs. Fux (1725) Kontrapunkt, Integration in `ProgressionSession` & `ProgressionSessionController`, 8 Tests (Gesamttests: 650), Commit `40e18f0`. |
+| PR (Folge) | **OA-0027**: Formale Property-Based Tests für Musiktheorie-Invarianten (`tests/test_theory_properties.py`, `tests/theory/test_properties.py`). 1.000 generierte Testfälle pro Eigenschaft (Modulo-12, Inversion, Chord Invariance, Tymoczko L1 Metric Space, Circular PC Distance), 5 Tests (Gesamttests: 655). |
 
 **Wichtige Abgleiche aus dieser Sitzung**, damit sie nicht erneut aufkommen:
 - Ein vorgeschlagener Lizenzwechsel zu MIT/Apache wurde verworfen: Das Repository steht unter MPL-2.0, aus Glide übernommene Dateien müssen MPL-2.0 bleiben.
@@ -131,14 +132,14 @@ In den zurückliegenden Arbeitssitzungen wurden sämtliche historischen Unklarhe
 
 **Lokale Einrichtung:** `python3 -m pip install -r knowledge/benchmark/requirements.txt` (PyYAML 6.0.3, nur für Audit-Skripte; der Kern hat keine Laufzeitabhängigkeit).
 
-**Stand 17.11.2026 (nach PR #140 und OA-0026):** **650 Unittests fehlerfrei bestanden (100% grün)**; `verify_reference_integrity.py` meldet 17 ADRs, 28 Progressionen, 31 Drum-Patterns, 19 Klaviermodule, 198 Unified Golden Cases und 97 Concept Relations. Die vollständige CI-Liste steht in [`.github/workflows/python-tests.yml`](../../.github/workflows/python-tests.yml); lokal mindestens zusätzlich `python3 -B scripts/audit_graph.py --check`, `python3 -B tools/validation/check_structure.py`, `python3 -B scripts/render_api_reference.py --check` und `python3 -B scripts/pre-commit-secret-check.py`. Neue ADRs brauchen einen Eintrag in `CANONICAL_ADR_THEMES` (`scripts/verify_reference_integrity.py`) und die erwartete Anzahl in `tests/test_reference_integrity.py`; der ADR-Status im Register muss ein reiner Wert sein (`proposed`, `accepted`, `rejected`, `superseded`).
+**Stand 17.11.2026 (nach PR #141 und OA-0027):** **655 Unittests fehlerfrei bestanden (100% grün)**; `verify_reference_integrity.py` meldet 17 ADRs, 28 Progressionen, 31 Drum-Patterns, 19 Klaviermodule, 198 Unified Golden Cases und 97 Concept Relations. Die vollständige CI-Liste steht in [`.github/workflows/python-tests.yml`](../../.github/workflows/python-tests.yml); lokal mindestens zusätzlich `python3 -B scripts/audit_graph.py --check`, `python3 -B tools/validation/check_structure.py`, `python3 -B scripts/render_api_reference.py --check` und `python3 -B scripts/pre-commit-secret-check.py`. Neue ADRs brauchen einen Eintrag in `CANONICAL_ADR_THEMES` (`scripts/verify_reference_integrity.py`) und die erwartete Anzahl in `tests/test_reference_integrity.py`; der ADR-Status im Register muss ein reiner Wert sein (`proposed`, `accepted`, `rejected`, `superseded`).
 
 Bevor ein PR eingereicht wird, müssen folgende Tests lokal fehlerfrei durchlaufen:
 1. **Gesamte Unittest-Suite:**
    ```bash
    python3 -m unittest discover tests
    ```
-   *Soll:* Ran 650 tests ... OK.
+   *Soll:* Ran 655 tests ... OK.
 2. **Referenzintegrität:**
    ```bash
    python3 scripts/verify_reference_integrity.py
@@ -167,19 +168,16 @@ Bevor ein PR eingereicht wird, müssen folgende Tests lokal fehlerfrei durchlauf
 
 ## 5. Konkreter Fahrplan für den nächsten Agenten
 
-Stand 17.11.2026 (nach PR #140 und OA-0026). Die vorherigen Arbeitspakete AP 1 (SMF-Writer), AP 2 (Kernverträge) und AP 3 (Graphabnahme) sowie die Funktionsblöcke OA-0032, OA-0030, OA-0022, OA-0024 und OA-0026 sind vollständig abgeschlossen.
+Stand 17.11.2026 (nach PR #141 und OA-0027). Die vorherigen Arbeitspakete AP 1 (SMF-Writer), AP 2 (Kernverträge) und AP 3 (Graphabnahme) sowie die Funktionsblöcke OA-0032, OA-0030, OA-0022, OA-0024, OA-0026 und OA-0027 sind vollständig abgeschlossen.
 
 ### Nächste anstehende Aufgaben (Priorisierter Backlog)
 
-#### 1. OA-0027: Implementierung formaler Property-Based Tests für Musiktheorie-Invarianten (M01/M04)
-- **Ziel:** Robuste Invariantentests mittels automatischer Generierung zufälliger Tonhöhen, Intervalle und Akkordumkehrungen.
-- **Geprüfte Invarianten:**
-  - Modulo-12-Zyklizität: $\text{transpose}(P, 12) \equiv P$
-  - Intervall-Umkehrung: $\text{invert}(\text{interval}) + \text{interval} = 12$
-  - Enharmonische Äquivalenz und Vorzeichenverträglichkeit
+#### 1. OA-0028 / OA-0029: Rationale MIDI-Zeit-Engine & SMF-Parser (M11)
+- **Ziel:** Exakte rationale Zeitrechnung (`fractions.Fraction`) zur Vermeidung von Float-Drift bei triolischen und ungeraden Taktteilungen sowie vollständiger Standard-MIDI-File-Parser für Format 0 und Format 1 mit Unterstützung für 480 PPQ, variable Delta-Time-Dekodierung, Running Status und Standard Meta-Events (Tempo 0x51, TimeSignature 0x58).
+- **Ort:** `src/steps/midi/` und `src/steps/ports/midi/`.
 
-#### 2. OA-0028 / OA-0029: Rationale MIDI-Zeit-Engine & SMF-Parser (M11)
-- **Ziel:** Exakte rationale Zeitrechnung (`fractions.Fraction`) zur Vermeidung von Float-Drift bei triolischen und ungeraden Taktteilungen sowie vollständiger Standard-MIDI-File-Parser.
+#### 2. OA-0023: Ausarbeitung erweiterter Genre-Profile (M09)
+- **Ziel:** Ausarbeitung formaler Genre-Profile für Techno, Boom-Bap, UK Garage und Trap im Rhythmik- und Groove-Katalog.
 
 ### Qualitätswerkzeuge (nur mit Zustimmung des Inhabers zur Paketinstallation)
 - Vorgeschlagen und noch nicht installiert: `ruff` (in `pyproject.toml` konfiguriert), `mypy` (Kern deklariert `py.typed`), `coverage` mit Schwelle (Kern derzeit 85,3 % Zeilen), `hypothesis`, `mutmut`.
