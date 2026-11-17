@@ -343,6 +343,36 @@ class ProgressionSession:
                     framework="Andalusian Cadence / Phrygian Schema",
                     source_id="Gauldin (2004)"
                 ))
+                # Minor Jazz Blues Turnaround (bVImaj7 -> V7(#11))
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=f"{v_root.render(self.convention)[:-1]}7(#11)",
+                    relation_type="RESOLVES_TO",
+                    explanation=f"Minor Jazz Blues Turnaround: Submediante {curr_sym} (bVImaj7) leitet über Halbtonschritt zur alterierten Dominante {v_root.render(self.convention)[:-1]}7(#11).",
+                    framework="Minor Jazz Blues Submediant Turnaround",
+                    source_id="Levine (1995)"
+                ))
+            # Minor Jazz Blues Subdominant (iv7 -> bVImaj7)
+            elif (curr_pc - key_pc) % 12 == 5:
+                bvi_root = key_spelling.transpose_diatonic(step_delta=5, semitone_delta=8)
+                bvi_sym = f"{bvi_root.render(self.convention)[:-1]}maj7"
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=bvi_sym,
+                    relation_type="VOICE_LEADING_NEAR",
+                    explanation=f"Minor Jazz Blues Turnaround: Subdominante {curr_sym} (iv7) leitet zur Submediante {bvi_sym} (bVImaj7) über.",
+                    framework="Minor Jazz Blues Submediant Turnaround",
+                    source_id="Levine (1995)"
+                ))
+            # Minor Dominant Resolution (V7(#11) -> i7)
+            elif (curr_pc - key_pc) % 12 == 7:
+                i_root = key_spelling
+                i_sym = f"{i_root.render(self.convention)[:-1]}m7"
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=i_sym,
+                    relation_type="RESOLVES_TO",
+                    explanation=f"Minor Jazz Blues: Alterierte Dominante {curr_sym} löst sich in die Tonika {i_sym} (i7) auf.",
+                    framework="Minor Jazz Blues Submediant Turnaround",
+                    source_id="Terefenko (2014)"
+                ))
             # Minor Line Cliché (tonic minor root)
             elif (curr_pc - key_pc) % 12 == 0:
                 root_prefix = curr_chord.root.render(self.convention)[:-1]
@@ -409,6 +439,48 @@ class ProgressionSession:
                     framework="Tritone Substitution",
                     source_id="Levine (1995)"
                 ))
+                bvii_root = key_spelling.transpose_diatonic(step_delta=6, semitone_delta=10)
+                bvii_sym = f"{bvii_root.render(self.convention)[:-1]}7"
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=bvii_sym,
+                    relation_type="SUBSTITUTES_FOR",
+                    explanation=f"Substitute Backdoor ii-V: {bvii_sym} (bVII7) ersetzt V7 nach {curr_sym} (ii7) in einer Backdoor-Kadenz.",
+                    framework="Substitute Backdoor ii-V",
+                    source_id="Rawlins/Bahha (2005)"
+                ))
+            # bII is 1 semitone above tonic (Extended Tritone Sub Altered)
+            elif (curr_pc - key_pc) % 12 == 1:
+                i_root = key_spelling
+                i_sym = f"{i_root.render(self.convention)[:-1]}maj9"
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=i_sym,
+                    relation_type="RESOLVES_TO",
+                    explanation=f"Extended Tritone Sub (Altered): Alterierte Tritonussubstitution {curr_sym} (bII7) löst sich mit Antizipation der #11 in die Tonika {i_sym} auf.",
+                    framework="Extended Tritone Sub (Altered)",
+                    source_id="Pease (2003)"
+                ))
+            # IV is 5 semitones above tonic (iv7 Backdoor or IVdom7 Blues)
+            elif (curr_pc - key_pc) % 12 == 5:
+                if curr_chord.quality in ("m", "m7"):
+                    bvii_root = key_spelling.transpose_diatonic(step_delta=6, semitone_delta=10)
+                    bvii_sym = f"{bvii_root.render(self.convention)[:-1]}7"
+                    recommendations.append(ChordRecommendation(
+                        candidate_symbol=bvii_sym,
+                        relation_type="RESOLVES_TO",
+                        explanation=f"Classical Jazz Backdoor ii-V: Moll-Subdominante {curr_sym} (iv7) leitet zur Backdoor-Dominante {bvii_sym} (bVII7) über.",
+                        framework="Classical Jazz Backdoor ii-V",
+                        source_id="Levine (1995)"
+                    ))
+                elif curr_chord.quality in ("7", "dom7"):
+                    i_root = key_spelling
+                    i_sym = f"{i_root.render(self.convention)[:-1]}7"
+                    recommendations.append(ChordRecommendation(
+                        candidate_symbol=i_sym,
+                        relation_type="RESOLVES_TO",
+                        explanation=f"12-Bar Blues: Subdominante {curr_sym} (IVdom7) kehrt zur Tonika {i_sym} (Idom7) zurück.",
+                        framework="12-Bar Blues",
+                        source_id="Rawlins/Bahha (2005)"
+                    ))
             # bVII is 10 semitones above tonic (Backdoor resolution)
             elif (curr_pc - key_pc) % 12 == 10:
                 i_root = key_spelling
@@ -420,8 +492,18 @@ class ProgressionSession:
                     framework="Backdoor Progression",
                     source_id="Terefenko (2014)"
                 ))
-            # I is tonic (Secondary dominant lift to vi)
+            # I is tonic (Secondary dominant lift to vi or Blues shift to IV7)
             elif (curr_pc - key_pc) % 12 == 0:
+                if curr_chord.quality in ("7", "dom7"):
+                    iv_root = key_spelling.transpose_diatonic(step_delta=3, semitone_delta=5)
+                    iv_sym = f"{iv_root.render(self.convention)[:-1]}7"
+                    recommendations.append(ChordRecommendation(
+                        candidate_symbol=iv_sym,
+                        relation_type="RESOLVES_TO",
+                        explanation=f"12-Bar Blues: Tonika-Dominantseptakkord {curr_sym} (Idom7) wechselt zur Subdominante {iv_sym} (IVdom7).",
+                        framework="12-Bar Blues",
+                        source_id="Rawlins/Bahha (2005)"
+                    ))
                 v_vi_root = key_spelling.transpose_diatonic(step_delta=2, semitone_delta=4)
                 v_vi_sym = f"{v_vi_root.render(self.convention)[:-1]}7"
                 recommendations.append(ChordRecommendation(
