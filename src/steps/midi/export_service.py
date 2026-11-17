@@ -128,3 +128,86 @@ class MidiExportService:
             current_tick += chord_duration_ticks
 
         return midi_file.save(output_path)
+
+    @staticmethod
+    def export_progression_adr017(
+        chords: List[str | ChordDefinition],
+        output_path: Path | str,
+        bpm: float = 120.0,
+        ppq: int = 480,
+        chord_duration_quarters: float = 4.0,
+        time_signature: tuple[int, int] = (4, 4),
+        key_accidentals: Optional[int] = None,
+        is_minor_key: bool = False,
+        separate_bass_track: bool = True,
+        lead_gap_ticks: int = 10,
+        chords_velocity: int = 90,
+        bass_velocity: int = 100,
+        convention: str = "INT"
+    ) -> Path:
+        """
+        Exports a chord progression strictly conforming to ADR-017 (v0.1 MIDI Export Specification):
+        - SMF Type 1, 480 PPQ
+        - Track 0: Conductor (Tempo 0x51, Time Signature 0x58, Key Signature 0x59 if -7..+7)
+        - Track 1: 'Chords' (channel 0 = MIDI Kanal 1, CLOSE voicing 48..72, velocity 90)
+        - Track 2: 'Bass' (channel 1 = MIDI Kanal 2, bass octave 2 [36..47], velocity 100)
+        - Effective note length: duration_ticks minus lead_gap_ticks (default 10 ticks)
+        - No program change messages (0xC0)
+        """
+        midi_file = MidiFile(smf_format=1, division=ppq)
+
+        # Track 0: Conductor
+        conductor = midi_file.add_track(MidiTrack(name="Conductor"))
+        conductor.add_time_signature(0, time_signature[0], time_signature[1])
+        conductor.add_tempo(0, bpm)
+        if key_accidentals is not None and -7 <= key_accidentals <= 7:
+            conductor.add_key_signature(0, accidentals=key_accidentals, is_minor=is_minor_key)
+
+        # Track 1: Chords
+        chords_track = midi_file.add_track(MidiTrack(name="Chords"))
+
+        # Track 2: Bass (if separate_bass_track)
+        bass_track = midi_file.add_track(MidiTrack(name="Bass")) if separate_bass_track else None
+
+        current_tick = 0
+        chord_dur_ticks = int(round(chord_duration_quarters * ppq))
+        eff_dur_ticks = max(1, chord_dur_ticks - lead_gap_ticks)
+
+        for item in chords:
+            if isinstance(item, str):
+                chord_def = parse_chord(item, convention=convention)
+            else:
+                chord_def = item
+
+            # Chords: 4-part CLOSE voicing in range 48..72
+            voicing = chord_def.to_voicing(bass_octave=3, voicing_type="CLOSE")
+            for note in voicing.midi_notes:
+                p = note if note >= 48 else note + 12
+                chords_track.add_note(
+                    start_tick=current_tick,
+                    duration_ticks=eff_dur_ticks,
+                    pitch=p,
+                    velocity=chords_velocity,
+                    channel=0
+                )
+
+            # Bass: Grundton bzw. notierter Bass in MIDI 36..47 (C2..B2)
+            if bass_track is not None:
+                bass_spelling = chord_def.bass if chord_def.bass else chord_def.root
+                bass_pitch = int(bass_spelling.pitch_class) + 36
+                bass_track.add_note(
+                    start_tick=current_tick,
+                    duration_ticks=eff_dur_ticks,
+                    pitch=bass_pitch,
+                    velocity=bass_velocity,
+                    channel=1
+                )
+
+            current_tick += chord_dur_ticks
+
+        return midi_file.save(output_path)
+
+
+
+
+

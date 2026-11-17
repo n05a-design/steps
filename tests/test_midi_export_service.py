@@ -157,6 +157,62 @@ class TestSMFGenerationAndEnvelope(unittest.TestCase):
         self.assertEqual(env["format"], 1)
         self.assertEqual(env["tracks"], 2)
 
+    def test_export_progression_adr017(self):
+        out = MidiExportService.export_progression_adr017(
+            chords=["Dm7", "G7", "Cmaj7"],
+            output_path=self.midi_path,
+            bpm=120.0,
+            ppq=480,
+            chord_duration_quarters=4.0,
+            time_signature=(4, 4),
+            key_accidentals=0,
+            is_minor_key=False,
+            separate_bass_track=True,
+            lead_gap_ticks=10,
+            chords_velocity=90,
+            bass_velocity=100,
+            convention="INT"
+        )
+        self.assertTrue(out.exists())
+        data = out.read_bytes()
+        env = envelope(data)
+        self.assertEqual(env["format"], 1)
+        self.assertEqual(env["tracks"], 3)  # Conductor, Chords, Bass
+        self.assertEqual(env["division"], 480)
+
+        # Parse back
+        parsed = MidiFile.from_bytes(data)
+        self.assertEqual(len(parsed.tracks), 3)
+        self.assertEqual(parsed.tracks[0].name, "Conductor")
+        self.assertEqual(parsed.tracks[1].name, "Chords")
+        self.assertEqual(parsed.tracks[2].name, "Bass")
+
+        # Verify key signature meta event in conductor track
+        has_key_sig = any(e.msg_bytes.startswith(b"\xFF\x59") for e in parsed.tracks[0].raw_events)
+        self.assertTrue(has_key_sig)
+
+        # Verify chords track note-on events have velocity 90 and note-offs are at eff_dur
+        chord_note_ons = [e for e in parsed.tracks[1].raw_events if (e.msg_bytes[0] & 0xF0) == 0x90]
+        chord_note_offs = [e for e in parsed.tracks[1].raw_events if (e.msg_bytes[0] & 0xF0) == 0x80]
+        self.assertGreater(len(chord_note_ons), 0)
+        self.assertEqual(len(chord_note_ons), len(chord_note_offs))
+        for on, off in zip(chord_note_ons, chord_note_offs):
+            self.assertEqual(on.msg_bytes[2], 90)  # velocity
+            self.assertEqual(on.msg_bytes[0] & 0x0F, 0)  # channel 0 (MIDI 1)
+            self.assertTrue(48 <= on.msg_bytes[1] <= 72)  # pitch
+            self.assertEqual(off.abs_tick - on.abs_tick, 1910)  # 1920 - 10 ticks
+
+        # Verify bass track notes have velocity 100 and channel 1 (MIDI 2), pitch in octave 2 (36..47)
+        bass_note_ons = [e for e in parsed.tracks[2].raw_events if (e.msg_bytes[0] & 0xF0) == 0x90]
+        bass_note_offs = [e for e in parsed.tracks[2].raw_events if (e.msg_bytes[0] & 0xF0) == 0x80]
+        self.assertEqual(len(bass_note_ons), 3)
+        self.assertEqual(len(bass_note_offs), 3)
+        for on, off in zip(bass_note_ons, bass_note_offs):
+            self.assertEqual(on.msg_bytes[2], 100)  # velocity
+            self.assertEqual(on.msg_bytes[0] & 0x0F, 1)  # channel 1 (MIDI 2)
+            self.assertTrue(36 <= on.msg_bytes[1] <= 47)  # bass octave 2
+            self.assertEqual(off.abs_tick - on.abs_tick, 1910)
+
 
 if __name__ == "__main__":
     unittest.main()
