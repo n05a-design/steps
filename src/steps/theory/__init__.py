@@ -58,6 +58,13 @@ from .scale import (
     construct_scale,
     parse_scale
 )
+from .inversion import (
+    ChordInversion,
+    FiguredBassSymbol,
+    InversionAnalysis,
+    detect_chord_inversion,
+    detect_hand_voicing
+)
 
 __all__ = [
     'MusicTheoryError',
@@ -102,6 +109,11 @@ __all__ = [
     'SCALE_TEMPLATES',
     'get_scale_template',
     'construct_scale',
-    'parse_scale'
+    'parse_scale',
+    'ChordInversion',
+    'FiguredBassSymbol',
+    'InversionAnalysis',
+    'detect_chord_inversion',
+    'detect_hand_voicing'
 ]
 
