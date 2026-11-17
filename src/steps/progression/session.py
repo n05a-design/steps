@@ -343,6 +343,33 @@ class ProgressionSession:
                     framework="Andalusian Cadence / Phrygian Schema",
                     source_id="Gauldin (2004)"
                 ))
+            # Minor Line Cliché (tonic minor root)
+            elif (curr_pc - key_pc) % 12 == 0:
+                root_prefix = curr_chord.root.render(self.convention)[:-1]
+                if curr_chord.quality == "m":
+                    recommendations.append(ChordRecommendation(
+                        candidate_symbol=f"{root_prefix}m(maj7)",
+                        relation_type="VOICE_LEADING_NEAR",
+                        explanation=f"Minor Line Cliché: Chromatische Innenstimme 8 -> 7 ({curr_sym} -> {root_prefix}m(maj7)).",
+                        framework="Minor Line Cliché",
+                        source_id="Levine (1995)"
+                    ))
+                elif curr_chord.quality in ("m(maj7)", "mmaj7"):
+                    recommendations.append(ChordRecommendation(
+                        candidate_symbol=f"{root_prefix}m7",
+                        relation_type="VOICE_LEADING_NEAR",
+                        explanation=f"Minor Line Cliché: Chromatische Innenstimme 7 -> b7 ({curr_sym} -> {root_prefix}m7).",
+                        framework="Minor Line Cliché",
+                        source_id="Levine (1995)"
+                    ))
+                elif curr_chord.quality == "m7":
+                    recommendations.append(ChordRecommendation(
+                        candidate_symbol=f"{root_prefix}m6",
+                        relation_type="VOICE_LEADING_NEAR",
+                        explanation=f"Minor Line Cliché: Chromatische Innenstimme b7 -> 6 ({curr_sym} -> {root_prefix}m6).",
+                        framework="Minor Line Cliché",
+                        source_id="Levine (1995)"
+                    ))
 
         # 6. 50s Doo-Wop Turnaround Steps
         if not self.is_minor:
@@ -403,6 +430,17 @@ class ProgressionSession:
                     explanation=f"Zwischendominante: {v_vi_sym} (V7/vi) bereitet leittönig die Tonikaparallele vi vor.",
                     framework="Zwischendominanten",
                     source_id="Kostka/Payne (2013)"
+                ))
+            # iii is 4 semitones above tonic (Royal Road mediant -> submediant)
+            elif (curr_pc - key_pc) % 12 == 4:
+                vi_root = key_spelling.transpose_diatonic(step_delta=5, semitone_delta=9)
+                vi_sym = f"{vi_root.render(self.convention)[:-1]}m"
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=vi_sym,
+                    relation_type="RESOLVES_TO",
+                    explanation=f"Royal Road (Ōdō shinkō): Quintfall von mediantischem {curr_sym} (iii) in die Tonikaparallele {vi_sym} (vi).",
+                    framework="Royal Road (Ōdō shinkō)",
+                    source_id="Jaffe (1996)"
                 ))
 
         return recommendations
