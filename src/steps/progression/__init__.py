@@ -14,11 +14,13 @@ from .voice_leading import (
 from .engine import (
     CanonicalProgression,
     CANONICAL_PROGRESSIONS,
+    ARCHETYPE_THEORY_METADATA,
     get_progression,
     list_progressions,
     resolve_roman_degree,
     generate_progression_voicings,
-    analyze_progression_voice_leading
+    analyze_progression_voice_leading,
+    detect_progression_archetypes
 )
 from .session import (
     ProgressionSession,
@@ -37,11 +39,13 @@ __all__ = [
     'optimize_smooth_voice_leading',
     'CanonicalProgression',
     'CANONICAL_PROGRESSIONS',
+    'ARCHETYPE_THEORY_METADATA',
     'get_progression',
     'list_progressions',
     'resolve_roman_degree',
     'generate_progression_voicings',
     'analyze_progression_voice_leading',
+    'detect_progression_archetypes',
     'ProgressionSession',
     'ChordRecommendation',
     'DegreeAnalysis'
