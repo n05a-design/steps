@@ -245,7 +245,7 @@ def _parse_track_events(track: MidiTrack, data: bytes) -> None:
             meta_type = data[pos]
             pos += 1
             meta_len, consumed = decode_vlq(data, pos)
-            pos += 1
+            pos += consumed
             meta_data = data[pos:pos + meta_len]
             pos += meta_len
 
