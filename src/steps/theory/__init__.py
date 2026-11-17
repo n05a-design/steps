@@ -10,7 +10,8 @@ from .exceptions import (
     InvalidIntervalError,
     ChordConstructionError,
     VoiceLeadingError,
-    ProgressionParsingError
+    ProgressionParsingError,
+    ScaleConstructionError
 )
 from .pitch import (
     PitchClass,
@@ -48,6 +49,15 @@ from .chord import (
     parse_chord,
     CHORD_TEMPLATES
 )
+from .scale import (
+    ModeCategory,
+    ScaleTemplate,
+    ScaleDefinition,
+    SCALE_TEMPLATES,
+    get_scale_template,
+    construct_scale,
+    parse_scale
+)
 
 __all__ = [
     'MusicTheoryError',
@@ -59,6 +69,7 @@ __all__ = [
     'ChordConstructionError',
     'VoiceLeadingError',
     'ProgressionParsingError',
+    'ScaleConstructionError',
     'PitchClass',
     'NoteSpelling',
     'midi_to_pitch_class',
@@ -84,6 +95,13 @@ __all__ = [
     'ChordDefinition',
     'Voicing',
     'parse_chord',
-    'CHORD_TEMPLATES'
+    'CHORD_TEMPLATES',
+    'ModeCategory',
+    'ScaleTemplate',
+    'ScaleDefinition',
+    'SCALE_TEMPLATES',
+    'get_scale_template',
+    'construct_scale',
+    'parse_scale'
 ]
 

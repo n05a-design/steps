@@ -19,6 +19,7 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`ChordConstructionError`](../../src/steps/theory/exceptions.py) | Ausnahmetyp |
 | [`VoiceLeadingError`](../../src/steps/theory/exceptions.py) | Ausnahmetyp |
 | [`ProgressionParsingError`](../../src/steps/theory/exceptions.py) | Ausnahmetyp |
+| [`ScaleConstructionError`](../../src/steps/theory/exceptions.py) | Ausnahmetyp |
 | [`PitchClass`](../../src/steps/theory/pitch.py) | `(val: 'int')` |
 | [`NoteSpelling`](../../src/steps/theory/pitch.py) | `(step: "Literal['C', 'D', 'E', 'F', 'G', 'A', 'B']", alteration: 'int' = 0, octave: 'int' = 4) -> None` |
 | [`midi_to_pitch_class`](../../src/steps/theory/pitch.py) | `(midi_note: 'int') -> 'PitchClass'` |
@@ -45,6 +46,13 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`Voicing`](../../src/steps/theory/chord.py) | `(notes: 'tuple[int, ...]', voicing_type: "Literal['CLOSE', 'DROP2', 'SHELL', 'ROOTLESS', 'OPEN', 'CUSTOM']" = 'CLOSE', bass_override: 'Optional[int]' = None) -> None` |
 | [`parse_chord`](../../src/steps/theory/chord.py) | `(symbol: 'str', convention: "Literal['INT', 'DE', 'AUTO']" = 'AUTO') -> 'ChordDefinition'` |
 | [`CHORD_TEMPLATES`](../../src/steps/theory/__init__.py) | Datenwert |
+| [`ModeCategory`](../../src/steps/theory/scale.py) | `DIATONIC_MAJOR`, `DIATONIC_MINOR`, `MELODIC_MINOR`, `HARMONIC_MINOR`, `PENTATONIC`, `BLUES`, `SYMMETRIC` |
+| [`ScaleTemplate`](../../src/steps/theory/scale.py) | `(name: 'str', aliases: 'tuple[str, ...]', intervals: 'tuple[int, ...]', category: 'ModeCategory', characteristic_intervals: 'tuple[int, ...]', avoid_notes: 'tuple[int, ...]', triad_qualities: 'tuple[str, ...]', seventh_qualities: 'tuple[str, ...]') -> None` |
+| [`ScaleDefinition`](../../src/steps/theory/scale.py) | `(root: 'NoteSpelling', template: 'ScaleTemplate', spellings: 'tuple[NoteSpelling, ...]') -> None` |
+| [`SCALE_TEMPLATES`](../../src/steps/theory/__init__.py) | Datenwert |
+| [`get_scale_template`](../../src/steps/theory/scale.py) | `(name_or_alias: 'str') -> 'Optional[ScaleTemplate]'` |
+| [`construct_scale`](../../src/steps/theory/scale.py) | `(root: 'NoteSpelling', template_or_name: 'ScaleTemplate \| str') -> 'ScaleDefinition'` |
+| [`parse_scale`](../../src/steps/theory/scale.py) | `(text: 'str', convention: "Literal['INT', 'DE', 'AUTO']" = 'AUTO') -> 'ScaleDefinition'` |
 
 ## `src.steps.progression`
 
@@ -65,6 +73,9 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`resolve_roman_degree`](../../src/steps/progression/engine.py) | `(degree_str: 'str', key_root: 'str \| NoteSpelling' = 'C', is_minor_key: 'bool' = False, *, convention: "Literal['INT', 'DE', 'AUTO']" = 'AUTO', minor_accidentals: "Literal['major_reference', 'natural_minor']" = 'major_reference') -> 'ChordDefinition'` |
 | [`generate_progression_voicings`](../../src/steps/progression/engine.py) | `(chords: 'list[ChordDefinition] \| CanonicalProgression', style: 'VoiceLeadingStyle' = <VoiceLeadingStyle.JAZZ_POP: 'JAZZ_POP'>, initial_voicing_type: "Literal['CLOSE', 'DROP2', 'SHELL', 'ROOTLESS']" = 'CLOSE', bass_octave: 'int' = 3) -> 'list[Voicing]'` |
 | [`analyze_progression_voice_leading`](../../src/steps/progression/engine.py) | `(voicings: 'list[Voicing]', style: 'VoiceLeadingStyle' = <VoiceLeadingStyle.JAZZ_POP: 'JAZZ_POP'>) -> 'Dict[str, Any]'` |
+| [`ProgressionSession`](../../src/steps/progression/session.py) | `(initial_chords: 'Optional[List[str]]' = None, key_root: 'str' = 'C', is_minor: 'bool' = False, convention: "Literal['INT', 'DE']" = 'INT', bpm: 'float' = 120.0)` |
+| [`ChordRecommendation`](../../src/steps/progression/session.py) | `(candidate_symbol: 'str', relation_type: "Literal['DOMINANT_OF', 'RESOLVES_TO', 'BORROWED_FROM', 'VOICE_LEADING_NEAR', 'SUBSTITUTES_FOR']", explanation: 'str', framework: 'str', source_id: 'str') -> None` |
+| [`DegreeAnalysis`](../../src/steps/progression/session.py) | `(index: 'int', symbol: 'str', roman_numeral: 'str', semitone_distance_to_next: 'Optional[int]' = None, voice_leading_warnings: 'tuple[str, ...]' = ()) -> None` |
 
 ## `app.knowledge`
 
@@ -140,12 +151,37 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 - `transpose(self, semitones: 'int') -> 'Voicing'`
 - `invert(self, inversion: 'int') -> 'Voicing'`
 
+### [ScaleTemplate](../../src/steps/theory/scale.py)
+
+`ScaleTemplate(name: 'str', aliases: 'tuple[str, ...]', intervals: 'tuple[int, ...]', category: 'ModeCategory', characteristic_intervals: 'tuple[int, ...]', avoid_notes: 'tuple[int, ...]', triad_qualities: 'tuple[str, ...]', seventh_qualities: 'tuple[str, ...]') -> None`
+
+### [ScaleDefinition](../../src/steps/theory/scale.py)
+
+`ScaleDefinition(root: 'NoteSpelling', template: 'ScaleTemplate', spellings: 'tuple[NoteSpelling, ...]') -> None`
+
+- `name` (Eigenschaft)
+- `intervals` (Eigenschaft)
+- `pitch_classes` (Eigenschaft)
+- `midi_notes` (Eigenschaft)
+- `get_degree(self, degree: 'int') -> 'NoteSpelling'`
+- `get_diatonic_triad(self, degree: 'int') -> 'ChordDefinition'`
+- `get_diatonic_seventh(self, degree: 'int') -> 'ChordDefinition'`
+- `render_text(self, convention: "Literal['INT', 'DE']" = 'INT', unicode_accidental: 'bool' = False) -> 'list[str]'`
+
 ### [CanonicalProgression](../../src/steps/progression/engine.py)
 
 `CanonicalProgression(prog_id: 'str', name: 'str', roman_numerals: 'str', default_key: 'str', chords_str: 'str', context: 'str', sources: 'str') -> None`
 
 - `chord_definitions` (Eigenschaft)
 - `transpose(self, semitones: 'int') -> 'list[ChordDefinition]'`
+
+### [ChordRecommendation](../../src/steps/progression/session.py)
+
+`ChordRecommendation(candidate_symbol: 'str', relation_type: "Literal['DOMINANT_OF', 'RESOLVES_TO', 'BORROWED_FROM', 'VOICE_LEADING_NEAR', 'SUBSTITUTES_FOR']", explanation: 'str', framework: 'str', source_id: 'str') -> None`
+
+### [DegreeAnalysis](../../src/steps/progression/session.py)
+
+`DegreeAnalysis(index: 'int', symbol: 'str', roman_numeral: 'str', semitone_distance_to_next: 'Optional[int]' = None, voice_leading_warnings: 'tuple[str, ...]' = ()) -> None`
 
 ## Akkordqualitäten
 

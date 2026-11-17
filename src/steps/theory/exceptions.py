@@ -50,3 +50,8 @@ class VoiceLeadingError(MusicTheoryError):
 class ProgressionParsingError(MusicTheoryError):
     """Raised when a Roman numeral degree or progression string cannot be parsed."""
     pass
+
+
+class ScaleConstructionError(MusicTheoryError):
+    """Raised when scale construction parameters are invalid, contradictory, or unresolvable."""
+    pass
