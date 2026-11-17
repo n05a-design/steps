@@ -1,23 +1,22 @@
 {
   "manifest_version": "1.0.0",
-  "timestamp_utc": "2026-11-17T11:40:27.570669+00:00",
+  "timestamp_utc": "2026-11-17T13:32:46.206291+00:00",
   "task_reference": "P0.1 / Prompt 27 / OA-0001",
   "git_branch": "autonomous_backlog_execution",
   "audit_scope": {
-    "total_public_assets_audited": 260,
-    "total_bytes_audited": 259772878,
+    "total_public_assets_audited": 213,
+    "total_bytes_audited": 47817367,
     "assets_by_extension": {
       "png": 43,
       "ico": 1,
       "svg": 38,
-      "pdf": 47,
       "html": 17,
       "mp3": 2,
       "mid": 112
     },
     "assets_by_status": {
-      "approved": 79,
-      "review_required": 181
+      "approved": 71,
+      "review_required": 142
     },
     "license_findings_count": 10
   },
