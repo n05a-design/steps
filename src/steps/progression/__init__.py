@@ -2,9 +2,12 @@
 from __future__ import annotations
 
 from .voice_leading import (
+    ContrapuntalMotion,
     VoiceLeadingStyle,
     absolute_semitone_distance,
+    analyze_contrapuntal_motions,
     circular_pc_distance,
+    classify_voice_motion,
     detect_voice_crossing,
     detect_voice_overlap,
     detect_parallel_fifths_octaves,
@@ -29,9 +32,12 @@ from .session import (
 )
 
 __all__ = [
+    'ContrapuntalMotion',
     'VoiceLeadingStyle',
     'absolute_semitone_distance',
+    'analyze_contrapuntal_motions',
     'circular_pc_distance',
+    'classify_voice_motion',
     'detect_voice_crossing',
     'detect_voice_overlap',
     'detect_parallel_fifths_octaves',
