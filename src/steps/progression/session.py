@@ -362,7 +362,7 @@ class ProgressionSession:
                     framework="Minor Jazz Blues Submediant Turnaround",
                     source_id="Levine (1995)"
                 ))
-            # Minor Dominant Resolution (V7(#11) -> i7)
+            # Minor Dominant Resolution (V7(#11) -> i7 or Afro-Cuban Rebound -> iv)
             elif (curr_pc - key_pc) % 12 == 7:
                 i_root = key_spelling
                 i_sym = f"{i_root.render(self.convention)[:-1]}m7"
@@ -372,6 +372,42 @@ class ProgressionSession:
                     explanation=f"Minor Jazz Blues: Alterierte Dominante {curr_sym} löst sich in die Tonika {i_sym} (i7) auf.",
                     framework="Minor Jazz Blues Submediant Turnaround",
                     source_id="Terefenko (2014)"
+                ))
+                iv_root = key_spelling.transpose_diatonic(step_delta=3, semitone_delta=5)
+                iv_sym = f"{iv_root.render(self.convention)[:-1]}m"
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=iv_sym,
+                    relation_type="RESOLVES_TO",
+                    explanation=f"Afro-Cuban Montuno Vamp: Rebound von Dominante {curr_sym} (V7) über die Subdominante {iv_sym} (iv).",
+                    framework="Afro-Cuban Ostinato Vamp",
+                    source_id="Mauleón (1993)"
+                ))
+            # Subtonic in Minor (bVII -> I Picardy Third, i Liquid D&B, or IIImaj9 Soul Circle)
+            elif (curr_pc - key_pc) % 12 == 10:
+                i_major_sym = f"{key_spelling.render(self.convention)[:-1]}"
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=i_major_sym,
+                    relation_type="RESOLVES_TO",
+                    explanation=f"Picardy Third (Tierce de Picardie): Unerwartete modale Aufhellung von Moll nach Dur ({curr_sym} -> {i_major_sym}).",
+                    framework="Picardy Third Resolution",
+                    source_id="Aldwell/Schachter (1989)"
+                ))
+                i_minor_sym = f"{key_spelling.render(self.convention)[:-1]}m"
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=i_minor_sym,
+                    relation_type="RESOLVES_TO",
+                    explanation=f"Liquid D&B Sub-Pulse Cadence: Modaler Ganzton-Schluss {curr_sym} (bVII) in die Moll-Tonika {i_minor_sym}.",
+                    framework="Liquid D&B Sub-Pulse Cadence",
+                    source_id="Butterfield (2010)"
+                ))
+                iii_root = key_spelling.transpose_diatonic(step_delta=2, semitone_delta=3)
+                iii_sym = f"{iii_root.render(self.convention)[:-1]}maj9"
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=iii_sym,
+                    relation_type="RESOLVES_TO",
+                    explanation=f"Soul Circle of Fifths: Quintfall {curr_sym} (bVII) in die Dur-Parallele {iii_sym} (IIImaj9).",
+                    framework="Soul Circle of Fifths",
+                    source_id="Mulholland (2013)"
                 ))
             # Minor Line Cliché (tonic minor root)
             elif (curr_pc - key_pc) % 12 == 0:
@@ -428,8 +464,18 @@ class ProgressionSession:
                     framework="Stufentheorie / Functional Harmony",
                     source_id="Kostka/Payne (2013)"
                 ))
-            # ii is 2 semitones above tonic (Tritone substitution candidate)
+            # ii is 2 semitones above tonic (Tritone substitution candidate or Bossa Nova V7/V)
             elif (curr_pc - key_pc) % 12 == 2:
+                if curr_chord.quality in ("7", "dom7"):
+                    ii_root = key_spelling.transpose_diatonic(step_delta=1, semitone_delta=2)
+                    ii_sym = f"{ii_root.render(self.convention)[:-1]}m7"
+                    recommendations.append(ChordRecommendation(
+                        candidate_symbol=ii_sym,
+                        relation_type="VOICE_LEADING_NEAR",
+                        explanation=f"Bossa Nova Stimmführung: Terzabsenkung von {curr_sym} (V7/V) in die Moll-Subdominantparallele {ii_sym} (ii7).",
+                        framework="Bossa Nova Applied Dominant",
+                        source_id="Mauleón (1993)"
+                    ))
                 bii_root = key_spelling.transpose_diatonic(step_delta=1, semitone_delta=1)
                 bii_sym = f"{bii_root.render(self.convention)[:-1]}7"
                 recommendations.append(ChordRecommendation(
@@ -512,6 +558,15 @@ class ProgressionSession:
                     explanation=f"Zwischendominante: {v_vi_sym} (V7/vi) bereitet leittönig die Tonikaparallele vi vor.",
                     framework="Zwischendominanten",
                     source_id="Kostka/Payne (2013)"
+                ))
+                v_v_root = key_spelling.transpose_diatonic(step_delta=1, semitone_delta=2)
+                v_v_sym = f"{v_v_root.render(self.convention)[:-1]}7"
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol=v_v_sym,
+                    relation_type="DOMINANT_OF",
+                    explanation=f"Bossa Nova Doppeldominante: {v_v_sym} (V7/V) bereitet als Zwischendominante die Subdominantparallele ii vor.",
+                    framework="Bossa Nova Applied Dominant",
+                    source_id="Mauleón (1993)"
                 ))
             # iii is 4 semitones above tonic (Royal Road mediant -> submediant)
             elif (curr_pc - key_pc) % 12 == 4:
