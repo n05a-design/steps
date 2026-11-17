@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/n05a-design/steps/blob/main/schemas/drum_pattern.schema.json",
+  "title": "STEPS Drum Pattern Schema v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "pattern_id",
+    "name",
+    "meter",
+    "step_count",
+    "step_resolution_ticks",
+    "tracks"
+  ],
+  "properties": {
+    "pattern_id": {
+      "type": "string",
+      "pattern": "^PAT-\\d{3}$|^[a-zA-Z0-9_-]+$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "meter": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": { "type": "integer", "minimum": 1, "maximum": 32 },
+        "denominator": { "type": "integer", "enum": [1, 2, 4, 8, 16, 32] }
+      }
+    },
+    "step_count": {
+      "type": "integer",
+      "enum": [8, 16, 24, 32, 64]
+    },
+    "step_resolution_ticks": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "swing_amount": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "humanize_ticks": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 120
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pad_id", "name", "midi_pitch", "steps"],
+        "properties": {
+          "pad_id": { "type": "string" },
+          "name": { "type": "string" },
+          "midi_pitch": { "type": "integer", "minimum": 0, "maximum": 127 },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["step_index", "active"],
+              "properties": {
+                "step_index": { "type": "integer", "minimum": 0 },
+                "active": { "type": "boolean" },
+                "velocity": { "type": "integer", "minimum": 0, "maximum": 127 },
+                "probability": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+                "microtiming_offset": { "type": "integer", "minimum": -120, "maximum": 120 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
