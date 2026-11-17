@@ -11,17 +11,22 @@ Die historische Entscheidungsüberlieferung von Glide D01–D77 bleibt im origin
 
 | ID | Status | Entscheidungsthema | Empfohlene Richtung, ohne Ownerfreigabe |
 |---|---|---|---|
-| ADR-001 | proposed | Zwei Fenster | ein Root, zwei Panes; separater Modal-/Inspector nur bei Bedarf (OA-0003) |
-| ADR-002 | proposed | Vision und MVP Chords/Drums | Chords zuerst im testbaren Kern; Drums explizit nachfolgenden Meilenstein v0.2+ (OA-0004, OA-0012) |
-| ADR-003 | proposed | Glide-Code-Quelle | lokaler 3.53.0-Stand nur nach vollständigem Commit/Backup und QA (OA-0007) |
-| ADR-004 | proposed | License/Brand | MPL für eigene kompatible Dateien; Fremdassets einzeln prüfen, eigenes Steps-Logo |
+| ADR-001 | accepted | Zwei Fenster | ein Root, zwei Panes; separater Modal-/Inspector nur bei Bedarf (OA-0003). **Angenommen 17.11.2026:** [ADR-001](ADR-001-ein-fenster-zwei-bereiche.md) |
+| ADR-002 | superseded | Vision und MVP Chords/Drums | Chords zuerst im testbaren Kern; Drums explizit nachfolgenden Meilenstein v0.2+ (OA-0004, OA-0012) **Ersetzt durch [ADR-013](ADR-013-v01-umfang-akkorde-und-midi-export.md) (accepted, 17.11.2026).** |
+| ADR-003 | accepted | Glide-Code-Quelle | lokaler 3.53.0-Stand nur nach vollständigem Commit/Backup und QA (OA-0007). **Angenommen 17.11.2026:** nur UI-Shell und Infrastruktur mit Herkunftsnachweis je Datei, [ADR-003](ADR-003-glide-nur-shell-und-infrastruktur.md) |
+| ADR-004 | accepted | License/Brand | MPL für eigene kompatible Dateien; Fremdassets einzeln prüfen, eigenes Steps-Logo. **Angenommen 17.11.2026:** Code MPL-2.0, eigene Wissensdaten CC BY 4.0, Fremdinhalte laut Rechteinventar, [ADR-004](ADR-004-lizenz-und-marke.md) |
 | ADR-005 | proposed | Fachmodell | Pitch-Class vs Spelling, deutsches H/B vs int. B/Bb, Enharmonik als eigenständige Objekte (OA-0005) |
-| ADR-006 | proposed | Datenhaltung | JSON + Schema + atomarer Writer für MVP; DB erst nach gemessenem Bedarf |
-| ADR-007 | accepted | Audio/MIDI | Ports zuerst, Backend nach Plattform-/Lizenzbenchmark (OA-0028, OA-0029) |
+| ADR-006 | accepted | Datenhaltung | JSON + Schema + atomarer Writer für MVP; DB erst nach gemessenem Bedarf. **Angenommen 17.11.2026:** `schema_version` als ganze Zahl, [ADR-006](ADR-006-json-mit-schema-version.md) |
+| ADR-007 | accepted | Audio/MIDI | Ports zuerst, Backend nach Plattform-/Lizenzbenchmark (OA-0028, OA-0029). **Angenommen 17.11.2026:** v0.1 nur Dateiexport, [ADR-007](ADR-007-audio-nur-dateiexport-v01.md) |
 | ADR-008 | proposed | KI-Skill | Router + indexierte Originalreferenzen + Claim-Registry, keine Volltext-Promptkopie (OA-0011) |
 | ADR-009 | proposed | Historische 21/39-Verzeichnisse | zunächst beibehalten, Alias-/Mergeentscheidung nach Inhaltsaudit |
 | ADR-010 | proposed | Public-Repository-Medien | sofort Rechts-/History-Audit, keine neuen Fremd-Bytes pushen (OA-0001) |
 | ADR-011 | proposed | Release-Packaging- und Auslieferungsmodell | Hybride Distribution: reiner Theoriekern auf PyPI, Desktop-App via PyInstaller Bundle |
 | ADR-012 | proposed | Aufbewahrungs- und Bereinigungsrichtlinie Web/MIDI | Strukturierte Isolierung historischer Drittanbieter-Scrapes (Option A/B/C Vorlage) |
+| ADR-013 | accepted | [Umfang v0.1 und Zielgruppe](ADR-013-v01-umfang-akkorde-und-midi-export.md) | Akkorde + MIDI-Export (M2), Drums in v2; Produzierende, die beim Produzieren lernen (17.11.2026, Inhaber) |
+| ADR-014 | accepted | [Widersprüchliche Musiktheorien](ADR-014-theorie-perspektiven-und-kontext.md) | Schichtenmodell: invariante Kernschicht, Deutungskanten mit `paradigm`/`source`, `StyleContext` zur Laufzeit (17.11.2026, Inhaber) |
+| ADR-015 | accepted | [Kernverträge](ADR-015-kernvertraege-intervalle-voicing-notation.md) | Unreduzierte Intervalle, add2 als Alias von add9, Reduktion vor DROP2, deutsche Namen mit dokumentweiter Locale (17.11.2026, Inhaber; Umsetzung offen) |
+| ADR-016 | accepted | [`V7alt`](ADR-016-v7alt-alterierte-dominante.md) | Tonvorrat der alterierten Skala, Voicing als ausdrückliche Auswahl (17.11.2026, Inhaber; Umsetzung offen) |
+| ADR-017 | accepted | [MIDI-Export](ADR-017-midi-export-v01.md) | SMF Typ 1, Spuren Meta/Chords/Bass, Dauer minus 10 Ticks, enge Lage 48–72, Bass 36–47, Velocity 90/100, kein Program Change (17.11.2026, Inhaber; Umsetzung offen) |
 
 **Abgleich:** `source_archive/Steps_Projekt_Overview_konsolidiert_2026-11-09.md` für ältere W- und G-Register sowie aktuelle `docs/project/CONFLICTS_AND_GAPS.md` für Delta-Befunde. Eine Entscheidung löst einen Konflikt erst nach `accepted` samt nachprüfbarem Ownerhinweis und aktualisierten Verweisen auf.

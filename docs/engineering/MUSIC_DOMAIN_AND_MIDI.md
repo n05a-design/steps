@@ -81,6 +81,8 @@ Ein gemeinsames Zeitmodell ist eine *technische Vorarbeit*, keine Festlegung, da
 
 ## 5. MIDI- und Audio-Engineering-Grenze
 
+> **Produktvorgaben für v0.1 (17.11.2026):** [ADR-017](../../decisions/ADR-017-midi-export-v01.md) legt Format, Spuren, Notenlänge, Lage, Velocity und Metadaten des Exports fest; [ADR-007](../../decisions/ADR-007-audio-nur-dateiexport-v01.md) beschränkt v0.1 auf den Dateiexport.
+
 Die MIDI Association stellt SMF-Spezifikation und ergänzende RP bereit: https://midi.org/standard-midi-files . Bei Mido bedeutet `message.time` in **MIDI-Tracks** eine nonnegative Delta-Zeit in Ticks, nicht zwingend absolute Zeit/Sekunden; der Tempo-Meta-Event benutzt µs/Viertelnote (vgl. https://github.com/mido/mido/blob/main/docs/messages/index.rst und https://github.com/mido/mido/blob/main/docs/meta_message_types.rst ). `music21` ist ein Referenzoracle/Adapterkandidat, kein nachgewiesen integrierter Engine-Kern: https://music21.org/music21docs/moduleReference/moduleChord.html .
 
 ### Abnahmeplan MIDI-Datei (künstliche Testdaten)

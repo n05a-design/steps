@@ -1,10 +1,12 @@
 # STEPS – Ganzheitliche kontextbasierte Master-Übergabe für den nächsten KI-Agenten
 
-- **Stand:** 16.11.2026 (Europe/Berlin)
+- **Stand:** 17.11.2026 (Europe/Berlin), Fortschreibung der Fassung vom 16.11.2026. Der Dateiname bleibt für stabile Verweise unverändert.
 - **Projekt:** STEPS (Desktop-Musik-App für Harmonielehre, Voicings, Progressionen und Rhythmus)
 - **Remote-Repository:** `https://github.com/n05a-design/steps`
-- **Geprüfter Ausgangsstand (`origin/main`):** Commit `93e8b5c` (nach Merge von PR #107)
-- **Status:** Konsolidierter Master-Übergabestand nach PR #88–#107. Alle Tests und CI-Gates grün.
+- **Geprüfter Ausgangsstand (`origin/main`):** Commit `1682d35` (nach Merge von PR #115). Diese Fortschreibung kommt mit dem Branch `claude/v01-spezifikation-und-graph-review-v2` (v0.1-Spezifikation, Graph-Abnahme v2). Frühere Fassungen bezogen sich auf `d717cec` (PR #110) und `93e8b5c` (PR #107).
+- **Status:** Konsolidierter Stand nach PR #88–#115 plus diesem Branch. Richtung für v0.1, Lizenz, Fenster, Speicherformat und MIDI-Export sind vom Inhaber entschieden (Abschnitt 3.9). Alle 97 Graphkanten und alle 15 Punkte des Abnahmebogens sind vom Inhaber bewertet; eine unabhängige Fachabnahme steht aus. Der nächste Code-Schritt ist der SMF-Writer nach [ADR-017](../../decisions/ADR-017-midi-export-v01.md) (Abschnitt 5).
+
+**Schnelleinstieg für einen neuen Agenten:** 1. `AGENTS.md` lesen. 2. Abschnitt 2 (Arbeitsregeln) und 5 (Fahrplan) dieser Datei lesen. 3. Entscheidungen im [Register](../../decisions/DECISION_REGISTER.md) und in `decisions/ADR-0*.md`. 4. Offene Punkte in [`OPEN_GAPS.md`](../../research/gaps/OPEN_GAPS.md) (Tabelle „Restprüfung nach dem Fable-Audit“, neueste Zeilen unten). 5. Vor jeder Änderung die Gates aus Abschnitt 4 laufen lassen.
 
 ---
 
@@ -17,7 +19,7 @@ Es existieren drei strikt getrennte Projektachsen, die niemals miteinander verme
 1. **Produktachse (App-Code, Phase 5 MVP v0.1):**
    - `src/steps/`: Reiner, vollkommen UI-unabhängiger Python-Kern für Harmonielehre, Notenlogik, Enharmonik, Voicings und Takt/PPQ-Modelle.
    - `app/`: Ausschließlich Desktop-Start, Tkinter-UI-Shell (abgeleitet aus der bewährten Systemarchitektur von `glide-to-do`, jedoch ohne Todo-Fachlogik), Widgets und Controller.
-   - *Wichtig (Rule 3 in `AGENTS.md`):* Die Versionsbezeichnung `V6.6 / V6.7` bezieht sich ausschließlich auf die historische Ableton-Blog-Forschungsbibliothek, **nicht** auf die App-Version! Die App-Version ist `0.0.0-dev`.
+   - *Wichtig (Rule 3 in `AGENTS.md`):* Die Versionsbezeichnung `V6.6 / V6.7` bezieht sich ausschließlich auf die historische Ableton-Blog-Forschungsbibliothek, **nicht** auf die App-Version! Die Paketversion des Kerns steht in [`src/steps/__init__.py`](../../src/steps/__init__.py) und lautet `0.0.0.dev0` (PEP 440); ein installierbares Build-System ist laut `pyproject.toml` noch nicht verifiziert.
 2. **Forschungsachse (`knowledge/`, `research/`):**
    - Strukturierte Daten, Schemata, kanonische Progressions- und Rhythmikkataloge (`PROG-001..028`, `PAT-001..031`, `P01..P19`), Wissensgraphen und musikwissenschaftliche Belege mit strikter Provenienz.
 3. **Archivachse (`archive/`, `source_archive/`):**
@@ -40,26 +42,31 @@ Für alle Agenten (Codex, Claude, Gemini, Antigravity, ChatGPT) gelten ausnahmsl
 5. **Datenherkunft und Urheberrecht:** Keine Volltexte oder Seitenbilder urheberrechtlich geschützter Werke (Rechteklasse E) ins Git committen. Klasse E verbleibt als `restricted_local` ausschließlich auf der lokalen Festplatte.
 6. **PR-Workflow und Ruleset 26983173:**
    - **Niemals direkt auf `main` pushen.**
-   - Wegen des GitHub Rulesets `26983173` ("basic") schlagen Pushes auf bestehende Remote-Branches mit `GH013: Changes must be made through a pull request` fehl. Jeder PR muss daher auf einem **frischen, neuen Branch-Namen** mit genau einem vollständigen Commit angelegt und via `gh pr create` eingereicht werden.
+   - Wegen des GitHub Rulesets `26983173` ("basic") schlagen Pushes auf bestehende Remote-Branches mit `GH013: Changes must be made through a pull request` fehl. Jeder PR wird daher auf einem **frischen, neuen Branch-Namen** angelegt und via `gh pr create` eingereicht. Mehrere Commits je PR sind möglich (PR #113 wurde mit zwei Commits gemergt); die Aussage zu `GH013` bei Pushes auf bestehende Branches wurde am 17.11.2026 nicht erneut geprüft.
+   - Gemergt wird durch den Inhaber, nicht durch Agenten. Merged Branches bleiben auf `origin` erhalten.
 7. **OneDrive-Worktree-Besonderheit:**
-   - Der lokale Arbeitsbaum liegt unter OneDrive (`fix_onedrive_git_index`).
-   - OneDrive neigt dazu, die Datei `.git/worktrees/fix_onedrive_git_index/index` bei Schreibkollisionen in `index 2` oder `index (<Datum>)` umzubenennen. Git meldet dann plötzlich alle 2.900+ Dateien als "gelöscht".
+   - Das Hauptcheckout liegt unter OneDrive (`~/Library/CloudStorage/OneDrive-Persönlich/Github/steps`); Agenten arbeiten in eigenen Worktrees (z. B. `.claude/worktrees/<name>`). Der Worktree `fix_onedrive_git_index` liegt außerhalb von OneDrive unter `~/.gemini/antigravity/worktrees/steps/`. Maschinenpfade gehören nicht in versionierte Dokumente – Verweise immer relativ setzen.
+   - OneDrive neigt dazu, die Index-Datei eines Worktrees (`.git/worktrees/<name>/index`) bei Schreibkollisionen in `index 2` oder `index (<Datum>)` umzubenennen. Git meldet dann plötzlich alle 2.900+ Dateien als "gelöscht".
    - **Lösung:** Den Index sofort mit `git reset -q HEAD` (niemals `--hard`) wiederherstellen. Die Dateien auf der Platte bleiben dabei 100% unberührt. Die von OneDrive erzeugten Konfliktkopien im `.git`-Verzeichnis nicht löschen.
+   - Der Pfad enthält „ö“ in zwei Unicode-Schreibweisen (NFC/NFD). Einzelne Editor-Werkzeuge lehnen den Pfad deshalb ab; Python- und Shell-Aufrufe aus dem Repository-Root funktionieren.
+   - `git worktree list` zeigt neun veraltete Einträge (`prunable`) früherer Windows-/Temp-Worktrees. Nicht ohne Rückfrage bereinigen.
+8. **Git-Identität:** Auf dem Mac ist kein `user.name`/`user.email` konfiguriert; die automatische Ableitung aus dem Rechnernamen scheitert je nach Netz. Identität beim Inhaber erfragen und je Commit mit `git -c user.name=… -c user.email=… commit` übergeben, keine globale Konfiguration ändern.
+9. **Inhaberentscheidungen statt Fachabnahme:** Entscheidungen des Inhabers werden als „Inhaber“ mit Datum eingetragen und ausdrücklich nicht als unabhängige Fachabnahme bezeichnet. `scripts/audit_graph.py` erzeugt `GRAPH_AUDIT_MATRIX.csv` und weist dort jede Freigabe ab; menschliche Bewertungen liegen deshalb in eigenen, per `original_row_sha256` gebundenen Dateien (`GRAPH_HUMAN_REVIEW_v*.csv`).
 
 ---
 
-## 3. Konsolidierte Audit-Befunde (PR #88 – #107)
+## 3. Konsolidierte Audit-Befunde und Entscheidungen (PR #88 – #115 und Folgebranch)
 
 In den zurückliegenden Arbeitssitzungen wurden sämtliche historischen Unklarheiten und offenen Lücken systematisch aufgearbeitet:
 
 ### 3.1 Historische Bibliotheksstruktur V6.6 / V6.7
-- **Vier Strukturmodelle geklärt:** In [`docs/audit/BIBLIOTHEK_V6_6_V6_7_STRUKTUR_UND_ZAEHLMODELLE_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/BIBLIOTHEK_V6_6_V6_7_STRUKTUR_UND_ZAEHLMODELLE_2026-11-16.md) wurden die 4 Modelle (`V1/V3/V4`, `V5.0–V5.4`, `V6.0–V6.6` und `V6.7-Delta`) aufgeschlüsselt.
+- **Vier Strukturmodelle geklärt:** In [`docs/audit/BIBLIOTHEK_V6_6_V6_7_STRUKTUR_UND_ZAEHLMODELLE_2026-11-16.md`](../../docs/audit/BIBLIOTHEK_V6_6_V6_7_STRUKTUR_UND_ZAEHLMODELLE_2026-11-16.md) wurden die 4 Modelle (`V1/V3/V4`, `V5.0–V5.4`, `V6.0–V6.6` und `V6.7-Delta`) aufgeschlüsselt.
 - **Exakte Zählkette:** Der historische Zuwachs von V5.0 (260 Dateien) bis V6.6 (1.145 Manifestdateien) wurde rechnerisch bewiesen ($1.145 - 148\text{ fehlend} + 3\text{ nicht gelistet} = 1.000\text{ versionierte Dateien im Repo}$).
-- **148 fehlende Dateien zugeordnet:** In [`docs/audit/BIBLIOTHEK_V6_6_FEHLENDE_DATEIEN_2026-11-16.csv`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/BIBLIOTHEK_V6_6_FEHLENDE_DATEIEN_2026-11-16.csv) und [`docs/audit/INDIZES_JSON_TXT_NACHPRUEFUNG_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/INDIZES_JSON_TXT_NACHPRUEFUNG_2026-11-16.md) wurde jede der 148 fehlenden Dateien ihrem Ursprungs-ZIP/RAR-Paket zugeordnet (34 V6.0, 29 V6.3, 62 V6.4, 10 V6.5, 13 V6.6).
+- **148 fehlende Dateien zugeordnet:** In [`docs/audit/BIBLIOTHEK_V6_6_FEHLENDE_DATEIEN_2026-11-16.csv`](../../docs/audit/BIBLIOTHEK_V6_6_FEHLENDE_DATEIEN_2026-11-16.csv) und [`docs/audit/INDIZES_JSON_TXT_NACHPRUEFUNG_2026-11-16.md`](../../docs/audit/INDIZES_JSON_TXT_NACHPRUEFUNG_2026-11-16.md) wurde jede der 148 fehlenden Dateien ihrem Ursprungs-ZIP/RAR-Paket zugeordnet (34 V6.0, 29 V6.3, 62 V6.4, 10 V6.5, 13 V6.6).
 - **Fachordner 21 und 39:** Die historische Doppelvergabe der Ordnernummern 21 und 39 weist keinerlei Datei- oder Inhaltsüberschneidung auf.
 
 ### 3.2 Statische Generator-Sicherheitsanalyse
-- In [`docs/audit/GENERATOREN_SEITENEFFEKTE_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/GENERATOREN_SEITENEFFEKTE_2026-11-16.md) wurden 17 Skripte per Python-AST ohne Ausführung untersucht:
+- In [`docs/audit/GENERATOREN_SEITENEFFEKTE_2026-11-16.md`](../../docs/audit/GENERATOREN_SEITENEFFEKTE_2026-11-16.md) wurden 17 Skripte per Python-AST ohne Ausführung untersucht:
   - Kein Skript löscht oder verschiebt Dateien oder startet Fremdprozesse.
   - Nur der Ableton-Blog-Indexer besitzt Netzzugriff (beachtet `robots.txt`).
   - V6.7-Generatoren schreiben ZIP-Archive ins CWD und überschreiben gleichnamige Dateien.
@@ -71,34 +78,61 @@ In den zurückliegenden Arbeitssitzungen wurden sämtliche historischen Unklarhe
 - Nicht belegbare Gemeinfreiheits- und Schutzfristbehauptungen zu Hindemith und Schönberg wurden aus den Zusammenfassungen gestrichen. Die Z-Library-Herkunft von Müller ist transparent dokumentiert.
 
 ### 3.4 Swift-Rendering & Claim-Fundstellen an Original-Büchern
-- Mittels `render_pdf.swift` wurden hochauflösende PNGs der Original-PDF-Seiten im Scratch-Verzeichnis gerendert und alle 9 Buchclaims (`CLAIM-002`, `007`, `014`, `026`, `027`, `029`, `031`, `035`, `041`) an den Originalseiten verifiziert ([`CLAIM_BUCHFUNDSTELLEN_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/fable-5.2/CLAIM_BUCHFUNDSTELLEN_2026-11-16.md)).
-- Der Abnahmebogen für Fable 5.2 wurde um die Prüfpunkte B6–B9 erweitert ([`ABNAHMEBOGEN_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/fable-5.2/ABNAHMEBOGEN_2026-11-16.md)).
+- Mittels `render_pdf.swift` wurden hochauflösende PNGs der Original-PDF-Seiten im Scratch-Verzeichnis gerendert und alle 9 Buchclaims (`CLAIM-002`, `007`, `014`, `026`, `027`, `029`, `031`, `035`, `041`) an den Originalseiten verifiziert ([`CLAIM_BUCHFUNDSTELLEN_2026-11-16.md`](../../docs/audit/fable-5.2/CLAIM_BUCHFUNDSTELLEN_2026-11-16.md)).
+- Der Abnahmebogen für Fable 5.2 wurde um die Prüfpunkte B6–B9 erweitert ([`ABNAHMEBOGEN_2026-11-16.md`](../../docs/audit/fable-5.2/ABNAHMEBOGEN_2026-11-16.md)).
 
 ### 3.5 Quellenmetadaten W01–W03 und CLAIM-033
-- In [`docs/audit/fable-5.2/QUELLENMETADATEN_UND_CLAIMS_W01_W03_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/fable-5.2/QUELLENMETADATEN_UND_CLAIMS_W01_W03_2026-11-16.md) wurden alle 5 Duplikatpaare in `curated_sources_registry.yaml` aufgelöst, alle 30 PDFs der Klassen A–D bibliografiert (inkl. CC-BY-Nachweis für Catherine Schmidt-Jones) und `CLAIM-033` (Linn MPC 96 PPQ vs. STEPS 480 PPQ) klargestellt.
+- In [`docs/audit/fable-5.2/QUELLENMETADATEN_UND_CLAIMS_W01_W03_2026-11-16.md`](../../docs/audit/fable-5.2/QUELLENMETADATEN_UND_CLAIMS_W01_W03_2026-11-16.md) wurden alle 5 Duplikatpaare in `curated_sources_registry.yaml` aufgelöst, alle 30 PDFs der Klassen A–D bibliografiert (inkl. CC-BY-Nachweis für Catherine Schmidt-Jones) und `CLAIM-033` (Linn MPC 96 PPQ vs. STEPS 480 PPQ) klargestellt.
 
 ### 3.6 HTML-Extrakte & OCR-Neuläufe
-- In [`docs/audit/HTML_EXTRAKTE_UND_OCR_NACHPRUEFUNG_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/HTML_EXTRAKTE_UND_OCR_NACHPRUEFUNG_2026-11-16.md) wurden alle 18 eindeutigen HTML-Extrakte geprüft.
+- In [`docs/audit/HTML_EXTRAKTE_UND_OCR_NACHPRUEFUNG_2026-11-16.md`](../../docs/audit/HTML_EXTRAKTE_UND_OCR_NACHPRUEFUNG_2026-11-16.md) wurden alle 18 eindeutigen HTML-Extrakte geprüft.
 - `The Chord Wheel.html` wurde als SEO-/KI-Text mit halluzinierter Geschichte (*„Klaus Vogel 1997“*) identifiziert und für wissenschaftliche Zwecke gesperrt.
 - Die OCR-Neuläufe `Music_Theory_Advanced_Level.md` und `Understanding_Basic_Music_Theory.md` (CC BY 2.0) wurden im Detail analysiert.
 
 ### 3.7 Katalog-Stichprobenprüfung W04
-- In [`docs/audit/fable-5.2/KATALOG_STICHTEST_W04_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/fable-5.2/KATALOG_STICHTEST_W04_2026-11-16.md) wurden alle 19 Klaviermodule (`P01–P19`), 31 Drum-Patterns (`PAT-001–031`), 28 Akkordprogressions-Archetypen (`PROG-001–028`) und der [Latin-Katalog](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/knowledge/concepts/styles/GENRE_RESEARCH_LATIN.md) vollständig auditiert.
+- In [`docs/audit/fable-5.2/KATALOG_STICHTEST_W04_2026-11-16.md`](../../docs/audit/fable-5.2/KATALOG_STICHTEST_W04_2026-11-16.md) wurden alle 19 Klaviermodule (`P01–P19`), 31 Drum-Patterns (`PAT-001–031`), 28 Akkordprogressions-Archetypen (`PROG-001–028`) und der [Latin-Katalog](../../knowledge/concepts/styles/GENRE_RESEARCH_LATIN.md) vollständig auditiert.
 - 480-PPQ-Zeitachse, GM-Kanal-10-Mappings, Alla-breve-Dauern (Samba-Batucada) und Stimmführungen ($L_1$-Distanz) sind 100% verifiziert; 10 P, 5 PAT und 11 PROG werden aktiv im Benchmark getestet. Reale Spiel- und Hörabnahmen bleiben als `AUSSTEHEND` gekennzeichnet.
+
+### 3.8 Skript-Exitcodes (PR #110) und Nachprüfung dieser Übergabe
+- PR #110 machte die Graph-Probes ohne `PYTHONPATH` lauffähig, ergänzte in `scripts/verify_pilot_review_evidence.py` einen macOS-Zertifikats-Fallback und ersetzte in `scripts/execute_project_consolidation.py` den festen Aufruf `python` durch `sys.executable`.
+- Nachprüfung am 16.11.2026 auf `d717cec` (macOS, Python 3.14.5), Exitcode jeweils 0: `verify_reference_integrity.py`, `audit_knowledge_coverage.py --check`, `graph_probes.py`, `graph_followup_probes.py`, `graph_semantic_probes.py`, `verify_historical_ontology.py`, `pre-commit-secret-check.py`, `verify_pilot_review_evidence.py` (8 Freigaben), `unittest discover tests` (402 Tests), Curation-Skill-Tests (36 Tests), `knowledge/research/run_golden_test_suite.py`.
+- **Linkprüfung neu gezählt:** 1.534 versionierte Markdown-Dateien. In `docs/`, `knowledge/` und `research/gaps/` 0 defekte relative Links. Defekte relative Links bestehen nur im historischen Bestand (`source_archive/` 543, `archive/` 172, `research/` außerhalb `gaps/` 83) und bleiben nach Preservation-first unverändert.
+- **Korrigiert:** Diese Übergabe enthielt 11 absolute `file:///Users/…/.gemini/…`-Links, die nur auf einer Maschine auflösten und vom bisherigen Linkcheck nicht erfasst wurden. Sie sind jetzt relativ.
+- **Bekannte Nebenwirkung:** `run_golden_test_suite.py` überschreibt bei jedem Lauf fünf versionierte Dateien unter `knowledge/research/` (`FINAL_REFERENCE_CASE_VALIDATION.csv`, `GOLDEN_TEST_CLASSIFICATION_AUDIT.csv`, `MUSICAL_REFERENCE_VALIDATION.csv`, `GOLDEN_TEST_EXECUTION_REPORT.md`, `REAL_GOLDEN_TEST_EXECUTION_REPORT.md`) mit Zeitstempel, Laufzeiten, Plattform, Commit und CRLF→LF. Fachlich ändert sich nichts. **Behoben:** Ohne Argumente schreibt der Runner jetzt nichts; `--output-dir <Pfad>` exportiert, `--update-baseline` erneuert die versionierten Berichte bewusst (abgesichert durch `tests/test_golden_runner_outputs.py`).
+
+### 3.9 Sitzung 16./17.11.2026: Korrekturen, Abnahmen und Richtungsentscheidungen
+| PR | Inhalt |
+| --- | --- |
+| #111 | Diese Übergabe portabel gemacht (11 absolute `file:///`-Links → relativ), Ausgangsstand nachgezogen, Fahrplan korrigiert (Kern existiert bereits). |
+| #112 | `knowledge/research/run_golden_test_suite.py` schreibt ohne Argumente nichts mehr; `--output-dir` exportiert, `--update-baseline` erneuert die versionierten Berichte; `tests/test_golden_runner_outputs.py`. |
+| #113 | Abnahmebogen A1–A6, B1–B9 vom Inhaber entschieden (12 freigegeben, A1/B1 Korrektur, B2 Beleg fehlt), in zwei getrennten Commits. |
+| #114 | Fehler behoben: `NoteSpelling.transpose_diatonic` verschob bei unpassenden Stufen/Halbtönen still die Oktave (C4 `(0, 11)` → Cb5); jetzt `InvalidAlterationError`. `tests/test_transpose_diatonic_strict.py` mit Eigenschaftsprüfung über alle 35 Schreibweisen. Gefunden über eine Zeilenmessung des Kerns: 85,3 % (831/974 Zeilen) werden von den Tests ausgeführt; Lücken sind fast nur Fehlerpfade. |
+| #115 | [ADR-013](../../decisions/ADR-013-v01-umfang-akkorde-und-midi-export.md) (v0.1 = Akkorde + MIDI-Export, Drums v2, Zielgruppe Produzierende), [ADR-014](../../decisions/ADR-014-theorie-perspektiven-und-kontext.md) (Perspektivenmodell mit `paradigm`/`source`/`StyleContext`), [ADR-015](../../decisions/ADR-015-kernvertraege-intervalle-voicing-notation.md) (Kernverträge), [ADR-016](../../decisions/ADR-016-v7alt-alterierte-dominante.md) (`V7alt`); Graph-Abnahme v1 (25 Kanten). |
+| Folgebranch | [ADR-017](../../decisions/ADR-017-midi-export-v01.md) (MIDI-Export), [ADR-007](../../decisions/ADR-007-audio-nur-dateiexport-v01.md) (nur Dateiexport), [ADR-001](../../decisions/ADR-001-ein-fenster-zwei-bereiche.md) (ein Fenster, zwei Bereiche), [ADR-003](../../decisions/ADR-003-glide-nur-shell-und-infrastruktur.md) (Glide nur Shell), [ADR-004](../../decisions/ADR-004-lizenz-und-marke.md) (Code MPL-2.0, eigene Wissensdaten CC BY 4.0), [ADR-006](../../decisions/ADR-006-json-mit-schema-version.md) (JSON, ganzzahlige `schema_version`); ADR-014 mit Hindemith I,2; Graph-Abnahme v2 mit allen 97 Kanten. |
+
+**Wichtige Abgleiche aus dieser Sitzung**, damit sie nicht erneut aufkommen:
+- Ein vorgeschlagener Lizenzwechsel zu MIT/Apache wurde verworfen: Das Repository steht unter MPL-2.0, aus Glide übernommene Dateien müssen MPL-2.0 bleiben.
+- Glide hat kein Musik-Datenmodell und keinen Parser; Wiederverwendung nur für die UI-Shell.
+- 95 % Notenlänge hätte bei ganztaktigen Akkorden 100 ms Lücke ergeben (120 BPM); Standard ist deshalb Dauer minus 10 Ticks.
+- CDR-019 darf nicht `HISTORICAL_ORIGIN` heißen, weil der Inhaber bei A5 einen Kausalanspruch ausgeschlossen hat; Typ `ATTRIBUTED_INTERPRETATION`.
 
 ---
 
 ## 4. Testarchitektur und Qualitätsgates
 
+**Lokale Einrichtung:** `python3 -m pip install -r knowledge/benchmark/requirements.txt` (PyYAML 6.0.3, nur für Audit-Skripte; der Kern hat keine Laufzeitabhängigkeit).
+
+**Stand 17.11.2026:** 415 Kern-Unittests und 36 Curation-Skill-Tests OK; `verify_reference_integrity.py` meldet 17 ADRs. Die vollständige CI-Liste steht in [`.github/workflows/python-tests.yml`](../../.github/workflows/python-tests.yml); lokal mindestens zusätzlich `python3 -B scripts/audit_graph.py --check`, `python3 -B tools/validation/check_structure.py`, `python3 -B scripts/render_api_reference.py --check` und `python3 -B scripts/pre-commit-secret-check.py`. Neue ADRs brauchen einen Eintrag in `CANONICAL_ADR_THEMES` (`scripts/verify_reference_integrity.py`) und die erwartete Anzahl in `tests/test_reference_integrity.py`; der ADR-Status im Register muss ein reiner Wert sein (`proposed`, `accepted`, `rejected`, `superseded`).
+
 Bevor ein PR eingereicht wird, müssen folgende Tests lokal fehlerfrei durchlaufen:
 1. **Referenzintegrität:**
    ```bash
-   /Library/Frameworks/Python.framework/Versions/3.14/bin/python3 scripts/verify_reference_integrity.py
+   python3 scripts/verify_reference_integrity.py
    ```
    *Soll:* 100% CANONICAL REFERENCE & SCHEMA INTEGRITY VERIFIED (Exitcode 0).
 2. **Restricted Local Check:**
    ```bash
-   /Library/Frameworks/Python.framework/Versions/3.14/bin/python3 -m unittest tests/test_restricted_local.py
+   python3 -m unittest tests/test_restricted_local.py
    ```
    *Soll:* OK (keine Klasse-E-Volltexte im Git).
 3. **Knowledge Coverage CI-Gate (`scripts/audit_knowledge_coverage.py --check`):**
@@ -109,13 +143,32 @@ Bevor ein PR eingereicht wird, müssen folgende Tests lokal fehlerfrei durchlauf
 
 ## 5. Konkreter Fahrplan für den nächsten Agenten
 
-Der nächste Agent soll nahtlos an folgenden konkreten Punkten anknüpfen:
+Stand 17.11.2026. Kein Punkt wartet auf eine Inhaberentscheidung, bevor AP 1 beginnen kann.
 
-### Arbeitspaket 1: Begleitung der Fable-5.2-Menschabnahme
-- Der [`ABNAHMEBOGEN_2026-11-16.md`](file:///Users/shaye/.gemini/antigravity/worktrees/steps/fix_onedrive_git_index/docs/audit/fable-5.2/ABNAHMEBOGEN_2026-11-16.md) enthält die Teile A (Graph-Inhaberentscheidungen) und B (Auditproben B1–B9). Sobald der menschliche Reviewer Punkte abzeichnet, Status in der Matrix nachführen.
+### Arbeitspaket 1: SMF-Writer für v0.1 (nächster Code-Schritt)
+- Grundlage: [ADR-017](../../decisions/ADR-017-midi-export-v01.md), Zielvertrag [`MUSIC_DOMAIN_AND_MIDI.md`](../engineering/MUSIC_DOMAIN_AND_MIDI.md) §4–5, Prüfplan Q5 in [`VERIFICATION_PLAN_V2.md`](../quality/VERIFICATION_PLAN_V2.md).
+- Reiner Writer im Kern (`src/steps/`, Paketort im PR festlegen), ohne Abhängigkeit von `app/` und ohne Fremdbibliothek, solange die Standardbibliothek genügt.
+- Akkord-Timeline mit ganzzahligen Ticks (480 PPQ), Voicing über `ChordDefinition.to_voicing` ([`chord.py`](../../src/steps/theory/chord.py)), Bass mit `bass_octave=2`.
+- 10 Golden-Exportfälle mit Byte-Hash; Prüfpunkte 1–10 aus `MUSIC_DOMAIN_AND_MIDI.md` §5 (Note-off vor Note-on, Tempo-Map, Meta-Events, Tracknamen, Tonart nur bei Dur/Moll −7…+7).
+- DAW-Abnahme (Reaper, MuseScore 4) macht der Inhaber; Ergebnis mit Versionsstand protokollieren.
 
-### Arbeitspaket 2: Vorbereitung der Core-Implementierung (Phase 5 MVP v0.1)
-- Aufsetzen der puren Harmonielehre in `src/steps/`:
-  - Intervall-, Akkord- und Skalen-Parser (mit strikter Unterscheidung von H/B und B/B♭).
-  - Modus- und Syntax-Engine (unter Berücksichtigung von Aldwell/Schachter, Hindemith und Schönberg).
-  - Anbindung der UI-Shell in `app/` ohne Vermischung mit der Fachdomäne.
+### Arbeitspaket 2: Beschlossene Kernverträge umsetzen
+- [ADR-015](../../decisions/ADR-015-kernvertraege-intervalle-voicing-notation.md): unreduzierte Intervalle prüfen und angleichen; `VOICING_REDUCTION_4_VOICE` vor DROP2 (`C13` behält 3, ♭7, 13); deutsche Namen ohne Suffix mit dokumentweiter Locale.
+- [ADR-016](../../decisions/ADR-016-v7alt-alterierte-dominante.md): `7alt` als Tonvorrat, Voicing nur mit ausdrücklicher Auswahl.
+- [ADR-014](../../decisions/ADR-014-theorie-perspektiven-und-kontext.md): `InterpretationEdge` und `StyleContext` in die Domänenverträge; für v0.1 genügt der Kontext Jazz/Pop.
+- Je Punkt eigener PR mit Golden-Fällen und Gegenprobe am alten Verhalten. Aktualisiert `API_VERTRAEGE.md` und den CHANGELOG.
+
+### Arbeitspaket 3: Graph-Abnahme in den Generator übernehmen
+- [`GRAPH_HUMAN_REVIEW_v2.csv`](../../knowledge/relations/GRAPH_HUMAN_REVIEW_v2.csv) bewertet alle 97 Kanten. `GRAPH_AUDIT_PLAN.json` und `scripts/audit_graph.py` lehnen Freigaben derzeit ab; die Übernahme braucht eine bewusste Änderung dieser Sperre mit Test.
+- Folgearbeiten aus den Entscheidungen: CDR-012-Zielknoten in [`NODE_DEFINITION_PROPOSALS.json`](../../knowledge/relations/NODE_DEFINITION_PROPOSALS.json) umbenennen; ERR-026 in zwei Versionen trennen (REL-020); CDR-010-Ersatz `C6_9_SHARP11_COLLECTION` aus [`GRAPH_CORRECTIONS.json`](../../knowledge/relations/GRAPH_CORRECTIONS.json) übernehmen.
+- 14 Korpuskanten bleiben ohne Produktionsfreigabe, bis ein empirischer Korpus vorliegt.
+
+### Arbeitspaket 4: Qualitätswerkzeuge (nur mit Zustimmung des Inhabers zur Paketinstallation)
+- Vorgeschlagen und noch nicht installiert: `ruff` (in `pyproject.toml` konfiguriert), `mypy` (Kern deklariert `py.typed`), `coverage` mit Schwelle (Kern derzeit 85,3 % Zeilen), `hypothesis`, `mutmut`.
+
+### Arbeitspaket 5: Rechte und Kennzeichnung
+- Lizenzkennzeichnung je Ordner nach [ADR-004](../../decisions/ADR-004-lizenz-und-marke.md) (SPDX für Code, CC BY 4.0 nur für eigene Wissensdaten, Fremdinhalte laut Rechteinventar); Markenprüfung „STEPS“ steht aus.
+
+### Restpunkte ohne Blockade
+- B2: Hindemith Kap. XIII im Original-PDF sichten; A6: Montuno-Entwurf anhören (beide nach v0.1).
+- Offene Richtungsfragen mit geringer v0.1-Wirkung: Datenschema-Felder und Undo, Glide-Shell-Spike, Governance ([`PROJECT_OVERVIEW.md`](../project/PROJECT_OVERVIEW.md) §8).

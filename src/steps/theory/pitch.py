@@ -170,6 +170,7 @@ class NoteSpelling:
             C4.transpose_diatonic(step_delta=4, semitone_delta=7) -> G4 (Perfect 5th)
             C4.transpose_diatonic(step_delta=3, semitone_delta=6) -> F#4 (Augmented 4th)
             C4.transpose_diatonic(step_delta=4, semitone_delta=6) -> Gb4 (Diminished 5th)
+            C4.transpose_diatonic(step_delta=0, semitone_delta=11) -> InvalidAlterationError
         """
         if type(step_delta) is not int or type(semitone_delta) is not int:
             raise MusicTheoryError("Diatonic transposition requires whole steps and semitones.")
@@ -185,17 +186,10 @@ class NoteSpelling:
         target_base_midi = (target_octave + 1) * 12 + DIATONIC_BASE_PC[target_step]
         
         needed_alteration = target_midi - target_base_midi
-        
-        # If alteration exceeds -2..+2, adjust octave by +/-1 if possible
-        if needed_alteration < -2:
-            target_octave -= 1
-            target_base_midi = (target_octave + 1) * 12 + DIATONIC_BASE_PC[target_step]
-            needed_alteration = target_midi - target_base_midi
-        elif needed_alteration > 2:
-            target_octave += 1
-            target_base_midi = (target_octave + 1) * 12 + DIATONIC_BASE_PC[target_step]
-            needed_alteration = target_midi - target_base_midi
-            
+
+        # The step count fixes letter and octave. An alteration outside -2..+2
+        # means the step and semitone deltas do not form one interval; shifting
+        # the octave here would silently return a different interval.
         if needed_alteration not in (-2, -1, 0, 1, 2):
             raise InvalidAlterationError(
                 f"Diatonic transposition resulting alteration {needed_alteration} exceeds valid range [-2, 2]."

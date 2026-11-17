@@ -64,12 +64,12 @@ P0: öffentlicher Drittmaterial-/Rechteaudit, Glide 3.53.0 vollständig einfrier
 
 ## 8. Entscheidungsregister – Was ausdrücklich offen bleibt
 
-- **Produkt:** Chord-only/Chord+MIDI/Chord+Drums in v0.1, Spielbarkeit vs. Lehrfokus; primäre Personas.
-- **Fenster:** eine Tk-Root mit zwei Bereichen vs. `Toplevel`-Fenster; Ergonomie und Tastaturbedienung.
-- **Glide-Reuse:** B vs. D Spike, Code-/Font-/Asset- und Lizenzübernahme; Module nicht blind portieren.
-- **Datenschema:** Chord-Spelling/Voicing/Timing/Drum-Track, Undo- und Save/Load-Kontrakt, Versionierung.
-- **Wissensbasis:** Fachtheorien/Quellenpriorität, Review-Owner, Pilotquellen, private versus öffentliche Inhalte.
-- **Audio:** Datei-MIDI vs. Live-Playback, Ausgabebackend und Rechte an Soundfonts.
+- **Produkt:** Chord-only/Chord+MIDI/Chord+Drums in v0.1, Spielbarkeit vs. Lehrfokus; primäre Personas. **Entschieden 17.11.2026:** Akkorde + MIDI-Export, Drums in v2, Produzieren und Lernen beim Produzieren ([ADR-013](../../decisions/ADR-013-v01-umfang-akkorde-und-midi-export.md)).
+- **Fenster:** eine Tk-Root mit zwei Bereichen vs. `Toplevel`-Fenster; Ergonomie und Tastaturbedienung. **Entschieden 17.11.2026:** eine Root, zwei Bereiche ([ADR-001](../../decisions/ADR-001-ein-fenster-zwei-bereiche.md)).
+- **Glide-Reuse:** B vs. D Spike, Code-/Font-/Asset- und Lizenzübernahme; Module nicht blind portieren. **Entschieden 17.11.2026:** nur UI-Shell und Infrastruktur mit Herkunftsnachweis ([ADR-003](../../decisions/ADR-003-glide-nur-shell-und-infrastruktur.md)); der Spike-Vergleich bleibt offen.
+- **Datenschema:** Chord-Spelling/Voicing/Timing/Drum-Track, Undo- und Save/Load-Kontrakt, Versionierung. **Format entschieden 17.11.2026:** JSON mit ganzzahliger `schema_version` ([ADR-006](../../decisions/ADR-006-json-mit-schema-version.md)); Felder und Undo offen.
+- **Wissensbasis:** Fachtheorien/Quellenpriorität, Review-Owner, Pilotquellen, private versus öffentliche Inhalte. **Quellenpriorität entschieden 17.11.2026:** keine globale Rangfolge, Perspektivenmodell mit `StyleContext` ([ADR-014](../../decisions/ADR-014-theorie-perspektiven-und-kontext.md)); die übrigen Punkte bleiben offen.
+- **Audio:** Datei-MIDI vs. Live-Playback, Ausgabebackend und Rechte an Soundfonts. **Entschieden 17.11.2026:** v0.1 nur Dateiexport ([ADR-007](../../decisions/ADR-007-audio-nur-dateiexport-v01.md), [ADR-017](../../decisions/ADR-017-midi-export-v01.md)).
 - **Governance:** wer trifft Scope-/License-/Release-/Brand-Entscheidungen, wer führt native QA durch, welche Agents besitzen welche Pfade.
 
 Als **sofortige Arbeit** (nicht offene Nutzerfragen im Chat): Deliverables A0–A5 und `REQ-001–REQ-028` in [`manifests/REQUIREMENTS_TRACE_28.csv`](../../manifests/REQUIREMENTS_TRACE_28.csv) als Issues/ADRs mit Owner und Akzeptanztest bereitstellen.

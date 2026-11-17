@@ -2,6 +2,8 @@
 
 **Vermerk:** Fachliches Risiko-Audit, keine anwaltliche Beurteilung einzelner Werke. Im öffentlichen Steps-Git-Baum sind nach dem verifizierten Snapshot 60 PDFs und viele heruntergeladene HTML-, JavaScript-, CSS- und MIDI-Dateien vorhanden. **Aus bloßer Existenz folgt weder ein Rechtsverstoß noch ein Nutzungsrecht.** Priorisierte Originalprüfung erforderlich.
 
+> **Lizenzentscheidung (17.11.2026):** Code bleibt MPL-2.0, eigene Wissensdaten CC BY 4.0, Fremdinhalte behalten ihren Status laut Rechteinventar ([ADR-004](../../decisions/ADR-004-lizenz-und-marke.md)).
+
 ## 1. Fünf Rechteobjekte auseinanderhalten
 
 | Objekt | Mögliche Rechtslage | Veröffentlichungs-Gate |

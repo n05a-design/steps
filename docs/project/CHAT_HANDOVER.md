@@ -1,7 +1,7 @@
 # Projekt-interne Übergabe dieses Gesprächs – 10.11.2026
 
 > [!IMPORTANT]
-> **Aktuelle kanonische Master-Übergabe:** Die konsolidierte, kontextbasierte Übergabe nach den Durchgängen PR #88–#107 (Stand 16.11.2026) befindet sich in [`docs/handover/MASTER_UEBERGABE_2026-11-16.md`](../handover/MASTER_UEBERGABE_2026-11-16.md). Der nachfolgende Text ist das historische Ausgangsdokument vom 10.11.2026.
+> **Aktuelle kanonische Master-Übergabe:** Die konsolidierte, kontextbasierte Übergabe nach den Durchgängen PR #88–#115 und der v0.1-Spezifikation (Stand 17.11.2026, Ausgangsstand `1682d35`) befindet sich in [`docs/handover/MASTER_UEBERGABE_2026-11-16.md`](../handover/MASTER_UEBERGABE_2026-11-16.md). Der nachfolgende Text ist das historische Ausgangsdokument vom 10.11.2026.
 
 > **Kritischer Aktualitätsnachtrag (10.11.2026, nach GitHub PR #75):** Der folgende Basisteil stammt aus dem früheren Paket und kann für Glide `main` noch den historischen Commit `61a2f3a`/Version 3.50.7 nennen. Der erneut verifizierte Stand ist **Glide `9e767bea` (3.53.0)**; der hochgeladene `app.pyw` ist blobgleich mit diesem HEAD, nicht aber bereits alle weiteren Module und Ressourcen unabhängig verifiziert. Aktuelle Bewertungen und Entscheidungsgates stehen in [`docs/project/PROJECT_OVERVIEW.md`](../../docs/project/PROJECT_OVERVIEW.md) und [`docs/audit/04_VERGLEICH_V1_V2_RESTRISIKEN_MASSNAHMEN.md`](../../docs/audit/04_VERGLEICH_V1_V2_RESTRISIKEN_MASSNAHMEN.md). Aussagen im folgenden Basisteil bleiben als **historisch datierte Ausgangsnotizen** erhalten, keine unmarkierte aktuelle Wahrheit.
 
