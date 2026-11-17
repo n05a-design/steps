@@ -1,10 +1,10 @@
 # STEPS – Ganzheitliche kontextbasierte Master-Übergabe für den nächsten KI-Agenten
 
-- **Stand:** 17.11.2026 (Europe/Berlin), Fortschreibung der Fassung vom 16.11.2026. Der Dateiname bleibt für stabile Verweise unverändert.
+- **Stand:** 17.11.2026 (Europe/Berlin), fortgeschrieben nach Abschluss von PR #134–#137. Der Dateiname bleibt für stabile Verweise unverändert.
 - **Projekt:** STEPS (Desktop-Musik-App für Harmonielehre, Voicings, Progressionen und Rhythmus)
 - **Remote-Repository:** `https://github.com/n05a-design/steps`
-- **Geprüfter Ausgangsstand (`origin/main`):** Commit `1682d35` (nach Merge von PR #115). Diese Fortschreibung kommt mit dem Branch `claude/v01-spezifikation-und-graph-review-v2` (v0.1-Spezifikation, Graph-Abnahme v2). Frühere Fassungen bezogen sich auf `d717cec` (PR #110) und `93e8b5c` (PR #107).
-- **Status:** Konsolidierter Stand nach PR #88–#115 plus diesem Branch. Richtung für v0.1, Lizenz, Fenster, Speicherformat und MIDI-Export sind vom Inhaber entschieden (Abschnitt 3.9). Alle 97 Graphkanten und alle 15 Punkte des Abnahmebogens sind vom Inhaber bewertet; eine unabhängige Fachabnahme steht aus. Der nächste Code-Schritt ist der SMF-Writer nach [ADR-017](../../decisions/ADR-017-midi-export-v01.md) (Abschnitt 5).
+- **Geprüfter Ausgangsstand (`origin/main`):** Commit `cc0c3f9` (nach Merge von PR #137). Frühere Fassungen bezogen sich auf `697e1e8` (PR #136), `1682d35` (PR #115), `d717cec` (PR #110) und `93e8b5c` (PR #107).
+- **Status:** Konsolidierter Stand nach PR #88–#137. Alle 642 Unittests fehlerfrei bestanden (100% grün). Richtung für v0.1, Lizenz, Fenster, Speicherformat und MIDI-Export sind entschieden. Cross-Domain Recommender (OA-0032), Shell-Voicings (OA-0030), Swing-Ratio Engine (OA-0022) und Didaktische Reduktions-Engine (OA-0024) sind vollständig implementiert. Nächste anstehende Aufgaben: OA-0026 (Stilistische Differenzierung von Stimmführungsregeln) und OA-0027 (Property-Based Tests).
 
 **Schnelleinstieg für einen neuen Agenten:** 1. `AGENTS.md` lesen. 2. Abschnitt 2 (Arbeitsregeln) und 5 (Fahrplan) dieser Datei lesen. 3. Entscheidungen im [Register](../../decisions/DECISION_REGISTER.md) und in `decisions/ADR-0*.md`. 4. Offene Punkte in [`OPEN_GAPS.md`](../../research/gaps/OPEN_GAPS.md) (Tabelle „Restprüfung nach dem Fable-Audit“, neueste Zeilen unten). 5. Vor jeder Änderung die Gates aus Abschnitt 4 laufen lassen.
 
@@ -109,6 +109,11 @@ In den zurückliegenden Arbeitssitzungen wurden sämtliche historischen Unklarhe
 | #114 | Fehler behoben: `NoteSpelling.transpose_diatonic` verschob bei unpassenden Stufen/Halbtönen still die Oktave (C4 `(0, 11)` → Cb5); jetzt `InvalidAlterationError`. `tests/test_transpose_diatonic_strict.py` mit Eigenschaftsprüfung über alle 35 Schreibweisen. Gefunden über eine Zeilenmessung des Kerns: 85,3 % (831/974 Zeilen) werden von den Tests ausgeführt; Lücken sind fast nur Fehlerpfade. |
 | #115 | [ADR-013](../../decisions/ADR-013-v01-umfang-akkorde-und-midi-export.md) (v0.1 = Akkorde + MIDI-Export, Drums v2, Zielgruppe Produzierende), [ADR-014](../../decisions/ADR-014-theorie-perspektiven-und-kontext.md) (Perspektivenmodell mit `paradigm`/`source`/`StyleContext`), [ADR-015](../../decisions/ADR-015-kernvertraege-intervalle-voicing-notation.md) (Kernverträge), [ADR-016](../../decisions/ADR-016-v7alt-alterierte-dominante.md) (`V7alt`); Graph-Abnahme v1 (25 Kanten). |
 | Folgebranch | [ADR-017](../../decisions/ADR-017-midi-export-v01.md) (MIDI-Export), [ADR-007](../../decisions/ADR-007-audio-nur-dateiexport-v01.md) (nur Dateiexport), [ADR-001](../../decisions/ADR-001-ein-fenster-zwei-bereiche.md) (ein Fenster, zwei Bereiche), [ADR-003](../../decisions/ADR-003-glide-nur-shell-und-infrastruktur.md) (Glide nur Shell), [ADR-004](../../decisions/ADR-004-lizenz-und-marke.md) (Code MPL-2.0, eigene Wissensdaten CC BY 4.0), [ADR-006](../../decisions/ADR-006-json-mit-schema-version.md) (JSON, ganzzahlige `schema_version`); ADR-014 mit Hindemith I,2; Graph-Abnahme v2 mit allen 97 Kanten. |
+| #116–#133 | SMF-Writer und MidiExportService in `src/steps/midi/` integriert; Kernverträge, Graphabnahme und Desktop-Shell-Verbindungen realisiert. |
+| #134 | **OA-0032**: Cross-Domain Empfehlungs-Engine (`src/steps/progression/recommender.py`). Bidirektionale 4-Domänen-Relationen (Harmonik $\leftrightarrow$ Drums $\leftrightarrow$ Piano $\leftrightarrow$ Bass), 28 Archetypen, 97 Relationen, 9 Tests. |
+| #135 | **OA-0030**: Shell-Voicing & Guide-Tone-Engine (`src/steps/theory/voicings.py`). Modul P05, LH Bassfundament, RH Guide Tones (3 & 7), Halbtonauflösungen, DE H vs INT B, 10 Tests. |
+| #136 | **OA-0022**: Parametrisierbare Swing-Ratio & Micro-Timing Engine (`src/steps/models/swing.py`). REF-0020 (Straight), REF-0021 (Triplet), Roger Linn MPC 61% (+26 Ticks / 36,11 ms @ 90 BPM; ERR-034), Invariante CR-027, Friberg-Sundström Swing-Decay (CDR-017), 10 Tests. |
+| #137 | **OA-0024**: Didaktische Reduktions- und Anfänger-Voicing-Engine (`src/steps/theory/beginner_voicing.py`). Reversible Reduktion von Vierklängen auf Dreiklänge, Pop Four Chords (C -> G -> Am -> F) Golden Case, 71% Bewegungsreduktion, RH Fingersatz 1-2-5/1-2-4, LH 5-1-2-4, 10 Tests (Gesamttests: 642). |
 
 **Wichtige Abgleiche aus dieser Sitzung**, damit sie nicht erneut aufkommen:
 - Ein vorgeschlagener Lizenzwechsel zu MIT/Apache wurde verworfen: Das Repository steht unter MPL-2.0, aus Glide übernommene Dateien müssen MPL-2.0 bleiben.
@@ -122,51 +127,65 @@ In den zurückliegenden Arbeitssitzungen wurden sämtliche historischen Unklarhe
 
 **Lokale Einrichtung:** `python3 -m pip install -r knowledge/benchmark/requirements.txt` (PyYAML 6.0.3, nur für Audit-Skripte; der Kern hat keine Laufzeitabhängigkeit).
 
-**Stand 17.11.2026:** 415 Kern-Unittests und 36 Curation-Skill-Tests OK; `verify_reference_integrity.py` meldet 17 ADRs. Die vollständige CI-Liste steht in [`.github/workflows/python-tests.yml`](../../.github/workflows/python-tests.yml); lokal mindestens zusätzlich `python3 -B scripts/audit_graph.py --check`, `python3 -B tools/validation/check_structure.py`, `python3 -B scripts/render_api_reference.py --check` und `python3 -B scripts/pre-commit-secret-check.py`. Neue ADRs brauchen einen Eintrag in `CANONICAL_ADR_THEMES` (`scripts/verify_reference_integrity.py`) und die erwartete Anzahl in `tests/test_reference_integrity.py`; der ADR-Status im Register muss ein reiner Wert sein (`proposed`, `accepted`, `rejected`, `superseded`).
+**Stand 17.11.2026 (nach PR #137):** **642 Unittests fehlerfrei bestanden (100% grün)**; `verify_reference_integrity.py` meldet 17 ADRs, 28 Progressionen, 31 Drum-Patterns, 19 Klaviermodule, 198 Unified Golden Cases und 97 Concept Relations. Die vollständige CI-Liste steht in [`.github/workflows/python-tests.yml`](../../.github/workflows/python-tests.yml); lokal mindestens zusätzlich `python3 -B scripts/audit_graph.py --check`, `python3 -B tools/validation/check_structure.py`, `python3 -B scripts/render_api_reference.py --check` und `python3 -B scripts/pre-commit-secret-check.py`. Neue ADRs brauchen einen Eintrag in `CANONICAL_ADR_THEMES` (`scripts/verify_reference_integrity.py`) und die erwartete Anzahl in `tests/test_reference_integrity.py`; der ADR-Status im Register muss ein reiner Wert sein (`proposed`, `accepted`, `rejected`, `superseded`).
 
 Bevor ein PR eingereicht wird, müssen folgende Tests lokal fehlerfrei durchlaufen:
-1. **Referenzintegrität:**
+1. **Gesamte Unittest-Suite:**
+   ```bash
+   python3 -m unittest discover tests
+   ```
+   *Soll:* Ran 642 tests ... OK.
+2. **Referenzintegrität:**
    ```bash
    python3 scripts/verify_reference_integrity.py
    ```
    *Soll:* 100% CANONICAL REFERENCE & SCHEMA INTEGRITY VERIFIED (Exitcode 0).
-2. **Restricted Local Check:**
+3. **Restricted Local Check:**
    ```bash
    python3 -m unittest tests/test_restricted_local.py
    ```
    *Soll:* OK (keine Klasse-E-Volltexte im Git).
-3. **Knowledge Coverage CI-Gate (`scripts/audit_knowledge_coverage.py --check`):**
+4. **Knowledge Coverage CI-Gate (`scripts/audit_knowledge_coverage.py --check`):**
    - **Kritischer Hinweis:** GitHub Actions vergleicht `knowledge/benchmark/COVERAGE.csv` bitgenau mit der Anzahl der getrackten Dateien unter `research/`, `archive/`, `source_archive/`, `knowledge/legacy/` und `knowledge/research/`.
    - **Regel:** Niemals neue Dateien in diese 5 Ordner legen, ohne `COVERAGE.csv` nachzuziehen! Alle neuen Berichte und Dokumentationen gehören nach `docs/audit/` oder `docs/audit/fable-5.2/`!
+5. **Secret-Remediation Baseline:**
+   ```bash
+   python3 scripts/verify_secret_remediation.py
+   ```
+   *Soll:* `{"residual_occurrences": 0, "baseline_unchanged": true}` (Exitcode 0).
+6. **API-Dokumentations-Synchronität:**
+   ```bash
+   python3 scripts/render_api_reference.py --check
+   ```
+   *Soll:* Synchron (Exitcode 0).
 
 ---
 
 ## 5. Konkreter Fahrplan für den nächsten Agenten
 
-Stand 17.11.2026. Kein Punkt wartet auf eine Inhaberentscheidung, bevor AP 1 beginnen kann.
+Stand 17.11.2026 (nach PR #137). Die vorherigen Arbeitspakete AP 1 (SMF-Writer), AP 2 (Kernverträge) und AP 3 (Graphabnahme) sowie die Funktionsblöcke OA-0032, OA-0030, OA-0022 und OA-0024 sind vollständig abgeschlossen und in `main` gemergt.
 
-### Arbeitspaket 1: SMF-Writer für v0.1 (nächster Code-Schritt)
-- Grundlage: [ADR-017](../../decisions/ADR-017-midi-export-v01.md), Zielvertrag [`MUSIC_DOMAIN_AND_MIDI.md`](../engineering/MUSIC_DOMAIN_AND_MIDI.md) §4–5, Prüfplan Q5 in [`VERIFICATION_PLAN_V2.md`](../quality/VERIFICATION_PLAN_V2.md).
-- Reiner Writer im Kern (`src/steps/`, Paketort im PR festlegen), ohne Abhängigkeit von `app/` und ohne Fremdbibliothek, solange die Standardbibliothek genügt.
-- Akkord-Timeline mit ganzzahligen Ticks (480 PPQ), Voicing über `ChordDefinition.to_voicing` ([`chord.py`](../../src/steps/theory/chord.py)), Bass mit `bass_octave=2`.
-- 10 Golden-Exportfälle mit Byte-Hash; Prüfpunkte 1–10 aus `MUSIC_DOMAIN_AND_MIDI.md` §5 (Note-off vor Note-on, Tempo-Map, Meta-Events, Tracknamen, Tonart nur bei Dur/Moll −7…+7).
-- DAW-Abnahme (Reaper, MuseScore 4) macht der Inhaber; Ergebnis mit Versionsstand protokollieren.
+### Nächste anstehende Aufgaben (Priorisierter Backlog)
 
-### Arbeitspaket 2: Beschlossene Kernverträge umsetzen
-- [ADR-015](../../decisions/ADR-015-kernvertraege-intervalle-voicing-notation.md): unreduzierte Intervalle prüfen und angleichen; `VOICING_REDUCTION_4_VOICE` vor DROP2 (`C13` behält 3, ♭7, 13); deutsche Namen ohne Suffix mit dokumentweiter Locale.
-- [ADR-016](../../decisions/ADR-016-v7alt-alterierte-dominante.md): `7alt` als Tonvorrat, Voicing nur mit ausdrücklicher Auswahl.
-- [ADR-014](../../decisions/ADR-014-theorie-perspektiven-und-kontext.md): `InterpretationEdge` und `StyleContext` in die Domänenverträge; für v0.1 genügt der Kontext Jazz/Pop.
-- Je Punkt eigener PR mit Golden-Fällen und Gegenprobe am alten Verhalten. Aktualisiert `API_VERTRAEGE.md` und den CHANGELOG.
+#### 1. OA-0026: Stilistische Differenzierung von Stimmführungsregeln (M06)
+- **Ziel:** Parametrisierbare Satzregeln-Engine für Voice-Leading, die zwischen strengem historischem Kontrapunkt (Verbot paralleler reiner Quinten/Oktaven nach Fux 1725 und Aldwell & Schachter 1989) und modernen Genres (Pop, Rock Power-Chords, Jazz-Quartenharmonik) unterscheidet (Korrektur ERR-009).
+- **Ort:** `src/steps/progression/voice_leading.py` bzw. `src/steps/theory/`.
+- **Abnahmekriterium:** Pop-Progression $C - G - Am - F$ wirft im Pop-Modus keine Parallelenfehler für Quintfortschreitungen aus; im Kontrapunkt-Modus werden sie als Warnung/Regelverletzung gemeldet.
 
-### Arbeitspaket 3: Graph-Abnahme in den Generator übernehmen
-- [`GRAPH_HUMAN_REVIEW_v2.csv`](../../knowledge/relations/GRAPH_HUMAN_REVIEW_v2.csv) bewertet alle 97 Kanten. `GRAPH_AUDIT_PLAN.json` und `scripts/audit_graph.py` lehnen Freigaben derzeit ab; die Übernahme braucht eine bewusste Änderung dieser Sperre mit Test.
-- Folgearbeiten aus den Entscheidungen: CDR-012-Zielknoten in [`NODE_DEFINITION_PROPOSALS.json`](../../knowledge/relations/NODE_DEFINITION_PROPOSALS.json) umbenennen; ERR-026 in zwei Versionen trennen (REL-020); CDR-010-Ersatz `C6_9_SHARP11_COLLECTION` aus [`GRAPH_CORRECTIONS.json`](../../knowledge/relations/GRAPH_CORRECTIONS.json) übernehmen.
-- 14 Korpuskanten bleiben ohne Produktionsfreigabe, bis ein empirischer Korpus vorliegt.
+#### 2. OA-0027: Implementierung formaler Property-Based Tests für Musiktheorie-Invarianten (M01/M04)
+- **Ziel:** Robuste Invariantentests mittels automatischer Generierung zufälliger Tonhöhen, Intervalle und Akkordumkehrungen.
+- **Geprüfte Invarianten:**
+  - Modulo-12-Zyklizität: $\text{transpose}(P, 12) \equiv P$
+  - Intervall-Umkehrung: $\text{invert}(\text{interval}) + \text{interval} = 12$
+  - Enharmonische Äquivalenz und Vorzeichenverträglichkeit
 
-### Arbeitspaket 4: Qualitätswerkzeuge (nur mit Zustimmung des Inhabers zur Paketinstallation)
+#### 3. OA-0028 / OA-0029: Rationale MIDI-Zeit-Engine & SMF-Parser (M11)
+- **Ziel:** Exakte rationale Zeitrechnung (`fractions.Fraction`) zur Vermeidung von Float-Drift bei triolischen und ungeraden Taktteilungen sowie vollständiger Standard-MIDI-File-Parser.
+
+### Qualitätswerkzeuge (nur mit Zustimmung des Inhabers zur Paketinstallation)
 - Vorgeschlagen und noch nicht installiert: `ruff` (in `pyproject.toml` konfiguriert), `mypy` (Kern deklariert `py.typed`), `coverage` mit Schwelle (Kern derzeit 85,3 % Zeilen), `hypothesis`, `mutmut`.
 
-### Arbeitspaket 5: Rechte und Kennzeichnung
+### Rechte und Kennzeichnung
 - Lizenzkennzeichnung je Ordner nach [ADR-004](../../decisions/ADR-004-lizenz-und-marke.md) (SPDX für Code, CC BY 4.0 nur für eigene Wissensdaten, Fremdinhalte laut Rechteinventar); Markenprüfung „STEPS“ steht aus.
 
 ### Restpunkte ohne Blockade
