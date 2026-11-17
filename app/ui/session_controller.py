@@ -8,12 +8,13 @@ Follows AGENTS.md Rule 4 (Domain boundary separation).
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any, Callable, Dict, List, Literal, Optional
+from typing import Any, Callable, Dict, List, Literal, Optional, Union
 
 from src.steps.progression.session import (
     ChordRecommendation,
     DegreeAnalysis,
     ProgressionSession,
+    VoiceLeadingStyle,
 )
 
 
@@ -54,6 +55,7 @@ class ProgressionSessionController:
             "is_minor": self._session.is_minor,
             "convention": self._session.convention,
             "bpm": self._session.bpm,
+            "voice_leading_style": self._session.voice_leading_style.value,
             "is_dirty": self._session.is_dirty,
             "can_undo": self._session.can_undo,
             "can_redo": self._session.can_redo,
@@ -99,6 +101,11 @@ class ProgressionSessionController:
 
     def transpose(self, semitones: int) -> None:
         self._session.transpose(semitones)
+        self._notify()
+
+    def set_voice_leading_style(self, style: Union[str, VoiceLeadingStyle]) -> None:
+        """Sets the voice leading evaluation style (e.g. CONTEMPORARY_POP vs STRICT_CLASSICAL)."""
+        self._session.set_voice_leading_style(style)
         self._notify()
 
     def undo(self) -> None:

@@ -4,6 +4,8 @@ from __future__ import annotations
 from .voice_leading import (
     ContrapuntalMotion,
     VoiceLeadingStyle,
+    VoiceLeadingViolation,
+    VoiceLeadingEvaluation,
     absolute_semitone_distance,
     analyze_contrapuntal_motions,
     circular_pc_distance,
@@ -11,6 +13,7 @@ from .voice_leading import (
     detect_voice_crossing,
     detect_voice_overlap,
     detect_parallel_fifths_octaves,
+    evaluate_voice_leading_transition,
     guide_tone_resolution,
     optimize_smooth_voice_leading
 )
@@ -64,6 +67,8 @@ from .recommender import (
 __all__ = [
     'ContrapuntalMotion',
     'VoiceLeadingStyle',
+    'VoiceLeadingViolation',
+    'VoiceLeadingEvaluation',
     'absolute_semitone_distance',
     'analyze_contrapuntal_motions',
     'circular_pc_distance',
@@ -71,6 +76,7 @@ __all__ = [
     'detect_voice_crossing',
     'detect_voice_overlap',
     'detect_parallel_fifths_octaves',
+    'evaluate_voice_leading_transition',
     'guide_tone_resolution',
     'optimize_smooth_voice_leading',
     'CanonicalProgression',

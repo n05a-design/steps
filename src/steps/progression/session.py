@@ -14,7 +14,7 @@ from __future__ import annotations
 import copy
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Dict, List, Literal, Optional, Tuple
+from typing import Any, Dict, List, Literal, Optional, Tuple, Union
 
 from ..midi.export_service import MidiExportService
 from ..storage.project_io import Project, load_project, save_project
@@ -69,6 +69,7 @@ class SessionState:
     bpm: float = 120.0
     ppq: int = 480
     chord_duration_ticks: int = 1920
+    voice_leading_style: str = "CONTEMPORARY_POP"
 
 
 class ProgressionSession:
@@ -83,19 +84,27 @@ class ProgressionSession:
         key_root: str = "C",
         is_minor: bool = False,
         convention: Literal["INT", "DE"] = "INT",
-        bpm: float = 120.0
+        bpm: float = 120.0,
+        voice_leading_style: Union[str, VoiceLeadingStyle] = VoiceLeadingStyle.CONTEMPORARY_POP,
     ):
         chords = initial_chords if initial_chords is not None else ["C", "G", "Am", "F"]
         # Verify initial chords can be parsed
         for sym in chords:
             parse_chord(sym, convention=convention)
 
+        style_val = (
+            voice_leading_style.value
+            if isinstance(voice_leading_style, VoiceLeadingStyle)
+            else str(voice_leading_style).upper()
+        )
+
         init_state = SessionState(
             chords=list(chords),
             key_root=key_root,
             is_minor=is_minor,
             convention=convention,
-            bpm=bpm
+            bpm=bpm,
+            voice_leading_style=style_val,
         )
         self._undo_stack = UndoStack[SessionState](init_state, max_depth=50)
 
@@ -122,6 +131,25 @@ class ProgressionSession:
     @property
     def bpm(self) -> float:
         return self.state.bpm
+
+    @property
+    def voice_leading_style(self) -> VoiceLeadingStyle:
+        try:
+            return VoiceLeadingStyle(self.state.voice_leading_style)
+        except ValueError:
+            return VoiceLeadingStyle.CONTEMPORARY_POP
+
+    def set_voice_leading_style(self, style: Union[str, VoiceLeadingStyle]) -> None:
+        """Sets the active voice-leading style (e.g. CONTEMPORARY_POP vs. STRICT_CLASSICAL)."""
+        resolved = (
+            style
+            if isinstance(style, VoiceLeadingStyle)
+            else VoiceLeadingStyle(str(style).upper())
+        )
+        if resolved.value != self.state.voice_leading_style:
+            new_state = copy.deepcopy(self.state)
+            new_state.voice_leading_style = resolved.value
+            self._push_mutation(new_state)
 
     @property
     def is_dirty(self) -> bool:
@@ -216,10 +244,23 @@ class ProgressionSession:
         new_state.is_minor = is_minor
         self._push_mutation(new_state)
 
-    def get_voicings(self, style: Literal["CLOSE", "DROP2", "SHELL", "ROOTLESS"] = "CLOSE") -> List[Voicing]:
+    def get_voicings(
+        self,
+        voicing_type: Literal["CLOSE", "DROP2", "SHELL", "ROOTLESS"] = "CLOSE",
+        style: Optional[Union[str, VoiceLeadingStyle]] = None,
+    ) -> List[Voicing]:
         """Generates voice-led Voicing instances for all chords in session."""
         defs = [parse_chord(sym, convention=self.convention) for sym in self.chords]
-        return generate_progression_voicings(defs, style=style)
+        actual_voicing_type = voicing_type
+        actual_vl_style = self.voice_leading_style if style is None else style
+        if isinstance(actual_vl_style, str) and actual_vl_style.upper() in {"CLOSE", "DROP2", "SHELL", "ROOTLESS"}:
+            actual_voicing_type = actual_vl_style.upper()  # type: ignore
+            actual_vl_style = self.voice_leading_style
+        return generate_progression_voicings(
+            defs,
+            style=actual_vl_style,
+            initial_voicing_type=actual_voicing_type,
+        )
 
     def get_beginner_voicings(
         self,
@@ -239,11 +280,18 @@ class ProgressionSession:
             convention=self.convention,
         )
 
-    def analyze_progression(self) -> List[DegreeAnalysis]:
+    def analyze_progression(
+        self,
+        style: Optional[Union[str, VoiceLeadingStyle]] = None,
+    ) -> List[DegreeAnalysis]:
         """
         Performs Roman numeral analysis and calculates adjacent voice-leading
-        distances and parallel motion warnings.
+        distances and parallel motion warnings according to the configured
+        or specified voice leading style.
         """
+        active_style = self.voice_leading_style if style is None else (
+            style if isinstance(style, VoiceLeadingStyle) else VoiceLeadingStyle(str(style).upper())
+        )
         voicings = self.get_voicings("CLOSE")
         analyses: List[DegreeAnalysis] = []
         
@@ -274,7 +322,7 @@ class ProgressionSession:
                 v_next = voicings[i + 1].midi_notes
                 if len(v_curr) == len(v_next):
                     dist = absolute_semitone_distance(v_curr, v_next)
-                    warnings = detect_parallel_fifths_octaves(v_curr, v_next, VoiceLeadingStyle.STRICT_COUNTERPOINT)
+                    warnings = detect_parallel_fifths_octaves(v_curr, v_next, style=active_style)
 
             analyses.append(DegreeAnalysis(
                 index=i,
@@ -628,6 +676,9 @@ class ProgressionSession:
         proj = Project(
             title=self.state.title,
             notation_convention=self.convention,
+            metadata={
+                "voice_leading_style": self.voice_leading_style.value,
+            },
             time_settings={
                 "ppq": self.state.ppq,
                 "time_signature": {"numerator": 4, "denominator": 4},
@@ -658,6 +709,8 @@ class ProgressionSession:
                     payload = ev.get("payload")
                     if isinstance(payload, str):
                         chords.append(payload)
+                    elif isinstance(payload, dict) and "symbol" in payload:
+                        chords.append(payload["symbol"])
                 break
 
         if not chords:
@@ -666,6 +719,11 @@ class ProgressionSession:
         bpm = proj.time_settings.get("tempo_bpm", 120.0)
         ppq = proj.time_settings.get("ppq", 480)
         dur = ppq * 4
+        style_val = (
+            proj.metadata.get("voice_leading_style", "CONTEMPORARY_POP")
+            if proj.metadata
+            else "CONTEMPORARY_POP"
+        )
 
         new_state = SessionState(
             title=proj.title,
@@ -675,7 +733,8 @@ class ProgressionSession:
             convention=proj.notation_convention,
             bpm=bpm,
             ppq=ppq,
-            chord_duration_ticks=dur
+            chord_duration_ticks=dur,
+            voice_leading_style=style_val,
         )
         self._undo_stack = UndoStack[SessionState](new_state, max_depth=50)
 
