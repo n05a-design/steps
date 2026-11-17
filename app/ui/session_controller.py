@@ -1,0 +1,108 @@
+"""
+STEPS UI Presenter: Progression Session Controller.
+
+Decouples UI views (Tkinter/Desktop) from pure music logic in src/steps/progression/session.py.
+Follows AGENTS.md Rule 4 (Domain boundary separation).
+"""
+
+from __future__ import annotations
+
+from pathlib import Path
+from typing import Any, Callable, Dict, List, Literal, Optional
+
+from src.steps.progression.session import (
+    ChordRecommendation,
+    DegreeAnalysis,
+    ProgressionSession,
+)
+
+
+class ProgressionSessionController:
+    """
+    Observable controller mediating between desktop views and progression session.
+    Headless-testable without graphical display server.
+    """
+
+    def __init__(self, session: Optional[ProgressionSession] = None):
+        self._session = session or ProgressionSession()
+        self._listeners: List[Callable[[], None]] = []
+
+    @property
+    def session(self) -> ProgressionSession:
+        return self._session
+
+    def add_listener(self, callback: Callable[[], None]) -> None:
+        """Subscribes view listener for state changes."""
+        self._listeners.append(callback)
+
+    def _notify(self) -> None:
+        """Notifies registered listeners."""
+        for cb in self._listeners:
+            try:
+                cb()
+            except Exception:
+                pass
+
+    def get_view_model(self) -> Dict[str, Any]:
+        """Produces a structured view-model dictionary ready for GUI rendering."""
+        analysis = self._session.analyze_progression()
+        return {
+            "title": self._session.state.title,
+            "chords": self._session.chords,
+            "key_root": self._session.key_root,
+            "is_minor": self._session.is_minor,
+            "convention": self._session.convention,
+            "bpm": self._session.bpm,
+            "is_dirty": self._session.is_dirty,
+            "can_undo": self._session.can_undo,
+            "can_redo": self._session.can_redo,
+            "analysis": [
+                {
+                    "index": a.index,
+                    "symbol": a.symbol,
+                    "roman": a.roman_numeral,
+                    "distance_to_next": a.semitone_distance_to_next,
+                    "warnings": list(a.voice_leading_warnings)
+                }
+                for a in analysis
+            ]
+        }
+
+    def set_chord(self, index: int, symbol: str) -> None:
+        self._session.set_chord(index, symbol)
+        self._notify()
+
+    def add_chord(self, symbol: str) -> None:
+        self._session.add_chord(symbol)
+        self._notify()
+
+    def remove_chord(self, index: int) -> None:
+        self._session.remove_chord(index)
+        self._notify()
+
+    def transpose(self, semitones: int) -> None:
+        self._session.transpose(semitones)
+        self._notify()
+
+    def undo(self) -> None:
+        self._session.undo()
+        self._notify()
+
+    def redo(self) -> None:
+        self._session.redo()
+        self._notify()
+
+    def save(self, file_path: Path | str) -> Path:
+        out = self._session.save_to_file(file_path)
+        self._notify()
+        return out
+
+    def load(self, file_path: Path | str) -> None:
+        self._session.load_from_file(file_path)
+        self._notify()
+
+    def export_midi(self, file_path: Path | str) -> Path:
+        return self._session.export_midi_file(file_path)
+
+    def explore_next(self, index: int) -> List[ChordRecommendation]:
+        return self._session.explore_next_chords(index)

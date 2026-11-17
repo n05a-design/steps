@@ -20,6 +20,11 @@ from .engine import (
     generate_progression_voicings,
     analyze_progression_voice_leading
 )
+from .session import (
+    ProgressionSession,
+    ChordRecommendation,
+    DegreeAnalysis
+)
 
 __all__ = [
     'VoiceLeadingStyle',
@@ -36,6 +41,9 @@ __all__ = [
     'list_progressions',
     'resolve_roman_degree',
     'generate_progression_voicings',
-    'analyze_progression_voice_leading'
+    'analyze_progression_voice_leading',
+    'ProgressionSession',
+    'ChordRecommendation',
+    'DegreeAnalysis'
 ]
 
