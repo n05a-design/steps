@@ -44,3 +44,17 @@ design/brand/*.svg -text
 # Aus 99ca36a wiederhergestellte Glide-Gesamtaudit-Originale auch im Windows-Checkout bytegenau halten;
 # ihre SHA-256 stehen in knowledge/sources/MUSIC_SOURCE_REVIEW_PROGRESS.csv.
 archive/audit-history/glide-gesamtaudit-v2-recovery-2026-11-14/originals/** -text
+
+# -----------------------------------------------------------------------------
+# GitHub Linguist Language Statistics Overrides
+# -----------------------------------------------------------------------------
+# Exclude third-party research scrapes, web assets, and historical archives
+# from GitHub repository language statistics so that STEPS is correctly
+# identified as pure Python.
+research/** linguist-vendored
+archive/** linguist-vendored
+docs/** linguist-documentation
+knowledge/** linguist-documentation
+*.html linguist-documentation
+*.css linguist-vendored
+*.js linguist-vendored
