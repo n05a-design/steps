@@ -68,6 +68,17 @@ class ProgressionSessionController:
             ]
         }
 
+    def get_state_summary(self) -> Dict[str, Any]:
+        """Summary dictionary for status bars, logs and headless runners."""
+        return {
+            "title": self._session.state.title,
+            "chords": list(self._session.chords),
+            "key": f"{self._session.key_root} {'m' if self._session.is_minor else ''}".strip(),
+            "bpm": self._session.bpm,
+            "can_undo": self._session.can_undo,
+            "can_redo": self._session.can_redo,
+        }
+
     def set_chord(self, index: int, symbol: str) -> None:
         self._session.set_chord(index, symbol)
         self._notify()
