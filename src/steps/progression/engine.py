@@ -402,6 +402,21 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
             'Guide-tone counterpoint: F (minor 3rd of Dm7) serves as 7th of G7, while B (major 3rd of G7) represents Dorian 6th',
         ],
     },
+    'PROG-008': {
+        'family': 'BLUES_12_BAR',
+        'functional_syntax': 'Idom7 - IVdom7 - Idom7 - V7 - IVdom7 - Idom7',
+        'harmonic_drive': 'Blues-functional dominant 7th chords on tonic, subdominant, and dominant with plagal/blues turnaround',
+        'tonal_ambiguity': {
+            'tonic': 'C',
+            'blues_scale_coloring': 'b7 (Bb) over major tonic triad',
+            'citations': ['Rawlins/Bahha (2005)', 'Open Music Theory (Blues Harmony)'],
+        },
+        'voice_leading_features': [
+            'Dominant seventh chords functioning non-dominantly (blues tonic C7, subdominant F7)',
+            'Guide tone shifts between 3rd and b7 (E/Bb in C7 -> Eb/A in F7)',
+            'Plagal return V7 -> IV7 -> I7 characteristic of classic 12-bar blues',
+        ],
+    },
     'PROG-010': {
         'family': 'SECONDARY_DOMINANT_PROLONGATION',
         'functional_syntax': 'I - V7/vi - vi - IV (T - (D7)->Tp - Tp - S)',
@@ -507,6 +522,36 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
             'Chromatic voice leading between major seventh and dominant seventh qualities',
         ],
     },
+    'PROG-017': {
+        'family': 'CLASSICAL_JAZZ_BACKDOOR_II_V',
+        'functional_syntax': 'iv7 - bVII7 - Imaj7 (s7 - Subtonik7 - Tmaj7)',
+        'harmonic_drive': 'Minor subdominant two-five cadence resolving from whole step below tonic (Lady Bird turnaround)',
+        'tonal_ambiguity': {
+            'tonic': 'C',
+            'backdoor_cadence': 'Fm7 - Bb7 -> Cmaj7',
+            'citations': ['Levine (1995)', 'Terefenko (2014)'],
+        },
+        'voice_leading_features': [
+            'Minor subdominant iv7 (Fm7) preserves Aeolian modal interchange coloring (Ab)',
+            'Smooth chromatic voice descent: Ab (in Fm7/Bb7) resolves down a half-step to G (in Cmaj7)',
+            'Backdoor whole-step bass approach Bb -> C avoids dominant tritone tension',
+        ],
+    },
+    'PROG-018': {
+        'family': 'SUBSTITUTE_BACKDOOR_II_V',
+        'functional_syntax': 'ii7 - bVII7 - Imaj7 (Sp7 - Subtonik7 - Tmaj7)',
+        'harmonic_drive': 'Diatonic supertonic minor 7th paired with backdoor dominant bVII7 substituting for V7',
+        'tonal_ambiguity': {
+            'tonic': 'C',
+            'hybrid_substitute': 'Dm7 (diatonic ii) combined with Bb7 (modal bVII7)',
+            'citations': ['Rawlins/Bahha (2005)'],
+        },
+        'voice_leading_features': [
+            'Common-tone retention: D and F shared between Dm7 and Bb7',
+            'Chromatic inner-voice motion: A (in Dm7) moves to Ab (in Bb7) before resolving to G (in Cmaj7)',
+            'Upward whole-step bass resolution Bb -> C into tonic major',
+        ],
+    },
     'PROG-019': {
         'family': 'MINOR_LINE_CLICHE',
         'functional_syntax': 'i - i(maj7) - i7 - im6 (t - t[maj7] - t7 - t6)',
@@ -520,6 +565,36 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
             'Static root anchor A',
             'Single chromatic voice line descending 1 semitone per step',
             'Outer voices remain stable while inner chromatic motion generates harmonic tension',
+        ],
+    },
+    'PROG-020': {
+        'family': 'EXTENDED_TRITONE_SUB_ALTERED',
+        'functional_syntax': 'ii9 - bII7(#11) - Imaj9 (Sp9 - SubD7[#11] - Tmaj9)',
+        'harmonic_drive': 'Altered tritone substitution utilizing Lydian Dominant bII7(#11) with common-tone tonic anticipation',
+        'tonal_ambiguity': {
+            'tonic': 'C',
+            'scale_degree_enharmonic': '#11 of Db7 is G natural, matching the fifth of C tonic',
+            'citations': ['Levine (1995)', 'Pease (2003)'],
+        },
+        'voice_leading_features': [
+            'Stepwise extended upper-structure voice leading: 9th to #11 to 9th (E -> G -> D)',
+            'Common-tone tonic anticipation: G natural (#11 of Db7) held into Cmaj9 (5th)',
+            'Half-step chromatic bass descent D -> Db -> C',
+        ],
+    },
+    'PROG-027': {
+        'family': 'MINOR_JAZZ_BLUES_SUBMEDIANT_TURNAROUND',
+        'functional_syntax': 'i7 - iv7 - i7 - bVImaj7 - V7(#11) - i7',
+        'harmonic_drive': 'Minor jazz blues turnaround incorporating bVImaj7 submediant and altered dominant V7(#11)',
+        'tonal_ambiguity': {
+            'tonic': 'Cm',
+            'standards': ["Birk's Works", "Footprints"],
+            'citations': ['Levine (1995)', 'Terefenko (2014)'],
+        },
+        'voice_leading_features': [
+            'Submediant bVImaj7 (Abmaj7) prepares dominant V7(#11) (G7(#11)) by downward half-step bass motion',
+            'Sharp eleven (#11 = C#/Db) in dominant resolves into root/third of tonic minor',
+            'Minor blues scale flexibility over minor seventh and altered dominant qualities',
         ],
     },
 }
