@@ -1,0 +1,39 @@
+{
+  "index_version": "1.0.0",
+  "project": "STEPS",
+  "updated_at": "2026-11-17",
+  "concepts": {
+    "ii-v-i": {
+      "canonical_name": "Standard Jazz Cadence (ii-V-I)",
+      "prog_id": "PROG-003",
+      "sources": ["omt-ii-v-i"],
+      "claims": ["PROG-003-HARMONY", "PROG-003-VOICE-II-V", "PROG-003-VOICE-V-I"],
+      "domains": ["M04", "M06"]
+    },
+    "doo-wop": {
+      "canonical_name": "Doo-Wop Progression (I-vi-IV-V)",
+      "prog_id": "PROG-001",
+      "sources": ["omt-four-chord-schemas"],
+      "claims": ["PROG-001-HARMONY", "PROG-001-TONAL-CENTER"],
+      "domains": ["M04", "M05"]
+    },
+    "axis": {
+      "canonical_name": "Pop-Punk / Axis of Awesome Progression (I-V-vi-IV)",
+      "prog_id": "PROG-009",
+      "sources": ["mto-richards-axis-progressions"],
+      "claims": ["PROG-009-HARMONY", "PROG-009-VOICE-LEADING"],
+      "domains": ["M04", "M05"]
+    },
+    "diminished_seventh": {
+      "canonical_name": "Diminished Seventh Chord (vii°7)",
+      "sources": ["SRC-0010", "SRC-0014"],
+      "frameworks": ["Common Practice (Aldwell/Schachter)", "Funktionstheorie (Riemann)", "Jazz CST"],
+      "domains": ["M04"]
+    },
+    "modal_interchange": {
+      "canonical_name": "Modal Interchange / Borrowed Chords (bVII, iv, bVI)",
+      "sources": ["omt-chromatic-subdominants"],
+      "domains": ["M04", "M05"]
+    }
+  }
+}

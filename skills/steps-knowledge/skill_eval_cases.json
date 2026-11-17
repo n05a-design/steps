@@ -1,0 +1,211 @@
+{
+  "schema_version": "1.0.0",
+  "total_cases": 25,
+  "description": "Groundedness and accuracy evaluation dataset for STEPS Knowledge Adapter",
+  "cases": [
+    {
+      "id": "EVAL-LOC-01",
+      "category": "locale_spelling",
+      "prompt": "Welcher Ton ist 'B' im deutschen Sprachraum?",
+      "expected_status": "GROUNDED",
+      "expected_fact": "B bezeichnet im Deutschen den um einen Halbton erniedrigten Ton H (B flat / Bb).",
+      "expected_source": "M02 / ADR-005"
+    },
+    {
+      "id": "EVAL-LOC-02",
+      "category": "locale_spelling",
+      "prompt": "Welcher Ton ist 'B' im internationalen Sprachraum?",
+      "expected_status": "GROUNDED",
+      "expected_fact": "B bezeichnet im internationalen System den Stammton B natural (deutsch H).",
+      "expected_source": "M02 / ADR-005"
+    },
+    {
+      "id": "EVAL-LOC-03",
+      "category": "locale_spelling",
+      "prompt": "Sind C# und Db in der Harmonielehre identisch?",
+      "expected_status": "GROUNDED",
+      "expected_fact": "Nein. C# und Db teilen die 12-TET-Tonklasse 1, besitzen jedoch unterschiedliche diatonische Stufen und Funktionen.",
+      "expected_source": "M02 / ISO 16"
+    },
+    {
+      "id": "EVAL-LOC-04",
+      "category": "locale_spelling",
+      "prompt": "Wie lauten die Töne von C-Dur auf Deutsch?",
+      "expected_status": "GROUNDED",
+      "expected_fact": "C, D, E, F, G, A, H",
+      "expected_source": "M02"
+    },
+    {
+      "id": "EVAL-LOC-05",
+      "category": "locale_spelling",
+      "prompt": "Erkläre den Akkord 'B' ohne Angabe der Notationskonvention.",
+      "expected_status": "AMBIGUOUS_REJECTION",
+      "expected_fact": "Ablehnung oder Klärungsanforderung wegen Ambiguität zwischen DE (Bb) und INT (B natural).",
+      "expected_source": "ADR-005"
+    },
+
+    {
+      "id": "EVAL-ALT-01",
+      "category": "alternative_analyses",
+      "prompt": "Wie wird ein verminderter Septakkord (z.B. Bdim7) harmonisch analysiert?",
+      "expected_status": "ALTERNATIVE_INTERPRETATIONS",
+      "expected_fact": "Leittonakkord vii°7 (Aldwell/Schachter) vs. verkürzter Dominantseptnonakkord D̸7> (Riemann).",
+      "expected_source": "SRC-0010 / Aldwell-Schachter"
+    },
+    {
+      "id": "EVAL-ALT-02",
+      "category": "alternative_analyses",
+      "prompt": "Ist bVII in C-Dur eine klassische Kadenz?",
+      "expected_status": "ALTERNATIVE_INTERPRETATIONS",
+      "expected_fact": "Keine klassische authentische Kadenz, sondern Modal Interchange (Entlehnung) oder Rock-Subtonika.",
+      "expected_source": "omt-chromatic-subdominants"
+    },
+    {
+      "id": "EVAL-ALT-03",
+      "category": "alternative_analyses",
+      "prompt": "Welche Funktion hat E7 in C-Dur?",
+      "expected_status": "GROUNDED",
+      "expected_fact": "Zwischendominante V7/vi zur VI. Stufe (Am).",
+      "expected_source": "omt-roman-numerals"
+    },
+    {
+      "id": "EVAL-ALT-04",
+      "category": "alternative_analyses",
+      "prompt": "Welche Funktion hat E7 in a-Moll?",
+      "expected_status": "GROUNDED",
+      "expected_fact": "Hauptdominante V7 zur Tonika i (Am).",
+      "expected_source": "omt-roman-numerals"
+    },
+    {
+      "id": "EVAL-ALT-05",
+      "category": "alternative_analyses",
+      "prompt": "Wie wird die Tritonussubstitution Db7 für G7 theoretisch begründet?",
+      "expected_status": "GROUNDED",
+      "expected_fact": "Gemeinsame Terz- und Septimtöne (Guide Tones F und B/Cb), die sich im Tritonusabstand spiegeln.",
+      "expected_source": "M04 / Jazz CST"
+    },
+
+    {
+      "id": "EVAL-GEN-01",
+      "category": "genre_and_rhythm",
+      "prompt": "Welche Taktart und welches Metrum hat Samba Batucada im STEPS-Katalog?",
+      "expected_status": "GROUNDED",
+      "expected_fact": "2/2 Alla Breve mit Betonung des Surdo auf Zählzeit 2.",
+      "expected_source": "GENRE_RESEARCH_LATIN.md / PAT-019"
+    },
+    {
+      "id": "EVAL-GEN-02",
+      "category": "genre_and_rhythm",
+      "prompt": "Wie ist das Standard-PPQ im STEPS-Zeitmodell definiert?",
+      "expected_status": "GROUNDED",
+      "expected_fact": "480 PPQ (ganzzahlig).",
+      "expected_source": "M05 / ADR-007"
+    },
+    {
+      "id": "EVAL-GEN-03",
+      "category": "genre_and_rhythm",
+      "prompt": "Was beschreibt die Bossa-Nova-Batida im STEPS-Katalog?",
+      "expected_status": "GROUNDED",
+      "expected_fact": "Begleitfamilie mit Synkopierungsfiguren von João Gilberto; Deutung als Übertragung von Tamborim und Surdo.",
+      "expected_source": "ENTSCHEIDUNG_CDR014_CDR019_2026-11-16.md"
+    },
+    {
+      "id": "EVAL-GEN-04",
+      "category": "genre_and_rhythm",
+      "prompt": "Ist der Montuno in STEPS eine historisch authentische afrokubanische Transkription?",
+      "expected_status": "GROUNDED",
+      "expected_fact": "Nein, eigene didaktische STEPS-Übung ohne historischen Alleinvertretungsanspruch.",
+      "expected_source": "ENTSCHEIDUNG_CDR014_CDR019_2026-11-16.md"
+    },
+    {
+      "id": "EVAL-GEN-05",
+      "category": "genre_and_rhythm",
+      "prompt": "Wie verhält sich das Swing-Verhältnis bei 130 BPM in Jazz-Achtelnoten?",
+      "expected_status": "GROUNDED",
+      "expected_fact": "Deskriptive MIDI-Raten um 60:40 bis 67:33 (Triolenfeeling), keine starre physikalische Konstante.",
+      "expected_source": "GMD_SWING_DETAIL_2026-11-15.json"
+    },
+
+    {
+      "id": "EVAL-NOE-01",
+      "category": "no_evidence",
+      "prompt": "Wer hat das Chord Wheel laut der Datei 'The Chord Wheel.html' erfunden?",
+      "expected_status": "NO_EVIDENCE",
+      "expected_fact": "Die Quelle ist als KI-SEO-Text ohne wissenschaftlichen Beleg gesperrt; 'Klaus Vogel 1997' ist eine Fiktion.",
+      "expected_source": "HTML_EXTRAKTE_UND_OCR_NACHPRUEFUNG_2026-11-16.md"
+    },
+    {
+      "id": "EVAL-NOE-02",
+      "category": "no_evidence",
+      "prompt": "Gibt es einen Beleg für den Akkord C11 im STEPS-Produktkern?",
+      "expected_status": "NO_EVIDENCE",
+      "expected_fact": "C11 ist im STEPS-Kern derzeit bewusst nicht als Akkordsymbol registriert.",
+      "expected_source": "docs/IMPLEMENTATION.md"
+    },
+    {
+      "id": "EVAL-NOE-03",
+      "category": "no_evidence",
+      "prompt": "Welche Akkorde stehen auf Seite 450 von Stuart 1500 Chord Progressions?",
+      "expected_status": "NO_EVIDENCE",
+      "expected_fact": "Stuart hat keine 450 Seiten; das Heft umfasst 1.270 Kadenzen auf 32 Seiten.",
+      "expected_source": "PRUEFUNG_ZUSAMMENFASSUNGEN_2026-11-15.md"
+    },
+    {
+      "id": "EVAL-NOE-04",
+      "category": "no_evidence",
+      "prompt": "Welche Audio-Engine wird für physikalisches Modellieren in STEPS v0.1 verwendet?",
+      "expected_status": "NO_EVIDENCE",
+      "expected_fact": "In v0.1 ist keine physikalische Audio-Modeling-Engine integriert (nur SMF-Export und UI-Shell).",
+      "expected_source": "ROADMAP_AND_RESOURCE_PLAN.md"
+    },
+    {
+      "id": "EVAL-NOE-05",
+      "category": "no_evidence",
+      "prompt": "Nenne die Gehirnwellen-Frequenzen bei Hören von PROG-024.",
+      "expected_status": "NO_EVIDENCE",
+      "expected_fact": "Für esoterische oder nicht musiktheoretisch belegte Behauptungen existiert kein Eintrag.",
+      "expected_source": "AGENTS.md"
+    },
+
+    {
+      "id": "EVAL-LEG-01",
+      "category": "legal_scope",
+      "prompt": "Darf das Buch Aldwell & Schachter als Volltext im Quell-Repository liegen?",
+      "expected_status": "RESTRICTED_LOCAL",
+      "expected_fact": "Nein. Klasse E (kommerzielles Verlagslehrbuch) liegt nur lokal per .gitignore vor; im Repo steht nur eine eigene Zusammenfassung.",
+      "expected_source": "RECHTEINVENTAR_VOLLTEXTE_2026-11-14.md"
+    },
+    {
+      "id": "EVAL-LEG-02",
+      "category": "legal_scope",
+      "prompt": "Darf das Lehrbuch 'Fundamentals of Music Processing' aus der Z-Library im Repository verbreitet werden?",
+      "expected_status": "RESTRICTED_LOCAL",
+      "expected_fact": "Nein. Klasse E; Herkunft aus nicht autorisierter Quelle transparent markiert; nur lokale Zusammenfassung.",
+      "expected_source": "RECHTEINVENTAR_VOLLTEXTE_2026-11-14.md"
+    },
+    {
+      "id": "EVAL-LEG-03",
+      "category": "legal_scope",
+      "prompt": "Unter welcher Lizenz steht das Lehrbuch 'Understanding Basic Music Theory' von Catherine Schmidt-Jones?",
+      "expected_status": "GROUNDED",
+      "expected_fact": "Creative Commons Attribution 2.0 (CC BY 2.0).",
+      "expected_source": "QUELLENMETADATEN_UND_CLAIMS_W01_W03_2026-11-16.md"
+    },
+    {
+      "id": "EVAL-LEG-04",
+      "category": "legal_scope",
+      "prompt": "Dürfen aus Glide kopierte Module in das Steps-Desktop-UI ohne Lizenzübernahme integriert werden?",
+      "expected_status": "RESTRICTED_LOCAL",
+      "expected_fact": "Nein. Glide steht unter MPL-2.0; Urheberhinweise und file-level copyleft müssen gewahrt werden.",
+      "expected_source": "AGENTS.md / RIGHTS_SECURITY_AND_RELEASE.md"
+    },
+    {
+      "id": "EVAL-LEG-05",
+      "category": "legal_scope",
+      "prompt": "Darf die STEPS-App fremde Buchscans im PyInstaller-Bundle ausliefern?",
+      "expected_status": "RESTRICTED_LOCAL",
+      "expected_fact": "Nein. Das Anwendungs-Bundle enthält ausschließlich App-Code, eigene Brand-Assets und kuratierte Daten.",
+      "expected_source": "docs/governance/RIGHTS_SECURITY_AND_RELEASE.md"
+    }
+  ]
+}
