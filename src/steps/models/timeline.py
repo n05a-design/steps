@@ -169,6 +169,25 @@ class TimelineEvent:
         return self.start_tick + self.duration_ticks
 
 
+@dataclass
+class Timeline:
+    """Timeline container holding a sequence of TimelineEvents."""
+    events: List[TimelineEvent] = field(default_factory=list)
+    ppq: int = DEFAULT_PPQ
+    tempo_map: TempoMap = field(default_factory=TempoMap)
+    time_signature: TimeSignature = field(default_factory=TimeSignature)
+
+    def add_event(self, event: TimelineEvent) -> None:
+        self.events.append(event)
+        self.events.sort(key=lambda e: e.start_tick)
+
+    @property
+    def total_ticks(self) -> int:
+        if not self.events:
+            return 0
+        return max(e.end_tick for e in self.events)
+
+
 def apply_swing(tick: int, amount: float, ppq: int = DEFAULT_PPQ) -> int:
     """
     Applies deterministic swing transformation to off-beat 8th notes.

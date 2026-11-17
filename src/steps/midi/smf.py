@@ -43,6 +43,11 @@ class MidiTrack:
         if name:
             self.add_track_name(name)
 
+    @property
+    def raw_events(self) -> List[RawMidiEvent]:
+        """Returns shallow copy of raw events recorded in this track."""
+        return list(self._raw_events)
+
     def add_track_name(self, name: str) -> None:
         """Adds meta event 0x03 Track Name at tick 0."""
         text_bytes = name.encode("utf-8")

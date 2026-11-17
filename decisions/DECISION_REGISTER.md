@@ -17,7 +17,7 @@ Die historische Entscheidungsüberlieferung von Glide D01–D77 bleibt im origin
 | ADR-004 | proposed | License/Brand | MPL für eigene kompatible Dateien; Fremdassets einzeln prüfen, eigenes Steps-Logo |
 | ADR-005 | proposed | Fachmodell | Pitch-Class vs Spelling, deutsches H/B vs int. B/Bb, Enharmonik als eigenständige Objekte (OA-0005) |
 | ADR-006 | proposed | Datenhaltung | JSON + Schema + atomarer Writer für MVP; DB erst nach gemessenem Bedarf |
-| ADR-007 | proposed | Audio/MIDI | Ports zuerst, Backend nach Plattform-/Lizenzbenchmark (OA-0028, OA-0029) |
+| ADR-007 | accepted | Audio/MIDI | Ports zuerst, Backend nach Plattform-/Lizenzbenchmark (OA-0028, OA-0029) |
 | ADR-008 | proposed | KI-Skill | Router + indexierte Originalreferenzen + Claim-Registry, keine Volltext-Promptkopie (OA-0011) |
 | ADR-009 | proposed | Historische 21/39-Verzeichnisse | zunächst beibehalten, Alias-/Mergeentscheidung nach Inhaltsaudit |
 | ADR-010 | proposed | Public-Repository-Medien | sofort Rechts-/History-Audit, keine neuen Fremd-Bytes pushen (OA-0001) |
