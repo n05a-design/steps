@@ -54,6 +54,10 @@ When a user adds or updates a music document or specification:
         ▼
 5. Update Canonical Master File:
    Back up the canonical register, apply reviewed OA-* updates and run validate_register.py.
+        │
+        ▼
+6. Verify Musical Reference IDs & Identity Lock (OA-0031):
+   python .agents/skills/steps-knowledge-curation/scripts/check_reference_ids.py
 ```
 
 ---
