@@ -27,6 +27,8 @@ class TestReferenceIdIntegrityTool(unittest.TestCase):
         cls.repo_root = Path(__file__).resolve().parents[4]
 
     def test_real_repo_integrity(self) -> None:
+        if not (self.repo_root / "decisions" / "DECISION_REGISTER.md").is_file():
+            self.skipTest("Sparse checkout detected: decisions/ not present in environment")
         report = validate_reference_ids(self.repo_root)
         self.assertTrue(report.success, f"Reference check failed with errors: {report.errors}")
         self.assertEqual(len(report.errors), 0)
