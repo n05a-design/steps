@@ -277,6 +277,38 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.assertEqual(self.window.controller.saved_paths, [Path("/tmp/saved.stepsproj")])
         self.assertEqual(self.window.controller.loaded_paths, [Path("/tmp/source.stepsproj")])
 
+    @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/fail-close.stepsproj")
+    @patch("app.ui.main_window.messagebox.showerror")
+    @patch("app.ui.main_window.messagebox.askyesnocancel", return_value=True)
+    def test_close_save_error_keeps_window_and_dirty_session(
+        self, prompt, show_error, choose_path
+    ):
+        self.window.controller.session.is_dirty = True
+        self.window.controller.save_error = StorageError("disk full")
+
+        self.window._on_close()
+
+        self.assertFalse(self.window.root.destroyed)
+        self.assertTrue(self.window.controller.session.is_dirty)
+        show_error.assert_called_once()
+
+    @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/fail-open.stepsproj")
+    @patch("app.ui.main_window.messagebox.showerror")
+    @patch("app.ui.main_window.messagebox.askyesnocancel", return_value=True)
+    @patch("app.ui.main_window.filedialog.askopenfilename", return_value="/tmp/source.stepsproj")
+    def test_open_save_error_prevents_loading(
+        self, choose_open, prompt, show_error, choose_save
+    ):
+        self.window.controller.session.is_dirty = True
+        self.window.controller.save_error = StorageError("disk full")
+
+        self.assertFalse(self.window._on_open_project())
+
+        self.assertTrue(self.window.controller.session.is_dirty)
+        self.assertEqual(self.window.controller.loaded_paths, [])
+        show_error.assert_called_once()
+        self.window._refresh_all.assert_not_called()
+
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="")
     def test_cancel_midi_export_does_not_call_controller(self, choose_path):
         self.window._on_export_midi()
