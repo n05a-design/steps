@@ -21,6 +21,10 @@
 - Beim Öffnen eines migrierten Legacy-Projekts zeigt die Desktop-Oberfläche eine lokalisierte EN/DE-Meldung mit den angewendeten Migration-IDs. Die Meldung unterscheidet Projektwiederherstellung aus einem Backup von Schema-Normalisierung.
 - Der Projektname lässt sich in der Desktop-Oberfläche editieren und wird gemeinsam mit Tonart, Mollmodus, Tempo und Taktart als eine undo-/redo-fähige Kontextaktion gespeichert.
 - Die Desktop-Dateiaktionen bieten jetzt „Neu“ mit `Ctrl+N`/`⌘N`, Dirty-State-Rückfrage und sauberem Wechsel auf eine neue Standard-Progression ohne die Historie des vorherigen Projekts.
+- Der Desktop-Kontext bietet eine eigenständige, bestätigte Auswahl der musikalischen Notationskonvention (`INT`/`DE`). Die Umstellung konvertiert Tonart und Akkordsymbole explizit und lässt Ticks, Tempo, Taktart und Projektstruktur unverändert.
+- Dokumentationssnapshots werden jetzt über eine wiederholbare Konsistenzprüfung abgesichert, die Commit-Belege validiert, ohne jeden neuen Merge-SHA automatisch nachzuführen.
+- Neue versionierbare GitHub-Community-Vorarbeiten decken Discussion-Forms, Wiki-, Project- und Funding-Owner-Actions ab; keine Live-Veröffentlichung oder fremde Kontoanlage erfolgt dadurch.
+- Ein reproduzierbares DAW-Importprotokoll trennt automatische SMF-Roundtrip-Belege ausdrücklich von menschlicher Independent-DAW-Abnahme.
 - Der Desktop-Informationsbereich zeigt jetzt die bestehende Beginner-Keyboard-Voicing-Ermittlung mit linker/rechter Hand, Fingerempfehlungen und Stimmführungsübergängen in Englisch und Deutsch.
 - Das Python-Wheel enthält jetzt die Desktop-App, Locale-Kataloge, Design-Tokens und Markenressourcen, damit der konfigurierte `steps`-Einstieg und seine Laufzeitressourcen gemeinsam installiert werden.
 - GitHub Issue- und PR-Vorlagen, Dependabot-/Release-Notizkonfiguration und ein YAML-/Issue-Form-Prüfworkflow ergänzt. GitHub-Wiki, Projects, Labels und Funding bleiben explizite Inhaberhandlungen.

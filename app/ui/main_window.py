@@ -116,6 +116,9 @@ class StepsMainWindow:
         self.mode_lbl.configure(text=t("context.mode"))
         self.major_btn.configure(text=t("context.major"))
         self.minor_btn.configure(text=t("context.minor"))
+        self.notation_lbl.configure(text=t("notation.label"))
+        self.notation_int_btn.configure(text=t("notation.int"))
+        self.notation_de_btn.configure(text=t("notation.de"))
         self.tempo_lbl.configure(text=t("context.tempo"))
         self.meter_lbl.configure(text=t("context.meter"))
         self.context_btn.configure(text=t("context.apply"))
@@ -467,6 +470,38 @@ class StepsMainWindow:
         )
         self.minor_btn.pack(side=tk.LEFT, padx=sp.xs)
 
+        self.notation_lbl = tk.Label(
+            self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
+        )
+        self.notation_lbl.pack(side=tk.LEFT, padx=(sp.sm, sp.xs))
+        self.notation_var = tk.StringVar(
+            self.root, value=self.controller.session.convention
+        )
+        self.notation_int_btn = tk.Radiobutton(
+            self.context_bar,
+            text="",
+            variable=self.notation_var,
+            value="INT",
+            command=self._on_notation_change,
+            bg=colors.bg_surface,
+            fg=colors.text_primary,
+            selectcolor=colors.bg_window,
+            activebackground=colors.bg_surface,
+        )
+        self.notation_int_btn.pack(side=tk.LEFT, padx=sp.xs)
+        self.notation_de_btn = tk.Radiobutton(
+            self.context_bar,
+            text="",
+            variable=self.notation_var,
+            value="DE",
+            command=self._on_notation_change,
+            bg=colors.bg_surface,
+            fg=colors.text_primary,
+            selectcolor=colors.bg_window,
+            activebackground=colors.bg_surface,
+        )
+        self.notation_de_btn.pack(side=tk.LEFT, padx=(0, sp.sm))
+
         self.tempo_lbl = tk.Label(
             self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
         )
@@ -733,6 +768,8 @@ class StepsMainWindow:
         self.key_entry.delete(0, tk.END)
         self.key_entry.insert(0, self.controller.session.key_root)
         self.mode_var.set(self.controller.session.is_minor)
+        if hasattr(self, "notation_var"):
+            self.notation_var.set(self.controller.session.convention)
         self.tempo_entry.delete(0, tk.END)
         self.tempo_entry.insert(0, f"{self.controller.session.bpm:g}")
         numerator, denominator = self.controller.session.time_signature
@@ -748,6 +785,35 @@ class StepsMainWindow:
         self.event_duration_lbl.configure(
             text=self.i18n.translate("event.duration", ppq=ppq)
         )
+
+    def _on_notation_change(self) -> None:
+        convention = self.notation_var.get()
+        if convention == self.controller.session.convention:
+            return
+        confirmed = messagebox.askyesno(
+            self.i18n.translate("notation.confirm.title"),
+            self.i18n.translate(
+                "notation.confirm.message",
+                from_convention=self.controller.session.convention,
+                to_convention=convention,
+            ),
+            parent=self.root,
+        )
+        if not confirmed:
+            self.notation_var.set(self.controller.session.convention)
+            return
+        try:
+            self.controller.set_notation_convention(convention)
+        except (ValueError, MusicTheoryError) as exc:
+            self.notation_var.set(self.controller.session.convention)
+            messagebox.showerror(
+                self.i18n.translate("notation.error.title"),
+                self.i18n.translate("notation.error.message", error=exc),
+                parent=self.root,
+            )
+            return
+        self._load_context_controls()
+        self._refresh_all(preserve_selection=True)
 
     def _on_apply_context(self) -> None:
         title = self.project_title_entry.get().strip()

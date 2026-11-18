@@ -45,7 +45,7 @@ See the [implementation status](docs/IMPLEMENTATION.md) for precise behavior and
 
 - No verified desktop installers or complete platform-by-platform release acceptance.
 - Project open/save is exposed in the main window; native platform, accessibility, and recovery acceptance remain open.
-- No complete English/German UI localization or persisted language preference.
+- English/German catalog coverage and runtime/persisted UI-language switching exist; independent translation and native platform/accessibility review remain open.
 - No in-app audio playback or MIDI import.
 - No external DAW interoperability sign-off is evidenced by the automated MIDI tests alone.
 - No user-study evidence establishes learning outcomes or product-market fit.

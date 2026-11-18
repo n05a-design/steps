@@ -36,6 +36,7 @@ class FakeSession:
         self.is_minor = False
         self.bpm = 120.0
         self.time_signature = (4, 4)
+        self.convention = "INT"
         self.state = SimpleNamespace(
             ppq=480,
             title="My Progression",
@@ -76,6 +77,12 @@ class FakeController:
     def new_project(self):
         self.new_project_calls += 1
         self.session = FakeSession(is_dirty=False)
+
+    def set_notation_convention(self, convention):
+        self.session.convention = convention
+        if convention == "DE":
+            self.session.key_root = "H" if self.session.key_root == "B" else self.session.key_root
+        return True
 
     def export_midi(self, path):
         if self.export_error:
@@ -177,6 +184,22 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.assertEqual(self.window.controller.new_project_calls, 0)
         self.assertEqual(self.window._project_path, old_path)
         self.window._refresh_all.assert_not_called()
+
+    @patch("app.ui.main_window.messagebox.askyesno", return_value=True)
+    def test_explicit_notation_change_converts_session_and_refreshes(self, prompt):
+        convention = SimpleNamespace(value="INT")
+        def get_convention(): return convention.value
+        def set_convention(value): convention.value = value
+        self.window.notation_var = SimpleNamespace(get=get_convention, set=set_convention)
+
+        changed = getattr(self.window.controller.session, "convention", "INT")
+        self.window.controller.session.convention = "INT"
+        convention.value = "DE"
+
+        self.window._on_notation_change()
+
+        self.assertEqual(convention.value, "DE")
+        self.window._refresh_all.assert_called_once_with(preserve_selection=True)
 
     def test_chord_details_include_beginner_voicing_data(self):
         self.window.controller = ProgressionSessionController(ProgressionSession())

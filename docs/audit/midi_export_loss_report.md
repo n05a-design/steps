@@ -48,10 +48,10 @@ Die 10 kanonischen Golden MIDI-Dateien (`tests/test_midi_golden_fixtures.py`) be
 1. **SMF Format 0 & Format 1:** Alle Kadenzen, Jazz-, Blues- und Modalprogressionen werden syntaktisch valide erzeugt.
 2. **Keine hängenden Noten (T14):** 100% aller erzeugten Noten besitzen einen zeitlich passenden Note-Off-Partner auf demselben Kanal.
 3. **Multi-Tempo-Integrität (T15):** Tempowechsel mitten im Stück werden exakt an den berechneten Ticks im Conductor-Track platziert.
-4. **DAW-Kompatibilität:** Unabhängiger Header- und Envelope-Audit (`scripts.audit_midi_files.envelope`) bestätigt Konformität mit der Standard MIDI File 1.0 Spezifikation der MIDI Association.
+4. **Automated SMF validity:** Independent Header- and envelope audit (`scripts.audit_midi_files.envelope`) verifies Format 0/1 structure and loss-report fixtures. It does not replace an independent DAW import acceptance.
 
 ---
 
 ## 5. Fazit
 
-Der Export nach SMF 1.0 erfüllt seinen Zweck für Audio-Wiedergabe und DAW-Import vollständig. Da Standard-MIDI jedoch per Definition kein Harmonielehre-Austauschformat ist, fungiert `schemas/project.schema.json` als maßgebliche Single Source of Truth für sämtliche musiktheoretischen Metadaten.
+Der Export nach SMF 1.0 ist durch automatisierte Writer-, Parser-, Envelope- und Roundtrip-Prüfungen belegt. Ein tatsächlicher DAW-Import gilt erst nach dem dokumentierten manuellen Reimport in mindestens zwei unabhängig benannten Anwendungen als bestanden. Da Standard-MIDI kein Harmonielehre-Austauschformat ist, bleibt `schemas/project.schema.json` die maßgebliche Quelle für alle nicht in SMF abbildbaren Metadaten.

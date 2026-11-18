@@ -82,6 +82,15 @@ jobs:
       - name: Check generated Python API reference
         run: python -B scripts/render_api_reference.py --check
 
+      - name: Check documentation consistency policy
+        run: python -B scripts/check_documentation_consistency.py --check
+
+      - name: Check active UI text localization inventory
+        run: python -B scripts/check_ui_text_inventory.py --check
+
+      - name: Check release and version consistency
+        run: python -B scripts/check_release_consistency.py --check
+
       - name: Run STEPS Core Test Suite
         run: python -B -m unittest discover -s tests -p "test_*.py" -v
 

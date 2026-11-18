@@ -1,0 +1,19 @@
+name: Music Theory
+description: Discuss an explicit music-theory interpretation or source-bound question.
+title: "[Music Theory] "
+labels: []
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Musical context
+      description: Include tonality, harmonic function, notation convention, and context framework.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: List only sources you have permission to discuss. Do not paste copyrighted excerpts.
+    validations:
+      required: false

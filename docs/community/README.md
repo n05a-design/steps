@@ -11,6 +11,14 @@
 | Projects | Projects support is enabled, but no repository-linked GitHub Projects v2 board was returned by the repository query; `gh project list --owner n05a-design` returned none. | Owner creates one after approving fields, views, and automation scope. |
 | Funding | No `.github/FUNDING.yml` or verified sponsor account/URL is present. | Do not publish a sponsor button or placeholder account. The owner must first establish and verify a supported funding destination. |
 
+Prepared versionable assets:
+
+- `.github/DISCUSSION_TEMPLATE/` contains English drafts for Questions, Ideas, Music Theory,
+  Knowledge & Research, and Development. Category creation and live publication remain owner actions.
+- [GitHub Project specification](GITHUB_PROJECT_SPEC.md) is a no-write configuration proposal.
+- [Wiki publication manifest](WIKI_PUBLICATION_MANIFEST.md) remains `OWNER_ACTION_REQUIRED`.
+- [Funding owner action](FUNDING_OWNER_ACTION.md) records the funding boundary without a placeholder account.
+
 ## Language and moderation
 
 English is the default language for public navigation and project announcements. Community members may post in English or German. A German-language post does not need to be removed or machine-translated. When a bilingual summary is useful, label each language clearly and preserve source meaning.

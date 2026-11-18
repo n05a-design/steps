@@ -239,6 +239,9 @@ class TestLocaleManager(unittest.TestCase):
             window.mode_lbl = FakeWidget()
             window.major_btn = FakeWidget()
             window.minor_btn = FakeWidget()
+            window.notation_lbl = FakeWidget()
+            window.notation_int_btn = FakeWidget()
+            window.notation_de_btn = FakeWidget()
             window.tempo_lbl = FakeWidget()
             window.meter_lbl = FakeWidget()
             window.context_btn = FakeWidget()
@@ -266,6 +269,9 @@ class TestLocaleManager(unittest.TestCase):
             self.assertEqual(window.key_lbl.options["text"], "Tonart")
             self.assertEqual(window.major_btn.options["text"], "Dur")
             self.assertEqual(window.minor_btn.options["text"], "Moll")
+            self.assertEqual(window.notation_lbl.options["text"], "Notation")
+            self.assertEqual(window.notation_int_btn.options["text"], "INT")
+            self.assertEqual(window.notation_de_btn.options["text"], "DE")
             self.assertEqual(window.meter_lbl.options["text"], "Taktart")
             self.assertEqual(
                 window.event_start_lbl.options["text"],
@@ -445,6 +451,35 @@ class TestDesktopChordEditing(unittest.TestCase):
         self.assertEqual(session.key_root, "C")
         self.assertFalse(session.is_dirty)
         self.assertFalse(session.can_undo)
+
+    def test_notation_convention_conversion_preserves_pitch_identity_and_timings(self):
+        session = ProgressionSession(
+            initial_chords=["B", "Bb", "C"],
+            key_root="B",
+            convention="INT",
+            bpm=96.0,
+        )
+        original_timings = list(session.state.chord_event_timings)
+
+        changed = session.set_notation_convention("DE")
+
+        self.assertTrue(changed)
+        self.assertEqual(session.convention, "DE")
+        self.assertEqual(session.key_root, "H")
+        self.assertEqual(session.chords, ["H", "B", "C"])
+        self.assertEqual(list(session.state.chord_event_timings), original_timings)
+        self.assertEqual(session.bpm, 96.0)
+        self.assertTrue(session.can_undo)
+
+        session.undo()
+        self.assertEqual(session.convention, "INT")
+        self.assertEqual(session.key_root, "B")
+        self.assertEqual(session.chords, ["B", "Bb", "C"])
+
+    def test_notation_convention_conversion_rejects_invalid_target(self):
+        session = ProgressionSession(initial_chords=["C"], convention="INT")
+        with self.assertRaises(ValueError):
+            session.set_notation_convention("AUTO")
 
     def test_controller_new_project_resets_session_and_notifies(self):
         controller = ProgressionSessionController(

@@ -12,6 +12,7 @@ Adheres to:
 from __future__ import annotations
 
 import copy
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Literal, Optional, Tuple, Union
@@ -122,6 +123,44 @@ class ProgressionSession:
     @property
     def state(self) -> SessionState:
         return self._undo_stack.current_state
+
+    @staticmethod
+    def _render_note_name(note: NoteSpelling, convention: Literal["INT", "DE"]) -> str:
+        rendered = note.render(convention=convention, unicode_accidental=False)
+        return re.sub(r"-?\d+$", "", rendered)
+
+    def set_notation_convention(self, convention: Literal["INT", "DE"]) -> bool:
+        """Explicitly converts project note spellings when the notation convention changes."""
+        if convention not in ("INT", "DE"):
+            raise ValueError("Notation convention must be INT or DE.")
+        if convention == self.convention:
+            return False
+
+        try:
+            key = parse_spelling(self.state.key_root, convention=self.convention)
+            converted_key = self._render_note_name(key, convention)
+
+            converted_chords: List[str] = []
+            for symbol in self.chords:
+                chord = parse_chord(symbol, convention=self.convention)
+                root = self._render_note_name(chord.root, convention)
+                quality = chord.quality
+                converted = f"{root}{quality}"
+                if chord.bass is not None:
+                    converted += f"/{self._render_note_name(chord.bass, convention)}"
+                parse_chord(converted, convention=convention)
+                converted_chords.append(converted)
+        except (MusicTheoryError, ChordConstructionError, ValueError) as exc:
+            raise ValueError(
+                f"Notation convention {convention} could not be applied safely: {exc}"
+            ) from exc
+
+        new_state = copy.deepcopy(self.state)
+        new_state.convention = convention
+        new_state.key_root = converted_key
+        new_state.chords = converted_chords
+        self._push_mutation(new_state)
+        return True
 
     def reset_to_defaults(self) -> None:
         """Replaces the active session with a clean default project."""

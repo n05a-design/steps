@@ -11,6 +11,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 ISSUE_TEMPLATE_DIR = ROOT / ".github" / "ISSUE_TEMPLATE"
 ALLOWED_FORM_FIELDS = {"textarea", "input", "markdown", "dropdown", "checkboxes"}
+DISCUSSION_TEMPLATE_DIR = ROOT / ".github" / "DISCUSSION_TEMPLATE"
 
 
 def _load_yaml(path: Path) -> Any:
@@ -50,6 +51,8 @@ def main() -> int:
     for path in paths:
         data = _load_yaml(path)
         if path.parent == ISSUE_TEMPLATE_DIR:
+            _validate_issue_form(path, data)
+        elif DISCUSSION_TEMPLATE_DIR in path.parents:
             _validate_issue_form(path, data)
         elif path.name == "dependabot.yml":
             if not isinstance(data, dict) or data.get("version") != 2 or not isinstance(data.get("updates"), list):

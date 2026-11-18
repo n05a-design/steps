@@ -1,0 +1,26 @@
+name: Questions
+description: Ask for help with STEPS usage or music-theory questions.
+title: "[Question] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: "Please distinguish the UI language, musical notation convention (`INT` or `DE`), and source context."
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Describe the question and the expected STEPS behavior.
+      placeholder: What should I provide...
+    validations:
+      required: true
+  - type: dropdown
+    id: notation
+    attributes:
+      label: Musical notation convention
+      options:
+        - INT
+        - DE
+        - Not applicable
+    validations:
+      required: true

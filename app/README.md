@@ -55,6 +55,10 @@ Beim Laden aus einem Backup bleibt die Backup-Rückmeldung vorrangig.
 Der Projektname ist in der Desktop-Oberfläche editierbar. Die Eingabe wird zusammen
 mit Tonart, Modus, Tempo und Taktart atomisch angewendet und rückgängig gemacht;
 ein leerer Name wird sichtbar abgewiesen.
+Die musikalische Notationskonvention ist als eigener `INT`/`DE`-Kontext sichtbar
+und muss vor der Umstellung bestätigt werden. Die Konvertierung überschreibt
+Tonarts- und Akkordschreibweise ausdrücklich; UI-Sprache, Event-Ticks, Tempo,
+Taktart und Projektstruktur werden nicht still umgedeutet.
 `Datei > Neu` bzw. `Ctrl+N`/`⌘N` erstellt eine neue Standard-Progression. Bei
 ungespeicherten Änderungen greift derselbe Speichern/Verwerfen/Abbrechen-Dialog
 wie beim Öffnen und Schließen; der bisherige Dateipfad wird nach dem Erstellen

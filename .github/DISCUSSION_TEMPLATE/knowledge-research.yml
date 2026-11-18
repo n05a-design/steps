@@ -1,0 +1,19 @@
+name: Knowledge & Research
+description: Discuss source provenance, review state, or knowledge-base evidence.
+title: "[Knowledge] "
+labels: []
+body:
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and source IDs
+      description: Use source, claim, concept, relation, and review identifiers where available.
+    validations:
+      required: true
+  - type: textarea
+    id: rights
+    attributes:
+      label: Rights and publication boundaries
+      description: State the rights status and whether publication is requested or blocked.
+    validations:
+      required: true
