@@ -28,6 +28,12 @@ class FakeMenu:
     def entryconfigure(self, index, **options):
         self.entries[index].update(options)
 
+    def delete(self, start, end):
+        self.entries.clear()
+
+    def add_cascade(self, **options):
+        self.entries.append(options)
+
 
 class FakeWidget:
     def __init__(self):
