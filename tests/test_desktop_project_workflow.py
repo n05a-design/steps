@@ -35,6 +35,7 @@ class FakeSession:
         self.bpm = 120.0
         self.time_signature = (4, 4)
         self.state = SimpleNamespace(ppq=480)
+        self.last_load_recovered_from_backup = False
 
 
 class FakeController:
@@ -139,6 +140,16 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.assertEqual(self.window.controller.loaded_paths, [Path("/tmp/source.stepsproj")])
         self.assertEqual(self.window._project_path, Path("/tmp/source.stepsproj"))
         self.window._refresh_all.assert_called_once_with()
+
+    @patch("app.ui.main_window.filedialog.askopenfilename", return_value="/tmp/recovered.stepsproj")
+    @patch("app.ui.main_window.messagebox.showinfo")
+    def test_open_recovered_project_shows_localized_notice(self, show_info, choose_path):
+        self.window.controller.session.last_load_recovered_from_backup = True
+
+        self.assertTrue(self.window._on_open_project())
+
+        show_info.assert_called_once()
+        self.assertEqual(show_info.call_args.args[0], "Project recovered")
 
     @patch("app.ui.main_window.filedialog.askopenfilename", return_value="/tmp/broken.stepsproj")
     @patch("app.ui.main_window.messagebox.showerror")

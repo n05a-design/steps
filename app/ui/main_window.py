@@ -245,6 +245,12 @@ class StepsMainWindow:
         self._project_path = Path(selected)
         self._load_context_controls()
         self._refresh_all()
+        if getattr(self.controller.session, "last_load_recovered_from_backup", False):
+            messagebox.showinfo(
+                self.i18n.translate("project.recovery.title"),
+                self.i18n.translate("project.recovery.message"),
+                parent=self.root,
+            )
         return True
 
     def _on_close(self) -> None:
