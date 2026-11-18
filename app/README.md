@@ -27,9 +27,12 @@ Ungültige Akkorde und der Versuch, den letzten Akkord zu entfernen, werden
 sichtbar abgewiesen. Die Bedienfelder und Fehlermeldungen folgen der gewählten
 UI-Sprache.
 
-Tonart, Dur-/Mollmodus und Tempo lassen sich als musikalischer Kontext gemeinsam
-ändern; die Eingabe wird als eine undo-fähige Aktion gespeichert. Der Takt ist
-derzeit weiterhin 4/4 und wird nicht in der Oberfläche geändert.
+Tonart, Dur-/Mollmodus, Tempo und Taktart lassen sich gemeinsam als musikalischer
+Kontext ändern; die Eingabe wird als eine undo-fähige Aktion gespeichert. Die
+Taktart wird im Format Zähler/Nenner eingegeben (z. B. `3/4` oder `6/8`) und in
+Projektdatei und MIDI-Metadaten übernommen. Sie ändert nicht automatisch die
+Tick-Dauer der Akkord-Events; einzelne Startzeiten und Dauern sind noch nicht
+in der Oberfläche editierbar.
 
 Die UI-Sprache unterstützt Englisch und Deutsch unabhängig von musikalischer
 Notation. Die Auswahl `system`, `en` oder `de` wird als Benutzereinstellung
