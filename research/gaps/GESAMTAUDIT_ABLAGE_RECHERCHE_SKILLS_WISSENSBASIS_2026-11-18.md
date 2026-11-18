@@ -63,3 +63,10 @@ Ein heuristischer Scan des `origin/main`-Baums fand in 1.544 Markdown-Dateien 3.
 6. Linkkandidaten nach aktivem Dokument, historischem Snapshot und bewusst ausgelagerter Quelle klassifizieren. Keine historische Datei oder Version ohne ausdrückliche Entscheidung ersetzen oder entfernen.
 
 Die Musikmodell-Grenzen aus [`AGENTS.md`](../../AGENTS.md) bleiben verbindlich: DE/INT-Notation, Enharmonik, Kontext und funktionale Alternativen sind ausdrücklich zu erhalten. Dieser Audit erklärt offene Fragen; er erteilt keine fachliche, rechtliche oder Release-Freigabe.
+
+## Nachprüfung: Skill-Dokumentation und PR-CI
+
+- **Coverage-CI:** Der Job `Knowledge coverage inventory` auf PR #158 scheiterte, weil `COVERAGE.csv` vor dem Commit dieses Auditberichts erzeugt worden war. Der Coverage-Generator zählt versionierte Pfade (`git ls-files`); nach Aufnahme des Berichts stieg der inventarisierte Forschungsbestand von 1.787 auf 1.788. `COVERAGE.csv` wurde mit `python3 scripts/audit_knowledge_coverage.py --write` neu erzeugt und anschließend mit `--check` erfolgreich geprüft.
+- **Kurations-Skill:** Die Anleitungen verwendeten `python`, obwohl diese macOS-Umgebung nur `python3` bereitstellt. Außerdem fehlte `check_reference_ids.py` in den Helper-Übersichten, obwohl der Runbook-Schritt es ausführt. Beispiele und Übersichten wurden konsistent ergänzt; für macOS/Linux ist nun auch explizit dokumentiert, dass `STEPS_KNOWLEDGE_REGISTER` gesetzt werden muss, da dort kein Fallback existiert.
+- **Skill-Abgrenzung:** `skills/music-harmony-coach/.../SKILL.md` ist als datierter historischer Entwurf gekennzeichnet, sein Skill-Metadatum routet ihn aber weiterhin allgemein für Musiktheoriefragen und erlaubt Ergänzungen aus Allgemeinwissen. Das steht in Spannung zur strikten Belegpflicht in `skills/steps-knowledge/SKILL.md` und zum Root-Router, der freigegebene STEPS-Lerninhalte auf den App-Katalog verweist. Eine explizite Autoritäts-/Aktivitätsentscheidung bleibt offen.
+- **Verifikation dieser Nachprüfung:** Curation-Suite: 40 Tests bestanden; Coverage-Matrix: `--check` erfolgreich. Die erneute GitHub-CI-Ausführung ist nach dem Push abzuwarten.
