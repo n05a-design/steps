@@ -29,6 +29,9 @@ class FakeRoot:
 class FakeSession:
     def __init__(self, is_dirty=False):
         self.is_dirty = is_dirty
+        self.key_root = "C"
+        self.is_minor = False
+        self.bpm = 120.0
 
 
 class FakeController:
@@ -76,6 +79,9 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.window._project_path = None
         self.window._refresh_all = Mock()
         self.window.detail_text = Mock()
+        self.window.key_entry = Mock()
+        self.window.mode_var = Mock()
+        self.window.tempo_entry = Mock()
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/new.stepsproj")
     def test_save_as_updates_current_path_and_window_title(self, choose_path):

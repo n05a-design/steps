@@ -261,6 +261,28 @@ class ProgressionSession:
         new_state.is_minor = is_minor
         self._push_mutation(new_state)
 
+    def set_context(self, key_root: str, is_minor: bool, bpm: float) -> None:
+        """Atomically updates key, mode, and tempo after validating the full context."""
+        if not isinstance(is_minor, bool):
+            raise ValueError("Minor-mode selection must be a boolean.")
+        parse_spelling(key_root, convention=self.convention)
+        if isinstance(bpm, bool) or not isinstance(bpm, (int, float)):
+            raise ValueError("Tempo must be a number between 20 and 400 BPM.")
+        if not 20 <= bpm <= 400:
+            raise ValueError("Tempo must be between 20 and 400 BPM.")
+        if (
+            key_root == self.state.key_root
+            and is_minor == self.state.is_minor
+            and float(bpm) == self.state.bpm
+        ):
+            return
+
+        new_state = copy.deepcopy(self.state)
+        new_state.key_root = key_root
+        new_state.is_minor = is_minor
+        new_state.bpm = float(bpm)
+        self._push_mutation(new_state)
+
     def get_voicings(
         self,
         voicing_type: Literal["CLOSE", "DROP2", "SHELL", "ROOTLESS"] = "CLOSE",

@@ -27,6 +27,10 @@ Ungültige Akkorde und der Versuch, den letzten Akkord zu entfernen, werden
 sichtbar abgewiesen. Die Bedienfelder und Fehlermeldungen folgen der gewählten
 UI-Sprache.
 
+Tonart, Dur-/Mollmodus und Tempo lassen sich als musikalischer Kontext gemeinsam
+ändern; die Eingabe wird als eine undo-fähige Aktion gespeichert. Der Takt ist
+derzeit weiterhin 4/4 und wird nicht in der Oberfläche geändert.
+
 Die UI-Sprache unterstützt Englisch und Deutsch unabhängig von musikalischer
 Notation. Die Auswahl `system`, `en` oder `de` wird als Benutzereinstellung
 gespeichert; `--language` überschreibt sie nur für den aktuellen CLI-Lauf.

@@ -78,6 +78,8 @@ class ProgressionSessionController:
             "title": self._session.state.title,
             "chords": list(self._session.chords),
             "key": f"{self._session.key_root} {'m' if self._session.is_minor else ''}".strip(),
+            "key_root": self._session.key_root,
+            "is_minor": self._session.is_minor,
             "bpm": self._session.bpm,
             "can_undo": self._session.can_undo,
             "can_redo": self._session.can_redo,
@@ -101,6 +103,10 @@ class ProgressionSessionController:
 
     def move_chord(self, index: int, direction: Literal[-1, 1]) -> None:
         self._session.move_chord(index, direction)
+        self._notify()
+
+    def set_context(self, key_root: str, is_minor: bool, bpm: float) -> None:
+        self._session.set_context(key_root, is_minor, bpm)
         self._notify()
 
     def transpose(self, semitones: int) -> None:

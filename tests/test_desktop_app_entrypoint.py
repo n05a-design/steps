@@ -105,6 +105,22 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             content = window.detail_text.get("1.0", tk.END)
             self.assertIn(window.i18n.translate("chord.analysis.title", chord="C"), content)
 
+            window.key_entry.delete(0, tk.END)
+            window.key_entry.insert(0, "D")
+            window.mode_var.set(True)
+            window.tempo_entry.delete(0, tk.END)
+            window.tempo_entry.insert(0, "96")
+            window.context_btn.invoke()
+            self.assertEqual(
+                (ctrl.session.key_root, ctrl.session.is_minor, ctrl.session.bpm),
+                ("D", True, 96.0),
+            )
+            window.undo_btn.invoke()
+            self.assertEqual(
+                (ctrl.session.key_root, ctrl.session.is_minor, ctrl.session.bpm),
+                ("C", False, 120.0),
+            )
+
             # Test UI add chord action
             window.chord_entry.delete(0, tk.END)
             window.chord_entry.insert(0, "F#m7b5")

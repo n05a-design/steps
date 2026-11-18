@@ -69,6 +69,23 @@ class FakeEntry:
     def get(self):
         return self.value
 
+    def delete(self, start, end):
+        self.value = ""
+
+    def insert(self, index, value):
+        self.value = str(value)
+
+
+class FakeVariable:
+    def __init__(self, value=None):
+        self.value = value
+
+    def get(self):
+        return self.value
+
+    def set(self, value):
+        self.value = value
+
 
 class TestLocaleManager(unittest.TestCase):
     def test_catalogs_have_identical_keys_and_placeholders(self):
@@ -207,6 +224,12 @@ class TestLocaleManager(unittest.TestCase):
             window.settings_menu = FakeMenu(1)
             window.language_menu = FakeMenu(3)
             window.title_lbl = FakeWidget()
+            window.key_lbl = FakeWidget()
+            window.mode_lbl = FakeWidget()
+            window.major_btn = FakeWidget()
+            window.minor_btn = FakeWidget()
+            window.tempo_lbl = FakeWidget()
+            window.context_btn = FakeWidget()
             window.add_btn = FakeWidget()
             window.update_btn = FakeWidget()
             window.remove_btn = FakeWidget()
@@ -225,6 +248,9 @@ class TestLocaleManager(unittest.TestCase):
             window._on_language_change("de")
 
             self.assertEqual(window.title_lbl.options["text"], "ARBEITSBEREICH")
+            self.assertEqual(window.key_lbl.options["text"], "Tonart")
+            self.assertEqual(window.major_btn.options["text"], "Dur")
+            self.assertEqual(window.minor_btn.options["text"], "Moll")
             self.assertEqual(window.update_btn.options["text"], "Auswahl ändern")
             self.assertEqual(window.remove_btn.options["text"], "Entfernen")
             self.assertEqual(window.move_up_btn.options["text"], "Nach oben")
@@ -280,6 +306,10 @@ class TestDesktopChordEditing(unittest.TestCase):
         window._project_path = None
         window.chord_listbox = FakeListbox()
         window.chord_entry = FakeEntry()
+        window.key_entry = FakeEntry(window.controller.session.key_root)
+        window.mode_var = FakeVariable(window.controller.session.is_minor)
+        window.tempo_entry = FakeEntry(f"{window.controller.session.bpm:g}")
+        window.context_btn = FakeWidget()
         window.update_btn = FakeWidget()
         window.remove_btn = FakeWidget()
         window.move_up_btn = FakeWidget()
@@ -362,6 +392,69 @@ class TestDesktopChordEditing(unittest.TestCase):
         self.assertEqual(window.controller.session.can_undo, undo_available)
         self.assertEqual(window.chord_listbox.selection, (0,))
         self.assertEqual(window.move_up_btn.options["state"], "disabled")
+
+    def test_context_controls_apply_and_undo_key_mode_and_tempo_atomically(self):
+        window = self.make_window(["C", "G"])
+        window.key_entry.value = "D"
+        window.mode_var.set(True)
+        window.tempo_entry.value = "96.5"
+
+        window._on_apply_context()
+
+        session = window.controller.session
+        self.assertEqual((session.key_root, session.is_minor, session.bpm), ("D", True, 96.5))
+        window._on_undo()
+        self.assertEqual(
+            (session.key_root, session.is_minor, session.bpm),
+            ("C", False, 120.0),
+        )
+
+    def test_context_updates_respect_the_existing_german_notation(self):
+        session = ProgressionSession(initial_chords=["H7"], convention="DE")
+
+        session.set_context("H", True, 110)
+
+        self.assertEqual(session.convention, "DE")
+        self.assertEqual(session.chords, ["H7"])
+        self.assertEqual((session.key_root, session.is_minor, session.bpm), ("H", True, 110.0))
+
+    def test_context_roundtrips_through_the_existing_project_schema(self):
+        session = ProgressionSession(initial_chords=["H7"], convention="DE")
+        session.set_context("H", True, 96.5)
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            project_path = session.save_to_file(Path(temp_dir) / "context.stepsproj")
+            reopened = ProgressionSession()
+            reopened.load_from_file(project_path)
+
+        self.assertEqual(reopened.convention, "DE")
+        self.assertEqual(reopened.chords, ["H7"])
+        self.assertEqual(
+            (reopened.key_root, reopened.is_minor, reopened.bpm),
+            ("H", True, 96.5),
+        )
+
+    @patch("app.ui.main_window.messagebox.showerror")
+    def test_invalid_key_or_tempo_does_not_partially_update_context(self, show_error):
+        window = self.make_window(["C", "G"])
+        window.key_entry.value = "not-a-note"
+        window.mode_var.set(True)
+        window.tempo_entry.value = "96"
+
+        window._on_apply_context()
+
+        session = window.controller.session
+        self.assertEqual((session.key_root, session.is_minor, session.bpm), ("C", False, 120.0))
+        self.assertEqual(
+            show_error.call_args.args[1],
+            "Enter a valid key spelling for the current notation convention.",
+        )
+
+        window.key_entry.value = "D"
+        window.tempo_entry.value = "401"
+        window._on_apply_context()
+        self.assertEqual((session.key_root, session.is_minor, session.bpm), ("C", False, 120.0))
+        self.assertEqual(show_error.call_args.args[1], "Tempo must be a number between 20 and 400 BPM.")
 
     def test_undo_shortcut_does_not_intercept_text_entry(self):
         window = StepsMainWindow.__new__(StepsMainWindow)
