@@ -7,6 +7,13 @@ from pathlib import Path
 from typing import Any
 import re
 
+try:
+    import yaml
+except ImportError as exc:
+    raise SystemExit(
+        "PyYAML is required for GitHub configuration validation"
+    ) from exc
+
 ROOT = Path(__file__).resolve().parents[1]
 ISSUE_TEMPLATE_DIR = ROOT / ".github" / "ISSUE_TEMPLATE"
 ALLOWED_FORM_FIELDS = {"textarea", "input", "markdown", "dropdown", "checkboxes"}
@@ -14,63 +21,30 @@ DISCUSSION_TEMPLATE_DIR = ROOT / ".github" / "DISCUSSION_TEMPLATE"
 
 
 def _load_yaml(path: Path) -> Any:
-    text = path.read_text(encoding="utf-8")
-    try:
-        import yaml
-    except ImportError:
-        return text
-    return yaml.safe_load(text)
+    with path.open(encoding="utf-8") as file:
+        return yaml.safe_load(file)
 
 
 def _validate_issue_form(path: Path, data: Any) -> None:
     if path.name == "config.yml":
         return
-    if isinstance(data, dict):
-        if not isinstance(data.get("name"), str):
-            raise ValueError(f"{path}: missing form name")
-        if not isinstance(data.get("description"), str) or not isinstance(data.get("body"), list):
-            raise ValueError(f"{path}: missing description or body")
-        field_ids: set[str] = set()
-        for field in data["body"]:
-            if not isinstance(field, dict) or field.get("type") not in ALLOWED_FORM_FIELDS:
-                raise ValueError(f"{path}: unsupported or malformed field {field!r}")
-            if field["type"] == "markdown":
-                continue
-            field_id = field.get("id")
-            if not isinstance(field_id, str) or field_id in field_ids:
-                raise ValueError(f"{path}: missing or duplicate field id {field_id}")
-            field_ids.add(field_id)
-            if not isinstance(field.get("attributes"), dict):
-                raise ValueError(f"{path}: field {field_id} has no attributes")
-        return
-    if not isinstance(data, str):
-        raise ValueError(f"{path}: expected text or parsed YAML")
-    for line in data.splitlines():
-        if line.count('"') % 2:
-            raise ValueError(f"{path}: unterminated double quote")
-        if re.search(r"(?m)^name:\s*[\"'][^\"']*$", line):
-            raise ValueError(f"{path}: unterminated quoted form name")
-    if not re.search(r"(?m)^name:\s*\S", data):
+    if not isinstance(data, dict):
+        raise ValueError(f"{path}: expected parsed YAML mapping")
+    if not isinstance(data.get("name"), str):
         raise ValueError(f"{path}: missing form name")
-    if not re.search(r"(?m)^description:\s*\S", data) or not re.search(r"(?m)^body:\s*$", data):
+    if not isinstance(data.get("description"), str) or not isinstance(data.get("body"), list):
         raise ValueError(f"{path}: missing description or body")
-
     field_ids: set[str] = set()
-    field_blocks = re.split(r"(?m)^  - type:\s*", data)
-    for block in field_blocks[1:]:
-        field_type = block.splitlines()[0].strip()
-        if field_type not in ALLOWED_FORM_FIELDS:
-            raise ValueError(f"{path}: unsupported or malformed field type {field_type!r}")
-        if field_type == "markdown":
+    for field in data["body"]:
+        if not isinstance(field, dict) or field.get("type") not in ALLOWED_FORM_FIELDS:
+            raise ValueError(f"{path}: unsupported or malformed field {field!r}")
+        if field["type"] == "markdown":
             continue
-        match = re.search(r"(?m)^    id:\s*([A-Za-z0-9_-]+)\s*$", block)
-        if not match:
-            raise ValueError(f"{path}: missing field id")
-        field_id = match.group(1)
-        if field_id in field_ids:
-            raise ValueError(f"{path}: duplicate field id {field_id}")
+        field_id = field.get("id")
+        if not isinstance(field_id, str) or field_id in field_ids:
+            raise ValueError(f"{path}: missing or duplicate field id {field_id}")
         field_ids.add(field_id)
-        if not re.search(r"(?m)^    attributes:\s*$", block):
+        if not isinstance(field.get("attributes"), dict):
             raise ValueError(f"{path}: field {field_id!r} has no attributes")
 
 

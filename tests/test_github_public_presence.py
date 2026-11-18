@@ -6,7 +6,9 @@ import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from scripts.validate_github_config import _validate_issue_form
+import yaml
+
+from scripts.validate_github_config import _load_yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -34,7 +36,12 @@ class TestGithubPublicPresence(unittest.TestCase):
             self.assertTrue((ROOT / path).exists(), path)
         self.assertFalse((ROOT / ".github/FUNDING.yml").exists())
 
-    def test_malformed_form_name_is_rejected_in_fallback_parser(self):
-        malformed = 'name: "unterminated\ndescription: test\nbody:\n'
-        with self.assertRaisesRegex(ValueError, "unterminated"):
-            _validate_issue_form(Path("example.yml"), malformed)
+    def test_malformed_yaml_is_rejected_by_parser(self):
+        with TemporaryDirectory() as temp_dir:
+            malformed = Path(temp_dir) / "malformed.yml"
+            malformed.write_text(
+                'name: "unterminated\ndescription: test\nbody:\n',
+                encoding="utf-8",
+            )
+            with self.assertRaises(yaml.YAMLError):
+                _load_yaml(malformed)
