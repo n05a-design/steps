@@ -3,16 +3,16 @@
 Dieser Leitfaden beschreibt den Code im selben Checkout. Der Einstieg für
 Entwicklung ist die [Root-README](../README.md). Die [API-Referenz](theory/API.md)
 wird aus den exportierten Python-Objekten erzeugt. Der hier dokumentierte Stand verwendet `main` bei Commit
-[`5a4f5fe1f39960b0c4ed8b80e7cd3f952355a3c0`](https://github.com/n05a-design/steps/commit/5a4f5fe1f39960b0c4ed8b80e7cd3f952355a3c0)
-als Produkt-Baseline. PRs #158–#164 ergänzen Save/Open, Lokalisierung,
+[`f6e3456c19eb1bc47f68ee8bb6e19436c82c611f`](https://github.com/n05a-design/steps/commit/f6e3456c19eb1bc47f68ee8bb6e19436c82c611f)
+als Produkt-Baseline. PRs #158–#163 ergänzen Save/Open, Lokalisierung,
 Akkordbearbeitung, Neuordnung, Undo/Redo sowie Tonart-/Dur-Moll-/Tempo-Kontext.
 PR #164 ergänzt editierbare Taktart sowie Start-Ticks und Dauern pro
 Akkordereignis; PR #165 ergänzt die bar:beat:tick-Projektion, PR #166 die
 Backup-Recovery-Meldung, PR #167/#168 den Migrationsstatus samt Desktop-Hinweis
-und PR #169 die editierbare Projektbezeichnung. Dieser Arbeitszweig ergänzt
-„Neu“ mit Dirty-State-Rückfrage und sauberem Session-Reset. Gespeichert und
-exportiert werden weiterhin absolute Tickwerte. Implementierung, Test, fachliche
-Abnahme und Veröffentlichung sind getrennte Statusangaben.
+PR #169 die editierbare Projektbezeichnung und PR #170 „Neu“ mit
+Dirty-State-Rückfrage und sauberem Session-Reset. Gespeichert und exportiert
+werden weiterhin absolute Tickwerte. Implementierung, Test, fachliche Abnahme
+und Veröffentlichung sind getrennte Statusangaben.
 
 ## Versionen und Freigabestatus
 
