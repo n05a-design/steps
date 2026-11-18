@@ -16,7 +16,7 @@ class TestPackageArtifacts(unittest.TestCase):
     def test_wheel_contains_locales_brand_assets_and_console_entry_point(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             wheel_dir = Path(temp_dir)
-            subprocess.run(
+            result = subprocess.run(
                 [
                     sys.executable,
                     "-m",
@@ -24,15 +24,19 @@ class TestPackageArtifacts(unittest.TestCase):
                     "wheel",
                     str(ROOT),
                     "--no-deps",
-                    "--no-build-isolation",
                     "--wheel-dir",
                     str(wheel_dir),
                 ],
-                check=True,
+                check=False,
                 cwd=ROOT,
                 capture_output=True,
                 text=True,
             )
+            if result.returncode != 0:
+                self.fail(
+                    "Wheel build failed:\n"
+                    f"{result.stdout}\n{result.stderr}"
+                )
             wheels = glob.glob(str(wheel_dir / "*.whl"))
             self.assertEqual(len(wheels), 1)
 
