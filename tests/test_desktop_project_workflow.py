@@ -36,6 +36,7 @@ class FakeSession:
         self.time_signature = (4, 4)
         self.state = SimpleNamespace(ppq=480)
         self.last_load_recovered_from_backup = False
+        self.last_load_migrations = ()
 
 
 class FakeController:
@@ -150,6 +151,20 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
 
         show_info.assert_called_once()
         self.assertEqual(show_info.call_args.args[0], "Project recovered")
+
+    @patch("app.ui.main_window.filedialog.askopenfilename", return_value="/tmp/legacy.stepsproj")
+    @patch("app.ui.main_window.messagebox.showinfo")
+    def test_open_migrated_project_shows_migration_notice(self, show_info, choose_path):
+        self.window.controller.session.last_load_migrations = (
+            "MIG-001 0.x-to-1.0.0",
+            "MIG-004 add-notation-convention",
+        )
+
+        self.assertTrue(self.window._on_open_project())
+
+        show_info.assert_called_once()
+        self.assertEqual(show_info.call_args.args[0], "Project format updated")
+        self.assertIn("MIG-001 0.x-to-1.0.0", show_info.call_args.args[1])
 
     @patch("app.ui.main_window.filedialog.askopenfilename", return_value="/tmp/broken.stepsproj")
     @patch("app.ui.main_window.messagebox.showerror")

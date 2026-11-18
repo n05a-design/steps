@@ -50,6 +50,8 @@
   "project.open.error.title": "Projekt konnte nicht geöffnet werden",
   "project.recovery.title": "Projekt wiederhergestellt",
   "project.recovery.message": "Die Projektdatei war beschädigt. STEPS hat das neueste gültige Backup geöffnet; speichern Sie das Projekt, um die beschädigte Datei zu ersetzen.",
+  "project.migration.title": "Projektformat aktualisiert",
+  "project.migration.message": "Legacy-Kompatibilität wurde angewendet: {migrations}. Speichern Sie das Projekt, um das normalisierte 1.0.0-Schema zu schreiben.",
   "project.unsaved.title": "Ungespeicherte Änderungen",
   "project.unsaved.message": "Möchten Sie die Änderungen an der aktuellen Progression speichern?",
   "midi.save.title": "MIDI-Datei exportieren",
