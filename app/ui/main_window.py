@@ -82,6 +82,10 @@ class StepsMainWindow:
         self.root.bind_all("<Control-s>", self._on_save_shortcut)
         self.root.bind_all("<Command-o>", self._on_open_shortcut)
         self.root.bind_all("<Command-s>", self._on_save_shortcut)
+        self.root.bind_all("<Control-z>", self._on_undo_shortcut)
+        self.root.bind_all("<Control-Shift-z>", self._on_redo_shortcut)
+        self.root.bind_all("<Command-z>", self._on_undo_shortcut)
+        self.root.bind_all("<Command-Shift-z>", self._on_redo_shortcut)
         self.root.protocol("WM_DELETE_WINDOW", self._on_close)
 
     def _localize_widgets(self) -> None:
@@ -97,6 +101,10 @@ class StepsMainWindow:
             self.language_menu.entryconfigure(index, label=t(key))
         self.title_lbl.configure(text=t("workspace.heading"))
         self.add_btn.configure(text=t("chord.add"))
+        self.update_btn.configure(text=t("chord.update"))
+        self.remove_btn.configure(text=t("chord.remove"))
+        self.undo_btn.configure(text=t("history.undo"))
+        self.redo_btn.configure(text=t("history.redo"))
         self.trans_down_btn.configure(text=t("transpose.down"))
         self.trans_up_btn.configure(text=t("transpose.up"))
         self.export_btn.configure(text=t("midi.export"))
@@ -122,6 +130,18 @@ class StepsMainWindow:
 
     def _on_save_shortcut(self, _event: tk.Event) -> str:
         self._on_save_project()
+        return "break"
+
+    def _on_undo_shortcut(self, _event: tk.Event) -> Optional[str]:
+        if _event.widget.winfo_class() in {"Entry", "Text"}:
+            return None
+        self._on_undo()
+        return "break"
+
+    def _on_redo_shortcut(self, _event: tk.Event) -> Optional[str]:
+        if _event.widget.winfo_class() in {"Entry", "Text"}:
+            return None
+        self._on_redo()
         return "break"
 
     def _update_window_title(self) -> None:
@@ -274,6 +294,49 @@ class StepsMainWindow:
         )
         self.add_btn.pack(side=tk.LEFT, padx=sp.xs)
 
+        self.edit_bar = tk.Frame(self.work_area, bg=colors.bg_surface, padx=sp.sm)
+        self.edit_bar.pack(fill=tk.X, pady=(0, sp.xs))
+        self.update_btn = tk.Button(
+            self.edit_bar,
+            text=self.i18n.translate("chord.update"),
+            command=self._on_update_chord,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            relief=tk.FLAT,
+            padx=sp.sm,
+        )
+        self.update_btn.pack(side=tk.LEFT, padx=sp.xs)
+        self.remove_btn = tk.Button(
+            self.edit_bar,
+            text=self.i18n.translate("chord.remove"),
+            command=self._on_remove_chord,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            relief=tk.FLAT,
+            padx=sp.sm,
+        )
+        self.remove_btn.pack(side=tk.LEFT, padx=sp.xs)
+        self.undo_btn = tk.Button(
+            self.edit_bar,
+            text=self.i18n.translate("history.undo"),
+            command=self._on_undo,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            relief=tk.FLAT,
+            padx=sp.sm,
+        )
+        self.undo_btn.pack(side=tk.LEFT, padx=(sp.md, sp.xs))
+        self.redo_btn = tk.Button(
+            self.edit_bar,
+            text=self.i18n.translate("history.redo"),
+            command=self._on_redo,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            relief=tk.FLAT,
+            padx=sp.sm,
+        )
+        self.redo_btn.pack(side=tk.LEFT, padx=sp.xs)
+
         # Transpose Buttons
         self.trans_down_btn = tk.Button(
             self.control_bar,
@@ -362,22 +425,45 @@ class StepsMainWindow:
         )
         self.detail_text.pack(fill=tk.BOTH, expand=True)
 
-    def _refresh_all(self, preserve_selection: bool = False) -> None:
+    def _refresh_all(
+        self,
+        preserve_selection: bool = False,
+        selected_index: Optional[int] = None,
+    ) -> None:
         """Synchronizes UI state with the ProgressionSessionController."""
         state = self.controller.get_state_summary()
         selected = self.chord_listbox.curselection() if preserve_selection else ()
         self._update_window_title()
+        has_chords = bool(state["chords"])
+        self.update_btn.configure(state=tk.NORMAL if has_chords else tk.DISABLED)
+        self.remove_btn.configure(state=tk.NORMAL if has_chords else tk.DISABLED)
+        self.undo_btn.configure(state=tk.NORMAL if state["can_undo"] else tk.DISABLED)
+        self.redo_btn.configure(state=tk.NORMAL if state["can_redo"] else tk.DISABLED)
 
         self.chord_listbox.delete(0, tk.END)
         for idx, chord_name in enumerate(state["chords"]):
             self.chord_listbox.insert(tk.END, f"  [{idx + 1:02d}]   {chord_name}")
 
         if state["chords"]:
-            index = selected[0] if selected and selected[0] < len(state["chords"]) else 0
+            if selected_index is not None:
+                index = max(0, min(selected_index, len(state["chords"]) - 1))
+            else:
+                index = min(selected[0], len(state["chords"]) - 1) if selected else 0
             self.chord_listbox.select_set(index)
             self._display_chord_details(state["chords"][index])
         else:
             self._display_empty_info()
+
+    def _selected_chord_index(self) -> Optional[int]:
+        selection = self.chord_listbox.curselection()
+        return selection[0] if selection else None
+
+    def _show_chord_change_error(self, error: Exception) -> None:
+        messagebox.showerror(
+            self.i18n.translate("chord.change.error.title"),
+            self.i18n.translate("chord.invalid", error=error),
+            parent=self.root,
+        )
 
     def _display_chord_details(self, chord_name: str) -> None:
         """Renders harmonic analysis, voicing reduction and scale suggestions."""
@@ -444,8 +530,58 @@ class StepsMainWindow:
     def _on_add_chord(self) -> None:
         txt = self.chord_entry.get().strip()
         if txt:
-            self.controller.add_chord(txt)
-            self._refresh_all()
+            try:
+                self.controller.add_chord(txt)
+            except MusicTheoryError as exc:
+                self._show_chord_change_error(exc)
+                return
+            self._refresh_all(selected_index=len(self.controller.session.chords) - 1)
+
+    def _on_update_chord(self) -> None:
+        index = self._selected_chord_index()
+        if index is None:
+            messagebox.showerror(
+                self.i18n.translate("chord.change.error.title"),
+                self.i18n.translate("chord.selection.required"),
+                parent=self.root,
+            )
+            return
+        try:
+            self.controller.set_chord(index, self.chord_entry.get().strip())
+        except MusicTheoryError as exc:
+            self._show_chord_change_error(exc)
+            return
+        self._refresh_all(selected_index=index)
+
+    def _on_remove_chord(self) -> None:
+        index = self._selected_chord_index()
+        if index is None:
+            messagebox.showerror(
+                self.i18n.translate("chord.change.error.title"),
+                self.i18n.translate("chord.selection.required"),
+                parent=self.root,
+            )
+            return
+        try:
+            self.controller.remove_chord(index)
+        except ValueError:
+            messagebox.showerror(
+                self.i18n.translate("chord.change.error.title"),
+                self.i18n.translate("chord.remove.minimum"),
+                parent=self.root,
+            )
+            return
+        self._refresh_all(selected_index=min(index, len(self.controller.session.chords) - 1))
+
+    def _on_undo(self) -> None:
+        if self.controller.session.can_undo:
+            self.controller.undo()
+            self._refresh_all(preserve_selection=True)
+
+    def _on_redo(self) -> None:
+        if self.controller.session.can_redo:
+            self.controller.redo()
+            self._refresh_all(preserve_selection=True)
 
     def _on_transpose(self, semitones: int) -> None:
         self.controller.transpose(semitones)

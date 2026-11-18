@@ -20,6 +20,12 @@ Desktop-Start, Oberfläche und Plattformintegration sind Ziel dieser Schicht.
 Der [Implementierungsstand](../docs/IMPLEMENTATION.md) beschreibt den
 vorhandenen Kern und die Grenzen der App-Schnittstelle.
 
+Die Progressionsoberfläche kann Akkorde hinzufügen, den ausgewählten Akkord
+ändern oder entfernen und Änderungen rückgängig machen bzw. wiederholen.
+Ungültige Akkorde und der Versuch, den letzten Akkord zu entfernen, werden
+sichtbar abgewiesen. Die Bedienfelder und Fehlermeldungen folgen der gewählten
+UI-Sprache.
+
 Die UI-Sprache unterstützt Englisch und Deutsch unabhängig von musikalischer
 Notation. Die Auswahl `system`, `en` oder `de` wird als Benutzereinstellung
 gespeichert; `--language` überschreibt sie nur für den aktuellen CLI-Lauf.

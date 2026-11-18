@@ -1,13 +1,13 @@
 # STEPS Internationalization Architecture and Glide Reference
 
-**Status:** STEPS target contract with an initial implementation in the current work branch; translation and native-platform acceptance remain pending.
+**Status:** STEPS target contract and initial implementation merged in PR #159; translation and native-platform acceptance remain pending.
 
 **Assessment date:** 2026-11-18.
 **Glide evidence:** `n05a-design/glide-to-do` main `1e99bf1d1f6d0a6d79315a62f5bd4ecb08ca05eb`; i18n PR #134 merge `5f0db505488b18c18fbce9b9c2c7eafe9a6027c9`.
 
 ## Current STEPS status
 
-The initial implementation in this branch adds the Tkinter-free `app/i18n.py` resolver, JSON catalogs under `app/locales/`, a persisted `system`/`en`/`de` UI preference, a runtime language menu, and a CLI `--language` override. The current UI strings, project dialogs, analysis labels, and headless CLI output are routed through the catalogs. This implementation has automated catalog, persistence, runtime-switch, notation-independence, and entrypoint tests; it is not yet merged or accepted through native platform, assistive-technology, or translation review.
+PR #159 adds the Tkinter-free `app/i18n.py` resolver, JSON catalogs under `app/locales/`, a persisted `system`/`en`/`de` UI preference, a runtime language menu, and a CLI `--language` override. The current UI strings, project dialogs, analysis labels, and headless CLI output are routed through the catalogs. New desktop editing and history actions must keep their labels and visible errors in both catalogs. Automated catalog, persistence, runtime-switch, notation-independence, and entrypoint tests pass; independent translation, native-platform, and assistive-technology acceptance remain pending.
 
 System resolution checks `LANGUAGE`, `LC_ALL`, `LC_MESSAGES`, then `LANG`, and finally Python's detected locale. For a `LANGUAGE` list, the first supported language is used; unsupported values resolve to English. User preference files are stored in the platform's standard per-user configuration directory and contain only the UI language, never project or notation data.
 
@@ -29,7 +29,7 @@ The Glide reference is useful as an architectural example, not a STEPS code depe
 | Interpolation | `safe_format` uses named Python format fields and returns the template when formatting raises selected errors | Define and test exact placeholder semantics. Validate placeholder parity; avoid swallowing unrelated runtime errors. |
 | Cache and runtime switching | Catalogs are cached; `set_language` updates the in-process language and loads the selected and default catalogs | Switching must refresh every visible STEPS view, menu, dialog, and status message without changing a project. |
 | Preference persistence | Glide's core module stores process state only; the settings UI is a separate integration | STEPS stores only `{"language": ...}` in a per-user preferences file using an atomic replacement; restart behavior is tested, while cross-platform CI and settings-write failure acceptance remain. |
-| UI integration | Glide PR #134 reports translation integration for settings, menus, mnemonics, and selected sidebar entries | The STEPS main window localizes its current menus, labels, dialogs, and analysis content; headless behavior is tested, while native accessibility and a complete surface inventory remain open. |
+| UI integration | Glide PR #134 reports translation integration for settings, menus, mnemonics, and selected sidebar entries | The STEPS main window localizes its current menus, labels, dialogs, analysis content, and editing/history controls; headless behavior is tested, while native accessibility and a complete surface inventory remain open. |
 | Tests | Glide's `test_i18n.py` contains 11 tests for resolution, lookup, formatting, parity, and import/module constraints | STEPS `tests/test_i18n.py` covers key/placeholder parity, system resolution, platform paths, persistence, runtime switching, missing keys, and notation independence. Continue cross-OS and human reviews; no Glide code is reused. |
 | Follow-up | [PR #137](https://github.com/n05a-design/glide-to-do/pull/137) adjusts dialog/window tests to avoid assuming a particular translated quit label; it reports the i18n suite still passing | UI tests should assert stable action IDs/behavior rather than localized display text except in translation-specific tests. |
 
@@ -90,7 +90,7 @@ A localized UI label and a translated music-theory claim are different data. For
 5. Add content localization metadata only when a specific reviewed learning-content translation is needed; no knowledge claims change in the current branch.
 6. Locale catalogs, application code, design tokens, and brand assets are included in the wheel; validate installed artifacts and supported platforms in CI before declaring package acceptance.
 
-The resolver, settings integration, initial catalog migration, and runtime switching are implemented on this branch. Translation review, native/accessibility acceptance, full supported-platform verification, and release sign-off remain open under [issue #154](https://github.com/n05a-design/steps/issues/154).
+The resolver, settings integration, initial catalog migration, and runtime switching were merged in PR #159. Translation review, native/accessibility acceptance, full supported-platform verification, and release sign-off remain open under [issue #154](https://github.com/n05a-design/steps/issues/154).
 
 ## References
 

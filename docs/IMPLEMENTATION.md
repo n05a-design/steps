@@ -3,10 +3,11 @@
 Dieser Leitfaden beschreibt den Code im selben Checkout. Der Einstieg für
 Entwicklung ist die [Root-README](../README.md). Die [API-Referenz](theory/API.md)
 wird aus den exportierten Python-Objekten erzeugt. Der hier dokumentierte Stand verwendet `main` bei Commit
-[`7a283deea6565e75d45ec2a37549839191a50bf2`](https://github.com/n05a-design/steps/commit/7a283deea6565e75d45ec2a37549839191a50bf2)
-als Baseline. PR #158 enthält das Save/Open im Hauptfenster sowie die
-Validierung beim Session-Laden. Der aktuelle Arbeitszweig ergänzt die
-Lokalisierung; diese Ergänzung ist noch nicht Teil von `main`.
+[`f4f444e6fbefd0d5136beb490cbddd655ef00942`](https://github.com/n05a-design/steps/commit/f4f444e6fbefd0d5136beb490cbddd655ef00942)
+als Produkt-Baseline. PR #158 enthält Save/Open im Hauptfenster sowie die
+Validierung beim Session-Laden; PR #159 ergänzt die englische/deutsche
+UI- und CLI-Lokalisierung. Dieser Arbeitszweig verbindet die vorhandenen
+Session-Aktionen für Akkordbearbeitung und Undo/Redo mit der Oberfläche.
 Implementierung, Test, fachliche Abnahme und Veröffentlichung sind getrennte
 Statusangaben.
 
@@ -40,8 +41,8 @@ und plattformgeprüftes Desktop-Installationspaket ist damit nicht belegt.
 | Stimmführung | [voice_leading.py](../src/steps/progression/voice_leading.py), [engine.py](../src/steps/progression/engine.py) | Standardsequenz mit durchgehender Stimmenzahl. Der Solver minimiert die Summe absoluter Halbtonbewegungen je Übergang innerhalb ±12 Halbtönen pro Stimme. Er prüft Tonklassen, Bass, MIDI 0–127 und Stimmenreihenfolge. Der strikte Modus prüft parallele Quinten und Oktaven sowie gleichartige reine Außenstimmenintervalle in Gegenbewegung. Unlösbare Vorgaben lösen `VoiceLeadingError` aus. Das Startlayout akzeptiert `CLOSE`, `DROP2`, `SHELL` und `ROOTLESS`. Folgeakkorde können andere Lagen haben. Vollständiger Kontrapunkt und Spielbarkeit bleiben eigene Abnahmen. |
 | Progressionskatalog | [Historischer Katalog](../knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md), [App-Lernmaterial](../knowledge/concepts/progressions/REVIEWED_PROGRESSIONS.md) | Die allgemeine API bietet 28 Bestandsprogressionen. Für die [App-Schnittstelle](../app/knowledge.py) sind drei Pilotbeispiele fachlich freigegeben. App-Schnittstelle und Lernmaterial verwenden dieselbe [Datenbasis](../src/steps/progression/reviewed_progressions.json). Die [Abnahmeliste](../knowledge/benchmark/PILOT_ABNAHME.md) dokumentiert die Freigaben. |
 | Recherche und Quellen | [Quellenregister](../knowledge/sources/README.md), [Ingestion](../knowledge/INGESTION_PIPELINE.md) | App-Adapter und Renderer lösen Quellen-IDs im Produktregister auf und prüfen die fassungsgebundenen Freigaben aller Pilot-Aussagen. CI führt denselben Validator aus. Forschungsclaims und Rohmedien werden über den App-Adapter nicht geladen. |
-| Desktop, Audio, MIDI und Speicherung | [app](../app/README.md), [Architekturziel](architecture/ARCHITECTURE_OVERVIEW.md) | `app.main` startet einen CLI-/Headless-Pfad oder ein Tkinter-Fenster. `StepsMainWindow` stellt Akkordeingabe, Transposition, Analyseanzeige, MIDI-Dateiauswahl/-Export sowie projektbezogene Öffnen-/Speichern-Dialoge mit Dirty-Prompt und Fehlerdialogen bereit (Save/Open aus PR #158). Der Controller bietet außerdem Save/Load, Undo/Redo und Export; Session-Laden prüft Notation, Tonart, Modus und Akkordsymbole, bevor es den Zustand austauscht. Headless-Tests decken diese Pfade ab; native Plattform-/Accessibility-Abnahme bleibt offen. SMF-Writer und -Parser sowie automatisierte Roundtrips sind vorhanden; unabhängige DAW-Abnahme ist separat zu belegen. Wiedergabe ist nach [ADR-007](../decisions/ADR-007-audio-nur-dateiexport-v01.md) nicht Teil von v0.1. |
-| Internationalisierung | [Internationalisierungsvertrag](engineering/INTERNATIONALIZATION.md), [`app.i18n`](../app/i18n.py) und [Kataloge](../app/locales/) | Der aktuelle Arbeitszweig ergänzt `system`/`en`/`de`, System-Fallback, persistierte Benutzereinstellung, Laufzeitumschaltung im Hauptfenster sowie `--language` für die CLI. Katalogparität, Platzhalter, Persistenz, UI-Wechsel und Notationsunabhängigkeit sind automatisiert getestet; unabhängige Übersetzungs-, native Plattform- und Accessibility-Abnahme bleibt offen. Die UI-Sprache ändert `INT`/`DE` nicht. Siehe [#154](https://github.com/n05a-design/steps/issues/154). |
+| Desktop, Audio, MIDI und Speicherung | [app](../app/README.md), [Architekturziel](architecture/ARCHITECTURE_OVERVIEW.md) | `app.main` startet einen CLI-/Headless-Pfad oder ein Tkinter-Fenster. `StepsMainWindow` bietet Akkord hinzufügen, ausgewählten Akkord ändern/entfernen, Transposition, Analyseanzeige, Undo/Redo, MIDI-Dateiauswahl/-Export sowie projektbezogene Öffnen-/Speichern-Dialoge mit Dirty-Prompt und Fehlerdialogen. Session-Laden prüft Notation, Tonart, Modus und Akkordsymbole, bevor es den Zustand austauscht. Bedienfehler wie ungültige Akkorde und das Entfernen des letzten Akkords werden sichtbar abgewiesen. Headless-Tests decken die Actions ab; native Plattform-/Accessibility-Abnahme bleibt offen. SMF-Writer und -Parser sowie automatisierte Roundtrips sind vorhanden; unabhängige DAW-Abnahme ist separat zu belegen. Wiedergabe ist nach [ADR-007](../decisions/ADR-007-audio-nur-dateiexport-v01.md) nicht Teil von v0.1. |
+| Internationalisierung | [Internationalisierungsvertrag](engineering/INTERNATIONALIZATION.md), [`app.i18n`](../app/i18n.py) und [Kataloge](../app/locales/) | PR #159 ergänzt `system`/`en`/`de`, System-Fallback, persistierte Benutzereinstellung, Laufzeitumschaltung im Hauptfenster sowie `--language` für die CLI. Katalogparität, Platzhalter, Persistenz, UI-Wechsel und Notationsunabhängigkeit sind automatisiert getestet; unabhängige Übersetzungs-, native Plattform- und Accessibility-Abnahme bleibt offen. Die UI-Sprache ändert `INT`/`DE` nicht. Siehe [#154](https://github.com/n05a-design/steps/issues/154). |
 
 Ein konkretes `Voicing` speichert MIDI-Noten als unveränderliche Folge
 in Stimmenreihenfolge. `midi_notes` liefert die Noten nach Tonhöhe
@@ -84,12 +85,12 @@ der ohne Display übersprungen werden kann. Der Headless-CLI- und Controller-
 Vertikalschnitt wird separat geprüft.
 
 Das ist **kein** Nachweis für eine veröffentlichungsreife Desktop-App. PR #158
-ergänzt Save/Open, Rückfrage bei ungespeicherten Änderungen und sichtbare
-Fehlerdialoge; der aktuelle Arbeitszweig ergänzt die MIDI-Dateiauswahl und
-Sprachumschaltung. Die zugehörigen Bedienpfade sind headless getestet. Noch
-offen sind native Accessibility-/Plattformprüfung, unabhängige
-Übersetzungsabnahme, Wiederherstellungs- und Kompatibilitätsabnahme, Installer
-und Benutzerabnahme. Die
+ergänzt Save/Open mit Rückfrage bei ungespeicherten Änderungen; PR #159 ergänzt
+die MIDI-Dateiauswahl und Sprachumschaltung. Dieser Arbeitszweig verbindet
+Hinzufügen, Ändern, Entfernen und Undo/Redo mit der UI und weist ungültige
+Eingaben sichtbar ab. Die Bedienpfade sind headless getestet. Noch offen sind
+native Accessibility-/Plattformprüfung, unabhängige Übersetzungsabnahme,
+Wiederherstellungs- und Kompatibilitätsabnahme, Installer und Benutzerabnahme. Die
 [1.0.0-Readiness-Matrix](product/V1.0.0_PRODUCT_CONTRACT.md#readiness-and-gap-matrix)
 ordnet diese Lücken nach Status.
 
