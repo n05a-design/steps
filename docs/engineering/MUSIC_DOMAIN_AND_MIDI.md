@@ -79,6 +79,8 @@ Ein gemeinsames Zeitmodell ist eine *technische Vorarbeit*, keine Festlegung, da
 
 **Konsequenz für MVP:** Auch wenn Drums später kommen, sollte Steps das Projektformat nicht auf „one chord per bar“ festlegen. Sonst erzwingen Sync, Wechsel auf halbe Takte, Piano Roll und Drum-Grooves ein frühes Breaking Change.
 
+**Implementierungsabgleich (18.11.2026):** Der Desktop-Editor stellt pro Akkordereignis `start_tick` und `duration_ticks` als getrennte, undo-fähige Werte in der deklarierten PPQ-Auflösung bereit. Projektdatei und MIDI-Export übernehmen diese Werte. Die Eingabe ist tickbasiert; eine Takt-/Zählzeitprojektion oder automatische Ableitung der Dauer aus der Taktart ist damit nicht behauptet. Lücken und Überlappungen bleiben explizite Ereigniszeiten.
+
 ## 5. MIDI- und Audio-Engineering-Grenze
 
 > **Produktvorgaben für v0.1 (17.11.2026):** [ADR-017](../../decisions/ADR-017-midi-export-v01.md) legt Format, Spuren, Notenlänge, Lage, Velocity und Metadaten des Exports fest; [ADR-007](../../decisions/ADR-007-audio-nur-dateiexport-v01.md) beschränkt v0.1 auf den Dateiexport.

@@ -73,6 +73,7 @@ class SessionState:
     chord_duration_ticks: int = 1920
     voice_leading_style: str = "CONTEMPORARY_POP"
     time_signature: Tuple[int, int] = (4, 4)
+    chord_event_timings: List[Tuple[int, int]] = field(default_factory=list)
 
 
 class ProgressionSession:
@@ -109,6 +110,10 @@ class ProgressionSession:
             bpm=bpm,
             voice_leading_style=style_val,
         )
+        init_state.chord_event_timings = [
+            (index * init_state.chord_duration_ticks, init_state.chord_duration_ticks)
+            for index in range(len(chords))
+        ]
         self._undo_stack = UndoStack[SessionState](init_state, max_depth=50)
 
     @property
@@ -138,6 +143,11 @@ class ProgressionSession:
     @property
     def time_signature(self) -> Tuple[int, int]:
         return self.state.time_signature
+
+    def get_chord_event_timing(self, index: int) -> Tuple[int, int]:
+        if not 0 <= index < len(self.state.chord_event_timings):
+            raise IndexError(f"Chord index {index} out of range")
+        return self.state.chord_event_timings[index]
 
     @property
     def voice_leading_style(self) -> VoiceLeadingStyle:
@@ -195,12 +205,30 @@ class ProgressionSession:
         """Appends or inserts a chord."""
         parse_chord(symbol, convention=self.convention)
         new_chords = list(self.chords)
+        old_count = len(new_chords)
         if position is None:
             new_chords.append(symbol)
+            insert_index = len(new_chords) - 1
         else:
             new_chords.insert(position, symbol)
+            normalized_position = position if position >= 0 else old_count + position
+            insert_index = max(0, min(normalized_position, old_count))
         new_state = copy.deepcopy(self.state)
         new_state.chords = new_chords
+        if insert_index == 0:
+            start_tick = 0
+        else:
+            previous_start, previous_duration = new_state.chord_event_timings[insert_index - 1]
+            start_tick = previous_start + previous_duration
+        duration_ticks = new_state.chord_duration_ticks
+        if position is not None:
+            new_state.chord_event_timings = [
+                (start + duration_ticks, duration)
+                if index >= insert_index
+                else (start, duration)
+                for index, (start, duration) in enumerate(new_state.chord_event_timings)
+            ]
+        new_state.chord_event_timings.insert(insert_index, (start_tick, duration_ticks))
         self._push_mutation(new_state)
 
     def remove_chord(self, index: int) -> None:
@@ -213,6 +241,7 @@ class ProgressionSession:
         new_chords.pop(index)
         new_state = copy.deepcopy(self.state)
         new_state.chords = new_chords
+        new_state.chord_event_timings.pop(index)
         self._push_mutation(new_state)
 
     def move_chord(self, index: int, direction: Literal[-1, 1]) -> None:
@@ -229,6 +258,28 @@ class ProgressionSession:
         new_chords[index], new_chords[target] = new_chords[target], new_chords[index]
         new_state = copy.deepcopy(self.state)
         new_state.chords = new_chords
+        timings = list(new_state.chord_event_timings)
+        timings[index], timings[target] = timings[target], timings[index]
+        new_state.chord_event_timings = timings
+        self._push_mutation(new_state)
+
+    def set_chord_event_timing(self, index: int, start_tick: int, duration_ticks: int) -> None:
+        """Sets one chord event's absolute tick position and positive tick duration."""
+        if not 0 <= index < len(self.chords):
+            raise IndexError(f"Chord index {index} out of range")
+        if not isinstance(start_tick, int) or isinstance(start_tick, bool) or start_tick < 0:
+            raise ValueError("Event start tick must be a non-negative integer.")
+        if (
+            not isinstance(duration_ticks, int)
+            or isinstance(duration_ticks, bool)
+            or duration_ticks <= 0
+        ):
+            raise ValueError("Event duration must be a positive integer.")
+        if self.state.chord_event_timings[index] == (start_tick, duration_ticks):
+            return
+
+        new_state = copy.deepcopy(self.state)
+        new_state.chord_event_timings[index] = (start_tick, duration_ticks)
         self._push_mutation(new_state)
 
     def transpose(self, semitones: int) -> None:
@@ -730,14 +781,14 @@ class ProgressionSession:
     def save_to_file(self, file_path: Path | str) -> Path:
         """Saves current session state to a STEPS project file."""
         events = []
-        cur_tick = 0
-        for sym in self.chords:
+        for sym, (start_tick, duration_ticks) in zip(
+            self.chords, self.state.chord_event_timings
+        ):
             events.append({
-                "start_tick": cur_tick,
-                "duration_ticks": self.state.chord_duration_ticks,
+                "start_tick": start_tick,
+                "duration_ticks": duration_ticks,
                 "payload": sym
             })
-            cur_tick += self.state.chord_duration_ticks
 
         proj = Project(
             title=self.state.title,
@@ -785,6 +836,7 @@ class ProgressionSession:
             raise CorruptedProjectError("Project time settings and tracks have invalid types.")
 
         chords: List[str] = []
+        chord_event_timings: List[Tuple[int, int]] = []
         for trk in proj.tracks:
             if not isinstance(trk, dict):
                 raise CorruptedProjectError("Project track entries must be objects.")
@@ -792,7 +844,8 @@ class ProgressionSession:
                 events = trk.get("events", [])
                 if not isinstance(events, list):
                     raise CorruptedProjectError("Chord track events must be an array.")
-                for ev in events:
+                default_duration = proj.time_settings.get("ppq", 480) * 4
+                for event_index, ev in enumerate(events):
                     if not isinstance(ev, dict):
                         raise CorruptedProjectError("Chord track event entries must be objects.")
                     payload = ev.get("payload")
@@ -811,6 +864,20 @@ class ProgressionSession:
                             f"Invalid chord symbol in project: {symbol!r}"
                         ) from exc
                     chords.append(symbol)
+                    start_tick = ev.get("start_tick", event_index * default_duration)
+                    duration_ticks = ev.get("duration_ticks", default_duration)
+                    if (
+                        not isinstance(start_tick, int)
+                        or isinstance(start_tick, bool)
+                        or start_tick < 0
+                        or not isinstance(duration_ticks, int)
+                        or isinstance(duration_ticks, bool)
+                        or duration_ticks <= 0
+                    ):
+                        raise CorruptedProjectError(
+                            "Chord event timing must use a non-negative start and positive integer duration."
+                        )
+                    chord_event_timings.append((start_tick, duration_ticks))
                 break
 
         bpm = proj.time_settings.get("tempo_bpm", 120.0)
@@ -861,6 +928,7 @@ class ProgressionSession:
             ppq=ppq,
             chord_duration_ticks=dur,
             voice_leading_style=resolved_style.value,
+            chord_event_timings=chord_event_timings,
         )
         self._undo_stack = UndoStack[SessionState](new_state, max_depth=50)
 
@@ -874,5 +942,6 @@ class ProgressionSession:
             ppq=self.state.ppq,
             chord_duration_ticks=self.state.chord_duration_ticks,
             time_signature=self.state.time_signature,
+            event_timings=self.state.chord_event_timings,
             smf_format=1
         )

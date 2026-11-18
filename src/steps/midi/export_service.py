@@ -8,7 +8,7 @@ into Standard MIDI Files (SMF) Format 0 and Format 1.
 from __future__ import annotations
 
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 from ..storage.project_io import Project
 from ..theory.chord import Voicing, parse_chord
@@ -97,13 +97,34 @@ class MidiExportService:
         ppq: int = 480,
         chord_duration_ticks: int = 1920,
         smf_format: int = 1,
-        time_signature: tuple[int, int] = (4, 4)
+        time_signature: tuple[int, int] = (4, 4),
+        event_timings: Optional[List[Tuple[int, int]]] = None,
     ) -> Path:
         """
         Exports a sequence of Voicings into an SMF file.
-        Chords use consecutive tick offsets and the supplied fixed duration; meter metadata
-        does not implicitly rescale event timing.
+        Optional event timing supplies absolute tick positions and durations; otherwise
+        chords use consecutive tick offsets and the supplied fixed duration.
         """
+        if event_timings is not None and len(event_timings) != len(voicings):
+            raise ValueError("Event timing count must match the voicing count.")
+        if event_timings is None:
+            event_timings = [
+                (index * chord_duration_ticks, chord_duration_ticks)
+                for index in range(len(voicings))
+            ]
+        if any(
+            not isinstance(timing, tuple)
+            or len(timing) != 2
+            or not isinstance(timing[0], int)
+            or isinstance(timing[0], bool)
+            or timing[0] < 0
+            or not isinstance(timing[1], int)
+            or isinstance(timing[1], bool)
+            or timing[1] <= 0
+            for timing in event_timings
+        ):
+            raise ValueError("Event timings require non-negative starts and positive durations.")
+
         midi_file = MidiFile(smf_format=smf_format, division=ppq)
 
         # Track 0 / Conductor
@@ -117,17 +138,15 @@ class MidiExportService:
             chords_track.add_time_signature(0, time_signature[0], time_signature[1])
             chords_track.add_tempo(0, bpm)
 
-        current_tick = 0
-        for v in voicings:
+        for v, (start_tick, duration_ticks) in zip(voicings, event_timings):
             for note in v.midi_notes:
                 chords_track.add_note(
-                    start_tick=current_tick,
-                    duration_ticks=chord_duration_ticks,
+                    start_tick=start_tick,
+                    duration_ticks=duration_ticks,
                     pitch=note,
                     velocity=75,
                     channel=0
                 )
-            current_tick += chord_duration_ticks
 
         return midi_file.save(output_path)
 

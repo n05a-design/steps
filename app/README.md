@@ -31,8 +31,10 @@ Tonart, Dur-/Mollmodus, Tempo und Taktart lassen sich gemeinsam als musikalische
 Kontext ändern; die Eingabe wird als eine undo-fähige Aktion gespeichert. Die
 Taktart wird im Format Zähler/Nenner eingegeben (z. B. `3/4` oder `6/8`) und in
 Projektdatei und MIDI-Metadaten übernommen. Sie ändert nicht automatisch die
-Tick-Dauer der Akkord-Events; einzelne Startzeiten und Dauern sind noch nicht
-in der Oberfläche editierbar.
+Tick-Dauer der Akkord-Events. Für den ausgewählten Akkord lassen sich absolute
+Startzeit und Dauer in Ticks bearbeiten; die Feldbeschriftung zeigt die
+Projektauflösung (PPQ). Zeitlücken und Überlappungen bleiben damit ausdrückliche
+Tick-Werte und werden nicht aus der Taktart abgeleitet.
 
 Die UI-Sprache unterstützt Englisch und Deutsch unabhängig von musikalischer
 Notation. Die Auswahl `system`, `en` oder `de` wird als Benutzereinstellung

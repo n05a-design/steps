@@ -2,6 +2,7 @@
 
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 from app.i18n import LocaleManager
@@ -33,6 +34,7 @@ class FakeSession:
         self.is_minor = False
         self.bpm = 120.0
         self.time_signature = (4, 4)
+        self.state = SimpleNamespace(ppq=480)
 
 
 class FakeController:
@@ -84,6 +86,10 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.window.mode_var = Mock()
         self.window.tempo_entry = Mock()
         self.window.meter_entry = Mock()
+        self.window.event_start_entry = Mock()
+        self.window.event_duration_entry = Mock()
+        self.window.event_start_lbl = Mock()
+        self.window.event_duration_lbl = Mock()
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/new.stepsproj")
     def test_save_as_updates_current_path_and_window_title(self, choose_path):
