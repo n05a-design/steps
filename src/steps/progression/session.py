@@ -123,6 +123,18 @@ class ProgressionSession:
     def state(self) -> SessionState:
         return self._undo_stack.current_state
 
+    def reset_to_defaults(self) -> None:
+        """Replaces the active session with a clean default project."""
+        init_state = SessionState()
+        init_state.chord_event_timings = [
+            (index * init_state.chord_duration_ticks, init_state.chord_duration_ticks)
+            for index in range(len(init_state.chords))
+        ]
+        self._undo_stack = UndoStack[SessionState](init_state, max_depth=50)
+        self.last_load_recovered_from_backup = False
+        self.last_loaded_backup_path = None
+        self.last_load_migrations = ()
+
     @property
     def chords(self) -> List[str]:
         return list(self.state.chords)

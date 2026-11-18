@@ -1,6 +1,7 @@
 {
   "app.title": "STEPS — Music Theory",
   "file.menu": "File",
+  "file.new": "New",
   "file.open": "Open…",
   "file.save": "Save",
   "file.save_as": "Save As…",

@@ -60,6 +60,9 @@ class StepsMainWindow:
         self.menu_bar = tk.Menu(self.root)
         self.file_menu = tk.Menu(self.menu_bar, tearoff=False)
         self.file_menu.add_command(
+            label="", command=self._on_new_project, accelerator=f"{shortcut}N"
+        )
+        self.file_menu.add_command(
             label="", command=self._on_open_project, accelerator=f"{shortcut}O"
         )
         self.file_menu.add_command(
@@ -82,8 +85,10 @@ class StepsMainWindow:
         self.root.configure(menu=self.menu_bar)
         self.root.bind_all("<Control-o>", self._on_open_shortcut)
         self.root.bind_all("<Control-s>", self._on_save_shortcut)
+        self.root.bind_all("<Control-n>", self._on_new_shortcut)
         self.root.bind_all("<Command-o>", self._on_open_shortcut)
         self.root.bind_all("<Command-s>", self._on_save_shortcut)
+        self.root.bind_all("<Command-n>", self._on_new_shortcut)
         self.root.bind_all("<Control-z>", self._on_undo_shortcut)
         self.root.bind_all("<Control-Shift-z>", self._on_redo_shortcut)
         self.root.bind_all("<Command-z>", self._on_undo_shortcut)
@@ -93,9 +98,10 @@ class StepsMainWindow:
     def _localize_widgets(self) -> None:
         t = self.i18n.translate
         self.root.title(t("app.title"))
-        self.file_menu.entryconfigure(0, label=t("file.open"))
-        self.file_menu.entryconfigure(1, label=t("file.save"))
-        self.file_menu.entryconfigure(2, label=t("file.save_as"))
+        self.file_menu.entryconfigure(0, label=t("file.new"))
+        self.file_menu.entryconfigure(1, label=t("file.open"))
+        self.file_menu.entryconfigure(2, label=t("file.save"))
+        self.file_menu.entryconfigure(3, label=t("file.save_as"))
         self.menu_bar.entryconfigure(0, label=t("file.menu"))
         self.menu_bar.entryconfigure(1, label=t("settings.menu"))
         self.settings_menu.entryconfigure(0, label=t("language.menu"))
@@ -148,6 +154,10 @@ class StepsMainWindow:
         self._on_save_project()
         return "break"
 
+    def _on_new_shortcut(self, _event: tk.Event) -> str:
+        self._on_new_project()
+        return "break"
+
     def _on_undo_shortcut(self, _event: tk.Event) -> Optional[str]:
         if _event.widget.winfo_class() in {"Entry", "Text"}:
             return None
@@ -174,6 +184,15 @@ class StepsMainWindow:
 
     def _on_save_project(self) -> bool:
         return self._save_project(save_as=False)
+
+    def _on_new_project(self) -> bool:
+        if not self._confirm_unsaved_changes():
+            return False
+        self.controller.new_project()
+        self._project_path = None
+        self._load_context_controls()
+        self._refresh_all()
+        return True
 
     def _on_save_project_as(self) -> bool:
         return self._save_project(save_as=True)

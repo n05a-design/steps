@@ -34,7 +34,11 @@ class FakeSession:
         self.is_minor = False
         self.bpm = 120.0
         self.time_signature = (4, 4)
-        self.state = SimpleNamespace(ppq=480, title="My Progression")
+        self.state = SimpleNamespace(
+            ppq=480,
+            title="My Progression",
+            chords=["C", "G", "Am", "F"],
+        )
         self.last_load_recovered_from_backup = False
         self.last_load_migrations = ()
 
@@ -45,6 +49,7 @@ class FakeController:
         self.saved_paths = []
         self.loaded_paths = []
         self.exported_paths = []
+        self.new_project_calls = 0
         self.save_error = None
         self.load_error = None
         self.export_error = None
@@ -65,6 +70,10 @@ class FakeController:
             raise self.load_error
         self.loaded_paths.append(Path(path))
         self.session.is_dirty = False
+
+    def new_project(self):
+        self.new_project_calls += 1
+        self.session = FakeSession(is_dirty=False)
 
     def export_midi(self, path):
         if self.export_error:
@@ -112,6 +121,33 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
 
         self.assertTrue(self.window.controller.session.is_dirty)
         self.assertEqual(self.window.controller.saved_paths, [])
+
+    @patch("app.ui.main_window.messagebox.askyesnocancel", return_value=False)
+    def test_new_project_discards_and_resets_session(self, prompt):
+        self.window.controller.session.is_dirty = True
+        self.window._project_path = Path("/tmp/old.stepsproj")
+
+        self.assertTrue(self.window._on_new_project())
+
+        self.assertIsNone(self.window._project_path)
+        self.assertEqual(self.window.controller.new_project_calls, 1)
+        self.assertEqual(
+            self.window.controller.session.state.chords,
+            ["C", "G", "Am", "F"],
+        )
+        self.window._refresh_all.assert_called_once_with()
+
+    @patch("app.ui.main_window.messagebox.askyesnocancel", return_value=None)
+    def test_cancel_unsaved_prompt_prevents_new_project(self, prompt):
+        self.window.controller.session.is_dirty = True
+        old_path = Path("/tmp/old.stepsproj")
+        self.window._project_path = old_path
+
+        self.assertFalse(self.window._on_new_project())
+
+        self.assertEqual(self.window.controller.new_project_calls, 0)
+        self.assertEqual(self.window._project_path, old_path)
+        self.window._refresh_all.assert_not_called()
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/fail.stepsproj")
     @patch("app.ui.main_window.messagebox.showerror")
