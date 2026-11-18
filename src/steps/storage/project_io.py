@@ -14,6 +14,7 @@ import json
 import os
 import time
 import uuid
+from copy import deepcopy
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
@@ -95,6 +96,11 @@ class ProjectLoadResult:
     project: Project
     recovered_from_backup: bool = False
     backup_path: Optional[Path] = None
+    migrations: tuple[str, ...] = ()
+
+    @property
+    def migrated(self) -> bool:
+        return bool(self.migrations)
 
 
 class ProjectLock:
@@ -180,6 +186,72 @@ def _check_schema_version_compatibility(file_version: str) -> None:
         )
 
 
+def migrate_project_data(raw: Dict[str, Any]) -> tuple[Dict[str, Any], tuple[str, ...]]:
+    """Apply only documented, reversible 1.x project compatibility migrations."""
+    migrated = deepcopy(raw)
+    migrations: List[str] = []
+    if "title" not in migrated or not isinstance(migrated["title"], str) or not migrated["title"].strip():
+        raise CorruptedProjectError("Project title must be a non-empty string.")
+    schema_version = migrated.get("schema_version", "1.0.0")
+    if not isinstance(schema_version, str):
+        raise CorruptedProjectError("Project schema_version must be a string.")
+
+    parts = schema_version.split(".")
+    if len(parts) != 3:
+        raise UnsupportedSchemaVersionError(
+            f"Malformed project schema version string: {schema_version!r}"
+        )
+    try:
+        major = int(parts[0])
+    except ValueError as exc:
+        raise UnsupportedSchemaVersionError(
+            f"Malformed project schema version string: {schema_version!r}"
+        ) from exc
+
+    legacy_0_x = major == 0
+    if legacy_0_x:
+        migrations.append("MIG-001 0.x-to-1.0.0")
+
+    if "project_id" not in migrated:
+        migrated["project_id"] = str(uuid.uuid4())
+        migrations.append("MIG-002 add-project-id")
+    if "app_version" not in migrated:
+        migrated["app_version"] = CURRENT_APP_VERSION
+        migrations.append("MIG-003 add-app-version")
+    if "notation_convention" not in migrated:
+        migrated["notation_convention"] = "INT"
+        migrations.append("MIG-004 add-notation-convention")
+    if "metadata" not in migrated or not isinstance(migrated["metadata"], dict):
+        migrated["metadata"] = {}
+        migrations.append("MIG-005 normalize-metadata")
+
+    time_settings = migrated.get("time_settings")
+    if not isinstance(time_settings, dict):
+        time_settings = {}
+    normalized_time_settings = {
+        "ppq": time_settings.get("ppq", 480),
+        "time_signature": time_settings.get(
+            "time_signature",
+            {"numerator": 4, "denominator": 4},
+        ),
+        "tempo_bpm": time_settings.get("tempo_bpm", 120.0),
+        "tempo_points": time_settings.get(
+            "tempo_points",
+            [{"start_tick": 0, "bpm": time_settings.get("tempo_bpm", 120.0)}],
+        ),
+    }
+    if normalized_time_settings != time_settings:
+        migrations.append("MIG-006 normalize-time-settings")
+    migrated["time_settings"] = normalized_time_settings
+
+    if "tracks" not in migrated or not isinstance(migrated["tracks"], list):
+        migrated["tracks"] = []
+        migrations.append("MIG-007 normalize-tracks")
+
+    migrated["schema_version"] = CURRENT_SCHEMA_VERSION
+    return migrated, tuple(dict.fromkeys(migrations))
+
+
 def save_project(
     project: Project,
     path: Path | str,
@@ -207,7 +279,7 @@ def load_project_with_status(
     if not resolved_path.exists():
         raise FileNotFoundError(f"Project file not found: {resolved_path}")
 
-    def _try_parse_file(target: Path) -> Project:
+    def _try_parse_file(target: Path) -> tuple[Project, tuple[str, ...]]:
         text = target.read_text(encoding="utf-8")
         if not text.strip():
             raise CorruptedProjectError(f"Project file is empty: {target}")
@@ -218,10 +290,13 @@ def load_project_with_status(
         if not isinstance(schema_version, str):
             raise CorruptedProjectError("Project schema_version must be a string.")
         _check_schema_version_compatibility(schema_version)
-        return Project.from_dict(raw)
+        migrated_raw, migrations = migrate_project_data(raw)
+        project = Project.from_dict(migrated_raw)
+        return project, migrations
 
     try:
-        return ProjectLoadResult(project=_try_parse_file(resolved_path))
+        project, migrations = _try_parse_file(resolved_path)
+        return ProjectLoadResult(project=project, migrations=migrations)
     except (json.JSONDecodeError, CorruptedProjectError) as exc:
         if not auto_recover_from_backup:
             raise CorruptedProjectError(f"Project file {resolved_path} is corrupted: {exc}") from exc
@@ -230,12 +305,13 @@ def load_project_with_status(
         backups = list_backups(resolved_path)
         for b in backups:
             try:
-                recovered = _try_parse_file(b)
+                recovered, migrations = _try_parse_file(b)
                 # Successfully loaded from backup!
                 return ProjectLoadResult(
                     project=recovered,
                     recovered_from_backup=True,
                     backup_path=b,
+                    migrations=migrations,
                 )
             except Exception:
                 continue
