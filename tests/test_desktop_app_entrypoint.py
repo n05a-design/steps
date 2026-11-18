@@ -108,8 +108,21 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             # Test UI add chord action
             window.chord_entry.delete(0, tk.END)
             window.chord_entry.insert(0, "F#m7b5")
-            window._on_add_chord()
+            window.add_btn.invoke()
             self.assertIn("F#m7b5", ctrl.session.chords)
+
+            window.chord_entry.delete(0, tk.END)
+            window.chord_entry.insert(0, "Fm7")
+            window.update_btn.invoke()
+            self.assertEqual(ctrl.session.chords[-1], "Fm7")
+
+            window.remove_btn.invoke()
+            self.assertNotIn("Fm7", ctrl.session.chords)
+            window.undo_btn.invoke()
+            self.assertIn("Fm7", ctrl.session.chords)
+            window.redo_btn.invoke()
+            self.assertNotIn("Fm7", ctrl.session.chords)
+            window.undo_btn.invoke()
 
             # Test Transpose action
             prev_first = ctrl.session.chords[0]

@@ -7,10 +7,11 @@ from string import Formatter
 import tempfile
 import unittest
 from types import SimpleNamespace
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 from app.i18n import LocaleManager, detect_system_locale, preference_path
 from app.ui.main_window import StepsMainWindow
+from app.ui.session_controller import ProgressionSessionController
 from src.steps.progression.session import ProgressionSession
 
 
@@ -59,6 +60,14 @@ class FakeListbox:
 
     def select_set(self, index):
         self.selection = (index,)
+
+
+class FakeEntry:
+    def __init__(self, value=""):
+        self.value = value
+
+    def get(self):
+        return self.value
 
 
 class TestLocaleManager(unittest.TestCase):
@@ -199,6 +208,10 @@ class TestLocaleManager(unittest.TestCase):
             window.language_menu = FakeMenu(3)
             window.title_lbl = FakeWidget()
             window.add_btn = FakeWidget()
+            window.update_btn = FakeWidget()
+            window.remove_btn = FakeWidget()
+            window.undo_btn = FakeWidget()
+            window.redo_btn = FakeWidget()
             window.trans_down_btn = FakeWidget()
             window.trans_up_btn = FakeWidget()
             window.export_btn = FakeWidget()
@@ -210,6 +223,10 @@ class TestLocaleManager(unittest.TestCase):
             window._on_language_change("de")
 
             self.assertEqual(window.title_lbl.options["text"], "ARBEITSBEREICH")
+            self.assertEqual(window.update_btn.options["text"], "Auswahl ändern")
+            self.assertEqual(window.remove_btn.options["text"], "Entfernen")
+            self.assertEqual(window.undo_btn.options["text"], "Rückgängig")
+            self.assertEqual(window.redo_btn.options["text"], "Wiederholen")
             self.assertEqual(window.file_menu.entries[0]["label"], "Öffnen…")
             self.assertEqual(window.root.title_text, "STEPS — Harmonielehre & Musiktheorie")
             self.assertEqual(
@@ -221,12 +238,21 @@ class TestLocaleManager(unittest.TestCase):
     def test_refresh_after_language_switch_preserves_selected_chord(self):
         window = StepsMainWindow.__new__(StepsMainWindow)
         window.controller = SimpleNamespace(
-            get_state_summary=lambda: {"title": "Progression", "chords": ["C", "G", "Am"]},
+            get_state_summary=lambda: {
+                "title": "Progression",
+                "chords": ["C", "G", "Am"],
+                "can_undo": False,
+                "can_redo": False,
+            },
             session=SimpleNamespace(is_dirty=False),
         )
         window.i18n = LocaleManager(preference="en")
         window._project_path = None
         window.chord_listbox = FakeListbox(selection=(2,))
+        window.update_btn = FakeWidget()
+        window.remove_btn = FakeWidget()
+        window.undo_btn = FakeWidget()
+        window.redo_btn = FakeWidget()
         window._update_window_title = Mock()
         window._display_chord_details = Mock()
         window._display_empty_info = Mock()
@@ -235,6 +261,83 @@ class TestLocaleManager(unittest.TestCase):
 
         self.assertEqual(window.chord_listbox.selection, (2,))
         window._display_chord_details.assert_called_once_with("Am")
+        self.assertEqual(window.undo_btn.options["state"], "disabled")
+        self.assertEqual(window.redo_btn.options["state"], "disabled")
+
+
+class TestDesktopChordEditing(unittest.TestCase):
+    def make_window(self, chords):
+        window = StepsMainWindow.__new__(StepsMainWindow)
+        window.controller = ProgressionSessionController(ProgressionSession(initial_chords=chords))
+        window.i18n = LocaleManager(preference="en")
+        window.root = FakeRoot()
+        window._project_path = None
+        window.chord_listbox = FakeListbox()
+        window.chord_entry = FakeEntry()
+        window.update_btn = FakeWidget()
+        window.remove_btn = FakeWidget()
+        window.undo_btn = FakeWidget()
+        window.redo_btn = FakeWidget()
+        window._display_chord_details = Mock()
+        window._display_empty_info = Mock()
+        window._refresh_all()
+        return window
+
+    def test_edit_remove_undo_redo_and_selection_follow_session(self):
+        window = self.make_window(["C", "G", "Am"])
+        window.chord_listbox.selection = (1,)
+        window.chord_entry.value = "F#m7b5"
+
+        window._on_update_chord()
+
+        self.assertEqual(window.controller.session.chords, ["C", "F#m7b5", "Am"])
+        self.assertEqual(window.chord_listbox.selection, (1,))
+        self.assertEqual(window.undo_btn.options["state"], "normal")
+
+        window.chord_listbox.selection = (2,)
+        window._on_remove_chord()
+
+        self.assertEqual(window.controller.session.chords, ["C", "F#m7b5"])
+        self.assertEqual(window.chord_listbox.selection, (1,))
+
+        window._on_undo()
+        self.assertEqual(window.controller.session.chords, ["C", "F#m7b5", "Am"])
+        self.assertEqual(window.redo_btn.options["state"], "normal")
+
+        window._on_redo()
+        self.assertEqual(window.controller.session.chords, ["C", "F#m7b5"])
+
+    @patch("app.ui.main_window.messagebox.showerror")
+    def test_invalid_chord_keeps_state_and_shows_localized_error(self, show_error):
+        window = self.make_window(["C", "G"])
+        window.chord_listbox.selection = (1,)
+        window.chord_entry.value = "not-a-chord"
+
+        window._on_update_chord()
+
+        self.assertEqual(window.controller.session.chords, ["C", "G"])
+        show_error.assert_called_once()
+        self.assertEqual(show_error.call_args.args[0], "Chord could not be changed")
+
+    @patch("app.ui.main_window.messagebox.showerror")
+    def test_remove_last_chord_is_rejected_without_state_change(self, show_error):
+        window = self.make_window(["C"])
+        window.chord_listbox.selection = (0,)
+
+        window._on_remove_chord()
+
+        self.assertEqual(window.controller.session.chords, ["C"])
+        self.assertIn("at least one chord", show_error.call_args.args[1])
+
+    def test_undo_shortcut_does_not_intercept_text_entry(self):
+        window = StepsMainWindow.__new__(StepsMainWindow)
+        window._on_undo = Mock()
+        text_entry = SimpleNamespace(winfo_class=lambda: "Entry")
+        listbox = SimpleNamespace(winfo_class=lambda: "Listbox")
+
+        self.assertIsNone(window._on_undo_shortcut(SimpleNamespace(widget=text_entry)))
+        self.assertEqual(window._on_undo_shortcut(SimpleNamespace(widget=listbox)), "break")
+        window._on_undo.assert_called_once_with()
 
 
 if __name__ == "__main__":
