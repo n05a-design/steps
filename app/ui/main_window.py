@@ -100,6 +100,12 @@ class StepsMainWindow:
         for index, key in enumerate(("language.system", "language.en", "language.de")):
             self.language_menu.entryconfigure(index, label=t(key))
         self.title_lbl.configure(text=t("workspace.heading"))
+        self.key_lbl.configure(text=t("context.key"))
+        self.mode_lbl.configure(text=t("context.mode"))
+        self.major_btn.configure(text=t("context.major"))
+        self.minor_btn.configure(text=t("context.minor"))
+        self.tempo_lbl.configure(text=t("context.tempo"))
+        self.context_btn.configure(text=t("context.apply"))
         self.add_btn.configure(text=t("chord.add"))
         self.update_btn.configure(text=t("chord.update"))
         self.remove_btn.configure(text=t("chord.remove"))
@@ -144,6 +150,10 @@ class StepsMainWindow:
         if _event.widget.winfo_class() in {"Entry", "Text"}:
             return None
         self._on_redo()
+        return "break"
+
+    def _on_context_shortcut(self, _event: tk.Event) -> str:
+        self._on_apply_context()
         return "break"
 
     def _update_window_title(self) -> None:
@@ -228,6 +238,7 @@ class StepsMainWindow:
             return False
 
         self._project_path = Path(selected)
+        self._load_context_controls()
         self._refresh_all()
         return True
 
@@ -359,6 +370,73 @@ class StepsMainWindow:
         )
         self.redo_btn.pack(side=tk.LEFT, padx=sp.xs)
 
+        self.context_bar = tk.Frame(self.work_area, bg=colors.bg_surface, padx=sp.sm)
+        self.context_bar.pack(fill=tk.X, pady=(0, sp.xs))
+        self.key_lbl = tk.Label(self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary)
+        self.key_lbl.pack(side=tk.LEFT, padx=(0, sp.xs))
+        self.key_entry = tk.Entry(
+            self.context_bar,
+            width=5,
+            bg=colors.bg_window,
+            fg=colors.text_primary,
+            insertbackground=colors.text_primary,
+        )
+        self.key_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
+        self.key_entry.insert(0, self.controller.session.key_root)
+        self.key_entry.bind("<Return>", self._on_context_shortcut)
+
+        self.mode_lbl = tk.Label(self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary)
+        self.mode_lbl.pack(side=tk.LEFT, padx=(0, sp.xs))
+        self.mode_var = tk.BooleanVar(self.root, value=self.controller.session.is_minor)
+        self.major_btn = tk.Radiobutton(
+            self.context_bar,
+            text="",
+            variable=self.mode_var,
+            value=False,
+            bg=colors.bg_surface,
+            fg=colors.text_primary,
+            selectcolor=colors.bg_window,
+            activebackground=colors.bg_surface,
+        )
+        self.major_btn.pack(side=tk.LEFT, padx=sp.xs)
+        self.minor_btn = tk.Radiobutton(
+            self.context_bar,
+            text="",
+            variable=self.mode_var,
+            value=True,
+            bg=colors.bg_surface,
+            fg=colors.text_primary,
+            selectcolor=colors.bg_window,
+            activebackground=colors.bg_surface,
+        )
+        self.minor_btn.pack(side=tk.LEFT, padx=sp.xs)
+
+        self.tempo_lbl = tk.Label(
+            self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
+        )
+        self.tempo_lbl.pack(side=tk.LEFT, padx=(sp.md, sp.xs))
+        self.tempo_entry = tk.Entry(
+            self.context_bar,
+            width=6,
+            bg=colors.bg_window,
+            fg=colors.text_primary,
+            insertbackground=colors.text_primary,
+        )
+        self.tempo_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
+        self.tempo_entry.insert(0, f"{self.controller.session.bpm:g}")
+        self.tempo_entry.bind("<Return>", self._on_context_shortcut)
+
+        self.context_btn = tk.Button(
+            self.context_bar,
+            text="",
+            command=self._on_apply_context,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            relief=tk.FLAT,
+            padx=sp.sm,
+        )
+        self.context_btn.pack(side=tk.LEFT, padx=sp.xs)
+
         # Transpose Buttons
         self.trans_down_btn = tk.Button(
             self.control_bar,
@@ -479,6 +557,46 @@ class StepsMainWindow:
         else:
             self._update_move_controls(None, 0)
             self._display_empty_info()
+
+    def _load_context_controls(self) -> None:
+        self.key_entry.delete(0, tk.END)
+        self.key_entry.insert(0, self.controller.session.key_root)
+        self.mode_var.set(self.controller.session.is_minor)
+        self.tempo_entry.delete(0, tk.END)
+        self.tempo_entry.insert(0, f"{self.controller.session.bpm:g}")
+
+    def _on_apply_context(self) -> None:
+        try:
+            bpm = float(self.tempo_entry.get().strip())
+        except ValueError:
+            messagebox.showerror(
+                self.i18n.translate("context.error.title"),
+                self.i18n.translate("context.tempo.invalid"),
+                parent=self.root,
+            )
+            return
+        try:
+            self.controller.set_context(
+                self.key_entry.get().strip(),
+                bool(self.mode_var.get()),
+                bpm,
+            )
+        except MusicTheoryError:
+            messagebox.showerror(
+                self.i18n.translate("context.error.title"),
+                self.i18n.translate("context.key.invalid"),
+                parent=self.root,
+            )
+            return
+        except ValueError:
+            messagebox.showerror(
+                self.i18n.translate("context.error.title"),
+                self.i18n.translate("context.tempo.invalid"),
+                parent=self.root,
+            )
+            return
+        self._load_context_controls()
+        self._refresh_all(preserve_selection=True)
 
     def _update_move_controls(self, index: Optional[int], chord_count: int) -> None:
         self.move_up_btn.configure(
@@ -618,15 +736,18 @@ class StepsMainWindow:
     def _on_undo(self) -> None:
         if self.controller.session.can_undo:
             self.controller.undo()
+            self._load_context_controls()
             self._refresh_all(preserve_selection=True)
 
     def _on_redo(self) -> None:
         if self.controller.session.can_redo:
             self.controller.redo()
+            self._load_context_controls()
             self._refresh_all(preserve_selection=True)
 
     def _on_transpose(self, semitones: int) -> None:
         self.controller.transpose(semitones)
+        self._load_context_controls()
         self._refresh_all()
 
     def _on_chord_selected(self, event) -> None:
