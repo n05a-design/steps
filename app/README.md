@@ -40,6 +40,11 @@ gespeichert und exportiert werden weiterhin absolute Start-Ticks. Ein Taktartwec
 ändert deshalb die Anzeige, nicht den Ereigniszeitpunkt. Zeitlücken und
 Überlappungen bleiben ausdrückliche Tick-Werte und werden nicht aus der
 Progressionsreihenfolge oder Taktart abgeleitet.
+Wenn beim Öffnen die Hauptdatei beschädigt ist, versucht die Storage-Schicht
+eine Wiederherstellung aus dem neuesten gültigen Backup. Die Desktop-Oberfläche
+zeigt in diesem Fall eine EN/DE-lokalisierte Rückmeldung. `load_project()` bleibt
+API-kompatibel; `load_project_with_status()` ergänzt für Prüf- und Integrationspfade
+Projekt sowie Wiederherstellungsstatus.
 
 Die UI-Sprache unterstützt Englisch und Deutsch unabhängig von musikalischer
 Notation. Die Auswahl `system`, `en` oder `de` wird als Benutzereinstellung

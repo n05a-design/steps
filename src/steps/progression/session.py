@@ -19,7 +19,7 @@ from typing import Any, Dict, List, Literal, Optional, Tuple, Union
 from ..midi.export_service import MidiExportService
 from ..models.timeline import TimeSignature
 from ..storage.exceptions import CorruptedProjectError
-from ..storage.project_io import Project, load_project, save_project
+from ..storage.project_io import Project, load_project_with_status, save_project
 from ..storage.undo import UndoStack
 from ..theory.chord import ChordDefinition, Voicing, parse_chord
 from ..theory.exceptions import ChordConstructionError, MusicTheoryError, ProgressionParsingError
@@ -115,6 +115,8 @@ class ProgressionSession:
             for index in range(len(chords))
         ]
         self._undo_stack = UndoStack[SessionState](init_state, max_depth=50)
+        self.last_load_recovered_from_backup = False
+        self.last_loaded_backup_path: Optional[Path] = None
 
     @property
     def state(self) -> SessionState:
@@ -823,7 +825,12 @@ class ProgressionSession:
 
     def load_from_file(self, file_path: Path | str) -> None:
         """Loads session state from a STEPS project file."""
-        proj = load_project(file_path)
+        self.last_load_recovered_from_backup = False
+        self.last_loaded_backup_path = None
+        load_result = load_project_with_status(file_path)
+        proj = load_result.project
+        self.last_load_recovered_from_backup = load_result.recovered_from_backup
+        self.last_loaded_backup_path = load_result.backup_path
         if not isinstance(proj.title, str) or not proj.title.strip():
             raise CorruptedProjectError("Project title must be a non-empty string.")
         if proj.notation_convention not in ("INT", "DE"):

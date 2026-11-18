@@ -88,6 +88,15 @@ class Project:
         )
 
 
+@dataclass(frozen=True)
+class ProjectLoadResult:
+    """Project load outcome, including whether crash recovery used a backup."""
+
+    project: Project
+    recovered_from_backup: bool = False
+    backup_path: Optional[Path] = None
+
+
 class ProjectLock:
     """
     Manages a lockfile (<path>.lock) to prevent concurrent writes from
@@ -184,11 +193,11 @@ def save_project(
     return atomic_write_json(path, data, max_backups=max_backups, base_dir=base_dir)
 
 
-def load_project(
+def load_project_with_status(
     path: Path | str,
     auto_recover_from_backup: bool = True,
     base_dir: Optional[Path | str] = None
-) -> Project:
+) -> ProjectLoadResult:
     """
     Loads a Project object from disk.
     If the file is corrupted and auto_recover_from_backup is True,
@@ -212,7 +221,7 @@ def load_project(
         return Project.from_dict(raw)
 
     try:
-        return _try_parse_file(resolved_path)
+        return ProjectLoadResult(project=_try_parse_file(resolved_path))
     except (json.JSONDecodeError, CorruptedProjectError) as exc:
         if not auto_recover_from_backup:
             raise CorruptedProjectError(f"Project file {resolved_path} is corrupted: {exc}") from exc
@@ -223,10 +232,27 @@ def load_project(
             try:
                 recovered = _try_parse_file(b)
                 # Successfully loaded from backup!
-                return recovered
+                return ProjectLoadResult(
+                    project=recovered,
+                    recovered_from_backup=True,
+                    backup_path=b,
+                )
             except Exception:
                 continue
 
         raise CorruptedProjectError(
             f"Project file {resolved_path} is corrupted and no valid backup could be recovered: {exc}"
         ) from exc
+
+
+def load_project(
+    path: Path | str,
+    auto_recover_from_backup: bool = True,
+    base_dir: Optional[Path | str] = None
+) -> Project:
+    """Loads a project while preserving the existing Project-only API."""
+    return load_project_with_status(
+        path,
+        auto_recover_from_backup=auto_recover_from_backup,
+        base_dir=base_dir,
+    ).project

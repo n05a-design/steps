@@ -30,6 +30,7 @@ from src.steps.storage import (
     UnsupportedSchemaVersionError,
     atomic_write_json,
     load_project,
+    load_project_with_status,
     save_project,
     validate_path_safety,
 )
@@ -102,6 +103,17 @@ class TestStorageRecoveryIO01to16(unittest.TestCase):
         self.assertIsNotNone(recovered)
         # Should have recovered Version 1 or Version 2 backup
         self.assertIn("Version", recovered.title)
+
+    def test_load_status_reports_recovered_backup(self):
+        save_project(Project(title="Original Version"), self.project_path)
+        save_project(Project(title="Current Version"), self.project_path)
+        self.project_path.write_text('{"title": "Trun', encoding="utf-8")
+
+        result = load_project_with_status(self.project_path)
+
+        self.assertTrue(result.recovered_from_backup)
+        self.assertIsNotNone(result.backup_path)
+        self.assertIn("Version", result.project.title)
 
     def test_io04_double_instance_lock_detection(self):
         """IO-04: Double-instance lock detection: existing valid lock prevents concurrent overwrite."""

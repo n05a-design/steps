@@ -20,8 +20,10 @@ from .project_io import (
     CURRENT_APP_VERSION,
     CURRENT_SCHEMA_VERSION,
     Project,
+    ProjectLoadResult,
     ProjectLock,
     load_project,
+    load_project_with_status,
     save_project,
 )
 from .undo import UndoStack
@@ -41,8 +43,10 @@ __all__ = [
     "CURRENT_SCHEMA_VERSION",
     "CURRENT_APP_VERSION",
     "Project",
+    "ProjectLoadResult",
     "ProjectLock",
     "save_project",
     "load_project",
+    "load_project_with_status",
     "UndoStack",
 ]

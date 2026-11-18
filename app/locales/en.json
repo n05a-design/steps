@@ -48,6 +48,8 @@
   "json.filetype": "JSON file",
   "project.save.error.title": "Could not save project",
   "project.open.error.title": "Could not open project",
+  "project.recovery.title": "Project recovered",
+  "project.recovery.message": "The project file was damaged. STEPS opened the latest valid backup; save the project to replace the damaged file.",
   "project.unsaved.title": "Unsaved changes",
   "project.unsaved.message": "Save changes to the current progression?",
   "midi.save.title": "Export MIDI file",
