@@ -103,6 +103,8 @@ class StepsMainWindow:
         self.add_btn.configure(text=t("chord.add"))
         self.update_btn.configure(text=t("chord.update"))
         self.remove_btn.configure(text=t("chord.remove"))
+        self.move_up_btn.configure(text=t("chord.move_up"))
+        self.move_down_btn.configure(text=t("chord.move_down"))
         self.undo_btn.configure(text=t("history.undo"))
         self.redo_btn.configure(text=t("history.redo"))
         self.trans_down_btn.configure(text=t("transpose.down"))
@@ -316,6 +318,26 @@ class StepsMainWindow:
             padx=sp.sm,
         )
         self.remove_btn.pack(side=tk.LEFT, padx=sp.xs)
+        self.move_up_btn = tk.Button(
+            self.edit_bar,
+            text=self.i18n.translate("chord.move_up"),
+            command=lambda: self._on_move_chord(-1),
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            relief=tk.FLAT,
+            padx=sp.sm,
+        )
+        self.move_up_btn.pack(side=tk.LEFT, padx=(sp.md, sp.xs))
+        self.move_down_btn = tk.Button(
+            self.edit_bar,
+            text=self.i18n.translate("chord.move_down"),
+            command=lambda: self._on_move_chord(1),
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            relief=tk.FLAT,
+            padx=sp.sm,
+        )
+        self.move_down_btn.pack(side=tk.LEFT, padx=sp.xs)
         self.undo_btn = tk.Button(
             self.edit_bar,
             text=self.i18n.translate("history.undo"),
@@ -436,7 +458,9 @@ class StepsMainWindow:
         self._update_window_title()
         has_chords = bool(state["chords"])
         self.update_btn.configure(state=tk.NORMAL if has_chords else tk.DISABLED)
-        self.remove_btn.configure(state=tk.NORMAL if has_chords else tk.DISABLED)
+        self.remove_btn.configure(
+            state=tk.NORMAL if len(state["chords"]) > 1 else tk.DISABLED
+        )
         self.undo_btn.configure(state=tk.NORMAL if state["can_undo"] else tk.DISABLED)
         self.redo_btn.configure(state=tk.NORMAL if state["can_redo"] else tk.DISABLED)
 
@@ -450,9 +474,19 @@ class StepsMainWindow:
             else:
                 index = min(selected[0], len(state["chords"]) - 1) if selected else 0
             self.chord_listbox.select_set(index)
+            self._update_move_controls(index, len(state["chords"]))
             self._display_chord_details(state["chords"][index])
         else:
+            self._update_move_controls(None, 0)
             self._display_empty_info()
+
+    def _update_move_controls(self, index: Optional[int], chord_count: int) -> None:
+        self.move_up_btn.configure(
+            state=tk.NORMAL if index is not None and index > 0 else tk.DISABLED
+        )
+        self.move_down_btn.configure(
+            state=tk.NORMAL if index is not None and index < chord_count - 1 else tk.DISABLED
+        )
 
     def _selected_chord_index(self) -> Optional[int]:
         selection = self.chord_listbox.curselection()
@@ -573,6 +607,14 @@ class StepsMainWindow:
             return
         self._refresh_all(selected_index=min(index, len(self.controller.session.chords) - 1))
 
+    def _on_move_chord(self, direction: int) -> None:
+        index = self._selected_chord_index()
+        if index is None:
+            return
+        self.controller.move_chord(index, direction)
+        target = index + direction
+        self._refresh_all(selected_index=target)
+
     def _on_undo(self) -> None:
         if self.controller.session.can_undo:
             self.controller.undo()
@@ -593,6 +635,7 @@ class StepsMainWindow:
             state = self.controller.get_state_summary()
             idx = sel[0]
             if idx < len(state["chords"]):
+                self._update_move_controls(idx, len(state["chords"]))
                 self._display_chord_details(state["chords"][idx])
 
     def _on_export_midi(self) -> None:
