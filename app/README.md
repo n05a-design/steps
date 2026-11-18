@@ -49,6 +49,9 @@ Legacy-Projekte bis zur aktuellen 1.x-Schemafassung werden konservativ über
 den dokumentierten Migrationspfad normalisiert. Höhere Major-Versionen werden
 abgewiesen; ein fehlender Projektname bleibt ein korruptes Projekt und wird nicht
 still erfunden.
+Wird beim Öffnen ein Legacy-Schema normalisiert, zeigt die Desktop-Oberfläche
+eine separate, lokalisierte EN/DE-Meldung mit den angewendeten Migration-IDs.
+Beim Laden aus einem Backup bleibt die Backup-Rückmeldung vorrangig.
 
 Die UI-Sprache unterstützt Englisch und Deutsch unabhängig von musikalischer
 Notation. Die Auswahl `system`, `en` oder `de` wird als Benutzereinstellung

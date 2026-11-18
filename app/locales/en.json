@@ -50,6 +50,8 @@
   "project.open.error.title": "Could not open project",
   "project.recovery.title": "Project recovered",
   "project.recovery.message": "The project file was damaged. STEPS opened the latest valid backup; save the project to replace the damaged file.",
+  "project.migration.title": "Project format updated",
+  "project.migration.message": "Legacy project compatibility was applied: {migrations}. Save the project to write the normalized 1.0.0 schema.",
   "project.unsaved.title": "Unsaved changes",
   "project.unsaved.message": "Save changes to the current progression?",
   "midi.save.title": "Export MIDI file",

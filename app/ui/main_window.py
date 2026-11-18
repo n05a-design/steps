@@ -251,6 +251,13 @@ class StepsMainWindow:
                 self.i18n.translate("project.recovery.message"),
                 parent=self.root,
             )
+        elif getattr(self.controller.session, "last_load_migrations", ()):
+            migrations = ", ".join(self.controller.session.last_load_migrations)
+            messagebox.showinfo(
+                self.i18n.translate("project.migration.title"),
+                self.i18n.translate("project.migration.message", migrations=migrations),
+                parent=self.root,
+            )
         return True
 
     def _on_close(self) -> None:
