@@ -137,6 +137,33 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         )
         self.window._refresh_all.assert_called_once_with()
 
+    @patch("app.ui.main_window.messagebox.askyesnocancel", return_value=True)
+    def test_new_project_saves_current_file_before_reset(self, prompt):
+        old_path = Path("/tmp/current.stepsproj")
+        self.window.controller.session.is_dirty = True
+        self.window._project_path = old_path
+
+        self.assertTrue(self.window._on_new_project())
+
+        self.assertEqual(self.window.controller.saved_paths, [old_path])
+        self.assertEqual(self.window.controller.new_project_calls, 1)
+        self.assertIsNone(self.window._project_path)
+        self.assertFalse(self.window.controller.session.is_dirty)
+        self.window._refresh_all.assert_called_once_with()
+
+    @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="")
+    @patch("app.ui.main_window.messagebox.askyesnocancel", return_value=True)
+    def test_cancel_save_as_prevents_new_project(self, prompt, choose_path):
+        self.window.controller.session.is_dirty = True
+
+        self.assertFalse(self.window._on_new_project())
+
+        self.assertTrue(self.window.controller.session.is_dirty)
+        self.assertEqual(self.window.controller.saved_paths, [])
+        self.assertEqual(self.window.controller.new_project_calls, 0)
+        self.assertIsNone(self.window._project_path)
+        self.window._refresh_all.assert_not_called()
+
     @patch("app.ui.main_window.messagebox.askyesnocancel", return_value=None)
     def test_cancel_unsaved_prompt_prevents_new_project(self, prompt):
         self.window.controller.session.is_dirty = True
