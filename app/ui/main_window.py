@@ -102,6 +102,9 @@ class StepsMainWindow:
         for index, key in enumerate(("language.system", "language.en", "language.de")):
             self.language_menu.entryconfigure(index, label=t(key))
         self.title_lbl.configure(text=t("workspace.heading"))
+        self.project_title_lbl.configure(text=t("project.title"))
+        self.project_title_entry.delete(0, tk.END)
+        self.project_title_entry.insert(0, self.controller.session.state.title)
         self.key_lbl.configure(text=t("context.key"))
         self.mode_lbl.configure(text=t("context.mode"))
         self.major_btn.configure(text=t("context.major"))
@@ -390,6 +393,21 @@ class StepsMainWindow:
 
         self.context_bar = tk.Frame(self.work_area, bg=colors.bg_surface, padx=sp.sm)
         self.context_bar.pack(fill=tk.X, pady=(0, sp.xs))
+        self.project_title_lbl = tk.Label(
+            self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
+        )
+        self.project_title_lbl.pack(side=tk.LEFT, padx=(0, sp.xs))
+        self.project_title_entry = tk.Entry(
+            self.context_bar,
+            width=16,
+            bg=colors.bg_window,
+            fg=colors.text_primary,
+            insertbackground=colors.text_primary,
+        )
+        self.project_title_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
+        self.project_title_entry.insert(0, self.controller.session.state.title)
+        self.project_title_entry.bind("<Return>", self._on_context_shortcut)
+
         self.key_lbl = tk.Label(self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary)
         self.key_lbl.pack(side=tk.LEFT, padx=(0, sp.xs))
         self.key_entry = tk.Entry(
@@ -690,6 +708,8 @@ class StepsMainWindow:
         self._refresh_all(preserve_selection=True)
 
     def _load_context_controls(self) -> None:
+        self.project_title_entry.delete(0, tk.END)
+        self.project_title_entry.insert(0, self.controller.session.state.title)
         self.key_entry.delete(0, tk.END)
         self.key_entry.insert(0, self.controller.session.key_root)
         self.mode_var.set(self.controller.session.is_minor)
@@ -710,6 +730,14 @@ class StepsMainWindow:
         )
 
     def _on_apply_context(self) -> None:
+        title = self.project_title_entry.get().strip()
+        if not title:
+            messagebox.showerror(
+                self.i18n.translate("context.error.title"),
+                self.i18n.translate("project.title.invalid"),
+                parent=self.root,
+            )
+            return
         try:
             bpm = float(self.tempo_entry.get().strip())
         except ValueError:
@@ -740,6 +768,7 @@ class StepsMainWindow:
                 bool(self.mode_var.get()),
                 bpm,
                 meter,
+                title=title,
             )
         except MusicTheoryError:
             messagebox.showerror(

@@ -52,6 +52,9 @@ still erfunden.
 Wird beim Öffnen ein Legacy-Schema normalisiert, zeigt die Desktop-Oberfläche
 eine separate, lokalisierte EN/DE-Meldung mit den angewendeten Migration-IDs.
 Beim Laden aus einem Backup bleibt die Backup-Rückmeldung vorrangig.
+Der Projektname ist in der Desktop-Oberfläche editierbar. Die Eingabe wird zusammen
+mit Tonart, Modus, Tempo und Taktart atomisch angewendet und rückgängig gemacht;
+ein leerer Name wird sichtbar abgewiesen.
 
 Die UI-Sprache unterstützt Englisch und Deutsch unabhängig von musikalischer
 Notation. Die Auswahl `system`, `en` oder `de` wird als Benutzereinstellung

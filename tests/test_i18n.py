@@ -227,6 +227,8 @@ class TestLocaleManager(unittest.TestCase):
             window.settings_menu = FakeMenu(1)
             window.language_menu = FakeMenu(3)
             window.title_lbl = FakeWidget()
+            window.project_title_lbl = FakeWidget()
+            window.project_title_entry = FakeEntry("Untitled Project")
             window.key_lbl = FakeWidget()
             window.mode_lbl = FakeWidget()
             window.major_btn = FakeWidget()
@@ -329,6 +331,7 @@ class TestDesktopChordEditing(unittest.TestCase):
         window.chord_listbox = FakeListbox()
         window.chord_entry = FakeEntry()
         window.key_entry = FakeEntry(window.controller.session.key_root)
+        window.project_title_entry = FakeEntry(window.controller.session.state.title)
         window.mode_var = FakeVariable(window.controller.session.is_minor)
         window.tempo_entry = FakeEntry(f"{window.controller.session.bpm:g}")
         window.meter_entry = FakeEntry("4/4")
@@ -486,6 +489,20 @@ class TestDesktopChordEditing(unittest.TestCase):
             "Enter a valid bar:beat:tick position (tick is within the metric beat) and a positive whole-number duration in ticks.",
         )
 
+    @patch("app.ui.main_window.messagebox.showerror")
+    def test_empty_project_title_is_rejected(self, show_error):
+        window = self.make_window(["C", "G"])
+        window.project_title_entry.value = " "
+
+        window._on_apply_context()
+
+        self.assertEqual(window.controller.session.state.title, "My Progression")
+        show_error.assert_called_once()
+        self.assertEqual(
+            show_error.call_args.args[1],
+            "Project title must contain at least one character.",
+        )
+
     def test_meter_change_reprojects_position_without_changing_absolute_tick(self):
         window = self.make_window(["C", "G"])
         session = window.controller.session
@@ -500,6 +517,7 @@ class TestDesktopChordEditing(unittest.TestCase):
 
     def test_context_controls_apply_and_undo_key_mode_and_tempo_atomically(self):
         window = self.make_window(["C", "G"])
+        window.project_title_entry.value = "Jazz Cadence"
         window.key_entry.value = "D"
         window.mode_var.set(True)
         window.tempo_entry.value = "96.5"
@@ -512,12 +530,14 @@ class TestDesktopChordEditing(unittest.TestCase):
             (session.key_root, session.is_minor, session.bpm, session.time_signature),
             ("D", True, 96.5, (3, 4)),
         )
+        self.assertEqual(session.state.title, "Jazz Cadence")
         self.assertEqual(session.state.chord_duration_ticks, 1920)
         window._on_undo()
         self.assertEqual(
             (session.key_root, session.is_minor, session.bpm, session.time_signature),
             ("C", False, 120.0, (4, 4)),
         )
+        self.assertEqual(session.state.title, "My Progression")
 
     def test_context_updates_respect_the_existing_german_notation(self):
         session = ProgressionSession(initial_chords=["H7"], convention="DE")
