@@ -14,14 +14,42 @@ DISCUSSION_TEMPLATE_DIR = ROOT / ".github" / "DISCUSSION_TEMPLATE"
 
 
 def _load_yaml(path: Path) -> Any:
-    return path.read_text(encoding="utf-8")
+    text = path.read_text(encoding="utf-8")
+    try:
+        import yaml
+    except ImportError:
+        return text
+    return yaml.safe_load(text)
 
 
 def _validate_issue_form(path: Path, data: Any) -> None:
-    if not isinstance(data, str):
-        raise ValueError(f"{path}: expected text")
     if path.name == "config.yml":
         return
+    if isinstance(data, dict):
+        if not isinstance(data.get("name"), str):
+            raise ValueError(f"{path}: missing form name")
+        if not isinstance(data.get("description"), str) or not isinstance(data.get("body"), list):
+            raise ValueError(f"{path}: missing description or body")
+        field_ids: set[str] = set()
+        for field in data["body"]:
+            if not isinstance(field, dict) or field.get("type") not in ALLOWED_FORM_FIELDS:
+                raise ValueError(f"{path}: unsupported or malformed field {field!r}")
+            if field["type"] == "markdown":
+                continue
+            field_id = field.get("id")
+            if not isinstance(field_id, str) or field_id in field_ids:
+                raise ValueError(f"{path}: missing or duplicate field id {field_id}")
+            field_ids.add(field_id)
+            if not isinstance(field.get("attributes"), dict):
+                raise ValueError(f"{path}: field {field_id} has no attributes")
+        return
+    if not isinstance(data, str):
+        raise ValueError(f"{path}: expected text or parsed YAML")
+    for line in data.splitlines():
+        if line.count('"') % 2:
+            raise ValueError(f"{path}: unterminated double quote")
+        if re.search(r"(?m)^name:\s*[\"'][^\"']*$", line):
+            raise ValueError(f"{path}: unterminated quoted form name")
     if not re.search(r"(?m)^name:\s*\S", data):
         raise ValueError(f"{path}: missing form name")
     if not re.search(r"(?m)^description:\s*\S", data) or not re.search(r"(?m)^body:\s*$", data):
@@ -58,10 +86,16 @@ def main() -> int:
         elif DISCUSSION_TEMPLATE_DIR in path.parents:
             _validate_issue_form(path, data)
         elif path.name == "dependabot.yml":
-            if not re.search(r"(?m)^version:\s*2\s*$", data) or not re.search(r"(?m)^updates:\s*$", data):
+            if isinstance(data, dict):
+                if data.get("version") != 2 or not isinstance(data.get("updates"), list):
+                    raise ValueError(f"{path}: invalid Dependabot top-level structure")
+            elif not re.search(r"(?m)^version:\s*2\s*$", data) or not re.search(r"(?m)^updates:\s*$", data):
                 raise ValueError(f"{path}: invalid Dependabot top-level structure")
         elif path.name == "release.yml":
-            if not re.search(r"(?m)^changelog:\s*$", data):
+            if isinstance(data, dict):
+                if not isinstance(data.get("changelog"), dict):
+                    raise ValueError(f"{path}: invalid release notes structure")
+            elif not re.search(r"(?m)^changelog:\s*$", data):
                 raise ValueError(f"{path}: invalid release notes structure")
     print(f"Validated YAML syntax and basic forms for {len(paths)} GitHub configuration files.")
     return 0

@@ -76,6 +76,9 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Install YAML validation parser
+        run: python -m pip install --upgrade PyYAML
+
       - name: Check generated Golden Case fixture
         run: python -B scripts/build_unified_golden_cases.py --check
 
