@@ -4,6 +4,8 @@
 
 **Stand:** 10.11.2026. **Status:** Priorisierter, dokumentierter Vorschlag; **kein** gestarteter Sprint, keine automatisch freigegebene Produkt-/Lizenzentscheidung. Dieser Backlog übersetzt [`ROADMAP_AND_RESOURCE_PLAN.md`](docs/roadmap/ROADMAP_AND_RESOURCE_PLAN.md) in einzelne Übergabeaufträge. Die vorhandene Glide-To-do-Planung bleibt unter eigenen IDs erhalten.
 
+> **Aktualitätsabgrenzung (18.11.2026):** Die nachfolgende P0/P1/P2-Tabelle ist ein historischer Startbacklog und kein heutiger Aufgabenstatus. Umgesetzter Kern, v0.1.0-Release, Desktop-Prototyp, MIDI- und Speicherpfade sowie die offenen 1.0-Readiness-Gates sind in [docs/IMPLEMENTATION.md](docs/IMPLEMENTATION.md) und [docs/product/V1.0.0_PRODUCT_CONTRACT.md](docs/product/V1.0.0_PRODUCT_CONTRACT.md) nach aktuellem Stand abgeglichen. Die aktiven Epics sind [#149](https://github.com/n05a-design/steps/issues/149), [#150](https://github.com/n05a-design/steps/issues/150) und [#151](https://github.com/n05a-design/steps/issues/151); Lokalisierung ist in [#154](https://github.com/n05a-design/steps/issues/154) erfasst. Frühere Zeilen und IDs bleiben als historische Planung erhalten.
+
 | Reihenfolge | Auftrag / Prompt | Tatsächlich benötigter Eingang | Erfolgskriterium | Blocker / Übergabe |
 |---|---|---|---|---|
 | **P0.1** | Rechte- und Public-Repository-Prüfung (`prompts/27_*`) | Steps Git-Tree `75329fef`, Original-/Lizenzregister, sachkundige Rechteentscheidung | **ERLEDIGT (17.11.2026):** 5 Deliverables in `docs/audit/rights_audit/` generiert & validiert; 302 Assets klassifiziert; Historienfolgen & Inhaberentscheidung (kein Force-Push) dokumentiert; Testgate `test_rights_audit.py` bestanden | Übergabe dokumentiert in `docs/audit/rights_audit/` |

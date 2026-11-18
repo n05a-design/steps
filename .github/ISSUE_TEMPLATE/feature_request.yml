@@ -1,13 +1,15 @@
-name: Funktionsanfrage
-description: Neue STEPS-Funktion mit Scope und Evidenz vorschlagen
+name: Feature request
+description: Propose a STEPS feature with scope and evidence. Submissions in German or English are welcome.
+title: "Feature: "
 body:
   - type: textarea
     id: goal
     attributes:
-      label: Problem und Nutzerziel
+      label: User problem and intended outcome
     validations:
       required: true
   - type: textarea
     id: scope
     attributes:
-      label: Abgrenzung, Abhängigkeiten und Evidenz
+      label: Scope, dependencies, and evidence
+      description: Note affected product, theory, documentation, localization, and release areas where known.

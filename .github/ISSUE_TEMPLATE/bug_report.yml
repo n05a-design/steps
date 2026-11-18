@@ -1,16 +1,19 @@
-name: Fehlerbericht
-description: Reproduzierbaren Fehler dokumentieren
+name: Bug report
+description: Report a reproducible STEPS defect. Submissions in German or English are welcome.
+title: "Bug: "
 labels: ['bug']
 body:
   - type: textarea
     id: description
     attributes:
-      label: Fehler und erwartetes Verhalten
+      label: Problem and expected behavior
+      description: Include the actual and expected result. English or German is fine.
     validations:
       required: true
   - type: textarea
     id: reproduction
     attributes:
-      label: Reproduktionsschritte, Umgebung und Versionsstand
+      label: Reproduction steps, environment, and version
+      description: Include chord symbols, key/context, and INT/DE notation when relevant. Do not attach copyrighted source material.
     validations:
       required: true

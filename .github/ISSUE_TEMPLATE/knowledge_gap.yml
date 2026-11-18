@@ -1,0 +1,25 @@
+name: Knowledge gap
+description: Track a source, claim, or music-theory evidence gap without treating it as approved knowledge.
+title: "Knowledge gap: "
+body:
+  - type: textarea
+    id: gap
+    attributes:
+      label: Gap and affected claim or concept
+      description: Include stable IDs where available, and distinguish a missing source from a disputed interpretation.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Known sources and rights status
+      description: Include exact bibliographic/source locators and whether the material is public, restricted, or unknown.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria and review required
+      description: State the evidence needed and the human/domain review required. An agent result is not a fachliche Freigabe.
+    validations:
+      required: true

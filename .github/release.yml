@@ -1,0 +1,31 @@
+changelog:
+  categories:
+    - title: Features
+      labels:
+        - feature
+        - enhancement
+    - title: Improvements
+      labels:
+        - improvement
+    - title: Bug fixes
+      labels:
+        - bug
+    - title: Documentation
+      labels:
+        - documentation
+    - title: Localization
+      labels:
+        - localization
+    - title: Security
+      labels:
+        - security
+    - title: Maintenance
+      labels:
+        - dependencies
+        - maintenance
+    - title: Other changes
+      labels:
+        - "*"
+  exclude:
+    labels:
+      - skip-changelog

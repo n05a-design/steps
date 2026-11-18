@@ -1,0 +1,26 @@
+name: Accessibility issue
+description: Report an accessibility barrier in the STEPS interface or documentation.
+title: "Accessibility: "
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Screen, workflow, and environment
+      description: Include operating system, display scaling, input method, and assistive technology where relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: barrier
+    attributes:
+      label: Accessibility barrier and expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps and supporting evidence
+      description: Do not include personal or sensitive information.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Suggested acceptance criteria

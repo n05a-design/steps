@@ -1,0 +1,30 @@
+name: Localization or translation
+description: Report missing or incorrect UI, CLI, documentation, or learning-content localization.
+title: "Localization: "
+body:
+  - type: textarea
+    id: surface
+    attributes:
+      label: Affected text or content
+      description: Give the screen, command, file, stable key, or learning-content ID and its locale.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected language behavior
+      description: Identify source and target languages. Note whether this is UI text, documentation, or a theory claim.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Placeholders, notation, or domain context
+      description: Keep UI language separate from German H/B and international B/Bb notation.
+  - type: textarea
+    id: review
+    attributes:
+      label: Required review and acceptance criteria
+      description: A translated theory claim may need both domain review and translation review.
+    validations:
+      required: true

@@ -1,0 +1,30 @@
+name: Music theory review
+description: Request a bounded review of a music-theory claim or behavior.
+title: "Theory review: "
+body:
+  - type: textarea
+    id: claim
+    attributes:
+      label: Claim, behavior, or example
+      description: Include chord/progression, key or mode, style context, and INT/DE notation convention.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sources and exact locators
+      description: Identify the edition and page/section/URL. Do not upload copyrighted pages or full texts.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative interpretations and scope
+      description: Preserve plausible alternatives and state what would falsify the proposed interpretation.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Required reviewer and acceptance evidence
+      description: Separate source checking, domain review, implementation tests, and publication approval.
+    validations:
+      required: true

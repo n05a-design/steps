@@ -1,0 +1,23 @@
+name: Technical debt
+description: Track a concrete maintainability, compatibility, or reliability issue.
+title: "Technical debt: "
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Current behavior and impact
+    validations:
+      required: true
+  - type: textarea
+    id: target
+    attributes:
+      label: Desired outcome and affected boundaries
+      description: Identify src/steps domain logic, app integration, knowledge data, or repository automation.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria, tests, and migration concerns
+    validations:
+      required: true

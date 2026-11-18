@@ -3,20 +3,29 @@
 Dieser Leitfaden beschreibt den Code im selben Checkout. Der Einstieg für
 Entwicklung ist die [Root-README](../README.md). Die [API-Referenz](theory/API.md)
 wird aus den exportierten Python-Objekten erzeugt. Der hier dokumentierte
-Kern- und Pilotstand wurde am 12. November 2026 auf Commit `b0abd41` abgeglichen.
+Stand wurde am 18. November 2026 gegen `main` bei Commit
+[`a449adc6caa137bd9b5d46d67841c617487f330f`](https://github.com/n05a-design/steps/commit/a449adc6caa137bd9b5d46d67841c617487f330f)
+abgeglichen. Implementierung, Test, fachliche Abnahme und Veröffentlichung sind
+getrennte Statusangaben.
 
 ## Versionen und Freigabestatus
 
 | Wert | Fundstelle und Bedeutung |
 |---|---|
-| `0.2.0-dev` | [VERSION](../VERSION) im Repository |
-| `0.2.0.dev0` | [`src.steps.__version__`](../src/steps/__init__.py) im Python-Paket |
-| v0.1.0 | Erstes stabiles Basisrelease (M2: Akkorde, Voicings & SMF-Export) |
+| `0.2.0-dev` | [VERSION](../VERSION), aktueller Entwicklungsstand |
+| `0.2.0.dev0` | [`src.steps.__version__`](../src/steps/__init__.py) und [pyproject.toml](../pyproject.toml), PEP-440-Schreibweise des Entwicklungspakets |
+| v0.1.0 | Vorhandenes GitHub-Release/Tag; keine Aussage über den heutigen 1.0-Reifegrad |
+| 1.0.0 | Noch nicht durch ein angenommenes ADR definiert oder terminiert; siehe [Zielbild und Readiness](product/V1.0.0_PRODUCT_CONTRACT.md) |
 | Phase 5.1 | Historischer Entwicklungsstand des Headless-Kerns |
 | V6.6/V6.7 | Stände der Forschungsbibliothek |
 | 3.53.0 | Glide-Referenzstand |
 
-Der Checkout enthält einen nutzbaren Python-Kern. Die [Projektkonfiguration](../pyproject.toml) definiert derzeit kein Build-System. Desktop-Start, verpackte App und öffentliche Produktfreigabe stehen aus. [Offene Punkte](../research/gaps/OPEN_GAPS.md) · [Entscheidungsregister](../decisions/DECISION_REGISTER.md)
+Der Checkout enthält einen nutzbaren Python-Kern sowie eine Tkinter-Desktop-
+Vorschau und einen CLI-Einstieg. `pyproject.toml` definiert ein setuptools-
+Build-System und einen `steps`-Entry-Point. Ein daraus gebautes, unterstütztes
+und plattformgeprüftes Desktop-Installationspaket ist damit nicht belegt.
+[Offene Punkte](../research/gaps/OPEN_GAPS.md) ·
+[Entscheidungsregister](../decisions/DECISION_REGISTER.md)
 
 ## Laufzeit und Grenzen
 
@@ -29,7 +38,8 @@ Der Checkout enthält einen nutzbaren Python-Kern. Die [Projektkonfiguration](..
 | Stimmführung | [voice_leading.py](../src/steps/progression/voice_leading.py), [engine.py](../src/steps/progression/engine.py) | Standardsequenz mit durchgehender Stimmenzahl. Der Solver minimiert die Summe absoluter Halbtonbewegungen je Übergang innerhalb ±12 Halbtönen pro Stimme. Er prüft Tonklassen, Bass, MIDI 0–127 und Stimmenreihenfolge. Der strikte Modus prüft parallele Quinten und Oktaven sowie gleichartige reine Außenstimmenintervalle in Gegenbewegung. Unlösbare Vorgaben lösen `VoiceLeadingError` aus. Das Startlayout akzeptiert `CLOSE`, `DROP2`, `SHELL` und `ROOTLESS`. Folgeakkorde können andere Lagen haben. Vollständiger Kontrapunkt und Spielbarkeit bleiben eigene Abnahmen. |
 | Progressionskatalog | [Historischer Katalog](../knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md), [App-Lernmaterial](../knowledge/concepts/progressions/REVIEWED_PROGRESSIONS.md) | Die allgemeine API bietet 28 Bestandsprogressionen. Für die [App-Schnittstelle](../app/knowledge.py) sind drei Pilotbeispiele fachlich freigegeben. App-Schnittstelle und Lernmaterial verwenden dieselbe [Datenbasis](../src/steps/progression/reviewed_progressions.json). Die [Abnahmeliste](../knowledge/benchmark/PILOT_ABNAHME.md) dokumentiert die Freigaben. |
 | Recherche und Quellen | [Quellenregister](../knowledge/sources/README.md), [Ingestion](../knowledge/INGESTION_PIPELINE.md) | App-Adapter und Renderer lösen Quellen-IDs im Produktregister auf und prüfen die fassungsgebundenen Freigaben aller Pilot-Aussagen. CI führt denselben Validator aus. Forschungsclaims und Rohmedien werden über den App-Adapter nicht geladen. |
-| Desktop, Audio, MIDI und Speicherung | [app](../app/README.md), [Architekturziel](architecture/ARCHITECTURE_OVERVIEW.md) | Der App-Adapter ist importierbar. Logo und App-Symbol stehen über [`app.brand`](../app/brand.py) bereit. Ein Desktop-Einstieg, Wiedergabe, Import/Export, Persistenz und automatische Harmonieanalyse sind in diesem Checkout nicht als Produktabläufe implementiert. Der MIDI-Export für v0.1 ist in [ADR-017](../decisions/ADR-017-midi-export-v01.md) spezifiziert, In-App-Audio nach [ADR-007](../decisions/ADR-007-audio-nur-dateiexport-v01.md) nicht vorgesehen. |
+| Desktop, Audio, MIDI und Speicherung | [app](../app/README.md), [Architekturziel](architecture/ARCHITECTURE_OVERVIEW.md) | `app.main` startet einen CLI-/Headless-Pfad oder ein Tkinter-Fenster. `StepsMainWindow` stellt Akkordeingabe, Transposition, Analyseanzeige und einen MIDI-Export-Button bereit. Der Controller bietet außerdem Save/Load, Undo/Redo und Export; der Vertikalschnitt testet diese Verbindung headless. Die Hauptfenster-UI bietet noch keinen vollständigen Save/Open-Ablauf oder Dateiauswahl. SMF-Writer und -Parser sowie automatisierte Roundtrips sind vorhanden; unabhängige DAW-Abnahme ist separat zu belegen. Wiedergabe ist nach [ADR-007](../decisions/ADR-007-audio-nur-dateiexport-v01.md) nicht Teil von v0.1. |
+| Internationalisierung | [Internationalisierungsvertrag](engineering/INTERNATIONALIZATION.md) | Noch kein STEPS-i18n-Modul, kein `en`/`de`-Katalog und keine persistierte UI-Sprachwahl; als Arbeitsauftrag in [#154](https://github.com/n05a-design/steps/issues/154) erfasst. Die Desktop-Texte und CLI-Meldungen sind überwiegend deutsch hartcodiert. Englische und deutsche UI-Unterstützung ist nicht implementiert. Notationskonvention `INT`/`DE` ist eine separate musikalische Einstellung. |
 
 Ein konkretes `Voicing` speichert MIDI-Noten als unveränderliche Folge
 in Stimmenreihenfolge. `midi_notes` liefert die Noten nach Tonhöhe
@@ -62,6 +72,21 @@ assert [v.bass_note % 12 for v in voicings] == [2, 7, 0]
 ```
 
 Die [Pilotfreigabe](../knowledge/concepts/progressions/README.md) beschreibt den zusätzlichen Zugang zu geprüften Lehrtexten.
+
+## Desktop-Prototyp und Produktgrenzen
+
+Der bestehende Desktop-Einstieg ist mehr als ein theoretischer Architekturentwurf:
+die Tkinter-Shell ist unter `app/ui/main_window.py` implementiert und
+`tests/test_desktop_app_entrypoint.py` enthält einen GUI-Initialisierungstest,
+der ohne Display übersprungen werden kann. Der Headless-CLI- und Controller-
+Vertikalschnitt wird separat geprüft.
+
+Das ist **kein** Nachweis für eine veröffentlichungsreife Desktop-App. Noch
+offen sind unter anderem Dateiauswahl und sichtbares Save/Open, vollständige
+Fehler- und Wiederherstellungsdialoge, Sprachumschaltung, native
+Accessibility-/Plattformprüfung, Installer und Benutzerabnahme. Die
+[1.0.0-Readiness-Matrix](product/V1.0.0_PRODUCT_CONTRACT.md#readiness-and-gap-matrix)
+ordnet diese Lücken nach Status.
 
 [Testanleitung](../tests/README.md) · [Quellen und Archiv](../archive/INDEX.md)
 

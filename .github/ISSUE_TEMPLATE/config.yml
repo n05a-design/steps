@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/n05a-design/steps/blob/main/SECURITY.md
+    about: Do not report security vulnerabilities in public issues. Follow the private reporting instructions.
