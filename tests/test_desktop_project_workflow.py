@@ -6,6 +6,7 @@ from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 from app.i18n import LocaleManager
+from app.ui.session_controller import ProgressionSessionController
 
 try:
     from app.ui.main_window import StepsMainWindow
@@ -13,6 +14,7 @@ except ImportError:
     StepsMainWindow = None
 
 from src.steps.storage import CorruptedProjectError, StorageError
+from src.steps.progression.session import ProgressionSession
 
 
 class FakeRoot:
@@ -175,6 +177,17 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.assertEqual(self.window.controller.new_project_calls, 0)
         self.assertEqual(self.window._project_path, old_path)
         self.window._refresh_all.assert_not_called()
+
+    def test_chord_details_include_beginner_voicing_data(self):
+        self.window.controller = ProgressionSessionController(ProgressionSession())
+        self.window.detail_text = Mock()
+
+        self.window._display_chord_details("C")
+
+        rendered = self.window.detail_text.insert.call_args.args[1]
+        self.assertIn("BEGINNER KEYBOARD VOICINGS:", rendered)
+        self.assertIn("C:", rendered)
+        self.assertIn("Smoothness", rendered)
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/fail.stepsproj")
     @patch("app.ui.main_window.messagebox.showerror")

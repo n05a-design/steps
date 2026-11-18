@@ -877,6 +877,42 @@ class StepsMainWindow:
             lines.append("-" * 50)
             lines.append(self.i18n.translate("diagnosis.voicing"))
 
+            try:
+                view_model = self.controller.get_view_model()
+                beginner = view_model.get("beginner_voicings")
+                if beginner:
+                    lines.append("")
+                    lines.append(self.i18n.translate("beginner.heading"))
+                    lines.append("-" * 50)
+                    lines.append(
+                        self.i18n.translate(
+                            "beginner.summary",
+                            smoothness=f'{beginner["smoothness_score"]:.1f}',
+                            distance=beginner["total_l1_distance"],
+                        )
+                    )
+                    for voicing in beginner["voicings"]:
+                        lines.append(
+                            self.i18n.translate(
+                                "beginner.voicing",
+                                chord=voicing["chord_symbol"],
+                                bass=voicing["lh_spelling"],
+                                lh_finger=voicing["lh_fingering"],
+                                notes=" ".join(voicing["rh_spellings"]),
+                            )
+                        )
+                    for transition in beginner["transitions"]:
+                        lines.append(
+                            self.i18n.translate(
+                                "beginner.transition",
+                                from_chord=transition["from_chord"],
+                                to_chord=transition["to_chord"],
+                                guidance=transition["pedagogical_guidance"],
+                            )
+                        )
+            except (AttributeError, KeyError, TypeError):
+                pass
+
             self.detail_text.insert(tk.END, "\n".join(lines))
         except Exception as e:
             self.detail_text.insert(
