@@ -15,6 +15,9 @@ Aus dem Repository-Root mit einer Python-Version aus der CI-Matrix 3.11 bis 3.14
 Curation-Suiten sowie den API-Abgleich auf Ubuntu mit Python 3.11, 3.12, 3.13 und 3.14
 aus. Weitere Jobs prüfen den Skill auf macOS und Windows, die Wissensabdeckung
 und die Veröffentlichung des Pilotmaterials.
+Ein separates Ubuntu/Xvfb-Native-UI-Smoke startet das Tkinter-Hauptfenster und
+prüft die verkabelte Kernbedienung. Das ist eine Linux-Automatisierungsprobe,
+keine native macOS-/Windows-Abnahme und kein Ersatz für Screenreader-/Sichtprüfung.
 Die Kern-Suite prüft die Veröffentlichungspfade mit isolierten synthetischen
 Freigaben. Damit werden keine Desktop-, Audio- oder Produkt-MIDI-Abläufe abgenommen.
 

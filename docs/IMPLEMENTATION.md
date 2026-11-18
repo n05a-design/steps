@@ -3,7 +3,7 @@
 Dieser Leitfaden beschreibt den Code im selben Checkout. Der Einstieg für
 Entwicklung ist die [Root-README](../README.md). Die [API-Referenz](theory/API.md)
 wird aus den exportierten Python-Objekten erzeugt. Der hier dokumentierte Stand verwendet `main` bei Commit
-[`e44c1dd8e9dea493f3b15d3768baffdb81a753c6`](https://github.com/n05a-design/steps/commit/e44c1dd8e9dea493f3b15d3768baffdb81a753c6)
+[`9eabad825bb21c1b4fa3acdf18fc35df55b411a9`](https://github.com/n05a-design/steps/commit/9eabad825bb21c1b4fa3acdf18fc35df55b411a9)
 als Produkt-Baseline. PRs #158–#163 ergänzen Save/Open, Lokalisierung,
 Akkordbearbeitung, Neuordnung, Undo/Redo sowie Tonart-/Dur-Moll-/Tempo-Kontext.
 PR #164 ergänzt editierbare Taktart sowie Start-Ticks und Dauern pro
