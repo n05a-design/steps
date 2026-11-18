@@ -31,11 +31,15 @@ classifiers = [
 steps = "app.main:main"
 
 [tool.setuptools.packages.find]
-where = ["src"]
-include = ["steps*"]
+where = ["."]
+include = ["app*", "design*", "src*"]
+exclude = ["tests*"]
+namespaces = false
 
 [tool.setuptools.package-data]
-steps = ["py.typed", "progression/*.json"]
+app = ["locales/*.json", "assets/brand/*"]
+"design.tokens" = ["tokens.json"]
+"src.steps" = ["py.typed", "progression/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

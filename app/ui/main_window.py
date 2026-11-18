@@ -10,10 +10,12 @@ from __future__ import annotations
 
 import tkinter as tk
 from pathlib import Path
-from tkinter import filedialog, messagebox, ttk
+import sys
+from tkinter import filedialog, messagebox
 from typing import Optional
 
 from app.brand import apply_window_icon
+from app.i18n import LocaleManager
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager, default_theme
 from src.steps.storage.exceptions import StorageError
@@ -27,14 +29,16 @@ class StepsMainWindow:
         self,
         root: tk.Tk,
         controller: Optional[ProgressionSessionController] = None,
-        theme: Optional[ThemeManager] = None
+        theme: Optional[ThemeManager] = None,
+        locale_manager: Optional[LocaleManager] = None,
     ) -> None:
         self.root = root
         self.controller = controller or ProgressionSessionController()
         self.theme = theme or default_theme
+        self.i18n = locale_manager or LocaleManager()
         self._project_path: Optional[Path] = None
 
-        self.root.title("STEPS — Harmonielehre & Musiktheorie")
+        self.root.title(self.i18n.translate("app.title"))
         self.root.geometry("1024x720")
         self.root.minsize(860, 600)
         self._init_file_menu()
@@ -46,21 +50,71 @@ class StepsMainWindow:
             pass
 
         self._init_ui()
+        self._localize_widgets()
         self._refresh_all()
 
     def _init_file_menu(self) -> None:
-        menu_bar = tk.Menu(self.root)
-        file_menu = tk.Menu(menu_bar, tearoff=False)
-        file_menu.add_command(label="Öffnen…", command=self._on_open_project, accelerator="Ctrl+O")
-        file_menu.add_command(label="Speichern", command=self._on_save_project, accelerator="Ctrl+S")
-        file_menu.add_command(label="Speichern unter…", command=self._on_save_project_as)
-        menu_bar.add_cascade(label="Datei", menu=file_menu)
-        self.root.configure(menu=menu_bar)
+        shortcut = "⌘" if sys.platform == "darwin" else "Ctrl+"
+        self.menu_bar = tk.Menu(self.root)
+        self.file_menu = tk.Menu(self.menu_bar, tearoff=False)
+        self.file_menu.add_command(
+            label="", command=self._on_open_project, accelerator=f"{shortcut}O"
+        )
+        self.file_menu.add_command(
+            label="", command=self._on_save_project, accelerator=f"{shortcut}S"
+        )
+        self.file_menu.add_command(label="", command=self._on_save_project_as)
+        self.menu_bar.add_cascade(label="", menu=self.file_menu)
+        self.settings_menu = tk.Menu(self.menu_bar, tearoff=False)
+        self.language_menu = tk.Menu(self.settings_menu, tearoff=False)
+        self.language_var = tk.StringVar(self.root, value=self.i18n.preference)
+        for preference in ("system", "en", "de"):
+            self.language_menu.add_radiobutton(
+                label="",
+                value=preference,
+                variable=self.language_var,
+                command=lambda selected=preference: self._on_language_change(selected),
+            )
+        self.settings_menu.add_cascade(label="", menu=self.language_menu)
+        self.menu_bar.add_cascade(label="", menu=self.settings_menu)
+        self.root.configure(menu=self.menu_bar)
         self.root.bind_all("<Control-o>", self._on_open_shortcut)
         self.root.bind_all("<Control-s>", self._on_save_shortcut)
         self.root.bind_all("<Command-o>", self._on_open_shortcut)
         self.root.bind_all("<Command-s>", self._on_save_shortcut)
         self.root.protocol("WM_DELETE_WINDOW", self._on_close)
+
+    def _localize_widgets(self) -> None:
+        t = self.i18n.translate
+        self.root.title(t("app.title"))
+        self.file_menu.entryconfigure(0, label=t("file.open"))
+        self.file_menu.entryconfigure(1, label=t("file.save"))
+        self.file_menu.entryconfigure(2, label=t("file.save_as"))
+        self.menu_bar.entryconfigure(0, label=t("file.menu"))
+        self.menu_bar.entryconfigure(1, label=t("settings.menu"))
+        self.settings_menu.entryconfigure(0, label=t("language.menu"))
+        for index, key in enumerate(("language.system", "language.en", "language.de")):
+            self.language_menu.entryconfigure(index, label=t(key))
+        self.title_lbl.configure(text=t("workspace.heading"))
+        self.add_btn.configure(text=t("chord.add"))
+        self.trans_down_btn.configure(text=t("transpose.down"))
+        self.trans_up_btn.configure(text=t("transpose.up"))
+        self.export_btn.configure(text=t("midi.export"))
+        self.info_lbl.configure(text=t("information.heading"))
+
+    def _on_language_change(self, preference: str) -> None:
+        try:
+            self.i18n.set_preference(preference)
+        except OSError as exc:
+            self.language_var.set(self.i18n.preference)
+            messagebox.showerror(
+                self.i18n.translate("settings.language.error.title"),
+                str(exc),
+                parent=self.root,
+            )
+            return
+        self._localize_widgets()
+        self._refresh_all(preserve_selection=True)
 
     def _on_open_shortcut(self, _event: tk.Event) -> str:
         self._on_open_project()
@@ -71,10 +125,12 @@ class StepsMainWindow:
         return "break"
 
     def _update_window_title(self) -> None:
-        title = self.controller.get_state_summary()["title"]
-        project_name = self._project_path.name if self._project_path else title
         dirty_marker = "*" if self.controller.session.is_dirty else ""
-        self.root.title(f"{dirty_marker}{project_name} — STEPS")
+        if self._project_path:
+            title = f"{self._project_path.name} — STEPS"
+        else:
+            title = self.i18n.translate("app.title")
+        self.root.title(f"{dirty_marker}{title}")
 
     def _on_save_project(self) -> bool:
         return self._save_project(save_as=False)
@@ -89,9 +145,12 @@ class StepsMainWindow:
             initial_name = Path(title).name.replace("/", "_").replace("\\", "_") or "progression"
             selected = filedialog.asksaveasfilename(
                 parent=self.root,
-                title="STEPS-Projekt speichern",
+                title=self.i18n.translate("project.save.title"),
                 defaultextension=".stepsproj",
-                filetypes=(("STEPS-Projekt", "*.stepsproj"), ("JSON-Datei", "*.json")),
+                filetypes=(
+                    (self.i18n.translate("project.filetype"), "*.stepsproj"),
+                    (self.i18n.translate("json.filetype"), "*.json"),
+                ),
                 initialfile=f"{initial_name}.stepsproj",
             )
             if not selected:
@@ -102,7 +161,7 @@ class StepsMainWindow:
             self._project_path = self.controller.save(path)
         except (StorageError, OSError, MusicTheoryError, ValueError) as exc:
             messagebox.showerror(
-                "Projekt konnte nicht gespeichert werden",
+                self.i18n.translate("project.save.error.title"),
                 str(exc),
                 parent=self.root,
             )
@@ -116,8 +175,8 @@ class StepsMainWindow:
             return True
 
         choice = messagebox.askyesnocancel(
-            "Ungespeicherte Änderungen",
-            "Möchten Sie die Änderungen an der aktuellen Progression speichern?",
+            self.i18n.translate("project.unsaved.title"),
+            self.i18n.translate("project.unsaved.message"),
             parent=self.root,
         )
         if choice is None:
@@ -127,8 +186,11 @@ class StepsMainWindow:
     def _on_open_project(self) -> bool:
         selected = filedialog.askopenfilename(
             parent=self.root,
-            title="STEPS-Projekt öffnen",
-            filetypes=(("STEPS-Projekt", "*.stepsproj"), ("JSON-Datei", "*.json")),
+            title=self.i18n.translate("project.open.title"),
+            filetypes=(
+                (self.i18n.translate("project.filetype"), "*.stepsproj"),
+                (self.i18n.translate("json.filetype"), "*.json"),
+            ),
         )
         if not selected or not self._confirm_unsaved_changes():
             return False
@@ -137,7 +199,7 @@ class StepsMainWindow:
             self.controller.load(selected)
         except (StorageError, OSError, MusicTheoryError, ValueError) as exc:
             messagebox.showerror(
-                "Projekt konnte nicht geöffnet werden",
+                self.i18n.translate("project.open.error.title"),
                 str(exc),
                 parent=self.root,
             )
@@ -180,7 +242,7 @@ class StepsMainWindow:
 
         self.title_lbl = tk.Label(
             self.control_bar,
-            text="ARBEITSBEREICH",
+            text=self.i18n.translate("workspace.heading"),
             font=("Helvetica", 11, "bold"),
             fg=colors.harmonic_tonic,
             bg=colors.bg_surface
@@ -203,7 +265,7 @@ class StepsMainWindow:
 
         self.add_btn = tk.Button(
             self.control_bar,
-            text="+ Akkord",
+            text=self.i18n.translate("chord.add"),
             command=self._on_add_chord,
             bg=colors.harmonic_tonic,
             fg=colors.text_inverted,
@@ -215,7 +277,7 @@ class StepsMainWindow:
         # Transpose Buttons
         self.trans_down_btn = tk.Button(
             self.control_bar,
-            text="♭ -1",
+            text=self.i18n.translate("transpose.down"),
             command=lambda: self._on_transpose(-1),
             bg=colors.bg_active,
             fg=colors.text_primary,
@@ -226,7 +288,7 @@ class StepsMainWindow:
 
         self.trans_up_btn = tk.Button(
             self.control_bar,
-            text="♯ +1",
+            text=self.i18n.translate("transpose.up"),
             command=lambda: self._on_transpose(1),
             bg=colors.bg_active,
             fg=colors.text_primary,
@@ -238,7 +300,7 @@ class StepsMainWindow:
         # MIDI Export Button
         self.export_btn = tk.Button(
             self.control_bar,
-            text="MIDI Export (ADR-017)",
+            text=self.i18n.translate("midi.export"),
             command=self._on_export_midi,
             bg=colors.harmonic_subdominant,
             fg=colors.text_inverted,
@@ -276,7 +338,7 @@ class StepsMainWindow:
 
         self.info_lbl = tk.Label(
             self.info_bar,
-            text="INFORMATIONS- & THEORIEBEREICH",
+            text=self.i18n.translate("information.heading"),
             font=("Helvetica", 11, "bold"),
             fg=colors.harmonic_dominant,
             bg=colors.bg_surface
@@ -300,9 +362,10 @@ class StepsMainWindow:
         )
         self.detail_text.pack(fill=tk.BOTH, expand=True)
 
-    def _refresh_all(self) -> None:
+    def _refresh_all(self, preserve_selection: bool = False) -> None:
         """Synchronizes UI state with the ProgressionSessionController."""
         state = self.controller.get_state_summary()
+        selected = self.chord_listbox.curselection() if preserve_selection else ()
         self._update_window_title()
 
         self.chord_listbox.delete(0, tk.END)
@@ -310,8 +373,9 @@ class StepsMainWindow:
             self.chord_listbox.insert(tk.END, f"  [{idx + 1:02d}]   {chord_name}")
 
         if state["chords"]:
-            self.chord_listbox.select_set(0)
-            self._display_chord_details(state["chords"][0])
+            index = selected[0] if selected and selected[0] < len(state["chords"]) else 0
+            self.chord_listbox.select_set(index)
+            self._display_chord_details(state["chords"][index])
         else:
             self._display_empty_info()
 
@@ -323,7 +387,7 @@ class StepsMainWindow:
         self.detail_text.delete("1.0", tk.END)
 
         try:
-            chord = parse_chord(chord_name, convention="INT")
+            chord = parse_chord(chord_name, convention=self.controller.session.convention)
             voicing = chord.to_voicing(bass_octave=3, voicing_type="CLOSE")
 
             # Quality to scale mapping
@@ -347,14 +411,15 @@ class StepsMainWindow:
                     pass
 
             lines = [
-                f"AKKORD-ANALYSE: {chord_name}",
+                self.i18n.translate("chord.analysis.title", chord=chord_name),
                 "=" * 50,
-                f"Grundton:         {chord.root.step} (Pitch Class {int(chord.root.pitch_class)})",
-                f"Qualität:         {chord.quality}",
-                f"Kernintervalle:   {chord.theoretical_intervals}",
-                f"Voicing (CLOSE):  MIDI Notes {voicing.midi_notes}",
+                f"{self.i18n.translate('chord.root')}: {chord.root.step} "
+                f"({self.i18n.translate('chord.pitch_class')} {int(chord.root.pitch_class)})",
+                f"{self.i18n.translate('chord.quality')}: {chord.quality}",
+                f"{self.i18n.translate('chord.intervals')}: {chord.theoretical_intervals}",
+                f"{self.i18n.translate('chord.voicing')}: {voicing.midi_notes}",
                 "",
-                "KOMPATIBLE SKALEN & MODI:",
+                self.i18n.translate("scales.heading"),
                 "-" * 50,
             ]
             for s in scales:
@@ -362,17 +427,19 @@ class StepsMainWindow:
                 lines.append(f"• {s.template.name.upper():16s} {note_str}")
 
             lines.append("")
-            lines.append("STUFEN- & FUNKTIONSDIAGNOSE:")
+            lines.append(self.i18n.translate("diagnosis.heading"))
             lines.append("-" * 50)
-            lines.append("• Voicing-Reduktion (ADR-005): 4-Voice Lead Ready")
+            lines.append(self.i18n.translate("diagnosis.voicing"))
 
             self.detail_text.insert(tk.END, "\n".join(lines))
         except Exception as e:
-            self.detail_text.insert(tk.END, f"Hinweis zum Akkord: {chord_name}\n({e})")
+            self.detail_text.insert(
+                tk.END, self.i18n.translate("chord.hint", chord=chord_name, error=e)
+            )
 
     def _display_empty_info(self) -> None:
         self.detail_text.delete("1.0", tk.END)
-        self.detail_text.insert(tk.END, "Keine Akkorde in der aktuellen Progression vorhanden.\nFügen Sie oben Akkorde hinzu (z. B. Dm7 -> G7 -> Cmaj7).")
+        self.detail_text.insert(tk.END, self.i18n.translate("progression.empty"))
 
     def _on_add_chord(self) -> None:
         txt = self.chord_entry.get().strip()
@@ -393,7 +460,25 @@ class StepsMainWindow:
                 self._display_chord_details(state["chords"][idx])
 
     def _on_export_midi(self) -> None:
-        from pathlib import Path
-        out = Path("steps_progression_export.mid")
-        self.controller.export_midi(out)
-        self.detail_text.insert(tk.END, f"\n\n[ERFOLG] MIDI-Datei erfolgreich exportiert nach:\n{out.resolve()}\n")
+        selected = filedialog.asksaveasfilename(
+            parent=self.root,
+            title=self.i18n.translate("midi.save.title"),
+            defaultextension=".mid",
+            filetypes=((self.i18n.translate("midi.filetype"), "*.mid *.midi"),),
+            initialfile="steps_progression_export.mid",
+        )
+        if not selected:
+            return
+        try:
+            output_path = self.controller.export_midi(selected)
+        except (OSError, ValueError, MusicTheoryError) as exc:
+            messagebox.showerror(
+                self.i18n.translate("midi.export.error.title"),
+                str(exc),
+                parent=self.root,
+            )
+            return
+        self.detail_text.insert(
+            tk.END,
+            "\n\n" + self.i18n.translate("midi.export.success", path=output_path.resolve()),
+        )

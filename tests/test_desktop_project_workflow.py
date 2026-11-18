@@ -4,6 +4,8 @@ import unittest
 from pathlib import Path
 from unittest.mock import Mock, patch
 
+from app.i18n import LocaleManager
+
 try:
     from app.ui.main_window import StepsMainWindow
 except ImportError:
@@ -34,8 +36,10 @@ class FakeController:
         self.session = FakeSession(is_dirty)
         self.saved_paths = []
         self.loaded_paths = []
+        self.exported_paths = []
         self.save_error = None
         self.load_error = None
+        self.export_error = None
 
     def get_state_summary(self):
         return {"title": "My Progression"}
@@ -54,6 +58,13 @@ class FakeController:
         self.loaded_paths.append(Path(path))
         self.session.is_dirty = False
 
+    def export_midi(self, path):
+        if self.export_error:
+            raise self.export_error
+        output_path = Path(path)
+        self.exported_paths.append(output_path)
+        return output_path
+
 
 @unittest.skipIf(StepsMainWindow is None, "tkinter is not available")
 class TestDesktopProjectWorkflow(unittest.TestCase):
@@ -61,8 +72,10 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.window = StepsMainWindow.__new__(StepsMainWindow)
         self.window.root = FakeRoot()
         self.window.controller = FakeController()
+        self.window.i18n = LocaleManager(preference="en")
         self.window._project_path = None
         self.window._refresh_all = Mock()
+        self.window.detail_text = Mock()
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/new.stepsproj")
     def test_save_as_updates_current_path_and_window_title(self, choose_path):
@@ -146,3 +159,27 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
 
         self.assertEqual(self.window.controller.saved_paths, [Path("/tmp/saved.stepsproj")])
         self.assertEqual(self.window.controller.loaded_paths, [Path("/tmp/source.stepsproj")])
+
+    @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="")
+    def test_cancel_midi_export_does_not_call_controller(self, choose_path):
+        self.window._on_export_midi()
+
+        self.assertEqual(self.window.controller.exported_paths, [])
+        self.window.detail_text.insert.assert_not_called()
+
+    @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/output.mid")
+    def test_midi_export_uses_selected_path_and_confirms_success(self, choose_path):
+        self.window._on_export_midi()
+
+        self.assertEqual(self.window.controller.exported_paths, [Path("/tmp/output.mid")])
+        self.window.detail_text.insert.assert_called_once()
+
+    @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/output.mid")
+    @patch("app.ui.main_window.messagebox.showerror")
+    def test_midi_export_error_is_visible(self, show_error, choose_path):
+        self.window.controller.export_error = OSError("disk full")
+
+        self.window._on_export_midi()
+
+        show_error.assert_called_once()
+        self.window.detail_text.insert.assert_not_called()
