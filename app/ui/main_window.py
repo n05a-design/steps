@@ -18,6 +18,7 @@ from app.brand import apply_window_icon
 from app.i18n import LocaleManager
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager, default_theme
+from src.steps.midi.time import RationalMidiTime
 from src.steps.models.timeline import TimeSignature
 from src.steps.storage.exceptions import StorageError
 from src.steps.theory.exceptions import MusicTheoryError
@@ -624,11 +625,20 @@ class StepsMainWindow:
 
     def _load_event_timing_controls(self, index: Optional[int]) -> None:
         if index is None:
-            start_tick, duration_ticks = "", ""
+            position = ""
+            duration_ticks = ""
         else:
-            start_tick, duration_ticks = self.controller.session.get_chord_event_timing(index)
+            session = self.controller.session
+            start_tick, duration_ticks = session.get_chord_event_timing(index)
+            bar, beat, tick = RationalMidiTime.ticks_to_bar_beat_tick(
+                start_tick,
+                ppq=session.state.ppq,
+                numerator=session.time_signature[0],
+                denominator=session.time_signature[1],
+            )
+            position = f"{bar}:{beat}:{tick}"
         self.event_start_entry.delete(0, tk.END)
-        self.event_start_entry.insert(0, str(start_tick))
+        self.event_start_entry.insert(0, position)
         self.event_duration_entry.delete(0, tk.END)
         self.event_duration_entry.insert(0, str(duration_ticks))
         self.event_timing_btn.configure(state=tk.NORMAL if index is not None else tk.DISABLED)
@@ -642,7 +652,19 @@ class StepsMainWindow:
         if index is None:
             return
         try:
-            start_tick = int(self.event_start_entry.get().strip())
+            session = self.controller.session
+            position = [
+                int(part.strip())
+                for part in self.event_start_entry.get().strip().split(":")
+            ]
+            if len(position) != 3:
+                raise ValueError("Position must use bar:beat:tick format.")
+            start_tick = RationalMidiTime.bar_beat_tick_to_ticks(
+                *position,
+                ppq=session.state.ppq,
+                numerator=session.time_signature[0],
+                denominator=session.time_signature[1],
+            )
             duration_ticks = int(self.event_duration_entry.get().strip())
             self.controller.set_chord_event_timing(index, start_tick, duration_ticks)
         except ValueError:

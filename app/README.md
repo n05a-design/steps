@@ -32,9 +32,14 @@ Kontext ändern; die Eingabe wird als eine undo-fähige Aktion gespeichert. Die
 Taktart wird im Format Zähler/Nenner eingegeben (z. B. `3/4` oder `6/8`) und in
 Projektdatei und MIDI-Metadaten übernommen. Sie ändert nicht automatisch die
 Tick-Dauer der Akkord-Events. Für den ausgewählten Akkord lassen sich absolute
-Startzeit und Dauer in Ticks bearbeiten; die Feldbeschriftung zeigt die
-Projektauflösung (PPQ). Zeitlücken und Überlappungen bleiben damit ausdrückliche
-Tick-Werte und werden nicht aus der Taktart abgeleitet.
+Startzeit als `Takt:Zählzeit:Tick` und Dauer in Ticks bearbeiten; die Feldbeschriftung
+zeigt die Projektauflösung (PPQ). Takt und Zählzeit beginnen bei 1; der Tickwert
+ist der nullbasierte Versatz innerhalb einer Zählzeit der Taktart (in `6/8` also
+innerhalb einer Achtelnote). Die Position ist eine Anzeige/Eingabeprojektion;
+gespeichert und exportiert werden weiterhin absolute Start-Ticks. Ein Taktartwechsel
+ändert deshalb die Anzeige, nicht den Ereigniszeitpunkt. Zeitlücken und
+Überlappungen bleiben ausdrückliche Tick-Werte und werden nicht aus der
+Progressionsreihenfolge oder Taktart abgeleitet.
 
 Die UI-Sprache unterstützt Englisch und Deutsch unabhängig von musikalischer
 Notation. Die Auswahl `system`, `en` oder `de` wird als Benutzereinstellung

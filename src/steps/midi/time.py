@@ -102,6 +102,55 @@ class RationalMidiTime:
         return BarBeatPosition(bar=bar, beat=beat, sub_beat=sub_beat)
 
     @classmethod
+    def ticks_to_bar_beat_tick(
+        cls,
+        abs_tick: int,
+        ppq: int = 480,
+        numerator: int = 4,
+        denominator: int = 4,
+    ) -> Tuple[int, int, int]:
+        """Returns one-based bar/beat and zero-based ticks within that metric beat."""
+        pos = cls.ticks_to_position(abs_tick, ppq, numerator, denominator)
+        ticks_in_beat = cls.ticks_per_beat(ppq, denominator)
+        sub_tick = int(pos.sub_beat * ticks_in_beat)
+        return pos.bar, pos.beat, sub_tick
+
+    @classmethod
+    def bar_beat_tick_to_ticks(
+        cls,
+        bar: int,
+        beat: int,
+        tick: int,
+        ppq: int = 480,
+        numerator: int = 4,
+        denominator: int = 4,
+    ) -> int:
+        """Converts one-based bar/beat and zero-based within-beat ticks to absolute ticks."""
+        if not isinstance(bar, int) or isinstance(bar, bool) or bar < 1:
+            raise ValueError(f"Bar must be a positive integer, got {bar!r}")
+        if (
+            not isinstance(beat, int)
+            or isinstance(beat, bool)
+            or not 1 <= beat <= numerator
+        ):
+            raise ValueError(f"Beat must be between 1 and {numerator}, got {beat!r}")
+        ticks_in_beat = cls.ticks_per_beat(ppq, denominator)
+        if (
+            not isinstance(tick, int)
+            or isinstance(tick, bool)
+            or not 0 <= tick < ticks_in_beat
+        ):
+            raise ValueError(
+                f"Tick within beat must be between 0 and {ticks_in_beat - 1}, got {tick!r}"
+            )
+        pos = BarBeatPosition(
+            bar=bar,
+            beat=beat,
+            sub_beat=Fraction(tick, ticks_in_beat),
+        )
+        return cls.position_to_ticks(pos, ppq, numerator, denominator)
+
+    @classmethod
     def position_to_ticks(
         cls,
         pos: BarBeatPosition,

@@ -60,6 +60,36 @@ class TestRationalMidiTime(unittest.TestCase):
         self.assertEqual(pos.beat, 1)
         self.assertEqual(pos.sub_beat, Fraction(0, 1))
 
+    def test_bar_beat_tick_roundtrip_uses_denominator_beats(self) -> None:
+        cases = (
+            (0, (1, 1, 0), 4, 4),
+            (2100, (2, 1, 180), 4, 4),
+            (1440, (2, 1, 0), 6, 8),
+            (1320, (1, 6, 120), 6, 8),
+        )
+        for absolute_tick, position, numerator, denominator in cases:
+            with self.subTest(meter=(numerator, denominator), tick=absolute_tick):
+                self.assertEqual(
+                    RationalMidiTime.ticks_to_bar_beat_tick(
+                        absolute_tick, ppq=480, numerator=numerator, denominator=denominator
+                    ),
+                    position,
+                )
+                self.assertEqual(
+                    RationalMidiTime.bar_beat_tick_to_ticks(
+                        *position, ppq=480, numerator=numerator, denominator=denominator
+                    ),
+                    absolute_tick,
+                )
+
+    def test_bar_beat_tick_rejects_out_of_meter_coordinates(self) -> None:
+        for position in ((0, 1, 0), (1, 0, 0), (1, 5, 0), (1, 1, 480), (1, 1, -1)):
+            with self.subTest(position=position):
+                with self.assertRaises(ValueError):
+                    RationalMidiTime.bar_beat_tick_to_ticks(
+                        *position, ppq=480, numerator=4, denominator=4
+                    )
+
     def test_convert_ppq_lossless_roundtrip(self) -> None:
         # 960 <-> 480
         self.assertEqual(RationalMidiTime.convert_ppq(960, 960, 480), 480)
