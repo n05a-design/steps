@@ -98,7 +98,7 @@ Der [Implementierungsstand](docs/IMPLEMENTATION.md) beschreibt Verhalten und Gre
 
 - **Keine freigegebene Desktop-Distribution.** Ein Tkinter-Prototyp und ein CLI-Einstieg existieren, aber es gibt keine geprüften Plattform-Installer oder öffentliche Produktfreigabe.
 - **Kein In-App-Audio und kein MIDI-Import.** Ein SMF-Dateiexport ist im Kern, im Controller und über CLI/UI-Prototyp vorhanden. Eine Abnahme in unabhängigen DAWs ist noch zu belegen.
-- **Speichern und Laden:** Projektdatei- und Session-Dienste sind implementiert und im Controller getestet. Der Hauptfenster-Prototyp hat noch keinen vollständigen Öffnen-/Speichern-Ablauf mit Dateiauswahl.
+- **Speichern und Laden:** Das Hauptfenster bietet Dateiauswahl, Speichern/Öffnen, Rückfrage bei ungespeicherten Änderungen und sichtbare Fehlermeldungen. Plattform-, Barrierefreiheits- und Wiederherstellungsabnahme bleiben offen.
 - **Keine automatische Analyse.** STEPS erkennt keine Tonart aus Audio und wählt keine Deutung für dich aus. Die Tonart gibst du vor.
 - **Bewusst enge Grenzen.** `C11` ist nicht registriert, `V7(alt)` wird abgewiesen. Solche Lücken stehen im Implementierungsstand, nicht in einer Fußnote.
 - **Noch keine englische UI.** Die aktuelle Oberfläche und CLI enthalten weitgehend fest codierte deutsche Texte. Englisch ist Ziel- und Fallbacksprache, aber noch nicht implementiert.

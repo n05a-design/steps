@@ -203,7 +203,12 @@ def load_project(
         if not text.strip():
             raise CorruptedProjectError(f"Project file is empty: {target}")
         raw = json.loads(text)
-        _check_schema_version_compatibility(raw.get("schema_version", "1.0.0"))
+        if not isinstance(raw, dict):
+            raise CorruptedProjectError("Project file root must be a JSON object.")
+        schema_version = raw.get("schema_version", "1.0.0")
+        if not isinstance(schema_version, str):
+            raise CorruptedProjectError("Project schema_version must be a string.")
+        _check_schema_version_compatibility(schema_version)
         return Project.from_dict(raw)
 
     try:

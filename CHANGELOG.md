@@ -12,6 +12,7 @@
 - Die Root-README ist als Projektseite neu gegliedert und erscheint auf der GitHub-Startseite. Die frühere `.github/README.md` heißt jetzt [`GITHUB_UND_CI.md`](.github/GITHUB_UND_CI.md).
 - Der [Implementierungsstand](docs/IMPLEMENTATION.md) und die [generierte API-Referenz](docs/theory/API.md) beschreiben den Entwicklungsstand und die verfügbaren Funktionen.
 - 1.0.0-Zielbild, Ist-Stand und offene Freigabegates konsolidiert; Produkt- und GitHub-Dokumentation gegen den aktuellen Stand ergänzt.
+- Der Desktop-Prototyp ergänzt projektbezogenes Öffnen/Speichern mit Dateiauswahl, Rückfrage bei ungespeicherten Änderungen und sichtbaren Fehlern. Session-Dateien bewahren Tonart und Mollmodus; fehlerhafte Akkordsymbole werden vor einem Zustandswechsel abgewiesen.
 - GitHub Issue- und PR-Vorlagen, Dependabot-/Release-Notizkonfiguration und ein YAML-/Issue-Form-Prüfworkflow ergänzt. GitHub-Wiki, Projects, Labels und Funding bleiben explizite Inhaberhandlungen.
 
 ## Frühere Architekturvorbereitung

@@ -37,14 +37,14 @@ The product direction is a local-first workspace for people who want to learn wh
 - **Project data:** versioned JSON project storage and session save/load services exist. The controller-level vertical-slice test exercises a save/reopen round trip.
 - **MIDI:** SMF format 0/1 writers and export services are available. The CLI and desktop prototype expose export paths; automated tests inspect the resulting files.
 - **Reviewed examples:** selected learning examples are published with source references and review evidence. The larger research archive is not automatically approved product content.
-- **Desktop prototype:** a Tkinter two-area window supports chord entry, transposition, theory display, and MIDI export. It is not yet a complete packaged or platform-accepted application.
+- **Desktop prototype:** a Tkinter two-area window supports chord entry, transposition, theory display, MIDI export, and project open/save with unsaved-change prompts and visible errors. It is not yet a complete packaged or platform-accepted application.
 
 See the [implementation status](docs/IMPLEMENTATION.md) for precise behavior and limits.
 
 ## What is not ready yet
 
 - No verified desktop installers or complete platform-by-platform release acceptance.
-- The main window does not yet expose a complete project open/save workflow.
+- Project open/save is exposed in the main window; native platform, accessibility, and recovery acceptance remain open.
 - No complete English/German UI localization or persisted language preference.
 - No in-app audio playback or MIDI import.
 - No external DAW interoperability sign-off is evidenced by the automated MIDI tests alone.

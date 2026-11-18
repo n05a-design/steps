@@ -9,12 +9,15 @@ Implements the 2-Pane architectural contract:
 from __future__ import annotations
 
 import tkinter as tk
-from tkinter import ttk
+from pathlib import Path
+from tkinter import filedialog, messagebox, ttk
 from typing import Optional
 
 from app.brand import apply_window_icon
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager, default_theme
+from src.steps.storage.exceptions import StorageError
+from src.steps.theory.exceptions import MusicTheoryError
 
 
 class StepsMainWindow:
@@ -29,10 +32,12 @@ class StepsMainWindow:
         self.root = root
         self.controller = controller or ProgressionSessionController()
         self.theme = theme or default_theme
+        self._project_path: Optional[Path] = None
 
         self.root.title("STEPS — Harmonielehre & Musiktheorie")
         self.root.geometry("1024x720")
         self.root.minsize(860, 600)
+        self._init_file_menu()
 
         # Apply branding icon if available
         try:
@@ -42,6 +47,109 @@ class StepsMainWindow:
 
         self._init_ui()
         self._refresh_all()
+
+    def _init_file_menu(self) -> None:
+        menu_bar = tk.Menu(self.root)
+        file_menu = tk.Menu(menu_bar, tearoff=False)
+        file_menu.add_command(label="Öffnen…", command=self._on_open_project, accelerator="Ctrl+O")
+        file_menu.add_command(label="Speichern", command=self._on_save_project, accelerator="Ctrl+S")
+        file_menu.add_command(label="Speichern unter…", command=self._on_save_project_as)
+        menu_bar.add_cascade(label="Datei", menu=file_menu)
+        self.root.configure(menu=menu_bar)
+        self.root.bind_all("<Control-o>", self._on_open_shortcut)
+        self.root.bind_all("<Control-s>", self._on_save_shortcut)
+        self.root.bind_all("<Command-o>", self._on_open_shortcut)
+        self.root.bind_all("<Command-s>", self._on_save_shortcut)
+        self.root.protocol("WM_DELETE_WINDOW", self._on_close)
+
+    def _on_open_shortcut(self, _event: tk.Event) -> str:
+        self._on_open_project()
+        return "break"
+
+    def _on_save_shortcut(self, _event: tk.Event) -> str:
+        self._on_save_project()
+        return "break"
+
+    def _update_window_title(self) -> None:
+        title = self.controller.get_state_summary()["title"]
+        project_name = self._project_path.name if self._project_path else title
+        dirty_marker = "*" if self.controller.session.is_dirty else ""
+        self.root.title(f"{dirty_marker}{project_name} — STEPS")
+
+    def _on_save_project(self) -> bool:
+        return self._save_project(save_as=False)
+
+    def _on_save_project_as(self) -> bool:
+        return self._save_project(save_as=True)
+
+    def _save_project(self, save_as: bool) -> bool:
+        path = None if save_as else self._project_path
+        if path is None:
+            title = self.controller.get_state_summary()["title"].strip()
+            initial_name = Path(title).name.replace("/", "_").replace("\\", "_") or "progression"
+            selected = filedialog.asksaveasfilename(
+                parent=self.root,
+                title="STEPS-Projekt speichern",
+                defaultextension=".stepsproj",
+                filetypes=(("STEPS-Projekt", "*.stepsproj"), ("JSON-Datei", "*.json")),
+                initialfile=f"{initial_name}.stepsproj",
+            )
+            if not selected:
+                return False
+            path = Path(selected)
+
+        try:
+            self._project_path = self.controller.save(path)
+        except (StorageError, OSError, MusicTheoryError, ValueError) as exc:
+            messagebox.showerror(
+                "Projekt konnte nicht gespeichert werden",
+                str(exc),
+                parent=self.root,
+            )
+            return False
+
+        self._update_window_title()
+        return True
+
+    def _confirm_unsaved_changes(self) -> bool:
+        if not self.controller.session.is_dirty:
+            return True
+
+        choice = messagebox.askyesnocancel(
+            "Ungespeicherte Änderungen",
+            "Möchten Sie die Änderungen an der aktuellen Progression speichern?",
+            parent=self.root,
+        )
+        if choice is None:
+            return False
+        return self._save_project(save_as=False) if choice else True
+
+    def _on_open_project(self) -> bool:
+        selected = filedialog.askopenfilename(
+            parent=self.root,
+            title="STEPS-Projekt öffnen",
+            filetypes=(("STEPS-Projekt", "*.stepsproj"), ("JSON-Datei", "*.json")),
+        )
+        if not selected or not self._confirm_unsaved_changes():
+            return False
+
+        try:
+            self.controller.load(selected)
+        except (StorageError, OSError, MusicTheoryError, ValueError) as exc:
+            messagebox.showerror(
+                "Projekt konnte nicht geöffnet werden",
+                str(exc),
+                parent=self.root,
+            )
+            return False
+
+        self._project_path = Path(selected)
+        self._refresh_all()
+        return True
+
+    def _on_close(self) -> None:
+        if self._confirm_unsaved_changes():
+            self.root.destroy()
 
     def _init_ui(self) -> None:
         colors = self.theme.colors
@@ -195,6 +303,7 @@ class StepsMainWindow:
     def _refresh_all(self) -> None:
         """Synchronizes UI state with the ProgressionSessionController."""
         state = self.controller.get_state_summary()
+        self._update_window_title()
 
         self.chord_listbox.delete(0, tk.END)
         for idx, chord_name in enumerate(state["chords"]):

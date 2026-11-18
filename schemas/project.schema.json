@@ -34,7 +34,19 @@
         "created_at": { "type": "string" },
         "modified_at": { "type": "string" },
         "author": { "type": "string" },
-        "description": { "type": "string" }
+        "description": { "type": "string" },
+        "key_root": { "type": "string", "minLength": 1 },
+        "is_minor": { "type": "boolean" },
+        "voice_leading_style": {
+          "enum": [
+            "STRICT_CLASSICAL",
+            "STRICT_COUNTERPOINT",
+            "CONTEMPORARY_POP",
+            "JAZZ_POP",
+            "POWER_CHORDS",
+            "QUARTAL_JAZZ"
+          ]
+        }
       }
     },
     "notation_convention": {
