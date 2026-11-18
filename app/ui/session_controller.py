@@ -147,6 +147,10 @@ class ProgressionSessionController:
         self._session.load_from_file(file_path)
         self._notify()
 
+    def new_project(self) -> None:
+        self._session.reset_to_defaults()
+        self._notify()
+
     def export_midi(self, file_path: Path | str) -> Path:
         return self._session.export_midi_file(file_path)
 

@@ -222,7 +222,7 @@ class TestLocaleManager(unittest.TestCase):
             )
             window.controller = ProgressionSessionController(ProgressionSession())
             window.root = FakeRoot()
-            window.file_menu = FakeMenu(3)
+            window.file_menu = FakeMenu(4)
             window.menu_bar = FakeMenu(2)
             window.settings_menu = FakeMenu(1)
             window.language_menu = FakeMenu(3)
@@ -273,7 +273,8 @@ class TestLocaleManager(unittest.TestCase):
             self.assertEqual(window.move_down_btn.options["text"], "Nach unten")
             self.assertEqual(window.undo_btn.options["text"], "Rückgängig")
             self.assertEqual(window.redo_btn.options["text"], "Wiederholen")
-            self.assertEqual(window.file_menu.entries[0]["label"], "Öffnen…")
+            self.assertEqual(window.file_menu.entries[0]["label"], "Neu")
+            self.assertEqual(window.file_menu.entries[1]["label"], "Öffnen…")
             self.assertEqual(window.root.title_text, "STEPS — Harmonielehre & Musiktheorie")
             self.assertEqual(
                 json.loads((Path(temp_dir) / "preferences.json").read_text(encoding="utf-8")),
@@ -426,6 +427,33 @@ class TestDesktopChordEditing(unittest.TestCase):
         self.assertEqual(window.controller.session.can_undo, undo_available)
         self.assertEqual(window.chord_listbox.selection, (0,))
         self.assertEqual(window.move_up_btn.options["state"], "disabled")
+
+    def test_reset_to_defaults_creates_clean_default_session(self):
+        session = ProgressionSession(initial_chords=["D", "G"])
+        session.set_context("A", True, 96.5, (3, 4), title="Jazz Session")
+
+        session.reset_to_defaults()
+
+        self.assertEqual(session.chords, ["C", "G", "Am", "F"])
+        self.assertEqual(session.state.title, "My Progression")
+        self.assertEqual(session.key_root, "C")
+        self.assertFalse(session.is_dirty)
+        self.assertFalse(session.can_undo)
+
+    def test_controller_new_project_resets_session_and_notifies(self):
+        controller = ProgressionSessionController(
+            ProgressionSession(initial_chords=["D", "G"])
+        )
+        controller.session.set_context("A", True, 96.5, (3, 4), title="Jazz Session")
+        notifications = []
+        controller.add_listener(lambda: notifications.append(True))
+
+        controller.new_project()
+
+        self.assertEqual(controller.session.chords, ["C", "G", "Am", "F"])
+        self.assertFalse(controller.session.is_dirty)
+        self.assertFalse(controller.session.can_undo)
+        self.assertEqual(notifications, [True])
 
     def test_inserted_chord_gets_a_slot_and_shifts_later_events(self):
         session = ProgressionSession(initial_chords=["C", "G"])
