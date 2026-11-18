@@ -24,6 +24,7 @@ from .project_io import (
     ProjectLock,
     load_project,
     load_project_with_status,
+    migrate_project_data,
     save_project,
 )
 from .undo import UndoStack
@@ -48,5 +49,6 @@ __all__ = [
     "save_project",
     "load_project",
     "load_project_with_status",
+    "migrate_project_data",
     "UndoStack",
 ]

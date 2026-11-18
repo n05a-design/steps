@@ -45,6 +45,10 @@ eine Wiederherstellung aus dem neuesten gültigen Backup. Die Desktop-Oberfläch
 zeigt in diesem Fall eine EN/DE-lokalisierte Rückmeldung. `load_project()` bleibt
 API-kompatibel; `load_project_with_status()` ergänzt für Prüf- und Integrationspfade
 Projekt sowie Wiederherstellungsstatus.
+Legacy-Projekte bis zur aktuellen 1.x-Schemafassung werden konservativ über
+den dokumentierten Migrationspfad normalisiert. Höhere Major-Versionen werden
+abgewiesen; ein fehlender Projektname bleibt ein korruptes Projekt und wird nicht
+still erfunden.
 
 Die UI-Sprache unterstützt Englisch und Deutsch unabhängig von musikalischer
 Notation. Die Auswahl `system`, `en` oder `de` wird als Benutzereinstellung

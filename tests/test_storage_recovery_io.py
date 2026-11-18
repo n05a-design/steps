@@ -31,6 +31,7 @@ from src.steps.storage import (
     atomic_write_json,
     load_project,
     load_project_with_status,
+    migrate_project_data,
     save_project,
     validate_path_safety,
 )
@@ -114,6 +115,36 @@ class TestStorageRecoveryIO01to16(unittest.TestCase):
         self.assertTrue(result.recovered_from_backup)
         self.assertIsNotNone(result.backup_path)
         self.assertIn("Version", result.project.title)
+
+    def test_legacy_0_x_project_is_migrated_explicitly(self):
+        legacy = {
+            "schema_version": "0.9.0",
+            "project_id": "legacy-0-x",
+            "title": "Legacy 0.x Project",
+            "time_settings": {"ppq": 480, "tempo_bpm": 120.0},
+            "tracks": [],
+        }
+        migrated, migrations = migrate_project_data(legacy)
+
+        self.assertEqual(migrated["schema_version"], CURRENT_SCHEMA_VERSION)
+        self.assertEqual(migrated["notation_convention"], "INT")
+        self.assertEqual(migrated["time_settings"]["time_signature"], {"numerator": 4, "denominator": 4})
+        self.assertIn("MIG-001 0.x-to-1.0.0", migrations)
+
+    def test_load_status_reports_migration_ids(self):
+        legacy = {
+            "schema_version": "0.9.0",
+            "project_id": "legacy-status",
+            "title": "Legacy Status",
+            "time_settings": {"ppq": 480},
+            "tracks": [],
+        }
+        self.project_path.write_text(json.dumps(legacy), encoding="utf-8")
+
+        result = load_project_with_status(self.project_path, auto_recover_from_backup=False)
+
+        self.assertTrue(result.migrated)
+        self.assertIn("MIG-001 0.x-to-1.0.0", result.migrations)
 
     def test_io04_double_instance_lock_detection(self):
         """IO-04: Double-instance lock detection: existing valid lock prevents concurrent overwrite."""

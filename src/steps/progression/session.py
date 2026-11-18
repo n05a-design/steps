@@ -117,6 +117,7 @@ class ProgressionSession:
         self._undo_stack = UndoStack[SessionState](init_state, max_depth=50)
         self.last_load_recovered_from_backup = False
         self.last_loaded_backup_path: Optional[Path] = None
+        self.last_load_migrations: tuple[str, ...] = ()
 
     @property
     def state(self) -> SessionState:
@@ -827,10 +828,12 @@ class ProgressionSession:
         """Loads session state from a STEPS project file."""
         self.last_load_recovered_from_backup = False
         self.last_loaded_backup_path = None
+        self.last_load_migrations = ()
         load_result = load_project_with_status(file_path)
         proj = load_result.project
         self.last_load_recovered_from_backup = load_result.recovered_from_backup
         self.last_loaded_backup_path = load_result.backup_path
+        self.last_load_migrations = load_result.migrations
         if not isinstance(proj.title, str) or not proj.title.strip():
             raise CorruptedProjectError("Project title must be a non-empty string.")
         if proj.notation_convention not in ("INT", "DE"):
