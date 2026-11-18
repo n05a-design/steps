@@ -1,6 +1,7 @@
 """Packaging smoke tests for the installable STEPS Python entry point."""
 
 import glob
+import os
 import subprocess
 import sys
 import tempfile
@@ -53,3 +54,48 @@ class TestPackageArtifacts(unittest.TestCase):
                 self.assertEqual(len(entry_points), 1)
                 entry_point_text = wheel.read(entry_points[0]).decode("utf-8")
                 self.assertIn("steps = app.main:main", entry_point_text)
+
+            target_dir = wheel_dir / "installed"
+            install = subprocess.run(
+                [
+                    sys.executable,
+                    "-m",
+                    "pip",
+                    "install",
+                    "--no-deps",
+                    "--target",
+                    str(target_dir),
+                    wheels[0],
+                ],
+                check=False,
+                cwd=wheel_dir,
+                capture_output=True,
+                text=True,
+            )
+            if install.returncode != 0:
+                self.fail(
+                    "Wheel installation failed:\n"
+                    f"{install.stdout}\n{install.stderr}"
+                )
+
+            env = os.environ.copy()
+            env["PYTHONPATH"] = str(target_dir)
+            installed_smoke = subprocess.run(
+                [
+                    sys.executable,
+                    "-B",
+                    "-c",
+                    "from app.main import main; raise SystemExit(main(['--headless']))",
+                ],
+                check=False,
+                cwd=wheel_dir,
+                env=env,
+                capture_output=True,
+                text=True,
+            )
+            if installed_smoke.returncode != 0:
+                self.fail(
+                    "Installed wheel headless smoke failed:\n"
+                    f"{installed_smoke.stdout}\n{installed_smoke.stderr}"
+                )
+            self.assertIn("Headless mode active.", installed_smoke.stdout)
