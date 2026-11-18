@@ -32,6 +32,7 @@ class FakeSession:
         self.key_root = "C"
         self.is_minor = False
         self.bpm = 120.0
+        self.time_signature = (4, 4)
 
 
 class FakeController:
@@ -82,6 +83,7 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.window.key_entry = Mock()
         self.window.mode_var = Mock()
         self.window.tempo_entry = Mock()
+        self.window.meter_entry = Mock()
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/new.stepsproj")
     def test_save_as_updates_current_path_and_window_title(self, choose_path):

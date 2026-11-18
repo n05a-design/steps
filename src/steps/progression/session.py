@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Literal, Optional, Tuple, Union
 
 from ..midi.export_service import MidiExportService
+from ..models.timeline import TimeSignature
 from ..storage.exceptions import CorruptedProjectError
 from ..storage.project_io import Project, load_project, save_project
 from ..storage.undo import UndoStack
@@ -71,6 +72,7 @@ class SessionState:
     ppq: int = 480
     chord_duration_ticks: int = 1920
     voice_leading_style: str = "CONTEMPORARY_POP"
+    time_signature: Tuple[int, int] = (4, 4)
 
 
 class ProgressionSession:
@@ -132,6 +134,10 @@ class ProgressionSession:
     @property
     def bpm(self) -> float:
         return self.state.bpm
+
+    @property
+    def time_signature(self) -> Tuple[int, int]:
+        return self.state.time_signature
 
     @property
     def voice_leading_style(self) -> VoiceLeadingStyle:
@@ -261,8 +267,14 @@ class ProgressionSession:
         new_state.is_minor = is_minor
         self._push_mutation(new_state)
 
-    def set_context(self, key_root: str, is_minor: bool, bpm: float) -> None:
-        """Atomically updates key, mode, and tempo after validating the full context."""
+    def set_context(
+        self,
+        key_root: str,
+        is_minor: bool,
+        bpm: float,
+        time_signature: Optional[Tuple[int, int]] = None,
+    ) -> None:
+        """Atomically updates tonal, tempo, and optional meter context."""
         if not isinstance(is_minor, bool):
             raise ValueError("Minor-mode selection must be a boolean.")
         parse_spelling(key_root, convention=self.convention)
@@ -270,10 +282,24 @@ class ProgressionSession:
             raise ValueError("Tempo must be a number between 20 and 400 BPM.")
         if not 20 <= bpm <= 400:
             raise ValueError("Tempo must be between 20 and 400 BPM.")
+        meter = self.state.time_signature if time_signature is None else time_signature
+        if (
+            not isinstance(meter, tuple)
+            or len(meter) != 2
+            or any(not isinstance(value, int) or isinstance(value, bool) for value in meter)
+        ):
+            raise ValueError("Time signature must contain integer numerator and denominator.")
+        if not 1 <= meter[0] <= 32:
+            raise ValueError("Time signature numerator must be between 1 and 32.")
+        try:
+            TimeSignature(*meter)
+        except ValueError as exc:
+            raise ValueError(f"Invalid time signature: {exc}") from exc
         if (
             key_root == self.state.key_root
             and is_minor == self.state.is_minor
             and float(bpm) == self.state.bpm
+            and meter == self.state.time_signature
         ):
             return
 
@@ -281,6 +307,7 @@ class ProgressionSession:
         new_state.key_root = key_root
         new_state.is_minor = is_minor
         new_state.bpm = float(bpm)
+        new_state.time_signature = meter
         self._push_mutation(new_state)
 
     def get_voicings(
@@ -722,7 +749,10 @@ class ProgressionSession:
             },
             time_settings={
                 "ppq": self.state.ppq,
-                "time_signature": {"numerator": 4, "denominator": 4},
+                "time_signature": {
+                    "numerator": self.state.time_signature[0],
+                    "denominator": self.state.time_signature[1],
+                },
                 "tempo_bpm": self.bpm,
                 "tempo_points": [{"start_tick": 0, "bpm": self.bpm}]
             },
@@ -785,6 +815,9 @@ class ProgressionSession:
 
         bpm = proj.time_settings.get("tempo_bpm", 120.0)
         ppq = proj.time_settings.get("ppq", 480)
+        meter_data = proj.time_settings.get(
+            "time_signature", {"numerator": 4, "denominator": 4}
+        )
         dur = ppq * 4
         key_root = proj.metadata.get("key_root", "C")
         is_minor = proj.metadata.get("is_minor", False)
@@ -800,6 +833,22 @@ class ProgressionSession:
             raise CorruptedProjectError(f"Invalid project tempo: {bpm!r}")
         if not isinstance(ppq, int) or isinstance(ppq, bool) or not 96 <= ppq <= 1920:
             raise CorruptedProjectError(f"Invalid project PPQ: {ppq!r}")
+        if not isinstance(meter_data, dict):
+            raise CorruptedProjectError("Project time signature must be an object.")
+        numerator = meter_data.get("numerator")
+        denominator = meter_data.get("denominator")
+        if (
+            not isinstance(numerator, int)
+            or isinstance(numerator, bool)
+            or not 1 <= numerator <= 32
+            or not isinstance(denominator, int)
+            or isinstance(denominator, bool)
+        ):
+            raise CorruptedProjectError("Project time signature has invalid values.")
+        try:
+            TimeSignature(numerator, denominator)
+        except ValueError as exc:
+            raise CorruptedProjectError(f"Invalid project time signature: {exc}") from exc
 
         new_state = SessionState(
             title=proj.title,
@@ -808,6 +857,7 @@ class ProgressionSession:
             is_minor=is_minor,
             convention=proj.notation_convention,
             bpm=bpm,
+            time_signature=(numerator, denominator),
             ppq=ppq,
             chord_duration_ticks=dur,
             voice_leading_style=resolved_style.value,
@@ -823,5 +873,6 @@ class ProgressionSession:
             bpm=self.bpm,
             ppq=self.state.ppq,
             chord_duration_ticks=self.state.chord_duration_ticks,
+            time_signature=self.state.time_signature,
             smf_format=1
         )

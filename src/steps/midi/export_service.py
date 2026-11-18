@@ -96,23 +96,25 @@ class MidiExportService:
         bpm: float = 120.0,
         ppq: int = 480,
         chord_duration_ticks: int = 1920,
-        smf_format: int = 1
+        smf_format: int = 1,
+        time_signature: tuple[int, int] = (4, 4)
     ) -> Path:
         """
         Exports a sequence of Voicings into an SMF file.
-        Each chord is placed at consecutive bars (chord_duration_ticks, default 1 bar of 4/4).
+        Chords use consecutive tick offsets and the supplied fixed duration; meter metadata
+        does not implicitly rescale event timing.
         """
         midi_file = MidiFile(smf_format=smf_format, division=ppq)
 
         # Track 0 / Conductor
         if smf_format == 1:
             conductor = midi_file.add_track(MidiTrack(name="Conductor"))
-            conductor.add_time_signature(0, 4, 4)
+            conductor.add_time_signature(0, time_signature[0], time_signature[1])
             conductor.add_tempo(0, bpm)
             chords_track = midi_file.add_track(MidiTrack(name="Chords"))
         else:
             chords_track = midi_file.add_track(MidiTrack(name="Chords"))
-            chords_track.add_time_signature(0, 4, 4)
+            chords_track.add_time_signature(0, time_signature[0], time_signature[1])
             chords_track.add_tempo(0, bpm)
 
         current_tick = 0

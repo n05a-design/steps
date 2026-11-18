@@ -229,6 +229,7 @@ class TestLocaleManager(unittest.TestCase):
             window.major_btn = FakeWidget()
             window.minor_btn = FakeWidget()
             window.tempo_lbl = FakeWidget()
+            window.meter_lbl = FakeWidget()
             window.context_btn = FakeWidget()
             window.add_btn = FakeWidget()
             window.update_btn = FakeWidget()
@@ -251,6 +252,7 @@ class TestLocaleManager(unittest.TestCase):
             self.assertEqual(window.key_lbl.options["text"], "Tonart")
             self.assertEqual(window.major_btn.options["text"], "Dur")
             self.assertEqual(window.minor_btn.options["text"], "Moll")
+            self.assertEqual(window.meter_lbl.options["text"], "Taktart")
             self.assertEqual(window.update_btn.options["text"], "Auswahl ändern")
             self.assertEqual(window.remove_btn.options["text"], "Entfernen")
             self.assertEqual(window.move_up_btn.options["text"], "Nach oben")
@@ -309,6 +311,7 @@ class TestDesktopChordEditing(unittest.TestCase):
         window.key_entry = FakeEntry(window.controller.session.key_root)
         window.mode_var = FakeVariable(window.controller.session.is_minor)
         window.tempo_entry = FakeEntry(f"{window.controller.session.bpm:g}")
+        window.meter_entry = FakeEntry("4/4")
         window.context_btn = FakeWidget()
         window.update_btn = FakeWidget()
         window.remove_btn = FakeWidget()
@@ -398,15 +401,20 @@ class TestDesktopChordEditing(unittest.TestCase):
         window.key_entry.value = "D"
         window.mode_var.set(True)
         window.tempo_entry.value = "96.5"
+        window.meter_entry.value = "3/4"
 
         window._on_apply_context()
 
         session = window.controller.session
-        self.assertEqual((session.key_root, session.is_minor, session.bpm), ("D", True, 96.5))
+        self.assertEqual(
+            (session.key_root, session.is_minor, session.bpm, session.time_signature),
+            ("D", True, 96.5, (3, 4)),
+        )
+        self.assertEqual(session.state.chord_duration_ticks, 1920)
         window._on_undo()
         self.assertEqual(
-            (session.key_root, session.is_minor, session.bpm),
-            ("C", False, 120.0),
+            (session.key_root, session.is_minor, session.bpm, session.time_signature),
+            ("C", False, 120.0, (4, 4)),
         )
 
     def test_context_updates_respect_the_existing_german_notation(self):
@@ -418,9 +426,22 @@ class TestDesktopChordEditing(unittest.TestCase):
         self.assertEqual(session.chords, ["H7"])
         self.assertEqual((session.key_root, session.is_minor, session.bpm), ("H", True, 110.0))
 
+    def test_invalid_meter_is_rejected_without_creating_history(self):
+        session = ProgressionSession()
+
+        with self.assertRaises(ValueError):
+            session.set_context("D", True, 96, (33, 4))
+
+        self.assertEqual(
+            (session.key_root, session.is_minor, session.bpm, session.time_signature),
+            ("C", False, 120.0, (4, 4)),
+        )
+        self.assertFalse(session.can_undo)
+
     def test_context_roundtrips_through_the_existing_project_schema(self):
         session = ProgressionSession(initial_chords=["H7"], convention="DE")
-        session.set_context("H", True, 96.5)
+
+        session.set_context("H", True, 96.5, (6, 8))
 
         with tempfile.TemporaryDirectory() as temp_dir:
             project_path = session.save_to_file(Path(temp_dir) / "context.stepsproj")
@@ -430,8 +451,8 @@ class TestDesktopChordEditing(unittest.TestCase):
         self.assertEqual(reopened.convention, "DE")
         self.assertEqual(reopened.chords, ["H7"])
         self.assertEqual(
-            (reopened.key_root, reopened.is_minor, reopened.bpm),
-            ("H", True, 96.5),
+            (reopened.key_root, reopened.is_minor, reopened.bpm, reopened.time_signature),
+            ("H", True, 96.5, (6, 8)),
         )
 
     @patch("app.ui.main_window.messagebox.showerror")
@@ -455,6 +476,18 @@ class TestDesktopChordEditing(unittest.TestCase):
         window._on_apply_context()
         self.assertEqual((session.key_root, session.is_minor, session.bpm), ("C", False, 120.0))
         self.assertEqual(show_error.call_args.args[1], "Tempo must be a number between 20 and 400 BPM.")
+
+        window.tempo_entry.value = "96"
+        window.meter_entry.value = "4/5"
+        window._on_apply_context()
+        self.assertEqual(
+            (session.key_root, session.is_minor, session.bpm, session.time_signature),
+            ("C", False, 120.0, (4, 4)),
+        )
+        self.assertEqual(
+            show_error.call_args.args[1],
+            "Enter a valid time signature (numerator 1-32; denominator 1, 2, 4, 8, 16, or 32), e.g. 4/4 or 6/8.",
+        )
 
     def test_undo_shortcut_does_not_intercept_text_entry(self):
         window = StepsMainWindow.__new__(StepsMainWindow)

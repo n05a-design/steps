@@ -18,6 +18,7 @@ from app.brand import apply_window_icon
 from app.i18n import LocaleManager
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager, default_theme
+from src.steps.models.timeline import TimeSignature
 from src.steps.storage.exceptions import StorageError
 from src.steps.theory.exceptions import MusicTheoryError
 
@@ -105,6 +106,7 @@ class StepsMainWindow:
         self.major_btn.configure(text=t("context.major"))
         self.minor_btn.configure(text=t("context.minor"))
         self.tempo_lbl.configure(text=t("context.tempo"))
+        self.meter_lbl.configure(text=t("context.meter"))
         self.context_btn.configure(text=t("context.apply"))
         self.add_btn.configure(text=t("chord.add"))
         self.update_btn.configure(text=t("chord.update"))
@@ -426,6 +428,23 @@ class StepsMainWindow:
         self.tempo_entry.insert(0, f"{self.controller.session.bpm:g}")
         self.tempo_entry.bind("<Return>", self._on_context_shortcut)
 
+        self.meter_lbl = tk.Label(
+            self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
+        )
+        self.meter_lbl.pack(side=tk.LEFT, padx=(sp.sm, sp.xs))
+        self.meter_entry = tk.Entry(
+            self.context_bar,
+            width=5,
+            bg=colors.bg_window,
+            fg=colors.text_primary,
+            insertbackground=colors.text_primary,
+        )
+        self.meter_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
+        self.meter_entry.insert(
+            0, f"{self.controller.session.time_signature[0]}/{self.controller.session.time_signature[1]}"
+        )
+        self.meter_entry.bind("<Return>", self._on_context_shortcut)
+
         self.context_btn = tk.Button(
             self.context_bar,
             text="",
@@ -564,6 +583,9 @@ class StepsMainWindow:
         self.mode_var.set(self.controller.session.is_minor)
         self.tempo_entry.delete(0, tk.END)
         self.tempo_entry.insert(0, f"{self.controller.session.bpm:g}")
+        numerator, denominator = self.controller.session.time_signature
+        self.meter_entry.delete(0, tk.END)
+        self.meter_entry.insert(0, f"{numerator}/{denominator}")
 
     def _on_apply_context(self) -> None:
         try:
@@ -576,10 +598,26 @@ class StepsMainWindow:
             )
             return
         try:
+            parts = self.meter_entry.get().strip().split("/")
+            if len(parts) != 2:
+                raise ValueError("Expected numerator/denominator.")
+            meter = (int(parts[0].strip()), int(parts[1].strip()))
+            if not 1 <= meter[0] <= 32:
+                raise ValueError("Numerator must be between 1 and 32.")
+            TimeSignature(*meter)
+        except ValueError:
+            messagebox.showerror(
+                self.i18n.translate("context.error.title"),
+                self.i18n.translate("context.meter.invalid"),
+                parent=self.root,
+            )
+            return
+        try:
             self.controller.set_context(
                 self.key_entry.get().strip(),
                 bool(self.mode_var.get()),
                 bpm,
+                meter,
             )
         except MusicTheoryError:
             messagebox.showerror(

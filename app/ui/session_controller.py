@@ -8,7 +8,7 @@ Follows AGENTS.md Rule 4 (Domain boundary separation).
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any, Callable, Dict, List, Literal, Optional, Union
+from typing import Any, Callable, Dict, List, Literal, Optional, Tuple, Union
 
 from src.steps.progression.session import (
     ChordRecommendation,
@@ -81,6 +81,7 @@ class ProgressionSessionController:
             "key_root": self._session.key_root,
             "is_minor": self._session.is_minor,
             "bpm": self._session.bpm,
+            "time_signature": self._session.time_signature,
             "can_undo": self._session.can_undo,
             "can_redo": self._session.can_redo,
         }
@@ -105,8 +106,14 @@ class ProgressionSessionController:
         self._session.move_chord(index, direction)
         self._notify()
 
-    def set_context(self, key_root: str, is_minor: bool, bpm: float) -> None:
-        self._session.set_context(key_root, is_minor, bpm)
+    def set_context(
+        self,
+        key_root: str,
+        is_minor: bool,
+        bpm: float,
+        time_signature: Optional[Tuple[int, int]] = None,
+    ) -> None:
+        self._session.set_context(key_root, is_minor, bpm, time_signature)
         self._notify()
 
     def transpose(self, semitones: int) -> None:

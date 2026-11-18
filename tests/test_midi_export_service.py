@@ -149,6 +149,7 @@ class TestSMFGenerationAndEnvelope(unittest.TestCase):
             bpm=110.0,
             ppq=480,
             chord_duration_ticks=1920,
+            time_signature=(6, 8),
             smf_format=1
         )
         self.assertTrue(out.exists())
@@ -156,6 +157,13 @@ class TestSMFGenerationAndEnvelope(unittest.TestCase):
         env = envelope(data)
         self.assertEqual(env["format"], 1)
         self.assertEqual(env["tracks"], 2)
+        parsed = MidiFile.from_bytes(data)
+        time_signature_events = [
+            event.msg_bytes
+            for event in parsed.tracks[0].raw_events
+            if event.msg_bytes.startswith(b"\xff\x58")
+        ]
+        self.assertEqual(time_signature_events, [b"\xff\x58\x04\x06\x03\x18\x08"])
 
     def test_export_progression_adr017(self):
         out = MidiExportService.export_progression_adr017(
