@@ -10,6 +10,31 @@ permissions:
   contents: read
 
 jobs:
+  desktop-ui-smoke:
+    name: Desktop UI smoke (Ubuntu/Xvfb)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install native Tk display support
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb python3-tk
+
+      - name: Smoke-test native Tk window and core workflow
+        run: |
+          xvfb-run -a python -B -m unittest \
+            tests.test_desktop_app_entrypoint.TestDesktopAppEntrypoint.test_main_window_instantiation_and_wiring \
+            -v
+
   test:
     name: Unit Tests (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest
