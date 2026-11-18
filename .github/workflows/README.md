@@ -1,16 +1,21 @@
-# Automatisierte GitHub-Prüfungen
+# Automated GitHub checks
 
-Die Workflows prüfen unterschiedliche Eigenschaften der jeweils geprüften Revision.
+The workflows validate different properties of the exact revision under test.
 
-| Einstieg | Inhalt |
-| --- | --- |
-| [Python-Tests](python-tests.yml) | Python 3.11–3.14, Skill-Smoke, API-/Golden-Abgleich, Pilot und Coverage. |
-| [Struktur](structure-check.yml) | Verzeichnisstruktur, JSON und Tests bei passenden Pfadänderungen. |
-| [Pilotbelege](pilot-evidence.yml) | Prüft GitHub-Belege mit dem Prüfer aus dem Basiscommit. |
-| [Secret-Scanner](secret-scan.yml) | Prüft den Diff auf versehentlich versionierte Zugangsdaten. |
+| Workflow | Purpose |
+|---|---|
+| [Python tests](python-tests.yml) | Python 3.11–3.14, curation tests, API/Golden checks, pilot publication, and knowledge coverage. |
+| [Repository structure](structure-check.yml) | Directory structure, JSON, and selected tests for relevant path changes. |
+| [Pilot evidence](pilot-evidence.yml) | Validates GitHub approval evidence using the base-commit verifier. |
+| [Secret scanner](secret-scan.yml) | Checks changes for accidentally committed credentials. |
+| [Repository configuration](repository-config.yml) | Parses GitHub YAML, checks issue-form structure, and validates Dependabot/release configuration. |
 
-[Lokale Prüfungen](../../tests/README.md) · [GitHub Actions](https://github.com/n05a-design/steps/actions)
+[Local checks](../../tests/README.md) · [GitHub Actions](https://github.com/n05a-design/steps/actions)
 
-[Zur Bereichsübersicht](../GITHUB_UND_CI.md)
+The pilot-evidence workflow uses the trusted base resolver
+`scripts/resolve_pilot_review_revision.py`. If the pull-request merge ref has
+disappeared, it accepts only a verified completed merge with the expected event
+parents. API or identity errors fail closed; target code is not executed by the
+resolver.
 
-Der Pilot-Evidenzworkflow verwendet den vertrauenswürdigen Base-Resolver `scripts/resolve_pilot_review_revision.py`: Nach verschwundenem PR-Merge-Ref ist ausschließlich derselbe nachweislich abgeschlossene Merge mit exakten Event-Eltern zulässig. API-/Identitätsfehler bleiben gesperrt; Zielcode wird nicht ausgeführt.
+[GitHub and CI overview](../GITHUB_UND_CI.md)

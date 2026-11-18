@@ -1,0 +1,29 @@
+name: Research task
+description: Propose a bounded, source-aware STEPS research task.
+title: "Research: "
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question and scope
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Source candidates, provenance, and rights
+      description: List exact editions/locators and classify rights before adding source files.
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Method, deliverable, and acceptance criteria
+      description: Separate observations, source-backed claims, corpus statistics, and creative heuristics.
+    validations:
+      required: true
+  - type: textarea
+    id: review
+    attributes:
+      label: Human review and publication gate
+      description: Identify what requires domain, translation, or rights review before public use.

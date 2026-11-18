@@ -10,5 +10,7 @@
 8. **Qualitätsgates:** Syntax, Schemata, Tests, Indexe, Migration-Manifest, keine unerwarteten Dateiverluste und keine neuen binären Großdateien.
 9. **Glide:** nur als möglicher technischer Reuse; externe Lizenzbedingungen prüfen, referenzieren statt unkontrolliert kopieren.
 10. **Kritische offene Fragen:** markieren und in `research/gaps/` dokumentieren, nicht als entschiedenen Stand ausgeben.
+11. **Sprachen und Notation:** neue sichtbare UI-/CLI-Texte sind lokalisierungspflichtig. Zielsprachen sind Englisch (`en`) und Deutsch (`de`); die UI-Sprache ist strikt von `INT`/`DE`-Notationskonvention, Tonhöhe und Projektdaten getrennt. Bis ein getesteter i18n-Kern existiert, keine ungetestete zweite Übersetzungslogik anlegen.
+12. **Dokumentationspflege:** bei jedem PR die Cross-Domain-Matrix in [`docs/governance/CONTINUOUS_MAINTENANCE.md`](docs/governance/CONTINUOUS_MAINTENANCE.md) prüfen. Öffentliche neue Dokumente sind standardmäßig englisch; bestehende deutsche Originale und historische Quellen nicht still ersetzen. Dokumentation, Tests, menschliche Fachprüfung und Release getrennt ausweisen.
 
 Primärer Kontext: `docs/project/`; Fachbestand `knowledge/`; Workflows `SKILL.md`.
