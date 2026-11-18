@@ -59,6 +59,10 @@ ein leerer Name wird sichtbar abgewiesen.
 ungespeicherten Änderungen greift derselbe Speichern/Verwerfen/Abbrechen-Dialog
 wie beim Öffnen und Schließen; der bisherige Dateipfad wird nach dem Erstellen
 gelöst und Undo/Redo beginnt für das neue Projekt ohne alte Historie.
+Im Informationsbereich werden für die ausgewählte Progression zusätzlich
+Anfänger-Keyboard-Voicings dargestellt: linke Hand, empfohlene Finger,
+rechtshändige Drei-Noten-Lage und Übergangsberatung. Die Daten stammen aus dem
+bestehenden Session-/Controller-Kern; die Darstellung ist EN/DE lokalisiert.
 
 Die UI-Sprache unterstützt Englisch und Deutsch unabhängig von musikalischer
 Notation. Die Auswahl `system`, `en` oder `de` wird als Benutzereinstellung
