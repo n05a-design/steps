@@ -10,5 +10,6 @@ Die Skripte identifizieren Quellen, prüfen Register und arbeiten mit expliziten
 | [Backup und Restore](backup_knowledge.py) | Sicherung und geprüfte Wiederherstellung. |
 | [Pfadauflösung](register_paths.py) | Zielpfad-Vertrag. |
 | [Registerprüfung](validate_register.py) | Struktur und Abschlussbelege. |
+| [Referenz-IDs](check_reference_ids.py) | Prüft musikalische Identitäten und referenzierte IDs. |
 
 [Zur Bereichsübersicht](../README.md)

@@ -188,6 +188,13 @@ class TestStorageRecoveryIO01to16(unittest.TestCase):
         with self.assertRaises(CorruptedProjectError):
             load_project(self.project_path, auto_recover_from_backup=False)
 
+    def test_invalid_project_root_and_schema_version_are_reported(self):
+        for raw in ("[]", '{"schema_version": null}'):
+            with self.subTest(raw=raw):
+                self.project_path.write_text(raw, encoding="utf-8")
+                with self.assertRaises(CorruptedProjectError):
+                    load_project(self.project_path, auto_recover_from_backup=False)
+
     def test_io11_backup_creation_on_overwrite(self):
         """IO-11: Backup creation: every overwrite generates a dated backup file in .steps_backups."""
         p1 = Project(title="Draft 1")

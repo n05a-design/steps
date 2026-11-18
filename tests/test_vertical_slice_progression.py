@@ -28,6 +28,7 @@ from pathlib import Path
 from app.ui.session_controller import ProgressionSessionController
 from scripts.audit_midi_files import envelope
 from src.steps.progression.session import ProgressionSession
+from src.steps.storage import CorruptedProjectError, Project, save_project
 
 
 class TestVerticalSliceProgression(unittest.TestCase):
@@ -139,6 +140,63 @@ class TestVerticalSliceProgression(unittest.TestCase):
 
         # 10. Notifications check
         self.assertGreaterEqual(len(notifications), 5)
+
+    def test_project_roundtrip_preserves_key_notation_and_mode(self):
+        session = ProgressionSession(
+            initial_chords=["H7", "Em"],
+            key_root="E",
+            is_minor=True,
+            convention="DE",
+            bpm=96.0,
+            voice_leading_style="POWER_CHORDS",
+        )
+        session.save_to_file(self.project_file)
+
+        reopened = ProgressionSession()
+        reopened.load_from_file(self.project_file)
+
+        self.assertEqual(reopened.chords, ["H7", "Em"])
+        self.assertEqual(reopened.key_root, "E")
+        self.assertTrue(reopened.is_minor)
+        self.assertEqual(reopened.convention, "DE")
+        self.assertEqual(reopened.bpm, 96.0)
+        self.assertEqual(reopened.voice_leading_style, "POWER_CHORDS")
+        self.assertFalse(reopened.is_dirty)
+
+    def test_project_without_new_key_metadata_uses_legacy_defaults(self):
+        project = Project(metadata={})
+        save_project(project, self.project_file)
+
+        reopened = ProgressionSession()
+        reopened.load_from_file(self.project_file)
+
+        self.assertEqual(reopened.key_root, "C")
+        self.assertFalse(reopened.is_minor)
+        self.assertEqual(reopened.voice_leading_style, "CONTEMPORARY_POP")
+
+    def test_invalid_project_chord_does_not_replace_current_session(self):
+        invalid_project = Project(
+            tracks=[
+                {
+                    "track_id": "trk_chords",
+                    "track_type": "CHORDS",
+                    "name": "Invalid Chords",
+                    "channel": 0,
+                    "events": [
+                        {"start_tick": 0, "duration_ticks": 480, "payload": "not-a-chord"}
+                    ],
+                }
+            ]
+        )
+        save_project(invalid_project, self.project_file)
+        session = ProgressionSession(initial_chords=["Am", "F"], key_root="A", is_minor=True)
+
+        with self.assertRaises(CorruptedProjectError):
+            session.load_from_file(self.project_file)
+
+        self.assertEqual(session.chords, ["Am", "F"])
+        self.assertEqual(session.key_root, "A")
+        self.assertTrue(session.is_minor)
 
 
 if __name__ == "__main__":

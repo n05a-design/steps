@@ -6,6 +6,8 @@
 - **Geprüfter Ausgangsstand (`origin/main`):** Commit `40e18f0` (nach Merge von PR #141, OA-0026).
 - **Status:** Konsolidierter Stand nach PR #88–#141 und OA-0027. Alle 655 Unittests fehlerfrei bestanden (100% grün). Richtung für v0.1 (publiziert), Lizenz, Fenster, Speicherformat und MIDI-Export sind entschieden. Cross-Domain Recommender (OA-0032), Shell-Voicings (OA-0030), Swing-Ratio Engine (OA-0022), Didaktische Reduktions-Engine (OA-0024), Stilistische Stimmführungsregeln (OA-0026) und Property-Based Tests (OA-0027) sind vollständig implementiert. Nächste anstehende Aufgabe: OA-0028 / OA-0029 (Rationale MIDI-Zeit & SMF-Parser).
 
+> **Aktualitätsabgrenzung (18.11.2026):** Diese Übergabe bewahrt den Prüfstand vom 17.11.2026 bei `40e18f0`; ihre Versions-, Test- und „nächste Aufgabe“-Aussagen sind historische Befunde. Der anschließende `main`-Baseline-Stand `a449adc6caa137bd9b5d46d67841c617487f330f`, das aktuelle Produkt-/Readiness-Ziel und die seitdem implementierten Parser-/Zeitpfade sind in [Implementierungsstand](../IMPLEMENTATION.md), [1.0.0-Readiness](../product/V1.0.0_PRODUCT_CONTRACT.md) und [Roadmap](../roadmap/ROADMAP_AND_RESOURCE_PLAN.md) zusammengeführt. Der nachfolgende Snapshot bleibt unverändert erhalten; er ist keine Beschreibung des aktuellen Checkouts.
+
 **Schnelleinstieg für einen neuen Agenten:** 1. `AGENTS.md` lesen. 2. Abschnitt 2 (Arbeitsregeln) und 5 (Fahrplan) dieser Datei lesen. 3. Entscheidungen im [Register](../../decisions/DECISION_REGISTER.md) und in `decisions/ADR-0*.md`. 4. Offene Punkte in [`OPEN_GAPS.md`](../../research/gaps/OPEN_GAPS.md) (Tabelle „Restprüfung nach dem Fable-Audit“, neueste Zeilen unten). 5. Vor jeder Änderung die Gates aus Abschnitt 4 laufen lassen.
 
 ---

@@ -17,10 +17,11 @@ from pathlib import Path
 from typing import Any, Dict, List, Literal, Optional, Tuple, Union
 
 from ..midi.export_service import MidiExportService
+from ..storage.exceptions import CorruptedProjectError
 from ..storage.project_io import Project, load_project, save_project
 from ..storage.undo import UndoStack
 from ..theory.chord import ChordDefinition, Voicing, parse_chord
-from ..theory.exceptions import ChordConstructionError, ProgressionParsingError
+from ..theory.exceptions import ChordConstructionError, MusicTheoryError, ProgressionParsingError
 from ..theory.pitch import NoteSpelling, parse_spelling
 from .engine import (
     analyze_progression_voice_leading,
@@ -678,6 +679,8 @@ class ProgressionSession:
             notation_convention=self.convention,
             metadata={
                 "voice_leading_style": self.voice_leading_style.value,
+                "key_root": self.key_root,
+                "is_minor": self.is_minor,
             },
             time_settings={
                 "ppq": self.state.ppq,
@@ -702,39 +705,74 @@ class ProgressionSession:
     def load_from_file(self, file_path: Path | str) -> None:
         """Loads session state from a STEPS project file."""
         proj = load_project(file_path)
+        if not isinstance(proj.title, str) or not proj.title.strip():
+            raise CorruptedProjectError("Project title must be a non-empty string.")
+        if proj.notation_convention not in ("INT", "DE"):
+            raise CorruptedProjectError(
+                f"Unsupported notation convention: {proj.notation_convention!r}"
+            )
+        if not isinstance(proj.metadata, dict):
+            raise CorruptedProjectError("Project metadata must be an object.")
+        if not isinstance(proj.time_settings, dict) or not isinstance(proj.tracks, list):
+            raise CorruptedProjectError("Project time settings and tracks have invalid types.")
+
         chords: List[str] = []
         for trk in proj.tracks:
+            if not isinstance(trk, dict):
+                raise CorruptedProjectError("Project track entries must be objects.")
             if trk.get("track_type") == "CHORDS":
-                for ev in trk.get("events", []):
+                events = trk.get("events", [])
+                if not isinstance(events, list):
+                    raise CorruptedProjectError("Chord track events must be an array.")
+                for ev in events:
+                    if not isinstance(ev, dict):
+                        raise CorruptedProjectError("Chord track event entries must be objects.")
                     payload = ev.get("payload")
                     if isinstance(payload, str):
-                        chords.append(payload)
+                        symbol = payload
                     elif isinstance(payload, dict) and "symbol" in payload:
-                        chords.append(payload["symbol"])
+                        symbol = payload["symbol"]
+                        if not isinstance(symbol, str):
+                            raise CorruptedProjectError("Chord event symbols must be strings.")
+                    else:
+                        raise CorruptedProjectError("Chord events must contain a chord symbol.")
+                    try:
+                        parse_chord(symbol, convention=proj.notation_convention)
+                    except MusicTheoryError as exc:
+                        raise CorruptedProjectError(
+                            f"Invalid chord symbol in project: {symbol!r}"
+                        ) from exc
+                    chords.append(symbol)
                 break
-
-        if not chords:
-            chords = ["C", "G", "Am", "F"]
 
         bpm = proj.time_settings.get("tempo_bpm", 120.0)
         ppq = proj.time_settings.get("ppq", 480)
         dur = ppq * 4
-        style_val = (
-            proj.metadata.get("voice_leading_style", "CONTEMPORARY_POP")
-            if proj.metadata
-            else "CONTEMPORARY_POP"
-        )
+        key_root = proj.metadata.get("key_root", "C")
+        is_minor = proj.metadata.get("is_minor", False)
+        style_val = proj.metadata.get("voice_leading_style", "CONTEMPORARY_POP")
+        if not isinstance(key_root, str) or not isinstance(is_minor, bool):
+            raise CorruptedProjectError("Project key context has invalid types.")
+        try:
+            parse_spelling(key_root, convention=proj.notation_convention)
+            resolved_style = VoiceLeadingStyle(str(style_val).upper())
+        except (MusicTheoryError, ValueError) as exc:
+            raise CorruptedProjectError(f"Invalid project key or voice-leading style: {exc}") from exc
+        if not isinstance(bpm, (int, float)) or not 20 <= bpm <= 400:
+            raise CorruptedProjectError(f"Invalid project tempo: {bpm!r}")
+        if not isinstance(ppq, int) or isinstance(ppq, bool) or not 96 <= ppq <= 1920:
+            raise CorruptedProjectError(f"Invalid project PPQ: {ppq!r}")
 
         new_state = SessionState(
             title=proj.title,
             chords=chords,
-            key_root="C",
-            is_minor=False,
+            key_root=key_root,
+            is_minor=is_minor,
             convention=proj.notation_convention,
             bpm=bpm,
             ppq=ppq,
             chord_duration_ticks=dur,
-            voice_leading_style=style_val,
+            voice_leading_style=resolved_style.value,
         )
         self._undo_stack = UndoStack[SessionState](new_state, max_depth=50)
 

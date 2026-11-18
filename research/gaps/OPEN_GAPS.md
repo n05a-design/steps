@@ -1,5 +1,15 @@
 # Offene Evidenz und historische Bestandsaufnahme
 
+## Ganzheitlicher Bestandsaudit (18.11.2026)
+
+[Der Auditbericht zu Ablage, Recherche, Skills und Wissensbasis](GESAMTAUDIT_ABLAGE_RECHERCHE_SKILLS_WISSENSBASIS_2026-11-18.md)
+fasst den geprüften `origin/main`-Stand zusammen. Die formalen Tests bestehen,
+aber 27 Benchmarkfälle bleiben offen; 47 PDF-Extrakte sind weiterhin als
+`REVIEW_REQUIRED` versioniert. Die Rechte-, Quellen-, Adapter- und
+Archivbefunde sind im Bericht mit Aussagegrenzen und priorisierten nächsten
+Schritten dokumentiert. Es wurden keine Forschungsdaten oder historischen
+Versionen entfernt.
+
 ## Nachtstand nach PR #54
 
 [Aktueller Nachtbericht](../../docs/audit/fable-5.2/NACHT_AUDIT_2026-11-14.md)
