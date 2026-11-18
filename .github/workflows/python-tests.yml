@@ -10,6 +10,26 @@ permissions:
   contents: read
 
 jobs:
+  package-artifacts:
+    name: Python wheel artifact
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install build tools
+        run: python -m pip install --upgrade pip setuptools wheel
+
+      - name: Build and inspect wheel
+        run: python -B -m unittest tests.test_package_artifacts -v
+
   desktop-ui-smoke:
     name: Desktop UI smoke (Ubuntu/Xvfb)
     runs-on: ubuntu-latest
