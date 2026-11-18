@@ -210,6 +210,8 @@ class TestLocaleManager(unittest.TestCase):
             window.add_btn = FakeWidget()
             window.update_btn = FakeWidget()
             window.remove_btn = FakeWidget()
+            window.move_up_btn = FakeWidget()
+            window.move_down_btn = FakeWidget()
             window.undo_btn = FakeWidget()
             window.redo_btn = FakeWidget()
             window.trans_down_btn = FakeWidget()
@@ -225,6 +227,8 @@ class TestLocaleManager(unittest.TestCase):
             self.assertEqual(window.title_lbl.options["text"], "ARBEITSBEREICH")
             self.assertEqual(window.update_btn.options["text"], "Auswahl ändern")
             self.assertEqual(window.remove_btn.options["text"], "Entfernen")
+            self.assertEqual(window.move_up_btn.options["text"], "Nach oben")
+            self.assertEqual(window.move_down_btn.options["text"], "Nach unten")
             self.assertEqual(window.undo_btn.options["text"], "Rückgängig")
             self.assertEqual(window.redo_btn.options["text"], "Wiederholen")
             self.assertEqual(window.file_menu.entries[0]["label"], "Öffnen…")
@@ -251,6 +255,8 @@ class TestLocaleManager(unittest.TestCase):
         window.chord_listbox = FakeListbox(selection=(2,))
         window.update_btn = FakeWidget()
         window.remove_btn = FakeWidget()
+        window.move_up_btn = FakeWidget()
+        window.move_down_btn = FakeWidget()
         window.undo_btn = FakeWidget()
         window.redo_btn = FakeWidget()
         window._update_window_title = Mock()
@@ -276,6 +282,8 @@ class TestDesktopChordEditing(unittest.TestCase):
         window.chord_entry = FakeEntry()
         window.update_btn = FakeWidget()
         window.remove_btn = FakeWidget()
+        window.move_up_btn = FakeWidget()
+        window.move_down_btn = FakeWidget()
         window.undo_btn = FakeWidget()
         window.redo_btn = FakeWidget()
         window._display_chord_details = Mock()
@@ -328,6 +336,32 @@ class TestDesktopChordEditing(unittest.TestCase):
 
         self.assertEqual(window.controller.session.chords, ["C"])
         self.assertIn("at least one chord", show_error.call_args.args[1])
+
+    def test_move_chord_preserves_selection_and_is_one_undoable_change(self):
+        window = self.make_window(["C", "G", "Am"])
+        window.chord_listbox.selection = (1,)
+
+        window._on_move_chord(-1)
+
+        self.assertEqual(window.controller.session.chords, ["G", "C", "Am"])
+        self.assertEqual(window.chord_listbox.selection, (0,))
+        self.assertEqual(window.move_up_btn.options["state"], "disabled")
+        self.assertEqual(window.move_down_btn.options["state"], "normal")
+
+        window._on_undo()
+        self.assertEqual(window.controller.session.chords, ["C", "G", "Am"])
+
+    def test_move_at_progression_boundary_does_not_create_history(self):
+        window = self.make_window(["C", "G"])
+        window.chord_listbox.selection = (0,)
+        undo_available = window.controller.session.can_undo
+
+        window._on_move_chord(-1)
+
+        self.assertEqual(window.controller.session.chords, ["C", "G"])
+        self.assertEqual(window.controller.session.can_undo, undo_available)
+        self.assertEqual(window.chord_listbox.selection, (0,))
+        self.assertEqual(window.move_up_btn.options["state"], "disabled")
 
     def test_undo_shortcut_does_not_intercept_text_entry(self):
         window = StepsMainWindow.__new__(StepsMainWindow)

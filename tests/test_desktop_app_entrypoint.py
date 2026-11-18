@@ -110,6 +110,13 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             window.chord_entry.insert(0, "F#m7b5")
             window.add_btn.invoke()
             self.assertIn("F#m7b5", ctrl.session.chords)
+            self.assertEqual(window.chord_listbox.curselection(), (4,))
+
+            window.move_up_btn.invoke()
+            self.assertEqual(ctrl.session.chords[-2:], ["F#m7b5", "F"])
+            self.assertEqual(window.chord_listbox.curselection(), (3,))
+            window.move_down_btn.invoke()
+            self.assertEqual(ctrl.session.chords[-2:], ["F", "F#m7b5"])
 
             window.chord_entry.delete(0, tk.END)
             window.chord_entry.insert(0, "Fm7")

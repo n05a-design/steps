@@ -21,7 +21,8 @@ Der [Implementierungsstand](../docs/IMPLEMENTATION.md) beschreibt den
 vorhandenen Kern und die Grenzen der App-Schnittstelle.
 
 Die Progressionsoberfläche kann Akkorde hinzufügen, den ausgewählten Akkord
-ändern oder entfernen und Änderungen rückgängig machen bzw. wiederholen.
+ändern, entfernen und innerhalb der Progression verschieben sowie Änderungen
+rückgängig machen bzw. wiederholen.
 Ungültige Akkorde und der Versuch, den letzten Akkord zu entfernen, werden
 sichtbar abgewiesen. Die Bedienfelder und Fehlermeldungen folgen der gewählten
 UI-Sprache.

@@ -209,6 +209,22 @@ class ProgressionSession:
         new_state.chords = new_chords
         self._push_mutation(new_state)
 
+    def move_chord(self, index: int, direction: Literal[-1, 1]) -> None:
+        """Moves a chord one position up (-1) or down (1) in the progression."""
+        if direction not in (-1, 1):
+            raise ValueError("Chord move direction must be -1 or 1.")
+        if not (0 <= index < len(self.chords)):
+            raise IndexError(f"Chord index {index} out of range")
+        target = index + direction
+        if not 0 <= target < len(self.chords):
+            return
+
+        new_chords = list(self.chords)
+        new_chords[index], new_chords[target] = new_chords[target], new_chords[index]
+        new_state = copy.deepcopy(self.state)
+        new_state.chords = new_chords
+        self._push_mutation(new_state)
+
     def transpose(self, semitones: int) -> None:
         """
         Transposes all chords and key root by semitones, preserving

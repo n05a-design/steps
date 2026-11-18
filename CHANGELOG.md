@@ -14,7 +14,7 @@
 - 1.0.0-Zielbild, Ist-Stand und offene Freigabegates konsolidiert; Produkt- und GitHub-Dokumentation gegen den aktuellen Stand ergänzt.
 - Der Desktop-Prototyp ergänzt projektbezogenes Öffnen/Speichern mit Dateiauswahl, Rückfrage bei ungespeicherten Änderungen und sichtbaren Fehlern. Session-Dateien bewahren Tonart und Mollmodus; fehlerhafte Akkordsymbole werden vor einem Zustandswechsel abgewiesen.
 - Der Desktop-Prototyp bietet einen persistierten Sprachschalter für Englisch/Deutsch/System, lokalisierte Desktop- und CLI-Texte sowie eine MIDI-Dateiauswahl mit sichtbarem Exportfehler. Notationskonvention und Projektdaten bleiben unabhängig von der UI-Sprache; native Plattform- und Übersetzungsabnahme stehen aus.
-- Die Oberfläche verbindet Akkord-Ändern/Entfernen und Undo/Redo mit der Progressionssession. Ungültige Akkorde und das Entfernen des letzten Akkords werden mit lokalisierten Hinweisen abgewiesen; Tastenkürzel sind unter Windows/Linux und macOS verfügbar.
+- Die Oberfläche verbindet Akkord-Ändern/Entfernen/Verschieben und Undo/Redo mit der Progressionssession. Ungültige Akkorde und das Entfernen des letzten Akkords werden mit lokalisierten Hinweisen abgewiesen; Tastenkürzel sind unter Windows/Linux und macOS verfügbar.
 - Das Python-Wheel enthält jetzt die Desktop-App, Locale-Kataloge, Design-Tokens und Markenressourcen, damit der konfigurierte `steps`-Einstieg und seine Laufzeitressourcen gemeinsam installiert werden.
 - GitHub Issue- und PR-Vorlagen, Dependabot-/Release-Notizkonfiguration und ein YAML-/Issue-Form-Prüfworkflow ergänzt. GitHub-Wiki, Projects, Labels und Funding bleiben explizite Inhaberhandlungen.
 

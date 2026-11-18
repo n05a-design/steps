@@ -99,6 +99,10 @@ class ProgressionSessionController:
         self._session.remove_chord(index)
         self._notify()
 
+    def move_chord(self, index: int, direction: Literal[-1, 1]) -> None:
+        self._session.move_chord(index, direction)
+        self._notify()
+
     def transpose(self, semitones: int) -> None:
         self._session.transpose(semitones)
         self._notify()
