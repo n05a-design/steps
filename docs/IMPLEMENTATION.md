@@ -11,7 +11,9 @@ Akkordereignis; PR #165 ergänzt die bar:beat:tick-Projektion, PR #166 die
 Backup-Recovery-Meldung, PR #167/#168 den Migrationsstatus samt Desktop-Hinweis
 PR #169 die editierbare Projektbezeichnung, PR #170 „Neu“ mit
 Dirty-State-Rückfrage und sauberem Session-Reset sowie PR #176–#179 native UI-
-und Packaging-Gates einschließlich Wheel-Bau/-Installation. Gespeichert und exportiert
+und Packaging-Gates einschließlich Wheel-Bau/-Installation. PR #180/#181
+halten den kanonischen Dokumentations- und Baseline-Stand konsistent.
+Gespeichert und exportiert
 werden weiterhin absolute Tickwerte. Implementierung, Test, fachliche Abnahme
 und Veröffentlichung sind getrennte Statusangaben.
 
