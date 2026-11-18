@@ -34,7 +34,7 @@ class FakeSession:
         self.is_minor = False
         self.bpm = 120.0
         self.time_signature = (4, 4)
-        self.state = SimpleNamespace(ppq=480)
+        self.state = SimpleNamespace(ppq=480, title="My Progression")
         self.last_load_recovered_from_backup = False
         self.last_load_migrations = ()
 
@@ -84,6 +84,7 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.window._project_path = None
         self.window._refresh_all = Mock()
         self.window.detail_text = Mock()
+        self.window.project_title_entry = Mock()
         self.window.key_entry = Mock()
         self.window.mode_var = Mock()
         self.window.tempo_entry = Mock()

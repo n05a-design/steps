@@ -19,6 +19,7 @@
 - Beim Öffnen eines beschädigten Projekts meldet die Desktop-Oberfläche jetzt EN/DE lokalisiert, dass ein gültiges Backup geladen wurde. Die Storage-API liefert parallel einen kompatiblen Load-Status mit Backup-Pfad; bestehende `load_project()`-Aufrufe behalten ihren Rückgabewert.
 - Projektdateien werden über einen expliziten 0.x→1.0.0-Migrationspfad und dokumentierte 1.x-Normalisierungen geladen. Zukunftsschemas mit höherer Major-Version werden weiterhin abgewiesen. Der Load-Status nennt die angewendeten Migration-IDs; fehlende Projekttitel bleiben ein Fehler statt still aufgefüllt zu werden.
 - Beim Öffnen eines migrierten Legacy-Projekts zeigt die Desktop-Oberfläche eine lokalisierte EN/DE-Meldung mit den angewendeten Migration-IDs. Die Meldung unterscheidet Projektwiederherstellung aus einem Backup von Schema-Normalisierung.
+- Der Projektname lässt sich in der Desktop-Oberfläche editieren und wird gemeinsam mit Tonart, Mollmodus, Tempo und Taktart als eine undo-/redo-fähige Kontextaktion gespeichert.
 - Das Python-Wheel enthält jetzt die Desktop-App, Locale-Kataloge, Design-Tokens und Markenressourcen, damit der konfigurierte `steps`-Einstieg und seine Laufzeitressourcen gemeinsam installiert werden.
 - GitHub Issue- und PR-Vorlagen, Dependabot-/Release-Notizkonfiguration und ein YAML-/Issue-Form-Prüfworkflow ergänzt. GitHub-Wiki, Projects, Labels und Funding bleiben explizite Inhaberhandlungen.
 

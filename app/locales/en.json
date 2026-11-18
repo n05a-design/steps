@@ -44,6 +44,8 @@
   "information.heading": "INFORMATION & THEORY",
   "project.save.title": "Save STEPS project",
   "project.open.title": "Open STEPS project",
+  "project.title": "Project",
+  "project.title.invalid": "Project title must contain at least one character.",
   "project.filetype": "STEPS project",
   "json.filetype": "JSON file",
   "project.save.error.title": "Could not save project",

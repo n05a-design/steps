@@ -112,8 +112,9 @@ class ProgressionSessionController:
         is_minor: bool,
         bpm: float,
         time_signature: Optional[Tuple[int, int]] = None,
+        title: Optional[str] = None,
     ) -> None:
-        self._session.set_context(key_root, is_minor, bpm, time_signature)
+        self._session.set_context(key_root, is_minor, bpm, time_signature, title)
         self._notify()
 
     def set_chord_event_timing(self, index: int, start_tick: int, duration_ticks: int) -> None:

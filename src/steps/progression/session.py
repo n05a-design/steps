@@ -327,8 +327,15 @@ class ProgressionSession:
         is_minor: bool,
         bpm: float,
         time_signature: Optional[Tuple[int, int]] = None,
+        title: Optional[str] = None,
     ) -> None:
-        """Atomically updates tonal, tempo, and optional meter context."""
+        """Atomically updates project title, tonal, tempo, and optional meter context."""
+        if title is not None:
+            if not isinstance(title, str) or not title.strip():
+                raise ValueError("Project title must be a non-empty string.")
+            normalized_title = title.strip()
+        else:
+            normalized_title = self.state.title
         if not isinstance(is_minor, bool):
             raise ValueError("Minor-mode selection must be a boolean.")
         parse_spelling(key_root, convention=self.convention)
@@ -354,10 +361,12 @@ class ProgressionSession:
             and is_minor == self.state.is_minor
             and float(bpm) == self.state.bpm
             and meter == self.state.time_signature
+            and normalized_title == self.state.title
         ):
             return
 
         new_state = copy.deepcopy(self.state)
+        new_state.title = normalized_title
         new_state.key_root = key_root
         new_state.is_minor = is_minor
         new_state.bpm = float(bpm)

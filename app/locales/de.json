@@ -44,6 +44,8 @@
   "information.heading": "INFORMATIONS- & THEORIEBEREICH",
   "project.save.title": "STEPS-Projekt speichern",
   "project.open.title": "STEPS-Projekt öffnen",
+  "project.title": "Projekt",
+  "project.title.invalid": "Der Projektname muss mindestens ein Zeichen enthalten.",
   "project.filetype": "STEPS-Projekt",
   "json.filetype": "JSON-Datei",
   "project.save.error.title": "Projekt konnte nicht gespeichert werden",
