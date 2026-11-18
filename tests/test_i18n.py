@@ -259,7 +259,10 @@ class TestLocaleManager(unittest.TestCase):
             self.assertEqual(window.major_btn.options["text"], "Dur")
             self.assertEqual(window.minor_btn.options["text"], "Moll")
             self.assertEqual(window.meter_lbl.options["text"], "Taktart")
-            self.assertEqual(window.event_start_lbl.options["text"], "Start-Tick (PPQ 480)")
+            self.assertEqual(
+                window.event_start_lbl.options["text"],
+                "Start (Takt:Zählzeit:Tick, PPQ 480)",
+            )
             self.assertEqual(window.event_duration_lbl.options["text"], "Dauer in Ticks (PPQ 480)")
             self.assertEqual(window.event_timing_btn.options["text"], "Timing setzen")
             self.assertEqual(window.update_btn.options["text"], "Auswahl ändern")
@@ -286,6 +289,8 @@ class TestLocaleManager(unittest.TestCase):
                 "can_redo": False,
             },
             session=SimpleNamespace(
+                state=SimpleNamespace(ppq=480),
+                time_signature=(4, 4),
                 is_dirty=False,
                 get_chord_event_timing=lambda index: (index * 1920, 1920),
             ),
@@ -435,14 +440,14 @@ class TestDesktopChordEditing(unittest.TestCase):
     def test_event_timing_edit_updates_selected_chord_and_undoes(self):
         window = self.make_window(["C", "G"])
         window.chord_listbox.selection = (1,)
-        window.event_start_entry.value = "2100"
+        window.event_start_entry.value = "2:1:180"
         window.event_duration_entry.value = "720"
 
         window._on_apply_event_timing()
 
         session = window.controller.session
         self.assertEqual(session.get_chord_event_timing(1), (2100, 720))
-        self.assertEqual(window.event_start_entry.value, "2100")
+        self.assertEqual(window.event_start_entry.value, "2:1:180")
         window._on_undo()
         self.assertEqual(session.get_chord_event_timing(1), (1920, 1920))
 
@@ -470,7 +475,7 @@ class TestDesktopChordEditing(unittest.TestCase):
     def test_invalid_event_timing_does_not_change_session(self, show_error):
         window = self.make_window(["C", "G"])
         window.chord_listbox.selection = (1,)
-        window.event_start_entry.value = "-1"
+        window.event_start_entry.value = "1:5:0"
         window.event_duration_entry.value = "0"
 
         window._on_apply_event_timing()
@@ -478,8 +483,20 @@ class TestDesktopChordEditing(unittest.TestCase):
         self.assertEqual(window.controller.session.get_chord_event_timing(1), (1920, 1920))
         self.assertEqual(
             show_error.call_args.args[1],
-            "Start must be a non-negative whole tick and duration must be a positive whole number of ticks.",
+            "Enter a valid bar:beat:tick position (tick is within the metric beat) and a positive whole-number duration in ticks.",
         )
+
+    def test_meter_change_reprojects_position_without_changing_absolute_tick(self):
+        window = self.make_window(["C", "G"])
+        session = window.controller.session
+        session.set_chord_event_timing(0, 480, 960)
+        window.chord_listbox.selection = (0,)
+        window.meter_entry.value = "6/8"
+
+        window._on_apply_context()
+
+        self.assertEqual(session.get_chord_event_timing(0), (480, 960))
+        self.assertEqual(window.event_start_entry.value, "1:3:0")
 
     def test_context_controls_apply_and_undo_key_mode_and_tempo_atomically(self):
         window = self.make_window(["C", "G"])
