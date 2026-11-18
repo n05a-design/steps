@@ -102,8 +102,9 @@ class StepsMainWindow:
         self.file_menu.entryconfigure(1, label=t("file.open"))
         self.file_menu.entryconfigure(2, label=t("file.save"))
         self.file_menu.entryconfigure(3, label=t("file.save_as"))
-        self.menu_bar.entryconfigure(0, label=t("file.menu"))
-        self.menu_bar.entryconfigure(1, label=t("settings.menu"))
+        self.menu_bar.delete(0, tk.END)
+        self.menu_bar.add_cascade(label=t("file.menu"), menu=self.file_menu)
+        self.menu_bar.add_cascade(label=t("settings.menu"), menu=self.settings_menu)
         self.settings_menu.entryconfigure(0, label=t("language.menu"))
         for index, key in enumerate(("language.system", "language.en", "language.de")):
             self.language_menu.entryconfigure(index, label=t(key))
