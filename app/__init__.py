@@ -1,0 +1,1 @@
+"""STEPS desktop application package."""

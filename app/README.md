@@ -20,6 +20,13 @@ Desktop-Start, Oberfläche und Plattformintegration sind Ziel dieser Schicht.
 Der [Implementierungsstand](../docs/IMPLEMENTATION.md) beschreibt den
 vorhandenen Kern und die Grenzen der App-Schnittstelle.
 
+Die UI-Sprache unterstützt Englisch und Deutsch unabhängig von musikalischer
+Notation. Die Auswahl `system`, `en` oder `de` wird als Benutzereinstellung
+gespeichert; `--language` überschreibt sie nur für den aktuellen CLI-Lauf.
+Übersetzungskataloge liegen unter [locales](locales/). Fachliche Lerninhalte
+werden dadurch nicht automatisch übersetzt; ihre Sprachfassungen benötigen
+eigene fachliche und sprachliche Reviews.
+
 | Ordner | Zuständigkeit |
 | --- | --- |
 | [core](core/README.md) | App-Start und Zusammensetzung der Komponenten. |

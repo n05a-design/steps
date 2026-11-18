@@ -12,37 +12,53 @@ import os
 import sys
 from typing import Optional
 
+from app.i18n import LocaleManager, SUPPORTED_LANGUAGES
 from app.ui.session_controller import ProgressionSessionController
 
 
-def build_parser() -> argparse.ArgumentParser:
+def build_parser(i18n: Optional[LocaleManager] = None) -> argparse.ArgumentParser:
+    i18n = i18n or LocaleManager()
     parser = argparse.ArgumentParser(
         prog="steps",
-        description="STEPS – Reine, testbare Musik- & Harmonielehre und Desktop Applikation"
+        description=i18n.translate("cli.description")
     )
     parser.add_argument(
         "--headless",
         action="store_true",
-        help="Startet ohne graphisches Fenster (für CI- und Terminal-Automatisierung)."
+        help=i18n.translate("cli.headless.help")
     )
     parser.add_argument(
         "--theme",
         choices=["dark", "light"],
         default="dark",
-        help="Aktives Farb-Theme (Standard: dark)."
+        help=i18n.translate("cli.theme.help")
     )
     parser.add_argument(
         "--export-midi",
         type=str,
         default=None,
-        help="Exportiert die Initial-Progression direkt in eine SMF-MIDI-Datei und beendet."
+        help=i18n.translate("cli.export.help")
+    )
+    parser.add_argument(
+        "--language",
+        choices=SUPPORTED_LANGUAGES,
+        default=None,
+        help=i18n.translate("cli.language.help"),
     )
     return parser
 
 
 def main(argv: Optional[list[str]] = None) -> int:
-    parser = build_parser()
-    args = parser.parse_args(argv)
+    command_line = sys.argv[1:] if argv is None else argv
+    i18n = LocaleManager()
+    language_parser = argparse.ArgumentParser(add_help=False)
+    language_parser.add_argument("--language")
+    language_args, _ = language_parser.parse_known_args(command_line)
+    if language_args.language is not None:
+        i18n.set_preference(language_args.language, persist=False)
+
+    parser = build_parser(i18n)
+    args = parser.parse_args(command_line)
 
     controller = ProgressionSessionController()
 
@@ -53,7 +69,7 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     if args.export_midi:
         out_path = controller.export_midi(args.export_midi)
-        print(f"[STEPS] MIDI-Export erfolgreich: {out_path}")
+        print(i18n.translate("cli.midi.success", path=out_path))
         return 0
 
     # Auto-detect headless environment (e.g. Linux CI without X11 or macOS server)
@@ -61,11 +77,11 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     if is_headless:
         state = controller.get_state_summary()
-        print("[STEPS] Headless-Modus aktiv.")
-        print(f"  Progression: {' -> '.join(state['chords'])}")
-        print(f"  Tonart:      {state['key']}")
-        print(f"  Tempo:       {state['bpm']} BPM")
-        print("[STEPS] Initialisierung und Controller-Check erfolgreich.")
+        print(i18n.translate("cli.headless.active"))
+        print(i18n.translate("cli.progression", chords=" -> ".join(state["chords"])))
+        print(i18n.translate("cli.key", key=state["key"]))
+        print(i18n.translate("cli.tempo", bpm=state["bpm"]))
+        print(i18n.translate("cli.ready"))
         return 0
 
     import tkinter as tk
@@ -74,7 +90,7 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     theme = ThemeManager(mode=args.theme)
     root = tk.Tk()
-    app = StepsMainWindow(root, controller=controller, theme=theme)
+    app = StepsMainWindow(root, controller=controller, theme=theme, locale_manager=i18n)
     root.mainloop()
     return 0
 

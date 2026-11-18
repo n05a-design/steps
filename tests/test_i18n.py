@@ -1,0 +1,241 @@
+"""Tests for localized catalogs and independent UI-language preferences."""
+
+import ast
+import json
+from pathlib import Path
+from string import Formatter
+import tempfile
+import unittest
+from types import SimpleNamespace
+from unittest.mock import Mock
+
+from app.i18n import LocaleManager, detect_system_locale, preference_path
+from app.ui.main_window import StepsMainWindow
+from src.steps.progression.session import ProgressionSession
+
+
+ROOT = Path(__file__).resolve().parents[1]
+CATALOG_DIR = ROOT / "app" / "locales"
+
+
+class FakeMenu:
+    def __init__(self, size):
+        self.entries = [{} for _ in range(size)]
+
+    def entryconfigure(self, index, **options):
+        self.entries[index].update(options)
+
+
+class FakeWidget:
+    def __init__(self):
+        self.options = {}
+
+    def configure(self, **options):
+        self.options.update(options)
+
+
+class FakeRoot:
+    def __init__(self):
+        self.title_text = ""
+
+    def title(self, value):
+        self.title_text = value
+
+
+class FakeListbox:
+    def __init__(self, selection=()):
+        self.items = []
+        self.selection = tuple(selection)
+
+    def curselection(self):
+        return self.selection
+
+    def delete(self, start, end):
+        self.items.clear()
+        self.selection = ()
+
+    def insert(self, index, value):
+        self.items.append(value)
+
+    def select_set(self, index):
+        self.selection = (index,)
+
+
+class TestLocaleManager(unittest.TestCase):
+    def test_catalogs_have_identical_keys_and_placeholders(self):
+        english = json.loads((CATALOG_DIR / "en.json").read_text(encoding="utf-8"))
+        german = json.loads((CATALOG_DIR / "de.json").read_text(encoding="utf-8"))
+        english_manager = LocaleManager(preference="en")
+        german_manager = LocaleManager(preference="de")
+        self.assertEqual(english.keys(), german.keys())
+        self.assertTrue(all(value.strip() for value in english.values()))
+        app_sources = [ROOT / "app/main.py", ROOT / "app/ui/main_window.py"]
+        referenced_keys = set()
+        for source in app_sources:
+            tree = ast.parse(source.read_text(encoding="utf-8"))
+            for node in ast.walk(tree):
+                if (
+                    isinstance(node, ast.Call)
+                    and isinstance(node.func, ast.Attribute)
+                    and node.func.attr == "translate"
+                    and node.args
+                    and isinstance(node.args[0], ast.Constant)
+                    and isinstance(node.args[0].value, str)
+                ):
+                    referenced_keys.add(node.args[0].value)
+        referenced_keys.update(("language.system", "language.en", "language.de"))
+        self.assertTrue(referenced_keys <= english.keys())
+        for key in english:
+            with self.subTest(key=key):
+                en_fields = {field for _, field, _, _ in Formatter().parse(english[key]) if field}
+                de_fields = {field for _, field, _, _ in Formatter().parse(german[key]) if field}
+                self.assertEqual(en_fields, de_fields)
+                values = {field: "value" for field in en_fields}
+                self.assertEqual(
+                    english_manager.translate(key, **values),
+                    english[key].format(**values),
+                )
+                self.assertEqual(
+                    german_manager.translate(key, **values),
+                    german[key].format(**values),
+                )
+
+    def test_system_and_invalid_preferences_resolve_deterministically(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            settings = Path(temp_dir) / "preferences.json"
+            manager = LocaleManager(settings_file=settings, system_locale="de_AT")
+            self.assertEqual(manager.language, "de")
+            self.assertEqual(manager.set_preference("system", persist=False), "de")
+            self.assertEqual(manager.set_preference("xx", persist=False), "de")
+
+            english = LocaleManager(
+                preference="system", settings_file=settings, system_locale="fr_FR"
+            )
+            self.assertEqual(english.language, "en")
+            settings.write_text('{"language":"invalid"}', encoding="utf-8")
+            invalid_saved = LocaleManager(settings_file=settings, system_locale="de_AT")
+            self.assertEqual(invalid_saved.preference, "system")
+            self.assertEqual(invalid_saved.language, "de")
+
+    def test_system_locale_environment_precedence_and_unsupported_fallback(self):
+        self.assertEqual(
+            detect_system_locale(
+                {"LANGUAGE": "fr_FR:de_DE", "LC_ALL": "en_US", "LANG": "en_US"}
+            ),
+            "de_DE",
+        )
+        self.assertEqual(
+            detect_system_locale({"LC_ALL": "de_DE", "LC_MESSAGES": "en_US", "LANG": "en_US"}),
+            "de_DE",
+        )
+        manager = LocaleManager(
+            preference="system", settings_file=Path("/nonexistent/preferences.json"),
+            environ={"LC_ALL": "fr_FR"},
+        )
+        self.assertEqual(manager.language, "en")
+
+    def test_preference_persists_and_runtime_language_switch_does_not_change_music_state(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            settings = Path(temp_dir) / "preferences.json"
+            manager = LocaleManager(settings_file=settings, system_locale="en_US")
+            session = ProgressionSession(initial_chords=["H7", "Em"], convention="DE")
+
+            self.assertEqual(manager.set_preference("de"), "de")
+            self.assertEqual(json.loads(settings.read_text(encoding="utf-8")), {"language": "de"})
+            self.assertEqual(manager.set_preference("en"), "en")
+            reopened = LocaleManager(settings_file=settings, system_locale="en_US")
+
+            self.assertEqual(reopened.preference, "en")
+            self.assertEqual(session.convention, "DE")
+            self.assertEqual(session.chords, ["H7", "Em"])
+            midi_a = Path(temp_dir) / "german-ui.mid"
+            midi_b = Path(temp_dir) / "english-ui.mid"
+            manager.set_preference("de", persist=False)
+            session.export_midi_file(midi_a)
+            manager.set_preference("en", persist=False)
+            session.export_midi_file(midi_b)
+            self.assertEqual(midi_a.read_bytes(), midi_b.read_bytes())
+
+    def test_unknown_translation_key_is_an_explicit_error(self):
+        manager = LocaleManager(preference="en", system_locale="en_US")
+        with self.assertRaisesRegex(KeyError, "Missing translation key"):
+            manager.translate("missing.key")
+        self.assertEqual(
+            manager.translate("midi.export.success", path="/tmp/result.mid"),
+            "MIDI file exported to:\n/tmp/result.mid",
+        )
+
+    def test_language_preference_paths_follow_platform_conventions(self):
+        home = Path("/home/tester")
+        self.assertEqual(
+            preference_path(platform="darwin", home=home),
+            home / "Library/Application Support/STEPS/preferences.json",
+        )
+        self.assertEqual(
+            preference_path(
+                platform="win32", environ={"APPDATA": "C:/Users/test/AppData/Roaming"}, home=home
+            ),
+            Path("C:/Users/test/AppData/Roaming/STEPS/preferences.json"),
+        )
+        self.assertEqual(
+            preference_path(
+                platform="linux", environ={"XDG_CONFIG_HOME": "/tmp/config"}, home=home
+            ),
+            Path("/tmp/config/steps/preferences.json"),
+        )
+
+    def test_desktop_language_switch_relocalizes_widgets_and_persists(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            window = StepsMainWindow.__new__(StepsMainWindow)
+            window.i18n = LocaleManager(
+                preference="en",
+                settings_file=Path(temp_dir) / "preferences.json",
+                system_locale="en_US",
+            )
+            window.root = FakeRoot()
+            window.file_menu = FakeMenu(3)
+            window.menu_bar = FakeMenu(2)
+            window.settings_menu = FakeMenu(1)
+            window.language_menu = FakeMenu(3)
+            window.title_lbl = FakeWidget()
+            window.add_btn = FakeWidget()
+            window.trans_down_btn = FakeWidget()
+            window.trans_up_btn = FakeWidget()
+            window.export_btn = FakeWidget()
+            window.info_lbl = FakeWidget()
+            window._refresh_all = Mock()
+
+            window._localize_widgets()
+            self.assertEqual(window.title_lbl.options["text"], "WORKSPACE")
+            window._on_language_change("de")
+
+            self.assertEqual(window.title_lbl.options["text"], "ARBEITSBEREICH")
+            self.assertEqual(window.file_menu.entries[0]["label"], "Öffnen…")
+            self.assertEqual(window.root.title_text, "STEPS — Harmonielehre & Musiktheorie")
+            self.assertEqual(
+                json.loads((Path(temp_dir) / "preferences.json").read_text(encoding="utf-8")),
+                {"language": "de"},
+            )
+            window._refresh_all.assert_called_once_with(preserve_selection=True)
+
+    def test_refresh_after_language_switch_preserves_selected_chord(self):
+        window = StepsMainWindow.__new__(StepsMainWindow)
+        window.controller = SimpleNamespace(
+            get_state_summary=lambda: {"title": "Progression", "chords": ["C", "G", "Am"]},
+            session=SimpleNamespace(is_dirty=False),
+        )
+        window.i18n = LocaleManager(preference="en")
+        window._project_path = None
+        window.chord_listbox = FakeListbox(selection=(2,))
+        window._update_window_title = Mock()
+        window._display_chord_details = Mock()
+        window._display_empty_info = Mock()
+
+        window._refresh_all(preserve_selection=True)
+
+        self.assertEqual(window.chord_listbox.selection, (2,))
+        window._display_chord_details.assert_called_once_with("Am")
+
+
+if __name__ == "__main__":
+    unittest.main()
