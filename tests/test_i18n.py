@@ -12,7 +12,9 @@ from unittest.mock import Mock, patch
 from app.i18n import LocaleManager, detect_system_locale, preference_path
 from app.ui.main_window import StepsMainWindow
 from app.ui.session_controller import ProgressionSessionController
+from src.steps.midi import MidiFile
 from src.steps.progression.session import ProgressionSession
+from src.steps.storage.exceptions import CorruptedProjectError
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -218,6 +220,7 @@ class TestLocaleManager(unittest.TestCase):
                 settings_file=Path(temp_dir) / "preferences.json",
                 system_locale="en_US",
             )
+            window.controller = ProgressionSessionController(ProgressionSession())
             window.root = FakeRoot()
             window.file_menu = FakeMenu(3)
             window.menu_bar = FakeMenu(2)
@@ -231,6 +234,9 @@ class TestLocaleManager(unittest.TestCase):
             window.tempo_lbl = FakeWidget()
             window.meter_lbl = FakeWidget()
             window.context_btn = FakeWidget()
+            window.event_start_lbl = FakeWidget()
+            window.event_duration_lbl = FakeWidget()
+            window.event_timing_btn = FakeWidget()
             window.add_btn = FakeWidget()
             window.update_btn = FakeWidget()
             window.remove_btn = FakeWidget()
@@ -253,6 +259,9 @@ class TestLocaleManager(unittest.TestCase):
             self.assertEqual(window.major_btn.options["text"], "Dur")
             self.assertEqual(window.minor_btn.options["text"], "Moll")
             self.assertEqual(window.meter_lbl.options["text"], "Taktart")
+            self.assertEqual(window.event_start_lbl.options["text"], "Start-Tick (PPQ 480)")
+            self.assertEqual(window.event_duration_lbl.options["text"], "Dauer in Ticks (PPQ 480)")
+            self.assertEqual(window.event_timing_btn.options["text"], "Timing setzen")
             self.assertEqual(window.update_btn.options["text"], "Auswahl ändern")
             self.assertEqual(window.remove_btn.options["text"], "Entfernen")
             self.assertEqual(window.move_up_btn.options["text"], "Nach oben")
@@ -276,7 +285,10 @@ class TestLocaleManager(unittest.TestCase):
                 "can_undo": False,
                 "can_redo": False,
             },
-            session=SimpleNamespace(is_dirty=False),
+            session=SimpleNamespace(
+                is_dirty=False,
+                get_chord_event_timing=lambda index: (index * 1920, 1920),
+            ),
         )
         window.i18n = LocaleManager(preference="en")
         window._project_path = None
@@ -287,6 +299,9 @@ class TestLocaleManager(unittest.TestCase):
         window.move_down_btn = FakeWidget()
         window.undo_btn = FakeWidget()
         window.redo_btn = FakeWidget()
+        window.event_start_entry = FakeEntry()
+        window.event_duration_entry = FakeEntry()
+        window.event_timing_btn = FakeWidget()
         window._update_window_title = Mock()
         window._display_chord_details = Mock()
         window._display_empty_info = Mock()
@@ -312,6 +327,11 @@ class TestDesktopChordEditing(unittest.TestCase):
         window.mode_var = FakeVariable(window.controller.session.is_minor)
         window.tempo_entry = FakeEntry(f"{window.controller.session.bpm:g}")
         window.meter_entry = FakeEntry("4/4")
+        window.event_start_entry = FakeEntry()
+        window.event_duration_entry = FakeEntry()
+        window.event_start_lbl = FakeWidget()
+        window.event_duration_lbl = FakeWidget()
+        window.event_timing_btn = FakeWidget()
         window.context_btn = FakeWidget()
         window.update_btn = FakeWidget()
         window.remove_btn = FakeWidget()
@@ -372,6 +392,7 @@ class TestDesktopChordEditing(unittest.TestCase):
 
     def test_move_chord_preserves_selection_and_is_one_undoable_change(self):
         window = self.make_window(["C", "G", "Am"])
+        window.controller.session.set_chord_event_timing(1, 2000, 960)
         window.chord_listbox.selection = (1,)
 
         window._on_move_chord(-1)
@@ -380,9 +401,11 @@ class TestDesktopChordEditing(unittest.TestCase):
         self.assertEqual(window.chord_listbox.selection, (0,))
         self.assertEqual(window.move_up_btn.options["state"], "disabled")
         self.assertEqual(window.move_down_btn.options["state"], "normal")
+        self.assertEqual(window.controller.session.get_chord_event_timing(0), (2000, 960))
 
         window._on_undo()
         self.assertEqual(window.controller.session.chords, ["C", "G", "Am"])
+        self.assertEqual(window.controller.session.get_chord_event_timing(1), (2000, 960))
 
     def test_move_at_progression_boundary_does_not_create_history(self):
         window = self.make_window(["C", "G"])
@@ -395,6 +418,68 @@ class TestDesktopChordEditing(unittest.TestCase):
         self.assertEqual(window.controller.session.can_undo, undo_available)
         self.assertEqual(window.chord_listbox.selection, (0,))
         self.assertEqual(window.move_up_btn.options["state"], "disabled")
+
+    def test_inserted_chord_gets_a_slot_and_shifts_later_events(self):
+        session = ProgressionSession(initial_chords=["C", "G"])
+
+        session.add_chord("F", position=1)
+
+        self.assertEqual(session.chords, ["C", "F", "G"])
+        self.assertEqual(
+            [session.get_chord_event_timing(index) for index in range(3)],
+            [(0, 1920), (1920, 1920), (3840, 1920)],
+        )
+        session.remove_chord(1)
+        self.assertEqual(session.get_chord_event_timing(1), (3840, 1920))
+
+    def test_event_timing_edit_updates_selected_chord_and_undoes(self):
+        window = self.make_window(["C", "G"])
+        window.chord_listbox.selection = (1,)
+        window.event_start_entry.value = "2100"
+        window.event_duration_entry.value = "720"
+
+        window._on_apply_event_timing()
+
+        session = window.controller.session
+        self.assertEqual(session.get_chord_event_timing(1), (2100, 720))
+        self.assertEqual(window.event_start_entry.value, "2100")
+        window._on_undo()
+        self.assertEqual(session.get_chord_event_timing(1), (1920, 1920))
+
+    def test_session_midi_export_uses_event_specific_timing(self):
+        session = ProgressionSession(initial_chords=["C", "G"])
+        session.set_chord_event_timing(0, 240, 960)
+        session.set_chord_event_timing(1, 1500, 480)
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_path = session.export_midi_file(Path(temp_dir) / "timing.mid")
+            parsed = MidiFile.from_bytes(output_path.read_bytes())
+
+        note_ons = [
+            event for event in parsed.tracks[1].raw_events
+            if event.msg_bytes[0] & 0xF0 == 0x90
+        ]
+        note_offs = [
+            event for event in parsed.tracks[1].raw_events
+            if event.msg_bytes[0] & 0xF0 == 0x80
+        ]
+        self.assertEqual({event.abs_tick for event in note_ons}, {240, 1500})
+        self.assertEqual({event.abs_tick for event in note_offs}, {1200, 1980})
+
+    @patch("app.ui.main_window.messagebox.showerror")
+    def test_invalid_event_timing_does_not_change_session(self, show_error):
+        window = self.make_window(["C", "G"])
+        window.chord_listbox.selection = (1,)
+        window.event_start_entry.value = "-1"
+        window.event_duration_entry.value = "0"
+
+        window._on_apply_event_timing()
+
+        self.assertEqual(window.controller.session.get_chord_event_timing(1), (1920, 1920))
+        self.assertEqual(
+            show_error.call_args.args[1],
+            "Start must be a non-negative whole tick and duration must be a positive whole number of ticks.",
+        )
 
     def test_context_controls_apply_and_undo_key_mode_and_tempo_atomically(self):
         window = self.make_window(["C", "G"])
@@ -439,9 +524,11 @@ class TestDesktopChordEditing(unittest.TestCase):
         self.assertFalse(session.can_undo)
 
     def test_context_roundtrips_through_the_existing_project_schema(self):
-        session = ProgressionSession(initial_chords=["H7"], convention="DE")
+        session = ProgressionSession(initial_chords=["H7", "Em"], convention="DE")
 
         session.set_context("H", True, 96.5, (6, 8))
+        session.set_chord_event_timing(0, 120, 720)
+        session.set_chord_event_timing(1, 1080, 360)
 
         with tempfile.TemporaryDirectory() as temp_dir:
             project_path = session.save_to_file(Path(temp_dir) / "context.stepsproj")
@@ -449,11 +536,27 @@ class TestDesktopChordEditing(unittest.TestCase):
             reopened.load_from_file(project_path)
 
         self.assertEqual(reopened.convention, "DE")
-        self.assertEqual(reopened.chords, ["H7"])
+        self.assertEqual(reopened.chords, ["H7", "Em"])
+        self.assertEqual(reopened.get_chord_event_timing(0), (120, 720))
+        self.assertEqual(reopened.get_chord_event_timing(1), (1080, 360))
         self.assertEqual(
             (reopened.key_root, reopened.is_minor, reopened.bpm, reopened.time_signature),
             ("H", True, 96.5, (6, 8)),
         )
+
+    def test_invalid_project_event_timing_does_not_replace_session(self):
+        source = ProgressionSession(initial_chords=["C"])
+        target = ProgressionSession(initial_chords=["Am"])
+        with tempfile.TemporaryDirectory() as temp_dir:
+            project_path = source.save_to_file(Path(temp_dir) / "invalid-timing.stepsproj")
+            project_data = json.loads(project_path.read_text(encoding="utf-8"))
+            project_data["tracks"][0]["events"][0]["start_tick"] = -1
+            project_path.write_text(json.dumps(project_data), encoding="utf-8")
+
+            with self.assertRaises(CorruptedProjectError):
+                target.load_from_file(project_path)
+
+        self.assertEqual(target.chords, ["Am"])
 
     @patch("app.ui.main_window.messagebox.showerror")
     def test_invalid_key_or_tempo_does_not_partially_update_context(self, show_error):

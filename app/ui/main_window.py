@@ -108,6 +108,8 @@ class StepsMainWindow:
         self.tempo_lbl.configure(text=t("context.tempo"))
         self.meter_lbl.configure(text=t("context.meter"))
         self.context_btn.configure(text=t("context.apply"))
+        self._update_event_timing_labels()
+        self.event_timing_btn.configure(text=t("event.apply"))
         self.add_btn.configure(text=t("chord.add"))
         self.update_btn.configure(text=t("chord.update"))
         self.remove_btn.configure(text=t("chord.remove"))
@@ -456,6 +458,47 @@ class StepsMainWindow:
         )
         self.context_btn.pack(side=tk.LEFT, padx=sp.xs)
 
+        self.timing_bar = tk.Frame(self.work_area, bg=colors.bg_surface, padx=sp.sm)
+        self.timing_bar.pack(fill=tk.X, pady=(0, sp.xs))
+        self.event_start_lbl = tk.Label(
+            self.timing_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
+        )
+        self.event_start_lbl.pack(side=tk.LEFT, padx=(0, sp.xs))
+        self.event_start_entry = tk.Entry(
+            self.timing_bar,
+            width=9,
+            bg=colors.bg_window,
+            fg=colors.text_primary,
+            insertbackground=colors.text_primary,
+        )
+        self.event_start_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
+        self.event_start_entry.bind("<Return>", self._on_event_timing_shortcut)
+
+        self.event_duration_lbl = tk.Label(
+            self.timing_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
+        )
+        self.event_duration_lbl.pack(side=tk.LEFT, padx=(0, sp.xs))
+        self.event_duration_entry = tk.Entry(
+            self.timing_bar,
+            width=9,
+            bg=colors.bg_window,
+            fg=colors.text_primary,
+            insertbackground=colors.text_primary,
+        )
+        self.event_duration_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
+        self.event_duration_entry.bind("<Return>", self._on_event_timing_shortcut)
+
+        self.event_timing_btn = tk.Button(
+            self.timing_bar,
+            text="",
+            command=self._on_apply_event_timing,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            relief=tk.FLAT,
+            padx=sp.sm,
+        )
+        self.event_timing_btn.pack(side=tk.LEFT, padx=sp.xs)
+
         # Transpose Buttons
         self.trans_down_btn = tk.Button(
             self.control_bar,
@@ -571,11 +614,45 @@ class StepsMainWindow:
             else:
                 index = min(selected[0], len(state["chords"]) - 1) if selected else 0
             self.chord_listbox.select_set(index)
+            self._load_event_timing_controls(index)
             self._update_move_controls(index, len(state["chords"]))
             self._display_chord_details(state["chords"][index])
         else:
+            self._load_event_timing_controls(None)
             self._update_move_controls(None, 0)
             self._display_empty_info()
+
+    def _load_event_timing_controls(self, index: Optional[int]) -> None:
+        if index is None:
+            start_tick, duration_ticks = "", ""
+        else:
+            start_tick, duration_ticks = self.controller.session.get_chord_event_timing(index)
+        self.event_start_entry.delete(0, tk.END)
+        self.event_start_entry.insert(0, str(start_tick))
+        self.event_duration_entry.delete(0, tk.END)
+        self.event_duration_entry.insert(0, str(duration_ticks))
+        self.event_timing_btn.configure(state=tk.NORMAL if index is not None else tk.DISABLED)
+
+    def _on_event_timing_shortcut(self, _event: tk.Event) -> str:
+        self._on_apply_event_timing()
+        return "break"
+
+    def _on_apply_event_timing(self) -> None:
+        index = self._selected_chord_index()
+        if index is None:
+            return
+        try:
+            start_tick = int(self.event_start_entry.get().strip())
+            duration_ticks = int(self.event_duration_entry.get().strip())
+            self.controller.set_chord_event_timing(index, start_tick, duration_ticks)
+        except ValueError:
+            messagebox.showerror(
+                self.i18n.translate("event.timing.error.title"),
+                self.i18n.translate("event.timing.invalid"),
+                parent=self.root,
+            )
+            return
+        self._refresh_all(preserve_selection=True)
 
     def _load_context_controls(self) -> None:
         self.key_entry.delete(0, tk.END)
@@ -586,6 +663,16 @@ class StepsMainWindow:
         numerator, denominator = self.controller.session.time_signature
         self.meter_entry.delete(0, tk.END)
         self.meter_entry.insert(0, f"{numerator}/{denominator}")
+        self._update_event_timing_labels()
+
+    def _update_event_timing_labels(self) -> None:
+        ppq = self.controller.session.state.ppq
+        self.event_start_lbl.configure(
+            text=self.i18n.translate("event.start", ppq=ppq)
+        )
+        self.event_duration_lbl.configure(
+            text=self.i18n.translate("event.duration", ppq=ppq)
+        )
 
     def _on_apply_context(self) -> None:
         try:
@@ -795,6 +882,7 @@ class StepsMainWindow:
             idx = sel[0]
             if idx < len(state["chords"]):
                 self._update_move_controls(idx, len(state["chords"]))
+                self._load_event_timing_controls(idx)
                 self._display_chord_details(state["chords"][idx])
 
     def _on_export_midi(self) -> None:

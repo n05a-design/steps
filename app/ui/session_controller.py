@@ -116,6 +116,10 @@ class ProgressionSessionController:
         self._session.set_context(key_root, is_minor, bpm, time_signature)
         self._notify()
 
+    def set_chord_event_timing(self, index: int, start_tick: int, duration_ticks: int) -> None:
+        self._session.set_chord_event_timing(index, start_tick, duration_ticks)
+        self._notify()
+
     def transpose(self, semitones: int) -> None:
         self._session.transpose(semitones)
         self._notify()
