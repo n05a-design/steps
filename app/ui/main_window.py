@@ -8,9 +8,10 @@ Implements the 2-Pane architectural contract:
 
 from __future__ import annotations
 
+import re
+import sys
 import tkinter as tk
 from pathlib import Path
-import sys
 from tkinter import filedialog, messagebox
 from typing import Optional
 
@@ -25,6 +26,22 @@ from src.steps.progression.reviewed import PublicationError
 from src.steps.progression.voice_leading import VoiceLeadingStyle
 from src.steps.storage.exceptions import StorageError
 from src.steps.theory.exceptions import MusicTheoryError
+
+
+_INVALID_PROJECT_FILENAME_CHARS = re.compile(r'[<>:"/\\|?*\x00-\x1f]')
+_WINDOWS_RESERVED_FILENAME = re.compile(
+    r"^(?:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\.|$)",
+    re.IGNORECASE,
+)
+
+
+def _portable_project_filename(title: str) -> str:
+    filename = _INVALID_PROJECT_FILENAME_CHARS.sub("_", title.strip()).rstrip(" .")
+    if not filename or filename in {".", ".."}:
+        filename = "progression"
+    if _WINDOWS_RESERVED_FILENAME.match(filename):
+        filename = f"_{filename}"
+    return f"{filename}.stepsproj"
 
 
 class StepsMainWindow:
@@ -274,8 +291,7 @@ class StepsMainWindow:
     def _save_project(self, save_as: bool) -> bool:
         path = None if save_as else self._project_path
         if path is None:
-            title = self.controller.get_state_summary()["title"].strip()
-            initial_name = Path(title).name.replace("/", "_").replace("\\", "_") or "progression"
+            title = self.controller.get_state_summary()["title"]
             selected = filedialog.asksaveasfilename(
                 parent=self.root,
                 title=self.i18n.translate("project.save.title"),
@@ -284,7 +300,7 @@ class StepsMainWindow:
                     (self.i18n.translate("project.filetype"), "*.stepsproj"),
                     (self.i18n.translate("json.filetype"), "*.json"),
                 ),
-                initialfile=f"{initial_name}.stepsproj",
+                initialfile=_portable_project_filename(title),
             )
             if not selected:
                 return False
