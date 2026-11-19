@@ -20,7 +20,7 @@
 - Projektdateien werden über einen expliziten 0.x→1.0.0-Migrationspfad und dokumentierte 1.x-Normalisierungen geladen. Zukunftsschemas mit höherer Major-Version werden weiterhin abgewiesen. Der Load-Status nennt die angewendeten Migration-IDs; fehlende Projekttitel bleiben ein Fehler statt still aufgefüllt zu werden.
 - Beim Öffnen eines migrierten Legacy-Projekts zeigt die Desktop-Oberfläche eine lokalisierte EN/DE-Meldung mit den angewendeten Migration-IDs. Die Meldung unterscheidet Projektwiederherstellung aus einem Backup von Schema-Normalisierung.
 - Ungültige oder außerhalb des Schemas liegende Werte in Projekt-Zeiteinstellungen werden beim Laden unter der bestehenden Migration `MIG-006 normalize-time-settings` auf dokumentierte sichere Standardwerte normalisiert. Der Quellstatus und die Projekt-Schema-ID bleiben unverändert; ein automatisierter Regressionstest deckt PPQ, Taktart, Tempo und Tempo-Punkte ab.
-- Die kanonische Implementierungs- und Changelog-Dokumentation wurde auf den Merge-Stand von PR #190 und MIG-006 abgestimmt. PR #191 hält diese Statussynchronisation zusammen mit dem unveränderlichen Baseline-Nachweis dokumentiert; die vollständige Suite besteht bei Commit `93ab98960a484adc9e7cf8f3927e9c81b157d5e9` aus 747 Tests.
+- Die kanonische Implementierungs- und Changelog-Dokumentation wurde auf den Merge-Stand von PR #190 und MIG-006 abgestimmt. PR #191 hielt die Statussynchronisation zusammen mit dem unveränderlichen Baseline-Nachweis auf dem damaligen Stand fest: die vollständige Suite bestand bei Commit `93ab98960a484adc9e7cf8f3927e9c81b157d5e9` aus 747 Tests.
 - Der Projektname lässt sich in der Desktop-Oberfläche editieren und wird gemeinsam mit Tonart, Mollmodus, Tempo und Taktart als eine undo-/redo-fähige Kontextaktion gespeichert.
 - Die Desktop-Dateiaktionen bieten jetzt „Neu“ mit `Ctrl+N`/`⌘N`, Dirty-State-Rückfrage und sauberem Wechsel auf eine neue Standard-Progression ohne die Historie des vorherigen Projekts.
 - Der Desktop-Kontext bietet eine eigenständige, bestätigte Auswahl der musikalischen Notationskonvention (`INT`/`DE`). Die Umstellung konvertiert Tonart und Akkordsymbole explizit und lässt Ticks, Tempo, Taktart und Projektstruktur unverändert.
@@ -30,6 +30,10 @@
 - Die CI ergänzt macOS-/Windows-Matrix-Smokes für denselben Tkinter-Widget-/Controller-Pfad; native menschliche Plattform- und Accessibility-Abnahmen bleiben ausdrücklich offen.
 - Der Desktop-Informationsbereich zeigt jetzt die bestehende Beginner-Keyboard-Voicing-Ermittlung mit linker/rechter Hand, Fingerempfehlungen und Stimmführungsübergängen in Englisch und Deutsch.
 - Das Python-Wheel enthält jetzt die Desktop-App, Locale-Kataloge, Design-Tokens und Markenressourcen, damit der konfigurierte `steps`-Einstieg und seine Laufzeitressourcen gemeinsam installiert werden.
+- Der Desktop-Nächster-Akkord-Explorer liefert Kontext-/Relationsempfehlungen aus der Progressionssession und setzt ausgewählte Kandidaten als lokale Desktop-Aktion.
+- Die Desktop-Dateiaktionen können eine freigegebene Progression aus dem lokalen Reviewed-Beispielkatalog als neues Projekt laden, mit Dirty- und Katalogfehlerbehandlung.
+- Die Desktop-Sitzung und das Hauptfenster bieten einen getrennten, persistierten Stimmführungsstil für klassische, Jazz-/Pop- und zeitgenössische Kontexte; Auswahl und Zusammenfassung werden undo-/redo-fähig wiederverwendet.
+- Der Kanonische Implementierungsstand wurde auf `main`-Commit `b09946f18db6668ce628159b4c2e3e3be2968213` synchronisiert. PRs #197–#200 sind gemergt; die vollständige Suite besteht aus 758 automatisierten Tests.
 - GitHub Issue- und PR-Vorlagen, Dependabot-/Release-Notizkonfiguration und ein YAML-/Issue-Form-Prüfworkflow ergänzt. GitHub-Wiki, Projects, Labels und Funding bleiben explizite Inhaberhandlungen.
 
 ## Frühere Architekturvorbereitung

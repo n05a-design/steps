@@ -83,6 +83,7 @@ Zu jedem Beispiel gehören der freigegebene Lehrtext, die Quellen-IDs und das Da
 - **Progressionskatalog:** 28 Bestandsprogressionen, in jede Tonart übertragbar.
 - **Voicings erzeugen:** Startlagen `CLOSE`, `DROP2`, `SHELL` und `ROOTLESS` mit durchgehender Stimmenzahl im MIDI-Bereich 0 bis 127.
 - **Stimmführung:** Der Solver minimiert die Halbtonbewegung je Übergang. Der strikte Modus prüft zusätzlich parallele Quinten und Oktaven.
+- **Desktop-Vertikalschnitte:** Der Prototyp zeigt Nächste-Akkord-Kandidaten, lädt freigegebene Reviewed-Progressionen als Projekte und bietet einen persistenten Stimmführungsstil. Dies sind implementierte Workflows, keine eigenständige Produkt- oder Fachfreigabe.
 - **Klare Fehler:** Unlösbare Vorgaben und nicht registrierte Symbole melden einen Fehler, statt still zu raten.
 
 ### Geprüftes Lernmaterial und Wissensbasis
