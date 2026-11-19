@@ -1,0 +1,103 @@
+autonomous_backlog_execution	2d20552377a14ed2c88e94f22d1163d3a3fca08e	origin/main	2026-11-17 17:01:31 +0100
+backup/main-before-sync-20261110	d574acc0b0bad7fc51fd3af0dcbd46ce0b75679a		2026-11-10 17:46:14 +0100
+chore/configure-linguist-and-audit-documentation	be633dee039a82d7748adfb30ac3c2e00dcb246d	origin/chore/configure-linguist-and-audit-documentation	2026-11-17 21:51:10 +0100
+chore/steps-phase4-13-knowledge-checkpoint	88c506a6e08645c72aee3603e2212de2d50b6aca	origin/chore/steps-phase4-13-knowledge-checkpoint	2026-11-11 08:18:14 +0100
+chore/steps-project-consolidation-and-archival	954cc4c2b97bb38edea02160ca2f08c925bca890	origin/chore/steps-project-consolidation-and-archival	2026-11-11 22:40:42 +0100
+claude/abnahmebogen-inhaberentscheidungen	fdea151b18d4f47ed46005091325d8fecd74a4ee	origin/claude/abnahmebogen-inhaberentscheidungen	2026-11-16 23:55:37 +0100
+claude/docs-audit-handover-a2291c	81592f4724ea1cd5c8eee0486e43d8c7b239616a	origin/claude/docs-audit-handover-a2291c	2026-11-16 22:51:55 +0100
+claude/docs-zehn-pr-ffragen-gekl-rt-8c7f6f	535ef57fe21c0b231d3c5524b1eda209e4baf1b5		2026-11-16 09:41:11 +0100
+claude/fable-5-2-audit-1c58c4	c9faccb96279ff8f298f6d7d5e83aa26569bee4c		2026-11-12 22:39:21 +0100
+claude/fable-5-2-audit-prep	d7357f9df4d11e31b933d635cca238af7ef75d0b	origin/claude/fable-5-2-audit-prep	2026-11-12 22:04:49 +0100
+claude/golden-suite-ohne-baseline-schreibzugriff	65d7060944fc7d7919e204ab70021a5d2596e319	origin/claude/golden-suite-ohne-baseline-schreibzugriff	2026-11-16 23:33:06 +0100
+claude/knowledge-coverage-audit-41e979	99ca36aa1b2b1db4671edcd06e3eb97454d07496		2026-11-14 19:43:22 +0100
+claude/optimistic-nobel-d198d7	1c66813f4708af862d689576ebc92af4257b38f0		2026-11-15 01:52:45 +0100
+claude/pdf-kategorisieren-verschieben-112203	a9f0faed1aec26f85255f6c42a9b0912dce2abdf		2026-11-14 17:09:32 +0100
+claude/pdf-kategorisieren-verschieben-ce6ab9	a9f0faed1aec26f85255f6c42a9b0912dce2abdf		2026-11-14 17:09:32 +0100
+claude/pdf-kategorisieren-verschieben-d2f6c3	a9f0faed1aec26f85255f6c42a9b0912dce2abdf		2026-11-14 17:09:32 +0100
+claude/pdf-kategorisieren-verschieben-fb3ba3	a9f0faed1aec26f85255f6c42a9b0912dce2abdf		2026-11-14 17:09:32 +0100
+claude/richtungs-und-fachentscheidungen	742fb9bb9cc7f7cea472cf9a92b6bf4b0da4c74b	origin/claude/richtungs-und-fachentscheidungen	2026-11-17 00:17:44 +0100
+claude/steps-checkout-selbstcheck-03cfe9	1880257e74b23c38d9a82a4f319af366e8754339		2026-11-11 22:44:29 +0100
+claude/steps-ontologie-bestandssuche-49bf20	66117368ec0b677c9bf95293dea01e264bce23ac		2026-11-14 02:04:42 +0100
+claude/steps-project-consolidation-archival-961ca2	2a1e8fc4c1a3a20de79c722b3cea5410b4d70502	origin/claude/steps-project-consolidation-archival-961ca2	2026-11-12 22:28:04 +0100
+claude/steps-projektseite	c6f419a9ec0742e5e9cc1ea6c8ae78a00b4667f6		2026-11-15 02:13:24 +0100
+claude/transpose-diatonic-strikt	57144291f6f3e4cf738f6c38c582762f81a38c0e	origin/claude/transpose-diatonic-strikt	2026-11-17 00:00:44 +0100
+claude/v01-spezifikation-und-graph-review-v2	ad2706e8d081f9c1a3cd90b1a7b9e9ec86fb839a	origin/claude/v01-spezifikation-und-graph-review-v2	2026-11-17 00:39:27 +0100
+codex/audit-fortsetzung-1113	b9c422f3ba4871be3833bb2e201024e2b1f782a8	origin/codex/audit-fortsetzung-1113	2026-11-13 23:04:34 +0100
+codex/fable-audit-massnahmenplan	e58f5b7f2c9e22d0b7eb1c22361e2daa5c62c51b	origin/codex/fable-audit-massnahmenplan	2026-11-13 01:31:08 +0100
+codex/fable-audit-restpruefung	6d5b3b2e77cb9486075c9db10fef0e7c0407575f	origin/main	2026-11-13 04:39:03 +0100
+codex/fable-aufgabenregister	3a95765ed17cfddeaa23b6d808dd6e8a89ef73ae	origin/codex/fable-aufgabenregister	2026-11-13 01:33:19 +0100
+codex/fable-fachnachweise	3dcd6b5f742ec44d633e2e1bd3661f243a8ef935	origin/main	2026-11-13 01:45:55 +0100
+codex/fable-golden-cases	013a6eb947d9a90aa3a06c203945d528b54423f4	origin/main	2026-11-13 01:56:27 +0100
+codex/fable-golden-reproduktion	f295c8813bd68549cef18d84f52750763c2e98aa	origin/main	2026-11-13 04:44:20 +0100
+codex/fable-kerngrenzen	9b43adb64d7800e47a536b41e3943717593d3f40	origin/main	2026-11-13 04:51:59 +0100
+codex/fable-notation	cfd14bea1543ec4dd2f24d3c311e9a414500829b	origin/main	2026-11-13 01:47:30 +0100
+codex/fable-pilot-datengrenze	d5118b8f34c806ebf018666729febd71c12ae5d2	origin/main	2026-11-13 02:00:10 +0100
+codex/fable-publikationsbelege	c52480bbe217a02eb6b6f3b4d24ca8a8977bc5b1	origin/main	2026-11-13 01:43:20 +0100
+codex/fable-quellen-und-kataloge	9fabbd9cd1118abea4f26924451f51603bc27318	origin/main	2026-11-13 01:49:23 +0100
+codex/fable-quellenfreigabe	4fdf050c8e5980334cdb1bfa2f8b8cd57a56aabf	origin/main	2026-11-13 02:02:15 +0100
+codex/fable-voicings	d7a8b7edd612112a0bd5af29399b002d8dc9f651		2026-11-13 01:56:27 +0100
+codex/steps-verified-music-core	15100b8fbd9e9629d00cd63b1ebcbfa0e0231fc2	origin/codex/steps-verified-music-core	2026-11-12 21:37:06 +0100
+continue_steps_audit	cda6cb99bf3d4c6bc1bde29c4ffef1405a117c0f		2026-11-14 21:42:10 +0100
+design-shaye-execute-attached-prompt	b356b5b9e266ae492ee4df0757c7a33d0bac98fc	origin/design-shaye-execute-attached-prompt	2026-11-18 00:13:47 +0100
+design-shaye-v1-complete-documentation	b67294a5161b42d281be4afdea5bb74b7385a786	origin/design-shaye-v1-complete-documentation	2026-11-19 00:14:26 +0100
+docs/abnahmebogen-2026-11-16	99dcf0cb6192651a96fc0c8799ab3c435b5238f1	origin/docs/abnahmebogen-2026-11-16	2026-11-16 17:15:52 +0100
+docs/abnahmebogen-erweiterung-durchgang-4	30ba19050fa74bc47c1afeb99e92ba4d711a98e6	origin/docs/abnahmebogen-erweiterung-durchgang-4	2026-11-16 21:00:00 +0100
+docs/bestandsinventar-nachpruefung	90065f99cda3d47a6c89d6e8e994e75a50f71c20	origin/docs/bestandsinventar-nachpruefung	2026-11-16 17:23:16 +0100
+docs/cdr012-knotenentscheidung	39adfb5a7e4916c9cf7cd9004b6b0909008b1c09	origin/docs/cdr012-knotenentscheidung	2026-11-16 16:31:36 +0100
+docs/cdr019-bossa	e880d1848abc6b2e89bc46b8fc2f8157fb22ac82	origin/docs/cdr019-bossa	2026-11-16 17:09:50 +0100
+docs/cdr021-surdo	e131b99dbcf74da8c04e4b5135422ef82d0716ae	origin/docs/cdr021-surdo	2026-11-16 17:03:52 +0100
+docs/claim-buchfundstellen-nachpruefung	9fc9d063b02e7a3be1249bcafafca936f03f9421	origin/docs/claim-buchfundstellen-nachpruefung	2026-11-16 20:49:03 +0100
+docs/gemini-knowledge-pack	dd1f0baf4b8aef16768792b7e05f05d8b75a81b2	origin/docs/gemini-knowledge-pack	2026-11-19 08:32:25 +0100
+docs/generatoren-analyse	133acce455b6f57250844b7974a001c8f5eab193	origin/docs/generatoren-analyse	2026-11-16 18:24:34 +0100
+docs/glide-kontext-nachweis	2fe80c642f6c02cd2bac56608abe859944cb0a92	origin/main	2026-11-16 18:10:25 +0100
+docs/html-extrakte-und-ocr-nachpruefung	efc5305f79dcc4ccea2f199f5684bfd8b986a426	origin/docs/html-extrakte-und-ocr-nachpruefung	2026-11-16 21:46:33 +0100
+docs/indizes-json-txt-und-v4-nachpruefung	385022c548eb5fbc2505dff6a33001a5cb77fe47	origin/docs/indizes-json-txt-und-v4-nachpruefung	2026-11-16 20:30:49 +0100
+docs/indizes-nachpruefung	c13b654d0c1ebae49146e451d6b4ddd44d5d8f02	origin/docs/indizes-nachpruefung	2026-11-16 17:32:47 +0100
+docs/katalog-stichproben-w04	4a5aae7ebae53d41cdc45d2a7de1cbadd4d6cd1d	origin/docs/katalog-stichproben-w04	2026-11-16 22:02:28 +0100
+docs/pdf-docling-markdown	7529a8a4b5954b473430e757825a5fe1bb6c4467	origin/docs/pdf-docling-markdown	2026-11-14 19:38:30 +0100
+docs/quellenmetadaten-w01-w02-w03-nachpruefung	1941b9e535db2a437d90a82e26df1bf1d7ffdb6d	origin/docs/quellenmetadaten-w01-w02-w03-nachpruefung	2026-11-16 21:14:35 +0100
+docs/rechtsfragen-zusammenfassungen	552eade8c03d131515681653d100124f2778b9c3	origin/docs/rechtsfragen-zusammenfassungen	2026-11-16 16:17:11 +0100
+docs/suchauftrag-bibliothek-v6-6	cbffce2cfb524e51a76b69aed6ad4de6ca08f219	origin/docs/suchauftrag-bibliothek-v6-6	2026-11-16 17:48:34 +0100
+docs/v6-6-v6-7-struktur-und-zaehlmodelle	63f9fcdb15052a2b931d6bb9f650f784551eff5a	origin/docs/v6-6-v6-7-struktur-und-zaehlmodelle	2026-11-16 20:00:30 +0100
+docs/v6-6-v6-7-struktur-und-zaehlmodelle-v2	4e32dbe7453cdaa3c0d611d6d50b0fd9420cd068	origin/docs/v6-6-v6-7-struktur-und-zaehlmodelle-v2	2026-11-16 20:01:49 +0100
+docs/zusammenfassungen-notenbilder	8bc32f12a1d12d4567436275df97a67d14188ce0	origin/docs/zusammenfassungen-notenbilder	2026-11-16 15:49:25 +0100
+docs/zusammenfassungen-originalabgleich	4f99f1d3240d797c53d1d63773b0596904dacf0d	origin/docs/zusammenfassungen-originalabgleich	2026-11-16 05:35:27 +0100
+docs/zusammenfassungen-pdf-durchgang-4	e0add6677e757827185751c47f5d957719db0dfa	origin/docs/zusammenfassungen-pdf-durchgang-4	2026-11-16 20:17:32 +0100
+docs/zusammenfassungen-pdf-nachpruefung	7818e7561b314428f9c8a6382df6e159bfe37532	origin/docs/zusammenfassungen-pdf-nachpruefung	2026-11-16 15:48:58 +0100
+docs/zusammenfassungen-pruefdoku-entdoppeln	7991008c06722862f4339259bf35ea4ab4715b07	origin/docs/zusammenfassungen-pruefdoku-entdoppeln	2026-11-16 05:28:21 +0100
+docs/zusammenfassungen-pruefdoku-nachtrag	49a1632689123b6d26545401029653d745f970dd	origin/docs/zusammenfassungen-pruefdoku-nachtrag	2026-11-16 14:39:35 +0100
+docs/zusammenfassungen-pruefkorrektur	e48795bfc824641fe3acdc5f10f6ef15fea8ca2a	origin/docs/zusammenfassungen-pruefkorrektur	2026-11-16 05:24:56 +0100
+docs/zusammenfassungen-strukturnaehe	1824a264bd57aea37f5e4dd706920be8c53949dc	origin/docs/zusammenfassungen-strukturnaehe	2026-11-16 16:02:19 +0100
+feat/cli-i18n-inventory	e4c15bd2ebfb4ab3551bef64ddf992672cbdb113	origin/feat/cli-i18n-inventory	2026-11-19 07:52:23 +0100
+feat/i18n-notation-invariants	1fd13ee007b657826d53e7a03a6d87dcf58229c0	origin/feat/i18n-notation-invariants	2026-11-19 07:55:56 +0100
+feat/oa-0023-extended-genre-profiles	9da1e2d5e97950725d5379357a9bb968a0b2d8df	origin/feat/oa-0023-extended-genre-profiles	2026-11-17 21:31:53 +0100
+feat/oa-0028-0029-smf-parser-and-rational-time	3e13e780f64a7cddf025cab580942b9c72fa238c	origin/feat/oa-0028-0029-smf-parser-and-rational-time	2026-11-17 21:27:27 +0100
+feat/oa-0031-skill-reference-id-integrity	c859f0a1668a182a223531fed2440d9e17c63ceb	origin/feat/oa-0031-skill-reference-id-integrity	2026-11-17 21:47:12 +0100
+feat/platform-ui-smoke	2f43a5a1446c59b6890d81ff0facc3e1c4c2f7ba	origin/feat/platform-ui-smoke	2026-11-19 07:43:04 +0100
+feat/steps-knowledge-curation-skill	1e52af7425131ecb7ae8a27972f82c8df4000892	origin/feat/steps-knowledge-curation-skill	2026-11-10 22:14:42 +0100
+feat/steps-knowledge-master-audit-and-expansion	918d0a7105fabecbdb015f6bfe9ccc876e7f8ce2	origin/feat/steps-knowledge-master-audit-and-expansion	2026-11-11 20:24:48 +0100
+feat/steps-phase4-18-master-integration-and-readiness	bb14fce85a8136560add49ff724a1b0d982f47ab	origin/feat/steps-phase4-18-master-integration-and-readiness	2026-11-11 21:14:27 +0100
+feat/steps-phase5-1-theory-core-hardening	6c8cc76404e78e4be6cf81495f52fd212f9c61d0		2026-11-11 22:30:48 +0100
+fix/archive-glide-audit-originals	091f69ad647a4263f044625b04eb7abd04791580	origin/fix/archive-glide-audit-originals	2026-11-14 20:00:48 +0100
+fix/ci-sparse-checkout-skip-in-skill-test	d0955834b860b3a4b23df05e1f40443a5147a035	origin/fix/ci-sparse-checkout-skip-in-skill-test	2026-11-17 22:05:26 +0100
+fix/ci-structure-check-paths	aa8fba142f668d5a87f0892f9d1c5b7c144927e6	origin/fix/ci-structure-check-paths	2026-11-10 22:28:43 +0100
+fix/coverage-docling-research-count	a3320f10e73f8ed30a5dd1a9f9da98b86dfd6e59	origin/fix/coverage-docling-research-count	2026-11-14 19:49:44 +0100
+fix/makingmusic-hash-dateiregister	4270ab1ee240675fa889b668e59ece98e9308788	origin/fix/makingmusic-hash-dateiregister	2026-11-16 20:24:02 +0100
+fix/skript-exitcodes-und-standalone-ausfuehrung	6d3318207816d2b83b9d49f12e9d948cb44bddd6	origin/fix/skript-exitcodes-und-standalone-ausfuehrung	2026-11-16 22:10:51 +0100
+fix/steps-package-scaffold-t04	078bc59af90515d237cfba9085f3c5c1c9b8a9ed	origin/fix/steps-package-scaffold-t04	2026-11-10 20:00:07 +0100
+fix/steps-phase4-14-knowledge-integrity	d7d7f1e1df0ba78c828e2671cd695ddb88c5ce2e	origin/fix/steps-phase4-14-knowledge-integrity	2026-11-11 08:56:52 +0100
+fix/steps-phase4-15-reference-history-and-golden-tests	e32ce8b569182091cfa0ab3eb5cd389d01e14714	origin/fix/steps-phase4-15-reference-history-and-golden-tests	2026-11-11 18:59:48 +0100
+fix/steps-phase4-16-evidence-integrity-and-secret-baseline	165733996a2d7c5506aa7ea5e88570e8f27fcf06	origin/fix/steps-phase4-16-evidence-integrity-and-secret-baseline	2026-11-11 19:36:05 +0100
+fix/steps-phase4-17-architecture-and-final-integrity	422ec962650e19a60b8c58520ea039a99c3befcb	origin/fix/steps-phase4-17-architecture-and-final-integrity	2026-11-11 20:03:49 +0100
+fix/steps-reorganisation-phase2	6194355792dfcac9ece8556b4f57b4decff27781	origin/fix/steps-reorganisation-phase2	2026-11-10 16:58:53 +0100
+fix/test-24-canonical-tasks-count	ae374c0bae5414442eb0a444e84702a44e8590e9		2026-11-10 23:08:09 +0100
+fix_onedrive_git_index	a1ac518f51b6fb28b108e62a6866001cd6640275		2026-11-16 18:39:54 +0100
+main	d717cec6647fc3369639ae335977a989eaf241b0	origin/main	2026-11-16 22:12:29 +0100
+night/holistic-verification-master	000c2990700e276d06735b10f39c1ce281aa55cf	origin/night/holistic-verification-master	2026-11-19 07:25:30 +0100
+origin	4eca71a347517cb11adcf8090c6be987597a2fa0		2026-11-19 08:35:09 +0100
+origin/main	4eca71a347517cb11adcf8090c6be987597a2fa0		2026-11-19 08:35:09 +0100
+pr/17/codex/fable-notation	37fd840457bfe74d8423a21b53cc376506129343	origin/codex/fable-notation	2026-11-13 02:26:28 +0100
+pr/18/codex/fable-quellen-und-kataloge	6ed1951f5835ef1270698a13bc09cd38a9065886	origin/codex/fable-quellen-und-kataloge	2026-11-13 02:02:48 +0100
+pr/20/codex/fable-golden-cases	6c00e8d4893a20cff0ec41641f2802d6972ffc3a	origin/codex/fable-golden-cases	2026-11-13 02:27:58 +0100
+pr/20/codex/fable-golden-cases-2	6c00e8d4893a20cff0ec41641f2802d6972ffc3a	origin/codex/fable-golden-cases	2026-11-13 02:27:58 +0100
+pr/21/codex/fable-pilot-datengrenze	d5118b8f34c806ebf018666729febd71c12ae5d2	origin/codex/fable-pilot-datengrenze	2026-11-13 02:00:10 +0100

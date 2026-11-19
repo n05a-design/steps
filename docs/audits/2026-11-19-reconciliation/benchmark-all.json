@@ -1,0 +1,5061 @@
+{
+  "schema_version": 2,
+  "coach_domains": {
+    "M01": {
+      "PASS": 0,
+      "FAIL": 0,
+      "PENDING": 1
+    },
+    "M02": {
+      "PASS": 0,
+      "FAIL": 0,
+      "PENDING": 1
+    },
+    "M03": {
+      "PASS": 0,
+      "FAIL": 0,
+      "PENDING": 1
+    },
+    "M04": {
+      "PASS": 0,
+      "FAIL": 0,
+      "PENDING": 1
+    },
+    "M05": {
+      "PASS": 0,
+      "FAIL": 0,
+      "PENDING": 1
+    },
+    "M06": {
+      "PASS": 0,
+      "FAIL": 0,
+      "PENDING": 1
+    },
+    "M07": {
+      "PASS": 0,
+      "FAIL": 0,
+      "PENDING": 1
+    },
+    "M08": {
+      "PASS": 0,
+      "FAIL": 0,
+      "PENDING": 1
+    },
+    "M09": {
+      "PASS": 0,
+      "FAIL": 0,
+      "PENDING": 1
+    },
+    "M10": {
+      "PASS": 0,
+      "FAIL": 0,
+      "PENDING": 1
+    },
+    "M11": {
+      "PASS": 0,
+      "FAIL": 0,
+      "PENDING": 1
+    },
+    "M12": {
+      "PASS": 0,
+      "FAIL": 0,
+      "PENDING": 1
+    }
+  },
+  "git_sha": "dd1f0baf4b8aef16768792b7e05f05d8b75a81b2",
+  "dirty": false,
+  "scope": "all",
+  "areas": {
+    "pilot": {
+      "PASS": 8,
+      "FAIL": 0,
+      "PENDING": 0
+    },
+    "catalog": {
+      "PASS": 25,
+      "FAIL": 0,
+      "PENDING": 0
+    },
+    "sample": {
+      "PASS": 48,
+      "FAIL": 0,
+      "PENDING": 3
+    },
+    "coach": {
+      "PASS": 0,
+      "FAIL": 0,
+      "PENDING": 12
+    },
+    "publication": {
+      "PASS": 3,
+      "FAIL": 0,
+      "PENDING": 0
+    },
+    "api": {
+      "PASS": 7,
+      "FAIL": 0,
+      "PENDING": 0
+    },
+    "backlog": {
+      "PASS": 1,
+      "FAIL": 0,
+      "PENDING": 12
+    }
+  },
+  "counts": {
+    "PASS": 92,
+    "FAIL": 0,
+    "PENDING": 27
+  },
+  "blocks": {
+    "PAT-031": [
+      "KB-M08-METER"
+    ],
+    "P02": [
+      "KB-M12-PLAYABILITY"
+    ],
+    "Harmony Coach": [
+      "COACH-01",
+      "COACH-02",
+      "COACH-03",
+      "COACH-04",
+      "COACH-05",
+      "COACH-06",
+      "COACH-07",
+      "COACH-08",
+      "COACH-09",
+      "COACH-10",
+      "COACH-11",
+      "COACH-12"
+    ],
+    "PROG-001-HÖRPRAXIS": [
+      "KB-M09-LOOP-HEAR"
+    ],
+    "SRC-033": [
+      "KB-SRC-033-PROVENANCE"
+    ],
+    "Wissensgraph": [
+      "KB-GRAPH-NODES"
+    ],
+    "F00412": [
+      "KB-HISTORY-F00412"
+    ],
+    "F00571": [
+      "KB-HISTORY-F00571"
+    ],
+    "F00704": [
+      "KB-HISTORY-F00704"
+    ],
+    "F00768": [
+      "KB-HISTORY-F00768"
+    ],
+    "F00937": [
+      "KB-HISTORY-F00937"
+    ],
+    "F01002": [
+      "KB-HISTORY-F01002"
+    ],
+    "PPR-MIDI-01": [
+      "KB-HISTORY-PPR-MIDI-01"
+    ],
+    "PPR-MIDI-02": [
+      "KB-HISTORY-PPR-MIDI-02"
+    ],
+    "PPR-MIDI-03": [
+      "KB-HISTORY-PPR-MIDI-03"
+    ],
+    "PPR-MIDI-04": [
+      "KB-HISTORY-PPR-MIDI-04"
+    ]
+  },
+  "results": [
+    {
+      "id": "PILOT-NOTATION-001",
+      "scope": "pilot",
+      "content": "PILOT",
+      "domain": "M02",
+      "question": "Welche internationalen Notennamen und MIDI-Werte entsprechen H3, B3 und As4 auf Deutsch?",
+      "expected": [
+        59,
+        58,
+        68
+      ],
+      "variants": [
+        "B♭3 statt Bb3 und A♭4 statt Ab4"
+      ],
+      "basis": "Yale University Library, The names of keys, S. 1, Zeilen A flat, B flat und B. C4=60, dann Halbtonabstände.",
+      "method": "notation",
+      "input": {
+        "notes": [
+          [
+            "H3",
+            "B3"
+          ],
+          [
+            "B3",
+            "Bb3"
+          ],
+          [
+            "As4",
+            "Ab4"
+          ]
+        ]
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "cef99ec936ee9b06bd238667b9e5794684177558a479c0aa178165f4792f1d76",
+      "status": "PASS",
+      "observed": [
+        [
+          59,
+          59
+        ],
+        [
+          58,
+          58
+        ],
+        [
+          68,
+          68
+        ]
+      ]
+    },
+    {
+      "id": "PROG-001-HARMONY",
+      "scope": "pilot",
+      "content": "PROG-001",
+      "domain": "M05",
+      "question": "Welche Stufen, Akkorde und Tonklassen enthält PROG-001 in C-Dur?",
+      "expected": {
+        "stages": [
+          "I",
+          "V",
+          "vi",
+          "IV"
+        ],
+        "chords": [
+          "C",
+          "G",
+          "Am",
+          "F"
+        ],
+        "pitch_classes": [
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            2,
+            7,
+            11
+          ],
+          [
+            0,
+            4,
+            9
+          ],
+          [
+            0,
+            5,
+            9
+          ]
+        ]
+      },
+      "variants": [
+        "Übliche gleichwertige Schreibweisen, etwa ii⁷ und IΔ7 in Erläuterungen."
+      ],
+      "basis": "C-Dur-Diatonik und Terzschichtung. Open Music Theory, Roman Numerals, Example 3 und Four-Chord Schemas, Singer/Songwriter Schema.",
+      "method": "harmony",
+      "input": {},
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "7722a8f6167dc002e235e1ca371f61967597fc7e9ff83214063b272c0f91352c",
+      "status": "PASS",
+      "observed": {
+        "key": "C",
+        "stages": [
+          "I",
+          "V",
+          "vi",
+          "IV"
+        ],
+        "chords": [
+          "C",
+          "G",
+          "Am",
+          "F"
+        ],
+        "written": [
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            2,
+            7,
+            11
+          ],
+          [
+            0,
+            4,
+            9
+          ],
+          [
+            0,
+            5,
+            9
+          ]
+        ],
+        "resolved": [
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            2,
+            7,
+            11
+          ],
+          [
+            0,
+            4,
+            9
+          ],
+          [
+            0,
+            5,
+            9
+          ]
+        ]
+      }
+    },
+    {
+      "id": "PROG-003-HARMONY",
+      "scope": "pilot",
+      "content": "PROG-003",
+      "domain": "M05",
+      "question": "Welche Stufen, Akkorde und Tonklassen enthält PROG-003 in C-Dur?",
+      "expected": {
+        "stages": [
+          "ii^7",
+          "V^7",
+          "I^maj7"
+        ],
+        "chords": [
+          "Dm7",
+          "G7",
+          "Cmaj7"
+        ],
+        "pitch_classes": [
+          [
+            0,
+            2,
+            5,
+            9
+          ],
+          [
+            2,
+            5,
+            7,
+            11
+          ],
+          [
+            0,
+            4,
+            7,
+            11
+          ]
+        ]
+      },
+      "variants": [
+        "Übliche gleichwertige Schreibweisen, etwa ii⁷ und IΔ7 in Erläuterungen."
+      ],
+      "basis": "Terzschichtung über D, G, C. Open Music Theory, ii–V–I, Key Takeaways zur Dur-Variante.",
+      "method": "harmony",
+      "input": {},
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "7d23736327d0f114674e3cd1df1bffa9a4ed36fd0ed299984164250ca36150f2",
+      "status": "PASS",
+      "observed": {
+        "key": "C",
+        "stages": [
+          "ii^7",
+          "V^7",
+          "I^maj7"
+        ],
+        "chords": [
+          "Dm7",
+          "G7",
+          "Cmaj7"
+        ],
+        "written": [
+          [
+            0,
+            2,
+            5,
+            9
+          ],
+          [
+            2,
+            5,
+            7,
+            11
+          ],
+          [
+            0,
+            4,
+            7,
+            11
+          ]
+        ],
+        "resolved": [
+          [
+            0,
+            2,
+            5,
+            9
+          ],
+          [
+            2,
+            5,
+            7,
+            11
+          ],
+          [
+            0,
+            4,
+            7,
+            11
+          ]
+        ]
+      }
+    },
+    {
+      "id": "PROG-009-HARMONY",
+      "scope": "pilot",
+      "content": "PROG-009",
+      "domain": "M05",
+      "question": "Welche Stufen, Akkorde und Tonklassen enthält PROG-009 in C-Dur?",
+      "expected": {
+        "stages": [
+          "I",
+          "IV",
+          "iv",
+          "I"
+        ],
+        "chords": [
+          "C",
+          "F",
+          "Fm",
+          "C"
+        ],
+        "pitch_classes": [
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            5,
+            9
+          ],
+          [
+            0,
+            5,
+            8
+          ],
+          [
+            0,
+            4,
+            7
+          ]
+        ]
+      },
+      "variants": [
+        "Übliche gleichwertige Schreibweisen, etwa ii⁷ und IΔ7 in Erläuterungen."
+      ],
+      "basis": "Dreiklänge mit unverändertem F-Grundton und abgesenkter Terz. Open Music Theory, Blues-Based Schemas, Plagal Sigh.",
+      "method": "harmony",
+      "input": {},
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "f757d7a24a30acf938bd3b249f672eecbf5b5225a70f6fb4340f1de0ea446626",
+      "status": "PASS",
+      "observed": {
+        "key": "C",
+        "stages": [
+          "I",
+          "IV",
+          "iv",
+          "I"
+        ],
+        "chords": [
+          "C",
+          "F",
+          "Fm",
+          "C"
+        ],
+        "written": [
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            5,
+            9
+          ],
+          [
+            0,
+            5,
+            8
+          ],
+          [
+            0,
+            4,
+            7
+          ]
+        ],
+        "resolved": [
+          [
+            0,
+            4,
+            7
+          ],
+          [
+            0,
+            5,
+            9
+          ],
+          [
+            0,
+            5,
+            8
+          ],
+          [
+            0,
+            4,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "id": "PROG-001-TONAL-CENTER",
+      "scope": "pilot",
+      "content": "PROG-001",
+      "domain": "M09",
+      "question": "Wie kann der Loop C–G–Am–F C oder A als tonales Zentrum nahelegen, und welche Hinweise prägen die Wahrnehmung?",
+      "expected": {
+        "centers": [
+          "C",
+          "A"
+        ],
+        "minor_stages": [
+          "III",
+          "VII",
+          "i",
+          "VI"
+        ],
+        "chords": [
+          "C",
+          "G",
+          "Am",
+          "F"
+        ],
+        "required_context": "Melodie und Phrasierung, Loop-Beginn, metrische Betonung und benachbarte Formteile können C oder A als Zentrum stützen. Die Akkordfolge allein lässt das gehörte Zentrum offen."
+      },
+      "variants": [
+        "Rotierte römische Lesart mit entsprechender Verschiebung des Startpunkts."
+      ],
+      "basis": "Open Music Theory, Four-Chord Schemas, Abschnitt Tonal ambiguity, Absatz vor der Legende zu Example 4. Die Moll-Lesart folgt aus natürlichem A-Moll. Richards (2017), Abs. [1], [9]–[11] und [29]–[30], belegt die Kontexthinweise an Axis-Progressionen.",
+      "method": "relative_minor",
+      "input": {},
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "a09c9216629122af2d49a41481ec69b39663221e68a80d14b357a69bb74cb855",
+      "status": "PASS",
+      "observed": {
+        "written": [
+          "C",
+          "G",
+          "Am",
+          "F"
+        ],
+        "relative_minor": [
+          "C",
+          "G",
+          "Am",
+          "F"
+        ],
+        "note": "Rechnerische Lesart. Höreindruck bleibt kontextabhängig."
+      }
+    },
+    {
+      "id": "PROG-003-VOICE-II-V",
+      "scope": "pilot",
+      "content": "PROG-003",
+      "domain": "M06",
+      "question": "Welche Akkorde tragen die angegebene Stimme und um wie viele Halbtöne sinkt sie je Übergang?",
+      "expected": {
+        "path": [
+          [
+            0,
+            "C4"
+          ],
+          [
+            1,
+            "H3"
+          ]
+        ],
+        "midi": [
+          60,
+          59
+        ],
+        "delta": [
+          -1
+        ]
+      },
+      "variants": [
+        "Oktavversetzung der ganzen Stimme. Internationale Schreibweise bei expliziter Angabe."
+      ],
+      "basis": "Dm7 enthält C, G7 enthält H. 59−60=−1. OMT ii–V–I stützt Akkordqualitäten, die konkrete Stimme ist abgeleitet.",
+      "method": "voice",
+      "input": {},
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "b7cca42e0061617060d9dc6173ab4ae9586146215f856b9b82c25cc44b791043",
+      "status": "PASS",
+      "observed": {
+        "path": [
+          [
+            0,
+            "C4"
+          ],
+          [
+            1,
+            "H3"
+          ]
+        ],
+        "midi": [
+          60,
+          59
+        ],
+        "delta": [
+          -1
+        ]
+      }
+    },
+    {
+      "id": "PROG-003-VOICE-V-I",
+      "scope": "pilot",
+      "content": "PROG-003",
+      "domain": "M06",
+      "question": "Welche Akkorde tragen die angegebene Stimme und um wie viele Halbtöne sinkt sie je Übergang?",
+      "expected": {
+        "path": [
+          [
+            1,
+            "F4"
+          ],
+          [
+            2,
+            "E4"
+          ]
+        ],
+        "midi": [
+          65,
+          64
+        ],
+        "delta": [
+          -1
+        ]
+      },
+      "variants": [
+        "Oktavversetzung der ganzen Stimme. Internationale Schreibweise bei expliziter Angabe."
+      ],
+      "basis": "G7 enthält F, Cmaj7 enthält E. 64−65=−1. OMT ii–V–I stützt Akkordqualitäten, die konkrete Stimme ist abgeleitet.",
+      "method": "voice",
+      "input": {},
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "8e481a471df30fd000caa21d75d9bfe212ec0b2b0f9556f520912041d61b07c7",
+      "status": "PASS",
+      "observed": {
+        "path": [
+          [
+            1,
+            "F4"
+          ],
+          [
+            2,
+            "E4"
+          ]
+        ],
+        "midi": [
+          65,
+          64
+        ],
+        "delta": [
+          -1
+        ]
+      }
+    },
+    {
+      "id": "PROG-009-VOICE-LEADING",
+      "scope": "pilot",
+      "content": "PROG-009",
+      "domain": "M06",
+      "question": "Welche Akkorde tragen die angegebene Stimme und um wie viele Halbtöne sinkt sie je Übergang?",
+      "expected": {
+        "path": [
+          [
+            1,
+            "A4"
+          ],
+          [
+            2,
+            "As4"
+          ],
+          [
+            3,
+            "G4"
+          ]
+        ],
+        "midi": [
+          69,
+          68,
+          67
+        ],
+        "delta": [
+          -1,
+          -1
+        ]
+      },
+      "variants": [
+        "Oktavversetzung der ganzen Stimme. Internationale Schreibweise bei expliziter Angabe."
+      ],
+      "basis": "Terzen von F/Fm und Quinte von C. OMT Blues-Based Schemas, Plagal Sigh, 6–♭6–5.",
+      "method": "voice",
+      "input": {},
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "a804eccd813e9071dadc2e1c9c052321ed2dc6b00497b261bed2949c42413ee5",
+      "status": "PASS",
+      "observed": {
+        "path": [
+          [
+            1,
+            "A4"
+          ],
+          [
+            2,
+            "As4"
+          ],
+          [
+            3,
+            "G4"
+          ]
+        ],
+        "midi": [
+          69,
+          68,
+          67
+        ],
+        "delta": [
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "id": "KB-PROG-008-01",
+      "scope": "catalog",
+      "content": "PROG-008",
+      "domain": "M06",
+      "question": "Welchen Akkord erwartet die Blues-Vorlage PROG-008 an Position 1 in C?",
+      "expected": {
+        "symbol": "C7",
+        "pitch_classes": [
+          0,
+          4,
+          7,
+          10
+        ]
+      },
+      "variants": [
+        "Explizite dom7-Notation unter demselben Stufenmodell."
+      ],
+      "basis": "Bestandskatalog PROG-008 und Open Music Theory, Blues Harmony, Example 1. I und IV erhalten kleine Septimen.",
+      "method": "catalog_position",
+      "input": {
+        "position": 1
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "307c62ef83437dbaa85077d910b44e87fdee56b4881eae1007f17dcbb5f32bff",
+      "status": "PASS",
+      "observed": {
+        "stage": "Idom7",
+        "resolved": "C7",
+        "written": "C7"
+      }
+    },
+    {
+      "id": "KB-PROG-008-02",
+      "scope": "catalog",
+      "content": "PROG-008",
+      "domain": "M06",
+      "question": "Welchen Akkord erwartet die Blues-Vorlage PROG-008 an Position 2 in C?",
+      "expected": {
+        "symbol": "F7",
+        "pitch_classes": [
+          0,
+          3,
+          5,
+          9
+        ]
+      },
+      "variants": [
+        "Explizite dom7-Notation unter demselben Stufenmodell."
+      ],
+      "basis": "Bestandskatalog PROG-008 und Open Music Theory, Blues Harmony, Example 1. I und IV erhalten kleine Septimen.",
+      "method": "catalog_position",
+      "input": {
+        "position": 2
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "ce5b573acc16f07886fb0fbe278292355bd8309f471176f2ff0ecb91ee7057b0",
+      "status": "PASS",
+      "observed": {
+        "stage": "IVdom7",
+        "resolved": "F7",
+        "written": "F7"
+      }
+    },
+    {
+      "id": "KB-PROG-008-03",
+      "scope": "catalog",
+      "content": "PROG-008",
+      "domain": "M06",
+      "question": "Welchen Akkord erwartet die Blues-Vorlage PROG-008 an Position 3 in C?",
+      "expected": {
+        "symbol": "C7",
+        "pitch_classes": [
+          0,
+          4,
+          7,
+          10
+        ]
+      },
+      "variants": [
+        "Explizite dom7-Notation unter demselben Stufenmodell."
+      ],
+      "basis": "Bestandskatalog PROG-008 und Open Music Theory, Blues Harmony, Example 1. I und IV erhalten kleine Septimen.",
+      "method": "catalog_position",
+      "input": {
+        "position": 3
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "0e4a51b7af1f674c5d34734ccd6398ec37f386f562ad5f9f988f633074143787",
+      "status": "PASS",
+      "observed": {
+        "stage": "Idom7",
+        "resolved": "C7",
+        "written": "C7"
+      }
+    },
+    {
+      "id": "KB-PROG-008-05",
+      "scope": "catalog",
+      "content": "PROG-008",
+      "domain": "M06",
+      "question": "Welchen Akkord erwartet die Blues-Vorlage PROG-008 an Position 5 in C?",
+      "expected": {
+        "symbol": "F7",
+        "pitch_classes": [
+          0,
+          3,
+          5,
+          9
+        ]
+      },
+      "variants": [
+        "Explizite dom7-Notation unter demselben Stufenmodell."
+      ],
+      "basis": "Bestandskatalog PROG-008 und Open Music Theory, Blues Harmony, Example 1. I und IV erhalten kleine Septimen.",
+      "method": "catalog_position",
+      "input": {
+        "position": 5
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "9434eabec273449ed9215ffb0d5ac433cc530890d0bd38d96399da2029175d45",
+      "status": "PASS",
+      "observed": {
+        "stage": "IVdom7",
+        "resolved": "F7",
+        "written": "F7"
+      }
+    },
+    {
+      "id": "KB-PROG-008-06",
+      "scope": "catalog",
+      "content": "PROG-008",
+      "domain": "M06",
+      "question": "Welchen Akkord erwartet die Blues-Vorlage PROG-008 an Position 6 in C?",
+      "expected": {
+        "symbol": "C7",
+        "pitch_classes": [
+          0,
+          4,
+          7,
+          10
+        ]
+      },
+      "variants": [
+        "Explizite dom7-Notation unter demselben Stufenmodell."
+      ],
+      "basis": "Bestandskatalog PROG-008 und Open Music Theory, Blues Harmony, Example 1. I und IV erhalten kleine Septimen.",
+      "method": "catalog_position",
+      "input": {
+        "position": 6
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "ebd76ff6273d3a52800b5d6d4cbb8b3093a28abb189bcfca8e8f12e658b3bc93",
+      "status": "PASS",
+      "observed": {
+        "stage": "Idom7",
+        "resolved": "C7",
+        "written": "C7"
+      }
+    },
+    {
+      "id": "KB-PROG-016-01",
+      "scope": "catalog",
+      "content": "PROG-016",
+      "domain": "M06",
+      "question": "Welche Qualität verlangt das Maj7-Stufenlabel von PROG-016, Position 1?",
+      "expected": {
+        "symbol": "Bmaj7",
+        "pitch_classes": [
+          3,
+          6,
+          10,
+          11
+        ]
+      },
+      "variants": [
+        "Enharmonisches D♯maj7 nur als alternative Schreibweise in 12-TET; die Akkordspalte schreibt E♭."
+      ],
+      "basis": "Wörtliches Maj7-Label der Vorlagenzeile. Terzschichtung ergibt einen Dur-Dreiklang mit großer Septime; Zielgrundton gemäß Akkordspalte.",
+      "method": "catalog_position",
+      "input": {
+        "position": 1
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "5c880214627c21b47ae99c8db69a7c84b072a779c46e373447fb8ad478470135",
+      "status": "PASS",
+      "observed": {
+        "stage": "I^maj7",
+        "resolved": "Bmaj7",
+        "written": "Bmaj7"
+      }
+    },
+    {
+      "id": "KB-PROG-016-03",
+      "scope": "catalog",
+      "content": "PROG-016",
+      "domain": "M06",
+      "question": "Welche Qualität verlangt das Maj7-Stufenlabel von PROG-016, Position 3?",
+      "expected": {
+        "symbol": "Gmaj7",
+        "pitch_classes": [
+          2,
+          6,
+          7,
+          11
+        ]
+      },
+      "variants": [
+        "Enharmonisches D♯maj7 nur als alternative Schreibweise in 12-TET; die Akkordspalte schreibt E♭."
+      ],
+      "basis": "Wörtliches Maj7-Label der Vorlagenzeile. Terzschichtung ergibt einen Dur-Dreiklang mit großer Septime; Zielgrundton gemäß Akkordspalte.",
+      "method": "catalog_position",
+      "input": {
+        "position": 3
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "07d737f8a17cc80f79cb7afd1708e7aa99d62b0e916648c518f5779ca6fc9a3d",
+      "status": "PASS",
+      "observed": {
+        "stage": "bVI^maj7",
+        "resolved": "Gmaj7",
+        "written": "Gmaj7"
+      }
+    },
+    {
+      "id": "KB-PROG-016-05",
+      "scope": "catalog",
+      "content": "PROG-016",
+      "domain": "M06",
+      "question": "Welche Qualität verlangt das Maj7-Stufenlabel von PROG-016, Position 5?",
+      "expected": {
+        "symbol": "Ebmaj7",
+        "pitch_classes": [
+          2,
+          3,
+          7,
+          10
+        ]
+      },
+      "variants": [
+        "Enharmonisches D♯maj7 nur als alternative Schreibweise in 12-TET; die Akkordspalte schreibt E♭."
+      ],
+      "basis": "Wörtliches Maj7-Label der Vorlagenzeile. Terzschichtung ergibt einen Dur-Dreiklang mit großer Septime; Zielgrundton gemäß Akkordspalte.",
+      "method": "catalog_position",
+      "input": {
+        "position": 5
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "ba5c444bb65519f889867c9bc1b4e47efa75a4f914ff730f6628b0f9dd8ee6eb",
+      "status": "PASS",
+      "observed": {
+        "stage": "bIV^maj7",
+        "resolved": "Ebmaj7",
+        "written": "Ebmaj7"
+      }
+    },
+    {
+      "id": "KB-PROG-020-02",
+      "scope": "catalog",
+      "content": "PROG-020",
+      "domain": "M06",
+      "question": "Ist der konkrete #11-Akkord an Position 2 von PROG-020 als Realisierung der alt-Stufe eindeutig spezifiziert?",
+      "expected": {
+        "symbol": "Db7(#11)",
+        "pitch_classes": [
+          1,
+          5,
+          7,
+          8,
+          11
+        ]
+      },
+      "variants": [
+        "Fachlich beschriebene und einzeln belegte andere Alterationsvarianten sind möglich, wenn der Katalogvertrag sie ausdrücklich nennt."
+      ],
+      "basis": "Katalog und Python-Definition unterscheiden sich. Alt ist kein eindeutiges Synonym für #11. Der Sollakkord bezeichnet nur die aktuelle Python-Variante, die explizit auszuzeichnen wäre.",
+      "method": "catalog_position",
+      "input": {
+        "position": 2
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "8f3213ac675faeb1390dfd8374e08fbb7b7616fb507e7e1e84a920f9b931b0b7",
+      "status": "PASS",
+      "observed": {
+        "stage": "bII^7(#11)",
+        "resolved": "Db7(#11)",
+        "written": "Db7(#11)"
+      }
+    },
+    {
+      "id": "KB-PROG-027-05",
+      "scope": "catalog",
+      "content": "PROG-027",
+      "domain": "M06",
+      "question": "Ist der konkrete #11-Akkord an Position 5 von PROG-027 als Realisierung der alt-Stufe eindeutig spezifiziert?",
+      "expected": {
+        "symbol": "G7(#11)",
+        "pitch_classes": [
+          1,
+          2,
+          5,
+          7,
+          11
+        ]
+      },
+      "variants": [
+        "Fachlich beschriebene und einzeln belegte andere Alterationsvarianten sind möglich, wenn der Katalogvertrag sie ausdrücklich nennt."
+      ],
+      "basis": "Katalog und Python-Definition unterscheiden sich. Alt ist kein eindeutiges Synonym für #11. Der Sollakkord bezeichnet nur die aktuelle Python-Variante, die explizit auszuzeichnen wäre.",
+      "method": "catalog_position",
+      "input": {
+        "position": 5
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "2a2ca2569f57cdaedae8a9b5fbf2f2aa99be5abf8bec95421a47dcc9f40b3da2",
+      "status": "PASS",
+      "observed": {
+        "stage": "V^7(#11)",
+        "resolved": "G7(#11)",
+        "written": "G7(#11)"
+      }
+    },
+    {
+      "id": "KB-P05-NOTEN",
+      "scope": "catalog",
+      "content": "P05",
+      "domain": "M10",
+      "question": "Wie bewegen sich die notierten Guide Tones in Dm7–G7–Cmaj7?",
+      "expected": {
+        "voicings": [
+          [
+            "Dm7",
+            [
+              50
+            ],
+            [
+              60,
+              65
+            ]
+          ],
+          [
+            "G7",
+            [
+              43
+            ],
+            [
+              59,
+              65
+            ]
+          ],
+          [
+            "Cmaj7",
+            [
+              48
+            ],
+            [
+              59,
+              64
+            ]
+          ]
+        ],
+        "motions": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            -1
+          ]
+        ]
+      },
+      "variants": [],
+      "basis": "Music Theory for the 21st-Century Classroom, § 31.7.1. Terz und Septime werden mit den notierten MIDI-Tonhöhen und Halbtonschritten verglichen.",
+      "method": "piano_exercise",
+      "input": {},
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "ceded23d04edab1529df0ebcda6b1ad1ecfd32602474112bb2c044c8594e6133",
+      "status": "PASS",
+      "observed": {
+        "voicings": [
+          [
+            "Dm7",
+            [
+              50
+            ],
+            [
+              60,
+              65
+            ]
+          ],
+          [
+            "G7",
+            [
+              43
+            ],
+            [
+              59,
+              65
+            ]
+          ],
+          [
+            "Cmaj7",
+            [
+              48
+            ],
+            [
+              59,
+              64
+            ]
+          ]
+        ],
+        "motions": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            -1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "KB-P06-NOTEN",
+      "scope": "catalog",
+      "content": "P06",
+      "domain": "M10",
+      "question": "Welche notierten Töne unterscheiden Csus4, Csus2, Cadd9, Cmadd9 und C9?",
+      "expected": {
+        "voicings": [
+          [
+            "Csus4",
+            [
+              48
+            ],
+            [
+              65,
+              67
+            ]
+          ],
+          [
+            "Csus2",
+            [
+              48
+            ],
+            [
+              62,
+              67
+            ]
+          ],
+          [
+            "Cadd9",
+            [
+              48
+            ],
+            [
+              64,
+              67,
+              74
+            ]
+          ],
+          [
+            "Cmadd9",
+            [
+              48
+            ],
+            [
+              63,
+              67,
+              74
+            ]
+          ],
+          [
+            "C9",
+            [
+              48
+            ],
+            [
+              64,
+              67,
+              70,
+              74
+            ]
+          ]
+        ]
+      },
+      "variants": [],
+      "basis": "Shaffer, Lead-Sheet Chord Symbols, S. 1 und Music Theory for the 21st-Century Classroom, § 31.1. Cmadd9 wird aus dem Moll-Dreiklang und 14 Halbtönen für die große None hergeleitet.",
+      "method": "piano_exercise",
+      "input": {},
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "eee63853885d775c69c573a4243d348aaaf2bd0627f0a0c560e1abdf75d72d09",
+      "status": "PASS",
+      "observed": {
+        "voicings": [
+          [
+            "Csus4",
+            [
+              48
+            ],
+            [
+              65,
+              67
+            ]
+          ],
+          [
+            "Csus2",
+            [
+              48
+            ],
+            [
+              62,
+              67
+            ]
+          ],
+          [
+            "Cadd9",
+            [
+              48
+            ],
+            [
+              64,
+              67,
+              74
+            ]
+          ],
+          [
+            "Cmadd9",
+            [
+              48
+            ],
+            [
+              63,
+              67,
+              74
+            ]
+          ],
+          [
+            "C9",
+            [
+              48
+            ],
+            [
+              64,
+              67,
+              70,
+              74
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "id": "KB-P08-NOTEN",
+      "scope": "catalog",
+      "content": "P08",
+      "domain": "M10",
+      "question": "Welche Stimme sinkt im Dm7-Beispiel, und wie ändern sich Bass und Handspanne?",
+      "expected": {
+        "voicings": [
+          [
+            "Eng",
+            [
+              62
+            ],
+            [
+              65,
+              69,
+              72
+            ]
+          ],
+          [
+            "Drop-2",
+            [
+              57
+            ],
+            [
+              62,
+              65,
+              72
+            ]
+          ],
+          [
+            "Drop-2 verteilt",
+            [
+              57,
+              62
+            ],
+            [
+              65,
+              72
+            ]
+          ]
+        ],
+        "octave_drop": 12,
+        "right_span": 10,
+        "distributed_hand_spans": [
+          5,
+          7
+        ],
+        "bass": 57
+      },
+      "variants": [],
+      "basis": "Clauhs, Arranging for School Jazz Ensembles, S. 268, Abb. 22.21. A4 → A3, C5 bleibt oben. Die verteilte Lage umfasst links fünf und rechts sieben Halbtöne.",
+      "method": "piano_exercise",
+      "input": {},
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "5ceb433a0e5ca6438df8842c0f4d511b1ee6f52516c11843267a606afea1a5d4",
+      "status": "PASS",
+      "observed": {
+        "voicings": [
+          [
+            "Eng",
+            [
+              62
+            ],
+            [
+              65,
+              69,
+              72
+            ]
+          ],
+          [
+            "Drop-2",
+            [
+              57
+            ],
+            [
+              62,
+              65,
+              72
+            ]
+          ],
+          [
+            "Drop-2 verteilt",
+            [
+              57,
+              62
+            ],
+            [
+              65,
+              72
+            ]
+          ]
+        ],
+        "octave_drop": 12,
+        "right_span": 10,
+        "distributed_hand_spans": [
+          5,
+          7
+        ],
+        "bass": 57
+      }
+    },
+    {
+      "id": "KB-P12",
+      "scope": "catalog",
+      "content": "P12",
+      "domain": "M10",
+      "question": "Ist Fmaj7 ein Dreiklang, und was entsteht mit D im Bass?",
+      "expected": {
+        "right_hand": "F–A–C–E (Vierklang)",
+        "total": "Dm9 mit D als Grundton",
+        "notes": [
+          0,
+          2,
+          4,
+          5,
+          9
+        ],
+        "upper_notes": [
+          0,
+          4,
+          5,
+          9
+        ],
+        "bass": 2
+      },
+      "variants": [
+        "Rootless kann sich auf die rechte Hand beziehen."
+      ],
+      "basis": "P12 der Klavierbibliothek und unabhängige Terzschichtung 0,3,7,10,14 relativ D.",
+      "method": "piano",
+      "input": {
+        "id": "P12"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "493e2c6a9fead0f2341fc28e35fdeada616ab1652f2f65ba566065eda5c08e8d",
+      "status": "PASS",
+      "observed": {
+        "upper": [
+          0,
+          4,
+          5,
+          9
+        ],
+        "total": [
+          0,
+          2,
+          4,
+          5,
+          9
+        ],
+        "bass": 2,
+        "row": "| `P12` | **Zweihändige Rootless Voicings** | Den weichen Neo-Soul & Lo-Fi Sound spielen | LH spielt Grundton D; RH spielt den Vierklang Fmaj7 (F–A–C–E) als grundtonlose Oberstruktur. Zusammen ergibt sich Dm9 mit Grundton | Phase 4.9/4.10 |"
+      }
+    },
+    {
+      "id": "KB-P16",
+      "scope": "catalog",
+      "content": "P16",
+      "domain": "M10",
+      "question": "Welche Erweiterungen entstehen in der notierten D-Dur-Oberstruktur über dem C7-Gerüst?",
+      "expected": {
+        "bass": 0,
+        "left": [
+          0,
+          4,
+          10
+        ],
+        "right": [
+          2,
+          6,
+          9
+        ],
+        "upper_intervals": [
+          14,
+          18,
+          21
+        ],
+        "omitted_fifth": true
+      },
+      "variants": [
+        "Die konkrete Lage lässt die Quinte aus. Fingersatz und Anschlagkomfort sind eine eigene Probe."
+      ],
+      "basis": "Noten der P16-Übung; None = 14, erhöhte Undezime = 18 und Tredezime = 21 Halbtöne ab C3.",
+      "method": "piano_upper_structure",
+      "input": {},
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "2f72d06554264fd6dfa33e1e16a10c47e6aba60ccf781313da0c6c8ba092255e",
+      "status": "PASS",
+      "observed": {
+        "bass": 0,
+        "left": [
+          0,
+          4,
+          10
+        ],
+        "right": [
+          2,
+          6,
+          9
+        ],
+        "upper_intervals": [
+          14,
+          18,
+          21
+        ],
+        "omitted_fifth": true
+      }
+    },
+    {
+      "id": "KB-P18-VOICINGS",
+      "scope": "catalog",
+      "content": "P18",
+      "domain": "M10",
+      "question": "Welche Basstöne, Erweiterungen und Stimmwege sind in der notierten Backdoor-Übung tatsächlich enthalten?",
+      "expected": {
+        "symbols": [
+          "Fm7",
+          "Bb7",
+          "Cmaj7"
+        ],
+        "bass": [
+          53,
+          46,
+          48
+        ],
+        "right": [
+          [
+            56,
+            63,
+            67
+          ],
+          [
+            56,
+            60,
+            62
+          ],
+          [
+            55,
+            59,
+            64
+          ]
+        ],
+        "added_pitch_classes": [
+          [
+            7
+          ],
+          [
+            0
+          ],
+          []
+        ],
+        "omitted_pitch_classes": [
+          [
+            0
+          ],
+          [
+            5
+          ],
+          []
+        ],
+        "resolution": [
+          -1,
+          -1,
+          2
+        ]
+      },
+      "variants": [],
+      "basis": "Notierte P18-Lagen und PROG-017. Fm7 = F–Ab–C–Eb, Bb7 = Bb–D–F–Ab, Cmaj7 = C–E–G–B. Die Sollwerte beziehen sich auf die konkrete Oktavlage.",
+      "method": "piano_backdoor",
+      "input": {
+        "progression": "PROG-017"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "e316cbe9eacc844c9067366644b91a163d41dfc861abab4dda38d0bd7c6aad0d",
+      "status": "PASS",
+      "observed": {
+        "symbols": [
+          "Fm7",
+          "Bb7",
+          "Cmaj7"
+        ],
+        "bass": [
+          53,
+          46,
+          48
+        ],
+        "right": [
+          [
+            56,
+            63,
+            67
+          ],
+          [
+            56,
+            60,
+            62
+          ],
+          [
+            55,
+            59,
+            64
+          ]
+        ],
+        "added_pitch_classes": [
+          [
+            7
+          ],
+          [
+            0
+          ],
+          []
+        ],
+        "omitted_pitch_classes": [
+          [
+            0
+          ],
+          [
+            5
+          ],
+          []
+        ],
+        "resolution": [
+          -1,
+          -1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "KB-P19",
+      "scope": "catalog",
+      "content": "P19",
+      "domain": "M10",
+      "question": "Welche Dominantlage spielt P19 in G-Dur, und welche Schritte enthält C♯3–C3–H2–A2–G2?",
+      "expected": {
+        "delta": [
+          -1,
+          -1,
+          -2,
+          -2
+        ],
+        "dominant": "D7/A",
+        "bass": 9,
+        "dominant_tones": [
+          0,
+          2,
+          6,
+          9
+        ]
+      },
+      "variants": [
+        "Gemischt chromatisch und diatonisch; H kann in internationaler Notation B heißen."
+      ],
+      "basis": "PROG-026 und die notierte Spielübung in P19. D7 = D–Fis–A–C, im zweiten Umkehrungsbass liegt A. MIDI 49,48,47,45,43.",
+      "method": "piano",
+      "input": {
+        "id": "P19"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "6271b1dde0b58722828bd1975d5422a32aa723556a6e973eae6111bf90c265c6",
+      "status": "PASS",
+      "observed": {
+        "delta": [
+          -1,
+          -1,
+          -2,
+          -2
+        ],
+        "dominant": "D7/A",
+        "bass": 9,
+        "dominant_tones": [
+          0,
+          2,
+          6,
+          9
+        ],
+        "row": "| `P19` | **Chromatische Bassführung für Sekundärdominanten** | Fließende Basslinien in Kadenzen spielen | $I \\to V^7/V(6/5) \\to ii^6 \\to I^6 \\to V^7_{4/3} \\to I$ ($G \\to C\\sharp \\to C\\natural \\to B \\to A \\to G$); C♯–C–H in Halbtönen, H–A–G in zwei Ganztonschritten | Phase 4.13/4.14 |",
+        "catalog": "| `PROG-026` | Secondary Dominant Chromatic Bassline | `I - V7(6/5)/V - ii6 - I6 - V7(4/3) - I` | `G - A7/C# - Am/C - G/B - D7/A - G` | Barock, Klassik, Latin Jazz | Kostka (2013), Aldwell (1989) |"
+      }
+    },
+    {
+      "id": "KB-M01-A4",
+      "scope": "sample",
+      "content": "M01",
+      "domain": "M01",
+      "question": "Welche Frequenzen ergeben MIDI 69 und 60 bei A4=440 Hz in 12-TET?",
+      "expected": [
+        440,
+        261.625565
+      ],
+      "variants": [],
+      "basis": "f=440·2^((m−69)/12)",
+      "method": "frequency",
+      "input": {
+        "midi": [
+          69,
+          60
+        ]
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "23b46111309c4c485ddfe8ab8a5fcd35445124ddef68ecb5a3cbe73dcdcfed81",
+      "status": "PASS",
+      "observed": [
+        440.0,
+        261.6255653005986
+      ]
+    },
+    {
+      "id": "KB-M02-ENHARMONIC",
+      "scope": "sample",
+      "content": "M02",
+      "domain": "M02",
+      "question": "Sind Cis4 und Des4 bei gleicher Stimmung klanglich gleich und gleich geschrieben?",
+      "expected": [
+        61,
+        61,
+        "C#4",
+        "Db4"
+      ],
+      "variants": [],
+      "basis": "C4=60 und D4=62. Je ein Vorzeichen verschiebt um einen Halbton.",
+      "method": "enharmonic",
+      "input": {
+        "convention": "DE",
+        "notes": [
+          "Cis4",
+          "Des4"
+        ]
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "2f5f681c9b8ba6a0d799231e0ac3be315b22fa1692b692acdc4af022de869cb5",
+      "status": "PASS",
+      "observed": [
+        61,
+        61,
+        "C#4",
+        "Db4"
+      ]
+    },
+    {
+      "id": "KB-M03-HARMONIC-MINOR",
+      "scope": "sample",
+      "content": "M03",
+      "domain": "M03",
+      "question": "Wie groß ist die Stufe F→G♯ in A harmonisch Moll?",
+      "expected": 3,
+      "variants": [],
+      "basis": "A–H–C–D–E–F–G♯–A, MIDI F4=65 und G♯4=68.",
+      "method": "distance",
+      "input": {
+        "notes": [
+          "F4",
+          "G#4"
+        ]
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "7ac39b4eaa64cc12d19c22820baf6421be237af78e649b79f8ed66656fae15cb",
+      "status": "PASS",
+      "observed": 3
+    },
+    {
+      "id": "KB-M04-MAJOR-MINOR",
+      "scope": "sample",
+      "content": "M04",
+      "domain": "M04",
+      "question": "Welche Halbtonintervalle haben CM7 und Cm7?",
+      "expected": [
+        [
+          0,
+          4,
+          7,
+          11
+        ],
+        [
+          0,
+          3,
+          7,
+          10
+        ]
+      ],
+      "variants": [],
+      "basis": "C–E–G–H und C–Es–G–B (deutsche Notennamen).",
+      "method": "intervals",
+      "input": {
+        "symbols": [
+          "CM7",
+          "Cm7"
+        ]
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "f1b0044700e4828620a87a302f03fddb5da558a6a209d48725ea44ccaa6cc77d",
+      "status": "PASS",
+      "observed": [
+        [
+          0,
+          4,
+          7,
+          11
+        ],
+        [
+          0,
+          3,
+          7,
+          10
+        ]
+      ]
+    },
+    {
+      "id": "KB-M05-APPLIED",
+      "scope": "sample",
+      "content": "M05",
+      "domain": "M05",
+      "question": "Welcher Akkord ist V7/V in C-Dur?",
+      "expected": "D7",
+      "variants": [],
+      "basis": "G ist das Ziel, D die Quinte über G; D–Fis–A–C.",
+      "method": "degree",
+      "input": {
+        "degree": "V7/V",
+        "key": "C"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "84a2cf585042f25b17c03646e427b3d116581acd602770b341f1cb94f3386217",
+      "status": "PASS",
+      "observed": "D7"
+    },
+    {
+      "id": "KB-M07-CLAVE",
+      "scope": "sample",
+      "content": "CLAIM-036",
+      "domain": "M07",
+      "question": "Welche absoluten Ticks hat das genannte 3:2-Son-Clave-Beispiel bei 480 PPQ?",
+      "expected": [
+        0,
+        720,
+        1440,
+        2400,
+        2880
+      ],
+      "variants": [],
+      "basis": "CLAIM-036. Zwei 4/4-Takte mit Offsets [0, 1½, 3] und [1, 2] Vierteln.",
+      "method": "claim_sample",
+      "input": {
+        "id": "CLAIM-036",
+        "check": "clave",
+        "ppq": 480,
+        "sixteenth_positions": [
+          [
+            0,
+            6,
+            12
+          ],
+          [
+            4,
+            8
+          ]
+        ]
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "c2caf66cbfaf54714aeecb197ef6576feb31e5a36db68293ad1028007dc8b1c6",
+      "status": "PASS",
+      "observed": [
+        0,
+        720,
+        1440,
+        2400,
+        2880
+      ]
+    },
+    {
+      "id": "KB-PAT-031-RASTER",
+      "scope": "catalog",
+      "content": "PAT-031",
+      "domain": "M08",
+      "question": "Welche Glocken- und Puls-Onsets sowie Taktgrenzen ergeben sich in beiden Zählvarianten?",
+      "expected": {
+        "ppq": 480,
+        "bpm": 120,
+        "pulse_ticks": 240,
+        "bell_onsets": [
+          0,
+          480,
+          960,
+          1200,
+          1680,
+          2160,
+          2640
+        ],
+        "beat_onsets": [
+          0,
+          720,
+          1440,
+          2160
+        ],
+        "barlines": {
+          "12": [
+            0,
+            2880
+          ],
+          "6": [
+            0,
+            1440,
+            2880
+          ]
+        },
+        "cycle_seconds": 2.0
+      },
+      "variants": [],
+      "basis": "Notierte Zählvarianten im Drum-Katalog und Music Theory for the 21st-Century Classroom, § 4.4. Drei Achtel je Schlag, vier Schläge pro Zyklus.",
+      "method": "compound_meter",
+      "input": {},
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "6dd9fbdffd530b17d4d36a7c751ce445e14353acdacbb26ce0796fc5bc976862",
+      "status": "PASS",
+      "observed": {
+        "ppq": 480,
+        "bpm": 120,
+        "pulse_ticks": 240,
+        "bell_onsets": [
+          0,
+          480,
+          960,
+          1200,
+          1680,
+          2160,
+          2640
+        ],
+        "beat_onsets": [
+          0,
+          720,
+          1440,
+          2160
+        ],
+        "barlines": {
+          "12": [
+            0,
+            2880
+          ],
+          "6": [
+            0,
+            1440,
+            2880
+          ]
+        },
+        "cycle_seconds": 2.0
+      }
+    },
+    {
+      "id": "KB-M08-METER",
+      "scope": "sample",
+      "content": "PAT-031",
+      "domain": "M08",
+      "question": "Ist in PAT-031 für die zwölf Pulse genau ein 12/8-Takt oder sind zwei 6/8-Takte festgelegt?",
+      "expected": [
+        "Taktgrenzen prüfen",
+        "Zwölf Pulse allein legen die Gruppierung nicht fest."
+      ],
+      "variants": [],
+      "basis": "Der Katalog notiert einen 12/8-Takt und zwei 6/8-Takte. Die Hörproben setzen die jeweiligen Taktanfänge mit der gleichen Glockenfolge um.",
+      "method": "manual",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Die vorhandenen Hörproben mit einem 12/8-Takt und zwei 6/8-Takten vergleichen. Wahrgenommene Taktanfänge und den musikalischen Verwendungszweck protokollieren.",
+      "fingerprint": "57f183e896a0c32918129efb7267bed134b22ba1f3497447573021e27ac4f744",
+      "status": "PENDING",
+      "observed": "Hör-, Spiel- oder Fachabnahme ausstehend."
+    },
+    {
+      "id": "KB-M11-ALTER",
+      "scope": "sample",
+      "content": "CLAIM-011",
+      "domain": "M11",
+      "question": "Darf MusicXML 4.0 für alter 0,5 verwenden?",
+      "expected": [
+        "0.5",
+        "-0.5"
+      ],
+      "variants": [],
+      "basis": "https://www.w3.org/2021/06/musicxml40/musicxml-reference/data-types/semitones/ nennt 0.5 und spezifiziert decimal ohne die behauptete Begrenzung.",
+      "method": "claim_sample",
+      "input": {
+        "id": "CLAIM-011",
+        "check": "alter"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "3feef1818d75d2a5651d7e5512e30fc1173ffe7135c82e458397623629cc4af4",
+      "status": "PASS",
+      "observed": [
+        "0.5",
+        "-0.5"
+      ]
+    },
+    {
+      "id": "KB-M12-PLAYABILITY",
+      "scope": "sample",
+      "content": "P02",
+      "domain": "M12",
+      "question": "Reicht kleine L1-Bewegung allein als Nachweis, dass P02 für kleine Hände spielbar ist?",
+      "expected": [
+        "Handspanne",
+        "Fingersatz",
+        "Tempo",
+        "Spielprobe"
+      ],
+      "variants": [],
+      "basis": "P02 und Solver-Vertrag in docs/IMPLEMENTATION.md. L1 misst Halbtonbewegung, keine Ergonomie.",
+      "method": "manual",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Zwei notierte Voicing-Folgen bei definiertem Tempo mit kleiner Handspanne spielen. Fingersatz, Abstand und mindestens einen Fall mit niedriger L1-Distanz und unbequemer Lage protokollieren.",
+      "fingerprint": "4240e78fb01c456882ab967f60de01f39848ebb709d645681dd3184caa54534e",
+      "status": "PENDING",
+      "observed": "Hör-, Spiel- oder Fachabnahme ausstehend."
+    },
+    {
+      "id": "KB-M07-SWING-SOURCE",
+      "scope": "sample",
+      "content": "CLAIM-034",
+      "domain": "M07",
+      "question": "Wo steht die empirische Untersuchung zu tempoabhängigen Jazz-Swing-Ratios und was wurde gemessen?",
+      "expected": {
+        "journal": "Music Perception",
+        "volume_issue": "19(3)",
+        "pages": "333–349",
+        "doi": "10.1525/mp.2002.19.3.333"
+      },
+      "variants": [
+        "Abkürzung des Zeitschriftentitels bei eindeutiger DOI. Der Abstract beschreibt Messungen an Ride-Cymbal-Onsets in vier konkreten Aufnahmen."
+      ],
+      "basis": "UC Press, Metadaten und Abstract: https://doi.org/10.1525/mp.2002.19.3.333. Der Abstract belegt keine allgemeingültige Ratio für konkrete BPM.",
+      "method": "claim_sample",
+      "input": {
+        "id": "CLAIM-034",
+        "check": "swing_source"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "3a62f61f7d3fc8db32ab91391c1c439b536e45cfc143b85f99baeebdc1225c1c",
+      "status": "PASS",
+      "observed": {
+        "journal": "Music Perception",
+        "volume_issue": "19(3)",
+        "pages": "333–349",
+        "doi": "10.1525/mp.2002.19.3.333"
+      }
+    },
+    {
+      "id": "COACH-01",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M05",
+      "question": "Analysiere Dm7–G7–Cmaj7 in C-Dur mit einem nachvollziehbaren Stimmführungsbeispiel.",
+      "expected": [
+        "ii7–V7–Imaj7",
+        "Dm7 Mollsept, G7 Dominantsept, Cmaj7 Dursept",
+        "Ein belegter Halbton und passende Akkordtöne",
+        "Quellenfundstelle"
+      ],
+      "variants": [
+        "C→H oder F→E"
+      ],
+      "basis": "https://viva.pressbooks.pub/openmusictheorycopy/chapter/ii-v-i/",
+      "method": "coach",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Die Frage COACH-01 in einer isolierten Session mit dem historischen Skill stellen. Antwort, Modell, Quellen und Bewertung aller Pflichtbestandteile protokollieren.",
+      "fingerprint": "6f7cb9b477862c30f360f96eb4318375c1d0984265a18c086ddb37e9330b94b7",
+      "status": "PENDING",
+      "observed": "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
+    },
+    {
+      "id": "COACH-02",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M09",
+      "question": "Bestimme die gehörte Tonika aus C–G–Am–F ohne Aufnahme oder Melodie.",
+      "expected": [
+        "C und A als mögliche Zentren",
+        "keine eindeutige Tonika ohne musikalischen Kontext",
+        "Quellenfundstelle"
+      ],
+      "variants": [
+        "I–V–vi–IV und III–VII–i–VI"
+      ],
+      "basis": "https://viva.pressbooks.pub/openmusictheorycopy/chapter/4-chord-schemas/",
+      "method": "coach",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Die Frage COACH-02 in einer isolierten Session mit dem historischen Skill stellen. Antwort, Modell, Quellen und Bewertung aller Pflichtbestandteile protokollieren.",
+      "fingerprint": "28231e4f8b48f990210e58f47097ea818fac536e5a7b53b7786a78a47ea1e156",
+      "status": "PENDING",
+      "observed": "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
+    },
+    {
+      "id": "COACH-03",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M04",
+      "question": "Erkläre Fmaj7 über D im Bass. Sind beide Hände zusammen rootless?",
+      "expected": [
+        "Fmaj7 ist ein Vierklang",
+        "D–F–A–C–E ergibt Dm9",
+        "Gesamtklang enthält D",
+        "keine erfundene Literaturstelle"
+      ],
+      "variants": [
+        "Rechte Hand darf rootless genannt werden."
+      ],
+      "basis": "Unabhängige Terzschichtung über D. P12 ist die zu überprüfende Vorlage.",
+      "method": "coach",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Die Frage COACH-03 in einer isolierten Session mit dem historischen Skill stellen. Antwort, Modell, Quellen und Bewertung aller Pflichtbestandteile protokollieren.",
+      "fingerprint": "0749b0644b4ea19c9d087f41d7c615af02928abcf83ccd3821a3285a8654fac5",
+      "status": "PENDING",
+      "observed": "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
+    },
+    {
+      "id": "COACH-04",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M07",
+      "question": "Sind bei Jazz-Swing auf jedem Tempo exakt dieselben Onsets vorgeschrieben? Belege die Aussage.",
+      "expected": [
+        "keine universelle feste Ratio",
+        "Tempo, Spielweise und Ensemble als Kontext",
+        "konkrete überprüfbare Fundstelle oder Evidenzlücke"
+      ],
+      "variants": [
+        "Tempoabhängige empirische Tendenz darf mit Gültigkeitsgrenze genannt werden."
+      ],
+      "basis": "Friberg und Sundström (2002), Swing Ratios and Ensemble Timing in Jazz Performance, Abstract, DOI 10.1525/mp.2002.19.3.333.",
+      "method": "coach",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Die Frage COACH-04 in einer isolierten Session mit dem historischen Skill stellen. Antwort, Modell, Quellen und Bewertung aller Pflichtbestandteile protokollieren.",
+      "fingerprint": "86bb4b0762a7a6a1e331492b8cd1a904cda4cdeecd0b7ab4bbf83c98b99db3aa",
+      "status": "PENDING",
+      "observed": "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
+    },
+    {
+      "id": "COACH-05",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M02",
+      "question": "Welche Tonklassen bedeuten H, B und Bb in deutscher und internationaler Eingabe?",
+      "expected": [
+        "H deutsch = internationales B",
+        "B deutsch = internationales B♭",
+        "Bb international = Tonklasse 10",
+        "Mehrdeutigkeit bei unmarkiertem B"
+      ],
+      "variants": [
+        "Deutsches Bb nur mit expliziter hybrider Konvention erläutern."
+      ],
+      "basis": "Yale University Library, The names of keys, S. 1, Zeilen B und B flat.",
+      "method": "coach",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Die Frage COACH-05 in einer isolierten Session mit dem historischen Skill stellen. Antwort, Modell, Quellen und Bewertung aller Pflichtbestandteile protokollieren.",
+      "fingerprint": "f9bbe950b9cb4ee4d34a1e5a2207fc3ae3578fd9537707bf5c266502f2014ed0",
+      "status": "PENDING",
+      "observed": "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
+    },
+    {
+      "id": "KB-PUB-VALID",
+      "scope": "publication",
+      "content": "Pilot-Freigabeprüfung",
+      "domain": "M12",
+      "question": "Erzeugen drei gültige Pilotbeispiele mit synthetischen fassungsgebundenen Freigaben dieselbe Datenversion in App und Markdown?",
+      "expected": {
+        "app_list": "PASS",
+        "app_get": "PASS",
+        "render": "PASS",
+        "check": "PASS",
+        "same_version": true
+      },
+      "variants": [
+        "Ausgabeformat darf sich ändern; Claim-Texte, Fingerabdrücke und Datenversion bleiben in beiden Einstiegen identisch."
+      ],
+      "basis": "Produktionsvertrag in knowledge/concepts/progressions/README.md. Die Testfreigaben gelten ausschließlich in der Kopie.",
+      "method": "publication_test",
+      "input": {
+        "test": "test_approved_fixture_publishes_same_version_and_content"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "409810c51e9bbb3b0133ce53c4d7ba745af9b440cf902e92ebf7d603112b1406",
+      "status": "PASS",
+      "observed": ".\n----------------------------------------------------------------------\nRan 1 test in 0.413s\n\nOK"
+    },
+    {
+      "id": "KB-PUB-UNKNOWN-SOURCE",
+      "scope": "publication",
+      "content": "Pilot-Freigabeprüfung",
+      "domain": "M12",
+      "question": "Akzeptieren App und Renderer eine erfundene Quellen-ID im sonst freigegebenen Datensatz?",
+      "expected": {
+        "result": "REJECT",
+        "reason": "unknown source invented-source"
+      },
+      "variants": [
+        "Einheitliche fachliche Ablehnung über App-Liste, Einzelabruf, Renderer und CI-Check."
+      ],
+      "basis": "Produktquellenregister und Pflicht zur Quellenauflösung vor Veröffentlichung.",
+      "method": "publication_test",
+      "input": {
+        "test": "test_unknown_source_blocks_every_entry"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "7ed9a9a8afe9fd173f2a30ab65395357058f4938bd4232523422b617fabe9b20",
+      "status": "PASS",
+      "observed": ".\n----------------------------------------------------------------------\nRan 1 test in 0.568s\n\nOK"
+    },
+    {
+      "id": "KB-PUB-FALSE-LESSON",
+      "scope": "publication",
+      "content": "Pilot-Freigabeprüfung",
+      "domain": "M12",
+      "question": "Kann der Lehrsatz „C-Dur enthält Fis anstelle von F“ mit der Freigabe der vorherigen Fassung regeneriert werden?",
+      "expected": {
+        "result": "REJECT",
+        "reason": "approval does not match",
+        "markdown_unchanged": true
+      },
+      "variants": [
+        "Einheitliche Ablehnung wegen veralteter Freigabe; der veröffentlichte Text bleibt bytegleich."
+      ],
+      "basis": "Die C-Dur-Tonleiter enthält F. Der Fassungsfingerabdruck bindet die Freigabe an den ursprünglichen Wortlaut.",
+      "method": "publication_test",
+      "input": {
+        "test": "test_falsified_lesson_cannot_be_regenerated_with_previous_approval"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "4253e2e0a5a0d3da0ca9224c5d35a01591c439c272de97a4858455e66385bf2a",
+      "status": "PASS",
+      "observed": ".\n----------------------------------------------------------------------\nRan 1 test in 0.736s\n\nOK"
+    },
+    {
+      "id": "KB-CONTROL-BLUES",
+      "scope": "catalog",
+      "content": "PROG-008",
+      "domain": "M06",
+      "question": "Welche Akkorde ergeben Idom7 und IVdom7 in C, und welche Septimen enthalten sie?",
+      "expected": [
+        [
+          "C7",
+          [
+            0,
+            4,
+            7,
+            10
+          ]
+        ],
+        [
+          "F7",
+          [
+            0,
+            3,
+            5,
+            9
+          ]
+        ]
+      ],
+      "variants": [
+        "I7 und IV7 in explizit vereinbartem Blues-Dialekt."
+      ],
+      "basis": "I und IV haben im vorgegebenen Blues-Modell kleine Septimen; Grundtöne C und F.",
+      "method": "degree_controls",
+      "input": {
+        "key": "C",
+        "degrees": [
+          "Idom7",
+          "IVdom7"
+        ]
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "1daa38d319100a9b0d2ad7c09b81ae705ff1f85fac805f9887161d0920c324d8",
+      "status": "PASS",
+      "observed": [
+        [
+          "C7",
+          [
+            0,
+            4,
+            7,
+            10
+          ]
+        ],
+        [
+          "F7",
+          [
+            0,
+            3,
+            5,
+            9
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "KB-CONTROL-P12",
+      "scope": "catalog",
+      "content": "P12",
+      "domain": "M10",
+      "question": "Welche Tonklassen enthält der Vierklang Fmaj7, und was ergibt ein zusätzliches D im Bass?",
+      "expected": [
+        [
+          0,
+          4,
+          5,
+          9
+        ],
+        [
+          0,
+          2,
+          4,
+          5,
+          9
+        ]
+      ],
+      "variants": [
+        "F–A–C–E und D–F–A–C–E in beliebiger Lage; D bleibt Basston im Gesamtbeispiel."
+      ],
+      "basis": "Terzschichtung F–A–C–E, zuzüglich D ergibt 0,3,7,10,14 relativ zu D.",
+      "method": "piano_control",
+      "input": {
+        "type": "upper_structure"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "f0c2eb95210a515c5af62d6ac0b5c368543eacaef009b5eecc18d7ad96cbbc54",
+      "status": "PASS",
+      "observed": [
+        [
+          0,
+          4,
+          5,
+          9
+        ],
+        [
+          0,
+          2,
+          4,
+          5,
+          9
+        ]
+      ]
+    },
+    {
+      "id": "KB-CONTROL-P19",
+      "scope": "catalog",
+      "content": "P19",
+      "domain": "M10",
+      "question": "Welche Halbtonabstände ergeben C♯3–C3–H2–A2–G2 in dieser Lage?",
+      "expected": [
+        -1,
+        -1,
+        -2,
+        -2
+      ],
+      "variants": [
+        "Gleiche Folge geschlossen um eine Oktave versetzt. Nur die ersten zwei Schritte sind chromatisch."
+      ],
+      "basis": "MIDI-Werte 49,48,47,45,43 und Differenz benachbarter Werte.",
+      "method": "piano_control",
+      "input": {
+        "type": "bass"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "98c5c7ffefd2fd819312eb83bb2d6ff9922baaef90c91536eb19b5f47afab8d7",
+      "status": "PASS",
+      "observed": [
+        -1,
+        -1,
+        -2,
+        -2
+      ]
+    },
+    {
+      "id": "KB-M09-LOOP-HEAR",
+      "scope": "sample",
+      "content": "PROG-001-HÖRPRAXIS",
+      "domain": "M09",
+      "question": "Ändert sich die wahrgenommene Tonika bei zwei verschieden phrasierten Aufnahmen desselben Loops?",
+      "expected": [
+        "Zwei Aufnahmen mit gleicher Akkordfolge",
+        "Melodie und Phrasierung dokumentiert",
+        "Höreindruck je Aufnahme protokolliert",
+        "Abweichende Hörerurteile erhalten"
+      ],
+      "variants": [
+        "Anonymisierte A/B-Reihenfolge und mehrere Hörer sind zulässig."
+      ],
+      "basis": "Hörprüfung der stilabhängigen Aussage. Open Music Theory, Four-Chord Schemas, Abschnitt zu relativer Tonika.",
+      "method": "manual",
+      "input": {},
+      "mandatory": true,
+      "next_step": "Zwei Audiofassungen mit C- bzw. A-zentrierter Melodie erstellen und einer fachkundigen Person in verdeckter Reihenfolge vorspielen.",
+      "fingerprint": "aab715c692ff51b606204073eb9517eb28bafc15240f85c455c3516a91e90278",
+      "status": "PENDING",
+      "observed": "Hör-, Spiel- oder Fachabnahme ausstehend."
+    },
+    {
+      "id": "COACH-06",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M01",
+      "question": "Wie berechnest du die Frequenz von C4 bei A4=440 Hz und in gleichstufiger Stimmung?",
+      "expected": [
+        "MIDI 60 und 69",
+        "Frequenzformel mit Exponent −9/12",
+        "ca. 261,63 Hz",
+        "Stimmung und Referenz ausdrücklich nennen"
+      ],
+      "variants": [
+        "Gleichwertige Notennamen, Lagen und belegte Varianten bei ausdrücklich genannter Konvention."
+      ],
+      "basis": "Oktavverhältnis 2:1, zwölf gleiche Halbtöne, neun Halbtöne Abstand.",
+      "method": "coach",
+      "input": {},
+      "mandatory": true,
+      "next_step": "COACH-06 mit festgehaltenem Modell und dem historischen Skill ausführen, Rohantwort sichern und anhand der Sollbestandteile fachlich bewerten.",
+      "fingerprint": "6d1b8a1d51f9a50bccecdc050c5794f3527604f3e095364d87d8e4db5f0541a6",
+      "status": "PENDING",
+      "observed": "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
+    },
+    {
+      "id": "COACH-07",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M03",
+      "question": "Was unterscheidet A natürlich Moll und A harmonisch Moll, und wie groß ist F→G♯?",
+      "expected": [
+        "G gegenüber Gis",
+        "drei Halbtöne",
+        "im Schriftbild übermäßige Sekunde"
+      ],
+      "variants": [
+        "Gleichwertige Notennamen, Lagen und belegte Varianten bei ausdrücklich genannter Konvention."
+      ],
+      "basis": "A–H–C–D–E–F–G(♯)–A. F4=65, G♯4=68.",
+      "method": "coach",
+      "input": {},
+      "mandatory": true,
+      "next_step": "COACH-07 mit festgehaltenem Modell und dem historischen Skill ausführen, Rohantwort sichern und anhand der Sollbestandteile fachlich bewerten.",
+      "fingerprint": "23895399ee8139244c18503328944ffbd2393cdb9c800eaa378d9fb5381d380a",
+      "status": "PENDING",
+      "observed": "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
+    },
+    {
+      "id": "COACH-08",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M06",
+      "question": "Zeige im Schritt F–Fm–C eine konkrete mögliche Stimme und begrenze die Aussage.",
+      "expected": [
+        "A→As→G",
+        "zweimal absteigender Halbton",
+        "Tonmitgliedschaften F, Fm und C",
+        "lokales Beispiel ohne Behauptung eines einzig richtigen Voicings"
+      ],
+      "variants": [
+        "Gleichwertige Notennamen, Lagen und belegte Varianten bei ausdrücklich genannter Konvention."
+      ],
+      "basis": "Open Music Theory, Blues-Based Schemas, Plagal Sigh (6–♭6–5).",
+      "method": "coach",
+      "input": {},
+      "mandatory": true,
+      "next_step": "COACH-08 mit festgehaltenem Modell und dem historischen Skill ausführen, Rohantwort sichern und anhand der Sollbestandteile fachlich bewerten.",
+      "fingerprint": "71598b4130597ab021ee65d5301d6afc096ddcf00ec2fd00877f0c9b8962b150",
+      "status": "PENDING",
+      "observed": "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
+    },
+    {
+      "id": "COACH-09",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M08",
+      "question": "Entscheidet ein Pattern mit zwölf Pulsen ohne Akzente zwischen 12/8 und zwei Takten 6/8?",
+      "expected": [
+        "Nein",
+        "Taktgrenzen und Akzentgruppierung nötig",
+        "beide Gruppierungen erklären"
+      ],
+      "variants": [
+        "Gleichwertige Notennamen, Lagen und belegte Varianten bei ausdrücklich genannter Konvention."
+      ],
+      "basis": "PAT-031 als Ausgangstext; beide Varianten enthalten insgesamt zwölf Achtelpulse.",
+      "method": "coach",
+      "input": {},
+      "mandatory": true,
+      "next_step": "COACH-09 mit festgehaltenem Modell und dem historischen Skill ausführen, Rohantwort sichern und anhand der Sollbestandteile fachlich bewerten.",
+      "fingerprint": "2b0def986237e59fb56e92e371826599e21a487e1aa2ce4673e3763c1064062d",
+      "status": "PENDING",
+      "observed": "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
+    },
+    {
+      "id": "COACH-10",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M10",
+      "question": "Gib für Dm9 zwei Handaufteilungen und unterscheide gespielten Bass und obere Struktur.",
+      "expected": [
+        "D als mögliche linke Bassnote",
+        "F–A–C–E als obere Struktur",
+        "zweite korrekte Aufteilung",
+        "keine pauschale Spielbarkeitsbehauptung"
+      ],
+      "variants": [
+        "Gleichwertige Notennamen, Lagen und belegte Varianten bei ausdrücklich genannter Konvention."
+      ],
+      "basis": "Unabhängige Terzschichtung 0,3,7,10,14 über D. P12 als Gegenfall.",
+      "method": "coach",
+      "input": {},
+      "mandatory": true,
+      "next_step": "COACH-10 mit festgehaltenem Modell und dem historischen Skill ausführen, Rohantwort sichern und anhand der Sollbestandteile fachlich bewerten.",
+      "fingerprint": "b4c0b1892944166324b01fca64fb56d5bfc2950b6004b33fe1c521c178043da1",
+      "status": "PENDING",
+      "observed": "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
+    },
+    {
+      "id": "COACH-11",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M11",
+      "question": "Kann MusicXML alter=0.5 ausdrücken, und entspricht das einem unveränderten MIDI-Notenwert?",
+      "expected": [
+        "MusicXML alter ist dezimal",
+        "0.5 = ein halber Halbton",
+        "ganzzahliger MIDI-Notenwert reicht dafür allein nicht",
+        "W3C-Fundstelle"
+      ],
+      "variants": [
+        "Gleichwertige Notennamen, Lagen und belegte Varianten bei ausdrücklich genannter Konvention."
+      ],
+      "basis": "https://www.w3.org/2021/06/musicxml40/musicxml-reference/data-types/semitones/",
+      "method": "coach",
+      "input": {},
+      "mandatory": true,
+      "next_step": "COACH-11 mit festgehaltenem Modell und dem historischen Skill ausführen, Rohantwort sichern und anhand der Sollbestandteile fachlich bewerten.",
+      "fingerprint": "690ede2101b33a1e42462a3b55c0a956483292872a8452351b2315b6d5200056",
+      "status": "PENDING",
+      "observed": "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
+    },
+    {
+      "id": "COACH-12",
+      "scope": "coach",
+      "content": "Harmony Coach",
+      "domain": "M12",
+      "question": "Entwirf eine kurze Übung für zwei C-Dur-Akkordumkehrungen und erkläre, wie du sie abnehmen würdest.",
+      "expected": [
+        "zwei korrekte Basstöne E und G",
+        "konkrete Noten je Umkehrung",
+        "Tempo und Fingersatz oder Anpassung",
+        "beobachtbares Lernziel und Abnahmekriterium"
+      ],
+      "variants": [
+        "Gleichwertige Notennamen, Lagen und belegte Varianten bei ausdrücklich genannter Konvention."
+      ],
+      "basis": "C–E–G, erste Umkehrung E–G–C, zweite G–C–E. P02/P11.",
+      "method": "coach",
+      "input": {},
+      "mandatory": true,
+      "next_step": "COACH-12 mit festgehaltenem Modell und dem historischen Skill ausführen, Rohantwort sichern und anhand der Sollbestandteile fachlich bewerten.",
+      "fingerprint": "70e001c33a990e86ec9a01a8b16901901b98bdd118cb3efeaf528e9775a2b1ea",
+      "status": "PENDING",
+      "observed": "Keine Coach-Antwort mit menschlicher Bewertung erfasst."
+    },
+    {
+      "id": "KB-API-SUS-NOTATION",
+      "scope": "api",
+      "content": "Theory-API",
+      "domain": "M04",
+      "question": "Welche Grundtöne und Intervalle ergeben sus, sus2 und sus4 mit B/H in DE und B/Bb in INT?",
+      "expected": {
+        "DE": {
+          "B": 10,
+          "H": 11
+        },
+        "INT": {
+          "B": 11,
+          "Bb": 10
+        },
+        "sus": [
+          0,
+          5,
+          7
+        ],
+        "sus2": [
+          0,
+          2,
+          7
+        ]
+      },
+      "variants": [
+        "Die jeweils dokumentierte Konvention gilt."
+      ],
+      "basis": "Deutsche und internationale Notennamen, sus4 ohne Terz mit Quarte, sus2 mit Sekunde.",
+      "method": "api_test",
+      "input": {
+        "test": "test_sus_chords_respect_explicit_notation"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "5899b39ef10153e45b8f1c98f5d62ddf28e2a6b714d85c1a9bc04f0e1d490091",
+      "status": "PASS",
+      "observed": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK"
+    },
+    {
+      "id": "KB-API-PARENTHESES",
+      "scope": "api",
+      "content": "Theory-API",
+      "domain": "M04",
+      "question": "Wird C7((b9) abgewiesen und C7(b9) gelesen?",
+      "expected": {
+        "C7((b9)": "REJECT",
+        "C7(b9)": [
+          0,
+          4,
+          7,
+          10,
+          13
+        ]
+      },
+      "variants": [
+        "Die jeweils dokumentierte Konvention gilt."
+      ],
+      "basis": "Syntax der Akkordsymbole und kleine None = 13 Halbtöne.",
+      "method": "api_test",
+      "input": {
+        "test": "test_chord_tensions_require_balanced_parentheses"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "5b00e00ed8aac6514b6191a19f4795f4cb15ead5a0b167f8ffb7d04c4c733f57",
+      "status": "PASS",
+      "observed": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK"
+    },
+    {
+      "id": "KB-API-OPEN-ROTATION",
+      "scope": "api",
+      "content": "Theory-API",
+      "domain": "M04",
+      "question": "Was ergibt eine zyklische Rotation des offenen Voicings 48,67,76?",
+      "expected": {
+        "notes": [
+          67,
+          76,
+          84
+        ],
+        "bass": 67,
+        "pitch_classes": [
+          0,
+          4,
+          7
+        ]
+      },
+      "variants": [
+        "Die jeweils dokumentierte Konvention gilt."
+      ],
+      "basis": "C3 wird über E5 bis C6 angehoben. Der nächste tiefste Ton G4 bleibt liegen.",
+      "method": "api_test",
+      "input": {
+        "test": "test_voicing_invert_rotates_voices_above_original_top"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "4a94e9f0ed1190b2a736e7dd1d5803bc062778adf78d96b69cc9355e72cc7d8e",
+      "status": "PASS",
+      "observed": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK"
+    },
+    {
+      "id": "KB-CONTRACT-AUTO",
+      "scope": "api",
+      "content": "Theory-API",
+      "domain": "M04",
+      "question": "Soll AUTO nackte deutsche Vorzeichennamen wie Cis akzeptieren?",
+      "expected": {
+        "Cis/DE": "C#",
+        "Cis/AUTO": "C#",
+        "Es/DE": "Eb",
+        "Es/AUTO": "Eb",
+        "Es7/DE": "Eb7",
+        "Es7/AUTO": "Eb7"
+      },
+      "variants": [],
+      "basis": "DE und AUTO an Cis, Es und Es7 vergleichen.",
+      "method": "api_contract",
+      "input": {
+        "probe": "auto"
+      },
+      "mandatory": false,
+      "next_step": "",
+      "fingerprint": "7fea8933011f5e02b264c0efcca5ed13eb56aef65f10af86fb2a54ec7c815e71",
+      "status": "PASS",
+      "observed": {
+        "Cis/DE": "C#",
+        "Cis/AUTO": "C#",
+        "Es/DE": "Eb",
+        "Es/AUTO": "Eb",
+        "Es7/DE": "Eb7",
+        "Es7/AUTO": "Eb7"
+      }
+    },
+    {
+      "id": "KB-CONTRACT-ANALYSIS",
+      "scope": "api",
+      "content": "Theory-API",
+      "domain": "M06",
+      "question": "Welche Analysefelder liefert die API bei null, einer oder mehreren Lagen?",
+      "expected": {
+        "empty": [
+          "average_l1_step",
+          "average_l1_step_per_voice",
+          "circular_pc_distance",
+          "max_single_voice_jump",
+          "motion_distribution",
+          "outer_voice_motions",
+          "parallel_violations",
+          "total_circular_distance",
+          "total_l1_distance",
+          "transition_count",
+          "voice_crossings_count"
+        ],
+        "one": [
+          "average_l1_step",
+          "average_l1_step_per_voice",
+          "circular_pc_distance",
+          "max_single_voice_jump",
+          "motion_distribution",
+          "outer_voice_motions",
+          "parallel_violations",
+          "total_circular_distance",
+          "total_l1_distance",
+          "transition_count",
+          "voice_crossings_count"
+        ],
+        "two": [
+          "average_l1_step",
+          "average_l1_step_per_voice",
+          "circular_pc_distance",
+          "max_single_voice_jump",
+          "motion_distribution",
+          "outer_voice_motions",
+          "parallel_violations",
+          "total_circular_distance",
+          "total_l1_distance",
+          "transition_count",
+          "voice_crossings_count"
+        ]
+      },
+      "variants": [],
+      "basis": "Öffentliche Stimmführungsanalyse mit null und zwei Voicings.",
+      "method": "api_contract",
+      "input": {
+        "probe": "analysis"
+      },
+      "mandatory": false,
+      "next_step": "",
+      "fingerprint": "7da2e7ecff0c3810f59ae7507491846dffbf9167478567b12999482523df9c97",
+      "status": "PASS",
+      "observed": {
+        "empty": [
+          "average_l1_step",
+          "average_l1_step_per_voice",
+          "circular_pc_distance",
+          "max_single_voice_jump",
+          "motion_distribution",
+          "outer_voice_motions",
+          "parallel_violations",
+          "total_circular_distance",
+          "total_l1_distance",
+          "transition_count",
+          "voice_crossings_count"
+        ],
+        "one": [
+          "average_l1_step",
+          "average_l1_step_per_voice",
+          "circular_pc_distance",
+          "max_single_voice_jump",
+          "motion_distribution",
+          "outer_voice_motions",
+          "parallel_violations",
+          "total_circular_distance",
+          "total_l1_distance",
+          "transition_count",
+          "voice_crossings_count"
+        ],
+        "two": [
+          "average_l1_step",
+          "average_l1_step_per_voice",
+          "circular_pc_distance",
+          "max_single_voice_jump",
+          "motion_distribution",
+          "outer_voice_motions",
+          "parallel_violations",
+          "total_circular_distance",
+          "total_l1_distance",
+          "transition_count",
+          "voice_crossings_count"
+        ]
+      }
+    },
+    {
+      "id": "KB-CONTRACT-COMPOUND",
+      "scope": "api",
+      "content": "Theory-API",
+      "domain": "M04",
+      "question": "Transportiert theoretical_intervals Intervallgröße oder modulo 12 normalisierte Werte?",
+      "expected": {
+        "Cadd9": [
+          0,
+          4,
+          7,
+          14
+        ],
+        "C7(#11)": [
+          0,
+          4,
+          7,
+          10,
+          18
+        ],
+        "C9": [
+          0,
+          4,
+          7,
+          10,
+          14
+        ]
+      },
+      "variants": [],
+      "basis": "Große None = 14, übermäßige Undezime = 18 Halbtöne.",
+      "method": "api_contract",
+      "input": {
+        "probe": "compound"
+      },
+      "mandatory": false,
+      "next_step": "",
+      "fingerprint": "cbbf60fe1fe930d3106e223fd1063a4269ec52b19d26a4b49351f6110233d734",
+      "status": "PASS",
+      "observed": {
+        "Cadd9": [
+          0,
+          4,
+          7,
+          14
+        ],
+        "C7(#11)": [
+          0,
+          4,
+          7,
+          10,
+          18
+        ],
+        "C9": [
+          0,
+          4,
+          7,
+          10,
+          14
+        ]
+      }
+    },
+    {
+      "id": "KB-CONTRACT-DROP2",
+      "scope": "api",
+      "content": "Theory-API",
+      "domain": "M04",
+      "question": "Welche Spannungen muss DROP2 bei C13 erhalten?",
+      "expected": {
+        "CLOSE": [
+          0,
+          2,
+          4,
+          9,
+          10
+        ],
+        "DROP2": [
+          0,
+          4,
+          9,
+          10
+        ]
+      },
+      "variants": [],
+      "basis": "A ist die Tredezime von C und liegt bei CLOSE in der Tonklassenausgabe.",
+      "method": "api_contract",
+      "input": {
+        "probe": "drop2"
+      },
+      "mandatory": false,
+      "next_step": "",
+      "fingerprint": "360da9894b59f84e6d6d9c4e9741fbe129a1e503aa8ed737c7ad769a812a23e6",
+      "status": "PASS",
+      "observed": {
+        "CLOSE": [
+          0,
+          2,
+          4,
+          9,
+          10
+        ],
+        "DROP2": [
+          0,
+          4,
+          9,
+          10
+        ]
+      }
+    },
+    {
+      "id": "KB-PAT-027-RASTER",
+      "scope": "catalog",
+      "content": "PAT-027",
+      "domain": "M08",
+      "question": "Welche Tickpositionen und Taktdauer ergeben sich aus dem notierten Raster für PAT-027?",
+      "expected": {
+        "meter": [
+          4,
+          4
+        ],
+        "bpm": 128,
+        "beat_unit": "Viertel",
+        "ppq": 480,
+        "bars": 2,
+        "ticks_per_bar": 1920,
+        "onsets": [
+          0,
+          720,
+          1440,
+          2400,
+          3120
+        ],
+        "bar_seconds": 1.875
+      },
+      "variants": [],
+      "basis": "Cross-Stick im Latin-Übungsmodell. Die Sollwerte folgen aus den notierten Positionen und der gewählten Tempoeinheit.",
+      "method": "latin_timing",
+      "input": {
+        "voice": "Cross-Stick"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "24bfbc9c2b263d47fa8f9c43c5b4e6f34b71886430a32285c8a7849edc0ecbc5",
+      "status": "PASS",
+      "observed": {
+        "meter": [
+          4,
+          4
+        ],
+        "bpm": 128,
+        "beat_unit": "Viertel",
+        "ppq": 480,
+        "bars": 2,
+        "ticks_per_bar": 1920,
+        "onsets": [
+          0,
+          720,
+          1440,
+          2400,
+          3120
+        ],
+        "bar_seconds": 1.875
+      }
+    },
+    {
+      "id": "KB-PAT-028-RASTER",
+      "scope": "catalog",
+      "content": "PAT-028",
+      "domain": "M08",
+      "question": "Welche Tickpositionen und Taktdauer ergeben sich aus dem notierten Raster für PAT-028?",
+      "expected": {
+        "meter": [
+          4,
+          4
+        ],
+        "bpm": 116,
+        "beat_unit": "Viertel",
+        "ppq": 480,
+        "bars": 1,
+        "ticks_per_bar": 1920,
+        "onsets": [
+          1440,
+          1680
+        ],
+        "bar_seconds": 2.068966
+      },
+      "variants": [],
+      "basis": "Offene High Conga im Latin-Übungsmodell. Die Sollwerte folgen aus den notierten Positionen und der gewählten Tempoeinheit.",
+      "method": "latin_timing",
+      "input": {
+        "voice": "Offene High Conga"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "0f93d90ab8d75533880ed7bf44326abc5c7b2fddb28451945e83080421056f2b",
+      "status": "PASS",
+      "observed": {
+        "meter": [
+          4,
+          4
+        ],
+        "bpm": 116,
+        "beat_unit": "Viertel",
+        "ppq": 480,
+        "bars": 1,
+        "ticks_per_bar": 1920,
+        "onsets": [
+          1440,
+          1680
+        ],
+        "bar_seconds": 2.068966
+      }
+    },
+    {
+      "id": "KB-PAT-029-RASTER",
+      "scope": "catalog",
+      "content": "PAT-029",
+      "domain": "M08",
+      "question": "Welche Tickpositionen und Taktdauer ergeben sich aus dem notierten Raster für PAT-029?",
+      "expected": {
+        "meter": [
+          2,
+          2
+        ],
+        "bpm": 105,
+        "beat_unit": "Halbe",
+        "ppq": 480,
+        "bars": 1,
+        "ticks_per_bar": 1920,
+        "onsets": [
+          0,
+          960
+        ],
+        "bar_seconds": 1.142857
+      },
+      "variants": [],
+      "basis": "Halbenpuls im Latin-Übungsmodell. Die Sollwerte folgen aus den notierten Positionen und der gewählten Tempoeinheit.",
+      "method": "latin_timing",
+      "input": {
+        "voice": "Halbenpuls"
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "a4e080ff2ed0969c324661b3dddd4a41b4fea43ce86a4bcbee05b363676640f3",
+      "status": "PASS",
+      "observed": {
+        "meter": [
+          2,
+          2
+        ],
+        "bpm": 105,
+        "beat_unit": "Halbe",
+        "ppq": 480,
+        "bars": 1,
+        "ticks_per_bar": 1920,
+        "onsets": [
+          0,
+          960
+        ],
+        "bar_seconds": 1.142857
+      }
+    },
+    {
+      "id": "KB-PAT-026-TICKS",
+      "scope": "catalog",
+      "content": "PAT-026",
+      "domain": "M07",
+      "question": "Welchen zweiten Onset und welchen Offset ergeben 64 % Swing bei 480 PPQ im 16tel-Paar?",
+      "expected": {
+        "ppq": 480,
+        "onset": 154,
+        "offset": 34
+      },
+      "variants": [
+        "154 Ticks ab Paarbeginn, +34 gegenüber dem geraden Onset."
+      ],
+      "basis": "Zwei Sechzehntel ergeben 240 Ticks. 240 × 64/100 = 153,6 → 154. Gerader Onset 120.",
+      "method": "drum_ticks",
+      "input": {
+        "percent": 64
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "b7be34ebcdf8e7793dbf5efbcb0bae1f7401e0b57a275b92118e5e1812a3e058",
+      "status": "PASS",
+      "observed": {
+        "ppq": 480,
+        "onset": 154,
+        "offset": 34
+      }
+    },
+    {
+      "id": "KB-SRC-033-PROVENANCE",
+      "scope": "backlog",
+      "content": "SRC-033",
+      "domain": "M03",
+      "question": "Ist die behauptete Robert-Prehn-Fundstelle identifizierbar?",
+      "expected": [
+        "Autor, Werk und konkrete Fundstelle bestätigt",
+        "Geltungsgrenze der Vier-Familien-Taxonomie dokumentiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Historisches Quellenregister SRC-033 und die separate Lehrquelle SRC-0003. Recherche und Abgrenzung in research/gaps/FABLE_FACHNACHWEISE.md.",
+      "method": "manual",
+      "input": {
+        "claims": [
+          "CLAIM-003",
+          "CLAIM-004",
+          "CLAIM-005",
+          "CLAIM-006",
+          "CLAIM-016"
+        ]
+      },
+      "mandatory": true,
+      "next_step": "Die angegebene Publikation bibliografisch suchen und von Oliver Prehns Lehrseite abgrenzen. Originalausgabe oder Katalognachweis mit Fundstelle vorlegen.",
+      "fingerprint": "dfbfc538f9a0b5ee04124cdd58994fba653c581cb3fadebba4d6ac539f13c972",
+      "status": "PENDING",
+      "observed": "Hör-, Spiel- oder Fachabnahme ausstehend."
+    },
+    {
+      "id": "KB-CLAIM-032-MINOR",
+      "scope": "backlog",
+      "content": "CLAIM-032",
+      "domain": "M06",
+      "question": "Gilt die Halbtonregel für beide Stimmführungen auch im Moll-ii–V–i?",
+      "expected": {
+        "major": [
+          -1,
+          -1
+        ],
+        "minor": [
+          -1,
+          -2
+        ]
+      },
+      "variants": [],
+      "basis": "Open Music Theory, ii–V–I, Example 2. Gegenrechnung aus den angegebenen Akkordtönen. https://viva.pressbooks.pub/openmusictheory/chapter/ii-v-i/",
+      "method": "guide_tone_paths",
+      "input": {
+        "major": {
+          "chords": [
+            "Dm7",
+            "G7",
+            "Cmaj7"
+          ],
+          "paths": [
+            [
+              "C4",
+              "B3"
+            ],
+            [
+              "F4",
+              "E4"
+            ]
+          ]
+        },
+        "minor": {
+          "chords": [
+            "Dm7b5",
+            "G7",
+            "Cm7"
+          ],
+          "paths": [
+            [
+              "C4",
+              "B3"
+            ],
+            [
+              "F4",
+              "Eb4"
+            ]
+          ]
+        }
+      },
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "1c8f5e47f350107578209a2a688ca0ab4ddedf3ef58b119b0faa73ac8f23a769",
+      "status": "PASS",
+      "observed": {
+        "major": [
+          -1,
+          -1
+        ],
+        "minor": [
+          -1,
+          -2
+        ]
+      }
+    },
+    {
+      "id": "KB-GRAPH-NODES",
+      "scope": "backlog",
+      "content": "Wissensgraph",
+      "domain": "M12",
+      "question": "Lassen sich alle Graphknoten und ihr fachlicher Beleg nachvollziehen?",
+      "expected": [
+        "Sechs weiterhin offene historische Endpunkt-IDs und getrennte Definitionsvorschläge abgeglichen",
+        "97 Relationen mit Claim oder Fundstelle belegt bzw. als ungeprüft markiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Historische Vertiefungsprüfung am Ausgangscommit b7c4618; aktueller Abgleich einschließlich FORMAT_NODE_EVIDENCE.csv, MUSIC_NODE_EVIDENCE.csv und RELATION_EVIDENCE.csv. Einzelnachweise und Bearbeitung aller bisherigen Restknoten in docs/audit/fable-5.2/GRAPH_KLAERUNG_CDR010_2026-11-14.md.",
+      "method": "manual",
+      "input": {
+        "edges": 97,
+        "unresolved_ids": 6
+      },
+      "mandatory": true,
+      "next_step": "Die sechs verbleibenden Definitionen und alle 97 Kanten fachlich prüfen. 41 historische Definitionen wurden im Original wiedergefunden, zwei P10-Begriffe als Projektstrategie eingegrenzt; daraus folgt keine Fachabnahme.",
+      "fingerprint": "d3460d2515c0178d79fe25b29827983a0eb3c15a8a66fb8bceb776415ee09b7b",
+      "status": "PENDING",
+      "observed": "Hör-, Spiel- oder Fachabnahme ausstehend."
+    },
+    {
+      "id": "KB-HISTORY-F00412",
+      "scope": "backlog",
+      "content": "F00412",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für F00412 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert",
+        "Belastbarer Rechtebeleg für das gesamte CSS-Bundle",
+        "Dauerhafte Archivzuordnung autorisiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
+      "method": "manual",
+      "input": {
+        "registry_id": "F00412",
+        "path": "research/STEPS_Bibliothek/ANTI-MASS_ From Uganda into the Unknown _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css"
+      },
+      "mandatory": true,
+      "next_step": "Archivkette und Live-Bandcamp-CDN liefern identische Registerbytes (14.11.2026). Rechte am vollständigen Bundle und dauerhafte Archivzuordnung dokumentieren; eine Fachfreigabe liegt nicht vor.",
+      "fingerprint": "7d9b0e140c8bfb8775c0066c4405a28ae99c849c20861f42614aaf32ae292b32",
+      "status": "PENDING",
+      "observed": "Hör-, Spiel- oder Fachabnahme ausstehend."
+    },
+    {
+      "id": "KB-HISTORY-F00571",
+      "scope": "backlog",
+      "content": "F00571",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für F00571 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert",
+        "Belastbarer Rechtebeleg für das gesamte CSS-Bundle",
+        "Dauerhafte Archivzuordnung autorisiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
+      "method": "manual",
+      "input": {
+        "registry_id": "F00571",
+        "path": "research/STEPS_Bibliothek/Cloudchord_ Tending the Bloom Bap Garden _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css"
+      },
+      "mandatory": true,
+      "next_step": "Archivkette und Live-Bandcamp-CDN liefern identische Registerbytes (14.11.2026). Rechte am vollständigen Bundle und dauerhafte Archivzuordnung dokumentieren; eine Fachfreigabe liegt nicht vor.",
+      "fingerprint": "f6d38b7f740135eada27f7e89fbdbb9ad4b120015d5048f5b6ef5dc0e7ed6e66",
+      "status": "PENDING",
+      "observed": "Hör-, Spiel- oder Fachabnahme ausstehend."
+    },
+    {
+      "id": "KB-HISTORY-F00704",
+      "scope": "backlog",
+      "content": "F00704",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für F00704 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert",
+        "Belastbarer Rechtebeleg für das gesamte CSS-Bundle",
+        "Dauerhafte Archivzuordnung autorisiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
+      "method": "manual",
+      "input": {
+        "registry_id": "F00704",
+        "path": "research/STEPS_Bibliothek/Download the Live Set of Artefakt’s New Track “Undertow”_files/embedded_player-d605d516704fd10722142526feae0317.css"
+      },
+      "mandatory": true,
+      "next_step": "Archivkette und Live-Bandcamp-CDN liefern identische Registerbytes (14.11.2026). Rechte am vollständigen Bundle und dauerhafte Archivzuordnung dokumentieren; eine Fachfreigabe liegt nicht vor.",
+      "fingerprint": "594be4036dbd073c16ed3d50793a1681385a03c25cbf5a3247931562e4352b87",
+      "status": "PENDING",
+      "observed": "Hör-, Spiel- oder Fachabnahme ausstehend."
+    },
+    {
+      "id": "KB-HISTORY-F00768",
+      "scope": "backlog",
+      "content": "F00768",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für F00768 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert",
+        "Belastbarer Rechtebeleg für das gesamte CSS-Bundle",
+        "Dauerhafte Archivzuordnung autorisiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
+      "method": "manual",
+      "input": {
+        "registry_id": "F00768",
+        "path": "research/STEPS_Bibliothek/Download the Live Set of DJ Gigola’s New Track “Unfolding Practice II” _ Ableton_files/embedded_player-d605d516704fd10722142526feae0317.css"
+      },
+      "mandatory": true,
+      "next_step": "Archivkette und Live-Bandcamp-CDN liefern identische Registerbytes (14.11.2026). Rechte am vollständigen Bundle und dauerhafte Archivzuordnung dokumentieren; eine Fachfreigabe liegt nicht vor.",
+      "fingerprint": "d2508938fded11bff37c5b4ba33e9a67ec015493ef2537809e188f6f19f16197",
+      "status": "PENDING",
+      "observed": "Hör-, Spiel- oder Fachabnahme ausstehend."
+    },
+    {
+      "id": "KB-HISTORY-F00937",
+      "scope": "backlog",
+      "content": "F00937",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für F00937 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert",
+        "Belastbarer Rechtebeleg für das gesamte CSS-Bundle",
+        "Dauerhafte Archivzuordnung autorisiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
+      "method": "manual",
+      "input": {
+        "registry_id": "F00937",
+        "path": "research/STEPS_Bibliothek/Dummy_ Inside The Machine, Outside The Box_files/embedded_player-d605d516704fd10722142526feae0317.css"
+      },
+      "mandatory": true,
+      "next_step": "Archivkette und Live-Bandcamp-CDN liefern identische Registerbytes (14.11.2026). Rechte am vollständigen Bundle und dauerhafte Archivzuordnung dokumentieren; eine Fachfreigabe liegt nicht vor.",
+      "fingerprint": "026a35f4d1db7ff5c3eddc760b6da74999891ba293ae402f29eb2c6092c6c6b8",
+      "status": "PENDING",
+      "observed": "Hör-, Spiel- oder Fachabnahme ausstehend."
+    },
+    {
+      "id": "KB-HISTORY-F01002",
+      "scope": "backlog",
+      "content": "F01002",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für F01002 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert",
+        "Belastbarer Rechtebeleg für das gesamte CSS-Bundle",
+        "Dauerhafte Archivzuordnung autorisiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
+      "method": "manual",
+      "input": {
+        "registry_id": "F01002",
+        "path": "research/STEPS_Bibliothek/Machinedrum_ Planting Seeds_files/embedded_player-d605d516704fd10722142526feae0317.css"
+      },
+      "mandatory": true,
+      "next_step": "Archivkette und Live-Bandcamp-CDN liefern identische Registerbytes (14.11.2026). Rechte am vollständigen Bundle und dauerhafte Archivzuordnung dokumentieren; eine Fachfreigabe liegt nicht vor.",
+      "fingerprint": "2e906baf3d2ae6bba84c47fed9e8730c27079e08b538037b35af4b124ede176b",
+      "status": "PENDING",
+      "observed": "Hör-, Spiel- oder Fachabnahme ausstehend."
+    },
+    {
+      "id": "KB-HISTORY-PPR-MIDI-01",
+      "scope": "backlog",
+      "content": "PPR-MIDI-01",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für PPR-MIDI-01 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
+      "method": "manual",
+      "input": {
+        "registry_id": "PPR-MIDI-01",
+        "path": "research/STEPS_Bibliothek/Drums Progression/ppr-boom-bap-90-bpm-midi/PPR Boom Bap 90 BPM MIDI/README.txt"
+      },
+      "mandatory": true,
+      "next_step": "Originallieferung, Dateiliste, Prüfsummen und Rechtebeleg für das MIDI-Paket vorlegen. Das Register enthält einen Platzhalter.",
+      "fingerprint": "8203e842f6c8836d3f0c0764382ca962e7ec3d210e18b11454da3ed9763aa2fb",
+      "status": "PENDING",
+      "observed": "Hör-, Spiel- oder Fachabnahme ausstehend."
+    },
+    {
+      "id": "KB-HISTORY-PPR-MIDI-02",
+      "scope": "backlog",
+      "content": "PPR-MIDI-02",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für PPR-MIDI-02 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
+      "method": "manual",
+      "input": {
+        "registry_id": "PPR-MIDI-02",
+        "path": "research/STEPS_Bibliothek/Drums Progression/ppr-uk-garage-132-bpm-midi/PPR UK Garage 132 BPM MIDI/README.txt"
+      },
+      "mandatory": true,
+      "next_step": "Originallieferung, Dateiliste, Prüfsummen und Rechtebeleg für das MIDI-Paket vorlegen. Das Register enthält einen Platzhalter.",
+      "fingerprint": "827d63bbe8ee39d8c9007c11c72c217177aa07d1e48d3862ae440bb10e7af732",
+      "status": "PENDING",
+      "observed": "Hör-, Spiel- oder Fachabnahme ausstehend."
+    },
+    {
+      "id": "KB-HISTORY-PPR-MIDI-03",
+      "scope": "backlog",
+      "content": "PPR-MIDI-03",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für PPR-MIDI-03 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
+      "method": "manual",
+      "input": {
+        "registry_id": "PPR-MIDI-03",
+        "path": "research/STEPS_Bibliothek/Drums Progression/ppr-techno-130-bpm-midi/PPR Techno 130 BPM MIDI/README.txt"
+      },
+      "mandatory": true,
+      "next_step": "Originallieferung, Dateiliste, Prüfsummen und Rechtebeleg für das MIDI-Paket vorlegen. Das Register enthält einen Platzhalter.",
+      "fingerprint": "dcf7c9ad687a1a98b18bf682b38d109cffec6acdc2e29f0ea1c3b0a04539e498",
+      "status": "PENDING",
+      "observed": "Hör-, Spiel- oder Fachabnahme ausstehend."
+    },
+    {
+      "id": "KB-HISTORY-PPR-MIDI-04",
+      "scope": "backlog",
+      "content": "PPR-MIDI-04",
+      "domain": "M12",
+      "question": "Lässt sich der historische SHA-256 für PPR-MIDI-04 einem Originalbestand zuordnen?",
+      "expected": [
+        "Registerhash und gefundene Version verglichen",
+        "Provenienz oder verbleibende Abweichung dokumentiert"
+      ],
+      "variants": [
+        "Nachvollziehbarer Primärnachweis oder dokumentierte Nichtermittelbarkeit; bei fehlendem Beleg bleibt die Freigabe offen."
+      ],
+      "basis": "Registerpfad und historischer Commit b42a990681ce5fd12c7756fb2ada962e01474521. Pfad- und Hashabgleich in research/gaps/FABLE_FACHNACHWEISE.md.",
+      "method": "manual",
+      "input": {
+        "registry_id": "PPR-MIDI-04",
+        "path": "research/STEPS_Bibliothek/Drums Progression/ppr-sub-focus-style-174-bpm-midi/README.txt"
+      },
+      "mandatory": true,
+      "next_step": "Originallieferung, Dateiliste, Prüfsummen und Rechtebeleg für das MIDI-Paket vorlegen. Das Register enthält einen Platzhalter.",
+      "fingerprint": "8e2ad042fc76d0f05adba5c9b84ac90337985253004d9bf904fe33efc8ae50c5",
+      "status": "PENDING",
+      "observed": "Hör-, Spiel- oder Fachabnahme ausstehend."
+    },
+    {
+      "scope": "sample",
+      "domain": "M03",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-005",
+      "content": "CDR-005",
+      "question": "Welche Intervallfolge ergibt Rotation 7 des aufsteigenden melodischen Moll und passt sie zur Graphzuordnung?",
+      "expected": [
+        1,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "basis": "Oliver Prehn, The Modes, PDF-Seite 1: Ascending mel. minor, Altered / Super Locrian und Lydian dominant; https://www.newjazz.dk/Compendiums/Major_Melmi_Harmmi_HarmMa_Modes.pdf. Rotation aus der notierten Folge selbst nachgerechnet.",
+      "input": {
+        "edge": [
+          "ALTERED_SCALE",
+          "MELODIC_MINOR_MODE_7",
+          "DERIVED_FROM"
+        ],
+        "check": "mode_rotation",
+        "ascending_melodic_minor": [
+          2,
+          1,
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "degree": 7
+      },
+      "next_step": "",
+      "fingerprint": "d1395f936b26722cbfdec1d5e86d3d3b728f735de952d78ba75f57e65331ca0d",
+      "status": "PASS",
+      "observed": [
+        1,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "scope": "sample",
+      "domain": "M03",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-006",
+      "content": "CDR-006",
+      "question": "Welche Intervallfolge ergibt Rotation 4 des aufsteigenden melodischen Moll und passt sie zur Graphzuordnung?",
+      "expected": [
+        2,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2
+      ],
+      "basis": "Oliver Prehn, The Modes, PDF-Seite 1: Ascending mel. minor, Altered / Super Locrian und Lydian dominant; https://www.newjazz.dk/Compendiums/Major_Melmi_Harmmi_HarmMa_Modes.pdf. Rotation aus der notierten Folge selbst nachgerechnet.",
+      "input": {
+        "edge": [
+          "LYDIAN_DOMINANT",
+          "MELODIC_MINOR_MODE_4",
+          "DERIVED_FROM"
+        ],
+        "check": "mode_rotation",
+        "ascending_melodic_minor": [
+          2,
+          1,
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "degree": 4
+      },
+      "next_step": "",
+      "fingerprint": "f3aaf8f93b154f5c41732391c46536c8aa53cc5d71410b3b07c616f661806451",
+      "status": "PASS",
+      "observed": [
+        2,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "scope": "sample",
+      "domain": "M04",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-009",
+      "content": "CDR-009",
+      "question": "Wird bei Drop-2 die zweithöchste Stimme einer vierstimmigen engen Lage um zwölf Halbtöne gesenkt?",
+      "expected": [
+        55,
+        60,
+        64,
+        71
+      ],
+      "basis": "John Thomas / Berklee Online, Voice Leading for Guitar, Drop-2 Voicings und Abb. 18; https://online.berklee.edu/takenote/voice-leading-for-guitar/. Eigene MIDI-Realisierung C4 E4 G4 B4.",
+      "input": {
+        "edge": [
+          "DROP_2_VOICING",
+          "SECOND_VOICE_LOWERED_OCTAVE",
+          "TRANSFORMS_TO"
+        ],
+        "check": "drop2",
+        "close": [
+          60,
+          64,
+          67,
+          71
+        ]
+      },
+      "next_step": "",
+      "fingerprint": "f8bc71b41fb825be38781db120da04d7251e904939bbd89f1c305f38bd4e1c74",
+      "status": "PASS",
+      "observed": [
+        55,
+        60,
+        64,
+        71
+      ]
+    },
+    {
+      "scope": "sample",
+      "domain": "M04",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-010-COUNTEREXAMPLE",
+      "content": "CDR-010",
+      "question": "Sind D-Dur über C-Dur oder Slashbass D/C als vollständige Tonmenge identisch mit Cmaj13(#11)?",
+      "expected": {
+        "two_triads": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          9
+        ],
+        "slash_bass": [
+          0,
+          2,
+          6,
+          9
+        ],
+        "target": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          9,
+          11
+        ],
+        "missing_from_two_triads": [
+          11
+        ]
+      },
+      "basis": "CLAIM-022 und Open Music Theory, Chord Symbols, Bass notes und Extensions; https://viva.pressbooks.pub/openmusictheory/chapter/chord-symbols/. Tonmengenvergleich ist eigene Gegenrechnung; der Originalgraph bleibt beanstandet.",
+      "input": {
+        "edge": [
+          "POLYCHORD_D_OVER_C",
+          "C_MAJ13_SHARP11",
+          "EXPRESSES"
+        ],
+        "check": "polychord_counterexample"
+      },
+      "next_step": "",
+      "fingerprint": "be05773c9316ca1754f076d1baafba3fc6640070728c56c1900ab87fb85f9698",
+      "status": "PASS",
+      "observed": {
+        "two_triads": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          9
+        ],
+        "slash_bass": [
+          0,
+          2,
+          6,
+          9
+        ],
+        "target": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          9,
+          11
+        ],
+        "missing_from_two_triads": [
+          11
+        ]
+      }
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-001",
+      "content": "CDR-001",
+      "question": "Entspricht C4 in der STEPS-/MusicXML-Oktavkonvention MIDI 60 und Tonklasse 0?",
+      "expected": [
+        60,
+        0
+      ],
+      "basis": "W3C MusicXML octave: mittleres C beginnt Oktave 4; Ithaca MIDI Basics, PDF-Seite 14: middle C (#60). Keine universelle DAW-Oktavbeschriftung.",
+      "input": {
+        "edge": [
+          "C4_PITCH",
+          "MIDI_NOTE_60",
+          "MAPS_TO"
+        ],
+        "check": "notation_mapping",
+        "note": "C4",
+        "convention": "INT"
+      },
+      "next_step": "",
+      "fingerprint": "9481dd23dbf069dace18f4612c43f2ec8372d4d724400078de05bd18903ce925",
+      "status": "PASS",
+      "observed": [
+        60,
+        0
+      ]
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-002",
+      "content": "CDR-002",
+      "question": "Welche MIDI-Zahl und Tonklasse hat H3 bei expliziter deutscher Konvention?",
+      "expected": [
+        59,
+        11
+      ],
+      "basis": "John Paul Ito, Notes on Transposition, PDF-Seite 4, Reading Note Names in Other Languages; https://www.andrew.cmu.edu/user/johnito/music_theory/transp/Transposition.pdf. Tonklasse im STEPS-Modulo-12-Modell mit C=0.",
+      "input": {
+        "edge": [
+          "DEUTSCH_H",
+          "PITCH_CLASS_11",
+          "EQUIVALENT_TO"
+        ],
+        "check": "notation_mapping",
+        "note": "H3",
+        "convention": "DE"
+      },
+      "next_step": "",
+      "fingerprint": "8115be19232482103c3fee66746acf103ce287f1e535f0b444210016dd945146",
+      "status": "PASS",
+      "observed": [
+        59,
+        11
+      ]
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-003",
+      "content": "CDR-003",
+      "question": "Welche MIDI-Zahl und Tonklasse hat B3 bei expliziter deutscher Konvention?",
+      "expected": [
+        58,
+        10
+      ],
+      "basis": "John Paul Ito, Notes on Transposition, PDF-Seite 4, Reading Note Names in Other Languages; https://www.andrew.cmu.edu/user/johnito/music_theory/transp/Transposition.pdf. Tonklasse im STEPS-Modulo-12-Modell mit C=0.",
+      "input": {
+        "edge": [
+          "DEUTSCH_B",
+          "PITCH_CLASS_10",
+          "EQUIVALENT_TO"
+        ],
+        "check": "notation_mapping",
+        "note": "B3",
+        "convention": "DE"
+      },
+      "next_step": "",
+      "fingerprint": "ae873c38fb49f94b89264cbf3eea21a07d795ea13addb87d7ff2a9ec49fae4f0",
+      "status": "PASS",
+      "observed": [
+        58,
+        10
+      ]
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-004",
+      "content": "CDR-004",
+      "question": "Ergeben die vier ausgewählten Familien 28 unterschiedliche Rotationen?",
+      "expected": 28,
+      "basis": "Oliver Prehn, The Modes, PDF-Seite 1: vier ausgewählte Familien; https://www.newjazz.dk/Compendiums/Major_Melmi_Harmmi_HarmMa_Modes.pdf. Eigene Rotationsrechnung, kein Vollständigkeitsanspruch für alle Heptatonik.",
+      "input": {
+        "edge": [
+          "HEPTATONIK_28",
+          "FOUR_GENERATOR_FAMILIES",
+          "DERIVED_FROM"
+        ],
+        "check": "four_families",
+        "families": [
+          [
+            2,
+            2,
+            1,
+            2,
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            1,
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            1,
+            2,
+            2,
+            1,
+            3,
+            1
+          ],
+          [
+            2,
+            2,
+            1,
+            2,
+            1,
+            3,
+            1
+          ]
+        ]
+      },
+      "next_step": "",
+      "fingerprint": "1408a41c5c2ec87f8ebaa5756ce1a9b45d3541e53d8c1f480b904b94842faec9",
+      "status": "PASS",
+      "observed": 28
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-007",
+      "content": "CDR-007",
+      "question": "Entspricht das STEPS-A-Beispiel aus CLAIM-021 einer grundtonlosen Cmaj9-Lage?",
+      "expected": [
+        52,
+        55,
+        59,
+        62
+      ],
+      "basis": "CLAIM-021, explizites Cmaj9-Beispiel. Projektbeispiel, keine neue Prüfung der historischen Levine-Buchseite.",
+      "input": {
+        "edge": [
+          "ROOTLESS_VOICING_A",
+          "3_5_7_9_STACK",
+          "STRUCTURED_AS"
+        ],
+        "check": "rootless_example",
+        "chord": "Cmaj9",
+        "notes": [
+          "E3",
+          "G3",
+          "B3",
+          "D4"
+        ]
+      },
+      "next_step": "",
+      "fingerprint": "9080795ac0352246f92da1c04559dbb8a80826a7e637addfdde3b6371b8bee41",
+      "status": "PASS",
+      "observed": [
+        52,
+        55,
+        59,
+        62
+      ]
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-008",
+      "content": "CDR-008",
+      "question": "Entspricht das STEPS-B-Beispiel aus CLAIM-021 einer grundtonlosen Cmaj9-Lage?",
+      "expected": [
+        59,
+        62,
+        64,
+        67
+      ],
+      "basis": "CLAIM-021, explizites Cmaj9-Beispiel. Projektbeispiel, keine neue Prüfung der historischen Levine-Buchseite.",
+      "input": {
+        "edge": [
+          "ROOTLESS_VOICING_B",
+          "7_9_3_5_STACK",
+          "STRUCTURED_AS"
+        ],
+        "check": "rootless_example",
+        "chord": "Cmaj9",
+        "notes": [
+          "B3",
+          "D4",
+          "E4",
+          "G4"
+        ]
+      },
+      "next_step": "",
+      "fingerprint": "f77419ea689d50d6decdbe3eebf45293164af7f8ed5f76bf16ac2e922aeb7e8a",
+      "status": "PASS",
+      "observed": [
+        59,
+        62,
+        64,
+        67
+      ]
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-011",
+      "content": "CDR-011",
+      "question": "Hat D7 in PROG-024 die Akkordgestalt V7/V, ohne damit seine tatsächliche Auflösung nach G zu behaupten?",
+      "expected": [
+        "D7",
+        "D7"
+      ],
+      "basis": "STEPS PROG-024: Cmaj7–D7–Dm7–G7–Cmaj7. Rechnerische Stufenprobe des Übungsschemas, keine historische Stilabnahme.",
+      "input": {
+        "edge": [
+          "PROG_024",
+          "APPLIED_DOMINANT_V7_OVER_V",
+          "HARMONIC_FUNCTION"
+        ],
+        "check": "applied_dominant_example"
+      },
+      "next_step": "",
+      "fingerprint": "14c02813b6db228ee1cd1bfb02cb46a7c85b4cc1f33576c7ddfaeb9b5734c5cd",
+      "status": "PASS",
+      "observed": [
+        "D7",
+        "D7"
+      ]
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-013",
+      "content": "CDR-013",
+      "question": "Welche Akkordfolge bezeichnet der zyklisch wiederholbare STEPS-Vamp PROG-025?",
+      "expected": [
+        "Cm",
+        "Fm",
+        "G7",
+        "Fm"
+      ],
+      "basis": "STEPS-Katalog PROG-025, i–iv–V7–iv in C-Moll. Die Datenübereinstimmung bestätigt keine Genretypizität.",
+      "input": {
+        "edge": [
+          "PROG_025",
+          "CYCLICAL_OSTINATO_VAMP",
+          "HARMONIC_STRUCTURE"
+        ],
+        "check": "cyclical_example"
+      },
+      "next_step": "",
+      "fingerprint": "4d58f14921f8f1f6a741e4b5233bc831bb6f2f657100ace4aae9c864cb24bd31",
+      "status": "PASS",
+      "observed": [
+        "Cm",
+        "Fm",
+        "G7",
+        "Fm"
+      ]
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-015",
+      "content": "CDR-015",
+      "question": "Welcher Tick ergibt sich bei 61 Prozent des 240-Tick-Paars?",
+      "expected": 146,
+      "basis": "STEPS-Swing-Rechenmodell REF-0177 bis REF-0186: gerundeter Anteil an einem Halbviertel bei 480 PPQ. Keine historische Musikerzuschreibung.",
+      "input": {
+        "edge": [
+          "SWING_61_PCT",
+          "TICK_146_AT_480_PPQ",
+          "QUANTIZES_TO"
+        ],
+        "check": "swing_model",
+        "ppq": 480,
+        "percent": 61
+      },
+      "next_step": "",
+      "fingerprint": "624804a33b1e54783bb0619ff11d61276c3116331571f2b6b5290781fc5a4ea4",
+      "status": "PASS",
+      "observed": 146
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-016",
+      "content": "CDR-016",
+      "question": "Welcher Tick ergibt sich bei 58 Prozent des 240-Tick-Paars?",
+      "expected": 139,
+      "basis": "STEPS-Swing-Rechenmodell REF-0177 bis REF-0186: gerundeter Anteil an einem Halbviertel bei 480 PPQ. Keine historische Musikerzuschreibung.",
+      "input": {
+        "edge": [
+          "SWING_58_PCT",
+          "TICK_139_AT_480_PPQ",
+          "QUANTIZES_TO"
+        ],
+        "check": "swing_model",
+        "ppq": 480,
+        "percent": 58
+      },
+      "next_step": "",
+      "fingerprint": "e1d179823709e63a802a22c812e21b6cd8067bc99f59a81a17f29bb459c78177",
+      "status": "PASS",
+      "observed": 139
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-018",
+      "content": "CDR-018",
+      "question": "Welche kontinuierlichen Ticks hat das konkrete zweitaktige Son-Clave-Modell in CLAIM-036?",
+      "expected": [
+        0,
+        720,
+        1440,
+        2400,
+        2880
+      ],
+      "basis": "CLAIM-036, STEPS-Übungsraster. Die dort zitierte Columbia-Originalquelle war in dieser Sitzung durch Zugriffsschutz nicht erneut lesbar; geprüft wird die Modellrechnung.",
+      "input": {
+        "edge": [
+          "SON_CLAVE_3_2",
+          "TICKS_0_720_1440_2400_2880",
+          "TIMELINE_AT_480_PPQ"
+        ],
+        "check": "clave_model",
+        "ppq": 480,
+        "sixteenth_positions": [
+          [
+            0,
+            6,
+            12
+          ],
+          [
+            4,
+            8
+          ]
+        ]
+      },
+      "next_step": "",
+      "fingerprint": "e7a2f9655851ee2f76e4bda7b4f4f9f347b0625775ac881dc03c039c57c48b4c",
+      "status": "PASS",
+      "observed": [
+        0,
+        720,
+        1440,
+        2400,
+        2880
+      ]
+    },
+    {
+      "scope": "sample",
+      "domain": "M11",
+      "variants": [],
+      "mandatory": true,
+      "method": "graph_sample",
+      "id": "KB-GRAPH-CDR-010-RESOLUTION",
+      "content": "CDR-010",
+      "question": "Passt der explizite Korrekturvorschlag zu den beiden Dreiklängen und bleibt er ohne Produktionsfreigabe?",
+      "expected": {
+        "target_id": "C6_9_SHARP11_COLLECTION",
+        "pitch_classes": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          9
+        ],
+        "major_seventh_present": false,
+        "production_use_allowed": false
+      },
+      "basis": "CLAIM-022 und historischer REF-0016 definieren zwei Dur-Dreiklänge. OMT Chord Symbols für Bass-/Erweiterungsunterscheidung. GRAPH_CORRECTIONS.json dokumentiert die genaue Korrektur unter REVIEW_REQUIRED.",
+      "input": {
+        "edge": [
+          "POLYCHORD_D_OVER_C",
+          "C_MAJ13_SHARP11",
+          "EXPRESSES"
+        ],
+        "check": "polychord_resolution"
+      },
+      "next_step": "",
+      "fingerprint": "a0f35789a9b71e695610e96065fdfc5ff14a212f99b57e1abc2297ea6055aee7",
+      "status": "PASS",
+      "observed": {
+        "target_id": "C6_9_SHARP11_COLLECTION",
+        "pitch_classes": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          9
+        ],
+        "major_seventh_present": false,
+        "production_use_allowed": false
+      }
+    },
+    {
+      "id": "KB-GRAPH-ONTOLOGY-RECOVERY",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "HISTORICAL-ONTOLOGY-RECOVERY",
+      "question": "Stimmen Originalbytes, Zeilenanker und alle 41 historischen Graphdefinitionen überein, ohne eine Freigabe vorwegzunehmen?",
+      "expected": {
+        "originals": 12,
+        "historical_definitions": 41,
+        "fachabnahme": "AUSSTEHEND"
+      },
+      "basis": "RECOVERY_MANIFEST.json und HISTORICAL_NODE_EVIDENCE.csv; verifiziert historische Projektidentität, keine musiktheoretische Richtigkeit.",
+      "method": "historical_ontology",
+      "input": {},
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "ca740e93173c601364eed0e67bd37397f716d537743e2d79efcb986906f5c62a",
+      "status": "PASS",
+      "observed": {
+        "originals": 12,
+        "historical_definitions": 41,
+        "fachabnahme": "AUSSTEHEND"
+      }
+    },
+    {
+      "id": "KB-NIGHT-FREQUENCY",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-FREQUENCY",
+      "question": "Besteht die begrenzte Modellprobe FREQUENCY?",
+      "expected": [
+        261.625565,
+        440.0,
+        523.251131
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "FREQUENCY"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "f5357f58c19d9b36ba47588c0eb5c9f3848e88fd8033db4986340d67f9b19676",
+      "status": "PASS",
+      "observed": [
+        261.625565,
+        440.0,
+        523.251131
+      ]
+    },
+    {
+      "id": "KB-NIGHT-MOD12",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-MOD12",
+      "question": "Besteht die begrenzte Modellprobe MOD12?",
+      "expected": [
+        0,
+        0,
+        0,
+        1,
+        7
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "MOD12"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "e8e2be12f6a534514fddf336dbaf01b3b5a9285b6e1bad2bdc8c6a77bf2a2d70",
+      "status": "PASS",
+      "observed": [
+        0,
+        0,
+        0,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "KB-NIGHT-ENHARMONIC",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-ENHARMONIC",
+      "question": "Besteht die begrenzte Modellprobe ENHARMONIC?",
+      "expected": [
+        [
+          "C",
+          1,
+          1
+        ],
+        [
+          "D",
+          -1,
+          1
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "ENHARMONIC"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "6f30b5f3ee1d6c7b0157f6af5a2d6266493dc3fc4360ccaf0d95f7b3ac545bd8",
+      "status": "PASS",
+      "observed": [
+        [
+          "C",
+          1,
+          1
+        ],
+        [
+          "D",
+          -1,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "KB-NIGHT-DE_H_B",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-DE_H_B",
+      "question": "Besteht die begrenzte Modellprobe DE_H_B?",
+      "expected": [
+        [
+          "B",
+          0,
+          11
+        ],
+        [
+          "B",
+          -1,
+          10
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "DE_H_B"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "2f2a625a336da58cf548440577629260323a92e57c4cca9ceed349a3e3ef1f9d",
+      "status": "PASS",
+      "observed": [
+        [
+          "B",
+          0,
+          11
+        ],
+        [
+          "B",
+          -1,
+          10
+        ]
+      ]
+    },
+    {
+      "id": "KB-NIGHT-DIATONIC",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-DIATONIC",
+      "question": "Besteht die begrenzte Modellprobe DIATONIC?",
+      "expected": [
+        "C",
+        "Dm",
+        "Em",
+        "F",
+        "G",
+        "Am",
+        "Bdim"
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "DIATONIC"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "3c947b18d1eb97cca7037f9051b39dfcfb2206668c9ef566f6db6eafc5bbcf35",
+      "status": "PASS",
+      "observed": [
+        "C",
+        "Dm",
+        "Em",
+        "F",
+        "G",
+        "Am",
+        "Bdim"
+      ]
+    },
+    {
+      "id": "KB-NIGHT-RELATIVE_COLLECTION",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-RELATIVE_COLLECTION",
+      "question": "Besteht die begrenzte Modellprobe RELATIVE_COLLECTION?",
+      "expected": [
+        [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "RELATIVE_COLLECTION"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "0ba7c3e0dca01785be22f83a4d93359e3c36779e15b53a86fb255e67c7a0c44f",
+      "status": "PASS",
+      "observed": [
+        [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ],
+        [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ]
+      ]
+    },
+    {
+      "id": "KB-NIGHT-MINOR_DOMINANT",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-MINOR_DOMINANT",
+      "question": "Besteht die begrenzte Modellprobe MINOR_DOMINANT?",
+      "expected": [
+        "G7"
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "MINOR_DOMINANT"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "960844b413bcf9a8d67f2f0d42f0d314ae6cd2ab68aded1a38d23891c97dfa68",
+      "status": "PASS",
+      "observed": [
+        "G7"
+      ]
+    },
+    {
+      "id": "KB-NIGHT-TRIADS",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-TRIADS",
+      "question": "Besteht die begrenzte Modellprobe TRIADS?",
+      "expected": [
+        [
+          0,
+          4,
+          7
+        ],
+        [
+          0,
+          3,
+          7
+        ],
+        [
+          0,
+          3,
+          6
+        ],
+        [
+          0,
+          4,
+          8
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "TRIADS"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "c6bfca247ee0af1332b4e6120e6da634cc0fba62919f29fcff435477a22bf568",
+      "status": "PASS",
+      "observed": [
+        [
+          0,
+          4,
+          7
+        ],
+        [
+          0,
+          3,
+          7
+        ],
+        [
+          0,
+          3,
+          6
+        ],
+        [
+          0,
+          4,
+          8
+        ]
+      ]
+    },
+    {
+      "id": "KB-NIGHT-INVERSION",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-INVERSION",
+      "question": "Besteht die begrenzte Modellprobe INVERSION?",
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          7
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "INVERSION"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "ec5a2a4e693b5a827110ef7746aa2f685b9c10ae3be914e70e831b8e92e2686d",
+      "status": "PASS",
+      "observed": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          7
+        ]
+      ]
+    },
+    {
+      "id": "KB-NIGHT-SEVENTHS",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-SEVENTHS",
+      "question": "Besteht die begrenzte Modellprobe SEVENTHS?",
+      "expected": [
+        [
+          0,
+          4,
+          7,
+          11
+        ],
+        [
+          0,
+          3,
+          7,
+          10
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "SEVENTHS"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "f13dcb1686c470fec2878bd187ac2fa2ee233649f6f191da5d9ee8bb743c522d",
+      "status": "PASS",
+      "observed": [
+        [
+          0,
+          4,
+          7,
+          11
+        ],
+        [
+          0,
+          3,
+          7,
+          10
+        ]
+      ]
+    },
+    {
+      "id": "KB-NIGHT-CADENCE",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-CADENCE",
+      "question": "Besteht die begrenzte Modellprobe CADENCE?",
+      "expected": [
+        "G7",
+        "C"
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "CADENCE"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "9d9a223fc9e2d0cae1c09b62cd341a0b03b4e9fd7cf35dd9d2dd4009a4332846",
+      "status": "PASS",
+      "observed": [
+        "G7",
+        "C"
+      ]
+    },
+    {
+      "id": "KB-NIGHT-BORROWED",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-BORROWED",
+      "question": "Besteht die begrenzte Modellprobe BORROWED?",
+      "expected": [
+        "Fm"
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "BORROWED"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "d13fa2e22abd68e8a793c3f643f4292d876da7ff3df5101e913ff9feed3626de",
+      "status": "PASS",
+      "observed": [
+        "Fm"
+      ]
+    },
+    {
+      "id": "KB-NIGHT-TRITONE",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-TRITONE",
+      "question": "Besteht die begrenzte Modellprobe TRITONE?",
+      "expected": [
+        [
+          2,
+          5,
+          7,
+          11
+        ],
+        [
+          1,
+          5,
+          8,
+          11
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "TRITONE"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "ac1abaf3fe6d27c3a46d9f2d9151d2e1cfc1cd335d648ad91dd662375924d49e",
+      "status": "PASS",
+      "observed": [
+        [
+          2,
+          5,
+          7,
+          11
+        ],
+        [
+          1,
+          5,
+          8,
+          11
+        ]
+      ]
+    },
+    {
+      "id": "KB-NIGHT-PARALLELS",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-PARALLELS",
+      "question": "Besteht die begrenzte Modellprobe PARALLELS?",
+      "expected": true,
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "PARALLELS"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "7f714981aff4c40128d644bf59a7b22cb24c7a8c627a74e6d16645af5d49bbe4",
+      "status": "PASS",
+      "observed": true
+    },
+    {
+      "id": "KB-NIGHT-L1",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-L1",
+      "question": "Besteht die begrenzte Modellprobe L1?",
+      "expected": 3,
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "L1"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "791c5c58628fde2ea6443892bc0ae7ce8217e51e66c2449e363940e7a127b8c1",
+      "status": "PASS",
+      "observed": 3
+    },
+    {
+      "id": "KB-NIGHT-METRIC_DUALITY",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-METRIC_DUALITY",
+      "question": "Besteht die begrenzte Modellprobe METRIC_DUALITY?",
+      "expected": true,
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "METRIC_DUALITY"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "1c39d0cbaa65f829e9490977d5a226044e850a34ccc16ecb9958678a04f461fe",
+      "status": "PASS",
+      "observed": true
+    },
+    {
+      "id": "KB-NIGHT-POLYRHYTHM",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-POLYRHYTHM",
+      "question": "Besteht die begrenzte Modellprobe POLYRHYTHM?",
+      "expected": 12,
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "POLYRHYTHM"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "43c24dc133f9a45649f2ca2bfea1e8ca3ec59af452e183240b0b044527186c9a",
+      "status": "PASS",
+      "observed": 12
+    },
+    {
+      "id": "KB-NIGHT-SWING64",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-SWING64",
+      "question": "Besteht die begrenzte Modellprobe SWING64?",
+      "expected": [
+        154,
+        34,
+        32.19697
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "SWING64"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "7126feb4819bdd923e52fbdc0829b1602a3dbc05d9a6676b339d492a930f15cc",
+      "status": "PASS",
+      "observed": [
+        154,
+        34,
+        32.19697
+      ]
+    },
+    {
+      "id": "KB-NIGHT-WHITE_KEYS",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-WHITE_KEYS",
+      "question": "Besteht die begrenzte Modellprobe WHITE_KEYS?",
+      "expected": [
+        [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "WHITE_KEYS"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "e1eaffc6ca5d48cf68c38e2046d2495d83e6d56f970306b9fc4d6a90266f1d89",
+      "status": "PASS",
+      "observed": [
+        [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11
+        ]
+      ]
+    },
+    {
+      "id": "KB-NIGHT-XML",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-XML",
+      "question": "Besteht die begrenzte Modellprobe XML?",
+      "expected": {
+        "step": "D",
+        "alter": "-1",
+        "octave": "4"
+      },
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "XML"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "7263da996ee0ad10fd92ba44eacbff25b79d9a87ea5c01cce6e014d6ee5c5236",
+      "status": "PASS",
+      "observed": {
+        "step": "D",
+        "alter": "-1",
+        "octave": "4"
+      }
+    },
+    {
+      "id": "KB-NIGHT-SAME_ROOT_SHIFT",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-SAME_ROOT_SHIFT",
+      "question": "Besteht die begrenzte Modellprobe SAME_ROOT_SHIFT?",
+      "expected": {
+        "root_preserved": true,
+        "common": [
+          0,
+          2,
+          9
+        ],
+        "removed": [
+          6
+        ],
+        "added": [
+          5
+        ]
+      },
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "SAME_ROOT_SHIFT"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "7c6c096c3342442f9ae1d4ee3bd940dc0c9551bd58fc0f16da9514b94d13e179",
+      "status": "PASS",
+      "observed": {
+        "root_preserved": true,
+        "common": [
+          0,
+          2,
+          9
+        ],
+        "removed": [
+          6
+        ],
+        "added": [
+          5
+        ]
+      }
+    },
+    {
+      "id": "KB-NIGHT-BASS_AMBIGUITY",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-BASS_AMBIGUITY",
+      "question": "Besteht die begrenzte Modellprobe BASS_AMBIGUITY?",
+      "expected": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          9,
+          4
+        ]
+      ],
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "BASS_AMBIGUITY"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "83967e8c8d80433fc53c9cf375872c05e830af1a1dfdf2bc550049bffe5972d9",
+      "status": "PASS",
+      "observed": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          9,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "KB-NIGHT-NEW_PIANO_DRAFT",
+      "scope": "sample",
+      "domain": "M11",
+      "content": "NIGHT-MODEL-NEW_PIANO_DRAFT",
+      "question": "Besteht die begrenzte Modellprobe NEW_PIANO_DRAFT?",
+      "expected": {
+        "total_ticks": 7680,
+        "events": 16,
+        "onsets": [
+          0,
+          720,
+          960,
+          1680,
+          1920,
+          2640,
+          2880,
+          3600,
+          3840,
+          4560,
+          4800,
+          5520,
+          5760,
+          6480,
+          6720,
+          7440
+        ],
+        "historical_transcription": false,
+        "clave_relation": "SHARED_GRID_ONLY_NOT_HISTORICAL_STYLE_PROOF"
+      },
+      "basis": "GRAPH_AUDIT_PLAN.json; technische Modellrechnung mit ausdrücklich begrenztem Relationsumfang, keine Fachabnahme.",
+      "method": "night_graph_probe",
+      "input": {
+        "probe_id": "NEW_PIANO_DRAFT"
+      },
+      "variants": [],
+      "mandatory": true,
+      "next_step": "",
+      "fingerprint": "6244e2035d802da94f47a6a7e5fd215a6441cfaa867bc33654e57d7a33256e03",
+      "status": "PASS",
+      "observed": {
+        "total_ticks": 7680,
+        "events": 16,
+        "onsets": [
+          0,
+          720,
+          960,
+          1680,
+          1920,
+          2640,
+          2880,
+          3600,
+          3840,
+          4560,
+          4800,
+          5520,
+          5760,
+          6480,
+          6720,
+          7440
+        ],
+        "clave_relation": "SHARED_GRID_ONLY_NOT_HISTORICAL_STYLE_PROOF",
+        "historical_transcription": false
+      }
+    }
+  ]
+}

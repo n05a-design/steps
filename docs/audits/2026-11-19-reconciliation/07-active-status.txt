@@ -1,0 +1,3 @@
+# branch.oid dd1f0baf4b8aef16768792b7e05f05d8b75a81b2
+# branch.head docs/gemini-knowledge-pack
+# branch.upstream origin/docs/gemini-knowledge-pack
