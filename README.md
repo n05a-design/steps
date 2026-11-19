@@ -32,7 +32,7 @@ STEPS keeps sounding pitch, pitch class, note spelling, chord identity, chord sy
 
 ## Why STEPS?
 
-- **Context changes meaning.** `E7` is V7 in A minor and V7/vi in C major: the chord stays the same while its interpretation depends on the key.
+- **Context changes meaning.** A chord symbol and its harmonic function are not the same; the example below resolves `V7/vi` in C to `E7`.
 - **Notation stays explicit.** German `H/B` and international `B/Bb` remain distinct, with enharmonic spelling preserved where supported.
 - **Selected examples are traceable.** Reviewed lessons connect their claims to source evidence; the wider research archive is not automatically product content.
 
