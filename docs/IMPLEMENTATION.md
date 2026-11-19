@@ -13,6 +13,9 @@ PR #169 die editierbare Projektbezeichnung, PR #170 „Neu“ mit
 Dirty-State-Rückfrage und sauberem Session-Reset sowie PR #176–#179 native UI-
 und Packaging-Gates einschließlich Wheel-Bau/-Installation. PR #180/#181
 halten den kanonischen Dokumentations- und Baseline-Stand konsistent.
+Nach dieser unveränderlichen Baseline ergänzt PR #190 die Validierung und
+Normalisierung ungültiger Projekt-Zeiteinstellungen unter der dokumentierten
+Migration `MIG-006 normalize-time-settings`.
 Gespeichert und exportiert
 werden weiterhin absolute Tickwerte. Implementierung, Test, fachliche Abnahme
 und Veröffentlichung sind getrennte Statusangaben.
