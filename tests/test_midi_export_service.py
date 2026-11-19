@@ -230,6 +230,41 @@ class TestSMFGenerationAndEnvelope(unittest.TestCase):
             self.assertTrue(36 <= on.msg_bytes[1] <= 47)  # bass octave 2
             self.assertEqual(off.abs_tick - on.abs_tick, 1910)
 
+    def test_export_progression_adr017_uses_four_chord_voices_in_range(self):
+        out = MidiExportService.export_progression_adr017(
+            chords=["C", "C13", "C/E", "B13"],
+            output_path=self.midi_path,
+        )
+        parsed = MidiFile.from_bytes(out.read_bytes())
+
+        chord_notes = {}
+        for event in parsed.tracks[1].raw_events:
+            message = event.msg_bytes
+            if message[0] & 0xF0 == 0x90 and message[2] > 0:
+                chord_notes.setdefault(event.abs_tick, []).append(message[1])
+
+        self.assertEqual(
+            {tick: sorted(notes) for tick, notes in chord_notes.items()},
+            {
+                0: [48, 52, 55, 60],
+                1920: [48, 52, 58, 69],
+                3840: [48, 52, 55, 60],
+                5760: [59, 63, 68, 69],
+            },
+        )
+        self.assertTrue(
+            all(48 <= note <= 72 for notes in chord_notes.values() for note in notes)
+        )
+        bass_notes = [
+            (event.abs_tick, event.msg_bytes[1])
+            for event in parsed.tracks[2].raw_events
+            if event.msg_bytes[0] & 0xF0 == 0x90 and event.msg_bytes[2] > 0
+        ]
+        self.assertEqual(
+            bass_notes,
+            [(0, 36), (1920, 36), (3840, 40), (5760, 47)],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

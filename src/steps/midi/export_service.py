@@ -11,8 +11,50 @@ from pathlib import Path
 from typing import List, Optional, Tuple
 
 from ..storage.project_io import Project
-from ..theory.chord import Voicing, parse_chord
+from ..theory.chord import ChordDefinition, Voicing, parse_chord
 from .smf import MidiFile, MidiTrack
+
+
+def _adr017_close_notes(chord: ChordDefinition) -> list[int]:
+    intervals = chord.default_voiced_intervals
+    if len(intervals) < 4:
+        selected = list(intervals)
+        root = next((interval for interval in intervals if interval % 12 == 0), 0)
+        while len(selected) < 4:
+            root += 12
+            selected.append(root)
+    elif len(intervals) > 4:
+        root = next((interval for interval in intervals if interval % 12 == 0), None)
+        third = next(
+            (interval for interval in intervals if interval % 12 in (3, 4, 5)),
+            None,
+        )
+        seventh = next(
+            (interval for interval in intervals if interval % 12 in (9, 10, 11)),
+            None,
+        )
+        extension = max((interval for interval in intervals if interval > 12), default=None)
+        if root is None or third is None or seventh is None or extension is None:
+            raise ValueError(
+                f"ADR-017 cannot select four chord voices for {chord.symbol}."
+            )
+        selected = [root, third, seventh, extension]
+    else:
+        selected = list(intervals)
+
+    root_note = 48 + int(chord.root.pitch_class)
+    notes = []
+    for interval in selected:
+        note = root_note + interval
+        while note > 72:
+            note -= 12
+        while note < 48:
+            note += 12
+        notes.append(note)
+    notes.sort()
+    if len(set(notes)) != 4:
+        raise ValueError(f"ADR-017 requires four distinct chord voices for {chord.symbol}.")
+    return notes
 
 
 class MidiExportService:
@@ -225,14 +267,12 @@ class MidiExportService:
             else:
                 chord_def = item
 
-            # Chords: 4-part CLOSE voicing in range 48..72
-            voicing = chord_def.to_voicing(bass_octave=3, voicing_type="CLOSE")
-            for note in voicing.midi_notes:
-                p = note if note >= 48 else note + 12
+            # Chords use four close voices; the separate bass track owns any slash bass.
+            for note in _adr017_close_notes(chord_def):
                 chords_track.add_note(
                     start_tick=start_tick,
                     duration_ticks=max(1, duration_ticks - lead_gap_ticks),
-                    pitch=p,
+                    pitch=note,
                     velocity=chords_velocity,
                     channel=0
                 )
