@@ -265,6 +265,69 @@ class TestSMFGenerationAndEnvelope(unittest.TestCase):
             [(0, 36), (1920, 36), (3840, 40), (5760, 47)],
         )
 
+    def test_export_progression_adr017_optional_voicings(self):
+        expected = {
+            "CLOSE": [48, 52, 58, 69],
+            "DROP2": [48, 52, 57, 58],
+            "ROOTLESS": [62, 64, 69, 70],
+        }
+        for voicing_type, expected_notes in expected.items():
+            with self.subTest(voicing_type=voicing_type):
+                out = MidiExportService.export_progression_adr017(
+                    chords=["C13"],
+                    output_path=self.midi_path,
+                    voicing_type=voicing_type,
+                )
+                parsed = MidiFile.from_bytes(out.read_bytes())
+                actual_notes = sorted(
+                    event.msg_bytes[1]
+                    for event in parsed.tracks[1].raw_events
+                    if event.msg_bytes[0] & 0xF0 == 0x90 and event.msg_bytes[2] > 0
+                )
+                self.assertEqual(actual_notes, expected_notes)
+                self.assertTrue(all(48 <= note <= 72 for note in actual_notes))
+
+    def test_export_progression_adr017_percentage_length_and_single_track(self):
+        out = MidiExportService.export_progression_adr017(
+            chords=["C7"],
+            output_path=self.midi_path,
+            key_accidentals=0,
+            note_duration_mode="PERCENT_95",
+            smf_format=0,
+        )
+        self.assertEqual(envelope(out.read_bytes())["tracks"], 1)
+        parsed = MidiFile.from_bytes(out.read_bytes())
+        self.assertEqual(parsed.format, 0)
+        self.assertEqual(len(parsed.tracks), 1)
+        self.assertEqual(parsed.tracks[0].name, "STEPS")
+
+        note_ons = [
+            event for event in parsed.tracks[0].raw_events
+            if event.msg_bytes[0] & 0xF0 == 0x90 and event.msg_bytes[2] > 0
+        ]
+        note_offs = [
+            event for event in parsed.tracks[0].raw_events
+            if event.msg_bytes[0] & 0xF0 == 0x80
+        ]
+        self.assertEqual(len(note_ons), 5)
+        self.assertEqual(len(note_offs), 5)
+        self.assertEqual(
+            {off.abs_tick - on.abs_tick for on, off in zip(note_ons, note_offs)},
+            {1824},
+        )
+        self.assertEqual({event.msg_bytes[0] & 0x0F for event in note_ons}, {0, 1})
+        self.assertTrue(
+            any(event.msg_bytes.startswith(b"\xff\x59") for event in parsed.tracks[0].raw_events)
+        )
+
+    def test_export_progression_adr017_rejects_non_four_note_alternatives(self):
+        with self.assertRaisesRegex(ValueError, "ROOTLESS requires four chord voices"):
+            MidiExportService.export_progression_adr017(
+                chords=["C"],
+                output_path=self.midi_path,
+                voicing_type="ROOTLESS",
+            )
+
 
 if __name__ == "__main__":
     unittest.main()
