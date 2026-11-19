@@ -11,12 +11,14 @@ def checked_sha(value):
     return value
 
 
-def resolve(number,base,head,fetch_reference,read_pull,read_parents):
+def resolve(number,base,head,fetch_reference,read_pull,read_parents,read_trees=None):
     if type(number)is not int or number<=0:raise ValueError('Expected a positive PR number')
     checked_sha(base);checked_sha(head)
+    merge_ref=True
     try:
         revision=fetch_reference(f'refs/pull/{number}/merge')
     except subprocess.CalledProcessError:
+        merge_ref=False
         # A ready-for-review event can start after GitHub removed the merge ref.
         # Only the same PR's verified completed merge is an admissible fallback.
         pull=read_pull(number)
@@ -25,8 +27,18 @@ def resolve(number,base,head,fetch_reference,read_pull,read_parents):
             raise ValueError('Merge ref unavailable; no completed merge with the exact event identity')
         revision=fetch_reference(checked_sha(pull.get('merge_commit_sha')))
         if revision!=pull['merge_commit_sha']:raise ValueError('Fetched merge differs from API identity')
+        if fetch_reference(f'refs/pull/{number}/head')!=head:raise ValueError('Fetched head differs from the exact event identity')
     checked_sha(revision)
-    if read_parents(revision)!=[base,head]:raise ValueError('Merge parents differ from the exact event base/head')
+    parents=read_parents(revision)
+    if merge_ref:
+        if parents!=[base,head]:raise ValueError('Merge parents differ from the exact event base/head')
+    elif parents==[base,head]:
+        pass
+    elif parents==[base] and read_trees is not None:
+        if read_trees(revision)!=read_trees(head):
+            raise ValueError('Fallback merge tree differs from the exact event head')
+    else:
+        raise ValueError('Merge parents differ from the exact event base/head')
     return revision
 
 
@@ -45,7 +57,11 @@ def main():
     def pull(number):
         return json.loads(subprocess.run(['gh','api',f'repos/{repo}/pulls/{number}'],check=True,capture_output=True,text=True).stdout)
     try:
-        print(resolve(a.pr,a.base,a.head,fetch,pull,lambda rev:git('show','-s','--format=%P',rev).split()))
+        print(resolve(
+            a.pr,a.base,a.head,fetch,pull,
+            lambda rev:git('show','-s','--format=%P',rev).split(),
+            lambda rev:git('show','-s','--format=%T',rev).strip(),
+        ))
     except (ValueError,subprocess.CalledProcessError,json.JSONDecodeError):
         # Do not echo authenticated subprocess output or API payloads.
         raise SystemExit('Cannot verify an exact merge revision; review gate remains closed') from None

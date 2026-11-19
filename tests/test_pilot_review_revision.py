@@ -13,15 +13,25 @@ class PilotReviewRevisionTests(unittest.TestCase):
         return dict(number=60,state='closed',merged=True,base={'sha':self.base},head={'sha':self.head},merge_commit_sha=self.merge,**extra)
 
     def fetch_missing_ref(self,ref):
-        if ref.startswith('refs/'):raise subprocess.CalledProcessError(128,['git','fetch'])
-        self.assertEqual(ref,self.merge);return self.merge
+        if ref=='refs/pull/60/merge':raise subprocess.CalledProcessError(128,['git','fetch'])
+        if ref=='refs/pull/60/head':return self.head
+        if ref==self.merge:return self.merge
+        if ref==self.head:return self.head
+        self.fail('Unexpected fetch identity')
 
     def test_live_merge_ref_uses_no_api_fallback(self):
         def no_api(n):self.fail('Live merge ref must not require completed PR API')
         self.assertEqual(resolve(60,self.base,self.head,lambda ref:self.merge,no_api,lambda rev:[self.base,self.head]),self.merge)
 
     def test_exact_completed_merge_is_admissible(self):
-        self.assertEqual(resolve(60,self.base,self.head,self.fetch_missing_ref,lambda n:self.record(),lambda rev:[self.base,self.head]),self.merge)
+        self.assertEqual(resolve(60,self.base,self.head,self.fetch_missing_ref,lambda n:self.record(),lambda rev:[self.base,self.head],lambda rev:'d'*64),self.merge)
+
+    def test_exact_squash_merge_is_admissible_after_merge_ref_vanishes(self):
+        def parents(rev):
+            return [self.base]
+        def trees(rev):
+            return 'd'*64
+        self.assertEqual(resolve(60,self.base,self.head,self.fetch_missing_ref,lambda n:self.record(),parents,trees),self.merge)
 
     def test_open_or_closed_unmerged_pr_cannot_bypass_gate(self):
         for change in [{'state':'open','merged':False},{'merged':False}]:
@@ -34,14 +44,29 @@ class PilotReviewRevisionTests(unittest.TestCase):
             with self.assertRaises(ValueError):resolve(60,self.base,self.head,self.fetch_missing_ref,lambda n:record,lambda rev:[self.base,self.head])
 
     def test_wrong_parent_order_and_squash_commit_rejected(self):
-        for parents in [[self.head,self.base],[self.base],['d'*40,self.head]]:
+        for parents in [[self.head,self.base],['d'*40,self.head]]:
             with self.assertRaises(ValueError):resolve(60,self.base,self.head,lambda ref:self.merge,lambda n:self.record(),lambda rev:parents)
+
+    def test_squash_commit_with_wrong_tree_rejected(self):
+        def trees(rev):
+            return 'd'*64 if rev==self.merge else 'e'*64
+        with self.assertRaises(ValueError):
+            resolve(60,self.base,self.head,self.fetch_missing_ref,lambda n:self.record(),lambda rev:[self.base],trees)
 
     def test_api_merge_commit_must_match_fetched_object(self):
         def wrong(ref):
             if ref.startswith('refs/'):raise subprocess.CalledProcessError(128,['git','fetch'])
             return 'd'*40
         with self.assertRaises(ValueError):resolve(60,self.base,self.head,wrong,lambda n:self.record(),lambda rev:[self.base,self.head])
+
+    def test_fallback_head_must_match_fetched_object(self):
+        def wrong_head(ref):
+            if ref=='refs/pull/60/merge':raise subprocess.CalledProcessError(128,['git','fetch'])
+            if ref==self.merge:return self.merge
+            if ref=='refs/pull/60/head':return 'd'*40
+            return 'd'*40
+        with self.assertRaises(ValueError):
+            resolve(60,self.base,self.head,wrong_head,lambda n:self.record(),lambda rev:[self.base],lambda rev:'d'*64)
 
     def test_api_and_fetch_failures_are_not_silently_accepted(self):
         def fail_api(n):raise subprocess.CalledProcessError(1,['gh','api'])
