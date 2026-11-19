@@ -13,6 +13,7 @@ Aus dem Repository-Root mit einer Python-Version aus der CI-Matrix 3.11 bis 3.14
 | Python-Wheel-Artefakt | `python -B -m unittest tests.test_package_artifacts -v` | Baut ein temporäres Wheel, prüft den `steps`-Entrypoint sowie EN/DE-Kataloge und Brand-Ressourcen und startet die aus dem Wheel installierte Headless-App. Das belegt kein signiertes Desktop-Installer-Artefakt. |
 | Dokumentationskonsistenz | `python -B scripts/check_documentation_consistency.py --check` | Prüft Snapshot-Commits, Versionachsen und ausgewählte README-Aussagen. Es erzwingt keine neue SHA bei jedem Merge. |
 | UI-Textinventar | `python -B scripts/check_ui_text_inventory.py --check` | Erkennt literal hartcodierte aktive Widget-/Dialogtexte in `app/`. |
+| CLI-Textinventar | `python -B scripts/check_cli_text_inventory.py --check` | Erkennt CLI-Beschreibungen, Hilfetexte und Prints, die nicht über `LocaleManager.translate()` laufen. |
 | Release-/Versionkonsistenz | `python -B scripts/check_release_consistency.py --check` | Prüft `VERSION`, Paket-/Python-Version, Changelog und vorhandene Release-Tags, ohne neue Artefakte oder Tags zu erzeugen. |
 
 [GitHub Actions](../.github/workflows/python-tests.yml) führt die Kern- und

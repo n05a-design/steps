@@ -112,6 +112,9 @@ jobs:
       - name: Check active UI text localization inventory
         run: python -B scripts/check_ui_text_inventory.py --check
 
+      - name: Check active CLI text localization inventory
+        run: python -B scripts/check_cli_text_inventory.py --check
+
       - name: Check release and version consistency
         run: python -B scripts/check_release_consistency.py --check
 
