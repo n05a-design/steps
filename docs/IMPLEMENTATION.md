@@ -15,7 +15,11 @@ und Packaging-Gates einschließlich Wheel-Bau/-Installation. PR #180/#181
 halten den kanonischen Dokumentations- und Baseline-Stand konsistent.
 Nach dieser unveränderlichen Baseline ergänzt PR #190 die Validierung und
 Normalisierung ungültiger Projekt-Zeiteinstellungen unter der dokumentierten
-Migration `MIG-006 normalize-time-settings`.
+Migration `MIG-006 normalize-time-settings`. PR #191 synchronisiert diesen
+Merge-Stand mit dem kanonischen Dokumentationsbestand. Bei
+`main`/Commit `93ab98960a484adc9e7cf8f3927e9c81b157d5e9` bestehen 747
+automatisierte Tests; diese Zahl ist ein Testnachweis, keine Freigabe für
+native Plattformen, Übersetzung, Accessibility oder DAW-Abnahme.
 Gespeichert und exportiert
 werden weiterhin absolute Tickwerte. Implementierung, Test, fachliche Abnahme
 und Veröffentlichung sind getrennte Statusangaben.
