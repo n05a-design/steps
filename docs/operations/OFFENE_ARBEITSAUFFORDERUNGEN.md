@@ -21,10 +21,13 @@ New active IDs continue after the legacy range. Dated plans and audit reports re
 - **Abnahmekriterien:** Every legacy ID is either mapped to a current register item/issue, verified with commit-level evidence, or explicitly retained as historical/superseded. Do not duplicate issue work or infer completion.
 
 ### OA-0035: Establish the versioned repository register as canonical
-- **Kategorie:** Governance / Dokumentation · **Status:** `IN_PROGRESS` · **Ursprung:** EXPLICIT
+- **Kategorie:** Governance / Dokumentation · **Status:** `DONE_VERIFIED` · **Ursprung:** EXPLICIT
 - **Beschreibung:** Implement the owner-directed Glide-style authority model: a single versioned STEPS task register in this repository, with the old external path contract removed from active tooling.
 - **Quellen:** User decision on 2026-11-19; [register protocol](../../.agents/skills/steps-knowledge-curation/references/work_instructions_protocol.md)
-- **Abnahmekriterien:** Default helpers resolve this file from any working directory and ignore the legacy environment variable; skill and operations documentation name this file as the sole active authority; validation and recovery tests pass; dated snapshots remain unchanged.
+- **Commit:** `5c3e829d53e8f2cfc609eddd0d3c597c862a9698`
+- **Prüfung:** `python3 -B -m unittest discover -s .agents/skills/steps-knowledge-curation/tests/ -q` — 40 tests passed; `python3 .agents/skills/steps-knowledge-curation/scripts/validate_register.py` — 7 tasks, 0 errors.
+- **Abnahmebeleg:** PR [#209](https://github.com/n05a-design/steps/pull/209) merged; `test_default_register_is_repository_canonical_and_ignores_legacy_env` passed; the dated snapshot is unchanged since the migration.
+- **Abnahmekriterien:** Default helpers resolve this file independent of the working directory and ignore the legacy environment variable; skill and operations documentation identify it as the sole active authority; validation and recovery tests pass; dated snapshots remain unchanged.
 
 ### OA-0036: Complete repository truth and documentation sync
 - **Kategorie:** Dokumentation / Governance · **Status:** `OPEN` · **Ursprung:** EXPLICIT
