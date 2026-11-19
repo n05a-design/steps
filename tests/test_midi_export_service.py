@@ -22,6 +22,7 @@ from src.steps.midi import (
     MidiExportService,
     MidiFile,
     MidiTrack,
+    SMFParser,
     decode_vlq,
     encode_vlq,
 )
@@ -318,6 +319,18 @@ class TestSMFGenerationAndEnvelope(unittest.TestCase):
         self.assertEqual({event.msg_bytes[0] & 0x0F for event in note_ons}, {0, 1})
         self.assertTrue(
             any(event.msg_bytes.startswith(b"\xff\x59") for event in parsed.tracks[0].raw_events)
+        )
+        independent = SMFParser.parse(out.read_bytes())
+        self.assertEqual(independent.format, 0)
+        self.assertEqual(independent.num_tracks, 1)
+        self.assertEqual(len(independent.tracks[0].notes), 5)
+        self.assertEqual(
+            {note.duration_ticks for note in independent.tracks[0].notes},
+            {1824},
+        )
+        self.assertEqual(
+            {note.channel for note in independent.tracks[0].notes},
+            {0, 1},
         )
 
     def test_export_progression_adr017_rejects_non_four_note_alternatives(self):

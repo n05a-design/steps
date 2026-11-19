@@ -34,6 +34,7 @@ from typing import Any, Dict, List, Tuple
 from scripts.audit_midi_files import envelope
 from src.steps.midi.export_service import MidiExportService
 from src.steps.midi.smf import MidiFile, MidiTrack
+from src.steps.midi.smf_parser import SMFParser
 from src.steps.models.timeline import validate_midi_note_on_off_pairing
 from src.steps.progression.session import ProgressionSession
 from src.steps.storage.project_io import Project
@@ -374,6 +375,17 @@ class TestMidiGoldenFixtures(unittest.TestCase):
                     [track.name for track in parsed.tracks],
                     ["Conductor", "Chords", "Bass"],
                 )
+                independent = SMFParser.parse(raw_data)
+                self.assertEqual((independent.format, independent.division), (1, 480))
+                self.assertEqual(
+                    [track.name for track in independent.tracks],
+                    ["Conductor", "Chords", "Bass"],
+                )
+                self.assertEqual(independent.tempos, [(0, golden["tempo_bpm"])])
+                self.assertEqual(
+                    independent.time_signatures,
+                    [(0, *golden.get("meter", (4, 4)))],
+                )
                 chord_note_ons = [
                     event
                     for event in parsed.tracks[1].raw_events
@@ -385,6 +397,28 @@ class TestMidiGoldenFixtures(unittest.TestCase):
                 self.assertTrue(all(len(notes) == 4 for notes in notes_by_start.values()))
                 self.assertTrue(
                     all(48 <= note <= 72 for notes in notes_by_start.values() for note in notes)
+                )
+                self.assertEqual(
+                    len(independent.tracks[1].notes),
+                    4 * len(golden["chords"]),
+                )
+                self.assertEqual(
+                    len(independent.tracks[2].notes),
+                    len(golden["chords"]),
+                )
+                self.assertEqual(
+                    {note.channel for note in independent.tracks[1].notes},
+                    {0},
+                )
+                self.assertEqual(
+                    {note.channel for note in independent.tracks[2].notes},
+                    {1},
+                )
+                self.assertTrue(
+                    all(48 <= note.pitch <= 72 for note in independent.tracks[1].notes)
+                )
+                self.assertTrue(
+                    all(36 <= note.pitch <= 47 for note in independent.tracks[2].notes)
                 )
                 note_events: List[Tuple[str, int, int, int]] = []
                 for track in parsed.tracks:

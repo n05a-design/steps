@@ -124,8 +124,9 @@ verdoppelt, Erweiterungsakkorde verwenden Grundton, Terz, Septime und die
 höchste Erweiterung. Ein Slash-Bass wird separat auf der Bassspur ausgegeben.
 Tempo, Taktart, passende Dur-/Moll-Tonartmetadaten und individuelle
 Event-Startzeiten/-Dauern bleiben erhalten; deutsches `B` und `H` bleiben
-getrennte Tonarten. Zehn SHA-256-Golden-Fälle prüfen den Session-Export. Die
-UI-Smoke-Probe speichert ein Projekt, verwirft eine ungespeicherte Änderung,
+getrennte Tonarten. Zehn SHA-256-Golden-Fälle prüfen den Session-Export auch
+mit dem separat implementierten `SMFParser`; das ersetzt keine DAW-Abnahme.
+Die UI-Smoke-Probe speichert ein Projekt, verwirft eine ungespeicherte Änderung,
 lädt es erneut und exportiert MIDI. Unabhängige DAW-Importe sind weiterhin
 nicht belegt. Der Exportservice bietet zusätzlich `DROP2` und `ROOTLESS`
 (nur wenn vier passende Stimmen möglich sind), 95%-Notenlänge und SMF Format 0;
