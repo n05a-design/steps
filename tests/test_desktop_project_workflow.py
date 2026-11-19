@@ -63,6 +63,9 @@ class FakeController:
     def get_state_summary(self):
         return {"title": "My Progression"}
 
+    def get_view_model(self):
+        return {}
+
     def save(self, path):
         if self.save_error:
             raise self.save_error
@@ -329,6 +332,21 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.assertIn("BEGINNER KEYBOARD VOICINGS:", rendered)
         self.assertIn("C:", rendered)
         self.assertIn("Smoothness", rendered)
+
+    def test_beginner_view_model_failure_is_logged_without_hiding_chord_details(self):
+        self.window.controller.get_view_model = Mock(
+            return_value={"beginner_voicings": {"smoothness_score": 0.9}}
+        )
+
+        with self.assertLogs("app.ui.main_window", level="ERROR") as logged:
+            self.window._display_chord_details("C")
+
+        self.assertIn("optional beginner voicing details", logged.output[0])
+        rendered = self.window.detail_text.insert.call_args.args[1]
+        self.assertIn(
+            self.window.i18n.translate("chord.analysis.title", chord="C"),
+            rendered,
+        )
 
     def test_next_chord_explore_apply_undo_redo(self):
         self.window.controller = ProgressionSessionController(
