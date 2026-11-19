@@ -12,6 +12,7 @@ created for the STEPS repository audit on 2026-11-19.
 - [Safe synchronization plan](STEPS_SAFE_SYNC_PLAN.md)
 - [Verification results](STEPS_VERIFICATION_RESULTS.md)
 - [Expert decisions from 27 pending benchmark cases](EXPERT_DECISIONS_2026-11-19.md)
+- [Post-merge reconciliation for PR #193](POST_MERGE_PR193.md)
 
 ## Machine-readable evidence
 

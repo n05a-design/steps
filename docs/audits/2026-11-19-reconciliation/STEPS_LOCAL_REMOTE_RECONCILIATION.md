@@ -36,6 +36,16 @@ Earlier PR claims must not be assumed for every historical branch. Each relevant
 
 In the active, clean audit checkout, no relevant untracked or modified implementation is missing from GitHub. Specialized worktrees and branch content could not all be declared `ALREADY_INTEGRATED` or `LOCAL_ONLY` without a patch/blob-by-blob comparison. The live main baseline and active worktree inventory establish no confirmed P0/P1 loss in the audited checkout.
 
+## Post-merge update: PR #193
+
+At 2026-11-19 13:12 CET, PR #193 merged as
+`2a30326f95bd3fa86d1cb5513181792fa3f8c740`. PR #194 and PR #195 were already
+present on `main` as `30d3bd1` and `2f0e297`.
+
+The current remote baseline is `origin/main` at `2a30326`; no open PR is
+currently reported. The pilot evidence gate passes at this merge commit, and
+local core and curation suites pass at the same baseline.
+
 ## Priorities
 
 - P0: Retain all current worktrees, stashes, reflogs, unreachable objects, and inaccessible-workstation evidence. No cleanup.

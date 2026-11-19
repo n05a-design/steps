@@ -22,10 +22,12 @@
 
 ## Main status
 
-- 746 unit tests pass.
+- 752 unit tests pass at merged commit `2a30326`.
 - 40 knowledge-curation tests pass.
 - 8/8 pilot cases pass.
 - 92 benchmark cases pass, 0 fail, 27 remain pending.
 - All 23 Gemini Knowledge Pack files pass the pack checker.
 - PR #187 merged successfully; live CI for its merge commit was successful.
+- PR #193 merged successfully as `2a30326`; PRs #194 and #195 are also merged.
+- No open pull request is currently reported.
 - Issues #149–#151 and #154 remain open.
