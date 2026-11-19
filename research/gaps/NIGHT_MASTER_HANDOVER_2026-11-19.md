@@ -125,7 +125,7 @@ git diff --check
 
 Local results:
 
-- Main suite: `742` tests passed.
+- Main suite: `743` tests passed.
 - Curation suite: `40` tests passed.
 - MIDI/package subset: `19` tests passed.
 - API/golden/reference gates passed.
