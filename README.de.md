@@ -101,7 +101,7 @@ Der [Implementierungsstand](docs/IMPLEMENTATION.md) beschreibt Verhalten und Gre
 - **Speichern und Laden:** Das Hauptfenster bietet Dateiauswahl, Speichern/Öffnen, Rückfrage bei ungespeicherten Änderungen und sichtbare Fehlermeldungen. Plattform-, Barrierefreiheits- und Wiederherstellungsabnahme bleiben offen.
 - **Keine automatische Analyse.** STEPS erkennt keine Tonart aus Audio und wählt keine Deutung für dich aus. Die Tonart gibst du vor.
 - **Bewusst enge Grenzen.** `C11` ist nicht registriert, `V7(alt)` wird abgewiesen. Solche Lücken stehen im Implementierungsstand, nicht in einer Fußnote.
-- **Noch keine englische UI.** Die aktuelle Oberfläche und CLI enthalten weitgehend fest codierte deutsche Texte. Englisch ist Ziel- und Fallbacksprache, aber noch nicht implementiert.
+- **Englisch/Deutsch teilweise implementiert.** Laufzeitumschaltung, persistierte Spracheinstellung und EN/DE-Kataloge sind vorhanden; unabhängige Übersetzungs-, native Plattform- und Accessibility-Abnahme bleiben offen.
 
 ## Wohin STEPS will
 

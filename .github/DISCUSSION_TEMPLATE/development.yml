@@ -1,0 +1,19 @@
+name: Development
+description: Discuss implementation decisions, architecture, and developer workflows.
+title: "[Development] "
+labels: []
+body:
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed change
+      description: Identify affected modules, tests, documentation, and dependencies.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Include exact commit, tests, CI status, and remaining owner decisions.
+    validations:
+      required: true

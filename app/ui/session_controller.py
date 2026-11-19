@@ -130,6 +130,13 @@ class ProgressionSessionController:
         self._session.set_voice_leading_style(style)
         self._notify()
 
+    def set_notation_convention(self, convention: Literal["INT", "DE"]) -> bool:
+        """Explicitly converts and notifies views when musical notation convention changes."""
+        changed = self._session.set_notation_convention(convention)
+        if changed:
+            self._notify()
+        return changed
+
     def undo(self) -> None:
         self._session.undo()
         self._notify()

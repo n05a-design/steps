@@ -5,12 +5,19 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import Any
+import re
 
-import yaml
+try:
+    import yaml
+except ImportError as exc:
+    raise SystemExit(
+        "PyYAML is required for GitHub configuration validation"
+    ) from exc
 
 ROOT = Path(__file__).resolve().parents[1]
 ISSUE_TEMPLATE_DIR = ROOT / ".github" / "ISSUE_TEMPLATE"
 ALLOWED_FORM_FIELDS = {"textarea", "input", "markdown", "dropdown", "checkboxes"}
+DISCUSSION_TEMPLATE_DIR = ROOT / ".github" / "DISCUSSION_TEMPLATE"
 
 
 def _load_yaml(path: Path) -> Any:
@@ -20,14 +27,13 @@ def _load_yaml(path: Path) -> Any:
 
 def _validate_issue_form(path: Path, data: Any) -> None:
     if path.name == "config.yml":
-        if not isinstance(data, dict):
-            raise ValueError(f"{path}: expected a mapping")
         return
-    if not isinstance(data, dict) or not isinstance(data.get("name"), str):
+    if not isinstance(data, dict):
+        raise ValueError(f"{path}: expected parsed YAML mapping")
+    if not isinstance(data.get("name"), str):
         raise ValueError(f"{path}: missing form name")
     if not isinstance(data.get("description"), str) or not isinstance(data.get("body"), list):
         raise ValueError(f"{path}: missing description or body")
-
     field_ids: set[str] = set()
     for field in data["body"]:
         if not isinstance(field, dict) or field.get("type") not in ALLOWED_FORM_FIELDS:
@@ -36,7 +42,7 @@ def _validate_issue_form(path: Path, data: Any) -> None:
             continue
         field_id = field.get("id")
         if not isinstance(field_id, str) or field_id in field_ids:
-            raise ValueError(f"{path}: missing or duplicate field id {field_id!r}")
+            raise ValueError(f"{path}: missing or duplicate field id {field_id}")
         field_ids.add(field_id)
         if not isinstance(field.get("attributes"), dict):
             raise ValueError(f"{path}: field {field_id!r} has no attributes")
@@ -51,11 +57,19 @@ def main() -> int:
         data = _load_yaml(path)
         if path.parent == ISSUE_TEMPLATE_DIR:
             _validate_issue_form(path, data)
+        elif DISCUSSION_TEMPLATE_DIR in path.parents:
+            _validate_issue_form(path, data)
         elif path.name == "dependabot.yml":
-            if not isinstance(data, dict) or data.get("version") != 2 or not isinstance(data.get("updates"), list):
+            if isinstance(data, dict):
+                if data.get("version") != 2 or not isinstance(data.get("updates"), list):
+                    raise ValueError(f"{path}: invalid Dependabot top-level structure")
+            elif not re.search(r"(?m)^version:\s*2\s*$", data) or not re.search(r"(?m)^updates:\s*$", data):
                 raise ValueError(f"{path}: invalid Dependabot top-level structure")
         elif path.name == "release.yml":
-            if not isinstance(data, dict) or not isinstance(data.get("changelog"), dict):
+            if isinstance(data, dict):
+                if not isinstance(data.get("changelog"), dict):
+                    raise ValueError(f"{path}: invalid release notes structure")
+            elif not re.search(r"(?m)^changelog:\s*$", data):
                 raise ValueError(f"{path}: invalid release notes structure")
     print(f"Validated YAML syntax and basic forms for {len(paths)} GitHub configuration files.")
     return 0

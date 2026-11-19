@@ -1,0 +1,19 @@
+name: Ideas
+description: Propose a scoped STEPS feature or product improvement.
+title: "[Idea] "
+labels: []
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Idea
+      description: State the user outcome and why it is needed.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and boundaries
+      description: Identify in-scope behavior, non-goals, and owner decisions.
+    validations:
+      required: true
