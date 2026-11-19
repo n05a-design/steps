@@ -190,6 +190,53 @@ class TestLocaleManager(unittest.TestCase):
             session.export_midi_file(midi_b)
             self.assertEqual(midi_a.read_bytes(), midi_b.read_bytes())
 
+    def test_four_ui_language_and_notation_invariance_combinations(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            temp = Path(temp_dir)
+            for convention in ("INT", "DE"):
+                chords = ["C", "G", "Am", "F"] if convention == "INT" else ["C", "G", "Am", "F"]
+                session = ProgressionSession(
+                    initial_chords=chords,
+                    convention=convention,
+                    bpm=96.5,
+                )
+                session.set_context("C", False, 96.5, (6, 8), title="Invariant")
+                base_project = session.save_to_file(temp / f"{convention}-base.stepsproj")
+                base_data = json.loads(base_project.read_text(encoding="utf-8"))
+                base_midi = session.export_midi_file(temp / f"{convention}-base.mid")
+                base_bytes = base_midi.read_bytes()
+
+                for ui_language in ("en", "de"):
+                    manager = LocaleManager(
+                        preference=ui_language,
+                        settings_file=temp / f"{convention}-{ui_language}.json",
+                        system_locale="en_US",
+                    )
+                    session_copy = ProgressionSession(
+                        initial_chords=chords,
+                        convention=convention,
+                        bpm=96.5,
+                    )
+                    session_copy.set_context("C", False, 96.5, (6, 8), title="Invariant")
+
+                    project_path = session_copy.save_to_file(
+                        temp / f"{convention}-{ui_language}.stepsproj"
+                    )
+                    project_data = json.loads(project_path.read_text(encoding="utf-8"))
+                    midi_path = session_copy.export_midi_file(
+                        temp / f"{convention}-{ui_language}.mid"
+                    )
+
+                    self.assertEqual(manager.language, ui_language)
+                    self.assertEqual(project_data["notation_convention"], convention)
+                    self.assertEqual(project_data["title"], base_data["title"])
+                    self.assertEqual(project_data["time_settings"], base_data["time_settings"])
+                    self.assertEqual(
+                        project_data["tracks"][0]["events"],
+                        base_data["tracks"][0]["events"],
+                    )
+                    self.assertEqual(midi_path.read_bytes(), base_bytes)
+
     def test_unknown_translation_key_is_an_explicit_error(self):
         manager = LocaleManager(preference="en", system_locale="en_US")
         with self.assertRaisesRegex(KeyError, "Missing translation key"):
