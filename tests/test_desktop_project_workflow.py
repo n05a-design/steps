@@ -489,6 +489,34 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         show_error.assert_called_once()
         self.window._refresh_all.assert_not_called()
 
+    def test_dominant_chord_suggests_only_supported_scales(self):
+        from src.steps.theory.scale import construct_scale
+
+        with patch(
+            "src.steps.theory.scale.construct_scale",
+            wraps=construct_scale,
+        ) as build_scale:
+            self.window._display_chord_details("G7")
+
+        self.assertEqual(
+            [call.args[1] for call in build_scale.call_args_list],
+            ["MIXOLYDIAN"],
+        )
+        details = self.window.detail_text.insert.call_args.args[1]
+        self.assertIn("MIXOLYDIAN", details)
+        self.assertNotIn("ALTERED", details)
+
+    @patch(
+        "src.steps.theory.scale.construct_scale",
+        side_effect=RuntimeError("scale calculation failed"),
+    )
+    def test_scale_analysis_failure_is_visible(self, build_scale):
+        self.window._display_chord_details("G7")
+
+        build_scale.assert_called_once()
+        details = self.window.detail_text.insert.call_args.args[1]
+        self.assertIn("scale calculation failed", details)
+
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="")
     def test_cancel_midi_export_does_not_call_controller(self, choose_path):
         self.window._on_export_midi()

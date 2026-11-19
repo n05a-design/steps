@@ -2,6 +2,7 @@
 
 ## Unreleased – App und Python-Kern
 
+- Die Desktop-Akkordanalyse schlägt nur registrierte Skalen vor und zeigt Fehler bei der Berechnung gültiger Kandidaten an, statt sie still zu verwerfen.
 - Fehler einer Desktop-Session-Listener-Aktualisierung werden protokolliert, ohne weitere Listener-Updates zu unterbrechen.
 - **Verhaltensänderung:** `NoteSpelling.transpose_diatonic` löst bei Stufen- und Halbtonwerten, die kein Intervall bilden, `InvalidAlterationError` aus, statt still die Oktave zu verschieben (zuvor C4 `(0, 11)` → Cb5). Gültige Intervalle sind unverändert.
 - **Verhaltensänderung:** `knowledge/research/run_golden_test_suite.py` schreibt ohne Argumente keine Dateien mehr; `--output-dir` exportiert, `--update-baseline` erneuert die versionierten Berichte.

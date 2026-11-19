@@ -1118,16 +1118,11 @@ class StepsMainWindow:
             elif "m" in q:
                 candidates = ["DORIAN", "AEOLIAN"]
             elif "7" in q:
-                candidates = ["MIXOLYDIAN", "ALTERED"]
+                candidates = ["MIXOLYDIAN"]
             else:
                 candidates = ["IONIAN"]
 
-            scales = []
-            for t in candidates:
-                try:
-                    scales.append(construct_scale(chord.root, t))
-                except Exception:
-                    pass
+            scales = [construct_scale(chord.root, candidate) for candidate in candidates]
 
             lines = [
                 self.i18n.translate("chord.analysis.title", chord=chord_name),
