@@ -16,6 +16,7 @@ from src.steps.progression.session import (
     ProgressionSession,
     VoiceLeadingStyle,
 )
+from src.steps.progression.engine import ReviewedProgression
 
 
 class ProgressionSessionController:
@@ -156,6 +157,20 @@ class ProgressionSessionController:
 
     def new_project(self) -> None:
         self._session.reset_to_defaults()
+        self._notify()
+
+    def new_reviewed_project(self, reviewed: ReviewedProgression) -> None:
+        """Replaces the active session with an independent copy of a published example."""
+        progression = reviewed.progression
+        is_minor = progression.default_key.endswith("m")
+        chords = [symbol.strip() for symbol in progression.chords_str.split(" - ")]
+        self._session = ProgressionSession(
+            initial_chords=chords,
+            key_root=progression.default_key.removesuffix("m"),
+            is_minor=is_minor,
+            convention="INT",
+            title=progression.name,
+        )
         self._notify()
 
     def export_midi(self, file_path: Path | str) -> Path:
