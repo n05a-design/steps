@@ -41,6 +41,41 @@ class TestVerticalSliceProgression(unittest.TestCase):
     def tearDown(self):
         shutil.rmtree(self.temp_dir, ignore_errors=True)
 
+    def test_next_chord_controller_accepts_apply_rejects_invalid_and_undoes(self):
+        session = ProgressionSession(
+            initial_chords=["C", "G", "Am", "F"],
+            key_root="C",
+            is_minor=False,
+            convention="INT",
+        )
+        controller = ProgressionSessionController(session)
+
+        recommendations = controller.explore_next(1)
+        candidate = next(r for r in recommendations if r.candidate_symbol == "C")
+
+        applied = controller.apply_next_recommendation(1, candidate.candidate_symbol)
+
+        self.assertEqual(applied.candidate_symbol, "C")
+        self.assertEqual(session.chords, ["C", "G", "C", "Am", "F"])
+        for index, (start, duration) in enumerate(session.state.chord_event_timings):
+            self.assertGreaterEqual(start, 0)
+            self.assertGreater(duration, 0)
+            if index:
+                previous_start, previous_duration = session.state.chord_event_timings[index - 1]
+                self.assertGreaterEqual(start, previous_start + previous_duration)
+
+        controller.undo()
+        self.assertEqual(session.chords, ["C", "G", "Am", "F"])
+        controller.redo()
+        self.assertEqual(session.chords, ["C", "G", "C", "Am", "F"])
+
+        with self.assertRaises(IndexError):
+            controller.explore_next(-1)
+        with self.assertRaises(IndexError):
+            controller.explore_next(len(session.chords))
+        with self.assertRaises(ValueError):
+            controller.apply_next_recommendation(1, "NotARecommendation")
+
     def test_e2e_four_chord_vertical_slice(self):
         # 1. Initialize session with 4 chords (C - G - Am - F) in C-Major
         session = ProgressionSession(

@@ -58,6 +58,7 @@ class FakeController:
         self.load_error = None
         self.export_error = None
         self.voice_style_calls = []
+        self.reviewed_calls = []
 
     def get_state_summary(self):
         return {"title": "My Progression"}
@@ -79,6 +80,15 @@ class FakeController:
     def new_project(self):
         self.new_project_calls += 1
         self.session = FakeSession(is_dirty=False)
+
+    def new_reviewed_project(self, reviewed):
+        self.reviewed_calls.append(reviewed)
+        progression = reviewed.progression
+        self.session = FakeSession(is_dirty=True)
+        self.session.state.title = progression.name
+        self.session.state.chords = progression.chords_str.replace(" ", "").split("-")
+        self.session.key_root = progression.default_key.removesuffix("m")
+        self.session.is_minor = progression.default_key.endswith("m")
 
     def set_notation_convention(self, convention):
         self.session.convention = convention
@@ -117,6 +127,67 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.window.event_duration_entry = Mock()
         self.window.event_start_lbl = Mock()
         self.window.event_duration_lbl = Mock()
+        self.window._load_context_controls = Mock()
+
+    def test_new_from_reviewed_example_replaces_project_and_clears_path(self):
+        reviewed = SimpleNamespace(
+            progression=SimpleNamespace(
+                prog_id="PROG-001",
+                name="Pop Four Chords",
+                default_key="C",
+                chords_str="C - G - Am - F",
+            )
+        )
+        self.window._project_path = Path("/tmp/old.stepsproj")
+
+        with patch(
+            "app.ui.main_window.get_reviewed_progression",
+            return_value=reviewed,
+        ):
+            self.assertTrue(self.window._on_new_from_example("PROG-001"))
+
+        self.assertIsNone(self.window._project_path)
+        self.assertEqual(
+            self.window.controller.session.state.chords,
+            ["C", "G", "Am", "F"],
+        )
+        self.assertEqual(self.window.controller.reviewed_calls, [reviewed])
+        self.window._load_context_controls.assert_called_once_with()
+        self.window._refresh_all.assert_called_once_with()
+
+    @patch("app.ui.main_window.messagebox.askyesnocancel", return_value=False)
+    def test_new_from_reviewed_example_confirms_before_replacing_dirty_project(self, prompt):
+        reviewed = SimpleNamespace(
+            progression=SimpleNamespace(
+                prog_id="PROG-003",
+                name="Jazz Two-Five-One",
+                default_key="C",
+                chords_str="Dm7 - G7 - Cmaj7",
+            )
+        )
+        self.window.controller.session.is_dirty = True
+
+        with patch(
+            "app.ui.main_window.get_reviewed_progression",
+            return_value=reviewed,
+        ):
+            self.assertTrue(self.window._on_new_from_example("PROG-003"))
+
+        prompt.assert_called_once()
+        self.assertEqual(len(self.window.controller.reviewed_calls), 1)
+
+    def test_new_from_reviewed_example_cancel_keeps_current_project(self):
+        self.window._project_path = Path("/tmp/current.stepsproj")
+        self.window.controller.session.is_dirty = True
+
+        with patch(
+            "app.ui.main_window.messagebox.askyesnocancel",
+            return_value=None,
+        ):
+            self.assertFalse(self.window._on_new_from_example("PROG-001"))
+
+        self.assertEqual(self.window._project_path, Path("/tmp/current.stepsproj"))
+        self.assertEqual(self.window.controller.reviewed_calls, [])
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/new.stepsproj")
     def test_save_as_updates_current_path_and_window_title(self, choose_path):
@@ -235,6 +306,45 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.assertIn("BEGINNER KEYBOARD VOICINGS:", rendered)
         self.assertIn("C:", rendered)
         self.assertIn("Smoothness", rendered)
+
+    def test_next_chord_explore_apply_undo_redo(self):
+        self.window.controller = ProgressionSessionController(
+            ProgressionSession(initial_chords=["C", "G", "Am", "F"], key_root="C")
+        )
+        self.window._next_recommendations = []
+        self.window.chord_listbox = Mock()
+        self.window.chord_listbox.curselection.return_value = (1,)
+        self.window.next_candidates_list = Mock()
+        self.window.next_candidates_list.curselection.return_value = (0,)
+        self.window.apply_next_btn = Mock()
+        self.window.detail_text = Mock()
+
+        self.window._on_explore_next()
+        recommendations = self.window._next_recommendations
+        self.assertTrue(recommendations)
+        candidate_index = next(
+            index
+            for index, recommendation in enumerate(recommendations)
+            if recommendation.candidate_symbol == "C"
+        )
+        self.window.next_candidates_list.curselection.return_value = (candidate_index,)
+
+        self.window._on_apply_next_recommendation()
+
+        self.assertEqual(
+            self.window.controller.session.chords,
+            ["C", "G", "C", "Am", "F"],
+        )
+        self.window.controller.undo()
+        self.assertEqual(
+            self.window.controller.session.chords,
+            ["C", "G", "Am", "F"],
+        )
+        self.window.controller.redo()
+        self.assertEqual(
+            self.window.controller.session.chords,
+            ["C", "G", "C", "Am", "F"],
+        )
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/fail.stepsproj")
     @patch("app.ui.main_window.messagebox.showerror")

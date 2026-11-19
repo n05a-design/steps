@@ -16,6 +16,7 @@ from src.steps.progression.session import (
     ProgressionSession,
     VoiceLeadingStyle,
 )
+from src.steps.progression.engine import ReviewedProgression
 
 
 class ProgressionSessionController:
@@ -159,8 +160,43 @@ class ProgressionSessionController:
         self._session.reset_to_defaults()
         self._notify()
 
+    def new_reviewed_project(self, reviewed: ReviewedProgression) -> None:
+        """Replaces the active session with an independent copy of a published example."""
+        progression = reviewed.progression
+        is_minor = progression.default_key.endswith("m")
+        chords = [symbol.strip() for symbol in progression.chords_str.split(" - ")]
+        self._session = ProgressionSession(
+            initial_chords=chords,
+            key_root=progression.default_key.removesuffix("m"),
+            is_minor=is_minor,
+            convention="INT",
+            title=progression.name,
+        )
+        self._notify()
+
     def export_midi(self, file_path: Path | str) -> Path:
         return self._session.export_midi_file(file_path)
 
     def explore_next(self, index: int) -> List[ChordRecommendation]:
         return self._session.explore_next_chords(index)
+
+    def apply_next_recommendation(self, index: int, candidate_symbol: str) -> ChordRecommendation:
+        """Validates and inserts one recommendation after the selected chord."""
+        if not isinstance(candidate_symbol, str) or not candidate_symbol.strip():
+            raise ValueError("A valid recommendation symbol is required.")
+        recommendations = self._session.explore_next_chords(index)
+        candidate = next(
+            (
+                recommendation
+                for recommendation in recommendations
+                if recommendation.candidate_symbol == candidate_symbol
+            ),
+            None,
+        )
+        if candidate is None:
+            raise ValueError("The selected chord is not a valid recommendation for this context.")
+        if not (0 <= index < len(self._session.chords)):
+            raise IndexError(f"Index {index} out of range")
+        self._session.add_chord(candidate.candidate_symbol, position=index + 1)
+        self._notify()
+        return candidate
