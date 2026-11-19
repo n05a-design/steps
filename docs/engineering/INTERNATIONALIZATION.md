@@ -76,6 +76,7 @@ A localized UI label and a translated music-theory claim are different data. For
 | Runtime contract | `system` precedence/fallback and explicit `en`/`de` selection are deterministic and tested without Tk. |
 | Persistence | Preference survives app restart; legacy/missing settings use the documented `system` default; project files remain unchanged. |
 | UI completeness | A maintained inventory or extraction-based gate detects visible hard-coded user text in the release surface; dialogs, errors, menus, accessibility labels, and CLI are included. |
+| CLI completeness | `scripts/check_cli_text_inventory.py --check` rejects literal CLI descriptions/help/prints that bypass `LocaleManager.translate()`. |
 | Runtime switching | Every open screen refreshes, or documented restart behavior is shown; no data loss or chord reinterpretation occurs. |
 | Musical independence | With identical project bytes and `INT`/`DE` notation preference, switching UI language changes no project values, spelling, or MIDI output. |
 | Knowledge review | Locale/revision/provenance and domain/translation review states are independently validated. |
