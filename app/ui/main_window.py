@@ -69,11 +69,11 @@ class StepsMainWindow:
         self.root.minsize(860, 600)
         self._init_file_menu()
 
-        # Apply branding icon if available
+        # A missing optional icon must not prevent startup.
         try:
             apply_window_icon(self.root)
         except Exception:
-            pass
+            logger.exception("Could not apply the STEPS window icon")
 
         self._init_ui()
         self._localize_widgets()
