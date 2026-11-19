@@ -198,6 +198,23 @@ class TestVoiceLeadingStylesSessionIntegration(unittest.TestCase):
         vm_updated = controller.get_view_model()
         self.assertEqual(vm_updated["voice_leading_style"], "STRICT_CLASSICAL")
 
+    def test_listener_failure_is_logged_without_blocking_other_listeners(self):
+        controller = ProgressionSessionController()
+        notified = []
+
+        def broken_listener():
+            raise RuntimeError("view refresh failed")
+
+        controller.add_listener(broken_listener)
+        controller.add_listener(lambda: notified.append(True))
+
+        with self.assertLogs("app.ui.session_controller", level="ERROR") as captured:
+            controller.set_voice_leading_style(VoiceLeadingStyle.STRICT_CLASSICAL)
+
+        self.assertIn("Progression session listener callback failed", captured.output[0])
+        self.assertIn("view refresh failed", captured.output[0])
+        self.assertEqual(notified, [True])
+
     def test_project_persistence_roundtrip(self):
         """Verifies voice_leading_style is persisted and restored via project file save/load."""
         with tempfile.TemporaryDirectory() as tmp_dir:

@@ -7,6 +7,7 @@ Follows AGENTS.md Rule 4 (Domain boundary separation).
 
 from __future__ import annotations
 
+import logging
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Literal, Optional, Tuple, Union
 
@@ -17,6 +18,8 @@ from src.steps.progression.session import (
     VoiceLeadingStyle,
 )
 from src.steps.progression.engine import ReviewedProgression
+
+logger = logging.getLogger(__name__)
 
 
 class ProgressionSessionController:
@@ -43,7 +46,7 @@ class ProgressionSessionController:
             try:
                 cb()
             except Exception:
-                pass
+                logger.exception("Progression session listener callback failed")
 
     def get_view_model(self) -> Dict[str, Any]:
         """Produces a structured view-model dictionary ready for GUI rendering."""
