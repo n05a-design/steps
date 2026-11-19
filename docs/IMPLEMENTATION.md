@@ -127,7 +127,9 @@ Event-Startzeiten/-Dauern bleiben erhalten; deutsches `B` und `H` bleiben
 getrennte Tonarten. Zehn SHA-256-Golden-Fälle prüfen den Session-Export. Die
 UI-Smoke-Probe speichert ein Projekt, verwirft eine ungespeicherte Änderung,
 lädt es erneut und exportiert MIDI. Unabhängige DAW-Importe sind weiterhin
-nicht belegt.
+nicht belegt. Der Exportservice bietet zusätzlich `DROP2` und `ROOTLESS`
+(nur wenn vier passende Stimmen möglich sind), 95%-Notenlänge und SMF Format 0;
+der Desktop-Export nutzt weiterhin die CLOSE-/10-Tick-/Format-1-Standards.
 
 [Testanleitung](../tests/README.md) · [Quellen und Archiv](../archive/INDEX.md)
 

@@ -7,8 +7,9 @@ into Standard MIDI Files (SMF) Format 0 and Format 1.
 
 from __future__ import annotations
 
+from dataclasses import replace
 from pathlib import Path
-from typing import List, Optional, Tuple
+from typing import List, Literal, Optional, Tuple
 
 from ..storage.project_io import Project
 from ..theory.chord import ChordDefinition, Voicing, parse_chord
@@ -55,6 +56,35 @@ def _adr017_close_notes(chord: ChordDefinition) -> list[int]:
     if len(set(notes)) != 4:
         raise ValueError(f"ADR-017 requires four distinct chord voices for {chord.symbol}.")
     return notes
+
+
+def _adr017_alternative_notes(
+    chord: ChordDefinition,
+    voicing_type: Literal["DROP2", "ROOTLESS"],
+) -> list[int]:
+    chord_without_slash_bass = replace(chord, bass=None)
+    notes = chord_without_slash_bass.to_voicing(
+        bass_octave=3,
+        voicing_type=voicing_type,
+    ).midi_notes
+    if len(notes) != 4:
+        raise ValueError(
+            f"ADR-017 {voicing_type} requires four chord voices for {chord.symbol}."
+        )
+
+    normalized = []
+    for note in notes:
+        while note < 48:
+            note += 12
+        while note > 72:
+            note -= 12
+        normalized.append(note)
+    normalized.sort()
+    if len(set(normalized)) != 4:
+        raise ValueError(
+            f"ADR-017 {voicing_type} requires four distinct chord voices for {chord.symbol}."
+        )
+    return normalized
 
 
 class MidiExportService:
@@ -208,31 +238,44 @@ class MidiExportService:
         bass_velocity: int = 100,
         convention: str = "INT",
         event_timings: Optional[List[Tuple[int, int]]] = None,
+        voicing_type: Literal["CLOSE", "DROP2", "ROOTLESS"] = "CLOSE",
+        note_duration_mode: Literal["FIXED_GAP", "PERCENT_95"] = "FIXED_GAP",
+        smf_format: Literal[0, 1] = 1,
     ) -> Path:
         """
-        Exports a chord progression strictly conforming to ADR-017 (v0.1 MIDI Export Specification):
-        - SMF Type 1, 480 PPQ
-        - Track 0: Conductor (Tempo 0x51, Time Signature 0x58, Key Signature 0x59 if -7..+7)
-        - Track 1: 'Chords' (channel 0 = MIDI Kanal 1, CLOSE voicing 48..72, velocity 90)
-        - Track 2: 'Bass' (channel 1 = MIDI Kanal 2, bass octave 2 [36..47], velocity 100)
-        - Effective note length: duration_ticks minus lead_gap_ticks (default 10 ticks)
-        - No program change messages (0xC0)
-        Event timing overrides the default sequential chord positions and durations.
+        Exports a chord progression following the ADR-017 MIDI specification.
+        Default output is SMF Type 1 with Conductor, Chords, and Bass tracks;
+        SMF Type 0 combines them into one STEPS track.
+        Chords use four voices in MIDI 48..72; bass uses MIDI 36..47.
+        Effective note length defaults to duration_ticks minus lead_gap_ticks.
+        No program change messages (0xC0) are added.
+        Event timing overrides sequential positions and fixed chord durations.
+        Optional output modes support DROP2/ROOTLESS and 95%-length notes.
         """
-        midi_file = MidiFile(smf_format=1, division=ppq)
+        if voicing_type not in ("CLOSE", "DROP2", "ROOTLESS"):
+            raise ValueError(f"Unsupported ADR-017 voicing type: {voicing_type!r}.")
+        if note_duration_mode not in ("FIXED_GAP", "PERCENT_95"):
+            raise ValueError(f"Unsupported ADR-017 note duration mode: {note_duration_mode!r}.")
 
-        # Track 0: Conductor
-        conductor = midi_file.add_track(MidiTrack(name="Conductor"))
+        midi_file = MidiFile(smf_format=smf_format, division=ppq)
+
+        if smf_format == 0:
+            conductor = midi_file.add_track(MidiTrack(name="STEPS"))
+            chords_track = conductor
+            bass_track = conductor if separate_bass_track else None
+        else:
+            conductor = midi_file.add_track(MidiTrack(name="Conductor"))
+            chords_track = midi_file.add_track(MidiTrack(name="Chords"))
+            bass_track = (
+                midi_file.add_track(MidiTrack(name="Bass"))
+                if separate_bass_track
+                else None
+            )
+
         conductor.add_time_signature(0, time_signature[0], time_signature[1])
         conductor.add_tempo(0, bpm)
         if key_accidentals is not None and -7 <= key_accidentals <= 7:
             conductor.add_key_signature(0, accidentals=key_accidentals, is_minor=is_minor_key)
-
-        # Track 1: Chords
-        chords_track = midi_file.add_track(MidiTrack(name="Chords"))
-
-        # Track 2: Bass (if separate_bass_track)
-        bass_track = midi_file.add_track(MidiTrack(name="Bass")) if separate_bass_track else None
 
         chord_dur_ticks = int(round(chord_duration_quarters * ppq))
         if event_timings is None:
@@ -261,17 +304,26 @@ class MidiExportService:
         ):
             raise ValueError("Event timings require non-negative starts and positive durations.")
 
+        def note_duration(duration_ticks: int) -> int:
+            if note_duration_mode == "PERCENT_95":
+                return max(1, int(round(duration_ticks * 0.95)))
+            return max(1, duration_ticks - lead_gap_ticks)
+
         for item, (start_tick, duration_ticks) in zip(chords, event_timings):
             if isinstance(item, str):
                 chord_def = parse_chord(item, convention=convention)
             else:
                 chord_def = item
 
-            # Chords use four close voices; the separate bass track owns any slash bass.
-            for note in _adr017_close_notes(chord_def):
+            if voicing_type == "CLOSE":
+                chord_notes = _adr017_close_notes(chord_def)
+            else:
+                chord_notes = _adr017_alternative_notes(chord_def, voicing_type)
+
+            for note in chord_notes:
                 chords_track.add_note(
                     start_tick=start_tick,
-                    duration_ticks=max(1, duration_ticks - lead_gap_ticks),
+                    duration_ticks=note_duration(duration_ticks),
                     pitch=note,
                     velocity=chords_velocity,
                     channel=0
@@ -283,7 +335,7 @@ class MidiExportService:
                 bass_pitch = int(bass_spelling.pitch_class) + 36
                 bass_track.add_note(
                     start_tick=start_tick,
-                    duration_ticks=max(1, duration_ticks - lead_gap_ticks),
+                    duration_ticks=note_duration(duration_ticks),
                     pitch=bass_pitch,
                     velocity=bass_velocity,
                     channel=1
