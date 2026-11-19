@@ -55,6 +55,27 @@ jobs:
             tests.test_desktop_app_entrypoint.TestDesktopAppEntrypoint.test_main_window_instantiation_and_wiring \
             -v
 
+  desktop-ui-platform-smoke:
+    name: Desktop UI smoke (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Smoke-test native Tk window and core workflow
+        run: python -B -m unittest tests.test_desktop_app_entrypoint.TestDesktopAppEntrypoint.test_main_window_instantiation_and_wiring -v
+
   test:
     name: Unit Tests (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest

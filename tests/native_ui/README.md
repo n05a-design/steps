@@ -7,6 +7,10 @@ Progression, Kontextänderung, Undo, Akkordbearbeitung, Transposition und MIDI-
 Export über die native Widget-Verkabelung. Das ersetzt keine menschliche
 macOS-/Windows-/Linux-Sichtprüfung, Screenreader-Abnahme oder native Dialog-
 Akzeptanz.
+Zusätzliche macOS-/Windows-Matrix-Jobs starten denselben Widget-/Controller-
+Pfad auf den jeweiligen Hosted Runnern. Ein Skip wegen fehlendem Tkinter oder
+Display bleibt ein nicht bestätigter Plattformfall, kein automatischer
+Plattformfreigabe-Nachweis.
 
 | Einstieg | Inhalt |
 | --- | --- |

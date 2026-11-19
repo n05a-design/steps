@@ -22,6 +22,9 @@ und die Veröffentlichung des Pilotmaterials.
 Ein separates Ubuntu/Xvfb-Native-UI-Smoke startet das Tkinter-Hauptfenster und
 prüft die verkabelte Kernbedienung. Das ist eine Linux-Automatisierungsprobe,
 keine native macOS-/Windows-Abnahme und kein Ersatz für Screenreader-/Sichtprüfung.
+Zusätzliche macOS-/Windows-CI-Smokes starten denselben Tkinter-Widget-/Controller-
+Pfad auf dem jeweiligen Runner. Ein übersprungener Test wegen fehlendem Display
+oder Tkinter ist explizit als `skip`, nicht als Plattformabnahme zu behandeln.
 Die Kern-Suite prüft die Veröffentlichungspfade mit isolierten synthetischen
 Freigaben. Damit werden keine Desktop-, Audio- oder Produkt-MIDI-Abläufe abgenommen.
 
