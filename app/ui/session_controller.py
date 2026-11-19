@@ -163,3 +163,24 @@ class ProgressionSessionController:
 
     def explore_next(self, index: int) -> List[ChordRecommendation]:
         return self._session.explore_next_chords(index)
+
+    def apply_next_recommendation(self, index: int, candidate_symbol: str) -> ChordRecommendation:
+        """Validates and inserts one recommendation after the selected chord."""
+        if not isinstance(candidate_symbol, str) or not candidate_symbol.strip():
+            raise ValueError("A valid recommendation symbol is required.")
+        recommendations = self._session.explore_next_chords(index)
+        candidate = next(
+            (
+                recommendation
+                for recommendation in recommendations
+                if recommendation.candidate_symbol == candidate_symbol
+            ),
+            None,
+        )
+        if candidate is None:
+            raise ValueError("The selected chord is not a valid recommendation for this context.")
+        if not (0 <= index < len(self._session.chords)):
+            raise IndexError(f"Index {index} out of range")
+        self._session.add_chord(candidate.candidate_symbol, position=index + 1)
+        self._notify()
+        return candidate

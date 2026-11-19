@@ -264,24 +264,26 @@ class ProgressionSession:
             new_chords.append(symbol)
             insert_index = len(new_chords) - 1
         else:
-            new_chords.insert(position, symbol)
             normalized_position = position if position >= 0 else old_count + position
             insert_index = max(0, min(normalized_position, old_count))
+            new_chords.insert(insert_index, symbol)
         new_state = copy.deepcopy(self.state)
         new_state.chords = new_chords
-        if insert_index == 0:
-            start_tick = 0
-        else:
+        duration_ticks = new_state.chord_duration_ticks
+        if position is None:
             previous_start, previous_duration = new_state.chord_event_timings[insert_index - 1]
             start_tick = previous_start + previous_duration
-        duration_ticks = new_state.chord_duration_ticks
-        if position is not None:
+        elif insert_index < len(new_state.chord_event_timings):
+            start_tick = new_state.chord_event_timings[insert_index][0]
             new_state.chord_event_timings = [
                 (start + duration_ticks, duration)
                 if index >= insert_index
                 else (start, duration)
                 for index, (start, duration) in enumerate(new_state.chord_event_timings)
             ]
+        else:
+            previous_start, previous_duration = new_state.chord_event_timings[insert_index - 1]
+            start_tick = previous_start + previous_duration
         new_state.chord_event_timings.insert(insert_index, (start_tick, duration_ticks))
         self._push_mutation(new_state)
 
