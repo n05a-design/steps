@@ -30,8 +30,8 @@ Do not close these issues solely because a feature or automated test exists.
 
 - This audit worktree is located under the configured OneDrive project tree. The local path is evidence of placement only; OneDrive cloud upload/sync status was not independently observable in this audit.
 - `STEPS_KNOWLEDGE_REGISTER` is unset. The repository contains a historical, read-only register snapshot, not the configured canonical external register. Do not edit that snapshot or create a competing task register. The Windows fallback in the protocol does not establish a canonical register on this macOS host.
-- A prior local inventory reported 310 ignored files in the audit checkout. The unversioned `knowledge/relations/GRAPH_AUDIT_MATRIX_REVIEWED_v1.csv` is located in worktree `.claude/worktrees/docs-audit-handover-a2291c`, branch `claude/v01-spezifikation-und-graph-review-v2`, at HEAD `ad2706e8d081f9c1a3cd90b1a7b9e9ec86fb839a`. Its SHA-256 is `e944eba07bd316098336de3d9dcf90f91822dcc51b8a52b1ac6f8760f9c5d50c`. It remains untracked; its source authority and human reviewer are not established. Only its path, Git status, and hash were inspected; it was not copied, staged, or modified.
-- The repository has multiple active and stale/prunable worktree records. This audit did not prune worktrees or alter other checkouts. Treat the external CSV and ignored files as unreviewed local state, not as approved project deliverables.
+- A prior local inventory reported 310 ignored files in the audit checkout. The unversioned `knowledge/relations/GRAPH_AUDIT_MATRIX_REVIEWED_v1.csv` is located in worktree `.claude/worktrees/docs-audit-handover-a2291c`, branch `claude/v01-spezifikation-und-graph-review-v2`, at HEAD `ad2706e8d081f9c1a3cd90b1a7b9e9ec86fb839a`. Its SHA-256 is `e944eba07bd316098336de3d9dcf90f91822dcc51b8a52b1ac6f8760f9c5d50c`. The tracked `knowledge/relations/README.md` documents this exact hash as the owner's reviewed working copy for 25 v1 decisions. A read-only structural comparison found 97/97 relation IDs and source-row hashes bound to `GRAPH_AUDIT_MATRIX.csv`; the 25 decision rows match `GRAPH_HUMAN_REVIEW_v1.csv` by source hash, endpoints, relation type, proposed type, review status, human-review state, and production-use flag. Only the three documented status fields differ in those 25 rows, and the candidate adds the two documented decision columns. This confirms provenance and consistency with the tracked owner-review layer, not independent music-theory approval. The file remains untracked and was not copied, staged, or modified.
+- The repository has multiple active and stale/prunable worktree records. This audit did not prune worktrees or alter other checkouts. Treat the external CSV as a preserved, owner-reviewed working copy rather than a canonical deliverable; ignored files not individually reviewed remain unclassified local state.
 - No research source, licensed asset, knowledge claim, MIDI corpus, or external task register was added or changed.
 
 ## Test and gate evidence
@@ -51,6 +51,7 @@ Executed on macOS with Python 3.14.5 at baseline `bc1154241f5d57cc94e1a55a05e47b
 | `python3 -B scripts/check_cli_text_inventory.py --check` | PASS |
 | `git diff --check` | PASS |
 | Manual check of the six changed-document relative links and handover entry | PASS |
+| Read-only comparison of the external CSV with the 97-row matrix and 25-row owner-review layer | PASS — 97/97 source-row hashes and all 25 review bindings match |
 
 No DAW import, native accessibility assessment, independent translation review, OneDrive sync verification, or human product acceptance was performed.
 
@@ -62,4 +63,4 @@ The active external work-instruction register is still unresolved. Use the proto
 
 ## Next bounded handoff
 
-Before integrating the external graph-review CSV, verify its provenance against the source commit, confirm the intended reviewer, and establish whether it is an owner-approved artifact. Its current worktree, branch, HEAD, and SHA-256 are recorded above. Separately obtain the canonical external work-register path from the owner and verify its current contents before synchronizing tasks. Do not delete, move, or rewrite either item. Human/platform, localization, and independent DAW acceptance remain tracked under issues #151 and #154.
+Do not copy the external graph-review CSV into the repository: its 25 decisions are already represented in the tracked owner-review layer, while generated-matrix/plan integration is explicitly a separate step. Any such integration needs its own review and checks. Separately obtain the canonical external work-register path from the owner and verify its current contents before synchronizing tasks. Do not delete, move, or rewrite either item. Human/platform, localization, and independent DAW acceptance remain tracked under issues #151 and #154.
