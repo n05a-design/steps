@@ -37,6 +37,7 @@ class FakeSession:
         self.bpm = 120.0
         self.time_signature = (4, 4)
         self.convention = "INT"
+        self.voice_leading_style = SimpleNamespace(value="CONTEMPORARY_POP")
         self.state = SimpleNamespace(
             ppq=480,
             title="My Progression",
@@ -56,6 +57,7 @@ class FakeController:
         self.save_error = None
         self.load_error = None
         self.export_error = None
+        self.voice_style_calls = []
 
     def get_state_summary(self):
         return {"title": "My Progression"}
@@ -83,6 +85,10 @@ class FakeController:
         if convention == "DE":
             self.session.key_root = "H" if self.session.key_root == "B" else self.session.key_root
         return True
+
+    def set_voice_leading_style(self, style):
+        self.voice_style_calls.append(style)
+        self.session.voice_leading_style = SimpleNamespace(value=str(style).upper())
 
     def export_midi(self, path):
         if self.export_error:
@@ -199,6 +205,24 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.window._on_notation_change()
 
         self.assertEqual(convention.value, "DE")
+        self.window._refresh_all.assert_called_once_with(preserve_selection=True)
+
+    def test_voice_leading_style_change_updates_controller_and_refreshes(self):
+        self.window.voice_style_var = SimpleNamespace(
+            get=lambda: "CONTEMPORARY_POP",
+            set=Mock(),
+        )
+        self.window.voice_style_menu = {
+            "menu": Mock(),
+        }
+        self.window._localize_voice_style_menu = Mock()
+
+        self.window._on_voice_style_change("STRICT_CLASSICAL")
+
+        self.assertEqual(
+            self.window.controller.voice_style_calls,
+            ["STRICT_CLASSICAL"],
+        )
         self.window._refresh_all.assert_called_once_with(preserve_selection=True)
 
     def test_chord_details_include_beginner_voicing_data(self):

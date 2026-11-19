@@ -20,6 +20,7 @@ from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager, default_theme
 from src.steps.midi.time import RationalMidiTime
 from src.steps.models.timeline import TimeSignature
+from src.steps.progression.voice_leading import VoiceLeadingStyle
 from src.steps.storage.exceptions import StorageError
 from src.steps.theory.exceptions import MusicTheoryError
 
@@ -122,6 +123,9 @@ class StepsMainWindow:
         self.tempo_lbl.configure(text=t("context.tempo"))
         self.meter_lbl.configure(text=t("context.meter"))
         self.context_btn.configure(text=t("context.apply"))
+        if hasattr(self, "voice_style_lbl"):
+            self.voice_style_lbl.configure(text=t("voice.style"))
+            self._localize_voice_style_menu()
         self._update_event_timing_labels()
         self.event_timing_btn.configure(text=t("event.apply"))
         self.add_btn.configure(text=t("chord.add"))
@@ -545,6 +549,30 @@ class StepsMainWindow:
         )
         self.context_btn.pack(side=tk.LEFT, padx=sp.xs)
 
+        self.voice_style_lbl = tk.Label(
+            self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
+        )
+        self.voice_style_lbl.pack(side=tk.LEFT, padx=(sp.md, sp.xs))
+        self.voice_style_var = tk.StringVar(
+            self.root, value=self.controller.session.voice_leading_style.value
+        )
+        self.voice_style_menu = tk.OptionMenu(
+            self.context_bar,
+            self.voice_style_var,
+            VoiceLeadingStyle.CONTEMPORARY_POP.value,
+            VoiceLeadingStyle.STRICT_CLASSICAL.value,
+            VoiceLeadingStyle.POWER_CHORDS.value,
+            VoiceLeadingStyle.QUARTAL_JAZZ.value,
+            command=self._on_voice_style_change,
+        )
+        self.voice_style_menu.configure(
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            activebackground=colors.bg_active,
+            highlightthickness=0,
+        )
+        self.voice_style_menu.pack(side=tk.LEFT, padx=(0, sp.sm))
+
         self.timing_bar = tk.Frame(self.work_area, bg=colors.bg_surface, padx=sp.sm)
         self.timing_bar.pack(fill=tk.X, pady=(0, sp.xs))
         self.event_start_lbl = tk.Label(
@@ -772,6 +800,10 @@ class StepsMainWindow:
             self.notation_var.set(self.controller.session.convention)
         self.tempo_entry.delete(0, tk.END)
         self.tempo_entry.insert(0, f"{self.controller.session.bpm:g}")
+        if hasattr(self, "voice_style_var"):
+            self.voice_style_var.set(self.controller.session.voice_leading_style.value)
+            if hasattr(self, "voice_style_menu"):
+                self._localize_voice_style_menu()
         numerator, denominator = self.controller.session.time_signature
         self.meter_entry.delete(0, tk.END)
         self.meter_entry.insert(0, f"{numerator}/{denominator}")
@@ -813,6 +845,44 @@ class StepsMainWindow:
             )
             return
         self._load_context_controls()
+        self._refresh_all(preserve_selection=True)
+
+    def _localize_voice_style_menu(self) -> None:
+        style_labels = {
+            VoiceLeadingStyle.CONTEMPORARY_POP.value: self.i18n.translate("voice.style.pop"),
+            VoiceLeadingStyle.STRICT_CLASSICAL.value: self.i18n.translate("voice.style.classical"),
+            VoiceLeadingStyle.POWER_CHORDS.value: self.i18n.translate("voice.style.power"),
+            VoiceLeadingStyle.QUARTAL_JAZZ.value: self.i18n.translate("voice.style.quartal"),
+        }
+        menu = self.voice_style_menu["menu"]
+        menu.delete(0, tk.END)
+        for value in (
+            VoiceLeadingStyle.CONTEMPORARY_POP.value,
+            VoiceLeadingStyle.STRICT_CLASSICAL.value,
+            VoiceLeadingStyle.POWER_CHORDS.value,
+            VoiceLeadingStyle.QUARTAL_JAZZ.value,
+        ):
+            menu.add_radiobutton(
+                label=style_labels[value],
+                value=value,
+                variable=self.voice_style_var,
+                command=lambda selected=value: self._on_voice_style_change(selected),
+            )
+        selected = self.voice_style_var.get()
+        self.voice_style_menu.configure(text=style_labels.get(selected, selected))
+
+    def _on_voice_style_change(self, style: str) -> None:
+        try:
+            self.controller.set_voice_leading_style(style)
+        except (ValueError, MusicTheoryError) as exc:
+            self.voice_style_var.set(self.controller.session.voice_leading_style.value)
+            messagebox.showerror(
+                self.i18n.translate("voice.style.error.title"),
+                self.i18n.translate("voice.style.error.message", error=exc),
+                parent=self.root,
+            )
+            return
+        self._localize_voice_style_menu()
         self._refresh_all(preserve_selection=True)
 
     def _on_apply_context(self) -> None:

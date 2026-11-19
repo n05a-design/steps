@@ -82,6 +82,7 @@ class ProgressionSessionController:
             "is_minor": self._session.is_minor,
             "bpm": self._session.bpm,
             "time_signature": self._session.time_signature,
+            "voice_leading_style": self._session.voice_leading_style.value,
             "can_undo": self._session.can_undo,
             "can_redo": self._session.can_redo,
         }
