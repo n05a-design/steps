@@ -5,7 +5,7 @@
 <h1 align="center">STEPS</h1>
 
 <p align="center">
-  <strong>Akkordfolgen bauen. Harmonie verstehen. Mit Quellen lernen.</strong><br>
+  <strong>Akkordfolgen bauen. Harmonie erkunden. MIDI exportieren.</strong><br>
   STEPS ist ein eigenständiges Open-Source-Projekt für Akkordfolgen, Harmonielehre und Musiktheorie. Der Python-Kern, ein Tkinter-Desktop-Prototyp, Projekt-Speicherdienste und MIDI-Dateiexport sind vorhanden. Eine vollständige, installierbare Produktversion ist noch nicht freigegeben.
 </p>
 
