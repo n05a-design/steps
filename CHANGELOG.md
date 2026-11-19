@@ -33,7 +33,8 @@
 - Der Desktop-Nächster-Akkord-Explorer liefert Kontext-/Relationsempfehlungen aus der Progressionssession und setzt ausgewählte Kandidaten als lokale Desktop-Aktion.
 - Die Desktop-Dateiaktionen können eine freigegebene Progression aus dem lokalen Reviewed-Beispielkatalog als neues Projekt laden, mit Dirty- und Katalogfehlerbehandlung.
 - Die Desktop-Sitzung und das Hauptfenster bieten einen getrennten, persistierten Stimmführungsstil für klassische, Jazz-/Pop- und zeitgenössische Kontexte; Auswahl und Zusammenfassung werden undo-/redo-fähig wiederverwendet.
-- Der Kanonische Implementierungsstand wurde auf `main`-Commit `b09946f18db6668ce628159b4c2e3e3be2968213` synchronisiert. PRs #197–#200 sind gemergt; die vollständige Suite besteht aus 758 automatisierten Tests.
+- Der kanonische Implementierungsstand wurde auf `main`-Commit `b09946f18db6668ce628159b4c2e3e3be2968213` synchronisiert. PRs #197–#200 sind gemergt; die vollständige Suite bestand bei diesem Implementierungsstand aus 758 automatisierten Tests.
+- PR #201 synchronisierte die aktive Statusdokumentation auf den dokumentierten Merge-Stand `961701ead06b703653a9cc9ff2e38d2450d056d7`.
 - GitHub Issue- und PR-Vorlagen, Dependabot-/Release-Notizkonfiguration und ein YAML-/Issue-Form-Prüfworkflow ergänzt. GitHub-Wiki, Projects, Labels und Funding bleiben explizite Inhaberhandlungen.
 
 ## Frühere Architekturvorbereitung
