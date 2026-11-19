@@ -144,7 +144,9 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          sparse-checkout: .agents/skills/steps-knowledge-curation
+          sparse-checkout: |
+            .agents/skills/steps-knowledge-curation
+            docs/operations
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
