@@ -36,7 +36,7 @@
 - Der kanonische Implementierungsstand wurde auf `main`-Commit `b09946f18db6668ce628159b4c2e3e3be2968213` synchronisiert. PRs #197–#200 sind gemergt; die vollständige Suite bestand bei diesem Implementierungsstand aus 758 automatisierten Tests.
 - PR #201 synchronisierte die aktive Statusdokumentation auf den dokumentierten Merge-Stand `961701ead06b703653a9cc9ff2e38d2450d056d7`.
 - GitHub Issue- und PR-Vorlagen, Dependabot-/Release-Notizkonfiguration und ein YAML-/Issue-Form-Prüfworkflow ergänzt. GitHub-Wiki, Projects, Labels und Funding bleiben explizite Inhaberhandlungen.
-- Der Desktop-Sessionexport folgt jetzt ADR-017: getrennte Akkord- und Bassspur, passendes Tonart-Metadatum sowie die gespeicherten Event-Startzeiten und Dauern. Zehn SHA-256-Goldenfälle und ein echter UI-Save/Open/Export-Smoke prüfen den Ablauf; DAW-Abnahme bleibt separat.
+- Der Desktop-Sessionexport folgt jetzt ADR-017: genau vier CLOSE-Stimmen (Dreiklänge mit Grundtonverdopplung; Erweiterungen mit Grundton, Terz, Septime und höchster Erweiterung) in der Akkordspur, separate Bassspur, passendes Tonart-Metadatum und gespeicherte Event-Zeiten. Zehn SHA-256-Goldenfälle und ein UI-Save/Open/Export-Smoke prüfen den Ablauf; DAW-Abnahme bleibt separat.
 - Tk-Smoke-Jobs für Ubuntu/Xvfb, Windows und macOS schlagen jetzt fehl, wenn Tk nicht initialisiert werden kann, statt den GUI-Test unbemerkt zu überspringen. Das belegt keine menschliche Accessibility- oder Plattformfreigabe.
 
 ## Frühere Architekturvorbereitung

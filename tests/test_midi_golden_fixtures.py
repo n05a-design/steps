@@ -137,7 +137,7 @@ ADR017_GOLDEN_EXPORTS: list[dict[str, Any]] = [
         "key_root": "C",
         "is_minor": False,
         "tempo_bpm": 120.0,
-        "sha256": "2754217fce147e851662c0fe8c022ce995829ca146cdb4ad7529017048994bb8",
+        "sha256": "ea9332015d9aeec4950b7dc80cac37620331736304fd728811f7aed461c5e53b",
     },
     {
         "id": "GOLD_02_JAZZ_MAJOR_251",
@@ -161,7 +161,7 @@ ADR017_GOLDEN_EXPORTS: list[dict[str, Any]] = [
         "key_root": "C",
         "is_minor": False,
         "tempo_bpm": 128.0,
-        "sha256": "6798d548e68d039b1a335f41690bc56f9311c8445c6b0a5e08d6814a50e34a6b",
+        "sha256": "e7eb0d49f05c93d43567697fa5b8cb46debc3463b5c0c6c264b84bc8d6e77bd2",
     },
     {
         "id": "GOLD_05_SLASH_BASS",
@@ -169,7 +169,7 @@ ADR017_GOLDEN_EXPORTS: list[dict[str, Any]] = [
         "key_root": "C",
         "is_minor": False,
         "tempo_bpm": 116.0,
-        "sha256": "b4eae60c726bd9cd785daa974bd360ca403b4763b6b669780fa7a0a4e2cd7984",
+        "sha256": "2c95201ce1abfb8f47cf1a3194bf3a7df20a87f583be7bbba21cf82a22ef1e4c",
     },
     {
         "id": "GOLD_06_BLUES_12BAR",
@@ -185,7 +185,7 @@ ADR017_GOLDEN_EXPORTS: list[dict[str, Any]] = [
         "key_root": "A",
         "is_minor": True,
         "tempo_bpm": 120.0,
-        "sha256": "9c03f6d35a333c04cabe8fefa2c1b8aa32d6e23e016d200bdfa513e2be73f846",
+        "sha256": "724108d5c223bba43c75082d6adfc4b9819481ce1fa087db68b403684ce15889",
     },
     {
         "id": "GOLD_08_SECONDARY_DOMINANTS",
@@ -193,7 +193,7 @@ ADR017_GOLDEN_EXPORTS: list[dict[str, Any]] = [
         "key_root": "C",
         "is_minor": False,
         "tempo_bpm": 135.0,
-        "sha256": "d2018861f3d0bdaf523c418787d3a2e68426ce469731bb540a33e1309ebad06b",
+        "sha256": "e5c5800f0e322c6e99947dbad231aee9c280927bb2429adc99f49e7a8365c058",
     },
     {
         "id": "GOLD_09_EVENT_TIMING",
@@ -211,7 +211,7 @@ ADR017_GOLDEN_EXPORTS: list[dict[str, Any]] = [
         "is_minor": False,
         "convention": "DE",
         "tempo_bpm": 100.0,
-        "sha256": "3af37e472f61c9a6b960612c2a84ab1ff4c713e21a26e298e6c62ea4553144d5",
+        "sha256": "511b7fd3cf953b07c9c7ae48eeb7d2b174ec71fd6071e0526b698d872ded540f",
     },
 ]
 
@@ -373,6 +373,18 @@ class TestMidiGoldenFixtures(unittest.TestCase):
                 self.assertEqual(
                     [track.name for track in parsed.tracks],
                     ["Conductor", "Chords", "Bass"],
+                )
+                chord_note_ons = [
+                    event
+                    for event in parsed.tracks[1].raw_events
+                    if event.msg_bytes[0] & 0xF0 == 0x90 and event.msg_bytes[2] > 0
+                ]
+                notes_by_start = {}
+                for event in chord_note_ons:
+                    notes_by_start.setdefault(event.abs_tick, []).append(event.msg_bytes[1])
+                self.assertTrue(all(len(notes) == 4 for notes in notes_by_start.values()))
+                self.assertTrue(
+                    all(48 <= note <= 72 for notes in notes_by_start.values() for note in notes)
                 )
                 note_events: List[Tuple[str, int, int, int]] = []
                 for track in parsed.tracks:

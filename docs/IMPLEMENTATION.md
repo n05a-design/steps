@@ -118,12 +118,16 @@ Wiederherstellungs- und Kompatibilitätsabnahme, Installer und Benutzerabnahme. 
 ordnet diese Lücken nach Status.
 
 `ProgressionSession.export_midi_file()` verwendet den ADR-017-Export mit
-Conductor-, Chords- und Bass-Spur. Tempo, Taktart, passende Dur-/Moll-
-Tonartmetadaten und individuelle Event-Startzeiten/-Dauern werden übergeben;
-deutsches `B` und `H` bleiben dabei getrennte Tonarten. Zehn SHA-256-Golden-
-Fälle prüfen den Session-Export. Die UI-Smoke-Probe speichert ein Projekt,
-verwirft eine ungespeicherte Änderung, lädt es erneut und exportiert MIDI.
-Unabhängige DAW-Importe sind weiterhin nicht belegt.
+Conductor-, Chords- und Bass-Spur. Die Akkordspur enthält genau vier
+CLOSE-Stimmen im Bereich MIDI 48–72; Dreiklänge werden mit dem Grundton
+verdoppelt, Erweiterungsakkorde verwenden Grundton, Terz, Septime und die
+höchste Erweiterung. Ein Slash-Bass wird separat auf der Bassspur ausgegeben.
+Tempo, Taktart, passende Dur-/Moll-Tonartmetadaten und individuelle
+Event-Startzeiten/-Dauern bleiben erhalten; deutsches `B` und `H` bleiben
+getrennte Tonarten. Zehn SHA-256-Golden-Fälle prüfen den Session-Export. Die
+UI-Smoke-Probe speichert ein Projekt, verwirft eine ungespeicherte Änderung,
+lädt es erneut und exportiert MIDI. Unabhängige DAW-Importe sind weiterhin
+nicht belegt.
 
 [Testanleitung](../tests/README.md) · [Quellen und Archiv](../archive/INDEX.md)
 
