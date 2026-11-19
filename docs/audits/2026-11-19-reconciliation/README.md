@@ -11,6 +11,7 @@ created for the STEPS repository audit on 2026-11-19.
 - [Requirements completeness audit](STEPS_REQUIREMENTS_COMPLETENESS_AUDIT.md)
 - [Safe synchronization plan](STEPS_SAFE_SYNC_PLAN.md)
 - [Verification results](STEPS_VERIFICATION_RESULTS.md)
+- [Expert decisions from 27 pending benchmark cases](EXPERT_DECISIONS_2026-11-19.md)
 
 ## Machine-readable evidence
 
