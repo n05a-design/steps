@@ -24,6 +24,7 @@ Validates:
 - Golden Invariant T15 (Multi-tempo map tick transitions)
 """
 
+import hashlib
 import shutil
 import tempfile
 import unittest
@@ -34,6 +35,7 @@ from scripts.audit_midi_files import envelope
 from src.steps.midi.export_service import MidiExportService
 from src.steps.midi.smf import MidiFile, MidiTrack
 from src.steps.models.timeline import validate_midi_note_on_off_pairing
+from src.steps.progression.session import ProgressionSession
 from src.steps.storage.project_io import Project
 from src.steps.theory.chord import Voicing, parse_chord
 
@@ -128,6 +130,91 @@ GOLDEN_PROGRESSIONS: List[Dict[str, Any]] = [
     },
 ]
 
+ADR017_GOLDEN_EXPORTS: list[dict[str, Any]] = [
+    {
+        "id": "GOLD_01_CLASSICAL_CADENCE",
+        "chords": ["C", "F", "G", "C"],
+        "key_root": "C",
+        "is_minor": False,
+        "tempo_bpm": 120.0,
+        "sha256": "2754217fce147e851662c0fe8c022ce995829ca146cdb4ad7529017048994bb8",
+    },
+    {
+        "id": "GOLD_02_JAZZ_MAJOR_251",
+        "chords": ["Dm7", "G7", "Cmaj7"],
+        "key_root": "C",
+        "is_minor": False,
+        "tempo_bpm": 130.0,
+        "sha256": "f1e2954e71ff8d8adf765464d2ea42a67ca3183c3e3e85811dd4d6533fd2209e",
+    },
+    {
+        "id": "GOLD_03_JAZZ_MINOR_251",
+        "chords": ["Dm7b5", "G7", "Cm7"],
+        "key_root": "C",
+        "is_minor": True,
+        "tempo_bpm": 110.0,
+        "sha256": "cb3a1bbcebd24b9149d4c5a6468f3609d365967260b2d33a52564d567d0c2775",
+    },
+    {
+        "id": "GOLD_04_POP_AXIS",
+        "chords": ["C", "G", "Am", "F"],
+        "key_root": "C",
+        "is_minor": False,
+        "tempo_bpm": 128.0,
+        "sha256": "6798d548e68d039b1a335f41690bc56f9311c8445c6b0a5e08d6814a50e34a6b",
+    },
+    {
+        "id": "GOLD_05_SLASH_BASS",
+        "chords": ["Dm7/C", "G7/B", "Cmaj7"],
+        "key_root": "C",
+        "is_minor": False,
+        "tempo_bpm": 116.0,
+        "sha256": "b4eae60c726bd9cd785daa974bd360ca403b4763b6b669780fa7a0a4e2cd7984",
+    },
+    {
+        "id": "GOLD_06_BLUES_12BAR",
+        "chords": ["F7", "Bb7", "F7", "F7", "Bb7", "Bb7", "F7", "F7", "C7", "Bb7", "F7", "C7"],
+        "key_root": "F",
+        "is_minor": False,
+        "tempo_bpm": 115.0,
+        "sha256": "7af5d7d848a3cdf81bfbfd6d2efc8d206b69a5d8af4dcd0c5122ef2b25b8cb63",
+    },
+    {
+        "id": "GOLD_07_ANDALUSIAN_CADENCE",
+        "chords": ["Am", "G", "F", "E7"],
+        "key_root": "A",
+        "is_minor": True,
+        "tempo_bpm": 120.0,
+        "sha256": "9c03f6d35a333c04cabe8fefa2c1b8aa32d6e23e016d200bdfa513e2be73f846",
+    },
+    {
+        "id": "GOLD_08_SECONDARY_DOMINANTS",
+        "chords": ["C", "A7", "D7", "G7", "C"],
+        "key_root": "C",
+        "is_minor": False,
+        "tempo_bpm": 135.0,
+        "sha256": "d2018861f3d0bdaf523c418787d3a2e68426ce469731bb540a33e1309ebad06b",
+    },
+    {
+        "id": "GOLD_09_EVENT_TIMING",
+        "chords": ["Cmaj7", "Fmaj7", "Cmaj7"],
+        "key_root": "C",
+        "is_minor": False,
+        "tempo_bpm": 120.0,
+        "event_timings": [(0, 1920), (1920, 1440), (3360, 1920)],
+        "sha256": "6d25ffe59f8612716117c68772656889ea7fa6750bf7a4adcee51c0e6fdf4379",
+    },
+    {
+        "id": "GOLD_10_GERMAN_H_NOTATION",
+        "chords": ["H", "E", "Fis", "H"],
+        "key_root": "H",
+        "is_minor": False,
+        "convention": "DE",
+        "tempo_bpm": 100.0,
+        "sha256": "3af37e472f61c9a6b960612c2a84ab1ff4c713e21a26e298e6c62ea4553144d5",
+    },
+]
+
 
 class TestMidiGoldenFixtures(unittest.TestCase):
 
@@ -215,7 +302,7 @@ class TestMidiGoldenFixtures(unittest.TestCase):
                     self.assertEqual(len(parsed_file.tracks), env["tracks"])
 
                     # 3. Collect Note Events and verify 1:1 Note-On/Note-Off pairing (T14)
-                    note_events: List[Tuple[str, int, int, int]] = []
+                    note_events: list[tuple[str, int, int, int]] = []
                     for trk in parsed_file.tracks:
                         for rev in trk.raw_events:
                             mb = rev.msg_bytes
@@ -248,6 +335,63 @@ class TestMidiGoldenFixtures(unittest.TestCase):
         self.assertEqual(tempo_events[0].abs_tick, 0)
         self.assertEqual(tempo_events[1].abs_tick, 1920)
         self.assertEqual(tempo_events[2].abs_tick, 3360)
+
+    def test_adr017_session_exports_match_10_golden_hashes(self):
+        for golden in ADR017_GOLDEN_EXPORTS:
+            with self.subTest(golden=golden["id"]):
+                convention = golden.get("convention", "INT")
+                session = ProgressionSession(
+                    initial_chords=golden["chords"],
+                    key_root=golden["key_root"],
+                    is_minor=golden["is_minor"],
+                    convention=convention,
+                    bpm=golden["tempo_bpm"],
+                    title=golden["id"],
+                )
+                session.set_context(
+                    golden["key_root"],
+                    golden["is_minor"],
+                    golden["tempo_bpm"],
+                    golden.get("meter", (4, 4)),
+                    title=golden["id"],
+                )
+                for index, (start_tick, duration_ticks) in enumerate(
+                    golden.get("event_timings", ())
+                ):
+                    session.set_chord_event_timing(index, start_tick, duration_ticks)
+
+                output_path = self.out_dir / f'{golden["id"]}.mid'
+                session.export_midi_file(output_path)
+                raw_data = output_path.read_bytes()
+                self.assertEqual(
+                    hashlib.sha256(raw_data).hexdigest(),
+                    golden["sha256"],
+                )
+
+                parsed = MidiFile.from_bytes(raw_data)
+                self.assertEqual((parsed.format, parsed.division), (1, 480))
+                self.assertEqual(
+                    [track.name for track in parsed.tracks],
+                    ["Conductor", "Chords", "Bass"],
+                )
+                note_events: List[Tuple[str, int, int, int]] = []
+                for track in parsed.tracks:
+                    self.assertFalse(
+                        any(
+                            event.msg_bytes[0] & 0xF0 == 0xC0
+                            for event in track.raw_events
+                        ),
+                        "ADR-017 exports must not contain program changes.",
+                    )
+                    for event in track.raw_events:
+                        message = event.msg_bytes
+                        if (message[0] & 0xF0) in (0x80, 0x90):
+                            status, velocity = message[0] & 0xF0, message[2]
+                            name = "note_off" if status == 0x80 or velocity == 0 else "note_on"
+                            note_events.append(
+                                (name, event.abs_tick, message[0] & 0x0F, message[1])
+                            )
+                self.assertEqual(validate_midi_note_on_off_pairing(note_events), [])
 
 
 if __name__ == "__main__":

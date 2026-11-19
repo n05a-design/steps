@@ -1007,15 +1007,26 @@ class ProgressionSession:
         self._undo_stack = UndoStack[SessionState](new_state, max_depth=50)
 
     def export_midi_file(self, file_path: Path | str) -> Path:
-        """Exports the active progression session as an SMF Format 1 MIDI file."""
-        voicings = self.get_voicings("CLOSE")
-        return MidiExportService.export_voicings_to_smf(
-            voicings=voicings,
+        """Exports the active progression using the ADR-017 v0.1 MIDI contract."""
+        key_spelling = parse_spelling(self.key_root, convention=self.convention)
+        fifths_by_step = {"C": 0, "D": 2, "E": 4, "F": -1, "G": 1, "A": 3, "B": 5}
+        key_accidentals = (
+            fifths_by_step[key_spelling.step]
+            + 7 * key_spelling.alteration
+            - (3 if self.is_minor else 0)
+        )
+        if not -7 <= key_accidentals <= 7:
+            key_accidentals = None
+
+        return MidiExportService.export_progression_adr017(
+            chords=self.chords,
             output_path=file_path,
             bpm=self.bpm,
             ppq=self.state.ppq,
-            chord_duration_ticks=self.state.chord_duration_ticks,
+            chord_duration_quarters=self.state.chord_duration_ticks / self.state.ppq,
             time_signature=self.state.time_signature,
+            key_accidentals=key_accidentals,
+            is_minor_key=self.is_minor,
+            convention=self.convention,
             event_timings=self.state.chord_event_timings,
-            smf_format=1
         )
