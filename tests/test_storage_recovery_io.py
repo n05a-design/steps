@@ -228,6 +228,64 @@ class TestStorageRecoveryIO01to16(unittest.TestCase):
         self.assertEqual(time_settings["tempo_points"], [{"start_tick": 0, "bpm": 120.0}])
         self.assertIn("MIG-006 normalize-time-settings", result.migrations)
 
+    def test_mig006_canonicalizes_tempo_point_sequence(self):
+        legacy_data = {
+            "schema_version": "1.0.0",
+            "project_id": "legacy-tempo-points",
+            "title": "Tempo Point Canonicalization",
+            "time_settings": {
+                "ppq": 480,
+                "time_signature": {"numerator": 4, "denominator": 4},
+                "tempo_bpm": 110.0,
+                "tempo_points": [
+                    {"start_tick": 1920, "bpm": 140.0},
+                    {"start_tick": 0, "bpm": 90.0},
+                    {"start_tick": 1920, "bpm": 130.0},
+                ],
+            },
+            "tracks": [],
+        }
+        self.project_path.write_text(json.dumps(legacy_data), encoding="utf-8")
+
+        result = load_project_with_status(
+            self.project_path,
+            auto_recover_from_backup=False,
+        )
+
+        self.assertEqual(
+            result.project.time_settings["tempo_points"],
+            [
+                {"start_tick": 0, "bpm": 90.0},
+                {"start_tick": 1920, "bpm": 130.0},
+            ],
+        )
+        self.assertIn("MIG-006 normalize-time-settings", result.migrations)
+
+    def test_mig006_empty_tempo_points_get_safe_zero_anchor(self):
+        legacy_data = {
+            "schema_version": "1.0.0",
+            "project_id": "legacy-empty-tempo-points",
+            "title": "Empty Tempo Points",
+            "time_settings": {
+                "ppq": 480,
+                "time_signature": {"numerator": 4, "denominator": 4},
+                "tempo_bpm": 96.5,
+                "tempo_points": [],
+            },
+            "tracks": [],
+        }
+        self.project_path.write_text(json.dumps(legacy_data), encoding="utf-8")
+
+        result = load_project_with_status(
+            self.project_path,
+            auto_recover_from_backup=False,
+        )
+
+        self.assertEqual(
+            result.project.time_settings["tempo_points"],
+            [{"start_tick": 0, "bpm": 96.5}],
+        )
+
     def test_io08_path_traversal_prevention(self):
         """IO-08: Path traversal prevention: attempt to save with '../' is blocked with StorageSecurityError."""
         evil_path = f"{self.temp_dir}/subdir/../../outside_escaped.stepsproj"
