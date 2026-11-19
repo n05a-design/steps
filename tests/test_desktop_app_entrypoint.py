@@ -6,10 +6,12 @@ Validates:
 - CLI argument parsing (--export-midi, --theme, --headless)
 - Integration of StepsMainWindow with ProgressionSessionController
 - Verification of 2-Pane UI hierarchy (Working Area & Information Area)
+- Platform keyboard accelerators and the real UI save/open/export workflow
 """
 
 import os
 import shutil
+import sys
 import tempfile
 import unittest
 from contextlib import redirect_stdout
@@ -21,6 +23,7 @@ from app.main import main
 from app.i18n import LocaleManager
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager
+from src.steps.midi import MidiFile
 
 
 class TestDesktopAppEntrypoint(unittest.TestCase):
@@ -75,15 +78,20 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
 
     def test_main_window_instantiation_and_wiring(self):
         """Tests UI creation and controller wiring without triggering Tk mainloop."""
+        require_tk = os.environ.get("STEPS_REQUIRE_DESKTOP_TK") == "1"
         try:
             import tkinter as tk
             from app.ui.main_window import StepsMainWindow
-        except ImportError:
+        except ImportError as exc:
+            if require_tk:
+                self.fail(f"Tk is required for this platform smoke test: {exc}")
             self.skipTest("tkinter not available in environment")
 
         try:
             root = tk.Tk()
-        except tk.TclError:
+        except tk.TclError as exc:
+            if require_tk:
+                self.fail(f"Tk could not initialize for this platform smoke test: {exc}")
             self.skipTest("Tk initialization failed (no graphics display)")
 
         try:
@@ -93,6 +101,26 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             window = StepsMainWindow(
                 root, controller=ctrl, theme=theme, locale_manager=LocaleManager(preference="de")
             )
+
+            shortcut_prefix = "⌘" if sys.platform == "darwin" else "Ctrl+"
+            for index, key in enumerate(("N", "O", "S")):
+                self.assertEqual(
+                    window.file_menu.entrycget(index, "accelerator"),
+                    f"{shortcut_prefix}{key}",
+                )
+            for sequence in (
+                "<Control-n>",
+                "<Control-o>",
+                "<Control-s>",
+                "<Control-z>",
+                "<Control-Shift-z>",
+                "<Command-n>",
+                "<Command-o>",
+                "<Command-s>",
+                "<Command-z>",
+                "<Command-Shift-z>",
+            ):
+                self.assertTrue(root.bind_all(sequence), f"Missing keyboard binding: {sequence}")
 
             # Area 1 checks
             self.assertIsNotNone(window.work_area)
@@ -151,6 +179,40 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             prev_first = ctrl.session.chords[0]
             window._on_transpose(2)
             self.assertNotEqual(ctrl.session.chords[0], prev_first)
+
+            project_path = Path(self.temp_dir) / "ui_workflow.stepsproj"
+            with patch(
+                "app.ui.main_window.filedialog.asksaveasfilename",
+                return_value=str(project_path),
+            ):
+                window.file_menu.invoke(3)
+            self.assertTrue(project_path.is_file())
+            saved_chords = ctrl.session.chords
+
+            window._on_transpose(1)
+            with (
+                patch(
+                    "app.ui.main_window.filedialog.askopenfilename",
+                    return_value=str(project_path),
+                ),
+                patch("app.ui.main_window.messagebox.askyesnocancel", return_value=False),
+            ):
+                window.file_menu.invoke(1)
+            self.assertEqual(ctrl.session.chords, saved_chords)
+            self.assertFalse(ctrl.session.is_dirty)
+
+            with patch(
+                "app.ui.main_window.filedialog.asksaveasfilename",
+                return_value=self.midi_path,
+            ):
+                window.export_btn.invoke()
+            midi_path = Path(self.midi_path)
+            self.assertTrue(midi_path.is_file())
+            parsed_midi = MidiFile.from_bytes(midi_path.read_bytes())
+            self.assertEqual(
+                [track.name for track in parsed_midi.tracks],
+                ["Conductor", "Chords", "Bass"],
+            )
 
             root.destroy()
         except Exception as e:

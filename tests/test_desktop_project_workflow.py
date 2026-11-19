@@ -129,6 +129,14 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.window.event_duration_lbl = Mock()
         self.window._load_context_controls = Mock()
 
+    def test_save_shortcut_delegates_to_save_and_stops_event(self):
+        self.window._on_save_project = Mock()
+
+        result = self.window._on_save_shortcut(SimpleNamespace())
+
+        self.assertEqual(result, "break")
+        self.window._on_save_project.assert_called_once_with()
+
     def test_new_from_reviewed_example_replaces_project_and_clears_path(self):
         reviewed = SimpleNamespace(
             progression=SimpleNamespace(

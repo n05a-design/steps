@@ -579,16 +579,68 @@ class TestDesktopChordEditing(unittest.TestCase):
             output_path = session.export_midi_file(Path(temp_dir) / "timing.mid")
             parsed = MidiFile.from_bytes(output_path.read_bytes())
 
+        self.assertEqual(len(parsed.tracks), 3)
+        chord_notes = parsed.tracks[1].raw_events
         note_ons = [
-            event for event in parsed.tracks[1].raw_events
+            event for event in chord_notes
             if event.msg_bytes[0] & 0xF0 == 0x90
         ]
         note_offs = [
-            event for event in parsed.tracks[1].raw_events
+            event for event in chord_notes
             if event.msg_bytes[0] & 0xF0 == 0x80
         ]
         self.assertEqual({event.abs_tick for event in note_ons}, {240, 1500})
-        self.assertEqual({event.abs_tick for event in note_offs}, {1200, 1980})
+        self.assertEqual({event.abs_tick for event in note_offs}, {1190, 1970})
+        self.assertEqual({event.msg_bytes[2] for event in note_ons}, {90})
+        self.assertEqual(
+            [
+                event.msg_bytes
+                for event in parsed.tracks[0].raw_events
+                if event.msg_bytes.startswith(b"\xff\x59")
+            ],
+            [b"\xff\x59\x02\x00\x00"],
+        )
+        bass_notes = parsed.tracks[2].raw_events
+        self.assertEqual(
+            {
+                event.abs_tick
+                for event in bass_notes
+                if event.msg_bytes[0] & 0xF0 == 0x90
+            },
+            {240, 1500},
+        )
+        self.assertEqual(
+            {
+                event.msg_bytes[2]
+                for event in bass_notes
+                if event.msg_bytes[0] & 0xF0 == 0x90
+            },
+            {100},
+        )
+
+    def test_session_midi_export_preserves_german_key_spelling(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            for key_root, expected_accidentals in (("B", -2), ("H", 5)):
+                with self.subTest(key_root=key_root):
+                    session = ProgressionSession(
+                        initial_chords=["C"],
+                        key_root=key_root,
+                        convention="DE",
+                    )
+                    output_path = session.export_midi_file(
+                        Path(temp_dir) / f"{key_root}.mid"
+                    )
+                    parsed = MidiFile.from_bytes(output_path.read_bytes())
+
+                    key_events = [
+                        event.msg_bytes
+                        for event in parsed.tracks[0].raw_events
+                        if event.msg_bytes.startswith(b"\xff\x59")
+                    ]
+                    self.assertEqual(
+                        key_events,
+                        [bytes((0xFF, 0x59, 0x02, expected_accidentals & 0xFF, 0x00))],
+                    )
 
     @patch("app.ui.main_window.messagebox.showerror")
     def test_invalid_event_timing_does_not_change_session(self, show_error):

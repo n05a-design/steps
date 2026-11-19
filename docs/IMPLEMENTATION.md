@@ -99,9 +99,13 @@ Die [Pilotfreigabe](../knowledge/concepts/progressions/README.md) beschreibt den
 
 Der bestehende Desktop-Einstieg ist mehr als ein theoretischer Architekturentwurf:
 die Tkinter-Shell ist unter `app/ui/main_window.py` implementiert und
-`tests/test_desktop_app_entrypoint.py` enthält einen GUI-Initialisierungstest,
-der ohne Display übersprungen werden kann. Der Headless-CLI- und Controller-
-Vertikalschnitt wird separat geprüft.
+`tests/test_desktop_app_entrypoint.py` prüft GUI-Initialisierung, Tastenkürzel
+und den Save/Open/MIDI-Exportpfad mit echten Session- und Controller-Objekten.
+Außerhalb des strikten Smoke-Modus darf ein fehlendes Display den Test
+überspringen; die CI-Smoke-Jobs setzen `STEPS_REQUIRE_DESKTOP_TK=1` und schlagen
+bei fehlendem Tk fehl. Ubuntu nutzt Xvfb; Windows und macOS nutzen eigene Runner.
+Diese Runner-Konfiguration ersetzt keine menschliche Accessibility- oder
+Plattformabnahme.
 
 Das ist **kein** Nachweis für eine veröffentlichungsreife Desktop-App. PR #158
 ergänzt Save/Open mit Rückfrage bei ungespeicherten Änderungen; PR #159 ergänzt
@@ -112,6 +116,14 @@ native Accessibility-/Plattformprüfung, unabhängige Übersetzungsabnahme,
 Wiederherstellungs- und Kompatibilitätsabnahme, Installer und Benutzerabnahme. Die
 [1.0.0-Readiness-Matrix](product/V1.0.0_PRODUCT_CONTRACT.md#readiness-and-gap-matrix)
 ordnet diese Lücken nach Status.
+
+`ProgressionSession.export_midi_file()` verwendet den ADR-017-Export mit
+Conductor-, Chords- und Bass-Spur. Tempo, Taktart, passende Dur-/Moll-
+Tonartmetadaten und individuelle Event-Startzeiten/-Dauern werden übergeben;
+deutsches `B` und `H` bleiben dabei getrennte Tonarten. Zehn SHA-256-Golden-
+Fälle prüfen den Session-Export. Die UI-Smoke-Probe speichert ein Projekt,
+verwirft eine ungespeicherte Änderung, lädt es erneut und exportiert MIDI.
+Unabhängige DAW-Importe sind weiterhin nicht belegt.
 
 [Testanleitung](../tests/README.md) · [Quellen und Archiv](../archive/INDEX.md)
 

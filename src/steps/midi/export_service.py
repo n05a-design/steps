@@ -98,7 +98,7 @@ class MidiExportService:
         chord_duration_ticks: int = 1920,
         smf_format: int = 1,
         time_signature: tuple[int, int] = (4, 4),
-        event_timings: Optional[List[Tuple[int, int]]] = None,
+        event_timings: list[tuple[int, int]] | None = None,
     ) -> Path:
         """
         Exports a sequence of Voicings into an SMF file.
@@ -164,7 +164,8 @@ class MidiExportService:
         lead_gap_ticks: int = 10,
         chords_velocity: int = 90,
         bass_velocity: int = 100,
-        convention: str = "INT"
+        convention: str = "INT",
+        event_timings: Optional[List[Tuple[int, int]]] = None,
     ) -> Path:
         """
         Exports a chord progression strictly conforming to ADR-017 (v0.1 MIDI Export Specification):
@@ -174,6 +175,7 @@ class MidiExportService:
         - Track 2: 'Bass' (channel 1 = MIDI Kanal 2, bass octave 2 [36..47], velocity 100)
         - Effective note length: duration_ticks minus lead_gap_ticks (default 10 ticks)
         - No program change messages (0xC0)
+        Event timing overrides the default sequential chord positions and durations.
         """
         midi_file = MidiFile(smf_format=1, division=ppq)
 
@@ -190,11 +192,34 @@ class MidiExportService:
         # Track 2: Bass (if separate_bass_track)
         bass_track = midi_file.add_track(MidiTrack(name="Bass")) if separate_bass_track else None
 
-        current_tick = 0
         chord_dur_ticks = int(round(chord_duration_quarters * ppq))
-        eff_dur_ticks = max(1, chord_dur_ticks - lead_gap_ticks)
+        if event_timings is None:
+            event_timings = [
+                (index * chord_dur_ticks, chord_dur_ticks)
+                for index in range(len(chords))
+            ]
+        if len(event_timings) != len(chords):
+            raise ValueError("Event timing count must match the chord count.")
+        if (
+            not isinstance(lead_gap_ticks, int)
+            or isinstance(lead_gap_ticks, bool)
+            or lead_gap_ticks < 0
+        ):
+            raise ValueError("Lead gap must be a non-negative whole number of ticks.")
+        if any(
+            not isinstance(timing, tuple)
+            or len(timing) != 2
+            or not isinstance(timing[0], int)
+            or isinstance(timing[0], bool)
+            or timing[0] < 0
+            or not isinstance(timing[1], int)
+            or isinstance(timing[1], bool)
+            or timing[1] <= 0
+            for timing in event_timings
+        ):
+            raise ValueError("Event timings require non-negative starts and positive durations.")
 
-        for item in chords:
+        for item, (start_tick, duration_ticks) in zip(chords, event_timings):
             if isinstance(item, str):
                 chord_def = parse_chord(item, convention=convention)
             else:
@@ -205,8 +230,8 @@ class MidiExportService:
             for note in voicing.midi_notes:
                 p = note if note >= 48 else note + 12
                 chords_track.add_note(
-                    start_tick=current_tick,
-                    duration_ticks=eff_dur_ticks,
+                    start_tick=start_tick,
+                    duration_ticks=max(1, duration_ticks - lead_gap_ticks),
                     pitch=p,
                     velocity=chords_velocity,
                     channel=0
@@ -217,14 +242,12 @@ class MidiExportService:
                 bass_spelling = chord_def.bass if chord_def.bass else chord_def.root
                 bass_pitch = int(bass_spelling.pitch_class) + 36
                 bass_track.add_note(
-                    start_tick=current_tick,
-                    duration_ticks=eff_dur_ticks,
+                    start_tick=start_tick,
+                    duration_ticks=max(1, duration_ticks - lead_gap_ticks),
                     pitch=bass_pitch,
                     velocity=bass_velocity,
                     channel=1
                 )
-
-            current_tick += chord_dur_ticks
 
         return midi_file.save(output_path)
 

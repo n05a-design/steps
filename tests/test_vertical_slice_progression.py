@@ -170,7 +170,7 @@ class TestVerticalSliceProgression(unittest.TestCase):
         # Verify SMF envelope with independent audit function
         env = envelope(midi_path.read_bytes())
         self.assertEqual(env["format"], 1)
-        self.assertEqual(env["tracks"], 2)  # Conductor + Chords
+        self.assertEqual(env["tracks"], 3)  # Conductor + Chords + Bass
         self.assertEqual(env["division"], 480)
 
         # 10. Notifications check
