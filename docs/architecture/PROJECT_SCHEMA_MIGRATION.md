@@ -21,7 +21,7 @@ The current migration IDs are:
 | `MIG-003` | Add the current app version |
 | `MIG-004` | Add the default `INT` notation convention |
 | `MIG-005` | Normalize missing or invalid metadata to an object |
-| `MIG-006` | Add missing PPQ, meter, tempo, and tempo-point defaults |
+| `MIG-006` | Add missing or normalize invalid PPQ, meter, tempo, and tempo-point values to documented schema-safe defaults |
 | `MIG-007` | Normalize missing or invalid tracks to an empty array |
 
 Loading a migration does not overwrite the source file. A later save writes the normalized project in the current schema. Adding a new migration requires a new stable migration ID, tests, and a product-level compatibility note.

@@ -201,6 +201,33 @@ class TestStorageRecoveryIO01to16(unittest.TestCase):
         self.assertEqual(loaded.title, "Minimal Legacy Project")
         self.assertEqual(loaded.notation_convention, "INT")  # Safe default
 
+    def test_invalid_time_settings_are_normalized_to_safe_defaults(self):
+        legacy_data = {
+            "schema_version": "1.0.0",
+            "project_id": "legacy-invalid-time",
+            "title": "Invalid Time Settings",
+            "time_settings": {
+                "ppq": "480",
+                "time_signature": {"numerator": "4", "denominator": 3},
+                "tempo_bpm": "fast",
+                "tempo_points": "not-a-list",
+            },
+            "tracks": [],
+        }
+        self.project_path.write_text(json.dumps(legacy_data), encoding="utf-8")
+
+        result = load_project_with_status(
+            self.project_path,
+            auto_recover_from_backup=False,
+        )
+
+        time_settings = result.project.time_settings
+        self.assertEqual(time_settings["ppq"], 480)
+        self.assertEqual(time_settings["time_signature"], {"numerator": 4, "denominator": 4})
+        self.assertEqual(time_settings["tempo_bpm"], 120.0)
+        self.assertEqual(time_settings["tempo_points"], [{"start_tick": 0, "bpm": 120.0}])
+        self.assertIn("MIG-006 normalize-time-settings", result.migrations)
+
     def test_io08_path_traversal_prevention(self):
         """IO-08: Path traversal prevention: attempt to save with '../' is blocked with StorageSecurityError."""
         evil_path = f"{self.temp_dir}/subdir/../../outside_escaped.stepsproj"
