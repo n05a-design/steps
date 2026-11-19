@@ -91,6 +91,7 @@ class ProgressionSession:
         convention: Literal["INT", "DE"] = "INT",
         bpm: float = 120.0,
         voice_leading_style: Union[str, VoiceLeadingStyle] = VoiceLeadingStyle.CONTEMPORARY_POP,
+        title: Optional[str] = None,
     ):
         chords = initial_chords if initial_chords is not None else ["C", "G", "Am", "F"]
         # Verify initial chords can be parsed
@@ -104,6 +105,7 @@ class ProgressionSession:
         )
 
         init_state = SessionState(
+            title=title.strip() if title is not None and title.strip() else "My Progression",
             chords=list(chords),
             key_root=key_root,
             is_minor=is_minor,
