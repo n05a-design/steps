@@ -2,6 +2,7 @@
 
 ## Unreleased – App und Python-Kern
 
+- Fehler beim Anwenden des optionalen App-Symbols werden protokolliert, ohne den Desktop-Start abzubrechen.
 - Die Desktop-Akkordanalyse schlägt nur registrierte Skalen vor und zeigt Fehler bei der Berechnung gültiger Kandidaten an, statt sie still zu verwerfen.
 - Fehler im optionalen Anfänger-Voicing-Viewmodel werden protokolliert, ohne die übrige Akkordanalyse zu verwerfen.
 - Fehler einer Desktop-Session-Listener-Aktualisierung werden protokolliert, ohne weitere Listener-Updates zu unterbrechen.

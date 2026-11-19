@@ -132,6 +132,33 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.window.event_duration_lbl = Mock()
         self.window._load_context_controls = Mock()
 
+    def test_window_icon_failure_is_logged_without_blocking_startup(self):
+        root = Mock()
+        with (
+            patch(
+                "app.ui.main_window.apply_window_icon",
+                side_effect=OSError("missing icon"),
+            ) as apply_icon,
+            patch.object(StepsMainWindow, "_init_file_menu") as init_file_menu,
+            patch.object(StepsMainWindow, "_init_ui") as init_ui,
+            patch.object(StepsMainWindow, "_localize_widgets") as localize_widgets,
+            patch.object(StepsMainWindow, "_refresh_all") as refresh_all,
+        ):
+            with self.assertLogs("app.ui.main_window", level="ERROR") as logged:
+                window = StepsMainWindow(
+                    root,
+                    controller=FakeController(),
+                    locale_manager=LocaleManager(preference="en"),
+                )
+
+        apply_icon.assert_called_once_with(root)
+        init_file_menu.assert_called_once_with()
+        init_ui.assert_called_once_with()
+        localize_widgets.assert_called_once_with()
+        refresh_all.assert_called_once_with()
+        self.assertIn("Could not apply the STEPS window icon", logged.output[0])
+        self.assertIs(window.root, root)
+
     def test_save_shortcut_delegates_to_save_and_stops_event(self):
         self.window._on_save_project = Mock()
 
