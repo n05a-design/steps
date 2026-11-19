@@ -207,6 +207,21 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.assertEqual(self.window._project_path, Path("/tmp/new.stepsproj"))
         self.assertEqual(self.window.root.window_title, "new.stepsproj — STEPS")
 
+    @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/new.stepsproj")
+    def test_save_as_uses_portable_default_filename(self, choose_path):
+        cases = (
+            ("Bad:Name?*", "Bad_Name__.stepsproj"),
+            ("CON", "_CON.stepsproj"),
+            ("...", "progression.stepsproj"),
+        )
+        for title, expected in cases:
+            with self.subTest(title=title):
+                self.window.controller.get_state_summary = Mock(return_value={"title": title})
+
+                self.assertTrue(self.window._on_save_project_as())
+
+                self.assertEqual(choose_path.call_args.kwargs["initialfile"], expected)
+
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="")
     def test_cancel_save_as_does_not_mark_session_clean(self, choose_path):
         self.window.controller.session.is_dirty = True

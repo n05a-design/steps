@@ -23,6 +23,7 @@
 - Die kanonische Implementierungs- und Changelog-Dokumentation wurde auf den Merge-Stand von PR #190 und MIG-006 abgestimmt. PR #191 hielt die Statussynchronisation zusammen mit dem unveränderlichen Baseline-Nachweis auf dem damaligen Stand fest: die vollständige Suite bestand bei Commit `93ab98960a484adc9e7cf8f3927e9c81b157d5e9` aus 747 Tests.
 - Der Projektname lässt sich in der Desktop-Oberfläche editieren und wird gemeinsam mit Tonart, Mollmodus, Tempo und Taktart als eine undo-/redo-fähige Kontextaktion gespeichert.
 - Die Desktop-Dateiaktionen bieten jetzt „Neu“ mit `Ctrl+N`/`⌘N`, Dirty-State-Rückfrage und sauberem Wechsel auf eine neue Standard-Progression ohne die Historie des vorherigen Projekts.
+- Der vorgeschlagene Save-As-Dateiname wird jetzt plattformübergreifend bereinigt (ungültige Zeichen, Windows-Gerätenamen und leere Namen).
 - Der Desktop-Kontext bietet eine eigenständige, bestätigte Auswahl der musikalischen Notationskonvention (`INT`/`DE`). Die Umstellung konvertiert Tonart und Akkordsymbole explizit und lässt Ticks, Tempo, Taktart und Projektstruktur unverändert.
 - Dokumentationssnapshots werden jetzt über eine wiederholbare Konsistenzprüfung abgesichert, die Commit-Belege validiert, ohne jeden neuen Merge-SHA automatisch nachzuführen.
 - Neue versionierbare GitHub-Community-Vorarbeiten decken Discussion-Forms, Wiki-, Project- und Funding-Owner-Actions ab; keine Live-Veröffentlichung oder fremde Kontoanlage erfolgt dadurch.
