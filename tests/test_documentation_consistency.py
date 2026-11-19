@@ -44,3 +44,4 @@ class TestDocumentationConsistency(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("immutable evidence snapshot", policy)
         self.assertIn("not an assertion that every later merge", policy)
+        self.assertIn("does not require a historical snapshot", policy)

@@ -288,6 +288,19 @@ def migrate_project_data(raw: Dict[str, Any]) -> tuple[Dict[str, Any], tuple[str
             normalized_tempo_points.append({"start_tick": start_tick, "bpm": float(bpm)})
         if not valid_tempo_points:
             normalized_tempo_points = [{"start_tick": 0, "bpm": tempo_bpm}]
+        elif normalized_tempo_points:
+            normalized_tempo_points.sort(key=lambda point: point["start_tick"])
+            if normalized_tempo_points[0]["start_tick"] != 0:
+                normalized_tempo_points.insert(0, {"start_tick": 0, "bpm": tempo_bpm})
+            deduplicated: List[Dict[str, Any]] = []
+            for point in normalized_tempo_points:
+                if deduplicated and deduplicated[-1]["start_tick"] == point["start_tick"]:
+                    deduplicated[-1] = point
+                else:
+                    deduplicated.append(point)
+            normalized_tempo_points = deduplicated
+        else:
+            normalized_tempo_points = [{"start_tick": 0, "bpm": tempo_bpm}]
     else:
         normalized_tempo_points = [{"start_tick": 0, "bpm": tempo_bpm}]
 
