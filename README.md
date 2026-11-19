@@ -26,9 +26,9 @@
 
 ## What STEPS is
 
-STEPS is an open-source music-theory toolkit for musicians and producers who want to build chord progressions and understand the decisions behind them. A typed Python core handles notation, context-aware analysis, voicings, and MIDI export; a Tkinter desktop prototype connects selected workflows.
+The core keeps the distinctions behind harmony visible: sounding pitch, pitch class, note spelling, chord identity, chord symbol, voicing, inversion, and harmonic function.
 
-STEPS keeps sounding pitch, pitch class, note spelling, chord identity, chord symbol, voicing, inversion, and harmonic function distinct. The product direction is a local-first workspace for learning while composing; this remains a hypothesis, not a result of completed user research. `v0.1.0` is the latest published release.
+The product direction is a local-first workspace for learning while composing; this remains a hypothesis, not a result of completed user research. `v0.1.0` is the latest published release.
 
 ## Why STEPS?
 
