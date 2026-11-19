@@ -2,9 +2,11 @@
 
 Dieser Leitfaden beschreibt den Code im selben Checkout. Der Einstieg für
 Entwicklung ist die [Root-README](../README.md). Die [API-Referenz](theory/API.md)
-wird aus den exportierten Python-Objekten erzeugt. Der aktuelle dokumentierte `main`-Stand ist Commit
-[`961701ead06b703653a9cc9ff2e38d2450d056d7`](https://github.com/n05a-design/steps/commit/961701ead06b703653a9cc9ff2e38d2450d056d7),
-dessen letzter Implementierungskommit [`b09946f18db6668ce628159b4c2e3e3be2968213`](https://github.com/n05a-design/steps/commit/b09946f18db6668ce628159b4c2e3e3be2968213) ist.
+wird aus den exportierten Python-Objekten erzeugt. Der am 19.11.2026 geprüfte
+`main`-Stand ist Commit
+[`bc1154241f5d57cc94e1a55a05e47bd788552c2f`](https://github.com/n05a-design/steps/commit/bc1154241f5d57cc94e1a55a05e47bd788552c2f);
+der letzte Implementierungskommit ist
+[`e9eb1070e718cd9af79e3b536c09307dc59f6cac`](https://github.com/n05a-design/steps/commit/e9eb1070e718cd9af79e3b536c09307dc59f6cac).
 Die historische Produkt-Baseline bleibt [`b67294a5161b42d281be4afdea5bb74b7385a786`](https://github.com/n05a-design/steps/commit/b67294a5161b42d281be4afdea5bb74b7385a786).
 PRs #158–#163 ergänzen Save/Open, Lokalisierung,
 Akkordbearbeitung, Neuordnung, Undo/Redo sowie Tonart-/Dur-Moll-/Tempo-Kontext.
@@ -21,9 +23,12 @@ Migration `MIG-006 normalize-time-settings`. PR #191 synchronisiert diesen
 Merge-Stand mit dem kanonischen Dokumentationsbestand. PR #197 ergänzt den
 Next-Chord-Explorer, PR #198 das Laden freigegebener Reviewed-Progressionen,
 PR #199 die Stimmführungsstil-Auswahl und PR #200 die dokumentierte
-Wheel-/Laufzeit-Ressourcenprüfung. PR #201 synchronisiert den dokumentierten
-Status auf den aktuellen `main`-Merge. Beim letzten Implementierungskommit
-`b09946f18db6668ce628159b4c2e3e3be2968213` bestehen 758
+Wheel-/Laufzeit-Ressourcenprüfung. PR #201 synchronisierte den damaligen
+Dokumentationsstand. PR #203 richtet den Desktop-Sessionexport an ADR-017 aus,
+PR #204 erzwingt die vier Akkordstimmen, PR #205 ergänzt optionale DROP2- und
+ROOTLESS-Voicings, 95%-Notenlänge und SMF Format 0. PR #206 prüft zehn
+SHA-256-Goldenexporte zusätzlich mit dem unabhängigen `SMFParser`.
+Bei Commit `bc1154241f5d57cc94e1a55a05e47bd788552c2f` bestehen 765
 automatisierte Tests; diese Zahl ist ein Testnachweis, keine Freigabe für
 native Plattformen, Übersetzung, Accessibility oder DAW-Abnahme.
 Gespeichert und exportiert

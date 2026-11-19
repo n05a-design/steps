@@ -37,6 +37,7 @@
 - PR #201 synchronisierte die aktive Statusdokumentation auf den dokumentierten Merge-Stand `961701ead06b703653a9cc9ff2e38d2450d056d7`.
 - GitHub Issue- und PR-Vorlagen, Dependabot-/Release-Notizkonfiguration und ein YAML-/Issue-Form-Prüfworkflow ergänzt. GitHub-Wiki, Projects, Labels und Funding bleiben explizite Inhaberhandlungen.
 - Der Desktop-Sessionexport folgt jetzt ADR-017: genau vier CLOSE-Stimmen (Dreiklänge mit Grundtonverdopplung; Erweiterungen mit Grundton, Terz, Septime und höchster Erweiterung) in der Akkordspur, separate Bassspur, passendes Tonart-Metadatum und gespeicherte Event-Zeiten. Der Exportservice bietet zusätzlich DROP2/ROOTLESS, 95%-Notenlänge und SMF Format 0. Zehn SHA-256-Goldenfälle und ein UI-Save/Open/Export-Smoke prüfen den Ablauf; DAW-Abnahme bleibt separat.
+- PR #206 prüft die zehn ADR-017-Goldenexporte zusätzlich durch erneutes Parsen mit `SMFParser`; dies belegt die interne Dateistruktur, nicht den Import in eine unabhängige DAW.
 - Tk-Smoke-Jobs für Ubuntu/Xvfb, Windows und macOS schlagen jetzt fehl, wenn Tk nicht initialisiert werden kann, statt den GUI-Test unbemerkt zu überspringen. Das belegt keine menschliche Accessibility- oder Plattformfreigabe.
 
 ## Frühere Architekturvorbereitung
