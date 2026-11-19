@@ -24,7 +24,8 @@ python -B scripts/check_documentation_consistency.py --check
 The check:
 
 - validates that referenced snapshot commits exist;
-- validates that a snapshot is an ancestor of the checked HEAD;
+- keeps historical snapshots separate from later/current implementation status;
+- does not require a historical snapshot to be an ancestor of the checked HEAD;
 - validates package/development version axes;
 - rejects selected README statements that contradict implemented i18n capability.
 

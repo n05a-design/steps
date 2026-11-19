@@ -38,17 +38,6 @@ def commit_exists(revision: str) -> bool:
     )
     return result.returncode == 0
 
-
-def is_ancestor(revision: str, head: str) -> bool:
-    result = subprocess.run(
-        ["git", "merge-base", "--is-ancestor", revision, head],
-        cwd=ROOT,
-        capture_output=True,
-        text=True,
-    )
-    return result.returncode == 0
-
-
 def snapshot_revisions(text: str) -> set[str]:
     marker = re.compile(
         r"(?:immutable snapshot|repository baseline|main at|main-referenz|main-Referenz|main-stand|Aktuelle `main`-Referenz)",
@@ -90,8 +79,6 @@ def check() -> int:
             seen.setdefault(sha, []).append(str(relative))
             if not commit_exists(sha):
                 findings.append(f"{relative}: unknown commit snapshot {sha}")
-            elif not is_ancestor(sha, head):
-                findings.append(f"{relative}: snapshot {sha} is not an ancestor of HEAD {head}")
 
     axes = version_axes()
     if axes["pyproject"] and axes["pyproject"] != axes["src.steps"]:
