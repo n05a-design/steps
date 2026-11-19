@@ -34,6 +34,7 @@ The product direction is a local-first workspace for people who want to learn wh
 - **Pitch, spelling, intervals, and chords:** typed theory APIs distinguish German `H/B` from international `B/Bb` and preserve enharmonic spelling where supported.
 - **Progressions and voicings:** key-aware Roman-numeral analysis, transposition, chord voicings, and configurable voice-leading styles are available in the Python core.
 - **Contextual recommendations:** progression services can return candidates and relation types; theoretical interpretations remain context-dependent.
+- **Desktop vertical slices:** the prototype explores next-chord candidates, loads reviewed examples as projects, and exposes a persisted voice-leading style. These are implemented workflows, not independent release or human-domain acceptance.
 - **Project data:** versioned JSON project storage and session save/load services exist. The controller-level vertical-slice test exercises a save/reopen round trip.
 - **MIDI:** SMF format 0/1 writers and export services are available. The CLI and desktop prototype expose export paths; automated tests inspect the resulting files.
 - **Reviewed examples:** selected learning examples are published with source references and review evidence. The larger research archive is not automatically approved product content.
