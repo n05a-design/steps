@@ -70,6 +70,15 @@ python3 -m app.main --export-midi /tmp/steps-progression.mid
 
 To open the Tkinter prototype, run `python3 -m app.main` in an environment with Tk and a graphical display. A source checkout is not the same as a published desktop installer.
 
+To build and inspect the existing Python wheel artifact without installing it into the repository environment:
+
+```sh
+python3 -m pip wheel . --no-deps --wheel-dir ./dist
+python3 -B -m unittest tests.test_package_artifacts -v
+```
+
+The wheel check verifies the `steps` console entry point and the localized catalogs and brand assets packaged in the artifact. It starts the installed package in headless mode. It does not build or verify a signed desktop installer, notarized application, platform-specific package, or fresh-machine installation.
+
 ## Product target and documentation
 
 The [STEPS 1.0.0 product target](docs/product/V1.0.0_PRODUCT_CONTRACT.md) compares the proposed 1.0 scope with repository evidence, identifies gaps, and defines release gates. It is a proposal awaiting owner review; it does not claim that those gates have passed.
