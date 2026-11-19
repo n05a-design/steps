@@ -267,3 +267,6 @@ credentials.json
 
 # macOS Finder-Metadaten
 .DS_Store
+
+# Local recovery copies for the versioned task register
+/docs/operations/backups/

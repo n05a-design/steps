@@ -2,6 +2,8 @@
 
 > Datierter Startbacklog. Für vorhandene Funktionen und weiterhin fehlende Produktabläufe gilt der [Implementierungsstand](../IMPLEMENTATION.md).
 
+> **Statusautorität:** Dieses Dokument ist ein historischer, priorisierter Planungsvorschlag. Aktive Aufgabenstatus und Owner-Entscheidungen stehen ausschließlich im [kanonischen Aufgabenregister](OFFENE_ARBEITSAUFFORDERUNGEN.md).
+
 **Stand:** 10.11.2026. **Status:** Priorisierter, dokumentierter Vorschlag; **kein** gestarteter Sprint, keine automatisch freigegebene Produkt-/Lizenzentscheidung. Dieser Backlog übersetzt [`ROADMAP_AND_RESOURCE_PLAN.md`](../roadmap/ROADMAP_AND_RESOURCE_PLAN.md) in einzelne Übergabeaufträge. Die vorhandene Glide-To-do-Planung bleibt unter eigenen IDs erhalten.
 
 | Reihenfolge | Auftrag / Prompt | Tatsächlich benötigter Eingang | Erfolgskriterium | Blocker / Übergabe |

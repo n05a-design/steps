@@ -16,6 +16,7 @@ import backup_knowledge
 import check_source
 import detect_duplicates
 import extract_instructions
+import register_paths
 
 
 ORIGINAL = b"### OA-0001: Task\n* **Status:** `OPEN`\n"
@@ -32,26 +33,26 @@ class TestRegisterRecovery(unittest.TestCase):
         self.backup = Path(backup_knowledge.backup_master(self.target)["backup"])
         self.target.write_bytes(CURRENT)
 
-    def test_no_default_restore_to_working_directory(self):
+    def test_default_register_is_repository_canonical_and_ignores_legacy_env(self):
+        canonical = Path(__file__).resolve().parents[4] / "docs" / "operations" / "OFFENE_ARBEITSAUFFORDERUNGEN.md"
+        with patch.dict(os.environ, {
+            "LOCALAPPDATA": str(self.base),
+            "STEPS_KNOWLEDGE_REGISTER": str(self.target),
+        }):
+            self.assertEqual(register_paths.master_path(), canonical)
+        self.assertTrue(canonical.is_file())
+
+    def test_cli_uses_explicit_register_override(self):
         env = os.environ.copy()
-        env.pop("LOCALAPPDATA", None)
         env.pop("STEPS_KNOWLEDGE_REGISTER", None)
-        before = set(self.base.iterdir())
         result = subprocess.run(
-            [sys.executable, "-B", str(SCRIPTS / "backup_knowledge.py"), "restore", str(self.backup)],
+            [
+                sys.executable, "-B", str(SCRIPTS / "backup_knowledge.py"),
+                "restore", str(self.backup), "--register", str(self.target),
+            ],
             cwd=self.base, env=env, capture_output=True, text=True,
         )
-        self.assertNotEqual(result.returncode, 0)
-        self.assertIn("STEPS_KNOWLEDGE_REGISTER", result.stderr)
-        self.assertEqual(set(self.base.iterdir()), before)
-        self.assertEqual(self.target.read_bytes(), CURRENT)
-
-    def test_cli_uses_configured_absolute_register(self):
-        env = {**os.environ, "STEPS_KNOWLEDGE_REGISTER": str(self.target)}
-        result = subprocess.run(
-            [sys.executable, "-B", str(SCRIPTS / "backup_knowledge.py"), "restore", str(self.backup)],
-            cwd=self.base, env=env, capture_output=True, check=True,
-        )
+        self.assertEqual(result.returncode, 0, result.stderr)
         restored = json.loads(result.stdout)
         self.assertEqual(self.target.read_bytes(), ORIGINAL)
         self.assertEqual(Path(restored["previous_backup"]).read_bytes(), CURRENT)

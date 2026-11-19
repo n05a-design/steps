@@ -1,9 +1,11 @@
 # Open Work Instructions Protocol
 
 ## 1. Single Canonical Authority
-All open tasks, required decisions, and engineering action items in STEPS belong in the canonical register. Set `STEPS_KNOWLEDGE_REGISTER` to its absolute path. Windows falls back to `%LOCALAPPDATA%\StepsKnowledge\OFFENE_ARBEITSAUFFORDERUNGEN.md`.
+All active STEPS tasks and required owner decisions belong in the versioned repository file `docs/operations/OFFENE_ARBEITSAUFFORDERUNGEN.md`. The helper resolves it relative to its own location, independent of the current working directory; do not configure an external register path.
 
-There must be NO competing active task lists.
+This follows the Glide project's single-backlog model. GitHub issues are linked evidence/discussion for register entries, not a second authority for task status. Dated snapshots and plans are historical context, not active task lists. There must be no competing active register.
+
+The former external register was not available in the 2026-11-19 audit. The dated snapshot retains legacy OA-0001–OA-0033, but its statuses are not silently promoted to current truth. Reconcile those IDs against current evidence in a tracked task; preserve unresolved cases as blocked.
 
 ## 2. Identification Guidelines
 Work instructions can be:

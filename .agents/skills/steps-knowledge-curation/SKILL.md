@@ -2,8 +2,8 @@
 name: steps-knowledge-curation
 description: >-
   Curation, validation, and incremental maintenance of the STEPS music theory
-  knowledge base, music library research documents, and open work instructions
-  (OFFENE_ARBEITSAUFFORDERUNGEN.md). Use whenever new research files, music theory
+  knowledge base, music library research documents, and the canonical repository
+  task register (docs/operations/OFFENE_ARBEITSAUFFORDERUNGEN.md). Use whenever new research files, music theory
   books, MIDI corpora, or task specifications are added or audited in STEPS.
 ---
 
@@ -20,7 +20,7 @@ This runbook guides the review and incremental integration of music theory liter
    - Progression $\neq$ rhythmic events (`MusicTime` ticks) $\neq$ phrasing $\neq$ style context.
    - Deterministic rule $\neq$ corpus statistic $\neq$ creative heuristic.
    - Notation $\neq$ MIDI export $\neq$ audio playback.
-3. **Open Work Instructions Maintenance**: Maintain the single canonical master register:
+3. **Open Work Instructions Maintenance**: Maintain the single versioned canonical master register:
    See the [register protocol](references/work_instructions_protocol.md) for its path and evidence fields.
    Review duplicate candidates and confirm explicit source anchors before writing any approved updates.
 
