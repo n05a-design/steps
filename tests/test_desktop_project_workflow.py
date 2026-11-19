@@ -212,6 +212,45 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.assertIn("C:", rendered)
         self.assertIn("Smoothness", rendered)
 
+    def test_next_chord_explore_apply_undo_redo(self):
+        self.window.controller = ProgressionSessionController(
+            ProgressionSession(initial_chords=["C", "G", "Am", "F"], key_root="C")
+        )
+        self.window._next_recommendations = []
+        self.window.chord_listbox = Mock()
+        self.window.chord_listbox.curselection.return_value = (1,)
+        self.window.next_candidates_list = Mock()
+        self.window.next_candidates_list.curselection.return_value = (0,)
+        self.window.apply_next_btn = Mock()
+        self.window.detail_text = Mock()
+
+        self.window._on_explore_next()
+        recommendations = self.window._next_recommendations
+        self.assertTrue(recommendations)
+        candidate_index = next(
+            index
+            for index, recommendation in enumerate(recommendations)
+            if recommendation.candidate_symbol == "C"
+        )
+        self.window.next_candidates_list.curselection.return_value = (candidate_index,)
+
+        self.window._on_apply_next_recommendation()
+
+        self.assertEqual(
+            self.window.controller.session.chords,
+            ["C", "G", "C", "Am", "F"],
+        )
+        self.window.controller.undo()
+        self.assertEqual(
+            self.window.controller.session.chords,
+            ["C", "G", "Am", "F"],
+        )
+        self.window.controller.redo()
+        self.assertEqual(
+            self.window.controller.session.chords,
+            ["C", "G", "C", "Am", "F"],
+        )
+
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/fail.stepsproj")
     @patch("app.ui.main_window.messagebox.showerror")
     def test_save_error_is_visible_and_keeps_session_dirty(self, show_error, choose_path):
