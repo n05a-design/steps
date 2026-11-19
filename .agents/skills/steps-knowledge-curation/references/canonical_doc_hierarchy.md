@@ -10,4 +10,4 @@ To eliminate duplicate authorities and contradictory guidelines:
 3. **Decisions**: `decisions/DECISION_REGISTER.md` + individual `ADR-*.md` files.
 4. **Knowledge Base (Curated)**: `knowledge/sources/registry.yaml` and `knowledge/concepts/`.
 5. **Raw Research (Uncurated Archive)**: `research/` (kept read-only for provenance).
-6. **Master Open Tasks**: The single external register specified in the [register protocol](work_instructions_protocol.md).
+6. **Master Open Tasks**: `docs/operations/OFFENE_ARBEITSAUFFORDERUNGEN.md`, the single versioned task authority specified in the [register protocol](work_instructions_protocol.md).

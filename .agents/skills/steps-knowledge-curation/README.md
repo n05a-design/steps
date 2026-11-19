@@ -18,11 +18,12 @@ separate review. The scripts do not establish factual correctness or rights.
 
 ### Back up or restore the register
 
-Set `STEPS_KNOWLEDGE_REGISTER` to the absolute path of the existing master.
-Windows uses `%LOCALAPPDATA%\StepsKnowledge\OFFENE_ARBEITSAUFFORDERUNGEN.md`
-when that setting is absent; macOS and Linux have no fallback and require the
-environment variable. Commands use the sibling `backups/` directory by
-default. Pass `--backup-dir` to select a different trusted directory.
+The canonical register is
+`docs/operations/OFFENE_ARBEITSAUFFORDERUNGEN.md`; helper scripts resolve it
+relative to the repository, independent of the current directory or OS.
+Commands use the sibling `docs/operations/backups/` directory by default;
+Git ignores that local backup directory. Pass `--backup-dir` to select a
+different trusted directory.
 
 From the repository root:
 
