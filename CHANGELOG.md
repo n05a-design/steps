@@ -25,6 +25,7 @@
 - Dokumentationssnapshots werden jetzt über eine wiederholbare Konsistenzprüfung abgesichert, die Commit-Belege validiert, ohne jeden neuen Merge-SHA automatisch nachzuführen.
 - Neue versionierbare GitHub-Community-Vorarbeiten decken Discussion-Forms, Wiki-, Project- und Funding-Owner-Actions ab; keine Live-Veröffentlichung oder fremde Kontoanlage erfolgt dadurch.
 - Ein reproduzierbares DAW-Importprotokoll trennt automatische SMF-Roundtrip-Belege ausdrücklich von menschlicher Independent-DAW-Abnahme.
+- Die CI ergänzt macOS-/Windows-Matrix-Smokes für denselben Tkinter-Widget-/Controller-Pfad; native menschliche Plattform- und Accessibility-Abnahmen bleiben ausdrücklich offen.
 - Der Desktop-Informationsbereich zeigt jetzt die bestehende Beginner-Keyboard-Voicing-Ermittlung mit linker/rechter Hand, Fingerempfehlungen und Stimmführungsübergängen in Englisch und Deutsch.
 - Das Python-Wheel enthält jetzt die Desktop-App, Locale-Kataloge, Design-Tokens und Markenressourcen, damit der konfigurierte `steps`-Einstieg und seine Laufzeitressourcen gemeinsam installiert werden.
 - GitHub Issue- und PR-Vorlagen, Dependabot-/Release-Notizkonfiguration und ein YAML-/Issue-Form-Prüfworkflow ergänzt. GitHub-Wiki, Projects, Labels und Funding bleiben explizite Inhaberhandlungen.

@@ -45,3 +45,15 @@ class TestGithubPublicPresence(unittest.TestCase):
             )
             with self.assertRaises(yaml.YAMLError):
                 _load_yaml(malformed)
+
+    def test_platform_ui_smoke_matrix_covers_macos_and_windows(self):
+        workflow = (
+            ROOT / ".github/workflows/python-tests.yml"
+        ).read_text(encoding="utf-8")
+        self.assertIn("desktop-ui-platform-smoke:", workflow)
+        self.assertIn("windows-latest", workflow)
+        self.assertIn("macos-latest", workflow)
+        self.assertIn(
+            "test_main_window_instantiation_and_wiring",
+            workflow,
+        )
