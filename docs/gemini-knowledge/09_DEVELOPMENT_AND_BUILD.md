@@ -20,6 +20,15 @@ The GUI entry point is `python3 -m app.main` and requires Tk plus a graphical en
 
 `pyproject.toml` configures a Python package/entry point. `tests/test_package_artifacts.py` builds and inspects a wheel. This is not evidence of a complete signed desktop installer, notarization, or acceptance on supported end-user systems.
 
+Build and inspect the wheel artifact from the repository root with:
+
+```sh
+python3 -m pip wheel . --no-deps --wheel-dir ./dist
+python3 -B -m unittest tests.test_package_artifacts -v
+```
+
+These commands verify package metadata, the `steps` entry point, locale assets, brand assets, and an installed headless smoke. They do not verify installer signing, notarization, platform acceptance, or reproducible desktop distribution.
+
 ## CI
 
 `.github/workflows/python-tests.yml` runs Python test matrices and checks generated docs, localization inventories, package artifacts, knowledge benchmarks and coverage audits. Workflow outcomes are commit- and runner-specific; this pack's audit did not independently verify every matrix runner.

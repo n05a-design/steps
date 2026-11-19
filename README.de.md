@@ -140,6 +140,15 @@ python -B scripts/render_api_reference.py --check
 ```
 
 Die [CI-Matrix](.github/workflows/python-tests.yml) führt dieselben Prüfungen mit Python 3.11 bis 3.14 aus.
+
+Für einen temporären Build des vorhandenen Python-Wheel-Artefakts, ohne Abhängigkeiten in die Repository-Umgebung zu installieren:
+
+```sh
+python3 -m pip wheel . --no-deps --wheel-dir ./dist
+python3 -B -m unittest tests.test_package_artifacts -v
+```
+
+Die Prüfung kontrolliert den Konsolen-Einstieg `steps`, die lokalisierten Kataloge und die gebündelten Markenressourcen und startet die installierte Paketinstallation im Headless-Modus. Sie baut oder prüft keinen signierten Desktop-Installer, keine notarisierte Anwendung, kein plattformspezifisches Paket und keine Installation auf einem frischen Rechner.
 Weitere Aufrufe und Grenzen stehen in der [Testanleitung](tests/README.md).
 
 ## Quellen und Rechte
