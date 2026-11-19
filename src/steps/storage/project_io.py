@@ -228,17 +228,74 @@ def migrate_project_data(raw: Dict[str, Any]) -> tuple[Dict[str, Any], tuple[str
     time_settings = migrated.get("time_settings")
     if not isinstance(time_settings, dict):
         time_settings = {}
+
+    ppq = time_settings.get("ppq", 480)
+    if isinstance(ppq, bool) or not isinstance(ppq, int) or not 96 <= ppq <= 1920:
+        ppq = 480
+
+    time_signature = time_settings.get("time_signature")
+    if not isinstance(time_signature, dict):
+        time_signature = {}
+    numerator = time_signature.get("numerator", 4)
+    denominator = time_signature.get("denominator", 4)
+    if (
+        isinstance(numerator, bool)
+        or not isinstance(numerator, int)
+        or not 1 <= numerator <= 32
+    ):
+        numerator = 4
+    if (
+        isinstance(denominator, bool)
+        or not isinstance(denominator, int)
+        or denominator not in (1, 2, 4, 8, 16, 32)
+    ):
+        denominator = 4
+    normalized_time_signature = {
+        "numerator": numerator,
+        "denominator": denominator,
+    }
+
+    tempo_bpm = time_settings.get("tempo_bpm", 120.0)
+    if (
+        isinstance(tempo_bpm, bool)
+        or not isinstance(tempo_bpm, (int, float))
+        or not 20.0 <= tempo_bpm <= 400.0
+    ):
+        tempo_bpm = 120.0
+    tempo_bpm = float(tempo_bpm)
+
+    tempo_points = time_settings.get("tempo_points")
+    normalized_tempo_points: List[Dict[str, Any]]
+    if isinstance(tempo_points, list):
+        valid_tempo_points = True
+        normalized_tempo_points = []
+        for point in tempo_points:
+            if not isinstance(point, dict):
+                valid_tempo_points = False
+                break
+            start_tick = point.get("start_tick")
+            bpm = point.get("bpm")
+            if (
+                isinstance(start_tick, bool)
+                or not isinstance(start_tick, int)
+                or start_tick < 0
+                or isinstance(bpm, bool)
+                or not isinstance(bpm, (int, float))
+                or not 20.0 <= bpm <= 400.0
+            ):
+                valid_tempo_points = False
+                break
+            normalized_tempo_points.append({"start_tick": start_tick, "bpm": float(bpm)})
+        if not valid_tempo_points:
+            normalized_tempo_points = [{"start_tick": 0, "bpm": tempo_bpm}]
+    else:
+        normalized_tempo_points = [{"start_tick": 0, "bpm": tempo_bpm}]
+
     normalized_time_settings = {
-        "ppq": time_settings.get("ppq", 480),
-        "time_signature": time_settings.get(
-            "time_signature",
-            {"numerator": 4, "denominator": 4},
-        ),
-        "tempo_bpm": time_settings.get("tempo_bpm", 120.0),
-        "tempo_points": time_settings.get(
-            "tempo_points",
-            [{"start_tick": 0, "bpm": time_settings.get("tempo_bpm", 120.0)}],
-        ),
+        "ppq": ppq,
+        "time_signature": normalized_time_signature,
+        "tempo_bpm": tempo_bpm,
+        "tempo_points": normalized_tempo_points,
     }
     if normalized_time_settings != time_settings:
         migrations.append("MIG-006 normalize-time-settings")
