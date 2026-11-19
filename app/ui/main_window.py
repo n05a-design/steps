@@ -8,6 +8,7 @@ Implements the 2-Pane architectural contract:
 
 from __future__ import annotations
 
+import logging
 import re
 import sys
 import tkinter as tk
@@ -27,6 +28,8 @@ from src.steps.progression.voice_leading import VoiceLeadingStyle
 from src.steps.storage.exceptions import StorageError
 from src.steps.theory.exceptions import MusicTheoryError
 
+
+logger = logging.getLogger(__name__)
 
 _INVALID_PROJECT_FILENAME_CHARS = re.compile(r'[<>:"/\\|?*\x00-\x1f]')
 _WINDOWS_RESERVED_FILENAME = re.compile(
@@ -1179,7 +1182,7 @@ class StepsMainWindow:
                             )
                         )
             except (AttributeError, KeyError, TypeError):
-                pass
+                logger.exception("Could not render optional beginner voicing details")
 
             self.detail_text.insert(tk.END, "\n".join(lines))
         except Exception as e:
