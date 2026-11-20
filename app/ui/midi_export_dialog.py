@@ -8,6 +8,7 @@ import tkinter as tk
 from typing import Callable, Collection, Literal, Mapping
 
 from app.i18n import LocaleManager
+from app.ui.dialog_support import ModalDialog
 from app.ui.theme import ThemeManager, create_button
 from src.steps.midi.export_service import ADR017_VOICINGS, Adr017Voicing
 
@@ -50,7 +51,7 @@ def format_midi_file_error(error: OSError, path: str, i18n: LocaleManager) -> st
     return i18n.translate(key, path=path)
 
 
-class MidiExportOptionsDialog:
+class MidiExportOptionsDialog(ModalDialog):
     """Collect supported per-export options and close only after successful export."""
 
     def __init__(
@@ -71,14 +72,11 @@ class MidiExportOptionsDialog:
         self._spacing = spacing
         self._font = (typography.font_family_sans, typography.size_sm)
 
-        self.window = tk.Toplevel(parent)
+        super().__init__(parent)
         self.window.title(translate("midi.options.title"))
         self.window.geometry("620x570" if voicing_failures else "620x520")
         self.window.minsize(540, 520 if voicing_failures else 460)
-        self.window.transient(parent)
         self.window.configure(bg=colors.bg_window)
-        self.window.protocol("WM_DELETE_WINDOW", self._close)
-        self.window.bind("<Escape>", lambda _event: self._close())
 
         container = tk.Frame(
             self.window,
@@ -175,8 +173,7 @@ class MidiExportOptionsDialog:
         )
         self._export_button.pack(side=tk.RIGHT, padx=(0, spacing.sm))
 
-        self.window.grab_set()
-        (self._export_button if initial_voicing else cancel_button).focus_set()
+        self._show(self._export_button if initial_voicing else cancel_button)
 
     def _add_group(
         self,
@@ -225,6 +222,3 @@ class MidiExportOptionsDialog:
         )
         if self._on_export(options):
             self._close()
-
-    def _close(self) -> None:
-        self.window.destroy()

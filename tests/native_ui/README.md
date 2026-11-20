@@ -13,7 +13,9 @@ recommendation, compares and applies styles, and exports Format 0 after
 checking the disabled voicing modes. An injected file replacement error
 keeps the previous MIDI file and the options dialog available for retry.
 The test then saves, closes and reopens the project. It exercises invalid
-chord input, missing search results, cancellation and undo/redo. Native
+chord input, missing search results, cancellation and undo/redo. It checks
+keyboard scrolling, Tab/Shift-Tab traversal, Escape focus restoration,
+nested modal grabs, main-window shortcut isolation and the lab's minimum size. Native
 chooser and confirmation responses are injected so CI can run unattended.
 The same tests run in the Ubuntu Xvfb, Windows and macOS smoke jobs.
 

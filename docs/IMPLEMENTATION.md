@@ -109,6 +109,12 @@ Die [Pilotfreigabe](../knowledge/concepts/progressions/README.md) beschreibt den
 
 ## Desktop-Prototyp und Produktgrenzen
 
+Bibliothek, Stimmführungslabor und MIDI-Export binden den Fokus an ihren
+Dialog und geben ihn beim Schließen an das zuvor fokussierte Feld zurück.
+Die Projektkürzel wirken im Hauptfenster. Bibliotheksvorschau und
+Stimmführungsdetails sind per Tab erreichbar und mit Bild auf und Bild ab
+scrollbar.
+
 Der Harmonie-Inspektor verwendet für Grund- und Skalentöne die Projektnotation.
 Anfänger-Voicings behalten auch bei reduzierten Akkordsymbolen die gewählte
 Schreibweise. Die Oberfläche zeigt gemeinsame Töne, Gesamtbewegung und
