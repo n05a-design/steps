@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Das Stimmführungslabor zeigt pro Stil den MIDI-Tonumfang und pro Akkordwechsel die vorzeichenbehaftete Halbtonbewegung jeder vergleichbaren Stimme.
+
 - Quellen und Freigabebelege des ausgewählten Bibliotheksbeispiels lassen sich über ein per Tastatur erreichbares Menü im Standardbrowser öffnen.
 
 - Die Bibliothek zeigt Akkordkarten mit Referenztonart und harmonischen Stufen. Bleibt das Beispiel beim Filtern ausgewählt, bleibt auch die Leseposition in den Quellen- und Freigabedetails erhalten.

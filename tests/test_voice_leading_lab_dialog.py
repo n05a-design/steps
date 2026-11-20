@@ -55,6 +55,29 @@ class TestVoiceLeadingLab(unittest.TestCase):
         self.assertIn("not a universal ranking", rendered)
         self.assertIn("C → G", rendered)
 
+    def test_profile_shows_signed_movements_and_reports_unmatched_voice_counts(self):
+        style = VoiceLeadingStyle.CONTEMPORARY_POP
+        chords = ("C", "G", "Am")
+        profile = VoiceLeadingStyleProfile(
+            style,
+            (
+                DegreeAnalysis(0, "C", "I", semitone_distance_to_next=5),
+                DegreeAnalysis(1, "G", "V"),
+                DegreeAnalysis(2, "Am", "vi"),
+            ),
+            5,
+            ((48, 55, 60), (50, 52, 60), (45, 57)),
+        )
+        for language in ("en", "de"):
+            with self.subTest(language=language):
+                t = LocaleManager(preference=language).translate
+                rendered = format_voice_leading_profile(profile, chords, style, t)
+
+                self.assertIn(t("voice.lab.register", low=45, high=60), rendered)
+                self.assertIn(t("voice.lab.transition.voices", steps="+2, -3, 0"), rendered)
+                self.assertIn(t("voice.lab.transition.unmatched", from_chord="G", to_chord="Am"), rendered)
+                self.assertEqual(rendered.count(t("voice.lab.transition.voices", steps="")), 1)
+
     def test_profile_localizes_detected_parallel_and_contrary_motion(self):
         style = VoiceLeadingStyle.STRICT_CLASSICAL
         for start, end, en, de in (

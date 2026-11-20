@@ -457,15 +457,18 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             window.redo_btn.invoke()
 
             active_style = controller.session.voice_leading_style
+            before_comparison = controller.session.state
             window.voice_lab_btn.invoke()
             lab = modal()
             lab.geometry("720x490")
             root.update()
             for key in ("voice.lab.close", "voice.lab.apply_a", "voice.lab.apply_b"):
                 self.assertTrue(button(lab, key).winfo_ismapped())
-            self.assertTrue(all(
-                str(text.cget("takefocus")) == "1" for text in widgets(lab, tk.Text)
-            ))
+            for text in widgets(lab, tk.Text):
+                self.assertEqual(str(text.cget("takefocus")), "1")
+                rendered = text.get("1.0", tk.END)
+                self.assertRegex(rendered, r"MIDI note range: [0-9]+–[0-9]+\.")
+                self.assertIn(i18n.translate("voice.lab.transition.voices", steps="").rstrip(), rendered)
             nested_export = window._on_export_midi()
             self.assertEqual(modal(), nested_export.window)
             nested_export._close()
@@ -478,7 +481,7 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             selector.current(1 if active_style.value != "STRICT_CLASSICAL" else 0)
             selector.event_generate("<<ComboboxSelected>>")
             root.update()
-            self.assertEqual(controller.session.voice_leading_style, active_style)
+            self.assertEqual(controller.session.state, before_comparison)
             button(lab, "voice.lab.apply_b").invoke()
             self.assertFalse(lab.winfo_exists())
             self.assertNotEqual(controller.session.voice_leading_style, active_style)

@@ -44,23 +44,36 @@ def format_voice_leading_profile(
             "voice.lab.current",
             style=labels.get(active_style.value, active_style.value),
         ),
-        translate("voice.lab.disclaimer"),
-        translate("voice.lab.total", movement=profile.total_movement),
-        "",
     ]
+    pitches = [note for voicing in profile.midi_notes for note in voicing]
+    if pitches:
+        lines.append(translate("voice.lab.register", low=min(pitches), high=max(pitches)))
+    lines.extend((
+        translate("voice.lab.total", movement=profile.total_movement),
+        translate("voice.lab.disclaimer"),
+        "",
+    ))
     for index, transition in enumerate(profile.transitions[:-1]):
         distance = transition.semitone_distance_to_next
+        from_chord, to_chord = chords[index:index + 2]
         if distance is None:
+            lines.append(translate(
+                "voice.lab.transition.unmatched", from_chord=from_chord, to_chord=to_chord,
+            ))
             continue
         lines.append(
             translate(
                 "voice.lab.transition",
-                from_chord=chords[index],
-                to_chord=chords[index + 1],
+                from_chord=from_chord,
+                to_chord=to_chord,
                 distance=distance,
                 warnings=len(transition.voice_leading_warnings),
             )
         )
+        start, end = profile.midi_notes[index:index + 2]
+        movement = (after - before for before, after in zip(start, end, strict=True))
+        signed_steps = ", ".join(f"{steps:+d}" if steps else "0" for steps in movement)
+        lines.append("  " + translate("voice.lab.transition.voices", steps=signed_steps))
         for item in transition.voice_leading_diagnostics:
             lines.append("  • " + translate(
                 f"voice.lab.warning.{item.motion}.{item.interval}",
