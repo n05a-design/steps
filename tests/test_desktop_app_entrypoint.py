@@ -222,5 +222,159 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             raise e
 
 
+    def test_native_dialog_workflow(self):
+        """Drive real widgets on the platform; inject OS file chooser responses."""
+        require_tk = os.environ.get("STEPS_REQUIRE_DESKTOP_TK") == "1"
+        try:
+            import tkinter as tk
+            from tkinter import ttk
+            from app.ui.main_window import StepsMainWindow
+        except ImportError as exc:
+            if require_tk:
+                self.fail(f"Tk is required for the desktop smoke test: {exc}")
+            self.skipTest("tkinter not available")
+        try:
+            root = tk.Tk()
+        except tk.TclError as exc:
+            if require_tk:
+                self.fail(f"Tk could not initialize: {exc}")
+            self.skipTest("No Tk graphics display")
+        def destroy_root():
+            try:
+                root.destroy()
+            except tk.TclError:
+                pass
+
+        self.addCleanup(destroy_root)
+        callback_errors = []
+        root.report_callback_exception = lambda *error: callback_errors.append(error)
+        i18n = LocaleManager(preference="en")
+        window = StepsMainWindow(root, locale_manager=i18n)
+        controller = window.controller
+        root.update()
+
+        def widgets(parent, kind):
+            for child in parent.winfo_children():
+                if isinstance(child, kind):
+                    yield child
+                yield from widgets(child, kind)
+
+        def button(parent, key):
+            return next(
+                widget for widget in widgets(parent, (tk.Button, ttk.Button))
+                if widget.cget("text") == i18n.translate(key)
+            )
+
+        def modal():
+            root.update()
+            dialog = root.grab_current()
+            self.assertIsInstance(dialog, tk.Toplevel)
+            self.assertTrue(dialog.winfo_ismapped())
+            return dialog
+
+        with (
+            patch("app.ui.main_window.messagebox.showerror") as errors,
+            patch("app.ui.main_window.messagebox.askyesnocancel", return_value=None) as prompt,
+        ):
+            window.file_menu.invoke(0)
+            window.chord_entry.delete(0, tk.END)
+            window.chord_entry.insert(0, "!")
+            window.update_btn.invoke()
+            errors.assert_called_once()
+            self.assertFalse(controller.session.is_dirty)
+            errors.reset_mock()
+
+            window.chord_entry.delete(0, tk.END)
+            window.chord_entry.insert(0, "Dm7")
+            window.update_btn.invoke()
+            self.assertTrue(controller.session.is_dirty)
+            window.file_menu.invoke(4)
+            library = modal()
+            search = next(widgets(library, tk.Entry))
+            preview = next(widgets(library, tk.Text))
+            search.insert(0, "no-matching-example")
+            self.assertIn(i18n.translate("library.no_results"), preview.get("1.0", tk.END))
+            search.delete(0, tk.END)
+            search.insert(0, "PROG-003")
+            self.assertIn("G7", preview.get("1.0", tk.END))
+            button(library, "library.load").invoke()
+            self.assertTrue(library.winfo_exists())
+            self.assertEqual(controller.session.chords[0], "Dm7")
+            prompt.return_value = False
+            button(library, "library.load").invoke()
+            self.assertFalse(library.winfo_exists())
+            self.assertEqual(controller.session.chords, ["Dm7", "G7", "Cmaj7"])
+            window.file_menu.invoke(4)
+            button(modal(), "library.close").invoke()
+
+            window.chord_entry.delete(0, tk.END)
+            window.chord_entry.insert(0, "Dm")
+            window.update_btn.invoke()
+            before = tuple(controller.session.state.chord_event_timings)
+            window.explore_next_btn.invoke()
+            self.assertGreater(window.next_candidates_list.size(), 0)
+            window.next_candidates_list.selection_set(0)
+            window.next_candidates_list.event_generate("<<ListboxSelect>>")
+            root.update()
+            self.assertIn(i18n.translate("next_chord.original"), window.detail_text.get("1.0", tk.END))
+            window.apply_next_btn.invoke()
+            self.assertEqual(len(controller.session.chords), 4)
+            window.undo_btn.invoke()
+            self.assertEqual(tuple(controller.session.state.chord_event_timings), before)
+            window.redo_btn.invoke()
+
+            active_style = controller.session.voice_leading_style
+            window.voice_lab_btn.invoke()
+            lab = modal()
+            rolls = list(widgets(lab, tk.Canvas))
+            self.assertEqual(len(rolls), 2)
+            self.assertTrue(all(roll.find_withtag("note") for roll in rolls))
+            selector = list(widgets(lab, ttk.Combobox))[1]
+            selector.current(1 if active_style.value != "STRICT_CLASSICAL" else 0)
+            selector.event_generate("<<ComboboxSelected>>")
+            root.update()
+            self.assertEqual(controller.session.voice_leading_style, active_style)
+            button(lab, "voice.lab.apply_b").invoke()
+            self.assertFalse(lab.winfo_exists())
+            self.assertNotEqual(controller.session.voice_leading_style, active_style)
+            window.undo_btn.invoke()
+            self.assertEqual(controller.session.voice_leading_style, active_style)
+            window.redo_btn.invoke()
+
+            window.export_btn.invoke()
+            export = modal()
+            for key in ("midi.options.duration.percent_95", "midi.options.format.type0"):
+                radio = next(
+                    widget for widget in widgets(export, tk.Radiobutton)
+                    if widget.cget("text") == i18n.translate(key)
+                )
+                radio.invoke()
+            with patch("app.ui.main_window.filedialog.asksaveasfilename", return_value=""):
+                button(export, "midi.options.export").invoke()
+            self.assertTrue(export.winfo_exists())
+            with patch("app.ui.main_window.filedialog.asksaveasfilename", return_value=self.midi_path):
+                button(export, "midi.options.export").invoke()
+            self.assertFalse(export.winfo_exists())
+            midi = MidiFile.from_bytes(Path(self.midi_path).read_bytes())
+            self.assertEqual(len(midi.tracks), 1)
+
+            path = Path(self.temp_dir) / "native.stepsproj"
+            expected_state = controller.session.state
+            with patch("app.ui.main_window.filedialog.asksaveasfilename", return_value=str(path)):
+                window.file_menu.invoke(2)
+            self.assertTrue(path.is_file())
+            self.assertFalse(controller.session.is_dirty)
+            window._on_close()
+
+            reopened_root = tk.Tk()
+            self.addCleanup(reopened_root.destroy)
+            reopened = StepsMainWindow(reopened_root, locale_manager=i18n)
+            with patch("app.ui.main_window.filedialog.askopenfilename", return_value=str(path)):
+                reopened.file_menu.invoke(1)
+            self.assertEqual(reopened.controller.session.state, expected_state)
+            errors.assert_not_called()
+            self.assertFalse(callback_errors)
+
+
 if __name__ == "__main__":
     unittest.main()

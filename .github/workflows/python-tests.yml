@@ -55,6 +55,7 @@ jobs:
         run: |
           xvfb-run -a python -B -m unittest \
             tests.test_desktop_app_entrypoint.TestDesktopAppEntrypoint.test_main_window_instantiation_and_wiring \
+            tests.test_desktop_app_entrypoint.TestDesktopAppEntrypoint.test_native_dialog_workflow \
             -v
 
   desktop-ui-platform-smoke:
@@ -78,7 +79,11 @@ jobs:
       - name: Smoke-test native Tk window and core workflow
         env:
           STEPS_REQUIRE_DESKTOP_TK: "1"
-        run: python -B -m unittest tests.test_desktop_app_entrypoint.TestDesktopAppEntrypoint.test_main_window_instantiation_and_wiring -v
+        run: >-
+          python -B -m unittest
+          tests.test_desktop_app_entrypoint.TestDesktopAppEntrypoint.test_main_window_instantiation_and_wiring
+          tests.test_desktop_app_entrypoint.TestDesktopAppEntrypoint.test_native_dialog_workflow
+          -v
 
   test:
     name: Unit Tests (Python ${{ matrix.python-version }})

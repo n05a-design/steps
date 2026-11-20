@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 APP_ROOT = ROOT / "app"
-UI_WIDGETS = {"Label", "Button", "Radiobutton", "Checkbutton", "Menu", "OptionMenu"}
+UI_WIDGETS = {"Label", "Button", "Radiobutton", "Checkbutton", "Menu", "OptionMenu", "create_button"}
 INVENTORY_CALLS = {"title", "showinfo", "showerror", "askyesno", "askyesnocancel"}
 
 

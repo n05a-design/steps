@@ -7,7 +7,7 @@ import tkinter as tk
 from typing import Callable, Literal
 
 from app.i18n import LocaleManager
-from app.ui.theme import ThemeManager
+from app.ui.theme import ThemeManager, create_button
 
 
 @dataclass(frozen=True)
@@ -54,6 +54,7 @@ class MidiExportOptionsDialog:
         self.window.transient(parent)
         self.window.configure(bg=colors.bg_window)
         self.window.protocol("WM_DELETE_WINDOW", self._close)
+        self.window.bind("<Escape>", lambda _event: self._close())
 
         container = tk.Frame(
             self.window,
@@ -113,7 +114,7 @@ class MidiExportOptionsDialog:
 
         buttons = tk.Frame(container, bg=colors.bg_window)
         buttons.pack(fill=tk.X, pady=(spacing.sm, 0))
-        tk.Button(
+        create_button(
             buttons,
             text=translate("midi.options.cancel"),
             command=self._close,
@@ -122,7 +123,7 @@ class MidiExportOptionsDialog:
             relief=tk.FLAT,
             padx=spacing.md,
         ).pack(side=tk.RIGHT)
-        tk.Button(
+        self._export_button = create_button(
             buttons,
             text=translate("midi.options.export"),
             command=self._export,
@@ -130,9 +131,11 @@ class MidiExportOptionsDialog:
             fg=colors.text_inverted,
             relief=tk.FLAT,
             padx=spacing.md,
-        ).pack(side=tk.RIGHT, padx=(0, spacing.sm))
+        )
+        self._export_button.pack(side=tk.RIGHT, padx=(0, spacing.sm))
 
         self.window.grab_set()
+        self._export_button.focus_set()
 
     def _add_group(
         self,

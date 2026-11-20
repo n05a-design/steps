@@ -22,7 +22,7 @@ from app.knowledge import get_reviewed_progression, list_reviewed_progressions
 from app.ui.midi_export_dialog import MidiExportOptions, MidiExportOptionsDialog
 from app.ui.reviewed_library_dialog import ReviewedProgressionLibraryDialog
 from app.ui.session_controller import ProgressionSessionController
-from app.ui.theme import ThemeManager, default_theme
+from app.ui.theme import ThemeManager, create_button, default_theme
 from app.ui.voice_leading_lab_dialog import (
     VOICE_LEADING_STYLE_OPTIONS,
     VoiceLeadingLabDialog,
@@ -68,6 +68,7 @@ class StepsMainWindow:
         self.i18n = locale_manager or LocaleManager()
         self._project_path: Optional[Path] = None
         self._next_recommendations = []
+        self._next_context = None
 
         self.root.title(self.i18n.translate("app.title"))
         self.root.geometry("1024x720")
@@ -121,6 +122,9 @@ class StepsMainWindow:
             )
         self.file_menu.add_cascade(label="", menu=self.reviewed_menu)
         self.menu_bar.add_cascade(label="", menu=self.file_menu)
+        self.tools_menu = tk.Menu(self.menu_bar, tearoff=False)
+        for action in (self._on_explore_next, self._on_open_voice_leading_lab, self._on_export_midi):
+            self.tools_menu.add_command(label="", command=action)
         self.settings_menu = tk.Menu(self.menu_bar, tearoff=False)
         self.language_menu = tk.Menu(self.settings_menu, tearoff=False)
         self.language_var = tk.StringVar(self.root, value=self.i18n.preference)
@@ -164,6 +168,9 @@ class StepsMainWindow:
                     self.reviewed_menu.entryconfigure(0, label=t("file.example.unavailable"))
         self.menu_bar.delete(0, tk.END)
         self.menu_bar.add_cascade(label=t("file.menu"), menu=self.file_menu)
+        self.menu_bar.add_cascade(label=t("tools.menu"), menu=self.tools_menu)
+        for index, key in enumerate(("next_chord.explore", "voice.lab.open", "midi.export")):
+            self.tools_menu.entryconfigure(index, label=t(key))
         self.menu_bar.add_cascade(label=t("settings.menu"), menu=self.settings_menu)
         self.settings_menu.entryconfigure(0, label=t("language.menu"))
         for index, key in enumerate(("language.system", "language.en", "language.de")):
@@ -313,12 +320,17 @@ class StepsMainWindow:
     def _on_save_project_as(self) -> bool:
         return self._save_project(save_as=True)
 
+    def _dialog_parent(self):
+        if isinstance(self.root, tk.Misc):
+            return self.root.grab_current() or self.root
+        return self.root
+
     def _save_project(self, save_as: bool) -> bool:
         path = None if save_as else self._project_path
         if path is None:
             title = self.controller.get_state_summary()["title"]
             selected = filedialog.asksaveasfilename(
-                parent=self.root,
+                parent=self._dialog_parent(),
                 title=self.i18n.translate("project.save.title"),
                 defaultextension=".stepsproj",
                 filetypes=(
@@ -337,7 +349,7 @@ class StepsMainWindow:
             messagebox.showerror(
                 self.i18n.translate("project.save.error.title"),
                 str(exc),
-                parent=self.root,
+                parent=self._dialog_parent(),
             )
             return False
 
@@ -351,7 +363,7 @@ class StepsMainWindow:
         choice = messagebox.askyesnocancel(
             self.i18n.translate("project.unsaved.title"),
             self.i18n.translate("project.unsaved.message"),
-            parent=self.root,
+            parent=self._dialog_parent(),
         )
         if choice is None:
             return False
@@ -451,7 +463,7 @@ class StepsMainWindow:
         self.chord_entry.pack(side=tk.LEFT, padx=sp.xs)
         self.chord_entry.insert(0, "Cmaj7")
 
-        self.add_btn = tk.Button(
+        self.add_btn = create_button(
             self.control_bar,
             text=self.i18n.translate("chord.add"),
             command=self._on_add_chord,
@@ -464,7 +476,7 @@ class StepsMainWindow:
 
         self.edit_bar = tk.Frame(self.work_area, bg=colors.bg_surface, padx=sp.sm)
         self.edit_bar.pack(fill=tk.X, pady=(0, sp.xs))
-        self.update_btn = tk.Button(
+        self.update_btn = create_button(
             self.edit_bar,
             text=self.i18n.translate("chord.update"),
             command=self._on_update_chord,
@@ -474,7 +486,7 @@ class StepsMainWindow:
             padx=sp.sm,
         )
         self.update_btn.pack(side=tk.LEFT, padx=sp.xs)
-        self.remove_btn = tk.Button(
+        self.remove_btn = create_button(
             self.edit_bar,
             text=self.i18n.translate("chord.remove"),
             command=self._on_remove_chord,
@@ -484,7 +496,7 @@ class StepsMainWindow:
             padx=sp.sm,
         )
         self.remove_btn.pack(side=tk.LEFT, padx=sp.xs)
-        self.move_up_btn = tk.Button(
+        self.move_up_btn = create_button(
             self.edit_bar,
             text=self.i18n.translate("chord.move_up"),
             command=lambda: self._on_move_chord(-1),
@@ -494,7 +506,7 @@ class StepsMainWindow:
             padx=sp.sm,
         )
         self.move_up_btn.pack(side=tk.LEFT, padx=(sp.md, sp.xs))
-        self.move_down_btn = tk.Button(
+        self.move_down_btn = create_button(
             self.edit_bar,
             text=self.i18n.translate("chord.move_down"),
             command=lambda: self._on_move_chord(1),
@@ -504,7 +516,7 @@ class StepsMainWindow:
             padx=sp.sm,
         )
         self.move_down_btn.pack(side=tk.LEFT, padx=sp.xs)
-        self.undo_btn = tk.Button(
+        self.undo_btn = create_button(
             self.edit_bar,
             text=self.i18n.translate("history.undo"),
             command=self._on_undo,
@@ -514,7 +526,7 @@ class StepsMainWindow:
             padx=sp.sm,
         )
         self.undo_btn.pack(side=tk.LEFT, padx=(sp.md, sp.xs))
-        self.redo_btn = tk.Button(
+        self.redo_btn = create_button(
             self.edit_bar,
             text=self.i18n.translate("history.redo"),
             command=self._on_redo,
@@ -613,12 +625,14 @@ class StepsMainWindow:
         )
         self.notation_de_btn.pack(side=tk.LEFT, padx=(0, sp.sm))
 
+        self.playback_bar = tk.Frame(self.work_area, bg=colors.bg_surface, padx=sp.sm)
+        self.playback_bar.pack(fill=tk.X, pady=(0, sp.xs))
         self.tempo_lbl = tk.Label(
-            self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
+            self.playback_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
         )
         self.tempo_lbl.pack(side=tk.LEFT, padx=(sp.md, sp.xs))
         self.tempo_entry = tk.Entry(
-            self.context_bar,
+            self.playback_bar,
             width=6,
             bg=colors.bg_window,
             fg=colors.text_primary,
@@ -629,11 +643,11 @@ class StepsMainWindow:
         self.tempo_entry.bind("<Return>", self._on_context_shortcut)
 
         self.meter_lbl = tk.Label(
-            self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
+            self.playback_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
         )
         self.meter_lbl.pack(side=tk.LEFT, padx=(sp.sm, sp.xs))
         self.meter_entry = tk.Entry(
-            self.context_bar,
+            self.playback_bar,
             width=5,
             bg=colors.bg_window,
             fg=colors.text_primary,
@@ -645,8 +659,8 @@ class StepsMainWindow:
         )
         self.meter_entry.bind("<Return>", self._on_context_shortcut)
 
-        self.context_btn = tk.Button(
-            self.context_bar,
+        self.context_btn = create_button(
+            self.playback_bar,
             text="",
             command=self._on_apply_context,
             bg=colors.bg_active,
@@ -657,14 +671,14 @@ class StepsMainWindow:
         self.context_btn.pack(side=tk.LEFT, padx=sp.xs)
 
         self.voice_style_lbl = tk.Label(
-            self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
+            self.playback_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
         )
         self.voice_style_lbl.pack(side=tk.LEFT, padx=(sp.md, sp.xs))
         self.voice_style_var = tk.StringVar(
             self.root, value=self.controller.session.voice_leading_style.value
         )
         self.voice_style_menu = tk.OptionMenu(
-            self.context_bar,
+            self.playback_bar,
             self.voice_style_var,
             *(style.value for style, _ in VOICE_LEADING_STYLE_OPTIONS),
             command=self._on_voice_style_change,
@@ -674,6 +688,7 @@ class StepsMainWindow:
             fg=colors.text_primary,
             activebackground=colors.bg_active,
             highlightthickness=0,
+            textvariable="",
         )
         self.voice_style_menu.pack(side=tk.LEFT, padx=(0, sp.sm))
 
@@ -707,7 +722,7 @@ class StepsMainWindow:
         self.event_duration_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.event_duration_entry.bind("<Return>", self._on_event_timing_shortcut)
 
-        self.event_timing_btn = tk.Button(
+        self.event_timing_btn = create_button(
             self.timing_bar,
             text="",
             command=self._on_apply_event_timing,
@@ -719,7 +734,7 @@ class StepsMainWindow:
         self.event_timing_btn.pack(side=tk.LEFT, padx=sp.xs)
 
         # Transpose Buttons
-        self.trans_down_btn = tk.Button(
+        self.trans_down_btn = create_button(
             self.control_bar,
             text=self.i18n.translate("transpose.down"),
             command=lambda: self._on_transpose(-1),
@@ -730,7 +745,7 @@ class StepsMainWindow:
         )
         self.trans_down_btn.pack(side=tk.LEFT, padx=sp.xs)
 
-        self.trans_up_btn = tk.Button(
+        self.trans_up_btn = create_button(
             self.control_bar,
             text=self.i18n.translate("transpose.up"),
             command=lambda: self._on_transpose(1),
@@ -742,7 +757,7 @@ class StepsMainWindow:
         self.trans_up_btn.pack(side=tk.LEFT, padx=sp.xs)
 
         # MIDI Export Button
-        self.export_btn = tk.Button(
+        self.export_btn = create_button(
             self.control_bar,
             text=self.i18n.translate("midi.export"),
             command=self._on_export_midi,
@@ -766,7 +781,8 @@ class StepsMainWindow:
             selectforeground=colors.text_inverted,
             relief=tk.FLAT,
             bd=0,
-            activestyle="none"
+            activestyle="dotbox",
+            exportselection=False,
         )
         self.chord_listbox.pack(fill=tk.BOTH, expand=True, padx=sp.sm, pady=sp.sm)
         self.chord_listbox.bind("<<ListboxSelect>>", self._on_chord_selected)
@@ -789,7 +805,7 @@ class StepsMainWindow:
         )
         self.info_lbl.pack(side=tk.LEFT)
 
-        self.explore_next_btn = tk.Button(
+        self.explore_next_btn = create_button(
             self.info_bar,
             text="",
             command=self._on_explore_next,
@@ -799,7 +815,7 @@ class StepsMainWindow:
             padx=sp.sm,
         )
         self.explore_next_btn.pack(side=tk.RIGHT, padx=sp.xs)
-        self.apply_next_btn = tk.Button(
+        self.apply_next_btn = create_button(
             self.info_bar,
             text="",
             command=self._on_apply_next_recommendation,
@@ -810,7 +826,7 @@ class StepsMainWindow:
         )
         self.apply_next_btn.pack(side=tk.RIGHT, padx=sp.xs)
         self.apply_next_btn.configure(state=tk.DISABLED)
-        self.voice_lab_btn = tk.Button(
+        self.voice_lab_btn = create_button(
             self.info_bar,
             text="",
             command=self._on_open_voice_leading_lab,
@@ -836,8 +852,6 @@ class StepsMainWindow:
             padx=sp.md,
             pady=sp.md
         )
-        self.detail_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-
         self.next_frame = tk.Frame(
             self.detail_frame,
             width=300,
@@ -845,6 +859,12 @@ class StepsMainWindow:
             bd=0,
         )
         self.next_frame.pack(side=tk.RIGHT, fill=tk.Y, padx=(0, sp.sm), pady=sp.sm)
+        detail_scrollbar = tk.Scrollbar(
+            self.detail_frame, orient=tk.VERTICAL, command=self.detail_text.yview
+        )
+        self.detail_text.configure(yscrollcommand=detail_scrollbar.set)
+        detail_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        self.detail_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         self.next_candidates_lbl = tk.Label(
             self.next_frame,
             text="",
@@ -861,14 +881,21 @@ class StepsMainWindow:
             selectbackground=colors.harmonic_tonic,
             selectforeground=colors.text_inverted,
             relief=tk.FLAT,
-            activestyle="none",
+            activestyle="dotbox",
+            exportselection=False,
             height=8,
         )
-        self.next_candidates_list.pack(fill=tk.BOTH, expand=True, padx=sp.sm)
+        candidate_scrollbar = tk.Scrollbar(
+            self.next_frame, orient=tk.VERTICAL, command=self.next_candidates_list.yview
+        )
+        self.next_candidates_list.configure(yscrollcommand=candidate_scrollbar.set)
+        candidate_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        self.next_candidates_list.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=sp.sm)
         self.next_candidates_list.bind(
             "<<ListboxSelect>>",
             self._on_next_recommendation_selected,
         )
+        self.next_candidates_list.bind("<Return>", self._on_apply_next_recommendation)
 
     def _refresh_all(
         self,
@@ -876,6 +903,7 @@ class StepsMainWindow:
         selected_index: Optional[int] = None,
     ) -> None:
         """Synchronizes UI state with the ProgressionSessionController."""
+        self._clear_next_recommendations()
         state = self.controller.get_state_summary()
         selected = self.chord_listbox.curselection() if preserve_selection else ()
         self._update_window_title()
@@ -1311,12 +1339,14 @@ class StepsMainWindow:
 
     def _clear_next_recommendations(self) -> None:
         self._next_recommendations = []
+        self._next_context = None
         if hasattr(self, "next_candidates_list"):
             self.next_candidates_list.delete(0, tk.END)
         if hasattr(self, "apply_next_btn"):
             self.apply_next_btn.configure(state=tk.DISABLED)
 
     def _on_explore_next(self) -> None:
+        self._clear_next_recommendations()
         index = self._selected_chord_index()
         if index is None:
             messagebox.showerror(
@@ -1336,7 +1366,7 @@ class StepsMainWindow:
             return
 
         self._next_recommendations = list(recommendations)
-        self.next_candidates_list.delete(0, tk.END)
+        self._next_context = (index, self.controller.revision)
         for recommendation in recommendations:
             relation = self.i18n.translate(
                 f"next_chord.relation.{recommendation.relation_type}",
@@ -1345,13 +1375,14 @@ class StepsMainWindow:
                 tk.END,
                 f"{recommendation.candidate_symbol} — {relation}",
             )
-        self.apply_next_btn.configure(state=tk.DISABLED)
         self._display_next_recommendations()
 
     def _on_next_recommendation_selected(self, _event) -> None:
         selection = self.next_candidates_list.curselection()
         if not selection or not 0 <= selection[0] < len(self._next_recommendations):
             self.apply_next_btn.configure(state=tk.DISABLED)
+            if self._next_recommendations:
+                self._display_next_recommendations()
             return
         self.apply_next_btn.configure(state=tk.NORMAL)
         self._display_next_recommendations(selection[0])
@@ -1364,21 +1395,25 @@ class StepsMainWindow:
             f"{'=' * 50}\n"
             f"{self.i18n.translate('next_chord.disclaimer')}\n",
         )
-        for index, recommendation in enumerate(self._next_recommendations):
-            marker = "› " if selected_index == index else "• "
-            relation = self.i18n.translate(
-                f"next_chord.relation.{recommendation.relation_type}",
-            )
+        if selected_index is None:
             self.detail_text.insert(
-                tk.END,
-                f"\n{marker}{recommendation.candidate_symbol}\n"
-                f"{self.i18n.translate('next_chord.relation')}: {relation}\n"
-                f"{self.i18n.translate('next_chord.framework')}: {recommendation.framework}\n"
-                f"{self.i18n.translate('next_chord.source')}: {recommendation.source_id}\n"
-                f"{recommendation.explanation}\n",
+                tk.END, f"\n{self.i18n.translate('next_chord.inspect')}\n"
             )
+            return
+        recommendation = self._next_recommendations[selected_index]
+        translate = self.i18n.translate
+        relation = translate(f"next_chord.relation.{recommendation.relation_type}")
+        reason = translate(f"next_chord.reason.{recommendation.relation_type}")
+        self.detail_text.insert(
+            tk.END,
+            f"\n{recommendation.candidate_symbol} — {relation}\n"
+            f"{reason}\n"
+            f"{translate('next_chord.framework')}: {recommendation.framework}\n"
+            f"{translate('next_chord.source')}: {recommendation.source_id}\n"
+            f"\n{translate('next_chord.original')}\n{recommendation.explanation}\n",
+        )
 
-    def _on_apply_next_recommendation(self) -> None:
+    def _on_apply_next_recommendation(self, _event=None) -> None:
         chord_index = self._selected_chord_index()
         selection = self.next_candidates_list.curselection()
         if chord_index is None or not selection:
@@ -1397,10 +1432,18 @@ class StepsMainWindow:
             )
             return
         recommendation = self._next_recommendations[recommendation_index]
+        revision = self.controller.revision
+        if self._next_context != (chord_index, revision):
+            self._clear_next_recommendations()
+            self.detail_text.delete("1.0", tk.END)
+            self.detail_text.insert(tk.END, self.i18n.translate("next_chord.stale"))
+            return
         try:
             applied = self.controller.apply_next_recommendation(
                 chord_index,
                 recommendation.candidate_symbol,
+                selected=recommendation,
+                expected_revision=revision,
             )
         except (IndexError, MusicTheoryError, ValueError) as exc:
             messagebox.showerror(
@@ -1426,7 +1469,7 @@ class StepsMainWindow:
 
     def _export_midi_with_options(self, options: MidiExportOptions) -> bool:
         selected = filedialog.asksaveasfilename(
-            parent=self.root,
+            parent=self._dialog_parent(),
             title=self.i18n.translate("midi.save.title"),
             defaultextension=".mid",
             filetypes=((self.i18n.translate("midi.filetype"), "*.mid *.midi"),),
@@ -1445,11 +1488,12 @@ class StepsMainWindow:
             messagebox.showerror(
                 self.i18n.translate("midi.export.error.title"),
                 str(exc),
-                parent=self.root,
+                parent=self._dialog_parent(),
             )
             return False
         self.detail_text.insert(
             tk.END,
             "\n\n" + self.i18n.translate("midi.export.success", path=output_path.resolve()),
         )
+        self.detail_text.see(tk.END)
         return True

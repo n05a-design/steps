@@ -6,7 +6,7 @@ import tkinter as tk
 from typing import Callable, Iterable
 
 from app.i18n import LocaleManager
-from app.ui.theme import ThemeManager
+from app.ui.theme import ThemeManager, create_button
 from src.steps.progression.engine import ReviewedProgression
 
 
@@ -131,6 +131,7 @@ class ReviewedProgressionLibraryDialog:
         self.window.transient(parent)
         self.window.configure(bg=colors.bg_window)
         self.window.protocol("WM_DELETE_WINDOW", self._close)
+        self.window.bind("<Escape>", lambda _event: self._close())
 
         container = tk.Frame(self.window, bg=colors.bg_window, padx=spacing.md, pady=spacing.md)
         container.pack(fill=tk.BOTH, expand=True)
@@ -162,6 +163,7 @@ class ReviewedProgressionLibraryDialog:
             font=(typography.font_family_sans, typography.size_md),
         )
         self._search_entry.pack(side=tk.LEFT, fill=tk.X, expand=True)
+        self._search_entry.bind("<Down>", self._focus_results)
         self._search_var.trace_add("write", self._refresh_list)
 
         body = tk.PanedWindow(
@@ -223,8 +225,8 @@ class ReviewedProgressionLibraryDialog:
         body.add(preview_frame, minsize=380)
 
         buttons = tk.Frame(container, bg=colors.bg_window)
-        buttons.pack(fill=tk.X, pady=(spacing.sm, 0))
-        tk.Button(
+        buttons.pack(side=tk.BOTTOM, fill=tk.X, pady=(spacing.sm, 0), before=body)
+        create_button(
             buttons,
             text=translate("library.close"),
             command=self._close,
@@ -233,7 +235,7 @@ class ReviewedProgressionLibraryDialog:
             relief=tk.FLAT,
             padx=spacing.md,
         ).pack(side=tk.RIGHT)
-        self._load_button = tk.Button(
+        self._load_button = create_button(
             buttons,
             text=translate("library.load"),
             command=self._load_selected,
@@ -259,22 +261,16 @@ class ReviewedProgressionLibraryDialog:
         self._listbox.delete(0, tk.END)
         for example in self._visible_examples:
             progression = example.progression
-            self._listbox.insert(
-                tk.END,
-                f"{progression.name} — {progression.chords_str}",
-            )
-        if self._visible_examples:
-            self._selected = None
-            self._load_button.configure(state=tk.DISABLED)
-            self._set_preview(self._i18n.translate("library.select_prompt"))
-        else:
-            self._selected = None
-            self._load_button.configure(state=tk.DISABLED)
+            self._listbox.insert(tk.END, progression.name)
+        if len(self._visible_examples) == 1:
+            self._listbox.selection_set(0)
+        self._select_current()
+        if not self._visible_examples:
             self._set_preview(self._i18n.translate("library.no_results"))
 
     def _select_current(self, _event: object | None = None) -> None:
         selection = self._listbox.curselection()
-        if not selection:
+        if not selection or selection[0] >= len(self._visible_examples):
             self._selected = None
             self._load_button.configure(state=tk.DISABLED)
             self._set_preview(self._i18n.translate("library.select_prompt"))
@@ -284,6 +280,15 @@ class ReviewedProgressionLibraryDialog:
         self._set_preview(
             format_reviewed_progression(self._selected, self._i18n.translate)
         )
+
+    def _focus_results(self, _event: object) -> str:
+        if self._visible_examples:
+            if not self._listbox.curselection():
+                self._listbox.selection_set(0)
+                self._listbox.activate(0)
+                self._select_current()
+            self._listbox.focus_set()
+        return "break"
 
     def _set_preview(self, text: str) -> None:
         self._preview.configure(state=tk.NORMAL)

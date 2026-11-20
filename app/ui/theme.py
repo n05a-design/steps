@@ -10,9 +10,25 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Literal
+from typing import Literal, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    import tkinter as tk
+    from tkinter import ttk
 
 TOKENS_PATH = Path(__file__).resolve().parents[2] / "design/tokens/tokens.json"
+
+
+def create_button(parent: tk.Misc, **options) -> tk.Button | ttk.Button:
+    """Use the native Aqua palette where Tk ignores classic button backgrounds."""
+    import tkinter as tk
+    from tkinter import ttk
+
+    if parent.tk.call("tk", "windowingsystem") == "aqua":
+        for option in ("bg", "fg", "relief", "padx", "pady"):
+            options.pop(option, None)
+        return ttk.Button(parent, **options)
+    return tk.Button(parent, **options)
 
 
 @dataclass(frozen=True)
