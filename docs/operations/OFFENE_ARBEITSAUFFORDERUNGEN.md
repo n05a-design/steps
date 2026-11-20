@@ -43,7 +43,7 @@ New active IDs continue after the legacy range. Dated plans and audit reports re
 
 ### OA-0038: Complete desktop MVP acceptance
 - **Kategorie:** Produkt / Desktop · **Status:** `OPEN` · **Ursprung:** EXPLICIT
-- **Beschreibung:** Continue the desktop workflow toward owner-approved MVP acceptance. The 765-test pass and ADR-017 export checks do not replace independent DAW, native accessibility, platform, installer, or user acceptance.
+- **Beschreibung:** Continue the desktop workflow toward owner-approved MVP acceptance. The 791-test pass at `main` `e2faf276` and ADR-017 export checks do not replace independent DAW, native accessibility, platform, installer, or user acceptance.
 - **Quellen:** [Issue #151](https://github.com/n05a-design/steps/issues/151); [1.0 readiness contract](../product/V1.0.0_PRODUCT_CONTRACT.md); [handover audit](../handover/MASTER_UEBERGABE_2026-11-19.md)
 - **Abnahmekriterien:** Required human and platform checks are recorded for the approved scope; DAW imports are verified independently; owner decisions and release boundaries remain explicit.
 
