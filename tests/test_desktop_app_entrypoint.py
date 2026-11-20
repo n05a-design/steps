@@ -527,6 +527,17 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             zoom_selector.event_generate("<<ComboboxSelected>>")
             root.update()
             self.assertTrue(all(visible_ticks(roll) == overview for roll in rolls))
+            target_roll = rolls[1]
+            note = target_roll.find_withtag("event:2")[0]
+            x_start, y_note, x_end, _ = target_roll.coords(note)
+            target_roll.event_generate("<Button-1>", x=round((x_start + x_end) / 2), y=round(y_note))
+            root.update()
+            self.assertEqual(event_selector.current(), 2)
+            self.assertTrue(all(roll.coords("selected-event")[0] >= 28 for roll in rolls))
+            target_roll.event_generate("<Button-1>", x=1, y=1)
+            root.update()
+            self.assertEqual(event_selector.current(), 2)
+            self.assertEqual(controller.session.state, before_comparison)
             button(lab, "voice.lab.apply_b").invoke()
             self.assertFalse(lab.winfo_exists())
             self.assertNotEqual(controller.session.voice_leading_style, active_style)

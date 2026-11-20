@@ -38,6 +38,14 @@ class PianoRoll(tk.Canvas):
         self._colors = colors
         self._label_font = label_font
 
+    def event_at(self, x: int, y: int) -> int | None:
+        """Find the topmost note with a small pointer hit area."""
+        for item in reversed(self.find_overlapping(x - 3, y - 3, x + 3, y + 3)):
+            for tag in self.gettags(item):
+                if tag.startswith("event:"):
+                    return int(tag.removeprefix("event:"))
+        return None
+
     def draw(
         self,
         timings: Sequence[tuple[int, int]],
@@ -84,7 +92,7 @@ class PianoRoll(tk.Canvas):
         for start, _ in timings:
             if viewport.start <= start < viewport.end:
                 self.create_line(x(start), top, x(start), bottom, fill=colors.border)
-        for (start, duration), notes in zip(timings, midi_notes, strict=True):
+        for index, ((start, duration), notes) in enumerate(zip(timings, midi_notes, strict=True)):
             event = viewport.clip_event(start, duration)
             if event is None:
                 continue
@@ -96,6 +104,6 @@ class PianoRoll(tk.Canvas):
                 self.create_line(
                     x_left, y(note), x_right, y(note), width=3 if note == bass else 2,
                     fill=colors.harmonic_tonic if note == bass else colors.text_primary,
-                    tags=("note",),
+                    tags=("note", f"event:{index}"),
                 )
 

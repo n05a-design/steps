@@ -182,6 +182,7 @@ class VoiceLeadingLabDialog(ModalDialog):
             canvas = PianoRoll(panel, colors, self._font)
             canvas.pack(fill=tk.X)
             canvas.bind("<Configure>", lambda _event, index=side: self._draw_roll(index))
+            canvas.bind("<Button-1>", lambda event, roll=canvas: self._select_note(roll, event))
             self._canvases.append(canvas)
 
             text_frame = tk.Frame(panel, bg=colors.bg_surface)
@@ -238,10 +239,21 @@ class VoiceLeadingLabDialog(ModalDialog):
         else:
             self._event_selector.set("")
 
+    def _redraw_rolls(self) -> None:
+        for index in range(len(self._canvases)):
+            self._draw_roll(index)
+
     def _on_view_change(self, _event: tk.Event) -> None:
         if not self._refresh_changed_project():
-            self._draw_roll(0)
-            self._draw_roll(1)
+            self._redraw_rolls()
+
+    def _select_note(self, roll: PianoRoll, event: tk.Event) -> None:
+        if self._refresh_changed_project():
+            return
+        selected = roll.event_at(event.x, event.y)
+        if selected is not None and selected != self._event_selector.current():
+            self._event_selector.current(selected)
+            self._redraw_rolls()
 
     def _select_style(self, side: int) -> None:
         if not self._refresh_changed_project():
@@ -273,8 +285,7 @@ class VoiceLeadingLabDialog(ModalDialog):
         preview.delete("1.0", tk.END)
         preview.insert("1.0", text)
         preview.configure(state=tk.DISABLED)
-        for index in range(len(self._canvases)):
-            self._draw_roll(index)
+        self._redraw_rolls()
 
     def _draw_roll(self, side: int) -> None:
         canvas = self._canvases[side]

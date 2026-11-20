@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Das Stimmführungslabor markiert das ausgewählte Akkordereignis in beiden Piano-Rolls. Die Auswahl erfolgt über das Ausklappfeld oder per Klick auf eine Note. Der gemeinsame Zeitzoom zeigt die Übersicht oder einen Ausschnitt auf der absoluten Tick-Achse.
+
 - Das Stimmführungslabor zeigt pro Stil den MIDI-Tonumfang und pro Akkordwechsel die vorzeichenbehaftete Halbtonbewegung jeder vergleichbaren Stimme.
 
 - Quellen und Freigabebelege des ausgewählten Bibliotheksbeispiels lassen sich über ein per Tastatur erreichbares Menü im Standardbrowser öffnen.
