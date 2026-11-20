@@ -6,6 +6,7 @@ from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 from app.i18n import LocaleManager
+from app.ui.midi_export_dialog import MidiExportOptions
 from app.ui.session_controller import ProgressionSessionController
 
 try:
@@ -53,6 +54,7 @@ class FakeController:
         self.saved_paths = []
         self.loaded_paths = []
         self.exported_paths = []
+        self.export_options = []
         self.new_project_calls = 0
         self.save_error = None
         self.load_error = None
@@ -103,11 +105,12 @@ class FakeController:
         self.voice_style_calls.append(style)
         self.session.voice_leading_style = SimpleNamespace(value=str(style).upper())
 
-    def export_midi(self, path):
+    def export_midi(self, path, **options):
         if self.export_error:
             raise self.export_error
         output_path = Path(path)
         self.exported_paths.append(output_path)
+        self.export_options.append(options)
         return output_path
 
 
@@ -118,6 +121,7 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.window.root = FakeRoot()
         self.window.controller = FakeController()
         self.window.i18n = LocaleManager(preference="en")
+        self.window.theme = Mock()
         self.window._project_path = None
         self.window._refresh_all = Mock()
         self.window.detail_text = Mock()
@@ -131,6 +135,26 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.window.event_start_lbl = Mock()
         self.window.event_duration_lbl = Mock()
         self.window._load_context_controls = Mock()
+
+    def test_reviewed_library_opens_without_mutating_current_project(self):
+        reviewed = SimpleNamespace(progression=SimpleNamespace(prog_id="PROG-001"))
+        self.window._reviewed_examples = (reviewed,)
+
+        with patch(
+            "app.ui.main_window.ReviewedProgressionLibraryDialog"
+        ) as dialog_class:
+            result = self.window._on_browse_reviewed_library()
+
+        self.assertIs(result, dialog_class.return_value)
+        dialog_class.assert_called_once_with(
+            parent=self.window.root,
+            examples=(reviewed,),
+            i18n=self.window.i18n,
+            theme=self.window.theme,
+            on_load=self.window._on_new_from_example,
+        )
+        self.assertEqual(self.window.controller.session.state.chords, ["C", "G", "Am", "F"])
+        self.assertEqual(self.window.controller.reviewed_calls, [])
 
     def test_window_icon_failure_is_logged_without_blocking_startup(self):
         root = Mock()
@@ -341,7 +365,7 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         }
         self.window._localize_voice_style_menu = Mock()
 
-        self.window._on_voice_style_change("STRICT_CLASSICAL")
+        self.assertTrue(self.window._on_voice_style_change("STRICT_CLASSICAL"))
 
         self.assertEqual(
             self.window.controller.voice_style_calls,
@@ -383,19 +407,24 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.window.chord_listbox = Mock()
         self.window.chord_listbox.curselection.return_value = (1,)
         self.window.next_candidates_list = Mock()
-        self.window.next_candidates_list.curselection.return_value = (0,)
+        self.window.next_candidates_list.curselection.return_value = ()
         self.window.apply_next_btn = Mock()
         self.window.detail_text = Mock()
 
         self.window._on_explore_next()
         recommendations = self.window._next_recommendations
         self.assertTrue(recommendations)
+        self.assertEqual(
+            self.window.apply_next_btn.configure.call_args.kwargs["state"],
+            "disabled",
+        )
         candidate_index = next(
             index
             for index, recommendation in enumerate(recommendations)
             if recommendation.candidate_symbol == "C"
         )
         self.window.next_candidates_list.curselection.return_value = (candidate_index,)
+        self.window._on_next_recommendation_selected(None)
 
         self.window._on_apply_next_recommendation()
 
@@ -412,6 +441,25 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.assertEqual(
             self.window.controller.session.chords,
             ["C", "G", "C", "Am", "F"],
+        )
+
+    def test_next_chord_apply_requires_a_valid_candidate_selection(self):
+        self.window._next_recommendations = [object()]
+        self.window.next_candidates_list = Mock()
+        self.window.apply_next_btn = Mock()
+
+        self.window.next_candidates_list.curselection.return_value = ()
+        self.window._on_next_recommendation_selected(None)
+        self.assertEqual(
+            self.window.apply_next_btn.configure.call_args.kwargs["state"],
+            "disabled",
+        )
+
+        self.window.next_candidates_list.curselection.return_value = (1,)
+        self.window._on_next_recommendation_selected(None)
+        self.assertEqual(
+            self.window.apply_next_btn.configure.call_args.kwargs["state"],
+            "disabled",
         )
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/fail.stepsproj")
@@ -562,18 +610,49 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         details = self.window.detail_text.insert.call_args.args[1]
         self.assertIn("scale calculation failed", details)
 
+    def test_export_opens_options_dialog_without_exporting(self):
+        with patch("app.ui.main_window.MidiExportOptionsDialog") as dialog_class:
+            result = self.window._on_export_midi()
+
+        self.assertIs(result, dialog_class.return_value)
+        dialog_class.assert_called_once_with(
+            parent=self.window.root,
+            i18n=self.window.i18n,
+            theme=self.window.theme,
+            on_export=self.window._export_midi_with_options,
+        )
+        self.assertEqual(self.window.controller.exported_paths, [])
+        self.window.detail_text.insert.assert_not_called()
+
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="")
     def test_cancel_midi_export_does_not_call_controller(self, choose_path):
-        self.window._on_export_midi()
+        self.assertFalse(
+            self.window._export_midi_with_options(MidiExportOptions())
+        )
 
         self.assertEqual(self.window.controller.exported_paths, [])
         self.window.detail_text.insert.assert_not_called()
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/output.mid")
     def test_midi_export_uses_selected_path_and_confirms_success(self, choose_path):
-        self.window._on_export_midi()
+        options = MidiExportOptions(
+            voicing_type="ROOTLESS",
+            note_duration_mode="PERCENT_95",
+            smf_format=0,
+        )
+        self.assertTrue(self.window._export_midi_with_options(options))
 
         self.assertEqual(self.window.controller.exported_paths, [Path("/tmp/output.mid")])
+        self.assertEqual(
+            self.window.controller.export_options,
+            [
+                {
+                    "voicing_type": "ROOTLESS",
+                    "note_duration_mode": "PERCENT_95",
+                    "smf_format": 0,
+                }
+            ],
+        )
         self.window.detail_text.insert.assert_called_once()
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/output.mid")
@@ -581,7 +660,23 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
     def test_midi_export_error_is_visible(self, show_error, choose_path):
         self.window.controller.export_error = OSError("disk full")
 
-        self.window._on_export_midi()
+        self.assertFalse(
+            self.window._export_midi_with_options(MidiExportOptions())
+        )
+
+        show_error.assert_called_once()
+        self.window.detail_text.insert.assert_not_called()
+
+    @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/output.mid")
+    @patch("app.ui.main_window.messagebox.showerror")
+    def test_invalid_voicing_error_is_visible(self, show_error, choose_path):
+        self.window.controller.export_error = ValueError("ROOTLESS needs four voices")
+
+        self.assertFalse(
+            self.window._export_midi_with_options(
+                MidiExportOptions(voicing_type="ROOTLESS")
+            )
+        )
 
         show_error.assert_called_once()
         self.window.detail_text.insert.assert_not_called()

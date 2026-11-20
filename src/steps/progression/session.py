@@ -467,16 +467,23 @@ class ProgressionSession:
     def analyze_progression(
         self,
         style: Optional[Union[str, VoiceLeadingStyle]] = None,
+        voicing_style: Optional[Union[str, VoiceLeadingStyle]] = None,
     ) -> List[DegreeAnalysis]:
         """
         Performs Roman numeral analysis and calculates adjacent voice-leading
         distances and parallel motion warnings according to the configured
-        or specified voice leading style.
+        or specified diagnostic style. A separate voicing style can be supplied
+        when comparing generated candidates.
         """
         active_style = self.voice_leading_style if style is None else (
             style if isinstance(style, VoiceLeadingStyle) else VoiceLeadingStyle(str(style).upper())
         )
-        voicings = self.get_voicings("CLOSE")
+        generation_style = self.voice_leading_style if voicing_style is None else (
+            voicing_style
+            if isinstance(voicing_style, VoiceLeadingStyle)
+            else VoiceLeadingStyle(str(voicing_style).upper())
+        )
+        voicings = self.get_voicings("CLOSE", style=generation_style)
         analyses: List[DegreeAnalysis] = []
         
         # Roman numeral mapping map (common degrees)
@@ -1006,7 +1013,14 @@ class ProgressionSession:
         )
         self._undo_stack = UndoStack[SessionState](new_state, max_depth=50)
 
-    def export_midi_file(self, file_path: Path | str) -> Path:
+    def export_midi_file(
+        self,
+        file_path: Path | str,
+        *,
+        voicing_type: Literal["CLOSE", "DROP2", "ROOTLESS"] = "CLOSE",
+        note_duration_mode: Literal["FIXED_GAP", "PERCENT_95"] = "FIXED_GAP",
+        smf_format: Literal[0, 1] = 1,
+    ) -> Path:
         """Exports the active progression using the ADR-017 v0.1 MIDI contract."""
         key_spelling = parse_spelling(self.key_root, convention=self.convention)
         fifths_by_step = {"C": 0, "D": 2, "E": 4, "F": -1, "G": 1, "A": 3, "B": 5}
@@ -1029,4 +1043,7 @@ class ProgressionSession:
             is_minor_key=self.is_minor,
             convention=self.convention,
             event_timings=self.state.chord_event_timings,
+            voicing_type=voicing_type,
+            note_duration_mode=note_duration_mode,
+            smf_format=smf_format,
         )

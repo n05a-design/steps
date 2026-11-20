@@ -19,12 +19,17 @@ from typing import Optional
 from app.brand import apply_window_icon
 from app.i18n import LocaleManager
 from app.knowledge import get_reviewed_progression, list_reviewed_progressions
+from app.ui.midi_export_dialog import MidiExportOptions, MidiExportOptionsDialog
+from app.ui.reviewed_library_dialog import ReviewedProgressionLibraryDialog
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager, default_theme
+from app.ui.voice_leading_lab_dialog import (
+    VOICE_LEADING_STYLE_OPTIONS,
+    VoiceLeadingLabDialog,
+)
 from src.steps.midi.time import RationalMidiTime
 from src.steps.models.timeline import TimeSignature
 from src.steps.progression.reviewed import PublicationError
-from src.steps.progression.voice_leading import VoiceLeadingStyle
 from src.steps.storage.exceptions import StorageError
 from src.steps.theory.exceptions import MusicTheoryError
 
@@ -93,6 +98,9 @@ class StepsMainWindow:
             label="", command=self._on_save_project, accelerator=f"{shortcut}S"
         )
         self.file_menu.add_command(label="", command=self._on_save_project_as)
+        self.file_menu.add_command(
+            label="", command=self._on_browse_reviewed_library
+        )
         self.reviewed_menu = tk.Menu(self.file_menu, tearoff=False)
         try:
             self._reviewed_examples = list_reviewed_progressions()
@@ -146,7 +154,8 @@ class StepsMainWindow:
         self.file_menu.entryconfigure(2, label=t("file.save"))
         self.file_menu.entryconfigure(3, label=t("file.save_as"))
         if hasattr(self, "reviewed_menu"):
-            self.file_menu.entryconfigure(4, label=t("file.new_from_example"))
+            self.file_menu.entryconfigure(4, label=t("file.browse_reviewed"))
+            self.file_menu.entryconfigure(5, label=t("file.new_from_example"))
             if hasattr(self, "_reviewed_examples"):
                 if self._reviewed_examples:
                     for index, example in enumerate(self._reviewed_examples):
@@ -195,6 +204,8 @@ class StepsMainWindow:
             self.apply_next_btn.configure(text=t("next_chord.apply"))
         if hasattr(self, "next_candidates_lbl"):
             self.next_candidates_lbl.configure(text=t("next_chord.candidates"))
+        if hasattr(self, "voice_lab_btn"):
+            self.voice_lab_btn.configure(text=t("voice.lab.open"))
 
     def _on_language_change(self, preference: str) -> None:
         try:
@@ -268,6 +279,17 @@ class StepsMainWindow:
             parent=self.root,
         )
         return False
+
+    def _on_browse_reviewed_library(self) -> ReviewedProgressionLibraryDialog | bool:
+        if not self._reviewed_examples:
+            return self._on_reviewed_catalog_error()
+        return ReviewedProgressionLibraryDialog(
+            parent=self.root,
+            examples=self._reviewed_examples,
+            i18n=self.i18n,
+            theme=self.theme,
+            on_load=self._on_new_from_example,
+        )
 
     def _on_new_from_example(self, prog_id: str) -> bool:
         if not self._confirm_unsaved_changes():
@@ -644,10 +666,7 @@ class StepsMainWindow:
         self.voice_style_menu = tk.OptionMenu(
             self.context_bar,
             self.voice_style_var,
-            VoiceLeadingStyle.CONTEMPORARY_POP.value,
-            VoiceLeadingStyle.STRICT_CLASSICAL.value,
-            VoiceLeadingStyle.POWER_CHORDS.value,
-            VoiceLeadingStyle.QUARTAL_JAZZ.value,
+            *(style.value for style, _ in VOICE_LEADING_STYLE_OPTIONS),
             command=self._on_voice_style_change,
         )
         self.voice_style_menu.configure(
@@ -791,6 +810,16 @@ class StepsMainWindow:
         )
         self.apply_next_btn.pack(side=tk.RIGHT, padx=sp.xs)
         self.apply_next_btn.configure(state=tk.DISABLED)
+        self.voice_lab_btn = tk.Button(
+            self.info_bar,
+            text="",
+            command=self._on_open_voice_leading_lab,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            relief=tk.FLAT,
+            padx=sp.sm,
+        )
+        self.voice_lab_btn.pack(side=tk.RIGHT, padx=sp.xs)
 
         # Detail Content Frame
         self.detail_frame = tk.Frame(self.info_area, bg=colors.bg_window, bd=1, relief=tk.SOLID)
@@ -988,19 +1017,13 @@ class StepsMainWindow:
 
     def _localize_voice_style_menu(self) -> None:
         style_labels = {
-            VoiceLeadingStyle.CONTEMPORARY_POP.value: self.i18n.translate("voice.style.pop"),
-            VoiceLeadingStyle.STRICT_CLASSICAL.value: self.i18n.translate("voice.style.classical"),
-            VoiceLeadingStyle.POWER_CHORDS.value: self.i18n.translate("voice.style.power"),
-            VoiceLeadingStyle.QUARTAL_JAZZ.value: self.i18n.translate("voice.style.quartal"),
+            style.value: self.i18n.translate(label_key)
+            for style, label_key in VOICE_LEADING_STYLE_OPTIONS
         }
         menu = self.voice_style_menu["menu"]
         menu.delete(0, tk.END)
-        for value in (
-            VoiceLeadingStyle.CONTEMPORARY_POP.value,
-            VoiceLeadingStyle.STRICT_CLASSICAL.value,
-            VoiceLeadingStyle.POWER_CHORDS.value,
-            VoiceLeadingStyle.QUARTAL_JAZZ.value,
-        ):
+        for style, _label_key in VOICE_LEADING_STYLE_OPTIONS:
+            value = style.value
             menu.add_radiobutton(
                 label=style_labels[value],
                 value=value,
@@ -1010,7 +1033,16 @@ class StepsMainWindow:
         selected = self.voice_style_var.get()
         self.voice_style_menu.configure(text=style_labels.get(selected, selected))
 
-    def _on_voice_style_change(self, style: str) -> None:
+    def _on_open_voice_leading_lab(self) -> VoiceLeadingLabDialog:
+        return VoiceLeadingLabDialog(
+            parent=self.root,
+            controller=self.controller,
+            i18n=self.i18n,
+            theme=self.theme,
+            on_apply=self._on_voice_style_change,
+        )
+
+    def _on_voice_style_change(self, style: str) -> bool:
         try:
             self.controller.set_voice_leading_style(style)
         except (ValueError, MusicTheoryError) as exc:
@@ -1020,9 +1052,10 @@ class StepsMainWindow:
                 self.i18n.translate("voice.style.error.message", error=exc),
                 parent=self.root,
             )
-            return
+            return False
         self._localize_voice_style_menu()
         self._refresh_all(preserve_selection=True)
+        return True
 
     def _on_apply_context(self) -> None:
         title = self.project_title_entry.get().strip()
@@ -1312,14 +1345,12 @@ class StepsMainWindow:
                 tk.END,
                 f"{recommendation.candidate_symbol} — {relation}",
             )
-        self.apply_next_btn.configure(
-            state=tk.NORMAL if recommendations else tk.DISABLED
-        )
+        self.apply_next_btn.configure(state=tk.DISABLED)
         self._display_next_recommendations()
 
     def _on_next_recommendation_selected(self, _event) -> None:
         selection = self.next_candidates_list.curselection()
-        if not selection:
+        if not selection or not 0 <= selection[0] < len(self._next_recommendations):
             self.apply_next_btn.configure(state=tk.DISABLED)
             return
         self.apply_next_btn.configure(state=tk.NORMAL)
@@ -1385,7 +1416,15 @@ class StepsMainWindow:
             f"\n\n{self.i18n.translate('next_chord.applied', chord=applied.candidate_symbol)}",
         )
 
-    def _on_export_midi(self) -> None:
+    def _on_export_midi(self) -> MidiExportOptionsDialog:
+        return MidiExportOptionsDialog(
+            parent=self.root,
+            i18n=self.i18n,
+            theme=self.theme,
+            on_export=self._export_midi_with_options,
+        )
+
+    def _export_midi_with_options(self, options: MidiExportOptions) -> bool:
         selected = filedialog.asksaveasfilename(
             parent=self.root,
             title=self.i18n.translate("midi.save.title"),
@@ -1394,17 +1433,23 @@ class StepsMainWindow:
             initialfile="steps_progression_export.mid",
         )
         if not selected:
-            return
+            return False
         try:
-            output_path = self.controller.export_midi(selected)
+            output_path = self.controller.export_midi(
+                selected,
+                voicing_type=options.voicing_type,
+                note_duration_mode=options.note_duration_mode,
+                smf_format=options.smf_format,
+            )
         except (OSError, ValueError, MusicTheoryError) as exc:
             messagebox.showerror(
                 self.i18n.translate("midi.export.error.title"),
                 str(exc),
                 parent=self.root,
             )
-            return
+            return False
         self.detail_text.insert(
             tk.END,
             "\n\n" + self.i18n.translate("midi.export.success", path=output_path.resolve()),
         )
+        return True

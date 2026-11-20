@@ -45,6 +45,7 @@ class TestPackageArtifacts(unittest.TestCase):
                 names = set(wheel.namelist())
                 self.assertIn("app/locales/en.json", names)
                 self.assertIn("app/locales/de.json", names)
+                self.assertIn("app/ui/midi_export_dialog.py", names)
                 self.assertTrue(
                     any(name.startswith("app/assets/brand/") for name in names)
                 )

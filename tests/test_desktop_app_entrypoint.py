@@ -21,6 +21,7 @@ from unittest.mock import patch
 
 from app.main import main
 from app.i18n import LocaleManager
+from app.ui.midi_export_dialog import MidiExportOptions
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager
 from src.steps.midi import MidiFile
@@ -204,8 +205,9 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             with patch(
                 "app.ui.main_window.filedialog.asksaveasfilename",
                 return_value=self.midi_path,
-            ):
+            ), patch("app.ui.main_window.MidiExportOptionsDialog") as export_dialog:
                 window.export_btn.invoke()
+                export_dialog.call_args.kwargs["on_export"](MidiExportOptions())
             midi_path = Path(self.midi_path)
             self.assertTrue(midi_path.is_file())
             parsed_midi = MidiFile.from_bytes(midi_path.read_bytes())

@@ -8,6 +8,7 @@ Follows AGENTS.md Rule 4 (Domain boundary separation).
 from __future__ import annotations
 
 import logging
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Literal, Optional, Tuple, Union
 
@@ -20,6 +21,15 @@ from src.steps.progression.session import (
 from src.steps.progression.engine import ReviewedProgression
 
 logger = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class VoiceLeadingStyleProfile:
+    """Non-mutating summary of one style's progression analysis."""
+
+    style: VoiceLeadingStyle
+    transitions: Tuple[DegreeAnalysis, ...]
+    total_movement: int
 
 
 class ProgressionSessionController:
@@ -75,6 +85,31 @@ class ProgressionSessionController:
                 for a in analysis
             ]
         }
+
+    def analyze_voice_leading_style(
+        self,
+        style: Union[str, VoiceLeadingStyle],
+    ) -> VoiceLeadingStyleProfile:
+        """Analyze a style without changing the project's selected style."""
+        resolved = (
+            style
+            if isinstance(style, VoiceLeadingStyle)
+            else VoiceLeadingStyle(str(style).upper())
+        )
+        transitions = tuple(
+            self._session.analyze_progression(
+                style=resolved,
+                voicing_style=resolved,
+            )
+        )
+        total_movement = sum(
+            item.semitone_distance_to_next or 0 for item in transitions
+        )
+        return VoiceLeadingStyleProfile(
+            style=resolved,
+            transitions=transitions,
+            total_movement=total_movement,
+        )
 
     def get_state_summary(self) -> Dict[str, Any]:
         """Summary dictionary for status bars, logs and headless runners."""
@@ -177,8 +212,20 @@ class ProgressionSessionController:
         )
         self._notify()
 
-    def export_midi(self, file_path: Path | str) -> Path:
-        return self._session.export_midi_file(file_path)
+    def export_midi(
+        self,
+        file_path: Path | str,
+        *,
+        voicing_type: Literal["CLOSE", "DROP2", "ROOTLESS"] = "CLOSE",
+        note_duration_mode: Literal["FIXED_GAP", "PERCENT_95"] = "FIXED_GAP",
+        smf_format: Literal[0, 1] = 1,
+    ) -> Path:
+        return self._session.export_midi_file(
+            file_path,
+            voicing_type=voicing_type,
+            note_duration_mode=note_duration_mode,
+            smf_format=smf_format,
+        )
 
     def explore_next(self, index: int) -> List[ChordRecommendation]:
         return self._session.explore_next_chords(index)
