@@ -1,8 +1,8 @@
 # STEPS Open Work Register
 
 **Authority:** This is the single active, versioned register for STEPS tasks and owner decisions.
-**Effective date:** 2026-11-19.
-**Source baseline:** GitHub `main` at `3aadd5302d4bf3341235735bcab6f9a8861aa9c0`.
+**Effective date:** 2026-11-20.
+**Source baseline:** GitHub `main` at `e2faf276adf6d65caf81fe28f38521a176e0c283`.
 **Operating model:** One repository backlog, following Glide's single-plan model. GitHub issues provide linked discussion/evidence; this register is the active status authority.
 
 ## Migration boundary

@@ -2,11 +2,12 @@
 
 Dieser Leitfaden beschreibt den Code im selben Checkout. Der Einstieg für
 Entwicklung ist die [Root-README](../README.md). Die [API-Referenz](theory/API.md)
-wird aus den exportierten Python-Objekten erzeugt. Der am 19.11.2026 geprüfte
+wird aus den exportierten Python-Objekten erzeugt. Der am 20.11.2026 geprüfte
 `main`-Stand ist Commit
-[`bc1154241f5d57cc94e1a55a05e47bd788552c2f`](https://github.com/n05a-design/steps/commit/bc1154241f5d57cc94e1a55a05e47bd788552c2f);
+[`e2faf276adf6d65caf81fe28f38521a176e0c283`](https://github.com/n05a-design/steps/commit/e2faf276adf6d65caf81fe28f38521a176e0c283);
 der letzte Implementierungskommit ist
-[`e9eb1070e718cd9af79e3b536c09307dc59f6cac`](https://github.com/n05a-design/steps/commit/e9eb1070e718cd9af79e3b536c09307dc59f6cac).
+[`e2faf276adf6d65caf81fe28f38521a176e0c283`](https://github.com/n05a-design/steps/commit/e2faf276adf6d65caf81fe28f38521a176e0c283),
+PR [#220](https://github.com/n05a-design/steps/pull/220).
 Die historische Produkt-Baseline bleibt [`b67294a5161b42d281be4afdea5bb74b7385a786`](https://github.com/n05a-design/steps/commit/b67294a5161b42d281be4afdea5bb74b7385a786).
 PRs #158–#163 ergänzen Save/Open, Lokalisierung,
 Akkordbearbeitung, Neuordnung, Undo/Redo sowie Tonart-/Dur-Moll-/Tempo-Kontext.
@@ -27,8 +28,10 @@ Wheel-/Laufzeit-Ressourcenprüfung. PR #201 synchronisierte den damaligen
 Dokumentationsstand. PR #203 richtet den Desktop-Sessionexport an ADR-017 aus,
 PR #204 erzwingt die vier Akkordstimmen, PR #205 ergänzt optionale DROP2- und
 ROOTLESS-Voicings, 95%-Notenlänge und SMF Format 0. PR #206 prüft zehn
-SHA-256-Goldenexporte zusätzlich mit dem unabhängigen `SMFParser`.
-Bei Commit `bc1154241f5d57cc94e1a55a05e47bd788552c2f` bestehen 765
+SHA-256-Goldenexporte zusätzlich mit dem unabhängigen `SMFParser`. PR #220
+vollendet den Desktop-Export- und Reviewpfad, einschließlich lokalisiertem
+Exportstudio, Fehlerbehandlung und Controller-/Session-Anbindung.
+Bei Commit `e2faf276adf6d65caf81fe28f38521a176e0c283` bestehen 791
 automatisierte Tests; diese Zahl ist ein Testnachweis, keine Freigabe für
 native Plattformen, Übersetzung, Accessibility oder DAW-Abnahme.
 Gespeichert und exportiert
