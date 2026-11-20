@@ -8,6 +8,7 @@ from typing import Callable
 
 from app.i18n import LocaleManager
 from app.ui.dialog_support import ModalDialog, configure_readonly_preview
+from app.ui.piano_roll import PianoRoll
 from app.ui.session_controller import (
     ProgressionSessionController,
     VoiceLeadingStyleProfile,
@@ -152,9 +153,7 @@ class VoiceLeadingLabDialog(ModalDialog):
             selector.bind("<<ComboboxSelected>>", lambda _event, index=side: self._select_style(index))
             self._selectors.append(selector)
 
-            canvas = tk.Canvas(
-                panel, width=320, height=140, bg=colors.bg_window, highlightthickness=0
-            )
+            canvas = PianoRoll(panel, colors, self._font)
             canvas.pack(fill=tk.X)
             canvas.bind("<Configure>", lambda _event, index=side: self._draw_roll(index))
             self._canvases.append(canvas)
@@ -231,48 +230,17 @@ class VoiceLeadingLabDialog(ModalDialog):
 
     def _draw_roll(self, side: int) -> None:
         canvas = self._canvases[side]
-        canvas.delete("all")
         profile = self._profiles[side]
-        if profile is None or not self._timings or canvas.winfo_width() < 64:
-            return
         pitches = [
             note for item in self._profiles if item
             for voicing in item.midi_notes for note in voicing
         ]
-        if not pitches:
+        if profile is None or not pitches or not self._timings:
+            canvas.delete("all")
             return
-        low, high = max(0, min(pitches) - 1), min(127, max(pitches) + 1)
+        pitch_range = max(0, min(pitches) - 1), min(127, max(pitches) + 1)
         end = max(start + duration for start, duration in self._timings)
-        left, top = 28, 10
-        right, bottom = canvas.winfo_width() - 10, canvas.winfo_height() - 20
-        colors = self._colors
-
-        def x(tick: int) -> float:
-            return left + tick / end * (right - left)
-
-        def y(note: int) -> float:
-            return bottom - (note - low) / (high - low) * (bottom - top)
-
-        for note in range(low, high + 1):
-            if note in (low, high) or note % 12 == 0:
-                canvas.create_line(left, y(note), right, y(note), fill=colors.border)
-                canvas.create_text(left - 4, y(note), text=str(note), anchor=tk.E,
-                                   fill=colors.text_secondary, font=self._font)
-        for tick in sorted({0, end // 2, end}):
-            anchor = tk.W if tick == 0 else tk.E if tick == end else tk.CENTER
-            canvas.create_text(x(tick), bottom + 10, text=str(tick), anchor=anchor,
-                               fill=colors.text_secondary, font=self._font)
-        for start, _duration in self._timings:
-            canvas.create_line(x(start), top, x(start), bottom, fill=colors.border)
-        for (start, duration), notes in zip(self._timings, profile.midi_notes, strict=True):
-            bass = min(notes, default=None)
-            for note in notes:
-                canvas.create_line(
-                    x(start), y(note), max(x(start) + 1, x(start + duration)), y(note),
-                    width=3 if note == bass else 2,
-                    fill=colors.harmonic_tonic if note == bass else colors.text_primary,
-                    tags=("note",),
-                )
+        canvas.draw(self._timings, profile.midi_notes, pitch_range, end)
 
     def _apply_profile(self, side: int) -> None:
         if self._refresh_changed_project():
