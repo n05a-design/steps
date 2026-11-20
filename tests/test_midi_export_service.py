@@ -16,6 +16,7 @@ import shutil
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from scripts.audit_midi_files import envelope
 from src.steps.midi import (
@@ -28,6 +29,7 @@ from src.steps.midi import (
 )
 from src.steps.storage.project_io import Project
 from src.steps.theory.chord import parse_chord
+from src.steps.theory.exceptions import ChordConstructionError
 
 
 class TestVLQEncodingDecoding(unittest.TestCase):
@@ -138,6 +140,47 @@ class TestSMFGenerationAndEnvelope(unittest.TestCase):
         self.assertEqual(env["format"], 1)
         self.assertEqual(env["tracks"], 2)  # Conductor + Chords track
         self.assertEqual(env["division"], 480)
+
+    def test_invalid_chord_payload_fails_project_export(self):
+        project = Project(
+            tracks=[
+                {
+                    "track_id": "trk_chords",
+                    "track_type": "CHORDS",
+                    "name": "Chords Track",
+                    "channel": 0,
+                    "events": [
+                        {"start_tick": 0, "duration_ticks": 480, "payload": "not-a-chord"}
+                    ],
+                }
+            ]
+        )
+
+        with self.assertRaises(ChordConstructionError):
+            MidiExportService.export_project_to_smf(project, self.midi_path)
+
+        self.assertFalse(self.midi_path.exists())
+
+    def test_annotation_text_is_not_parsed_as_a_chord(self):
+        project = Project(
+            tracks=[
+                {
+                    "track_id": "trk_annotations",
+                    "track_type": "ANNOTATIONS",
+                    "name": "Annotations",
+                    "channel": 0,
+                    "events": [
+                        {"start_tick": 0, "duration_ticks": 480, "payload": "Section A"}
+                    ],
+                }
+            ]
+        )
+
+        with patch("src.steps.midi.export_service.parse_chord") as parse_chord_mock:
+            MidiExportService.export_project_to_smf(project, self.midi_path)
+
+        parse_chord_mock.assert_not_called()
+        self.assertTrue(self.midi_path.exists())
 
     def test_voicings_export_to_smf(self):
         c1 = parse_chord("Dm7", "INT").to_voicing(3, "CLOSE")
