@@ -136,6 +136,8 @@ class VoiceLeadingLabDialog(ModalDialog):
         self._event_selector = ttk.Combobox(navigation, state="readonly", font=self._font)
         self._event_selector.pack(side=tk.LEFT, fill=tk.X, expand=True)
         self._event_selector.bind("<<ComboboxSelected>>", self._on_view_change)
+        self._event_selector.bind("<Left>", lambda _event: self._move_event(-1))
+        self._event_selector.bind("<Right>", lambda _event: self._move_event(1))
         tk.Label(
             navigation, text=translate("voice.lab.zoom"), bg=colors.bg_window,
             fg=colors.text_primary, font=self._font,
@@ -251,7 +253,16 @@ class VoiceLeadingLabDialog(ModalDialog):
         if self._refresh_changed_project():
             return
         selected = roll.event_at(event.x, event.y)
-        if selected is not None and selected != self._event_selector.current():
+        if selected is not None:
+            self._show_event(selected)
+
+    def _move_event(self, step: int) -> str:
+        self._refresh_changed_project()
+        self._show_event(self._event_selector.current() + step)
+        return "break"
+
+    def _show_event(self, selected: int) -> None:
+        if 0 <= selected < len(self._timings) and selected != self._event_selector.current():
             self._event_selector.current(selected)
             self._redraw_rolls()
 

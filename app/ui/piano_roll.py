@@ -106,4 +106,3 @@ class PianoRoll(tk.Canvas):
                     fill=colors.harmonic_tonic if note == bass else colors.text_primary,
                     tags=("note", f"event:{index}"),
                 )
-
