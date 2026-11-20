@@ -6,6 +6,7 @@ import tkinter as tk
 from typing import Callable, Iterable
 
 from app.i18n import LocaleManager
+from app.ui.dialog_support import ModalDialog, configure_readonly_preview
 from app.ui.theme import ThemeManager, create_button
 from src.steps.progression.engine import ReviewedProgression
 
@@ -104,7 +105,7 @@ def format_reviewed_progression(
     return "\n".join(lines)
 
 
-class ReviewedProgressionLibraryDialog:
+class ReviewedProgressionLibraryDialog(ModalDialog):
     """Modal catalog browser; loading is delegated until the user confirms."""
 
     def __init__(
@@ -125,14 +126,11 @@ class ReviewedProgressionLibraryDialog:
         typography = theme.typography
         translate = i18n.translate
 
-        self.window = tk.Toplevel(parent)
+        super().__init__(parent)
         self.window.title(translate("library.title"))
         self.window.geometry("920x620")
         self.window.minsize(760, 500)
-        self.window.transient(parent)
         self.window.configure(bg=colors.bg_window)
-        self.window.protocol("WM_DELETE_WINDOW", self._close)
-        self.window.bind("<Escape>", lambda _event: self._close())
 
         container = tk.Frame(self.window, bg=colors.bg_window, padx=spacing.md, pady=spacing.md)
         container.pack(fill=tk.BOTH, expand=True)
@@ -215,6 +213,7 @@ class ReviewedProgressionLibraryDialog:
             padx=spacing.sm,
             pady=spacing.sm,
         )
+        configure_readonly_preview(self._preview, colors)
         preview_scrollbar = tk.Scrollbar(
             preview_frame,
             orient=tk.VERTICAL,
@@ -248,9 +247,8 @@ class ReviewedProgressionLibraryDialog:
         )
         self._load_button.pack(side=tk.RIGHT, padx=(0, spacing.sm))
 
-        self.window.grab_set()
         self._refresh_list()
-        self._search_entry.focus_set()
+        self._show(self._search_entry)
 
     def _refresh_list(self, *_args: object) -> None:
         query = self._search_var.get()
@@ -303,6 +301,3 @@ class ReviewedProgressionLibraryDialog:
             self._selected.progression.prog_id
         ):
             self._close()
-
-    def _close(self) -> None:
-        self.window.destroy()

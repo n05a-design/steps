@@ -73,6 +73,20 @@ EN/DE headless smoke, signature verification and an isolated CLI MIDI
 export. Independent DAW, translation and accessibility acceptance remain
 open.
 
+### Keyboard navigation follow-up to PR #225
+
+The branch `codex/desktop-keyboard-navigation` starts at the PR #225 merge
+`7c9f79b37248dcc9c53abf54c2a2c885e7278e31`. The three modal dialogs share focus
+and grab restoration. Main-window project shortcuts apply only within the
+main window. Read-only library and lab previews accept Tab/Shift-Tab and
+Page Up/Page Down. At minimum lab size the action buttons have reserved space.
+
+The strict Tk suite passed 805 tests on arm64 macOS. The native workflow
+covers Escape, focus return, nested modals, keyboard scrolling and traversal,
+and suppressed project shortcuts while a dialog is open. The rebuilt macOS
+bundle passed EN/DE headless startup and local signature verification.
+Independent assistive-technology and DAW acceptance remain open.
+
 ### Verification and open acceptance
 
 - On arm64 macOS 27.2.1 with Python 3.14.5 and Aqua Tk 9.0.3, the full suite

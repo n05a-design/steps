@@ -7,6 +7,7 @@ from tkinter import ttk
 from typing import Callable
 
 from app.i18n import LocaleManager
+from app.ui.dialog_support import ModalDialog, configure_readonly_preview
 from app.ui.session_controller import (
     ProgressionSessionController,
     VoiceLeadingStyleProfile,
@@ -69,7 +70,7 @@ def format_voice_leading_profile(
     return "\n".join(lines)
 
 
-class VoiceLeadingLabDialog:
+class VoiceLeadingLabDialog(ModalDialog):
     """Modal style comparison panel with explicit, undoable style application."""
 
     def __init__(
@@ -92,14 +93,11 @@ class VoiceLeadingLabDialog:
         spacing = theme.spacing
         translate = i18n.translate
 
-        self.window = tk.Toplevel(parent)
+        super().__init__(parent)
         self.window.title(translate("voice.lab.title"))
         self.window.geometry("940x630")
         self.window.minsize(720, 490)
-        self.window.transient(parent)
         self.window.configure(bg=colors.bg_window)
-        self.window.protocol("WM_DELETE_WINDOW", self._close)
-        self.window.bind("<Escape>", lambda _event: self._close())
 
         container = tk.Frame(
             self.window, bg=colors.bg_window, padx=spacing.md, pady=spacing.md
@@ -155,6 +153,7 @@ class VoiceLeadingLabDialog:
                 bg=colors.bg_window, fg=colors.text_primary, font=self._font,
                 padx=spacing.sm, pady=spacing.sm,
             )
+            configure_readonly_preview(preview, colors)
             scrollbar = tk.Scrollbar(text_frame, orient=tk.VERTICAL, command=preview.yview)
             preview.configure(yscrollcommand=scrollbar.set)
             preview.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
@@ -164,16 +163,15 @@ class VoiceLeadingLabDialog:
                 panel, text=translate(f"voice.lab.apply_{name}"),
                 command=lambda index=side: self._apply_profile(index), state=tk.DISABLED,
             )
-            button.pack(anchor=tk.E)
+            button.pack(side=tk.BOTTOM, anchor=tk.E, before=text_frame)
             self._apply_buttons.append(button)
 
         ttk.Button(container, text=translate("voice.lab.close"), command=self._close).pack(
-            anchor=tk.E, pady=(spacing.sm, 0)
+            side=tk.BOTTOM, anchor=tk.E, pady=(spacing.sm, 0), before=body
         )
         self._render(0)
         self._render(1)
-        self.window.grab_set()
-        self._selectors[0].focus_set()
+        self._show(self._selectors[0])
 
     def _refresh_changed_project(self) -> bool:
         if self._revision == self._controller.revision:
@@ -269,6 +267,3 @@ class VoiceLeadingLabDialog:
         profile = self._profiles[side]
         if profile is not None and self._on_apply(profile.style.value):
             self._close()
-
-    def _close(self) -> None:
-        self.window.destroy()

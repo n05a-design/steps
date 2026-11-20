@@ -52,6 +52,7 @@ jobs:
       - name: Smoke-test native Tk window and core workflow
         env:
           STEPS_REQUIRE_DESKTOP_TK: "1"
+          PYTHONFAULTHANDLER: "1"
         run: |
           xvfb-run -a python -B -m unittest \
             tests.test_desktop_app_entrypoint.TestDesktopAppEntrypoint.test_main_window_instantiation_and_wiring \
@@ -79,6 +80,7 @@ jobs:
       - name: Smoke-test native Tk window and core workflow
         env:
           STEPS_REQUIRE_DESKTOP_TK: "1"
+          PYTHONFAULTHANDLER: "1"
         run: >-
           python -B -m unittest
           tests.test_desktop_app_entrypoint.TestDesktopAppEntrypoint.test_main_window_instantiation_and_wiring
