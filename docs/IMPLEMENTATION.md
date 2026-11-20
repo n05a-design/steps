@@ -138,7 +138,10 @@ nicht belegt. Der Exportservice bietet zusätzlich `DROP2` und `ROOTLESS`
 der Desktop-Export nutzt weiterhin die CLOSE-/10-Tick-/Format-1-Standards.
 Der Projekt-Exporter interpretiert Textpayloads nur auf `CHORDS`-Spuren als
 Akkordsymbole; fehlerhafte Akkordsymbole werden nicht still ausgelassen,
-sondern werfen den Akkordfehler. Text auf `ANNOTATIONS`-Spuren wird ignoriert.
+sondern werfen den Akkordfehler. Listen- und Einzelnoten-Payloads müssen
+Ganzzahlen im MIDI-Bereich 0–127 enthalten; ungültige Noten erzeugen einen
+Exportfehler statt eines unvollständigen Exports. Text auf `ANNOTATIONS`-Spuren
+wird ignoriert.
 
 [Testanleitung](../tests/README.md) · [Quellen und Archiv](../archive/INDEX.md)
 

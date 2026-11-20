@@ -182,6 +182,55 @@ class TestSMFGenerationAndEnvelope(unittest.TestCase):
         parse_chord_mock.assert_not_called()
         self.assertTrue(self.midi_path.exists())
 
+    def test_invalid_midi_note_payloads_fail_project_export(self):
+        for payload in ([60, 128], [60, True], 128, True):
+            with self.subTest(payload=payload):
+                self.midi_path.unlink(missing_ok=True)
+                project = Project(
+                    tracks=[
+                        {
+                            "track_id": "trk_notes",
+                            "track_type": "MELODY",
+                            "name": "Melody Track",
+                            "channel": 0,
+                            "events": [
+                                {"start_tick": 0, "duration_ticks": 480, "payload": payload}
+                            ],
+                        }
+                    ]
+                )
+
+                with self.assertRaises(ValueError):
+                    MidiExportService.export_project_to_smf(project, self.midi_path)
+
+                self.assertFalse(self.midi_path.exists())
+
+    def test_integer_note_payloads_export_every_valid_note(self):
+        project = Project(
+            tracks=[
+                {
+                    "track_id": "trk_notes",
+                    "track_type": "MELODY",
+                    "name": "Melody Track",
+                    "channel": 0,
+                    "events": [
+                        {"start_tick": 0, "duration_ticks": 480, "payload": [60, 64]},
+                        {"start_tick": 480, "duration_ticks": 480, "payload": 67},
+                    ],
+                }
+            ]
+        )
+
+        MidiExportService.export_project_to_smf(project, self.midi_path)
+        parsed = MidiFile.from_bytes(self.midi_path.read_bytes())
+        note_ons = [
+            event
+            for event in parsed.tracks[1].raw_events
+            if event.msg_bytes[0] & 0xF0 == 0x90 and event.msg_bytes[2] > 0
+        ]
+
+        self.assertEqual([event.msg_bytes[1] for event in note_ons], [60, 64, 67])
+
     def test_voicings_export_to_smf(self):
         c1 = parse_chord("Dm7", "INT").to_voicing(3, "CLOSE")
         c2 = parse_chord("G7", "INT").to_voicing(3, "CLOSE")
