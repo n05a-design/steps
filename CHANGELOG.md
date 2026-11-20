@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Quellen und Freigabebelege des ausgewählten Bibliotheksbeispiels lassen sich über ein per Tastatur erreichbares Menü im Standardbrowser öffnen.
+
 - Die Bibliothek zeigt Akkordkarten mit Referenztonart und harmonischen Stufen. Bleibt das Beispiel beim Filtern ausgewählt, bleibt auch die Leseposition in den Quellen- und Freigabedetails erhalten.
 
 - Der Next Chord Explorer fokussiert die Kandidatenliste und zeigt den ersten Vorschlag. Pfeiltasten wechseln die Vorschau, Enter oder „Auswahl hinzufügen“ übernimmt den Akkord. Ein Wechsel der Oberflächensprache erhält die Auswahl im selben Projektkontext.
