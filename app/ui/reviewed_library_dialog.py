@@ -12,8 +12,8 @@ from src.steps.progression.engine import ReviewedProgression
 
 def reviewed_progression_matches(example: ReviewedProgression, query: str) -> bool:
     """Match a query against published example metadata and reviewed claim text."""
-    needle = query.strip().casefold()
-    if not needle:
+    terms = query.casefold().split()
+    if not terms:
         return True
 
     progression = example.progression
@@ -44,7 +44,8 @@ def reviewed_progression_matches(example: ReviewedProgression, query: str) -> bo
             fields.extend(
                 (citation.source_id, citation.title, citation.locator, citation.url)
             )
-    return needle in " ".join(fields).casefold()
+    haystack = " ".join(fields).casefold()
+    return all(term in haystack for term in terms)
 
 
 def format_reviewed_progression(
@@ -253,27 +254,28 @@ class ReviewedProgressionLibraryDialog:
 
     def _refresh_list(self, *_args: object) -> None:
         query = self._search_var.get()
+        selected = self._selected
         self._visible_examples = tuple(
             example
             for example in self._examples
             if reviewed_progression_matches(example, query)
         )
         self._listbox.delete(0, tk.END)
-        for example in self._visible_examples:
-            progression = example.progression
-            self._listbox.insert(tk.END, progression.name)
-        if len(self._visible_examples) == 1:
-            self._listbox.selection_set(0)
+        for index, example in enumerate(self._visible_examples):
+            self._listbox.insert(tk.END, example.progression.name)
+            if example is selected or len(self._visible_examples) == 1:
+                self._listbox.selection_set(index)
+                self._listbox.activate(index)
+                self._listbox.see(index)
         self._select_current()
-        if not self._visible_examples:
-            self._set_preview(self._i18n.translate("library.no_results"))
 
     def _select_current(self, _event: object | None = None) -> None:
         selection = self._listbox.curselection()
         if not selection or selection[0] >= len(self._visible_examples):
             self._selected = None
             self._load_button.configure(state=tk.DISABLED)
-            self._set_preview(self._i18n.translate("library.select_prompt"))
+            prompt = "library.select_prompt" if self._visible_examples else "library.no_results"
+            self._set_preview(self._i18n.translate(prompt))
             return
         self._selected = self._visible_examples[selection[0]]
         self._load_button.configure(state=tk.NORMAL)

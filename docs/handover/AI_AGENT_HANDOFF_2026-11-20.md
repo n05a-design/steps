@@ -2,7 +2,7 @@
 
 ## Desktop evolution takeover
 
-The active delivery branch is `codex/native-desktop-evolution`, based on
+The initial delivery branch was `codex/native-desktop-evolution`, based on
 GitHub `main` at `47af95372bf07002d61d88911774119ce1708644` (PR #221).
 The primary checkout matched that base before development. The earlier
 documentation checkout and a verified local archive preserve workspace
@@ -20,6 +20,24 @@ the development package is `0.2.0.dev0`.
   output feedback are wired through the existing app/controller entry points.
 - The wheel and local macOS bundle include the canonical source registry.
   The development bundle recipe is in the [desktop verification guide](../../tests/native_ui/README.md).
+
+### MIDI and library follow-up to PR #222
+
+PR #222 was squash-merged at `c8a7ee1b5661e1af5ee5dac9391ba268f7280afb`.
+The follow-up branch `codex/midi-library-workflow` starts from that commit.
+
+The MIDI Export Studio now uses the exporter’s actual voicing rules to disable
+incompatible options, names the first blocking chord for each mode, and
+rechecks the selection before opening the file chooser. The reviewed library
+combines search terms across catalog fields, retains visible selections and
+checks catalog availability before prompting to save the current project.
+
+On arm64 macOS, the follow-up passed 798 tests with
+`STEPS_REQUIRE_DESKTOP_TK=1`, including the updated native workflow and
+existing MIDI Golden fixtures. A fresh development bundle passed the
+English/German headless smoke and the local signature check. Ableton Live 11
+Standard and Live 12 Beta both timed out in computer use. Independent DAW
+import remains `NOT_RUN`.
 
 ### Verification and open acceptance
 

@@ -55,6 +55,7 @@ class FakeController:
         self.loaded_paths = []
         self.exported_paths = []
         self.export_options = []
+        self.voicing_failures = {}
         self.new_project_calls = 0
         self.save_error = None
         self.load_error = None
@@ -104,6 +105,9 @@ class FakeController:
     def set_voice_leading_style(self, style):
         self.voice_style_calls.append(style)
         self.session.voice_leading_style = SimpleNamespace(value=str(style).upper())
+
+    def midi_voicing_failures(self):
+        return self.voicing_failures
 
     def export_midi(self, path, **options):
         if self.export_error:
@@ -237,6 +241,21 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
 
         prompt.assert_called_once()
         self.assertEqual(len(self.window.controller.reviewed_calls), 1)
+
+    def test_catalog_error_is_reported_before_asking_to_save_the_project(self):
+        self.window._project_path = Path("/tmp/current.stepsproj")
+        self.window.controller.session.is_dirty = True
+        with (
+            patch("app.ui.main_window.get_reviewed_progression", side_effect=ValueError("bad catalog")),
+            patch("app.ui.main_window.messagebox.askyesnocancel") as prompt,
+            patch("app.ui.main_window.messagebox.showerror") as error,
+        ):
+            self.assertFalse(self.window._on_new_from_example("PROG-003"))
+
+        prompt.assert_not_called()
+        error.assert_called_once()
+        self.assertEqual(self.window._project_path, Path("/tmp/current.stepsproj"))
+        self.assertTrue(self.window.controller.session.is_dirty)
 
     def test_new_from_reviewed_example_cancel_keeps_current_project(self):
         self.window._project_path = Path("/tmp/current.stepsproj")
@@ -651,9 +670,21 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
             i18n=self.window.i18n,
             theme=self.window.theme,
             on_export=self.window._export_midi_with_options,
+            voicing_failures={},
         )
         self.assertEqual(self.window.controller.exported_paths, [])
         self.window.detail_text.insert.assert_not_called()
+
+    @patch("app.ui.main_window.filedialog.asksaveasfilename")
+    @patch("app.ui.main_window.messagebox.showerror")
+    def test_midi_voicing_rechecked_before_file_chooser(self, show_error, choose_path):
+        self.window.controller.voicing_failures = {"DROP2": "C"}
+        self.assertFalse(
+            self.window._export_midi_with_options(MidiExportOptions(voicing_type="DROP2"))
+        )
+        choose_path.assert_not_called()
+        self.assertIn("DROP2", show_error.call_args.args[1])
+        self.assertFalse(self.window.controller.exported_paths)
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="")
     def test_cancel_midi_export_does_not_call_controller(self, choose_path):

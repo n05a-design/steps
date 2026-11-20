@@ -129,6 +129,7 @@
   "midi.options.voicing.close": "CLOSE — four-note close-position chords (default)",
   "midi.options.voicing.drop2": "DROP2 — four-note drop-2 voicing",
   "midi.options.voicing.rootless": "ROOTLESS — four-note rootless voicing",
+  "midi.options.voicing.unavailable": "{mode} is unavailable for {chord} in this progression.",
   "midi.options.duration": "Note duration",
   "midi.options.duration.fixed_gap": "Fixed 10-tick gap (default)",
   "midi.options.duration.percent_95": "95% of each event duration",

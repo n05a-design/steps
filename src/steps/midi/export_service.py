@@ -9,11 +9,16 @@ from __future__ import annotations
 
 from dataclasses import replace
 from pathlib import Path
-from typing import List, Literal, Optional, Tuple
+from typing import List, Literal, Optional, Sequence, Tuple
 
 from ..storage.project_io import Project
 from ..theory.chord import ChordDefinition, Voicing, parse_chord
+from ..theory.exceptions import MusicTheoryError
 from .smf import MidiFile, MidiTrack
+
+
+Adr017Voicing = Literal["CLOSE", "DROP2", "ROOTLESS"]
+ADR017_VOICINGS: tuple[Adr017Voicing, ...] = ("CLOSE", "DROP2", "ROOTLESS")
 
 
 def _adr017_close_notes(chord: ChordDefinition) -> list[int]:
@@ -87,8 +92,36 @@ def _adr017_alternative_notes(
     return normalized
 
 
+def _adr017_notes(chord: ChordDefinition, mode: Adr017Voicing) -> list[int]:
+    if mode == "CLOSE":
+        return _adr017_close_notes(chord)
+    return _adr017_alternative_notes(chord, mode)
+
+
 class MidiExportService:
     """Service for exporting STEPS projects and progressions to Standard MIDI Files."""
+
+    @staticmethod
+    def adr017_voicing_failures(
+        chords: Sequence[str], convention: str = "INT",
+    ) -> dict[Adr017Voicing, str]:
+        """Return the first blocking chord for each incompatible export voicing."""
+        failures: dict[Adr017Voicing, str] = {}
+        for symbol in dict.fromkeys(chords):
+            try:
+                chord = parse_chord(symbol, convention=convention)
+            except MusicTheoryError:
+                return {mode: failures.get(mode, symbol) for mode in ADR017_VOICINGS}
+
+            for mode in ADR017_VOICINGS:
+                if mode not in failures:
+                    try:
+                        _adr017_notes(chord, mode)
+                    except (MusicTheoryError, ValueError):
+                        failures[mode] = symbol
+            if len(failures) == len(ADR017_VOICINGS):
+                break
+        return failures
 
     @staticmethod
     def export_project_to_smf(
@@ -257,7 +290,7 @@ class MidiExportService:
         Event timing overrides sequential positions and fixed chord durations.
         Optional output modes support DROP2/ROOTLESS and 95%-length notes.
         """
-        if voicing_type not in ("CLOSE", "DROP2", "ROOTLESS"):
+        if voicing_type not in ADR017_VOICINGS:
             raise ValueError(f"Unsupported ADR-017 voicing type: {voicing_type!r}.")
         if note_duration_mode not in ("FIXED_GAP", "PERCENT_95"):
             raise ValueError(f"Unsupported ADR-017 note duration mode: {note_duration_mode!r}.")
@@ -320,12 +353,7 @@ class MidiExportService:
             else:
                 chord_def = item
 
-            if voicing_type == "CLOSE":
-                chord_notes = _adr017_close_notes(chord_def)
-            else:
-                chord_notes = _adr017_alternative_notes(chord_def, voicing_type)
-
-            for note in chord_notes:
+            for note in _adr017_notes(chord_def, voicing_type):
                 chords_track.add_note(
                     start_tick=start_tick,
                     duration_ticks=note_duration(duration_ticks),

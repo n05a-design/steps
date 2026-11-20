@@ -299,10 +299,10 @@ class StepsMainWindow:
         )
 
     def _on_new_from_example(self, prog_id: str) -> bool:
-        if not self._confirm_unsaved_changes():
-            return False
         try:
             reviewed = get_reviewed_progression(prog_id)
+            if not self._confirm_unsaved_changes():
+                return False
             self.controller.new_reviewed_project(reviewed)
         except (PublicationError, OSError, ValueError) as exc:
             messagebox.showerror(
@@ -1465,9 +1465,20 @@ class StepsMainWindow:
             i18n=self.i18n,
             theme=self.theme,
             on_export=self._export_midi_with_options,
+            voicing_failures=self.controller.midi_voicing_failures(),
         )
 
     def _export_midi_with_options(self, options: MidiExportOptions) -> bool:
+        blocked_chord = self.controller.midi_voicing_failures().get(options.voicing_type)
+        if blocked_chord is not None:
+            messagebox.showerror(
+                self.i18n.translate("midi.export.error.title"),
+                self.i18n.translate(
+                    "midi.options.voicing.unavailable", mode=options.voicing_type, chord=blocked_chord,
+                ),
+                parent=self._dialog_parent(),
+            )
+            return False
         selected = filedialog.asksaveasfilename(
             parent=self._dialog_parent(),
             title=self.i18n.translate("midi.save.title"),

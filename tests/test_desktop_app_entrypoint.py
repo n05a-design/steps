@@ -295,8 +295,10 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             search.insert(0, "no-matching-example")
             self.assertIn(i18n.translate("library.no_results"), preview.get("1.0", tk.END))
             search.delete(0, tk.END)
-            search.insert(0, "PROG-003")
+            search.insert(0, "jazz G7")
             self.assertIn("G7", preview.get("1.0", tk.END))
+            search.delete(0, tk.END)
+            self.assertIn("PROG-003", preview.get("1.0", tk.END))
             button(library, "library.load").invoke()
             self.assertTrue(library.winfo_exists())
             self.assertEqual(controller.session.chords[0], "Dm7")
@@ -343,6 +345,18 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
 
             window.export_btn.invoke()
             export = modal()
+            voicing_radios = {
+                widget.cget("value"): widget
+                for widget in widgets(export, tk.Radiobutton)
+            }
+            self.assertEqual(voicing_radios["CLOSE"].cget("state"), tk.NORMAL)
+            self.assertEqual(voicing_radios["DROP2"].cget("state"), tk.DISABLED)
+            self.assertEqual(voicing_radios["ROOTLESS"].cget("state"), tk.DISABLED)
+            descriptions = [label.cget("text") for label in widgets(export, tk.Label)]
+            self.assertTrue(any(
+                i18n.translate("midi.options.voicing.unavailable", mode="DROP2", chord="Dm") in text
+                for text in descriptions
+            ))
             for key in ("midi.options.duration.percent_95", "midi.options.format.type0"):
                 radio = next(
                     widget for widget in widgets(export, tk.Radiobutton)

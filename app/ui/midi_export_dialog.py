@@ -4,20 +4,21 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import tkinter as tk
-from typing import Callable, Literal
+from typing import Callable, Collection, Literal, Mapping
 
 from app.i18n import LocaleManager
 from app.ui.theme import ThemeManager, create_button
+from src.steps.midi.export_service import ADR017_VOICINGS, Adr017Voicing
 
 
 @dataclass(frozen=True)
 class MidiExportOptions:
-    voicing_type: Literal["CLOSE", "DROP2", "ROOTLESS"] = "CLOSE"
+    voicing_type: Adr017Voicing = "CLOSE"
     note_duration_mode: Literal["FIXED_GAP", "PERCENT_95"] = "FIXED_GAP"
     smf_format: Literal[0, 1] = 1
 
     def __post_init__(self) -> None:
-        if self.voicing_type not in {"CLOSE", "DROP2", "ROOTLESS"}:
+        if self.voicing_type not in ADR017_VOICINGS:
             raise ValueError(f"Unsupported ADR-017 voicing type: {self.voicing_type!r}.")
         if self.note_duration_mode not in {"FIXED_GAP", "PERCENT_95"}:
             raise ValueError(
@@ -36,6 +37,7 @@ class MidiExportOptionsDialog:
         i18n: LocaleManager,
         theme: ThemeManager,
         on_export: Callable[[MidiExportOptions], bool],
+        voicing_failures: Mapping[Adr017Voicing, str],
     ) -> None:
         self._i18n = i18n
         self._on_export = on_export
@@ -49,8 +51,8 @@ class MidiExportOptionsDialog:
 
         self.window = tk.Toplevel(parent)
         self.window.title(translate("midi.options.title"))
-        self.window.geometry("620x520")
-        self.window.minsize(540, 460)
+        self.window.geometry("620x570" if voicing_failures else "620x520")
+        self.window.minsize(540, 520 if voicing_failures else 460)
         self.window.transient(parent)
         self.window.configure(bg=colors.bg_window)
         self.window.protocol("WM_DELETE_WINDOW", self._close)
@@ -80,7 +82,8 @@ class MidiExportOptionsDialog:
             justify=tk.LEFT,
         ).pack(anchor=tk.W, pady=(0, spacing.sm))
 
-        self._voicing_var = tk.StringVar(self.window, value="CLOSE")
+        initial_voicing = next((mode for mode in ADR017_VOICINGS if mode not in voicing_failures), "")
+        self._voicing_var = tk.StringVar(self.window, value=initial_voicing)
         self._duration_var = tk.StringVar(self.window, value="FIXED_GAP")
         self._format_var = tk.StringVar(self.window, value="1")
         self._add_group(
@@ -92,7 +95,21 @@ class MidiExportOptionsDialog:
                 ("DROP2", "midi.options.voicing.drop2"),
                 ("ROOTLESS", "midi.options.voicing.rootless"),
             ),
+            disabled_values=voicing_failures.keys(),
         )
+        if voicing_failures:
+            tk.Label(
+                container,
+                text="\n".join(
+                    translate("midi.options.voicing.unavailable", mode=mode, chord=voicing_failures[mode])
+                    for mode in ADR017_VOICINGS if mode in voicing_failures
+                ),
+                bg=colors.bg_window,
+                fg=colors.text_secondary,
+                justify=tk.LEFT,
+                wraplength=496,
+                font=self._font,
+            ).pack(anchor=tk.W, pady=(0, spacing.sm))
         self._add_group(
             container,
             "midi.options.duration",
@@ -114,7 +131,7 @@ class MidiExportOptionsDialog:
 
         buttons = tk.Frame(container, bg=colors.bg_window)
         buttons.pack(fill=tk.X, pady=(spacing.sm, 0))
-        create_button(
+        cancel_button = create_button(
             buttons,
             text=translate("midi.options.cancel"),
             command=self._close,
@@ -122,11 +139,13 @@ class MidiExportOptionsDialog:
             fg=colors.text_primary,
             relief=tk.FLAT,
             padx=spacing.md,
-        ).pack(side=tk.RIGHT)
+        )
+        cancel_button.pack(side=tk.RIGHT)
         self._export_button = create_button(
             buttons,
             text=translate("midi.options.export"),
             command=self._export,
+            state=tk.NORMAL if initial_voicing else tk.DISABLED,
             bg=colors.harmonic_tonic,
             fg=colors.text_inverted,
             relief=tk.FLAT,
@@ -135,7 +154,7 @@ class MidiExportOptionsDialog:
         self._export_button.pack(side=tk.RIGHT, padx=(0, spacing.sm))
 
         self.window.grab_set()
-        self._export_button.focus_set()
+        (self._export_button if initial_voicing else cancel_button).focus_set()
 
     def _add_group(
         self,
@@ -143,6 +162,8 @@ class MidiExportOptionsDialog:
         title_key: str,
         variable: tk.StringVar,
         options: tuple[tuple[str, str], ...],
+        *,
+        disabled_values: Collection[str] = (),
     ) -> None:
         colors = self._colors
         spacing = self._spacing
@@ -163,6 +184,7 @@ class MidiExportOptionsDialog:
                 text=translate(label_key),
                 variable=variable,
                 value=value,
+                state=tk.DISABLED if value in disabled_values else tk.NORMAL,
                 anchor=tk.W,
                 bg=colors.bg_window,
                 fg=colors.text_primary,

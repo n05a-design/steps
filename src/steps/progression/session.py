@@ -17,7 +17,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Literal, Optional, Tuple, Union
 
-from ..midi.export_service import MidiExportService
+from ..midi.export_service import Adr017Voicing, MidiExportService
 from ..models.timeline import TimeSignature
 from ..storage.exceptions import CorruptedProjectError
 from ..storage.project_io import Project, load_project_with_status, save_project
@@ -1021,6 +1021,10 @@ class ProgressionSession:
             chord_event_timings=chord_event_timings,
         )
         self._undo_stack = UndoStack[SessionState](new_state, max_depth=50)
+
+    def midi_voicing_failures(self) -> dict[Adr017Voicing, str]:
+        """Identify which export modes cannot voice the current progression."""
+        return MidiExportService.adr017_voicing_failures(self.chords, self.convention)
 
     def export_midi_file(
         self,

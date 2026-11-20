@@ -15,6 +15,8 @@ Validates:
 import shutil
 import tempfile
 import unittest
+
+from src.steps.theory.exceptions import MusicTheoryError
 from pathlib import Path
 from unittest.mock import patch
 
@@ -60,6 +62,31 @@ class TestSMFGenerationAndEnvelope(unittest.TestCase):
 
     def tearDown(self):
         shutil.rmtree(self.temp_dir, ignore_errors=True)
+
+    def test_adr017_preflight_matches_actual_exports_in_german_notation(self):
+        chords = ["Hmaj7", "Fis"]
+        self.assertEqual(
+            MidiExportService.adr017_voicing_failures(chords, "DE"),
+            {"DROP2": "Fis", "ROOTLESS": "Hmaj7"},
+        )
+        self.assertEqual(
+            MidiExportService.adr017_voicing_failures(["Hmaj7", "?"], "DE"),
+            {"CLOSE": "?", "DROP2": "?", "ROOTLESS": "Hmaj7"},
+        )
+        for mode in ("CLOSE", "DROP2", "ROOTLESS"):
+            with self.subTest(mode=mode):
+                target = self.midi_path.with_name(f"preflight-{mode}.mid")
+                if mode == "CLOSE":
+                    MidiExportService.export_progression_adr017(
+                        chords, target, convention="DE", voicing_type=mode,
+                    )
+                    self.assertTrue(target.is_file())
+                else:
+                    with self.assertRaises((MusicTheoryError, ValueError)):
+                        MidiExportService.export_progression_adr017(
+                            chords, target, convention="DE", voicing_type=mode,
+                        )
+                    self.assertFalse(target.exists())
 
     def test_minimal_format0_smf(self):
         midi = MidiFile(smf_format=0, division=480)
