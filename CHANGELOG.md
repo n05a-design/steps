@@ -2,6 +2,10 @@
 
 ## Unreleased – App und Python-Kern
 
+- Das lokalisierte MIDI-Exportstudio bietet die ADR-017-Optionen für Voicing, Notendauer und SMF-Format; die bisherigen CLOSE-/10-Tick-/Format-1-Defaults und der unveränderte Projektzustand bleiben erhalten.
+- Die Desktop-Progressionsbibliothek bietet Suche und Vorschau für die drei freigegebenen Beispiele, einschließlich unveränderter Claim-Texte und ihrer Quellen-/Reviewbelege. Das Laden beginnt erst nach Auswahl und verwendet weiterhin die Dirty-State-Rückfrage; neue Claims oder Übersetzungsfreigaben entstehen nicht.
+- Der Next-Chord-Explorer aktiviert das Übernehmen jetzt erst nach einer gültigen Kandidatenauswahl; fehlende oder veraltete Auswahlen bleiben sichtbar abgewiesen.
+- Das Desktop-Stimmführungslabor vergleicht die vorhandenen Stilprofile anhand kumulierter absoluter MIDI-Bewegung und erkannter Warnungen, ohne den Projektstil zu ändern. Erst „Stil verwenden“ ändert den undo-/redo-fähigen Projektwert; Bewegungswerte sind keine universelle Rangfolge.
 - Der Projekt-MIDI-Export ignoriert Text in Anmerkungsspuren und weist ungültige Akkordsymbole oder MIDI-Noten zurück, statt Events still zu überspringen.
 - Fehler beim Anwenden des optionalen App-Symbols werden protokolliert, ohne den Desktop-Start abzubrechen.
 - Die Desktop-Akkordanalyse schlägt nur registrierte Skalen vor und zeigt Fehler bei der Berechnung gültiger Kandidaten an, statt sie still zu verwerfen.

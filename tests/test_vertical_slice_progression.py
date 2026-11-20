@@ -24,6 +24,7 @@ import shutil
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from app.ui.session_controller import ProgressionSessionController
 from scripts.audit_midi_files import envelope
@@ -40,6 +41,41 @@ class TestVerticalSliceProgression(unittest.TestCase):
 
     def tearDown(self):
         shutil.rmtree(self.temp_dir, ignore_errors=True)
+
+    def test_session_midi_export_forwards_options_and_preserves_defaults(self):
+        session = ProgressionSession(
+            initial_chords=["C", "G", "Am", "F"],
+            key_root="C",
+            is_minor=False,
+            convention="INT",
+        )
+        controller = ProgressionSessionController(session)
+        output = self.midi_file
+        with patch(
+            "src.steps.progression.session.MidiExportService.export_progression_adr017",
+            return_value=output,
+        ) as export:
+            result = controller.export_midi(
+                output,
+                voicing_type="ROOTLESS",
+                note_duration_mode="PERCENT_95",
+                smf_format=0,
+            )
+
+        self.assertEqual(result, output)
+        self.assertEqual(export.call_args.kwargs["voicing_type"], "ROOTLESS")
+        self.assertEqual(export.call_args.kwargs["note_duration_mode"], "PERCENT_95")
+        self.assertEqual(export.call_args.kwargs["smf_format"], 0)
+
+        with patch(
+            "src.steps.progression.session.MidiExportService.export_progression_adr017",
+            return_value=output,
+        ) as export:
+            session.export_midi_file(output)
+
+        self.assertEqual(export.call_args.kwargs["voicing_type"], "CLOSE")
+        self.assertEqual(export.call_args.kwargs["note_duration_mode"], "FIXED_GAP")
+        self.assertEqual(export.call_args.kwargs["smf_format"], 1)
 
     def test_next_chord_controller_accepts_apply_rejects_invalid_and_undoes(self):
         session = ProgressionSession(
