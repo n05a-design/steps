@@ -910,14 +910,8 @@ class ProgressionSession:
 
     def load_from_file(self, file_path: Path | str) -> None:
         """Loads session state from a STEPS project file."""
-        self.last_load_recovered_from_backup = False
-        self.last_loaded_backup_path = None
-        self.last_load_migrations = ()
         load_result = load_project_with_status(file_path)
         proj = load_result.project
-        self.last_load_recovered_from_backup = load_result.recovered_from_backup
-        self.last_loaded_backup_path = load_result.backup_path
-        self.last_load_migrations = load_result.migrations
         if not isinstance(proj.title, str) or not proj.title.strip():
             raise CorruptedProjectError("Project title must be a non-empty string.")
         if proj.notation_convention not in ("INT", "DE"):
@@ -1025,6 +1019,9 @@ class ProgressionSession:
             chord_event_timings=chord_event_timings,
         )
         self._undo_stack = UndoStack[SessionState](new_state, max_depth=50)
+        self.last_load_recovered_from_backup = load_result.recovered_from_backup
+        self.last_loaded_backup_path = load_result.backup_path
+        self.last_load_migrations = load_result.migrations
 
     def midi_voicing_failures(self) -> dict[Adr017Voicing, str]:
         """Identify which export modes cannot voice the current progression."""

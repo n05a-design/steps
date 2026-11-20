@@ -15,7 +15,9 @@ keeps the previous MIDI file and the options dialog available for retry.
 The test then saves, closes and reopens the project. It exercises invalid
 chord input, missing search results, cancellation and undo/redo. It checks
 keyboard scrolling, Tab/Shift-Tab traversal, Escape focus restoration,
-nested modal grabs, main-window shortcut isolation and the lab's minimum size. Native
+nested modal grabs, main-window shortcut isolation and the lab's minimum size.
+The project workflow also opens a real backup after corrupt UTF-8 and
+verifies that rejecting a newer schema preserves the dirty session. Native
 chooser and confirmation responses are injected so CI can run unattended.
 The same tests run in the Ubuntu Xvfb, Windows and macOS smoke jobs.
 

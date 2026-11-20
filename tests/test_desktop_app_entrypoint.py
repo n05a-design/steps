@@ -10,6 +10,7 @@ Validates:
 """
 
 import errno
+import json
 import os
 import shutil
 import sys
@@ -445,6 +446,45 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
                 reopened.file_menu.invoke(1)
             self.assertEqual(reopened.controller.session.state, expected_state)
             errors.assert_not_called()
+
+            reopened.controller.save(path)
+            future_data = json.loads(path.read_text(encoding="utf-8"))
+            future_data["schema_version"] = "99.0.0"
+            future_path = path.with_name("future.stepsproj")
+            future_path.write_text(json.dumps(future_data), encoding="utf-8")
+            damaged_bytes = bytes((255, 254, 253))
+            path.write_bytes(damaged_bytes)
+
+            with (
+                patch("app.ui.main_window.filedialog.askopenfilename", return_value=str(path)),
+                patch("app.ui.main_window.messagebox.showinfo") as recovery_notice,
+            ):
+                reopened.file_menu.invoke(1)
+            session = reopened.controller.session
+            backup = session.last_loaded_backup_path
+            self.assertTrue(session.last_load_recovered_from_backup)
+            self.assertIsNotNone(backup)
+            recovery_notice.assert_called_once()
+            self.assertIn(backup.name, recovery_notice.call_args.args[1])
+            self.assertEqual(session.state, expected_state)
+            self.assertEqual(path.read_bytes(), damaged_bytes)
+
+            reopened.controller.set_chord(0, "Cm")
+            dirty_state = session.state
+            with (
+                patch("app.ui.main_window.filedialog.askopenfilename", return_value=str(future_path)),
+                self.assertLogs("app.ui.main_window", level="WARNING"),
+            ):
+                reopened.file_menu.invoke(1)
+            self.assertEqual(
+                errors.call_args.args[1],
+                i18n.translate("project.file.error.schema", path=str(future_path)),
+            )
+            self.assertEqual(reopened._project_path, path)
+            self.assertEqual(session.state, dirty_state)
+            self.assertTrue(session.is_dirty)
+            self.assertTrue(session.can_undo)
+            self.assertEqual(session.last_loaded_backup_path, backup)
             self.assertFalse(callback_errors)
 
 

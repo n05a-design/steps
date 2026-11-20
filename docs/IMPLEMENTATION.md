@@ -109,6 +109,13 @@ Die [Pilotfreigabe](../knowledge/concepts/progressions/README.md) beschreibt den
 
 ## Desktop-Prototyp und Produktgrenzen
 
+Beim Öffnen und Speichern übersetzt STEPS Fehler des Dateidialogs und
+typische Dateifehler. Wiederherstellung gilt auch bei fehlerhafter
+UTF-8-Kodierung. Nach erfolgreicher Wiederherstellung nennt der Dialog die
+Sicherung und weist auf Speichern und Speichern unter hin. Wird eine neuere
+Schemafassung abgewiesen, behält das aktive Projekt seinen Pfad und seine
+Undo-Historie.
+
 Bibliothek, Stimmführungslabor und MIDI-Export binden den Fokus an ihren
 Dialog und geben ihn beim Schließen an das zuvor fokussierte Feld zurück.
 Die Projektkürzel wirken im Hauptfenster. Bibliotheksvorschau und

@@ -346,8 +346,6 @@ def load_project_with_status(
     attempts recovery from the latest valid backup file.
     """
     resolved_path = validate_path_safety(path, base_dir=base_dir)
-    if not resolved_path.exists():
-        raise FileNotFoundError(f"Project file not found: {resolved_path}")
 
     def _try_parse_file(target: Path) -> tuple[Project, tuple[str, ...]]:
         text = target.read_text(encoding="utf-8")
@@ -367,7 +365,7 @@ def load_project_with_status(
     try:
         project, migrations = _try_parse_file(resolved_path)
         return ProjectLoadResult(project=project, migrations=migrations)
-    except (json.JSONDecodeError, CorruptedProjectError) as exc:
+    except (json.JSONDecodeError, UnicodeDecodeError, CorruptedProjectError) as exc:
         if not auto_recover_from_backup:
             raise CorruptedProjectError(f"Project file {resolved_path} is corrupted: {exc}") from exc
 

@@ -87,6 +87,22 @@ and suppressed project shortcuts while a dialog is open. The rebuilt macOS
 bundle passed EN/DE headless startup and local signature verification.
 Independent assistive-technology and DAW acceptance remain open.
 
+### Project file feedback follow-up to PR #226
+
+The follow-up branch `codex/project-file-feedback` starts from the PR #226
+merge at `25c6f1cedfb534fa20de95aef13c34e873f4f077`. Project open and save
+dialogs now localize common storage, schema and chooser errors. The file
+error classification is shared with the MIDI dialog. Invalid UTF-8 enters
+the normal backup recovery path, and the recovery notice names the backup.
+The session adopts recovery and migration metadata after validation succeeds.
+
+The strict Tk suite passed 807 tests on arm64 macOS. Its native workflow
+opened a real backup after invalid UTF-8 and rejected a future schema while
+preserving the dirty session, active path and undo history. The rebuilt
+macOS development bundle passed the EN/DE headless smoke and signature
+verification. Independent accessibility, translation and DAW reviews remain
+open.
+
 ### Verification and open acceptance
 
 - On arm64 macOS 27.2.1 with Python 3.14.5 and Aqua Tk 9.0.3, the full suite
