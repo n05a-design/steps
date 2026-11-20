@@ -4,6 +4,7 @@ import unittest
 from unittest.mock import Mock
 
 from app.i18n import LocaleManager
+from app.ui.piano_roll import TickViewport
 from app.ui.session_controller import ProgressionSessionController, VoiceLeadingStyleProfile
 from app.ui.voice_leading_lab_dialog import (
     VoiceLeadingLabDialog,
@@ -106,6 +107,21 @@ class TestVoiceLeadingLab(unittest.TestCase):
                     )
                     self.assertIn(expected, text)
                     self.assertRegex(text, r"1 (?:and|und) 2")
+
+    def test_time_zoom_uses_absolute_ticks_and_clamps_to_project_edges(self):
+        self.assertEqual(TickViewport.around(8000, 1, (6000, 480)), TickViewport(0, 8000))
+        self.assertEqual(TickViewport.around(8000, 4, (0, 480)), TickViewport(0, 2000))
+        self.assertEqual(TickViewport.around(8000, 4, (3700, 600)), TickViewport(3000, 5000))
+        self.assertEqual(TickViewport.around(8000, 4, (7500, 500)), TickViewport(6000, 8000))
+        self.assertEqual(TickViewport.around(1, 8, (0, 1)), TickViewport(0, 1))
+
+    def test_clip_event_keeps_overlapping_notes_at_the_viewport_edges(self):
+        window = TickViewport(100, 200)
+        self.assertEqual(window.clip_event(50, 75), (100, 125))
+        self.assertEqual(window.clip_event(160, 80), (160, 200))
+        self.assertEqual(window.clip_event(50, 240), (100, 200))
+        self.assertIsNone(window.clip_event(0, 100))
+        self.assertIsNone(window.clip_event(200, 25))
 
     def test_dialog_stays_open_when_style_application_is_rejected(self):
         dialog = object.__new__(VoiceLeadingLabDialog)

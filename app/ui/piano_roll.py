@@ -4,8 +4,30 @@ from __future__ import annotations
 
 import tkinter as tk
 from collections.abc import Sequence
+from dataclasses import dataclass
 
 from app.ui.theme import ThemeColors
+
+
+@dataclass(frozen=True)
+class TickViewport:
+    """Visible interval on the absolute project tick axis."""
+
+    start: int
+    end: int
+
+    @classmethod
+    def around(cls, project_end: int, zoom: int, event: tuple[int, int]) -> TickViewport:
+        duration = max(1, (project_end + zoom - 1) // zoom)
+        event_start, event_duration = event
+        center = event_start + event_duration // 2
+        start = max(0, min(center - duration // 2, project_end - duration))
+        return cls(start, start + duration)
+
+    def clip_event(self, start: int, duration: int) -> tuple[int, int] | None:
+        left = max(start, self.start)
+        right = min(start + duration, self.end)
+        return (left, right) if left < right else None
 
 
 class PianoRoll(tk.Canvas):
@@ -21,11 +43,11 @@ class PianoRoll(tk.Canvas):
         timings: Sequence[tuple[int, int]],
         midi_notes: Sequence[Sequence[int]],
         pitch_range: tuple[int, int],
-        end: int,
+        viewport: TickViewport,
         selected_event: int,
     ) -> None:
         self.delete("all")
-        if not timings or end <= 0 or self.winfo_width() < 64 or self.winfo_height() <= 30:
+        if not timings or self.winfo_width() < 64 or self.winfo_height() <= 30:
             return
         low, high = pitch_range
         left, top = 28, 10
@@ -33,35 +55,46 @@ class PianoRoll(tk.Canvas):
         colors = self._colors
 
         def x(tick: int) -> float:
-            return left + tick / end * (right - left)
+            return left + (tick - viewport.start) / (viewport.end - viewport.start) * (right - left)
 
         def y(note: int) -> float:
             return bottom - (note - low) / (high - low) * (bottom - top)
 
         if 0 <= selected_event < len(timings):
-            start, duration = timings[selected_event]
-            self.create_rectangle(
-                x(start), top, max(x(start) + 1, x(start + duration)), bottom,
-                fill=colors.bg_active, outline=colors.border_focus, tags=("selected-event",),
-            )
+            event = viewport.clip_event(*timings[selected_event])
+            if event is not None:
+                start, end = event
+                self.create_rectangle(
+                    x(start), top, x(end), bottom, fill=colors.bg_active,
+                    outline=colors.border_focus, tags=("selected-event",),
+                )
 
         for note in range(low, high + 1):
             if note in (low, high) or note % 12 == 0:
                 self.create_line(left, y(note), right, y(note), fill=colors.border)
                 self.create_text(left - 4, y(note), text=str(note), anchor=tk.E,
                                    fill=colors.text_secondary, font=self._label_font)
-        for tick in sorted({0, end // 2, end}):
-            anchor = tk.W if tick == 0 else tk.E if tick == end else tk.CENTER
-            self.create_text(x(tick), bottom + 10, text=str(tick), anchor=anchor,
-                               fill=colors.text_secondary, font=self._label_font)
-        for start, _duration in timings:
-            self.create_line(x(start), top, x(start), bottom, fill=colors.border)
+        middle = (viewport.start + viewport.end) // 2
+        for tick in sorted({viewport.start, middle, viewport.end}):
+            anchor = tk.W if tick == viewport.start else tk.E if tick == viewport.end else tk.CENTER
+            self.create_text(
+                x(tick), bottom + 10, text=str(tick), anchor=anchor,
+                fill=colors.text_secondary, font=self._label_font, tags=("tick-label",),
+            )
+        for start, _ in timings:
+            if viewport.start <= start < viewport.end:
+                self.create_line(x(start), top, x(start), bottom, fill=colors.border)
         for (start, duration), notes in zip(timings, midi_notes, strict=True):
+            event = viewport.clip_event(start, duration)
+            if event is None:
+                continue
+            event_left, event_right = event
+            x_left = x(event_left)
+            x_right = min(right, max(x_left + 1, x(event_right)))
             bass = min(notes, default=None)
             for note in notes:
                 self.create_line(
-                    x(start), y(note), max(x(start) + 1, x(start + duration)), y(note),
-                    width=3 if note == bass else 2,
+                    x_left, y(note), x_right, y(note), width=3 if note == bass else 2,
                     fill=colors.harmonic_tonic if note == bass else colors.text_primary,
                     tags=("note",),
                 )

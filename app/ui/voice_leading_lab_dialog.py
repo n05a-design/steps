@@ -8,7 +8,7 @@ from typing import Callable
 
 from app.i18n import LocaleManager
 from app.ui.dialog_support import ModalDialog, configure_readonly_preview
-from app.ui.piano_roll import PianoRoll
+from app.ui.piano_roll import PianoRoll, TickViewport
 from app.ui.session_controller import (
     ProgressionSessionController,
     VoiceLeadingStyleProfile,
@@ -16,6 +16,9 @@ from app.ui.session_controller import (
 from app.ui.theme import ThemeManager
 from src.steps.progression.voice_leading import VoiceLeadingStyle
 from src.steps.theory.exceptions import MusicTheoryError
+
+
+_TIME_ZOOM_LEVELS = (1, 2, 4, 8)
 
 
 VOICE_LEADING_STYLE_OPTIONS = (
@@ -133,6 +136,17 @@ class VoiceLeadingLabDialog(ModalDialog):
         self._event_selector = ttk.Combobox(navigation, state="readonly", font=self._font)
         self._event_selector.pack(side=tk.LEFT, fill=tk.X, expand=True)
         self._event_selector.bind("<<ComboboxSelected>>", self._on_view_change)
+        tk.Label(
+            navigation, text=translate("voice.lab.zoom"), bg=colors.bg_window,
+            fg=colors.text_primary, font=self._font,
+        ).pack(side=tk.LEFT, padx=spacing.sm)
+        zoom_labels = (translate("voice.lab.zoom.overview"), *(f"{level}×" for level in _TIME_ZOOM_LEVELS[1:]))
+        self._zoom_selector = ttk.Combobox(
+            navigation, state="readonly", values=zoom_labels, width=14, font=self._font,
+        )
+        self._zoom_selector.pack(side=tk.LEFT)
+        self._zoom_selector.current(0)
+        self._zoom_selector.bind("<<ComboboxSelected>>", self._on_view_change)
         self._update_events(selected_index)
 
         body = tk.Frame(container, bg=colors.bg_window)
@@ -216,7 +230,9 @@ class VoiceLeadingLabDialog(ModalDialog):
             t("voice.lab.event.label", number=index + 1, chord=chord, start=start, end=start + duration)
             for index, (chord, (start, duration)) in enumerate(zip(chords, self._timings, strict=True))
         )
-        self._event_selector.configure(values=values, state="readonly" if values else tk.DISABLED)
+        state = "readonly" if values else tk.DISABLED
+        self._event_selector.configure(values=values, state=state)
+        self._zoom_selector.configure(state=state)
         if values:
             self._event_selector.current(min(max(0, selected or 0), len(values) - 1))
         else:
@@ -272,9 +288,10 @@ class VoiceLeadingLabDialog(ModalDialog):
             return
         pitch_range = max(0, min(pitches) - 1), min(127, max(pitches) + 1)
         end = max(start + duration for start, duration in self._timings)
-        canvas.draw(
-            self._timings, profile.midi_notes, pitch_range, end, self._event_selector.current(),
-        )
+        selected_index = self._event_selector.current()
+        zoom = _TIME_ZOOM_LEVELS[self._zoom_selector.current()]
+        viewport = TickViewport.around(end, zoom, self._timings[selected_index])
+        canvas.draw(self._timings, profile.midi_notes, pitch_range, viewport, selected_index)
 
     def _apply_profile(self, side: int) -> None:
         if self._refresh_changed_project():

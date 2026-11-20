@@ -477,7 +477,7 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             rolls = list(widgets(lab, tk.Canvas))
             self.assertEqual(len(rolls), 2)
             self.assertTrue(all(roll.find_withtag("note") for roll in rolls))
-            event_selector, _, selector = widgets(lab, ttk.Combobox)
+            event_selector, zoom_selector, _, selector = widgets(lab, ttk.Combobox)
             self.assertEqual(event_selector.current(), window.chord_listbox.curselection()[0])
             first_highlights = [roll.coords("selected-event") for roll in rolls]
             self.assertTrue(all(coords for coords in first_highlights))
@@ -491,10 +491,42 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             ))
             self.assertIn(controller.session.chords[3], event_selector.get())
 
+            def visible_ticks(roll):
+                return [int(roll.itemcget(item, "text")) for item in roll.find_withtag("tick-label")]
+
+            overview = visible_ticks(rolls[0])
+            self.assertEqual(overview, visible_ticks(rolls[1]))
+            zoom_selector.current(2)
+            zoom_selector.event_generate("<<ComboboxSelected>>")
+            root.update()
+            zoomed = visible_ticks(rolls[0])
+            self.assertEqual(zoomed, visible_ticks(rolls[1]))
+            self.assertGreater(zoomed[0], overview[0])
+            self.assertEqual(zoomed[-1], overview[-1])
+            self.assertTrue(all(roll.coords("selected-event") for roll in rolls))
+            self.assertTrue(all(
+                28 <= roll.coords(item)[0] <= roll.coords(item)[2] <= roll.winfo_width() - 10
+                for roll in rolls for item in roll.find_withtag("note")
+            ))
+
+            event_selector.current(0)
+            event_selector.event_generate("<<ComboboxSelected>>")
+            root.update()
+            first_zoomed = visible_ticks(rolls[0])
+            self.assertEqual(first_zoomed, visible_ticks(rolls[1]))
+            self.assertEqual(first_zoomed[0], overview[0])
+            self.assertLess(first_zoomed[-1], overview[-1])
+            self.assertEqual(controller.session.state, before_comparison)
+
             selector.current(1 if active_style.value != "STRICT_CLASSICAL" else 0)
             selector.event_generate("<<ComboboxSelected>>")
             root.update()
             self.assertEqual(controller.session.state, before_comparison)
+            self.assertEqual(first_zoomed, visible_ticks(rolls[1]))
+            zoom_selector.current(0)
+            zoom_selector.event_generate("<<ComboboxSelected>>")
+            root.update()
+            self.assertTrue(all(visible_ticks(roll) == overview for roll in rolls))
             button(lab, "voice.lab.apply_b").invoke()
             self.assertFalse(lab.winfo_exists())
             self.assertNotEqual(controller.session.voice_leading_style, active_style)
