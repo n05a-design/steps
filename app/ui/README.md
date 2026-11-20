@@ -1,6 +1,6 @@
 # Desktop-Oberfläche
 
-Die Tkinter-Oberfläche implementiert die zwei Bereiche aus ADR-001. Das Hauptfenster verkabelt Editor, Inspektor und Projektaktionen. Eigene Module enthalten die Bibliothek, das Stimmführungslabor und das MIDI-Exportstudio. Der Controller vermittelt zwischen Widgets und Musikkern. Auf Aqua verwenden die Schaltflächen die native ttk-Palette. Die Glide-Roadmap beschreibt eine mögliche weitere Entwicklung.
+Die Tkinter-Oberfläche implementiert die zwei Bereiche aus ADR-001. Das Hauptfenster verkabelt Editor, Inspektor und Projektaktionen. Eigene Module enthalten die Bibliothek, das Stimmführungslabor und das MIDI-Exportstudio. Der [Harmonie-Inspektor](harmonic_inspector.py) formatiert Akkorddaten und Tastaturvoicings unabhängig von Tkinter. Der Controller vermittelt zwischen Widgets und Musikkern. Auf Aqua verwenden die Schaltflächen die native ttk-Palette. Die Glide-Roadmap beschreibt eine mögliche weitere Entwicklung.
 
 | Einstieg | Inhalt |
 | --- | --- |

@@ -25,6 +25,7 @@ from ..storage.undo import UndoStack
 from ..theory.chord import ChordDefinition, Voicing, parse_chord
 from ..theory.exceptions import ChordConstructionError, MusicTheoryError, ProgressionParsingError
 from ..theory.pitch import NoteSpelling, parse_spelling
+from ..theory.voice_leading import VoiceLeadingDiagnostic, find_perfect_interval_motion
 from .engine import (
     analyze_progression_voice_leading,
     detect_progression_archetypes,
@@ -34,7 +35,6 @@ from .engine import (
 from .voice_leading import (
     VoiceLeadingStyle,
     absolute_semitone_distance,
-    detect_parallel_fifths_octaves,
 )
 
 
@@ -59,6 +59,9 @@ class DegreeAnalysis:
     roman_numeral: str
     semitone_distance_to_next: Optional[int] = None
     voice_leading_warnings: tuple[str, ...] = ()
+    voice_leading_diagnostics: tuple[VoiceLeadingDiagnostic, ...] = field(
+        default=(), compare=False, repr=False,
+    )
 
 
 @dataclass
@@ -516,20 +519,21 @@ class ProgressionSession:
                 roman += ch.quality
 
             dist: Optional[int] = None
-            warnings: List[str] = []
+            diagnostics: List[VoiceLeadingDiagnostic] = []
             if i + 1 < len(voicings):
                 v_curr = voicings[i].midi_notes
                 v_next = voicings[i + 1].midi_notes
                 if len(v_curr) == len(v_next):
                     dist = absolute_semitone_distance(v_curr, v_next)
-                    warnings = detect_parallel_fifths_octaves(v_curr, v_next, style=active_style)
+                    diagnostics = find_perfect_interval_motion(v_curr, v_next, style=active_style)
 
             analyses.append(DegreeAnalysis(
                 index=i,
                 symbol=sym,
                 roman_numeral=roman,
                 semitone_distance_to_next=dist,
-                voice_leading_warnings=tuple(warnings)
+                voice_leading_warnings=tuple(item.describe() for item in diagnostics),
+                voice_leading_diagnostics=tuple(diagnostics),
             ))
 
         return analyses, voicings

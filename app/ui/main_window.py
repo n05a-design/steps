@@ -19,6 +19,7 @@ from typing import Optional
 from app.brand import apply_window_icon
 from app.i18n import LocaleManager
 from app.knowledge import get_reviewed_progression, list_reviewed_progressions
+from app.ui.harmonic_inspector import format_beginner_voicings, format_chord_analysis
 from app.ui.midi_export_dialog import MidiExportOptions, MidiExportOptionsDialog
 from app.ui.reviewed_library_dialog import ReviewedProgressionLibraryDialog
 from app.ui.session_controller import ProgressionSessionController
@@ -1163,93 +1164,22 @@ class StepsMainWindow:
         )
 
     def _display_chord_details(self, chord_name: str) -> None:
-        """Renders harmonic analysis, voicing reduction and scale suggestions."""
-        from src.steps.theory.chord import parse_chord
-        from src.steps.theory.scale import construct_scale
-
+        """Update the inspector, keeping optional keyboard details independent."""
         self.detail_text.delete("1.0", tk.END)
+        translate = self.i18n.translate
+        try:
+            details = format_chord_analysis(chord_name, self.controller.session.convention, translate)
+        except Exception as exc:
+            self.detail_text.insert(tk.END, translate("chord.hint", chord=chord_name, error=exc))
+            return
 
         try:
-            chord = parse_chord(chord_name, convention=self.controller.session.convention)
-            voicing = chord.to_voicing(bass_octave=3, voicing_type="CLOSE")
-
-            # Quality to scale mapping
-            q = chord.quality.lower()
-            if "maj" in q:
-                candidates = ["IONIAN", "LYDIAN"]
-            elif "m7b5" in q or "ø" in q:
-                candidates = ["LOCRIAN"]
-            elif "m" in q:
-                candidates = ["DORIAN", "AEOLIAN"]
-            elif "7" in q:
-                candidates = ["MIXOLYDIAN"]
-            else:
-                candidates = ["IONIAN"]
-
-            scales = [construct_scale(chord.root, candidate) for candidate in candidates]
-
-            lines = [
-                self.i18n.translate("chord.analysis.title", chord=chord_name),
-                "=" * 50,
-                f"{self.i18n.translate('chord.root')}: {chord.root.step} "
-                f"({self.i18n.translate('chord.pitch_class')} {int(chord.root.pitch_class)})",
-                f"{self.i18n.translate('chord.quality')}: {chord.quality}",
-                f"{self.i18n.translate('chord.intervals')}: {chord.theoretical_intervals}",
-                f"{self.i18n.translate('chord.voicing')}: {voicing.midi_notes}",
-                "",
-                self.i18n.translate("scales.heading"),
-                "-" * 50,
-            ]
-            for s in scales:
-                note_str = " - ".join(n.step + ("#" * n.alteration if n.alteration > 0 else "b" * (-n.alteration)) for n in s.spellings)
-                lines.append(f"• {s.template.name.upper():16s} {note_str}")
-
-            lines.append("")
-            lines.append(self.i18n.translate("diagnosis.heading"))
-            lines.append("-" * 50)
-            lines.append(self.i18n.translate("diagnosis.voicing"))
-
-            try:
-                view_model = self.controller.get_view_model()
-                beginner = view_model.get("beginner_voicings")
-                if beginner:
-                    lines.append("")
-                    lines.append(self.i18n.translate("beginner.heading"))
-                    lines.append("-" * 50)
-                    lines.append(
-                        self.i18n.translate(
-                            "beginner.summary",
-                            smoothness=f'{beginner["smoothness_score"]:.1f}',
-                            distance=beginner["total_l1_distance"],
-                        )
-                    )
-                    for voicing in beginner["voicings"]:
-                        lines.append(
-                            self.i18n.translate(
-                                "beginner.voicing",
-                                chord=voicing["chord_symbol"],
-                                bass=voicing["lh_spelling"],
-                                lh_finger=voicing["lh_fingering"],
-                                notes=" ".join(voicing["rh_spellings"]),
-                            )
-                        )
-                    for transition in beginner["transitions"]:
-                        lines.append(
-                            self.i18n.translate(
-                                "beginner.transition",
-                                from_chord=transition["from_chord"],
-                                to_chord=transition["to_chord"],
-                                guidance=transition["pedagogical_guidance"],
-                            )
-                        )
-            except (AttributeError, KeyError, TypeError):
-                logger.exception("Could not render optional beginner voicing details")
-
-            self.detail_text.insert(tk.END, "\n".join(lines))
-        except Exception as e:
-            self.detail_text.insert(
-                tk.END, self.i18n.translate("chord.hint", chord=chord_name, error=e)
-            )
+            keyboard = format_beginner_voicings(self.controller.get_beginner_voicings(), translate)
+            if keyboard:
+                details += "\n\n" + keyboard
+        except Exception:
+            logger.exception("Could not render optional beginner voicing details")
+        self.detail_text.insert(tk.END, details)
 
     def _display_empty_info(self) -> None:
         self.detail_text.delete("1.0", tk.END)

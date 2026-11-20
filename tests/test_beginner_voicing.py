@@ -69,6 +69,16 @@ class TestBeginnerVoicing(unittest.TestCase):
         red_csus4 = reduce_chord_for_beginners("Csus4")
         self.assertEqual(red_csus4.reduced_symbol, "Csus4")
 
+    def test_reduction_round_trips_german_roots_without_changing_pitches(self) -> None:
+        pairs = (("Bbmaj7", "Bmaj7", "B"), ("Bmaj7", "Hmaj7", "H"), ("F#7", "Fis7", "Fis"))
+        for international, german, reduced in pairs:
+            with self.subTest(chord=german):
+                self.assertEqual(reduce_chord_for_beginners(german, "DE").reduced_symbol, reduced)
+                self.assertEqual(
+                    generate_beginner_inversions(international, convention="INT"),
+                    generate_beginner_inversions(german, convention="DE"),
+                )
+
     def test_candidate_inversions_generation(self) -> None:
         """Verify generation of close triad candidates in the beginner keyboard range."""
         cands = generate_beginner_inversions("C")

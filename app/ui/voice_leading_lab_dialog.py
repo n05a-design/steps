@@ -60,6 +60,12 @@ def format_voice_leading_profile(
                 warnings=len(transition.voice_leading_warnings),
             )
         )
+        for item in transition.voice_leading_diagnostics:
+            lines.append("  • " + translate(
+                f"voice.lab.warning.{item.motion}.{item.interval}",
+                lower=item.lower_voice + 1,
+                upper=item.upper_voice + 1,
+            ))
     return "\n".join(lines)
 
 

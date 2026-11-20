@@ -308,6 +308,23 @@ def _resolve_style(style_input: Union[str, VoiceLeadingStyle]) -> VoiceLeadingSt
     raise VoiceLeadingError(f"Invalid voice leading style type: {type(style_input)}")
 
 
+@dataclass(frozen=True)
+class VoiceLeadingDiagnostic:
+    """Style-dependent finding with zero-based voice indices."""
+
+    motion: Literal["parallel", "contrary"]
+    interval: Literal["fifth", "octave_or_unison"]
+    lower_voice: int
+    upper_voice: int
+
+    def describe(self) -> str:
+        """Return the historical diagnostic text for existing API consumers."""
+        label = "octave/unison" if self.interval == "octave_or_unison" else "fifth"
+        if self.motion == "parallel":
+            return f"Parallel {label} between voice {self.lower_voice} and {self.upper_voice}"
+        return f"Contrary {label} between outer voices {self.lower_voice} and {self.upper_voice}"
+
+
 def detect_parallel_fifths_octaves(
     chord_a: Union[List[int], Tuple[int, ...]],
     chord_b: Union[List[int], Tuple[int, ...]],
@@ -320,6 +337,18 @@ def detect_parallel_fifths_octaves(
     - CONTEMPORARY_POP, JAZZ_POP, POWER_CHORDS and QUARTAL_JAZZ permit parallel fifths and octaves.
     - STRICT_CLASSICAL and STRICT_COUNTERPOINT report parallel fifths and octaves as violations.
     """
+    return [
+        diagnostic.describe()
+        for diagnostic in find_perfect_interval_motion(chord_a, chord_b, style)
+    ]
+
+
+def find_perfect_interval_motion(
+    chord_a: Union[List[int], Tuple[int, ...]],
+    chord_b: Union[List[int], Tuple[int, ...]],
+    style: Union[str, VoiceLeadingStyle] = VoiceLeadingStyle.STRICT_COUNTERPOINT,
+) -> List[VoiceLeadingDiagnostic]:
+    """Find perfect parallels and contrary outer-voice intervals in strict style."""
     if len(chord_a) != len(chord_b):
         raise VoiceLeadingError("Chords must have identical voice count.")
 
@@ -327,7 +356,7 @@ def detect_parallel_fifths_octaves(
     if not resolved_style.is_strict_counterpoint:
         return []
 
-    violations: List[str] = []
+    violations: List[VoiceLeadingDiagnostic] = []
     n = len(chord_a)
     for low in range(n):
         for high in range(low + 1, n):
@@ -336,11 +365,11 @@ def detect_parallel_fifths_octaves(
             if before != after or before not in (0, 7):
                 continue
             motion = (chord_b[low] - chord_a[low]) * (chord_b[high] - chord_a[high])
-            label = "octave/unison" if before == 0 else "fifth"
+            interval = "octave_or_unison" if before == 0 else "fifth"
             if motion > 0:
-                violations.append(f"Parallel {label} between voice {low} and {high}")
+                violations.append(VoiceLeadingDiagnostic("parallel", interval, low, high))
             elif motion < 0 and low == 0 and high == n - 1:
-                violations.append(f"Contrary {label} between outer voices {low} and {high}")
+                violations.append(VoiceLeadingDiagnostic("contrary", interval, low, high))
     return violations
 
 

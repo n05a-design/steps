@@ -2,6 +2,9 @@
 
 ## Unreleased – App und Python-Kern
 
+- Der eigenständige Harmonie-Inspektor zeigt Grund- und Skalentöne in der Projektnotation. Tastaturvoicings für deutsche Vorzeichennamen bleiben auch nach der Akkordreduktion berechenbar.
+- Bewegungswerte der Anfänger-Voicings und konkrete Stimmführungswarnungen stehen in EN/DE zur Verfügung. Didaktische Originalhinweise bleiben als solche sichtbar.
+
 - Das MIDI-Exportstudio prüft jedes Voicing vor der Dateiauswahl und nennt den ersten Akkord, der einen Modus blockiert.
 - Die Progressionsbibliothek verknüpft Suchbegriffe aus Akkorden, Titeln und Quellen. Eine weiterhin sichtbare Auswahl bleibt beim Ändern der Suche erhalten. Katalogfehler erscheinen vor der Speicherrückfrage.
 

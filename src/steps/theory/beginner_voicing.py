@@ -193,7 +193,6 @@ def reduce_chord_for_beginners(
     else:
         raise ChordConstructionError(f"Unsupported chord input: {type(chord)}")
 
-    root_pc = int(c_def.root.pitch_class)
     intervals = c_def.theoretical_intervals
 
     # Detect triad quality
@@ -226,10 +225,8 @@ def reduce_chord_for_beginners(
         qual = ""
         base_name_de = "Dur-Dreiklang"
 
-    root_step = c_def.root.step
-    alt = c_def.root.alteration
-    acc = "#" * alt if alt > 0 else "b" * abs(alt)
-    reduced_symbol = f"{root_step}{acc}{qual}"
+    root = c_def.root
+    reduced_symbol = root.render(convention).removesuffix(str(root.octave)) + qual
 
     # Identify omitted extensions
     omitted: List[str] = []

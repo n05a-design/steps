@@ -14,9 +14,15 @@
 
 `ProgressionSession.analyze_progression_with_voicings()` liefert Stufenanalyse
 und genau die dazu berechneten Voicings im selben Durchlauf. Der Controller
-übergibt Tonhöhen und Warnungszahlen an das Stimmführungslabor. Tkinter zeichnet
+übergibt Tonhöhen und strukturierte Befunde an das Stimmführungslabor.
+Bewegungsart, Intervall und Stimmenindizes stammen aus dem Musikkern.
+Das Labor formuliert diese Befunde über die EN/DE-Kataloge. Tkinter zeichnet
 die Voicings gegen die absoluten Projektticks. Ein Vergleich ist lesend und
 ändert erst bei ausdrücklicher Übernahme den Projektstil.
+
+Der Harmonie-Inspektor trennt die Textaufbereitung vom Hauptfenster. Er
+verwendet die Projektnotation für Notennamen und fordert über den Controller
+die Tastaturvoicings an.
 
 ## Fachliche Gates vor Implementierung
 

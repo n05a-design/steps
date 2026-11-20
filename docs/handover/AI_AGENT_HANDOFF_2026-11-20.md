@@ -39,6 +39,25 @@ English/German headless smoke and the local signature check. Ableton Live 11
 Standard and Live 12 Beta both timed out in computer use. Independent DAW
 import remains `NOT_RUN`.
 
+### Harmony inspector follow-up to PR #223
+
+The branch `codex/localized-harmony-inspector` starts from the PR #223 merge
+at `e6baf69d41305be6c499c249d7668c17ea823b7c`. The inspector now has a
+Tk-independent formatter for roots, scale notes and beginner voicings.
+Rendering follows project notation. Beginner reduction also round-trips
+German root names without changing the sounding pitches. Motion measurements
+are localized, and the original instructional text remains visible.
+
+The session provides structured interval-motion findings to the Voice
+Leading Lab. The lab shows localized affected intervals and voice numbers.
+The existing text API retains its original format.
+
+The strict Tk suite passed 801 tests on arm64 macOS. The tests exercised all
+four UI-language/project-notation combinations and the localized warning
+forms. A rebuilt macOS bundle started graphically and passed the English
+and German headless smoke checks. Human translation, accessibility and
+independent DAW acceptance remain open.
+
 ### Verification and open acceptance
 
 - On arm64 macOS 27.2.1 with Python 3.14.5 and Aqua Tk 9.0.3, the full suite

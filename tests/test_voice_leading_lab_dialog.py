@@ -4,13 +4,14 @@ import unittest
 from unittest.mock import Mock
 
 from app.i18n import LocaleManager
-from app.ui.session_controller import ProgressionSessionController
+from app.ui.session_controller import ProgressionSessionController, VoiceLeadingStyleProfile
 from app.ui.voice_leading_lab_dialog import (
     VoiceLeadingLabDialog,
     format_voice_leading_profile,
 )
-from src.steps.progression.session import ProgressionSession
+from src.steps.progression.session import DegreeAnalysis, ProgressionSession
 from src.steps.progression.voice_leading import VoiceLeadingStyle
+from src.steps.theory.voice_leading import detect_parallel_fifths_octaves, find_perfect_interval_motion
 
 
 class TestVoiceLeadingLab(unittest.TestCase):
@@ -53,6 +54,35 @@ class TestVoiceLeadingLab(unittest.TestCase):
         self.assertIn("Cumulative absolute MIDI-note movement", rendered)
         self.assertIn("not a universal ranking", rendered)
         self.assertIn("C → G", rendered)
+
+    def test_profile_localizes_detected_parallel_and_contrary_motion(self):
+        style = VoiceLeadingStyle.STRICT_CLASSICAL
+        for start, end, en, de in (
+            ([60, 67], [62, 69], "Parallel fifth", "Quintparallele"),
+            ([60, 67], [59, 78], "Fifth in contrary motion", "Quinte in Gegenbewegung"),
+            ([60, 72], [61, 73], "Parallel octave or unison", "Oktav- oder Primparallele"),
+            ([60, 72], [61, 61], "Octave or unison in contrary motion", "Oktave oder Prime in Gegenbewegung"),
+        ):
+            with self.subTest(start=start, end=end):
+                diagnostics = find_perfect_interval_motion(start, end, style)
+                self.assertEqual(len(diagnostics), 1)
+                legacy = detect_parallel_fifths_octaves(start, end, style)
+                self.assertEqual(legacy, [diagnostics[0].describe()])
+                transition = DegreeAnalysis(
+                    0, "C", "I", semitone_distance_to_next=2,
+                    voice_leading_warnings=tuple(legacy),
+                    voice_leading_diagnostics=tuple(diagnostics),
+                )
+                profile = VoiceLeadingStyleProfile(
+                    style, (transition, DegreeAnalysis(1, "D", "II")), 2,
+                    (tuple(start), tuple(end)),
+                )
+                for language, expected in (("en", en), ("de", de)):
+                    text = format_voice_leading_profile(
+                        profile, ("C", "D"), style, LocaleManager(preference=language).translate,
+                    )
+                    self.assertIn(expected, text)
+                    self.assertRegex(text, r"1 (?:and|und) 2")
 
     def test_dialog_stays_open_when_style_application_is_rejected(self):
         dialog = object.__new__(VoiceLeadingLabDialog)
