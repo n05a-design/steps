@@ -58,6 +58,21 @@ forms. A rebuilt macOS bundle started graphically and passed the English
 and German headless smoke checks. Human translation, accessibility and
 independent DAW acceptance remain open.
 
+### Atomic MIDI export follow-up to PR #224
+
+The follow-up branch `codex/atomic-midi-export` starts from the PR #224 merge
+at `9407f42d46234a3fa2f8788f47589aa1142326be`. SMF writers now stage complete
+bytes on the destination filesystem before replacing a regular target.
+The export dialog localizes destination and data errors and remains open
+for retry. The native workflow verifies that an injected replacement
+failure preserves the previous file and permits a successful second export.
+
+The strict Tk suite passed 805 tests on arm64 macOS. All four DAW fixture
+hashes match the preceding snapshots. The rebuilt macOS bundle passed
+EN/DE headless smoke, signature verification and an isolated CLI MIDI
+export. Independent DAW, translation and accessibility acceptance remain
+open.
+
 ### Verification and open acceptance
 
 - On arm64 macOS 27.2.1 with Python 3.14.5 and Aqua Tk 9.0.3, the full suite

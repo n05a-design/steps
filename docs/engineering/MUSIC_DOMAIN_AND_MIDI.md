@@ -87,6 +87,16 @@ Ein gemeinsames Zeitmodell ist eine *technische Vorarbeit*, keine Festlegung, da
 
 Die MIDI Association stellt SMF-Spezifikation und ergänzende RP bereit: https://midi.org/standard-midi-files . Bei Mido bedeutet `message.time` in **MIDI-Tracks** eine nonnegative Delta-Zeit in Ticks, nicht zwingend absolute Zeit/Sekunden; der Tempo-Meta-Event benutzt µs/Viertelnote (vgl. https://github.com/mido/mido/blob/main/docs/messages/index.rst und https://github.com/mido/mido/blob/main/docs/meta_message_types.rst ). `music21` ist ein Referenzoracle/Adapterkandidat, kein nachgewiesen integrierter Engine-Kern: https://music21.org/music21docs/moduleReference/moduleChord.html .
 
+### Dateiausgabe
+
+`MidiFile.save()` serialisiert zuerst die vollständigen SMF-Daten. Die
+temporäre Datei liegt auf demselben Dateisystem wie das Ziel und wird
+nach `fsync` und dem Schließen des Handles mit `os.replace()` veröffentlicht.
+Schlägt ein Schritt vor dem Ersetzen fehl, bleiben die bisherigen Zielbytes
+lesbar. Reguläre Dateien hinter symbolischen Links bleiben erreichbar.
+Bei einem vorhandenen Ziel übernimmt der Export die üblichen Modusbits.
+Die Dateifreigabe beim Ersetzen hängt vom Ziel-Dateisystem ab.
+
 ### Abnahmeplan MIDI-Datei (künstliche Testdaten)
 
 1. **Type 0**: 1 Track + Tempo + Time Signature + Noten, Round-trip; events nach Tick-Position identisch.

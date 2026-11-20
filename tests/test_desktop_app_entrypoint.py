@@ -9,6 +9,7 @@ Validates:
 - Platform keyboard accelerators and the real UI save/open/export workflow
 """
 
+import errno
 import os
 import shutil
 import sys
@@ -366,6 +367,19 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             with patch("app.ui.main_window.filedialog.asksaveasfilename", return_value=""):
                 button(export, "midi.options.export").invoke()
             self.assertTrue(export.winfo_exists())
+            target = Path(self.midi_path)
+            target.write_bytes(b"previous MIDI data")
+            with (
+                patch("app.ui.main_window.filedialog.asksaveasfilename", return_value=self.midi_path),
+                patch("src.steps.midi.smf.os.replace", side_effect=PermissionError(errno.EACCES, "locked")),
+                self.assertLogs("app.ui.main_window", level="WARNING"),
+            ):
+                button(export, "midi.options.export").invoke()
+            errors.assert_called_once()
+            self.assertIn(i18n.translate("midi.export.error.permission", path=self.midi_path), errors.call_args.args)
+            self.assertTrue(export.winfo_exists())
+            self.assertEqual(target.read_bytes(), b"previous MIDI data")
+            errors.reset_mock()
             with patch("app.ui.main_window.filedialog.asksaveasfilename", return_value=self.midi_path):
                 button(export, "midi.options.export").invoke()
             self.assertFalse(export.winfo_exists())

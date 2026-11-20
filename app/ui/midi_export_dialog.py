@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import errno
 import tkinter as tk
 from typing import Callable, Collection, Literal, Mapping
 
@@ -26,6 +27,27 @@ class MidiExportOptions:
             )
         if type(self.smf_format) is not int or self.smf_format not in (0, 1):
             raise ValueError(f"Unsupported SMF format: {self.smf_format!r}.")
+
+
+_FILE_ERROR_KEYS = {
+    errno.EACCES: "midi.export.error.permission",
+    errno.EPERM: "midi.export.error.permission",
+    errno.EROFS: "midi.export.error.permission",
+    errno.EBUSY: "midi.export.error.locked",
+    errno.ENOSPC: "midi.export.error.space",
+    getattr(errno, "EDQUOT", errno.ENOSPC): "midi.export.error.space",
+    errno.ENOENT: "midi.export.error.folder",
+    errno.ENOTDIR: "midi.export.error.folder",
+    errno.EISDIR: "midi.export.error.directory",
+}
+
+
+def format_midi_file_error(error: OSError, path: str, i18n: LocaleManager) -> str:
+    """Describe an export file error with a localized recovery action."""
+    if getattr(error, "winerror", None) in (32, 33):
+        return i18n.translate("midi.export.error.locked", path=path)
+    key = _FILE_ERROR_KEYS.get(error.errno, "midi.export.error.file")
+    return i18n.translate(key, path=path)
 
 
 class MidiExportOptionsDialog:

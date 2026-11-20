@@ -159,7 +159,11 @@ Format-1-Standards gelten, wenn CLOSE für die Progression verfügbar ist.
 Die Voicing-Prüfung verwendet dieselbe Tonhöhenauswahl wie der Exporter.
 Das Optionsfenster deaktiviert inkompatible Modi und nennt jeweils den ersten
 blockierenden Akkord. Es prüft die Auswahl erneut vor der Dateiauswahl.
-Dateifehler bleiben sichtbar und lassen einen erneuten Exportversuch zu. Type 0 führt alle
+Der Exporter schreibt die vollständige MIDI-Datei zunächst in ein temporäres
+Verzeichnis im Zielordner und ersetzt das Ziel erst nach einem erfolgreichen
+Schreibvorgang. Bei einem Schreib- oder Ersetzungsfehler bleiben die vorhandenen
+Dateibytes erhalten. Der Dialog beschreibt Dateifehler in EN/DE und bleibt für
+einen weiteren Versuch geöffnet. Type 0 führt alle
 exportierten Inhalte in einer Spur zusammen. Dies ist ein automatisierter
 Desktop-Exportpfad, keine unabhängige DAW- oder Accessibility-Abnahme.
 Der Projekt-Exporter interpretiert Textpayloads nur auf `CHORDS`-Spuren als

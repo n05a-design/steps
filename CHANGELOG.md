@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- MIDI-Exporte ersetzen die Zieldatei erst nach einem vollständigen Schreibvorgang. Der Exportdialog zeigt lokalisierte Dateifehler und lässt einen erneuten Versuch zu.
+
 - Der eigenständige Harmonie-Inspektor zeigt Grund- und Skalentöne in der Projektnotation. Tastaturvoicings für deutsche Vorzeichennamen bleiben auch nach der Akkordreduktion berechenbar.
 - Bewegungswerte der Anfänger-Voicings und konkrete Stimmführungswarnungen stehen in EN/DE zur Verfügung. Didaktische Originalhinweise bleiben als solche sichtbar.
 

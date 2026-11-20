@@ -20,7 +20,11 @@ from app.brand import apply_window_icon
 from app.i18n import LocaleManager
 from app.knowledge import get_reviewed_progression, list_reviewed_progressions
 from app.ui.harmonic_inspector import format_beginner_voicings, format_chord_analysis
-from app.ui.midi_export_dialog import MidiExportOptions, MidiExportOptionsDialog
+from app.ui.midi_export_dialog import (
+    MidiExportOptions,
+    MidiExportOptionsDialog,
+    format_midi_file_error,
+)
 from app.ui.reviewed_library_dialog import ReviewedProgressionLibraryDialog
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager, create_button, default_theme
@@ -1409,13 +1413,24 @@ class StepsMainWindow:
                 parent=self._dialog_parent(),
             )
             return False
-        selected = filedialog.asksaveasfilename(
-            parent=self._dialog_parent(),
-            title=self.i18n.translate("midi.save.title"),
-            defaultextension=".mid",
-            filetypes=((self.i18n.translate("midi.filetype"), "*.mid *.midi"),),
-            initialfile="steps_progression_export.mid",
-        )
+        translate = self.i18n.translate
+        parent = self._dialog_parent()
+        try:
+            selected = filedialog.asksaveasfilename(
+                parent=parent,
+                title=translate("midi.save.title"),
+                defaultextension=".mid",
+                filetypes=((translate("midi.filetype"), "*.mid *.midi"),),
+                initialfile="steps_progression_export.mid",
+            )
+        except tk.TclError:
+            logger.exception("Could not open the MIDI save dialog")
+            messagebox.showerror(
+                translate("midi.export.error.title"),
+                translate("midi.export.error.dialog"),
+                parent=parent,
+            )
+            return False
         if not selected:
             return False
         try:
@@ -1425,11 +1440,20 @@ class StepsMainWindow:
                 note_duration_mode=options.note_duration_mode,
                 smf_format=options.smf_format,
             )
-        except (OSError, ValueError, MusicTheoryError) as exc:
+        except OSError as exc:
+            logger.warning("Could not write MIDI export", exc_info=True)
             messagebox.showerror(
-                self.i18n.translate("midi.export.error.title"),
-                str(exc),
-                parent=self._dialog_parent(),
+                translate("midi.export.error.title"),
+                format_midi_file_error(exc, selected, self.i18n),
+                parent=parent,
+            )
+            return False
+        except (ValueError, MusicTheoryError):
+            logger.warning("Could not prepare MIDI export", exc_info=True)
+            messagebox.showerror(
+                translate("midi.export.error.title"),
+                translate("midi.export.error.data"),
+                parent=parent,
             )
             return False
         self.detail_text.insert(
