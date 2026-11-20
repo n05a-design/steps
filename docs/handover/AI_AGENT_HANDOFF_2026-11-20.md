@@ -21,6 +21,21 @@ the development package is `0.2.0.dev0`.
 - The wheel and local macOS bundle include the canonical source registry.
   The development bundle recipe is in the [desktop verification guide](../../tests/native_ui/README.md).
 
+### MIDI and library follow-up to PR #222
+
+The MIDI Export Studio now uses the exporter’s actual voicing rules to disable
+incompatible options, names the first blocking chord for each mode, and
+rechecks the selection before opening the file chooser. The reviewed library
+combines search terms across catalog fields, retains visible selections and
+checks catalog availability before prompting to save the current project.
+
+On arm64 macOS, the follow-up passed 798 tests with
+`STEPS_REQUIRE_DESKTOP_TK=1`, including the updated native workflow and
+existing MIDI Golden fixtures. A fresh development bundle passed the
+English/German headless smoke and the local signature check. Ableton Live 11
+Standard and Live 12 Beta both timed out in computer use. Independent DAW
+import remains `NOT_RUN`.
+
 ### Verification and open acceptance
 
 - On arm64 macOS 27.2.1 with Python 3.14.5 and Aqua Tk 9.0.3, the full suite

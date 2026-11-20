@@ -12,6 +12,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Literal, Optional, Tuple, Union
 
+from src.steps.midi.export_service import Adr017Voicing
 from src.steps.progression.session import (
     ChordRecommendation,
     DegreeAnalysis,
@@ -218,6 +219,9 @@ class ProgressionSessionController:
             title=progression.name,
         )
         self._notify()
+
+    def midi_voicing_failures(self) -> dict[Adr017Voicing, str]:
+        return self._session.midi_voicing_failures()
 
     def export_midi(
         self,

@@ -2,6 +2,9 @@
 
 ## Unreleased – App und Python-Kern
 
+- Das MIDI-Exportstudio prüft jedes Voicing vor der Dateiauswahl und nennt den ersten Akkord, der einen Modus blockiert.
+- Die Progressionsbibliothek verknüpft Suchbegriffe aus Akkorden, Titeln und Quellen. Eine weiterhin sichtbare Auswahl bleibt beim Ändern der Suche erhalten. Katalogfehler erscheinen vor der Speicherrückfrage.
+
 - Der Next Chord Explorer bewahrt die Akkordauswahl auf Aqua, zeigt lokalisierte Beziehungen samt Provenienz und verhindert die Übernahme überholter Empfehlungen.
 - Das Stimmführungslabor zeigt zwei Stilprofile mit vergleichbaren Piano-Rolls, Bassverlauf und Übergangsmetriken.
 - Das Werkzeugmenü, besser lesbare Aqua-Schaltflächen und die Tastaturvorschau verbessern den Desktop-Ablauf. Ein lokales macOS-App-Bundle enthält Branding, Kataloge und das Quellenregister. Der Wheel-Smoke prüft jetzt auch die installierte Bibliothek.

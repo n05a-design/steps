@@ -26,6 +26,11 @@ class TestReviewedProgressionLibrary(unittest.TestCase):
         self.assertFalse(reviewed_progression_matches(example, "no matching content"))
         self.assertTrue(reviewed_progression_matches(example, ""))
 
+    def test_search_combines_chord_name_and_provenance_terms(self):
+        jazz = next(item for item in self.examples if item.progression.prog_id == "PROG-003")
+        self.assertTrue(reviewed_progression_matches(jazz, "  G7    JAZZ  omt-ii-v-i "))
+        self.assertFalse(reviewed_progression_matches(jazz, "jazz nowhere-in-the-catalog"))
+
     def test_preview_preserves_reviewed_text_and_evidence(self):
         example = self.examples[0]
         approved = example.claims[0]

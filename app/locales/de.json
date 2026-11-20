@@ -129,6 +129,7 @@
   "midi.options.voicing.close": "CLOSE — vierstimmige enge Lage (Standard)",
   "midi.options.voicing.drop2": "DROP2 — vierstimmiges Drop-2-Voicing",
   "midi.options.voicing.rootless": "ROOTLESS — vierstimmiges Voicing ohne Grundton",
+  "midi.options.voicing.unavailable": "{mode} ist für {chord} in dieser Progression nicht verfügbar.",
   "midi.options.duration": "Notendauer",
   "midi.options.duration.fixed_gap": "Fester Abstand von 10 Ticks (Standard)",
   "midi.options.duration.percent_95": "95 % der jeweiligen Ereignisdauer",
