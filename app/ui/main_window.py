@@ -45,20 +45,23 @@ from src.steps.theory.exceptions import MusicTheoryError
 
 logger = logging.getLogger(__name__)
 
-_INVALID_PROJECT_FILENAME_CHARS = re.compile(r'[<>:"/\\|?*\x00-\x1f]')
+_INVALID_FILENAME_CHARS = re.compile(r'[<>:"/\\|?*\x00-\x1f\ud800-\udfff]')
 _WINDOWS_RESERVED_FILENAME = re.compile(
     r"^(?:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\.|$)",
     re.IGNORECASE,
 )
 
 
-def _portable_project_filename(title: str) -> str:
-    filename = _INVALID_PROJECT_FILENAME_CHARS.sub("_", title.strip()).rstrip(" .")
-    if not filename or filename in {".", ".."}:
+def _portable_filename(title: str, extension: str) -> str:
+    filename = _INVALID_FILENAME_CHARS.sub("_", title.strip())
+    # Leave room for the extension and a possible Windows device-name prefix.
+    max_stem_bytes = 254 - len(extension)
+    filename = filename.encode("utf-8")[:max_stem_bytes].decode("utf-8", "ignore").rstrip(" .")
+    if not filename:
         filename = "progression"
     if _WINDOWS_RESERVED_FILENAME.match(filename):
         filename = f"_{filename}"
-    return f"{filename}.stepsproj"
+    return f"{filename}{extension}"
 
 
 class StepsMainWindow:
@@ -76,6 +79,7 @@ class StepsMainWindow:
         self.theme = theme or default_theme
         self.i18n = locale_manager or LocaleManager()
         self._project_path: Optional[Path] = None
+        self._last_midi_export_directory: Path | None = None
 
         self.root.title(self.i18n.translate("app.title"))
         self.root.geometry("1024x720")
@@ -280,6 +284,7 @@ class StepsMainWindow:
             return False
         self.controller.new_project()
         self._project_path = None
+        self._last_midi_export_directory = None
         self._load_context_controls()
         self._refresh_all()
         return True
@@ -320,6 +325,7 @@ class StepsMainWindow:
             )
             return False
         self._project_path = None
+        self._last_midi_export_directory = None
         self._load_context_controls()
         self._refresh_all()
         self._update_window_title()
@@ -351,7 +357,7 @@ class StepsMainWindow:
             return filedialog.asksaveasfilename(
                 **options,
                 defaultextension=".stepsproj",
-                initialfile=_portable_project_filename(title),
+                initialfile=_portable_filename(title, ".stepsproj"),
             )
         except tk.TclError:
             logger.exception("Could not open the project %s dialog", operation)
@@ -414,6 +420,7 @@ class StepsMainWindow:
             return False
 
         self._project_path = Path(selected)
+        self._last_midi_export_directory = None
         self._load_context_controls()
         self._refresh_all()
         if getattr(self.controller.session, "last_load_recovered_from_backup", False):
@@ -1274,6 +1281,18 @@ class StepsMainWindow:
             voicing_failures=self.controller.midi_voicing_failures(),
         )
 
+    def _midi_export_initial_directory(self) -> dict[str, str]:
+        project_directory = self._project_path.parent if self._project_path else None
+        for directory in (self._last_midi_export_directory, project_directory):
+            if directory is None:
+                continue
+            try:
+                if directory.is_dir():
+                    return {"initialdir": str(directory)}
+            except OSError:
+                continue
+        return {}
+
     def _export_midi_with_options(self, options: MidiExportOptions) -> bool:
         blocked_chord = self.controller.midi_voicing_failures().get(options.voicing_type)
         if blocked_chord is not None:
@@ -1293,7 +1312,8 @@ class StepsMainWindow:
                 title=translate("midi.save.title"),
                 defaultextension=".mid",
                 filetypes=((translate("midi.filetype"), "*.mid *.midi"),),
-                initialfile="steps_progression_export.mid",
+                initialfile=_portable_filename(self.controller.session.state.title, ".mid"),
+                **self._midi_export_initial_directory(),
             )
         except tk.TclError:
             logger.exception("Could not open the MIDI save dialog")
@@ -1328,8 +1348,10 @@ class StepsMainWindow:
                 parent=parent,
             )
             return False
+        destination = output_path.absolute()
+        self._last_midi_export_directory = destination.parent
         self._write_detail(
-            "\n\n" + self.i18n.translate("midi.export.success", path=output_path.resolve()),
+            "\n\n" + translate("midi.export.success", path=destination),
             append=True,
         )
         self.detail_text.see(tk.END)

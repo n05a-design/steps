@@ -9,6 +9,7 @@
 - Modale Desktop-Dialoge geben den Fokus nach dem Schließen zurück. Projektkürzel sind auf das Hauptfenster begrenzt.
 - Bibliotheksvorschau und Stimmführungsdetails sind mit Tab erreichbar und seitenweise per Tastatur scrollbar. Die Schaltflächen des Stimmführungslabors behalten auch bei kleiner Fensterhöhe ihren Platz.
 
+- Der MIDI-Dateidialog übernimmt den Projekttitel als Namensvorschlag und öffnet bei weiteren Exporten den zuletzt erfolgreich gewählten Ordner des Projekts.
 - MIDI-Exporte ersetzen die Zieldatei erst nach einem vollständigen Schreibvorgang. Der Exportdialog zeigt lokalisierte Dateifehler und lässt einen erneuten Versuch zu.
 
 - Der eigenständige Harmonie-Inspektor zeigt Grund- und Skalentöne in der Projektnotation. Tastaturvoicings für deutsche Vorzeichennamen bleiben auch nach der Akkordreduktion berechenbar.
