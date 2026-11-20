@@ -2,6 +2,7 @@
 
 import errno
 import unittest
+from tempfile import TemporaryDirectory
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import Mock, patch
@@ -131,6 +132,7 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.window.i18n = LocaleManager(preference="en")
         self.window.theme = Mock()
         self.window._project_path = None
+        self.window._last_midi_export_directory = None
         self.window._refresh_all = Mock()
         self.window.detail_text = Mock()
         self.window.project_title_entry = Mock()
@@ -209,6 +211,7 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
             )
         )
         self.window._project_path = Path("/tmp/old.stepsproj")
+        self.window._last_midi_export_directory = Path("/tmp/exports")
 
         with patch(
             "app.ui.main_window.get_reviewed_progression",
@@ -217,6 +220,7 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
             self.assertTrue(self.window._on_new_from_example("PROG-001"))
 
         self.assertIsNone(self.window._project_path)
+        self.assertIsNone(self.window._last_midi_export_directory)
         self.assertEqual(
             self.window.controller.session.state.chords,
             ["C", "G", "Am", "F"],
@@ -698,11 +702,13 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
     @patch("app.ui.main_window.messagebox.askyesnocancel", return_value=True)
     def test_open_saves_dirty_session_before_loading(self, prompt, choose_open, choose_save):
         self.window.controller.session.is_dirty = True
+        self.window._last_midi_export_directory = Path("/tmp/exports")
 
         self.assertTrue(self.window._on_open_project())
 
         self.assertEqual(self.window.controller.saved_paths, [Path("/tmp/saved.stepsproj")])
         self.assertEqual(self.window.controller.loaded_paths, [Path("/tmp/source.stepsproj")])
+        self.assertIsNone(self.window._last_midi_export_directory)
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/fail-close.stepsproj")
     @patch("app.ui.main_window.messagebox.showerror")
@@ -798,6 +804,54 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
 
         self.assertEqual(self.window.controller.exported_paths, [])
         self.window.detail_text.insert.assert_not_called()
+
+    @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="")
+    def test_midi_export_uses_portable_title_and_limits_utf8_filename(self, choose_path):
+        for title, expected in (
+            ("Suite: Dm/G?", "Suite_ Dm_G_.mid"),
+            ("COM9", "_COM9.mid"),
+            ("...", "progression.mid"),
+            ("🎵" * 100, "🎵" * 62 + ".mid"),
+        ):
+            with self.subTest(title=title):
+                self.window.controller.session.state.title = title
+                self.assertFalse(self.window._export_midi_with_options(MidiExportOptions()))
+                self.assertEqual(choose_path.call_args.kwargs["initialfile"], expected)
+
+    @patch("app.ui.main_window.filedialog.asksaveasfilename")
+    @patch("app.ui.main_window.messagebox.showerror")
+    def test_midi_export_reuses_only_last_successful_directory_for_current_project(self, error, choose_path):
+        with TemporaryDirectory() as tmp:
+            project_dir, export_dir, failed_dir = (Path(tmp) / name for name in ("project", "export", "other"))
+            for directory in (project_dir, export_dir, failed_dir):
+                directory.mkdir()
+            self.window._project_path = project_dir / "example.stepsproj"
+            destination = export_dir / "clip.mid"
+            choose_path.return_value = str(destination)
+            options = MidiExportOptions()
+
+            self.assertTrue(self.window._export_midi_with_options(options))
+            self.assertEqual(choose_path.call_args.kwargs["initialdir"], str(project_dir))
+            self.assertIn(str(destination), self.window.detail_text.insert.call_args.args[1])
+
+            choose_path.return_value = str(failed_dir / "failed.mid")
+            self.window.controller.export_error = OSError(errno.ENOSPC, "disk full")
+            with self.assertLogs("app.ui.main_window", level="WARNING"):
+                self.assertFalse(self.window._export_midi_with_options(options))
+            error.assert_called_once()
+            self.assertEqual(choose_path.call_args.kwargs["initialdir"], str(export_dir))
+
+            choose_path.return_value = ""
+            self.assertFalse(self.window._export_midi_with_options(options))
+            self.assertEqual(choose_path.call_args.kwargs["initialdir"], str(export_dir))
+            export_dir.rmdir()
+            self.assertFalse(self.window._export_midi_with_options(options))
+            self.assertEqual(choose_path.call_args.kwargs["initialdir"], str(project_dir))
+
+            self.assertTrue(self.window._on_new_project())
+            self.assertIsNone(self.window._last_midi_export_directory)
+            self.assertFalse(self.window._export_midi_with_options(options))
+            self.assertNotIn("initialdir", choose_path.call_args.kwargs)
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/output.mid")
     def test_midi_export_uses_selected_path_and_confirms_success(self, choose_path):

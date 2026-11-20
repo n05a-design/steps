@@ -122,6 +122,11 @@ Die Projektkürzel wirken im Hauptfenster. Bibliotheksvorschau und
 Stimmführungsdetails sind per Tab erreichbar und mit Bild auf und Bild ab
 scrollbar.
 
+Der native MIDI-Dateidialog schlägt den Projekttitel als Dateinamen vor. Beim
+ersten Export öffnet er für gespeicherte Projekte deren Ordner. Weitere
+Exporte im selben Projekt öffnen den zuletzt erfolgreich verwendeten Ordner,
+solange er verfügbar ist. Ein Projektwechsel setzt die Ordnerauswahl zurück.
+
 Der Harmonie-Inspektor verwendet für Grund- und Skalentöne die Projektnotation.
 Anfänger-Voicings behalten auch bei reduzierten Akkordsymbolen die gewählte
 Schreibweise. Die Oberfläche zeigt gemeinsame Töne, Gesamtbewegung und

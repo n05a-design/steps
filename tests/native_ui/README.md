@@ -22,6 +22,9 @@ main window minimum size, switches candidates with arrow keys, verifies
 Tab traversal through preview and apply controls, toggles UI language
 with the same candidate selected, and inserts it with Enter. An injected file replacement error
 keeps the previous MIDI file and the options dialog available for retry.
+The test checks the title-based MIDI filename, then confirms that a repeated
+export opens in the last successful export directory. Cancelling the chooser
+leaves the previous output bytes intact.
 The test then saves, closes and reopens the project. It exercises invalid
 chord input, missing search results, cancellation and undo/redo. It checks
 keyboard scrolling, Tab/Shift-Tab traversal, Escape focus restoration,

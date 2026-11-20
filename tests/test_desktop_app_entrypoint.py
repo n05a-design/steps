@@ -480,8 +480,12 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
                     if widget.cget("text") == i18n.translate(key)
                 )
                 radio.invoke()
-            with patch("app.ui.main_window.filedialog.asksaveasfilename", return_value=""):
+            with patch(
+                "app.ui.main_window.filedialog.asksaveasfilename", return_value="",
+            ) as chooser:
                 button(export, "midi.options.export").invoke()
+            self.assertEqual(chooser.call_args.kwargs["initialfile"], "Jazz Two-Five-One.mid")
+            self.assertNotIn("initialdir", chooser.call_args.kwargs)
             self.assertTrue(export.winfo_exists())
             target = Path(self.midi_path)
             target.write_bytes(b"previous MIDI data")
@@ -499,8 +503,20 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             with patch("app.ui.main_window.filedialog.asksaveasfilename", return_value=self.midi_path):
                 button(export, "midi.options.export").invoke()
             self.assertFalse(export.winfo_exists())
-            midi = MidiFile.from_bytes(Path(self.midi_path).read_bytes())
+            exported_bytes = target.read_bytes()
+            midi = MidiFile.from_bytes(exported_bytes)
             self.assertEqual(len(midi.tracks), 1)
+
+            window.export_btn.invoke()
+            again = modal()
+            with patch(
+                "app.ui.main_window.filedialog.asksaveasfilename", return_value="",
+            ) as chooser:
+                button(again, "midi.options.export").invoke()
+            self.assertEqual(chooser.call_args.kwargs["initialdir"], str(target.parent))
+            self.assertTrue(again.winfo_exists())
+            button(again, "midi.options.cancel").invoke()
+            self.assertEqual(target.read_bytes(), exported_bytes)
 
             path = Path(self.temp_dir) / "native.stepsproj"
             expected_state = controller.session.state
