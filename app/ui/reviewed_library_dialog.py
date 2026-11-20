@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import tkinter as tk
+import webbrowser
+from tkinter import messagebox, ttk
 from typing import Callable, Iterable
 
 from app.i18n import LocaleManager
@@ -220,6 +222,7 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
             preview_frame,
             orient=tk.VERTICAL,
             command=self._preview.yview,
+            takefocus=False,
         )
         self._preview.configure(yscrollcommand=preview_scrollbar.set)
         self._preview.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
@@ -228,6 +231,12 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
 
         buttons = tk.Frame(container, bg=colors.bg_window)
         buttons.pack(side=tk.BOTTOM, fill=tk.X, pady=(spacing.sm, 0), before=self._body)
+        self._evidence_button = ttk.Menubutton(
+            buttons, text=translate("library.evidence.menu"), state=tk.DISABLED,
+        )
+        self._evidence_menu = tk.Menu(self._evidence_button, tearoff=False)
+        self._evidence_button.configure(menu=self._evidence_menu)
+        self._evidence_button.pack(side=tk.LEFT)
         create_button(
             buttons,
             text=translate("library.close"),
@@ -274,6 +283,7 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
         if not selection or selection[0] >= len(self._visible_examples):
             self._selected = None
             self._chord_preview.pack_forget()
+            self._update_evidence_menu(None)
             self._load_button.configure(state=tk.DISABLED)
             prompt = "library.select_prompt" if self._visible_examples else "library.no_results"
             self._set_preview(self._i18n.translate(prompt))
@@ -283,9 +293,48 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
             return
         self._selected = selected
         self._render_chords(selected)
+        self._update_evidence_menu(selected)
         self._load_button.configure(state=tk.NORMAL)
         self._set_preview(
             format_reviewed_progression(self._selected, self._i18n.translate)
+        )
+
+    def _update_evidence_menu(self, example: ReviewedProgression | None) -> None:
+        menu = self._evidence_menu
+        menu.delete(0, tk.END)
+        if example is None:
+            self._evidence_button.configure(state=tk.DISABLED)
+            return
+
+        t = self._i18n.translate
+        sources = {}
+        reviews = {}
+        for approved in example.claims:
+            for citation in approved.claim.citations:
+                sources.setdefault(citation.url, citation.title)
+            reviews.setdefault(
+                approved.evidence_url,
+                t("library.evidence.review", reviewer=approved.reviewer, date=approved.reviewed_on),
+            )
+
+        for url, title in sources.items():
+            menu.add_command(label=title, command=lambda target=url: self._open_evidence(target))
+        if sources and reviews:
+            menu.add_separator()
+        for url, label in reviews.items():
+            menu.add_command(label=label, command=lambda target=url: self._open_evidence(target))
+        self._evidence_button.configure(state=tk.NORMAL if sources or reviews else tk.DISABLED)
+
+    def _open_evidence(self, url: str) -> None:
+        try:
+            if webbrowser.open(url, new=2):
+                return
+        except (OSError, webbrowser.Error):
+            pass
+        t = self._i18n.translate
+        messagebox.showerror(
+            t("library.evidence.error.title"), t("library.evidence.error.message", url=url),
+            parent=self.window,
         )
 
     def _render_chords(self, example: ReviewedProgression) -> None:

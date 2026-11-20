@@ -1,7 +1,7 @@
 """Tests for reviewed progression search and provenance-preserving previews."""
 
 import unittest
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 from app.i18n import LocaleManager
 from app.knowledge import list_reviewed_progressions
@@ -54,6 +54,32 @@ class TestReviewedProgressionLibrary(unittest.TestCase):
             "source text shown as published",
         ):
             self.assertIn(value, preview)
+
+    @patch("app.ui.reviewed_library_dialog.messagebox.showerror")
+    @patch("app.ui.reviewed_library_dialog.webbrowser.open")
+    def test_evidence_browser_failure_shows_address_in_current_language(self, browser, error):
+        dialog = object.__new__(ReviewedProgressionLibraryDialog)
+        dialog.window = Mock()
+        url = self.examples[0].claims[0].claim.citations[0].url
+
+        for language, failed_to_open in (("en", False), ("de", OSError("no browser"))):
+            with self.subTest(language=language):
+                dialog._i18n = LocaleManager(preference=language)
+                browser.reset_mock(side_effect=True, return_value=True)
+                error.reset_mock()
+                if isinstance(failed_to_open, OSError):
+                    browser.side_effect = failed_to_open
+                else:
+                    browser.return_value = failed_to_open
+
+                dialog._open_evidence(url)
+
+                browser.assert_called_once_with(url, new=2)
+                error.assert_called_once_with(
+                    dialog._i18n.translate("library.evidence.error.title"),
+                    dialog._i18n.translate("library.evidence.error.message", url=url),
+                    parent=dialog.window,
+                )
 
     def test_dialog_stays_open_when_dirty_state_confirmation_is_cancelled(self):
         dialog = object.__new__(ReviewedProgressionLibraryDialog)

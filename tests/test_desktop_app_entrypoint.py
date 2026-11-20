@@ -23,6 +23,7 @@ from unittest.mock import patch
 
 from app.main import main
 from app.i18n import LocaleManager
+from app.knowledge import get_reviewed_progression
 from app.ui.midi_export_dialog import MidiExportOptions
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager
@@ -277,6 +278,7 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
         with (
             patch("app.ui.main_window.messagebox.showerror") as errors,
             patch("app.ui.main_window.messagebox.askyesnocancel", return_value=None) as prompt,
+            patch("app.ui.reviewed_library_dialog.webbrowser.open", return_value=True) as browser,
         ):
             window.file_menu.invoke(0)
             window.chord_entry.delete(0, tk.END)
@@ -298,6 +300,8 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             root.update()
             search = next(widgets(library, tk.Entry))
             preview = next(widgets(library, tk.Text))
+            evidence = next(widgets(library, ttk.Menubutton))
+            menu = library.nametowidget(evidence.cget("menu"))
 
             def visible_labels():
                 return [
@@ -310,6 +314,8 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             prompt.assert_not_called()
             search.insert(0, "no-matching-example")
             self.assertIn(i18n.translate("library.no_results"), preview.get("1.0", tk.END))
+            self.assertTrue(evidence.instate(["disabled"]))
+            self.assertIsNone(menu.index(tk.END))
             search.delete(0, tk.END)
             search.insert(0, "jazz G7")
             self.assertIn("G7", preview.get("1.0", tk.END))
@@ -333,8 +339,23 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             before_tab = preview.tk_focusNext()
             preview.event_generate("<Tab>")
             root.update()
-            self.assertNotEqual(before_tab, preview)
-            self.assertEqual(library.focus_lastfor(), before_tab)
+            self.assertEqual(before_tab, evidence)
+            self.assertEqual(library.focus_lastfor(), evidence)
+            jazz = get_reviewed_progression("PROG-003")
+            expected_links = list(dict.fromkeys(
+                citation.url for approved in jazz.claims for citation in approved.claim.citations
+            ))
+            expected_links += list(dict.fromkeys(approved.evidence_url for approved in jazz.claims))
+            before_browser = controller.session.state
+            browser.assert_not_called()
+            for index in range(menu.index(tk.END) + 1):
+                if menu.type(index) == "command":
+                    menu.invoke(index)
+            self.assertEqual(
+                [call.args[0] for call in browser.call_args_list], expected_links,
+            )
+            self.assertEqual(controller.session.state, before_browser)
+            self.assertEqual(root.grab_current(), library)
             before_shift_tab = preview.tk_focusPrev()
             preview.focus_force()
             preview.event_generate("<Shift-Tab>")
@@ -347,9 +368,16 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             root.update()
             self.assertEqual(preview.yview()[0], 0.0)
             self.assertEqual(visible_labels()[-8:], ["C", "I", "G", "V", "Am", "vi", "F", "IV"])
+            pop = get_reviewed_progression("PROG-001")
+            first_pop_source = pop.claims[0].claim.citations[0]
+            self.assertEqual(menu.entrycget(0, "label"), first_pop_source.title)
+            menu.invoke(0)
+            browser.assert_called_with(first_pop_source.url, new=2)
             search.insert(tk.END, " no-match")
             root.update()
             self.assertNotIn("Am", visible_labels())
+            self.assertTrue(evidence.instate(["disabled"]))
+            self.assertIsNone(menu.index(tk.END))
             search.delete(0, tk.END)
             search.insert(0, "jazz")
             button(library, "library.load").invoke()
