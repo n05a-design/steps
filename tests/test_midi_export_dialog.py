@@ -1,9 +1,13 @@
 """Tests for ADR-017 MIDI export option handling."""
 
+import errno
 import unittest
 from unittest.mock import Mock
 
-from app.ui.midi_export_dialog import MidiExportOptions, MidiExportOptionsDialog
+from app.i18n import LocaleManager
+from app.ui.midi_export_dialog import (
+    MidiExportOptions, MidiExportOptionsDialog, format_midi_file_error,
+)
 
 
 class TestMidiExportOptions(unittest.TestCase):
@@ -27,6 +31,16 @@ class TestMidiExportOptions(unittest.TestCase):
         for kwargs in invalid_options:
             with self.subTest(kwargs=kwargs), self.assertRaises(ValueError):
                 MidiExportOptions(**kwargs)
+
+    def test_windows_sharing_violation_has_specific_recovery_message(self):
+        error = PermissionError(errno.EACCES, "file in use")
+        error.winerror = 32
+        for language in ("en", "de"):
+            locale = LocaleManager(preference=language)
+            self.assertEqual(
+                format_midi_file_error(error, "demo.mid", locale),
+                locale.translate("midi.export.error.locked", path="demo.mid"),
+            )
 
     def test_dialog_closes_only_after_successful_export(self):
         dialog = object.__new__(MidiExportOptionsDialog)

@@ -12,11 +12,13 @@ Validates:
 - Full binary round-trip: MidiFile.to_bytes() -> MidiFile.from_bytes()
 """
 
+import errno
+import os
 import shutil
+import stat
 import tempfile
 import unittest
 
-from src.steps.theory.exceptions import MusicTheoryError
 from pathlib import Path
 from unittest.mock import patch
 
@@ -31,7 +33,7 @@ from src.steps.midi import (
 )
 from src.steps.storage.project_io import Project
 from src.steps.theory.chord import parse_chord
-from src.steps.theory.exceptions import ChordConstructionError
+from src.steps.theory.exceptions import ChordConstructionError, MusicTheoryError
 
 
 class TestVLQEncodingDecoding(unittest.TestCase):
@@ -62,6 +64,40 @@ class TestSMFGenerationAndEnvelope(unittest.TestCase):
 
     def tearDown(self):
         shutil.rmtree(self.temp_dir, ignore_errors=True)
+
+    def test_failed_midi_write_or_publish_preserves_existing_target(self):
+        midi = MidiFile()
+        midi.add_track().add_note(0, 480, 60)
+        self.midi_path.write_bytes(b"previous MIDI data")
+
+        for operation in ("fsync", "replace"):
+            with self.subTest(operation=operation):
+                with patch(
+                    f"src.steps.midi.smf.os.{operation}",
+                    side_effect=OSError(errno.ENOSPC, "injected failure"),
+                ), self.assertRaises(OSError):
+                    midi.save(self.midi_path)
+
+                self.assertEqual(self.midi_path.read_bytes(), b"previous MIDI data")
+                self.assertEqual(list(self.midi_path.parent.iterdir()), [self.midi_path])
+
+        self.assertEqual(midi.save(self.midi_path), self.midi_path)
+        self.assertEqual(self.midi_path.read_bytes(), midi.to_bytes())
+        self.assertEqual(len(SMFParser.parse(self.midi_path.read_bytes()).all_notes), 1)
+
+    @unittest.skipIf(os.name == "nt", "POSIX mode and symlink behavior")
+    def test_midi_export_follows_existing_symlink_and_keeps_target_mode(self):
+        midi = MidiFile()
+        self.midi_path.write_bytes(b"previous MIDI data")
+        self.midi_path.chmod(0o640)
+        link = self.midi_path.with_name("alias.mid")
+        link.symlink_to(self.midi_path.name)
+
+        self.assertEqual(midi.save(link), link)
+
+        self.assertTrue(link.is_symlink())
+        self.assertEqual(link.read_bytes(), midi.to_bytes())
+        self.assertEqual(stat.S_IMODE(self.midi_path.stat().st_mode), 0o640)
 
     def test_adr017_preflight_matches_actual_exports_in_german_notation(self):
         chords = ["Hmaj7", "Fis"]

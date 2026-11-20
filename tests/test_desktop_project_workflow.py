@@ -1,5 +1,6 @@
 """Headless tests for the desktop project's save/open interaction."""
 
+import errno
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
@@ -759,25 +760,42 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/output.mid")
     @patch("app.ui.main_window.messagebox.showerror")
     def test_midi_export_error_is_visible(self, show_error, choose_path):
-        self.window.controller.export_error = OSError("disk full")
+        self.window.controller.export_error = OSError(errno.ENOSPC, "disk full")
 
-        self.assertFalse(
-            self.window._export_midi_with_options(MidiExportOptions())
-        )
+        for language in ("en", "de"):
+            with self.subTest(language=language):
+                self.window.i18n = LocaleManager(preference=language)
+                with self.assertLogs("app.ui.main_window", level="WARNING"):
+                    self.assertFalse(self.window._export_midi_with_options(MidiExportOptions()))
 
-        show_error.assert_called_once()
+                self.assertEqual(
+                    show_error.call_args.args[1],
+                    self.window.i18n.translate("midi.export.error.space", path="/tmp/output.mid"),
+                )
         self.window.detail_text.insert.assert_not_called()
+
+    @patch("app.ui.main_window.messagebox.showerror")
+    def test_midi_chooser_error_is_localized_and_leaves_export_available(self, show_error):
+        from tkinter import TclError
+
+        with (
+            patch("app.ui.main_window.filedialog.asksaveasfilename", side_effect=TclError("chooser failed")),
+            self.assertLogs("app.ui.main_window", level="ERROR"),
+        ):
+            self.assertFalse(self.window._export_midi_with_options(MidiExportOptions()))
+
+        self.assertEqual(show_error.call_args.args[1], self.window.i18n.translate("midi.export.error.dialog"))
+        self.assertFalse(self.window.controller.exported_paths)
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/output.mid")
     @patch("app.ui.main_window.messagebox.showerror")
     def test_invalid_voicing_error_is_visible(self, show_error, choose_path):
         self.window.controller.export_error = ValueError("ROOTLESS needs four voices")
 
-        self.assertFalse(
-            self.window._export_midi_with_options(
-                MidiExportOptions(voicing_type="ROOTLESS")
+        with self.assertLogs("app.ui.main_window", level="WARNING"):
+            self.assertFalse(
+                self.window._export_midi_with_options(MidiExportOptions(voicing_type="ROOTLESS"))
             )
-        )
 
-        show_error.assert_called_once()
+        self.assertEqual(show_error.call_args.args[1], self.window.i18n.translate("midi.export.error.data"))
         self.window.detail_text.insert.assert_not_called()

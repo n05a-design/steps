@@ -9,8 +9,12 @@ Adheres to:
 
 from __future__ import annotations
 
+import errno
 import math
+import os
+import stat
 import struct
+import tempfile
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, List, Optional, Tuple
@@ -169,11 +173,38 @@ class MidiFile:
 
     def save(self, file_path: Path | str) -> Path:
         """Writes the MIDI file to disk atomically."""
-        p = Path(file_path)
-        p.parent.mkdir(parents=True, exist_ok=True)
         data = self.to_bytes()
-        p.write_bytes(data)
-        return p
+        path = Path(file_path)
+        try:
+            target = path.resolve()
+        except RuntimeError as exc:
+            error_code = getattr(errno, "ELOOP", errno.EINVAL)
+            raise OSError(error_code, os.strerror(error_code), path) from exc
+        path.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            existing = target.stat()
+        except FileNotFoundError:
+            existing = None
+        if existing is not None:
+            if stat.S_ISDIR(existing.st_mode):
+                raise IsADirectoryError(errno.EISDIR, os.strerror(errno.EISDIR), target)
+            if not stat.S_ISREG(existing.st_mode):
+                raise OSError(errno.EINVAL, "MIDI export requires a regular file", target)
+            if not os.access(target, os.W_OK):
+                raise PermissionError(errno.EACCES, os.strerror(errno.EACCES), target)
+
+        with tempfile.TemporaryDirectory(
+            prefix=".steps-midi-", dir=target.parent, ignore_cleanup_errors=True,
+        ) as staging:
+            pending = Path(staging) / "export.mid"
+            with pending.open("xb") as stream:
+                stream.write(data)
+                stream.flush()
+                os.fsync(stream.fileno())
+            if existing is not None:
+                pending.chmod(stat.S_IMODE(existing.st_mode))
+            os.replace(pending, target)
+        return path
 
     @classmethod
     def from_bytes(cls, data: bytes) -> MidiFile:

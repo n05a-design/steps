@@ -10,8 +10,9 @@ The dialogs test uses real Tk widgets, event bindings, storage, publication
 data and MIDI bytes. It creates a project, searches and loads an example,
 retains the result when the search is cleared, edits a chord, applies a
 recommendation, compares and applies styles, and exports Format 0 after
-checking the disabled voicing modes. It then saves, closes and reopens the
-project. It exercises invalid
+checking the disabled voicing modes. An injected file replacement error
+keeps the previous MIDI file and the options dialog available for retry.
+The test then saves, closes and reopens the project. It exercises invalid
 chord input, missing search results, cancellation and undo/redo. Native
 chooser and confirmation responses are injected so CI can run unattended.
 The same tests run in the Ubuntu Xvfb, Windows and macOS smoke jobs.
