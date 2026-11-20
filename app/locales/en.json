@@ -165,6 +165,7 @@
   "midi.export.error.directory": "{path} is a folder. Enter a MIDI filename.",
   "midi.export.error.data": "The current progression cannot be exported with these settings. Check the chords and export options.",
   "midi.export.success": "MIDI file exported to:\n{path}",
+  "next_chord.empty": "No recommendations are available for the selected chord.",
   "next_chord.inspect": "Select a candidate to inspect its reasoning and source.",
   "next_chord.original": "Original model explanation",
   "next_chord.stale": "The progression or selected chord has changed. Explore again to get current recommendations.",

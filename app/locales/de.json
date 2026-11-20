@@ -165,6 +165,7 @@
   "midi.export.error.directory": "{path} ist ein Ordner. Gib einen MIDI-Dateinamen ein.",
   "midi.export.error.data": "Die aktuelle Progression lässt sich mit diesen Einstellungen nicht exportieren. Prüfe die Akkorde und Exportoptionen.",
   "midi.export.success": "MIDI-Datei exportiert nach:\n{path}",
+  "next_chord.empty": "Für den gewählten Akkord sind keine Vorschläge verfügbar.",
   "next_chord.inspect": "Wähle einen Vorschlag, um seine Begründung und Quelle zu sehen.",
   "next_chord.original": "Originalerklärung des Modells",
   "next_chord.stale": "Die Progression oder der gewählte Akkord hat sich geändert. Starte die Suche erneut, um aktuelle Vorschläge zu erhalten.",

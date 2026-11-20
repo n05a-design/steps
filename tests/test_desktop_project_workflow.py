@@ -458,34 +458,45 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
                     self.assertFalse(session.is_dirty)
             self.window.controller.get_view_model.assert_not_called()
 
+    def make_next_chord_panel(self, chord_index):
+        from app.ui.next_chord_panel import NextChordPanel
+
+        self.window.chord_listbox = Mock()
+        self.window.chord_listbox.curselection.return_value = (chord_index,)
+        panel = NextChordPanel.__new__(NextChordPanel)
+        panel._parent = Mock()
+        panel._i18n = self.window.i18n
+        panel._controller = self.window.controller
+        panel._selected_chord = self.window._selected_chord_index
+        panel._show_detail = self.window._write_detail
+        panel._on_applied = self.window._on_recommendation_applied
+        panel._context = None
+        panel._recommendations = []
+        panel.candidates = Mock()
+        panel.candidates.curselection.return_value = ()
+        panel.apply_button = Mock()
+        panel.explore_button = Mock()
+        self.window.next_chord_panel = panel
+        return panel
+
     def test_next_chord_explore_apply_undo_redo(self):
         self.window.controller = ProgressionSessionController(
             ProgressionSession(initial_chords=["C", "G", "Am", "F"], key_root="C")
         )
-        self.window._next_recommendations = []
-        self.window.chord_listbox = Mock()
-        self.window.chord_listbox.curselection.return_value = (1,)
-        self.window.next_candidates_list = Mock()
-        self.window.next_candidates_list.curselection.return_value = ()
-        self.window.apply_next_btn = Mock()
-        self.window.detail_text = Mock()
+        panel = self.make_next_chord_panel(1)
 
         self.window._on_explore_next()
-        recommendations = self.window._next_recommendations
+        recommendations = panel._recommendations
         self.assertTrue(recommendations)
-        self.assertEqual(
-            self.window.apply_next_btn.configure.call_args.kwargs["state"],
-            "disabled",
-        )
         candidate_index = next(
             index
             for index, recommendation in enumerate(recommendations)
             if recommendation.candidate_symbol == "C"
         )
-        self.window.next_candidates_list.curselection.return_value = (candidate_index,)
-        self.window._on_next_recommendation_selected(None)
+        panel.candidates.curselection.return_value = (candidate_index,)
+        panel._selection_changed()
 
-        self.window._on_apply_next_recommendation()
+        panel.apply()
 
         self.assertEqual(
             self.window.controller.session.chords,
@@ -503,23 +514,38 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         )
 
     def test_next_chord_apply_requires_a_valid_candidate_selection(self):
-        self.window._next_recommendations = [object()]
-        self.window.next_candidates_list = Mock()
-        self.window.apply_next_btn = Mock()
+        panel = self.make_next_chord_panel(1)
+        panel._recommendations = [object()]
 
-        self.window.next_candidates_list.curselection.return_value = ()
-        self.window._on_next_recommendation_selected(None)
+        panel.candidates.curselection.return_value = ()
+        panel._selection_changed()
         self.assertEqual(
-            self.window.apply_next_btn.configure.call_args.kwargs["state"],
+            panel.apply_button.configure.call_args.kwargs["state"],
             "disabled",
         )
 
-        self.window.next_candidates_list.curselection.return_value = (1,)
-        self.window._on_next_recommendation_selected(None)
+        panel.candidates.curselection.return_value = (1,)
+        panel._selection_changed()
         self.assertEqual(
-            self.window.apply_next_btn.configure.call_args.kwargs["state"],
+            panel.apply_button.configure.call_args.kwargs["state"],
             "disabled",
         )
+
+    def test_next_chord_exploration_with_no_candidates_keeps_focus_and_project(self):
+        self.window.controller = ProgressionSessionController(ProgressionSession())
+        panel = self.make_next_chord_panel(0)
+        before = self.window.controller.session.state
+
+        with patch.object(self.window.controller, "explore_next", return_value=[]):
+            panel.explore()
+
+        self.assertIn(
+            self.window.i18n.translate("next_chord.empty"),
+            self.window.detail_text.insert.call_args.args[1],
+        )
+        panel.candidates.focus_set.assert_not_called()
+        self.assertEqual(panel.apply_button.configure.call_args.kwargs["state"], "disabled")
+        self.assertEqual(self.window.controller.session.state, before)
 
     def test_next_chord_localized_reason_preserves_notation_and_source(self):
         for language in ("en", "de"):
@@ -529,15 +555,12 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
                     self.window.controller = ProgressionSessionController(
                         ProgressionSession(initial_chords=[key, "E"], key_root=key, convention=notation)
                     )
-                    self.window.chord_listbox = Mock()
-                    self.window.chord_listbox.curselection.return_value = (0,)
-                    self.window.next_candidates_list = Mock()
-                    self.window.apply_next_btn = Mock()
+                    panel = self.make_next_chord_panel(0)
                     self.window._on_explore_next()
-                    recommendations = self.window._next_recommendations
+                    recommendations = panel._recommendations
                     index = next(i for i, item in enumerate(recommendations) if item.candidate_symbol == expected)
-                    self.window.next_candidates_list.curselection.return_value = (index,)
-                    self.window._on_next_recommendation_selected(None)
+                    panel.candidates.curselection.return_value = (index,)
+                    panel._selection_changed()
                     details = self.window.detail_text.insert.call_args.args[1]
                     self.assertIn(expected, details)
                     self.assertIn(recommendations[index].source_id, details)
@@ -545,7 +568,7 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
                         self.window.i18n.translate("next_chord.reason.VOICE_LEADING_NEAR"), details,
                     )
                     self.window.controller.set_context(key, True, 120)
-                    self.window._on_apply_next_recommendation()
+                    panel.apply()
                     self.assertEqual(self.window.controller.session.chords, [key, "E"])
                     self.assertEqual(
                         self.window.detail_text.insert.call_args.args[1],

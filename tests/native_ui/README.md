@@ -10,7 +10,10 @@ The dialogs test uses real Tk widgets, event bindings, storage, publication
 data and MIDI bytes. It creates a project, searches and loads an example,
 retains the result when the search is cleared, edits a chord, applies a
 recommendation, compares and applies styles, and exports Format 0 after
-checking the disabled voicing modes. An injected file replacement error
+checking the disabled voicing modes. The recommendation path runs at the
+main window minimum size, switches candidates with arrow keys, verifies
+Tab traversal through preview and apply controls, toggles UI language
+with the same candidate selected, and inserts it with Enter. An injected file replacement error
 keeps the previous MIDI file and the options dialog available for retry.
 The test then saves, closes and reopens the project. It exercises invalid
 chord input, missing search results, cancellation and undo/redo. It checks
