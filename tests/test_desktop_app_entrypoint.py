@@ -294,8 +294,16 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             root.update()
             window.file_menu.invoke(4)
             library = modal()
+            library.geometry("760x500")
+            root.update()
             search = next(widgets(library, tk.Entry))
             preview = next(widgets(library, tk.Text))
+
+            def visible_labels():
+                return [
+                    label.cget("text") for label in widgets(library, tk.Label)
+                    if label.winfo_ismapped()
+                ]
             self.assertEqual(library.focus_lastfor(), search)
             search.event_generate("<Control-n>")
             root.update()
@@ -306,10 +314,21 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             search.insert(0, "jazz G7")
             self.assertIn("G7", preview.get("1.0", tk.END))
             root.update()
+            self.assertEqual(
+                visible_labels()[-7:],
+                [
+                    i18n.translate("library.detail.key", value="C"),
+                    "Dm7", "ii^7", "G7", "V^7", "Cmaj7", "I^maj7",
+                ],
+            )
             preview.focus_force()
             preview.event_generate("<Next>")
             root.update()
-            self.assertGreater(preview.yview()[0], 0.0)
+            preview_offset = preview.yview()[0]
+            self.assertGreater(preview_offset, 0.0)
+            search.insert(tk.END, " omt-ii-v-i")
+            root.update()
+            self.assertEqual(preview.yview()[0], preview_offset)
             self.assertEqual(preview.cget("state"), tk.DISABLED)
             before_tab = preview.tk_focusNext()
             preview.event_generate("<Tab>")
@@ -324,6 +343,15 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             self.assertEqual(library.focus_lastfor(), before_shift_tab)
             search.delete(0, tk.END)
             self.assertIn("PROG-003", preview.get("1.0", tk.END))
+            search.insert(0, "Pop Four Chords")
+            root.update()
+            self.assertEqual(preview.yview()[0], 0.0)
+            self.assertEqual(visible_labels()[-8:], ["C", "I", "G", "V", "Am", "vi", "F", "IV"])
+            search.insert(tk.END, " no-match")
+            root.update()
+            self.assertNotIn("Am", visible_labels())
+            search.delete(0, tk.END)
+            search.insert(0, "jazz")
             button(library, "library.load").invoke()
             self.assertTrue(library.winfo_exists())
             self.assertEqual(controller.session.chords[0], "Dm7")

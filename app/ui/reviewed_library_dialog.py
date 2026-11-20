@@ -121,6 +121,7 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
         self._selected: ReviewedProgression | None = None
         self._i18n = i18n
         self._on_load = on_load
+        self._theme = theme
         colors = theme.colors
         spacing = theme.spacing
         typography = theme.typography
@@ -165,7 +166,8 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
         self._search_entry.bind("<Down>", self._focus_results)
         self._search_var.trace_add("write", self._refresh_list)
 
-        body = tk.PanedWindow(
+        self._chord_preview = tk.Frame(container, bg=colors.bg_window)
+        self._body = tk.PanedWindow(
             container,
             orient=tk.HORIZONTAL,
             bg=colors.border,
@@ -173,9 +175,9 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
             sashrelief=tk.FLAT,
             sashwidth=4,
         )
-        body.pack(fill=tk.BOTH, expand=True)
+        self._body.pack(fill=tk.BOTH, expand=True)
 
-        list_frame = tk.Frame(body, bg=colors.bg_surface)
+        list_frame = tk.Frame(self._body, bg=colors.bg_surface)
         self._listbox = tk.Listbox(
             list_frame,
             bg=colors.bg_surface,
@@ -198,9 +200,9 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
         self._listbox.bind("<<ListboxSelect>>", self._select_current)
         self._listbox.bind("<Double-Button-1>", self._load_selected)
         self._listbox.bind("<Return>", self._load_selected)
-        body.add(list_frame, minsize=250)
+        self._body.add(list_frame, minsize=250)
 
-        preview_frame = tk.Frame(body, bg=colors.bg_window)
+        preview_frame = tk.Frame(self._body, bg=colors.bg_window)
         self._preview = tk.Text(
             preview_frame,
             wrap=tk.WORD,
@@ -222,10 +224,10 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
         self._preview.configure(yscrollcommand=preview_scrollbar.set)
         self._preview.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         preview_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
-        body.add(preview_frame, minsize=380)
+        self._body.add(preview_frame, minsize=380)
 
         buttons = tk.Frame(container, bg=colors.bg_window)
-        buttons.pack(side=tk.BOTTOM, fill=tk.X, pady=(spacing.sm, 0), before=body)
+        buttons.pack(side=tk.BOTTOM, fill=tk.X, pady=(spacing.sm, 0), before=self._body)
         create_button(
             buttons,
             text=translate("library.close"),
@@ -271,15 +273,56 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
         selection = self._listbox.curselection()
         if not selection or selection[0] >= len(self._visible_examples):
             self._selected = None
+            self._chord_preview.pack_forget()
             self._load_button.configure(state=tk.DISABLED)
             prompt = "library.select_prompt" if self._visible_examples else "library.no_results"
             self._set_preview(self._i18n.translate(prompt))
             return
-        self._selected = self._visible_examples[selection[0]]
+        selected = self._visible_examples[selection[0]]
+        if selected is self._selected:
+            return
+        self._selected = selected
+        self._render_chords(selected)
         self._load_button.configure(state=tk.NORMAL)
         self._set_preview(
             format_reviewed_progression(self._selected, self._i18n.translate)
         )
+
+    def _render_chords(self, example: ReviewedProgression) -> None:
+        progression = example.progression
+        chords = progression.chords_str.split(" - ")
+        degrees = progression.roman_numerals.split(" - ")
+        if len(degrees) != len(chords):
+            degrees = [""] * len(chords)
+
+        colors = self._theme.colors
+        spacing = self._theme.spacing
+        typography = self._theme.typography
+        for child in self._chord_preview.winfo_children():
+            child.destroy()
+        tk.Label(
+            self._chord_preview,
+            text=self._i18n.translate("library.detail.key", value=progression.default_key),
+            fg=colors.text_secondary,
+            bg=colors.bg_window,
+            font=(typography.font_family_sans, typography.size_sm),
+        ).pack(anchor=tk.W, pady=(0, spacing.xs))
+        row = tk.Frame(self._chord_preview, bg=colors.bg_window)
+        row.pack(fill=tk.X)
+        for column, (chord, degree) in enumerate(zip(chords, degrees)):
+            row.columnconfigure(column, weight=1, uniform="chords")
+            card = tk.Frame(row, bg=colors.bg_surface, pady=spacing.xs)
+            card.grid(row=0, column=column, sticky="nsew", padx=spacing.xs)
+            tk.Label(
+                card, text=chord, bg=colors.bg_surface, fg=colors.text_primary,
+                font=(typography.font_family_mono, typography.size_md, "bold"),
+            ).pack()
+            if degree:
+                tk.Label(
+                    card, text=degree, bg=colors.bg_surface, fg=colors.text_secondary,
+                    font=(typography.font_family_sans, typography.size_sm),
+                ).pack()
+        self._chord_preview.pack(fill=tk.X, pady=(0, spacing.sm), before=self._body)
 
     def _focus_results(self, _event: object) -> str:
         if self._visible_examples:
@@ -295,6 +338,7 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
         self._preview.delete("1.0", tk.END)
         self._preview.insert("1.0", text)
         self._preview.configure(state=tk.DISABLED)
+        self._preview.yview_moveto(0)
 
     def _load_selected(self, _event: object | None = None) -> None:
         if self._selected is not None and self._on_load(
