@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Der Next Chord Explorer fokussiert die Kandidatenliste und zeigt den ersten Vorschlag. Pfeiltasten wechseln die Vorschau, Enter oder „Auswahl hinzufügen“ übernimmt den Akkord. Ein Wechsel der Oberflächensprache erhält die Auswahl im selben Projektkontext.
+
 - Beim Öffnen und Speichern von Projekten erklärt STEPS typische Dateifehler auf Deutsch und Englisch. Die Sicherungswiederherstellung greift auch bei fehlerhafter UTF-8-Kodierung und nennt die verwendete Sicherung.
 
 - Modale Desktop-Dialoge geben den Fokus nach dem Schließen zurück. Projektkürzel sind auf das Hauptfenster begrenzt.

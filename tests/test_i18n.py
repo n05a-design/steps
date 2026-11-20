@@ -308,6 +308,8 @@ class TestLocaleManager(unittest.TestCase):
             window.export_btn = FakeWidget()
             window.info_lbl = FakeWidget()
             window._refresh_all = Mock()
+            window.next_chord_panel = Mock()
+            window.next_chord_panel.localize.return_value = False
 
             window._localize_widgets()
             self.assertEqual(window.title_lbl.options["text"], "WORKSPACE")
@@ -376,6 +378,7 @@ class TestLocaleManager(unittest.TestCase):
         window._update_window_title = Mock()
         window._display_chord_details = Mock()
         window._display_empty_info = Mock()
+        window.next_chord_panel = Mock()
 
         window._refresh_all(preserve_selection=True)
 
@@ -413,6 +416,7 @@ class TestDesktopChordEditing(unittest.TestCase):
         window.redo_btn = FakeWidget()
         window._display_chord_details = Mock()
         window._display_empty_info = Mock()
+        window.next_chord_panel = Mock()
         window._refresh_all()
         return window
 
@@ -804,11 +808,15 @@ class TestDesktopChordEditing(unittest.TestCase):
     def test_undo_shortcut_does_not_intercept_text_entry(self):
         window = StepsMainWindow.__new__(StepsMainWindow)
         window._on_undo = Mock()
+        window.detail_text = SimpleNamespace(winfo_class=lambda: "Text")
         text_entry = SimpleNamespace(winfo_class=lambda: "Entry")
         listbox = SimpleNamespace(winfo_class=lambda: "Listbox")
 
         self.assertIsNone(window._on_undo_shortcut(SimpleNamespace(widget=text_entry)))
         self.assertEqual(window._on_undo_shortcut(SimpleNamespace(widget=listbox)), "break")
+        window._on_undo.assert_called_once_with()
+        window._on_undo.reset_mock()
+        self.assertEqual(window._on_undo_shortcut(SimpleNamespace(widget=window.detail_text)), "break")
         window._on_undo.assert_called_once_with()
 
 

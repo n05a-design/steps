@@ -19,6 +19,7 @@ from typing import Literal, Optional
 from app.brand import apply_window_icon
 from app.i18n import LocaleManager
 from app.knowledge import get_reviewed_progression, list_reviewed_progressions
+from app.ui.dialog_support import configure_readonly_preview
 from app.ui.file_feedback import format_project_file_error
 from app.ui.harmonic_inspector import format_beginner_voicings, format_chord_analysis
 from app.ui.midi_export_dialog import (
@@ -26,6 +27,7 @@ from app.ui.midi_export_dialog import (
     MidiExportOptionsDialog,
     format_midi_file_error,
 )
+from app.ui.next_chord_panel import NextChordPanel
 from app.ui.reviewed_library_dialog import ReviewedProgressionLibraryDialog
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager, create_button, default_theme
@@ -36,6 +38,7 @@ from app.ui.voice_leading_lab_dialog import (
 from src.steps.midi.time import RationalMidiTime
 from src.steps.models.timeline import TimeSignature
 from src.steps.progression.reviewed import PublicationError
+from src.steps.progression.session import ChordRecommendation
 from src.steps.storage.exceptions import StorageError
 from src.steps.theory.exceptions import MusicTheoryError
 
@@ -73,8 +76,6 @@ class StepsMainWindow:
         self.theme = theme or default_theme
         self.i18n = locale_manager or LocaleManager()
         self._project_path: Optional[Path] = None
-        self._next_recommendations = []
-        self._next_context = None
 
         self.root.title(self.i18n.translate("app.title"))
         self.root.geometry("1024x720")
@@ -211,12 +212,6 @@ class StepsMainWindow:
         self.trans_up_btn.configure(text=t("transpose.up"))
         self.export_btn.configure(text=t("midi.export"))
         self.info_lbl.configure(text=t("information.heading"))
-        if hasattr(self, "explore_next_btn"):
-            self.explore_next_btn.configure(text=t("next_chord.explore"))
-        if hasattr(self, "apply_next_btn"):
-            self.apply_next_btn.configure(text=t("next_chord.apply"))
-        if hasattr(self, "next_candidates_lbl"):
-            self.next_candidates_lbl.configure(text=t("next_chord.candidates"))
         if hasattr(self, "voice_lab_btn"):
             self.voice_lab_btn.configure(text=t("voice.lab.open"))
 
@@ -232,7 +227,8 @@ class StepsMainWindow:
             )
             return
         self._localize_widgets()
-        self._refresh_all(preserve_selection=True)
+        if not self.next_chord_panel.localize():
+            self._refresh_all(preserve_selection=True)
 
     def _on_open_shortcut(self, _event: tk.Event) -> str:
         self._on_open_project()
@@ -247,13 +243,19 @@ class StepsMainWindow:
         return "break"
 
     def _on_undo_shortcut(self, _event: tk.Event) -> Optional[str]:
-        if _event.widget.winfo_class() in {"Entry", "Text"}:
+        if (
+            _event.widget.winfo_class() in {"Entry", "Text"}
+            and _event.widget is not self.detail_text
+        ):
             return None
         self._on_undo()
         return "break"
 
     def _on_redo_shortcut(self, _event: tk.Event) -> Optional[str]:
-        if _event.widget.winfo_class() in {"Entry", "Text"}:
+        if (
+            _event.widget.winfo_class() in {"Entry", "Text"}
+            and _event.widget is not self.detail_text
+        ):
             return None
         self._on_redo()
         return "break"
@@ -830,27 +832,6 @@ class StepsMainWindow:
         )
         self.info_lbl.pack(side=tk.LEFT)
 
-        self.explore_next_btn = create_button(
-            self.info_bar,
-            text="",
-            command=self._on_explore_next,
-            bg=colors.bg_active,
-            fg=colors.text_primary,
-            relief=tk.FLAT,
-            padx=sp.sm,
-        )
-        self.explore_next_btn.pack(side=tk.RIGHT, padx=sp.xs)
-        self.apply_next_btn = create_button(
-            self.info_bar,
-            text="",
-            command=self._on_apply_next_recommendation,
-            bg=colors.harmonic_tonic,
-            fg=colors.text_inverted,
-            relief=tk.FLAT,
-            padx=sp.sm,
-        )
-        self.apply_next_btn.pack(side=tk.RIGHT, padx=sp.xs)
-        self.apply_next_btn.configure(state=tk.DISABLED)
         self.voice_lab_btn = create_button(
             self.info_bar,
             text="",
@@ -860,7 +841,6 @@ class StepsMainWindow:
             relief=tk.FLAT,
             padx=sp.sm,
         )
-        self.voice_lab_btn.pack(side=tk.RIGHT, padx=sp.xs)
 
         # Detail Content Frame
         self.detail_frame = tk.Frame(self.info_area, bg=colors.bg_window, bd=1, relief=tk.SOLID)
@@ -877,50 +857,21 @@ class StepsMainWindow:
             padx=sp.md,
             pady=sp.md
         )
-        self.next_frame = tk.Frame(
-            self.detail_frame,
-            width=300,
-            bg=colors.bg_surface,
-            bd=0,
+        self.detail_text.configure(state=tk.DISABLED)
+        configure_readonly_preview(self.detail_text, colors)
+        self.next_chord_panel = NextChordPanel(
+            self.info_bar, self.detail_frame,
+            controller=self.controller, i18n=self.i18n, theme=self.theme,
+            selected_chord=self._selected_chord_index,
+            show_detail=self._write_detail, on_applied=self._on_recommendation_applied,
         )
-        self.next_frame.pack(side=tk.RIGHT, fill=tk.Y, padx=(0, sp.sm), pady=sp.sm)
+        self.voice_lab_btn.pack(side=tk.RIGHT, padx=sp.xs)
         detail_scrollbar = tk.Scrollbar(
-            self.detail_frame, orient=tk.VERTICAL, command=self.detail_text.yview
+            self.detail_frame, orient=tk.VERTICAL, command=self.detail_text.yview, takefocus=False,
         )
         self.detail_text.configure(yscrollcommand=detail_scrollbar.set)
         detail_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.detail_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-        self.next_candidates_lbl = tk.Label(
-            self.next_frame,
-            text="",
-            font=("Helvetica", 10, "bold"),
-            fg=colors.harmonic_dominant,
-            bg=colors.bg_surface,
-        )
-        self.next_candidates_lbl.pack(fill=tk.X, padx=sp.sm, pady=(0, sp.xs))
-        self.next_candidates_list = tk.Listbox(
-            self.next_frame,
-            font=("Helvetica", 11),
-            bg=colors.bg_window,
-            fg=colors.text_primary,
-            selectbackground=colors.harmonic_tonic,
-            selectforeground=colors.text_inverted,
-            relief=tk.FLAT,
-            activestyle="dotbox",
-            exportselection=False,
-            height=8,
-        )
-        candidate_scrollbar = tk.Scrollbar(
-            self.next_frame, orient=tk.VERTICAL, command=self.next_candidates_list.yview
-        )
-        self.next_candidates_list.configure(yscrollcommand=candidate_scrollbar.set)
-        candidate_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
-        self.next_candidates_list.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=sp.sm)
-        self.next_candidates_list.bind(
-            "<<ListboxSelect>>",
-            self._on_next_recommendation_selected,
-        )
-        self.next_candidates_list.bind("<Return>", self._on_apply_next_recommendation)
 
     def _refresh_all(
         self,
@@ -928,7 +879,7 @@ class StepsMainWindow:
         selected_index: Optional[int] = None,
     ) -> None:
         """Synchronizes UI state with the ProgressionSessionController."""
-        self._clear_next_recommendations()
+        self.next_chord_panel.clear()
         state = self.controller.get_state_summary()
         selected = self.chord_listbox.curselection() if preserve_selection else ()
         self._update_window_title()
@@ -1187,14 +1138,24 @@ class StepsMainWindow:
             parent=self.root,
         )
 
+    def _write_detail(self, text: str, *, append: bool = False) -> None:
+        self.detail_text.configure(state=tk.NORMAL)
+        try:
+            if not append:
+                self.detail_text.delete("1.0", tk.END)
+            self.detail_text.insert(tk.END, text)
+        finally:
+            self.detail_text.configure(state=tk.DISABLED)
+        if not append:
+            self.detail_text.yview_moveto(0)
+
     def _display_chord_details(self, chord_name: str) -> None:
         """Update the inspector, keeping optional keyboard details independent."""
-        self.detail_text.delete("1.0", tk.END)
         translate = self.i18n.translate
         try:
             details = format_chord_analysis(chord_name, self.controller.session.convention, translate)
         except Exception as exc:
-            self.detail_text.insert(tk.END, translate("chord.hint", chord=chord_name, error=exc))
+            self._write_detail(translate("chord.hint", chord=chord_name, error=exc))
             return
 
         try:
@@ -1203,11 +1164,10 @@ class StepsMainWindow:
                 details += "\n\n" + keyboard
         except Exception:
             logger.exception("Could not render optional beginner voicing details")
-        self.detail_text.insert(tk.END, details)
+        self._write_detail(details)
 
     def _display_empty_info(self) -> None:
-        self.detail_text.delete("1.0", tk.END)
-        self.detail_text.insert(tk.END, self.i18n.translate("progression.empty"))
+        self._write_detail(self.i18n.translate("progression.empty"))
 
     def _on_add_chord(self) -> None:
         txt = self.chord_entry.get().strip()
@@ -1288,130 +1248,22 @@ class StepsMainWindow:
             if idx < len(state["chords"]):
                 self._update_move_controls(idx, len(state["chords"]))
                 self._load_event_timing_controls(idx)
-                self._clear_next_recommendations()
+                self.next_chord_panel.clear()
                 self._display_chord_details(state["chords"][idx])
 
-    def _clear_next_recommendations(self) -> None:
-        self._next_recommendations = []
-        self._next_context = None
-        if hasattr(self, "next_candidates_list"):
-            self.next_candidates_list.delete(0, tk.END)
-        if hasattr(self, "apply_next_btn"):
-            self.apply_next_btn.configure(state=tk.DISABLED)
-
     def _on_explore_next(self) -> None:
-        self._clear_next_recommendations()
-        index = self._selected_chord_index()
-        if index is None:
-            messagebox.showerror(
-                self.i18n.translate("chord.change.error.title"),
-                self.i18n.translate("chord.selection.required"),
-                parent=self.root,
-            )
-            return
-        try:
-            recommendations = self.controller.explore_next(index)
-        except (IndexError, MusicTheoryError, ValueError) as exc:
-            messagebox.showerror(
-                self.i18n.translate("next_chord.error.title"),
-                self.i18n.translate("next_chord.error.message", error=exc),
-                parent=self.root,
-            )
-            return
+        self.next_chord_panel.explore()
 
-        self._next_recommendations = list(recommendations)
-        self._next_context = (index, self.controller.revision)
-        for recommendation in recommendations:
-            relation = self.i18n.translate(
-                f"next_chord.relation.{recommendation.relation_type}",
-            )
-            self.next_candidates_list.insert(
-                tk.END,
-                f"{recommendation.candidate_symbol} — {relation}",
-            )
-        self._display_next_recommendations()
-
-    def _on_next_recommendation_selected(self, _event) -> None:
-        selection = self.next_candidates_list.curselection()
-        if not selection or not 0 <= selection[0] < len(self._next_recommendations):
-            self.apply_next_btn.configure(state=tk.DISABLED)
-            if self._next_recommendations:
-                self._display_next_recommendations()
-            return
-        self.apply_next_btn.configure(state=tk.NORMAL)
-        self._display_next_recommendations(selection[0])
-
-    def _display_next_recommendations(self, selected_index: Optional[int] = None) -> None:
-        self.detail_text.delete("1.0", tk.END)
-        self.detail_text.insert(
-            tk.END,
-            f"{self.i18n.translate('next_chord.heading')}\n"
-            f"{'=' * 50}\n"
-            f"{self.i18n.translate('next_chord.disclaimer')}\n",
+    def _on_recommendation_applied(self, index: int, recommendation: ChordRecommendation) -> None:
+        self._refresh_all(selected_index=index)
+        self._write_detail(
+            f"\n\n{self.i18n.translate('next_chord.applied', chord=recommendation.candidate_symbol)}",
+            append=True,
         )
-        if selected_index is None:
-            self.detail_text.insert(
-                tk.END, f"\n{self.i18n.translate('next_chord.inspect')}\n"
-            )
-            return
-        recommendation = self._next_recommendations[selected_index]
-        translate = self.i18n.translate
-        relation = translate(f"next_chord.relation.{recommendation.relation_type}")
-        reason = translate(f"next_chord.reason.{recommendation.relation_type}")
-        self.detail_text.insert(
-            tk.END,
-            f"\n{recommendation.candidate_symbol} — {relation}\n"
-            f"{reason}\n"
-            f"{translate('next_chord.framework')}: {recommendation.framework}\n"
-            f"{translate('next_chord.source')}: {recommendation.source_id}\n"
-            f"\n{translate('next_chord.original')}\n{recommendation.explanation}\n",
-        )
-
-    def _on_apply_next_recommendation(self, _event=None) -> None:
-        chord_index = self._selected_chord_index()
-        selection = self.next_candidates_list.curselection()
-        if chord_index is None or not selection:
-            messagebox.showerror(
-                self.i18n.translate("next_chord.error.title"),
-                self.i18n.translate("next_chord.selection.required"),
-                parent=self.root,
-            )
-            return
-        recommendation_index = selection[0]
-        if not (0 <= recommendation_index < len(self._next_recommendations)):
-            messagebox.showerror(
-                self.i18n.translate("next_chord.error.title"),
-                self.i18n.translate("next_chord.selection.required"),
-                parent=self.root,
-            )
-            return
-        recommendation = self._next_recommendations[recommendation_index]
-        revision = self.controller.revision
-        if self._next_context != (chord_index, revision):
-            self._clear_next_recommendations()
-            self.detail_text.delete("1.0", tk.END)
-            self.detail_text.insert(tk.END, self.i18n.translate("next_chord.stale"))
-            return
-        try:
-            applied = self.controller.apply_next_recommendation(
-                chord_index,
-                recommendation.candidate_symbol,
-                selected=recommendation,
-                expected_revision=revision,
-            )
-        except (IndexError, MusicTheoryError, ValueError) as exc:
-            messagebox.showerror(
-                self.i18n.translate("next_chord.error.title"),
-                self.i18n.translate("next_chord.error.message", error=exc),
-                parent=self.root,
-            )
-            return
-        self._clear_next_recommendations()
-        self._refresh_all(selected_index=chord_index + 1)
-        self.detail_text.insert(
-            tk.END,
-            f"\n\n{self.i18n.translate('next_chord.applied', chord=applied.candidate_symbol)}",
-        )
+        self.chord_listbox.activate(index)
+        self.chord_listbox.selection_anchor(index)
+        self.chord_listbox.see(index)
+        self.chord_listbox.focus_set()
 
     def _on_export_midi(self) -> MidiExportOptionsDialog:
         return MidiExportOptionsDialog(
@@ -1476,9 +1328,9 @@ class StepsMainWindow:
                 parent=parent,
             )
             return False
-        self.detail_text.insert(
-            tk.END,
+        self._write_detail(
             "\n\n" + self.i18n.translate("midi.export.success", path=output_path.resolve()),
+            append=True,
         )
         self.detail_text.see(tk.END)
         return True
