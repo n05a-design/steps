@@ -18,7 +18,8 @@ when a filter keeps the example selected, resets the preview on a new selection,
 clears the cards when the search has no results, checks Tab access to the
 source and review menu, confirms its commands dispatch only the selected
 example's links, edits a chord, applies a
-recommendation, compares and applies styles, and exports Format 0 after
+recommendation, checks MIDI range and signed voice-motion details in both style previews,
+applies a style, and exports Format 0 after
 checking the disabled voicing modes. The recommendation path runs at the
 main window minimum size, switches candidates with arrow keys, verifies
 Tab traversal through preview and apply controls, toggles UI language
