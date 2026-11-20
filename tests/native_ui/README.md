@@ -13,7 +13,9 @@ python3 -B -m unittest \
 
 The dialogs test uses real Tk widgets, event bindings, storage, publication
 data and MIDI bytes. It creates a project, searches and loads an example,
-retains the result when the search is cleared, edits a chord, applies a
+checks chord cards at the minimum dialog size, preserves the reading position
+when a filter keeps the example selected, resets the preview on a new selection,
+clears the cards when the search has no results, edits a chord, applies a
 recommendation, compares and applies styles, and exports Format 0 after
 checking the disabled voicing modes. The recommendation path runs at the
 main window minimum size, switches candidates with arrow keys, verifies
