@@ -27,6 +27,13 @@
 
 Eigene Steps-Formatversion, explizite schema_version, UUIDs ohne Glide-Task-ID-Vererbung, gesichertes atomisches Schreiben, fsync/rename nach Systemprüfung, Backup nur nach validem Hauptwrite, Load von neueren Dateien schreibgeschützt oder mit eindeutigem Fehler; nicht als leeres Dokument starten. Settings und Arbeitsdaten außerhalb des Installationsverzeichnisses unter projekt-/OS-eigenen Pfaden. Unbekannte optionale Felder nicht still löschen; Kompatibilitätsvertrag ist gesondert zu testen. Import von Glide-Todo-Daten **nicht** Teil des ersten Steps-Speicherwegs.
 
+`load_project_with_status()` behandelt ungültiges UTF-8 wie syntaktisch
+beschädigte JSON-Daten. Ein lesbares Backup liefert Pfad und Recovery-Status
+weiterhin über `ProjectLoadResult`. Ein nachfolgender Speichervorgang kann
+die Hauptdatei ersetzen. `ProgressionSession` übernimmt die
+Recovery- und Migrationsangaben nach erfolgreicher Session-Validierung.
+
+
 ## Schnittstellen (Entwurf, keine bereits implementierten APIs)
 
 - `NavigationRegistry.list_items() -> readonly UI view model`

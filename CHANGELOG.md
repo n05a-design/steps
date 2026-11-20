@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Beim Öffnen und Speichern von Projekten erklärt STEPS typische Dateifehler auf Deutsch und Englisch. Die Sicherungswiederherstellung greift auch bei fehlerhafter UTF-8-Kodierung und nennt die verwendete Sicherung.
+
 - Modale Desktop-Dialoge geben den Fokus nach dem Schließen zurück. Projektkürzel sind auf das Hauptfenster begrenzt.
 - Bibliotheksvorschau und Stimmführungsdetails sind mit Tab erreichbar und seitenweise per Tastatur scrollbar. Die Schaltflächen des Stimmführungslabors behalten auch bei kleiner Fensterhöhe ihren Platz.
 

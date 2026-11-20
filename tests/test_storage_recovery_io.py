@@ -116,6 +116,20 @@ class TestStorageRecoveryIO01to16(unittest.TestCase):
         self.assertIsNotNone(result.backup_path)
         self.assertIn("Version", result.project.title)
 
+    def test_invalid_utf8_recovers_backup_without_rewriting_original(self):
+        save_project(Project(title="Backup"), self.project_path)
+        save_project(Project(title="Latest"), self.project_path)
+        damaged = bytes((255, 254, 253))
+        self.project_path.write_bytes(damaged)
+
+        with self.assertRaises(CorruptedProjectError):
+            load_project_with_status(self.project_path, auto_recover_from_backup=False)
+        result = load_project_with_status(self.project_path)
+
+        self.assertTrue(result.recovered_from_backup)
+        self.assertEqual(result.project.title, "Backup")
+        self.assertEqual(self.project_path.read_bytes(), damaged)
+
     def test_legacy_0_x_project_is_migrated_explicitly(self):
         legacy = {
             "schema_version": "0.9.0",

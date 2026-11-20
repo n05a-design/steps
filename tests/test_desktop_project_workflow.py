@@ -15,7 +15,7 @@ try:
 except ImportError:
     StepsMainWindow = None
 
-from src.steps.storage import CorruptedProjectError, StorageError
+from src.steps.storage import CorruptedProjectError, StorageError, UnsupportedSchemaVersionError
 from src.steps.progression.session import ProgressionSession
 
 
@@ -556,13 +556,45 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
     @patch("app.ui.main_window.messagebox.showerror")
     def test_save_error_is_visible_and_keeps_session_dirty(self, show_error, choose_path):
         self.window.controller.session.is_dirty = True
-        self.window.controller.save_error = StorageError("disk full")
+        error = StorageError("disk full")
+        error.__cause__ = OSError(errno.ENOSPC, "injected disk full")
+        self.window.controller.save_error = error
 
-        self.assertFalse(self.window._on_save_project_as())
+        for language in ("en", "de"):
+            with self.subTest(language=language):
+                self.window.i18n = LocaleManager(preference=language)
+                with self.assertLogs("app.ui.main_window", level="WARNING"):
+                    self.assertFalse(self.window._on_save_project_as())
 
+                self.assertTrue(self.window.controller.session.is_dirty)
+                self.assertIsNone(self.window._project_path)
+                self.assertEqual(
+                    show_error.call_args.args[1],
+                    self.window.i18n.translate("project.file.error.space", path=Path("/tmp/fail.stepsproj")),
+                )
+
+    @patch("app.ui.main_window.messagebox.showerror")
+    def test_project_chooser_errors_leave_dirty_project_untouched(self, show_error):
+        from tkinter import TclError
+
+        self.window.controller.session.is_dirty = True
+        for chooser, action in (
+            ("askopenfilename", self.window._on_open_project),
+            ("asksaveasfilename", self.window._on_save_project_as),
+        ):
+            with (
+                self.subTest(chooser=chooser),
+                patch(f"app.ui.main_window.filedialog.{chooser}", side_effect=TclError("chooser error")),
+                self.assertLogs("app.ui.main_window", level="ERROR"),
+            ):
+                self.assertFalse(action())
+                self.assertEqual(
+                    show_error.call_args.args[1],
+                    self.window.i18n.translate("project.file.error.dialog"),
+                )
         self.assertTrue(self.window.controller.session.is_dirty)
-        self.assertIsNone(self.window._project_path)
-        show_error.assert_called_once()
+        self.assertFalse(self.window.controller.loaded_paths)
+        self.assertFalse(self.window.controller.saved_paths)
 
     @patch("app.ui.main_window.filedialog.askopenfilename", return_value="/tmp/source.stepsproj")
     @patch("app.ui.main_window.messagebox.askyesnocancel", return_value=None)
@@ -611,14 +643,23 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
     def test_failed_open_reports_error_and_keeps_current_path(self, show_error, choose_path):
         old_path = Path("/tmp/current.stepsproj")
         self.window._project_path = old_path
-        self.window.controller.load_error = CorruptedProjectError("invalid project")
-
-        self.assertFalse(self.window._on_open_project())
-
-        self.assertEqual(self.window._project_path, old_path)
-        self.assertEqual(self.window.controller.loaded_paths, [])
-        show_error.assert_called_once()
-        self.window._refresh_all.assert_not_called()
+        for error, reason in (
+            (CorruptedProjectError("invalid project"), "corrupt"),
+            (UnsupportedSchemaVersionError("newer schema"), "schema"),
+            (FileNotFoundError(errno.ENOENT, "file gone"), "missing"),
+            (OSError(errno.EIO, "read error"), "read"),
+        ):
+            with self.subTest(reason=reason):
+                self.window.controller.load_error = error
+                with self.assertLogs("app.ui.main_window", level="WARNING"):
+                    self.assertFalse(self.window._on_open_project())
+                self.assertEqual(self.window._project_path, old_path)
+                self.assertEqual(self.window.controller.loaded_paths, [])
+                self.assertEqual(
+                    show_error.call_args.args[1],
+                    self.window.i18n.translate(f"project.file.error.{reason}", path="/tmp/broken.stepsproj"),
+                )
+                self.window._refresh_all.assert_not_called()
 
     @patch("app.ui.main_window.messagebox.askyesnocancel", return_value=False)
     def test_close_can_discard_changes(self, prompt):

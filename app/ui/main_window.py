@@ -14,11 +14,12 @@ import sys
 import tkinter as tk
 from pathlib import Path
 from tkinter import filedialog, messagebox
-from typing import Optional
+from typing import Literal, Optional
 
 from app.brand import apply_window_icon
 from app.i18n import LocaleManager
 from app.knowledge import get_reviewed_progression, list_reviewed_progressions
+from app.ui.file_feedback import format_project_file_error
 from app.ui.harmonic_inspector import format_beginner_voicings, format_chord_analysis
 from app.ui.midi_export_dialog import (
     MidiExportOptions,
@@ -330,20 +331,39 @@ class StepsMainWindow:
             return self.root.grab_current() or self.root
         return self.root
 
+    def _choose_project_path(self, operation: Literal["open", "save"]) -> str:
+        translate = self.i18n.translate
+        parent = self._dialog_parent()
+        options = {
+            "parent": parent,
+            "title": translate(f"project.{operation}.title"),
+            "filetypes": (
+                (translate("project.filetype"), "*.stepsproj"),
+                (translate("json.filetype"), "*.json"),
+            ),
+        }
+        try:
+            if operation == "open":
+                return filedialog.askopenfilename(**options)
+            title = self.controller.get_state_summary()["title"]
+            return filedialog.asksaveasfilename(
+                **options,
+                defaultextension=".stepsproj",
+                initialfile=_portable_project_filename(title),
+            )
+        except tk.TclError:
+            logger.exception("Could not open the project %s dialog", operation)
+            messagebox.showerror(
+                translate(f"project.{operation}.error.title"),
+                translate("project.file.error.dialog"),
+                parent=parent,
+            )
+            return ""
+
     def _save_project(self, save_as: bool) -> bool:
         path = None if save_as else self._project_path
         if path is None:
-            title = self.controller.get_state_summary()["title"]
-            selected = filedialog.asksaveasfilename(
-                parent=self._dialog_parent(),
-                title=self.i18n.translate("project.save.title"),
-                defaultextension=".stepsproj",
-                filetypes=(
-                    (self.i18n.translate("project.filetype"), "*.stepsproj"),
-                    (self.i18n.translate("json.filetype"), "*.json"),
-                ),
-                initialfile=_portable_project_filename(title),
-            )
+            selected = self._choose_project_path("save")
             if not selected:
                 return False
             path = Path(selected)
@@ -351,9 +371,10 @@ class StepsMainWindow:
         try:
             self._project_path = self.controller.save(path)
         except (StorageError, OSError, MusicTheoryError, ValueError) as exc:
+            logger.warning("Could not save STEPS project", exc_info=True)
             messagebox.showerror(
                 self.i18n.translate("project.save.error.title"),
-                str(exc),
+                format_project_file_error(exc, path, "save", self.i18n),
                 parent=self._dialog_parent(),
             )
             return False
@@ -375,24 +396,18 @@ class StepsMainWindow:
         return self._save_project(save_as=False) if choice else True
 
     def _on_open_project(self) -> bool:
-        selected = filedialog.askopenfilename(
-            parent=self.root,
-            title=self.i18n.translate("project.open.title"),
-            filetypes=(
-                (self.i18n.translate("project.filetype"), "*.stepsproj"),
-                (self.i18n.translate("json.filetype"), "*.json"),
-            ),
-        )
+        selected = self._choose_project_path("open")
         if not selected or not self._confirm_unsaved_changes():
             return False
 
         try:
             self.controller.load(selected)
         except (StorageError, OSError, MusicTheoryError, ValueError) as exc:
+            logger.warning("Could not open STEPS project", exc_info=True)
             messagebox.showerror(
                 self.i18n.translate("project.open.error.title"),
-                str(exc),
-                parent=self.root,
+                format_project_file_error(exc, selected, "open", self.i18n),
+                parent=self._dialog_parent(),
             )
             return False
 
@@ -400,9 +415,14 @@ class StepsMainWindow:
         self._load_context_controls()
         self._refresh_all()
         if getattr(self.controller.session, "last_load_recovered_from_backup", False):
+            backup = getattr(self.controller.session, "last_loaded_backup_path", None)
+            recovery_text = (
+                self.i18n.translate("project.recovery.named", backup=backup.name)
+                if backup else self.i18n.translate("project.recovery.message")
+            )
             messagebox.showinfo(
                 self.i18n.translate("project.recovery.title"),
-                self.i18n.translate("project.recovery.message"),
+                recovery_text,
                 parent=self.root,
             )
         elif getattr(self.controller.session, "last_load_migrations", ()):
