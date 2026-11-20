@@ -68,6 +68,8 @@ Anfänger-Keyboard-Voicings dargestellt: linke Hand, empfohlene Finger,
 rechtshändige Drei-Noten-Lage und Übergangsberatung. Die Daten stammen aus dem
 bestehenden Session-/Controller-Kern; die Darstellung ist EN/DE lokalisiert.
 
+Das Menü **Werkzeuge** öffnet den Next Chord Explorer, das Stimmführungslabor und das MIDI-Exportstudio. Kandidat und Ausgangsakkord bleiben in getrennten Listen ausgewählt. Das Labor zeigt zwei generierte Voicing-Folgen auf gemeinsamen Achsen und übernimmt einen Stil erst über dessen Schaltfläche. Die Bibliothek zeigt bei genau einem Suchtreffer direkt dessen Vorschau.
+
 Die UI-Sprache unterstützt Englisch und Deutsch unabhängig von musikalischer
 Notation. Die Auswahl `system`, `en` oder `de` wird als Benutzereinstellung
 gespeichert; `--language` überschreibt sie nur für den aktuellen CLI-Lauf.

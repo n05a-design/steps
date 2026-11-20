@@ -10,6 +10,14 @@
 6. **Quality (`tests`, `tools/validation`, CI)**: statische Strukturchecks, später Domain-/UI-/Datenprüfungen und Linkprüfung.
 7. **Design (`design`)**: eigene Assets und Design-Tokens getrennt von externen Inspirationsmaterialien.
 
+## Desktop-Analyse und Darstellung
+
+`ProgressionSession.analyze_progression_with_voicings()` liefert Stufenanalyse
+und genau die dazu berechneten Voicings im selben Durchlauf. Der Controller
+übergibt Tonhöhen und Warnungszahlen an das Stimmführungslabor. Tkinter zeichnet
+die Voicings gegen die absoluten Projektticks. Ein Vergleich ist lesend und
+ändert erst bei ausdrücklicher Übernahme den Projektstil.
+
 ## Fachliche Gates vor Implementierung
 
 - Begriffsschema/Notationssystem DE vs. international, enharmonisches Spelling, Tonarten und Kontext klar definiert.

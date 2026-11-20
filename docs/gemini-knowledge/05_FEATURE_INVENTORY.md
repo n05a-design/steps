@@ -22,6 +22,10 @@
 | Desktop installer/signing | NOT_EVIDENCED | `pyproject.toml` defines Python package metadata | No verified full desktop installer/release acceptance |
 | User study / market fit | NOT_EVIDENCED | Product docs specify hypotheses, not study results | Requires human research |
 
+## Changes after this snapshot
+
+See the [current implementation guide](../IMPLEMENTATION.md#desktop-prototyp-und-produktgrenzen) for the Next Chord Explorer, the A/B piano-roll view and the native widget workflow.
+
 ## Interpretation
 
 The evidence points to a meaningful codebase and prototype, not an all-complete or release-ready product. See [testing](10_TESTING_AND_QUALITY.md), [risks](12_KNOWN_ISSUES_AND_RISKS.md), and `docs/IMPLEMENTATION.md` for behavior and caveats.

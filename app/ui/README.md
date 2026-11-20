@@ -1,11 +1,6 @@
 # Desktop-Oberfläche
 
-Vorgesehener Bereich für Ansichten, Navigation und Interaktion der STEPS-Desktop-Applikation.
-
-> **Wichtiger Architektur-Hinweis für Entwickler & KI-Agenten:**  
-> Die aktuelle Implementierung in `main_window.py` ist ein **vorläufiger, isolierter CI-/Referenz-Skeleton** (reines Tkinter ohne Glide-Code) zur Absicherung des Layout-Vertrags aus ADR-001 und des `--headless`-Modus.  
-> Die finale Übernahme und Entkopplung der vollwertigen Desktop-Shell aus **Glide 3.53.0** erfolgt gemäß den Phasen R0 bis R4, sobald die Wissensbasis vollständig konsolidiert ist.  
-> Siehe verbindliches Übergabedokument: [`docs/architecture/APP_SHELL_HANDOVER_AND_GLIDE_ROADMAP.md`](../../docs/architecture/APP_SHELL_HANDOVER_AND_GLIDE_ROADMAP.md).
+Die Tkinter-Oberfläche implementiert die zwei Bereiche aus ADR-001. Das Hauptfenster verkabelt Editor, Inspektor und Projektaktionen. Eigene Module enthalten die Bibliothek, das Stimmführungslabor und das MIDI-Exportstudio. Der Controller vermittelt zwischen Widgets und Musikkern. Auf Aqua verwenden die Schaltflächen die native ttk-Palette. Die Glide-Roadmap beschreibt eine mögliche weitere Entwicklung.
 
 | Einstieg | Inhalt |
 | --- | --- |

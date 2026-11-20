@@ -2,6 +2,10 @@
 
 ## Unreleased – App und Python-Kern
 
+- Der Next Chord Explorer bewahrt die Akkordauswahl auf Aqua, zeigt lokalisierte Beziehungen samt Provenienz und verhindert die Übernahme überholter Empfehlungen.
+- Das Stimmführungslabor zeigt zwei Stilprofile mit vergleichbaren Piano-Rolls, Bassverlauf und Übergangsmetriken.
+- Das Werkzeugmenü, besser lesbare Aqua-Schaltflächen und die Tastaturvorschau verbessern den Desktop-Ablauf. Ein lokales macOS-App-Bundle enthält Branding, Kataloge und das Quellenregister. Der Wheel-Smoke prüft jetzt auch die installierte Bibliothek.
+
 - Das lokalisierte MIDI-Exportstudio bietet die ADR-017-Optionen für Voicing, Notendauer und SMF-Format; die bisherigen CLOSE-/10-Tick-/Format-1-Defaults und der unveränderte Projektzustand bleiben erhalten.
 - Die Desktop-Progressionsbibliothek bietet Suche und Vorschau für die drei freigegebenen Beispiele, einschließlich unveränderter Claim-Texte und ihrer Quellen-/Reviewbelege. Das Laden beginnt erst nach Auswahl und verwendet weiterhin die Dirty-State-Rückfrage; neue Claims oder Übersetzungsfreigaben entstehen nicht.
 - Der Next-Chord-Explorer aktiviert das Übernehmen jetzt erst nach einer gültigen Kandidatenauswahl; fehlende oder veraltete Auswahlen bleiben sichtbar abgewiesen.

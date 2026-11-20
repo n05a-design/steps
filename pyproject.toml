@@ -32,7 +32,7 @@ steps = "app.main:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["app*", "design*", "src*"]
+include = ["app*", "design*", "src*", "knowledge", "knowledge.sources"]
 exclude = ["tests*"]
 namespaces = false
 
@@ -40,6 +40,7 @@ namespaces = false
 app = ["locales/*.json", "assets/brand/*"]
 "design.tokens" = ["tokens.json"]
 "src.steps" = ["py.typed", "progression/*.json"]
+"knowledge.sources" = ["registry.yaml"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

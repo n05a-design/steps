@@ -4,6 +4,7 @@ Für jede Übergabe den Git-Stand, die geprüften Ergebnisse und die nächsten E
 
 | Einstieg | Inhalt |
 | --- | --- |
+| [Desktop-Übergabe (20.11.2026)](AI_AGENT_HANDOFF_2026-11-20.md) | Entwicklungsbranch, Widget-Prüfung, App-Bundle und offene Abnahmen. |
 | [Master-Übergabe (19.11.2026)](MASTER_UEBERGABE_2026-11-19.md) | Aktueller GitHub-/Worktree-Abgleich, geprüfte Tests und offene Synchronisationsgrenzen für die nächste Agentensitzung. |
 | [Master-Übergabe (fortgeschrieben am 17.11.2026)](MASTER_UEBERGABE_2026-11-16.md) | Ganzheitliche Übergabe für den nächsten KI-Agenten: Schnelleinstieg, Arbeitsregeln, Audits und Entscheidungen bis ADR-017, CI-Gates, Fahrplan ab SMF-Writer. |
 | [v1.0.0-Ziel- und Readiness-Analyse](../product/V1.0.0_PRODUCT_CONTRACT.md) | Vorgeschlagenes Ziel und Readiness-Status; getrennt vom historischen Übergabestand. |

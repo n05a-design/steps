@@ -1,20 +1,41 @@
-# Native UI und Bedienbarkeit
+# Desktop verification
 
-Dieser Ordner dokumentiert den vorgesehenen Testbereich. Eine native Desktop-Suite steht mit der Desktop-Implementierung aus.
+Run the two native widget workflows from the repository root with Python and Tk:
 
-Der Ubuntu-CI-Smoke startet Tkinter unter Xvfb und prüft Fenster-Initialisierung,
-Progression, Kontextänderung, Undo, Akkordbearbeitung, Transposition und MIDI-
-Export über die native Widget-Verkabelung. Das ersetzt keine menschliche
-macOS-/Windows-/Linux-Sichtprüfung, Screenreader-Abnahme oder native Dialog-
-Akzeptanz.
-Zusätzliche macOS-/Windows-Matrix-Jobs starten denselben Widget-/Controller-
-Pfad auf den jeweiligen Hosted Runnern. Ein Skip wegen fehlendem Tkinter oder
-Display bleibt ein nicht bestätigter Plattformfall, kein automatischer
-Plattformfreigabe-Nachweis.
+```sh
+STEPS_REQUIRE_DESKTOP_TK=1 python3 -B -m unittest tests.test_desktop_app_entrypoint -v
+```
 
-| Einstieg | Inhalt |
-| --- | --- |
-| [App-UI](../../app/ui/README.md) | Implementierungsgrenze und Zielstruktur. |
-| [Qualitätsgates](../../docs/quality/QUALITY_GATES.md) | Kriterien für Plattform- und Bedienabnahme. |
+The dialogs test uses real Tk widgets, event bindings, storage, publication
+data and MIDI bytes. It creates a project, searches and loads an example,
+edits a chord, applies a recommendation, compares and applies styles,
+exports Format 0, saves, closes and reopens the project. It exercises invalid
+chord input, missing search results, cancellation and undo/redo. Native
+chooser and confirmation responses are injected so CI can run unattended.
+The same tests run in the Ubuntu Xvfb, Windows and macOS smoke jobs.
 
-[Zur Bereichsübersicht](../README.md)
+## macOS development app
+
+Use a macOS Python installation with Aqua Tk. The tested toolchain is Python
+3.14.5 with Tk 9.0.3 and PyInstaller 6.22.3 on arm64. Build from the repository
+root into a fresh local directory.
+
+```sh
+stage=$(mktemp -d)
+python3 -m venv "$stage/venv"
+. "$stage/venv/bin/activate"
+python -m pip install 'PyInstaller==6.22.3'
+sh scripts/build_macos_dev_app.sh "$stage/build"
+open "$stage/build/dist/STEPS-Dev.app" --args --language en
+```
+
+Pass `--language de` to start in German. To repeat a distribution smoke
+without a source checkout on the import path, start the bundle executable
+with `--headless --language en` and then with `--headless --language de` from
+a separate working directory. The bundle includes Aqua Tk, localized
+catalogs, the app icon, and the exact product registry and approval data used
+by the three reviewed examples. PyInstaller applies local ad hoc signing for
+Apple Silicon. Public distribution requires separate signing, notarization
+and user acceptance. Windows and Linux use their existing Python workflows.
+
+[UI architecture](../../app/ui/README.md) · [Quality gates](../../docs/quality/QUALITY_GATES.md)
