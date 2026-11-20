@@ -55,6 +55,8 @@
   "voice.style.quartal": "Quartaler Jazz",
   "voice.lab.a": "Stil A",
   "voice.lab.b": "Stil B",
+  "voice.lab.event": "Akkordereignis",
+  "voice.lab.event.label": "{number}. {chord} — Ticks {start}–{end}",
   "voice.lab.roll": "MIDI-Tonhöhe nach Projekt-Tick (tiefster Ton hervorgehoben)",
   "voice.lab.notes": "{chord} ab Tick {start}, Dauer {duration}: MIDI {notes}",
   "voice.lab.apply_a": "Stil A übernehmen",

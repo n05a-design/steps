@@ -94,6 +94,7 @@ class VoiceLeadingLabDialog(ModalDialog):
         i18n: LocaleManager,
         theme: ThemeManager,
         on_apply: Callable[[str], bool],
+        selected_index: int | None = None,
     ) -> None:
         self._controller = controller
         self._i18n = i18n
@@ -122,6 +123,17 @@ class VoiceLeadingLabDialog(ModalDialog):
                 container, text=translate(key), bg=colors.bg_window,
                 fg=colors.text_primary, font=self._font,
             ).pack(anchor=tk.W, pady=(0, spacing.xs))
+
+        navigation = tk.Frame(container, bg=colors.bg_window)
+        navigation.pack(fill=tk.X, pady=(spacing.xs, spacing.sm))
+        tk.Label(
+            navigation, text=translate("voice.lab.event"), bg=colors.bg_window,
+            fg=colors.text_primary, font=self._font,
+        ).pack(side=tk.LEFT, padx=(0, spacing.sm))
+        self._event_selector = ttk.Combobox(navigation, state="readonly", font=self._font)
+        self._event_selector.pack(side=tk.LEFT, fill=tk.X, expand=True)
+        self._event_selector.bind("<<ComboboxSelected>>", self._on_view_change)
+        self._update_events(selected_index)
 
         body = tk.Frame(container, bg=colors.bg_window)
         body.pack(fill=tk.BOTH, expand=True)
@@ -190,9 +202,30 @@ class VoiceLeadingLabDialog(ModalDialog):
             return False
         self._revision = self._controller.revision
         self._profiles = [None, None]
+        self._update_events(self._event_selector.current())
         self._render(0)
         self._render(1)
         return True
+
+    def _update_events(self, selected: int | None) -> None:
+        session = self._controller.session
+        chords = session.chords
+        self._timings = tuple(session.get_chord_event_timing(i) for i in range(len(chords)))
+        t = self._i18n.translate
+        values = tuple(
+            t("voice.lab.event.label", number=index + 1, chord=chord, start=start, end=start + duration)
+            for index, (chord, (start, duration)) in enumerate(zip(chords, self._timings, strict=True))
+        )
+        self._event_selector.configure(values=values, state="readonly" if values else tk.DISABLED)
+        if values:
+            self._event_selector.current(min(max(0, selected or 0), len(values) - 1))
+        else:
+            self._event_selector.set("")
+
+    def _on_view_change(self, _event: tk.Event) -> None:
+        if not self._refresh_changed_project():
+            self._draw_roll(0)
+            self._draw_roll(1)
 
     def _select_style(self, side: int) -> None:
         if not self._refresh_changed_project():
@@ -201,7 +234,6 @@ class VoiceLeadingLabDialog(ModalDialog):
     def _render(self, side: int) -> None:
         session = self._controller.session
         chords = tuple(session.chords)
-        self._timings = tuple(session.get_chord_event_timing(i) for i in range(len(chords)))
         style = VOICE_LEADING_STYLE_OPTIONS[self._selectors[side].current()][0]
         translate = self._i18n.translate
         try:
@@ -240,7 +272,9 @@ class VoiceLeadingLabDialog(ModalDialog):
             return
         pitch_range = max(0, min(pitches) - 1), min(127, max(pitches) + 1)
         end = max(start + duration for start, duration in self._timings)
-        canvas.draw(self._timings, profile.midi_notes, pitch_range, end)
+        canvas.draw(
+            self._timings, profile.midi_notes, pitch_range, end, self._event_selector.current(),
+        )
 
     def _apply_profile(self, side: int) -> None:
         if self._refresh_changed_project():

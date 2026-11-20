@@ -477,7 +477,20 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             rolls = list(widgets(lab, tk.Canvas))
             self.assertEqual(len(rolls), 2)
             self.assertTrue(all(roll.find_withtag("note") for roll in rolls))
-            selector = list(widgets(lab, ttk.Combobox))[1]
+            event_selector, _, selector = widgets(lab, ttk.Combobox)
+            self.assertEqual(event_selector.current(), window.chord_listbox.curselection()[0])
+            first_highlights = [roll.coords("selected-event") for roll in rolls]
+            self.assertTrue(all(coords for coords in first_highlights))
+            event_selector.current(3)
+            event_selector.event_generate("<<ComboboxSelected>>")
+            root.update()
+            self.assertTrue(all(roll.coords("selected-event") for roll in rolls))
+            self.assertTrue(all(
+                roll.coords("selected-event")[0] > previous[0]
+                for roll, previous in zip(rolls, first_highlights, strict=True)
+            ))
+            self.assertIn(controller.session.chords[3], event_selector.get())
+
             selector.current(1 if active_style.value != "STRICT_CLASSICAL" else 0)
             selector.event_generate("<<ComboboxSelected>>")
             root.update()

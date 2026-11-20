@@ -1051,6 +1051,7 @@ class StepsMainWindow:
             i18n=self.i18n,
             theme=self.theme,
             on_apply=self._on_voice_style_change,
+            selected_index=self._selected_chord_index(),
         )
 
     def _on_voice_style_change(self, style: str) -> bool:

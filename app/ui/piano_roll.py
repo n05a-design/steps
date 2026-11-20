@@ -22,6 +22,7 @@ class PianoRoll(tk.Canvas):
         midi_notes: Sequence[Sequence[int]],
         pitch_range: tuple[int, int],
         end: int,
+        selected_event: int,
     ) -> None:
         self.delete("all")
         if not timings or end <= 0 or self.winfo_width() < 64 or self.winfo_height() <= 30:
@@ -36,6 +37,13 @@ class PianoRoll(tk.Canvas):
 
         def y(note: int) -> float:
             return bottom - (note - low) / (high - low) * (bottom - top)
+
+        if 0 <= selected_event < len(timings):
+            start, duration = timings[selected_event]
+            self.create_rectangle(
+                x(start), top, max(x(start) + 1, x(start + duration)), bottom,
+                fill=colors.bg_active, outline=colors.border_focus, tags=("selected-event",),
+            )
 
         for note in range(low, high + 1):
             if note in (low, high) or note % 12 == 0:
