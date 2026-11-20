@@ -1,8 +1,8 @@
 # STEPS Open Work Register
 
 **Authority:** This is the single active, versioned register for STEPS tasks and owner decisions.
-**Effective date:** 2026-11-19.
-**Source baseline:** GitHub `main` at `3aadd5302d4bf3341235735bcab6f9a8861aa9c0`.
+**Effective date:** 2026-11-20.
+**Source baseline:** GitHub `main` at `e2faf276adf6d65caf81fe28f38521a176e0c283`.
 **Operating model:** One repository backlog, following Glide's single-plan model. GitHub issues provide linked discussion/evidence; this register is the active status authority.
 
 ## Migration boundary
@@ -43,7 +43,7 @@ New active IDs continue after the legacy range. Dated plans and audit reports re
 
 ### OA-0038: Complete desktop MVP acceptance
 - **Kategorie:** Produkt / Desktop · **Status:** `OPEN` · **Ursprung:** EXPLICIT
-- **Beschreibung:** Continue the desktop workflow toward owner-approved MVP acceptance. The 765-test pass and ADR-017 export checks do not replace independent DAW, native accessibility, platform, installer, or user acceptance.
+- **Beschreibung:** Continue the desktop workflow toward owner-approved MVP acceptance. The 791-test pass at `main` `e2faf276` and ADR-017 export checks do not replace independent DAW, native accessibility, platform, installer, or user acceptance.
 - **Quellen:** [Issue #151](https://github.com/n05a-design/steps/issues/151); [1.0 readiness contract](../product/V1.0.0_PRODUCT_CONTRACT.md); [handover audit](../handover/MASTER_UEBERGABE_2026-11-19.md)
 - **Abnahmekriterien:** Required human and platform checks are recorded for the approved scope; DAW imports are verified independently; owner decisions and release boundaries remain explicit.
 
