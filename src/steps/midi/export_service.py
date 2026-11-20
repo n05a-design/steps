@@ -143,13 +143,11 @@ class MidiExportService:
 
                 # If payload is a string chord symbol (e.g. 'Cmaj7')
                 if isinstance(payload, str):
-                    try:
+                    if t_type == "CHORDS":
                         chord = parse_chord(payload, convention=project.notation_convention)
                         voicing = chord.to_voicing(bass_octave=3, voicing_type="CLOSE")
                         for note in voicing.midi_notes:
                             midi_track.add_note(start_tick, dur_ticks, note, velocity=75, channel=channel)
-                    except Exception:
-                        pass
                 # If payload is a list of MIDI integers
                 elif isinstance(payload, (list, tuple)):
                     for note in payload:
