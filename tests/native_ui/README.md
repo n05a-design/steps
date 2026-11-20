@@ -1,9 +1,14 @@
 # Desktop verification
 
-Run the two native widget workflows from the repository root with Python and Tk:
+Run the two native widget workflows from the repository root with Python and Tk.
+Use a fresh Python process for each workflow on Aqua:
 
 ```sh
-STEPS_REQUIRE_DESKTOP_TK=1 python3 -B -m unittest tests.test_desktop_app_entrypoint -v
+export STEPS_REQUIRE_DESKTOP_TK=1 PYTHONFAULTHANDLER=1
+python3 -B -m unittest \
+  tests.test_desktop_app_entrypoint.TestDesktopAppEntrypoint.test_main_window_instantiation_and_wiring -v
+python3 -B -m unittest \
+  tests.test_desktop_app_entrypoint.TestDesktopAppEntrypoint.test_native_dialog_workflow -v
 ```
 
 The dialogs test uses real Tk widgets, event bindings, storage, publication
@@ -23,6 +28,10 @@ The project workflow also opens a real backup after corrupt UTF-8 and
 verifies that rejecting a newer schema preserves the dirty session. Native
 chooser and confirmation responses are injected so CI can run unattended.
 The same tests run in the Ubuntu Xvfb, Windows and macOS smoke jobs.
+Windows and macOS run the workflows in separate steps and processes. The
+Aqua runner showed intermittent native faults during event processing when
+the second workflow reused the process of a previous Tk root. Each CI step
+still fails on an assertion, unavailable Tk or a process crash.
 
 ## macOS development app
 
