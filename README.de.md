@@ -93,6 +93,8 @@ Zu jedem Beispiel gehören der freigegebene Lehrtext, die Quellen-IDs und das Da
 - **Quellenregister:** Jede Aussage führt Quell-ID, Fundstelle, Geltungsbereich und Gegenprobe.
 - **Golden-Fälle:** 198 Referenzfälle, davon 120 ausgeführt und 78 als Spezifikationsbeispiele strukturell geprüft.
 
+Der Akkord-Explorer zeigt eine lokalisierte Begründung zur Auswahl und bewahrt die Originalerklärung und Quell-ID. Im Stimmführungslabor lassen sich zwei Stile mit gleicher Tick- und Tonhöhenskala vergleichen.
+
 Der [Implementierungsstand](docs/IMPLEMENTATION.md) beschreibt Verhalten und Grenzen jeder Funktion, die [Python-API](docs/theory/API.md) alle Exporte.
 
 ## Was noch nicht geht
@@ -149,7 +151,7 @@ python3 -m pip wheel . --no-deps --wheel-dir ./dist
 python3 -B -m unittest tests.test_package_artifacts -v
 ```
 
-Die Prüfung kontrolliert den Konsolen-Einstieg `steps`, die lokalisierten Kataloge und die gebündelten Markenressourcen und startet die installierte Paketinstallation im Headless-Modus. Sie baut oder prüft keinen signierten Desktop-Installer, keine notarisierte Anwendung, kein plattformspezifisches Paket und keine Installation auf einem frischen Rechner.
+Die Wheel-Prüfung startet eine isolierte Installation und verifiziert den Konsolen-Einstieg, die Laufzeitressourcen und alle drei freigegebenen Beispiele. Die [Desktop-Prüfanleitung](tests/native_ui/README.md) beschreibt den lokalen macOS-Entwicklungsbuild und die Widget-Tests.
 Weitere Aufrufe und Grenzen stehen in der [Testanleitung](tests/README.md).
 
 ## Quellen und Rechte

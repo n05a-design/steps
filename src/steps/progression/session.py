@@ -475,6 +475,15 @@ class ProgressionSession:
         or specified diagnostic style. A separate voicing style can be supplied
         when comparing generated candidates.
         """
+        analyses, _voicings = self.analyze_progression_with_voicings(style, voicing_style)
+        return analyses
+
+    def analyze_progression_with_voicings(
+        self,
+        style: Optional[Union[str, VoiceLeadingStyle]] = None,
+        voicing_style: Optional[Union[str, VoiceLeadingStyle]] = None,
+    ) -> Tuple[List[DegreeAnalysis], List[Voicing]]:
+        """Return the analyses together with the exact voicings used to calculate them."""
         active_style = self.voice_leading_style if style is None else (
             style if isinstance(style, VoiceLeadingStyle) else VoiceLeadingStyle(str(style).upper())
         )
@@ -523,7 +532,7 @@ class ProgressionSession:
                 voice_leading_warnings=tuple(warnings)
             ))
 
-        return analyses
+        return analyses, voicings
 
     def explore_next_chords(self, from_index: int) -> List[ChordRecommendation]:
         """

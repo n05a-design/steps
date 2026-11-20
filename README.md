@@ -65,13 +65,13 @@ The [reviewed examples](knowledge/concepts/progressions/REVIEWED_PROGRESSIONS.md
 - **MIDI:** SMF format 0/1 writers and export services are available. The CLI and desktop prototype expose export paths; automated tests inspect the resulting files.
 - **English and German:** localized catalogs and a persisted UI-language preference are implemented.
 - **Reviewed examples:** selected learning examples are published with source references and review evidence. The larger research archive is not automatically approved product content.
-- **Desktop prototype:** a Tkinter two-area window supports chord entry, transposition, theory display, MIDI export, and project open/save with unsaved-change prompts and visible errors. It is not yet a complete packaged or platform-accepted application.
+- **Desktop:** edit chords, inspect localized continuation suggestions and their provenance, and compare voice-leading styles on aligned piano rolls. The workflow includes reviewed examples, MIDI export and project save/open with unsaved-change prompts.
 
 See the [implementation status](docs/IMPLEMENTATION.md) for precise behavior and limits.
 
 ## Status and scope
 
-- `v0.1.0` is the latest release. The repository includes a Python core and desktop prototype, not a packaged desktop product; the 1.0 scope and date are not approved.
+- `v0.1.0` is the latest public release. A macOS development bundle can be built locally. Distribution approval and the 1.0 scope and date remain open.
 - Project open/save exists in the prototype; native file-dialog, recovery, accessibility, and platform acceptance remain open. Automated MIDI tests do not establish DAW interoperability.
 - English/German catalogs and persisted language selection exist; independent translation acceptance remains open.
 - There is no in-app audio playback or MIDI import, and no user-study evidence for learning outcomes or product-market fit.
@@ -102,7 +102,7 @@ python3 -m pip wheel . --no-deps --wheel-dir ./dist
 python3 -B -m unittest tests.test_package_artifacts -v
 ```
 
-The wheel check verifies the `steps` console entry point and the localized catalogs and brand assets packaged in the artifact. It starts the installed package in headless mode. It does not build or verify a signed desktop installer, notarized application, platform-specific package, or fresh-machine installation.
+The wheel check uses an isolated install to verify the `steps` entry point, runtime resources, and all three reviewed examples. For the native macOS development bundle and widget tests, see the [Desktop verification guide](tests/native_ui/README.md).
 
 ## Product target and documentation
 

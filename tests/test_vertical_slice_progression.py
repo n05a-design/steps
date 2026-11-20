@@ -23,6 +23,7 @@ User Workflow Tested:
 import shutil
 import tempfile
 import unittest
+from dataclasses import replace
 from pathlib import Path
 from unittest.mock import patch
 
@@ -111,6 +112,25 @@ class TestVerticalSliceProgression(unittest.TestCase):
             controller.explore_next(len(session.chords))
         with self.assertRaises(ValueError):
             controller.apply_next_recommendation(1, "NotARecommendation")
+
+    def test_next_chord_distinguishes_duplicate_symbols_and_rejects_stale_context(self):
+        controller = ProgressionSessionController()
+        initial = controller.explore_next(1)[0]
+        duplicate = replace(initial, source_id="other-source")
+        previous_revision = controller.revision
+        controller.set_context("C", True, 120)
+        with patch.object(controller.session, "explore_next_chords", return_value=[initial, duplicate]):
+            with self.assertRaisesRegex(ValueError, "changed"):
+                controller.apply_next_recommendation(
+                    1, duplicate.candidate_symbol, selected=duplicate,
+                    expected_revision=previous_revision,
+                )
+            self.assertEqual(len(controller.session.chords), 4)
+            applied = controller.apply_next_recommendation(
+                1, duplicate.candidate_symbol, selected=duplicate,
+                expected_revision=controller.revision,
+            )
+        self.assertEqual(applied, duplicate)
 
     def test_e2e_four_chord_vertical_slice(self):
         # 1. Initialize session with 4 chords (C - G - Am - F) in C-Major

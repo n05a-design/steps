@@ -277,6 +277,7 @@ class TestLocaleManager(unittest.TestCase):
             window.root = FakeRoot()
             window.file_menu = FakeMenu(4)
             window.menu_bar = FakeMenu(2)
+            window.tools_menu = FakeMenu(3)
             window.settings_menu = FakeMenu(1)
             window.language_menu = FakeMenu(3)
             window.title_lbl = FakeWidget()
@@ -334,6 +335,9 @@ class TestLocaleManager(unittest.TestCase):
             self.assertEqual(window.redo_btn.options["text"], "Wiederholen")
             self.assertEqual(window.file_menu.entries[0]["label"], "Neu")
             self.assertEqual(window.file_menu.entries[1]["label"], "Öffnen…")
+            self.assertEqual(
+                window.tools_menu.entries[1]["label"], window.i18n.translate("voice.lab.open")
+            )
             self.assertEqual(window.root.title_text, "STEPS — Harmonielehre & Musiktheorie")
             self.assertEqual(
                 json.loads((Path(temp_dir) / "preferences.json").read_text(encoding="utf-8")),

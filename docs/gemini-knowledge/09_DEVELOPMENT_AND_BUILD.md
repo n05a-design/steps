@@ -29,6 +29,8 @@ python3 -B -m unittest tests.test_package_artifacts -v
 
 These commands verify package metadata, the `steps` entry point, locale assets, brand assets, and an installed headless smoke. They do not verify installer signing, notarization, platform acceptance, or reproducible desktop distribution.
 
+For the macOS app bundle recipe added after this snapshot, see the [desktop verification guide](../../tests/native_ui/README.md#macos-development-app).
+
 ## CI
 
 `.github/workflows/python-tests.yml` runs Python test matrices and checks generated docs, localization inventories, package artifacts, knowledge benchmarks and coverage audits. Workflow outcomes are commit- and runner-specific; this pack's audit did not independently verify every matrix runner.

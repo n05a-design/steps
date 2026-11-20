@@ -1,5 +1,52 @@
 # AI-Agent-Handover - 20.11.2026
 
+## Desktop evolution takeover
+
+The active delivery branch is `codex/native-desktop-evolution`, based on
+GitHub `main` at `47af95372bf07002d61d88911774119ce1708644` (PR #221).
+The primary checkout matched that base before development. The earlier
+documentation checkout and a verified local archive preserve workspace
+differences from before the reconciliation. Other worktrees and their branches
+remain available. `fix/desktop-mvp-follow-up` has different ancestry and the
+same tree as the verified base. The publishable release remains `v0.1.0` and
+the development package is `0.2.0.dev0`.
+
+- The recommendation panel preserves the source-chord selection, localizes the
+  relationship and its explanation, and requires a fresh match before insertion.
+  The exact selected recommendation disambiguates identical candidate symbols.
+- The read-only A/B voice-leading view uses the core's evaluated MIDI notes and
+  project ticks. Applying a style is an explicit undoable session operation.
+- The tools menu, Aqua button palette, search preview, modal focus and MIDI
+  output feedback are wired through the existing app/controller entry points.
+- The wheel and local macOS bundle include the canonical source registry.
+  The development bundle recipe is in the [desktop verification guide](../../tests/native_ui/README.md).
+
+### Verification and open acceptance
+
+- On arm64 macOS 27.2.1 with Python 3.14.5 and Aqua Tk 9.0.3, the full suite
+  with `STEPS_REQUIRE_DESKTOP_TK=1` passed 794 tests. The curation suite passed
+  40 tests. The native workflow drives the actual project, library, style and
+  MIDI widgets with injected chooser responses.
+- The macOS bundle was built and started. The graphical inspection opened the
+  library and the A/B view, loaded the Jazz example, and wrote a MIDI file
+  through the actual macOS save dialog. The bundle also passed the isolated
+  English/German headless smoke.
+- The pilot benchmark passed 8 of 8. The all-scope benchmark reported 92 pass,
+  0 fail and 27 pending (15 manual evidence checks, 12 coach assessments).
+  Those pending cases retain their existing evidence and review gates.
+- The [DAW fixture recipe](../quality/MIDI_DAW_MANUAL_PROTOCOL.md) produces
+  both SMF formats and separate tempo and meter probes. DAW import is
+  `NOT_RUN`: the local Ableton instance did not produce a controllable window
+  in the verification session.
+- Independent translation, accessibility, fresh-machine installation, platform
+  user acceptance and public distribution approval remain open. OneDrive cloud
+  completion was not verified. Track these in
+  [the canonical register](../operations/OFFENE_ARBEITSAUFFORDERUNGEN.md).
+- Review the branch PR and its exact head checks before integration. Continue
+  with independent DAW and accessibility acceptance from the existing protocols.
+
+## Historical snapshot before the desktop evolution branch
+
 **Purpose:** Fast local takeover handoff in the OneDrive-backed STEPS project worktree.
 
 ## Git state

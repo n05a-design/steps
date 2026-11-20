@@ -462,6 +462,37 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
             "disabled",
         )
 
+    def test_next_chord_localized_reason_preserves_notation_and_source(self):
+        for language in ("en", "de"):
+            for notation, key, expected in (("INT", "B", "C#m"), ("DE", "H", "Cism")):
+                with self.subTest(language=language, notation=notation):
+                    self.window.i18n = LocaleManager(preference=language)
+                    self.window.controller = ProgressionSessionController(
+                        ProgressionSession(initial_chords=[key, "E"], key_root=key, convention=notation)
+                    )
+                    self.window.chord_listbox = Mock()
+                    self.window.chord_listbox.curselection.return_value = (0,)
+                    self.window.next_candidates_list = Mock()
+                    self.window.apply_next_btn = Mock()
+                    self.window._on_explore_next()
+                    recommendations = self.window._next_recommendations
+                    index = next(i for i, item in enumerate(recommendations) if item.candidate_symbol == expected)
+                    self.window.next_candidates_list.curselection.return_value = (index,)
+                    self.window._on_next_recommendation_selected(None)
+                    details = self.window.detail_text.insert.call_args.args[1]
+                    self.assertIn(expected, details)
+                    self.assertIn(recommendations[index].source_id, details)
+                    self.assertIn(
+                        self.window.i18n.translate("next_chord.reason.VOICE_LEADING_NEAR"), details,
+                    )
+                    self.window.controller.set_context(key, True, 120)
+                    self.window._on_apply_next_recommendation()
+                    self.assertEqual(self.window.controller.session.chords, [key, "E"])
+                    self.assertEqual(
+                        self.window.detail_text.insert.call_args.args[1],
+                        self.window.i18n.translate("next_chord.stale"),
+                    )
+
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/fail.stepsproj")
     @patch("app.ui.main_window.messagebox.showerror")
     def test_save_error_is_visible_and_keeps_session_dirty(self, show_error, choose_path):

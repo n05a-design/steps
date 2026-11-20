@@ -46,6 +46,7 @@ class TestPackageArtifacts(unittest.TestCase):
                 self.assertIn("app/locales/en.json", names)
                 self.assertIn("app/locales/de.json", names)
                 self.assertIn("app/ui/midi_export_dialog.py", names)
+                self.assertIn("knowledge/sources/registry.yaml", names)
                 self.assertTrue(
                     any(name.startswith("app/assets/brand/") for name in names)
                 )
@@ -86,7 +87,10 @@ class TestPackageArtifacts(unittest.TestCase):
                     sys.executable,
                     "-B",
                     "-c",
-                    "from app.main import main; raise SystemExit(main(['--headless']))",
+                    "from app.knowledge import list_reviewed_progressions; "
+                    "from app.main import main; "
+                    "assert len(list_reviewed_progressions()) == 3; "
+                    "raise SystemExit(main(['--headless']))",
                 ],
                 check=False,
                 cwd=wheel_dir,

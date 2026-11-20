@@ -37,19 +37,19 @@ New active IDs continue after the legacy range. Dated plans and audit reports re
 
 ### OA-0037: Close knowledge-base provenance and review gaps
 - **Kategorie:** Wissensbasis / Provenienz · **Status:** `OPEN` · **Ursprung:** EXPLICIT
-- **Beschreibung:** Continue source, rights, graph, and domain review only with provenance-bound evidence. The latest issue evidence reports 92 benchmark cases passed, 0 failed, and 27 pending.
+- **Beschreibung:** Continue source, rights, graph, and domain review only with provenance-bound evidence. The benchmark rechecked on the desktop evolution branch reports 92 passed, 0 failed and 27 pending (15 manual evidence checks and 12 coach assessments).
 - **Quellen:** [Issue #150](https://github.com/n05a-design/steps/issues/150); [open research gaps](../../research/gaps/OPEN_GAPS.md)
 - **Abnahmekriterien:** Each published claim has an allowed source, locator, scope, and recorded review state; pending cases are not promoted to pass without evidence and required human review.
 
 ### OA-0038: Complete desktop MVP acceptance
 - **Kategorie:** Produkt / Desktop · **Status:** `OPEN` · **Ursprung:** EXPLICIT
-- **Beschreibung:** Continue the desktop workflow toward owner-approved MVP acceptance. The 791-test pass at `main` `e2faf276` and ADR-017 export checks do not replace independent DAW, native accessibility, platform, installer, or user acceptance.
+- **Beschreibung:** Continue the desktop workflow toward owner-approved MVP acceptance. The [native widget workflow](../../tests/native_ui/README.md) now covers the library, recommendations, style preview/application, MIDI options and save/reopen. The local macOS development bundle has a reproducible build recipe. The 791-test pass at `main` `e2faf276` and ADR-017 export checks do not replace independent DAW, native accessibility, platform, installer, or user acceptance.
 - **Quellen:** [Issue #151](https://github.com/n05a-design/steps/issues/151); [1.0 readiness contract](../product/V1.0.0_PRODUCT_CONTRACT.md); [handover audit](../handover/MASTER_UEBERGABE_2026-11-19.md)
 - **Abnahmekriterien:** Required human and platform checks are recorded for the approved scope; DAW imports are verified independently; owner decisions and release boundaries remain explicit.
 
 ### OA-0039: Complete independent localization acceptance
 - **Kategorie:** Lokalisierung / Accessibility · **Status:** `OPEN` · **Ursprung:** EXPLICIT
-- **Beschreibung:** Complete independent English/German translation and native accessibility/platform review. Automated catalog, text-inventory, and runtime checks are necessary but not sufficient.
+- **Beschreibung:** Complete independent English/German translation and native accessibility/platform review. The recommendation presentation is covered in all four UI-language and notation combinations. Independent translation and accessibility reviewers still need to assess the visible workflow.
 - **Quellen:** [Issue #154](https://github.com/n05a-design/steps/issues/154); [internationalization contract](../engineering/INTERNATIONALIZATION.md)
 - **Abnahmekriterien:** Translation review and supported-platform/accessibility acceptance are recorded separately from automated test status; UI language remains independent of `INT`/`DE` notation.
 

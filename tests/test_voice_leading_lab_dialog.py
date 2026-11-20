@@ -33,6 +33,10 @@ class TestVoiceLeadingLab(unittest.TestCase):
         self.assertEqual(self.session.voice_leading_style, VoiceLeadingStyle.CONTEMPORARY_POP)
         self.assertFalse(self.session.is_dirty)
         self.assertEqual(len(strict.transitions), len(self.session.chords))
+        self.assertEqual(strict.midi_notes, tuple(
+            tuple(voicing.midi_notes)
+            for voicing in self.session.get_voicings(style=VoiceLeadingStyle.STRICT_CLASSICAL)
+        ))
 
     def test_profile_summary_labels_movement_as_descriptive(self):
         profile = self.controller.analyze_voice_leading_style(
@@ -52,22 +56,24 @@ class TestVoiceLeadingLab(unittest.TestCase):
 
     def test_dialog_stays_open_when_style_application_is_rejected(self):
         dialog = object.__new__(VoiceLeadingLabDialog)
-        dialog._selected_style = VoiceLeadingStyle.STRICT_CLASSICAL
+        dialog._profiles = [Mock(style=VoiceLeadingStyle.STRICT_CLASSICAL), None]
+        dialog._refresh_changed_project = Mock(return_value=False)
         dialog._on_apply = Mock(return_value=False)
         dialog._close = Mock()
 
-        dialog._apply_selected()
+        dialog._apply_profile(0)
 
         dialog._on_apply.assert_called_once_with("STRICT_CLASSICAL")
         dialog._close.assert_not_called()
 
     def test_dialog_closes_after_style_application(self):
         dialog = object.__new__(VoiceLeadingLabDialog)
-        dialog._selected_style = VoiceLeadingStyle.STRICT_CLASSICAL
+        dialog._profiles = [Mock(style=VoiceLeadingStyle.STRICT_CLASSICAL), None]
+        dialog._refresh_changed_project = Mock(return_value=False)
         dialog._on_apply = Mock(return_value=True)
         dialog._close = Mock()
 
-        dialog._apply_selected()
+        dialog._apply_profile(0)
 
         dialog._close.assert_called_once_with()
 

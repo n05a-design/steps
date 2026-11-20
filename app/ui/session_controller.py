@@ -30,6 +30,7 @@ class VoiceLeadingStyleProfile:
     style: VoiceLeadingStyle
     transitions: Tuple[DegreeAnalysis, ...]
     total_movement: int
+    midi_notes: Tuple[Tuple[int, ...], ...]
 
 
 class ProgressionSessionController:
@@ -41,10 +42,16 @@ class ProgressionSessionController:
     def __init__(self, session: Optional[ProgressionSession] = None):
         self._session = session or ProgressionSession()
         self._listeners: List[Callable[[], None]] = []
+        self._revision = 0
 
     @property
     def session(self) -> ProgressionSession:
         return self._session
+
+    @property
+    def revision(self) -> int:
+        """Version of the last project notification."""
+        return self._revision
 
     def add_listener(self, callback: Callable[[], None]) -> None:
         """Subscribes view listener for state changes."""
@@ -52,6 +59,7 @@ class ProgressionSessionController:
 
     def _notify(self) -> None:
         """Notifies registered listeners."""
+        self._revision += 1
         for cb in self._listeners:
             try:
                 cb()
@@ -96,19 +104,18 @@ class ProgressionSessionController:
             if isinstance(style, VoiceLeadingStyle)
             else VoiceLeadingStyle(str(style).upper())
         )
-        transitions = tuple(
-            self._session.analyze_progression(
-                style=resolved,
-                voicing_style=resolved,
-            )
+        transitions, voicings = self._session.analyze_progression_with_voicings(
+            style=resolved,
+            voicing_style=resolved,
         )
         total_movement = sum(
             item.semitone_distance_to_next or 0 for item in transitions
         )
         return VoiceLeadingStyleProfile(
             style=resolved,
-            transitions=transitions,
+            transitions=tuple(transitions),
             total_movement=total_movement,
+            midi_notes=tuple(tuple(voicing.midi_notes) for voicing in voicings),
         )
 
     def get_state_summary(self) -> Dict[str, Any]:
@@ -230,16 +237,26 @@ class ProgressionSessionController:
     def explore_next(self, index: int) -> List[ChordRecommendation]:
         return self._session.explore_next_chords(index)
 
-    def apply_next_recommendation(self, index: int, candidate_symbol: str) -> ChordRecommendation:
+    def apply_next_recommendation(
+        self,
+        index: int,
+        candidate_symbol: str,
+        *,
+        selected: ChordRecommendation | None = None,
+        expected_revision: int | None = None,
+    ) -> ChordRecommendation:
         """Validates and inserts one recommendation after the selected chord."""
         if not isinstance(candidate_symbol, str) or not candidate_symbol.strip():
             raise ValueError("A valid recommendation symbol is required.")
+        if expected_revision is not None and expected_revision != self.revision:
+            raise ValueError("The progression has changed since the recommendation was generated.")
         recommendations = self._session.explore_next_chords(index)
         candidate = next(
             (
                 recommendation
                 for recommendation in recommendations
                 if recommendation.candidate_symbol == candidate_symbol
+                and (selected is None or selected == recommendation)
             ),
             None,
         )
