@@ -77,6 +77,7 @@ jobs:
         with:
           python-version: '3.12'
 
+      # Aqua Tk shares native application state across interpreters in one process.
       - name: Smoke-test native Tk window and core workflow
         env:
           STEPS_REQUIRE_DESKTOP_TK: "1"
@@ -84,6 +85,14 @@ jobs:
         run: >-
           python -B -m unittest
           tests.test_desktop_app_entrypoint.TestDesktopAppEntrypoint.test_main_window_instantiation_and_wiring
+          -v
+
+      - name: Smoke-test native dialog workflow in a fresh process
+        env:
+          STEPS_REQUIRE_DESKTOP_TK: "1"
+          PYTHONFAULTHANDLER: "1"
+        run: >-
+          python -B -m unittest
           tests.test_desktop_app_entrypoint.TestDesktopAppEntrypoint.test_native_dialog_workflow
           -v
 
