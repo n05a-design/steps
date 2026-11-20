@@ -21,6 +21,17 @@ angefragte Intervall. Eine verminderte Oktave lautet ausdrücklich `(7, 11)`,
 eine kleine None `(8, 13)`. Abgesichert durch
 `tests/test_transpose_diatonic_strict.py`.
 
+`detect_parallel_fifths_octaves()` liefert weiterhin die historischen
+englischen Diagnosezeichenketten mit nullbasierten Stimmenindizes.
+`find_perfect_interval_motion()` liefert dieselben Befunde mit Bewegungsart,
+Intervall und Stimmenindizes strukturiert. Die Desktop-Anzeige übersetzt
+diese Befunde und zählt die sichtbaren Stimmen ab eins.
+
+`reduce_chord_for_beginners()` schreibt den Grundton des reduzierten Symbols
+in der angegebenen Konvention. Äquivalente INT- und DE-Symbole liefern dieselben
+MIDI-Tonhöhen für die Inversionen. Beispiele sind `Bbmaj7` ↔ `Bmaj7` und
+`Bmaj7` ↔ `Hmaj7`.
+
 | Offen | Gegenprobe | Entscheidungsvorschlag |
 |---|---|---|
 | AUTO-Notation | `Cis` und `Es` werden in AUTO abgewiesen, `Es7` wird erkannt. In DE werden alle drei gelesen. | **Entschieden (ADR-015 §4), Umsetzung offen:** deutsche Namen auch ohne Suffix, dokumentweite Locale bei eindeutigem deutschem Marker. Ursprünglicher Vorschlag: Eindeutige deutsche Vorzeichennamen auch ohne Akkordqualität erkennen. Mehrdeutiges B im bestehenden AUTO-Dialekt gesondert dokumentieren und DE/INT bei kuratierten Daten explizit setzen. |

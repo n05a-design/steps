@@ -112,7 +112,7 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`detect_progression_archetypes`](../../src/steps/progression/engine.py) | `(chords: 'list[str] \| list[ChordDefinition] \| CanonicalProgression', key_root: 'str \| NoteSpelling' = 'C', is_minor_key: 'bool' = False, allow_rotations: 'bool' = True, convention: "Literal['INT', 'DE', 'AUTO']" = 'AUTO') -> 'list[dict[str, Any]]'` |
 | [`ProgressionSession`](../../src/steps/progression/session.py) | `(initial_chords: 'Optional[List[str]]' = None, key_root: 'str' = 'C', is_minor: 'bool' = False, convention: "Literal['INT', 'DE']" = 'INT', bpm: 'float' = 120.0, voice_leading_style: 'Union[str, VoiceLeadingStyle]' = <VoiceLeadingStyle.CONTEMPORARY_POP: 'CONTEMPORARY_POP'>, title: 'Optional[str]' = None)` |
 | [`ChordRecommendation`](../../src/steps/progression/session.py) | `(candidate_symbol: 'str', relation_type: "Literal['DOMINANT_OF', 'RESOLVES_TO', 'BORROWED_FROM', 'VOICE_LEADING_NEAR', 'SUBSTITUTES_FOR']", explanation: 'str', framework: 'str', source_id: 'str') -> None` |
-| [`DegreeAnalysis`](../../src/steps/progression/session.py) | `(index: 'int', symbol: 'str', roman_numeral: 'str', semitone_distance_to_next: 'Optional[int]' = None, voice_leading_warnings: 'tuple[str, ...]' = ()) -> None` |
+| [`DegreeAnalysis`](../../src/steps/progression/session.py) | `(index: 'int', symbol: 'str', roman_numeral: 'str', semitone_distance_to_next: 'Optional[int]' = None, voice_leading_warnings: 'tuple[str, ...]' = (), voice_leading_diagnostics: 'tuple[VoiceLeadingDiagnostic, ...]' = ()) -> None` |
 | [`GuideToneResolution`](../../src/steps/theory/voicings.py) | `(from_chord: 'str', to_chord: 'str', retained_note: 'Optional[int]', moving_note_from: 'int', moving_note_to: 'int', motion_semitones: 'int', resolution_type: "Literal['HALF_STEP_DOWN', 'HALF_STEP_UP', 'WHOLE_STEP_DOWN', 'WHOLE_STEP_UP', 'STATIC', 'LEAP']", total_l1_distance: 'int', description: 'str') -> None` |
 | [`ProgressionShellVoicings`](../../src/steps/theory/voicings.py) | `(voicings: 'List[ShellVoicing]', resolutions: 'List[GuideToneResolution]', total_l1_distance: 'int', average_l1_distance: 'float', starting_layout: "Literal['7_3', '3_7']") -> None` |
 | [`ShellVoicing`](../../src/steps/theory/voicings.py) | `(chord_symbol: 'str', root_pc: 'int', bass_note: 'int', guide_tones: 'Tuple[int, int]', third_note: 'int', seventh_note: 'int', layout: "Literal['7_3', '3_7']", lh_spelling: 'str', rh_spellings: 'Tuple[str, str]') -> None` |
@@ -319,7 +319,7 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 
 ### [DegreeAnalysis](../../src/steps/progression/session.py)
 
-`DegreeAnalysis(index: 'int', symbol: 'str', roman_numeral: 'str', semitone_distance_to_next: 'Optional[int]' = None, voice_leading_warnings: 'tuple[str, ...]' = ()) -> None`
+`DegreeAnalysis(index: 'int', symbol: 'str', roman_numeral: 'str', semitone_distance_to_next: 'Optional[int]' = None, voice_leading_warnings: 'tuple[str, ...]' = (), voice_leading_diagnostics: 'tuple[VoiceLeadingDiagnostic, ...]' = ()) -> None`
 
 ### [GuideToneResolution](../../src/steps/theory/voicings.py)
 

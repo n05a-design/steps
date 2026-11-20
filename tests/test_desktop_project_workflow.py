@@ -66,6 +66,9 @@ class FakeController:
     def get_state_summary(self):
         return {"title": "My Progression"}
 
+    def get_beginner_voicings(self):
+        return {}
+
     def get_view_model(self):
         return {}
 
@@ -404,8 +407,8 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.assertIn("Smoothness", rendered)
 
     def test_beginner_view_model_failure_is_logged_without_hiding_chord_details(self):
-        self.window.controller.get_view_model = Mock(
-            return_value={"beginner_voicings": {"smoothness_score": 0.9}}
+        self.window.controller.get_beginner_voicings = Mock(
+            side_effect=RuntimeError("optional keyboard view unavailable")
         )
 
         with self.assertLogs("app.ui.main_window", level="ERROR") as logged:
@@ -417,6 +420,42 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
             self.window.i18n.translate("chord.analysis.title", chord="C"),
             rendered,
         )
+
+    def test_inspector_renders_project_notation_independently_of_ui_language(self):
+        for convention, symbol, expected_scale in (
+            ("INT", "Bbmaj7", "Bb - C - D - Eb - F - G - A"),
+            ("DE", "Bmaj7", "B - C - D - Es - F - G - A"),
+        ):
+            session = ProgressionSession(
+                initial_chords=[symbol, "F7"], key_root=symbol.removesuffix("maj7"),
+                convention=convention,
+            )
+            self.window.controller = ProgressionSessionController(session)
+            state = session.state
+            self.window.controller.get_view_model = Mock(
+                side_effect=AssertionError("inspector should only request keyboard voicings")
+            )
+            for language in ("en", "de"):
+                with self.subTest(convention=convention, language=language):
+                    self.window.i18n = LocaleManager(preference=language)
+                    self.window._display_chord_details(symbol)
+                    rendered = self.window.detail_text.insert.call_args.args[1]
+                    translate = self.window.i18n.translate
+                    self.assertIn(translate("chord.analysis.title", chord=symbol), rendered)
+                    self.assertIn(expected_scale, rendered)
+                    self.assertIn("[58, 62, 65, 69]", rendered)
+                    transition = session.get_beginner_voicings().transitions[0]
+                    self.assertIn(translate(
+                        "beginner.transition.measurements", from_chord=symbol, to_chord="F7",
+                        common=len(transition.common_tones),
+                        distance=transition.total_l1_distance, leap=transition.max_single_leap,
+                    ), rendered)
+                    self.assertIn(translate(
+                        "beginner.transition.original", guidance=transition.pedagogical_guidance,
+                    ), rendered)
+                    self.assertEqual(session.state, state)
+                    self.assertFalse(session.is_dirty)
+            self.window.controller.get_view_model.assert_not_called()
 
     def test_next_chord_explore_apply_undo_redo(self):
         self.window.controller = ProgressionSessionController(
@@ -636,7 +675,7 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         from src.steps.theory.scale import construct_scale
 
         with patch(
-            "src.steps.theory.scale.construct_scale",
+            "app.ui.harmonic_inspector.construct_scale",
             wraps=construct_scale,
         ) as build_scale:
             self.window._display_chord_details("G7")
@@ -650,7 +689,7 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         self.assertNotIn("ALTERED", details)
 
     @patch(
-        "src.steps.theory.scale.construct_scale",
+        "app.ui.harmonic_inspector.construct_scale",
         side_effect=RuntimeError("scale calculation failed"),
     )
     def test_scale_analysis_failure_is_visible(self, build_scale):
