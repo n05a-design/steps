@@ -150,11 +150,18 @@ class MidiExportService:
                             midi_track.add_note(start_tick, dur_ticks, note, velocity=75, channel=channel)
                 # If payload is a list of MIDI integers
                 elif isinstance(payload, (list, tuple)):
+                    if any(type(note) is not int or not 0 <= note <= 127 for note in payload):
+                        raise ValueError(
+                            f"Invalid MIDI note payload for track {trk_name!r}: {payload!r}."
+                        )
                     for note in payload:
-                        if isinstance(note, int) and 0 <= note <= 127:
-                            midi_track.add_note(start_tick, dur_ticks, note, velocity=80, channel=channel)
+                        midi_track.add_note(start_tick, dur_ticks, note, velocity=80, channel=channel)
                 # If payload is an integer (single note)
-                elif isinstance(payload, int) and 0 <= payload <= 127:
+                elif isinstance(payload, int):
+                    if type(payload) is not int or not 0 <= payload <= 127:
+                        raise ValueError(
+                            f"Invalid MIDI note payload for track {trk_name!r}: {payload!r}."
+                        )
                     midi_track.add_note(start_tick, dur_ticks, payload, velocity=80, channel=channel)
 
         return midi_file.save(output_path)
