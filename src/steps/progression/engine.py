@@ -878,7 +878,7 @@ _FIGURES = {"53": (0, False), "6": (1, False), "63": (1, False), "64": (2, False
 _EXPLICIT_QUALITIES = {
     "maj7", "maj9", "maj13", "m", "m6", "m7", "m7b5", "m9", "m11",
     "dim", "dim7", "aug", "add9", "madd9", "sus2", "sus4", "7sus4", "7b9",
-    "7#9", "7#11", "7b13", "7#5", "maj7#5", "13", "mmaj7",
+    "7#9", "7#11", "7b13", "7#5", "maj7#5", "13", "mmaj7", "(b5)",
 }
 
 
@@ -892,7 +892,7 @@ def _degree_quality(suffix: str, minor_triad: bool, major_seventh: bool) -> str:
     if suffix == "+":
         return "aug"
     if suffix == "b5" and not minor_triad:
-        raise ProgressionParsingError("A major numeral with b5 requires a supported major-third template.")
+        raise ProgressionParsingError("Write an altered major triad with (b5).")
     if suffix in {"dom7", "dom9"}:
         return suffix.removeprefix("dom")
     if suffix in _EXPLICIT_QUALITIES:
@@ -982,7 +982,8 @@ def resolve_roman_degree(
             suffix = "dim7"
     if not re.fullmatch(r'[^()]*?(?:\([^()]+\))?', suffix):
         raise ProgressionParsingError(f"Invalid Roman numeral quality: {suffix!r}.")
-    suffix = suffix.replace("(", "").replace(")", "")
+    if suffix != "(b5)" or numeral.islower():
+        suffix = suffix.replace("(", "").replace(")", "")
     if applied and numeral == "vii" and suffix not in {"o", "o7", "dim", "dim7", "ø", "ø7", "m7b5", "b5", "7b5"}:
         raise ProgressionParsingError("Applied leading-tone chords require a diminished quality.")
 

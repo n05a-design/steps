@@ -89,6 +89,11 @@ def format_beginner_voicings(beginner: dict, translate: Callable[..., str]) -> s
             lh_finger=voicing["lh_fingering"],
             notes=" ".join(voicing["rh_spellings"]),
         ))
+        if voicing["was_reduced"]:
+            lines.append(translate("beginner.reduction", chord=voicing["reduced_symbol"]))
+            if voicing["omitted_factors"]:
+                tones = ", ".join(translate(f"beginner.omitted.{factor}") for factor in voicing["omitted_factors"])
+                lines.append(translate("beginner.omissions", tones=tones))
     for index, transition in enumerate(beginner["transitions"]):
         lines.append(translate(
             "beginner.transition.measurements",

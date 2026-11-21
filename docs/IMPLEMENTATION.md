@@ -165,7 +165,12 @@ solange er verfügbar ist. Ein Projektwechsel setzt die Ordnerauswahl zurück.
 
 Der Harmonie-Inspektor verwendet für Grund- und Skalentöne die Projektnotation.
 Anfänger-Voicings behalten auch bei reduzierten Akkordsymbolen die gewählte
-Schreibweise. Die Oberfläche zeigt gemeinsame Töne, Gesamtbewegung und
+Schreibweise. Die linke Hand spielt den angegebenen Slash-Bass auch bei
+akkordfremden Basstönen. Die rechte Hand behält die verminderte Quinte bei
+`C7b5` in der vereinfachten Form `C(b5)` mit C, E und G♭. Ausgelassene
+Töne werden für das gesamte Voicing bestimmt. Eine Sexte, die im Bass
+erklingt, zählt dabei als gespielt. Die Oberfläche zeigt die vereinfachte
+Form und tatsächlich ausgelassene Erweiterungen. Sie zeigt gemeinsame Töne, Gesamtbewegung und
 größten Sprung in EN/DE. Der ursprüngliche didaktische Hinweis bleibt als
 Originaltext gekennzeichnet.
 

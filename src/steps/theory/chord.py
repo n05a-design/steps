@@ -42,6 +42,12 @@ CHORD_TEMPLATES: Dict[str, Dict[str, any]] = {
         'voiced': (0, 3, 6),
         'category': 'TRIAD'
     },
+    '(b5)': {
+        'aliases': ['(b5)'],
+        'theoretical': (0, 4, 6),
+        'voiced': (0, 4, 6),
+        'category': 'TRIAD'
+    },
     'aug': {
         'aliases': ['aug', '+'],
         'theoretical': (0, 4, 8),

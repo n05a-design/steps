@@ -18,10 +18,10 @@ def beginner_voices():
         for voicing, expected_bass in zip(voicings[:2], (4, 2), strict=True):
             if min(voicing.all_midi_notes) % 12 != expected_bass:
                 failures.append(f"{convention} {voicing.chord_symbol}: incorrect slash bass")
-        if {n % 12 for n in voicings[2].all_midi_notes} - {0, 4, 6, 10}:
-            failures.append(f"{convention} C7b5: reduction added an unwritten tone")
-        if "7th" in voicings[3].reduction.omitted_factors:
-            failures.append(f"{convention} C6: reduction reports an absent seventh")
+        if {n % 12 for n in voicings[2].all_midi_notes} != {0, 4, 6}:
+            failures.append(f"{convention} C7b5: reduction must retain C, E and Gb")
+        if voicings[3].reduction.omitted_factors != ("6th",):
+            failures.append(f"{convention} C6: reduction must report the omitted sixth")
     return failures
 
 

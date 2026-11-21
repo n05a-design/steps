@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Anfänger-Voicings spielen den notierten Slash-Bass. Die Reduktion erhält die verminderte Quinte von Septakkorden und zeigt die tatsächlich ausgelassenen Töne.
+
 - Die Desktop-Transposition erhält die harmonischen Stufen und die Schreibweise der Slash-Bässe relativ zur Projekttonart.
 
 - Der Harmonie-Inspektor zeigt die berechnete Stufe für den ausgewählten Akkord in der Projekttonart.
