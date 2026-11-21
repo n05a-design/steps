@@ -55,6 +55,7 @@ class FakeListbox:
     def __init__(self, selection=()):
         self.items = []
         self.selection = tuple(selection)
+        self.first_visible = 0.0
 
     def curselection(self):
         return self.selection
@@ -65,6 +66,12 @@ class FakeListbox:
 
     def insert(self, index, value):
         self.items.append(value)
+
+    def yview(self):
+        return self.first_visible, 1.0
+
+    def yview_moveto(self, position):
+        self.first_visible = position
 
     def select_set(self, index):
         self.selection = (index,)
@@ -291,7 +298,13 @@ class TestLocaleManager(unittest.TestCase):
             window.language_menu = FakeMenu(3)
             window.title_lbl = FakeWidget()
             window.project_title_lbl = FakeWidget()
-            window.project_title_entry = FakeEntry("Untitled Project")
+            window.project_title_entry = FakeEntry("Draft project")
+            window.event_start_entry = FakeEntry("12:3:")
+            window.event_duration_entry = FakeEntry("420")
+            window.chord_listbox = FakeListbox(selection=(1,))
+            window.chord_listbox.first_visible = 0.25
+            window._project_path = None
+            window._display_chord_details = Mock()
             window.key_lbl = FakeWidget()
             window.mode_lbl = FakeWidget()
             window.major_btn = FakeWidget()
@@ -354,9 +367,16 @@ class TestLocaleManager(unittest.TestCase):
                 json.loads((Path(temp_dir) / "preferences.json").read_text(encoding="utf-8")),
                 {"language": "de"},
             )
-            window._refresh_all.assert_called_once_with(preserve_selection=True)
+            window._refresh_all.assert_not_called()
+            window._display_chord_details.assert_called_once_with("G")
+            self.assertEqual(window.project_title_entry.get(), "Draft project")
+            self.assertEqual(window.event_start_entry.get(), "12:3:")
+            self.assertEqual(window.event_duration_entry.get(), "420")
+            self.assertEqual(window.chord_listbox.curselection(), (1,))
+            self.assertEqual(window.chord_listbox.first_visible, 0.25)
+            self.assertIn("1920 Ticks", window.chord_listbox.items[1])
 
-    def test_refresh_after_language_switch_preserves_selected_chord(self):
+    def test_refresh_preserves_selected_chord(self):
         window = StepsMainWindow.__new__(StepsMainWindow)
         window.controller = SimpleNamespace(
             get_state_summary=lambda: {

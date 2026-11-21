@@ -188,8 +188,6 @@ class StepsMainWindow:
             self.language_menu.entryconfigure(index, label=t(key))
         self.title_lbl.configure(text=t("workspace.heading"))
         self.project_title_lbl.configure(text=t("project.title"))
-        self.project_title_entry.delete(0, tk.END)
-        self.project_title_entry.insert(0, self.controller.session.state.title)
         self.key_lbl.configure(text=t("context.key"))
         self.mode_lbl.configure(text=t("context.mode"))
         self.major_btn.configure(text=t("context.major"))
@@ -231,8 +229,21 @@ class StepsMainWindow:
             )
             return
         self._localize_widgets()
+        self._update_window_title()
+        chords = self.controller.session.chords
+        selected = self._selected_chord_index()
+        first_visible = self.chord_listbox.yview()[0]
+        self._render_chord_rows(chords)
+        if selected is not None:
+            self._select_chord_row(selected)
+        self.chord_listbox.yview_moveto(first_visible)
+
         if not self.next_chord_panel.localize():
-            self._refresh_all(preserve_selection=True)
+            self.next_chord_panel.clear()
+            if selected is not None:
+                self._display_chord_details(chords[selected])
+            else:
+                self._display_empty_info()
 
     def _on_open_shortcut(self, _event: tk.Event) -> str:
         self._on_open_project()
