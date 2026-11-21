@@ -49,6 +49,10 @@ def format_voice_leading_profile(
             style=labels.get(active_style.value, active_style.value),
         ),
     ]
+    if profile.style.is_power_chord_style:
+        lines.append(translate("voice.lab.profile.power"))
+    elif profile.style == VoiceLeadingStyle.QUARTAL_JAZZ:
+        lines.append(translate("voice.lab.profile.quartal"))
     pitches = [note for voicing in profile.midi_notes for note in voicing]
     if pitches:
         lines.append(translate("voice.lab.register", low=min(pitches), high=max(pitches)))

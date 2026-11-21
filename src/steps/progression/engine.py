@@ -16,6 +16,7 @@ from typing import TYPE_CHECKING, Literal, Dict, Any
 from ..theory.exceptions import MusicTheoryError, ProgressionParsingError, VoiceLeadingError
 from ..theory.pitch import DIATONIC_STEPS, NoteSpelling, parse_spelling
 from ..theory.chord import CHORD_TEMPLATES, ChordDefinition, Voicing, parse_chord
+from ..theory.voice_leading import _resolve_style
 from .voice_leading import (
     ContrapuntalMotion,
     VoiceLeadingStyle,
@@ -1025,6 +1026,16 @@ def resolve_roman_degree(
         raise ProgressionParsingError(f"Cannot resolve {degree_str!r}: {exc}") from exc
 
 
+def _power_layout(chord: ChordDefinition, layout: Voicing) -> Voicing:
+    if 7 not in chord.theoretical_intervals:
+        return layout
+    bass = layout.midi_notes[0]
+    root = int(chord.root.pitch_class)
+    selected = {root, (root + 7) % 12} - {bass % 12}
+    notes = tuple(sorted(bass + (pitch - bass) % 12 for pitch in selected))
+    return Voicing((bass, *notes), "CUSTOM")
+
+
 def generate_progression_voicings(
     chords: list[ChordDefinition] | CanonicalProgression,
     style: VoiceLeadingStyle = VoiceLeadingStyle.JAZZ_POP,
@@ -1033,14 +1044,18 @@ def generate_progression_voicings(
 ) -> list[Voicing]:
     """Voice all chords with a consistent number of voices and explicit basses.
 
-    The first chord uses the requested layout. Transitions optimize movement
-    over each chord's selected pitch classes and may change the layout.
+    The explicit non-close layout is used for the initial chord. Standard
+    close input uses the style's selected pitch classes or spacing preference.
+    Transitions optimize over the selected pitch classes.
     """
     chord_list = chords.chord_definitions if isinstance(chords, CanonicalProgression) else chords
     if not chord_list:
         return []
 
+    resolved_style = _resolve_style(style)
     layouts = [chord.to_voicing(bass_octave, initial_voicing_type) for chord in chord_list]
+    if initial_voicing_type == "CLOSE" and resolved_style.is_power_chord_style:
+        layouts = [_power_layout(chord, layout) for chord, layout in zip(chord_list, layouts, strict=True)]
     voice_count = max(len(layout.notes) for layout in layouts)
     initial_notes = layouts[0].midi_notes
     for _ in range(voice_count - len(initial_notes)):
@@ -1051,6 +1066,13 @@ def generate_progression_voicings(
         initial_notes.append(doubled)
 
     initial_type = layouts[0].voicing_type if len(initial_notes) == len(layouts[0].notes) else 'CUSTOM'
+    if initial_voicing_type == "CLOSE" and resolved_style == VoiceLeadingStyle.QUARTAL_JAZZ:
+        base_notes = initial_notes
+        initial_notes = optimize_smooth_voice_leading(
+            base_notes, {note % 12 for note in base_notes}, base_notes[0] % 12, resolved_style,
+        )
+        if initial_notes != base_notes:
+            initial_type = "CUSTOM"
     voicings = [Voicing(tuple(initial_notes), initial_type)]
     for chord, layout in zip(chord_list[1:], layouts[1:]):
         bass = chord.bass
@@ -1060,7 +1082,7 @@ def generate_progression_voicings(
             source_voicing=voicings[-1].midi_notes,
             target_pcs={note % 12 for note in layout.notes},
             bass_pc=int(bass.pitch_class) if bass is not None else None,
-            style=style,
+            style=resolved_style,
         )
         voicings.append(Voicing(tuple(next_notes), 'CUSTOM'))
     return voicings

@@ -30,6 +30,33 @@ from app.ui.session_controller import ProgressionSessionController
 from src.steps.theory.exceptions import VoiceLeadingError
 
 
+class TestVoicingProfiles(unittest.TestCase):
+    def test_controller_scores_distinct_voicings_without_mutating_the_project(self):
+        session = ProgressionSession(["Dm7", "G7", "Cmaj7"])
+        state = session.state
+        controller = ProgressionSessionController(session)
+        pop = controller.analyze_voice_leading_style(VoiceLeadingStyle.CONTEMPORARY_POP)
+        power = controller.analyze_voice_leading_style(VoiceLeadingStyle.POWER_CHORDS)
+        quartal = controller.analyze_voice_leading_style(VoiceLeadingStyle.QUARTAL_JAZZ)
+        self.assertEqual(pop.midi_notes[0], (50, 53, 57, 60))
+        self.assertEqual(power.midi_notes, ((50, 57), (55, 62), (60, 67)))
+        self.assertEqual(power.total_movement, 20)
+        self.assertEqual(quartal.midi_notes[0], (50, 57, 60, 65))
+        self.assertNotEqual(quartal.midi_notes, pop.midi_notes)
+        for original, spaced in zip(pop.midi_notes, quartal.midi_notes, strict=True):
+            self.assertEqual({note % 12 for note in original}, {note % 12 for note in spaced})
+            self.assertEqual(original[0] % 12, spaced[0] % 12)
+        self.assertEqual(session.state, state)
+
+    def test_power_preserves_foreign_slash_bass_and_keeps_chords_without_perfect_fifth(self):
+        session = ProgressionSession(["C/Db", "F#dim", "Cmaj7"])
+        profile = ProgressionSessionController(session).analyze_voice_leading_style("POWER_CHORDS")
+        self.assertEqual(profile.midi_notes[0][0] % 12, 1)
+        self.assertEqual([{note % 12 for note in chord} for chord in profile.midi_notes],
+                         [{0, 1, 7}, {0, 6, 9}, {0, 7}])
+        self.assertTrue(all(len(chord) == 3 for chord in profile.midi_notes))
+
+
 class TestVoiceLeadingStylesTheory(unittest.TestCase):
     """Verifies pure music theory rules across stylistic frameworks."""
 

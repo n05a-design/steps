@@ -70,6 +70,8 @@
   "voice.lab.style": "Compared style: {style}",
   "voice.lab.current": "Current project style: {style}",
   "voice.lab.disclaimer": "Styles use different constraints; movement totals are descriptive, not a universal ranking.",
+  "voice.lab.profile.power": "Power voicings use the root and perfect fifth plus any written bass. Chords without a perfect fifth keep their selected chord tones.",
+  "voice.lab.profile.quartal": "Quartal voicings favor adjacent perfect fourths using the selected chord tones.",
   "voice.lab.total": "Cumulative absolute MIDI-note movement: {movement} semitones.",
   "voice.lab.transition": "{from_chord} → {to_chord}: {distance} semitones; {warnings} detected warning(s).",
   "voice.lab.register": "MIDI note range: {low}–{high}.",
