@@ -95,6 +95,9 @@ class ProgressionSessionController:
             ]
         }
 
+    def harmonic_degree_at(self, index: int) -> str:
+        return self._session.harmonic_degree_at(index)
+
     def analyze_voice_leading_style(
         self,
         style: Union[str, VoiceLeadingStyle],

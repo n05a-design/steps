@@ -429,6 +429,18 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
             rendered,
         )
 
+    def test_inspector_formats_the_selected_contextual_degree(self):
+        self.window.controller = ProgressionSessionController(
+            ProgressionSession(initial_chords=["E7", "Am", "E7", "F"])
+        )
+        for index, expected in ((0, "V7/vi"), (2, "III7")):
+            with self.subTest(index=index):
+                self.window._display_chord_details("E7", index=index)
+                self.assertIn(
+                    self.window.i18n.translate("chord.degree", degree=expected),
+                    self.window.detail_text.insert.call_args.args[1],
+                )
+
     def test_inspector_renders_project_notation_independently_of_ui_language(self):
         for convention, symbol, expected_scale in (
             ("INT", "Bbmaj7", "Bb - C - D - Eb - F - G - A"),

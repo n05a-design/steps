@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Der Harmonie-Inspektor zeigt die berechnete Stufe für den ausgewählten Akkord in der Projekttonart.
+
 - Die Stufenanalyse berücksichtigt Grundtonschreibweise, Akkordqualität, Umkehrung und direkt folgende Ziele von Zwischendominanten. Der Next Chord Explorer trennt Grundtonbewegung von Auflösung und ergänzt Dur- und Mollvarianten von Jazz-ii–V–I.
 
 - Der Harmonie-Inspektor zeigt nur Skalen, die sämtliche Akkordtöne und einen notierten Slash-Bass enthalten. Die Anfängeransicht zeigt die berechneten Bewegungen der rechten Hand mit Startton, Zielton und Halbtonabstand.

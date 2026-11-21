@@ -553,6 +553,19 @@ class ProgressionSession:
 
         return analyses, voicings
 
+    def harmonic_degree_at(self, index: int) -> str:
+        """Analyze the selected event in its project key and immediate chord context."""
+        chords = self.state.chords
+        if not 0 <= index < len(chords):
+            raise IndexError(f"Index {index} out of range")
+        current = parse_chord(chords[index], convention=self.convention)
+        following = (
+            parse_chord(chords[index + 1], convention=self.convention)
+            if index + 1 < len(chords) else None
+        )
+        key = parse_spelling(self.key_root, convention=self.convention)
+        return format_harmonic_degree(current, key, self.is_minor, self.convention, following)
+
     def explore_next_chords(self, from_index: int) -> List[ChordRecommendation]:
         """
         Recommends typologically categorized continuation chords from from_index

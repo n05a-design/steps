@@ -222,6 +222,7 @@
   "chord.analysis.title": "CHORD ANALYSIS: {chord}",
   "chord.root": "Root",
   "chord.pitch_class": "Pitch class",
+  "chord.degree": "Degree in project key: {degree}",
   "chord.quality": "Quality",
   "chord.intervals": "Core intervals",
   "chord.voicing": "Voicing (CLOSE): MIDI notes",

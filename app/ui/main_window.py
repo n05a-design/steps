@@ -252,7 +252,7 @@ class StepsMainWindow:
         if not self.next_chord_panel.localize():
             self.next_chord_panel.clear()
             if selected is not None:
-                self._display_chord_details(chords[selected])
+                self._display_chord_details(chords[selected], index=selected)
             else:
                 self._display_empty_info()
 
@@ -949,7 +949,7 @@ class StepsMainWindow:
             self._select_chord_row(index)
             self._load_event_timing_controls(index)
             self._update_chord_controls(index, len(state["chords"]))
-            self._display_chord_details(state["chords"][index])
+            self._display_chord_details(state["chords"][index], index=index)
         else:
             self._load_event_timing_controls(None)
             self._update_chord_controls(None, 0)
@@ -1245,11 +1245,14 @@ class StepsMainWindow:
         if not append:
             self.detail_text.yview_moveto(0)
 
-    def _display_chord_details(self, chord_name: str) -> None:
+    def _display_chord_details(self, chord_name: str, *, index: int | None = None) -> None:
         """Update the inspector, keeping optional keyboard details independent."""
         translate = self.i18n.translate
         try:
-            details = format_chord_analysis(chord_name, self.controller.session.convention, translate)
+            degree = self.controller.harmonic_degree_at(index) if index is not None else None
+            details = format_chord_analysis(
+                chord_name, self.controller.session.convention, translate, degree=degree,
+            )
         except Exception as exc:
             self._write_detail(translate("chord.hint", chord=chord_name, error=exc))
             return
@@ -1365,7 +1368,7 @@ class StepsMainWindow:
                 self._update_chord_controls(idx, len(state["chords"]))
                 self._load_event_timing_controls(idx)
                 self.next_chord_panel.clear()
-                self._display_chord_details(state["chords"][idx])
+                self._display_chord_details(state["chords"][idx], index=idx)
 
     def _on_explore_next(self) -> None:
         self.next_chord_panel.explore()
