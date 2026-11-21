@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Bind extracted candidates to the actual source bytes and provide
+  machine-readable intake and register reports.
+- Stop command chains on failure and align canonical Python and CLI checks.
+- Validate visible catalog content and reject alternate task heading styles.
+- Bind new backups to the intended register and report invalid or unbound
+  snapshots before restore.
+
 - Track row-wise evidence fingerprints for catalog, Golden, graph, historical
   and readiness records. Include the check in research-library release acceptance.
 - Reject Markdown-formatted task IDs and require a reason for

@@ -4,11 +4,12 @@ from __future__ import annotations
 
 import argparse
 from hashlib import file_digest
+import json
 import os
 from pathlib import Path
 import stat
 
-from check_source import resolve_source
+from check_source import display_path, resolve_source
 
 
 def _raise_walk_error(error: OSError) -> None:
@@ -52,11 +53,15 @@ if __name__ == "__main__":
     parser.add_argument("target_file")
     parser.add_argument("search_dir")
     parser.add_argument("--intake-dir", help="Restrict the target file to this intake directory")
+    parser.add_argument("--json", action="store_true", help="Print a JSON array of candidate paths")
     args = parser.parse_args()
     try:
         duplicates = is_duplicate(args.target_file, args.search_dir, intake_dir=args.intake_dir)
     except (OSError, ValueError, RuntimeError) as exc:
         parser.exit(1, f"Duplicate scan incomplete: {exc}\n")
-    print(f"Found {len(duplicates)} duplicate candidate(s):")
-    for path in duplicates:
-        print(f"  - {path}")
+    if args.json:
+        print(json.dumps(duplicates))
+    else:
+        print(f"Found {len(duplicates)} duplicate candidate(s):")
+        for path in duplicates:
+            print(f"  - {display_path(path)}")

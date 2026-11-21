@@ -1,8 +1,10 @@
 """Regression tests for register recovery using isolated fixtures."""
 
+from hashlib import sha256
 import json
 import os
 from pathlib import Path
+import stat
 import subprocess
 import sys
 import tempfile
@@ -109,6 +111,48 @@ class TestRegisterRecovery(unittest.TestCase):
             backup_knowledge.restore_master(invalid, self.target)
         self.assertEqual(self.target.read_bytes(), CURRENT)
 
+    def test_shared_backup_cannot_restore_other_register_implicitly(self):
+        other = self.base / "other"
+        other.mkdir()
+        destination = other / self.target.name
+        destination.write_bytes(CURRENT)
+        inventory = backup_knowledge.list_backups(self.backup.parent, target_master=destination)
+        self.assertEqual(inventory[0]["integrity"], "OTHER_REGISTER")
+        with self.assertRaisesRegex(ValueError, "another register path"):
+            backup_knowledge.restore_master(self.backup, destination, backup_dir=self.backup.parent)
+        self.assertEqual(destination.read_bytes(), CURRENT)
+        backup_knowledge.restore_master(
+            self.backup, destination, backup_dir=self.backup.parent, allow_other_register=True,
+        )
+        self.assertEqual(destination.read_bytes(), ORIGINAL)
+
+    def test_list_rejects_missing_manifest_register(self):
+        manifest = self.backup.with_suffix(".md.json")
+        record = json.loads(manifest.read_text(encoding="utf-8"))
+        del record["register"]
+        manifest.write_text(json.dumps(record), encoding="utf-8")
+        self.assertEqual(backup_knowledge.list_backups(self.backup.parent)[0]["integrity"], "INVALID")
+        with self.assertRaisesRegex(ValueError, "no valid register filename"):
+            backup_knowledge.restore_master(self.backup, self.target)
+
+    def test_version_one_remains_recoverable_after_review(self):
+        manifest = self.backup.with_suffix(".md.json")
+        record = json.loads(manifest.read_text(encoding="utf-8"))
+        record["version"] = 1
+        del record["register_path"]
+        manifest.write_text(json.dumps(record), encoding="utf-8")
+        self.assertEqual(backup_knowledge.list_backups(self.backup.parent)[0]["integrity"], "UNBOUND")
+        with self.assertRaisesRegex(ValueError, "unbound"):
+            backup_knowledge.restore_master(self.backup, self.target)
+        backup_knowledge.restore_master(self.backup, self.target, allow_other_register=True)
+        self.assertEqual(self.target.read_bytes(), ORIGINAL)
+
+    @unittest.skipIf(os.name == "nt", "POSIX register permissions")
+    def test_restore_preserves_regular_target_mode(self):
+        self.target.chmod(0o640)
+        backup_knowledge.restore_master(self.backup, self.target)
+        self.assertEqual(stat.S_IMODE(self.target.stat().st_mode), 0o640)
+
     def test_existing_restore_lock_leaves_current_register_intact(self):
         lock = self.target.with_name(f".{self.target.name}.restore.lock")
         lock.write_text("Active restore", encoding="utf-8")
@@ -210,6 +254,43 @@ class TestSourceBoundaries(unittest.TestCase):
             candidates = extract_instructions.extract_from_file(source, root)
             self.assertEqual([(item["line"], item["category"]) for item in candidates], [(1, "NORMATIVE_MUST_EN")])
 
+    def test_extraction_report_binds_reviewed_bytes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp).resolve()
+            text = b"TODO: Verify the example.\r\n"
+            first, second = root / "A.txt", root / "B.txt"
+            for source in (first, second):
+                source.write_bytes(text)
+            expected = sha256(text).hexdigest()
+            reports = [extract_instructions.extract_report(source, root, expected_sha256=expected)
+                       for source in (first, second)]
+            self.assertEqual(reports[0]["source"], {
+                "path": str(first), "size_bytes": len(text), "sha256": expected,
+            })
+            self.assertEqual(reports[1]["source"]["path"], str(second))
+            self.assertEqual(reports[0]["candidates"], reports[1]["candidates"])
+            first.write_bytes(b"TODO: Another version.\n")
+            with self.assertRaisesRegex(ValueError, "expected intake version"):
+                extract_instructions.extract_report(first, root, expected_sha256=expected)
+
+    @unittest.skipIf(os.name == "nt", "Windows filenames cannot contain newlines")
+    def test_machine_outputs_round_trip_a_filename_with_newline(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp).resolve()
+            source, duplicate = root / "source.txt", root / "A\nB.txt"
+            for path in (source, duplicate):
+                path.write_text("Same bytes.", encoding="utf-8")
+            for name, args, expected in (
+                ("check_source.py", [duplicate, root], str(duplicate)),
+                ("detect_duplicates.py", [source, root], [str(duplicate)]),
+            ):
+                with self.subTest(name=name):
+                    command = [sys.executable, "-B", str(SCRIPTS / name), *map(str, args)]
+                    plain = subprocess.check_output(command, text=True)
+                    self.assertIn(r"A\nB.txt", plain)
+                    decoded = json.loads(subprocess.check_output(command + ["--json"], text=True))
+                    self.assertEqual(decoded.get("path") if isinstance(decoded, dict) else decoded, expected)
+
     def test_extraction_does_not_treat_midi_as_readable_text(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -240,6 +321,41 @@ class TestRegisterNegativeCases(unittest.TestCase):
                 self.assertTrue(report["errors"])
         report = validate_register.validate_content(entry + "* **Begründung:** Scope covers text sources only.\n")
         self.assertFalse(report["errors"])
+
+    def test_alternate_markdown_heading_cannot_hide_duplicate_task(self):
+        for heading in ("OA-0001: Duplicate\n---", "<h3>OA-0001: Duplicate</h3>"):
+            with self.subTest(heading=heading):
+                content = ORIGINAL.decode() + f"\n## Other\n\n{heading}\n* **Status:** `OPEN`\n"
+                self.assertTrue(validate_register.validate_content(content)["errors"])
+
+    def test_canonical_python_and_cli_share_commit_validation(self):
+        canonical = register_paths.master_path()
+        original = canonical.read_text(encoding="utf-8")
+        known = "5c3e829d53e8f2cfc609eddd0d3c597c862a9698"
+        self.assertIn(known, original)
+        with tempfile.TemporaryDirectory() as tmp:
+            target = Path(tmp) / canonical.name
+            target.write_text(original.replace(known, "1" * 40), encoding="utf-8")
+            with (patch.object(validate_register, "master_path", return_value=target),
+                  patch.object(sys, "argv", ["validate_register.py", "--json"]),
+                  patch("builtins.print") as output):
+                expected = validate_register.validate_master_file(target)
+                self.assertEqual(expected["errors_count"], 1)
+                with self.assertRaises(SystemExit) as stopped:
+                    validate_register.main()
+                self.assertEqual(stopped.exception.code, 1)
+                self.assertEqual(json.loads(output.call_args.args[0]), expected)
+
+    def test_canonical_register_is_independent_of_inherited_git_dir(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            subprocess.run(["git", "init", "-q", tmp], check=True)
+            result = subprocess.run(
+                [sys.executable, "-B", str(SCRIPTS / "validate_register.py"), "--json"],
+                env={**os.environ, "GIT_DIR": str(Path(tmp) / ".git")},
+                capture_output=True, text=True,
+            )
+            self.assertEqual(result.returncode, 0, result.stderr or result.stdout)
+            self.assertEqual(json.loads(result.stdout)["errors_count"], 0)
 
     def test_hidden_status_cannot_satisfy_required_field(self):
         content = "### OA-0001: Task\n<!--\n* **Status:** `OPEN`\n-->\n"
