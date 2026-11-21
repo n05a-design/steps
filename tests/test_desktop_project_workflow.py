@@ -479,6 +479,8 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         panel._on_applied = self.window._on_recommendation_applied
         panel._context = None
         panel._recommendations = []
+        panel._comparison_index = None
+        panel.comparison_button = Mock()
         panel.candidates = Mock()
         panel.candidates.curselection.return_value = ()
         panel.apply_button = Mock()
@@ -553,6 +555,37 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         panel.candidates.focus_set.assert_not_called()
         self.assertEqual(panel.apply_button.configure.call_args.kwargs["state"], "disabled")
         self.assertEqual(self.window.controller.session.state, before)
+
+    def test_next_chord_comparison_clears_on_request_and_rejects_a_stale_context(self):
+        self.window.controller = ProgressionSessionController(
+            ProgressionSession(initial_chords=["G", "F"], key_root="C")
+        )
+        panel = self.make_next_chord_panel(0)
+        panel.explore()
+        panel.candidates.curselection.return_value = (0,)
+        panel._toggle_comparison()
+        panel.candidates.curselection.return_value = (1,)
+        panel._selection_changed()
+        details = self.window.detail_text.insert.call_args.args[1]
+        self.assertIn(self.window.i18n.translate("next_chord.compare.selected"), details)
+        panel._toggle_comparison()
+        self.assertIsNone(panel._comparison_index)
+        self.assertNotIn(
+            self.window.i18n.translate("next_chord.compare.selected"),
+            self.window.detail_text.insert.call_args.args[1],
+        )
+
+        panel._toggle_comparison()
+        self.window.controller.set_context("C", True, 120)
+        before = self.window.controller.session.state
+        panel._toggle_comparison()
+        self.assertIsNone(panel._comparison_index)
+        self.assertEqual(panel._recommendations, [])
+        self.assertEqual(self.window.controller.session.state, before)
+        self.assertEqual(
+            self.window.detail_text.insert.call_args.args[1],
+            self.window.i18n.translate("next_chord.stale"),
+        )
 
     def test_next_chord_localized_reason_preserves_notation_and_source(self):
         for language in ("en", "de"):
