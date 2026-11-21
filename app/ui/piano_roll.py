@@ -5,6 +5,7 @@ from __future__ import annotations
 import tkinter as tk
 from collections.abc import Sequence
 from dataclasses import dataclass
+from tkinter.font import Font
 
 from app.ui.theme import ThemeColors
 
@@ -30,13 +31,23 @@ class TickViewport:
         return (left, right) if left < right else None
 
 
+def pitch_axis_labels(low: int, high: int, height: int, line_height: int) -> tuple[int, ...]:
+    """Keep the end labels and fit octave labels between them."""
+    labels = [low]
+    minimum_gap = line_height * (high - low)
+    for note in range((low // 12 + 1) * 12, high, 12):
+        if min(note - labels[-1], high - note) * height >= minimum_gap:
+            labels.append(note)
+    return (*labels, high)
+
+
 class PianoRoll(tk.Canvas):
     """Draw notes using the scale shared by both comparison panes."""
 
     def __init__(self, parent: tk.Misc, colors: ThemeColors, label_font: tuple[str, int]) -> None:
         super().__init__(parent, width=320, height=140, bg=colors.bg_window, highlightthickness=0)
         self._colors = colors
-        self._label_font = label_font
+        self._label_font = Font(root=self, font=label_font)
 
     def event_at(self, x: int, y: int) -> int | None:
         """Find the topmost note with a small pointer hit area."""
@@ -58,7 +69,8 @@ class PianoRoll(tk.Canvas):
         if not timings or self.winfo_width() < 64 or self.winfo_height() <= 30:
             return
         low, high = pitch_range
-        left, top = 28, 10
+        left = max(28, self._label_font.measure(str(high)) + 8)
+        top = 10
         right, bottom = self.winfo_width() - 10, self.winfo_height() - 20
         colors = self._colors
 
@@ -77,11 +89,14 @@ class PianoRoll(tk.Canvas):
                     outline=colors.border_focus, tags=("selected-event",),
                 )
 
-        for note in range(low, high + 1):
-            if note in (low, high) or note % 12 == 0:
-                self.create_line(left, y(note), right, y(note), fill=colors.border)
-                self.create_text(left - 4, y(note), text=str(note), anchor=tk.E,
-                                   fill=colors.text_secondary, font=self._label_font)
+        for note in (low, *range((low // 12 + 1) * 12, high, 12), high):
+            self.create_line(left, y(note), right, y(note), fill=colors.border)
+        line_height = self._label_font.metrics("linespace") + 2
+        for note in pitch_axis_labels(low, high, bottom - top, line_height):
+            self.create_text(
+                left - 4, y(note), text=str(note), anchor=tk.E,
+                fill=colors.text_secondary, font=self._label_font, tags=("pitch-label",),
+            )
         middle = (viewport.start + viewport.end) // 2
         for tick in sorted({viewport.start, middle, viewport.end}):
             anchor = tk.W if tick == viewport.start else tk.E if tick == viewport.end else tk.CENTER
