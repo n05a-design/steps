@@ -13,6 +13,7 @@ from app.i18n import LocaleManager, detect_system_locale, preference_path
 from app.ui.main_window import StepsMainWindow
 from app.ui.session_controller import ProgressionSessionController
 from src.steps.midi import MidiFile
+from src.steps.progression import list_progressions
 from src.steps.progression.session import ProgressionSession
 from src.steps.storage.exceptions import CorruptedProjectError
 
@@ -120,6 +121,29 @@ class FakeVariable:
 
 
 class TestLocaleManager(unittest.TestCase):
+    def test_every_catalog_explorer_reason_is_localized_in_both_notations(self):
+        observed = set()
+        translations = [LocaleManager(preference=language).translate for language in ("en", "de")]
+        for progression in list_progressions():
+            session = ProgressionSession(
+                progression.chords_str.split(" - "), key_root=progression.default_key.removesuffix("m"),
+                is_minor=progression.default_key.endswith("m"), convention="INT",
+            )
+            for notation in ("INT", "DE"):
+                session.set_notation_convention(notation)
+                for index, current in enumerate(session.chords):
+                    for item in session.explore_next_chords(index):
+                        self.assertIsNotNone(item.reason_key)
+                        self.assertEqual(item.source_symbol, current)
+                        key = f"next_chord.detail.{item.reason_key}"
+                        observed.add(key)
+                        for translate in translations:
+                            rendered = translate(key, current=current, candidate=item.candidate_symbol)
+                            self.assertNotEqual(rendered, key)
+                            self.assertIn(item.candidate_symbol, rendered)
+        entries = json.loads((CATALOG_DIR / "en.json").read_text(encoding="utf-8"))
+        self.assertEqual(observed, {key for key in entries if key.startswith("next_chord.detail.")})
+
     def test_catalogs_have_identical_keys_and_placeholders(self):
         english = json.loads((CATALOG_DIR / "en.json").read_text(encoding="utf-8"))
         german = json.loads((CATALOG_DIR / "de.json").read_text(encoding="utf-8"))

@@ -620,7 +620,8 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
                     self.assertIn(expected, details)
                     self.assertIn(self.window.i18n.translate("next_chord.evidence.MODEL_RULE"), details)
                     self.assertIn(
-                        self.window.i18n.translate("next_chord.reason.ROOT_MOTION"), details,
+                        self.window.i18n.translate("next_chord.detail.whole_step", current=key, candidate=expected),
+                        details,
                     )
                     self.window.controller.set_context(key, True, 120)
                     panel.apply()
