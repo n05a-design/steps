@@ -26,6 +26,7 @@ _ALIASES = {
 }
 _NOTE_QUESTION = re.compile(
     r"welcher ton ist ['\"]?b['\"]? im (?:deutschen|internationalen) sprachraum"
+    r"|what note is ['\"]?b['\"]? in (?:german|international) notation"
 )
 _AMBIGUOUS_B = re.compile(
     r"(?:b|erkläre den akkord ['\"]?b['\"]? ohne angabe der notationskonvention)"

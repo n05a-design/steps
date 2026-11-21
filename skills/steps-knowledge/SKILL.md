@@ -40,6 +40,9 @@ geprüfte Notationsaussage ist über `query("notation")` abrufbar. Erfasste
 Stimmführungstöne erscheinen in der gewählten Schreibweise. Die freigegebenen
 deutschen Erklärtexte und Fundstellen behalten ihre Sprache. Bei einer
 allgemeinen, nicht exakt zugeordneten Frage liefert der Adapter `NO_EVIDENCE`.
+Die beiden exakten englischen Fragen `What note is B in German notation?`
+und `What note is B in international notation?` führen zur gleichen geprüften
+Notationsaussage. Die Antwort behält ihre freigegebene Sprache.
 
 ```python
 from src.steps.knowledge import KnowledgeAdapter
@@ -51,3 +54,12 @@ if result.found:
     for src in result.sources:
         print(f"Quelle: {src.title} ({src.locator})")
 ```
+
+## 3. Laufzeitprüfung
+
+`python -B scripts/evaluate_knowledge_adapter.py --json` führt die 25 Fragen
+gegen den Adapter aus und zeigt Antwortstatus, Claim-IDs und Fundstellen.
+`runtime_status` in den [Prüffällen](skill_eval_cases.json) hinterlegt für
+offene Inhalte die erwartete sichere Antwort `NO_EVIDENCE`.
+`expected_status` beschreibt weiterhin die Zielabdeckung. Offene Zielinhalte
+und die unabhängige Fachprüfung sperren die Freigabe des Adapters.

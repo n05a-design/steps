@@ -7,6 +7,7 @@
 - Das Stimmführungslabor berechnet Power-Voicings aus Grundton und Quinte und bevorzugt im Quartalprofil benachbarte reine Quarten. Notierte Slash-Bässe bleiben erhalten.
 
 - Der Wissensadapter gibt freigegebene Pilot-Aussagen mit allen Fundstellen aus und meldet fehlende Nachweise bei unbelegten Abfragen.
+- Die Laufzeitprüfung des Wissensadapters prüft die 25 Referenzfragen auf Status, Claim-IDs und Quellen. Der Adapter erkennt die beiden dokumentierten englischen Fragen zur B-Notation.
 
 - Der Next Chord Explorer behält gültige Vorschläge bei doppelten Vorzeichen und lässt einzelne nicht darstellbare Schreibweisen aus.
 - Der Akkordexplorer zeigt Literaturverweise mit Fundstelle und kennzeichnet Rechenregeln und Arrangementideen. `source_id` ist in der Python-API optional.
