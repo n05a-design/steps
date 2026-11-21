@@ -238,6 +238,7 @@
   "scales.name.diminished_half_whole": "Halbton–Ganzton-Skala",
   "scales.name.diminished_whole_half": "Ganzton–Halbton-Skala",
   "scales.none": "Keine der verfügbaren Skalen enthält alle diese Töne.",
+  "scales.spelling_limit": "Einige passende Skalen benötigen Vorzeichen außerhalb des unterstützten Schreibbereichs.",
   "chord.quality.major": "Dur-Dreiklang",
   "diagnosis.heading": "STUFEN- & FUNKTIONSDIAGNOSE:",
   "diagnosis.voicing": "Voicing-Reduktion: für vierstimmigen Leadsatz geeignet",

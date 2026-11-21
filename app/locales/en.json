@@ -238,6 +238,7 @@
   "scales.name.diminished_half_whole": "Half–whole diminished scale",
   "scales.name.diminished_whole_half": "Whole–half diminished scale",
   "scales.none": "None of the available scales contains all these tones.",
+  "scales.spelling_limit": "Some matching scales need accidentals beyond the supported spelling range.",
   "chord.quality.major": "Major triad",
   "diagnosis.heading": "DEGREE & FUNCTION DIAGNOSIS:",
   "diagnosis.voicing": "Voicing reduction: four-voice lead ready",

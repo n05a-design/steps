@@ -796,6 +796,15 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
                                      for note in notes.split(" - ")}
                     self.assertTrue(expected <= pitch_classes, notes)
 
+    def test_inspector_keeps_chord_details_when_a_scale_needs_triple_accidentals(self):
+        from app.ui.harmonic_inspector import format_chord_analysis
+
+        translate = self.window.i18n.translate
+        details = format_chord_analysis("G##", "INT", translate)
+        self.assertIn(translate("chord.analysis.title", chord="G##"), details)
+        self.assertIn(translate("scales.spelling_limit"), details)
+        self.assertTrue(any(line.startswith("• ") for line in details.splitlines()))
+
     def test_inspector_explains_when_no_available_scale_contains_every_tone(self):
         from app.ui.harmonic_inspector import format_chord_analysis
 

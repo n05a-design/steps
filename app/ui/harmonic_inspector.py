@@ -6,6 +6,7 @@ from collections.abc import Callable
 from typing import Literal
 
 from src.steps.theory.chord import parse_chord
+from src.steps.theory.exceptions import InvalidAlterationError
 from src.steps.theory.pitch import NoteSpelling
 from src.steps.theory.scale import SCALE_TEMPLATES, construct_scale
 
@@ -46,11 +47,18 @@ def format_chord_analysis(
     ]
     if not candidates:
         lines.append(translate("scales.none"))
+    has_unspellable_scale = False
     for candidate in candidates:
-        scale = construct_scale(chord.root, candidate)
+        try:
+            scale = construct_scale(chord.root, candidate)
+        except InvalidAlterationError:
+            has_unspellable_scale = True
+            continue
         notes = " - ".join(_note_name(note, convention) for note in scale.spellings)
         name = translate(f"scales.name.{scale.template.name}")
         lines.append(f"• {name} · {notes}")
+    if has_unspellable_scale:
+        lines.append(translate("scales.spelling_limit"))
     lines.extend(("", translate("diagnosis.heading"), "-" * 50, translate("diagnosis.voicing")))
     return "\n".join(lines)
 

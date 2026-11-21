@@ -164,8 +164,9 @@ Originaltext gekennzeichnet.
 
 Bei Skalen zeigt der Inspektor eine Tonmengenprüfung. Die am Akkordgrundton
 gebildete Skala muss alle theoretischen Akkordtöne und einen expliziten
-Slash-Bass enthalten. Ein Treffer empfiehlt die Skala nicht pauschal für jede
-Tonart oder jeden Stil. Die Anfängeransicht benennt für jede rechnerisch
+Slash-Bass enthalten. Liegen benötigte Vorzeichen außerhalb des unterstützten
+Schreibbereichs, weist der Inspektor darauf hin. Die Eignung für eine konkrete
+Tonart und einen Stil ist eine zusätzliche musikalische Entscheidung. Die Anfängeransicht benennt für jede rechnerisch
 bewegte Stimme der rechten Hand den Ausgangs- und Zielton und die vorzeichenbehaftete
 Halbtonbewegung. Gemeinsame Tonhöhen in zwei Voicings und liegenbleibende
 Stimmen sind unterschiedliche Messgrößen. Historische Originalhinweise aus
