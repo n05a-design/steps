@@ -5,7 +5,11 @@
 - **author_or_editor**: ""
 - **year_or_edition**: ""
 - **provenance_path**: ""
-- **rights_status**: `PERMISSIVE_OPEN | RESEARCH_LOCAL_ONLY | PROPRIETARY_UNVERIFIED`
+- **canonical_locator**: ""
+- **rights_status**: `approved | review_required | restricted_local | rejected`
+- **rights_evidence_and_permitted_use**: ""
+- **reviewed_by_and_date**: ""
+- **size_bytes**: null
 - **sha256**: ""
 - **relevant_topics**: []
 - **music_theory_claims**: []

@@ -6,15 +6,15 @@ loads it. The helper scripts run independently from the desktop application.
 
 | Helper | Implemented behavior |
 |---|---|
-| [check_source.py](scripts/check_source.py) | Resolves the path and hashes the bytes. A supplied base directory limits which files may be opened. |
-| [detect_duplicates.py](scripts/detect_duplicates.py) | Looks for matching content hashes. Near duplicates and conflicting editions require review. |
-| [extract_instructions.py](scripts/extract_instructions.py) | Labels extracted text as untrusted document candidates, including TODO markers. |
-| [validate_register.py](scripts/validate_register.py) | Checks identifiers, one status per task and evidence fields for DONE_VERIFIED. Review the referenced commit, checks and acceptance evidence independently. |
-| [check_reference_ids.py](scripts/check_reference_ids.py) | Checks that referenced musical identities and IDs remain consistent. |
+| [check_source.py](scripts/check_source.py) | Resolves the path and hashes the bytes. Supply the intake directory. Without one, `within_bounds` is null in the Python result. |
+| [detect_duplicates.py](scripts/detect_duplicates.py) | Finds matching hashes and fails on unreadable eligible files. Compare near duplicates and historical editions during review. |
+| [extract_instructions.py](scripts/extract_instructions.py) | Produces untrusted candidates from UTF-8 or BOM-marked UTF-16 text. Unsupported formats or invalid text fail with a diagnostic. |
+| [validate_register.py](scripts/validate_register.py) | Checks task headings, IDs, statuses and declared evidence. The canonical CLI run also resolves completion SHAs to local Git commit objects. Review the cited checks and acceptance evidence independently. |
+| [check_reference_ids.py](scripts/check_reference_ids.py) | Checks baseline-bound identities, the Golden mirror and v3 graph bindings. The canonical baseline, graph files and review records are required. Named historical graph endpoints stay subject to their recorded review. |
 | [backup_knowledge.py](scripts/backup_knowledge.py) | Verifies a snapshot against its manifest and saves the current register before an atomic replacement. |
 
 Music-theory validation, MIDI interpretation and rights clearance require
-separate review. The scripts do not establish factual correctness or rights.
+separate review. The scripts report their technical checks. Confirm exact claims and usage permission against their original evidence. Use trusted checkout and intake directories without concurrent edits during validation.
 
 ### Back up or restore the register
 

@@ -1,13 +1,18 @@
-# STEPS Rights & License Policy (P0-1 Compliance)
+# Rights and provenance for source intake
 
-## 1. Principles
-- **Preservation of Provenance**: Every external book, article, MIDI file, and web scrape must retain its exact source reference, URL/DOI, and author metadata.
-- **Strict Separation of Public Code and Proprietary Research**:
-  - The public Git repository must contain ONLY permissively licensed or project-owned files.
-  - Proprietary textbooks (e.g., Aldwell/Schachter, Schoenberg, Dennis DeSantis, Berklee handbooks) and shadow-library downloads (Z-Library) MUST NEVER be committed into public Git.
-  - Such files are classified as `METADATA_ONLY` and stored in private local archives.
+Use the [canonical source rights policy](../../../../knowledge/sources/RIGHTS_POLICY.md)
+and [governance guidance](../../../../docs/governance/RIGHTS_SECURITY_AND_RELEASE.md).
+Record the source identity and edition, applicable license or permission,
+permitted use, concrete locator, date checked and review state. Keep unverified
+fields open and route the specific material to review.
 
-## 2. Classification Matrix
-- `PERMISSIVE_OPEN`: CC-BY, CC0, MIT, MPL-2.0, Public Domain. Suitable for repository inclusion.
-- `RESEARCH_LOCAL_ONLY`: Fair use / personal study copies. Strictly forbidden from public GitHub distribution.
-- `PROPRIETARY_UNVERIFIED`: Third-party assets with unclear licenses (fonts, MIDI packs, blog scrapes). Require explicit legal review.
+Use the canonical rights states `approved`, `review_required`, `restricted_local`
+and `rejected`. Approval applies to the documented use of the specific source.
+The [source registry guide](../../../../knowledge/sources/README.md) explains
+which registry is used for research and which supports published examples.
+
+Keep full texts and restricted third-party assets in authorized local storage.
+Use independently written summaries and source metadata according to the
+documented permission. A public URL or a matching hash establishes source
+evidence only. Confirm permission before sharing an excerpt, uploading a file,
+or publishing a derived artifact.
