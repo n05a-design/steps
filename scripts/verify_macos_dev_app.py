@@ -59,6 +59,9 @@ def verify(bundle: Path) -> dict:
         registry_path=knowledge / "sources/registry.yaml",
     )
 
+    executable = executable.resolve(strict=True)
+    if not executable.is_relative_to(bundle):
+        raise ValueError("Executable escapes the development bundle")
     environment = os.environ.copy()
     for variable in ("PYTHONPATH", "PYTHONHOME"):
         environment.pop(variable, None)
