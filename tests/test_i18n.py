@@ -69,6 +69,15 @@ class FakeListbox:
     def select_set(self, index):
         self.selection = (index,)
 
+    def activate(self, index):
+        self.active = index
+
+    def selection_anchor(self, index):
+        self.anchor = index
+
+    def see(self, index):
+        self.visible_index = index
+
 
 class FakeEntry:
     def __init__(self, value=""):

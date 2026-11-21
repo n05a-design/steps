@@ -817,9 +817,20 @@ class StepsMainWindow:
             bd=0,
             activestyle="dotbox",
             exportselection=False,
+            highlightthickness=2,
+            highlightbackground=colors.border,
+            highlightcolor=colors.border_focus,
         )
-        self.chord_listbox.pack(fill=tk.BOTH, expand=True, padx=sp.sm, pady=sp.sm)
+        progression_scrollbar = tk.Scrollbar(
+            self.prog_frame, orient=tk.VERTICAL, command=self.chord_listbox.yview, takefocus=False,
+        )
+        self.chord_listbox.configure(yscrollcommand=progression_scrollbar.set)
+        progression_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        self.chord_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=sp.sm, pady=sp.sm)
         self.chord_listbox.bind("<<ListboxSelect>>", self._on_chord_selected)
+        modifier = "Option" if sys.platform == "darwin" else "Alt"
+        self.chord_listbox.bind(f"<{modifier}-Up>", lambda _event: self._move_chord_shortcut(-1))
+        self.chord_listbox.bind(f"<{modifier}-Down>", lambda _event: self._move_chord_shortcut(1))
 
         # ----------------------------------------------------
         # Area 2: Informations- und Theoriebereich
@@ -908,6 +919,9 @@ class StepsMainWindow:
             else:
                 index = min(selected[0], len(state["chords"]) - 1) if selected else 0
             self.chord_listbox.select_set(index)
+            self.chord_listbox.activate(index)
+            self.chord_listbox.selection_anchor(index)
+            self.chord_listbox.see(index)
             self._load_event_timing_controls(index)
             self._update_move_controls(index, len(state["chords"]))
             self._display_chord_details(state["chords"][index])
@@ -1223,13 +1237,16 @@ class StepsMainWindow:
             return
         self._refresh_all(selected_index=min(index, len(self.controller.session.chords) - 1))
 
-    def _on_move_chord(self, direction: int) -> None:
+    def _move_chord_shortcut(self, direction: Literal[-1, 1]) -> str:
+        self._on_move_chord(direction)
+        return "break"
+
+    def _on_move_chord(self, direction: Literal[-1, 1]) -> None:
         index = self._selected_chord_index()
-        if index is None:
+        if index is None or not 0 <= index + direction < len(self.controller.session.chords):
             return
         self.controller.move_chord(index, direction)
-        target = index + direction
-        self._refresh_all(selected_index=target)
+        self._refresh_all(selected_index=index + direction)
 
     def _on_undo(self) -> None:
         if self.controller.session.can_undo:
@@ -1268,9 +1285,6 @@ class StepsMainWindow:
             f"\n\n{self.i18n.translate('next_chord.applied', chord=recommendation.candidate_symbol)}",
             append=True,
         )
-        self.chord_listbox.activate(index)
-        self.chord_listbox.selection_anchor(index)
-        self.chord_listbox.see(index)
         self.chord_listbox.focus_set()
 
     def _on_export_midi(self) -> MidiExportOptionsDialog:
