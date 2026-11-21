@@ -209,6 +209,7 @@ class TestBeginnerVoicing(unittest.TestCase):
             starting_inversion="SECOND",
             convention="INT"
         )
+        self.assertTrue(all(item.is_canonical_guidance for item in result.transitions))
         # Check descriptions
         self.assertIn("Daumen liegt auf G", result.voicings[0].pedagogical_description)
         self.assertIn("kleiner Finger auf E", result.voicings[0].pedagogical_description)
@@ -225,6 +226,14 @@ class TestBeginnerVoicing(unittest.TestCase):
             result.transitions[2].pedagogical_guidance,
             "A und C bleiben exakt liegen! Nur der kleine Finger wandert von E nach F."
         )
+
+    def test_generated_guidance_follows_the_calculated_voice_assignment(self) -> None:
+        result = generate_beginner_voicings(["Cdim", "F#dim"], convention="INT")
+        transition = result.transitions[0]
+        self.assertEqual(transition.moving_voices, ((60, 57, -3), (63, 60, -3)))
+        self.assertIn("C4 → A3 (-3)", transition.pedagogical_guidance)
+        self.assertIn("Eb4 → C4 (-3)", transition.pedagogical_guidance)
+        self.assertFalse(transition.is_canonical_guidance)
 
     def test_german_notation_convention(self) -> None:
         """Verify ADR-005 notation convention (H vs B)."""

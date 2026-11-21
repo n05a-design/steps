@@ -162,6 +162,16 @@ Schreibweise. Die Oberfläche zeigt gemeinsame Töne, Gesamtbewegung und
 größten Sprung in EN/DE. Der ursprüngliche didaktische Hinweis bleibt als
 Originaltext gekennzeichnet.
 
+Bei Skalen zeigt der Inspektor eine Tonmengenprüfung. Die am Akkordgrundton
+gebildete Skala muss alle theoretischen Akkordtöne und einen expliziten
+Slash-Bass enthalten. Liegen benötigte Vorzeichen außerhalb des unterstützten
+Schreibbereichs, weist der Inspektor darauf hin. Die Eignung für eine konkrete
+Tonart und einen Stil ist eine zusätzliche musikalische Entscheidung. Die Anfängeransicht benennt für jede rechnerisch
+bewegte Stimme der rechten Hand den Ausgangs- und Zielton und die vorzeichenbehaftete
+Halbtonbewegung. Gemeinsame Tonhöhen in zwei Voicings und liegenbleibende
+Stimmen sind unterschiedliche Messgrößen. Historische Originalhinweise aus
+dem Pop-Beispiel behalten ihre Kennzeichnung.
+
 
 Der Next Chord Explorer zeigt pro ausgewähltem Kandidaten die EN/DE-Beziehung,
 die Originalerklärung und deren Provenienz. Beim Öffnen liegt der Fokus auf

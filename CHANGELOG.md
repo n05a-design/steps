@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Der Harmonie-Inspektor zeigt nur Skalen, die sämtliche Akkordtöne und einen notierten Slash-Bass enthalten. Die Anfängeransicht zeigt die berechneten Bewegungen der rechten Hand mit Startton, Zielton und Halbtonabstand.
+
 - Im Next Chord Explorer lassen sich zwei Kandidaten mit ihren Begründungen und Quellen vergleichen. Der Vergleich bleibt beim Wechsel der Oberflächensprache verfügbar.
 
 - Das MIDI-Exportstudio zeigt überlappende Noteneinsätze auf derselben Tonhöhe und demselben Kanal an. Die Vorschau reagiert auf Voicing und Notenlänge und nennt den ersten betroffenen Tick.

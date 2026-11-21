@@ -122,6 +122,7 @@ class BeginnerVoiceLeadingTransition:
     max_single_leap: int
     has_hand_jump: bool
     pedagogical_guidance: str
+    is_canonical_guidance: bool = False
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -133,6 +134,7 @@ class BeginnerVoiceLeadingTransition:
             "max_single_leap": self.max_single_leap,
             "has_hand_jump": self.has_hand_jump,
             "pedagogical_guidance": self.pedagogical_guidance,
+            "is_canonical_guidance": self.is_canonical_guidance,
         }
 
 
@@ -408,6 +410,7 @@ def _generate_pedagogical_guidance(
     to_clean = to_chord_sym.replace("maj7", "").replace("7", "").strip()
 
     # Exact canonical explanations from PIANO_LEARNING_PATH.md for Pop Four Chords
+    is_canonical_guidance = True
     if from_clean == "C" and to_clean == "G" and v_prev == (55, 60, 64) and v_curr == (55, 59, 62):
         g_name = _format_pc_name(55, convention)
         guidance = f"Der Daumen bleibt auf {g_name} liegen! Nur die oberen Finger bewegen sich einen Schritt nach links."
@@ -420,21 +423,16 @@ def _generate_pedagogical_guidance(
         f_name = _format_pc_name(65, convention)
         guidance = f"{a_name} und {c_name} bleiben exakt liegen! Nur der kleine Finger wandert von {e_name} nach {f_name}."
     else:
-        # Algorithmic pedagogical explanation
-        if len(common_tones) == 2:
-            names = " und ".join(_format_pc_name(p, convention) for p in common_tones)
-            moving_name = _format_pc_name(moving_voices[0][1], convention) if moving_voices else ""
-            guidance = f"{names} bleiben exakt liegen! Nur eine Stimme bewegt sich nach {moving_name} (L1 = {total_l1} Halbtöne)."
-        elif len(common_tones) == 1:
-            held = common_tones[0]
-            held_name = _format_pc_name(held, convention)
-            if held == v_prev[0] == v_curr[0]:
-                guidance = f"Der Daumen bleibt auf {held_name} liegen! Die oberen Stimmen lösen schrittweise auf (L1 = {total_l1})."
-            else:
-                guidance = f"{held_name} bleibt liegen, während sich die anderen Stimmen bewegen (L1 = {total_l1})."
-        else:
-            avg_dist = total_l1 / 3.0
-            guidance = f"Sanfte Verschiebung der Hand um durchschnittlich {avg_dist:.1f} Halbtöne ohne Hand-Sprung."
+        is_canonical_guidance = False
+        movements = ", ".join(
+            f"{_format_midi_note(start, convention)} → {_format_midi_note(end, convention)} ({delta:+d})"
+            for start, end, delta in moving_voices
+        )
+        guidance = (
+            f"Bewegungen der rechten Hand in Halbtönen: {movements}."
+            if movements
+            else "Alle drei Stimmen der rechten Hand bleiben auf ihren Tönen."
+        )
 
     transition = BeginnerVoiceLeadingTransition(
         from_chord=from_sym,
@@ -445,6 +443,7 @@ def _generate_pedagogical_guidance(
         max_single_leap=max_leap,
         has_hand_jump=has_hand_jump,
         pedagogical_guidance=guidance,
+        is_canonical_guidance=is_canonical_guidance,
     )
     return guidance, transition
 
