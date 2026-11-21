@@ -183,6 +183,11 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             prev_first = ctrl.session.chords[0]
             window._on_transpose(2)
             self.assertNotEqual(ctrl.session.chords[0], prev_first)
+            current_state = ctrl.session.state
+            with patch("app.ui.main_window.messagebox.showerror") as showerror:
+                window._on_transpose(-200)
+            showerror.assert_called_once()
+            self.assertEqual(ctrl.session.state, current_state)
 
             project_path = Path(self.temp_dir) / "ui_workflow.stepsproj"
             with patch(

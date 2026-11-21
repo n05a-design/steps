@@ -23,10 +23,11 @@ from ..storage.exceptions import CorruptedProjectError
 from ..storage.project_io import Project, load_project_with_status, save_project
 from ..storage.undo import UndoStack
 from ..theory.chord import ChordDefinition, Voicing, parse_chord
-from ..theory.exceptions import ChordConstructionError, MusicTheoryError, ProgressionParsingError
+from ..theory.exceptions import ChordConstructionError, MusicTheoryError, PitchRangeError, ProgressionParsingError
 from ..theory.pitch import NoteSpelling, parse_spelling
 from ..theory.voice_leading import VoiceLeadingDiagnostic, find_perfect_interval_motion
 from .engine import (
+    _transpose_with_key,
     analyze_progression_voice_leading,
     detect_progression_archetypes,
     generate_progression_voicings,
@@ -370,31 +371,32 @@ class ProgressionSession:
         self._push_mutation(new_state)
 
     def transpose(self, semitones: int) -> None:
-        """
-        Transposes all chords and key root by semitones, preserving
-        orthographic spelling.
-        """
+        """Transpose the progression and its tonal context together."""
+        if type(semitones) is not int:
+            raise MusicTheoryError("Transposition requires whole semitones.")
         if semitones == 0:
             return
 
-        transposed_chords: List[str] = []
-        for sym in self.chords:
-            ch = parse_chord(sym, convention=self.convention)
-            new_root = ch.root.transpose_chromatic(semitones)
-            new_sym = f"{new_root.render(self.convention)[:-1]}{ch.quality}"
-            if ch.bass is not None:
-                new_bass = ch.bass.transpose_chromatic(semitones)
-                new_sym += f"/{new_bass.render(self.convention)[:-1]}"
-            transposed_chords.append(new_sym)
-
-        # Transpose key root
-        old_key_spelling = parse_spelling(self.key_root, convention=self.convention)
-        new_key_spelling = old_key_spelling.transpose_chromatic(semitones)
-        new_key_root = new_key_spelling.render(self.convention)[:-1]
+        key = parse_spelling(self.key_root, convention=self.convention)
+        chords = [parse_chord(symbol, convention=self.convention) for symbol in self.chords]
+        for chord in chords:
+            for note in (chord.root, chord.bass):
+                if note is not None and not 0 <= note.midi_number + semitones <= 127:
+                    raise PitchRangeError("Transposed chord note falls outside the MIDI range.")
+        new_key, transposed = _transpose_with_key(key, chords, semitones)
+        transposed_symbols = []
+        for chord in transposed:
+            root = self._render_note_name(chord.root, self.convention)
+            symbol = root + chord.quality
+            if chord.bass is not None:
+                symbol += "/" + self._render_note_name(chord.bass, self.convention)
+            # Only save symbols representable in the active notation.
+            parse_chord(symbol, convention=self.convention)
+            transposed_symbols.append(symbol)
 
         new_state = copy.deepcopy(self.state)
-        new_state.chords = transposed_chords
-        new_state.key_root = new_key_root
+        new_state.chords = transposed_symbols
+        new_state.key_root = self._render_note_name(new_key, self.convention)
         self._push_mutation(new_state)
 
     def set_key(self, new_key_root: str, is_minor: bool = False) -> None:

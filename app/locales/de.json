@@ -124,6 +124,8 @@
   "history.redo": "Wiederholen",
   "transpose.down": "♭ -1",
   "transpose.up": "♯ +1",
+  "transpose.error.title": "Akkordfolge konnte nicht transponiert werden",
+  "transpose.error.message": "Die Zieltonhöhen oder Schreibweisen liegen außerhalb des unterstützten Bereichs.",
   "midi.export": "MIDI exportieren…",
   "information.heading": "INFORMATIONS- & THEORIEBEREICH",
   "project.save.title": "STEPS-Projekt speichern",

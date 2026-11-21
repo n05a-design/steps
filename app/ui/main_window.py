@@ -1355,7 +1355,15 @@ class StepsMainWindow:
             self._refresh_all(preserve_selection=True)
 
     def _on_transpose(self, semitones: int) -> None:
-        self.controller.transpose(semitones)
+        try:
+            self.controller.transpose(semitones)
+        except MusicTheoryError:
+            messagebox.showerror(
+                self.i18n.translate("transpose.error.title"),
+                self.i18n.translate("transpose.error.message"),
+                parent=self.root,
+            )
+            return
         self._load_context_controls()
         self._refresh_all()
 
