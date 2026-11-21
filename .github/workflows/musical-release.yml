@@ -1,0 +1,78 @@
+name: Musical release acceptance
+
+on:
+  workflow_dispatch:
+    inputs:
+      area:
+        description: Release area (use all for a complete musical release)
+        required: true
+        default: all
+        type: choice
+        options:
+          - all
+          - theory-core
+          - desktop-voicing
+          - midi-export
+          - recommendations
+          - learning-pilot
+          - knowledge-adapter
+          - harmony-coach
+          - research-library
+      review_comments:
+        description: STEPS review-comment permalinks separated by spaces
+        required: false
+        type: string
+  workflow_call:
+    inputs:
+      area:
+        description: Release area
+        required: true
+        type: string
+      review_comments:
+        description: STEPS review-comment permalinks separated by spaces
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+
+jobs:
+  acceptance:
+    name: Require musical acceptance
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Require a STEPS main revision
+        run: |
+          test "$GITHUB_REPOSITORY" = n05a-design/steps
+          test "$GITHUB_REF" = refs/heads/main
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Evaluate technical and musical acceptance
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_AREA: ${{ inputs.area }}
+          REVIEW_COMMENTS: ${{ inputs.review_comments }}
+        run: |
+          set -euo pipefail
+          args=()
+          read -r -a comments <<< "$REVIEW_COMMENTS"
+          for comment in "${comments[@]}"; do
+            args+=(--review-comment "$comment")
+          done
+          python -B scripts/verify_musical_release.py --area "$RELEASE_AREA" \
+            --json-out "$RUNNER_TEMP/musical-acceptance.json" "${args[@]}"
+      - name: Keep the acceptance report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: musical-acceptance-${{ github.run_id }}
+          path: ${{ runner.temp }}/musical-acceptance.json
+          if-no-files-found: ignore

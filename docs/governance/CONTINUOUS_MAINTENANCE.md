@@ -58,4 +58,6 @@ If permission or configuration is missing, mark the operation `OWNER_ACTION_REQU
 
 Before any release, validate the code/package version, `VERSION`, changelog, schema compatibility, English/German catalogs, user documentation, knowledge publication status, CI, packaging, notices, and platform-specific acceptance. Create release candidates separately from publication. Human approval is required before immutable version tags or public artifacts are released.
 
+Run the [musical acceptance gates](MUSICAL_RELEASE_ACCEPTANCE.md) for every area included in the release. Open mandatory cases block approval of their assigned area.
+
 The proposed product-specific gates are listed in [STEPS 1.0.0 Product Target and Readiness](../product/V1.0.0_PRODUCT_CONTRACT.md).

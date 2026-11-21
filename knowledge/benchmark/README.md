@@ -89,6 +89,8 @@ Claim-ID und Fingerabdruck in den Draft-PR. [Freigabeablauf](../concepts/progres
   nicht als neue Fachprüfung. Der Graph hat keinen direkten Claim- oder
   Quellenbezug pro Kante. Die Detailtabelle nennt fehlende Endpunktdefinitionen.
 
+Die [fachliche Release-Prüfung](../../docs/governance/MUSICAL_RELEASE_ACCEPTANCE.md) verwendet diese Fälle und sperrt den betroffenen Bereich bei fehlender Fachabnahme.
+
 ## Hör-, Spiel- und Didaktikabnahme
 
 Aus dem sauberen Checkout lassen sich leere Formulare für den gewählten
