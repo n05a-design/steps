@@ -2,9 +2,9 @@
 
 import unittest
 
-from src.steps.progression import get_progression, list_progressions, resolve_roman_degree
+from src.steps.progression import ProgressionSession, get_progression, list_progressions, resolve_roman_degree
 from src.steps.theory import NoteSpelling, PitchClass, midi_to_frequency, parse_chord, parse_spelling
-from src.steps.theory.exceptions import ChordConstructionError, MusicTheoryError, ProgressionParsingError
+from src.steps.theory.exceptions import ChordConstructionError, MusicTheoryError, PitchRangeError, ProgressionParsingError
 
 
 class TestNotationContract(unittest.TestCase):
@@ -123,3 +123,54 @@ class TestNotationContract(unittest.TestCase):
                             letter_shifts.add((letters.index(after.step) - letters.index(before.step)) % 7)
                     self.assertEqual(len(letter_shifts), 1)
         self.assertEqual([c.symbol for c in get_progression("PROG-001").transpose(8)], ["Ab", "Eb", "Fm", "Db"])
+
+    def test_session_transposition_preserves_written_intervals_in_both_notations(self):
+        letters = "CDEFGAB"
+
+        def relative_note(note, key):
+            if note is None:
+                return None
+            return ((letters.index(note.step) - letters.index(key.step)) % 7,
+                    (note.pitch_class - key.pitch_class) % 12)
+
+        def relative_chords(session):
+            key = parse_spelling(session.key_root, session.convention)
+            chords = [parse_chord(symbol, session.convention) for symbol in session.chords]
+            return [(relative_note(chord.root, key), chord.quality, relative_note(chord.bass, key))
+                    for chord in chords]
+
+        for progression in list_progressions():
+            key = progression.default_key.removesuffix("m")
+            for notation in ("INT", "DE"):
+                for semitones in range(-5, 7):
+                    with self.subTest(progression=progression.prog_id, notation=notation, semitones=semitones):
+                        session = ProgressionSession(
+                            progression.chords_str.split(" - "), key_root=key,
+                            is_minor=progression.default_key.endswith("m"),
+                        )
+                        session.set_notation_convention(notation)
+                        before = relative_chords(session)
+                        key_pc = parse_spelling(session.key_root, notation).pitch_class
+                        session.transpose(semitones)
+                        self.assertEqual(relative_chords(session), before)
+                        shifted_key = parse_spelling(session.key_root, notation)
+                        self.assertEqual(shifted_key.pitch_class, (key_pc + semitones) % 12)
+
+    def test_session_transposition_remains_an_atomic_undoable_edit(self):
+        session = ProgressionSession(["C", "G/B"], key_root="C")
+        session.set_chord_event_timing(0, 13, 777)
+        original = session.state
+        session.transpose(-52)
+        self.assertEqual(session.key_root, "Ab")
+        self.assertEqual(session.chords, ["Ab", "Eb/G"])
+        self.assertEqual(session.harmonic_degree_at(1), "V6")
+        self.assertEqual(session.get_chord_event_timing(0), (13, 777))
+        shifted = session.state
+        with self.assertRaises(PitchRangeError):
+            session.transpose(-60)
+        self.assertEqual(session.state, shifted)
+        session.undo()
+        self.assertEqual(session.state, original)
+        self.assertTrue(session.can_redo)
+        session.redo()
+        self.assertEqual(session.state, shifted)

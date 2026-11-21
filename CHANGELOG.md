@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Die Desktop-Transposition erhält die harmonischen Stufen und die Schreibweise der Slash-Bässe relativ zur Projekttonart.
+
 - Der Harmonie-Inspektor zeigt die berechnete Stufe für den ausgewählten Akkord in der Projekttonart.
 
 - Die Stufenanalyse berücksichtigt Grundtonschreibweise, Akkordqualität, Umkehrung und direkt folgende Ziele von Zwischendominanten. Der Next Chord Explorer trennt Grundtonbewegung von Auflösung und ergänzt Dur- und Mollvarianten von Jazz-ii–V–I.

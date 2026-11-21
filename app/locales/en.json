@@ -124,6 +124,8 @@
   "history.redo": "Redo",
   "transpose.down": "♭ -1",
   "transpose.up": "♯ +1",
+  "transpose.error.title": "Could not transpose progression",
+  "transpose.error.message": "The target pitches or spellings are outside the supported range.",
   "midi.export": "Export MIDI…",
   "information.heading": "INFORMATION & THEORY",
   "project.save.title": "Save STEPS project",

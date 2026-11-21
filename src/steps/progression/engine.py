@@ -724,6 +724,38 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
 }
 
 
+def _transpose_with_key(
+    key: NoteSpelling, chords: list[ChordDefinition], semitones: int
+) -> tuple[NoteSpelling, list[ChordDefinition]]:
+    """Transpose the key, chord roots and slash basses by one written interval."""
+    preferred = key.transpose_chromatic(semitones)
+    # Reuse the key's preferred spelling when it fits the whole progression.
+    raw_shift = (
+        7 * (preferred.octave - key.octave)
+        + DIATONIC_STEPS.index(preferred.step) - DIATONIC_STEPS.index(key.step)
+    )
+    last_error = None
+    for delta in (0, -1, 1, -2, 2, -3, 3):
+        shift = raw_shift + delta
+        try:
+            transposed_key = key.transpose_diatonic(shift, semitones)
+            transposed_chords = [
+                ChordDefinition(
+                    chord.root.transpose_diatonic(shift, semitones),
+                    chord.quality,
+                    chord.bass.transpose_diatonic(shift, semitones) if chord.bass else None,
+                )
+                for chord in chords
+            ]
+        except MusicTheoryError as exc:
+            last_error = exc
+        else:
+            return transposed_key, transposed_chords
+    raise ProgressionParsingError(
+        f"No consistent spelling for transposition by {semitones} semitones."
+    ) from last_error
+
+
 @dataclass(frozen=True)
 class CanonicalProgression:
     """
@@ -766,32 +798,14 @@ class CanonicalProgression:
         if not chords or semitones == 0:
             return chords
 
-        # Treat the key as a spelling anchor. The common diatonic shift
-        # preserves relative letter distances, including slash basses.
-        key_name = self.default_key.removesuffix("m")
-        key = parse_spelling(key_name, "INT")
-        preferred = key.transpose_chromatic(semitones)
-        raw_shift = (
-            7 * (preferred.octave - key.octave)
-            + DIATONIC_STEPS.index(preferred.step) - DIATONIC_STEPS.index(key.step)
-        )
-        last_error = None
-        for delta in (0, -1, 1, -2, 2, -3, 3):
-            shift = raw_shift + delta
-            try:
-                key.transpose_diatonic(shift, semitones)
-                return [
-                    ChordDefinition(
-                        chord.root.transpose_diatonic(shift, semitones), chord.quality,
-                        chord.bass.transpose_diatonic(shift, semitones) if chord.bass else None,
-                    )
-                    for chord in chords
-                ]
-            except MusicTheoryError as exc:
-                last_error = exc
-        raise ProgressionParsingError(
-            f"{self.prog_id}: no consistent spelling for transposition by {semitones} semitones."
-        ) from last_error
+        key = parse_spelling(self.default_key.removesuffix("m"), "INT")
+        try:
+            _, transposed = _transpose_with_key(key, chords, semitones)
+        except ProgressionParsingError as exc:
+            raise ProgressionParsingError(
+                f"{self.prog_id}: no consistent spelling for transposition by {semitones} semitones."
+            ) from exc.__cause__
+        return transposed
 
 
 @dataclass(frozen=True)

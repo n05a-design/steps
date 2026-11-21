@@ -75,6 +75,13 @@ Der Next-Chord-Explorer zeigt Relationsart, theoretischen Rahmen, Quelle und
 Erklärung als interpretative Empfehlung, nicht als kanonisch geprüften Fakt.
 Die Übernahme bleibt gesperrt, bis ein gültiger Kandidat ausgewählt ist.
 
+Die Desktop-Transposition verschiebt Tonart, Akkordgrundtöne und Slash-Bässe
+um dasselbe geschriebene Intervall. Im C♯-Dur-Kontext wird aus
+`C–G–Am–F` nach einem Halbton aufwärts `C♯–G♯–A♯m–F♯` mit den Stufen
+`I–V–vi–IV`. Die Aktion übernimmt alle Änderungen gemeinsam und ist
+rückgängig zu machen. Wenn keine unterstützte gemeinsame Schreibweise
+existiert, meldet der Desktop den Fehler auf Deutsch oder Englisch.
+
 Ein konkretes `Voicing` speichert MIDI-Noten als unveränderliche Folge
 in Stimmenreihenfolge. `midi_notes` liefert die Noten nach Tonhöhe
 sortiert. Transpositionen und Rotationen erwarten Ganzzahlen.
