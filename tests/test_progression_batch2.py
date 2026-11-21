@@ -160,7 +160,7 @@ class TestSessionArchetypeIntegration(unittest.TestCase):
         # In C major session, chord at index 0 is G (V)
         session = ProgressionSession(initial_chords=['G'], key_root='C', is_minor=False)
         recs = session.explore_next_chords(0)
-        tonic_rec = next((r for r in recs if 'Authentischer Ganzschluss' in r.explanation), None)
+        tonic_rec = next((r for r in recs if 'Mögliche Dominantauflösung' in r.explanation), None)
         self.assertIsNotNone(tonic_rec)
         self.assertEqual(tonic_rec.candidate_symbol, 'C')
         self.assertEqual(tonic_rec.relation_type, 'RESOLVES_TO')

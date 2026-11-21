@@ -13,7 +13,7 @@ _SUFFIXES = {
 }
 
 
-def _root_interval(root: NoteSpelling, tonic: NoteSpelling) -> tuple[int, int]:
+def written_root_interval(root: NoteSpelling, tonic: NoteSpelling) -> tuple[int, int]:
     degree = (DIATONIC_STEPS.index(root.step) - DIATONIC_STEPS.index(tonic.step)) % 7
     natural = (DIATONIC_BASE_PC[root.step] - DIATONIC_BASE_PC[tonic.step]) % 12
     return degree, natural + root.alteration - tonic.alteration
@@ -25,7 +25,7 @@ def has_dominant_quality(chord: ChordDefinition) -> bool:
 
 
 def _degree_label(chord: ChordDefinition, key: NoteSpelling, minor: bool) -> str:
-    degree, semitones = _root_interval(chord.root, key)
+    degree, semitones = written_root_interval(chord.root, key)
     reference = (_MINOR if minor else _MAJOR)[degree]
     if minor and degree == 6 and semitones == 11 and chord.quality in {"dim", "dim7", "m7b5"}:
         reference = 11  # Conventional leading-tone numeral in minor.
@@ -41,7 +41,7 @@ def _bass_figure(chord: ChordDefinition, suffix: str, convention: str) -> str:
     bass = chord.bass
     if bass is None:
         return ""
-    degree, semitones = _root_interval(bass, chord.root)
+    degree, semitones = written_root_interval(bass, chord.root)
     semitones %= 12
     if degree == 0 and semitones == 0:
         return ""
@@ -70,8 +70,8 @@ def format_harmonic_degree(
     scale = {(int(key.pitch_class) + step) % 12 for step in (_MINOR if is_minor else _MAJOR)}
     if (
         following is not None
-        and _root_interval(following.root, key) != (0, 0)
-        and _root_interval(chord.root, following.root) == (4, 7)
+        and written_root_interval(following.root, key) != (0, 0)
+        and written_root_interval(chord.root, following.root) == (4, 7)
         and has_dominant_quality(chord)
         and not figure.startswith("/")
         and not chord.pitch_class_set <= scale
