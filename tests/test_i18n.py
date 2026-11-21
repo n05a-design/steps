@@ -347,7 +347,7 @@ class TestLocaleManager(unittest.TestCase):
             self.assertEqual(window.meter_lbl.options["text"], "Taktart")
             self.assertEqual(
                 window.event_start_lbl.options["text"],
-                "Start (Takt:Zählzeit:Tick, PPQ 480)",
+                "Start (Takt:Zählzeit:Tick oder Ticks, PPQ 480)",
             )
             self.assertEqual(window.event_duration_lbl.options["text"], "Dauer in Ticks (PPQ 480)")
             self.assertEqual(window.event_timing_btn.options["text"], "Timing setzen")
@@ -610,6 +610,21 @@ class TestDesktopChordEditing(unittest.TestCase):
         window._on_undo()
         self.assertEqual(session.get_chord_event_timing(1), (1920, 1920))
 
+    def test_absolute_tick_input_normalizes_to_musical_position(self):
+        window = self.make_window(["C", "G"])
+        session = window.controller.session
+        session.set_context("C", False, 120, (6, 8))
+        window.chord_listbox.selection = (1,)
+        window.event_start_entry.value = " 1320 "
+        window.event_duration_entry.value = "240"
+
+        window._on_apply_event_timing()
+
+        self.assertEqual(session.get_chord_event_timing(1), (1320, 240))
+        self.assertEqual(window.event_start_entry.get(), "1:6:120")
+        self.assertIn("1:6:120 · 240 ticks", window.chord_listbox.items[1])
+        self.assertEqual(session.get_chord_event_timing(0), (0, 1920))
+
     def test_session_midi_export_uses_event_specific_timing(self):
         session = ProgressionSession(initial_chords=["C", "G"])
         session.set_chord_event_timing(0, 240, 960)
@@ -694,7 +709,7 @@ class TestDesktopChordEditing(unittest.TestCase):
         self.assertEqual(window.controller.session.get_chord_event_timing(1), (1920, 1920))
         self.assertEqual(
             show_error.call_args.args[1],
-            "Enter a valid bar:beat:tick position (tick is within the metric beat) and a positive whole-number duration in ticks.",
+            "Enter a valid start position or a non-negative absolute tick, and a positive whole-number duration in ticks.",
         )
 
     @patch("app.ui.main_window.messagebox.showerror")

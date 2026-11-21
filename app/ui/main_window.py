@@ -973,24 +973,30 @@ class StepsMainWindow:
         self._on_apply_event_timing()
         return "break"
 
+    def _parse_event_start(self, text: str) -> int:
+        fields = text.split(":")
+        if len(fields) == 1:
+            tick = int(fields[0])
+            if tick < 0:
+                raise ValueError("Start tick must be non-negative.")
+            return tick
+        if len(fields) != 3:
+            raise ValueError("Expected an absolute tick or bar:beat:tick position.")
+
+        session = self.controller.session
+        bar, beat, tick = map(int, fields)
+        numerator, denominator = session.time_signature
+        return RationalMidiTime.bar_beat_tick_to_ticks(
+            bar, beat, tick, ppq=session.state.ppq,
+            numerator=numerator, denominator=denominator,
+        )
+
     def _on_apply_event_timing(self) -> None:
         index = self._selected_chord_index()
         if index is None:
             return
         try:
-            session = self.controller.session
-            position = [
-                int(part.strip())
-                for part in self.event_start_entry.get().strip().split(":")
-            ]
-            if len(position) != 3:
-                raise ValueError("Position must use bar:beat:tick format.")
-            start_tick = RationalMidiTime.bar_beat_tick_to_ticks(
-                *position,
-                ppq=session.state.ppq,
-                numerator=session.time_signature[0],
-                denominator=session.time_signature[1],
-            )
+            start_tick = self._parse_event_start(self.event_start_entry.get())
             duration_ticks = int(self.event_duration_entry.get().strip())
             self.controller.set_chord_event_timing(index, start_tick, duration_ticks)
         except ValueError:
