@@ -143,8 +143,9 @@
       "category": "genre_and_rhythm",
       "prompt": "Wie verhält sich das Swing-Verhältnis bei 130 BPM in Jazz-Achtelnoten?",
       "expected_status": "GROUNDED",
-      "expected_fact": "Deskriptive MIDI-Raten um 60:40 bis 67:33 (Triolenfeeling), keine starre physikalische Konstante.",
-      "expected_source": "GMD_SWING_DETAIL_2026-11-15.json",
+      "expected_fact": "Eine Aussage für 130 BPM braucht konkret belegte Jazz-Achtel bei diesem Tempo und dokumentierte Streuung.",
+      "expected_source": "Offen: passender Nachweis für 130 BPM",
+      "countercheck": "GMD_SWING_DETAIL_2026-11-15.json beobachtet 185 und 215 BPM.",
       "runtime_status": "NO_EVIDENCE"
     },
     {

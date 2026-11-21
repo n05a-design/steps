@@ -36,6 +36,13 @@ def evaluate(cases, adapter):
         publication_matches = all(claim.verified and claim.citations and claim.summary for claim in answer.claims)
         publication_matches &= all(source.rights_status == "approved" and source.locator.strip() and source.url
                                    for source in answer.sources)
+        if found:
+            publication_matches &= answer.explanation == " ".join(claim.summary for claim in answer.claims)
+        elif expected == "NO_EVIDENCE":
+            publication_matches &= answer.explanation == (
+                f"Für die Anfrage {case['prompt']!r} liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+            )
+        publication_matches &= not (answer.alternatives or any(claim.alternative_interpretations for claim in answer.claims))
         passed = (answer.status == expected and answer.found is found and claims == claim_ids
                   and {source_id for source_id, _ in sources} == set(source_ids)
                   and answer.sources == cited and publication_matches)
