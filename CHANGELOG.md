@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Der Next Chord Explorer behält gültige Vorschläge bei doppelten Vorzeichen und lässt einzelne nicht darstellbare Schreibweisen aus.
+
 - Die MIDI-Akkordspur bleibt bei enger Lage innerhalb einer Oktave. Drop-2 erhält die gewünschte Stimmverteilung und wird bei unpassender Lage im Exportstudio deaktiviert.
 
 - Anfänger-Voicings spielen den notierten Slash-Bass. Die Reduktion erhält die verminderte Quinte von Septakkorden und zeigt die tatsächlich ausgelassenen Töne.
