@@ -1,6 +1,7 @@
 name: Technical debt
 description: Track a concrete maintainability, compatibility, or reliability issue.
 title: "Technical debt: "
+labels: ['technical-debt']
 body:
   - type: textarea
     id: behavior

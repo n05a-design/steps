@@ -1,6 +1,7 @@
 name: Accessibility issue
 description: Report an accessibility barrier in the STEPS interface or documentation.
 title: "Accessibility: "
+labels: ['accessibility']
 body:
   - type: textarea
     id: context

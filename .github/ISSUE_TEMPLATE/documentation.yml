@@ -1,6 +1,7 @@
 name: Documentation issue
 description: Report missing, incorrect, or outdated STEPS documentation. German and English input are welcome.
 title: "Docs: "
+labels: ['documentation']
 body:
   - type: textarea
     id: location

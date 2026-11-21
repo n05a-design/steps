@@ -1,8 +1,8 @@
 # STEPS Open Work Register
 
 **Authority:** This is the single active, versioned register for STEPS tasks and owner decisions.
-**Effective date:** 2026-11-20.
-**Source baseline:** GitHub `main` at `e2faf276adf6d65caf81fe28f38521a176e0c283`.
+**Effective date:** 2026-11-21.
+**Source baseline:** GitHub `main` at `3a5db64b6131806c432b7b38dca60680c5a57d9b` (previous baseline `e2faf276adf6d65caf81fe28f38521a176e0c283`).
 **Operating model:** One repository backlog, following Glide's single-plan model. GitHub issues provide linked discussion/evidence; this register is the active status authority.
 
 ## Migration boundary
@@ -33,6 +33,7 @@ New active IDs continue after the legacy range. Dated plans and audit reports re
 - **Kategorie:** Dokumentation / Governance · **Status:** `OPEN` · **Ursprung:** EXPLICIT
 - **Beschreibung:** Finish the remaining repository-truth and documentation work without treating merged implementation or passing tests as owner acceptance.
 - **Quellen:** [Issue #149](https://github.com/n05a-design/steps/issues/149); [implementation status](../IMPLEMENTATION.md); [roadmap](../roadmap/ROADMAP_AND_RESOURCE_PLAN.md)
+- **Fortschritt 2026-11-21:** The roadmap, implementation status, 1.0 readiness matrix and project overview are synchronized to `3a5db64` (875 tests). A relative Markdown link check now runs in CI. GitHub epics and release labels are tracked under OA-0041.
 - **Abnahmekriterien:** Current public claims and linked GitHub status agree with observed evidence; stale issue notes are either corrected or explicitly retained as history; required owner actions remain open until approved.
 
 ### OA-0037: Close knowledge-base provenance and review gaps
@@ -43,7 +44,7 @@ New active IDs continue after the legacy range. Dated plans and audit reports re
 
 ### OA-0038: Complete desktop MVP acceptance
 - **Kategorie:** Produkt / Desktop · **Status:** `OPEN` · **Ursprung:** EXPLICIT
-- **Beschreibung:** Continue the desktop workflow toward owner-approved MVP acceptance. The [native widget workflow](../../tests/native_ui/README.md) now covers the library, recommendations, style preview/application, MIDI options and save/reopen. The local macOS development bundle has a reproducible build recipe. The 791-test pass at `main` `e2faf276` and ADR-017 export checks do not replace independent DAW, native accessibility, platform, installer, or user acceptance.
+- **Beschreibung:** Continue the desktop workflow toward owner-approved MVP acceptance. The [native widget workflow](../../tests/native_ui/README.md) now covers the library, recommendations, style preview/application, MIDI options and save/reopen. The local macOS development bundle has a reproducible build recipe. Reproducible DAW fixtures and a manual import protocol exist (PR #240), and the local macOS bundle build is logged (PR #262). The 875-test pass at `main` `3a5db64` and ADR-017 export checks do not replace independent DAW, native accessibility, platform, installer, or user acceptance.
 - **Quellen:** [Issue #151](https://github.com/n05a-design/steps/issues/151); [1.0 readiness contract](../product/V1.0.0_PRODUCT_CONTRACT.md); [handover audit](../handover/MASTER_UEBERGABE_2026-11-19.md)
 - **Abnahmekriterien:** Required human and platform checks are recorded for the approved scope; DAW imports are verified independently; owner decisions and release boundaries remain explicit.
 
@@ -58,3 +59,16 @@ New active IDs continue after the legacy range. Dated plans and audit reports re
 - **Beschreibung:** Confirm through the OneDrive client or another authoritative sync indicator that the approved project workspace and pushed branch have completed cloud synchronization. A local path under OneDrive is placement evidence only.
 - **Quellen:** [handover audit](../handover/MASTER_UEBERGABE_2026-11-19.md); current project worktree is under the configured OneDrive project tree.
 - **Abnahmekriterien:** Record the verified sync result and any pending/conflict state without copying or deleting files to force synchronization.
+
+### OA-0041: Align GitHub labels and epics with the repository state
+- **Kategorie:** GitHub / Governance · **Status:** `DONE_UNVERIFIED` · **Ursprung:** EXPLICIT
+- **Beschreibung:** Create the label taxonomy in [`.github/labels.yml`](../../.github/labels.yml), including the categories that [`release.yml`](../../.github/release.yml) expects, apply it to issue templates and open epics, and record the current state in issues #149, #150, #151 and #154.
+- **Quellen:** User request on 2026-11-21; [GitHub and CI overview](../../.github/GITHUB_UND_CI.md); [roadmap §0](../roadmap/ROADMAP_AND_RESOURCE_PLAN.md#0-aktueller-stand-und-nächste-etappen-21112026)
+- **Fortschritt 2026-11-21:** All 23 taxonomy labels were created or updated with `gh label create --force`; epics #149, #150, #151 and #154 carry epic/area/state labels and a dated status comment. Independent review of the label scheme and PR #266 is pending.
+- **Abnahmekriterien:** Every label in the versioned taxonomy exists on GitHub; issue templates reference only existing labels; each open epic carries its area and epic labels and a dated status comment; no issue is closed without owner acceptance.
+
+### OA-0042: Protect `main` with required checks and review
+- **Kategorie:** GitHub / Owner action · **Status:** `OWNER_DECISION_REQUIRED` · **Ursprung:** EXPLICIT
+- **Beschreibung:** On 2026-11-21 `main` had no classic branch protection, and the only active ruleset (`basic`) enabled Copilot code review. Pull requests, the CI status checks and code-owner approval are therefore not enforced merge gates.
+- **Quellen:** `gh api repos/n05a-design/steps/rulesets`; [CODEOWNERS](../../.github/CODEOWNERS); [continuous maintenance](../governance/CONTINUOUS_MAINTENANCE.md)
+- **Abnahmekriterien:** The owner records the chosen required checks, review and code-owner rules for `main`; the observed GitHub setting is cited with date and the agent contract's no-direct-merge rule is enforced by GitHub.

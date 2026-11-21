@@ -129,6 +129,9 @@ jobs:
       - name: Check documentation consistency policy
         run: python -B scripts/check_documentation_consistency.py --check
 
+      - name: Check relative Markdown links
+        run: python -B scripts/check_markdown_links.py --check
+
       - name: Check Gemini knowledge pack
         run: python -B scripts/check_gemini_knowledge_pack.py --check
 

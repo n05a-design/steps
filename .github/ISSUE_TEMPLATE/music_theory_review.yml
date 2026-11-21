@@ -1,6 +1,7 @@
 name: Music theory review
 description: Request a bounded review of a music-theory claim or behavior.
 title: "Theory review: "
+labels: ['music-theory', 'needs-human-review']
 body:
   - type: textarea
     id: claim
