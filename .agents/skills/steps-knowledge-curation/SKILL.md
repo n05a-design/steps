@@ -71,6 +71,10 @@ When a user adds or updates a music document or specification:
 
 ---
 
+## Musical release acceptance
+
+Use the [musical release acceptance workflow](../../../docs/governance/MUSICAL_RELEASE_ACCEPTANCE.md) for changes intended for release. Record exact source locators and independent assessments for stylistic, interpretative and teaching material.
+
 ## Verification & Self-Test
 
 Run the helper and workflow tests. Their scope is described in the [skill README](README.md).
