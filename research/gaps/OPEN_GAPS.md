@@ -6,7 +6,11 @@ The [curation runbook](../../.agents/skills/steps-knowledge-curation/SKILL.md)
 now checks baseline-bound identities, requires the Golden mirror, and binds
 the v3 graph matrix to the canonical relation register and its recorded
 reviews. Keep the previous audit below as evidence for its original revision.
-The current checks verify that these records agree and resolve catalog IDs.
+The follow-up adds row-wise fingerprints for musical catalog fields, Golden
+metadata, graph source locators and review scopes, the historical inventory,
+and domain readiness. The release gate for the research library runs that
+check. A fingerprint detects changed evidence fields. Existing blanks and
+independent musical reviews retain their recorded state.
 Historical node definitions, graph semantics, source rights, and open
 benchmark assessments still require review in their specific scope. For
 changes to the baseline or an existing review record, record the reviewed

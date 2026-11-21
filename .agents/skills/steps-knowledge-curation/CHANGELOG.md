@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Track row-wise evidence fingerprints for catalog, Golden, graph, historical
+  and readiness records. Include the check in research-library release acceptance.
+- Reject Markdown-formatted task IDs and require a reason for
+  `NOT_APPLICABLE`. Report malformed baseline fields as structured failures.
+- Separate the canonical register and reference checks in CI.
+
 - Use the repository identity verifier, require the Golden mirror and validate
   v3 graph bindings against the original relation rows and recorded reviews.
 - Check task heading syntax and resolve declared completion commits for the

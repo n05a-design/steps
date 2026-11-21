@@ -4,6 +4,7 @@ from contextlib import redirect_stderr
 from datetime import datetime, timezone
 from io import StringIO
 import json
+from subprocess import CompletedProcess
 import unittest
 from unittest.mock import patch
 
@@ -74,6 +75,14 @@ class MusicalReleaseTest(unittest.TestCase):
     def test_runtime_probe_can_block_an_otherwise_green_area(self):
         report = self.check("midi-export", probes={"midi-export": lambda: ["DROP2 produced CLOSE"]})
         self.assertEqual(["DROP2 produced CLOSE"], report["blockers"])
+
+    def test_research_release_blocks_when_curation_evidence_changes(self):
+        error = "Curation evidence changed: review [CR-001]"
+        command = CompletedProcess([], 1, json.dumps({"errors": [error]}), "")
+        with patch.object(gate.subprocess, "run", return_value=command):
+            report = self.check("research-library", probes=gate.AUTO_PROBES)
+        self.assertEqual("BLOCKED", report["status"])
+        self.assertIn(f"Curation evidence: {error}", report["blockers"])
 
     def test_concrete_evidence_and_exact_criteria_required(self):
         self.assertTrue(gate.reviewed_criteria(("Musical criterion",), self.entry))

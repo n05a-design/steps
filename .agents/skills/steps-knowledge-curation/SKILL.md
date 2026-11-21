@@ -65,7 +65,7 @@ coverage explicitly.
   acceptance criteria before assigning `DONE_VERIFIED`.
 - Preserve the baseline and historical snapshots when a check fails. Use the
   versioned migration register for approved corrections and verify the exact
-  target SHA-256. Submit any proposed change to the baseline or recorded review
+  target SHA-256. Submit any proposed change to the baseline, [evidence fingerprints](README.md#review-a-proposed-evidence-change), or recorded review
   through the repository's human review process. The
   [documentation hierarchy](references/canonical_doc_hierarchy.md) identifies
   the primary records.
