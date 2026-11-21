@@ -135,6 +135,17 @@ class TestInversionInputValidation(unittest.TestCase):
         with self.assertRaises(VoiceLeadingError):
             detect_chord_inversion([60, 64, 130])
 
+    def test_explicit_triad_with_sixth_in_bass_is_not_a_third_inversion(self):
+        result = detect_chord_inversion([45, 60, 64, 67], root_pitch_class=0, is_seventh=False)
+        self.assertEqual((result.bass_factor, result.figured_bass), ("NON_CHORD_TONE", "slash"))
+        self.assertFalse(result.is_seventh_chord)
+
+    def test_suspension_in_the_bass_keeps_slash_notation_and_chord_membership(self):
+        for notes, root in (([48, 55, 62, 65], 7), ([50, 60, 67], 0)):
+            with self.subTest(notes=notes):
+                result = detect_chord_inversion(notes, root_pitch_class=root)
+                self.assertEqual((result.bass_factor, result.figured_bass), ("SUSPENSION", "slash"))
+
     def test_voicing_instance_compatibility(self):
         voicing = Voicing((57, 60, 64), 'CLOSE')
         result = detect_chord_inversion(voicing)

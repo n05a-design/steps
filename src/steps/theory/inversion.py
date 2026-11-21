@@ -15,7 +15,13 @@ from enum import Enum
 from typing import Any, List, Optional, Tuple, Union
 
 from .exceptions import ChordConstructionError, VoiceLeadingError
-from .chord import Voicing
+from .chord import CHORD_TEMPLATES, Voicing
+
+
+_SEVENTH_RECIPES = tuple(
+    frozenset(CHORD_TEMPLATES[quality]["theoretical"])
+    for quality in ("7", "maj7", "m7", "m7b5", "dim7", "m(maj7)", "7#5", "maj7#5", "7b5", "7sus4")
+)
 
 
 class ChordInversion(str, Enum):
@@ -48,31 +54,23 @@ class InversionAnalysis:
     """
     inversion: ChordInversion
     figured_bass: str
-    bass_factor: str  # 'ROOT', 'THIRD', 'FIFTH', 'SEVENTH'
+    bass_factor: str  # ROOT, THIRD, FIFTH, SEVENTH, SUSPENSION or NON_CHORD_TONE
     root_pc: int
     bass_pc: int
     german_name: str
     is_seventh_chord: bool
 
 
-def _deduce_triad_or_seventh_root(pcs: set[int]) -> tuple[int, bool]:
+def _deduce_triad_or_seventh_root(pcs: set[int], is_seventh: bool | None) -> tuple[int, bool]:
     """
     Deduces the harmonic root pitch class and whether the set represents a seventh chord.
     Returns:
         (root_pitch_class, is_seventh_chord)
     """
-    # 1. Check seventh chords (4 pitch classes)
-    if len(pcs) >= 4:
-        for root in pcs:
-            # Major 7th, Dominant 7th, Minor 7th, Half-diminished, Diminished 7th
-            triad_thirds = {3, 4}
-            fifths = {6, 7, 8}
-            sevenths = {9, 10, 11}
-            rel = {(p - root) % 12 for p in pcs}
-            has_3 = bool(rel & triad_thirds)
-            has_5 = bool(rel & fifths)
-            has_7 = bool(rel & sevenths)
-            if has_3 and has_7:
+    # Complete four-tone recipes take precedence over partial matches.
+    if is_seventh is not False and len(pcs) == 4:
+        for root in sorted(pcs):
+            if {(p - root) % 12 for p in pcs} in _SEVENTH_RECIPES:
                 return root, True
 
     # 2. Check triads (3 pitch classes)
@@ -93,10 +91,10 @@ def _deduce_triad_or_seventh_root(pcs: set[int]) -> tuple[int, bool]:
     for root in pcs:
         rel = {(p - root) % 12 for p in pcs}
         if {0, 4, 7}.issubset(rel) or {0, 3, 7}.issubset(rel):
-            return root, len(pcs) >= 4
+            return root, any(recipe <= rel for recipe in _SEVENTH_RECIPES)
 
     # If ambiguous or modal, pick the lowest pitch class as default root
-    return min(pcs), len(pcs) >= 4
+    return min(pcs), False
 
 
 def detect_chord_inversion(
@@ -128,7 +126,7 @@ def detect_chord_inversion(
     bass_pc = bass_note % 12
 
     if root_pitch_class is None:
-        deduced_root, deduced_seventh = _deduce_triad_or_seventh_root(pcs)
+        deduced_root, deduced_seventh = _deduce_triad_or_seventh_root(pcs, is_seventh)
         root_pc = deduced_root
         if is_seventh is None:
             is_seventh = deduced_seventh
@@ -137,7 +135,8 @@ def detect_chord_inversion(
             raise ChordConstructionError("root_pitch_class must be an integer in 0..11.")
         root_pc = root_pitch_class
         if is_seventh is None:
-            is_seventh = len(pcs) >= 4
+            relative = {(pc - root_pc) % 12 for pc in pcs}
+            is_seventh = any(recipe <= relative for recipe in _SEVENTH_RECIPES)
 
     # Distance from root to bass in semitones (0 = Root, 3/4 = Third, 6/7/8 = Fifth, 9/10/11 = Seventh)
     dist = (bass_pc - root_pc) % 12
@@ -169,17 +168,23 @@ def detect_chord_inversion(
         else:
             figured_bass = FiguredBassSymbol.TRIAD_SECOND.value
             german_name = "2. Umkehrung (Quartsextakkord 6/4)"
-    elif dist in (9, 10, 11):
+    elif is_seventh and dist in (9, 10, 11):
         inversion = ChordInversion.THIRD_INVERSION
         bass_factor = "SEVENTH"
         figured_bass = FiguredBassSymbol.SEVENTH_THIRD.value
         german_name = "3. Umkehrung (Sekundakkord 4/2)"
     else:
-        # Non-chord tone / pedal point in bass
+        # Figured-bass inversions track thirds, fifths and sevenths. A
+        # suspended chord can carry its second or fourth in the bass.
+        relative = {(pc - root_pc) % 12 for pc in pcs}
+        suspension = (
+            dist == 2 and relative == {0, 2, 7}
+            or dist == 5 and relative in ({0, 5, 7}, {0, 5, 7, 10})
+        )
         inversion = ChordInversion.ROOT_POSITION
-        bass_factor = "NON_CHORD_TONE"
+        bass_factor = "SUSPENSION" if suspension else "NON_CHORD_TONE"
         figured_bass = "slash"
-        german_name = f"Orgelpunkt / Fremdbass ({dist})"
+        german_name = f"Vorhalt im Bass ({dist})" if suspension else f"Orgelpunkt / Fremdbass ({dist})"
 
     return InversionAnalysis(
         inversion=inversion,
