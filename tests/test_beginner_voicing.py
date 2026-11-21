@@ -14,6 +14,7 @@ Verifies:
 from __future__ import annotations
 
 import unittest
+from itertools import product
 
 from app.ui.session_controller import ProgressionSessionController
 from src.steps.progression.engine import get_progression
@@ -92,6 +93,36 @@ class TestBeginnerVoicing(unittest.TestCase):
         c_second = next((c[1] for c in cands if c[0] == BeginnerTriadInversion.SECOND and c[1][0] == 55), None)
         self.assertIsNotNone(c_second)
         self.assertEqual(c_second, (55, 60, 64))
+
+    def test_optimized_path_matches_exhaustive_search_and_tie_order(self) -> None:
+        for chords in (["C"], ["C", "G", "Am", "F"], ["Dm7", "G7", "Cmaj7"], ["F", "Fm", "C"]):
+            candidates = [generate_beginner_inversions(chord) for chord in chords]
+            for starting in (None, *BeginnerTriadInversion):
+                with self.subTest(chords=chords, starting=starting):
+                    paths = (
+                        path for path in product(*candidates)
+                        if starting is None or path[0][0] == starting
+                    )
+
+                    def cost(path):
+                        movement = sum(
+                            sum(abs(pitch_out - pitch_in) for pitch_in, pitch_out in zip(before, after))
+                            for (_, before), (_, after) in zip(path, path[1:])
+                        )
+                        return movement + 0.05 * abs(sum(path[0][1]) / 3.0 - 60.0)
+
+                    expected = min(paths, key=cost)
+                    result = generate_beginner_voicings(chords, starting_inversion=starting)
+                    self.assertEqual(tuple((item.inversion, item.rh_notes) for item in result.voicings), expected)
+
+    def test_long_progression_preserves_every_chord_and_transition(self) -> None:
+        chords = ["C", "G", "Am", "F"] * 32
+
+        result = generate_beginner_voicings(chords)
+
+        self.assertEqual([item.chord_symbol for item in result.voicings], chords)
+        self.assertEqual(len(result.transitions), len(chords) - 1)
+        self.assertEqual(result.total_l1_distance, sum(item.total_l1_distance for item in result.transitions))
 
     def test_golden_case_pop_four_chords(self) -> None:
         """

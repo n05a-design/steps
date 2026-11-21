@@ -534,37 +534,40 @@ def generate_beginner_voicings(
 
     n_chords = len(all_candidates)
 
-    def search_path(idx: int, curr_cand: Tuple[BeginnerTriadInversion, Tuple[int, int, int]]) -> Tuple[int, List[Tuple[BeginnerTriadInversion, Tuple[int, int, int]]]]:
-        if idx == n_chords:
-            return 0, [curr_cand]
-        best_cost = 999999
-        best_sub: List[Tuple[BeginnerTriadInversion, Tuple[int, int, int]]] = []
-        for next_cand in all_candidates[idx]:
-            step_cost = l1_step(curr_cand[1], next_cand[1])
-            rem_cost, rem_path = search_path(idx + 1, next_cand)
-            tot = step_cost + rem_cost
-            if tot < best_cost:
-                best_cost = tot
-                best_sub = [curr_cand] + rem_path
-        return best_cost, best_sub
+    remaining_costs = [0] * len(all_candidates[-1])
+    successors: List[List[int]] = []
+    for index in range(n_chords - 2, -1, -1):
+        next_candidates = all_candidates[index + 1]
+        choices = [
+            min(
+                (l1_step(notes, next_notes) + remaining_costs[next_index], next_index)
+                for next_index, (_, next_notes) in enumerate(next_candidates)
+            )
+            for _, notes in all_candidates[index]
+        ]
+        remaining_costs = [cost for cost, _ in choices]
+        successors.append([next_index for _, next_index in choices])
 
-    best_global_cost = 999999.0
-    best_path: List[Tuple[BeginnerTriadInversion, Tuple[int, int, int]]] = []
+    first_candidates = all_candidates[0]
 
-    for start_cand in all_candidates[0]:
-        if preferred_inv_enum is not None and start_cand[0] != preferred_inv_enum:
-            continue
-        cost, path = search_path(1, start_cand)
-        # Tie breaker: prefer right hand centered as close to Middle C (MIDI 60) as possible
-        avg_pitch = sum(start_cand[1]) / 3.0
-        center_penalty = 0.05 * abs(avg_pitch - 60.0)
-        effective_cost = float(cost) + center_penalty
-        if effective_cost < best_global_cost:
-            best_global_cost = effective_cost
-            best_path = path
+    def initial_cost(index: int) -> float:
+        mean_pitch = sum(first_candidates[index][1]) / 3.0
+        return remaining_costs[index] + 0.05 * abs(mean_pitch - 60.0)
 
-    if not best_path:
+    choice = min(
+        (index for index, (inversion, _) in enumerate(first_candidates)
+         if preferred_inv_enum is None or inversion == preferred_inv_enum),
+        key=initial_cost,
+        default=None,
+    )
+    if choice is None:
         raise ChordConstructionError("Failed to find valid voicing path for progression.")
+
+    # The earliest candidate wins a tie, as in the previous depth-first search.
+    best_path = [first_candidates[choice]]
+    for index, next_choices in enumerate(reversed(successors), start=1):
+        choice = next_choices[choice]
+        best_path.append(all_candidates[index][choice])
 
     # 4. Generate Left Hand Bass Pitches
     # Determine bass notes in lh_octave

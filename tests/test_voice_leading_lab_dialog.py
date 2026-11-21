@@ -4,7 +4,7 @@ import unittest
 from unittest.mock import Mock
 
 from app.i18n import LocaleManager
-from app.ui.piano_roll import TickViewport
+from app.ui.piano_roll import TickViewport, pitch_axis_labels
 from app.ui.session_controller import ProgressionSessionController, VoiceLeadingStyleProfile
 from app.ui.voice_leading_lab_dialog import (
     VoiceLeadingLabDialog,
@@ -114,6 +114,11 @@ class TestVoiceLeadingLab(unittest.TestCase):
         self.assertEqual(TickViewport.around(8000, 4, (3700, 600)), TickViewport(3000, 5000))
         self.assertEqual(TickViewport.around(8000, 4, (7500, 500)), TickViewport(6000, 8000))
         self.assertEqual(TickViewport.around(1, 8, (0, 1)), TickViewport(0, 1))
+
+    def test_pitch_axis_labels_leave_space_between_octaves_and_endpoints(self):
+        self.assertEqual(pitch_axis_labels(40, 70, 110, 16), (40, 48, 60, 70))
+        self.assertEqual(pitch_axis_labels(0, 125, 110, 16), (0, 24, 48, 72, 96, 125))
+        self.assertEqual(pitch_axis_labels(59, 64, 110, 16), (59, 60, 64))
 
     def test_clip_event_keeps_overlapping_notes_at_the_viewport_edges(self):
         window = TickViewport(100, 200)
