@@ -67,7 +67,7 @@ def curation_evidence() -> list[str]:
 
 AUTO_PROBES = {
     "research-library": curation_evidence,
-    "desktop-voicing": checks.beginner_voices,
+    "desktop-voicing": checks.desktop_voicing,
     "midi-export": checks.midi_drop2,
     "knowledge-adapter": checks.knowledge_retrieval,
     "recommendations": checks.recommendations,

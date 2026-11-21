@@ -25,6 +25,22 @@ def beginner_voices():
     return failures
 
 
+def desktop_voicing():
+    failures = beginner_voices()
+    session = ProgressionSession(["Dm7", "G7", "Cmaj7"])
+    power = session.get_voicings(style="POWER_CHORDS")
+    if [{note % 12 for note in voicing.notes} for voicing in power] != [{2, 9}, {2, 7}, {0, 7}]:
+        failures.append("Power profile did not produce root and perfect fifth")
+    pop = session.get_voicings(style="CONTEMPORARY_POP")
+    quartal = session.get_voicings(style="QUARTAL_JAZZ")
+    if quartal[0].midi_notes != [50, 57, 60, 65] or quartal == pop:
+        failures.append("Quartal profile did not choose the expected fourth-based Dm7 spacing")
+    if any({note % 12 for note in a.notes} != {note % 12 for note in b.notes}
+           or a.notes[0] % 12 != b.notes[0] % 12 for a, b in zip(pop, quartal, strict=True)):
+        failures.append("Quartal profile changed selected pitch classes or the written bass")
+    return failures
+
+
 def midi_drop2():
     failures = []
     roots = {

@@ -82,6 +82,17 @@ um dasselbe geschriebene Intervall. Im C♯-Dur-Kontext wird aus
 rückgängig zu machen. Wenn keine unterstützte gemeinsame Schreibweise
 existiert, meldet der Desktop den Fehler auf Deutsch oder Englisch.
 
+Im Stimmführungslabor verwendet das Power-Profil für Akkorde mit reiner
+Quinte Grundton und Quinte sowie den gegebenenfalls notierten Slash-Bass.
+Bei Akkorden ohne reine Quinte bleibt die ursprüngliche Tonauswahl erhalten.
+Das Quartalprofil bevorzugt möglichst viele reine Quarten zwischen
+benachbarten Stimmen und minimiert danach deren Halbtonbewegung. Dabei
+bleiben die gewählten Tonklassen und der Bass erhalten. Wenn die Pop-Anordnung
+bereits die meisten erreichbaren Quarten enthält, kann das Quartalprofil
+dieselben Noten liefern. Beide Profile sind konkrete Anordnungsregeln für
+die Vorschau. Die stilistische und praktische
+Abnahme wird separat erfasst. [Open Music Theory, Pentatonic Harmony](https://viva.pressbooks.pub/openmusictheory/chapter/pentatonic-harmony/) · [Matthew Clauhs, Voicings in 4ths](https://www.ithaca.edu/sites/default/files/2021-03/2019-book-chapter-school-jazz-arranging.pdf)
+
 Ein konkretes `Voicing` speichert MIDI-Noten als unveränderliche Folge
 in Stimmenreihenfolge. `midi_notes` liefert die Noten nach Tonhöhe
 sortiert. Transpositionen und Rotationen erwarten Ganzzahlen.

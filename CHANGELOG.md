@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Das Stimmführungslabor berechnet Power-Voicings aus Grundton und Quinte und bevorzugt im Quartalprofil benachbarte reine Quarten. Notierte Slash-Bässe bleiben erhalten.
+
 - Der Wissensadapter gibt freigegebene Pilot-Aussagen mit allen Fundstellen aus und meldet fehlende Nachweise bei unbelegten Abfragen.
 
 - Der Next Chord Explorer behält gültige Vorschläge bei doppelten Vorzeichen und lässt einzelne nicht darstellbare Schreibweisen aus.

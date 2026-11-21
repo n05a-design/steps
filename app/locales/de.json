@@ -70,6 +70,8 @@
   "voice.lab.style": "Verglichener Stil: {style}",
   "voice.lab.current": "Aktueller Projektstil: {style}",
   "voice.lab.disclaimer": "Die Stile verwenden unterschiedliche Bedingungen; Bewegungswerte beschreiben sie, sie bilden keine allgemeingültige Rangfolge.",
+  "voice.lab.profile.power": "Power-Voicings verwenden Grundton und reine Quinte sowie einen notierten Bass. Akkorde ohne reine Quinte behalten die gewählten Akkordtöne.",
+  "voice.lab.profile.quartal": "Quartale Voicings bevorzugen reine Quarten zwischen benachbarten Stimmen aus den gewählten Akkordtönen.",
   "voice.lab.total": "Kumulierte absolute MIDI-Notenbewegung: {movement} Halbtöne.",
   "voice.lab.transition": "{from_chord} → {to_chord}: {distance} Halbtöne; {warnings} erkannte Warnung(en).",
   "voice.lab.register": "MIDI-Tonumfang: {low}–{high}.",

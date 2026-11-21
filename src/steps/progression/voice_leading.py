@@ -17,6 +17,7 @@ from ..theory.voice_leading import (
     VoiceLeadingEvaluation,
     VoiceLeadingStyle,
     VoiceLeadingViolation,
+    _resolve_style,
     analyze_contrapuntal_motions,
     classify_voice_motion,
     detect_parallel_fifths_octaves,
@@ -69,8 +70,10 @@ def optimize_smooth_voice_leading(
     bass_pc: Optional[int] = None,
     style: VoiceLeadingStyle = VoiceLeadingStyle.JAZZ_POP
 ) -> list[int]:
-    """Minimize L1 movement within one octave per voice and MIDI range.
+    """Optimize within one octave per voice and MIDI range.
 
+    The quartal profile maximizes adjacent perfect fourths before minimizing
+    L1 movement. Other profiles minimize L1 movement.
     Returns strictly ascending voices covering all target pitch classes.
     Raises VoiceLeadingError when the requested constraints cannot be met.
     """
@@ -97,24 +100,28 @@ def optimize_smooth_voice_leading(
         ]
         for index, center in enumerate(source_voicing)
     ]
+    resolved_style = _resolve_style(style)
+    quartal = resolved_style == VoiceLeadingStyle.QUARTAL_JAZZ
     best: tuple[int, ...] | None = None
-    best_distance = float("inf")
+    best_cost = (float("inf"), float("inf"))
 
-    # Prune partial assignments that already cross voices or exceed the best cost.
-    def search(notes: tuple[int, ...], remaining: set[int], distance: int) -> None:
-        nonlocal best, best_distance
+    # Both cost components are nondecreasing as voices are placed.
+    def search(notes: tuple[int, ...], remaining: set[int], cost: tuple[int, int]) -> None:
+        nonlocal best, best_cost
         index = len(notes)
-        if distance >= best_distance or len(remaining) > len(candidates) - index:
+        if cost >= best_cost or len(remaining) > len(candidates) - index:
             return
         if index == len(candidates):
-            if not detect_parallel_fifths_octaves(source_voicing, list(notes), style):
-                best, best_distance = notes, distance
+            if not detect_parallel_fifths_octaves(source_voicing, list(notes), resolved_style):
+                best, best_cost = notes, cost
             return
         for note in candidates[index]:
             if not notes or note > notes[-1]:
-                search(notes + (note,), remaining - {note % 12}, distance + abs(note - source_voicing[index]))
+                non_fourths = cost[0] + int(quartal and bool(notes) and note - notes[-1] != 5)
+                distance = cost[1] + abs(note - source_voicing[index])
+                search(notes + (note,), remaining - {note % 12}, (non_fourths, distance))
 
-    search((), target, 0)
+    search((), target, (0, 0))
     if best is None:
         raise VoiceLeadingError("No voicing satisfies the constraints within one octave per voice.")
     return list(best)
