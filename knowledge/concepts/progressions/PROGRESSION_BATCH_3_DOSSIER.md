@@ -84,7 +84,7 @@
     $$\{H, F\} \equiv \{C\flat, F\}$$
   * Durch den Austausch von $\text{G}^7$ gegen $\text{D}\flat^7$ entsteht im Bass ein lückenloser chromatischer Abstieg:
     $$D \xrightarrow{-1} D\flat \xrightarrow{-1} C$$
-  * Gleichzeitig lösen sich alle Dissonanzen halbtonweise nach innen in die Terz und Quinte von $\text{C}^{\text{maj}7}$ auf ($D\flat \to C$, $F \to E$, $A\flat \to G$, $C\flat/H \to H$).
+  * Mögliche Halbtonschritte sind $D\flat \to C$, $F \to E$ und $A\flat \to G$. $C\flat$ kann als $H$ enharmonisch auf derselben Tonhöhe liegen bleiben.
 
 ---
 

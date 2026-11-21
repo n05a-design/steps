@@ -82,10 +82,10 @@
   * $\text{D}\flat^{7(\sharp 11)}$ (MIDI `[49, 53, 55, 56, 59]` / $D\flat - F - G - A\flat - C\flat[H]$)
   * $\text{C}^{\text{maj}9}$ (MIDI `[48, 52, 55, 59, 62]` / $C - E - G - H - D$)
 * **Harmonischer Motor (Pease 2003 / Levine 1995):**
-  * **Lydisch Dominant ($\flat\text{II}^{7(\sharp 11)}$):** Die übermäßige Undezime ($\sharp 11$) über $D\flat$ ist $G$ ($49 + 6 = 55$).
-  * **Tonic-Antizipation:** Das $G$ ist zugleich die Quinte der Zieltonika $C$. Dadurch fungiert die Alteration nicht als klangliche Reibung, sondern als harmonische Antizipation der Zieltonika!
+  * **Lydisch Dominant ($\flat\text{II}^{7(\sharp 11)}$):** Die übermäßige Undezime ($\sharp 11$) über $D\flat$ ist $G$. Von D♭3 (MIDI 49) nach G4 (MIDI 67) sind es 18 Halbtöne; ihre Tonklassen liegen einen Tritonus auseinander.
+  * **Tonic-Antizipation:** Das $G$ ist zugleich die Quinte der Zieltonika $C$. Ein liegenbleibendes G kann die Zieltonika vorwegnehmen und bildet über D♭ zugleich einen Tritonus.
   * **Paralleler Halbton-Bass:** Der Bass gleitet chromatisch abwärts: $D \xrightarrow{-1} D\flat \xrightarrow{-1} C$.
-  * **Upper-Structure-Stimmführung:** Die None $E$ in $\text{Dm}^9$ steigt leittönig zur $\sharp 11$ ($G$) in $\text{D}\flat^{7(\sharp 11)}$ auf und führt zur None $D$ in $\text{C}^{\text{maj}9}$ zurück.
+  * **Mögliche Oberstimme.** $E \to G \to D$ verbindet die beiden Nonen über die erhöhte Undezime mit Sprüngen. Alternativ kann $G$ von der Tritonussubstitution zur Tonika liegen bleiben.
 
 ---
 

@@ -79,4 +79,7 @@ def format_harmonic_degree(
         and any(tone in following.theoretical_intervals for tone in (3, 4))
     ):
         return f"V{suffix}{figure}/{_degree_label(following, key, is_minor)}"
+    if chord.quality in {"7", "9"} and degree in ({"III", "VI"} if is_minor else {"I", "IV"}):
+        # The corresponding bare numeral uses a major seventh in the resolver.
+        suffix = "dom" + suffix
     return degree + suffix + figure

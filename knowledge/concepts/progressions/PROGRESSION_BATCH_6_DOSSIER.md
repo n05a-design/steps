@@ -17,7 +17,7 @@
 | `PROG-023` | Liquid D&B Sub-Pulse Cadence | `i^7 - bVI^maj7 - bVII - i` | `Fm7 - Dbmaj7 - Eb - Fm` | Äolische Sub-Bass-Stufenkadenz im UK Bass & Drum'n'Bass | Butterfield (2010) |
 | `PROG-024` | Bossa Nova Applied Dominant | `I^maj7 - V^7/V - ii^7 - V^7 - I^maj7` | `Cmaj7 - D7 - Dm7 - G7 - Cmaj7` | Doppeldominante mit chromatischem Terzabstieg $F\sharp \to F \to E$ | Mauleón (1993) |
 | `PROG-025` | Afro-Cuban Minor Ostinato Vamp | `i - iv - V^7 - iv` | `Cm - Fm - G7 - Fm` | Montuno-Zyklus über Clave mit Subdominant-Rebound | Mauleón (1993), Peñalosa (2009) |
-| `PROG-026` | Secondary Dominant Chromatic Bassline | `I - V7(6/5)/V - ii6 - I6 - V7(4/3) - I` | `G - A7/C# - Am/C - G/B - D7/A - G` | Chromatisch absteigender Bass mit Ziffernbass-Umkehrungen | Kostka (2013), Aldwell (1989) |
+| `PROG-026` | Secondary Dominant Chromatic Bassline | `I - V7(6/5)/V - ii6 - I6 - V7(4/3) - I` | `G - A7/C# - Am/C - G/B - D7/A - G` | Absteigender Bassabschnitt nach einem Tritonus mit Ziffernbass-Umkehrungen | Kostka (2013), Aldwell (1989) |
 | `PROG-028` | Circle of Fifths Soul Cycle | `i^9 - iv^9 - VII^9 - III^maj9` | `Em9 - Am9 - D9 - Gmaj9` | Quintfallkette mit Nonenakkorden von e-Moll zum Akkord der Durparallele G-Dur | Mulholland (2013), Levine (1995) |
 
 ---
@@ -54,7 +54,7 @@
   * $\text{i}^7 - \flat\text{VI}^{\text{maj}7} - \flat\text{VII} - \text{i}$
   * Stufenakkorde: $\text{Fm}^7 - \text{D}\flat^{\text{maj}7} - \text{E}\flat - \text{Fm}$
 * **Harmonischer Motor (Butterfield 2010):**
-  * **Äolischer Stufenanstieg:** Charakteristischer modaler Halbton-Ganzton-Schritt im Bass: $D\flat \to E\flat \to F$.
+  * **Äolischer Stufenanstieg:** Zwei modale Ganztonschritte im Bass: $D\flat \to E\flat \to F$.
   * **Vermeidung klassischer Dominanten:** Die Kadenz verzichtet vollständig auf die leittönige Dominante $\text{V}^7$ ($C^7$) und schließt stattdessen über den modalen Ganztonschritt der Subtonika $\flat\text{VII} \to \text{i}$.
   * **Sub-Bass-Fundament:** Tiefe Synthesizer-Sinus-Bässe tragen die Grundtöne, während im Mittellagenbereich üppige Pad- und Rhodes-Voicings liegen.
 
@@ -91,10 +91,10 @@
   * $\text{I} - \text{V}^{6/5}/\text{V} - \text{ii}^6 - \text{I}^6 - \text{V}^{4/3} - \text{I}$
   * Akkorde mit Bass: $\text{G} - \text{A}^7/\text{C}\sharp - \text{Am}/\text{C} - \text{G}/\text{B} - \text{D}^7/\text{A} - \text{G}$
 * **Harmonischer Motor (Kostka 2013 / Aldwell 1989):**
-  * **Strenger Passacaglia-Chromatik-Bass:** Der Bass vollzieht einen geschlossenen Abstieg:
+  * **Bassfolge.** Auf den Tritonus G–C♯ folgt die absteigende Linie C♯–C–H–A–G:
     $$G \to C\sharp \to C \to H \to A \to G$$
-  * **Ziffernbass-Genauigkeit:** Die Umkehrungen ($6/5$, $6$, $4/3$) gewährleisten eine lückenlose Gegenbewegung der Oberstimmen und verhindern verdeckte oder offene Parallelen.
-  * **Klassischer Ursprung:** Grundlegend für Barockarien (Dido's Lament), Bach-Choräle und klassische Sonatensätze.
+  * **Ziffernbass und Stimmführung.** Die Umkehrungen bestimmen den Basston. Ob Quinten- oder Oktavparallelen auftreten, hängt von den konkreten Voicings ab.
+  * **Stilbezug.** Der historische Bezug dieser konkreten Folge zu Passacaglia, Chorälen und Sonatensätzen ist noch fachlich zu prüfen.
 
 ---
 

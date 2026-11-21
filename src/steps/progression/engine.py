@@ -357,7 +357,7 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
         'voice_leading_features': [
             'Tonic prolongation via descending third C -> A',
             'Predominant preparation via F (IV) moving to dominant G (V)',
-            'Stepwise bass motion F -> G -> C on cadence resolution',
+            'The roots move F -> G by whole step and G -> C by fourth up or fifth down',
         ],
     },
     'PROG-005': {
@@ -475,8 +475,8 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
             'citations': ['Rameau (1722)', 'Salzer (1952)'],
         },
         'voice_leading_features': [
-            'Consistent diatonic fifth-motion: root intervals of -5 semitones (or +7)',
-            'Stepwise descending voice lines in alternating 3rds and 7ths',
+            'Falling-fifth root motion: -7 semitones or +5 by octave displacement',
+            'The catalog example uses triads; seventh-chord variants can add guide-tone lines',
             'Submediant vi prepares ii - V - I turnaround through uninterrupted quintal chain',
         ],
     },
@@ -493,7 +493,7 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
         'voice_leading_features': [
             'Chromatic descending bass D -> Db -> C',
             'Tritone retention: F and B/Cb active in both G7 and Db7',
-            'Half-step inward resolutions: Db -> C, F -> E, Ab -> G, Cb -> B',
+            'Possible semitone moves Db -> C, F -> E and Ab -> G, with Cb respelled as B at the same pitch',
         ],
     },
     'PROG-014': {
@@ -521,7 +521,7 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
         },
         'voice_leading_features': [
             'Parallel seventh voicings in smooth step motion',
-            'Stepwise guide-tone descent F -> E -> D -> C across the loop',
+            'One available upper line is E -> F -> E -> E',
             'Falling fifth motion iii7 -> vi (Em7 -> Am)',
         ],
     },
@@ -596,7 +596,7 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
             'citations': ['Levine (1995)', 'Pease (2003)'],
         },
         'voice_leading_features': [
-            'Stepwise extended upper-structure voice leading: 9th to #11 to 9th (E -> G -> D)',
+            'The 9th, #11 and 9th can form a line with leaps: E -> G -> D',
             'Common-tone tonic anticipation: G natural (#11 of Db7) held into Cmaj9 (5th)',
             'Half-step chromatic bass descent D -> Db -> C',
         ],
@@ -680,16 +680,16 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
     'PROG-026': {
         'family': 'CHROMATIC_BASS_SECONDARY_DOMINANT',
         'functional_syntax': 'I - V7(6/5)/V - ii6 - I6 - V7(4/3) - I',
-        'harmonic_drive': 'Classical/Baroque passacaglia with stepwise chromatic descending bassline and secondary dominant inversions',
+        'harmonic_drive': 'Secondary dominant in first inversion, followed by chromatic and diatonic bass steps',
         'tonal_ambiguity': {
             'tonic': 'G',
             'bassline_descent': 'G -> C# -> C -> B -> A -> G',
             'citations': ['Kostka (2013)', 'Aldwell/Schachter (1989)'],
         },
         'voice_leading_features': [
-            'Strict chromatic bassline with first-inversion chords (6 and 6/5 figures)',
-            'V7(6/5)/V (A7/C#) introduces chromatic tritone bass step leading into ii6 (Am/C)',
-            'Stepwise contrapuntal voice movement avoiding parallel fifths and octaves',
+            'An opening G-to-C# tritone precedes the descending line C# -> C -> B -> A -> G',
+            'The bass of V7(6/5)/V (A7/C#) moves down a semitone to ii6 (Am/C)',
+            'Parallel fifths and octaves depend on the chosen voicings',
         ],
     },
     'PROG-027': {

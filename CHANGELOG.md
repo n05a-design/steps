@@ -2,6 +2,7 @@
 
 ## Unreleased – App und Python-Kern
 
+- Die Musikprüfung stellt reproduzierbare Zufallsfragen zu acht Bereichen. Septakkord-Umkehrungen und eindeutige Dominantstufen wurden korrigiert.
 - Roadmap, Implementierungsstand, 1.0-Zielbild und Aufgabenregister beschreiben den Stand nach PR #265 mit Etappen bis 1.0. Eine Prüfung relativer Markdown-Links läuft in der CI. Issue-Vorlagen verwenden eine versionierte Label-Taxonomie.
 
 - Das MIDI-Exportstudio zeigt die tatsächlich vorbereiteten Noten und hält den Export an, wenn sich das Projekt während der Dateiauswahl ändert.
