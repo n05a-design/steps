@@ -172,6 +172,16 @@ Ctrl+T auf Windows und Linux zur Verfügung. Die
 [ProgressionSession](../src/steps/progression/session.py) kapselt beide
 Änderungen als Funktionen für den Controller.
 
+Das Stimmführungslabor stellt den ausgewählten Übergang in beiden
+Vorschauen zuerst dar. Es zeigt die tiefste MIDI-Note beider Akkorde,
+die Bewegung je Stimme und die bis zum Ende des Übergangs summierte
+Bewegung. Die Summe erscheint bei lückenloser Zuordnung ab dem ersten
+Akkord. Bei unterschiedlicher Stimmenzahl nennt die Gesamtübersicht,
+wie viele Übergänge in die Summe eingehen. Die Piano-Rolls umrahmen den
+Folgeakkord gestrichelt, soweit er im sichtbaren Tickbereich liegt.
+Die Analyse folgt der Progressionsliste. Die Piano-Rolls verwenden die
+tatsächlichen Projektticks, auch bei Lücken und Überlappungen.
+
 Die Anfänger-Voicings berechnen die beste Folge iterativ und verwenden
 bereits berechnete Teilpfade. Bewegungsmaß und Auswahl bei Gleichstand
 folgen derselben Regel wie zuvor.

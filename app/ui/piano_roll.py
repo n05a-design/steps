@@ -88,6 +88,14 @@ class PianoRoll(tk.Canvas):
                     x(start), top, x(end), bottom, fill=colors.bg_active,
                     outline=colors.border_focus, tags=("selected-event",),
                 )
+            if selected_event + 1 < len(timings):
+                following = viewport.clip_event(*timings[selected_event + 1])
+                if following is not None:
+                    start, end = following
+                    self.create_rectangle(
+                        x(start), top, x(end), bottom, dash=(4, 3),
+                        outline=colors.border_focus, tags=("following-event",),
+                    )
 
         for note in (low, *range((low // 12 + 1) * 12, high, 12), high):
             self.create_line(left, y(note), right, y(note), fill=colors.border)
