@@ -1,6 +1,7 @@
 name: Knowledge gap
 description: Track a source, claim, or music-theory evidence gap without treating it as approved knowledge.
 title: "Knowledge gap: "
+labels: ['area: knowledge']
 body:
   - type: textarea
     id: gap

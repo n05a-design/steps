@@ -2,12 +2,12 @@
 
 Dieser Leitfaden beschreibt den Code im selben Checkout. Der Einstieg für
 Entwicklung ist die [Root-README](../README.md). Die [API-Referenz](theory/API.md)
-wird aus den exportierten Python-Objekten erzeugt. Der am 20.11.2026 geprüfte
+wird aus den exportierten Python-Objekten erzeugt. Der am 21.11.2026 geprüfte
 `main`-Stand ist Commit
-[`e2faf276adf6d65caf81fe28f38521a176e0c283`](https://github.com/n05a-design/steps/commit/e2faf276adf6d65caf81fe28f38521a176e0c283);
+[`3a5db64b6131806c432b7b38dca60680c5a57d9b`](https://github.com/n05a-design/steps/commit/3a5db64b6131806c432b7b38dca60680c5a57d9b);
 der letzte Implementierungskommit ist
-[`e2faf276adf6d65caf81fe28f38521a176e0c283`](https://github.com/n05a-design/steps/commit/e2faf276adf6d65caf81fe28f38521a176e0c283),
-PR [#220](https://github.com/n05a-design/steps/pull/220).
+[`3a5db64b6131806c432b7b38dca60680c5a57d9b`](https://github.com/n05a-design/steps/commit/3a5db64b6131806c432b7b38dca60680c5a57d9b),
+PR [#265](https://github.com/n05a-design/steps/pull/265).
 Die historische Produkt-Baseline bleibt [`b67294a5161b42d281be4afdea5bb74b7385a786`](https://github.com/n05a-design/steps/commit/b67294a5161b42d281be4afdea5bb74b7385a786).
 PRs #158–#163 ergänzen Save/Open, Lokalisierung,
 Akkordbearbeitung, Neuordnung, Undo/Redo sowie Tonart-/Dur-Moll-/Tempo-Kontext.
@@ -31,9 +31,14 @@ ROOTLESS-Voicings, 95%-Notenlänge und SMF Format 0. PR #206 prüft zehn
 SHA-256-Goldenexporte zusätzlich mit dem unabhängigen `SMFParser`. PR #220
 vollendet den Desktop-Export- und Reviewpfad, einschließlich lokalisiertem
 Exportstudio, Fehlerbehandlung und Controller-/Session-Anbindung.
-Bei Commit `e2faf276adf6d65caf81fe28f38521a176e0c283` bestehen 791
-automatisierte Tests; diese Zahl ist ein Testnachweis, keine Freigabe für
-native Plattformen, Übersetzung, Accessibility oder DAW-Abnahme.
+Bei Commit `e2faf276adf6d65caf81fe28f38521a176e0c283` bestanden 791
+automatisierte Tests. PRs #222–#265 erweitern Bedienung, Stimmführungslabor,
+Explorer, Bibliothek, MIDI-Export, Kuration und Release-Gates; die
+[Roadmap](roadmap/ROADMAP_AND_RESOURCE_PLAN.md#0-aktueller-stand-und-nächste-etappen-21112026)
+fasst sie nach Bereich zusammen. Bei Commit
+`3a5db64b6131806c432b7b38dca60680c5a57d9b` bestehen 875 automatisierte Tests.
+Diese Zahlen sind Testnachweise, keine Freigabe für native Plattformen,
+Übersetzung, Accessibility oder DAW-Abnahme.
 Gespeichert und exportiert
 werden weiterhin absolute Tickwerte. Implementierung, Test, fachliche Abnahme
 und Veröffentlichung sind getrennte Statusangaben.
@@ -72,6 +77,10 @@ und plattformgeprüftes Desktop-Installationspaket ist damit nicht belegt.
 | Internationalisierung | [Internationalisierungsvertrag](engineering/INTERNATIONALIZATION.md), [`app.i18n`](../app/i18n.py) und [Kataloge](../app/locales/) | PR #159 ergänzt `system`/`en`/`de`, System-Fallback, persistierte Benutzereinstellung, Laufzeitumschaltung im Hauptfenster sowie `--language` für die CLI. Katalogparität, Platzhalter, Persistenz, UI-Wechsel und Notationsunabhängigkeit sind automatisiert getestet; unabhängige Übersetzungs-, native Plattform- und Accessibility-Abnahme bleibt offen. Die UI-Sprache ändert `INT`/`DE` nicht. Siehe [#154](https://github.com/n05a-design/steps/issues/154). |
 
 Der Next-Chord-Explorer zeigt Relationsart, theoretischen Rahmen und Begründung.
+Die konkreten Modellbegründungen stehen in der UI-Sprache. Die Akkordsymbole
+stammen aus der Projektnotation. Die API behält die bisherige Erklärung und
+ergänzt den Begründungsschlüssel und das Ausgangssymbol. Fundstellen und
+redaktionell geprüfte Lerntexte behalten ihre Originalsprache.
 Bei hinterlegter Fundstelle prüft er das Produktquellenregister und zeigt Titel,
 Abschnitt oder Beispiel und URL. Die Fundstelle erklärt das theoretische
 Konzept. Rechenregeln und Arrangementideen erscheinen mit ihrem eigenen Status.

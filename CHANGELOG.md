@@ -3,6 +3,7 @@
 ## Unreleased – App und Python-Kern
 
 - Die Musikprüfung stellt reproduzierbare Zufallsfragen zu acht Bereichen. Septakkord-Umkehrungen und eindeutige Dominantstufen wurden korrigiert.
+- Roadmap, Implementierungsstand, 1.0-Zielbild und Aufgabenregister beschreiben den Stand nach PR #265 mit Etappen bis 1.0. Eine Prüfung relativer Markdown-Links läuft in der CI. Issue-Vorlagen verwenden eine versionierte Label-Taxonomie.
 
 - Das MIDI-Exportstudio zeigt die tatsächlich vorbereiteten Noten und hält den Export an, wenn sich das Projekt während der Dateiauswahl ändert.
 
@@ -16,6 +17,7 @@
 - Der Next Chord Explorer behält gültige Vorschläge bei doppelten Vorzeichen und lässt einzelne nicht darstellbare Schreibweisen aus.
 - Der Akkordexplorer zeigt Literaturverweise mit Fundstelle und kennzeichnet Rechenregeln und Arrangementideen. `source_id` ist in der Python-API optional.
 - Das Quellenmenü des Akkordexplorers öffnet hinterlegte Literaturhinweise für die Auswahl und den angehefteten Vergleich.
+- Der Akkordexplorer zeigt die konkreten Modellbegründungen auf Deutsch oder Englisch mit der Akkordschreibweise des Projekts.
 
 - Die MIDI-Akkordspur bleibt bei enger Lage innerhalb einer Oktave. Drop-2 erhält die gewünschte Stimmverteilung und wird bei unpassender Lage im Exportstudio deaktiviert.
 

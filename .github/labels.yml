@@ -1,0 +1,81 @@
+# Versioned label taxonomy for the STEPS repository.
+# A label listed here is created on GitHub by the repository owner or an
+# authorized maintainer; this file does not create labels by itself.
+# Release-note categories in release.yml depend on the "release" group.
+
+release:
+  - name: feature
+    color: "a2eeef"
+    description: "New user-facing capability"
+  - name: enhancement
+    color: "a2eeef"
+    description: "New feature or request"
+  - name: improvement
+    color: "84b6eb"
+    description: "Better behavior of an existing capability"
+  - name: bug
+    color: "d73a4a"
+    description: "Something isn't working"
+  - name: documentation
+    color: "0075ca"
+    description: "Improvements or additions to documentation"
+  - name: localization
+    color: "c5def5"
+    description: "English/German UI, CLI or content translation"
+  - name: security
+    color: "b60205"
+    description: "Security-relevant change; report vulnerabilities privately"
+  - name: dependencies
+    color: "0366d6"
+    description: "Pull requests that update a dependency file"
+  - name: maintenance
+    color: "bfdadc"
+    description: "Tooling, CI and housekeeping"
+  - name: skip-changelog
+    color: "ededed"
+    description: "Exclude from generated release notes"
+
+area:
+  - name: "area: desktop"
+    color: "5319e7"
+    description: "Tk desktop application and workflows"
+  - name: "area: theory"
+    color: "5319e7"
+    description: "Pitch, chord, progression and voice-leading core"
+  - name: "area: midi"
+    color: "5319e7"
+    description: "SMF export and DAW interoperability"
+  - name: "area: knowledge"
+    color: "5319e7"
+    description: "Sources, claims, curation and learning content"
+  - name: "area: governance"
+    color: "5319e7"
+    description: "Repository truth, documentation, release and GitHub settings"
+  - name: "area: packaging"
+    color: "5319e7"
+    description: "Wheel, app bundle and installer delivery"
+
+kind:
+  - name: epic
+    color: "3e4b9e"
+    description: "Tracks a multi-PR workstream"
+  - name: music-theory
+    color: "fbca04"
+    description: "Musical claim or behavior that needs domain review"
+  - name: research
+    color: "fef2c0"
+    description: "Source-aware, bounded research task"
+  - name: technical-debt
+    color: "d4c5f9"
+    description: "Maintainability or compatibility work"
+  - name: accessibility
+    color: "f143ab"
+    description: "Barrier affecting people with disabilities"
+
+state:
+  - name: needs-human-review
+    color: "e99695"
+    description: "Blocked on independent human or domain review"
+  - name: owner-action
+    color: "e99695"
+    description: "Requires a repository owner decision or GitHub setting"

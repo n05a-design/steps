@@ -216,7 +216,17 @@ class NextChordPanel:
     def _format_candidate(self, recommendation: ChordRecommendation) -> str:
         t = self._i18n.translate
         relation = t(f"next_chord.relation.{recommendation.relation_type}")
-        reason = t(f"next_chord.reason.{recommendation.relation_type}")
+        if recommendation.reason_key is not None:
+            reason = t(
+                f"next_chord.detail.{recommendation.reason_key}",
+                current=recommendation.source_symbol, candidate=recommendation.candidate_symbol,
+            )
+        else:
+            summary = t(f"next_chord.reason.{recommendation.relation_type}")
+            reason = f"{summary}\n\n{t('next_chord.original')}\n{recommendation.explanation}"
+        framework = recommendation.framework
+        if framework == "Zwischendominanten":
+            framework = t("next_chord.framework.applied_dominants")
         evidence = t(f"next_chord.evidence.{recommendation.evidence_kind}")
         if recommendation.evidence_kind == "LITERATURE_REFERENCE":
             citation = self._citation_for(recommendation)
@@ -226,9 +236,8 @@ class NextChordPanel:
                 evidence = f"{evidence}\n{citation.title}\n{citation.locator}\n{citation.url}"
         return (
             f"{recommendation.candidate_symbol} — {relation}\n{reason}\n"
-            f"{t('next_chord.framework')}: {recommendation.framework}\n"
+            f"{t('next_chord.framework')}: {framework}\n"
             f"{evidence}\n"
-            f"\n{t('next_chord.original')}\n{recommendation.explanation}"
         )
 
     @staticmethod

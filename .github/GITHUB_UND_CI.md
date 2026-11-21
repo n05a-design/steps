@@ -10,6 +10,7 @@ file does not by itself enable the corresponding GitHub setting.
 | [Issue templates](ISSUE_TEMPLATE/README.md) | English issue forms; submissions in English or German are welcome. |
 | [Dependabot](dependabot.yml) | Weekly package and GitHub Actions update proposals; no automatic merge. |
 | [Release notes configuration](release.yml) | Suggested changelog categories; matching GitHub labels must exist. |
+| [Label taxonomy](labels.yml) | Versioned release, area, kind and state labels used by issue templates and release notes. |
 | [CODEOWNERS](CODEOWNERS) | Review responsibilities for the publication chain. |
 | [Continuous maintenance](../docs/governance/CONTINUOUS_MAINTENANCE.md) | PR, documentation, localization, knowledge, and release contract. |
 | [Community/public presence](../docs/community/README.md) | Observed Discussions, Wiki, Projects, and funding state; drafts and owner actions. |
@@ -34,9 +35,12 @@ Projects v2 board was found in the 2026-11-18 assessment.
 
 ## Owner actions not completed by this PR
 
-- Create the release-note labels listed in [release.yml](release.yml), if the
-  owner wants those categories in generated release notes.
-- Confirm/update branch rules, required checks, reviewers, and security settings.
+- Keep the GitHub labels in sync with [labels.yml](labels.yml); the
+  2026-11-21 synchronization is tracked as OA-0041 in the
+  [work register](../docs/operations/OFFENE_ARBEITSAUFFORDERUNGEN.md).
+- Confirm/update branch rules, required checks, reviewers, and security
+  settings. On 2026-11-21 `main` had no branch protection and the only active
+  ruleset enabled Copilot code review (OA-0042).
 - Review the observed Discussion categories and decide whether to add the
   optional category proposal in `docs/community/README.md`.
 - Initialize the separate Wiki repository before any publication workflow is
