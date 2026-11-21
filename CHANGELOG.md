@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Die Musikprüfung stellt reproduzierbare Zufallsfragen zu acht Bereichen. Septakkord-Umkehrungen und eindeutige Dominantstufen wurden korrigiert.
+
 - Das MIDI-Exportstudio zeigt die tatsächlich vorbereiteten Noten und hält den Export an, wenn sich das Projekt während der Dateiauswahl ändert.
 
 - Der Progressionskatalog bezeichnet die Stufen von `Em9–Am9–D9–Gmaj9` durchgehend relativ zu natürlichem e-Moll.

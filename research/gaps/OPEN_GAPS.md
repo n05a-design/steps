@@ -1,5 +1,14 @@
 # Offene Evidenz und historische Bestandsaufnahme
 
+## Generated music questions and remaining review
+
+The [randomized audit](../../docs/audit/2026-11-21/RANDOMIZED_MUSIC.md)
+documents checked calculations and peer findings. Root inference for
+ambiguous pitch-class sets depends on chord spelling and harmonic context.
+Style recommendations, historical attributions and listening remain subject
+to the existing musical release reviews. Jazz swing specifically at 130 BPM
+still needs evidence for that tempo.
+
 ## Curation lifecycle audit
 
 The [lifecycle audit](../../docs/audit/2026-11-21/CURATION_LIFECYCLE.md)

@@ -141,6 +141,9 @@ jobs:
       - name: Check release and version consistency
         run: python -B scripts/check_release_consistency.py --check
 
+      - name: Check randomized musical questions against independent oracles
+        run: python -B scripts/audit_randomized_music.py --trials 128
+
       - name: Run STEPS Core Test Suite
         run: python -B -m unittest discover -s tests -p "test_*.py" -v
 

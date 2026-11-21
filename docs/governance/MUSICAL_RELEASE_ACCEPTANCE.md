@@ -26,6 +26,19 @@ The enforced command exits with status 1 when any selected area is blocked. It r
 
 Use the [Musical release acceptance workflow](../../.github/workflows/musical-release.yml) on STEPS `main`. A release workflow can call it and require its success before preparing or publishing selected assets. For combined products, use `area: all`. The workflow itself has read-only permissions and stores a report. Existing manual GitHub releases and tag creation stay under repository owner control. Enforcing this workflow for those channels also requires configuring the publication workflow and repository permissions.
 
+## Generated musical questions
+
+```sh
+python -B scripts/audit_randomized_music.py --seed 20261121 --trials 128 --json-out /tmp/steps-music-audit.json
+```
+
+The Python CI suite runs 128 generated questions per area with a fixed seed.
+The theory release gate also executes the six theory probes. Repeat a
+failure using its seed and area. The JSON report records the exact inputs,
+expected and observed results, Python version and checked revision. For an
+additional sample, choose a different seed. The [audit notes](../audit/2026-11-21/RANDOMIZED_MUSIC.md)
+describe the independent formulas, covered input families and review limits.
+
 ## Record independent musical evidence
 
 1. Open the exact revision to be released and generate a checklist with `python -B scripts/verify_musical_release.py --area AREA --template`. Use the corresponding [benchmark prompts and rubrics](../../knowledge/benchmark/cases.json).

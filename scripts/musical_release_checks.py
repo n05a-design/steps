@@ -4,12 +4,22 @@ import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
+from scripts.audit_randomized_music import DEFAULT_SEED, run as randomized_music
 from scripts.evaluate_knowledge_adapter import run as evaluate_knowledge
 from src.steps.knowledge import KnowledgeAdapter
 from src.steps.midi import SMFParser
 from src.steps.progression import ProgressionSession, list_progressions
 from src.steps.progression.reviewed import PublicationError, resolve_source_citation
 from src.steps.theory import MusicTheoryError, parse_chord
+
+
+def randomized_theory():
+    report = randomized_music(DEFAULT_SEED, 128, (
+        "chords", "inversions", "degrees", "degree-roundtrip", "transposition", "voice-leading",
+    ))
+    return [f"Seed {DEFAULT_SEED}, {case['area']} trial {case['trial']}: "
+            f"{case['question']} expected {case['expected']}, observed {case['actual']}"
+            for case in report["failures"]]
 
 
 def beginner_voices():
