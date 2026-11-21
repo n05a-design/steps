@@ -173,6 +173,7 @@ Stimmen sind unterschiedliche Messgrößen. Historische Originalhinweise aus
 dem Pop-Beispiel behalten ihre Kennzeichnung.
 
 
+Der Inspektor zeigt die harmonische Stufe des ausgewählten Akkordereignisses.
 Die Stufenanalyse leitet die Stufe aus der Schreibweise des Grundtons ab.
 Sie bestimmt Groß-/Kleinschreibung und Suffix aus der Akkordqualität, zeigt
 gängige Umkehrungen mit Generalbassziffern und benennt übrige Slash-Bässe
