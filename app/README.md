@@ -72,6 +72,8 @@ Das Menü **Werkzeuge** öffnet den Next Chord Explorer, das Stimmführungslabor
 
 Im Next Chord Explorer hält **Auswahl vergleichen** den aktuellen Kandidaten fest. Wähle mit den Pfeiltasten einen zweiten Kandidaten. Die schreibgeschützte Vorschau zeigt dann beide Begründungen und Quellen. **Vergleich aufheben** kehrt zur Einzelvorschau zurück. Enter übernimmt den gerade ausgewählten Akkord.
 
+Der Explorer kennzeichnet reine Grundtonbewegungen und mögliche Auflösungen getrennt. In Dur und Moll stehen die passenden Jazz-ii–V–I-Varianten zur Auswahl. Die Stufenanalyse berücksichtigt Akkordqualität, Vorzeichen und Umkehrung.
+
 Der Harmonie-Inspektor listet Skalen auf dem Akkordgrundton, die alle Akkordtöne und einen notierten Slash-Bass enthalten. Die Liste ist ein Vergleich der Tonvorräte. Die Anfängeransicht zeigt, welche Stimmen der rechten Hand sich im gewählten Voicing wie weit bewegen.
 
 Vor der Dateiauswahl zeigt das MIDI-Exportstudio, ob sich mit dem gewählten Voicing und der gewählten Notenlänge Noteneinsätze derselben Tonhöhe auf demselben Kanal überlappen. Bei Überlappungen erscheinen deren Anzahl und der erste absolute Tick.

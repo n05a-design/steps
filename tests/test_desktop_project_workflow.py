@@ -604,7 +604,7 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
                     self.assertIn(expected, details)
                     self.assertIn(recommendations[index].source_id, details)
                     self.assertIn(
-                        self.window.i18n.translate("next_chord.reason.VOICE_LEADING_NEAR"), details,
+                        self.window.i18n.translate("next_chord.reason.ROOT_MOTION"), details,
                     )
                     self.window.controller.set_context(key, True, 120)
                     panel.apply()

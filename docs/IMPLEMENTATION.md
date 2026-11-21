@@ -173,6 +173,14 @@ Stimmen sind unterschiedliche Messgrößen. Historische Originalhinweise aus
 dem Pop-Beispiel behalten ihre Kennzeichnung.
 
 
+Die Stufenanalyse leitet die Stufe aus der Schreibweise des Grundtons ab.
+Sie bestimmt Groß-/Kleinschreibung und Suffix aus der Akkordqualität, zeigt
+gängige Umkehrungen mit Generalbassziffern und benennt übrige Slash-Bässe
+direkt. Eine chromatische Dominante mit direkt folgendem passendem Ziel kann
+als angewandte Dominante erscheinen. Die Anzeige bildet eine mögliche
+harmonische Lesart ab. Mehrdeutigkeit, Phrasenabschluss und die gehörte Tonika
+erfordern weiteren musikalischen Kontext.
+
 Der Next Chord Explorer zeigt pro ausgewähltem Kandidaten die EN/DE-Beziehung,
 die Originalerklärung und deren Provenienz. Beim Öffnen liegt der Fokus auf
 dem ersten Vorschlag. Pfeiltasten wechseln die Vorschau, Enter oder
@@ -186,6 +194,10 @@ Beziehungen, Begründungen und Provenienzen in der Vorschau. Der Vergleich
 Ausgangsakkordwechsel verwirft ihn. Einfügen bleibt an die aktuelle
 Listenauswahl gebunden. Die Anwendung
 prüft bei identischem Akkordsymbol auch den konkret gewählten Vorschlag.
+Der Explorer unterscheidet einen berechneten Grundtonabstand von einer
+möglichen Auflösung. Stilbezogene Vorschläge prüfen die dafür benötigte
+Akkordqualität. Die Jazzfortsetzungen ii⁷–V⁷–Imaj7 und iiø⁷–V⁷–i⁷
+sind im passenden Dur-/Mollkontext wählbar.
 Die MIDI- und Projektformate folgen denselben Verträgen.
 
 Der bestehende Desktop-Einstieg ist mehr als ein theoretischer Architekturentwurf:
