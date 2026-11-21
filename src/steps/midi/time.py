@@ -43,7 +43,7 @@ class BarBeatPosition:
         """
         Formats position as standard DAW notation: Bar.Beat.Tick (e.g. '1.1.000' or '4.3.240').
         """
-        tick_in_beat = int(round(float(self.sub_beat * ppq)))
+        tick_in_beat = round(self.sub_beat * ppq)
         return f"{self.bar}.{self.beat}.{tick_in_beat:03d}"
 
 
@@ -161,12 +161,10 @@ class RationalMidiTime:
         """
         Converts a BarBeatPosition back to absolute MIDI ticks with exact rounding.
         """
-        bar_ticks = cls.ticks_per_bar(ppq, numerator, denominator)
         beat_ticks = cls.ticks_per_beat(ppq, denominator)
-
         total_fractional_beats = (pos.bar - 1) * numerator + (pos.beat - 1) + pos.sub_beat
         total_ticks = total_fractional_beats * beat_ticks
-        return int(round(float(total_ticks)))
+        return round(total_ticks)
 
     @staticmethod
     def convert_ppq(ticks: int, source_ppq: int, target_ppq: int) -> int:
@@ -208,7 +206,7 @@ class RationalMidiTime:
         last_boundary = 0
 
         for i in range(1, tuplet_count + 1):
-            next_boundary = int(round(float(step * i)))
+            next_boundary = round(step * i)
             dur = next_boundary - last_boundary
             result.append((last_boundary, dur))
             last_boundary = next_boundary
