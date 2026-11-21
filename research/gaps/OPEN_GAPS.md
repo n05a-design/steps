@@ -1,5 +1,12 @@
 # Offene Evidenz und historische Bestandsaufnahme
 
+## Curation lifecycle audit
+
+The [lifecycle audit](../../docs/audit/2026-11-21/CURATION_LIFECYCLE.md)
+records reproducible gaps in migration precedence, backup readiness and
+release revision binding on `d227d7f`. The report preserves the observed
+results and the open implementation work.
+
 ## Curation interfaces and review enforcement
 
 The [curation runbook](../../.agents/skills/steps-knowledge-curation/SKILL.md)
