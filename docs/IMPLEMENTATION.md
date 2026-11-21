@@ -77,6 +77,10 @@ und plattformgeprüftes Desktop-Installationspaket ist damit nicht belegt.
 | Internationalisierung | [Internationalisierungsvertrag](engineering/INTERNATIONALIZATION.md), [`app.i18n`](../app/i18n.py) und [Kataloge](../app/locales/) | PR #159 ergänzt `system`/`en`/`de`, System-Fallback, persistierte Benutzereinstellung, Laufzeitumschaltung im Hauptfenster sowie `--language` für die CLI. Katalogparität, Platzhalter, Persistenz, UI-Wechsel und Notationsunabhängigkeit sind automatisiert getestet; unabhängige Übersetzungs-, native Plattform- und Accessibility-Abnahme bleibt offen. Die UI-Sprache ändert `INT`/`DE` nicht. Siehe [#154](https://github.com/n05a-design/steps/issues/154). |
 
 Der Next-Chord-Explorer zeigt Relationsart, theoretischen Rahmen und Begründung.
+Die konkreten Modellbegründungen stehen in der UI-Sprache. Die Akkordsymbole
+stammen aus der Projektnotation. Die API behält die bisherige Erklärung und
+ergänzt den Begründungsschlüssel und das Ausgangssymbol. Fundstellen und
+redaktionell geprüfte Lerntexte behalten ihre Originalsprache.
 Bei hinterlegter Fundstelle prüft er das Produktquellenregister und zeigt Titel,
 Abschnitt oder Beispiel und URL. Die Fundstelle erklärt das theoretische
 Konzept. Rechenregeln und Arrangementideen erscheinen mit ihrem eigenen Status.

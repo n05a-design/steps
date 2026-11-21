@@ -602,14 +602,16 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
                 localized_relation = i18n.translate(f"next_chord.relation.{selected.relation_type}")
                 self.assertIn(localized_relation, candidates.get(1))
                 detail = window.detail_text
-                self.assertIn(i18n.translate("next_chord.original"), detail.get("1.0", tk.END))
+                self.assertNotIn(i18n.translate("next_chord.original"), detail.get("1.0", tk.END))
                 comparison = detail.get("1.0", tk.END)
                 self.assertIn(i18n.translate("next_chord.compare.reference"), comparison)
                 self.assertIn(i18n.translate("next_chord.compare.selected"), comparison)
-                self.assertIn(reference.explanation, comparison)
                 for item in (reference, selected):
                     self.assertIn(i18n.translate(f"next_chord.evidence.{item.evidence_kind}"), comparison)
-                self.assertIn(selected.explanation, detail.get("1.0", tk.END))
+                    self.assertIn(i18n.translate(
+                        f"next_chord.detail.{item.reason_key}",
+                        current=item.source_symbol, candidate=item.candidate_symbol,
+                    ), comparison)
                 self.assertEqual(detail.cget("state"), tk.DISABLED)
                 candidates.event_generate("<Shift-Tab>")
                 root.update()

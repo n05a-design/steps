@@ -55,6 +55,8 @@ class ChordRecommendation:
     source_id: str | None = None
     source_locator: str | None = None
     evidence_kind: Literal["CREATIVE_SUGGESTION", "MODEL_RULE", "LITERATURE_REFERENCE"] = "CREATIVE_SUGGESTION"
+    reason_key: str | None = None
+    source_symbol: str | None = None
 
 
 @dataclass(frozen=True)
@@ -591,7 +593,7 @@ class ProgressionSession:
         dominant = has_dominant_quality(curr_chord)
 
         def add(
-            candidate_symbol: str | None, *, relation_type, explanation: str, framework: str,
+            candidate_symbol: str | None, *, relation_type, reason_key: str, explanation: str, framework: str,
             reference: tuple[str, str] | None = None, model_rule: bool = False,
         ) -> None:
             if candidate_symbol is not None:
@@ -601,6 +603,7 @@ class ProgressionSession:
                 )
                 recommendations.append(ChordRecommendation(
                     candidate_symbol, relation_type, explanation, framework, source_id, locator, evidence_kind,
+                    reason_key=reason_key, source_symbol=curr_sym,
                 ))
 
         def written_target(root: NoteSpelling, steps: int, semitones: int) -> NoteSpelling | None:
@@ -624,6 +627,7 @@ class ProgressionSession:
             add(
                 candidate_symbol=res_sym,
                 relation_type="RESOLVES_TO" if dominant else "ROOT_MOTION",
+                reason_key="dominant_fifth" if dominant else "descending_fifth",
                 explanation=(
                     f"Mögliche Dominantauflösung von {curr_sym} nach {res_sym}; "
                     "die Grundtöne liegen eine fallende Quinte auseinander."
@@ -641,6 +645,7 @@ class ProgressionSession:
         add(
             candidate_symbol=sec_dom_sym,
             relation_type="DOMINANT_OF" if has_major_or_minor_triad else "ROOT_MOTION",
+            reason_key="above_fifth",
             explanation=f"Der Grundton von {sec_dom_sym} liegt eine reine Quinte über dem von {curr_sym}.",
             framework="Functional Harmony" if has_major_or_minor_triad else "Root Motion",
             model_rule=True,
@@ -652,6 +657,7 @@ class ProgressionSession:
             add(
                 candidate_symbol=bvii_sym,
                 relation_type="BORROWED_FROM",
+                reason_key="modal_subtonic",
                 explanation=f"Modal Interchange: Entlehnung der Subtonika {bvii_sym} aus dem parallelen Moll.",
                 framework="Modal Mixture",
             )
@@ -661,6 +667,7 @@ class ProgressionSession:
         add(
             candidate_symbol=near_sym,
             relation_type="ROOT_MOTION",
+            reason_key="whole_step",
             explanation=f"Der Grundton von {near_sym} liegt einen Ganzton über dem Grundton von {curr_sym}.",
             framework="Root Motion",
             model_rule=True,
@@ -674,6 +681,7 @@ class ProgressionSession:
                 add(
                     candidate_symbol=v_sym,
                     relation_type="RESOLVES_TO",
+                    reason_key="andalusian_step",
                     explanation=f"Andalusische Kadenz als mögliches Muster: Die Grundtöne von {curr_sym} und {v_sym} bilden einen absteigenden Halbtonschritt.",
                     framework="Andalusian Cadence / Phrygian Schema",
                 )
@@ -683,6 +691,7 @@ class ProgressionSession:
                     add(
                         candidate_symbol=altered_v,
                         relation_type="RESOLVES_TO",
+                        reason_key="minor_blues_altered_dominant",
                         explanation=f"Minor Jazz Blues Turnaround: Submediante {curr_sym} (VImaj7) kann mit einem Halbtonschritt der Grundtöne zur alterierten Dominante führen: {altered_v}.",
                         framework="Minor Jazz Blues Submediant Turnaround",
                     )
@@ -692,6 +701,7 @@ class ProgressionSession:
                 add(
                     candidate_symbol=bvi_sym,
                     relation_type="VOICE_LEADING_NEAR",
+                    reason_key="minor_blues_submediant",
                     explanation=f"Minor Jazz Blues Turnaround: Nach der Subdominante {curr_sym} (iv7) lässt sich die Submediante {bvi_sym} (VImaj7) ausprobieren.",
                     framework="Minor Jazz Blues Submediant Turnaround",
                 )
@@ -701,6 +711,7 @@ class ProgressionSession:
                     add(
                         candidate_symbol=f"{tonic}m7",
                         relation_type="RESOLVES_TO",
+                        reason_key="minor_blues_tonic",
                         explanation=f"Minor Jazz Blues: {curr_sym} mit erhöhter Undezime kann nach {tonic}m7 führen.",
                         framework="Minor Jazz Blues Submediant Turnaround",
                     )
@@ -709,6 +720,7 @@ class ProgressionSession:
                     add(
                         candidate_symbol=iv_sym,
                         relation_type="SCHEMA_CONTINUATION",
+                        reason_key="montuno_idea",
                         explanation=f"Afro-Cuban Montuno Vamp als Stilidee: {curr_sym} kann zur Mollsubdominante {iv_sym} zurückführen.",
                         framework="Afro-Cuban Ostinato Vamp",
                     )
@@ -718,6 +730,7 @@ class ProgressionSession:
                 add(
                     candidate_symbol=i_major_sym,
                     relation_type="RESOLVES_TO",
+                    reason_key="picardy_third",
                     explanation=f"Picardy Third als Option am Phrasenende: {i_major_sym} ist die Durtonika im Mollkontext.",
                     framework="Picardy Third Resolution",
                 )
@@ -725,6 +738,7 @@ class ProgressionSession:
                 add(
                     candidate_symbol=i_minor_sym,
                     relation_type="RESOLVES_TO",
+                    reason_key="minor_subtonic_step",
                     explanation=f"Liquid D&B Sub-Pulse Cadence: Mögliche modale Fortsetzung im Ganztonschritt {curr_sym} (VII) in die Moll-Tonika {i_minor_sym}.",
                     framework="Liquid D&B Sub-Pulse Cadence",
                 )
@@ -732,6 +746,7 @@ class ProgressionSession:
                 add(
                     candidate_symbol=iii_sym,
                     relation_type="RESOLVES_TO",
+                    reason_key="soul_fifth",
                     explanation=f"Soul Circle of Fifths: Quintfall von {curr_sym} (VII) zur Durparallele {iii_sym} (IIImaj9).",
                     framework="Soul Circle of Fifths",
                 )
@@ -742,6 +757,7 @@ class ProgressionSession:
                     add(
                         candidate_symbol=f"{root_prefix}m(maj7)",
                         relation_type="VOICE_LEADING_NEAR",
+                        reason_key="minor_line_octave",
                         explanation=f"Minor Line Cliché: Chromatische Innenstimme 8 -> 7 ({curr_sym} -> {root_prefix}m(maj7)).",
                         framework="Minor Line Cliché",
                     )
@@ -749,6 +765,7 @@ class ProgressionSession:
                     add(
                         candidate_symbol=f"{root_prefix}m7",
                         relation_type="VOICE_LEADING_NEAR",
+                        reason_key="minor_line_seventh",
                         explanation=f"Minor Line Cliché: Chromatische Innenstimme 7 -> b7 ({curr_sym} -> {root_prefix}m7).",
                         framework="Minor Line Cliché",
                     )
@@ -756,6 +773,7 @@ class ProgressionSession:
                     add(
                         candidate_symbol=f"{root_prefix}m6",
                         relation_type="VOICE_LEADING_NEAR",
+                        reason_key="minor_line_sixth",
                         explanation=f"Minor Line Cliché: Chromatische Innenstimme b7 -> 6 ({curr_sym} -> {root_prefix}m6).",
                         framework="Minor Line Cliché",
                     )
@@ -768,6 +786,7 @@ class ProgressionSession:
                 add(
                     candidate_symbol=iv_sym,
                     relation_type="SCHEMA_CONTINUATION",
+                    reason_key="doo_wop_subdominant",
                     explanation=f"50s Doo-Wop als mögliches Muster: {iv_sym} übernimmt nach {curr_sym} die Stufe IV.",
                     framework="Doo-Wop Turnaround",
                     reference=("omt-four-chord-schemas", "Doo-wop, Example 1"),
@@ -778,6 +797,7 @@ class ProgressionSession:
                 add(
                     candidate_symbol=ii_symbol,
                     relation_type="VOICE_LEADING_NEAR",
+                    reason_key="lowered_third",
                     explanation=f"Bossa Nova Stimmführung als Stilidee: {curr_sym} hat als Dominantseptakkord eine große Terz. Bei {ii_symbol} wird sie um einen Halbton gesenkt.",
                     framework="Bossa Nova Applied Dominant",
                 )
@@ -786,6 +806,7 @@ class ProgressionSession:
                 add(
                     candidate_symbol=bii_sym,
                     relation_type="SUBSTITUTES_FOR",
+                    reason_key="tritone_option",
                     explanation=f"Tritonussubstitution: {bii_sym} kann in dieser Tonart V7 ersetzen und einen chromatischen Grundtonschritt zur Tonika bilden.",
                     framework="Tritone Substitution",
                     reference=("omt-jazz-substitutions", "Example 4"),
@@ -795,6 +816,7 @@ class ProgressionSession:
                     add(
                         candidate_symbol=bvii_sym,
                         relation_type="SCHEMA_CONTINUATION",
+                        reason_key="backdoor_option",
                         explanation=f"Substitute Backdoor ii–V als Stilidee: Nach {curr_sym} lässt sich {bvii_sym} als Alternative zu V7 ausprobieren.",
                         framework="Substitute Backdoor ii-V",
                     )
@@ -804,6 +826,7 @@ class ProgressionSession:
                 add(
                     candidate_symbol=i_sym,
                     relation_type="RESOLVES_TO",
+                    reason_key="extended_tritone",
                     explanation=f"Extended Tritone Sub (Altered): {curr_sym} mit erhöhter Undezime kann als Tritonussubstitution nach {i_sym} führen.",
                     framework="Extended Tritone Sub (Altered)",
                 )
@@ -814,6 +837,7 @@ class ProgressionSession:
                     add(
                         candidate_symbol=bvii_sym,
                         relation_type="RESOLVES_TO",
+                        reason_key="backdoor_preparation",
                         explanation=f"Classical Jazz Backdoor ii-V: Moll-Subdominante {curr_sym} (iv7) leitet zur Backdoor-Dominante {bvii_sym} (bVII7) über.",
                         framework="Classical Jazz Backdoor ii-V",
                     )
@@ -822,6 +846,7 @@ class ProgressionSession:
                     add(
                         candidate_symbol=i_sym,
                         relation_type="RESOLVES_TO",
+                        reason_key="blues_return",
                         explanation=f"12-Bar Blues: Subdominante {curr_sym} (IVdom7) kehrt zur Tonika {i_sym} (Idom7) zurück.",
                         framework="12-Bar Blues",
                     )
@@ -831,6 +856,7 @@ class ProgressionSession:
                 add(
                     candidate_symbol=i_sym,
                     relation_type="RESOLVES_TO",
+                    reason_key="backdoor_tonic",
                     explanation=f"Backdoor-Auflösung: Subtonika {curr_sym} (bVII7) löst sich subdominantisch in die Tonika {i_sym} auf.",
                     framework="Backdoor Progression",
                 )
@@ -841,6 +867,7 @@ class ProgressionSession:
                     add(
                         candidate_symbol=iv_sym,
                         relation_type="RESOLVES_TO",
+                        reason_key="blues_departure",
                         explanation=f"12-Bar Blues: Tonika-Dominantseptakkord {curr_sym} (Idom7) wechselt zur Subdominante {iv_sym} (IVdom7).",
                         framework="12-Bar Blues",
                     )
@@ -848,6 +875,7 @@ class ProgressionSession:
                 add(
                     candidate_symbol=v_vi_sym,
                     relation_type="DOMINANT_OF",
+                    reason_key="applied_vi",
                     explanation=f"Zwischendominante: {v_vi_sym} (V7/vi) bereitet leittönig die Tonikaparallele vi vor.",
                     framework="Zwischendominanten",
                     reference=("omt-tonicization", "Adding tonicization to diatonic progressions, Example 11"),
@@ -856,6 +884,7 @@ class ProgressionSession:
                 add(
                     candidate_symbol=v_v_sym,
                     relation_type="DOMINANT_OF",
+                    reason_key="applied_v",
                     explanation=f"Doppeldominante: {v_v_sym} (V7/V) kann als Dominante der Dominante zur Stufe V führen.",
                     framework="Functional Harmony",
                     reference=("omt-tonicization", "Secondary dominants as altered diatonic chords"),
@@ -866,6 +895,7 @@ class ProgressionSession:
                 add(
                     candidate_symbol=vi_sym,
                     relation_type="RESOLVES_TO",
+                    reason_key="royal_road_fifth",
                     explanation=f"Royal Road (Ōdō shinkō): Möglicher Quintfall von {curr_sym} (iii) in die Tonikaparallele {vi_sym} (vi).",
                     framework="Royal Road (Ōdō shinkō)",
                 )
@@ -876,6 +906,7 @@ class ProgressionSession:
             add(
                 candidate_symbol=v_symbol,
                 relation_type="SCHEMA_CONTINUATION",
+                reason_key="jazz_ii_v",
                 explanation=f"{curr_sym} → {v_symbol} entspricht den ersten beiden Akkorden einer Jazz-ii–V–I-Folge in dieser Tonart.",
                 framework="Jazz ii–V–I",
                 reference=("omt-ii-v-i", "Example 2"),
@@ -885,6 +916,7 @@ class ProgressionSession:
             add(
                 candidate_symbol=tonic + suffix,
                 relation_type="RESOLVES_TO",
+                reason_key="jazz_v_i",
                 explanation=f"{curr_sym} kann sich im Jazz zur Tonika {tonic}{suffix} auflösen.",
                 framework="Jazz ii–V–I",
                 reference=("omt-ii-v-i", "Example 2") if quality == "7" else None,

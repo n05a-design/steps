@@ -16,6 +16,7 @@
 - Der Next Chord Explorer behält gültige Vorschläge bei doppelten Vorzeichen und lässt einzelne nicht darstellbare Schreibweisen aus.
 - Der Akkordexplorer zeigt Literaturverweise mit Fundstelle und kennzeichnet Rechenregeln und Arrangementideen. `source_id` ist in der Python-API optional.
 - Das Quellenmenü des Akkordexplorers öffnet hinterlegte Literaturhinweise für die Auswahl und den angehefteten Vergleich.
+- Der Akkordexplorer zeigt die konkreten Modellbegründungen auf Deutsch oder Englisch mit der Akkordschreibweise des Projekts.
 
 - Die MIDI-Akkordspur bleibt bei enger Lage innerhalb einer Oktave. Drop-2 erhält die gewünschte Stimmverteilung und wird bei unpassender Lage im Exportstudio deaktiviert.
 
