@@ -93,7 +93,7 @@ class FakeController:
         self.new_project_calls += 1
         self.session = FakeSession(is_dirty=False)
 
-    def new_reviewed_project(self, reviewed):
+    def new_reviewed_project(self, reviewed, semitones=0, convention="INT"):
         self.reviewed_calls.append(reviewed)
         progression = reviewed.progression
         self.session = FakeSession(is_dirty=True)
