@@ -909,19 +909,14 @@ class StepsMainWindow:
         self.undo_btn.configure(state=tk.NORMAL if state["can_undo"] else tk.DISABLED)
         self.redo_btn.configure(state=tk.NORMAL if state["can_redo"] else tk.DISABLED)
 
-        self.chord_listbox.delete(0, tk.END)
-        for idx, chord_name in enumerate(state["chords"]):
-            self.chord_listbox.insert(tk.END, f"  [{idx + 1:02d}]   {chord_name}")
+        self._render_chord_rows(state["chords"])
 
         if state["chords"]:
             if selected_index is not None:
                 index = max(0, min(selected_index, len(state["chords"]) - 1))
             else:
                 index = min(selected[0], len(state["chords"]) - 1) if selected else 0
-            self.chord_listbox.select_set(index)
-            self.chord_listbox.activate(index)
-            self.chord_listbox.selection_anchor(index)
-            self.chord_listbox.see(index)
+            self._select_chord_row(index)
             self._load_event_timing_controls(index)
             self._update_move_controls(index, len(state["chords"]))
             self._display_chord_details(state["chords"][index])
@@ -930,20 +925,33 @@ class StepsMainWindow:
             self._update_move_controls(None, 0)
             self._display_empty_info()
 
+    def _render_chord_rows(self, chords: list[str]) -> None:
+        self.chord_listbox.delete(0, tk.END)
+        t = self.i18n.translate
+        for index, chord in enumerate(chords):
+            position, duration = self._event_timing_display(index)
+            timing = t("event.row.timing", position=position, duration=duration)
+            self.chord_listbox.insert(tk.END, f"  [{index + 1:02d}]   {chord}   ·   {timing}")
+
+    def _select_chord_row(self, index: int) -> None:
+        self.chord_listbox.select_set(index)
+        self.chord_listbox.activate(index)
+        self.chord_listbox.selection_anchor(index)
+        self.chord_listbox.see(index)
+
+    def _event_timing_display(self, index: int) -> tuple[str, int]:
+        session = self.controller.session
+        start_tick, duration_ticks = session.get_chord_event_timing(index)
+        bar, beat, tick = RationalMidiTime.ticks_to_bar_beat_tick(
+            start_tick,
+            ppq=session.state.ppq,
+            numerator=session.time_signature[0],
+            denominator=session.time_signature[1],
+        )
+        return f"{bar}:{beat}:{tick}", duration_ticks
+
     def _load_event_timing_controls(self, index: Optional[int]) -> None:
-        if index is None:
-            position = ""
-            duration_ticks = ""
-        else:
-            session = self.controller.session
-            start_tick, duration_ticks = session.get_chord_event_timing(index)
-            bar, beat, tick = RationalMidiTime.ticks_to_bar_beat_tick(
-                start_tick,
-                ppq=session.state.ppq,
-                numerator=session.time_signature[0],
-                denominator=session.time_signature[1],
-            )
-            position = f"{bar}:{beat}:{tick}"
+        position, duration_ticks = self._event_timing_display(index) if index is not None else ("", "")
         self.event_start_entry.delete(0, tk.END)
         self.event_start_entry.insert(0, position)
         self.event_duration_entry.delete(0, tk.END)

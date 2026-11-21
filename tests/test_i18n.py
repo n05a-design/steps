@@ -487,6 +487,9 @@ class TestDesktopChordEditing(unittest.TestCase):
         self.assertEqual(window.move_up_btn.options["state"], "disabled")
         self.assertEqual(window.move_down_btn.options["state"], "normal")
         self.assertEqual(window.controller.session.get_chord_event_timing(0), (2000, 960))
+        self.assertEqual(window.chord_listbox.items[0], "  [01]   G   ·   Start 2:1:80 · 960 ticks")
+        self.assertEqual(window.event_start_entry.get(), "2:1:80")
+        self.assertEqual(window.event_duration_entry.get(), "960")
 
         window._on_undo()
         self.assertEqual(window.controller.session.chords, ["C", "G", "Am"])

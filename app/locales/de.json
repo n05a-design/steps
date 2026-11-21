@@ -97,6 +97,7 @@
   "notation.error.message": "Die Konvention konnte nicht sicher angewendet werden: {error}",
   "event.start": "Start (Takt:Zählzeit:Tick, PPQ {ppq})",
   "event.duration": "Dauer in Ticks (PPQ {ppq})",
+  "event.row.timing": "Start {position} · {duration} Ticks",
   "event.apply": "Timing setzen",
   "event.timing.error.title": "Ereignis-Timing konnte nicht geändert werden",
   "event.timing.invalid": "Geben Sie eine gültige Position im Format Takt:Zählzeit:Tick (Tick innerhalb der metrischen Zählzeit) sowie eine positive ganze Tickzahl für die Dauer ein.",

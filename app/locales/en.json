@@ -97,6 +97,7 @@
   "notation.error.message": "The convention could not be applied safely: {error}",
   "event.start": "Start (bar:beat:tick, PPQ {ppq})",
   "event.duration": "Duration ticks (PPQ {ppq})",
+  "event.row.timing": "Start {position} · {duration} ticks",
   "event.apply": "Set timing",
   "event.timing.error.title": "Event timing could not be changed",
   "event.timing.invalid": "Enter a valid bar:beat:tick position (tick is within the metric beat) and a positive whole-number duration in ticks.",
