@@ -120,6 +120,19 @@ Die derzeitigen `schemas/chord.schema.json` und `schemas/progression.schema.json
 
 ## 7. Fachreview statt Pseudogenauigkeit
 
+Die drei Abfragerichtungen des [Cross-Domain-Recommenders](../../src/steps/progression/recommender.py)
+geben `confidence=None` und `strength="UNASSESSED"` zurück. Die Gesamtwertung
+lautet `UNASSESSED`. Verknüpfungen aus dem Forschungsregister tragen
+`evidence_status="REVIEW_REQUIRED"`. Ihre `source_relation_id` führt zum
+Registereintrag und dessen Originalbeschreibung. Ein CSV-Status allein
+erteilt keine Freigabe. Die eingebauten Vorschläge und Bassmodelle tragen
+`evidence_status="CREATIVE_SUGGESTION"`.
+
+Python-Aufrufer müssen `None` vor einer numerischen Auswertung von
+`confidence` behandeln. Eigene CSV-Pfade gelten für den jeweiligen Aufruf.
+Der [musikalische Freigabevertrag](../governance/MUSICAL_RELEASE_ACCEPTANCE.md)
+regelt die unabhängige Abnahme von Stil- und Kompatibilitätsaussagen.
+
 Eine `confidence: 0.95` in historischen JSON-Beispielen ist keine empirisch kalibrierte Wahrscheinlichkeit. Wenn es keine definierte Kalibrierung und Ground-Truth-Daten gibt, besser `evidence_level` und `review_status` + erklärbare Regeln verwenden. Positive und negative Beispiele müssen Gegenmodelle enthalten; kulturelle Stiltraditionen können andere Regeln priorisieren. Fachliche Quellen sollten autoritative, peer-reviewte oder sorgfältig belegte Arbeiten von Foren-/Marketing-/Transkripten unterscheiden.
 
 ## 8. Nächste überprüfbare Liefergegenstände

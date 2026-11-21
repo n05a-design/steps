@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import unittest
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 from src.steps.progression import (
     CANONICAL_BASSLINE_MODELS,
@@ -172,19 +173,64 @@ class TestCrossDomainRecommender(unittest.TestCase):
             self.assertIsInstance(rec.bassline_model, BasslineModel)
             self.assertTrue(rec.bassline_model.name)
             self.assertTrue(rec.bassline_model.pattern_description)
-            self.assertEqual(rec.overall_compatibility, "HIGH")
+            self.assertEqual(rec.overall_compatibility, "UNASSESSED")
+            self.assertEqual(rec.bassline_model.evidence_status, "CREATIVE_SUGGESTION")
 
             # Check recommendation items integrity
             for drum in rec.drum_grooves:
                 self.assertIsInstance(drum, RecommendationItem)
                 self.assertEqual(drum.domain, "DRUM")
                 self.assertTrue(drum.target_id.startswith("PAT-"))
-                self.assertGreaterEqual(drum.confidence, 0.7)
             for piano in rec.piano_voicings:
                 self.assertIsInstance(piano, RecommendationItem)
                 self.assertEqual(piano.domain, "PIANO")
                 self.assertTrue(piano.target_id.startswith("P"))
-                self.assertGreaterEqual(piano.confidence, 0.7)
+
+    def test_evidence_status_in_every_lookup_direction(self) -> None:
+        """A register ID traces the candidate while editorial ideas carry their own status."""
+        relations = {rel.relation_id: rel for rel in self.recommender.relations}
+        observed = set()
+
+        def check(identifier, items):
+            for item in items:
+                with self.subTest(source=identifier, target=item.target_id):
+                    self.assertIsNone(item.confidence)
+                    self.assertEqual(item.strength, "UNASSESSED")
+                    observed.add(item.evidence_status)
+                    if item.source_relation_id is None:
+                        self.assertEqual(item.evidence_status, "CREATIVE_SUGGESTION")
+                    else:
+                        self.assertEqual(item.evidence_status, "REVIEW_REQUIRED")
+                        row = relations[item.source_relation_id]
+                        self.assertEqual(
+                            {identifier, item.target_id}, {row.source_id, row.target_id},
+                        )
+
+        for prog_id in CANONICAL_PROGRESSIONS:
+            result = self.recommender.recommend_for_progression(prog_id)
+            check(prog_id, result.drum_grooves + result.piano_voicings)
+        for pat_id in CANONICAL_DRUM_PATTERNS:
+            check(pat_id, self.recommender.recommend_for_drum_pattern(pat_id))
+        for piano_id in CANONICAL_PIANO_MODULES:
+            check(piano_id, self.recommender.recommend_for_piano_module(piano_id))
+        self.assertEqual(observed, {"REVIEW_REQUIRED", "CREATIVE_SUGGESTION"})
+
+    def test_custom_register_cannot_grant_approval_or_replace_default(self) -> None:
+        default = get_recommender()
+        with TemporaryDirectory() as directory:
+            custom = Path(directory) / "relations.csv"
+            custom.write_text(
+                "relation_id,source_id,target_id,relation_type,formal_rule_or_strength,"
+                "validation_status\n"
+                "TEST-001,PROG-001,PAT-001,COMMONLY_PAIRED_WITH,STRONG,APPROVED\n",
+                encoding="utf-8",
+            )
+            item = recommend_for_progression("PROG-001", custom).drum_grooves[0]
+            self.assertEqual(item.source_relation_id, "TEST-001")
+            self.assertEqual(item.evidence_status, "REVIEW_REQUIRED")
+            self.assertEqual(item.strength, "UNASSESSED")
+            self.assertIsNone(item.confidence)
+        self.assertIs(get_recommender(), default)
 
     def test_recommendation_vectors_for_case_studies(self) -> None:
         """Test specific case study progressions: PROG-017 and PROG-023."""
