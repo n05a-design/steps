@@ -137,6 +137,22 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             content = window.detail_text.get("1.0", tk.END)
             self.assertIn(window.i18n.translate("chord.analysis.title", chord="C"), content)
 
+            panel = window.next_chord_panel
+            panel.explore()
+            self.assertTrue(panel._source_button.instate(["disabled"]))
+            citation_index = next(index for index, item in enumerate(panel._recommendations) if item.source_id)
+            panel.candidates.selection_clear(0, tk.END)
+            panel.candidates.selection_set(citation_index)
+            panel._selection_changed()
+            self.assertFalse(panel._source_button.instate(["disabled"]))
+            self.assertIn("Auswahl", panel._source_menu.entrycget(0, "label"))
+            with patch("app.ui.next_chord_panel.webbrowser.open", return_value=True) as browser:
+                panel._source_menu.invoke(0)
+            browser.assert_called_once_with(
+                "https://viva.pressbooks.pub/openmusictheory/chapter/tonicization/", new=2,
+            )
+            panel.clear()
+
             window.key_entry.delete(0, tk.END)
             window.key_entry.insert(0, "D")
             window.mode_var.set(True)

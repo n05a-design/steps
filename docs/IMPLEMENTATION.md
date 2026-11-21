@@ -76,6 +76,11 @@ Bei hinterlegter Fundstelle prüft er das Produktquellenregister und zeigt Titel
 Abschnitt oder Beispiel und URL. Die Fundstelle erklärt das theoretische
 Konzept. Rechenregeln und Arrangementideen erscheinen mit ihrem eigenen Status.
 Die Übernahme bleibt gesperrt, bis ein gültiger Kandidat ausgewählt ist.
+Das Quellenmenü öffnet die hinterlegten Literaturseiten für die Auswahl und
+den angehefteten Vergleich. Beim Öffnen werden Projektrevision, Kandidat
+und Quellenregister erneut geprüft. Modellregeln und Arrangementideen
+haben keine Menüeinträge.
+
 
 Die Desktop-Transposition verschiebt Tonart, Akkordgrundtöne und Slash-Bässe
 um dasselbe geschriebene Intervall. Im C♯-Dur-Kontext wird aus
