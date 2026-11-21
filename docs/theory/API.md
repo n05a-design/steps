@@ -124,14 +124,14 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`PedagogicalReduction`](../../src/steps/theory/beginner_voicing.py) | `(original_symbol: 'str', reduced_symbol: 'str', was_reduced: 'bool', omitted_factors: 'Tuple[str, ...]', explanation: 'str') -> None` |
 | [`generate_beginner_voicings`](../../src/steps/theory/beginner_voicing.py) | `(progression: 'Union[str, List[str], Any, List[ChordDefinition]]', starting_inversion: 'Optional[Union[str, BeginnerTriadInversion]]' = None, lh_octave: 'int' = 2, rh_octave: 'int' = 4, convention: "Literal['INT', 'DE']" = 'INT') -> 'BeginnerProgressionVoicings'` |
 | [`reduce_chord_for_beginners`](../../src/steps/theory/beginner_voicing.py) | `(chord: 'Union[str, ChordDefinition]', convention: "Literal['INT', 'DE']" = 'INT') -> 'PedagogicalReduction'` |
-| [`BasslineModel`](../../src/steps/progression/recommender.py) | `(name: 'str', style_category: 'str', description: 'str', time_signature: 'Tuple[int, int]', tempo_range: 'Tuple[int, int]', pattern_description: 'str') -> None` |
+| [`BasslineModel`](../../src/steps/progression/recommender.py) | `(name: 'str', style_category: 'str', description: 'str', time_signature: 'Tuple[int, int]', tempo_range: 'Tuple[int, int]', pattern_description: 'str', evidence_status: "Literal['CREATIVE_SUGGESTION']" = 'CREATIVE_SUGGESTION') -> None` |
 | [`CANONICAL_BASSLINE_MODELS`](../../src/steps/progression/__init__.py) | Datenwert |
 | [`CANONICAL_DRUM_PATTERNS`](../../src/steps/progression/__init__.py) | Datenwert |
 | [`CANONICAL_PIANO_MODULES`](../../src/steps/progression/__init__.py) | Datenwert |
-| [`CrossDomainRecommendation`](../../src/steps/progression/recommender.py) | `(prog_id: 'str', prog_name: 'str', genre_scope: 'str', drum_grooves: 'List[RecommendationItem]', piano_voicings: 'List[RecommendationItem]', bassline_model: 'BasslineModel', explicit_relations: 'List[CrossDomainRelation]', overall_compatibility: 'str' = 'HIGH') -> None` |
+| [`CrossDomainRecommendation`](../../src/steps/progression/recommender.py) | `(prog_id: 'str', prog_name: 'str', genre_scope: 'str', drum_grooves: 'List[RecommendationItem]', piano_voicings: 'List[RecommendationItem]', bassline_model: 'BasslineModel', explicit_relations: 'List[CrossDomainRelation]', overall_compatibility: 'str' = 'UNASSESSED') -> None` |
 | [`CrossDomainRecommender`](../../src/steps/progression/recommender.py) | `(relations_path: 'Optional[str \| Path]' = None) -> 'None'` |
 | [`CrossDomainRelation`](../../src/steps/progression/recommender.py) | `(relation_id: 'str', source_id: 'str', target_id: 'str', relation_type: 'str', epistemic_classification: 'str', domain_scope: 'str', formal_rule_or_strength: 'str', description: 'str', validation_status: 'str') -> None` |
-| [`RecommendationItem`](../../src/steps/progression/recommender.py) | `(target_id: 'str', target_name: 'str', domain: 'str', relation_type: 'str', strength: 'str', confidence: 'float', description: 'str', source_relation_id: 'Optional[str]' = None) -> None` |
+| [`RecommendationItem`](../../src/steps/progression/recommender.py) | `(target_id: 'str', target_name: 'str', domain: 'str', relation_type: 'str', strength: 'str', confidence: 'Optional[float]', description: 'str', source_relation_id: 'Optional[str]' = None, evidence_status: "Literal['REVIEW_REQUIRED', 'CREATIVE_SUGGESTION']" = 'CREATIVE_SUGGESTION') -> None` |
 | [`get_concept_relations`](../../src/steps/progression/recommender.py) | `(entity_id: 'str', relations_path: 'Optional[str \| Path]' = None) -> 'List[CrossDomainRelation]'` |
 | [`get_recommender`](../../src/steps/progression/recommender.py) | `(relations_path: 'Optional[str \| Path]' = None) -> 'CrossDomainRecommender'` |
 | [`recommend_for_drum_pattern`](../../src/steps/progression/recommender.py) | `(pat_id: 'str', relations_path: 'Optional[str \| Path]' = None) -> 'List[RecommendationItem]'` |
@@ -366,11 +366,11 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 
 ### [BasslineModel](../../src/steps/progression/recommender.py)
 
-`BasslineModel(name: 'str', style_category: 'str', description: 'str', time_signature: 'Tuple[int, int]', tempo_range: 'Tuple[int, int]', pattern_description: 'str') -> None`
+`BasslineModel(name: 'str', style_category: 'str', description: 'str', time_signature: 'Tuple[int, int]', tempo_range: 'Tuple[int, int]', pattern_description: 'str', evidence_status: "Literal['CREATIVE_SUGGESTION']" = 'CREATIVE_SUGGESTION') -> None`
 
 ### [CrossDomainRecommendation](../../src/steps/progression/recommender.py)
 
-`CrossDomainRecommendation(prog_id: 'str', prog_name: 'str', genre_scope: 'str', drum_grooves: 'List[RecommendationItem]', piano_voicings: 'List[RecommendationItem]', bassline_model: 'BasslineModel', explicit_relations: 'List[CrossDomainRelation]', overall_compatibility: 'str' = 'HIGH') -> None`
+`CrossDomainRecommendation(prog_id: 'str', prog_name: 'str', genre_scope: 'str', drum_grooves: 'List[RecommendationItem]', piano_voicings: 'List[RecommendationItem]', bassline_model: 'BasslineModel', explicit_relations: 'List[CrossDomainRelation]', overall_compatibility: 'str' = 'UNASSESSED') -> None`
 
 ### [CrossDomainRelation](../../src/steps/progression/recommender.py)
 
@@ -378,7 +378,7 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 
 ### [RecommendationItem](../../src/steps/progression/recommender.py)
 
-`RecommendationItem(target_id: 'str', target_name: 'str', domain: 'str', relation_type: 'str', strength: 'str', confidence: 'float', description: 'str', source_relation_id: 'Optional[str]' = None) -> None`
+`RecommendationItem(target_id: 'str', target_name: 'str', domain: 'str', relation_type: 'str', strength: 'str', confidence: 'Optional[float]', description: 'str', source_relation_id: 'Optional[str]' = None, evidence_status: "Literal['REVIEW_REQUIRED', 'CREATIVE_SUGGESTION']" = 'CREATIVE_SUGGESTION') -> None`
 
 ## Akkordqualitäten
 

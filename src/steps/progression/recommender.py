@@ -13,9 +13,9 @@ Adheres to:
 from __future__ import annotations
 
 import csv
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set, Tuple
+from typing import Any, Dict, List, Literal, Optional, Set, Tuple
 
 from .engine import CANONICAL_PROGRESSIONS, ARCHETYPE_THEORY_METADATA
 
@@ -36,31 +36,33 @@ class CrossDomainRelation:
 
 @dataclass(frozen=True)
 class RecommendationItem:
-    """A single recommended target item (drum pattern, piano module, progression, etc.)."""
+    """An arrangement candidate with its review state and optional register ID."""
     target_id: str
     target_name: str
     domain: str  # "DRUM", "PIANO", "PROGRESSION", "THEORY", "BASS"
     relation_type: str
     strength: str
-    confidence: float
+    confidence: Optional[float]
     description: str
     source_relation_id: Optional[str] = None
+    evidence_status: Literal["REVIEW_REQUIRED", "CREATIVE_SUGGESTION"] = "CREATIVE_SUGGESTION"
 
 
 @dataclass(frozen=True)
 class BasslineModel:
-    """Genre-typical bassline model and performance practice for a chord progression."""
+    """An illustrative bassline model for a chord progression."""
     name: str
     style_category: str
     description: str
     time_signature: Tuple[int, int]
     tempo_range: Tuple[int, int]
     pattern_description: str
+    evidence_status: Literal["CREATIVE_SUGGESTION"] = "CREATIVE_SUGGESTION"
 
 
 @dataclass(frozen=True)
 class CrossDomainRecommendation:
-    """Validated cross-domain recommendation vector for a chord progression."""
+    """Arrangement candidates with no overall compatibility assessment."""
     prog_id: str
     prog_name: str
     genre_scope: str
@@ -68,7 +70,7 @@ class CrossDomainRecommendation:
     piano_voicings: List[RecommendationItem]
     bassline_model: BasslineModel
     explicit_relations: List[CrossDomainRelation]
-    overall_compatibility: str = "HIGH"
+    overall_compatibility: str = "UNASSESSED"
 
 
 # Canonical Drum Patterns catalogue (PAT-001 .. PAT-031) from DRUM_GROOVE_REFERENCE_LIBRARY.md
@@ -428,8 +430,8 @@ class CrossDomainRecommender:
 
     def recommend_for_progression(self, prog_id: str) -> CrossDomainRecommendation:
         """
-        Produce a validated cross-domain recommendation vector for any canonical PROG ID.
-        Combines explicit verified relations from CSV with genre-idiomatic pairings.
+        Return arrangement candidates for a canonical progression.
+        Research register entries carry their relation ID and require review.
         """
         if prog_id not in CANONICAL_PROGRESSIONS:
             raise KeyError(f"Unknown canonical progression ID: '{prog_id}'. Expected PROG-001..PROG-028.")
@@ -455,10 +457,11 @@ class CrossDomainRecommender:
                         target_name=pat_info["name"],
                         domain="DRUM",
                         relation_type=rel.relation_type,
-                        strength=rel.formal_rule_or_strength,
-                        confidence=1.0,
+                        strength="UNASSESSED",
+                        confidence=None,
                         description=rel.description,
                         source_relation_id=rel.relation_id,
+                        evidence_status="REVIEW_REQUIRED",
                     )
                 )
                 seen_targets.add(other_id)
@@ -470,18 +473,19 @@ class CrossDomainRecommender:
                         target_name=piano_info["title"],
                         domain="PIANO",
                         relation_type=rel.relation_type,
-                        strength=rel.formal_rule_or_strength,
-                        confidence=1.0,
+                        strength="UNASSESSED",
+                        confidence=None,
                         description=rel.description,
                         source_relation_id=rel.relation_id,
+                        evidence_status="REVIEW_REQUIRED",
                     )
                 )
                 seen_targets.add(other_id)
 
-        # 2. Add curated primary & secondary pairings for 100% coverage across all 28 archetypes
+        # 2. Add built-in arrangement ideas for the archetypes.
         self._supplement_progression_recommendations(prog_id, drum_items, piano_items, seen_targets)
 
-        # 3. Retrieve genre-idiomatic bassline model
+        # 3. Retrieve an illustrative bassline model.
         bassline = CANONICAL_BASSLINE_MODELS.get(
             prog_id,
             BasslineModel(
@@ -502,7 +506,6 @@ class CrossDomainRecommender:
             piano_voicings=piano_items,
             bassline_model=bassline,
             explicit_relations=explicit_rels,
-            overall_compatibility="HIGH",
         )
 
     def recommend_for_drum_pattern(self, pat_id: str) -> List[RecommendationItem]:
@@ -525,10 +528,11 @@ class CrossDomainRecommender:
                         target_name=name,
                         domain="PROGRESSION",
                         relation_type=rel.relation_type,
-                        strength=rel.formal_rule_or_strength,
-                        confidence=1.0,
+                        strength="UNASSESSED",
+                        confidence=None,
                         description=rel.description,
                         source_relation_id=rel.relation_id,
+                        evidence_status="REVIEW_REQUIRED",
                     )
                 )
                 seen.add(other_id)
@@ -540,15 +544,16 @@ class CrossDomainRecommender:
                         target_name=p_info["title"],
                         domain="PIANO",
                         relation_type=rel.relation_type,
-                        strength=rel.formal_rule_or_strength,
-                        confidence=1.0,
+                        strength="UNASSESSED",
+                        confidence=None,
                         description=rel.description,
                         source_relation_id=rel.relation_id,
+                        evidence_status="REVIEW_REQUIRED",
                     )
                 )
                 seen.add(other_id)
 
-        # Supplement with known stylistic pairings if not explicitly in CSV
+        # Supplement with built-in groove ideas for other progressions.
         for prog_id in CANONICAL_PROGRESSIONS:
             if prog_id not in seen:
                 rec = self.recommend_for_progression(prog_id)
@@ -560,10 +565,9 @@ class CrossDomainRecommender:
                                 target_name=rec.prog_name,
                                 domain="PROGRESSION",
                                 relation_type="STYLISTIC_AFFINITY",
-                                strength="HIGH",
-                                confidence=0.85,
-                                description=f"Stylistic match with {rec.genre_scope}",
-                                source_relation_id=d.source_relation_id,
+                                strength="UNASSESSED",
+                                confidence=None,
+                                description=f"Arrangement idea: try this groove with {rec.prog_name}.",
                             )
                         )
                         seen.add(prog_id)
@@ -590,10 +594,11 @@ class CrossDomainRecommender:
                         target_name=name,
                         domain="PROGRESSION",
                         relation_type=rel.relation_type,
-                        strength=rel.formal_rule_or_strength,
-                        confidence=1.0,
+                        strength="UNASSESSED",
+                        confidence=None,
                         description=rel.description,
                         source_relation_id=rel.relation_id,
+                        evidence_status="REVIEW_REQUIRED",
                     )
                 )
                 seen.add(other_id)
@@ -605,15 +610,16 @@ class CrossDomainRecommender:
                         target_name=pat_info["name"],
                         domain="DRUM",
                         relation_type=rel.relation_type,
-                        strength=rel.formal_rule_or_strength,
-                        confidence=1.0,
+                        strength="UNASSESSED",
+                        confidence=None,
                         description=rel.description,
                         source_relation_id=rel.relation_id,
+                        evidence_status="REVIEW_REQUIRED",
                     )
                 )
                 seen.add(other_id)
 
-        # Supplement with known stylistic pairings
+        # Supplement with built-in practice ideas for other progressions.
         for prog_id in CANONICAL_PROGRESSIONS:
             if prog_id not in seen:
                 rec = self.recommend_for_progression(prog_id)
@@ -625,10 +631,9 @@ class CrossDomainRecommender:
                                 target_name=rec.prog_name,
                                 domain="PROGRESSION",
                                 relation_type="DIDACTIC_AFFINITY",
-                                strength="HIGH",
-                                confidence=0.85,
-                                description=f"Harmonic application in {rec.genre_scope}",
-                                source_relation_id=p.source_relation_id,
+                                strength="UNASSESSED",
+                                confidence=None,
+                                description=f"Practice idea: try this voicing approach with {rec.prog_name}.",
                             )
                         )
                         seen.add(prog_id)
@@ -642,173 +647,173 @@ class CrossDomainRecommender:
         piano_items: List[RecommendationItem],
         seen_targets: Set[str],
     ) -> None:
-        """Supplement explicit CSV relations with genre-idiomatic mappings for complete 28-archetype coverage."""
-        supplemental_map: Dict[str, Dict[str, List[Tuple[str, str, str, float, str]]]] = {
+        """Add built-in arrangement ideas for the 28 archetypes."""
+        supplemental_map: Dict[str, Dict[str, List[Tuple[str, str, str, str]]]] = {
             "PROG-001": {
-                "drums": [("PAT-001", "Pop / Rock Straight", "COMMONLY_PAIRED_WITH", 1.0, "Pop 4-chord driving rhythm")],
-                "piano": [("P07", "Zweihändige rollende Arpeggien", "TAUGHT_VIA", 1.0, "Ballad accompaniment"),
-                          ("P03", "Zweihändige Begleitmuster (Pop Groove)", "DIDACTIC_APPLICATION", 0.9, "Pop groove pattern")],
+                "drums": [("PAT-001", "Pop / Rock Straight", "COMMONLY_PAIRED_WITH", "Pop 4-chord driving rhythm")],
+                "piano": [("P07", "Zweihändige rollende Arpeggien", "TAUGHT_VIA", "Ballad accompaniment"),
+                          ("P03", "Zweihändige Begleitmuster (Pop Groove)", "DIDACTIC_APPLICATION", "Pop groove pattern")],
             },
             "PROG-002": {
-                "drums": [("PAT-018", "Liquid D&B Rolling Break", "COMMONLY_PAIRED_WITH", 1.0, "Liquid D&B breakbeat"),
-                          ("PAT-001", "Pop / Rock Straight", "STYLISTICALLY_COMPATIBLE", 0.9, "Straight pop ballad feel")],
-                "piano": [("P07", "Zweihändige rollende Arpeggien", "DIDACTIC_APPLICATION", 0.9, "Arpeggio wave texture"),
-                          ("P02", "Akkordumkehrungen & Minimal Movement", "VOICED_BY", 0.85, "Minimal voice leading")],
+                "drums": [("PAT-018", "Liquid D&B Rolling Break", "COMMONLY_PAIRED_WITH", "Liquid D&B breakbeat"),
+                          ("PAT-001", "Pop / Rock Straight", "STYLISTICALLY_COMPATIBLE", "Straight pop ballad feel")],
+                "piano": [("P07", "Zweihändige rollende Arpeggien", "DIDACTIC_APPLICATION", "Arpeggio wave texture"),
+                          ("P02", "Akkordumkehrungen & Minimal Movement", "VOICED_BY", "Minimal voice leading")],
             },
             "PROG-003": {
-                "drums": [("PAT-012", "Jazz Traditional Ride", "COMMONLY_PAIRED_WITH", 1.0, "Traditional jazz swing ride"),
-                          ("PAT-017", "Bebop Up-Tempo Comping", "STYLISTICALLY_COMPATIBLE", 0.9, "Fast bebop comping")],
-                "piano": [("P05", "Zweihändige Shell-Voicings", "VOICED_BY", 1.0, "Shell voicings 3 & 7 guide tones"),
-                          ("P08", "Drop-2 Voicings", "VOICED_BY", 1.0, "Four-voice drop-2 jazz chords")],
+                "drums": [("PAT-012", "Jazz Traditional Ride", "COMMONLY_PAIRED_WITH", "Traditional jazz swing ride"),
+                          ("PAT-017", "Bebop Up-Tempo Comping", "STYLISTICALLY_COMPATIBLE", "Fast bebop comping")],
+                "piano": [("P05", "Zweihändige Shell-Voicings", "VOICED_BY", "Shell voicings 3 & 7 guide tones"),
+                          ("P08", "Drop-2 Voicings", "VOICED_BY", "Four-voice drop-2 jazz chords")],
             },
             "PROG-004": {
-                "drums": [("PAT-009", "Motown / Soul Stomp", "COMMONLY_PAIRED_WITH", 0.95, "Four-on-the-snare stomp"),
-                          ("PAT-001", "Pop / Rock Straight", "STYLISTICALLY_COMPATIBLE", 0.9, "Doo-Wop backbeat")],
-                "piano": [("P03", "Zweihändige Begleitmuster (Pop Groove)", "DIDACTIC_APPLICATION", 0.9, "Two-handed 50s accompaniment"),
-                          ("P01", "Stamm-Dreiklänge & Topografie", "TAUGHT_VIA", 0.85, "Root-position triads")],
+                "drums": [("PAT-009", "Motown / Soul Stomp", "COMMONLY_PAIRED_WITH", "Four-on-the-snare stomp"),
+                          ("PAT-001", "Pop / Rock Straight", "STYLISTICALLY_COMPATIBLE", "Doo-Wop backbeat")],
+                "piano": [("P03", "Zweihändige Begleitmuster (Pop Groove)", "DIDACTIC_APPLICATION", "Two-handed 50s accompaniment"),
+                          ("P01", "Stamm-Dreiklänge & Topografie", "TAUGHT_VIA", "Root-position triads")],
             },
             "PROG-005": {
-                "drums": [("PAT-027", "Bossa Nova Authentic Brush", "STYLISTICALLY_COMPATIBLE", 0.85, "Acoustic brush groove"),
-                          ("PAT-003", "Boom-Bap Hip-Hop", "STYLISTICALLY_COMPATIBLE", 0.85, "Flamenco hip-hop crossover")],
-                "piano": [("P02", "Akkordumkehrungen & Minimal Movement", "VOICED_BY", 0.9, "Stepwise voice leading"),
-                          ("P08", "Drop-2 Voicings", "VOICED_BY", 0.85, "Harmonic minor drop-2 voicings")],
+                "drums": [("PAT-027", "Bossa Nova Authentic Brush", "STYLISTICALLY_COMPATIBLE", "Acoustic brush groove"),
+                          ("PAT-003", "Boom-Bap Hip-Hop", "STYLISTICALLY_COMPATIBLE", "Flamenco hip-hop crossover")],
+                "piano": [("P02", "Akkordumkehrungen & Minimal Movement", "VOICED_BY", "Stepwise voice leading"),
+                          ("P08", "Drop-2 Voicings", "VOICED_BY", "Harmonic minor drop-2 voicings")],
             },
             "PROG-006": {
-                "drums": [("PAT-001", "Pop / Rock Straight", "COMMONLY_PAIRED_WITH", 0.85, "Slow ballad pop beat")],
-                "piano": [("P07", "Zweihändige rollende Arpeggien", "DIDACTIC_APPLICATION", 0.95, "Baroque arpeggiated texture"),
-                          ("P02", "Akkordumkehrungen & Minimal Movement", "VOICED_BY", 0.9, "Smooth step voice leading")],
+                "drums": [("PAT-001", "Pop / Rock Straight", "COMMONLY_PAIRED_WITH", "Slow ballad pop beat")],
+                "piano": [("P07", "Zweihändige rollende Arpeggien", "DIDACTIC_APPLICATION", "Baroque arpeggiated texture"),
+                          ("P02", "Akkordumkehrungen & Minimal Movement", "VOICED_BY", "Smooth step voice leading")],
             },
             "PROG-007": {
-                "drums": [("PAT-007", "Funk 'The One'", "COMMONLY_PAIRED_WITH", 1.0, "Funk 16th syncopation"),
-                          ("PAT-020", "Authentic UKG 2-Step", "COMMONLY_PAIRED_WITH", 1.0, "UK Garage 2-step syncopation")],
-                "piano": [("P09", "Rhythmische Akkordbegleitung", "COMPATIBLE_WITH", 0.95, "Charleston rhythm & offbeat stabs"),
-                          ("P05", "Zweihändige Shell-Voicings", "VOICED_BY", 0.9, "Dorian guide tones")],
+                "drums": [("PAT-007", "Funk 'The One'", "COMMONLY_PAIRED_WITH", "Funk 16th syncopation"),
+                          ("PAT-020", "Authentic UKG 2-Step", "COMMONLY_PAIRED_WITH", "UK Garage 2-step syncopation")],
+                "piano": [("P09", "Rhythmische Akkordbegleitung", "COMPATIBLE_WITH", "Charleston rhythm & offbeat stabs"),
+                          ("P05", "Zweihändige Shell-Voicings", "VOICED_BY", "Dorian guide tones")],
             },
             "PROG-008": {
-                "drums": [("PAT-012", "Jazz Traditional Ride", "COMMONLY_PAIRED_WITH", 0.95, "Blues swing ride"),
-                          ("PAT-001", "Pop / Rock Straight", "STYLISTICALLY_COMPATIBLE", 0.85, "Straight 8th blues rock")],
-                "piano": [("P05", "Zweihändige Shell-Voicings", "VOICED_BY", 0.95, "Blues guide tones 3 & b7"),
-                          ("P09", "Rhythmische Akkordbegleitung", "DIDACTIC_APPLICATION", 0.9, "Swung blues comping")],
+                "drums": [("PAT-012", "Jazz Traditional Ride", "COMMONLY_PAIRED_WITH", "Blues swing ride"),
+                          ("PAT-001", "Pop / Rock Straight", "STYLISTICALLY_COMPATIBLE", "Straight 8th blues rock")],
+                "piano": [("P05", "Zweihändige Shell-Voicings", "VOICED_BY", "Blues guide tones 3 & b7"),
+                          ("P09", "Rhythmische Akkordbegleitung", "DIDACTIC_APPLICATION", "Swung blues comping")],
             },
             "PROG-009": {
-                "drums": [("PAT-014", "Soul Ballad 12/8", "COMMONLY_PAIRED_WITH", 0.9, "Lyrical 12/8 triplet ballad"),
-                          ("PAT-001", "Pop / Rock Straight", "STYLISTICALLY_COMPATIBLE", 0.85, "Straight romantic ballad")],
-                "piano": [("P07", "Zweihändige rollende Arpeggien", "DIDACTIC_APPLICATION", 0.9, "Flowing ballad arpeggios"),
-                          ("P13", "Reharmonisation in der Praxis", "DIDACTIC_APPLICATION", 0.9, "Minor plagal modal interchange")],
+                "drums": [("PAT-014", "Soul Ballad 12/8", "COMMONLY_PAIRED_WITH", "Lyrical 12/8 triplet ballad"),
+                          ("PAT-001", "Pop / Rock Straight", "STYLISTICALLY_COMPATIBLE", "Straight romantic ballad")],
+                "piano": [("P07", "Zweihändige rollende Arpeggien", "DIDACTIC_APPLICATION", "Flowing ballad arpeggios"),
+                          ("P13", "Reharmonisation in der Praxis", "DIDACTIC_APPLICATION", "Minor plagal modal interchange")],
             },
             "PROG-010": {
-                "drums": [("PAT-009", "Motown / Soul Stomp", "COMMONLY_PAIRED_WITH", 0.9, "Soul stomp drive"),
-                          ("PAT-001", "Pop / Rock Straight", "STYLISTICALLY_COMPATIBLE", 0.85, "Pop rock backbeat")],
-                "piano": [("P04", "Vierklänge & Septakkorde", "VOICED_BY", 0.9, "Secondary dominant 7th chords"),
-                          ("P19", "Chromatische Bassführung für Sekundärdominanten", "DIDACTIC_APPLICATION", 0.85, "Leading tone bass motion")],
+                "drums": [("PAT-009", "Motown / Soul Stomp", "COMMONLY_PAIRED_WITH", "Soul stomp drive"),
+                          ("PAT-001", "Pop / Rock Straight", "STYLISTICALLY_COMPATIBLE", "Pop rock backbeat")],
+                "piano": [("P04", "Vierklänge & Septakkorde", "VOICED_BY", "Secondary dominant 7th chords"),
+                          ("P19", "Chromatische Bassführung für Sekundärdominanten", "DIDACTIC_APPLICATION", "Leading tone bass motion")],
             },
             "PROG-011": {
-                "drums": [("PAT-001", "Pop / Rock Straight", "COMMONLY_PAIRED_WITH", 0.9, "Driving rock straight groove"),
-                          ("PAT-005", "Berlin Peak Techno", "STYLISTICALLY_COMPATIBLE", 0.8, "Four-on-the-floor epic drive")],
-                "piano": [("P06", "Sus- und Add-Akkorde", "DIDACTIC_APPLICATION", 0.9, "Modern modal epic voicing"),
-                          ("P13", "Reharmonisation in der Praxis", "DIDACTIC_APPLICATION", 0.9, "Aeolian modal interchange")],
+                "drums": [("PAT-001", "Pop / Rock Straight", "COMMONLY_PAIRED_WITH", "Driving rock straight groove"),
+                          ("PAT-005", "Berlin Peak Techno", "STYLISTICALLY_COMPATIBLE", "Four-on-the-floor epic drive")],
+                "piano": [("P06", "Sus- und Add-Akkorde", "DIDACTIC_APPLICATION", "Modern modal epic voicing"),
+                          ("P13", "Reharmonisation in der Praxis", "DIDACTIC_APPLICATION", "Aeolian modal interchange")],
             },
             "PROG-012": {
-                "drums": [("PAT-012", "Jazz Traditional Ride", "COMMONLY_PAIRED_WITH", 0.95, "Standard jazz swing"),
-                          ("PAT-003", "Boom-Bap Hip-Hop", "STYLISTICALLY_COMPATIBLE", 0.85, "Sampled circle of 5ths groove")],
-                "piano": [("P05", "Zweihändige Shell-Voicings", "VOICED_BY", 0.95, "Continuous guide-tone resolution"),
-                          ("P08", "Drop-2 Voicings", "VOICED_BY", 0.9, "Smooth descending drop-2 cycle")],
+                "drums": [("PAT-012", "Jazz Traditional Ride", "COMMONLY_PAIRED_WITH", "Standard jazz swing"),
+                          ("PAT-003", "Boom-Bap Hip-Hop", "STYLISTICALLY_COMPATIBLE", "Sampled circle of 5ths groove")],
+                "piano": [("P05", "Zweihändige Shell-Voicings", "VOICED_BY", "Continuous guide-tone resolution"),
+                          ("P08", "Drop-2 Voicings", "VOICED_BY", "Smooth descending drop-2 cycle")],
             },
             "PROG-013": {
-                "drums": [("PAT-012", "Jazz Traditional Ride", "COMMONLY_PAIRED_WITH", 0.95, "Medium swing ride"),
-                          ("PAT-017", "Bebop Up-Tempo Comping", "STYLISTICALLY_COMPATIBLE", 0.9, "Up-tempo bebop comping")],
-                "piano": [("P05", "Zweihändige Shell-Voicings", "VOICED_BY", 0.95, "Tritone substitution guide tones"),
-                          ("P16", "Upper Structure Triads über Dominanten", "DIDACTIC_APPLICATION", 0.9, "Altered dominant upper structures")],
+                "drums": [("PAT-012", "Jazz Traditional Ride", "COMMONLY_PAIRED_WITH", "Medium swing ride"),
+                          ("PAT-017", "Bebop Up-Tempo Comping", "STYLISTICALLY_COMPATIBLE", "Up-tempo bebop comping")],
+                "piano": [("P05", "Zweihändige Shell-Voicings", "VOICED_BY", "Tritone substitution guide tones"),
+                          ("P16", "Upper Structure Triads über Dominanten", "DIDACTIC_APPLICATION", "Altered dominant upper structures")],
             },
             "PROG-014": {
-                "drums": [("PAT-013", "Funk 16th Linear Ghost", "COMMONLY_PAIRED_WITH", 0.95, "Linear funk backbeat"),
-                          ("PAT-007", "Funk 'The One'", "STYLISTICALLY_COMPATIBLE", 0.9, "Soul funk groove")],
-                "piano": [("P08", "Drop-2 Voicings", "VOICED_BY", 0.9, "Backdoor drop-2 voicings"),
-                          ("P18", "Backdoor Guide-Tone Voicings", "DIDACTIC_APPLICATION", 0.95, "Guide-tone resolution bVII7 -> I")],
+                "drums": [("PAT-013", "Funk 16th Linear Ghost", "COMMONLY_PAIRED_WITH", "Linear funk backbeat"),
+                          ("PAT-007", "Funk 'The One'", "STYLISTICALLY_COMPATIBLE", "Soul funk groove")],
+                "piano": [("P08", "Drop-2 Voicings", "VOICED_BY", "Backdoor drop-2 voicings"),
+                          ("P18", "Backdoor Guide-Tone Voicings", "DIDACTIC_APPLICATION", "Guide-tone resolution bVII7 -> I")],
             },
             "PROG-015": {
-                "drums": [("PAT-001", "Pop / Rock Straight", "COMMONLY_PAIRED_WITH", 0.9, "J-Pop driving straight groove"),
-                          ("PAT-003", "Boom-Bap Hip-Hop", "STYLISTICALLY_COMPATIBLE", 0.85, "Anime lo-fi hip-hop")],
-                "piano": [("P04", "Vierklänge & Septakkorde", "VOICED_BY", 0.9, "Major 7th and minor 7th grips"),
-                          ("P08", "Drop-2 Voicings", "VOICED_BY", 0.85, "Lush anime soundtrack voicings")],
+                "drums": [("PAT-001", "Pop / Rock Straight", "COMMONLY_PAIRED_WITH", "J-Pop driving straight groove"),
+                          ("PAT-003", "Boom-Bap Hip-Hop", "STYLISTICALLY_COMPATIBLE", "Anime lo-fi hip-hop")],
+                "piano": [("P04", "Vierklänge & Septakkorde", "VOICED_BY", "Major 7th and minor 7th grips"),
+                          ("P08", "Drop-2 Voicings", "VOICED_BY", "Lush anime soundtrack voicings")],
             },
             "PROG-016": {
-                "drums": [("PAT-017", "Bebop Up-Tempo Comping", "COMMONLY_PAIRED_WITH", 0.95, "High-tempo Coltrane swing"),
-                          ("PAT-012", "Jazz Traditional Ride", "STYLISTICALLY_COMPATIBLE", 0.9, "Fast ride cymbal drive")],
-                "piano": [("P08", "Drop-2 Voicings", "VOICED_BY", 0.9, "Giant Steps drop-2 grips"),
-                          ("P16", "Upper Structure Triads über Dominanten", "DIDACTIC_APPLICATION", 0.9, "Secondary dominant tensions")],
+                "drums": [("PAT-017", "Bebop Up-Tempo Comping", "COMMONLY_PAIRED_WITH", "High-tempo Coltrane swing"),
+                          ("PAT-012", "Jazz Traditional Ride", "STYLISTICALLY_COMPATIBLE", "Fast ride cymbal drive")],
+                "piano": [("P08", "Drop-2 Voicings", "VOICED_BY", "Giant Steps drop-2 grips"),
+                          ("P16", "Upper Structure Triads über Dominanten", "DIDACTIC_APPLICATION", "Secondary dominant tensions")],
             },
             "PROG-017": {
-                "drums": [("PAT-013", "Funk 16th Linear Ghost", "COMMONLY_PAIRED_WITH", 1.0, "Neo-Soul linear ghost notes"),
-                          ("PAT-012", "Jazz Traditional Ride", "STYLISTICALLY_COMPATIBLE", 0.9, "Traditional jazz backdoor swing")],
-                "piano": [("P08", "Drop-2 Voicings", "VOICED_BY", 1.0, "Drop-2 open position voicings"),
-                          ("P18", "Backdoor Guide-Tone Voicings", "DIDACTIC_APPLICATION", 0.95, "Authentic backdoor guide tones")],
+                "drums": [("PAT-013", "Funk 16th Linear Ghost", "COMMONLY_PAIRED_WITH", "Neo-Soul linear ghost notes"),
+                          ("PAT-012", "Jazz Traditional Ride", "STYLISTICALLY_COMPATIBLE", "Traditional jazz backdoor swing")],
+                "piano": [("P08", "Drop-2 Voicings", "VOICED_BY", "Drop-2 open position voicings"),
+                          ("P18", "Backdoor Guide-Tone Voicings", "DIDACTIC_APPLICATION", "Authentic backdoor guide tones")],
             },
             "PROG-018": {
-                "drums": [("PAT-013", "Funk 16th Linear Ghost", "COMMONLY_PAIRED_WITH", 0.9, "Cool jazz linear groove"),
-                          ("PAT-012", "Jazz Traditional Ride", "STYLISTICALLY_COMPATIBLE", 0.9, "West Coast swing")],
-                "piano": [("P08", "Drop-2 Voicings", "VOICED_BY", 0.9, "Substitute backdoor drop-2"),
-                          ("P18", "Backdoor Guide-Tone Voicings", "DIDACTIC_APPLICATION", 0.9, "Guide tone resolving to major 7th")],
+                "drums": [("PAT-013", "Funk 16th Linear Ghost", "COMMONLY_PAIRED_WITH", "Cool jazz linear groove"),
+                          ("PAT-012", "Jazz Traditional Ride", "STYLISTICALLY_COMPATIBLE", "West Coast swing")],
+                "piano": [("P08", "Drop-2 Voicings", "VOICED_BY", "Substitute backdoor drop-2"),
+                          ("P18", "Backdoor Guide-Tone Voicings", "DIDACTIC_APPLICATION", "Guide tone resolving to major 7th")],
             },
             "PROG-019": {
-                "drums": [("PAT-027", "Bossa Nova Authentic Brush", "COMMONLY_PAIRED_WITH", 0.95, "Bossa nova cross-stick brush"),
-                          ("PAT-012", "Jazz Traditional Ride", "STYLISTICALLY_COMPATIBLE", 0.85, "Slow ballad swing")],
-                "piano": [("P02", "Akkordumkehrungen & Minimal Movement", "VOICED_BY", 0.95, "Chromatic inner-line descent"),
-                          ("P08", "Drop-2 Voicings", "VOICED_BY", 0.85, "Drop-2 line cliché voicings")],
+                "drums": [("PAT-027", "Bossa Nova Authentic Brush", "COMMONLY_PAIRED_WITH", "Bossa nova cross-stick brush"),
+                          ("PAT-012", "Jazz Traditional Ride", "STYLISTICALLY_COMPATIBLE", "Slow ballad swing")],
+                "piano": [("P02", "Akkordumkehrungen & Minimal Movement", "VOICED_BY", "Chromatic inner-line descent"),
+                          ("P08", "Drop-2 Voicings", "VOICED_BY", "Drop-2 line cliché voicings")],
             },
             "PROG-020": {
-                "drums": [("PAT-012", "Jazz Traditional Ride", "COMMONLY_PAIRED_WITH", 0.9, "Modern jazz swing"),
-                          ("PAT-017", "Bebop Up-Tempo Comping", "STYLISTICALLY_COMPATIBLE", 0.9, "Contemporary bebop comping")],
-                "piano": [("P16", "Upper Structure Triads über Dominanten", "DIDACTIC_APPLICATION", 0.95, "Altered dominant tensions (#11, b9)"),
-                          ("P08", "Drop-2 Voicings", "VOICED_BY", 0.9, "Contemporary drop-2 voicings")],
+                "drums": [("PAT-012", "Jazz Traditional Ride", "COMMONLY_PAIRED_WITH", "Modern jazz swing"),
+                          ("PAT-017", "Bebop Up-Tempo Comping", "STYLISTICALLY_COMPATIBLE", "Contemporary bebop comping")],
+                "piano": [("P16", "Upper Structure Triads über Dominanten", "DIDACTIC_APPLICATION", "Altered dominant tensions (#11, b9)"),
+                          ("P08", "Drop-2 Voicings", "VOICED_BY", "Contemporary drop-2 voicings")],
             },
             "PROG-021": {
-                "drums": [("PAT-024", "Boom-Bap Golden Era", "STYLISTICALLY_COMPATIBLE", 1.0, "Boom-Bap swung MPC groove"),
-                          ("PAT-030", "Phrygian Neo-Soul Halftime Shuffle", "STYLISTICALLY_COMPATIBLE", 0.9, "Laid-back halftime shuffle")],
-                "piano": [("P12", "Zweihändige Rootless Voicings", "DIDACTIC_APPLICATION", 1.0, "Rootless 9th and 11th voicings"),
-                          ("P17", "Zeitgenössisches Syncopated Comping", "DIDACTIC_APPLICATION", 0.9, "R&B syncopated pushes")],
+                "drums": [("PAT-024", "Boom-Bap Golden Era", "STYLISTICALLY_COMPATIBLE", "Boom-Bap swung MPC groove"),
+                          ("PAT-030", "Phrygian Neo-Soul Halftime Shuffle", "STYLISTICALLY_COMPATIBLE", "Laid-back halftime shuffle")],
+                "piano": [("P12", "Zweihändige Rootless Voicings", "DIDACTIC_APPLICATION", "Rootless 9th and 11th voicings"),
+                          ("P17", "Zeitgenössisches Syncopated Comping", "DIDACTIC_APPLICATION", "R&B syncopated pushes")],
             },
             "PROG-022": {
-                "drums": [("PAT-001", "Pop / Rock Straight", "STYLISTICALLY_COMPATIBLE", 0.85, "Straight historical cadential beat"),
-                          ("PAT-012", "Jazz Traditional Ride", "STYLISTICALLY_COMPATIBLE", 0.85, "Folk jazz swing")],
-                "piano": [("P13", "Reharmonisation in der Praxis", "DIDACTIC_APPLICATION", 1.0, "Picardy third resolution"),
-                          ("P02", "Akkordumkehrungen & Minimal Movement", "VOICED_BY", 0.9, "Smooth modal voice leading")],
+                "drums": [("PAT-001", "Pop / Rock Straight", "STYLISTICALLY_COMPATIBLE", "Straight historical cadential beat"),
+                          ("PAT-012", "Jazz Traditional Ride", "STYLISTICALLY_COMPATIBLE", "Folk jazz swing")],
+                "piano": [("P13", "Reharmonisation in der Praxis", "DIDACTIC_APPLICATION", "Picardy third resolution"),
+                          ("P02", "Akkordumkehrungen & Minimal Movement", "VOICED_BY", "Smooth modal voice leading")],
             },
             "PROG-023": {
-                "drums": [("PAT-018", "Liquid D&B Rolling Break", "STYLISTICALLY_COMPATIBLE", 1.0, "174 BPM two-step breakbeat"),
-                          ("PAT-008", "Drum & Bass (Amen)", "STYLISTICALLY_COMPATIBLE", 0.9, "Classic Amen breakbeat")],
-                "piano": [("P09", "Rhythmische Akkordbegleitung", "DIDACTIC_APPLICATION", 0.95, "Syncopated offbeat stabs"),
-                          ("P12", "Zweihändige Rootless Voicings", "VOICED_BY", 0.9, "Liquid D&B rootless pad voicings")],
+                "drums": [("PAT-018", "Liquid D&B Rolling Break", "STYLISTICALLY_COMPATIBLE", "174 BPM two-step breakbeat"),
+                          ("PAT-008", "Drum & Bass (Amen)", "STYLISTICALLY_COMPATIBLE", "Classic Amen breakbeat")],
+                "piano": [("P09", "Rhythmische Akkordbegleitung", "DIDACTIC_APPLICATION", "Syncopated offbeat stabs"),
+                          ("P12", "Zweihändige Rootless Voicings", "VOICED_BY", "Liquid D&B rootless pad voicings")],
             },
             "PROG-024": {
-                "drums": [("PAT-027", "Bossa Nova Authentic Brush", "STYLISTICALLY_COMPATIBLE", 1.0, "Authentic Bossa brush groove"),
-                          ("PAT-029", "Samba Batucada Sectional", "STYLISTICALLY_COMPATIBLE", 0.85, "Brazilian samba feel")],
-                "piano": [("P14", "Bossa Nova & Latin Piano Begleitung", "DIDACTIC_APPLICATION", 1.0, "LH Surdo / RH Bossa Clave"),
-                          ("P05", "Zweihändige Shell-Voicings", "VOICED_BY", 0.9, "Jazz-samba shell voicings")],
+                "drums": [("PAT-027", "Bossa Nova Authentic Brush", "STYLISTICALLY_COMPATIBLE", "Authentic Bossa brush groove"),
+                          ("PAT-029", "Samba Batucada Sectional", "STYLISTICALLY_COMPATIBLE", "Brazilian samba feel")],
+                "piano": [("P14", "Bossa Nova & Latin Piano Begleitung", "DIDACTIC_APPLICATION", "LH Surdo / RH Bossa Clave"),
+                          ("P05", "Zweihändige Shell-Voicings", "VOICED_BY", "Jazz-samba shell voicings")],
             },
             "PROG-025": {
-                "drums": [("PAT-028", "Afro-Cuban Cha-Cha-Chá", "STYLISTICALLY_COMPATIBLE", 1.0, "Cha-Cha Conga Tumbao"),
-                          ("PAT-031", "Afro-Cuban 6/8 Bembé Fusion", "COMMONLY_PAIRED_WITH", 1.0, "6/8 Bembé polyrhythmic clave")],
-                "piano": [("P14", "Bossa Nova & Latin Piano Begleitung", "DIDACTIC_APPLICATION", 0.95, "Montuno Guajeo syncopated arpeggios"),
-                          ("P09", "Rhythmische Akkordbegleitung", "COMPATIBLE_WITH", 0.9, "Latin syncopated stabs")],
+                "drums": [("PAT-028", "Afro-Cuban Cha-Cha-Chá", "STYLISTICALLY_COMPATIBLE", "Cha-Cha Conga Tumbao"),
+                          ("PAT-031", "Afro-Cuban 6/8 Bembé Fusion", "COMMONLY_PAIRED_WITH", "6/8 Bembé polyrhythmic clave")],
+                "piano": [("P14", "Bossa Nova & Latin Piano Begleitung", "DIDACTIC_APPLICATION", "Montuno Guajeo syncopated arpeggios"),
+                          ("P09", "Rhythmische Akkordbegleitung", "COMPATIBLE_WITH", "Latin syncopated stabs")],
             },
             "PROG-026": {
-                "drums": [("PAT-012", "Jazz Traditional Ride", "STYLISTICALLY_COMPATIBLE", 0.9, "Traditional jazz brush swing"),
-                          ("PAT-027", "Bossa Nova Authentic Brush", "STYLISTICALLY_COMPATIBLE", 0.85, "Acoustic brush groove")],
-                "piano": [("P19", "Chromatische Bassführung für Sekundärdominanten", "DIDACTIC_APPLICATION", 1.0, "V7(6/5)/V chromatic descent"),
-                          ("P11", "Akkordumkehrungen nach Gehör & Funktion", "DIDACTIC_APPLICATION", 0.95, "First-inversion 6/5 decoding")],
+                "drums": [("PAT-012", "Jazz Traditional Ride", "STYLISTICALLY_COMPATIBLE", "Traditional jazz brush swing"),
+                          ("PAT-027", "Bossa Nova Authentic Brush", "STYLISTICALLY_COMPATIBLE", "Acoustic brush groove")],
+                "piano": [("P19", "Chromatische Bassführung für Sekundärdominanten", "DIDACTIC_APPLICATION", "V7(6/5)/V chromatic descent"),
+                          ("P11", "Akkordumkehrungen nach Gehör & Funktion", "DIDACTIC_APPLICATION", "First-inversion 6/5 decoding")],
             },
             "PROG-027": {
-                "drums": [("PAT-012", "Jazz Traditional Ride", "COMMONLY_PAIRED_WITH", 0.95, "Minor jazz blues ride swing"),
-                          ("PAT-017", "Bebop Up-Tempo Comping", "STYLISTICALLY_COMPATIBLE", 0.9, "Fast bebop minor comping")],
-                "piano": [("P05", "Zweihändige Shell-Voicings", "VOICED_BY", 0.95, "Minor blues guide tones"),
-                          ("P16", "Upper Structure Triads über Dominanten", "DIDACTIC_APPLICATION", 0.9, "Altered V7(#11) turnaround voicings")],
+                "drums": [("PAT-012", "Jazz Traditional Ride", "COMMONLY_PAIRED_WITH", "Minor jazz blues ride swing"),
+                          ("PAT-017", "Bebop Up-Tempo Comping", "STYLISTICALLY_COMPATIBLE", "Fast bebop minor comping")],
+                "piano": [("P05", "Zweihändige Shell-Voicings", "VOICED_BY", "Minor blues guide tones"),
+                          ("P16", "Upper Structure Triads über Dominanten", "DIDACTIC_APPLICATION", "Altered V7(#11) turnaround voicings")],
             },
             "PROG-028": {
-                "drums": [("PAT-030", "Phrygian Neo-Soul Halftime Shuffle", "COMMONLY_PAIRED_WITH", 1.0, "Phrygian neo-soul halftime shuffle"),
-                          ("PAT-013", "Funk 16th Linear Ghost", "STYLISTICALLY_COMPATIBLE", 0.9, "Linear funk ghost notes")],
-                "piano": [("P12", "Zweihändige Rootless Voicings", "VOICED_BY", 1.0, "Two-handed rootless stacking"),
-                          ("P08", "Drop-2 Voicings", "VOICED_BY", 0.9, "Soul cycle drop-2 voicings")],
+                "drums": [("PAT-030", "Phrygian Neo-Soul Halftime Shuffle", "COMMONLY_PAIRED_WITH", "Phrygian neo-soul halftime shuffle"),
+                          ("PAT-013", "Funk 16th Linear Ghost", "STYLISTICALLY_COMPATIBLE", "Linear funk ghost notes")],
+                "piano": [("P12", "Zweihändige Rootless Voicings", "VOICED_BY", "Two-handed rootless stacking"),
+                          ("P08", "Drop-2 Voicings", "VOICED_BY", "Soul cycle drop-2 voicings")],
             },
         }
 
@@ -816,7 +821,7 @@ class CrossDomainRecommender:
         if not config:
             return
 
-        for pat_id, name, rel_type, conf, desc in config.get("drums", []):
+        for pat_id, name, rel_type, desc in config.get("drums", []):
             if pat_id not in seen_targets:
                 drum_items.append(
                     RecommendationItem(
@@ -824,15 +829,15 @@ class CrossDomainRecommender:
                         target_name=name,
                         domain="DRUM",
                         relation_type=rel_type,
-                        strength="STRONG" if conf >= 0.95 else "HIGH",
-                        confidence=conf,
+                        strength="UNASSESSED",
+                        confidence=None,
                         description=desc,
                         source_relation_id=None,
                     )
                 )
                 seen_targets.add(pat_id)
 
-        for p_id, name, rel_type, conf, desc in config.get("piano", []):
+        for p_id, name, rel_type, desc in config.get("piano", []):
             if p_id not in seen_targets:
                 piano_items.append(
                     RecommendationItem(
@@ -840,8 +845,8 @@ class CrossDomainRecommender:
                         target_name=name,
                         domain="PIANO",
                         relation_type=rel_type,
-                        strength="STRONG" if conf >= 0.95 else "HIGH",
-                        confidence=conf,
+                        strength="UNASSESSED",
+                        confidence=None,
                         description=desc,
                         source_relation_id=None,
                     )
@@ -854,10 +859,12 @@ _GLOBAL_RECOMMENDER: Optional[CrossDomainRecommender] = None
 
 
 def get_recommender(relations_path: Optional[str | Path] = None) -> CrossDomainRecommender:
-    """Obtain or instantiate the global CrossDomainRecommender singleton."""
+    """Get the default recommender or load an isolated custom register."""
     global _GLOBAL_RECOMMENDER
-    if _GLOBAL_RECOMMENDER is None or relations_path is not None:
-        _GLOBAL_RECOMMENDER = CrossDomainRecommender(relations_path)
+    if relations_path is not None:
+        return CrossDomainRecommender(relations_path)
+    if _GLOBAL_RECOMMENDER is None:
+        _GLOBAL_RECOMMENDER = CrossDomainRecommender()
     return _GLOBAL_RECOMMENDER
 
 
@@ -865,8 +872,7 @@ def recommend_for_progression(
     prog_id: str, relations_path: Optional[str | Path] = None
 ) -> CrossDomainRecommendation:
     """
-    Produce a validated cross-domain recommendation vector for any canonical PROG ID.
-    Validates drums (PAT-xxx), piano voicings (Pxx), and genre-specific bassline model.
+    Return unassessed drum, piano and bassline ideas for a canonical progression.
     """
     return get_recommender(relations_path).recommend_for_progression(prog_id)
 

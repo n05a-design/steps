@@ -60,6 +60,7 @@
 - Die Progressionsbibliothek verknüpft Suchbegriffe aus Akkorden, Titeln und Quellen. Eine weiterhin sichtbare Auswahl bleibt beim Ändern der Suche erhalten. Katalogfehler erscheinen vor der Speicherrückfrage.
 
 - Der Next Chord Explorer bewahrt die Akkordauswahl auf Aqua, zeigt lokalisierte Beziehungen samt Provenienz und verhindert die Übernahme überholter Empfehlungen.
+- Die Python-API für Drums, Piano und Bass weist kreative Ideen und prüfpflichtige Forschungsbezüge aus. Aufrufer erhalten für `confidence` künftig `None`.
 - Das Stimmführungslabor zeigt zwei Stilprofile mit vergleichbaren Piano-Rolls, Bassverlauf und Übergangsmetriken.
 - Das Werkzeugmenü, besser lesbare Aqua-Schaltflächen und die Tastaturvorschau verbessern den Desktop-Ablauf. Ein lokales macOS-App-Bundle enthält Branding, Kataloge und das Quellenregister. Der Wheel-Smoke prüft jetzt auch die installierte Bibliothek.
 

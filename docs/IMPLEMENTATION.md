@@ -174,6 +174,10 @@ Die Anfänger-Voicings berechnen die beste Folge iterativ und verwenden
 bereits berechnete Teilpfade. Bewegungsmaß und Auswahl bei Gleichstand
 folgen derselben Regel wie zuvor.
 
+Die Python-API des Cross-Domain-Recommenders liefert Vorschläge für Drums,
+Piano und Bass mit ausgewiesenem Prüfstatus. Die API gibt keine
+Sicherheitswerte aus. [Vertrag für den Prüfstatus](engineering/MUSIC_DOMAIN_AND_MIDI.md#7-fachreview-statt-pseudogenauigkeit)
+
 Der native MIDI-Dateidialog schlägt den Projekttitel als Dateinamen vor. Beim
 ersten Export öffnet er für gespeicherte Projekte deren Ordner. Weitere
 Exporte im selben Projekt öffnen den zuletzt erfolgreich verwendeten Ordner,
