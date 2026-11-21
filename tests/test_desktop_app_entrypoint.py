@@ -359,6 +359,40 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             window.undo_btn.invoke()
             self.assertEqual(controller.session.state, state_before_language)
 
+            event_index = last - 1
+            original_start, original_duration = controller.session.get_chord_event_timing(event_index)
+            original_count = rows.size()
+            rows.focus_force()
+            editor_modifier = "Command" if sys.platform == "darwin" else "Control"
+            rows.event_generate(f"<{editor_modifier}-d>")
+            root.update()
+            self.assertEqual(rows.size(), original_count + 1)
+            self.assertEqual(rows.curselection(), (event_index + 1,))
+            self.assertEqual(
+                controller.session.get_chord_event_timing(event_index + 1),
+                (original_start + original_duration, original_duration),
+            )
+            window.chord_menu.invoke(1)
+            self.assertEqual(rows.size(), original_count + 2)
+            self.assertEqual(rows.curselection(), (event_index + 2,))
+            self.assertEqual(root.focus_lastfor(), rows)
+            window.undo_btn.invoke()
+            window.undo_btn.invoke()
+            self.assertEqual(controller.session.state, state_before_language)
+
+            window.event_duration_entry.delete(0, tk.END)
+            window.event_duration_entry.insert(0, "1")
+            window.event_timing_btn.invoke()
+            self.assertEqual(window.chord_menu.entrycget(1, "state"), tk.DISABLED)
+            self.assertEqual(window.chord_menu.entrycget(0, "state"), tk.NORMAL)
+            revision = controller.revision
+            rows.event_generate(f"<{editor_modifier}-t>")
+            root.update()
+            self.assertEqual(controller.revision, revision)
+            self.assertEqual(rows.size(), original_count)
+            window.undo_btn.invoke()
+            self.assertEqual(controller.session.state, state_before_language)
+
             prompt.return_value = False
             window.file_menu.invoke(0)
             prompt.reset_mock()

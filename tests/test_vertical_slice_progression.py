@@ -29,6 +29,7 @@ from unittest.mock import patch
 
 from app.ui.session_controller import ProgressionSessionController
 from scripts.audit_midi_files import envelope
+from src.steps.midi import MidiFile
 from src.steps.progression.session import ProgressionSession
 from src.steps.storage import CorruptedProjectError, Project, save_project
 
@@ -42,6 +43,80 @@ class TestVerticalSliceProgression(unittest.TestCase):
 
     def tearDown(self):
         shutil.rmtree(self.temp_dir, ignore_errors=True)
+
+    def test_duplicate_copies_written_symbol_and_duration_without_shifting_overlap(self):
+        session = ProgressionSession(initial_chords=["Bmaj7", "H"], convention="DE")
+        controller = ProgressionSessionController(session)
+        session.set_chord_event_timing(0, 120, 721)
+        session.set_chord_event_timing(1, 920, 480)
+        before = session.state
+
+        self.assertEqual(controller.duplicate_chord_event(0), 1)
+
+        self.assertEqual(session.chords, ["Bmaj7", "Bmaj7", "H"])
+        self.assertEqual(session.state.chord_event_timings, [(120, 721), (841, 721), (920, 480)])
+        duplicated = session.state
+        self.assertEqual(controller.revision, 1)
+        controller.undo()
+        self.assertEqual(session.state, before)
+        controller.redo()
+        self.assertEqual(session.state, duplicated)
+
+    def test_split_preserves_original_span_and_roundtrips_odd_duration(self):
+        session = ProgressionSession(initial_chords=["C", "G"])
+        controller = ProgressionSessionController(session)
+        session.set_chord_event_timing(1, 0, 961)
+        before = session.state
+
+        self.assertEqual(controller.split_chord_event(1), 2)
+
+        self.assertEqual(session.chords, ["C", "G", "G"])
+        self.assertEqual(session.state.chord_event_timings, [(0, 1920), (0, 480), (480, 481)])
+        split = session.state
+        self.assertEqual(controller.revision, 1)
+        controller.undo()
+        self.assertEqual(session.state, before)
+        controller.redo()
+        self.assertEqual(session.state, split)
+        controller.save(self.project_file)
+        reopened = ProgressionSessionController()
+        reopened.load(self.project_file)
+        self.assertEqual(reopened.session.state, split)
+
+    def test_rejected_event_edits_preserve_revision_and_undo(self):
+        session = ProgressionSession(initial_chords=["C"])
+        session.set_chord_event_timing(0, 60, 1)
+        controller = ProgressionSessionController(session)
+        before = session.state
+
+        with self.assertRaises(ValueError):
+            controller.split_chord_event(0)
+        with self.assertRaises(IndexError):
+            controller.duplicate_chord_event(-1)
+
+        self.assertEqual(session.state, before)
+        self.assertEqual(controller.revision, 0)
+        controller.undo()
+        self.assertEqual(session.get_chord_event_timing(0), (0, 1920))
+
+    def test_export_emits_separate_attacks_after_split_and_duplicate(self):
+        session = ProgressionSession(initial_chords=["C", "G"])
+        controller = ProgressionSessionController(session)
+        controller.split_chord_event(0)
+        controller.duplicate_chord_event(1)
+
+        controller.export_midi(self.midi_file)
+
+        midi = MidiFile.from_bytes(self.midi_file.read_bytes())
+        chord_events = midi.tracks[1].raw_events
+        attacks = [
+            event.abs_tick for event in chord_events
+            if event.msg_bytes[0] & 0xF0 == 0x90 and event.msg_bytes[2] > 0
+        ]
+        self.assertEqual(sorted(set(attacks)), [0, 960, 1920])
+        self.assertEqual(attacks.count(0), 4)
+        self.assertEqual(attacks.count(960), 4)
+        self.assertEqual(attacks.count(1920), 8)
 
     def test_session_midi_export_forwards_options_and_preserves_defaults(self):
         session = ProgressionSession(

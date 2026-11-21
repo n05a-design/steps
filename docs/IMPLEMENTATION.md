@@ -135,6 +135,18 @@ Wahltaste+Auf/Ab (macOS) oder Alt+Auf/Ab (Windows/Linux) das Akkordereignis
 um eine Zeile. Sein absoluter Start und seine Dauer bleiben am Ereignis.
 Ein Sprachwechsel übersetzt die Zeilen und bewahrt Auswahl, Scrollposition
 sowie unfertige Eingaben.
+Im Menü „Akkord“ erzeugt „Duplizieren“ eine Kopie mit derselben Dauer direkt
+nach dem Ende des ausgewählten Ereignisses. Andere Start-Ticks bleiben
+erhalten. So kann die Kopie ein benachbartes Ereignis überlappen.
+„In der Mitte teilen“ erzeugt zwei direkt aufeinanderfolgende Ereignisse
+mit demselben Akkordsymbol. Bei ungerader Dauer erhält der zweite Teil
+den zusätzlichen Tick. Ereignisse mit einem Tick können dupliziert werden.
+Beide Aktionen wählen die neue Zeile aus und belegen je einen Undo-Schritt.
+Mit fokussierter Liste stehen Cmd+D und Cmd+T auf macOS sowie Ctrl+D und
+Ctrl+T auf Windows und Linux zur Verfügung. Die
+[ProgressionSession](../src/steps/progression/session.py) kapselt beide
+Änderungen als Funktionen für den Controller.
+
 Die Anfänger-Voicings berechnen die beste Folge iterativ und verwenden
 bereits berechnete Teilpfade. Bewegungsmaß und Auswahl bei Gleichstand
 folgen derselben Regel wie zuvor.
