@@ -29,6 +29,7 @@ from unittest.mock import patch
 
 from app.ui.session_controller import ProgressionSessionController
 from scripts.audit_midi_files import envelope
+from src.steps.midi import MidiFile
 from src.steps.progression.session import ProgressionSession
 from src.steps.storage import CorruptedProjectError, Project, save_project
 
@@ -97,6 +98,25 @@ class TestVerticalSliceProgression(unittest.TestCase):
         self.assertEqual(controller.revision, 0)
         controller.undo()
         self.assertEqual(session.get_chord_event_timing(0), (0, 1920))
+
+    def test_export_emits_separate_attacks_after_split_and_duplicate(self):
+        session = ProgressionSession(initial_chords=["C", "G"])
+        controller = ProgressionSessionController(session)
+        controller.split_chord_event(0)
+        controller.duplicate_chord_event(1)
+
+        controller.export_midi(self.midi_file)
+
+        midi = MidiFile.from_bytes(self.midi_file.read_bytes())
+        chord_events = midi.tracks[1].raw_events
+        attacks = [
+            event.abs_tick for event in chord_events
+            if event.msg_bytes[0] & 0xF0 == 0x90 and event.msg_bytes[2] > 0
+        ]
+        self.assertEqual(sorted(set(attacks)), [0, 960, 1920])
+        self.assertEqual(attacks.count(0), 4)
+        self.assertEqual(attacks.count(960), 4)
+        self.assertEqual(attacks.count(1920), 8)
 
     def test_session_midi_export_forwards_options_and_preserves_defaults(self):
         session = ProgressionSession(
