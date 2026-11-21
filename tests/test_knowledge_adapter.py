@@ -168,6 +168,14 @@ class TestKnowledgeAdapter(unittest.TestCase):
                 result = replace(self.adapter.query(case["prompt"]), **mutation)
                 self.assertFalse(evaluate([case], Mock(query=Mock(return_value=result)))[0]["runtime_pass"])
 
+    def test_same_source_id_does_not_validate_a_forged_locator_and_url(self):
+        case = self.eval_data["cases"][0]
+        result = self.adapter.query(case["prompt"])
+        forged = replace(result.sources[0], url="https://example.com/falscher-beleg", locator="S. 666")
+        forged_claim = replace(result.claims[0], citation=forged, citations=(forged,))
+        altered = replace(result, sources=(forged,), claims=(forged_claim,))
+        self.assertFalse(evaluate([case], Mock(query=Mock(return_value=altered)))[0]["runtime_pass"])
+
     def test_explicit_english_notation_questions_use_reviewed_comparison(self):
         for notation in ("German", "international"):
             with self.subTest(notation=notation):

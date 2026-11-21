@@ -4,6 +4,7 @@ import argparse
 from collections import Counter
 from dataclasses import dataclass
 from fractions import Fraction
+from functools import partial
 from itertools import product
 import json
 from pathlib import Path
@@ -16,6 +17,7 @@ from typing import Callable
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+from scripts.evaluate_knowledge_adapter import citations_match_publication, published_citations
 from src.steps.knowledge import KnowledgeAdapter
 from src.steps.midi import SMFParser
 from src.steps.progression import ProgressionSession, resolve_roman_degree
@@ -220,7 +222,7 @@ def midi_trial(rng, _adapter, directory):
                   "notation": convention}, expected, observe)
 
 
-def retrieval_trial(rng, adapter, _directory):
+def retrieval_trial(rng, adapter, _directory, *, published):
     query, claims, sources = rng.choice((
         ("axis", ["PROG-001-HARMONY", "PROG-001-TONAL-CENTER"],
          ["mto-richards-axis-progressions", "omt-four-chord-schemas", "omt-roman-numerals"]),
@@ -237,7 +239,7 @@ def retrieval_trial(rng, adapter, _directory):
     def observe():
         answer = adapter.query(query, convention=notation)
         verified = all(item.verified and item.citations for item in answer.claims)
-        verified &= not answer.alternatives
+        verified &= not answer.alternatives and citations_match_publication(answer.claims, published)
         if answer.found:
             verified &= answer.explanation == " ".join(item.summary for item in answer.claims)
         else:
@@ -265,8 +267,11 @@ def run(seed, trials, areas=tuple(PROBES)):
     with TemporaryDirectory(prefix="steps-musical-audit-") as temp:
         for area in areas:
             rng = random.Random(f"{seed}:{area}")
+            probe = PROBES[area]
+            if area == "retrieval":
+                probe = partial(probe, published=published_citations())
             for index in range(trials):
-                trial = PROBES[area](rng, adapter, Path(temp))
+                trial = probe(rng, adapter, Path(temp))
                 try:
                     actual = trial.observe()
                 except Exception as exc:

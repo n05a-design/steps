@@ -10,15 +10,33 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from src.steps.knowledge import KnowledgeAdapter
-from src.steps.progression.reviewed import _unique_keys
+from src.steps.progression.reviewed import _unique_keys, load_reviewed_catalog
 
 FIXTURE = ROOT / "skills/steps-knowledge/skill_eval_cases.json"
 STATUSES = {"GROUNDED", "ALTERNATIVE_INTERPRETATIONS", "NO_EVIDENCE", "RESTRICTED_LOCAL", "AMBIGUOUS_REJECTION"}
 
 
+def _citation_identity(citation):
+    return citation.source_id, citation.title, citation.url, citation.locator
+
+
+def published_citations():
+    """Index the exact citations bound to the validated publication records."""
+    return {
+        approved.claim.claim_id: tuple(map(_citation_identity, approved.claim.citations))
+        for example in load_reviewed_catalog()
+        for approved in example.claims
+    }
+
+
+def citations_match_publication(claims, published):
+    return all(tuple(map(_citation_identity, claim.citations)) == published.get(claim.claim_id) for claim in claims)
+
+
 def evaluate(cases, adapter):
     """Return exact retrieval observations for each case in input order."""
     results = []
+    published = published_citations()
     for case in cases:
         target = case["expected_status"]
         expected = case.get("runtime_status", target)
@@ -42,6 +60,7 @@ def evaluate(cases, adapter):
             publication_matches &= answer.explanation == (
                 f"Für die Anfrage {case['prompt']!r} liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
             )
+        publication_matches &= citations_match_publication(answer.claims, published)
         publication_matches &= not (answer.alternatives or any(claim.alternative_interpretations for claim in answer.claims))
         passed = (answer.status == expected and answer.found is found and claims == claim_ids
                   and {source_id for source_id, _ in sources} == set(source_ids)
