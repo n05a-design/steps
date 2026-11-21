@@ -45,6 +45,8 @@ from src.steps.theory.exceptions import MusicTheoryError
 
 logger = logging.getLogger(__name__)
 
+_CHORD_EVENT_SHORTCUTS = (("duplicate", "d"), ("split", "t"))
+
 _INVALID_FILENAME_CHARS = re.compile(r'[<>:"/\\|?*\x00-\x1f\ud800-\udfff]')
 _WINDOWS_RESERVED_FILENAME = re.compile(
     r"^(?:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\.|$)",
@@ -133,6 +135,12 @@ class StepsMainWindow:
             )
         self.file_menu.add_cascade(label="", menu=self.reviewed_menu)
         self.menu_bar.add_cascade(label="", menu=self.file_menu)
+        self.chord_menu = tk.Menu(self.menu_bar, tearoff=False)
+        for action, key in _CHORD_EVENT_SHORTCUTS:
+            self.chord_menu.add_command(
+                label="", accelerator=f"{shortcut}{key.upper()}", state=tk.DISABLED,
+                command=lambda selected=action: self._on_chord_event_edit(selected),
+            )
         self.tools_menu = tk.Menu(self.menu_bar, tearoff=False)
         for action in (self._on_explore_next, self._on_open_voice_leading_lab, self._on_export_midi):
             self.tools_menu.add_command(label="", command=action)
@@ -179,6 +187,9 @@ class StepsMainWindow:
                     self.reviewed_menu.entryconfigure(0, label=t("file.example.unavailable"))
         self.menu_bar.delete(0, tk.END)
         self.menu_bar.add_cascade(label=t("file.menu"), menu=self.file_menu)
+        self.menu_bar.add_cascade(label=t("chord.menu"), menu=self.chord_menu)
+        for index, (action, _) in enumerate(_CHORD_EVENT_SHORTCUTS):
+            self.chord_menu.entryconfigure(index, label=t(f"chord.event.{action}"))
         self.menu_bar.add_cascade(label=t("tools.menu"), menu=self.tools_menu)
         for index, key in enumerate(("next_chord.explore", "voice.lab.open", "midi.export")):
             self.tools_menu.entryconfigure(index, label=t(key))
@@ -844,6 +855,12 @@ class StepsMainWindow:
         modifier = "Option" if sys.platform == "darwin" else "Alt"
         self.chord_listbox.bind(f"<{modifier}-Up>", lambda _event: self._move_chord_shortcut(-1))
         self.chord_listbox.bind(f"<{modifier}-Down>", lambda _event: self._move_chord_shortcut(1))
+        edit_modifier = "Command" if sys.platform == "darwin" else "Control"
+        for action, key in _CHORD_EVENT_SHORTCUTS:
+            self.chord_listbox.bind(
+                f"<{edit_modifier}-{key}>",
+                lambda _event, selected=action: self._chord_event_edit_shortcut(selected),
+            )
 
         # ----------------------------------------------------
         # Area 2: Informations- und Theoriebereich
@@ -931,11 +948,11 @@ class StepsMainWindow:
                 index = min(selected[0], len(state["chords"]) - 1) if selected else 0
             self._select_chord_row(index)
             self._load_event_timing_controls(index)
-            self._update_move_controls(index, len(state["chords"]))
+            self._update_chord_controls(index, len(state["chords"]))
             self._display_chord_details(state["chords"][index])
         else:
             self._load_event_timing_controls(None)
-            self._update_move_controls(None, 0)
+            self._update_chord_controls(None, 0)
             self._display_empty_info()
 
     def _render_chord_rows(self, chords: list[str]) -> None:
@@ -1193,13 +1210,18 @@ class StepsMainWindow:
         self._load_context_controls()
         self._refresh_all(preserve_selection=True)
 
-    def _update_move_controls(self, index: Optional[int], chord_count: int) -> None:
+    def _update_chord_controls(self, index: Optional[int], chord_count: int) -> None:
         self.move_up_btn.configure(
             state=tk.NORMAL if index is not None and index > 0 else tk.DISABLED
         )
         self.move_down_btn.configure(
             state=tk.NORMAL if index is not None and index < chord_count - 1 else tk.DISABLED
         )
+        self.chord_menu.entryconfigure(0, state=tk.NORMAL if index is not None else tk.DISABLED)
+        can_split = (
+            index is not None and self.controller.session.get_chord_event_timing(index)[1] >= 2
+        )
+        self.chord_menu.entryconfigure(1, state=tk.NORMAL if can_split else tk.DISABLED)
 
     def _selected_chord_index(self) -> Optional[int]:
         selection = self.chord_listbox.curselection()
@@ -1289,6 +1311,23 @@ class StepsMainWindow:
             return
         self._refresh_all(selected_index=min(index, len(self.controller.session.chords) - 1))
 
+    def _chord_event_edit_shortcut(self, action: Literal["duplicate", "split"]) -> str:
+        self._on_chord_event_edit(action)
+        return "break"
+
+    def _on_chord_event_edit(self, action: Literal["duplicate", "split"]) -> None:
+        index = self._selected_chord_index()
+        if index is None:
+            return
+        if action == "split":
+            if self.controller.session.get_chord_event_timing(index)[1] < 2:
+                return
+            new_index = self.controller.split_chord_event(index)
+        else:
+            new_index = self.controller.duplicate_chord_event(index)
+        self._refresh_all(selected_index=new_index)
+        self.chord_listbox.focus_set()
+
     def _move_chord_shortcut(self, direction: Literal[-1, 1]) -> str:
         self._on_move_chord(direction)
         return "break"
@@ -1323,7 +1362,7 @@ class StepsMainWindow:
             state = self.controller.get_state_summary()
             idx = sel[0]
             if idx < len(state["chords"]):
-                self._update_move_controls(idx, len(state["chords"]))
+                self._update_chord_controls(idx, len(state["chords"]))
                 self._load_event_timing_controls(idx)
                 self.next_chord_panel.clear()
                 self._display_chord_details(state["chords"][idx])
