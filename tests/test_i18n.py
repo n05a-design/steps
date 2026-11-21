@@ -89,6 +89,14 @@ class FakeListbox:
 class FakeEntry:
     def __init__(self, value=""):
         self.value = value
+        self.focused = False
+        self.selection = None
+
+    def focus_set(self):
+        self.focused = True
+
+    def selection_range(self, start, end):
+        self.selection = (start, end)
 
     def get(self):
         return self.value
@@ -698,19 +706,39 @@ class TestDesktopChordEditing(unittest.TestCase):
                     )
 
     @patch("app.ui.main_window.messagebox.showerror")
-    def test_invalid_event_timing_does_not_change_session(self, show_error):
-        window = self.make_window(["C", "G"])
-        window.chord_listbox.selection = (1,)
-        window.event_start_entry.value = "1:5:0"
-        window.event_duration_entry.value = "0"
+    def test_invalid_event_timing_focuses_the_field_and_preserves_the_project(self, show_error):
+        for language in ("en", "de"):
+            for start, duration, field in (
+                ("-2", "240", "start"),
+                ("1:7:0", "0", "start"),
+                ("1:6:240", "240", "start"),
+                ("1320", "0", "duration"),
+            ):
+                with self.subTest(language=language, start=start, duration=duration):
+                    window = self.make_window(["C", "G"])
+                    window.i18n = LocaleManager(preference=language)
+                    session = window.controller.session
+                    session.set_context("C", False, 120, (6, 8))
+                    window.chord_listbox.selection = (1,)
+                    window.event_start_entry.value = start
+                    window.event_duration_entry.value = duration
+                    before = session.state
+                    show_error.reset_mock()
 
-        window._on_apply_event_timing()
+                    window._on_apply_event_timing()
 
-        self.assertEqual(window.controller.session.get_chord_event_timing(1), (1920, 1920))
-        self.assertEqual(
-            show_error.call_args.args[1],
-            "Enter a valid start position or a non-negative absolute tick, and a positive whole-number duration in ticks.",
-        )
+                    self.assertEqual(session.state, before)
+                    self.assertEqual(window.event_start_entry.get(), start)
+                    self.assertEqual(window.event_duration_entry.get(), duration)
+                    self.assertEqual(window.event_start_entry.focused, field == "start")
+                    self.assertEqual(window.event_duration_entry.focused, field == "duration")
+                    entry = getattr(window, f"event_{field}_entry")
+                    self.assertEqual(entry.selection, (0, "end"))
+                    show_error.assert_called_once()
+                    params = {"beats": 6, "last_tick": 239} if field == "start" else {}
+                    self.assertEqual(
+                        show_error.call_args.args[1], window.i18n.translate(f"event.{field}.invalid", **params),
+                    )
 
     @patch("app.ui.main_window.messagebox.showerror")
     def test_empty_project_title_is_rejected(self, show_error):

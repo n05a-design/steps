@@ -991,21 +991,39 @@ class StepsMainWindow:
             numerator=numerator, denominator=denominator,
         )
 
+    def _show_event_timing_error(self, entry: tk.Entry, message: str) -> None:
+        messagebox.showerror(
+            self.i18n.translate("event.timing.error.title"), message, parent=self.root,
+        )
+        entry.focus_set()
+        entry.selection_range(0, tk.END)
+
     def _on_apply_event_timing(self) -> None:
         index = self._selected_chord_index()
         if index is None:
             return
+
+        session = self.controller.session
+        t = self.i18n.translate
         try:
             start_tick = self._parse_event_start(self.event_start_entry.get())
-            duration_ticks = int(self.event_duration_entry.get().strip())
-            self.controller.set_chord_event_timing(index, start_tick, duration_ticks)
         except ValueError:
-            messagebox.showerror(
-                self.i18n.translate("event.timing.error.title"),
-                self.i18n.translate("event.timing.invalid"),
-                parent=self.root,
+            beats, denominator = session.time_signature
+            last_tick = RationalMidiTime.ticks_per_beat(session.state.ppq, denominator) - 1
+            self._show_event_timing_error(
+                self.event_start_entry, t("event.start.invalid", beats=beats, last_tick=last_tick),
             )
             return
+
+        try:
+            duration_ticks = int(self.event_duration_entry.get())
+            if duration_ticks <= 0:
+                raise ValueError("Duration must be positive.")
+        except ValueError:
+            self._show_event_timing_error(self.event_duration_entry, t("event.duration.invalid"))
+            return
+
+        self.controller.set_chord_event_timing(index, start_tick, duration_ticks)
         self._refresh_all(preserve_selection=True)
 
     def _load_context_controls(self) -> None:
