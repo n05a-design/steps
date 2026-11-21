@@ -15,6 +15,7 @@ from typing import List, Literal, Optional, Sequence, Tuple
 from ..storage.project_io import Project
 from ..theory.chord import ChordDefinition, Voicing, parse_chord
 from ..theory.exceptions import MusicTheoryError
+from ..theory.seventh import make_drop2_voicing
 from .smf import MidiFile, MidiTrack
 
 
@@ -60,23 +61,37 @@ def _adr017_close_notes(chord: ChordDefinition) -> list[int]:
             note += 12
         notes.append(note)
     notes.sort()
+    if notes[-1] - notes[0] > 12:
+        # Rebuild the selected pitch classes within the octave above the root.
+        notes = sorted({root_note + interval % 12 for interval in selected})
+        if len(intervals) < 4:
+            notes.append(root_note + 12)
     if len(set(notes)) != 4:
         raise ValueError(f"ADR-017 requires four distinct chord voices for {chord.symbol}.")
     return notes
 
 
-def _adr017_alternative_notes(
-    chord: ChordDefinition,
-    voicing_type: Literal["DROP2", "ROOTLESS"],
-) -> list[int]:
+def _adr017_drop2_notes(chord: ChordDefinition) -> list[int]:
+    close = _adr017_close_notes(chord)
+    if len({note % 12 for note in close}) != 4:
+        raise ValueError(f"ADR-017 DROP2 requires four different chord tones for {chord.symbol}.")
+    notes = make_drop2_voicing(close)
+    if notes[0] < 48:
+        notes = [note + 12 for note in notes]
+    if notes[-1] > 72:
+        raise ValueError(f"ADR-017 DROP2 does not fit MIDI 48–72 for {chord.symbol}.")
+    return notes
+
+
+def _adr017_rootless_notes(chord: ChordDefinition) -> list[int]:
     chord_without_slash_bass = replace(chord, bass=None)
     notes = chord_without_slash_bass.to_voicing(
         bass_octave=3,
-        voicing_type=voicing_type,
+        voicing_type="ROOTLESS",
     ).midi_notes
     if len(notes) != 4:
         raise ValueError(
-            f"ADR-017 {voicing_type} requires four chord voices for {chord.symbol}."
+            f"ADR-017 ROOTLESS requires four chord voices for {chord.symbol}."
         )
 
     normalized = []
@@ -89,7 +104,7 @@ def _adr017_alternative_notes(
     normalized.sort()
     if len(set(normalized)) != 4:
         raise ValueError(
-            f"ADR-017 {voicing_type} requires four distinct chord voices for {chord.symbol}."
+            f"ADR-017 ROOTLESS requires four distinct chord voices for {chord.symbol}."
         )
     return normalized
 
@@ -97,7 +112,9 @@ def _adr017_alternative_notes(
 def _adr017_notes(chord: ChordDefinition, mode: Adr017Voicing) -> list[int]:
     if mode == "CLOSE":
         return _adr017_close_notes(chord)
-    return _adr017_alternative_notes(chord, mode)
+    if mode == "DROP2":
+        return _adr017_drop2_notes(chord)
+    return _adr017_rootless_notes(chord)
 
 
 def _adr017_note_events(

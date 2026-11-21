@@ -235,9 +235,11 @@ ordnet diese Lücken nach Status.
 
 `ProgressionSession.export_midi_file()` verwendet den ADR-017-Export mit
 Conductor-, Chords- und Bass-Spur. Die Akkordspur enthält genau vier
-CLOSE-Stimmen im Bereich MIDI 48–72; Dreiklänge werden mit dem Grundton
-verdoppelt, Erweiterungsakkorde verwenden Grundton, Terz, Septime und die
-höchste Erweiterung. Ein Slash-Bass wird separat auf der Bassspur ausgegeben.
+CLOSE-Stimmen im Bereich MIDI 48–72. Der Abstand von der tiefsten zur
+höchsten Akkordstimme beträgt höchstens eine Oktave. Dreiklänge werden
+mit dem Grundton verdoppelt. Erweiterungsakkorde verwenden Grundton,
+Terz, Septime und die höchste Erweiterung. Ein Slash-Bass wird separat
+auf der Bassspur ausgegeben.
 Tempo, Taktart, passende Dur-/Moll-Tonartmetadaten und individuelle
 Event-Startzeiten/-Dauern bleiben erhalten; deutsches `B` und `H` bleiben
 getrennte Tonarten. Zehn SHA-256-Golden-Fälle prüfen den Session-Export auch
@@ -250,6 +252,12 @@ Das lokalisierte MIDI-Exportstudio reicht optionale `CLOSE`/`DROP2`/`ROOTLESS`,
 `FIXED_GAP`/`PERCENT_95` und SMF-Format-0/1-Einstellungen über Controller und
 Session an denselben ADR-017-Exporter weiter. Die bisherigen CLOSE-/10-Tick-/
 Format-1-Standards gelten, wenn CLOSE für die Progression verfügbar ist.
+Für DROP2 sinkt die zweithöchste Stimme der exportierten CLOSE-Lage
+um eine Oktave. Voraussetzung sind vier verschiedene Tonklassen.
+Bei Bedarf verschiebt der Exporter die gesamte resultierende Lage
+um eine Oktave. Passt sie so
+nicht in MIDI 48–72, ist DROP2 für den betreffenden Akkord nicht verfügbar.
+Die getrennte Bassstimme folgt weiterhin dem Slash-Bass oder Grundton.
 Die Voicing-Prüfung verwendet dieselbe Tonhöhenauswahl wie der Exporter.
 Das Optionsfenster deaktiviert inkompatible Modi und nennt jeweils den ersten
 blockierenden Akkord. Es prüft die Auswahl erneut vor der Dateiauswahl.
