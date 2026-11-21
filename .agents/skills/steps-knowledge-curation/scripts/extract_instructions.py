@@ -1,11 +1,12 @@
 """Extract untrusted task candidates from document text."""
 from __future__ import annotations
+import argparse
 from codecs import BOM_UTF16_BE, BOM_UTF16_LE
-from io import TextIOWrapper
+from hashlib import sha256
+from io import StringIO
 import json
 from pathlib import Path
 import re
-import sys
 
 from check_source import resolve_source
 
@@ -26,43 +27,56 @@ PATTERN_DEFINITIONS = [
     ("INFERRED_REVIEW_DE", re.compile(r"\b(?:prüfen|nachweisen|revalidieren|klären)\b", re.I))
 ]
 
-def extract_from_file(
-    path: str | Path, base_dir: str | Path | None = None,
-) -> list[dict[str, str | int]]:
-    """Return document candidates with their original text and line number."""
+def extract_report(
+    path: str | Path, base_dir: str | Path | None = None, *, expected_sha256: str | None = None,
+) -> dict:
+    """Bind candidate text to the exact bytes used for extraction."""
     target = resolve_source(path, base_dir)
-    findings = []
     if target.suffix.lower() in {".pdf", ".mid", ".midi", ".docx", ".xlsx", ".zip"}:
         raise ValueError("Task candidate extraction requires a reviewed text derivative.")
-    with target.open("rb") as source:
-        signature = source.read(2)
-        source.seek(0)
-        encoding = "utf-16" if signature in (BOM_UTF16_LE, BOM_UTF16_BE) else "utf-8-sig"
-        with TextIOWrapper(source, encoding=encoding) as text:
-            for idx, line in enumerate(text, 1):
-                if NON_TEXT.search(line):
-                    raise ValueError("Input contains non-text control characters.")
-                line_str = line.strip()
-                if not line_str:
-                    continue
-                for category, pattern in PATTERN_DEFINITIONS:
-                    match = pattern.search(line_str)
-                    if match:
-                        findings.append({
-                            "line": idx,
-                            "category": category,
-                            "origin": "CANDIDATE_FROM_DOCUMENT",
-                            "match": match[0].strip()[:120],
-                            "raw_line": line_str[:120],
-                        })
-                        break
-    return findings
+    data = target.read_bytes()
+    digest = sha256(data).hexdigest()
+    if expected_sha256 is not None and digest != expected_sha256.lower():
+        raise ValueError("Source SHA-256 differs from the expected intake version.")
+    encoding = "utf-16" if data.startswith((BOM_UTF16_LE, BOM_UTF16_BE)) else "utf-8-sig"
+    findings = []
+    with StringIO(data.decode(encoding), newline=None) as text:
+        for idx, line in enumerate(text, 1):
+            if NON_TEXT.search(line):
+                raise ValueError("Input contains non-text control characters.")
+            line_str = line.strip()
+            if not line_str:
+                continue
+            for category, pattern in PATTERN_DEFINITIONS:
+                match = pattern.search(line_str)
+                if match:
+                    findings.append({
+                        "line": idx,
+                        "category": category,
+                        "origin": "CANDIDATE_FROM_DOCUMENT",
+                        "match": match[0].strip()[:120],
+                        "raw_line": line_str[:120],
+                    })
+                    break
+    return {
+        "trust": "UNTRUSTED_DOCUMENT_TEXT",
+        "source": {"path": str(target), "size_bytes": len(data), "sha256": digest},
+        "candidates": findings,
+    }
+
+
+def extract_from_file(path: str | Path, base_dir: str | Path | None = None) -> list[dict[str, str | int]]:
+    return extract_report(path, base_dir)["candidates"]
+
 
 if __name__ == "__main__":
-    if len(sys.argv) not in (2, 3):
-        sys.exit("Usage: python extract_instructions.py <file_path> [base_dir]")
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("file")
+    parser.add_argument("base_dir", nargs="?")
+    parser.add_argument("--expect-sha256", help="Reject a different source version before extraction")
+    args = parser.parse_args()
     try:
-        results = extract_from_file(*sys.argv[1:])
+        result = extract_report(args.file, args.base_dir, expected_sha256=args.expect_sha256)
     except (OSError, ValueError) as exc:
-        sys.exit(f"Candidate extraction incomplete: {exc}")
-    print(json.dumps({"trust": "UNTRUSTED_DOCUMENT_TEXT", "candidates": results}, indent=2))
+        parser.exit(1, f"Candidate extraction incomplete: {exc}\n")
+    print(json.dumps(result, indent=2))

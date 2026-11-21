@@ -3,11 +3,15 @@
 Tests full execution lifecycle against an isolated temporary directory:
 1. Intake new document -> check_source.py (metadata & SHA-256)
 2. Duplicate detection -> detect_duplicates.py
-3. Semantic claim & instruction extraction -> extract_instructions.py
+3. Task candidate extraction -> extract_instructions.py
 4. Master register updating (isolated test register)
 5. Validation of updated register -> validate_register.py
 """
 from __future__ import annotations
+import json
+import re
+import shutil
+import subprocess
 import unittest
 import tempfile
 import os
@@ -39,6 +43,25 @@ class TestE2ECurationPipeline(unittest.TestCase):
 ### OA-0001: Initial Setup
 * **Kategorie:** Test · **Status:** `DONE_UNVERIFIED`
 """)
+
+    @unittest.skipIf(os.name == "nt" or not shutil.which("bash"), "POSIX runbook shell")
+    def test_documented_verification_stops_after_register_failure(self):
+        sandbox = Path(self.env_dir)
+        tools_path = sandbox / ".agents/skills/steps-knowledge-curation/scripts"
+        shutil.copytree(SCRIPTS_DIR, tools_path, ignore=shutil.ignore_patterns("__pycache__"))
+        root_scripts = sandbox / "scripts"
+        root_scripts.mkdir()
+        shutil.copyfile(SKILL_DIR.parents[2] / "scripts/verify_reference_integrity.py",
+                        root_scripts / "verify_reference_integrity.py")
+        canonical = sandbox / "docs/operations/OFFENE_ARBEITSAUFFORDERUNGEN.md"
+        canonical.parent.mkdir(parents=True)
+        canonical.write_text("### OA-invalid: Synthetic failure\n", encoding="utf-8")
+        runbook = (SKILL_DIR / "SKILL.md").read_text(encoding="utf-8")
+        commands = next(block for block in re.findall(r"```sh\n(.*?)```", runbook, re.S)
+                        if "validate_register.py" in block)
+        report = subprocess.run(["bash", "-c", commands], cwd=sandbox, capture_output=True, text=True)
+        self.assertEqual(report.returncode, 1, report.stderr)
+        self.assertIn("Malformed OA task heading", json.loads(report.stdout)["errors"][0])
 
     def tearDown(self):
         self.test_env.cleanup()

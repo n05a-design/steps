@@ -8,13 +8,13 @@ loads it. The helper scripts run independently from the desktop application.
 |---|---|
 | [check_source.py](scripts/check_source.py) | Resolves the path and hashes the bytes. Supply the intake directory. Without one, `within_bounds` is null in the Python result. |
 | [detect_duplicates.py](scripts/detect_duplicates.py) | Finds matching hashes and fails on unreadable eligible files. Compare near duplicates and historical editions during review. |
-| [extract_instructions.py](scripts/extract_instructions.py) | Produces untrusted candidates from UTF-8 or BOM-marked UTF-16 text. Unsupported formats or invalid text fail with a diagnostic. |
+| [extract_instructions.py](scripts/extract_instructions.py) | Produces untrusted candidates from UTF-8 or BOM-marked UTF-16 text. Unsupported formats or invalid text fail with a diagnostic. Reports bind the path and SHA-256 to the bytes used for extraction. |
 | [validate_register.py](scripts/validate_register.py) | Checks task headings, IDs, statuses and declared evidence. The canonical CLI run also resolves completion SHAs to local Git commit objects. Review the cited checks and acceptance evidence independently. |
 | [check_reference_ids.py](scripts/check_reference_ids.py) | Checks baseline-bound identities, the Golden mirror, v3 graph bindings and row-wise evidence fingerprints. The canonical baseline, graph files and review records are required. Named historical graph endpoints stay subject to their recorded review. |
 | [backup_knowledge.py](scripts/backup_knowledge.py) | Verifies a snapshot against its manifest and saves the current register before an atomic replacement. |
 
 Music-theory validation, MIDI interpretation and rights clearance require
-separate review. The scripts report their technical checks. Confirm exact claims and usage permission against their original evidence. Use trusted checkout and intake directories without concurrent edits during validation.
+separate review. The scripts report their technical checks. Use `--json` for source, duplicate and register output in automated callers. Confirm exact claims and usage permission against their original evidence. Use trusted checkout and intake directories without concurrent edits during validation.
 
 ### Review a proposed evidence change
 
@@ -40,6 +40,8 @@ python3 -B .agents/skills/steps-knowledge-curation/scripts/check_reference_ids.p
 The canonical register is
 `docs/operations/OFFENE_ARBEITSAUFFORDERUNGEN.md`; helper scripts resolve it
 relative to the repository, independent of the current directory or OS.
+Canonical register validation needs Git history containing the declared evidence commits. Fetch the history before running this check in a shallow checkout.
+
 Commands use the sibling `docs/operations/backups/` directory by default;
 Git ignores that local backup directory. Pass `--backup-dir` to select a
 different trusted directory.
@@ -54,7 +56,14 @@ python3 .agents/skills/steps-knowledge-curation/scripts/validate_register.py
 ```
 
 Keep the backup and its `.md.json` manifest together in a directory writable
-only by trusted operators. The hash detects a mismatch between the two files.
+only by trusted operators. The hash detects a mismatch between the two files. New manifests bind the
+snapshot to the original absolute register path. A regular destination's POSIX
+mode is preserved when restoring. For a moved checkout or a version 1 manifest
+without a path, review the origin, contents and destination before using
+`restore --allow-other-register`. The backup must still have a matching
+register filename and pass the manifest and content checks. Supply
+`list --register` when checking a shared backup directory to identify backups
+bound to a different register.
 Older backups without a manifest are listed as `UNVERIFIED`. Review those
 files independently before recovering them through an isolated register and
 creating a new snapshot. Restore validates the snapshot's structure so that

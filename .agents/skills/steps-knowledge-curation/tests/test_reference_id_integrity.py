@@ -197,6 +197,30 @@ class TestReferenceIdIntegrityTool(unittest.TestCase):
         self.assertEqual(result.returncode, 1, result.stderr)
         self.assertIn("Invalid identity baseline record: PROG-001", json.loads(result.stdout)["errors"])
 
+    def test_reference_rows_hidden_in_markdown_do_not_count(self):
+        path = self.fixture / PROGRESSIONS
+        original = path.read_text(encoding="utf-8")
+        for opening, closing in (("```text", "```"), ("<!--", "-->")):
+            with self.subTest(opening=opening):
+                path.write_text(f"{opening}\n{original}\n{closing}\n", encoding="utf-8")
+                self.assert_rejected("Baseline Progression 'PROG-001' missing")
+
+    def test_embedded_import_uses_its_checkout_verifier(self):
+        script = """
+import sys
+import types
+other = types.ModuleType('scripts')
+other.__path__ = []
+sys.modules['scripts'] = other
+sys.path.insert(0, sys.argv[1])
+from check_reference_ids import validate_reference_ids
+assert validate_reference_ids().success
+"""
+        result = subprocess.run(
+            [sys.executable, "-B", "-c", script, str(SCRIPTS)], capture_output=True, text=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+
     def test_cli_reports_missing_baseline_as_failure(self):
         (self.fixture / BASELINE).unlink()
         result = subprocess.run(

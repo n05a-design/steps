@@ -4,8 +4,13 @@ from __future__ import annotations
 
 import argparse
 from hashlib import file_digest
+import json
 import os
 from pathlib import Path
+
+
+def display_path(path: str) -> str:
+    return json.dumps(path, ensure_ascii=True) if any(not char.isprintable() for char in path) else path
 
 
 def resolve_source(path: str | Path, base_dir: str | Path | None = None) -> Path:
@@ -45,9 +50,14 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("file")
     parser.add_argument("base_dir", nargs="?")
+    parser.add_argument("--json", action="store_true", help="Print machine-readable source metadata")
     args = parser.parse_args()
     try:
-        for key, value in check_file(args.file, args.base_dir).items():
-            print(f"{key}: {value}")
+        metadata = check_file(args.file, args.base_dir)
+        if args.json:
+            print(json.dumps(metadata))
+        else:
+            for key, value in metadata.items():
+                print(f"{key}: {display_path(value) if isinstance(value, str) else value}")
     except (OSError, ValueError) as exc:
         parser.exit(1, f"{exc}\n")

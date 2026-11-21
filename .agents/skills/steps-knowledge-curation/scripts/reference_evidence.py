@@ -6,9 +6,7 @@ import json
 from pathlib import Path
 import re
 
-from scripts.verify_reference_integrity import (
-    compute_canonical_hash, extract_markdown_table_definitions, verify_csv_schema,
-)
+from repository_verifier import verifier
 
 MANIFEST = Path("knowledge/research/CURATION_EVIDENCE_FINGERPRINTS.json")
 CATALOGS = {
@@ -38,15 +36,15 @@ def evidence_snapshot(root: Path) -> dict:
     fingerprints = {}
     errors = []
     for path, (pattern, columns) in CATALOGS.items():
-        rows, issues = extract_markdown_table_definitions(root / path, pattern, expected_cols=columns)
+        rows, issues = verifier.extract_markdown_table_definitions(root / path, pattern, expected_cols=columns)
         errors.extend(issues)
-        fingerprints[path] = {ident: compute_canonical_hash(parts) for ident, _, parts in rows}
+        fingerprints[path] = {ident: verifier.compute_canonical_hash(parts) for ident, _, parts in rows}
 
     for path, id_field in EVIDENCE_TABLES.items():
-        rows, issues = verify_csv_schema(root / path, [id_field], id_col=id_field)
+        rows, issues = verifier.verify_csv_schema(root / path, [id_field], id_col=id_field)
         errors.extend(issues)
         fingerprints[path] = {
-            row[id_field]: compute_canonical_hash({
+            row[id_field]: verifier.compute_canonical_hash({
                 key: value.replace("\r\n", "\n") for key, value in row.items()
             })
             for _, row in rows if id_field in row
@@ -65,7 +63,7 @@ def evidence_snapshot(root: Path) -> dict:
             errors.append(f"Duplicate Golden evidence ID: {case['case_id']}")
             continue
         # Preserve field presence as well as the value. An omitted and a null field differ.
-        golden[case["case_id"]] = compute_canonical_hash({
+        golden[case["case_id"]] = verifier.compute_canonical_hash({
             name: case[name] for name in GOLDEN_EVIDENCE_FIELDS if name in case
         })
     fingerprints[GOLDEN] = golden

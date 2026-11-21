@@ -7,3 +7,22 @@
 /src/steps/progression/reviewed_progression_approvals.json @timvontrostorff
 /knowledge/sources/registry.yaml @timvontrostorff
 /app/knowledge.py @timvontrostorff
+
+# Review changes to the curation checks and their evidence inputs.
+/.agents/skills/steps-knowledge-curation/ @timvontrostorff
+/scripts/verify_reference_integrity.py @timvontrostorff
+/knowledge/research/CURATION_EVIDENCE_FINGERPRINTS.json @timvontrostorff
+/knowledge/research/REFERENCE_IDENTITY_BASELINE.json @timvontrostorff
+/knowledge/research/REFERENCE_ID_MIGRATION_REGISTER.csv @timvontrostorff
+/knowledge/relations/GRAPH_HUMAN_REVIEW_v3.csv @timvontrostorff
+/knowledge/relations/GRAPH_AUDIT_MATRIX_v3.csv @timvontrostorff
+/.github/workflows/python-tests.yml @timvontrostorff
+/knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md @timvontrostorff
+/knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md @timvontrostorff
+/knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md @timvontrostorff
+/knowledge/research/golden_cases/golden_reference_cases.json @timvontrostorff
+/tests/golden_cases/golden_reference_cases.json @timvontrostorff
+/knowledge/research/HISTORICAL_REFERENCE_ID_MATRIX.csv @timvontrostorff
+/knowledge/research/MUSIC_DOMAIN_READINESS_MATRIX.csv @timvontrostorff
+/knowledge/relations/MUSIC_CONCEPT_RELATIONS.csv @timvontrostorff
+/docs/operations/OFFENE_ARBEITSAUFFORDERUNGEN.md @timvontrostorff

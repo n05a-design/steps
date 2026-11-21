@@ -163,6 +163,37 @@ def verify_adr_integrity(decision_register_path):
 
     return adrs, errors
 
+def visible_markdown_lines(lines, *, errors=None):
+    """Yield numbered lines outside fenced code and HTML comments."""
+    fence = None
+    in_comment = False
+    for line_num, line in enumerate(lines, 1):
+        if not in_comment:
+            match = re.match(r'^ {0,3}(`{3,}|~{3,})(.*)$', line)
+            if fence is not None:
+                if (match and match[1][0] == fence[0] and len(match[1]) >= len(fence)
+                        and not match[2].strip()):
+                    fence = None
+                yield line_num, ''
+                continue
+            if match and not (match[1][0] == '`' and '`' in match[2]):
+                fence = match[1]
+                yield line_num, ''
+                continue
+        if in_comment:
+            _, end, line = line.partition('-->')
+            if not end:
+                yield line_num, ''
+                continue
+            in_comment = False
+        line = re.sub(r'<!--.*?-->', '', line)
+        line, start, _ = line.partition('<!--')
+        in_comment = bool(start)
+        yield line_num, line
+    if errors is not None and (fence or in_comment):
+        errors.append("Unclosed fenced block or HTML comment in task register.")
+
+
 def extract_markdown_table_definitions(file_path, id_pattern, expected_cols=None):
     """
     Extracts definitions from a markdown table with line numbers, detecting duplicates
@@ -177,9 +208,9 @@ def extract_markdown_table_definitions(file_path, id_pattern, expected_cols=None
     header_col_count = None
 
     with open(file_path, 'r', encoding='utf-8') as f:
-        for line_num, line in enumerate(f, 1):
+        for line_num, line in visible_markdown_lines(f):
             line_str = line.strip()
-            if not line_str.startswith('|'):
+            if not re.match(r'^ {0,3}\|', line):
                 continue
             
             # Split table row

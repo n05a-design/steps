@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 from hashlib import sha256
 import json
 import os
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 import re
 import stat
 import tempfile
@@ -75,7 +75,8 @@ def _save_snapshot(directory: Path, target: Path, data: bytes) -> dict[str, str]
     backup = directory / f"{BACKUP_PREFIX}{timestamp}_{uuid4().hex}.md"
     digest = sha256(data).hexdigest()
     record = {
-        "version": 1, "file": backup.name, "register": target.name,
+        "version": 2, "file": backup.name, "register": target.name,
+        "register_path": str(target),
         "size_bytes": len(data), "sha256": digest,
     }
     _write_exclusive(backup, data)
@@ -112,12 +113,26 @@ def _read_snapshot(backup: Path) -> tuple[dict, bytes]:
     data = backup.read_bytes()
     if (
         not isinstance(record, dict) or type(record.get("version")) is not int
-        or record["version"] != 1 or record.get("file") != backup.name
+        or record["version"] not in (1, 2) or record.get("file") != backup.name
         or type(record.get("size_bytes")) is not int or record["size_bytes"] != len(data)
         or record.get("sha256") != sha256(data).hexdigest()
     ):
         raise ValueError(f"Backup does not match its manifest: {backup.name}")
+    register = record.get("register")
+    if not isinstance(register, str) or not register or Path(register).name != register:
+        raise ValueError(f"Backup manifest has no valid register filename: {backup.name}")
+    if record["version"] == 2:
+        binding = record.get("register_path")
+        paths = (PurePosixPath(binding), PureWindowsPath(binding)) if isinstance(binding, str) else ()
+        if not any(path.is_absolute() and ".." not in path.parts and path.name == register for path in paths):
+            raise ValueError(f"Backup manifest has no valid register binding: {backup.name}")
     return record, data
+
+
+def _validate_snapshot_content(data: bytes) -> None:
+    validation = validate_content(data.decode("utf-8-sig"), require_evidence=False)
+    if validation["errors"]:
+        raise ValueError("Invalid register in backup: " + "; ".join(validation["errors"]))
 
 
 @contextmanager
@@ -135,11 +150,13 @@ def _restore_lock(target: Path):
 
 def restore_master(
     backup_file: str | Path, target_master: str | Path | None = None,
-    *, backup_dir: str | Path | None = None,
+    *, backup_dir: str | Path | None = None, allow_other_register: bool = False,
 ) -> dict[str, str]:
     """Check the selected snapshot and save the target before replacing it."""
     target = _master(target_master)
     directory = _selected_backup_directory(target, backup_dir)
+    if target.is_symlink():
+        _regular_file(target)
     selected = absolute_path(backup_file, "Backup file")
     if selected.parent.resolve() != directory:
         raise ValueError("The backup must be directly inside the selected backup directory.")
@@ -148,14 +165,18 @@ def restore_master(
     record, data = _read_snapshot(source)
     if record.get("register") != target.name:
         raise ValueError("Backup was created for a different register filename.")
-    validation = validate_content(data.decode("utf-8-sig"), require_evidence=False)
-    if validation["errors"]:
-        raise ValueError("Invalid register in backup: " + "; ".join(validation["errors"]))
+    if not allow_other_register and (
+        record["version"] == 1 or Path(record["register_path"]) != target
+    ):
+        raise ValueError("Backup is unbound or belongs to another register path. Review it before using --allow-other-register.")
+    _validate_snapshot_content(data)
 
     with _restore_lock(target):
         previous = None
+        previous_mode = None
         if target.exists() or target.is_symlink():
             _regular_file(target)
+            previous_mode = stat.S_IMODE(target.stat().st_mode)
             previous = target.read_bytes()
 
         fd, temporary_name = tempfile.mkstemp(prefix=f".{target.name}.", dir=target.parent)
@@ -168,6 +189,8 @@ def restore_master(
             with os.fdopen(fd, "wb") as stream:
                 stream.write(data)
                 stream.flush()
+                if previous_mode is not None and os.name != "nt":
+                    os.fchmod(stream.fileno(), previous_mode)
                 os.fsync(stream.fileno())
             if previous is not None:
                 saved = _save_snapshot(directory, target, previous)
@@ -183,9 +206,12 @@ def restore_master(
     return result
 
 
-def list_backups(backup_dir: str | Path | None = None) -> list[dict[str, str]]:
+def list_backups(
+    backup_dir: str | Path | None = None, *, target_master: str | Path | None = None,
+) -> list[dict[str, str]]:
+    target = _master(target_master) if target_master is not None or backup_dir is None else None
     if backup_dir is None:
-        directory = _selected_backup_directory(_master(None), None)
+        directory = _selected_backup_directory(target, None)
     else:
         directory = _backup_directory(absolute_path(backup_dir, "Backup directory"))
     if not directory.exists():
@@ -201,9 +227,15 @@ def list_backups(backup_dir: str | Path | None = None) -> list[dict[str, str]]:
         }
         if _manifest(file).exists() or _manifest(file).is_symlink():
             try:
-                record, _ = _read_snapshot(file)
+                record, data = _read_snapshot(file)
+                _validate_snapshot_content(data)
                 entry["sha256"] = record["sha256"]
-                entry["integrity"] = "VERIFIED"
+                if record["version"] == 1:
+                    entry["integrity"] = "UNBOUND"
+                elif target is not None and Path(record["register_path"]) != target:
+                    entry["integrity"] = "OTHER_REGISTER"
+                else:
+                    entry["integrity"] = "VERIFIED"
             except (OSError, ValueError):
                 entry["integrity"] = "INVALID"
         results.append(entry)
@@ -217,19 +249,22 @@ def main() -> None:
     parser.add_argument("target", nargs="?")
     parser.add_argument("--register", help="Absolute path to the register.")
     parser.add_argument("--backup-dir", help="Absolute path to a trusted backup directory.")
+    parser.add_argument("--allow-other-register", action="store_true", help="Allow a reviewed unbound or moved backup")
     args = parser.parse_args()
+    if args.allow_other_register and args.command != "restore":
+        parser.error("--allow-other-register is only accepted for restore")
     try:
         if args.command == "restore":
             if not args.backup_file or (args.target and args.register):
                 parser.error("restore requires a backup file and accepts one target path")
-            result = restore_master(args.backup_file, args.target or args.register, backup_dir=args.backup_dir)
+            result = restore_master(
+                args.backup_file, args.target or args.register,
+                backup_dir=args.backup_dir, allow_other_register=args.allow_other_register,
+            )
         elif args.backup_file:
             parser.error("positional paths are only accepted by restore")
         elif args.command == "list":
-            directory = args.backup_dir
-            if args.register and directory is None:
-                directory = _selected_backup_directory(_master(args.register), None)
-            result = list_backups(directory)
+            result = list_backups(args.backup_dir, target_master=args.register)
         else:
             result = backup_master(args.register, args.backup_dir)
     except (OSError, ValueError) as exc:

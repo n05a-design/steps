@@ -3,11 +3,14 @@
 from __future__ import annotations
 
 import argparse
+import json
+import os
 from pathlib import Path
 import re
 import subprocess
 
 from register_paths import REPOSITORY_ROOT, master_path
+from repository_verifier import verifier
 
 
 VALID_STATUSES = {
@@ -16,8 +19,6 @@ VALID_STATUSES = {
 }
 HEADING = re.compile(r"^ {0,3}(#{1,6})(?:[ \t]+|$)(.*)$")
 TASK = re.compile(r"(OA-[0-9]{4}):[ \t]*(.*)")
-FENCE = re.compile(r"^ {0,3}(`{3,}|~{3,})(.*)$")
-COMMENT = re.compile(r"<!--.*?(?:-->|\Z)", re.DOTALL)
 FIELD_PREFIX = r"^ {0,3}(?:[-*+][ \t]+)?"
 COMMIT_HASH = r"(?!0{40}(?:0{24})?$)[a-fA-F0-9]{40}(?:[a-fA-F0-9]{24})?"
 STATUS = re.compile(FIELD_PREFIX + r"\*\*Status:\*\*[ \t]*(.*)$")
@@ -29,32 +30,6 @@ EVIDENCE_FIELDS = {
 }
 
 
-def _register_lines(content: str, errors: list[str]):
-    fence = None
-    in_comment = False
-    for line in content.splitlines():
-        opening = FENCE.match(line)
-        if fence:
-            if (opening and opening[1].startswith(fence[0])
-                    and len(opening[1]) >= len(fence) and not opening[2].strip()):
-                fence = None
-            continue
-        if not in_comment and opening:
-            fence = opening[1]
-            continue
-        if in_comment:
-            _, closing, line = line.partition("-->")
-            if not closing:
-                continue
-            in_comment = False
-        for comment in COMMENT.finditer(line):
-            if not comment[0].endswith("-->"):
-                in_comment = True
-        yield COMMENT.sub("", line)
-    if fence or in_comment:
-        errors.append("Unclosed fenced block or HTML comment in task register.")
-
-
 def _looks_like_task_heading(title: str) -> bool:
     # Recognize formatted IDs as task attempts so they receive a syntax error.
     return title.lstrip(" `*_").upper().startswith("OA-")
@@ -62,7 +37,14 @@ def _looks_like_task_heading(title: str) -> bool:
 
 def _register_tasks(content: str, errors: list[str]):
     task = None
-    for line in _register_lines(content, errors):
+    previous = ""
+    for _, line in verifier.visible_markdown_lines(content.splitlines(), errors=errors):
+        if re.fullmatch(r" {0,3}(?:=+|-+)[ \t]*", line) and _looks_like_task_heading(previous):
+            errors.append(f"OA tasks require a level-three heading: {previous.strip()}")
+        html_heading = re.match(r"^ {0,3}<h[1-6](?:\s[^>]*)?>[ \t]*(.*?)</h[1-6]>", line, re.I)
+        if html_heading and _looks_like_task_heading(html_heading[1]):
+            errors.append(f"OA tasks require a Markdown level-three heading: {html_heading[1]}")
+        previous = line
         heading = HEADING.fullmatch(line)
         if heading and len(heading[1]) <= 3:
             if task is not None:
@@ -94,10 +76,13 @@ def _has_evidence(values: list[str], pattern: str) -> bool:
     )
 
 
+def _git(*args: str):
+    env = {key: value for key, value in os.environ.items() if not key.startswith("GIT_")}
+    return subprocess.run(["git", *args], cwd=REPOSITORY_ROOT, env=env, capture_output=True, text=True)
+
+
 def _missing_commit(commit: str) -> bool:
-    result = subprocess.run(
-        ["git", "cat-file", "-t", commit], cwd=REPOSITORY_ROOT, capture_output=True, text=True,
-    )
+    result = _git("cat-file", "-t", commit)
     return result.returncode != 0 or result.stdout.strip() != "commit"
 
 
@@ -138,34 +123,42 @@ def validate_content(
                 if not _has_evidence(values, pattern):
                     errors.append(f"{ident}: DONE_VERIFIED requires a valid {name} field.")
                 elif name == "Commit" and verify_commits and _missing_commit(values[0]):
-                    errors.append(f"{ident}: evidence commit is unavailable in the repository: {values[0]}.")
+                    hint = ""
+                    if _git("rev-parse", "--is-shallow-repository").stdout.strip() == "true":
+                        hint = " Fetch the Git history before validating this shallow checkout."
+                    errors.append(f"{ident}: evidence commit is unavailable in the repository: {values[0]}.{hint}")
 
     if not count:
         errors.append("No OA task blocks found.")
     return {"total_tasks_found": count, "unique_ids": len(seen), "errors_count": len(errors), "errors": errors}
 
 
-def validate_master_file(path: str | Path, *, verify_commits: bool = False) -> dict[str, int | list[str]]:
-    return validate_content(Path(path).read_text(encoding="utf-8-sig"), verify_commits=verify_commits)
+def validate_master_file(path: str | Path, *, verify_commits: bool | None = None) -> dict[str, int | list[str]]:
+    path = Path(path)
+    if not path.is_file() or path.is_symlink():
+        raise ValueError(f"Expected a regular register file: {path}")
+    if verify_commits is None:
+        verify_commits = path.resolve() == master_path().resolve()
+    return validate_content(path.read_text(encoding="utf-8-sig"), verify_commits=verify_commits)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("register", nargs="?")
-    parser.add_argument("--verify-commits", action="store_true", help="Resolve evidence SHAs in the STEPS Git repository")
+    parser.add_argument("--verify-commits", action="store_true", default=None, help="Resolve evidence SHAs in the STEPS Git repository")
+    parser.add_argument("--json", action="store_true", help="Print a machine-readable validation report")
     args = parser.parse_args()
     try:
         path = Path(args.register) if args.register else master_path()
-        if not path.is_file() or path.is_symlink():
-            raise ValueError(f"Expected a regular register file: {path}")
-        result = validate_master_file(
-            path, verify_commits=args.verify_commits or path.resolve() == master_path().resolve(),
-        )
+        result = validate_master_file(path, verify_commits=args.verify_commits)
     except (OSError, ValueError) as exc:
         parser.exit(1, f"{exc}\n")
-    print("Register structure and declared evidence:")
-    for key, value in result.items():
-        print(f"  {key}: {value}")
+    if args.json:
+        print(json.dumps(result))
+    else:
+        print("Register structure and declared evidence:")
+        for key, value in result.items():
+            print(f"  {key}: {value}")
     if result["errors_count"]:
         raise SystemExit(1)
 

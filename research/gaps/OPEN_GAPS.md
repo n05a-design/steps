@@ -1,5 +1,19 @@
 # Offene Evidenz und historische Bestandsaufnahme
 
+## Curation interfaces and review enforcement
+
+The [curation runbook](../../.agents/skills/steps-knowledge-curation/SKILL.md)
+binds extracted candidates to the reviewed bytes and stops local command
+chains on failure. Register validation and restoration use the same visible
+Markdown rules. The backup inventory validates the manifest and task
+structure. New snapshots record the intended register path.
+
+The [CODEOWNERS rules](../../.github/CODEOWNERS) designate a reviewer for the
+curation tools and protected evidence. GitHub must separately require code
+owner approval for those assignments to be an enforced merge gate. Track
+that configuration and the availability of an independent approver as
+repository-owner evidence.
+
 ## Curation guardrails and remaining evidence
 
 The [curation runbook](../../.agents/skills/steps-knowledge-curation/SKILL.md)

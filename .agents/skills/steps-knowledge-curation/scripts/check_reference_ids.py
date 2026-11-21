@@ -13,9 +13,7 @@ import sys
 
 from register_paths import REPOSITORY_ROOT
 
-# Load the verifier from this checkout, even when checking a separate data directory.
-sys.path.insert(0, str(REPOSITORY_ROOT))
-from scripts.verify_reference_integrity import verify_csv_schema, verify_integrity
+from repository_verifier import verifier
 from reference_evidence import evidence_snapshot, verify_evidence
 
 
@@ -42,7 +40,7 @@ def _check_graph_bindings(repo_root: Path) -> list[str]:
         ("GRAPH_AUDIT_MATRIX_v3.csv", review_fields),
         ("GRAPH_HUMAN_REVIEW_v3.csv", review_fields),
     ):
-        rows, issues = verify_csv_schema(
+        rows, issues = verifier.verify_csv_schema(
             directory / filename, ["relation_id", *fields], "relation_id", r"(?:CR|REL|CDR)-[0-9]{3}$",
         )
         errors.extend(issues)
@@ -83,7 +81,7 @@ class ReferenceIdChecker:
 
     def run_check(self) -> ReferenceCheckReport:
         try:
-            result = verify_integrity(self.repo_root, baseline_path=self.baseline_path)
+            result = verifier.verify_integrity(self.repo_root, baseline_path=self.baseline_path)
             errors = result["errors"] + _check_graph_bindings(self.repo_root)
             if not errors:
                 errors.extend(verify_evidence(self.repo_root))
