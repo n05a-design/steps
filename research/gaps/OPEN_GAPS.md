@@ -1,5 +1,14 @@
 # Offene Evidenz und historische Bestandsaufnahme
 
+## Fachliche Gesamtfreigabe (21.11.2026)
+
+[Der Gesamtaudit](../../docs/audit/2026-11-21/README.md) belegt offene Fehler
+bei Slash-Bass, Akkordreduktion, Drop-2, Stilprofilen und Wissensabruf.
+Der Kurations-Skill akzeptiert geänderte musikalische Identitäten trotz
+aktiver Baseline. Die strengere Repository-Prüfung erkennt das Gegenbeispiel.
+Für die Gesamtfreigabe fehlen 27 Benchmark-Abnahmen, darunter alle zwölf
+Coach-Bewertungen. Die acht Pilotfreigaben haben einen engeren Geltungsbereich.
+
 ## Ganzheitlicher Bestandsaudit (18.11.2026)
 
 [Der Auditbericht zu Ablage, Recherche, Skills und Wissensbasis](GESAMTAUDIT_ABLAGE_RECHERCHE_SKILLS_WISSENSBASIS_2026-11-18.md)

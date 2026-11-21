@@ -1,0 +1,789 @@
+{
+  "date": "2026-11-21",
+  "online_commit": "b47ffc27654d5e1df26316b466049f68000d81c6",
+  "local_commit": "99dd53c4ca3376212edcb339b08bef3828d75333",
+  "tree": "3fe6f904f4d4703b545ba4dd115228c6daf8723b",
+  "inventory": {
+    "tree_entries": 3078,
+    "only_index": [],
+    "only_tree": [],
+    "files_by_status": {
+      "BYTES_DIFFER": 14,
+      "EXACT": 3064
+    },
+    "files_by_domain": {
+      ".agents": 27,
+      "root": 13,
+      ".github": 27,
+      "app": 35,
+      "archive": 347,
+      "decisions": 13,
+      "design": 14,
+      "docs": 256,
+      "knowledge": 136,
+      "manifests": 22,
+      "prompts": 30,
+      "publish_overlay": 84,
+      "research": 1790,
+      "schemas": 8,
+      "scripts": 71,
+      "skills": 18,
+      "source_archive": 9,
+      "src": 58,
+      "templates": 9,
+      "tests": 95,
+      "tools": 16
+    },
+    "bytes_by_domain": {
+      ".agents": 83350,
+      "root": 82981,
+      ".github": 33928,
+      "app": 280499,
+      "archive": 8819026,
+      "decisions": 31549,
+      "design": 45055,
+      "docs": 5344199,
+      "knowledge": 4018102,
+      "manifests": 501832,
+      "prompts": 138108,
+      "publish_overlay": 512095,
+      "research": 233017510,
+      "schemas": 12710,
+      "scripts": 719926,
+      "skills": 32913,
+      "source_archive": 4702284,
+      "src": 500022,
+      "templates": 6031,
+      "tests": 787661,
+      "tools": 69193
+    },
+    "markdown_documents": 1607,
+    "syntax_by_status": {
+      "PASS": 2119,
+      "FAIL": 1
+    },
+    "link_counts": {
+      "TRACKED_TARGET": 2190,
+      "EXTERNAL": 2506,
+      "SAME_FILE_FRAGMENT": 30,
+      "MISSING_TARGET": 691,
+      "OUTSIDE_REPOSITORY": 331
+    },
+    "missing_by_domain": {
+      "archive": 172,
+      "docs": 1,
+      "research": 306,
+      "source_archive": 212
+    },
+    "ignored_untracked_count": 10287
+  },
+  "checkout_content_differences": 0,
+  "checkout_line_ending_differences": 14,
+  "source_register_raw_blob_comparison": {
+    "PATH_OUTSIDE_TREE": 149,
+    "MISMATCH": 189,
+    "MATCH": 1557
+  },
+  "tests": [
+    {
+      "command": "STEPS_REQUIRE_DESKTOP_TK=1 PYTHONFAULTHANDLER=1 python -B -m unittest discover -s tests -p 'test_*.py' -q",
+      "passed": 841,
+      "exit_code": 0
+    },
+    {
+      "command": "python -B -m unittest discover -s .agents/skills/steps-knowledge-curation/tests -v",
+      "passed": 40,
+      "exit_code": 0
+    }
+  ],
+  "github_runs": [
+    {
+      "conclusion": "success",
+      "name": "Pilot review evidence",
+      "url": "https://github.com/n05a-design/steps/actions/runs/44871205435"
+    },
+    {
+      "conclusion": "success",
+      "name": "Repository structure",
+      "url": "https://github.com/n05a-design/steps/actions/runs/44871205398"
+    },
+    {
+      "conclusion": "success",
+      "name": "Secret Scanning Guardrail",
+      "url": "https://github.com/n05a-design/steps/actions/runs/44871205420"
+    },
+    {
+      "conclusion": "success",
+      "name": "Python Tests & Verification Suite",
+      "url": "https://github.com/n05a-design/steps/actions/runs/44871205445"
+    }
+  ],
+  "local_gates": {
+    "Struktur": {
+      "command": "python -B tools/validation/check_structure.py",
+      "exit_code": 0
+    },
+    "Referenzen": {
+      "command": "python -B scripts/verify_reference_integrity.py",
+      "exit_code": 0
+    },
+    "GitHub-Konfiguration": {
+      "command": "python -B scripts/validate_github_config.py",
+      "exit_code": 0
+    },
+    "Pilotbelege": {
+      "command": "python -B scripts/verify_pilot_review_evidence.py --revision \"$(git rev-parse origin/main)\"",
+      "exit_code": 0
+    },
+    "Pilotbenchmark": {
+      "command": "python -B scripts/run_knowledge_benchmark.py --scope pilot",
+      "exit_code": 0
+    },
+    "Publikationsbenchmark": {
+      "command": "python -B scripts/run_knowledge_benchmark.py --scope publication",
+      "exit_code": 0
+    },
+    "Reviewbogen": {
+      "command": "python -B scripts/run_knowledge_benchmark.py --check-review-sheet knowledge/benchmark/PILOT_ABNAHME.md",
+      "exit_code": 0
+    },
+    "Skill-Register": {
+      "command": "python -B .agents/skills/steps-knowledge-curation/scripts/validate_register.py",
+      "exit_code": 0
+    },
+    "Skill-Identitaeten": {
+      "command": "python -B .agents/skills/steps-knowledge-curation/scripts/check_reference_ids.py",
+      "exit_code": 0
+    },
+    "build_unified_golden_cases": {
+      "command": "python -B scripts/build_unified_golden_cases.py --check",
+      "exit_code": 0
+    },
+    "render_api_reference": {
+      "command": "python -B scripts/render_api_reference.py --check",
+      "exit_code": 0
+    },
+    "check_documentation_consistency": {
+      "command": "python -B scripts/check_documentation_consistency.py --check",
+      "exit_code": 0
+    },
+    "check_gemini_knowledge_pack": {
+      "command": "python -B scripts/check_gemini_knowledge_pack.py --check",
+      "exit_code": 0
+    },
+    "check_ui_text_inventory": {
+      "command": "python -B scripts/check_ui_text_inventory.py --check",
+      "exit_code": 0
+    },
+    "check_cli_text_inventory": {
+      "command": "python -B scripts/check_cli_text_inventory.py --check",
+      "exit_code": 0
+    },
+    "check_release_consistency": {
+      "command": "python -B scripts/check_release_consistency.py --check",
+      "exit_code": 0
+    },
+    "render_reviewed_progressions": {
+      "command": "python -B scripts/render_reviewed_progressions.py --check",
+      "exit_code": 0
+    },
+    "audit_knowledge_coverage": {
+      "command": "python -B scripts/audit_knowledge_coverage.py --check",
+      "exit_code": 0
+    },
+    "audit_graph": {
+      "command": "python -B scripts/audit_graph.py --check",
+      "exit_code": 0
+    },
+    "audit_golden_remaining": {
+      "command": "python -B scripts/audit_golden_remaining.py --check",
+      "exit_code": 0
+    },
+    "audit_conflict_revisions": {
+      "command": "python -B scripts/audit_conflict_revisions.py --check",
+      "exit_code": 0
+    },
+    "audit_graph_followup": {
+      "command": "python -B scripts/audit_graph_followup.py --check",
+      "exit_code": 0
+    },
+    "audit_graph_semantics": {
+      "command": "python -B scripts/audit_graph_semantics.py --check",
+      "exit_code": 0
+    },
+    "audit_graph_corpus": {
+      "command": "python -B scripts/audit_graph_corpus.py --check",
+      "exit_code": 0
+    },
+    "audit_billboard_components": {
+      "command": "python -B scripts/audit_billboard_components.py --check",
+      "exit_code": 0
+    },
+    "audit_edm_tempo": {
+      "command": "python -B scripts/audit_edm_tempo.py --check",
+      "exit_code": 0
+    },
+    "audit_rwc_joint": {
+      "command": "python -B scripts/audit_rwc_joint.py --check",
+      "exit_code": 0
+    },
+    "audit_jazzsamba_components": {
+      "command": "python -B scripts/audit_jazzsamba_components.py --check",
+      "exit_code": 0
+    },
+    "audit_relation_patterns": {
+      "command": "python -B scripts/audit_relation_patterns.py --check",
+      "exit_code": 0
+    },
+    "audit_pattern_syncopation": {
+      "command": "python -B scripts/audit_pattern_syncopation.py --check",
+      "exit_code": 0
+    },
+    "audit_gmd_swing": {
+      "command": "python -B scripts/audit_gmd_swing.py --check",
+      "exit_code": 0
+    },
+    "audit_gmd_swing_detail": {
+      "command": "python -B scripts/audit_gmd_swing_detail.py --check",
+      "exit_code": 0
+    },
+    "audit_gmd_pop_pattern": {
+      "command": "python -B scripts/audit_gmd_pop_pattern.py --check",
+      "exit_code": 0
+    },
+    "audit_gmd_funk": {
+      "command": "python -B scripts/audit_gmd_funk.py --check",
+      "exit_code": 0
+    },
+    "audit_gmd_coverage": {
+      "command": "python -B scripts/audit_gmd_coverage.py --check",
+      "exit_code": 0
+    }
+  },
+  "knowledge_benchmark": {
+    "command": "python -B scripts/run_knowledge_benchmark.py --scope all",
+    "PASS": 92,
+    "FAIL": 0,
+    "PENDING": 27,
+    "exit_code": 1,
+    "coach_domains": {
+      "M01": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PENDING": 1
+      },
+      "M02": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PENDING": 1
+      },
+      "M03": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PENDING": 1
+      },
+      "M04": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PENDING": 1
+      },
+      "M05": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PENDING": 1
+      },
+      "M06": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PENDING": 1
+      },
+      "M07": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PENDING": 1
+      },
+      "M08": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PENDING": 1
+      },
+      "M09": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PENDING": 1
+      },
+      "M10": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PENDING": 1
+      },
+      "M11": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PENDING": 1
+      },
+      "M12": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PENDING": 1
+      }
+    }
+  },
+  "midi_output": {
+    "head": "99dd53c4ca3376212edcb339b08bef3828d75333",
+    "online_main": "b47ffc27654d5e1df26316b466049f68000d81c6",
+    "parser": "1.3.3",
+    "exports_by_option": {
+      "CLOSE": {
+        "offered": 720,
+        "not_offered": 0,
+        "misplaced_bass": 0,
+        "foreign_pitch_sets": 0
+      },
+      "DROP2": {
+        "offered": 576,
+        "not_offered": 144,
+        "misplaced_bass": 0,
+        "foreign_pitch_sets": 0
+      },
+      "ROOTLESS": {
+        "offered": 72,
+        "not_offered": 648,
+        "misplaced_bass": 0,
+        "foreign_pitch_sets": 0
+      }
+    },
+    "close_exports_spread_over_octave": 152,
+    "rootless_exports_without_upper_root": 72,
+    "initial_lab_matches_inspector": 720,
+    "beginner_chords_adding_foreign_pc": 24,
+    "drop2_seventh_cases": 144,
+    "drop2_equals_close": 64,
+    "drop2_preserves_shape": 80,
+    "drop2_lost_shape_when_octave_shift_fits": 34,
+    "slash_bass_cases": 72,
+    "slash_correct": {
+      "inspector": 72,
+      "lab": 72,
+      "beginner": 0,
+      "midi": 72
+    },
+    "examples": {
+      "Cadd2_close": [
+        48,
+        50,
+        52,
+        55
+      ],
+      "Cadd9_close": [
+        48,
+        50,
+        52,
+        55
+      ],
+      "Cmaj7_drop2": {
+        "notation": "INT",
+        "chord": "Cmaj7",
+        "close": [
+          48,
+          52,
+          55,
+          59
+        ],
+        "drop2": [
+          48,
+          52,
+          55,
+          59
+        ],
+        "drop2_reference": [
+          43,
+          48,
+          52,
+          59
+        ],
+        "same_as_close": true,
+        "preserves_drop2_shape": false,
+        "whole_octave_shift_fits": true
+      }
+    },
+    "provenance": {
+      "published_examples": [
+        "PROG-001",
+        "PROG-003",
+        "PROG-009"
+      ],
+      "claims": [
+        {
+          "id": "PILOT-NOTATION-001",
+          "listed_approval": true,
+          "evidence_url": "https://github.com/n05a-design/steps/pull/11#issuecomment-6833747279",
+          "source_locators": [
+            {
+              "source_id": "yale-key-names",
+              "locator": "S. 1, Vergleichstabelle der Tonbuchstaben und Vorzeichen, Zeilen A flat, B flat und B",
+              "url": "https://web.library.yale.edu/printpdf/cataloging/music/names-keys-french-german-italian-and-spanish"
+            }
+          ]
+        },
+        {
+          "id": "PROG-001-HARMONY",
+          "listed_approval": true,
+          "evidence_url": "https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635",
+          "source_locators": [
+            {
+              "source_id": "omt-roman-numerals",
+              "locator": "Roman Numerals, Example 3 und Abschnitt zur Groß-/Kleinschreibung",
+              "url": "https://viva.pressbooks.pub/openmusictheory/chapter/roman-numerals/"
+            },
+            {
+              "source_id": "omt-four-chord-schemas",
+              "locator": "Singer/Songwriter Schema, Key Takeaways: Rotation I–V–vi–IV",
+              "url": "https://viva.pressbooks.pub/openmusictheory/chapter/4-chord-schemas/"
+            }
+          ]
+        },
+        {
+          "id": "PROG-001-TONAL-CENTER",
+          "listed_approval": true,
+          "evidence_url": "https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635",
+          "source_locators": [
+            {
+              "source_id": "omt-four-chord-schemas",
+              "locator": "Singer/Songwriter Schema, Absatz vor der Legende zu Example 4 über relatives Moll und melodische Bezugstöne",
+              "url": "https://viva.pressbooks.pub/openmusictheory/chapter/4-chord-schemas/"
+            },
+            {
+              "source_id": "mto-richards-axis-progressions",
+              "locator": "Abs. [1] zu Rotationen, [9]–[11] und Anm. 10 zu Loop-Beginn und Hypermetrik, [29]–[30] zu Phrasierung und Formkontext",
+              "url": "https://mtosmt.org/issues/mto.17.23.3/mto.17.23.3.richards.html"
+            }
+          ]
+        },
+        {
+          "id": "PROG-003-HARMONY",
+          "listed_approval": true,
+          "evidence_url": "https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635",
+          "source_locators": [
+            {
+              "source_id": "omt-ii-v-i",
+              "locator": "Key Takeaways, Dur-Variante ii⁷–V⁷–Imaj7",
+              "url": "https://viva.pressbooks.pub/openmusictheory/chapter/ii-v-i/"
+            }
+          ]
+        },
+        {
+          "id": "PROG-003-VOICE-II-V",
+          "listed_approval": true,
+          "evidence_url": "https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635",
+          "source_locators": [
+            {
+              "source_id": "omt-ii-v-i",
+              "locator": "Key Takeaways zur Folge Mollseptakkord–Dominantseptakkord–Durseptakkord. Die konkrete Stimme ist eine STEPS-Ableitung aus diesen Akkordtönen.",
+              "url": "https://viva.pressbooks.pub/openmusictheory/chapter/ii-v-i/"
+            }
+          ]
+        },
+        {
+          "id": "PROG-003-VOICE-V-I",
+          "listed_approval": true,
+          "evidence_url": "https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635",
+          "source_locators": [
+            {
+              "source_id": "omt-ii-v-i",
+              "locator": "Key Takeaways zur Folge Mollseptakkord–Dominantseptakkord–Durseptakkord. Die konkrete Stimme ist eine STEPS-Ableitung aus diesen Akkordtönen.",
+              "url": "https://viva.pressbooks.pub/openmusictheory/chapter/ii-v-i/"
+            }
+          ]
+        },
+        {
+          "id": "PROG-009-HARMONY",
+          "listed_approval": true,
+          "evidence_url": "https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635",
+          "source_locators": [
+            {
+              "source_id": "omt-blues-based-schemas",
+              "locator": "Plagal Sigh, Beschreibung des Schemas IV–iv–I",
+              "url": "https://viva.pressbooks.pub/openmusictheory/chapter/blues-based-schemas/"
+            }
+          ]
+        },
+        {
+          "id": "PROG-009-VOICE-LEADING",
+          "listed_approval": true,
+          "evidence_url": "https://github.com/n05a-design/steps/pull/22#issuecomment-6842512635",
+          "source_locators": [
+            {
+              "source_id": "omt-blues-based-schemas",
+              "locator": "Plagal Sigh, Skalenstufenbewegung la–le–sol (6–♭6–5)",
+              "url": "https://viva.pressbooks.pub/openmusictheory/chapter/blues-based-schemas/"
+            }
+          ]
+        }
+      ],
+      "historical_human_status": {
+        "AUSSTEHEND": 66
+      },
+      "historical_production_status": {
+        "NONE_FROM_THIS_AUDIT": 66
+      },
+      "explorer_source_labels": [
+        {
+          "label": "Aldwell/Schachter (1989)",
+          "occurrences": 3,
+          "in_product_source_registry": false,
+          "exact_url": null
+        },
+        {
+          "label": "Butterfield (2010)",
+          "occurrences": 3,
+          "in_product_source_registry": false,
+          "exact_url": null
+        },
+        {
+          "label": "Gauldin (2004)",
+          "occurrences": 3,
+          "in_product_source_registry": false,
+          "exact_url": null
+        },
+        {
+          "label": "Jaffe (1996)",
+          "occurrences": 2,
+          "in_product_source_registry": false,
+          "exact_url": null
+        },
+        {
+          "label": "Kostka/Payne (2013)",
+          "occurrences": 26,
+          "in_product_source_registry": false,
+          "exact_url": null
+        },
+        {
+          "label": "Levine (1995)",
+          "occurrences": 16,
+          "in_product_source_registry": false,
+          "exact_url": null
+        },
+        {
+          "label": "Mauleón (1993)",
+          "occurrences": 29,
+          "in_product_source_registry": false,
+          "exact_url": null
+        },
+        {
+          "label": "Mulholland (2013)",
+          "occurrences": 3,
+          "in_product_source_registry": false,
+          "exact_url": null
+        },
+        {
+          "label": "Open Music Theory · Substitutions",
+          "occurrences": 6,
+          "in_product_source_registry": false,
+          "exact_url": null
+        },
+        {
+          "label": "Open Music Theory · Tonicization",
+          "occurrences": 178,
+          "in_product_source_registry": false,
+          "exact_url": null
+        },
+        {
+          "label": "Pease (2003)",
+          "occurrences": 1,
+          "in_product_source_registry": false,
+          "exact_url": null
+        },
+        {
+          "label": "Rawlins/Bahha (2005)",
+          "occurrences": 9,
+          "in_product_source_registry": false,
+          "exact_url": null
+        },
+        {
+          "label": "STEPS interval model",
+          "occurrences": 170,
+          "in_product_source_registry": false,
+          "exact_url": null
+        },
+        {
+          "label": "Terefenko (2014)",
+          "occurrences": 4,
+          "in_product_source_registry": false,
+          "exact_url": null
+        },
+        {
+          "label": "omt-chromatic-subdominants",
+          "occurrences": 80,
+          "in_product_source_registry": true,
+          "exact_url": "https://viva.pressbooks.pub/openmusictheorycopy/chapter/chromatically-altered-subdominant-chords/"
+        },
+        {
+          "label": "omt-four-chord-schemas",
+          "occurrences": 7,
+          "in_product_source_registry": true,
+          "exact_url": "https://viva.pressbooks.pub/openmusictheory/chapter/4-chord-schemas/"
+        },
+        {
+          "label": "omt-ii-v-i",
+          "occurrences": 12,
+          "in_product_source_registry": true,
+          "exact_url": "https://viva.pressbooks.pub/openmusictheory/chapter/ii-v-i/"
+        }
+      ]
+    }
+  },
+  "catalog_statements_and_voice_profiles": {
+    "head": "99dd53c4ca3376212edcb339b08bef3828d75333",
+    "online_main": "b47ffc27654d5e1df26316b466049f68000d81c6",
+    "catalog_status": {
+      "BEDINGT": 22,
+      "BELEGT": 44,
+      "WIDERLEGT": 7,
+      "QUELLE_OFFEN": 6
+    },
+    "style_cases": 484,
+    "identical_pop_power_quartal": 484,
+    "strict_differs": 155,
+    "strict_with_reported_parallel_or_contrary_warnings": 0,
+    "dialog_text_examples": {
+      "en / CONTEMPORARY_POP": "Compared style: Contemporary pop\nCurrent project style: Contemporary pop\nMIDI note range: 41–60.\nCumulative absolute MIDI-note movement: 25 semitones.\nStyles use different constraints; movement totals are descriptive, not a universal ranking.\n\nC → G: 11 semitones; 0 detected warning(s).\n  Voice movement from lowest to highest (semitones): -5, -2, +4\nG → Am: 5 semitones; 0 detected warning(s).\n  Voice movement from lowest to highest (semitones): +2, +2, +1\nAm → F: 9 semitones; 0 detected warning(s).\n  Voice movement from lowest to highest (semitones): -4, +5, 0",
+      "en / POWER_CHORDS": "Compared style: Power chords\nCurrent project style: Power chords\nMIDI note range: 41–60.\nCumulative absolute MIDI-note movement: 25 semitones.\nStyles use different constraints; movement totals are descriptive, not a universal ranking.\n\nC → G: 11 semitones; 0 detected warning(s).\n  Voice movement from lowest to highest (semitones): -5, -2, +4\nG → Am: 5 semitones; 0 detected warning(s).\n  Voice movement from lowest to highest (semitones): +2, +2, +1\nAm → F: 9 semitones; 0 detected warning(s).\n  Voice movement from lowest to highest (semitones): -4, +5, 0",
+      "en / QUARTAL_JAZZ": "Compared style: Quartal jazz\nCurrent project style: Quartal jazz\nMIDI note range: 41–60.\nCumulative absolute MIDI-note movement: 25 semitones.\nStyles use different constraints; movement totals are descriptive, not a universal ranking.\n\nC → G: 11 semitones; 0 detected warning(s).\n  Voice movement from lowest to highest (semitones): -5, -2, +4\nG → Am: 5 semitones; 0 detected warning(s).\n  Voice movement from lowest to highest (semitones): +2, +2, +1\nAm → F: 9 semitones; 0 detected warning(s).\n  Voice movement from lowest to highest (semitones): -4, +5, 0",
+      "en / STRICT_CLASSICAL": "Compared style: Strict classical\nCurrent project style: Strict classical\nMIDI note range: 41–69.\nCumulative absolute MIDI-note movement: 29 semitones.\nStyles use different constraints; movement totals are descriptive, not a universal ranking.\n\nC → G: 11 semitones; 0 detected warning(s).\n  Voice movement from lowest to highest (semitones): -5, -2, +4\nG → Am: 9 semitones; 0 detected warning(s).\n  Voice movement from lowest to highest (semitones): +2, -2, +5\nAm → F: 9 semitones; 0 detected warning(s).\n  Voice movement from lowest to highest (semitones): -4, 0, +5",
+      "de / CONTEMPORARY_POP": "Verglichener Stil: Zeitgenössischer Pop\nAktueller Projektstil: Zeitgenössischer Pop\nMIDI-Tonumfang: 41–60.\nKumulierte absolute MIDI-Notenbewegung: 25 Halbtöne.\nDie Stile verwenden unterschiedliche Bedingungen; Bewegungswerte beschreiben sie, sie bilden keine allgemeingültige Rangfolge.\n\nC → G: 11 Halbtöne; 0 erkannte Warnung(en).\n  Stimmbewegung von unten nach oben (Halbtöne): -5, -2, +4\nG → Am: 5 Halbtöne; 0 erkannte Warnung(en).\n  Stimmbewegung von unten nach oben (Halbtöne): +2, +2, +1\nAm → F: 9 Halbtöne; 0 erkannte Warnung(en).\n  Stimmbewegung von unten nach oben (Halbtöne): -4, +5, 0",
+      "de / POWER_CHORDS": "Verglichener Stil: Powerchords\nAktueller Projektstil: Powerchords\nMIDI-Tonumfang: 41–60.\nKumulierte absolute MIDI-Notenbewegung: 25 Halbtöne.\nDie Stile verwenden unterschiedliche Bedingungen; Bewegungswerte beschreiben sie, sie bilden keine allgemeingültige Rangfolge.\n\nC → G: 11 Halbtöne; 0 erkannte Warnung(en).\n  Stimmbewegung von unten nach oben (Halbtöne): -5, -2, +4\nG → Am: 5 Halbtöne; 0 erkannte Warnung(en).\n  Stimmbewegung von unten nach oben (Halbtöne): +2, +2, +1\nAm → F: 9 Halbtöne; 0 erkannte Warnung(en).\n  Stimmbewegung von unten nach oben (Halbtöne): -4, +5, 0",
+      "de / QUARTAL_JAZZ": "Verglichener Stil: Quartaler Jazz\nAktueller Projektstil: Quartaler Jazz\nMIDI-Tonumfang: 41–60.\nKumulierte absolute MIDI-Notenbewegung: 25 Halbtöne.\nDie Stile verwenden unterschiedliche Bedingungen; Bewegungswerte beschreiben sie, sie bilden keine allgemeingültige Rangfolge.\n\nC → G: 11 Halbtöne; 0 erkannte Warnung(en).\n  Stimmbewegung von unten nach oben (Halbtöne): -5, -2, +4\nG → Am: 5 Halbtöne; 0 erkannte Warnung(en).\n  Stimmbewegung von unten nach oben (Halbtöne): +2, +2, +1\nAm → F: 9 Halbtöne; 0 erkannte Warnung(en).\n  Stimmbewegung von unten nach oben (Halbtöne): -4, +5, 0",
+      "de / STRICT_CLASSICAL": "Verglichener Stil: Strenger Klassikstil\nAktueller Projektstil: Strenger Klassikstil\nMIDI-Tonumfang: 41–69.\nKumulierte absolute MIDI-Notenbewegung: 29 Halbtöne.\nDie Stile verwenden unterschiedliche Bedingungen; Bewegungswerte beschreiben sie, sie bilden keine allgemeingültige Rangfolge.\n\nC → G: 11 Halbtöne; 0 erkannte Warnung(en).\n  Stimmbewegung von unten nach oben (Halbtöne): -5, -2, +4\nG → Am: 9 Halbtöne; 0 erkannte Warnung(en).\n  Stimmbewegung von unten nach oben (Halbtöne): +2, -2, +5\nAm → F: 9 Halbtöne; 0 erkannte Warnung(en).\n  Stimmbewegung von unten nach oben (Halbtöne): -4, 0, +5"
+    }
+  },
+  "music_edge_cases": {
+    "summary": {
+      "registered_alias_pitch_identity": {
+        "PASS": 2064
+      },
+      "inspector_close_voiced_slash": {
+        "PASS": 72
+      },
+      "beginner_slash_bass_under_original_symbol": {
+        "FAIL": 72
+      },
+      "reduction_omission_label": {
+        "FAIL": 48,
+        "PASS": 48
+      },
+      "reduction_only_omits_written_tones": {
+        "FAIL": 24
+      },
+      "catalog_specific_guide_tone_claims": {
+        "FAIL": 3
+      },
+      "catalog_bass_movements": {
+        "FAIL": 4
+      },
+      "catalog_positive_voice_motion": {
+        "PASS": 8
+      },
+      "explorer_extended_spelling": {
+        "FAIL": 3,
+        "PASS": 2
+      }
+    },
+    "catalog_provenance_check": {
+      "catalog_entries": 28,
+      "compatibility_labels": {
+        "HIGH": 28
+      },
+      "unreviewed_progression_relation_assignments_at_confidence_1": [
+        [
+          "PROG-001",
+          "REL-001"
+        ],
+        [
+          "PROG-001",
+          "REL-002"
+        ],
+        [
+          "PROG-001",
+          "REL-013"
+        ],
+        [
+          "PROG-002",
+          "REL-014"
+        ],
+        [
+          "PROG-003",
+          "REL-003"
+        ],
+        [
+          "PROG-003",
+          "REL-004"
+        ],
+        [
+          "PROG-003",
+          "REL-005"
+        ],
+        [
+          "PROG-007",
+          "REL-006"
+        ],
+        [
+          "PROG-007",
+          "REL-015"
+        ],
+        [
+          "PROG-017",
+          "REL-007"
+        ],
+        [
+          "PROG-017",
+          "REL-008"
+        ],
+        [
+          "PROG-021",
+          "REL-021"
+        ],
+        [
+          "PROG-021",
+          "REL-022"
+        ],
+        [
+          "PROG-022",
+          "REL-025"
+        ],
+        [
+          "PROG-023",
+          "REL-026"
+        ],
+        [
+          "PROG-024",
+          "REL-029"
+        ],
+        [
+          "PROG-024",
+          "REL-030"
+        ],
+        [
+          "PROG-025",
+          "REL-032"
+        ],
+        [
+          "PROG-025",
+          "REL-036"
+        ],
+        [
+          "PROG-028",
+          "CR-038"
+        ],
+        [
+          "PROG-028",
+          "REL-035"
+        ]
+      ]
+    }
+  },
+  "jazz_continuation_spelling": {
+    "matched": 96,
+    "attempted": 96
+  }
+}
