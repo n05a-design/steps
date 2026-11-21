@@ -12,6 +12,7 @@ import logging
 import re
 import sys
 import tkinter as tk
+from functools import partial
 from pathlib import Path
 from tkinter import filedialog, messagebox
 from typing import Literal, Optional
@@ -1394,9 +1395,9 @@ class StepsMainWindow:
             parent=self.root,
             i18n=self.i18n,
             theme=self.theme,
-            on_export=self._export_midi_with_options,
+            on_export=partial(self._export_midi_with_options, expected_revision=self.controller.revision),
             voicing_failures=self.controller.midi_voicing_failures(),
-            overlap_summary=self.controller.midi_overlap_summary,
+            preview=self.controller.midi_export_preview,
         )
 
     def _midi_export_initial_directory(self) -> dict[str, str]:
@@ -1411,7 +1412,20 @@ class StepsMainWindow:
                 continue
         return {}
 
-    def _export_midi_with_options(self, options: MidiExportOptions) -> bool:
+    def _check_midi_export_revision(self, revision: int) -> bool:
+        if revision == self.controller.revision:
+            return True
+        t = self.i18n.translate
+        messagebox.showerror(t("midi.export.error.title"), t("midi.export.error.stale"),
+                             parent=self._dialog_parent())
+        return False
+
+    def _export_midi_with_options(
+        self, options: MidiExportOptions, *, expected_revision: int | None = None,
+    ) -> bool:
+        revision = self.controller.revision if expected_revision is None else expected_revision
+        if not self._check_midi_export_revision(revision):
+            return False
         blocked_chord = self.controller.midi_voicing_failures().get(options.voicing_type)
         if blocked_chord is not None:
             messagebox.showerror(
@@ -1441,7 +1455,7 @@ class StepsMainWindow:
                 parent=parent,
             )
             return False
-        if not selected:
+        if not selected or not self._check_midi_export_revision(revision):
             return False
         try:
             output_path = self.controller.export_midi(

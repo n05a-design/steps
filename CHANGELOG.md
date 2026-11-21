@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Das MIDI-Exportstudio zeigt die tatsächlich vorbereiteten Noten und hält den Export an, wenn sich das Projekt während der Dateiauswahl ändert.
+
 - Der Progressionskatalog bezeichnet die Stufen von `Em9–Am9–D9–Gmaj9` durchgehend relativ zu natürlichem e-Moll.
 
 - Das Stimmführungslabor berechnet Power-Voicings aus Grundton und Quinte und bevorzugt im Quartalprofil benachbarte reine Quarten. Notierte Slash-Bässe bleiben erhalten.

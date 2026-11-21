@@ -10,7 +10,7 @@ from app.i18n import LocaleManager
 from app.ui.dialog_support import ModalDialog
 from app.ui.file_feedback import file_error_reason
 from app.ui.theme import ThemeManager, create_button
-from src.steps.midi.export_service import ADR017_VOICINGS, Adr017NoteDuration, Adr017Voicing
+from src.steps.midi.export_service import ADR017_VOICINGS, Adr017ExportPreview, Adr017NoteDuration, Adr017Voicing
 from src.steps.theory.exceptions import MusicTheoryError
 
 
@@ -46,11 +46,11 @@ class MidiExportOptionsDialog(ModalDialog):
         theme: ThemeManager,
         on_export: Callable[[MidiExportOptions], bool],
         voicing_failures: Mapping[Adr017Voicing, str],
-        overlap_summary: Callable[[Adr017Voicing, Adr017NoteDuration], tuple[int, int | None]],
+        preview: Callable[[Adr017Voicing, Adr017NoteDuration], Adr017ExportPreview],
     ) -> None:
         self._i18n = i18n
         self._on_export = on_export
-        self._overlap_summary = overlap_summary
+        self._preview = preview
         colors = theme.colors
         spacing = theme.spacing
         typography = theme.typography
@@ -61,8 +61,8 @@ class MidiExportOptionsDialog(ModalDialog):
 
         super().__init__(parent)
         self.window.title(translate("midi.options.title"))
-        self.window.geometry("620x610" if voicing_failures else "620x560")
-        self.window.minsize(540, 565 if voicing_failures else 510)
+        self.window.geometry("620x650" if voicing_failures else "620x600")
+        self.window.minsize(540, 605 if voicing_failures else 550)
         self.window.configure(bg=colors.bg_window)
 
         container = tk.Frame(
@@ -103,7 +103,7 @@ class MidiExportOptionsDialog(ModalDialog):
                 ("ROOTLESS", "midi.options.voicing.rootless"),
             ),
             disabled_values=voicing_failures.keys(),
-            command=self._update_overlap_summary,
+            command=self._update_preview,
         )
         if voicing_failures:
             tk.Label(
@@ -126,7 +126,7 @@ class MidiExportOptionsDialog(ModalDialog):
                 ("FIXED_GAP", "midi.options.duration.fixed_gap"),
                 ("PERCENT_95", "midi.options.duration.percent_95"),
             ),
-            command=self._update_overlap_summary,
+            command=self._update_preview,
         )
         self._add_group(
             container,
@@ -136,8 +136,13 @@ class MidiExportOptionsDialog(ModalDialog):
                 ("1", "midi.options.format.type1"),
                 ("0", "midi.options.format.type0"),
             ),
+            command=self._update_preview,
         )
 
+        self._preview_label = tk.Label(
+            container, bg=colors.bg_window, fg=colors.text_primary, font=self._font,
+            justify=tk.LEFT, wraplength=496,
+        )
         self._overlap_label = tk.Label(
             container,
             bg=colors.bg_window,
@@ -147,8 +152,9 @@ class MidiExportOptionsDialog(ModalDialog):
             wraplength=496,
         )
         if initial_voicing:
+            self._preview_label.pack(anchor=tk.W, pady=(spacing.xs, 0))
             self._overlap_label.pack(anchor=tk.W, pady=(spacing.xs, 0))
-            self._update_overlap_summary()
+            self._update_preview()
 
         buttons = tk.Frame(container, bg=colors.bg_window)
         buttons.pack(fill=tk.X, pady=(spacing.sm, 0))
@@ -217,22 +223,34 @@ class MidiExportOptionsDialog(ModalDialog):
                 relief=tk.FLAT,
             ).pack(fill=tk.X, anchor=tk.W)
 
-    def _update_overlap_summary(self) -> None:
+    def _update_preview(self) -> None:
         voicing = self._voicing_var.get()
         if not voicing:
             return
 
         translate = self._i18n.translate
         try:
-            count, first_tick = self._overlap_summary(voicing, self._duration_var.get())
+            preview = self._preview(voicing, self._duration_var.get())
         except (MusicTheoryError, ValueError):
+            overview = ""
             message = translate("midi.options.overlap.unavailable")
         else:
+            tracks = 1 if self._format_var.get() == "0" else 3
+            if preview.chord_range and preview.bass_range:
+                overview = translate(
+                    "midi.options.preview.events", tracks=tracks, first=preview.first_tick, end=preview.end_tick,
+                    chords=preview.chord_notes, bass=preview.bass_notes,
+                    chord_low=preview.chord_range[0], chord_high=preview.chord_range[1],
+                    bass_low=preview.bass_range[0], bass_high=preview.bass_range[1],
+                )
+            else:
+                overview = translate("midi.options.preview.empty", tracks=tracks)
             message = (
-                translate("midi.options.overlap.detected", count=count, tick=first_tick)
-                if count
+                translate("midi.options.overlap.detected", count=preview.overlaps, tick=preview.first_overlap_tick)
+                if preview.overlaps
                 else translate("midi.options.overlap.none")
             )
+        self._preview_label.configure(text=overview)
         self._overlap_label.configure(text=message)
 
     def _export(self) -> None:

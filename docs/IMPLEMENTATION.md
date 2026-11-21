@@ -316,6 +316,12 @@ gleichem Kanal beginnt, und nennt den ersten betroffenen Tick. Gleichzeitige
 Einsätze zählen ab der zweiten Note. Treffen Ende und nächster Start auf
 demselben Tick zusammen, zählt der Einsatz als überlappungsfrei. Die Vorschau
 ist informativ. Die Exportdatei folgt weiterhin ADR-017.
+Die Vorschau zeigt zusätzlich Spurzahl, frühesten Notenbeginn, spätestes
+Notenende und MIDI-Umfang sowie Notenzahl je Kanalgruppe. Sie verwendet
+dieselben Notenereignisse wie der ADR-017-Exporter und aktualisiert sich
+bei Format-, Voicing- oder Längenwechsel. Änderungen am Projektstand
+zwischen Vorschau und Dateiauswahl stoppen den Export vor dem Schreiben.
+
 Der Exporter schreibt die vollständige MIDI-Datei zunächst in ein temporäres
 Verzeichnis im Zielordner und ersetzt das Ziel erst nach einem erfolgreichen
 Schreibvorgang. Bei einem Schreib- oder Ersetzungsfehler bleiben die vorhandenen
