@@ -674,6 +674,11 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             self.assertEqual(controller.session.voice_leading_style, active_style)
             window.redo_btn.invoke()
 
+            controller.set_chord(1, "Dm")
+            controller.set_chord_event_timing(0, 0, 20)
+            controller.set_chord_event_timing(1, 12, 20)
+            state_before_export = controller.session.state
+
             window.export_btn.invoke()
             export = modal()
             voicing_radios = {
@@ -688,12 +693,19 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
                 i18n.translate("midi.options.voicing.unavailable", mode="DROP2", chord="Dm") in text
                 for text in descriptions
             ))
+            self.assertIn(i18n.translate("midi.options.overlap.none"), descriptions)
             for key in ("midi.options.duration.percent_95", "midi.options.format.type0"):
                 radio = next(
                     widget for widget in widgets(export, tk.Radiobutton)
                     if widget.cget("text") == i18n.translate(key)
                 )
                 radio.invoke()
+            descriptions = [label.cget("text") for label in widgets(export, tk.Label)]
+            self.assertIn(
+                i18n.translate("midi.options.overlap.detected", count=5, tick=12),
+                descriptions,
+            )
+            self.assertEqual(controller.session.state, state_before_export)
             with patch(
                 "app.ui.main_window.filedialog.asksaveasfilename", return_value="",
             ) as chooser:

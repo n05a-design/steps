@@ -210,6 +210,13 @@ Format-1-Standards gelten, wenn CLOSE für die Progression verfügbar ist.
 Die Voicing-Prüfung verwendet dieselbe Tonhöhenauswahl wie der Exporter.
 Das Optionsfenster deaktiviert inkompatible Modi und nennt jeweils den ersten
 blockierenden Akkord. Es prüft die Auswahl erneut vor der Dateiauswahl.
+Die Timing-Vorschau verwendet die absoluten Start-Ticks und die tatsächlich
+exportierten Notenlängen für das gewählte Voicing. Sie zählt jeden Einsatz,
+der vor dem Ende einer vorherigen Note mit gleicher MIDI-Tonhöhe und
+gleichem Kanal beginnt, und nennt den ersten betroffenen Tick. Gleichzeitige
+Einsätze zählen ab der zweiten Note. Treffen Ende und nächster Start auf
+demselben Tick zusammen, zählt der Einsatz als überlappungsfrei. Die Vorschau
+ist informativ. Die Exportdatei folgt weiterhin ADR-017.
 Der Exporter schreibt die vollständige MIDI-Datei zunächst in ein temporäres
 Verzeichnis im Zielordner und ersetzt das Ziel erst nach einem erfolgreichen
 Schreibvorgang. Bei einem Schreib- oder Ersetzungsfehler bleiben die vorhandenen

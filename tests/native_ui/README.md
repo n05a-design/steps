@@ -32,7 +32,9 @@ by clicking a note,
 zooms both tick axes in sync with the keyboard, checks visible note bounds and returns to the
 full overview, verifies that these actions leave project state unchanged,
 applies a style, and exports Format 0 after
-checking the disabled voicing modes. The recommendation path runs at the
+checking the disabled voicing modes. It switches note durations and verifies
+that the timing preview reports five overlapping attacks at tick 12 without
+changing project state. The recommendation path runs at the
 main window minimum size, switches candidates with arrow keys, verifies
 Tab traversal through preview and apply controls, toggles UI language
 with the same candidate selected, and inserts it with Enter. An injected file replacement error

@@ -1385,6 +1385,7 @@ class StepsMainWindow:
             theme=self.theme,
             on_export=self._export_midi_with_options,
             voicing_failures=self.controller.midi_voicing_failures(),
+            overlap_summary=self.controller.midi_overlap_summary,
         )
 
     def _midi_export_initial_directory(self) -> dict[str, str]:
