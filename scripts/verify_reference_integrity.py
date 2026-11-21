@@ -342,7 +342,8 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
         for ident, entry in entries.items():
             if (not isinstance(entry, dict) or entry.get('id') != ident
                     or not isinstance(entry.get('semantic_hash'), str)
-                    or not re.fullmatch(r'[0-9a-f]{64}', entry['semantic_hash'])):
+                    or not re.fullmatch(r'[0-9a-f]{64}', entry['semantic_hash'])
+                    or (name == 'progressions' and not isinstance(entry.get('harmonic_structure'), str))):
                 errors.append(f"Invalid identity baseline record: {ident}")
     if errors:
         return errors

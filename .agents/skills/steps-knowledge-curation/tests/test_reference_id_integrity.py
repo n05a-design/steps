@@ -25,7 +25,9 @@ PROGRESSIONS = Path("knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE
 GRAPH = Path("knowledge/relations/GRAPH_AUDIT_MATRIX_v3.csv")
 REVIEW = Path("knowledge/relations/GRAPH_HUMAN_REVIEW_v3.csv")
 ADR = Path("decisions/DECISION_REGISTER.md")
+FINGERPRINTS = Path("knowledge/research/CURATION_EVIDENCE_FINGERPRINTS.json")
 CHECK_INPUTS = (
+    FINGERPRINTS,
     BASELINE, MIRROR, GOLDEN, PROGRESSIONS, GRAPH, REVIEW, ADR,
     Path("knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"),
     Path("knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md"),
@@ -139,6 +141,61 @@ class TestReferenceIdIntegrityTool(unittest.TestCase):
             writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
             writer.writeheader()
             writer.writerows(rows)
+
+    def test_musical_catalog_content_changes_are_detected(self):
+        for path, before, after, ident in (
+            (Path("knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md"), "1 und 3 (Synkope auf 3e+)", "nur Zählzeit 4", "PAT-001"),
+            (PROGRESSIONS, "Pop, Rock, Singer-Songwriter", "ausschließlich Barock", "PROG-001"),
+        ):
+            with self.subTest(ident=ident):
+                target = self.fixture / path
+                original = target.read_text(encoding="utf-8")
+                self.assertIn(before, original)
+                target.write_text(original.replace(before, after, 1), encoding="utf-8")
+                self.assert_rejected(f"{path.as_posix()} [{ident}]")
+                target.write_text(original, encoding="utf-8")
+
+    def test_golden_classification_and_source_are_protected(self):
+        for field, value in (("test_class", "SPECIFICATION_EXAMPLE"), ("source_citation", "")):
+            with self.subTest(field=field):
+                content = json.loads((ROOT / GOLDEN).read_text(encoding="utf-8"))
+                content[0][field] = value
+                self._write_golden_pair(content)
+                self.assert_rejected(f"{GOLDEN.as_posix()} [REF-0001]")
+
+    def test_graph_scope_and_source_locator_are_protected(self):
+        for path, field, value in ((GRAPH, "source_locator", ""), (REVIEW, "scope", "All styles")):
+            with self.subTest(field=field):
+                self._change_graph_field(path, field, value)
+                self.assert_rejected(f"{path.as_posix()} [CR-001]")
+                shutil.copyfile(ROOT / path, self.fixture / path)
+
+    def test_duplicate_domain_is_rejected(self):
+        path = self.fixture / "knowledge/research/MUSIC_DOMAIN_READINESS_MATRIX.csv"
+        content = path.read_text(encoding="utf-8")
+        path.write_text(content + content.splitlines()[1] + "\n", encoding="utf-8")
+        self.assert_rejected("Duplicate ID 'M01'")
+
+    def test_empty_historical_inventory_is_rejected(self):
+        path = self.fixture / "knowledge/research/HISTORICAL_REFERENCE_ID_MATRIX.csv"
+        path.write_text(path.read_text(encoding="utf-8").splitlines()[0] + "\n", encoding="utf-8")
+        self.assert_rejected("HISTORICAL_REFERENCE_ID_MATRIX.csv [REF-0001]")
+
+    def test_missing_evidence_manifest_is_rejected(self):
+        (self.fixture / FINGERPRINTS).unlink()
+        self.assert_rejected(FINGERPRINTS.name)
+
+    def test_missing_baseline_field_returns_structured_failure(self):
+        baseline = self.fixture / BASELINE
+        content = json.loads(baseline.read_text(encoding="utf-8"))
+        del content["progressions"]["PROG-001"]["harmonic_structure"]
+        baseline.write_text(json.dumps(content), encoding="utf-8")
+        result = subprocess.run(
+            [sys.executable, "-B", str(SCRIPTS / "check_reference_ids.py"),
+             "--repo-root", str(self.fixture), "--json"], capture_output=True, text=True,
+        )
+        self.assertEqual(result.returncode, 1, result.stderr)
+        self.assertIn("Invalid identity baseline record: PROG-001", json.loads(result.stdout)["errors"])
 
     def test_cli_reports_missing_baseline_as_failure(self):
         (self.fixture / BASELINE).unlink()

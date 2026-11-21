@@ -101,6 +101,14 @@ class TestRegisterRecovery(unittest.TestCase):
             backup_knowledge.restore_master(invalid, self.target)
         self.assertEqual(self.target.read_bytes(), CURRENT)
 
+    def test_restore_rejects_formatted_task_id(self):
+        self.target.write_bytes(ORIGINAL + b"\n### `OA-0001`: Duplicate\n* **Status:** `INVALID`\n")
+        invalid = backup_knowledge.backup_master(self.target)["backup"]
+        self.target.write_bytes(CURRENT)
+        with self.assertRaisesRegex(ValueError, "Malformed OA task heading"):
+            backup_knowledge.restore_master(invalid, self.target)
+        self.assertEqual(self.target.read_bytes(), CURRENT)
+
     def test_existing_restore_lock_leaves_current_register_intact(self):
         lock = self.target.with_name(f".{self.target.name}.restore.lock")
         lock.write_text("Active restore", encoding="utf-8")
@@ -215,6 +223,23 @@ class TestRegisterNegativeCases(unittest.TestCase):
     def test_indented_duplicate(self):
         report = validate_register.validate_content(ORIGINAL.decode() + "   ### OA-0001: Duplicate\n* **Status:** `OPEN`\n")
         self.assertIn("Duplicate OA-ID found: OA-0001", report["errors"])
+
+    def test_formatted_id_cannot_hide_in_a_heading(self):
+        for ident in ("`OA-0001`", "**OA-0001**", "_OA-0001_"):
+            with self.subTest(ident=ident):
+                report = validate_register.validate_content(
+                    ORIGINAL.decode() + f"\n### {ident}: Duplicate\n* **Status:** `OPEN`\n"
+                )
+                self.assertTrue(any("Malformed OA task heading" in error for error in report["errors"]))
+
+    def test_not_applicable_requires_a_reason(self):
+        entry = "### OA-0001: Inapplicable\n* **Status:** `NOT_APPLICABLE`\n"
+        for reason in ("", "* **Begründung:** TBD\n", "* **Begründung:** [Platzhalter]\n"):
+            with self.subTest(reason=reason):
+                report = validate_register.validate_content(entry + reason)
+                self.assertTrue(report["errors"])
+        report = validate_register.validate_content(entry + "* **Begründung:** Scope covers text sources only.\n")
+        self.assertFalse(report["errors"])
 
     def test_hidden_status_cannot_satisfy_required_field(self):
         content = "### OA-0001: Task\n<!--\n* **Status:** `OPEN`\n-->\n"

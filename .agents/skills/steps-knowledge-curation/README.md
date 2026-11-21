@@ -10,11 +10,30 @@ loads it. The helper scripts run independently from the desktop application.
 | [detect_duplicates.py](scripts/detect_duplicates.py) | Finds matching hashes and fails on unreadable eligible files. Compare near duplicates and historical editions during review. |
 | [extract_instructions.py](scripts/extract_instructions.py) | Produces untrusted candidates from UTF-8 or BOM-marked UTF-16 text. Unsupported formats or invalid text fail with a diagnostic. |
 | [validate_register.py](scripts/validate_register.py) | Checks task headings, IDs, statuses and declared evidence. The canonical CLI run also resolves completion SHAs to local Git commit objects. Review the cited checks and acceptance evidence independently. |
-| [check_reference_ids.py](scripts/check_reference_ids.py) | Checks baseline-bound identities, the Golden mirror and v3 graph bindings. The canonical baseline, graph files and review records are required. Named historical graph endpoints stay subject to their recorded review. |
+| [check_reference_ids.py](scripts/check_reference_ids.py) | Checks baseline-bound identities, the Golden mirror, v3 graph bindings and row-wise evidence fingerprints. The canonical baseline, graph files and review records are required. Named historical graph endpoints stay subject to their recorded review. |
 | [backup_knowledge.py](scripts/backup_knowledge.py) | Verifies a snapshot against its manifest and saves the current register before an atomic replacement. |
 
 Music-theory validation, MIDI interpretation and rights clearance require
 separate review. The scripts report their technical checks. Confirm exact claims and usage permission against their original evidence. Use trusted checkout and intake directories without concurrent edits during validation.
+
+### Review a proposed evidence change
+
+The [versioned fingerprints](../../../knowledge/research/CURATION_EVIDENCE_FINGERPRINTS.json)
+cover the three catalog tables, Golden test and source metadata, v3 graph
+audit and review records, the historical reference inventory, and domain
+readiness rows. The initial fingerprints record the input from STEPS
+`539b6d7107d5d10e8501c123307910690e4c1850`. They preserve the recorded
+values and gaps, including evidence still pending review.
+
+For an independently reviewed correction, inspect the proposed fingerprints
+using the command below. It writes to stdout. Compare the data, scope and
+evidence changes in the pull request before updating the versioned file.
+Use the historical migration register as well when changing a protected
+identity. Changes to the fingerprints require human review.
+
+```sh
+python3 -B .agents/skills/steps-knowledge-curation/scripts/check_reference_ids.py --print-evidence-snapshot
+```
 
 ### Back up or restore the register
 

@@ -55,6 +55,11 @@ def _register_lines(content: str, errors: list[str]):
         errors.append("Unclosed fenced block or HTML comment in task register.")
 
 
+def _looks_like_task_heading(title: str) -> bool:
+    # Recognize formatted IDs as task attempts so they receive a syntax error.
+    return title.lstrip(" `*_").upper().startswith("OA-")
+
+
 def _register_tasks(content: str, errors: list[str]):
     task = None
     for line in _register_lines(content, errors):
@@ -65,10 +70,10 @@ def _register_tasks(content: str, errors: list[str]):
             level, title = heading.groups()
             title = re.sub(r"[ \t]+#+[ \t]*$", "", title)
             match = TASK.fullmatch(title) if level == "###" else None
-            if title.upper().startswith("OA-") and not match:
+            if _looks_like_task_heading(title) and not match:
                 errors.append(f"Malformed OA task heading: {title}")
             task = (*match.groups(), []) if match else None
-        elif heading and heading[2].upper().startswith("OA-"):
+        elif heading and _looks_like_task_heading(heading[2]):
             errors.append(f"OA tasks require a level-three heading: {heading[2]}")
         elif task is not None:
             task[2].append(line)
@@ -79,6 +84,14 @@ def _register_tasks(content: str, errors: list[str]):
 def _evidence_values(lines: list[str], name: str) -> list[str]:
     field = re.compile(FIELD_PREFIX + rf"\*\*{name}:\*\*[ \t]*(.*?)[ \t]*$")
     return [match[1].strip().strip("`") for line in lines if (match := field.fullmatch(line))]
+
+
+def _has_evidence(values: list[str], pattern: str) -> bool:
+    return (
+        len(values) == 1 and bool(re.fullmatch(pattern, values[0]))
+        and values[0].casefold() not in {"-", "—", "n/a", "todo", "tbd", "offen"}
+        and not (values[0].startswith("[") and values[0].endswith("]"))
+    )
 
 
 def _missing_commit(commit: str) -> bool:
@@ -117,14 +130,12 @@ def validate_content(
         if not value or value[1] not in VALID_STATUSES:
             errors.append(f"Invalid status value: {fields[0].strip('`')} ({ident})")
             continue
+        if value[1] == "NOT_APPLICABLE" and not _has_evidence(_evidence_values(lines, "Begründung"), r".+"):
+            errors.append(f"{ident}: NOT_APPLICABLE requires one valid Begründung field.")
         if require_evidence and value[1] == "DONE_VERIFIED":
             for name, pattern in EVIDENCE_FIELDS.items():
                 values = _evidence_values(lines, name)
-                if (
-                    len(values) != 1 or not re.fullmatch(pattern, values[0])
-                    or values[0].casefold() in {"-", "—", "n/a", "todo", "tbd", "offen"}
-                    or (values[0].startswith("[") and values[0].endswith("]"))
-                ):
+                if not _has_evidence(values, pattern):
                     errors.append(f"{ident}: DONE_VERIFIED requires a valid {name} field.")
                 elif name == "Commit" and verify_commits and _missing_commit(values[0]):
                     errors.append(f"{ident}: evidence commit is unavailable in the repository: {values[0]}.")

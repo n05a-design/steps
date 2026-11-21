@@ -48,7 +48,25 @@ AREAS = {
         ("Review the source-to-claim links and distinguish style observations from musical rules.",),
     ),
 }
+
+
+def curation_evidence() -> list[str]:
+    tool = ROOT / ".agents/skills/steps-knowledge-curation/scripts/check_reference_ids.py"
+    result = subprocess.run(
+        [sys.executable, "-B", str(tool), "--json"], cwd=ROOT,
+        capture_output=True, text=True, timeout=120,
+    )
+    if not result.returncode:
+        return []
+    try:
+        errors = json.loads(result.stdout)["errors"]
+    except (ValueError, KeyError, TypeError):
+        errors = []
+    return [f"Curation evidence: {error}" for error in errors] or ["Curation evidence check did not complete."]
+
+
 AUTO_PROBES = {
+    "research-library": curation_evidence,
     "desktop-voicing": checks.beginner_voices,
     "midi-export": checks.midi_drop2,
     "knowledge-adapter": checks.knowledge_retrieval,

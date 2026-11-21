@@ -2,6 +2,7 @@
 
 * **Kategorie:** [Rechte & Veröffentlichung | Architektur | Produktstrategie | Musiktheorie | Implementierung | CI / Qualität | Dokumentation]
 * **Status:** `OPEN | IN_PROGRESS | BLOCKED | OWNER_DECISION_REQUIRED | DONE_UNVERIFIED | DONE_VERIFIED | SUPERSEDED | NOT_APPLICABLE`
+* **Begründung:** [Pflichtfeld für NOT_APPLICABLE]
 * **Ursprung:** `EXPLICIT | INFERRED`
 * **Beschreibung:** [Konkrete Beschreibung der Aufgabe]
 * **Quellen & Fundstellen:** [Dateipfade mit Zeilenangaben]

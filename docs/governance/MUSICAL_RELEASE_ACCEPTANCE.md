@@ -11,7 +11,7 @@ Each musical release area has an executable gate for its deterministic behavior 
 | `learning-pilot` | Pilot calculation, publication tests and authentic GitHub pilot approvals | Teaching material, sources and the mandatory listening exercise |
 | `knowledge-adapter` | Actual evaluation prompts, notation, relevance and unapproved-source checks | Correctness, citations and uncertainty in the actual responses |
 | `harmony-coach` | Versioned prompts and required criteria across all twelve domains | Reviewed responses and source evidence for the actual model and Skill revision |
-| `research-library` | Remaining catalog, corpus, ID, and graph benchmark checks | Provenance, stylistic claims and outstanding historical cases |
+| `research-library` | Catalog and corpus checks, historical reference identities, and curation evidence fingerprints | Provenance, stylistic claims and outstanding historical cases |
 
 The existing [knowledge benchmark](../../knowledge/benchmark/README.md) retains its case IDs and criteria. Release gates classify every benchmark case. This checks the declared cases for the selected area. Product-wide releases require `all` along with the other repository release gates.
 

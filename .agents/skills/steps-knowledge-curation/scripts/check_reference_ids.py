@@ -16,6 +16,7 @@ from register_paths import REPOSITORY_ROOT
 # Load the verifier from this checkout, even when checking a separate data directory.
 sys.path.insert(0, str(REPOSITORY_ROOT))
 from scripts.verify_reference_integrity import verify_csv_schema, verify_integrity
+from reference_evidence import evidence_snapshot, verify_evidence
 
 
 @dataclass
@@ -84,6 +85,8 @@ class ReferenceIdChecker:
         try:
             result = verify_integrity(self.repo_root, baseline_path=self.baseline_path)
             errors = result["errors"] + _check_graph_bindings(self.repo_root)
+            if not errors:
+                errors.extend(verify_evidence(self.repo_root))
         except (OSError, ValueError, csv.Error) as exc:
             return ReferenceCheckReport(False, [f"Cannot complete reference checks: {exc}"])
         stats = result["stats"]
@@ -100,13 +103,23 @@ def main() -> int:
     parser.add_argument("--baseline", type=Path, help="Explicit identity baseline for this check")
     parser.add_argument("--quiet", action="store_true", help="Suppress text output")
     parser.add_argument("--json", action="store_true", help="Print a JSON report")
+    parser.add_argument("--print-evidence-snapshot", action="store_true", help="Print candidate evidence fingerprints for review")
     args = parser.parse_args()
+    if args.print_evidence_snapshot:
+        if args.baseline or args.quiet or args.json:
+            parser.error("Candidate snapshot output must be requested on its own.")
+        try:
+            snapshot = evidence_snapshot((args.repo_root or REPOSITORY_ROOT).resolve())
+        except (OSError, ValueError, csv.Error) as exc:
+            parser.exit(1, f"Cannot build candidate evidence snapshot: {exc}\n")
+        print(json.dumps(snapshot, sort_keys=True, indent=2))
+        return 0
     report = validate_reference_ids(args.repo_root, args.baseline)
     if args.json:
         print(json.dumps(report.to_dict(), indent=2))
     elif not args.quiet:
         status = "PASS" if report.success else "FAIL"
-        print(f"{status}: reference structure, baseline and graph bindings ({report.identities_checked} entries checked).")
+        print(f"{status}: reference structure, baseline, graph bindings and evidence fingerprints ({report.identities_checked} entries checked).")
         for message in report.errors + report.warnings:
             print(f"  - {message}")
     return 0 if report.success else 1

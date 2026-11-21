@@ -22,4 +22,4 @@ The extractor reports document text as `CANDIDATE_FROM_DOCUMENT`. A reviewer ass
 - `DONE_UNVERIFIED`: Implementation complete with evidence or review still pending.
 - `DONE_VERIFIED`: Record the full commit SHA under **Commit**, the executed check under **Prüfung**, its review or test evidence under **Abnahmebeleg**, and the criterion under **Abnahmekriterien**.
 - `SUPERSEDED`: Replaced by a more comprehensive task.
-- `NOT_APPLICABLE`: The task does not apply to the current scope. Record the reason.
+- `NOT_APPLICABLE`: The task does not apply to the current scope. Record exactly one non-placeholder reason in the **Begründung** field.
