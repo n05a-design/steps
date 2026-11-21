@@ -17,8 +17,10 @@ from enum import Enum
 from typing import Any, Dict, List, Literal, Optional, Tuple, Union
 
 from .chord import ChordDefinition, parse_chord
-from .exceptions import ChordConstructionError, ProgressionParsingError, VoiceLeadingError
-from .pitch import NoteSpelling, midi_to_pitch_class, parse_spelling
+from .exceptions import (
+    ChordConstructionError, InvalidAlterationError, ProgressionParsingError, VoiceLeadingError,
+)
+from .pitch import NoteSpelling
 
 
 class BeginnerTriadInversion(str, Enum):
@@ -64,7 +66,7 @@ class PedagogicalReduction:
 class BeginnerChordVoicing:
     """
     Realization of a two-handed beginner keyboard voicing for a single chord.
-    Left hand plays the fundamental bass note with recommended finger.
+    Left hand plays the written bass, or the root in chords without a slash.
     Right hand plays a smooth 3-finger triad voicing.
     """
     chord_symbol: str
@@ -173,6 +175,11 @@ def _format_midi_note(midi_number: int, convention: Literal["INT", "DE"] = "INT"
     return f"{name}{octave}"
 
 
+def _spell_midi_as(note: NoteSpelling, midi: int, convention: Literal["INT", "DE"]) -> str:
+    octave = note.octave + (midi - note.midi_number) // 12
+    return NoteSpelling(note.step, note.alteration, octave).render(convention)
+
+
 def _format_pc_name(pc: int, convention: Literal["INT", "DE"] = "INT") -> str:
     """Format pitch class letter without octave."""
     names_int = ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"]
@@ -186,7 +193,7 @@ def reduce_chord_for_beginners(
 ) -> PedagogicalReduction:
     """
     Didactically reduce any complex chord to its primary beginner triad.
-    Identifies and documents omitted extensions (7th, 9th, 11th, 13th).
+    Preserves the written bass and reports extensions absent from the whole voicing.
     """
     if isinstance(chord, str):
         c_def = parse_chord(chord, convention=convention)
@@ -211,6 +218,9 @@ def reduce_chord_for_beginners(
     elif has_m3:
         qual = "m"
         base_name_de = "Moll-Dreiklang"
+    elif has_M3 and has_d5:
+        qual = "(b5)"
+        base_name_de = "Dur-Dreiklang mit verminderter Quinte"
     elif has_M3 and has_a5:
         qual = "aug"
         base_name_de = "übermäßiger Dreiklang"
@@ -230,24 +240,28 @@ def reduce_chord_for_beginners(
     root = c_def.root
     reduced_symbol = root.render(convention).removesuffix(str(root.octave)) + qual
 
-    # Identify omitted extensions
-    omitted: List[str] = []
-    if any(semi in (9, 10, 11) for semi in intervals) or c_def.is_seventh:
-        omitted.append("7th")
-    if any(semi in (13, 14, 15) for semi in intervals) or ("add9" in c_def.symbol or "9" in c_def.symbol):
-        omitted.append("9th")
-    if any(semi in (17, 18) for semi in intervals) or ("11" in c_def.symbol):
-        omitted.append("11th")
-    if any(semi in (20, 21) for semi in intervals) or ("13" in c_def.symbol):
-        omitted.append("13th")
+    if c_def.bass is not None:
+        bass = c_def.bass
+        reduced_symbol += "/" + bass.render(convention).removesuffix(str(bass.octave))
 
-    was_reduced = (reduced_symbol != c_def.symbol)
+    kept = set(ChordDefinition(root, qual).theoretical_intervals)
+    if c_def.bass is not None:
+        kept.add((c_def.bass.pitch_class - root.pitch_class) % 12)
+    factors = (
+        ("6th", (9,) if c_def.quality != "dim7" else ()),
+        ("7th", (9, 10, 11) if c_def.quality == "dim7" else (10, 11)),
+        ("9th", (13, 14, 15)),
+        ("11th", (17, 18)),
+        ("13th", (20, 21)),
+    )
+    missing = {interval for interval in intervals if interval % 12 not in kept}
+    omitted = [name for name, tones in factors if missing.intersection(tones)]
+
+    was_reduced = c_def.quality != qual
     if was_reduced:
-        omitted_str = ", ".join(omitted) if omitted else "Erweiterungen"
-        explanation = (
-            f"Didaktische Reduktion: '{c_def.symbol}' auf '{reduced_symbol}' "
-            f"({base_name_de}) vereinfacht (ausgelassen: {omitted_str})."
-        )
+        explanation = f"Didaktische Reduktion: '{c_def.symbol}' auf '{reduced_symbol}' ({base_name_de})."
+        if omitted:
+            explanation += f" Ausgelassen: {', '.join(omitted)}."
     else:
         explanation = f"Standard-Dreiklang: '{reduced_symbol}' ({base_name_de})."
 
@@ -498,10 +512,9 @@ def generate_beginner_voicings(
         )
 
     # 2. Reduce chords and gather candidates for each chord
-    reductions: List[PedagogicalReduction] = [
-        reduce_chord_for_beginners(c, convention=convention)
-        for c in raw_chords
-    ]
+    definitions = [parse_chord(chord, convention) if isinstance(chord, str) else chord
+                   for chord in raw_chords]
+    reductions = [reduce_chord_for_beginners(chord, convention) for chord in definitions]
     chord_symbols = [
         c.symbol if isinstance(c, ChordDefinition) else str(c)
         for c in raw_chords
@@ -568,14 +581,18 @@ def generate_beginner_voicings(
         choice = next_choices[choice]
         best_path.append(all_candidates[index][choice])
 
-    # 4. Generate Left Hand Bass Pitches
-    # Determine bass notes in lh_octave
-    lh_bass_notes: List[int] = []
-    for red in reductions:
-        c_tmp = parse_chord(red.reduced_symbol, convention=convention)
-        r_pc = int(c_tmp.root.pitch_class)
-        b_note = (lh_octave + 1) * 12 + r_pc
-        lh_bass_notes.append(b_note)
+    # Preserve the written bass and place it below the right hand.
+    basses = [chord.bass or chord.root for chord in definitions]
+    lh_bass_notes = []
+    for bass, (_, notes) in zip(basses, best_path, strict=True):
+        pitch_class = int(bass.pitch_class)
+        target = (lh_octave + 1) * 12 + pitch_class
+        limit = notes[0] - 1
+        below_right_hand = limit - (limit - pitch_class) % 12
+        bass_midi = min(target, below_right_hand)
+        if not 0 <= bass_midi <= 127:
+            raise ChordConstructionError("Beginner bass falls outside the MIDI range.")
+        lh_bass_notes.append(bass_midi)
 
     # 5. Build Final Voicings and Transitions
     realized_voicings: List[BeginnerChordVoicing] = []
@@ -595,11 +612,19 @@ def generate_beginner_voicings(
             chord_symbol=sym
         )
 
-        lh_spelling = _format_midi_note(b_note, convention)
-        rh_spellings = (
-            _format_midi_note(rh_notes[0], convention),
-            _format_midi_note(rh_notes[1], convention),
-            _format_midi_note(rh_notes[2], convention),
+        lh_spelling = _spell_midi_as(basses[i], b_note, convention)
+        reduced = parse_chord(red.reduced_symbol, convention)
+        names = {int(reduced.root.pitch_class): reduced.root}
+        middle, fifth = reduced.theoretical_intervals[1:]
+        for degree, interval in (({2: 1, 5: 3}.get(middle, 2), middle), (4, fifth)):
+            try:
+                tone = reduced.root.transpose_diatonic(degree, interval)
+            except InvalidAlterationError:
+                continue  # Triple accidentals are outside the supported notation.
+            names[int(tone.pitch_class)] = tone
+        rh_spellings = tuple(
+            _spell_midi_as(names[note % 12], note, convention) if note % 12 in names
+            else _format_midi_note(note, convention) for note in rh_notes
         )
 
         # Initial chord pedagogical description

@@ -16,8 +16,10 @@ from __future__ import annotations
 import unittest
 from itertools import product
 
+from app.i18n import LocaleManager
+from app.ui.harmonic_inspector import format_beginner_voicings
 from app.ui.session_controller import ProgressionSessionController
-from src.steps.progression.engine import get_progression
+from src.steps.progression.engine import get_progression, resolve_roman_degree
 from src.steps.progression.session import ProgressionSession
 from src.steps.theory import (
     BeginnerChordVoicing,
@@ -297,6 +299,56 @@ class TestBeginnerVoicing(unittest.TestCase):
 
         ctrl_beg = controller.get_beginner_voicings(starting_inversion="SECOND")
         self.assertEqual(ctrl_beg["total_l1_distance"], 9)
+
+    def test_beginner_voicings_preserve_slash_bass_and_spelling(self):
+        for notation, flat, natural in (("INT", "Bb", "B"), ("DE", "B", "H")):
+            for octave in (2, 5):
+                with self.subTest(notation=notation, octave=octave):
+                    symbols = ["C/E", f"C/{flat}", f"C/{natural}", "C/Gb" if notation == "INT" else "C/Ges"]
+                    for voicing, spelling, pitch_class in zip(
+                        generate_beginner_voicings(symbols, lh_octave=octave, convention=notation).voicings,
+                        ("E", flat, natural, "Gb" if notation == "INT" else "Ges"), (4, 10, 11, 6),
+                        strict=True,
+                    ):
+                        self.assertEqual(voicing.all_midi_notes[0] % 12, pitch_class)
+                        self.assertLess(voicing.lh_bass_note, voicing.rh_notes[0])
+                        self.assertEqual(voicing.lh_spelling.rstrip("0123456789"), spelling)
+                        self.assertTrue(voicing.reduced_symbol.endswith("/" + spelling))
+                        self.assertFalse(voicing.reduction.was_reduced)
+
+    def test_reduction_preserves_lowered_fifth_and_tracks_the_sounding_tones(self):
+        for symbol, reduced, pitches, omitted in (
+            ("C7b5", "C(b5)", {0, 4, 6}, ("7th",)),
+            ("C7b5/Bb", "C(b5)/Bb", {0, 4, 6, 10}, ()),
+            ("C6", "C", {0, 4, 7}, ("6th",)),
+            ("Cm6/A", "Cm/A", {0, 3, 7, 9}, ()),
+            ("Cdim7", "Cdim", {0, 3, 6}, ("7th",)),
+            ("C13", "C", {0, 4, 7}, ("7th", "9th", "13th")),
+        ):
+            with self.subTest(symbol=symbol):
+                voicing = generate_beginner_voicings([symbol]).voicings[0]
+                self.assertEqual(voicing.reduced_symbol, reduced)
+                self.assertEqual({note % 12 for note in voicing.all_midi_notes}, pitches)
+                self.assertEqual(voicing.reduction.omitted_factors, omitted)
+        triad = parse_chord("C(b5)")
+        self.assertEqual(triad.theoretical_intervals, (0, 4, 6))
+        self.assertEqual(resolve_roman_degree("I(b5)(64)", "C").symbol, "C(b5)/Gb")
+        session = ProgressionSession(["C(b5)/Gb"])
+        self.assertEqual(session.harmonic_degree_at(0), "I(b5)(64)")
+
+    def test_reduction_is_visible_in_both_ui_languages(self):
+        session = ProgressionSession(["C7b5/E", "C6"])
+        controller = ProgressionSessionController(session)
+        voicings = controller.get_beginner_voicings()
+        for language, label, sixth in (
+            ("en", "Reduced voicing", "Omitted tones: sixth"),
+            ("de", "Vereinfachtes Voicing", "Ausgelassene Töne: Sexte"),
+        ):
+            with self.subTest(language=language):
+                output = format_beginner_voicings(voicings, LocaleManager(language).translate)
+                self.assertIn(f"{label}: C(b5)/E", output)
+                self.assertIn(sixth, output)
+                self.assertIn("Gb", output)
 
     def test_error_handling(self) -> None:
         """Verify proper error raising for invalid inputs."""
