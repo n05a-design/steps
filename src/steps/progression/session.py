@@ -17,7 +17,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Literal, Optional, Tuple, Union
 
-from ..midi.export_service import Adr017NoteDuration, Adr017Voicing, MidiExportService
+from ..midi.export_service import Adr017ExportPreview, Adr017NoteDuration, Adr017Voicing, MidiExportService
 from ..models.timeline import TimeSignature
 from ..storage.exceptions import CorruptedProjectError
 from ..storage.project_io import Project, load_project_with_status, save_project
@@ -1066,6 +1066,15 @@ class ProgressionSession:
     def midi_voicing_failures(self) -> dict[Adr017Voicing, str]:
         """Identify which export modes cannot voice the current progression."""
         return MidiExportService.adr017_voicing_failures(self.chords, self.convention)
+
+    def midi_export_preview(
+        self, voicing_type: Adr017Voicing, note_duration_mode: Adr017NoteDuration,
+    ) -> Adr017ExportPreview:
+        """Inspect the planned note stream without changing the session."""
+        return MidiExportService.adr017_export_preview(
+            self.chords, self.state.chord_event_timings, convention=self.convention,
+            voicing_type=voicing_type, note_duration_mode=note_duration_mode,
+        )
 
     def midi_overlap_summary(
         self, voicing_type: Adr017Voicing, note_duration_mode: Adr017NoteDuration,
