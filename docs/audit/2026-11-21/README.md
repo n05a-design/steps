@@ -4,6 +4,8 @@
 
 **Prüfstand:** GitHub-`main` `b47ffc27654d5e1df26316b466049f68000d81c6`, lokaler Commit `99dd53c4ca3376212edcb339b08bef3828d75333`, gemeinsamer Git-Baum `3fe6f904f4d4703b545ba4dd115228c6daf8723b`. Der lokale Arbeitsbaum war zum Prüfzeitpunkt sauber. Die [Prüfdaten](evidence.json) halten die Ergebnisse für genau diesen Stand fest.
 
+[Unabhängige Gegenproben zu Transposition, Datenrundlauf und Wissensabruf](NACHPRUEFUNG.md)
+
 ## Ablage und Dokumentation
 
 | Prüfbereich | Ergebnis |

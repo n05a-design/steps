@@ -8,6 +8,9 @@ Der Kurations-Skill akzeptiert geänderte musikalische Identitäten trotz
 aktiver Baseline. Die strengere Repository-Prüfung erkennt das Gegenbeispiel.
 Für die Gesamtfreigabe fehlen 27 Benchmark-Abnahmen, darunter alle zwölf
 Coach-Bewertungen. Die acht Pilotfreigaben haben einen engeren Geltungsbereich.
+Die [Gegenproben](../../docs/audit/2026-11-21/NACHPRUEFUNG.md) belegen
+außerdem falsche Stufen nach Desktop-Transposition und Abweichungen bei
+16 der 25 erwarteten Antwortstatus des Knowledge-Skills.
 
 ## Ganzheitlicher Bestandsaudit (18.11.2026)
 
