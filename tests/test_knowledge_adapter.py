@@ -11,9 +11,12 @@ Validates:
 
 import json
 import unittest
+from dataclasses import replace
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from unittest.mock import Mock
 
+from scripts.evaluate_knowledge_adapter import evaluate, run
 from src.steps.knowledge import KnowledgeAdapter
 from src.steps.progression import get_progression, reviewed
 
@@ -142,24 +145,23 @@ class TestKnowledgeAdapter(unittest.TestCase):
         self.assertIn("Klasse E", res.explanation)
 
     def test_twenty_five_eval_cases_matrix(self):
-        # These evaluation targets still require their own reviewed content.
-        uncovered = {
-            "EVAL-LOC-03", "EVAL-LOC-04", "EVAL-ALT-01", "EVAL-ALT-02", "EVAL-ALT-03",
-            "EVAL-ALT-04", "EVAL-ALT-05", "EVAL-GEN-01", "EVAL-GEN-02", "EVAL-GEN-03",
-            "EVAL-GEN-04", "EVAL-GEN-05", "EVAL-LEG-03",
-        }
-        for case in self.eval_data["cases"]:
-            ident = case["id"]
-            with self.subTest(case=ident):
-                result = self.adapter.query(case["prompt"])
-                expected = "NO_EVIDENCE" if ident in uncovered else case["expected_status"]
-                self.assertEqual(result.status, expected)
-                if expected == "GROUNDED":
-                    self.assertTrue(result.sources)
-                    self.assertTrue(all(source.locator and source.rights_status == "approved"
-                                        for source in result.sources))
-                else:
-                    self.assertFalse(result.sources or result.claims)
+        for case in run():
+            with self.subTest(case=case["id"]):
+                self.assertTrue(case["runtime_pass"], case)
+
+    def test_correct_status_without_the_approved_citation_fails_evaluation(self):
+        case = self.eval_data["cases"][0]
+        result = self.adapter.query(case["prompt"])
+        without_sources = replace(result, sources=())
+        self.assertFalse(evaluate([case], Mock(query=Mock(return_value=without_sources)))[0]["runtime_pass"])
+
+    def test_explicit_english_notation_questions_use_reviewed_comparison(self):
+        for notation in ("German", "international"):
+            with self.subTest(notation=notation):
+                result = self.adapter.query(f"What note is B in {notation} notation?")
+                self.assertEqual([claim.claim_id for claim in result.claims], [reviewed.NOTATION])
+                self.assertEqual([source.source_id for source in result.sources], ["yale-key-names"])
+        self.assertEqual(self.adapter.query("What note is B in music?").status, "NO_EVIDENCE")
 
 
 if __name__ == "__main__":

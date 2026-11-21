@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
+from scripts.evaluate_knowledge_adapter import run as evaluate_knowledge
 from src.steps.knowledge import KnowledgeAdapter
 from src.steps.midi import SMFParser
 from src.steps.progression import ProgressionSession, list_progressions
@@ -144,11 +145,11 @@ def knowledge_retrieval():
     if not answer.found or not answer.sources or " zu H " in answer.explanation:
         failures.append("INT ii-V-I: missing evidence or German H in the explanation")
     root = Path(__file__).resolve().parents[1]
-    evaluation = json.loads((root / "skills/steps-knowledge/skill_eval_cases.json").read_text(encoding="utf-8"))
-    for case in evaluation["cases"]:
-        actual = adapter.query(case["prompt"]).status
-        if actual != case["expected_status"]:
-            failures.append(f"{case['id']}: expected {case['expected_status']}, received {actual}")
+    for case in evaluate_knowledge():
+        if not case["runtime_pass"]:
+            failures.append(f"{case['id']}: runtime status, claim or citation regression")
+        if case["coverage_pending"]:
+            failures.append(f"{case['id']}: approved content pending for {case['target_status']}")
     registry = json.loads((root / "knowledge/sources/registry.yaml").read_text(encoding="utf-8"))
     for source in registry["sources"]:
         if source["id"] == "omt-ii-v-i":
