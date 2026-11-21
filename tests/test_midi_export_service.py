@@ -99,6 +99,25 @@ class TestSMFGenerationAndEnvelope(unittest.TestCase):
         self.assertEqual(link.read_bytes(), midi.to_bytes())
         self.assertEqual(stat.S_IMODE(self.midi_path.stat().st_mode), 0o640)
 
+    def test_adr017_overlap_summary_uses_effective_note_lengths(self):
+        summary = MidiExportService.adr017_overlap_summary
+        self.assertEqual(summary(["C", "C"], [(0, 20), (10, 20)]), (0, None))
+        self.assertEqual(summary(["C", "C"], [(0, 20), (12, 20)]), (0, None))
+        self.assertEqual(
+            summary(["C", "C"], [(0, 20), (12, 20)], note_duration_mode="PERCENT_95"),
+            (5, 12),
+        )
+        self.assertEqual(summary(["C", "Db"], [(0, 20), (0, 20)]), (0, None))
+        self.assertEqual(summary(["C", "C/E"], [(0, 20), (0, 20)]), (4, 0))
+
+    def test_adr017_overlap_summary_retains_longest_note_across_unsorted_events(self):
+        self.assertEqual(
+            MidiExportService.adr017_overlap_summary(
+                ["C", "C", "C", "C"], [(40, 20), (30, 20), (30, 60), (45, 20)],
+            ),
+            (15, 30),
+        )
+
     def test_adr017_preflight_matches_actual_exports_in_german_notation(self):
         chords = ["Hmaj7", "Fis"]
         self.assertEqual(

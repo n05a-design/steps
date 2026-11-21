@@ -7,6 +7,7 @@ into Standard MIDI Files (SMF) Format 0 and Format 1.
 
 from __future__ import annotations
 
+from collections.abc import Iterator
 from dataclasses import replace
 from pathlib import Path
 from typing import List, Literal, Optional, Sequence, Tuple
@@ -18,6 +19,7 @@ from .smf import MidiFile, MidiTrack
 
 
 Adr017Voicing = Literal["CLOSE", "DROP2", "ROOTLESS"]
+Adr017NoteDuration = Literal["FIXED_GAP", "PERCENT_95"]
 ADR017_VOICINGS: tuple[Adr017Voicing, ...] = ("CLOSE", "DROP2", "ROOTLESS")
 
 
@@ -98,6 +100,56 @@ def _adr017_notes(chord: ChordDefinition, mode: Adr017Voicing) -> list[int]:
     return _adr017_alternative_notes(chord, mode)
 
 
+def _adr017_note_events(
+    chords: Sequence[str | ChordDefinition],
+    event_timings: Sequence[tuple[int, int]],
+    *,
+    convention: str,
+    voicing_type: Adr017Voicing,
+    note_duration_mode: Adr017NoteDuration,
+    lead_gap_ticks: int = 10,
+    include_bass: bool = True,
+) -> Iterator[tuple[int, int, int, int]]:
+    """Yield (start, length, channel, pitch) in export order."""
+    if voicing_type not in ADR017_VOICINGS:
+        raise ValueError(f"Unsupported ADR-017 voicing type: {voicing_type!r}.")
+    if note_duration_mode not in ("FIXED_GAP", "PERCENT_95"):
+        raise ValueError(f"Unsupported ADR-017 note duration mode: {note_duration_mode!r}.")
+    if len(event_timings) != len(chords):
+        raise ValueError("Event timing count must match the chord count.")
+    if (
+        not isinstance(lead_gap_ticks, int)
+        or isinstance(lead_gap_ticks, bool)
+        or lead_gap_ticks < 0
+    ):
+        raise ValueError("Lead gap must be a non-negative whole number of ticks.")
+    if any(
+        not isinstance(timing, tuple)
+        or len(timing) != 2
+        or not isinstance(timing[0], int)
+        or isinstance(timing[0], bool)
+        or timing[0] < 0
+        or not isinstance(timing[1], int)
+        or isinstance(timing[1], bool)
+        or timing[1] <= 0
+        for timing in event_timings
+    ):
+        raise ValueError("Event timings require non-negative starts and positive durations.")
+
+    for item, (start, duration) in zip(chords, event_timings, strict=True):
+        chord = parse_chord(item, convention=convention) if isinstance(item, str) else item
+        length = (
+            max(1, int(round(duration * 0.95)))
+            if note_duration_mode == "PERCENT_95"
+            else max(1, duration - lead_gap_ticks)
+        )
+        for pitch in _adr017_notes(chord, voicing_type):
+            yield start, length, 0, pitch
+        if include_bass:
+            bass = chord.bass if chord.bass else chord.root
+            yield start, length, 1, int(bass.pitch_class) + 36
+
+
 class MidiExportService:
     """Service for exporting STEPS projects and progressions to Standard MIDI Files."""
 
@@ -122,6 +174,33 @@ class MidiExportService:
             if len(failures) == len(ADR017_VOICINGS):
                 break
         return failures
+
+    @staticmethod
+    def adr017_overlap_summary(
+        chords: Sequence[str | ChordDefinition],
+        event_timings: Sequence[tuple[int, int]],
+        *,
+        convention: str = "INT",
+        voicing_type: Adr017Voicing = "CLOSE",
+        note_duration_mode: Adr017NoteDuration = "FIXED_GAP",
+    ) -> tuple[int, int | None]:
+        """Count overlapping attacks by channel and pitch and return their earliest tick."""
+        events = _adr017_note_events(
+            chords, event_timings, convention=convention, voicing_type=voicing_type,
+            note_duration_mode=note_duration_mode,
+        )
+        sounding_until: dict[tuple[int, int], int] = {}
+        count = 0
+        first_tick = None
+        for start, duration, channel, pitch in sorted(events, key=lambda event: event[0]):
+            key = channel, pitch
+            end = sounding_until.get(key, 0)
+            if start < end:
+                count += 1
+                if first_tick is None:
+                    first_tick = start
+            sounding_until[key] = max(end, start + duration)
+        return count, first_tick
 
     @staticmethod
     def export_project_to_smf(
@@ -290,11 +369,6 @@ class MidiExportService:
         Event timing overrides sequential positions and fixed chord durations.
         Optional output modes support DROP2/ROOTLESS and 95%-length notes.
         """
-        if voicing_type not in ADR017_VOICINGS:
-            raise ValueError(f"Unsupported ADR-017 voicing type: {voicing_type!r}.")
-        if note_duration_mode not in ("FIXED_GAP", "PERCENT_95"):
-            raise ValueError(f"Unsupported ADR-017 note duration mode: {note_duration_mode!r}.")
-
         midi_file = MidiFile(smf_format=smf_format, division=ppq)
 
         if smf_format == 0:
@@ -321,58 +395,16 @@ class MidiExportService:
                 (index * chord_dur_ticks, chord_dur_ticks)
                 for index in range(len(chords))
             ]
-        if len(event_timings) != len(chords):
-            raise ValueError("Event timing count must match the chord count.")
-        if (
-            not isinstance(lead_gap_ticks, int)
-            or isinstance(lead_gap_ticks, bool)
-            or lead_gap_ticks < 0
+        for start, duration, channel, pitch in _adr017_note_events(
+            chords, event_timings, convention=convention, voicing_type=voicing_type,
+            note_duration_mode=note_duration_mode, lead_gap_ticks=lead_gap_ticks,
+            include_bass=bass_track is not None,
         ):
-            raise ValueError("Lead gap must be a non-negative whole number of ticks.")
-        if any(
-            not isinstance(timing, tuple)
-            or len(timing) != 2
-            or not isinstance(timing[0], int)
-            or isinstance(timing[0], bool)
-            or timing[0] < 0
-            or not isinstance(timing[1], int)
-            or isinstance(timing[1], bool)
-            or timing[1] <= 0
-            for timing in event_timings
-        ):
-            raise ValueError("Event timings require non-negative starts and positive durations.")
-
-        def note_duration(duration_ticks: int) -> int:
-            if note_duration_mode == "PERCENT_95":
-                return max(1, int(round(duration_ticks * 0.95)))
-            return max(1, duration_ticks - lead_gap_ticks)
-
-        for item, (start_tick, duration_ticks) in zip(chords, event_timings):
-            if isinstance(item, str):
-                chord_def = parse_chord(item, convention=convention)
-            else:
-                chord_def = item
-
-            for note in _adr017_notes(chord_def, voicing_type):
-                chords_track.add_note(
-                    start_tick=start_tick,
-                    duration_ticks=note_duration(duration_ticks),
-                    pitch=note,
-                    velocity=chords_velocity,
-                    channel=0
-                )
-
-            # Bass: Grundton bzw. notierter Bass in MIDI 36..47 (C2..B2)
-            if bass_track is not None:
-                bass_spelling = chord_def.bass if chord_def.bass else chord_def.root
-                bass_pitch = int(bass_spelling.pitch_class) + 36
-                bass_track.add_note(
-                    start_tick=start_tick,
-                    duration_ticks=note_duration(duration_ticks),
-                    pitch=bass_pitch,
-                    velocity=bass_velocity,
-                    channel=1
-                )
+            track = bass_track if channel == 1 and bass_track is not None else chords_track
+            track.add_note(
+                start_tick=start, duration_ticks=duration, pitch=pitch,
+                velocity=bass_velocity if channel == 1 else chords_velocity, channel=channel,
+            )
 
         return midi_file.save(output_path)
 
