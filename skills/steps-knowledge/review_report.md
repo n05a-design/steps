@@ -5,6 +5,16 @@
 - **Prüfdatensatz:** `skills/steps-knowledge/skill_eval_cases.json` (25 Groundedness-Testfälle)
 - **Referenzdokumente:** `prompts/15_KNOWLEDGE_SKILL.md`, `knowledge/benchmark/README.md`, `docs/IMPLEMENTATION.md`
 
+## Nachprüfung vom 21.11.2026
+
+Der tatsächlich ausgeführte Test der unveränderten 25 Fragen ergibt **12
+übereinstimmende Antwortstatus und 13 Abweichungen**. Alle 13 abweichenden
+Fragen liefern `NO_EVIDENCE`. Sie verlangen Inhalte außerhalb der freigegebenen
+Pilotabdeckung, unter anderem verminderte Septakkorde, Stilfragen, Groove und
+Lizenzen. Die frühere Ergebnisdarstellung mit 25 Treffern ist für diesen
+Prüfstand durch den tatsächlichen Adapterlauf widerlegt. Die Fallliste bleibt
+als Zielabdeckung erhalten. Die fachliche Freigabe des Adapters steht aus.
+
 ---
 
 ## 1. Methodik und Evaluierungskriterien

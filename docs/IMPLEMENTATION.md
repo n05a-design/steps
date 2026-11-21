@@ -194,6 +194,14 @@ als angewandte Dominante erscheinen. Die Anzeige bildet eine mögliche
 harmonische Lesart ab. Mehrdeutigkeit, Phrasenabschluss und die gehörte Tonika
 erfordern weiteren musikalischen Kontext.
 
+Der Wissensadapter nutzt dieselbe Prüfung für registrierte Quellen,
+Claim-Fingerprints und menschliche Freigabebelege wie der App-Lernkatalog.
+Er beantwortet exakte Abfragen im Pilotumfang mit sämtlichen Fundstellen.
+Leere, nicht zugeordnete und unbelegte Fragen liefern `NO_EVIDENCE`.
+Für das mehrdeutige B ohne Notationsangabe fordert der Adapter eine
+Schreibkonvention an. Der [Knowledge-Skill](../skills/steps-knowledge/SKILL.md)
+beschreibt den verfügbaren Umfang und seine Grenzen.
+
 Der Next Chord Explorer zeigt pro ausgewähltem Kandidaten die EN/DE-Beziehung,
 die Originalerklärung und deren Provenienz. Beim Öffnen liegt der Fokus auf
 dem ersten Vorschlag. Pfeiltasten wechseln die Vorschau, Enter oder

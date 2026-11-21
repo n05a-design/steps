@@ -169,10 +169,14 @@ def _claim(raw, owner: dict, sources: dict[str, dict]) -> Claim:
     return Claim(ident, kind, text, scope, check, tuple(citations), fingerprint, tuple(path))
 
 
-def _candidates(registry_path: Path | None = None) -> tuple[dict[str, dict], dict[str, Claim]]:
-    sources = _sources(registry_path)
+def _candidates(
+    registry_path: Path | None = None, catalog_path: Path | None = None,
+    *, sources: dict[str, dict] | None = None,
+) -> tuple[dict[str, dict], dict[str, Claim]]:
+    if sources is None:
+        sources = _sources(registry_path)
     examples = {}
-    document = _read(CATALOG, 2, "notation", "examples")
+    document = _read(CATALOG if catalog_path is None else catalog_path, 2, "notation", "examples")
     notation = _claim(document["notation"], {"applies_to": list(REQUIRED_CLAIMS)}, sources)
     if notation.claim_id != NOTATION or notation.kind != "convention":
         raise PublicationError("Missing pilot notation convention.")
@@ -257,9 +261,17 @@ def _verify_music(examples: dict[str, dict], claims: dict[str, Claim]) -> None:
             raise PublicationError(f"{ident}: invalid music data: {exc}") from exc
 
 
-def load_reviewed_catalog(*, registry_path: Path | None = None) -> tuple[ReviewedProgression, ...]:
+def load_reviewed_catalog(
+    *, registry_path: Path | None = None, catalog_path: Path | None = None,
+) -> tuple[ReviewedProgression, ...]:
     """Load the pilot after checking the stored approvals and their fingerprints offline."""
-    examples, claims = _candidates(registry_path)
+    return _load_reviewed_catalog(_sources(registry_path), catalog_path)
+
+
+def _load_reviewed_catalog(
+    sources: dict[str, dict], catalog_path: Path | None,
+) -> tuple[ReviewedProgression, ...]:
+    examples, claims = _candidates(catalog_path=catalog_path, sources=sources)
     records = _approval_records(claims)
     missing = claims.keys() - records.keys()
     if missing:
