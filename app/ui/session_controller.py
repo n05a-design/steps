@@ -146,6 +146,16 @@ class ProgressionSessionController:
         self._session.add_chord(symbol)
         self._notify()
 
+    def duplicate_chord_event(self, index: int) -> int:
+        new_index = self._session.duplicate_chord_event(index)
+        self._notify()
+        return new_index
+
+    def split_chord_event(self, index: int) -> int:
+        new_index = self._session.split_chord_event(index)
+        self._notify()
+        return new_index
+
     def remove_chord(self, index: int) -> None:
         self._session.remove_chord(index)
         self._notify()

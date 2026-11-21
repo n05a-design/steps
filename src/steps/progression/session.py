@@ -292,6 +292,31 @@ class ProgressionSession:
         new_state.chord_event_timings.insert(insert_index, (start_tick, duration_ticks))
         self._push_mutation(new_state)
 
+    def duplicate_chord_event(self, index: int) -> int:
+        """Insert a copy starting at the source end, preserving other event timings."""
+        start, duration = self.get_chord_event_timing(index)
+        return self._insert_chord_copy(index, (start, duration), (start + duration, duration))
+
+    def split_chord_event(self, index: int) -> int:
+        """Split at the midpoint, assigning an odd remaining tick to the second part."""
+        start, duration = self.get_chord_event_timing(index)
+        if duration < 2:
+            raise ValueError("A chord event needs at least two ticks to split.")
+        first_duration = duration // 2
+        return self._insert_chord_copy(
+            index, (start, first_duration), (start + first_duration, duration - first_duration),
+        )
+
+    def _insert_chord_copy(
+        self, index: int, first: tuple[int, int], second: tuple[int, int],
+    ) -> int:
+        new_state = copy.deepcopy(self.state)
+        new_index = index + 1
+        new_state.chords.insert(new_index, new_state.chords[index])
+        new_state.chord_event_timings[index:new_index] = [first, second]
+        self._push_mutation(new_state)
+        return new_index
+
     def remove_chord(self, index: int) -> None:
         """Removes chord at index. Requires at least one chord to remain."""
         if len(self.chords) <= 1:
