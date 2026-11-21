@@ -11,11 +11,17 @@ class TestHarmonicFunctionAccuracy(unittest.TestCase):
             "Cmaj7", "E7", "Am", "C/E", "Ddim", "Db", "F#", "Gb",
             "Dm7", "G7/F", "C", "C/F#", "Cmaj9/E",
         ]
-        analysis = ProgressionSession(initial_chords=chords).analyze_progression()
+        session = ProgressionSession(initial_chords=chords)
+        analysis = session.analyze_progression()
         self.assertEqual(
             [item.roman_numeral for item in analysis],
             ["Imaj7", "V7/vi", "vi", "I6", "ii°", "bII", "#IV", "bV",
              "ii7", "V7(42)", "I", "I/F#", "Imaj9/E"],
+        )
+
+        self.assertEqual(
+            [session.harmonic_degree_at(i) for i in range(len(chords))],
+            [item.roman_numeral for item in analysis],
         )
 
     def test_chord_pairs_keep_regular_labels_without_applied_dominant_evidence(self):

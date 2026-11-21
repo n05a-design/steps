@@ -255,6 +255,10 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
         window = StepsMainWindow(root, locale_manager=i18n)
         controller = window.controller
         root.update()
+        self.assertIn(
+            i18n.translate("chord.degree", degree="I"),
+            window.detail_text.get("1.0", tk.END),
+        )
 
         def widgets(parent, kind):
             for child in parent.winfo_children():
@@ -503,6 +507,10 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             button(library, "library.load").invoke()
             self.assertFalse(library.winfo_exists())
             self.assertEqual(controller.session.chords, ["Dm7", "G7", "Cmaj7"])
+            self.assertIn(
+                i18n.translate("chord.degree", degree="ii7"),
+                window.detail_text.get("1.0", tk.END),
+            )
             window.file_menu.invoke(4)
             library = modal()
             search = next(widgets(library, tk.Entry))

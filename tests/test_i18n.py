@@ -379,7 +379,7 @@ class TestLocaleManager(unittest.TestCase):
                 {"language": "de"},
             )
             window._refresh_all.assert_not_called()
-            window._display_chord_details.assert_called_once_with("G")
+            window._display_chord_details.assert_called_once_with("G", index=1)
             self.assertEqual(window.project_title_entry.get(), "Draft project")
             self.assertEqual(window.event_start_entry.get(), "12:3:")
             self.assertEqual(window.event_duration_entry.get(), "420")
@@ -424,7 +424,7 @@ class TestLocaleManager(unittest.TestCase):
         window._refresh_all(preserve_selection=True)
 
         self.assertEqual(window.chord_listbox.selection, (2,))
-        window._display_chord_details.assert_called_once_with("Am")
+        window._display_chord_details.assert_called_once_with("Am", index=2)
         self.assertEqual(window.undo_btn.options["state"], "disabled")
         self.assertEqual(window.redo_btn.options["state"], "disabled")
 
