@@ -120,6 +120,30 @@ def _sources(registry_path: Path | None = None) -> dict[str, dict]:
     return index
 
 
+def _registered_citation(source_id: str, locator: str, sources: dict[str, dict], owner: str) -> Citation:
+    source = sources.get(source_id)
+    if source is None:
+        raise PublicationError(f"{owner}: unknown source {source_id}.")
+    if source.get("rights_status") != "approved":
+        raise PublicationError(f"{owner}: unapproved source {source_id}.")
+    title = _text(source.get("title"), f"{source_id}.title")
+    url = _text(source.get("url"), f"{source_id}.url")
+    try:
+        parsed = urlsplit(url)
+    except ValueError as exc:
+        raise PublicationError(f"{source_id}: invalid HTTPS source URL.") from exc
+    if parsed.scheme != "https" or not parsed.hostname or parsed.username or re.search(r"[\s<>]", url):
+        raise PublicationError(f"{source_id}: invalid HTTPS source URL.")
+    return Citation(source_id, title, url, locator)
+
+
+def resolve_source_citation(source_id: str, locator: str, registry_path: Path | None = None) -> Citation:
+    """Resolve a locator in the product register for bibliographic use."""
+    return _registered_citation(
+        source_id, _text(locator, f"{source_id}.locator"), _sources(registry_path), source_id,
+    )
+
+
 def _claim(raw, owner: dict, sources: dict[str, dict]) -> Claim:
     if not isinstance(raw, dict):
         raise PublicationError("Invalid claim entry.")
@@ -140,21 +164,8 @@ def _claim(raw, owner: dict, sources: dict[str, dict]) -> Claim:
         locator = _text(ref["locator"], f"{ident}.locator")
         if source_id in records:
             raise PublicationError(f"{ident}: duplicate source {source_id}.")
-        source = sources.get(source_id)
-        if source is None:
-            raise PublicationError(f"{ident}: unknown source {source_id}.")
-        if source.get("rights_status") != "approved":
-            raise PublicationError(f"{ident}: unapproved source {source_id}.")
-        title = _text(source.get("title"), f"{source_id}.title")
-        url = _text(source.get("url"), f"{source_id}.url")
-        try:
-            parsed = urlsplit(url)
-        except ValueError as exc:
-            raise PublicationError(f"{source_id}: invalid HTTPS source URL.") from exc
-        if parsed.scheme != "https" or not parsed.hostname or parsed.username or re.search(r"[\s<>]", url):
-            raise PublicationError(f"{source_id}: invalid HTTPS source URL.")
-        records[source_id] = source
-        citations.append(Citation(source_id, title, url, locator))
+        citations.append(_registered_citation(source_id, locator, sources, ident))
+        records[source_id] = sources[source_id]
     path = []
     if ident in VOICE_CLAIMS:
         for point in _list(raw["voice_path"], f"{ident}.voice_path"):

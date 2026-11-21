@@ -9,6 +9,7 @@ from tkinter import messagebox
 from app.i18n import LocaleManager
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager, create_button
+from src.steps.progression.reviewed import PublicationError, resolve_source_citation
 from src.steps.progression.session import ChordRecommendation
 from src.steps.theory.exceptions import MusicTheoryError
 
@@ -207,10 +208,18 @@ class NextChordPanel:
         t = self._i18n.translate
         relation = t(f"next_chord.relation.{recommendation.relation_type}")
         reason = t(f"next_chord.reason.{recommendation.relation_type}")
+        evidence = t(f"next_chord.evidence.{recommendation.evidence_kind}")
+        if recommendation.evidence_kind == "LITERATURE_REFERENCE":
+            try:
+                citation = resolve_source_citation(recommendation.source_id or "", recommendation.source_locator or "")
+            except PublicationError:
+                evidence = t("next_chord.evidence.unavailable")
+            else:
+                evidence = f"{evidence}\n{citation.title}\n{citation.locator}\n{citation.url}"
         return (
             f"{recommendation.candidate_symbol} — {relation}\n{reason}\n"
             f"{t('next_chord.framework')}: {recommendation.framework}\n"
-            f"{t('next_chord.source')}: {recommendation.source_id}\n"
+            f"{evidence}\n"
             f"\n{t('next_chord.original')}\n{recommendation.explanation}"
         )
 
