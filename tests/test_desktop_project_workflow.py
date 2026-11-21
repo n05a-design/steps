@@ -59,6 +59,7 @@ class FakeController:
         self.exported_paths = []
         self.export_options = []
         self.voicing_failures = {}
+        self.revision = 0
         self.new_project_calls = 0
         self.save_error = None
         self.load_error = None
@@ -112,7 +113,7 @@ class FakeController:
         self.voice_style_calls.append(style)
         self.session.voice_leading_style = SimpleNamespace(value=str(style).upper())
 
-    def midi_overlap_summary(self, voicing_type, note_duration_mode):
+    def midi_export_preview(self, voicing_type, note_duration_mode):
         return (0, None)
 
     def midi_voicing_failures(self):
@@ -865,12 +866,31 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
             parent=self.window.root,
             i18n=self.window.i18n,
             theme=self.window.theme,
-            on_export=self.window._export_midi_with_options,
+            on_export=dialog_class.call_args.kwargs["on_export"],
             voicing_failures={},
-            overlap_summary=self.window.controller.midi_overlap_summary,
+            preview=self.window.controller.midi_export_preview,
         )
+        self.assertEqual(dialog_class.call_args.kwargs["on_export"].keywords, {"expected_revision": 0})
         self.assertEqual(self.window.controller.exported_paths, [])
         self.window.detail_text.insert.assert_not_called()
+
+    @patch("app.ui.main_window.filedialog.asksaveasfilename")
+    @patch("app.ui.main_window.messagebox.showerror")
+    def test_project_changes_prevent_export_before_and_after_the_chooser(self, show_error, choose_path):
+        controller = self.window.controller
+        self.assertFalse(self.window._export_midi_with_options(MidiExportOptions(), expected_revision=-1))
+        choose_path.assert_not_called()
+        self.assertIn(self.window.i18n.translate("midi.export.error.stale"), show_error.call_args.args)
+
+        def change_project(**_options):
+            controller.revision += 1
+            return "stale.mid"
+
+        choose_path.side_effect = change_project
+        self.assertFalse(self.window._export_midi_with_options(MidiExportOptions()))
+        choose_path.assert_called_once()
+        self.assertEqual(controller.exported_paths, [])
+        self.assertEqual(show_error.call_count, 2)
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename")
     @patch("app.ui.main_window.messagebox.showerror")

@@ -758,6 +758,16 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
                 for text in descriptions
             ))
             self.assertIn(i18n.translate("midi.options.overlap.none"), descriptions)
+            def export_preview_text(tracks, duration):
+                result = controller.midi_export_preview("CLOSE", duration)
+                return i18n.translate(
+                    "midi.options.preview.events", tracks=tracks, first=result.first_tick, end=result.end_tick,
+                    chords=result.chord_notes, bass=result.bass_notes,
+                    chord_low=result.chord_range[0], chord_high=result.chord_range[1],
+                    bass_low=result.bass_range[0], bass_high=result.bass_range[1],
+                )
+
+            self.assertIn(export_preview_text(3, "FIXED_GAP"), descriptions)
             for key in ("midi.options.duration.percent_95", "midi.options.format.type0"):
                 radio = next(
                     widget for widget in widgets(export, tk.Radiobutton)
@@ -769,6 +779,7 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
                 i18n.translate("midi.options.overlap.detected", count=5, tick=12),
                 descriptions,
             )
+            self.assertIn(export_preview_text(1, "PERCENT_95"), descriptions)
             self.assertEqual(controller.session.state, state_before_export)
             with patch(
                 "app.ui.main_window.filedialog.asksaveasfilename", return_value="",

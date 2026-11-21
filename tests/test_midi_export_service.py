@@ -118,6 +118,33 @@ class TestSMFGenerationAndEnvelope(unittest.TestCase):
             (15, 30),
         )
 
+    def test_adr017_preview_matches_written_note_spans_counts_and_pitch_ranges(self):
+        chords = ["C13/E", "C13"]
+        timings = [(120, 180), (0, 100)]
+        for voicing in ("CLOSE", "DROP2", "ROOTLESS"):
+            for duration in ("FIXED_GAP", "PERCENT_95"):
+                preview = MidiExportService.adr017_export_preview(
+                    chords, timings, voicing_type=voicing, note_duration_mode=duration,
+                )
+                for smf_format in (0, 1):
+                    with self.subTest(voicing=voicing, duration=duration, smf_format=smf_format):
+                        path = MidiExportService.export_progression_adr017(
+                            chords, self.midi_path, event_timings=timings, voicing_type=voicing,
+                            note_duration_mode=duration, smf_format=smf_format,
+                        )
+                        parsed = SMFParser.parse(path.read_bytes())
+                        notes = parsed.all_notes
+                        chord_pitches = [note.pitch for note in notes if note.channel == 0]
+                        bass_pitches = [note.pitch for note in notes if note.channel == 1]
+                        self.assertEqual((preview.chord_notes, preview.bass_notes), (8, 2))
+                        self.assertEqual((len(chord_pitches), len(bass_pitches)), (8, 2))
+                        self.assertEqual(preview.chord_range, (min(chord_pitches), max(chord_pitches)))
+                        self.assertEqual(preview.bass_range, (36, 40))
+                        self.assertEqual(preview.bass_range, (min(bass_pitches), max(bass_pitches)))
+                        self.assertEqual(preview.first_tick, min(note.start_tick for note in notes))
+                        self.assertEqual(preview.end_tick, max(note.end_tick for note in notes))
+                        self.assertEqual(preview.overlaps, 0)
+
     def test_adr017_preflight_matches_actual_exports_in_german_notation(self):
         chords = ["Hmaj7", "Fis"]
         self.assertEqual(

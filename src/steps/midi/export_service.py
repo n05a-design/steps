@@ -8,7 +8,7 @@ into Standard MIDI Files (SMF) Format 0 and Format 1.
 from __future__ import annotations
 
 from collections.abc import Iterator
-from dataclasses import replace
+from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import List, Literal, Optional, Sequence, Tuple
 
@@ -22,6 +22,20 @@ from .smf import MidiFile, MidiTrack
 Adr017Voicing = Literal["CLOSE", "DROP2", "ROOTLESS"]
 Adr017NoteDuration = Literal["FIXED_GAP", "PERCENT_95"]
 ADR017_VOICINGS: tuple[Adr017Voicing, ...] = ("CLOSE", "DROP2", "ROOTLESS")
+
+
+@dataclass(frozen=True)
+class Adr017ExportPreview:
+    """Descriptive statistics of the actual note events prepared for export."""
+
+    first_tick: int | None
+    end_tick: int | None
+    chord_notes: int
+    bass_notes: int
+    chord_range: tuple[int, int] | None
+    bass_range: tuple[int, int] | None
+    overlaps: int
+    first_overlap_tick: int | None
 
 
 def _adr017_close_notes(chord: ChordDefinition) -> list[int]:
@@ -202,6 +216,22 @@ class MidiExportService:
         note_duration_mode: Adr017NoteDuration = "FIXED_GAP",
     ) -> tuple[int, int | None]:
         """Count overlapping attacks by channel and pitch and return their earliest tick."""
+        preview = MidiExportService.adr017_export_preview(
+            chords, event_timings, convention=convention, voicing_type=voicing_type,
+            note_duration_mode=note_duration_mode,
+        )
+        return preview.overlaps, preview.first_overlap_tick
+
+    @staticmethod
+    def adr017_export_preview(
+        chords: Sequence[str | ChordDefinition],
+        event_timings: Sequence[tuple[int, int]],
+        *,
+        convention: str = "INT",
+        voicing_type: Adr017Voicing = "CLOSE",
+        note_duration_mode: Adr017NoteDuration = "FIXED_GAP",
+    ) -> Adr017ExportPreview:
+        """Summarize the same note stream used by the standard project exporter."""
         events = _adr017_note_events(
             chords, event_timings, convention=convention, voicing_type=voicing_type,
             note_duration_mode=note_duration_mode,
@@ -209,7 +239,14 @@ class MidiExportService:
         sounding_until: dict[tuple[int, int], int] = {}
         count = 0
         first_tick = None
+        chord_pitches: list[int] = []
+        bass_pitches: list[int] = []
+        first_event = end_tick = None
         for start, duration, channel, pitch in sorted(events, key=lambda event: event[0]):
+            if first_event is None:
+                first_event = start
+            end_tick = max(end_tick or 0, start + duration)
+            (bass_pitches if channel == 1 else chord_pitches).append(pitch)
             key = channel, pitch
             end = sounding_until.get(key, 0)
             if start < end:
@@ -217,7 +254,12 @@ class MidiExportService:
                 if first_tick is None:
                     first_tick = start
             sounding_until[key] = max(end, start + duration)
-        return count, first_tick
+        return Adr017ExportPreview(
+            first_event, end_tick, len(chord_pitches), len(bass_pitches),
+            (min(chord_pitches), max(chord_pitches)) if chord_pitches else None,
+            (min(bass_pitches), max(bass_pitches)) if bass_pitches else None,
+            count, first_tick,
+        )
 
     @staticmethod
     def export_project_to_smf(
