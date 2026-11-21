@@ -32,6 +32,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 from scripts.audit_midi_files import envelope
+from scripts.generate_midi_daw_fixtures import generate_fixtures
 from src.steps.midi.export_service import MidiExportService
 from src.steps.midi.smf import MidiFile, MidiTrack
 from src.steps.midi.smf_parser import SMFParser
@@ -270,6 +271,63 @@ class TestMidiGoldenFixtures(unittest.TestCase):
                 }
             ]
         )
+
+    def test_daw_fixtures_are_reproducible_and_preserve_reference_exports(self):
+        manifest = generate_fixtures(self.out_dir / "daw")
+        other_manifest = generate_fixtures(self.out_dir / "repeat")
+        self.assertEqual(manifest.read_bytes(), other_manifest.read_bytes())
+        rows = [line.split("  ", 1) for line in manifest.read_text().splitlines()]
+        self.assertEqual(len(rows), 6)
+        for digest, filename in rows:
+            with self.subTest(filename=filename):
+                self.assertEqual(
+                    hashlib.sha256((manifest.parent / filename).read_bytes()).hexdigest(),
+                    digest,
+                )
+
+        cadence_path = manifest.parent / "GOLD_01_ADR017_Format1.mid"
+        self.assertEqual(
+            hashlib.sha256(cadence_path.read_bytes()).hexdigest(),
+            ADR017_GOLDEN_EXPORTS[0]["sha256"],
+        )
+        timeline_path = manifest.parent / "GOLD_09_Project_Format1.mid"
+        reference = self._build_project_from_golden(
+            next(item for item in GOLDEN_PROGRESSIONS if item["id"].startswith("GOLD_09_"))
+        )
+        expected = MidiExportService.export_project_to_smf(reference, self.out_dir / "reference.mid")
+        self.assertEqual(timeline_path.read_bytes(), expected.read_bytes())
+
+        timeline = SMFParser.parse(timeline_path.read_bytes())
+        meter = SMFParser.parse((manifest.parent / "GOLD_09_Meter_Import_Probe.mid").read_bytes())
+        self.assertEqual(timeline.tempos, [(0, 120.0), (1920, 90.0), (3360, 120.0)])
+        self.assertEqual(meter.tempos, timeline.tempos)
+        self.assertEqual(meter.all_notes, timeline.all_notes)
+        self.assertEqual(timeline.time_signatures, [(0, 4, 4)])
+        self.assertEqual(meter.time_signatures, [(0, 4, 4), (1920, 3, 4), (3360, 4, 4)])
+
+    def test_daw_overlap_probes_encode_two_starts_before_first_note_off(self):
+        folder = generate_fixtures(self.out_dir / "overlap").parent
+        pitches = [(0, pitch) for pitch in (48, 52, 55, 60)] + [(1, 36)]
+        for smf_format, names in ((0, ["STEPS"]), (1, ["Conductor", "Chords", "Bass"])):
+            with self.subTest(smf_format=smf_format):
+                raw = (folder / f"ADR017_Overlap_Format{smf_format}.mid").read_bytes()
+                parsed = SMFParser.parse(raw)
+                self.assertEqual((parsed.format, parsed.division), (smf_format, 480))
+                self.assertEqual([track.name for track in parsed.tracks], names)
+                actual = [
+                    (event.event_type, event.abs_tick, event.channel, event.data1)
+                    for track in parsed.tracks
+                    for event in track.events
+                    if event.event_type in {"note_on", "note_off"}
+                ]
+                expected = [
+                    (kind, tick, channel, pitch)
+                    for kind, tick in (
+                        ("note_on", 0), ("note_on", 960), ("note_off", 1910), ("note_off", 2870),
+                    )
+                    for channel, pitch in pitches
+                ]
+                self.assertCountEqual(actual, expected)
 
     def test_all_10_golden_progressions_format_1_and_format_0(self):
         """Generates, exports and verifies both Format 0 and Format 1 for all 10 Golden files."""

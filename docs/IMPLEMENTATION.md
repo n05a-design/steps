@@ -203,7 +203,10 @@ Event-Startzeiten/-Dauern bleiben erhalten; deutsches `B` und `H` bleiben
 getrennte Tonarten. Zehn SHA-256-Golden-Fälle prüfen den Session-Export auch
 mit dem separat implementierten `SMFParser`; das ersetzt keine DAW-Abnahme.
 Der Widget-Test speichert und öffnet ein Projekt über die native Tk-Verkabelung und prüft Bibliothek, Akkordvorschlag, Stilvergleich und SMF-Format 0. Der ergänzende Installations-Smoke verifiziert die Ressourcen aus dem Wheel und der [macOS-Entwicklungsbuild](../tests/native_ui/README.md) ergänzt den lokalen Start über ein App-Bundle. Unabhängige DAW-Importe sind weiterhin
-nicht belegt. Das lokalisierte MIDI-Exportstudio reicht optionale `CLOSE`/`DROP2`/`ROOTLESS`,
+nicht belegt. Das [DAW-Prüfprotokoll](quality/MIDI_DAW_MANUAL_PROTOCOL.md)
+liefert einen Generator mit SHA-256-Manifest für sechs reproduzierbare
+Importdateien einschließlich überlappender Einsätze in SMF 0 und 1.
+Das lokalisierte MIDI-Exportstudio reicht optionale `CLOSE`/`DROP2`/`ROOTLESS`,
 `FIXED_GAP`/`PERCENT_95` und SMF-Format-0/1-Einstellungen über Controller und
 Session an denselben ADR-017-Exporter weiter. Die bisherigen CLOSE-/10-Tick-/
 Format-1-Standards gelten, wenn CLOSE für die Progression verfügbar ist.
