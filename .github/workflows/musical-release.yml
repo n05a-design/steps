@@ -62,13 +62,14 @@ jobs:
           REVIEW_COMMENTS: ${{ inputs.review_comments }}
         run: |
           set -euo pipefail
-          args=()
-          read -r -a comments <<< "$REVIEW_COMMENTS"
-          for comment in "${comments[@]}"; do
-            args+=(--review-comment "$comment")
+          # Split the input into whitespace-delimited URLs without shell globbing.
+          set -f
+          set --
+          for comment in $REVIEW_COMMENTS; do
+            set -- "$@" --review-comment "$comment"
           done
           python -B scripts/verify_musical_release.py --area "$RELEASE_AREA" \
-            --json-out "$RUNNER_TEMP/musical-acceptance.json" "${args[@]}"
+            --json-out "$RUNNER_TEMP/musical-acceptance.json" "$@"
       - name: Keep the acceptance report
         if: always()
         uses: actions/upload-artifact@v7
