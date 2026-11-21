@@ -19,6 +19,8 @@ def format_chord_analysis(
     chord_name: str,
     convention: Literal["INT", "DE"],
     translate: Callable[..., str],
+    *,
+    degree: str | None = None,
 ) -> str:
     chord = parse_chord(chord_name, convention=convention)
     voicing = chord.to_voicing(bass_octave=3, voicing_type="CLOSE")
@@ -39,12 +41,16 @@ def format_chord_analysis(
         f"{translate('chord.root')}: {_note_name(chord.root, convention)} "
         f"({translate('chord.pitch_class')} {int(chord.root.pitch_class)})",
         f"{translate('chord.quality')}: {quality}",
+    ]
+    if degree is not None:
+        lines.append(translate("chord.degree", degree=degree))
+    lines.extend([
         f"{translate('chord.intervals')}: {chord.theoretical_intervals}",
         f"{translate('chord.voicing')}: {voicing.midi_notes}",
         "",
         translate("scales.heading"),
         "-" * 50,
-    ]
+    ])
     if not candidates:
         lines.append(translate("scales.none"))
     has_unspellable_scale = False

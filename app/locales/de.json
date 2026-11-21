@@ -222,6 +222,7 @@
   "chord.analysis.title": "AKKORDANALYSE: {chord}",
   "chord.root": "Grundton",
   "chord.pitch_class": "Tonklasse",
+  "chord.degree": "Stufe in der Projekttonart: {degree}",
   "chord.quality": "Qualität",
   "chord.intervals": "Kernintervalle",
   "chord.voicing": "Voicing (CLOSE): MIDI-Noten",
