@@ -2,6 +2,7 @@
 
 import glob
 import os
+import plistlib
 import subprocess
 import sys
 import tempfile
@@ -10,10 +11,28 @@ import zipfile
 from pathlib import Path
 
 
+from scripts.verify_macos_dev_app import verify
+
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
 class TestPackageArtifacts(unittest.TestCase):
+    def test_macos_bundle_rejects_a_changed_resource_before_execution(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            bundle = Path(temp_dir) / "STEPS-Dev.app"
+            contents = bundle / "Contents"
+            resources = contents / "Resources"
+            resources.mkdir(parents=True)
+            with (contents / "Info.plist").open("wb") as handle:
+                plistlib.dump({
+                    "CFBundleIdentifier": "de.n05a.steps.dev",
+                    "CFBundleExecutable": "STEPS-Dev",
+                }, handle)
+            (resources / "LICENSE").write_bytes(b"Unexpected file content")
+            with self.assertRaisesRegex(ValueError, "Packaged resource differs.*LICENSE"):
+                verify(bundle)
+
     def test_wheel_contains_locales_brand_assets_and_console_entry_point(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             wheel_dir = Path(temp_dir)

@@ -28,3 +28,6 @@ python -m PyInstaller --noconfirm --onedir --windowed --name STEPS-Dev \
     --add-data "$repo_dir/knowledge/sources/registry.yaml:knowledge/sources" \
     --add-data "$repo_dir/LICENSE:." \
     "$repo_dir/app/main.py"
+
+python -B "$repo_dir/scripts/verify_macos_dev_app.py" "$output_dir/dist/STEPS-Dev.app" \
+    > "$output_dir/STEPS-Dev-verification.json"

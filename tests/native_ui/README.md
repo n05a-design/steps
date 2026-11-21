@@ -72,6 +72,15 @@ sh scripts/build_macos_dev_app.sh "$stage/build"
 open "$stage/build/dist/STEPS-Dev.app" --args --language en
 ```
 
+The build runs a bundle verification step and writes
+`STEPS-Dev-verification.json` to the output directory. It checks the
+development identifier and the packaged theme, brand, localization, pilot
+catalog, approval and source files against the checkout. Then it launches
+the frozen executable in EN and DE from a temporary working directory and
+parses its MIDI export. The receipt records SHA-256 fingerprints and the
+checkout revision and dirty state. Repeat the check with
+`python -B scripts/verify_macos_dev_app.py "$stage/build/dist/STEPS-Dev.app"`.
+
 Pass `--language de` to start in German. To repeat a distribution smoke
 without a source checkout on the import path, start the bundle executable
 with `--headless --language en` and then with `--headless --language de` from
