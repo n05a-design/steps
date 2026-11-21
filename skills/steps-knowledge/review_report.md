@@ -7,6 +7,14 @@
 
 ## Nachprüfung vom 21.11.2026
 
+Die [ausführbare Prüfung](../../scripts/evaluate_knowledge_adapter.py) weist
+**25 bestandene Laufzeitfälle und 13 offene Ziele** aus. Sie prüft für
+belegte Antworten auch Claim-IDs, freigegebene Quellen-IDs und Fundstellen.
+Bei offenen Zielen ist `NO_EVIDENCE` die erwartete Laufzeitantwort. Die
+Zielabdeckung bleibt bei 12 von 25 Fällen. Die fachliche Freigabe steht aus.
+
+### Frühere Gegenprobe auf die Zielabdeckung
+
 Der tatsächlich ausgeführte Test der unveränderten 25 Fragen ergibt **12
 übereinstimmende Antwortstatus und 13 Abweichungen**. Alle 13 abweichenden
 Fragen liefern `NO_EVIDENCE`. Sie verlangen Inhalte außerhalb der freigegebenen
@@ -17,7 +25,7 @@ als Zielabdeckung erhalten. Die fachliche Freigabe des Adapters steht aus.
 
 ---
 
-## 1. Methodik und Evaluierungskriterien
+## 1. Historische Darstellung der Methodik und Evaluierungskriterien
 
 Der portable Knowledge-Adapter (`src/steps/knowledge/adapter.py`) verbindet KI-Agenten deterministisch mit der STEPS-Wissensbasis.
 Geprüft wurden 25 Testfälle in 5 Schlüsseldimensionen:
@@ -30,7 +38,7 @@ Geprüft wurden 25 Testfälle in 5 Schlüsseldimensionen:
 
 ---
 
-## 2. Testergebnisse
+## 2. Historische und durch die Nachprüfung widerlegte Testergebnisse
 
 | Kategorie | Anzahl Fälle | Bestanden | Fehlgeschlagen | Treffergenauigkeit |
 |---|---|---|---|---|

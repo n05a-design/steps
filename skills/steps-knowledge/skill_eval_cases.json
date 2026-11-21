@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "total_cases": 25,
   "description": "Groundedness and accuracy evaluation dataset for STEPS Knowledge Adapter",
   "cases": [
@@ -9,7 +9,13 @@
       "prompt": "Welcher Ton ist 'B' im deutschen Sprachraum?",
       "expected_status": "GROUNDED",
       "expected_fact": "B bezeichnet im Deutschen den um einen Halbton erniedrigten Ton H (B flat / Bb).",
-      "expected_source": "M02 / ADR-005"
+      "expected_source": "M02 / ADR-005",
+      "approved_claim_ids": [
+        "PILOT-NOTATION-001"
+      ],
+      "approved_source_ids": [
+        "yale-key-names"
+      ]
     },
     {
       "id": "EVAL-LOC-02",
@@ -17,7 +23,13 @@
       "prompt": "Welcher Ton ist 'B' im internationalen Sprachraum?",
       "expected_status": "GROUNDED",
       "expected_fact": "B bezeichnet im internationalen System den Stammton B natural (deutsch H).",
-      "expected_source": "M02 / ADR-005"
+      "expected_source": "M02 / ADR-005",
+      "approved_claim_ids": [
+        "PILOT-NOTATION-001"
+      ],
+      "approved_source_ids": [
+        "yale-key-names"
+      ]
     },
     {
       "id": "EVAL-LOC-03",
@@ -25,7 +37,8 @@
       "prompt": "Sind C# und Db in der Harmonielehre identisch?",
       "expected_status": "GROUNDED",
       "expected_fact": "Nein. C# und Db teilen die 12-TET-Tonklasse 1, besitzen jedoch unterschiedliche diatonische Stufen und Funktionen.",
-      "expected_source": "M02 / ISO 16"
+      "expected_source": "M02 / ISO 16",
+      "runtime_status": "NO_EVIDENCE"
     },
     {
       "id": "EVAL-LOC-04",
@@ -33,7 +46,8 @@
       "prompt": "Wie lauten die Töne von C-Dur auf Deutsch?",
       "expected_status": "GROUNDED",
       "expected_fact": "C, D, E, F, G, A, H",
-      "expected_source": "M02"
+      "expected_source": "M02",
+      "runtime_status": "NO_EVIDENCE"
     },
     {
       "id": "EVAL-LOC-05",
@@ -43,14 +57,14 @@
       "expected_fact": "Ablehnung oder Klärungsanforderung wegen Ambiguität zwischen DE (Bb) und INT (B natural).",
       "expected_source": "ADR-005"
     },
-
     {
       "id": "EVAL-ALT-01",
       "category": "alternative_analyses",
       "prompt": "Wie wird ein verminderter Septakkord (z.B. Bdim7) harmonisch analysiert?",
       "expected_status": "ALTERNATIVE_INTERPRETATIONS",
       "expected_fact": "Leittonakkord vii°7 (Aldwell/Schachter) vs. verkürzter Dominantseptnonakkord D̸7> (Riemann).",
-      "expected_source": "SRC-0010 / Aldwell-Schachter"
+      "expected_source": "SRC-0010 / Aldwell-Schachter",
+      "runtime_status": "NO_EVIDENCE"
     },
     {
       "id": "EVAL-ALT-02",
@@ -58,7 +72,8 @@
       "prompt": "Ist bVII in C-Dur eine klassische Kadenz?",
       "expected_status": "ALTERNATIVE_INTERPRETATIONS",
       "expected_fact": "Keine klassische authentische Kadenz, sondern Modal Interchange (Entlehnung) oder Rock-Subtonika.",
-      "expected_source": "omt-chromatic-subdominants"
+      "expected_source": "omt-chromatic-subdominants",
+      "runtime_status": "NO_EVIDENCE"
     },
     {
       "id": "EVAL-ALT-03",
@@ -66,7 +81,8 @@
       "prompt": "Welche Funktion hat E7 in C-Dur?",
       "expected_status": "GROUNDED",
       "expected_fact": "Zwischendominante V7/vi zur VI. Stufe (Am).",
-      "expected_source": "omt-roman-numerals"
+      "expected_source": "omt-roman-numerals",
+      "runtime_status": "NO_EVIDENCE"
     },
     {
       "id": "EVAL-ALT-04",
@@ -74,7 +90,8 @@
       "prompt": "Welche Funktion hat E7 in a-Moll?",
       "expected_status": "GROUNDED",
       "expected_fact": "Hauptdominante V7 zur Tonika i (Am).",
-      "expected_source": "omt-roman-numerals"
+      "expected_source": "omt-roman-numerals",
+      "runtime_status": "NO_EVIDENCE"
     },
     {
       "id": "EVAL-ALT-05",
@@ -82,16 +99,17 @@
       "prompt": "Wie wird die Tritonussubstitution Db7 für G7 theoretisch begründet?",
       "expected_status": "GROUNDED",
       "expected_fact": "Gemeinsame Terz- und Septimtöne (Guide Tones F und B/Cb), die sich im Tritonusabstand spiegeln.",
-      "expected_source": "M04 / Jazz CST"
+      "expected_source": "M04 / Jazz CST",
+      "runtime_status": "NO_EVIDENCE"
     },
-
     {
       "id": "EVAL-GEN-01",
       "category": "genre_and_rhythm",
       "prompt": "Welche Taktart und welches Metrum hat Samba Batucada im STEPS-Katalog?",
       "expected_status": "GROUNDED",
-      "expected_fact": "2/2 Alla Breve mit Betonung des Surdo auf Zählzeit 2.",
-      "expected_source": "GENRE_RESEARCH_LATIN.md / PAT-019"
+      "expected_fact": "Der STEPS-Katalog führt Samba Batucada als 2/2-Übungsmodell.",
+      "expected_source": "GENRE_RESEARCH_LATIN.md / PAT-029",
+      "runtime_status": "NO_EVIDENCE"
     },
     {
       "id": "EVAL-GEN-02",
@@ -99,7 +117,8 @@
       "prompt": "Wie ist das Standard-PPQ im STEPS-Zeitmodell definiert?",
       "expected_status": "GROUNDED",
       "expected_fact": "480 PPQ (ganzzahlig).",
-      "expected_source": "M05 / ADR-007"
+      "expected_source": "M05 / ADR-007",
+      "runtime_status": "NO_EVIDENCE"
     },
     {
       "id": "EVAL-GEN-03",
@@ -107,7 +126,8 @@
       "prompt": "Was beschreibt die Bossa-Nova-Batida im STEPS-Katalog?",
       "expected_status": "GROUNDED",
       "expected_fact": "Begleitfamilie mit Synkopierungsfiguren von João Gilberto; Deutung als Übertragung von Tamborim und Surdo.",
-      "expected_source": "ENTSCHEIDUNG_CDR014_CDR019_2026-11-16.md"
+      "expected_source": "ENTSCHEIDUNG_CDR014_CDR019_2026-11-16.md",
+      "runtime_status": "NO_EVIDENCE"
     },
     {
       "id": "EVAL-GEN-04",
@@ -115,7 +135,8 @@
       "prompt": "Ist der Montuno in STEPS eine historisch authentische afrokubanische Transkription?",
       "expected_status": "GROUNDED",
       "expected_fact": "Nein, eigene didaktische STEPS-Übung ohne historischen Alleinvertretungsanspruch.",
-      "expected_source": "ENTSCHEIDUNG_CDR014_CDR019_2026-11-16.md"
+      "expected_source": "ENTSCHEIDUNG_CDR014_CDR019_2026-11-16.md",
+      "runtime_status": "NO_EVIDENCE"
     },
     {
       "id": "EVAL-GEN-05",
@@ -123,9 +144,9 @@
       "prompt": "Wie verhält sich das Swing-Verhältnis bei 130 BPM in Jazz-Achtelnoten?",
       "expected_status": "GROUNDED",
       "expected_fact": "Deskriptive MIDI-Raten um 60:40 bis 67:33 (Triolenfeeling), keine starre physikalische Konstante.",
-      "expected_source": "GMD_SWING_DETAIL_2026-11-15.json"
+      "expected_source": "GMD_SWING_DETAIL_2026-11-15.json",
+      "runtime_status": "NO_EVIDENCE"
     },
-
     {
       "id": "EVAL-NOE-01",
       "category": "no_evidence",
@@ -166,7 +187,6 @@
       "expected_fact": "Für esoterische oder nicht musiktheoretisch belegte Behauptungen existiert kein Eintrag.",
       "expected_source": "AGENTS.md"
     },
-
     {
       "id": "EVAL-LEG-01",
       "category": "legal_scope",
@@ -189,7 +209,8 @@
       "prompt": "Unter welcher Lizenz steht das Lehrbuch 'Understanding Basic Music Theory' von Catherine Schmidt-Jones?",
       "expected_status": "GROUNDED",
       "expected_fact": "Creative Commons Attribution 2.0 (CC BY 2.0).",
-      "expected_source": "QUELLENMETADATEN_UND_CLAIMS_W01_W03_2026-11-16.md"
+      "expected_source": "QUELLENMETADATEN_UND_CLAIMS_W01_W03_2026-11-16.md",
+      "runtime_status": "NO_EVIDENCE"
     },
     {
       "id": "EVAL-LEG-04",
