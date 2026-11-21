@@ -11,6 +11,7 @@ import os
 from pathlib import Path, PurePosixPath, PureWindowsPath
 import re
 import stat
+import subprocess
 import tempfile
 from uuid import uuid4
 
@@ -69,13 +70,46 @@ def _manifest(backup: Path) -> Path:
     return backup.with_suffix(".md.json")
 
 
+def _binding_file(target: Path) -> Path:
+    env = {key: value for key, value in os.environ.items() if not key.startswith("GIT_")}
+    try:
+        location = subprocess.run(
+            ["git", "rev-parse", "--absolute-git-dir"], cwd=target.parent, env=env,
+            capture_output=True, text=True,
+        )
+    except FileNotFoundError:
+        location = None
+    if location is not None and location.returncode == 0:
+        return Path(location.stdout.strip()) / "steps-curation-worktree-id"
+    return _selected_backup_directory(target, None) / f".{target.name}.register-id"
+
+
+def _register_identity(target: Path, *, create: bool = False) -> str | None:
+    marker = _binding_file(target)
+    if create:
+        marker.parent.mkdir(exist_ok=True, mode=0o700)
+        try:
+            _write_exclusive(marker, uuid4().hex.encode("ascii"))
+        except FileExistsError:
+            pass
+    try:
+        _regular_file(marker)
+    except FileNotFoundError:
+        return None
+    value = marker.read_text(encoding="ascii")
+    if not re.fullmatch(r"[a-f0-9]{32}", value):
+        raise ValueError(f"Invalid local register identity: {marker}")
+    return value
+
+
 def _save_snapshot(directory: Path, target: Path, data: bytes) -> dict[str, str]:
     directory.mkdir(exist_ok=True, mode=0o700)
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     backup = directory / f"{BACKUP_PREFIX}{timestamp}_{uuid4().hex}.md"
     digest = sha256(data).hexdigest()
     record = {
-        "version": 2, "file": backup.name, "register": target.name,
+        "version": 3, "file": backup.name, "register": target.name,
+        "register_identity": _register_identity(target, create=True),
         "register_path": str(target),
         "size_bytes": len(data), "sha256": digest,
     }
@@ -113,7 +147,7 @@ def _read_snapshot(backup: Path) -> tuple[dict, bytes]:
     data = backup.read_bytes()
     if (
         not isinstance(record, dict) or type(record.get("version")) is not int
-        or record["version"] not in (1, 2) or record.get("file") != backup.name
+        or record["version"] not in (1, 2, 3) or record.get("file") != backup.name
         or type(record.get("size_bytes")) is not int or record["size_bytes"] != len(data)
         or record.get("sha256") != sha256(data).hexdigest()
     ):
@@ -121,18 +155,34 @@ def _read_snapshot(backup: Path) -> tuple[dict, bytes]:
     register = record.get("register")
     if not isinstance(register, str) or not register or Path(register).name != register:
         raise ValueError(f"Backup manifest has no valid register filename: {backup.name}")
-    if record["version"] == 2:
+    if record["version"] >= 2:
         binding = record.get("register_path")
         paths = (PurePosixPath(binding), PureWindowsPath(binding)) if isinstance(binding, str) else ()
         if not any(path.is_absolute() and ".." not in path.parts and path.name == register for path in paths):
             raise ValueError(f"Backup manifest has no valid register binding: {backup.name}")
+    if record["version"] == 3:
+        ident = record.get("register_identity")
+        if not isinstance(ident, str) or not re.fullmatch(r"[a-f0-9]{32}", ident):
+            raise ValueError(f"Backup manifest has no valid register identity: {backup.name}")
     return record, data
 
 
-def _validate_snapshot_content(data: bytes) -> None:
-    validation = validate_content(data.decode("utf-8-sig"), require_evidence=False)
+def _snapshot_evidence_errors(data: bytes) -> list[str]:
+    content = data.decode("utf-8-sig")
+    validation = validate_content(content, require_evidence=False)
     if validation["errors"]:
         raise ValueError("Invalid register in backup: " + "; ".join(validation["errors"]))
+    return validate_content(content)["errors"]
+
+
+def _restore_scope(record: dict, target: Path | None, target_identity: str | None) -> str:
+    if record["version"] < 3:
+        return "UNBOUND"
+    if target is None:
+        return "TARGET_NOT_CHECKED"
+    if Path(record["register_path"]) != target or record["register_identity"] != target_identity:
+        return "OTHER_REGISTER"
+    return "MATCHED"
 
 
 @contextmanager
@@ -151,6 +201,7 @@ def _restore_lock(target: Path):
 def restore_master(
     backup_file: str | Path, target_master: str | Path | None = None,
     *, backup_dir: str | Path | None = None, allow_other_register: bool = False,
+    allow_incomplete_evidence: bool = False,
 ) -> dict[str, str]:
     """Check the selected snapshot and save the target before replacing it."""
     target = _master(target_master)
@@ -165,13 +216,19 @@ def restore_master(
     record, data = _read_snapshot(source)
     if record.get("register") != target.name:
         raise ValueError("Backup was created for a different register filename.")
-    if not allow_other_register and (
-        record["version"] == 1 or Path(record["register_path"]) != target
-    ):
-        raise ValueError("Backup is unbound or belongs to another register path. Review it before using --allow-other-register.")
-    _validate_snapshot_content(data)
+    evidence_errors = _snapshot_evidence_errors(data)
+    if evidence_errors and not allow_incomplete_evidence:
+        raise ValueError(
+            "Backup has incomplete completion evidence. Review it before using --allow-incomplete-evidence. "
+            + "; ".join(evidence_errors)
+        )
 
     with _restore_lock(target):
+        if not allow_other_register and _restore_scope(record, target, _register_identity(target)) != "MATCHED":
+            raise ValueError(
+                "Backup is unbound or belongs to another register path or checkout. "
+                "Review it before using --allow-other-register."
+            )
         previous = None
         previous_mode = None
         if target.exists() or target.is_symlink():
@@ -184,6 +241,7 @@ def restore_master(
         result = {
             "status": "RESTORE_SUCCESS", "restored_file": str(target),
             "source_backup": str(source), "sha256": record["sha256"],
+            "completion_evidence": "INCOMPLETE_FIELDS" if evidence_errors else "FIELDS_COMPLETE",
         }
         try:
             with os.fdopen(fd, "wb") as stream:
@@ -200,6 +258,8 @@ def restore_master(
                     raise ValueError("Register changed during restore. Retry with the latest version.")
             elif target.exists() or target.is_symlink():
                 raise ValueError("Register appeared during restore. Retry with the latest version.")
+            if allow_other_register and previous is None:
+                _register_identity(target, create=True)
             os.replace(temporary, target)
         finally:
             temporary.unlink(missing_ok=True)
@@ -216,6 +276,7 @@ def list_backups(
         directory = _backup_directory(absolute_path(backup_dir, "Backup directory"))
     if not directory.exists():
         return []
+    target_identity = _register_identity(target) if target is not None else None
     results = []
     for file in sorted(directory.glob(f"{BACKUP_PREFIX}*.md"), reverse=True):
         if file.is_symlink() or not file.is_file():
@@ -228,14 +289,11 @@ def list_backups(
         if _manifest(file).exists() or _manifest(file).is_symlink():
             try:
                 record, data = _read_snapshot(file)
-                _validate_snapshot_content(data)
+                evidence_errors = _snapshot_evidence_errors(data)
                 entry["sha256"] = record["sha256"]
-                if record["version"] == 1:
-                    entry["integrity"] = "UNBOUND"
-                elif target is not None and Path(record["register_path"]) != target:
-                    entry["integrity"] = "OTHER_REGISTER"
-                else:
-                    entry["integrity"] = "VERIFIED"
+                entry["integrity"] = "VERIFIED"
+                entry["restore_scope"] = _restore_scope(record, target, target_identity)
+                entry["completion_evidence"] = "INCOMPLETE_FIELDS" if evidence_errors else "FIELDS_COMPLETE"
             except (OSError, ValueError):
                 entry["integrity"] = "INVALID"
         results.append(entry)
@@ -250,9 +308,10 @@ def main() -> None:
     parser.add_argument("--register", help="Absolute path to the register.")
     parser.add_argument("--backup-dir", help="Absolute path to a trusted backup directory.")
     parser.add_argument("--allow-other-register", action="store_true", help="Allow a reviewed unbound or moved backup")
+    parser.add_argument("--allow-incomplete-evidence", action="store_true", help="Recover a reviewed snapshot for completion-evidence repair")
     args = parser.parse_args()
-    if args.allow_other_register and args.command != "restore":
-        parser.error("--allow-other-register is only accepted for restore")
+    if (args.allow_other_register or args.allow_incomplete_evidence) and args.command != "restore":
+        parser.error("Recovery overrides are only accepted for restore")
     try:
         if args.command == "restore":
             if not args.backup_file or (args.target and args.register):
@@ -260,6 +319,7 @@ def main() -> None:
             result = restore_master(
                 args.backup_file, args.target or args.register,
                 backup_dir=args.backup_dir, allow_other_register=args.allow_other_register,
+                allow_incomplete_evidence=args.allow_incomplete_evidence,
             )
         elif args.backup_file:
             parser.error("positional paths are only accepted by restore")

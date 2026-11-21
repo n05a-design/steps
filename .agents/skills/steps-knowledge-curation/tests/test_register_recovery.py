@@ -117,7 +117,7 @@ class TestRegisterRecovery(unittest.TestCase):
         destination = other / self.target.name
         destination.write_bytes(CURRENT)
         inventory = backup_knowledge.list_backups(self.backup.parent, target_master=destination)
-        self.assertEqual(inventory[0]["integrity"], "OTHER_REGISTER")
+        self.assertEqual(inventory[0]["restore_scope"], "OTHER_REGISTER")
         with self.assertRaisesRegex(ValueError, "another register path"):
             backup_knowledge.restore_master(self.backup, destination, backup_dir=self.backup.parent)
         self.assertEqual(destination.read_bytes(), CURRENT)
@@ -125,6 +125,54 @@ class TestRegisterRecovery(unittest.TestCase):
             self.backup, destination, backup_dir=self.backup.parent, allow_other_register=True,
         )
         self.assertEqual(destination.read_bytes(), ORIGINAL)
+
+    def test_replacement_git_repository_at_same_path_has_different_identity(self):
+        project = self.base / "checkout"
+        shared = self.base / "shared"
+        project.mkdir()
+        subprocess.run(["git", "init", "-q", str(project)], check=True)
+        register = project / self.target.name
+        register.write_bytes(ORIGINAL)
+        snapshot = Path(backup_knowledge.backup_master(register, shared)["backup"])
+        project.rename(self.base / "previous_checkout")
+        project.mkdir()
+        subprocess.run(["git", "init", "-q", str(project)], check=True)
+        register.write_bytes(CURRENT)
+        inventory = backup_knowledge.list_backups(shared, target_master=register)
+        self.assertEqual(inventory[0]["restore_scope"], "OTHER_REGISTER")
+        with self.assertRaisesRegex(ValueError, "another register path or checkout"):
+            backup_knowledge.restore_master(snapshot, register, backup_dir=shared)
+        self.assertEqual(register.read_bytes(), CURRENT)
+
+    def test_incomplete_completion_evidence_requires_recovery_override(self):
+        incomplete = b"### OA-0001: Closure\n* **Status:** `DONE_VERIFIED`\n"
+        self.target.write_bytes(incomplete)
+        snapshot = Path(backup_knowledge.backup_master(self.target)["backup"])
+        self.target.write_bytes(CURRENT)
+        inventory = backup_knowledge.list_backups(self.backup.parent, target_master=self.target)
+        entry = next(item for item in inventory if item["path"] == str(snapshot))
+        self.assertEqual(entry["integrity"], "VERIFIED")
+        self.assertEqual(entry["restore_scope"], "MATCHED")
+        self.assertEqual(entry["completion_evidence"], "INCOMPLETE_FIELDS")
+        with self.assertRaisesRegex(ValueError, "incomplete completion evidence"):
+            backup_knowledge.restore_master(snapshot, self.target)
+        self.assertEqual(self.target.read_bytes(), CURRENT)
+        result = backup_knowledge.restore_master(snapshot, self.target, allow_incomplete_evidence=True)
+        self.assertEqual(result["completion_evidence"], "INCOMPLETE_FIELDS")
+        self.assertEqual(self.target.read_bytes(), incomplete)
+
+    def test_version_two_path_binding_requires_review(self):
+        manifest = self.backup.with_suffix(".md.json")
+        record = json.loads(manifest.read_text(encoding="utf-8"))
+        record["version"] = 2
+        del record["register_identity"]
+        manifest.write_text(json.dumps(record), encoding="utf-8")
+        inventory = backup_knowledge.list_backups(self.backup.parent, target_master=self.target)
+        self.assertEqual(inventory[0]["restore_scope"], "UNBOUND")
+        with self.assertRaisesRegex(ValueError, "unbound"):
+            backup_knowledge.restore_master(self.backup, self.target)
+        backup_knowledge.restore_master(self.backup, self.target, allow_other_register=True)
+        self.assertEqual(self.target.read_bytes(), ORIGINAL)
 
     def test_list_rejects_missing_manifest_register(self):
         manifest = self.backup.with_suffix(".md.json")
@@ -141,7 +189,7 @@ class TestRegisterRecovery(unittest.TestCase):
         record["version"] = 1
         del record["register_path"]
         manifest.write_text(json.dumps(record), encoding="utf-8")
-        self.assertEqual(backup_knowledge.list_backups(self.backup.parent)[0]["integrity"], "UNBOUND")
+        self.assertEqual(backup_knowledge.list_backups(self.backup.parent)[0]["restore_scope"], "UNBOUND")
         with self.assertRaisesRegex(ValueError, "unbound"):
             backup_knowledge.restore_master(self.backup, self.target)
         backup_knowledge.restore_master(self.backup, self.target, allow_other_register=True)
