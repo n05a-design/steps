@@ -18,7 +18,7 @@
 | `PROG-024` | Bossa Nova Applied Dominant | `I^maj7 - V^7/V - ii^7 - V^7 - I^maj7` | `Cmaj7 - D7 - Dm7 - G7 - Cmaj7` | Doppeldominante mit chromatischem Terzabstieg $F\sharp \to F \to E$ | Mauleón (1993) |
 | `PROG-025` | Afro-Cuban Minor Ostinato Vamp | `i - iv - V^7 - iv` | `Cm - Fm - G7 - Fm` | Montuno-Zyklus über Clave mit Subdominant-Rebound | Mauleón (1993), Peñalosa (2009) |
 | `PROG-026` | Secondary Dominant Chromatic Bassline | `I - V7(6/5)/V - ii6 - I6 - V7(4/3) - I` | `G - A7/C# - Am/C - G/B - D7/A - G` | Chromatisch absteigender Bass mit Ziffernbass-Umkehrungen | Kostka (2013), Aldwell (1989) |
-| `PROG-028` | Circle of Fifths Soul Cycle | `i^9 - iv^9 - bVII^9 - III^maj9` | `Em9 - Am9 - D9 - Gmaj9` | Quintfallkette in die relative Dur-Parallele mit 9er-Erweiterungen | Mulholland (2013), Levine (1995) |
+| `PROG-028` | Circle of Fifths Soul Cycle | `i^9 - iv^9 - VII^9 - III^maj9` | `Em9 - Am9 - D9 - Gmaj9` | Quintfallkette mit Nonenakkorden von e-Moll zum Akkord der Durparallele G-Dur | Mulholland (2013), Levine (1995) |
 
 ---
 
@@ -100,12 +100,13 @@
 
 ### 2.7 PROG-028 – Circle of Fifths Soul Cycle
 
-* **Stufengang (in e-Moll / G-Dur):**
-  * $\text{i}^9 - \text{iv}^9 - \flat\text{VII}^9 - \text{III}^{\text{maj}9}$
+* **Stufengang bezogen auf natürliches e-Moll**
+  * $\text{i}^9 - \text{iv}^9 - \text{VII}^9 - \text{III}^{\text{maj}9}$
   * Stufenakkorde: $\text{Em}^9 - \text{Am}^9 - \text{D}^9 - \text{G}^{\text{maj}9}$
-* **Harmonischer Motor (Mulholland 2013 / Levine 1995):**
-  * **Reine Quintfallkette:** Konsequente Quintschritte im Bass: $E \xrightarrow{-5} A \xrightarrow{-5} D \xrightarrow{-5} G$.
-  * **Modulation zur Dur-Parallele:** Wandert von der Moll-Tonika $\text{Em}^9$ zur relativen Dur-Tonika $\text{G}^{\text{maj}9}$.
+  * In der natürlichen e-Moll-Tonleiter steht D auf der siebten Stufe und G auf der dritten. Die Quellen erläutern die Stufen am Dreiklang und Septakkord. STEPS ergänzt die Nonen im eigenen Beispiel. [Open Music Theory, Triads and seventh chords, Abschnitt Roman numerals](https://open-musictheory.github.io/docs/fundamentals/triads/#roman-numerals-1) · [Open Music Theory, Roman Numerals, Beispiel 6](https://viva.pressbooks.pub/openmusictheory/chapter/roman-numerals/)
+* **Harmonische Lesarten**
+  * **Quintfall der Grundtöne.** E → A → D → G kann als Folge absteigender reiner Quinten oder aufsteigender reiner Quarten gesetzt werden.
+  * **Lokale Kadenz in G-Dur.** `D9–Gmaj9` lässt sich als `V9–Imaj9` in G-Dur lesen. Ob sich G-Dur als neue Tonart etabliert, hängt vom musikalischen Kontext ab. Die unabhängige Prüfung der interpretativen und stilistischen Einordnung steht aus.
   * **Durchgängige Nonen-Färbung:** Alle vier Akkordstufen tragen None-Erweiterungen, was die funktionale Schärfe zugunsten eines schwebenden Soul-/Jazz-Sounds mildert.
 
 ---
@@ -141,4 +142,4 @@ Mit Abschluss von Batch 6 sind sämtliche **28 kanonischen Progressions-Archetyp
 25. `PROG-025`: Afro-Cuban Minor Ostinato Vamp (`i - iv - V^7 - iv`)
 26. `PROG-026`: Secondary Dominant Chromatic Bassline (`I - V7(6/5)/V - ii6 - I6 - V7(4/3) - I`)
 27. `PROG-027`: Minor Jazz Blues Submediant Turnaround (`i^7 - iv^7 - i^7 - bVI^maj7 - V^7(#11) - i^7`)
-28. `PROG-028`: Circle of Fifths Soul Cycle (`i^9 - iv^9 - bVII^9 - III^maj9`)
+28. `PROG-028`: Circle of Fifths Soul Cycle (`i^9 - iv^9 - VII^9 - III^maj9` bezogen auf natürliches e-Moll)

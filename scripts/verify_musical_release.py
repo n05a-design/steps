@@ -21,7 +21,8 @@ from src.steps.progression import reviewed
 
 AREAS = {
     "theory-core": (
-        ("test_notation_contract", "test_harmonic_function_accuracy", "test_theory_properties"), (),
+        ("test_notation_contract", "test_harmonic_function_accuracy", "test_theory_properties",
+         "test_progression_engine"), (),
     ),
     "desktop-voicing": (
         ("test_beginner_voicing", "test_voice_leading_styles"),

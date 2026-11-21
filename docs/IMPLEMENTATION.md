@@ -125,6 +125,11 @@ assert [v.bass_note % 12 for v in voicings] == [2, 7, 0]
 
 Die [Pilotfreigabe](../knowledge/concepts/progressions/README.md) beschreibt den zusätzlichen Zugang zu geprüften Lehrtexten.
 
+Für `PROG-028` verwenden Bestandskatalog und Inspektor natürliches e-Moll
+als gemeinsamen Bezug. `Em9–Am9–D9–Gmaj9` entspricht dadurch
+`i9–iv9–VII9–IIImaj9`. Das [Fachdossier](../knowledge/concepts/progressions/PROGRESSION_BATCH_6_DOSSIER.md#27-prog-028--circle-of-fifths-soul-cycle)
+hält die mögliche lokale G-Dur-Lesart getrennt fest.
+
 ## Desktop-Prototyp und Produktgrenzen
 
 Beim Öffnen und Speichern übersetzt STEPS Fehler des Dateidialogs und

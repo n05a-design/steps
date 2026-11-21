@@ -237,7 +237,7 @@
       "project_anchors": [
         {
           "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
-          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "lf_sha256": "e108c09e2f4dcc7c57328173243a2704a20a4b97d8882541416b825cd658a091",
           "row": "| `PROG-001` | Pop Four Chords | `I - V - vi - IV` | `C - G - Am - F` | Pop, Rock, Singer-Songwriter | Piston (1987), Kostka (2013) |"
         },
         {
@@ -287,7 +287,7 @@
       "project_anchors": [
         {
           "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
-          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "lf_sha256": "e108c09e2f4dcc7c57328173243a2704a20a4b97d8882541416b825cd658a091",
           "row": "| `PROG-003` | Jazz Two-Five-One | `ii^7 - V^7 - I^maj7` | `Dm7 - G7 - Cmaj7` | Jazz, Bebop, Neo-Soul | Levine (1995), Nettles (1997) |"
         },
         {
@@ -338,7 +338,7 @@
       "project_anchors": [
         {
           "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
-          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "lf_sha256": "e108c09e2f4dcc7c57328173243a2704a20a4b97d8882541416b825cd658a091",
           "row": "| `PROG-007` | Dorian Groove Vamp | `i^7 - IV^7` | `Dm7 - G7` | Funk, Fusion, Modaler Jazz | Pease (2003) |"
         },
         {
@@ -386,7 +386,7 @@
       "project_anchors": [
         {
           "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
-          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "lf_sha256": "e108c09e2f4dcc7c57328173243a2704a20a4b97d8882541416b825cd658a091",
           "row": "| `PROG-017` | Classical Jazz Backdoor ii–V | `iv^7 - bVII^7 - I^maj7` | `Fm7 - Bb7 - Cmaj7` | Jazz-Standards (*Lady Bird*, *Yardbird*) | Levine (1995), Terefenko (2014) |"
         },
         {
@@ -434,7 +434,7 @@
       "project_anchors": [
         {
           "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
-          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "lf_sha256": "e108c09e2f4dcc7c57328173243a2704a20a4b97d8882541416b825cd658a091",
           "row": "| `PROG-002` | Emotional Minor Loop | `vi - IV - I - V` | `Am - F - C - G` | Pop-Balladen, Melodic EDM | Tagg (2014) |"
         },
         {
@@ -481,7 +481,7 @@
       "project_anchors": [
         {
           "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
-          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "lf_sha256": "e108c09e2f4dcc7c57328173243a2704a20a4b97d8882541416b825cd658a091",
           "row": "| `PROG-007` | Dorian Groove Vamp | `i^7 - IV^7` | `Dm7 - G7` | Funk, Fusion, Modaler Jazz | Pease (2003) |"
         },
         {
@@ -569,7 +569,7 @@
       "project_anchors": [
         {
           "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
-          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "lf_sha256": "e108c09e2f4dcc7c57328173243a2704a20a4b97d8882541416b825cd658a091",
           "row": "| `PROG-023` | Liquid D&B Sub-Pulse Cadence | `i^7 - bVI^maj7 - bVII - i` | `Fm7 - Dbmaj7 - Eb - Fm` | Drum & Bass, UK Bass | Butterfield (2010) |"
         },
         {
@@ -616,7 +616,7 @@
       "project_anchors": [
         {
           "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
-          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
+          "lf_sha256": "e108c09e2f4dcc7c57328173243a2704a20a4b97d8882541416b825cd658a091",
           "row": "| `PROG-025` | Afro-Cuban Minor Ostinato Vamp | `i - iv - V^7 - iv` | `Cm - Fm - G7 - Fm` | Salsa, Afro-Cuban, Mambo (Montuno) | Mauleón (1993), Peñalosa (2009) |"
         },
         {
@@ -663,8 +663,8 @@
       "project_anchors": [
         {
           "path": "knowledge/concepts/progressions/CHORD_PROGRESSION_REFERENCE_LIBRARY.md",
-          "lf_sha256": "29f7deacc658e3a08add6ff704ac2b12e6ab943ff222d484d1ced15b55e8cb91",
-          "row": "| `PROG-028` | Circle of Fifths Soul Cycle | `i^9 - iv^9 - bVII^9 - III^maj9` | `Em9 - Am9 - D9 - Gmaj9` | Neo-Soul, Jazz-Funk, Contemporary R&B | Mulholland (2013), Levine (1995) |"
+          "lf_sha256": "e108c09e2f4dcc7c57328173243a2704a20a4b97d8882541416b825cd658a091",
+          "row": "| `PROG-028` | Circle of Fifths Soul Cycle | `i^9 - iv^9 - VII^9 - III^maj9` | `Em9 - Am9 - D9 - Gmaj9` | Neo-Soul, Jazz-Funk, Contemporary R&B | Mulholland (2013), Levine (1995) |"
         },
         {
           "path": "knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md",

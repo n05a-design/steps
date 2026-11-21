@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Der Progressionskatalog bezeichnet die Stufen von `Em9–Am9–D9–Gmaj9` durchgehend relativ zu natürlichem e-Moll.
+
 - Das Stimmführungslabor berechnet Power-Voicings aus Grundton und Quinte und bevorzugt im Quartalprofil benachbarte reine Quarten. Notierte Slash-Bässe bleiben erhalten.
 
 - Der Wissensadapter gibt freigegebene Pilot-Aussagen mit allen Fundstellen aus und meldet fehlende Nachweise bei unbelegten Abfragen.

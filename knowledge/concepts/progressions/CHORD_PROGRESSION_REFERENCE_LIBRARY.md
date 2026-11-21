@@ -40,7 +40,7 @@
 | `PROG-025` | Afro-Cuban Minor Ostinato Vamp | `i - iv - V^7 - iv` | `Cm - Fm - G7 - Fm` | Salsa, Afro-Cuban, Mambo (Montuno) | Mauleón (1993), Peñalosa (2009) |
 | `PROG-026` | Secondary Dominant Chromatic Bassline | `I - V7(6/5)/V - ii6 - I6 - V7(4/3) - I` | `G - A7/C# - Am/C - G/B - D7/A - G` | Barock, Klassik, Latin Jazz | Kostka (2013), Aldwell (1989) |
 | `PROG-027` | Minor Jazz Blues Submediant Turnaround | `i^7 - iv^7 - i^7 - bVI^maj7 - V^7(#11) - i^7` | `Cm7 - Fm7 - Cm7 - Abmaj7 - G7(#11) - Cm7` | Minor Blues (*Birk's Works*, *Footprints*) | Levine (1995), Terefenko (2014) |
-| `PROG-028` | Circle of Fifths Soul Cycle | `i^9 - iv^9 - bVII^9 - III^maj9` | `Em9 - Am9 - D9 - Gmaj9` | Neo-Soul, Jazz-Funk, Contemporary R&B | Mulholland (2013), Levine (1995) |
+| `PROG-028` | Circle of Fifths Soul Cycle | `i^9 - iv^9 - VII^9 - III^maj9` | `Em9 - Am9 - D9 - Gmaj9` | Neo-Soul, Jazz-Funk, Contemporary R&B | Mulholland (2013), Levine (1995) |
 
 ## Präzisierungen zu Blues, Coltrane-Zyklus und Alterationen
 

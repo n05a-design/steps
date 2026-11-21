@@ -282,7 +282,7 @@ _HISTORICAL_PROGRESSION_DEFINITIONS: list[dict[str, str]] = [
     {
         'id': 'PROG-028',
         'name': 'Circle of Fifths Soul Cycle',
-        'roman': 'i^9 - iv^9 - bVII^9 - III^maj9',
+        'roman': 'i^9 - iv^9 - VII^9 - III^maj9',
         'default_key': 'Em',
         'chords': 'Em9 - Am9 - D9 - Gmaj9',
         'context': 'Neo-Soul, Jazz-Funk, Contemporary R&B',
@@ -709,11 +709,12 @@ ARCHETYPE_THEORY_METADATA: dict[str, dict[str, Any]] = {
     },
     'PROG-028': {
         'family': 'SOUL_CIRCLE_OF_FIFTHS',
-        'functional_syntax': 'i9 - iv9 - bVII9 - IIImaj9 (t9 - s9 - dP9 - tPmaj9)',
-        'harmonic_drive': 'Natural minor diatonic falling-fifth sequence modulating/resolving into relative major',
+        'functional_syntax': 'i9 - iv9 - VII9 - IIImaj9 (t9 - s9 - dP9 - tPmaj9)',
+        'harmonic_drive': 'Diatonic falling-fifth sequence in natural minor, ending on the relative-major chord',
         'tonal_ambiguity': {
             'primary_tonic': 'Em',
             'relative_major': 'Gmaj9 (IIImaj9)',
+            'alternative_reading': 'D9–Gmaj9 can be heard locally as V9–Imaj9 in G major; a lasting key change depends on the surrounding music.',
             'citations': ['Mulholland (2013)', 'Levine (1995)'],
         },
         'voice_leading_features': [
