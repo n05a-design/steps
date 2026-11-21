@@ -111,6 +111,9 @@ class FakeController:
         self.voice_style_calls.append(style)
         self.session.voice_leading_style = SimpleNamespace(value=str(style).upper())
 
+    def midi_overlap_summary(self, voicing_type, note_duration_mode):
+        return (0, None)
+
     def midi_voicing_failures(self):
         return self.voicing_failures
 
@@ -781,6 +784,7 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
             theme=self.window.theme,
             on_export=self.window._export_midi_with_options,
             voicing_failures={},
+            overlap_summary=self.window.controller.midi_overlap_summary,
         )
         self.assertEqual(self.window.controller.exported_paths, [])
         self.window.detail_text.insert.assert_not_called()
