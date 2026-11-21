@@ -9,6 +9,7 @@
 - Der Wissensadapter gibt freigegebene Pilot-Aussagen mit allen Fundstellen aus und meldet fehlende Nachweise bei unbelegten Abfragen.
 
 - Der Next Chord Explorer behält gültige Vorschläge bei doppelten Vorzeichen und lässt einzelne nicht darstellbare Schreibweisen aus.
+- Der Akkordexplorer zeigt Literaturverweise mit Fundstelle und kennzeichnet Rechenregeln und Arrangementideen. `source_id` ist in der Python-API optional.
 
 - Die MIDI-Akkordspur bleibt bei enger Lage innerhalb einer Oktave. Drop-2 erhält die gewünschte Stimmverteilung und wird bei unpassender Lage im Exportstudio deaktiviert.
 

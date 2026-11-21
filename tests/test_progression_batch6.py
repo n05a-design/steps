@@ -128,12 +128,13 @@ class TestBatch6ArchetypeDetection(unittest.TestCase):
 class TestBatch6SessionRecommendations(unittest.TestCase):
     """Verifies session recommendations for Bossa Nova, Picardy Third, and Afro-Cuban."""
 
-    def test_bossa_nova_double_dominant_recommendation(self):
+    def test_double_dominant_recommendation_with_tonicization_reference(self):
         session = ProgressionSession(initial_chords=['Cmaj7'], key_root='C', is_minor=False)
         recs = session.explore_next_chords(0)
-        bossa_rec = next((r for r in recs if 'Bossa Nova Doppeldominante' in r.explanation), None)
-        self.assertIsNotNone(bossa_rec)
-        self.assertEqual(bossa_rec.candidate_symbol, 'D7')
+        double_dominant = next(r for r in recs if 'Doppeldominante' in r.explanation)
+        self.assertEqual(double_dominant.candidate_symbol, 'D7')
+        self.assertEqual(double_dominant.source_id, 'omt-tonicization')
+        self.assertEqual(double_dominant.evidence_kind, 'LITERATURE_REFERENCE')
 
     def test_bossa_nova_terz_descent_recommendation(self):
         session = ProgressionSession(initial_chords=['D7'], key_root='C', is_minor=False)

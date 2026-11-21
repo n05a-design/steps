@@ -2,6 +2,7 @@
 
 import errno
 import unittest
+from dataclasses import replace
 from tempfile import TemporaryDirectory
 from pathlib import Path
 from types import SimpleNamespace
@@ -598,7 +599,7 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
             self.window.i18n.translate("next_chord.stale"),
         )
 
-    def test_next_chord_localized_reason_preserves_notation_and_source(self):
+    def test_next_chord_localized_reason_preserves_notation_and_model_evidence(self):
         for language in ("en", "de"):
             for notation, key, expected in (("INT", "B", "C#m"), ("DE", "H", "Cism")):
                 with self.subTest(language=language, notation=notation):
@@ -614,7 +615,7 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
                     panel._selection_changed()
                     details = self.window.detail_text.insert.call_args.args[1]
                     self.assertIn(expected, details)
-                    self.assertIn(recommendations[index].source_id, details)
+                    self.assertIn(self.window.i18n.translate("next_chord.evidence.MODEL_RULE"), details)
                     self.assertIn(
                         self.window.i18n.translate("next_chord.reason.ROOT_MOTION"), details,
                     )
@@ -625,6 +626,25 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
                         self.window.detail_text.insert.call_args.args[1],
                         self.window.i18n.translate("next_chord.stale"),
                     )
+
+    def test_next_chord_displays_scoped_reading_and_handles_unknown_source(self):
+        session = ProgressionSession(initial_chords=["Dm7"], key_root="C")
+        recommendations = session.explore_next_chords(0)
+        jazz = next(item for item in recommendations if item.source_id == "omt-ii-v-i")
+        for language in ("en", "de"):
+            with self.subTest(language=language):
+                self.window.i18n = LocaleManager(preference=language)
+                panel = self.make_next_chord_panel(0)
+                details = panel._format_candidate(jazz)
+                self.assertIn(self.window.i18n.translate("next_chord.evidence.LITERATURE_REFERENCE"), details)
+                self.assertIn("Example 2", details)
+                self.assertIn("https://viva.pressbooks.pub/openmusictheory/chapter/ii-v-i/", details)
+                unknown = panel._format_candidate(replace(jazz, source_id="missing-source"))
+                self.assertIn(self.window.i18n.translate("next_chord.evidence.unavailable"), unknown)
+                self.assertNotIn("missing-source", unknown)
+                suggestion = next(item for item in recommendations if item.framework == "Modal Mixture")
+                self.assertIn(self.window.i18n.translate("next_chord.evidence.CREATIVE_SUGGESTION"),
+                              panel._format_candidate(suggestion))
 
     @patch("app.ui.main_window.filedialog.asksaveasfilename", return_value="/tmp/fail.stepsproj")
     @patch("app.ui.main_window.messagebox.showerror")

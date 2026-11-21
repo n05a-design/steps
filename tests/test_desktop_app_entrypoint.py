@@ -574,8 +574,8 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
                 self.assertIn(i18n.translate("next_chord.compare.reference"), comparison)
                 self.assertIn(i18n.translate("next_chord.compare.selected"), comparison)
                 self.assertIn(reference.explanation, comparison)
-                self.assertIn(reference.source_id, comparison)
-                self.assertIn(selected.source_id, comparison)
+                for item in (reference, selected):
+                    self.assertIn(i18n.translate(f"next_chord.evidence.{item.evidence_kind}"), comparison)
                 self.assertIn(selected.explanation, detail.get("1.0", tk.END))
                 self.assertEqual(detail.cget("state"), tk.DISABLED)
                 candidates.event_generate("<Shift-Tab>")

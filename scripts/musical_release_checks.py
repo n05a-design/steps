@@ -6,7 +6,8 @@ from tempfile import TemporaryDirectory
 
 from src.steps.knowledge import KnowledgeAdapter
 from src.steps.midi import SMFParser
-from src.steps.progression import ProgressionSession
+from src.steps.progression import ProgressionSession, list_progressions
+from src.steps.progression.reviewed import PublicationError, resolve_source_citation
 from src.steps.theory import MusicTheoryError, parse_chord
 
 
@@ -112,6 +113,24 @@ def recommendations():
                 failures.append(f"{notation} {key} / {chord}: missing playable option {witness}")
         except MusicTheoryError as exc:
             failures.append(f"{notation} {key} / {chord}: {exc}")
+    references = set()
+    for progression in list_progressions():
+        session = ProgressionSession(
+            progression.chords_str.split(" - "),
+            key_root=progression.default_key.removesuffix("m"),
+            is_minor=progression.default_key.endswith("m"), convention="INT",
+        )
+        for index in range(len(session.chords)):
+            for item in session.explore_next_chords(index):
+                if item.evidence_kind == "LITERATURE_REFERENCE":
+                    references.add((item.source_id or "", item.source_locator or ""))
+                elif item.source_id is not None or item.source_locator is not None:
+                    failures.append(f"{progression.prog_id}: unexpected reference for {item.evidence_kind}")
+    for source_id, locator in sorted(references):
+        try:
+            resolve_source_citation(source_id, locator)
+        except PublicationError as exc:
+            failures.append(f"Explorer reference {source_id}: {exc}")
     return failures
 
 

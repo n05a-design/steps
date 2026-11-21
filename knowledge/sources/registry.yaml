@@ -69,6 +69,25 @@
       "usage_notes": "Link and bibliographic reference for original STEPS examples. No source text or media bundled."
     },
     {
+      "id": "omt-tonicization",
+      "title": "Open Music Theory – Tonicization",
+      "kind": "website",
+      "url": "https://viva.pressbooks.pub/openmusictheory/chapter/tonicization/",
+      "retrieved_at": "2026-11-21",
+      "rights_status": "approved",
+      "usage_notes": "Link and bibliographic reference only. No source text or media bundled."
+    },
+    {
+      "id": "omt-jazz-substitutions",
+      "title": "Open Music Theory – Substitutions",
+      "kind": "website",
+      "authors": ["Megan Lavengood"],
+      "url": "https://viva.pressbooks.pub/openmusictheory/chapter/substitutions/",
+      "retrieved_at": "2026-11-21",
+      "rights_status": "approved",
+      "usage_notes": "Link and bibliographic reference only. No source text or media bundled."
+    },
+    {
       "id": "yale-key-names",
       "title": "Yale University Library – The names of keys in French, German, Italian, and Spanish",
       "kind": "website",

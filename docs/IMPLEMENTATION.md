@@ -71,8 +71,10 @@ und plattformgeprüftes Desktop-Installationspaket ist damit nicht belegt.
 | Desktop, Audio, MIDI und Speicherung | [app](../app/README.md), [Architekturziel](architecture/ARCHITECTURE_OVERVIEW.md), [Projekt-Schema-Migration](architecture/PROJECT_SCHEMA_MIGRATION.md) | `app.main` startet einen CLI-/Headless-Pfad oder ein Tkinter-Fenster. Die Desktop-Kontextleiste zeigt die musikalische `INT`/`DE`-Notationskonvention getrennt von der UI-Sprache. Eine Umstellung wird bestätigt und konvertiert Tonart sowie Akkordsymbole explizit; Event-Ticks, Tempo, Taktart und Projektstruktur bleiben unverändert. `StepsMainWindow` bietet eine neue Standard-Progression mit Dirty-State-Rückfrage, Akkord hinzufügen, ausgewählten Akkord ändern/entfernen/verschieben, Tonart-/Dur-Moll-/Tempo-/Taktart-Kontext setzen, pro Akkordereignis Startposition in `Takt:Zählzeit:Tick` sowie Dauer in Ticks bearbeiten, Transposition, Analyseanzeige inklusive Beginner-Keyboard-Voicings und Stimmführungsübergängen, Undo/Redo, ein lokalisiertes MIDI-Exportstudio mit Voicing-, Notendauer- und SMF-Formatwahl sowie projektbezogene Öffnen-/Speichern-Dialoge mit Dirty-Prompt und Fehlerdialogen. Takt und Zählzeit sind 1-basiert, der Tick ist der nullbasierte Offset innerhalb der Taktart-Zählzeit; die Projektion nutzt PPQ und Taktart. Gespeichert und exportiert werden absolute Start-Ticks und positive Dauern in der aktiven PPQ-Auflösung. Eine Taktartänderung verändert nur die Projektion, nicht gespeicherte Ticks oder Dauern; Lücken und Überlappungen werden nicht aus der Progressionsreihenfolge hergeleitet. Der Kontext wird validiert und als eine Session-Aktion gespeichert. Session-Laden prüft Notation, Tonart, Modus, Taktart, Event-Timing und Akkordsymbole, bevor es den Zustand austauscht. Bei beschädigter Hauptdatei lädt die Storage-Schicht ein gültiges Backup und meldet diesen Zustand in der Desktop-Oberfläche; `load_project()` bleibt rückwärtskompatibel. 0.x- und 1.x-Projektstände werden über dokumentierte Migration-IDs normalisiert, höhere Major-Versionen werden abgewiesen und fehlende Projekttitel bleiben Fehler. Bedienfehler werden sichtbar abgewiesen. Headless-Tests decken die Actions ab; native Plattform-/Accessibility-Abnahme bleibt offen. SMF-Writer und -Parser sowie automatisierte Roundtrips sind vorhanden; unabhängige DAW-Abnahme ist separat zu belegen. Wiedergabe ist nach [ADR-007](../decisions/ADR-007-audio-nur-dateiexport-v01.md) nicht Teil von v0.1. |
 | Internationalisierung | [Internationalisierungsvertrag](engineering/INTERNATIONALIZATION.md), [`app.i18n`](../app/i18n.py) und [Kataloge](../app/locales/) | PR #159 ergänzt `system`/`en`/`de`, System-Fallback, persistierte Benutzereinstellung, Laufzeitumschaltung im Hauptfenster sowie `--language` für die CLI. Katalogparität, Platzhalter, Persistenz, UI-Wechsel und Notationsunabhängigkeit sind automatisiert getestet; unabhängige Übersetzungs-, native Plattform- und Accessibility-Abnahme bleibt offen. Die UI-Sprache ändert `INT`/`DE` nicht. Siehe [#154](https://github.com/n05a-design/steps/issues/154). |
 
-Der Next-Chord-Explorer zeigt Relationsart, theoretischen Rahmen, Quelle und
-Erklärung als interpretative Empfehlung, nicht als kanonisch geprüften Fakt.
+Der Next-Chord-Explorer zeigt Relationsart, theoretischen Rahmen und Begründung.
+Bei hinterlegter Fundstelle prüft er das Produktquellenregister und zeigt Titel,
+Abschnitt oder Beispiel und URL. Die Fundstelle erklärt das theoretische
+Konzept. Rechenregeln und Arrangementideen erscheinen mit ihrem eigenen Status.
 Die Übernahme bleibt gesperrt, bis ein gültiger Kandidat ausgewählt ist.
 
 Die Desktop-Transposition verschiebt Tonart, Akkordgrundtöne und Slash-Bässe
@@ -235,6 +237,11 @@ Der Explorer unterscheidet einen berechneten Grundtonabstand von einer
 möglichen Auflösung. Stilbezogene Vorschläge prüfen die dafür benötigte
 Akkordqualität. Die Jazzfortsetzungen ii⁷–V⁷–Imaj7 und iiø⁷–V⁷–i⁷
 sind im passenden Dur-/Mollkontext wählbar.
+Für Python-Aufrufer sind `source_id` und `source_locator` optional.
+`evidence_kind` kennzeichnet `MODEL_RULE`, `LITERATURE_REFERENCE` oder
+`CREATIVE_SUGGESTION`. Die Literaturverweise beziehen sich auf die
+Tritonussubstitution, Tonikalisierung, das Doo-Wop-Schema und den Jazz-ii–V–I.
+Die unabhängige Freigabe der konkreten Empfehlungen steht aus.
 Erfordert eine einzelne Vorschlagsregel ein nicht unterstütztes dreifaches
 Vorzeichen, wird diese Option ausgelassen. Die übrigen Vorschläge bleiben
 in INT oder DE abrufbar. Die geschriebene Stufe wird dabei erhalten.
