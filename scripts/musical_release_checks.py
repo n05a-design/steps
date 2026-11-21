@@ -7,7 +7,7 @@ from tempfile import TemporaryDirectory
 from src.steps.knowledge import KnowledgeAdapter
 from src.steps.midi import SMFParser
 from src.steps.progression import ProgressionSession
-from src.steps.theory import MusicTheoryError
+from src.steps.theory import MusicTheoryError, parse_chord
 
 
 def beginner_voices():
@@ -76,12 +76,26 @@ def _export_midi_notes(session, path, mode):
 
 def recommendations():
     failures = []
-    for key, minor, chord in (("C", False, "B##m"), ("C", False, "Bxdom7"), ("C", False, "Fbbm7"),
-                              ("G##", False, "G##"), ("Cbb", True, "Gbb7")):
+    cases = (
+        ("INT", "C", False, "B##m", "Ex"),
+        ("INT", "C", False, "Bxdom7", "Ex"),
+        ("INT", "C", False, "Fbbm7", "Gbbm"),
+        ("INT", "G##", False, "G##", "Cx"),
+        ("INT", "Cbb", True, "Gbb7", "Cbbm7"),
+        ("DE", "C", False, "Hisism", "Eisis"),
+        ("DE", "C", False, "Fesesm7", "Gesesm"),
+        ("DE", "Ceses", True, "Geses7", "Cesesm7"),
+    )
+    for notation, key, minor, chord, witness in cases:
         try:
-            ProgressionSession([chord], key_root=key, is_minor=minor).explore_next_chords(0)
+            session = ProgressionSession([chord], key_root=key, is_minor=minor, convention=notation)
+            symbols = [item.candidate_symbol for item in session.explore_next_chords(0)]
+            for symbol in symbols:
+                parse_chord(symbol, notation)
+            if witness not in symbols:
+                failures.append(f"{notation} {key} / {chord}: missing playable option {witness}")
         except MusicTheoryError as exc:
-            failures.append(f"{key} / {chord}: {exc}")
+            failures.append(f"{notation} {key} / {chord}: {exc}")
     return failures
 
 

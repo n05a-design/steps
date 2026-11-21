@@ -219,6 +219,9 @@ Der Explorer unterscheidet einen berechneten Grundtonabstand von einer
 möglichen Auflösung. Stilbezogene Vorschläge prüfen die dafür benötigte
 Akkordqualität. Die Jazzfortsetzungen ii⁷–V⁷–Imaj7 und iiø⁷–V⁷–i⁷
 sind im passenden Dur-/Mollkontext wählbar.
+Erfordert eine einzelne Vorschlagsregel ein nicht unterstütztes dreifaches
+Vorzeichen, wird diese Option ausgelassen. Die übrigen Vorschläge bleiben
+in INT oder DE abrufbar. Die geschriebene Stufe wird dabei erhalten.
 Die MIDI- und Projektformate folgen denselben Verträgen.
 
 Der bestehende Desktop-Einstieg ist mehr als ein theoretischer Architekturentwurf:
