@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Im Next Chord Explorer lassen sich zwei Kandidaten mit ihren Begründungen und Quellen vergleichen. Der Vergleich bleibt beim Wechsel der Oberflächensprache verfügbar.
+
 - Das MIDI-Exportstudio zeigt überlappende Noteneinsätze auf derselben Tonhöhe und demselben Kanal an. Die Vorschau reagiert auf Voicing und Notenlänge und nennt den ersten betroffenen Tick.
 
 - Das Akkordmenü dupliziert Ereignisse an ihrem Ende oder teilt sie in der Mitte. Beide Aktionen unterstützen Tastenkürzel in der Progressionsliste, Undo und Redo.
