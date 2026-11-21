@@ -12,7 +12,10 @@ python3 -B -m unittest \
 ```
 
 The dialogs test uses real Tk widgets, event bindings, storage, publication
-data and MIDI bytes. It creates a project, searches and loads an example,
+data and MIDI bytes. It scrolls a long progression to a newly added chord,
+checks the active row and keyboard reordering through the native list,
+and verifies that locale changes keep drafts, selection and scroll position.
+It then creates a new project, searches and loads an example,
 checks chord cards at the minimum dialog size, preserves the reading position
 when a filter keeps the example selected, resets the preview on a new selection,
 clears the cards when the search has no results, checks Tab access to the

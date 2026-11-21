@@ -280,7 +280,58 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             patch("app.ui.main_window.messagebox.askyesnocancel", return_value=None) as prompt,
             patch("app.ui.reviewed_library_dialog.webbrowser.open", return_value=True) as browser,
         ):
+            for _ in range(30):
+                controller.add_chord("C")
+            window.chord_entry.delete(0, tk.END)
+            window.chord_entry.insert(0, "G7")
+            window.add_btn.invoke()
+            root.update()
+            rows = window.chord_listbox
+            last = rows.size() - 1
+            self.assertEqual(rows.curselection(), (last,))
+            self.assertEqual(rows.index(tk.ACTIVE), last)
+            self.assertEqual(rows.yview()[1], 1.0)
+            self.assertIsNotNone(rows.bbox(last))
+            modifier = "Option" if sys.platform == "darwin" else "Alt"
+            rows.focus_force()
+            root.update()
+            revision = controller.revision
+            rows.event_generate(f"<{modifier}-Down>")
+            root.update()
+            self.assertEqual(controller.revision, revision)
+            last_timing = controller.session.get_chord_event_timing(last)
+            rows.event_generate(f"<{modifier}-Up>")
+            root.update()
+            self.assertEqual(rows.curselection(), (last - 1,))
+            self.assertEqual(controller.session.chords[last - 1], "G7")
+            self.assertEqual(controller.session.get_chord_event_timing(last - 1), last_timing)
+            self.assertIsNotNone(rows.bbox(last - 1))
+            window.undo_btn.invoke()
+            self.assertEqual(controller.session.chords[last], "G7")
+
+            window.project_title_entry.delete(0, tk.END)
+            window.project_title_entry.insert(0, "Draft")
+            window.event_start_entry.delete(0, tk.END)
+            window.event_start_entry.insert(0, "15:2:")
+            view = rows.yview()[0]
+            state_before_language = controller.session.state
+            preference_path = Path(self.temp_dir) / "preferences.json"
+            with patch.object(i18n, "settings_file", preference_path):
+                window.language_menu.invoke(2)
+                root.update()
+                self.assertEqual(rows.yview()[0], view)
+                self.assertEqual(rows.curselection(), (last - 1,))
+                self.assertEqual(window.project_title_entry.get(), "Draft")
+                self.assertEqual(window.event_start_entry.get(), "15:2:")
+                self.assertIn(" Ticks", rows.get(last - 1))
+                self.assertEqual(controller.session.state, state_before_language)
+                window.language_menu.invoke(1)
+                root.update()
+
+            prompt.return_value = False
             window.file_menu.invoke(0)
+            prompt.reset_mock()
+            prompt.return_value = None
             window.chord_entry.delete(0, tk.END)
             window.chord_entry.insert(0, "!")
             window.update_btn.invoke()

@@ -2,6 +2,9 @@
 
 ## Unreleased – App und Python-Kern
 
+- Die Analyse der Anfänger-Voicings verwendet dynamische Programmierung. Damit lassen sich auch lange Akkordfolgen analysieren.
+- Die Progressionsliste zeigt Start und Dauer je Akkord. Neue oder verschobene Akkorde bleiben sichtbar. Wahl- beziehungsweise Alt-Taste und Auf/Ab verschieben den gewählten Akkord. Beim Sprachwechsel bleiben Entwürfe und Scrollposition erhalten.
+
 - Das Stimmführungslabor markiert das ausgewählte Akkordereignis in beiden Piano-Rolls. Die Auswahl erfolgt über das Ausklappfeld oder per Klick auf eine Note. Der gemeinsame Zeitzoom zeigt die Übersicht oder einen Ausschnitt auf der absoluten Tick-Achse.
 
 - Das Stimmführungslabor zeigt pro Stil den MIDI-Tonumfang und pro Akkordwechsel die vorzeichenbehaftete Halbtonbewegung jeder vergleichbaren Stimme.

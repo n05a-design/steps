@@ -122,6 +122,17 @@ Die Projektkürzel wirken im Hauptfenster. Bibliotheksvorschau und
 Stimmführungsdetails sind per Tab erreichbar und mit Bild auf und Bild ab
 scrollbar.
 
+Die Progressionsliste zeigt zu jedem Akkord den Start in Takt, Zählzeit und
+Tick sowie die Dauer in Ticks. Beim Hinzufügen und Verschieben scrollt die
+Liste zur ausgewählten Zeile. In der fokussierten Liste verschieben
+Wahltaste+Auf/Ab (macOS) oder Alt+Auf/Ab (Windows/Linux) das Akkordereignis
+um eine Zeile. Sein absoluter Start und seine Dauer bleiben am Ereignis.
+Ein Sprachwechsel übersetzt die Zeilen und bewahrt Auswahl, Scrollposition
+sowie unfertige Eingaben.
+Die Anfänger-Voicings berechnen die beste Folge iterativ und verwenden
+bereits berechnete Teilpfade. Bewegungsmaß und Auswahl bei Gleichstand
+folgen derselben Regel wie zuvor.
+
 Der native MIDI-Dateidialog schlägt den Projekttitel als Dateinamen vor. Beim
 ersten Export öffnet er für gespeicherte Projekte deren Ordner. Weitere
 Exporte im selben Projekt öffnen den zuletzt erfolgreich verwendeten Ordner,
