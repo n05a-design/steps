@@ -23,7 +23,9 @@ from ..storage.exceptions import CorruptedProjectError
 from ..storage.project_io import Project, load_project_with_status, save_project
 from ..storage.undo import UndoStack
 from ..theory.chord import ChordDefinition, Voicing, parse_chord
-from ..theory.exceptions import ChordConstructionError, MusicTheoryError, PitchRangeError, ProgressionParsingError
+from ..theory.exceptions import (
+    ChordConstructionError, InvalidAlterationError, MusicTheoryError, PitchRangeError, ProgressionParsingError,
+)
 from ..theory.pitch import NoteSpelling, parse_spelling
 from ..theory.voice_leading import VoiceLeadingDiagnostic, find_perfect_interval_motion
 from .engine import (
@@ -583,319 +585,321 @@ class ProgressionSession:
         key_spelling = parse_spelling(self.key_root, convention=self.convention)
         degree = written_root_interval(curr_chord.root, key_spelling)
         quality = curr_chord.quality
-        tonic = key_spelling.render(self.convention)[:-1]
+        tonic = self._render_note_name(key_spelling, self.convention)
         dominant = has_dominant_quality(curr_chord)
 
+        def add(
+            candidate_symbol: str | None, *, relation_type, explanation: str, framework: str, source_id: str,
+        ) -> None:
+            if candidate_symbol is not None:
+                recommendations.append(ChordRecommendation(
+                    candidate_symbol, relation_type, explanation, framework, source_id,
+                ))
+
+        def written_target(root: NoteSpelling, steps: int, semitones: int) -> NoteSpelling | None:
+            try:
+                return root.transpose_diatonic(steps, semitones)
+            except InvalidAlterationError:
+                # A single rule can require an accidental beyond the supported spelling range.
+                return None
+
+        def symbol_at(root: NoteSpelling, steps: int, semitones: int, suffix: str = "") -> str | None:
+            target = written_target(root, steps, semitones)
+            return self._render_note_name(target, self.convention) + suffix if target is not None else None
+
         # A descending fifth establishes a root relation; a dominant quality supports a resolution.
-        res_root = curr_chord.root.transpose_diatonic(step_delta=3, semitone_delta=5)
-        res_sym = res_root.render(self.convention)[:-1]
-        minor_targets = {(0, 0), (3, 5)} if self.is_minor else {(1, 2), (2, 4), (5, 9)}
-        if dominant and written_root_interval(res_root, key_spelling) in minor_targets:
-            res_sym += "m"
-        recommendations.append(ChordRecommendation(
-            candidate_symbol=res_sym,
-            relation_type="RESOLVES_TO" if dominant else "ROOT_MOTION",
-            explanation=(
-                f"Mögliche Dominantauflösung von {curr_sym} nach {res_sym}; "
-                "die Grundtöne liegen eine fallende Quinte auseinander."
-                if dominant else
-                f"Die Grundtöne von {curr_sym} und {res_sym} bilden einen Quintfall."
-            ),
-            framework="Dominant Resolution" if dominant else "Root Motion",
-            source_id="Open Music Theory · Tonicization" if dominant else "STEPS interval model",
-        ))
+        res_root = written_target(curr_chord.root, 3, 5)
+        if res_root is not None:
+            res_sym = self._render_note_name(res_root, self.convention)
+            minor_targets = {(0, 0), (3, 5)} if self.is_minor else {(1, 2), (2, 4), (5, 9)}
+            if dominant and written_root_interval(res_root, key_spelling) in minor_targets:
+                res_sym += "m"
+            add(
+                candidate_symbol=res_sym,
+                relation_type="RESOLVES_TO" if dominant else "ROOT_MOTION",
+                explanation=(
+                    f"Mögliche Dominantauflösung von {curr_sym} nach {res_sym}; "
+                    "die Grundtöne liegen eine fallende Quinte auseinander."
+                    if dominant else
+                    f"Die Grundtöne von {curr_sym} und {res_sym} bilden einen Quintfall."
+                ),
+                framework="Dominant Resolution" if dominant else "Root Motion",
+                source_id="Open Music Theory · Tonicization" if dominant else "STEPS interval model",
+            )
 
         # 2. Dominant Preparation (Secondary Dominant: V7 of next degree)
-        sec_dom_root = curr_chord.root.transpose_diatonic(step_delta=4, semitone_delta=7)
-        sec_dom_sym = f"{sec_dom_root.render(self.convention)[:-1]}7"
-        recommendations.append(ChordRecommendation(
+        sec_dom_sym = symbol_at(curr_chord.root, 4, 7, "7")
+        add(
             candidate_symbol=sec_dom_sym,
             relation_type="DOMINANT_OF",
             explanation=f"{sec_dom_sym} kann als Dominante zu {curr_sym} zurückführen.",
             framework="Functional Harmony",
             source_id="Open Music Theory · Tonicization"
-        ))
+        )
 
         # 3. Modal Interchange / Borrowed Chord (e.g. bVII or iv)
         if not self.is_minor:
-            bvii_root = key_spelling.transpose_diatonic(step_delta=6, semitone_delta=10)
-            bvii_sym = f"{bvii_root.render(self.convention)[:-1]}"
-            recommendations.append(ChordRecommendation(
+            bvii_sym = symbol_at(key_spelling, 6, 10)
+            add(
                 candidate_symbol=bvii_sym,
                 relation_type="BORROWED_FROM",
                 explanation=f"Modal Interchange: Entlehnung der Subtonika {bvii_sym} aus dem parallelen Moll.",
                 framework="Modal Mixture (Aldwell/Schachter)",
                 source_id="omt-chromatic-subdominants"
-            ))
+            )
 
         # 4. Root motion by a whole step
-        near_root = curr_chord.root.transpose_diatonic(step_delta=1, semitone_delta=2)
-        near_sym = f"{near_root.render(self.convention)[:-1]}m"
-        recommendations.append(ChordRecommendation(
+        near_sym = symbol_at(curr_chord.root, 1, 2, "m")
+        add(
             candidate_symbol=near_sym,
             relation_type="ROOT_MOTION",
             explanation=f"Der Grundton von {near_sym} liegt einen Ganzton über dem Grundton von {curr_sym}.",
             framework="Root Motion",
             source_id="STEPS interval model"
-        ))
+        )
 
         # 5. Andalusian Cadence / Phrygian Step (bVI -> V in minor)
         if self.is_minor:
             # bVI is 8 semitones above tonic
             if degree == (5, 8) and quality in ("", "maj7"):
-                v_root = key_spelling.transpose_diatonic(step_delta=4, semitone_delta=7)
-                v_sym = f"{v_root.render(self.convention)[:-1]}"
-                recommendations.append(ChordRecommendation(
+                v_sym = symbol_at(key_spelling, 4, 7)
+                add(
                     candidate_symbol=v_sym,
                     relation_type="RESOLVES_TO",
                     explanation=f"Andalusische Kadenz als mögliches Muster: Die Grundtöne von {curr_sym} und {v_sym} bilden einen absteigenden Halbtonschritt.",
                     framework="Andalusian Cadence / Phrygian Schema",
                     source_id="Gauldin (2004)"
-                ))
+                )
                 # Minor Jazz Blues Turnaround (bVImaj7 -> V7(#11))
                 if quality == "maj7":
-                    recommendations.append(ChordRecommendation(
-                        candidate_symbol=f"{v_root.render(self.convention)[:-1]}7(#11)",
+                    altered_v = symbol_at(key_spelling, 4, 7, "7(#11)")
+                    add(
+                        candidate_symbol=altered_v,
                         relation_type="RESOLVES_TO",
-                        explanation=f"Minor Jazz Blues Turnaround: Submediante {curr_sym} (bVImaj7) kann mit einem Halbtonschritt der Grundtöne zur alterierten Dominante führen: {v_root.render(self.convention)[:-1]}7(#11).",
+                        explanation=f"Minor Jazz Blues Turnaround: Submediante {curr_sym} (bVImaj7) kann mit einem Halbtonschritt der Grundtöne zur alterierten Dominante führen: {altered_v}.",
                         framework="Minor Jazz Blues Submediant Turnaround",
                         source_id="Levine (1995)"
-                    ))
+                    )
             # Minor Jazz Blues Subdominant (iv7 -> bVImaj7)
             elif degree == (3, 5) and quality == "m7":
-                bvi_root = key_spelling.transpose_diatonic(step_delta=5, semitone_delta=8)
-                bvi_sym = f"{bvi_root.render(self.convention)[:-1]}maj7"
-                recommendations.append(ChordRecommendation(
+                bvi_sym = symbol_at(key_spelling, 5, 8, "maj7")
+                add(
                     candidate_symbol=bvi_sym,
                     relation_type="VOICE_LEADING_NEAR",
                     explanation=f"Minor Jazz Blues Turnaround: Subdominante {curr_sym} (iv7) leitet zur Submediante {bvi_sym} (bVImaj7) über.",
                     framework="Minor Jazz Blues Submediant Turnaround",
                     source_id="Levine (1995)"
-                ))
+                )
             # Minor Dominant Resolution (V7(#11) -> i7 or Afro-Cuban Rebound -> iv)
             elif degree == (4, 7) and dominant:
                 if quality == "7#11":
-                    recommendations.append(ChordRecommendation(
+                    add(
                         candidate_symbol=f"{tonic}m7",
                         relation_type="RESOLVES_TO",
                         explanation=f"Minor Jazz Blues: {curr_sym} mit erhöhter Undezime kann nach {tonic}m7 führen.",
                         framework="Minor Jazz Blues Submediant Turnaround",
                         source_id="Terefenko (2014)",
-                    ))
+                    )
                 if quality == "7":
-                    iv_root = key_spelling.transpose_diatonic(step_delta=3, semitone_delta=5)
-                    iv_sym = f"{iv_root.render(self.convention)[:-1]}m"
-                    recommendations.append(ChordRecommendation(
+                    iv_sym = symbol_at(key_spelling, 3, 5, "m")
+                    add(
                         candidate_symbol=iv_sym,
                         relation_type="SCHEMA_CONTINUATION",
                         explanation=f"Afro-Cuban Montuno Vamp als Stilidee: {curr_sym} kann zur Mollsubdominante {iv_sym} zurückführen.",
                         framework="Afro-Cuban Ostinato Vamp",
                         source_id="Mauleón (1993)",
-                    ))
+                    )
             # Subtonic in Minor (bVII -> I Picardy Third, i Liquid D&B, or IIImaj9 Soul Circle)
             elif degree == (6, 10) and quality in ("", "7"):
-                i_major_sym = f"{key_spelling.render(self.convention)[:-1]}"
-                recommendations.append(ChordRecommendation(
+                i_major_sym = tonic
+                add(
                     candidate_symbol=i_major_sym,
                     relation_type="RESOLVES_TO",
                     explanation=f"Picardy Third als Option am Phrasenende: {i_major_sym} ist die Durtonika im Mollkontext.",
                     framework="Picardy Third Resolution",
                     source_id="Aldwell/Schachter (1989)"
-                ))
-                i_minor_sym = f"{key_spelling.render(self.convention)[:-1]}m"
-                recommendations.append(ChordRecommendation(
+                )
+                i_minor_sym = f"{tonic}m"
+                add(
                     candidate_symbol=i_minor_sym,
                     relation_type="RESOLVES_TO",
                     explanation=f"Liquid D&B Sub-Pulse Cadence: Mögliche modale Fortsetzung im Ganztonschritt {curr_sym} (bVII) in die Moll-Tonika {i_minor_sym}.",
                     framework="Liquid D&B Sub-Pulse Cadence",
                     source_id="Butterfield (2010)"
-                ))
-                iii_root = key_spelling.transpose_diatonic(step_delta=2, semitone_delta=3)
-                iii_sym = f"{iii_root.render(self.convention)[:-1]}maj9"
-                recommendations.append(ChordRecommendation(
+                )
+                iii_sym = symbol_at(key_spelling, 2, 3, "maj9")
+                add(
                     candidate_symbol=iii_sym,
                     relation_type="RESOLVES_TO",
                     explanation=f"Soul Circle of Fifths: Quintfall {curr_sym} (bVII) zur Durparallele {iii_sym} (IIImaj9).",
                     framework="Soul Circle of Fifths",
                     source_id="Mulholland (2013)"
-                ))
+                )
             # Minor Line Cliché (tonic minor root)
             elif degree == (0, 0):
-                root_prefix = curr_chord.root.render(self.convention)[:-1]
+                root_prefix = self._render_note_name(curr_chord.root, self.convention)
                 if curr_chord.quality == "m":
-                    recommendations.append(ChordRecommendation(
+                    add(
                         candidate_symbol=f"{root_prefix}m(maj7)",
                         relation_type="VOICE_LEADING_NEAR",
                         explanation=f"Minor Line Cliché: Chromatische Innenstimme 8 -> 7 ({curr_sym} -> {root_prefix}m(maj7)).",
                         framework="Minor Line Cliché",
                         source_id="Levine (1995)"
-                    ))
+                    )
                 elif curr_chord.quality in ("m(maj7)", "mmaj7"):
-                    recommendations.append(ChordRecommendation(
+                    add(
                         candidate_symbol=f"{root_prefix}m7",
                         relation_type="VOICE_LEADING_NEAR",
                         explanation=f"Minor Line Cliché: Chromatische Innenstimme 7 -> b7 ({curr_sym} -> {root_prefix}m7).",
                         framework="Minor Line Cliché",
                         source_id="Levine (1995)"
-                    ))
+                    )
                 elif curr_chord.quality == "m7":
-                    recommendations.append(ChordRecommendation(
+                    add(
                         candidate_symbol=f"{root_prefix}m6",
                         relation_type="VOICE_LEADING_NEAR",
                         explanation=f"Minor Line Cliché: Chromatische Innenstimme b7 -> 6 ({curr_sym} -> {root_prefix}m6).",
                         framework="Minor Line Cliché",
                         source_id="Levine (1995)"
-                    ))
+                    )
 
         # 6. 50s Doo-Wop Turnaround Steps
         if not self.is_minor:
             # vi is 9 semitones above tonic
             if degree == (5, 9) and quality in ("m", "m7"):
-                iv_root = key_spelling.transpose_diatonic(step_delta=3, semitone_delta=5)
-                iv_sym = f"{iv_root.render(self.convention)[:-1]}"
-                recommendations.append(ChordRecommendation(
+                iv_sym = symbol_at(key_spelling, 3, 5)
+                add(
                     candidate_symbol=iv_sym,
                     relation_type="SCHEMA_CONTINUATION",
                     explanation=f"50s Doo-Wop als mögliches Muster: {iv_sym} übernimmt nach {curr_sym} die Stufe IV.",
                     framework="Doo-Wop Turnaround",
                     source_id="omt-four-chord-schemas"
-                ))
+                )
             # The chromatic form and the minor forms of ii support different options.
             elif degree == (1, 2) and quality == "7":
-                ii_symbol = f"{curr_chord.root.render(self.convention)[:-1]}m7"
-                recommendations.append(ChordRecommendation(
+                ii_symbol = f"{self._render_note_name(curr_chord.root, self.convention)}m7"
+                add(
                     candidate_symbol=ii_symbol,
                     relation_type="VOICE_LEADING_NEAR",
                     explanation=f"Bossa Nova Stimmführung als Stilidee: {curr_sym} und {ii_symbol} unterscheiden sich durch die um einen Halbton tiefere Terz.",
                     framework="Bossa Nova Applied Dominant",
                     source_id="Mauleón (1993)",
-                ))
+                )
             elif degree == (1, 2) and quality in ("m", "m7"):
-                bii_root = key_spelling.transpose_diatonic(step_delta=1, semitone_delta=1)
-                bii_sym = f"{bii_root.render(self.convention)[:-1]}7"
-                recommendations.append(ChordRecommendation(
+                bii_sym = symbol_at(key_spelling, 1, 1, "7")
+                add(
                     candidate_symbol=bii_sym,
                     relation_type="SUBSTITUTES_FOR",
                     explanation=f"Tritonussubstitution: {bii_sym} kann in dieser Tonart V7 ersetzen und einen chromatischen Grundtonschritt zur Tonika bilden.",
                     framework="Tritone Substitution",
                     source_id="Open Music Theory · Substitutions",
-                ))
+                )
                 if quality == "m7":
-                    bvii_root = key_spelling.transpose_diatonic(step_delta=6, semitone_delta=10)
-                    bvii_sym = f"{bvii_root.render(self.convention)[:-1]}7"
-                    recommendations.append(ChordRecommendation(
+                    bvii_sym = symbol_at(key_spelling, 6, 10, "7")
+                    add(
                         candidate_symbol=bvii_sym,
                         relation_type="SCHEMA_CONTINUATION",
                         explanation=f"Substitute Backdoor ii–V als Stilidee: Nach {curr_sym} lässt sich {bvii_sym} als Alternative zu V7 ausprobieren.",
                         framework="Substitute Backdoor ii-V",
                         source_id="Rawlins/Bahha (2005)",
-                    ))
+                    )
             # bII is 1 semitone above tonic (Extended Tritone Sub Altered)
             elif degree == (1, 1) and quality == "7#11":
-                i_root = key_spelling
-                i_sym = f"{i_root.render(self.convention)[:-1]}maj9"
-                recommendations.append(ChordRecommendation(
+                i_sym = f"{tonic}maj9"
+                add(
                     candidate_symbol=i_sym,
                     relation_type="RESOLVES_TO",
                     explanation=f"Extended Tritone Sub (Altered): {curr_sym} mit erhöhter Undezime kann als Tritonussubstitution nach {i_sym} führen.",
                     framework="Extended Tritone Sub (Altered)",
                     source_id="Pease (2003)"
-                ))
+                )
             # IV is 5 semitones above tonic (iv7 Backdoor or IVdom7 Blues)
             elif degree == (3, 5):
                 if quality == "m7":
-                    bvii_root = key_spelling.transpose_diatonic(step_delta=6, semitone_delta=10)
-                    bvii_sym = f"{bvii_root.render(self.convention)[:-1]}7"
-                    recommendations.append(ChordRecommendation(
+                    bvii_sym = symbol_at(key_spelling, 6, 10, "7")
+                    add(
                         candidate_symbol=bvii_sym,
                         relation_type="RESOLVES_TO",
                         explanation=f"Classical Jazz Backdoor ii-V: Moll-Subdominante {curr_sym} (iv7) leitet zur Backdoor-Dominante {bvii_sym} (bVII7) über.",
                         framework="Classical Jazz Backdoor ii-V",
                         source_id="Levine (1995)"
-                    ))
+                    )
                 elif curr_chord.quality in ("7", "dom7"):
-                    i_root = key_spelling
-                    i_sym = f"{i_root.render(self.convention)[:-1]}7"
-                    recommendations.append(ChordRecommendation(
+                    i_sym = f"{tonic}7"
+                    add(
                         candidate_symbol=i_sym,
                         relation_type="RESOLVES_TO",
                         explanation=f"12-Bar Blues: Subdominante {curr_sym} (IVdom7) kehrt zur Tonika {i_sym} (Idom7) zurück.",
                         framework="12-Bar Blues",
                         source_id="Rawlins/Bahha (2005)"
-                    ))
+                    )
             # bVII is 10 semitones above tonic (Backdoor resolution)
             elif degree == (6, 10) and quality == "7":
-                i_root = key_spelling
-                i_sym = f"{i_root.render(self.convention)[:-1]}"
-                recommendations.append(ChordRecommendation(
+                i_sym = tonic
+                add(
                     candidate_symbol=i_sym,
                     relation_type="RESOLVES_TO",
                     explanation=f"Backdoor-Auflösung: Subtonika {curr_sym} (bVII7) löst sich subdominantisch in die Tonika {i_sym} auf.",
                     framework="Backdoor Progression",
                     source_id="Terefenko (2014)"
-                ))
+                )
             # I is tonic (Secondary dominant lift to vi or Blues shift to IV7)
             elif degree == (0, 0):
                 if curr_chord.quality in ("7", "dom7"):
-                    iv_root = key_spelling.transpose_diatonic(step_delta=3, semitone_delta=5)
-                    iv_sym = f"{iv_root.render(self.convention)[:-1]}7"
-                    recommendations.append(ChordRecommendation(
+                    iv_sym = symbol_at(key_spelling, 3, 5, "7")
+                    add(
                         candidate_symbol=iv_sym,
                         relation_type="RESOLVES_TO",
                         explanation=f"12-Bar Blues: Tonika-Dominantseptakkord {curr_sym} (Idom7) wechselt zur Subdominante {iv_sym} (IVdom7).",
                         framework="12-Bar Blues",
                         source_id="Rawlins/Bahha (2005)"
-                    ))
-                v_vi_root = key_spelling.transpose_diatonic(step_delta=2, semitone_delta=4)
-                v_vi_sym = f"{v_vi_root.render(self.convention)[:-1]}7"
-                recommendations.append(ChordRecommendation(
+                    )
+                v_vi_sym = symbol_at(key_spelling, 2, 4, "7")
+                add(
                     candidate_symbol=v_vi_sym,
                     relation_type="DOMINANT_OF",
                     explanation=f"Zwischendominante: {v_vi_sym} (V7/vi) bereitet leittönig die Tonikaparallele vi vor.",
                     framework="Zwischendominanten",
                     source_id="Kostka/Payne (2013)"
-                ))
-                v_v_root = key_spelling.transpose_diatonic(step_delta=1, semitone_delta=2)
-                v_v_sym = f"{v_v_root.render(self.convention)[:-1]}7"
-                recommendations.append(ChordRecommendation(
+                )
+                v_v_sym = symbol_at(key_spelling, 1, 2, "7")
+                add(
                     candidate_symbol=v_v_sym,
                     relation_type="DOMINANT_OF",
                     explanation=f"Bossa Nova Doppeldominante: {v_v_sym} (V7/V) kann als Dominante der Dominante zur Stufe V führen.",
                     framework="Bossa Nova Applied Dominant",
                     source_id="Mauleón (1993)"
-                ))
+                )
             # iii is 4 semitones above tonic (Royal Road mediant -> submediant)
             elif degree == (2, 4) and quality in ("m", "m7"):
-                vi_root = key_spelling.transpose_diatonic(step_delta=5, semitone_delta=9)
-                vi_sym = f"{vi_root.render(self.convention)[:-1]}m"
-                recommendations.append(ChordRecommendation(
+                vi_sym = symbol_at(key_spelling, 5, 9, "m")
+                add(
                     candidate_symbol=vi_sym,
                     relation_type="RESOLVES_TO",
                     explanation=f"Royal Road (Ōdō shinkō): Möglicher Quintfall von {curr_sym} (iii) in die Tonikaparallele {vi_sym} (vi).",
                     framework="Royal Road (Ōdō shinkō)",
                     source_id="Jaffe (1996)"
-                ))
+                )
 
         # Conventional jazz qualities are offered as choices, without inferring a genre or phrase.
         if degree == (1, 2) and quality == ("m7b5" if self.is_minor else "m7"):
-            v_root = key_spelling.transpose_diatonic(step_delta=4, semitone_delta=7)
-            v_symbol = f"{v_root.render(self.convention)[:-1]}7"
-            recommendations.append(ChordRecommendation(
+            v_symbol = symbol_at(key_spelling, 4, 7, "7")
+            add(
                 candidate_symbol=v_symbol,
                 relation_type="SCHEMA_CONTINUATION",
                 explanation=f"{curr_sym} → {v_symbol} entspricht den ersten beiden Akkorden einer Jazz-ii–V–I-Folge in dieser Tonart.",
                 framework="Jazz ii–V–I",
                 source_id="omt-ii-v-i",
-            ))
+            )
         elif degree == (4, 7) and dominant and quality != "":
             suffix = "m7" if self.is_minor else "maj7"
-            recommendations.append(ChordRecommendation(
+            add(
                 candidate_symbol=tonic + suffix,
                 relation_type="RESOLVES_TO",
                 explanation=f"{curr_sym} kann sich im Jazz zur Tonika {tonic}{suffix} auflösen.",
                 framework="Jazz ii–V–I",
                 source_id="omt-ii-v-i",
-            ))
+            )
 
         return recommendations
 

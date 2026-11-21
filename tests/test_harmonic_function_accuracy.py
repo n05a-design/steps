@@ -3,6 +3,7 @@
 import unittest
 
 from src.steps.progression.session import ProgressionSession
+from src.steps.theory import parse_chord
 
 
 class TestHarmonicFunctionAccuracy(unittest.TestCase):
@@ -103,3 +104,38 @@ class TestHarmonicFunctionAccuracy(unittest.TestCase):
         double_dominant = next(item for item in options if "Doppeldominante" in item.explanation)
         self.assertEqual(double_dominant.candidate_symbol, "D7")
         self.assertIn("Stufe V", double_dominant.explanation)
+
+    def test_explorer_keeps_spellable_options_when_one_rule_exceeds_notation(self):
+        cases = (
+            ("INT", "C", False, "B##m", "Ex", "Functional Harmony"),
+            ("INT", "C", False, "Bxdom7", "Ex", "Functional Harmony"),
+            ("INT", "C", False, "Fbbm7", "Gbbm", "Root Motion"),
+            ("INT", "G##", False, "G##", "Cx", None),
+            ("INT", "Cbb", True, "Gbb7", "Cbbm7", None),
+            ("DE", "C", False, "Hisism", "Eisis", "Functional Harmony"),
+            ("DE", "C", False, "Fesesm7", "Gesesm", "Root Motion"),
+            ("DE", "Ceses", True, "Geses7", "Cesesm7", None),
+        )
+        for notation, key, minor, chord, witness, unavailable in cases:
+            with self.subTest(notation=notation, key=key, chord=chord):
+                session = ProgressionSession([chord], key_root=key, is_minor=minor, convention=notation)
+                choices = session.explore_next_chords(0)
+                self.assertIn(witness, [item.candidate_symbol for item in choices])
+                if unavailable == "Root Motion":
+                    # F-double-flat cannot descend a fifth to a writable B, but can move up to G.
+                    self.assertEqual(
+                        [item.candidate_symbol for item in choices if item.framework == unavailable],
+                        [witness],
+                    )
+                elif unavailable is not None:
+                    self.assertNotIn(unavailable, [item.framework for item in choices])
+                for item in choices:
+                    parse_chord(item.candidate_symbol, notation)
+                    self.assertNotIn("None", item.explanation)
+
+    def test_explicit_tonic_octave_does_not_change_explorer_symbols(self):
+        for pitch, tonic in (("C-1", "C"), ("G9", "G")):
+            with self.subTest(pitch=pitch):
+                first = ProgressionSession([tonic], key_root=pitch).explore_next_chords(0)
+                second = ProgressionSession([tonic], key_root=tonic).explore_next_chords(0)
+                self.assertEqual(first, second)
