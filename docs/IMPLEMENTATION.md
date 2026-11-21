@@ -169,7 +169,12 @@ dem ersten Vorschlag. Pfeiltasten wechseln die Vorschau, Enter oder
 „Auswahl hinzufügen“ fügt den Akkord ein und fokussiert die Progression. Mit
 Umschalt+Tab ist die schreibgeschützte Begründung erreichbar. Beim Wechsel
 der Oberflächensprache bleibt die Auswahl erhalten, solange Projekt und
-Ausgangsakkord unverändert sind. Die Anwendung
+Ausgangsakkord unverändert sind. **Auswahl vergleichen** hält einen
+Kandidaten fest und zeigt bei Auswahl eines anderen Kandidaten beide
+Beziehungen, Begründungen und Provenienzen in der Vorschau. Der Vergleich
+übersteht einen Sprachwechsel im selben Kontext. Ein Projekt- oder
+Ausgangsakkordwechsel verwirft ihn. Einfügen bleibt an die aktuelle
+Listenauswahl gebunden. Die Anwendung
 prüft bei identischem Akkordsymbol auch den konkret gewählten Vorschlag.
 Die MIDI- und Projektformate folgen denselben Verträgen.
 

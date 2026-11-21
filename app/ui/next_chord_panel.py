@@ -36,6 +36,7 @@ class NextChordPanel:
         self._on_applied = on_applied
         self._recommendations: list[ChordRecommendation] = []
         self._context: tuple[int, int] | None = None
+        self._comparison_index: int | None = None
         colors, spacing = theme.colors, theme.spacing
 
         self.explore_button = create_button(
@@ -73,6 +74,13 @@ class NextChordPanel:
             fg=colors.text_inverted, relief=tk.FLAT, padx=spacing.sm, state=tk.DISABLED,
         )
         self.apply_button.grid(row=2, column=0, columnspan=2, sticky="e", pady=(spacing.xs, 0))
+        self.comparison_button = create_button(
+            frame, text="", command=self._toggle_comparison, bg=colors.bg_active,
+            fg=colors.text_primary, relief=tk.FLAT, padx=spacing.sm, state=tk.DISABLED,
+        )
+        self.comparison_button.grid(
+            row=3, column=0, columnspan=2, sticky="e", pady=(spacing.xs, 0),
+        )
         self.localize()
 
     def localize(self) -> bool:
@@ -81,6 +89,7 @@ class NextChordPanel:
         self.explore_button.configure(text=t("next_chord.explore"))
         self.apply_button.configure(text=t("next_chord.apply"))
         self._heading.configure(text=t("next_chord.candidates"))
+        self._update_comparison_button()
         if self._context != self._current_context():
             return False
         selected = self._selected_recommendation_index()
@@ -88,13 +97,15 @@ class NextChordPanel:
         return True
 
     def clear(self) -> None:
-        if self._parent.focus_get() in (self.candidates, self.apply_button):
+        if self._parent.focus_get() in (self.candidates, self.apply_button, self.comparison_button):
             self.explore_button.focus_set()
         self._context = None
+        self._comparison_index = None
         self._recommendations.clear()
         self.candidates.delete(0, tk.END)
         self.candidates.configure(takefocus=False)
         self.apply_button.configure(state=tk.DISABLED)
+        self._update_comparison_button()
 
     def explore(self) -> None:
         index = self._selected_chord()
@@ -111,6 +122,7 @@ class NextChordPanel:
             self._show_error("next_chord.error.message", error=exc)
             return
 
+        self._comparison_index = None
         self._recommendations = list(recommendations)
         self._context = (index, self._controller.revision)
         self._render_candidates(0 if recommendations else None)
@@ -169,6 +181,7 @@ class NextChordPanel:
     def _selection_changed(self, _event: tk.Event | None = None) -> None:
         index = self._selected_recommendation_index()
         self.apply_button.configure(state=tk.NORMAL if index is not None else tk.DISABLED)
+        self._update_comparison_button()
         if self._context is None:
             return
         t = self._i18n.translate
@@ -177,16 +190,54 @@ class NextChordPanel:
             hint = "next_chord.inspect" if self._recommendations else "next_chord.empty"
             self._show_detail(f"{heading}\n{t(hint)}\n")
             return
-        recommendation = self._recommendations[index]
+        selected = self._format_candidate(self._recommendations[index])
+        reference = self._comparison_index
+        if reference is None:
+            self._show_detail(f"{heading}\n{selected}\n")
+        elif reference == index:
+            self._show_detail(f"{heading}\n{t('next_chord.compare.choose')}\n\n{selected}\n")
+        else:
+            pinned = self._format_candidate(self._recommendations[reference])
+            self._show_detail(
+                f"{heading}\n{t('next_chord.compare.reference')}\n{pinned}\n\n"
+                f"{t('next_chord.compare.selected')}\n{selected}\n"
+            )
+
+    def _format_candidate(self, recommendation: ChordRecommendation) -> str:
+        t = self._i18n.translate
         relation = t(f"next_chord.relation.{recommendation.relation_type}")
         reason = t(f"next_chord.reason.{recommendation.relation_type}")
-        self._show_detail(
-            f"{heading}\n{recommendation.candidate_symbol} — {relation}\n"
-            f"{reason}\n"
+        return (
+            f"{recommendation.candidate_symbol} — {relation}\n{reason}\n"
             f"{t('next_chord.framework')}: {recommendation.framework}\n"
             f"{t('next_chord.source')}: {recommendation.source_id}\n"
-            f"\n{t('next_chord.original')}\n{recommendation.explanation}\n"
+            f"\n{t('next_chord.original')}\n{recommendation.explanation}"
         )
+
+    def _update_comparison_button(self) -> None:
+        pinned = self._comparison_index is not None
+        enabled = pinned or (
+            len(self._recommendations) > 1 and self._selected_recommendation_index() is not None
+        )
+        key = "next_chord.compare.clear" if pinned else "next_chord.compare.pin"
+        self.comparison_button.configure(
+            text=self._i18n.translate(key), state=tk.NORMAL if enabled else tk.DISABLED,
+        )
+
+    def _toggle_comparison(self) -> None:
+        if self._context != self._current_context():
+            self.clear()
+            self._show_detail(self._i18n.translate("next_chord.stale"))
+            return
+        if self._comparison_index is None:
+            index = self._selected_recommendation_index()
+            if index is None or len(self._recommendations) < 2:
+                return
+            self._comparison_index = index
+            self.candidates.focus_set()
+        else:
+            self._comparison_index = None
+        self._selection_changed()
 
     def _show_error(self, message_key: str, **params: object) -> None:
         t = self._i18n.translate

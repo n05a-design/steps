@@ -70,6 +70,8 @@ bestehenden Session-/Controller-Kern; die Darstellung ist EN/DE lokalisiert.
 
 Das Menü **Werkzeuge** öffnet den Next Chord Explorer, das Stimmführungslabor und das MIDI-Exportstudio. Kandidat und Ausgangsakkord bleiben in getrennten Listen ausgewählt. Das Labor zeigt zwei generierte Voicing-Folgen auf gemeinsamen Achsen und übernimmt einen Stil erst über dessen Schaltfläche. Die Bibliothek zeigt bei genau einem Suchtreffer direkt dessen Vorschau.
 
+Im Next Chord Explorer hält **Auswahl vergleichen** den aktuellen Kandidaten fest. Wähle mit den Pfeiltasten einen zweiten Kandidaten. Die schreibgeschützte Vorschau zeigt dann beide Begründungen und Quellen. **Vergleich aufheben** kehrt zur Einzelvorschau zurück. Enter übernimmt den gerade ausgewählten Akkord.
+
 Vor der Dateiauswahl zeigt das MIDI-Exportstudio, ob sich mit dem gewählten Voicing und der gewählten Notenlänge Noteneinsätze derselben Tonhöhe auf demselben Kanal überlappen. Bei Überlappungen erscheinen deren Anzahl und der erste absolute Tick.
 
 Die UI-Sprache unterstützt Englisch und Deutsch unabhängig von musikalischer

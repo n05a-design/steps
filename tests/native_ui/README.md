@@ -36,8 +36,10 @@ checking the disabled voicing modes. It switches note durations and verifies
 that the timing preview reports five overlapping attacks at tick 12 without
 changing project state. The recommendation path runs at the
 main window minimum size, switches candidates with arrow keys, verifies
-Tab traversal through preview and apply controls, toggles UI language
-with the same candidate selected, and inserts it with Enter. An injected file replacement error
+Tab traversal through preview, apply and comparison controls, pins a
+candidate, and checks both original explanations and their sources after
+a UI language change. Enter inserts the selected candidate and the
+comparison is cleared. An injected file replacement error
 keeps the previous MIDI file and the options dialog available for retry.
 The test checks the title-based MIDI filename, then confirms that a repeated
 export opens in the last successful export directory. Cancelling the chooser
