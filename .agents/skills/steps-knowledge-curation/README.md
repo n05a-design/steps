@@ -29,7 +29,10 @@ For an independently reviewed correction, inspect the proposed fingerprints
 using the command below. It writes to stdout. Compare the data, scope and
 evidence changes in the pull request before updating the versioned file.
 Use the historical migration register as well when changing a protected
-identity. Changes to the fingerprints require human review.
+identity. Changes to the fingerprints require human review. Keep exactly one
+`ACTIVE` controlled correction per ID. Preserve the replaced entry as
+`SUPERSEDED` and record the exact approved identity SHA-256. The verifier
+currently handles baseline schema `1.3.0`.
 
 ```sh
 python3 -B .agents/skills/steps-knowledge-curation/scripts/check_reference_ids.py --print-evidence-snapshot
@@ -56,19 +59,26 @@ python3 .agents/skills/steps-knowledge-curation/scripts/validate_register.py
 ```
 
 Keep the backup and its `.md.json` manifest together in a directory writable
-only by trusted operators. The hash detects a mismatch between the two files. New manifests bind the
-snapshot to the original absolute register path. A regular destination's POSIX
-mode is preserved when restoring. For a moved checkout or a version 1 manifest
-without a path, review the origin, contents and destination before using
-`restore --allow-other-register`. The backup must still have a matching
-register filename and pass the manifest and content checks. Supply
-`list --register` when checking a shared backup directory to identify backups
-bound to a different register.
-Older backups without a manifest are listed as `UNVERIFIED`. Review those
-files independently before recovering them through an isolated register and
-creating a new snapshot. Restore validates the snapshot's structure so that
-older entries can be recovered. Run the stricter validator afterward to find
-any evidence missing from `DONE_VERIFIED` entries.
+only by trusted operators. The hash detects a mismatch between the two files. Version 3 snapshots bind
+the original absolute register path to a local identity. The identity is
+stored in the worktree's private Git directory or, for a standalone register,
+in its default backup directory. Keep the identity with the original local
+checkout. Regular destinations retain their POSIX mode on restore.
+
+The `list` report separates manifest integrity, destination binding
+(`restore_scope`), and completion evidence fields (`completion_evidence`).
+Pass `--register` when inspecting a shared backup directory. Versions 1 and 2
+lack the local identity and are listed as `UNBOUND`. Review the origin and
+target before invoking `restore --allow-other-register` for an unbound snapshot
+or a moved checkout. A matching register filename and valid structure are
+required. Historical copies without a manifest need separate review in an
+isolated register before they can be snapshotted.
+
+Recovery with missing completion fields requires `--allow-incomplete-evidence`.
+Use that option for a reviewed repair. The restore result reports incomplete
+fields explicitly. Run the canonical validator afterward to resolve completion
+commits in local Git, and confirm the supporting evidence before accepting any
+`DONE_VERIFIED` claim.
 On Windows, replace `python3` with `python` if that is the installed launcher.
 
 The restore result includes the path of the pre-restore snapshot when a

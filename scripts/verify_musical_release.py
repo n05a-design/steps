@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 from datetime import datetime, timezone
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -55,7 +56,7 @@ def curation_evidence() -> list[str]:
     tool = ROOT / ".agents/skills/steps-knowledge-curation/scripts/check_reference_ids.py"
     result = subprocess.run(
         [sys.executable, "-B", str(tool), "--json"], cwd=ROOT,
-        capture_output=True, text=True, timeout=120,
+        capture_output=True, text=True, timeout=120, env=checkout_environment(),
     )
     if not result.returncode:
         return []
@@ -192,7 +193,7 @@ def suites(modules):
         return []
     result = subprocess.run(
         [sys.executable, "-B", "-m", "unittest", *(f"tests.{module}" for module in modules)],
-        cwd=ROOT, check=False, timeout=120,
+        cwd=ROOT, check=False, timeout=120, env=checkout_environment(),
     )
     return ["Technical regression suite failed"] if result.returncode else []
 
@@ -226,6 +227,26 @@ def check_area(area, cases, automatic, acceptance, *, run_suites=suites, probes=
             "automated_cases": len(automatic), "review": acceptance}
 
 
+def checkout_environment() -> dict[str, str]:
+    return {key: value for key, value in os.environ.items() if not key.startswith("GIT_")}
+
+
+def checkout_state() -> tuple[str, bool]:
+    env = checkout_environment()
+    checkout = subprocess.check_output(
+        ["git", "rev-parse", "--show-toplevel"], cwd=ROOT, env=env, text=True,
+    ).strip()
+    if Path(checkout).resolve() != ROOT.resolve():
+        raise ValueError("The release verifier must run from its own STEPS Git checkout.")
+    revision = subprocess.check_output(
+        ["git", "rev-parse", "HEAD"], cwd=ROOT, env=env, text=True,
+    ).strip()
+    dirty = bool(subprocess.check_output(
+        ["git", "status", "--porcelain", "--untracked-files=no"], cwd=ROOT, env=env,
+    ))
+    return revision, dirty
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--area", choices=("all", *AREAS), default="all")
@@ -234,8 +255,10 @@ def main():
     parser.add_argument("--template", action="store_true")
     parser.add_argument("--json-out", type=Path)
     args = parser.parse_args()
-    revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
-    dirty = bool(subprocess.check_output(["git", "status", "--porcelain", "--untracked-files=no"], cwd=ROOT))
+    try:
+        revision, dirty = checkout_state()
+    except (OSError, ValueError, subprocess.SubprocessError) as exc:
+        parser.error(f"Cannot identify the STEPS checkout: {exc}")
     cases = benchmark.load_cases()
     if args.template:
         if args.area == "all" or dirty:

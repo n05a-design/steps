@@ -22,7 +22,8 @@ python -B scripts/verify_musical_release.py --report-only
 python -B scripts/verify_musical_release.py --area desktop-voicing
 ```
 
-The enforced command exits with status 1 when any selected area is blocked. It requires a clean tracked checkout. `--report-only` lets maintainers inspect all blockers during development. The JSON report records the revision, whether it was a preview, and the reasons for each decision.
+The enforced command exits with status 1 when any selected area is blocked. It requires a clean tracked checkout. `--report-only` lets maintainers inspect all blockers during development. The JSON report records the revision, whether it was a preview, and the reasons for each decision. The verifier reads the revision and
+tracked state from its own checkout and ignores inherited Git context overrides.
 
 Use the [Musical release acceptance workflow](../../.github/workflows/musical-release.yml) on STEPS `main`. A release workflow can call it and require its success before preparing or publishing selected assets. For combined products, use `area: all`. The workflow itself has read-only permissions and stores a report. Existing manual GitHub releases and tag creation stay under repository owner control. Enforcing this workflow for those channels also requires configuring the publication workflow and repository permissions.
 

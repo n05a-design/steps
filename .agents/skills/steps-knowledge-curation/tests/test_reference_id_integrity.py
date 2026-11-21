@@ -16,6 +16,8 @@ ROOT = SKILL.parents[2]
 sys.path.insert(0, str(SCRIPTS))
 
 from check_reference_ids import validate_reference_ids
+from reference_evidence import evidence_snapshot
+from repository_verifier import verifier
 
 
 BASELINE = Path("knowledge/research/REFERENCE_IDENTITY_BASELINE.json")
@@ -214,12 +216,78 @@ other.__path__ = []
 sys.modules['scripts'] = other
 sys.path.insert(0, sys.argv[1])
 from check_reference_ids import validate_reference_ids
+from reference_evidence import evidence_snapshot
+from repository_verifier import verifier
 assert validate_reference_ids().success
 """
         result = subprocess.run(
             [sys.executable, "-B", "-c", script, str(SCRIPTS)], capture_output=True, text=True,
         )
         self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_unknown_identity_baseline_version_fails_closed(self):
+        path = self.fixture / BASELINE
+        baseline = json.loads(path.read_text(encoding="utf-8"))
+        baseline["schema_version"] = "99.0.0"
+        path.write_text(json.dumps(baseline), encoding="utf-8")
+        self.assert_rejected("Unsupported identity baseline schema version")
+
+    def test_corrections_are_order_independent_and_ambiguity_fails(self):
+        path = self.fixture / "knowledge/research/REFERENCE_ID_MIGRATION_REGISTER.csv"
+        original = path.read_text(encoding="utf-8").splitlines()
+        indexes = [i for i, row in enumerate(original)
+                   if row.startswith("REF-0015,REF-0015,") and ",CONTROLLED_CORRECTION," in row]
+        self.assertEqual(len(indexes), 2)
+        first, second = indexes
+        original[first], original[second] = original[second], original[first]
+        path.write_text("\n".join(original) + "\n", encoding="utf-8")
+        self.assertTrue(validate_reference_ids(self.fixture).success)
+        original[second] = original[second].removesuffix("SUPERSEDED") + "ACTIVE"
+        path.write_text("\n".join(original) + "\n", encoding="utf-8")
+        self.assert_rejected("Multiple active controlled corrections for REF-0015")
+
+    def test_reviewed_tempo_and_learning_goal_corrections(self):
+        migration = self.fixture / "knowledge/research/REFERENCE_ID_MIGRATION_REGISTER.csv"
+        original_migration = migration.read_bytes()
+        original_fingerprints = (self.fixture / FINGERPRINTS).read_bytes()
+        for file, ident, domain, replacement in (
+            ("knowledge/concepts/styles/DRUM_GROOVE_REFERENCE_LIBRARY.md", "PAT-001", "M08", "116 BPM"),
+            ("knowledge/concepts/chords/PIANO_PRACTICE_REFERENCE_LIBRARY.md", "P01", "M10", "New learning objective"),
+        ):
+            with self.subTest(ident=ident):
+                path = self.fixture / file
+                old = path.read_text(encoding="utf-8")
+                row = next(line for line in old.splitlines() if line.startswith(f"| `{ident}`"))
+                cells = [cell.strip().strip("`* ") for cell in row.split("|")[1:-1]]
+                name, description = cells[1], cells[3]
+
+                def replace_catalog_value(value):
+                    new_cells = row.split("|")
+                    new_cells[3] = f" {value} "
+                    path.write_text(old.replace(row, "|".join(new_cells), 1), encoding="utf-8")
+                    (self.fixture / FINGERPRINTS).write_text(
+                        json.dumps(evidence_snapshot(self.fixture)), encoding="utf-8",
+                    )
+
+                replace_catalog_value(replacement)
+                identity = {"id": ident, "domain": domain}
+                if domain == "M08":
+                    identity.update(name=name.lower(), tempo=replacement, meter_and_feel=description)
+                else:
+                    identity.update(title=name.lower(), didactic_goal=replacement, musical_focus=description)
+                digest = verifier.compute_canonical_hash(identity)
+                with migration.open("a", encoding="utf-8", newline="") as stream:
+                    csv.writer(stream).writerow([
+                        ident, ident, domain, "FIXTURE", name, "Test",
+                        f"Scoped correction sha256={digest}", "CONTROLLED_CORRECTION", "ACTIVE",
+                    ])
+                report = validate_reference_ids(self.fixture)
+                self.assertTrue(report.success, report.errors)
+                replace_catalog_value("Unreviewed version")
+                self.assert_rejected(f"Semantic identity conflict for {ident}")
+                path.write_text(old, encoding="utf-8")
+                migration.write_bytes(original_migration)
+                (self.fixture / FINGERPRINTS).write_bytes(original_fingerprints)
 
     def test_cli_reports_missing_baseline_as_failure(self):
         (self.fixture / BASELINE).unlink()

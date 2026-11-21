@@ -14,7 +14,10 @@ still needs evidence for that tempo.
 The [lifecycle audit](../../docs/audit/2026-11-21/CURATION_LIFECYCLE.md)
 records reproducible gaps in migration precedence, backup readiness and
 release revision binding on `d227d7f`. The report preserves the observed
-results and the open implementation work.
+results for that revision. The follow-up implementation checks the release
+checkout directly, rejects ambiguous active corrections, and reports snapshot
+integrity, destination binding and completion fields independently. Musical
+acceptance and server-enforced code owner approval remain separate evidence.
 
 ## Curation interfaces and review enforcement
 

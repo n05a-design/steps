@@ -4,6 +4,7 @@ from contextlib import redirect_stderr
 from datetime import datetime, timezone
 from io import StringIO
 import json
+import os
 from subprocess import CompletedProcess
 import unittest
 from unittest.mock import patch
@@ -113,9 +114,23 @@ class MusicalReleaseTest(unittest.TestCase):
         self.assertEqual("BLOCKED", self.check("recommendations", acceptance=approval,
                                                probes={"recommendations": lambda: ["broken"]})["status"])
 
+    def test_release_checkout_state_ignores_inherited_git_context(self):
+        with patch.dict(os.environ, {"GIT_DIR": "elsewhere/.git", "GIT_WORK_TREE": "elsewhere"}):
+            with patch.object(gate.subprocess, "check_output", side_effect=[str(gate.ROOT), self.revision, b""]) as git:
+                self.assertEqual(gate.checkout_state(), (self.revision, False))
+        for call in git.call_args_list:
+            self.assertEqual(call.kwargs["cwd"], gate.ROOT)
+            self.assertNotIn("GIT_DIR", call.kwargs["env"])
+            self.assertNotIn("GIT_WORK_TREE", call.kwargs["env"])
+
+    def test_release_checkout_state_rejects_an_enclosing_git_repository(self):
+        with patch.object(gate.subprocess, "check_output", return_value=str(gate.ROOT.parent)):
+            with self.assertRaisesRegex(ValueError, "own STEPS Git checkout"):
+                gate.checkout_state()
+
     def test_dirty_checkout_cannot_issue_release_verdict(self):
         with (patch.object(gate.sys, "argv", ["verify_musical_release"]),
-              patch.object(gate.subprocess, "check_output", side_effect=[self.revision, b" M tracked"]),
+              patch.object(gate, "checkout_state", return_value=(self.revision, True)),
               redirect_stderr(StringIO())):
             with self.assertRaises(SystemExit) as aborted:
                 gate.main()
