@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import tkinter as tk
+import webbrowser
 from collections.abc import Callable
-from tkinter import messagebox
+from tkinter import messagebox, ttk
 
 from app.i18n import LocaleManager
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager, create_button
-from src.steps.progression.reviewed import PublicationError, resolve_source_citation
+from src.steps.progression.reviewed import Citation, PublicationError, resolve_source_citation
 from src.steps.progression.session import ChordRecommendation
 from src.steps.theory.exceptions import MusicTheoryError
 
@@ -82,6 +83,10 @@ class NextChordPanel:
         self.comparison_button.grid(
             row=3, column=0, columnspan=2, sticky="e", pady=(spacing.xs, 0),
         )
+        self._source_button = ttk.Menubutton(frame, state=tk.DISABLED)
+        self._source_menu = tk.Menu(self._source_button, tearoff=False)
+        self._source_button.configure(menu=self._source_menu)
+        self._source_button.grid(row=4, column=0, columnspan=2, sticky="e", pady=(spacing.xs, 0))
         self.localize()
 
     def localize(self) -> bool:
@@ -90,15 +95,17 @@ class NextChordPanel:
         self.explore_button.configure(text=t("next_chord.explore"))
         self.apply_button.configure(text=t("next_chord.apply"))
         self._heading.configure(text=t("next_chord.candidates"))
+        self._source_button.configure(text=t("next_chord.sources.menu"))
         self._update_comparison_button()
         if self._context != self._current_context():
+            self._update_source_menu()
             return False
         selected = self._selected_recommendation_index()
         self._render_candidates(selected)
         return True
 
     def clear(self) -> None:
-        if self._parent.focus_get() in (self.candidates, self.apply_button, self.comparison_button):
+        if self._parent.focus_get() in (self.candidates, self.apply_button, self.comparison_button, self._source_button):
             self.explore_button.focus_set()
         self._context = None
         self._comparison_index = None
@@ -107,6 +114,7 @@ class NextChordPanel:
         self.candidates.configure(takefocus=False)
         self.apply_button.configure(state=tk.DISABLED)
         self._update_comparison_button()
+        self._update_source_menu()
 
     def explore(self) -> None:
         index = self._selected_chord()
@@ -183,6 +191,7 @@ class NextChordPanel:
         index = self._selected_recommendation_index()
         self.apply_button.configure(state=tk.NORMAL if index is not None else tk.DISABLED)
         self._update_comparison_button()
+        self._update_source_menu()
         if self._context is None:
             return
         t = self._i18n.translate
@@ -210,9 +219,8 @@ class NextChordPanel:
         reason = t(f"next_chord.reason.{recommendation.relation_type}")
         evidence = t(f"next_chord.evidence.{recommendation.evidence_kind}")
         if recommendation.evidence_kind == "LITERATURE_REFERENCE":
-            try:
-                citation = resolve_source_citation(recommendation.source_id or "", recommendation.source_locator or "")
-            except PublicationError:
+            citation = self._citation_for(recommendation)
+            if citation is None:
                 evidence = t("next_chord.evidence.unavailable")
             else:
                 evidence = f"{evidence}\n{citation.title}\n{citation.locator}\n{citation.url}"
@@ -222,6 +230,63 @@ class NextChordPanel:
             f"{evidence}\n"
             f"\n{t('next_chord.original')}\n{recommendation.explanation}"
         )
+
+    @staticmethod
+    def _citation_for(recommendation: ChordRecommendation) -> Citation | None:
+        if recommendation.evidence_kind != "LITERATURE_REFERENCE":
+            return None
+        try:
+            return resolve_source_citation(recommendation.source_id or "", recommendation.source_locator or "")
+        except PublicationError:
+            return None
+
+    def _update_source_menu(self) -> None:
+        self._source_menu.delete(0, tk.END)
+        self._source_button.configure(state=tk.DISABLED)
+        if self._context is None or self._context != self._current_context():
+            return
+        selected = self._selected_recommendation_index()
+        context = self._context
+        for index, key in ((selected, "next_chord.sources.selected"),
+                           (self._comparison_index, "next_chord.sources.pinned")):
+            if index is None or (key == "next_chord.sources.pinned" and index == selected):
+                continue
+            candidate = self._recommendations[index]
+            citation = self._citation_for(candidate)
+            if citation is None:
+                continue
+            label = self._i18n.translate(key, chord=candidate.candidate_symbol, title=citation.title)
+            self._source_menu.add_command(
+                label=label,
+                command=lambda current=index, expected=candidate: self._open_source(current, expected, context),
+            )
+            self._source_button.configure(state=tk.NORMAL)
+
+    def _open_source(
+        self, index: int, expected: ChordRecommendation, context: tuple[int, int],
+    ) -> None:
+        if self._context is None or self._context != self._current_context():
+            self.clear()
+            self._show_detail(self._i18n.translate("next_chord.stale"))
+            return
+        if (context != self._context or index not in (self._selected_recommendation_index(), self._comparison_index)
+                or self._recommendations[index] != expected):
+            return
+        citation = self._citation_for(expected)
+        t = self._i18n.translate
+        if citation is None:
+            self._update_source_menu()
+            messagebox.showerror(
+                t("library.evidence.error.title"), t("next_chord.evidence.unavailable"), parent=self._parent,
+            )
+            return
+        try:
+            if webbrowser.open(citation.url, new=2):
+                return
+        except (OSError, webbrowser.Error):
+            pass
+        messagebox.showerror(t("library.evidence.error.title"),
+                             t("library.evidence.error.message", url=citation.url), parent=self._parent)
 
     def _update_comparison_button(self) -> None:
         pinned = self._comparison_index is not None

@@ -494,6 +494,8 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         panel._recommendations = []
         panel._comparison_index = None
         panel.comparison_button = Mock()
+        panel._source_button = Mock()
+        panel._source_menu = Mock()
         panel.candidates = Mock()
         panel.candidates.curselection.return_value = ()
         panel.apply_button = Mock()
@@ -627,6 +629,44 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
                         self.window.detail_text.insert.call_args.args[1],
                         self.window.i18n.translate("next_chord.stale"),
                     )
+
+    @patch("app.ui.next_chord_panel.webbrowser.open", return_value=True)
+    def test_next_chord_opens_only_current_selected_or_pinned_registered_sources(self, browser):
+        self.window.controller = ProgressionSessionController(
+            ProgressionSession(initial_chords=["C"], key_root="C")
+        )
+        panel = self.make_next_chord_panel(0)
+        panel.explore()
+        sources = [index for index, rec in enumerate(panel._recommendations) if rec.source_id]
+        self.assertEqual(len(sources), 2)
+        panel.candidates.curselection.return_value = (sources[0],)
+        panel._toggle_comparison()
+        panel.candidates.curselection.return_value = (sources[1],)
+        panel._source_menu.reset_mock()
+        panel._selection_changed()
+        entries = panel._source_menu.add_command.call_args_list
+        self.assertEqual(len(entries), 2)
+        self.assertTrue(entries[0].kwargs["label"].startswith("Selected D7"))
+        self.assertTrue(entries[1].kwargs["label"].startswith("Pinned E7"))
+        selected, pinned = [entry.kwargs["command"] for entry in entries]
+
+        before = self.window.controller.session.state
+        pinned()
+        self.assertEqual(self.window.controller.session.state, before)
+        browser.assert_called_once_with(panel._citation_for(panel._recommendations[sources[0]]).url, new=2)
+        with patch("app.ui.next_chord_panel.NextChordPanel._citation_for", return_value=None), patch(
+            "app.ui.next_chord_panel.messagebox.showerror",
+        ) as error:
+            pinned()
+            error.assert_called_once()
+            browser.assert_called_once()
+        panel.candidates.curselection.return_value = (0,)
+        selected()
+        browser.assert_called_once()
+        self.window.controller.set_context("C", True, 120)
+        pinned()
+        browser.assert_called_once()
+        self.assertEqual(panel._recommendations, [])
 
     def test_next_chord_displays_scoped_reading_and_handles_unknown_source(self):
         session = ProgressionSession(initial_chords=["Dm7"], key_root="C")
