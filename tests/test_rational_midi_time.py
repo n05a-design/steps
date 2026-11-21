@@ -53,6 +53,20 @@ class TestRationalMidiTime(unittest.TestCase):
             recalculated = RationalMidiTime.position_to_ticks(pos, ppq=ppq, numerator=4, denominator=4)
             self.assertEqual(tick, recalculated, f"Roundtrip failed for tick {tick}")
 
+    def test_large_absolute_ticks_roundtrip_without_losing_a_tick(self) -> None:
+        for tick in (2**53 + 1, 2**56 + 3):
+            with self.subTest(tick=tick):
+                settings = {"ppq": 960, "numerator": 7, "denominator": 8}
+                position = RationalMidiTime.ticks_to_bar_beat_tick(tick, **settings)
+                self.assertEqual(RationalMidiTime.bar_beat_tick_to_ticks(*position, **settings), tick)
+
+    def test_fractional_tick_midpoints_keep_half_even_rounding(self) -> None:
+        for half_tick, expected in ((1, 0), (3, 2), (5, 2)):
+            with self.subTest(half_tick=half_tick):
+                position = BarBeatPosition(1, 1, Fraction(half_tick, 960))
+                self.assertEqual(position.format_daw(480), f"1.1.{expected:03d}")
+                self.assertEqual(RationalMidiTime.position_to_ticks(position, ppq=480), expected)
+
     def test_ticks_to_position_non_4_4(self) -> None:
         # 3/4 time signature: bar = 1440 ticks
         pos = RationalMidiTime.ticks_to_position(1440, ppq=480, numerator=3, denominator=4)

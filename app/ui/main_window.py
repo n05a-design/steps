@@ -752,6 +752,7 @@ class StepsMainWindow:
         )
         self.event_start_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.event_start_entry.bind("<Return>", self._on_event_timing_shortcut)
+        self.event_start_entry.bind("<Escape>", self._on_reset_event_timing)
 
         self.event_duration_lbl = tk.Label(
             self.timing_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
@@ -766,6 +767,7 @@ class StepsMainWindow:
         )
         self.event_duration_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.event_duration_entry.bind("<Return>", self._on_event_timing_shortcut)
+        self.event_duration_entry.bind("<Escape>", self._on_reset_event_timing)
 
         self.event_timing_btn = create_button(
             self.timing_bar,
@@ -973,33 +975,64 @@ class StepsMainWindow:
         self._on_apply_event_timing()
         return "break"
 
+    def _on_reset_event_timing(self, _event: tk.Event) -> str:
+        self._load_event_timing_controls(self._selected_chord_index())
+        return "break"
+
+    def _parse_event_start(self, text: str) -> int:
+        fields = text.split(":")
+        if len(fields) == 1:
+            tick = int(fields[0])
+            if tick < 0:
+                raise ValueError("Start tick must be non-negative.")
+            return tick
+        if len(fields) != 3:
+            raise ValueError("Expected an absolute tick or bar:beat:tick position.")
+
+        session = self.controller.session
+        bar, beat, tick = map(int, fields)
+        numerator, denominator = session.time_signature
+        return RationalMidiTime.bar_beat_tick_to_ticks(
+            bar, beat, tick, ppq=session.state.ppq,
+            numerator=numerator, denominator=denominator,
+        )
+
+    def _show_event_timing_error(self, entry: tk.Entry, message: str) -> None:
+        messagebox.showerror(
+            self.i18n.translate("event.timing.error.title"), message, parent=self.root,
+        )
+        entry.focus_set()
+        entry.selection_range(0, tk.END)
+
     def _on_apply_event_timing(self) -> None:
         index = self._selected_chord_index()
         if index is None:
             return
+
+        session = self.controller.session
+        t = self.i18n.translate
         try:
-            session = self.controller.session
-            position = [
-                int(part.strip())
-                for part in self.event_start_entry.get().strip().split(":")
-            ]
-            if len(position) != 3:
-                raise ValueError("Position must use bar:beat:tick format.")
-            start_tick = RationalMidiTime.bar_beat_tick_to_ticks(
-                *position,
-                ppq=session.state.ppq,
-                numerator=session.time_signature[0],
-                denominator=session.time_signature[1],
-            )
-            duration_ticks = int(self.event_duration_entry.get().strip())
-            self.controller.set_chord_event_timing(index, start_tick, duration_ticks)
+            start_tick = self._parse_event_start(self.event_start_entry.get())
         except ValueError:
-            messagebox.showerror(
-                self.i18n.translate("event.timing.error.title"),
-                self.i18n.translate("event.timing.invalid"),
-                parent=self.root,
+            beats, denominator = session.time_signature
+            last_tick = RationalMidiTime.ticks_per_beat(session.state.ppq, denominator) - 1
+            self._show_event_timing_error(
+                self.event_start_entry, t("event.start.invalid", beats=beats, last_tick=last_tick),
             )
             return
+
+        try:
+            duration_ticks = int(self.event_duration_entry.get())
+            if duration_ticks <= 0:
+                raise ValueError("Duration must be positive.")
+        except ValueError:
+            self._show_event_timing_error(self.event_duration_entry, t("event.duration.invalid"))
+            return
+
+        if session.get_chord_event_timing(index) == (start_tick, duration_ticks):
+            self._load_event_timing_controls(index)
+            return
+        self.controller.set_chord_event_timing(index, start_tick, duration_ticks)
         self._refresh_all(preserve_selection=True)
 
     def _load_context_controls(self) -> None:

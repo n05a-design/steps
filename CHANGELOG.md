@@ -2,6 +2,9 @@
 
 ## Unreleased – App und Python-Kern
 
+- Der Timing-Editor akzeptiert den Start in Takt, Zählzeit und Tick oder als absoluten Tickwert. Fehler markieren das betroffene Eingabefeld. Escape stellt die gültigen Werte wieder her.
+- Rationale Zeitumrechnungen bleiben auch bei sehr großen Tickpositionen exakt.
+
 - Bei großem Tonumfang passt das Stimmführungslabor den Abstand der Tonhöhenbeschriftungen an.
 - Die Analyse der Anfänger-Voicings verwendet dynamische Programmierung. Damit lassen sich auch lange Akkordfolgen analysieren.
 - Die Progressionsliste zeigt Start und Dauer je Akkord. Neue oder verschobene Akkorde bleiben sichtbar. Wahl- beziehungsweise Alt-Taste und Auf/Ab verschieben den gewählten Akkord. Beim Sprachwechsel bleiben Entwürfe und Scrollposition erhalten.

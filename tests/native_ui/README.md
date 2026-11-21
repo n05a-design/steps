@@ -15,6 +15,9 @@ The dialogs test uses real Tk widgets, event bindings, storage, publication
 data and MIDI bytes. It scrolls a long progression to a newly added chord,
 checks the active row and keyboard reordering through the native list,
 and verifies that locale changes keep drafts, selection and scroll position.
+The timing path resets an unfinished draft with Escape, focuses an invalid
+duration, accepts an absolute start in ticks, and verifies the musical
+position in the row and Undo.
 It then creates a new project, searches and loads an example,
 checks chord cards at the minimum dialog size, preserves the reading position
 when a filter keeps the example selected, resets the preview on a new selection,
