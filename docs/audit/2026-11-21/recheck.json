@@ -1,0 +1,5240 @@
+{
+  "commit": "b47ffc27654d5e1df26316b466049f68000d81c6",
+  "tree": "3fe6f904f4d4703b545ba4dd115228c6daf8723b",
+  "inventory": {
+    "tree_entries": 3078,
+    "only_index": [],
+    "only_tree": [],
+    "files_by_status": {
+      "EXACT": 3078
+    },
+    "files_by_domain": {
+      ".agents": 27,
+      "root": 13,
+      ".github": 27,
+      "app": 35,
+      "archive": 347,
+      "decisions": 13,
+      "design": 14,
+      "docs": 256,
+      "knowledge": 136,
+      "manifests": 22,
+      "prompts": 30,
+      "publish_overlay": 84,
+      "research": 1790,
+      "schemas": 8,
+      "scripts": 71,
+      "skills": 18,
+      "source_archive": 9,
+      "src": 58,
+      "templates": 9,
+      "tests": 95,
+      "tools": 16
+    },
+    "bytes_by_domain": {
+      ".agents": 82350,
+      "root": 82981,
+      ".github": 33919,
+      "app": 280499,
+      "archive": 8819026,
+      "decisions": 31549,
+      "design": 45055,
+      "docs": 5344199,
+      "knowledge": 4018102,
+      "manifests": 501832,
+      "prompts": 138108,
+      "publish_overlay": 512095,
+      "research": 233017510,
+      "schemas": 12710,
+      "scripts": 719926,
+      "skills": 32913,
+      "source_archive": 4702284,
+      "src": 500022,
+      "templates": 6031,
+      "tests": 787661,
+      "tools": 69193
+    },
+    "markdown_documents": 1607,
+    "syntax_by_status": {
+      "PASS": 2119,
+      "FAIL": 1
+    },
+    "link_counts": {
+      "TRACKED_TARGET": 2190,
+      "EXTERNAL": 2506,
+      "SAME_FILE_FRAGMENT": 30,
+      "MISSING_TARGET": 691,
+      "OUTSIDE_REPOSITORY": 331
+    },
+    "missing_by_domain": {
+      "archive": 172,
+      "docs": 1,
+      "research": 306,
+      "source_archive": 212
+    },
+    "ignored_untracked_count": 87
+  },
+  "historical_source_file_identity": {
+    "PATH_OUTSIDE_TREE": 149,
+    "MISMATCH": 189,
+    "MATCH": 1557
+  },
+  "workflow_probes": {
+    "main_window_example": {
+      "key": "C#",
+      "chords": [
+        "C#",
+        "Ab",
+        "Bbm",
+        "F#"
+      ],
+      "before": [
+        "I",
+        "V",
+        "vi",
+        "IV"
+      ],
+      "after": [
+        "I",
+        "bbVI",
+        "bbvii",
+        "IV"
+      ]
+    },
+    "counts": {
+      "catalog_runtime_sync_cases": 28,
+      "catalog_root_or_tones_cases": 116,
+      "session_transpose_cases": 336,
+      "notation_storage_midi_cases": 336,
+      "catalog_inversions": 4,
+      "localized_degree_text_cases": 5
+    },
+    "failures_by_check": {
+      "transpose_spelling": 84,
+      "catalog_mixed_minor_degree_references": 1
+    },
+    "failures": [
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-001",
+        "semitones": -4,
+        "key": "Ab",
+        "original": [
+          "C",
+          "G",
+          "Am",
+          "F"
+        ],
+        "observed": [
+          "Ab",
+          "Eb",
+          "Fm",
+          "C#"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            2,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-001",
+        "semitones": -1,
+        "key": "B",
+        "original": [
+          "C",
+          "G",
+          "Am",
+          "F"
+        ],
+        "observed": [
+          "B",
+          "F#",
+          "Abm",
+          "E"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-001",
+        "semitones": 1,
+        "key": "C#",
+        "original": [
+          "C",
+          "G",
+          "Am",
+          "F"
+        ],
+        "observed": [
+          "C#",
+          "Ab",
+          "Bbm",
+          "F#"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-001",
+        "semitones": 6,
+        "key": "F#",
+        "original": [
+          "C",
+          "G",
+          "Am",
+          "F"
+        ],
+        "observed": [
+          "F#",
+          "C#",
+          "Ebm",
+          "B"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-002",
+        "semitones": -4,
+        "key": "Ab",
+        "original": [
+          "Am",
+          "F",
+          "C",
+          "G"
+        ],
+        "observed": [
+          "Fm",
+          "C#",
+          "Ab",
+          "Eb"
+        ],
+        "before": [
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            5,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-002",
+        "semitones": -1,
+        "key": "B",
+        "original": [
+          "Am",
+          "F",
+          "C",
+          "G"
+        ],
+        "observed": [
+          "Abm",
+          "E",
+          "B",
+          "F#"
+        ],
+        "before": [
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            6,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-002",
+        "semitones": 1,
+        "key": "C#",
+        "original": [
+          "Am",
+          "F",
+          "C",
+          "G"
+        ],
+        "observed": [
+          "Bbm",
+          "F#",
+          "C#",
+          "Ab"
+        ],
+        "before": [
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            6,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-002",
+        "semitones": 6,
+        "key": "F#",
+        "original": [
+          "Am",
+          "F",
+          "C",
+          "G"
+        ],
+        "observed": [
+          "Ebm",
+          "B",
+          "F#",
+          "C#"
+        ],
+        "before": [
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            6,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-003",
+        "semitones": 1,
+        "key": "C#",
+        "original": [
+          "Dm7",
+          "G7",
+          "Cmaj7"
+        ],
+        "observed": [
+          "Ebm7",
+          "Ab7",
+          "C#maj7"
+        ],
+        "before": [
+          [
+            1,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-003",
+        "semitones": 6,
+        "key": "F#",
+        "original": [
+          "Dm7",
+          "G7",
+          "Cmaj7"
+        ],
+        "observed": [
+          "Abm7",
+          "C#7",
+          "F#maj7"
+        ],
+        "before": [
+          [
+            1,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            2,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-004",
+        "semitones": -4,
+        "key": "Ab",
+        "original": [
+          "C",
+          "Am",
+          "F",
+          "G"
+        ],
+        "observed": [
+          "Ab",
+          "Fm",
+          "C#",
+          "Eb"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-004",
+        "semitones": -1,
+        "key": "B",
+        "original": [
+          "C",
+          "Am",
+          "F",
+          "G"
+        ],
+        "observed": [
+          "B",
+          "Abm",
+          "E",
+          "F#"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-004",
+        "semitones": 1,
+        "key": "C#",
+        "original": [
+          "C",
+          "Am",
+          "F",
+          "G"
+        ],
+        "observed": [
+          "C#",
+          "Bbm",
+          "F#",
+          "Ab"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            5,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-004",
+        "semitones": 6,
+        "key": "F#",
+        "original": [
+          "C",
+          "Am",
+          "F",
+          "G"
+        ],
+        "observed": [
+          "F#",
+          "Ebm",
+          "B",
+          "C#"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-005",
+        "semitones": -4,
+        "key": "F",
+        "original": [
+          "Am",
+          "G",
+          "F",
+          "E"
+        ],
+        "observed": [
+          "Fm",
+          "Eb",
+          "C#",
+          "C"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-005",
+        "semitones": -1,
+        "key": "Ab",
+        "original": [
+          "Am",
+          "G",
+          "F",
+          "E"
+        ],
+        "observed": [
+          "Abm",
+          "F#",
+          "E",
+          "Eb"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-005",
+        "semitones": 1,
+        "key": "Bb",
+        "original": [
+          "Am",
+          "G",
+          "F",
+          "E"
+        ],
+        "observed": [
+          "Bbm",
+          "Ab",
+          "F#",
+          "F"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-005",
+        "semitones": 4,
+        "key": "C#",
+        "original": [
+          "Am",
+          "G",
+          "F",
+          "E"
+        ],
+        "observed": [
+          "C#m",
+          "B",
+          "A",
+          "Ab"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            5,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-005",
+        "semitones": 6,
+        "key": "Eb",
+        "original": [
+          "Am",
+          "G",
+          "F",
+          "E"
+        ],
+        "observed": [
+          "Ebm",
+          "C#",
+          "B",
+          "Bb"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-006",
+        "semitones": -3,
+        "key": "B",
+        "original": [
+          "D",
+          "A",
+          "Bm",
+          "F#m",
+          "G",
+          "D",
+          "G",
+          "A"
+        ],
+        "observed": [
+          "B",
+          "F#",
+          "Abm",
+          "D#m",
+          "E",
+          "B",
+          "E",
+          "F#"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-006",
+        "semitones": -1,
+        "key": "C#",
+        "original": [
+          "D",
+          "A",
+          "Bm",
+          "F#m",
+          "G",
+          "D",
+          "G",
+          "A"
+        ],
+        "observed": [
+          "C#",
+          "Ab",
+          "Bbm",
+          "Fm",
+          "F#",
+          "C#",
+          "F#",
+          "Ab"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            5,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-006",
+        "semitones": 4,
+        "key": "F#",
+        "original": [
+          "D",
+          "A",
+          "Bm",
+          "F#m",
+          "G",
+          "D",
+          "G",
+          "A"
+        ],
+        "observed": [
+          "F#",
+          "C#",
+          "Ebm",
+          "A#m",
+          "B",
+          "F#",
+          "B",
+          "C#"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-006",
+        "semitones": 6,
+        "key": "Ab",
+        "original": [
+          "D",
+          "A",
+          "Bm",
+          "F#m",
+          "G",
+          "D",
+          "G",
+          "A"
+        ],
+        "observed": [
+          "Ab",
+          "Eb",
+          "Fm",
+          "Cm",
+          "C#",
+          "Ab",
+          "C#",
+          "Eb"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-007",
+        "semitones": 6,
+        "key": "Ab",
+        "original": [
+          "Dm7",
+          "G7"
+        ],
+        "observed": [
+          "Abm7",
+          "C#7"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-008",
+        "semitones": -4,
+        "key": "Ab",
+        "original": [
+          "C7",
+          "F7",
+          "C7",
+          "G7",
+          "F7",
+          "C7"
+        ],
+        "observed": [
+          "Ab7",
+          "C#7",
+          "Ab7",
+          "Eb7",
+          "C#7",
+          "Ab7"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-008",
+        "semitones": 1,
+        "key": "C#",
+        "original": [
+          "C7",
+          "F7",
+          "C7",
+          "G7",
+          "F7",
+          "C7"
+        ],
+        "observed": [
+          "C#7",
+          "F#7",
+          "C#7",
+          "Ab7",
+          "F#7",
+          "C#7"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-009",
+        "semitones": -4,
+        "key": "Ab",
+        "original": [
+          "C",
+          "F",
+          "Fm",
+          "C"
+        ],
+        "observed": [
+          "Ab",
+          "C#",
+          "C#m",
+          "Ab"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-010",
+        "semitones": -4,
+        "key": "Ab",
+        "original": [
+          "C",
+          "E7",
+          "Am",
+          "F"
+        ],
+        "observed": [
+          "Ab",
+          "C7",
+          "Fm",
+          "C#"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            2,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-010",
+        "semitones": -1,
+        "key": "B",
+        "original": [
+          "C",
+          "E7",
+          "Am",
+          "F"
+        ],
+        "observed": [
+          "B",
+          "Eb7",
+          "Abm",
+          "E"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-010",
+        "semitones": 1,
+        "key": "C#",
+        "original": [
+          "C",
+          "E7",
+          "Am",
+          "F"
+        ],
+        "observed": [
+          "C#",
+          "F7",
+          "Bbm",
+          "F#"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-010",
+        "semitones": 4,
+        "key": "E",
+        "original": [
+          "C",
+          "E7",
+          "Am",
+          "F"
+        ],
+        "observed": [
+          "E",
+          "Ab7",
+          "C#m",
+          "A"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-010",
+        "semitones": 6,
+        "key": "F#",
+        "original": [
+          "C",
+          "E7",
+          "Am",
+          "F"
+        ],
+        "observed": [
+          "F#",
+          "Bb7",
+          "Ebm",
+          "B"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-011",
+        "semitones": -4,
+        "key": "Ab",
+        "original": [
+          "C",
+          "Ab",
+          "Bb",
+          "C"
+        ],
+        "observed": [
+          "Ab",
+          "E",
+          "Gb",
+          "Ab"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-011",
+        "semitones": 3,
+        "key": "Eb",
+        "original": [
+          "C",
+          "Ab",
+          "Bb",
+          "C"
+        ],
+        "observed": [
+          "Eb",
+          "B",
+          "Db",
+          "Eb"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-012",
+        "semitones": -1,
+        "key": "B",
+        "original": [
+          "Am",
+          "Dm",
+          "G",
+          "C"
+        ],
+        "observed": [
+          "Abm",
+          "C#m",
+          "F#",
+          "B"
+        ],
+        "before": [
+          [
+            5,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            6,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-012",
+        "semitones": 1,
+        "key": "C#",
+        "original": [
+          "Am",
+          "Dm",
+          "G",
+          "C"
+        ],
+        "observed": [
+          "Bbm",
+          "Ebm",
+          "Ab",
+          "C#"
+        ],
+        "before": [
+          [
+            5,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            6,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-012",
+        "semitones": 6,
+        "key": "F#",
+        "original": [
+          "Am",
+          "Dm",
+          "G",
+          "C"
+        ],
+        "observed": [
+          "Ebm",
+          "Abm",
+          "C#",
+          "F#"
+        ],
+        "before": [
+          [
+            5,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            6,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-013",
+        "semitones": -4,
+        "key": "Ab",
+        "original": [
+          "Dm7",
+          "Db7",
+          "Cmaj7"
+        ],
+        "observed": [
+          "Bbm7",
+          "A7",
+          "Abmaj7"
+        ],
+        "before": [
+          [
+            1,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-013",
+        "semitones": -2,
+        "key": "Bb",
+        "original": [
+          "Dm7",
+          "Db7",
+          "Cmaj7"
+        ],
+        "observed": [
+          "Cm7",
+          "B7",
+          "Bbmaj7"
+        ],
+        "before": [
+          [
+            1,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-013",
+        "semitones": 1,
+        "key": "C#",
+        "original": [
+          "Dm7",
+          "Db7",
+          "Cmaj7"
+        ],
+        "observed": [
+          "Ebm7",
+          "D7",
+          "C#maj7"
+        ],
+        "before": [
+          [
+            1,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            2,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-013",
+        "semitones": 3,
+        "key": "Eb",
+        "original": [
+          "Dm7",
+          "Db7",
+          "Cmaj7"
+        ],
+        "observed": [
+          "Fm7",
+          "E7",
+          "Ebmaj7"
+        ],
+        "before": [
+          [
+            1,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-013",
+        "semitones": 6,
+        "key": "F#",
+        "original": [
+          "Dm7",
+          "Db7",
+          "Cmaj7"
+        ],
+        "observed": [
+          "Abm7",
+          "G7",
+          "F#maj7"
+        ],
+        "before": [
+          [
+            1,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            2,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-014",
+        "semitones": -4,
+        "key": "Ab",
+        "original": [
+          "F",
+          "Bb7",
+          "C"
+        ],
+        "observed": [
+          "C#",
+          "Gb7",
+          "Ab"
+        ],
+        "before": [
+          [
+            3,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            2,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-015",
+        "semitones": -4,
+        "key": "Ab",
+        "original": [
+          "Fmaj7",
+          "G7",
+          "Em7",
+          "Am"
+        ],
+        "observed": [
+          "C#maj7",
+          "Eb7",
+          "Cm7",
+          "Fm"
+        ],
+        "before": [
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ]
+        ],
+        "after": [
+          [
+            2,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-015",
+        "semitones": -1,
+        "key": "B",
+        "original": [
+          "Fmaj7",
+          "G7",
+          "Em7",
+          "Am"
+        ],
+        "observed": [
+          "Emaj7",
+          "F#7",
+          "Ebm7",
+          "Abm"
+        ],
+        "before": [
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ]
+        ],
+        "after": [
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            6,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-015",
+        "semitones": 1,
+        "key": "C#",
+        "original": [
+          "Fmaj7",
+          "G7",
+          "Em7",
+          "Am"
+        ],
+        "observed": [
+          "F#maj7",
+          "Ab7",
+          "Fm7",
+          "Bbm"
+        ],
+        "before": [
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ]
+        ],
+        "after": [
+          [
+            3,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            6,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-015",
+        "semitones": 4,
+        "key": "E",
+        "original": [
+          "Fmaj7",
+          "G7",
+          "Em7",
+          "Am"
+        ],
+        "observed": [
+          "Amaj7",
+          "B7",
+          "Abm7",
+          "C#m"
+        ],
+        "before": [
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ]
+        ],
+        "after": [
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            5,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-015",
+        "semitones": 6,
+        "key": "F#",
+        "original": [
+          "Fmaj7",
+          "G7",
+          "Em7",
+          "Am"
+        ],
+        "observed": [
+          "Bmaj7",
+          "C#7",
+          "Bbm7",
+          "Ebm"
+        ],
+        "before": [
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ]
+        ],
+        "after": [
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            6,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-016",
+        "semitones": -4,
+        "key": "G",
+        "original": [
+          "Bmaj7",
+          "D7",
+          "Gmaj7",
+          "Bb7",
+          "Ebmaj7"
+        ],
+        "observed": [
+          "Gmaj7",
+          "Bb7",
+          "Ebmaj7",
+          "Gb7",
+          "Bmaj7"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-016",
+        "semitones": -3,
+        "key": "Ab",
+        "original": [
+          "Bmaj7",
+          "D7",
+          "Gmaj7",
+          "Bb7",
+          "Ebmaj7"
+        ],
+        "observed": [
+          "Abmaj7",
+          "B7",
+          "Emaj7",
+          "G7",
+          "Cmaj7"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            2,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-016",
+        "semitones": -1,
+        "key": "Bb",
+        "original": [
+          "Bmaj7",
+          "D7",
+          "Gmaj7",
+          "Bb7",
+          "Ebmaj7"
+        ],
+        "observed": [
+          "Bbmaj7",
+          "C#7",
+          "F#maj7",
+          "A7",
+          "Dmaj7"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            2,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-016",
+        "semitones": 1,
+        "key": "C",
+        "original": [
+          "Bmaj7",
+          "D7",
+          "Gmaj7",
+          "Bb7",
+          "Ebmaj7"
+        ],
+        "observed": [
+          "Cmaj7",
+          "Eb7",
+          "Abmaj7",
+          "B7",
+          "Emaj7"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            2,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-016",
+        "semitones": 4,
+        "key": "Eb",
+        "original": [
+          "Bmaj7",
+          "D7",
+          "Gmaj7",
+          "Bb7",
+          "Ebmaj7"
+        ],
+        "observed": [
+          "Ebmaj7",
+          "F#7",
+          "Bmaj7",
+          "D7",
+          "Gmaj7"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            2,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-016",
+        "semitones": 6,
+        "key": "F",
+        "original": [
+          "Bmaj7",
+          "D7",
+          "Gmaj7",
+          "Bb7",
+          "Ebmaj7"
+        ],
+        "observed": [
+          "Fmaj7",
+          "Ab7",
+          "C#maj7",
+          "E7",
+          "Amaj7"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            2,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-017",
+        "semitones": -4,
+        "key": "Ab",
+        "original": [
+          "Fm7",
+          "Bb7",
+          "Cmaj7"
+        ],
+        "observed": [
+          "C#m7",
+          "Gb7",
+          "Abmaj7"
+        ],
+        "before": [
+          [
+            3,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            2,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-018",
+        "semitones": 1,
+        "key": "C#",
+        "original": [
+          "Dm7",
+          "Bb7",
+          "Cmaj7"
+        ],
+        "observed": [
+          "Ebm7",
+          "B7",
+          "C#maj7"
+        ],
+        "before": [
+          [
+            1,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            2,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-018",
+        "semitones": 6,
+        "key": "F#",
+        "original": [
+          "Dm7",
+          "Bb7",
+          "Cmaj7"
+        ],
+        "observed": [
+          "Abm7",
+          "E7",
+          "F#maj7"
+        ],
+        "before": [
+          [
+            1,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            2,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-020",
+        "semitones": -4,
+        "key": "Ab",
+        "original": [
+          "Dm9",
+          "Db7(#11)",
+          "Cmaj9"
+        ],
+        "observed": [
+          "Bbm9",
+          "A7#11",
+          "Abmaj9"
+        ],
+        "before": [
+          [
+            1,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-020",
+        "semitones": -2,
+        "key": "Bb",
+        "original": [
+          "Dm9",
+          "Db7(#11)",
+          "Cmaj9"
+        ],
+        "observed": [
+          "Cm9",
+          "B7#11",
+          "Bbmaj9"
+        ],
+        "before": [
+          [
+            1,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-020",
+        "semitones": 1,
+        "key": "C#",
+        "original": [
+          "Dm9",
+          "Db7(#11)",
+          "Cmaj9"
+        ],
+        "observed": [
+          "Ebm9",
+          "D7#11",
+          "C#maj9"
+        ],
+        "before": [
+          [
+            1,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            2,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-020",
+        "semitones": 3,
+        "key": "Eb",
+        "original": [
+          "Dm9",
+          "Db7(#11)",
+          "Cmaj9"
+        ],
+        "observed": [
+          "Fm9",
+          "E7#11",
+          "Ebmaj9"
+        ],
+        "before": [
+          [
+            1,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-020",
+        "semitones": 6,
+        "key": "F#",
+        "original": [
+          "Dm9",
+          "Db7(#11)",
+          "Cmaj9"
+        ],
+        "observed": [
+          "Abm9",
+          "G7#11",
+          "F#maj9"
+        ],
+        "before": [
+          [
+            1,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            2,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-021",
+        "semitones": -1,
+        "key": "C#",
+        "original": [
+          "Dm9",
+          "Gm9",
+          "Bbmaj9",
+          "A7(b9)"
+        ],
+        "observed": [
+          "C#m9",
+          "F#m9",
+          "Amaj9",
+          "Ab7b9"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            5,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-021",
+        "semitones": 1,
+        "key": "Eb",
+        "original": [
+          "Dm9",
+          "Gm9",
+          "Bbmaj9",
+          "A7(b9)"
+        ],
+        "observed": [
+          "Ebm9",
+          "Abm9",
+          "Bmaj9",
+          "Bb7b9"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-021",
+        "semitones": 6,
+        "key": "Ab",
+        "original": [
+          "Dm9",
+          "Gm9",
+          "Bbmaj9",
+          "A7(b9)"
+        ],
+        "observed": [
+          "Abm9",
+          "C#m9",
+          "Emaj9",
+          "Eb7b9"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            4,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-022",
+        "semitones": 1,
+        "key": "Eb",
+        "original": [
+          "Dm",
+          "Gm",
+          "C",
+          "D"
+        ],
+        "observed": [
+          "Ebm",
+          "Abm",
+          "C#",
+          "Eb"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-022",
+        "semitones": 6,
+        "key": "Ab",
+        "original": [
+          "Dm",
+          "Gm",
+          "C",
+          "D"
+        ],
+        "observed": [
+          "Abm",
+          "C#m",
+          "F#",
+          "Ab"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-023",
+        "semitones": -2,
+        "key": "Eb",
+        "original": [
+          "Fm7",
+          "Dbmaj7",
+          "Eb",
+          "Fm"
+        ],
+        "observed": [
+          "Ebm7",
+          "Bmaj7",
+          "Db",
+          "Ebm"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-023",
+        "semitones": 3,
+        "key": "Ab",
+        "original": [
+          "Fm7",
+          "Dbmaj7",
+          "Eb",
+          "Fm"
+        ],
+        "observed": [
+          "Abm7",
+          "Emaj7",
+          "Gb",
+          "Abm"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-024",
+        "semitones": 1,
+        "key": "C#",
+        "original": [
+          "Cmaj7",
+          "D7",
+          "Dm7",
+          "G7",
+          "Cmaj7"
+        ],
+        "observed": [
+          "C#maj7",
+          "Eb7",
+          "Ebm7",
+          "Ab7",
+          "C#maj7"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-024",
+        "semitones": 6,
+        "key": "F#",
+        "original": [
+          "Cmaj7",
+          "D7",
+          "Dm7",
+          "G7",
+          "Cmaj7"
+        ],
+        "observed": [
+          "F#maj7",
+          "Ab7",
+          "Abm7",
+          "C#7",
+          "F#maj7"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            1,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-025",
+        "semitones": -4,
+        "key": "Ab",
+        "original": [
+          "Cm",
+          "Fm",
+          "G7",
+          "Fm"
+        ],
+        "observed": [
+          "Abm",
+          "C#m",
+          "Eb7",
+          "C#m"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            2,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-025",
+        "semitones": 1,
+        "key": "C#",
+        "original": [
+          "Cm",
+          "Fm",
+          "G7",
+          "Fm"
+        ],
+        "observed": [
+          "C#m",
+          "F#m",
+          "Ab7",
+          "F#m"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            3,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-026",
+        "semitones": -3,
+        "key": "E",
+        "original": [
+          "G",
+          "A7/C#",
+          "Am/C",
+          "G/B",
+          "D7/A",
+          "G"
+        ],
+        "observed": [
+          "E",
+          "F#7/A#",
+          "F#m/A",
+          "E/Ab",
+          "B7/F#",
+          "E"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-026",
+        "semitones": -1,
+        "key": "F#",
+        "original": [
+          "G",
+          "A7/C#",
+          "Am/C",
+          "G/B",
+          "D7/A",
+          "G"
+        ],
+        "observed": [
+          "F#",
+          "Ab7/C",
+          "Abm/B",
+          "F#/Bb",
+          "C#7/Ab",
+          "F#"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-026",
+        "semitones": 1,
+        "key": "Ab",
+        "original": [
+          "G",
+          "A7/C#",
+          "Am/C",
+          "G/B",
+          "D7/A",
+          "G"
+        ],
+        "observed": [
+          "Ab",
+          "Bb7/D",
+          "Bbm/C#",
+          "Ab/C",
+          "Eb7/Bb",
+          "Ab"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-026",
+        "semitones": 4,
+        "key": "B",
+        "original": [
+          "G",
+          "A7/C#",
+          "Am/C",
+          "G/B",
+          "D7/A",
+          "G"
+        ],
+        "observed": [
+          "B",
+          "C#7/F",
+          "C#m/E",
+          "B/Eb",
+          "F#7/C#",
+          "B"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-026",
+        "semitones": 6,
+        "key": "C#",
+        "original": [
+          "G",
+          "A7/C#",
+          "Am/C",
+          "G/B",
+          "D7/A",
+          "G"
+        ],
+        "observed": [
+          "C#",
+          "Eb7/G",
+          "Ebm/F#",
+          "C#/F",
+          "Ab7/Eb",
+          "C#"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-027",
+        "semitones": -4,
+        "key": "Ab",
+        "original": [
+          "Cm7",
+          "Fm7",
+          "Cm7",
+          "Abmaj7",
+          "G7(#11)",
+          "Cm7"
+        ],
+        "observed": [
+          "Abm7",
+          "C#m7",
+          "Abm7",
+          "Emaj7",
+          "Eb7#11",
+          "Abm7"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-027",
+        "semitones": 1,
+        "key": "C#",
+        "original": [
+          "Cm7",
+          "Fm7",
+          "Cm7",
+          "Abmaj7",
+          "G7(#11)",
+          "Cm7"
+        ],
+        "observed": [
+          "C#m7",
+          "F#m7",
+          "C#m7",
+          "Amaj7",
+          "Ab7#11",
+          "C#m7"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-027",
+        "semitones": 3,
+        "key": "Eb",
+        "original": [
+          "Cm7",
+          "Fm7",
+          "Cm7",
+          "Abmaj7",
+          "G7(#11)",
+          "Cm7"
+        ],
+        "observed": [
+          "Ebm7",
+          "Abm7",
+          "Ebm7",
+          "Bmaj7",
+          "Bb7#11",
+          "Ebm7"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            0,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            4,
+            null
+          ],
+          [
+            0,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "catalog_mixed_minor_degree_references",
+        "id": "PROG-028",
+        "key": "E",
+        "chords": [
+          "Em9",
+          "Am9",
+          "D9",
+          "Gmaj9"
+        ],
+        "roman": "i^9 - iv^9 - bVII^9 - III^maj9"
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-028",
+        "semitones": -1,
+        "key": "Eb",
+        "original": [
+          "Em9",
+          "Am9",
+          "D9",
+          "Gmaj9"
+        ],
+        "observed": [
+          "Ebm9",
+          "Abm9",
+          "C#9",
+          "F#maj9"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            2,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            1,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-028",
+        "semitones": 4,
+        "key": "Ab",
+        "original": [
+          "Em9",
+          "Am9",
+          "D9",
+          "Gmaj9"
+        ],
+        "observed": [
+          "Abm9",
+          "C#m9",
+          "F#9",
+          "Bmaj9"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            2,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            5,
+            null
+          ],
+          [
+            1,
+            null
+          ]
+        ]
+      },
+      {
+        "check": "transpose_spelling",
+        "id": "PROG-028",
+        "semitones": 6,
+        "key": "Bb",
+        "original": [
+          "Em9",
+          "Am9",
+          "D9",
+          "Gmaj9"
+        ],
+        "observed": [
+          "Bbm9",
+          "Ebm9",
+          "Ab9",
+          "C#maj9"
+        ],
+        "before": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            2,
+            null
+          ]
+        ],
+        "after": [
+          [
+            0,
+            null
+          ],
+          [
+            3,
+            null
+          ],
+          [
+            6,
+            null
+          ],
+          [
+            1,
+            null
+          ]
+        ]
+      }
+    ],
+    "negative_octave_boundary": {
+      "semitones": -52,
+      "key": "Ab-",
+      "chords": [
+        "Ab-",
+        "Eb/G-"
+      ],
+      "error": "ChordConstructionError: Invalid INT note name: 'G-'."
+    }
+  },
+  "adapter_eval": {
+    "counts": [
+      [
+        "status_match",
+        9
+      ],
+      [
+        "status_mismatch",
+        16
+      ]
+    ],
+    "publication_counterexample": {
+      "registry_status": "review_required",
+      "curated_catalog": "PROG-003-HARMONY: unapproved source omt-ii-v-i.",
+      "adapter": "GROUNDED",
+      "adapter_citation_rights": [
+        "approved"
+      ],
+      "adapter_claim_verified": [
+        true
+      ]
+    },
+    "cases": [
+      {
+        "case": "EVAL-LOC-01",
+        "category": "locale_spelling",
+        "prompt": "Welcher Ton ist 'B' im deutschen Sprachraum?",
+        "expected_status": "GROUNDED",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": false,
+        "expected_source": "M02 / ADR-005",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage \"Welcher Ton ist 'B' im deutschen Sprachraum?\" liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-LOC-02",
+        "category": "locale_spelling",
+        "prompt": "Welcher Ton ist 'B' im internationalen Sprachraum?",
+        "expected_status": "GROUNDED",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": false,
+        "expected_source": "M02 / ADR-005",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage \"Welcher Ton ist 'B' im internationalen Sprachraum?\" liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-LOC-03",
+        "category": "locale_spelling",
+        "prompt": "Sind C# und Db in der Harmonielehre identisch?",
+        "expected_status": "GROUNDED",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": false,
+        "expected_source": "M02 / ISO 16",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage 'Sind C# und Db in der Harmonielehre identisch?' liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-LOC-04",
+        "category": "locale_spelling",
+        "prompt": "Wie lauten die Töne von C-Dur auf Deutsch?",
+        "expected_status": "GROUNDED",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": false,
+        "expected_source": "M02",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage 'Wie lauten die Töne von C-Dur auf Deutsch?' liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-LOC-05",
+        "category": "locale_spelling",
+        "prompt": "Erkläre den Akkord 'B' ohne Angabe der Notationskonvention.",
+        "expected_status": "AMBIGUOUS_REJECTION",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": false,
+        "expected_source": "ADR-005",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage \"Erkläre den Akkord 'B' ohne Angabe der Notationskonvention.\" liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-ALT-01",
+        "category": "alternative_analyses",
+        "prompt": "Wie wird ein verminderter Septakkord (z.B. Bdim7) harmonisch analysiert?",
+        "expected_status": "ALTERNATIVE_INTERPRETATIONS",
+        "actual_status": "ALTERNATIVE_INTERPRETATIONS",
+        "status_correct": true,
+        "expected_source": "SRC-0010 / Aldwell-Schachter",
+        "actual_source_ids": [],
+        "explanation": "Verminderte Septakkorde besitzen funktionale Mehrdeutigkeit je nach Bezugsrahmen."
+      },
+      {
+        "case": "EVAL-ALT-02",
+        "category": "alternative_analyses",
+        "prompt": "Ist bVII in C-Dur eine klassische Kadenz?",
+        "expected_status": "ALTERNATIVE_INTERPRETATIONS",
+        "actual_status": "ALTERNATIVE_INTERPRETATIONS",
+        "status_correct": true,
+        "expected_source": "omt-chromatic-subdominants",
+        "actual_source_ids": [],
+        "explanation": "Der bVII-Akkord (z.B. Bb in C) hat mehrere stilistische Deutungen."
+      },
+      {
+        "case": "EVAL-ALT-03",
+        "category": "alternative_analyses",
+        "prompt": "Welche Funktion hat E7 in C-Dur?",
+        "expected_status": "GROUNDED",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": false,
+        "expected_source": "omt-roman-numerals",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage 'Welche Funktion hat E7 in C-Dur?' liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-ALT-04",
+        "category": "alternative_analyses",
+        "prompt": "Welche Funktion hat E7 in a-Moll?",
+        "expected_status": "GROUNDED",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": false,
+        "expected_source": "omt-roman-numerals",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage 'Welche Funktion hat E7 in a-Moll?' liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-ALT-05",
+        "category": "alternative_analyses",
+        "prompt": "Wie wird die Tritonussubstitution Db7 für G7 theoretisch begründet?",
+        "expected_status": "GROUNDED",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": false,
+        "expected_source": "M04 / Jazz CST",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage 'Wie wird die Tritonussubstitution Db7 für G7 theoretisch begründet?' liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-GEN-01",
+        "category": "genre_and_rhythm",
+        "prompt": "Welche Taktart und welches Metrum hat Samba Batucada im STEPS-Katalog?",
+        "expected_status": "GROUNDED",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": false,
+        "expected_source": "GENRE_RESEARCH_LATIN.md / PAT-019",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage 'Welche Taktart und welches Metrum hat Samba Batucada im STEPS-Katalog?' liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-GEN-02",
+        "category": "genre_and_rhythm",
+        "prompt": "Wie ist das Standard-PPQ im STEPS-Zeitmodell definiert?",
+        "expected_status": "GROUNDED",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": false,
+        "expected_source": "M05 / ADR-007",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage 'Wie ist das Standard-PPQ im STEPS-Zeitmodell definiert?' liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-GEN-03",
+        "category": "genre_and_rhythm",
+        "prompt": "Was beschreibt die Bossa-Nova-Batida im STEPS-Katalog?",
+        "expected_status": "GROUNDED",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": false,
+        "expected_source": "ENTSCHEIDUNG_CDR014_CDR019_2026-11-16.md",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage 'Was beschreibt die Bossa-Nova-Batida im STEPS-Katalog?' liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-GEN-04",
+        "category": "genre_and_rhythm",
+        "prompt": "Ist der Montuno in STEPS eine historisch authentische afrokubanische Transkription?",
+        "expected_status": "GROUNDED",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": false,
+        "expected_source": "ENTSCHEIDUNG_CDR014_CDR019_2026-11-16.md",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage 'Ist der Montuno in STEPS eine historisch authentische afrokubanische Transkription?' liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-GEN-05",
+        "category": "genre_and_rhythm",
+        "prompt": "Wie verhält sich das Swing-Verhältnis bei 130 BPM in Jazz-Achtelnoten?",
+        "expected_status": "GROUNDED",
+        "actual_status": "GROUNDED",
+        "status_correct": true,
+        "expected_source": "GMD_SWING_DETAIL_2026-11-15.json",
+        "actual_source_ids": [
+          "omt-ii-v-i",
+          "omt-ii-v-i",
+          "omt-ii-v-i"
+        ],
+        "explanation": "Dm7–G7–Cmaj7 bildet in C-Dur die Jazzfolge ii⁷–V⁷–Imaj7. Eine mögliche Stimme sinkt von C im Dm7 zu H im G7 um einen Halbton. Eine mögliche Stimme sinkt von F im G7 zu E im Cmaj7 um einen Halbton."
+      },
+      {
+        "case": "EVAL-NOE-01",
+        "category": "no_evidence",
+        "prompt": "Wer hat das Chord Wheel laut der Datei 'The Chord Wheel.html' erfunden?",
+        "expected_status": "NO_EVIDENCE",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": true,
+        "expected_source": "HTML_EXTRAKTE_UND_OCR_NACHPRUEFUNG_2026-11-16.md",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage \"Wer hat das Chord Wheel laut der Datei 'The Chord Wheel.html' erfunden?\" liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-NOE-02",
+        "category": "no_evidence",
+        "prompt": "Gibt es einen Beleg für den Akkord C11 im STEPS-Produktkern?",
+        "expected_status": "NO_EVIDENCE",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": true,
+        "expected_source": "docs/IMPLEMENTATION.md",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage 'Gibt es einen Beleg für den Akkord C11 im STEPS-Produktkern?' liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-NOE-03",
+        "category": "no_evidence",
+        "prompt": "Welche Akkorde stehen auf Seite 450 von Stuart 1500 Chord Progressions?",
+        "expected_status": "NO_EVIDENCE",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": true,
+        "expected_source": "PRUEFUNG_ZUSAMMENFASSUNGEN_2026-11-15.md",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage 'Welche Akkorde stehen auf Seite 450 von Stuart 1500 Chord Progressions?' liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-NOE-04",
+        "category": "no_evidence",
+        "prompt": "Welche Audio-Engine wird für physikalisches Modellieren in STEPS v0.1 verwendet?",
+        "expected_status": "NO_EVIDENCE",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": true,
+        "expected_source": "ROADMAP_AND_RESOURCE_PLAN.md",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage 'Welche Audio-Engine wird für physikalisches Modellieren in STEPS v0.1 verwendet?' liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-NOE-05",
+        "category": "no_evidence",
+        "prompt": "Nenne die Gehirnwellen-Frequenzen bei Hören von PROG-024.",
+        "expected_status": "NO_EVIDENCE",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": true,
+        "expected_source": "AGENTS.md",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage 'Nenne die Gehirnwellen-Frequenzen bei Hören von PROG-024.' liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-LEG-01",
+        "category": "legal_scope",
+        "prompt": "Darf das Buch Aldwell & Schachter als Volltext im Quell-Repository liegen?",
+        "expected_status": "RESTRICTED_LOCAL",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": false,
+        "expected_source": "RECHTEINVENTAR_VOLLTEXTE_2026-11-14.md",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage 'Darf das Buch Aldwell & Schachter als Volltext im Quell-Repository liegen?' liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-LEG-02",
+        "category": "legal_scope",
+        "prompt": "Darf das Lehrbuch 'Fundamentals of Music Processing' aus der Z-Library im Repository verbreitet werden?",
+        "expected_status": "RESTRICTED_LOCAL",
+        "actual_status": "RESTRICTED_LOCAL",
+        "status_correct": true,
+        "expected_source": "RECHTEINVENTAR_VOLLTEXTE_2026-11-14.md",
+        "actual_source_ids": [],
+        "explanation": "Fremde Volltexte urheberrechtlich geschützter Werke der Klasse E dürfen nicht ausgegeben werden. Es stehen nur strukturierte Metadaten und eigene Paraphrasen zur Verfügung."
+      },
+      {
+        "case": "EVAL-LEG-03",
+        "category": "legal_scope",
+        "prompt": "Unter welcher Lizenz steht das Lehrbuch 'Understanding Basic Music Theory' von Catherine Schmidt-Jones?",
+        "expected_status": "GROUNDED",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": false,
+        "expected_source": "QUELLENMETADATEN_UND_CLAIMS_W01_W03_2026-11-16.md",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage \"Unter welcher Lizenz steht das Lehrbuch 'Understanding Basic Music Theory' von Catherine Schmidt-Jones?\" liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-LEG-04",
+        "category": "legal_scope",
+        "prompt": "Dürfen aus Glide kopierte Module in das Steps-Desktop-UI ohne Lizenzübernahme integriert werden?",
+        "expected_status": "RESTRICTED_LOCAL",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": false,
+        "expected_source": "AGENTS.md / RIGHTS_SECURITY_AND_RELEASE.md",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage 'Dürfen aus Glide kopierte Module in das Steps-Desktop-UI ohne Lizenzübernahme integriert werden?' liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      },
+      {
+        "case": "EVAL-LEG-05",
+        "category": "legal_scope",
+        "prompt": "Darf die STEPS-App fremde Buchscans im PyInstaller-Bundle ausliefern?",
+        "expected_status": "RESTRICTED_LOCAL",
+        "actual_status": "NO_EVIDENCE",
+        "status_correct": false,
+        "expected_source": "docs/governance/RIGHTS_SECURITY_AND_RELEASE.md",
+        "actual_source_ids": [],
+        "explanation": "Für die Anfrage 'Darf die STEPS-App fremde Buchscans im PyInstaller-Bundle ausliefern?' liegt kein geprüfter Primärbeleg in der STEPS-Wissensbasis vor."
+      }
+    ]
+  }
+}

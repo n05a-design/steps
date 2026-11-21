@@ -4,6 +4,7 @@ Diese Unterlagen belegen Prüfungen zu ihren jeweiligen Ausgangsständen.
 
 | Einstieg | Inhalt |
 | --- | --- |
+| [Gesamtaudit 21.11.2026](2026-11-21/README.md) | Git-Baum, Musikbefunde, Skill-Gegenproben und ausstehende Wissensabnahme. |
 | [Fable 5.2](fable-5.2/README.md) | Nachprüfung, Maßnahmen, Quellenbelege und Hörmaterial. |
 | [V2-Methodik](00_GESAMTBEWERTUNG_UND_METHODIK.md) | Ausgangsfragen und Vorgehen. |
 | [Befunde und Widersprüche](02_KORREKTUREN_UND_WIDERSPRUECHE.md) | Korrekturen und Befundlage. |
