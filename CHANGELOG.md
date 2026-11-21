@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Das Akkordmenü dupliziert Ereignisse an ihrem Ende oder teilt sie in der Mitte. Beide Aktionen unterstützen Tastenkürzel in der Progressionsliste, Undo und Redo.
+
 - Der Timing-Editor akzeptiert den Start in Takt, Zählzeit und Tick oder als absoluten Tickwert. Fehler markieren das betroffene Eingabefeld. Escape stellt die gültigen Werte wieder her.
 - Rationale Zeitumrechnungen bleiben auch bei sehr großen Tickpositionen exakt.
 
