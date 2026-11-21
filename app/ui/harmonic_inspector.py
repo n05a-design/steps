@@ -7,7 +7,7 @@ from typing import Literal
 
 from src.steps.theory.chord import parse_chord
 from src.steps.theory.pitch import NoteSpelling
-from src.steps.theory.scale import construct_scale
+from src.steps.theory.scale import SCALE_TEMPLATES, construct_scale
 
 
 def _note_name(note: NoteSpelling, convention: Literal["INT", "DE"]) -> str:
@@ -22,30 +22,30 @@ def format_chord_analysis(
     chord = parse_chord(chord_name, convention=convention)
     voicing = chord.to_voicing(bass_octave=3, voicing_type="CLOSE")
 
-    quality = chord.quality.lower()
-    if "maj" in quality:
-        candidates = ("IONIAN", "LYDIAN")
-    elif "m7b5" in quality or "ø" in quality:
-        candidates = ("LOCRIAN",)
-    elif "m" in quality:
-        candidates = ("DORIAN", "AEOLIAN")
-    elif "7" in quality:
-        candidates = ("MIXOLYDIAN",)
-    else:
-        candidates = ("IONIAN",)
+    required = chord.pitch_class_set
+    if chord.bass is not None:
+        required.add(int(chord.bass.pitch_class))
+    root = int(chord.root.pitch_class)
+    candidates = [
+        template for template in SCALE_TEMPLATES.values()
+        if required <= {(root + interval) % 12 for interval in template.intervals}
+    ]
 
+    quality = chord.quality or translate("chord.quality.major")
     lines = [
         translate("chord.analysis.title", chord=chord_name),
         "=" * 50,
         f"{translate('chord.root')}: {_note_name(chord.root, convention)} "
         f"({translate('chord.pitch_class')} {int(chord.root.pitch_class)})",
-        f"{translate('chord.quality')}: {chord.quality}",
+        f"{translate('chord.quality')}: {quality}",
         f"{translate('chord.intervals')}: {chord.theoretical_intervals}",
         f"{translate('chord.voicing')}: {voicing.midi_notes}",
         "",
         translate("scales.heading"),
         "-" * 50,
     ]
+    if not candidates:
+        lines.append(translate("scales.none"))
     for candidate in candidates:
         scale = construct_scale(chord.root, candidate)
         notes = " - ".join(_note_name(note, convention) for note in scale.spellings)
