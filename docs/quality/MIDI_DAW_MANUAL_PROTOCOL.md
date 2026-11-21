@@ -1,41 +1,21 @@
 # Manual Independent DAW MIDI Import Protocol
 
-**Status:** Proposed manual acceptance protocol. No DAW import is currently evidenced.
+**Status:** Ready for manual import testing. Results are recorded below.
 
 ## Fixture set
 
-Generate the fixtures from the repository root. They use the input definitions
-in [the Golden tests](../../tests/test_midi_golden_fixtures.py).
+Run from the repository root. The generator accepts a new directory and
+writes six synthetic files and a SHA-256 manifest.
 
 ```sh
-fixtures=$(mktemp -d)
-python3 -B - "$fixtures" <<'PY'
-from pathlib import Path
-import sys
-
-from src.steps.midi import MidiFile
-from src.steps.midi.export_service import MidiExportService
-from src.steps.progression.session import ProgressionSession
-from tests.test_midi_golden_fixtures import GOLDEN_PROGRESSIONS, TestMidiGoldenFixtures
-
-out = Path(sys.argv[1])
-cadence, timeline = (
-    next(item for item in GOLDEN_PROGRESSIONS if item["id"].startswith(prefix))
-    for prefix in ("GOLD_01_", "GOLD_09_")
-)
-session = ProgressionSession(initial_chords=cadence["chords"])
-for mode in (0, 1):
-    session.export_midi_file(out / f"GOLD_01_ADR017_Format{mode}.mid", smf_format=mode)
-project = TestMidiGoldenFixtures()._build_project_from_golden(timeline)
-path = out / "GOLD_09_Project_Format1.mid"
-MidiExportService.export_project_to_smf(project, path, smf_format=1)
-probe = MidiFile.from_bytes(path.read_bytes())
-probe.tracks[0].add_time_signature(1920, 3, 4)
-probe.tracks[0].add_time_signature(3360, 4, 4)
-probe.save(out / "GOLD_09_Meter_Import_Probe.mid")
-PY
-shasum -a 256 "$fixtures"/*.mid
+work=$(mktemp -d)
+python3 -B -m scripts.generate_midi_daw_fixtures "$work/fixtures"
+(cd "$work/fixtures" && shasum -a 256 -c SHA256SUMS)
 ```
+
+The automated [Golden tests](../../tests/test_midi_golden_fixtures.py)
+verify that the Format 1 cadence matches the pinned Golden hash and that the
+tempo fixture matches the reference project export. All fixtures use PPQ 480.
 
 | Fixture | Expected observations |
 |---|---|
@@ -43,8 +23,15 @@ shasum -a 256 "$fixtures"/*.mid
 | `GOLD_01_ADR017_Format1.mid` | Same timing and notes, with Conductor, Chords (16 notes) and Bass (4 notes). |
 | `GOLD_09_Project_Format1.mid` | PPQ 480, tempo 120 → 90 → 120 at ticks 0, 1920 and 3360, and 12 chord notes. The project exporter writes the initial 4/4 signature. |
 | `GOLD_09_Meter_Import_Probe.mid` | The separate import probe explicitly adds 3/4 at tick 1920 and 4/4 at tick 3360. This checks the DAW's handling of meter changes independently of the STEPS project export contract. |
+| `ADR017_Overlap_Format0.mid` and `ADR017_Overlap_Format1.mid` | Two C-major events start on beat 1 and beat 3 of bar 1. Each of the five channel/pitch pairs has note-ons at ticks 0 and 960 and note-offs at ticks 1910 and 2870. Format 0 combines the events. Format 1 separates Chords (channel 1) and Bass (channel 2). |
 
 ## Required observations
+
+Use a fresh empty document for each fixture. Import at the project start
+and capture the import settings and any tempo or meter prompt. If the DAW
+offers to import the tempo map, accept it for the tempo and meter cases.
+Check the arrangement timeline and note editor. Compare the musical beat
+positions if the DAW uses a different internal tick resolution.
 
 For each named DAW/application and version:
 
@@ -52,18 +39,29 @@ For each named DAW/application and version:
 - PPQ or project time is displayed consistently.
 - Note count matches the exported event count.
 - No hanging notes or missing note-off events remain.
-- Tempo points occur at the expected bars/ticks.
+- Tempo points occur at the expected beats. In the tempo-only export the
+  120 BPM return is at bar 2, beat 4. With the meter probe it is at bar 3, beat 1.
 - Meter changes appear at the expected positions.
 - MIDI channel and track structure match the documented export settings.
 - Exported enharmonic spelling is not claimed as preserved by MIDI.
 
+For the overlap probes, record the imported note starts and ends, whether
+the DAW truncates or merges any notes, and whether playback stops cleanly.
+Keep any observed import conversion tied to the DAW version and SMF format.
+
 ## Result recording
 
-Record only one of:
+Record one status per application, version and fixture:
 
 - `PASS` with application name, application version, OS, fixture SHA-256, date,
   reviewer, and screen or log evidence.
 - `FAIL` with a concrete discrepancy and fixture.
 - `NOT_RUN` with a reason.
 
-Do not infer DAW acceptance from automated SMF parsing or loss-report tests.
+Automated fixture decoding is a separate validation step. DAW acceptance
+requires an observed import.
+
+| Date | Application | Host | Fixtures | Status | Observation |
+|---|---|---|---|---|---|
+| 2026-11-21 | Ableton Live 11 Standard 11.3.43 | macOS 27.2.1 | All six | `NOT_RUN` | App launch timed out through Computer Use. Finder reported an AppleEvent timeout (`-1712`). No import window was available. |
+| 2026-11-21 | Ableton Live 12 Beta 12.3.5b2 | macOS 27.2.1 | All six | `NOT_RUN` | App launch timed out through Computer Use. No import window was available. |
