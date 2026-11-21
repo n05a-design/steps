@@ -752,6 +752,7 @@ class StepsMainWindow:
         )
         self.event_start_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.event_start_entry.bind("<Return>", self._on_event_timing_shortcut)
+        self.event_start_entry.bind("<Escape>", self._on_reset_event_timing)
 
         self.event_duration_lbl = tk.Label(
             self.timing_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
@@ -766,6 +767,7 @@ class StepsMainWindow:
         )
         self.event_duration_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.event_duration_entry.bind("<Return>", self._on_event_timing_shortcut)
+        self.event_duration_entry.bind("<Escape>", self._on_reset_event_timing)
 
         self.event_timing_btn = create_button(
             self.timing_bar,
@@ -973,6 +975,10 @@ class StepsMainWindow:
         self._on_apply_event_timing()
         return "break"
 
+    def _on_reset_event_timing(self, _event: tk.Event) -> str:
+        self._load_event_timing_controls(self._selected_chord_index())
+        return "break"
+
     def _parse_event_start(self, text: str) -> int:
         fields = text.split(":")
         if len(fields) == 1:
@@ -1023,6 +1029,9 @@ class StepsMainWindow:
             self._show_event_timing_error(self.event_duration_entry, t("event.duration.invalid"))
             return
 
+        if session.get_chord_event_timing(index) == (start_tick, duration_ticks):
+            self._load_event_timing_controls(index)
+            return
         self.controller.set_chord_event_timing(index, start_tick, duration_ticks)
         self._refresh_all(preserve_selection=True)
 

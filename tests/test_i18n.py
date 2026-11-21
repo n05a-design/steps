@@ -633,6 +633,27 @@ class TestDesktopChordEditing(unittest.TestCase):
         self.assertIn("1:6:120 · 240 ticks", window.chord_listbox.items[1])
         self.assertEqual(session.get_chord_event_timing(0), (0, 1920))
 
+    def test_reset_and_equivalent_timing_keep_project_revision_and_undo(self):
+        window = self.make_window(["C", "G"])
+        window.chord_listbox.selection = (1,)
+        before = window.controller.session.state
+        revision = window.controller.revision
+        window.event_start_entry.value = "unfinished"
+        window.event_duration_entry.value = "100"
+
+        self.assertEqual(window._on_reset_event_timing(SimpleNamespace()), "break")
+        self.assertEqual(window.event_start_entry.get(), "2:1:0")
+        self.assertEqual(window.event_duration_entry.get(), "1920")
+
+        window.event_start_entry.value = "1920"
+        window.next_chord_panel.reset_mock()
+        window._on_apply_event_timing()
+        self.assertEqual(window.event_start_entry.get(), "2:1:0")
+        self.assertEqual(window.controller.session.state, before)
+        self.assertEqual(window.controller.revision, revision)
+        self.assertFalse(window.controller.session.can_undo)
+        window.next_chord_panel.clear.assert_not_called()
+
     def test_session_midi_export_uses_event_specific_timing(self):
         session = ProgressionSession(initial_chords=["C", "G"])
         session.set_chord_event_timing(0, 240, 960)

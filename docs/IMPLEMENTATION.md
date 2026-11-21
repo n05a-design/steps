@@ -123,7 +123,13 @@ Stimmführungsdetails sind per Tab erreichbar und mit Bild auf und Bild ab
 scrollbar.
 
 Die Progressionsliste zeigt zu jedem Akkord den Start in Takt, Zählzeit und
-Tick sowie die Dauer in Ticks. Beim Hinzufügen und Verschieben scrollt die
+Tick sowie die Dauer in Ticks. Im Startfeld lässt sich alternativ eine
+absolute Tickzahl ab null eingeben. Nach dem Übernehmen erscheint wieder
+Takt:Zählzeit:Tick. Startfehler nennen die Grenzen der aktuellen Taktart.
+Start- oder Dauerfehler wählen den Inhalt des betroffenen Feldes zur
+Korrektur aus. Escape in einem der Timing-Felder stellt beide gespeicherten
+Werte wieder her. Eine erneute Eingabe derselben Werte ändert die Historie
+und den aktiven Akkordvorschlag nicht. Beim Hinzufügen und Verschieben scrollt die
 Liste zur ausgewählten Zeile. In der fokussierten Liste verschieben
 Wahltaste+Auf/Ab (macOS) oder Alt+Auf/Ab (Windows/Linux) das Akkordereignis
 um eine Zeile. Sein absoluter Start und seine Dauer bleiben am Ereignis.
