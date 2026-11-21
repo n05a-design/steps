@@ -24,7 +24,7 @@ example's links, edits a chord, applies a
 recommendation, checks MIDI range and signed voice-motion details in both style previews,
 selects a shared chord event from the selector, with Left/Right keys or
 by clicking a note,
-zooms both tick axes in sync, checks visible note bounds and returns to the
+zooms both tick axes in sync with the keyboard, checks visible note bounds and returns to the
 full overview, verifies that these actions leave project state unchanged,
 applies a style, and exports Format 0 after
 checking the disabled voicing modes. The recommendation path runs at the
