@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Require an explicit supported baseline schema and a single active, exact
+  correction per ID. Use the correction consistently across catalog fields.
+- Bind version 3 backups to the register path and local worktree identity.
+  Report evidence field completeness independently of restore scope.
+- Read release report revisions and cleanliness from the STEPS checkout.
+
 - Bind extracted candidates to the actual source bytes and provide
   machine-readable intake and register reports.
 - Stop command chains on failure and align canonical Python and CLI checks.
