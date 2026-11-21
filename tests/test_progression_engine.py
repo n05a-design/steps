@@ -12,6 +12,7 @@ Validates:
 
 import unittest
 
+from src.steps.progression import ProgressionSession
 from src.steps.theory.pitch import NoteSpelling, PitchClass
 from src.steps.theory.chord import ChordDefinition, Voicing
 from src.steps.progression.voice_leading import VoiceLeadingStyle, detect_voice_crossing
@@ -95,12 +96,24 @@ class TestPreservedProgressions21And28(unittest.TestCase):
     def test_prog_028_preservation(self):
         p28 = get_progression('PROG-028')
         self.assertEqual(p28.name, 'Circle of Fifths Soul Cycle')
-        self.assertEqual(p28.roman_numerals, 'i^9 - iv^9 - bVII^9 - III^maj9')
+        self.assertEqual(p28.roman_numerals, 'i^9 - iv^9 - VII^9 - III^maj9')
         self.assertEqual(p28.default_key, 'Em')
         self.assertEqual(p28.chords_str, 'Em9 - Am9 - D9 - Gmaj9')
 
         chords = p28.chord_definitions
         self.assertEqual(len(chords), 4)
+
+        degrees = p28.roman_numerals.split(' - ')
+        self.assertEqual(
+            [resolve_roman_degree(degree, 'E', True, convention='INT', minor_accidentals='natural_minor').symbol
+             for degree in degrees],
+            [chord.symbol for chord in chords],
+        )
+        session = ProgressionSession([chord.symbol for chord in chords], key_root='E', is_minor=True)
+        self.assertEqual(
+            [session.harmonic_degree_at(index) for index in range(len(chords))],
+            [degree.replace('^', '') for degree in degrees],
+        )
 
         # Em9: E(4), G(7), B(11), D(2), F#(6)
         self.assertEqual(chords[0].symbol, 'Em9')
