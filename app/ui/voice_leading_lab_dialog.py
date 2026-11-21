@@ -34,6 +34,8 @@ def format_voice_leading_profile(
     chords: tuple[str, ...],
     active_style: VoiceLeadingStyle,
     translate: Callable[..., str],
+    *,
+    focused_event: int | None = None,
 ) -> str:
     labels = {
         style.value: translate(label_key)
@@ -56,29 +58,50 @@ def format_voice_leading_profile(
     pitches = [note for voicing in profile.midi_notes for note in voicing]
     if pitches:
         lines.append(translate("voice.lab.register", low=min(pitches), high=max(pitches)))
+    comparable = sum(item.semitone_distance_to_next is not None for item in profile.transitions[:-1])
+    total = max(0, len(profile.transitions) - 1)
+    if comparable == 0:
+        total_key = "voice.lab.total.unavailable"
+    else:
+        total_key = "voice.lab.total" if comparable == total else "voice.lab.total.partial"
     lines.extend((
-        translate("voice.lab.total", movement=profile.total_movement),
+        translate(total_key, movement=profile.total_movement, matched=comparable, total=total),
         translate("voice.lab.disclaimer"),
         "",
     ))
-    for index, transition in enumerate(profile.transitions[:-1]):
-        distance = transition.semitone_distance_to_next
-        from_chord, to_chord = chords[index:index + 2]
-        if distance is None:
-            lines.append(translate(
-                "voice.lab.transition.unmatched", from_chord=from_chord, to_chord=to_chord,
-            ))
-            continue
-        lines.append(
-            translate(
-                "voice.lab.transition",
-                from_chord=from_chord,
-                to_chord=to_chord,
-                distance=distance,
-                warnings=len(transition.voice_leading_warnings),
-            )
-        )
-        start, end = profile.midi_notes[index:index + 2]
+    if focused_event is not None and 0 <= focused_event < len(chords):
+        focus = [translate("voice.lab.focus.event", chord=chords[focused_event], number=focused_event + 1)]
+        if focused_event < len(chords) - 1:
+            focus.extend(_format_transition(profile, chords, focused_event, translate))
+            completed = [
+                item.semitone_distance_to_next for item in profile.transitions[:focused_event + 1]
+                if item.semitone_distance_to_next is not None
+            ]
+            if completed and len(completed) == focused_event + 1:
+                focus.append(translate("voice.lab.focus.cumulative", movement=sum(completed)))
+        else:
+            focus.append(translate("voice.lab.focus.last"))
+        lines = [*focus, "", *lines, translate("voice.lab.transitions"), ""]
+    for index in range(len(profile.transitions) - 1):
+        lines.extend(_format_transition(profile, chords, index, translate))
+    return "\n".join(lines)
+
+
+def _format_transition(
+    profile: VoiceLeadingStyleProfile, chords: tuple[str, ...], index: int, translate: Callable[..., str],
+) -> list[str]:
+    transition = profile.transitions[index]
+    distance = transition.semitone_distance_to_next
+    from_chord, to_chord = chords[index:index + 2]
+    start, end = profile.midi_notes[index:index + 2]
+    if distance is None:
+        lines = [translate("voice.lab.transition.unmatched", from_chord=from_chord, to_chord=to_chord)]
+    else:
+        lines = [translate("voice.lab.transition", from_chord=from_chord, to_chord=to_chord,
+                           distance=distance, warnings=len(transition.voice_leading_warnings))]
+    if start and end:
+        lines.append("  " + translate("voice.lab.transition.bass", start=start[0], end=end[0]))
+    if distance is not None:
         movement = (after - before for before, after in zip(start, end, strict=True))
         signed_steps = ", ".join(f"{steps:+d}" if steps else "0" for steps in movement)
         lines.append("  " + translate("voice.lab.transition.voices", steps=signed_steps))
@@ -88,7 +111,7 @@ def format_voice_leading_profile(
                 lower=item.lower_voice + 1,
                 upper=item.upper_voice + 1,
             ))
-    return "\n".join(lines)
+    return lines
 
 
 class VoiceLeadingLabDialog(ModalDialog):
@@ -139,7 +162,7 @@ class VoiceLeadingLabDialog(ModalDialog):
         ).pack(side=tk.LEFT, padx=(0, spacing.sm))
         self._event_selector = ttk.Combobox(navigation, state="readonly", font=self._font)
         self._event_selector.pack(side=tk.LEFT, fill=tk.X, expand=True)
-        self._event_selector.bind("<<ComboboxSelected>>", self._on_view_change)
+        self._event_selector.bind("<<ComboboxSelected>>", self._on_event_change)
         self._event_selector.bind("<Left>", lambda _event: self._move_event(-1))
         self._event_selector.bind("<Right>", lambda _event: self._move_event(1))
         tk.Label(
@@ -251,6 +274,16 @@ class VoiceLeadingLabDialog(ModalDialog):
         for index in range(len(self._canvases)):
             self._draw_roll(index)
 
+    def _on_event_change(self, _event: tk.Event) -> None:
+        if not self._refresh_changed_project():
+            self._refresh_event_details()
+
+    def _refresh_event_details(self) -> None:
+        for side, profile in enumerate(self._profiles):
+            if profile is not None:
+                self._write_preview(side, self._format_preview(profile))
+        self._redraw_rolls()
+
     def _on_view_change(self, _event: tk.Event) -> None:
         if not self._refresh_changed_project():
             self._redraw_rolls()
@@ -278,15 +311,13 @@ class VoiceLeadingLabDialog(ModalDialog):
     def _show_event(self, selected: int) -> None:
         if 0 <= selected < len(self._timings) and selected != self._event_selector.current():
             self._event_selector.current(selected)
-            self._redraw_rolls()
+            self._refresh_event_details()
 
     def _select_style(self, side: int) -> None:
         if not self._refresh_changed_project():
             self._render(side)
 
     def _render(self, side: int) -> None:
-        session = self._controller.session
-        chords = tuple(session.chords)
         style = VOICE_LEADING_STYLE_OPTIONS[self._selectors[side].current()][0]
         translate = self._i18n.translate
         try:
@@ -298,19 +329,30 @@ class VoiceLeadingLabDialog(ModalDialog):
         else:
             self._profiles[side] = profile
             self._apply_buttons[side].configure(state=tk.NORMAL)
-            lines = [format_voice_leading_profile(profile, chords, session.voice_leading_style, translate)]
-            for chord, (start, duration), notes in zip(chords, self._timings, profile.midi_notes):
-                lines.append(translate(
-                    "voice.lab.notes", chord=chord, start=start, duration=duration,
-                    notes=", ".join(map(str, notes)),
-                ))
-            text = "\n".join(lines)
+            text = self._format_preview(profile)
+        self._write_preview(side, text)
+        self._redraw_rolls()
+
+    def _format_preview(self, profile: VoiceLeadingStyleProfile) -> str:
+        session = self._controller.session
+        chords = tuple(session.chords)
+        translate = self._i18n.translate
+        lines = [format_voice_leading_profile(
+            profile, chords, session.voice_leading_style, translate, focused_event=self._event_selector.current(),
+        )]
+        for chord, (start, duration), notes in zip(chords, self._timings, profile.midi_notes, strict=True):
+            lines.append(translate(
+                "voice.lab.notes", chord=chord, start=start, duration=duration,
+                notes=", ".join(map(str, notes)),
+            ))
+        return "\n".join(lines)
+
+    def _write_preview(self, side: int, text: str) -> None:
         preview = self._previews[side]
         preview.configure(state=tk.NORMAL)
         preview.delete("1.0", tk.END)
         preview.insert("1.0", text)
         preview.configure(state=tk.DISABLED)
-        self._redraw_rolls()
 
     def _draw_roll(self, side: int) -> None:
         canvas = self._canvases[side]

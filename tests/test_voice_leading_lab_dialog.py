@@ -78,6 +78,32 @@ class TestVoiceLeadingLab(unittest.TestCase):
                 self.assertIn(t("voice.lab.transition.voices", steps="+2, -3, 0"), rendered)
                 self.assertIn(t("voice.lab.transition.unmatched", from_chord="G", to_chord="Am"), rendered)
                 self.assertEqual(rendered.count(t("voice.lab.transition.voices", steps="")), 1)
+                self.assertIn(t("voice.lab.total.partial", movement=5, matched=1, total=2), rendered)
+                selected = format_voice_leading_profile(profile, chords, style, t, focused_event=1)
+                focus = selected.split("\n\n", 1)[0]
+                self.assertIn(t("voice.lab.transition.bass", start=50, end=45), focus)
+                self.assertNotIn(t("voice.lab.focus.cumulative", movement=5), focus)
+
+    def test_focused_transition_reports_bass_and_complete_movement_prefix(self):
+        style = VoiceLeadingStyle.CONTEMPORARY_POP
+        chords = ("C", "G", "Am")
+        profile = VoiceLeadingStyleProfile(
+            style,
+            (DegreeAnalysis(0, "C", "I", semitone_distance_to_next=3),
+             DegreeAnalysis(1, "G", "V", semitone_distance_to_next=5),
+             DegreeAnalysis(2, "Am", "vi")),
+            8,
+            ((48, 52, 55), (47, 50, 55), (48, 52, 57)),
+        )
+        for language in ("en", "de"):
+            with self.subTest(language=language):
+                t = LocaleManager(preference=language).translate
+                rendered = format_voice_leading_profile(profile, chords, style, t, focused_event=1)
+                focus = rendered.split("\n\n", 1)[0]
+                self.assertTrue(focus.startswith(t("voice.lab.focus.event", number=2, chord="G")))
+                self.assertIn(t("voice.lab.transition.bass", start=47, end=48), focus)
+                self.assertIn(t("voice.lab.transition.voices", steps="+1, +2, +2"), focus)
+                self.assertIn(t("voice.lab.focus.cumulative", movement=8), focus)
 
     def test_profile_localizes_detected_parallel_and_contrary_motion(self):
         style = VoiceLeadingStyle.STRICT_CLASSICAL

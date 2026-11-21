@@ -631,6 +631,7 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             self.assertEqual(event_selector.current(), window.chord_listbox.curselection()[0])
             first_highlights = [roll.coords("selected-event") for roll in rolls]
             self.assertTrue(all(coords for coords in first_highlights))
+            self.assertTrue(all(roll.find_withtag("following-event") for roll in rolls))
             event_selector.current(3)
             event_selector.event_generate("<<ComboboxSelected>>")
             root.update()
@@ -640,6 +641,11 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
                 for roll, previous in zip(rolls, first_highlights, strict=True)
             ))
             self.assertIn(controller.session.chords[3], event_selector.get())
+            self.assertFalse(any(roll.find_withtag("following-event") for roll in rolls))
+            self.assertTrue(all(
+                i18n.translate("voice.lab.focus.last") in preview.get("1.0", tk.END)
+                for preview in widgets(lab, tk.Text)
+            ))
 
             def visible_ticks(roll):
                 return [int(roll.itemcget(item, "text")) for item in roll.find_withtag("tick-label")]
@@ -686,6 +692,13 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             root.update()
             self.assertEqual(event_selector.current(), 2)
             self.assertTrue(all(roll.coords("selected-event")[0] >= 28 for roll in rolls))
+            self.assertTrue(all(roll.find_withtag("following-event") for roll in rolls))
+            self.assertTrue(all(
+                preview.get("1.0", tk.END).startswith(
+                    i18n.translate("voice.lab.focus.event", number=3, chord=controller.session.chords[2])
+                )
+                for preview in widgets(lab, tk.Text)
+            ))
             target_roll.event_generate("<Button-1>", x=1, y=1)
             root.update()
             self.assertEqual(event_selector.current(), 2)
