@@ -496,9 +496,11 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
 
             overview = visible_ticks(rolls[0])
             self.assertEqual(overview, visible_ticks(rolls[1]))
-            zoom_selector.current(2)
-            zoom_selector.event_generate("<<ComboboxSelected>>")
+            zoom_selector.focus_force()
+            for _ in range(2):
+                zoom_selector.event_generate("<Right>")
             root.update()
+            self.assertEqual(zoom_selector.get(), "4×")
             zoomed = visible_ticks(rolls[0])
             self.assertEqual(zoomed, visible_ticks(rolls[1]))
             self.assertGreater(zoomed[0], overview[0])

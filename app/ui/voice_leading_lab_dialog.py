@@ -149,6 +149,8 @@ class VoiceLeadingLabDialog(ModalDialog):
         self._zoom_selector.pack(side=tk.LEFT)
         self._zoom_selector.current(0)
         self._zoom_selector.bind("<<ComboboxSelected>>", self._on_view_change)
+        self._zoom_selector.bind("<Left>", lambda _event: self._move_zoom(-1))
+        self._zoom_selector.bind("<Right>", lambda _event: self._move_zoom(1))
         self._update_events(selected_index)
 
         body = tk.Frame(container, bg=colors.bg_window)
@@ -259,6 +261,14 @@ class VoiceLeadingLabDialog(ModalDialog):
     def _move_event(self, step: int) -> str:
         self._refresh_changed_project()
         self._show_event(self._event_selector.current() + step)
+        return "break"
+
+    def _move_zoom(self, step: int) -> str:
+        self._refresh_changed_project()
+        selected = self._zoom_selector.current() + step
+        if self._timings and 0 <= selected < len(_TIME_ZOOM_LEVELS):
+            self._zoom_selector.current(selected)
+            self._redraw_rolls()
         return "break"
 
     def _show_event(self, selected: int) -> None:
