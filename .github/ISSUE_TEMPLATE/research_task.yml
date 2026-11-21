@@ -1,6 +1,7 @@
 name: Research task
 description: Propose a bounded, source-aware STEPS research task.
 title: "Research: "
+labels: ['research']
 body:
   - type: textarea
     id: question

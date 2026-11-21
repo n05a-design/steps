@@ -1,6 +1,7 @@
 name: Feature request
 description: Propose a STEPS feature with scope and evidence. Submissions in German or English are welcome.
 title: "Feature: "
+labels: ['feature']
 body:
   - type: textarea
     id: goal

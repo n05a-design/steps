@@ -1,10 +1,54 @@
 # STEPS – Abhängigkeitsbasierte Roadmap und Ressourcenplan
 
-**Arbeitsstand:** 20.11.2026. **Nicht** vom Owner freigegebene Sprint- oder Zeitplanung. Grundlage: 28 Research-Handover-Requirements, 33 Auditdimensionen, aktuelle GitHub-Snapshots, Glide 3.53.0 und neue Architektur-/Quellen-Prüfgates. Die bisherigen historischen Gantt-Pläne bleiben in `source_archive/Steps_Technischer_Anhang_und_Originalvorlagen_2026-11-09.md`; konkrete alte Terminzusagen werden **nicht** als aktive Lieferfristen fortgeführt.
+**Arbeitsstand:** 21.11.2026. **Nicht** vom Owner freigegebene Sprint- oder Zeitplanung. Grundlage: 28 Research-Handover-Requirements, 33 Auditdimensionen, aktuelle GitHub-Snapshots, Glide 3.53.0 und neue Architektur-/Quellen-Prüfgates. Die bisherigen historischen Gantt-Pläne bleiben in `source_archive/Steps_Technischer_Anhang_und_Originalvorlagen_2026-11-09.md`; konkrete alte Terminzusagen werden **nicht** als aktive Lieferfristen fortgeführt.
 
 > **Aktualisierung 19.11.2026:** Die nachfolgenden ursprünglichen Phasen und A0–A11-Bezeichnungen bleiben als datierter Plan erhalten und sind kein aktueller Lieferstatus. Unveränderlicher Repository-Snapshot: `b67294a5161b42d281be4afdea5bb74b7385a786`; der Entwicklungsstand ist `0.2.0-dev`, v0.1.0 ist veröffentlicht. PR #170 ergänzt „Neu“ mit Dirty-State-Rückfrage; PR #172–#179 ergänzen Save-Schutz-, Voicing-, Linux-Xvfb- und Wheel-Artifact-Abnahmen; PR #180–#181 synchronisieren kanonische Status-SHAs. PR #190 ergänzt MIG-006 für ungültige Projekt-Zeiteinstellungen, PR #191 synchronisiert die aktive Statusdokumentation. PR #197 ergänzt den Next-Chord-Explorer, PR #198 den Reviewed-Beispiel-Workflow, PR #199 die Stimmführungsstil-Steuerung, PR #200 die Wheel-Bau-Dokumentation und PR #201 synchronisierte den damaligen Status. PR #203–#205 richten den Desktop-Sessionexport an ADR-017 aus, erzwingen vier Akkordstimmen und ergänzen optionale Exportmodi; PR #206 prüft zehn Goldenexporte mit dem unabhängigen `SMFParser`. Am 19.11.2026 geprüfter Main-Stand: `bc1154241f5d57cc94e1a55a05e47bd788552c2f`; letzter Implementierungskommit: `e9eb1070e718cd9af79e3b536c09307dc59f6cac`; 765 automatisierte Tests bestanden. Das vorgeschlagene, noch nicht vom Inhaber freigegebene v1.0-Ziel und die aktuellen Lücken stehen in [V1.0.0_PRODUCT_CONTRACT.md](../product/V1.0.0_PRODUCT_CONTRACT.md). Bestehende offene Arbeit ist in den Epics [#149](https://github.com/n05a-design/steps/issues/149), [#150](https://github.com/n05a-design/steps/issues/150) und [#151](https://github.com/n05a-design/steps/issues/151) erfasst; STEPS-Lokalisierung ist zusätzlich in [#154](https://github.com/n05a-design/steps/issues/154) erfasst.
 
 > **Aktualisierung 20.11.2026:** PR #220 ist in `main` gemergt; der aktuelle geprüfte Main-Stand ist `e2faf276adf6d65caf81fe28f38521a176e0c283`. Die lokale Full-Suite besteht mit 791 automatisierten Tests. Die Merge-Kennung ist ein Code-/Testbeleg und schließt weder die unabhängige DAW-, Accessibility-, Übersetzungs-, Plattform-, Fach-, Rechte- noch Veröffentlichungsabnahme ab.
+
+> **Aktualisierung 21.11.2026:** Geprüfter Main-Stand `3a5db64b6131806c432b7b38dca60680c5a57d9b` (PR #265). Lokal bestehen 875 automatisierte Tests (`python3 -B -m unittest discover -s tests -p "test_*.py"`, macOS, Python 3.14). Der Wissensbenchmark meldet 92 PASS, 0 FAIL und 27 PENDING. Die fachliche Musikabnahme (`scripts/verify_musical_release.py --report-only`) meldet `theory-core` und `midi-export` als READY; `desktop-voicing`, `recommendations`, `learning-pilot`, `knowledge-adapter`, `harmony-coach` und `research-library` bleiben BLOCKED, weil unabhängige Fachprüfungen fehlen. Abschnitt 0 ersetzt die früheren Aktualisierungsnotizen als aktuelle Arbeitsfolge; die Abschnitte 1–7 bleiben der datierte Ursprungsplan.
+
+## 0. Aktueller Stand und nächste Etappen (21.11.2026)
+
+### 0.1 Seit PR #220 umgesetzt
+
+Die Liste fasst die gemergten PRs nach Bereich zusammen. Sie belegt Code und automatisierte Tests, keine Fach-, Plattform-, Übersetzungs- oder Nutzerabnahme. Einzelheiten stehen im [Änderungsprotokoll](../../CHANGELOG.md) und im [Implementierungsstand](../IMPLEMENTATION.md).
+
+| Bereich | PRs | Ergebnis |
+|---|---|---|
+| Desktop-Bedienung und Tastatur | #222, #226, #227, #229, #235–#238 | Dialogfokus, Tastaturnavigation, lokalisierte Dateifehler und Sicherungswiederherstellung, Progressionseditor für lange Folgen, Timing-Editor mit absoluten Ticks, Duplizieren und Teilen von Akkorden, isolierte native Tk-Smoke-Tests |
+| Stimmführungslabor und Voicings | #233, #234, #242, #249, #254, #261 | Tonumfang und Einzelstimmen, synchrone Akkordnavigation mit Zeitzoom, Slash-Bass und alterierte Quinten, Power- und Quartalprofile, Vergleich ausgewählter Übergänge |
+| Harmonik und Next Chord Explorer | #228, #241, #243, #244, #246, #252, #255–#257, #265 | Tastaturführung, Kandidatenvergleich, korrigierte Stufenanalyse, Stufe im Inspektor, Transposition mit Stufenerhalt, doppelte Vorzeichen, Prüfstatus der Vorschläge, getrennte Fundstellen und Modellregeln, Literatur der Vergleichskandidaten |
+| Bibliothek und Lernbeispiele | #223, #230, #232, #263 | Suche, Akkord- und Stufenvorschau, Quellen- und Freigabebelege, transponierte Übungskopien in `INT`/`DE` |
+| MIDI-Export | #225, #231, #239, #240, #251, #264 | atomares Ersetzen, Namens- und Ordnervorschlag, Überlappungsanzeige, reproduzierbare DAW-Prüfdateien, enge Lage und echtes Drop-2, Anzeige der Exportdaten mit Revisionsschutz |
+| Wissensbasis und Kuration | #245, #248, #250, #253, #258–#260 | Gesamtaudit, belegpflichtige Kurationsfreigaben, Evidenzfelder, Freigabeprüfung vor der Wissensausgabe, Wiederherstellung, Lebenszyklusaudit, Laufzeitprüfung der Referenzfragen |
+| Release-Gates und Paketierung | #247, #262 | Musikabnahme pro Funktionsbereich, protokollierter lokaler macOS-App-Build |
+
+### 0.2 Etappen bis 1.0
+
+Die Etappen folgen Abhängigkeiten, nicht Kalenderterminen. Keine Etappe ist vom Inhaber als Termin- oder Umfangszusage freigegeben.
+
+| Etappe | Ziel | Abschlussbelege | Abhängigkeit | Tracking |
+|---|---|---|---|---|
+| **E1 – Repository-Wahrheit** | Status, Roadmap, Register und GitHub-Objekte zeigen denselben Stand | Dokumentations-, Release- und Linkchecks grün; Epics mit aktuellem Ist-Zustand; Release-Labels vorhanden | keine | [#149](https://github.com/n05a-design/steps/issues/149), OA-0036 |
+| **E2 – Kandidat 0.2.0** | Den Desktop-Stand seit v0.1.0 als Entwicklungsrelease bündeln | Inhaberentscheidung zum Umfang; Version, Changelog und Katalog auf einem Commit; CI auf Ubuntu, Windows und macOS; Musikabnahme der enthaltenen Bereiche; Wheel- und macOS-Bundle-Prüfung | E1 | [#151](https://github.com/n05a-design/steps/issues/151) |
+| **E3 – Unabhängige Abnahmen** | Fremdprüfungen nachholen, die Tests nicht ersetzen können | DAW-Importe nach [MIDI_DAW_MANUAL_PROTOCOL](../quality/MIDI_DAW_MANUAL_PROTOCOL.md) in zwei Anwendungen; VoiceOver/NVDA- und Tastaturprüfung; EN/DE-Textprüfung; Fachprüfung für `desktop-voicing` (P02), `recommendations` und `learning-pilot` | E2-Kandidat | [#151](https://github.com/n05a-design/steps/issues/151), [#154](https://github.com/n05a-design/steps/issues/154), OA-0038, OA-0039 |
+| **E4 – Wissensfreigaben** | Offene Benchmarkfälle schließen oder als Blocker der abhängigen Inhalte führen | 15 manuelle Nachweise und 12 Coach-Bewertungen entschieden; `knowledge-adapter` und `research-library` mit unabhängiger Prüfung; Altregister OA-0001–OA-0033 zugeordnet | parallel zu E3 | [#150](https://github.com/n05a-design/steps/issues/150), OA-0034, OA-0037 |
+| **E5 – 1.0-Umfang und Auslieferung** | 1.0 festlegen und installierbar machen | angenommenes 1.0-ADR (Plattformen, Drums, Notationsvorgaben); signierte bzw. notarisierte Pakete; Drittanbieterhinweise und Abhängigkeitsinventar; Supportgrenzen | E2; Entscheidung des Inhabers | [V1.0.0-Zielbild](../product/V1.0.0_PRODUCT_CONTRACT.md) |
+| **E6 – Release Candidate 1.0** | Freigabe auf einem unveränderlichen Commit | alle Gates des Zielbilds belegt oder als Blocker benannt; menschliche Releasefreigabe; Tag und geprüfte Artefakte | E3–E5 | [#149](https://github.com/n05a-design/steps/issues/149), [#151](https://github.com/n05a-design/steps/issues/151) |
+
+Nach 1.0 und nur nach neuer Inhaberentscheidung: Drum-Editor in der Oberfläche ([ADR-013](../../decisions/ADR-013-v01-umfang-akkorde-und-midi-export.md)), Wiedergabe ([ADR-007](../../decisions/ADR-007-audio-nur-dateiexport-v01.md)) und MIDI-Import.
+
+### 0.3 Inhaberhandlungen auf GitHub
+
+Diese Punkte lassen sich nicht durch Repository-Dateien erledigen. Sie bleiben `OWNER_ACTION_REQUIRED`, bis das Ergebnis auf GitHub beobachtet ist.
+
+| Objekt | Beobachtung 21.11.2026 | Erforderliche Handlung |
+|---|---|---|
+| Schutz von `main` | Klassischer Branch-Schutz fehlt; das aktive Ruleset `basic` aktiviert nur Copilot-Code-Review | Pull Request, erforderliche Statuschecks und Code-Owner-Freigabe für `main` festlegen |
+| GitHub Project | Mit dem verfügbaren Token nicht lesbar (`read:project` fehlt) | Board nach [GITHUB_PROJECT_SPEC](../community/GITHUB_PROJECT_SPEC.md) anlegen oder vorhandenes Board bestätigen |
+| Wiki | Funktion aktiv, aber nicht initialisiert | erste Seite anlegen, danach [WIKI_PUBLICATION_MANIFEST](../community/WIKI_PUBLICATION_MANIFEST.md) anwenden |
+| OneDrive-Synchronisation | lokal nicht belegbar | Ergebnis im OneDrive-Client prüfen (OA-0040) |
 
 ## 1. Kritische Pfadlogik
 

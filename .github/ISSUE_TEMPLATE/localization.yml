@@ -1,6 +1,7 @@
 name: Localization or translation
 description: Report missing or incorrect UI, CLI, documentation, or learning-content localization.
 title: "Localization: "
+labels: ['localization']
 body:
   - type: textarea
     id: surface
