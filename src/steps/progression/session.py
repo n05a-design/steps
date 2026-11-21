@@ -32,6 +32,7 @@ from .engine import (
     generate_progression_voicings,
     resolve_roman_degree,
 )
+from .harmony_analysis import format_harmonic_degree, has_dominant_quality
 from .voice_leading import (
     VoiceLeadingStyle,
     absolute_semitone_distance,
@@ -523,25 +524,14 @@ class ProgressionSession:
         voicings = self.get_voicings("CLOSE", style=generation_style)
         analyses: List[DegreeAnalysis] = []
         
-        # Roman numeral mapping map (common degrees)
         key_spelling = parse_spelling(self.key_root, convention=self.convention)
-        key_pc = int(key_spelling.pitch_class)
+        chords = [parse_chord(symbol, convention=self.convention) for symbol in self.chords]
 
-        major_scale_degrees = {0: "I", 2: "ii", 4: "iii", 5: "IV", 7: "V", 9: "vi", 11: "vii°", 10: "bVII"}
-        minor_scale_degrees = {0: "i", 2: "ii°", 3: "III", 5: "iv", 7: "V", 8: "VI", 10: "VII", 11: "vii°"}
-        deg_map = minor_scale_degrees if self.is_minor else major_scale_degrees
-
-        for i, sym in enumerate(self.chords):
-            ch = parse_chord(sym, convention=self.convention)
-            root_pc = int(ch.root.pitch_class)
-            interval_from_tonic = (root_pc - key_pc) % 12
-            
-            roman = deg_map.get(interval_from_tonic, "?")
-            # Refine quality case
-            if "m" in ch.quality and not roman.islower() and roman != "?":
-                roman = roman.lower()
-            if ch.quality in ("7", "maj7", "m7"):
-                roman += ch.quality
+        for i, (sym, chord) in enumerate(zip(self.chords, chords, strict=True)):
+            following = chords[i + 1] if i + 1 < len(chords) else None
+            roman = format_harmonic_degree(
+                chord, key_spelling, self.is_minor, self.convention, following,
+            )
 
             dist: Optional[int] = None
             diagnostics: List[VoiceLeadingDiagnostic] = []
