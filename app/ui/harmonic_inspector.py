@@ -49,7 +49,8 @@ def format_chord_analysis(
     for candidate in candidates:
         scale = construct_scale(chord.root, candidate)
         notes = " - ".join(_note_name(note, convention) for note in scale.spellings)
-        lines.append(f"• {scale.template.name.upper():16s} {notes}")
+        name = translate(f"scales.name.{scale.template.name}")
+        lines.append(f"• {name} · {notes}")
     lines.extend(("", translate("diagnosis.heading"), "-" * 50, translate("diagnosis.voicing")))
     return "\n".join(lines)
 
@@ -74,7 +75,7 @@ def format_beginner_voicings(beginner: dict, translate: Callable[..., str]) -> s
             lh_finger=voicing["lh_fingering"],
             notes=" ".join(voicing["rh_spellings"]),
         ))
-    for transition in beginner["transitions"]:
+    for index, transition in enumerate(beginner["transitions"]):
         lines.append(translate(
             "beginner.transition.measurements",
             from_chord=transition["from_chord"],
@@ -83,7 +84,25 @@ def format_beginner_voicings(beginner: dict, translate: Callable[..., str]) -> s
             distance=transition["total_l1_distance"],
             leap=transition["max_single_leap"],
         ))
-        lines.append("  " + translate(
-            "beginner.transition.original", guidance=transition["pedagogical_guidance"],
-        ))
+        earlier, later = beginner["voicings"][index:index + 2]
+        previous_names = dict(zip(earlier["rh_notes"], earlier["rh_spellings"], strict=True))
+        next_names = dict(zip(later["rh_notes"], later["rh_spellings"], strict=True))
+        movements = [
+            translate(
+                "beginner.transition.voice",
+                start=previous_names[start],
+                end=next_names[end],
+                delta=f"{delta:+d}",
+            )
+            for start, end, delta in transition["moving_voices"]
+        ]
+        if movements:
+            lines.append("  " + translate("beginner.transition.voices", movements=", ".join(movements)))
+        else:
+            lines.append("  " + translate("beginner.transition.stationary"))
+        if transition.get("is_canonical_guidance"):
+            lines.append("  " + translate(
+                "beginner.transition.original", guidance=transition["pedagogical_guidance"],
+            ))
+
     return "\n".join(lines)

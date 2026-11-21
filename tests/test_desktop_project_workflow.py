@@ -458,9 +458,8 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
                         common=len(transition.common_tones),
                         distance=transition.total_l1_distance, leap=transition.max_single_leap,
                     ), rendered)
-                    self.assertIn(translate(
-                        "beginner.transition.original", guidance=transition.pedagogical_guidance,
-                    ), rendered)
+                    self.assertIn(translate("beginner.transition.voices", movements="").split(":")[0], rendered)
+                    self.assertNotIn(translate("beginner.transition.original", guidance="").strip(), rendered)
                     self.assertEqual(session.state, state)
                     self.assertFalse(session.is_dirty)
             self.window.controller.get_view_model.assert_not_called()
@@ -778,22 +777,32 @@ class TestDesktopProjectWorkflow(unittest.TestCase):
         show_error.assert_called_once()
         self.window._refresh_all.assert_not_called()
 
-    def test_dominant_chord_suggests_only_supported_scales(self):
-        from src.steps.theory.scale import construct_scale
+    def test_inspector_only_displays_scales_containing_the_symbol_tones_and_bass(self):
+        from app.ui.harmonic_inspector import format_chord_analysis
+        from src.steps.theory import parse_spelling
 
-        with patch(
-            "app.ui.harmonic_inspector.construct_scale",
-            wraps=construct_scale,
-        ) as build_scale:
-            self.window._display_chord_details("G7")
+        for language, notation, symbol, expected in (
+            ("en", "INT", "E7b9", {2, 4, 5, 8, 11}),  # E, G#, B, D, F
+            ("de", "DE", "Cdim", {0, 3, 6}),
+            ("de", "DE", "C/Ais", {0, 4, 7, 10}),
+        ):
+            with self.subTest(symbol=symbol, locale=language):
+                translate = LocaleManager(preference=language).translate
+                details = format_chord_analysis(symbol, notation, translate)
+                scales = [line.split(" · ", 1) for line in details.splitlines() if line.startswith("• ")]
+                self.assertTrue(scales)
+                for _, notes in scales:
+                    pitch_classes = {int(parse_spelling(note, notation).pitch_class)
+                                     for note in notes.split(" - ")}
+                    self.assertTrue(expected <= pitch_classes, notes)
 
-        self.assertEqual(
-            [call.args[1] for call in build_scale.call_args_list],
-            ["MIXOLYDIAN"],
-        )
-        details = self.window.detail_text.insert.call_args.args[1]
-        self.assertIn("MIXOLYDIAN", details)
-        self.assertNotIn("ALTERED", details)
+    def test_inspector_explains_when_no_available_scale_contains_every_tone(self):
+        from app.ui.harmonic_inspector import format_chord_analysis
+
+        translate = self.window.i18n.translate
+        details = format_chord_analysis("Cmaj13/Ab", "INT", translate)
+        self.assertIn(translate("scales.none"), details)
+        self.assertFalse(any(line.startswith("• ") for line in details.splitlines()))
 
     @patch(
         "app.ui.harmonic_inspector.construct_scale",
