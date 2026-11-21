@@ -1,6 +1,6 @@
 # ADR-017: MIDI-Export für v0.1
 
-**Status:** accepted (Umsetzung offen)
+**Status:** accepted · technisch umgesetzt · DAW-Abnahme offen
 **Datum:** 2026-11-17
 **Entscheidungsträger / Beleg:** Inhaber, schriftliche Gesamtspezifikation vom 17.11.2026 mit Freigabe der Präzisierungen aus dem Repository-Abgleich
 
@@ -20,7 +20,7 @@
 | DAW-Abnahme | Reaper (strenger SMF-Parser) und MuseScore 4 (Taktart, Tonart, Notation); alternativ Ableton Live oder Logic Pro als zweites Programm. Ergebnis mit Versionsstand protokollieren. |
 | Audio | Siehe [ADR-007](ADR-007-audio-nur-dateiexport-v01.md): kein In-App-Audio in v0.1. |
 
-**Begründung:** Typ 1 mit getrennter Bassspur lässt sich in jeder DAW direkt auf zwei Instrumente routen. Die feste Lücke von 10 Ticks verhindert Kollisionen gleicher Folgetöne, ohne bei Pads hörbar zu werden; 95 % ergäbe bei einem ganztaktigen Akkord 96 Ticks, also 100 ms bei 120 BPM. Ohne Program Change setzt die DAW keine Instrumente unerwartet auf GM-Piano zurück. Die feste Velocity macht Golden-Fälle über Hashes und Ticks prüfbar.
+**Begründung:** Typ 1 mit getrennter Bassspur lässt sich in jeder DAW direkt auf zwei Instrumente routen. Bei aufeinanderfolgenden, aneinandergrenzenden Akkordereignissen trennt die feste Lücke von 10 Ticks gleiche Folgetöne. Absolut platzierte überlappende Ereignisse können weiterhin Kollisionen verursachen. Eine Notenlänge von 95 % ergibt bei einem ganztaktigen Akkord 96 Ticks Abstand, also 100 ms bei 120 BPM. Ohne Program Change setzt die DAW keine Instrumente unerwartet auf GM-Piano zurück. Die feste Velocity macht Golden-Fälle über Hashes und Ticks prüfbar.
 
 ## Auswirkungen
 - Kern: ein reiner SMF-Writer ohne UI-Abhängigkeit (`src/steps/`), getrennt von `app/` (`AGENTS.md` Regel 4).

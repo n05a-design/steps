@@ -6,7 +6,7 @@ Each musical release area has an executable gate for its deterministic behavior 
 | --- | --- | --- |
 | `theory-core` | Pitch, spelling, chord, degree and API contracts, including desktop transposition | Deterministic contracts |
 | `desktop-voicing` | Beginner bass and reduction probes, voice-leading regression tests | Style, playable range and the required P02 playing check |
-| `midi-export` | SMF tests, timing and an exported Drop-2 countercheck | DAW acceptance is tracked separately |
+| `midi-export` | SMF tests, timing and 192 exported CLOSE/Drop-2 and slash-bass cases | DAW acceptance is tracked separately |
 | `recommendations` | Harmony and graph tests, Explorer probes for supported double accidentals | Alternative readings, stylistic scope and confidence labels |
 | `learning-pilot` | Pilot calculation, publication tests and authentic GitHub pilot approvals | Teaching material, sources and the mandatory listening exercise |
 | `knowledge-adapter` | Actual evaluation prompts, notation, relevance and unapproved-source checks | Correctness, citations and uncertainty in the actual responses |

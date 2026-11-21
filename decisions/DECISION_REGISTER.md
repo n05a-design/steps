@@ -27,6 +27,6 @@ Die historische Entscheidungsüberlieferung von Glide D01–D77 bleibt im origin
 | ADR-014 | accepted | [Widersprüchliche Musiktheorien](ADR-014-theorie-perspektiven-und-kontext.md) | Schichtenmodell: invariante Kernschicht, Deutungskanten mit `paradigm`/`source`, `StyleContext` zur Laufzeit (17.11.2026, Inhaber) |
 | ADR-015 | accepted | [Kernverträge](ADR-015-kernvertraege-intervalle-voicing-notation.md) | Unreduzierte Intervalle, add2 als Alias von add9, Reduktion vor DROP2, deutsche Namen mit dokumentweiter Locale (17.11.2026, Inhaber; Umsetzung offen) |
 | ADR-016 | accepted | [`V7alt`](ADR-016-v7alt-alterierte-dominante.md) | Tonvorrat der alterierten Skala, Voicing als ausdrückliche Auswahl (17.11.2026, Inhaber; Umsetzung offen) |
-| ADR-017 | accepted | [MIDI-Export](ADR-017-midi-export-v01.md) | SMF Typ 1, Spuren Meta/Chords/Bass, Dauer minus 10 Ticks, enge Lage 48–72, Bass 36–47, Velocity 90/100, kein Program Change (17.11.2026, Inhaber; Umsetzung offen) |
+| ADR-017 | accepted | [MIDI-Export](ADR-017-midi-export-v01.md) | SMF Typ 1, Spuren Meta/Chords/Bass, Dauer minus 10 Ticks, enge Lage 48–72, Bass 36–47, Velocity 90/100, kein Program Change (17.11.2026, Inhaber, technisch umgesetzt, DAW-Abnahme offen) |
 
 **Abgleich:** `source_archive/Steps_Projekt_Overview_konsolidiert_2026-11-09.md` für ältere W- und G-Register sowie aktuelle `docs/project/CONFLICTS_AND_GAPS.md` für Delta-Befunde. Eine Entscheidung löst einen Konflikt erst nach `accepted` samt nachprüfbarem Ownerhinweis und aktualisierten Verweisen auf.

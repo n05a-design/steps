@@ -5,7 +5,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 from src.steps.knowledge import KnowledgeAdapter
-from src.steps.midi import MidiFile
+from src.steps.midi import SMFParser
 from src.steps.progression import ProgressionSession
 from src.steps.theory import MusicTheoryError
 
@@ -26,28 +26,52 @@ def beginner_voices():
 
 
 def midi_drop2():
-    session = ProgressionSession(["Cmaj7"])
+    failures = []
+    roots = {
+        "INT": "C Db D Eb E F F# G Ab A Bb B".split(),
+        "DE": "C Des D Es E F Fis G As A B H".split(),
+    }
+    tones = {
+        "maj7": (0, 4, 7, 11), "7": (0, 4, 7, 10), "m7": (0, 3, 7, 10),
+        "dim7": (0, 3, 6, 9), "m7b5": (0, 3, 6, 10), "7b5": (0, 4, 6, 10),
+        "13": (0, 4, 10, 21), "7#11": (0, 4, 10, 18),
+    }
     with TemporaryDirectory(prefix="steps-release-midi-") as directory:
-        close, drop2 = [
-            _export_upper_notes(session, Path(directory) / f"{kind}.mid", kind)
-            for kind in ("CLOSE", "DROP2")
-        ]
-    if len(close) != 4:
-        return ["Cmaj7 CLOSE does not contain four voices"]
-    # A uniform octave move is allowed to place the resulting shape in range.
-    expected = sorted([*close[:2], close[-2] - 12, close[-1]])
-    if len(drop2) != 4 or len({out - note for out, note in zip(drop2, expected)}) != 1:
-        return [f"Cmaj7: CLOSE {close}, DROP2 {drop2}, expected Drop-2 shape {expected}"]
-    if (drop2[0] - expected[0]) % 12:
-        return [f"Cmaj7 DROP2 moved by a non-octave interval: {drop2}"]
-    return []
+        target = Path(directory) / "check.mid"
+        for notation, names in roots.items():
+            for root, name in enumerate(names):
+                bass_pc = (root + 4) % 12
+                for suffix, intervals in tones.items():
+                    symbol = f"{name}{suffix}/{names[bass_pc]}"
+                    session = ProgressionSession([symbol], convention=notation)
+                    close, bass = _export_midi_notes(session, target, "CLOSE")
+                    expected_pcs = {(root + interval) % 12 for interval in intervals}
+                    if (len(close) != 4 or not 48 <= close[0] <= close[-1] <= 72
+                            or close[-1] - close[0] > 12 or {n % 12 for n in close} != expected_pcs
+                            or bass != [36 + bass_pc]):
+                        failures.append(f"{notation} {symbol}: wrong CLOSE {close} or bass {bass}")
+                        continue
+                    expected = sorted([*close[:2], close[-2] - 12, close[-1]])
+                    fits = any(expected[0] + offset >= 48 and expected[-1] + offset <= 72
+                               for offset in (0, 12))
+                    offered = "DROP2" not in session.midi_voicing_failures()
+                    if fits != offered:
+                        failures.append(f"{notation} {symbol}: wrong DROP2 availability")
+                        continue
+                    if not fits:
+                        continue
+                    drop2, drop_bass = _export_midi_notes(session, target, "DROP2")
+                    shapes = [[note + offset for note in expected] for offset in (0, 12)]
+                    if (drop2 not in shapes or not 48 <= drop2[0] <= drop2[-1] <= 72
+                            or drop_bass != bass):
+                        failures.append(f"{notation} {symbol}: wrong DROP2 {drop2} or bass {drop_bass}")
+    return failures
 
 
-def _export_upper_notes(session, path, kind):
-    session.export_midi_file(path, voicing_type=kind)
-    parsed = MidiFile.from_bytes(path.read_bytes())
-    return sorted(e.msg_bytes[1] for e in parsed.tracks[1].raw_events
-                  if e.msg_bytes[0] & 0xF0 == 0x90 and e.msg_bytes[2] > 0)
+def _export_midi_notes(session, path, mode):
+    session.export_midi_file(path, voicing_type=mode)
+    parsed = SMFParser.parse(path.read_bytes())
+    return tuple(sorted(note.pitch for note in parsed.tracks[index].notes) for index in (1, 2))
 
 
 def recommendations():

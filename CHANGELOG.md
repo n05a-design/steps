@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Die MIDI-Akkordspur bleibt bei enger Lage innerhalb einer Oktave. Drop-2 erhält die gewünschte Stimmverteilung und wird bei unpassender Lage im Exportstudio deaktiviert.
+
 - Anfänger-Voicings spielen den notierten Slash-Bass. Die Reduktion erhält die verminderte Quinte von Septakkorden und zeigt die tatsächlich ausgelassenen Töne.
 
 - Die Desktop-Transposition erhält die harmonischen Stufen und die Schreibweise der Slash-Bässe relativ zur Projekttonart.

@@ -422,7 +422,7 @@ class TestSMFGenerationAndEnvelope(unittest.TestCase):
             {tick: sorted(notes) for tick, notes in chord_notes.items()},
             {
                 0: [48, 52, 55, 60],
-                1920: [48, 52, 58, 69],
+                1920: [48, 52, 57, 58],
                 3840: [48, 52, 55, 60],
                 5760: [59, 63, 68, 69],
             },
@@ -442,8 +442,8 @@ class TestSMFGenerationAndEnvelope(unittest.TestCase):
 
     def test_export_progression_adr017_optional_voicings(self):
         expected = {
-            "CLOSE": [48, 52, 58, 69],
-            "DROP2": [48, 52, 57, 58],
+            "CLOSE": [48, 52, 57, 58],
+            "DROP2": [57, 60, 64, 70],
             "ROOTLESS": [62, 64, 69, 70],
         }
         for voicing_type, expected_notes in expected.items():
@@ -461,6 +461,31 @@ class TestSMFGenerationAndEnvelope(unittest.TestCase):
                 )
                 self.assertEqual(actual_notes, expected_notes)
                 self.assertTrue(all(48 <= note <= 72 for note in actual_notes))
+
+    def test_adr017_drop2_moves_the_whole_shape_and_preserves_separate_bass(self):
+        out = MidiExportService.export_progression_adr017(
+            chords=["Cmaj7/E", "G7"], output_path=self.midi_path, voicing_type="DROP2", smf_format=0,
+        )
+        notes = SMFParser.parse(out.read_bytes()).tracks[0].notes
+        for tick, chord_pitches, bass in ((0, [55, 60, 64, 71], 40), (1920, [50, 55, 59, 65], 43)):
+            self.assertEqual(sorted(note.pitch for note in notes if note.channel == 0 and note.start_tick == tick),
+                             chord_pitches)
+            self.assertEqual([note.pitch for note in notes if note.channel == 1 and note.start_tick == tick],
+                             [bass])
+
+    def test_adr017_rejects_drop2_when_closed_shape_cannot_fit(self):
+        chords = ["Cmaj7", "Emaj7"]
+        self.assertEqual(MidiExportService.adr017_voicing_failures(chords)["DROP2"], "Emaj7")
+        self.midi_path.write_bytes(b"existing file")
+        with self.assertRaisesRegex(ValueError, "does not fit"):
+            MidiExportService.export_progression_adr017(
+                chords, self.midi_path, voicing_type="DROP2",
+            )
+        self.assertEqual(self.midi_path.read_bytes(), b"existing file")
+        with self.assertRaisesRegex(ValueError, "does not fit"):
+            MidiExportService.adr017_overlap_summary(
+                chords, [(0, 1920), (1910, 1920)], voicing_type="DROP2",
+            )
 
     def test_export_progression_adr017_percentage_length_and_single_track(self):
         out = MidiExportService.export_progression_adr017(
