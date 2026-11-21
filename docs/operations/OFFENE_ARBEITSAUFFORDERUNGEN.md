@@ -61,9 +61,10 @@ New active IDs continue after the legacy range. Dated plans and audit reports re
 - **Abnahmekriterien:** Record the verified sync result and any pending/conflict state without copying or deleting files to force synchronization.
 
 ### OA-0041: Align GitHub labels and epics with the repository state
-- **Kategorie:** GitHub / Governance · **Status:** `IN_PROGRESS` · **Ursprung:** EXPLICIT
+- **Kategorie:** GitHub / Governance · **Status:** `DONE_UNVERIFIED` · **Ursprung:** EXPLICIT
 - **Beschreibung:** Create the label taxonomy in [`.github/labels.yml`](../../.github/labels.yml), including the categories that [`release.yml`](../../.github/release.yml) expects, apply it to issue templates and open epics, and record the current state in issues #149, #150, #151 and #154.
 - **Quellen:** User request on 2026-11-21; [GitHub and CI overview](../../.github/GITHUB_UND_CI.md); [roadmap §0](../roadmap/ROADMAP_AND_RESOURCE_PLAN.md#0-aktueller-stand-und-nächste-etappen-21112026)
+- **Fortschritt 2026-11-21:** All 23 taxonomy labels were created or updated with `gh label create --force`; epics #149, #150, #151 and #154 carry epic/area/state labels and a dated status comment. Independent review of the label scheme and PR #266 is pending.
 - **Abnahmekriterien:** Every label in the versioned taxonomy exists on GitHub; issue templates reference only existing labels; each open epic carries its area and epic labels and a dated status comment; no issue is closed without owner acceptance.
 
 ### OA-0042: Protect `main` with required checks and review
