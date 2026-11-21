@@ -17,6 +17,7 @@ import check_source
 import detect_duplicates
 import extract_instructions
 import register_paths
+import validate_register
 
 
 ORIGINAL = b"### OA-0001: Task\n* **Status:** `OPEN`\n"
@@ -92,6 +93,14 @@ class TestRegisterRecovery(unittest.TestCase):
             backup_knowledge.restore_master(invalid, self.target)
         self.assertEqual(self.target.read_bytes(), CURRENT)
 
+    def test_restore_rejects_malformed_task_even_when_snapshot_hash_matches(self):
+        self.target.write_bytes(ORIGINAL + b"\n### OA-10000: Malformed\n* **Status:** `UNKNOWN`\n")
+        invalid = backup_knowledge.backup_master(self.target)["backup"]
+        self.target.write_bytes(CURRENT)
+        with self.assertRaisesRegex(ValueError, "Malformed OA task heading"):
+            backup_knowledge.restore_master(invalid, self.target)
+        self.assertEqual(self.target.read_bytes(), CURRENT)
+
     def test_existing_restore_lock_leaves_current_register_intact(self):
         lock = self.target.with_name(f".{self.target.name}.restore.lock")
         lock.write_text("Active restore", encoding="utf-8")
@@ -156,3 +165,80 @@ class TestSourceBoundaries(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "outside the allowed directory"):
                 extract_instructions.extract_from_file(escaped, base)
             self.assertEqual(detect_duplicates.is_duplicate(inside, base), [])
+
+    def test_duplicate_scan_reports_unreadable_candidate(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp).resolve()
+            source = root / "source.md"
+            copy = root / "copy.md"
+            source.write_bytes(b"same data")
+            copy.write_bytes(source.read_bytes())
+            original_open = Path.open
+
+            def open_file(path, *args, **kwargs):
+                if path == copy:
+                    raise PermissionError("simulated read failure")
+                return original_open(path, *args, **kwargs)
+
+            with patch.object(Path, "open", open_file):
+                with self.assertRaisesRegex(PermissionError, "simulated read failure"):
+                    detect_duplicates.is_duplicate(source, root, intake_dir=root)
+
+    def test_duplicate_scan_rejects_target_outside_intake(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            intake = root / "intake"
+            intake.mkdir()
+            source = root / "source.md"
+            source.touch()
+            with self.assertRaisesRegex(ValueError, "outside the allowed directory"):
+                detect_duplicates.is_duplicate(source, root, intake_dir=intake)
+
+    def test_candidate_extraction_reports_utf16_and_filters_unrelated_open_text(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "utf16.txt"
+            source.write_text("The result must first be tested.\nDie Tür ist offen.\n", encoding="utf-16")
+            candidates = extract_instructions.extract_from_file(source, root)
+            self.assertEqual([(item["line"], item["category"]) for item in candidates], [(1, "NORMATIVE_MUST_EN")])
+
+    def test_extraction_does_not_treat_midi_as_readable_text(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "corpus.mid"
+            source.write_bytes(b"TODO: misleading ASCII within a binary input")
+            with self.assertRaisesRegex(ValueError, "reviewed text derivative"):
+                extract_instructions.extract_from_file(source, root)
+
+
+class TestRegisterNegativeCases(unittest.TestCase):
+    def test_indented_duplicate(self):
+        report = validate_register.validate_content(ORIGINAL.decode() + "   ### OA-0001: Duplicate\n* **Status:** `OPEN`\n")
+        self.assertIn("Duplicate OA-ID found: OA-0001", report["errors"])
+
+    def test_hidden_status_cannot_satisfy_required_field(self):
+        content = "### OA-0001: Task\n<!--\n* **Status:** `OPEN`\n-->\n"
+        report = validate_register.validate_content(content)
+        self.assertIn("OA-0001: expected exactly one status field.", report["errors"])
+
+    def test_unclosed_blocks_cannot_hide_appended_tasks(self):
+        for marker in ("```", "<!--"):
+            with self.subTest(marker=marker):
+                report = validate_register.validate_content(
+                    ORIGINAL.decode() + marker + "\n### OA-0002: Hidden\n"
+                )
+                self.assertIn("Unclosed fenced block or HTML comment in task register.", report["errors"])
+
+    def test_evidence_must_reference_available_commit_when_requested(self):
+        content = """### OA-0001: Fabricated
+* **Status:** `DONE_VERIFIED`
+* **Commit:** `0123456789abcdef0123456789abcdef01234567`
+* **Prüfung:** Test suite
+* **Abnahmebeleg:** Review record
+* **Abnahmekriterien:** Test suite passes
+"""
+        report = validate_register.validate_content(content, verify_commits=True)
+        self.assertEqual(report["errors_count"], 1, report["errors"])
+        self.assertIn("evidence commit is unavailable", report["errors"][0])
+        report = validate_register.validate_content(content.replace("0123456789abcdef0123456789abcdef01234567", "0" * 40))
+        self.assertIn("OA-0001: DONE_VERIFIED requires a valid Commit field.", report["errors"])

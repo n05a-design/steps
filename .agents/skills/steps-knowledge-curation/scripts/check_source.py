@@ -26,7 +26,7 @@ def resolve_source(path: str | Path, base_dir: str | Path | None = None) -> Path
     return target
 
 
-def check_file(path: str | Path, base_dir: str | Path | None = None) -> dict[str, str | int | bool]:
+def check_file(path: str | Path, base_dir: str | Path | None = None) -> dict[str, str | int | bool | None]:
     target = resolve_source(path, base_dir)
     with target.open("rb") as stream:
         size = os.fstat(stream.fileno()).st_size
@@ -37,7 +37,7 @@ def check_file(path: str | Path, base_dir: str | Path | None = None) -> dict[str
         "sha256": digest,
         "extension": target.suffix.lower(),
         "is_symlink": Path(path).is_symlink(),
-        "within_bounds": True,
+        "within_bounds": True if base_dir is not None else None,
     }
 
 

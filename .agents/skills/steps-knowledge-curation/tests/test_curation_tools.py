@@ -1,4 +1,4 @@
-"""Automated unit test suite for steps-knowledge-curation skill scripts covering 22 validation scenarios."""
+"""Automated unit test suite for steps-knowledge-curation skill scripts covering source intake, task candidates and register validation."""
 from __future__ import annotations
 import unittest
 import tempfile
@@ -32,7 +32,7 @@ class TestCurationToolsScenarios(unittest.TestCase):
         self.assertEqual(res["extension"], ".md")
         self.assertEqual(len(res["sha256"]), 64)
         self.assertTrue(res["size_bytes"] > 0)
-        self.assertTrue(res["within_bounds"])
+        self.assertIsNone(res["within_bounds"])
 
     # Scenario 2: Modified Source Detection (hash changes)
     def test_02_modified_source_detection(self):
@@ -259,8 +259,8 @@ class TestCurationToolsScenarios(unittest.TestCase):
         res = check_source.check_file(bin_f)
         self.assertEqual(res["size_bytes"], 8)
         self.assertEqual(len(res["sha256"]), 64)
-        items = extract_instructions.extract_from_file(bin_f)
-        self.assertEqual(len(items), 0)
+        with self.assertRaises(ValueError):
+            extract_instructions.extract_from_file(bin_f)
 
     # Scenario 23: Backup and Recovery Lifecycle
     def test_23_backup_and_recovery(self):

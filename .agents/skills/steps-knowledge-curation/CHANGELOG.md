@@ -1,5 +1,16 @@
 # Changelog – steps-knowledge-curation Skill
 
+## Unreleased
+
+- Use the repository identity verifier, require the Golden mirror and validate
+  v3 graph bindings against the original relation rows and recorded reviews.
+- Check task heading syntax and resolve declared completion commits for the
+  canonical register. Apply task syntax checks during restore.
+- Report an incomplete duplicate scan as an error. Source checks without an
+  intake directory return `None` for `within_bounds`. Task extraction from
+  unsupported formats or corrupt text now fails explicitly.
+- Run live repository checks on each curation CI platform.
+
 ## [1.0.0] - 2026-11-10 (Phase 3 Master V2)
 ### Added
 - Initial verified release of the `steps-knowledge-curation` skill.

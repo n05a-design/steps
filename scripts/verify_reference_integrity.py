@@ -93,6 +93,18 @@ VALID_RELATION_TYPES = {
     'VOICE_LEADING'
 }
 
+BASELINE_SECTIONS = {
+    'domains': ('canonical_domains', 'M', 2, 12),
+    'progressions': ('progressions', 'PROG-', 3, 28),
+    'drum_patterns': ('drum_patterns', 'PAT-', 3, 31),
+    'piano_modules': ('piano_modules', 'P', 2, 19),
+    'reference_cases': ('reference_cases', 'REF-', 4, 198),
+}
+RELATION_IDS = {
+    f'{prefix}-{i:03}' for prefix, count in [('CR', 38), ('REL', 36), ('CDR', 23)]
+    for i in range(1, count + 1)
+}
+
 VALID_ADR_STATUSES = {'proposed', 'accepted', 'rejected', 'superseded'}
 CANONICAL_ADR_THEMES = {
     'ADR-001': 'Zwei Fenster',
@@ -128,6 +140,8 @@ def verify_adr_integrity(decision_register_path):
                 parts = [p.strip() for p in line.split('|')[1:-1]]
                 if len(parts) >= 3:
                     adr_id, status, theme = parts[0], parts[1].lower(), parts[2]
+                    if adr_id in adrs:
+                        errors.append(f"{decision_register_path}:{line_num}: Duplicate ADR ID '{adr_id}'")
                     adrs[adr_id] = {'status': status, 'theme': theme, 'line': line_num}
 
     for adr_id, expected_theme in CANONICAL_ADR_THEMES.items():
@@ -211,12 +225,15 @@ def verify_csv_schema(file_path, required_cols, id_col=None, id_pattern=None):
     if not os.path.exists(file_path):
         return rows, [f"CSV missing: {file_path}"]
 
-    with open(file_path, 'r', encoding='utf-8') as f:
-        reader = csv.reader(f)
+    with open(file_path, 'r', encoding='utf-8-sig', newline='') as f:
+        reader = csv.reader(f, strict=True)
         try:
             header = next(reader)
         except StopIteration:
             return rows, [f"CSV is empty: {file_path}"]
+
+        if len(header) != len(set(header)) or any(not name.strip() for name in header):
+            return rows, [f"{file_path}: Duplicate or empty CSV column name"]
 
         # Check required columns
         for col in required_cols:
@@ -260,18 +277,20 @@ def verify_json_schema(file_path, id_key, required_keys):
         return cases, [f"{file_path}: Invalid JSON syntax: {e}"]
 
     if not isinstance(cases, list):
-        return cases, [f"{file_path}: Root must be a JSON array, got {type(cases).__name__}"]
+        return [], [f"{file_path}: Root must be a JSON array, got {type(cases).__name__}"]
 
+    valid_cases = []
     for idx, c in enumerate(cases):
         if not isinstance(c, dict):
             errors.append(f"{file_path}: Item #{idx} is not an object ({type(c).__name__})")
             continue
 
         cid = c.get(id_key)
-        if not cid:
-            errors.append(f"{file_path}: Item #{idx} missing mandatory ID key '{id_key}'")
+        if not isinstance(cid, str) or not re.fullmatch(r'REF-[0-9]{4}', cid):
+            errors.append(f"{file_path}: Invalid REF ID format in item #{idx}: {cid!r}")
             continue
 
+        valid_cases.append(c)
         if cid in seen_ids:
             errors.append(f"{file_path}: Duplicate case_id '{cid}' at item #{idx} (previously defined at item #{seen_ids[cid]})")
         else:
@@ -283,10 +302,10 @@ def verify_json_schema(file_path, id_key, required_keys):
 
         # Domain check
         dom = c.get('domain', '')
-        if dom and dom not in CANONICAL_DOMAINS:
+        if not isinstance(dom, str) or dom not in CANONICAL_DOMAINS:
             errors.append(f"{file_path}: Item '{cid}' has invalid non-canonical domain ID '{dom}'")
 
-    return cases, errors
+    return valid_cases, errors
 
 def compute_canonical_hash(data):
     s = json.dumps(data, sort_keys=True, ensure_ascii=False)
@@ -305,6 +324,29 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
         errors.append(f"Identity baseline corrupted: {e}")
         return errors
 
+    if not isinstance(baseline, dict) or not isinstance(baseline.get('summary'), dict):
+        return [f"Invalid identity baseline summary: {baseline_path}"]
+
+    sections = {
+        section: (summary_key, {f'{prefix}{i:0{width}}' for i in range(1, count + 1)})
+        for section, (summary_key, prefix, width, count) in BASELINE_SECTIONS.items()
+    }
+    sections['concept_relations'] = ('concept_relations', RELATION_IDS)
+    for name, (summary_key, expected_ids) in sections.items():
+        entries = baseline.get(name)
+        if (not isinstance(entries, dict) or entries.keys() != expected_ids
+                or type(baseline['summary'].get(summary_key)) is not int
+                or baseline['summary'][summary_key] != len(entries)):
+            errors.append(f"Invalid identity baseline section '{name}': expected complete ID set and matching summary.")
+            continue
+        for ident, entry in entries.items():
+            if (not isinstance(entry, dict) or entry.get('id') != ident
+                    or not isinstance(entry.get('semantic_hash'), str)
+                    or not re.fullmatch(r'[0-9a-f]{64}', entry['semantic_hash'])):
+                errors.append(f"Invalid identity baseline record: {ident}")
+    if errors:
+        return errors
+
     # Load authorized migrations if available (Only CONTROLLED_CORRECTION permits hash divergence)
     authorized_migrations = {}
     if migration_rows:
@@ -312,7 +354,7 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
             orig = m.get('original_id')
             mig = m.get('migrated_id')
             action = m.get('action', '')
-            if action == 'CONTROLLED_CORRECTION':
+            if action == 'CONTROLLED_CORRECTION' and m.get('status') == 'ACTIVE':
                 authorized_migrations[mig or orig] = m
 
     def catalog_correction_matches(ident, computed_hash):
@@ -333,8 +375,8 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
             example = parts[3].strip('`* ') if len(parts) > 3 else ''
             domain = parts[5].strip('`* ') if len(parts) > 5 else ''
 
-            if name.lower() != b_entry['name'].lower():
-                errors.append(f"Semantic identity conflict for {pid}: Name changed from '{b_entry['name']}' to '{name}'")
+            if name.lower() != str(b_entry.get('name', '')).lower():
+                errors.append(f"Semantic identity conflict for {pid}: Name changed from '{b_entry.get('name')}' to '{name}'")
 
             computed_h = compute_canonical_hash({
                 'id': pid, 'name': name.strip().lower(), 'domain': domain.strip(),
@@ -361,8 +403,8 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
             tempo = parts[2] if len(parts) > 2 else ''
             meter_feel = parts[3] if len(parts) > 3 else ''
 
-            if name.lower() != b_entry['name'].lower():
-                errors.append(f"Semantic identity conflict for {did}: Name changed from '{b_entry['name']}' to '{name}'")
+            if name.lower() != str(b_entry.get('name', '')).lower():
+                errors.append(f"Semantic identity conflict for {did}: Name changed from '{b_entry.get('name')}' to '{name}'")
             if tempo and tempo != b_entry.get('tempo'):
                 errors.append(f"Semantic identity conflict for {did}: Tempo changed from '{b_entry.get('tempo')}' to '{tempo}'")
 
@@ -386,8 +428,8 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
             goal = parts[2] if len(parts) > 2 else ''
             focus = parts[3] if len(parts) > 3 else ''
 
-            if title.lower() != b_entry['title'].lower():
-                errors.append(f"Semantic identity conflict for {pid}: Title changed from '{b_entry['title']}' to '{title}'")
+            if title.lower() != str(b_entry.get('title', '')).lower():
+                errors.append(f"Semantic identity conflict for {pid}: Title changed from '{b_entry.get('title')}' to '{title}'")
             if goal and goal != b_entry.get('didactic_goal'):
                 errors.append(f"Semantic identity conflict for {pid}: Didactic goal changed from '{b_entry.get('didactic_goal')}' to '{goal}'")
 
@@ -426,18 +468,18 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
                 })
                 b_h = b_entry.get('semantic_hash')
                 if b_h and computed_h != b_h:
-                    if rid not in authorized_migrations:
+                    if not catalog_correction_matches(rid, computed_h):
                         errors.append(f"Semantic identity hash mismatch for {rid}: recomputed {computed_h} != baseline {b_h}")
 
     # 5. Verify Golden Cases (REF-0001 to REF-0198)
-    case_map = {c['case_id']: c for c in current_cases if isinstance(c, dict)}
+    case_map = {c.get('case_id'): c for c in current_cases if isinstance(c, dict)}
     for cid, b_entry in baseline.get('reference_cases', {}).items():
         if cid not in case_map:
             errors.append(f"Baseline Golden Case '{cid}' missing from current test suite!")
         else:
             c = case_map[cid]
-            c_title = c.get('title', '').strip()
-            b_title = b_entry.get('title', '').strip()
+            c_title = str(c.get('title', '')).strip()
+            b_title = str(b_entry.get('title', '')).strip()
             c_exp = json.dumps(c.get('expected_output'), sort_keys=True, ensure_ascii=False)
             b_exp = json.dumps(b_entry.get('expected_output'), sort_keys=True, ensure_ascii=False)
             c_inp = json.dumps(c.get('input_params', {}), sort_keys=True, ensure_ascii=False)
@@ -446,7 +488,7 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
             computed_h = compute_canonical_hash({
                 'id': cid,
                 'title': c_title.lower(),
-                'domain': c.get('domain', '').strip(),
+                'domain': str(c.get('domain', '')).strip(),
                 'input_params': c_inp,
                 'expected_output': c_exp
             })
@@ -464,7 +506,7 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
 
     return errors
 
-def verify_integrity(repo_root=None):
+def verify_integrity(repo_root=None, *, baseline_path=None):
     if repo_root is None:
         repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -475,7 +517,7 @@ def verify_integrity(repo_root=None):
     domain_path = os.path.join(repo_root, 'knowledge', 'research', 'MUSIC_DOMAIN_READINESS_MATRIX.csv')
     canon_json = os.path.join(repo_root, 'knowledge', 'research', 'golden_cases', 'golden_reference_cases.json')
     mirror_json = os.path.join(repo_root, 'tests', 'golden_cases', 'golden_reference_cases.json')
-    baseline_path = os.path.join(repo_root, 'knowledge', 'research', 'REFERENCE_IDENTITY_BASELINE.json')
+    baseline_path = baseline_path or os.path.join(repo_root, 'knowledge', 'research', 'REFERENCE_IDENTITY_BASELINE.json')
     matrix_path = os.path.join(repo_root, 'knowledge', 'research', 'HISTORICAL_REFERENCE_ID_MATRIX.csv')
     migration_path = os.path.join(repo_root, 'knowledge', 'research', 'REFERENCE_ID_MIGRATION_REGISTER.csv')
 
@@ -503,9 +545,9 @@ def verify_integrity(repo_root=None):
                     errors.append(f"Readiness matrix has unexpected domains: {extra}")
 
     # 2. Extract Library Definitions
-    progs, prog_errs = extract_markdown_table_definitions(prog_path, r'PROG-\d{3}', expected_cols=6)
-    drums, drum_errs = extract_markdown_table_definitions(drum_path, r'PAT-\d{3}', expected_cols=7)
-    pianos, piano_errs = extract_markdown_table_definitions(piano_path, r'P\d{2}', expected_cols=5)
+    progs, prog_errs = extract_markdown_table_definitions(prog_path, r'PROG-[0-9]{3}$', expected_cols=6)
+    drums, drum_errs = extract_markdown_table_definitions(drum_path, r'PAT-[0-9]{3}$', expected_cols=7)
+    pianos, piano_errs = extract_markdown_table_definitions(piano_path, r'P[0-9]{2}$', expected_cols=5)
 
     errors.extend(prog_errs)
     errors.extend(drum_errs)
@@ -518,6 +560,8 @@ def verify_integrity(repo_root=None):
         required_keys=['case_id', 'domain', 'category', 'title', 'input_params', 'expected_output']
     )
     errors.extend(json_errs)
+    if len(cases) != BASELINE_SECTIONS['reference_cases'][3]:
+        errors.append(f"Unexpected number of golden reference cases: {len(cases)}")
 
     # 4. Check Relations Referential Integrity & Parsing
     prog_ids = {p[0] for p in progs}
@@ -532,6 +576,8 @@ def verify_integrity(repo_root=None):
         id_pattern=r'^(CR|REL|CDR)-\d{3}$'
     )
     errors.extend(rel_errs)
+    if len(rel_rows) != len(RELATION_IDS):
+        errors.append(f"Unexpected number of canonical relations: {len(rel_rows)}")
 
     for line_num, r in rel_rows:
         src = r.get('source_id', '').strip()
@@ -582,6 +628,9 @@ def verify_integrity(repo_root=None):
             h2 = hashlib.sha256(f2.read()).hexdigest()
             if h1 != h2:
                 errors.append(f"Golden cases desynchronization: {canon_json} ({h1[:8]}) differs from test mirror {mirror_json} ({h2[:8]})")
+
+    else:
+        errors.append(f"Golden case or test mirror missing: {canon_json}, {mirror_json}")
 
     # 7. Check Identity Baseline Lock (Comprehensive Semantic Hash & Field Validation)
     lock_errs = verify_identity_lock(baseline_path, progs, drums, pianos, cases, rel_rows, mig_rows)
@@ -635,7 +684,7 @@ def main():
         print("RESULT: INTEGRITY CHECK FAILED (Exitcode 1)")
         sys.exit(1)
     else:
-        print("RESULT: 100% CANONICAL REFERENCE & SCHEMA INTEGRITY VERIFIED (Exitcode 0)")
+        print("RESULT: REFERENCE AND SCHEMA CHECKS PASSED (Exitcode 0)")
         sys.exit(0)
 
 if __name__ == '__main__':

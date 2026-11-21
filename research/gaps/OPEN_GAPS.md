@@ -1,5 +1,19 @@
 # Offene Evidenz und historische Bestandsaufnahme
 
+## Curation guardrails and remaining evidence
+
+The [curation runbook](../../.agents/skills/steps-knowledge-curation/SKILL.md)
+now checks baseline-bound identities, requires the Golden mirror, and binds
+the v3 graph matrix to the canonical relation register and its recorded
+reviews. Keep the previous audit below as evidence for its original revision.
+The current checks verify that these records agree and resolve catalog IDs.
+Historical node definitions, graph semantics, source rights, and open
+benchmark assessments still require review in their specific scope. For
+changes to the baseline or an existing review record, record the reviewed
+diff and the authority approving it. Use the
+[canonical work register](../../docs/operations/OFFENE_ARBEITSAUFFORDERUNGEN.md)
+for task status.
+
 ## Fachliche Gesamtfreigabe (21.11.2026)
 
 [Der Gesamtaudit](../../docs/audit/2026-11-21/README.md) belegt offene Fehler
