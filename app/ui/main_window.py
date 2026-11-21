@@ -333,13 +333,15 @@ class StepsMainWindow:
             on_load=self._on_new_from_example,
         )
 
-    def _on_new_from_example(self, prog_id: str) -> bool:
+    def _on_new_from_example(
+        self, prog_id: str, semitones: int = 0, convention: Literal["INT", "DE"] = "INT",
+    ) -> bool:
         try:
             reviewed = get_reviewed_progression(prog_id)
             if not self._confirm_unsaved_changes():
                 return False
-            self.controller.new_reviewed_project(reviewed)
-        except (PublicationError, OSError, ValueError) as exc:
+            self.controller.new_reviewed_project(reviewed, semitones, convention)
+        except (MusicTheoryError, OSError, ValueError) as exc:
             messagebox.showerror(
                 self.i18n.translate("file.example.error.title"),
                 str(exc),

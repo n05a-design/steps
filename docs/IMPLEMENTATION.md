@@ -127,6 +127,14 @@ assert [v.bass_note % 12 for v in voicings] == [2, 7, 0]
 
 Die [Pilotfreigabe](../knowledge/concepts/progressions/README.md) beschreibt den zusätzlichen Zugang zu geprüften Lehrtexten.
 
+In der Bibliothek lässt sich eine Übungskopie um bis zu sechs Halbtöne
+in beide Richtungen transponieren und in `INT` oder `DE` anzeigen. Karten
+und geladenes Projekt nutzen dieselbe Transposition. Der Fachtext und
+seine Fundstellen beschreiben weiterhin die freigegebene Originalfassung.
+Die Kopie beginnt mit eigener Undo-Historie und unveränderten relativen
+Tonstufen und Ereigniszeiten. Erst das Laden nach der Speicherrückfrage
+ersetzt das aktive Projekt.
+
 Für `PROG-028` verwenden Bestandskatalog und Inspektor natürliches e-Moll
 als gemeinsamen Bezug. `Em9–Am9–D9–Gmaj9` entspricht dadurch
 `i9–iv9–VII9–IIImaj9`. Das [Fachdossier](../knowledge/concepts/progressions/PROGRESSION_BATCH_6_DOSSIER.md#27-prog-028--circle-of-fifths-soul-cycle)

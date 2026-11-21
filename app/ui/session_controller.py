@@ -24,6 +24,28 @@ from src.steps.progression.engine import ReviewedProgression
 logger = logging.getLogger(__name__)
 
 
+def reviewed_practice_session(
+    reviewed: ReviewedProgression, semitones: int = 0, convention: Literal["INT", "DE"] = "INT",
+) -> ProgressionSession:
+    """Create a clean practice copy with the catalog's original harmonic spelling."""
+    progression = reviewed.progression
+    original = ProgressionSession(
+        initial_chords=[symbol.strip() for symbol in progression.chords_str.split(" - ")],
+        key_root=progression.default_key.removesuffix("m"),
+        is_minor=progression.default_key.endswith("m"), convention="INT", title=progression.name,
+    )
+    if type(semitones) is not int or not -6 <= semitones <= 6:
+        raise ValueError("Practice transposition must be between -6 and +6 semitones.")
+    if semitones == 0 and convention == "INT":
+        return original
+    original.transpose(semitones)
+    original.set_notation_convention(convention)
+    return ProgressionSession(
+        initial_chords=original.chords, key_root=original.key_root, is_minor=original.is_minor,
+        convention=original.convention, title=original.state.title,
+    )
+
+
 @dataclass(frozen=True)
 class VoiceLeadingStyleProfile:
     """Non-mutating summary of one style's progression analysis."""
@@ -219,18 +241,11 @@ class ProgressionSessionController:
         self._session.reset_to_defaults()
         self._notify()
 
-    def new_reviewed_project(self, reviewed: ReviewedProgression) -> None:
+    def new_reviewed_project(
+        self, reviewed: ReviewedProgression, semitones: int = 0, convention: Literal["INT", "DE"] = "INT",
+    ) -> None:
         """Replaces the active session with an independent copy of a published example."""
-        progression = reviewed.progression
-        is_minor = progression.default_key.endswith("m")
-        chords = [symbol.strip() for symbol in progression.chords_str.split(" - ")]
-        self._session = ProgressionSession(
-            initial_chords=chords,
-            key_root=progression.default_key.removesuffix("m"),
-            is_minor=is_minor,
-            convention="INT",
-            title=progression.name,
-        )
+        self._session = reviewed_practice_session(reviewed, semitones, convention)
         self._notify()
 
     def midi_voicing_failures(self) -> dict[Adr017Voicing, str]:

@@ -5,6 +5,7 @@ from unittest.mock import Mock, patch
 
 from app.i18n import LocaleManager
 from app.knowledge import list_reviewed_progressions
+from app.ui.session_controller import ProgressionSessionController, reviewed_practice_session
 from app.ui.reviewed_library_dialog import (
     ReviewedProgressionLibraryDialog,
     format_reviewed_progression,
@@ -55,6 +56,27 @@ class TestReviewedProgressionLibrary(unittest.TestCase):
         ):
             self.assertIn(value, preview)
 
+    def test_practice_copy_preserves_stages_and_catalog_evidence(self):
+        controller = ProgressionSessionController()
+        before = controller.session.state
+        for example in self.examples:
+            original = reviewed_practice_session(example)
+            degrees = [original.harmonic_degree_at(index) for index in range(len(original.chords))]
+            for convention in ("INT", "DE"):
+                for steps in range(-6, 7):
+                    with self.subTest(example=example.progression.prog_id, convention=convention, steps=steps):
+                        copy = reviewed_practice_session(example, steps, convention)
+                        self.assertEqual(copy.convention, convention)
+                        self.assertEqual([copy.harmonic_degree_at(index) for index in range(len(copy.chords))], degrees)
+                        self.assertEqual(copy.state.chord_event_timings, original.state.chord_event_timings)
+                        self.assertFalse(copy.is_dirty or copy.can_undo)
+        self.assertEqual(controller.session.state, before)
+        jazz = self.examples[1]
+        controller.new_reviewed_project(jazz, -1, "DE")
+        self.assertEqual(controller.session.key_root, "H")
+        self.assertEqual(controller.session.chords, ["Cism7", "Fis7", "Hmaj7"])
+        self.assertIn("Cmaj7", jazz.progression.chords_str)
+
     @patch("app.ui.reviewed_library_dialog.messagebox.showerror")
     @patch("app.ui.reviewed_library_dialog.webbrowser.open")
     def test_evidence_browser_failure_shows_address_in_current_language(self, browser, error):
@@ -86,11 +108,14 @@ class TestReviewedProgressionLibrary(unittest.TestCase):
         dialog._selected = self.examples[0]
         dialog._on_load = Mock(return_value=False)
         dialog._close = Mock()
+        dialog._practice_options = Mock(return_value=(1, "DE"))
+        dialog._load_button = Mock()
+        dialog._load_button.cget.return_value = "normal"
 
         dialog._load_selected()
 
         dialog._on_load.assert_called_once_with(
-            self.examples[0].progression.prog_id
+            self.examples[0].progression.prog_id, 1, "DE"
         )
         dialog._close.assert_not_called()
 
@@ -99,6 +124,9 @@ class TestReviewedProgressionLibrary(unittest.TestCase):
         dialog._selected = self.examples[0]
         dialog._on_load = Mock(return_value=True)
         dialog._close = Mock()
+        dialog._practice_options = Mock(return_value=(1, "DE"))
+        dialog._load_button = Mock()
+        dialog._load_button.cget.return_value = "normal"
 
         dialog._load_selected()
 

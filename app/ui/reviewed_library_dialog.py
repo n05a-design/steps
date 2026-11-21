@@ -5,12 +5,14 @@ from __future__ import annotations
 import tkinter as tk
 import webbrowser
 from tkinter import messagebox, ttk
-from typing import Callable, Iterable
+from typing import Callable, Iterable, Literal
 
 from app.i18n import LocaleManager
 from app.ui.dialog_support import ModalDialog, configure_readonly_preview
+from app.ui.session_controller import reviewed_practice_session
 from app.ui.theme import ThemeManager, create_button
 from src.steps.progression.engine import ReviewedProgression
+from src.steps.theory.exceptions import MusicTheoryError
 
 
 def reviewed_progression_matches(example: ReviewedProgression, query: str) -> bool:
@@ -116,7 +118,7 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
         examples: Iterable[ReviewedProgression],
         i18n: LocaleManager,
         theme: ThemeManager,
-        on_load: Callable[[str], bool],
+        on_load: Callable[[str, int, Literal["INT", "DE"]], bool],
     ) -> None:
         self._examples = tuple(examples)
         self._visible_examples: tuple[ReviewedProgression, ...] = ()
@@ -167,6 +169,22 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
         self._search_entry.pack(side=tk.LEFT, fill=tk.X, expand=True)
         self._search_entry.bind("<Down>", self._focus_results)
         self._search_var.trace_add("write", self._refresh_list)
+
+        practice = tk.Frame(container, bg=colors.bg_window)
+        practice.pack(fill=tk.X, pady=(0, spacing.sm))
+        self._transpose_var = tk.StringVar(self.window, value="0")
+        self._notation_var = tk.StringVar(self.window, value="INT")
+        for key, variable, values in (
+            ("library.practice.transpose", self._transpose_var,
+             tuple(f"{step:+d}" if step else "0" for step in range(-6, 7))),
+            ("library.practice.notation", self._notation_var, ("INT", "DE")),
+        ):
+            tk.Label(practice, text=translate(key), bg=colors.bg_window,
+                     fg=colors.text_secondary).pack(side=tk.LEFT, padx=(0, spacing.xs))
+            selector = ttk.Combobox(practice, textvariable=variable, values=values,
+                                    state="readonly", width=5)
+            selector.pack(side=tk.LEFT, padx=(0, spacing.md))
+            selector.bind("<<ComboboxSelected>>", self._refresh_practice)
 
         self._chord_preview = tk.Frame(container, bg=colors.bg_window)
         self._body = tk.PanedWindow(
@@ -292,9 +310,8 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
         if selected is self._selected:
             return
         self._selected = selected
-        self._render_chords(selected)
+        self._refresh_practice()
         self._update_evidence_menu(selected)
-        self._load_button.configure(state=tk.NORMAL)
         self._set_preview(
             format_reviewed_progression(self._selected, self._i18n.translate)
         )
@@ -337,9 +354,27 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
             parent=self.window,
         )
 
+    def _practice_options(self) -> tuple[int, Literal["INT", "DE"]]:
+        return int(self._transpose_var.get()), "DE" if self._notation_var.get() == "DE" else "INT"
+
+    def _refresh_practice(self, _event: object | None = None) -> None:
+        if self._selected is None:
+            return
+        self._load_button.configure(state=tk.DISABLED)
+        try:
+            self._render_chords(self._selected)
+        except (MusicTheoryError, ValueError):
+            self._chord_preview.pack_forget()
+            t = self._i18n.translate
+            messagebox.showerror(t("library.practice.error.title"), t("library.practice.error.message"),
+                                 parent=self.window)
+        else:
+            self._load_button.configure(state=tk.NORMAL)
+
     def _render_chords(self, example: ReviewedProgression) -> None:
         progression = example.progression
-        chords = progression.chords_str.split(" - ")
+        session = reviewed_practice_session(example, *self._practice_options())
+        chords = session.chords
         degrees = progression.roman_numerals.split(" - ")
         if len(degrees) != len(chords):
             degrees = [""] * len(chords)
@@ -349,9 +384,10 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
         typography = self._theme.typography
         for child in self._chord_preview.winfo_children():
             child.destroy()
+        key = session.key_root + ("m" if session.is_minor else "")
         tk.Label(
             self._chord_preview,
-            text=self._i18n.translate("library.detail.key", value=progression.default_key),
+            text=self._i18n.translate("library.practice.key", value=key, notation=session.convention),
             fg=colors.text_secondary,
             bg=colors.bg_window,
             font=(typography.font_family_sans, typography.size_sm),
@@ -390,7 +426,6 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
         self._preview.yview_moveto(0)
 
     def _load_selected(self, _event: object | None = None) -> None:
-        if self._selected is not None and self._on_load(
-            self._selected.progression.prog_id
-        ):
+        if (self._selected is not None and str(self._load_button.cget("state")) != tk.DISABLED
+                and self._on_load(self._selected.progression.prog_id, *self._practice_options())):
             self._close()

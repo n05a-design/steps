@@ -60,6 +60,7 @@
 
 - Das MIDI-Exportstudio prüft jedes Voicing vor der Dateiauswahl und nennt den ersten Akkord, der einen Modus blockiert.
 - Die Progressionsbibliothek verknüpft Suchbegriffe aus Akkorden, Titeln und Quellen. Eine weiterhin sichtbare Auswahl bleibt beim Ändern der Suche erhalten. Katalogfehler erscheinen vor der Speicherrückfrage.
+- Die geprüfte Bibliothek zeigt und lädt transponierte Übungskopien in INT oder DE. Die Originalfassung mit Quellen und Freigaben bleibt sichtbar.
 
 - Der Next Chord Explorer bewahrt die Akkordauswahl auf Aqua, zeigt lokalisierte Beziehungen samt Provenienz und verhindert die Übernahme überholter Empfehlungen.
 - Die Python-API für Drums, Piano und Bass weist kreative Ideen und prüfpflichtige Forschungsbezüge aus. Aufrufer erhalten für `confidence` künftig `None`.

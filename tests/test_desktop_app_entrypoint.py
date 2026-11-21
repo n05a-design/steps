@@ -448,10 +448,27 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             self.assertEqual(
                 visible_labels()[-7:],
                 [
-                    i18n.translate("library.detail.key", value="C"),
+                    i18n.translate("library.practice.key", value="C", notation="INT"),
                     "Dm7", "ii^7", "G7", "V^7", "Cmaj7", "I^maj7",
                 ],
             )
+            transposition, notation = list(widgets(library, ttk.Combobox))
+            transposition.set("-1")
+            notation.set("DE")
+            notation.event_generate("<<ComboboxSelected>>")
+            root.update()
+            self.assertEqual(
+                visible_labels()[-7:],
+                [
+                    i18n.translate("library.practice.key", value="H", notation="DE"),
+                    "Cism7", "ii^7", "Fis7", "V^7", "Hmaj7", "I^maj7",
+                ],
+            )
+            self.assertIn("Cmaj7", preview.get("1.0", tk.END))
+            transposition.set("0")
+            notation.set("INT")
+            notation.event_generate("<<ComboboxSelected>>")
+            root.update()
             preview.focus_force()
             preview.event_generate("<Next>")
             root.update()
