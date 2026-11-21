@@ -1,11 +1,17 @@
 ---
 name: steps-knowledge
-description: Portable music theory and harmony knowledge adapter for STEPS. Grounded retrieval across verified sources, preserving alternative interpretations and preventing hallucination.
+description: Portable music theory and harmony knowledge adapter for STEPS. Exact retrieval of approved pilot claims with source locators and explicit notation projection.
 ---
 
 # STEPS Knowledge Skill
 
-Verbindlicher Adapter für KI-Agenten (Codex, Claude, Gemini, Antigravity) zur Abfrage der verifizierten STEPS-Wissensbasis.
+Der Adapter liefert fachlich freigegebene Aussagen aus der
+[Pilotbibliothek](../../knowledge/concepts/progressions/REVIEWED_PROGRESSIONS.md).
+Er verwendet dieselbe Freigabeprüfung wie die App. Für eine Abfrage verwende
+eine exakte Claim-ID, Progressions-ID, Akkordfolge oder ein ausdrücklich
+unterstütztes Stichwort wie `ii-V-I`, `axis` oder `minor plagal`.
+Der [Index](index.json) weist außerdem Bestands- und Forschungsthemen aus.
+Diese Themen benötigen eigene Freigaben für die Ausgabe als Lerninhalt.
 
 ## 1. Grundregeln für Agentenantworten
 
@@ -19,13 +25,21 @@ Verbindlicher Adapter für KI-Agenten (Codex, Claude, Gemini, Antigravity) zur A
 
 3. **Funktionale Mehrdeutigkeit bewahren:**
    - Erkläre komplexe Harmonien (z. B. verminderte Septakkorde `vii°7`, Subtonika `bVII`, Medianten) nicht als monotone Einzelwahrheit.
-   - Nenne stets die anerkannten alternativen Lesarten (z. B. Stufentheorie nach Aldwell/Schachter vs. Funktionstheorie nach Riemann vs. Chord Scale Theory).
+   - Erhalte die alternative Lesart, soweit sie im freigegebenen Claim belegt
+     ist. Verwende für weitergehende Aussagen den jeweils belegten Rahmen und
+     behandle unfreigegebene Deutungen als `NO_EVIDENCE`.
 
 4. **Urheberrechts- und Veröffentlichungsgrenzen:**
    - Zitiere keine Volltexte aus urheberrechtlich geschützten Lehrbüchern der Klasse E.
    - Verwende stattdessen die strukturierten Metadaten und didaktischen Zusammenfassungen.
 
 ## 2. API-Zugriff im Code
+
+`query("B")` liefert ohne Notationsangabe `AMBIGUOUS_REJECTION`. Die
+geprüfte Notationsaussage ist über `query("notation")` abrufbar. Erfasste
+Stimmführungstöne erscheinen in der gewählten Schreibweise. Die freigegebenen
+deutschen Erklärtexte und Fundstellen behalten ihre Sprache. Bei einer
+allgemeinen, nicht exakt zugeordneten Frage liefert der Adapter `NO_EVIDENCE`.
 
 ```python
 from src.steps.knowledge import KnowledgeAdapter

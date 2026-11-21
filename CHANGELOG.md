@@ -2,6 +2,8 @@
 
 ## Unreleased – App und Python-Kern
 
+- Der Wissensadapter gibt freigegebene Pilot-Aussagen mit allen Fundstellen aus und meldet fehlende Nachweise bei unbelegten Abfragen.
+
 - Die MIDI-Akkordspur bleibt bei enger Lage innerhalb einer Oktave. Drop-2 erhält die gewünschte Stimmverteilung und wird bei unpassender Lage im Exportstudio deaktiviert.
 
 - Anfänger-Voicings spielen den notierten Slash-Bass. Die Reduktion erhält die verminderte Quinte von Septakkorden und zeigt die tatsächlich ausgelassenen Töne.
