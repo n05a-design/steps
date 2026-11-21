@@ -357,6 +357,8 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
 
     if not isinstance(baseline, dict) or not isinstance(baseline.get('summary'), dict):
         return [f"Invalid identity baseline summary: {baseline_path}"]
+    if baseline.get('schema_version') != '1.3.0':
+        return [f"Unsupported identity baseline schema version: {baseline.get('schema_version')!r}"]
 
     sections = {
         section: (summary_key, {f'{prefix}{i:0{width}}' for i in range(1, count + 1)})
@@ -379,21 +381,23 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
     if errors:
         return errors
 
-    # Load authorized migrations if available (Only CONTROLLED_CORRECTION permits hash divergence)
     authorized_migrations = {}
-    if migration_rows:
-        for l_num, m in migration_rows:
-            orig = m.get('original_id')
-            mig = m.get('migrated_id')
-            action = m.get('action', '')
-            if action == 'CONTROLLED_CORRECTION' and m.get('status') == 'ACTIVE':
-                authorized_migrations[mig or orig] = m
+    for line_number, row in migration_rows or ():
+        if row.get('action') != 'CONTROLLED_CORRECTION' or row.get('status') != 'ACTIVE':
+            continue
+        ident = row.get('migrated_id') or row.get('original_id')
+        _, separator, digest = row.get('migration_reason', '').rpartition(' sha256=')
+        if not ident or not separator or not re.fullmatch(r'[0-9a-f]{64}', digest):
+            errors.append(f"Invalid active controlled correction at migration line {line_number}.")
+            continue
+        if ident in authorized_migrations:
+            errors.append(f"Multiple active controlled corrections for {ident}.")
+        authorized_migrations[ident] = digest
+    if errors:
+        return errors
 
     def catalog_correction_matches(ident, computed_hash):
-        # Keep the original baseline and allow only the reviewed target version.
-        migration = authorized_migrations.get(ident, {})
-        _, separator, expected = migration.get("migration_reason", "").rpartition(" sha256=")
-        return bool(separator) and expected == computed_hash
+        return authorized_migrations.get(ident) == computed_hash
 
     # 1. Verify Progressions (PROG-001 to PROG-027)
     prog_map = {p[0]: p for p in current_progs}
@@ -407,22 +411,22 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
             example = parts[3].strip('`* ') if len(parts) > 3 else ''
             domain = parts[5].strip('`* ') if len(parts) > 5 else ''
 
-            if name.lower() != str(b_entry.get('name', '')).lower():
-                errors.append(f"Semantic identity conflict for {pid}: Name changed from '{b_entry.get('name')}' to '{name}'")
-
             computed_h = compute_canonical_hash({
                 'id': pid, 'name': name.strip().lower(), 'domain': domain.strip(),
                 'harmonic_structure': degrees.strip('`* '), 'standard_example': example.strip('`* ')
             })
+            if catalog_correction_matches(pid, computed_h):
+                continue
+            if name.lower() != str(b_entry.get('name', '')).lower():
+                errors.append(f"Semantic identity conflict for {pid}: Name changed from '{b_entry.get('name')}' to '{name}'")
+
             b_h = b_entry.get('semantic_hash')
-            corrected = catalog_correction_matches(pid, computed_h)
-            if domain and domain != b_entry.get('domain', '') and not corrected:
+            if domain and domain != b_entry.get('domain', ''):
                 errors.append(f"Semantic identity conflict for {pid}: Domain changed from '{b_entry.get('domain')}' to '{domain}'")
-            if degrees != b_entry['harmonic_structure'] and not corrected:
+            if degrees != b_entry['harmonic_structure']:
                 errors.append(f"Semantic identity conflict for {pid}: Harmonic structure changed from '{b_entry['harmonic_structure']}' to '{degrees}'")
             if b_h and computed_h != b_h:
-                if not corrected:
-                    errors.append(f"Semantic identity hash mismatch for {pid}: recomputed {computed_h} != baseline {b_h}")
+                errors.append(f"Semantic identity hash mismatch for {pid}: recomputed {computed_h} != baseline {b_h}")
 
     # 2. Verify Drum Patterns (PAT-001 to PAT-031)
     drum_map = {d[0]: d for d in current_drums}
@@ -435,19 +439,20 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
             tempo = parts[2] if len(parts) > 2 else ''
             meter_feel = parts[3] if len(parts) > 3 else ''
 
+            computed_h = compute_canonical_hash({
+                'id': did, 'name': name.strip().lower(), 'domain': 'M08',
+                'tempo': tempo.strip(), 'meter_and_feel': meter_feel.strip()
+            })
+            if catalog_correction_matches(did, computed_h):
+                continue
             if name.lower() != str(b_entry.get('name', '')).lower():
                 errors.append(f"Semantic identity conflict for {did}: Name changed from '{b_entry.get('name')}' to '{name}'")
             if tempo and tempo != b_entry.get('tempo'):
                 errors.append(f"Semantic identity conflict for {did}: Tempo changed from '{b_entry.get('tempo')}' to '{tempo}'")
 
-            computed_h = compute_canonical_hash({
-                'id': did, 'name': name.strip().lower(), 'domain': 'M08',
-                'tempo': tempo.strip(), 'meter_and_feel': meter_feel.strip()
-            })
             b_h = b_entry.get('semantic_hash')
             if b_h and computed_h != b_h:
-                if not catalog_correction_matches(did, computed_h):
-                    errors.append(f"Semantic identity hash mismatch for {did}: recomputed {computed_h} != baseline {b_h}")
+                errors.append(f"Semantic identity hash mismatch for {did}: recomputed {computed_h} != baseline {b_h}")
 
     # 3. Verify Piano Modules (P01 to P19)
     piano_map = {p[0]: p for p in current_pianos}
@@ -460,19 +465,20 @@ def verify_identity_lock(baseline_path, current_progs, current_drums, current_pi
             goal = parts[2] if len(parts) > 2 else ''
             focus = parts[3] if len(parts) > 3 else ''
 
+            computed_h = compute_canonical_hash({
+                'id': pid, 'title': title.strip().lower(), 'domain': 'M10',
+                'didactic_goal': goal.strip(), 'musical_focus': focus.strip()
+            })
+            if catalog_correction_matches(pid, computed_h):
+                continue
             if title.lower() != str(b_entry.get('title', '')).lower():
                 errors.append(f"Semantic identity conflict for {pid}: Title changed from '{b_entry.get('title')}' to '{title}'")
             if goal and goal != b_entry.get('didactic_goal'):
                 errors.append(f"Semantic identity conflict for {pid}: Didactic goal changed from '{b_entry.get('didactic_goal')}' to '{goal}'")
 
-            computed_h = compute_canonical_hash({
-                'id': pid, 'title': title.strip().lower(), 'domain': 'M10',
-                'didactic_goal': goal.strip(), 'musical_focus': focus.strip()
-            })
             b_h = b_entry.get('semantic_hash')
             if b_h and computed_h != b_h:
-                if not catalog_correction_matches(pid, computed_h):
-                    errors.append(f"Semantic identity hash mismatch for {pid}: recomputed {computed_h} != baseline {b_h}")
+                errors.append(f"Semantic identity hash mismatch for {pid}: recomputed {computed_h} != baseline {b_h}")
 
     # 4. Verify Concept Relations (CR-001 to CR-094)
     if current_relations:
