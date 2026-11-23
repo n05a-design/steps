@@ -2,6 +2,7 @@
 
 ## Unreleased – App und Python-Kern
 
+- Die Entwicklungs- und Paketversion für STEPS wurde nach der Migration auf `glide_shell` `0.6.2` auf `0.3.0-dev` (`0.3.0.dev0` in `pyproject.toml` und `src/steps/__init__.py`, `CURRENT_APP_VERSION` in `src/steps/storage/project_io.py`) sowie in der Dokumentation aktualisiert.
 - Die Desktop-Anwendung baut produktiv auf der übernommenen `glide_shell` (`0.6.2` aus Glide `v1.0.2`, Commit `7dcd8dc04366f88943fa17827882cef4d81421b8`, System `V1.86`, MPL-2.0) auf (`app_host.AppHost`, `modal_session`, `window_lifetime`, `window_geometry`, `system_appearance`, `custom_controls`, `desktop_adapter`, `text_fit`, portabler Designvertrag `DESIGN_RICHTLINIEN.md` inkl. WCAG-AA-Kontrastanpassung für `harmonic_subdominant` im Light-Mode sowie Agenten-Skills).
 - Die Musikprüfung stellt reproduzierbare Zufallsfragen zu acht Bereichen. Septakkord-Umkehrungen und eindeutige Dominantstufen wurden korrigiert.
 - Roadmap, Implementierungsstand, 1.0-Zielbild und Aufgabenregister beschreiben den Stand nach PR #265 mit Etappen bis 1.0. Eine Prüfung relativer Markdown-Links läuft in der CI. Issue-Vorlagen verwenden eine versionierte Label-Taxonomie.

@@ -24,6 +24,8 @@ python -m PyInstaller --noconfirm --onedir --windowed --name STEPS-Dev \
     --add-data "$assets:app/assets/brand" \
     --add-data "$repo_dir/app/locales/*.json:app/locales" \
     --add-data "$repo_dir/design/tokens/tokens.json:design/tokens" \
+    --add-data "$repo_dir/glide_shell/SHELL_MANIFEST.json:glide_shell" \
+    --add-data "$repo_dir/glide_shell/LICENSE:glide_shell" \
     --add-data "$repo_dir/src/steps/progression/*.json:src/steps/progression" \
     --add-data "$repo_dir/knowledge/sources/registry.yaml:knowledge/sources" \
     --add-data "$repo_dir/LICENSE:." \

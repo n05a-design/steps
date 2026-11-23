@@ -8,6 +8,8 @@
 
 > **Aktualisierung 21.11.2026:** Geprüfter Main-Stand `3a5db64b6131806c432b7b38dca60680c5a57d9b` (PR #265). Lokal bestehen 875 automatisierte Tests (`python3 -B -m unittest discover -s tests -p "test_*.py"`, macOS, Python 3.14). Der Wissensbenchmark meldet 92 PASS, 0 FAIL und 27 PENDING. Die fachliche Musikabnahme (`scripts/verify_musical_release.py --report-only`) meldet `theory-core` und `midi-export` als READY; `desktop-voicing`, `recommendations`, `learning-pilot`, `knowledge-adapter`, `harmony-coach` und `research-library` bleiben BLOCKED, weil unabhängige Fachprüfungen fehlen. Abschnitt 0 ersetzt die früheren Aktualisierungsnotizen als aktuelle Arbeitsfolge; die Abschnitte 1–7 bleiben der datierte Ursprungsplan.
 
+> **Aktualisierung 23.11.2026:** Auf Basis von `main` (`5b5708de6b5572f727a26d94c544158baa731794`) wurde `glide_shell` `0.6.2` aus dem verifizierten Glide-Release `v1.0.2` (`7dcd8dc04366f88943fa17827882cef4d81421b8`, System `V1.86`) als Desktop-Fundament (`AppHost`, `modal_session`, `window_lifetime`, `window_geometry`, `system_appearance`, `custom_controls`, `desktop_adapter`, `text_fit`, `DESIGN_RICHTLINIEN.md`) integriert. Die Entwicklungs- und Paketversion wurde auf `0.3.0-dev` / `0.3.0.dev0` angehoben; lokal auf macOS bestehen 898 automatisierte Tests und 13/13 `glide_shell.selftest`-Checks.
+
 ## 0. Aktueller Stand und nächste Etappen (21.11.2026)
 
 ### 0.1 Seit PR #220 umgesetzt
