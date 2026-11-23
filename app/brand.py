@@ -15,6 +15,7 @@ __all__ = [
     "app_icon_ico_path",
     "app_icon_path",
     "apply_window_icon",
+    "load_in_app_logo",
     "logo_path",
 ]
 
@@ -51,3 +52,14 @@ def apply_window_icon(root) -> None:
     photos = [PhotoImage(master=root, file=str(app_icon_path(size))) for size in WINDOW_ICON_SIZES]
     root.iconphoto(True, *photos)
     root._steps_icon_photos = photos  # Tk drops images that Python no longer references.
+
+
+def load_in_app_logo(master, target_height: int = 28):
+    """Load the transparent in-app STEPS logo scaled cleanly for the header."""
+    from tkinter import PhotoImage
+
+    photo = PhotoImage(master=master, file=str(logo_path(64)))
+    if target_height <= 32 and photo.height() >= 64:
+        photo = photo.subsample(2, 2)
+    master._steps_logo_photo = photo
+    return photo

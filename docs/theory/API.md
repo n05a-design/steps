@@ -154,6 +154,7 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 | [`app_icon_ico_path`](../../app/brand.py) | `() -> 'Path'` |
 | [`app_icon_path`](../../app/brand.py) | `(size: 'int' = 256) -> 'Path'` |
 | [`apply_window_icon`](../../app/brand.py) | `(root) -> 'None'` |
+| [`load_in_app_logo`](../../app/brand.py) | `(master, target_height: 'int' = 28)` |
 | [`logo_path`](../../app/brand.py) | `(size: 'int' = 128) -> 'Path'` |
 
 ## Domänenobjekte

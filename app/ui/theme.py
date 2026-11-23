@@ -80,7 +80,7 @@ def create_button(parent: tk.Misc, **options) -> tk.Button | ttk.Button:
     from tkinter import ttk
 
     if parent.tk.call("tk", "windowingsystem") == "aqua":
-        for option in ("bg", "fg", "relief", "padx", "pady"):
+        for option in ("bg", "fg", "relief", "padx", "pady", "anchor"):
             options.pop(option, None)
         return ttk.Button(parent, **options)
     return tk.Button(parent, **options)

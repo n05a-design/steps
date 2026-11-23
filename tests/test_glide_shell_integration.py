@@ -16,6 +16,7 @@ from glide_shell import app_host, selftest, window_lifetime
 
 from app.i18n import LocaleManager
 from app.main import create_desktop_host, main
+from app.ui import layout_policy
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager, apply_window_geometry, fit_text
 
@@ -198,6 +199,133 @@ class TestGlideShellIntegration(unittest.TestCase):
         self.assertEqual(exit_code, 0)
         theme_cls.assert_called_once_with(mode="light")
         run_mock.assert_called_once()
+
+    def test_layout_policy_breakpoints_and_compact_geometry(self):
+        self.assertEqual(layout_policy.header_density(1200), "full")
+        self.assertEqual(layout_policy.header_density(1120), "full")
+        self.assertEqual(layout_policy.header_density(1024), "compact")
+        self.assertEqual(layout_policy.header_density(900), "compact")
+        self.assertEqual(layout_policy.header_density(860), "minimal")
+
+        self.assertEqual(layout_policy.height_density(900), "full")
+        self.assertEqual(layout_policy.height_density(800), "compact")
+        self.assertEqual(layout_policy.height_density(600), "minimal")
+
+        self.assertEqual(layout_policy.effective_sidebar_mode(True, False, False, 1024), "wide")
+        self.assertEqual(layout_policy.effective_sidebar_mode(True, True, False, 1024), "rail")
+        self.assertEqual(layout_policy.effective_sidebar_mode(True, False, False, 860), "rail")
+        self.assertEqual(layout_policy.effective_sidebar_mode(False, False, False, 1024), "hidden")
+        self.assertEqual(layout_policy.effective_sidebar_mode(True, False, True, 1024), "hidden")
+
+        compact_geom = layout_policy.compact_geometry("1024x720+100+80", "", 1710, 1112)
+        self.assertEqual(compact_geom, "520x720+604+80")
+        restored_geom = layout_policy.normal_geometry("1024x720+100+80", compact_geom)
+        self.assertEqual(restored_geom, "1024x720+100+80")
+
+    def test_two_area_shell_sidebar_logo_breakpoints_and_compact_mode(self):
+        require_tk = os.environ.get("STEPS_REQUIRE_DESKTOP_TK") == "1"
+        try:
+            import tkinter as tk
+            from app.ui.main_window import StepsMainWindow
+        except ImportError as exc:
+            if require_tk:
+                self.fail(f"Tk required: {exc}")
+            self.skipTest("tkinter not available")
+
+        host = create_desktop_host(ThemeManager(mode="dark"))
+        try:
+            root = host.create_root()
+        except tk.TclError as exc:
+            if require_tk:
+                self.fail(f"Tk init failed: {exc}")
+            self.skipTest("No Tk graphics display")
+
+        def cleanup():
+            try:
+                if root.winfo_exists():
+                    root.destroy()
+            except tk.TclError:
+                pass
+
+        self.addCleanup(cleanup)
+        root.withdraw()
+        controller = ProgressionSessionController()
+        for symbol in ("Dm7", "G7", "Cmaj7"):
+            controller.add_chord(symbol)
+        window = host.build(
+            lambda r: StepsMainWindow(
+                r, controller=controller, theme=ThemeManager(mode="dark"), locale_manager=LocaleManager(preference="en")
+            ),
+            root,
+        )
+        root.deiconify()
+        root.geometry("1024x720")
+        root.update()
+
+        # 1. Default 1024x720 shows wide sidebar and in-app logo
+        self.assertEqual(window.effective_sidebar_mode(), "wide")
+        self.assertTrue(window.sidebar_frame.winfo_ismapped())
+        self.assertFalse(window.sidebar_rail_frame.winfo_ismapped())
+        self.assertIsNotNone(window._header_logo_image)
+        self.assertTrue(window.header_logo_lbl.winfo_ismapped())
+
+        # 2. Manual narrow rail + keyboard arrow traversal + hide/show
+        window.toggle_sidebar_narrow()
+        root.update()
+        self.assertEqual(window.effective_sidebar_mode(), "rail")
+        self.assertTrue(window.sidebar_rail_frame.winfo_ismapped())
+        self.assertEqual(window.sidebar_rail_frame.winfo_width(), layout_policy.SIDEBAR_RAIL_WIDTH)
+        window._rail_buttons[0].focus_force()
+        window._rail_buttons[0].event_generate("<Down>")
+        root.update()
+        self.assertEqual(root.focus_lastfor(), window._rail_buttons[1])
+        window._rail_buttons[1].event_generate("<Up>")
+        root.update()
+        self.assertEqual(root.focus_lastfor(), window._rail_buttons[0])
+
+        window.toggle_sidebar()
+        root.update()
+        self.assertEqual(window.effective_sidebar_mode(), "hidden")
+        self.assertFalse(window.sidebar_frame.winfo_ismapped())
+        self.assertFalse(window.sidebar_rail_frame.winfo_ismapped())
+
+        window.toggle_sidebar()
+        window.toggle_sidebar_narrow()
+        root.update()
+        self.assertEqual(window.effective_sidebar_mode(), "wide")
+
+        # 3. Responsive breakpoint < 900 px switches wide sidebar -> rail and hides in-app logo
+        root.geometry("860x600")
+        root.update()
+        self.assertEqual(window._header_density, "minimal")
+        self.assertEqual(window._height_density, "minimal")
+        self.assertEqual(window.effective_sidebar_mode(), "rail")
+        self.assertTrue(window.sidebar_rail_frame.winfo_ismapped())
+        self.assertFalse(window.header_logo_lbl.winfo_ismapped())
+
+        # Restoring width >= 900 restores wide sidebar and in-app logo
+        root.geometry("1024x720")
+        root.update()
+        self.assertEqual(window.effective_sidebar_mode(), "wide")
+        self.assertTrue(window.sidebar_frame.winfo_ismapped())
+        self.assertTrue(window.header_logo_lbl.winfo_ismapped())
+
+        # 4. Compact mode hides sidebar/logo, allows COMPACT_MIN, and restores normal geometry
+        window.enter_compact_mode()
+        root.update()
+        self.assertTrue(window.compact_mode_active())
+        self.assertEqual(root.minsize(), layout_policy.COMPACT_MIN)
+        self.assertFalse(window.sidebar_frame.winfo_ismapped())
+        self.assertFalse(window.sidebar_rail_frame.winfo_ismapped())
+        self.assertFalse(window.header_logo_lbl.winfo_ismapped())
+
+        window.leave_compact_mode()
+        root.update()
+        self.assertFalse(window.compact_mode_active())
+        self.assertEqual(root.minsize(), layout_policy.NORMAL_MIN)
+        self.assertEqual(window.effective_sidebar_mode(), "wide")
+        self.assertTrue(window.sidebar_frame.winfo_ismapped())
+        self.assertTrue(window.header_logo_lbl.winfo_ismapped())
 
 
 if __name__ == "__main__":

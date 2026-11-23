@@ -17,11 +17,12 @@ from pathlib import Path
 from tkinter import filedialog, messagebox
 from typing import Literal, Optional
 
-from glide_shell import app_host, desktop_adapter, window_lifetime
+from glide_shell import app_host, custom_controls, desktop_adapter, window_lifetime
 
-from app.brand import apply_window_icon
+from app.brand import apply_window_icon, load_in_app_logo
 from app.i18n import LocaleManager
 from app.knowledge import get_reviewed_progression, list_reviewed_progressions
+from app.ui import layout_policy
 from app.ui.dialog_support import configure_readonly_preview
 from app.ui.file_feedback import format_project_file_error
 from app.ui.harmonic_inspector import format_beginner_voicings, format_chord_analysis
@@ -85,6 +86,13 @@ class StepsMainWindow:
         self.i18n = locale_manager or LocaleManager()
         self._project_path: Optional[Path] = None
         self._last_midi_export_directory: Path | None = None
+        self._sidebar_visible: bool = True
+        self._sidebar_narrow: bool = False
+        self._compact_state: Optional[dict[str, object]] = None
+        self._saved_compact_geometry: str = ""
+        self._header_density: str = "full"
+        self._height_density: str = "full"
+        self._header_logo_image = None
 
         self.root.title(self.i18n.translate("app.title"))
         self.theme.configure_shell_providers(self.root)
@@ -171,6 +179,22 @@ class StepsMainWindow:
                 command=lambda selected=preference: self._on_language_change(selected),
             )
         self.settings_menu.add_cascade(label="", menu=self.language_menu)
+        self.settings_menu.add_separator()
+        self.settings_menu.add_command(
+            label="",
+            command=self.toggle_sidebar,
+            accelerator=f"{shortcut}B",
+        )
+        self.settings_menu.add_command(
+            label="",
+            command=self.toggle_sidebar_narrow,
+            accelerator=f"{shortcut}Shift+B",
+        )
+        self.settings_menu.add_command(
+            label="",
+            command=self.toggle_compact_mode,
+            accelerator=f"{shortcut}Shift+K",
+        )
         self.menu_bar.add_cascade(label="", menu=self.settings_menu)
         if not app_host.attach_menubar(self.root, self.menu_bar):
             self.root.configure(menu=self.menu_bar)
@@ -181,6 +205,9 @@ class StepsMainWindow:
             ("n", self._on_new_shortcut, False),
             ("z", self._on_undo_shortcut, False),
             ("z", self._on_redo_shortcut, True),
+            ("b", self._on_toggle_sidebar_shortcut, False),
+            ("b", self._on_toggle_sidebar_narrow_shortcut, True),
+            ("k", self._on_toggle_compact_shortcut, True),
         ):
             shortcut_entries.extend(
                 app_host.primary_shortcuts(key, handler, app_host.MACOS, shift=shift)
@@ -219,8 +246,17 @@ class StepsMainWindow:
             self.tools_menu.entryconfigure(index, label=t(key))
         self.menu_bar.add_cascade(label=t("settings.menu"), menu=self.settings_menu)
         self.settings_menu.entryconfigure(0, label=t("language.menu"))
+        if (
+            callable(getattr(self.settings_menu, "index", None))
+            and self.settings_menu.index(tk.END) is not None
+            and self.settings_menu.index(tk.END) >= 4
+        ):
+            self.settings_menu.entryconfigure(2, label=t("view.sidebar.toggle"))
+            self.settings_menu.entryconfigure(3, label=t("view.sidebar.narrow"))
+            self.settings_menu.entryconfigure(4, label=t("view.compact.toggle"))
         for index, key in enumerate(("language.system", "language.en", "language.de")):
             self.language_menu.entryconfigure(index, label=t(key))
+        self._localize_sidebar_widgets()
         self.title_lbl.configure(text=t("workspace.heading"))
         self.project_title_lbl.configure(text=t("project.title"))
         self.key_lbl.configure(text=t("context.key"))
@@ -495,22 +531,309 @@ class StepsMainWindow:
         if self._confirm_unsaved_changes():
             self.root.destroy()
 
+    def _on_toggle_sidebar_shortcut(self, _event: tk.Event) -> str:
+        self.toggle_sidebar()
+        return "break"
+
+    def _on_toggle_sidebar_narrow_shortcut(self, _event: tk.Event) -> str:
+        self.toggle_sidebar_narrow()
+        return "break"
+
+    def _on_toggle_compact_shortcut(self, _event: tk.Event) -> str:
+        self.toggle_compact_mode()
+        return "break"
+
+    def _focus_workspace(self) -> None:
+        if hasattr(self, "chord_listbox"):
+            self.chord_listbox.focus_set()
+
+    def _sidebar_nav_items(self) -> tuple[tuple[str, str, str, object], ...]:
+        return (
+            ("workspace", "sidebar.nav.workspace", "sidebar.rail.workspace", self._focus_workspace),
+            ("explorer", "sidebar.nav.explorer", "sidebar.rail.explorer", self._on_explore_next),
+            ("voice_lab", "sidebar.nav.voice_lab", "sidebar.rail.voice_lab", self._on_open_voice_leading_lab),
+            ("library", "sidebar.nav.library", "sidebar.rail.library", self._on_browse_reviewed_library),
+            ("midi", "sidebar.nav.midi", "sidebar.rail.midi", self._on_export_midi),
+        )
+
+    def _build_sidebar(self) -> None:
+        colors = self.theme.colors
+        sp = self.theme.spacing
+
+        self.sidebar_frame = tk.Frame(
+            self.shell_frame,
+            bg=colors.bg_surface,
+            width=layout_policy.SIDEBAR_WIDE_WIDTH,
+            bd=1,
+            relief=tk.SOLID,
+        )
+        self.sidebar_frame.pack_propagate(False)
+        self.sidebar_heading_lbl = tk.Label(
+            self.sidebar_frame,
+            text="",
+            font=self.theme.font_spec(self.theme.typography.size_xs, "bold"),
+            fg=colors.text_secondary,
+            bg=colors.bg_surface,
+            anchor=tk.W,
+            padx=sp.sm,
+            pady=sp.sm,
+        )
+        self.sidebar_heading_lbl.pack(fill=tk.X)
+
+        self._sidebar_buttons: dict[str, tk.Button | tk.ttk.Button] = {}
+        for item_id, _nav_key, _rail_key, callback in self._sidebar_nav_items():
+            btn = create_button(
+                self.sidebar_frame,
+                text="",
+                command=callback,
+                bg=colors.bg_surface,
+                fg=colors.text_primary,
+                relief=tk.FLAT,
+                anchor=tk.W,
+                padx=sp.sm,
+            )
+            btn.pack(fill=tk.X, padx=sp.xs, pady=2)
+            self._sidebar_buttons[item_id] = btn
+
+        self.sidebar_collapse_btn = create_button(
+            self.sidebar_frame,
+            text="",
+            command=self.toggle_sidebar_narrow,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            relief=tk.FLAT,
+            padx=sp.sm,
+        )
+        self.sidebar_collapse_btn.pack(side=tk.BOTTOM, fill=tk.X, padx=sp.xs, pady=sp.xs)
+
+        self.sidebar_rail_frame = tk.Frame(
+            self.shell_frame,
+            bg=colors.bg_surface,
+            width=layout_policy.SIDEBAR_RAIL_WIDTH,
+            bd=1,
+            relief=tk.SOLID,
+        )
+        self.sidebar_rail_frame.pack_propagate(False)
+        self._rail_buttons: list[tk.Button | tk.ttk.Button] = []
+        self._rail_button_map: dict[str, tk.Button | tk.ttk.Button] = {}
+        for item_id, _nav_key, _rail_key, callback in self._sidebar_nav_items():
+            btn = create_button(
+                self.sidebar_rail_frame,
+                text="",
+                command=callback,
+                bg=colors.bg_surface,
+                fg=colors.text_primary,
+                relief=tk.FLAT,
+                padx=sp.xs,
+            )
+            btn.pack(fill=tk.X, padx=sp.xs, pady=2)
+            self._rail_buttons.append(btn)
+            self._rail_button_map[item_id] = btn
+
+        self.sidebar_expand_btn = create_button(
+            self.sidebar_rail_frame,
+            text="",
+            command=self.toggle_sidebar_narrow,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            relief=tk.FLAT,
+            padx=sp.xs,
+        )
+        self.sidebar_expand_btn.pack(side=tk.BOTTOM, fill=tk.X, padx=sp.xs, pady=sp.xs)
+        self._rail_buttons.append(self.sidebar_expand_btn)
+
+        for idx, rail_btn in enumerate(self._rail_buttons):
+            rail_btn.bind(
+                "<Down>",
+                lambda _e, i=idx: self._focus_rail_button((i + 1) % len(self._rail_buttons)),
+            )
+            rail_btn.bind(
+                "<Up>",
+                lambda _e, i=idx: self._focus_rail_button((i - 1) % len(self._rail_buttons)),
+            )
+
+    def _focus_rail_button(self, index: int) -> str:
+        self._rail_buttons[index].focus_set()
+        return "break"
+
+    def _localize_sidebar_widgets(self) -> None:
+        if not hasattr(self, "sidebar_heading_lbl"):
+            return
+        t = self.i18n.translate
+        self.sidebar_heading_lbl.configure(text=t("sidebar.heading"))
+        self.sidebar_toggle_btn.configure(text=t("view.sidebar.button"))
+        self.sidebar_collapse_btn.configure(text=t("view.sidebar.collapse"))
+        self.sidebar_expand_btn.configure(text=t("view.sidebar.expand"))
+        for item_id, nav_key, rail_key, _callback in self._sidebar_nav_items():
+            self._sidebar_buttons[item_id].configure(text=t(nav_key))
+            self._rail_button_map[item_id].configure(text=t(rail_key))
+
+    def _current_window_width(self) -> int:
+        try:
+            width = int(self.root.winfo_width())
+            if width <= 1:
+                parsed = layout_policy.window_geometry.parse(self.root.geometry())
+                if parsed is not None:
+                    return parsed[0]
+            return width
+        except Exception:
+            return 1024
+
+    def _current_window_height(self) -> int:
+        try:
+            height = int(self.root.winfo_height())
+            if height <= 1:
+                parsed = layout_policy.window_geometry.parse(self.root.geometry())
+                if parsed is not None:
+                    return parsed[1]
+            return height
+        except Exception:
+            return 720
+
+    def effective_sidebar_mode(self, width: Optional[int] = None) -> layout_policy.SidebarMode:
+        w = self._current_window_width() if width is None else width
+        return layout_policy.effective_sidebar_mode(
+            self._sidebar_visible,
+            self._sidebar_narrow,
+            self.compact_mode_active(),
+            w,
+        )
+
+    def _apply_sidebar_visibility(self, width: Optional[int] = None) -> None:
+        if not hasattr(self, "sidebar_frame") or not hasattr(self, "paned"):
+            return
+        sp = self.theme.spacing
+        mode = self.effective_sidebar_mode(width)
+        if mode == "wide":
+            self.sidebar_rail_frame.pack_forget()
+            self.sidebar_frame.pack(side=tk.LEFT, fill=tk.Y, padx=(0, sp.sm), before=self.paned)
+        elif mode == "rail":
+            self.sidebar_frame.pack_forget()
+            self.sidebar_rail_frame.pack(side=tk.LEFT, fill=tk.Y, padx=(0, sp.sm), before=self.paned)
+        else:
+            self.sidebar_frame.pack_forget()
+            self.sidebar_rail_frame.pack_forget()
+
+    def toggle_sidebar(self) -> str:
+        self._sidebar_visible = not self._sidebar_visible
+        self._apply_sidebar_visibility()
+        return "break"
+
+    def toggle_sidebar_narrow(self) -> str:
+        self._sidebar_narrow = not self._sidebar_narrow
+        self._sidebar_visible = True
+        self._apply_sidebar_visibility()
+        return "break"
+
+    def compact_mode_active(self) -> bool:
+        return self._compact_state is not None
+
+    def toggle_compact_mode(self) -> str:
+        if self.compact_mode_active():
+            return self.leave_compact_mode()
+        return self.enter_compact_mode()
+
+    def enter_compact_mode(self) -> str:
+        if self.compact_mode_active():
+            return "break"
+        try:
+            normal = self.root.geometry()
+            screen_w = int(self.root.winfo_screenwidth())
+            screen_h = int(self.root.winfo_screenheight())
+        except tk.TclError:
+            return "break"
+        self._compact_state = {"normal_geometry": normal}
+        sp = self.theme.spacing
+        self.shell_frame.pack_configure(padx=sp.xs, pady=sp.xs)
+        self._apply_sidebar_visibility()
+        self.sync_header_logo()
+        self.root.minsize(*layout_policy.COMPACT_MIN)
+        self.root.geometry(
+            layout_policy.compact_geometry(
+                normal, self._saved_compact_geometry, screen_w, screen_h
+            )
+        )
+        return "break"
+
+    def leave_compact_mode(self) -> str:
+        state = self._compact_state
+        if state is None:
+            return "break"
+        try:
+            self._saved_compact_geometry = self.root.geometry()
+        except tk.TclError:
+            pass
+        self._compact_state = None
+        sp = self.theme.spacing
+        self.shell_frame.pack_configure(padx=sp.sm, pady=sp.sm)
+        self.root.minsize(*layout_policy.NORMAL_MIN)
+        try:
+            self.root.geometry(
+                layout_policy.normal_geometry(
+                    str(state.get("normal_geometry") or ""), self.root.geometry()
+                )
+            )
+        except tk.TclError:
+            pass
+        self._apply_sidebar_visibility()
+        self.sync_header_logo()
+        return "break"
+
+    def sync_header_logo(self) -> None:
+        logo_lbl = getattr(self, "header_logo_lbl", None)
+        if logo_lbl is None or not hasattr(self, "title_lbl"):
+            return
+        if (
+            self._header_logo_image is None
+            or self._header_density == "minimal"
+            or self.compact_mode_active()
+        ):
+            logo_lbl.pack_forget()
+            return
+        if not logo_lbl.winfo_manager():
+            sp = self.theme.spacing
+            logo_lbl.pack(side=tk.LEFT, padx=(0, sp.xs), before=self.title_lbl)
+
+    def _sync_height_density(self) -> None:
+        if not hasattr(self, "control_bar"):
+            return
+        sp = self.theme.spacing
+        pad_y = 2 if self._height_density == "minimal" else sp.xs
+        self.control_bar.configure(pady=sp.xs if self._height_density == "minimal" else sp.sm)
+        for bar in (self.edit_bar, self.context_bar, self.playback_bar, self.timing_bar):
+            bar.pack_configure(pady=(0, pad_y))
+
+    def _on_window_resize(self, event: tk.Event) -> None:
+        width = getattr(event, "width", 0) or self._current_window_width()
+        height = getattr(event, "height", 0) or self._current_window_height()
+        if width <= 1 or height <= 1:
+            return
+        self._header_density = layout_policy.header_density(width)
+        self._height_density = layout_policy.height_density(height)
+        self.sync_header_logo()
+        self._sync_height_density()
+        self._apply_sidebar_visibility(width=width)
+
     def _init_ui(self) -> None:
         colors = self.theme.colors
         sp = self.theme.spacing
 
         self.root.configure(bg=colors.bg_window)
 
-        # Main vertical PanedWindow
+        self.shell_frame = tk.Frame(self.root, bg=colors.bg_window, bd=0)
+        self.shell_frame.pack(fill=tk.BOTH, expand=True, padx=sp.sm, pady=sp.sm)
+        self._build_sidebar()
+
+        # Main vertical PanedWindow (right workspace + theory split)
         self.paned = tk.PanedWindow(
-            self.root,
+            self.shell_frame,
             orient=tk.VERTICAL,
             bg=colors.border,
             bd=1,
             sashrelief=tk.FLAT,
             sashwidth=4
         )
-        self.paned.pack(fill=tk.BOTH, expand=True, padx=sp.sm, pady=sp.sm)
+        self.paned.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
         # ----------------------------------------------------
         # Area 1: Arbeitsbereich (Timeline & Progression)
@@ -518,9 +841,31 @@ class StepsMainWindow:
         self.work_area = tk.Frame(self.paned, bg=colors.bg_surface, bd=0)
         self.paned.add(self.work_area, minsize=260)
 
-        # Top Control Bar (Key, Tempo, Add Chord, Transpose, Export)
+        # Top Control Bar (Sidebar toggle, Logo, Title, Add Chord, Transpose, Export)
         self.control_bar = tk.Frame(self.work_area, bg=colors.bg_surface, pady=sp.sm, padx=sp.sm)
         self.control_bar.pack(fill=tk.X)
+
+        self.sidebar_toggle_btn = create_button(
+            self.control_bar,
+            text="",
+            command=self.toggle_sidebar,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            relief=tk.FLAT,
+            padx=sp.xs,
+        )
+        self.sidebar_toggle_btn.pack(side=tk.LEFT, padx=(0, sp.xs))
+
+        try:
+            self._header_logo_image = load_in_app_logo(self.root, target_height=28)
+        except Exception:
+            self._header_logo_image = None
+        self.header_logo_lbl = tk.Label(
+            self.control_bar,
+            image=self._header_logo_image if self._header_logo_image is not None else "",
+            bg=colors.bg_surface,
+            bd=0,
+        )
 
         self.title_lbl = tk.Label(
             self.control_bar,
@@ -530,6 +875,14 @@ class StepsMainWindow:
             bg=colors.bg_surface
         )
         self.title_lbl.pack(side=tk.LEFT, padx=(0, sp.md))
+
+        w = self._current_window_width()
+        h = self._current_window_height()
+        self._header_density = layout_policy.header_density(w)
+        self._height_density = layout_policy.height_density(h)
+        self._apply_sidebar_visibility(width=w)
+        self.sync_header_logo()
+        custom_controls.bind_resize(self.root, self._on_window_resize, add="+")
 
         # Add Chord Entry & Button
         self.chord_entry = tk.Entry(
