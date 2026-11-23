@@ -78,16 +78,49 @@ class TestThemeManager(unittest.TestCase):
     def test_wcag_contrast_dark_mode(self):
         self.tm.set_mode("dark")
         c = self.tm.colors
-        # Text primary against surface
-        ratio = contrast_ratio(c.text_primary, c.bg_surface)
-        self.assertGreaterEqual(ratio, 4.5, f"Dark mode contrast {ratio:.2f} is below 4.5:1")
+        for fg_name, bg_name in (
+            ("text_primary", "bg_surface"),
+            ("text_primary", "bg_window"),
+            ("text_primary", "bg_active"),
+            ("text_secondary", "bg_surface"),
+            ("text_secondary", "bg_window"),
+            ("text_inverted", "harmonic_tonic"),
+            ("text_inverted", "harmonic_subdominant"),
+        ):
+            ratio = contrast_ratio(getattr(c, fg_name), getattr(c, bg_name))
+            self.assertGreaterEqual(
+                ratio,
+                4.5,
+                f"Dark mode contrast {fg_name}/{bg_name} = {ratio:.2f} is below 4.5:1",
+            )
 
     def test_wcag_contrast_light_mode(self):
         self.tm.set_mode("light")
         c = self.tm.colors
-        # Text primary against surface
-        ratio = contrast_ratio(c.text_primary, c.bg_surface)
-        self.assertGreaterEqual(ratio, 4.5, f"Light mode contrast {ratio:.2f} is below 4.5:1")
+        for fg_name, bg_name in (
+            ("text_primary", "bg_surface"),
+            ("text_primary", "bg_window"),
+            ("text_primary", "bg_active"),
+            ("text_secondary", "bg_surface"),
+            ("text_secondary", "bg_window"),
+            ("text_inverted", "harmonic_tonic"),
+            ("text_inverted", "harmonic_subdominant"),
+        ):
+            ratio = contrast_ratio(getattr(c, fg_name), getattr(c, bg_name))
+            self.assertGreaterEqual(
+                ratio,
+                4.5,
+                f"Light mode contrast {fg_name}/{bg_name} = {ratio:.2f} is below 4.5:1",
+            )
+
+    def test_system_appearance_and_font_providers(self):
+        self.assertEqual(ThemeManager.resolve_system_mode(system_dark=True), "dark")
+        self.assertEqual(ThemeManager.resolve_system_mode(system_dark=False), "light")
+        self.assertEqual(ThemeManager.resolve_system_mode(system_dark=None, fallback="light"), "light")
+        spec = self.tm.font_spec(12, "bold")
+        self.assertEqual(spec[1], 12)
+        self.assertEqual(spec[2], "bold")
+        self.tm.configure_shell_providers()
 
 
 if __name__ == "__main__":

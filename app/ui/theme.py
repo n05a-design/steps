@@ -10,13 +10,68 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Literal, TYPE_CHECKING
+from typing import Callable, Literal, Optional, TYPE_CHECKING
+
+from glide_shell import custom_controls, system_appearance, text_fit, window_geometry
 
 if TYPE_CHECKING:
     import tkinter as tk
     from tkinter import ttk
 
 TOKENS_PATH = Path(__file__).resolve().parents[2] / "design/tokens/tokens.json"
+
+
+def _primary_font_family(font_stack: str, fallback: str = "Helvetica") -> str:
+    for candidate in font_stack.split(","):
+        cleaned = candidate.strip().strip("'\"")
+        if cleaned and not cleaned.startswith("-") and cleaned.lower() not in {"sans-serif", "monospace"}:
+            return cleaned
+    return fallback
+
+
+def apply_window_geometry(
+    window: "tk.Misc",
+    width: int,
+    height: int,
+    min_width: int,
+    min_height: int,
+) -> tuple[int, int]:
+    """Clamp window dimensions to the screen via glide_shell.window_geometry (B15)."""
+    try:
+        screen_w = int(window.winfo_screenwidth())
+        screen_h = int(window.winfo_screenheight())
+    except Exception:
+        screen_w, screen_h = 0, 0
+    if screen_w > 0:
+        effective_min_w = min(min_width, max(320, screen_w))
+    else:
+        effective_min_w = min_width
+    if screen_h > 0:
+        effective_min_h = min(min_height, max(240, screen_h - window_geometry.SCREEN_RESERVE))
+    else:
+        effective_min_h = min_height
+    clamped_w, clamped_h, _, _ = window_geometry.clamp(
+        width,
+        height,
+        None,
+        None,
+        screen_w,
+        screen_h,
+        (effective_min_w, effective_min_h),
+    )
+    window.geometry(window_geometry.format_geometry(clamped_w, clamped_h))
+    window.minsize(effective_min_w, effective_min_h)
+    return clamped_w, clamped_h
+
+
+def fit_text(text: str, max_chars: int) -> str:
+    """Shorten secondary text ergonomically via glide_shell.text_fit (B11)."""
+    return text_fit.clip(text, max_chars)
+
+
+def fit_text_px(text: str, measure: Callable[[str], int], max_width: int) -> str:
+    """Shorten text to a pixel budget using glide_shell.text_fit (B11)."""
+    return text_fit.fit(text, measure, max_width)
 
 
 def create_button(parent: tk.Misc, **options) -> tk.Button | ttk.Button:
@@ -135,6 +190,45 @@ class ThemeManager:
     @property
     def spacing(self) -> SpacingTokens:
         return self._spacing
+
+    def font_spec(self, size: Optional[int] = None, *styles: str, mono: bool = False) -> tuple:
+        """Return a Tk font tuple derived from STEPS typography tokens."""
+        stack = self._typography.font_family_mono if mono else self._typography.font_family_sans
+        family = _primary_font_family(stack, fallback="Courier" if mono else "Helvetica")
+        resolved_size = int(size if size is not None else self._typography.size_sm)
+        return (family, resolved_size, *styles)
+
+    def configure_shell_providers(self, root: Optional["tk.Misc"] = None) -> None:
+        """Bind STEPS font tokens into glide_shell.custom_controls with host/root isolation."""
+        def _font_provider(size: int = 10, *styles: str) -> tuple:
+            return self.font_spec(size, *styles)
+
+        custom_controls.set_font_provider(_font_provider)
+        if root is not None:
+            try:
+                setattr(root, "_font_provider", _font_provider)
+            except Exception:
+                pass
+
+    @staticmethod
+    def resolve_system_mode(
+        root: Optional["tk.Misc"] = None,
+        system_dark: Optional[bool] = None,
+        fallback: Literal["dark", "light"] = "dark",
+    ) -> Literal["dark", "light"]:
+        """Resolve light/dark mode from OS/Tk state via glide_shell.system_appearance."""
+        detected = system_dark
+        if detected is None and root is not None:
+            try:
+                if root.tk.call("tk", "windowingsystem") == "aqua":
+                    answer = root.tk.call("tk::unsupported::MacWindowStyle", "isdark", root)
+                    detected = system_appearance.tk_is_dark(answer)
+                else:
+                    answer = root.tk.call("winfo", "isdark", root)
+                    detected = system_appearance.tk_is_dark(answer)
+            except Exception:
+                detected = None
+        return system_appearance.resolve({"light": "light", "dark": "dark"}, detected, fallback)
 
 
 # Global default instance

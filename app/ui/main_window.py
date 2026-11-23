@@ -17,6 +17,8 @@ from pathlib import Path
 from tkinter import filedialog, messagebox
 from typing import Literal, Optional
 
+from glide_shell import app_host, desktop_adapter, window_lifetime
+
 from app.brand import apply_window_icon
 from app.i18n import LocaleManager
 from app.knowledge import get_reviewed_progression, list_reviewed_progressions
@@ -31,7 +33,7 @@ from app.ui.midi_export_dialog import (
 from app.ui.next_chord_panel import NextChordPanel
 from app.ui.reviewed_library_dialog import ReviewedProgressionLibraryDialog
 from app.ui.session_controller import ProgressionSessionController
-from app.ui.theme import ThemeManager, create_button, default_theme
+from app.ui.theme import ThemeManager, apply_window_geometry, create_button, default_theme
 from app.ui.voice_leading_lab_dialog import (
     VOICE_LEADING_STYLE_OPTIONS,
     VoiceLeadingLabDialog,
@@ -85,8 +87,14 @@ class StepsMainWindow:
         self._last_midi_export_directory: Path | None = None
 
         self.root.title(self.i18n.translate("app.title"))
-        self.root.geometry("1024x720")
-        self.root.minsize(860, 600)
+        self.theme.configure_shell_providers(self.root)
+        if isinstance(self.root, tk.Misc):
+            apply_window_geometry(self.root, 1024, 720, 860, 600)
+            self._lifetime_scope = window_lifetime.scope_for(self.root)
+        else:
+            self.root.geometry("1024x720")
+            self.root.minsize(860, 600)
+            self._lifetime_scope = None
         self._init_file_menu()
 
         # A missing optional icon must not prevent startup.
@@ -99,8 +107,15 @@ class StepsMainWindow:
         self._localize_widgets()
         self._refresh_all()
 
+    def _window_platform(self) -> str:
+        try:
+            windowing = self.root.tk.call("tk", "windowingsystem")
+            return app_host.platform_of(windowing)
+        except Exception:
+            return desktop_adapter.platform_name()
+
     def _init_file_menu(self) -> None:
-        shortcut = "⌘" if sys.platform == "darwin" else "Ctrl+"
+        shortcut = "⌘" if desktop_adapter.is_macos() else "Ctrl+"
         self.menu_bar = tk.Menu(self.root)
         self.file_menu = tk.Menu(self.menu_bar, tearoff=False)
         self.file_menu.add_command(
@@ -157,18 +172,26 @@ class StepsMainWindow:
             )
         self.settings_menu.add_cascade(label="", menu=self.language_menu)
         self.menu_bar.add_cascade(label="", menu=self.settings_menu)
-        self.root.configure(menu=self.menu_bar)
-        self.root.bind("<Control-o>", self._on_open_shortcut)
-        self.root.bind("<Control-s>", self._on_save_shortcut)
-        self.root.bind("<Control-n>", self._on_new_shortcut)
-        self.root.bind("<Command-o>", self._on_open_shortcut)
-        self.root.bind("<Command-s>", self._on_save_shortcut)
-        self.root.bind("<Command-n>", self._on_new_shortcut)
-        self.root.bind("<Control-z>", self._on_undo_shortcut)
-        self.root.bind("<Control-Shift-z>", self._on_redo_shortcut)
-        self.root.bind("<Command-z>", self._on_undo_shortcut)
-        self.root.bind("<Command-Shift-z>", self._on_redo_shortcut)
-        self.root.protocol("WM_DELETE_WINDOW", self._on_close)
+        if not app_host.attach_menubar(self.root, self.menu_bar):
+            self.root.configure(menu=self.menu_bar)
+        shortcut_entries = []
+        for key, handler, shift in (
+            ("o", self._on_open_shortcut, False),
+            ("s", self._on_save_shortcut, False),
+            ("n", self._on_new_shortcut, False),
+            ("z", self._on_undo_shortcut, False),
+            ("z", self._on_redo_shortcut, True),
+        ):
+            shortcut_entries.extend(
+                app_host.primary_shortcuts(key, handler, app_host.MACOS, shift=shift)
+            )
+        app_host.bind_shortcuts(self.root, shortcut_entries, app_host.MACOS)
+        app_host.install_close(
+            self.root,
+            self._on_close,
+            self._window_platform(),
+            scope=getattr(self, "_lifetime_scope", None),
+        )
 
     def _localize_widgets(self) -> None:
         t = self.i18n.translate

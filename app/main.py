@@ -84,15 +84,30 @@ def main(argv: Optional[list[str]] = None) -> int:
         print(i18n.translate("cli.ready"))
         return 0
 
-    import tkinter as tk
     from app.ui.main_window import StepsMainWindow
     from app.ui.theme import ThemeManager
+    from glide_shell.app_host import AppHost
 
     theme = ThemeManager(mode=args.theme)
-    root = tk.Tk()
-    app = StepsMainWindow(root, controller=controller, theme=theme, locale_manager=i18n)
-    root.mainloop()
+    host = create_desktop_host(theme)
+    host.run(
+        lambda root: StepsMainWindow(
+            root,
+            controller=controller,
+            theme=theme,
+            locale_manager=i18n,
+        )
+    )
     return 0
+
+
+def create_desktop_host(theme) -> "AppHost":
+    """Create the productive Glide AppHost configured with STEPS theme providers."""
+    from glide_shell.app_host import AppHost
+
+    return AppHost(
+        on_ready=lambda root: theme.configure_shell_providers(root),
+    )
 
 
 if __name__ == "__main__":

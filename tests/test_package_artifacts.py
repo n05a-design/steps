@@ -65,6 +65,14 @@ class TestPackageArtifacts(unittest.TestCase):
                 self.assertIn("app/locales/en.json", names)
                 self.assertIn("app/locales/de.json", names)
                 self.assertIn("app/ui/midi_export_dialog.py", names)
+                self.assertIn("glide_shell/__init__.py", names)
+                self.assertIn("glide_shell/SHELL_MANIFEST.json", names)
+                self.assertIn("glide_shell/LICENSE", names)
+                self.assertIn("glide_shell/DESIGN_RICHTLINIEN.md", names)
+                self.assertFalse(
+                    any("Glide-Shell-Framework" in name for name in names),
+                    "Full Glide reference tree must not be packaged into the STEPS wheel",
+                )
                 self.assertIn("knowledge/sources/registry.yaml", names)
                 self.assertTrue(
                     any(name.startswith("app/assets/brand/") for name in names)
@@ -106,8 +114,14 @@ class TestPackageArtifacts(unittest.TestCase):
                     sys.executable,
                     "-B",
                     "-c",
+                    "import glide_shell; "
+                    "from glide_shell import app_host, selftest; "
+                    "assert glide_shell.SHELL_VERSION == '0.6.2'; "
+                    "assert '23 files match manifest' in selftest.check_manifest(); "
                     "from app.knowledge import list_reviewed_progressions; "
-                    "from app.main import main; "
+                    "from app.main import main, create_desktop_host; "
+                    "from app.ui.theme import ThemeManager; "
+                    "assert isinstance(create_desktop_host(ThemeManager()), app_host.AppHost); "
                     "assert len(list_reviewed_progressions()) == 3; "
                     "raise SystemExit(main(['--headless']))",
                 ],

@@ -53,7 +53,8 @@ und Veröffentlichung sind getrennte Statusangaben.
 | 1.0.0 | Noch nicht durch ein angenommenes ADR definiert oder terminiert; siehe [Zielbild und Readiness](product/V1.0.0_PRODUCT_CONTRACT.md) |
 | Phase 5.1 | Historischer Entwicklungsstand des Headless-Kerns |
 | V6.6/V6.7 | Stände der Forschungsbibliothek |
-| 3.53.0 | Glide-Referenzstand |
+| 3.53.0 | Historischer Glide-Referenzstand (vor Übernahme von `glide_shell` `0.6.2`) |
+| `v1.0.2` / `0.6.2` | Produktiv übernommenes Glide-Release (`7dcd8dc04366f88943fa17827882cef4d81421b8`) mit [`glide_shell/`](../glide_shell/__init__.py) `0.6.2` (System `V1.86`, MPL-2.0) |
 
 Der Checkout enthält einen nutzbaren Python-Kern sowie eine Tkinter-Desktop-
 Vorschau und einen CLI-Einstieg. `pyproject.toml` definiert ein setuptools-

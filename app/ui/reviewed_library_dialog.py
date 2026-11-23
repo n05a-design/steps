@@ -10,7 +10,7 @@ from typing import Callable, Iterable, Literal
 from app.i18n import LocaleManager
 from app.ui.dialog_support import ModalDialog, configure_readonly_preview
 from app.ui.session_controller import reviewed_practice_session
-from app.ui.theme import ThemeManager, create_button
+from app.ui.theme import ThemeManager, apply_window_geometry, create_button
 from src.steps.progression.engine import ReviewedProgression
 from src.steps.theory.exceptions import MusicTheoryError
 
@@ -133,8 +133,7 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
 
         super().__init__(parent)
         self.window.title(translate("library.title"))
-        self.window.geometry("920x620")
-        self.window.minsize(760, 500)
+        apply_window_geometry(self.window, 920, 620, 760, 500)
         self.window.configure(bg=colors.bg_window)
 
         container = tk.Frame(self.window, bg=colors.bg_window, padx=spacing.md, pady=spacing.md)

@@ -1,8 +1,44 @@
-# STEPS – Architektur-Übergabedokument: App-Shell & Glide-3.53-Roadmap
+# STEPS – Architektur-Übergabedokument: App-Shell & Glide-Integration
 
-> **Status:** Verbindlicher Architektur- und Übergabekontrakt (Stand: 17.11.2026).  
-> **Gültigkeit:** Für alle mitwirkenden Entwickler und KI-Agenten (Codex, Antigravity, Claude, etc.).  
-> **Bezug:** Ergänzt [`GLIDE_TO_STEPS_2_AREA_SHELL.md`](GLIDE_TO_STEPS_2_AREA_SHELL.md), [`AGENTS.md`](../../AGENTS.md) und [`EXECUTION_BACKLOG.md`](../../EXECUTION_BACKLOG.md).
+> **Aktueller Integrationsstand (23.11.2026):** Die früher geplante manuelle Extraktion aus Glide `3.53.0` (`app.pyw`) ist durch die produktive Übernahme des eigenständigen Pakets **`glide_shell` (`0.6.2`)** aus dem verifizierten Glide-Release **`v1.0.2`** (Commit `7dcd8dc04366f88943fa17827882cef4d81421b8`, Glide System `V1.86`, Lizenz `MPL-2.0`) abgelöst. Der produktive Desktop-Start nutzt `glide_shell.app_host.AppHost`.
+
+---
+
+## 0. Produktive Glide-Shell-Integration (Glide `v1.0.2` / Shell `0.6.2`)
+
+| Eigenschaft | Wert / Nachweis |
+|---|---|
+| **Glide-Release & Commit** | `v1.0.2` · `7dcd8dc04366f88943fa17827882cef4d81421b8` · System `V1.86` |
+| **Übernommenes Paket** | [`glide_shell/`](../../glide_shell/__init__.py) (`SHELL_VERSION = "0.6.2"`, 23 Dateien) |
+| **Herkunfts- & Hash-Nachweis** | [`glide_shell/SHELL_MANIFEST.json`](../../glide_shell/SHELL_MANIFEST.json) (MPL-2.0, `quelle_unveraendert: true`) |
+| **Designvertrag** | [`glide_shell/DESIGN_RICHTLINIEN.md`](../../glide_shell/DESIGN_RICHTLINIEN.md) + [`design/tokens/tokens.json`](../../design/tokens/tokens.json) |
+| **Agenten-Bootstrap** | [`.agents/skills/glide-shell/SKILL.md`](../../.agents/skills/glide-shell/SKILL.md), [`.claude/skills/glide-shell/SKILL.md`](../../.claude/skills/glide-shell/SKILL.md), [`AGENTS.md`](../../AGENTS.md) |
+| **Selbsttest** | `python3 -m glide_shell.selftest` (13/13 Checks, inkl. Manifestintegrität) |
+| **Upgrade-Verfahren** | Ausschließlich über `shell_uebernehmen.py --commit <REV> --agenten-bootstrap --projekt-root . .` aus einem verifizierten Glide-Git-Checkout; keine manuellen Änderungen in `glide_shell/`. |
+| **Rollback-Strategie** | Reversibler Git-Branch (`migrate_steps_glide_shell`) und atomarer Snapshot/Rollback innerhalb von `shell_uebernehmen.py`. |
+
+### Verwendete Shell-APIs und STEPS-Adapter
+
+| STEPS-Komponente | Genutzte `glide_shell`-API | Produktiver Integrationsvertrag |
+|---|---|---|
+| `app/main.py` | `app_host.AppHost` | Produktiver GUI-Start via `create_desktop_host(theme)` / `AppHost.run(...)`; CLI (`--headless`, `--export-midi`, `--language`, `--theme`) bleibt vollständig erhalten. |
+| `app/ui/main_window.py` | `app_host.attach_menubar`, `primary_shortcuts`, `bind_shortcuts`, `install_close`, `desktop_adapter`, `window_lifetime.scope_for` | Menüleiste, plattformkonforme Kürzel, einheitlicher Schließweg inkl. macOS `::tk::mac::Quit` mit Dirty-State-Rückfrage sowie Fenster-Timer-Bereinigung. |
+| `app/ui/dialog_support.py` | `modal_session` (`create_dialog`, `remember_focus`, `return_focus`, `ensure_min_width`, `ACTIVE_ATTRIBUTE`), `window_lifetime.scope_for` | Nicht-blockierender STEPS-Dialogvertrag (`ModalDialog._show` / `_close`) mit sicherer Fokus- und Grab-Rückgabe bei verschachtelten Dialogen. |
+| `app/ui/theme.py` | `custom_controls.set_font_provider`, `system_appearance.resolve`/`tk_is_dark`, `window_geometry.clamp`/`format_geometry`, `text_fit.clip`/`fit` | STEPS-Design-Tokens (`tokens.json`) bleiben führend; Host-/Widget-Provider-Isolation am Root-Fenster; geklemmte Fenster-Mindestmaße (B15). |
+| `src/steps/progression/session.py` | *(bewusst eigenständig)* | Musikalische Undo/Redo-Historie mit Dirty-State, Timings und Revisionen bleibt führend; keine zweite konkurrierende `command_history`. |
+
+### Hinweise zu Layout und offenen Punkten
+
+- **Layout-Hinweis (ADR-001 vs. aktueller Desktop-Stand):** [`ADR-001`](../../decisions/ADR-001-ein-fenster-zwei-bereiche.md) beschreibt konzeptionell ein Hauptfenster mit zwei Bereichen (dort links/rechts notiert), während der produktive Desktop-Code in `app/ui/main_window.py` eine Oben/Unten-Split-Anordnung (`tk.PanedWindow(orient=tk.VERTICAL)`) umsetzt. Dieses funktionierende UI bleibt während der technischen Framework-Migration unverändert erhalten.
+- **Unabhängigkeitsgrenze:** `src/steps/` importiert weder `tkinter` noch `glide_shell` noch `app/`. Keine Übernahme von Glide-Todo-Fachobjekten oder `.glideexchange`-Verträgen.
+
+---
+
+## 1. Historischer Ausgangsstand (Archivierte Roadmap vor Shell 0.6.2)
+
+> **Status:** Historisch datierter Ausgangsstand (17.11.2026) zur Nachvollziehbarkeit vor Übernahme der `glide_shell` 0.6.2.  
+> **Gültigkeit:** Dokumentiert den früheren Zustand von `main_window.py` und die damalige 3.53-Planung.  
+> **Bezug:** [`AGENTS.md`](../../AGENTS.md) und [`EXECUTION_BACKLOG.md`](../../EXECUTION_BACKLOG.md).
 
 ---
 

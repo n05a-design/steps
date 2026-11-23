@@ -13,7 +13,7 @@ from app.ui.session_controller import (
     ProgressionSessionController,
     VoiceLeadingStyleProfile,
 )
-from app.ui.theme import ThemeManager
+from app.ui.theme import ThemeManager, apply_window_geometry
 from src.steps.progression.voice_leading import VoiceLeadingStyle
 from src.steps.theory.exceptions import MusicTheoryError
 
@@ -140,8 +140,7 @@ class VoiceLeadingLabDialog(ModalDialog):
 
         super().__init__(parent)
         self.window.title(translate("voice.lab.title"))
-        self.window.geometry("940x630")
-        self.window.minsize(720, 490)
+        apply_window_geometry(self.window, 940, 630, 720, 490)
         self.window.configure(bg=colors.bg_window)
 
         container = tk.Frame(
