@@ -1,6 +1,16 @@
 # Änderungsprotokoll
 
-## Unreleased – 0.7.0-dev (2026-11-24)
+## Unreleased – 0.8.0-dev (2026-11-24)
+
+### Hinzugefügt / Geändert
+- **Universelle Glide-Flächenkomponenten (`RoundedSurfaceCard`) überall:**
+  - Austausch sämtlicher verbliebener eckiger `tk.Frame`-/`tk.LabelFrame`-Container durch `RoundedSurfaceCard` (`ThemeManager.make_surface_card`) in Hauptfenster (`sidebar_frame`, `sidebar_rail_frame`, `toolbar_card`, `prog_frame`, `info_header_card`, `detail_frame`), `NextChordPanel`, `ReviewedProgressionLibraryDialog` (`top_card`, `list_frame`, `preview_frame`, Akkord-Vorschaukarten), `VoiceLeadingLabDialog` (`nav_card`, Vergleichspanels) und `MidiExportOptionsDialog` (Optionsgruppen).
+  - Eckensicheres Innen-Inset (`_min_corner_inset`, `_effective_pad_x`, `_effective_pad_y`) und Live-Geometrie-Synchronisation bei `set_theme(...)`, sodass innere Widgets bei allen Rundungsstufen (`large` 18px, `standard` 12px, `subtle` 6px, `flat` 0px) sauber innerhalb der gerundeten Kontur liegen.
+  - Beseitigung innerer rechteckiger Rahmen um `tk.Listbox` (`chord_listbox`, `candidates`) und schreibgeschützte `tk.Text`-Vorschauen (`configure_readonly_preview` nutzt `highlightbackground=colors.bg_surface` und behält `highlightcolor=colors.border_focus` für Tastaturfokus); `PianoRoll` zeichnet einen gerundeten Canvas-Hintergrund (`rounded_rect_points`).
+  - `AppearanceDialog` aktualisiert alle Einstellungs- und Vorschaukarten (`_section_cards`) sowie `corner_radius` live in der Vorschau.
+- **Versionierung:** Anhebung von Paket (`0.8.0.dev0`), App (`0.8.0-dev`) und Dokumentation.
+
+## [0.7.0-dev] - 2026-11-24
 
 ### Hinzugefügt / Integriert
 - **Vollständige Glide-Anpassungsparität (10 Themes, 10 Hintergründe, 8 Akzente, Einstellungen-Persistenz):**

@@ -48,27 +48,30 @@ class NextChordPanel:
             fg=colors.text_primary, hover_bg=colors.bg_surface_hover, relief=tk.FLAT, padx=spacing.sm,
         )
         self.explore_button.pack(side=tk.RIGHT, padx=spacing.xs)
-        frame = tk.Frame(content, bg=colors.bg_surface, bd=0)
-        style_surface_card(frame, colors)
+        frame = theme.make_surface_card(
+            content,
+            radius=theme.corner_radius,
+            padding=spacing.xs,
+        )
         frame.pack(side=tk.RIGHT, fill=tk.Y, padx=(0, spacing.sm), pady=spacing.sm)
         self._frame = frame
         frame.columnconfigure(0, weight=1)
         frame.rowconfigure(1, weight=1)
         self._heading = tk.Label(
-            frame, text="", font=("Helvetica", 10, "bold"),
+            frame.inner, text="", font=("Helvetica", 10, "bold"),
             fg=colors.harmonic_dominant, bg=colors.bg_surface,
         )
         self._heading.grid(row=0, column=0, columnspan=2, sticky="ew", pady=(0, spacing.xs))
         self.candidates = tk.Listbox(
-            frame, font=("Helvetica", 11),
-            bg=colors.bg_window, fg=colors.text_primary,
+            frame.inner, font=("Helvetica", 11),
+            bg=colors.bg_surface, fg=colors.text_primary,
             selectbackground=colors.harmonic_tonic, selectforeground=colors.text_inverted,
-            highlightthickness=2, highlightbackground=colors.border,
+            highlightthickness=2, highlightbackground=colors.bg_surface,
             highlightcolor=colors.border_focus, relief=tk.FLAT, activestyle="dotbox",
             exportselection=False, takefocus=False, height=8, width=36,
         )
         scrollbar = ThemedAutoScrollbar(
-            frame,
+            frame.inner,
             bg_color=colors.bg_surface,
             track_color=colors.bg_surface_hover,
             thumb_color=colors.border,
@@ -85,18 +88,18 @@ class NextChordPanel:
         self.candidates.bind("<<ListboxSelect>>", self._selection_changed)
         self.candidates.bind("<Return>", self._apply_shortcut)
         self.apply_button = create_button(
-            frame, text="", command=self.apply, bg=colors.harmonic_tonic,
+            frame.inner, text="", command=self.apply, bg=colors.harmonic_tonic,
             fg=colors.text_inverted, relief=tk.FLAT, padx=spacing.sm, state=tk.DISABLED,
         )
         self.apply_button.grid(row=2, column=0, columnspan=2, sticky="e", pady=(spacing.xs, 0))
         self.comparison_button = create_button(
-            frame, text="", command=self._toggle_comparison, bg=colors.bg_active,
+            frame.inner, text="", command=self._toggle_comparison, bg=colors.bg_active,
             fg=colors.text_primary, hover_bg=colors.bg_surface_hover, relief=tk.FLAT, padx=spacing.sm, state=tk.DISABLED,
         )
         self.comparison_button.grid(
             row=3, column=0, columnspan=2, sticky="e", pady=(spacing.xs, 0),
         )
-        self._source_button = ttk.Menubutton(frame, state=tk.DISABLED)
+        self._source_button = ttk.Menubutton(frame.inner, state=tk.DISABLED)
         self._source_menu = tk.Menu(self._source_button, tearoff=False)
         self._source_button.configure(menu=self._source_menu)
         self._source_button.grid(row=4, column=0, columnspan=2, sticky="e", pady=(spacing.xs, 0))
@@ -106,14 +109,22 @@ class NextChordPanel:
         """Apply updated light/dark Glide surface colors to NextChordPanel widgets."""
         self._theme = theme
         colors = theme.colors
-        style_surface_card(self._frame, colors)
+        if hasattr(self._frame, "set_theme") and callable(getattr(self._frame, "set_theme")):
+            self._frame.set_theme(
+                bg_color=colors.bg_surface,
+                fill_color=colors.bg_surface,
+                outline_color=colors.border,
+                radius=theme.corner_radius,
+            )
+        else:
+            style_surface_card(self._frame, colors)
         self._heading.configure(fg=colors.harmonic_dominant, bg=colors.bg_surface)
         self.candidates.configure(
-            bg=colors.bg_window,
+            bg=colors.bg_surface,
             fg=colors.text_primary,
             selectbackground=colors.harmonic_tonic,
             selectforeground=colors.text_inverted,
-            highlightbackground=colors.border,
+            highlightbackground=colors.bg_surface,
             highlightcolor=colors.border_focus,
         )
         if hasattr(self, "_scrollbar") and hasattr(self._scrollbar, "set_theme"):

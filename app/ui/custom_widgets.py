@@ -68,8 +68,8 @@ class RoundedSurfaceCard(tk.Canvas):
 
         self.inner = tk.Frame(self, bg=fill_color, bd=0, highlightthickness=0)
         self._window_id = self.create_window(
-            self.inner_pad_x,
-            self.inner_pad_y,
+            self._effective_pad_x(),
+            self._effective_pad_y(),
             anchor="nw",
             window=self.inner,
         )
@@ -78,6 +78,15 @@ class RoundedSurfaceCard(tk.Canvas):
         if self.auto_height:
             self.inner.bind("<Configure>", self._sync_auto_height)
         self._draw()
+
+    def _min_corner_inset(self) -> int:
+        return max(2, int(round(self.radius * 0.35)) + 2) if self.radius > 0 else 1
+
+    def _effective_pad_x(self) -> int:
+        return max(self.inner_pad_x, self._min_corner_inset())
+
+    def _effective_pad_y(self) -> int:
+        return max(self.inner_pad_y, self._min_corner_inset())
 
     def set_theme(
         self,
@@ -93,17 +102,19 @@ class RoundedSurfaceCard(tk.Canvas):
         if radius is not None:
             self.radius = max(0, radius)
         try:
-            self.configure(bg=bg_color)
+            super().configure(bg=bg_color)
             self.inner.configure(bg=fill_color)
         except tk.TclError:
             pass
+        self._on_configure()
         self._draw()
 
     def _sync_auto_height(self, _event: Optional[tk.Event] = None) -> None:
         if not self.auto_height:
             return
         try:
-            needed = max(1, self.inner.winfo_reqheight() + self.inner_pad_y * 2)
+            pad_y = self._effective_pad_y()
+            needed = max(1, self.inner.winfo_reqheight() + pad_y * 2)
         except tk.TclError:
             return
         if needed == self._auto_height_value:
@@ -115,8 +126,8 @@ class RoundedSurfaceCard(tk.Canvas):
             pass
 
     def _on_configure(self, _event: Optional[tk.Event] = None) -> None:
-        pad_x = self.inner_pad_x
-        pad_y = self.inner_pad_y
+        pad_x = self._effective_pad_x()
+        pad_y = self._effective_pad_y()
         w = max(self.winfo_width(), pad_x * 2 + 2)
         h = max(self.winfo_height(), pad_y * 2 + 2)
         try:
@@ -176,6 +187,63 @@ class RoundedSurfaceCard(tk.Canvas):
             self.tag_lower("surface")
         except tk.TclError:
             pass
+
+    def cget(self, key: str) -> object:
+        if key in ("bg", "background"):
+            return self.fill_color
+        if key in ("carrier_bg", "canvas_bg"):
+            return self.bg_color
+        if key == "radius":
+            return self.radius
+        return super().cget(key)
+
+    def configure(self, **kwargs) -> None:
+        if "bg" in kwargs or "background" in kwargs:
+            new_bg = kwargs.pop("bg", kwargs.pop("background", None))
+            if new_bg:
+                self.fill_color = str(new_bg)
+                if hasattr(self, "inner"):
+                    try:
+                        self.inner.configure(bg=new_bg)
+                    except Exception:
+                        pass
+                self._schedule_draw()
+        if "carrier_bg" in kwargs:
+            self.bg_color = str(kwargs.pop("carrier_bg"))
+            try:
+                super().configure(bg=self.bg_color)
+            except Exception:
+                pass
+            self._schedule_draw()
+        if "radius" in kwargs:
+            self.radius = max(0, int(kwargs.pop("radius")))
+            self._schedule_draw()
+        super().configure(**kwargs)
+        self._schedule_draw()
+
+    config = configure
+
+    def pack_propagate(self, flag: bool = True) -> None:
+        if hasattr(self, "inner"):
+            self.inner.pack_propagate(flag)
+        super().pack_propagate(flag)
+
+    def grid_propagate(self, flag: bool = True) -> None:
+        if hasattr(self, "inner"):
+            self.inner.grid_propagate(flag)
+        super().grid_propagate(flag)
+
+    def columnconfigure(self, index: int, **kwargs) -> None:
+        if hasattr(self, "inner"):
+            self.inner.columnconfigure(index, **kwargs)
+        else:
+            super().columnconfigure(index, **kwargs)
+
+    def rowconfigure(self, index: int, **kwargs) -> None:
+        if hasattr(self, "inner"):
+            self.inner.rowconfigure(index, **kwargs)
+        else:
+            super().rowconfigure(index, **kwargs)
 
 
 class RoundedButton(tk.Canvas):

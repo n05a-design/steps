@@ -10,7 +10,7 @@ from typing import Callable, Iterable, Literal
 from app.i18n import LocaleManager
 from app.ui.dialog_support import ModalDialog, configure_readonly_preview
 from app.ui.session_controller import reviewed_practice_session
-from app.ui.theme import ThemeManager, apply_window_geometry, create_button
+from app.ui.theme import ThemeManager, apply_window_geometry, create_button, style_entry
 from glide_shell.custom_controls import ThemedAutoScrollbar
 from src.steps.progression.engine import ReviewedProgression
 from src.steps.theory.exceptions import MusicTheoryError
@@ -147,12 +147,20 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
             font=(typography.font_family_sans, typography.size_lg, "bold"),
         ).pack(anchor=tk.W, pady=(0, spacing.sm))
 
-        search_row = tk.Frame(container, bg=colors.bg_window)
-        search_row.pack(fill=tk.X, pady=(0, spacing.sm))
+        top_card = self._theme.make_surface_card(
+            container,
+            radius=self._theme.corner_radius,
+            padding=spacing.xs,
+            auto_height=True,
+        )
+        top_card.pack(fill=tk.X, pady=(0, spacing.sm))
+
+        search_row = tk.Frame(top_card.inner, bg=colors.bg_surface)
+        search_row.pack(fill=tk.X, pady=(0, spacing.xs))
         tk.Label(
             search_row,
             text=translate("library.search"),
-            bg=colors.bg_window,
+            bg=colors.bg_surface,
             fg=colors.text_secondary,
             font=(typography.font_family_sans, typography.size_sm),
         ).pack(side=tk.LEFT, padx=(0, spacing.sm))
@@ -160,18 +168,15 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
         self._search_entry = tk.Entry(
             search_row,
             textvariable=self._search_var,
-            bg=colors.bg_surface,
-            fg=colors.text_primary,
-            insertbackground=colors.text_primary,
-            relief=tk.FLAT,
             font=(typography.font_family_sans, typography.size_md),
         )
+        style_entry(self._search_entry, colors)
         self._search_entry.pack(side=tk.LEFT, fill=tk.X, expand=True)
         self._search_entry.bind("<Down>", self._focus_results)
         self._search_var.trace_add("write", self._refresh_list)
 
-        practice = tk.Frame(container, bg=colors.bg_window)
-        practice.pack(fill=tk.X, pady=(0, spacing.sm))
+        practice = tk.Frame(top_card.inner, bg=colors.bg_surface)
+        practice.pack(fill=tk.X)
         self._transpose_var = tk.StringVar(self.window, value="0")
         self._notation_var = tk.StringVar(self.window, value="INT")
         for key, variable, values in (
@@ -179,7 +184,7 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
              tuple(f"{step:+d}" if step else "0" for step in range(-6, 7))),
             ("library.practice.notation", self._notation_var, ("INT", "DE")),
         ):
-            tk.Label(practice, text=translate(key), bg=colors.bg_window,
+            tk.Label(practice, text=translate(key), bg=colors.bg_surface,
                      fg=colors.text_secondary).pack(side=tk.LEFT, padx=(0, spacing.xs))
             selector = ttk.Combobox(practice, textvariable=variable, values=values,
                                     state="readonly", width=5)
@@ -190,16 +195,20 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
         self._body = tk.PanedWindow(
             container,
             orient=tk.HORIZONTAL,
-            bg=colors.border,
-            bd=1,
+            bg=colors.bg_window,
+            bd=0,
             sashrelief=tk.FLAT,
             sashwidth=4,
         )
         self._body.pack(fill=tk.BOTH, expand=True)
 
-        list_frame = tk.Frame(self._body, bg=colors.bg_surface)
+        list_frame = self._theme.make_surface_card(
+            self._body,
+            radius=self._theme.corner_radius,
+            padding=spacing.xs,
+        )
         self._listbox = tk.Listbox(
-            list_frame,
+            list_frame.inner,
             bg=colors.bg_surface,
             fg=colors.text_primary,
             selectbackground=colors.harmonic_tonic,
@@ -210,7 +219,7 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
             exportselection=False,
         )
         list_scrollbar = ThemedAutoScrollbar(
-            list_frame,
+            list_frame.inner,
             bg_color=colors.bg_surface,
             track_color=colors.bg_surface_hover,
             thumb_color=colors.border,
@@ -228,23 +237,28 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
         self._listbox.bind("<Return>", self._load_selected)
         self._body.add(list_frame, minsize=250)
 
-        preview_frame = tk.Frame(self._body, bg=colors.bg_window)
+        preview_frame = self._theme.make_surface_card(
+            self._body,
+            radius=self._theme.corner_radius,
+            padding=spacing.xs,
+        )
         self._preview = tk.Text(
-            preview_frame,
+            preview_frame.inner,
             wrap=tk.WORD,
             state=tk.DISABLED,
-            bg=colors.bg_window,
+            bg=colors.bg_surface,
             fg=colors.text_primary,
             insertbackground=colors.text_primary,
             font=(typography.font_family_sans, typography.size_sm),
             relief=tk.FLAT,
+            bd=0,
             padx=spacing.sm,
             pady=spacing.sm,
         )
         configure_readonly_preview(self._preview, colors)
         preview_scrollbar = ThemedAutoScrollbar(
-            preview_frame,
-            bg_color=colors.bg_window,
+            preview_frame.inner,
+            bg_color=colors.bg_surface,
             track_color=colors.bg_surface_hover,
             thumb_color=colors.border,
             active_thumb_color=colors.harmonic_tonic,
@@ -407,15 +421,20 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
         row.pack(fill=tk.X)
         for column, (chord, degree) in enumerate(zip(chords, degrees)):
             row.columnconfigure(column, weight=1, uniform="chords")
-            card = tk.Frame(row, bg=colors.bg_surface, pady=spacing.xs)
+            card = self._theme.make_surface_card(
+                row,
+                radius=self._theme.corner_radius,
+                padding=spacing.xs,
+                auto_height=True,
+            )
             card.grid(row=0, column=column, sticky="nsew", padx=spacing.xs)
             tk.Label(
-                card, text=chord, bg=colors.bg_surface, fg=colors.text_primary,
+                card.inner, text=chord, bg=colors.bg_surface, fg=colors.text_primary,
                 font=(typography.font_family_mono, typography.size_md, "bold"),
             ).pack()
             if degree:
                 tk.Label(
-                    card, text=degree, bg=colors.bg_surface, fg=colors.text_secondary,
+                    card.inner, text=degree, bg=colors.bg_surface, fg=colors.text_secondary,
                     font=(typography.font_family_sans, typography.size_sm),
                 ).pack()
         self._chord_preview.pack(fill=tk.X, pady=(0, spacing.sm), before=self._body)

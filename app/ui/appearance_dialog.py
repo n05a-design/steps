@@ -101,6 +101,7 @@ class AppearanceDialog(ModalDialog):
     def _build_ui(self) -> None:
         t = self.i18n.translate
         c = self.theme.colors
+        self._section_cards: list[RoundedSurfaceCard] = []
 
         # Main vertically arranged container
         self.content_frame = tk.Frame(self.window, bg=c.bg_window, padx=16, pady=16)
@@ -212,11 +213,12 @@ class AppearanceDialog(ModalDialog):
             bg_color=c.bg_window,
             fill_color=c.bg_surface,
             outline_color=c.border,
-            radius=8,
+            radius=self.theme.corner_radius,
             padding=8,
             auto_height=True,
         )
         behavior_card.pack(fill=tk.X, pady=(0, 8))
+        self._section_cards.append(behavior_card)
 
         b_title = tk.Label(
             behavior_card.inner,
@@ -361,11 +363,12 @@ class AppearanceDialog(ModalDialog):
             bg_color=c.bg_window,
             fill_color=c.bg_surface,
             outline_color=c.border,
-            radius=8,
+            radius=self.theme.corner_radius,
             padding=8,
             auto_height=True,
         )
         sec_card.pack(fill=tk.X, pady=(0, 8))
+        self._section_cards.append(sec_card)
 
         title_lbl = tk.Label(
             sec_card.inner,
@@ -414,6 +417,13 @@ class AppearanceDialog(ModalDialog):
         try:
             colors, radius, scale = self._compute_preview_colors()
             self.preview_window_frame.configure(bg=colors.bg_window)
+            for card in getattr(self, "_section_cards", ()):
+                card.set_theme(
+                    bg_color=colors.bg_window,
+                    fill_color=colors.bg_surface,
+                    outline_color=colors.border,
+                    radius=radius,
+                )
             self.preview_card.set_theme(
                 bg_color=colors.bg_window,
                 fill_color=colors.bg_surface,

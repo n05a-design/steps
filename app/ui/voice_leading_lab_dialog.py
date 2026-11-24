@@ -129,6 +129,7 @@ class VoiceLeadingLabDialog(ModalDialog):
     ) -> None:
         self._controller = controller
         self._i18n = i18n
+        self._theme = theme
         self._on_apply = on_apply
         self._colors = theme.colors
         self._font = (theme.typography.font_family_sans, theme.typography.size_sm)
@@ -154,10 +155,18 @@ class VoiceLeadingLabDialog(ModalDialog):
                 fg=colors.text_primary, font=self._font,
             ).pack(anchor=tk.W, pady=(0, spacing.xs))
 
-        navigation = tk.Frame(container, bg=colors.bg_window)
-        navigation.pack(fill=tk.X, pady=(spacing.xs, spacing.sm))
+        nav_card = self._theme.make_surface_card(
+            container,
+            radius=self._theme.corner_radius,
+            padding=spacing.xs,
+            auto_height=True,
+        )
+        nav_card.pack(fill=tk.X, pady=(spacing.xs, spacing.sm))
+
+        navigation = tk.Frame(nav_card.inner, bg=colors.bg_surface)
+        navigation.pack(fill=tk.X)
         tk.Label(
-            navigation, text=translate("voice.lab.event"), bg=colors.bg_window,
+            navigation, text=translate("voice.lab.event"), bg=colors.bg_surface,
             fg=colors.text_primary, font=self._font,
         ).pack(side=tk.LEFT, padx=(0, spacing.sm))
         self._event_selector = ttk.Combobox(navigation, state="readonly", font=self._font)
@@ -166,7 +175,7 @@ class VoiceLeadingLabDialog(ModalDialog):
         self._event_selector.bind("<Left>", lambda _event: self._move_event(-1))
         self._event_selector.bind("<Right>", lambda _event: self._move_event(1))
         tk.Label(
-            navigation, text=translate("voice.lab.zoom"), bg=colors.bg_window,
+            navigation, text=translate("voice.lab.zoom"), bg=colors.bg_surface,
             fg=colors.text_primary, font=self._font,
         ).pack(side=tk.LEFT, padx=spacing.sm)
         zoom_labels = (translate("voice.lab.zoom.overview"), *(f"{level}×" for level in _TIME_ZOOM_LEVELS[1:]))
@@ -197,12 +206,16 @@ class VoiceLeadingLabDialog(ModalDialog):
         body.rowconfigure(0, weight=1)
         for side, name, initial in ((0, "a", active), (1, "b", alternate)):
             body.columnconfigure(side, weight=1, uniform="styles")
-            panel = tk.Frame(body, bg=colors.bg_surface, padx=spacing.sm, pady=spacing.sm)
+            panel = self._theme.make_surface_card(
+                body,
+                radius=self._theme.corner_radius,
+                padding=spacing.sm,
+            )
             panel.grid(row=0, column=side, sticky="nsew", padx=spacing.xs)
 
-            selector = ttk.Combobox(panel, values=labels, state="readonly", font=self._font)
+            selector = ttk.Combobox(panel.inner, values=labels, state="readonly", font=self._font)
             tk.Label(
-                panel, text=translate(f"voice.lab.{name}"), bg=colors.bg_surface,
+                panel.inner, text=translate(f"voice.lab.{name}"), bg=colors.bg_surface,
                 fg=colors.text_primary, font=self._font,
             ).pack(anchor=tk.W)
             selector.pack(fill=tk.X, pady=(0, spacing.sm))
@@ -210,18 +223,18 @@ class VoiceLeadingLabDialog(ModalDialog):
             selector.bind("<<ComboboxSelected>>", lambda _event, index=side: self._select_style(index))
             self._selectors.append(selector)
 
-            canvas = PianoRoll(panel, colors, self._font)
+            canvas = PianoRoll(panel.inner, colors, self._font)
             canvas.pack(fill=tk.X)
             canvas.bind("<Configure>", lambda _event, index=side: self._draw_roll(index))
             canvas.bind("<Button-1>", lambda event, roll=canvas: self._select_note(roll, event))
             self._canvases.append(canvas)
 
-            text_frame = tk.Frame(panel, bg=colors.bg_surface)
+            text_frame = tk.Frame(panel.inner, bg=colors.bg_surface)
             text_frame.pack(fill=tk.BOTH, expand=True, pady=spacing.sm)
             preview = tk.Text(
                 text_frame, height=5, width=24, wrap=tk.WORD, state=tk.DISABLED,
-                bg=colors.bg_window, fg=colors.text_primary, font=self._font,
-                padx=spacing.sm, pady=spacing.sm,
+                bg=colors.bg_surface, fg=colors.text_primary, font=self._font,
+                relief=tk.FLAT, bd=0, padx=spacing.sm, pady=spacing.sm,
             )
             configure_readonly_preview(preview, colors)
             scrollbar = ThemedAutoScrollbar(
@@ -240,7 +253,7 @@ class VoiceLeadingLabDialog(ModalDialog):
             scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
             self._previews.append(preview)
             button = create_button(
-                panel,
+                panel.inner,
                 text=translate(f"voice.lab.apply_{name}"),
                 command=lambda index=side: self._apply_profile(index),
                 bg=colors.harmonic_tonic,

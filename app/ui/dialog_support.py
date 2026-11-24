@@ -71,7 +71,7 @@ def configure_readonly_preview(widget: tk.Text, colors: ThemeColors) -> None:
     widget.configure(
         takefocus=True,
         highlightthickness=2,
-        highlightbackground=colors.border,
+        highlightbackground=colors.bg_surface,
         highlightcolor=colors.border_focus,
     )
 

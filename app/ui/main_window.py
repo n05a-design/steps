@@ -23,6 +23,7 @@ from app.brand import apply_window_icon, load_in_app_logo
 from app.i18n import LocaleManager
 from app.knowledge import get_reviewed_progression, list_reviewed_progressions
 from app.ui import layout_policy
+from app.ui.custom_widgets import RoundedSurfaceCard
 from app.ui.dialog_support import configure_readonly_preview
 from app.ui.file_feedback import format_project_file_error
 from app.ui.harmonic_inspector import format_beginner_voicings, format_chord_analysis
@@ -832,15 +833,18 @@ class StepsMainWindow:
         colors = self.theme.colors
         sp = self.theme.spacing
 
-        self.sidebar_frame = tk.Frame(
+        self.sidebar_frame = RoundedSurfaceCard(
             self.shell_frame,
-            bg=colors.bg_surface,
+            bg_color=colors.bg_window,
+            fill_color=colors.bg_surface,
+            outline_color=colors.border,
+            radius=self.theme.corner_radius,
+            padding=sp.xs,
             width=layout_policy.SIDEBAR_WIDE_WIDTH,
         )
-        style_surface_card(self.sidebar_frame, colors)
         self.sidebar_frame.pack_propagate(False)
         self.sidebar_heading_lbl = tk.Label(
-            self.sidebar_frame,
+            self.sidebar_frame.inner,
             text="",
             font=self.theme.font_spec(layout_policy.FONT_SIZES["caption"], "bold"),
             fg=colors.text_secondary,
@@ -854,7 +858,7 @@ class StepsMainWindow:
         self._sidebar_buttons: dict[str, tk.Button | tk.ttk.Button] = {}
         for item_id, _nav_key, _rail_key, callback in self._sidebar_nav_items():
             btn = create_button(
-                self.sidebar_frame,
+                self.sidebar_frame.inner,
                 text="",
                 command=callback,
                 bg=colors.bg_surface,
@@ -871,7 +875,7 @@ class StepsMainWindow:
         set_button_active(self._sidebar_buttons["workspace"], True, colors)
 
         self.sidebar_collapse_btn = create_button(
-            self.sidebar_frame,
+            self.sidebar_frame.inner,
             text="",
             command=self.toggle_sidebar_narrow,
             bg=colors.bg_active,
@@ -882,18 +886,21 @@ class StepsMainWindow:
         )
         self.sidebar_collapse_btn.pack(side=tk.BOTTOM, fill=tk.X, padx=sp.xs, pady=sp.xs)
 
-        self.sidebar_rail_frame = tk.Frame(
+        self.sidebar_rail_frame = RoundedSurfaceCard(
             self.shell_frame,
-            bg=colors.bg_surface,
+            bg_color=colors.bg_window,
+            fill_color=colors.bg_surface,
+            outline_color=colors.border,
+            radius=self.theme.corner_radius,
+            padding=sp.xs,
             width=layout_policy.SIDEBAR_RAIL_WIDTH,
         )
-        style_surface_card(self.sidebar_rail_frame, colors)
         self.sidebar_rail_frame.pack_propagate(False)
         self._rail_buttons: list[tk.Button | tk.ttk.Button] = []
         self._rail_button_map: dict[str, tk.Button | tk.ttk.Button] = {}
         for item_id, _nav_key, _rail_key, callback in self._sidebar_nav_items():
             btn = create_button(
-                self.sidebar_rail_frame,
+                self.sidebar_rail_frame.inner,
                 text="",
                 command=callback,
                 bg=colors.bg_surface,
@@ -910,7 +917,7 @@ class StepsMainWindow:
         set_button_active(self._rail_button_map["workspace"], True, colors)
 
         self.sidebar_expand_btn = create_button(
-            self.sidebar_rail_frame,
+            self.sidebar_rail_frame.inner,
             text="",
             command=self.toggle_sidebar_narrow,
             bg=colors.bg_active,
@@ -1110,6 +1117,8 @@ class StepsMainWindow:
         self.control_bar.configure(pady=sp.xs if self._height_density == "minimal" else sp.sm)
         for bar in (self.edit_bar, self.context_bar, self.playback_bar, self.timing_bar):
             bar.pack_configure(pady=(0, pad_y))
+        if hasattr(self, "toolbar_card") and hasattr(self.toolbar_card, "_sync_auto_height"):
+            self.toolbar_card._sync_auto_height()
 
     def _on_window_resize(self, event: tk.Event) -> None:
         width = getattr(event, "width", 0) or self._current_window_width()
@@ -1136,21 +1145,29 @@ class StepsMainWindow:
         self.paned = tk.PanedWindow(
             self.shell_frame,
             orient=tk.VERTICAL,
-            bg=colors.border,
-            bd=1,
+            bg=colors.bg_window,
+            bd=0,
             sashrelief=tk.FLAT,
-            sashwidth=4
+            sashwidth=4,
         )
         self.paned.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
         # ----------------------------------------------------
         # Area 1: Arbeitsbereich (Timeline & Progression)
         # ----------------------------------------------------
-        self.work_area = tk.Frame(self.paned, bg=colors.bg_surface, bd=0)
+        self.work_area = tk.Frame(self.paned, bg=colors.bg_window, bd=0)
         self.paned.add(self.work_area, minsize=260)
 
+        self.toolbar_card = self.theme.make_surface_card(
+            self.work_area,
+            radius=self.theme.corner_radius,
+            padding=sp.xs,
+            auto_height=True,
+        )
+        self.toolbar_card.pack(fill=tk.X, padx=sp.sm, pady=(0, sp.xs))
+
         # Top Control Bar (Sidebar toggle, Logo, Title, Add Chord, Transpose, Export)
-        self.control_bar = tk.Frame(self.work_area, bg=colors.bg_surface, pady=sp.sm, padx=sp.sm)
+        self.control_bar = tk.Frame(self.toolbar_card.inner, bg=colors.bg_surface, pady=sp.sm, padx=sp.sm)
         self.control_bar.pack(fill=tk.X)
 
         self.sidebar_toggle_btn = create_button(
@@ -1230,7 +1247,7 @@ class StepsMainWindow:
         )
         self.add_btn.pack(side=tk.LEFT, padx=sp.xs)
 
-        self.edit_bar = tk.Frame(self.work_area, bg=colors.bg_surface, padx=sp.sm)
+        self.edit_bar = tk.Frame(self.toolbar_card.inner, bg=colors.bg_surface, padx=sp.sm)
         self.edit_bar.pack(fill=tk.X, pady=(0, sp.xs))
         self.update_btn = create_button(
             self.edit_bar,
@@ -1299,7 +1316,7 @@ class StepsMainWindow:
         )
         self.redo_btn.pack(side=tk.LEFT, padx=sp.xs)
 
-        self.context_bar = tk.Frame(self.work_area, bg=colors.bg_surface, padx=sp.sm)
+        self.context_bar = tk.Frame(self.toolbar_card.inner, bg=colors.bg_surface, padx=sp.sm)
         self.context_bar.pack(fill=tk.X, pady=(0, sp.xs))
         self.project_title_lbl = tk.Label(
             self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
@@ -1377,7 +1394,7 @@ class StepsMainWindow:
         )
         self.notation_de_btn.pack(side=tk.LEFT, padx=(0, sp.sm))
 
-        self.playback_bar = tk.Frame(self.work_area, bg=colors.bg_surface, padx=sp.sm)
+        self.playback_bar = tk.Frame(self.toolbar_card.inner, bg=colors.bg_surface, padx=sp.sm)
         self.playback_bar.pack(fill=tk.X, pady=(0, sp.xs))
         self.tempo_lbl = tk.Label(
             self.playback_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
@@ -1435,7 +1452,7 @@ class StepsMainWindow:
         )
         self.voice_style_menu.pack(side=tk.LEFT, padx=(0, sp.sm))
 
-        self.timing_bar = tk.Frame(self.work_area, bg=colors.bg_surface, padx=sp.sm)
+        self.timing_bar = tk.Frame(self.toolbar_card.inner, bg=colors.bg_surface, padx=sp.sm)
         self.timing_bar.pack(fill=tk.X, pady=(0, sp.xs))
         self.event_start_lbl = tk.Label(
             self.timing_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
@@ -1508,14 +1525,17 @@ class StepsMainWindow:
         self.export_btn.pack(side=tk.RIGHT, padx=sp.xs)
 
         # Chord Listbox / Progression Display
-        self.prog_frame = tk.Frame(self.work_area, bg=colors.bg_surface)
-        style_surface_card(self.prog_frame, colors)
+        self.prog_frame = self.theme.make_surface_card(
+            self.work_area,
+            radius=self.theme.corner_radius,
+            padding=sp.xs,
+        )
         self.prog_frame.pack(fill=tk.BOTH, expand=True, padx=sp.sm, pady=(0, sp.sm))
 
         self.chord_listbox = tk.Listbox(
-            self.prog_frame,
+            self.prog_frame.inner,
             font=("Helvetica", 13),
-            bg=colors.bg_window,
+            bg=colors.bg_surface,
             fg=colors.text_primary,
             selectbackground=colors.harmonic_tonic,
             selectforeground=colors.text_inverted,
@@ -1524,11 +1544,11 @@ class StepsMainWindow:
             activestyle="dotbox",
             exportselection=False,
             highlightthickness=2,
-            highlightbackground=colors.border,
+            highlightbackground=colors.bg_surface,
             highlightcolor=colors.border_focus,
         )
         self.progression_scrollbar = ThemedAutoScrollbar(
-            self.prog_frame,
+            self.prog_frame.inner,
             bg_color=colors.bg_surface,
             track_color=colors.bg_surface_hover,
             thumb_color=colors.border,
@@ -1540,7 +1560,7 @@ class StepsMainWindow:
         self.progression_scrollbar.set_command(self.chord_listbox.yview)
         self.chord_listbox.configure(yscrollcommand=self.progression_scrollbar.set)
         self.progression_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
-        self.chord_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=sp.sm, pady=sp.sm)
+        self.chord_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=sp.xs, pady=sp.xs)
         self.chord_listbox.bind("<<ListboxSelect>>", self._on_chord_selected)
         modifier = "Option" if sys.platform == "darwin" else "Alt"
         self.chord_listbox.bind(f"<{modifier}-Up>", lambda _event: self._move_chord_shortcut(-1))
@@ -1555,10 +1575,18 @@ class StepsMainWindow:
         # ----------------------------------------------------
         # Area 2: Informations- und Theoriebereich
         # ----------------------------------------------------
-        self.info_area = tk.Frame(self.paned, bg=colors.bg_surface, bd=0)
+        self.info_area = tk.Frame(self.paned, bg=colors.bg_window, bd=0)
         self.paned.add(self.info_area, minsize=260)
 
-        self.info_bar = tk.Frame(self.info_area, bg=colors.bg_surface, pady=sp.sm, padx=sp.sm)
+        self.info_header_card = self.theme.make_surface_card(
+            self.info_area,
+            radius=self.theme.corner_radius,
+            padding=sp.xs,
+            auto_height=True,
+        )
+        self.info_header_card.pack(fill=tk.X, padx=sp.sm, pady=(0, sp.xs))
+
+        self.info_bar = tk.Frame(self.info_header_card.inner, bg=colors.bg_surface, pady=sp.xs, padx=sp.sm)
         self.info_bar.pack(fill=tk.X)
 
         self.info_lbl = tk.Label(
@@ -1582,14 +1610,17 @@ class StepsMainWindow:
         )
 
         # Detail Content Frame
-        self.detail_frame = tk.Frame(self.info_area, bg=colors.bg_surface)
-        style_surface_card(self.detail_frame, colors)
+        self.detail_frame = self.theme.make_surface_card(
+            self.info_area,
+            radius=self.theme.corner_radius,
+            padding=sp.xs,
+        )
         self.detail_frame.pack(fill=tk.BOTH, expand=True, padx=sp.sm, pady=(0, sp.sm))
 
         self.detail_text = tk.Text(
-            self.detail_frame,
+            self.detail_frame.inner,
             font=("Courier", 11),
-            bg=colors.bg_window,
+            bg=colors.bg_surface,
             fg=colors.text_primary,
             relief=tk.FLAT,
             bd=0,
@@ -1600,14 +1631,14 @@ class StepsMainWindow:
         self.detail_text.configure(state=tk.DISABLED)
         configure_readonly_preview(self.detail_text, colors)
         self.next_chord_panel = NextChordPanel(
-            self.info_bar, self.detail_frame,
+            self.info_bar, self.detail_frame.inner,
             controller=self.controller, i18n=self.i18n, theme=self.theme,
             selected_chord=self._selected_chord_index,
             show_detail=self._write_detail, on_applied=self._on_recommendation_applied,
         )
         self.voice_lab_btn.pack(side=tk.RIGHT, padx=sp.xs)
         self.detail_scrollbar = ThemedAutoScrollbar(
-            self.detail_frame,
+            self.detail_frame.inner,
             bg_color=colors.bg_surface,
             track_color=colors.bg_surface_hover,
             thumb_color=colors.border,
@@ -1644,20 +1675,27 @@ class StepsMainWindow:
         colors = self.theme.colors
         self.root.configure(bg=colors.bg_window)
         self.shell_frame.configure(bg=colors.bg_window)
-        self.paned.configure(bg=colors.border)
-        for area in (
-            self.work_area,
+        self.paned.configure(bg=colors.bg_window)
+        for area in (self.work_area, self.info_area):
+            area.configure(bg=colors.bg_window)
+        for surface_bar in (
             self.control_bar,
             self.header_title_box,
             self.edit_bar,
             self.context_bar,
             self.playback_bar,
             self.timing_bar,
-            self.info_area,
             self.info_bar,
         ):
-            area.configure(bg=colors.bg_surface)
-        for frame in (self.sidebar_frame, self.sidebar_rail_frame, self.prog_frame, self.detail_frame):
+            surface_bar.configure(bg=colors.bg_surface)
+        for frame in (
+            self.sidebar_frame,
+            self.sidebar_rail_frame,
+            self.toolbar_card,
+            self.prog_frame,
+            self.info_header_card,
+            self.detail_frame,
+        ):
             if hasattr(frame, "set_theme") and callable(getattr(frame, "set_theme")):
                 frame.set_theme(
                     bg_color=colors.bg_window,
@@ -1742,18 +1780,18 @@ class StepsMainWindow:
         self.voice_style_menu["menu"].configure(font=body_font, bg=colors.bg_surface, fg=colors.text_primary)
         self.chord_listbox.configure(
             font=mono_font,
-            bg=colors.bg_window,
+            bg=colors.bg_surface,
             fg=colors.text_primary,
             selectbackground=colors.harmonic_tonic,
             selectforeground=colors.text_inverted,
-            highlightbackground=colors.border,
+            highlightbackground=colors.bg_surface,
             highlightcolor=colors.border_focus,
         )
         self.detail_text.configure(
             font=mono_font,
-            bg=colors.bg_window,
+            bg=colors.bg_surface,
             fg=colors.text_primary,
-            highlightbackground=colors.border,
+            highlightbackground=colors.bg_surface,
             highlightcolor=colors.border_focus,
         )
         self.next_chord_panel.apply_theme(self.theme)

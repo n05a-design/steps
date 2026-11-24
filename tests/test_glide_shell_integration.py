@@ -17,6 +17,7 @@ from glide_shell import app_host, selftest, window_lifetime
 from app.i18n import LocaleManager
 from app.main import create_desktop_host, main
 from app.ui import layout_policy
+from app.ui.custom_widgets import RoundedSurfaceCard
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager, apply_window_geometry, fit_text
 
@@ -390,6 +391,17 @@ class TestGlideShellIntegration(unittest.TestCase):
         window._on_radius_change("large")
         self.assertEqual(window.theme.radius_choice, "large")
         self.assertEqual(window.theme.corner_radius, 18)
+        for surface in (
+            window.sidebar_frame,
+            window.sidebar_rail_frame,
+            window.toolbar_card,
+            window.prog_frame,
+            window.info_header_card,
+            window.detail_frame,
+            window.next_chord_panel._frame,
+        ):
+            self.assertIsInstance(surface, RoundedSurfaceCard)
+            self.assertEqual(surface.radius, 18)
 
         window._on_scale_change("compact")
         self.assertEqual(window.theme.font_scale_choice, "compact")

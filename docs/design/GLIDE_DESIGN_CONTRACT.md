@@ -1,6 +1,6 @@
 # STEPS – Designvertrag (STEPS Music × Glide Shell 0.6.2)
 
-Stand 24.11.2026 · STEPS 0.7.0-dev · Glide Shell 0.6.2 (Glide v1.0.2, Commit `7dcd8dc04366f88943fa17827882cef4d81421b8`)
+Stand 24.11.2026 · STEPS 0.8.0-dev · Glide Shell 0.6.2 (Glide v1.0.2, Commit `7dcd8dc04366f88943fa17827882cef4d81421b8`)
 
 Dieses Dokument verbindet den portablen Gestaltungs- und Interaktionsvertrag der **Glide Shell** ([`glide_shell/DESIGN_RICHTLINIEN.md`](../../glide_shell/DESIGN_RICHTLINIEN.md)) mit der Musik-, UI- und Markenarchitektur von **STEPS** ([`ADR-001`](../../decisions/ADR-001-ein-fenster-zwei-bereiche.md), [`ADR-003`](../../decisions/ADR-003-glide-nur-shell-und-infrastruktur.md), [`design/tokens/tokens.json`](../../design/tokens/tokens.json)).
 
