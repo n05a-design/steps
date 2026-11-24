@@ -282,6 +282,19 @@ class RoundedButton(tk.Canvas):
             return self._state
         return super().cget(key)
 
+    def __getitem__(self, key: str) -> object:
+        return self.cget(key)
+
+    def __setitem__(self, key: str, value: object) -> None:
+        self.configure(**{key: value})
+
+    def invoke(self) -> None:
+        """Programmatically invoke the button's command, mirroring tk.Button.invoke()."""
+        if self._state == tk.DISABLED:
+            return
+        if callable(self.command):
+            self.command()
+
     def set_active(self, active: bool) -> None:
         """Toggle active selection highlight."""
         self._glide_is_active = bool(active)

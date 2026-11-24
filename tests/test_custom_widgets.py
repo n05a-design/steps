@@ -96,6 +96,16 @@ class TestCustomWidgets(unittest.TestCase):
         btn._on_activate(event)
         self.assertTrue(called)
 
+        # Programmatic invoke()
+        called = False
+        btn.invoke()
+        self.assertTrue(called)
+
+        # Dict access getitem and setitem
+        btn["text"] = "Dict Access"
+        self.assertEqual(btn["text"], "Dict Access")
+        self.assertEqual(btn.cget("text"), "Dict Access")
+
         # Retheming
         btn.set_theme(
             bg_color="#F8F9FA",
