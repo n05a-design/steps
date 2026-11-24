@@ -26,6 +26,27 @@ def _measure_text_width(font: tuple | tkfont.Font, text: str, widget: tk.Misc) -
         return len(text) * 8
 
 
+def _parse_hex_rgb(value: str) -> Optional[tuple[int, int, int]]:
+    text = str(value).strip().lstrip("#")
+    if len(text) == 3:
+        text = "".join(ch * 2 for ch in text)
+    if len(text) != 6:
+        return None
+    try:
+        return (int(text[0:2], 16), int(text[2:4], 16), int(text[4:6], 16))
+    except ValueError:
+        return None
+
+
+def _blend_hex(first: str, second: str, share: float) -> str:
+    rgb1 = _parse_hex_rgb(first)
+    rgb2 = _parse_hex_rgb(second)
+    if rgb1 is None or rgb2 is None:
+        return second
+    blended = tuple(max(0, min(255, int(round(a + (b - a) * share)))) for a, b in zip(rgb1, rgb2))
+    return "#%02X%02X%02X" % blended
+
+
 class RoundedSurfaceCard(tk.Canvas):
     """Glide carrier-card surface with rounded corners and embedded frame."""
 
@@ -545,8 +566,8 @@ class RoundedButton(tk.Canvas):
             pad = 2
 
             if self._state == tk.DISABLED:
-                fill = self.base_bg
-                fg = self.border_color
+                fill = _blend_hex(self.bg_color, self.base_bg, 0.55)
+                fg = _blend_hex(fill, self.base_fg, 0.65)
             elif self._glide_is_active:
                 fill = self.active_bg
                 fg = self.active_fg

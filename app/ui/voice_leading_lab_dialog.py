@@ -211,7 +211,8 @@ class VoiceLeadingLabDialog(ModalDialog):
                 radius=self._theme.corner_radius,
                 padding=spacing.sm,
             )
-            panel.grid(row=0, column=side, sticky="nsew", padx=spacing.xs)
+            panel_padx = (0, spacing.sm // 2) if side == 0 else (spacing.sm // 2, 0)
+            panel.grid(row=0, column=side, sticky="nsew", padx=panel_padx)
 
             selector = ttk.Combobox(panel.inner, values=labels, state="readonly", font=self._font)
             tk.Label(

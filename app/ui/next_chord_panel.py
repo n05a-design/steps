@@ -53,7 +53,7 @@ class NextChordPanel:
             radius=theme.corner_radius,
             padding=spacing.xs,
         )
-        frame.pack(side=tk.RIGHT, fill=tk.Y, padx=(0, spacing.sm), pady=spacing.sm)
+        frame.pack(side=tk.RIGHT, fill=tk.Y, padx=(spacing.sm, 0), pady=0)
         self._frame = frame
         frame.columnconfigure(0, weight=1)
         frame.rowconfigure(1, weight=1)

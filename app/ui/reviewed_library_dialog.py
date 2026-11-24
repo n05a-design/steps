@@ -198,7 +198,7 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
             bg=colors.bg_window,
             bd=0,
             sashrelief=tk.FLAT,
-            sashwidth=4,
+            sashwidth=spacing.sm,
         )
         self._body.pack(fill=tk.BOTH, expand=True)
 

@@ -949,6 +949,8 @@ class StepsMainWindow:
         t = self.i18n.translate
         self.sidebar_heading_lbl.configure(text=t("sidebar.heading"))
         self.sidebar_toggle_btn.configure(text=t("view.sidebar.button"))
+        if hasattr(self, "settings_btn"):
+            self.settings_btn.configure(text=t("settings.button"))
         self.sidebar_collapse_btn.configure(text=t("view.sidebar.collapse"))
         self.sidebar_expand_btn.configure(text=t("view.sidebar.expand"))
         for item_id, nav_key, rail_key, _callback in self._sidebar_nav_items():
@@ -1148,7 +1150,8 @@ class StepsMainWindow:
             bg=colors.bg_window,
             bd=0,
             sashrelief=tk.FLAT,
-            sashwidth=4,
+            sashwidth=sp.sm,
+            sashpad=0,
         )
         self.paned.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
@@ -1164,11 +1167,24 @@ class StepsMainWindow:
             padding=sp.xs,
             auto_height=True,
         )
-        self.toolbar_card.pack(fill=tk.X, padx=sp.sm, pady=(0, sp.xs))
+        self.toolbar_card.pack(fill=tk.X, padx=0, pady=(0, sp.sm))
 
-        # Top Control Bar (Sidebar toggle, Logo, Title, Add Chord, Transpose, Export)
+        # Top Control Bar (Logo, Title, Add Chord, Transpose, Export, Sidebar toggle, Settings)
         self.control_bar = tk.Frame(self.toolbar_card.inner, bg=colors.bg_surface, pady=sp.sm, padx=sp.sm)
         self.control_bar.pack(fill=tk.X)
+
+        self.settings_btn = create_button(
+            self.control_bar,
+            text="",
+            command=self._on_open_appearance_dialog,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
+            relief=tk.FLAT,
+            width=38,
+            padx=sp.xs,
+        )
+        self.settings_btn.pack(side=tk.RIGHT, padx=(sp.xs, 0))
 
         self.sidebar_toggle_btn = create_button(
             self.control_bar,
@@ -1180,9 +1196,10 @@ class StepsMainWindow:
             active_bg=colors.harmonic_tonic,
             active_fg=colors.text_inverted,
             relief=tk.FLAT,
+            width=38,
             padx=sp.xs,
         )
-        self.sidebar_toggle_btn.pack(side=tk.LEFT, padx=(0, sp.xs))
+        self.sidebar_toggle_btn.pack(side=tk.RIGHT, padx=sp.xs)
 
         try:
             self._header_logo_image = load_in_app_logo(self.root, target_height=28)
@@ -1530,7 +1547,7 @@ class StepsMainWindow:
             radius=self.theme.corner_radius,
             padding=sp.xs,
         )
-        self.prog_frame.pack(fill=tk.BOTH, expand=True, padx=sp.sm, pady=(0, sp.sm))
+        self.prog_frame.pack(fill=tk.BOTH, expand=True, padx=0, pady=0)
 
         self.chord_listbox = tk.Listbox(
             self.prog_frame.inner,
@@ -1584,7 +1601,7 @@ class StepsMainWindow:
             padding=sp.xs,
             auto_height=True,
         )
-        self.info_header_card.pack(fill=tk.X, padx=sp.sm, pady=(0, sp.xs))
+        self.info_header_card.pack(fill=tk.X, padx=0, pady=(0, sp.sm))
 
         self.info_bar = tk.Frame(self.info_header_card.inner, bg=colors.bg_surface, pady=sp.xs, padx=sp.sm)
         self.info_bar.pack(fill=tk.X)
@@ -1615,7 +1632,7 @@ class StepsMainWindow:
             radius=self.theme.corner_radius,
             padding=sp.xs,
         )
-        self.detail_frame.pack(fill=tk.BOTH, expand=True, padx=sp.sm, pady=(0, sp.sm))
+        self.detail_frame.pack(fill=tk.BOTH, expand=True, padx=0, pady=0)
 
         self.detail_text = tk.Text(
             self.detail_frame.inner,
@@ -1838,6 +1855,7 @@ class StepsMainWindow:
             self.trans_down_btn,
             self.trans_up_btn,
             self.voice_lab_btn,
+            self.settings_btn,
         ):
             retheme_button(
                 btn,
