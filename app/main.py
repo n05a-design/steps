@@ -32,6 +32,10 @@ def build_parser(i18n: Optional[LocaleManager] = None) -> argparse.ArgumentParse
         choices=[
             "dark",
             "light",
+            "glass-dark",
+            "glass-light",
+            "dopamine",
+            "pixel",
             "contrast-dark",
             "contrast-light",
             "minimal-dark",

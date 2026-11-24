@@ -26,6 +26,7 @@
     - `ThemedAutoScrollbar` in allen Dialogen und Bereichen (`ReviewedProgressionLibraryDialog`, `VoiceLeadingLabDialog`, `NextChordPanel`, `AppearanceDialog`, `MainWindow`).
     - Vollständige Beseitigung aller verbliebenen Vor-Glide-Hex-Farbcodes (`#121319`, `#1E222C`, `#F3F1ED`, `#60A5FA` etc.) zugunsten der kanonischen Glide Shell 0.6.2 / Glide v1.0.2 Design-Tokens.
   - **Trägerflächen-Hierarchie (B17/B19):** Saubere Trennung von Fenstergrund (`colors.bg_window` als Trägerinsel), Inhaltskarten (`RoundedSurfaceCard` mit `colors.bg_surface` und `corner_radius`) und Unterleisten ohne unruhige Schmuckelemente.
+  - **Fenstergeometrie-Persistenz & CLI-Parität:** Speicherung und Wiederherstellung der Hauptfenstergeometrie (`window_geometry`) und Kompaktmodus-Geometrie (`saved_compact_geometry`) gemäß B15; CLI-Option `--theme` akzeptiert alle 10 Glide-Designs.
 - **Versionierung:** Anhebung von Paket (`0.7.0.dev0`), App (`0.7.0-dev`) und Dokumentation.
 
 ## [0.6.0-dev] - 2026-11-24

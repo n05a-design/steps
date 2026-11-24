@@ -146,10 +146,32 @@ class StepsMainWindow:
             self.theme.set_hints_visible(self._user_settings.get("hints_visible", True))
         self._theme_preference: str = self._user_settings.get("theme_preference", self.theme.mode)
 
+        saved_geom = str(self._user_settings.get("window_geometry") or "").strip()
+        saved_compact = str(self._user_settings.get("saved_compact_geometry") or "").strip()
+        if saved_compact:
+            self._saved_compact_geometry = saved_compact
+
         self.root.title(self.i18n.translate("app.title"))
         self.theme.configure_shell_providers(self.root)
         if isinstance(self.root, tk.Misc):
-            apply_window_geometry(self.root, 1024, 720, 860, 600)
+            restored = False
+            if saved_geom:
+                try:
+                    parsed = layout_policy.window_geometry.parse(saved_geom)
+                    if parsed:
+                        w, h, x, y = parsed
+                        screen_w = int(self.root.winfo_screenwidth())
+                        screen_h = int(self.root.winfo_screenheight())
+                        cw, ch, cx, cy = layout_policy.window_geometry.clamp(
+                            w, h, x, y, screen_w, screen_h, (860, 600)
+                        )
+                        self.root.geometry(layout_policy.window_geometry.format_geometry(cw, ch, cx, cy))
+                        self.root.minsize(860, 600)
+                        restored = True
+                except Exception:
+                    pass
+            if not restored:
+                apply_window_geometry(self.root, 1024, 720, 860, 600)
             self._lifetime_scope = window_lifetime.scope_for(self.root)
         else:
             self.root.geometry("1024x720")
@@ -469,6 +491,12 @@ class StepsMainWindow:
 
     def _persist_settings(self) -> None:
         try:
+            geom = ""
+            if hasattr(self, "root") and isinstance(self.root, tk.Misc):
+                try:
+                    geom = self.root.geometry()
+                except Exception:
+                    pass
             self._user_settings.update({
                 "theme_preference": self._theme_preference,
                 "background_color": self.theme.background_choice,
@@ -479,6 +507,8 @@ class StepsMainWindow:
                 "animations_enabled": getattr(self.theme, "animations_enabled", True),
                 "hints_visible": getattr(self.theme, "hints_visible", True),
                 "language": self.i18n.preference,
+                "window_geometry": geom or self._user_settings.get("window_geometry", ""),
+                "saved_compact_geometry": getattr(self, "_saved_compact_geometry", ""),
             })
             save_settings(self._user_settings)
         except Exception:
@@ -770,6 +800,7 @@ class StepsMainWindow:
 
     def _on_close(self) -> None:
         if self._confirm_unsaved_changes():
+            self._persist_settings()
             self.root.destroy()
 
     def _on_toggle_sidebar_shortcut(self, _event: tk.Event) -> str:

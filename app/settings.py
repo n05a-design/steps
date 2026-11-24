@@ -32,6 +32,8 @@ DEFAULT_SETTINGS: dict[str, Any] = {
     "animations_enabled": True,
     "hints_visible": True,
     "language": "system",
+    "window_geometry": "",
+    "saved_compact_geometry": "",
 }
 
 VALID_THEMES = frozenset({
@@ -134,6 +136,14 @@ def normalize_settings(raw: Mapping[str, Any] | None) -> dict[str, Any]:
     lang = str(data.get("language", "")).strip().lower()
     if lang in VALID_LANGUAGES:
         result["language"] = lang
+
+    geom = str(data.get("window_geometry", "")).strip()
+    if geom:
+        result["window_geometry"] = geom
+
+    compact_geom = str(data.get("saved_compact_geometry", "")).strip()
+    if compact_geom:
+        result["saved_compact_geometry"] = compact_geom
 
     return result
 

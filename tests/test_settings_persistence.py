@@ -39,6 +39,8 @@ class TestSettingsPersistence(unittest.TestCase):
             "animations_enabled": False,
             "hints_visible": False,
             "language": "de",
+            "window_geometry": "1024x720+100+100",
+            "saved_compact_geometry": "520x720+604+100",
         }
         ok = save_settings(custom, self.base_dir)
         self.assertTrue(ok)
