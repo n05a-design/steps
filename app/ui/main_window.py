@@ -348,7 +348,7 @@ class StepsMainWindow:
             ("b", self._on_toggle_sidebar_shortcut, False),
             ("b", self._on_toggle_sidebar_narrow_shortcut, True),
             ("k", self._on_toggle_compact_shortcut, True),
-            (",", self._on_appearance_shortcut, False),
+            ("comma", self._on_appearance_shortcut, False),
         ):
             shortcut_entries.extend(
                 app_host.primary_shortcuts(key, handler, app_host.MACOS, shift=shift)

@@ -151,6 +151,7 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 |---|---|
 | [`APP_ICON_SIZES`](../../app/brand.py) | Datenwert |
 | [`LOGO_SIZES`](../../app/brand.py) | Datenwert |
+| [`MACOS_ICON_SHARE`](../../app/brand.py) | Datenwert |
 | [`app_icon_ico_path`](../../app/brand.py) | `() -> 'Path'` |
 | [`app_icon_path`](../../app/brand.py) | `(size: 'int' = 256) -> 'Path'` |
 | [`apply_window_icon`](../../app/brand.py) | `(root) -> 'None'` |
