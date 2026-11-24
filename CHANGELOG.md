@@ -1,6 +1,20 @@
 # Änderungsprotokoll
 
-## Unreleased – 0.4.0-dev (2026-11-24)
+## Unreleased – 0.5.0-dev (2026-11-24)
+
+### Hinzugefügt / Integriert
+- **Glide Anpassungs-Parität & Customization:** Vollständige Parität zu den Anpassungsmöglichkeiten der Glide Shell:
+  - Neuer modaler Dialog „Erscheinungsbild anpassen…“ (`AppearanceDialog`, Tastaturkürzel `⌘`/`Ctrl+,`) mit interaktiver Live-Vorschau (`RoundedSurfaceCard`, `RoundedButton`).
+  - 9 wählbare Hintergrund-Farbtöne (`default`, `surface`, `accent`, `clear`, `due_action`, `export`, `flag`, `delete`, `muted`) mit intelligenter Farbtönung (`with_background`), die den Lesekontrast nach WCAG 2.2 AA ($\ge 4{,}5:1$) garantiert.
+  - Einstellbare Eckenrundung: Standard (12 px), Groß (18 px), Dezent (6 px), Scharf (0 px) für alle Trägerkarten und Aktionsknöpfe.
+  - Dynamische Schriftgrößenskalierung: Kompakt (90 %), Standard (100 %), Groß (115 %).
+  - Canvas-basierte Widgets mit echten abgerundeten Ecken (`RoundedSurfaceCard`, `RoundedButton`) auf Basis von `glide_shell.custom_controls.rounded_rect_points`.
+  - Vollständige Menüintegration unter Einstellungen mit Submenüs für Design, Farbton, Rundung und Schriftgröße (ausgerichtete Häkchen nach D71).
+  - 100 % zweisprachige Lokalisierung (DE/EN) aller Anpassungsoptionen ohne wortwörtliche GUI-Texte.
+- **Tests & Qualität:** 15 neue Unittests für Custom-Widgets, Farbkontrast, Eckenrundung und Schrifttypografie (`tests/test_custom_widgets.py`, `tests/test_theme_tokens.py`, `tests/test_glide_shell_integration.py`).
+- **Versionierung:** Anhebung von Paket (`0.5.0.dev0`), App (`0.5.0-dev`) und Dokumentation.
+
+## [0.4.0-dev] - 2026-11-24
 
 ### Hinzugefügt / Integriert
 - **Glide Designsystem & Themes:** Vollständige Integration des portablen Glide-Designvertrags ([`docs/design/GLIDE_DESIGN_CONTRACT.md`](docs/design/GLIDE_DESIGN_CONTRACT.md)) mit 6 barrierefreien Themes (`dark`, `light`, `contrast-dark`, `contrast-light`, `minimal-dark`, `minimal-light`) plus automatischer Systemerkennung (`glide_shell.system_appearance`).

@@ -35,6 +35,9 @@ from app.ui.next_chord_panel import NextChordPanel
 from app.ui.reviewed_library_dialog import ReviewedProgressionLibraryDialog
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import (
+    BACKGROUND_CHOICES,
+    FONT_SCALE_CHOICES,
+    RADIUS_CHOICES,
     ThemeManager,
     apply_window_geometry,
     create_button,
@@ -189,6 +192,11 @@ class StepsMainWindow:
         for action in (self._on_explore_next, self._on_open_voice_leading_lab, self._on_export_midi):
             self.tools_menu.add_command(label="", command=action)
         self.settings_menu = tk.Menu(self.menu_bar, tearoff=False)
+        self.settings_menu.add_command(
+            label="",
+            command=self._on_open_appearance_dialog,
+            accelerator=f"{shortcut},",
+        )
         self.language_menu = tk.Menu(self.settings_menu, tearoff=False)
         self.language_var = tk.StringVar(self.root, value=self.i18n.preference)
         for preference in ("system", "en", "de"):
@@ -209,6 +217,36 @@ class StepsMainWindow:
                 command=lambda selected=preference: self.set_theme_preference(selected),
             )
         self.settings_menu.add_cascade(label="", menu=self.theme_menu)
+        self.bg_menu = tk.Menu(self.settings_menu, tearoff=False)
+        self.bg_var = tk.StringVar(self.root, value=self.theme.background_choice)
+        for choice, _ in BACKGROUND_CHOICES:
+            self.bg_menu.add_radiobutton(
+                label="",
+                value=choice,
+                variable=self.bg_var,
+                command=lambda selected=choice: self._on_background_change(selected),
+            )
+        self.settings_menu.add_cascade(label="", menu=self.bg_menu)
+        self.radius_menu = tk.Menu(self.settings_menu, tearoff=False)
+        self.radius_var = tk.StringVar(self.root, value=self.theme.radius_choice)
+        for choice, _, _ in RADIUS_CHOICES:
+            self.radius_menu.add_radiobutton(
+                label="",
+                value=choice,
+                variable=self.radius_var,
+                command=lambda selected=choice: self._on_radius_change(selected),
+            )
+        self.settings_menu.add_cascade(label="", menu=self.radius_menu)
+        self.scale_menu = tk.Menu(self.settings_menu, tearoff=False)
+        self.scale_var = tk.StringVar(self.root, value=self.theme.font_scale_choice)
+        for choice, _, _ in FONT_SCALE_CHOICES:
+            self.scale_menu.add_radiobutton(
+                label="",
+                value=choice,
+                variable=self.scale_var,
+                command=lambda selected=choice: self._on_scale_change(selected),
+            )
+        self.settings_menu.add_cascade(label="", menu=self.scale_menu)
         self.settings_menu.add_separator()
         self.settings_menu.add_command(
             label="",
@@ -238,6 +276,7 @@ class StepsMainWindow:
             ("b", self._on_toggle_sidebar_shortcut, False),
             ("b", self._on_toggle_sidebar_narrow_shortcut, True),
             ("k", self._on_toggle_compact_shortcut, True),
+            (",", self._on_appearance_shortcut, False),
         ):
             shortcut_entries.extend(
                 app_host.primary_shortcuts(key, handler, app_host.MACOS, shift=shift)
@@ -275,18 +314,38 @@ class StepsMainWindow:
         for index, key in enumerate(("next_chord.explore", "voice.lab.open", "midi.export")):
             self.tools_menu.entryconfigure(index, label=t(key))
         self.menu_bar.add_cascade(label=t("settings.menu"), menu=self.settings_menu)
-        self.settings_menu.entryconfigure(0, label=t("language.menu"))
         if (
             callable(getattr(self.settings_menu, "index", None))
             and self.settings_menu.index(tk.END) is not None
-            and self.settings_menu.index(tk.END) >= 5
+            and self.settings_menu.index(tk.END) >= 8
         ):
-            self.settings_menu.entryconfigure(1, label=t("theme.menu"))
-            for index, (_, key) in enumerate(self.THEME_OPTIONS):
-                self.theme_menu.entryconfigure(index, label=t(key))
-            self.settings_menu.entryconfigure(3, label=t("view.sidebar.toggle"))
-            self.settings_menu.entryconfigure(4, label=t("view.sidebar.narrow"))
-            self.settings_menu.entryconfigure(5, label=t("view.compact.toggle"))
+            self.settings_menu.entryconfigure(0, label=t("settings.appearance"))
+            self.settings_menu.entryconfigure(1, label=t("language.menu"))
+            self.settings_menu.entryconfigure(2, label=t("theme.menu"))
+            self.settings_menu.entryconfigure(3, label=t("theme.background.menu"))
+            self.settings_menu.entryconfigure(4, label=t("theme.radius.menu"))
+            self.settings_menu.entryconfigure(5, label=t("theme.font_scale.menu"))
+            if hasattr(self, "theme_menu") and callable(getattr(self.theme_menu, "entryconfigure", None)):
+                for index, (_, key) in enumerate(self.THEME_OPTIONS):
+                    self.theme_menu.entryconfigure(index, label=t(key))
+            if hasattr(self, "bg_menu") and callable(getattr(self.bg_menu, "entryconfigure", None)):
+                for index, (_, key) in enumerate(BACKGROUND_CHOICES):
+                    self.bg_menu.entryconfigure(index, label=t(key))
+            if hasattr(self, "radius_menu") and callable(getattr(self.radius_menu, "entryconfigure", None)):
+                for index, (_, key, _) in enumerate(RADIUS_CHOICES):
+                    self.radius_menu.entryconfigure(index, label=t(key))
+            if hasattr(self, "scale_menu") and callable(getattr(self.scale_menu, "entryconfigure", None)):
+                for index, (_, key, _) in enumerate(FONT_SCALE_CHOICES):
+                    self.scale_menu.entryconfigure(index, label=t(key))
+            self.settings_menu.entryconfigure(7, label=t("view.sidebar.toggle"))
+            self.settings_menu.entryconfigure(8, label=t("view.sidebar.narrow"))
+            self.settings_menu.entryconfigure(9, label=t("view.compact.toggle"))
+        elif (
+            callable(getattr(self.settings_menu, "index", None))
+            and self.settings_menu.index(tk.END) is not None
+            and self.settings_menu.index(tk.END) >= 0
+        ):
+            self.settings_menu.entryconfigure(0, label=t("language.menu"))
         for index, key in enumerate(("language.system", "language.en", "language.de")):
             self.language_menu.entryconfigure(index, label=t(key))
         self._localize_sidebar_widgets()
@@ -349,6 +408,44 @@ class StepsMainWindow:
                 self._display_chord_details(chords[selected], index=selected)
             else:
                 self._display_empty_info()
+
+    def _on_appearance_shortcut(self, _event: Optional[tk.Event] = None) -> None:
+        self._on_open_appearance_dialog()
+
+    def _on_open_appearance_dialog(self) -> None:
+        from app.ui.appearance_dialog import AppearanceDialog
+
+        def _apply(theme_mode: str, bg_choice: str, radius_choice: str, scale_choice: str) -> None:
+            self.set_theme_preference(theme_mode)
+            self._on_background_change(bg_choice)
+            self._on_radius_change(radius_choice)
+            self._on_scale_change(scale_choice)
+
+        AppearanceDialog(
+            parent=self.root,
+            theme=self.theme,
+            i18n=self.i18n,
+            theme_preference=self._theme_preference,
+            on_apply=_apply,
+        )
+
+    def _on_background_change(self, choice: str) -> None:
+        self.theme.set_background_choice(choice)
+        if hasattr(self, "bg_var"):
+            self.bg_var.set(choice)
+        self.apply_theme()
+
+    def _on_radius_change(self, choice: str) -> None:
+        self.theme.set_radius_choice(choice)
+        if hasattr(self, "radius_var"):
+            self.radius_var.set(choice)
+        self.apply_theme()
+
+    def _on_scale_change(self, choice: str) -> None:
+        self.theme.set_font_scale_choice(choice)
+        if hasattr(self, "scale_var"):
+            self.scale_var.set(choice)
+        self.apply_theme()
 
     def _on_open_shortcut(self, _event: tk.Event) -> str:
         self._on_open_project()
@@ -1382,9 +1479,10 @@ class StepsMainWindow:
         self.apply_theme(resolved)
         return resolved
 
-    def apply_theme(self, mode: str) -> None:
+    def apply_theme(self, mode: Optional[str] = None) -> None:
         """Apply a Glide palette live across main-window surfaces, entries and buttons."""
-        self.theme.set_mode(mode)
+        if mode is not None:
+            self.theme.set_mode(mode)
         colors = self.theme.colors
         self.root.configure(bg=colors.bg_window)
         self.shell_frame.configure(bg=colors.bg_window)
@@ -1401,10 +1499,16 @@ class StepsMainWindow:
             self.info_bar,
         ):
             area.configure(bg=colors.bg_surface)
-        style_surface_card(self.sidebar_frame, colors)
-        style_surface_card(self.sidebar_rail_frame, colors)
-        style_surface_card(self.prog_frame, colors)
-        style_surface_card(self.detail_frame, colors)
+        for frame in (self.sidebar_frame, self.sidebar_rail_frame, self.prog_frame, self.detail_frame):
+            if hasattr(frame, "set_theme") and callable(getattr(frame, "set_theme")):
+                frame.set_theme(
+                    bg_color=colors.bg_window,
+                    fill_color=colors.bg_surface,
+                    outline_color=colors.border,
+                    radius=self.theme.corner_radius,
+                )
+            else:
+                style_surface_card(frame, colors)
         if hasattr(self, "header_logo_lbl"):
             self.header_logo_lbl.configure(bg=colors.bg_surface)
         self.title_lbl.configure(fg=colors.harmonic_tonic, bg=colors.bg_surface)

@@ -30,7 +30,7 @@ from .exceptions import (
 )
 
 CURRENT_SCHEMA_VERSION: str = "1.0.0"
-CURRENT_APP_VERSION: str = "0.4.0-dev"
+CURRENT_APP_VERSION: str = "0.5.0-dev"
 
 
 @dataclass

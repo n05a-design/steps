@@ -375,6 +375,33 @@ class TestGlideShellIntegration(unittest.TestCase):
         self.assertEqual(window.theme.mode, "dark")
         self.assertEqual(window.root.cget("bg"), window.theme.colors.bg_window)
 
+        # 6. Glide customization parity: background tinting, corner radius, and font scaling
+        window._on_background_change("surface")
+        root.update()
+        self.assertEqual(window.theme.background_choice, "surface")
+        self.assertEqual(window.root.cget("bg"), window.theme.colors.bg_surface)
+
+        window._on_background_change("accent")
+        root.update()
+        self.assertEqual(window.theme.background_choice, "accent")
+        self.assertTrue(window.root.cget("bg").startswith("#"))
+
+        window._on_radius_change("large")
+        self.assertEqual(window.theme.radius_choice, "large")
+        self.assertEqual(window.theme.corner_radius, 18)
+
+        window._on_scale_change("compact")
+        self.assertEqual(window.theme.font_scale_choice, "compact")
+        self.assertEqual(window.theme.font_scale, 0.90)
+
+        window._on_background_change("default")
+        window._on_radius_change("standard")
+        window._on_scale_change("standard")
+        root.update()
+        self.assertEqual(window.theme.background_choice, "default")
+        self.assertEqual(window.theme.corner_radius, 12)
+        self.assertEqual(window.theme.font_scale, 1.0)
+
 
 if __name__ == "__main__":
     unittest.main()

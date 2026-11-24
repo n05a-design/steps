@@ -6,5 +6,5 @@ Pure, Tk-free domain layer boundary as specified in AGENTS.md.
 
 from __future__ import annotations
 
-__version__ = "0.4.0.dev0"
+__version__ = "0.5.0.dev0"
 __all__ = ["__version__"]

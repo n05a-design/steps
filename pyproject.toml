@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "steps-music"
-version = "0.4.0.dev0"
+version = "0.5.0.dev0"
 description = "STEPS – Reine, testbare Musik- & Harmonielehre und Desktop Applikation"
 readme = "README.md"
 requires-python = ">=3.11"

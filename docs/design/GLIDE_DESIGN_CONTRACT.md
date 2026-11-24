@@ -1,8 +1,8 @@
 # STEPS – Designvertrag (STEPS Music × Glide Shell 0.6.2)
 
-Stand 24.11.2026 · STEPS 0.4.0-dev · Glide Shell 0.6.2 (Glide v1.0.2, Commit `7dcd8dc04366f88943fa17827882cef4d81421b8`)
+Stand 24.11.2026 · STEPS 0.5.0-dev · Glide Shell 0.6.2 (Glide v1.0.2, Commit `7dcd8dc04366f88943fa17827882cef4d81421b8`)
 
-Dieses Dokument verbindet den portablen Gestaltungs- und Interaktionsvertrag der **Glide Shell** ([`glide_shell/DESIGN_RICHTLINIEN.md`](../../glide_shell/DESIGN_RICHTLINIEN.md)) mit der Musik-, UI- und Markenarchitektur von **STEPS** ([`ADR-001`](../decisions/ADR-001-ein-fenster-zwei-bereiche.md), [`ADR-003`](../decisions/ADR-003-glide-nur-shell-und-infrastruktur.md), [`design/tokens/tokens.json`](../../design/tokens/tokens.json)).
+Dieses Dokument verbindet den portablen Gestaltungs- und Interaktionsvertrag der **Glide Shell** ([`glide_shell/DESIGN_RICHTLINIEN.md`](../../glide_shell/DESIGN_RICHTLINIEN.md)) mit der Musik-, UI- und Markenarchitektur von **STEPS** ([`ADR-001`](../../decisions/ADR-001-ein-fenster-zwei-bereiche.md), [`ADR-003`](../../decisions/ADR-003-glide-nur-shell-und-infrastruktur.md), [`design/tokens/tokens.json`](../../design/tokens/tokens.json)).
 
 ---
 
@@ -31,6 +31,12 @@ Dieses Dokument verbindet den portablen Gestaltungs- und Interaktionsvertrag der
 - **B01 / B16 – Unmittelbare Rückmeldung:** Keine blockierenden Schlafzeiten (`time.sleep`) im Tk-Thread; asynchrone Berechnungen (z. B. MIDI-Synthese, Export, Stimmführungsanalyse) laufen über Hintergrund-Worker und koppeln über `window_lifetime.AfterScope` zurück. Schaltflächen besitzen unmittelbares Hover-Feedback (`hover_bg` / `_glide_hover_bg`) und klare Aktivitätsmarkierungen (`set_button_active`).
 - **B03 – Unterbrechbare, ergonomische Übergänge:** Visuelle Animationen und Übergänge dauern höchstens 150 ms (`motion.Transitions`) und brechen bei Fensterschließung über den Lebenszyklus sauber ab.
 - **B10 / B12 / B14 – Semantische Symbole:** Standardisierte Glyphen (`▸`, `◈`, `≣`, `☷`, `⤓`, `«`, `»`, `☰`, `▴`, `▾`, `✓`) mit fester Bedeutung und Tastaturbedienung über Pfeiltasten.
+- **Glide-Anpassungsparität (Customization & Geometrie):**
+  - **Erscheinungsbild-Dialog (`AppearanceDialog`):** Modaler Einstellungsdialog (`⌘`/`Ctrl+,`) zur interaktiven Steuerung von Design, Hintergrund, Eckenrundung und Schriftgröße mit Live-Vorschau.
+  - **Hintergrund-Farbtöne (`BACKGROUND_CHOICES` & `with_background`):** 9 Farboptionen (`default`, `surface`, `accent`, `clear`, `due_action`, `export`, `flag`, `delete`, `muted`), bei denen der Hintergrund subtil getönt wird, während Trägerkarten und funktionale Farbkodierungen stabil bleiben.
+  - **Eckenrundung (`RADIUS_CHOICES`):** Wählbar in Standard (12 px), Groß (18 px), Dezent (6 px) und Scharf (0 px) für alle Oberflächenkarten.
+  - **Schriftgrößenskalierung (`FONT_SCALE_CHOICES`):** Kompakt (90 %), Standard (100 %) und Groß (115 %) für optimale Lesbarkeit auf beliebigen Bildschirmen.
+  - **Abgerundete Canvas-Bausteine (`RoundedSurfaceCard`, `RoundedButton`):** Zeichnen von weichen Bézier-Polygonen via `glide_shell.custom_controls.rounded_rect_points` anstelle starrer Rechtecke.
 - **Kontrast & Typografie (WCAG 2.2 AA):**
   - Normaler UI-Text erreicht mindestens **4,5:1** Kontrastverhältnis zum Hintergrund über alle 6 Themes (`dark`, `light`, `contrast-dark`, `contrast-light`, `minimal-dark`, `minimal-light`).
   - Große Schrift (Titel, Akkordkarten) und Platzhalter erreichen mindestens **3:1**.

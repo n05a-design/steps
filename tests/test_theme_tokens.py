@@ -172,6 +172,66 @@ class TestThemeManager(unittest.TestCase):
         self.assertEqual(self.tm.mode, "contrast-dark")
         self.assertTrue(self.tm.is_dark)
 
+    def test_background_tint_choices_and_contrast(self):
+        from app.ui.theme import BACKGROUND_CHOICES, BACKGROUND_KEYS, with_background
+
+        self.assertIn("default", BACKGROUND_KEYS)
+        self.assertIn("surface", BACKGROUND_KEYS)
+        self.assertIn("accent", BACKGROUND_KEYS)
+        self.assertIn("clear", BACKGROUND_KEYS)
+
+        base_colors = self.tm.colors
+        # default gives identical colors
+        default_colors = with_background(base_colors, "default")
+        self.assertEqual(default_colors.bg_window, base_colors.bg_window)
+
+        # surface matches bg_surface
+        surface_colors = with_background(base_colors, "surface")
+        self.assertEqual(surface_colors.bg_window, base_colors.bg_surface)
+
+        # all background tints produce valid hex and maintain >= 4.5:1 text contrast
+        for choice, _ in BACKGROUND_CHOICES:
+            self.tm.set_background_choice(choice)
+            self.assertEqual(self.tm.background_choice, choice)
+            colors = self.tm.colors
+            self.assertTrue(colors.bg_window.startswith("#"))
+            ratio = contrast_ratio(colors.text_primary, colors.bg_window)
+            self.assertGreaterEqual(
+                ratio,
+                4.5,
+                f"Background choice '{choice}' primary text contrast = {ratio:.2f} < 4.5:1",
+            )
+
+        with self.assertRaises(ValueError):
+            self.tm.set_background_choice("unknown_tint")
+
+    def test_corner_radius_and_font_scale_choices(self):
+        from app.ui.theme import FONT_SCALE_MAP, RADIUS_MAP
+
+        self.assertEqual(self.tm.radius_choice, "standard")
+        self.assertEqual(self.tm.corner_radius, 12)
+
+        for choice, rad in RADIUS_MAP.items():
+            self.tm.set_radius_choice(choice)
+            self.assertEqual(self.tm.radius_choice, choice)
+            self.assertEqual(self.tm.corner_radius, rad)
+
+        with self.assertRaises(ValueError):
+            self.tm.set_radius_choice("invalid_radius")
+
+        self.assertEqual(self.tm.font_scale_choice, "standard")
+        self.assertEqual(self.tm.font_scale, 1.0)
+
+        for choice, scale in FONT_SCALE_MAP.items():
+            self.tm.set_font_scale_choice(choice)
+            self.assertEqual(self.tm.font_scale_choice, choice)
+            self.assertEqual(self.tm.font_scale, scale)
+            spec = self.tm.font_spec(10)
+            self.assertEqual(spec[1], max(6, int(round(10 * scale))))
+
+        with self.assertRaises(ValueError):
+            self.tm.set_font_scale_choice("invalid_scale")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -47,8 +47,8 @@ und Veröffentlichung sind getrennte Statusangaben.
 
 | Wert | Fundstelle und Bedeutung |
 |---|---|
-| `0.4.0-dev` | [VERSION](../VERSION) und `CURRENT_APP_VERSION` in [project_io.py](../src/steps/storage/project_io.py), aktueller Entwicklungsstand mit Glide-Designsystem, 6 Themes und responsivem 2-Bereiche-Layout |
-| `0.4.0.dev0` | [`src.steps.__version__`](../src/steps/__init__.py) und [pyproject.toml](../pyproject.toml), PEP-440-Schreibweise des Entwicklungspakets |
+| `0.5.0-dev` | [VERSION](../VERSION) und `CURRENT_APP_VERSION` in [project_io.py](../src/steps/storage/project_io.py), aktueller Entwicklungsstand mit Glide-Designsystem, 6 Themes, Hintergrund-Farbtönen, Eckenrundung, Schriftgrößenskalierung und AppearanceDialog |
+| `0.5.0.dev0` | [`src.steps.__version__`](../src/steps/__init__.py) und [pyproject.toml](../pyproject.toml), PEP-440-Schreibweise des Entwicklungspakets |
 | v0.1.0 | Vorhandenes GitHub-Release/Tag; keine Aussage über den heutigen 1.0-Reifegrad |
 | 1.0.0 | Noch nicht durch ein angenommenes ADR definiert oder terminiert; siehe [Zielbild und Readiness](product/V1.0.0_PRODUCT_CONTRACT.md) |
 | Phase 5.1 | Historischer Entwicklungsstand des Headless-Kerns |
