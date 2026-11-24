@@ -79,13 +79,26 @@ BACKGROUND_CHOICES: tuple[tuple[str, str], ...] = (
     ("export", "theme.background.export"),
     ("flag", "theme.background.flag"),
     ("delete", "theme.background.delete"),
+    ("import", "theme.background.import"),
     ("muted", "theme.background.muted"),
 )
 BACKGROUND_KEYS: frozenset[str] = frozenset(key for key, _ in BACKGROUND_CHOICES)
 
+ACCENT_CHOICES: tuple[tuple[str, str], ...] = (
+    ("accent", "theme.accent.accent"),
+    ("clear", "theme.accent.clear"),
+    ("due_action", "theme.accent.due_action"),
+    ("export", "theme.accent.export"),
+    ("flag", "theme.accent.flag"),
+    ("delete", "theme.accent.delete"),
+    ("import", "theme.accent.import"),
+    ("muted", "theme.accent.muted"),
+)
+ACCENT_KEYS: frozenset[str] = frozenset(key for key, _ in ACCENT_CHOICES)
+
 RADIUS_CHOICES: tuple[tuple[str, str, int], ...] = (
-    ("standard", "theme.radius.standard", 12),
     ("large", "theme.radius.large", 18),
+    ("standard", "theme.radius.standard", 12),
     ("subtle", "theme.radius.subtle", 6),
     ("flat", "theme.radius.flat", 0),
 )
@@ -97,6 +110,59 @@ FONT_SCALE_CHOICES: tuple[tuple[str, str, float], ...] = (
     ("large", "theme.font_scale.large", 1.15),
 )
 FONT_SCALE_MAP: dict[str, float] = {key: scale for key, _, scale in FONT_SCALE_CHOICES}
+
+FONT_WEIGHT_CHOICES: tuple[tuple[str, str], ...] = (
+    ("auto", "theme.font_weight.auto"),
+    ("standard", "theme.font_weight.standard"),
+    ("bold", "theme.font_weight.bold"),
+)
+FONT_WEIGHT_KEYS: frozenset[str] = frozenset(key for key, _ in FONT_WEIGHT_CHOICES)
+
+
+def with_accent(colors: "ThemeColors", choice: str) -> "ThemeColors":
+    """Customize interactive accent / tonic highlighting across widgets (Glide UI accent contract)."""
+    if choice not in ACCENT_KEYS or choice == "accent":
+        return colors
+    accent_map = {
+        "clear": colors.clear or colors.harmonic_tonic,
+        "due_action": colors.harmonic_minor,
+        "export": colors.export or colors.harmonic_subdominant,
+        "flag": colors.flag,
+        "delete": colors.delete or colors.harmonic_dominant,
+        "import": colors.action_import or "#D0A46F",
+        "muted": colors.text_muted,
+    }
+    target_accent = accent_map.get(choice)
+    if not target_accent:
+        return colors
+    # Ensure text on this accent button chooses the higher WCAG contrast
+    c_dark = contrast("#111113", target_accent)
+    c_light = contrast("#FFFFFF", target_accent)
+    inv_text = "#111113" if c_dark >= c_light else "#FFFFFF"
+    return ThemeColors(
+        bg_window=colors.bg_window,
+        bg_surface=colors.bg_surface,
+        bg_surface_hover=colors.bg_surface_hover,
+        bg_active=colors.bg_active,
+        border=colors.border,
+        border_focus=target_accent,
+        text_primary=colors.text_primary,
+        text_secondary=colors.text_secondary,
+        text_muted=colors.text_muted,
+        text_inverted=inv_text,
+        harmonic_tonic=target_accent,
+        harmonic_subdominant=colors.harmonic_subdominant,
+        harmonic_dominant=colors.harmonic_dominant,
+        harmonic_altered=target_accent,
+        harmonic_minor=colors.harmonic_minor,
+        selection=target_accent,
+        selection_text=inv_text,
+        delete=colors.delete,
+        export=colors.export,
+        clear=colors.clear,
+        flag=colors.flag,
+        action_import=colors.action_import,
+    )
 
 
 def with_background(colors: "ThemeColors", choice: str) -> "ThemeColors":
@@ -126,6 +192,7 @@ def with_background(colors: "ThemeColors", choice: str) -> "ThemeColors":
             export=colors.export,
             clear=colors.clear,
             flag=colors.flag,
+            action_import=colors.action_import,
         )
 
     tint_map = {
@@ -135,6 +202,7 @@ def with_background(colors: "ThemeColors", choice: str) -> "ThemeColors":
         "export": colors.export or colors.harmonic_subdominant,
         "flag": colors.flag,
         "delete": colors.delete or colors.harmonic_dominant,
+        "import": colors.action_import or "#D0A46F",
         "muted": colors.text_muted,
     }
     tint_hex = tint_map.get(choice)
@@ -168,6 +236,7 @@ def with_background(colors: "ThemeColors", choice: str) -> "ThemeColors":
         export=colors.export,
         clear=colors.clear,
         flag=colors.flag,
+        action_import=colors.action_import,
     )
 
 
@@ -224,27 +293,36 @@ def create_button(parent: tk.Misc, **options) -> tk.Button | ttk.Button | "objec
     hover_bg = options.pop("hover_bg", None)
     active_bg = options.pop("active_bg", None)
     active_fg = options.pop("active_fg", None)
-    rounded = options.pop("rounded", False)
+    rounded = options.pop("rounded", True)
 
     if rounded:
         from app.ui.custom_widgets import RoundedButton
 
         text = options.pop("text", "")
         cmd = options.pop("command", None)
-        bg = options.pop("bg", options.pop("bg_color", "#121319"))
-        fg = options.pop("fg", options.pop("base_fg", "#F3F1ED"))
-        base_bg = options.pop("base_bg", bg)
+        carrier_bg = options.pop("carrier_bg", options.pop("bg_color", None))
+        if not carrier_bg:
+            try:
+                carrier_bg = parent.cget("bg")
+            except Exception:
+                try:
+                    carrier_bg = parent.cget("background")
+                except Exception:
+                    carrier_bg = "#111113"
+
+        base_bg = options.pop("bg", options.pop("base_bg", "#1C1C1E"))
+        fg = options.pop("fg", options.pop("base_fg", "#F5F5F7"))
         radius = options.pop("radius", 10)
         return RoundedButton(
             parent,
             text=text,
             command=cmd,
-            bg_color=bg,
+            bg_color=carrier_bg,
             base_bg=base_bg,
             base_fg=fg,
-            hover_bg=hover_bg,
-            active_bg=active_bg,
-            active_fg=active_fg,
+            hover_bg=hover_bg or base_bg,
+            active_bg=active_bg or hover_bg or base_bg,
+            active_fg=active_fg or fg,
             radius=radius,
             **options,
         )
@@ -256,8 +334,8 @@ def create_button(parent: tk.Misc, **options) -> tk.Button | ttk.Button | "objec
         setattr(btn, "_glide_is_active", False)
         return btn
 
-    base_bg = options.get("bg")
-    base_fg = options.get("fg")
+    base_bg = options.get("bg", "#1C1C1E")
+    base_fg = options.get("fg", "#F5F5F7")
     if hover_bg and "activebackground" not in options:
         options["activebackground"] = hover_bg
     if base_fg and "activeforeground" not in options:
@@ -343,8 +421,19 @@ def retheme_button(
 ) -> None:
     """Update a Glide-styled button's palette tokens when switching Dark/Light themes."""
     if hasattr(button, "set_theme") and callable(getattr(button, "set_theme")):
+        carrier_bg = None
+        if hasattr(button, "master"):
+            try:
+                carrier_bg = button.master.cget("bg")
+            except Exception:
+                try:
+                    carrier_bg = button.master.cget("background")
+                except Exception:
+                    pass
+        if not carrier_bg:
+            carrier_bg = getattr(button, "bg_color", colors.bg_surface)
         kwargs: dict = dict(
-            bg_color=colors.bg_window,
+            bg_color=carrier_bg,
             base_bg=base_bg,
             base_fg=base_fg,
             hover_bg=hover_bg or colors.bg_surface_hover,
@@ -447,11 +536,16 @@ class ThemeColors:
     export: str = ""
     clear: str = ""
     flag: str = ""
+    action_import: str = ""
 
 
 ThemeName = Literal[
     "dark",
     "light",
+    "glass-dark",
+    "glass-light",
+    "dopamine",
+    "pixel",
     "contrast-dark",
     "contrast-light",
     "minimal-dark",
@@ -483,23 +577,31 @@ class SpacingTokens:
 
 
 class ThemeManager:
-    """Manages design tokens and active theme state across 6 Glide themes and system mode."""
+    """Manages design tokens and active theme state across 10 Glide themes and system mode."""
 
     THEMES: tuple[str, ...] = (
         "dark",
         "light",
+        "glass-dark",
+        "glass-light",
+        "dopamine",
         "contrast-dark",
         "contrast-light",
         "minimal-dark",
         "minimal-light",
+        "pixel",
     )
     THEME_PAIRS: dict[str, dict[str, str]] = {
         "dark": {"light": "light", "dark": "dark"},
         "light": {"light": "light", "dark": "dark"},
+        "glass-dark": {"light": "glass-light", "dark": "glass-dark"},
+        "glass-light": {"light": "glass-light", "dark": "glass-dark"},
+        "dopamine": {"light": "light", "dark": "dopamine"},
         "contrast-dark": {"light": "contrast-light", "dark": "contrast-dark"},
         "contrast-light": {"light": "contrast-light", "dark": "contrast-dark"},
         "minimal-dark": {"light": "minimal-light", "dark": "minimal-dark"},
         "minimal-light": {"light": "minimal-light", "dark": "minimal-dark"},
+        "pixel": {"light": "light", "dark": "pixel"},
     }
 
     @staticmethod
@@ -510,6 +612,10 @@ class ThemeManager:
             return "contrast-dark"
         if norm in ("high-contrast-light", "cvd-light"):
             return "contrast-light"
+        if norm in ("glass", "liquid-glass"):
+            return "glass-dark"
+        if norm in ("liquid-glass-light",):
+            return "glass-light"
         return norm
 
     def __init__(self, mode: str = "dark", tokens_path: Path = TOKENS_PATH) -> None:
@@ -519,8 +625,12 @@ class ThemeManager:
         if self._mode not in self.THEMES:
             raise ValueError(f"Invalid theme mode '{mode}', expected one of {self.THEMES}")
         self._background_choice: str = "default"
+        self._accent_choice: str = "accent"
         self._radius_choice: str = "standard"
         self._font_scale_choice: str = "standard"
+        self._font_weight_choice: str = "standard"
+        self._animations_enabled: bool = True
+        self._hints_visible: bool = True
         self._typography = self._parse_typography()
         self._spacing = self._parse_spacing()
 
@@ -579,6 +689,15 @@ class ThemeManager:
         self._background_choice = choice
 
     @property
+    def accent_choice(self) -> str:
+        return self._accent_choice
+
+    def set_accent_choice(self, choice: str) -> None:
+        if choice not in ACCENT_KEYS:
+            raise ValueError(f"Invalid accent choice '{choice}', expected one of {tuple(ACCENT_KEYS)}")
+        self._accent_choice = choice
+
+    @property
     def radius_choice(self) -> str:
         return self._radius_choice
 
@@ -605,10 +724,34 @@ class ThemeManager:
         return FONT_SCALE_MAP.get(self._font_scale_choice, 1.0)
 
     @property
+    def font_weight_choice(self) -> str:
+        return self._font_weight_choice
+
+    def set_font_weight_choice(self, choice: str) -> None:
+        if choice not in FONT_WEIGHT_KEYS:
+            raise ValueError(f"Invalid font weight choice '{choice}', expected one of {tuple(FONT_WEIGHT_KEYS)}")
+        self._font_weight_choice = choice
+
+    @property
+    def animations_enabled(self) -> bool:
+        return self._animations_enabled
+
+    def set_animations_enabled(self, enabled: bool) -> None:
+        self._animations_enabled = bool(enabled)
+
+    @property
+    def hints_visible(self) -> bool:
+        return self._hints_visible
+
+    def set_hints_visible(self, visible: bool) -> None:
+        self._hints_visible = bool(visible)
+
+    @property
     def colors(self) -> ThemeColors:
         raw_colors = self._raw["themes"][self._mode]
         base_colors = ThemeColors(**raw_colors)
-        return with_background(base_colors, self._background_choice)
+        with_acc = with_accent(base_colors, self._accent_choice)
+        return with_background(with_acc, self._background_choice)
 
     @property
     def typography(self) -> TypographyTokens:
@@ -629,7 +772,10 @@ class ThemeManager:
         family = _primary_font_family(stack, fallback="Courier" if mono else "Helvetica")
         raw_size = size if size is not None else self._typography.size_sm
         resolved_size = max(6, int(round(raw_size * self.font_scale)))
-        return (family, resolved_size, *styles)
+        styles_list = list(styles)
+        if self._font_weight_choice == "bold" and "bold" not in styles_list:
+            styles_list.append("bold")
+        return (family, resolved_size, *styles_list)
 
     def make_surface_card(
         self,

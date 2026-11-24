@@ -38,26 +38,26 @@ class TestCustomWidgets(unittest.TestCase):
     def test_rounded_surface_card_initialization_and_theming(self):
         card = RoundedSurfaceCard(
             self.root,
-            bg_color="#121319",
-            fill_color="#1E222C",
-            outline_color="#383C49",
+            bg_color="#111113",
+            fill_color="#1C1C1E",
+            outline_color="#3A3A3C",
             radius=12,
             padding=8,
             auto_height=True,
         )
-        self.assertEqual(card.bg_color, "#121319")
-        self.assertEqual(card.fill_color, "#1E222C")
+        self.assertEqual(card.bg_color, "#111113")
+        self.assertEqual(card.fill_color, "#1C1C1E")
         self.assertEqual(card.radius, 12)
         self.assertIsInstance(card.inner, tk.Frame)
 
         # Update theme
         card.set_theme(
-            bg_color="#F8F9FA",
+            bg_color="#F5F5F7",
             fill_color="#FFFFFF",
-            outline_color="#CBD5E1",
+            outline_color="#D8D8DE",
             radius=18,
         )
-        self.assertEqual(card.bg_color, "#F8F9FA")
+        self.assertEqual(card.bg_color, "#F5F5F7")
         self.assertEqual(card.fill_color, "#FFFFFF")
         self.assertEqual(card.radius, 18)
         card.destroy()
@@ -74,11 +74,11 @@ class TestCustomWidgets(unittest.TestCase):
             self.root,
             text=long_label,
             command=_on_click,
-            bg_color="#121319",
-            base_bg="#1E222C",
-            base_fg="#F3F1ED",
-            hover_bg="#282D3A",
-            active_bg="#60A5FA",
+            bg_color="#111113",
+            base_bg="#1C1C1E",
+            base_fg="#F5F5F7",
+            hover_bg="#243A55",
+            active_bg="#C66CF3",
             radius=10,
         )
         # B11 / D63: Button text is clipped to max 24 chars
@@ -108,14 +108,14 @@ class TestCustomWidgets(unittest.TestCase):
 
         # Retheming
         btn.set_theme(
-            bg_color="#F8F9FA",
-            base_bg="#E2E8F0",
-            base_fg="#0F172A",
-            hover_bg="#EDF2F7",
+            bg_color="#F5F5F7",
+            base_bg="#E5E5EA",
+            base_fg="#15243C",
+            hover_bg="#D8E9FE",
             radius=6,
         )
         self.assertEqual(btn.radius, 6)
-        self.assertEqual(btn.base_bg, "#E2E8F0")
+        self.assertEqual(btn.base_bg, "#E5E5EA")
 
         # config() and fg/bg options
         btn.config(fg="#FF0000", bg="#00FF00")

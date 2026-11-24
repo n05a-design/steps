@@ -188,17 +188,17 @@ class RoundedButton(tk.Canvas):
         master: tk.Misc,
         text: str = "",
         command: Optional[Callable[[], None]] = None,
-        bg_color: str = "#121319",
-        base_bg: str = "#1E222C",
-        base_fg: str = "#F3F1ED",
+        bg_color: str = "#111113",
+        base_bg: str = "#1C1C1E",
+        base_fg: str = "#F5F5F7",
         hover_bg: Optional[str] = None,
         hover_fg: Optional[str] = None,
         active_bg: Optional[str] = None,
         active_fg: Optional[str] = None,
         border_color: Optional[str] = None,
         radius: int = 10,
-        height: int = 32,
-        width: int = 80,
+        height: int = 30,
+        width: int = 32,
         font: Optional[tuple] = None,
         outline: bool = True,
         cursor: str = "hand2",
@@ -211,6 +211,18 @@ class RoundedButton(tk.Canvas):
         self._state: str = str(kwargs.pop("state", tk.NORMAL))
         self.justify = str(kwargs.pop("justify", "center"))
         self.wraplength = int(kwargs.pop("wraplength", 0))
+
+        # Absorb standard tk/ttk button options not supported by Canvas
+        active_bg_kw = kwargs.pop("activebackground", None)
+        active_fg_kw = kwargs.pop("activeforeground", None)
+        for unsupported in (
+            "default",
+            "overrelief",
+            "compound",
+            "underline",
+            "disabledforeground",
+        ):
+            kwargs.pop(unsupported, None)
 
         opts: dict = {
             "height": height,
@@ -229,10 +241,10 @@ class RoundedButton(tk.Canvas):
         self.bg_color = bg_color
         self.base_bg = base_bg
         self.base_fg = base_fg
-        self.hover_bg = hover_bg or base_bg
+        self.hover_bg = hover_bg or active_bg_kw or base_bg
         self.hover_fg = hover_fg or base_fg
-        self.active_bg = active_bg or hover_bg or base_bg
-        self.active_fg = active_fg or hover_fg or base_fg
+        self.active_bg = active_bg or active_bg_kw or self.hover_bg or base_bg
+        self.active_fg = active_fg or active_fg_kw or self.hover_fg or base_fg
         self.border_color = border_color or base_bg
         self.radius = max(0, radius)
         self.button_height = height
@@ -285,6 +297,18 @@ class RoundedButton(tk.Canvas):
             self.base_bg = kwargs.pop("bg")
         elif "background" in kwargs:
             self.base_bg = kwargs.pop("background")
+        if "carrier_bg" in kwargs:
+            self.bg_color = kwargs.pop("carrier_bg")
+            try:
+                super().configure(bg=self.bg_color)
+            except Exception:
+                pass
+        elif "bg_color" in kwargs:
+            self.bg_color = kwargs.pop("bg_color")
+            try:
+                super().configure(bg=self.bg_color)
+            except Exception:
+                pass
         if "anchor" in kwargs:
             self.anchor = str(kwargs.pop("anchor"))
         if "padx" in kwargs:
@@ -297,6 +321,19 @@ class RoundedButton(tk.Canvas):
             self.justify = str(kwargs.pop("justify"))
         if "wraplength" in kwargs:
             self.wraplength = int(kwargs.pop("wraplength"))
+        if "font" in kwargs:
+            self.font = kwargs.pop("font")
+            self._fit_width()
+        for unsupported in (
+            "activebackground",
+            "activeforeground",
+            "default",
+            "overrelief",
+            "compound",
+            "underline",
+            "disabledforeground",
+        ):
+            kwargs.pop(unsupported, None)
         super().configure(**kwargs)
         self._draw()
 

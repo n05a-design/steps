@@ -1,6 +1,34 @@
 # Änderungsprotokoll
 
-## Unreleased – 0.6.0-dev (2026-11-24)
+## Unreleased – 0.7.0-dev (2026-11-24)
+
+### Hinzugefügt / Integriert
+- **Vollständige Glide-Anpassungsparität (10 Themes, 10 Hintergründe, 8 Akzente, Einstellungen-Persistenz):**
+  - **10 kanonische Glide-Themes:** Integration aller 10 Designs aus Glide v1.0.2 in `tokens.json` und `ThemeManager`:
+    - `dark`: Dunkel
+    - `light`: Hell
+    - `glass-dark`: Liquid Glass · dunkel
+    - `glass-light`: Liquid Glass · hell
+    - `dopamine`: Dopamin · kräftige Farben
+    - `contrast-dark`: Kontrast dunkel (Okabe-Ito CVD)
+    - `contrast-light`: Kontrast hell (Okabe-Ito CVD)
+    - `minimal-dark`: Minimal dunkel (reine Helligkeitsabstufung)
+    - `minimal-light`: Minimal hell
+    - `pixel`: Pixel · Blockfarben
+    - Sowie systemkonformer Automatik-Modus (`system`) mit Paarauflösung über `glide_shell.system_appearance.resolve`.
+  - **Akzentfarben-Anpassung (`accent_color`):** Freie Wahl der Akzentfarbe (`accent` Lila, `clear` Blau, `due_action` Türkis, `export` Grün, `flag` Gelb, `delete` Rot, `import` Braun, `muted` Kontrastgrau) mit dynamischer Berechnung der invertierten Textfarbe für garantierte WCAG 2.2 AA Kontraste ($\ge 4{,}5:1$).
+  - **10 Hintergrund-Farbtöne:** Vollständige Auswahl aus Designvorgabe (`default`), Wie Fensterfläche (`surface`), Lila (`accent`), Blau (`clear`), Türkis (`due_action`), Grün (`export`), Gelb (`flag`), Rot (`delete`), Braun (`import`) und Kontrastgrau (`muted`).
+  - **Einstellungs-Persistenz (`app/settings.py`):** Atomare, plattformkonforme Persistenz aller Benutzereinstellungen (`settings.json`) unter `platform_data_dir("STEPS")` mit Umgebungs-Override `STEPS_DATA_DIR` für isolierte Tests (Regel WA-49/WA-50, Regel 10).
+  - **Erweiterter AppearanceDialog:** Modaler Dialog mit Canvas-Scrollbar (`ThemedAutoScrollbar`), zweispaltigem Aufbau, Echtzeit-Vorschaukarte (`RoundedSurfaceCard`, `RoundedButton`, Titel, Untertitel, Akzentknopf, Hintergrund-Insel), Schaltern für Schriftgewicht, bewegte Rückmeldung (≤ 150 ms nach B03) und ergänzende Hinweise (B06).
+  - **Hauptfenster-Menüs:** Vollständige Menüs unter Einstellungen für Sprache, Design (10 Varianten), Akzentfarbe (8 Töne), Hintergrund (10 Töne), Rundung (4 Stufen), Schriftgröße (3 Stufen) und Schriftgewicht (3 Stufen).
+  - **Glide-Design-Komponenten überall:**
+    - `RoundedButton` als Standard-Buttonkomponente mit abgerundeten Ecken, fließendem Übergang zur Trägerfläche (`carrier_bg`), echten Theme-Tokens, Tastaturfokusring und Hover-/Active-Feedback plattformübergreifend auf allen Betriebssystemen (macOS, Windows, Linux).
+    - `ThemedAutoScrollbar` in allen Dialogen und Bereichen (`ReviewedProgressionLibraryDialog`, `VoiceLeadingLabDialog`, `NextChordPanel`, `AppearanceDialog`, `MainWindow`).
+    - Vollständige Beseitigung aller verbliebenen Vor-Glide-Hex-Farbcodes (`#121319`, `#1E222C`, `#F3F1ED`, `#60A5FA` etc.) zugunsten der kanonischen Glide Shell 0.6.2 / Glide v1.0.2 Design-Tokens.
+  - **Trägerflächen-Hierarchie (B17/B19):** Saubere Trennung von Fenstergrund (`colors.bg_window` als Trägerinsel), Inhaltskarten (`RoundedSurfaceCard` mit `colors.bg_surface` und `corner_radius`) und Unterleisten ohne unruhige Schmuckelemente.
+- **Versionierung:** Anhebung von Paket (`0.7.0.dev0`), App (`0.7.0-dev`) und Dokumentation.
+
+## [0.6.0-dev] - 2026-11-24
 
 ### Hinzugefügt / Integriert
 - **Vollständiges Glide-Designsystem (Tokens & Paletten):**

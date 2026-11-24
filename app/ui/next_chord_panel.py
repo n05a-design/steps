@@ -10,6 +10,7 @@ from tkinter import messagebox, ttk
 from app.i18n import LocaleManager
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager, create_button, retheme_button, style_surface_card
+from glide_shell.custom_controls import ThemedAutoScrollbar
 from src.steps.progression.reviewed import Citation, PublicationError, resolve_source_citation
 from src.steps.progression.session import ChordRecommendation
 from src.steps.theory.exceptions import MusicTheoryError
@@ -66,9 +67,17 @@ class NextChordPanel:
             highlightcolor=colors.border_focus, relief=tk.FLAT, activestyle="dotbox",
             exportselection=False, takefocus=False, height=8, width=36,
         )
-        scrollbar = tk.Scrollbar(
-            frame, orient=tk.VERTICAL, command=self.candidates.yview, takefocus=False,
+        scrollbar = ThemedAutoScrollbar(
+            frame,
+            bg_color=colors.bg_surface,
+            track_color=colors.bg_surface_hover,
+            thumb_color=colors.border,
+            active_thumb_color=colors.harmonic_tonic,
+            width=10,
+            radius=5,
+            orient="vertical",
         )
+        scrollbar.set_command(self.candidates.yview)
         self._scrollbar = scrollbar
         self.candidates.configure(yscrollcommand=scrollbar.set)
         self.candidates.grid(row=1, column=0, sticky="nsew", padx=(spacing.xs, 0))
@@ -107,6 +116,13 @@ class NextChordPanel:
             highlightbackground=colors.border,
             highlightcolor=colors.border_focus,
         )
+        if hasattr(self, "_scrollbar") and hasattr(self._scrollbar, "set_theme"):
+            self._scrollbar.set_theme(
+                bg_color=colors.bg_surface,
+                track_color=colors.bg_surface_hover,
+                thumb_color=colors.border,
+                active_thumb_color=colors.harmonic_tonic,
+            )
         retheme_button(
             self.explore_button, colors, base_bg=colors.bg_active, base_fg=colors.text_primary,
         )

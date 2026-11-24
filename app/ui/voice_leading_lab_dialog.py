@@ -13,7 +13,8 @@ from app.ui.session_controller import (
     ProgressionSessionController,
     VoiceLeadingStyleProfile,
 )
-from app.ui.theme import ThemeManager, apply_window_geometry
+from app.ui.theme import ThemeManager, apply_window_geometry, create_button
+from glide_shell.custom_controls import ThemedAutoScrollbar
 from src.steps.progression.voice_leading import VoiceLeadingStyle
 from src.steps.theory.exceptions import MusicTheoryError
 
@@ -223,19 +224,39 @@ class VoiceLeadingLabDialog(ModalDialog):
                 padx=spacing.sm, pady=spacing.sm,
             )
             configure_readonly_preview(preview, colors)
-            scrollbar = tk.Scrollbar(text_frame, orient=tk.VERTICAL, command=preview.yview)
+            scrollbar = ThemedAutoScrollbar(
+                text_frame,
+                bg_color=colors.bg_surface,
+                track_color=colors.bg_surface_hover,
+                thumb_color=colors.border,
+                active_thumb_color=colors.harmonic_tonic,
+                width=10,
+                radius=5,
+                orient="vertical",
+            )
+            scrollbar.set_command(preview.yview)
             preview.configure(yscrollcommand=scrollbar.set)
             preview.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
             scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
             self._previews.append(preview)
-            button = ttk.Button(
-                panel, text=translate(f"voice.lab.apply_{name}"),
-                command=lambda index=side: self._apply_profile(index), state=tk.DISABLED,
+            button = create_button(
+                panel,
+                text=translate(f"voice.lab.apply_{name}"),
+                command=lambda index=side: self._apply_profile(index),
+                bg=colors.harmonic_tonic,
+                fg=colors.text_inverted,
+                state=tk.DISABLED,
             )
             button.pack(side=tk.BOTTOM, anchor=tk.E, before=text_frame)
             self._apply_buttons.append(button)
 
-        ttk.Button(container, text=translate("voice.lab.close"), command=self._close).pack(
+        create_button(
+            container,
+            text=translate("voice.lab.close"),
+            command=self._close,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+        ).pack(
             side=tk.BOTTOM, anchor=tk.E, pady=(spacing.sm, 0), before=body
         )
         self._render(0)

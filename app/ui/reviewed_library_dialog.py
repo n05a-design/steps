@@ -11,6 +11,7 @@ from app.i18n import LocaleManager
 from app.ui.dialog_support import ModalDialog, configure_readonly_preview
 from app.ui.session_controller import reviewed_practice_session
 from app.ui.theme import ThemeManager, apply_window_geometry, create_button
+from glide_shell.custom_controls import ThemedAutoScrollbar
 from src.steps.progression.engine import ReviewedProgression
 from src.steps.theory.exceptions import MusicTheoryError
 
@@ -208,11 +209,17 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
             relief=tk.FLAT,
             exportselection=False,
         )
-        list_scrollbar = tk.Scrollbar(
+        list_scrollbar = ThemedAutoScrollbar(
             list_frame,
-            orient=tk.VERTICAL,
-            command=self._listbox.yview,
+            bg_color=colors.bg_surface,
+            track_color=colors.bg_surface_hover,
+            thumb_color=colors.border,
+            active_thumb_color=colors.harmonic_tonic,
+            width=10,
+            radius=5,
+            orient="vertical",
         )
+        list_scrollbar.set_command(self._listbox.yview)
         self._listbox.configure(yscrollcommand=list_scrollbar.set)
         self._listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         list_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
@@ -235,12 +242,17 @@ class ReviewedProgressionLibraryDialog(ModalDialog):
             pady=spacing.sm,
         )
         configure_readonly_preview(self._preview, colors)
-        preview_scrollbar = tk.Scrollbar(
+        preview_scrollbar = ThemedAutoScrollbar(
             preview_frame,
-            orient=tk.VERTICAL,
-            command=self._preview.yview,
-            takefocus=False,
+            bg_color=colors.bg_window,
+            track_color=colors.bg_surface_hover,
+            thumb_color=colors.border,
+            active_thumb_color=colors.harmonic_tonic,
+            width=10,
+            radius=5,
+            orient="vertical",
         )
+        preview_scrollbar.set_command(self._preview.yview)
         self._preview.configure(yscrollcommand=preview_scrollbar.set)
         self._preview.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         preview_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)

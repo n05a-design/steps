@@ -31,12 +31,15 @@ from app.ui.midi_export_dialog import (
     MidiExportOptionsDialog,
     format_midi_file_error,
 )
+from app.settings import load_settings, save_settings
 from app.ui.next_chord_panel import NextChordPanel
 from app.ui.reviewed_library_dialog import ReviewedProgressionLibraryDialog
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import (
+    ACCENT_CHOICES,
     BACKGROUND_CHOICES,
     FONT_SCALE_CHOICES,
+    FONT_WEIGHT_CHOICES,
     RADIUS_CHOICES,
     ThemeManager,
     apply_window_geometry,
@@ -90,10 +93,14 @@ class StepsMainWindow:
         ("system", "theme.system"),
         ("dark", "theme.dark"),
         ("light", "theme.light"),
+        ("glass-dark", "theme.glass_dark"),
+        ("glass-light", "theme.glass_light"),
+        ("dopamine", "theme.dopamine"),
         ("contrast-dark", "theme.contrast_dark"),
         ("contrast-light", "theme.contrast_light"),
         ("minimal-dark", "theme.minimal_dark"),
         ("minimal-light", "theme.minimal_light"),
+        ("pixel", "theme.pixel"),
     )
 
     def __init__(
@@ -116,7 +123,28 @@ class StepsMainWindow:
         self._header_density: str = "full"
         self._height_density: str = "full"
         self._header_logo_image = None
-        self._theme_preference: str = self.theme.mode
+
+        # Load persisted appearance and user preferences (Glide parity)
+        self._user_settings = load_settings()
+        if locale_manager is None:
+            saved_lang = self._user_settings.get("language", "system")
+            if saved_lang in ("de", "en", "system"):
+                try:
+                    self.i18n.set_preference(saved_lang, persist=False)
+                except Exception:
+                    pass
+        self.theme.set_background_choice(self._user_settings.get("background_color", "default"))
+        if hasattr(self.theme, "set_accent_choice"):
+            self.theme.set_accent_choice(self._user_settings.get("accent_color", "accent"))
+        self.theme.set_radius_choice(self._user_settings.get("corner_radius", "standard"))
+        self.theme.set_font_scale_choice(self._user_settings.get("font_scale", "standard"))
+        if hasattr(self.theme, "set_font_weight_choice"):
+            self.theme.set_font_weight_choice(self._user_settings.get("font_weight", "standard"))
+        if hasattr(self.theme, "set_animations_enabled"):
+            self.theme.set_animations_enabled(self._user_settings.get("animations_enabled", True))
+        if hasattr(self.theme, "set_hints_visible"):
+            self.theme.set_hints_visible(self._user_settings.get("hints_visible", True))
+        self._theme_preference: str = self._user_settings.get("theme_preference", self.theme.mode)
 
         self.root.title(self.i18n.translate("app.title"))
         self.theme.configure_shell_providers(self.root)
@@ -218,6 +246,16 @@ class StepsMainWindow:
                 command=lambda selected=preference: self.set_theme_preference(selected),
             )
         self.settings_menu.add_cascade(label="", menu=self.theme_menu)
+        self.accent_menu = tk.Menu(self.settings_menu, tearoff=False)
+        self.accent_var = tk.StringVar(self.root, value=getattr(self.theme, "accent_choice", "accent"))
+        for choice, _ in ACCENT_CHOICES:
+            self.accent_menu.add_radiobutton(
+                label="",
+                value=choice,
+                variable=self.accent_var,
+                command=lambda selected=choice: self._on_accent_change(selected),
+            )
+        self.settings_menu.add_cascade(label="", menu=self.accent_menu)
         self.bg_menu = tk.Menu(self.settings_menu, tearoff=False)
         self.bg_var = tk.StringVar(self.root, value=self.theme.background_choice)
         for choice, _ in BACKGROUND_CHOICES:
@@ -248,6 +286,16 @@ class StepsMainWindow:
                 command=lambda selected=choice: self._on_scale_change(selected),
             )
         self.settings_menu.add_cascade(label="", menu=self.scale_menu)
+        self.weight_menu = tk.Menu(self.settings_menu, tearoff=False)
+        self.weight_var = tk.StringVar(self.root, value=getattr(self.theme, "font_weight_choice", "standard"))
+        for choice, _ in FONT_WEIGHT_CHOICES:
+            self.weight_menu.add_radiobutton(
+                label="",
+                value=choice,
+                variable=self.weight_var,
+                command=lambda selected=choice: self._on_weight_change(selected),
+            )
+        self.settings_menu.add_cascade(label="", menu=self.weight_menu)
         self.settings_menu.add_separator()
         self.settings_menu.add_command(
             label="",
@@ -323,12 +371,17 @@ class StepsMainWindow:
             self.settings_menu.entryconfigure(0, label=t("settings.appearance"))
             self.settings_menu.entryconfigure(1, label=t("language.menu"))
             self.settings_menu.entryconfigure(2, label=t("theme.menu"))
-            self.settings_menu.entryconfigure(3, label=t("theme.background.menu"))
-            self.settings_menu.entryconfigure(4, label=t("theme.radius.menu"))
-            self.settings_menu.entryconfigure(5, label=t("theme.font_scale.menu"))
+            self.settings_menu.entryconfigure(3, label=t("theme.accent.menu"))
+            self.settings_menu.entryconfigure(4, label=t("theme.background.menu"))
+            self.settings_menu.entryconfigure(5, label=t("theme.radius.menu"))
+            self.settings_menu.entryconfigure(6, label=t("theme.font_scale.menu"))
+            self.settings_menu.entryconfigure(7, label=t("theme.font_weight.menu"))
             if hasattr(self, "theme_menu") and callable(getattr(self.theme_menu, "entryconfigure", None)):
                 for index, (_, key) in enumerate(self.THEME_OPTIONS):
                     self.theme_menu.entryconfigure(index, label=t(key))
+            if hasattr(self, "accent_menu") and callable(getattr(self.accent_menu, "entryconfigure", None)):
+                for index, (_, key) in enumerate(ACCENT_CHOICES):
+                    self.accent_menu.entryconfigure(index, label=t(key))
             if hasattr(self, "bg_menu") and callable(getattr(self.bg_menu, "entryconfigure", None)):
                 for index, (_, key) in enumerate(BACKGROUND_CHOICES):
                     self.bg_menu.entryconfigure(index, label=t(key))
@@ -338,9 +391,12 @@ class StepsMainWindow:
             if hasattr(self, "scale_menu") and callable(getattr(self.scale_menu, "entryconfigure", None)):
                 for index, (_, key, _) in enumerate(FONT_SCALE_CHOICES):
                     self.scale_menu.entryconfigure(index, label=t(key))
-            self.settings_menu.entryconfigure(7, label=t("view.sidebar.toggle"))
-            self.settings_menu.entryconfigure(8, label=t("view.sidebar.narrow"))
-            self.settings_menu.entryconfigure(9, label=t("view.compact.toggle"))
+            if hasattr(self, "weight_menu") and callable(getattr(self.weight_menu, "entryconfigure", None)):
+                for index, (_, key) in enumerate(FONT_WEIGHT_CHOICES):
+                    self.weight_menu.entryconfigure(index, label=t(key))
+            self.settings_menu.entryconfigure(9, label=t("view.sidebar.toggle"))
+            self.settings_menu.entryconfigure(10, label=t("view.sidebar.narrow"))
+            self.settings_menu.entryconfigure(11, label=t("view.compact.toggle"))
         elif (
             callable(getattr(self.settings_menu, "index", None))
             and self.settings_menu.index(tk.END) is not None
@@ -395,6 +451,7 @@ class StepsMainWindow:
             return
         self._localize_widgets()
         self._update_window_title()
+        self._persist_settings()
         chords = self.controller.session.chords
         selected = self._selected_chord_index()
         first_visible = self.chord_listbox.yview()[0]
@@ -410,17 +467,50 @@ class StepsMainWindow:
             else:
                 self._display_empty_info()
 
+    def _persist_settings(self) -> None:
+        try:
+            self._user_settings.update({
+                "theme_preference": self._theme_preference,
+                "background_color": self.theme.background_choice,
+                "accent_color": getattr(self.theme, "accent_choice", "accent"),
+                "corner_radius": self.theme.radius_choice,
+                "font_scale": self.theme.font_scale_choice,
+                "font_weight": getattr(self.theme, "font_weight_choice", "standard"),
+                "animations_enabled": getattr(self.theme, "animations_enabled", True),
+                "hints_visible": getattr(self.theme, "hints_visible", True),
+                "language": self.i18n.preference,
+            })
+            save_settings(self._user_settings)
+        except Exception:
+            pass
+
     def _on_appearance_shortcut(self, _event: Optional[tk.Event] = None) -> None:
         self._on_open_appearance_dialog()
 
     def _on_open_appearance_dialog(self) -> None:
         from app.ui.appearance_dialog import AppearanceDialog
 
-        def _apply(theme_mode: str, bg_choice: str, radius_choice: str, scale_choice: str) -> None:
+        def _apply(
+            theme_mode: str,
+            bg_choice: str,
+            radius_choice: str,
+            scale_choice: str,
+            accent_choice: str = "accent",
+            weight_choice: str = "standard",
+            animations_enabled: bool = True,
+            hints_visible: bool = True,
+        ) -> None:
             self.set_theme_preference(theme_mode)
             self._on_background_change(bg_choice)
             self._on_radius_change(radius_choice)
             self._on_scale_change(scale_choice)
+            self._on_accent_change(accent_choice)
+            self._on_weight_change(weight_choice)
+            if hasattr(self.theme, "set_animations_enabled"):
+                self.theme.set_animations_enabled(animations_enabled)
+            if hasattr(self.theme, "set_hints_visible"):
+                self.theme.set_hints_visible(hints_visible)
+            self._persist_settings()
 
         AppearanceDialog(
             parent=self.root,
@@ -435,18 +525,37 @@ class StepsMainWindow:
         if hasattr(self, "bg_var"):
             self.bg_var.set(choice)
         self.apply_theme()
+        self._persist_settings()
+
+    def _on_accent_change(self, choice: str) -> None:
+        if hasattr(self.theme, "set_accent_choice"):
+            self.theme.set_accent_choice(choice)
+        if hasattr(self, "accent_var"):
+            self.accent_var.set(choice)
+        self.apply_theme()
+        self._persist_settings()
 
     def _on_radius_change(self, choice: str) -> None:
         self.theme.set_radius_choice(choice)
         if hasattr(self, "radius_var"):
             self.radius_var.set(choice)
         self.apply_theme()
+        self._persist_settings()
 
     def _on_scale_change(self, choice: str) -> None:
         self.theme.set_font_scale_choice(choice)
         if hasattr(self, "scale_var"):
             self.scale_var.set(choice)
         self.apply_theme()
+        self._persist_settings()
+
+    def _on_weight_change(self, choice: str) -> None:
+        if hasattr(self.theme, "set_font_weight_choice"):
+            self.theme.set_font_weight_choice(choice)
+        if hasattr(self, "weight_var"):
+            self.weight_var.set(choice)
+        self.apply_theme()
+        self._persist_settings()
 
     def _on_open_shortcut(self, _event: tk.Event) -> str:
         self._on_open_project()
@@ -1494,6 +1603,7 @@ class StepsMainWindow:
             else self._theme_preference
         )
         self.apply_theme(resolved)
+        self._persist_settings()
         return resolved
 
     def apply_theme(self, mode: Optional[str] = None) -> None:

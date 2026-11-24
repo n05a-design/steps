@@ -138,7 +138,8 @@ class TestThemeManager(unittest.TestCase):
         self.assertEqual(spec[2], "bold")
         self.tm.configure_shell_providers()
 
-    def test_all_six_themes_and_wcag_contrast(self):
+    def test_all_ten_themes_and_wcag_contrast(self):
+        self.assertEqual(len(ThemeManager.THEMES), 10)
         for theme_name in ThemeManager.THEMES:
             self.tm.set_mode(theme_name)
             self.assertEqual(self.tm.mode, theme_name)
@@ -231,6 +232,51 @@ class TestThemeManager(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             self.tm.set_font_scale_choice("invalid_scale")
+
+    def test_accent_color_choices_and_contrast(self):
+        from app.ui.theme import ACCENT_CHOICES, ACCENT_KEYS
+
+        self.assertIn("accent", ACCENT_KEYS)
+        self.assertIn("clear", ACCENT_KEYS)
+        self.assertIn("due_action", ACCENT_KEYS)
+        self.assertIn("export", ACCENT_KEYS)
+        self.assertIn("flag", ACCENT_KEYS)
+        self.assertIn("delete", ACCENT_KEYS)
+        self.assertIn("import", ACCENT_KEYS)
+        self.assertIn("muted", ACCENT_KEYS)
+
+        for key, _ in ACCENT_CHOICES:
+            self.tm.set_accent_choice(key)
+            self.assertEqual(self.tm.accent_choice, key)
+            colors = self.tm.colors
+            self.assertTrue(colors.harmonic_tonic.startswith("#"))
+            # Button text on accent must satisfy WCAG AA >= 4.5:1
+            ratio = contrast_ratio(colors.text_inverted, colors.harmonic_tonic)
+            self.assertGreaterEqual(
+                ratio,
+                4.5,
+                f"Accent {key} button text contrast = {ratio:.2f} < 4.5:1",
+            )
+
+        with self.assertRaises(ValueError):
+            self.tm.set_accent_choice("invalid_accent")
+
+    def test_additional_glide_preferences(self):
+        from app.ui.theme import FONT_WEIGHT_KEYS
+
+        for weight in FONT_WEIGHT_KEYS:
+            self.tm.set_font_weight_choice(weight)
+            self.assertEqual(self.tm.font_weight_choice, weight)
+
+        self.tm.set_animations_enabled(False)
+        self.assertFalse(self.tm.animations_enabled)
+        self.tm.set_animations_enabled(True)
+        self.assertTrue(self.tm.animations_enabled)
+
+        self.tm.set_hints_visible(False)
+        self.assertFalse(self.tm.hints_visible)
+        self.tm.set_hints_visible(True)
+        self.assertTrue(self.tm.hints_visible)
 
 
 if __name__ == "__main__":

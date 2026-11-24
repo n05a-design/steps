@@ -93,6 +93,7 @@ class TestGlideShellIntegration(unittest.TestCase):
         try:
             import tkinter as tk
             from tkinter import ttk
+            from app.ui.custom_widgets import RoundedButton
             from app.ui.main_window import StepsMainWindow
         except ImportError as exc:
             if require_tk:
@@ -169,7 +170,7 @@ class TestGlideShellIntegration(unittest.TestCase):
         win_w = root.winfo_width()
         win_h = root.winfo_height()
         for btn in buttons:
-            self.assertIsInstance(btn, (tk.Button, ttk.Button))
+            self.assertIsInstance(btn, (tk.Button, ttk.Button, RoundedButton))
             self.assertTrue(btn.winfo_ismapped(), f"Button not mapped at minsize: {btn}")
             bx = btn.winfo_rootx() - root.winfo_rootx()
             by = btn.winfo_rooty() - root.winfo_rooty()

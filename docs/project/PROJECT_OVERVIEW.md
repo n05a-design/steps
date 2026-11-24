@@ -10,7 +10,7 @@
 
 > **Aktualisierung 23.11.2026:** Ausgehend vom `main`-Stand `5b5708de6b5572f727a26d94c544158baa731794` ist `glide_shell` `0.6.2` (Glide `v1.0.2`, `7dcd8dc04366f88943fa17827882cef4d81421b8`) produktiv als Desktop-Fundament integriert (`AppHost`, `modal_session`, `window_lifetime`, `window_geometry`, `DESIGN_RICHTLINIEN.md`).
 
-> **Aktualisierung 24.11.2026:** Vollständige Umsetzung des Glide-Designsystems (`docs/design/GLIDE_DESIGN_CONTRACT.md`) mit 6 barrierefreien Themes (WCAG 2.2 AA $\ge 4{,}5:1$), Okabe-Ito-Farben für Kontrastmodi, D63-Buttonbeschränkung auf 24 Zeichen, D71-Menühäkchen, einklappbarer Seitenleiste (Wide / 64px-Rail / Hidden), responsiven Dichte-Breakpoints und Kompaktmodus sowie vollständiger Glide-Anpassungsparität (Hintergrund-Farbtöne, Eckenrundung, Schriftgrößenskalierung, ThemedAutoScrollbar und modalem Erscheinungsbild-Dialog `AppearanceDialog`). Die Entwicklungsversion lautet `0.6.0-dev` (`0.6.0.dev0`); lokal auf macOS bestehen 907 automatisierte Tests.
+> **Aktualisierung 24.11.2026:** Vollständige Umsetzung des Glide-Designsystems (`docs/design/GLIDE_DESIGN_CONTRACT.md`) mit 10 barrierefreien Themes (WCAG 2.2 AA $\ge 4{,}5:1$), Okabe-Ito-Farben für Kontrastmodi, D63-Buttonbeschränkung auf 24 Zeichen, D71-Menühäkchen, einklappbarer Seitenleiste (Wide / 64px-Rail / Hidden), responsiven Dichte-Breakpoints und Kompaktmodus sowie vollständiger Glide-Anpassungsparität (10 Hintergrund-Farbtöne, 8 Akzentfarben, Eckenrundung, Schriftgrößenskalierung, Einstellungen-Persistenz, ThemedAutoScrollbar und modalem Erscheinungsbild-Dialog `AppearanceDialog`). Die Entwicklungsversion lautet `0.7.0-dev` (`0.7.0.dev0`); lokal auf macOS bestehen 912 automatisierte Tests.
 
 ## 1. Präzises Projektbild
 
