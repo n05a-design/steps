@@ -30,6 +30,9 @@ classifiers = [
 [project.scripts]
 steps = "app.main:main"
 
+[project.gui-scripts]
+steps-desktop = "app.start:main"
+
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["app*", "design*", "glide_shell*", "src*", "knowledge", "knowledge.sources"]

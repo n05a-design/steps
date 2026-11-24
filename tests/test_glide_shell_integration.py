@@ -415,6 +415,16 @@ class TestGlideShellIntegration(unittest.TestCase):
         self.assertEqual(window.theme.corner_radius, 12)
         self.assertEqual(window.theme.font_scale, 1.0)
 
+    def test_standalone_launch_paths_outside_daw(self):
+        from app import start
+
+        cache_dir = start.bytecode_cache_dir()
+        self.assertTrue(str(cache_dir).endswith("bytecode"))
+        start.check_python_version()
+        self.assertTrue((ROOT / "STEPS.pyw").is_file())
+        self.assertTrue((ROOT / "STEPS.command").is_file())
+        self.assertTrue((ROOT / "app" / "__main__.py").is_file())
+
 
 if __name__ == "__main__":
     unittest.main()

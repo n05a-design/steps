@@ -8,7 +8,7 @@ from unittest.mock import Mock
 
 from app.i18n import LocaleManager
 from app.ui import layout_policy
-from app.ui.appearance_dialog import AppearanceDialog
+from app.ui.appearance_dialog import AccentMonogramTile, AppearanceDialog, GlideOptionSelector
 from app.ui.custom_widgets import RoundedButton, RoundedSurfaceCard
 from app.ui.theme import ThemeManager, default_theme
 
@@ -127,14 +127,51 @@ class TestCustomWidgets(unittest.TestCase):
         self.assertEqual(btn.display_text, "Short text")
         btn.destroy()
 
+    def test_glide_option_selector_and_monogram_tile(self):
+        colors = default_theme.colors
+        var = tk.StringVar(self.root, value="dark")
+        changed = False
+
+        def _changed():
+            nonlocal changed
+            changed = True
+
+        selector = GlideOptionSelector(
+            self.root,
+            var,
+            [("dark", "Dark"), ("light", "Light")],
+            colors,
+            swatch_resolver=lambda k: colors.harmonic_tonic if k == "dark" else colors.text_primary,
+            on_change=_changed,
+        )
+        selector._select("light")
+        self.assertEqual(var.get(), "light")
+        self.assertTrue(changed)
+        selector.destroy()
+
+        tile = AccentMonogramTile(
+            self.root,
+            bg_color=colors.bg_surface,
+            fill_color=colors.harmonic_tonic,
+            text_color=colors.text_inverted,
+        )
+        tile.set_theme(bg_color=colors.bg_window, fill_color=colors.harmonic_dominant, text_color=colors.text_inverted, radius=10)
+        self.assertEqual(tile.radius, 10)
+        tile.destroy()
+
     def test_appearance_dialog_builds_and_applies(self):
         theme = ThemeManager(mode="dark")
         i18n = LocaleManager(preference="en")
         applied_results = None
+        applied_language = None
 
         def _on_apply(m, b, r, s):
             nonlocal applied_results
             applied_results = (m, b, r, s)
+
+        def _on_lang(lang):
+            nonlocal applied_language
+            applied_language = lang
 
         dlg = AppearanceDialog(
             parent=self.root,
@@ -142,22 +179,26 @@ class TestCustomWidgets(unittest.TestCase):
             i18n=i18n,
             theme_preference="contrast-dark",
             on_apply=_on_apply,
+            on_language_change=_on_lang,
         )
         self.assertEqual(dlg.theme_var.get(), "contrast-dark")
         self.assertEqual(dlg.bg_var.get(), "default")
         self.assertEqual(dlg.radius_var.get(), "standard")
         self.assertEqual(dlg.scale_var.get(), "standard")
+        self.assertEqual(dlg.language_var.get(), "en")
 
         # Change vars and update preview
         dlg.theme_var.set("light")
         dlg.bg_var.set("accent")
         dlg.radius_var.set("large")
         dlg.scale_var.set("compact")
+        dlg.language_var.set("de")
         dlg._update_preview()
 
         # Click apply
         dlg._on_apply_clicked()
         self.assertEqual(applied_results, ("light", "accent", "large", "compact"))
+        self.assertEqual(applied_language, "de")
 
 
 if __name__ == "__main__":

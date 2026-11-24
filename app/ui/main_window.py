@@ -549,6 +549,7 @@ class StepsMainWindow:
             i18n=self.i18n,
             theme_preference=self._theme_preference,
             on_apply=_apply,
+            on_language_change=self._on_language_change,
         )
 
     def _on_background_change(self, choice: str) -> None:

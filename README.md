@@ -93,7 +93,16 @@ Export the prototype's initial progression to an SMF file:
 python3 -m app.main --export-midi /tmp/steps-progression.mid
 ```
 
-To open the Tkinter prototype, run `python3 -m app.main` in an environment with Tk and a graphical display. A source checkout is not the same as a published desktop installer.
+To open the standalone STEPS desktop app directly outside any DAW (redirecting bytecode cache cleanly to the OS user cache folder), use any of the following launch paths:
+
+```sh
+python3 -m app           # Recommended module entrypoint (app.start)
+python3 STEPS.pyw        # Windowless Python launcher
+./STEPS.command          # Double-clickable macOS Finder / Terminal launcher
+steps-desktop            # GUI script after pip install
+```
+
+You can also run `python3 -m app.main` or `steps` directly in an environment with Tk and a graphical display. A source checkout is not the same as a published desktop installer.
 
 To build and inspect the existing Python wheel artifact without installing it into the repository environment:
 

@@ -134,6 +134,17 @@ print(chord.symbol, int(chord.bass.pitch_class))
 Im Beispiel bezeichnet deutsches B den Ton B♭ mit Tonklasse 10. Die
 [API-Verträge](docs/theory/API_VERTRAEGE.md) erläutern die Eingabekonventionen.
 
+Um STEPS eigenständig als Desktop-Anwendung **außerhalb einer DAW** zu starten (mit automatischer Python-Versionsprüfung und Bytecode-Cache im Benutzer-Cache-Ordner), stehen folgende Startwege bereit:
+
+```sh
+python3 -m app           # Empfohlener Modulstart (app.start)
+python3 STEPS.pyw        # Fensterloser Python-Desktop-Starter
+./STEPS.command          # Doppelklickbarer macOS-Finder-Starter
+steps-desktop            # GUI-Skript nach Paketinstallation
+```
+
+Alternativ startet `python3 -m app.main` oder `steps` direkt in einer Umgebung mit Tk und grafischer Anzeige.
+
 Prüfen, ob dein Checkout in Ordnung ist:
 
 ```sh
