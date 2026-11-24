@@ -47,6 +47,7 @@ from app.ui.theme import (
     style_entry,
     style_surface_card,
 )
+from glide_shell.custom_controls import ThemedAutoScrollbar
 from app.ui.voice_leading_lab_dialog import (
     VOICE_LEADING_STYLE_OPTIONS,
     VoiceLeadingLabDialog,
@@ -1386,11 +1387,19 @@ class StepsMainWindow:
             highlightbackground=colors.border,
             highlightcolor=colors.border_focus,
         )
-        progression_scrollbar = tk.Scrollbar(
-            self.prog_frame, orient=tk.VERTICAL, command=self.chord_listbox.yview, takefocus=False,
+        self.progression_scrollbar = ThemedAutoScrollbar(
+            self.prog_frame,
+            bg_color=colors.bg_surface,
+            track_color=colors.bg_surface_hover,
+            thumb_color=colors.border,
+            active_thumb_color=colors.harmonic_tonic,
+            width=12,
+            radius=6,
+            orient="vertical",
         )
-        self.chord_listbox.configure(yscrollcommand=progression_scrollbar.set)
-        progression_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        self.progression_scrollbar.set_command(self.chord_listbox.yview)
+        self.chord_listbox.configure(yscrollcommand=self.progression_scrollbar.set)
+        self.progression_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.chord_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=sp.sm, pady=sp.sm)
         self.chord_listbox.bind("<<ListboxSelect>>", self._on_chord_selected)
         modifier = "Option" if sys.platform == "darwin" else "Alt"
@@ -1457,11 +1466,19 @@ class StepsMainWindow:
             show_detail=self._write_detail, on_applied=self._on_recommendation_applied,
         )
         self.voice_lab_btn.pack(side=tk.RIGHT, padx=sp.xs)
-        detail_scrollbar = tk.Scrollbar(
-            self.detail_frame, orient=tk.VERTICAL, command=self.detail_text.yview, takefocus=False,
+        self.detail_scrollbar = ThemedAutoScrollbar(
+            self.detail_frame,
+            bg_color=colors.bg_surface,
+            track_color=colors.bg_surface_hover,
+            thumb_color=colors.border,
+            active_thumb_color=colors.harmonic_tonic,
+            width=12,
+            radius=6,
+            orient="vertical",
         )
-        self.detail_text.configure(yscrollcommand=detail_scrollbar.set)
-        detail_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        self.detail_scrollbar.set_command(self.detail_text.yview)
+        self.detail_text.configure(yscrollcommand=self.detail_scrollbar.set)
+        self.detail_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.detail_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
     def set_theme_preference(self, preference: str) -> str:
@@ -1509,6 +1526,17 @@ class StepsMainWindow:
                 )
             else:
                 style_surface_card(frame, colors)
+        for scrollbar in (
+            getattr(self, "progression_scrollbar", None),
+            getattr(self, "detail_scrollbar", None),
+        ):
+            if scrollbar is not None and hasattr(scrollbar, "set_theme") and callable(getattr(scrollbar, "set_theme")):
+                scrollbar.set_theme(
+                    bg_color=colors.bg_surface,
+                    track_color=colors.bg_surface_hover,
+                    thumb_color=colors.border,
+                    active_thumb_color=colors.harmonic_tonic,
+                )
         if hasattr(self, "header_logo_lbl"):
             self.header_logo_lbl.configure(bg=colors.bg_surface)
         self.title_lbl.configure(fg=colors.harmonic_tonic, bg=colors.bg_surface)

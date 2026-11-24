@@ -270,16 +270,28 @@ class RoundedButton(tk.Canvas):
             self.command = kwargs.pop("command")
         if "state" in kwargs:
             self._state = str(kwargs.pop("state"))
+        if "fg" in kwargs:
+            self.base_fg = kwargs.pop("fg")
+        elif "foreground" in kwargs:
+            self.base_fg = kwargs.pop("foreground")
         if "bg" in kwargs:
-            self.bg_color = kwargs["bg"]
+            self.base_bg = kwargs.pop("bg")
+        elif "background" in kwargs:
+            self.base_bg = kwargs.pop("background")
         super().configure(**kwargs)
         self._draw()
+
+    config = configure
 
     def cget(self, key: str) -> object:
         if key == "text":
             return self._text
         if key == "state":
             return self._state
+        if key in ("fg", "foreground"):
+            return self.base_fg
+        if key in ("bg", "background"):
+            return self.base_bg
         return super().cget(key)
 
     def __getitem__(self, key: str) -> object:

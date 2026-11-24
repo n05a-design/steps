@@ -117,6 +117,11 @@ class TestCustomWidgets(unittest.TestCase):
         self.assertEqual(btn.radius, 6)
         self.assertEqual(btn.base_bg, "#E2E8F0")
 
+        # config() and fg/bg options
+        btn.config(fg="#FF0000", bg="#00FF00")
+        self.assertEqual(btn.cget("fg"), "#FF0000")
+        self.assertEqual(btn.cget("bg"), "#00FF00")
+
         # Set text dynamically
         btn.set_text("Short text")
         self.assertEqual(btn.display_text, "Short text")
