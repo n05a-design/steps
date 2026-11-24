@@ -117,10 +117,60 @@ class TestThemeManager(unittest.TestCase):
         self.assertEqual(ThemeManager.resolve_system_mode(system_dark=True), "dark")
         self.assertEqual(ThemeManager.resolve_system_mode(system_dark=False), "light")
         self.assertEqual(ThemeManager.resolve_system_mode(system_dark=None, fallback="light"), "light")
+        self.assertEqual(
+            ThemeManager.resolve_system_mode(system_dark=True, preference="contrast-dark"),
+            "contrast-dark",
+        )
+        self.assertEqual(
+            ThemeManager.resolve_system_mode(system_dark=False, preference="contrast-dark"),
+            "contrast-light",
+        )
+        self.assertEqual(
+            ThemeManager.resolve_system_mode(system_dark=True, preference="minimal-light"),
+            "minimal-dark",
+        )
+        self.assertEqual(
+            ThemeManager.resolve_system_mode(system_dark=False, preference="minimal-light"),
+            "minimal-light",
+        )
         spec = self.tm.font_spec(12, "bold")
         self.assertEqual(spec[1], 12)
         self.assertEqual(spec[2], "bold")
         self.tm.configure_shell_providers()
+
+    def test_all_six_themes_and_wcag_contrast(self):
+        for theme_name in ThemeManager.THEMES:
+            self.tm.set_mode(theme_name)
+            self.assertEqual(self.tm.mode, theme_name)
+            colors = self.tm.colors
+            self.assertTrue(colors.bg_window.startswith("#"))
+            self.assertTrue(colors.bg_surface.startswith("#"))
+            self.assertTrue(colors.text_primary.startswith("#"))
+
+            for fg_name, bg_name in (
+                ("text_primary", "bg_surface"),
+                ("text_primary", "bg_window"),
+                ("text_primary", "bg_active"),
+                ("text_secondary", "bg_surface"),
+                ("text_secondary", "bg_window"),
+                ("text_inverted", "harmonic_tonic"),
+                ("text_inverted", "harmonic_subdominant"),
+            ):
+                ratio = contrast_ratio(getattr(colors, fg_name), getattr(colors, bg_name))
+                self.assertGreaterEqual(
+                    ratio,
+                    4.5,
+                    f"Theme {theme_name} contrast {fg_name}/{bg_name} = {ratio:.2f} is below 4.5:1",
+                )
+
+    def test_theme_alias_normalization(self):
+        self.assertEqual(ThemeManager.normalize_theme_name("contrast_dark"), "contrast-dark")
+        self.assertEqual(ThemeManager.normalize_theme_name("minimal_light"), "minimal-light")
+        self.assertEqual(ThemeManager.normalize_theme_name("cvd-dark"), "contrast-dark")
+        self.assertEqual(ThemeManager.normalize_theme_name("high-contrast-light"), "contrast-light")
+        self.tm.set_mode("contrast_dark")
+        self.assertEqual(self.tm.mode, "contrast-dark")
+        self.assertTrue(self.tm.is_dark)
 
 
 if __name__ == "__main__":

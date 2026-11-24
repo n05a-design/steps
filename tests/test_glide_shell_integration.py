@@ -359,13 +359,17 @@ class TestGlideShellIntegration(unittest.TestCase):
         self.assertTrue(window.header_logo_lbl.winfo_ismapped())
         self.assertTrue(window.subtitle_lbl.winfo_ismapped())
 
-        # 5. Live theme switching updates Glide surfaces and entries across Light and Dark
-        window.apply_theme("light")
+        # 5. Live theme switching updates Glide surfaces and entries across all 6 themes
+        for theme_name in ("light", "contrast-dark", "contrast-light", "minimal-dark", "minimal-light", "dark"):
+            window.apply_theme(theme_name)
+            root.update()
+            self.assertEqual(window.theme.mode, theme_name)
+            self.assertEqual(window.root.cget("bg"), window.theme.colors.bg_window)
+            self.assertEqual(window.sidebar_frame.cget("bg"), window.theme.colors.bg_surface)
+            self.assertEqual(window.chord_entry.cget("bg"), window.theme.colors.bg_window)
+        window.set_theme_preference("contrast-dark")
         root.update()
-        self.assertEqual(window.theme.mode, "light")
-        self.assertEqual(window.root.cget("bg"), window.theme.colors.bg_window)
-        self.assertEqual(window.sidebar_frame.cget("bg"), window.theme.colors.bg_surface)
-        self.assertEqual(window.chord_entry.cget("bg"), window.theme.colors.bg_window)
+        self.assertEqual(window.theme.mode, "contrast-dark")
         window.set_theme_preference("dark")
         root.update()
         self.assertEqual(window.theme.mode, "dark")

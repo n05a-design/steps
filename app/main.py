@@ -29,9 +29,17 @@ def build_parser(i18n: Optional[LocaleManager] = None) -> argparse.ArgumentParse
     )
     parser.add_argument(
         "--theme",
-        choices=["dark", "light"],
+        choices=[
+            "dark",
+            "light",
+            "contrast-dark",
+            "contrast-light",
+            "minimal-dark",
+            "minimal-light",
+            "system",
+        ],
         default="dark",
-        help=i18n.translate("cli.theme.help")
+        help=i18n.translate("cli.theme.help"),
     )
     parser.add_argument(
         "--export-midi",
@@ -88,7 +96,12 @@ def main(argv: Optional[list[str]] = None) -> int:
     from app.ui.theme import ThemeManager
     from glide_shell.app_host import AppHost
 
-    theme = ThemeManager(mode=args.theme)
+    initial_theme_mode = (
+        ThemeManager.resolve_system_mode(fallback="dark")
+        if args.theme == "system"
+        else args.theme
+    )
+    theme = ThemeManager(mode=initial_theme_mode)
     host = create_desktop_host(theme)
     host.run(
         lambda root: StepsMainWindow(

@@ -8,7 +8,9 @@
 
 > **Aktualisierung 21.11.2026:** Am geprüften Main-Stand `3a5db64b6131806c432b7b38dca60680c5a57d9b` (PR #265) bestehen 875 automatisierte Tests. Die Ergebnisse von PR #222–#265, der Stand der fachlichen Musikabnahme und die Etappen E1–E6 bis 1.0 stehen in der [Roadmap](../roadmap/ROADMAP_AND_RESOURCE_PLAN.md#0-aktueller-stand-und-nächste-etappen-21112026).
 
-> **Aktualisierung 23.11.2026:** Ausgehend vom `main`-Stand `5b5708de6b5572f727a26d94c544158baa731794` ist `glide_shell` `0.6.2` (Glide `v1.0.2`, `7dcd8dc04366f88943fa17827882cef4d81421b8`) produktiv als Desktop-Fundament integriert (`AppHost`, `modal_session`, `window_lifetime`, `window_geometry`, `DESIGN_RICHTLINIEN.md`). Die aktuelle Entwicklungsversion lautet `0.3.0-dev` (`0.3.0.dev0`); auf macOS bestehen 898 automatisierte Tests.
+> **Aktualisierung 23.11.2026:** Ausgehend vom `main`-Stand `5b5708de6b5572f727a26d94c544158baa731794` ist `glide_shell` `0.6.2` (Glide `v1.0.2`, `7dcd8dc04366f88943fa17827882cef4d81421b8`) produktiv als Desktop-Fundament integriert (`AppHost`, `modal_session`, `window_lifetime`, `window_geometry`, `DESIGN_RICHTLINIEN.md`).
+
+> **Aktualisierung 24.11.2026:** Vollständige Umsetzung des Glide-Designsystems (`docs/design/GLIDE_DESIGN_CONTRACT.md`) mit 6 barrierefreien Themes (WCAG 2.2 AA $\ge 4{,}5:1$), Okabe-Ito-Farben für Kontrastmodi, D63-Buttonbeschränkung auf 24 Zeichen, D71-Menühäkchen, einklappbarer Seitenleiste (Wide / 64px-Rail / Hidden), responsiven Dichte-Breakpoints und Kompaktmodus. Die Entwicklungsversion lautet `0.4.0-dev` (`0.4.0.dev0`); lokal auf macOS bestehen 900+ automatisierte Tests.
 
 ## 1. Präzises Projektbild
 

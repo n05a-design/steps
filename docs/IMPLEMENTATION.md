@@ -47,8 +47,8 @@ und Veröffentlichung sind getrennte Statusangaben.
 
 | Wert | Fundstelle und Bedeutung |
 |---|---|
-| `0.3.0-dev` | [VERSION](../VERSION) und `CURRENT_APP_VERSION` in [project_io.py](../src/steps/storage/project_io.py), aktueller Entwicklungsstand seit Integration der `glide_shell` `0.6.2` |
-| `0.3.0.dev0` | [`src.steps.__version__`](../src/steps/__init__.py) und [pyproject.toml](../pyproject.toml), PEP-440-Schreibweise des Entwicklungspakets |
+| `0.4.0-dev` | [VERSION](../VERSION) und `CURRENT_APP_VERSION` in [project_io.py](../src/steps/storage/project_io.py), aktueller Entwicklungsstand mit Glide-Designsystem, 6 Themes und responsivem 2-Bereiche-Layout |
+| `0.4.0.dev0` | [`src.steps.__version__`](../src/steps/__init__.py) und [pyproject.toml](../pyproject.toml), PEP-440-Schreibweise des Entwicklungspakets |
 | v0.1.0 | Vorhandenes GitHub-Release/Tag; keine Aussage über den heutigen 1.0-Reifegrad |
 | 1.0.0 | Noch nicht durch ein angenommenes ADR definiert oder terminiert; siehe [Zielbild und Readiness](product/V1.0.0_PRODUCT_CONTRACT.md) |
 | Phase 5.1 | Historischer Entwicklungsstand des Headless-Kerns |
@@ -56,7 +56,7 @@ und Veröffentlichung sind getrennte Statusangaben.
 | 3.53.0 | Historischer Glide-Referenzstand (vor Übernahme von `glide_shell` `0.6.2`) |
 | `v1.0.2` / `0.6.2` | Produktiv übernommenes Glide-Release (`7dcd8dc04366f88943fa17827882cef4d81421b8`) mit [`glide_shell/`](../glide_shell/__init__.py) `0.6.2` (System `V1.86`, MPL-2.0) |
 
-Am 23.11.2026 baut die produktive Desktop-Schicht (ausgehend von `main`-Basis `5b5708de6b5572f727a26d94c544158baa731794`) auf `glide_shell` `0.6.2` (`AppHost`, `modal_session`, `window_lifetime`, `window_geometry`, `system_appearance`, `custom_controls`, `desktop_adapter`, `text_fit`, portabler Designvertrag `DESIGN_RICHTLINIEN.md`) auf; auf macOS bestehen 898 automatisierte Tests sowie alle 13/13 `glide_shell.selftest`-Checks.
+Am 24.11.2026 baut die produktive Desktop-Schicht (ausgehend von `main`-Basis `5b5708de6b5572f727a26d94c544158baa731794`) auf `glide_shell` `0.6.2` (`AppHost`, `modal_session`, `window_lifetime`, `window_geometry`, `system_appearance`, `custom_controls`, `desktop_adapter`, `text_fit`, portabler Designvertrag [`docs/design/GLIDE_DESIGN_CONTRACT.md`](design/GLIDE_DESIGN_CONTRACT.md)) auf; integriert sind 6 barrierefreie Themes (WCAG 2.2 AA $\ge 4{,}5:1$), responsive Dichte-Breakpoints, eine einklappbare Seitenleiste (Wide / 64px-Rail / Hidden) und ein Kompaktmodus. Auf macOS bestehen alle 900+ automatisierten Tests sowie alle 13/13 `glide_shell.selftest`-Checks.
 
 Der Checkout enthält einen nutzbaren Python-Kern sowie eine Tkinter-Desktop-
 Vorschau und einen CLI-Einstieg. `pyproject.toml` definiert ein setuptools-

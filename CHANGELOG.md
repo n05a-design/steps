@@ -1,6 +1,18 @@
 # Änderungsprotokoll
 
-## Unreleased – App und Python-Kern
+## Unreleased – 0.4.0-dev (2026-11-24)
+
+### Hinzugefügt / Integriert
+- **Glide Designsystem & Themes:** Vollständige Integration des portablen Glide-Designvertrags ([`docs/design/GLIDE_DESIGN_CONTRACT.md`](docs/design/GLIDE_DESIGN_CONTRACT.md)) mit 6 barrierefreien Themes (`dark`, `light`, `contrast-dark`, `contrast-light`, `minimal-dark`, `minimal-light`) plus automatischer Systemerkennung (`glide_shell.system_appearance`).
+- **Farben & Barrierefreiheit (WCAG 2.2 AA):** Alle Paletten in `design/tokens/tokens.json` erfüllen mathematisch nachgewiesen $\ge 4{,}5:1$ Kontrast für Fließtext und $\ge 3:1$ für Großschrift/Platzhalter. Kontrast-Themes nutzen Okabe-Ito CVD-sichere Akzente für harmonische Funktionen (Tonika, Subdominante, Dominante, Alteriert, Moll); Minimal-Themes bieten ruhige Graustufen-Differenzierung nach Helligkeitsabstand.
+- **Flächen-Hierarchie:** Saubere Schichtung aus Fensterhintergrund (`bg_window`), Trägerkarten (`bg_surface`, 1px Rand, `FLAT`), aktiver Auswahl (`bg_active`) und Hover-Flächen (`bg_surface_hover`).
+- **Buttons & Schutz (B15, D63):** Unmittelbares Button-Hover-Feedback, aktive Tastenmarkierung (`set_button_active`), 24-Zeichen-Beschriftungsbegrenzung (`clip_button_text`) gegen Textüberlauf sowie Flachrelief mit Fokusrahmen.
+- **Texte & Menüs (D71, B11):** Bündig ausgerichtete Menühäkchen (`aligned_menu_markers`), D66-Metrikenzeile mit Tonart, Tongeschlecht, BPM und Taktart, zweisprachige Lokalisierung (DE/EN) aller neuen Themes.
+- **2-Pane Shell & Breakpoints:** Einklappbare Seitenleiste (200px breit / 64px Symbol-Rail / ausgeblendet), responsive Dichte-Breakpoints (Header 1120/900, Höhe 850/780, Auto-Rail < 760), Kompaktmodus (`520 × 720` bis `480 × 560`) mit Geometriewiederherstellung.
+- **Tests & Qualität:** 10 neue Design- und Kontrasttests in `tests/test_theme_tokens.py` und 9 Integrationsprüfungen in `tests/test_glide_shell_integration.py`.
+- **Versionierung:** Upgrade von Paket (`0.4.0.dev0`), App (`0.4.0-dev`) und Dokumentation.
+
+## [0.3.0-dev] - 2026-11-23
 
 - Die Entwicklungs- und Paketversion für STEPS wurde nach der Migration auf `glide_shell` `0.6.2` auf `0.3.0-dev` (`0.3.0.dev0` in `pyproject.toml` und `src/steps/__init__.py`, `CURRENT_APP_VERSION` in `src/steps/storage/project_io.py`) sowie in der Dokumentation aktualisiert.
 - Die Desktop-Anwendung baut produktiv auf der übernommenen `glide_shell` (`0.6.2` aus Glide `v1.0.2`, Commit `7dcd8dc04366f88943fa17827882cef4d81421b8`, System `V1.86`, MPL-2.0) auf (`app_host.AppHost`, `modal_session`, `window_lifetime`, `window_geometry`, `system_appearance`, `custom_controls`, `desktop_adapter`, `text_fit`, portabler Designvertrag `DESIGN_RICHTLINIEN.md` inkl. WCAG-AA-Kontrastanpassung für `harmonic_subdominant` im Light-Mode sowie Agenten-Skills).

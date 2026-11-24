@@ -249,6 +249,22 @@ class ThemeColors:
     harmonic_dominant: str
     harmonic_altered: str
     harmonic_minor: str
+    selection: str = ""
+    selection_text: str = ""
+    delete: str = ""
+    export: str = ""
+    clear: str = ""
+    flag: str = ""
+
+
+ThemeName = Literal[
+    "dark",
+    "light",
+    "contrast-dark",
+    "contrast-light",
+    "minimal-dark",
+    "minimal-light",
+]
 
 
 @dataclass(frozen=True)
@@ -275,12 +291,41 @@ class SpacingTokens:
 
 
 class ThemeManager:
-    """Manages design tokens and active theme state."""
+    """Manages design tokens and active theme state across 6 Glide themes and system mode."""
 
-    def __init__(self, mode: Literal["dark", "light"] = "dark", tokens_path: Path = TOKENS_PATH) -> None:
-        self._mode: Literal["dark", "light"] = mode
+    THEMES: tuple[str, ...] = (
+        "dark",
+        "light",
+        "contrast-dark",
+        "contrast-light",
+        "minimal-dark",
+        "minimal-light",
+    )
+    THEME_PAIRS: dict[str, dict[str, str]] = {
+        "dark": {"light": "light", "dark": "dark"},
+        "light": {"light": "light", "dark": "dark"},
+        "contrast-dark": {"light": "contrast-light", "dark": "contrast-dark"},
+        "contrast-light": {"light": "contrast-light", "dark": "contrast-dark"},
+        "minimal-dark": {"light": "minimal-light", "dark": "minimal-dark"},
+        "minimal-light": {"light": "minimal-light", "dark": "minimal-dark"},
+    }
+
+    @staticmethod
+    def normalize_theme_name(name: str) -> str:
+        """Normalize theme aliases like contrast_dark or cvd-dark to canonical contrast-dark."""
+        norm = str(name).strip().lower().replace("_", "-")
+        if norm in ("high-contrast-dark", "cvd-dark"):
+            return "contrast-dark"
+        if norm in ("high-contrast-light", "cvd-light"):
+            return "contrast-light"
+        return norm
+
+    def __init__(self, mode: str = "dark", tokens_path: Path = TOKENS_PATH) -> None:
         self._tokens_path = tokens_path
         self._raw = self._load_tokens(tokens_path)
+        self._mode: str = self.normalize_theme_name(mode)
+        if self._mode not in self.THEMES:
+            raise ValueError(f"Invalid theme mode '{mode}', expected one of {self.THEMES}")
         self._typography = self._parse_typography()
         self._spacing = self._parse_spacing()
 
@@ -316,13 +361,18 @@ class ThemeManager:
         )
 
     @property
-    def mode(self) -> Literal["dark", "light"]:
+    def mode(self) -> str:
         return self._mode
 
-    def set_mode(self, mode: Literal["dark", "light"]) -> None:
-        if mode not in ("dark", "light"):
-            raise ValueError(f"Invalid theme mode '{mode}', expected 'dark' or 'light'")
-        self._mode = mode
+    @property
+    def is_dark(self) -> bool:
+        return "dark" in self._mode
+
+    def set_mode(self, mode: str) -> None:
+        norm = self.normalize_theme_name(mode)
+        if norm not in self.THEMES:
+            raise ValueError(f"Invalid theme mode '{mode}', expected one of {self.THEMES}")
+        self._mode = norm
 
     @property
     def colors(self) -> ThemeColors:
@@ -336,6 +386,11 @@ class ThemeManager:
     @property
     def spacing(self) -> SpacingTokens:
         return self._spacing
+
+    @classmethod
+    def pair_for(cls, theme: str) -> dict[str, str]:
+        norm = cls.normalize_theme_name(theme)
+        return cls.THEME_PAIRS.get(norm, {"light": "light", "dark": "dark"})
 
     def font_spec(self, size: Optional[int] = None, *styles: str, mono: bool = False) -> tuple:
         """Return a Tk font tuple derived from STEPS typography tokens."""
@@ -356,13 +411,15 @@ class ThemeManager:
             except Exception:
                 pass
 
-    @staticmethod
+    @classmethod
     def resolve_system_mode(
+        cls,
         root: Optional["tk.Misc"] = None,
         system_dark: Optional[bool] = None,
-        fallback: Literal["dark", "light"] = "dark",
-    ) -> Literal["dark", "light"]:
-        """Resolve light/dark mode from OS/Tk state via glide_shell.system_appearance."""
+        fallback: str = "dark",
+        preference: str = "dark",
+    ) -> str:
+        """Resolve theme variant from OS/Tk state via glide_shell.system_appearance."""
         detected = system_dark
         if detected is None and root is not None:
             try:
@@ -374,7 +431,9 @@ class ThemeManager:
                     detected = system_appearance.tk_is_dark(answer)
             except Exception:
                 detected = None
-        return system_appearance.resolve({"light": "light", "dark": "dark"}, detected, fallback)
+        target_pair = cls.pair_for(preference if preference != "system" else fallback)
+        resolved_fallback = fallback if fallback in target_pair.values() else target_pair["dark"]
+        return system_appearance.resolve(target_pair, detected, resolved_fallback)
 
 
 # Global default instance

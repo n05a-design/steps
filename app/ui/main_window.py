@@ -82,6 +82,16 @@ def _portable_filename(title: str, extension: str) -> str:
 class StepsMainWindow:
     """The primary STEPS desktop application window adhering to ADR-001."""
 
+    THEME_OPTIONS: tuple[tuple[str, str], ...] = (
+        ("system", "theme.system"),
+        ("dark", "theme.dark"),
+        ("light", "theme.light"),
+        ("contrast-dark", "theme.contrast_dark"),
+        ("contrast-light", "theme.contrast_light"),
+        ("minimal-dark", "theme.minimal_dark"),
+        ("minimal-light", "theme.minimal_light"),
+    )
+
     def __init__(
         self,
         root: tk.Tk,
@@ -191,7 +201,7 @@ class StepsMainWindow:
         self.settings_menu.add_cascade(label="", menu=self.language_menu)
         self.theme_menu = tk.Menu(self.settings_menu, tearoff=False)
         self.theme_var = tk.StringVar(self.root, value=self._theme_preference)
-        for preference in ("system", "dark", "light"):
+        for preference, _ in self.THEME_OPTIONS:
             self.theme_menu.add_radiobutton(
                 label="",
                 value=preference,
@@ -272,7 +282,7 @@ class StepsMainWindow:
             and self.settings_menu.index(tk.END) >= 5
         ):
             self.settings_menu.entryconfigure(1, label=t("theme.menu"))
-            for index, key in enumerate(("theme.system", "theme.dark", "theme.light")):
+            for index, (_, key) in enumerate(self.THEME_OPTIONS):
                 self.theme_menu.entryconfigure(index, label=t(key))
             self.settings_menu.entryconfigure(3, label=t("view.sidebar.toggle"))
             self.settings_menu.entryconfigure(4, label=t("view.sidebar.narrow"))
@@ -1357,21 +1367,23 @@ class StepsMainWindow:
         detail_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.detail_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
-    def set_theme_preference(self, preference: str) -> Literal["dark", "light"]:
-        """Switch UI appearance between dark, light, or OS system mode via glide_shell."""
-        self._theme_preference = preference if preference in ("system", "dark", "light") else "dark"
+    def set_theme_preference(self, preference: str) -> str:
+        """Switch UI appearance between themes or OS system mode via glide_shell."""
+        normalized = self.theme.normalize_theme_name(preference)
+        allowed = {"system", *self.theme.THEMES}
+        self._theme_preference = normalized if normalized in allowed else "dark"
         if hasattr(self, "theme_var"):
             self.theme_var.set(self._theme_preference)
-        resolved: Literal["dark", "light"] = (
-            self.theme.resolve_system_mode(self.root, fallback=self.theme.mode)
+        resolved = (
+            self.theme.resolve_system_mode(self.root, fallback=self.theme.mode, preference=self._theme_preference)
             if self._theme_preference == "system"
-            else self._theme_preference  # type: ignore[assignment]
+            else self._theme_preference
         )
         self.apply_theme(resolved)
         return resolved
 
-    def apply_theme(self, mode: Literal["dark", "light"]) -> None:
-        """Apply a dark/light Glide palette live across main-window surfaces, entries and buttons."""
+    def apply_theme(self, mode: str) -> None:
+        """Apply a Glide palette live across main-window surfaces, entries and buttons."""
         self.theme.set_mode(mode)
         colors = self.theme.colors
         self.root.configure(bg=colors.bg_window)

@@ -1,0 +1,62 @@
+# STEPS – Designvertrag (STEPS Music × Glide Shell 0.6.2)
+
+Stand 24.11.2026 · STEPS 0.4.0-dev · Glide Shell 0.6.2 (Glide v1.0.2, Commit `7dcd8dc04366f88943fa17827882cef4d81421b8`)
+
+Dieses Dokument verbindet den portablen Gestaltungs- und Interaktionsvertrag der **Glide Shell** ([`glide_shell/DESIGN_RICHTLINIEN.md`](../../glide_shell/DESIGN_RICHTLINIEN.md)) mit der Musik-, UI- und Markenarchitektur von **STEPS** ([`ADR-001`](../decisions/ADR-001-ein-fenster-zwei-bereiche.md), [`ADR-003`](../decisions/ADR-003-glide-nur-shell-und-infrastruktur.md), [`design/tokens/tokens.json`](../../design/tokens/tokens.json)).
+
+---
+
+## 1. Universelle Gestaltungsgrundsätze P1–P6 für STEPS
+
+| Grundsatz | Bedeutung für STEPS | Konkrete Umsetzung |
+|---|---|---|
+| **P1 Funktioniert selbstverständlich** | Musikalische Workflows folgen intuitiven Desktop-Konventionen | 6 barrierefreie Themes (`dark`, `light`, `contrast-dark`, `contrast-light`, `minimal-dark`, `minimal-light`) plus `system_appearance`; `Escape` schließt Dialoge und verlässt den Kompaktmodus nicht destruktiv; `Tab`/`Shift+Tab` navigiert zyklisch zwischen Timeline, Akkordliste und Explorer; Standardkürzel (`⌘`/`Ctrl+N`, `O`, `S`, `Z`, `Y`, `B`, `Shift+B`, `Shift+K`) über `app_host` |
+| **P2 Form folgt Funktion** | Farbe kennzeichnet harmonische Rollen, Typografie drückt Rang aus | `ThemeColors` trennt Hintergrundflächen (`bg_window`), Trägerkarten (`bg_surface`), Hover (`bg_surface_hover`), aktive Auswahl (`bg_active`) und harmonische Funktionsfarben (`harmonic_tonic`, `harmonic_subdominant`, `harmonic_dominant`, `harmonic_altered`, `harmonic_minor`); Okabe-Ito CVD-Palette für Kontrastmodi |
+| **P3 Keine Funktion doppelt** | Ein primärer, verlässlicher Interaktionsweg | Menüleiste (`app_host.attach_menubar`), Tastaturkürzel und Symbolleisten rufen dieselben Controller-Methoden auf; ausgerichtete Menü-Häkchen (D71) |
+| **P4 Kein Platz verschwenden** | Noten, Akkordtimeline und Stimmführung dominieren das Fenster | 2-Bereiche-Architektur (ADR-001): Obere Timeline/Arbeitsbereich und unterer Info-/Theoriebereich; linke Navigationsspalte mit Schmalmodus (64-px-Symbolleiste mit Schnellaktionen `▸`, `◈`, `≣`, `☷`, `⤓`) oder komplettem Ausblenden für 100 % Arbeitsbreite |
+| **P5 Nur das Wesentliche** | Übersichtlicher Ausgangszustand ohne Überladung | Fokus auf Progression und nächste Akkordempfehlungen; Kompaktmodus (`520 × 720` bis `480 × 560`) für paralleles Arbeiten neben DAWs mit Geometriewiederherstellung |
+| **P6 Geringe Komplexität** | Stabile musikalische Begriffe und ergonomische UI-Muster | Durchgängig lokalisierte DE/EN-Kataloge (`app/locales/`), 24-Zeichen-Knopfbeschränkung (D63 `clip_button_text`), einheitliche modale Dialogführung über `glide_shell.modal_session` |
+
+---
+
+## 2. Verbindliche Einzelvorgaben (B-Regeln)
+
+- **B15 – Bedienelemente schützen:** Hauptfenster mindestens `860 × 600` (`NORMAL_MIN`), im Kompaktmodus bis `480 × 560` (`COMPACT_MIN`). Alle primären Knöpfe (Akkord hinzufügen, Ändern, Löschen, Verschieben, Transponieren, MIDI-Export, Explorer, Voicing Lab) bleiben vollständig sichtbar, erreichbar und unbeschnitten.
+- **B11 – Informationshierarchie vor starrer Breite:** Akkordsymbole, Stimmführungsanalysen und Melodielinien haben stets Vorrang vor technischen Metadaten. Sekundäre Texte und Pfade werden mit `text_fit.clip` ergonomisch gekürzt. Knopfbeschriftungen sind auf 24 Zeichen begrenzt (D63 `clip_button_text`), Titellängen auf 40 Zeichen (`TITLE_MAX_CHARS`).
+- **B05 / B07 – In-App-Logo & Kopfleisten-Anatomie:** Das transparente STEPS-Signet ist bündig in die linke Kopfleiste integriert. Daneben stehen der Arbeitsbereichstitel (`workspace.heading`) und die D66-Metrikenzeile mit Tonart, Tongeschlecht, Tempo (BPM) und Taktart.
+- **D55 / D61 / D66 / D68 – Responsive Dichtestufen & Breakpoints:**
+  - Breite: `≥ 1120 px` vollständige Kopfleiste mit allen Aktionen; `900..1119 px` kompakte Knöpfe; `< 900 px` Minimalleiste (Logo und Subtitel weichen für maximalen Platz).
+  - Automatische Verschmälerung: Unterhalb von `760 px` Fensterbreite wechselt eine sichtbare Seitenleiste automatisch auf die 64-px-Symbolleiste und kehrt ab `≥ 860 px` in die volle Breite zurück.
+  - Höhe: `≥ 850 px` volle Innenabstände (`12 px`); `780..849 px` kompakte Abstände (`8 px`); `< 780 px` Minimalabstände (`6 px`).
+- **B01 / B16 – Unmittelbare Rückmeldung:** Keine blockierenden Schlafzeiten (`time.sleep`) im Tk-Thread; asynchrone Berechnungen (z. B. MIDI-Synthese, Export, Stimmführungsanalyse) laufen über Hintergrund-Worker und koppeln über `window_lifetime.AfterScope` zurück. Schaltflächen besitzen unmittelbares Hover-Feedback (`hover_bg` / `_glide_hover_bg`) und klare Aktivitätsmarkierungen (`set_button_active`).
+- **B03 – Unterbrechbare, ergonomische Übergänge:** Visuelle Animationen und Übergänge dauern höchstens 150 ms (`motion.Transitions`) und brechen bei Fensterschließung über den Lebenszyklus sauber ab.
+- **B10 / B12 / B14 – Semantische Symbole:** Standardisierte Glyphen (`▸`, `◈`, `≣`, `☷`, `⤓`, `«`, `»`, `☰`, `▴`, `▾`, `✓`) mit fester Bedeutung und Tastaturbedienung über Pfeiltasten.
+- **Kontrast & Typografie (WCAG 2.2 AA):**
+  - Normaler UI-Text erreicht mindestens **4,5:1** Kontrastverhältnis zum Hintergrund über alle 6 Themes (`dark`, `light`, `contrast-dark`, `contrast-light`, `minimal-dark`, `minimal-light`).
+  - Große Schrift (Titel, Akkordkarten) und Platzhalter erreichen mindestens **3:1**.
+  - Farbenfehlsichtigkeit (CVD): Okabe-Ito-Palette sichert Unterscheidbarkeit bei Deuteranopie, Protanopie und Tritanopie.
+
+---
+
+## 3. Schutz der STEPS-Markenidentität & Domänengrenze
+
+Glide Shell fungiert ausschließlich als neutrales technisches Desktop-Fundament. Die musikalische Fachdomäne und Markenidentität gehören ungeteilt zu **STEPS**:
+
+1. **Reiner Musikkern (`src/steps/`):**
+   - Völlig frei von `tkinter`, `ttk`, `glide_shell` und `app/`.
+   - Reine, deterministische und testbare Musiktheorie: Akkorde, Voicings, Stimmführung, Skalen, MIDI-Export und rationale Zeitmodelle.
+2. **Markenzeichen & Identität:**
+   - STEPS-Wortmarke und App-Icon ([`app/brand.py`](../../app/brand.py), [`design/brand/`](../../design/brand/)).
+   - Spezifische harmonische Farbakzente für Tonika (`#60A5FA` / `#2563EB`), Subdominante (`#34D399` / `#047857`) und Dominante (`#F87171` / `#DC2626`).
+3. **Ausdrücklich ausgeschlossen:**
+   - Keine Übernahme von Glide-To-do-Fachlogik (`ListApp`, `.glideexchange`, `GLIDE_DATA_DIR`).
+   - Keine Glide-Icons, Gismo-Maskottchen oder Glide-spezifischen Primärfarben (`#9E4AC8`).
+
+---
+
+## 4. Automatisierte Nachweise & Verifikation
+
+- **Kontrastprüfung:** `tests/test_theme_tokens.py` verifiziert mathematisch WCAG 2.2 AA ($\ge 4{,}5:1$) für alle 6 Themes.
+- **Shell-Selbsttest:** `tests/test_glide_shell_integration.py` führt alle 13 Checks der Glide Shell aus.
+- **Geometrie & Schutz:** B15-Buttonschutz, 64-px-Symbolleiste, Tastaturbedienung und Kompaktmodus sind in `test_glide_shell_integration.py` automatisiert abgedeckt.
+- **Laufzeit-Isolation:** AST-Prüfungen sichern die Importfreiheit von `src/steps/`.
