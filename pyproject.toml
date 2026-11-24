@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "steps-music"
-version = "0.2.0.dev0"
+version = "0.8.0.dev0"
 description = "STEPS – Reine, testbare Musik- & Harmonielehre und Desktop Applikation"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -30,15 +30,19 @@ classifiers = [
 [project.scripts]
 steps = "app.main:main"
 
+[project.gui-scripts]
+steps-desktop = "app.start:main"
+
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["app*", "design*", "src*", "knowledge", "knowledge.sources"]
-exclude = ["tests*"]
+include = ["app*", "design*", "glide_shell*", "src*", "knowledge", "knowledge.sources"]
+exclude = ["tests*", "src.Glide-Shell-Framework*"]
 namespaces = false
 
 [tool.setuptools.package-data]
 app = ["locales/*.json", "assets/brand/*"]
 "design.tokens" = ["tokens.json"]
+glide_shell = ["SHELL_MANIFEST.json", "LICENSE", "*.md"]
 "src.steps" = ["py.typed", "progression/*.json"]
 "knowledge.sources" = ["registry.yaml"]
 

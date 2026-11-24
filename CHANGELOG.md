@@ -1,7 +1,96 @@
 # Änderungsprotokoll
 
-## Unreleased – App und Python-Kern
+## Unreleased – 0.8.0-dev (2026-11-24)
 
+### Hinzugefügt / Geändert
+- **Universelle Glide-Flächenkomponenten (`RoundedSurfaceCard`) & einheitliche Abstände:**
+  - Austausch sämtlicher verbliebener eckiger `tk.Frame`-/`tk.LabelFrame`-Container durch `RoundedSurfaceCard` (`ThemeManager.make_surface_card`) in Hauptfenster (`sidebar_frame`, `sidebar_rail_frame`, `toolbar_card`, `prog_frame`, `info_header_card`, `detail_frame`), `NextChordPanel`, `ReviewedProgressionLibraryDialog` (`top_card`, `list_frame`, `preview_frame`, Akkord-Vorschaukarten), `VoiceLeadingLabDialog` (`nav_card`, Vergleichspanels) und `MidiExportOptionsDialog` (Optionsgruppen).
+  - Eckensicheres Innen-Inset (`_min_corner_inset`, `_effective_pad_x`, `_effective_pad_y`) und Live-Geometrie-Synchronisation bei `set_theme(...)`, sodass innere Widgets bei allen Rundungsstufen (`large` 18px, `standard` 12px, `subtle` 6px, `flat` 0px) sauber innerhalb der gerundeten Kontur liegen.
+  - Beseitigung innerer rechteckiger Rahmen um `tk.Listbox` (`chord_listbox`, `candidates`) und schreibgeschützte `tk.Text`-Vorschauen (`configure_readonly_preview` nutzt `highlightbackground=colors.bg_surface` und behält `highlightcolor=colors.border_focus` für Tastaturfokus); `PianoRoll` zeichnet einen gerundeten Canvas-Hintergrund (`rounded_rect_points`).
+  - Durchgehende `8 px` (`sp.sm`) Abstände zwischen allen Karten und `PanedWindow`-Teilern (`MainWindow`, `NextChordPanel`, `ReviewedProgressionLibraryDialog`, `VoiceLeadingLabDialog`) sowie kontraststarke Mischfarben (`_blend_hex`) für lesbare Beschriftungen auf deaktivierten `RoundedButton`-Schaltflächen.
+- **Glide-Kopfzeile, macOS Dock-Symbol & zweispaltige Einstellungen (`AppearanceDialog`):**
+  - Seitenleisten-Toggle (`◧`) und Einstellungen-Button (`⚙`) oben rechts in der Kopfzeile sowie beschrifteter Einklappen-Button (`«  Einklappen` / `«  Collapse`) unten links in der Seitenleiste.
+  - macOS Dock-Icon nutzt `MACOS_ICON_SHARE = 824 / 1024` in `app/brand.py` für plattformkonforme Randabstände auf Apple-Systemen.
+  - Zweispaltiger Glide-Einstellungsdialog mit abgerundeten Auswahlfeldern (`GlideOptionSelector`), Farb-Swatches, `AccentMonogramTile`, Sprachwahl (`system` / `de` / `en`) und Echtzeit-Vorschau.
+- **Eigenständiger Desktop-Startweg außerhalb von DAW-Software:**
+  - `app/start.py` (`bytecode_cache_dir()`, `check_python_version()`, `ensure_repo_on_path()`), `app/__main__.py` (`python3 -m app`), `STEPS.pyw`, ausführbares `STEPS.command` (macOS Finder) und `[project.gui-scripts]` `steps-desktop = "app.start:main"` in `pyproject.toml`.
+- **Versionierung:** Anhebung von Paket (`0.8.0.dev0`), App (`0.8.0-dev`) und Dokumentation.
+
+## [0.7.0-dev] - 2026-11-24
+
+### Hinzugefügt / Integriert
+- **Vollständige Glide-Anpassungsparität (10 Themes, 10 Hintergründe, 8 Akzente, Einstellungen-Persistenz):**
+  - **10 kanonische Glide-Themes:** Integration aller 10 Designs aus Glide v1.0.2 in `tokens.json` und `ThemeManager`:
+    - `dark`: Dunkel
+    - `light`: Hell
+    - `glass-dark`: Liquid Glass · dunkel
+    - `glass-light`: Liquid Glass · hell
+    - `dopamine`: Dopamin · kräftige Farben
+    - `contrast-dark`: Kontrast dunkel (Okabe-Ito CVD)
+    - `contrast-light`: Kontrast hell (Okabe-Ito CVD)
+    - `minimal-dark`: Minimal dunkel (reine Helligkeitsabstufung)
+    - `minimal-light`: Minimal hell
+    - `pixel`: Pixel · Blockfarben
+    - Sowie systemkonformer Automatik-Modus (`system`) mit Paarauflösung über `glide_shell.system_appearance.resolve`.
+  - **Akzentfarben-Anpassung (`accent_color`):** Freie Wahl der Akzentfarbe (`accent` Lila, `clear` Blau, `due_action` Türkis, `export` Grün, `flag` Gelb, `delete` Rot, `import` Braun, `muted` Kontrastgrau) mit dynamischer Berechnung der invertierten Textfarbe für garantierte WCAG 2.2 AA Kontraste ($\ge 4{,}5:1$).
+  - **10 Hintergrund-Farbtöne:** Vollständige Auswahl aus Designvorgabe (`default`), Wie Fensterfläche (`surface`), Lila (`accent`), Blau (`clear`), Türkis (`due_action`), Grün (`export`), Gelb (`flag`), Rot (`delete`), Braun (`import`) und Kontrastgrau (`muted`).
+  - **Einstellungs-Persistenz (`app/settings.py`):** Atomare, plattformkonforme Persistenz aller Benutzereinstellungen (`settings.json`) unter `platform_data_dir("STEPS")` mit Umgebungs-Override `STEPS_DATA_DIR` für isolierte Tests (Regel WA-49/WA-50, Regel 10).
+  - **Erweiterter AppearanceDialog:** Modaler Dialog mit Canvas-Scrollbar (`ThemedAutoScrollbar`), zweispaltigem Aufbau, Echtzeit-Vorschaukarte (`RoundedSurfaceCard`, `RoundedButton`, Titel, Untertitel, Akzentknopf, Hintergrund-Insel), Schaltern für Schriftgewicht, bewegte Rückmeldung (≤ 150 ms nach B03) und ergänzende Hinweise (B06).
+  - **Hauptfenster-Menüs:** Vollständige Menüs unter Einstellungen für Sprache, Design (10 Varianten), Akzentfarbe (8 Töne), Hintergrund (10 Töne), Rundung (4 Stufen), Schriftgröße (3 Stufen) und Schriftgewicht (3 Stufen).
+  - **Glide-Design-Komponenten überall:**
+    - `RoundedButton` als Standard-Buttonkomponente mit abgerundeten Ecken, fließendem Übergang zur Trägerfläche (`carrier_bg`), echten Theme-Tokens, Tastaturfokusring und Hover-/Active-Feedback plattformübergreifend auf allen Betriebssystemen (macOS, Windows, Linux).
+    - `ThemedAutoScrollbar` in allen Dialogen und Bereichen (`ReviewedProgressionLibraryDialog`, `VoiceLeadingLabDialog`, `NextChordPanel`, `AppearanceDialog`, `MainWindow`).
+    - Vollständige Beseitigung aller verbliebenen Vor-Glide-Hex-Farbcodes (`#121319`, `#1E222C`, `#F3F1ED`, `#60A5FA` etc.) zugunsten der kanonischen Glide Shell 0.6.2 / Glide v1.0.2 Design-Tokens.
+  - **Trägerflächen-Hierarchie (B17/B19):** Saubere Trennung von Fenstergrund (`colors.bg_window` als Trägerinsel), Inhaltskarten (`RoundedSurfaceCard` mit `colors.bg_surface` und `corner_radius`) und Unterleisten ohne unruhige Schmuckelemente.
+  - **Fenstergeometrie-Persistenz & CLI-Parität:** Speicherung und Wiederherstellung der Hauptfenstergeometrie (`window_geometry`) und Kompaktmodus-Geometrie (`saved_compact_geometry`) gemäß B15; CLI-Option `--theme` akzeptiert alle 10 Glide-Designs.
+- **Versionierung:** Anhebung von Paket (`0.7.0.dev0`), App (`0.7.0-dev`) und Dokumentation.
+
+## [0.6.0-dev] - 2026-11-24
+
+### Hinzugefügt / Integriert
+- **Vollständiges Glide-Designsystem (Tokens & Paletten):**
+  - Alle vorherigen STEPS-Design-Tokens in `design/tokens/tokens.json` wurden vollständig durch die kanonischen Farbwerte, Schriftgrößen, Abstände und Rundungen aus Glide v1.0.2 (`app.pyw`, `ui_design.py`) überschrieben.
+  - **Dunkelmodus (`dark`):** Glide Canvas (`#111113`), Card Surface (`#1C1C1E`), Active/Field (`#2C2C2E`), Border (`#3A3A3C`), Text (`#F5F5F7`), Muted (`#A1A1A6`), Placeholder (`#939398`), Akzent/Auswahl (`#C66CF3`), Export/Bestätigen (`#30D158`), Löschen/Warnung (`#FF5950`), Cyan (`#40C8E0`), Blau (`#2C95FF`), Gelb (`#FFC038`).
+  - **Hellmodus (`light`):** Glide Canvas (`#F5F5F7`), Card Surface (`#FFFFFF`), Hover (`#D8E9FE`), Active/Line (`#E5E5EA`), Border (`#D8D8DE`), Text (`#15243C`), Muted (`#6E6E73`), Placeholder (`#707074`), Akzent/Auswahl (`#9E4AC8`), Export/Bestätigen (`#22813A`), Löschen/Warnung (`#D43128`), Cyan (`#227B8B`), Blau (`#086FD6`), Orange (`#A35F00`).
+  - **Kontrast- und Minimal-Themes:** Reines Okabe-Ito-Kontrastpaar und ruhige Helligkeitsabstufung der Minimal-Designs.
+  - Alle Paletten sind mathematisch nachgewiesen WCAG 2.2 AA konform ($\ge 4{,}5:1$ Fließtext).
+- **ThemedAutoScrollbar:**
+  - Austausch nativer OS-Scrollbars durch `glide_shell.custom_controls.ThemedAutoScrollbar` für Akkordliste und Detailansicht im Hauptfenster.
+  - Theme-Farbübernahme (`bg_surface`, `bg_surface_hover`, `border`, `harmonic_tonic`) mit abgerundeten Daumen und automatischem Ausblenden bei vollständiger Sichtbarkeit.
+- **Dynamische Typografie & Skalierung:**
+  - `apply_theme` aktualisiert alle Fensterelemente (Titel, Untertitel, Überschriften, Formularbeschriftungen, Radiobuttons, Eingabefelder, Aktionsknöpfe, Listen und Textansichten) dynamisch mit den über `font_scale` skalierten Schriftgrößen.
+- **Versionierung:** Anhebung von Paket (`0.6.0.dev0`), App (`0.6.0-dev`) und Dokumentation.
+
+## [0.5.0-dev] - 2026-11-24
+
+### Hinzugefügt / Integriert
+- **Glide Anpassungs-Parität & Customization:** Vollständige Parität zu den Anpassungsmöglichkeiten der Glide Shell:
+  - Neuer modaler Dialog „Erscheinungsbild anpassen…“ (`AppearanceDialog`, Tastaturkürzel `⌘`/`Ctrl+,`) mit interaktiver Live-Vorschau (`RoundedSurfaceCard`, `RoundedButton`).
+  - 9 wählbare Hintergrund-Farbtöne (`default`, `surface`, `accent`, `clear`, `due_action`, `export`, `flag`, `delete`, `muted`) mit intelligenter Farbtönung (`with_background`), die den Lesekontrast nach WCAG 2.2 AA ($\ge 4{,}5:1$) garantiert.
+  - Einstellbare Eckenrundung: Standard (12 px), Groß (18 px), Dezent (6 px), Scharf (0 px) für alle Trägerkarten und Aktionsknöpfe.
+  - Dynamische Schriftgrößenskalierung: Kompakt (90 %), Standard (100 %), Groß (115 %).
+  - Canvas-basierte Widgets mit echten abgerundeten Ecken (`RoundedSurfaceCard`, `RoundedButton`) auf Basis von `glide_shell.custom_controls.rounded_rect_points`.
+  - Vollständige Menüintegration unter Einstellungen mit Submenüs für Design, Farbton, Rundung und Schriftgröße (ausgerichtete Häkchen nach D71).
+  - 100 % zweisprachige Lokalisierung (DE/EN) aller Anpassungsoptionen ohne wortwörtliche GUI-Texte.
+- **Tests & Qualität:** 15 neue Unittests für Custom-Widgets, Farbkontrast, Eckenrundung und Schrifttypografie (`tests/test_custom_widgets.py`, `tests/test_theme_tokens.py`, `tests/test_glide_shell_integration.py`).
+- **Versionierung:** Anhebung von Paket (`0.5.0.dev0`), App (`0.5.0-dev`) und Dokumentation.
+
+## [0.4.0-dev] - 2026-11-24
+
+### Hinzugefügt / Integriert
+- **Glide Designsystem & Themes:** Vollständige Integration des portablen Glide-Designvertrags ([`docs/design/GLIDE_DESIGN_CONTRACT.md`](docs/design/GLIDE_DESIGN_CONTRACT.md)) mit 6 barrierefreien Themes (`dark`, `light`, `contrast-dark`, `contrast-light`, `minimal-dark`, `minimal-light`) plus automatischer Systemerkennung (`glide_shell.system_appearance`).
+- **Farben & Barrierefreiheit (WCAG 2.2 AA):** Alle Paletten in `design/tokens/tokens.json` erfüllen mathematisch nachgewiesen $\ge 4{,}5:1$ Kontrast für Fließtext und $\ge 3:1$ für Großschrift/Platzhalter. Kontrast-Themes nutzen Okabe-Ito CVD-sichere Akzente für harmonische Funktionen (Tonika, Subdominante, Dominante, Alteriert, Moll); Minimal-Themes bieten ruhige Graustufen-Differenzierung nach Helligkeitsabstand.
+- **Flächen-Hierarchie:** Saubere Schichtung aus Fensterhintergrund (`bg_window`), Trägerkarten (`bg_surface`, 1px Rand, `FLAT`), aktiver Auswahl (`bg_active`) und Hover-Flächen (`bg_surface_hover`).
+- **Buttons & Schutz (B15, D63):** Unmittelbares Button-Hover-Feedback, aktive Tastenmarkierung (`set_button_active`), 24-Zeichen-Beschriftungsbegrenzung (`clip_button_text`) gegen Textüberlauf sowie Flachrelief mit Fokusrahmen.
+- **Texte & Menüs (D71, B11):** Bündig ausgerichtete Menühäkchen (`aligned_menu_markers`), D66-Metrikenzeile mit Tonart, Tongeschlecht, BPM und Taktart, zweisprachige Lokalisierung (DE/EN) aller neuen Themes.
+- **2-Pane Shell & Breakpoints:** Einklappbare Seitenleiste (200px breit / 64px Symbol-Rail / ausgeblendet), responsive Dichte-Breakpoints (Header 1120/900, Höhe 850/780, Auto-Rail < 760), Kompaktmodus (`520 × 720` bis `480 × 560`) mit Geometriewiederherstellung.
+- **Tests & Qualität:** 10 neue Design- und Kontrasttests in `tests/test_theme_tokens.py` und 9 Integrationsprüfungen in `tests/test_glide_shell_integration.py`.
+- **Versionierung:** Upgrade von Paket (`0.4.0.dev0`), App (`0.4.0-dev`) und Dokumentation.
+
+## [0.3.0-dev] - 2026-11-23
+
+- Die Entwicklungs- und Paketversion für STEPS wurde nach der Migration auf `glide_shell` `0.6.2` auf `0.3.0-dev` (`0.3.0.dev0` in `pyproject.toml` und `src/steps/__init__.py`, `CURRENT_APP_VERSION` in `src/steps/storage/project_io.py`) sowie in der Dokumentation aktualisiert.
+- Die Desktop-Anwendung baut produktiv auf der übernommenen `glide_shell` (`0.6.2` aus Glide `v1.0.2`, Commit `7dcd8dc04366f88943fa17827882cef4d81421b8`, System `V1.86`, MPL-2.0) auf (`app_host.AppHost`, `modal_session`, `window_lifetime`, `window_geometry`, `system_appearance`, `custom_controls`, `desktop_adapter`, `text_fit`, portabler Designvertrag `DESIGN_RICHTLINIEN.md` inkl. WCAG-AA-Kontrastanpassung für `harmonic_subdominant` im Light-Mode sowie Agenten-Skills).
 - Die Musikprüfung stellt reproduzierbare Zufallsfragen zu acht Bereichen. Septakkord-Umkehrungen und eindeutige Dominantstufen wurden korrigiert.
 - Roadmap, Implementierungsstand, 1.0-Zielbild und Aufgabenregister beschreiben den Stand nach PR #265 mit Etappen bis 1.0. Eine Prüfung relativer Markdown-Links läuft in der CI. Issue-Vorlagen verwenden eine versionierte Label-Taxonomie.
 

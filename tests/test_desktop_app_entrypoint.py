@@ -288,8 +288,9 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
                 yield from widgets(child, kind)
 
         def button(parent, key):
+            from app.ui.custom_widgets import RoundedButton
             return next(
-                widget for widget in widgets(parent, (tk.Button, ttk.Button))
+                widget for widget in widgets(parent, (tk.Button, ttk.Button, RoundedButton))
                 if widget.cget("text") == i18n.translate(key)
             )
 
@@ -659,7 +660,7 @@ class TestDesktopAppEntrypoint(unittest.TestCase):
             nested_export._close()
             nested_export._close()
             self.assertEqual(root.grab_current(), lab)
-            rolls = list(widgets(lab, tk.Canvas))
+            rolls = [c for c in widgets(lab, tk.Canvas) if type(c).__name__ == "PianoRoll"]
             self.assertEqual(len(rolls), 2)
             self.assertTrue(all(roll.find_withtag("note") for roll in rolls))
             event_selector, zoom_selector, _, selector = widgets(lab, ttk.Combobox)

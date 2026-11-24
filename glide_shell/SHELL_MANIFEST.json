@@ -1,0 +1,33 @@
+{
+  "paket": "glide_shell",
+  "shell_version": "0.6.2",
+  "glide_system_version": "1.86",
+  "quell_commit": "7dcd8dc04366f88943fa17827882cef4d81421b8",
+  "quelle_unveraendert": true,
+  "lizenz": "MPL-2.0",
+  "dateien": {
+    "AI_GUIDE_NEW_PROJECTS.md": "266115044d2546a9ec9d946b1f38aae3213bb87a1b4da8dbe24565ae87439a29",
+    "DESIGN_RICHTLINIEN.md": "0b024754199bedac277bda6d290542877dfc25e0596a8b7d1e3491609b837326",
+    "KI_ANLEITUNG_NEUE_PROJEKTE.md": "92dd32d3a4ad6c33236c30c739d7174d7af79af896f71b53e409eb0acc0318dc",
+    "README.de.md": "bdec47c31ff7bc2b75a158070c584eed42fe4ead2b5ee8535cafcdad36a72bf8",
+    "README.md": "0af225be82eb8d4ffa54bdbac1be8abe5acfe5d873d2155b8fceb55edbec3c02",
+    "STARTPROMPT_KI.md": "7b36efc84ea139a3c2812589ad045c2dfcdb224754f9026d7f1e665dc4216f29",
+    "__init__.py": "f660e1caa0e840bdf5599abfb1603586ad031f25b85cbe029c5589397c25b367",
+    "action_picker.py": "475d03b02cdfae6df751b865a29a4a942c359049a241a0026d32ba318128082e",
+    "app_host.py": "e91ba9efbb153f3f6f5116ef9501a7141ff37afefbe9ef4e6f4a35a61025eb4c",
+    "command_history.py": "a3fb332e672c1b2e2a1d899d8c4297e513967d1ce01c06a18990dddea67dd697",
+    "custom_controls.py": "b7947241b10e546eb81e11c11eb9cfd9daf90a3da80e88068b61e0662015bdcc",
+    "demo.py": "2f141a2558b0481a81c13fa110811f04e3ff311c29ee908d376a5c5987cb133b",
+    "desktop_adapter.py": "12c80d3cd965397ce9d9caf4016e1fe6399fca303eadd6260538c75fdd167eb9",
+    "modal_session.py": "5c8d815e4a734cc622b7a24cd661faaa7f40c108ebadd3e910c8b3ad8c067111",
+    "motion.py": "3879f4217b52eab77a780bd45aae0cc647b28dc496079127d7e29a5c5e8fa8c4",
+    "redo_history.py": "7387dbf7194f8d19891ed644dea134bf5f28e1367bba7c35df0e59947b2b564c",
+    "runtime_paths.py": "7b7918aef6774c7b65caaf6da4a92ef7587953542996c69a700f10db3c021697",
+    "selftest.py": "fc344fee4dad10fdda85e5b3078f2932264a811546fc4d575bd950117cb4f724",
+    "system_appearance.py": "96e51c767c2db73491ae9d3b98058ec0a9d2b2c5d95ded554722ee983a754251",
+    "text_fit.py": "72f785d92c73c8b99551c35e1ad36ece266d898c556f038bdd0c5484760980c9",
+    "window_geometry.py": "9a1c506ab023b892e3ef3110e6208cc9d84b768e86bffee5e8332b68cb70708d",
+    "window_lifetime.py": "76840fa1dfb286967dbcf26e90a955f5f40e9cf3dbbc4e4e3de9fca81c13f849",
+    "LICENSE": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04"
+  }
+}

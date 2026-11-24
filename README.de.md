@@ -134,6 +134,17 @@ print(chord.symbol, int(chord.bass.pitch_class))
 Im Beispiel bezeichnet deutsches B den Ton B♭ mit Tonklasse 10. Die
 [API-Verträge](docs/theory/API_VERTRAEGE.md) erläutern die Eingabekonventionen.
 
+Um STEPS eigenständig als Desktop-Anwendung **außerhalb einer DAW** zu starten (mit automatischer Python-Versionsprüfung und Bytecode-Cache im Benutzer-Cache-Ordner), stehen folgende Startwege bereit:
+
+```sh
+python3 -m app           # Empfohlener Modulstart (app.start)
+python3 STEPS.pyw        # Fensterloser Python-Desktop-Starter
+./STEPS.command          # Doppelklickbarer macOS-Finder-Starter
+steps-desktop            # GUI-Skript nach Paketinstallation
+```
+
+Alternativ startet `python3 -m app.main` oder `steps` direkt in einer Umgebung mit Tk und grafischer Anzeige.
+
 Prüfen, ob dein Checkout in Ordnung ist:
 
 ```sh
@@ -185,7 +196,7 @@ Fehler und Wünsche nimmt der [Issue-Bereich](https://github.com/n05a-design/ste
 
 ## Entwicklung und Qualität
 
-[VERSION](VERSION) nennt den Entwicklungsstand, [`src.steps.__version__`](src/steps/__init__.py) die Python-Paketversion.
+[VERSION](VERSION) nennt den Entwicklungsstand (`0.8.0-dev`), [`src.steps.__version__`](src/steps/__init__.py) die Python-Paketversion (`0.8.0.dev0`). Die Desktop-Anwendung baut produktiv auf [`glide_shell/`](glide_shell/__init__.py) (`0.6.2`, aus Glide `v1.0.2`) mit responsivem 2-Bereiche-Layout, durchgehenden Glide-`RoundedSurfaceCard`-Flächen und `RoundedButton`-Bedienelementen, 10 barrierefreien Glide-Themes, Akzentfarben, 10 Hintergrund-Farbtönen, einstellbarer Eckenrundung, Schriftgrößenskalierung, Einstellungen-Persistenz und modalem Erscheinungsbild-Dialog auf.
 
 - [An STEPS arbeiten](CONTRIBUTING.md) · [Arbeitsregeln für Agenten](AGENTS.md) · [GitHub und CI](.github/GITHUB_UND_CI.md)
 - [Implementierungsstand](docs/IMPLEMENTATION.md) · [Python-API](docs/theory/API.md) · [Testanleitung](tests/README.md)

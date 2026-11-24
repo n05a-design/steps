@@ -71,7 +71,7 @@ See the [implementation status](docs/IMPLEMENTATION.md) for precise behavior and
 
 ## Status and scope
 
-- `v0.1.0` is the latest public release. A macOS development bundle can be built locally. Distribution approval and the 1.0 scope and date remain open.
+- `v0.1.0` is the latest public release. Current development version is `0.8.0-dev` (`0.8.0.dev0`), with the desktop application running on the integrated `glide_shell` `0.6.2` (from Glide `v1.0.2`) with responsive 2-area layout, universal `RoundedSurfaceCard` containers and `RoundedButton` controls, 10 accessible Glide themes, UI accent colors, 10 background tints, adjustable corner radius, font scaling, user settings persistence, and modal appearance customization. A macOS development bundle can be built locally. Distribution approval and the 1.0 scope and date remain open.
 - Project open/save exists in the prototype; native file-dialog, recovery, accessibility, and platform acceptance remain open. Automated MIDI tests do not establish DAW interoperability.
 - English/German catalogs and persisted language selection exist; independent translation acceptance remains open.
 - There is no in-app audio playback or MIDI import, and no user-study evidence for learning outcomes or product-market fit.
@@ -93,7 +93,16 @@ Export the prototype's initial progression to an SMF file:
 python3 -m app.main --export-midi /tmp/steps-progression.mid
 ```
 
-To open the Tkinter prototype, run `python3 -m app.main` in an environment with Tk and a graphical display. A source checkout is not the same as a published desktop installer.
+To open the standalone STEPS desktop app directly outside any DAW (redirecting bytecode cache cleanly to the OS user cache folder), use any of the following launch paths:
+
+```sh
+python3 -m app           # Recommended module entrypoint (app.start)
+python3 STEPS.pyw        # Windowless Python launcher
+./STEPS.command          # Double-clickable macOS Finder / Terminal launcher
+steps-desktop            # GUI script after pip install
+```
+
+You can also run `python3 -m app.main` or `steps` directly in an environment with Tk and a graphical display. A source checkout is not the same as a published desktop installer.
 
 To build and inspect the existing Python wheel artifact without installing it into the repository environment:
 

@@ -9,7 +9,8 @@ from tkinter import messagebox, ttk
 
 from app.i18n import LocaleManager
 from app.ui.session_controller import ProgressionSessionController
-from app.ui.theme import ThemeManager, create_button
+from app.ui.theme import ThemeManager, create_button, retheme_button, style_surface_card
+from glide_shell.custom_controls import ThemedAutoScrollbar
 from src.steps.progression.reviewed import Citation, PublicationError, resolve_source_citation
 from src.steps.progression.session import ChordRecommendation
 from src.steps.theory.exceptions import MusicTheoryError
@@ -39,55 +40,110 @@ class NextChordPanel:
         self._recommendations: list[ChordRecommendation] = []
         self._context: tuple[int, int] | None = None
         self._comparison_index: int | None = None
+        self._theme = theme
         colors, spacing = theme.colors, theme.spacing
 
         self.explore_button = create_button(
             toolbar, text="", command=self.explore, bg=colors.bg_active,
-            fg=colors.text_primary, relief=tk.FLAT, padx=spacing.sm,
+            fg=colors.text_primary, hover_bg=colors.bg_surface_hover, relief=tk.FLAT, padx=spacing.sm,
         )
         self.explore_button.pack(side=tk.RIGHT, padx=spacing.xs)
-        frame = tk.Frame(content, bg=colors.bg_surface, bd=0)
-        frame.pack(side=tk.RIGHT, fill=tk.Y, padx=(0, spacing.sm), pady=spacing.sm)
+        frame = theme.make_surface_card(
+            content,
+            radius=theme.corner_radius,
+            padding=spacing.xs,
+        )
+        frame.pack(side=tk.RIGHT, fill=tk.Y, padx=(spacing.sm, 0), pady=0)
+        self._frame = frame
         frame.columnconfigure(0, weight=1)
         frame.rowconfigure(1, weight=1)
         self._heading = tk.Label(
-            frame, text="", font=("Helvetica", 10, "bold"),
+            frame.inner, text="", font=("Helvetica", 10, "bold"),
             fg=colors.harmonic_dominant, bg=colors.bg_surface,
         )
         self._heading.grid(row=0, column=0, columnspan=2, sticky="ew", pady=(0, spacing.xs))
         self.candidates = tk.Listbox(
-            frame, font=("Helvetica", 11),
-            bg=colors.bg_window, fg=colors.text_primary,
+            frame.inner, font=("Helvetica", 11),
+            bg=colors.bg_surface, fg=colors.text_primary,
             selectbackground=colors.harmonic_tonic, selectforeground=colors.text_inverted,
-            highlightthickness=2, highlightbackground=colors.border,
+            highlightthickness=2, highlightbackground=colors.bg_surface,
             highlightcolor=colors.border_focus, relief=tk.FLAT, activestyle="dotbox",
             exportselection=False, takefocus=False, height=8, width=36,
         )
-        scrollbar = tk.Scrollbar(
-            frame, orient=tk.VERTICAL, command=self.candidates.yview, takefocus=False,
+        scrollbar = ThemedAutoScrollbar(
+            frame.inner,
+            bg_color=colors.bg_surface,
+            track_color=colors.bg_surface_hover,
+            thumb_color=colors.border,
+            active_thumb_color=colors.harmonic_tonic,
+            width=10,
+            radius=5,
+            orient="vertical",
         )
+        scrollbar.set_command(self.candidates.yview)
+        self._scrollbar = scrollbar
         self.candidates.configure(yscrollcommand=scrollbar.set)
         self.candidates.grid(row=1, column=0, sticky="nsew", padx=(spacing.xs, 0))
         scrollbar.grid(row=1, column=1, sticky="ns")
         self.candidates.bind("<<ListboxSelect>>", self._selection_changed)
         self.candidates.bind("<Return>", self._apply_shortcut)
         self.apply_button = create_button(
-            frame, text="", command=self.apply, bg=colors.harmonic_tonic,
+            frame.inner, text="", command=self.apply, bg=colors.harmonic_tonic,
             fg=colors.text_inverted, relief=tk.FLAT, padx=spacing.sm, state=tk.DISABLED,
         )
         self.apply_button.grid(row=2, column=0, columnspan=2, sticky="e", pady=(spacing.xs, 0))
         self.comparison_button = create_button(
-            frame, text="", command=self._toggle_comparison, bg=colors.bg_active,
-            fg=colors.text_primary, relief=tk.FLAT, padx=spacing.sm, state=tk.DISABLED,
+            frame.inner, text="", command=self._toggle_comparison, bg=colors.bg_active,
+            fg=colors.text_primary, hover_bg=colors.bg_surface_hover, relief=tk.FLAT, padx=spacing.sm, state=tk.DISABLED,
         )
         self.comparison_button.grid(
             row=3, column=0, columnspan=2, sticky="e", pady=(spacing.xs, 0),
         )
-        self._source_button = ttk.Menubutton(frame, state=tk.DISABLED)
+        self._source_button = ttk.Menubutton(frame.inner, state=tk.DISABLED)
         self._source_menu = tk.Menu(self._source_button, tearoff=False)
         self._source_button.configure(menu=self._source_menu)
         self._source_button.grid(row=4, column=0, columnspan=2, sticky="e", pady=(spacing.xs, 0))
         self.localize()
+
+    def apply_theme(self, theme: ThemeManager) -> None:
+        """Apply updated light/dark Glide surface colors to NextChordPanel widgets."""
+        self._theme = theme
+        colors = theme.colors
+        if hasattr(self._frame, "set_theme") and callable(getattr(self._frame, "set_theme")):
+            self._frame.set_theme(
+                bg_color=colors.bg_surface,
+                fill_color=colors.bg_surface,
+                outline_color=colors.border,
+                radius=theme.corner_radius,
+            )
+        else:
+            style_surface_card(self._frame, colors)
+        self._heading.configure(fg=colors.harmonic_dominant, bg=colors.bg_surface)
+        self.candidates.configure(
+            bg=colors.bg_surface,
+            fg=colors.text_primary,
+            selectbackground=colors.harmonic_tonic,
+            selectforeground=colors.text_inverted,
+            highlightbackground=colors.bg_surface,
+            highlightcolor=colors.border_focus,
+        )
+        if hasattr(self, "_scrollbar") and hasattr(self._scrollbar, "set_theme"):
+            self._scrollbar.set_theme(
+                bg_color=colors.bg_surface,
+                track_color=colors.bg_surface_hover,
+                thumb_color=colors.border,
+                active_thumb_color=colors.harmonic_tonic,
+            )
+        retheme_button(
+            self.explore_button, colors, base_bg=colors.bg_active, base_fg=colors.text_primary,
+        )
+        retheme_button(
+            self.apply_button, colors, base_bg=colors.harmonic_tonic, base_fg=colors.text_inverted,
+            hover_bg=colors.harmonic_tonic,
+        )
+        retheme_button(
+            self.comparison_button, colors, base_bg=colors.bg_active, base_fg=colors.text_primary,
+        )
 
     def localize(self) -> bool:
         """Translate the controls and restore an active, current selection."""

@@ -9,7 +9,7 @@ from typing import Callable, Collection, Literal, Mapping
 from app.i18n import LocaleManager
 from app.ui.dialog_support import ModalDialog
 from app.ui.file_feedback import file_error_reason
-from app.ui.theme import ThemeManager, create_button
+from app.ui.theme import ThemeManager, apply_window_geometry, create_button
 from src.steps.midi.export_service import ADR017_VOICINGS, Adr017ExportPreview, Adr017NoteDuration, Adr017Voicing
 from src.steps.theory.exceptions import MusicTheoryError
 
@@ -49,6 +49,7 @@ class MidiExportOptionsDialog(ModalDialog):
         preview: Callable[[Adr017Voicing, Adr017NoteDuration], Adr017ExportPreview],
     ) -> None:
         self._i18n = i18n
+        self._theme = theme
         self._on_export = on_export
         self._preview = preview
         colors = theme.colors
@@ -61,8 +62,13 @@ class MidiExportOptionsDialog(ModalDialog):
 
         super().__init__(parent)
         self.window.title(translate("midi.options.title"))
-        self.window.geometry("620x650" if voicing_failures else "620x600")
-        self.window.minsize(540, 605 if voicing_failures else 550)
+        apply_window_geometry(
+            self.window,
+            620,
+            650 if voicing_failures else 600,
+            540,
+            605 if voicing_failures else 550,
+        )
         self.window.configure(bg=colors.bg_window)
 
         container = tk.Frame(
@@ -195,28 +201,33 @@ class MidiExportOptionsDialog(ModalDialog):
         colors = self._colors
         spacing = self._spacing
         translate = self._i18n.translate
-        group = tk.LabelFrame(
+        group = self._theme.make_surface_card(
             parent,
-            text=translate(title_key),
-            bg=colors.bg_window,
-            fg=colors.text_secondary,
-            font=self._font,
-            padx=spacing.sm,
-            pady=spacing.xs,
+            radius=self._theme.corner_radius,
+            padding=spacing.xs,
+            auto_height=True,
         )
         group.pack(fill=tk.X, pady=(0, spacing.xs))
+        tk.Label(
+            group.inner,
+            text=translate(title_key),
+            bg=colors.bg_surface,
+            fg=colors.text_secondary,
+            font=self._theme.font_spec(self._theme.typography.size_xs, "bold"),
+            anchor=tk.W,
+        ).pack(fill=tk.X, anchor=tk.W, pady=(0, spacing.xs))
         for value, label_key in options:
             tk.Radiobutton(
-                group,
+                group.inner,
                 text=translate(label_key),
                 variable=variable,
                 value=value,
                 command=command,
                 state=tk.DISABLED if value in disabled_values else tk.NORMAL,
                 anchor=tk.W,
-                bg=colors.bg_window,
+                bg=colors.bg_surface,
                 fg=colors.text_primary,
-                activebackground=colors.bg_window,
+                activebackground=colors.bg_surface,
                 activeforeground=colors.text_primary,
                 selectcolor=colors.bg_active,
                 font=self._font,

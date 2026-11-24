@@ -51,8 +51,8 @@ class TestThemeManager(unittest.TestCase):
         self.tm.set_mode("light")
         self.assertEqual(self.tm.mode, "light")
         colors = self.tm.colors
-        self.assertEqual(colors.bg_window, "#F8F9FA")
-        self.assertEqual(colors.text_primary, "#0F172A")
+        self.assertEqual(colors.bg_window, "#F5F5F7")
+        self.assertEqual(colors.text_primary, "#15243C")
 
     def test_invalid_mode_raises(self):
         with self.assertRaises(ValueError):
@@ -78,16 +78,205 @@ class TestThemeManager(unittest.TestCase):
     def test_wcag_contrast_dark_mode(self):
         self.tm.set_mode("dark")
         c = self.tm.colors
-        # Text primary against surface
-        ratio = contrast_ratio(c.text_primary, c.bg_surface)
-        self.assertGreaterEqual(ratio, 4.5, f"Dark mode contrast {ratio:.2f} is below 4.5:1")
+        for fg_name, bg_name in (
+            ("text_primary", "bg_surface"),
+            ("text_primary", "bg_window"),
+            ("text_primary", "bg_active"),
+            ("text_secondary", "bg_surface"),
+            ("text_secondary", "bg_window"),
+            ("text_inverted", "harmonic_tonic"),
+            ("text_inverted", "harmonic_subdominant"),
+        ):
+            ratio = contrast_ratio(getattr(c, fg_name), getattr(c, bg_name))
+            self.assertGreaterEqual(
+                ratio,
+                4.5,
+                f"Dark mode contrast {fg_name}/{bg_name} = {ratio:.2f} is below 4.5:1",
+            )
 
     def test_wcag_contrast_light_mode(self):
         self.tm.set_mode("light")
         c = self.tm.colors
-        # Text primary against surface
-        ratio = contrast_ratio(c.text_primary, c.bg_surface)
-        self.assertGreaterEqual(ratio, 4.5, f"Light mode contrast {ratio:.2f} is below 4.5:1")
+        for fg_name, bg_name in (
+            ("text_primary", "bg_surface"),
+            ("text_primary", "bg_window"),
+            ("text_primary", "bg_active"),
+            ("text_secondary", "bg_surface"),
+            ("text_secondary", "bg_window"),
+            ("text_inverted", "harmonic_tonic"),
+            ("text_inverted", "harmonic_subdominant"),
+        ):
+            ratio = contrast_ratio(getattr(c, fg_name), getattr(c, bg_name))
+            self.assertGreaterEqual(
+                ratio,
+                4.5,
+                f"Light mode contrast {fg_name}/{bg_name} = {ratio:.2f} is below 4.5:1",
+            )
+
+    def test_system_appearance_and_font_providers(self):
+        self.assertEqual(ThemeManager.resolve_system_mode(system_dark=True), "dark")
+        self.assertEqual(ThemeManager.resolve_system_mode(system_dark=False), "light")
+        self.assertEqual(ThemeManager.resolve_system_mode(system_dark=None, fallback="light"), "light")
+        self.assertEqual(
+            ThemeManager.resolve_system_mode(system_dark=True, preference="contrast-dark"),
+            "contrast-dark",
+        )
+        self.assertEqual(
+            ThemeManager.resolve_system_mode(system_dark=False, preference="contrast-dark"),
+            "contrast-light",
+        )
+        self.assertEqual(
+            ThemeManager.resolve_system_mode(system_dark=True, preference="minimal-light"),
+            "minimal-dark",
+        )
+        self.assertEqual(
+            ThemeManager.resolve_system_mode(system_dark=False, preference="minimal-light"),
+            "minimal-light",
+        )
+        spec = self.tm.font_spec(12, "bold")
+        self.assertEqual(spec[1], 12)
+        self.assertEqual(spec[2], "bold")
+        self.tm.configure_shell_providers()
+
+    def test_all_ten_themes_and_wcag_contrast(self):
+        self.assertEqual(len(ThemeManager.THEMES), 10)
+        for theme_name in ThemeManager.THEMES:
+            self.tm.set_mode(theme_name)
+            self.assertEqual(self.tm.mode, theme_name)
+            colors = self.tm.colors
+            self.assertTrue(colors.bg_window.startswith("#"))
+            self.assertTrue(colors.bg_surface.startswith("#"))
+            self.assertTrue(colors.text_primary.startswith("#"))
+
+            for fg_name, bg_name in (
+                ("text_primary", "bg_surface"),
+                ("text_primary", "bg_window"),
+                ("text_primary", "bg_active"),
+                ("text_secondary", "bg_surface"),
+                ("text_secondary", "bg_window"),
+                ("text_inverted", "harmonic_tonic"),
+                ("text_inverted", "harmonic_subdominant"),
+            ):
+                ratio = contrast_ratio(getattr(colors, fg_name), getattr(colors, bg_name))
+                self.assertGreaterEqual(
+                    ratio,
+                    4.5,
+                    f"Theme {theme_name} contrast {fg_name}/{bg_name} = {ratio:.2f} is below 4.5:1",
+                )
+
+    def test_theme_alias_normalization(self):
+        self.assertEqual(ThemeManager.normalize_theme_name("contrast_dark"), "contrast-dark")
+        self.assertEqual(ThemeManager.normalize_theme_name("minimal_light"), "minimal-light")
+        self.assertEqual(ThemeManager.normalize_theme_name("cvd-dark"), "contrast-dark")
+        self.assertEqual(ThemeManager.normalize_theme_name("high-contrast-light"), "contrast-light")
+        self.tm.set_mode("contrast_dark")
+        self.assertEqual(self.tm.mode, "contrast-dark")
+        self.assertTrue(self.tm.is_dark)
+
+    def test_background_tint_choices_and_contrast(self):
+        from app.ui.theme import BACKGROUND_CHOICES, BACKGROUND_KEYS, with_background
+
+        self.assertIn("default", BACKGROUND_KEYS)
+        self.assertIn("surface", BACKGROUND_KEYS)
+        self.assertIn("accent", BACKGROUND_KEYS)
+        self.assertIn("clear", BACKGROUND_KEYS)
+
+        base_colors = self.tm.colors
+        # default gives identical colors
+        default_colors = with_background(base_colors, "default")
+        self.assertEqual(default_colors.bg_window, base_colors.bg_window)
+
+        # surface matches bg_surface
+        surface_colors = with_background(base_colors, "surface")
+        self.assertEqual(surface_colors.bg_window, base_colors.bg_surface)
+
+        # all background tints produce valid hex and maintain >= 4.5:1 text contrast
+        for choice, _ in BACKGROUND_CHOICES:
+            self.tm.set_background_choice(choice)
+            self.assertEqual(self.tm.background_choice, choice)
+            colors = self.tm.colors
+            self.assertTrue(colors.bg_window.startswith("#"))
+            ratio = contrast_ratio(colors.text_primary, colors.bg_window)
+            self.assertGreaterEqual(
+                ratio,
+                4.5,
+                f"Background choice '{choice}' primary text contrast = {ratio:.2f} < 4.5:1",
+            )
+
+        with self.assertRaises(ValueError):
+            self.tm.set_background_choice("unknown_tint")
+
+    def test_corner_radius_and_font_scale_choices(self):
+        from app.ui.theme import FONT_SCALE_MAP, RADIUS_MAP
+
+        self.assertEqual(self.tm.radius_choice, "standard")
+        self.assertEqual(self.tm.corner_radius, 12)
+
+        for choice, rad in RADIUS_MAP.items():
+            self.tm.set_radius_choice(choice)
+            self.assertEqual(self.tm.radius_choice, choice)
+            self.assertEqual(self.tm.corner_radius, rad)
+
+        with self.assertRaises(ValueError):
+            self.tm.set_radius_choice("invalid_radius")
+
+        self.assertEqual(self.tm.font_scale_choice, "standard")
+        self.assertEqual(self.tm.font_scale, 1.0)
+
+        for choice, scale in FONT_SCALE_MAP.items():
+            self.tm.set_font_scale_choice(choice)
+            self.assertEqual(self.tm.font_scale_choice, choice)
+            self.assertEqual(self.tm.font_scale, scale)
+            spec = self.tm.font_spec(10)
+            self.assertEqual(spec[1], max(6, int(round(10 * scale))))
+
+        with self.assertRaises(ValueError):
+            self.tm.set_font_scale_choice("invalid_scale")
+
+    def test_accent_color_choices_and_contrast(self):
+        from app.ui.theme import ACCENT_CHOICES, ACCENT_KEYS
+
+        self.assertIn("accent", ACCENT_KEYS)
+        self.assertIn("clear", ACCENT_KEYS)
+        self.assertIn("due_action", ACCENT_KEYS)
+        self.assertIn("export", ACCENT_KEYS)
+        self.assertIn("flag", ACCENT_KEYS)
+        self.assertIn("delete", ACCENT_KEYS)
+        self.assertIn("import", ACCENT_KEYS)
+        self.assertIn("muted", ACCENT_KEYS)
+
+        for key, _ in ACCENT_CHOICES:
+            self.tm.set_accent_choice(key)
+            self.assertEqual(self.tm.accent_choice, key)
+            colors = self.tm.colors
+            self.assertTrue(colors.harmonic_tonic.startswith("#"))
+            # Button text on accent must satisfy WCAG AA >= 4.5:1
+            ratio = contrast_ratio(colors.text_inverted, colors.harmonic_tonic)
+            self.assertGreaterEqual(
+                ratio,
+                4.5,
+                f"Accent {key} button text contrast = {ratio:.2f} < 4.5:1",
+            )
+
+        with self.assertRaises(ValueError):
+            self.tm.set_accent_choice("invalid_accent")
+
+    def test_additional_glide_preferences(self):
+        from app.ui.theme import FONT_WEIGHT_KEYS
+
+        for weight in FONT_WEIGHT_KEYS:
+            self.tm.set_font_weight_choice(weight)
+            self.assertEqual(self.tm.font_weight_choice, weight)
+
+        self.tm.set_animations_enabled(False)
+        self.assertFalse(self.tm.animations_enabled)
+        self.tm.set_animations_enabled(True)
+        self.assertTrue(self.tm.animations_enabled)
+
+        self.tm.set_hints_visible(False)
+        self.assertFalse(self.tm.hints_visible)
+        self.tm.set_hints_visible(True)
+        self.assertTrue(self.tm.hints_visible)
 
 
 if __name__ == "__main__":

@@ -7,6 +7,8 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 from tkinter.font import Font
 
+from glide_shell import custom_controls
+
 from app.ui.theme import ThemeColors
 
 
@@ -45,7 +47,7 @@ class PianoRoll(tk.Canvas):
     """Draw notes using the scale shared by both comparison panes."""
 
     def __init__(self, parent: tk.Misc, colors: ThemeColors, label_font: tuple[str, int]) -> None:
-        super().__init__(parent, width=320, height=140, bg=colors.bg_window, highlightthickness=0)
+        super().__init__(parent, width=320, height=140, bg=colors.bg_surface, highlightthickness=0)
         self._colors = colors
         self._label_font = Font(root=self, font=label_font)
 
@@ -68,6 +70,13 @@ class PianoRoll(tk.Canvas):
         self.delete("all")
         if not timings or self.winfo_width() < 64 or self.winfo_height() <= 30:
             return
+        w, h = self.winfo_width(), self.winfo_height()
+        pts = custom_controls.rounded_rect_points(1, 1, w - 1, h - 1, 8)
+        self.create_polygon(
+            pts, smooth=True, splinesteps=20,
+            fill=self._colors.bg_window, outline=self._colors.border, width=1,
+            tags=("roll-backdrop",),
+        )
         low, high = pitch_range
         left = max(28, self._label_font.measure(str(high)) + 8)
         top = 10

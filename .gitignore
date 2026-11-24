@@ -270,3 +270,6 @@ credentials.json
 
 # Local recovery copies for the versioned task register
 /docs/operations/backups/
+
+# Local Glide 1.0.2 reference checkout (not part of the STEPS repo or runtime wheel)
+/src/Glide-Shell-Framework/

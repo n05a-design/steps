@@ -17,9 +17,13 @@ from pathlib import Path
 from tkinter import filedialog, messagebox
 from typing import Literal, Optional
 
-from app.brand import apply_window_icon
+from glide_shell import app_host, custom_controls, desktop_adapter, window_lifetime
+
+from app.brand import apply_window_icon, load_in_app_logo
 from app.i18n import LocaleManager
 from app.knowledge import get_reviewed_progression, list_reviewed_progressions
+from app.ui import layout_policy
+from app.ui.custom_widgets import RoundedSurfaceCard
 from app.ui.dialog_support import configure_readonly_preview
 from app.ui.file_feedback import format_project_file_error
 from app.ui.harmonic_inspector import format_beginner_voicings, format_chord_analysis
@@ -28,10 +32,26 @@ from app.ui.midi_export_dialog import (
     MidiExportOptionsDialog,
     format_midi_file_error,
 )
+from app.settings import load_settings, save_settings
 from app.ui.next_chord_panel import NextChordPanel
 from app.ui.reviewed_library_dialog import ReviewedProgressionLibraryDialog
 from app.ui.session_controller import ProgressionSessionController
-from app.ui.theme import ThemeManager, create_button, default_theme
+from app.ui.theme import (
+    ACCENT_CHOICES,
+    BACKGROUND_CHOICES,
+    FONT_SCALE_CHOICES,
+    FONT_WEIGHT_CHOICES,
+    RADIUS_CHOICES,
+    ThemeManager,
+    apply_window_geometry,
+    create_button,
+    default_theme,
+    retheme_button,
+    set_button_active,
+    style_entry,
+    style_surface_card,
+)
+from glide_shell.custom_controls import ThemedAutoScrollbar
 from app.ui.voice_leading_lab_dialog import (
     VOICE_LEADING_STYLE_OPTIONS,
     VoiceLeadingLabDialog,
@@ -70,6 +90,20 @@ def _portable_filename(title: str, extension: str) -> str:
 class StepsMainWindow:
     """The primary STEPS desktop application window adhering to ADR-001."""
 
+    THEME_OPTIONS: tuple[tuple[str, str], ...] = (
+        ("system", "theme.system"),
+        ("dark", "theme.dark"),
+        ("light", "theme.light"),
+        ("glass-dark", "theme.glass_dark"),
+        ("glass-light", "theme.glass_light"),
+        ("dopamine", "theme.dopamine"),
+        ("contrast-dark", "theme.contrast_dark"),
+        ("contrast-light", "theme.contrast_light"),
+        ("minimal-dark", "theme.minimal_dark"),
+        ("minimal-light", "theme.minimal_light"),
+        ("pixel", "theme.pixel"),
+    )
+
     def __init__(
         self,
         root: tk.Tk,
@@ -83,10 +117,67 @@ class StepsMainWindow:
         self.i18n = locale_manager or LocaleManager()
         self._project_path: Optional[Path] = None
         self._last_midi_export_directory: Path | None = None
+        self._sidebar_visible: bool = True
+        self._sidebar_narrow: bool = False
+        self._compact_state: Optional[dict[str, object]] = None
+        self._saved_compact_geometry: str = ""
+        self._header_density: str = "full"
+        self._height_density: str = "full"
+        self._header_logo_image = None
+
+        # Load persisted appearance and user preferences (Glide parity)
+        self._user_settings = load_settings()
+        if locale_manager is None:
+            saved_lang = self._user_settings.get("language", "system")
+            if saved_lang in ("de", "en", "system"):
+                try:
+                    self.i18n.set_preference(saved_lang, persist=False)
+                except Exception:
+                    pass
+        self.theme.set_background_choice(self._user_settings.get("background_color", "default"))
+        if hasattr(self.theme, "set_accent_choice"):
+            self.theme.set_accent_choice(self._user_settings.get("accent_color", "accent"))
+        self.theme.set_radius_choice(self._user_settings.get("corner_radius", "standard"))
+        self.theme.set_font_scale_choice(self._user_settings.get("font_scale", "standard"))
+        if hasattr(self.theme, "set_font_weight_choice"):
+            self.theme.set_font_weight_choice(self._user_settings.get("font_weight", "standard"))
+        if hasattr(self.theme, "set_animations_enabled"):
+            self.theme.set_animations_enabled(self._user_settings.get("animations_enabled", True))
+        if hasattr(self.theme, "set_hints_visible"):
+            self.theme.set_hints_visible(self._user_settings.get("hints_visible", True))
+        self._theme_preference: str = self._user_settings.get("theme_preference", self.theme.mode)
+
+        saved_geom = str(self._user_settings.get("window_geometry") or "").strip()
+        saved_compact = str(self._user_settings.get("saved_compact_geometry") or "").strip()
+        if saved_compact:
+            self._saved_compact_geometry = saved_compact
 
         self.root.title(self.i18n.translate("app.title"))
-        self.root.geometry("1024x720")
-        self.root.minsize(860, 600)
+        self.theme.configure_shell_providers(self.root)
+        if isinstance(self.root, tk.Misc):
+            restored = False
+            if saved_geom:
+                try:
+                    parsed = layout_policy.window_geometry.parse(saved_geom)
+                    if parsed:
+                        w, h, x, y = parsed
+                        screen_w = int(self.root.winfo_screenwidth())
+                        screen_h = int(self.root.winfo_screenheight())
+                        cw, ch, cx, cy = layout_policy.window_geometry.clamp(
+                            w, h, x, y, screen_w, screen_h, (860, 600)
+                        )
+                        self.root.geometry(layout_policy.window_geometry.format_geometry(cw, ch, cx, cy))
+                        self.root.minsize(860, 600)
+                        restored = True
+                except Exception:
+                    pass
+            if not restored:
+                apply_window_geometry(self.root, 1024, 720, 860, 600)
+            self._lifetime_scope = window_lifetime.scope_for(self.root)
+        else:
+            self.root.geometry("1024x720")
+            self.root.minsize(860, 600)
+            self._lifetime_scope = None
         self._init_file_menu()
 
         # A missing optional icon must not prevent startup.
@@ -99,8 +190,15 @@ class StepsMainWindow:
         self._localize_widgets()
         self._refresh_all()
 
+    def _window_platform(self) -> str:
+        try:
+            windowing = self.root.tk.call("tk", "windowingsystem")
+            return app_host.platform_of(windowing)
+        except Exception:
+            return desktop_adapter.platform_name()
+
     def _init_file_menu(self) -> None:
-        shortcut = "⌘" if sys.platform == "darwin" else "Ctrl+"
+        shortcut = "⌘" if desktop_adapter.is_macos() else "Ctrl+"
         self.menu_bar = tk.Menu(self.root)
         self.file_menu = tk.Menu(self.menu_bar, tearoff=False)
         self.file_menu.add_command(
@@ -146,6 +244,11 @@ class StepsMainWindow:
         for action in (self._on_explore_next, self._on_open_voice_leading_lab, self._on_export_midi):
             self.tools_menu.add_command(label="", command=action)
         self.settings_menu = tk.Menu(self.menu_bar, tearoff=False)
+        self.settings_menu.add_command(
+            label="",
+            command=self._on_open_appearance_dialog,
+            accelerator=f"{shortcut},",
+        )
         self.language_menu = tk.Menu(self.settings_menu, tearoff=False)
         self.language_var = tk.StringVar(self.root, value=self.i18n.preference)
         for preference in ("system", "en", "de"):
@@ -156,19 +259,107 @@ class StepsMainWindow:
                 command=lambda selected=preference: self._on_language_change(selected),
             )
         self.settings_menu.add_cascade(label="", menu=self.language_menu)
+        self.theme_menu = tk.Menu(self.settings_menu, tearoff=False)
+        self.theme_var = tk.StringVar(self.root, value=self._theme_preference)
+        for preference, _ in self.THEME_OPTIONS:
+            self.theme_menu.add_radiobutton(
+                label="",
+                value=preference,
+                variable=self.theme_var,
+                command=lambda selected=preference: self.set_theme_preference(selected),
+            )
+        self.settings_menu.add_cascade(label="", menu=self.theme_menu)
+        self.accent_menu = tk.Menu(self.settings_menu, tearoff=False)
+        self.accent_var = tk.StringVar(self.root, value=getattr(self.theme, "accent_choice", "accent"))
+        for choice, _ in ACCENT_CHOICES:
+            self.accent_menu.add_radiobutton(
+                label="",
+                value=choice,
+                variable=self.accent_var,
+                command=lambda selected=choice: self._on_accent_change(selected),
+            )
+        self.settings_menu.add_cascade(label="", menu=self.accent_menu)
+        self.bg_menu = tk.Menu(self.settings_menu, tearoff=False)
+        self.bg_var = tk.StringVar(self.root, value=self.theme.background_choice)
+        for choice, _ in BACKGROUND_CHOICES:
+            self.bg_menu.add_radiobutton(
+                label="",
+                value=choice,
+                variable=self.bg_var,
+                command=lambda selected=choice: self._on_background_change(selected),
+            )
+        self.settings_menu.add_cascade(label="", menu=self.bg_menu)
+        self.radius_menu = tk.Menu(self.settings_menu, tearoff=False)
+        self.radius_var = tk.StringVar(self.root, value=self.theme.radius_choice)
+        for choice, _, _ in RADIUS_CHOICES:
+            self.radius_menu.add_radiobutton(
+                label="",
+                value=choice,
+                variable=self.radius_var,
+                command=lambda selected=choice: self._on_radius_change(selected),
+            )
+        self.settings_menu.add_cascade(label="", menu=self.radius_menu)
+        self.scale_menu = tk.Menu(self.settings_menu, tearoff=False)
+        self.scale_var = tk.StringVar(self.root, value=self.theme.font_scale_choice)
+        for choice, _, _ in FONT_SCALE_CHOICES:
+            self.scale_menu.add_radiobutton(
+                label="",
+                value=choice,
+                variable=self.scale_var,
+                command=lambda selected=choice: self._on_scale_change(selected),
+            )
+        self.settings_menu.add_cascade(label="", menu=self.scale_menu)
+        self.weight_menu = tk.Menu(self.settings_menu, tearoff=False)
+        self.weight_var = tk.StringVar(self.root, value=getattr(self.theme, "font_weight_choice", "standard"))
+        for choice, _ in FONT_WEIGHT_CHOICES:
+            self.weight_menu.add_radiobutton(
+                label="",
+                value=choice,
+                variable=self.weight_var,
+                command=lambda selected=choice: self._on_weight_change(selected),
+            )
+        self.settings_menu.add_cascade(label="", menu=self.weight_menu)
+        self.settings_menu.add_separator()
+        self.settings_menu.add_command(
+            label="",
+            command=self.toggle_sidebar,
+            accelerator=f"{shortcut}B",
+        )
+        self.settings_menu.add_command(
+            label="",
+            command=self.toggle_sidebar_narrow,
+            accelerator=f"{shortcut}Shift+B",
+        )
+        self.settings_menu.add_command(
+            label="",
+            command=self.toggle_compact_mode,
+            accelerator=f"{shortcut}Shift+K",
+        )
         self.menu_bar.add_cascade(label="", menu=self.settings_menu)
-        self.root.configure(menu=self.menu_bar)
-        self.root.bind("<Control-o>", self._on_open_shortcut)
-        self.root.bind("<Control-s>", self._on_save_shortcut)
-        self.root.bind("<Control-n>", self._on_new_shortcut)
-        self.root.bind("<Command-o>", self._on_open_shortcut)
-        self.root.bind("<Command-s>", self._on_save_shortcut)
-        self.root.bind("<Command-n>", self._on_new_shortcut)
-        self.root.bind("<Control-z>", self._on_undo_shortcut)
-        self.root.bind("<Control-Shift-z>", self._on_redo_shortcut)
-        self.root.bind("<Command-z>", self._on_undo_shortcut)
-        self.root.bind("<Command-Shift-z>", self._on_redo_shortcut)
-        self.root.protocol("WM_DELETE_WINDOW", self._on_close)
+        if not app_host.attach_menubar(self.root, self.menu_bar):
+            self.root.configure(menu=self.menu_bar)
+        shortcut_entries = []
+        for key, handler, shift in (
+            ("o", self._on_open_shortcut, False),
+            ("s", self._on_save_shortcut, False),
+            ("n", self._on_new_shortcut, False),
+            ("z", self._on_undo_shortcut, False),
+            ("z", self._on_redo_shortcut, True),
+            ("b", self._on_toggle_sidebar_shortcut, False),
+            ("b", self._on_toggle_sidebar_narrow_shortcut, True),
+            ("k", self._on_toggle_compact_shortcut, True),
+            ("comma", self._on_appearance_shortcut, False),
+        ):
+            shortcut_entries.extend(
+                app_host.primary_shortcuts(key, handler, app_host.MACOS, shift=shift)
+            )
+        app_host.bind_shortcuts(self.root, shortcut_entries, app_host.MACOS)
+        app_host.install_close(
+            self.root,
+            self._on_close,
+            self._window_platform(),
+            scope=getattr(self, "_lifetime_scope", None),
+        )
 
     def _localize_widgets(self) -> None:
         t = self.i18n.translate
@@ -195,10 +386,51 @@ class StepsMainWindow:
         for index, key in enumerate(("next_chord.explore", "voice.lab.open", "midi.export")):
             self.tools_menu.entryconfigure(index, label=t(key))
         self.menu_bar.add_cascade(label=t("settings.menu"), menu=self.settings_menu)
-        self.settings_menu.entryconfigure(0, label=t("language.menu"))
+        if (
+            callable(getattr(self.settings_menu, "index", None))
+            and self.settings_menu.index(tk.END) is not None
+            and self.settings_menu.index(tk.END) >= 8
+        ):
+            self.settings_menu.entryconfigure(0, label=t("settings.appearance"))
+            self.settings_menu.entryconfigure(1, label=t("language.menu"))
+            self.settings_menu.entryconfigure(2, label=t("theme.menu"))
+            self.settings_menu.entryconfigure(3, label=t("theme.accent.menu"))
+            self.settings_menu.entryconfigure(4, label=t("theme.background.menu"))
+            self.settings_menu.entryconfigure(5, label=t("theme.radius.menu"))
+            self.settings_menu.entryconfigure(6, label=t("theme.font_scale.menu"))
+            self.settings_menu.entryconfigure(7, label=t("theme.font_weight.menu"))
+            if hasattr(self, "theme_menu") and callable(getattr(self.theme_menu, "entryconfigure", None)):
+                for index, (_, key) in enumerate(self.THEME_OPTIONS):
+                    self.theme_menu.entryconfigure(index, label=t(key))
+            if hasattr(self, "accent_menu") and callable(getattr(self.accent_menu, "entryconfigure", None)):
+                for index, (_, key) in enumerate(ACCENT_CHOICES):
+                    self.accent_menu.entryconfigure(index, label=t(key))
+            if hasattr(self, "bg_menu") and callable(getattr(self.bg_menu, "entryconfigure", None)):
+                for index, (_, key) in enumerate(BACKGROUND_CHOICES):
+                    self.bg_menu.entryconfigure(index, label=t(key))
+            if hasattr(self, "radius_menu") and callable(getattr(self.radius_menu, "entryconfigure", None)):
+                for index, (_, key, _) in enumerate(RADIUS_CHOICES):
+                    self.radius_menu.entryconfigure(index, label=t(key))
+            if hasattr(self, "scale_menu") and callable(getattr(self.scale_menu, "entryconfigure", None)):
+                for index, (_, key, _) in enumerate(FONT_SCALE_CHOICES):
+                    self.scale_menu.entryconfigure(index, label=t(key))
+            if hasattr(self, "weight_menu") and callable(getattr(self.weight_menu, "entryconfigure", None)):
+                for index, (_, key) in enumerate(FONT_WEIGHT_CHOICES):
+                    self.weight_menu.entryconfigure(index, label=t(key))
+            self.settings_menu.entryconfigure(9, label=t("view.sidebar.toggle"))
+            self.settings_menu.entryconfigure(10, label=t("view.sidebar.narrow"))
+            self.settings_menu.entryconfigure(11, label=t("view.compact.toggle"))
+        elif (
+            callable(getattr(self.settings_menu, "index", None))
+            and self.settings_menu.index(tk.END) is not None
+            and self.settings_menu.index(tk.END) >= 0
+        ):
+            self.settings_menu.entryconfigure(0, label=t("language.menu"))
         for index, key in enumerate(("language.system", "language.en", "language.de")):
             self.language_menu.entryconfigure(index, label=t(key))
-        self.title_lbl.configure(text=t("workspace.heading"))
+        self._localize_sidebar_widgets()
+        self.title_lbl.configure(text=layout_policy.clip_title(t("workspace.heading")))
+        self._update_header_subtitle()
         self.project_title_lbl.configure(text=t("project.title"))
         self.key_lbl.configure(text=t("context.key"))
         self.mode_lbl.configure(text=t("context.mode"))
@@ -242,6 +474,7 @@ class StepsMainWindow:
             return
         self._localize_widgets()
         self._update_window_title()
+        self._persist_settings()
         chords = self.controller.session.chords
         selected = self._selected_chord_index()
         first_visible = self.chord_listbox.yview()[0]
@@ -256,6 +489,105 @@ class StepsMainWindow:
                 self._display_chord_details(chords[selected], index=selected)
             else:
                 self._display_empty_info()
+
+    def _persist_settings(self) -> None:
+        try:
+            geom = ""
+            if hasattr(self, "root") and isinstance(self.root, tk.Misc):
+                try:
+                    geom = self.root.geometry()
+                except Exception:
+                    pass
+            self._user_settings.update({
+                "theme_preference": self._theme_preference,
+                "background_color": self.theme.background_choice,
+                "accent_color": getattr(self.theme, "accent_choice", "accent"),
+                "corner_radius": self.theme.radius_choice,
+                "font_scale": self.theme.font_scale_choice,
+                "font_weight": getattr(self.theme, "font_weight_choice", "standard"),
+                "animations_enabled": getattr(self.theme, "animations_enabled", True),
+                "hints_visible": getattr(self.theme, "hints_visible", True),
+                "language": self.i18n.preference,
+                "window_geometry": geom or self._user_settings.get("window_geometry", ""),
+                "saved_compact_geometry": getattr(self, "_saved_compact_geometry", ""),
+            })
+            save_settings(self._user_settings)
+        except Exception:
+            pass
+
+    def _on_appearance_shortcut(self, _event: Optional[tk.Event] = None) -> None:
+        self._on_open_appearance_dialog()
+
+    def _on_open_appearance_dialog(self) -> None:
+        from app.ui.appearance_dialog import AppearanceDialog
+
+        def _apply(
+            theme_mode: str,
+            bg_choice: str,
+            radius_choice: str,
+            scale_choice: str,
+            accent_choice: str = "accent",
+            weight_choice: str = "standard",
+            animations_enabled: bool = True,
+            hints_visible: bool = True,
+        ) -> None:
+            self.set_theme_preference(theme_mode)
+            self._on_background_change(bg_choice)
+            self._on_radius_change(radius_choice)
+            self._on_scale_change(scale_choice)
+            self._on_accent_change(accent_choice)
+            self._on_weight_change(weight_choice)
+            if hasattr(self.theme, "set_animations_enabled"):
+                self.theme.set_animations_enabled(animations_enabled)
+            if hasattr(self.theme, "set_hints_visible"):
+                self.theme.set_hints_visible(hints_visible)
+            self._persist_settings()
+
+        AppearanceDialog(
+            parent=self.root,
+            theme=self.theme,
+            i18n=self.i18n,
+            theme_preference=self._theme_preference,
+            on_apply=_apply,
+            on_language_change=self._on_language_change,
+        )
+
+    def _on_background_change(self, choice: str) -> None:
+        self.theme.set_background_choice(choice)
+        if hasattr(self, "bg_var"):
+            self.bg_var.set(choice)
+        self.apply_theme()
+        self._persist_settings()
+
+    def _on_accent_change(self, choice: str) -> None:
+        if hasattr(self.theme, "set_accent_choice"):
+            self.theme.set_accent_choice(choice)
+        if hasattr(self, "accent_var"):
+            self.accent_var.set(choice)
+        self.apply_theme()
+        self._persist_settings()
+
+    def _on_radius_change(self, choice: str) -> None:
+        self.theme.set_radius_choice(choice)
+        if hasattr(self, "radius_var"):
+            self.radius_var.set(choice)
+        self.apply_theme()
+        self._persist_settings()
+
+    def _on_scale_change(self, choice: str) -> None:
+        self.theme.set_font_scale_choice(choice)
+        if hasattr(self, "scale_var"):
+            self.scale_var.set(choice)
+        self.apply_theme()
+        self._persist_settings()
+
+    def _on_weight_change(self, choice: str) -> None:
+        if hasattr(self.theme, "set_font_weight_choice"):
+            self.theme.set_font_weight_choice(choice)
+        if hasattr(self, "weight_var"):
+            self.weight_var.set(choice)
+        self.apply_theme()
+        self._persist_settings()
 
     def _on_open_shortcut(self, _event: tk.Event) -> str:
         self._on_open_project()
@@ -470,7 +802,337 @@ class StepsMainWindow:
 
     def _on_close(self) -> None:
         if self._confirm_unsaved_changes():
+            self._persist_settings()
             self.root.destroy()
+
+    def _on_toggle_sidebar_shortcut(self, _event: tk.Event) -> str:
+        self.toggle_sidebar()
+        return "break"
+
+    def _on_toggle_sidebar_narrow_shortcut(self, _event: tk.Event) -> str:
+        self.toggle_sidebar_narrow()
+        return "break"
+
+    def _on_toggle_compact_shortcut(self, _event: tk.Event) -> str:
+        self.toggle_compact_mode()
+        return "break"
+
+    def _focus_workspace(self) -> None:
+        if hasattr(self, "chord_listbox"):
+            self.chord_listbox.focus_set()
+
+    def _sidebar_nav_items(self) -> tuple[tuple[str, str, str, object], ...]:
+        return (
+            ("workspace", "sidebar.nav.workspace", "sidebar.rail.workspace", self._focus_workspace),
+            ("explorer", "sidebar.nav.explorer", "sidebar.rail.explorer", self._on_explore_next),
+            ("voice_lab", "sidebar.nav.voice_lab", "sidebar.rail.voice_lab", self._on_open_voice_leading_lab),
+            ("library", "sidebar.nav.library", "sidebar.rail.library", self._on_browse_reviewed_library),
+            ("midi", "sidebar.nav.midi", "sidebar.rail.midi", self._on_export_midi),
+        )
+
+    def _build_sidebar(self) -> None:
+        colors = self.theme.colors
+        sp = self.theme.spacing
+
+        self.sidebar_frame = RoundedSurfaceCard(
+            self.shell_frame,
+            bg_color=colors.bg_window,
+            fill_color=colors.bg_surface,
+            outline_color=colors.border,
+            radius=self.theme.corner_radius,
+            padding=sp.xs,
+            width=layout_policy.SIDEBAR_WIDE_WIDTH,
+        )
+        self.sidebar_frame.pack_propagate(False)
+        self.sidebar_heading_lbl = tk.Label(
+            self.sidebar_frame.inner,
+            text="",
+            font=self.theme.font_spec(layout_policy.FONT_SIZES["caption"], "bold"),
+            fg=colors.text_secondary,
+            bg=colors.bg_surface,
+            anchor=tk.W,
+            padx=sp.sm,
+            pady=sp.sm,
+        )
+        self.sidebar_heading_lbl.pack(fill=tk.X)
+
+        self._sidebar_buttons: dict[str, tk.Button | tk.ttk.Button] = {}
+        for item_id, _nav_key, _rail_key, callback in self._sidebar_nav_items():
+            btn = create_button(
+                self.sidebar_frame.inner,
+                text="",
+                command=callback,
+                bg=colors.bg_surface,
+                fg=colors.text_primary,
+                hover_bg=colors.bg_surface_hover,
+                active_bg=colors.bg_active,
+                active_fg=colors.harmonic_tonic,
+                relief=tk.FLAT,
+                anchor=tk.W,
+                padx=sp.sm,
+            )
+            btn.pack(fill=tk.X, padx=sp.xs, pady=2)
+            self._sidebar_buttons[item_id] = btn
+        set_button_active(self._sidebar_buttons["workspace"], True, colors)
+
+        self.sidebar_collapse_btn = create_button(
+            self.sidebar_frame.inner,
+            text="",
+            command=self.toggle_sidebar_narrow,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
+            relief=tk.FLAT,
+            padx=sp.sm,
+        )
+        self.sidebar_collapse_btn.pack(side=tk.BOTTOM, fill=tk.X, padx=sp.xs, pady=sp.xs)
+
+        self.sidebar_rail_frame = RoundedSurfaceCard(
+            self.shell_frame,
+            bg_color=colors.bg_window,
+            fill_color=colors.bg_surface,
+            outline_color=colors.border,
+            radius=self.theme.corner_radius,
+            padding=sp.xs,
+            width=layout_policy.SIDEBAR_RAIL_WIDTH,
+        )
+        self.sidebar_rail_frame.pack_propagate(False)
+        self._rail_buttons: list[tk.Button | tk.ttk.Button] = []
+        self._rail_button_map: dict[str, tk.Button | tk.ttk.Button] = {}
+        for item_id, _nav_key, _rail_key, callback in self._sidebar_nav_items():
+            btn = create_button(
+                self.sidebar_rail_frame.inner,
+                text="",
+                command=callback,
+                bg=colors.bg_surface,
+                fg=colors.text_primary,
+                hover_bg=colors.bg_surface_hover,
+                active_bg=colors.bg_active,
+                active_fg=colors.harmonic_tonic,
+                relief=tk.FLAT,
+                padx=sp.xs,
+            )
+            btn.pack(fill=tk.X, padx=sp.xs, pady=2)
+            self._rail_buttons.append(btn)
+            self._rail_button_map[item_id] = btn
+        set_button_active(self._rail_button_map["workspace"], True, colors)
+
+        self.sidebar_expand_btn = create_button(
+            self.sidebar_rail_frame.inner,
+            text="",
+            command=self.toggle_sidebar_narrow,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
+            relief=tk.FLAT,
+            padx=sp.xs,
+        )
+        self.sidebar_expand_btn.pack(side=tk.BOTTOM, fill=tk.X, padx=sp.xs, pady=sp.xs)
+        self._rail_buttons.append(self.sidebar_expand_btn)
+
+        for idx, rail_btn in enumerate(self._rail_buttons):
+            rail_btn.bind(
+                "<Down>",
+                lambda _e, i=idx: self._focus_rail_button((i + 1) % len(self._rail_buttons)),
+            )
+            rail_btn.bind(
+                "<Up>",
+                lambda _e, i=idx: self._focus_rail_button((i - 1) % len(self._rail_buttons)),
+            )
+
+    def _focus_rail_button(self, index: int) -> str:
+        self._rail_buttons[index].focus_set()
+        return "break"
+
+    def _localize_sidebar_widgets(self) -> None:
+        if not hasattr(self, "sidebar_heading_lbl"):
+            return
+        t = self.i18n.translate
+        self.sidebar_heading_lbl.configure(text=t("sidebar.heading"))
+        self.sidebar_toggle_btn.configure(text=t("view.sidebar.button"))
+        if hasattr(self, "settings_btn"):
+            self.settings_btn.configure(text=t("settings.button"))
+        self.sidebar_collapse_btn.configure(text=t("view.sidebar.collapse"))
+        self.sidebar_expand_btn.configure(text=t("view.sidebar.expand"))
+        for item_id, nav_key, rail_key, _callback in self._sidebar_nav_items():
+            self._sidebar_buttons[item_id].configure(text=layout_policy.clip_button_text(t(nav_key)))
+            self._rail_button_map[item_id].configure(text=t(rail_key))
+
+    def _current_window_width(self) -> int:
+        try:
+            width = int(self.root.winfo_width())
+            if width <= 1:
+                parsed = layout_policy.window_geometry.parse(self.root.geometry())
+                if parsed is not None:
+                    return parsed[0]
+            return width
+        except Exception:
+            return 1024
+
+    def _current_window_height(self) -> int:
+        try:
+            height = int(self.root.winfo_height())
+            if height <= 1:
+                parsed = layout_policy.window_geometry.parse(self.root.geometry())
+                if parsed is not None:
+                    return parsed[1]
+            return height
+        except Exception:
+            return 720
+
+    def effective_sidebar_mode(self, width: Optional[int] = None) -> layout_policy.SidebarMode:
+        w = self._current_window_width() if width is None else width
+        return layout_policy.effective_sidebar_mode(
+            self._sidebar_visible,
+            self._sidebar_narrow,
+            self.compact_mode_active(),
+            w,
+        )
+
+    def _apply_sidebar_visibility(self, width: Optional[int] = None) -> None:
+        if not hasattr(self, "sidebar_frame") or not hasattr(self, "paned"):
+            return
+        sp = self.theme.spacing
+        mode = self.effective_sidebar_mode(width)
+        if mode == "wide":
+            self.sidebar_rail_frame.pack_forget()
+            self.sidebar_frame.pack(side=tk.LEFT, fill=tk.Y, padx=(0, sp.sm), before=self.paned)
+        elif mode == "rail":
+            self.sidebar_frame.pack_forget()
+            self.sidebar_rail_frame.pack(side=tk.LEFT, fill=tk.Y, padx=(0, sp.sm), before=self.paned)
+        else:
+            self.sidebar_frame.pack_forget()
+            self.sidebar_rail_frame.pack_forget()
+        if hasattr(self, "sidebar_toggle_btn"):
+            set_button_active(self.sidebar_toggle_btn, mode == "hidden", self.theme.colors)
+
+    def toggle_sidebar(self) -> str:
+        self._sidebar_visible = not self._sidebar_visible
+        self._apply_sidebar_visibility()
+        return "break"
+
+    def toggle_sidebar_narrow(self) -> str:
+        self._sidebar_narrow = not self._sidebar_narrow
+        self._sidebar_visible = True
+        self._apply_sidebar_visibility()
+        return "break"
+
+    def compact_mode_active(self) -> bool:
+        return self._compact_state is not None
+
+    def toggle_compact_mode(self) -> str:
+        if self.compact_mode_active():
+            return self.leave_compact_mode()
+        return self.enter_compact_mode()
+
+    def enter_compact_mode(self) -> str:
+        if self.compact_mode_active():
+            return "break"
+        try:
+            normal = self.root.geometry()
+            screen_w = int(self.root.winfo_screenwidth())
+            screen_h = int(self.root.winfo_screenheight())
+        except tk.TclError:
+            return "break"
+        self._compact_state = {"normal_geometry": normal}
+        sp = self.theme.spacing
+        self.shell_frame.pack_configure(padx=sp.xs, pady=sp.xs)
+        self._apply_sidebar_visibility()
+        self.sync_header_logo()
+        self.root.minsize(*layout_policy.COMPACT_MIN)
+        self.root.geometry(
+            layout_policy.compact_geometry(
+                normal, self._saved_compact_geometry, screen_w, screen_h
+            )
+        )
+        return "break"
+
+    def leave_compact_mode(self) -> str:
+        state = self._compact_state
+        if state is None:
+            return "break"
+        try:
+            self._saved_compact_geometry = self.root.geometry()
+        except tk.TclError:
+            pass
+        self._compact_state = None
+        sp = self.theme.spacing
+        self.shell_frame.pack_configure(padx=sp.sm, pady=sp.sm)
+        self.root.minsize(*layout_policy.NORMAL_MIN)
+        try:
+            self.root.geometry(
+                layout_policy.normal_geometry(
+                    str(state.get("normal_geometry") or ""), self.root.geometry()
+                )
+            )
+        except tk.TclError:
+            pass
+        self._apply_sidebar_visibility()
+        self.sync_header_logo()
+        return "break"
+
+    def _update_header_subtitle(self) -> None:
+        if not hasattr(self, "subtitle_lbl"):
+            return
+        session = self.controller.session
+        t = self.i18n.translate
+        mode_label = t("context.minor" if session.is_minor else "context.major")
+        numerator, denominator = session.time_signature
+        subtitle = t(
+            "workspace.subtitle",
+            count=len(session.chords),
+            key=session.key_root,
+            mode=mode_label,
+            bpm=f"{session.bpm:g}",
+            meter=f"{numerator}/{denominator}",
+        )
+        self.subtitle_lbl.configure(text=layout_policy.clip_title(subtitle))
+
+    def sync_header_logo(self) -> None:
+        logo_lbl = getattr(self, "header_logo_lbl", None)
+        subtitle_lbl = getattr(self, "subtitle_lbl", None)
+        if logo_lbl is None or not hasattr(self, "title_lbl"):
+            return
+        show_logo_and_subtitle = (
+            self._header_logo_image is not None
+            and self._header_density != "minimal"
+            and not self.compact_mode_active()
+        )
+        if not show_logo_and_subtitle:
+            logo_lbl.pack_forget()
+            if subtitle_lbl is not None:
+                subtitle_lbl.pack_forget()
+            return
+        sp = self.theme.spacing
+        anchor_target = getattr(self, "header_title_box", self.title_lbl)
+        if not logo_lbl.winfo_manager():
+            logo_lbl.pack(side=tk.LEFT, padx=(0, sp.xs), before=anchor_target)
+        if subtitle_lbl is not None:
+            self._update_header_subtitle()
+            if not subtitle_lbl.winfo_manager():
+                subtitle_lbl.pack(side=tk.TOP, anchor=tk.W)
+
+    def _sync_height_density(self) -> None:
+        if not hasattr(self, "control_bar"):
+            return
+        sp = self.theme.spacing
+        pad_y = 2 if self._height_density == "minimal" else sp.xs
+        self.control_bar.configure(pady=sp.xs if self._height_density == "minimal" else sp.sm)
+        for bar in (self.edit_bar, self.context_bar, self.playback_bar, self.timing_bar):
+            bar.pack_configure(pady=(0, pad_y))
+        if hasattr(self, "toolbar_card") and hasattr(self.toolbar_card, "_sync_auto_height"):
+            self.toolbar_card._sync_auto_height()
+
+    def _on_window_resize(self, event: tk.Event) -> None:
+        width = getattr(event, "width", 0) or self._current_window_width()
+        height = getattr(event, "height", 0) or self._current_window_height()
+        if width <= 1 or height <= 1:
+            return
+        self._header_density = layout_policy.header_density(width)
+        self._height_density = layout_policy.height_density(height)
+        self.sync_header_logo()
+        self._sync_height_density()
+        self._apply_sidebar_visibility(width=width)
 
     def _init_ui(self) -> None:
         colors = self.theme.colors
@@ -478,47 +1140,116 @@ class StepsMainWindow:
 
         self.root.configure(bg=colors.bg_window)
 
-        # Main vertical PanedWindow
+        self.shell_frame = tk.Frame(self.root, bg=colors.bg_window, bd=0)
+        self.shell_frame.pack(fill=tk.BOTH, expand=True, padx=sp.sm, pady=sp.sm)
+        self._build_sidebar()
+
+        # Main vertical PanedWindow (right workspace + theory split)
         self.paned = tk.PanedWindow(
-            self.root,
+            self.shell_frame,
             orient=tk.VERTICAL,
-            bg=colors.border,
-            bd=1,
+            bg=colors.bg_window,
+            bd=0,
             sashrelief=tk.FLAT,
-            sashwidth=4
+            sashwidth=sp.sm,
+            sashpad=0,
         )
-        self.paned.pack(fill=tk.BOTH, expand=True, padx=sp.sm, pady=sp.sm)
+        self.paned.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
         # ----------------------------------------------------
         # Area 1: Arbeitsbereich (Timeline & Progression)
         # ----------------------------------------------------
-        self.work_area = tk.Frame(self.paned, bg=colors.bg_surface, bd=0)
+        self.work_area = tk.Frame(self.paned, bg=colors.bg_window, bd=0)
         self.paned.add(self.work_area, minsize=260)
 
-        # Top Control Bar (Key, Tempo, Add Chord, Transpose, Export)
-        self.control_bar = tk.Frame(self.work_area, bg=colors.bg_surface, pady=sp.sm, padx=sp.sm)
+        self.toolbar_card = self.theme.make_surface_card(
+            self.work_area,
+            radius=self.theme.corner_radius,
+            padding=sp.xs,
+            auto_height=True,
+        )
+        self.toolbar_card.pack(fill=tk.X, padx=0, pady=(0, sp.sm))
+
+        # Top Control Bar (Logo, Title, Add Chord, Transpose, Export, Sidebar toggle, Settings)
+        self.control_bar = tk.Frame(self.toolbar_card.inner, bg=colors.bg_surface, pady=sp.sm, padx=sp.sm)
         self.control_bar.pack(fill=tk.X)
 
-        self.title_lbl = tk.Label(
+        self.settings_btn = create_button(
             self.control_bar,
-            text=self.i18n.translate("workspace.heading"),
-            font=("Helvetica", 11, "bold"),
-            fg=colors.harmonic_tonic,
-            bg=colors.bg_surface
+            text="",
+            command=self._on_open_appearance_dialog,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
+            relief=tk.FLAT,
+            width=38,
+            padx=sp.xs,
         )
-        self.title_lbl.pack(side=tk.LEFT, padx=(0, sp.md))
+        self.settings_btn.pack(side=tk.RIGHT, padx=(sp.xs, 0))
+
+        self.sidebar_toggle_btn = create_button(
+            self.control_bar,
+            text="",
+            command=self.toggle_sidebar,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
+            active_bg=colors.harmonic_tonic,
+            active_fg=colors.text_inverted,
+            relief=tk.FLAT,
+            width=38,
+            padx=sp.xs,
+        )
+        self.sidebar_toggle_btn.pack(side=tk.RIGHT, padx=sp.xs)
+
+        try:
+            self._header_logo_image = load_in_app_logo(self.root, target_height=28)
+        except Exception:
+            self._header_logo_image = None
+        self.header_logo_lbl = tk.Label(
+            self.control_bar,
+            image=self._header_logo_image if self._header_logo_image is not None else "",
+            bg=colors.bg_surface,
+            bd=0,
+        )
+
+        self.header_title_box = tk.Frame(self.control_bar, bg=colors.bg_surface, bd=0)
+        self.header_title_box.pack(side=tk.LEFT, padx=(0, sp.md))
+
+        self.title_lbl = tk.Label(
+            self.header_title_box,
+            text=layout_policy.clip_title(self.i18n.translate("workspace.heading")),
+            font=self.theme.font_spec(self.theme.typography.size_md, "bold"),
+            fg=colors.harmonic_tonic,
+            bg=colors.bg_surface,
+            anchor=tk.W,
+        )
+        self.title_lbl.pack(side=tk.TOP, anchor=tk.W)
+
+        self.subtitle_lbl = tk.Label(
+            self.header_title_box,
+            text="",
+            font=self.theme.font_spec(layout_policy.FONT_SIZES["caption"], "bold"),
+            fg=colors.text_secondary,
+            bg=colors.bg_surface,
+            anchor=tk.W,
+        )
+
+        w = self._current_window_width()
+        h = self._current_window_height()
+        self._header_density = layout_policy.header_density(w)
+        self._height_density = layout_policy.height_density(h)
+        self._apply_sidebar_visibility(width=w)
+        self.sync_header_logo()
+        custom_controls.bind_resize(self.root, self._on_window_resize, add="+")
 
         # Add Chord Entry & Button
         self.chord_entry = tk.Entry(
             self.control_bar,
             width=10,
-            font=("Courier", 12),
-            bg=colors.bg_window,
-            fg=colors.text_primary,
-            insertbackground=colors.text_primary,
-            relief=tk.FLAT,
-            bd=1
+            font=self.theme.font_spec(layout_policy.FONT_SIZES["body"], mono=True),
         )
+        style_entry(self.chord_entry, colors)
         self.chord_entry.pack(side=tk.LEFT, padx=sp.xs)
         self.chord_entry.insert(0, "Cmaj7")
 
@@ -528,12 +1259,13 @@ class StepsMainWindow:
             command=self._on_add_chord,
             bg=colors.harmonic_tonic,
             fg=colors.text_inverted,
+            hover_bg=colors.harmonic_tonic,
             relief=tk.FLAT,
             padx=sp.sm
         )
         self.add_btn.pack(side=tk.LEFT, padx=sp.xs)
 
-        self.edit_bar = tk.Frame(self.work_area, bg=colors.bg_surface, padx=sp.sm)
+        self.edit_bar = tk.Frame(self.toolbar_card.inner, bg=colors.bg_surface, padx=sp.sm)
         self.edit_bar.pack(fill=tk.X, pady=(0, sp.xs))
         self.update_btn = create_button(
             self.edit_bar,
@@ -541,6 +1273,7 @@ class StepsMainWindow:
             command=self._on_update_chord,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
@@ -551,6 +1284,7 @@ class StepsMainWindow:
             command=self._on_remove_chord,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
@@ -561,6 +1295,7 @@ class StepsMainWindow:
             command=lambda: self._on_move_chord(-1),
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
@@ -571,6 +1306,7 @@ class StepsMainWindow:
             command=lambda: self._on_move_chord(1),
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
@@ -581,6 +1317,7 @@ class StepsMainWindow:
             command=self._on_undo,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
@@ -591,37 +1328,28 @@ class StepsMainWindow:
             command=self._on_redo,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
         self.redo_btn.pack(side=tk.LEFT, padx=sp.xs)
 
-        self.context_bar = tk.Frame(self.work_area, bg=colors.bg_surface, padx=sp.sm)
+        self.context_bar = tk.Frame(self.toolbar_card.inner, bg=colors.bg_surface, padx=sp.sm)
         self.context_bar.pack(fill=tk.X, pady=(0, sp.xs))
         self.project_title_lbl = tk.Label(
             self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
         )
         self.project_title_lbl.pack(side=tk.LEFT, padx=(0, sp.xs))
-        self.project_title_entry = tk.Entry(
-            self.context_bar,
-            width=16,
-            bg=colors.bg_window,
-            fg=colors.text_primary,
-            insertbackground=colors.text_primary,
-        )
+        self.project_title_entry = tk.Entry(self.context_bar, width=16)
+        style_entry(self.project_title_entry, colors)
         self.project_title_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.project_title_entry.insert(0, self.controller.session.state.title)
         self.project_title_entry.bind("<Return>", self._on_context_shortcut)
 
         self.key_lbl = tk.Label(self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary)
         self.key_lbl.pack(side=tk.LEFT, padx=(0, sp.xs))
-        self.key_entry = tk.Entry(
-            self.context_bar,
-            width=5,
-            bg=colors.bg_window,
-            fg=colors.text_primary,
-            insertbackground=colors.text_primary,
-        )
+        self.key_entry = tk.Entry(self.context_bar, width=5)
+        style_entry(self.key_entry, colors)
         self.key_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.key_entry.insert(0, self.controller.session.key_root)
         self.key_entry.bind("<Return>", self._on_context_shortcut)
@@ -684,19 +1412,14 @@ class StepsMainWindow:
         )
         self.notation_de_btn.pack(side=tk.LEFT, padx=(0, sp.sm))
 
-        self.playback_bar = tk.Frame(self.work_area, bg=colors.bg_surface, padx=sp.sm)
+        self.playback_bar = tk.Frame(self.toolbar_card.inner, bg=colors.bg_surface, padx=sp.sm)
         self.playback_bar.pack(fill=tk.X, pady=(0, sp.xs))
         self.tempo_lbl = tk.Label(
             self.playback_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
         )
         self.tempo_lbl.pack(side=tk.LEFT, padx=(sp.md, sp.xs))
-        self.tempo_entry = tk.Entry(
-            self.playback_bar,
-            width=6,
-            bg=colors.bg_window,
-            fg=colors.text_primary,
-            insertbackground=colors.text_primary,
-        )
+        self.tempo_entry = tk.Entry(self.playback_bar, width=6)
+        style_entry(self.tempo_entry, colors)
         self.tempo_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.tempo_entry.insert(0, f"{self.controller.session.bpm:g}")
         self.tempo_entry.bind("<Return>", self._on_context_shortcut)
@@ -705,13 +1428,8 @@ class StepsMainWindow:
             self.playback_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
         )
         self.meter_lbl.pack(side=tk.LEFT, padx=(sp.sm, sp.xs))
-        self.meter_entry = tk.Entry(
-            self.playback_bar,
-            width=5,
-            bg=colors.bg_window,
-            fg=colors.text_primary,
-            insertbackground=colors.text_primary,
-        )
+        self.meter_entry = tk.Entry(self.playback_bar, width=5)
+        style_entry(self.meter_entry, colors)
         self.meter_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.meter_entry.insert(
             0, f"{self.controller.session.time_signature[0]}/{self.controller.session.time_signature[1]}"
@@ -724,6 +1442,7 @@ class StepsMainWindow:
             command=self._on_apply_context,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
@@ -751,19 +1470,14 @@ class StepsMainWindow:
         )
         self.voice_style_menu.pack(side=tk.LEFT, padx=(0, sp.sm))
 
-        self.timing_bar = tk.Frame(self.work_area, bg=colors.bg_surface, padx=sp.sm)
+        self.timing_bar = tk.Frame(self.toolbar_card.inner, bg=colors.bg_surface, padx=sp.sm)
         self.timing_bar.pack(fill=tk.X, pady=(0, sp.xs))
         self.event_start_lbl = tk.Label(
             self.timing_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
         )
         self.event_start_lbl.pack(side=tk.LEFT, padx=(0, sp.xs))
-        self.event_start_entry = tk.Entry(
-            self.timing_bar,
-            width=9,
-            bg=colors.bg_window,
-            fg=colors.text_primary,
-            insertbackground=colors.text_primary,
-        )
+        self.event_start_entry = tk.Entry(self.timing_bar, width=9)
+        style_entry(self.event_start_entry, colors)
         self.event_start_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.event_start_entry.bind("<Return>", self._on_event_timing_shortcut)
         self.event_start_entry.bind("<Escape>", self._on_reset_event_timing)
@@ -772,13 +1486,8 @@ class StepsMainWindow:
             self.timing_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
         )
         self.event_duration_lbl.pack(side=tk.LEFT, padx=(0, sp.xs))
-        self.event_duration_entry = tk.Entry(
-            self.timing_bar,
-            width=9,
-            bg=colors.bg_window,
-            fg=colors.text_primary,
-            insertbackground=colors.text_primary,
-        )
+        self.event_duration_entry = tk.Entry(self.timing_bar, width=9)
+        style_entry(self.event_duration_entry, colors)
         self.event_duration_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.event_duration_entry.bind("<Return>", self._on_event_timing_shortcut)
         self.event_duration_entry.bind("<Escape>", self._on_reset_event_timing)
@@ -789,6 +1498,7 @@ class StepsMainWindow:
             command=self._on_apply_event_timing,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
@@ -801,6 +1511,7 @@ class StepsMainWindow:
             command=lambda: self._on_transpose(-1),
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.xs
         )
@@ -812,6 +1523,7 @@ class StepsMainWindow:
             command=lambda: self._on_transpose(1),
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.xs
         )
@@ -824,19 +1536,24 @@ class StepsMainWindow:
             command=self._on_export_midi,
             bg=colors.harmonic_subdominant,
             fg=colors.text_inverted,
+            hover_bg=colors.harmonic_subdominant,
             relief=tk.FLAT,
             padx=sp.sm
         )
         self.export_btn.pack(side=tk.RIGHT, padx=sp.xs)
 
         # Chord Listbox / Progression Display
-        self.prog_frame = tk.Frame(self.work_area, bg=colors.bg_window, bd=1, relief=tk.SOLID)
-        self.prog_frame.pack(fill=tk.BOTH, expand=True, padx=sp.sm, pady=(0, sp.sm))
+        self.prog_frame = self.theme.make_surface_card(
+            self.work_area,
+            radius=self.theme.corner_radius,
+            padding=sp.xs,
+        )
+        self.prog_frame.pack(fill=tk.BOTH, expand=True, padx=0, pady=0)
 
         self.chord_listbox = tk.Listbox(
-            self.prog_frame,
+            self.prog_frame.inner,
             font=("Helvetica", 13),
-            bg=colors.bg_window,
+            bg=colors.bg_surface,
             fg=colors.text_primary,
             selectbackground=colors.harmonic_tonic,
             selectforeground=colors.text_inverted,
@@ -845,15 +1562,23 @@ class StepsMainWindow:
             activestyle="dotbox",
             exportselection=False,
             highlightthickness=2,
-            highlightbackground=colors.border,
+            highlightbackground=colors.bg_surface,
             highlightcolor=colors.border_focus,
         )
-        progression_scrollbar = tk.Scrollbar(
-            self.prog_frame, orient=tk.VERTICAL, command=self.chord_listbox.yview, takefocus=False,
+        self.progression_scrollbar = ThemedAutoScrollbar(
+            self.prog_frame.inner,
+            bg_color=colors.bg_surface,
+            track_color=colors.bg_surface_hover,
+            thumb_color=colors.border,
+            active_thumb_color=colors.harmonic_tonic,
+            width=12,
+            radius=6,
+            orient="vertical",
         )
-        self.chord_listbox.configure(yscrollcommand=progression_scrollbar.set)
-        progression_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
-        self.chord_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=sp.sm, pady=sp.sm)
+        self.progression_scrollbar.set_command(self.chord_listbox.yview)
+        self.chord_listbox.configure(yscrollcommand=self.progression_scrollbar.set)
+        self.progression_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        self.chord_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=sp.xs, pady=sp.xs)
         self.chord_listbox.bind("<<ListboxSelect>>", self._on_chord_selected)
         modifier = "Option" if sys.platform == "darwin" else "Alt"
         self.chord_listbox.bind(f"<{modifier}-Up>", lambda _event: self._move_chord_shortcut(-1))
@@ -868,16 +1593,24 @@ class StepsMainWindow:
         # ----------------------------------------------------
         # Area 2: Informations- und Theoriebereich
         # ----------------------------------------------------
-        self.info_area = tk.Frame(self.paned, bg=colors.bg_surface, bd=0)
+        self.info_area = tk.Frame(self.paned, bg=colors.bg_window, bd=0)
         self.paned.add(self.info_area, minsize=260)
 
-        self.info_bar = tk.Frame(self.info_area, bg=colors.bg_surface, pady=sp.sm, padx=sp.sm)
+        self.info_header_card = self.theme.make_surface_card(
+            self.info_area,
+            radius=self.theme.corner_radius,
+            padding=sp.xs,
+            auto_height=True,
+        )
+        self.info_header_card.pack(fill=tk.X, padx=0, pady=(0, sp.sm))
+
+        self.info_bar = tk.Frame(self.info_header_card.inner, bg=colors.bg_surface, pady=sp.xs, padx=sp.sm)
         self.info_bar.pack(fill=tk.X)
 
         self.info_lbl = tk.Label(
             self.info_bar,
             text=self.i18n.translate("information.heading"),
-            font=("Helvetica", 11, "bold"),
+            font=self.theme.font_spec(self.theme.typography.size_md, "bold"),
             fg=colors.harmonic_dominant,
             bg=colors.bg_surface
         )
@@ -889,18 +1622,23 @@ class StepsMainWindow:
             command=self._on_open_voice_leading_lab,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
 
         # Detail Content Frame
-        self.detail_frame = tk.Frame(self.info_area, bg=colors.bg_window, bd=1, relief=tk.SOLID)
-        self.detail_frame.pack(fill=tk.BOTH, expand=True, padx=sp.sm, pady=(0, sp.sm))
+        self.detail_frame = self.theme.make_surface_card(
+            self.info_area,
+            radius=self.theme.corner_radius,
+            padding=sp.xs,
+        )
+        self.detail_frame.pack(fill=tk.BOTH, expand=True, padx=0, pady=0)
 
         self.detail_text = tk.Text(
-            self.detail_frame,
+            self.detail_frame.inner,
             font=("Courier", 11),
-            bg=colors.bg_window,
+            bg=colors.bg_surface,
             fg=colors.text_primary,
             relief=tk.FLAT,
             bd=0,
@@ -911,18 +1649,241 @@ class StepsMainWindow:
         self.detail_text.configure(state=tk.DISABLED)
         configure_readonly_preview(self.detail_text, colors)
         self.next_chord_panel = NextChordPanel(
-            self.info_bar, self.detail_frame,
+            self.info_bar, self.detail_frame.inner,
             controller=self.controller, i18n=self.i18n, theme=self.theme,
             selected_chord=self._selected_chord_index,
             show_detail=self._write_detail, on_applied=self._on_recommendation_applied,
         )
         self.voice_lab_btn.pack(side=tk.RIGHT, padx=sp.xs)
-        detail_scrollbar = tk.Scrollbar(
-            self.detail_frame, orient=tk.VERTICAL, command=self.detail_text.yview, takefocus=False,
+        self.detail_scrollbar = ThemedAutoScrollbar(
+            self.detail_frame.inner,
+            bg_color=colors.bg_surface,
+            track_color=colors.bg_surface_hover,
+            thumb_color=colors.border,
+            active_thumb_color=colors.harmonic_tonic,
+            width=12,
+            radius=6,
+            orient="vertical",
         )
-        self.detail_text.configure(yscrollcommand=detail_scrollbar.set)
-        detail_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        self.detail_scrollbar.set_command(self.detail_text.yview)
+        self.detail_text.configure(yscrollcommand=self.detail_scrollbar.set)
+        self.detail_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.detail_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+    def set_theme_preference(self, preference: str) -> str:
+        """Switch UI appearance between themes or OS system mode via glide_shell."""
+        normalized = self.theme.normalize_theme_name(preference)
+        allowed = {"system", *self.theme.THEMES}
+        self._theme_preference = normalized if normalized in allowed else "dark"
+        if hasattr(self, "theme_var"):
+            self.theme_var.set(self._theme_preference)
+        resolved = (
+            self.theme.resolve_system_mode(self.root, fallback=self.theme.mode, preference=self._theme_preference)
+            if self._theme_preference == "system"
+            else self._theme_preference
+        )
+        self.apply_theme(resolved)
+        self._persist_settings()
+        return resolved
+
+    def apply_theme(self, mode: Optional[str] = None) -> None:
+        """Apply a Glide palette live across main-window surfaces, entries and buttons."""
+        if mode is not None:
+            self.theme.set_mode(mode)
+        colors = self.theme.colors
+        self.root.configure(bg=colors.bg_window)
+        self.shell_frame.configure(bg=colors.bg_window)
+        self.paned.configure(bg=colors.bg_window)
+        for area in (self.work_area, self.info_area):
+            area.configure(bg=colors.bg_window)
+        for surface_bar in (
+            self.control_bar,
+            self.header_title_box,
+            self.edit_bar,
+            self.context_bar,
+            self.playback_bar,
+            self.timing_bar,
+            self.info_bar,
+        ):
+            surface_bar.configure(bg=colors.bg_surface)
+        for frame in (
+            self.sidebar_frame,
+            self.sidebar_rail_frame,
+            self.toolbar_card,
+            self.prog_frame,
+            self.info_header_card,
+            self.detail_frame,
+        ):
+            if hasattr(frame, "set_theme") and callable(getattr(frame, "set_theme")):
+                frame.set_theme(
+                    bg_color=colors.bg_window,
+                    fill_color=colors.bg_surface,
+                    outline_color=colors.border,
+                    radius=self.theme.corner_radius,
+                )
+            else:
+                style_surface_card(frame, colors)
+        for scrollbar in (
+            getattr(self, "progression_scrollbar", None),
+            getattr(self, "detail_scrollbar", None),
+        ):
+            if scrollbar is not None and hasattr(scrollbar, "set_theme") and callable(getattr(scrollbar, "set_theme")):
+                scrollbar.set_theme(
+                    bg_color=colors.bg_surface,
+                    track_color=colors.bg_surface_hover,
+                    thumb_color=colors.border,
+                    active_thumb_color=colors.harmonic_tonic,
+                )
+        if hasattr(self, "header_logo_lbl"):
+            self.header_logo_lbl.configure(bg=colors.bg_surface)
+
+        # Dynamic typography derived from tokens & font scale
+        title_font = self.theme.font_spec(self.theme.typography.size_md, "bold")
+        subtitle_font = self.theme.font_spec(self.theme.typography.size_xs)
+        heading_font = self.theme.font_spec(self.theme.typography.size_xs, "bold")
+        form_label_font = self.theme.font_spec(self.theme.typography.size_xs, "bold")
+        body_font = self.theme.font_spec(self.theme.typography.size_sm)
+        button_font = self.theme.font_spec(self.theme.typography.size_xs)
+        mono_font = self.theme.font_spec(self.theme.typography.size_sm, mono=True)
+
+        self.title_lbl.configure(font=title_font, fg=colors.harmonic_tonic, bg=colors.bg_surface)
+        self.subtitle_lbl.configure(font=subtitle_font, fg=colors.text_secondary, bg=colors.bg_surface)
+        self.info_lbl.configure(font=title_font, fg=colors.harmonic_dominant, bg=colors.bg_surface)
+        self.sidebar_heading_lbl.configure(font=heading_font, fg=colors.text_secondary, bg=colors.bg_surface)
+        for lbl in (
+            self.project_title_lbl,
+            self.key_lbl,
+            self.mode_lbl,
+            self.notation_lbl,
+            self.tempo_lbl,
+            self.meter_lbl,
+            self.voice_style_lbl,
+            self.event_start_lbl,
+            self.event_duration_lbl,
+        ):
+            lbl.configure(font=form_label_font, bg=colors.bg_surface, fg=colors.text_primary)
+        for radio in (
+            self.major_btn,
+            self.minor_btn,
+            self.notation_int_btn,
+            self.notation_de_btn,
+        ):
+            radio.configure(
+                font=body_font,
+                bg=colors.bg_surface,
+                fg=colors.text_primary,
+                selectcolor=colors.bg_window,
+                activebackground=colors.bg_surface,
+            )
+        for entry in (
+            self.chord_entry,
+            self.project_title_entry,
+            self.key_entry,
+            self.tempo_entry,
+            self.meter_entry,
+            self.event_start_entry,
+            self.event_duration_entry,
+        ):
+            style_entry(entry, colors)
+            try:
+                entry.configure(font=body_font)
+            except Exception:
+                pass
+        self.voice_style_menu.configure(
+            font=body_font,
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            activebackground=colors.bg_surface_hover,
+        )
+        self.voice_style_menu["menu"].configure(font=body_font, bg=colors.bg_surface, fg=colors.text_primary)
+        self.chord_listbox.configure(
+            font=mono_font,
+            bg=colors.bg_surface,
+            fg=colors.text_primary,
+            selectbackground=colors.harmonic_tonic,
+            selectforeground=colors.text_inverted,
+            highlightbackground=colors.bg_surface,
+            highlightcolor=colors.border_focus,
+        )
+        self.detail_text.configure(
+            font=mono_font,
+            bg=colors.bg_surface,
+            fg=colors.text_primary,
+            highlightbackground=colors.bg_surface,
+            highlightcolor=colors.border_focus,
+        )
+        self.next_chord_panel.apply_theme(self.theme)
+        for item_id in self._sidebar_buttons:
+            is_ws = item_id == "workspace"
+            for btn in (self._sidebar_buttons[item_id], self._rail_button_map[item_id]):
+                retheme_button(
+                    btn,
+                    colors,
+                    base_bg=colors.bg_surface,
+                    base_fg=colors.text_primary,
+                    active_bg=colors.bg_active,
+                    active_fg=colors.harmonic_tonic,
+                    radius=self.theme.corner_radius,
+                    font=button_font,
+                )
+                set_button_active(btn, is_ws, colors)
+        retheme_button(
+            self.sidebar_toggle_btn,
+            colors,
+            base_bg=colors.bg_active,
+            base_fg=colors.text_primary,
+            active_bg=colors.harmonic_tonic,
+            active_fg=colors.text_inverted,
+            radius=self.theme.corner_radius,
+            font=button_font,
+        )
+        set_button_active(
+            self.sidebar_toggle_btn,
+            self.effective_sidebar_mode() == "hidden",
+            colors,
+        )
+        for btn in (
+            self.sidebar_collapse_btn,
+            self.sidebar_expand_btn,
+            self.update_btn,
+            self.remove_btn,
+            self.move_up_btn,
+            self.move_down_btn,
+            self.undo_btn,
+            self.redo_btn,
+            self.context_btn,
+            self.event_timing_btn,
+            self.trans_down_btn,
+            self.trans_up_btn,
+            self.voice_lab_btn,
+            self.settings_btn,
+        ):
+            retheme_button(
+                btn,
+                colors,
+                base_bg=colors.bg_active,
+                base_fg=colors.text_primary,
+                radius=self.theme.corner_radius,
+                font=button_font,
+            )
+        retheme_button(
+            self.add_btn,
+            colors,
+            base_bg=colors.harmonic_tonic,
+            base_fg=colors.text_inverted,
+            hover_bg=colors.harmonic_tonic,
+            radius=self.theme.corner_radius,
+            font=button_font,
+        )
+        retheme_button(
+            self.export_btn,
+            colors,
+            base_bg=colors.harmonic_subdominant,
+            base_fg=colors.text_inverted,
+            hover_bg=colors.harmonic_subdominant,
+            radius=self.theme.corner_radius,
+            font=button_font,
+        )
 
     def _refresh_all(
         self,
@@ -934,6 +1895,7 @@ class StepsMainWindow:
         state = self.controller.get_state_summary()
         selected = self.chord_listbox.curselection() if preserve_selection else ()
         self._update_window_title()
+        self._update_header_subtitle()
         has_chords = bool(state["chords"])
         self.update_btn.configure(state=tk.NORMAL if has_chords else tk.DISABLED)
         self.remove_btn.configure(

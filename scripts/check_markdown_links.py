@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # Preserved or historical material keeps its original links unchanged.
 EXCLUDED_PREFIXES = (
     "archive/",
+    "glide_shell/",
     "source_archive/",
     "publish_overlay/",
     "docs/project/Archiv/",

@@ -3,8 +3,8 @@
 Erzeugt mit `python scripts/render_api_reference.py`.
 Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispiele.
 
-- Repository-Version `0.2.0-dev`
-- Paketversion `0.2.0.dev0`
+- Repository-Version `0.8.0-dev`
+- Paketversion `0.8.0.dev0`
 
 ## `src.steps.theory`
 
@@ -151,9 +151,11 @@ Der [Implementierungsstand](../IMPLEMENTATION.md) beschreibt Grenzen und Beispie
 |---|---|
 | [`APP_ICON_SIZES`](../../app/brand.py) | Datenwert |
 | [`LOGO_SIZES`](../../app/brand.py) | Datenwert |
+| [`MACOS_ICON_SHARE`](../../app/brand.py) | Datenwert |
 | [`app_icon_ico_path`](../../app/brand.py) | `() -> 'Path'` |
 | [`app_icon_path`](../../app/brand.py) | `(size: 'int' = 256) -> 'Path'` |
 | [`apply_window_icon`](../../app/brand.py) | `(root) -> 'None'` |
+| [`load_in_app_logo`](../../app/brand.py) | `(master, target_height: 'int' = 28)` |
 | [`logo_path`](../../app/brand.py) | `(size: 'int' = 128) -> 'Path'` |
 
 ## Domänenobjekte
