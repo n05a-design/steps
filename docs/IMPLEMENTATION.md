@@ -59,9 +59,10 @@ und Veröffentlichung sind getrennte Statusangaben.
 Am 24.11.2026 baut die produktive Desktop-Schicht (ausgehend von `main`-Basis `5b5708de6b5572f727a26d94c544158baa731794`) auf `glide_shell` `0.6.2` (`AppHost`, `modal_session`, `window_lifetime`, `window_geometry`, `system_appearance`, `custom_controls`, `desktop_adapter`, `text_fit`, portabler Designvertrag [`docs/design/GLIDE_DESIGN_CONTRACT.md`](design/GLIDE_DESIGN_CONTRACT.md)) auf; integriert sind 6 barrierefreie Themes (WCAG 2.2 AA $\ge 4{,}5:1$), responsive Dichte-Breakpoints, eine einklappbare Seitenleiste (Wide / 64px-Rail / Hidden) und ein Kompaktmodus. Auf macOS bestehen alle 900+ automatisierten Tests sowie alle 13/13 `glide_shell.selftest`-Checks.
 
 Der Checkout enthält einen nutzbaren Python-Kern sowie eine Tkinter-Desktop-
-Vorschau und einen CLI-Einstieg. `pyproject.toml` definiert ein setuptools-
-Build-System und einen `steps`-Entry-Point. Ein daraus gebautes, unterstütztes
-und plattformgeprüftes Desktop-Installationspaket ist damit nicht belegt.
+Vorschau, eigenständige Desktop-Starter (`python3 -m app`, `STEPS.pyw`,
+`STEPS.command`) und einen CLI-Einstieg. `pyproject.toml` definiert ein setuptools-
+Build-System sowie `steps` und `steps-desktop` als Entry-Points. Ein daraus gebautes,
+unterstütztes und plattformgeprüftes Desktop-Installationspaket ist damit nicht belegt.
 [Offene Punkte](../research/gaps/OPEN_GAPS.md) ·
 [Entscheidungsregister](../decisions/DECISION_REGISTER.md)
 

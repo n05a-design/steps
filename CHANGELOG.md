@@ -3,11 +3,17 @@
 ## Unreleased – 0.8.0-dev (2026-11-24)
 
 ### Hinzugefügt / Geändert
-- **Universelle Glide-Flächenkomponenten (`RoundedSurfaceCard`) überall:**
+- **Universelle Glide-Flächenkomponenten (`RoundedSurfaceCard`) & einheitliche Abstände:**
   - Austausch sämtlicher verbliebener eckiger `tk.Frame`-/`tk.LabelFrame`-Container durch `RoundedSurfaceCard` (`ThemeManager.make_surface_card`) in Hauptfenster (`sidebar_frame`, `sidebar_rail_frame`, `toolbar_card`, `prog_frame`, `info_header_card`, `detail_frame`), `NextChordPanel`, `ReviewedProgressionLibraryDialog` (`top_card`, `list_frame`, `preview_frame`, Akkord-Vorschaukarten), `VoiceLeadingLabDialog` (`nav_card`, Vergleichspanels) und `MidiExportOptionsDialog` (Optionsgruppen).
   - Eckensicheres Innen-Inset (`_min_corner_inset`, `_effective_pad_x`, `_effective_pad_y`) und Live-Geometrie-Synchronisation bei `set_theme(...)`, sodass innere Widgets bei allen Rundungsstufen (`large` 18px, `standard` 12px, `subtle` 6px, `flat` 0px) sauber innerhalb der gerundeten Kontur liegen.
   - Beseitigung innerer rechteckiger Rahmen um `tk.Listbox` (`chord_listbox`, `candidates`) und schreibgeschützte `tk.Text`-Vorschauen (`configure_readonly_preview` nutzt `highlightbackground=colors.bg_surface` und behält `highlightcolor=colors.border_focus` für Tastaturfokus); `PianoRoll` zeichnet einen gerundeten Canvas-Hintergrund (`rounded_rect_points`).
-  - `AppearanceDialog` aktualisiert alle Einstellungs- und Vorschaukarten (`_section_cards`) sowie `corner_radius` live in der Vorschau.
+  - Durchgehende `8 px` (`sp.sm`) Abstände zwischen allen Karten und `PanedWindow`-Teilern (`MainWindow`, `NextChordPanel`, `ReviewedProgressionLibraryDialog`, `VoiceLeadingLabDialog`) sowie kontraststarke Mischfarben (`_blend_hex`) für lesbare Beschriftungen auf deaktivierten `RoundedButton`-Schaltflächen.
+- **Glide-Kopfzeile, macOS Dock-Symbol & zweispaltige Einstellungen (`AppearanceDialog`):**
+  - Seitenleisten-Toggle (`◧`) und Einstellungen-Button (`⚙`) oben rechts in der Kopfzeile sowie beschrifteter Einklappen-Button (`«  Einklappen` / `«  Collapse`) unten links in der Seitenleiste.
+  - macOS Dock-Icon nutzt `MACOS_ICON_SHARE = 824 / 1024` in `app/brand.py` für plattformkonforme Randabstände auf Apple-Systemen.
+  - Zweispaltiger Glide-Einstellungsdialog mit abgerundeten Auswahlfeldern (`GlideOptionSelector`), Farb-Swatches, `AccentMonogramTile`, Sprachwahl (`system` / `de` / `en`) und Echtzeit-Vorschau.
+- **Eigenständiger Desktop-Startweg außerhalb von DAW-Software:**
+  - `app/start.py` (`bytecode_cache_dir()`, `check_python_version()`, `ensure_repo_on_path()`), `app/__main__.py` (`python3 -m app`), `STEPS.pyw`, ausführbares `STEPS.command` (macOS Finder) und `[project.gui-scripts]` `steps-desktop = "app.start:main"` in `pyproject.toml`.
 - **Versionierung:** Anhebung von Paket (`0.8.0.dev0`), App (`0.8.0-dev`) und Dokumentation.
 
 ## [0.7.0-dev] - 2026-11-24
