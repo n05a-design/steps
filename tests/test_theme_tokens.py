@@ -51,8 +51,8 @@ class TestThemeManager(unittest.TestCase):
         self.tm.set_mode("light")
         self.assertEqual(self.tm.mode, "light")
         colors = self.tm.colors
-        self.assertEqual(colors.bg_window, "#F8F9FA")
-        self.assertEqual(colors.text_primary, "#0F172A")
+        self.assertEqual(colors.bg_window, "#F5F5F7")
+        self.assertEqual(colors.text_primary, "#15243C")
 
     def test_invalid_mode_raises(self):
         with self.assertRaises(ValueError):

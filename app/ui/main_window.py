@@ -1539,10 +1539,20 @@ class StepsMainWindow:
                 )
         if hasattr(self, "header_logo_lbl"):
             self.header_logo_lbl.configure(bg=colors.bg_surface)
-        self.title_lbl.configure(fg=colors.harmonic_tonic, bg=colors.bg_surface)
-        self.subtitle_lbl.configure(fg=colors.text_secondary, bg=colors.bg_surface)
-        self.info_lbl.configure(fg=colors.harmonic_dominant, bg=colors.bg_surface)
-        self.sidebar_heading_lbl.configure(fg=colors.text_secondary, bg=colors.bg_surface)
+
+        # Dynamic typography derived from tokens & font scale
+        title_font = self.theme.font_spec(self.theme.typography.size_md, "bold")
+        subtitle_font = self.theme.font_spec(self.theme.typography.size_xs)
+        heading_font = self.theme.font_spec(self.theme.typography.size_xs, "bold")
+        form_label_font = self.theme.font_spec(self.theme.typography.size_xs, "bold")
+        body_font = self.theme.font_spec(self.theme.typography.size_sm)
+        button_font = self.theme.font_spec(self.theme.typography.size_xs)
+        mono_font = self.theme.font_spec(self.theme.typography.size_sm, mono=True)
+
+        self.title_lbl.configure(font=title_font, fg=colors.harmonic_tonic, bg=colors.bg_surface)
+        self.subtitle_lbl.configure(font=subtitle_font, fg=colors.text_secondary, bg=colors.bg_surface)
+        self.info_lbl.configure(font=title_font, fg=colors.harmonic_dominant, bg=colors.bg_surface)
+        self.sidebar_heading_lbl.configure(font=heading_font, fg=colors.text_secondary, bg=colors.bg_surface)
         for lbl in (
             self.project_title_lbl,
             self.key_lbl,
@@ -1554,7 +1564,7 @@ class StepsMainWindow:
             self.event_start_lbl,
             self.event_duration_lbl,
         ):
-            lbl.configure(bg=colors.bg_surface, fg=colors.text_primary)
+            lbl.configure(font=form_label_font, bg=colors.bg_surface, fg=colors.text_primary)
         for radio in (
             self.major_btn,
             self.minor_btn,
@@ -1562,6 +1572,7 @@ class StepsMainWindow:
             self.notation_de_btn,
         ):
             radio.configure(
+                font=body_font,
                 bg=colors.bg_surface,
                 fg=colors.text_primary,
                 selectcolor=colors.bg_window,
@@ -1577,13 +1588,19 @@ class StepsMainWindow:
             self.event_duration_entry,
         ):
             style_entry(entry, colors)
+            try:
+                entry.configure(font=body_font)
+            except Exception:
+                pass
         self.voice_style_menu.configure(
+            font=body_font,
             bg=colors.bg_active,
             fg=colors.text_primary,
             activebackground=colors.bg_surface_hover,
         )
-        self.voice_style_menu["menu"].configure(bg=colors.bg_surface, fg=colors.text_primary)
+        self.voice_style_menu["menu"].configure(font=body_font, bg=colors.bg_surface, fg=colors.text_primary)
         self.chord_listbox.configure(
+            font=mono_font,
             bg=colors.bg_window,
             fg=colors.text_primary,
             selectbackground=colors.harmonic_tonic,
@@ -1592,6 +1609,7 @@ class StepsMainWindow:
             highlightcolor=colors.border_focus,
         )
         self.detail_text.configure(
+            font=mono_font,
             bg=colors.bg_window,
             fg=colors.text_primary,
             highlightbackground=colors.border,
@@ -1608,6 +1626,8 @@ class StepsMainWindow:
                     base_fg=colors.text_primary,
                     active_bg=colors.bg_active,
                     active_fg=colors.harmonic_tonic,
+                    radius=self.theme.corner_radius,
+                    font=button_font,
                 )
                 set_button_active(btn, is_ws, colors)
         retheme_button(
@@ -1617,6 +1637,8 @@ class StepsMainWindow:
             base_fg=colors.text_primary,
             active_bg=colors.harmonic_tonic,
             active_fg=colors.text_inverted,
+            radius=self.theme.corner_radius,
+            font=button_font,
         )
         set_button_active(
             self.sidebar_toggle_btn,
@@ -1638,13 +1660,22 @@ class StepsMainWindow:
             self.trans_up_btn,
             self.voice_lab_btn,
         ):
-            retheme_button(btn, colors, base_bg=colors.bg_active, base_fg=colors.text_primary)
+            retheme_button(
+                btn,
+                colors,
+                base_bg=colors.bg_active,
+                base_fg=colors.text_primary,
+                radius=self.theme.corner_radius,
+                font=button_font,
+            )
         retheme_button(
             self.add_btn,
             colors,
             base_bg=colors.harmonic_tonic,
             base_fg=colors.text_inverted,
             hover_bg=colors.harmonic_tonic,
+            radius=self.theme.corner_radius,
+            font=button_font,
         )
         retheme_button(
             self.export_btn,
@@ -1652,6 +1683,8 @@ class StepsMainWindow:
             base_bg=colors.harmonic_subdominant,
             base_fg=colors.text_inverted,
             hover_bg=colors.harmonic_subdominant,
+            radius=self.theme.corner_radius,
+            font=button_font,
         )
 
     def _refresh_all(

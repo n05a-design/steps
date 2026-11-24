@@ -204,6 +204,14 @@ class RoundedButton(tk.Canvas):
         cursor: str = "hand2",
         **kwargs,
     ) -> None:
+        self.anchor = str(kwargs.pop("anchor", "center"))
+        self.padx = int(kwargs.pop("padx", 0))
+        self.pady = int(kwargs.pop("pady", 0))
+        self.relief = str(kwargs.pop("relief", "flat"))
+        self._state: str = str(kwargs.pop("state", tk.NORMAL))
+        self.justify = str(kwargs.pop("justify", "center"))
+        self.wraplength = int(kwargs.pop("wraplength", 0))
+
         opts: dict = {
             "height": height,
             "width": width,
@@ -235,7 +243,6 @@ class RoundedButton(tk.Canvas):
         self.is_hovered: bool = False
         self.is_pressed: bool = False
         self._glide_is_active: bool = False
-        self._state: str = tk.NORMAL
         self._draw_pending: Optional[str] = None
 
         self.display_text = layout_policy.clip_button_text(self._text)
@@ -278,6 +285,18 @@ class RoundedButton(tk.Canvas):
             self.base_bg = kwargs.pop("bg")
         elif "background" in kwargs:
             self.base_bg = kwargs.pop("background")
+        if "anchor" in kwargs:
+            self.anchor = str(kwargs.pop("anchor"))
+        if "padx" in kwargs:
+            self.padx = int(kwargs.pop("padx"))
+        if "pady" in kwargs:
+            self.pady = int(kwargs.pop("pady"))
+        if "relief" in kwargs:
+            self.relief = str(kwargs.pop("relief"))
+        if "justify" in kwargs:
+            self.justify = str(kwargs.pop("justify"))
+        if "wraplength" in kwargs:
+            self.wraplength = int(kwargs.pop("wraplength"))
         super().configure(**kwargs)
         self._draw()
 
@@ -292,6 +311,14 @@ class RoundedButton(tk.Canvas):
             return self.base_fg
         if key in ("bg", "background"):
             return self.base_bg
+        if key == "anchor":
+            return self.anchor
+        if key == "padx":
+            return self.padx
+        if key == "pady":
+            return self.pady
+        if key == "relief":
+            return self.relief
         return super().cget(key)
 
     def __getitem__(self, key: str) -> object:
@@ -323,6 +350,7 @@ class RoundedButton(tk.Canvas):
         active_fg: Optional[str] = None,
         border_color: Optional[str] = None,
         radius: Optional[int] = None,
+        font: Optional[tuple] = None,
     ) -> None:
         """Update button palette tokens and redraw."""
         self.bg_color = bg_color
@@ -335,6 +363,9 @@ class RoundedButton(tk.Canvas):
         self.border_color = border_color or base_bg
         if radius is not None:
             self.radius = max(0, radius)
+        if font is not None:
+            self.font = font
+            self._fit_width()
         try:
             super().configure(bg=bg_color)
         except tk.TclError:
@@ -453,14 +484,24 @@ class RoundedButton(tk.Canvas):
                     tags=("button_bg",),
                 )
 
-            # Center text
-            cx = w / 2
             cy = h / 2
+            # Position text according to anchor
+            if self.anchor in ("w", tk.W):
+                cx = pad + max(8, self.padx)
+                text_anchor = tk.W
+            elif self.anchor in ("e", tk.E):
+                cx = w - pad - max(8, self.padx)
+                text_anchor = tk.E
+            else:
+                cx = w / 2
+                text_anchor = tk.CENTER
+
             self.create_text(
                 cx, cy,
                 text=self.display_text,
                 font=self.font,
                 fill=fg,
+                anchor=text_anchor,
                 tags=("button_text",),
             )
         except tk.TclError:

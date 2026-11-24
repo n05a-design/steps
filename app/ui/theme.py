@@ -338,10 +338,12 @@ def retheme_button(
     hover_bg: Optional[str] = None,
     active_bg: Optional[str] = None,
     active_fg: Optional[str] = None,
+    radius: Optional[int] = None,
+    font: Optional[tuple] = None,
 ) -> None:
     """Update a Glide-styled button's palette tokens when switching Dark/Light themes."""
     if hasattr(button, "set_theme") and callable(getattr(button, "set_theme")):
-        button.set_theme(
+        kwargs: dict = dict(
             bg_color=colors.bg_window,
             base_bg=base_bg,
             base_fg=base_fg,
@@ -350,7 +352,17 @@ def retheme_button(
             active_fg=active_fg or colors.text_inverted,
             border_color=colors.border,
         )
+        if radius is not None:
+            kwargs["radius"] = radius
+        if font is not None:
+            kwargs["font"] = font
+        button.set_theme(**kwargs)
         return
+    if font is not None:
+        try:
+            button.configure(font=font)  # type: ignore[attr-defined]
+        except Exception:
+            pass
     for attr, value in (
         ("_glide_base_bg", base_bg),
         ("_glide_base_fg", base_fg),

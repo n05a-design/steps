@@ -1,6 +1,22 @@
 # Änderungsprotokoll
 
-## Unreleased – 0.5.0-dev (2026-11-24)
+## Unreleased – 0.6.0-dev (2026-11-24)
+
+### Hinzugefügt / Integriert
+- **Vollständiges Glide-Designsystem (Tokens & Paletten):**
+  - Alle vorherigen STEPS-Design-Tokens in `design/tokens/tokens.json` wurden vollständig durch die kanonischen Farbwerte, Schriftgrößen, Abstände und Rundungen aus Glide v1.0.2 (`app.pyw`, `ui_design.py`) überschrieben.
+  - **Dunkelmodus (`dark`):** Glide Canvas (`#111113`), Card Surface (`#1C1C1E`), Active/Field (`#2C2C2E`), Border (`#3A3A3C`), Text (`#F5F5F7`), Muted (`#A1A1A6`), Placeholder (`#939398`), Akzent/Auswahl (`#C66CF3`), Export/Bestätigen (`#30D158`), Löschen/Warnung (`#FF5950`), Cyan (`#40C8E0`), Blau (`#2C95FF`), Gelb (`#FFC038`).
+  - **Hellmodus (`light`):** Glide Canvas (`#F5F5F7`), Card Surface (`#FFFFFF`), Hover (`#D8E9FE`), Active/Line (`#E5E5EA`), Border (`#D8D8DE`), Text (`#15243C`), Muted (`#6E6E73`), Placeholder (`#707074`), Akzent/Auswahl (`#9E4AC8`), Export/Bestätigen (`#22813A`), Löschen/Warnung (`#D43128`), Cyan (`#227B8B`), Blau (`#086FD6`), Orange (`#A35F00`).
+  - **Kontrast- und Minimal-Themes:** Reines Okabe-Ito-Kontrastpaar und ruhige Helligkeitsabstufung der Minimal-Designs.
+  - Alle Paletten sind mathematisch nachgewiesen WCAG 2.2 AA konform ($\ge 4{,}5:1$ Fließtext).
+- **ThemedAutoScrollbar:**
+  - Austausch nativer OS-Scrollbars durch `glide_shell.custom_controls.ThemedAutoScrollbar` für Akkordliste und Detailansicht im Hauptfenster.
+  - Theme-Farbübernahme (`bg_surface`, `bg_surface_hover`, `border`, `harmonic_tonic`) mit abgerundeten Daumen und automatischem Ausblenden bei vollständiger Sichtbarkeit.
+- **Dynamische Typografie & Skalierung:**
+  - `apply_theme` aktualisiert alle Fensterelemente (Titel, Untertitel, Überschriften, Formularbeschriftungen, Radiobuttons, Eingabefelder, Aktionsknöpfe, Listen und Textansichten) dynamisch mit den über `font_scale` skalierten Schriftgrößen.
+- **Versionierung:** Anhebung von Paket (`0.6.0.dev0`), App (`0.6.0-dev`) und Dokumentation.
+
+## [0.5.0-dev] - 2026-11-24
 
 ### Hinzugefügt / Integriert
 - **Glide Anpassungs-Parität & Customization:** Vollständige Parität zu den Anpassungsmöglichkeiten der Glide Shell:

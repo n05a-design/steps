@@ -71,7 +71,7 @@ See the [implementation status](docs/IMPLEMENTATION.md) for precise behavior and
 
 ## Status and scope
 
-- `v0.1.0` is the latest public release. Current development version is `0.5.0-dev` (`0.5.0.dev0`), with the desktop application running on the integrated `glide_shell` `0.6.2` (from Glide `v1.0.2`) with responsive 2-area layout, 6 accessible themes, background tinting, adjustable corner radius, font scaling, and modal appearance customization. A macOS development bundle can be built locally. Distribution approval and the 1.0 scope and date remain open.
+- `v0.1.0` is the latest public release. Current development version is `0.6.0-dev` (`0.6.0.dev0`), with the desktop application running on the integrated `glide_shell` `0.6.2` (from Glide `v1.0.2`) with responsive 2-area layout, 6 accessible themes, background tinting, adjustable corner radius, font scaling, and modal appearance customization. A macOS development bundle can be built locally. Distribution approval and the 1.0 scope and date remain open.
 - Project open/save exists in the prototype; native file-dialog, recovery, accessibility, and platform acceptance remain open. Automated MIDI tests do not establish DAW interoperability.
 - English/German catalogs and persisted language selection exist; independent translation acceptance remains open.
 - There is no in-app audio playback or MIDI import, and no user-study evidence for learning outcomes or product-market fit.

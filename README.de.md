@@ -185,7 +185,7 @@ Fehler und Wünsche nimmt der [Issue-Bereich](https://github.com/n05a-design/ste
 
 ## Entwicklung und Qualität
 
-[VERSION](VERSION) nennt den Entwicklungsstand (`0.5.0-dev`), [`src.steps.__version__`](src/steps/__init__.py) die Python-Paketversion (`0.5.0.dev0`). Die Desktop-Anwendung baut produktiv auf [`glide_shell/`](glide_shell/__init__.py) (`0.6.2`, aus Glide `v1.0.2`) mit responsivem 2-Bereiche-Layout, 6 barrierefreien Themes, Hintergrund-Farbtönen, einstellbarer Eckenrundung, Schriftgrößenskalierung und modalem Erscheinungsbild-Dialog auf.
+[VERSION](VERSION) nennt den Entwicklungsstand (`0.6.0-dev`), [`src.steps.__version__`](src/steps/__init__.py) die Python-Paketversion (`0.6.0.dev0`). Die Desktop-Anwendung baut produktiv auf [`glide_shell/`](glide_shell/__init__.py) (`0.6.2`, aus Glide `v1.0.2`) mit responsivem 2-Bereiche-Layout, 6 barrierefreien Themes, Hintergrund-Farbtönen, einstellbarer Eckenrundung, Schriftgrößenskalierung und modalem Erscheinungsbild-Dialog auf.
 
 - [An STEPS arbeiten](CONTRIBUTING.md) · [Arbeitsregeln für Agenten](AGENTS.md) · [GitHub und CI](.github/GITHUB_UND_CI.md)
 - [Implementierungsstand](docs/IMPLEMENTATION.md) · [Python-API](docs/theory/API.md) · [Testanleitung](tests/README.md)
