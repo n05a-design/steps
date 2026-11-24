@@ -75,15 +75,161 @@ def fit_text_px(text: str, measure: Callable[[str], int], max_width: int) -> str
 
 
 def create_button(parent: tk.Misc, **options) -> tk.Button | ttk.Button:
-    """Use the native Aqua palette where Tk ignores classic button backgrounds."""
+    """Create a Glide-styled button with hover/active tracking on classic Tk and native Aqua."""
     import tkinter as tk
     from tkinter import ttk
 
+    hover_bg = options.pop("hover_bg", None)
+    active_bg = options.pop("active_bg", None)
+    active_fg = options.pop("active_fg", None)
+
     if parent.tk.call("tk", "windowingsystem") == "aqua":
-        for option in ("bg", "fg", "relief", "padx", "pady", "anchor"):
+        for option in ("bg", "fg", "relief", "padx", "pady", "anchor", "highlightthickness", "bd"):
             options.pop(option, None)
-        return ttk.Button(parent, **options)
-    return tk.Button(parent, **options)
+        btn = ttk.Button(parent, **options)
+        setattr(btn, "_glide_is_active", False)
+        return btn
+
+    base_bg = options.get("bg")
+    base_fg = options.get("fg")
+    if hover_bg and "activebackground" not in options:
+        options["activebackground"] = hover_bg
+    if base_fg and "activeforeground" not in options:
+        options["activeforeground"] = base_fg
+    options.setdefault("bd", 0)
+    options.setdefault("highlightthickness", 1)
+
+    btn = tk.Button(parent, **options)
+    setattr(btn, "_glide_base_bg", base_bg)
+    setattr(btn, "_glide_base_fg", base_fg)
+    setattr(btn, "_glide_hover_bg", hover_bg)
+    setattr(btn, "_glide_active_bg", active_bg)
+    setattr(btn, "_glide_active_fg", active_fg)
+    setattr(btn, "_glide_is_active", False)
+
+    def _on_enter(_event: tk.Event) -> None:
+        if getattr(btn, "_glide_is_active", False):
+            return
+        try:
+            if str(btn.cget("state")) == tk.DISABLED:
+                return
+            hover = getattr(btn, "_glide_hover_bg", None)
+            if hover:
+                btn.configure(bg=hover)
+        except Exception:
+            pass
+
+    def _on_leave(_event: tk.Event) -> None:
+        if getattr(btn, "_glide_is_active", False):
+            return
+        try:
+            base = getattr(btn, "_glide_base_bg", None)
+            if base:
+                btn.configure(bg=base)
+        except Exception:
+            pass
+
+    btn.bind("<Enter>", _on_enter, add="+")
+    btn.bind("<Leave>", _on_leave, add="+")
+    return btn
+
+
+def set_button_active(button: object, active: bool, colors: "ThemeColors") -> None:
+    """Apply or clear Glide active-button highlighting safely across Tk and mock widgets."""
+    is_active = bool(active)
+    try:
+        setattr(button, "_glide_is_active", is_active)
+    except Exception:
+        pass
+    try:
+        windowing = button.tk.call("tk", "windowingsystem")  # type: ignore[attr-defined]
+    except Exception:
+        windowing = ""
+    if windowing == "aqua":
+        # Native ttk.Button does not accept classic bg/fg; expose state cleanly for accessibility.
+        return
+    base_bg = getattr(button, "_glide_base_bg", colors.bg_active) or colors.bg_active
+    base_fg = getattr(button, "_glide_base_fg", colors.text_primary) or colors.text_primary
+    active_bg = getattr(button, "_glide_active_bg", None) or colors.harmonic_tonic
+    active_fg = getattr(button, "_glide_active_fg", None) or colors.text_inverted
+    target_bg = active_bg if is_active else base_bg
+    target_fg = active_fg if is_active else base_fg
+    try:
+        button.configure(bg=target_bg, fg=target_fg)  # type: ignore[attr-defined]
+    except Exception:
+        pass
+
+
+def retheme_button(
+    button: object,
+    colors: "ThemeColors",
+    *,
+    base_bg: str,
+    base_fg: str,
+    hover_bg: Optional[str] = None,
+    active_bg: Optional[str] = None,
+    active_fg: Optional[str] = None,
+) -> None:
+    """Update a Glide-styled button's palette tokens when switching Dark/Light themes."""
+    for attr, value in (
+        ("_glide_base_bg", base_bg),
+        ("_glide_base_fg", base_fg),
+        ("_glide_hover_bg", hover_bg or colors.bg_surface_hover),
+        ("_glide_active_bg", active_bg),
+        ("_glide_active_fg", active_fg),
+    ):
+        try:
+            setattr(button, attr, value)
+        except Exception:
+            pass
+    try:
+        windowing = button.tk.call("tk", "windowingsystem")  # type: ignore[attr-defined]
+    except Exception:
+        windowing = ""
+    if windowing == "aqua":
+        return
+    try:
+        button.configure(  # type: ignore[attr-defined]
+            activebackground=hover_bg or colors.bg_surface_hover,
+            activeforeground=base_fg,
+            highlightbackground=colors.bg_surface,
+            highlightcolor=colors.border_focus,
+        )
+    except Exception:
+        pass
+    set_button_active(button, bool(getattr(button, "_glide_is_active", False)), colors)
+
+
+def style_surface_card(frame: "tk.Frame", colors: "ThemeColors") -> None:
+    """Apply calm Glide carrier-card surface styling with subtle 1px border (B17/B19)."""
+    import tkinter as tk
+
+    frame.configure(
+        bg=colors.bg_surface,
+        bd=0,
+        relief=tk.FLAT,
+        highlightthickness=1,
+        highlightbackground=colors.border,
+        highlightcolor=colors.border,
+    )
+
+
+def style_entry(entry: "tk.Entry", colors: "ThemeColors") -> None:
+    """Apply clean 1px-contoured Glide input-field styling against carrier cards (B17/B19)."""
+    import tkinter as tk
+
+    entry.configure(
+        bg=colors.bg_window,
+        fg=colors.text_primary,
+        insertbackground=colors.text_primary,
+        selectbackground=colors.harmonic_tonic,
+        selectforeground=colors.text_inverted,
+        relief=tk.FLAT,
+        bd=0,
+        highlightthickness=1,
+        highlightbackground=colors.border,
+        highlightcolor=colors.border_focus,
+    )
 
 
 @dataclass(frozen=True)

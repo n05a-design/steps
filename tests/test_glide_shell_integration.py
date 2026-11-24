@@ -222,6 +222,28 @@ class TestGlideShellIntegration(unittest.TestCase):
         restored_geom = layout_policy.normal_geometry("1024x720+100+80", compact_geom)
         self.assertEqual(restored_geom, "1024x720+100+80")
 
+        self.assertEqual(layout_policy.FONT_SIZES["caption"], 9)
+        self.assertEqual(layout_policy.FONT_SIZES["body"], 12)
+        self.assertEqual(layout_policy.FONT_SIZES["section"], 16)
+        self.assertEqual(layout_policy.FONT_SIZES["title"], 22)
+        self.assertEqual(layout_policy.TITLE_MAX_CHARS, 40)
+        self.assertEqual(layout_policy.BUTTON_TEXT_MAX_CHARS, 24)
+        self.assertEqual(layout_policy.SYMBOLS["up"], "▴")
+        self.assertEqual(layout_policy.SYMBOLS["down"], "▾")
+        self.assertLessEqual(len(layout_policy.clip_title("A" * 60)), 40)
+        self.assertLessEqual(len(layout_policy.clip_button_text("B" * 40)), 24)
+        self.assertEqual(layout_policy.remaining_chars_text(10), "30/40")
+        markers = layout_policy.aligned_menu_markers(len)
+        self.assertTrue(markers["✓"].startswith("✓"))
+        self.assertTrue(markers["□"].startswith("□"))
+
+        en_i18n = LocaleManager(preference="en")
+        de_i18n = LocaleManager(preference="de")
+        self.assertEqual(en_i18n.translate("view.sidebar.toggle"), "Sidebar")
+        self.assertEqual(de_i18n.translate("view.sidebar.toggle"), "Seitenleiste")
+        self.assertEqual(en_i18n.translate("view.compact.toggle"), "Compact Mode")
+        self.assertEqual(de_i18n.translate("view.compact.toggle"), "Kompaktmodus")
+
     def test_two_area_shell_sidebar_logo_breakpoints_and_compact_mode(self):
         require_tk = os.environ.get("STEPS_REQUIRE_DESKTOP_TK") == "1"
         try:
@@ -262,12 +284,16 @@ class TestGlideShellIntegration(unittest.TestCase):
         root.geometry("1024x720")
         root.update()
 
-        # 1. Default 1024x720 shows wide sidebar and in-app logo
+        # 1. Default 1024x720 shows wide sidebar, in-app logo, and D66 subtitle metrics
         self.assertEqual(window.effective_sidebar_mode(), "wide")
         self.assertTrue(window.sidebar_frame.winfo_ismapped())
         self.assertFalse(window.sidebar_rail_frame.winfo_ismapped())
         self.assertIsNotNone(window._header_logo_image)
         self.assertTrue(window.header_logo_lbl.winfo_ismapped())
+        self.assertTrue(window.subtitle_lbl.winfo_ismapped())
+        self.assertIn("BPM", window.subtitle_lbl.cget("text"))
+        self.assertFalse(getattr(window.sidebar_toggle_btn, "_glide_is_active", True))
+        self.assertTrue(getattr(window._sidebar_buttons["workspace"], "_glide_is_active", False))
 
         # 2. Manual narrow rail + keyboard arrow traversal + hide/show
         window.toggle_sidebar_narrow()
@@ -288,13 +314,15 @@ class TestGlideShellIntegration(unittest.TestCase):
         self.assertEqual(window.effective_sidebar_mode(), "hidden")
         self.assertFalse(window.sidebar_frame.winfo_ismapped())
         self.assertFalse(window.sidebar_rail_frame.winfo_ismapped())
+        self.assertTrue(getattr(window.sidebar_toggle_btn, "_glide_is_active", False))
 
         window.toggle_sidebar()
         window.toggle_sidebar_narrow()
         root.update()
         self.assertEqual(window.effective_sidebar_mode(), "wide")
+        self.assertFalse(getattr(window.sidebar_toggle_btn, "_glide_is_active", True))
 
-        # 3. Responsive breakpoint < 900 px switches wide sidebar -> rail and hides in-app logo
+        # 3. Responsive breakpoint < 900 px switches wide sidebar -> rail and hides in-app logo + subtitle
         root.geometry("860x600")
         root.update()
         self.assertEqual(window._header_density, "minimal")
@@ -302,15 +330,17 @@ class TestGlideShellIntegration(unittest.TestCase):
         self.assertEqual(window.effective_sidebar_mode(), "rail")
         self.assertTrue(window.sidebar_rail_frame.winfo_ismapped())
         self.assertFalse(window.header_logo_lbl.winfo_ismapped())
+        self.assertFalse(window.subtitle_lbl.winfo_ismapped())
 
-        # Restoring width >= 900 restores wide sidebar and in-app logo
+        # Restoring width >= 900 restores wide sidebar, in-app logo, and subtitle
         root.geometry("1024x720")
         root.update()
         self.assertEqual(window.effective_sidebar_mode(), "wide")
         self.assertTrue(window.sidebar_frame.winfo_ismapped())
         self.assertTrue(window.header_logo_lbl.winfo_ismapped())
+        self.assertTrue(window.subtitle_lbl.winfo_ismapped())
 
-        # 4. Compact mode hides sidebar/logo, allows COMPACT_MIN, and restores normal geometry
+        # 4. Compact mode hides sidebar/logo/subtitle, allows COMPACT_MIN, and restores normal geometry
         window.enter_compact_mode()
         root.update()
         self.assertTrue(window.compact_mode_active())
@@ -318,6 +348,7 @@ class TestGlideShellIntegration(unittest.TestCase):
         self.assertFalse(window.sidebar_frame.winfo_ismapped())
         self.assertFalse(window.sidebar_rail_frame.winfo_ismapped())
         self.assertFalse(window.header_logo_lbl.winfo_ismapped())
+        self.assertFalse(window.subtitle_lbl.winfo_ismapped())
 
         window.leave_compact_mode()
         root.update()
@@ -326,6 +357,19 @@ class TestGlideShellIntegration(unittest.TestCase):
         self.assertEqual(window.effective_sidebar_mode(), "wide")
         self.assertTrue(window.sidebar_frame.winfo_ismapped())
         self.assertTrue(window.header_logo_lbl.winfo_ismapped())
+        self.assertTrue(window.subtitle_lbl.winfo_ismapped())
+
+        # 5. Live theme switching updates Glide surfaces and entries across Light and Dark
+        window.apply_theme("light")
+        root.update()
+        self.assertEqual(window.theme.mode, "light")
+        self.assertEqual(window.root.cget("bg"), window.theme.colors.bg_window)
+        self.assertEqual(window.sidebar_frame.cget("bg"), window.theme.colors.bg_surface)
+        self.assertEqual(window.chord_entry.cget("bg"), window.theme.colors.bg_window)
+        window.set_theme_preference("dark")
+        root.update()
+        self.assertEqual(window.theme.mode, "dark")
+        self.assertEqual(window.root.cget("bg"), window.theme.colors.bg_window)
 
 
 if __name__ == "__main__":

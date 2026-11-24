@@ -34,7 +34,16 @@ from app.ui.midi_export_dialog import (
 from app.ui.next_chord_panel import NextChordPanel
 from app.ui.reviewed_library_dialog import ReviewedProgressionLibraryDialog
 from app.ui.session_controller import ProgressionSessionController
-from app.ui.theme import ThemeManager, apply_window_geometry, create_button, default_theme
+from app.ui.theme import (
+    ThemeManager,
+    apply_window_geometry,
+    create_button,
+    default_theme,
+    retheme_button,
+    set_button_active,
+    style_entry,
+    style_surface_card,
+)
 from app.ui.voice_leading_lab_dialog import (
     VOICE_LEADING_STYLE_OPTIONS,
     VoiceLeadingLabDialog,
@@ -93,6 +102,7 @@ class StepsMainWindow:
         self._header_density: str = "full"
         self._height_density: str = "full"
         self._header_logo_image = None
+        self._theme_preference: str = self.theme.mode
 
         self.root.title(self.i18n.translate("app.title"))
         self.theme.configure_shell_providers(self.root)
@@ -179,6 +189,16 @@ class StepsMainWindow:
                 command=lambda selected=preference: self._on_language_change(selected),
             )
         self.settings_menu.add_cascade(label="", menu=self.language_menu)
+        self.theme_menu = tk.Menu(self.settings_menu, tearoff=False)
+        self.theme_var = tk.StringVar(self.root, value=self._theme_preference)
+        for preference in ("system", "dark", "light"):
+            self.theme_menu.add_radiobutton(
+                label="",
+                value=preference,
+                variable=self.theme_var,
+                command=lambda selected=preference: self.set_theme_preference(selected),
+            )
+        self.settings_menu.add_cascade(label="", menu=self.theme_menu)
         self.settings_menu.add_separator()
         self.settings_menu.add_command(
             label="",
@@ -249,15 +269,19 @@ class StepsMainWindow:
         if (
             callable(getattr(self.settings_menu, "index", None))
             and self.settings_menu.index(tk.END) is not None
-            and self.settings_menu.index(tk.END) >= 4
+            and self.settings_menu.index(tk.END) >= 5
         ):
-            self.settings_menu.entryconfigure(2, label=t("view.sidebar.toggle"))
-            self.settings_menu.entryconfigure(3, label=t("view.sidebar.narrow"))
-            self.settings_menu.entryconfigure(4, label=t("view.compact.toggle"))
+            self.settings_menu.entryconfigure(1, label=t("theme.menu"))
+            for index, key in enumerate(("theme.system", "theme.dark", "theme.light")):
+                self.theme_menu.entryconfigure(index, label=t(key))
+            self.settings_menu.entryconfigure(3, label=t("view.sidebar.toggle"))
+            self.settings_menu.entryconfigure(4, label=t("view.sidebar.narrow"))
+            self.settings_menu.entryconfigure(5, label=t("view.compact.toggle"))
         for index, key in enumerate(("language.system", "language.en", "language.de")):
             self.language_menu.entryconfigure(index, label=t(key))
         self._localize_sidebar_widgets()
-        self.title_lbl.configure(text=t("workspace.heading"))
+        self.title_lbl.configure(text=layout_policy.clip_title(t("workspace.heading")))
+        self._update_header_subtitle()
         self.project_title_lbl.configure(text=t("project.title"))
         self.key_lbl.configure(text=t("context.key"))
         self.mode_lbl.configure(text=t("context.mode"))
@@ -564,14 +588,13 @@ class StepsMainWindow:
             self.shell_frame,
             bg=colors.bg_surface,
             width=layout_policy.SIDEBAR_WIDE_WIDTH,
-            bd=1,
-            relief=tk.SOLID,
         )
+        style_surface_card(self.sidebar_frame, colors)
         self.sidebar_frame.pack_propagate(False)
         self.sidebar_heading_lbl = tk.Label(
             self.sidebar_frame,
             text="",
-            font=self.theme.font_spec(self.theme.typography.size_xs, "bold"),
+            font=self.theme.font_spec(layout_policy.FONT_SIZES["caption"], "bold"),
             fg=colors.text_secondary,
             bg=colors.bg_surface,
             anchor=tk.W,
@@ -588,12 +611,16 @@ class StepsMainWindow:
                 command=callback,
                 bg=colors.bg_surface,
                 fg=colors.text_primary,
+                hover_bg=colors.bg_surface_hover,
+                active_bg=colors.bg_active,
+                active_fg=colors.harmonic_tonic,
                 relief=tk.FLAT,
                 anchor=tk.W,
                 padx=sp.sm,
             )
             btn.pack(fill=tk.X, padx=sp.xs, pady=2)
             self._sidebar_buttons[item_id] = btn
+        set_button_active(self._sidebar_buttons["workspace"], True, colors)
 
         self.sidebar_collapse_btn = create_button(
             self.sidebar_frame,
@@ -601,6 +628,7 @@ class StepsMainWindow:
             command=self.toggle_sidebar_narrow,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
@@ -610,9 +638,8 @@ class StepsMainWindow:
             self.shell_frame,
             bg=colors.bg_surface,
             width=layout_policy.SIDEBAR_RAIL_WIDTH,
-            bd=1,
-            relief=tk.SOLID,
         )
+        style_surface_card(self.sidebar_rail_frame, colors)
         self.sidebar_rail_frame.pack_propagate(False)
         self._rail_buttons: list[tk.Button | tk.ttk.Button] = []
         self._rail_button_map: dict[str, tk.Button | tk.ttk.Button] = {}
@@ -623,12 +650,16 @@ class StepsMainWindow:
                 command=callback,
                 bg=colors.bg_surface,
                 fg=colors.text_primary,
+                hover_bg=colors.bg_surface_hover,
+                active_bg=colors.bg_active,
+                active_fg=colors.harmonic_tonic,
                 relief=tk.FLAT,
                 padx=sp.xs,
             )
             btn.pack(fill=tk.X, padx=sp.xs, pady=2)
             self._rail_buttons.append(btn)
             self._rail_button_map[item_id] = btn
+        set_button_active(self._rail_button_map["workspace"], True, colors)
 
         self.sidebar_expand_btn = create_button(
             self.sidebar_rail_frame,
@@ -636,6 +667,7 @@ class StepsMainWindow:
             command=self.toggle_sidebar_narrow,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.xs,
         )
@@ -665,7 +697,7 @@ class StepsMainWindow:
         self.sidebar_collapse_btn.configure(text=t("view.sidebar.collapse"))
         self.sidebar_expand_btn.configure(text=t("view.sidebar.expand"))
         for item_id, nav_key, rail_key, _callback in self._sidebar_nav_items():
-            self._sidebar_buttons[item_id].configure(text=t(nav_key))
+            self._sidebar_buttons[item_id].configure(text=layout_policy.clip_button_text(t(nav_key)))
             self._rail_button_map[item_id].configure(text=t(rail_key))
 
     def _current_window_width(self) -> int:
@@ -713,6 +745,8 @@ class StepsMainWindow:
         else:
             self.sidebar_frame.pack_forget()
             self.sidebar_rail_frame.pack_forget()
+        if hasattr(self, "sidebar_toggle_btn"):
+            set_button_active(self.sidebar_toggle_btn, mode == "hidden", self.theme.colors)
 
     def toggle_sidebar(self) -> str:
         self._sidebar_visible = not self._sidebar_visible
@@ -779,20 +813,46 @@ class StepsMainWindow:
         self.sync_header_logo()
         return "break"
 
+    def _update_header_subtitle(self) -> None:
+        if not hasattr(self, "subtitle_lbl"):
+            return
+        session = self.controller.session
+        t = self.i18n.translate
+        mode_label = t("context.minor" if session.is_minor else "context.major")
+        numerator, denominator = session.time_signature
+        subtitle = t(
+            "workspace.subtitle",
+            count=len(session.chords),
+            key=session.key_root,
+            mode=mode_label,
+            bpm=f"{session.bpm:g}",
+            meter=f"{numerator}/{denominator}",
+        )
+        self.subtitle_lbl.configure(text=layout_policy.clip_title(subtitle))
+
     def sync_header_logo(self) -> None:
         logo_lbl = getattr(self, "header_logo_lbl", None)
+        subtitle_lbl = getattr(self, "subtitle_lbl", None)
         if logo_lbl is None or not hasattr(self, "title_lbl"):
             return
-        if (
-            self._header_logo_image is None
-            or self._header_density == "minimal"
-            or self.compact_mode_active()
-        ):
+        show_logo_and_subtitle = (
+            self._header_logo_image is not None
+            and self._header_density != "minimal"
+            and not self.compact_mode_active()
+        )
+        if not show_logo_and_subtitle:
             logo_lbl.pack_forget()
+            if subtitle_lbl is not None:
+                subtitle_lbl.pack_forget()
             return
+        sp = self.theme.spacing
+        anchor_target = getattr(self, "header_title_box", self.title_lbl)
         if not logo_lbl.winfo_manager():
-            sp = self.theme.spacing
-            logo_lbl.pack(side=tk.LEFT, padx=(0, sp.xs), before=self.title_lbl)
+            logo_lbl.pack(side=tk.LEFT, padx=(0, sp.xs), before=anchor_target)
+        if subtitle_lbl is not None:
+            self._update_header_subtitle()
+            if not subtitle_lbl.winfo_manager():
+                subtitle_lbl.pack(side=tk.TOP, anchor=tk.W)
 
     def _sync_height_density(self) -> None:
         if not hasattr(self, "control_bar"):
@@ -851,6 +911,9 @@ class StepsMainWindow:
             command=self.toggle_sidebar,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
+            active_bg=colors.harmonic_tonic,
+            active_fg=colors.text_inverted,
             relief=tk.FLAT,
             padx=sp.xs,
         )
@@ -867,14 +930,27 @@ class StepsMainWindow:
             bd=0,
         )
 
+        self.header_title_box = tk.Frame(self.control_bar, bg=colors.bg_surface, bd=0)
+        self.header_title_box.pack(side=tk.LEFT, padx=(0, sp.md))
+
         self.title_lbl = tk.Label(
-            self.control_bar,
-            text=self.i18n.translate("workspace.heading"),
-            font=("Helvetica", 11, "bold"),
+            self.header_title_box,
+            text=layout_policy.clip_title(self.i18n.translate("workspace.heading")),
+            font=self.theme.font_spec(self.theme.typography.size_md, "bold"),
             fg=colors.harmonic_tonic,
-            bg=colors.bg_surface
+            bg=colors.bg_surface,
+            anchor=tk.W,
         )
-        self.title_lbl.pack(side=tk.LEFT, padx=(0, sp.md))
+        self.title_lbl.pack(side=tk.TOP, anchor=tk.W)
+
+        self.subtitle_lbl = tk.Label(
+            self.header_title_box,
+            text="",
+            font=self.theme.font_spec(layout_policy.FONT_SIZES["caption"], "bold"),
+            fg=colors.text_secondary,
+            bg=colors.bg_surface,
+            anchor=tk.W,
+        )
 
         w = self._current_window_width()
         h = self._current_window_height()
@@ -888,13 +964,9 @@ class StepsMainWindow:
         self.chord_entry = tk.Entry(
             self.control_bar,
             width=10,
-            font=("Courier", 12),
-            bg=colors.bg_window,
-            fg=colors.text_primary,
-            insertbackground=colors.text_primary,
-            relief=tk.FLAT,
-            bd=1
+            font=self.theme.font_spec(layout_policy.FONT_SIZES["body"], mono=True),
         )
+        style_entry(self.chord_entry, colors)
         self.chord_entry.pack(side=tk.LEFT, padx=sp.xs)
         self.chord_entry.insert(0, "Cmaj7")
 
@@ -904,6 +976,7 @@ class StepsMainWindow:
             command=self._on_add_chord,
             bg=colors.harmonic_tonic,
             fg=colors.text_inverted,
+            hover_bg=colors.harmonic_tonic,
             relief=tk.FLAT,
             padx=sp.sm
         )
@@ -917,6 +990,7 @@ class StepsMainWindow:
             command=self._on_update_chord,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
@@ -927,6 +1001,7 @@ class StepsMainWindow:
             command=self._on_remove_chord,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
@@ -937,6 +1012,7 @@ class StepsMainWindow:
             command=lambda: self._on_move_chord(-1),
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
@@ -947,6 +1023,7 @@ class StepsMainWindow:
             command=lambda: self._on_move_chord(1),
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
@@ -957,6 +1034,7 @@ class StepsMainWindow:
             command=self._on_undo,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
@@ -967,6 +1045,7 @@ class StepsMainWindow:
             command=self._on_redo,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
@@ -978,26 +1057,16 @@ class StepsMainWindow:
             self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
         )
         self.project_title_lbl.pack(side=tk.LEFT, padx=(0, sp.xs))
-        self.project_title_entry = tk.Entry(
-            self.context_bar,
-            width=16,
-            bg=colors.bg_window,
-            fg=colors.text_primary,
-            insertbackground=colors.text_primary,
-        )
+        self.project_title_entry = tk.Entry(self.context_bar, width=16)
+        style_entry(self.project_title_entry, colors)
         self.project_title_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.project_title_entry.insert(0, self.controller.session.state.title)
         self.project_title_entry.bind("<Return>", self._on_context_shortcut)
 
         self.key_lbl = tk.Label(self.context_bar, text="", bg=colors.bg_surface, fg=colors.text_primary)
         self.key_lbl.pack(side=tk.LEFT, padx=(0, sp.xs))
-        self.key_entry = tk.Entry(
-            self.context_bar,
-            width=5,
-            bg=colors.bg_window,
-            fg=colors.text_primary,
-            insertbackground=colors.text_primary,
-        )
+        self.key_entry = tk.Entry(self.context_bar, width=5)
+        style_entry(self.key_entry, colors)
         self.key_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.key_entry.insert(0, self.controller.session.key_root)
         self.key_entry.bind("<Return>", self._on_context_shortcut)
@@ -1066,13 +1135,8 @@ class StepsMainWindow:
             self.playback_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
         )
         self.tempo_lbl.pack(side=tk.LEFT, padx=(sp.md, sp.xs))
-        self.tempo_entry = tk.Entry(
-            self.playback_bar,
-            width=6,
-            bg=colors.bg_window,
-            fg=colors.text_primary,
-            insertbackground=colors.text_primary,
-        )
+        self.tempo_entry = tk.Entry(self.playback_bar, width=6)
+        style_entry(self.tempo_entry, colors)
         self.tempo_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.tempo_entry.insert(0, f"{self.controller.session.bpm:g}")
         self.tempo_entry.bind("<Return>", self._on_context_shortcut)
@@ -1081,13 +1145,8 @@ class StepsMainWindow:
             self.playback_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
         )
         self.meter_lbl.pack(side=tk.LEFT, padx=(sp.sm, sp.xs))
-        self.meter_entry = tk.Entry(
-            self.playback_bar,
-            width=5,
-            bg=colors.bg_window,
-            fg=colors.text_primary,
-            insertbackground=colors.text_primary,
-        )
+        self.meter_entry = tk.Entry(self.playback_bar, width=5)
+        style_entry(self.meter_entry, colors)
         self.meter_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.meter_entry.insert(
             0, f"{self.controller.session.time_signature[0]}/{self.controller.session.time_signature[1]}"
@@ -1100,6 +1159,7 @@ class StepsMainWindow:
             command=self._on_apply_context,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
@@ -1133,13 +1193,8 @@ class StepsMainWindow:
             self.timing_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
         )
         self.event_start_lbl.pack(side=tk.LEFT, padx=(0, sp.xs))
-        self.event_start_entry = tk.Entry(
-            self.timing_bar,
-            width=9,
-            bg=colors.bg_window,
-            fg=colors.text_primary,
-            insertbackground=colors.text_primary,
-        )
+        self.event_start_entry = tk.Entry(self.timing_bar, width=9)
+        style_entry(self.event_start_entry, colors)
         self.event_start_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.event_start_entry.bind("<Return>", self._on_event_timing_shortcut)
         self.event_start_entry.bind("<Escape>", self._on_reset_event_timing)
@@ -1148,13 +1203,8 @@ class StepsMainWindow:
             self.timing_bar, text="", bg=colors.bg_surface, fg=colors.text_primary
         )
         self.event_duration_lbl.pack(side=tk.LEFT, padx=(0, sp.xs))
-        self.event_duration_entry = tk.Entry(
-            self.timing_bar,
-            width=9,
-            bg=colors.bg_window,
-            fg=colors.text_primary,
-            insertbackground=colors.text_primary,
-        )
+        self.event_duration_entry = tk.Entry(self.timing_bar, width=9)
+        style_entry(self.event_duration_entry, colors)
         self.event_duration_entry.pack(side=tk.LEFT, padx=(0, sp.sm))
         self.event_duration_entry.bind("<Return>", self._on_event_timing_shortcut)
         self.event_duration_entry.bind("<Escape>", self._on_reset_event_timing)
@@ -1165,6 +1215,7 @@ class StepsMainWindow:
             command=self._on_apply_event_timing,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
@@ -1177,6 +1228,7 @@ class StepsMainWindow:
             command=lambda: self._on_transpose(-1),
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.xs
         )
@@ -1188,6 +1240,7 @@ class StepsMainWindow:
             command=lambda: self._on_transpose(1),
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.xs
         )
@@ -1200,13 +1253,15 @@ class StepsMainWindow:
             command=self._on_export_midi,
             bg=colors.harmonic_subdominant,
             fg=colors.text_inverted,
+            hover_bg=colors.harmonic_subdominant,
             relief=tk.FLAT,
             padx=sp.sm
         )
         self.export_btn.pack(side=tk.RIGHT, padx=sp.xs)
 
         # Chord Listbox / Progression Display
-        self.prog_frame = tk.Frame(self.work_area, bg=colors.bg_window, bd=1, relief=tk.SOLID)
+        self.prog_frame = tk.Frame(self.work_area, bg=colors.bg_surface)
+        style_surface_card(self.prog_frame, colors)
         self.prog_frame.pack(fill=tk.BOTH, expand=True, padx=sp.sm, pady=(0, sp.sm))
 
         self.chord_listbox = tk.Listbox(
@@ -1253,7 +1308,7 @@ class StepsMainWindow:
         self.info_lbl = tk.Label(
             self.info_bar,
             text=self.i18n.translate("information.heading"),
-            font=("Helvetica", 11, "bold"),
+            font=self.theme.font_spec(self.theme.typography.size_md, "bold"),
             fg=colors.harmonic_dominant,
             bg=colors.bg_surface
         )
@@ -1265,12 +1320,14 @@ class StepsMainWindow:
             command=self._on_open_voice_leading_lab,
             bg=colors.bg_active,
             fg=colors.text_primary,
+            hover_bg=colors.bg_surface_hover,
             relief=tk.FLAT,
             padx=sp.sm,
         )
 
         # Detail Content Frame
-        self.detail_frame = tk.Frame(self.info_area, bg=colors.bg_window, bd=1, relief=tk.SOLID)
+        self.detail_frame = tk.Frame(self.info_area, bg=colors.bg_surface)
+        style_surface_card(self.detail_frame, colors)
         self.detail_frame.pack(fill=tk.BOTH, expand=True, padx=sp.sm, pady=(0, sp.sm))
 
         self.detail_text = tk.Text(
@@ -1300,6 +1357,159 @@ class StepsMainWindow:
         detail_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.detail_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
+    def set_theme_preference(self, preference: str) -> Literal["dark", "light"]:
+        """Switch UI appearance between dark, light, or OS system mode via glide_shell."""
+        self._theme_preference = preference if preference in ("system", "dark", "light") else "dark"
+        if hasattr(self, "theme_var"):
+            self.theme_var.set(self._theme_preference)
+        resolved: Literal["dark", "light"] = (
+            self.theme.resolve_system_mode(self.root, fallback=self.theme.mode)
+            if self._theme_preference == "system"
+            else self._theme_preference  # type: ignore[assignment]
+        )
+        self.apply_theme(resolved)
+        return resolved
+
+    def apply_theme(self, mode: Literal["dark", "light"]) -> None:
+        """Apply a dark/light Glide palette live across main-window surfaces, entries and buttons."""
+        self.theme.set_mode(mode)
+        colors = self.theme.colors
+        self.root.configure(bg=colors.bg_window)
+        self.shell_frame.configure(bg=colors.bg_window)
+        self.paned.configure(bg=colors.border)
+        for area in (
+            self.work_area,
+            self.control_bar,
+            self.header_title_box,
+            self.edit_bar,
+            self.context_bar,
+            self.playback_bar,
+            self.timing_bar,
+            self.info_area,
+            self.info_bar,
+        ):
+            area.configure(bg=colors.bg_surface)
+        style_surface_card(self.sidebar_frame, colors)
+        style_surface_card(self.sidebar_rail_frame, colors)
+        style_surface_card(self.prog_frame, colors)
+        style_surface_card(self.detail_frame, colors)
+        if hasattr(self, "header_logo_lbl"):
+            self.header_logo_lbl.configure(bg=colors.bg_surface)
+        self.title_lbl.configure(fg=colors.harmonic_tonic, bg=colors.bg_surface)
+        self.subtitle_lbl.configure(fg=colors.text_secondary, bg=colors.bg_surface)
+        self.info_lbl.configure(fg=colors.harmonic_dominant, bg=colors.bg_surface)
+        self.sidebar_heading_lbl.configure(fg=colors.text_secondary, bg=colors.bg_surface)
+        for lbl in (
+            self.project_title_lbl,
+            self.key_lbl,
+            self.mode_lbl,
+            self.notation_lbl,
+            self.tempo_lbl,
+            self.meter_lbl,
+            self.voice_style_lbl,
+            self.event_start_lbl,
+            self.event_duration_lbl,
+        ):
+            lbl.configure(bg=colors.bg_surface, fg=colors.text_primary)
+        for radio in (
+            self.major_btn,
+            self.minor_btn,
+            self.notation_int_btn,
+            self.notation_de_btn,
+        ):
+            radio.configure(
+                bg=colors.bg_surface,
+                fg=colors.text_primary,
+                selectcolor=colors.bg_window,
+                activebackground=colors.bg_surface,
+            )
+        for entry in (
+            self.chord_entry,
+            self.project_title_entry,
+            self.key_entry,
+            self.tempo_entry,
+            self.meter_entry,
+            self.event_start_entry,
+            self.event_duration_entry,
+        ):
+            style_entry(entry, colors)
+        self.voice_style_menu.configure(
+            bg=colors.bg_active,
+            fg=colors.text_primary,
+            activebackground=colors.bg_surface_hover,
+        )
+        self.voice_style_menu["menu"].configure(bg=colors.bg_surface, fg=colors.text_primary)
+        self.chord_listbox.configure(
+            bg=colors.bg_window,
+            fg=colors.text_primary,
+            selectbackground=colors.harmonic_tonic,
+            selectforeground=colors.text_inverted,
+            highlightbackground=colors.border,
+            highlightcolor=colors.border_focus,
+        )
+        self.detail_text.configure(
+            bg=colors.bg_window,
+            fg=colors.text_primary,
+            highlightbackground=colors.border,
+            highlightcolor=colors.border_focus,
+        )
+        self.next_chord_panel.apply_theme(self.theme)
+        for item_id in self._sidebar_buttons:
+            is_ws = item_id == "workspace"
+            for btn in (self._sidebar_buttons[item_id], self._rail_button_map[item_id]):
+                retheme_button(
+                    btn,
+                    colors,
+                    base_bg=colors.bg_surface,
+                    base_fg=colors.text_primary,
+                    active_bg=colors.bg_active,
+                    active_fg=colors.harmonic_tonic,
+                )
+                set_button_active(btn, is_ws, colors)
+        retheme_button(
+            self.sidebar_toggle_btn,
+            colors,
+            base_bg=colors.bg_active,
+            base_fg=colors.text_primary,
+            active_bg=colors.harmonic_tonic,
+            active_fg=colors.text_inverted,
+        )
+        set_button_active(
+            self.sidebar_toggle_btn,
+            self.effective_sidebar_mode() == "hidden",
+            colors,
+        )
+        for btn in (
+            self.sidebar_collapse_btn,
+            self.sidebar_expand_btn,
+            self.update_btn,
+            self.remove_btn,
+            self.move_up_btn,
+            self.move_down_btn,
+            self.undo_btn,
+            self.redo_btn,
+            self.context_btn,
+            self.event_timing_btn,
+            self.trans_down_btn,
+            self.trans_up_btn,
+            self.voice_lab_btn,
+        ):
+            retheme_button(btn, colors, base_bg=colors.bg_active, base_fg=colors.text_primary)
+        retheme_button(
+            self.add_btn,
+            colors,
+            base_bg=colors.harmonic_tonic,
+            base_fg=colors.text_inverted,
+            hover_bg=colors.harmonic_tonic,
+        )
+        retheme_button(
+            self.export_btn,
+            colors,
+            base_bg=colors.harmonic_subdominant,
+            base_fg=colors.text_inverted,
+            hover_bg=colors.harmonic_subdominant,
+        )
+
     def _refresh_all(
         self,
         preserve_selection: bool = False,
@@ -1310,6 +1520,7 @@ class StepsMainWindow:
         state = self.controller.get_state_summary()
         selected = self.chord_listbox.curselection() if preserve_selection else ()
         self._update_window_title()
+        self._update_header_subtitle()
         has_chords = bool(state["chords"])
         self.update_btn.configure(state=tk.NORMAL if has_chords else tk.DISABLED)
         self.remove_btn.configure(

@@ -9,7 +9,7 @@ from tkinter import messagebox, ttk
 
 from app.i18n import LocaleManager
 from app.ui.session_controller import ProgressionSessionController
-from app.ui.theme import ThemeManager, create_button
+from app.ui.theme import ThemeManager, create_button, retheme_button, style_surface_card
 from src.steps.progression.reviewed import Citation, PublicationError, resolve_source_citation
 from src.steps.progression.session import ChordRecommendation
 from src.steps.theory.exceptions import MusicTheoryError
@@ -39,15 +39,18 @@ class NextChordPanel:
         self._recommendations: list[ChordRecommendation] = []
         self._context: tuple[int, int] | None = None
         self._comparison_index: int | None = None
+        self._theme = theme
         colors, spacing = theme.colors, theme.spacing
 
         self.explore_button = create_button(
             toolbar, text="", command=self.explore, bg=colors.bg_active,
-            fg=colors.text_primary, relief=tk.FLAT, padx=spacing.sm,
+            fg=colors.text_primary, hover_bg=colors.bg_surface_hover, relief=tk.FLAT, padx=spacing.sm,
         )
         self.explore_button.pack(side=tk.RIGHT, padx=spacing.xs)
         frame = tk.Frame(content, bg=colors.bg_surface, bd=0)
+        style_surface_card(frame, colors)
         frame.pack(side=tk.RIGHT, fill=tk.Y, padx=(0, spacing.sm), pady=spacing.sm)
+        self._frame = frame
         frame.columnconfigure(0, weight=1)
         frame.rowconfigure(1, weight=1)
         self._heading = tk.Label(
@@ -66,6 +69,7 @@ class NextChordPanel:
         scrollbar = tk.Scrollbar(
             frame, orient=tk.VERTICAL, command=self.candidates.yview, takefocus=False,
         )
+        self._scrollbar = scrollbar
         self.candidates.configure(yscrollcommand=scrollbar.set)
         self.candidates.grid(row=1, column=0, sticky="nsew", padx=(spacing.xs, 0))
         scrollbar.grid(row=1, column=1, sticky="ns")
@@ -78,7 +82,7 @@ class NextChordPanel:
         self.apply_button.grid(row=2, column=0, columnspan=2, sticky="e", pady=(spacing.xs, 0))
         self.comparison_button = create_button(
             frame, text="", command=self._toggle_comparison, bg=colors.bg_active,
-            fg=colors.text_primary, relief=tk.FLAT, padx=spacing.sm, state=tk.DISABLED,
+            fg=colors.text_primary, hover_bg=colors.bg_surface_hover, relief=tk.FLAT, padx=spacing.sm, state=tk.DISABLED,
         )
         self.comparison_button.grid(
             row=3, column=0, columnspan=2, sticky="e", pady=(spacing.xs, 0),
@@ -88,6 +92,31 @@ class NextChordPanel:
         self._source_button.configure(menu=self._source_menu)
         self._source_button.grid(row=4, column=0, columnspan=2, sticky="e", pady=(spacing.xs, 0))
         self.localize()
+
+    def apply_theme(self, theme: ThemeManager) -> None:
+        """Apply updated light/dark Glide surface colors to NextChordPanel widgets."""
+        self._theme = theme
+        colors = theme.colors
+        style_surface_card(self._frame, colors)
+        self._heading.configure(fg=colors.harmonic_dominant, bg=colors.bg_surface)
+        self.candidates.configure(
+            bg=colors.bg_window,
+            fg=colors.text_primary,
+            selectbackground=colors.harmonic_tonic,
+            selectforeground=colors.text_inverted,
+            highlightbackground=colors.border,
+            highlightcolor=colors.border_focus,
+        )
+        retheme_button(
+            self.explore_button, colors, base_bg=colors.bg_active, base_fg=colors.text_primary,
+        )
+        retheme_button(
+            self.apply_button, colors, base_bg=colors.harmonic_tonic, base_fg=colors.text_inverted,
+            hover_bg=colors.harmonic_tonic,
+        )
+        retheme_button(
+            self.comparison_button, colors, base_bg=colors.bg_active, base_fg=colors.text_primary,
+        )
 
     def localize(self) -> bool:
         """Translate the controls and restore an active, current selection."""

@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from typing import Literal
+from typing import Callable, Literal
 
-from glide_shell import window_geometry
+from glide_shell import text_fit, window_geometry
 
 NORMAL_MIN = (860, 600)
 COMPACT_MIN = (480, 560)
@@ -18,8 +18,53 @@ HEADER_DENSITY_COMPACT = 900
 HEIGHT_DENSITY_FULL = 850
 HEIGHT_DENSITY_COMPACT = 780
 
+# Glide design scales & limits (DESIGN_RICHTLINIEN.md B11, D63, D67, D84, D98)
+FONT_SIZES: dict[str, int] = {
+    "caption": 9,
+    "source": 9,
+    "body": 12,
+    "section": 16,
+    "title": 22,
+}
+ROW_HEIGHT = 36
+RADII: dict[str, int] = {
+    "card": 18,
+    "field": 16,
+}
+TITLE_MAX_CHARS = 40
+BUTTON_TEXT_MAX_CHARS = 24
+SYMBOLS: dict[str, str] = {
+    "play": "▸",
+    "down": "▾",
+    "up": "▴",
+    "left": "◂",
+    "menu": "☰",
+    "collapse": "«",
+    "expand": "»",
+}
+
 SidebarMode = Literal["wide", "rail", "hidden"]
 DensityTier = Literal["full", "compact", "minimal"]
+
+
+def clip_title(text: str, limit: int = TITLE_MAX_CHARS) -> str:
+    """Clip a title to the Glide D67 maximum character budget via glide_shell.text_fit."""
+    return text_fit.clip(text, limit)
+
+
+def clip_button_text(text: str, limit: int = BUTTON_TEXT_MAX_CHARS) -> str:
+    """Clip a button label to the Glide D63 maximum character budget via glide_shell.text_fit."""
+    return text_fit.clip(text, limit)
+
+
+def remaining_chars_text(length: int, limit: int = TITLE_MAX_CHARS) -> str:
+    """Format the remaining character counter matching Glide D67."""
+    return f"{max(0, limit - length)}/{limit}"
+
+
+def aligned_menu_markers(measure: Callable[[str], int]) -> dict[str, str]:
+    """Return hairline-padded check markers ('✓', '□') with equal pixel width (D71/B02)."""
+    return text_fit.aligned_markers(("✓", "□"), measure)
 
 
 def header_density(width: int) -> DensityTier:
