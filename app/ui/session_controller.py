@@ -80,10 +80,15 @@ class ProgressionSessionController:
         """Subscribes view listener for state changes."""
         self._listeners.append(callback)
 
+    def remove_listener(self, callback: Callable[[], None]) -> None:
+        """Unsubscribes a view listener (no-op if it was not registered)."""
+        if callback in self._listeners:
+            self._listeners.remove(callback)
+
     def _notify(self) -> None:
         """Notifies registered listeners."""
         self._revision += 1
-        for cb in self._listeners:
+        for cb in list(self._listeners):
             try:
                 cb()
             except Exception:

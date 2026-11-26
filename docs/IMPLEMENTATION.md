@@ -208,6 +208,18 @@ Folgeakkord gestrichelt, soweit er im sichtbaren Tickbereich liegt.
 Die Analyse folgt der Progressionsliste. Die Piano-Rolls verwenden die
 tatsächlichen Projektticks, auch bei Lücken und Überlappungen.
 
+Auf dem Branch `feat/steps-music-keyboard-interactive-engine` (ADR-018,
+vorgeschlagen, nicht angenommen) öffnet der Keyboard-Dialog aus dem Werkzeuge-Menü
+und der Seitenleiste eine 88-Tasten-Ansicht. Die Progressionsvorschau zeigt das
+tatsächlich berechnete Voicing des gewählten Akkords mit Rollen, Grundton und
+Basston, optional eine Tonleiter als Ring und den Vergleich mit dem vorherigen
+Akkord. Voicing-Typ und Umkehrung sind reine Vorschau. Die freie Eingabe
+(Maus, Computertastatur) nennt alle unterstützten Akkorddeutungen mit Gründen;
+nur „In Progression einfügen“ verändert das Projekt und ist rückgängig machbar.
+Der Übungspilot (sechs Aufgaben) ist ein KI-Entwurf ohne Fachprüfung. Audio
+und MIDI-Eingang sind nach ADR-007 nicht enthalten; ADR-019 beschreibt die
+Optionen. Details: [Keyboard-Architektur](architecture/KEYBOARD_ARCHITECTURE.md).
+
 Die Anfänger-Voicings berechnen die beste Folge iterativ und verwenden
 bereits berechnete Teilpfade. Bewegungsmaß und Auswahl bei Gleichstand
 folgen derselben Regel wie zuvor.

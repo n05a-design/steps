@@ -7,6 +7,7 @@ Der Kern lässt sich aus dem Repository-Root als `src.steps` importieren. Die Pa
 | [theory](theory/README.md) | Tonhöhe, Schreibweise, Intervalle, Akkorde und Voicings. |
 | [progression](progression/README.md) | Stufen, Bestandsprogressionen, Stimmführung und Pilotkatalog. |
 | [models](models/README.md) | Vorgesehener Paketort für gemeinsame Fachmodelle. |
+| [keyboard](keyboard/__init__.py) | 88-Tasten-Modell, Akkord-/Skalenrollen, Akkorderkennung, Übungspilot ([Architektur](../../docs/architecture/KEYBOARD_ARCHITECTURE.md)). |
 | [ports](ports/README.md) | Vorgesehener Paketort für Schnittstellen zu App-Adaptern. |
 
 [Generierte API](../../docs/theory/API.md) · [Verträge](../../docs/theory/API_VERTRAEGE.md) · [Prüfbefehle](../../tests/README.md)
