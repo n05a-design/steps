@@ -58,7 +58,7 @@ class TestReferenceIdIntegrityTool(unittest.TestCase):
     def test_real_repo_integrity(self):
         report = validate_reference_ids(ROOT)
         self.assertTrue(report.success, report.errors)
-        self.assertEqual(report.identities_checked, 390)
+        self.assertEqual(report.identities_checked, 392)  # +2: proposed ADR-018/019
         self.assertFalse(report.warnings)
 
     def test_detection_of_missing_adr(self):
