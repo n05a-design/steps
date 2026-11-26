@@ -326,7 +326,7 @@ class TestLocaleManager(unittest.TestCase):
             window.file_menu = FakeMenu(4)
             window.chord_menu = FakeMenu(2)
             window.menu_bar = FakeMenu(2)
-            window.tools_menu = FakeMenu(3)
+            window.tools_menu = FakeMenu(4)
             window.settings_menu = FakeMenu(1)
             window.language_menu = FakeMenu(3)
             window.title_lbl = FakeWidget()

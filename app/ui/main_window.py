@@ -52,6 +52,7 @@ from app.ui.theme import (
     style_surface_card,
 )
 from glide_shell.custom_controls import ThemedAutoScrollbar
+from app.ui.keyboard_dialog import KeyboardDialog
 from app.ui.voice_leading_lab_dialog import (
     VOICE_LEADING_STYLE_OPTIONS,
     VoiceLeadingLabDialog,
@@ -241,7 +242,9 @@ class StepsMainWindow:
                 command=lambda selected=action: self._on_chord_event_edit(selected),
             )
         self.tools_menu = tk.Menu(self.menu_bar, tearoff=False)
-        for action in (self._on_explore_next, self._on_open_voice_leading_lab, self._on_export_midi):
+        for action in (
+            self._on_explore_next, self._on_open_voice_leading_lab, self._on_export_midi, self._on_open_keyboard,
+        ):
             self.tools_menu.add_command(label="", command=action)
         self.settings_menu = tk.Menu(self.menu_bar, tearoff=False)
         self.settings_menu.add_command(
@@ -383,7 +386,7 @@ class StepsMainWindow:
         for index, (action, _) in enumerate(_CHORD_EVENT_SHORTCUTS):
             self.chord_menu.entryconfigure(index, label=t(f"chord.event.{action}"))
         self.menu_bar.add_cascade(label=t("tools.menu"), menu=self.tools_menu)
-        for index, key in enumerate(("next_chord.explore", "voice.lab.open", "midi.export")):
+        for index, key in enumerate(("next_chord.explore", "voice.lab.open", "midi.export", "keyboard.open")):
             self.tools_menu.entryconfigure(index, label=t(key))
         self.menu_bar.add_cascade(label=t("settings.menu"), menu=self.settings_menu)
         if (
@@ -826,6 +829,7 @@ class StepsMainWindow:
             ("workspace", "sidebar.nav.workspace", "sidebar.rail.workspace", self._focus_workspace),
             ("explorer", "sidebar.nav.explorer", "sidebar.rail.explorer", self._on_explore_next),
             ("voice_lab", "sidebar.nav.voice_lab", "sidebar.rail.voice_lab", self._on_open_voice_leading_lab),
+            ("keyboard", "sidebar.nav.keyboard", "sidebar.rail.keyboard", self._on_open_keyboard),
             ("library", "sidebar.nav.library", "sidebar.rail.library", self._on_browse_reviewed_library),
             ("midi", "sidebar.nav.midi", "sidebar.rail.midi", self._on_export_midi),
         )
@@ -2099,6 +2103,16 @@ class StepsMainWindow:
             i18n=self.i18n,
             theme=self.theme,
             on_apply=self._on_voice_style_change,
+            selected_index=self._selected_chord_index(),
+        )
+
+    def _on_open_keyboard(self) -> KeyboardDialog:
+        return KeyboardDialog(
+            parent=self.root,
+            controller=self.controller,
+            i18n=self.i18n,
+            theme=self.theme,
+            on_project_change=lambda index: self._refresh_all(selected_index=index),
             selected_index=self._selected_chord_index(),
         )
 
