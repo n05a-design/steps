@@ -109,7 +109,7 @@ Key points:
 | `app/ui/keyboard_dialog.py` | dialog + localized description | new | `test_keyboard_dialog.py` |
 | `app/ui/main_window.py` | menu + sidebar entry | +18 lines | dialog Tk tests, existing desktop tests |
 | `app/ui/session_controller.py` | `remove_listener`, notify over a copy | +7 | dialog Tk tests |
-| `app/locales/{en,de}.json` | 141 keys each | additions | `test_i18n` parity, label-length test |
+| `app/locales/{en,de}.json` | 144 keys each | additions | `test_i18n` parity, label-length test |
 | `tests/test_i18n.py` | fake tools menu now 4 entries | fixture | itself |
 | `tests/test_reference_integrity.py`, `scripts/verify_reference_integrity.py` | ADR count 17 → 19 (proposed 018/019); canonical identity lock unchanged | count | itself |
 | `decisions/ADR-018…`, `ADR-019…`, `DECISION_REGISTER.md`, `README.md` | proposed decisions | new/rows | reference integrity |

@@ -47,7 +47,7 @@ Rules (tested):
 | MIDI input | – | – | – | – | `LiveNoteEvent`, `normalize_midi_message`, `MidiInputPort`, `ScriptedMidiInput` | spec only (ADR-019) |
 | MIDI export | `midi/export_service.py` | ADR-017 export | `test_midi_export_service.py`, golden SHA | untouched | – | must stay regression-free |
 | Knowledge library | `knowledge/adapter.py`, `knowledge/` | `KnowledgeAdapter` | `test_knowledge_adapter.py` | referenced only (`Exercise.knowledge_refs` = module ids) | – | no parallel library; see §7 |
-| Localization | `app/i18n.py`, `app/locales/*.json` | `LocaleManager` | `test_i18n.py` | direct | 141 keys EN/DE | – |
+| Localization | `app/i18n.py`, `app/locales/*.json` | `LocaleManager` | `test_i18n.py` | direct | 144 keys EN/DE | – |
 
 ## 3. Data contracts
 
