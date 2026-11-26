@@ -126,6 +126,7 @@ Environment: Windows 11, CPython 3.14 (`py -3.14`), PyYAML 6.0.4 in an isolated 
 |---|---|---|---|---|
 | Baseline `cd455e3` (LF clone) | 914 | 4 | 1 | pre-existing (see below) |
 | Branch `e903039` (LF clone) | 996 | 6 | 1 | the 4 pre-existing + 2 caused by this branch, both fixed in the final commit (missing report link; ADR count) |
+| **Branch tip `44dd71a` (LF clone, after review fixes)** | **1001** | **4** | 1 | **exactly the 4 pre-existing failures; no new failure** |
 | Keyboard suites (worktree) | 82 | 0 | 0 | `test_keyboard_domain` 32, `test_keyboard_engine` 36, `test_keyboard_dialog` 14 (real Tk) |
 
 Pre-existing failures on unmodified `main`:
@@ -134,7 +135,7 @@ Pre-existing failures on unmodified `main`:
 
 These are not caused by this branch and were not "fixed" by weakening anything.
 
-The post-fix full-suite figure is recorded in §14. Additional scripts at the branch tip:
+The tip result above is the final full-suite figure (+87 tests vs. baseline). Additional scripts at the branch tip:
 - `check_ui_text_inventory` and `check_cli_text_inventory`: PASS.
 - `verify_reference_integrity`: PASS.
 - `check_markdown_links`: PASS after the report was added.
@@ -188,7 +189,7 @@ Not run: macOS/Linux, the CI matrix 3.11–3.13, native screen readers, DAW, and
 | 27 Glide Shell unchanged | VERIFIED | no diff under `glide_shell/` |
 | 28 no competing Bento | VERIFIED | only STEPS components; handoff spec |
 | 29 golden tests | VERIFIED | §6 |
-| 30 regression run | PARTIAL | full suite on Windows/3.14 only |
+| 30 regression run | PARTIAL | full suite 1001 tests, only pre-existing failures; Windows/3.14 only |
 | 31 GUI lifecycle | PARTIAL | Tk tests on Windows; no native a11y |
 | 32 gates intact | VERIFIED | no gate weakened; ADR count adjusted for new proposals only |
 | 33 docs consolidated | VERIFIED | §7 |
