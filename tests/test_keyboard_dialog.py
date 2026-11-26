@@ -245,11 +245,18 @@ class TestKeyboardDialogTk(unittest.TestCase):
         canvas.event_generate("<KeyRelease-a>")
         self.root.update()
         self.assertNotIn(base, dialog.workbench.input.sounding)
+        canvas.event_generate("<KeyPress-s>")
+        self.root.update()
+        held = dialog.computer_key_note("s")
+        dialog._shift(12)  # viewport moves while the key is held
+        canvas.event_generate("<KeyRelease-s>")
+        self.root.update()
+        self.assertNotIn(held, dialog.workbench.input.sounding)  # the pressed note is released
         canvas.event_generate("<KeyPress-d>")
         self.root.update()
         dialog._on_focus_out(None)
         self.assertEqual(dialog.workbench.input.sounding, ())
-        self.assertEqual(dialog._held_computer_keys, set())
+        self.assertEqual(dialog._held_computer_keys, {})
         self.assertEqual(self.errors, [])
 
     def test_practice_pilot_check_and_solution(self):

@@ -23,7 +23,7 @@ from ..theory.exceptions import MusicTheoryError
 from ..theory.inversion import detect_chord_inversion
 from ..theory.pitch import NoteSpelling
 from ..theory.scale import ScaleDefinition
-from .chord_tones import ChordToneRole, render_chord_symbol, role_for_interval
+from .chord_tones import ChordToneRole, is_seventh_quality, render_chord_symbol, role_for_interval
 from .model import sorted_unique_notes
 
 Convention = Literal["INT", "DE"]
@@ -248,7 +248,8 @@ def _build_candidate(
         (s for s in CHORD_TEMPLATES[quality]["theoretical"] if (root_pc + s) % 12 == bass_pc), None,
     )
     bass_role = role_for_interval(quality, bass_semitones) if bass_semitones is not None else ChordToneRole.SLASH_BASS
-    analysis = detect_chord_inversion(list(played), root_pitch_class=root_pc)
+    analysis = detect_chord_inversion(list(played), root_pitch_class=root_pc,
+                                      is_seventh=is_seventh_quality(quality))
     return ChordCandidate(
         chord=chord,
         kind=kind,

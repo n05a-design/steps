@@ -50,6 +50,7 @@ class ChordToneRole(str, Enum):
     FLAT_THIRTEENTH = "FLAT_THIRTEENTH"
     THIRTEENTH = "THIRTEENTH"
     SLASH_BASS = "SLASH_BASS"  # written bass that is not a chord tone
+    NON_CHORD_TONE = "NON_CHORD_TONE"  # sounding note outside chord and written bass
 
     @property
     def interval_label(self) -> str:
@@ -92,6 +93,7 @@ _ROLE_INFO: dict[ChordToneRole, tuple[str, int | None, str]] = {
     ChordToneRole.FLAT_THIRTEENTH: ("b13", 5, "extension"),
     ChordToneRole.THIRTEENTH: ("13", 5, "extension"),
     ChordToneRole.SLASH_BASS: ("/", None, "other"),
+    ChordToneRole.NON_CHORD_TONE: ("x", None, "other"),
 }
 
 _ALTERED_ROLES = frozenset({
@@ -129,6 +131,18 @@ _SEMITONE_ROLES: dict[int, ChordToneRole] = {
 _QUALITY_OVERRIDES: dict[tuple[str, int], ChordToneRole] = {
     ("dim7", 9): ChordToneRole.DIMINISHED_SEVENTH,
 }
+
+
+def is_seventh_quality(quality: str) -> bool:
+    """True when the template contains a seventh (b7, 7 or the bb7 of dim7).
+
+    Passed to ``detect_chord_inversion`` so that voicings without a fifth
+    (shell, rootless, incomplete) still receive seventh-chord figures.
+    """
+    from ..theory.chord import CHORD_TEMPLATES
+
+    intervals = CHORD_TEMPLATES[quality]["theoretical"]
+    return quality == "dim7" or any(s % 12 in (10, 11) and s < 12 for s in intervals)
 
 
 def role_for_interval(quality: str, semitones: int) -> ChordToneRole:
@@ -266,14 +280,17 @@ def label_voicing(chord: ChordDefinition, notes: Iterable[int] | Voicing) -> Lab
         elif chord.bass is not None and midi % 12 == int(chord.bass.pitch_class):
             role, spelling = ChordToneRole.SLASH_BASS, chord.bass
         else:
-            role, spelling = ChordToneRole.SLASH_BASS, None
+            role, spelling = ChordToneRole.NON_CHORD_TONE, None
             foreign.append(midi)
         positioned = spell_at(spelling, midi) if spelling is not None else None
         labelled.append(VoicedNote(midi, role, positioned, role is ChordToneRole.ROOT, midi == bass_midi))
     present = {midi % 12 for midi in midi_notes}
     omitted = tuple(tone.role for tone in tones.values() if tone.pitch_class not in present)
     try:
-        inversion = detect_chord_inversion(list(midi_notes), root_pitch_class=int(chord.root.pitch_class))
+        inversion = detect_chord_inversion(
+            list(midi_notes), root_pitch_class=int(chord.root.pitch_class),
+            is_seventh=is_seventh_quality(chord.quality),
+        )
     except MusicTheoryError:
         inversion = None
     return LabeledVoicing(chord, tuple(labelled), inversion, omitted, tuple(foreign))

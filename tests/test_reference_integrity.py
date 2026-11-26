@@ -81,7 +81,7 @@ class TestReferenceIntegrityAndMutations(unittest.TestCase):
         self.assertEqual(stats['piano_modules'], 19)
         self.assertEqual(stats['golden_cases'], 198)
         self.assertEqual(stats['relations'], 97)
-        self.assertEqual(stats['adrs'], 17)
+        self.assertEqual(stats['adrs'], 19)  # ADR-001..017 plus proposed ADR-018/019
 
     def test_golden_mirror_sync_reads_only_master(self):
         root = Path(self.temp_dir)

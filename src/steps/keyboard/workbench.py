@@ -184,6 +184,8 @@ class KeyboardWorkbench:
             voicings = self.session.get_voicings(self.voicing_type)
         except (MusicTheoryError, ValueError):
             return None
+        if index >= len(voicings):
+            return None
         current = voicings[index]
         if self.rotation:
             current = Voicing(current.notes).invert(self.rotation)
@@ -243,11 +245,18 @@ class KeyboardWorkbench:
         if self.mode is KeyboardMode.FREE_INPUT and self.input.active_notes:
             # Spell entered keys from the first complete reading. Only names are
             # taken over (no role badges), because the reading may be ambiguous.
+            # A key is named only when every complete reading spells it the same
+            # way; otherwise the choice of one reading would be hidden.
             result = self.recognition()
-            reading = next((c for c in result.candidates if c.kind is not CandidateKind.INCOMPLETE), None)
-            if reading is not None:
-                labelled = label_voicing(reading.chord, self.input.active_notes)
-                layers.spellings = {n.midi: n.spelling for n in labelled.notes if n.spelling is not None}
+            readings = [c for c in result.candidates if c.kind is not CandidateKind.INCOMPLETE]
+            proposals: dict[int, set] = {}
+            for reading in readings:
+                for note in label_voicing(reading.chord, self.input.active_notes).notes:
+                    proposals.setdefault(note.midi, set()).add(note.spelling)
+            layers.spellings = {
+                midi: next(iter(found)) for midi, found in proposals.items()
+                if len(found) == 1 and None not in found and len(readings) > 0
+            }
         if self.mode is KeyboardMode.PRACTICE:
             exercise = self.exercise
             if self.feedback is not None or self.show_practice_solution:

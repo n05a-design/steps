@@ -7,8 +7,10 @@ silently overwritten:
 
 * ``fill``    – the single strongest state (practice feedback > input > chord > scale),
 * ``outline`` – scale membership whenever ``fill`` is not already a scale state,
-* ``badges``  – text markers (role label, root, bass, comparison) so nothing
-  depends on colour alone (WCAG 1.4.1).
+* ``badges``  – text markers (role label, bass ``B``, held ``=``, previous ``·``,
+  pressed ``▾``, selected ``●``, scale degree ``(n)``, practice ``✓ ✗ ?``) so every
+  state also has a non-colour cue (WCAG 1.4.1). Scale degree is omitted on keys
+  that already carry a chord-role label.
 
 No colour values live here; a view maps ``KeyState`` names to theme tokens.
 """
@@ -178,6 +180,13 @@ def build_view_model(
             badges.append("=")
         elif KeyState.COMPARISON in states:
             badges.append("·")
+        if KeyState.PRESSED in states:
+            badges.append("▾")
+        if KeyState.SELECTED in states:
+            badges.append("●")
+        degree = layers.scale_pitch_classes.get(midi % 12)
+        if degree is not None and role is None:
+            badges.append(f"({degree})")
         if KeyState.PRACTICE_WRONG in states:
             badges.append("✗")
         elif KeyState.PRACTICE_MISSING in states:

@@ -73,7 +73,7 @@ All flags of a key are kept in `KeyVisual.states`. Three display channels are de
 |---|---|
 | `fill` | first present state of `PRACTICE_WRONG > PRACTICE_MISSING > PRACTICE_CORRECT > PRESSED > SELECTED > CHORD_ROOT > CHORD_TONE > COMPARISON_HELD > COMPARISON > SCALE_ROOT > SCALE_TONE` |
 | `outline` | `SCALE_ROOT`/`SCALE_TONE` whenever fill is not already a scale state |
-| `badges` | role label (`1`, `b3`, `#11` …), `B` for bass, `=` held / `·` previous-chord pitch, `✓ ✗ ?` practice |
+| `badges` | role label (`1`, `b3`, `#11` …, `x` non-chord tone), `B` bass, `=` held / `·` previous-chord pitch, `▾` pressed, `●` selected, `(n)` scale degree (only on keys without a role label), `✓ ✗ ?` practice |
 
 `CHORD_BASS` is never a fill, so the bass is always visible as a badge. The Tk view draws scale states as a ring only, so context never hides events. Information is never conveyed by colour alone (badges and text description).
 

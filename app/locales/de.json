@@ -454,7 +454,7 @@
   "keyboard.info.key": "Projekttonart: {key}",
   "keyboard.info.tones": "Akkordtöne: {tones}",
   "keyboard.info.voicing": "Voicing ({type}, Umkehrungsschritt {rotation}): {notes}",
-  "keyboard.info.voicing_error": "Dieser Voicing-Typ ist für {symbol} nicht verfügbar: {error}",
+  "keyboard.info.voicing_error": "Der gewählte Voicing-Typ ist für {symbol} in dieser Progression nicht realisierbar; bitte einen anderen Voicing-Typ wählen.",
   "keyboard.info.root_bass": "Grundton: {root} · Bass: {bass}",
   "keyboard.info.inversion": "Lage: {position} ({figure})",
   "keyboard.info.omitted": "Nicht in diesem Voicing: {roles}",
@@ -485,7 +485,7 @@
   "keyboard.recognition.EMPTY": "Tasten anklicken oder A W S E D F T G Z/Y H U J K verwenden.",
   "keyboard.recognition.SINGLE_NOTE": "Eine Tonhöhenklasse – kein Akkord.",
   "keyboard.recognition.INTERVAL": "Zwei Tonhöhenklassen – ein Intervall, kein Akkord.",
-  "keyboard.recognition.EXACT_MATCH": "Eine unterstützte Akkorddeutung:",
+  "keyboard.recognition.EXACT_MATCH": "Eine vollständige Akkorddeutung (unvollständige Deutungen ggf. danach):",
   "keyboard.recognition.AMBIGUOUS": "Mehrere unterstützte Akkorddeutungen:",
   "keyboard.recognition.INCOMPLETE": "Kein vollständiger Akkord; Deutungen mit ausgelassener Quinte:",
   "keyboard.recognition.UNSUPPORTED": "Keine unterstützte Akkordqualität enthält genau diese Töne.",
@@ -557,5 +557,8 @@
   "keyboard.scale.whole_tone": "Ganzton",
   "keyboard.scale.diminished_half_whole": "Vermindert (Halbton–Ganzton)",
   "keyboard.scale.diminished_whole_half": "Vermindert (Ganzton–Halbton)",
-  "keyboard.figure.none": "keine Generalbassziffer (Bass außerhalb der Dreiklang-/Septfaktoren)"
+  "keyboard.figure.none": "keine Generalbassziffer (Bass außerhalb der Dreiklang-/Septfaktoren)",
+  "keyboard.inversion.other_tone": "Akkordton {role} im Bass (keine Standard-Umkehrungsbezifferung)",
+  "keyboard.info.rotation_slash": "Hinweis: Die Umkehrungsvorschau verschiebt den notierten Bass von {symbol}; das Symbol selbst bleibt unverändert.",
+  "keyboard.add_error": "Der Akkord konnte nicht hinzugefügt werden: {error}"
 }

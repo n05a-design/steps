@@ -701,7 +701,7 @@ def main():
     print("=================================================================")
     print(" STEPS Architecture & Reference ID Integrity Check (Phase 4.18)")
     print("=================================================================")
-    print(f"  Architecture Decisions:   {stats['adrs']} (ADR-001..ADR-017)")
+    print(f"  Architecture Decisions:   {stats['adrs']} (ADR-001..ADR-019)")
     print(f"  Canonical Progressions:   {stats['progressions']} (PROG-001..PROG-028)")
     print(f"  Canonical Drum Patterns:  {stats['drum_patterns']} (PAT-001..PAT-031)")
     print(f"  Canonical Piano Modules:  {stats['piano_modules']} (P01..P19)")

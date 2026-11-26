@@ -18,7 +18,7 @@ from app.ui.keyboard_view import PianoKeyboardCanvas
 from app.ui.session_controller import ProgressionSessionController
 from app.ui.theme import ThemeManager, apply_window_geometry, create_button
 from glide_shell.custom_controls import ThemedAutoScrollbar
-from src.steps.keyboard.chord_tones import strip_octave
+from src.steps.keyboard.chord_tones import ChordToneRole, strip_octave
 from src.steps.keyboard.input import InputSource
 from src.steps.keyboard.practice import EvaluationPolicy
 from src.steps.keyboard.recognition import CandidateKind, RecognitionStatus, default_spelling
@@ -64,7 +64,8 @@ def describe_workbench(workbench: KeyboardWorkbench, translate: Callable[..., st
         tones = ", ".join(f"{tone.name(convention)} ({tone.role.interval_label})" for tone in info.tones)
         lines.append(translate("keyboard.info.tones", tones=tones))
         if info.voicing is None:
-            lines.append(translate("keyboard.info.voicing_error", symbol=info.symbol, error=info.error or ""))
+            # The core error text is English; only a localized message is shown.
+            lines.append(translate("keyboard.info.voicing_error", symbol=info.symbol))
         else:
             voicing = info.voicing
             notes = ", ".join(
@@ -78,11 +79,15 @@ def describe_workbench(workbench: KeyboardWorkbench, translate: Callable[..., st
             lines.append(translate("keyboard.info.root_bass", root=root, bass=_note_name(voicing.bass, convention)))
             if voicing.inversion is not None:
                 inversion = voicing.inversion
-                position = (
-                    translate("keyboard.inversion.slash")
-                    if inversion.bass_factor in ("SUSPENSION", "NON_CHORD_TONE")
-                    else translate(f"keyboard.inversion.{inversion.inversion.value}")
-                )
+                bass_role = voicing.bass.role
+                if bass_role in (ChordToneRole.SLASH_BASS, ChordToneRole.NON_CHORD_TONE):
+                    position = translate("keyboard.inversion.slash")
+                elif inversion.bass_factor in ("SUSPENSION", "NON_CHORD_TONE"):
+                    position = translate("keyboard.inversion.other_tone", role=bass_role.interval_label)
+                else:
+                    position = translate(f"keyboard.inversion.{inversion.inversion.value}")
+                if info.rotation and info.chord.bass is not None:
+                    lines.append(translate("keyboard.info.rotation_slash", symbol=info.symbol))
                 lines.append(translate(
                     "keyboard.info.inversion", position=position, figure=_figure(inversion.figured_bass, translate),
                 ))
@@ -221,7 +226,7 @@ class KeyboardDialog(ModalDialog):
         if selected_index is not None and 0 <= selected_index < len(controller.session.chords):
             self.workbench.selected_index = selected_index
         self._revision = controller.revision
-        self._held_computer_keys: set[str] = set()
+        self._held_computer_keys: dict[str, int] = {}  # lower-case keysym -> note it pressed
         self._candidates: tuple = ()
         self._refreshing = False
         colors, spacing, t = self._colors, theme.spacing, i18n.translate
@@ -412,12 +417,15 @@ class KeyboardDialog(ModalDialog):
                 text = describe_workbench(self.workbench, t)
             except MusicTheoryError as exc:
                 text = t("keyboard.info.error", error=exc)
-            self.info_text.configure(state=tk.NORMAL)
-            self.info_text.delete("1.0", tk.END)
-            self.info_text.insert("1.0", text)
-            self.info_text.configure(state=tk.DISABLED)
+            self._write_info(text)
         finally:
             self._refreshing = False
+
+    def _write_info(self, text: str) -> None:
+        self.info_text.configure(state=tk.NORMAL)
+        self.info_text.delete("1.0", tk.END)
+        self.info_text.insert("1.0", text)
+        self.info_text.configure(state=tk.DISABLED)
 
     def _update_events(self) -> None:
         chords = self._controller.session.chords
@@ -541,20 +549,21 @@ class KeyboardDialog(ModalDialog):
         return note if viewport.contains(note) else None
 
     def _on_computer_key_press(self, event: tk.Event) -> Optional[str]:
-        note = self.computer_key_note(event.keysym)
+        name = event.keysym.lower()
+        if name in self._held_computer_keys:  # auto-repeat
+            return "break"
+        note = self.computer_key_note(name)
         if note is None:
             return None
-        if event.keysym in self._held_computer_keys:  # auto-repeat
-            return "break"
-        self._held_computer_keys.add(event.keysym)
+        self._held_computer_keys[name] = note
         self._on_key_press(note, InputSource.COMPUTER_KEYBOARD)
         return "break"
 
     def _on_computer_key_release(self, event: tk.Event) -> Optional[str]:
-        note = self.computer_key_note(event.keysym)
+        # Release the note this key pressed, even if the viewport moved meanwhile.
+        note = self._held_computer_keys.pop(event.keysym.lower(), None)
         if note is None:
             return None
-        self._held_computer_keys.discard(event.keysym)
         self._on_key_release(note)
         return "break"
 
@@ -575,8 +584,12 @@ class KeyboardDialog(ModalDialog):
         index = self.candidate_selector.current()
         if not 0 <= index < len(self._candidates):
             return
-        symbol = self.workbench.project_symbol_for(self._candidates[index])
-        self._controller.add_chord(symbol)
+        try:
+            symbol = self.workbench.project_symbol_for(self._candidates[index])
+            self._controller.add_chord(symbol)
+        except (MusicTheoryError, ValueError) as exc:
+            self._write_info(self._i18n.translate("keyboard.add_error", error=exc))
+            return
         new_index = len(self._controller.session.chords) - 1
         self.workbench.select(new_index)
         self._on_project_change(new_index)

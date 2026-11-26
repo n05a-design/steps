@@ -488,5 +488,56 @@ class TestWorkbenchSessionIntegration(unittest.TestCase):
         self.assertEqual(self.snapshot(), before)
 
 
+class TestReviewRegressions(unittest.TestCase):
+    """Hand-written expectations for findings of the independent review (2026-11-26)."""
+
+    def figure(self, notes, symbol):
+        result = recognize_chord(notes)
+        return next(c for c in result.candidates if c.symbol() == symbol)
+
+    def test_seventh_figures_without_a_fifth(self):
+        self.assertEqual(self.figure([48, 52, 58], "C7").figured_bass, "7")          # C E Bb
+        bb_bass = self.figure([46, 48, 52], "C7/Bb")                                  # Bb C E
+        self.assertEqual((bb_bass.figured_bass, bb_bass.bass_role.value), ("4/2", "MINOR_SEVENTH"))
+        self.assertEqual(self.figure([52, 58, 60, 62], "C9/E").figured_bass, "6/5")   # E Bb C D
+
+    def test_shell_and_rootless_voicings_get_seventh_figures(self):
+        from src.steps.keyboard import label_voicing
+        from src.steps.theory import parse_chord
+        g7 = parse_chord("G7", "INT")
+        self.assertEqual(label_voicing(g7, (55, 59, 65)).inversion.figured_bass, "7")   # G B F
+        self.assertEqual(label_voicing(g7, (53, 55, 59)).inversion.figured_bass, "4/2")  # F G B
+        dm7 = parse_chord("Dm7", "INT")
+        self.assertEqual(label_voicing(dm7, (48, 53, 57)).inversion.figured_bass, "4/2")  # C F A, rootless
+
+    def test_foreign_note_gets_non_chord_tone_role(self):
+        from src.steps.keyboard import ChordToneRole, label_voicing
+        from src.steps.theory import parse_chord
+        labelled = label_voicing(parse_chord("C", "INT"), (60, 62, 64, 67))
+        self.assertEqual(labelled.notes[1].role, ChordToneRole.NON_CHORD_TONE)
+        self.assertEqual(labelled.foreign_notes, (62,))
+
+    def test_ambiguous_free_input_does_not_spell_by_one_hidden_reading(self):
+        wb = KeyboardWorkbench(lambda: ProgressionSession(["C"]))
+        wb.mode = KeyboardMode.FREE_INPUT
+        wb.input.set_selected([60, 63, 66, 69])  # dim7: A could be A or Bbb
+        model = wb.view_model()
+        self.assertEqual(model.visual(69).label, "")
+        self.assertIn("●", model.visual(69).badges)  # still marked without colour
+        wb.input.set_selected([60, 64, 67])  # unique reading: names shown
+        self.assertEqual(wb.view_model().visual(64).label, "E4")
+
+    def test_unrealisable_voicing_message_is_localized(self):
+        from app.i18n import LocaleManager
+        from app.ui.keyboard_dialog import describe_workbench
+        wb = KeyboardWorkbench(lambda: ProgressionSession(["C"]))
+        wb.set_voicing_type("DROP2")
+        for language in ("en", "de"):
+            t = LocaleManager(preference=language).translate
+            text = describe_workbench(wb, t)
+            self.assertIn(t("keyboard.info.voicing_error", symbol="C"), text)
+            self.assertNotIn("Drop-2 requires", text)
+
+
 if __name__ == "__main__":
     unittest.main()
