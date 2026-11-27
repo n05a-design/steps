@@ -132,6 +132,8 @@ class SMFParser:
         header_len = struct.unpack(">I", data[4:8])[0]
         if header_len < 6:
             raise MidiParseError(f"Invalid MThd chunk length: {header_len} (must be >= 6)")
+        if header_len > len(data) - 8:
+            raise MidiParseError(f"Truncated MThd chunk: needs {header_len} bytes, only {len(data) - 8} remaining")
 
         smf_format, num_tracks, division = struct.unpack(">HHH", data[8:14])
         if smf_format not in (0, 1):

@@ -2,6 +2,8 @@
 
 import unittest
 
+from src.steps.midi import MidiFile, MidiParseError, SMFParser
+from src.steps.models.timeline import TempoMap, TempoPoint
 from src.steps.keyboard.chord_tones import label_voicing
 from src.steps.keyboard.practice import EvaluationPolicy, Exercise, evaluate
 from src.steps.keyboard.recognition import CandidateKind, recognize_chord
@@ -84,6 +86,37 @@ class MusicalAuditRegressions(unittest.TestCase):
         self.assertEqual([m.semitones for m in backward.motions], [-4, -3])
         hold = compare_voicings([60, 64], [60, 67])
         self.assertEqual([m.start for m in hold.stationary_voices], [60])
+
+    def test_smf_rejects_truncation_even_without_declared_tracks(self):
+        # The header declares extra header bytes beyond the end of the file.
+        truncated = bytes.fromhex("4d546864 0000000a 0001 0000 01e0")
+        with self.assertRaises(MidiParseError):
+            SMFParser.parse(truncated)
+
+    def test_synthetic_smf_preserves_tempo_meter_and_overlapping_notes(self):
+        file = MidiFile(smf_format=1)
+        conductor = file.add_track()
+        conductor.add_tempo(0, 120)
+        conductor.add_tempo(480, 60)
+        conductor.add_time_signature(0, 4, 4)
+        conductor.add_time_signature(960, 3, 4)
+        notes = file.add_track()
+        notes.add_note(0, 480, 60, 90, 0)
+        notes.add_note(240, 480, 60, 100, 0)
+        data = file.to_bytes()
+        for end in range(len(data)):
+            with self.subTest(prefix=end), self.assertRaises(MidiParseError):
+                SMFParser.parse(data[:end])
+        result = SMFParser.parse(data)
+        self.assertEqual((result.format, result.division, result.num_tracks), (1, 480, 2))
+        self.assertEqual(result.tempos, [(0, 120.0), (480, 60.0)])
+        self.assertEqual(result.time_signatures, [(0, 4, 4), (960, 3, 4)])
+        self.assertEqual([(n.start_tick, n.duration_ticks, n.pitch, n.velocity) for n in result.all_notes],
+                         [(0, 480, 60, 90), (240, 480, 60, 100)])
+        tempo = TempoMap([TempoPoint(0, 120), TempoPoint(480, 60)], ppq=480)
+        for tick, second in ((0, 0), (240, 0.25), (480, 0.5), (720, 1), (960, 1.5)):
+            self.assertAlmostEqual(tempo.tick_to_seconds(tick), second)
+            self.assertEqual(tempo.seconds_to_tick(second), tick)
 
     def test_scale_rejects_inconsistent_notes_and_degree_types(self):
         scale = construct_scale(parse_spelling("C4", "INT"), "ionian")

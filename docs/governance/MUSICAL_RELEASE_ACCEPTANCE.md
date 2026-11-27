@@ -10,7 +10,7 @@ Each musical release area has an executable gate for its deterministic behavior 
 | `recognition` | Exhaustive exact recognition over 24,577 sounding set and bass combinations, plus recognition regressions | Ambiguous, standard and incomplete readings |
 | `keyboard-practice` | Scoring policies, malformed exercise rejection and pilot regressions | Exercise-by-exercise review of valid answers and feedback |
 | `musical-integration` | Workbench/session contracts and project persistence | Recognition adoption, preview isolation, recovery and exported output |
-| `midi-export` | SMF tests, timing and 192 exported CLOSE/Drop-2 and slash-bass cases | DAW acceptance is tracked separately |
+| `midi-export` | SMF tests, truncation and multi-tempo fixtures, timing and 192 exported CLOSE/Drop-2 and slash-bass cases | DAW acceptance is tracked separately |
 | `recommendations` | Harmony and graph tests, Explorer probes for supported double accidentals | Alternative readings, stylistic scope and confidence labels |
 | `learning-pilot` | Pilot calculation, publication tests and authentic GitHub pilot approvals | Teaching material, sources and the mandatory listening exercise |
 | `knowledge-adapter` | Actual evaluation prompts, notation, relevance and unapproved-source checks | Correctness, citations and uncertainty in the actual responses |
