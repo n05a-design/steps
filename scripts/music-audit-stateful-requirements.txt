@@ -1,0 +1,7 @@
+# CI uses CPython 3.12 on Linux x86-64. The second Hypothesis wheel is for
+# reproducing the same stateful tests on CPython 3.14 Windows x86-64.
+hypothesis==6.170.22 \
+    --hash=sha256:efddea8da7e69221dec5864c360d224bdec99f890184ae8fb59d9c00b0fbc2e3 \
+    --hash=sha256:fd3dd54a58d3fcc9ddbfb9d814f4383deaa992dc5180becb3203ff6273305104
+sortedcontainers==2.4.0 \
+    --hash=sha256:a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0

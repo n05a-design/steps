@@ -22,6 +22,11 @@ def randomized_theory():
             for case in report["failures"]]
 
 
+def exhaustive_recognition():
+    report = randomized_music(DEFAULT_SEED, 128, ("recognition-exact",), profile="release", timeout=90)
+    return [f"{case['case_id']}: {case['classification']}" for case in report["failures"]]
+
+
 def beginner_voices():
     failures = []
     for convention, symbols in (("INT", ["C/E", "Bb/D", "C7b5", "C6"]),

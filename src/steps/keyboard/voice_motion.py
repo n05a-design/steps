@@ -58,6 +58,11 @@ class VoicingComparison:
     total_movement: Optional[int]  # L1 distance, only for paired voicings
     outer_voice_motion: Optional[str]  # ContrapuntalMotion value for bass/soprano
 
+    @property
+    def stationary_voices(self) -> tuple[VoiceMotion, ...]:
+        """Register-paired voices with no movement, distinct from shared pitches."""
+        return tuple(motion for motion in self.motions if motion.semitones == 0)
+
 
 def _kind(semitones: int) -> MotionKind:
     size = abs(semitones)

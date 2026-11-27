@@ -29,6 +29,22 @@ AREAS = {
         ("test_beginner_voicing", "test_voice_leading_styles"),
         ("Explain each offered style and verify its actual voicings and playable range.",),
     ),
+    "keyboard": (
+        ("test_keyboard_domain", "test_mvve_regressions"),
+        ("Review contextual note names, written and sounding bass, and figures for the supported voicings.",),
+    ),
+    "recognition": (
+        ("test_keyboard_engine.TestChordRecognition", "test_keyboard_engine.TestReviewRegressions"),
+        ("Review ambiguous, standard and incomplete readings in the stated keyboard scope.",),
+    ),
+    "keyboard-practice": (
+        ("test_keyboard_engine.TestPracticePilot", "test_mvve_regressions"),
+        ("Review every included exercise, permitted answers and feedback against independent teaching criteria.",),
+    ),
+    "musical-integration": (
+        ("test_keyboard_engine.TestWorkbenchSessionIntegration", "test_storage_recovery_io"),
+        ("Verify recognition, explicit adoption, preview isolation, project recovery and exported output.",),
+    ),
     "midi-export": (
         ("test_midi_export_service", "test_midi_golden_fixtures"), (),
     ),
@@ -74,6 +90,7 @@ AUTO_PROBES = {
     "midi-export": checks.midi_drop2,
     "knowledge-adapter": checks.knowledge_retrieval,
     "recommendations": checks.recommendations,
+    "recognition": checks.exhaustive_recognition,
 }
 THEORY_SAMPLE = {"frequency", "enharmonic", "distance", "intervals", "degree"}
 
@@ -191,10 +208,16 @@ def verified_submission(url, revision, *, fetch_comment=pilot.fetch_comment, fet
 def suites(modules):
     if not modules:
         return []
-    result = subprocess.run(
-        [sys.executable, "-B", "-m", "unittest", *(f"tests.{module}" for module in modules)],
-        cwd=ROOT, check=False, timeout=120, env=checkout_environment(),
-    )
+    try:
+        result = subprocess.run(
+            [sys.executable, "-B", "-m", "unittest", *(f"tests.{module}" for module in modules)],
+            cwd=ROOT, check=False, timeout=120, env=checkout_environment(),
+            creationflags=getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0),
+        )
+    except subprocess.TimeoutExpired:
+        return ["Technical regression suite exceeded its time budget"]
+    except OSError:
+        return ["Technical regression suite could not start"]
     return ["Technical regression suite failed"] if result.returncode else []
 
 

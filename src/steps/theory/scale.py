@@ -243,6 +243,19 @@ class ScaleDefinition:
             raise ScaleConstructionError(f"Root must be NoteSpelling, got {type(self.root)}")
         if not isinstance(self.template, ScaleTemplate):
             raise ScaleConstructionError(f"Template must be ScaleTemplate, got {type(self.template)}")
+        if (not isinstance(self.spellings, tuple) or not self.spellings
+                or any(not isinstance(note, NoteSpelling) for note in self.spellings)):
+            raise ScaleConstructionError("A scale needs a nonempty tuple of note spellings.")
+        if self.spellings[0] != self.root:
+            raise ScaleConstructionError("The first note must match the written scale root.")
+        offsets = tuple(note.midi_number - self.root.midi_number for note in self.spellings)
+        if offsets != self.template.intervals:
+            raise ScaleConstructionError("The notes must follow the template's ordered intervals.")
+        if len(offsets) == 7:
+            root_index = DIATONIC_STEPS.index(self.root.step)
+            letters = tuple(DIATONIC_STEPS[(root_index + i) % 7] for i in range(7))
+            if tuple(note.step for note in self.spellings) != letters:
+                raise ScaleConstructionError("A seven-tone scale must use consecutive diatonic letters.")
 
     @property
     def name(self) -> str:
@@ -265,7 +278,7 @@ class ScaleDefinition:
         Returns the NoteSpelling for the requested scale degree (1-indexed).
         Handles degrees above octave (e.g. 8 = octave, 9 = ninth).
         """
-        if not isinstance(degree, int) or degree < 1:
+        if type(degree) is not int or degree < 1:
             raise ScaleConstructionError(f"Scale degree must be an integer >= 1, got {degree}")
         
         n = len(self.spellings)
@@ -282,7 +295,7 @@ class ScaleDefinition:
         """
         if len(self.spellings) != 7 or not self.template.triad_qualities:
             raise ScaleConstructionError(f"Diatonic triads only defined for 7-tone scales, not {self.name}")
-        if not 1 <= degree <= 7:
+        if type(degree) is not int or not 1 <= degree <= 7:
             raise ScaleConstructionError(f"Degree must be 1..7, got {degree}")
         
         root_spelling = self.get_degree(degree)
@@ -295,7 +308,7 @@ class ScaleDefinition:
         """
         if len(self.spellings) != 7 or not self.template.seventh_qualities:
             raise ScaleConstructionError(f"Diatonic seventh chords only defined for 7-tone scales, not {self.name}")
-        if not 1 <= degree <= 7:
+        if type(degree) is not int or not 1 <= degree <= 7:
             raise ScaleConstructionError(f"Degree must be 1..7, got {degree}")
         
         root_spelling = self.get_degree(degree)
@@ -334,7 +347,7 @@ def construct_scale(root: NoteSpelling, template_or_name: ScaleTemplate | str) -
     else:
         # Non-heptatonic scales (pentatonic, blues, symmetric): chromatic transposition with clean accidentals
         for semitones in tmpl.intervals:
-            spelling = root.transpose_chromatic(semitones)
+            spelling = root.transpose_chromatic(semitones) if semitones else root
             spellings.append(spelling)
 
     return ScaleDefinition(root=root, template=tmpl, spellings=tuple(spellings))

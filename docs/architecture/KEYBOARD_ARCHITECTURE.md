@@ -1,6 +1,6 @@
 # Music keyboard – architecture, contracts and Bento handoff
 
-**Status:** implemented on branch `feat/steps-music-keyboard-interactive-engine` (base `cd455e3`); ADR [018](../../decisions/ADR-018-music-keyboard-domain.md) and [019](../../decisions/ADR-019-live-audio-preview-and-midi-input.md) are **proposed**, not accepted. Automated tests exist; human music-theory review, native accessibility review and owner approval are outstanding.
+**Status:** the original keyboard implementation merged in PR [#271](https://github.com/n05a-design/steps/pull/271). ADR [018](../../decisions/ADR-018-music-keyboard-domain.md) and [019](../../decisions/ADR-019-live-audio-preview-and-midi-input.md) remain **proposed**. Human music-theory review, native accessibility review and owner approval are outstanding. The [MVVE V2 audit](../audit/2026-11-27/MVVE_V2.md) tracks the subsequent validation branch.
 **Language:** English (AGENTS.md rule 12).
 
 ## 1. Layers
@@ -58,6 +58,10 @@ Rules (tested):
 **Written spelling** – `NoteSpelling`, always from context: chord (`chord_tones`), scale (`ScaleDefinition.spellings`), recognised reading, or none. Without context a key shows no name (or, on request, *all* single-accidental names, e.g. `Cis/Des`).
 
 **Musical meaning** – `ChordToneRole` (ROOT, MINOR_THIRD, …, THIRTEENTH, SLASH_BASS), scale degree, `is_root` and `is_bass` as separate flags (`VoicedNote`).
+
+**Bass and figured bass** – `ChordDefinition.bass` belongs to the written symbol. `LabeledVoicing.bass` is the lowest sounding note. The latter's defined chord factor determines any conventional figure. Root, third, fifth and seventh keep the existing triad/seventh figures where applicable, including established shell voicings. A sixth or extension in the bass has no classical figure. The `slash` marker covers suspended or foreign bass in the existing presentation contract. For example, C7b5/Gb yields a fifth and C7#11/F# yields an altered eleventh despite the shared pitch class.
+
+**Voice movement** – `held_pitches` is the intersection of the two concrete MIDI sets. `stationary_voices` reports register-paired voices with zero movement. A pitch shared between two different voices belongs only to the intersection.
 
 **Visual state** – `KeyState` flags (§4), badges and label strings in `KeyVisual`; no colours.
 

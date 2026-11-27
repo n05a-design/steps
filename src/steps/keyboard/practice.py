@@ -55,14 +55,29 @@ class Exercise:
     version: int = 1
 
     def __post_init__(self) -> None:
-        if not 1 <= self.difficulty <= 5:
+        if type(self.difficulty) is not int or not 1 <= self.difficulty <= 5:
             raise ValueError("Difficulty must be 1..5.")
+        if not isinstance(self.policy, EvaluationPolicy):
+            raise ValueError("Unknown evaluation policy.")
+        if any(type(note) is not int or not 0 <= note <= 127 for note in self.expected_pitches):
+            raise ValueError("Expected pitches must be MIDI integers in 0..127.")
+        if any(type(pc) is not int or not 0 <= pc < 12 for pc in self.expected_pitch_classes):
+            raise ValueError("Expected pitch classes must be integers in 0..11.")
         if self.policy is EvaluationPolicy.EXACT_PITCHES and not self.expected_pitches:
             raise ValueError("EXACT_PITCHES exercises need expected_pitches.")
         if self.policy is not EvaluationPolicy.EXACT_PITCHES and not self.expected_pitch_classes:
             raise ValueError("Pitch-class exercises need expected_pitch_classes.")
         if self.policy is EvaluationPolicy.PITCH_CLASSES_WITH_BASS and self.expected_bass_pitch_class is None:
             raise ValueError("Bass exercises need expected_bass_pitch_class.")
+        if self.expected_bass_pitch_class is not None and (
+            type(self.expected_bass_pitch_class) is not int
+            or self.expected_bass_pitch_class not in self.expected_pitch_classes
+        ):
+            raise ValueError("The expected bass must be one of the expected pitch classes.")
+        if self.review_status not in ("AI_DRAFT_UNREVIEWED", "HUMAN_REVIEWED", "OWNER_APPROVED"):
+            raise ValueError("Unknown exercise review status.")
+        if type(self.publishable) is not bool:
+            raise ValueError("Publishable must be a boolean.")
         if self.publishable and self.review_status == "AI_DRAFT_UNREVIEWED":
             raise ValueError("Unreviewed exercises cannot be publishable.")
 
@@ -101,8 +116,11 @@ def evaluate(exercise: Exercise, played: Iterable[int]) -> PracticeFeedback:
     notes = sorted_unique_notes(played)
     played_pcs = {n % 12 for n in notes}
     if not notes:
-        expected_pcs = exercise.expected_pitch_classes or tuple(sorted({n % 12 for n in exercise.expected_pitches}))
-        return PracticeFeedback(exercise.exercise_id, Verdict.EMPTY, (), (), tuple(expected_pcs), (),
+        missing_pitches = (tuple(sorted(set(exercise.expected_pitches)))
+                           if exercise.policy is EvaluationPolicy.EXACT_PITCHES else ())
+        expected_pcs = {n % 12 for n in missing_pitches} if missing_pitches else set(exercise.expected_pitch_classes)
+        return PracticeFeedback(exercise.exercise_id, Verdict.EMPTY, (), (), tuple(sorted(expected_pcs)), (),
+                                missing_pitches=missing_pitches,
                                 message_key="practice.feedback.empty")
 
     if exercise.policy is EvaluationPolicy.EXACT_PITCHES:

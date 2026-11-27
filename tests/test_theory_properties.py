@@ -19,6 +19,7 @@ import unittest
 from typing import List, Tuple
 
 from src.steps.theory.pitch import NoteSpelling, parse_spelling
+from src.steps.theory.interval import directed_semitones, invert_semitones_modulo12, semitones_between
 from src.steps.theory.chord import ChordDefinition, parse_chord, Voicing
 from src.steps.theory.inversion import (
     ChordInversion,
@@ -83,33 +84,16 @@ class TestMusicTheoryProperties(unittest.TestCase):
                     f"Pitch class changed under pure octave diatonic shift for {sym}"
                 )
 
-    def test_property_interval_inversion_axioms_1000_trials(self):
-        """
-        Property 2: Interval Inversion Duality and Group Axioms.
-        For every semitone interval s in [0, 127]:
-          inv(s) = (12 - (s % 12)) % 12
-          Axiom 2a: (s + inv(s)) % 12 == 0
-          Axiom 2b: inv(inv(s)) == s % 12 (Self-inverse duality)
-        """
-        for _ in range(self.TRIALS_COUNT):
-            semitones = self.rng.randint(0, 127)
-            pc_interval = semitones % 12
-            inversion = (12 - pc_interval) % 12
-
-            # Axiom 2a: Complementarity to octave
-            self.assertEqual(
-                (pc_interval + inversion) % 12,
-                0,
-                f"Interval complement failed for interval {semitones}"
-            )
-
-            # Axiom 2b: Duality (Involution)
-            double_inversion = (12 - (inversion % 12)) % 12
-            self.assertEqual(
-                double_inversion,
-                pc_interval,
-                f"Double inversion failed for interval {semitones}"
-            )
+    def test_interval_apis_for_every_ordered_midi_pair(self):
+        """Reversing the endpoints gives the independent directed complement."""
+        for start in range(128):
+            for end in range(128):
+                directed = directed_semitones(start, end)
+                self.assertEqual(directed, end - start, (start, end))
+                self.assertEqual(semitones_between(start, end), max(start, end) - min(start, end))
+                inverted = invert_semitones_modulo12(directed)
+                self.assertEqual(inverted, (start - end) % 12, (start, end))
+                self.assertEqual(invert_semitones_modulo12(inverted), (end - start) % 12)
 
     def test_property_chord_inversion_pitch_class_set_invariance_1000_trials(self):
         """

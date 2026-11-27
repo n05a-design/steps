@@ -5,12 +5,93 @@ on:
     branches: [ main, feat/**, fix/**, chore/** ]
   pull_request:
     branches: [ main ]
+  schedule:
+    - cron: '24 3 * * *'
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: Technical music audit profile
+        type: choice
+        options: [smoke, pr, nightly, full]
+        default: full
+      seed:
+        description: Numeric audit seed
+        type: string
+        default: '20261121'
+      case:
+        description: Optional finite reference case ID
+        type: string
 
 permissions:
   contents: read
 
 jobs:
+  continuous-music-validation:
+    name: Continuous music validation
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.12'
+      - name: Run technical music validation
+        env:
+          AUDIT_PROFILE: ${{ inputs.profile || 'nightly' }}
+          AUDIT_SEED: ${{ inputs.seed }}
+          AUDIT_CASE: ${{ inputs.case }}
+        run: |
+          set -euo pipefail
+          python -B -O scripts/audit_randomized_music.py --self-test \
+            --json-out "$RUNNER_TEMP/music-oracle-self-test.json"
+          if [[ "$GITHUB_EVENT_NAME" == schedule ]]; then
+            AUDIT_SEED="$(date -u +%Y%m%d)"
+          fi
+          args=(--profile "$AUDIT_PROFILE" --seed "$AUDIT_SEED" --timeout 120)
+          if [[ -n "$AUDIT_CASE" ]]; then
+            args+=(--case "$AUDIT_CASE")
+          fi
+          python -B scripts/audit_randomized_music.py "${args[@]}" \
+            --json-out "$RUNNER_TEMP/musical-validation.json"
+      - name: Install isolated stateful test dependencies
+        if: github.event_name == 'schedule'
+        run: |
+          python -m venv "$RUNNER_TEMP/music-test-venv"
+          "$RUNNER_TEMP/music-test-venv/bin/python" -m pip install --require-hashes --only-binary=:all: \
+            -r scripts/music-audit-stateful-requirements.txt
+      - name: Run stateful music and history tests
+        if: github.event_name == 'schedule'
+        env:
+          HYPOTHESIS_STORAGE_DIRECTORY: ${{ runner.temp }}/music-hypothesis
+        run: |
+          set -euo pipefail
+          "$RUNNER_TEMP/music-test-venv/bin/python" -B -m unittest \
+            tests.test_music_audit_stateful.HypothesisMusicAudit.test_keyboard_transitions \
+            tests.test_music_audit_stateful.HypothesisMusicAudit.test_session_history \
+            tests.test_music_audit_stateful.KeyboardStateAudit -v 2>&1 | tee "$RUNNER_TEMP/music-stateful.log"
+      - name: Run curated music mutations every Sunday
+        if: github.event_name == 'schedule' && always()
+        run: |
+          if [[ "$(date -u +%u)" == 7 ]]; then
+            python -B scripts/check_music_audit_mutations.py --json-out "$RUNNER_TEMP/music-mutations.json"
+          fi
+      - name: Keep the continuous validation reports
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: continuous-music-validation-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/music-oracle-self-test.json
+            ${{ runner.temp }}/musical-validation.json
+            ${{ runner.temp }}/music-stateful.log
+            ${{ runner.temp }}/music-mutations.json
+          if-no-files-found: error
+
   package-artifacts:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     name: Python wheel artifact
     runs-on: ubuntu-latest
     steps:
@@ -31,6 +112,7 @@ jobs:
         run: python -B -m unittest tests.test_package_artifacts -v
 
   desktop-ui-smoke:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     name: Desktop UI smoke (Ubuntu/Xvfb)
     runs-on: ubuntu-latest
     steps:
@@ -60,6 +142,7 @@ jobs:
             -v
 
   desktop-ui-platform-smoke:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     name: Desktop UI smoke (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     strategy:
@@ -97,6 +180,7 @@ jobs:
           -v
 
   test:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     name: Unit Tests (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest
     strategy:
@@ -145,7 +229,18 @@ jobs:
         run: python -B scripts/check_release_consistency.py --check
 
       - name: Check randomized musical questions against independent oracles
-        run: python -B scripts/audit_randomized_music.py --trials 128
+        run: |
+          python -B -O scripts/audit_randomized_music.py --self-test
+          python -B scripts/audit_randomized_music.py --profile pr --timeout 90 \
+            --json-out "$RUNNER_TEMP/musical-validation.json"
+
+      - name: Keep the technical music validation report
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: musical-validation-python-${{ matrix.python-version }}
+          path: ${{ runner.temp }}/musical-validation.json
+          if-no-files-found: error
 
       - name: Run STEPS Core Test Suite
         run: python -B -m unittest discover -s tests -p "test_*.py" -v
@@ -157,6 +252,7 @@ jobs:
           fi
 
   curation-platforms:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     name: Curation skill (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     strategy:
@@ -185,6 +281,7 @@ jobs:
         run: python -B .agents/skills/steps-knowledge-curation/scripts/check_reference_ids.py --json
 
   pilot-publication:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     name: Pilot publication gate
     runs-on: ubuntu-latest
     steps:
@@ -202,6 +299,7 @@ jobs:
         run: python -B scripts/render_reviewed_progressions.py --check
 
   knowledge-coverage:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     name: Knowledge coverage inventory
     runs-on: ubuntu-latest
     steps:
