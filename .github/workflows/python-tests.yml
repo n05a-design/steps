@@ -114,14 +114,14 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Materialize LF for the exact-byte resource check
-        if: runner.os == 'Windows'
-        run: git -c core.autocrlf=false checkout-index --force --all
-
       - name: Set up Python 3.12
         uses: actions/setup-python@v7
         with:
           python-version: '3.12'
+
+      - name: Materialize tracked blobs for the exact-byte resource check
+        if: runner.os == 'Windows'
+        run: python -B scripts/materialize_shell_check_resources.py exact
 
       - name: Test process locks, resources and both MIDI readers
         run: >-
@@ -145,11 +145,11 @@ jobs:
       - uses: actions/checkout@v7
         with:
           persist-credentials: false
-      - name: Materialize regular Windows CRLF resources
-        run: git -c core.autocrlf=true checkout-index --force --all
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
+      - name: Materialize Git-filtered Windows CRLF resources
+        run: python -B scripts/materialize_shell_check_resources.py crlf
       - name: Run the unchanged shell and installed-wheel integrity checks
         run: >-
           python -B -m unittest
