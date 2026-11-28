@@ -316,6 +316,7 @@ def run_mutation(snapshot, mutation, baselines):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--json-out", type=Path)
+    parser.add_argument("--strict-generated", action="store_true")
     selection = parser.add_mutually_exclusive_group()
     selection.add_argument("--generated-per-module", type=int, default=0)
     selection.add_argument("--replay-v21", action="store_true")
@@ -344,8 +345,11 @@ def main():
     generated_status = "NOT_RUN" if not generated else "REVIEW_REQUIRED" if any(
         row["status"] not in {"DETECTED", "PRODUCT_EXCEPTION", "PRODUCT_LOAD_EXCEPTION", "AST_EQUIVALENT"} for row in results if row["kind"] == "AST"
     ) else "PASS"
-    report = {"schema_version": 3, "reference_revision": revision, "planned": len(results), "counts": counts,
-              "results": results, "gate": "PASS" if curated_pass else "FAIL",
+    curated_gate = "PASS" if curated_pass else "FAIL"
+    gate = "PASS" if curated_pass and (not args.strict_generated or generated_status == "PASS") else "FAIL"
+    report = {"schema_version": 4, "reference_revision": revision, "planned": len(results), "counts": counts,
+              "results": results, "gate": gate, "curated_gate": curated_gate,
+              "generated_mode": "strict" if args.strict_generated else "observe",
               "generated_status": generated_status, "generated_planned": len(generated),
               **checkout_provenance()}
     if args.json_out:

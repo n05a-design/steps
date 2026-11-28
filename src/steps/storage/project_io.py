@@ -174,12 +174,13 @@ def _project_lock_update(path: Path):
 
 
 class ProjectLock:
-    """Use a PID and expiry for compatibility, with token-checked release."""
+    """Protect a project for its live owner, with token-checked release."""
 
     def __init__(self, project_path: Path | str, timeout_seconds: float = 3600.0):
         self.project_path = Path(project_path)
         self.lock_path = self.project_path.parent / f".{self.project_path.name}.lock"
         self._guard_path = self.lock_path.with_suffix(".lock.guard")
+        # Retain the old argument for callers. Elapsed time never expires a live owner.
         self.timeout_seconds = timeout_seconds
         self._token: str | None = None
 
@@ -195,10 +196,8 @@ class ProjectLock:
         self.lock_path.parent.mkdir(parents=True, exist_ok=True)
         with _project_lock_update(self._guard_path):
             info = self._read_lock()
-            lock_time = info.get("timestamp")
             pid = info.get("pid")
-            if (type(lock_time) in (int, float) and time.time() - lock_time < self.timeout_seconds
-                    and _lock_owner_is_running(pid)):
+            if _lock_owner_is_running(pid):
                 raise LockCollisionError(
                     f"Project is locked by another running process (PID {pid}, locked at {info.get('time_iso')})."
                 )
@@ -398,8 +397,10 @@ def save_project(
     """
     Saves a Project object to disk atomically with automatic backup rotation.
     """
+    resolved = validate_path_safety(path, base_dir=base_dir)
     data = project.to_dict()
-    return atomic_write_json(path, data, max_backups=max_backups, base_dir=base_dir)
+    with ProjectLock(resolved):
+        return atomic_write_json(resolved, data, max_backups=max_backups, base_dir=base_dir)
 
 
 def load_project_with_status(

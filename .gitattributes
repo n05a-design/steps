@@ -58,3 +58,29 @@ knowledge/** linguist-documentation
 *.html linguist-documentation
 *.css linguist-vendored
 *.js linguist-vendored
+
+# Exact LF contract for the current imported Glide Shell text resources.
+# New manifest entries require an explicit byte-preserving Git policy.
+/glide_shell/AI_GUIDE_NEW_PROJECTS.md text eol=lf
+/glide_shell/DESIGN_RICHTLINIEN.md text eol=lf
+/glide_shell/KI_ANLEITUNG_NEUE_PROJEKTE.md text eol=lf
+/glide_shell/README.de.md text eol=lf
+/glide_shell/README.md text eol=lf
+/glide_shell/STARTPROMPT_KI.md text eol=lf
+/glide_shell/__init__.py text eol=lf
+/glide_shell/action_picker.py text eol=lf
+/glide_shell/app_host.py text eol=lf
+/glide_shell/command_history.py text eol=lf
+/glide_shell/custom_controls.py text eol=lf
+/glide_shell/demo.py text eol=lf
+/glide_shell/desktop_adapter.py text eol=lf
+/glide_shell/modal_session.py text eol=lf
+/glide_shell/motion.py text eol=lf
+/glide_shell/redo_history.py text eol=lf
+/glide_shell/runtime_paths.py text eol=lf
+/glide_shell/selftest.py text eol=lf
+/glide_shell/system_appearance.py text eol=lf
+/glide_shell/text_fit.py text eol=lf
+/glide_shell/window_geometry.py text eol=lf
+/glide_shell/window_lifetime.py text eol=lf
+/glide_shell/LICENSE text eol=lf

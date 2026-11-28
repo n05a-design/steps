@@ -62,10 +62,12 @@ class MidiTrack:
 
     def add_tempo(self, start_tick: int, bpm: float) -> None:
         """Adds meta event 0x51 Set Tempo."""
-        if bpm <= 0.0:
-            raise ValueError(f"BPM must be positive, got {bpm}")
-        us_per_quarter = int(round(60_000_000.0 / bpm))
-        us_bytes = struct.pack(">I", us_per_quarter)[1:]  # 3 bytes
+        if not math.isfinite(bpm) or bpm <= 0:
+            raise ValueError(f"BPM must be finite and positive, got {bpm}")
+        period = 60_000_000.0 / bpm
+        if not math.isfinite(period) or not 1 <= round(period) <= 0xFFFFFF:
+            raise ValueError(f"BPM cannot be represented as an SMF tempo, got {bpm}")
+        us_bytes = round(period).to_bytes(3, "big")
         payload = b"\xFF\x51\x03" + us_bytes
         self._raw_events.append(RawMidiEvent(abs_tick=start_tick, msg_bytes=payload))
 
@@ -115,20 +117,20 @@ class MidiTrack:
         msg_off = struct.pack("BBB", status_off, pitch, 0)
         self._raw_events.append(RawMidiEvent(abs_tick=start_tick + duration_ticks, msg_bytes=msg_off, is_note_off=True))
 
+    def _chronological_events(self) -> list[RawMidiEvent]:
+        if self._imported:
+            return sorted(self._raw_events, key=lambda event: event.abs_tick)
+        return sorted(self._raw_events)
+
     def to_bytes(self) -> bytes:
         """
         Serializes this track into an SMF MTrk chunk with delta-time encoded events
         and a mandatory terminal End of Track event (00 FF 2F 00).
         """
-        # Imported events already declare their order at each tick.
-        if self._imported:
-            sorted_events = sorted(self._raw_events, key=lambda event: event.abs_tick)
-        else:
-            sorted_events = sorted(self._raw_events)
         stream = bytearray()
         last_tick = 0
 
-        for ev in sorted_events:
+        for ev in self._chronological_events():
             delta = ev.abs_tick - last_tick
             if delta < 0:
                 delta = 0

@@ -264,11 +264,53 @@ lock.release()
         self.assertEqual(restarted.returncode, 0)
         self.assertFalse(ProjectLock(self.project_path).lock_path.exists())
 
+    def test_save_rejects_active_owner_even_after_short_timeout_and_recovers_after_exit(self):
+        code = """
+import sys
+from pathlib import Path
+from threading import Event
+from unittest.mock import patch
+from src.steps.storage import Project, ProjectLock, save_project
+path = Path(sys.argv[1])
+def pause(*args, **kwargs):
+    print("writing", flush=True)
+    Event().wait(15)
+if sys.argv[2] == "lock":
+    with ProjectLock(path, timeout_seconds=0.01):
+        pause()
+else:
+    with patch("src.steps.storage.project_io.atomic_write_json", side_effect=pause):
+        save_project(Project(title="owner"), path)
+"""
+        for mode in ("lock", "save"):
+            with self.subTest(owner=mode):
+                save_project(Project(title="before"), self.project_path)
+                with subprocess.Popen(
+                    [sys.executable, "-B", "-c", code, str(self.project_path), mode],
+                    stdout=subprocess.PIPE, text=True,
+                ) as owner:
+                    try:
+                        self.assertEqual(owner.stdout.readline().strip(), "writing")
+                        time.sleep(0.05)
+                        with self.subTest(operation="acquire"):
+                            with self.assertRaises(LockCollisionError):
+                                ProjectLock(self.project_path, timeout_seconds=0.01).acquire()
+                        with self.subTest(operation="save"):
+                            with self.assertRaises(LockCollisionError):
+                                save_project(Project(title="contender"), self.project_path)
+                    finally:
+                        owner.kill()
+                        owner.wait(timeout=10)
+                self.assertEqual(load_project(self.project_path).title, "before")
+                save_project(Project(title="recovered"), self.project_path)
+                self.assertEqual(load_project(self.project_path).title, "recovered")
+
     def test_displaced_owner_cannot_remove_successor_lock(self):
         original = ProjectLock(self.project_path)
         original.acquire()
-        successor = ProjectLock(self.project_path, timeout_seconds=0)
-        successor.acquire()
+        successor = ProjectLock(self.project_path)
+        with patch("src.steps.storage.project_io._lock_owner_is_running", return_value=False):
+            successor.acquire()
         original.release()
         self.assertTrue(successor.lock_path.is_file())
         successor.release()

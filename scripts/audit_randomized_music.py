@@ -666,13 +666,17 @@ def main():
         report = run(args.seed, args.trials, areas, profile="replay" if replay else "full" if case else args.profile,
                      case=case, timeout=args.timeout, replay=replay, workers=args.workers)
     report.update(provenance)
+    report["external_validation"] = "NOT_RUN"
     if args.external_oracles:
         from scripts import music_audit_oracles
 
         statuses = report["external_oracles"] = music_audit_oracles.run(args.tonal_module)
-        if any(result["status"] == "ERROR" for result in statuses.values()):
+        outcomes = {result["status"] for result in statuses.values()}
+        external = next((state for state in ("ERROR", "FAIL", "NOT_RUN") if state in outcomes), "PASS")
+        report["external_validation"] = external
+        if external == "ERROR":
             report["gate"] = "ERROR"
-        elif report["gate"] == "PASS" and any(result["status"] == "FAIL" for result in statuses.values()):
+        elif report["gate"] == "PASS" and external != "PASS":
             report["gate"] = "FAIL"
     if args.json_out:
         write_report(args.json_out, report)
@@ -682,6 +686,7 @@ def main():
               f"{counts['error']} ERROR, {counts['timeout']} TIMEOUT, {counts['not_run']} NOT RUN")
     for failure in report["failures"][:10]:
         print(json.dumps(failure, ensure_ascii=False))
+    print(f"External validation: {report['external_validation']}")
     for name, result in report.get("external_oracles", {}).items():
         print(f"{name} {result['version']}: {result['status']} ({result['executed']}/{result['planned']})")
     if any(row["classification"] == "UNKNOWN_CASE" for row in report["failures"]):

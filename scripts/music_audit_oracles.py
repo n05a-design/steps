@@ -224,6 +224,42 @@ def mido_rows():
         source.save(file=output)
         rows.append({"input": {"writer": "mido", "gap": gap},
                      "external": from_mido(source), "steps": from_steps(output.getvalue())})
+    # Compare format conversion to the original Mido event multiset and to
+    # the original maximum End-of-Track tick, independent of track layout.
+    from src.steps.midi import MidiFile as StepsFile, convert_format_0_to_1, convert_format_1_to_0
+
+    def musical_stream(decoded):
+        events = [event for _, track in decoded[2] for event in track]
+        return [decoded[1], sorted(event for event in events if event[1] != "end_of_track"),
+                max(event[0] for event in events if event[1] == "end_of_track")]
+
+    for fmt in (0, 1):
+        notes = MidiTrack([
+            Message("note_on", channel=2, note=60, velocity=80),
+            Message("note_on", channel=2, note=60, velocity=90, time=8),
+            Message("note_off", channel=2, note=60, time=24),
+            Message("note_off", channel=2, note=60, time=8),
+            MetaMessage("end_of_track", time=240),
+        ])
+        conductor = MidiTrack([
+            MetaMessage("set_tempo", tempo=500001),
+            MetaMessage("time_signature", numerator=7, denominator=8),
+            Message("sysex", data=(0x7D, 1)),
+        ])
+        tracks = [MidiTrack([*conductor, *notes])] if fmt == 0 else [
+            MidiTrack([*conductor, MetaMessage("end_of_track", time=300)]), notes,
+        ]
+        source = MidiFile(type=fmt, ticks_per_beat=480, tracks=tracks)
+        output = BytesIO()
+        source.save(file=output)
+        imported = StepsFile.from_bytes(output.getvalue())
+        convert = convert_format_0_to_1 if fmt == 0 else convert_format_1_to_0
+        converted = convert(imported).to_bytes()
+        external = musical_stream(from_mido(source))
+        actual = musical_stream(from_steps(converted))
+        mido_readback = musical_stream(from_mido(MidiFile(file=BytesIO(converted))))
+        rows.append({"input": {"writer": "mido", "convert_from": fmt, "convert_to": 1 - fmt},
+                     "external": external, "steps": actual, "mido_roundtrip_steps": mido_readback})
     return rows
 
 
@@ -231,7 +267,7 @@ def run(tonal_module: Path | None):
     theory_cases = len(chord_cases()) + len(scale_cases())
     specs = [
         ("music21", MUSIC21_VERSION, music21_rows, theory_cases),
-        ("mido", MIDO_VERSION, mido_rows, 20),
+        ("mido", MIDO_VERSION, mido_rows, 22),
     ]
     results = {}
     if tonal_module is not None:

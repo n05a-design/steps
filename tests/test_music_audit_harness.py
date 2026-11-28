@@ -128,3 +128,28 @@ class MusicAuditHarnessTest(unittest.TestCase):
         report = audit.run(1, 1, ("pitch",), case="PITCH-128")
         self.assertEqual(report["gate"], "ERROR")
         self.assertEqual(report["failures"][0]["classification"], "UNKNOWN_CASE")
+
+
+
+class MusicAuditFreshnessTest(unittest.TestCase):
+    def test_time_revision_and_job_coverage_are_independent(self):
+        from datetime import datetime, timedelta, timezone
+        from unittest.mock import patch
+        from scripts import check_music_audit_freshness as freshness
+
+        now = datetime(2026, 11, 28, tzinfo=timezone.utc)
+        revision = "a" * 40
+        good = {"headSha": revision, "startedAt": (now - timedelta(hours=1)).isoformat(),
+                "databaseId": 1, "conclusion": "success"}
+        jobs = {"jobs": [{"name": name, "conclusion": "success"} for name in freshness.JOBS]}
+        for run, details, expected in (
+            (good, jobs, ("PASS", "PASS", "PASS")),
+            ({**good, "headSha": "b" * 40}, jobs, ("REVISION_MISMATCH", "PASS", "REVISION_MISMATCH")),
+            ({**good, "startedAt": (now - timedelta(hours=37)).isoformat()}, jobs, ("STALE", "STALE", "PASS")),
+            (good, {"jobs": jobs["jobs"][:1]}, ("BLOCKED", "PASS", "PASS")),
+        ):
+            with self.subTest(expected=expected), patch.object(freshness, "github_json", side_effect=[[run], details]):
+                report = freshness.check(36, now, revision)
+                self.assertEqual(tuple(report[key] for key in ("status", "time_status", "revision_status")), expected)
+        with patch.object(freshness, "github_json", return_value=[]):
+            self.assertEqual(freshness.check(36, now, revision)["status"], "NOT_RUN")

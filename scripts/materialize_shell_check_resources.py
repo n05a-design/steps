@@ -1,7 +1,6 @@
-"""Prepare exact-byte or CRLF Shell fixtures in an isolated CI checkout."""
+"""Verify the tracked and checked-out byte contract of Shell resources."""
 
-import argparse
-from hashlib import sha256
+import hashlib
 import json
 from pathlib import Path, PurePosixPath
 import subprocess
@@ -11,47 +10,28 @@ ROOT = Path(__file__).resolve().parents[1]
 SHELL = "glide_shell"
 
 
-def git_blob(path: str, *, crlf: bool = False) -> bytes:
-    if crlf:
-        args = ("-c", "core.autocrlf=true", "-c", "core.eol=crlf", "cat-file", "--filters")
-    else:
-        args = ("cat-file", "blob")
-    return subprocess.check_output(("git", *args, f"HEAD:{path}"), cwd=ROOT)
+def git(*args: str) -> bytes:
+    return subprocess.check_output(("git", *args), cwd=ROOT)
 
 
-def materialize(mode: str) -> int:
-    manifest = json.loads(git_blob(f"{SHELL}/SHELL_MANIFEST.json"))
-    pending = []
+def check_resources() -> int:
+    manifest = json.loads((ROOT / SHELL / "SHELL_MANIFEST.json").read_bytes())
     for name, expected in manifest["dateien"].items():
         relative = PurePosixPath(name)
-        if relative.is_absolute() or ".." in relative.parts or "\\" in name:
+        if relative.is_absolute() or ".." in relative.parts or chr(92) in name:
             raise ValueError(f"Invalid manifest path: {name}")
         path = f"{SHELL}/{relative}"
-        target = ROOT / path
-        expected_target = ROOT / SHELL / relative
-        if target.resolve() != expected_target:
-            raise ValueError(f"Refusing to replace a redirected resource: {name}")
-        original = git_blob(path)
-        if sha256(original).hexdigest() != expected:
+        original = git("cat-file", "blob", f"HEAD:{path}")
+        if hashlib.sha256(original).hexdigest() != expected:
             raise ValueError(f"Tracked resource differs from its manifest: {name}")
-        filtered = git_blob(path, crlf=True)
-        if filtered != original.replace(b"\n", b"\r\n"):
-            raise ValueError(f"CRLF filter did not produce the expected test bytes: {name}")
-        current = target.read_bytes()
-        if current not in (original, filtered):
-            raise ValueError(f"Refusing to replace a modified resource: {name}")
-        pending.append((target, original if mode == "exact" else filtered))
-    for target, content in pending:
-        target.write_bytes(content)
-    return len(pending)
-
-
-def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("mode", choices=("exact", "crlf"))
-    options = parser.parse_args()
-    print(f"Prepared {materialize(options.mode)} manifest resources ({options.mode}).")
+        attributes = git("check-attr", "-z", "text", "eol", "--", path).split(b"\0")
+        text, eol = attributes[2], attributes[5]
+        if text != b"unset" and (text != b"set" or eol != b"lf" or b"\r" in original or b"\0" in original):
+            raise ValueError(f"Manifest resource needs an explicit byte-preserving Git policy: {name}")
+        if (ROOT / path).read_bytes() != original:
+            raise ValueError(f"Checkout bytes differ from the tracked resource: {name}")
+    return len(manifest["dateien"])
 
 
 if __name__ == "__main__":
-    main()
+    print(f"Verified {check_resources()} shell manifest resources.")

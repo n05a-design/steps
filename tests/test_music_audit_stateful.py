@@ -3,7 +3,10 @@
 import random
 import unittest
 
-from src.steps.midi import MidiFile, MidiParseError, SMFParser, decode_vlq, encode_vlq
+from src.steps.midi import (
+    MidiFile, MidiParseError, MidiTrack, SMFParser, convert_format_0_to_1, convert_format_1_to_0,
+    decode_vlq, encode_vlq,
+)
 from itertools import combinations
 from src.steps.keyboard import KeyboardInputState
 from src.steps.ports.live import normalize_midi_message
@@ -272,6 +275,37 @@ class DualSMFParserAudit(unittest.TestCase):
                 self.assertEqual(editable.tracks[0].raw_events[1].abs_tick, ticks)
                 self.assertEqual(editable.to_bytes(), original)
                 self.assertEqual(SMFParser.parse(original).all_notes[0].duration_ticks, ticks)
+
+    def test_format_conversion_preserves_supported_events_and_terminal_silence(self):
+        source = framed_track(bytes.fromhex(
+            "00 ff 51 03 07 a1 21 00 ff 58 04 03 02 18 08 00 f0 02 7d f7 "
+            "00 92 3c 40 00 92 3c 50 00 82 3c 00 01 82 3c 00 00 99 24 40 "
+            "01 89 24 00 81 00 ff 2f 00"
+        ))
+        original = MidiFile.from_bytes(source)
+        split = convert_format_0_to_1(original)
+        rebuilt = convert_format_1_to_0(split)
+        for file in (split, rebuilt):
+            parsed = SMFParser.parse(file.to_bytes())
+            self.assertEqual(max(t.total_ticks for t in parsed.tracks), 130)
+            self.assertEqual(parsed.time_signatures, [(0, 3, 4)])
+            self.assertEqual(
+                [(note.channel, note.pitch, note.velocity, note.duration_ticks) for note in parsed.all_notes],
+                [(2, 60, 64, 1), (2, 60, 80, 1), (9, 36, 64, 1)],
+            )
+            events = [event for track in parsed.tracks for event in track.events]
+            self.assertIn(bytes.fromhex("ff 51 03 07 a1 21"), [event.raw_bytes for event in events])
+            self.assertIn(bytes.fromhex("f0 02 7d f7"), [event.raw_bytes for event in events])
+        self.assertEqual([t.total_ticks for t in SMFParser.parse(split.to_bytes()).tracks], [130, 130, 130])
+
+    def test_writer_enforces_set_tempo_24_bit_period(self):
+        track = MidiTrack()
+        track.add_tempo(0, 60_000_000)
+        track.add_tempo(1, 60_000_000 / 0xFFFFFF)
+        self.assertEqual([e.msg_bytes[-3:] for e in track.raw_events], [b"\x00\x00\x01", b"\xff\xff\xff"])
+        for bpm in (float("inf"), float("nan"), 1e100, 1e-100, 60_000_000 / (0xFFFFFF + 1)):
+            with self.subTest(bpm=bpm), self.assertRaises(ValueError):
+                track.add_tempo(0, bpm)
 
     def test_normalization_preserves_order_and_expandable_running_status(self):
         implicit = framed_track(bytes.fromhex("00 90 3c 40 01 3c 00 03 ff 2f 00"))

@@ -19,7 +19,7 @@ from collections import deque
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
 
-from .smf import MidiFile, MidiTrack, RawMidiEvent, _validate_set_tempo
+from .smf import MidiFile, MidiTrack, _validate_set_tempo
 from .vlq import decode_vlq, encode_vlq
 
 
@@ -411,13 +411,12 @@ def convert_format_1_to_0(midi_file: MidiFile) -> MidiFile:
     out_file = MidiFile(smf_format=0, division=midi_file.division)
     single_track = out_file.add_track()
 
-    all_raw: List[RawMidiEvent] = []
+    # Preserve each source track's equal-tick ordering. For simultaneous
+    # events on distinct tracks, use the original track order.
+    single_track._imported = True
     for track in midi_file.tracks:
-        all_raw.extend(track.raw_events)
-
-    # Sort all raw events by tick (and note_off before note_on at same tick)
-    all_raw.sort()
-    single_track._raw_events = all_raw
+        single_track._raw_events.extend(track._chronological_events())
+        single_track._end_tick = max(single_track._end_tick, track._end_tick)
     return out_file
 
 
@@ -437,7 +436,9 @@ def convert_format_0_to_1(midi_file: MidiFile) -> MidiFile:
     channel_tracks: Dict[int, MidiTrack] = {}
 
     src_track = midi_file.tracks[0] if midi_file.tracks else MidiTrack()
-    for ev in src_track.raw_events:
+    events = src_track._chronological_events()
+    end_tick = max(src_track._end_tick, events[-1].abs_tick if events else 0)
+    for ev in events:
         msg = ev.msg_bytes
         if not msg:
             continue
@@ -457,6 +458,9 @@ def convert_format_0_to_1(midi_file: MidiFile) -> MidiFile:
                 channel_tracks[channel] = t
             channel_tracks[channel]._raw_events.append(ev)
 
+    for track in out_file.tracks:
+        track._imported = True
+        track._end_tick = end_tick
     return out_file
 
 

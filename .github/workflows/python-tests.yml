@@ -21,6 +21,10 @@ on:
       case:
         description: Optional finite reference case ID
         type: string
+      strict_mutations:
+        description: Require the generated mutation gate to pass
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -80,13 +84,21 @@ jobs:
             tests.test_music_audit_stateful.KeyboardStateAudit \
             tests.test_music_audit_semantics \
             tests.test_music_audit_combinations -v 2>&1 | tee "$RUNNER_TEMP/music-stateful.log"
-      - name: Run music mutations every Sunday
+      - name: Observe the generated mutation gate every Sunday
         if: github.event_name == 'schedule' && always()
         run: |
           if [[ "$(date -u +%u)" == 7 ]]; then
             python -B scripts/check_music_audit_mutations.py --generated-per-module 4 \
               --json-out "$RUNNER_TEMP/music-mutations.json"
+          else
+            printf '{"generated_mode":"observe","generated_status":"NOT_RUN"}\n' > "$RUNNER_TEMP/music-mutations.json"
           fi
+      - name: Require the frozen generated mutation gate
+        if: github.event_name == 'workflow_dispatch' && inputs.strict_mutations
+        run: |
+          git fetch --no-tags --depth=1 origin 41acc91a11e56cb66291fbf2bb064654d44ab7b4
+          python -B scripts/check_music_audit_mutations.py --replay-v21 --strict-generated \
+            --json-out "$RUNNER_TEMP/music-mutations.json"
       - name: Keep the continuous validation reports
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
@@ -97,6 +109,43 @@ jobs:
             ${{ runner.temp }}/musical-validation.json
             ${{ runner.temp }}/music-stateful.log
             ${{ runner.temp }}/music-mutations.json
+          if-no-files-found: error
+
+  external-music-validation:
+    name: External music validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.14.7'
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24.11.1'
+          package-manager-cache: false
+      - name: Install isolated comparators
+        run: |
+          set -euo pipefail
+          python -m venv "$RUNNER_TEMP/music-oracle-venv"
+          "$RUNNER_TEMP/music-oracle-venv/bin/python" -m pip install --only-binary=:all: \
+            -r scripts/music-audit-external-requirements.txt
+          "$RUNNER_TEMP/music-oracle-venv/bin/python" -m pip check
+          cp -R scripts/music-oracles-node "$RUNNER_TEMP/music-oracles-node"
+          npm ci --ignore-scripts --no-audit --no-fund --prefix "$RUNNER_TEMP/music-oracles-node"
+      - name: Verify all three musical comparators
+        run: |
+          "$RUNNER_TEMP/music-oracle-venv/bin/python" -B scripts/audit_randomized_music.py \
+            --profile pr --external-oracles --tonal-module "$RUNNER_TEMP/music-oracles-node/node_modules/tonal" \
+            --json-out "$RUNNER_TEMP/music-external.json"
+      - name: Keep external validation evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: music-external-${{ github.run_id }}
+          path: ${{ runner.temp }}/music-external.json
           if-no-files-found: error
 
   package-artifacts:
@@ -111,6 +160,10 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v7
+        env:
+          GIT_CONFIG_COUNT: '1'
+          GIT_CONFIG_KEY_0: core.autocrlf
+          GIT_CONFIG_VALUE_0: ${{ runner.os == 'Windows' && 'true' || 'false' }}
         with:
           persist-credentials: false
 
@@ -119,14 +172,14 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Materialize tracked blobs for the exact-byte resource check
-        if: runner.os == 'Windows'
-        run: python -B scripts/materialize_shell_check_resources.py exact
+      - name: Verify Shell policy and checkout bytes
+        run: python -B scripts/materialize_shell_check_resources.py
 
       - name: Test process locks, resources and both MIDI readers
         run: >-
           python -B -m unittest
           tests.test_storage_recovery_io
+          tests.test_shell_checkout_contract
           tests.test_music_audit_stateful.DualSMFParserAudit
           tests.test_glide_shell_integration.TestGlideShellIntegration.test_glide_shell_version_manifest_and_isolation
           tests.test_glide_shell_integration.TestGlideShellIntegration.test_glide_shell_selftest_passes_all_13_checks
@@ -138,18 +191,22 @@ jobs:
 
   windows-crlf-resources:
     if: github.event_name == 'push' || github.event_name == 'pull_request'
-    name: Windows CRLF shell and wheel integrity
+    name: Windows AutoCRLF shell and wheel integrity
     runs-on: windows-latest
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v7
+        env:
+          GIT_CONFIG_COUNT: '1'
+          GIT_CONFIG_KEY_0: core.autocrlf
+          GIT_CONFIG_VALUE_0: 'true'
         with:
           persist-credentials: false
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      - name: Materialize Git-filtered Windows CRLF resources
-        run: python -B scripts/materialize_shell_check_resources.py crlf
+      - name: Verify Shell policy and checkout bytes
+        run: python -B scripts/materialize_shell_check_resources.py
       - name: Run the unchanged shell and installed-wheel integrity checks
         run: >-
           python -B -m unittest
