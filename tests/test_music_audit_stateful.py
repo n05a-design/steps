@@ -19,6 +19,12 @@ OPERATIONS = ("on", "off", "pedal", "toggle", "reset")
 
 def check_keyboard_trace(test, trace):
     state = KeyboardInputState()
+
+    def apply(status, data1, data2):
+        event = normalize_midi_message(status, data1, data2)
+        test.assertIsNotNone(event)
+        state.apply(event)
+
     # Independent reference representation: a note is in the physical list
     # while held, and in the voices list from onset until it stops sounding.
     physical, voices, selected = [], [], []
@@ -29,18 +35,18 @@ def check_keyboard_trace(test, trace):
                 physical.append(value)
             if value not in voices:
                 voices.append(value)
-            state.apply(normalize_midi_message(0x90, value, 96))
+            apply(0x90, value, 96)
         elif action == "off":
             if value in physical:
                 physical.remove(value)
                 if not pedal:
                     voices.remove(value)
-            state.apply(normalize_midi_message(0x90, value, 0))
+            apply(0x90, value, 0)
         elif action == "pedal":
             pedal = value >= 64
             if not pedal:
                 voices[:] = physical
-            state.apply(normalize_midi_message(0xB0, 64, value))
+            apply(0xB0, 64, value)
         elif action == "toggle":
             if value in selected:
                 selected.remove(value)
