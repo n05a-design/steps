@@ -19,7 +19,7 @@ from typing import Iterable, Literal, Optional, Sequence
 
 from ..theory.chord import ChordDefinition, Voicing
 from ..theory.exceptions import ChordConstructionError, MusicTheoryError
-from ..theory.inversion import InversionAnalysis, detect_chord_inversion
+from ..theory.inversion import ChordInversion, InversionAnalysis, detect_chord_inversion
 from ..theory.pitch import NoteSpelling
 from ..theory.scale import ScaleDefinition
 from .model import sorted_unique_notes
@@ -158,6 +158,30 @@ def role_for_interval(quality: str, semitones: int) -> ChordToneRole:
         ) from exc
 
 
+def inversion_for_bass(
+    chord: ChordDefinition, notes: tuple[int, ...], role: ChordToneRole,
+) -> InversionAnalysis | None:
+    """Apply figures to the actual bass factor of the declared chord."""
+    root_pc = int(chord.root.pitch_class)
+    seventh = is_seventh_quality(chord.quality)
+    if role.family in {"root", "third", "fifth", "seventh"}:
+        return detect_chord_inversion(notes, root_pitch_class=root_pc, is_seventh=seventh)
+    if role.family in {"sixth", "extension"}:
+        return None
+    bass_pc = notes[0] % 12
+    distance = (bass_pc - root_pc) % 12
+    suspended = role.family == "suspension"
+    return InversionAnalysis(
+        inversion=ChordInversion.ROOT_POSITION,
+        figured_bass="slash",
+        bass_factor="SUSPENSION" if suspended else "NON_CHORD_TONE",
+        root_pc=root_pc,
+        bass_pc=bass_pc,
+        german_name=f"Vorhalt im Bass ({distance})" if suspended else f"Orgelpunkt / Fremdbass ({distance})",
+        is_seventh_chord=seventh,
+    )
+
+
 @dataclass(frozen=True)
 class ChordTone:
     """One theoretical chord tone with its role, pitch class and written spelling."""
@@ -286,13 +310,7 @@ def label_voicing(chord: ChordDefinition, notes: Iterable[int] | Voicing) -> Lab
         labelled.append(VoicedNote(midi, role, positioned, role is ChordToneRole.ROOT, midi == bass_midi))
     present = {midi % 12 for midi in midi_notes}
     omitted = tuple(tone.role for tone in tones.values() if tone.pitch_class not in present)
-    try:
-        inversion = detect_chord_inversion(
-            list(midi_notes), root_pitch_class=int(chord.root.pitch_class),
-            is_seventh=is_seventh_quality(chord.quality),
-        )
-    except MusicTheoryError:
-        inversion = None
+    inversion = inversion_for_bass(chord, midi_notes, labelled[0].role)
     return LabeledVoicing(chord, tuple(labelled), inversion, omitted, tuple(foreign))
 
 

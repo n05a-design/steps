@@ -25,6 +25,7 @@ from src.steps.keyboard import (
     recognize_chord,
 )
 from src.steps.ports.audio import NullAudioBackend
+from src.steps.midi import SMFParser
 from src.steps.ports.live import (
     LiveEventKind,
     LiveNoteEvent,
@@ -436,6 +437,35 @@ class TestWorkbenchSessionIntegration(unittest.TestCase):
         self.assertTrue(self.controller.session.can_undo)
         self.controller.undo()
         self.assertEqual(self.controller.session.chords, ["Dm7", "G7/D", "Cmaj7", "C/E"])
+
+    def test_keyboard_adoption_survives_history_and_project_reload_before_midi_export(self):
+        controller = ProgressionSessionController(ProgressionSession(["G7"], key_root="C", convention="INT"))
+        wb = KeyboardWorkbench(lambda: controller.session)
+        for midi in (60, 64, 67):
+            wb.input.toggle_selected(midi)
+        candidate = next(c for c in wb.recognition().candidates if c.symbol() == "C")
+        self.assertEqual(controller.session.chords, ["G7"])
+        controller.add_chord(wb.project_symbol_for(candidate))
+        self.assertEqual(controller.session.harmonic_degree_at(1), "I")
+        wb.select(1)
+        wb.rotate(2)
+        self.assertEqual(wb.chord_info().voicing.bass.midi % 12, 4)
+        controller.undo()
+        self.assertEqual(controller.session.chords, ["G7"])
+        controller.redo()
+        self.assertEqual(controller.session.chords, ["G7", "C"])
+
+        with tempfile.TemporaryDirectory() as folder:
+            project = Path(folder) / "keyboard.steps.json"
+            controller.save(project)
+            restored = ProgressionSessionController(ProgressionSession(["Am"]))
+            restored.load(project)
+            path = restored.session.export_midi_file(Path(folder) / "keyboard.mid")
+            parsed = SMFParser.parse(path.read_bytes())
+        bass = sorted((note.start_tick, note.pitch) for note in parsed.all_notes if note.channel == 1)
+        self.assertEqual(bass, [(0, 43), (1920, 36)])
+        chord = [note.pitch for note in parsed.all_notes if note.channel == 0 and note.start_tick == 1920]
+        self.assertEqual(sorted(note % 12 for note in chord), [0, 0, 4, 7])
 
     def test_project_symbol_uses_project_convention(self):
         controller = ProgressionSessionController(ProgressionSession(["C"], convention="DE"))

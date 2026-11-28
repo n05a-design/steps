@@ -276,20 +276,18 @@ class MidiExportService:
         ppq = project.time_settings.get("ppq", 480)
         midi_file = MidiFile(smf_format=smf_format, division=ppq)
 
-        # 1. Conductor Track (Tempo & Meter)
-        if smf_format == 1:
-            conductor = midi_file.add_track(MidiTrack(name=f"{project.title} - Conductor"))
-            # Time Signature
-            ts = project.time_settings.get("time_signature", {"numerator": 4, "denominator": 4})
-            conductor.add_time_signature(0, ts.get("numerator", 4), ts.get("denominator", 4))
-            # Tempo Points
-            tempo_points = project.time_settings.get("tempo_points", [])
-            if not tempo_points:
-                bpm = project.time_settings.get("tempo_bpm", 120.0)
-                conductor.add_tempo(0, bpm)
-            else:
-                for tp in tempo_points:
-                    conductor.add_tempo(tp.get("start_tick", 0), tp.get("bpm", 120.0))
+        # Format 0 stores metadata and content on the same track. Format 1
+        # keeps the tempo map and time signature on a dedicated conductor.
+        track_name = f"{project.title} - Conductor" if smf_format == 1 else project.title
+        conductor = midi_file.add_track(MidiTrack(name=track_name))
+        time_signature = project.time_settings.get("time_signature", {"numerator": 4, "denominator": 4})
+        conductor.add_time_signature(0, time_signature.get("numerator", 4), time_signature.get("denominator", 4))
+        tempo_points = project.time_settings.get("tempo_points", [])
+        if not tempo_points:
+            conductor.add_tempo(0, project.time_settings.get("tempo_bpm", 120.0))
+        else:
+            for point in tempo_points:
+                conductor.add_tempo(point.get("start_tick", 0), point.get("bpm", 120.0))
 
         # 2. Content Tracks
         for trk_data in project.tracks:
@@ -301,7 +299,7 @@ class MidiExportService:
                 midi_track = midi_file.add_track(MidiTrack(name=trk_name))
             else:
                 # Format 0 uses single track
-                midi_track = midi_file.tracks[0] if midi_file.tracks else midi_file.add_track(MidiTrack(name=project.title))
+                midi_track = conductor
 
             events = trk_data.get("events", [])
             for ev in events:

@@ -1,0 +1,415 @@
+"""Independent trace oracles for supported single-source keyboard and session behavior."""
+
+import random
+import unittest
+
+from src.steps.midi import (
+    MidiFile, MidiParseError, MidiTrack, SMFParser, convert_format_0_to_1, convert_format_1_to_0,
+    decode_vlq, encode_vlq,
+)
+from itertools import combinations
+from src.steps.keyboard import KeyboardInputState
+from src.steps.ports.live import normalize_midi_message
+from src.steps.progression import ProgressionSession
+
+try:
+    from hypothesis import given, settings, strategies as st
+except ImportError:
+    given = None
+
+OPERATIONS = ("on", "off", "pedal", "toggle", "reset")
+
+
+def check_keyboard_trace(test, trace):
+    state = KeyboardInputState()
+
+    def apply(status, data1, data2):
+        event = normalize_midi_message(status, data1, data2)
+        test.assertIsNotNone(event)
+        state.apply(event)
+
+    # Independent reference representation: a note is in the physical list
+    # while held, and in the voices list from onset until it stops sounding.
+    physical, voices, selected = [], [], []
+    pedal = False
+    for step, (action, value) in enumerate(trace):
+        if action == "on":
+            if value not in physical:
+                physical.append(value)
+            if value not in voices:
+                voices.append(value)
+            apply(0x90, value, 96)
+        elif action == "off":
+            if value in physical:
+                physical.remove(value)
+                if not pedal:
+                    voices.remove(value)
+            apply(0x90, value, 0)
+        elif action == "pedal":
+            pedal = value >= 64
+            if not pedal:
+                voices[:] = physical
+            apply(0xB0, 64, value)
+        elif action == "toggle":
+            if value in selected:
+                selected.remove(value)
+            else:
+                selected.append(value)
+            state.toggle_selected(value)
+        else:
+            physical.clear()
+            voices.clear()
+            pedal = False
+            state.release_all()
+        observed = (sorted(state.pressed), sorted(state.sustained), list(state.sounding),
+                    sorted(state.selected), list(state.active_notes), state.sustain_down)
+        expected = (sorted(physical), sorted(set(voices) - set(physical)), sorted(voices),
+                    sorted(selected), sorted(set(voices) | set(selected)), pedal)
+        test.assertEqual(observed, expected, (step, trace[:step + 1]))
+
+
+class KeyboardStateAudit(unittest.TestCase):
+    def test_sustain_boundary_retrigger_and_panic_preserve_selection(self):
+        trace = [
+            ("toggle", 64), ("on", 60), ("pedal", 63), ("off", 60),
+            ("on", 60), ("pedal", 64), ("off", 60), ("off", 60),
+            ("on", 60), ("pedal", 0), ("reset", 0), ("off", 60), ("on", 60),
+        ]
+        check_keyboard_trace(self, trace)
+
+    def test_seeded_traces_verify_each_intermediate_state(self):
+        for seed in range(64):
+            rng = random.Random(seed)
+            trace = []
+            for _ in range(96):
+                action = rng.choice(OPERATIONS)
+                values = (0, 63, 64, 127) if action == "pedal" else (0, 60, 64, 67, 127)
+                trace.append((action, rng.choice(values)))
+            check_keyboard_trace(self, trace)
+
+    def test_normalization_across_all_channels_and_controller_boundary(self):
+        for channel in range(16):
+            for note in (0, 60, 127):
+                for velocity in (0, 1, 127):
+                    event = normalize_midi_message(0x90 + channel, note, velocity)
+                    self.assertIsNotNone(event)
+                    self.assertEqual((event.kind.value, event.note, event.channel, event.velocity),
+                                     ("NOTE_ON" if velocity else "NOTE_OFF", note, channel, velocity))
+            for value in (63, 64):
+                event = normalize_midi_message(0xB0 + channel, 64, value)
+                self.assertIsNotNone(event)
+                self.assertEqual((event.kind.value, event.channel, event.value), ("SUSTAIN", channel, value))
+
+
+def proposed_multi_source_trace(events):
+    """Pure ADR-019 candidate; outputs identity-bearing sounding snapshots."""
+    pressed = set()
+    latched = set()
+    pedals = set()
+    for action, device, channel, note in events:
+        endpoint = (device, channel)
+        identity = (*endpoint, note)
+        if action == "on":
+            pressed.add(identity)
+            latched.discard(identity)
+        elif action == "off":
+            if identity in pressed and endpoint in pedals:
+                latched.add(identity)
+            pressed.discard(identity)
+        elif action == "hold":
+            pedals.add(endpoint)
+        elif action in {"pedal-up", "reset-controllers"}:
+            pedals.discard(endpoint)
+            latched = {key for key in latched if key[:2] != endpoint}
+        elif action == "all-notes-off":
+            released = {key for key in pressed if key[:2] == endpoint}
+            pressed -= released
+            if endpoint in pedals:
+                latched |= released
+        elif action == "all-sound-off":
+            pressed = {key for key in pressed if key[:2] != endpoint}
+            latched = {key for key in latched if key[:2] != endpoint}
+        elif action == "disconnect":
+            pressed = {key for key in pressed if key[0] != device}
+            latched = {key for key in latched if key[0] != device}
+            pedals = {key for key in pedals if key[0] != device}
+        elif action == "panic":
+            pressed.clear()
+            latched.clear()
+            pedals.clear()
+        else:
+            raise ValueError(action)
+        yield pressed | latched
+
+
+class MidiContractProposalTest(unittest.TestCase):
+    def test_candidate_interleavings_keep_independent_endpoints(self):
+        left, right = ("midi:A", 0, 60), ("midi:B", 0, 60)
+        a_trace = (("on", *left), ("hold", *left), ("off", *left), ("disconnect", *left))
+        b_trace = (("on", *right), ("on", *right), ("off", *right))
+        # Independently tabulated projections after each endpoint-local action.
+        a_active = (False, True, True, True, False)
+        b_active = (False, True, True, False)
+        for indices in combinations(range(len(a_trace) + len(b_trace)), len(a_trace)):
+            prefix_a = prefix_b = 0
+            merged, expected = [], []
+            for pos in range(len(a_trace) + len(b_trace)):
+                if pos in indices:
+                    merged.append(a_trace[prefix_a])
+                    prefix_a += 1
+                else:
+                    merged.append(b_trace[prefix_b])
+                    prefix_b += 1
+                expected.append(({left} if a_active[prefix_a] else set())
+                                | ({right} if b_active[prefix_b] else set()))
+            self.assertEqual(list(proposed_multi_source_trace(merged)), expected, indices)
+
+    def test_candidate_endpoint_and_channel_mode_trace(self):
+        a, b, c = ("A", 0, 60), ("A", 1, 60), ("B", 0, 60)
+        trace = [
+            ("on", *a), ("on", *b), ("on", *c), ("on", *a), ("off", *a),
+            ("hold", *b), ("all-notes-off", *b), ("all-sound-off", *c), ("reset-controllers", *b),
+            ("on", *a), ("on", *c), ("hold", *a), ("off", *a),
+            ("disconnect", *a), ("panic", *a), ("on", *b),
+        ]
+        expected = [{a}, {a, b}, {a, b, c}, {a, b, c}, {b, c}, {b, c}, {b, c}, {b}, set(),
+                    {a}, {a, c}, {a, c}, {a, c}, {c}, set(), {b}]
+        self.assertEqual(list(proposed_multi_source_trace(trace)), expected)
+
+
+def framed_track(payload):
+    return bytes.fromhex("4d546864 00000006 0000 0001 01e0 4d54726b") + len(payload).to_bytes(4, "big") + payload
+
+
+class SMFTrackAudit(unittest.TestCase):
+    def test_framed_invalid_events_have_the_parser_error_type(self):
+        for raw in ("00", "80", "00 ff 01 80", "00 f0 80", "00 c0 80",
+                    "00 90 3c 90", "00 90 3c 40 00 3c 80"):
+            with self.subTest(track=raw), self.assertRaises(MidiParseError):
+                SMFParser.parse(framed_track(bytes.fromhex(raw)))
+
+    def test_eot_sysex_and_unsupported_timebase_are_distinct(self):
+        good = bytes.fromhex("00 f0 03 01 02 f7 00 ff 58 04 03 03 18 08 00 ff 2f 00")
+        result = SMFParser.parse(framed_track(good))
+        self.assertEqual(result.time_signatures, [(0, 3, 8)])
+        self.assertEqual(result.tracks[0].events[0].raw_bytes, bytes.fromhex("f0 03 01 02 f7"))
+        for bad in ("00 f0 03 01", "00 ff 2f 01 00", "00 ff 2f 00 00 90 3c 40"):
+            with self.subTest(payload=bad), self.assertRaises(MidiParseError):
+                SMFParser.parse(framed_track(bytes.fromhex(bad)))
+        full = framed_track(good)
+        for variant, message in (
+            (full[:8] + bytes.fromhex("0002") + full[10:], "Unsupported SMF format 2"),
+            (full[:12] + bytes.fromhex("e728") + full[14:], "SMPTE division format"),
+        ):
+            with self.assertRaisesRegex(MidiParseError, message):
+                SMFParser.parse(variant)
+
+    def test_overlap_pairs_fifo_on_each_channel_at_scale(self):
+        count = 4000
+        repeated = bytes.fromhex("01 90 3c 64") * count
+        released = bytes.fromhex("01 90 3c 00") * count
+        result = SMFParser.parse(framed_track(repeated + released + bytes.fromhex("00 ff 2f 00")))
+        self.assertEqual(len(result.all_notes), count)
+        self.assertEqual([note.start_tick for note in result.all_notes], list(range(1, count + 1)))
+        self.assertEqual({note.duration_ticks for note in result.all_notes}, {count})
+
+    def test_valid_running_status_is_preserved(self):
+        result = SMFParser.parse(framed_track(bytes.fromhex("00 9f 7f 7f 01 7f 00 00 ff 2f 00")))
+        self.assertEqual(
+            [(n.channel, n.pitch, n.velocity, n.start_tick, n.duration_ticks) for n in result.all_notes],
+            [(15, 127, 127, 0, 1)],
+        )
+
+
+class DualSMFParserAudit(unittest.TestCase):
+    def test_both_parsers_reject_identical_damaged_files(self):
+        broken = {
+            "truncated header": bytes.fromhex("4d546864 00000007 0001 0000 01e0"),
+            "truncated chunk": framed_track(bytes.fromhex("00 ff 2f 00"))[:-1],
+        }
+        for name, track in (
+            ("delta without event", "00"), ("meta missing type", "00 ff"),
+            ("meta truncated payload", "00 ff 01 02 41"), ("zero tempo", "00 ff 51 03 00 00 00"),
+            ("tempo invalid length", "00 ff 51 02 07 a1"), ("SysEx truncated payload", "00 f0 02 f7"),
+            ("invalid status", "00 f1"), ("short channel", "00 90 3c"), ("non-data byte", "00 90 3c 90"),
+            ("running status cleared by SysEx", "00 90 3c 40 00 f0 01 f7 00 3c 00"),
+            ("nonempty EOT", "00 ff 2f 01 00"), ("EOT followed by event", "00 ff 2f 00 00 c0 01"),
+            ("VLQ not terminated", "81"), ("VLQ too long", "81 80 80 80 00"),
+        ):
+            broken[name] = framed_track(bytes.fromhex(track))
+        for name, data in broken.items():
+            for parser, error in ((MidiFile.from_bytes, ValueError), (SMFParser.parse, MidiParseError)):
+                with self.subTest(case=name, parser=parser.__qualname__), self.assertRaises(error):
+                    parser(data)
+
+    def test_roundtrip_preserves_exact_event_bytes_and_musical_silence(self):
+        conductor = bytes.fromhex("00 ff 03 01 41 00 ff 51 03 07 a1 21 00 ff 58 04 03 02 18 08 7f ff 2f 00")
+        notes = bytes.fromhex("00 ff 01 01 54 00 f0 03 7d 01 f7 00 f7 01 22 "
+                              "00 90 3c 40 00 90 3c 00 81 00 90 40 7f 7f 80 40 00 20 ff 2f 00")
+        for format_number in (0, 1):
+            first = notes if format_number == 0 else conductor
+            original = bytearray(framed_track(first))
+            if format_number == 1:
+                original[9] = 1
+                original[11] = 2
+                original.extend(framed_track(notes)[14:])
+            original = bytes(original)
+            rebuilt = MidiFile.from_bytes(original).to_bytes()
+            self.assertEqual(rebuilt, original)
+            parsed = SMFParser.parse(rebuilt)
+            self.assertEqual(parsed.tracks[-1].total_ticks, 287)
+            self.assertEqual([(n.start_tick, n.pitch, n.duration_ticks) for n in parsed.all_notes],
+                             [(0, 60, 1), (128, 64, 127)])
+            if format_number == 1:
+                self.assertEqual(parsed.time_signatures, [(0, 3, 4)])
+                self.assertEqual(parsed.tracks[0].events[1].meta_data, bytes.fromhex("07 a1 21"))
+
+    def test_delta_boundaries_are_shared_by_both_readers(self):
+        for encoded, ticks in (
+            ("7f", 127), ("81 00", 128), ("ff 7f", 16_383), ("81 80 00", 16_384),
+            ("ff ff 7f", 2_097_151), ("81 80 80 00", 2_097_152), ("ff ff ff 7f", 268_435_455),
+        ):
+            with self.subTest(delta=encoded):
+                original = framed_track(bytes.fromhex(f"00 90 3c 40 {encoded} 80 3c 00 00 ff 2f 00"))
+                editable = MidiFile.from_bytes(original)
+                self.assertEqual(editable.tracks[0].raw_events[1].abs_tick, ticks)
+                self.assertEqual(editable.to_bytes(), original)
+                self.assertEqual(SMFParser.parse(original).all_notes[0].duration_ticks, ticks)
+
+    def test_format_conversion_preserves_supported_events_and_terminal_silence(self):
+        source = framed_track(bytes.fromhex(
+            "00 ff 51 03 07 a1 21 00 ff 58 04 03 02 18 08 00 f0 02 7d f7 "
+            "00 92 3c 40 00 92 3c 50 00 82 3c 00 01 82 3c 00 00 99 24 40 "
+            "01 89 24 00 81 00 ff 2f 00"
+        ))
+        original = MidiFile.from_bytes(source)
+        split = convert_format_0_to_1(original)
+        rebuilt = convert_format_1_to_0(split)
+        for file in (split, rebuilt):
+            parsed = SMFParser.parse(file.to_bytes())
+            self.assertEqual(max(t.total_ticks for t in parsed.tracks), 130)
+            self.assertEqual(parsed.time_signatures, [(0, 3, 4)])
+            self.assertEqual(
+                [(note.channel, note.pitch, note.velocity, note.duration_ticks) for note in parsed.all_notes],
+                [(2, 60, 64, 1), (2, 60, 80, 1), (9, 36, 64, 1)],
+            )
+            events = [event for track in parsed.tracks for event in track.events]
+            self.assertIn(bytes.fromhex("ff 51 03 07 a1 21"), [event.raw_bytes for event in events])
+            self.assertIn(bytes.fromhex("f0 02 7d f7"), [event.raw_bytes for event in events])
+        self.assertEqual([t.total_ticks for t in SMFParser.parse(split.to_bytes()).tracks], [130, 130, 130])
+
+    def test_writer_enforces_set_tempo_24_bit_period(self):
+        track = MidiTrack()
+        track.add_tempo(0, 60_000_000)
+        track.add_tempo(1, 60_000_000 / 0xFFFFFF)
+        self.assertEqual([e.msg_bytes[-3:] for e in track.raw_events], [b"\x00\x00\x01", b"\xff\xff\xff"])
+        for bpm in (float("inf"), float("nan"), 1e100, 1e-100, 60_000_000 / (0xFFFFFF + 1)):
+            with self.subTest(bpm=bpm), self.assertRaises(ValueError):
+                track.add_tempo(0, bpm)
+
+    def test_normalization_preserves_order_and_expandable_running_status(self):
+        implicit = framed_track(bytes.fromhex("00 90 3c 40 01 3c 00 03 ff 2f 00"))
+        explicit = framed_track(bytes.fromhex("00 90 3c 40 01 90 3c 00 03 ff 2f 00"))
+        self.assertEqual(MidiFile.from_bytes(implicit).to_bytes(), explicit)
+        self.assertEqual(SMFParser.parse(implicit), SMFParser.parse(explicit))
+        extra_chunk = bytes.fromhex("54455354 00000002 aabb")
+        extended = implicit[:14] + extra_chunk + implicit[14:]
+        self.assertEqual(MidiFile.from_bytes(extended).to_bytes(), explicit)
+        self.assertEqual(SMFParser.parse(extended), SMFParser.parse(explicit))
+
+
+class HypothesisMusicAudit(unittest.TestCase):
+    if given is None:
+        @unittest.skip("The isolated Hypothesis test dependency is unavailable.")
+        def test_hypothesis_dependencies(self):
+            pass
+    else:
+        @settings(max_examples=200, derandomize=True)
+        @given(st.binary(min_size=0, max_size=12), st.integers(min_value=-1, max_value=12))
+        def test_smf_vlq_decoder_against_independent_byte_model(self, payload, offset):
+            candidate = payload[offset:offset + 4] if offset >= 0 else b""
+            ending = next((index for index, value in enumerate(candidate) if value < 128), None)
+            if ending is None:
+                with self.assertRaises(ValueError):
+                    decode_vlq(payload, offset)
+                return
+            digits = [byte % 128 for byte in candidate[:ending + 1]]
+            expected = sum(digit * 128 ** exponent for exponent, digit in enumerate(reversed(digits)))
+            self.assertEqual(decode_vlq(payload, offset), (expected, ending + 1))
+
+        @settings(max_examples=200, derandomize=True)
+        @given(st.integers(min_value=0, max_value=268435455))
+        def test_smf_vlq_canonical_writer(self, value):
+            encoded = encode_vlq(value)
+            self.assertEqual(len(encoded), max(1, (value.bit_length() + 6) // 7))
+            self.assertTrue(all(byte >= 128 for byte in encoded[:-1]))
+            self.assertLess(encoded[-1], 128)
+            self.assertEqual(sum(byte % 128 * 128 ** power for power, byte in enumerate(reversed(encoded))), value)
+
+        @settings(max_examples=100, derandomize=True)
+        @given(st.integers(0, 15), st.integers(0, 127), st.integers(1, 127),
+               st.sampled_from((1, 127, 128, 16383, 16384, 2097151, 2097152, 268435455)))
+        def test_structured_smf_and_truncated_track(self, channel, pitch, velocity, ticks):
+            groups = (ticks.bit_length() + 6) // 7
+            delta = bytes(((ticks >> shift) & 127) | (128 if shift else 0)
+                          for shift in range((groups - 1) * 7, -1, -7))
+            body = (bytes((0, 0x90 + channel, pitch, velocity)) + delta + bytes((pitch, 0))
+                    + bytes.fromhex("00 ff 2f 00"))
+            complete = framed_track(body)
+            result = SMFParser.parse(complete)
+            self.assertEqual([(n.channel, n.pitch, n.velocity, n.start_tick, n.duration_ticks)
+                              for n in result.all_notes], [(channel, pitch, velocity, 0, ticks)])
+            for damaged in (complete[:-1], framed_track(body[:4] + bytes.fromhex("81 80 80 80 00"))):
+                with self.assertRaises(MidiParseError):
+                    SMFParser.parse(damaged)
+
+        @settings(max_examples=200, derandomize=True)
+        @given(st.binary(max_size=48))
+        def test_framed_smf_track_fuzz(self, payload):
+            try:
+                result = SMFParser.parse(framed_track(payload))
+            except MidiParseError:
+                return
+            self.assertEqual(result.num_tracks, 1)
+            previous = 0
+            for event in result.tracks[0].events:
+                self.assertEqual(event.abs_tick, previous + event.delta_ticks)
+                previous = event.abs_tick
+                if event.channel is not None:
+                    self.assertIn(event.channel, range(16))
+                    self.assertIn(event.data1, range(128))
+                    if event.data2 is not None:
+                        self.assertIn(event.data2, range(128))
+            for note in result.all_notes:
+                self.assertIn(note.pitch, range(128))
+                self.assertIn(note.velocity, range(1, 128))
+                self.assertGreaterEqual(note.duration_ticks, 1)
+
+        @settings(max_examples=150)
+        @given(st.lists(st.tuples(st.sampled_from(OPERATIONS),
+                                 st.sampled_from((0, 60, 63, 64, 67, 127))), min_size=1, max_size=128))
+        def test_keyboard_transitions(self, trace):
+            check_keyboard_trace(self, trace)
+
+        @settings(max_examples=150)
+        @given(st.lists(st.sampled_from(("G", "Am", "F", "undo", "redo")), min_size=1, max_size=64))
+        def test_session_history(self, commands):
+            session = ProgressionSession(["C"], key_root="C", convention="INT")
+            history = [("C",)]
+            cursor = 0
+            for index, command in enumerate(commands):
+                if command == "undo":
+                    if cursor > 0:
+                        session.undo()
+                        cursor -= 1
+                elif command == "redo":
+                    if cursor + 1 < len(history):
+                        session.redo()
+                        cursor += 1
+                else:
+                    session.add_chord(command)
+                    history[cursor + 1:] = [(*history[cursor], command)]
+                    cursor += 1
+                self.assertEqual(tuple(session.chords), history[cursor], commands[:index + 1])
+                self.assertEqual(session.can_undo, cursor > 0)
+                self.assertEqual(session.can_redo, cursor + 1 < len(history))

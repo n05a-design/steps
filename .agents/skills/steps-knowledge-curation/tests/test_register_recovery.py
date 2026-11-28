@@ -38,7 +38,9 @@ class TestRegisterRecovery(unittest.TestCase):
 
     def test_default_register_is_repository_canonical_and_ignores_legacy_env(self):
         canonical = Path(__file__).resolve().parents[4] / "docs" / "operations" / "OFFENE_ARBEITSAUFFORDERUNGEN.md"
-        with patch.dict(os.environ, {
+        # Use a replacement mapping so Windows does not lose inherited empty Git values.
+        with patch.object(os, "environ", {
+            **os.environ,
             "LOCALAPPDATA": str(self.base),
             "STEPS_KNOWLEDGE_REGISTER": str(self.target),
         }):

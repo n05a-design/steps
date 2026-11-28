@@ -9,11 +9,13 @@ which has bit 7 clear (0).
 
 from __future__ import annotations
 
+MAX_VLQ_VALUE = 0x0FFFFFFF
+
 
 def encode_vlq(value: int) -> bytes:
-    """Encodes an integer >= 0 into standard MIDI variable-length quantity bytes."""
-    if not isinstance(value, int) or value < 0:
-        raise ValueError(f"VLQ value must be non-negative integer, got {value}")
+    """Encode an SMF value representable in one to four VLQ bytes."""
+    if type(value) is not int or not 0 <= value <= MAX_VLQ_VALUE:
+        raise ValueError(f"VLQ value must be an integer in 0..{MAX_VLQ_VALUE}, got {value}")
     if value == 0:
         return b"\x00"
 
@@ -34,21 +36,15 @@ def decode_vlq(data: bytes, offset: int = 0) -> tuple[int, int]:
     Decodes a variable-length quantity from data starting at offset.
     Returns (value, bytes_consumed).
     """
-    if offset >= len(data):
-        raise ValueError("Unexpected end of data while decoding VLQ")
+    if type(offset) is not int or not 0 <= offset < len(data):
+        raise ValueError("VLQ offset must identify a byte in the input")
 
     value = 0
-    consumed = 0
-
-    while True:
-        if offset + consumed >= len(data):
+    for pos in range(offset, offset + 4):
+        if pos >= len(data):
             raise ValueError("Truncated VLQ sequence")
-        b = data[offset + consumed]
-        consumed += 1
+        b = data[pos]
         value = (value << 7) | (b & 0x7F)
         if not (b & 0x80):
-            break
-        if consumed > 4:
-            raise ValueError("VLQ value exceeds 4 bytes (invalid SMF delta-time)")
-
-    return value, consumed
+            return value, pos - offset + 1
+    raise ValueError("VLQ value exceeds 4 bytes")

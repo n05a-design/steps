@@ -1,5 +1,7 @@
 # Implementierungsstand von STEPS
 
+Der [MVVE-Auditstand vom 27.–28.11.2026](audit/2026-11-27/MVVE_V2.md) beschreibt die Weiterentwicklung des Prüfstands auf Basis von PR #271. Bassrolle und Generalbass aus deklarierten und erkannten Akkorden folgen demselben Keyboard-Vertrag. Ungültige Skalen- und Übungsobjekte werden frühzeitig abgewiesen. Die Ergebnisse stammen aus dem lokalen MVVE-Zweig und haben eine eigene technische und musikalische Abnahme.
+
 Dieser Leitfaden beschreibt den Code im selben Checkout. Der Einstieg für
 Entwicklung ist die [Root-README](../README.md). Die [API-Referenz](theory/API.md)
 wird aus den exportierten Python-Objekten erzeugt. Der am 21.11.2026 geprüfte

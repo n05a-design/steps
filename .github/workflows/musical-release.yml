@@ -12,6 +12,10 @@ on:
           - all
           - theory-core
           - desktop-voicing
+          - keyboard
+          - recognition
+          - keyboard-practice
+          - musical-integration
           - midi-export
           - recommendations
           - learning-pilot

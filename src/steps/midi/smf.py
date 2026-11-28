@@ -44,6 +44,8 @@ class MidiTrack:
     def __init__(self, name: str = ""):
         self.name = name
         self._raw_events: List[RawMidiEvent] = []
+        self._imported = False
+        self._end_tick = 0
         if name:
             self.add_track_name(name)
 
@@ -60,10 +62,12 @@ class MidiTrack:
 
     def add_tempo(self, start_tick: int, bpm: float) -> None:
         """Adds meta event 0x51 Set Tempo."""
-        if bpm <= 0.0:
-            raise ValueError(f"BPM must be positive, got {bpm}")
-        us_per_quarter = int(round(60_000_000.0 / bpm))
-        us_bytes = struct.pack(">I", us_per_quarter)[1:]  # 3 bytes
+        if not math.isfinite(bpm) or bpm <= 0:
+            raise ValueError(f"BPM must be finite and positive, got {bpm}")
+        period = 60_000_000.0 / bpm
+        if not math.isfinite(period) or not 1 <= round(period) <= 0xFFFFFF:
+            raise ValueError(f"BPM cannot be represented as an SMF tempo, got {bpm}")
+        us_bytes = round(period).to_bytes(3, "big")
         payload = b"\xFF\x51\x03" + us_bytes
         self._raw_events.append(RawMidiEvent(abs_tick=start_tick, msg_bytes=payload))
 
@@ -113,16 +117,20 @@ class MidiTrack:
         msg_off = struct.pack("BBB", status_off, pitch, 0)
         self._raw_events.append(RawMidiEvent(abs_tick=start_tick + duration_ticks, msg_bytes=msg_off, is_note_off=True))
 
+    def _chronological_events(self) -> list[RawMidiEvent]:
+        if self._imported:
+            return sorted(self._raw_events, key=lambda event: event.abs_tick)
+        return sorted(self._raw_events)
+
     def to_bytes(self) -> bytes:
         """
         Serializes this track into an SMF MTrk chunk with delta-time encoded events
         and a mandatory terminal End of Track event (00 FF 2F 00).
         """
-        sorted_events = sorted(self._raw_events)
         stream = bytearray()
         last_tick = 0
 
-        for ev in sorted_events:
+        for ev in self._chronological_events():
             delta = ev.abs_tick - last_tick
             if delta < 0:
                 delta = 0
@@ -130,8 +138,8 @@ class MidiTrack:
             stream.extend(ev.msg_bytes)
             last_tick = ev.abs_tick
 
-        # Terminal End of Track (delta 0 from last event)
-        stream.extend(b"\x00\xFF\x2F\x00")
+        stream.extend(encode_vlq(max(0, self._end_tick - last_tick)))
+        stream.extend(b"\xFF\x2F\x00")
 
         # Wrap in MTrk header
         length_bytes = struct.pack(">I", len(stream))
@@ -215,7 +223,7 @@ class MidiFile:
             raise ValueError("Invalid SMF header: missing MThd magic")
 
         header_len = struct.unpack(">I", data[4:8])[0]
-        if header_len < 6:
+        if header_len < 6 or header_len > len(data) - 8:
             raise ValueError(f"Invalid MThd header length: {header_len}")
 
         smf_format, num_tracks, division = struct.unpack(">HHH", data[8:14])
@@ -224,6 +232,8 @@ class MidiFile:
         if division & 0x8000:
             raise ValueError("SMPTE division not supported in pure SMF parser")
 
+        if smf_format == 0 and num_tracks != 1:
+            raise ValueError("SMF Format 0 must declare exactly one track.")
         midi = cls(smf_format=smf_format, division=division)
 
         offset = 8 + header_len
@@ -256,6 +266,7 @@ class MidiFile:
 
 def _parse_track_events(track: MidiTrack, data: bytes) -> None:
     """Parses events from a single track chunk payload."""
+    track._imported = True
     pos = 0
     current_tick = 0
     running_status: Optional[int] = None
@@ -266,45 +277,40 @@ def _parse_track_events(track: MidiTrack, data: bytes) -> None:
         current_tick += delta
 
         if pos >= len(data):
-            break
+            raise ValueError("Missing event after delta.")
 
         status_byte = data[pos]
 
         if status_byte == 0xFF:
-            # Meta event
-            pos += 1
-            meta_type = data[pos]
-            pos += 1
-            meta_len, consumed = decode_vlq(data, pos)
-            pos += consumed
-            meta_data = data[pos:pos + meta_len]
-            pos += meta_len
-
-            if meta_type == 0x2F:  # End of Track
+            if pos + 1 >= len(data):
+                raise ValueError("Missing meta event type.")
+            start = pos
+            meta_type = data[pos + 1]
+            meta_len, consumed = decode_vlq(data, pos + 2)
+            payload = pos + 2 + consumed
+            pos = payload + meta_len
+            if pos > len(data):
+                raise ValueError("Truncated meta event data.")
+            if meta_type == 0x2F:
+                if meta_len != 0 or pos != len(data):
+                    raise ValueError("End of Track must have an empty payload and be the final event.")
+                track._end_tick = current_tick
                 break
-            elif meta_type == 0x03:  # Track Name
+            meta_data = data[payload:pos]
+            if meta_type == 0x03:
                 track.name = meta_data.decode("utf-8", errors="replace")
-            elif meta_type == 0x51:  # Set Tempo
-                if len(meta_data) == 3:
-                    us_per_quarter = struct.unpack(">I", b"\x00" + meta_data)[0]
-                    bpm = round(60_000_000.0 / us_per_quarter, 2)
-                    track.add_tempo(current_tick, bpm)
-            elif meta_type == 0x58:  # Time Signature
-                if len(meta_data) >= 2:
-                    num = meta_data[0]
-                    denom = 2 ** meta_data[1]
-                    track.add_time_signature(current_tick, num, denom)
-            elif meta_type == 0x59:  # Key Signature
-                if len(meta_data) >= 2:
-                    sf, mi = struct.unpack("bb", meta_data[:2])
-                    track.add_key_signature(current_tick, sf, bool(mi))
+            elif meta_type == 0x51:
+                _validate_set_tempo(meta_data)
+            track._raw_events.append(RawMidiEvent(current_tick, data[start:pos]))
             running_status = None
 
         elif status_byte in (0xF0, 0xF7):
-            # Sysex event
-            pos += 1
-            sysex_len, consumed = decode_vlq(data, pos)
-            pos += consumed + sysex_len
+            start = pos
+            sysex_len, consumed = decode_vlq(data, pos + 1)
+            pos += 1 + consumed + sysex_len
+            if pos > len(data):
+                raise ValueError("Truncated SysEx event data.")
+            track._raw_events.append(RawMidiEvent(current_tick, data[start:pos]))
             running_status = None
 
         else:
@@ -319,17 +325,30 @@ def _parse_track_events(track: MidiTrack, data: bytes) -> None:
                 raise ValueError(f"Invalid running status at pos {pos}")
 
             msg_type = status & 0xF0
-            channel = status & 0x0F
 
             if msg_type in (0x80, 0x90, 0xA0, 0xB0, 0xE0):
-                d1 = data[pos]
-                d2 = data[pos + 1]
+                if pos + 2 > len(data):
+                    raise ValueError("Truncated channel event data.")
+                d1, d2 = data[pos:pos + 2]
+                if (d1 | d2) & 0x80:
+                    raise ValueError("Invalid channel data byte.")
                 pos += 2
                 is_note_off = (msg_type == 0x80) or (msg_type == 0x90 and d2 == 0)
                 msg_bytes = struct.pack("BBB", status, d1, d2)
                 track._raw_events.append(RawMidiEvent(abs_tick=current_tick, msg_bytes=msg_bytes, is_note_off=is_note_off))
             elif msg_type in (0xC0, 0xD0):
+                if pos >= len(data):
+                    raise ValueError("Truncated channel event data.")
                 d1 = data[pos]
+                if d1 & 0x80:
+                    raise ValueError("Invalid channel data byte.")
                 pos += 1
                 msg_bytes = struct.pack("BB", status, d1)
                 track._raw_events.append(RawMidiEvent(abs_tick=current_tick, msg_bytes=msg_bytes))
+            else:
+                raise ValueError(f"Unsupported MIDI status byte 0x{status:02X}.")
+
+
+def _validate_set_tempo(data: bytes) -> None:
+    if len(data) != 3 or not any(data):
+        raise ValueError("Set Tempo requires three bytes and a positive period.")

@@ -11,11 +11,15 @@ Directly validates the 16 storage and failure recovery invariants specified in:
 import json
 import os
 import shutil
+import subprocess
+import sys
 import tempfile
 import time
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
+from src.steps.storage.project_io import _lock_owner_is_running
 from src.steps.storage import (
     CURRENT_APP_VERSION,
     CURRENT_SCHEMA_VERSION,
@@ -171,6 +175,187 @@ class TestStorageRecoveryIO01to16(unittest.TestCase):
                 lock2.acquire()
         finally:
             lock1.release()
+
+    @unittest.skipUnless(os.name == "nt", "Windows process liveness semantics")
+    def test_windows_lock_liveness_does_not_send_console_signal(self):
+        lock = ProjectLock(self.project_path)
+        lock.acquire()
+        self.addCleanup(lock.release)
+        with patch("src.steps.storage.project_io.os.kill") as signal_probe:
+            with self.assertRaises(LockCollisionError):
+                ProjectLock(self.project_path).acquire()
+        signal_probe.assert_not_called()
+
+    def test_fresh_lock_from_exited_process_can_be_recovered(self):
+        with subprocess.Popen([sys.executable, "-B", "-c", "pass"]) as exited:
+            exited.wait(timeout=15)
+            lock = ProjectLock(self.project_path)
+            lock.lock_path.write_text(json.dumps({"pid": exited.pid, "timestamp": time.time()}), encoding="utf-8")
+            with patch("src.steps.storage.project_io.os.kill", wraps=os.kill) as signal_probe:
+                if os.name == "nt":
+                    # Capture legacy calls without sending a real Windows console signal.
+                    signal_probe.side_effect = AssertionError("Windows must not signal the owner")
+                lock.acquire()
+            self.addCleanup(lock.release)
+            acquired = json.loads(lock.lock_path.read_text(encoding="utf-8"))
+            self.assertEqual(acquired["pid"], os.getpid())
+
+    @unittest.skipUnless(os.name == "nt", "Win32 process handle contract")
+    def test_windows_process_handle_results_fail_closed_and_release_handle(self):
+        for wait, expected in ((0, False), (258, True), (0xFFFFFFFF, True)):
+            with self.subTest(wait=wait), patch("ctypes.WinDLL") as dll, patch("os.kill") as signal:
+                api = dll.return_value
+                api.OpenProcess.return_value = 42
+                api.WaitForSingleObject.return_value = wait
+                self.assertIs(_lock_owner_is_running(123), expected)
+                api.OpenProcess.assert_called_once_with(0x00100000, False, 123)
+                api.WaitForSingleObject.assert_called_once_with(42, 0)
+                api.CloseHandle.assert_called_once_with(42)
+                signal.assert_not_called()
+        for error, expected in ((87, False), (5, True), (6, True)):
+            with self.subTest(error=error), patch("ctypes.WinDLL") as dll, patch("ctypes.get_last_error", return_value=error):
+                api = dll.return_value
+                api.OpenProcess.return_value = None
+                self.assertIs(_lock_owner_is_running(123), expected)
+                api.WaitForSingleObject.assert_not_called()
+                api.CloseHandle.assert_not_called()
+        with patch("ctypes.WinDLL") as dll:
+            for pid in (True, 0, -1, 0x100000000, "123"):
+                self.assertFalse(_lock_owner_is_running(pid))
+            dll.assert_not_called()
+
+    @unittest.skipUnless(os.name == "nt", "Windows child-process liveness")
+    def test_windows_contenders_preserve_lock_and_recover_after_termination(self):
+        child_code = (
+            "import sys; from src.steps.storage import ProjectLock; "
+            "lock = ProjectLock(sys.argv[1]); lock.acquire(); "
+            "print('locked', flush=True); sys.stdin.read()"
+        )
+        contender_code = """
+import sys
+from src.steps.storage import LockCollisionError, ProjectLock
+lock = ProjectLock(sys.argv[1])
+try:
+    lock.acquire()
+except LockCollisionError:
+    lock.release()
+    sys.exit(17)
+lock.release()
+"""
+        command = [sys.executable, "-B", "-c"]
+        flags = subprocess.CREATE_NEW_PROCESS_GROUP
+        with subprocess.Popen([*command, child_code, str(self.project_path)], stdin=subprocess.PIPE,
+                              stdout=subprocess.PIPE, text=True, creationflags=flags) as owner:
+            try:
+                # The pipe transaction terminates at process teardown, and the
+                # two actual contenders run while the owner is blocked on stdin.
+                self.assertEqual(owner.stdout.readline().strip(), "locked")
+                with subprocess.Popen([*command, contender_code, str(self.project_path)],
+                                      creationflags=flags) as first:
+                    second = subprocess.run([*command, contender_code, str(self.project_path)],
+                                            creationflags=flags, timeout=10)
+                    self.assertEqual((first.wait(timeout=10), second.returncode), (17, 17))
+                self.assertIsNone(owner.poll())
+            finally:
+                owner.terminate()
+                owner.wait(timeout=10)
+        restarted = subprocess.run([*command, contender_code, str(self.project_path)],
+                                   creationflags=flags, timeout=10)
+        self.assertEqual(restarted.returncode, 0)
+        self.assertFalse(ProjectLock(self.project_path).lock_path.exists())
+
+    def test_save_rejects_active_owner_even_after_short_timeout_and_recovers_after_exit(self):
+        code = """
+import sys
+from pathlib import Path
+from threading import Event
+from unittest.mock import patch
+from src.steps.storage import Project, ProjectLock, save_project
+path = Path(sys.argv[1])
+def pause(*args, **kwargs):
+    print("writing", flush=True)
+    Event().wait(15)
+if sys.argv[2] == "lock":
+    with ProjectLock(path, timeout_seconds=0.01):
+        pause()
+else:
+    with patch("src.steps.storage.project_io.atomic_write_json", side_effect=pause):
+        save_project(Project(title="owner"), path)
+"""
+        for mode in ("lock", "save"):
+            with self.subTest(owner=mode):
+                save_project(Project(title="before"), self.project_path)
+                with subprocess.Popen(
+                    [sys.executable, "-B", "-c", code, str(self.project_path), mode],
+                    stdout=subprocess.PIPE, text=True,
+                ) as owner:
+                    try:
+                        self.assertEqual(owner.stdout.readline().strip(), "writing")
+                        time.sleep(0.05)
+                        with self.subTest(operation="acquire"):
+                            with self.assertRaises(LockCollisionError):
+                                ProjectLock(self.project_path, timeout_seconds=0.01).acquire()
+                        with self.subTest(operation="save"):
+                            with self.assertRaises(LockCollisionError):
+                                save_project(Project(title="contender"), self.project_path)
+                    finally:
+                        owner.kill()
+                        owner.wait(timeout=10)
+                self.assertEqual(load_project(self.project_path).title, "before")
+                save_project(Project(title="recovered"), self.project_path)
+                self.assertEqual(load_project(self.project_path).title, "recovered")
+
+    def test_displaced_owner_cannot_remove_successor_lock(self):
+        original = ProjectLock(self.project_path)
+        original.acquire()
+        successor = ProjectLock(self.project_path)
+        with patch("src.steps.storage.project_io._lock_owner_is_running", return_value=False):
+            successor.acquire()
+        original.release()
+        self.assertTrue(successor.lock_path.is_file())
+        successor.release()
+        self.assertFalse(successor.lock_path.exists())
+
+    def test_two_simultaneous_first_acquirers_have_one_owner(self):
+        code = """
+from pathlib import Path
+import sys
+import time
+from src.steps.storage import LockCollisionError, ProjectLock
+project, ready, start, finish = map(Path, sys.argv[1:])
+ready.touch()
+deadline = time.monotonic() + 10
+while not start.exists() and time.monotonic() < deadline:
+    time.sleep(.01)
+try:
+    with ProjectLock(project):
+        print("won", flush=True)
+        while not finish.exists() and time.monotonic() < deadline:
+            time.sleep(.01)
+except LockCollisionError:
+    print("blocked", flush=True)
+"""
+        parent = self.project_path.parent
+        start, finish = parent / "start", parent / "finish"
+        ready = (parent / "ready1", parent / "ready2")
+        processes = [subprocess.Popen([sys.executable, "-B", "-c", code, *map(str, (self.project_path, path, start, finish))],
+                                     stdout=subprocess.PIPE, text=True) for path in ready]
+        try:
+            deadline = time.monotonic() + 10
+            while not all(path.exists() for path in ready) and time.monotonic() < deadline:
+                time.sleep(.01)
+            self.assertTrue(all(path.exists() for path in ready))
+            start.touch()
+            self.assertCountEqual([child.stdout.readline().strip() for child in processes], ["won", "blocked"])
+        finally:
+            finish.touch()
+            for child in processes:
+                try:
+                    child.communicate(timeout=10)
+                except subprocess.TimeoutExpired:
+                    child.kill()
+                    child.communicate()
+        self.assertEqual([child.returncode for child in processes], [0, 0])
 
     def test_io05_lock_release_and_stale_lock_recovery(self):
         """IO-05: Lock release on clean shutdown or stale lock recovery."""

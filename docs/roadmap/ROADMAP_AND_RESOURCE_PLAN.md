@@ -14,6 +14,10 @@
 
 ## 0. Aktueller Stand und nächste Etappen (21.11.2026)
 
+**MVVE V2.1, 28.11.2026.** Die Windows-Vollsuite ist im bytegetreuen Prüfcheckout durchgelaufen. Die verbleibenden drei Fehler im normalen CRLF-Checkout betreffen Shell- und Wheel-Integrität. Die [V2.1-Matrix](../audit/2026-11-28/MVVE_V21.md) dokumentiert weitere Parser-, Kombinations-, Mutations- und Oracle-Nachweise. Nächste Owner-Entscheidungen betreffen den Shell-Checkout-Vertrag, ADR-019, die GitHub-Statusprüfungen, Fachabnahmen und das Modellbudget für A/B/C/D.
+
+**MVVE-Arbeitsstand vom 27.–28.11.2026.** Auf Basis von PR #271 laufen im lokalen MVVE-Zweig unabhängige Theorie-, Erkennungs-, Bassrollen- und Zustandsprüfungen. Die nächste Abfolge für dieses Arbeitspaket ist technische CI-Ausführung und GitHub-Enforcement, breitere musikalische Ergebnisprüfung, unabhängige Fachprüfung der offenen Profile und weiterführende Knowledge-/Skill-Evaluation. Geräteintegration folgt einer Entscheidung zu ADR-019. Die [Anforderungs- und Befundmatrix](../audit/2026-11-27/MVVE_V2.md) nennt die ausgeführten Prüfungen und offenen Nachweise.
+
 ### 0.1 Seit PR #220 umgesetzt
 
 Die Liste fasst die gemergten PRs nach Bereich zusammen. Sie belegt Code und automatisierte Tests, keine Fach-, Plattform-, Übersetzungs- oder Nutzerabnahme. Einzelheiten stehen im [Änderungsprotokoll](../../CHANGELOG.md) und im [Implementierungsstand](../IMPLEMENTATION.md).

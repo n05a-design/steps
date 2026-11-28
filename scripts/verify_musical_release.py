@@ -20,17 +20,44 @@ from scripts import run_knowledge_benchmark as benchmark
 from scripts import verify_pilot_review_evidence as pilot
 from src.steps.progression import reviewed
 
+COMBINATION_TEST = "test_music_audit_combinations.MusicalCombinationAudit."
+
 AREAS = {
     "theory-core": (
         ("test_notation_contract", "test_harmonic_function_accuracy", "test_theory_properties",
          "test_progression_engine"), (),
     ),
     "desktop-voicing": (
-        ("test_beginner_voicing", "test_voice_leading_styles"),
+        ("test_beginner_voicing", "test_voice_leading_styles",
+         COMBINATION_TEST + "test_altered_standard_voicing_keeps_its_named_tension"),
         ("Explain each offered style and verify its actual voicings and playable range.",),
     ),
+    "keyboard": (
+        ("test_keyboard_domain", "test_mvve_regressions"),
+        ("Review contextual note names, written and sounding bass, and figures for the supported voicings.",),
+    ),
+    "recognition": (
+        ("test_keyboard_engine.TestChordRecognition", "test_keyboard_engine.TestReviewRegressions",
+         COMBINATION_TEST + "test_recognition_omissions_with_bass_register_and_policy"),
+        ("Review ambiguous, standard and incomplete readings in the stated keyboard scope.",),
+    ),
+    "keyboard-practice": (
+        ("test_keyboard_engine.TestPracticePilot", "test_mvve_regressions",
+         COMBINATION_TEST + "test_practice_register_bass_and_publication_boundary"),
+        ("Review every included exercise, permitted answers and feedback against independent teaching criteria.",),
+    ),
+    "musical-integration": (
+        ("test_keyboard_engine.TestWorkbenchSessionIntegration", "test_storage_recovery_io",
+         COMBINATION_TEST + "test_transposed_applied_and_borrowed_progression_reaches_export",
+         COMBINATION_TEST + "test_cadence_recontextualization_undo_redo_save_and_multitrack_export"),
+        ("Verify recognition, explicit adoption, preview isolation, project recovery and exported output.",),
+    ),
     "midi-export": (
-        ("test_midi_export_service", "test_midi_golden_fixtures"), (),
+        ("test_midi_export_service", "test_midi_golden_fixtures", "test_music_audit_stateful.SMFTrackAudit",
+         "test_music_audit_stateful.DualSMFParserAudit",
+         "test_mvve_regressions.MusicalAuditRegressions.test_smf_rejects_truncation_even_without_declared_tracks",
+         "test_mvve_regressions.MusicalAuditRegressions.test_synthetic_smf_preserves_tempo_meter_and_overlapping_notes"),
+        (),
     ),
     "recommendations": (
         ("test_harmonic_function_accuracy", "test_cross_domain_recommender"),
@@ -74,6 +101,7 @@ AUTO_PROBES = {
     "midi-export": checks.midi_drop2,
     "knowledge-adapter": checks.knowledge_retrieval,
     "recommendations": checks.recommendations,
+    "recognition": checks.exhaustive_recognition,
 }
 THEORY_SAMPLE = {"frequency", "enharmonic", "distance", "intervals", "degree"}
 
@@ -191,10 +219,16 @@ def verified_submission(url, revision, *, fetch_comment=pilot.fetch_comment, fet
 def suites(modules):
     if not modules:
         return []
-    result = subprocess.run(
-        [sys.executable, "-B", "-m", "unittest", *(f"tests.{module}" for module in modules)],
-        cwd=ROOT, check=False, timeout=120, env=checkout_environment(),
-    )
+    try:
+        result = subprocess.run(
+            [sys.executable, "-B", "-m", "unittest", *(f"tests.{module}" for module in modules)],
+            cwd=ROOT, check=False, timeout=120, env=checkout_environment(),
+            creationflags=getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0),
+        )
+    except subprocess.TimeoutExpired:
+        return ["Technical regression suite exceeded its time budget"]
+    except OSError:
+        return ["Technical regression suite could not start"]
     return ["Technical regression suite failed"] if result.returncode else []
 
 

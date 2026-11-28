@@ -5,32 +5,218 @@ on:
     branches: [ main, feat/**, fix/**, chore/** ]
   pull_request:
     branches: [ main ]
+  schedule:
+    - cron: '24 3 * * *'
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: Technical music audit profile
+        type: choice
+        options: [smoke, pr, nightly, full]
+        default: full
+      seed:
+        description: Numeric audit seed
+        type: string
+        default: '20261121'
+      case:
+        description: Optional finite reference case ID
+        type: string
+      strict_mutations:
+        description: Require the generated mutation gate to pass
+        type: boolean
+        default: false
 
 permissions:
   contents: read
 
 jobs:
-  package-artifacts:
-    name: Python wheel artifact
+  continuous-music-validation:
+    name: Continuous music validation
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.12'
+      - name: Run technical music validation
+        env:
+          AUDIT_PROFILE: ${{ inputs.profile || 'nightly' }}
+          AUDIT_SEED: ${{ inputs.seed }}
+          AUDIT_CASE: ${{ inputs.case }}
+        run: |
+          set -euo pipefail
+          python -B -O scripts/audit_randomized_music.py --self-test \
+            --json-out "$RUNNER_TEMP/music-oracle-self-test.json"
+          if [[ "$GITHUB_EVENT_NAME" == schedule ]]; then
+            AUDIT_SEED="$(date -u +%Y%m%d)"
+          fi
+          args=(--profile "$AUDIT_PROFILE" --seed "$AUDIT_SEED" --timeout 120)
+          if [[ -n "$AUDIT_CASE" ]]; then
+            args+=(--case "$AUDIT_CASE")
+          fi
+          python -B scripts/audit_randomized_music.py "${args[@]}" \
+            --json-out "$RUNNER_TEMP/musical-validation.json"
+      - name: Install isolated stateful test dependencies
+        if: github.event_name == 'schedule'
+        run: |
+          python -m venv "$RUNNER_TEMP/music-test-venv"
+          "$RUNNER_TEMP/music-test-venv/bin/python" -m pip install --require-hashes --only-binary=:all: \
+            -r scripts/music-audit-stateful-requirements.txt
+      - name: Run stateful music and history tests
+        if: github.event_name == 'schedule'
+        env:
+          HYPOTHESIS_STORAGE_DIRECTORY: ${{ runner.temp }}/music-hypothesis
+        run: |
+          set -euo pipefail
+          "$RUNNER_TEMP/music-test-venv/bin/python" -B -m unittest \
+            tests.test_music_audit_stateful.HypothesisMusicAudit.test_keyboard_transitions \
+            tests.test_music_audit_stateful.HypothesisMusicAudit.test_session_history \
+            tests.test_music_audit_stateful.HypothesisMusicAudit.test_smf_vlq_decoder_against_independent_byte_model \
+            tests.test_music_audit_stateful.HypothesisMusicAudit.test_smf_vlq_canonical_writer \
+            tests.test_music_audit_stateful.HypothesisMusicAudit.test_structured_smf_and_truncated_track \
+            tests.test_music_audit_stateful.HypothesisMusicAudit.test_framed_smf_track_fuzz \
+            tests.test_music_audit_stateful.SMFTrackAudit \
+            tests.test_music_audit_stateful.DualSMFParserAudit \
+            tests.test_music_audit_stateful.KeyboardStateAudit \
+            tests.test_music_audit_semantics \
+            tests.test_music_audit_combinations -v 2>&1 | tee "$RUNNER_TEMP/music-stateful.log"
+      - name: Observe the generated mutation gate every Sunday
+        if: github.event_name == 'schedule' && always()
+        run: |
+          if [[ "$(date -u +%u)" == 7 ]]; then
+            python -B scripts/check_music_audit_mutations.py --generated-per-module 4 \
+              --json-out "$RUNNER_TEMP/music-mutations.json"
+          else
+            printf '{"generated_mode":"observe","generated_status":"NOT_RUN"}\n' > "$RUNNER_TEMP/music-mutations.json"
+          fi
+      - name: Require the frozen generated mutation gate
+        if: github.event_name == 'workflow_dispatch' && inputs.strict_mutations
+        run: |
+          git fetch --no-tags --depth=1 origin 41acc91a11e56cb66291fbf2bb064654d44ab7b4
+          python -B scripts/check_music_audit_mutations.py --replay-v21 --strict-generated \
+            --json-out "$RUNNER_TEMP/music-mutations.json"
+      - name: Keep the continuous validation reports
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: continuous-music-validation-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/music-oracle-self-test.json
+            ${{ runner.temp }}/musical-validation.json
+            ${{ runner.temp }}/music-stateful.log
+            ${{ runner.temp }}/music-mutations.json
+          if-no-files-found: error
+
+  external-music-validation:
+    name: External music validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.14.7'
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24.11.1'
+          package-manager-cache: false
+      - name: Install isolated comparators
+        run: |
+          set -euo pipefail
+          python -m venv "$RUNNER_TEMP/music-oracle-venv"
+          "$RUNNER_TEMP/music-oracle-venv/bin/python" -m pip install --only-binary=:all: \
+            -r scripts/music-audit-external-requirements.txt
+          "$RUNNER_TEMP/music-oracle-venv/bin/python" -m pip check
+          cp -R scripts/music-oracles-node "$RUNNER_TEMP/music-oracles-node"
+          npm ci --ignore-scripts --no-audit --no-fund --prefix "$RUNNER_TEMP/music-oracles-node"
+      - name: Verify all three musical comparators
+        run: |
+          "$RUNNER_TEMP/music-oracle-venv/bin/python" -B scripts/audit_randomized_music.py \
+            --profile pr --external-oracles --tonal-module "$RUNNER_TEMP/music-oracles-node/node_modules/tonal" \
+            --json-out "$RUNNER_TEMP/music-external.json"
+      - name: Keep external validation evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: music-external-${{ github.run_id }}
+          path: ${{ runner.temp }}/music-external.json
+          if-no-files-found: error
+
+  package-artifacts:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    name: Python wheel artifact (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v7
+        env:
+          GIT_CONFIG_COUNT: '1'
+          GIT_CONFIG_KEY_0: core.autocrlf
+          GIT_CONFIG_VALUE_0: ${{ runner.os == 'Windows' && 'true' || 'false' }}
         with:
-          fetch-depth: 0
+          persist-credentials: false
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 
-      - name: Install build tools
-        run: python -m pip install --upgrade pip setuptools wheel
+      - name: Verify Shell policy and checkout bytes
+        run: python -B scripts/materialize_shell_check_resources.py
 
-      - name: Build and inspect wheel
+      - name: Test process locks, resources and both MIDI readers
+        run: >-
+          python -B -m unittest
+          tests.test_storage_recovery_io
+          tests.test_shell_checkout_contract
+          tests.test_music_audit_stateful.DualSMFParserAudit
+          tests.test_glide_shell_integration.TestGlideShellIntegration.test_glide_shell_version_manifest_and_isolation
+          tests.test_glide_shell_integration.TestGlideShellIntegration.test_glide_shell_selftest_passes_all_13_checks
+          -v
+
+      - name: Build, inspect and install the wheel
+        if: always()
         run: python -B -m unittest tests.test_package_artifacts -v
 
+  windows-crlf-resources:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    name: Windows AutoCRLF shell and wheel integrity
+    runs-on: windows-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v7
+        env:
+          GIT_CONFIG_COUNT: '1'
+          GIT_CONFIG_KEY_0: core.autocrlf
+          GIT_CONFIG_VALUE_0: 'true'
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Verify Shell policy and checkout bytes
+        run: python -B scripts/materialize_shell_check_resources.py
+      - name: Run the unchanged shell and installed-wheel integrity checks
+        run: >-
+          python -B -m unittest
+          tests.test_glide_shell_integration.TestGlideShellIntegration.test_glide_shell_version_manifest_and_isolation
+          tests.test_glide_shell_integration.TestGlideShellIntegration.test_glide_shell_selftest_passes_all_13_checks
+          tests.test_package_artifacts.TestPackageArtifacts.test_wheel_contains_locales_brand_assets_and_console_entry_point
+          -v
+
   desktop-ui-smoke:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     name: Desktop UI smoke (Ubuntu/Xvfb)
     runs-on: ubuntu-latest
     steps:
@@ -60,6 +246,7 @@ jobs:
             -v
 
   desktop-ui-platform-smoke:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     name: Desktop UI smoke (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     strategy:
@@ -97,6 +284,7 @@ jobs:
           -v
 
   test:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     name: Unit Tests (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest
     strategy:
@@ -145,7 +333,18 @@ jobs:
         run: python -B scripts/check_release_consistency.py --check
 
       - name: Check randomized musical questions against independent oracles
-        run: python -B scripts/audit_randomized_music.py --trials 128
+        run: |
+          python -B -O scripts/audit_randomized_music.py --self-test
+          python -B scripts/audit_randomized_music.py --profile pr --timeout 90 \
+            --json-out "$RUNNER_TEMP/musical-validation.json"
+
+      - name: Keep the technical music validation report
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: musical-validation-python-${{ matrix.python-version }}
+          path: ${{ runner.temp }}/musical-validation.json
+          if-no-files-found: error
 
       - name: Run STEPS Core Test Suite
         run: python -B -m unittest discover -s tests -p "test_*.py" -v
@@ -157,6 +356,7 @@ jobs:
           fi
 
   curation-platforms:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     name: Curation skill (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     strategy:
@@ -185,6 +385,7 @@ jobs:
         run: python -B .agents/skills/steps-knowledge-curation/scripts/check_reference_ids.py --json
 
   pilot-publication:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     name: Pilot publication gate
     runs-on: ubuntu-latest
     steps:
@@ -202,6 +403,7 @@ jobs:
         run: python -B scripts/render_reviewed_progressions.py --check
 
   knowledge-coverage:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     name: Knowledge coverage inventory
     runs-on: ubuntu-latest
     steps:

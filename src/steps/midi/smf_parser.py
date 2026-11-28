@@ -15,16 +15,24 @@ from __future__ import annotations
 
 import math
 import struct
+from collections import deque
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
 
-from .smf import MidiFile, MidiTrack, RawMidiEvent
+from .smf import MidiFile, MidiTrack, _validate_set_tempo
 from .vlq import decode_vlq, encode_vlq
 
 
 class MidiParseError(ValueError):
     """Raised when parsing corrupt or invalid SMF byte streams."""
     pass
+
+
+def _read_track_vlq(data: bytes, offset: int) -> tuple[int, int]:
+    try:
+        return decode_vlq(data, offset)
+    except ValueError as exc:
+        raise MidiParseError(f"Invalid variable-length quantity at track offset {offset}: {exc}") from exc
 
 
 @dataclass
@@ -132,6 +140,8 @@ class SMFParser:
         header_len = struct.unpack(">I", data[4:8])[0]
         if header_len < 6:
             raise MidiParseError(f"Invalid MThd chunk length: {header_len} (must be >= 6)")
+        if header_len > len(data) - 8:
+            raise MidiParseError(f"Truncated MThd chunk: needs {header_len} bytes, only {len(data) - 8} remaining")
 
         smf_format, num_tracks, division = struct.unpack(">HHH", data[8:14])
         if smf_format not in (0, 1):
@@ -189,16 +199,16 @@ class SMFParser:
         track_name = ""
 
         # Open Note-Ons awaiting Note-Off: map (channel, pitch) -> list of (start_tick, velocity)
-        open_notes: Dict[Tuple[int, int], List[Tuple[int, int]]] = {}
+        open_notes: Dict[Tuple[int, int], deque[Tuple[int, int]]] = {}
         paired_notes: List[ParsedMidiNote] = []
 
         while pos < len(data):
-            delta, consumed = decode_vlq(data, pos)
+            delta, consumed = _read_track_vlq(data, pos)
             pos += consumed
             current_tick += delta
 
             if pos >= len(data):
-                break
+                raise MidiParseError(f"Missing event after delta at track offset {pos}")
 
             status_byte = data[pos]
 
@@ -209,7 +219,7 @@ class SMFParser:
                     raise MidiParseError(f"Unexpected EOF in meta event type at offset {pos}")
                 meta_type = data[pos]
                 pos += 1
-                meta_len, consumed = decode_vlq(data, pos)
+                meta_len, consumed = _read_track_vlq(data, pos)
                 pos += consumed
                 if pos + meta_len > len(data):
                     raise MidiParseError(f"Truncated meta event data (type 0x{meta_type:02X}) at offset {pos}")
@@ -228,7 +238,14 @@ class SMFParser:
 
                 if meta_type == 0x03:  # Track Name
                     track_name = meta_data.decode("utf-8", errors="replace")
+                elif meta_type == 0x51:
+                    try:
+                        _validate_set_tempo(meta_data)
+                    except ValueError as exc:
+                        raise MidiParseError(str(exc)) from exc
                 elif meta_type == 0x2F:  # End of Track
+                    if meta_len != 0 or pos != len(data):
+                        raise MidiParseError("End of Track must have an empty payload and be the final event.")
                     running_status = None
                     break
 
@@ -237,7 +254,7 @@ class SMFParser:
             elif status_byte in (0xF0, 0xF7):
                 # System Exclusive event
                 pos += 1
-                sysex_len, consumed = decode_vlq(data, pos)
+                sysex_len, consumed = _read_track_vlq(data, pos)
                 pos += consumed
                 if pos + sysex_len > len(data):
                     raise MidiParseError(f"Truncated Sysex event at offset {pos}")
@@ -273,6 +290,8 @@ class SMFParser:
                         raise MidiParseError(f"Truncated 2-byte channel message (status 0x{status:02X}) at offset {pos}")
                     d1 = data[pos]
                     d2 = data[pos + 1]
+                    if (d1 | d2) & 0x80:
+                        raise MidiParseError(f"Invalid channel data at track offset {pos}")
                     pos += 2
                     raw = struct.pack("BBB", status, d1, d2)
 
@@ -308,6 +327,8 @@ class SMFParser:
                     if pos + 1 > len(data):
                         raise MidiParseError(f"Truncated 1-byte channel message (status 0x{status:02X}) at offset {pos}")
                     d1 = data[pos]
+                    if d1 & 0x80:
+                        raise MidiParseError(f"Invalid channel data at track offset {pos}")
                     pos += 1
                     raw = struct.pack("BB", status, d1)
 
@@ -349,11 +370,11 @@ class SMFParser:
         pitch: int,
         velocity: int,
         tick: int,
-        open_notes: Dict[Tuple[int, int], List[Tuple[int, int]]],
+        open_notes: Dict[Tuple[int, int], deque[Tuple[int, int]]],
     ) -> None:
         key = (channel, pitch)
         if key not in open_notes:
-            open_notes[key] = []
+            open_notes[key] = deque()
         open_notes[key].append((tick, velocity))
 
     @staticmethod
@@ -361,13 +382,13 @@ class SMFParser:
         channel: int,
         pitch: int,
         tick: int,
-        open_notes: Dict[Tuple[int, int], List[Tuple[int, int]]],
+        open_notes: Dict[Tuple[int, int], deque[Tuple[int, int]]],
         paired_notes: List[ParsedMidiNote],
     ) -> None:
         key = (channel, pitch)
         if key in open_notes and open_notes[key]:
             # Pair with earliest Note-On (FIFO)
-            start_tick, vel = open_notes[key].pop(0)
+            start_tick, vel = open_notes[key].popleft()
             dur = max(1, tick - start_tick)
             paired_notes.append(ParsedMidiNote(
                 start_tick=start_tick,
@@ -390,13 +411,12 @@ def convert_format_1_to_0(midi_file: MidiFile) -> MidiFile:
     out_file = MidiFile(smf_format=0, division=midi_file.division)
     single_track = out_file.add_track()
 
-    all_raw: List[RawMidiEvent] = []
+    # Preserve each source track's equal-tick ordering. For simultaneous
+    # events on distinct tracks, use the original track order.
+    single_track._imported = True
     for track in midi_file.tracks:
-        all_raw.extend(track.raw_events)
-
-    # Sort all raw events by tick (and note_off before note_on at same tick)
-    all_raw.sort()
-    single_track._raw_events = all_raw
+        single_track._raw_events.extend(track._chronological_events())
+        single_track._end_tick = max(single_track._end_tick, track._end_tick)
     return out_file
 
 
@@ -416,7 +436,9 @@ def convert_format_0_to_1(midi_file: MidiFile) -> MidiFile:
     channel_tracks: Dict[int, MidiTrack] = {}
 
     src_track = midi_file.tracks[0] if midi_file.tracks else MidiTrack()
-    for ev in src_track.raw_events:
+    events = src_track._chronological_events()
+    end_tick = max(src_track._end_tick, events[-1].abs_tick if events else 0)
+    for ev in events:
         msg = ev.msg_bytes
         if not msg:
             continue
@@ -436,6 +458,9 @@ def convert_format_0_to_1(midi_file: MidiFile) -> MidiFile:
                 channel_tracks[channel] = t
             channel_tracks[channel]._raw_events.append(ev)
 
+    for track in out_file.tracks:
+        track._imported = True
+        track._end_tick = end_tick
     return out_file
 
 
