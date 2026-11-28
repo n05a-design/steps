@@ -115,13 +115,19 @@ class MusicalReleaseTest(unittest.TestCase):
                                                probes={"recommendations": lambda: ["broken"]})["status"])
 
     def test_release_checkout_state_ignores_inherited_git_context(self):
-        with patch.dict(os.environ, {"GIT_DIR": "elsewhere/.git", "GIT_WORK_TREE": "elsewhere"}):
+        inherited = {**os.environ, "GIT_DIR": "elsewhere/.git", "GIT_WORK_TREE": "elsewhere",
+                     "GIT_CONFIG_COUNT": "1", "GIT_CONFIG_KEY_0": "core.hooksPath", "GIT_CONFIG_VALUE_0": ""}
+        # Replacing the mapping avoids rewriting unrelated process environment
+        # entries, including empty Git config values on Windows.
+        with patch.object(gate.os, "environ", inherited):
             with patch.object(gate.subprocess, "check_output", side_effect=[str(gate.ROOT), self.revision, b""]) as git:
                 self.assertEqual(gate.checkout_state(), (self.revision, False))
         for call in git.call_args_list:
             self.assertEqual(call.kwargs["cwd"], gate.ROOT)
             self.assertNotIn("GIT_DIR", call.kwargs["env"])
             self.assertNotIn("GIT_WORK_TREE", call.kwargs["env"])
+            self.assertNotIn("GIT_CONFIG_COUNT", call.kwargs["env"])
+            self.assertNotIn("GIT_CONFIG_VALUE_0", call.kwargs["env"])
 
     def test_release_checkout_state_rejects_an_enclosing_git_repository(self):
         with patch.object(gate.subprocess, "check_output", return_value=str(gate.ROOT.parent)):

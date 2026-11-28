@@ -37,6 +37,19 @@ from src.steps.theory.exceptions import ChordConstructionError, MusicTheoryError
 
 
 class TestVLQEncodingDecoding(unittest.TestCase):
+    def test_smf_four_byte_limit_and_invalid_offsets(self):
+        self.assertEqual(encode_vlq(0x0FFFFFFF), bytes.fromhex("ff ff ff 7f"))
+        self.assertEqual(decode_vlq(bytes.fromhex("00 ff ff ff 7f 00"), 1), (0x0FFFFFFF, 4))
+        for invalid in (bytes.fromhex("81 80 80 80 00"), bytes.fromhex("80 80 80 80"), b"\x80"):
+            with self.subTest(data=invalid), self.assertRaises(ValueError):
+                decode_vlq(invalid)
+        for invalid in (0x10000000, True):
+            with self.subTest(value=invalid), self.assertRaises(ValueError):
+                encode_vlq(invalid)
+        for invalid in (-1, True, 1.5):
+            with self.subTest(offset=invalid), self.assertRaises(ValueError):
+                decode_vlq(b"\x00", invalid)
+
     def test_vlq_roundtrips(self):
         cases = [0, 1, 64, 127, 128, 255, 480, 1920, 8192, 16383, 16384, 2097151]
         for val in cases:

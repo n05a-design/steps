@@ -3,6 +3,8 @@
 import random
 import unittest
 
+from src.steps.midi import decode_vlq, encode_vlq
+from itertools import combinations
 from src.steps.keyboard import KeyboardInputState
 from src.steps.ports.live import normalize_midi_message
 from src.steps.progression import ProgressionSession
@@ -130,6 +132,27 @@ def proposed_multi_source_trace(events):
 
 
 class MidiContractProposalTest(unittest.TestCase):
+    def test_candidate_interleavings_keep_independent_endpoints(self):
+        left, right = ("midi:A", 0, 60), ("midi:B", 0, 60)
+        a_trace = (("on", *left), ("hold", *left), ("off", *left), ("disconnect", *left))
+        b_trace = (("on", *right), ("on", *right), ("off", *right))
+        # Independently tabulated projections after each endpoint-local action.
+        a_active = (False, True, True, True, False)
+        b_active = (False, True, True, False)
+        for indices in combinations(range(len(a_trace) + len(b_trace)), len(a_trace)):
+            prefix_a = prefix_b = 0
+            merged, expected = [], []
+            for pos in range(len(a_trace) + len(b_trace)):
+                if pos in indices:
+                    merged.append(a_trace[prefix_a])
+                    prefix_a += 1
+                else:
+                    merged.append(b_trace[prefix_b])
+                    prefix_b += 1
+                expected.append(({left} if a_active[prefix_a] else set())
+                                | ({right} if b_active[prefix_b] else set()))
+            self.assertEqual(list(proposed_multi_source_trace(merged)), expected, indices)
+
     def test_candidate_endpoint_and_channel_mode_trace(self):
         a, b, c = ("A", 0, 60), ("A", 1, 60), ("B", 0, 60)
         trace = [
@@ -149,6 +172,28 @@ class HypothesisMusicAudit(unittest.TestCase):
         def test_hypothesis_dependencies(self):
             pass
     else:
+        @settings(max_examples=200, derandomize=True)
+        @given(st.binary(min_size=0, max_size=12), st.integers(min_value=-1, max_value=12))
+        def test_smf_vlq_decoder_against_independent_byte_model(self, payload, offset):
+            candidate = payload[offset:offset + 4] if offset >= 0 else b""
+            ending = next((index for index, value in enumerate(candidate) if value < 128), None)
+            if ending is None:
+                with self.assertRaises(ValueError):
+                    decode_vlq(payload, offset)
+                return
+            digits = [byte % 128 for byte in candidate[:ending + 1]]
+            expected = sum(digit * 128 ** exponent for exponent, digit in enumerate(reversed(digits)))
+            self.assertEqual(decode_vlq(payload, offset), (expected, ending + 1))
+
+        @settings(max_examples=200, derandomize=True)
+        @given(st.integers(min_value=0, max_value=268435455))
+        def test_smf_vlq_canonical_writer(self, value):
+            encoded = encode_vlq(value)
+            self.assertEqual(len(encoded), max(1, (value.bit_length() + 6) // 7))
+            self.assertTrue(all(byte >= 128 for byte in encoded[:-1]))
+            self.assertLess(encoded[-1], 128)
+            self.assertEqual(sum(byte % 128 * 128 ** power for power, byte in enumerate(reversed(encoded))), value)
+
         @settings(max_examples=150)
         @given(st.lists(st.tuples(st.sampled_from(OPERATIONS),
                                  st.sampled_from((0, 60, 63, 64, 67, 127))), min_size=1, max_size=128))

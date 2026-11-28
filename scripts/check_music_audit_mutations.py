@@ -1,14 +1,18 @@
 """Run curated mutations in disposable source snapshots, one change per process."""
 
 import argparse
+import ast
 from collections import Counter
+from copy import copy
 from dataclasses import dataclass
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
 import sys
 from tempfile import TemporaryDirectory
+from time import monotonic
 
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -27,6 +31,7 @@ class Mutation:
     original: str
     replacement: str
     witness: str
+    span: tuple[int, int] | None = None
 
 
 MUTATIONS = (
@@ -81,26 +86,100 @@ MUTATIONS = (
 )
 
 
+GENERATED_TARGETS = {
+    "src/steps/theory/interval.py": "tests.test_theory_core.TestTheoryCoreIntervals",
+    "src/steps/theory/chord.py": HARNESS + "test_reference_profiles_exercise_the_product",
+    "src/steps/theory/scale.py": HARNESS + "test_reference_profiles_exercise_the_product",
+    "src/steps/theory/pitch.py": "tests.test_notation_contract",
+    "src/steps/theory/inversion.py": "tests.test_chord_inversion",
+    "src/steps/keyboard/recognition.py": REGRESSIONS + "test_recognition_preserves_exact_candidates_under_doubling_and_translation",
+    "src/steps/keyboard/practice.py": "tests.test_music_audit_combinations.MusicalCombinationAudit.test_practice_register_bass_and_publication_boundary",
+    "src/steps/keyboard/voice_motion.py": REGRESSIONS + "test_shared_pitch_can_move_between_paired_voices",
+    "src/steps/ports/live.py": "tests.test_music_audit_stateful.KeyboardStateAudit",
+    "src/steps/midi/smf_parser.py": "tests.test_midi_export_service",
+    "src/steps/midi/vlq.py": "tests.test_midi_export_service.TestVLQEncodingDecoding",
+    "scripts/audit_randomized_music.py": HARNESS + "test_generator_failure_preserves_progress_and_other_areas",
+}
+
+COMPARISONS = {
+    ast.Lt: ast.LtE, ast.LtE: ast.Lt, ast.Gt: ast.GtE, ast.GtE: ast.Gt,
+    ast.Eq: ast.NotEq, ast.NotEq: ast.Eq,
+}
+
+
+def generated_mutations(snapshot, limit):
+    """Sample distinct AST sites across each named file in source order."""
+    for path, witness in GENERATED_TARGETS.items():
+        source = (snapshot / path).read_text(encoding="utf-8")
+        encoded = source.encode()
+        offsets = [0]
+        for line in encoded.splitlines(keepends=True):
+            offsets.append(offsets[-1] + len(line))
+        candidates = []
+        for node in ast.walk(ast.parse(source)):
+            if isinstance(node, ast.Constant) and type(node.value) is int and 0 <= node.value <= 127:
+                kind, replacement = "INTEGER", str(node.value + 1)
+            elif isinstance(node, ast.Compare) and len(node.ops) == 1 and type(node.ops[0]) in COMPARISONS:
+                variant = copy(node)
+                variant.ops = [COMPARISONS[type(node.ops[0])]()]
+                kind, replacement = "RELATION", ast.unparse(variant)
+            else:
+                continue
+            start = offsets[node.lineno - 1] + node.col_offset
+            end = offsets[node.end_lineno - 1] + node.end_col_offset
+            original = encoded[start:end].decode()
+            # Parentheses prevent a local replacement from extending to neighbours.
+            if kind == "RELATION":
+                replacement = f"({replacement})"
+            identifier = f"AST-{Path(path).stem}-{node.lineno}-{node.col_offset}-{kind}"
+            candidates.append(Mutation(identifier, path, original, replacement, witness, (start, end)))
+        candidates.sort(key=lambda item: item.span)
+        count = min(limit, len(candidates))
+        for index in range(count):
+            yield candidates[index * len(candidates) // count]
+
+
 def test(snapshot, witness):
+    env = {key: value for key, value in os.environ.items() if key != "PYTHONPATH"}
     return subprocess.run([sys.executable, "-B", "-m", "unittest", witness], cwd=snapshot,
-                          capture_output=True, text=True, errors="replace", timeout=30)
+                          env=env, capture_output=True, text=True, errors="replace", timeout=30,
+                          creationflags=getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0))
 
 
-def run_mutation(snapshot, mutation):
-    result = {"id": mutation.id, "path": mutation.path, "witness": mutation.witness}
+def run_mutation(snapshot, mutation, baselines):
+    start = monotonic()
+    result = {"id": mutation.id, "path": mutation.path, "witness": mutation.witness,
+              "kind": "AST" if mutation.span else "CURATED",
+              "original": mutation.original, "replacement": mutation.replacement}
     source_path = snapshot / mutation.path
-    original = source_path.read_text(encoding="utf-8")
+    original_bytes = source_path.read_bytes()
+    original = original_bytes.decode().replace("\r\n", "\n")
     if mutation.original not in original:
         result["status"] = "NOT_APPLICABLE"
         return result
     phase = "baseline"
     try:
-        baseline = test(snapshot, mutation.witness)
-        if baseline.returncode:
+        if mutation.witness not in baselines:
+            baselines[mutation.witness] = test(snapshot, mutation.witness).returncode
+        if baselines[mutation.witness]:
             result["status"] = "BASELINE_ERROR"
             return result
         phase = "mutation"
-        source_path.write_text(original.replace(mutation.original, mutation.replacement, 1), encoding="utf-8")
+        if mutation.span is None:
+            changed = original.replace(mutation.original, mutation.replacement, 1)
+        else:
+            beginning, end = mutation.span
+            encoded = original.encode()
+            changed = (encoded[:beginning] + mutation.replacement.encode() + encoded[end:]).decode()
+        try:
+            original_tree, changed_tree = ast.parse(original), ast.parse(changed)
+        except SyntaxError:
+            result["status"] = "NOT_EXECUTABLE"
+            return result
+        if ast.dump(original_tree) == ast.dump(changed_tree):
+            result["status"] = "AST_EQUIVALENT"
+            return result
+        source_path.write_text(changed, encoding="utf-8")
         mutated = test(snapshot, mutation.witness)
         if mutated.returncode == 0:
             result["status"] = "SURVIVED"
@@ -111,14 +190,18 @@ def run_mutation(snapshot, mutation):
     except subprocess.TimeoutExpired:
         result.update(status="TIMEOUT", phase=phase)
     finally:
-        source_path.write_text(original, encoding="utf-8")
+        source_path.write_bytes(original_bytes)
+        result["seconds"] = round(monotonic() - start, 3)
     return result
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--json-out", type=Path)
+    parser.add_argument("--generated-per-module", type=int, default=0)
     args = parser.parse_args()
+    if not 0 <= args.generated_per_module <= 25:
+        parser.error("--generated-per-module must be between 0 and 25")
     with TemporaryDirectory(prefix="steps-music-mutations-") as temporary:
         snapshot = Path(temporary)
         # Copy the implementation and only the Python harness and test sources.
@@ -128,10 +211,17 @@ def main():
             (snapshot / directory).mkdir()
             for file in (ROOT / directory).glob("*.py"):
                 shutil.copyfile(file, snapshot / directory / file.name)
-        results = [run_mutation(snapshot, mutation) for mutation in MUTATIONS]
+        generated = list(generated_mutations(snapshot, args.generated_per_module))
+        baselines = {}
+        results = [run_mutation(snapshot, mutation, baselines) for mutation in (*MUTATIONS, *generated)]
     counts = Counter(row["status"] for row in results)
-    report = {"schema_version": 1, "planned": len(MUTATIONS), "counts": counts,
-              "results": results, "gate": "PASS" if counts["DETECTED"] == len(MUTATIONS) else "FAIL",
+    curated_pass = all(row["status"] == "DETECTED" for row in results if row["kind"] == "CURATED")
+    generated_status = "NOT_RUN" if not generated else "REVIEW_REQUIRED" if any(
+        row["status"] not in {"DETECTED", "AST_EQUIVALENT"} for row in results if row["kind"] == "AST"
+    ) else "PASS"
+    report = {"schema_version": 2, "planned": len(results), "counts": counts,
+              "results": results, "gate": "PASS" if curated_pass else "FAIL",
+              "generated_status": generated_status, "generated_planned": len(generated),
               **checkout_provenance()}
     if args.json_out:
         write_report(args.json_out, report)

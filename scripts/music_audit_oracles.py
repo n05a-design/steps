@@ -16,6 +16,16 @@ TONAL_VERSION = "6.16.0"
 QUALITIES = {
     "": ("", "M"), "m": ("m", "m"), "dim": ("dim", "dim"), "aug": ("aug", "aug"),
     "maj7": ("maj7", "maj7"), "7": ("7", "7"), "m7": ("m7", "m7"),
+    "m7b5": ("m7b5", "m7b5"), "dim7": ("dim7", "dim7"),
+    "m(maj7)": ("mM7", "mMaj7"), "7#5": ("7#5", "7#5"),
+    "7#9": ("7#9", "7#9"), "7#11": ("7#11", "7#11"),
+    "7b13": ("7b13", "7b13"), "13": ("13", "13"),
+}
+# Measured comparator conventions. List added and omitted pitch classes relative
+# to the tonic, and require the entire difference to match on every root.
+PROFILE_DIFFERENCES = {
+    ("music21", "13"): ({5}, set()),
+    ("tonal", "7b13"): (set(), {7}),
 }
 
 
@@ -25,16 +35,27 @@ def require_version(name, expected):
 
 
 def chord_cases():
-    return [(root + quality, root, *aliases) for root in ROOTS for quality, aliases in QUALITIES.items()]
+    return [(root + quality, root, *aliases, quality)
+            for root in ROOTS for quality, aliases in QUALITIES.items()]
 
 
-def compare_chords(oracle_rows):
+def compare_chords(oracle_rows, oracle):
     from src.steps.theory.chord import parse_chord
 
-    return [
-        {"input": symbol, "external": external, "steps": sorted(parse_chord(symbol, "INT").pitch_class_set)}
-        for symbol, external in zip((row[0] for row in chord_cases()), oracle_rows, strict=True)
-    ]
+    rows = []
+    for (symbol, _, _, _, quality), external in zip(chord_cases(), oracle_rows, strict=True):
+        chord = parse_chord(symbol, "INT")
+        steps = set(chord.pitch_class_set)
+        observed = set(external)
+        row = {"input": symbol, "external": external, "steps": sorted(steps)}
+        if (oracle, quality) in PROFILE_DIFFERENCES:
+            extra, absent = PROFILE_DIFFERENCES[oracle, quality]
+            root = int(chord.root.pitch_class)
+            additions = {(root + factor) % 12 for factor in extra}
+            omissions = {(root + factor) % 12 for factor in absent}
+            row["expected_profile_difference"] = observed - steps == additions and steps - observed == omissions
+        rows.append(row)
+    return rows
 
 
 def music21_rows():
@@ -43,8 +64,8 @@ def music21_rows():
 
     return compare_chords([
         sorted({pitch.pitchClass for pitch in ChordSymbol(root.replace("b", "-") + suffix).pitches})
-        for _, root, suffix, _ in chord_cases()
-    ])
+        for _, root, suffix, _, _ in chord_cases()
+    ], "music21")
 
 
 def tonal_rows(module: Path):
@@ -60,12 +81,12 @@ process.stdout.write(JSON.stringify(cases.map(([_, root, , quality]) =>
 """
     result = subprocess.run(["node", "-e", script, str(module.resolve())], check=True,
                             input=json.dumps(chord_cases()), encoding="utf-8", capture_output=True, timeout=15)
-    return compare_chords(json.loads(result.stdout))
+    return compare_chords(json.loads(result.stdout), "tonal")
 
 
 def mido_rows():
     require_version("mido", MIDO_VERSION)
-    from mido import MidiFile
+    from mido import Message, MetaMessage, MidiFile, MidiTrack
     from src.steps.midi import SMFParser
     from src.steps.progression import ProgressionSession
 
@@ -119,29 +140,55 @@ def mido_rows():
                     rows.append({"input": {"format": fmt, "mode": mode, "symbol": symbol},
                                  "external": external, "steps": actual,
                                  "mido_roundtrip_steps": from_steps(rewritten.getvalue())})
+    # Generate independently in the other direction. The event stream spans
+    # nonzero deltas, a tempo and meter change, and repeated pitches on channels.
+    for ppq, channels in ((96, (0, 15)), (480, (2, 9))):
+        conductor = MidiTrack([
+            MetaMessage("track_name", name="Conductor"),
+            MetaMessage("set_tempo", tempo=500000),
+            MetaMessage("set_tempo", tempo=750000, time=ppq),
+            MetaMessage("time_signature", numerator=7, denominator=8, time=ppq),
+        ])
+        streams = [MidiTrack([
+            MetaMessage("track_name", name=f"Channel {channel + 1}"),
+            Message("note_on", channel=channel, note=60, velocity=76, time=127),
+            Message("note_on", channel=channel, note=60, velocity=85, time=128),
+            Message("note_off", channel=channel, note=60, velocity=64, time=128),
+            Message("note_off", channel=channel, note=60, velocity=0, time=16384),
+        ]) for channel in channels]
+        source = MidiFile(type=1, ticks_per_beat=ppq, tracks=[conductor, *streams])
+        stream = BytesIO()
+        source.save(file=stream)
+        rows.append({"input": {"writer": "mido", "ppq": ppq, "channels": channels},
+                     "external": from_mido(source), "steps": from_steps(stream.getvalue())})
     return rows
 
 
 def run(tonal_module: Path | None):
+    chords = len(chord_cases())
     specs = [
-        ("music21", MUSIC21_VERSION, music21_rows, 84),
-        ("mido", MIDO_VERSION, mido_rows, 16),
+        ("music21", MUSIC21_VERSION, music21_rows, chords),
+        ("mido", MIDO_VERSION, mido_rows, 18),
     ]
     results = {}
     if tonal_module is not None:
-        specs.append(("tonal", TONAL_VERSION, lambda: tonal_rows(tonal_module), 84))
+        specs.append(("tonal", TONAL_VERSION, lambda: tonal_rows(tonal_module), chords))
     else:
-        results["tonal"] = {"version": TONAL_VERSION, "status": "NOT_RUN", "planned": 84,
+        results["tonal"] = {"version": TONAL_VERSION, "status": "NOT_RUN", "planned": chords,
                             "executed": 0, "reason": "No isolated Tonal module was selected."}
     for name, release, probe, planned in specs:
         try:
             rows = probe()
             if len(rows) != planned:
                 raise ValueError("Unexpected oracle case count")
-            differences = [row for row in rows if row["external"] != row["steps"]
-                           or row.get("mido_roundtrip_steps", row["steps"]) != row["steps"]]
+            declared = [row for row in rows if row.get("expected_profile_difference")]
+            differences = [row for row in rows if not row.get("expected_profile_difference") and (
+                row["external"] != row["steps"] or row.get("expected_profile_difference") is False
+                or row.get("mido_roundtrip_steps", row["steps"]) != row["steps"]
+            )]
             results[name] = {"version": release, "status": "FAIL" if differences else "PASS",
-                             "planned": planned, "executed": len(rows), "differences": differences}
+                             "planned": planned, "executed": len(rows), "differences": differences,
+                             "expected_profile_differences": declared}
         except Exception as exc:
             results[name] = {"version": release, "status": "ERROR", "planned": planned, "executed": 0,
                              "error": type(exc).__name__}
