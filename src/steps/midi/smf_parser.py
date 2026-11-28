@@ -19,7 +19,7 @@ from collections import deque
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
 
-from .smf import MidiFile, MidiTrack, RawMidiEvent
+from .smf import MidiFile, MidiTrack, RawMidiEvent, _validate_set_tempo
 from .vlq import decode_vlq, encode_vlq
 
 
@@ -238,6 +238,11 @@ class SMFParser:
 
                 if meta_type == 0x03:  # Track Name
                     track_name = meta_data.decode("utf-8", errors="replace")
+                elif meta_type == 0x51:
+                    try:
+                        _validate_set_tempo(meta_data)
+                    except ValueError as exc:
+                        raise MidiParseError(str(exc)) from exc
                 elif meta_type == 0x2F:  # End of Track
                     if meta_len != 0 or pos != len(data):
                         raise MidiParseError("End of Track must have an empty payload and be the final event.")

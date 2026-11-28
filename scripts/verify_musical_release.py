@@ -54,6 +54,7 @@ AREAS = {
     ),
     "midi-export": (
         ("test_midi_export_service", "test_midi_golden_fixtures", "test_music_audit_stateful.SMFTrackAudit",
+         "test_music_audit_stateful.DualSMFParserAudit",
          "test_mvve_regressions.MusicalAuditRegressions.test_smf_rejects_truncation_even_without_declared_tracks",
          "test_mvve_regressions.MusicalAuditRegressions.test_synthetic_smf_preserves_tempo_meter_and_overlapping_notes"),
         (),

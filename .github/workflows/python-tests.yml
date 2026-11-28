@@ -76,6 +76,7 @@ jobs:
             tests.test_music_audit_stateful.HypothesisMusicAudit.test_structured_smf_and_truncated_track \
             tests.test_music_audit_stateful.HypothesisMusicAudit.test_framed_smf_track_fuzz \
             tests.test_music_audit_stateful.SMFTrackAudit \
+            tests.test_music_audit_stateful.DualSMFParserAudit \
             tests.test_music_audit_stateful.KeyboardStateAudit \
             tests.test_music_audit_semantics \
             tests.test_music_audit_combinations -v 2>&1 | tee "$RUNNER_TEMP/music-stateful.log"
@@ -100,24 +101,62 @@ jobs:
 
   package-artifacts:
     if: github.event_name == 'push' || github.event_name == 'pull_request'
-    name: Python wheel artifact
-    runs-on: ubuntu-latest
+    name: Python wheel artifact (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v7
         with:
-          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Materialize LF for the exact-byte resource check
+        if: runner.os == 'Windows'
+        run: git -c core.autocrlf=false checkout-index --force --all
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 
-      - name: Install build tools
-        run: python -m pip install --upgrade pip setuptools wheel
+      - name: Test process locks, resources and both MIDI readers
+        run: >-
+          python -B -m unittest
+          tests.test_storage_recovery_io
+          tests.test_music_audit_stateful.DualSMFParserAudit
+          tests.test_glide_shell_integration.TestGlideShellIntegration.test_glide_shell_version_manifest_and_isolation
+          tests.test_glide_shell_integration.TestGlideShellIntegration.test_glide_shell_selftest_passes_all_13_checks
+          -v
 
-      - name: Build and inspect wheel
+      - name: Build, inspect and install the wheel
+        if: always()
         run: python -B -m unittest tests.test_package_artifacts -v
+
+  windows-crlf-resources:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    name: Windows CRLF shell and wheel integrity
+    runs-on: windows-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Materialize regular Windows CRLF resources
+        run: git -c core.autocrlf=true checkout-index --force --all
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Run the unchanged shell and installed-wheel integrity checks
+        run: >-
+          python -B -m unittest
+          tests.test_glide_shell_integration.TestGlideShellIntegration.test_glide_shell_version_manifest_and_isolation
+          tests.test_glide_shell_integration.TestGlideShellIntegration.test_glide_shell_selftest_passes_all_13_checks
+          tests.test_package_artifacts.TestPackageArtifacts.test_wheel_contains_locales_brand_assets_and_console_entry_point
+          -v
 
   desktop-ui-smoke:
     if: github.event_name == 'push' || github.event_name == 'pull_request'

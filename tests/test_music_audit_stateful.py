@@ -3,7 +3,7 @@
 import random
 import unittest
 
-from src.steps.midi import MidiParseError, SMFParser, decode_vlq, encode_vlq
+from src.steps.midi import MidiFile, MidiParseError, SMFParser, decode_vlq, encode_vlq
 from itertools import combinations
 from src.steps.keyboard import KeyboardInputState
 from src.steps.ports.live import normalize_midi_message
@@ -216,6 +216,72 @@ class SMFTrackAudit(unittest.TestCase):
             [(n.channel, n.pitch, n.velocity, n.start_tick, n.duration_ticks) for n in result.all_notes],
             [(15, 127, 127, 0, 1)],
         )
+
+
+class DualSMFParserAudit(unittest.TestCase):
+    def test_both_parsers_reject_identical_damaged_files(self):
+        broken = {
+            "truncated header": bytes.fromhex("4d546864 00000007 0001 0000 01e0"),
+            "truncated chunk": framed_track(bytes.fromhex("00 ff 2f 00"))[:-1],
+        }
+        for name, track in (
+            ("delta without event", "00"), ("meta missing type", "00 ff"),
+            ("meta truncated payload", "00 ff 01 02 41"), ("zero tempo", "00 ff 51 03 00 00 00"),
+            ("tempo invalid length", "00 ff 51 02 07 a1"), ("SysEx truncated payload", "00 f0 02 f7"),
+            ("invalid status", "00 f1"), ("short channel", "00 90 3c"), ("non-data byte", "00 90 3c 90"),
+            ("running status cleared by SysEx", "00 90 3c 40 00 f0 01 f7 00 3c 00"),
+            ("nonempty EOT", "00 ff 2f 01 00"), ("EOT followed by event", "00 ff 2f 00 00 c0 01"),
+            ("VLQ not terminated", "81"), ("VLQ too long", "81 80 80 80 00"),
+        ):
+            broken[name] = framed_track(bytes.fromhex(track))
+        for name, data in broken.items():
+            for parser, error in ((MidiFile.from_bytes, ValueError), (SMFParser.parse, MidiParseError)):
+                with self.subTest(case=name, parser=parser.__qualname__), self.assertRaises(error):
+                    parser(data)
+
+    def test_roundtrip_preserves_exact_event_bytes_and_musical_silence(self):
+        conductor = bytes.fromhex("00 ff 03 01 41 00 ff 51 03 07 a1 21 00 ff 58 04 03 02 18 08 7f ff 2f 00")
+        notes = bytes.fromhex("00 ff 01 01 54 00 f0 03 7d 01 f7 00 f7 01 22 "
+                              "00 90 3c 40 00 90 3c 00 81 00 90 40 7f 7f 80 40 00 20 ff 2f 00")
+        for format_number in (0, 1):
+            first = notes if format_number == 0 else conductor
+            original = bytearray(framed_track(first))
+            if format_number == 1:
+                original[9] = 1
+                original[11] = 2
+                original.extend(framed_track(notes)[14:])
+            original = bytes(original)
+            rebuilt = MidiFile.from_bytes(original).to_bytes()
+            self.assertEqual(rebuilt, original)
+            parsed = SMFParser.parse(rebuilt)
+            self.assertEqual(parsed.tracks[-1].total_ticks, 287)
+            self.assertEqual([(n.start_tick, n.pitch, n.duration_ticks) for n in parsed.all_notes],
+                             [(0, 60, 1), (128, 64, 127)])
+            if format_number == 1:
+                self.assertEqual(parsed.time_signatures, [(0, 3, 4)])
+                self.assertEqual(parsed.tracks[0].events[1].meta_data, bytes.fromhex("07 a1 21"))
+
+    def test_delta_boundaries_are_shared_by_both_readers(self):
+        for encoded, ticks in (
+            ("7f", 127), ("81 00", 128), ("ff 7f", 16_383), ("81 80 00", 16_384),
+            ("ff ff 7f", 2_097_151), ("81 80 80 00", 2_097_152), ("ff ff ff 7f", 268_435_455),
+        ):
+            with self.subTest(delta=encoded):
+                original = framed_track(bytes.fromhex(f"00 90 3c 40 {encoded} 80 3c 00 00 ff 2f 00"))
+                editable = MidiFile.from_bytes(original)
+                self.assertEqual(editable.tracks[0].raw_events[1].abs_tick, ticks)
+                self.assertEqual(editable.to_bytes(), original)
+                self.assertEqual(SMFParser.parse(original).all_notes[0].duration_ticks, ticks)
+
+    def test_normalization_preserves_order_and_expandable_running_status(self):
+        implicit = framed_track(bytes.fromhex("00 90 3c 40 01 3c 00 03 ff 2f 00"))
+        explicit = framed_track(bytes.fromhex("00 90 3c 40 01 90 3c 00 03 ff 2f 00"))
+        self.assertEqual(MidiFile.from_bytes(implicit).to_bytes(), explicit)
+        self.assertEqual(SMFParser.parse(implicit), SMFParser.parse(explicit))
+        extra_chunk = bytes.fromhex("54455354 00000002 aabb")
+        extended = implicit[:14] + extra_chunk + implicit[14:]
+        self.assertEqual(MidiFile.from_bytes(extended).to_bytes(), explicit)
+        self.assertEqual(SMFParser.parse(extended), SMFParser.parse(explicit))
 
 
 class HypothesisMusicAudit(unittest.TestCase):
