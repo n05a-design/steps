@@ -11,10 +11,13 @@ Directly validates the 16 storage and failure recovery invariants specified in:
 import json
 import os
 import shutil
+import subprocess
+import sys
 import tempfile
 import time
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from src.steps.storage import (
     CURRENT_APP_VERSION,
@@ -171,6 +174,30 @@ class TestStorageRecoveryIO01to16(unittest.TestCase):
                 lock2.acquire()
         finally:
             lock1.release()
+
+    @unittest.skipUnless(os.name == "nt", "Windows process liveness semantics")
+    def test_windows_lock_liveness_does_not_send_console_signal(self):
+        lock = ProjectLock(self.project_path)
+        lock.acquire()
+        self.addCleanup(lock.release)
+        with patch("src.steps.storage.project_io.os.kill") as signal_probe:
+            with self.assertRaises(LockCollisionError):
+                ProjectLock(self.project_path).acquire()
+        signal_probe.assert_not_called()
+
+    def test_fresh_lock_from_exited_process_can_be_recovered(self):
+        with subprocess.Popen([sys.executable, "-B", "-c", "pass"]) as exited:
+            exited.wait(timeout=15)
+            lock = ProjectLock(self.project_path)
+            lock.lock_path.write_text(json.dumps({"pid": exited.pid, "timestamp": time.time()}), encoding="utf-8")
+            with patch("src.steps.storage.project_io.os.kill", wraps=os.kill) as signal_probe:
+                if os.name == "nt":
+                    # Capture legacy calls without sending a real Windows console signal.
+                    signal_probe.side_effect = AssertionError("Windows must not signal the owner")
+                lock.acquire()
+            self.addCleanup(lock.release)
+            acquired = json.loads(lock.lock_path.read_text(encoding="utf-8"))
+            self.assertEqual(acquired["pid"], os.getpid())
 
     def test_io05_lock_release_and_stale_lock_recovery(self):
         """IO-05: Lock release on clean shutdown or stale lock recovery."""

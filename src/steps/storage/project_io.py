@@ -103,6 +103,41 @@ class ProjectLoadResult:
         return bool(self.migrations)
 
 
+def _lock_owner_is_running(pid: object) -> bool:
+    """Treat an inaccessible process as potentially active."""
+    if type(pid) is not int or not 0 < pid <= 0xFFFFFFFF:
+        return False
+    if os.name == "nt":
+        # On Windows os.kill(pid, 0) sends CTRL_C_EVENT. Query a wait-only
+        # process handle instead and close it without signaling the process.
+        import ctypes
+        from ctypes import wintypes
+
+        kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+        kernel.OpenProcess.argtypes = (wintypes.DWORD, wintypes.BOOL, wintypes.DWORD)
+        kernel.OpenProcess.restype = wintypes.HANDLE
+        kernel.WaitForSingleObject.argtypes = (wintypes.HANDLE, wintypes.DWORD)
+        kernel.WaitForSingleObject.restype = wintypes.DWORD
+        kernel.CloseHandle.argtypes = (wintypes.HANDLE,)
+        kernel.CloseHandle.restype = wintypes.BOOL
+
+        synchronize, invalid_parameter, wait_object_0 = 0x00100000, 87, 0
+        handle = kernel.OpenProcess(synchronize, False, pid)
+        if not handle:
+            return ctypes.get_last_error() != invalid_parameter
+        try:
+            return kernel.WaitForSingleObject(handle, 0) != wait_object_0
+        finally:
+            kernel.CloseHandle(handle)
+    try:
+        os.kill(pid, 0)
+    except (ProcessLookupError, OverflowError):
+        return False
+    except OSError:
+        return True
+    return True
+
+
 class ProjectLock:
     """
     Manages a lockfile (<path>.lock) to prevent concurrent writes from
@@ -123,18 +158,10 @@ class ProjectLock:
                 pid = info.get("pid", 0)
 
                 # Check if lock is stale (older than timeout)
-                if (time.time() - lock_time) < self.timeout_seconds:
-                    # Check if process is still running (on POSIX)
-                    is_running = True
-                    try:
-                        os.kill(pid, 0)
-                    except OSError:
-                        is_running = False
-
-                    if is_running:
-                        raise LockCollisionError(
-                            f"Project is locked by another running process (PID {pid}, locked at {info.get('time_iso')})."
-                        )
+                if (time.time() - lock_time) < self.timeout_seconds and _lock_owner_is_running(pid):
+                    raise LockCollisionError(
+                        f"Project is locked by another running process (PID {pid}, locked at {info.get('time_iso')})."
+                    )
             except (json.JSONDecodeError, OSError):
                 pass  # Corrupted or unreadable lock is treated as stale
 
