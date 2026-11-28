@@ -27,6 +27,13 @@ class MidiParseError(ValueError):
     pass
 
 
+def _read_track_vlq(data: bytes, offset: int) -> tuple[int, int]:
+    try:
+        return decode_vlq(data, offset)
+    except ValueError as exc:
+        raise MidiParseError(f"Invalid variable-length quantity at track offset {offset}: {exc}") from exc
+
+
 @dataclass
 class ParsedMidiEvent:
     """Represents a fully decoded MIDI event with absolute and delta tick positions."""
@@ -195,12 +202,12 @@ class SMFParser:
         paired_notes: List[ParsedMidiNote] = []
 
         while pos < len(data):
-            delta, consumed = decode_vlq(data, pos)
+            delta, consumed = _read_track_vlq(data, pos)
             pos += consumed
             current_tick += delta
 
             if pos >= len(data):
-                break
+                raise MidiParseError(f"Missing event after delta at track offset {pos}")
 
             status_byte = data[pos]
 
@@ -211,7 +218,7 @@ class SMFParser:
                     raise MidiParseError(f"Unexpected EOF in meta event type at offset {pos}")
                 meta_type = data[pos]
                 pos += 1
-                meta_len, consumed = decode_vlq(data, pos)
+                meta_len, consumed = _read_track_vlq(data, pos)
                 pos += consumed
                 if pos + meta_len > len(data):
                     raise MidiParseError(f"Truncated meta event data (type 0x{meta_type:02X}) at offset {pos}")
@@ -239,7 +246,7 @@ class SMFParser:
             elif status_byte in (0xF0, 0xF7):
                 # System Exclusive event
                 pos += 1
-                sysex_len, consumed = decode_vlq(data, pos)
+                sysex_len, consumed = _read_track_vlq(data, pos)
                 pos += consumed
                 if pos + sysex_len > len(data):
                     raise MidiParseError(f"Truncated Sysex event at offset {pos}")
@@ -275,6 +282,8 @@ class SMFParser:
                         raise MidiParseError(f"Truncated 2-byte channel message (status 0x{status:02X}) at offset {pos}")
                     d1 = data[pos]
                     d2 = data[pos + 1]
+                    if (d1 | d2) & 0x80:
+                        raise MidiParseError(f"Invalid channel data at track offset {pos}")
                     pos += 2
                     raw = struct.pack("BBB", status, d1, d2)
 
@@ -310,6 +319,8 @@ class SMFParser:
                     if pos + 1 > len(data):
                         raise MidiParseError(f"Truncated 1-byte channel message (status 0x{status:02X}) at offset {pos}")
                     d1 = data[pos]
+                    if d1 & 0x80:
+                        raise MidiParseError(f"Invalid channel data at track offset {pos}")
                     pos += 1
                     raw = struct.pack("BB", status, d1)
 

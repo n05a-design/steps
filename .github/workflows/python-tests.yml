@@ -73,10 +73,12 @@ jobs:
             tests.test_music_audit_stateful.HypothesisMusicAudit.test_session_history \
             tests.test_music_audit_stateful.HypothesisMusicAudit.test_smf_vlq_decoder_against_independent_byte_model \
             tests.test_music_audit_stateful.HypothesisMusicAudit.test_smf_vlq_canonical_writer \
+            tests.test_music_audit_stateful.HypothesisMusicAudit.test_framed_smf_track_fuzz \
+            tests.test_music_audit_stateful.SMFTrackAudit \
             tests.test_music_audit_stateful.KeyboardStateAudit \
             tests.test_music_audit_semantics \
             tests.test_music_audit_combinations -v 2>&1 | tee "$RUNNER_TEMP/music-stateful.log"
-      - name: Run curated music mutations every Sunday
+      - name: Run music mutations every Sunday
         if: github.event_name == 'schedule' && always()
         run: |
           if [[ "$(date -u +%u)" == 7 ]]; then

@@ -3,7 +3,7 @@
 import random
 import unittest
 
-from src.steps.midi import decode_vlq, encode_vlq
+from src.steps.midi import MidiParseError, SMFParser, decode_vlq, encode_vlq
 from itertools import combinations
 from src.steps.keyboard import KeyboardInputState
 from src.steps.ports.live import normalize_midi_message
@@ -166,6 +166,25 @@ class MidiContractProposalTest(unittest.TestCase):
         self.assertEqual(list(proposed_multi_source_trace(trace)), expected)
 
 
+def framed_track(payload):
+    return bytes.fromhex("4d546864 00000006 0000 0001 01e0 4d54726b") + len(payload).to_bytes(4, "big") + payload
+
+
+class SMFTrackAudit(unittest.TestCase):
+    def test_framed_invalid_events_have_the_parser_error_type(self):
+        for raw in ("00", "80", "00 ff 01 80", "00 f0 80", "00 c0 80",
+                    "00 90 3c 90", "00 90 3c 40 00 3c 80"):
+            with self.subTest(track=raw), self.assertRaises(MidiParseError):
+                SMFParser.parse(framed_track(bytes.fromhex(raw)))
+
+    def test_valid_running_status_is_preserved(self):
+        result = SMFParser.parse(framed_track(bytes.fromhex("00 9f 7f 7f 01 7f 00 00 ff 2f 00")))
+        self.assertEqual(
+            [(n.channel, n.pitch, n.velocity, n.start_tick, n.duration_ticks) for n in result.all_notes],
+            [(15, 127, 127, 0, 1)],
+        )
+
+
 class HypothesisMusicAudit(unittest.TestCase):
     if given is None:
         @unittest.skip("The isolated Hypothesis test dependency is unavailable.")
@@ -193,6 +212,28 @@ class HypothesisMusicAudit(unittest.TestCase):
             self.assertTrue(all(byte >= 128 for byte in encoded[:-1]))
             self.assertLess(encoded[-1], 128)
             self.assertEqual(sum(byte % 128 * 128 ** power for power, byte in enumerate(reversed(encoded))), value)
+
+        @settings(max_examples=200, derandomize=True)
+        @given(st.binary(max_size=48))
+        def test_framed_smf_track_fuzz(self, payload):
+            try:
+                result = SMFParser.parse(framed_track(payload))
+            except MidiParseError:
+                return
+            self.assertEqual(result.num_tracks, 1)
+            previous = 0
+            for event in result.tracks[0].events:
+                self.assertEqual(event.abs_tick, previous + event.delta_ticks)
+                previous = event.abs_tick
+                if event.channel is not None:
+                    self.assertIn(event.channel, range(16))
+                    self.assertIn(event.data1, range(128))
+                    if event.data2 is not None:
+                        self.assertIn(event.data2, range(128))
+            for note in result.all_notes:
+                self.assertIn(note.pitch, range(128))
+                self.assertIn(note.velocity, range(1, 128))
+                self.assertGreaterEqual(note.duration_ticks, 1)
 
         @settings(max_examples=150)
         @given(st.lists(st.tuples(st.sampled_from(OPERATIONS),
