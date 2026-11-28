@@ -550,6 +550,40 @@ def write_report(path, data):
             temp.unlink(missing_ok=True)
 
 
+def replay_with_deadline(payload, seed, seconds):
+    """Enforce a wall-clock deadline for one saved product case."""
+    command = (
+        "import json, sys; "
+        "from scripts.audit_randomized_music import run; "
+        "seed, payload = json.load(sys.stdin); "
+        "print(json.dumps(run(seed, 1, (payload['area'],), profile='replay', replay=payload)))"
+    )
+    try:
+        child = subprocess.run(
+            [sys.executable, "-B", "-c", command], cwd=ROOT, capture_output=True, check=True,
+            encoding="utf-8", input=json.dumps((seed, payload)), timeout=seconds,
+            creationflags=getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0),
+        )
+        report = json.loads(child.stdout)
+        report["timeout_seconds"] = seconds
+        report["deadline_mode"] = "subprocess"
+        return report
+    except subprocess.TimeoutExpired:
+        status, classification = "timeout", "TIMEOUT"
+    except (OSError, subprocess.CalledProcessError, ValueError):
+        status, classification = "error", "REPLAY_WORKER_ERROR"
+    area = payload["area"]
+    counts = Counter(dict.fromkeys(("passed", "failed", "error", "timeout", "not_run", "executed"), 0))
+    counts.update(planned=1, selected=1)
+    failures = []
+    classify_failure(failures, counts, area=area, case_id=payload["case_id"], status=status,
+                     classification=classification, question=payload["input"], expected=payload["expected"],
+                     payload=payload)
+    return {"schema_version": 1, "run_id": str(uuid4()), "gate": "ERROR", "profile": "replay",
+            "seed": seed, "timeout_seconds": seconds, "deadline_mode": "subprocess",
+            "areas": {area: counts}, "failures": failures}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED)
@@ -557,9 +591,9 @@ def main():
     parser.add_argument("--area", action="append", choices=(*PROBES, *references.AREAS),
                         help="Repeat to select multiple areas.")
     parser.add_argument("--profile", choices=("smoke", "pr", "nightly", "full", "release"))
-    parser.add_argument("--case", help="Select one finite reference case by ID.")
+    parser.add_argument("--case", action="append", help="Select one finite reference case by ID.")
     parser.add_argument("--replay", type=Path, help="Replay a saved failure payload.")
-    parser.add_argument("--timeout", type=float, help="Cooperative time budget in seconds.")
+    parser.add_argument("--timeout", type=float, help="Time budget in seconds. A replay uses a hard subprocess deadline.")
     parser.add_argument("--workers", type=int, default=1, help="Number of independent audit areas to run concurrently.")
     parser.add_argument("--list-areas", action="store_true", help="List selectable audit areas.")
     parser.add_argument("--self-test", action="store_true")
@@ -576,6 +610,9 @@ def main():
         parser.error("--trials must be positive")
     if args.timeout is not None and not 0 < args.timeout < float("inf"):
         parser.error("--timeout must be finite and positive")
+    if args.case and len(args.case) != 1:
+        parser.error("--case must be supplied once")
+    case = args.case[0] if args.case else None
     if args.replay and (args.profile or args.area or args.case or args.self_test):
         parser.error("--replay selects its own profile, area and case")
     if args.self_test and (args.profile or args.area or args.case or args.external_oracles or args.tonal_module):
@@ -623,8 +660,11 @@ def main():
             write_report(args.json_out, report)
         print(json.dumps(report))
         return 3
-    report = run(args.seed, args.trials, areas, profile="replay" if replay else "full" if args.case else args.profile,
-                 case=args.case, timeout=args.timeout, replay=replay, workers=args.workers)
+    if replay is not None and args.timeout is not None:
+        report = replay_with_deadline(replay, args.seed, args.timeout)
+    else:
+        report = run(args.seed, args.trials, areas, profile="replay" if replay else "full" if case else args.profile,
+                     case=case, timeout=args.timeout, replay=replay, workers=args.workers)
     report.update(provenance)
     if args.external_oracles:
         from scripts import music_audit_oracles

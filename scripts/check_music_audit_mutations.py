@@ -22,6 +22,7 @@ from scripts.audit_randomized_music import ROOT, checkout_provenance, write_repo
 REGRESSIONS = "tests.test_mvve_regressions.MusicalAuditRegressions."
 STATE = "tests.test_music_audit_stateful.KeyboardStateAudit."
 HARNESS = "tests.test_music_audit_harness.MusicAuditHarnessTest."
+SEMANTICS = "tests.test_music_audit_semantics.MusicAuditSemanticWitnesses."
 
 
 @dataclass(frozen=True)
@@ -30,7 +31,7 @@ class Mutation:
     path: str
     original: str
     replacement: str
-    witness: str
+    witness: str | tuple[str, ...]
     span: tuple[int, int] | None = None
 
 
@@ -83,22 +84,44 @@ MUTATIONS = (
     Mutation("OPTIMIZED-ORACLE-BYPASS", "scripts/music_audit_references.py",
              'raise ValueError(", ".join(failures))', 'assert not failures, ", ".join(failures)',
              HARNESS + "test_optimized_self_test_rejects_mutated_fixture"),
+    Mutation("UNAPPROVED-SOURCE-RIGHTS", "src/steps/progression/reviewed.py",
+             'if source.get("rights_status") != "approved":', "if False:",
+             SEMANTICS + "test_synthetic_source_requires_rights_and_exact_identity"),
+    Mutation("ALLOW-SELF-REVIEW", "scripts/verify_musical_release.py",
+             'or author["id"] == pr["user"]["id"]', "or False",
+             "tests.test_musical_release.MusicalReleaseTest.test_github_provenance_is_tied_to_revision_and_independent_reviewer"),
 )
 
 
 GENERATED_TARGETS = {
-    "src/steps/theory/interval.py": "tests.test_theory_core.TestTheoryCoreIntervals",
-    "src/steps/theory/chord.py": HARNESS + "test_reference_profiles_exercise_the_product",
-    "src/steps/theory/scale.py": HARNESS + "test_reference_profiles_exercise_the_product",
-    "src/steps/theory/pitch.py": "tests.test_notation_contract",
-    "src/steps/theory/inversion.py": "tests.test_chord_inversion",
-    "src/steps/keyboard/recognition.py": REGRESSIONS + "test_recognition_preserves_exact_candidates_under_doubling_and_translation",
-    "src/steps/keyboard/practice.py": "tests.test_music_audit_combinations.MusicalCombinationAudit.test_practice_register_bass_and_publication_boundary",
-    "src/steps/keyboard/voice_motion.py": REGRESSIONS + "test_shared_pitch_can_move_between_paired_voices",
-    "src/steps/ports/live.py": "tests.test_music_audit_stateful.KeyboardStateAudit",
-    "src/steps/midi/smf_parser.py": "tests.test_midi_export_service",
+    "src/steps/theory/interval.py": ("tests.test_theory_core.TestTheoryCoreIntervals",
+                                    SEMANTICS + "test_compound_intervals_and_written_unison"),
+    "src/steps/theory/chord.py": (HARNESS + "test_reference_profiles_exercise_the_product",
+                                SEMANTICS + "test_export_voicing_preserves_major_third_and_perfect_fifth_where_required"),
+    "src/steps/theory/scale.py": (HARNESS + "test_reference_profiles_exercise_the_product",
+                                SEMANTICS + "test_mixolydian_profile_highlights_dominant_guide_tones"),
+    "src/steps/theory/pitch.py": ("tests.test_notation_contract",
+                                 SEMANTICS + "test_note_spelling_distinguishes_double_and_triple_alteration"),
+    "src/steps/theory/inversion.py": ("tests.test_chord_inversion",
+                                     SEMANTICS + "test_full_diminished_seventh_keeps_seventh_figures_without_root_hint"),
+    "src/steps/keyboard/recognition.py": (
+        REGRESSIONS + "test_recognition_preserves_exact_candidates_under_doubling_and_translation",
+        SEMANTICS + "test_recognition_best_supported_keeps_exact_first_and_actual_bass",
+    ),
+    "src/steps/keyboard/practice.py": (
+        "tests.test_music_audit_combinations.MusicalCombinationAudit.test_practice_register_bass_and_publication_boundary",
+        SEMANTICS + "test_practice_pilot_contract_starts_at_v1",
+    ),
+    "src/steps/keyboard/voice_motion.py": (REGRESSIONS + "test_shared_pitch_can_move_between_paired_voices",
+                                        SEMANTICS + "test_two_voices_report_semitone_whole_tone_and_similar_outer_motion"),
+    "src/steps/ports/live.py": ("tests.test_music_audit_stateful.KeyboardStateAudit",
+                               SEMANTICS + "test_virtual_input_defaults_and_close_are_repeatable"),
+    "src/steps/midi/smf_parser.py": ("tests.test_midi_export_service",
+                                    SEMANTICS + "test_empty_smf_track_duration_starts_at_zero"),
     "src/steps/midi/vlq.py": "tests.test_midi_export_service.TestVLQEncodingDecoding",
     "scripts/audit_randomized_music.py": HARNESS + "test_generator_failure_preserves_progress_and_other_areas",
+    "scripts/verify_musical_release.py": "tests.test_musical_release",
+    "src/steps/progression/reviewed.py": SEMANTICS + "test_synthetic_source_requires_rights_and_exact_identity",
 }
 
 COMPARISONS = {
@@ -141,7 +164,8 @@ def generated_mutations(snapshot, limit):
 
 def test(snapshot, witness):
     env = {key: value for key, value in os.environ.items() if key != "PYTHONPATH"}
-    return subprocess.run([sys.executable, "-B", "-m", "unittest", witness], cwd=snapshot,
+    tests = (witness,) if isinstance(witness, str) else witness
+    return subprocess.run([sys.executable, "-B", "-m", "unittest", *tests], cwd=snapshot,
                           env=env, capture_output=True, text=True, errors="replace", timeout=30,
                           creationflags=getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0))
 
@@ -187,6 +211,12 @@ def run_mutation(snapshot, mutation, baselines):
             result["status"] = "DETECTED"
         else:
             result["status"] = "EXECUTION_ERROR"
+            result["exit_code"] = mutated.returncode
+            result["test_errors"] = [
+                line.removeprefix("ERROR: ").strip()
+                for line in mutated.stderr.splitlines()
+                if line.startswith("ERROR: ")
+            ]
     except subprocess.TimeoutExpired:
         result.update(status="TIMEOUT", phase=phase)
     finally:
@@ -211,6 +241,9 @@ def main():
             (snapshot / directory).mkdir()
             for file in (ROOT / directory).glob("*.py"):
                 shutil.copyfile(file, snapshot / directory / file.name)
+        benchmark = Path("knowledge/benchmark/cases.json")
+        (snapshot / benchmark.parent).mkdir(parents=True)
+        shutil.copyfile(ROOT / benchmark, snapshot / benchmark)
         generated = list(generated_mutations(snapshot, args.generated_per_module))
         baselines = {}
         results = [run_mutation(snapshot, mutation, baselines) for mutation in (*MUTATIONS, *generated)]

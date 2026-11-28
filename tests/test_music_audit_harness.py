@@ -61,6 +61,24 @@ class MusicAuditHarnessTest(unittest.TestCase):
         self.assertEqual(report["gate"], "ERROR")
         self.assertEqual(row["replay"]["payload"]["input"], {"midi": 60})
 
+    def test_hard_deadline_terminates_replay_and_preserves_input(self):
+        case_id, question, expected = next(audit.references.cases("pitch", "smoke", 1))
+        payload = audit.case_payload("pitch", case_id, question, expected)
+        stopped = audit.replay_with_deadline(payload, 1, 0.000001)
+        self.assertEqual(stopped["gate"], "ERROR")
+        self.assertEqual(stopped["areas"]["pitch"]["timeout"], 1)
+        self.assertEqual(stopped["failures"][0]["replay"]["payload"], payload)
+        completed = audit.replay_with_deadline(payload, 1, 15)
+        self.assertEqual(completed["gate"], "PASS")
+        self.assertEqual(completed["deadline_mode"], "subprocess")
+
+    def test_multiple_case_flags_do_not_discard_unknown_selector(self):
+        result = subprocess.run([sys.executable, "-B", str(Path(audit.__file__)),
+                                 "--case", "UNKNOWN", "--case", "PITCH-060"],
+                                cwd=audit.ROOT, capture_output=True, timeout=15)
+        self.assertEqual(result.returncode, 2)
+        self.assertIn(b"--case must be supplied once", result.stderr)
+
     def test_replay_uses_saved_payload_and_rejects_tampering(self):
         with patch.object(audit, "observe_reference", return_value=[]):
             report = audit.run(1, 1, ("pitch",), case="PITCH-060")

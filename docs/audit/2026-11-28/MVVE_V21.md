@@ -65,3 +65,11 @@ python -B scripts/verify_musical_release.py --area all --json-out release.json
 ```
 
 Use supported Python with PyYAML for full discovery and the pinned Hypothesis test wheel for generative checks. Choose an output directory outside the clean checkout. An enforced release exit of 1 is expected while mandatory evidence remains open. The comparison and all artifacts are local. No repository settings changed, and publication and merge remain pending.
+
+## Follow-up after the first V2.1 audit
+
+The original 48-site mutation sample now has broader witnesses for interval construction, spelling bounds, diminished-seventh figures, candidate order, voicing, practice defaults, live-port commands and empty tracks. It changed from 18 to 33 detections. The original 16 curated cases still pass. The expanded sample adds eight sites covering provenance and release checks. The expanded 56 generated cases produced 34 detections, 13 survivors and nine execution errors. The 18 curated cases include simulated denial of publication for an unapproved source and rejection of a submitter reviewing their own change. Their tests use synthetic evidence and local fixtures. [Witnesses](../../../tests/test_music_audit_semantics.py) · [Mutation runner](../../../scripts/check_music_audit_mutations.py)
+
+Each theory oracle also checks the ordered pitch classes and written spellings of seven diatonic modes across 12 roots. The expanded total for each is 264 comparisons, with 252 agreements and the same 12 declared chord-profile differences. The Mido total remains 18 agreements.
+
+For a saved failure, `--replay FILE --timeout SECONDS` now isolates the single reproduction in a child process. If the process hangs, the parent stops it and emits the original replay payload with a TIMEOUT result. Broad audit profiles still use their cooperative time budget and the workflow job timeout. A repeated `--case` flag is rejected instead of letting an invalid selection disappear behind a later input. [Negative tests](../../../tests/test_music_audit_harness.py)
