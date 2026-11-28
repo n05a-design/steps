@@ -31,6 +31,7 @@ from src.steps.midi import (
     decode_vlq,
     encode_vlq,
 )
+from src.steps.models.swing import SwingEngine, SwingSubdivision
 from src.steps.storage.project_io import Project
 from src.steps.theory.chord import parse_chord
 from src.steps.theory.exceptions import ChordConstructionError, MusicTheoryError
@@ -262,6 +263,45 @@ class TestSMFGenerationAndEnvelope(unittest.TestCase):
         self.assertEqual(env["format"], 1)
         self.assertEqual(env["tracks"], 2)  # Conductor + Chords track
         self.assertEqual(env["division"], 480)
+
+    def test_project_export_preserves_swing_melody_drums_and_timing_in_both_formats(self):
+        swing = SwingEngine(ppq=480, subdivision=SwingSubdivision.EIGHTH, swing_ratio=2)
+
+        def note(tick, pitch, duration):
+            return {"start_tick": tick, "duration_ticks": duration, "payload": pitch}
+
+        project = Project(
+            title="Synthetic arrangement",
+            time_settings={
+                "ppq": 480, "time_signature": {"numerator": 3, "denominator": 4},
+                "tempo_points": [{"start_tick": 0, "bpm": 120}, {"start_tick": 960, "bpm": 100}],
+            },
+            tracks=[
+                {"name": "Harmony", "track_type": "CHORDS", "channel": 0,
+                 "events": [note(0, "C", 960)]},
+                {"name": "Melody", "track_type": "MELODY", "channel": 2,
+                 "events": [note(0, 72, 120), note(swing.apply_to_tick(240), 74, 120),
+                            note(480, 76, 120)]},
+                {"name": "Drums", "track_type": "DRUMS", "channel": 9,
+                 "events": [note(0, 36, 60), note(swing.apply_to_tick(240), 42, 60),
+                            note(480, 38, 60)]},
+            ],
+        )
+        for smf_format in (0, 1):
+            with self.subTest(smf_format=smf_format):
+                path = MidiExportService.export_project_to_smf(project, self.midi_path, smf_format)
+                result = SMFParser.parse(path.read_bytes())
+                self.assertEqual((result.format, result.division, result.num_tracks),
+                                 (smf_format, 480, 1 if smf_format == 0 else 4))
+                self.assertEqual([(n.start_tick, n.pitch, n.duration_ticks)
+                                  for n in result.all_notes if n.channel == 2],
+                                 [(0, 72, 120), (320, 74, 120), (480, 76, 120)])
+                self.assertEqual([(n.start_tick, n.pitch, n.duration_ticks)
+                                  for n in result.all_notes if n.channel == 9],
+                                 [(0, 36, 60), (320, 42, 60), (480, 38, 60)])
+                self.assertEqual({n.pitch % 12 for n in result.all_notes if n.channel == 0}, {0, 4, 7})
+                self.assertEqual(result.time_signatures, [(0, 3, 4)])
+                self.assertEqual(result.tempos, [(0, 120.0), (960, 100.0)])
 
     def test_invalid_chord_payload_fails_project_export(self):
         project = Project(
