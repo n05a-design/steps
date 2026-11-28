@@ -10,10 +10,12 @@ Handles:
 
 from __future__ import annotations
 
+import errno
 import json
 import os
 import time
 import uuid
+from contextlib import contextmanager
 from copy import deepcopy
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
@@ -138,52 +140,90 @@ def _lock_owner_is_running(pid: object) -> bool:
     return True
 
 
+@contextmanager
+def _project_lock_update(path: Path):
+    """Serialize metadata updates on a stable inode, including after crashes."""
+    # Keep the sidecar when closing it. Removing it would let POSIX contenders
+    # lock two different inodes while they believe they hold the same guard.
+    with path.open("ab") as guard:
+        if os.name == "nt":
+            from msvcrt import LK_NBLCK, locking
+
+            def try_lock():
+                guard.seek(0)
+                locking(guard.fileno(), LK_NBLCK, 1)
+        else:
+            from fcntl import LOCK_EX, LOCK_NB, flock
+
+            def try_lock():
+                flock(guard.fileno(), LOCK_EX | LOCK_NB)
+
+        deadline = time.monotonic() + 1
+        while True:
+            try:
+                try_lock()
+            except OSError as exc:
+                if exc.errno not in (errno.EACCES, errno.EAGAIN, errno.EDEADLK):
+                    raise
+                if time.monotonic() >= deadline:
+                    raise LockCollisionError(f"Project is locked: {path.name}.") from exc
+                time.sleep(0.01)
+            else:
+                break
+        yield
+
+
 class ProjectLock:
-    """
-    Manages a lockfile (<path>.lock) to prevent concurrent writes from
-    multiple running instances.
-    """
+    """Use a PID and expiry for compatibility, with token-checked release."""
+
     def __init__(self, project_path: Path | str, timeout_seconds: float = 3600.0):
         self.project_path = Path(project_path)
         self.lock_path = self.project_path.parent / f".{self.project_path.name}.lock"
+        self._guard_path = self.lock_path.with_suffix(".lock.guard")
         self.timeout_seconds = timeout_seconds
-        self._acquired = False
+        self._token: str | None = None
+
+    def _read_lock(self) -> dict:
+        try:
+            info = json.loads(self.lock_path.read_text(encoding="utf-8"))
+        except (FileNotFoundError, UnicodeDecodeError, json.JSONDecodeError):
+            return {}
+        return info if isinstance(info, dict) else {}
 
     def acquire(self) -> None:
-        """Acquires lock. Raises LockCollisionError if active lock exists."""
-        if self.lock_path.exists():
-            try:
-                info = json.loads(self.lock_path.read_text(encoding="utf-8"))
-                lock_time = info.get("timestamp", 0)
-                pid = info.get("pid", 0)
-
-                # Check if lock is stale (older than timeout)
-                if (time.time() - lock_time) < self.timeout_seconds and _lock_owner_is_running(pid):
-                    raise LockCollisionError(
-                        f"Project is locked by another running process (PID {pid}, locked at {info.get('time_iso')})."
-                    )
-            except (json.JSONDecodeError, OSError):
-                pass  # Corrupted or unreadable lock is treated as stale
-
-        # Write fresh lock
+        """Acquire the lock or raise LockCollisionError while an owner is active."""
         self.lock_path.parent.mkdir(parents=True, exist_ok=True)
-        lock_info = {
-            "pid": os.getpid(),
-            "timestamp": time.time(),
-            "time_iso": datetime.now(timezone.utc).isoformat(),
-            "project": str(self.project_path)
-        }
-        self.lock_path.write_text(json.dumps(lock_info, indent=2), encoding="utf-8")
-        self._acquired = True
+        with _project_lock_update(self._guard_path):
+            info = self._read_lock()
+            lock_time = info.get("timestamp")
+            pid = info.get("pid")
+            if (type(lock_time) in (int, float) and time.time() - lock_time < self.timeout_seconds
+                    and _lock_owner_is_running(pid)):
+                raise LockCollisionError(
+                    f"Project is locked by another running process (PID {pid}, locked at {info.get('time_iso')})."
+                )
+            token = uuid.uuid4().hex
+            self.lock_path.write_text(json.dumps({
+                "pid": os.getpid(),
+                "timestamp": time.time(),
+                "time_iso": datetime.now(timezone.utc).isoformat(),
+                "project": str(self.project_path),
+                "token": token,
+            }, indent=2), encoding="utf-8")
+            self._token = token
 
     def release(self) -> None:
-        """Releases the lock file."""
-        if self.lock_path.exists():
-            try:
-                self.lock_path.unlink()
-            except OSError:
-                pass
-        self._acquired = False
+        """Release only the lock acquired by this instance."""
+        if self._token is None:
+            return
+        try:
+            with _project_lock_update(self._guard_path):
+                if self._read_lock().get("token") == self._token:
+                    self.lock_path.unlink(missing_ok=True)
+        except FileNotFoundError:
+            # The project directory can disappear before deferred cleanup.
+            pass
+        self._token = None
 
     def __enter__(self) -> ProjectLock:
         self.acquire()

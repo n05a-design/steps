@@ -3,9 +3,11 @@
 from contextlib import redirect_stderr
 from datetime import datetime, timezone
 from io import StringIO
+from pathlib import Path
 import json
 import os
-from subprocess import CompletedProcess
+from subprocess import CompletedProcess, run
+import sys
 import unittest
 from unittest.mock import patch
 
@@ -128,6 +130,30 @@ class MusicalReleaseTest(unittest.TestCase):
             self.assertNotIn("GIT_WORK_TREE", call.kwargs["env"])
             self.assertNotIn("GIT_CONFIG_COUNT", call.kwargs["env"])
             self.assertNotIn("GIT_CONFIG_VALUE_0", call.kwargs["env"])
+
+    @unittest.skipUnless(os.name == "nt", "Windows Git empty environment value semantics")
+    def test_child_process_keeps_empty_and_missing_git_values_distinct(self):
+        code = """
+import json, os, subprocess
+from scripts import verify_musical_release as gate
+before = dict(os.environ)
+clean = gate.checkout_environment()
+command = ["git", "config", "--get", "core.hooksPath"]
+original = subprocess.run(command, env=before, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+print(json.dumps([before.get("GIT_CONFIG_VALUE_0"), os.environ.get("GIT_CONFIG_VALUE_0"),
+                  "GIT_CONFIG_VALUE_0" in clean, before == dict(os.environ), original.returncode]))
+"""
+        env = {**gate.checkout_environment(), "GIT_CONFIG_COUNT": "1", "GIT_CONFIG_KEY_0": "core.hooksPath",
+               "GIT_CONFIG_VALUE_0": ""}
+        for present in (True, False):
+            if not present:
+                del env["GIT_CONFIG_VALUE_0"]
+            child = run([sys.executable, "-B", "-c", code], cwd=Path(__file__).resolve().parents[1], env=env, check=True,
+                        capture_output=True, text=True, timeout=10)
+            value, after, cleaned, identical, exit_code = json.loads(child.stdout)
+            expected = "" if present else None
+            self.assertEqual((value, after, cleaned, identical), (expected, expected, False, True))
+            self.assertEqual(exit_code, 0 if present else 128)
 
     def test_release_checkout_state_rejects_an_enclosing_git_repository(self):
         with patch.object(gate.subprocess, "check_output", return_value=str(gate.ROOT.parent)):

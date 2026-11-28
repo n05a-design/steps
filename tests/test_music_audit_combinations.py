@@ -92,3 +92,31 @@ class MusicalCombinationAudit(unittest.TestCase):
                 events = SMFParser.parse(midi.read_bytes()).all_notes
                 self.assertEqual([(n.start_tick, n.pitch, n.duration_ticks) for n in events if n.channel == 1],
                                  [(i * 480, 36 + (pitch + interval) % 12, 470) for i, pitch in enumerate(bass)])
+
+    def test_cadence_recontextualization_undo_redo_save_and_multitrack_export(self):
+        # C is a subdominant in G. D7 then G closes that explicitly selected
+        # context. The same last chord is a dominant when analyzed in C.
+        chords = ["C", "D7", "G"]
+        session = ProgressionSession(chords, key_root="C", convention="INT")
+        for index, start in enumerate((0, 480, 1200)):
+            session.set_chord_event_timing(index, start, 360)
+        self.assertEqual(session.harmonic_degree_at(2), "V")
+        session.set_key("G")
+        self.assertEqual(tuple(session.harmonic_degree_at(i) for i in range(3)), ("IV", "V7", "I"))
+        session.undo()
+        self.assertEqual((session.key_root, session.harmonic_degree_at(2)), ("C", "V"))
+        session.redo()
+        self.assertEqual((session.key_root, session.harmonic_degree_at(2)), ("G", "I"))
+        with TemporaryDirectory() as folder:
+            folder = Path(folder)
+            project = session.save_to_file(folder / "cadence.steps")
+            restored = ProgressionSession(["Am"], key_root="A", convention="INT")
+            restored.load_from_file(project)
+            self.assertEqual((restored.key_root, restored.chords), ("G", chords))
+            parsed = SMFParser.parse(restored.export_midi_file(folder / "cadence.mid").read_bytes())
+        self.assertGreaterEqual(parsed.num_tracks, 3)
+        self.assertEqual([(n.start_tick, n.pitch, n.duration_ticks) for n in parsed.all_notes if n.channel == 1],
+                         [(0, 36, 350), (480, 38, 350), (1200, 43, 350)])
+        for start, expected in ((0, {0, 4, 7}), (480, {0, 2, 6, 9}), (1200, {2, 7, 11})):
+            self.assertEqual({n.pitch % 12 for n in parsed.all_notes if n.channel == 0 and n.start_tick == start},
+                             expected)

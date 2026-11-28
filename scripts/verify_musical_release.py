@@ -48,7 +48,8 @@ AREAS = {
     ),
     "musical-integration": (
         ("test_keyboard_engine.TestWorkbenchSessionIntegration", "test_storage_recovery_io",
-         COMBINATION_TEST + "test_transposed_applied_and_borrowed_progression_reaches_export"),
+         COMBINATION_TEST + "test_transposed_applied_and_borrowed_progression_reaches_export",
+         COMBINATION_TEST + "test_cadence_recontextualization_undo_redo_save_and_multitrack_export"),
         ("Verify recognition, explicit adoption, preview isolation, project recovery and exported output.",),
     ),
     "midi-export": (

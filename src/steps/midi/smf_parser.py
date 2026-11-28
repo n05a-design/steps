@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import math
 import struct
+from collections import deque
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
 
@@ -198,7 +199,7 @@ class SMFParser:
         track_name = ""
 
         # Open Note-Ons awaiting Note-Off: map (channel, pitch) -> list of (start_tick, velocity)
-        open_notes: Dict[Tuple[int, int], List[Tuple[int, int]]] = {}
+        open_notes: Dict[Tuple[int, int], deque[Tuple[int, int]]] = {}
         paired_notes: List[ParsedMidiNote] = []
 
         while pos < len(data):
@@ -238,6 +239,8 @@ class SMFParser:
                 if meta_type == 0x03:  # Track Name
                     track_name = meta_data.decode("utf-8", errors="replace")
                 elif meta_type == 0x2F:  # End of Track
+                    if meta_len != 0 or pos != len(data):
+                        raise MidiParseError("End of Track must have an empty payload and be the final event.")
                     running_status = None
                     break
 
@@ -362,11 +365,11 @@ class SMFParser:
         pitch: int,
         velocity: int,
         tick: int,
-        open_notes: Dict[Tuple[int, int], List[Tuple[int, int]]],
+        open_notes: Dict[Tuple[int, int], deque[Tuple[int, int]]],
     ) -> None:
         key = (channel, pitch)
         if key not in open_notes:
-            open_notes[key] = []
+            open_notes[key] = deque()
         open_notes[key].append((tick, velocity))
 
     @staticmethod
@@ -374,13 +377,13 @@ class SMFParser:
         channel: int,
         pitch: int,
         tick: int,
-        open_notes: Dict[Tuple[int, int], List[Tuple[int, int]]],
+        open_notes: Dict[Tuple[int, int], deque[Tuple[int, int]]],
         paired_notes: List[ParsedMidiNote],
     ) -> None:
         key = (channel, pitch)
         if key in open_notes and open_notes[key]:
             # Pair with earliest Note-On (FIFO)
-            start_tick, vel = open_notes[key].pop(0)
+            start_tick, vel = open_notes[key].popleft()
             dur = max(1, tick - start_tick)
             paired_notes.append(ParsedMidiNote(
                 start_tick=start_tick,

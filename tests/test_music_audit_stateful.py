@@ -83,10 +83,12 @@ class KeyboardStateAudit(unittest.TestCase):
             for note in (0, 60, 127):
                 for velocity in (0, 1, 127):
                     event = normalize_midi_message(0x90 + channel, note, velocity)
+                    self.assertIsNotNone(event)
                     self.assertEqual((event.kind.value, event.note, event.channel, event.velocity),
                                      ("NOTE_ON" if velocity else "NOTE_OFF", note, channel, velocity))
             for value in (63, 64):
                 event = normalize_midi_message(0xB0 + channel, 64, value)
+                self.assertIsNotNone(event)
                 self.assertEqual((event.kind.value, event.channel, event.value), ("SUSTAIN", channel, value))
 
 
@@ -177,6 +179,31 @@ class SMFTrackAudit(unittest.TestCase):
             with self.subTest(track=raw), self.assertRaises(MidiParseError):
                 SMFParser.parse(framed_track(bytes.fromhex(raw)))
 
+    def test_eot_sysex_and_unsupported_timebase_are_distinct(self):
+        good = bytes.fromhex("00 f0 03 01 02 f7 00 ff 58 04 03 03 18 08 00 ff 2f 00")
+        result = SMFParser.parse(framed_track(good))
+        self.assertEqual(result.time_signatures, [(0, 3, 8)])
+        self.assertEqual(result.tracks[0].events[0].raw_bytes, bytes.fromhex("f0 03 01 02 f7"))
+        for bad in ("00 f0 03 01", "00 ff 2f 01 00", "00 ff 2f 00 00 90 3c 40"):
+            with self.subTest(payload=bad), self.assertRaises(MidiParseError):
+                SMFParser.parse(framed_track(bytes.fromhex(bad)))
+        full = framed_track(good)
+        for variant, message in (
+            (full[:8] + bytes.fromhex("0002") + full[10:], "Unsupported SMF format 2"),
+            (full[:12] + bytes.fromhex("e728") + full[14:], "SMPTE division format"),
+        ):
+            with self.assertRaisesRegex(MidiParseError, message):
+                SMFParser.parse(variant)
+
+    def test_overlap_pairs_fifo_on_each_channel_at_scale(self):
+        count = 4000
+        repeated = bytes.fromhex("01 90 3c 64") * count
+        released = bytes.fromhex("01 90 3c 00") * count
+        result = SMFParser.parse(framed_track(repeated + released + bytes.fromhex("00 ff 2f 00")))
+        self.assertEqual(len(result.all_notes), count)
+        self.assertEqual([note.start_tick for note in result.all_notes], list(range(1, count + 1)))
+        self.assertEqual({note.duration_ticks for note in result.all_notes}, {count})
+
     def test_valid_running_status_is_preserved(self):
         result = SMFParser.parse(framed_track(bytes.fromhex("00 9f 7f 7f 01 7f 00 00 ff 2f 00")))
         self.assertEqual(
@@ -212,6 +239,23 @@ class HypothesisMusicAudit(unittest.TestCase):
             self.assertTrue(all(byte >= 128 for byte in encoded[:-1]))
             self.assertLess(encoded[-1], 128)
             self.assertEqual(sum(byte % 128 * 128 ** power for power, byte in enumerate(reversed(encoded))), value)
+
+        @settings(max_examples=100, derandomize=True)
+        @given(st.integers(0, 15), st.integers(0, 127), st.integers(1, 127),
+               st.sampled_from((1, 127, 128, 16383, 16384, 2097151, 2097152, 268435455)))
+        def test_structured_smf_and_truncated_track(self, channel, pitch, velocity, ticks):
+            groups = (ticks.bit_length() + 6) // 7
+            delta = bytes(((ticks >> shift) & 127) | (128 if shift else 0)
+                          for shift in range((groups - 1) * 7, -1, -7))
+            body = (bytes((0, 0x90 + channel, pitch, velocity)) + delta + bytes((pitch, 0))
+                    + bytes.fromhex("00 ff 2f 00"))
+            complete = framed_track(body)
+            result = SMFParser.parse(complete)
+            self.assertEqual([(n.channel, n.pitch, n.velocity, n.start_tick, n.duration_ticks)
+                              for n in result.all_notes], [(channel, pitch, velocity, 0, ticks)])
+            for damaged in (complete[:-1], framed_track(body[:4] + bytes.fromhex("81 80 80 80 00"))):
+                with self.assertRaises(MidiParseError):
+                    SMFParser.parse(damaged)
 
         @settings(max_examples=200, derandomize=True)
         @given(st.binary(max_size=48))

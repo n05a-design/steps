@@ -124,7 +124,7 @@ process.stdout.write(JSON.stringify({
 def mido_rows():
     require_version("mido", MIDO_VERSION)
     from mido import Message, MetaMessage, MidiFile, MidiTrack
-    from src.steps.midi import SMFParser
+    from src.steps.midi import SMFParser, decode_vlq
     from src.steps.progression import ProgressionSession
 
     def from_mido(file):
@@ -135,7 +135,12 @@ def mido_rows():
             for event in track:
                 tick += event.time
                 if event.type in ("note_on", "note_off"):
-                    events.append([tick, event.type, event.channel, event.note, event.velocity])
+                    kind = "note_off" if event.type == "note_on" and event.velocity == 0 else event.type
+                    events.append([tick, kind, event.channel, event.note, event.velocity])
+                elif event.type == "sysex":
+                    events.append([tick, "sysex", list(event.data)])
+                elif event.type == "end_of_track":
+                    events.append([tick, "end_of_track"])
                 elif event.type == "set_tempo":
                     events.append([tick, "tempo", event.tempo])
                 elif event.type == "time_signature":
@@ -151,6 +156,12 @@ def mido_rows():
             for event in track.events:
                 if event.event_type in ("note_on", "note_off"):
                     events.append([event.abs_tick, event.event_type, event.channel, event.data1, event.data2])
+                elif event.event_type == "sysex":
+                    size, consumed = decode_vlq(event.raw_bytes, 1)
+                    data = event.raw_bytes[1 + consumed:1 + consumed + size]
+                    events.append([event.abs_tick, "sysex", list(data.removesuffix(b"\xf7"))])
+                elif event.meta_type == 0x2F:
+                    events.append([event.abs_tick, "end_of_track"])
                 elif event.meta_type == 0x51:
                     events.append([event.abs_tick, "tempo", int.from_bytes(event.meta_data, "big")])
                 elif event.meta_type == 0x58:
@@ -185,6 +196,7 @@ def mido_rows():
             MetaMessage("set_tempo", tempo=500000),
             MetaMessage("set_tempo", tempo=750000, time=ppq),
             MetaMessage("time_signature", numerator=7, denominator=8, time=ppq),
+            MetaMessage("end_of_track"),
         ])
         streams = [MidiTrack([
             MetaMessage("track_name", name=f"Channel {channel + 1}"),
@@ -192,12 +204,26 @@ def mido_rows():
             Message("note_on", channel=channel, note=60, velocity=85, time=128),
             Message("note_off", channel=channel, note=60, velocity=64, time=128),
             Message("note_off", channel=channel, note=60, velocity=0, time=16384),
+            MetaMessage("end_of_track"),
         ]) for channel in channels]
         source = MidiFile(type=1, ticks_per_beat=ppq, tracks=[conductor, *streams])
         stream = BytesIO()
         source.save(file=stream)
         rows.append({"input": {"writer": "mido", "ppq": ppq, "channels": channels},
                      "external": from_mido(source), "steps": from_steps(stream.getvalue())})
+    for gap in (1 << 21, (1 << 28) - 1):
+        track = MidiTrack([
+            MetaMessage("track_name", name="VLQ boundaries"),
+            Message("note_on", channel=15, note=127, velocity=127),
+            Message("note_on", channel=15, note=127, velocity=0, time=gap),
+            Message("sysex", data=(0x7D, 0x01, 0x02), time=128),
+            MetaMessage("end_of_track", time=127),
+        ])
+        output = BytesIO()
+        source = MidiFile(type=0, ticks_per_beat=960, tracks=[track])
+        source.save(file=output)
+        rows.append({"input": {"writer": "mido", "gap": gap},
+                     "external": from_mido(source), "steps": from_steps(output.getvalue())})
     return rows
 
 
@@ -205,7 +231,7 @@ def run(tonal_module: Path | None):
     theory_cases = len(chord_cases()) + len(scale_cases())
     specs = [
         ("music21", MUSIC21_VERSION, music21_rows, theory_cases),
-        ("mido", MIDO_VERSION, mido_rows, 18),
+        ("mido", MIDO_VERSION, mido_rows, 20),
     ]
     results = {}
     if tonal_module is not None:

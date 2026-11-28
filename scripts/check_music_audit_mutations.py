@@ -4,7 +4,8 @@ import argparse
 import ast
 from collections import Counter
 from copy import copy
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
+from difflib import SequenceMatcher
 import json
 import os
 from pathlib import Path
@@ -23,6 +24,7 @@ REGRESSIONS = "tests.test_mvve_regressions.MusicalAuditRegressions."
 STATE = "tests.test_music_audit_stateful.KeyboardStateAudit."
 HARNESS = "tests.test_music_audit_harness.MusicAuditHarnessTest."
 SEMANTICS = "tests.test_music_audit_semantics.MusicAuditSemanticWitnesses."
+V21_REVISION = "41acc91a11e56cb66291fbf2bb064654d44ab7b4"
 
 
 @dataclass(frozen=True)
@@ -123,9 +125,12 @@ GENERATED_TARGETS = {
                                     SEMANTICS + "test_empty_smf_track_duration_starts_at_zero",
                                     "tests.test_music_audit_stateful.SMFTrackAudit"),
     "src/steps/midi/vlq.py": "tests.test_midi_export_service.TestVLQEncodingDecoding",
-    "scripts/audit_randomized_music.py": HARNESS + "test_generator_failure_preserves_progress_and_other_areas",
-    "scripts/verify_musical_release.py": "tests.test_musical_release",
-    "src/steps/progression/reviewed.py": SEMANTICS + "test_synthetic_source_requires_rights_and_exact_identity",
+    "scripts/audit_randomized_music.py": (HARNESS + "test_generator_failure_preserves_progress_and_other_areas",
+                                          SEMANTICS + "test_audit_checkout_and_generated_musical_domains"),
+    "scripts/verify_musical_release.py": ("tests.test_musical_release",
+                                          SEMANTICS + "test_release_defaults_point_to_the_project"),
+    "src/steps/progression/reviewed.py": (SEMANTICS + "test_synthetic_source_requires_rights_and_exact_identity",
+                                          "tests.test_music_audit_semantics.PublicationBoundaryWitnesses"),
 }
 
 COMPARISONS = {
@@ -134,10 +139,13 @@ COMPARISONS = {
 }
 
 
-def generated_mutations(snapshot, limit):
+def generated_mutations(snapshot, limit, revision=None):
     """Sample distinct AST sites across each named file in source order."""
     for path, witness in GENERATED_TARGETS.items():
-        source = (snapshot / path).read_text(encoding="utf-8")
+        current = (snapshot / path).read_text(encoding="utf-8")
+        source = current if revision is None else subprocess.check_output(
+            ["git", "show", f"{revision}:{path}"], cwd=ROOT,
+        ).decode("utf-8").replace("\r\n", "\n")
         encoded = source.encode()
         offsets = [0]
         for line in encoded.splitlines(keepends=True):
@@ -163,13 +171,68 @@ def generated_mutations(snapshot, limit):
         candidates.sort(key=lambda item: item.span)
         count = min(limit, len(candidates))
         for index in range(count):
-            yield candidates[index * len(candidates) // count]
+            mutation = candidates[index * len(candidates) // count]
+            if revision is not None:
+                mutation = relocate(mutation, source, current)
+            yield mutation
 
 
-def test(snapshot, witness):
+def relocate(mutation, source, current):
+    """Map a historic byte span through unchanged lines, rejecting changed sites."""
+    before, after = source.encode().splitlines(keepends=True), current.encode().splitlines(keepends=True)
+    begin, end = mutation.span
+    for old, new, count in SequenceMatcher(None, before, after, autojunk=False).get_matching_blocks():
+        base = sum(map(len, before[:old]))
+        if base <= begin < end <= base + sum(map(len, before[old:old + count])):
+            delta = sum(map(len, after[:new])) - base
+            return replace(mutation, span=(begin + delta, end + delta))
+    return replace(mutation, span=(-1, -1))
+
+
+# Each error is classified from the actual traceback. Import and loader failures
+# remain visible even if a mutable source file appears on their stack.
+WITNESS_RUNNER = """
+import json, pathlib, sys, traceback, unittest
+target = pathlib.Path(sys.argv[1]).resolve()
+
+class Result(unittest.TextTestResult):
+    def addError(self, test, error):
+        self.record_error(error)
+        super().addError(test, error)
+
+    def addSubTest(self, test, subtest, error):
+        if error is not None and not issubclass(error[0], test.failureException):
+            self.record_error(error)
+        super().addSubTest(test, subtest, error)
+
+    @staticmethod
+    def record_error(error, loading=False):
+        kind, exc, trace = error
+        touches_target = any(pathlib.Path(frame.filename).resolve() == target
+                             for frame in traceback.extract_tb(trace))
+        print("MVVE_EXCEPTION " + json.dumps({
+            "type": kind.__name__, "message": str(exc),
+            "classification": "IMPORT_ERROR" if isinstance(exc, ImportError)
+                else ("PRODUCT_LOAD_EXCEPTION" if loading else "PRODUCT_EXCEPTION") if touches_target
+                else "INFRASTRUCTURE_ERROR",
+        }))
+
+try:
+    suite = unittest.defaultTestLoader.loadTestsFromNames(sys.argv[2:])
+except Exception:
+    Result.record_error(sys.exc_info(), loading=True)
+    sys.exit(2)
+result = unittest.TextTestRunner(resultclass=Result).run(suite)
+print("MVVE_OUTCOME " + json.dumps({"runs": result.testsRun, "failures": len(result.failures),
+                                   "errors": len(result.errors), "skips": len(result.skipped)}))
+sys.exit(not result.wasSuccessful())
+"""
+
+
+def test(snapshot, witness, target):
     env = {key: value for key, value in os.environ.items() if key != "PYTHONPATH"}
     tests = (witness,) if isinstance(witness, str) else witness
-    return subprocess.run([sys.executable, "-B", "-m", "unittest", *tests], cwd=snapshot,
+    return subprocess.run([sys.executable, "-B", "-c", WITNESS_RUNNER, target, *tests], cwd=snapshot,
                           env=env, capture_output=True, text=True, errors="replace", timeout=30,
                           creationflags=getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0))
 
@@ -182,13 +245,13 @@ def run_mutation(snapshot, mutation, baselines):
     source_path = snapshot / mutation.path
     original_bytes = source_path.read_bytes()
     original = original_bytes.decode().replace("\r\n", "\n")
-    if mutation.original not in original:
+    if mutation.span == (-1, -1) or mutation.original not in original:
         result["status"] = "NOT_APPLICABLE"
         return result
     phase = "baseline"
     try:
         if mutation.witness not in baselines:
-            baselines[mutation.witness] = test(snapshot, mutation.witness).returncode
+            baselines[mutation.witness] = test(snapshot, mutation.witness, mutation.path).returncode
         if baselines[mutation.witness]:
             result["status"] = "BASELINE_ERROR"
             return result
@@ -208,19 +271,34 @@ def run_mutation(snapshot, mutation, baselines):
             result["status"] = "AST_EQUIVALENT"
             return result
         source_path.write_text(changed, encoding="utf-8")
-        mutated = test(snapshot, mutation.witness)
-        if mutated.returncode == 0:
-            result["status"] = "SURVIVED"
-        elif "FAIL:" in mutated.stderr and "ERROR:" not in mutated.stderr:
-            result["status"] = "DETECTED"
+        mutated = test(snapshot, mutation.witness, mutation.path)
+        outcomes = [json.loads(line.partition(" ")[2]) for line in mutated.stdout.splitlines()
+                    if line.startswith("MVVE_OUTCOME ")]
+        exceptions = [json.loads(line.partition(" ")[2]) for line in mutated.stdout.splitlines()
+                      if line.startswith("MVVE_EXCEPTION ")]
+        result["exit_code"] = mutated.returncode
+        if exceptions:
+            result["exceptions"] = exceptions
+        if len(exceptions) == 1 and exceptions[0]["classification"] == "PRODUCT_LOAD_EXCEPTION" and not outcomes:
+            result["status"] = "PRODUCT_LOAD_EXCEPTION"
+        elif len(outcomes) != 1 or outcomes[0]["runs"] <= outcomes[0]["skips"]:
+            result.update(status="INFRASTRUCTURE_ERROR", diagnostic=mutated.stderr[-4000:])
         else:
-            result["status"] = "EXECUTION_ERROR"
-            result["exit_code"] = mutated.returncode
-            result["test_errors"] = [
-                line.removeprefix("ERROR: ").strip()
-                for line in mutated.stderr.splitlines()
-                if line.startswith("ERROR: ")
-            ]
+            outcome = outcomes[0]
+            result["witness_result"] = outcome
+            error_kinds = {row["classification"] for row in exceptions}
+            if "IMPORT_ERROR" in error_kinds:
+                result["status"] = "IMPORT_ERROR"
+            elif outcome["errors"] != len(exceptions) or error_kinds - {"PRODUCT_EXCEPTION"}:
+                result["status"] = "INFRASTRUCTURE_ERROR"
+            elif exceptions:
+                result["status"] = "PRODUCT_EXCEPTION"
+            elif outcome["failures"]:
+                result["status"] = "DETECTED"
+            elif mutated.returncode == 0:
+                result["status"] = "SURVIVED"
+            else:
+                result["status"] = "INFRASTRUCTURE_ERROR"
     except subprocess.TimeoutExpired:
         result.update(status="TIMEOUT", phase=phase)
     finally:
@@ -232,7 +310,9 @@ def run_mutation(snapshot, mutation, baselines):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--json-out", type=Path)
-    parser.add_argument("--generated-per-module", type=int, default=0)
+    selection = parser.add_mutually_exclusive_group()
+    selection.add_argument("--generated-per-module", type=int, default=0)
+    selection.add_argument("--replay-v21", action="store_true")
     args = parser.parse_args()
     if not 0 <= args.generated_per_module <= 25:
         parser.error("--generated-per-module must be between 0 and 25")
@@ -245,18 +325,20 @@ def main():
             (snapshot / directory).mkdir()
             for file in (ROOT / directory).glob("*.py"):
                 shutil.copyfile(file, snapshot / directory / file.name)
-        benchmark = Path("knowledge/benchmark/cases.json")
-        (snapshot / benchmark.parent).mkdir(parents=True)
-        shutil.copyfile(ROOT / benchmark, snapshot / benchmark)
-        generated = list(generated_mutations(snapshot, args.generated_per_module))
+        for source in ("knowledge/benchmark/cases.json", "knowledge/sources/registry.yaml", "pyproject.toml"):
+            target = snapshot / source
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(ROOT / source, target)
+        revision = V21_REVISION if args.replay_v21 else None
+        generated = list(generated_mutations(snapshot, 4 if revision else args.generated_per_module, revision))
         baselines = {}
         results = [run_mutation(snapshot, mutation, baselines) for mutation in (*MUTATIONS, *generated)]
     counts = Counter(row["status"] for row in results)
-    curated_pass = all(row["status"] == "DETECTED" for row in results if row["kind"] == "CURATED")
+    curated_pass = all(row["status"] in {"DETECTED", "PRODUCT_EXCEPTION", "PRODUCT_LOAD_EXCEPTION"} for row in results if row["kind"] == "CURATED")
     generated_status = "NOT_RUN" if not generated else "REVIEW_REQUIRED" if any(
-        row["status"] not in {"DETECTED", "AST_EQUIVALENT"} for row in results if row["kind"] == "AST"
+        row["status"] not in {"DETECTED", "PRODUCT_EXCEPTION", "PRODUCT_LOAD_EXCEPTION", "AST_EQUIVALENT"} for row in results if row["kind"] == "AST"
     ) else "PASS"
-    report = {"schema_version": 2, "planned": len(results), "counts": counts,
+    report = {"schema_version": 3, "reference_revision": revision, "planned": len(results), "counts": counts,
               "results": results, "gate": "PASS" if curated_pass else "FAIL",
               "generated_status": generated_status, "generated_planned": len(generated),
               **checkout_provenance()}

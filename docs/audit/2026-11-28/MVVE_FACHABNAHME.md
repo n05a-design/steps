@@ -18,3 +18,9 @@ Für jeden Fall bitte Revision, prüfende Person, Fundstelle, Urteil und Begrün
 | MVVE21-J10 · Forschungsbibliothek | Prüfen Sie PAT-031, SRC-033, den Graphfall und die historischen Fälle gegen ihre Originalfundstellen. Die Ausgabe meldet `PENDING`. | Prüfen Sie Metrum, stilistische Aussagen, Herkunft und Rechte anhand der jeweiligen Fundstelle. Andere musikalische Lesarten mit Beleg dokumentieren. Freigabe pro Fall durch Fachprüfung sowie Rechte- oder Quellenkuratierung. [Benchmark](../../../knowledge/benchmark/cases.json) · [Rechte und Freigabe](../../governance/RIGHTS_SECURITY_AND_RELEASE.md) |
 
 Der technische Exportstatus ersetzt keine dokumentierten Importproben in zwei unabhängigen DAWs. [DAW-Prüfprotokoll](../../quality/MIDI_DAW_MANUAL_PROTOCOL.md)
+
+## MVVE22-J05b · Kadenz, expliziter Tonartwechsel und exportierte Stimmen
+
+Spielen Sie C–D7–G. Mit eingestelltem C-Dur analysiert STEPS den letzten Akkord als V. Nach expliziter Wahl von G-Dur lautet die Folge IV–V7–I. Rückgängig und Wiederholen stellen den vorherigen beziehungsweise neuen Kontext wieder her. Nach Speichern, Laden und MIDI-Export beginnt der separate Bass mit C2, D2 und G2 (36, 38, 43) bei Tick 0, 480 und 1200. Die Akkordspur enthält C–E–G, D–Fis–A–C und G–H–D. Die Bassdauer beträgt jeweils 350 Ticks.
+
+Prüfen Sie beide tonalen Lesarten, die gehaltenen Register und die Trennung der Spuren im Import. Eine Lesart als V/V–V in C-Dur und die explizite Kadenz in G-Dur sind kontextabhängig gültig. Die Freigabe verlangt einen musikalisch nachvollziehbaren Kontext, übereinstimmende Bassereignisse und eine unveränderte Projektwiederherstellung. [Sekundärdominanten](https://viva.pressbooks.pub/openmusictheory/chapter/tonicization/) · [Technischer Prüfablauf](../../../tests/test_music_audit_combinations.py)

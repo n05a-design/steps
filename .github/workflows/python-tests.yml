@@ -73,6 +73,7 @@ jobs:
             tests.test_music_audit_stateful.HypothesisMusicAudit.test_session_history \
             tests.test_music_audit_stateful.HypothesisMusicAudit.test_smf_vlq_decoder_against_independent_byte_model \
             tests.test_music_audit_stateful.HypothesisMusicAudit.test_smf_vlq_canonical_writer \
+            tests.test_music_audit_stateful.HypothesisMusicAudit.test_structured_smf_and_truncated_track \
             tests.test_music_audit_stateful.HypothesisMusicAudit.test_framed_smf_track_fuzz \
             tests.test_music_audit_stateful.SMFTrackAudit \
             tests.test_music_audit_stateful.KeyboardStateAudit \
