@@ -20,13 +20,16 @@ from scripts import run_knowledge_benchmark as benchmark
 from scripts import verify_pilot_review_evidence as pilot
 from src.steps.progression import reviewed
 
+COMBINATION_TEST = "test_music_audit_combinations.MusicalCombinationAudit."
+
 AREAS = {
     "theory-core": (
         ("test_notation_contract", "test_harmonic_function_accuracy", "test_theory_properties",
          "test_progression_engine"), (),
     ),
     "desktop-voicing": (
-        ("test_beginner_voicing", "test_voice_leading_styles"),
+        ("test_beginner_voicing", "test_voice_leading_styles",
+         COMBINATION_TEST + "test_altered_standard_voicing_keeps_its_named_tension"),
         ("Explain each offered style and verify its actual voicings and playable range.",),
     ),
     "keyboard": (
@@ -34,15 +37,18 @@ AREAS = {
         ("Review contextual note names, written and sounding bass, and figures for the supported voicings.",),
     ),
     "recognition": (
-        ("test_keyboard_engine.TestChordRecognition", "test_keyboard_engine.TestReviewRegressions"),
+        ("test_keyboard_engine.TestChordRecognition", "test_keyboard_engine.TestReviewRegressions",
+         COMBINATION_TEST + "test_recognition_omissions_with_bass_register_and_policy"),
         ("Review ambiguous, standard and incomplete readings in the stated keyboard scope.",),
     ),
     "keyboard-practice": (
-        ("test_keyboard_engine.TestPracticePilot", "test_mvve_regressions"),
+        ("test_keyboard_engine.TestPracticePilot", "test_mvve_regressions",
+         COMBINATION_TEST + "test_practice_register_bass_and_publication_boundary"),
         ("Review every included exercise, permitted answers and feedback against independent teaching criteria.",),
     ),
     "musical-integration": (
-        ("test_keyboard_engine.TestWorkbenchSessionIntegration", "test_storage_recovery_io"),
+        ("test_keyboard_engine.TestWorkbenchSessionIntegration", "test_storage_recovery_io",
+         COMBINATION_TEST + "test_transposed_applied_and_borrowed_progression_reaches_export"),
         ("Verify recognition, explicit adoption, preview isolation, project recovery and exported output.",),
     ),
     "midi-export": (

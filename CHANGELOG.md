@@ -3,6 +3,7 @@
 ## Unreleased – 0.8.0-dev (2026-11-24)
 
 ### Hinzugefügt / Geändert
+- **Windows-Dateisperren und Musikprüfung.** STEPS prüft aktive Projektbesitzer mit einem Prozesshandle, ohne ein Windows-Konsolensignal auszulösen. Der SMF-VLQ-Codec prüft die Vier-Byte-Grenze in beide Richtungen. MVVE vergleicht weitere Akkorderweiterungen und ergänzt generierte Mutationen, Parser-Eigenschaften und transponierte Exportfälle. [Nachweise](docs/audit/2026-11-28/MVVE_V21.md)
 - **MVVE-Musikprüfung.** Unabhängige Referenzfälle für Tonhöhen, Akkorde, Skalen, Harmonisierung, Bassrollen und exakte Akkorderkennung. Die bestehende Zufallsprüfung meldet Infrastrukturfehler und speichert reproduzierbare Fälle. Technische PR-, Zeitplan- und Release-Prüfungen wurden erweitert. [Nachweise und offene Freigaben](docs/audit/2026-11-27/MVVE_V2.md)
 - **Keyboard, Skalen und Übungen.** Alterierte und erweiterte Basstöne erhalten ihre musikalische Rolle ohne widersprüchliche klassische Bezifferung. Skalen und Übungsdefinitionen prüfen ihre Werte beim Erstellen. Bei einer leeren Antwort zeigen Übungen mit Sollregister auch die fehlenden konkreten Töne.
 - **MIDI-Dateiprüfung.** Der SMF-Parser lehnt abgeschnittene Header auch dann ab, wenn der Header keine Tracks deklariert.
